@@ -89,7 +89,8 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -156,3 +157,4 @@ src/common/lua/luac
 /char-server
 /map-server
 *.pid
+/data/
