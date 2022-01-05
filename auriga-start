@@ -48,14 +48,14 @@ check_account() {
 		mkdir ./save/mail_data
 	fi
 
-	if [ ! -f ./save/account.txt ]; then
-		i=0
-		while [ $i -le 4 ];
-		do
-			echo -e "$i\ts`expr $i + 1`\tp`expr $i + 1`\t-\tS\t0\t0\t@\t\r" >> save/account.txt
-			i=`expr $i + 1`
-		done
-	fi
+#	if [ ! -f ./save/account.txt ]; then
+#		i=0
+#		while [ $i -le 4 ];
+#		do
+#			echo -e "$i\ts`expr $i + 1`\tp`expr $i + 1`\t-\tS\t0\t0\t@\t\r" >> save/account.txt
+#			i=`expr $i + 1`
+#		done
+#	fi
 
 	if [ ! -f ./save/accreg.txt ]; then
 		echo -n > save/accreg.txt
