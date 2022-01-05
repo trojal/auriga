@@ -1,9 +1,9 @@
-// GM‚Æ‚µ‚Ä”FŽ¯‚·‚éƒAƒJƒEƒ“ƒgID‚ðÝ’è
+// GMï¿½Æ‚ï¿½ï¿½Ä”Fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gIDï¿½ï¿½Ý’ï¿½
 // <account ID> <level>
-// <GM‚ÌƒAƒJƒEƒ“ƒgID> <GM‚ÌƒŒƒxƒ‹>
+// <GMï¿½ÌƒAï¿½Jï¿½Eï¿½ï¿½ï¿½gID> <GMï¿½Ìƒï¿½ï¿½xï¿½ï¿½>
 // <first_account_ID>-<last_account_ID> <level>
 // <first_account_ID>~<last_account_ID> <level>
-// GM‚ÌƒŒƒxƒ‹‚Í0ˆÈ‰º‚Í–³Ž‹‚ÅÅ‘å‚Í99
+// GMï¿½Ìƒï¿½ï¿½xï¿½ï¿½ï¿½ï¿½0ï¿½È‰ï¿½ï¿½Í–ï¿½ï¿½ï¿½ï¿½ÅÅ‘ï¿½ï¿½99
 
 //704554-794583 1
 //794544 1
@@ -17,3 +17,4 @@
 //1114772 1
 //1230387-1230390 1
 //1230392
+2000001 1
