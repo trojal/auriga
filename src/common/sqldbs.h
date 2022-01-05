@@ -31,7 +31,7 @@
 	#include <netinet/in.h>
 #endif
 
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include "utils.h"
 #include "db.h"
 
