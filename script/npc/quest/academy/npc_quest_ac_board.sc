@@ -1,11 +1,11 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  案内板
+// Ragnarok Online -- 冒険者アカデミー  Information
 //                                                  by Pneuma
 //------------------------------------------------------------
 
-ac_en_hall.gat,110,10,6	script	案内板	837,{
+ac_en_hall.gat,110,10,6	script	Information	837,{
 	cutin "ad_ac_guide12.bmp",2;
 	mes "[エントランス]";
 	mes "この先、図書室";
@@ -14,7 +14,7 @@ ac_en_hall.gat,110,10,6	script	案内板	837,{
 	end;
 }
 
-ac_library.gat,30,65,6	script	案内板	837,{
+ac_library.gat,30,65,6	script	Information	837,{
 	cutin "ad_ac_guide16.bmp",2;
 	mes "[図書室]";
 	mes "ここは図書室となります。";
@@ -26,7 +26,7 @@ ac_library.gat,30,65,6	script	案内板	837,{
 	end;
 }
 
-ac_library.gat,108,63,6	script	案内板	837,{
+ac_library.gat,108,63,6	script	Information	837,{
 	cutin "ad_ac_guide14.bmp",2;
 	mes "[図書室]";
 	mes "◆操作系関連の部屋";
@@ -35,7 +35,7 @@ ac_library.gat,108,63,6	script	案内板	837,{
 	end;
 }
 
-ac_library.gat,109,52,6	script	案内板	837,{
+ac_library.gat,109,52,6	script	Information	837,{
 	cutin "ad_ac_guide13.bmp",2;
 	mes "[図書室]";
 	mes "◆知識関連、戦闘関連の部屋";
@@ -44,7 +44,7 @@ ac_library.gat,109,52,6	script	案内板	837,{
 	end;
 }
 
-ac_library.gat,120,61,6	script	案内板	837,{
+ac_library.gat,120,61,6	script	Information	837,{
 	cutin "ad_ac_guide15.bmp",2;
 	mes "[図書室]";
 	mes "◆コミュニティ関連、生活関連の部屋";
@@ -53,7 +53,7 @@ ac_library.gat,120,61,6	script	案内板	837,{
 	end;
 }
 
-ac_en_hall.gat,86,10,6	script	案内板	837,{
+ac_en_hall.gat,86,10,6	script	Information	837,{
 	cutin "ad_ac_guide11.bmp",2;
 	mes "[エントランス]";
 	mes "この先、教室棟";
@@ -65,7 +65,7 @@ ac_en_hall.gat,86,10,6	script	案内板	837,{
 	end;
 }
 
-ac_cl_hall.gat,172,71,6	script	案内板	837,{
+ac_cl_hall.gat,172,71,6	script	Information	837,{
 	cutin "ad_ac_guide07.bmp",2;
 	mes "[教室棟ホール]";
 	mes "この先、教室棟1F";
@@ -76,7 +76,7 @@ ac_cl_hall.gat,172,71,6	script	案内板	837,{
 	end;
 }
 
-ac_cl_hall.gat,163,63,6	script	案内板	837,{
+ac_cl_hall.gat,163,63,6	script	Information	837,{
 	cutin "ad_ac_guide08.bmp",2;
 	mes "[教室棟ホール]";
 	mes "◆実習室・特別室　入口";
@@ -89,7 +89,7 @@ ac_cl_hall.gat,163,63,6	script	案内板	837,{
 	cutin "ad_ac_guide08.bmp",255;
 	end;
 }
-ac_cl_hall.gat,160,45,6	script	案内板	837,{
+ac_cl_hall.gat,160,45,6	script	Information	837,{
 	cutin "ad_ac_guide10.bmp",2;
 	mes "[教室棟ホール]";
 	mes "◆実習室・特別室　入口";
@@ -102,7 +102,7 @@ ac_cl_hall.gat,160,45,6	script	案内板	837,{
 	cutin "ad_ac_guide10.bmp",255;
 	end;
 }
-ac_cl_hall.gat,174,25,6	script	案内板	837,{
+ac_cl_hall.gat,174,25,6	script	Information	837,{
 	cutin "ad_ac_guide09.bmp",2;
 	mes "[教室棟ホール]";
 	mes "◆実習室・特別室　入口";
@@ -135,8 +135,8 @@ ac_cl_room.gat,156,25,4	script	自習室	837,{
 	end;
 }
 
-// 案内板
-ac_cl_area.gat,39,172,4	script	案内板	837,{
+// Information
+ac_cl_area.gat,39,172,4	script	Information	837,{
 	cutin "ad_ac_guide05.bmp",2;
 	mes "[教室棟1F]";
 	mes "◆自習室";
@@ -144,7 +144,7 @@ ac_cl_area.gat,39,172,4	script	案内板	837,{
 	cutin "ad_ac_guide05.bmp",255;
 	end;
 }
-ac_cl_area.gat,39,136,4	script	案内板	837,1,4,{
+ac_cl_area.gat,39,136,4	script	Information	837,1,4,{
 	cutin "ad_ac_guide06.bmp",2;
 	mes "[教室棟1F]";
 	mes "◆講習室";
@@ -158,7 +158,7 @@ OnTouch:
 	}
 }
 
-ac_cl_area.gat,65,12,4	script	案内板	837,{
+ac_cl_area.gat,65,12,4	script	Information	837,{
 	cutin "ad_ac_guide04.bmp",2;
 	mes "[教室棟2F]";
 	mes "◆資料室";
