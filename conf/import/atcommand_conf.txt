@@ -1,0 +1,13 @@
+rura: 0
+go: 0
+jobchange: 0
+who: 0
+lvup: 0
+joblvup: 0
+stpoint: 0
+skpoint: 0
+zeny: 0
+help: 0
+item: 0
+mes: 0
+mesweb: 0
