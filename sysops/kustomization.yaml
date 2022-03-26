@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: auriga-dev
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: auriga-env
+  literals:
+  - DB_HOST=private-db-mysql-nyc1-99154-do-user-7894121-0.a.db.ondigitalocean.com
+  - DB_PORT=25060
+
+resources:
+- namespace.yaml
+- data-pvc.yaml
+- char-deployment.yaml
+- login-deployment.yaml
+- map-deployment.yaml
+- char-service.yaml
+- login-service.yaml
+- map-service.yaml
+
+images:
+- name: auriga-titan2
+  newName: <IMAGE>

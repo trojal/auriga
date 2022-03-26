@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: map
+  name: map
+spec:
+  ports:
+  - name: "5121"
+    port: 5121
+    targetPort: 5121
+    protocol: TCP
+  selector:
+    service: map
+  type: ClusterIP

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: char
+  name: char
+spec:
+  ports:
+  - name: "6121"
+    port: 6121
+    targetPort: 6121
+    protocol: TCP
+  selector:
+    service: char
+  type: ClusterIP

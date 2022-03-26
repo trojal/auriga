@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-server
+  labels:
+    app: seasonro
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      name: login-server
+  template:
+    metadata:
+      labels:
+        name: login-server
+        service: char
+    spec:
+      containers:
+      - args:
+        - ./login-server
+        image: auriga-titan2
+        imagePullPolicy: Always
+        name: login-server
+        ports:
+        - containerPort: 6900
+        volumeMounts:
+        - name: data
+          mountPath: /auriga_server/data
+        envFrom:
+          - configMapRef:
+              name: auriga-env
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-pvc
