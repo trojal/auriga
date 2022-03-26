@@ -3,9 +3,6 @@
 
 FROM alpine:latest AS build
 
-ARG MYPLUGINS
-ENV MYPLUGINS=$MYPLUGINS
-
 RUN apk add --no-cache \
 	mariadb-dev \
 	gcc \
@@ -47,6 +44,7 @@ RUN delgroup ping \
 COPY --from=build /auriga_server/sql-files ./sql-files
 COPY --from=build /auriga_server/conf ./conf
 COPY --from=build /auriga_server/db ./db
+# COPY --from=build /auriga_server/data ./data
 COPY --from=build /auriga_server/log ./log
 COPY --from=build /auriga_server/script ./script
 COPY --from=build /auriga_server/save ./save
