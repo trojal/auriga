@@ -1,5 +1,5 @@
 {
-	"name": "TitanRO development environment",
+	"name": "JitanRO development environment",
 
 	"dockerComposeFile": "docker-compose.yml",
 
@@ -11,12 +11,10 @@
 
 	"runArgs": ["--init"],
 
-	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"sqltools.connections": [{
-			"name": "TitanRO development database",
+			"name": "JitanRO development database",
 			"driver": "MariaDB",
 			"server": "localhost",
 			"previewLimit": 50,
@@ -30,14 +28,15 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"mtxr.sqltools",
-		"mtxr.sqltools-driver-mysql"
+		"mtxr.sqltools-driver-mysql",
+		"ms-azuretools.vscode-docker"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "tools/ci/travis.sh importdb ragnarok ragnarok ragnarok 127.0.0.1",
+	// "postCreateCommand": "tools/ci/travis.sh importdb ragnarok ragnarok ragnarok 127.0.0.1",
 
 	// Use 'postStartCommand' to run commands when the container is started.
 	"postStartCommand": "doctl auth init --access-token $DO_TOKEN && doctl kubernetes cluster kubeconfig save e15266d8-76a6-4aa1-9529-5df961097936",

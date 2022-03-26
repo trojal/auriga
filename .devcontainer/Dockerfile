@@ -54,6 +54,7 @@ RUN curl -qsL https://github.com/mozilla/sops/releases/download/v3.5.0/sops-v3.5
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
 ENV XDG_CONFIG_HOME $HOME/.config
 RUN curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh | bash
+RUN doctl registry login
 
 # VS Code overrides ENTRYPOINT and CMD when executing `docker run` by default.
 # Setting the ENTRYPOINT to docker-init.sh will configure non-root access to
