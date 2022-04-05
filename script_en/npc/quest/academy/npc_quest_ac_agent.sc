@@ -1,147 +1,127 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  アカデミー関係者
+// Ragnarok Online -- 冒険者アカデミー  Academy Official
 //                                                  by Pneuma
 //------------------------------------------------------------
 
 //----------------------------------
-// 地域説明 -- arg1=mapno, arg2=語尾("です。"or"だよ。")
+// 地域説明 -- arg1=mapno
 function	script	ac_map_info	{
 	switch(getarg(0)) {
-	case 0:// プロンテラ
+	case 0:// Prontera
 		cutin "area_map_002",3;
-		mes "ここはルーンミッドガッツ王国の首都。";
-		mes "^0000FFプロンテラ^000000の街" + getarg(1);
+		mes "This is the capital of the Kingdom of Rune Midgard.";
+		mes "City of ^0000FFProntera^000000";
 		close;
-	case 1:// イズルード
+	case 1:// Izlude
 		cutin "area_map_006",3;
-		mes "この街は首都プロンテラの";
-		mes "衛星都市^0000FFイズルード^000000" + getarg(1);
+		mes "This city is a satellite city of the capital Prontera.
+		mes "^0000FFIzlude^000000";
 		close;
-	case 2:// モロク
+	case 2:// Morroc
 		cutin "area_map_009",3;
-		mes "[アカデミー関係者]";
-		mes "ここはプロンテラ南西に位置する";
-		mes "ソグラト砂漠にあるオアシスの街。";
-		mes "^0000FFモロク^000000" + getarg(1);
+		mes "[Academy Official]";
+		mes "This is an oasis town in the Sograt Desert, southwest of Prontera." ;
+		mes "^0000FFMorroc^000000";
 		next;
-		mes "[アカデミー関係者]";
-		mes "とはいえ、今はこの有様だよ……";
-		mes "街のオアシスは跡形もなくなった。";
-		mes "いいかい、街の東側は";
-		mes "かなり危険な状態になっている。";
-		mes "プロンテラやフェイヨン方面に";
-		mes "自力で砂漠を越えて行くのは無謀だ。";
+		mes "[Academy Official]";
+		mes "However, this is what it looks like now: ......";
+		mes "The city's oasis is gone without a trace." ;
+		mes "Look, the east side of the city has become quite dangerous." ;
+		mes "It would be foolhardy to cross the desert on your own toward Prontera or Payon." ;
 		next;
-		mes "[アカデミー関係者]";
-		mes "移動したかったら転送を";
-		mes "利用してね。";
+		mes "[Academy Official]";
+		mes "If you want to move, use the transfer." ;
 		close;
-	case 3:// アルベルタ
+	case 3:// Alberta
 		cutin "area_map_007",3;
-		mes "ここは冒険者の間でも話題の";
-		mes "港町^0000FFアルベルタ^000000" + getarg(1);
+		mes "This is the port town ^0000FFAlberta^000000";
 		close;
-	case 4:// ゲフェン
+	case 4:// Geffen
 		cutin "area_map_003",3;
-		mes "ここはミョルニール山脈に";
-		mes "隣接している魔法都市^0000FFゲフェン^000000" + getarg(1);
+		mes "This is the magical city ^0000FFGeffen^000000";
 		close;
-	case 5:// フェイヨン
+	case 5:// Payon
 		cutin "area_map_007",3;
-		mes "ここは緑に囲まれた山岳都市";
-		mes "^0000FFフェイヨン^000000" + getarg(1);
+		mes "This is a mountain city surrounded by greenery ^0000FFPayon^000000";
 		close;
-	case 6://アルデバラン
+	case 6://Aldebaran
 		cutin "area_map_002",3;
-		mes "ここはプロンテラ北に位置する";
-		mes "^0000FFアルデバラン^000000の街" + getarg(1);
+		mes "This is the city of ^0000FFAldebaran^000000 located north of Prontera";
 		close;
-	case 7://ジュノー
+	case 7://Yuno
 		cutin "area_map_005",3;
-		mes "この街はシュバルツバルド共和国の";
-		mes "首都^0000FFジュノー^000000" + getarg(1);
+		mes "This city is in the Republic of Schwartzvald";
+		mes "Capital ^0000FFYuno^000000";
 		close;
-	case 8://ウンバラ
+	case 8://Umbala
 		cutin "area_map_004",3;
-		mes "ここは木々が生い茂った、";
-		mes "自然豊かなうウータン族の村"; //本鯖どおり
-		mes "^0000FFウンバラ^000000" + getarg(1);
+		mes "This place is lush with trees,";
+		mes "A village of the Wootan tribe, rich in nature";
+		mes "^0000FFUmbala^000000";
 		close;
-	case 9://コモド
+	case 9://Comodo
 		cutin "area_map_004",3;
-		mes "ここはルーンミッドガッツ王国";
-		mes "最南端に位置する洞窟都市";
-		mes "^0000FFコモド^000000" + getarg(1);
+		mes "This is a cave city located in the southernmost part of the Kingdom of Rune Midgard";
+		mes "^0000FFComodo^000000";
 		close;
-	case 10://フィゲル
+	case 10://Hugel
 		cutin "area_map_005",3;
-		mes "ここはシュバルツバルド共和国";
-		mes "北方に位置する田園都市";
-		mes "^0000FFフィゲル^000000" + getarg(1);
+		mes "This is a rural city located in the northern part of the Republic of Schwartzvald";
+		mes "^0000FFHugel^000000";
 		close;
-	case 11://ラヘル
+	case 11://Rachel
 		cutin "area_map_010",3;
-		mes "ここはアルナベルツ教国の";
-		mes "首都^0000FFラヘル^000000" + getarg(1);
+		mes "This is the capital of Arunafeltz ^0000FFRachel^000000";
 		close;
-	case 12://リヒタルゼン
+	case 12://Lighthalzen
 		cutin "area_map_010",3;
-		mes "ここはアインブロックの南西に";
-		mes "位置する企業都市都市"; //本鯖どおり
-		mes "^0000FFリヒタルゼン^000000" + getarg(1);
+		mes "This is a corporate city located southwest of Einbroch";
+		mes "^0000FF Lighthalzen^000000";
 		close;
-	case 13://ベインス
+	case 13://Veins
 		cutin "area_map_010",3;
-		mes "ここは渓谷と崖の間に作られた";
-		mes "都市^0000FFベインス^000000" + getarg(1);
-	case 14://コンロン
-		mes "ここは宙に浮く群島状の島。";
-		mes "観光地としても有名な^0000FFコンロン^000000" + getarg(1);
+		mes "This is a city built between a canyon and a cliff ^0000FFVeins^000000";
 		close;
-	case 15://龍の城
-		mes "ここは壮大な建造物が";
-		mes "そびえる古都^0000FF龍之城^000000" + getarg(1);
+	case 14://Gonryun
+		mes "This is an archipelago-like island floating in the air." ;
+		mes "It is also a famous tourist destination ^0000FFGonryun^000000";
 		close;
-	case 16://アユタヤ
-		mes "ここは特有の信仰を持った民族が";
-		mes "集まって暮らしている^0000FFアユタヤ^000000" + getarg(1);
+	case 15://Louyang
+		mes "This is an ancient city with magnificent buildings ^0000FFLouyang^000000";
 		close;
-	case 17://ピラ地下
+	case 16://Ayothaya
+		mes "This place is inhabited by a group of people with peculiar beliefs ^0000FFAyothaya^000000";
+		close;
+	case 17://Pyramid Dungeon
 		cutin "area_map_009",3;
-		mes "ここは^0000FFモロク^000000の北西に位置する";
-		mes "ピラミッドダンジョンにある";
-		mes "シーフギルド" + getarg(1);
+		mes "This is the Thief Guild in the Pyramid Dungeon located northwest of ^0000FFMorroc^000000";
 		close;
-	case 18://アインブロック
+	case 18://Einbroch
 		cutin "area_map_005",3;
-		mes "ここは工業都市^0000FFアインブロック^000000" + getarg(1);
+		mes "This is an industrial city ^0000FFEinbroch^000000";
 		close;
-	case 19://アマツ
-		mes "ここは豊かな水と見事な桜に囲まれた";
-		mes "風情豊かな土地^0000FFアマツ^000000" + getarg(1);
+	case 19://Amatsu
+		mes "This is a picturesque land surrounded by abundant water and magnificent cherry blossoms ^0000FFAmatsu^000000";
 		close;
-	case 20://弓手村
+	case 20://Archer Village
 		cutin "area_map_007",3;
-		mes "ここは緑に囲まれた山岳都市";
-		mes "^0000FFフェイヨン^000000にある";
-		mes "弓手村" + getarg(1);
+		mes "This is an archery village in the mountain city ^0000FFPayon^000000 surrounded by greenery.";
 		close;
-	case 21://アインベフ
+	case 21://Einbech
 		cutin "area_map_005",3;
-		mes "ここは鉱山から資源を掘り出すために";
-		mes "つくられた鉱夫の村、^0000FFアインベフ^000000" + getarg(1);
+		mes "This is a village created to dig out resources from the mine, ^0000FFEinbech^000000.";
 		close;
 	}
 	return;
 }
 
 //----------------------------------
-// アカデミー関係者 (入学案内)
+// Academy Official (Admissions)
 // AurigaはOnTouch重複不可の為、コンパスNPCも兼ねる
 
--	script	アカデミー関係者#func	-1,{
+-	script	Academy Official#func	-1,{
 	function WARP_ACADEMY;
 	function JOIN_ACADEMY;
 	function DORAM_ACADEMY;
@@ -164,34 +144,30 @@ function	script	ac_map_info	{
 	}
 
 	if('@novice){
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "調子はどう？";
-		mes "冒険者アカデミーにいくのかい？";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "How are you doing?" ;
+		mes "Are you going to the Adventurer Academy?" ;
 	} else {
-		mes "[アカデミー関係者]";
-		mes "こんにちは！";
-		mes "熟練の冒険者からは^0000FF1000^000000Zenyの";
-		mes "寄付金を頂いているんです。";
-		mes "冒険者アカデミーへ";
-		mes "転送しましょうか？";
+		mes "[Academy Official]";
+		mes "Hello!" ;
+		mes "We request donations of ^0000FF1000^000000 Zeny from skilled adventurers." ;
+		mes "Shall I transfer you to the Adventurer's Academy?" ;
 	}
 	next;
-	switch(select("転送してもらう","周辺について知りたい","なんでもない")){
+	switch(select("Transfer", "Learn about the area", "Nevermind")){
 	case 1:
 		WARP_ACADEMY;
 		end;
 	case 2:
-		mes "[アカデミー関係者]";
-		mes "このあたりのことについて";
-		mes "知りたいんだね。";
-		callfunc "ac_map_info", '@mapnumber,"だよ。";
+		mes "[Academy Official]";
+		mes "You want to know about this area." ;
+		callfunc "ac_map_info", '@mapnumber;
 		end;
 	default:
-		mes "[アカデミー関係者]";
-		mes "そっか。";
-		mes "いつでも、声をかけてくれれば、";
-		mes "すぐに送ってあげるよ。";
+		mes "[Academy Official]";
+		mes "I see." ;
+		mes "Whenever you're ready, just give me a shout and I'll send you on your way." ;
 		close;
 	}
 
@@ -200,26 +176,22 @@ function	script	ac_map_info	{
 		if(!'@novice && AC_PASSPORT!=1){ //仮入学済みの場合は無料
 			set '@price,(AC_PASSPORT ? 1000 : 2000);
 			if (Zeny<'@price) {
-				mes "[アカデミー関係者]";
-				mes "あれ？";
-				mes "お金が足りないみたいだね。";
-				mes "申し訳ないけど、集まってから";
-				mes "また来てね。";
+				mes "Huh?" ;
+				mes "It looks like you don't have enough money." ;
+				mes "I'm sorry, but please come back after you get the Zeny together.";
 				close;
 			}
 			set Zeny, Zeny - '@price;
 		}
-		mes "[アカデミー関係者]";
+		mes "[Academy Official]";
 		if(AC_PASSPORT==1){
 			//仮入学済み、転送後に蝶を使った場合のみ表示。
-			mes "入学だね。";
+			mes "You're enrolled." ;
 		}
 		set AC_SAVE_MAP, '@mapnumber;
-		mes "それじゃ、冒険者アカデミーに";
-		mes "転送するね。";
+		mes "Then I'll transfer you to the Adventurer's Academy." ;
 		mes " ";
-		mes "‐アカデミーの拠点地点が";
-		mes "^FF0000" +'save_mapname$[AC_SAVE_MAP]+ "^000000になりました‐";
+		mes "The Academy's save point is now ^FF0000" +'save_mapname$[AC_SAVE_MAP]+ "^000000-";
 		close2;
 		switch(AC_PASSPORT){
 		case 0:
@@ -238,105 +210,79 @@ function	script	ac_map_info	{
 		set '@novice,callfunc("AC_GetNovice");
 		if ('@novice) {
 			if(getarg(0)){
-				mes "[アカデミー関係者]";
-				mes "おや？";
-				mes "キミは新顔の人だね。";
-				mes "冒険者アカデミーへ";
-				mes "入学してみるかい？";
+				mes "[Academy Official]";
+				mes "Oh?" ;
+				mes "You're a newcomer, aren't you?" ;
+				mes "Would you like to enroll in the Adventurer Academy?" ;
 			} else {
-				mes "[アカデミー関係者]";
-				mes "こんにちは。";
-				mes "今、新入生を募集しているんですよ。";
-				mes "冒険者アカデミーに入学するかい？";
+				mes "[Academy Official]";
+				mes "Hello." ;
+				mes "We're looking for new students right now." ;
+				mes "Would you like to enroll in the Adventurer Academy?" ;
 			}
 			next;
-			menu "冒険者アカデミー？",-;
-			mes "[アカデミー関係者]";
-			mes "冒険者アカデミーは";
-			mes "駆け出しの冒険者から、";
-			mes "熟練の冒険者まで、";
-			mes "誰でも入学できる冒険者の学校さ。";
+			menu "Adventurer Academy?", -;
+			mes "[Academy Official]";
+			mes "The Adventurer Academy is an adventurer's school open to everyone from novice adventurers to seasoned adventurers." ;
 			next;
-			mes "[アカデミー関係者]";
-			mes "アカデミーに入学することで、";
-			mes "いろいろな知識が学べるんだ。";
-			mes "学んでいくことでいろんな特典が";
-			mes "得られたりするね。";
+			mes "[Academy Official]";
+			mes "By enrolling in the academy, you learn a lot of knowledge.";
+			mes "You get a lot of benefits as you learn.";
 			next;
-			mes "[アカデミー関係者]";
-			mes "冒険中の困難なできごとも、";
-			mes "アカデミーにいる先生や";
-			mes "先輩達に聞けば、";
-			mes "すぐに解決するはずさ。";
+			mes "[Academy Official]";
+			mes "Any difficult event during your adventure should be solved quickly by asking the teachers and seniors at the academy." ;
 			next;
-			mes "[アカデミー関係者]";
-			mes "冒険にはいろいろな困難が";
-			mes "待ち構えているから、";
-			mes "きっと助けになると思うよ。";
-			mes "どうだい？";
-			mes "冒険者アカデミーに入学するかい？";
+			mes "[Academy Official]";
+			mes "I'm sure it will help you with all the challenges that await you on your adventure." ;
+			mes "What do you think?" ;
+			mes "Would you like to enroll in the Adventurer Academy?" ;
 		} else {
-			mes "[アカデミー関係者]";
-			mes "こんにちは。";
-			mes "今、新入生を募集しているんだ。";
-			mes "経験をつんだ熟練者の方も";
-			mes "入れるけど、寄付金を頂いているよ。";
-			mes "冒険者アカデミーに入学するかい？";
+			mes "[Academy Official]";
+			mes "Hello." ;
+			mes "I'm looking for new students right now." ;
+			mes "We can take in experienced and skilled people, but we do take donations." ;
+			mes "Would you like to enroll in the Adventurer Academy?" ;
 			next;
-			switch(select("入学しない","入学する","冒険者アカデミーとは？")){
+			switch(select("Do not enroll", "Enroll", "What is the Adventurer Academy?")) {
 			case 1:
-				mes "[アカデミー関係者]";
-				mes "そうか。";
-				mes "冒険者アカデミーはいつでも";
-				mes "入学できるからね！";
-				mes "わからないことがあったら、";
-				mes "一度入学してみることを勧めるよ。";
+				mes "[Academy Official]";
+				mes "I see." ;
+				mes "You can always enroll in the Adventurer's Academy!" ;
+				mes "If you have any questions, I suggest you enroll in the program." ;
 				close;
 			case 2:
-				mes "[アカデミー関係者]";
-				mes "そうか。";
-				mes "きみは熟練の冒険者みたいだね。";
-				mes "入学の寄付金は^0000FF2000^000000Zenyだよ。";
-				mes "入学するかい？";
+				mes "[Academy Official]";
+				mes "I see." ;
+				mes "You seem like a skilled adventurer." ;
+				mes "The donation for admission is ^0000FF2000^000000 Zeny." ;
+				mes "Would you like to enroll?" ;
 				break;
 			case 3:
-				mes "[アカデミー関係者]";
-				mes "冒険者アカデミーは冒険者たちの";
-				mes "サポートを行う学校だよ。";
-				mes "冒険者アカデミーは寄付金で";
-				mes "成り立っているんだ。";
-				mes "アカデミーに入学することで";
-				mes "いろいろな知識が学べるんだよ。";
+				mes "[Academy Official]";
+				mes "The Adventurer Academy is a school that supports adventurers." ;
+				mes "The Adventurers Academy is funded by donations." ;
+				mes "You can learn a lot of knowledge by enrolling in the Academy." ;
 				next;
-				mes "[アカデミー関係者]";
-				mes "冒険中の困難なできごとも、";
-				mes "アカデミーにいる先生や先輩達に";
-				mes "聞けば、すぐに解決するはずさ。";
+				mes "[Academy Official]";
+				mes "Any difficult event during your adventure should be solved quickly by asking the teachers and seniors at the academy.";
 				next;
-				mes "[アカデミー関係者]";
-				mes "とはいっても、今は新任の";
-				mes "先生しかいないから、";
-				mes "きみのほうが教える立場に";
-				mes "なるかもしれないけどね。";
+				mes "[Academy Official]";
+				mes "However, you may be in a better position to teach than I am, since we only have a new teacher now." ;
 				emotion 23,"";
 				next;
-				mes "[アカデミー関係者]";
-				mes "冒険に必要なことを学んでいくことで";
-				mes "いろんな特典が得られるんだ。";
+				mes "[Academy Official]";
+				mes "You get all kinds of perks as you learn what you need to know about the adventure.";
 				mes " ";
-				mes "冒険者を全面的にサポートする学校、";
-				mes "それが冒険者アカデミーなのさ。";
+				mes "The school that fully supports adventurers, that's the Adventurer Academy.";
 				close;
 			}
 		}
 		next;
-		if(select("入学する","入学しない")==2){
-			mes "[アカデミー関係者]";
-			mes "そうか。";
-			mes "冒険者アカデミーはいつでも";
-			mes "入学できるからね！";
-			mes "わからないことがあったら、";
-			mes "一度入学してみることを勧めるよ。";
+		if(select("Enroll", "Do not enroll")==2){
+			mes "[Academy Official]";
+			mes "I see." ;
+			mes "You can always enroll in the Adventurer's Academy!" ;
+			mes "If you have any questions, I suggest you enroll in the program." ;
 			close;
 		}
 		WARP_ACADEMY;
@@ -344,51 +290,40 @@ function	script	ac_map_info	{
 	}
 
 	function	DORAM_ACADEMY	{
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "今、新入生を募集してるんだ。";
-		mes "ドラムの君は冒険者アカデミーに";
-		mes "入学することはできないが、";
-		mes "見学するのは自由だよ。";
-		mes "見学していくかい？";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "I'm looking for new students right now." ;
+		mes "As a Doram, you can't enroll in the Adventurer Academy, but you're free to visit." ;
+		mes "Would you like to take a tour?" ;
 		next;
-		switch(select("見学しない","見学する","冒険者アカデミーとは？")) {
+		switch(select("Do not visit", "Visit", "What is the Adventurer Academy?")) {
 		case 1:
-			mes "[アカデミー関係者]";
-			mes "そうか。";
-			mes "残念だ。";
+			mes "[Academy Official]";
+			mes "I see." ;
+			mes "Too bad." ;
 			close;
 		case 2:
 			set AC_SAVE_MAP, '@mapnumber;
-			mes "[アカデミー関係者]";
-			mes "それじゃ、冒険者アカデミーに";
-			mes "転送するね。";
-			mes "　";
-			mes "‐アカデミーの登録地点が";
-			mes "^FF0000" +'save_mapname$[AC_SAVE_MAP]+ "^000000になりました‐";
+			mes "[Academy Official]";
+			mes "Then I'll transfer you to the Adventurer's Academy." ;
+			mes " ";
+			mes "The Academy's save point is now ^FF0000" +'save_mapname$[AC_SAVE_MAP]+ "^000000-";
 			close2;
 			warp "ac_cl_room.gat",44,32;
 			end;
 		case 3:
-			mes "[アカデミー関係者]";
-			mes "冒険者アカデミーは冒険者たちの";
-			mes "サポートを行う学校だよ。";
-			mes "冒険者アカデミーは寄付金で";
-			mes "成り立っているんだ。";
-			mes "アカデミーに入学することで、";
-			mes "いろいろな知識が学べるんだよ。";
+			mes "[Academy Official]";
+			mes "The Adventurer Academy is a school that supports adventurers." ;
+			mes "The Adventurers Academy is funded by donations." ;
+			mes "By enrolling in the academy, you can learn a lot of knowledge." ;
 			next;
-			mes "[アカデミー関係者]";
-			mes "冒険中の困難なできごとも、";
-			mes "アカデミーにいる先生や先輩達に";
-			mes "聞けば、すぐに解決するはずさ。";
+			mes "[Academy Official]";
+			mes "Any difficulties you may encounter during your adventures can be quickly resolved by asking the teachers and seniors at the academy." ;
 			next;
-			mes "[アカデミー関係者]";
-			mes "冒険に必要なことを学んでいくことで";
-			mes "いろんな特典が得られるんだ。";
-			mes "　";
-			mes "冒険者を全面的にサポートする学校、";
-			mes "それが冒険者アカデミーなのさ。";
+			mes "[Academy Official]";
+			mes "You can get various benefits by learning what you need for your adventure." ;
+			mes " " ";
+			mes "The Adventurer Academy is a school that fully supports adventurers." ;
 			close;
 		}
 	}
@@ -402,7 +337,7 @@ OnTouch:
 
 	// ミニマップにポイント表示 (その他エリアは npc_quest_ac_ontouch.txt 参照)
 	switch('@mapnumber){
-	case 0://プロンテラ
+	case 0://Prontera
 		if(AC_RANK==1 && AC_RANKTEST==2){ //第２課程
 			viewpoint 1,156,22,20,0xFFFF00;
 		}
@@ -441,7 +376,7 @@ OnTouch:
 			viewpoint 1,22,203,13,0x00FF00;
 		}
 		end;
-	case 1://イズルード
+	case 1://Izlude
 		if(  AC_QUEST_ST_0==2 && AC_QUEST_LV_0==1){		//気になるあの子２
 			viewpoint 1,148,148,10,0x0000FF; //道具屋
 		} else 
@@ -458,7 +393,7 @@ OnTouch:
 			viewpoint 1,201,181,13,0x00FF00; //船員
 		}
 		end;
-	case 2://モロク
+	case 2://Morroc
 		if(AC_RANK==5 && AC_RANKTEST>=4 && AC_RANKTEST!=99){ //第６課程
 			viewpoint 1,160,17,20,0xFFFF00;
 		}
@@ -474,7 +409,7 @@ OnTouch:
 			viewpoint 1,25,294,13,0x00FF00; //ピラ
 		}
 		end;
-	case 3://アルベルタ
+	case 3://Alberta
 		if(AC_RANK==0 && AC_RANKTEST==2){ //第１課程
 			viewpoint 1,15,234,20,0xFFFF00;
 		}
@@ -483,7 +418,7 @@ OnTouch:
 			viewpoint 1,39,46,11,0xFF0000;
 		}
 		end;
-	case 4://ゲフェン
+	case 4://Geffen
 		if(AC_RANK==5 && AC_RANKTEST>=3 && AC_RANKTEST!=99){ //第６課程
 			viewpoint 1,217,119,20,0xFFFF00;
 		}
@@ -498,15 +433,15 @@ OnTouch:
 			viewpoint 1,26,119,13,0x00FF00;
 		}
 		end;
-	case 5://フェイヨン
+	case 5://Payon
 		if(AC_RANK==2 && AC_RANKTEST==2){ //第３課程
-			viewpoint 1,122,27,20,0xFFFF00; // フェイヨン南
+			viewpoint 1,122,27,20,0xFFFF00; // Payon南
 		}
 		if(AC_RANK==5 && AC_RANKTEST>=2 && AC_RANKTEST!=99){ //第６課程
-			viewpoint 1,267,89,20,0xFFFF00; // フェイヨン東
+			viewpoint 1,267,89,20,0xFFFF00; // Payon東
 		}
 		if(AC_RANK==6 && AC_RANKTEST>=2 && AC_RANKTEST!=99){ //第７課程
-			viewpoint 1,16,143,20,0xFFFF00; // フェイヨン西
+			viewpoint 1,16,143,20,0xFFFF00; // Payon西
 		}
 		if(AC_QUEST_LV_0==4 && AC_QUEST_ST_0==1){ //気になるあの子５
 			cutin "q_run_npc_02.bmp", 4;
@@ -519,75 +454,62 @@ OnTouch:
 			viewpoint 1,165,99,12,0xFF9900; //ライアス
 		}
 		if(AC_QUEST_LV_3==4 && AC_QUEST_ST_3==3){ //実験のお手伝い３
-			viewpoint 1,228,330,13,0x00FF00;	// 弓手村WP
+			viewpoint 1,228,330,13,0x00FF00;	// Archer VillageWP
 		}
 		if(AC_QUEST_LV_3==6 && AC_QUEST_ST_3==3){//	実験のお手伝い４
-			viewpoint 1,122,27,13,0x00FF00;	// フェイヨン南
+			viewpoint 1,122,27,13,0x00FF00;	// Payon南
 		}
 		end;
 	}
 	end;
 OnInit:
-	if(strnpcinfo(2)!="func") waitingroom "アカデミー関係者",0;
+	if(strnpcinfo(2)!="func") waitingroom "Academy Official",0;
 	setarray 'save_gatname$,"prontera.gat","izlude.gat","morocc.gat","alberta.gat","geffen.gat","payon.gat";
-	setarray 'save_mapname$,"プロンテラ","イズルード","モロク","アルベルタ","ゲフェン","フェイヨン";
+	setarray 'save_mapname$,"Prontera","Izlude","Morroc","Alberta","Geffen","Payon";
 }
 
-prontera.gat,153,192,4	duplicate(アカデミー関係者#func)	アカデミー関係者::AC_PRO	750,8,8
-izlude.gat,126,118,4	duplicate(アカデミー関係者#func)	アカデミー関係者::AC_IZL	750,8,8
-geffen.gat,116,109,4	duplicate(アカデミー関係者#func)	アカデミー関係者::AC_GEF	750,8,8
-morocc.gat,147,101,4	duplicate(アカデミー関係者#func)	アカデミー関係者::AC_MOR	750,8,8
-payon.gat,159,205,4		duplicate(アカデミー関係者#func)	アカデミー関係者::AC_PAY	750,8,8
-alberta.gat,107,132,4	duplicate(アカデミー関係者#func)	アカデミー関係者::AC_ALB	750,8,8
+prontera.gat,153,192,4	duplicate(Academy Official#func)	Academy Official::AC_PRO	750,8,8
+izlude.gat,126,118,4	duplicate(Academy Official#func)	Academy Official::AC_IZL	750,8,8
+geffen.gat,116,109,4	duplicate(Academy Official#func)	Academy Official::AC_GEF	750,8,8
+morocc.gat,147,101,4	duplicate(Academy Official#func)	Academy Official::AC_MOR	750,8,8
+payon.gat,159,205,4		duplicate(Academy Official#func)	Academy Official::AC_PAY	750,8,8
+alberta.gat,107,132,4	duplicate(Academy Official#func)	Academy Official::AC_ALB	750,8,8
 
 //-----------------------------------------
 // ルーンのクエスト補助員
 
--	script	アカデミー関係者#func2	-1,{
+-	script	Academy Official#func2	-1,{
 	set '@novice, callfunc("AC_GetNovice");
 	set '@gatname$,getmapname("");
 	for(set '@i,0; 'mapname$['@i]!='@gatname$; set '@i,'@i+1){}
 	set '@mapnumber,'@i;
 
 	if(AC_PASSPORT==0){
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "僕は冒険者アカデミーの補助員です。";
-		mes "何か僕に用ですか？";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "I am an assistant at the Adventurer Academy." ;
+		mes "What can I do for you?" ;
 		next;
-		if(select("冒険者アカデミーについて","特に用は無い")==2){
-			mes "[アカデミー関係者]";
-			mes "そうですか、";
-			mes "また、僕に用があれば";
-			mes "来てくださいね。";
+		if(select("About the Adventurer Academy", "Nothing in particular")==2){
+			mes "[Academy Official]";
+			mes "Well, if you need me again, please come back." ;
 			close;
 		}
-		mes "[アカデミー関係者]";
-		mes "冒険者アカデミーは";
-		mes "冒険者のための学校です。";
-		mes "アカデミーに入学することで、";
-		mes "いろいろな知識が学べるんだ。";
-		mes "学んでいくことでいろんな特典が";
-		mes "得られるのです。";
+		mes "[Academy Official]";
+		mes "The Adventurer Academy is a school for adventurers." ;
+		mes "By enrolling in the academy, you can learn a lot of knowledge." ;
+		mes "You can get various benefits by learning." ;
 		next;
-		mes "[アカデミー関係者]";
-		mes "冒険中の困難なできごとも、";
-		mes "アカデミーにいる先生や";
-		mes "先輩達に聞けば、";
-		mes "すぐに解決するはずですよ。";
+		mes "[Academy Official]";
+		mes "If you have any difficult events during your adventure, just ask the teachers and seniors at the academy and they will help you out." ;
 		next;
-		mes "[アカデミー関係者]";
-		mes "冒険者アカデミーに";
-		mes "入学したい場合は、";
-		mes "プロンテラ、モロク、ゲフェン、";
-		mes "フェイヨン、アルベルタ、イズルード";
-		mes "にいるアカデミー関係者に";
-		mes "話しかけてくださいね。";
+		mes "[Academy Official]";
+		mes "If you want to enroll in the Adventurer Academy, please talk to the academy officials in Prontera, Morroc, Geffen, Payon, Alberta, or Izlude.";
 		close;
 	}
-	mes "[アカデミー関係者]";
-	mes "こんにちは。";
-	mes "冒険者アカデミーの生徒の方だね。";
+	mes "[Academy Official]";
+	mes "Hello." ;
+	mes "You must be a student of the Adventurer Academy." ;
 
 	//転送チェック
 	set '@warpflag,0;
@@ -595,13 +517,13 @@ alberta.gat,107,132,4	duplicate(アカデミー関係者#func)	アカデミー�
 		// クエ進行中で且つ、依頼人の居るマップでないと
 		// アカデミーへ移動させてくれない。
 		switch('@mapnumber){
-		case 6: //アルデバラン
+		case 6: //Aldebaran
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==0)||	//お世話になったあの人に
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==1)||	//お詫びの品を届けたい１
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==7)||	//お菓子お届け
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==8);	//お詫びの品を届けたい２
 			break;
-		case 7: //ジュノー
+		case 7: //Yuno
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==1)||	//お詫びの品を届けたい１
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==2)||	//お菓子の材料集め１
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==3)||	//お菓子の材料集め２
@@ -610,270 +532,234 @@ alberta.gat,107,132,4	duplicate(アカデミー関係者#func)	アカデミー�
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==6)||	//お菓子の材料集め５
 							(AC_QUEST_ST_2 && AC_QUEST_LV_2==7);	//お菓子お届け
 			break;
-		case 8: //ウンバラ
+		case 8: //Umbala
 			set '@warpflag, (AC_QUEST_ST_1 && AC_QUEST_LV_1==6);	//奇跡の箱７
 			break;
-		case 9: //コモド
+		case 9: //Comodo
 			set '@warpflag, (AC_QUEST_ST_0 && AC_QUEST_LV_0==5)||	//気になるあの子６
 							(AC_QUEST_ST_1 && AC_QUEST_LV_1==7);	//奇跡の箱８
 			break;
-		case 10: //フィゲル
+		case 10: //Hugel
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==8)||	//お詫びの品を届けたい２
 							(AC_QUEST_ST_3);						//実験のお手伝い(全エピソード)
 			break;
-		case 11: //ラヘル
+		case 11: //Rachel
 			set '@warpflag, (AC_QUEST_ST_0 && AC_QUEST_LV_0==8);	//気になるあの子９
 			break;
-		case 12: //リヒタルゼン
+		case 12: //Lighthalzen
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==2);	//お菓子の材料集め１
 			break;
-		case 13: //ベインス
+		case 13: //Veins
 			set '@warpflag, (AC_QUEST_ST_0 && AC_QUEST_LV_0==8);	//気になるあの子９
 			break;
-		case 14: //コンロン
+		case 14: //Gonryun
 			set '@warpflag, (AC_QUEST_ST_1 && AC_QUEST_LV_1==3);	//奇跡の箱４
 			break;
-		case 15: //龍之城
+		case 15: //Louyang
 			set '@warpflag, (AC_QUEST_ST_1 && AC_QUEST_LV_1==4);	//奇跡の箱５
 			break;
-		case 16: //アユタヤ
+		case 16: //Ayothaya
 			set '@warpflag, (AC_QUEST_ST_1 && AC_QUEST_LV_1==5);	//奇跡の箱６
 			break;
-		case 18: //アマツ
+		case 18: //Amatsu
 			set '@warpflag, (AC_QUEST_ST_1 && AC_QUEST_LV_1==2);	//奇跡の箱３
 			break;
-		case 19: //アインブロック
+		case 19: //Einbroch
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==3);	//お菓子の材料集め２
 			break;
-		case 21: //アインベフ
+		case 21: //Einbech
 			set '@warpflag, (AC_QUEST_ST_2 && AC_QUEST_LV_2==4);	//お菓子の材料集め３
 			break;
 		}
 	}
 	if('@warpflag){
-		mes "もう、ルーンの用事はすんだのかな？";
-		mes "用事がすんだのなら、";
-		mes "冒険者アカデミーに転送して";
-		mes "あげるよ。";
+		mes "Have you done your business with the runes yet?" ;
+		mes "If you're done with your business, I'll transfer you to the Adventurer's Academy." ;
 		next;
-		set '@sel, select("転送してもらう","周辺について知りたい","特に用は無い");
+		set '@sel, select("Transfer", "I want to know about the area", "Nevermind");
 	} else {
-		mes "何か僕に用があるのかな？";
+		mes "Is there something you want from me?" ;
 		next;
-		set '@sel, select("周辺について知りたい","特に用は無い")+1;
+		set '@sel, select("I want to know about the area", "Nothing in particular")+1;
 	}
 	switch('@sel){
 	case 1:
-		mes "[アカデミー関係者]";
-		mes "それではいくよ！";
+		mes "[Academy Official]";
+		mes "Then let's go!" ;
 		close2;
 		warp "ac_cl_area.gat",67,155;
 		end;
 	case 2:
-		mes "[アカデミー関係者]";
-		mes "このあたりのことについて";
-		mes "知りたいんだね。";
-		callfunc "ac_map_info", '@mapnumber, "だよ。";
+		mes "[Academy Official]";
+		mes "You want to know about this area." ;
+		callfunc "ac_map_info", '@mapnumber;
 		end;
 	default:
-		mes "[アカデミー関係者]";
-		mes "そうかい？";
-		mes "また、僕に用があれば";
-		mes "来てね。";
+		mes "[Academy Official]";
+		mes "Really?" ;
+		mes "Come back if you need me again." ;
 		close;
 	}
 OnInit:
 	setarray 'mapname$,"prontera.gat","izlude.gat","morocc.gat","alberta.gat","geffen.gat","payon.gat","aldebaran.gat","yuno.gat","umbala.gat","comodo.gat","hugel.gat","rachel.gat","lighthalzen.gat","veins.gat","gonryun.gat","louyang.gat","ayothaya.gat","moc_prybd1.gat","amatsu.gat","einbroch.gat","pay_arche.gat","einbech.gat";
-	if(strnpcinfo(2)!="func2") waitingroom "アカデミー関係者",0;
+	if(strnpcinfo(2)!="func2") waitingroom "Academy Official",0;
 }
-aldebaran.gat,134,114,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#ALD	883
-yuno.gat,142,176,4			duplicate(アカデミー関係者#func2)	アカデミー関係者#YNO	883
-umbala.gat,93,154,4			duplicate(アカデミー関係者#func2)	アカデミー関係者#UBR	883
-comodo.gat,172,165,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#CMD	883
-hugel.gat,93,155,4			duplicate(アカデミー関係者#func2)	アカデミー関係者#HGL	883
-rachel.gat,129,144,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#RCL	883
-lighthalzen.gat,219,161,4	duplicate(アカデミー関係者#func2)	アカデミー関係者#LTZ	883
-veins.gat,197,133,4			duplicate(アカデミー関係者#func2)	アカデミー関係者#VNS	883
-amatsu.gat,121,155,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#AMA	883
-gonryun.gat,174,134,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#GON	883
-louyang.gat,215,118,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#LOU	883
-ayothaya.gat,213,193,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#AYO	883
-einbroch.gat,223,182,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#EIN	883
-einbech.gat,171,137,4		duplicate(アカデミー関係者#func2)	アカデミー関係者#EIB	883
+aldebaran.gat,134,114,4		duplicate(Academy Official#func2)	Academy Official#ALD	883
+yuno.gat,142,176,4			duplicate(Academy Official#func2)	Academy Official#YNO	883
+umbala.gat,93,154,4			duplicate(Academy Official#func2)	Academy Official#UBR	883
+comodo.gat,172,165,4		duplicate(Academy Official#func2)	Academy Official#CMD	883
+hugel.gat,93,155,4			duplicate(Academy Official#func2)	Academy Official#HGL	883
+rachel.gat,129,144,4		duplicate(Academy Official#func2)	Academy Official#RCL	883
+lighthalzen.gat,219,161,4	duplicate(Academy Official#func2)	Academy Official#LTZ	883
+veins.gat,197,133,4			duplicate(Academy Official#func2)	Academy Official#VNS	883
+amatsu.gat,121,155,4		duplicate(Academy Official#func2)	Academy Official#AMA	883
+gonryun.gat,174,134,4		duplicate(Academy Official#func2)	Academy Official#GON	883
+louyang.gat,215,118,4		duplicate(Academy Official#func2)	Academy Official#LOU	883
+ayothaya.gat,213,193,4		duplicate(Academy Official#func2)	Academy Official#AYO	883
+einbroch.gat,223,182,4		duplicate(Academy Official#func2)	Academy Official#EIN	883
+einbech.gat,171,137,4		duplicate(Academy Official#func2)	Academy Official#EIB	883
 
 //----------------------------------
 // 一次転職サポート
 
--	script	アカデミーサポート#func	-1,{
+-	script	Academy Support#func	-1,{
 L_START:
 	set '@novice, callfunc("AC_GetNovice");
-	if     ("SWD"==strnpcinfo(2)) set '@job$,"ソードマン";
-	else if("MGI"==strnpcinfo(2)) set '@job$,"マジシャン";
-	//else if("ACO"==strnpcinfo(2)) set '@job$,"アコライト";
-	else if("ARC"==strnpcinfo(2)) set '@job$,"アーチャー";
-	else if("SHF"==strnpcinfo(2)) set '@job$,"シーフ";
-	//else if("MRC"==strnpcinfo(2)) set '@job$,"マーチャント";
-	else if("TKW"==strnpcinfo(2)) set '@job$,"テコンキッド";
-	else if("GUN"==strnpcinfo(2)) set '@job$,"ガンスリンガー";
-	else if("NIN"==strnpcinfo(2)) set '@job$,"忍者";
-	else if("SNV"==strnpcinfo(2)) set '@job$,"スーパーノービス";
+	if     ("SWD"==strnpcinfo(2)) set '@job$,"Swordsman";
+	else if("MGI"==strnpcinfo(2)) set '@job$,"Magician";
+	//else if("ACO"==strnpcinfo(2)) set '@job$,"Acolyte";
+	else if("ARC"==strnpcinfo(2)) set '@job$,"Archer";
+	else if("SHF"==strnpcinfo(2)) set '@job$,"Thief";
+	//else if("MRC"==strnpcinfo(2)) set '@job$,"Merchant";
+	else if("TKW"==strnpcinfo(2)) set '@job$,"Taekwon Kid";
+	else if("GUN"==strnpcinfo(2)) set '@job$,"Gunslinger";
+	else if("NIN"==strnpcinfo(2)) set '@job$,"Ninja";
+	else if("SNV"==strnpcinfo(2)) set '@job$,"Supernovice";
 	if('@job$==""){
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "僕は冒険者アカデミーの";
-		mes "新米冒険者担当で、";
-		mes "ここで駆け出しの冒険者が";
-		mes "転職するのに迷わないように";
-		mes "サポートしているんだよ。";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "I'm the new adventurers' representative at the Adventurer Academy, and I'm here to help fledgling adventurers get started in their new job." ;
 	}
 	else {
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "僕は冒険者アカデミーの";
-		mes "新米冒険者担当で、"+'@job$+"に";
-		mes "なろうとしている冒険者と";
-		mes '@job$+"になりたての";
-		mes "冒険者をサポートしているんです。";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "I'm the new adventurer rep at the Adventurer Academy, and I support adventurers who are trying to become a "+'@job$+" and those who have just become a "+'@job$+"." ;
 	}
 	if(!'@novice){
 		next;
-		mes "[アカデミー関係者]";
-		mes "君はもう熟練冒険者だね。";
-		mes "僕のサポートは必要ないみたいだ。";
+		mes "[Academy Official]";
+		mes "You're a seasoned adventurer now." ;
+		mes "It seems you don't need my support." ;
 		close;
 	}
 	next;
-	menu "アカデミーに転送してもらう",L_WARP,"周辺について知りたい",L_WHERE,"職業の書が欲しい",L_GIVEBOOK,"なんでもない",L_CANCEL;
+	menu "I want to transfer to the academy.",L_WARP, "I want to know about the area.",L_WHERE, "I want a job skill book.",L_GIVEBOOK, "Nothing.",L_CANCEL;
 L_WARP:
-	mes "[アカデミー関係者]";
-	mes "転送するよ。";
+	mes "[Academy Official]";
+	mes "I'll transfer you." ;
 	close2;
 	warp "ac_cl_room.gat",44,59; end;
 L_WHERE:
 	set '@gatname$,getmapname("");
 	for(set '@i,0; 'mapname$['@i]!='@gatname$; set '@i,'@i+1){}
 	set '@mapnumber,'@i;
-	mes "このあたりのことについて";
-	mes "知りたいんですね。";
-	callfunc "ac_map_info", '@mapnumber, "です。";
+	mes "So you want to know about this area." ;
+	callfunc "ac_map_info", '@mapnumber;
 	end;
 L_GIVEBOOK:
-	mes "[アカデミー関係者]";
-	mes "職業の書だね。";
-	mes "はい、どうぞ。";
-	mes "必要になったら";
-	mes "いつでも言ってね。";
+	mes "[Academy Official]";
+	mes "It's a book of professions." ;
+	mes "Yes, here you go. Whenever you need it, just let me know." ;
 	if(checkweight(11055,1)) {
 		switch(Job){
-			case Job_Swordman:    getitem 11025,1; break; //ソードマンの書
-			case Job_Thief:       getitem 11028,1; break; //シーフの書
-			case Job_Archer:      getitem 11031,1; break; //アーチャーの書
-			case Job_Acolyte:     getitem 11034,1; break; //アコライトの書
-			case Job_Magician:    getitem 11037,1; break; //マジシャンの書
-			case Job_Merchant:    getitem 11040,1; break; //マーチャントの書
-			case Job_TaeKwon:     getitem 11043,1; break; //テコンキッドの書
-			case Job_Ninja:       getitem 11046,1; break; //忍者の書
-			case Job_Gunslinger:  getitem 11049,1; break; //ガンスリンガーの書
-			case Job_SuperNovice: getitem 11052,1; break; //スーパーノービスの書
+			case Job_Swordman:    getitem 11025,1; break; //Swordsmanの書
+			case Job_Thief:       getitem 11028,1; break; //Thiefの書
+			case Job_Archer:      getitem 11031,1; break; //Archerの書
+			case Job_Acolyte:     getitem 11034,1; break; //Acolyteの書
+			case Job_Magician:    getitem 11037,1; break; //Magicianの書
+			case Job_Merchant:    getitem 11040,1; break; //Merchantの書
+			case Job_TaeKwon:     getitem 11043,1; break; //Taekwon Kidの書
+			case Job_Ninja:       getitem 11046,1; break; //Ninjaの書
+			case Job_Gunslinger:  getitem 11049,1; break; //Gunslingerの書
+			case Job_SuperNovice: getitem 11052,1; break; //Supernoviceの書
 			default: getitem 11055,1;
 		}
 		close;
 	}
 	next;
-	mes "[アカデミー関係者]";
-	mes "……";
-	mes "おや、君の荷物がいっぱいで";
-	mes "職業の書を渡せないよ。";
-	mes "荷物の種類数を減らしてから";
-	mes "また話しかけてね。";
+	mes "[Academy Official]";
+	mes "......";
+	mes "Oh, I can't give you the Book of Occupations because your bags are so full." ;
+	mes "Please talk to me again after you reduce your baggage." ;
 	close;
 L_CANCEL:
-	mes "[アカデミー関係者]";
-	mes "そっか。";
-	mes "いつでも、声をかけてくれれば、";
-	mes "すぐに送ってあげるよ。";
+	mes "[Academy Official]";
+	mes "I see." ;
+	mes "Whenever you're ready, just give me a shout and I'll send you on your way." ;
 	close;
 OnTouch:
 	if(AC_JOBCHANGE){
 		set AC_JOBCHANGE,0;
 		if(!callfunc("AC_GetNovice")) end;
-		mes "[アカデミー関係者]";
-		mes "こんにちは。";
-		mes "僕は冒険者アカデミーの";
-		mes "新米冒険者担当で、";
-		mes "ここで駆け出しの冒険者が";
-		mes "転職するのに迷わないように";
-		mes "サポートしているんだよ。";
+		mes "[Academy Official]";
+		mes "Hello." ;
+		mes "I'm the new adventurers' representative at the Adventurer Academy, and I'm here to help fledgling adventurers get started in their new job." ;
 		next;
 		if(BaseLevel<=55 && Job==Job_Novice && Upper!=1){
-			mes "[アカデミー関係者]";
-			mes "あれ？";
-			mes "転職できなかったようだね。";
-			mes "　";
-			mes "1次職へ転職するには";
-			mes "^0000FF「基本スキル」のレベルを9　^000000に";
-			mes "する必要があるよ。";
+			mes "[Academy Official]";
+			mes "Huh?" ;
+			mes "I guess you didn't get your new job." ;
+			mes " ";
+			mes "You need to change your ^0000FF "Basic Skill" level to 9 ^000000 if you want to change to the first job." ;
 			emotion 0;
 			next;
-			mes "[アカデミー関係者]";
-			mes "転職してくるかい？";
-			mes "それとも、冒険者アカデミーへ";
-			mes "戻るかい？";
+			mes "[Academy Official]";
+			mes "Would you like to go get a new job?" ;
+			mes "Or do you want to go back to the Adventurer's Academy?" ;
 			next;
-			if(select("1次職へ転職してくる","アカデミーに戻る")==2){
-				mes "[アカデミー関係者]";
-				mes "それじゃ、冒険者アカデミーに";
-				mes "転送するよ。";
+			if(select("I'm going to change to the first job", "Return to the academy")==2){
+				mes "[Academy Official]";
+				mes "Then I'll transfer you to the Adventurer's Academy." ;
 				close2;
 				warp "ac_cl_room",44,59;
 				end;
 			}
 		} else {
-			mes "[アカデミー関係者]";
-			mes "君のことはエーラから";
-			mes "聞いたよ。";
-			mes "無事、転職できた";
-			mes "ようだね。";
-			mes "おめでとう！";
+			mes "[Academy Official]";
+			mes "I heard about you from Ella." ;
+			mes "I see you have successfully changed jobs." ;
+			mes "Congratulations!" ;
 			emotion 46;
 			next;
-			mes "[アカデミー関係者]";
-			mes "冒険者アカデミーは";
-			mes "駆け出しの冒険者が";
-			mes "成長するには良い所だよ。";
-			mes "　";
-			mes "すぐ冒険者アカデミーに";
-			mes "戻るかい？";
+			mes "[Academy Official]";
+			mes "The Adventurer Academy is a good place for fledgling adventurers to grow." ;
+			mes " ";
+			mes "Would you like to go back to the Adventurers Academy soon?" ;
 			next;
-			if(select("アカデミーに戻る","アカデミーに戻らない")==1){
-				mes "[アカデミー関係者]";
-				mes "それじゃ、";
-				mes "冒険者アカデミーへ";
-				mes "転送するよ。";
+			if(select("Return to Academy", "Do not return to Academy")==1){
+				mes "[Academy Official]";
+				mes "Then I'll transfer you to the Adventurers Academy." ;
 				close2;
 				warp "ac_cl_room",44,59;
 				end;
 			}
 		}
-		mes "[アカデミー関係者]";
-		mes "いつでも";
-		mes "冒険者アカデミーまで";
-		mes "送るから、転職したら、";
-		mes "また来てね。";
+		mes "[Academy Official]";
+		mes "I'll send you to the Adventurer's Academy anytime, so when you change jobs, come back and see me." ;
 		close;
 	}
 	end;
 OnInit:
 	setarray 'mapname$,"prontera.gat","izlude.gat","morocc.gat","alberta.gat","geffen.gat","payon.gat","aldebaran.gat","yuno.gat","umbala.gat","comodo.gat","hugel.gat","rachel.gat","lighthalzen.gat","veins.gat","gonryun.gat","louyang.gat","ayothaya.gat","moc_prybd1.gat","einbroch.gat","amatsu.gat","pay_arche.gat";
-	if(strnpcinfo(2)!="func") waitingroom "一次転職サポート",0;
+	if(strnpcinfo(2)!="func") waitingroom "First Job Change Support",0;
 }
-izlude.gat,56,139,4			duplicate(アカデミーサポート#func)	アカデミーサポート#SWD	750,5,5
-geffen.gat,65,170,4			duplicate(アカデミーサポート#func)	アカデミーサポート#MGI	750,5,7
-prontera.gat,238,313,4		duplicate(アカデミーサポート#func)	アカデミーサポート#ACO	750,5,5
-pay_arche.gat,141,165,4		duplicate(アカデミーサポート#func)	アカデミーサポート#ARC	750,5,5
-moc_prydb1.gat,52,132,4		duplicate(アカデミーサポート#func)	アカデミーサポート#SHF	750
-alberta.gat,46,46,4			duplicate(アカデミーサポート#func)	アカデミーサポート#MRC	750,5,5
-payon.gat,161,135,4			duplicate(アカデミーサポート#func)	アカデミーサポート#TKW	750
-einbroch.gat,131,196,4		duplicate(アカデミーサポート#func)	アカデミーサポート#GUN	750,5,5
-amatsu.gat,151,139,4		duplicate(アカデミーサポート#func)	アカデミーサポート#NIN	750,5,5
-aldebaran.gat,108,70,4		duplicate(アカデミーサポート#func)	アカデミーサポート#SNV	750,5,5
+izlude.gat,56,139,4			duplicate(Academy Support#func)	Academy Support#SWD	750,5,5
+geffen.gat,65,170,4			duplicate(Academy Support#func)	Academy Support#MGI	750,5,7
+prontera.gat,238,313,4		duplicate(Academy Support#func)	Academy Support#ACO	750,5,5
+pay_arche.gat,141,165,4		duplicate(Academy Support#func)	Academy Support#ARC	750,5,5
+moc_prydb1.gat,52,132,4		duplicate(Academy Support#func)	Academy Support#SHF	750
+alberta.gat,46,46,4			duplicate(Academy Support#func)	Academy Support#MRC	750,5,5
+payon.gat,161,135,4			duplicate(Academy Support#func)	Academy Support#TKW	750
+einbroch.gat,131,196,4		duplicate(Academy Support#func)	Academy Support#GUN	750,5,5
+amatsu.gat,151,139,4		duplicate(Academy Support#func)	Academy Support#NIN	750,5,5
+aldebaran.gat,108,70,4		duplicate(Academy Support#func)	Academy Support#SNV	750,5,5

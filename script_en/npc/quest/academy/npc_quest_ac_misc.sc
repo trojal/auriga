@@ -7,61 +7,61 @@
 //---------------------------------------------
 // SHOP
 
--	shop	消耗品販売員::ac_shop1	-1,519,517,501,506,502,504,611,601,525,645,656,610
--	shop	道具販売員::ac_shop2	-1,1750,1770,1751,717
--	shop	ゼン::ac_shop3	-1,1351,1354,1116,1151,1154,1451,1454,1457
--	shop	エーイ::ac_shop4	-1,1204,1207,1210,1213,1216,1101,1104,1107,1110,1113,1122,1601,1604,1607,1501,1504,1507,1510,1519,1301,1401,1404,1407
--	shop	コウ::ac_shop5	-1,1701,1704,1707,1710,13150,13151,13102,13154,13155
--	shop	モーリ::ac_shop6	-1,2303,2305,2328,2323,2332,2307,2309,2312,2501,2503,2505,2101,2103,2401,2403,2405,2608,2627
--	shop	シャーレ::ac_shop7	-1,2211,2208,2220,2222,2232,2216,2226,2206,2228,2230,2212,2205,2203,2201,2239,2243,2242,2218,2241
+-	shop	Tool Dealer::ac_shop1	-1,519,517,501,506,502,504,611,601,525,645,656,610
+-	shop	Merchant::ac_shop2	-1,1750,1770,1751,717
+-	shop	Zen::ac_shop3	-1,1351,1354,1116,1151,1154,1451,1454,1457
+-	shop	Ay::ac_shop4	-1,1204,1207,1210,1213,1216,1101,1104,1107,1110,1113,1122,1601,1604,1607,1501,1504,1507,1510,1519,1301,1401,1404,1407
+-	shop	Ko::ac_shop5	-1,1701,1704,1707,1710,13150,13151,13102,13154,13155
+-	shop	Mori::ac_shop6	-1,2303,2305,2328,2323,2332,2307,2309,2312,2501,2503,2505,2101,2103,2401,2403,2405,2608,2627
+-	shop	Shuri::ac_shop7	-1,2211,2208,2220,2222,2232,2216,2226,2206,2228,2230,2212,2205,2203,2201,2239,2243,2242,2218,2241
 
-ac_cl_hall.gat,155,35,4	script	消耗品販売員#ac	93,{/* 52611 */
+ac_cl_hall.gat,155,35,4	script	Tool Dealer#ac	93,{/* 52611 */
 	callshop "ac_shop1";
 	end;
 OnInit:
-	waitingroom "消耗品 販売中", 0;
+	waitingroom "Consumables for sale", 0;
 	end;
 }
-ac_cl_hall.gat,152,29,4	script	道具販売員#ac	82,{/* 52612 */
+ac_cl_hall.gat,152,29,4	script	Merchant#ac	82,{/* 52612 */
 	callshop "ac_shop2";
 	end;
 OnInit:
-	waitingroom "矢・ブルージェム 販売中", 0;
+	waitingroom "Arrows and Blue Gems for sale", 0;
 	end;
 }
-ac_cl_hall.gat,178,43,4	script	ゼン#ac	752,{/* 52615 */
+ac_cl_hall.gat,178,43,4	script	Zen#ac	752,{/* 52615 */
 	callshop "ac_shop3";
 	end;
 OnInit:
-	waitingroom "両手武器 販売中", 0;
+	waitingroom "Two-handed Weapons for sale", 0;
 	end;
 }
-ac_cl_hall.gat,182,39,3	script	エーイ#ac	815,{/* 52616 */
+ac_cl_hall.gat,182,39,3	script	Ay#ac	815,{/* 52616 */
 	callshop "ac_shop4";
 	end;
 OnInit:
-	waitingroom "片手武器 販売中", 0;
+	waitingroom "One-handed Weapons for sale", 0;
 	end;
 }
-ac_cl_hall.gat,183,44,4	script	コウ#ac	732,{/* 52617 */
+ac_cl_hall.gat,183,44,4	script	Ko#ac	732,{/* 52617 */
 	callshop "ac_shop5";
 	end;
 OnInit:
-	waitingroom "弓・銃 販売中", 0;
+	waitingroom "Bows and Guns for sale", 0;
 	end;
 }
-ac_cl_hall.gat,181,35,4	script	モーリ#ac	52,{/* 52618 */
+ac_cl_hall.gat,181,35,4	script	Mori#ac	52,{/* 52618 */
 	callshop "ac_shop6";
 	end;
 OnInit:
-	waitingroom "防具 販売中", 0;
+	waitingroom "Armor for sale", 0;
 	end;
 }
-ac_cl_hall.gat,179,31,4	script	シャーレ#ac	731,{/* 52619 */
+ac_cl_hall.gat,179,31,4	script	Shuri#ac	731,{/* 52619 */
 	callshop "ac_shop7";
 	end;
 OnInit:
-	waitingroom "頭装備 販売中", 0;
+	waitingroom "Headwear for sale", 0;
 	end;
 }
 
@@ -109,17 +109,17 @@ function	script	AC_NoviceInfo	{
 		mes "‐地図に^FF0000＋^000000で場所が記載してある‐";
 		close;
 	}
-	mes "[インフォメーション]";
+	mes "[Information]";
 	mes "‐いよいよ壮大な冒険の始まりです！";
 	mes "まずは冒険者が集まる";
 	mes "冒険者アカデミーへ行ってみましょう‐";
 	mes "‐新しい仲間がきっと見つかりますよ！";
 	next;
-	mes "[インフォメーション]";
+	mes "[Information]";
 	mes getarg(0);
 	next;
 	viewpoint 1, getarg(1), getarg(2), 100, 0xFF0000;
-	mes "[インフォメーション]";
+	mes "[Information]";
 	mes "‐冒険者アカデミーは";
 	mes "画面右上のミニマップに";
 	mes "表示されている^FF0000＋^000000の場所へ";
@@ -132,23 +132,23 @@ function	script	AC_NoviceInfo	{
 
 prontera.gat,146,51,0	script	#GT_07	139,5,5,{
 OnTouch:
-	callfunc "AC_NoviceInfo","‐ここは首都^0000FFプロンテラ^000000‐",153,192;
+	callfunc "AC_NoviceInfo","‐ここは首都^0000FFProntera^000000‐",153,192;
 }
 geffen.gat,120,79,0	script	#GT_02	139,5,5,{
 OnTouch:
-	callfunc "AC_NoviceInfo","‐ここは魔法都市^0000FFゲフェン^000000‐",116,109;
+	callfunc "AC_NoviceInfo","‐ここは魔法都市^0000FFGeffen^000000‐",116,109;
 }
 morocc.gat,156,94,0	script	#GT_03	139,5,5,{
 OnTouch:
-	callfunc "AC_NoviceInfo","‐ここは砂漠の都市^0000FFモロク^000000‐",147,101;
+	callfunc "AC_NoviceInfo","‐ここは砂漠の都市^0000FFMorroc^000000‐",147,101;
 }
 payon.gat,166,67,0	script	#GT_04	139,5,5,{
 OnTouch:
-	callfunc "AC_NoviceInfo","‐ここは山岳都市^0000FFフェイヨン^000000‐",159,205;
+	callfunc "AC_NoviceInfo","‐ここは山岳都市^0000FFPayon^000000‐",159,205;
 }
 alberta.gat,114,58,0	script	#GT_05	139,5,5,{
 OnTouch:
-	callfunc "AC_NoviceInfo","‐ここは港街^0000FFアルベルタ^000000‐",107,132;
+	callfunc "AC_NoviceInfo","‐ここは港街^0000FFAlberta^000000‐",107,132;
 }
 
 //prontera.gat,279,356,0	script	#GT_01	139,{/* 52656 */}
@@ -156,15 +156,15 @@ OnTouch:
 //----------------------------------
 // 教室棟ホール
 
-ac_cl_hall.gat,159,31,4	script	忍者用具販売員#ac	49,{
-	mes "[忍者用具販売員]";
+ac_cl_hall.gat,159,31,4	script	Ninja用具販売員#ac	49,{
+	mes "[Ninja用具販売員]";
 	mes "やぁ、こんにちは。";
-	mes "ここでは、忍者用品を";
+	mes "ここでは、Ninja用品を";
 	mes "販売しているよ。";
 	if (BaseLevel<=55 && Job==Job_Ninja) {
 		while(1) {
 			next;
-			mes "[忍者用具販売員]";
+			mes "[Ninja用具販売員]";
 			mes "どの品物が欲しいんだい？";
 			next;
 			switch(select(  "手裏剣",
@@ -184,42 +184,42 @@ ac_cl_hall.gat,159,31,4	script	忍者用具販売員#ac	49,{
 			case 6: set '@itemid,7523; set '@price,150;  break;
 			case 7: set '@itemid,7524; set '@price,300;  break;
 			case 8:
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "手甲は1つ、10000Zenyだ。";
 				mes "買うのかい？";
 				next;
 				if(select("買わない","買う")==1) {
-					mes "[忍者用具販売員]";
+					mes "[Ninja用具販売員]";
 					mes "おや？";
 					mes "手甲は必要ないのかな？";
 					continue;
 				}
 				if(Zeny < 10000) {
-					mes "[忍者用具販売員]";
+					mes "[Ninja用具販売員]";
 					mes "どうやら";
 					mes "お金が足りないみたいだよ？";
 					continue;
 				}
 				if(checkweight(2117,1)==0) {
-					mes "[忍者用具販売員]";
+					mes "[Ninja用具販売員]";
 					mes "どうやら";
 					mes "そんなにもてないみたいだよ？";
 					continue;
 				}
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "はい、どうぞ。";
 				mes "約束の商品だよ。";
 				set Zeny,Zeny-10000;
 				getitem 2117,1;
 				continue;
 			default:
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "そうか。";
 				mes "また、何か必要になったら";
 				mes "おいでよ。";
 				close;
 			}
-			mes "[忍者用具販売員]";
+			mes "[Ninja用具販売員]";
 			mes getitemname('@itemid)+ "は1つ、" +'@price+ "Zenyだ。";
 			mes "どのくらい欲しいんだい？";
 			mes "1～1000の間で、欲しい数を";
@@ -229,30 +229,30 @@ ac_cl_hall.gat,159,31,4	script	忍者用具販売員#ac	49,{
 			next;
 			input '@num;
 			if('@num < 0 || '@num > 1000) {
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "一度に購入出来るのは";
 				mes "1000個までだよ。";
 				continue;
 			}
 			if('@num == 0) {
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "おや？";
 				mes getitemname('@itemid)+ "は必要ないのかな？";
 				continue;
 			}
 			if(Zeny < '@price*'@num) {
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "どうやら";
 				mes "お金が足りないみたいだよ？";
 				continue;
 			}
 			if(checkweight('@itemid,'@num)==0) {
-				mes "[忍者用具販売員]";
+				mes "[Ninja用具販売員]";
 				mes "どうやら";
 				mes "そんなにもてないみたいだよ？";
 				continue;
 			}
-			mes "[忍者用具販売員]";
+			mes "[Ninja用具販売員]";
 			mes "はい、どうぞ。";
 			mes "約束の商品だよ。";
 			set Zeny,Zeny-'@price*'@num;
@@ -263,19 +263,19 @@ ac_cl_hall.gat,159,31,4	script	忍者用具販売員#ac	49,{
 		next;
 		set '@novice, callfunc("AC_GetNovice");
 		if ('@novice) {
-			mes "[忍者用具販売員]";
+			mes "[Ninja用具販売員]";
 			mes "申し訳ないけど、";
-			mes "忍者以外には";
-			mes "忍者用品を";
+			mes "Ninja以外には";
+			mes "Ninja用品を";
 			mes "売ることは出来ないんだ。";
 			mes "遠くから運んできていて、";
 			mes "在庫が少ないんだよ。";
 			close;
 		} else {
-			mes "[忍者用具販売員]";
+			mes "[Ninja用具販売員]";
 			mes "申し訳ないけど、";
 			mes "熟練の冒険者には";
-			mes "忍者用品を";
+			mes "Ninja用品を";
 			mes "売ることは出来ないんだ。";
 			mes "駆け出しの冒険者に";
 			mes "渡すものがないと困るからね。";
@@ -284,7 +284,7 @@ ac_cl_hall.gat,159,31,4	script	忍者用具販売員#ac	49,{
 	}
 	end;
 OnInit:
-	waitingroom "忍者用具 販売中", 0;
+	waitingroom "Ninja用具 販売中", 0;
 	end;
 }
 
@@ -365,7 +365,7 @@ ac_cl_hall.gat,158,34,4	script	銃弾販売員#ac	85,{
 		if ('@novice) {
 			mes "[銃弾販売員]";
 			mes "申し訳ないけど、";
-			mes "ガンスリンガー以外には";
+			mes "Gunslinger以外には";
 			mes "弾丸を売ることは出来ないんだ。";
 			close;
 		} else {
@@ -657,17 +657,17 @@ L_TODO:
 	mes "記念に^FF0000アカデミーバッジ[0]^000000を";
 	mes "君にプレゼントするよ！";
 	next;
-	mes "[インフォメーション]";
+	mes "[Information]";
 	mes "アカデミーバッジ[0]の";
 	mes "効果を確認しますか？";
 	next;
 	if(select("はい","いいえ")==1){
-		mes "[インフォメーション]";
+		mes "[Information]";
 		mes "‐アカデミーバッジ[0]‐";
 		mes "第1過程修了でもらえる";
 		mes "アカデミーのバッジ。";
 		next;
-		mes "[インフォメーション]";
+		mes "[Information]";
 		mes "‐アカデミーバッジ[0]‐";
 		mes "バッジの形には";
 		mes "一人前の冒険者が";
@@ -675,7 +675,7 @@ L_TODO:
 		mes "巣立っていけるようにと";
 		mes "祈りが込められている。";
 		next;
-		mes "[インフォメーション]";
+		mes "[Information]";
 		mes "‐アカデミーバッジ[0]‐";
 		mes "BaseLv79以下の時、";
 		mes "MaxHP + 400";
@@ -683,12 +683,12 @@ L_TODO:
 		mes "系列 : ^777777アクセサリー^000000";
 		mes "防御 : ^7777770^000000";
 		next;
-		mes "[インフォメーション]";
+		mes "[Information]";
 		mes "‐アカデミーバッジ[0]‐";
 		mes "重量 : ^77777710^000000";
 		mes "装備 : ^777777全ての職業^000000";
 		mes "@next";
-		mes "[インフォメーション]";
+		mes "[Information]";
 		mes "‐もう一度ミッドの話を";
 		mes "聞きますか？‐";
 		next;
@@ -938,16 +938,16 @@ L_GIVEBOOK:
 	}
 	if(checkweight(11055,1)) {
 		switch(Job){
-			case Job_Swordman:    getitem 11025,1; break; //ソードマンの書
-			case Job_Thief:       getitem 11028,1; break; //シーフの書
-			case Job_Archer:      getitem 11031,1; break; //アーチャーの書
-			case Job_Acolyte:     getitem 11034,1; break; //アコライトの書
-			case Job_Magician:    getitem 11037,1; break; //マジシャンの書
-			case Job_Merchant:    getitem 11040,1; break; //マーチャントの書
-			case Job_TaeKwon:     getitem 11043,1; break; //テコンキッドの書
-			case Job_Ninja:       getitem 11046,1; break; //忍者の書
-			case Job_Gunslinger:  getitem 11049,1; break; //ガンスリンガーの書
-			case Job_SuperNovice: getitem 11052,1; break; //スーパーノービスの書
+			case Job_Swordman:    getitem 11025,1; break; //Swordsmanの書
+			case Job_Thief:       getitem 11028,1; break; //Thiefの書
+			case Job_Archer:      getitem 11031,1; break; //Archerの書
+			case Job_Acolyte:     getitem 11034,1; break; //Acolyteの書
+			case Job_Magician:    getitem 11037,1; break; //Magicianの書
+			case Job_Merchant:    getitem 11040,1; break; //Merchantの書
+			case Job_TaeKwon:     getitem 11043,1; break; //Taekwon Kidの書
+			case Job_Ninja:       getitem 11046,1; break; //Ninjaの書
+			case Job_Gunslinger:  getitem 11049,1; break; //Gunslingerの書
+			case Job_SuperNovice: getitem 11052,1; break; //Supernoviceの書
 			default: getitem 11055,1;
 		}
 		mes "[ミッド]";
@@ -1021,7 +1021,7 @@ L_TALK:
 		next;
 		mes "[ミッド]";
 		mes "僕の場合は";
-		mes "アルデバランにいたサンタさんが";
+		mes "Aldebaranにいたサンタさんが";
 		mes "転送してくれたんだけど。";
 		mes "今もいるのかな？";
 		goto L_END;
@@ -1043,7 +1043,7 @@ L_TALK:
 		next;
 		mes "[ミッド]";
 		mes "死者の世界は本当にあるんだよ。";
-		mes "あれは確か、ウンバラで";
+		mes "あれは確か、Umbalaで";
 		mes "バンジージャンプに挑戦した時";
 		mes "だったかな……";
 		next;
@@ -1154,7 +1154,7 @@ ac_cl_area.gat,61,166,4	script	モッド#AC	704,{
 			mes "あれ？";
 			mes "カートは商人と";
 			mes "その上位職、もしくは";
-			mes "スーパーノービスでないと";
+			mes "Supernoviceでないと";
 			mes "利用できませんよ。";
 			close;
 		}
@@ -1166,7 +1166,7 @@ ac_cl_area.gat,61,166,4	script	モッド#AC	704,{
 	case 2:
 		mes "[モッド]";
 		mes "カートは商人とその上位職、";
-		mes "それとスーパーノービスが";
+		mes "それとSupernoviceが";
 		mes "利用できるんです。";
 		mes "「プッシュカート」スキルを";
 		mes "習得しないと利用することは";
@@ -1228,12 +1228,12 @@ ac_cl_area.gat,57,173,2	script	タール#AC	931,{
 		}
 		set '@rank,(AC_RANK < 5 ? AC_RANK : 5);
 		set '@num, select(
-			"プロンテラ -> " +(AC_SAVE_MAP!=0 ? 'mapprice[    '@rank] : 0)+ "z",
-			"イズルード -> " +(AC_SAVE_MAP!=1 ? 'mapprice[1*6+'@rank] : 0)+ "z",
-			"モロク -> "     +(AC_SAVE_MAP!=2 ? 'mapprice[2*6+'@rank] : 0)+ "z",
-			"アルベルタ -> " +(AC_SAVE_MAP!=3 ? 'mapprice[3*6+'@rank] : 0)+ "z",
-			"ゲフェン -> "   +(AC_SAVE_MAP!=4 ? 'mapprice[4*6+'@rank] : 0)+ "z",
-			"フェイヨン -> " +(AC_SAVE_MAP!=5 ? 'mapprice[5*6+'@rank] : 0)+ "z",
+			"Prontera -> " +(AC_SAVE_MAP!=0 ? 'mapprice[    '@rank] : 0)+ "z",
+			"Izlude -> " +(AC_SAVE_MAP!=1 ? 'mapprice[1*6+'@rank] : 0)+ "z",
+			"Morroc -> "     +(AC_SAVE_MAP!=2 ? 'mapprice[2*6+'@rank] : 0)+ "z",
+			"Alberta -> " +(AC_SAVE_MAP!=3 ? 'mapprice[3*6+'@rank] : 0)+ "z",
+			"Geffen -> "   +(AC_SAVE_MAP!=4 ? 'mapprice[4*6+'@rank] : 0)+ "z",
+			"Payon -> " +(AC_SAVE_MAP!=5 ? 'mapprice[5*6+'@rank] : 0)+ "z",
 			"やっぱりやめる")-1;
 		if ('@num==6) goto L_CANCEL;
 		set '@price,(AC_SAVE_MAP!='@num ? 'mapprice['@num]['@rank] : 0);
@@ -1285,7 +1285,7 @@ L_NOVICE:
 	mes " ";
 	mes "どこに行きますか？";
 	next;
-	set '@num,select("プロンテラ -> 0z","イズルード -> 0z","モロク -> 0z","アルベルタ -> 0z","ゲフェン -> 0z","フェイヨン -> 0z","アインブロック -> 0z","アマツ -> 0z","アルデバラン -> 0z","やっぱりやめる")-1;
+	set '@num,select("Prontera -> 0z","Izlude -> 0z","Morroc -> 0z","Alberta -> 0z","Geffen -> 0z","Payon -> 0z","Einbroch -> 0z","Amatsu -> 0z","Aldebaran -> 0z","やっぱりやめる")-1;
 	if ('@num==9) goto L_CANCEL;
 	mes "[タール]";
 	mes "それじゃ、転送しますね。";
@@ -1331,7 +1331,7 @@ L_NOVICE:
 	//クエスト状態取得
 
 	set '@warplist,0; //マップ表示順が本鯖どおりになるように入れる
-	//プロンテラ
+	//Prontera
 	if( (AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==0)||	//気になるあの子１
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==1)||	//気になるあの子２
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==2)||	//気になるあの子３
@@ -1352,7 +1352,7 @@ L_NOVICE:
 		(AC_RANK==4 && AC_RANKTEST && AC_RANKTEST<98)){				//第5課程試験
 		set '@warplist[getarraysize('@warplist)],1;
 	}
-	//モロク
+	//Morroc
 	if( (AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==2)||	//気になるあの子３
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==4)||	//気になるあの子５
 		(AC_QUEST_ST_3 && AC_QUEST_ST_3<99 && AC_QUEST_LV_3==2)||	//実験のお手伝い２
@@ -1361,14 +1361,14 @@ L_NOVICE:
 		(AC_RANK==5 && AC_RANKTEST && AC_RANKTEST<98)){				//第6課程試験
 		set '@warplist[getarraysize('@warplist)],3;
 	}
-	//ゲフェン
+	//Geffen
 	if( (AC_QUEST_ST_3 && AC_QUEST_ST_3<99 && AC_QUEST_LV_3==0)||	//実験のお手伝い１
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==3)||	//気になるあの子４
 		(AC_QUEST_ST_4 && AC_QUEST_ST_4<99)||						//冒険者になりたい(全エピソード)
 		(AC_RANK==5 && AC_RANKTEST && AC_RANKTEST<98)){				//第6課程試験
 		set '@warplist[getarraysize('@warplist)],5;
 	}
-	//フェイヨン
+	//Payon
 	if( (AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==4)||	//気になるあの子５
 		(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==1)||	//奇跡の箱２
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==8)||	//お詫びの品を届けたい２
@@ -1379,12 +1379,12 @@ L_NOVICE:
 		(AC_RANK==6 && AC_RANKTEST && AC_RANKTEST<98)){			//第7課程試験
 		set '@warplist[getarraysize('@warplist)],6;
 	}
-	//アルベルタ
+	//Alberta
 	if( (AC_QUEST_ST_1 && AC_QUEST_ST_1<99) ||						//奇跡の箱(全エピソード)
 		(AC_RANK==0 && AC_RANKTEST && AC_RANKTEST<98)){				//第1課程試験
 		set '@warplist[getarraysize('@warplist)],4;
 	}
-	//イズルード
+	//Izlude
 	if( (AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==1)||	//気になるあの子２
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==7)||	//気になるあの子８
 		(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==8)||	//気になるあの子９
@@ -1394,14 +1394,14 @@ L_NOVICE:
 		(AC_QUEST_ST_3 && AC_QUEST_ST_3<99 && AC_QUEST_LV_3==7)){	//ダンジョン救出４
 		set '@warplist[getarraysize('@warplist)],2;
 	}
-	//アルデバラン
+	//Aldebaran
 	if( (AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==0)||	//お世話になったあの人に
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==1)||	//お詫びの品を届けたい１
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==7)||	//お菓子お届け
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==8)){	//お詫びの品を届けたい２
 		set '@warplist[getarraysize('@warplist)],7;
 	}
-	//ジュノー
+	//Yuno
 	if( (AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==1)||	//お詫びの品を届けたい１
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==2)||	//お菓子の材料集め１
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==3)||	//お菓子の材料集め２
@@ -1411,53 +1411,53 @@ L_NOVICE:
 		(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==7)){	//お菓子お届け
 		set '@warplist[getarraysize('@warplist)],8;
 	}
-	//コモド
+	//Comodo
 	if( (AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==5)||	//気になるあの子６
 		(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==7)){	//奇跡の箱８
 		set '@warplist[getarraysize('@warplist)],10;
 	}
-	//ラヘル
+	//Rachel
 	if(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==8){		//気になるあの子９
 		set '@warplist[getarraysize('@warplist)],12;
 	}
-	//ベインス
+	//Veins
 	if(AC_QUEST_ST_0 && AC_QUEST_ST_0<99 && AC_QUEST_LV_0==8){		//気になるあの子９
 		set '@warplist[getarraysize('@warplist)],14;
 	}
-	//アインブロック
+	//Einbroch
 	if(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==3){		//お菓子の材料集め２
 		set '@warplist[getarraysize('@warplist)],19;
 	}
-	//アインベフ
+	//Einbech
 	if(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==4){		//お菓子の材料集め３
 		set '@warplist[getarraysize('@warplist)],20;
 	}
-	//フィゲル
+	//Hugel
 	if( (AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==8)||	//お詫びの品を届けたい２
 		(AC_QUEST_ST_3 && AC_QUEST_ST_3<99)){						//実験のお手伝い(全エピソード)
 		set '@warplist[getarraysize('@warplist)],11;
 	}
-	//リヒタルゼン
+	//Lighthalzen
 	if(AC_QUEST_ST_2 && AC_QUEST_ST_2<99 && AC_QUEST_LV_2==2){		//お菓子の材料集め１
 		set '@warplist[getarraysize('@warplist)],13;
 	}
-	//アマツ
+	//Amatsu
 	if(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==2){		//奇跡の箱３
 		set '@warplist[getarraysize('@warplist)],18;
 	}
-	//コンロン
+	//Gonryun
 	if(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==3){		//奇跡の箱４
 		set '@warplist[getarraysize('@warplist)],15;
 	}
-	//龍之城
+	//Louyang
 	if(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==4){		//奇跡の箱５
 		set '@warplist[getarraysize('@warplist)],16;
 	}
-	//アユタヤ
+	//Ayothaya
 	if(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==5){		//奇跡の箱６
 		set '@warplist[getarraysize('@warplist)],17;
 	}
-	//ウンバラ
+	//Umbala
 	if(AC_QUEST_ST_1 && AC_QUEST_ST_1<99 && AC_QUEST_LV_1==6){		//奇跡の箱７
 		set '@warplist[getarraysize('@warplist)],9;
 	}
@@ -1524,7 +1524,7 @@ L_CANCEL:
 	close;
 OnInit:
 	setarray 'gatname$,"prontera.gat","izlude.gat","morocc.gat","alberta.gat","geffen.gat","payon.gat","aldebaran.gat","yuno.gat","umbala.gat","comodo.gat","hugel.gat","rachel.gat","lighthalzen.gat","veins.gat","gonryun.gat","louyang.gat","ayothaya.gat","amatsu.gat","einbroch.gat",  "einbech.gat";
-	setarray 'mapname$,"プロンテラ",  "イズルード","モロク",    "アルベルタ", "ゲフェン", "フェイヨン","アルデバラン", "ジュノー","ウンバラ",  "コモド",    "フィゲル", "ラヘル",    "リヒタルゼン",   "ベインス", "コンロン",   "龍之城",     "アユタヤ",    "アマツ",    "アインブロック","アインベフ";
+	setarray 'mapname$,"Prontera",  "Izlude","Morroc",    "Alberta", "Geffen", "Payon","Aldebaran", "Yuno","Umbala",  "Comodo",    "Hugel", "Rachel",    "Lighthalzen",   "Veins", "Gonryun",   "Louyang",     "Ayothaya",    "Amatsu",    "Einbroch","Einbech";
 	setarray 'map_xy,   147,190,      121,115,     147,93,      103,129,      110,103,    155,197,     138,110,        150,174,   100,154,     209,143,     90,146,     129,138,     214,156,          200,123,    160,120,      217,114,      216,175,       117,151,     217,188,         168,131;
 	waitingroom "お手伝い中",0;
 	end;
@@ -1714,7 +1714,7 @@ L_TENSOU:
 	}
 	end;
 OnInit:
-	setarray 'MAPNAME$,"プロンテラ地下水路 B2F","プロンテラフィールド 07","フェイヨン迷いの森 02","フェイヨン地下洞窟 B1F","フェイヨン迷いの森 09","イズルード海底洞窟 1層","ゲフェンフィールド 03","フェイヨン地下洞窟 B2F","ゲフェンフィールド 11","^8C008C消滅^000000","ゲフェンフィールド 12","ミョルニール山脈 05","ゲフェン地下ダンジョン B2F";
+	setarray 'MAPNAME$,"Prontera地下水路 B2F","Pronteraフィールド 07","Payon迷いの森 02","Payon地下洞窟 B1F","Payon迷いの森 09","Izlude海底洞窟 1層","Geffenフィールド 03","Payon地下洞窟 B2F","Geffenフィールド 11","^8C008C消滅^000000","Geffenフィールド 12","ミョルニール山脈 05","Geffen地下ダンジョン B2F";
 	setarray 'REQUIRE,1,1,1,1,2,2,3,4,4,0,5,6,7;
 }
 

@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 // ミニマップ表示(本鯖ではNPC名 「コンパス」)
 //
-// アカデミー関係者タイプ１でタッチするものはアカデミー関係者のOnTouch参照
+// Academy Officialタイプ１でタッチするものはAcademy OfficialのOnTouch参照
 // NPCが重なるとOnTouchが発生しない為、全てここに！
 //
 // *IDはviewpointで使用するID
@@ -110,7 +110,7 @@ prt_fild05.gat,367,205,0				script	AC_TSTVP5_02	139,1,1,{ //プロ西
 	if(AC_RANK==3 && AC_RANKTEST==2){ //第４課程
 		viewpoint 1,105,381,20,0xFFFF00;
 		mes "[" + strcharinfo(0) + "]";
-		mes "ガルドは^0000FFプロンテラ^000000から^0000FFゲフェン^000000へ";
+		mes "ガルドは^0000FFProntera^000000から^0000FFGeffen^000000へ";
 		mes "歩くことって言ってたっけ。";
 		mes "途中で^FF0000ドラップ先生^000000にお弁当を";
 		mes "渡さなくちゃ。";
@@ -126,7 +126,7 @@ prt_fild05.gat,367,205,0				script	AC_TSTVP5_02	139,1,1,{ //プロ西
 prt_fild05.gat,357,205,0				script	AC_TSTVP5_02	139,7,7,{ //プロ西（ワープ前）
 	if(AC_RANK==6 && AC_RANKTEST==15){
 		mes "[" + strcharinfo(0) + "]";
-		mes "プロンテラが見える。";
+		mes "Pronteraが見える。";
 		mes "あと少しだ！";
 		close2;
 		set AC_RANKTEST,16;
@@ -138,7 +138,7 @@ pay_fild08.gat,20,74,0					script	AC_TSTVP6_02	139,1,1,{ //フェイ東
 		viewpoint 1,167,332,20,0xFFFF00;
 	}
 }
-gef_fild00.gat,46,199,0					script	AC_TSTVP6_04	139,1,1,{ //ゲフェン東
+gef_fild00.gat,46,199,0					script	AC_TSTVP6_04	139,1,1,{ //Geffen東
 	if(AC_RANK==5 && AC_RANKTEST>=3 && AC_RANKTEST!=99){ //第６課程
 		viewpoint 1,267,382,20,0xFFFF00;
 	}
@@ -148,7 +148,7 @@ mjolnir_06.gat,265,32,0					script	AC_TSTVP6_05	139,1,1,{ //ミョルニール�
 		viewpoint 1,226,183,20,0xFFFF00;
 	}
 }
-moc_fild12.gat,159,378,0				script	AC_TSTVP6_07	139,1,1,{ //モロク南
+moc_fild12.gat,159,378,0				script	AC_TSTVP6_07	139,1,1,{ //Morroc南
 	if(AC_RANK==5 && AC_RANKTEST>=4 && AC_RANKTEST!=99){ //第６課程
 		viewpoint 1,118,30,20,0xFFFF00;
 	}
@@ -202,7 +202,7 @@ moc_ruins.gat,156,42,0		script	AC_QUEVP00_04	139,1,1,{
 		viewpoint 1,54,161,13,0x00FF00; //ピラ入り口
 	}
 }
-comodo.gat,172,165,0		script	AC_QUEVP00_05	139,7,7,{ //コモド アカデミー関係者タイプ２
+comodo.gat,172,165,0		script	AC_QUEVP00_05	139,7,7,{ //Comodo Academy Officialタイプ２
 	if(AC_QUEST_ST_0==2 && AC_QUEST_LV_0==5){		//気になるあの子６
 		viewpoint 1,165,163,10,0x0000FF; //ノエリア
 	}
@@ -231,37 +231,37 @@ prt_fild03.gat,23,249,0		script	AC_QUEVP00_08	139,1,1,{
 		viewpoint 1,371,256,10,0x0000FF; //カピトーリナ修道院へ
 	}
 }
-rachel.gat,129,144,0		script	AC_QUEVP00_10	139,7,7,{	//ラヘル アカデミー関係者タイプ２
+rachel.gat,129,144,0		script	AC_QUEVP00_10	139,7,7,{	//Rachel Academy Officialタイプ２
 	if(AC_QUEST_ST_0==2 && AC_QUEST_LV_0==8){		//気になるあの子９
 		viewpoint 1,148,190,10,0x0000FF;
 	}
 }
-veins.gat,197,133,0			script	AC_QUEVP00_11	139,7,7,{	//ベインス アカデミー関係者タイプ２
+veins.gat,197,133,0			script	AC_QUEVP00_11	139,7,7,{	//Veins Academy Officialタイプ２
 	if(AC_QUEST_ST_0==3 && AC_QUEST_LV_0==8){		//気になるあの子９
 		viewpoint 1,148,329,10,0x0000FF;
 	}
 }
-amatsu.gat,121,155,0	script	#AC_QUEVP01_03	139,7,7,{	//アカデミー関係者タイプ２
+amatsu.gat,121,155,0	script	#AC_QUEVP01_03	139,7,7,{	//Academy Officialタイプ２
 	if(AC_QUEST_LV_1==2 && AC_QUEST_ST_1==2){ //奇跡の箱３
 		viewpoint 1,212,141,11,0xFF0000; //アーチボルド
 	}
 }
-gonryun.gat,174,134,0	script	#AC_QUEVP01_04	139,7,7,{	//アカデミー関係者タイプ２
+gonryun.gat,174,134,0	script	#AC_QUEVP01_04	139,7,7,{	//Academy Officialタイプ２
 	if(AC_QUEST_LV_1==3 && AC_QUEST_ST_1==2){ //奇跡の箱４
 		viewpoint 1,140,65,11,0xFF0000; //ゲイソン
 	}
 }
-louyang.gat,215,118,0	script	#AC_QUEVP01_05	139,7,7,{	//アカデミー関係者タイプ２
+louyang.gat,215,118,0	script	#AC_QUEVP01_05	139,7,7,{	//Academy Officialタイプ２
 	if(AC_QUEST_LV_1==4 && AC_QUEST_ST_1==2){ //奇跡の箱５
 		viewpoint 1,229,109,11,0xFF0000; //ドナテロ
 	}
 }
-ayothaya.gat,213,193,0	script	#AC_QUEVP01_06	139,7,7,{	//アカデミー関係者タイプ２
+ayothaya.gat,213,193,0	script	#AC_QUEVP01_06	139,7,7,{	//Academy Officialタイプ２
 	if(AC_QUEST_LV_1==5 && AC_QUEST_ST_1==2){ //奇跡の箱６
 		viewpoint 1,212,176,11,0xFF0000; //デューイ
 	}
 }
-umbala.gat,93,154,0		script	#AC_QUEVP01_07	139,7,7,{	//アカデミー関係者タイプ２
+umbala.gat,93,154,0		script	#AC_QUEVP01_07	139,7,7,{	//Academy Officialタイプ２
 	if(AC_QUEST_LV_1==6 && AC_QUEST_ST_1==2){ //奇跡の箱７
 		viewpoint 1,96,164,11,0xFF0000; //デニス
 	}
@@ -295,7 +295,7 @@ gef_fild09.gat,368,92,0		script	AC_QUEVP04_20	139,1,1,{
 		viewpoint 1,225,25,14,0x00FFFF;
 	}
 }
-aldebaran.gat,134,114,0		script	AC_QUEVP04_21	139,7,7,{ 	//アカデミー関係者タイプ２
+aldebaran.gat,134,114,0		script	AC_QUEVP04_21	139,7,7,{ 	//Academy Officialタイプ２
 	if( (AC_QUEST_LV_2==0 && AC_QUEST_ST_2==1) || // お世話になったあの人に１
 		(AC_QUEST_LV_2==1 && AC_QUEST_ST_2==1) || // お詫びの品を届けたい１
 		(AC_QUEST_LV_2==7 && AC_QUEST_ST_2==2) || // お菓子お届け
@@ -371,17 +371,17 @@ yuno.gat,142,176,0					script	AC_QUEVP02_05	139,7,7,{ //マッズイの家
 		viewpoint 1,95,182,12,0xFF9900;
 	}
 }
-lighthalzen.gat,219,161,0			script	AC_QUEVP02_06	139,7,7,{ //リヒ アカデミー関係者タイプ２
+lighthalzen.gat,219,161,0			script	AC_QUEVP02_06	139,7,7,{ //リヒ Academy Officialタイプ２
 	if(AC_QUEST_ST_2==2 && AC_QUEST_LV_2==2){ //お菓子の材料集め１
 		viewpoint 1,51,161,12,0xFF9900;  //木
 	}
 }
-einbroch.gat,223,182,0			script	AC_QUEVP02_07	139,7,7,{ //アインブロック アカデミー関係者タイプ２
+einbroch.gat,223,182,0			script	AC_QUEVP02_07	139,7,7,{ //Einbroch Academy Officialタイプ２
 	if(AC_QUEST_ST_2==2 && AC_QUEST_LV_2==3){ //お菓子の材料集め２
 		viewpoint 1,111,261,12,0xFF9900; //ドブ
 	}
 }
-einbech.gat,171,137,0			script	AC_QUEVP02_08	139,7,7,{ //アインベフ アカデミー関係者タイプ２
+einbech.gat,171,137,0			script	AC_QUEVP02_08	139,7,7,{ //Einbech Academy Officialタイプ２
 	if(AC_QUEST_ST_2==2 && AC_QUEST_LV_2==4){ //お菓子の材料集め３
 		viewpoint 1,130,247,12,0xFF9900; //ドルドイ
 	}
@@ -400,7 +400,7 @@ alb2trea.gat,43,53,0	script	AC_QUEVP02_10	139,1,1,{ //沈没船
 		viewpoint 1,105,95,12,0xFF9900; //アイリン
 	}
 }
-hugel.gat,93,155,0	script	AC_QUEVP02_11	139,8,9,{ //フィゲル アカデミー関係者タイプ２
+hugel.gat,93,155,0	script	AC_QUEVP02_11	139,8,9,{ //Hugel Academy Officialタイプ２
 	if(AC_QUEST_ST_2==3 && AC_QUEST_LV_2==8){ //お詫びの品を届けたい２
 		viewpoint 1,72,90,12,0xFF9900; //ロックス
 	} else
@@ -420,7 +420,7 @@ hugel.gat,93,155,0	script	AC_QUEVP02_11	139,8,9,{ //フィゲル アカデミー
 		viewpoint 1,73,152,13,0x00FF00;
 	}
 }
-gef_fild07.gat,336,187,0	script	AC_QUEVP03_01	139,1,1,{ //ゲフェン西
+gef_fild07.gat,336,187,0	script	AC_QUEVP03_01	139,1,1,{ //Geffen西
 	if(AC_QUEST_LV_3==0 && AC_QUEST_ST_3==3){ //	実験のお手伝い１
 		viewpoint 1,185,249,13,0x00FF00;
 	}
@@ -443,12 +443,12 @@ iz_dun01.gat,253,252,0	script	AC_QUEVP03_06	139,1,1,{ //海底洞窟2層
 		viewpoint 1,129,79,13,0x00FF00;	//ザーパフ
 	}
 }
-pay_arche.gat,81,22,0	script	AC_QUEVP03_07	139,1,1,{ //弓手村入り口
+pay_arche.gat,81,22,0	script	AC_QUEVP03_07	139,1,1,{ //Archer Village入り口
 	if(AC_QUEST_LV_3==4 && AC_QUEST_ST_3==3){//	実験のお手伝い３
-		viewpoint 1,36,131,13,0x00FF00;	// フェイヨンダンジョン
+		viewpoint 1,36,131,13,0x00FF00;	// Payonダンジョン
 	}
 }
-pay_dun00.gat,21,183,0	script	AC_QUEVP03_08	139,1,1,{ //フェイヨンダンジョン
+pay_dun00.gat,21,183,0	script	AC_QUEVP03_08	139,1,1,{ //Payonダンジョン
 	if(AC_QUEST_LV_3==4 && AC_QUEST_ST_3==3){//	実験のお手伝い３
 		viewpoint 1,154,172,13,0x00FF00;	// 黒い変なキノコ
 	}

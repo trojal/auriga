@@ -47,58 +47,58 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 		mes "知りたい？";
 		mes "何でも教えるよ。";
 		next;
-		switch(select("ソードマン","マジシャン","アコライト","シーフ","アーチャー","マーチャント","テコンキッド","特殊一次職","職業についてはわかった")){
+		switch(select("Swordsman","Magician","Acolyte","Thief","Archer","Merchant","Taekwon Kid","特殊一次職","職業についてはわかった")){
 		case 1:
 			mes "[ユタ]";
-			mes "ソードマンだね。";
-			mes "ソードマンへの転職は、";
-			mes "^0000FFイズルードの街の西の方^000000";
+			mes "Swordsmanだね。";
+			mes "Swordsmanへの転職は、";
+			mes "^0000FFIzludeの街の西の方^000000";
 			mes "^0000FFにある剣士ギルド^000000で行えるよ。";
 			break;
 		case 2:
 			mes "[ユタ]";
-			mes "マジシャンだね。";
-			mes "マジシャンへの転職は、";
-			mes "^0000FFゲフェンの街の北西の方にある^000000";
+			mes "Magicianだね。";
+			mes "Magicianへの転職は、";
+			mes "^0000FFGeffenの街の北西の方にある^000000";
 			mes "^0000FF魔法学校^000000で行えるよ。";
 			break;
 		case 3:
 			mes "[ユタ]";
-			mes "アコライトだね。";
-			mes "アコライトへの転職は、";
-			mes "プロンテラの^0000FF街の北東の方^000000";
+			mes "Acolyteだね。";
+			mes "Acolyteへの転職は、";
+			mes "Pronteraの^0000FF街の北東の方^000000";
 			mes "^0000FFにある大聖堂^000000で行えるよ。";
 			break;
 		case 4:
 			mes "[ユタ]";
-			mes "シーフだね。";
-			mes "シーフへの転職は、";
+			mes "Thiefだね。";
+			mes "Thiefへの転職は、";
 			mes "^0000FFピラミッドダンジョンの";
-			mes "B1Fにあるシーフギルド^000000";
+			mes "B1FにあるThiefギルド^000000";
 			mes "で行えるよ。";
 			break;
 		case 5:
 			mes "[ユタ]";
-			mes "アーチャーだね。";
-			mes "アーチャーへの転職は、";
-			mes "^0000FFフェイヨン弓手村にある";
-			mes "アーチャーギルド^000000で行えるよ。";
+			mes "Archerだね。";
+			mes "Archerへの転職は、";
+			mes "^0000FFPayonArcher Villageにある";
+			mes "Archerギルド^000000で行えるよ。";
 			break;
 		case 6:
 			mes "[ユタ]";
-			mes "マーチャントだね。";
-			mes "マーチャントへの転職は、";
-			mes "^0000FFアルベルタにある商人組合^000000で";
+			mes "Merchantだね。";
+			mes "Merchantへの転職は、";
+			mes "^0000FFAlbertaにある商人組合^000000で";
 			mes "で行えるよ。";
 			break;
 		case 7:
 			mes "[ユタ]";
-			mes "テコンキッドだね。";
-			mes "テコンキッドへの転職は、";
-			mes "^0000FFフェイヨン^000000で行えるよ。";
+			mes "Taekwon Kidだね。";
+			mes "Taekwon Kidへの転職は、";
+			mes "^0000FFPayon^000000で行えるよ。";
 			next;
 			mes "[ユタ]";
-			mes "^0000FFフェイヨンの街の中央^000000に";
+			mes "^0000FFPayonの街の中央^000000に";
 			mes "^FF0000鳳凰^000000という人がいる。";
 			mes "座標だと（^0000FF157,141^000000）あたり。";
 			mes "鳳凰に話しかけると試験を";
@@ -110,32 +110,32 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 			mes "Baseレベルを1上げたら、";
 			mes "鳳凰に話しかけてね。";
 			mes "そうすれば、";
-			mes "テコンキッドに転職できるよ。";
+			mes "Taekwon Kidに転職できるよ。";
 			break;
 		case 8:
 			mes "[ユタ]";
 			mes "特殊1次職についてだね。";
 			mes "聞きたい職業は何かな？";
 			next;
-			switch(select("ガンスリンガー","忍者","スーパーノービス","他の職業について聞く")){
+			switch(select("Gunslinger","Ninja","Supernovice","他の職業について聞く")){
 			case 1:
 				mes "[ユタ]";
-				mes "ガンスリンガーだね。";
-				mes "ガンスリンガーへの転職は、";
-				mes "^0000FFアインブロック^000000で行えるよ。";
+				mes "Gunslingerだね。";
+				mes "Gunslingerへの転職は、";
+				mes "^0000FFEinbroch^000000で行えるよ。";
 				next;
 				mes "[ユタ]";
-				mes "^0000FFアインブロックの";
+				mes "^0000FFEinbrochの";
 				mes "中央の建物の中にいる^000000";
 				mes "^FF0000マスターミラー^000000という人がいるから";
 				mes "話しかけてね。";
 				next;
 				mes "[ユタ]";
-				mes "フェイヨンの^FF0000ファンソプル^000000に";
+				mes "Payonの^FF0000ファンソプル^000000に";
 				mes "会うように言われるから、";
 				mes "ファソンプルに会いに行こう。";
 				mes "ファンソプルは、";
-				mes "^0000FFフェイヨンの街の南の方^000000にいる。";
+				mes "^0000FFPayonの街の南の方^000000にいる。";
 				mes "座標だと（^0000FF184,65^000000）あたり。";
 				next;
 				mes "[ユタ]";
@@ -176,7 +176,7 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				next;
 				mes "[ユタ]";
 				mes "次は、お店で買える材料を言うね。";
-				mes "ミルクは、^0000FFプロンテラの街の南西の方^000000で";
+				mes "ミルクは、^0000FFPronteraの街の南西の方^000000で";
 				mes "^FF000025Zeny^000000で売っている。";
 				mes "座標だと(^0000FF73,134^000000)。";
 				next;
@@ -184,18 +184,18 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				mes "材料を集めたら";
 				mes "ファンソプルに渡してから";
 				mes "マスターミラーと話をすれば、";
-				mes "ガンスリンガーに転職できるんだ。";
+				mes "Gunslingerに転職できるんだ。";
 				break;
 			case 2:
 				mes "[ユタ]";
-				mes "忍者だね。";
-				mes "忍者への転職は、^0000FFアマツ^000000で行えるよ。";
-				mes "まず、アマツで";
+				mes "Ninjaだね。";
+				mes "Ninjaへの転職は、^0000FFAmatsu^000000で行えるよ。";
+				mes "まず、Amatsuで";
 				mes "^FF0000クウガ・カイ^000000という人に会うんだ。";
 				next;
 				mes "[ユタ]";
 				mes "クウガ・カイは、";
-				mes "アマツの街の中央あたりにある";
+				mes "Amatsuの街の中央あたりにある";
 				mes "家にいる。座標だと(^0000FF148,140^000000)あたり。";
 				mes "家に入ると、一見何もないように";
 				mes "見えるけど、壁が隠し通路に";
@@ -208,7 +208,7 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				mes "クウガ・カイがいる。";
 				next;
 				mes "[ユタ]";
-				mes "アインブロックの街に着いたら、";
+				mes "Einbrochの街に着いたら、";
 				mes "街の中央より少し北";
 				mes "座標(173,229)にいる";
 				mes "オゼという人に話しかけ、";
@@ -224,7 +224,7 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				next;
 				mes "[ユタ]";
 				mes "そのアイテムを^FF0000青年^000000に渡したら、";
-				mes "アマツのクウガ・カイに";
+				mes "Amatsuのクウガ・カイに";
 				mes "会いに行こう。";
 				next;
 				mes "[ユタ]";
@@ -236,26 +236,26 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				mes "[ユタ]";
 				mes "そのアイテムをクウガ・カイに";
 				mes "渡したら、";
-				mes "忍者に転職できるんだ。";
+				mes "Ninjaに転職できるんだ。";
 				mes "　";
-				mes "忍者の転職について";
+				mes "Ninjaの転職について";
 				mes "他に聞きたいことがあるかい？";
 				while(1){
 					next;
-					switch(select("アマツへの行き方","アマツからアインブロックへの行き方","鉄鉱石、プラコンの集め方","もういい")){
+					switch(select("Amatsuへの行き方","AmatsuからEinbrochへの行き方","鉄鉱石、プラコンの集め方","もういい")){
 					case 1:
 						mes "[ユタ]";
-						mes "アマツへは、";
-						mes "アルベルタから行けるんだ。";
+						mes "Amatsuへは、";
+						mes "Albertaから行けるんだ。";
 						mes "だけど、";
 						mes "10000Zenyかかっちゃうんだよね。";
 						next;
 						mes "[ユタ]";
 						mes "ただし、^FF0000JobLvが10の場合、^000000";
-						mes "アルベルタの街の";
+						mes "Albertaの街の";
 						mes "南西の方にいる";
 						mes "^FF0000アカギ^000000という人が無料で";
-						mes "アマツに転送してくれるんだ。";
+						mes "Amatsuに転送してくれるんだ。";
 						next;
 						mes "[ユタ]";
 						mes "^FF0000アカギ^000000は、";
@@ -265,23 +265,23 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 						continue;
 					case 2:
 						mes "[ユタ]";
-						mes "アマツからアインブロックへの";
+						mes "AmatsuからEinbrochへの";
 						mes "行き方を言うね。";
-						mes "まず、^0000FFアマツから";
-						mes "船でアルベルタへ行くんだ。^000000";
+						mes "まず、^0000FFAmatsuから";
+						mes "船でAlbertaへ行くんだ。^000000";
 						mes "これは無料で行けるよ。";
 						next;
 						mes "[ユタ]";
 						mes "そして、次に";
-						mes "^0000FFアルベルタから船でイズルードへ行く。^000000";
+						mes "^0000FFAlbertaから船でIzludeへ行く。^000000";
 						mes "500Zenyかかるからね。";
 						mes "そして、次に";
 						next;
 						mes "[ユタ]";
-						mes "^0000FFイズルードから飛行船でジュノーへ";
-						mes "行くんだ。そのままジュノーの";
+						mes "^0000FFIzludeから飛行船でYunoへ";
+						mes "行くんだ。そのままYunoの";
 						mes "飛行場で飛行船を乗り換えれば";
-						mes "アインブロックへ行けるよ。^000000";
+						mes "Einbrochへ行けるよ。^000000";
 						mes "1200Zenyかかるからね。";
 						next;
 						mes "[ユタ]";
@@ -310,7 +310,7 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 						mes "プラコンは、お店で買えるんだ。";
 						mes "各街の精錬所で、200zeny";
 						mes "売っているよ。";
-						mes "アルベルタでも、南西の方にある";
+						mes "Albertaでも、南西の方にある";
 						mes "商人組合の建物の中で売っているよ。";
 						next;
 						mes "[ユタ]";
@@ -323,16 +323,16 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 			case 3:
 				set '@snovice,1;
 				mes "[ユタ]";
-				mes "スーパーノービスだね。";
-				mes "スーパーノービスへの転職は";
+				mes "Supernoviceだね。";
+				mes "Supernoviceへの転職は";
 				mes "かなり特殊なんだよ。";
 				mes "^FF0000Baseレベルが45以上、^000000";
 				mes "Jobレベルが10必要なんだ。";
 				next;
 				mes "[ユタ]";
-				mes "スーパーノービスの転職は、";
-				mes "^0000FFアルデバラン^000000で行えるよ。";
-				mes "^0000FFアルデバランの街の";
+				mes "Supernoviceの転職は、";
+				mes "^0000FFAldebaran^000000で行えるよ。";
+				mes "^0000FFAldebaranの街の";
 				mes "南の方にある建物の中に^000000、";
 				mes "^FF0000トゼーレ^000000と言う人がいる。";
 				mes "建物の場所の座標は(^0000FF116,63^000000)あたり。";
@@ -345,17 +345,17 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				next;
 				mes "[ユタ]";
 				mes "このアイテムを持っていくと、";
-				mes "スーパーノービスに転職できるよ。";
+				mes "Supernoviceに転職できるよ。";
 				mes "　";
-				mes "スーパーノービスの転職について";
+				mes "Supernoviceの転職について";
 				mes "他に聞きたいことがあるかい？";
 				while(1){
 					next;
-					switch(select("アルデバランへの行き方","べとべとする液体、古木の露の入手方法","もういい")){
+					switch(select("Aldebaranへの行き方","べとべとする液体、古木の露の入手方法","もういい")){
 					case 1:
 						mes "[ユタ]";
-						mes "アルデバランへは、";
-						mes "イズルードから1800Zenyで";
+						mes "Aldebaranへは、";
+						mes "Izludeから1800Zenyで";
 						mes "カプラ転送サービスで行けるよ。";
 						mes "　";
 						mes "他に聞きたいことはあるかい？";
@@ -401,7 +401,7 @@ ac_cl_room.gat,152,41,4	script	ユタ#ac_cl_room	84,{
 				close;
 			}
 			mes "[ユタ]";
-			mes "まあ、スーパーノービスになるには";
+			mes "まあ、Supernoviceになるには";
 			mes "^FF0000Baseレベルが45以上^000000必要だから、";
 			mes "^0000FF実習室^000000や^0000FF特別室^000000でモンスターと、";
 			mes "戦って実戦を積むか、^0000FFルーンの";
@@ -454,8 +454,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 	next;
 	mes "[フィー]";
 	mes "1次職の中では、";
-	mes "^FF0000ソードマン、マジシャン、アコライト、";
-	mes "シーフ、アーチャー、マーチャント^000000に";
+	mes "^FF0000Swordsman、Magician、Acolyte、";
+	mes "Thief、Archer、Merchant^000000に";
 	mes "その特別なスキルがあるわよ。";
 	next;
 	mes "[フィー]";
@@ -472,8 +472,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 	switch(Job){
 	case Job_Swordman:
 		mes "[フィー]";
-		mes "あなたの職業はソードマンね。";
-		mes "ソードマンだとクエストで取得できる";
+		mes "あなたの職業はSwordsmanね。";
+		mes "Swordsmanだとクエストで取得できる";
 		mes "スキルは^FF0000急所攻撃、オートバーサク、";
 		mes "移動時HP回復^000000の3スキルあるわ。";
 		mes "どのスキルについて知りたい？";
@@ -491,13 +491,13 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが25以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "プロンテラ騎士団の中にいる";
+				mes "Prontera騎士団の中にいる";
 				mes "^FF0000レオ=フォン=フリッシュ^000000という人";
 				mes "に話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "プロンテラ騎士団は、";
-				mes "プロンテラの街の北西にあるわよ。";
+				mes "Prontera騎士団は、";
+				mes "Pronteraの街の北西にあるわよ。";
 				mes "座標でいうと、（^0000FF48,344^000000）あたりよ。";
 				next;
 				mes "[フィー]";
@@ -520,12 +520,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが30以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "プロンテラ精錬所の中にいる";
+				mes "Prontera精錬所の中にいる";
 				mes "^FF0000ファン^000000という人に話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "プロンテラ精錬所は、";
-				mes "プロンテラの街の";
+				mes "Prontera精錬所は、";
+				mes "Pronteraの街の";
 				mes "中央あたりにあるわよ。";
 				mes "座標でいうと、（^0000FF176,187^000000）あたり。";
 				next;
@@ -550,7 +550,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが35以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "イズルードの街の東の方にある";
+				mes "Izludeの街の東の方にある";
 				mes "建物の中にいる^FF0000デトマソ^000000という人に";
 				mes "話しかけてね。";
 				next;
@@ -577,10 +577,10 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 			mes "他に知りたいスキルはあるかしら？";
 		}
 		break;
-	case Job_Merchant: //マーチャント
+	case Job_Merchant: //Merchant
 		mes "[フィー]";
-		mes "あなたの職業はマーチャントね。";
-		mes "マーチャントだと";
+		mes "あなたの職業はMerchantね。";
+		mes "Merchantだと";
 		mes "クエストで取得できるスキルは";
 		mes "^FF0000ラウドボイス、チェンジカート、";
 		mes "カートレボリューション^000000の3スキルよ。";
@@ -597,7 +597,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				next;
 				mes "[フィー]";
 				mes "ネコは、座標でいうと";
-				mes "アルベルタの";
+				mes "Albertaの";
 				mes "（^0000FF84,95^000000）あたりにいるわよ。";
 				next;
 				mes "[フィー]";
@@ -619,12 +619,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが30以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "アルベルタの街の北の方にいる";
+				mes "Albertaの街の北の方にいる";
 				mes "^FF0000シャイロン^000000という人に話しかけてね。";
 				next;
 				mes "[フィー]";
 				mes "シャイロンは、座標でいうと";
-				mes "アルベルタの";
+				mes "Albertaの";
 				mes "（^0000FF119,220^000000）あたりにいるわよ。";
 				next;
 				mes "[フィー]";
@@ -647,12 +647,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが35以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "アルベルタの街の東の方にいる";
+				mes "Albertaの街の東の方にいる";
 				mes "^FF0000コサンス^000000という人に話しかけてね。";
 				next;
 				mes "[フィー]";
 				mes "コサンスは、座標でいうと";
-				mes "アルベルタの";
+				mes "Albertaの";
 				mes "（^0000FF232,105^000000）あたりにいるわよ。";
 				mes "コサンスに話しかけるたびに";
 				mes "^FF0000バナナジュース^000000を要求されるから";
@@ -680,8 +680,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 		break;
 	case Job_Magician:
 		mes "[フィー]";
-		mes "あなたの職業はマジシャンね。";
-		mes "マジシャンだと";
+		mes "あなたの職業はMagicianね。";
+		mes "Magicianだと";
 		mes "クエストで取得できるスキルは";
 		mes "^FF0000エナジーコート^000000の1スキルよ。";
 		mes "どのスキルについて知りたい？";
@@ -701,13 +701,13 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが35以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "ゲフェンの魔法学校にいる";
+				mes "Geffenの魔法学校にいる";
 				mes "^FF0000ブリザードリス^000000という人に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
 				mes "魔法学校は、";
-				mes "ゲフェンの街の";
+				mes "Geffenの街の";
 				mes "北西あたりにあるわよ。";
 				mes "座標でいうと、（^0000FF61,181^000000）あたり。";
 				next;
@@ -733,8 +733,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 		break;
 	case Job_Archer:
 		mes "[フィー]";
-		mes "あなたの職業はアーチャーね。";
-		mes "アーチャーだと";
+		mes "あなたの職業はArcherね。";
+		mes "Archerだと";
 		mes "クエストで取得できるスキルは";
 		mes "^FF0000矢作成、チャージアロー^000000の";
 		mes "2スキルよ。";
@@ -754,12 +754,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが30以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "モロクの街のやや南西側にいる";
+				mes "Morrocの街のやや南西側にいる";
 				mes "^FF0000ギョルナリ^000000という人に話しかけてね。";
 				next;
 				mes "[フィー]";
 				mes "ギョルナリは、座標でいうと";
-				mes "モロクの";
+				mes "Morrocの";
 				mes "（^0000FF234,314^000000）あたりにいるわよ。";
 				next;
 				mes "[フィー]";
@@ -782,12 +782,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが35以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "フェイヨンの南西の方にいる";
+				mes "Payonの南西の方にいる";
 				mes "^FF0000カイゴ^000000という人に話しかけてね。";
 				next;
 				mes "[フィー]";
 				mes "カイゴは、座標でいうと";
-				mes "フェイヨンの";
+				mes "Payonの";
 				mes "（^0000FF103,62^000000）あたりにいるわよ。";
 				next;
 				mes "[フィー]";
@@ -812,8 +812,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 		break;
 	case Job_Acolyte:
 		mes "[フィー]";
-		mes "あなたの職業はアコライトね。";
-		mes "アコライトだと";
+		mes "あなたの職業はAcolyteね。";
+		mes "Acolyteだと";
 		mes "クエストで取得できるスキルは";
 		mes "^FF0000ホーリーライト^000000の1スキルよ。";
 		mes "どのスキルについて知りたい？";
@@ -828,20 +828,20 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "与えるスキルよ。";
 				next;
 				mes "[フィー]";
-				mes "^FF0000取得条件は、アコライトで";
+				mes "^FF0000取得条件は、Acolyteで";
 				mes "Jobレベルが30以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "プロンテラ大聖堂にいる";
-				mes "^FF0000主任アコライトのクリプト^000000に";
+				mes "Prontera大聖堂にいる";
+				mes "^FF0000主任Acolyteのクリプト^000000に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "プロンテラ大聖堂は、";
-				mes "プロンテラの街の北東にあるわよ。";
+				mes "Prontera大聖堂は、";
+				mes "Pronteraの街の北東にあるわよ。";
 				mes "座標でいうと、（^0000FF234,314^000000）あたり。";
 				next;
 				mes "[フィー]";
-				mes "そして主任アコライトのクリプトに、";
+				mes "そして主任Acolyteのクリプトに、";
 				mes "^FF0000ロザリー1個、オパール1個、";
 				mes "クリスタルブルー 1個^000000";
 				mes "を持っていけば、ホーリーライトの";
@@ -861,8 +861,8 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 		break;
 	case Job_Thief:
 		mes "[フィー]";
-		mes "あなたの職業はシーフね。";
-		mes "シーフだと";
+		mes "あなたの職業はThiefね。";
+		mes "Thiefだと";
 		mes "クエストで取得できるスキルは";
 		mes "^FF0000石投げ、石拾い、砂まき、";
 		mes "バックステップ^000000の4スキルよ。";
@@ -883,12 +883,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが15以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "シーフギルドにいる";
+				mes "Thiefギルドにいる";
 				mes "^FF0000アルコスク^000000という人に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "シーフギルドは、";
+				mes "Thiefギルドは、";
 				mes "ピラミッドダンジョンの";
 				mes "B1Fにあるわ。";
 				mes "その東側の部屋にアルコスクが";
@@ -896,7 +896,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				next;
 				mes "[フィー]";
 				mes "あと、ピラミッドダンジョンは、";
-				mes "モロクの街内を北西に行くと、";
+				mes "Morrocの街内を北西に行くと、";
 				mes "^0000FFピラミッド周辺マップ^000000に行けるわ。";
 				mes "そのマップの北西にあるのよ。";
 				mes "座標だと（^0000FF56,162^000000）あたり。";
@@ -918,12 +918,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが20以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "シーフギルドにいる";
+				mes "Thiefギルドにいる";
 				mes "^FF0000アルコスク^000000という人に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "シーフギルドは、";
+				mes "Thiefギルドは、";
 				mes "ピラミッドダンジョンの";
 				mes "B1Fにあるわ。";
 				mes "その東側の部屋にアルコスクが";
@@ -931,7 +931,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				next;
 				mes "[フィー]";
 				mes "あと、ピラミッドダンジョンは、";
-				mes "モロクの街内を北西に行くと、";
+				mes "Morrocの街内を北西に行くと、";
 				mes "^0000FFピラミッド周辺マップ^000000に行けるわ。";
 				mes "そのマップの北西にあるのよ。";
 				mes "座標だと（^0000FF56,162^000000）あたり。";
@@ -955,12 +955,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが25以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "シーフギルドにいる";
+				mes "Thiefギルドにいる";
 				mes "^FF0000アルコスク^000000という人に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "シーフギルドは、";
+				mes "Thiefギルドは、";
 				mes "ピラミッドダンジョンの";
 				mes "B1Fにあるわ。";
 				mes "その東側の部屋にアルコスクが";
@@ -968,7 +968,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				next;
 				mes "[フィー]";
 				mes "あと、ピラミッドダンジョンは、";
-				mes "モロクの街内を北西に行くと、";
+				mes "Morrocの街内を北西に行くと、";
 				mes "^0000FFピラミッド周辺マップ^000000に行けるわ。";
 				mes "そのマップの北西にあるのよ。";
 				mes "座標だと（^0000FF56,162^000000）あたり。";
@@ -977,12 +977,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "そしてアルコスクに、";
 				mes "^FF0000きれいな小石 5個^000000";
 				mes "を持っていくと、";
-				mes "今度は^0000FFフェイヨンにいる^000000";
+				mes "今度は^0000FFPayonにいる^000000";
 				mes "^FF0000ポケット販売商人^000000に会うことになるの。";
 				next;
 				mes "[フィー]";
 				mes "ポケット販売商人は、";
-				mes "フェイヨンの街の南西の方にいるわ。";
+				mes "Payonの街の南西の方にいるわ。";
 				mes "座標だと（^0000FF91,75^000000）あたり。";
 				next;
 				mes "[フィー]";
@@ -1005,12 +1005,12 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				mes "^FF0000取得条件は、";
 				mes "Jobレベルが35以上^000000であることよ。";
 				mes "取得条件を満たしたら、";
-				mes "シーフギルドにいる";
+				mes "Thiefギルドにいる";
 				mes "という人に";
 				mes "話しかけてね。";
 				next;
 				mes "[フィー]";
-				mes "シーフギルドは、";
+				mes "Thiefギルドは、";
 				mes "ピラミッドダンジョンの";
 				mes "B1Fにあるわ。";
 				mes "その東側の部屋にアルコスクが";
@@ -1018,7 +1018,7 @@ ac_cl_room.gat,145,48,4	script	フィー#ac_cl_room	123,{
 				next;
 				mes "[フィー]";
 				mes "あと、ピラミッドダンジョンは、";
-				mes "モロクの街内を北西に行くと、";
+				mes "Morrocの街内を北西に行くと、";
 				mes "^0000FFピラミッド周辺マップ^000000に行けるわ。";
 				mes "そのマップの北西にあるのよ。";
 				mes "座標だと（^0000FF56,162^000000）あたり。";
@@ -1093,16 +1093,16 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 	}
 	set '@jobname$,"";
 	switch(Job){
-	case Job_Swordman:      set '@jobname$,"ソードマン";        break;
-	case Job_Magician:      set '@jobname$,"マジシャン";        break;
-	case Job_Archer:        set '@jobname$,"アーチャー";        break;
-	case Job_Acolyte:       set '@jobname$,"アコライト";        break;
-	case Job_Merchant:      set '@jobname$,"マーチャント";      break;
-	case Job_Thief:         set '@jobname$,"シーフ";            break;
-	case Job_Taekwon:       set '@jobname$,"テコンキッド";      break;
-	case Job_Ninja:         set '@jobname$,"忍者";              break;
-	case Job_Gunslinger:    set '@jobname$,"ガンスリンガー";    break;
-	case Job_SuperNovice:   set '@jobname$,"スーパーノービス";  break;
+	case Job_Swordman:      set '@jobname$,"Swordsman";        break;
+	case Job_Magician:      set '@jobname$,"Magician";        break;
+	case Job_Archer:        set '@jobname$,"Archer";        break;
+	case Job_Acolyte:       set '@jobname$,"Acolyte";        break;
+	case Job_Merchant:      set '@jobname$,"Merchant";      break;
+	case Job_Thief:         set '@jobname$,"Thief";            break;
+	case Job_Taekwon:       set '@jobname$,"Taekwon Kid";      break;
+	case Job_Ninja:         set '@jobname$,"Ninja";              break;
+	case Job_Gunslinger:    set '@jobname$,"Gunslinger";    break;
+	case Job_SuperNovice:   set '@jobname$,"Supernovice";  break;
 	}
 	mes "[ルティー]";
 	mes "君の職業である" + '@jobname$ + "の";
@@ -1126,7 +1126,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 			switch(Job){
 			case Job_Swordman:
 				mes "[ルティー]";
-				mes "ソードマンはね、";
+				mes "Swordsmanはね、";
 				mes "^FF0000HP回復力向上のスキル^000000を";
 				mes "取得するのをおすすめするよ。";
 				next;
@@ -1154,7 +1154,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Magician:
 				mes "[ルティー]";
-				mes "マジシャンはね、";
+				mes "Magicianはね、";
 				mes "^FF0000ファイアーウォール^000000のスキルを";
 				mes "取得するのをおすすめするよ。";
 				next;
@@ -1179,7 +1179,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Archer:
 				mes "[ルティー]";
-				mes "アーチャーはね、";
+				mes "Archerはね、";
 				mes "まず、^FF0000ふくろうの目、ワシの目、^000000";
 				mes "そして^FF0000ダブルストレイフィング^000000を";
 				mes "それぞれ^FF0000Lv10^000000まで取得するのを";
@@ -1199,7 +1199,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Acolyte:
 				mes "[ルティー]";
-				mes "アコライトはね、";
+				mes "Acolyteはね、";
 				mes "最初に^FF0000ヒール^000000のスキルを";
 				mes "取得するのをおすすめするよ。";
 				next;
@@ -1241,7 +1241,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Merchant:
 				mes "[ルティー]";
-				mes "マーチャントは、他の職業と違い、";
+				mes "Merchantは、他の職業と違い、";
 				mes "戦闘以外のスキルのほうが豊富なんだ。";
 				next;
 				mes "[ルティー]";
@@ -1292,7 +1292,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Thief:
 				mes "[ルティー]";
-				mes "シーフはね、";
+				mes "Thiefはね、";
 				mes "^FF0000ダブルアタック^000000と^FF0000回避率増加^000000";
 				mes "のスキルを取得するのを";
 				mes "おすすめするよ。";
@@ -1312,7 +1312,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Taekwon:
 				mes "[ルティー]";
-				mes "テコンキッドはね、";
+				mes "Taekwon Kidはね、";
 				mes "まず、^FF0000タイリギをLv10^000000取得して";
 				mes "それから^FF0000暖かい風をLv7^000000";
 				mes "取得する事をおすすめするよ。";
@@ -1326,7 +1326,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "あと、注意点なんだけど、";
 				mes "^FF0000ソウルリンカーになると、";
-				mes "テコンキッドのフェオリチャギとか";
+				mes "Taekwon Kidのフェオリチャギとか";
 				mes "蹴り技のスキルが";
 				mes "全く使えなくなっちゃうんだ。^000000";
 				mes "ちなみに、拳聖では使えるからね。";
@@ -1344,7 +1344,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Ninja:
 				mes "[ルティー]";
-				mes "忍者はね、";
+				mes "Ninjaはね、";
 				mes "^FF0000物理攻撃系スキル^000000と^FF0000忍術系スキル^000000で";
 				mes "完全に取得できるスキルが";
 				mes "分かれるんだよ。";
@@ -1365,7 +1365,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_Gunslinger:
 				mes "[ルティー]";
-				mes "ガンスリンガーはね、";
+				mes "Gunslingerはね、";
 				mes "装備している銃の種類によって";
 				mes "使えるスキルが変わるんだよ。";
 				next;
@@ -1394,7 +1394,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				break;
 			case Job_SuperNovice:
 				mes "[ルティー]";
-				mes "スーパーノービスはね、";
+				mes "Supernoviceはね、";
 				mes "何にも縛られない自由な職業！";
 				mes "　";
 				mes "だからスキルも自由に";
@@ -1413,22 +1413,22 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025^000000くらいまでは、";
-				mes "^FF0000プロンテラ地下水路B2F^000000がいいかな。";
+				mes "^FF0000Prontera地下水路B2F^000000がいいかな。";
 				mes "タロウやスポアを倒すといいわ。";
 				mes "他にもモンスターが沢山いるから";
 				mes "倒しているうちにレベルが上がるよ。";
 				next;
 				mes "[ルティー]";
-				mes "プロンテラ地下水路は、";
-				mes "プロンテラの街の西のマップ";
-				mes "プロンテラフィールド05の";
+				mes "Prontera地下水路は、";
+				mes "Pronteraの街の西のマップ";
+				mes "Pronteraフィールド05の";
 				mes "中央あたりにいる^FF0000地下水路管理兵^000000";
 				mes "に話しかければ行けるよ。";
 				mes "座標だと、(^0000FF271,211^000000)あたりだね。";
 				next;
 				mes "[ルティー]";
-				mes "ただし、プロンテラ地下水路に";
-				mes "入るには、プロンテラ騎士団の";
+				mes "ただし、Prontera地下水路に";
+				mes "入るには、Prontera騎士団の";
 				mes "許可が必要らしいわ。";
 				mes "詳しくは、";
 				mes "地下水路管理兵に聞いてみてね。";
@@ -1447,9 +1447,9 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				next;
 				mes "[ルティー]";
 				mes "Baseレベルが^FF000025^000000くらいまでは、";
-				mes "^FF0000プロンテラフィールド02^000000で";
+				mes "^FF0000Pronteraフィールド02^000000で";
 				mes "マンドラゴラを倒すといいよ。";
-				mes "プロンテラの街から東へ1マップ、";
+				mes "Pronteraの街から東へ1マップ、";
 				mes "北へ1マップへ移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
@@ -1462,15 +1462,15 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025^000000くらいまでは、";
-				mes "^FF0000フェイヨン地下洞窟B1階^000000がいいかな。";
+				mes "^FF0000Payon地下洞窟B1階^000000がいいかな。";
 				mes "ゾンビを倒すといいわよ。";
 				mes "ゾンビには、銀矢を";
 				mes "使用した方がいいね。";
 				next;
 				mes "[ルティー]";
-				mes "フェイヨン地下洞窟は、";
-				mes "フェイヨンの街の北にある";
-				mes "弓手村の北西あたりから";
+				mes "Payon地下洞窟は、";
+				mes "Payonの街の北にある";
+				mes "Archer Villageの北西あたりから";
 				mes "行けるわ。";
 				mes "座標だと、(^0000FF39,131^000000)あたりだね。";
 				next;
@@ -1485,7 +1485,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025^000000くらいまでは、";
-				mes "^FF0000フェイヨン地下洞窟1階^000000がいいかな。";
+				mes "^FF0000Payon地下洞窟1階^000000がいいかな。";
 				mes "ゾンビを倒すといいよ。";
 				next;
 				mes "[ルティー]";
@@ -1504,9 +1504,9 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "覚えておくと役にたつかもしれないね。";
 				next;
 				mes "[ルティー]";
-				mes "フェイヨン地下洞窟は、";
-				mes "フェイヨンの街の北にある";
-				mes "弓手村の北西あたりから行けるわ。";
+				mes "Payon地下洞窟は、";
+				mes "Payonの街の北にある";
+				mes "Archer Villageの北西あたりから行けるわ。";
 				mes "座標だと、(^0000FF39,131^000000)あたりだよ。";
 				break;
 			case Job_SuperNovice:
@@ -1520,17 +1520,17 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000フェイヨン迷いの森07^000000もいいね。";
+				mes "^FF0000Payon迷いの森07^000000もいいね。";
 				mes "そこで、エルダーウィローを中心に";
 				mes "モンスターを倒すといいよ。";
-				mes "アルベルタの街から西へ1マップ";
+				mes "Albertaの街から西へ1マップ";
 				mes "北へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Magician:
@@ -1549,7 +1549,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				next;
 				mes "[ルティー]";
 				mes "ミョルニール山脈11には";
-				mes "プロンテラの街から東へ1マップ、";
+				mes "Pronteraの街から東へ1マップ、";
 				mes "北へ2マップ移動すれば行けるんだ。";
 				mes "ただし、盗虫（雄）や、";
 				mes "足は遅いけど強力なアルギオペが";
@@ -1559,14 +1559,14 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森07^000000がいいかな。";
+				mes "^FF0000Payon迷いの森07^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるんだ。";
 				next;
 				mes "[ルティー]";
 				mes "ウルフには炎の矢が効果的だよ。";
-				mes "炎の矢はアルベルタから行くことが";
+				mes "炎の矢はAlbertaから行くことが";
 				mes "出来る、沈没船付近で売っているから、";
 				mes "一度買って試してみてもいいかもね。";
 				break;
@@ -1574,8 +1574,8 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン地下洞窟B2F^000000がいいかな。";
-				mes "アーチャースケルトン、";
+				mes "^FF0000Payon地下洞窟B2F^000000がいいかな。";
+				mes "Archerスケルトン、";
 				mes "ソルジャースケルトンを倒すといいよ。";
 				next;
 				mes "[ルティー]";
@@ -1588,77 +1588,77 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000フェイヨン迷いの森07^000000もいいね。";
+				mes "^FF0000Payon迷いの森07^000000もいいね。";
 				mes "そこで、エルダーウィローを中心に";
 				mes "モンスターを倒すといいよ。";
-				mes "アルベルタの街から西へ1マップ";
+				mes "Albertaの街から西へ1マップ";
 				mes "北へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Thief://共通
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000フェイヨン迷いの森07^000000もいいね。";
+				mes "^FF0000Payon迷いの森07^000000もいいね。";
 				mes "そこで、エルダーウィローを中心に";
 				mes "モンスターを倒すといいよ。";
-				mes "アルベルタの街から西へ1マップ";
+				mes "Albertaの街から西へ1マップ";
 				mes "北へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Taekwon://共通
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000フェイヨン迷いの森07^000000もいいね。";
+				mes "^FF0000Payon迷いの森07^000000もいいね。";
 				mes "そこで、エルダーウィローを中心に";
 				mes "モンスターを倒すといいよ。";
-				mes "アルベルタの街から西へ1マップ";
+				mes "Albertaの街から西へ1マップ";
 				mes "北へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Gunslinger://共通
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000フェイヨン迷いの森07^000000もいいね。";
+				mes "^FF0000Payon迷いの森07^000000もいいね。";
 				mes "そこで、エルダーウィローを中心に";
 				mes "モンスターを倒すといいよ。";
-				mes "アルベルタの街から西へ1マップ";
+				mes "Albertaの街から西へ1マップ";
 				mes "北へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Ninja:
 				mes "[ルティー]";
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが^FF000025～45^000000くらいまでは、";
-				mes "^FF0000フェイヨン迷いの森02^000000がいいかな。";
+				mes "^FF0000Payon迷いの森02^000000がいいかな。";
 				mes "ウルフを倒すといいよ。";
-				mes "アルベルタの街から西へ2マップ";
+				mes "Albertaの街から西へ2マップ";
 				mes "移動すれば行けるんだ。";
 				break;
 			case Job_SuperNovice:
@@ -1674,7 +1674,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "^FF0000ソグラド砂漠16^000000がいいかな。";
 				mes "サンドマンを倒すといいよ。";
-				mes "モロクの街から南へ2マップ、";
+				mes "Morrocの街から南へ2マップ、";
 				mes "東へ2マップ移動すれば行けるよ。";
 				break;
 			case Job_Magician:
@@ -1689,14 +1689,14 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "^FF0000ミョルニール山脈05^000000がいいかな。";
 				mes "そこで、アルギオペを倒すといいよ。";
-				mes "アルベルタの街を南へ2マップ";
+				mes "Albertaの街を南へ2マップ";
 				mes "移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、";
-				mes "^FF0000龍之城フィールド01^000000もいいわね。";
+				mes "^FF0000Louyangフィールド01^000000もいいわね。";
 				mes "そこで、土精を倒すといいよ。";
-				mes "龍之城の街を";
+				mes "Louyangの街を";
 				mes "南に1マップ移動すれば行けるよ。";
 				next;
 				mes "[ルティー]";
@@ -1710,21 +1710,21 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 			case Job_Archer:
 				mes "[ルティー]";
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
-				mes "^FF0000アインブロックフィールド04^000000";
+				mes "^FF0000Einbrochフィールド04^000000";
 				mes "がいいかな。";
 				mes "ジオグラファーを倒すといいね。";
 				mes "ジオグラファーには、炎の矢を";
 				mes "使用した方がいいよ。";
 				next;
 				mes "[ルティー]";
-				mes "アインブロックフィールド04には";
-				mes "アインブロックの街を";
+				mes "Einbrochフィールド04には";
+				mes "Einbrochの街を";
 				mes "北に1マップ移動すれば行けるよ。";
 				break;
 			case Job_Acolyte:
 				mes "[ルティー]";
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
-				mes "^FF0000アマツダンジョン1F^000000が";
+				mes "^FF0000Amatsuダンジョン1F^000000が";
 				mes "いいかな。";
 				mes "銃奇兵を倒すといいよ。";
 				mes "でも、ニューマのスキルが必要だね。";
@@ -1733,39 +1733,39 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "ニューマだけでは苦戦するだろうけど、";
 				mes "クエストをこなすことで覚えられる、";
 				mes "ホーリーライトがあれば、";
-				mes "アコライトに不足する、";
+				mes "Acolyteに不足する、";
 				mes "攻撃力を補うことができるんだ。";
 				next;
 				mes "[ルティー]";
-				mes "アマツダンジョンには、";
-				mes "アマツの街から行けるわ。";
-				mes "ただし、アマツダンジョンに入るには";
+				mes "Amatsuダンジョンには、";
+				mes "Amatsuの街から行けるわ。";
+				mes "ただし、Amatsuダンジョンに入るには";
 				mes "「通行手形」が必要らしいわ。";
 				mes "「通行手形」は東湖城の城主から";
 				mes "もらえるらしいけど……";
 				next;
 				mes "[ルティー]";
 				mes "ダンジョンを含め、";
-				mes "アマツ付近には強力なモンスターが";
+				mes "Amatsu付近には強力なモンスターが";
 				mes "沢山いるから、気をつけてね。";
-				mes "特に、アマツダンジョンにいる";
-				mes "カブキ忍者は要注意よ。";
+				mes "特に、Amatsuダンジョンにいる";
+				mes "カブキNinjaは要注意よ。";
 				break;
 			case Job_Merchant:
 				mes "[ルティー]";
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "メタリンを倒すといいね。";
 				mes "メタリンは、";
-				mes "^FF0000リヒタルゼンフィールド01、^000000";
-				mes "^FF0000アインブロック08^000000";
+				mes "^FF0000Lighthalzenフィールド01、^000000";
+				mes "^FF0000Einbroch08^000000";
 				mes "にいるよ。";
 				next;
 				mes "[ルティー]";
-				mes "リヒタルゼンフィールド01には";
-				mes "リヒタルゼンの街を";
+				mes "Lighthalzenフィールド01には";
+				mes "Lighthalzenの街を";
 				mes "北に1マップ移動すれば行けるよ。";
-				mes "アインブロック08には";
-				mes "アインブロックの街を";
+				mes "Einbroch08には";
+				mes "Einbrochの街を";
 				mes "南へ1マップ移動すれば行けるんだ。";
 				break;
 			case Job_Thief:
@@ -1773,23 +1773,23 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "メタリンを倒すといいね。";
 				mes "メタリンは、";
-				mes "^FF0000リヒタルゼンフィールド01、";
-				mes "アインブロック08^000000";
+				mes "^FF0000Lighthalzenフィールド01、";
+				mes "Einbroch08^000000";
 				mes "にいるよ。";
 				next;
 				mes "[ルティー]";
-				mes "リヒタルゼンフィールド01には";
-				mes "リヒタルゼンの街を";
+				mes "Lighthalzenフィールド01には";
+				mes "Lighthalzenの街を";
 				mes "北に1マップ移動すれば行けるよ。";
-				mes "アインブロック08には";
-				mes "アインブロックの街を";
+				mes "Einbroch08には";
+				mes "Einbrochの街を";
 				mes "南へ1マップ移動すれば行けるんだ。";
 				next;
 				mes "[ルティー]";
 				mes "あと、^FF0000ソグラド砂漠16^000000がいいかな。";
 				mes "そこで、";
 				mes "サンドマンを倒すといいよ。";
-				mes "モロクの街から南へ2マップ、";
+				mes "Morrocの街から南へ2マップ、";
 				mes "東へ2マップ移動すれば行けるよ。";
 				break;
 			case Job_Taekwon:
@@ -1797,16 +1797,16 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "メタリンを倒すといいね。";
 				mes "メタリンは、";
-				mes "^FF0000リヒタルゼンフィールド01、";
-				mes "アインブロック08^000000";
+				mes "^FF0000Lighthalzenフィールド01、";
+				mes "Einbroch08^000000";
 				mes "にいるわ。";
 				next;
 				mes "[ルティー]";
-				mes "リヒタルゼンフィールド01には";
-				mes "リヒタルゼンの街を";
+				mes "Lighthalzenフィールド01には";
+				mes "Lighthalzenの街を";
 				mes "北に1マップ移動すれば行けるわ。";
-				mes "アインブロック08には";
-				mes "アインブロックの街を";
+				mes "Einbroch08には";
+				mes "Einbrochの街を";
 				mes "南へ1マップ移動すれば行けるわ。";
 				break;
 			case Job_Ninja:
@@ -1814,16 +1814,16 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "メタリンを倒すといいわね。";
 				mes "メタリンは、";
-				mes "^FF0000リヒタルゼンフィールド01、";
-				mes "アインブロック08^000000";
+				mes "^FF0000Lighthalzenフィールド01、";
+				mes "Einbroch08^000000";
 				mes "にいるよ。";
 				next;
 				mes "[ルティー]";
-				mes "リヒタルゼンフィールド01には";
-				mes "リヒタルゼンの街を";
+				mes "Lighthalzenフィールド01には";
+				mes "Lighthalzenの街を";
 				mes "北に1マップ移動すれば行けるよ。";
-				mes "アインブロック08には";
-				mes "アインブロックの街を";
+				mes "Einbroch08には";
+				mes "Einbrochの街を";
 				mes "南へ1マップ移動すれば行けるよ。";
 				break;
 			case Job_Gunslinger:
@@ -1831,16 +1831,16 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "Baseレベルが^FF000045～55^000000くらいまでは、";
 				mes "メタリンを倒すといいね。";
 				mes "メタリンは、";
-				mes "^FF0000リヒタルゼンフィールド01、";
-				mes "アインブロック08^000000";
+				mes "^FF0000Lighthalzenフィールド01、";
+				mes "Einbroch08^000000";
 				mes "にいるよ。";
 				next;
 				mes "[ルティー]";
-				mes "リヒタルゼンフィールド01には";
-				mes "リヒタルゼンの街を";
+				mes "Lighthalzenフィールド01には";
+				mes "Lighthalzenの街を";
 				mes "北に1マップ移動すれば行けるよ。";
-				mes "アインブロック08には";
-				mes "アインブロックの街を";
+				mes "Einbroch08には";
+				mes "Einbrochの街を";
 				mes "南へ1マップ移動すれば行けるんだ。";
 				break;
 			case Job_SuperNovice:
@@ -1848,7 +1848,7 @@ ac_cl_room.gat,158,48,4	script	ルティー	92,{
 				mes "おすすめの場所はね、";
 				mes "Baseレベルが45以上で、";
 				mes "あと、近接攻撃を前提とするならば";
-				mes "ゲフェンフィールド10がいいわね。";
+				mes "Geffenフィールド10がいいわね。";
 				mes "オークレディを倒せばいいわ。";
 				break;
 			}

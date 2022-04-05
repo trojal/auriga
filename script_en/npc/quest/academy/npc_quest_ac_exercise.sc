@@ -125,7 +125,7 @@ ac_cl_area.gat,57,185,4		script	転送装置#AC_PRACBD01	857,{
 		break;
 	case Job_Gunslinger:
 		mes "[ミッドの注意書き]";
-		mes "ガンスリンガーの生徒は";
+		mes "Gunslingerの生徒は";
 		mes "^0000FF銃弾^000000の装備を";
 		mes "忘れないでね！";
 		mes "銃を装備していても";
@@ -480,7 +480,7 @@ L_POTION:
 		mes "Lv制限:40以上";
 		mes "効果:攻撃速度上昇（中）";
 		mes "利用可能な1次職:";
-		mes "アコライト ヲ除ク スベテノ1次職";
+		mes "Acolyte ヲ除ク スベテノ1次職";
 		next;
 		setarray '@item,1018;
 		setarray '@amount,15;
