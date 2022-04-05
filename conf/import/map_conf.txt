@@ -1,5 +1,5 @@
-char_ip: char
+char_ip: 164.90.253.199
 char_port: 6121
 
-map_ip: map
+map_ip: 164.90.253.199
 map_port: 5121

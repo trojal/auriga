@@ -4,8 +4,10 @@
 //  2: STR+INT=10, AGI+LUK=10, VIT+DEX=10 に制限
 check_status_polygon: 0
 
-login_ip: login
+login_ip: 164.90.253.199
 login_port: 6900
 
-char_ip: char
+char_ip: 164.90.253.199
 char_port: 6121
+
+char_new: 1

@@ -1,0 +1,5 @@
+listen_ip: 0.0.0.0
+
+// クライアントからの新規accountの許容可否(0:不許、1:許容)
+// httpd_new_accountとは別設定です
+new_account: 1
