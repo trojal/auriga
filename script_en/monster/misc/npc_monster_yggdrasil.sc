@@ -9,7 +9,7 @@ yggdrasil01.gat,234,256,10,10	monster	Blue Plant	1079,5,1800000,600000,0
 yggdrasil01.gat,273,234,3,3	monster	Shining Plant	1083,1,1800000,600000,0
 yggdrasil01.gat,143,257,20,10	monster	Shining Plant	1083,5,1200000,600000,0
 yggdrasil01.gat,98,238,20,15	monster	Yellow Plant	1081,5,1200000,600000,0
-yggdrasil01.gat,98,238,20,15	monster	白い草	1082,5,1200000,600000,0
+yggdrasil01.gat,98,238,20,15	monster	White Plant	1082,5,1200000,600000,0
 yggdrasil01.gat,47,207,20,20	monster	Blue Plant	1079,5,1200000,600000,0
 yggdrasil01.gat,61,258,3,3	monster	Shining Plant	1083,1,1800000,600000,0
 yggdrasil01.gat,132,199,20,5	monster	Blue Plant	1079,5,1200000,600000,0

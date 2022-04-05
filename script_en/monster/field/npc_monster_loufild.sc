@@ -14,11 +14,11 @@ lou_fild01.gat,273,128,75,50	monster	Caramel	1103,7,0,0,0
 lou_fild01.gat,224,315,100,50	monster	Mantis	1139,10,15000,0,0
 lou_fild01.gat,203,225,110,35	monster	Mantis	1139,10,15000,0,0
 lou_fild01.gat,273,128,75,50	monster	Mantis	1139,10,15000,0,0
-lou_fild01.gat,224,315,100,50	monster	土精		1516,26,5000,0,0
-lou_fild01.gat,203,225,110,35	monster	土精		1516,30,60000,30000,1
-lou_fild01.gat,273,128,75,50	monster	土精		1516,24,5000,0,0
-lou_fild01.gat,224,315,100,50	monster	アナコンダク	1030,2,0,0,0
-lou_fild01.gat,203,225,110,35	monster	アナコンダク	1030,1,0,0,0
-lou_fild01.gat,273,128,75,50	monster	アナコンダク	1030,2,0,0,0
+lou_fild01.gat,224,315,100,50	monster	Increase Soil		1516,26,5000,0,0
+lou_fild01.gat,203,225,110,35	monster	Increase Soil		1516,30,60000,30000,1
+lou_fild01.gat,273,128,75,50	monster	Increase Soil		1516,24,5000,0,0
+lou_fild01.gat,224,315,100,50	monster	Anacondaq	1030,2,0,0,0
+lou_fild01.gat,203,225,110,35	monster	Anacondaq	1030,1,0,0,0
+lou_fild01.gat,273,128,75,50	monster	Anacondaq	1030,2,0,0,0
 lou_fild01.gat,0,0,0,0		monster	Black Mushroom	1084,5,0,0,0
 lou_fild01.gat,0,0,0,0		monster	Yellow Plant		1081,10,0,0,0

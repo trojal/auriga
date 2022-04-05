@@ -19,7 +19,7 @@ mjolnir_01.gat,311,271,25,25	monster	Blue Plant		1079,5,360000,180000,1
 // ミョルニール山脈 02 - mjolnir_02.gat
 //------------------------------------------------------------
 mjolnir_02.gat,0,0,0,0		monster	Coco	1104,220,5000,0,0
-mjolnir_02.gat,0,0,0,0		monster	ホーネット	1004,30,5000,0,0
+mjolnir_02.gat,0,0,0,0		monster	Hornet	1004,30,5000,0,0
 mjolnir_02.gat,0,0,0,0		monster	Dustiness	1114,20,5000,0,0
 mjolnir_02.gat,0,0,0,0		monster	Horn		1128,20,5000,0,0
 mjolnir_02.gat,86,270,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -62,10 +62,10 @@ mjolnir_02.gat,188,192,10,10	monster	Blue Plant		1079,2,360000,180000,1
 //------------------------------------------------------------
 mjolnir_03.gat,0,0,0,0		monster	Mantis	1139,10,5000,0,0
 mjolnir_03.gat,0,0,0,0		monster	Dustiness	1114,20,5000,0,0
-mjolnir_03.gat,0,0,0,0		monster	ホーネット	1004,200,5000,0,0
+mjolnir_03.gat,0,0,0,0		monster	Hornet	1004,200,5000,0,0
 mjolnir_03.gat,0,0,0,0		monster	Flora	1118,10,5000,0,0
-mjolnir_03.gat,0,0,0,0		monster	アルゴス	1100,10,5000,0,0
-mjolnir_03.gat,0,0,0,0		monster	ミストレス	1059,1,7200000,3600000,1
+mjolnir_03.gat,0,0,0,0		monster	Argos	1100,10,5000,0,0
+mjolnir_03.gat,0,0,0,0		monster	Mistress	1059,1,7200000,3600000,1
 mjolnir_03.gat,211,216,10,10	monster	Shining Plant		1083,1,1800000,900000,1
 mjolnir_03.gat,280,252,10,10	monster	Shining Plant		1083,1,1800000,900000,1
 mjolnir_03.gat,135,94,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -88,8 +88,8 @@ mjolnir_03.gat,91,161,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_04.gat,0,0,0,0		monster	Petite	1155,20,5000,0,0
 mjolnir_04.gat,0,0,0,0		monster	Petite	1156,150,5000,0,0
 mjolnir_04.gat,0,0,0,0		monster	Mantis	1139,10,5000,0,0
-mjolnir_04.gat,0,0,0,0		monster	ホーネット	1004,30,5000,0,0
-mjolnir_04.gat,0,0,0,0		monster	アルギオペ	1099,20,5000,0,0
+mjolnir_04.gat,0,0,0,0		monster	Hornet	1004,30,5000,0,0
+mjolnir_04.gat,0,0,0,0		monster	Argiope	1099,20,5000,0,0
 mjolnir_04.gat,0,0,0,0		monster	Dustiness	1114,20,5000,0,0
 mjolnir_04.gat,200,200,30,30	monster	Shining Plant		1083,3,1800000,900000,1
 mjolnir_04.gat,177,34,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -116,8 +116,8 @@ mjolnir_04.gat,205,33,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_05.gat,0,0,0,0		monster	Mantis	1139,20,5000,0,0
 mjolnir_05.gat,0,0,0,0		monster	Poporing	1031,10,5000,0,0
 mjolnir_05.gat,0,0,0,0		monster	Flora	1118,20,5000,0,0
-mjolnir_05.gat,0,0,0,0		monster	アルギオペ	1099,20,5000,0,0
-mjolnir_05.gat,0,0,0,0		monster	アルゴス	1100,180,5000,0,0
+mjolnir_05.gat,0,0,0,0		monster	Argiope	1099,20,5000,0,0
+mjolnir_05.gat,0,0,0,0		monster	Argos	1100,180,5000,0,0
 mjolnir_05.gat,0,0,0,0		monster	Dustiness	1114,20,5000,0,0
 mjolnir_05.gat,200,240,40,40	monster	Blue Plant		1079,3,360000,180000,1
 mjolnir_05.gat,200,240,40,40	monster	Shining Plant		1083,1,1800000,900000,1
@@ -129,8 +129,8 @@ mjolnir_05.gat,0,0,0,0		monster	Red Plant		1078,10,180000,90000,1
 // ミョルニール山脈 06 - mjolnir_06.gat
 //------------------------------------------------------------
 mjolnir_06.gat,0,0,0,0		monster	Roda Frog	1012,20,5000,0,0
-mjolnir_06.gat,0,0,0,0		monster	ホーネット	1004,30,5000,0,0
-mjolnir_06.gat,0,0,0,0		monster	スタイナー	1174,10,5000,0,0
+mjolnir_06.gat,0,0,0,0		monster	Hornet	1004,30,5000,0,0
+mjolnir_06.gat,0,0,0,0		monster	Stainer	1174,10,5000,0,0
 mjolnir_06.gat,0,0,0,0		monster	Horn		1128,10,5000,0,0
 mjolnir_06.gat,0,0,0,0		monster	Coco	1104,20,5000,0,0
 mjolnir_06.gat,0,0,0,0		monster	Poporing	1031,50,5000,0,0
@@ -149,10 +149,10 @@ mjolnir_06.gat,55,276,0,0	monster	Red Mushroom	1085,1,180000,90000,1
 //============================================================
 // ミョルニール山脈 07 - mjolnir_07.gat
 //------------------------------------------------------------
-mjolnir_07.gat,0,0,0,0		monster	ポイズンスポア	1077,200,5000,0,0
-mjolnir_07.gat,0,0,0,0		monster	スタイナー	1174,20,5000,0,0
+mjolnir_07.gat,0,0,0,0		monster	Poison Spore	1077,200,5000,0,0
+mjolnir_07.gat,0,0,0,0		monster	Stainer	1174,20,5000,0,0
 mjolnir_07.gat,0,0,0,0		monster	Horn		1128,20,5000,0,0
-mjolnir_07.gat,0,0,0,0		monster	ホーネット	1004,30,5000,0,0
+mjolnir_07.gat,0,0,0,0		monster	Hornet	1004,30,5000,0,0
 mjolnir_07.gat,314,133,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_07.gat,299,145,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_07.gat,272,152,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -168,9 +168,9 @@ mjolnir_07.gat,249,214,0,0	monster	Blue Plant		1079,2,360000,180000,1
 // ミョルニール山脈 08 - mjolnir_08.gat
 //------------------------------------------------------------
 mjolnir_08.gat,0,0,0,0		monster	Mantis	1139,160,5000,0,0
-mjolnir_08.gat,0,0,0,0		monster	アルゴス	1100,10,5000,0,0
-mjolnir_08.gat,0,0,0,0		monster	スタイナー	1174,20,5000,0,0
-mjolnir_08.gat,0,0,0,0		monster	ホーネット	1004,30,5000,0,0
+mjolnir_08.gat,0,0,0,0		monster	Argos	1100,10,5000,0,0
+mjolnir_08.gat,0,0,0,0		monster	Stainer	1174,20,5000,0,0
+mjolnir_08.gat,0,0,0,0		monster	Hornet	1004,30,5000,0,0
 mjolnir_08.gat,280,280,20,40	monster	Blue Plant		1079,2,360000,180000,1
 mjolnir_08.gat,207,83,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_08.gat,176,153,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -183,7 +183,7 @@ mjolnir_08.gat,149,328,0,0	monster	Green Plant		1080,1,180000,90000,1
 // ミョルニール山脈 09 - mjolnir_09.gat
 //------------------------------------------------------------
 mjolnir_09.gat,0,0,0,0		monster	Coco	1104,10,5000,0,0
-mjolnir_09.gat,0,0,0,0		monster	スタイナー	1174,20,5000,0,0
+mjolnir_09.gat,0,0,0,0		monster	Stainer	1174,20,5000,0,0
 mjolnir_09.gat,0,0,0,0		monster	Horn		1128,200,5000,0,0
 mjolnir_09.gat,0,0,0,0		monster	Poporing	1031,20,5000,0,0
 mjolnir_09.gat,205,352,0,0	monster	Red Mushroom	1085,1,180000,90000,1
@@ -203,20 +203,20 @@ mjolnir_09.gat,125,82,0,0	monster	Red Mushroom	1085,1,180000,90000,1
 //------------------------------------------------------------
 mjolnir_10.gat,0,0,0,0		monster	Mantis	1139,10,5000,0,0
 mjolnir_10.gat,0,0,0,0		monster	Flora	1118,30,5000,0,0
-mjolnir_10.gat,0,0,0,0		monster	アルゴス	1100,20,5000,0,0
+mjolnir_10.gat,0,0,0,0		monster	Argos	1100,20,5000,0,0
 mjolnir_10.gat,0,0,0,0		monster	Poporing	1031,20,5000,0,0
-mjolnir_10.gat,0,0,0,0		monster	アルギオペ	1099,120,5000,0,0
+mjolnir_10.gat,0,0,0,0		monster	Argiope	1099,120,5000,0,0
 mjolnir_10.gat,123,331,10,10	monster	Shining Plant		1083,1,1800000,900000,1
 mjolnir_10.gat,0,0,0,0		monster	Green Plant		1080,10,180000,90000,1
 
 //============================================================
 // ミョルニール山脈 11 - mjolnir_11.gat
 //------------------------------------------------------------
-mjolnir_11.gat,0,0,0,0		monster	マンドラゴラ	1020,20,5000,0,0
+mjolnir_11.gat,0,0,0,0		monster	Mandragora	1020,20,5000,0,0
 mjolnir_11.gat,0,0,0,0		monster	Flora	1118,120,5000,0,0
 mjolnir_11.gat,0,0,0,0		monster	Poporing	1031,10,5000,0,0
-mjolnir_11.gat,0,0,0,0		monster	盜蟲		1051,10,5000,0,0
-mjolnir_11.gat,0,0,0,0		monster	盜蟲		1053,20,5000,0,0
+mjolnir_11.gat,0,0,0,0		monster	Thief Bug		1051,10,5000,0,0
+mjolnir_11.gat,0,0,0,0		monster	Thief Bug Female		1053,20,5000,0,0
 mjolnir_11.gat,112,276,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_11.gat,159,283,0,0	monster	Green Plant		1080,1,180000,90000,1
 mjolnir_11.gat,116,240,0,0	monster	Green Plant		1080,1,180000,90000,1
@@ -235,6 +235,6 @@ mjolnir_11.gat,295,271,0,0	monster	Green Plant		1080,1,180000,90000,1
 // ミョルニール山脈 12 - mjolnir_12.gat
 //------------------------------------------------------------
 mjolnir_12.gat,0,0,0,0	monster	Dustiness	1114,180,5000,0,0
-mjolnir_12.gat,0,0,0,0	monster	盜蟲		1053,20,5000,0,0
-mjolnir_12.gat,0,0,0,0	monster	盜蟲		1051,10,5000,0,0
+mjolnir_12.gat,0,0,0,0	monster	Thief Bug Female		1053,20,5000,0,0
+mjolnir_12.gat,0,0,0,0	monster	Thief Bug		1051,10,5000,0,0
 mjolnir_12.gat,0,0,0,0	monster	Poporing	1031,10,5000,0,0

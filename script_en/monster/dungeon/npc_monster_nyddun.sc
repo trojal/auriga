@@ -5,9 +5,9 @@
 //============================================================
 // イグドラシル中心部 01 - nyd_dun01.gat
 //------------------------------------------------------------
-nyd_dun01.gat,0,0,0,0	monster	ダークシャドー		2023,30,15000,0,0
-nyd_dun01.gat,0,0,0,0	monster	ドラコ				2013,40,15000,0,0
-nyd_dun01.gat,0,0,0,0	monster	エンシェントツリー	2019,20,15000,0,0
-nyd_dun01.gat,0,0,0,0	monster	ドゥネイール		2018,25,15000,0,0
-nyd_dun01.gat,0,0,0,0	monster	ラタトスク			2017,25,15000,0,0
-nyd_dun01.gat,0,0,0,0	monster	ドラコの卵			2014,5,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Dark Shadow		2023,30,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Draco				2013,40,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Ancient Tree	2019,20,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Duneyrr		2018,25,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Rata			2017,25,15000,0,0
+nyd_dun01.gat,0,0,0,0	monster	Draco Egg			2014,5,15000,0,0

@@ -6,22 +6,22 @@
 // ミョルニール廃鉱 B1F - mjo_dun01.gat
 //------------------------------------------------------------
 mjo_dun01.gat,0,0,0,0	monster	Giearth	1121,40,5000,0,0
-mjo_dun01.gat,0,0,0,0	monster	マーティン	1145,30,5000,0,0
-mjo_dun01.gat,0,0,0,0	monster	ミスト		1151,100,5000,0,0
+mjo_dun01.gat,0,0,0,0	monster	Martin	1145,30,5000,0,0
+mjo_dun01.gat,0,0,0,0	monster	Myst		1151,100,5000,0,0
 
 //============================================================
 // ミョルニール廃鉱 B2F - mjo_dun02.gat
 //------------------------------------------------------------
-mjo_dun02.gat,0,0,0,0	monster	マーティン	1145,50,5000,0,0
+mjo_dun02.gat,0,0,0,0	monster	Martin	1145,50,5000,0,0
 mjo_dun02.gat,0,0,0,0	monster	Drainliar	1111,30,5000,0,0
-mjo_dun02.gat,0,0,0,0	monster	スケルワーカー	1169,160,5000,0,0
-mjo_dun01.gat,0,0,0,0	monster	ミスト		1151,20,5000,0,0
+mjo_dun02.gat,0,0,0,0	monster	Skeleton Worker	1169,160,5000,0,0
+mjo_dun01.gat,0,0,0,0	monster	Myst		1151,20,5000,0,0
 
 //============================================================
 // ミョルニール廃鉱 B3F - mjo_dun03.gat
 //------------------------------------------------------------
-mjo_dun03.gat,0,0,0,0	monster	スケルワーカー	1169,30,5000,0,0
+mjo_dun03.gat,0,0,0,0	monster	Skeleton Worker	1169,30,5000,0,0
 mjo_dun03.gat,0,0,0,0	monster	Obsidian	1615,20,5000,0,0
-mjo_dun03.gat,0,0,0,0	monster	コンスタント	1738,10,5000,0,0
-mjo_dun03.gat,0,0,0,0	monster	ミスト		1151,20,5000,0,0
-mjo_dun03.gat,0,0,0,0	monster	ノッカー	1838,100,5000,0,0
+mjo_dun03.gat,0,0,0,0	monster	Constant	1738,10,5000,0,0
+mjo_dun03.gat,0,0,0,0	monster	Myst		1151,20,5000,0,0
+mjo_dun03.gat,0,0,0,0	monster	Knocker	1838,100,5000,0,0

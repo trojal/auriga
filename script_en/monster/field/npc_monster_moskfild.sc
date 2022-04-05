@@ -6,5 +6,5 @@
 // モスコビアフィールド 02 - mosk_fild02.gat
 //------------------------------------------------------------
 mosk_fild02.gat,0,0,0,0		monster	Caramel		1103,20,5000,0,0
-mosk_fild02.gat,0,0,0,0		monster	ウッドゴブリン	1880,150,5000,0,1
-mosk_fild02.gat,0,0,0,0		monster	レス			1881,80,5000,0,1
+mosk_fild02.gat,0,0,0,0		monster	Wood Goblin	1880,150,5000,0,1
+mosk_fild02.gat,0,0,0,0		monster	Les			1881,80,5000,0,1

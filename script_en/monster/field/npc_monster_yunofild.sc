@@ -8,7 +8,7 @@
 yuno_fild01.gat,0,0,0,0		monster	Dustiness	1114,50,5000,0,0
 yuno_fild01.gat,0,0,0,0		monster	Poring		1002,20,5000,0,0
 yuno_fild01.gat,0,0,0,0		monster	Poporing	1031,30,5000,0,0
-yuno_fild01.gat,190,329,80,20	monster	グランペコ	1369,10,50000,25000,0
+yuno_fild01.gat,190,329,80,20	monster	Grand Peco	1369,10,50000,25000,0
 yuno_fild01.gat,0,0,0,0		monster	Red Plant		1078,15,1800000,900000,1
 yuno_fild01.gat,70,370,10,10	monster	Blue Plant		1079,2,1800000,900000,1
 yuno_fild01.gat,70,370,10,10	monster	Shining Plant		1083,1,1800000,900000,1
@@ -35,11 +35,11 @@ yuno_fild03.gat,0,0,0,0		monster	Goat		1372,200,5000,0,0
 yuno_fild03.gat,0,0,0,0		monster	Poporing		1031,10,5000,0,0
 yuno_fild03.gat,0,0,0,0		monster	Drops		1113,40,5000,0,0
 yuno_fild03.gat,0,0,0,0		monster	Poring			1002,30,5000,0,0
-yuno_fild03.gat,0,0,0,0		monster	マーリン		1242,20,5000,0,0
+yuno_fild03.gat,0,0,0,0		monster	Marin		1242,20,5000,0,0
 yuno_fild03.gat,0,0,0,0		monster	Driller		1380,10,5000,0,0
-yuno_fild03.gat,62,131,44,15	monster	サイドワインダー	1037,1,300000,240000,0
-yuno_fild03.gat,0,0,0,0		monster	デビルリング		1582,1,3600000,0,1
-yuno_fild03.gat,0,0,0,0		monster	アークエンジェリング	1388,1,3600000,0,1
+yuno_fild03.gat,62,131,44,15	monster	Side Winder	1037,1,300000,240000,0
+yuno_fild03.gat,0,0,0,0		monster	Deviling		1582,1,3600000,0,1
+yuno_fild03.gat,0,0,0,0		monster	Archangeling	1388,1,3600000,0,1
 yuno_fild03.gat,0,0,0,0		monster	Red Plant			1078,15,1800000,900000,1
 yuno_fild03.gat,0,0,0,0		monster	Yellow Plant			1081,15,1800000,900000,1
 yuno_fild03.gat,0,0,0,0		monster	Green Plant			1080,15,1800000,900000,1
@@ -51,11 +51,11 @@ yuno_fild03.gat,358,215,10,10	monster	Blue Plant			1079,4,1800000,900000,1
 //------------------------------------------------------------
 yuno_fild04.gat,0,0,0,0	monster	Poring		1002,40,5000,0,0
 yuno_fild04.gat,0,0,0,0	monster	Drops	1113,30,5000,0,0
-yuno_fild04.gat,0,0,0,0	monster	コンドル	1009,140,5000,0,0
+yuno_fild04.gat,0,0,0,0	monster	Condor	1009,140,5000,0,0
 yuno_fild04.gat,0,0,0,0	monster	Poporing	1031,20,5000,0,0
-yuno_fild04.gat,0,0,0,0	monster	マーリン	1242,10,5000,0,0
-yuno_fild04.gat,0,0,0,0	monster	エンジェリング	1096,1,3600000,0,1
-yuno_fild04.gat,0,0,0,0	monster	マスターリング	1090,1,3600000,0,1
+yuno_fild04.gat,0,0,0,0	monster	Marin	1242,10,5000,0,0
+yuno_fild04.gat,0,0,0,0	monster	Angeling	1096,1,3600000,0,1
+yuno_fild04.gat,0,0,0,0	monster	Mastering	1090,1,3600000,0,1
 yuno_fild04.gat,0,0,0,0	monster	Red Plant		1078,10,1800000,900000,1
 yuno_fild04.gat,0,0,0,0	monster	Yellow Plant		1081,10,1800000,900000,1
 yuno_fild04.gat,0,0,0,0	monster	Green Plant		1080,10,1800000,900000,1
@@ -67,7 +67,7 @@ yuno_fild04.gat,0,0,0,0	monster	Green Plant		1080,10,1800000,900000,1
 //yuno_fild05.gat,0,0,0,0		monster	Dustiness		1114,30,0,0,0
 //yuno_fild05.gat,0,0,0,0		monster	Horn			1128,30,0,0,0
 //yuno_fild05.gat,0,0,0,0		monster	Beetle King		1494,10,0,0,0
-//yuno_fild05.gat,0,0,0,0		monster	アークエンジェリング	1388,1,3600000,1800000,0
+//yuno_fild05.gat,0,0,0,0		monster	Archangeling	1388,1,3600000,1800000,0
 //yuno_fild05.gat,0,0,0,0		monster	Red Plant			1078,10,180000,90000,1
 //yuno_fild05.gat,0,0,0,0		monster	Green Plant			1080,10,180000,90000,1
 //yuno_fild05.gat,0,0,0,0		monster	Yellow Plant			1081,10,180000,90000,1
@@ -97,9 +97,9 @@ yuno_fild07.gat,0,0,0,0	monster	Yellow Plant		1081,10,180000,90000,1
 // ジュノーフィールド 08（キル・ハイル学院） - yuno_fild08.gat
 //------------------------------------------------------------
 yuno_fild08.gat,0,0,0,0		monster	Wild Rose	1261,5,5000,0,0
-yuno_fild08.gat,200,300,290,100	monster	グランペコ	1369,60,5000,0,0
-yuno_fild08.gat,272,205,100,120	monster	グランペコ	1369,40,5000,0,0
-yuno_fild08.gat,230,110,250,90	monster	グランペコ	1369,60,5000,0,0
+yuno_fild08.gat,200,300,290,100	monster	Grand Peco	1369,60,5000,0,0
+yuno_fild08.gat,272,205,100,120	monster	Grand Peco	1369,40,5000,0,0
+yuno_fild08.gat,230,110,250,90	monster	Grand Peco	1369,60,5000,0,0
 yuno_fild08.gat,200,300,290,100	monster	Geographer	1368,12,5000,0,0
 yuno_fild08.gat,272,205,100,120	monster	Geographer	1368,6,5000,0,0
 yuno_fild08.gat,230,110,250,90	monster	Geographer	1368,12,5000,0,0
@@ -124,10 +124,10 @@ yuno_fild09.gat,0,0,0,0		monster	Yellow Plant		1081,10,180000,90000,1
 // ジュノーフィールド 10 - yuno_fild10.gat
 //------------------------------------------------------------
 //yuno_fild10.gat,0,0,0,0	monster	Beetle King	1494,40,0,0,0
-//yuno_fild10.gat,0,0,0,0	monster	スタイナー	1174,20,0,0,0
+//yuno_fild10.gat,0,0,0,0	monster	Stainer	1174,20,0,0,0
 //yuno_fild10.gat,0,0,0,0	monster	Dustiness	1114,20,0,0,0
 //yuno_fild10.gat,0,0,0,0	monster	Geographer	1368,20,0,0,0
-//yuno_fild10.gat,0,0,0,0	monster	ハンターフライ	1035,10,0,0,0
+//yuno_fild10.gat,0,0,0,0	monster	Hunter Fly	1035,10,0,0,0
 
 //============================================================
 // ジュノーフィールド 11 - yuno_fild11.gat
