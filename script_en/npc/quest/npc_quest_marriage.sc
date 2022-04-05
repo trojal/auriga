@@ -1,371 +1,371 @@
 //====================================================================
 //Ragnarok Online EP4.0(J) Marriage System      V2.0
 //
-//  �� @event_marry -> ��t�t���O 0or1
-//  �� @defend -> �^�C���A�b�v�t���O�A�łɂ̂ݎd����
+//  ■ @event_marry -> 受付フラグ 0or1
+//  ■ @defend -> タイムアップフラグ、嫁にのみ仕込む
 //====================================================================
-prt_church.gat,94,100,4	script	�����R���p�j�I��	71,{
+prt_church.gat,94,100,4	script	結婚コンパニオン	71,{
 	cutin "wedding_marry01",2;
-	mes "[�n�b�s�[�}���[]";
-	mes "����ɂ��́B";
-	mes "�����R���p�j�I����";
-	mes "�n�b�s�[�}���[�ł��B";
+	mes "[ハッピーマリー]";
+	mes "こんにちは。";
+	mes "結婚コンパニオンの";
+	mes "ハッピーマリーです。";
 	if(Upper == UPPER_BABY) {
-		mes "����A�ǂ�����܂����H";
+		mes "あら、どうされました？";
 		next;
-		if(select("�����������ł��I","����A���ł��Ȃ��ł�") == 2) {
-			mes "[�n�b�s�[�}���[]";
-			mes "�͂��A�킩��܂����B";
-			mes "�ł́A���C�����āB";
+		if(select("結婚したいです！","いや、何でもないです") == 2) {
+			mes "[ハッピーマリー]";
+			mes "はい、わかりました。";
+			mes "では、お気をつけて。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
-		mes "[�n�b�s�[�}���[]";
-		mes "�\���󂠂�܂���B";
-		mes "�{�q�ɂȂ�ꂽ���ɂ́A������";
-		mes "���������Ē����Ă���܂��B";
-		mes "�����e�ɐe�F�s���Ȃ���K����";
-		mes "�Ȃ����Ă��������ˁB";
+		mes "[ハッピーマリー]";
+		mes "申し訳ありません。";
+		mes "養子になられた方には、結婚を";
+		mes "ご遠慮して頂いております。";
+		mes "ご両親に親孝行しながら幸せに";
+		mes "なさってくださいね。";
 		close2;
 		cutin "wedding_marry02",255;
 		end;
 	}
 	next;
-	mes "[�n�b�s�[�}���[]";
-	mes "�K���𖲌���J�b�v���Ȃ�";
-	mes "����ς茋���������������ł���ˁH";
-	mes "����H�@���������āc�c";
-	mes "������������������������̂ł����H";
+	mes "[ハッピーマリー]";
+	mes "幸せを夢見るカップルなら";
+	mes "やっぱり結婚式を挙げたいですよね？";
+	mes "あら？　もしかして……";
+	mes "結婚したい方がいらっしゃるのですか？";
 	next;
-	switch (select("�������ɂ��ĕ�������","�������̎菇�͂ǂ��Ȃ�܂���","��������\�����݂���","���́A���G�̃\���R�c���I")) {
+	switch (select("結婚式について聞きたい","結婚式の手順はどうなりますか","結婚式を申し込みたい","私は、無敵のソロ軍団だ！")) {
 	case 1:
-		mes "[�n�b�s�[�}���[]";
-		mes "�ȑO�́A�����É��̐i�s��";
-		mes "���������s���Ă����̂ł����A";
-		mes "���݂́A���O���Ƃ̍���������ɂȂ�A";
-		mes "��Z�����ׂ������ɖ߂��Ă���܂��B";
+		mes "[ハッピーマリー]";
+		mes "以前は、国王陛下の進行で";
+		mes "結婚式が行われていたのですが、";
+		mes "現在は、諸外国との国交が盛んになり、";
+		mes "御忙しい為か国政に戻られております。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "���̑���A���ꂩ���";
-		mes "���[���~�b�h�K�b�c�����̎勳�ł���";
-		mes "�{�}���X�l���������̐i�s��";
-		mes "�S�����鎖�ɂȂ�܂����B";
+		mes "[ハッピーマリー]";
+		mes "その代わり、これからは";
+		mes "ルーンミッドガッツ王国の主教である";
+		mes "ボマルス様が結婚式の進行を";
+		mes "担当する事になりました。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�勳�l�́A�\�������������̐l�X��";
-		mes "�S�[���C�����������ŁA";
-		mes "�e���̎勳�@���u�v���[�X�g�I�f�Ƃ���";
-		mes "���������t���Ă܂��̂�I�@�z�z�b";
+		mes "[ハッピーマリー]";
+		mes "主教様は、ソロだった多くの人々を";
+		mes "ゴールインさせた事で、";
+		mes "‘愛の主教　ラブプリースト！’という";
+		mes "あだ名が付いてますのよ！　ホホッ";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�v���|�[�Y�͐T�d�ɁA";
-		mes "���A���J�ɍs��Ȃ���΂����܂���I";
-		mes "��k�Ō������悤�Ȃ�Č�������c�c";
-		mes "�ꐶ���܂�܂���I";
+		mes "[ハッピーマリー]";
+		mes "プロポーズは慎重に、";
+		mes "かつ、丁寧に行わなければいけません！";
+		mes "冗談で結婚しようなんて言ったら……";
+		mes "一生恨まれますよ！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "����������l�́A";
-		mes "���̐������邻�̓��܂�";
-		mes "�ꏏ�Ȃ̂ł��B";
+		mes "[ハッピーマリー]";
+		mes "結婚した二人は、";
+		mes "この世を去るその日まで";
+		mes "一緒なのです。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�����́A�ِ��Ԃ̂݋�����Ă���܂��B";
-		mes "�H�ɁA�������m��َ푰�Ԃł̌�����";
-		mes "��]���������������Ⴂ�܂����c�c";
+		mes "[ハッピーマリー]";
+		mes "結婚は、異性間のみ許されております。";
+		mes "稀に、同姓同士や異種族間での結婚を";
+		mes "希望する方もいらっしゃいますが……";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�����A���[���~�b�h�K�b�c������";
-		mes "�勳�l�����F�߂ɂȂ�Ȃ��̂ŁA";
-		mes "���������������܂��B";
+		mes "[ハッピーマリー]";
+		mes "ここ、ルーンミッドガッツ王国の";
+		mes "主教様がお認めにならないので、";
+		mes "ご了承くださいませ。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "������񑩂�����������������Ȃ�A";
-		mes "�v���|�[�Y���Ă݂��炢�����ł����H";
-		mes "�K���Ȗ����𖲌�����l�̊F�����";
-		mes "��������̏j�����K��鎖��";
-		mes "�F��܂�!!";
+		mes "[ハッピーマリー]";
+		mes "未来を約束した方がいらっしゃるなら、";
+		mes "プロポーズしてみたらいかがですか？";
+		mes "幸せな未来を夢見る恋人の皆さんに";
+		mes "たくさんの祝福が訪れる事を";
+		mes "祈ります!!";
 		close2;
 		cutin "wedding_marry01",255;
 		end;
 	case 2:
-		mes "[�n�b�s�[�}���[]";
-		mes "�܂��A�V�Y�ƐV�w����A����l�Ƃ�";
-		mes "���Ɍ����̐\�����݂��������A";
-		mes "�m�F���Ă��������B";
-		mes "�ܘ_�A�����ғ��m�݂̂ł���I";
+		mes "[ハッピーマリー]";
+		mes "まず、新郎と新婦さん、お二人とも";
+		mes "私に結婚の申し込みをしたか、";
+		mes "確認してください。";
+		mes "勿論、未婚者同士のみですよ！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�\�����݂��ł��܂�����A";
-		mes "��l�����̃p�[�e�B�[��g�݁A";
-		mes "�勳�l�ɉ�ɍs���Ă��������B";
+		mes "[ハッピーマリー]";
+		mes "申し込みができましたら、";
+		mes "二人だけのパーティーを組み、";
+		mes "主教様に会いに行ってください。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�勳�l�ɂ́A�K��^0000FF�j��^000000����ɘb����";
-		mes "���Ă��������B";
-		mes "�����āA���������������̖��O��";
-		mes "���m�ɂ��`�����������B";
-		mes "���O���ԈႦ�܂��ƁA�����ł��܂���B";
-		mes "�C�����Ă��������ˁI";
+		mes "[ハッピーマリー]";
+		mes "主教様には、必ず^0000FF男性^000000が先に話しを";
+		mes "してください。";
+		mes "そして、結婚したい女性の名前を";
+		mes "正確にお伝えください。";
+		mes "名前を間違えますと、結婚できません。";
+		mes "気をつけてくださいね！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�V�Y����̘b���I�������A";
-		mes "���́A�V�w����̔Ԃł��B";
-		mes "�勳�l�ɘb���|���Ă��������A";
-		mes "����ƁA�V�Y����̖��O�𕷂���܂��B";
-		mes "�ԈႦ���ɁA���m�ɓ`���Ă��������I";
+		mes "[ハッピーマリー]";
+		mes "新郎さんの話が終わったら、";
+		mes "次は、新婦さんの番です。";
+		mes "主教様に話を掛けてください、";
+		mes "すると、新郎さんの名前を聞かれます。";
+		mes "間違えずに、正確に伝えてください！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "���݂���������̖��O�����m�ɓ`����";
-		mes "�w�ւ̌������s���܂��B";
-		mes "���̏u�Ԃ���A��l�͉i���̈���";
-		mes "���΂�鎖�ɂȂ�̂ł��I";
-		mes "�Ȃ�đf�G�Ȃ�ł��傤!?";
+		mes "[ハッピーマリー]";
+		mes "お互い結婚相手の名前が正確に伝わると";
+		mes "指輪の交換が行われます。";
+		mes "その瞬間から、二人は永遠の愛で";
+		mes "結ばれる事になるのです！";
+		mes "なんて素敵なんでしょう!?";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ܘ_�A�H�Ɏw�֌����̒i�K��";
-		mes "�f���鎖������܂����ǁc�c";
-		mes "��������āA�߂��܂Ȃ��ł��������ˁB";
+		mes "[ハッピーマリー]";
+		mes "勿論、稀に指輪交換の段階で";
+		mes "断られる事もありますけど……";
+		mes "だからって、悲しまないでくださいね。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "������\�����ޕ����������񂢂鎞�́A";
-		mes "���Ԃ�����Ă����������ɂȂ�܂��B";
-		mes "�勳�l�́A�����ɕ����̃J�b�v����";
-		mes "���������s���܂���B";
+		mes "[ハッピーマリー]";
+		mes "結婚を申し込む方がたくさんいる時は、";
+		mes "順番を守っていただく事になります。";
+		mes "主教様は、同時に複数のカップルの";
+		mes "結婚式を行いません。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�Ō�Ɉ�I";
-		mes "�勳�l�ɖ��O��`���鎞�́A";
-		mes "�f�����s���K�v������܂��B";
-		mes "^ff0000�ŏ��ɐV�Y�������|���Ă���3���ȓ���";
-		mes "���ׂẲߒ����I��点�Ă��������B^000000";
+		mes "[ハッピーマリー]";
+		mes "最後に一つ！";
+		mes "主教様に名前を伝える時は、";
+		mes "素早く行う必要があります。";
+		mes "^ff0000最初に新郎が声を掛けてから3分以内に";
+		mes "すべての過程を終わらせてください。^000000";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�����A3���ȓ��ɏI���Ȃ��ꍇ�́A";
-		mes "�������������f����A";
-		mes "�ĊJ���鎖���o���Ȃ��Ȃ�܂��B";
+		mes "[ハッピーマリー]";
+		mes "もし、3分以内に終わらない場合は、";
+		mes "結婚式式が中断され、";
+		mes "再開する事が出来なくなります。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�܂��A��������������̖��O�ł����A";
-		mes "�������̑O�ɁA�K������̖��O��";
-		mes "���m�ȒԂ�����m�F���������B";
+		mes "[ハッピーマリー]";
+		mes "また、結婚したい相手の名前ですが、";
+		mes "結婚式の前に、必ず相手の名前の";
+		mes "正確な綴りをご確認ください。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�m�F�̕��@�Ƃ��܂��ẮA";
-		mes "����̕��Ɏ��ł����s���Ă݂��";
-		mes "��낵���Ǝv���܂��B";
-		mes "����ɒʂ���΁A���̖��O��";
-		mes "�������Ԃ�ł����A�ʂ��Ȃ���΁A";
-		mes "���O���Ԉ���Ă���\��������܂��B";
+		mes "[ハッピーマリー]";
+		mes "確認の方法としましては、";
+		mes "相手の方に耳打ちを行ってみると";
+		mes "よろしいと思います。";
+		mes "相手に通じれば、その名前が";
+		mes "正しい綴りですし、通じなければ、";
+		mes "名前が間違っている可能性があります。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�܂��A����Ɉ�x���ł������āA";
-		mes "�`���b�g�E�B���h�E�����̃{�^����";
-		mes "�����܂��B";
-		mes "����ƁA���ł����X�g�ɑ���̖��O��";
-		mes "�\������܂��̂ŁA�I�����܂��傤�B";
+		mes "[ハッピーマリー]";
+		mes "まず、相手に一度耳打ちをして、";
+		mes "チャットウィンドウ左部のボタンを";
+		mes "押します。";
+		mes "すると、耳打ちリストに相手の名前が";
+		mes "表示されますので、選択しましょう。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "����̖��O���{�^���̍���";
-		mes "�\������܂��̂ŁA���̖��O��";
-		mes "Ctrl+C�ŃR�s�[���Ă����܂��B";
-		mes "��������΁A�񍐂̍ۂ�";
-		mes "Shift�{Insert�ő���̖��O��";
-		mes "�Ăяo�������ł��܂��B";
+		mes "[ハッピーマリー]";
+		mes "相手の名前がボタンの左に";
+		mes "表示されますので、その名前を";
+		mes "Ctrl+Cでコピーしておきます。";
+		mes "そうすれば、報告の際に";
+		mes "Shift＋Insertで相手の名前を";
+		mes "呼び出す事ができます。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "1)����Ǝ��ł���b������";
-		mes "2)���ł����X�g�ɕ\�����ꂽ";
-		mes "�@����̖��O��I������";
-		mes "3)�`���b�g�E�B���h�E�̍�����";
-		mes "�@�\�����ꂽ����̖��O��";
-		mes "�@Ctrl+C�ŃR�s�[����B";
+		mes "[ハッピーマリー]";
+		mes "1)相手と耳打ち会話をする";
+		mes "2)耳打ちリストに表示された";
+		mes "　相手の名前を選択する";
+		mes "3)チャットウィンドウの左下に";
+		mes "　表示された相手の名前を";
+		mes "　Ctrl+Cでコピーする。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "���̕��@�ŁA����̖��O��";
-		mes "�m���Ɋo���鎖���ł��܂����A";
-		mes "�勳�l�ɕ񍐂��鎞�ɂ�";
-		mes "�g���Ă���������Ǝv���܂��B";
+		mes "[ハッピーマリー]";
+		mes "この方法で、相手の名前を";
+		mes "確実に覚える事ができますし、";
+		mes "主教様に報告する時にも";
+		mes "使っていただけると思います。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "���������ł��ƁA�킩��Â炢�ł���";
-		mes "1�x�A�����Ă݂܂��傤���B";
+		mes "[ハッピーマリー]";
+		mes "説明だけですと、わかりづらいですし";
+		mes "1度、試してみましょうか。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "Ctrl�{C�ŃR�s�[�������̂�";
-		mes "Shift�{Insert�L�[��";
-		mes "�Ăяo���Ă݂Ă��������B";
-		mes "��낵���ł����H";
+		mes "[ハッピーマリー]";
+		mes "Ctrl＋Cでコピーしたものを";
+		mes "Shift＋Insertキーで";
+		mes "呼び出してみてください。";
+		mes "よろしいですか？";
 		next;
 		input '@test$;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ǂ��ł��A�o���܂������H";
+		mes "[ハッピーマリー]";
+		mes "どうです、出来ましたか？";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ł́A���������������Ǝv�������肪";
-		mes "���܂�����A�\�����݂𐥔�ǂ����B";
+		mes "[ハッピーマリー]";
+		mes "では、もし結婚したいと思うお相手が";
+		mes "いましたら、申し込みを是非どうぞ。";
 		close2;
 		cutin "wedding_marry01",255;
 		end;
 	case 3:
 		cutin "wedding_marry02",2;
-		mes "[�n�b�s�[�}���[]";
-		mes "���������邽�߂ɂ́A";
-		mes "�������������������܂��B";
+		mes "[ハッピーマリー]";
+		mes "結婚をするためには、";
+		mes "いくつか条件がございます。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�܂��A��������ɂ�^3377FF�x�[�X���x����";
-		mes "45�ȏ�^000000�łȂ���΂Ȃ�܂���B";
-		mes "�����āA�V�Y�V�w��l�Ƃ��A�\�����݂�";
-		mes "���Ă��������K�v���������܂��B";
+		mes "[ハッピーマリー]";
+		mes "まず、結婚するには^3377FFベースレベルが";
+		mes "45以上^000000でなければなりません。";
+		mes "そして、新郎新婦二人とも、申し込みを";
+		mes "していただく必要がございます。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�\�����݂̍ہA�j����^3377FF1,300,000zeny^000000��";
-		mes "^3377FF�^�L�V�[�h1��^000000�A������^3377FF1,200,000zeny^000000��";
-		mes "^3377FF�E�F�f�B���O�h���X1��^000000���K�v�ł��B";
+		mes "[ハッピーマリー]";
+		mes "申し込みの際、男性は^3377FF1,300,000zeny^000000と";
+		mes "^3377FFタキシード1着^000000、女性は^3377FF1,200,000zeny^000000と";
+		mes "^3377FFウェディングドレス1着^000000が必要です。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "����c�c�H";
-		mes "���I�@�厖�ȕ���Y��Ă��܂����I";
+		mes "[ハッピーマリー]";
+		mes "あれ……？";
+		mes "あ！　大事な物を忘れていました！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�\�����݂̍ۂ�^3377FF�_�C���̎w��^000000��";
-		mes "��l���A�p�ӂ��Ă��������B";
-		mes "���ꂪ�A�����w�ւƂȂ�܂��B";
-		mes "�w�ւ́A�V�Y�ƐV�w�ň����";
-		mes "�����Ă��������ˁB";
+		mes "[ハッピーマリー]";
+		mes "申し込みの際に^3377FFダイヤの指輪^000000を";
+		mes "二人分、用意してください。";
+		mes "それが、結婚指輪となります。";
+		mes "指輪は、新郎と新婦で一つずつ";
+		mes "持ってくださいね。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ȏ�̕i���S�Ă�����Ă���̂�";
-		mes "�m�F���܂�����A�\�����ݏ���";
-		mes "�����̖��O���L�����Ă��������܂��B";
+		mes "[ハッピーマリー]";
+		mes "以上の品が全てそろっているのを";
+		mes "確認しましたら、申し込み書に";
+		mes "自分の名前を記入していただきます。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "��l�Ƃ��\�����݂��ς݂܂�����";
-		mes "�������������鎖���ł��܂��B";
-		mes "�\�����݂��Ȃ����܂����H";
+		mes "[ハッピーマリー]";
+		mes "二人とも申し込みが済みましたら";
+		mes "結婚式を挙げる事ができます。";
+		mes "申し込みをなさいますか？";
 		next;
-		if(select("�͂�","������")==2) {
-			mes "[�n�b�s�[�}���[]";
-			mes "�������K���Ȉ���ɂȁ`����I";
+		if(select("はい","いいえ")==2) {
+			mes "[ハッピーマリー]";
+			mes "今日も幸せな一日にな～れっ！";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if(PartnerId) {
-			mes "[�n�b�s�[�}���[]";
-			mes "���łɌ������Ă�����悤�ł��ˁB";
-			mes "�d���͔F�߂Ă����܂���B";
+			mes "[ハッピーマリー]";
+			mes "すでに結婚しておられるようですね。";
+			mes "重婚は認めておられません。";
 			next;
-			mes "[�n�b�s�[�}���[]";
-			mes "����ȑO�ɁA�ꐶ�����ɂ���Ƃ���";
-			mes "�񑩂�j��Ƃ��������A";
-			mes "�ǂ̂悤�ȈӖ��������c�c";
-			mes "����̂��C������";
-			mes "�l������������܂����H";
+			mes "[ハッピーマリー]";
+			mes "それ以前に、一生を共にするという";
+			mes "約束を破るという事が、";
+			mes "どのような意味を持つか……";
+			mes "相手のお気持ちを";
+			mes "考えた事がありますか？";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if(@event_marry) {
-			mes "[�n�b�s�[�}���[]";
-			mes "����H";
-			mes "���łɐ\�����݂���Ă���悤�ł��ˁB";
-			mes "���̉��Ɏ勳�l����������Ⴂ�܂��B";
-			mes "�勳�l�̌��ւƕ����A";
-			mes "�������̏��Ԃ����҂����������B";
+			mes "[ハッピーマリー]";
+			mes "あら？";
+			mes "すでに申し込みされているようですね。";
+			mes "この奥に主教様がいらっしゃいます。";
+			mes "主教様の元へと赴き、";
+			mes "結婚式の順番をお待ちください。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if(BaseLevel<45) {
-			mes "[�n�b�s�[�}���[]";
-			mes "�v���|�[�Y�Ȃ������ɁA��������";
-			mes "�b�����K�v�Ȃ悤�ł��B�����ɂ͋`����";
-			mes "�ӔC�������܂��B����̕������邭��";
-			mes "�������Ȃ��Ă���A���炵�ĉ������B";
+			mes "[ハッピーマリー]";
+			mes "プロポーズなさるより先に、ご自分の";
+			mes "鍛練が必要なようです。結婚には義務や";
+			mes "責任が招じます。相手の方を守れるくら";
+			mes "い強くなってから、いらして下さい。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if(countitem(2613)<1) {
-			mes "[�n�b�s�[�}���[]";
-			mes "�����w�ւɎg���_�C���̎w�ւ�";
-			mes "�Y��Ă������������悤�ł��ˁB";
-			mes "�_�C���̎w�ւ��������ɂȂ��Ă���";
-			mes "�܂��A���\�����݂��������B";
+			mes "[ハッピーマリー]";
+			mes "結婚指輪に使うダイヤの指輪を";
+			mes "忘れていらっしゃったようですね。";
+			mes "ダイヤの指輪をお持ちになってから";
+			mes "また、お申し込みください。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if((Sex==0 && Zeny<1200000) || (Sex==1 && Zeny<1300000)) {
-			mes "[�n�b�s�[�}���[]";
-			mes "��ϐ\���󂲂����܂��񂪁A";
-			mes "�������̔�p�Ƃ���";
+			mes "[ハッピーマリー]";
+			mes "大変申し訳ございませんが、";
+			mes "結婚式の費用として";
 			if(Sex==0)
-				mes "1,200,000zeny���A�K�v�ł��B";
+				mes "1,200,000zenyが、必要です。";
 			else
-				mes "1,300,000zeny���A�K�v�ł��B";
+				mes "1,300,000zenyが、必要です。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
 		if((Sex==0 && countitem(2338)<1) || (Sex==1 && countitem(7170)<1)) {
-			mes "[�n�b�s�[�}���[]";
-			mes "����H";
+			mes "[ハッピーマリー]";
+			mes "あら？";
 			if(Sex==0) {
-				mes "�E�F�f�B���O�h���X���A����܂���ˁH";
-				mes "��������������̂ɁA";
-				mes "�ԉł��A���̂悤�ȏo�ŗ����ł́c�c";
+				mes "ウェディングドレスが、ありませんね？";
+				mes "結婚式を挙げるのに、";
+				mes "花嫁が、そのような出で立ちでは……";
 			}
 			else {
-				mes "�^�L�V�[�h���A����܂���ˁH";
-				mes "��������������̂ɁA";
-				mes "�Ԗ����A���̂悤�ȏo�ŗ����ł́c�c";
+				mes "タキシードが、ありませんね？";
+				mes "結婚式を挙げるのに、";
+				mes "花婿が、そのような出で立ちでは……";
 			}
-			mes "�Y�ꂸ�ɏ������Ă��Ă��������܂��B";
+			mes "忘れずに準備してきてくださいませ。";
 			close2;
 			cutin "wedding_marry02",255;
 			end;
 		}
-		mes "[�n�b�s�[�}���[]";
-		mes "�䌋���A���j���\���グ�܂��I";
+		mes "[ハッピーマリー]";
+		mes "御結婚、お祝い申し上げます！";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "����ł́A���ꂪ�\�����ݏ��ł��B";
-		mes "�����Ɏ����̖��O���L�����Ă��������B";
+		mes "[ハッピーマリー]";
+		mes "それでは、これが申し込み書です。";
+		mes "ここに自分の名前を記入してください。";
 		while(1) {
 			next;
 			input '@name$;
 			if('@name$ != strcharinfo(0)) {
-				mes "[�n�b�s�[�}���[]";
-				mes "�܂��܂��I";
-				mes "�����̖��O�𐳂��������Ȃ���ł����H";
-				mes "�{���Ɍ����������Ȃ�A";
-				mes "���O���炢���m�ɖ�����Ă��������I";
-				mes "������x�A�����̖��O��";
-				mes "���m�ɋL�����Ă��������B";
+				mes "[ハッピーマリー]";
+				mes "まあまあ！";
+				mes "自分の名前を正しく書けないんですか？";
+				mes "本当に結婚するつもりなら、";
+				mes "名前くらい正確に名乗ってください！";
+				mes "もう一度、自分の名前を";
+				mes "正確に記入してください。";
 				continue;
 			}
 			break;
 		}
-		mes "[�n�b�s�[�}���[]";
-		mes "�͂��A�\�����ݏ�������܂����B";
-		mes "����A�勳�l�ɂ́A";
-		mes "��������̖��O���񍐂������܂��B";
-		mes "�������̑O�ɑ���̖��O��";
-		mes "���O�𐳊m�Ɍ�����悤�A";
-		mes "�������Ă������������߂������܂��B";
+		mes "[ハッピーマリー]";
+		mes "はい、申し込み書を承りました。";
+		mes "後程、主教様には、";
+		mes "結婚相手の名前も報告いたします。";
+		mes "結婚式の前に相手の名前を";
+		mes "名前を正確に言えるよう、";
+		mes "準備しておく事をお勧めいたします。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ł́A��������̕���";
-		mes "�\�����݂��ς܂��܂�����A";
-		mes "��l�����Ńp�[�e�B�[��g�݁A";
-		mes "���ɂ���������勳�l�̌��֕����A";
-		mes "�b�������Ă��������B";
+		mes "[ハッピーマリー]";
+		mes "では、結婚相手の方も";
+		mes "申し込みを済ませましたら、";
+		mes "二人だけでパーティーを組み、";
+		mes "奥にいらっしゃる主教様の元へ赴き、";
+		mes "話しかけてください。";
 		next;
-		mes "[�n�b�s�[�}���[]";
-		mes "�ł́A���K���Ɂ`";
+		mes "[ハッピーマリー]";
+		mes "では、お幸せに～";
 		emotion 3;
 		if(Sex==0) {
 			set Zeny,Zeny-1200000;
@@ -383,91 +383,91 @@ prt_church.gat,94,100,4	script	�����R���p�j�I��	71,{
 	case 4:
 		cutin "wedding_marry02",2;
 		emotion 23;
-		hideoffnpc "�\���R�c#�v�����e��";
-		hideoffnpc "�\���R�c#�Q�t�F��";
-		hideoffnpc "�\���R�c#�����N";
-		hideoffnpc "�\���R�c#�t�F�C����";
-		hideoffnpc "�\���R�c#�A�}�c";
-		hideoffnpc "�\���R�c#�R������";
-		emotion 27,"�\���R�c#�v�����e��";
-		emotion 27,"�\���R�c#�Q�t�F��";
-		emotion 27,"�\���R�c#�����N";
-		emotion 27,"�\���R�c#�t�F�C����";
-		emotion 27,"�\���R�c#�A�}�c";
-		emotion 27,"�\���R�c#�R������";
-		mes "[�\���R�c]";
-		mes "���B��1�l�ŏo�����Ⴄ���I";
-		mes "�_���W�����Ńp�[�e�B�[���ґ򂾁I";
-		mes "���ɂ͐S�Ɍ��߂�NPC������I";
-		mes "���܂�ē]�E�܂œƂ�ł����I";
-		mes "�N���X�}�X�ɂ̓V���O���x�`���I";
-		mes "�������͖��G�̃\���R�c�I";
+		hideoffnpc "ソロ軍団#プロンテラ";
+		hideoffnpc "ソロ軍団#ゲフェン";
+		hideoffnpc "ソロ軍団#モロク";
+		hideoffnpc "ソロ軍団#フェイヨン";
+		hideoffnpc "ソロ軍団#アマツ";
+		hideoffnpc "ソロ軍団#コンロン";
+		emotion 27,"ソロ軍団#プロンテラ";
+		emotion 27,"ソロ軍団#ゲフェン";
+		emotion 27,"ソロ軍団#モロク";
+		emotion 27,"ソロ軍団#フェイヨン";
+		emotion 27,"ソロ軍団#アマツ";
+		emotion 27,"ソロ軍団#コンロン";
+		mes "[ソロ軍団]";
+		mes "精錬は1人で出来ちゃうぞ！";
+		mes "ダンジョンでパーティーは贅沢だ！";
+		mes "私には心に決めたNPCがいる！";
+		mes "生まれて転職まで独りでした！";
+		mes "クリスマスにはシングルベ～ル！";
+		mes "私たちは無敵のソロ軍団！";
 		next;
-		hideonnpc "�\���R�c#�v�����e��";
-		hideonnpc "�\���R�c#�Q�t�F��";
-		hideonnpc "�\���R�c#�����N";
-		hideonnpc "�\���R�c#�t�F�C����";
-		hideonnpc "�\���R�c#�A�}�c";
-		hideonnpc "�\���R�c#�R������";
+		hideonnpc "ソロ軍団#プロンテラ";
+		hideonnpc "ソロ軍団#ゲフェン";
+		hideonnpc "ソロ軍団#モロク";
+		hideonnpc "ソロ軍団#フェイヨン";
+		hideonnpc "ソロ軍団#アマツ";
+		hideonnpc "ソロ軍団#コンロン";
 		emotion 4;
 		close2;
 		cutin "wedding_marry02",255;
 		end;
 	}
 OnInit:
-	hideonnpc "�\���R�c#�v�����e��";
-	hideonnpc "�\���R�c#�Q�t�F��";
-	hideonnpc "�\���R�c#�����N";
-	hideonnpc "�\���R�c#�t�F�C����";
-	hideonnpc "�\���R�c#�A�}�c";
-	hideonnpc "�\���R�c#�R������";
+	hideonnpc "ソロ軍団#プロンテラ";
+	hideonnpc "ソロ軍団#ゲフェン";
+	hideonnpc "ソロ軍団#モロク";
+	hideonnpc "ソロ軍団#フェイヨン";
+	hideonnpc "ソロ軍団#アマツ";
+	hideonnpc "ソロ軍団#コンロン";
 	end;
 }
 
 //========================================================================================
-prt_church.gat,100,128,4	script	�勳	60,{
-	//1�Ȃ�ⓚ���p�Œe���A2�Ŋ��ňȊO�Ȃ�e��
+prt_church.gat,100,128,4	script	主教	60,{
+	//1なら問答無用で弾く、2で且つ嫁以外なら弾く
 	cutin "wedding_bomars01",2;
 	if('flag==1) {
-		mes "[�{�}���X]";
-		mes "���̌��������i�s�����B";
-		mes "���Ԃ����҂��Ȃ����B";
+		mes "[ボマルス]";
+		mes "他の結婚式が進行中だ。";
+		mes "順番をお待ちなさい。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
 	if('flag==2 && strcharinfo(0) != 'bride$) {
-		mes "[�{�}���X]";
-		mes "�V�Y" +'groom$+ "��";
-		mes "�V�w" +'bride$+ "��";
-		mes "���������i�s�����B";
-		mes "�Â��ɁB";
+		mes "[ボマルス]";
+		mes "新郎" +'groom$+ "と";
+		mes "新婦" +'bride$+ "の";
+		mes "結婚式が進行中だ。";
+		mes "静かに。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
 	if(PartnerId) {
-		mes "[�{�}���X]";
-		mes "���܂ł��A���K���ɁB";
+		mes "[ボマルス]";
+		mes "いつまでも、お幸せに。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
 	if(Upper == UPPER_BABY) {
-		mes "[�{�}���X]";
-		mes "�����ɓ����̂́A�ǂ������B";
-		mes "�����������厖�����A";
-		mes "���Ȃ��̗��e�̂悤�ɗǐl��";
-		mes "�����鎖���厖�����B";
-		mes "��l�ɂȂ��Ă���A�܂����Ȃ����B";
+		mes "[ボマルス]";
+		mes "結婚に憧れるのは、良い事だ。";
+		mes "夢を持つ事も大事だが、";
+		mes "そなたの両親のように良人を";
+		mes "見つける事も大事だぞ。";
+		mes "大人になってから、また来なさい。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
 	if(@event_marry==0) {
-		mes "[�{�}���X]";
-		mes "������]�ނȂ�A���������������l��";
-		mes "�\�����݂���ς܂��Ă��Ȃ����B";
+		mes "[ボマルス]";
+		mes "結婚を望むなら、結婚式を挙げる二人で";
+		mes "申し込みから済ませてきなさい。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
@@ -475,126 +475,126 @@ prt_church.gat,100,128,4	script	�勳	60,{
 	getpartymember getcharid(1);
 	for(set '@i,0; '@i<2; set '@i,'@i+1) {
 		if($@partymembername$['@i] != strcharinfo(0))
-			set '@another$,$@partymembername$['@i];		//PT���ɋ��鑊��̖��O���ꎞ�ۑ�
+			set '@another$,$@partymembername$['@i];		//PT内に居る相手の名前を一時保存
 	}
-	if($@partymembercount != 2 || readparam(Sex,'@another$) == 1) {	//2�lPT����Ȃ��A�������͑��肪�j���I�t���C��
-		mes "[�{�}���X]";
-		mes "������]�ނȂ�A���������������l��";
-		mes "�p�[�e�B�[���������Ȃ����B";
+	if($@partymembercount != 2 || readparam(Sex,'@another$) == 1) {	//2人PTじゃない、もしくは相手が男かオフライン
+		mes "[ボマルス]";
+		mes "結婚を望むなら、結婚式を挙げる二人で";
+		mes "パーティーを結成しなさい。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
-	if(Sex==1) {	//�\�����݂͐V�Y����
+	if(Sex==1) {	//申し込みは新郎から
 		set 'flag,1;
-		initnpctimer;	//�葱����3���ȓ�
+		initnpctimer;	//手続きは3分以内
 		set 'groom$,strcharinfo(0);
-		mes "[�{�}���X]";
-		mes "�K���Ȗ����𖲌����҂�B";
-		mes "���ꂩ���l�ŕ��ސl���������ɖ����A";
-		mes "���ɉ߂�����������ƂȂ�悤�c�c";
+		mes "[ボマルス]";
+		mes "幸せな未来を夢見る若者よ。";
+		mes "これから二人で歩む人生が至福に満ち、";
+		mes "共に過ごす時が至宝となるよう……";
 		next;
-		announce "�勳: �V�Y" +'groom$+ "��A���ɖ₤�c�c",9;
-		mes "[�{�}���X]";
-		mes 'groom$+ "��B";
-		mes "���̏����𖾂邭�Ƃ炵�A���U��";
-		mes "���ɕ��܂�Ƃ��鏗���̖��O��";
-		mes "�����ɍ�����B";
+		announce "主教: 新郎" +'groom$+ "よ、汝に問う……",9;
+		mes "[ボマルス]";
+		mes 'groom$+ "よ。";
+		mes "汝の将来を明るく照らし、生涯を";
+		mes "共に歩まんとする女性の名前を";
+		mes "ここに告げよ。";
 		next;
 		input 'bride$;
-		//�����ł����O�C�����Ă�Ȃ�d���܂ꂽ�^�C���A�b�v�t���O��낷
+		//もし嫁がログインしてるなら仕込まれたタイムアップフラグを堕ろす
 		if(attachrid(getcharid(3,'bride$))) {
 			set @defend,0;
 			detachrid;
 		}
-		if(attachrid(getcharid(3,'groom$))) {	//�ēx�A�^�b�`
-			//PT����̂���Ă��悤���ł����łɃ��O�A�E�g��Ԃł��낤���֌W�Ȃ��I���]���͍l�����Ȃ�
-			announce "�勳: ���A���̕x�߂鎞���A�n���������A�a�߂�Ƃ����A���₩�Ȃ鎞��",9;
-			mes "[�{�}���X]";
-			mes "�V�Y" +'groom$+ "��B";
-			mes "���A���̕x�߂鎞���A�n���������A";
-			mes "�a�߂�Ƃ����A���₩�Ȃ鎞���A";
-			mes 'bride$+ "������";
-			mes "�h���A�Ԃ߁A�����A���̖��̌���";
-			mes "�����ߑ�����鎖�𐾂����H";
+		if(attachrid(getcharid(3,'groom$))) {	//再度アタッチ
+			//PTが解体されていようが嫁がすでにログアウト状態であろうが関係なし！性転換は考慮しない
+			announce "主教: 汝、その富める時も、貧しき時も、病めるときも、健やかなる時も",9;
+			mes "[ボマルス]";
+			mes "新郎" +'groom$+ "よ。";
+			mes "汝、その富める時も、貧しき時も、";
+			mes "病めるときも、健やかなる時も、";
+			mes 'bride$+ "を愛し";
+			mes "敬い、慰め、助け、その命の限り";
+			mes "堅く節操を守る事を誓うか？";
 			next;
-			announce "�勳: " +'bride$+ "�������A�h���A�Ԃ߁A�����A���̖��̌��茘���ߑ�����鎖�𐾂����H",9;
-			menu "�����܂�",-;
-			announce "�勳: �V�Y" +'groom$+ "���V�w" +'bride$+ "�Ɉ��𐾂����c�c",9;
-			mes "[�{�}���X]";
-			mes "���ށI";
-			mes "�ł́A�V�w�ɖ₤�Ă݂悤�B";
+			announce "主教: " +'bride$+ "を愛し、敬い、慰め、助け、その命の限り堅く節操を守る事を誓うか？",9;
+			menu "誓います",-;
+			announce "主教: 新郎" +'groom$+ "が新婦" +'bride$+ "に愛を誓った……",9;
+			mes "[ボマルス]";
+			mes "うむ！";
+			mes "では、新婦に問うてみよう。";
 			set 'flag,2;
-			set @event_marry,0;	//�t���O���
+			set @event_marry,0;	//フラグ解放
 		}
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
-	//�V�w���̏���
+	//新婦側の処理
 	if('flag==0) {
-		mes "[�{�}���X]";
-		mes "�悸�A�V�Y���玄�ɕ񍐂Ȃ����B";
+		mes "[ボマルス]";
+		mes "先ず、新郎から私に報告なさい。";
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
-	mes "[�{�}���X]";
-	mes "�K���Ȗ����𖲌����҂�B";
-	mes "���ꂩ���l�ŕ��ސl���������ɖ����A";
-	mes "���ɉ߂�����������ƂȂ�悤�c�c";
+	mes "[ボマルス]";
+	mes "幸せな未来を夢見る若者よ。";
+	mes "これから二人で歩む人生が至福に満ち、";
+	mes "共に過ごす時が至宝となるよう……";
 	next;
-	announce "�勳: �V�w" +'bride$+ "��A���ɖ₤�c�c",9;
-	mes "[�{�}���X]";
-	mes 'bride$+ "��B";
-	mes "������Ɏ��A���U������";
-	mes "���܂�Ƃ���j���̖��O��";
-	mes 'groom$+ "���H";
+	announce "主教: 新婦" +'bride$+ "よ、汝に問う……",9;
+	mes "[ボマルス]";
+	mes 'bride$+ "よ。";
+	mes "汝を常に守り、生涯を共に";
+	mes "歩まんとする男性の名前は";
+	mes 'groom$+ "か？";
 	next;
-	if(select("�͂�","������")==2) {
+	if(select("はい","いいえ")==2) {
 		cutin "wedding_bomars03",2;
-		announce "�勳: �������͎������ꂽ�B���̌��������s���҂�A�O�ցB",9;
-		mes "[�{�}���X]";
-		mes "���̈�����҂̖��O���m�F���A";
-		mes "�܂��������̐\�����݂��Ȃ����B";
+		announce "主教: 結婚式は取り消された。次の結婚式を行う者よ、前へ。",9;
+		mes "[ボマルス]";
+		mes "汝の愛する者の名前を確認し、";
+		mes "また結婚式の申し込みをなさい。";
 		stopnpctimer;
 		set 'flag,0;
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
-	announce "�勳: ���A���̕x�߂鎞���A�n���������A�a�߂�Ƃ����A���₩�Ȃ鎞��",9;
-	mes "[�{�}���X]";
-	mes "�V�w" +'bride$+ "��B";
-	mes "���A���̕x�߂鎞���A�n���������A";
-	mes "�a�߂�Ƃ����A���₩�Ȃ鎞���A";
-	mes 'groom$+ "������";
-	mes "�h���A�Ԃ߁A�����A���̖��̌���";
-	mes "�����ߑ�����邱�Ƃ𐾂����B";
-	announce "�勳: " +'groom$+ "�������A�h���A�Ԃ߁A�����A���̖��̌��茘���ߑ�����鎖�𐾂����H",9;
+	announce "主教: 汝、その富める時も、貧しき時も、病めるときも、健やかなる時も",9;
+	mes "[ボマルス]";
+	mes "新婦" +'bride$+ "よ。";
+	mes "汝、その富める時も、貧しき時も、";
+	mes "病めるときも、健やかなる時も、";
+	mes 'groom$+ "を愛し";
+	mes "敬い、慰め、助け、その命の限り";
+	mes "堅く節操を守ることを誓うか。";
+	announce "主教: " +'groom$+ "を愛し、敬い、慰め、助け、その命の限り堅く節操を守る事を誓うか？",9;
 	next;
-	if(select("�����܂�","�c�c����ς��߂܂�")==2) {
+	if(select("誓います","……やっぱりやめます")==2) {
 		cutin "wedding_bomars03",2;
-		announce "�勳#w: �V�w" +'bride$+ "�͐V�Y" +'groom$+ "�Ƃ̈��̐����𓥂ݗ��܂����c�c",9;
-		mes "[�{�}���X]";
-		mes "�������c�c";
-		mes "���f����ɂ́A";
-		mes "�܂��A�S�̏���������ʂ��B";
-		mes "�����l��������������΁A";
-		mes "�܂����o�łȂ����B";
+		announce "主教#w: 新婦" +'bride$+ "は新郎" +'groom$+ "との愛の誓いを踏み留まった……",9;
+		mes "[ボマルス]";
+		mes "そうか……";
+		mes "決断するには、";
+		mes "まだ、心の準備が足りぬか。";
+		mes "もし考え直す事があれば、";
+		mes "またお出でなさい。";
 		stopnpctimer;
 		set 'flag,0;
 		close2;
 		cutin "wedding_bomars03",255;
 		end;
 	}
-	if(@defend) {	//�^�C���A�b�v���Ă邩�ǂ����ŏI�`�F�b�N
+	if(@defend) {	//タイムアップしてるかどうか最終チェック
 		set @event_marry,0;
 		cutin "wedding_bomars03",255;
 		close;
 	}
-	//��������
-	if(getcharid(3,'groom$)<=0) {	//�V�Y���}���b�W�u���[�Ń��O�A�E�g���Ă���w�֓n���Ȃ��I
+	//結婚処理
+	if(getcharid(3,'groom$)<=0) {	//新郎がマリッジブルーでログアウトしてたら指輪渡せない！
 		stopnpctimer;
 		set 'flag,0;
 		set @event_marry,0;
@@ -611,61 +611,61 @@ prt_church.gat,100,128,4	script	�勳	60,{
 	wedding;
 	stopnpctimer;
 	cutin "wedding_bomars02",2;
-	announce "�勳: �V�Y" +'groom$+ "�ƐV�w" +'bride$+ "�A�V���Ȃ�v�w�̒a���������ɏj�����悤�I",9;
-	mes "[�{�}���X]";
-	mes "���[���~�b�h�K�b�c�����̎勳�ł���";
-	mes "�{�}���X�̖��ɂ����āA";
-	mes "�����l�̖������j�����悤�B";
+	announce "主教: 新郎" +'groom$+ "と新婦" +'bride$+ "、新たなる夫婦の誕生をここに祝福しよう！",9;
+	mes "[ボマルス]";
+	mes "ルーンミッドガッツ王国の主教である";
+	mes "ボマルスの名において、";
+	mes "汝ら二人の未来を祝福しよう。";
 	next;
-	mes "[�{�}���X]";
-	mes "��l�ɐ_�̏j�����I";
+	mes "[ボマルス]";
+	mes "二人に神の祝福を！";
 	close2;
 	cutin "wedding_bomars03",255;
 	end;
 OnTimer180000:
-	announce "�勳: �Ԏ����x���c�c���̎����s���Ƃ��悤�B",9;
+	announce "主教: 返事が遅い……次の式を行うとしよう。",9;
 	set 'flag,0;
 	stopnpctimer;
-	//�^�C���A�b�v�̏ꍇ�͉łɃt���O���d����
-	//�����������O�Ƀ`�F�b�N���邱�ƂŁA�����������d������̂�h�~�I
+	//タイムアップの場合は嫁にフラグを仕込む
+	//結婚処理直前にチェックすることで、結婚処理が重複するのを防止！
 	if(attachrid(getcharid(3,'bride$)))
 		set @defend,1;
 	end;
 }
 
-//=======================Solo�R�c==============================
-prt_church.gat,97,102,0	script	�\���R�c#�v�����e��	105,{
-	mes "[�\���R�c]";
-	mes "���B��1�l�ŏo�����Ⴄ���I";
+//=======================Solo軍団==============================
+prt_church.gat,97,102,0	script	ソロ軍団#プロンテラ	105,{
+	mes "[ソロ軍団]";
+	mes "精錬は1人で出来ちゃうぞ！";
 	close;
 }
 
-prt_church.gat,98,102,0	script	�\���R�c#�Q�t�F��	705,{
-	mes "[�\���R�c]";
-	mes "�_���W�����Ńp�[�e�B�[���ґ򂾁I";
+prt_church.gat,98,102,0	script	ソロ軍団#ゲフェン	705,{
+	mes "[ソロ軍団]";
+	mes "ダンジョンでパーティーは贅沢だ！";
 	close;
 }
 
-prt_church.gat,99,102,0	script	�\���R�c#�����N		707,{
-	mes "[�\���R�c]";
-	mes "���ɂ͐S�Ɍ��߂�NPC������I";
+prt_church.gat,99,102,0	script	ソロ軍団#モロク		707,{
+	mes "[ソロ軍団]";
+	mes "私には心に決めたNPCがいる！";
 	close;
 }
 
-prt_church.gat,100,102,0	script	�\���R�c#�t�F�C����	708,{
-	mes "[�\���R�c]";
-	mes "���܂�ē]�E�܂œƂ�ł����I";
+prt_church.gat,100,102,0	script	ソロ軍団#フェイヨン	708,{
+	mes "[ソロ軍団]";
+	mes "生まれて転職まで独りでした！";
 	close;
 }
 
-prt_church.gat,101,102,0	script	�\���R�c#�A�}�c	767,{
-	mes "[�\���R�c]";
-	mes "�N���X�}�X�ɂ̓V���O���x�`���I";
+prt_church.gat,101,102,0	script	ソロ軍団#アマツ	767,{
+	mes "[ソロ軍団]";
+	mes "クリスマスにはシングルベ～ル！";
 	close;
 }
 
-prt_church.gat,102,102,0	script	�\���R�c#�R������	780,{
-	mes "[�\���R�c]";
-	mes "�������͖��G�̃\���R�c�I";
+prt_church.gat,102,102,0	script	ソロ軍団#コンロン	780,{
+	mes "[ソロ軍団]";
+	mes "私たちは無敵のソロ軍団！";
 	close;
 }

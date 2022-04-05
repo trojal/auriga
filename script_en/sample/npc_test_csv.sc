@@ -1,26 +1,26 @@
-// csv ŠÖ”	ƒeƒXƒgƒXƒNƒŠƒvƒg
+// csv é–¢æ•°	ãƒ†ã‚¹ãƒˆã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 
-prontera.gat,156,178,1	script	ƒyƒbƒg}ŠÓ	112,{
+prontera.gat,156,178,1	script	ãƒšãƒƒãƒˆå›³é‘‘	112,{
 	function pet_info;
 	set @file$, "db/pet_db.txt";
-	mes "ƒyƒbƒg}ŠÓ";
+	mes "ãƒšãƒƒãƒˆå›³é‘‘";
 	next;
 	while(1) {
-		switch( select("IDŒŸõ", "–¼‘OŒŸõ", "‡”Ô•\¦", "ƒLƒƒƒ“ƒZƒ‹") ) {
-		case 1: // IDŒŸõ
+		switch( select("IDæ¤œç´¢", "åå‰æ¤œç´¢", "é †ç•ªè¡¨ç¤º", "ã‚­ãƒ£ãƒ³ã‚»ãƒ«") ) {
+		case 1: // IDæ¤œç´¢
 			input @pet_id;
-			pet_info csvfind(@file$, 0, @pet_id); // ID‚Í0—ñ–Ú
+			pet_info csvfind(@file$, 0, @pet_id); // IDã¯0åˆ—ç›®
 			break;
-		case 2: // –¼‘OŒŸõ
+		case 2: // åå‰æ¤œç´¢
 			input @pet_name$;
-			pet_info csvfind(@file$, 2, @pet_name$); // –¼‘O‚Í2—ñ–Ú
+			pet_info csvfind(@file$, 2, @pet_name$); // åå‰ã¯2åˆ—ç›®
 			break;
-		case 3: // ‡”Ô•\¦
+		case 3: // é †ç•ªè¡¨ç¤º
 			set @pet_line,  0;
 			set @pet_count, csvgetrows( @file$ );
 			for( set @i, 0; @i < @pet_count; set @i, @i + 1) {
-				// csvread ŠÖ”‚Í•¶š—ñ‚Å‹A‚Á‚Ä‚­‚é‚Ì‚ÅAˆê’[’l‚ğ
-				// ”’l•Ï”‚É‘ã“ü‚µ‚Ä”’l‰»‚µ‚Ä‚¢‚é
+				// csvread é–¢æ•°ã¯æ–‡å­—åˆ—ã§å¸°ã£ã¦ãã‚‹ã®ã§ã€ä¸€ç«¯å€¤ã‚’
+				// æ•°å€¤å¤‰æ•°ã«ä»£å…¥ã—ã¦æ•°å€¤åŒ–ã—ã¦ã„ã‚‹
 				set @pet_id, csvread( @file$, @i, 0 );
 				if( @pet_id == 0 ) continue;
 				pet_info @i;
@@ -30,20 +30,20 @@ prontera.gat,156,178,1	script	ƒyƒbƒg}ŠÓ	112,{
 			close;
 		}
 	}
-	// pet_info( line_no ) : ƒyƒbƒg‚Ìî•ñ‚ğ•\¦‚·‚é
+	// pet_info( line_no ) : ãƒšãƒƒãƒˆã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹
 	function pet_info {
 		if( getarg(0) == -1 ) {
-			mes "‚¨’T‚µ‚Ìƒyƒbƒg‚Í‘¶İ‚µ‚Ü‚¹‚ñB";
+			mes "ãŠæ¢ã—ã®ãƒšãƒƒãƒˆã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚";
 		} else {
 			csvreadarray @file$, getarg(0), @mobinfo$;
 			set @pet_id, @mobinfo$;
 			if( @pet_id == 0 ) {
-				mes "‚¨’T‚µ‚Ìƒyƒbƒg‚Í‘¶İ‚µ‚Ü‚¹‚ñB";
+				mes "ãŠæ¢ã—ã®ãƒšãƒƒãƒˆã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚";
 			} else {
 				mes "ID "           + @mobinfo$[0];
 				mes "Name "         + @mobinfo$[2];
-				mes "•ßŠlƒAƒCƒeƒ€ " + getitemname(@mobinfo$[3]);
-				mes "‰a "           + getitemname(@mobinfo$[6]);
+				mes "æ•ç²ã‚¢ã‚¤ãƒ†ãƒ  " + getitemname(@mobinfo$[3]);
+				mes "é¤Œ "           + getitemname(@mobinfo$[6]);
 			}
 		}
 		next;

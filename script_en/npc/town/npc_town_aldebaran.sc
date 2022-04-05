@@ -5,1325 +5,1325 @@
 //============================================================
 // Shop
 //------------------------------------------------------------
-aldeba_in.gat,94,56,5	shop	����l	83,501,502,503,504,506,645,656,601,602,611,610
-aldeba_in.gat,28,54,0	shop	���폤�l	49,1201,1204,1207,1210,1213,1216,1219,1222
-aldeba_in.gat,20,60,0	shop	�h��l	101,2228,2103,2105,2307,2309,2312,2314,2316,2505,2405,2628,2627
-alde_alche.gat,38,184,2	shop	�ޗ��̔����l	755,7143,7141,7140,6248,6250,6251,6255,6261,6262,6297
-aldeba_in.gat,22,47,4	shop	���폤�l	713,1146,1245
+aldeba_in.gat,94,56,5	shop	道具商人	83,501,502,503,504,506,645,656,601,602,611,610
+aldeba_in.gat,28,54,0	shop	武器商人	49,1201,1204,1207,1210,1213,1216,1219,1222
+aldeba_in.gat,20,60,0	shop	防具商人	101,2228,2103,2105,2307,2309,2312,2314,2316,2505,2405,2628,2627
+alde_alche.gat,38,184,2	shop	材料販売商人	755,7143,7141,7140,6248,6250,6251,6255,6261,6262,6297
+aldeba_in.gat,22,47,4	shop	武器商人	713,1146,1245
 
 //============================================================
-// �A���f�o����NPC
+// アルデバランNPC
 //------------------------------------------------------------
-aldebaran.gat,113,70,4	script	���B�H�}���X�^	48,{
-	mes "[�}���X�^]";
-	mes "�l�̉Ƃ͈ȑO";
-	mes "�Q�t�F���ɂ������񂾂���";
-	mes "��N�̓~�A�����A���f�o������";
-	mes "���z���Ă�����ł��B";
+aldebaran.gat,113,70,4	script	精錬工マンスタ	48,{
+	mes "[マンスタ]";
+	mes "僕の家は以前";
+	mes "ゲフェンにあったんだけど";
+	mes "昨年の冬、ここアルデバランに";
+	mes "引越してきたんです。";
 	next;
-	if(select("^3355FF�u���B�v^000000 �ɂ���","��b����߂�")==2) {
-		mes "[�}���X�^]";
-		mes "�܂����������";
-		mes "���B�����ǂ��ɂ��邩";
-		mes "�m��Ȃ��l����������";
-		mes "���̃A���f�o�����ł�";
-		mes "��������ɗL���ɂȂ���";
-		mes "���炢�����ł��B";
+	if(select("^3355FF「精錬」^000000 について","会話をやめる")==2) {
+		mes "[マンスタ]";
+		mes "まだお父さんの";
+		mes "精錬所がどこにあるか";
+		mes "知らない人が多いけど";
+		mes "このアルデバランでも";
+		mes "お父さんに有名になって";
+		mes "もらいたいです。";
 		close;
 	}
-	mes "[�}���X�^]";
-	mes "���������";
-	mes "�u���b�N�X�~�X�̊X�A�Q�t�F���ł�";
-	mes "���Ȃ�L���Ȑl�ł����B";
-	mes "�ł��A�����͕�̌̋��Ȃ̂�";
-	mes "�����z�����Ƃɂ�����ł��c�c";
+	mes "[マンスタ]";
+	mes "お父さんは";
+	mes "ブラックスミスの街、ゲフェンでも";
+	mes "かなり有名な人でした。";
+	mes "でも、ここは母の故郷なので";
+	mes "引っ越すことにしたんです……";
 	next;
-	mes "[�}���X�^]";
-	mes "�l�����܂ɂ�������̎d����";
-	mes "��`���Ă��ł���B";
-	mes "�ŋߏK���Ă���̂�";
-	mes "���B�����m���ɂ��Ăł��B";
+	mes "[マンスタ]";
+	mes "僕もたまにお父さんの仕事を";
+	mes "手伝ってるんですよ。";
+	mes "最近習っているのは";
+	mes "精錬成功確率についてです。";
 	next;
-	mes "[�}���X�^]";
-	mes "���x�� 1 �̕����";
-	mes "+7 �܂ň��S�ɐ��B�ł��܂��B";
-	mes "���x�� 2 �� +6";
-	mes "�����āA���x�� 3 �̕����";
-	mes "+5 �܂ł͂��ƈ��S��";
-	mes "���B���\�ł��B";
+	mes "[マンスタ]";
+	mes "レベル 1 の武器は";
+	mes "+7 まで安全に精錬できます。";
+	mes "レベル 2 は +6";
+	mes "そして、レベル 3 の武器は";
+	mes "+5 まではわりと安全に";
+	mes "精錬が可能です。";
 	next;
-	mes "[�}���X�^]";
-	mes "���x��4 �̕���̏ꍇ";
-	mes "+4�܂ł͈��S�ɐ��B�ł��܂��B";
-	mes "�h��̏ꍇ�A�ʏ� +4 �܂�";
-	mes "���S�ɐ��B�\�ł��B";
+	mes "[マンスタ]";
+	mes "レベル4 の武器の場合";
+	mes "+4までは安全に精錬できます。";
+	mes "防具の場合、通常 +4 まで";
+	mes "安全に精錬可能です。";
 	close;
 }
 
-aldebaran.gat,64,104,4	script	���B�W�W	55,{
-	mes "[�N�A�g��]";
-	mes "���̃A���f�o������";
-	mes "�Q�t�F���ł͂�����Ɩ����ʂ���";
-	mes "�b�艮�������Ƃ����\�𕷂������c�c";
+aldebaran.gat,64,104,4	script	精錬ジジ	55,{
+	mes "[クアトロ]";
+	mes "このアルデバランに";
+	mes "ゲフェンではちょっと名が通った";
+	mes "鍛冶屋が来たという噂を聞いたが……";
 	next;
-	if(select("���탌�x���ɂ���","�L���Ȓb�艮�ɂ���")==2) {
-		mes "[�N�A�g��]";
-		mes "�Ȃ�ł��A������̑̂��キ��";
-		mes "�A���f�o�����̎��ӂɂ��������Ȃ�";
-		mes "�򑐂𖈓����܂Ȃ���Ȃ�Ȃ�";
-		mes "�݂����Ȃ񂾁B";
+	if(select("武器レベルについて","有名な鍛冶屋について")==2) {
+		mes "[クアトロ]";
+		mes "なんでも、奥さんの体が弱くて";
+		mes "アルデバランの周辺にしか生えない";
+		mes "薬草を毎日飲まなきゃならない";
+		mes "みたいなんだ。";
 		next;
-		mes "[�N�A�g��]";
-		mes "���q�͂����z�Őe�̎d����";
-		mes "�ꏏ�ɂ���Ă�݂������ȁc";
-		mes "�����A�����b�艮�ɂȂ邺�B";
+		mes "[クアトロ]";
+		mes "息子はいい奴で親の仕事を";
+		mes "一緒にやってるみたいだな…";
+		mes "あいつ、いい鍛冶屋になるぜ。";
 		close;
 	}
-	mes "[�N�A�g��]";
-	mes "����������";
-	mes "����̃��x���ɂ��";
-	mes "�ǉ������U���͂̋�����";
-	mes "��������炵���c�c";
+	mes "[クアトロ]";
+	mes "そういえば";
+	mes "武器のレベルにより";
+	mes "追加される攻撃力の強さが";
+	mes "差があるらしい……";
 	next;
-	mes "[�N�A�g��]";
-	mes "���x��1�̏ꍇ�A2";
-	mes "���x��2�̏ꍇ�A3";
-	mes "���x��3�̏ꍇ�́A5�I";
-	mes "���x��4�̏ꍇ�́c�c�Ȃ�ƁA7!!";
+	mes "[クアトロ]";
+	mes "レベル1の場合、2";
+	mes "レベル2の場合、3";
+	mes "レベル3の場合は、5！";
+	mes "レベル4の場合は……なんと、7!!";
 	close;
 }
 
-aldebaran.gat,49,93,4	script	���탌�x���N	83,{
-	mes "[�~���A��]";
-	mes "�m���Ă܂����H";
-	mes "����̒��ɂ̓��x��3�����";
-	mes "���x��4�̕��킪���݂��邱�Ƃ� �I";
+aldebaran.gat,49,93,4	script	武器レベル青年	83,{
+	mes "[ミレアル]";
+	mes "知ってますか？";
+	mes "武器の中にはレベル3より上の";
+	mes "レベル4の武器が存在することを ！";
 	next;
-	mes "[�~���A��]";
-	mes "�X�Ȃǂł͔������Ƃ��ł��Ȃ�";
-	mes "���̃��x��4�̕���� ";
-	mes "�{�X�����X�^�[��|��������";
-	mes "�������Ⴂ�m����";
-	mes "�o�邱�Ƃ������ł��I";
+	mes "[ミレアル]";
+	mes "店などでは買うことができない";
+	mes "このレベル4の武器は ";
+	mes "ボスモンスターを倒した時に";
+	mes "すごく低い確率で";
+	mes "出ることがあるんです！";
 	close;
 }
 
-aldebaran.gat,81,61,4	script	�L��菭��	101,{
-	mes "[�W���Z�[]";
-	mes "�C�݂̋߂��⍻�l��";
-	mes "�L��������̂͂ƂĂ��y�����́B";
+aldebaran.gat,81,61,4	script	貝狩り少女	101,{
+	mes "[ジョセー]";
+	mes "海岸の近くや砂浜で";
+	mes "貝狩りをするのはとても楽しいの。";
 	next;
-	if(select("�L���ɂ���","��b����߂�")==2) {
-		mes "[�W���Z�[]";
-		mes "�����A�L�������ߊL��";
-		mes "�H�ׂ�̂����Ȃ́I";
-		mes "������Ɗ�Ȃ������m��Ȃ����ǁc�c";
-		mes "�ł����ꂭ�炢�̉��l��";
-		mes "����Ǝv���̂�B";
+	if(select("貝狩りについて","会話をやめる")==2) {
+		mes "[ジョセー]";
+		mes "いつか、有名な琥珀貝を";
+		mes "食べるのが夢なの！";
+		mes "ちょっと危ないかも知れないけど……";
+		mes "でもそれくらいの価値は";
+		mes "あると思うのよ。";
 		close;
 	}
-	mes "[�W���Z�[]";
-	mes "���l�␅���܂�Ȃǂ�";
-	mes "�A���{�R�{�R";
-	mes "�o�Ă���̂���������";
-	mes "�������@���Ă݂ĂˁB";
-	mes "���A�L�����̒��ɂ������Ă���́B";
+	mes "[ジョセー]";
+	mes "砂浜や水たまりなどで";
+	mes "泡がボコボコ";
+	mes "出てくるのを見つけたら";
+	mes "そこを掘ってみてね。";
+	mes "大抵、貝がその中にもぐっているの。";
 	next;
-	mes "[�W���Z�[]";
-	mes "�ł��ˁ[";
-	mes "�k���ƂĂ��d����";
-	mes "���\�ŐG�邱�Ƃ����ł��Ȃ�";
-	mes "���œ����L������܂��I";
+	mes "[ジョセー]";
+	mes "でもねー";
+	mes "殻がとても硬くて";
+	mes "凶暴で触ることさえできない";
+	mes "陸で動く貝があります！";
 	next;
-	mes "[�W���Z�[]";
-	mes "���̊L�̓A���o�[�i�C�g�Ƃ�����";
-	mes "�v�����e�������n����";
-	mes "�C�݂Ō��邱�Ƃ��ł����";
-	mes "����ɐG�����肵����";
-	mes "�����邵���Ȃ��́B";
-	mes "���������킢�񂾂���c�c";
+	mes "[ジョセー]";
+	mes "その貝はアンバーナイトといって";
+	mes "プロンテラ西部地方の";
+	mes "海岸で見ることができるの";
+	mes "下手に触ったりしたら";
+	mes "逃げるしかないの。";
+	mes "すごくこわいんだから……";
 	close;
 }
 
-aldebaran.gat,46,129,4	script	�^�͐N	97,{
-	mes "[�p�i�}]";
-	mes "�A���f�o������";
-	mes "�~�b�h�K���h�嗤��";
-	mes "�m��ʂ��̂����Ȃ��ق�";
-	mes "�L���ȉ^�͂̓s�s�ł��B";
+aldebaran.gat,46,129,4	script	運河青年	97,{
+	mes "[パナマ]";
+	mes "アルデバランは";
+	mes "ミッドガルド大陸で";
+	mes "知らぬものがいないほど";
+	mes "有名な運河の都市です。";
 	next;
-	if(select("�^�͂̓s�s�ɂ���","��b����߂�")==2) {
-		mes "[�p�i�}]";
-		mes "�����Y��ł��傤�H";
-		mes "�c�ɂ�����ł����āH";
-		mes "�������������I���ł��傤�c�c";
-		mes "�c�c�c�c";
-		mes "�܂��A������肵�Ă����Ă��������B";
+	if(select("運河の都市について","会話をやめる")==2) {
+		mes "[パナマ]";
+		mes "水が綺麗でしょう？";
+		mes "田舎だからですって？";
+		mes "それを言っちゃ終わりでしょう……";
+		mes "…………";
+		mes "まぁ、ゆっくりしていってください。";
 		close;
 	}
-	mes "[�p�i�}]";
-	mes "�^�͂́c";
-	mes "�����ɓ���D���̍q�s��";
-	mes "�_�n�ւ̐��̋����A";
-	mes "�܂��͔r���Ɏg�����߂�";
-	mes "�l�H�I�ɍ�������H�ł��B";
+	mes "[パナマ]";
+	mes "運河は…";
+	mes "内陸に入る船舶の航行や";
+	mes "農地への水の供給、";
+	mes "または排水に使うために";
+	mes "人工的に作った水路です。";
 	next;
-	mes "[�p�i�}]";
-	mes "�^�͈͂�ʓI��";
-	mes "��ʋ@�ւ̈ꕔ�Ƃ��č���܂��B";
-	mes "���A���n���@���č�邩�A�����̎�";
-	mes "�c�������H���g�����Ƃ�����܂��B";
+	mes "[パナマ]";
+	mes "運河は一般的に";
+	mes "交通機関の一部として作られます。";
+	mes "大抵、陸地を掘って作るか、埋立の時";
+	mes "残した水路を使うこともあります。";
 	next;
-	mes "[�p�i�}]";
-	mes "��Ɏ�������č��������";
-	mes "�����̐l�H���H�ł��^�͂���";
-	mes "�Ă΂�鎖������̂ł��傤�B";
+	mes "[パナマ]";
+	mes "川に手を加えて作ったから";
+	mes "ただの人工水路でも運河だと";
+	mes "呼ばれる事もあるのでしょう。";
 	close;
 }
 
-aldebaran.gat,67,154,4	script	�R���N	98,{
-	mes "[�A�C�[���o�[�O]";
-	mes "�~�����j�[���R���A�t�F�C�����̐X";
-	mes "�ǂ�����������n�`�ŗL���ł��B";
+aldebaran.gat,67,154,4	script	山道青年	98,{
+	mes "[アイゼンバーグ]";
+	mes "ミョルニール山脈、フェイヨンの森";
+	mes "どちらも険しい地形で有名です。";
 	next;
-	switch(select("�~�����j�[���R���ɂ���","�t�F�C�����̐X�ɂ���","��b����߂�")) {
+	switch(select("ミョルニール山脈について","フェイヨンの森について","会話をやめる")) {
 	case 1:
-		mes "[�A�C�[���o�[�O]";
-		mes "���[���~�b�h�K�b�c������";
-		mes "��s�ł���R�m�c�̂���";
-		mes "�v�����e���B";
-		mes "�}�W�V�����E�E�B�U�[�h��";
-		mes "�u���b�N�X�~�X�̊X";
-		mes "�Q�t�F���B";
+		mes "[アイゼンバーグ]";
+		mes "ルーンミッドガッツ王国の";
+		mes "首都であり騎士団のある";
+		mes "プロンテラ。";
+		mes "マジシャン・ウィザードと";
+		mes "ブラックスミスの街";
+		mes "ゲフェン。";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "���̂ǂ���̊X���痈��Ƃ��Ă�";
-		mes "�K���z���Ȃ���΂Ȃ�Ȃ��R��";
-		mes "�~�����j�[���I";
+		mes "[アイゼンバーグ]";
+		mes "そのどちらの街から来るとしても";
+		mes "必ず越えなければならない山脈";
+		mes "ミョルニール！";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "�����ă����N�̐��J�s�g�[���i";
-		mes "�C���@���炱�̃A���f�o������";
-		mes "����Ƃ��Ă��A�K���~�����j�[����";
-		mes "�ʂ�Ȃ���΂Ȃ�܂���B";
-		mes "�~�����j�[���R����";
-		mes "�W���������n�`�����������";
+		mes "[アイゼンバーグ]";
+		mes "そしてモンクの聖カピトーリナ";
+		mes "修道院からこのアルデバランに";
+		mes "来るとしても、必ずミョルニールを";
+		mes "通らなければなりません。";
+		mes "ミョルニール山脈は";
+		mes "標高が高く地形が険しい上に";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "���\�ŁA���͂ȃ����X�^�[��";
-		mes "���΂�ʂ邾���ŏP���Ă���̂�";
-		mes "�����܂ŗ���̂͂�����";
-		mes "��ς������ł��傤�H";
-		mes "�{���ɂ����l�ł����B";
+		mes "[アイゼンバーグ]";
+		mes "凶暴で、強力なモンスターが";
+		mes "そばを通るだけで襲ってくるので";
+		mes "ここまで来るのはすごく";
+		mes "大変だったでしょう？";
+		mes "本当にお疲れ様でした。";
 		close;
 	case 2:
-		mes "[�A�C�[���o�[�O]";
-		mes "�����N�̍�������A���x���^��";
-		mes "�����āA�t�F�C�����ɍs�����߂ɂ�";
-		mes "�K���t�F�C�����̐X��";
-		mes "�ʂ�Ȃ���΂Ȃ�܂���B";
+		mes "[アイゼンバーグ]";
+		mes "モロクの砂漠からアルベルタへ";
+		mes "そして、フェイヨンに行くためには";
+		mes "必ずフェイヨンの森を";
+		mes "通らなければなりません。";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "�A���x���^�ƃt�F�C�����̊Ԃ�";
-		mes "�ʒu���邱�̐X��";
-		mes "�܂�Ŗ��H�̂悤��";
-		mes "����g��ł���̂ŋC�����Ȃ���";
-		mes "���q�ɂȂ��Ă��܂��̂ł��B";
+		mes "[アイゼンバーグ]";
+		mes "アルベルタとフェイヨンの間に";
+		mes "位置するこの森は";
+		mes "まるで迷路のように";
+		mes "入り組んでいるので気をつけないと";
+		mes "迷子になってしまうのです。";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "�A���x���^�̐X�ł͂Ȃ�";
-		mes "�t�F�C�����̐X��";
-		mes "�Ă΂�闝�R�́c�c";
+		mes "[アイゼンバーグ]";
+		mes "アルベルタの森ではなく";
+		mes "フェイヨンの森と";
+		mes "呼ばれる理由は……";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "�A�[�`���[�̒��A�t�F�C������";
-		mes "�O�����͂���̐N����h������";
-		mes "���Z�n�̒��S���Ȃ�ׂ�";
-		mes "�[���Č������R�̒���";
-		mes "�����������̂ł��B";
+		mes "[アイゼンバーグ]";
+		mes "アーチャーの町、フェイヨンは";
+		mes "外部勢力からの侵略を防ぐため";
+		mes "居住地の中心をなるべく";
+		mes "深くて険しい山の中に";
+		mes "したかったのです。";
 		next;
-		mes "[�A�C�[���o�[�O]";
-		mes "���������킯�ŐX�̖���";
-		mes "�J���ꂽ�`���A���x���^�ł͂Ȃ�";
-		mes "�X�̉��̒��t�F�C�����̖��O��";
-		mes "�Ă΂��̂ł͂Ȃ����Ǝv���܂��B";
+		mes "[アイゼンバーグ]";
+		mes "そういうわけで森の名は";
+		mes "開かれた港町アルベルタではなく";
+		mes "森の奥の町フェイヨンの名前で";
+		mes "呼ばれるのではないかと思います。";
 		close;
 	case 3:
-		mes "[�A�C�[���o�[�O]";
-		mes "10�G���A���z����L��ȎR����";
-		mes "���̒n�����痈�闷�s�҂�";
-		mes "�Y�݂̎�ł����c�c";
-		mes "�������ŉ^�͂�B���p�Ȃ�";
-		mes "���I�Ő_��I�ȕ��͋C��";
-		mes "��邱�Ƃ��ł��܂����B";
+		mes "[アイゼンバーグ]";
+		mes "10エリアを越える広大な山脈が";
+		mes "他の地方から来る旅行者の";
+		mes "悩みの種ですが……";
+		mes "おかげで運河や錬金術など";
+		mes "個性的で神秘的な雰囲気を";
+		mes "守ることができました。";
 		close;
 	}
 }
 
-aldebaran.gat,90,170,4	script	�X���b�g�N	47,{
-	mes "[�G�v�e�B�A��]";
-	mes "����Ɩh��̒��ɂ�";
-	mes "�X���b�g(Slot)�Ƃ���";
-	mes "�����J���Ă�����̂�������";
-	mes "�����ɂ̓����X�^�[��|���ƋH�ɗ��Ƃ�";
-	mes "�J�[�h��}�����Ƃ��ł��܂��B";
+aldebaran.gat,90,170,4	script	スロット青年	47,{
+	mes "[エプティアル]";
+	mes "武器と防具の中には";
+	mes "スロット(Slot)という";
+	mes "穴が開いているものがあって";
+	mes "そこにはモンスターを倒すと稀に落とす";
+	mes "カードを挿すことができます。";
 	next;
-	switch(select("�X���b�g�̐��ɂ���","�����X�^�[�J�[�h�ƃX���b�g�̊֌W","��b����߂�")) {
+	switch(select("スロットの数について","モンスターカードとスロットの関係","会話をやめる")) {
 	case 1:
-		mes "[�G�v�e�B�A��]";
-		mes "��ʂ̏��X�Ŕ����Ă���";
-		mes "�����h����";
-		mes "�����X�^�[����험�i�œ���";
-		mes "�A�C�e���̂ق����X���b�g��";
-		mes "�����̂ł���B";
+		mes "[エプティアル]";
+		mes "一般の商店で売っている";
+		mes "武器や防具より";
+		mes "モンスターから戦利品で得た";
+		mes "アイテムのほうがスロットが";
+		mes "多いのですよ。";
 		next;
-		mes "[�G�v�e�B�A��]";
-		mes "���������A�C�e���ɂ̓J�[�h��";
-		mes "���ʂ̂��̂�葽���t�����邩��";
-		mes "�A�C�e���Ƃ��Ẳ��l��";
-		mes "�O�b�Əオ���ł���B";
+		mes "[エプティアル]";
+		mes "そういうアイテムにはカードが";
+		mes "普通のものより多く付けられるから";
+		mes "アイテムとしての価値も";
+		mes "グッと上がるんですよ。";
 		close;
 	case 2:
-		mes "[�G�v�e�B�A��]";
-		mes "�X���b�g��1��}�����J�[�h��";
-		mes "2�x�ƊO���܂��񂩂�";
-		mes "���ӂ��Ďg�����ق��������ł��B";
-		mes "�X���b�g�ɃJ�[�h��t����O��";
-		mes "����1�x�悭�l���Ă݂Ă��������B";
+		mes "[エプティアル]";
+		mes "スロットに1回挿したカードは";
+		mes "2度と外せませんから";
+		mes "注意して使ったほうがいいです。";
+		mes "スロットにカードを付ける前に";
+		mes "もう1度よく考えてみてください。";
 		close;
 	case 3:
-		mes "[�G�v�e�B�A��]";
-		mes "�����X�^�[�����Ƃ��J�[�h��";
-		mes "�������ł��傤���H";
+		mes "[エプティアル]";
+		mes "モンスターが落とすカードを";
+		mes "お持ちでしょうか？";
 		close;
 	}
 }
 
-aldebaran.gat,117,181,4	script	�v���R���N	48,{
-	mes "[�W���A���[]";
-	mes "�����A�C�e���̒���";
-	mes "��ԒႢGRADE(���x��1)��";
-	mes "����𐸘B���邽�߂ɂ�";
-	mes "�u�v���R���v�Ƃ���";
-	mes "�������K�v�ł��B";
+aldebaran.gat,117,181,4	script	プラコン青年	48,{
+	mes "[ジュアリー]";
+	mes "装備アイテムの中で";
+	mes "一番低いGRADE(レベル1)の";
+	mes "武器を精錬するためには";
+	mes "「プラコン」という";
+	mes "金属が必要です。";
 	next;
-	switch(select("�v���R���ɂ���","�v���R���Ɋւ���A�h�o�C�X","��b����߂�")) {
+	switch(select("プラコンについて","プラコンに関するアドバイス","会話をやめる")) {
 	case 1:
-		mes "[�W���A���[]";
-		mes "�v���R���Ƃ���������";
-		mes "�̂���~�b�h�K���h�S��ɓn����";
-		mes "�����̐l�X�����p���Ă���";
-		mes "��ʓI�Ȑ��B�p��������";
-		mes "�����Ă��܂��B";
+		mes "[ジュアリー]";
+		mes "プラコンという金属は";
+		mes "昔からミッドガルド全域に渡って";
+		mes "多くの人々が利用してきた";
+		mes "一般的な精錬用金属だと";
+		mes "いわれています。";
 		next;
-		mes "[�W���A���[]";
-		mes "�|�S��l�X�ȋM�d�ȍz�΂ɔ�ׂ�";
-		mes "����Ȃɍ������x�������Ă͂��܂���";
-		mes "��ʐl�ł��ȒP�Ɏ�ɓ������Ƃ���";
-		mes "�ėp�����琸�B�p�����̒��ł�";
-		mes "��Ԃ͂���Ă��܂��ˁB";
+		mes "[ジュアリー]";
+		mes "鋼鉄や様々な貴重な鉱石に比べて";
+		mes "そんなに高い強度を持ってはいませんが";
+		mes "一般人でも簡単に手に入れられるという";
+		mes "汎用性から精錬用金属の中では";
+		mes "一番はやっていますね。";
 		next;
-		mes "[�W���A���[]";
-		mes "���̃v���R���̓����X�^�[����";
-		mes "�험�i�Ƃ��Ď�ɓ��ꂽ��";
-		mes "�b�艮�����鐸�B����";
-		mes "���B�p�̋����̔�����ɂ��Ă���";
+		mes "[ジュアリー]";
+		mes "このプラコンはモンスターから";
+		mes "戦利品として手に入れたり";
+		mes "鍛冶屋がいる精錬所で";
+		mes "精錬用の金属販売を専門にしている";
 		next;
-		mes "[�W���A���[]";
-		mes "���B�H����w�����邱�Ƃ�";
-		mes "��ɓ���邱�Ƃ��ł��܂��B";
-		mes "������x���x�����オ����";
-		mes "�㋉���x���̕��킪�g����悤�ɂȂ�";
+		mes "[ジュアリー]";
+		mes "精錬工から購入することで";
+		mes "手に入れることができます。";
+		mes "ある程度レベルが上がって";
+		mes "上級レベルの武器が使えるようになり";
 		next;
-		mes "[�W���A���[]";
-		mes "�v���R������ɓ����Ă�";
-		mes "�g�������Ȃ��Ȃ��č�������c";
-		mes "�������Ɣ����Ă��܂��܂��傤�B";
-		mes "�Ȃ�ƁA100 Zeny�̌�����";
-		mes "�Ȃ�܂���";
+		mes "[ジュアリー]";
+		mes "プラコンが手に入っても";
+		mes "使い道がなくなって困ったら…";
+		mes "さっさと売ってしまいましょう。";
+		mes "なんと、100 Zenyの現金に";
+		mes "なります♪";
 		close;
 	case 2:
-		mes "[�W���A���[]";
-		mes "�v���R���������Ă��郂���X�^�[��";
-		mes "�ӊO�ɑ����ƕ��������Ƃ�����܂��B";
-		mes "1�x�A�T���Ă݂���ǂ��ł����H";
-		mes "���ł͂Ȃ��Ǝv���܂���B";
+		mes "[ジュアリー]";
+		mes "プラコンを持っているモンスターは";
+		mes "意外に多いと聞いたことがあります。";
+		mes "1度、探してみたらどうですか？";
+		mes "損ではないと思いますよ。";
 		next;
-		mes "[�W���A���[]";
-		mes "���̑O�A�x����";
-		mes "�ׂ̎���̃}�X�^�[��";
-		mes "���ɏo��������ł���";
-		mes "���̎q������o�܂�����B";
+		mes "[ジュアリー]";
+		mes "この前、休日に";
+		mes "隣の酒場のマスターと";
+		mes "狩りに出かけたんですが";
+		mes "猪の子供から出ましたよ。";
 		close;
 	case 3:
-		mes "[�W���A���[]";
-		mes "�����[";
-		mes "�㎿�̃v���R�����~�����Ȃ��c�c";
+		mes "[ジュアリー]";
+		mes "あぁー";
+		mes "上質のプラコンが欲しいなぁ……";
 		close;
 	}
 }
 
-aldebaran.gat,121,231,4	script	�B���p�N	49,{
-	mes "[�P�~�A��]";
-	mes "�B���p�t�Ƃ����̂�";
-	mes "�Ñ�A���f�o������";
-	mes "�������l�H�I�Ȏ�i��";
-	mes "�����ɕϊ����邱�Ƃ�ڕW�Ƃ���";
-	mes "���w�A�Ȋw�ҒB�̂��Ƃ��B";
+aldebaran.gat,121,231,4	script	錬金術青年	49,{
+	mes "[ケミアル]";
+	mes "錬金術師というのは";
+	mes "古代アルデバランで";
+	mes "非金属を人工的な手段で";
+	mes "金属に変換することを目標とした";
+	mes "化学、科学者達のことだ。";
 	next;
-	switch(select("�t�F�C�����B���p�ɂ���","�B���p�t�ɂ���","�c�c","��b����߂�")) {
+	switch(select("フェイヨン錬金術について","錬金術師について","……","会話をやめる")) {
 	case 1:
-		mes "[�P�~�A��]";
-		mes "�Ñ�A���f�o�����Ǝ��𓯂�������";
-		mes "�t�F�C�����ł͓����̎v�z���琶�܂ꂽ";
-		mes "���ގ��Œ��������ł�";
-		mes "��l�ɂȂ��Ƃ���ꂽ";
-		mes "�u�O�v�Ƃ������̂��������B";
-		mes "���̒O����B���p���a�������񂾁B";
+		mes "[ケミアル]";
+		mes "古代アルデバランと時を同じくして";
+		mes "フェイヨンでは道教の思想から生まれた";
+		mes "飲む事で長生きができ";
+		mes "仙人になれるといわれた";
+		mes "「丹」というものがあった。";
+		mes "その丹から錬金術が誕生したんだ。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�₪�āA���̋Z�p��";
-		mes "������낤�Ƃ���v�z�����܂ꂽ�B";
-		mes "�Ȋw���S�̘B���p�Ƃ͈Ⴂ";
-		mes "��Ɏ�p�I�Ȏ�@���Ƃ�";
-		mes "���ꂪ�t�F�C�����B���p�Ȃ񂾁B";
+		mes "[ケミアル]";
+		mes "やがて、その技術で";
+		mes "金を作ろうとする思想が生まれた。";
+		mes "科学中心の錬金術とは違い";
+		mes "主に呪術的な手法をとる";
+		mes "それがフェイヨン錬金術なんだ。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�������t�F�C�����n����";
-		mes "�B���p�͔��B���Ȃ������c�c";
-		mes "�A���f�o�����Ƃ͈Ⴂ";
-		mes "���ӂ̎��R��������";
-		mes "�B���p�����ɕK�v�ȍޗ���";
-		mes "��ɕs�����Ă����񂾁B";
+		mes "[ケミアル]";
+		mes "しかしフェイヨン地方の";
+		mes "錬金術は発達しなかった……";
+		mes "アルデバランとは違い";
+		mes "周辺の自然環境が悪く";
+		mes "錬金術研究に必要な材料が";
+		mes "常に不足していたんだ。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�����獡�A�~�b�h�K���h�ɂ�����";
-		mes "�u�B���p�v�Ɗ֘A�̂���ꏊ��";
-		mes "���̃A���f�o������";
-		mes "�B���p�t�M���h�����ɂȂ��Ă��܂����B";
+		mes "[ケミアル]";
+		mes "だから今、ミッドガルドにおいて";
+		mes "「錬金術」と関連のある場所は";
+		mes "このアルデバランの";
+		mes "錬金術師ギルドだけになってしまった。";
 		close;
 	case 2:
-		mes "[�P�~�A��]";
-		mes "�B���p�t�Ƃ����ҒB��";
-		mes "�Ȋw�A���w���ʂɒ����Ă���";
-		mes "�l�X�ȕ����������鎖�ɂ����";
-		mes "�@�\�I�ȃA�C�e����";
-		mes "���o�������ł����������B";
+		mes "[ケミアル]";
+		mes "錬金術師という者達は";
+		mes "科学、化学両面に長けていて";
+		mes "様々な物質を混ぜる事によって";
+		mes "機能的なアイテムを";
+		mes "作り出す事ができたそうだ。";
 		close;
 	case 3:
-		mes "[�P�~�A��]";
-		mes "�ދ��������ȁA���ꂶ��c�c";
-		mes "�����X�^�[�J�[�h�ƃX���b�g�Ɋւ���";
-		mes "�b��������Ƃ��悤����Ȃ����B";
-		mes "�����X�^�[�J�[�h��";
-		mes "1���ł������Ă����";
-		mes "�����m���Ă��邩���m��Ȃ�����";
+		mes "[ケミアル]";
+		mes "退屈そうだな、それじゃ……";
+		mes "モンスターカードとスロットに関する";
+		mes "話をちょっとしようじゃないか。";
+		mes "モンスターカードを";
+		mes "1枚でも持っていれば";
+		mes "もう知っているかも知れないけど";
 		next;
-		mes "[�P�~�A��]";
-		mes "�e�J�[�h�ɂ͑}���X���b�g��";
-		mes "�����ʒu�̎w�肪����";
-		mes "�K���Z�Ȃ�Z�A���Ȃ猕";
-		mes "���̎�ނ̃A�C�e���ȊO�ɂ�";
-		mes "�}�����Ƃ��ł��Ȃ�����";
-		mes "���ӂ���悤�ɁB";
+		mes "[ケミアル]";
+		mes "各カードには挿すスロットの";
+		mes "装備位置の指定があり";
+		mes "必ず鎧なら鎧、剣なら剣";
+		mes "その種類のアイテム以外には";
+		mes "挿すことができないから";
+		mes "注意するように。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�Ⴆ�΃|�����J�[�h���ɂ����";
-		mes "�|�����J�[�h�ɂ͐�������";
-		mes "�uLUK+2�A���S���+1�v�Ƃ���";
-		mes "���ʐ��l�Ƒ������ʁA";
-		mes "�u�Z�v�ƕ\������Ă���B";
+		mes "[ケミアル]";
+		mes "例えばポリンカードを例にすると";
+		mes "ポリンカードには説明文に";
+		mes "「LUK+2、完全回避+1」という";
+		mes "効果数値と装着部位、";
+		mes "「鎧」と表示されている。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�]���āA���̃J�[�h��";
-		mes "�X���b�g���������邩��Ƃ�����";
-		mes "���퓙�ɕt���悤�Ƃ��Ă�";
-		mes "�s�\�Ƃ������ƂȂ񂾁B";
+		mes "[ケミアル]";
+		mes "従って、このカードを";
+		mes "スロットが多くあるからといって";
+		mes "武器等に付けようとしても";
+		mes "不可能ということなんだ。";
 		next;
-		mes "[�P�~�A��]";
-		mes "�܂��A�X�Ŕ����Ă���h��ɂ�";
-		mes "�X���b�g���t���Ă��Ȃ���������";
-		mes "���΂Ƀ����X�^�[����";
-		mes "�험�i�Ƃ��ē���";
-		mes "�h��ɂ̓X���b�g�����邩��";
-		mes "�L���Ɋ��p��������������B";
+		mes "[ケミアル]";
+		mes "また、街で売っている防具には";
+		mes "スロットが付いていない物が多く";
+		mes "反対にモンスターから";
+		mes "戦利品として得た";
+		mes "防具にはスロットがあるから";
+		mes "有効に活用した方がいいよ。";
 		next;
-		mes "[�P�~�A��]";
-		mes "���A�����X�^�[�J�[�h��";
-		mes "�����i�ɂ�����@��";
-		mes "�܂��������O����";
-		mes "�����A�C�e���E�B���h�E��ɂ�����";
-		mes "�}�������J�[�h���_�u���N���b�N�I";
-		mes "����Ɓc�c";
+		mes "[ケミアル]";
+		mes "あ、モンスターカードを";
+		mes "装備品につける方法は";
+		mes "まず装備を外して";
+		mes "所持アイテムウィンドウ上において";
+		mes "挿したいカードをダブルクリック！";
+		mes "すると……";
 		next;
-		mes "[�P�~�A��]";
-		mes "�����Ă��鑕���i�̒�����";
-		mes "�}�����Ƃ��ł���";
-		mes "�A�C�e���̃��X�g���\������邩��";
-		mes "��͑I�����邾���Ȃ񂾁B";
-		mes "�ȒP�ł���H";
+		mes "[ケミアル]";
+		mes "持っている装備品の中から";
+		mes "挿すことができる";
+		mes "アイテムのリストが表示されるから";
+		mes "後は選択するだけなんだ。";
+		mes "簡単でしょ？";
 		close;
 	case 4:
-		mes "[�P�~�A��]";
-		mes "�~�b�h�K���h�B���p�Ƃ�����";
-		mes "�A���f�o�����B���p�t�M���h!!";
-		mes "�B���p��I�i���Ȃ�!!";
+		mes "[ケミアル]";
+		mes "ミッドガルド錬金術といえば";
+		mes "アルデバラン錬金術師ギルド!!";
+		mes "錬金術よ！永遠なれ!!";
 		close;
 	}
 }
 
-aldebaran.gat,86,228,4	script	�q��	62,{
-	mes "[�ׂ�]";
-	mes "���̑O�A�ƂŎ����Ă�q�؂�";
-	mes "�u�ׂ׃x���v�����";
-	mes "�~�����j�[���R���̕���";
-	mes "���U���ɍs���Ă����́B";
-	mes "�ׂ׃x���͒��̈���";
-	mes "�ƂĂ������s���N�F�̎q�؂Ȃ́B";
+aldebaran.gat,86,228,4	script	子供	62,{
+	mes "[べべ]";
+	mes "この前、家で飼ってる子豚の";
+	mes "「べべベン」をつれて";
+	mes "ミョルニール山脈の方に";
+	mes "お散歩に行ってきたの。";
+	mes "べべベンは猪の一種で";
+	mes "とても可愛いピンク色の子豚なの。";
 	next;
-	switch(select("�ׂ׃x���̎U���̘b�����Ă���","�~�����j�[���R���̕��͋C�́H","��b����߂�")) {
+	switch(select("べべベンの散歩の話をしてくれ","ミョルニール山脈の雰囲気は？","会話をやめる")) {
 	case 1:
-		mes "[�ׂ�]";
-		mes "�R���ɉ����Ă��[���Ɠo���Ă�����";
-		mes "���ꂢ�ȑ傫���Ԃ���������";
-		mes "�������������Ƌߊ������c�c";
-		mes "���̑傫���Ԃ��l�Ƃׂ׃x����";
-		mes "�����߂�́B";
+		mes "[べべ]";
+		mes "山道に沿ってずーっと登っていたら";
+		mes "きれいな大きい花があったの";
+		mes "匂いをかごうと近寄ったら……";
+		mes "その大きい花が僕とべべベンを";
+		mes "いじめるの。";
 		next;
-		mes "[�ׂ�]";
-		mes "�{���Ƀr�b�N�����ĉ����܂ŗ����";
-		mes "�΂𓊂����肵���́B";
-		mes "�ł��т��Ƃ����Ȃ������́B";
-		mes "����������v�ȓz�������́B";
+		mes "[べべ]";
+		mes "本当にビックリして遠くまで離れて";
+		mes "石を投げたりしたの。";
+		mes "でもびくともしなかったの。";
+		mes "すっごく丈夫な奴だったの。";
 		next;
-		mes "[�ׂ�]";
-		mes "����ł�����Ƃ����ߊ���Ă݂��́B";
-		mes "��������Ԃ��l�̊�����Ă��́I";
-		mes "���Ŋ��݊��݂��Ă����́I";
-		mes "�M������H";
+		mes "[べべ]";
+		mes "それでちょっとだけ近寄ってみたの。";
+		mes "そしたら花が人の顔をしてたの！";
+		mes "歯で噛み噛みしてきたの！";
+		mes "信じられる？";
 		close;
 	case 2:
-		mes "[�ׂ�]";
-		mes "�~�����j�[���R����";
-		mes "�e��̉ؗ�ȐA����";
-		mes "���������邯�ǎ育�킢������";
-		mes "�����������ς��Ȃ́B";
-		mes "�ԁE峁E���ɖI�ƒ��c�c";
-		mes "��ȂǂɎ����������_���Ȃ́B";
+		mes "[べべ]";
+		mes "ミョルニール山脈は";
+		mes "各種の華麗な植物と";
+		mes "可愛く見えるけど手ごわい昆虫や";
+		mes "動物がいっぱいなの。";
+		mes "花・蟲・特に蜂と蝶……";
+		mes "蛾などに手をだしちゃダメなの。";
 		next;
-		mes "[�ׂ�]";
-		mes "���̏b��峂�";
-		mes "��ɍU�����Ȃ����";
-		mes "����������U�����Ă��邱�Ƃ�";
-		mes "�Ȃ��Ȃ��Ȃ�����c�c";
+		mes "[べべ]";
+		mes "大抵の獣と蟲は";
+		mes "先に攻撃しなければ";
+		mes "向こうから攻撃してくることは";
+		mes "なかなかないから……";
 		close;
 	case 3:
-		mes "[�ׂ�]";
-		mes "����A �ׂ׃x���͂ǂ��ɍs�����́H";
-		mes "�ׂ׃x���I�������ɂ����!!";
-		mes "����̂�!!!!";
+		mes "[べべ]";
+		mes "あれ、 べべベンはどこに行ったの？";
+		mes "べべベン！こっちにくるの!!";
+		mes "くるのっ!!!!";
 		close;
 	}
 }
 
-aldebaran.gat,159,242,4	script	�����W�W	119,{
-	mes "[�X�g�[�����O]";
-	mes "�~�����j�[���R���c�c";
-	mes "�R��������Ă����";
-	mes "�N�ł��킩�鎖��������B";
-	mes "����͍����̏K���ɂ����";
-	mes "������������Ă���Ď���B";
-	mes "�N�͒m���Ă�񂩁H";
+aldebaran.gat,159,242,4	script	昆虫ジジ	119,{
+	mes "[ストーロング]";
+	mes "ミョルニール山脈……";
+	mes "山道を歩いていれば";
+	mes "誰でもわかる事実がある。";
+	mes "それは昆虫の習性によって";
+	mes "強さが分かれてるって事や。";
+	mes "君は知ってるんか？";
 	next;
-	if(select("�����ɂ���","��b����߂�")==2) {
-		mes "[�X�g�[�����O]";
-		mes "�������Y��Ŏセ���Ɍ����邩��䂤��";
-		mes "�e���g�E���݂����ȍ����ł�";
-		mes "����Ɏ肥�o������";
-		mes "�ɂ��ڌ���ŁB";
-		mes "�~�����j�[���R���̑厩�R�̗͂�";
-		mes "�Ȃ߂��炠����I";
+	if(select("昆虫について","会話をやめる")==2) {
+		mes "[ストーロング]";
+		mes "いくら綺麗で弱そうに見えるからゆうて";
+		mes "テントウ虫みたいな昆虫でも";
+		mes "下手に手ぇ出したら";
+		mes "痛い目見るで。";
+		mes "ミョルニール山脈の大自然の力を";
+		mes "なめたらあかん！";
 		close;
 	}
-	mes "[�X�g�[�����O]";
-	mes "�I��A���A��Ȃǂ�";
-	mes "�ԂƉԂ̊Ԃ��т܂����";
-	mes "�����z���Đ����Ă��낤�H";
-	mes "�ԕ����^��ŉԂ̎󕲂�";
-	mes "��`�����肷�邩�킢���z��Ȃ��B";
-	mes "���i�͂ȁc�c";
+	mes "[ストーロング]";
+	mes "蜂や、蝶、蛾などは";
+	mes "花と花の間を飛びまわって";
+	mes "蜜を吸って生きてるやろう？";
+	mes "花粉を運んで花の受粉を";
+	mes "手伝ったりするかわいい奴らなんや。";
+	mes "普段はな……";
 	next;
-	mes "[�X�g�[�����O]";
-	mes "������Ƃ�����";
-	mes "�z����Ȃ߂��炠����ŁB";
-	mes "�������邽�߂�";
-	mes "�z����z��Ȃ�̐퓬�͂�";
-	mes "���悤�ɐi���������Ă킯��B";
+	mes "[ストーロング]";
+	mes "だからといって";
+	mes "奴らをなめたらあかんで。";
+	mes "生存するために";
+	mes "奴らも奴らなりの戦闘力を";
+	mes "持つように進化したってわけや。";
 	next;
-	mes "[�X�g�[�����O]";
-	mes "�܂��A��������������";
-	mes "�H���Ă���H�����������Ă�";
-	mes "�J�}�L����N��";
-	mes "�����ă��J�f�Ȃǂ�";
-	mes "���̑�\�I�ȓz���ȁB";
+	mes "[ストーロング]";
+	mes "また、こういう昆虫を";
+	mes "食ってる肉食昆虫がおってな";
+	mes "カマキリやクモ";
+	mes "そしてムカデなどが";
+	mes "その代表的な奴らやな。";
 	next;
-	mes "[�X�g�[�����O]";
-	mes "�����������H�����X�^�[��";
-	mes "������Ƌ����Ȃ������x����";
-	mes "1�C���肷��̂�";
-	mes "����ǂ��āA���炢�����ŁI";
-	mes "���ɐԈ𒎂͂��Ȃǂ���I";
+	mes "[ストーロング]";
+	mes "こういう肉食モンスターは";
+	mes "ちょっと強くなった程度じゃ";
+	mes "1匹相手するのも";
+	mes "しんどくて、えらい強いで！";
+	mes "特に赤芋虫はあなどれんわ！";
 	next;
-	mes "[�X�g�[�����O]";
-	mes "�ň���ŁI";
-	mes "�ւ������ꔭ�ŏI����I";
-	mes "����ł��s�K���̍K���Ȃ̂�";
-	mes "����<�A���M�I�y>�̎��͂�";
-	mes "�߂����ራ���āA�����������";
-	mes "�S�R�C�Â��ւ񂢂����Ƃ�ȁB";
+	mes "[ストーロング]";
+	mes "最悪やで！";
+	mes "へたすりゃ一発で終わりや！";
+	mes "それでも不幸中の幸いなのは";
+	mes "その<アルギオペ>の視力が";
+	mes "めっちゃ悪くて、遠くやったら";
+	mes "全然気づかへんいうことやな。";
 	close;
 }
 
-aldebaran.gat,60,70,4	script	����	69,{
-	mes "[�Z�j�����[�^ �V���r�A]";
-	mes "���̃A���f�o�����̂ǂ�����";
-	mes "�J�v���T�[�r�X�{�Ђ�����ƕ�����";
-	mes "�v�����e������A�����A���f�o�����܂�";
-	mes "�������𗈂܂����B";
-	mes "���c�c����Ȃ̂Ɂc�c�G�[���c�c";
+aldebaran.gat,60,70,4	script	乙女	69,{
+	mes "[セニョリータ シルビア]";
+	mes "このアルデバランのどこかに";
+	mes "カプラサービス本社があると聞いて";
+	mes "プロンテラから、ここアルデバランまで";
+	mes "遠い道を来ました。";
+	mes "そ……それなのに……エーン……";
 	next;
-	mes "[�Z�j�����[�^ �V���r�A]";
-	mes "�T���͂��߂Ă���";
-	mes "5���Ԃ��o�̂Ɂc�c";
-	mes "���������ǂ��ɂ���̂��c�c";
-	mes "���́c����ȂɌ��������Ă�";
-	mes "���T���͋��ł��c�c";
+	mes "[セニョリータ シルビア]";
+	mes "探しはじめてから";
+	mes "5時間も経つのに……";
+	mes "いったいどこにあるのか……";
+	mes "私は…こんなに賢く見えても";
+	mes "道探しは苦手です……";
 	next;
-	mes "[�Z�j�����[�^ �V���r�A]";
-	mes "�c�c���A�������B";
-	mes "���A���ɗ��������ȏ���";
-	mes "�m���Ă�񂾂��ǁA�����Ăق����H";
+	mes "[セニョリータ シルビア]";
+	mes "……あ、そうだ。";
+	mes "私、役に立ちそうな情報を";
+	mes "知ってるんだけど、教えてほしい？";
 	next;
-	if(select("������","�ʂɂ�����")==2) {
-		mes "[�Z�j�����[�^ �V���r�A]";
-		mes "�����c�c";
+	if(select("教えて","別にいいや")==2) {
+		mes "[セニョリータ シルビア]";
+		mes "そう……";
 		close;
 	}
-	mes "[�Z�j�����[�^ �V���r�A]";
-	mes "�����X�^�[����̐험�i��";
-	mes "�����A�C�e���̏ꍇ";
-	mes "�����i�̂͂��Ȃ̂�";
-	mes "�����ł��Ȃ���������܂��B";
-	mes "����Ȏ��ɂ́c�c����[��!!";
-	mes "^3355FF�ށ[���[�߁[���[�ˁ[�i�g�勾�j^000000";
+	mes "[セニョリータ シルビア]";
+	mes "モンスターからの戦利品が";
+	mes "装備アイテムの場合";
+	mes "装備品のはずなのに";
+	mes "装備できない事があります。";
+	mes "そんな時には……じゃーん!!";
+	mes "^3355FFむーしーめーがーねー（拡大鏡）^000000";
 	next;
-	mes "[�Z�j�����[�^ �V���r�A]";
-	mes "�g�勾���g���΁A���l��";
-	mes "�u���b�N�X�~�X�����Ȃ��Ă�";
-	mes "�ȒP�ɃA�C�e���Ӓ肪";
-	mes "�ł����ł���[�I";
+	mes "[セニョリータ シルビア]";
+	mes "拡大鏡を使えば、商人や";
+	mes "ブラックスミスがいなくても";
+	mes "簡単にアイテム鑑定が";
+	mes "できるんですよー！";
 	close;
 }
 
-aldebaran.gat,93,80,4	script	���̒����N	48,{
-	mes "[�f�B���E�J�e�B�[]";
-	mes "�����A���f�o�����́A";
-	mes "�����ɐ��H��������";
-	mes "���������ɂ��ꂢ�Ȑ��������A";
-	mes "�G��Ȍi�ς������ł��B";
-	mes "���E���E��";
+aldebaran.gat,93,80,4	script	足の長い青年	48,{
+	mes "[ディュウカティー]";
+	mes "ここアルデバランは、";
+	mes "町中に水路があって";
+	mes "あちこちにきれいな水が流れる、";
+	mes "秀麗な景観が自慢です。";
+	mes "し・か・し";
 	next;
-	mes "[�f�B���E�J�e�B�[]";
-	mes "���A�Ƒ��ɖق���";
-	mes "�ޏ��ɉ�ɍs���r��";
-	mes "���𓥂݊O���Ă��̐��H�ɗ�����";
-	mes "�^�钆�̃f�[�g���䖳���ɂȂ���";
-	mes "���܂�����ł��B";
+	mes "[ディュウカティー]";
+	mes "昨夜、家族に黙って";
+	mes "彼女に会いに行く途中";
+	mes "足を踏み外してあの水路に落ちて";
+	mes "真夜中のデートが台無しになって";
+	mes "しまったんです。";
 	next;
-	if(select("�����A�c�O�ł����ˁc�c","�Ӂ[��c�c����ŁH")==2) {
-		mes "[�f�B���E�J�e�B�[]";
-		mes "�������c�c";
-		mes "�l��n���Ȃ����";
-		mes "�v���Ă����ł��傤�H";
+	if(select("あらら、残念でしたね……","ふーん……それで？")==2) {
+		mes "[ディュウカティー]";
+		mes "ううう……";
+		mes "僕を馬鹿なやつだと";
+		mes "思っているんでしょう？";
 		close;
 	}
-	mes "[�f�B���E�J�e�B�[]";
-	mes "����ō���A�h��X�ɋ΂߂Ă���";
-	mes "�l�̔ޏ����畷�����b�Ȃ񂾂���";
-	mes "���ʂ̏��X�Ŕ����Ă���";
-	mes "�A�C�e�����";
+	mes "[ディュウカティー]";
+	mes "それで昨日、防具店に勤めている";
+	mes "僕の彼女から聞いた話なんだけど";
+	mes "普通の商店で売っている";
+	mes "アイテムより";
 	next;
-	mes "[�f�B���E�J�e�B�[]";
-	mes "�����X�^�[����";
-	mes "�험�i�œ����A�C�e���̕���";
-	mes "�ǂ����\�ł��鎖��";
-	mes "�����炵����ł��B";
+	mes "[ディュウカティー]";
+	mes "モンスターから";
+	mes "戦利品で得たアイテムの方が";
+	mes "良い性能である事が";
+	mes "多いらしいんです。";
 	next;
-	mes "[�f�B���E�J�e�B�[]";
-	mes "���p��Łu�X���b�g�������v";
-	mes "���Č����Ă邻���ł��B";
-	mes "�l�͉��̂��Ƃ���";
-	mes "�����ς�킩��Ȃ����ǁc�c";
+	mes "[ディュウカティー]";
+	mes "専門用語で「スロットが多い」";
+	mes "って言われてるそうです。";
+	mes "僕は何のことだか";
+	mes "さっぱりわからないけど……";
 	close;
 }
 
-aldebaran.gat,180,46,4	script	���m�l	88,{
-	mes "[�n�W���V���N]";
-	mes "���̓t�F�C�����Ƃ����X�̒�����";
-	mes "�����ό��q�ł��B";
-	mes "�����́c�c�����ɐ�������Ă���";
-	mes "�ƂĂ��������ł��ˁB";
+aldebaran.gat,180,46,4	script	東洋人	88,{
+	mes "[ハジュシャク]";
+	mes "私はフェイヨンという森の町から";
+	mes "来た観光客です。";
+	mes "ここは……町中に水が流れていて";
+	mes "とても涼しいですね。";
 	next;
-	mes "[�n�W���V���N]";
-	mes "�Ƃ���Łc�c�A���̐��c�c";
-	mes "����ł����C�ł��傤���H";
-	mes "�����c�c���񂶂���Ă��ł����ǁc�c";
+	mes "[ハジュシャク]";
+	mes "ところで……、この水……";
+	mes "飲んでも平気でしょうか？";
+	mes "もう……飲んじゃってるんですけど……";
 	next;
-	if(select("��b��i�߂�","��߂�")==1) {
-		mes "[�n�W���V���N]";
-		mes "����͒u���Ă����āA";
-		mes "���͗��s�����Ă��āA";
-		mes "�A���f�o�����ɒ����O��";
-		mes "���鍂�ʂȖ��p�t��";
-		mes "�������b�ł����c�c";
+	if(select("会話を進める","やめる")==1) {
+		mes "[ハジュシャク]";
+		mes "それは置いておいて、";
+		mes "私は旅行をしていて、";
+		mes "アルデバランに着く前に";
+		mes "ある高位な魔術師に";
+		mes "聞いた話ですが……";
 		next;
-		mes "[�n�W���V���N]";
-		mes "���̂��Ȃ�^3355FF�O����^000000�����X�^�[�̏ꍇ";
-		mes "�������U���A�������͖��@��";
-		mes "�_���[�W��^���鎖��";
-		mes "����������Ƃ���������Ă��܂����B";
+		mes "[ハジュシャク]";
+		mes "実体がない^3355FF念属性^000000モンスターの場合";
+		mes "無属性攻撃、もしくは魔法で";
+		mes "ダメージを与える事は";
+		mes "すごく難しいとおっしゃっていました。";
 		next;
-		mes "[�n�W���V���N]";
-		mes "���̏�񂪖��ɗ��Ă΍K���ł��B";
-		mes "���ꂶ��c�c";
+		mes "[ハジュシャク]";
+		mes "この情報が役に立てば幸いです。";
+		mes "それじゃ……";
 	}
 	else {
-		mes "[�n�W���V���N]";
-		mes "�����A�A���f�o������";
-		mes "����̊��͂ƂĂ��ǂ���";
-		mes "�����Ƃ��Ă����������ł���ˁB";
-		mes "���������񂾐����S�z�Ȃ������ł��B";
+		mes "[ハジュシャク]";
+		mes "ここ、アルデバランは";
+		mes "周りの環境はとても良いし";
+		mes "水がとっても美味しいですよね。";
+		mes "さっき飲んだ水も心配なさそうです。";
 	}
 	close;
 }
 
-aldebaran.gat,212,122,4	script	�A���f�o�����s��	97,{
-	mes "[�V�����_�[]";
-	mes "��������Ⴂ�I";
-	mes "�����̓A���f�o�����ł��I";
-	mes "��X�A���f�o�����s����";
-	mes "���Ȃ������}�v���܂��I";
-	mes "�c�c";
+aldebaran.gat,212,122,4	script	アルデバラン市民	97,{
+	mes "[シリンダー]";
+	mes "いらっしゃい！";
+	mes "ここはアルデバランです！";
+	mes "我々アルデバラン市民は";
+	mes "あなたを歓迎致します！";
+	mes "……";
 	next;
-	mes "[�V�����_�[]";
-	mes "�傰���ł����ˁH�s����\�c�c";
-	mes "�E�[���A�ł͂܂��͎���l�����ł�";
-	mes "���Ȃ������}���܂��I";
+	mes "[シリンダー]";
+	mes "大げさですかね？市民代表……";
+	mes "ウーム、ではまずは私一人だけでも";
+	mes "あなたを歓迎します！";
 	next;
-	if(select("��b��i�߂�","��߂�")==2) {
-		mes "[�V�����_�[]";
-		mes "�A���f�o�������Y���";
-		mes "�s��ȃ~�����j�[���R����";
-		mes "�͂܂ꂽ�A���΂炵���^�͂̓s�s�ł��B";
+	if(select("会話を進める","やめる")==2) {
+		mes "[シリンダー]";
+		mes "アルデバランは綺麗で";
+		mes "壮大なミョルニール山脈に";
+		mes "囲まれた、すばらしい運河の都市です。";
 		close;
 	}
-	mes "[�V�����_�[]";
-	mes "���A���������΂��̑O";
-	mes "�ʔ����z�����܂�����B";
-	mes "���̃A���f�o�������͂�";
-	mes "�~�����j�[���R���ŁB";
+	mes "[シリンダー]";
+	mes "あ、そういえばこの前";
+	mes "面白い奴を見ましたよ。";
+	mes "このアルデバランを囲む";
+	mes "ミョルニール山脈で。";
 	next;
-	mes "[�V�����_�[]";
-	mes "�~�����j�[���̐X�t�߂�";
-	mes "�V�g�̗������|���������܂����I";
-	mes "�c�c�{���ł���I�I";
+	mes "[シリンダー]";
+	mes "ミョルニールの森付近で";
+	mes "天使の翼を持つポリンを見ました！";
+	mes "……本当ですよ！！";
 	next;
-	mes "[�V�����_�[]";
-	mes "���C���̕��ʂ̃|������";
-	mes "�V��ł��܂����B";
-	mes "�V�g�̗������|�������Ȃ�āc�c";
-	mes "�V�g�|�����H";
+	mes "[シリンダー]";
+	mes "何匹かの普通のポリンと";
+	mes "遊んでいました。";
+	mes "天使の翼を持つポリンだなんて……";
+	mes "天使ポリン？";
 	close;
 }
 
-aldebaran.gat,145,123,4	script	���̏���	101,{
-	mes "[�L�����V���t�g]";
-	mes "���̐��E�̂ǂ�����";
-	mes "^3355FF�u�A�T�V���M���h�v^000000";
-	mes "�Ƃ����Ƃ��낪������";
-	mes "�������Ă��ɔE�ъ��A�l���E�߂�";
-	mes "�Z�p�������Ă����Ƃ����܂��B";
-	mes "����c";
+aldebaran.gat,145,123,4	script	村の少女	101,{
+	mes "[キャムシャフト]";
+	mes "この世界のどこかに";
+	mes "^3355FF「アサシンギルド」^000000";
+	mes "というところがあって";
+	mes "音も立てずに忍び寄り、人を殺める";
+	mes "技術を教えてくれるといいます。";
+	mes "それ…";
 	next;
-	mes "[�L�����V���t�g]";
-	mes "��@�ł���ˁH";
-	mes "�c�c";
-	mes "��@�Ȃ̂ɁA�Z�p���K������̂�";
-	mes "��p���������ł��傤���H";
+	mes "[キャムシャフト]";
+	mes "違法ですよね？";
+	mes "……";
+	mes "違法なのに、技術を習得するのに";
+	mes "費用がかかるんでしょうか？";
 	next;
-	if(select("��b��i�߂�","��߂�")==2) {
-		mes "[�L�����V���t�g]";
-		mes "�����ŋ����ĖႤ���ƂȂ��";
-		mes "�ł��Ȃ��ł��傤�ˁc�c";
-		mes "���[��c�c";
+	if(select("会話を進める","やめる")==2) {
+		mes "[キャムシャフト]";
+		mes "無料で教えて貰うことなんて";
+		mes "できないでしょうね……";
+		mes "うーん……";
 		close;
 	}
-	mes "[�L�����V���t�g]";
-	mes "�b���ς�邯�ǁc�c";
-	mes "�H�����Ă��Ĕ�s�\�͂�����";
-	mes "�����X�^�[�̑�����";
-	mes "�ړ��A�U�����x��������";
-	mes "������̍U���𓖂Ă�̂�";
-	mes "����������̂ł��B";
+	mes "[キャムシャフト]";
+	mes "話が変わるけど……";
+	mes "羽がついていて飛行能力がある";
+	mes "モンスターの多くは";
+	mes "移動、攻撃速度が速くて";
+	mes "こちらの攻撃を当てるのが";
+	mes "すごく難しいのです。";
 	next;
-	mes "[�L�����V���t�g]";
-	mes "�z��𑊎�ɂ��邽�߂ɂ�";
-	mes "�����Ɛ��m�ɓG��߂炦��ׂ�";
-	mes "DEX�i�Z�j���K�v��I";
+	mes "[キャムシャフト]";
+	mes "奴らを相手にするためには";
+	mes "もっと正確に敵を捕らえる為に";
+	mes "DEX（技）が必要よ！";
 	close;
 }
 
 
 //============================================================
-// �A���f�o��������NPC
+// アルデバラン室内NPC
 //------------------------------------------------------------
-aldeba_in.gat,232,241,4	script	�s��	48,{
+aldeba_in.gat,232,241,4	script	市民	48,{
 	mes "[RS125]";
-	mes "���̖�����l�ԓI�ŁA";
-	mes "���̌��t�g�����₽���Ɗ����Ă�";
-	mes "��������Ȃ��ł��������B";
-	mes "�S�����͒g�����ł�����c�c";
+	mes "私の名が非人間的で、";
+	mes "私の言葉使いが冷たいと感じても";
+	mes "私を恐れないでください。";
+	mes "心だけは暖かいですから……";
 	next;
 	mes "[RS125]";
-	mes "���̋��̒��ɂ͕��ʂ̐l�Ƃ͈���āc�c";
-	mes "2�̐S�������ł��Ă��܂��B";
-	mes "���̌ۓ������ɏĂ����c�c";
-	mes "�~�܂邱�ƂɂȂ��Ă��c�c";
-	mes "���̓A���f�o������";
-	mes "�����̂��߂ɑ���܂��B";
+	mes "私の胸の中には普通の人とは違って……";
+	mes "2つの心臓が脈打っています。";
+	mes "その鼓動が耳に焼きつき……";
+	mes "止まることになっても……";
+	mes "私はアルデバランの";
+	mes "未来のために走ります。";
 	next;
-	if(select("����𕷂�","��b����߂�")==2) {
+	if(select("事情を聞く","会話をやめる")==2) {
 		mes "[RS125]";
-		mes "�����́A���E����̗��ɏo������";
-		mes "�v���Ă��܂��B�`�p�s�s�A���x���^��";
-		mes "����C�͂ǂ�قǑf���炵���ł��傤�B";
-		mes "���N�̃A���f�o�����^�[�{�g���b�N��";
-		mes "�I�������A�Z�Ɛ��E�����";
-		mes "���킵�����ł��B";
+		mes "いつかは、世界一周の旅に出たいと";
+		mes "思っています。港湾都市アルベルタで";
+		mes "見る海はどれほど素晴らしいでしょう。";
+		mes "来年のアルデバランターボトラックが";
+		mes "終わったら、兄と世界一周に";
+		mes "挑戦したいです。";
 		close;
 	}
 	mes "[RS125]";
-	mes "�c�����A3�N���o���܂����c�c";
-	mes "���̌Z�ł���<996>��";
-	mes "�A���f�o������\�̒Z��������I���";
-	mes "�ꎞ�́u�A���f�o�����̃y�R�y�R�v��";
-	mes "�Ă΂��قǂ̑������������ł����B";
-	mes "4�N�Ɉ�x�A�A���f�o�����ŊJ�����";
+	mes "…もう、3年が経ちました……";
+	mes "私の兄である<996>は";
+	mes "アルデバラン代表の短距離陸上選手で";
+	mes "一時は「アルデバランのペコペコ」と";
+	mes "呼ばれるほどの速い足が自慢でした。";
+	mes "4年に一度、アルデバランで開かれる";
 	next;
 	mes "[RS125]";
-	mes "�u�A���f�o�����^�[�{�g���b�N�v�ł�";
-	mes "�Z�̎p����ڌ��悤�ƏW�܂�";
-	mes "���E�e�n�̃t�@���B�̂������Łc�c";
-	mes "�}�l�[�W���[����������";
-	mes "�m�C���[�[�ɂȂ���ł�������";
-	mes "���̐l�C�͖{���ɂ����������ł��c�c";
+	mes "「アルデバランターボトラック」では";
+	mes "兄の姿を一目見ようと集まる";
+	mes "世界各地のファン達のおかげで……";
+	mes "マネージャーだった私が";
+	mes "ノイローゼになる程でしたから";
+	mes "その人気は本当にすごかったです……";
 	next;
 	mes "[RS125]";
-	mes "�������c�c";
-	mes "�i���ȂǂƂ������̂͂���܂���c�c";
-	mes "�t�F�C�����Ƃ����A���������Ƃ��� ";
-	mes "�X�̂Ȃ��ɂ��鑺�̏�����";
-	mes "�Z�̓Ƒ����~�߂܂����B";
+	mes "しかし……";
+	mes "永遠などというものはありません……";
+	mes "フェイヨンという、うっそうとした ";
+	mes "森のなかにある村の少女が";
+	mes "兄の独走を止めました。";
 	next;
 	mes "[RS125]";
-	mes "�Z�͂��̌�A�����ȌP���ɂ��";
-	mes "�S���ɏ�Q��������";
-	mes "���A�a���Ŏ������߂Ă��܂��B";
+	mes "兄はその後、無理な訓練により";
+	mes "心臓に障害をかかえ";
+	mes "今、病床で私を見つめています。";
 	next;
 	mes "[RS125]";
-	mes "���́A���̃A���f�o������";
-	mes "������w�����A�Z�̎u���p���̂ł��I";
-	mes "���Ă��ĉ������c�c";
-	mes "�K���u�t�F�C�����̂��敗�v";
-	mes "<�n�o�i>�ɏ����Č����܂��I";
+	mes "私は、このアルデバランの";
+	mes "未来を背負い、兄の志を継ぐのです！";
+	mes "見ていて下さい……";
+	mes "必ず「フェイヨンのそよ風」";
+	mes "<ハバナ>に勝って見せます！";
 	close;
 }
 
-aldeba_in.gat,223,121,4	script	���ʂȂ�������	63,{
-	mes "[��t���̕|����������]";
-	mes "�����A�l�̉Ƃɏ���ɓ���񂶂�˂�";
-	mes "�N�A�ق�Ǝ��炾�ȁB";
-	mes "���̗p�ł���ȂƂ��ɗ���";
-	mes "���̉��ɐ���������̂��H";
+aldeba_in.gat,223,121,4	script	強面なおじさん	63,{
+	mes "[顔付きの怖いおじさん]";
+	mes "おい、人の家に勝手に入るんじゃねぇ";
+	mes "君、ほんと失礼だな。";
+	mes "何の用でこんなとこに来て";
+	mes "この俺に声をかけるのだ？";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�t�b�t�b�t�b�A�m���Ă��A�m���Ă�";
-	mes "�����������E�ɑ��݂����";
-	mes "���Ⴂ�����ȁc";
+	mes "[顔付きの怖いおじさん]";
+	mes "フッフッフッ、知ってるよ、知ってる";
+	mes "俺が現実世界に存在すると";
+	mes "勘違いしたな…";
 	next;
-	if(select("�b�𑱂���","��߂�")==2) {
-		mes "[��t���̕|����������]";
-		mes "����������I";
-		mes "�x�@�Ȃ�{���ߏ���c�c";
-		mes "�䂪�ꑰ�̐l�Ԃ��Ƃ����Ȃ�";
-		mes "���K�̖֌Ô��������Ă݂�I";
+	if(select("話を続ける","やめる")==2) {
+		mes "[顔付きの怖いおじさん]";
+		mes "早く消えろ！";
+		mes "警察なら捜査令状を……";
+		mes "我が一族の人間だというなら";
+		mes "お尻の蒙古斑を見せてみろ！";
 		close;
 	}
-	mes "[��t���̕|����������]";
-	mes "���ɒm���Ă��邩������Ȃ���";
-	mes "���̐��E�ɂ�";
-	mes "�b���V�X�e���Ƃ������̂�����B";
-	mes "�����āA�������̗b���̈�l�c�c";
+	mes "[顔付きの怖いおじさん]";
+	mes "既に知っているかもしれないが";
+	mes "この世界には";
+	mes "傭兵システムというものがある。";
+	mes "そして、俺もその傭兵の一人……";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�b���̖����ƃV�X�e���͒P�����B";
-	mes "���ňꏏ�ɐ���Ă����z��";
-	mes "�T���񂾂�c�c";
-	mes "���������͂�����z�̒l�i�͍����B";
+	mes "[顔付きの怖いおじさん]";
+	mes "傭兵の役割とシステムは単純だ。";
+	mes "金で一緒に戦ってくれる奴を";
+	mes "探すんだよ……";
+	mes "もちろん実力がある奴の値段は高い。";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�c�c�܂�Ȃ��b�͂�߂�";
-	mes "�ǂ��b����I�ԕ��@��";
-	mes "�ȒP�ɋ����Ă���B";
+	mes "[顔付きの怖いおじさん]";
+	mes "……つまんない話はやめて";
+	mes "良い傭兵を選ぶ方法を";
+	mes "簡単に教えてやるよ。";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�܂��A�@�����ꂢ���ǂ����ǂ�����";
-	mes "�ǂ��b���ł��邩��";
-	mes "�@���݂�Ε�����B";
-	mes "�����G��Ă�������ǂ��B";
-	mes "�@�������Ă����";
-	mes "�����́A���ׂ��Ђ��Ă���c�c";
+	mes "[顔付きの怖いおじさん]";
+	mes "まず、鼻がきれいかどうか良く見ろ";
+	mes "良い傭兵であるかは";
+	mes "鼻をみれば分かる。";
+	mes "いつも濡れている方が良い。";
+	mes "鼻が乾いていれば";
+	mes "そいつは、風邪をひいている……";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�����đ��񂪍ׂ������ǂ�";
-	mes "��͂�b���Ƃ�������";
-	mes "�ׂ�����Ɛ^�����Ȏ�؂����I";
-	mes "�����ă����O�w�A�[�ɁA���̂�������";
-	mes "�Z�b�e�B���O�p�[�}�Ȃ�ō�����?!";
+	mes "[顔付きの怖いおじさん]";
+	mes "そして足首が細い方が良い";
+	mes "やはり傭兵といったら";
+	mes "細い足首と真っ白な首筋だぜ！";
+	mes "そしてロングヘアーに、金のかかった";
+	mes "セッティングパーマなら最高だろ?!";
 	next;
-	mes "[��t���̕|����������]";
-	mes "�Ō�ɁA�b���Ƃ������̂́c�c";
-	mes "�T�[�r�X�Ƃ��I";
-	mes "���q�l���Ō�̈�H�܂ŁA�y�����";
-	mes "���߂�悤�ɁA���΂Őڑ҂���̂�";
-	mes "�{���̗b�����I�������A�����ڂ��";
-	mes "�Y�ꂸ�ɑウ�Ă����邱�ƁI";
+	mes "[顔付きの怖いおじさん]";
+	mes "最後に、傭兵というものは……";
+	mes "サービス業だ！";
+	mes "お客様が最後の一滴まで、楽しんで";
+	mes "飲めるように、そばで接待するのが";
+	mes "本物の傭兵だ！もちろん、おしぼりは";
+	mes "忘れずに代えてあげること！";
 	close;
 }
 
-aldeba_in.gat,219,61,4	script	�a�m���Ȃ�������	109,{
-	mes "[��t���̗ǂ���������]";
-	mes "���̕����ɂ����t���̕|��";
-	mes "��������̘b�͋C�ɂ���ȁB";
-	mes "���N�A���ݗb���̌P������";
-	mes "�؂̎������ɖ؂ɓo��";
-	mes "�����痎���āA���̗L��l��c�c";
+aldeba_in.gat,219,61,4	script	紳士風なおじさん	109,{
+	mes "[顔付きの良いおじさん]";
+	mes "横の部屋にいる顔付きの怖い";
+	mes "おじさんの話は気にするな。";
+	mes "一昨年、私設傭兵の訓練所で";
+	mes "木の実を取りに木に登り";
+	mes "頭から落ちて、あの有り様よ……";
 	next;
-	mes "[��t���̗ǂ���������]";
-	mes "���[���Ƙb�����ςȂ���";
-	mes "���������Ă���񂾁c�c";
-	mes "�����ɂ���I";
+	mes "[顔付きの良いおじさん]";
+	mes "ずーっと話しっぱなしで";
+	mes "私も困っているんだ……";
+	mes "頭が痛いよ！";
 	close;
 }
 
-aldeba_in.gat,152,47,4	script	���������N	97,{
-	mes "[���������N]";
-	mes "���A���A��ςȂ�ł���I";
-	mes "�l�������Ă����A�l�̉���";
-	mes "�u�Ђ悱�v�����I";
-	mes "�Ƃ��o�čs���Ă��܂��܂���!!";
+aldeba_in.gat,152,47,4	script	おおげさ青年	97,{
+	mes "[おおげさ青年]";
+	mes "た、た、大変なんですよ！";
+	mes "僕が飼っていた、僕の可愛い";
+	mes "「ひよこ」がっ！";
+	mes "家を出て行ってしまいました!!";
 	next;
-	if(select("�Ђ悱�̖��O�́H","�c�c")==2)
+	if(select("ひよこの名前は？","……")==2)
 		close;
-	mes "[���������N]";
-	mes "�u�������s�b�L�v�Ƃ����܂��c�c";
-	mes "���`��A���񂦂�";
-	mes "�ǂ�����΂����񂾁`";
-	mes "�ǂ����A�ڂ��̉���";
-	mes "�s�b�L������T���Ă��������`";
+	mes "[おおげさ青年]";
+	mes "「すごいピッキ」といいます……";
+	mes "え～ん、えんえん";
+	mes "どうすればいいんだ～";
+	mes "どうか、ぼくの可愛い";
+	mes "ピッキちゃんを探してください～";
 	next;
-	if(select("�Ȃ񂾁I ����ӂꂽ���O����Ȃ����H","�c�c")==1) {
-		mes "[���������N]";
-		mes "�l��n���ɂ��Ă��ł��ˁI";
-		mes "�l�ɂ͌Z�킪���Ȃ��ĉ����Ђ悱��";
-		mes "�Z�킪���Ɏv���Ă���ł��I";
-		mes "���A���킟������!!";
-		close;
-	}
-	mes "[���������N]";
-	mes "�l��n���ɂ��Ă��ł��ˁc�c";
-	mes "�l�ɂ͌Z�킪���Ȃ��A�ĉ����Ђ悱��";
-	mes "�Z�킪���Ɏv���Ă���ł��c�c";
-	mes "���A�������������c�c���������c�c";
-	close;
-}
-
-aldeba_in.gat,156,179,4	script	�}�X�^�[	61,{
-	mes "[�}�X�^�[]";
-	mes "�����A���f�o�����ɂ�";
-	mes "�J�v���T�[�r�X�̖{�Ђ�����܂��B";
-	mes "�����̂˂������B�����X";
-	mes "���̃o�[�ɗV�тɂ����ł�����";
-	mes "�����������ȉƑ��Ȃ�ł����";
-	next;
-	mes "[�}�X�^�[]";
-	mes "�����A�����ŌN�Ɏ���I";
-	mes "�N�̍D�݂̏����𒲂ׂ�";
-	mes "�u�T���L���[�}�X�^�[�v�̎��Ԃł��I";
-	mes "���A�����ƁA�ʂɂ��Ȃ����j���ł�";
-	mes "�����ł��A����͑S�R�\���܂���B";
-	next;
-	mes "[�}�X�^�[]";
-	mes "���i�A�������A���̂˂������I";
-	mes "����A�������̂˂������I";
-	mes "���΂炵���[�I�I";
-	mes "�c�Ǝv���Ă��J�v���˂�������";
-	mes "�I�Ԃ̂ł��I";
-	next;
-	if(select("�����A�ʔ������W�����I","���[��A��߂Ƃ��܂��c�c")==2) {
-		mes "[�}�X�^�[]";
-		mes "�A�A�[�b!!���A�Q�Ȃ��ō����";
-		mes "���̑f���炵���A���P�[�g��";
-		mes "��������Ȃ�āI";
-		mes "�Ȃ�ė₽���l��!!";
+	if(select("なんだ！ ありふれた名前じゃないか？","……")==1) {
+		mes "[おおげさ青年]";
+		mes "僕を馬鹿にしてるんですね！";
+		mes "僕には兄弟がいなくて可愛いひよこを";
+		mes "兄弟がわりに思ってたんです！";
+		mes "う、うわぁぁぁん!!";
 		close;
 	}
-	mes "[�}�X�^�[]";
-	mes "�����A�ł͏Љ�܂��I";
-	mes "�悭�l���Ă��I�т����������I";
+	mes "[おおげさ青年]";
+	mes "僕を馬鹿にしてるんですね……";
+	mes "僕には兄弟がいなく、て可愛いひよこを";
+	mes "兄弟がわりに思ってたんです……";
+	mes "う、うっうっうっ……うっうっ……";
+	close;
+}
+
+aldeba_in.gat,156,179,4	script	マスター	61,{
+	mes "[マスター]";
+	mes "ここアルデバランには";
+	mes "カプラサービスの本社があります。";
+	mes "そこのねえちゃん達が時々";
+	mes "このバーに遊びにくるんですけど";
+	mes "すごく愉快な家族なんですよ♪";
 	next;
-	mes "[�}�X�^�[]";
-	mes "���c�J�v���˂������";
-	mes "�N���V�b�N�Ȑ�����������";
-	mes "(1)�ԁA^3355FF�u�f�B�t�H���e�[�v^000000!!";
-	mes "�|�j�[�e�[���̗����������C���[�W��";
-	mes "����Ȓj���𖣗�����";
-	mes "(2)�ԁA^5533FF�u�e�[�����O�v^000000!!";
+	mes "[マスター]";
+	mes "さあ、ここで君に質問！";
+	mes "君の好みの女性を調べる";
+	mes "「サンキューマスター」の時間です！";
+	mes "あ、えっと、別にあなたが男性でも";
+	mes "女性でも、それは全然構いません。";
 	next;
-	mes "[�}�X�^�[]";
-	mes "�����O�X�g���[�g�w�A�[��";
-	mes "�`���[���|�C���g�I";
-	mes "���Ȃ₩�Ȏ��� ! �t�F�C�����o�g��";
-	mes "(3)�ԁA^555555�u�\�����v^000000!!";
+	mes "[マスター]";
+	mes "普段、ああっ、このねぇちゃん！";
+	mes "いや、こっちのねぇちゃん！";
+	mes "すばらしいー！！";
+	mes "…と思ってたカプラねえちゃんを";
+	mes "選ぶのです！";
 	next;
-	mes "[�}�X�^�[]";
-	mes "�{�[�C�b�V���ȃV���[�g�J�b�g��";
-	mes "���C��t�A���C���ӂ��";
-	mes "(4)�ԁA^1133DD�u�r�j�b�g�v^000000!!";
-	mes "��ÂŁA�������������͋C";
-	mes "OL�X�^�C���ōs�����I�ዾ��������";
-	mes "(5)�ԁA^33FF55�u�O�����X�v^000000!!";
+	if(select("おお、面白そうジャン！","うーん、やめときます……")==2) {
+		mes "[マスター]";
+		mes "アアーッ!!昨夜、寝ないで作った";
+		mes "この素晴らしいアンケートを";
+		mes "無視するなんて！";
+		mes "なんて冷たい人だ!!";
+		close;
+	}
+	mes "[マスター]";
+	mes "さあ、では紹介します！";
+	mes "よく考えてお選びくださいっ！";
 	next;
-	mes "[�}�X�^�[]";
-	mes "�c�C���e�[���̏��̎q";
-	mes "�c�������Ă��d���̓o�b�`���I";
-	mes "(6)�ԁA^AAAA00�u�v�v^000000�I�I";
+	mes "[マスター]";
+	mes "元祖カプラねえちゃん";
+	mes "クラシックな青い髪が美しい";
+	mes "(1)番、^3355FF「ディフォルテー」^000000!!";
+	mes "ポニーテールの落ち着いたイメージで";
+	mes "純情な男児を魅了する";
+	mes "(2)番、^5533FF「テーリング」^000000!!";
 	next;
-	mes "[�}�X�^�[]";
-	mes "���^�F(��)�J�v���T�[�r�X";
-	mes "(�L)�W�����_�C�x���g";
-	mes "�ȏ�ł��B";
+	mes "[マスター]";
+	mes "ロングストレートヘアーが";
+	mes "チャームポイント！";
+	mes "しなやかな肢体 ! フェイヨン出身の";
+	mes "(3)番、^555555「ソリン」^000000!!";
 	next;
-	switch(select("(1) �f�B�t�H���e�[","(2) �e�[�����O","(3) �\����","(4) �r�j�b�g","(5) �O�����X","(6) �v")) {
+	mes "[マスター]";
+	mes "ボーイッシュなショートカットで";
+	mes "元気一杯、活気あふれる";
+	mes "(4)番、^1133DD「ビニット」^000000!!";
+	mes "冷静で、落ち着いた雰囲気";
+	mes "OLスタイルで行こう！眼鏡が似合う";
+	mes "(5)番、^33FF55「グラリス」^000000!!";
+	next;
+	mes "[マスター]";
+	mes "ツインテールの女の子";
+	mes "幼く見えても仕事はバッチリ！";
+	mes "(6)番、^AAAA00「Ｗ」^000000！！";
+	next;
+	mes "[マスター]";
+	mes "協賛：(株)カプラサービス";
+	mes "(有)ジョンダイベント";
+	mes "以上です。";
+	next;
+	switch(select("(1) ディフォルテー","(2) テーリング","(3) ソリン","(4) ビニット","(5) グラリス","(6) Ｗ")) {
 	case 1:
-		mes "[�}�X�^�[]";
-		mes "�ӂށA�Â����̂��D���Ȃ��Ȃ���";
-		mes "�Ƃ��Ă��n�������Ȑl�I";
-		mes "�V�������̂��󂯓���Ă݂ĉ������I";
-		mes "�������瓦�������Ė��ʂł��I";
+		mes "[マスター]";
+		mes "ふむ、古いものが好きなあなたは";
+		mes "とっても馬鹿正直な人！";
+		mes "新しいものを受け入れてみて下さい！";
+		mes "現実から逃げたって無駄です！";
 		close;
 	case 2:
-		mes "[�}�X�^�[]";
-		mes "���Ȃ��͏W���͂��Ȃ��ł��ˁI";
-		mes "���Ȃ��̃p�[�g�i�[�܂�";
-		mes "���ӎU�����Ƃ�����c�c";
-		mes "����ɖ��f�΂��肩���邱�Ƃ�";
-		mes "�Ȃ�ł��傤�I";
+		mes "[マスター]";
+		mes "あなたは集中力がないですね！";
+		mes "あなたのパートナーまで";
+		mes "注意散漫だとしたら……";
+		mes "周りに迷惑ばかりかけることに";
+		mes "なるでしょう！";
 		close;
 	case 3:
-		mes "[�}�X�^�[]";
-		mes "�����������_����������c�c";
-		mes "�ߊϓI�Ȃ��Ƃ΂���";
-		mes "�l����̂͂悭����܂���B";
-		mes "�l���Ɉӗ~�������Ă��������I";
+		mes "[マスター]";
+		mes "あれもこれもダメだったら……";
+		mes "悲観的なことばかり";
+		mes "考えるのはよくありません。";
+		mes "人生に意欲を持ってください！";
 		close;
 	case 4:
-		mes "[�}�X�^�[]";
-		mes "���܂Ŗ��̒���";
-		mes "���z��T�����������ł����H";
-		mes "�������������茩�Ȃ����I";
+		mes "[マスター]";
+		mes "いつまで夢の中で";
+		mes "理想を探し続けるつもりですか？";
+		mes "現実をしっかり見なさい！";
 		close;
 	case 5:
-		mes "[�}�X�^�[]";
-		mes "������̂��Ȃ��Ɉꌾ�I";
-		mes "�S���J���Ȃ����I";
-		mes "��l�ڂ����ł��Ȃ��� �I";
+		mes "[マスター]";
+		mes "皮肉屋のあなたに一言！";
+		mes "心を開きなさい！";
+		mes "一人ぼっちでいないで ！";
 		close;
 	case 6:
-		mes "[�}�X�^�[]";
-		mes "���A����I";
-		mes "�c�����l��~������A���Ȃ��I";
-		mes "�́A�ƍ߂ł��I";
+		mes "[マスター]";
+		mes "こ、こら！";
+		mes "幼い恋人を欲しがる、あなた！";
+		mes "は、犯罪です！";
 		close;
 	}
 }
 
 //============================================================
-// �J�v���T�[�r�X�{��NPC
+// カプラサービス本社NPC
 //------------------------------------------------------------
-aldebaran.gat,58,225,3	script	�J�v���E��	116,{
-	mes "[�J�v���E��]";
-	mes "����ɂ��́B";
-	mes "�J�v���T�[�r�X�ł��B";
-	mes "������́A";
-	mes "�J�v���T�[�r�X�̖{�Ђł��B";
-	mes "�ʏ�c�ƊO��";
-	mes "�T�[�r�X���s���Ă���܂��B";
+aldebaran.gat,58,225,3	script	カプラ職員	116,{
+	mes "[カプラ職員]";
+	mes "こんにちは。";
+	mes "カプラサービスです。";
+	mes "こちらは、";
+	mes "カプラサービスの本社です。";
+	mes "通常営業外の";
+	mes "サービスを行っております。";
 	next;
-	mes "[�J�v���E��]";
-	mes "�����������܂�����A";
-	mes "���ɂ���J�v���E����";
-	mes "���₢���킹���������B";
+	mes "[カプラ職員]";
+	mes "何かございましたら、";
+	mes "中にいるカプラ職員に";
+	mes "お問い合わせください。";
 	close;
 }
 
-aldeba_in.gat,79,161,7	script	�J�v���E��	115,{
-	mes "[�J�v���E��]";
-	mes "��������Ⴂ�܂�" +strcharinfo(0)+ "�l�B";
-	mes "���J�v���T�[�r�X�������p��������";
-	mes "�l�����ꂽ�|�C���g�ƁA";
-	mes "�J�v���R�C�����������Ă���܂��B";
+aldeba_in.gat,79,161,7	script	カプラ職員	115,{
+	mes "[カプラ職員]";
+	mes "いらっしゃいませ" +strcharinfo(0)+ "様。";
+	mes "当カプラサービスをご利用いただき";
+	mes "獲得されたポイントと、";
+	mes "カプラコインを交換しております。";
 	next;
-	mes "[�J�v���E��]";
-	mes "�J�v���|�C���g";
-	mes "^7D0781500p ^000000�ŃJ�v���R�C���ƌ������A";
-	mes "^7D07813000p ^000000�Ń`�����X�Ƀ`�������W���邱�Ƃ�";
-	mes "�ł��܂��B";
+	mes "[カプラ職員]";
+	mes "カプラポイント";
+	mes "^7D0781500p ^000000でカプラコインと交換か、";
+	mes "^7D07813000p ^000000でチャンスにチャレンジすることが";
+	mes "できます。";
 	next;
-	mes "[�J�v���E��]";
-	mes "���q�l�̊l���|�C���g��";
-	mes "^FF0000" +KAFRA_PIT+ "^000000 �ł��B";
-	mes "���̒����炲��]�̕i����";
-	mes "���I�т��������B";
+	mes "[カプラ職員]";
+	mes "お客様の獲得ポイントは";
+	mes "^FF0000" +KAFRA_PIT+ "^000000 です。";
+	mes "次の中からご希望の品物を";
+	mes "お選びください。";
 	next;
-	switch(select("500p = �J�v���R�C�� 1 ��","3000p = �`�����X","������")) {
+	switch(select("500p = カプラコイン 1 枚","3000p = チャンス","取り消し")) {
 	case 1:
-		mes "[�J�v���E��]";
-		mes "��x�Ɍ����ł���̂�";
-		mes "10���܂łƂȂ�܂��B";
-		mes "�����������ꍇ�́A";
-		mes "�u0�v�Ƃ���������Ă��������B";
-		mes "�J�v���R�C��������";
-		mes "�������܂����H";
+		mes "[カプラ職員]";
+		mes "一度に交換できるのは";
+		mes "10枚までとなります。";
+		mes "もし取り消す場合は、";
+		mes "「0」とおっしゃってください。";
+		mes "カプラコイン何枚と";
+		mes "交換しますか？";
 		next;
 		input '@num;
 		if('@num == 0) {
-			mes "[�J�v���E��]";
-			mes "�������܂����B";
+			mes "[カプラ職員]";
+			mes "取り消しました。";
 			close;
 		} else if('@num < 0 || '@num > 10) {
-			mes "[�J�v���E��]";
-			mes "�����������Ȃ��悤�ł��B";
+			mes "[カプラ職員]";
+			mes "数が正しくないようです。";
 			close;
 		}
 		if(KAFRA_PIT < 500*'@num) {
-			mes "[�J�v���E��]";
-			mes "�J�v���|�C���g������܂���B";
-			mes "���莝���̃|�C���g����";
-			mes "�m�F�Ȃ����Ă��炨�z�����������B";
+			mes "[カプラ職員]";
+			mes "カプラポイントが足りません。";
+			mes "お手持ちのポイント数を";
+			mes "確認なさってからお越しください。";
 			close;
 		}
 		if(checkitemblank() == 0) {
-			mes "�]�����A�C�e���̎�ސ���������";
-			mes "�@�댯�ł��B";
-			mes "�@�����A�C�e�������炵�Ă���A";
-			mes "�@�ēx�b�������Ă��������]";
+			mes "‐所持アイテムの種類数が多い為";
+			mes "　危険です。";
+			mes "　所持アイテムを減らしてから、";
+			mes "　再度話しかけてください‐";
 			close;
 		}
 		set KAFRA_PIT,KAFRA_PIT-500*'@num;
 		getitem 6367,'@num;
-		mes "[�J�v���E��]";
-		mes "�����p���肪�Ƃ��������܂����B";
+		mes "[カプラ職員]";
+		mes "ご利用ありがとうございました。";
 		close;
 	case 2:
 		if(KAFRA_PIT < 3000) {
-			mes "[�J�v���E��]";
-			mes "�J�v���|�C���g������܂���B";
-			mes "���莝���̃|�C���g����";
-			mes "�m�F�Ȃ����Ă��炨�z�����������B";
+			mes "[カプラ職員]";
+			mes "カプラポイントが足りません。";
+			mes "お手持ちのポイント数を";
+			mes "確認なさってからお越しください。";
 			close;
 		}
-		mes "[�J�v���E��]";
-		mes "^0000FF�`�����X�I^000000";
+		mes "[カプラ職員]";
+		mes "^0000FFチャンス！^000000";
 		next;
-		mes "[�J�v���E��]";
-		mes "����ł́A���q�l�̉^���߂���";
-		mes "�܂���܂��傤�B";
-		mes "�����͂�낵���ł����H";
+		mes "[カプラ職員]";
+		mes "それでは、お客様の運だめしと";
+		mes "まいりましょう。";
+		mes "準備はよろしいですか？";
 		next;
-		mes "[�J�v���E��]";
-		mes "������̒��I�@��";
-		mes "�񂵂Ă��������B";
+		mes "[カプラ職員]";
+		mes "こちらの抽選機を";
+		mes "回してください。";
 		next;
 		switch(rand(3)) {
-		case 0: mes "�W�����W�����c�c"; break;
-		case 1: mes "�K���K���K���c�c"; break;
-		case 2: mes "�|���b �J�c�b �J�c���c�c"; break;
+		case 0: mes "ジャラジャラ……"; break;
+		case 1: mes "ガラガラガラ……"; break;
+		case 2: mes "ポロッ カツッ カツン……"; break;
 		}
 		next;
-		mes "[�J�v���E��]";
-		mes "�͂��A�ł܂����ˁ`";
-		mes "�����Ɓc�c";
+		mes "[カプラ職員]";
+		mes "はい、でましたね～";
+		mes "えっと……";
 		next;
-		mes "[�J�v���E��]";
-		mes "^FF0000�����c�c�����^000000";
+		mes "[カプラ職員]";
+		mes "^FF0000おっ……これは^000000";
 		next;
 		if(checkitemblank() == 0) {
-			mes "[�J�v���E��]";
-			mes "���q�l�A���X�ו�������������";
-			mes "����܂��񂩁H";
-			mes "���̏�Ԃł͏ܕi���������Ă�";
-			mes "�������ɂȂ�܂���B";
+			mes "[カプラ職員]";
+			mes "お客様、少々荷物を持ちすぎて";
+			mes "おりませんか？";
+			mes "その状態では賞品を交換しても";
+			mes "お持ちになれません。";
 			next;
-			mes "[�J�v���E��]";
-			mes "���萔�ł����A�J�v���T�[�r�X��";
-			mes "�����p�ɂȂ�A��ސ���";
-			mes "���炷�悤���肢�v���܂��B";
+			mes "[カプラ職員]";
+			mes "お手数ですが、カプラサービスを";
+			mes "ご利用になり、種類数を";
+			mes "減らすようお願い致します。";
 			close;
 		}
 		if(MaxWeight-Weight < 1000) {
-			mes "[�J�v���E��]";
-			mes "���q�l�A���X�ו�������������";
-			mes "����܂��񂩁H";
-			mes "���̏�Ԃł͏ܕi���������Ă�";
-			mes "�������ɂȂ�܂���B";
+			mes "[カプラ職員]";
+			mes "お客様、少々荷物を持ちすぎて";
+			mes "おりませんか？";
+			mes "その状態では賞品を交換しても";
+			mes "お持ちになれません。";
 			next;
-			mes "[�J�v���E��]";
-			mes "���萔�ł����A�J�v���T�[�r�X��";
-			mes "�����p�ɂȂ�A�c��d�ʂ�";
-			mes "^0000FF1100^000000 ���ɂȂ�悤�ו���";
-			mes "���炷�悤���肢�v���܂��B";
+			mes "[カプラ職員]";
+			mes "お手数ですが、カプラサービスを";
+			mes "ご利用になり、残り重量が";
+			mes "^0000FF1100^000000 程になるよう荷物を";
+			mes "減らすようお願い致します。";
 			close;
 		}
 		set KAFRA_PIT,KAFRA_PIT-3000;
 		set '@prize,rand(1,100);
 		if('@prize == 100) {
-			mes "[�J�v���E��]";
-			mes "1���`";
-			mes "1���܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���w�A�o���h 1�I^000000";
+			mes "[カプラ職員]";
+			mes "1等～";
+			mes "1等賞です～";
+			mes "賞品は ^00FF00カプラヘアバンド 1個！^000000";
 			getitem 12399,1;
 			break;
 		} else if('@prize >= 98 && '@prize < 100) {
-			mes "[�J�v���E��]";
-			mes "2���`";
-			mes "2���܂ł��`";
-			mes "�ܕi�� ^00FF00���؂ȕ� 1�I^000000";
+			mes "[カプラ職員]";
+			mes "2等～";
+			mes "2等賞です～";
+			mes "賞品は ^00FF00豪華な宝箱 1個！^000000";
 			getitem 12399,1;
 			break;
 		} else if('@prize >= 95 && '@prize < 98) {
-			mes "[�J�v���E��]";
-			mes "3���`";
-			mes "3���܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���R�C�� 10���I^000000";
+			mes "[カプラ職員]";
+			mes "3等～";
+			mes "3等賞です～";
+			mes "賞品は ^00FF00カプラコイン 10枚！^000000";
 			getitem 6367,10;
 			break;
 		} else if('@prize >= 89 && '@prize < 95) {
-			mes "[�J�v���E��]";
-			mes "4���`";
-			mes "4���܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���R�C�� 6���I^000000";
+			mes "[カプラ職員]";
+			mes "4等～";
+			mes "4等賞です～";
+			mes "賞品は ^00FF00カプラコイン 6枚！^000000";
 			getitem 6367,6;
 			break;
 		} else if('@prize >= 63 && '@prize < 89) {
-			mes "[�J�v���E��]";
-			mes "5���`";
-			mes "5���܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���R�C�� 3���I^000000";
+			mes "[カプラ職員]";
+			mes "5等～";
+			mes "5等賞です～";
+			mes "賞品は ^00FF00カプラコイン 3枚！^000000";
 			getitem 6367,3;
 			break;
 		} else if('@prize >= 37 && '@prize < 63) {
-			mes "[�J�v���E��]";
-			mes "6���`";
-			mes "6���܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���R�C�� 2���I^000000";
+			mes "[カプラ職員]";
+			mes "6等～";
+			mes "6等賞です～";
+			mes "賞品は ^00FF00カプラコイン 2枚！^000000";
 			getitem 6367,2;
 			break;
 		} else {
-			mes "[�J�v���E��]";
-			mes "�c�O�`";
-			mes "�c�O�܂ł��`";
-			mes "�ܕi�� ^00FF00�J�v���R�C�� 1���I^000000";
+			mes "[カプラ職員]";
+			mes "残念～";
+			mes "残念賞です～";
+			mes "賞品は ^00FF00カプラコイン 1枚！^000000";
 			getitem 6367,1;
 			break;
 		}
 		next;
-		mes "[�J�v���E��]";
-		mes "���߂łƂ��������܂��`";
-		mes "�����p���肪�Ƃ��������܂����I";
+		mes "[カプラ職員]";
+		mes "おめでとうございます～";
+		mes "ご利用ありがとうございました！";
 		next;
-		mes "[�J�v���E��]";
-		mes "�܂������̃|�C���g���W��";
-		mes "����悤����Ă���܂��B";
-		mes "���� (��)�J�v���T�[�r�X��";
-		mes "�����p�����������肪�Ƃ�";
-		mes "�������܂��B";
+		mes "[カプラ職員]";
+		mes "また多くのポイントを集め";
+		mes "られるよう願っております。";
+		mes "いつも (株)カプラサービスを";
+		mes "ご利用いただきありがとう";
+		mes "ございます。";
 		close;
 	case 3:
-		mes "[�J�v���E��]";
-		mes "�܂������̃|�C���g���W��";
-		mes "����悤����Ă���܂��B";
-		mes "���� (��)�J�v���T�[�r�X��";
-		mes "�����p�����������肪�Ƃ�";
-		mes "�������܂��B";
+		mes "[カプラ職員]";
+		mes "また多くのポイントを集め";
+		mes "られるよう願っております。";
+		mes "いつも (株)カプラサービスを";
+		mes "ご利用いただきありがとう";
+		mes "ございます。";
 		close;
 	}
 }
 
-aldeba_in.gat,84,166,4	script	�J�v���T�[�r�X	117,{
+aldeba_in.gat,84,166,4	script	カプラサービス	117,{
 	cutin "kafra_01",2;
-	mes "[�J�v���f�B�t�H���e�[]";
-	mes "��������Ⴂ�܂��I";
-	mes "�J�v���T�[�r�X�ɂ�����";
-	mes "����J�v���E���A";
-	mes "�u�f�B�t�H���e�[�v�Ɛ\���܂��I";
-	mes "��낵�����肢���܂��B";
+	mes "[カプラディフォルテー]";
+	mes "いらっしゃいませ！";
+	mes "カプラサービスにおける";
+	mes "初代カプラ職員、";
+	mes "「ディフォルテー」と申します！";
+	mes "よろしくお願いします。";
 	next;
-	mes "[�J�v���f�B�t�H���e�[]";
-	mes "�䂪�J�v���T�[�r�X�́A���ł�";
-	mes "���q�l�ɖ������Ă����������߂�";
-	mes "�����A�M�p�A�������O�匴���Ƃ���";
-	mes "�O�ꂵ���P���ƊǗ���ʂ��Ă��q�l��";
-	mes "�����b�������Ē����Ă���܂��B";
+	mes "[カプラディフォルテー]";
+	mes "我がカプラサービスは、いつでも";
+	mes "お客様に満足していただくために";
+	mes "誠実、信用、正直を三大原則として";
+	mes "徹底した訓練と管理を通じてお客様の";
+	mes "お世話をさせて頂いております。";
 	next;
-	switch(select("����A�J�v�����p���́`�H","����Ȃ�","���q���āH")) {
+	switch(select("あれ、カプラ利用券は～？","さよなら","迷子って？")) {
 	case 1:
-		mes "[�J�v���f�B�t�H���e�[]";
-		mes "�M�N�b�I";
-		mes "�\���󂲂����܂���c�c";
-		mes "�J�v�����p���ɂ��܂��ẮA";
-		mes "�{�Ђ̌���ɂ��p�~���邱�Ƃ�";
-		mes "�Ȃ�܂����c�c";
-		mes "�{���ɂ��߂�Ȃ����c�c";
+		mes "[カプラディフォルテー]";
+		mes "ギクッ！";
+		mes "申し訳ございません……";
+		mes "カプラ利用券につきましては、";
+		mes "本社の決定により廃止することに";
+		mes "なりました……";
+		mes "本当にごめんなさい……";
 		break;
 	case 2:
-		mes "[�J�v���f�B�t�H���e�[]";
-		mes "�����p�����A���肪�Ƃ��������܂����I";
-		mes "������̓J�v���f�B�t�H���e�[�ł����B";
+		mes "[カプラディフォルテー]";
+		mes "ご利用頂き、ありがとうございました！";
+		mes "お相手はカプラディフォルテーでした。";
 		break;
 	case 3:
-		mes "[�J�v���f�B�t�H���e�[]";
-		mes "�{�Ђł̌��C���I�����q��";
-		mes "���n���C�Ɍ����킹���̂ł����c�c";
-		mes "�f���ŉ����āA�撣�艮��";
-		mes "�Ƃ��Ă��ǂ��q�Ȃ�ł��B";
-		mes "���ɖ����Ă��܂����̂ł��傤�c�c";
+		mes "[カプラディフォルテー]";
+		mes "本社での研修を終えた子を";
+		mes "実地研修に向かわせたのですが……";
+		mes "素直で可愛くて、頑張り屋の";
+		mes "とっても良い子なんです。";
+		mes "道に迷ってしまったのでしょう……";
 		next;
-		mes "[�J�v���f�B�t�H���e�[]";
-		mes "�܂����C���Ȃ̂ŁA�����Ƃǂ�����";
-		mes "��l�ō����Ă���Ǝv���̂ł��B";
-		mes "�����A���킢������";
-		mes "�ǂ������炢���̂ł��傤�c�c";
+		mes "[カプラディフォルテー]";
+		mes "まだ研修中なので、きっとどこかで";
+		mes "一人で困っていると思うのです。";
+		mes "ああ、かわいそうに";
+		mes "どうしたらいいのでしょう……";
 		break;
 	}
 	close2;
@@ -1331,39 +1331,39 @@ aldeba_in.gat,84,166,4	script	�J�v���T�[�r�X	117,{
 	end;
 }
 
-aldeba_in.gat,83,233,4	script	�J�v���T�[�r�X	116,{
+aldeba_in.gat,83,233,4	script	カプラサービス	116,{
 	cutin "kafra_02",2;
-	mes "[�J�v���e�[�����O]";
-	mes "�c�c�f�B�t�H���e�[�˂�������";
-	mes "�������A�����Ȃ񂾂���I";
-	mes "���C���͓]�����Ă�����΂����̂�";
-	mes "��������C�̓��Ȃ�Č�����";
-	mes "�����Ă������邩��";
-	mes "���q�ɂȂ����Ⴄ�̂�B";
+	mes "[カプラテーリング]";
+	mes "……ディフォルテーねぇちゃんは";
+	mes "いっつも、ああなんだから！";
+	mes "研修生は転送してあげればいいのに";
+	mes "これも研修の内なんて言って";
+	mes "歩いていかせるから";
+	mes "迷子になっちゃうのよ。";
 	next;
-	mes "[�J�v���e�[�����O]";
-	mes "���̂����A����Ȃ��ƂɂȂ�����";
-	mes "��ԐS�z���������";
-	mes "���남�낵�Ă�̂�I";
+	mes "[カプラテーリング]";
+	mes "そのくせ、こんなことになったら";
+	mes "一番心配しちゃって";
+	mes "おろおろしてるのよ！";
 	next;
-	switch(select("���Ȃ��͐S�z����Ȃ��́H","���C���ĉ��H")) {
+	switch(select("あなたは心配じゃないの？","研修って何？")) {
 	case 1:
-		mes "[�J�v���e�[�����O]";
-		mes "����A�������Ă������";
-		mes "�S�z���Ă܂���I";
-		mes "�ł��A���C���Ƃ����ǂ�";
-		mes "���B�J�v���E���͂�������";
-		mes "���炳��Ă���̂�";
-		mes "����ȂɐS�z�v��Ȃ���ł��B";
+		mes "[カプラテーリング]";
+		mes "あら、私だってもちろん";
+		mes "心配してますよ！";
+		mes "でも、研修生といえども";
+		mes "私達カプラ職員はしっかり";
+		mes "教育されているので";
+		mes "そんなに心配要らないんです。";
 		break;
 	case 2:
-		mes "[�J�v���e�[�����O]";
-		mes "���B�J�v���E����";
-		mes "�F�l����������ƃT�|�[�g�����";
-		mes "�l�X�Ȍ��C���󂯂Ă��܂��B";
-		mes "���̈�ŁA���n���C��";
-		mes "�s���r���̌��C����";
-		mes "���q�ɂȂ��Ă��܂�����ł��B";
+		mes "[カプラテーリング]";
+		mes "私達カプラ職員は";
+		mes "皆様をしっかりとサポートする為";
+		mes "様々な研修を受けています。";
+		mes "その一環で、実地研修に";
+		mes "行く途中の研修生が";
+		mes "迷子になってしまったんです。";
 		break;
 	}
 	close2;
@@ -1371,44 +1371,44 @@ aldeba_in.gat,83,233,4	script	�J�v���T�[�r�X	116,{
 	end;
 }
 
-aldeba_in.gat,28,238,4	script	�J�v���T�[�r�X	115,{
+aldeba_in.gat,28,238,4	script	カプラサービス	115,{
 	cutin "kafra_03",2;
-	mes "[�J�v���\����]";
-	mes "����ɂ��́B";
-	mes "���q�l�A�~�b�h�K���h�嗤�̊O�E��";
-	mes "�������邩�����m�ł����H";
+	mes "[カプラソリン]";
+	mes "こんにちは。";
+	mes "お客様、ミッドガルド大陸の外界に";
+	mes "何があるかご存知ですか？";
 	next;
-	mes "[�J�v���\����]";
-	mes "���A���������m�肽����ł��B";
-	mes "����������������̂�����H";
-	mes "�`�X�̃A���x���^�ɔh�����ꂽ��";
-	mes "�����ʔ����b�ł�������̂��ȁH";
+	mes "[カプラソリン]";
+	mes "私、すっごく知りたいんです。";
+	mes "いったい何があるのかしら？";
+	mes "港街のアルベルタに派遣されたら";
+	mes "何か面白い話でも聞けるのかな？";
 	next;
-	switch(select("�O�̐��E�ɋ�������́H","�嗤�̊O�E���āH")) {
+	switch(select("外の世界に興味あるの？","大陸の外界って？")) {
 	case 1:
-		mes "[�J�v���\����]";
-		mes "�������ł����I";
-		mes "���B�J�v���T�[�r�X��";
-		mes "�ǂ�ȂƂ���ł�";
-		mes "�T�[�r�X��񋟂����Ă�����������";
-		mes "�l���Ă���܂��̂ŁI";
+		mes "[カプラソリン]";
+		mes "もちろんですっ！";
+		mes "私達カプラサービスは";
+		mes "どんなところでも";
+		mes "サービスを提供させていただこうと";
+		mes "考えておりますので！";
 		next;
-		mes "[�J�v���\����]";
-		mes "�c�c�ł�";
-		mes "�l�I�ɋ���������܂���B";
-		mes "�����ٍ��̊X�c�c";
-		mes "�ǂ�ȑf�G�Ȃ��̂�";
-		mes "�����Ă���̂�����H";
-		mes "�����A�s���Ă݂����ł��B";
+		mes "[カプラソリン]";
+		mes "……でも";
+		mes "個人的に興味もありますよ。";
+		mes "遠い異国の街……";
+		mes "どんな素敵なものが";
+		mes "売っているのかしら？";
+		mes "ああ、行ってみたいです。";
 		break;
 	case 2:
-		mes "[�J�v���\����]";
-		mes "�ڂ����͂킩��Ȃ��̂ł���";
-		mes "�����C���z�����Ƃ����";
-		mes "�����A�嗤��������";
-		mes "�����ɂ͕ς����������";
-		mes "���A�X�����邻���ł��B";
-		mes "�\�Ȃ�ł����ǂˁI";
+		mes "[カプラソリン]";
+		mes "詳しくはわからないのですが";
+		mes "遠く海を越えたところに";
+		mes "島か、大陸があって";
+		mes "そこには変わった文化の";
+		mes "国、街があるそうです。";
+		mes "噂なんですけどね！";
 		break;
 	}
 	close2;
@@ -1416,78 +1416,78 @@ aldeba_in.gat,28,238,4	script	�J�v���T�[�r�X	115,{
 	end;
 }
 
-aldeba_in.gat,142,238,4	script	�J�v���T�[�r�X	114,{
+aldeba_in.gat,142,238,4	script	カプラサービス	114,{
 	cutin "kafra_04",2;
-	mes "[�J�v���r�j�b�g]";
-	mes "��������Ⴂ�܂��I";
-	mes "�J�v���u�r�j�b�g�v�ł��B";
-	mes "���q�l�ɂ�������������";
-	mes "�Ƃ��Ă����̂��b�I";
+	mes "[カプラビニット]";
+	mes "いらっしゃいませ！";
+	mes "カプラ「ビニット」です。";
+	mes "お客様にだけお教えする";
+	mes "とっておきのお話！";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "���́c�c";
-	mes "�䂪�J�v���T�[�r�X�͂ł��ˁ[";
-	mes "�ȑO�́A�J�v���T�[�r�X�Ƃ���";
-	mes "���O����Ȃ�������ł��[";
-	mes "�����A�ł͂Ȃ񂾂����ł��傤�H";
+	mes "[カプラビニット]";
+	mes "実は……";
+	mes "我がカプラサービスはですねー";
+	mes "以前は、カプラサービスという";
+	mes "名前じゃなかったんですー";
+	mes "さあ、ではなんだったでしょう？";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "�W���[�[�[���I ����͂��I";
-	mes "�J�I�t�I(RRRR)";
-	mes "�n�b�A�g�т��c�c�A������Ǝ���B";
+	mes "[カプラビニット]";
+	mes "ジャーーーン！ それはっ！";
+	mes "カ！フ！(RRRR)";
+	mes "ハッ、携帯が……、ちょっと失礼。";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "�͂����A�r�j�b�g�ł��B";
-	mes "�����A�{�����I�͂����I�͂����I";
-	mes "�c�c�͂����I";
-	mes "�͂��I�H";
+	mes "[カプラビニット]";
+	mes "はいっ、ビニットです。";
+	mes "あっ、本部長！はいっ！はいっ！";
+	mes "……はいっ！";
+	mes "はい！？";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "�����A�������I";
-	mes "���c�c�A�Ȃ�ł�����܂���I";
-	mes "�͂����I������܂���!!";
+	mes "[カプラビニット]";
+	mes "あっ、いいえ！";
+	mes "あ……、なんでもありません！";
+	mes "はいっ！分かりました!!";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "�i�s�b�j";
-	mes "�ӂ��c�c";
-	mes "���ւցc�c";
+	mes "[カプラビニット]";
+	mes "（ピッ）";
+	mes "ふぅ……";
+	mes "えへへ……";
 	next;
-	mes "[�J�v���r�j�b�g]";
-	mes "���́c�c�A���q����";
-	mes "�����O�̂��Ƃ�";
-	mes "���́c�c�Ȃ��������Ƃɂ��܂��񂩁H";
-	mes "���ւց[";
-	mes "�ˁH";
+	mes "[カプラビニット]";
+	mes "あの……、お客さん";
+	mes "少し前のことは";
+	mes "あの……なかったことにしませんか？";
+	mes "えへへー";
+	mes "ね？";
 	close2;
 	cutin "kafra_04",255;
 	end;
 }
 
-aldeba_in.gat,96,181,4	script	�J�v���T�[�r�X	113,{
+aldeba_in.gat,96,181,4	script	カプラサービス	113,{
 	cutin "kafra_05",2;
-	mes "[�J�v���O�����X]";
-	mes "�J�v���u�O�����X�v�ł��B";
-	mes "���q�l�A�Ȃɂ����p�ł����H";
+	mes "[カプラグラリス]";
+	mes "カプラ「グラリス」です。";
+	mes "お客様、なにかご用ですか？";
 	next;
-	switch(select("�~�b�h�K���h�嗤�̊O�E���ĕ���","���ɗp�͂Ȃ�")) {
+	switch(select("ミッドガルド大陸の外界ついて聞く","特に用はない")) {
 	case 1:
-		mes "[�J�v���O�����X]";
-		mes "�����̓~�b�h�K���h�嗤";
-		mes "�V���o���c�o���h���a����";
-		mes "�œ�[�Ɉʒu���鍑���s�s";
-		mes "�A���f�o�����ł��B";
+		mes "[カプラグラリス]";
+		mes "ここはミッドガルド大陸";
+		mes "シュバルツバルド共和国の";
+		mes "最南端に位置する国境都市";
+		mes "アルデバランです。";
 		next;
-		mes "[�J�v���O�����X]";
-		mes "�~�b�h�K���h�嗤�ɂ�";
-		mes "�~�b�h�K�b�c������";
-		mes "�V���o���c�o���h���a���̑���";
-		mes "�������̍�������܂����A";
-		mes "�嗤�̊O�E�ɂ͉�������̂�";
-		mes "�킩���Ă��܂���B";
+		mes "[カプラグラリス]";
+		mes "ミッドガルド大陸には";
+		mes "ミッドガッツ王国や";
+		mes "シュバルツバルド共和国の他に";
+		mes "いくつかの国がありますが、";
+		mes "大陸の外界には何があるのか";
+		mes "わかっていません。";
 		break;
 	case 2:
-		mes "[�J�v���O�����X]";
-		mes "�����ł����c";
+		mes "[カプラグラリス]";
+		mes "そうですか…";
 		break;
 	}
 	close2;
@@ -1495,33 +1495,33 @@ aldeba_in.gat,96,181,4	script	�J�v���T�[�r�X	113,{
 	end;
 }
 
-aldeba_in.gat,91,244,4	script	�J�v���T�[�r�X	112,{
+aldeba_in.gat,91,244,4	script	カプラサービス	112,{
 	cutin "kafra_06",2;
-	mes "[�J�v��W]";
-	mes "����ɂ��͂��[�I";
-	mes "�J�v���T�[�r�X�̂��킢�������q�I";
-	mes "�J�v���^�C�v�uW�v�ł��[";
+	mes "[カプラW]";
+	mes "こんにちはぁー！";
+	mes "カプラサービスのかわいい末っ子！";
+	mes "カプラタイプ「W」ですー";
 	next;
-	mes "[�J�v��W]";
-	mes "���͐V�l�Ȃ̂ŃJ�v���T�[�r�X��";
-	mes "�݂Ȃ���ɂ������悤�ɂȂ����̂�";
-	mes "�ŋ߂ł����A�����őP��";
-	mes "�����Ă���΂��Ă��܂��I";
-	mes "�ǂ����A�X�������肢���܂��[";
+	mes "[カプラW]";
+	mes "私は新人なのでカプラサービスで";
+	mes "みなさんにお会いするようになったのは";
+	mes "最近ですが、いつも最善を";
+	mes "つくしてがんばっています！";
+	mes "どうか、宜しくお願いしますー";
 	next;
-	switch(select("������ ?","��߂�")) {
+	switch(select("いくつ ?","やめる")) {
 	case 1:
-		mes "[�J�v��W]";
-		mes "�c�c";
-		mes "�������I";
-		mes "�q���������Ȃ��ł����������!!";
+		mes "[カプラW]";
+		mes "……";
+		mes "もうっ！";
+		mes "子供扱いしないでくださいよっ!!";
 		break;
 	case 2:
-		mes "[�J�v��W]";
-		mes "�䂪�J�v���T�[�r�X�ł�";
-		mes "�ŁI��I�̃T�[�r�X��񋟂��邽�߂�";
-		mes "�ŁI�P�I�������Ă���܂��B";
-		mes "�����p�����A���肪�Ƃ��������܂����B";
+		mes "[カプラW]";
+		mes "我がカプラサービスでは";
+		mes "最！上！のサービスを提供するために";
+		mes "最！善！をつくしております。";
+		mes "ご利用頂き、ありがとうございました。";
 		break;
 	}
 	close2;
@@ -1530,351 +1530,351 @@ aldeba_in.gat,91,244,4	script	�J�v���T�[�r�X	112,{
 }
 
 //============================================================
-// �A���f�o�������v��NPC
+// アルデバラン時計塔NPC
 //------------------------------------------------------------
-aldebaran.gat,143,136,4	script	�Ǘ��l���lA	89,{
-	mes "[�Ǘ��l���lA]";
-	mes "���́u�n�y�ρv����";
-	mes "�A���f�o�����̎��v����";
-	mes "�Ǘ�������lA�ł���B";
-	mes "�N�A���̎��v���Ɋ֐S�����邩�H";
-	mes "�ǂ��Ȃ񂾁H������񂪗~�������H";
+aldebaran.gat,143,136,4	script	管理人怪人A	89,{
+	mes "[管理人怪人A]";
+	mes "俺は「地楽委」所属";
+	mes "アルデバランの時計塔を";
+	mes "管理する怪人Aである。";
+	mes "君、この時計塔に関心があるか？";
+	mes "どうなんだ？いい情報が欲しいか？";
 	next;
-	switch(select("���v���ɂ��ċ�����","�u �n�y�� �v�Ƃ́H","��߂�")) {
+	switch(select("時計塔について教えて","「 地楽委 」とは？","やめる")) {
 	case 1:
-		mes "[�Ǘ��l���lA]";
-		mes "���̎��v���̒��͂��鑕�u��ʂ���";
-		mes "���ׂẴt���A�[���q�����Ă���c";
-		mes "����΁u�K�w�A�����[�v�V�X�e���v��";
-		mes "�ݒu����Ă���񂾁B";
+		mes "[管理人怪人A]";
+		mes "この時計塔の中はある装置を通じて";
+		mes "すべてのフロアーが繋がっている…";
+		mes "いわば「階層連動ワープシステム」が";
+		mes "設置されているんだ。";
 		next;
-		mes "[�Ǘ��l���lA]";
-		mes "���v���̂��������ɑ��݂���";
-		mes "���[�v�V�X�e����";
-		mes "���݂��A�����Ă�ꏊ�����邪";
-		mes "�ǂ��ɔ�΂���邩�킩��Ȃ�";
-		mes "�u�����_�����[�v �v�����݂���B";
+		mes "[管理人怪人A]";
+		mes "時計塔のあちこちに存在する";
+		mes "ワープシステムは";
+		mes "お互い連動してる場所もあるが";
+		mes "どこに飛ばされるかわからない";
+		mes "「ランダムワープ 」も存在する。";
 		next;
-		mes "[�Ǘ��l���lA]";
-		mes "�q���g�������Ă�낤���H";
-		mes "���̃����_�����[�v�̓~�j�}�b�v�ɂ�";
-		mes "�ΐF�ŕ\������Ă�񂾁B";
-		mes "�~�j�}�b�v���悭���Ă����I";
-		mes "���v�Ɗy�������Ԃ��߂����������B";
-		mes "�t�t�t�c�c";
+		mes "[管理人怪人A]";
+		mes "ヒントを教えてやろうか？";
+		mes "このランダムワープはミニマップには";
+		mes "緑色で表示されてるんだ。";
+		mes "ミニマップをよく見ておけ！";
+		mes "時計と楽しい時間を過ごすがいい。";
+		mes "フフフ……";
 		close;
 	case 2:
-		mes "[�Ǘ��l���lA]";
-		mes "�N�A�u�n�y�ρv�ɂ���";
-		mes "���������Ƃ�����̂��ˁH";
+		mes "[管理人怪人A]";
+		mes "君、「地楽委」について";
+		mes "聞いたことがあるのかね？";
 		next;
-		if(select("�͂��A�悭�m���Ă܂��I","������H")==1) {
-			mes "[�Ǘ��l���lA]";
-			mes "�ӂӂӁc�̂��I";
-			mes "���łɉ䓙�̖�����������";
-			mes "�`���Ƃɂ܂Œm���Ă���Ƃ́I";
-			mes "�{���Ɋ������I���������I�I";
-			mes "�L�O�ɌN�ɂ���������グ�悤�I";
+		if(select("はい、よく知ってます！","何それ？")==1) {
+			mes "[管理人怪人A]";
+			mes "ふふふ…偉い！";
+			mes "すでに我等の名声が無名の";
+			mes "冒険家にまで知られているとは！";
+			mes "本当に嬉しい！嬉しいぞ！！";
+			mes "記念に君にこれを差し上げよう！";
 			next;
-			mes "[�Ǘ��l���lA]";
-			mes "�����c�A�ǁA�ǂ��ɒu���������ȁc";
-			mes "���[��c�A�����I";
-			mes "4�K�̊Ǘ����ɖY�ꂽ�݂������ȁB";
-			mes "�����ȁA�܂�����܂łɂ�";
-			mes "�p�ӂ��Ă������Ƃɂ��悤�B";
-			mes "����A�܂��ȁI";
+			mes "[管理人怪人A]";
+			mes "げっ…、ど、どこに置いたっけな…";
+			mes "うーん…、あっ！";
+			mes "4階の管理室に忘れたみたいだな。";
+			mes "悪いな、また会う時までには";
+			mes "用意しておくことにしよう。";
+			mes "じゃ、またな！";
 		}
 		else {
-			mes "[�Ǘ��l���lA]";
-			mes "�������A�܂��䓙�u�n�y�ρv��";
-			mes "�m��Ȃ��҂�����Ƃ͂ȁc�c";
-			mes "�������ʂɋ����悤�A�u�n�y�ρv��";
-			mes "�u�n��y�����ݐ��i�ψ���v�̗���";
-			mes "���̎��v�����䓙�̍�i�ł���B";
-			mes "��H�Ȃ񂾂��̊�́H�{�������I";
+			mes "[管理人怪人A]";
+			mes "ったく、まだ我等「地楽委」を";
+			mes "知らない者がいるとはな……";
+			mes "俺が特別に教えよう、「地楽委」は";
+			mes "「地上楽園建設推進委員会」の略で";
+			mes "この時計塔も我等の作品である。";
+			mes "ん？なんだその顔は？本当だぞ！";
 			next;
-			mes "[�Ǘ��l���lA]";
-			mes "�ȑO�̓O���X�g�w�C����";
-			mes "�݌v�A�{�H���i�߂Ă����̂ł���B";
-			mes "���ꂩ��������ȂƂ����";
-			mes "�䓙�̈̑�Ȃ�Ɛт�";
-			mes "���邱�Ƃ��ł���ł��낤�I";
-			mes "�c�c���������āA�c�c�^���Ă�H";
+			mes "[管理人怪人A]";
+			mes "以前はグラストヘイムの";
+			mes "設計、施工も進めていたのである。";
+			mes "これからもいろんなところで";
+			mes "我等の偉大なる業績を";
+			mes "見ることができるであろう！";
+			mes "……もしかして、……疑ってる？";
 		}
 		close;
 	case 3:
-		mes "[�Ǘ��l���lA]";
-		mes "�m�肽�����Ƃ������";
-		mes "���ł��������܂��B";
+		mes "[管理人怪人A]";
+		mes "知りたいことがあれば";
+		mes "何でも聞きたまえ。";
 		close;
 	}
 }
 
-c_tower3.gat,10,249,4	script	�Ԑl	84,{
-	mes "[�Ԑl���N]";
-	mes "�A���f�o��������";
-	mes "�L�i�Z - �u���K���m";
-	mes "���v���ɂ悤����.";
-	mes "�n�� 4�K�����";
-	mes "������֎~�Ȃ̂�";
-	mes "����Ȃ��ŉ������B";
+c_tower3.gat,10,249,4	script	番人	84,{
+	mes "[番人リク]";
+	mes "アルデバラン名物";
+	mes "キナセ - ブルガリノ";
+	mes "時計塔にようこそ.";
+	mes "地上 4階からは";
+	mes "立入り禁止なので";
+	mes "入らないで下さい。";
 	next;
-	switch(select("���v���ɂ���","4�K�ɂ���","4�K�Ɉړ�����","�Θb���I��")) {
+	switch(select("時計塔について","4階について","4階に移動する","対話を終了")) {
 	case 1:
-		mes "[�Ԑl���N]";
-		mes "�B���p�t�̃��b�J�[�A���f�o�����I";
-		mes "�͂邩�� . �`����";
-		mes "3 ��B���p�t�ɌĂ΂ꂽ";
-		mes "�u���P�T�C�}�[";
-		mes "�s���y�o���Z�Y";
-		mes "�����āc";
+		mes "[番人リク]";
+		mes "錬金術師のメッカーアルデバラン！";
+		mes "はるか昔 . 伝説の";
+		mes "3 大錬金術師に呼ばれた";
+		mes "ブルケサイマー";
+		mes "ピリペバリセズ";
+		mes "そして…";
 		next;
-		mes "[�Ԑl���N]";
-		mes "�������X�y�V�����I";
-		mes "���̈̑�Ȃ錚������";
-		mes "�ނ炪���݂������̂ł�";
-		mes "�����܂ŗ���r����";
-		mes "������x������ꂽ�����m��Ȃ�����";
-		mes "���̎��v���͕��}�ł͂Ȃ��B";
+		mes "[番人リク]";
+		mes "ロメロスペシャレ！";
+		mes "この偉大なる建造物は";
+		mes "彼らが建設したものです";
+		mes "ここまで来る途中に";
+		mes "ある程度感じられたかも知れないけど";
+		mes "この時計塔は平凡ではない。";
 		next;
-		mes "[�Ԑl���N]";
-		mes "�Ñ�̘B���p����ɂ���";
-		mes "�����Ȕۂ炵����p�I��";
-		mes "�\���ɂȂ��Ă���̂ł�.";
-		mes "���m�ȖړI�Ȃ���";
-		mes "�E���E���܂�����肵����";
+		mes "[番人リク]";
+		mes "古代の錬金術を基にして";
+		mes "相当な否らしい呪術的な";
+		mes "構造になっているのです.";
+		mes "明確な目的なしに";
+		mes "ウロウロまわったりしたら";
 		next;
-		mes "[�Ԑl���N]";
-		mes "���v���̔Ԑl�ł��閂���ɂ����";
-		mes "��ςȂ��Ƃɑ����̂ł��傤�B";
-		mes "���ꂮ����C�����Ă��������c";
+		mes "[番人リク]";
+		mes "時計塔の番人である魔物によって";
+		mes "大変なことに遭うのでしょう。";
+		mes "くれぐれも気をつけてください…";
 		close;
 	case 2:
-		mes "[�Ԑl���N]";
-		mes "�Ñ�B���p�t��";
-		mes "�����Ƒ����̕��m����";
-		mes "��������邽��";
-		mes "�B���p�I���u�𐻍삵��";
-		mes "4�K�ɓ�����𕕈󂵂܂���.";
-		mes "���̔���ʉ߂��邽�߂ɂ�";
+		mes "[番人リク]";
+		mes "古代錬金術師は";
+		mes "魔物と他国の兵士から";
+		mes "何かを守るため";
+		mes "錬金術的装置を製作して";
+		mes "4階に入る扉を封印しました.";
+		mes "その扉を通過するためには";
 		next;
-		mes "[�Ԑl���N]";
-		mes "���錮���K�v�ł��B";
-		mes "���̌��͂��̎��v���ŏ��X��";
-		mes "�f�r���Ă���";
-		mes "���낵��������";
-		mes "�����Ă���Ƃ������Ƃł�..";
+		mes "[番人リク]";
+		mes "ある鍵が必要です。";
+		mes "その鍵はこの時計塔で所々を";
+		mes "彷徨っている";
+		mes "恐ろしい魔物が";
+		mes "持っているということです..";
 		next;
-		mes "[�Ԑl���N]";
-		mes "���̌��͌Ñ�B���p�̏W��̂�";
-		mes "1��g���Ă��܂���";
-		mes "��p�������ď�����悤��";
-		mes "����Ă���B";
+		mes "[番人リク]";
+		mes "その鍵は古代錬金術の集約体で";
+		mes "1回使ってしまうと";
+		mes "呪術が解けて消えるように";
+		mes "作られている。";
 		next;
-		mes "[�Ԑl���N]";
-		mes "�����M�������̌���";
-		mes "��ɓ��ꂽ��";
-		mes "���Ɍ����Ă�������.";
-		mes "���������̎҂���";
-		mes "���̔����ʂ��";
+		mes "[番人リク]";
+		mes "もし貴方がその鍵を";
+		mes "手に入れたら";
+		mes "私に見せてください.";
+		mes "鍵を持つその者こそ";
+		mes "この扉が通れる";
 		next;
-		mes "[�Ԑl���N]";
-		mes "���i������ҁI";
-		mes "�M���̉^��";
-		mes "�����ĖႨ���c";
-		mes "�c�c";
+		mes "[番人リク]";
+		mes "資格がある者！";
+		mes "貴方の運を";
+		mes "試して貰おう…";
+		mes "……";
 		close;
 	case 3:
 		if(countitem(7026)) {
-			mes "[�Ԑl���N]";
-			mes "����!�M���ɂ͕��ʂł͂Ȃ��I�[����";
-			mes "������ꂽ��";
-			mes "��͂莄�̗\�z�ʂ�ł��ˁB";
-			mes "�����A���̔���ʂ��Ă��ǂ��ł��B";
-			mes "�K�^���F��܂��c";
+			mes "[番人リク]";
+			mes "うむ!貴方には普通ではないオーラが";
+			mes "感じられたが";
+			mes "やはり私の予想通りですね。";
+			mes "さあ、この扉を通っても良いです。";
+			mes "幸運を祈ります…";
 			close2;
 			delitem 7026,1;
 			warp "c_tower4.gat",185,44;
 			end;
 		}
-		mes "[�Ԑl���N]";
-		mes "�c�c";
-		mes "�M���͂��̔���ʂ�";
-		mes "���i�������ł� ..";
-		mes "�Ñ�̘B���p�t��";
-		mes "�����Ȃ�����";
-		mes "���̐�ɐi�ނ͖̂������Ǝv���܂�.";
+		mes "[番人リク]";
+		mes "……";
+		mes "貴方はこの扉を通る";
+		mes "資格が無いです ..";
+		mes "古代の錬金術師が";
+		mes "許さない限り";
+		mes "この先に進むのは無理だと思います.";
 		close;
 	case 4:
-		mes "[�Ԑl���N]";
-		mes "���̎��v����";
-		mes "�Ñ�3��B���p�t��";
-		mes "���ӂƐS���h���Ă��鏊�c";
-		mes "���v���̓�������Ȃǂ�";
-		mes "����o���Ȃ��ŉ�����.";
+		mes "[番人リク]";
+		mes "この時計塔は";
+		mes "古代3大錬金術師の";
+		mes "誠意と心が宿っている所…";
+		mes "時計塔の内部飾りなどに";
+		mes "手を出さないで下さい.";
 		close;
 	}
 }
 
-alde_dun03.gat,264,16,4	script	�Ԑl	101,{
-	mes "[�Ԑl�A�C]";
-	mes "�A���f�o��������";
-	mes "�L�i�Z - �u���K���m";
-	mes "���v���ɂ悤����.";
-	mes "�n�� 4�K�����";
-	mes "������֎~�Ȃ̂�";
-	mes "����Ȃ��ŉ������B";
+alde_dun03.gat,264,16,4	script	番人	101,{
+	mes "[番人アイ]";
+	mes "アルデバラン名物";
+	mes "キナセ - ブルガリノ";
+	mes "時計塔にようこそ.";
+	mes "地下 4階からは";
+	mes "立入り禁止なので";
+	mes "入らないで下さい。";
 	next;
-	switch(select("���v���ɂ���","4�K�ɂ���","4�K�Ɉړ�����","�Θb���I��")) {
+	switch(select("時計塔について","4階について","4階に移動する","対話を終了")) {
 	case 1:
-		mes "[�Ԑl�A�C]";
-		mes "�B���p�t�̃��b�J�[�A���f�o�����I";
-		mes "�͂邩�� . �`����";
-		mes "3 ��B���p�t�ɌĂ΂ꂽ";
-		mes "�u���P�T�C�}�[";
-		mes "�s���y�o���Z�Y";
-		mes "�����āc";
+		mes "[番人アイ]";
+		mes "錬金術師のメッカーアルデバラン！";
+		mes "はるか昔 . 伝説の";
+		mes "3 大錬金術師に呼ばれた";
+		mes "ブルケサイマー";
+		mes "ピリペバリセズ";
+		mes "そして…";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "�������X�y�V�����I";
-		mes "���̈̑�Ȃ錚������";
-		mes "�ނ炪���݂������̂�B";
-		mes "�����܂ŗ���r����";
-		mes "������x������ꂽ�����m��Ȃ�����";
-		mes "���̎��v���͕��}�ł͂Ȃ��́B";
+		mes "[番人アイ]";
+		mes "ロメロスペシャレ！";
+		mes "この偉大なる建造物は";
+		mes "彼らが建設したものよ。";
+		mes "ここまで来る途中に";
+		mes "ある程度感じられたかも知れないけど";
+		mes "この時計塔は平凡ではないの。";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "�Ñ�̘B���p����ɂ���";
-		mes "�����Ȕۂ炵����p�I��";
-		mes "�\���ɂȂ��Ă����.";
-		mes "���m�ȖړI�Ȃ���";
-		mes "�E���E���܂�����肵����";
+		mes "[番人アイ]";
+		mes "古代の錬金術を基にして";
+		mes "相当な否らしい呪術的な";
+		mes "構造になっているの.";
+		mes "明確な目的なしに";
+		mes "ウロウロまわったりしたら";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "���v���̔Ԑl�ł��閂���ɂ����";
-		mes "��ςȂ��Ƃɑ����̂�B";
-		mes "���C�����Ȃ����c";
+		mes "[番人アイ]";
+		mes "時計塔の番人である魔物によって";
+		mes "大変なことに遭うのよ。";
+		mes "お気をつけなさい…";
 		close;
 	case 2:
-		mes "[�Ԑl�A�C]";
-		mes "�Ñ�B���p�t��";
-		mes "�����Ƒ����̕��m����";
-		mes "��������邽��";
-		mes "�B���p�I���u�𐻍삵��";
-		mes "4�K�ɓ�����𕕈󂵂��̂�.";
-		mes "���̔���ʉ߂��邽�߂ɂ�";
+		mes "[番人アイ]";
+		mes "古代錬金術師は";
+		mes "魔物と他国の兵士から";
+		mes "何かを守るため";
+		mes "錬金術的装置を製作して";
+		mes "4階に入る扉を封印したのよ.";
+		mes "その扉を通過するためには";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "���錮���K�v��B";
-		mes "���̌��͂��̎��v���ŏ��X��";
-		mes "�f�r���Ă���";
-		mes "���낵��������";
-		mes "�����Ă���ƕ�������.";
+		mes "[番人アイ]";
+		mes "ある鍵が必要よ。";
+		mes "その鍵はこの時計塔で所々を";
+		mes "彷徨っている";
+		mes "恐ろしい魔物が";
+		mes "持っていると聞いたわ.";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "���̌��͌Ñ�B���p�̏W��̂�";
-		mes "1��g���Ă��܂���";
-		mes "��p�������ď�����悤��";
-		mes "����Ă���́B";
+		mes "[番人アイ]";
+		mes "その鍵は古代錬金術の集約体で";
+		mes "1回使ってしまうと";
+		mes "呪術が解けて消えるように";
+		mes "作られているの。";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "�����M�������̌���";
-		mes "��ɓ��ꂽ��";
-		mes "���Ɍ����Ă���Ȃ�������H.";
-		mes "���������̎҂���";
-		mes "���̔����ʂ��";
+		mes "[番人アイ]";
+		mes "もし貴方がその鍵を";
+		mes "手に入れたら";
+		mes "私に見せてくれないかしら？.";
+		mes "鍵を持つその者こそ";
+		mes "この扉が通れる";
 		next;
-		mes "[�Ԑl�A�C]";
-		mes "���i������҂Ȃ́B";
-		mes "�M���̉^��";
-		mes "�����čs���Ă�����Ⴂ�B";
-		mes "�c�c";
+		mes "[番人アイ]";
+		mes "資格がある者なの。";
+		mes "貴方の運を";
+		mes "試して行ってらっしゃい。";
+		mes "……";
 		close;
 	case 3:
 		if(countitem(7027)) {
-			mes "[�Ԑl�A�C]";
-			mes "����!�M���ɂ͕��ʂł͂Ȃ��I�[����";
-			mes "��������";
-			mes "���͂����Ȃ�Ɨ\�z�����̂�B";
-			mes "�����A���̔���ʂ��Ă��ǂ��̂�B";
-			mes "�M���ɍK�^���F��c";
+			mes "[番人アイ]";
+			mes "うん!貴方には普通ではないオーラが";
+			mes "感じられて";
+			mes "私はこうなると予想したのよ。";
+			mes "さあ、この扉を通っても良いのよ。";
+			mes "貴方に幸運を祈る…";
 			close2;
 			delitem 7027,1;
 			warp "alde_dun04.gat",79,267;
 			end;
 		}
-		mes "[�Ԑl�A�C]";
-		mes "�c�c";
-		mes "�M���͂��̔���ʂ�";
-		mes "���i�������̂� ..";
-		mes "�Ñ�̘B���p�t��";
-		mes "�����Ȃ�����";
-		mes "���̐�ɐi�ނ͖̂����Ȃ́B";
+		mes "[番人アイ]";
+		mes "……";
+		mes "貴方はこの扉を通る";
+		mes "資格が無いのよ ..";
+		mes "古代の錬金術師が";
+		mes "許さない限り";
+		mes "この先に進むのは無理なの。";
 		close;
 	case 4:
-		mes "[�Ԑl�A�C]";
-		mes "���̎��v����";
-		mes "�Ñ�3��B���p�t��";
-		mes "���ӂƐS���h���Ă�����́c";
-		mes "���v���̓�������Ȃǂ�";
-		mes "����o���Ȃ��Łc";
+		mes "[番人アイ]";
+		mes "この時計塔は";
+		mes "古代3大錬金術師の";
+		mes "誠意と心が宿っているもの…";
+		mes "時計塔の内部飾りなどに";
+		mes "手を出さないで…";
 		close;
 	}
 }
 
 //============================================================
-// �P���ꂽ���Ԃ̎��v��NPC
+// 捻じれた時間の時計塔NPC
 //------------------------------------------------------------
-c_tower1.gat,232,222,5	script	�׃��U�~���E�{�^��#ct	968,{
+c_tower1.gat,232,222,5	script	べルザミン・ボタン#ct	968,{
 	if(BaseLevel < 150) {
-		mes "[�׃��U�~���E�{�^��]";
-		mes "^FF0000�P���ꂽ���Ԃ̎��v��^000000�ɂ���";
-		mes "�m���Ă��܂����H";
+		mes "[べルザミン・ボタン]";
+		mes "^FF0000捻じれた時間の時計塔^000000について";
+		mes "知っていますか？";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "���͂������痈�܂����B";
-		mes "�����ɂ��������Ŏ��̎��Ԃɂ��܂�";
-		mes "�[���Ȃ˂��ꂪ";
-		mes "�������Ă��܂�����ł��B";
+		mes "[べルザミン・ボタン]";
+		mes "私はそこから来ました。";
+		mes "そこにいたせいで私の時間にもまた";
+		mes "深刻なねじれが";
+		mes "発生してしまったんです。";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "���Ԃ��v���̂܂ܑ����";
-		mes "�����X�^�[�B������ꏊ�ł��B";
-		mes "�����Ƌ����Ȃ��Ă���";
-		mes "�܂����Ă��������B";
+		mes "[べルザミン・ボタン]";
+		mes "時間を思いのまま操れる";
+		mes "モンスター達がいる場所です。";
+		mes "もっと強くなってから";
+		mes "また来てください。";
 		next;
-		mes "�]���̐�ɐi�ނɂ�";
-		mes "�@^0000FFBaseLv150�ȏ�^000000���K�v�ł��]";
+		mes "‐この先に進むには";
+		mes "　^0000FFBaseLv150以上^000000が必要です‐";
 		close;
 	}
-	mes "[�׃��U�~���E�{�^��]";
-	mes "^FF0000�P���ꂽ���Ԃ̎��v��^000000�ɂ���";
-	mes "�m���Ă��܂����H";
-	mes "���͂������痈�܂����B";
-	mes "�����ɂ��������Ŏ��̎��Ԃɂ��܂�";
-	mes "�[���Ȃ˂��ꂪ";
-	mes "�������Ă��܂�����ł��B";
+	mes "[べルザミン・ボタン]";
+	mes "^FF0000捻じれた時間の時計塔^000000について";
+	mes "知っていますか？";
+	mes "私はそこから来ました。";
+	mes "そこにいたせいで私の時間にもまた";
+	mes "深刻なねじれが";
+	mes "発生してしまったんです。";
 	next;
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�����͎��Ԃ��v���̂܂܂ɑ����";
-	mes "�����X�^�[�B������ꏊ�ŁA";
-	mes "�N���L���A������芪�����Ԃ�";
-	mes "���ׂĂ��˂����Ă��܂��܂��B";
+	mes "[べルザミン・ボタン]";
+	mes "そこは時間を思いのままに操れる";
+	mes "モンスター達がいる場所で、";
+	mes "年齢や記憶、環境を取り巻く時間の";
+	mes "すべてがねじられてしまいます。";
 	next;
-	mes "[�׃��U�~���E�{�^��]";
-	mes "���Ȃ��̎��Ԃ������댯��";
-	mes "���炳���\��������܂��B";
-	mes "�����ɍs���Ă݂悤�Ȃ��";
-	mes "�l���Ȃ������ǂ��ł���B";
+	mes "[べルザミン・ボタン]";
+	mes "あなたの時間さえも危険に";
+	mes "さらされる可能性があります。";
+	mes "試しに行ってみようなんて";
+	mes "考えない方が良いですよ。";
 	next;
-	switch(select("�s���Ȃ�","�P���ꂽ���Ԃ̎��v��1�K�ɍs��","�P���ꂽ���Ԃ̎��v��2�K�ɍs��","�P���ꂽ���Ԃ̎��v��3�K�ɍs��","�P���ꂽ���Ԃ̎��v��4�K�ɍs��")) {
+	switch(select("行かない","捻じれた時間の時計塔1階に行く","捻じれた時間の時計塔2階に行く","捻じれた時間の時計塔3階に行く","捻じれた時間の時計塔4階に行く")) {
 	case 1:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�ق��c�c�������f�ł��B";
-		mes "���͂ȃ����X�^�[�B��";
-		mes "�p�j���Ă���ƂĂ��댯�ȏꏊ�ł��B";
-		mes "�����������痣���";
-		mes "���S�ȏꏊ�ɔ��Ă��������B";
+		mes "[べルザミン・ボタン]";
+		mes "ほっ……いい判断です。";
+		mes "強力なモンスター達が";
+		mes "徘徊しているとても危険な場所です。";
+		mes "早くここから離れて";
+		mes "安全な場所に避難してください。";
 		close;
 	case 2:
 		set '@map$,"c_tower1_.gat";
@@ -1897,160 +1897,160 @@ c_tower1.gat,232,222,5	script	�׃��U�~���E�{�^��#ct	968,{
 		set '@y,44;
 		break;
 	}
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�{���ɍs����ł����H";
-	mes "�댯�ȑI���ł���B";
+	mes "[べルザミン・ボタン]";
+	mes "本当に行くんですか？";
+	mes "危険な選択ですよ。";
 	next;
-	mes "[�׃��U�~���E�{�^��]";
-	mes "���܂�ɂ��댯�Ȃ̂�";
-	mes "���ꗿ^0000FF10,000Zeny^000000���K�v�ɂȂ�܂��B";
+	mes "[べルザミン・ボタン]";
+	mes "あまりにも危険なので";
+	mes "入場料^0000FF10,000Zeny^000000が必要になります。";
 	next;
-	switch(select("���ꂷ��@-10,000Zeny-","��߂�","�ǂ����ē��ꗿ���K�v�Ȃ́H")) {
+	switch(select("入場する　-10,000Zeny-","やめる","どうして入場料が必要なの？")) {
 	case 1:
 		if(Zeny < 10000) {
-			// ������
-			mes "[�׃��U�~���E�{�^��]";
-			mes "����������Ȃ��悤�ł��ˁH";
+			// 未調査
+			mes "[べルザミン・ボタン]";
+			mes "お金が足りないようですね？";
 			close;
 		}
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�ǂ������̂悤�Ɏ��Ԃɗ�����Ȃ���";
-		mes "�����ł��Ă��������c�c�B";
+		mes "[べルザミン・ボタン]";
+		mes "どうか私のように時間に流されないで";
+		mes "無事でいてください……。";
 		close2;
 		set Zeny, Zeny-10000;
 		warp '@map$,'@x,'@y;
 		end;
 	case 2:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "����ł�����ł��B";
-		mes "���͂ȃ����X�^�[�B��";
-		mes "�p�j���Ă���ƂĂ��댯�ȏꏊ�ł��B";
-		mes "�����������痣���";
-		mes "���S�ȏꏊ�ɔ��Ă��������B";
+		mes "[べルザミン・ボタン]";
+		mes "それでいいんです。";
+		mes "強力なモンスター達が";
+		mes "徘徊しているとても危険な場所です。";
+		mes "早くここから離れて";
+		mes "安全な場所に避難してください。";
 		close;
 	case 3:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�`���҂̈��S�̂��߂�";
-		mes "�����ň�����A�댯�ȏꏊ�̑��݂�";
-		mes "�m�点�Ă���̂ł�����A";
-		mes "�Ή����K�v�ɂȂ�̂�";
-		mes "���傤���Ȃ����Ƃł��B";
+		mes "[べルザミン・ボタン]";
+		mes "冒険者の安全のために";
+		mes "ここで一日中、危険な場所の存在を";
+		mes "知らせているのですから、";
+		mes "対価が必要になるのは";
+		mes "しょうがないことです。";
 		emotion 4,"";
 		close;
 	}
 }
 
-c_tower1_.gat,232,222,5	script	�׃��U�~���E�{�^��#ct1	962,{
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�����A���ɏo��������Ƃ�����";
-	mes "�l�ł���ˁH";
+c_tower1_.gat,232,222,5	script	べルザミン・ボタン#ct1	962,{
+	mes "[べルザミン・ボタン]";
+	mes "多分、私に出会ったことがある";
+	mes "人ですよね？";
 	next;
-	mes "[�׃��U�~���E�{�^��]";
-	mes "���Ƃ͈Ⴄ�p��";
-	mes "�����ł͂Ȃ��܂��ʂ̏ꏊ�ɂ�";
-	mes "���������ł��傤�ˁB";
+	mes "[べルザミン・ボタン]";
+	mes "今とは違う姿で";
+	mes "ここではないまた別の場所にて";
+	mes "お会いしたんでしょうね。";
 	next;
-	switch(select("�����ɂ��Ēm�肽��","�O�ɏo�����Ă�������") == 1) {
+	switch(select("ここについて知りたい","外に出させてください") == 1) {
 	case 1:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�����ŉ����o�����āA";
-		mes "����m�����̂��A���Ȃ��͎���";
-		mes "�������邱�Ƃ��ł��܂����H";
+		mes "[べルザミン・ボタン]";
+		mes "ここで何を経験して、";
+		mes "何を知ったのか、あなたは私に";
+		mes "説明することができますか？";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "���������ł��B";
-		mes "�ړI���m��Ȃ��܂܁A";
-		mes "�����ŗ���������l��";
-		mes "�܂��ɂ��Ȃ��ɂȂ邩������܂���B";
+		mes "[べルザミン・ボタン]";
+		mes "私も同じです。";
+		mes "目的も知らないまま、";
+		mes "ここで立ち続ける人が";
+		mes "まさにあなたになるかもしれません。";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�����߂鎞�Ԃł��B";
-		mes "�ǂ������Ȃ��̎��Ԃ�";
-		mes "�厖�ɂ��Ă��������B";
+		mes "[べルザミン・ボタン]";
+		mes "もう戻る時間です。";
+		mes "どうかあなたの時間を";
+		mes "大事にしてください。";
 		next;
-		if(select("�����������܂�","�O�ɏo��") == 1) {
-			mes "[�׃��U�~���E�{�^��]";
-			mes "�����̕��͋C��";
-			mes "�C�ɓ������悤�ł��ˁB";
-			mes "�ł́A������ł��B";
+		if(select("もう少し留まる","外に出る") == 1) {
+			mes "[べルザミン・ボタン]";
+			mes "ここの雰囲気が";
+			mes "気に入ったようですね。";
+			mes "では、いくらでも。";
 			close;
 		}
 		break;
 	case 2:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "���ʂ�̎��Ԃł��B";
-		mes "�D���Ȉ��ݕ��͂���܂����H";
+		mes "[べルザミン・ボタン]";
+		mes "お別れの時間です。";
+		mes "好きな飲み物はありますか？";
 		next;
 		break;
 	}
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�R�b�v�ɓ����Ă�����ݕ���";
-	mes "�v�������ׂĂ݂Ă��������B";
-	mes "�X�v�[�����g���Ă�������";
-	mes "���ݕ������������܂��B";
-	mes "�����ĐF���������ς���Ă����̂�";
-	mes "���߂܂��B";
+	mes "[べルザミン・ボタン]";
+	mes "コップに入っている飲み物を";
+	mes "思い浮かべてみてください。";
+	mes "スプーンを使ってゆっくりと";
+	mes "飲み物をかき混ぜます。";
+	mes "そして色が少しずつ変わっていくのを";
+	mes "眺めます。";
 	close2;
 	warp "c_tower1.gat",235,223;
 	end;
 }
-c_tower2_.gat,274,26,3	duplicate(�׃��U�~���E�{�^��#ct1)	�׃��U�~���E�{�^��#ct2	962
+c_tower2_.gat,274,26,3	duplicate(べルザミン・ボタン#ct1)	べルザミン・ボタン#ct2	962
 
-c_tower3_.gat,59,148,5	script	�׃��U�~���E�{�^��#ct3	574,{
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�����A���ɏo��������Ƃ�����";
-	mes "�l�ł���ˁH";
+c_tower3_.gat,59,148,5	script	べルザミン・ボタン#ct3	574,{
+	mes "[べルザミン・ボタン]";
+	mes "多分、私に出会ったことがある";
+	mes "人ですよね？";
 	next;
-	mes "[�׃��U�~���E�{�^��]";
-	mes "���Ƃ͈Ⴄ�p��";
-	mes "�����ł͂Ȃ��܂��ʂ̏ꏊ�ɂ�";
-	mes "���������ł��傤�ˁB";
+	mes "[べルザミン・ボタン]";
+	mes "今とは違う姿で";
+	mes "ここではないまた別の場所にて";
+	mes "お会いしたんでしょうね。";
 	next;
-	switch(select("���Ȃ��͂��������N�ł����H","�O�ɏo���Ă�������")) {
+	switch(select("あなたはいったい誰ですか？","外に出してください")) {
 	case 1:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�悭������鎿��ł��B";
-		mes "����A��͂肠�Ȃ���";
-		mes "���Ƃ����قǕ������ƂɂȂ�ł��傤�B";
+		mes "[べルザミン・ボタン]";
+		mes "よく聞かれる質問です。";
+		mes "後日、やはりあなたも";
+		mes "嫌というほど聞くことになるでしょう。";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�{���ꖇ�ꖇ�߂����Ă����ƁA";
-		mes "�����ɓ��B���܂��B";
-		mes "������܂������ł��傤�B";
+		mes "[べルザミン・ボタン]";
+		mes "本を一枚一枚めくっていくと、";
+		mes "結末に到達します。";
+		mes "これもまた同じでしょう。";
 		next;
-		mes "[�׃��U�~���E�{�^��]";
-		mes "�����߂鎞�Ԃł��B";
-		mes "�ǂ������Ȃ��̎��Ԃ�";
-		mes "�厖�ɂ��Ă��������B";
+		mes "[べルザミン・ボタン]";
+		mes "もう戻る時間です。";
+		mes "どうかあなたの時間を";
+		mes "大事にしてください。";
 		next;
-		if(select("�����������܂�","�O�ɏo��") == 1) {
-			mes "[�׃��U�~���E�{�^��]";
-			mes "�����̕��͋C��";
-			mes "�C�ɓ������悤�ł��ˁB";
-			mes "�ł́A������ł��B";
+		if(select("もう少し留まる","外に出る") == 1) {
+			mes "[べルザミン・ボタン]";
+			mes "ここの雰囲気が";
+			mes "気に入ったようですね。";
+			mes "では、いくらでも。";
 			close;
 		}
 		break;
 	case 2:
-		mes "[�׃��U�~���E�{�^��]";
-		mes "���ʂ�̎��Ԃł��B";
-		mes "�D���Ȉ��ݕ��͂���܂����H";
+		mes "[べルザミン・ボタン]";
+		mes "お別れの時間です。";
+		mes "好きな飲み物はありますか？";
 		next;
 		break;
 	}
-	mes "[�׃��U�~���E�{�^��]";
-	mes "�R�b�v�ɓ����Ă�����ݕ���";
-	mes "�v�������ׂĂ݂Ă��������B";
-	mes "�X�v�[�����g���Ă�������";
-	mes "���ݕ������������܂��B";
-	mes "�����ĐF���������ς���Ă����̂�";
-	mes "���߂܂��B";
+	mes "[べルザミン・ボタン]";
+	mes "コップに入っている飲み物を";
+	mes "思い浮かべてみてください。";
+	mes "スプーンを使ってゆっくりと";
+	mes "飲み物をかき混ぜます。";
+	mes "そして色が少しずつ変わっていくのを";
+	mes "眺めます。";
 	close2;
 	warp "c_tower1.gat",235,223;
 	end;
 }
 
-c_tower4_.gat,189,40,3	duplicate(�׃��U�~���E�{�^��#ct3)	�׃��U�~���E�{�^��#ct4	574
+c_tower4_.gat,189,40,3	duplicate(べルザミン・ボタン#ct3)	べルザミン・ボタン#ct4	574
 
 c_tower4_.gat,79,49,0	warp	CT4_Line_1		1,1,c_tower4_.gat,204,104
 c_tower4_.gat,204,57,0	warp	CT4_Line_2		1,1,c_tower4_.gat,79,43

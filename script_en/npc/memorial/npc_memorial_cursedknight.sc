@@ -2,93 +2,93 @@
 // Ragnarok Online Cursed Knight in Ghost Palace Script	by refis
 //==============================================================================
 
-dali02.gat,58,122,3	script	�D��S�����ȋR�m#cr	418,{
-	mes "[�D��S�����ȋR�m]";
-	mes "�߂��ɂ���߉q������";
-	mes "���������߂�ꂽ��B";
-	mes "�����ړ��@����ꂽ�Ƃ��ŁA";
-	mes "�C�����Ăق����Ɨ��܂ꂽ��";
-	mes "���ł͗͂ɂȂ�Ȃ������c�c�B";
+dali02.gat,58,122,3	script	好奇心旺盛な騎士#cr	418,{
+	mes "[好奇心旺盛な騎士]";
+	mes "近くにいる近衛兵から";
+	mes "助けを求められたよ。";
+	mes "次元移動機が壊れたとかで、";
+	mes "修理してほしいと頼まれたが";
+	mes "私では力になれなかった……。";
 	next;
-	mes "[�D��S�����ȋR�m]";
-	mes "�N���@�B�ɐ��ʂ��Ă�Ȃ�A";
-	mes "�ނɋ��͂��Ă���Ă���B";
-	mes "���������ނ����҂��A";
-	mes "�����m�肽���񂾁B";
-	mes "����������肻��������ˁB";
+	mes "[好奇心旺盛な騎士]";
+	mes "君が機械に精通してるなら、";
+	mes "彼に協力してやってくれ。";
+	mes "いったい彼が何者か、";
+	mes "私も知りたいんだ。";
+	mes "何か事情がありそうだからね。";
 	close;
 }
 
-dali02.gat,46,135,5	script	�V�k#dk	846,{
+dali02.gat,46,135,5	script	老婆#dk	846,{
 	set '@f,countitem(6672);
-	mes "[�V�k]";
-	mes "�����v���͎��ɋ����͂����c�c�B";
+	mes "[老婆]";
+	mes "強い思いは時に強い力を持つ……。";
 	if('@f == 0) {
-		mes "^ff0000�L���̌���^000000�������Ă�����";
-		mes "���̏��Ɏ����Ă��Ȃ����B";
-		mes "^ff0000���N�C�G������^000000��";
-		mes "���B�����Ă����邼��B";
+		mes "^ff0000記憶の欠片^000000を持っていたら";
+		mes "私の所に持ってきなさい。";
+		mes "^ff0000レクイエム装備^000000に";
+		mes "精錬をしてあげるぞよ。";
 		close;
 	}
-	mes "�ނށH�@���Ȃ��c�c�B";
-	mes "^ff0000�L���̌���^000000�������Ă���ȁB";
-	mes "���ɓn���΂��̌��Ђ��g���āA";
-	mes "���N�C�G�������ɐ��B�����Ă�낤�B";
+	mes "むむ？　そなた……。";
+	mes "^ff0000記憶の欠片^000000を持っているな。";
+	mes "私に渡せばその欠片を使って、";
+	mes "レクイエム装備に精錬をしてやろう。";
 	next;
-	switch(select("���B����","�����𕷂�","��߂Ă���")) {
+	switch(select("精錬する","説明を聞く","やめておく")) {
 	case 1:
 		break;
 	case 2:
-		mes "[�V�k]";
-		mes "�L���̌��Ђ͎v���̉򂶂�B";
-		mes "���̐�œ���o����";
-		mes "���N�C�G��������";
-		mes "�����v�����h������������B";
+		mes "[老婆]";
+		mes "記憶の欠片は思いの塊じゃ。";
+		mes "この先で入手出来る";
+		mes "レクイエム装備も";
+		mes "強い思いが宿った装備じゃ。";
 		next;
-		mes "[�V�k]";
-		mes "���̗͂��g����";
-		mes "���̃��N�C�G��������";
-		mes "�L���̌��Ђ�p���鎖��";
-		mes "�����鐸�B�Ɠ������ʂ�";
-		mes "���鎖���o����񂶂�B";
+		mes "[老婆]";
+		mes "私の力を使えば";
+		mes "そのレクイエム装備に";
+		mes "記憶の欠片を用いる事で";
+		mes "いわゆる精錬と同じ効果を";
+		mes "得る事が出来るんじゃ。";
 		next;
-		mes "[�V�k]";
-		mes "���B���������ꍇ��";
-		mes "���B�������h��E����𑕔�������Ԃ�";
-		mes "�L���̌��Ђ�p�ӂ���";
-		mes "���ɘb�������Ȃ����B";
-		mes "^ff0000�L���̌���1��1��^000000";
-		mes "���B�����Ă�낤�B";
+		mes "[老婆]";
+		mes "精錬をしたい場合は";
+		mes "精錬したい防具・武器を装備した状態で";
+		mes "記憶の欠片を用意して";
+		mes "私に話しかけなさい。";
+		mes "^ff0000記憶の欠片1つで1回^000000";
+		mes "精錬をしてやろう。";
 		next;
-		mes "[�V�k]";
-		mes "���̑��͒ʏ�̐��B�Ɠ��l����B";
-		mes "^ff0000���B�Ɏ��s���Ă��܂���";
-		mes "�������j�󂳂�Ă��܂�^000000�B";
-		mes "�j�󂳂ꂽ������";
-		mes "^ff00002�x�Ǝg���Ȃ��Ȃ�^000000����";
-		mes "���ӂ���񂶂��B�ӂ��ӂ��ӂ��B";
+		mes "[老婆]";
+		mes "その他は通常の精錬と同様じゃ。";
+		mes "^ff0000精錬に失敗してしまうと";
+		mes "装備が破壊されてしまう^000000。";
+		mes "破壊された装備は";
+		mes "^ff00002度と使えなくなる^000000から";
+		mes "注意するんじゃよ。ふぉふぉふぉ。";
 		close;
 	case 3:
-		mes "[�V�k]";
-		mes "���������B";
+		mes "[老婆]";
+		mes "そうかい。";
 		close;
 	}
-	mes "[�V�k]";
-	mes "�ǂ�𐸘B����񂶂�H";
+	mes "[老婆]";
+	mes "どれを精錬するんじゃ？";
 	next;
 	set '@menu,select(
-			(getequipid(2)!=0? "^nItemID^" +getequipid(2): "��-[�������Ă��Ȃ�]"),
-			(getequipid(3)!=0? "^nItemID^" +getequipid(3): "����-[�������Ă��Ȃ�]"),
-			(getequipid(4)!=0? "^nItemID^" +getequipid(4): "�E��-[�������Ă��Ȃ�]"),
-			(getequipid(5)!=0? "^nItemID^" +getequipid(5): "���ɂ����镨-[�������Ă��Ȃ�]"),
-			(getequipid(6)!=0? "^nItemID^" +getequipid(6): "�C-[�������Ă��Ȃ�]"));
+			(getequipid(2)!=0? "^nItemID^" +getequipid(2): "体-[装備していない]"),
+			(getequipid(3)!=0? "^nItemID^" +getequipid(3): "左手-[装備していない]"),
+			(getequipid(4)!=0? "^nItemID^" +getequipid(4): "右手-[装備していない]"),
+			(getequipid(5)!=0? "^nItemID^" +getequipid(5): "肩にかける物-[装備していない]"),
+			(getequipid(6)!=0? "^nItemID^" +getequipid(6): "靴-[装備していない]"));
 	set '@menu,'@menu+1;
 	set '@refine,getequiprefinerycnt('@menu);
 	switch(getequipid('@menu)) {
 	case 0:
-		mes "[�V�k]";
-		mes "�ڂ��Ă���̂��H";
-		mes "�����������Ă��Ȃ��悤���Ⴜ�B";
+		mes "[老婆]";
+		mes "ぼけているのか？";
+		mes "何も装備していないようじゃぞ。";
 		close;
 	case 1446:
 	case 1499:
@@ -111,374 +111,374 @@ dali02.gat,46,135,5	script	�V�k#dk	846,{
 	case 28911:
 		break;
 	default:
-		mes "[�V�k]";
-		mes "����̓��N�C�G�������ł͖����B";
-		mes "�����o����̂�";
-		mes "���N�C�G��������������B";
+		mes "[老婆]";
+		mes "これはレクイエム装備では無い。";
+		mes "私が出来るのは";
+		mes "レクイエム装備だけじゃ。";
 		close;
 	}
-	if('@refine < 3 && '@f >= 4 - '@refine) {	// ���B�l��2�ȉ���+4�܂ł̕��̋L���̌��Ђ�����Ƃ�
-		mes "[�V�k]";
-		mes "���₨��A���̑����͂܂�";
-		mes "���S�ɐ��B���\�݂������˂��B";
-		mes "�����悩������";
-		mes "^ff0000+4�܂ň�C�ɐ��B����^000000�����o���邯��";
-		mes "�ǂ�����񂾂��H";
+	if('@refine < 3 && '@f >= 4 - '@refine) {	// 精錬値が2以下で+4までの分の記憶の欠片があるとき
+		mes "[老婆]";
+		mes "おやおや、この装備はまだ";
+		mes "安全に精錬が可能みたいだねぇ。";
+		mes "もしよかったら";
+		mes "^ff0000+4まで一気に精錬する^000000事も出来るけど";
+		mes "どうするんだい？";
 		next;
-		switch(select("1�񂾂����B","��C�ɐ��B","��߂�")) {
+		switch(select("1回だけ精錬","一気に精錬","やめる")) {
 		case 1:
 			break;
 		case 2:
 			set '@num,4 - '@refine;
-			mes "[�V�k]";
-			mes "���Ȃ��̑����̐��B�l��^ff0000+" +'@refine+ "^000000���Ⴉ��";
-			mes "^ff0000" +'@num+ "��^000000�A��C�ɐ��B���Ă����悤�B";
-			mes "���B���Ă��������H";
+			mes "[老婆]";
+			mes "そなたの装備の精錬値は^ff0000+" +'@refine+ "^000000じゃから";
+			mes "^ff0000" +'@num+ "回^000000、一気に精錬してあげよう。";
+			mes "精錬していいかい？";
 			next;
-			if(select("�͂�","������") == 2) {
-				mes "[�V�k]";
-				mes "�������c�c�B";
-				mes "�C���ς������";
-				mes "�܂����Ă���B";
+			if(select("はい","いいえ") == 2) {
+				mes "[老婆]";
+				mes "そうか……。";
+				mes "気が変わったら";
+				mes "また来てくれ。";
 				close;
 			}
 			for(set '@j,0;'@j<'@num;set '@j,'@j+1)
 				successrefitem '@menu;
 			delitem 6672,'@num;
-			mes "[�V�k]";
-			mes "�����Ɋ��������悤����ȁB";
-			mes "�ǂ������o�������B";
+			mes "[老婆]";
+			mes "無事に完成したようじゃな。";
+			mes "良い物が出来たぞ。";
 			close;
 		case 3:
-			mes "[�V�k]";
-			mes "�������c�c�B";
-			mes "�C���ς������";
-			mes "�܂����Ă���B";
+			mes "[老婆]";
+			mes "そうか……。";
+			mes "気が変わったら";
+			mes "また来てくれ。";
 			close;
 		}
 	}
 	if('@refine >= 4) {
-		mes "[�V�k]";
-		mes "�ق��B���̑����͊��ɂ��Ȃ�";
-		mes "���B�����Ă���悤����ȁB";
-		mes "���ꂩ����";
-		mes "���������邩������Ȃ��B";
-		mes "�����^ff00002�x�Ǝg���Ȃ��Ȃ邪^000000";
-		mes "����ł��������ȁH";
+		mes "[老婆]";
+		mes "ほう。この装備は既にかなり";
+		mes "精錬をしてあるようじゃな。";
+		mes "これから先は";
+		mes "装備が壊れるかもしれない。";
+		mes "壊れると^ff00002度と使えなくなるが^000000";
+		mes "それでもいいかな？";
 		next;
-		if(select("�͂�","������") == 2) {
-			mes "[�V�k]";
-			mes "�������c�c�B";
-			mes "�C���ς������";
-			mes "�܂����Ă���B";
+		if(select("はい","いいえ") == 2) {
+			mes "[老婆]";
+			mes "そうか……。";
+			mes "気が変わったら";
+			mes "また来てくれ。";
 			close;
 		}
 	}
 	delitem 6672,1;
-	mes "[�V�k]";
-	mes "����ł͍s������I";
-	mes "�c�c�ӂ����I";
+	mes "[老婆]";
+	mes "それでは行くぞよ！";
+	mes "……ふぉっ！";
 	if(getequippercentrefinery('@i) > rand(100)) {
 		successrefitem '@menu;
 		next;	// modif
-		mes "[�V�k]";
-		mes "�����Ɋ��������悤����ȁB";
-		mes "�ǂ������o�������B";
+		mes "[老婆]";
+		mes "無事に完成したようじゃな。";
+		mes "良い物が出来たぞ。";
 		close;
 	}
 	else {
 		failedrefitem '@menu;
 		next;	// modif
-		mes "[�V�k]";
-		mes "�����c�c";
-		mes "���s���Ă��܂����悤����B";
-		mes "���܂Ȃ��̂��c�c�B";
+		mes "[老婆]";
+		mes "くっ……";
+		mes "失敗してしまったようじゃ。";
+		mes "すまないのう……。";
 		close;
 	}
 OnInit:
-	waitingroom "���N�C�G���������B",0;
+	waitingroom "レクイエム装備精錬",0;
 	end;
 }
 
-dali02.gat,43,129,5	script	�߉q��#dk	686,{
+dali02.gat,43,129,5	script	近衛兵#dk	686,{
 	if(BaseLevel < 100) {
-		mes "[�߉q��]";
-		mes "�c�c�N�́c�c";
-		mes "���l���c�c�H";
-		mes "���ɂ���N�́A�����̖��O��";
-		mes "�Y�ꂽ��Ȃǂ��Ă��Ȃ�";
-		mes "���낤�H";
-		mes "�A�܂�����c�c�B";
+		mes "[近衛兵]";
+		mes "……君は……";
+		mes "旅人か……？";
+		mes "何にしろ君は、自分の名前を";
+		mes "忘れたりなどしていない";
+		mes "だろう？";
+		mes "羨ましいよ……。";
 		next;
-		menu "�ǂ����܂����H",-;
-		mes "[�߉q��]";
-		mes "����Ȏ��̘b�𕷂���";
-		mes "�����̂��c�c�B";
-		mes "�ڍׂ�b�������Ƃ��낾���A";
-		mes "�N�͂܂��Ⴂ�悤���B";
-		mes "���炭���̘b�𕷂����Ƃ����";
-		mes "�����ł��Ȃ����낤�c�c�B";
+		menu "どうしました？",-;
+		mes "[近衛兵]";
+		mes "こんな私の話を聞いて";
+		mes "くれるのか……。";
+		mes "詳細を話したいところだが、";
+		mes "君はまだ若いようだ。";
+		mes "恐らく私の話を聞いたところで";
+		mes "理解できないだろう……。";
 		next;
-		mes "[�߉q��]";
-		mes "���܂Ȃ��A�������������Șb�Ȃ񂾁B";
-		mes "����莄���g���A���f���Ă��邩��ˁB";
-		mes "�@";
-		mes "�]����ȏ�A�b�͕����Ȃ��悤���B";
-		mes "�@^ff0000Base���x����100�ȏ�^000000�ɂ��Ă���";
-		mes "�@�܂����Ă݂悤�c�c�]";
+		mes "[近衛兵]";
+		mes "すまない、それ程やっかいな話なんだ。";
+		mes "何より私自身が、困惑しているからね。";
+		mes "　";
+		mes "‐これ以上、話は聞けないようだ。";
+		mes "　^ff0000Baseレベルを100以上^000000にしてから";
+		mes "　また来てみよう……‐";
 		close;
 	}
 	if(checkquest(114750) & 0x8 == 0) {
-		mes "�]��l�̊Z�Őg���ł߂��j��";
-		mes "�@����Ȋ�łȂɂ����Ԃ₢�Ă���]";
+		mes "‐一人の鎧で身を固めた男が";
+		mes "　虚ろな顔でなにかをつぶやいている‐";
 		next;
-		mes "[�߉q��]";
-		mes "���̋@�B�����߂āA�����Ă���΁c�c�B";
-		mes "�N�����̋@�B�𒼂�����̂������";
-		mes "�ǂ��̂����c�c�B";
+		mes "[近衛兵]";
+		mes "この機械がせめて、生きていれば……。";
+		mes "誰かこの機械を直せるものがいれば";
+		mes "良いのだが……。";
 		next;
-		menu "����������",-;
-		mes "[�߉q��]";
-		mes "�c�c�N�́c�c!?";
-		mes "�c�c�B";
-		mes "�������A�`���҂��B";
-		mes "�܂����Ƃ茾�𕷂����Ƃ�";
-		mes "�p���������Ƃ����������";
-		mes "���܂����ȁB";
+		menu "声をかける",-;
+		mes "[近衛兵]";
+		mes "……君は……!?";
+		mes "……。";
+		mes "そうか、冒険者か。";
+		mes "まさか独り言を聞かれるとは";
+		mes "恥ずかしいところを見られて";
+		mes "しまったな。";
 		next;
-		mes "�]��قǂ܂ł̗l�q���R�̂悤��";
-		mes "�@�j�̊�ɐ��C���h�����B�]";
+		mes "‐先ほどまでの様子が嘘のように";
+		mes "　男の顔に生気が宿った。‐";
 		next;
-		mes "[�߉q��]";
-		mes "�p���łɂ�����A";
-		mes "�N�͂���^FF0000��ꂽ�����ړ��@^000000��";
-		mes "�C�����邱�Ƃ͂ł��Ȃ����낤���H";
-		mes "���炭���̋@�B�����A���̋L����";
-		mes "�Ăі߂����߂ɕK�v�Ȃ��̂���";
-		mes "�v���̂����c�c�B";
+		mes "[近衛兵]";
+		mes "恥ついでにもう一つ、";
+		mes "君はこの^FF0000壊れた次元移動機^000000を";
+		mes "修理することはできないだろうか？";
+		mes "恐らくこの機械こそ、私の記憶を";
+		mes "呼び戻すために必要なものだと";
+		mes "思うのだが……。";
 		next;
-		menu "�L���c�c�H",-;
-		mes "[�߉q��]";
-		mes "���܂Ȃ��A�{���͎��ȏЉ��";
-		mes "����ׂ��Ȃ̂��낤���A";
-		mes "����^0000FF�L����������^000000����񂾁B";
-		mes "�����̖��O�͂��납�A";
-		mes "�ǂ����Ă����ɋ���̂��������g�A";
-		mes "�܂������킩��Ȃ��񂾁B";
+		menu "記憶……？",-;
+		mes "[近衛兵]";
+		mes "すまない、本来は自己紹介を";
+		mes "するべきなのだろうが、";
+		mes "私は^0000FF記憶を失って^000000いるんだ。";
+		mes "自分の名前はおろか、";
+		mes "どうしてここに居るのかも私自身、";
+		mes "まったくわからないんだ。";
 		next;
-		mes "[�߉q��]";
-		mes "�����A���̉�ꂽ�����ړ��@��";
-		mes "�݂Ă���ƕs�ӂɋ��ɁA";
-		mes "�悭�킩��Ȃ��ɂ݂�����񂾁c�c�B";
-		mes "�����狰�炭���̎����ړ��@��";
-		mes "�����L�����Ȃ��������R��";
-		mes "����ɈႢ�Ȃ��Ǝv���ĂˁB";
+		mes "[近衛兵]";
+		mes "ただ、この壊れた次元移動機を";
+		mes "みていると不意に胸に、";
+		mes "よくわからない痛みが走るんだ……。";
+		mes "だから恐らくこの次元移動機に";
+		mes "私が記憶をなくした理由が";
+		mes "あるに違いないと思ってね。";
 		next;
-		if(select("���ׂĂ݂܂��傤","�@�B�͋��Łc�c") == 2) {
-			mes "[�߉q��]";
-			mes "�������c�c�d���Ȃ��B";
-			mes "�N�����̋@�B�ɂ���";
-			mes "�ڂ����l�Ԃ��ʂ邱�Ƃ�";
-			mes "�F���Ă������B";
+		if(select("調べてみましょう","機械は苦手で……") == 2) {
+			mes "[近衛兵]";
+			mes "そうか……仕方ない。";
+			mes "誰かこの機械について";
+			mes "詳しい人間が通ることを";
+			mes "祈っておこう。";
 			next;
-			mes "[�߉q��]";
-			mes "���܂Ȃ������B";
-			mes "�b���o���������ł��ǂ������B";
-			mes "���肪�Ƃ��B";
+			mes "[近衛兵]";
+			mes "すまなかった。";
+			mes "話を出来ただけでも良かった。";
+			mes "ありがとう。";
 			close;
 		}
-		mes "[�߉q��]";
-		mes "���肪�Ƃ��A�������I";
-		mes "�ǂ������͂��̎�̂��̂�";
-		mes "���炵���c�c�B";
+		mes "[近衛兵]";
+		mes "ありがとう、助かるよ！";
+		mes "どうも私はこの手のものが";
+		mes "苦手らしい……。";
 		next;
-		mes "^0000FF�]�����ړ��@�̑O�ɁA";
-		mes "�@�A�v���V�A��";
-		mes "�@���ƁA�����ړ��@���Ⴂ";
-		mes "�@�N�����������Ȃ���";
-		mes "�@�N�����n�߂��c�c�]^000000";
+		mes "^0000FF‐次元移動機の前に、";
+		mes "　アプレシアが";
+		mes "　立つと、次元移動機が低い";
+		mes "　起動音をあげながら";
+		mes "　起動し始めた……‐^000000";
 		next;
-		mes "[�߉q��]";
-		mes "�������ȌN�́c�c�I";
-		mes "�������Ă��Ȃ��H�@����B";
-		mes "���Ƃ��Ă����̋@�B���������̂�";
-		mes "�N�����Ă��ꂽ���A���B";
+		mes "[近衛兵]";
+		mes "すごいな君は……！";
+		mes "何もしていない？　いや。";
+		mes "だとしてもこの機械が動いたのは";
+		mes "君が来てくれたお陰だ。";
 		next;
-		mes "[�߉q��]";
-		mes "������������΂���̌N��";
-		mes "���̂悤�Ȃ��Ƃ������̂�";
-		mes "�S�ꂵ���̂����c�c�B";
-		mes "�������̋@�B���g���b���̊ԁA";
-		mes "�ꏏ�ɂ��Ă��炦�Ȃ����낤���H";
+		mes "[近衛兵]";
+		mes "さっき会ったばかりの君に";
+		mes "このようなことをいうのは";
+		mes "心苦しいのだが……。";
+		mes "私がこの機械を使う暫くの間、";
+		mes "一緒にいてもらえないだろうか？";
 		next;
-		mes "[�߉q��]";
-		mes "�N�����Ȃ���΂��̋@�B��";
-		mes "�����Ȃ��B�Ȃ�ΌN�ɂ��΂炭";
-		mes "�ꏏ�ɂ��Ă��炢�A���͂Ȃ�ׂ�";
-		mes "�����A�����̋L���̎肪�����";
-		mes "��ɓ����悤�ɓw�߂�B";
+		mes "[近衛兵]";
+		mes "君が居なければこの機械は";
+		mes "動かない。ならば君にしばらく";
+		mes "一緒にいてもらい、私はなるべく";
+		mes "早く、自分の記憶の手がかりを";
+		mes "手に入れるように努める。";
 		next;
-		mes "[�߉q��]";
-		mes "�c�c�ǂ����낤���H";
-		mes "����ƋL���̎肪�����";
-		mes "�Ȃ肻���Ȃ��̋@�B��";
-		mes "�������񂾁c�c�B";
-		mes "���̃`�����X���ǂ����Ă�";
-		mes "���������Ȃ��񂾁B";
+		mes "[近衛兵]";
+		mes "……どうだろうか？";
+		mes "やっと記憶の手がかりと";
+		mes "なりそうなこの機械が";
+		mes "動いたんだ……。";
+		mes "このチャンスをどうしても";
+		mes "逃したくないんだ。";
 		next;
-		if(select("�͂�݂�","�f��") == 2) {
-			mes "[�߉q��]";
-			mes "�c�c�������ȁA���܂Ȃ��B";
-			mes "����ƋL���̎肪���肪";
-			mes "���������Ɗ�сA";
-			mes "�N�̓s�����l���Ă��Ȃ������B";
+		if(select("力を貸す","断る") == 2) {
+			mes "[近衛兵]";
+			mes "……そうだな、すまない。";
+			mes "やっと記憶の手がかりが";
+			mes "見つかったと喜び、";
+			mes "君の都合を考えていなかった。";
 			next;
-			mes "[�߉q��]";
-			mes "���ɂ���N�����邱�Ƃ͕��������B";
-			mes "��͉��Ƃ��A���̗͂ŋN������悤";
-			mes "���s���낵�Ă݂悤�Ǝv���B";
-			mes "�����܂łŁA�\�����B";
-			mes "�{���ɂ��肪�Ƃ��B";
+			mes "[近衛兵]";
+			mes "何にしろ起動することは分かった。";
+			mes "後は何とか、私の力で起動するよう";
+			mes "試行錯誤してみようと思う。";
+			mes "ここまでで、十分だ。";
+			mes "本当にありがとう。";
 			close;
 		}
-		mes "[�߉q��]";
-		mes "�{�����H";
-		mes "�N�ɂ͂ǂ�قǊ��ӂ����Ă�";
-		mes "����Ȃ��ȁB";
-		mes "�{���ɏ������B";
+		mes "[近衛兵]";
+		mes "本当か？";
+		mes "君にはどれほど感謝をしても";
+		mes "足りないな。";
+		mes "本当に助かるよ。";
 		mes "";
 		next;
-		mes "[�߉q��]";
-		mes "���āA�N�ɂ��������K�v���낤�B";
-		mes "���̋@�B���g���������ł�����";
-		mes "���ɘb�������Ă���邩�ȁH";
+		mes "[近衛兵]";
+		mes "さて、君にも準備が必要だろう。";
+		mes "この機械を使う準備ができたら";
+		mes "私に話しかけてくれるかな？";
 		setquest 114750;
 		compquest 114750;
 		close;
 	}
-	mes "[�߉q��]";
-	mes "�N���c�c�B";
-	mes "���ɉ����p�Ȃ̂��H";
+	mes "[近衛兵]";
+	mes "君か……。";
+	mes "私に何か用なのか？";
 	next;
-	if(select("�����̋��Ԃ��J��","���ł��Ȃ�") == 2) {
-		mes "[�߉q��]";
-		mes "�������c�c�B";
-		mes "�N�����悯���";
-		mes "���̋L�������߂�";
-		mes "��`�������Ă����Ə�����B";
+	if(select("次元の狭間を開く","何でもない") == 2) {
+		mes "[近衛兵]";
+		mes "そうか……。";
+		mes "君さえよければ";
+		mes "私の記憶を取り戻す";
+		mes "手伝いをしてくれると助かる。";
 		close;
 	}
 	if(checkquest(1261)) {
 		if(checkquest(1261) & 0x2) {
-			mes "[�߉q��]";
-			mes "�ғ����邽�߂̃p���[��";
-			mes "�\���A�[�d���ꂽ�悤���B";
-			mes "����Ȃ�����A";
-			mes "�N���͉\�Ȃ͂����B";
+			mes "[近衛兵]";
+			mes "稼動するためのパワーが";
+			mes "十分、充電されたようだ。";
+			mes "これならもう、";
+			mes "起動は可能なはずだ。";
 			delquest 1261;
 			delquest 114760;
 			close;
 		}
-		mes "[�߉q��]";
-		mes "���͂܂��A�����ړ��@��";
-		mes "�ғ����邽�߂̃p���[��";
-		mes "����Ȃ��悤�Ȃ񂾁B";
-		mes "���������҂��Ă���B";
+		mes "[近衛兵]";
+		mes "今はまだ、次元移動機が";
+		mes "稼動するためのパワーが";
+		mes "足りないようなんだ。";
+		mes "もう少し待ってくれ。";
 		next;
-		mes "[�C���t�H���[�V����]";
-		mes "�]^ff0000���ꂵ�Ă���1��ڂ̌ߑO5���ȍ~^000000";
-		mes "�@����";
-		mes "�@^ff0000�Ō�̓��ꂩ��1���Ԍo�ߌ�^000000";
-		mes "�@�ɍēx����\�ɂȂ�܂��]";
+		mes "[インフォメーション]";
+		mes "‐^ff0000入場してから1回目の午前5時以降^000000";
+		mes "　且つ";
+		mes "　^ff0000最後の入場から1時間経過後^000000";
+		mes "　に再度入場可能になります‐";
 		close;
 	}
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "[�߉q��]";
-		mes "�c�c���܂Ȃ��B";
-		mes "�����ړ��@���܂��s�����";
-		mes "���܂蕉�ׂ��������Ȃ��񂾁B";
+		mes "[近衛兵]";
+		mes "……すまない。";
+		mes "次元移動機がまだ不安定で";
+		mes "あまり負荷をかけられないんだ。";
 		next;
-		mes "[�߉q��]";
-		mes "�C�����͂��肪�������A";
-		mes "�����ړ��@�̋N����";
-		mes "�p�[�e�B�[�ɏ������Ă���";
-		mes "�p�[�e�B�[���[�_�[��";
-		mes "���点�Ė���Ă���񂾁B";
+		mes "[近衛兵]";
+		mes "気持ちはありがたいが、";
+		mes "次元移動機の起動は";
+		mes "パーティーに所属している";
+		mes "パーティーリーダーに";
+		mes "限らせて貰っているんだ。";
 		close;
 	}
-	mes "[�߉q��]";
-	mes "���̋L�������߂����߂�";
-	mes "���͂��Ă����̂��H";
+	mes "[近衛兵]";
+	mes "私の記憶を取り戻すために";
+	mes "協力してくれるのか？";
 	next;
-	if(select("�͂�","������") == 2) {
-		mes "[�߉q��]";
-		mes "�������c�c�B";
-		mes "���������͂ł��Ȃ�����ȁB";
-		mes "����͒��߂�Ƃ��悤�B";
+	if(select("はい","いいえ") == 2) {
+		mes "[近衛兵]";
+		mes "そうか……。";
+		mes "無理強いはできないからな。";
+		mes "今回は諦めるとしよう。";
 		close;
 	}
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "[�߉q��]";
-		mes "����A�N���o���Ȃ��悤���ȁB";
-		mes "�����҂��Ă���B";
+		mes "[近衛兵]";
+		mes "おや、起動出来ないようだな。";
+		mes "少し待ってくれ。";
 		close;
 	}
 	mdcreate "Cursed Knight";
-	mes "[�߉q��]";
-	mes "�����ړ��@���N�����������I";
-	mes "�����𐮂��āA�܂��Ă��Ă���B";
+	mes "[近衛兵]";
+	mes "次元移動機を起動させたぞ！";
+	mes "準備を整えて、まっていてくれ。";
 	close;
 OnInit:
-	waitingroom "�􂢂̌��m",0;
+	waitingroom "呪いの剣士",0;
 	end;
 }
 
-dali02.gat,40,134,5	script	�����ړ��@	10007,{
+dali02.gat,40,134,5	script	次元移動機	10007,{
 	if(BaseLevel < 100) {
-		mes "[�߉q��]";
-		mes "�c�c�N�́c�c�B";
-		mes "�ǂ����܂��܂��A";
-		mes "�����i�K�ɂ���Ƃ���";
-		mes "�������ˁB";
+		mes "[近衛兵]";
+		mes "……君は……。";
+		mes "どうやらまだまだ、";
+		mes "成長段階にあるという";
+		mes "感じだね。";
 		next;
-		mes "�]^ff0000BaseLv100�ȏォ��^000000";
-		mes "�@�i�s�\�ł��]";
+		mes "‐^ff0000BaseLv100以上から^000000";
+		mes "　進行可能です‐";
 		close;
 	}
-	mes "�]�����ړ��@������]";
+	mes "‐次元移動機がある‐";
 	next;
-	if(select("����","��߂Ă���") == 2) {
-		mes "[�߉q��]";
-		mes "�������c�c�d���Ȃ��B";
+	if(select("入る","やめておく") == 2) {
+		mes "[近衛兵]";
+		mes "そうか……仕方ない。";
 		close;
 	}
 	if(checkquest(1261)) {
 		if(checkquest(1261) & 0x2) {
-			mes "^0000ff�]�􂢂̌��m�̓��ꐧ����";
-			mes "�@��������܂����B";
-			mes "�@�߉q����";
-			mes "�@�b��i�߂Ă��������]^000000";
+			mes "^0000ff‐呪いの剣士の入場制限が";
+			mes "　解除されました。";
+			mes "　近衛兵と";
+			mes "　話を進めてください‐^000000";
 			delquest 1261;
 			delquest 114760;
 			delquest 114765;
 			close;
 		}
-		mes "[�߉q��]";
-		mes "���͂܂��A�����ړ��@��";
-		mes "�ғ����邽�߂̃p���[��";
-		mes "����Ȃ��悤�Ȃ񂾁B";
-		mes "���������҂��Ă���B";
+		mes "[近衛兵]";
+		mes "今はまだ、次元移動機が";
+		mes "稼動するためのパワーが";
+		mes "足りないようなんだ。";
+		mes "もう少し待ってくれ。";
 		next;
-		mes "[�C���t�H���[�V����]";
-		mes "�]^ff0000���ꂵ�Ă���1��ڂ̌ߑO5���ȍ~^000000";
-		mes "�@����";
-		mes "�@^ff0000�Ō�̓��ꂩ��1���Ԍo�ߌ�^000000";
-		mes "�@�ɍēx����\�ɂȂ�܂��]";
+		mes "[インフォメーション]";
+		mes "‐^ff0000入場してから1回目の午前5時以降^000000";
+		mes "　且つ";
+		mes "　^ff0000最後の入場から1時間経過後^000000";
+		mes "　に再度入場可能になります‐";
 		close;
 	}
 	switch(mdenter("Cursed Knight")) {
-	case 0:	// �G���[�Ȃ�
-		announce "�������A���_���W����[Cursed Knight] �ɓ��ꂵ�܂����@�F�@" +strcharinfo(1)+ " (" +strcharinfo(0)+ ")",0x9,0x00ff99,0x190,12,0,0;
+	case 0:	// エラーなし
+		announce "メモリアルダンジョン[Cursed Knight] に入場しました　：　" +strcharinfo(1)+ " (" +strcharinfo(0)+ ")",0x9,0x00ff99,0x190,12,0,0;
 		donpcevent getmdnpcname("#DK_Control1")+ "::OnStart";
 		setquest 1261;
 		setquest 114760;
@@ -487,17 +487,17 @@ dali02.gat,40,134,5	script	�����ړ��@	10007,{
 		close2;
 		//warp "1@spa.gat",42,196;
 		end;
-	case 1:	// �p�[�e�B�[������
-		mes "�]�������A���_���W������";
-		mes "�@���������p�[�e�B�[�̃����o�[�̂݁A";
-		mes "�@�������A���_���W�����ɓ���܂��]";
+	case 1:	// パーティー未加入
+		mes "‐メモリアルダンジョンを";
+		mes "　生成したパーティーのメンバーのみ、";
+		mes "　メモリアルダンジョンに入れます‐";
 		close;
-	case 2:	// �_���W�������쐬
-		mes "^ff0000�]�����̋��Ԃ���������Ă��܂���B";
-		mes "�@�p�[�e�B�[���[�_�[��";
-		mes "�@�������邱�Ƃ��ł��܂��]^000000";
+	case 2:	// ダンジョン未作成
+		mes "^ff0000‐次元の狭間が生成されていません。";
+		mes "　パーティーリーダーが";
+		mes "　生成することができます‐^000000";
 		close;
-	default:	// ���̑��G���[
+	default:	// その他エラー
 		close;
 	}
 }
@@ -507,258 +507,258 @@ OnStart:
 	if('flag > 0)
 		end;
 	set 'flag,1;
-	hideonnpc getmdnpcname("�S��̉��{2�K");
-	hideonnpc getmdnpcname("�S��̉��{3�K");
-	hideonnpc getmdnpcname("�S��̉��{4�K");
-	hideonnpc getmdnpcname("�S��̉��{5�K");
-	hideonnpc getmdnpcname("�׍��̉��q#dk3");
-	hideonnpc getmdnpcname("�߉q��#dk3");
-	hideonnpc getmdnpcname("�����^���^�m�X#dkt");
-	hideonnpc getmdnpcname("�􂢂̍���#dk");
-	hideonnpc getmdnpcname("���Â��߂̒j#dk");
+	hideonnpc getmdnpcname("亡霊の王宮2階");
+	hideonnpc getmdnpcname("亡霊の王宮3階");
+	hideonnpc getmdnpcname("亡霊の王宮4階");
+	hideonnpc getmdnpcname("亡霊の王宮5階");
+	hideonnpc getmdnpcname("隣国の王子#dk3");
+	hideonnpc getmdnpcname("近衛兵#dk3");
+	hideonnpc getmdnpcname("魔剣タルタノス#dkt");
+	hideonnpc getmdnpcname("呪いの根源#dk");
+	hideonnpc getmdnpcname("黒づくめの男#dk");
 	hideonnpc getmdnpcname("#dk_tb");
 	hideonnpc getmdnpcname("#dk_sv");
 	hideonnpc getmdnpcname("#dk_tv");
-	hideonnpc getmdnpcname("�S��̉��{�o��");
-	hideonnpc getmdnpcname("����#dk11");
+	hideonnpc getmdnpcname("亡霊の王宮出口");
+	hideonnpc getmdnpcname("国王#dk11");
 
-	donpcevent getmdnpcname("����#dk")+ "::OnStart";
+	donpcevent getmdnpcname("国王#dk")+ "::OnStart";
 	end;
 }
 
-1@spa.gat,42,201,1	script	�߉q��#dk	686,{
-	mes "�]�����������Ȃ��c�c�B";
-	mes "�@�܂�Ŏ����~�܂��Ă���悤��";
-	mes "�@�������ɂ��Ȃ��c�c�]";
+1@spa.gat,42,201,1	script	近衛兵#dk	686,{
+	mes "‐何も反応がない……。";
+	mes "　まるで時が止まっているように";
+	mes "　微動だにしない……‐";
 	close;
 OnTalk1:
-	unittalk "�߉q�� : ���肪�����K���B�c�c���̖��ɑウ�܂��Ă��K����P������肷�邱�Ƃ�É��ƁA���̌��ɐ����܂��傤�B";
+	unittalk "近衛兵 : ありがたき幸せ。……この命に代えましても必ずや姫をお守りすることを陛下と、この剣に誓いましょう。";
 	end;
 OnTalk2:
-	unittalk "�߉q�� : �c�c��ӂɂ������܂��A�É��B����H�@�Ȃɂ��O�����������悤�ł��ˁB�c�c!?�@���̓����͌��̓����c�c�B";
+	unittalk "近衛兵 : ……御意にございます、陛下。おや？　なにか外が騒がしいようですね。……!?　この匂いは血の匂い……。";
 	end;
 OnTalk3:
-	unittalk "�߉q�� : �É�!!�@�������N���Ă��邱�Ƃ͎����̖͗l�c�c�����ɋ��Ă͊댯�ł�!!�@�ЂƂ܂��A�������ւ��߂肭������!!";
+	unittalk "近衛兵 : 陛下!!　何かが起きていることは事実の模様……ここに居ては危険です!!　ひとまず、お部屋へお戻りください!!";
 	end;
 OnTalk4:
-	unittalk "�߉q�� : ��ӁB�c�c�B�P�̎�����2�K�A�}���˂΁c�c�B�@�ޏ��ɂ������̂��Ƃ�����Ύ��́c�c�B";
+	unittalk "近衛兵 : 御意。……。姫の私室は2階、急がねば……。　彼女にもしものことがあれば私は……。";
 	end;
 }
 
-1@spa.gat,41,207,4	script	���Â��߂̒j#dkf1	685,{
-	mes "�]�S�g���Â��߂�";
-	mes "�@�������̒j��";
-	mes "�@�傫�Ȍ�������";
-	mes "�@�ڂ̑O�̓�l��";
-	mes "�@���₩�Ȗڂ�";
-	mes "�@���߂Ă���c�c�]";
+1@spa.gat,41,207,4	script	黒づくめの男#dkf1	685,{
+	mes "‐全身黒づくめの";
+	mes "　長い髪の男が";
+	mes "　大きな剣を持ち";
+	mes "　目の前の二人を";
+	mes "　冷ややかな目で";
+	mes "　見つめている……‐";
 	close;
 OnTalk1:
-	unittalk "��̐� : �ق��c�c����͒������B�A��������A�A�C�c�͐������l�Ԃ̂悤�����B";
+	unittalk "謎の声 : ほう……これは珍しい。アレを見ろ、アイツは生きた人間のようだぞ。";
 	end;
 OnTalk2:
-	unittalk "���Â��߂̒j : �l�Ԃ��Ɓc�c�H�@�ǂ����Ă����ɐl�Ԃ�����B";
+	unittalk "黒づくめの男 : 人間だと……？　どうしてここに人間がいる。";
 	end;
 OnTalk3:
-	unittalk "��̐� : �܂��҂āB���̐l�Ԃ̎n���͂��ł��\�Ȃ񂾁B�����ł�K�v���Ȃ��B����Ɂc�c�ϋq�͑����ق��������B";
+	unittalk "謎の声 : まあ待て。この人間の始末はいつでも可能なんだ。そう焦る必要もない。それに……観客は多いほうがいい。";
 	end;
 OnTalk4:
-	unittalk "���Â��߂̒j : �c�c�����������Ƃ炵���B�Ȃ�΁A���O�ɋ����Ă�낤�B���̐��E�͂���j�̋L�����B�䂦�ɂ��O��������Ɋ����邱�Ƃ͏o���Ȃ��B";
+	unittalk "黒づくめの男 : ……そういうことらしい。ならば、お前に教えてやろう。この世界はある男の記憶だ。ゆえにお前がこいつらに干渉することは出来ない。";
 	end;
 OnTalk5:
-	unittalk "���Â��߂̒j : �����ł��̃o�J�Ȓj�̓^�������͂���Ƃ����B�������A���ł��Ȃ��̂͂��̃o�J�Ȓj�ɂ������B";
+	unittalk "黒づくめの男 : そこでこのバカな男の顛末を見届けるといい。ただし、干渉できないのはこのバカな男にだけだ。";
 	end;
 OnTalk6:
-	unittalk "���Â��߂̒j : �����X�^�[�ǂ��͂��O�Ɋ����邱�Ƃ��o����B���������E����Ȃ��悤�ɂ���񂾂ȁB�N�b�N�b�N�b�N�c�c�B";
+	unittalk "黒づくめの男 : モンスターどもはお前に干渉することが出来る。せいぜい殺されないようにするんだな。クックックック……。";
 	end;
 OnTalk7:
-	unittalk "��̐� : �l�Ԃ͑��l�̕s�K���D���炵������ȁc�c�B���������Ղ�z�����񂾍��ɂ܂��������Ȃ����B";
+	unittalk "謎の声 : 人間は他人の不幸が好きらしいからな……。蜜をたっぷり吸い込んだ頃にまた会おうじゃないか。";
 	end;
 }
 
-1@spa.gat,41,204,5	script	����#dk	965,{
+1@spa.gat,41,204,5	script	国王#dk	965,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "�]��قǂ̋߉q����";
-		mes "�@�����炵���l���Ɖ�b�����Ă���]";
+		mes "‐先ほどの近衛兵が";
+		mes "　国王らしき人物と会話をしている‐";
 		close;
 	}
 	stopnpctimer;
-	mes "�]��قǂ̋߉q���������̂�";
-	mes "�@���������悤�Ƃ����u�ԁc�c�]";
+	mes "‐先ほどの近衛兵がいたので";
+	mes "　声をかけようとした瞬間……‐";
 	next;
 	if(checkquest(114755)&0x8) {
-		if(select("��b���ȗ�����","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("会話を省略する","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("����#dk");
-			hideonnpc getmdnpcname("�߉q��#dk");
-			hideonnpc getmdnpcname("���Â��߂̒j#dkf1");
+			hideonnpc getmdnpcname("国王#dk");
+			hideonnpc getmdnpcname("近衛兵#dk");
+			hideonnpc getmdnpcname("黒づくめの男#dkf1");
 			donpcevent getmdnpcname("#DK_NPCTimer1")+ "::OnStart";
 			misceffect 904,"";
 			end;
 		}
 	}
-	mes "[��̐�]";
-	mes "�ق��c�c����͒������B";
-	mes "�A��������A�A�C�c�͐�����";
-	mes "�l�Ԃ̂悤�����B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk1";
+	mes "[謎の声]";
+	mes "ほう……これは珍しい。";
+	mes "アレを見ろ、アイツは生きた";
+	mes "人間のようだぞ。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk1";
 	next;
-	mes "[���Â��߂̒j]";
-	mes "�l�Ԃ��Ɓc�c�H";
-	mes "�ǂ����Ă����ɐl�Ԃ�����B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk2";
+	mes "[黒づくめの男]";
+	mes "人間だと……？";
+	mes "どうしてここに人間がいる。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk2";
 	next;
-	mes "�]����Ȍ��t�Ƌ���";
-	mes "�@���������������������ƁA";
-	mes "�@�傫�Ȍ���������";
-	mes "�@��l�̍��Â��߂̒j��";
-	mes "�@����������߂Ă����]";
+	mes "‐そんな言葉と共に";
+	mes "　視線を感じそちらを見ると、";
+	mes "　大きな剣を持った";
+	mes "　一人の黒づくめの男が";
+	mes "　こちらを見つめていた‐";
 	cutin "sakray.bmp",2;
 	next;
 	cutin "sakray.bmp",255;
-	mes "�]���������̂��낤�B";
-	mes "�@���Â��߂̒j�̊�Ɛ���";
-	mes "�@���o��������C�������B";
-	mes "�@�ǂ����ŉ�����悤��";
-	mes "�@�C������c�c�]";
+	mes "‐しかし何故だろう。";
+	mes "　黒づくめの男の顔と声に";
+	mes "　見覚えがある気がした。";
+	mes "　どこかで会ったような";
+	mes "　気がする……‐";
 	next;
-	mes "[��̐�]";
-	mes "�܂��҂āB";
-	mes "���̐l�Ԃ̎n���͂��ł�";
-	mes "�\�Ȃ񂾁B";
-	mes "�����ł�K�v���Ȃ��B";
-	mes "����Ɂc�c";
-	mes "�ϋq�͑����ق��������B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk3";
+	mes "[謎の声]";
+	mes "まあ待て。";
+	mes "この人間の始末はいつでも";
+	mes "可能なんだ。";
+	mes "そう焦る必要もない。";
+	mes "それに……";
+	mes "観客は多いほうがいい。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk3";
 	next;
-	mes "�]���������ƂɁA���̐���";
-	mes "�@^FF0000�ЁX�����C�����U���";
-	mes "�@��^000000���畷�����Ă����c�c�]";
+	mes "‐驚いたことに、その声は";
+	mes "　^FF0000禍々しい気を放つ一振りの";
+	mes "　剣^000000から聞こえていた……‐";
 	cutin "tartanos.bmp",3;
 	next;
 	cutin "tartanos.bmp",255;
 	cutin "sakray.bmp",2;
-	mes "[���Â��߂̒j]";
-	mes "�c�c�����������Ƃ炵���B";
-	mes "�Ȃ�΁A���O�ɋ����Ă�낤�B";
-	mes "���̐��E�͂���j�̋L�����B";
-	mes "�䂦�ɂ��O���������";
-	mes "�����邱�Ƃ͏o���Ȃ��B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk4";
+	mes "[黒づくめの男]";
+	mes "……そういうことらしい。";
+	mes "ならば、お前に教えてやろう。";
+	mes "この世界はある男の記憶だ。";
+	mes "ゆえにお前がこいつらに";
+	mes "干渉することは出来ない。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk4";
 	next;
-	mes "[���Â��߂̒j]";
-	mes "�����ł��̃o�J�Ȓj��";
-	mes "�^�������͂���Ƃ����B";
-	mes "�������A���ł��Ȃ��̂�";
-	mes "���̃o�J�Ȓj�ɂ������B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk5";
+	mes "[黒づくめの男]";
+	mes "そこでこのバカな男の";
+	mes "顛末を見届けるといい。";
+	mes "ただし、干渉できないのは";
+	mes "このバカな男にだけだ。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk5";
 	next;
-	mes "[���Â��߂̒j]";
-	mes "�����X�^�[�ǂ��͂��O��";
-	mes "�����邱�Ƃ��o����B";
-	mes "���������E����Ȃ��悤��";
-	mes "����񂾂ȁB";
-	mes "�N�b�N�b�N�b�N�c�c�B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk6";
+	mes "[黒づくめの男]";
+	mes "モンスターどもはお前に";
+	mes "干渉することが出来る。";
+	mes "せいぜい殺されないように";
+	mes "するんだな。";
+	mes "クックックック……。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk6";
 	next;
 	cutin "tartanos.bmp",3;
-	mes "[��̐�]";
-	mes "�l�Ԃ͑��l�̕s�K��";
-	mes "�D���炵������ȁc�c�B";
-	mes "���������Ղ�z������";
-	mes "���ɂ܂��������Ȃ����B";
-	donpcevent getmdnpcname("���Â��߂̒j#dkf1")+ "::OnTalk7";
+	mes "[謎の声]";
+	mes "人間は他人の不幸が";
+	mes "好きらしいからな……。";
+	mes "蜜をたっぷり吸い込んだ";
+	mes "頃にまた会おうじゃないか。";
+	donpcevent getmdnpcname("黒づくめの男#dkf1")+ "::OnTalk7";
 	next;
 	cutin "tartanos.bmp",255;
-	misceffect 454,getmdnpcname("���Â��߂̒j#dkf1");
-	hideonnpc getmdnpcname("���Â��߂̒j#dkf1");
-	mes "�]�����Ēj�̎p���������r�[�A";
-	mes "�@�~�܂��Ă�������";
-	mes "�@�����o�����悤�Ȋ��o��";
-	mes "�@�P��ꂽ�]";
+	misceffect 454,getmdnpcname("黒づくめの男#dkf1");
+	hideonnpc getmdnpcname("黒づくめの男#dkf1");
+	mes "‐そして男の姿が消えた途端、";
+	mes "　止まっていた時が";
+	mes "　動き出したような感覚に";
+	mes "　襲われた‐";
 	misceffect 454,"";
 	next;
-	mes "[����]";
-	mes "���Ȃ����䂪���A�e�B�A���P��";
-	mes "�����̋߉q���Ƃ��ĔC������B";
-	mes "���Ȃ��̑�z�������p�ƒ����S��M���悤�B";
-	mes "�P����낵�����ށB";
-	unittalk "���� : ���Ȃ����䂪���A�e�B�A���P�̒����̋߉q���Ƃ��ĔC������B���Ȃ��̑�z�������p�ƒ����S��M���悤�B�P����낵�����ށB";
+	mes "[国王]";
+	mes "そなたを我が娘、ティアラ姫の";
+	mes "直属の近衛兵として任命する。";
+	mes "そなたの卓越した剣術と忠誠心を信じよう。";
+	mes "姫をよろしく頼む。";
+	unittalk "国王 : そなたを我が娘、ティアラ姫の直属の近衛兵として任命する。そなたの卓越した剣術と忠誠心を信じよう。姫をよろしく頼む。";
 	next;
-	mes "[�߉q��]";
-	mes "���肪�����K���B";
-	mes "�c�c���̖��ɑウ�܂��Ă�";
-	mes "�K����P������肷�邱�Ƃ�";
-	mes "�É��ƁA���̌��ɐ����܂��傤�B";
-	donpcevent getmdnpcname("�߉q��#dk")+ "::OnTalk1";
+	mes "[近衛兵]";
+	mes "ありがたき幸せ。";
+	mes "……この命に代えましても";
+	mes "必ずや姫をお守りすることを";
+	mes "陛下と、この剣に誓いましょう。";
+	donpcevent getmdnpcname("近衛兵#dk")+ "::OnTalk1";
 	next;
-	mes "[����]";
-	mes "�K���������A���̏��";
-	mes "�K��Ă���׍��̉��q��";
-	mes "�䂪���Ƃ̉��k���܂Ƃ܂����B";
-	mes "���̉��k���܂Ƃ܂�΁A�킪����";
-	mes "��������i�����ׂł��낤�B";
-	unittalk "���� : �K���������A���̏��K��Ă���׍��̉��q�Ɖ䂪���Ƃ̉��k���܂Ƃ܂����B���̉��k���܂Ƃ܂�΁A�킪���͍�������i�����ׂł��낤�B";
+	mes "[国王]";
+	mes "幸多くも今、この城を";
+	mes "訪れている隣国の王子と";
+	mes "我が娘との縁談もまとまりつつある。";
+	mes "この縁談がまとまれば、わが国は";
+	mes "今後も末永く安泰であろう。";
+	unittalk "国王 : 幸多くも今、この城を訪れている隣国の王子と我が娘との縁談もまとまりつつある。この縁談がまとまれば、わが国は今後も末永く安泰であろう。";
 	next;
-	mes "[����]";
-	mes "�������͂��̉��k��";
-	mes "���܂���C�ł͂Ȃ��悤����";
-	mes "�����ƕK����A�킩���Ă�������";
-	mes "����ł��낤�B";
-	mes "�ꍑ�̉����Ƃ��ĂȂ��ׂ�";
-	mes "���Ƃ͉����Ƃ������Ƃ��c�c�B";
-	unittalk "���� : �������͂��̉��k�ɂ��܂���C�ł͂Ȃ��悤���������ƕK����A�킩���Ă�����������ł��낤�B�ꍑ�̉����Ƃ��ĂȂ��ׂ����Ƃ͉����Ƃ������Ƃ��c�c�B";
+	mes "[国王]";
+	mes "娘も今はこの縁談に";
+	mes "あまり乗り気ではないようだが";
+	mes "きっと必ずや、わかってくれる日が";
+	mes "くるであろう。";
+	mes "一国の王女としてなすべき";
+	mes "ことは何かということを……。";
+	unittalk "国王 : 娘も今はこの縁談にあまり乗り気ではないようだがきっと必ずや、わかってくれる日がくるであろう。一国の王女としてなすべきことは何かということを……。";
 	next;
-	mes "[�߉q��]";
-	mes "�c�c��ӂɂ������܂��A�É��B";
-	mes "����H";
-	mes "�Ȃɂ��O�����������悤�ł��ˁB";
-	mes "�c�c!?�@���̓����͌��̓����c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk")+ "::OnTalk2";
+	mes "[近衛兵]";
+	mes "……御意にございます、陛下。";
+	mes "おや？";
+	mes "なにか外が騒がしいようですね。";
+	mes "……!?　この匂いは血の匂い……。";
+	donpcevent getmdnpcname("近衛兵#dk")+ "::OnTalk2";
 	next;
-	mes "[����]";
-	mes "���̉��́A�����̉��Ȃ̂�!?";
-	mes "�ǂ������I�@�Ȃɂ��N�����Ă���̂�!?";
-	mes "�N���񍐂�����̂��I";
-	unittalk "���� : ���̉��́A�����̉��Ȃ̂�!?�@�ǂ������I�@�Ȃɂ��N�����Ă���̂�!?�@�N���񍐂�����̂��I";
+	mes "[国王]";
+	mes "この音は、剣戟の音なのか!?";
+	mes "どうした！　なにが起こっているのだ!?";
+	mes "誰か報告をするのだ！";
+	unittalk "国王 : この音は、剣戟の音なのか!?　どうした！　なにが起こっているのだ!?　誰か報告をするのだ！";
 	next;
-	mes "[�߉q��]";
-	mes "�É�!!";
-	mes "�������N���Ă��邱�Ƃ�";
-	mes "�����̖͗l�c�c";
-	mes "�����ɋ��Ă͊댯�ł�!!";
-	mes "�ЂƂ܂��A�������ւ��߂肭������!!";
-	donpcevent getmdnpcname("�߉q��#dk")+ "::OnTalk3";
+	mes "[近衛兵]";
+	mes "陛下!!";
+	mes "何かが起きていることは";
+	mes "事実の模様……";
+	mes "ここに居ては危険です!!";
+	mes "ひとまず、お部屋へお戻りください!!";
+	donpcevent getmdnpcname("近衛兵#dk")+ "::OnTalk3";
 	next;
-	mes "�]�������������Â��߂̒j��";
-	mes "�@�����Ă��������X�^�[�Ƃ���";
-	mes "�@���t���]�����߂���B";
-	mes "�@����̑����Ɖ���";
-	mes "�@�֌W������̂��낤���c�c�H�]";
+	mes "‐さっき見た黒づくめの男が";
+	mes "　言っていたモンスターという";
+	mes "　言葉が脳裏を過ぎる。";
+	mes "　今回の騒動と何か";
+	mes "　関係があるのだろうか……？‐";
 	next;
-	mes "[����]";
-	mes "���̂��Ƃ͐S�z�Ȃ��B";
-	mes "����������Ȃ��́A�����c�c";
-	mes "�e�B�A���P������Ă���Ă���!!";
-	unittalk "���� : ���̂��Ƃ͐S�z�Ȃ��B����������Ȃ��́A�����c�c�e�B�A���P������Ă���Ă���!!";
+	mes "[国王]";
+	mes "私のことは心配ない。";
+	mes "それよりもそなたは、娘を……";
+	mes "ティアラ姫を守ってやってくれ!!";
+	unittalk "国王 : 私のことは心配ない。それよりもそなたは、娘を……ティアラ姫を守ってやってくれ!!";
 	next;
-	mes "[�߉q��]";
-	mes "��ӁB";
-	mes "�c�c�B";
-	mes "�P�̎�����2�K�A�}���˂΁c�c�B";
-	mes "�ޏ��ɂ������̂��Ƃ�����Ύ��́c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk")+ "::OnTalk4";
+	mes "[近衛兵]";
+	mes "御意。";
+	mes "……。";
+	mes "姫の私室は2階、急がねば……。";
+	mes "彼女にもしものことがあれば私は……。";
+	donpcevent getmdnpcname("近衛兵#dk")+ "::OnTalk4";
 	close2;
-	hideonnpc getmdnpcname("����#dk");
-	hideonnpc getmdnpcname("�߉q��#dk");
+	hideonnpc getmdnpcname("国王#dk");
+	hideonnpc getmdnpcname("近衛兵#dk");
 	donpcevent getmdnpcname("#DK_NPCTimer1")+ "::OnStart";
 	misceffect 904,"";
 	end;
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("����#dk");
+	emotion 9,getmdnpcname("国王#dk");
 	end;
 }
 
@@ -767,159 +767,159 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	announce "�Ⴂ�j�̐� : �������c�c�B�e�B�A���P�̑��Ŕޏ�����邱�ƁB���ꂾ�������̍K���A���������������B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : そうだ……。ティアラ姫の側で彼女を守ること。それだけが私の幸せ、生きがいだった。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer6000:
-	announce "�Ⴂ�j�̐� : �������A�ˑR�̃����X�^�[�̏P���B���ꂪ�S�Ă̔ߌ��̎n�܂肾�����c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : しかし、突然のモンスターの襲来。これが全ての悲劇の始まりだった……。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer9000:
 	stopnpctimer;
-	announce "�]���Ԃ����������悤�Ȋ��o�̌�A�k�ŉ������J���悤�ȉ��������]",0x9,0xffff00,0x190,20,0,0;
-	misceffect 35,getmdnpcname("�S��̉��{2�K");
-	hideoffnpc getmdnpcname("�S��̉��{2�K");
-	donpcevent getmdnpcname("�߉q��#dk1")+ "::OnStart";
+	announce "‐時間が速く流れるような感覚の後、北で何かが開くような音がした‐",0x9,0xffff00,0x190,20,0,0;
+	misceffect 35,getmdnpcname("亡霊の王宮2階");
+	hideoffnpc getmdnpcname("亡霊の王宮2階");
+	donpcevent getmdnpcname("近衛兵#dk1")+ "::OnStart";
 	end;
 }
 
-1@spa.gat,41,217,0	warp	�S��̉��{2�K	2,2,1@spa.gat,114,120
+1@spa.gat,41,217,0	warp	亡霊の王宮2階	2,2,1@spa.gat,114,120
 
-1@spa.gat,135,125,3	script	�e�B�A���P#dk	640,{
-	mes "�]�������������Ȃ�ł���B";
-	mes "�@�ǂ����R���Ɍ�����̂�";
-	mes "�@�C�̂������낤���H�]";
+1@spa.gat,135,125,3	script	ティアラ姫#dk	640,{
+	mes "‐美しい女性が佇んでいる。";
+	mes "　どこか儚げに見えるのは";
+	mes "　気のせいだろうか？‐";
 	close;
 OnTalk1:
-	unittalk "�e�B�A���P : ���̏�Ƀ����X�^�[�����荞�񂾂ƁA�������畷���܂����c�c�B����ŁA�����l�͂������Ȃ̂ł��ˁH";
+	unittalk "ティアラ姫 : この城にモンスターが入り込んだと、侍女から聞きました……。それで、お父様はご無事なのですね？";
 	end;
 OnTalk2:
-	unittalk "�e�B�A���P : �c�c���ɂƂ��Ĉ��S�ň��S�ȏꏊ�͈��������܂���B����͐̂���A�����ƕς���Ă͂���܂���c�c�B";
+	unittalk "ティアラ姫 : ……私にとって安全で安心な場所は一つしかありません。それは昔から、ずっと変わってはおりません……。";
 	end;
 OnTalk3:
-	unittalk "�e�B�A���P : �c�c���߂�Ȃ����B�����X�^�[������P���ȂǁA���܂łȂ��������Ƃ��N���������ł���ȗ\�����ʂ����Ȃ��̂ł��c�c�B�Ȃɂ��������Ƃ����������Łc�c�B";
+	unittalk "ティアラ姫 : ……ごめんなさい。モンスターが城を襲うなど、今までなかったことが起きたせいでいやな予感がぬぐえないのです……。なにか悪いことがおきそうで……。";
 	end;
 OnTalk4:
-	unittalk "�e�B�A���P : �����X�^�[�����̏���P�������R�͒肩�ł͂���܂���B�����Ă��̂悤�Ȏ��ɁA�M���ɂ��̂悤�Ȃ��Ƃ𕷂��͕̂s�ސT��������Ȃ��̂ł����c�c�B";
+	unittalk "ティアラ姫 : モンスターがこの城を襲った理由は定かではありません。そしてこのような時に、貴方にこのようなことを聞くのは不謹慎かもしれないのですが……。";
 	end;
 OnTalk5:
-	unittalk "�e�B�A���P : �c�c�����������������B���Ȃ��ɂƂ��Ă����́A����m��Ȃ��׍��̓a���ƌ����̌_������킷���Ƃ��]�݂Ȃ̂ł��傤���c�c�B���́c�c�B���̖]�݂͂��Ȃ��Ɓc�c�B";
+	unittalk "ティアラ姫 : ……お聞かせください。あなたにとっても私は、顔も知らない隣国の殿方と結婚の契りを交わすことが望みなのでしょうか……。私は……。私の望みはあなたと……。";
 	end;
 }
 
-1@spa.gat,132,122,7	script	�߉q��#dk1	686,{
+1@spa.gat,132,122,7	script	近衛兵#dk1	686,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "[�߉q��]";
-		mes "�c�c�P�l�A�������łȂɂ��ł��B";
+		mes "[近衛兵]";
+		mes "……姫様、ご無事でなによりです。";
 		close;
 	}
 	stopnpctimer;
-	mes "[�߉q��]";
-	mes "�c�c�P�l�A�������łȂɂ��ł��B";
-	unittalk "�߉q�� : �c�c�P�l�A�������łȂɂ��ł��B";
+	mes "[近衛兵]";
+	mes "……姫様、ご無事でなによりです。";
+	unittalk "近衛兵 : ……姫様、ご無事でなによりです。";
 	next;
 	if(checkquest(114755)&0x8) {
-		if(select("�}��","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("急ぐ","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("�߉q��#dk1");
-			hideonnpc getmdnpcname("�e�B�A���P#dk");
+			hideonnpc getmdnpcname("近衛兵#dk1");
+			hideonnpc getmdnpcname("ティアラ姫#dk");
 			donpcevent getmdnpcname("#DK_NPCTimer2")+ "::OnStart";
 			misceffect 904,"";
 			end;
 		}
 	}
-	mes "[�e�B�A���P]";
-	mes "���̏�Ƀ����X�^�[�����荞�񂾂ƁA";
-	mes "�������畷���܂����c�c�B";
-	mes "����ŁA�����l�͂������Ȃ̂ł��ˁH";
-	donpcevent getmdnpcname("�e�B�A���P#dk")+ "::OnTalk1";
+	mes "[ティアラ姫]";
+	mes "この城にモンスターが入り込んだと、";
+	mes "侍女から聞きました……。";
+	mes "それで、お父様はご無事なのですね？";
+	donpcevent getmdnpcname("ティアラ姫#dk")+ "::OnTalk1";
 	next;
-	mes "[�߉q��]";
-	mes "�����S���������B";
-	mes "�É��͖����ł��B";
-	mes "�P�l�������ł͂Ȃ�";
-	mes "�����������S�ȏꏊ�ɎQ��܂��傤�B";
-	mes "���̂܂܂ł�";
-	mes "���댯�Ȗڂɂ������c�c�B";
-	unittalk "�߉q�� : �����S���������B�É��͖����ł��B�P�l�������ł͂Ȃ������������S�ȏꏊ�ɎQ��܂��傤�B���̂܂܂ł͂��댯�Ȗڂɂ������c�c�B";
+	mes "[近衛兵]";
+	mes "ご安心ください。";
+	mes "陛下は無事です。";
+	mes "姫様もここではなく";
+	mes "もう少し安全な場所に参りましょう。";
+	mes "このままでは";
+	mes "いつ危険な目にあうか……。";
+	unittalk "近衛兵 : ご安心ください。陛下は無事です。姫様もここではなくもう少し安全な場所に参りましょう。このままではいつ危険な目にあうか……。";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c���ɂƂ��Ĉ��S�ň��S�ȏꏊ��";
-	mes "���������܂���B";
-	mes "����͐̂���A�����ƕς���Ă�";
-	mes "����܂���c�c�B";
-	donpcevent getmdnpcname("�e�B�A���P#dk")+ "::OnTalk2";
+	mes "[ティアラ姫]";
+	mes "……私にとって安全で安心な場所は";
+	mes "一つしかありません。";
+	mes "それは昔から、ずっと変わっては";
+	mes "おりません……。";
+	donpcevent getmdnpcname("ティアラ姫#dk")+ "::OnTalk2";
 	next;
-	mes "[�߉q��]";
-	mes "�e�B�A���P�c�c�B";
-	unittalk "�߉q�� : �e�B�A���P�c�c�B";
+	mes "[近衛兵]";
+	mes "ティアラ姫……。";
+	unittalk "近衛兵 : ティアラ姫……。";
 	next;
-	mes "�]�e�B�A���P�Ƌ߉q���̊Ԃ�";
-	mes "�@��]�֌W�𒴂���";
-	mes "�@��C�Ƌ�������������]";
+	mes "‐ティアラ姫と近衛兵の間に";
+	mes "　主従関係を超えた";
+	mes "　空気と距離感を感じる‐";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c���߂�Ȃ����B";
-	mes "�����X�^�[������P���ȂǁA";
-	mes "���܂łȂ��������Ƃ��N����������";
-	mes "����ȗ\�����ʂ����Ȃ��̂ł��c�c�B";
-	mes "�Ȃɂ��������Ƃ����������Łc�c�B";
-	donpcevent getmdnpcname("�e�B�A���P#dk")+ "::OnTalk3";
+	mes "[ティアラ姫]";
+	mes "……ごめんなさい。";
+	mes "モンスターが城を襲うなど、";
+	mes "今までなかったことが起きたせいで";
+	mes "いやな予感がぬぐえないのです……。";
+	mes "なにか悪いことがおきそうで……。";
+	donpcevent getmdnpcname("ティアラ姫#dk")+ "::OnTalk3";
 	next;
-	mes "[�߉q��]";
-	mes "�P�l�A�s����������̂�";
-	mes "�悭�킩��܂��B";
-	mes "�ł����P�l�́A����";
-	mes "���̍���w�����ė������ł��B";
-	mes "�ǂ����C��������������A�׍���";
-	mes "���̕��́A�悫�����ɂȂ��Ă��������c�c�B";
-	unittalk "�߉q�� : �P�l�A�s����������̂͂悭�킩��܂��B�ł����P�l�́A���ケ�̍���w�����ė������ł��B�ǂ����C��������������A�׍��̂��̕��́A�悫�����ɂȂ��Ă��������c�c�B";
+	mes "[近衛兵]";
+	mes "姫様、不安を感じるのは";
+	mes "よくわかります。";
+	mes "ですが姫様は、今後";
+	mes "この国を背負って立つお方です。";
+	mes "どうか気をしっかりもち、隣国の";
+	mes "あの方の、よき伴侶になってください……。";
+	unittalk "近衛兵 : 姫様、不安を感じるのはよくわかります。ですが姫様は、今後この国を背負って立つお方です。どうか気をしっかりもち、隣国のあの方の、よき伴侶になってください……。";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�����X�^�[�����̏���P����";
-	mes "���R�͒肩�ł͂���܂���B";
-	mes "�����Ă��̂悤�Ȏ��ɁA";
-	mes "�M���ɂ��̂悤�Ȃ��Ƃ𕷂��̂�";
-	mes "�s�ސT��������Ȃ��̂ł����c�c�B";
-	donpcevent getmdnpcname("�e�B�A���P#dk")+ "::OnTalk4";
+	mes "[ティアラ姫]";
+	mes "モンスターがこの城を襲った";
+	mes "理由は定かではありません。";
+	mes "そしてこのような時に、";
+	mes "貴方にこのようなことを聞くのは";
+	mes "不謹慎かもしれないのですが……。";
+	donpcevent getmdnpcname("ティアラ姫#dk")+ "::OnTalk4";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c�����������������B";
-	mes "���Ȃ��ɂƂ��Ă����́A����m��Ȃ�";
-	mes "�׍��̓a���ƌ����̌_������킷���Ƃ�";
-	mes "�]�݂Ȃ̂ł��傤���c�c�B";
-	mes "���́c�c�B";
-	mes "���̖]�݂͂��Ȃ��Ɓc�c�B";
-	donpcevent getmdnpcname("�e�B�A���P#dk")+ "::OnTalk5";
+	mes "[ティアラ姫]";
+	mes "……お聞かせください。";
+	mes "あなたにとっても私は、顔も知らない";
+	mes "隣国の殿方と結婚の契りを交わすことが";
+	mes "望みなのでしょうか……。";
+	mes "私は……。";
+	mes "私の望みはあなたと……。";
+	donpcevent getmdnpcname("ティアラ姫#dk")+ "::OnTalk5";
 	next;
-	mes "[�߉q��]";
-	mes "�c�c�P�l�B";
-	mes "��A���́c�c�B";
-	unittalk "�߉q�� : �c�c�P�l�B��A���́c�c�B";
+	mes "[近衛兵]";
+	mes "……姫様。";
+	mes "わ、私は……。";
+	unittalk "近衛兵 : ……姫様。わ、私は……。";
 	next;
-	mes "[�߉q��]";
+	mes "[近衛兵]";
 	mes "!?";
-	mes "�������c�c�߂�!!";
-	unittalk "�߉q�� : !?�@�������c�c�߂�!!";
+	mes "騒音が……近い!!";
+	unittalk "近衛兵 : !?　騒音が……近い!!";
 	next;
-	mes "�]�����Ɛl�X�̋��ѐ���";
-	mes "�@�������ɔ����Ă���̂�";
-	mes "�@���������I�]";
+	mes "‐剣戟と人々の叫び声が";
+	mes "　すぐ側に迫っているのが";
+	mes "　聞こえた！‐";
 	next;
-	mes "[�߉q��]";
-	mes "�P�l�I";
-	mes "���S�ȏꏊ�܂ł����肵�܂�!!";
-	mes "�c�c�Q��܂��傤�I";
-	unittalk "�߉q�� : �P�l�I�@���S�ȏꏊ�܂ł����肵�܂�!!�c�c�Q��܂��傤�I";
+	mes "[近衛兵]";
+	mes "姫様！";
+	mes "安全な場所までお送りします!!";
+	mes "……参りましょう！";
+	unittalk "近衛兵 : 姫様！　安全な場所までお送りします!!……参りましょう！";
 	close2;
-	hideonnpc getmdnpcname("�߉q��#dk1");
-	hideonnpc getmdnpcname("�e�B�A���P#dk");
+	hideonnpc getmdnpcname("近衛兵#dk1");
+	hideonnpc getmdnpcname("ティアラ姫#dk");
 	misceffect 904,"";
 	donpcevent getmdnpcname("#DK_NPCTimer2")+ "::OnStart";
 	end;
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("�߉q��#dk1");
+	emotion 9,getmdnpcname("近衛兵#dk1");
 	end;
 }
 
@@ -928,162 +928,162 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	announce "�Ⴂ�j�̐� : �����������ȃe�B�A���P�c�c���́c�c���́c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 美しく聡明なティアラ姫……私は……私は……。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer6000:
-	announce "�Ⴂ�j�̐� : ��킭�΋M���ƁA�i���̎����߂������������c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 願わくば貴女と、永遠の時を過ごしたかった……。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer9000:
 	stopnpctimer;
-	hideoffnpc getmdnpcname("�׍��̉��q#dk3");
+	hideoffnpc getmdnpcname("隣国の王子#dk3");
 	end;
 }
 
-1@spa.gat,111,133,5	script	�׍��̉��q#dk3	470,7,7,{
-	mes "�]�d���Ă�ꂽ��i������";
-	mes "�@���𒅂��j���A�s�C���ȏΊ��";
-	mes "�@�����ׂȂ���΂��Ă���]";
+1@spa.gat,111,133,5	script	隣国の王子#dk3	470,7,7,{
+	mes "‐仕立てられた上品そうな";
+	mes "　服を着た男が、不気味な笑顔を";
+	mes "　浮かべながら笑っている‐";
 	close;
 OnTouch:
 	if(getpartyleader(getcharid(1)) == strcharinfo(0)) {
-		mes "[�׍��̉��q]";
-		mes "���̋߉q���͎g���������B";
-		mes "�Ƃ肠�����ނɂ͍����";
-		mes "�����X�^�[�̏P��������";
-		mes "��d�҂Ƃ������ł�";
-		mes "�S���Ă����������c�c�B";
-		mes "�N�N�N�N�N�B";
-		unittalk "�׍��̉��q : ���̋߉q���͎g���������B�Ƃ肠�����ނɂ͍���̃����X�^�[�̏P�������̎�d�҂Ƃ������ł��S���Ă����������B�N�N�N�N�N�B";
+		mes "[隣国の王子]";
+		mes "あの近衛兵は使えそうだ。";
+		mes "とりあえず彼には今回の";
+		mes "モンスターの襲撃事件の";
+		mes "首謀者という役でも";
+		mes "担っていただこう……。";
+		mes "ククククク。";
+		unittalk "隣国の王子 : あの近衛兵は使えそうだ。とりあえず彼には今回のモンスターの襲撃事件の首謀者という役でも担っていただこう。ククククク。";
 		close2;
-		hideonnpc getmdnpcname("�׍��̉��q#dk3");
-		announce "�]���Ԃ����������悤�Ȋ��o�̌�A�k�ŉ������J���悤�ȉ��������]",0x9,0xffff00,0x190,20,0,0;
-		misceffect 35,getmdnpcname("�S��̉��{3�K");
-		hideoffnpc getmdnpcname("�S��̉��{3�K");
-		donpcevent getmdnpcname("����#dk1")+ "::OnStart";
+		hideonnpc getmdnpcname("隣国の王子#dk3");
+		announce "‐時間が速く流れるような感覚の後、北で何かが開くような音がした‐",0x9,0xffff00,0x190,20,0,0;
+		misceffect 35,getmdnpcname("亡霊の王宮3階");
+		hideoffnpc getmdnpcname("亡霊の王宮3階");
+		donpcevent getmdnpcname("国王#dk1")+ "::OnStart";
 	}
 	end;
 }
 
-1@spa.gat,117,137,0	warp	�S��̉��{3�K	2,2,1@spa.gat,60,43
+1@spa.gat,117,137,0	warp	亡霊の王宮3階	2,2,1@spa.gat,60,43
 
-1@spa.gat,28,52,7	script	�R�m�c��#dk	418,{
-	mes "�]�j�͋�a�̐F�𕂂��ׂ��\��ŁA";
-	mes "�@�߉q�������߂Ă���c�c�]";
+1@spa.gat,28,52,7	script	騎士団長#dk	418,{
+	mes "‐男は苦渋の色を浮かべた表情で、";
+	mes "　近衛兵を見つめている……‐";
 	close;
 }
 
-1@spa.gat,25,53,7	script	���m#dk1	413,{
-	mes "�]�j�͋�a�̐F�𕂂��ׂ��\��ŁA";
-	mes "�@�߉q�������߂Ă���c�c�]";
+1@spa.gat,25,53,7	script	兵士#dk1	413,{
+	mes "‐男は苦渋の色を浮かべた表情で、";
+	mes "　近衛兵を見つめている……‐";
 	close;
 }
 
-1@spa.gat,34,53,1	script	���m#dk2	413,{
-	mes "�]�j�͌˘f���̕\��ŁA";
-	mes "�@�߉q�������߂Ă���c�c�]";
+1@spa.gat,34,53,1	script	兵士#dk2	413,{
+	mes "‐男は戸惑いの表情で、";
+	mes "　近衛兵を見つめている……‐";
 	close;
 }
 
-1@spa.gat,30,52,7	script	���m#dk3	417,{
-	mes "�]�j�͌˘f���̕\��ŁA";
-	mes "�@�߉q�������߂Ă���c�c�]";
+1@spa.gat,30,52,7	script	兵士#dk3	417,{
+	mes "‐男は戸惑いの表情で、";
+	mes "　近衛兵を見つめている……‐";
 	close;
 }
 
-1@spa.gat,30,58,5	script	�߉q��#dk2	10018,{
-	mes "�]���ɂ�������ƌq����A";
-	mes "�@�g�������Ƃ�Ȃ��悤���]";
+1@spa.gat,30,58,5	script	近衛兵#dk2	10018,{
+	mes "‐鎖にしっかりと繋がれ、";
+	mes "　身動きがとれないようだ‐";
 	close;
 OnTalk1:
-	unittalk "�߉q�� : ����ł��I�@�É��I�@���́c�c���͒f���ĕÉ����A���̍��𗠐؂�悤�ȍs�ׂ͂����Ȃ��Ă���܂���I";
+	unittalk "近衛兵 : 誤解です！　陛下！　私は……私は断じて陛下を、この国を裏切るような行為はおこなっておりません！";
 	end;
 OnTalk2:
-	unittalk "�߉q�� : ���A����́c�c�B";
+	unittalk "近衛兵 : そ、それは……。";
 	end;
 OnTalk3:
-	unittalk "�߉q�� : �e�B�A���P�c�c�B���̎҂̂悤�Ȃ��̂̂��߂Ɂc�c�B";
+	unittalk "近衛兵 : ティアラ姫……。私の者のようなもののために……。";
 	end;
 }
 
-1@spa.gat,32,54,1	script	����#dk1	965,{
+1@spa.gat,32,54,1	script	国王#dk1	965,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "[����]";
-		mes "�����Ƀ����X�^�[���Ăъ񂹂��̂�";
-		mes "�܂������Ȃ��������Ƃ́c�c�B";
-		mes "��ԐM�����Ă������Ȃ���";
-		mes "�܂������؂���Ƃ́c�c�ȁB";
+		mes "[国王]";
+		mes "ここにモンスターを呼び寄せたのが";
+		mes "まさかそなただったとは……。";
+		mes "一番信頼していたそなたに";
+		mes "まさか裏切られるとは……な。";
 		close;
 	}
 	stopnpctimer;
-	mes "[����]";
-	mes "�����Ƀ����X�^�[���Ăъ񂹂��̂�";
-	mes "�܂������Ȃ��������Ƃ́c�c�B";
-	mes "��ԐM�����Ă������Ȃ���";
-	mes "�܂������؂���Ƃ́c�c�ȁB";
-	unittalk "���� : �����Ƀ����X�^�[���Ăъ񂹂��̂��܂������Ȃ��������Ƃ́c�c�B��ԐM�����Ă������Ȃ��ɂ܂������؂���Ƃ́c�c�ȁB";
+	mes "[国王]";
+	mes "ここにモンスターを呼び寄せたのが";
+	mes "まさかそなただったとは……。";
+	mes "一番信頼していたそなたに";
+	mes "まさか裏切られるとは……な。";
+	unittalk "国王 : ここにモンスターを呼び寄せたのがまさかそなただったとは……。一番信頼していたそなたにまさか裏切られるとは……な。";
 	next;
 	if(checkquest(114755)&0x8) {
-		if(select("�}��","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("急ぐ","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("����#dk1");
-			hideonnpc getmdnpcname("�߉q��#dk2");
-			hideonnpc getmdnpcname("�R�m�c��#dk");
-			hideonnpc getmdnpcname("���m#dk1");
-			hideonnpc getmdnpcname("���m#dk2");
-			hideonnpc getmdnpcname("���m#dk3");
+			hideonnpc getmdnpcname("国王#dk1");
+			hideonnpc getmdnpcname("近衛兵#dk2");
+			hideonnpc getmdnpcname("騎士団長#dk");
+			hideonnpc getmdnpcname("兵士#dk1");
+			hideonnpc getmdnpcname("兵士#dk2");
+			hideonnpc getmdnpcname("兵士#dk3");
 			donpcevent getmdnpcname("#DK_NPCTimer3")+ "::OnStart";
 			setnpctimer 30000,getmdnpcname("#DK_NPCTimer3");
 			misceffect 904,"";
 			end;
 		}
 	}
-	mes "[�߉q��]";
-	mes "����ł��I�@�É��I";
-	mes "���́c�c���͒f����";
-	mes "�É����A���̍��𗠐؂�悤��";
-	mes "�s�ׂ͂����Ȃ��Ă���܂���I";
-	donpcevent getmdnpcname("�߉q��#dk2")+ "::OnTalk1";
+	mes "[近衛兵]";
+	mes "誤解です！　陛下！";
+	mes "私は……私は断じて";
+	mes "陛下を、この国を裏切るような";
+	mes "行為はおこなっておりません！";
+	donpcevent getmdnpcname("近衛兵#dk2")+ "::OnTalk1";
 	next;
-	mes "[����]";
-	mes "�������Ȃ���M�������C�����͂���B";
-	mes "�������A���̕����R�������R���Ȃ��B";
-	mes "����x�A�₨���B";
-	mes "���Ȃ��ɁA���̗��R������ł���̂��H";
-	unittalk "���� : �������Ȃ���M�������C�����͂���B�������A���̕����R�������R���Ȃ��B����x�A�₨���B���Ȃ��ɁA���̗��R������ł���̂��H";
+	mes "[国王]";
+	mes "私もそなたを信じたい気持ちはある。";
+	mes "しかし、あの方が嘘をつく理由がない。";
+	mes "今一度、問おう。";
+	mes "そなたに、その理由を説明できるのか？";
+	unittalk "国王 : 私もそなたを信じたい気持ちはある。しかし、あの方が嘘をつく理由がない。今一度、問おう。そなたに、その理由を説明できるのか？";
 	next;
-	mes "[�߉q��]";
-	mes "���A����́c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk2")+ "::OnTalk2";
+	mes "[近衛兵]";
+	mes "そ、それは……。";
+	donpcevent getmdnpcname("近衛兵#dk2")+ "::OnTalk2";
 	next;
-	mes "[����]";
-	mes "���Ȃ��̂���܂ł̓����ɖƂ�";
-	mes "���܂ł́A�D���B";
-	mes "�䂪�������̂��Ƃ𕷂��Ă���";
-	mes "���ɕ�������Ԃ������Ă���B";
-	mes "���Ȃ��̖���D�����ƒm���";
-	mes "���𗎂Ƃ����˂Ȃ��قǂɁc�c�ȁB";
-	unittalk "���� : ���Ȃ��̂���܂ł̓����ɖƂ����܂ł́A�D���B�䂪�������̂��Ƃ𕷂��Ă��珰�ɕ�������Ԃ������Ă���B���Ȃ��̖���D�����ƒm��Ζ��𗎂Ƃ����˂Ȃ��قǂɁc�c�ȁB";
+	mes "[国王]";
+	mes "そなたのこれまでの働きに免じ";
+	mes "命までは、奪わん。";
+	mes "我が娘もこのことを聞いてから";
+	mes "床に伏した状態が続いている。";
+	mes "そなたの命を奪ったと知れば";
+	mes "命を落としかねないほどに……な。";
+	unittalk "国王 : そなたのこれまでの働きに免じ命までは、奪わん。我が娘もこのことを聞いてから床に伏した状態が続いている。そなたの命を奪ったと知れば命を落としかねないほどに……な。";
 	next;
-	mes "[�߉q��]";
-	mes "�e�B�A���P�c�c�B";
-	mes "���̂悤�Ȃ��̂̂��߂Ɂc�c�B";
-	donpcevent getmdnpcname("�߉q��#dk2")+ "::OnTalk3";
+	mes "[近衛兵]";
+	mes "ティアラ姫……。";
+	mes "私のようなもののために……。";
+	donpcevent getmdnpcname("近衛兵#dk2")+ "::OnTalk3";
 	close2;
-	hideonnpc getmdnpcname("����#dk1");
-	hideonnpc getmdnpcname("�߉q��#dk2");
-	hideonnpc getmdnpcname("�R�m�c��#dk");
-	hideonnpc getmdnpcname("���m#dk1");
-	hideonnpc getmdnpcname("���m#dk2");
-	hideonnpc getmdnpcname("���m#dk3");
-	hideoffnpc getmdnpcname("�߉q��#dk3");
-	hideoffnpc getmdnpcname("�����^���^�m�X#dkt");
+	hideonnpc getmdnpcname("国王#dk1");
+	hideonnpc getmdnpcname("近衛兵#dk2");
+	hideonnpc getmdnpcname("騎士団長#dk");
+	hideonnpc getmdnpcname("兵士#dk1");
+	hideonnpc getmdnpcname("兵士#dk2");
+	hideonnpc getmdnpcname("兵士#dk3");
+	hideoffnpc getmdnpcname("近衛兵#dk3");
+	hideoffnpc getmdnpcname("魔剣タルタノス#dkt");
 	donpcevent getmdnpcname("#DK_NPCTimer3")+ "::OnStart";
 	end;
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("����#dk1");
+	emotion 9,getmdnpcname("国王#dk1");
 	end;
 }
 
@@ -1092,348 +1092,348 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	announce "�s�g�Ȑ� : ���̏ꏊ�ɒ������l�Ԃ������Ǝv���΁c�c�N�b�N�b�N�B�����S�����߉q����A�d��ꂽ�ȁB",0x9,0xff0000,0x190,16,0,0;
-	misceffect 885,getmdnpcname("�����^���^�m�X#dkt");
-	misceffect 829,getmdnpcname("�����^���^�m�X#dkt");
+	announce "不吉な声 : この場所に珍しく人間が来たと思えば……クックック。忠誠心高き近衛兵よ、謀られたな。",0x9,0xff0000,0x190,16,0,0;
+	misceffect 885,getmdnpcname("魔剣タルタノス#dkt");
+	misceffect 829,getmdnpcname("魔剣タルタノス#dkt");
 	end;
 OnTimer6000:
-	donpcevent getmdnpcname("�߉q��#dk3")+ "::OnTalk1";
+	donpcevent getmdnpcname("近衛兵#dk3")+ "::OnTalk1";
 	end;
 OnTimer9000:
-	announce "�s�g�Ȑ� : �ォ�痈���g���ŁA�����Ȃ����A���ȁB��͂��̐����x�z���邽�߂ɐ��܂ꂽ���A�^���^�m�X�B",0x9,0xff0000,0x190,16,0,0;
+	announce "不吉な声 : 後から来た身分で、随分なご挨拶だな。我はこの世を支配するために生まれた剣、タルタノス。",0x9,0xff0000,0x190,16,0,0;
 	end;
 OnTimer12000:
-	announce "�����^���^�m�X : �����M�l�����̏󋵂���̒E�p���肤�̂ł���΁A��ƌ_�������Ƃ����B������Ζ��̊댯������P�N���܂��A�����邩������ʂ��H",0x9,0xff0000,0x190,16,0,0;
+	announce "魔剣タルタノス : もし貴様がこの状況からの脱却を願うのであれば、我と契約をするといい。さすれば命の危険が迫る姫君もまだ、助かるかもしれぬぞ？",0x9,0xff0000,0x190,16,0,0;
 	end;
 OnTimer15000:
-	donpcevent getmdnpcname("�߉q��#dk3")+ "::OnTalk2";
+	donpcevent getmdnpcname("近衛兵#dk3")+ "::OnTalk2";
 	end;
 OnTimer18000:
-	announce "�����^���^�m�X : ���ʂɂ���������Ă�낤�B�M�l���ׂꂽ����c�c���ꂱ���A���̗׍��̉��q���B",0x9,0xff0000,0x190,16,0,0;
+	announce "魔剣タルタノス : 特別にもう一つ教えてやろう。貴様を陥れた相手……それこそ、あの隣国の王子だ。",0x9,0xff0000,0x190,16,0,0;
 	end;
 OnTimer21000:
-	donpcevent getmdnpcname("�߉q��#dk3")+ "::OnTalk3";
+	donpcevent getmdnpcname("近衛兵#dk3")+ "::OnTalk3";
 	end;
 OnTimer24000:
-	announce "�����^���^�m�X : �N�b�N�b�N�b�B�܂��䂪���t���M�����ʂ悤���ȁB�����������łȂ��ẮA�ʔ����Ȃ��B",0x9,0xff0000,0x190,16,0,0;
+	announce "魔剣タルタノス : クックックッ。まだ我が言葉が信じられぬようだな。しかしそうでなくては、面白くない。",0x9,0xff0000,0x190,16,0,0;
 	end;
 OnTimer27000:
-	announce "�����^���^�m�X : �ł́A���񂾂����ʂ��B�ʔ����V���[�������Ă�낤�B�c�c�����Ɏ��B������΁A�킩�邾�낤�B",0x9,0xff0000,0x190,16,0,0;
+	announce "魔剣タルタノス : では、今回だけ特別だ。面白いショーを見せてやろう。……我を手に取れ。さすれば、わかるだろう。",0x9,0xff0000,0x190,16,0,0;
 	end;
 OnTimer30000:
-	announce "�Ⴂ�j�̐� : �����^���^�m�X�Ƃ��琁c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 魔剣タルタノスとの邂逅……。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer33000:
-	announce "�Ⴂ�j�̐� : ��������Ɏ�鎄�̐S�ɂ������͉̂ʂ����ĕP�ւ̑z�����A����Ƃ��c�c�B",0x9,0x7cfc00,0x190,20,0,0;
-	hideonnpc getmdnpcname("�߉q��#dk3");
-	hideonnpc getmdnpcname("�����^���^�m�X#dkt");
+	announce "若い男の声 : 魔剣を手に取る私の心にあったのは果たして姫への想いか、それとも……。",0x9,0x7cfc00,0x190,20,0,0;
+	hideonnpc getmdnpcname("近衛兵#dk3");
+	hideonnpc getmdnpcname("魔剣タルタノス#dkt");
 	end;
 OnTimer36000:
 	stopnpctimer;
-	misceffect 35,getmdnpcname("�S��̉��{4�K");
-	hideoffnpc getmdnpcname("�S��̉��{4�K");
-	donpcevent getmdnpcname("�߉q��#dk4")+ "::OnStart";
-	announce "�]���Ԃ����������悤�Ȋ��o�̌�A�쓌�ŉ������J���悤�ȉ��������]",0x9,0xffff00,0x190,20,0,0;
+	misceffect 35,getmdnpcname("亡霊の王宮4階");
+	hideoffnpc getmdnpcname("亡霊の王宮4階");
+	donpcevent getmdnpcname("近衛兵#dk4")+ "::OnStart";
+	announce "‐時間が速く流れるような感覚の後、南東で何かが開くような音がした‐",0x9,0xffff00,0x190,20,0,0;
 	end;
 }
 
-1@spa.gat,31,57,5	script	�߉q��#dk3	10018,{
+1@spa.gat,31,57,5	script	近衛兵#dk3	10018,{
 	end;
 OnTalk1:
-	unittalk "�߉q�� : �N���c�c�B�N�����Ɍ�肩���Ă���c�c�B���̂��Ƃ͕����Ă����Ă���c�c�B";
+	unittalk "近衛兵 : 誰だ……。誰が私に語りかけている……。私のことは放っておいてくれ……。";
 	end;
 OnTalk2:
-	unittalk "�߉q�� : �_��H�@�ǂ����āA�����_����c�c�I�@����������̂�!!�@���́A�P�Ɋ댯�������Ă���!!";
+	unittalk "近衛兵 : 契約？　どうして、私が契約を……！　それよりも何故だ!!　何故、姫に危険が迫っている!!";
 	end;
 OnTalk3:
-	unittalk "�߉q�� : �c�c�׍��̉��q�c�c!?�@��͂肠�̎������l�e�́c�c�I�@�c�c�N�b�c�c�I�@���̍������Ȃ���΁c�c!!";
+	unittalk "近衛兵 : ……隣国の王子……!?　やはりあの時見た人影は……！　……クッ……！　この鎖さえなければ……!!";
 	end;
 }
 
-1@spa.gat,35,56,5	script	�����^���^�m�X#dkt	844,{}
+1@spa.gat,35,56,5	script	魔剣タルタノス#dkt	844,{}
 
-1@spa.gat,54,28,0	warp	�S��̉��{4�K	2,2,1@spa.gat,218,186
+1@spa.gat,54,28,0	warp	亡霊の王宮4階	2,2,1@spa.gat,218,186
 
-1@spa.gat,201,214,1	script	�����^���^�m�X#dkt1	1205,{
+1@spa.gat,201,214,1	script	魔剣タルタノス#dkt1	1205,{
 	end;
 OnTalk1:
-	unittalk "�����^���^�m�X : �c�c���̌��t�ɉR�͂Ȃ��ȁH�@�M�l�Ɖ�͂��܂��̎����獰���Ƃ��ɂ��A��͋M�l�ɗ͂�^���悤�I�@�M�l�͉�Ɍ��������̂��I";
+	unittalk "魔剣タルタノス : ……その言葉に嘘はないな？　貴様と我はいまこの時から魂をともにし、我は貴様に力を与えよう！　貴様は我に血を捧げるのだ！";
 	end;
 OnTalk2:
-	unittalk "�����^���^�m�X : �����̕P�N�͂ǂ����S���ɗH����Ă���悤�����B";
+	unittalk "魔剣タルタノス : 愛しの姫君はどうやら牢獄に幽閉されているようだぞ。";
 	end;
 }
 
-1@spa.gat,197,218,5	script	�׍��̉��q#dk	470,{
-	mes "�]�s�K�ȏ΂݂𕂂���";
-	mes "�@�߉q�������߂Ă���]";
+1@spa.gat,197,218,5	script	隣国の王子#dk	470,{
+	mes "‐不適な笑みを浮かべ";
+	mes "　近衛兵を見つめている‐";
 	close;
 OnTalk1:
-	unittalk "�׍��̉��q : �����ƒx�������ˁB�N�����܂�ɂ��x�����炤������₢�l�߂Ă����l�̋`���̕��ƉƗ����E�߂錋�ʂɂȂ��Ă��܂�������Ȃ����B";
+	unittalk "隣国の王子 : 随分と遅かったね。君があまりにも遅いからうっかり問い詰めてきた僕の義理の父と家来を殺める結果になってしまったじゃないか。";
 	end;
 OnTalk2:
-	unittalk "�׍��̉��q : �������A�l�̖��Ȃ�Ĉ������̂��B�����A�N�����̎�Ɉ����Ă��邻�̌��B���ꂵ�����^���^�m�X�ɔ�ׂ���ˁB�c�c���̍��ɂ��ꂪ����ƒm���Ă���l���ǂꂾ�����̖�����T�����߂����Ƃ��c�c�B";
+	unittalk "隣国の王子 : しかし、人の命なんて安いものさ。そう、君がその手に握っているその剣。呪われし魔剣タルタノスに比べたらね。……この国にそれがあると知ってから僕がどれだけその魔剣を探し求めたことか……。";
 	end;
 OnTalk3:
-	unittalk "�׍��̉��q : �N�ɕ������̂��m��Ȃ�����ǌN�̂����Ă��邱�Ƃ͊T�ː������ȁB�����A�l�����Ăł���Ζ���D���Ȃ�Ė�؂Ȃ��Ƃ͔������������񂾂�H";
+	unittalk "隣国の王子 : 誰に聞いたのか知らないけれど君のいっていることは概ね正解かな。ただ、僕だってできれば命を奪うなんて野蛮なことは避けたかったんだよ？";
 	end;
 OnTalk4:
-	unittalk "�׍��̉��q : �������Ƃ��������̕P���߉q���̌N�͂���Ȑl����Ȃ����ċ����Ȃ���i���Ă��邵���B����܂�ɂ����邳�����炠��ꏊ�Ɉ�l�ŗ���Ԃ��Ă�����Ă����B";
+	unittalk "隣国の王子 : 許婚だとかいうあの姫も近衛兵の君はそんな人じゃないって泣きながら訴えてくるしさ。あんまりにもうるさいからある場所に一人で留守番してもらっているよ。";
 	end;
 OnTalk5:
-	unittalk "�׍��̉��q : �Ȃ���!?�@���ꂵ�����^���^�m�X��I�@���O���d����ׂ���l�͂�������Ȃ����̖l�̂ق������������͂�!!�@�Ȃ����ꂪ�킩��Ȃ�!?";
+	unittalk "隣国の王子 : なぜだ!?　呪われし魔剣タルタノスよ！　お前が仕えるべき主人はそいつじゃなくこの僕のほうが相応しいはず!!　なぜそれがわからない!?";
 	end;
 OnTalk6:
-	unittalk "�׍��̉��q : �҂Ă�!!�@�ǂ����Ėl�𖳎�����!!�@���O�B�����╃��̂悤�ɖl�𖳔\���Ǝv���Ă�񂾂�!?�@�c�c�������낤�B�l�̖{���̎p�������Ă��!!";
+	unittalk "隣国の王子 : 待てっ!!　どうして僕を無視する!!　お前達も母上や父上のように僕を無能だと思ってるんだな!?　……いいだろう。僕の本当の姿を見せてやる!!";
 	end;
 OnTalk7:
-	unittalk "�􂢂̍��� : �O�I�I�I�I�c�c�b�I�@���邪�����A���ꂪ�l�̖{���̗�!!�@�������c�c���E���c�c���ׂ�V�������E�̉��ƂȂ��!";
+	unittalk "呪いの根源 : グオオオオ……ッ！　見るがいい、これが僕の本当の力!!　魔剣を……世界を……統べる新しい世界の王となる者!";
 	end;
 OnTalk8:
-	unittalk "�􂢂̍��� : �ł́A������u���Ă�����!! �M�l�ɂ͕s�v�Ȃ��̂̂͂�!!�@����肻�̖������g���āA���̏��������悤�ȂǍ��X��x�ꂾ!!";
+	unittalk "呪いの根源 : では、魔剣を置いていけっ!! 貴様には不要なもののはず!!　何よりその魔剣を使って、あの女を助けようなど今更手遅れだ!!";
 	end;
 OnTalk9:
-	unittalk "�􂢂̍��� : ���̏��������񂾂�b!!�@�l���������Ăэ���ł�Ƃ���������ɁA�N�ɂ�����ꂽ���Ƃ��Ȃ����̖l���������񂾁c�c���̖l���c�c�B�ڋ��҂��Ă����Ȃ��炳���c�c�H�@�����Ȃ��c�c�����Ȃ���c�c�B";
+	unittalk "呪いの根源 : あの女が悪いんだよッ!!　僕が魔物を呼び込んでるとこを見た上に、誰にも殴られたことがないこの僕を殴ったんだ……この僕を……。卑怯者っていいながらさぁ……？　許せない……許せないよ……。";
 	end;
 }
 
-1@spa.gat,197,218,5	script	�􂢂̍���#dk	2959,{}
+1@spa.gat,197,218,5	script	呪いの根源#dk	2959,{}
 
-1@spa.gat,194,214,5	script	�|�ꂽ����#dk	956,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,194,214,5	script	倒れた国王#dk	956,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
-1@spa.gat,211,194,3	script	�|�ꂽ�R�m�c��#dk	887,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
-	close;
-}
-
-1@spa.gat,201,198,1	script	�|�ꂽ���m#dk	849,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,211,194,3	script	倒れた騎士団長#dk	887,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
 
-1@spa.gat,197,190,1	script	�|�ꂽ���m#dk1	849,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,201,198,1	script	倒れた兵士#dk	849,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
 
-1@spa.gat,191,207,7	script	�|�ꂽ���m#dk2	849,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,197,190,1	script	倒れた兵士#dk1	849,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
 
-1@spa.gat,206,209,7	script	�|�ꂽ���m#dk3	849,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,191,207,7	script	倒れた兵士#dk2	849,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
 
-1@spa.gat,189,195,1	script	�|�ꂽ���m#dk4	849,{
-	mes "�]�Ԏ����Ȃ��c�c�B";
-	mes "�@�E����ĊԂ��Ȃ��悤���]";
+1@spa.gat,206,209,7	script	倒れた兵士#dk3	849,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
 	close;
 }
 
-1@spa.gat,199,214,1	script	�߉q��#dk4	686,{
+1@spa.gat,189,195,1	script	倒れた兵士#dk4	849,{
+	mes "‐返事がない……。";
+	mes "　殺されて間もないようだ‐";
+	close;
+}
+
+1@spa.gat,199,214,1	script	近衛兵#dk4	686,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "�]�׍��̉��q�Ƌ߉q����";
-		mes "�@�b���Ă���̂�������]";
+		mes "‐隣国の王子と近衛兵が";
+		mes "　話しているのが見える‐";
 		close;
 	}
 	stopnpctimer;
-	mes "�]�׍��̉��q�Ƌ߉q����";
-	mes "�@�b���Ă���̂�������]";
+	mes "‐隣国の王子と近衛兵が";
+	mes "　話しているのが見える‐";
 	next;
 	if(checkquest(114755)&0x8) {
-		if(select("�}��","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("急ぐ","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("�߉q��#dk4");
-			hideonnpc getmdnpcname("�����^���^�m�X#dkt1");
-			hideonnpc getmdnpcname("�|�ꂽ����#dk");
-			hideonnpc getmdnpcname("�|�ꂽ�R�m�c��#dk");
-			hideonnpc getmdnpcname("�|�ꂽ���m#dk");
-			hideonnpc getmdnpcname("�|�ꂽ���m#dk1");
-			hideonnpc getmdnpcname("�|�ꂽ���m#dk2");
-			hideonnpc getmdnpcname("�|�ꂽ���m#dk3");
-			hideonnpc getmdnpcname("�|�ꂽ���m#dk4");
+			hideonnpc getmdnpcname("近衛兵#dk4");
+			hideonnpc getmdnpcname("魔剣タルタノス#dkt1");
+			hideonnpc getmdnpcname("倒れた国王#dk");
+			hideonnpc getmdnpcname("倒れた騎士団長#dk");
+			hideonnpc getmdnpcname("倒れた兵士#dk");
+			hideonnpc getmdnpcname("倒れた兵士#dk1");
+			hideonnpc getmdnpcname("倒れた兵士#dk2");
+			hideonnpc getmdnpcname("倒れた兵士#dk3");
+			hideonnpc getmdnpcname("倒れた兵士#dk4");
 			misceffect 904,"";
 			donpcevent getmdnpcname("#DK_NPCTimer4")+ "::OnStart";
 			end;
 		}
 	}
-	mes "[�߉q��]";
-	mes "�c�c���Ȃ����䂪��ɉR��`��";
-	mes "��������̎����̎�d�҂Ƃ���";
-	mes "�d���ďグ���Ƃ����͖̂{���ł����B";
-	unittalk "�߉q�� : �c�c���Ȃ����䂪��ɉR��`����������̎����̎�d�҂Ƃ��Ďd���ďグ���Ƃ����͖̂{���ł����B";
+	mes "[近衛兵]";
+	mes "……あなたが我が主に嘘を伝え";
+	mes "私を今回の事件の首謀者として";
+	mes "仕立て上げたというのは本当ですか。";
+	unittalk "近衛兵 : ……あなたが我が主に嘘を伝え私を今回の事件の首謀者として仕立て上げたというのは本当ですか。";
 	next;
-	mes "[�׍��̉��q]";
-	mes "�����ƒx�������ˁB";
-	mes "�N�����܂�ɂ��x������";
-	mes "��������₢�l�߂Ă���";
-	mes "�l�̋`���̕��ƉƗ����E�߂錋�ʂ�";
-	mes "�Ȃ��Ă��܂�������Ȃ����B";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk1";
+	mes "[隣国の王子]";
+	mes "随分と遅かったね。";
+	mes "君があまりにも遅いから";
+	mes "うっかり問い詰めてきた";
+	mes "僕の義理の父と家来を殺める結果に";
+	mes "なってしまったじゃないか。";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk1";
 	next;
-	mes "[�׍��̉��q]";
-	mes "�������A�l�̖��Ȃ�Ĉ������̂��B";
-	mes "�����A�N�����̎�Ɉ����Ă��邻�̌��B";
-	mes "���ꂵ�����^���^�m�X�ɔ�ׂ���ˁB";
-	mes "�c�c���̍��ɂ��ꂪ����ƒm���Ă���";
-	mes "�l���ǂꂾ�����̖�����";
-	mes "�T�����߂����Ƃ��c�c�B";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk2";
+	mes "[隣国の王子]";
+	mes "しかし、人の命なんて安いものさ。";
+	mes "そう、君がその手に握っているその剣。";
+	mes "呪われし魔剣タルタノスに比べたらね。";
+	mes "……この国にそれがあると知ってから";
+	mes "僕がどれだけその魔剣を";
+	mes "探し求めたことか……。";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk2";
 	next;
-	mes "[�߉q��]";
-	mes "���̌�����ɓ���邽�߂�����";
-	mes "���Ȃ��͍������x���A�����ׂ�";
-	mes "���̏�Ƀ����X�^�[���Ăэ���";
-	mes "��炪���E�̖���D���A";
-	mes "�e�B�A���P�܂ŁA�댯�Ȗڂ�";
-	mes "���킹�悤�Ƃ����̂�!?";
-	unittalk "�߉q�� : ���̌�����ɓ���邽�߂����ɂ��Ȃ��͍������x���A�����ׂꂱ�̏�Ƀ����X�^�[���Ăэ��݉�炪���E�̖���D���A�e�B�A���P�܂ŁA�댯�Ȗڂɂ��킹�悤�Ƃ����̂�!?";
+	mes "[近衛兵]";
+	mes "この剣を手に入れるためだけに";
+	mes "あなたは国王を騙し、私を陥れ";
+	mes "この城にモンスターを呼び込み";
+	mes "我らが同胞の命を奪い、";
+	mes "ティアラ姫まで、危険な目に";
+	mes "あわせようとしたのか!?";
+	unittalk "近衛兵 : この剣を手に入れるためだけにあなたは国王を騙し、私を陥れこの城にモンスターを呼び込み我らが同胞の命を奪い、ティアラ姫まで、危険な目にあわせようとしたのか!?";
 	next;
-	mes "[�׍��̉��q]";
-	mes "�N�ɕ������̂��m��Ȃ������";
-	mes "�N�̂����Ă��邱�Ƃ͊T�ː������ȁB";
-	mes "�����A�l�����Ăł���Ζ���D���Ȃ��";
-	mes "��؂Ȃ��Ƃ͔������������񂾂�H";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk3";
+	mes "[隣国の王子]";
+	mes "誰に聞いたのか知らないけれど";
+	mes "君のいっていることは概ね正解かな。";
+	mes "ただ、僕だってできれば命を奪うなんて";
+	mes "野蛮なことは避けたかったんだよ？";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk3";
 	next;
-	mes "[�׍��̉��q]";
-	mes "�������Ƃ��������̕P��";
-	mes "�߉q���̌N�͂���Ȑl����Ȃ�����";
-	mes "�����Ȃ���i���Ă��邵���B";
-	mes "����܂�ɂ����邳������";
-	mes "����ꏊ�Ɉ�l��";
-	mes "����Ԃ��Ă�����Ă����B";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk4";
+	mes "[隣国の王子]";
+	mes "許婚だとかいうあの姫も";
+	mes "近衛兵の君はそんな人じゃないって";
+	mes "泣きながら訴えてくるしさ。";
+	mes "あんまりにもうるさいから";
+	mes "ある場所に一人で";
+	mes "留守番してもらっているよ。";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk4";
 	next;
-	mes "[�߉q��]";
-	mes "�c�c�������B";
-	mes "����Ŕ[�����������B";
-	mes "���O�����ɂ��������Ƃ�";
-	mes "�����������悤���ȁA�����^���^�m�X�B";
-	mes "���߂āc�c�_�񐬗����B";
-	unittalk "�߉q�� : �c�c�������B����Ŕ[�����������B���O�����ɂ��������Ƃ͐����������悤���ȁA�����^���^�m�X�B���߂āc�c�_�񐬗����B";
+	mes "[近衛兵]";
+	mes "……そうか。";
+	mes "これで納得がいった。";
+	mes "お前が私にいったことは";
+	mes "正しかったようだな、魔剣タルタノス。";
+	mes "改めて……契約成立だ。";
+	unittalk "近衛兵 : ……そうか。これで納得がいった。お前が私にいったことは正しかったようだな、魔剣タルタノス。改めて……契約成立だ。";
 	next;
 	cutin "tartanos.bmp",3;
-	mes "[�����^���^�m�X]";
-	mes "�c�c���̌��t�ɉR�͂Ȃ��ȁH";
-	mes "�M�l�Ɖ�͂��܂��̎����獰���Ƃ��ɂ��A";
-	mes "��͋M�l�ɗ͂�^���悤�I";
-	mes "�M�l�͉�Ɍ��������̂��I";
-	donpcevent getmdnpcname("�����^���^�m�X#dkt1")+ "::OnTalk1";
+	mes "[魔剣タルタノス]";
+	mes "……その言葉に嘘はないな？";
+	mes "貴様と我はいまこの時から魂をともにし、";
+	mes "我は貴様に力を与えよう！";
+	mes "貴様は我に血を捧げるのだ！";
+	donpcevent getmdnpcname("魔剣タルタノス#dkt1")+ "::OnTalk1";
 	next;
 	cutin "tartanos.bmp",255;
-	mes "[�׍��̉��q]";
-	mes "�Ȃ���!?";
-	mes "���ꂵ�����^���^�m�X��I";
-	mes "���O���d����ׂ���l�͂����ł͂Ȃ�";
-	mes "���̖l�̂ق������������͂�!!";
-	mes "�Ȃ����ꂪ�킩��Ȃ�!?";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk5";
+	mes "[隣国の王子]";
+	mes "なぜだ!?";
+	mes "呪われし魔剣タルタノスよ！";
+	mes "お前が仕えるべき主人はそいつではなく";
+	mes "この僕のほうが相応しいはず!!";
+	mes "なぜそれがわからない!?";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk5";
 	next;
-	mes "[�߉q��]";
-	mes "���O�Ɏ��Ԃ�������قǁA�ɂł͂Ȃ��B";
-	mes "�c�c���̓e�B�A���P��T���B";
-	unittalk "�߉q�� : ���O�Ɏ��Ԃ�������قǁA�ɂł͂Ȃ��B�c�c���̓e�B�A���P��T���B";
+	mes "[近衛兵]";
+	mes "お前に時間をかけるほど、暇ではない。";
+	mes "……私はティアラ姫を探す。";
+	unittalk "近衛兵 : お前に時間をかけるほど、暇ではない。……私はティアラ姫を探す。";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "�����̕P�N�͂ǂ����";
-	mes "�S���ɗH�����";
-	mes "����悤�����B";
-	donpcevent getmdnpcname("�����^���^�m�X#dkt1")+ "::OnTalk2";
+	mes "[魔剣タルタノス]";
+	mes "愛しの姫君はどうやら";
+	mes "牢獄に幽閉されて";
+	mes "いるようだぞ。";
+	donpcevent getmdnpcname("魔剣タルタノス#dkt1")+ "::OnTalk2";
 	next;
-	mes "[�׍��̉��q]";
-	mes "�҂Ă�!!";
-	mes "�ǂ����Ėl�𖳎�����!!";
-	mes "���O�B�����╃��̂悤��";
-	mes "�l�𖳔\���Ǝv���Ă�񂾂�!?";
-	mes "�c�c�������낤�B";
-	mes "�l�̖{���̎p�������Ă��!!";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk6";
+	mes "[隣国の王子]";
+	mes "待てっ!!";
+	mes "どうして僕を無視する!!";
+	mes "お前達も母上や父上のように";
+	mes "僕を無能だと思ってるんだな!?";
+	mes "……いいだろう。";
+	mes "僕の本当の姿を見せてやる!!";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk6";
 	next;
 	cutin "tartanos.bmp",255;
-	misceffect 276,getmdnpcname("�׍��̉��q#dk");
-	hideonnpc getmdnpcname("�׍��̉��q#dk");
-	hideoffnpc getmdnpcname("�􂢂̍���#dk");
-	mes "[�􂢂̍���]";
-	mes "�O�I�I�I�I�c�c�b�I";
-	mes "���邪�����A���ꂪ�l��";
-	mes "�{���̗�!!";
-	mes "�������c�c���E���c�c";
-	mes "���ׂ�V�������E�̉��ƂȂ��!";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk7";
+	misceffect 276,getmdnpcname("隣国の王子#dk");
+	hideonnpc getmdnpcname("隣国の王子#dk");
+	hideoffnpc getmdnpcname("呪いの根源#dk");
+	mes "[呪いの根源]";
+	mes "グオオオオ……ッ！";
+	mes "見るがいい、これが僕の";
+	mes "本当の力!!";
+	mes "魔剣を……世界を……";
+	mes "統べる新しい世界の王となる者!";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk7";
 	next;
-	mes "[�߉q��]";
-	mes "�V�������E�̉����Ɓc�c�H";
-	mes "�c�c������Ȃ��c�c�B";
-	mes "���͂���Ȃ��́A�����͂Ȃ��B";
-	mes "���S����B";
-	unittalk "�߉q�� : �V�������E�̉����Ɓc�c�H�@�c�c������Ȃ��c�c�B���͂���Ȃ��́A�����͂Ȃ��B���S����B";
+	mes "[近衛兵]";
+	mes "新しい世界の王だと……？";
+	mes "……くだらない……。";
+	mes "私はそんなもの、興味はない。";
+	mes "安心しろ。";
+	unittalk "近衛兵 : 新しい世界の王だと……？　……くだらない……。私はそんなもの、興味はない。安心しろ。";
 	next;
-	mes "[�􂢂̍���]";
-	mes "�ł́A������u���Ă�����!!";
-	mes "�M�l�ɂ͕s�v�Ȃ��̂̂͂�!!";
-	mes "����肻�̖������g���āA";
-	mes "���̏��������悤�ȂǍ��X";
-	mes "��x�ꂾ!!";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk8";
+	mes "[呪いの根源]";
+	mes "では、魔剣を置いていけっ!!";
+	mes "貴様には不要なもののはず!!";
+	mes "何よりその魔剣を使って、";
+	mes "あの女を助けようなど今更";
+	mes "手遅れだ!!";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk8";
 	next;
-	mes "[�߉q��]";
-	mes "�P�Ɂc�c�ޏ��Ɂc�c";
-	mes "���������c�c�b!!";
-	unittalk "�߉q�� : �P�Ɂc�c�ޏ��Ɂc�c���������c�c�b!!";
+	mes "[近衛兵]";
+	mes "姫に……彼女に……";
+	mes "何をした……ッ!!";
+	unittalk "近衛兵 : 姫に……彼女に……何をした……ッ!!";
 	next;
-	mes "[�􂢂̍���]";
-	mes "���̏��������񂾂�b!!";
-	mes "�l���������Ăэ���ł�Ƃ���";
-	mes "������ɁA�N�ɂ�����ꂽ���Ƃ��Ȃ�";
-	mes "���̖l���������񂾁c�c���̖l���c�c�B";
-	mes "�ڋ��҂��Ă����Ȃ��炳���c�c�H";
-	mes "�����Ȃ��c�c�����Ȃ���c�c�B";
-	donpcevent getmdnpcname("�׍��̉��q#dk")+ "::OnTalk9";
+	mes "[呪いの根源]";
+	mes "あの女が悪いんだよッ!!";
+	mes "僕が魔物を呼び込んでるとこを";
+	mes "見た上に、誰にも殴られたことがない";
+	mes "この僕を殴ったんだ……この僕を……。";
+	mes "卑怯者っていいながらさぁ……？";
+	mes "許せない……許せないよ……。";
+	donpcevent getmdnpcname("隣国の王子#dk")+ "::OnTalk9";
 	next;
-	mes "[�߉q��]";
-	mes "�c�c����ȓz�Ɂc�c����ȓz�Ɂc�c";
-	mes "�P���c�c�������c�c�b!!";
-	unittalk "�߉q�� : �c�c����ȓz�Ɂc�c����ȓz�Ɂc�c�P���c�c�������c�c�b!!";
+	mes "[近衛兵]";
+	mes "……こんな奴に……こんな奴に……";
+	mes "姫が……国王が……ッ!!";
+	unittalk "近衛兵 : ……こんな奴に……こんな奴に……姫が……国王が……ッ!!";
 	next;
-	mes "[�߉q��]";
-	mes "���̏������p�����̑O��";
-	mes "�N���ȁA������c�c�I";
-	unittalk "�߉q�� : ���̏������p�����̑O�ɎN���ȁA������c�c�I";
+	mes "[近衛兵]";
+	mes "その小汚い姿を私の前に";
+	mes "晒すな、失せろ……！";
+	unittalk "近衛兵 : その小汚い姿を私の前に晒すな、失せろ……！";
 	next;
-	mes "�]�߉q�����׍��̉��q��";
-	mes "�@�ꑾ�����т����";
-	mes "�@�׍��̉��q�͐Ռ`���Ȃ�";
-	mes "�@���ł��Ă��܂����]";
-	misceffect 565,getmdnpcname("�􂢂̍���#dk");
-	hideonnpc getmdnpcname("�􂢂̍���#dk");
+	mes "‐近衛兵が隣国の王子に";
+	mes "　一太刀浴びせると";
+	mes "　隣国の王子は跡形もなく";
+	mes "　消滅してしまった‐";
+	misceffect 565,getmdnpcname("呪いの根源#dk");
+	hideonnpc getmdnpcname("呪いの根源#dk");
 	close2;
-	hideonnpc getmdnpcname("�߉q��#dk4");
-	hideonnpc getmdnpcname("�����^���^�m�X#dkt1");
-	hideonnpc getmdnpcname("�|�ꂽ����#dk");
-	hideonnpc getmdnpcname("�|�ꂽ�R�m�c��#dk");
-	hideonnpc getmdnpcname("�|�ꂽ���m#dk");
-	hideonnpc getmdnpcname("�|�ꂽ���m#dk1");
-	hideonnpc getmdnpcname("�|�ꂽ���m#dk2");
-	hideonnpc getmdnpcname("�|�ꂽ���m#dk3");
-	hideonnpc getmdnpcname("�|�ꂽ���m#dk4");
+	hideonnpc getmdnpcname("近衛兵#dk4");
+	hideonnpc getmdnpcname("魔剣タルタノス#dkt1");
+	hideonnpc getmdnpcname("倒れた国王#dk");
+	hideonnpc getmdnpcname("倒れた騎士団長#dk");
+	hideonnpc getmdnpcname("倒れた兵士#dk");
+	hideonnpc getmdnpcname("倒れた兵士#dk1");
+	hideonnpc getmdnpcname("倒れた兵士#dk2");
+	hideonnpc getmdnpcname("倒れた兵士#dk3");
+	hideonnpc getmdnpcname("倒れた兵士#dk4");
 	donpcevent getmdnpcname("#DK_NPCTimer4")+ "::OnStart";
 	end;
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("�߉q��#dk4");
+	emotion 9,getmdnpcname("近衛兵#dk4");
 	end;
 }
 
@@ -1442,548 +1442,548 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	announce "�Ⴂ�j�̐� : �����Ɨ͂�����΁A������������҂��Ă����̂��낤���c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : もっと力があれば、違った未来が待っていたのだろうか……。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer6000:
-	announce "�Ⴂ�j�̐� : ���͎c���ȉ^�����A���s�s�Ȑ��E���A�����Ė��͂ȌȂ�����Ă����B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 私は残酷な運命を、理不尽な世界を、そして無力な己を呪っていた。",0x9,0x7cfc00,0x190,20,0,0;
 	end;
 OnTimer9000:
 	stopnpctimer;
-	misceffect 35,getmdnpcname("�S��̉��{5�K");
-	hideoffnpc getmdnpcname("�S��̉��{5�K");
-	donpcevent getmdnpcname("�e�B�A���P#dk1")+ "::OnStart";
-	announce "�]���Ԃ����������悤�Ȋ��o�̌�A�쐼�ŉ������J���悤�ȉ��������]",0x9,0xffff00,0x190,20,0,0;
+	misceffect 35,getmdnpcname("亡霊の王宮5階");
+	hideoffnpc getmdnpcname("亡霊の王宮5階");
+	donpcevent getmdnpcname("ティアラ姫#dk1")+ "::OnStart";
+	announce "‐時間が速く流れるような感覚の後、南西で何かが開くような音がした‐",0x9,0xffff00,0x190,20,0,0;
 	end;
 }
 
-1@spa.gat,178,186,0	warp	�S��̉��{5�K	2,2,1@spa.gat,186,57
+1@spa.gat,178,186,0	warp	亡霊の王宮5階	2,2,1@spa.gat,186,57
 
-1@spa.gat,213,42,7	script	�߉q��#dk5	686,{
-	mes "�]�e�B�A���P������������Ă���A";
-	mes "�@���̕\��͌����Ȃ��c�c�]";
+1@spa.gat,213,42,7	script	近衛兵#dk5	686,{
+	mes "‐ティアラ姫を抱きかかえており、";
+	mes "　その表情は見えない……‐";
 	close;
 OnTalk1:
-	unittalk "�߉q�� : �e�B�A���P�c�c!!�@�����ɁA�r�̗ǂ����Ïp�t������͂��ł��c�c!!�@�C��������������Ă��������c�c�B";
+	unittalk "近衛兵 : ティアラ姫……!!　すぐに、腕の良い治療術師が来るはずです……!!　気をしっかりもってください……。";
 	end;
 OnTalk2:
-	unittalk "�߉q�� : �P�c�c����Ȃ������c�c�B���̂ɏ��܂��c�c�B";
+	unittalk "近衛兵 : 姫……喋らない方が……。お体に障ります……。";
 	end;
 OnTalk3:
-	unittalk "�߉q�� : ����ȁc�c�g�ɂ��܂邨���t�ł��c�c�B����Ɏ��́A�����ɑ΂����ӂ͂���ǁA���ނ��ƂȂǂ��ꂩ����������܂���B�ł����炲���S���������B";
+	unittalk "近衛兵 : そんな……身にあまるお言葉です……。それに私は、国王に対し感謝はすれど、恨むことなどこれからもございません。ですからご安心ください。";
 	end;
 OnTalk4:
-	unittalk "�߉q�� : �P�c�c�����c�c�����c�c�b�I�@�N��!!�@�N�����Ȃ��̂�!?�@�����c�c�����P���c�c�P�̎��Â��c�c�b�I�@���肢�c�c���c�c�B";
+	unittalk "近衛兵 : 姫……血が……血が……ッ！　誰か!!　誰か居ないのか!?　早く……早く姫を……姫の治療を……ッ！　お願い……だ……。";
 	end;
 OnTalk5:
-	unittalk "�߉q�� : ���i�Ȃ�!!�@�����Ŕ������P�l�قǉ����ɑ������������͂���܂���c�c�B�����c�c�����g�����킫�܂����S�䂩�ꂽ�̂́A����ȕP�l�����炱���Ȃ̂ł��c�c�B";
+	unittalk "近衛兵 : 失格など!!　聡明で美しく姫様ほど王女に相応しい女性はおりません……。私が……私が身分をわきまえず心惹かれたのは、そんな姫様だからこそなのです……。";
 	end;
 OnTalk6:
-	unittalk "�߉q�� : �c�c�P�H�@�e�B�A���P�c�c�H�@�c�c���́c�c���́c�c���̂����c�c���c�c�B�������Ȃ������c�c�B�����c�c����Ă���΁c�c!";
+	unittalk "近衛兵 : ……姫？　ティアラ姫……？　……私の……私の……私のせい……だ……。私が守れなかった……。私が……守っていれば……!";
 	end;
 OnTalk7:
-	unittalk "�߉q�� : �c�c�B����A�����Ƃ���͈��������c�c�B���Ȃ񂾁c�c�����Ȃ킯���Ȃ��c�c�B�����A�P�l�B�N���Ă��������B����ȂƂ���ŐQ�Ă͂��̂ɍ������܂��B";
+	unittalk "近衛兵 : ……。いや、きっとこれは悪い夢だ……。夢なんだ……現実なわけがない……。さあ、姫様。起きてください。こんなところで寝てはお体に差し障ります。";
 	end;
 OnTalk8:
-	unittalk "�߉q�� : �P�l�H�@�e�B�A���P�c�c�H�@�ǂ����āc�c�ǂ����Ėڂ��J���Ă���Ȃ��̂ł����b!?�@���́A�΂��Ă���Ȃ��̂ł����c�c!?�ǂ����āc�c�ǂ����āc�c�ǂ����c�c�āc�c�B";
+	unittalk "近衛兵 : 姫様？　ティアラ姫……？　どうして……どうして目を開けてくれないのですかッ!?　何故、笑ってくれないのですか……!?どうして……どうして……どうし……て……。";
 	end;
 }
 
-1@spa.gat,216,43,3	script	�e�B�A���P#dk1	640,{
+1@spa.gat,216,43,3	script	ティアラ姫#dk1	640,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "�]�e�B�A���P�Ƌ߉q����";
-		mes "�@�b���Ă���̂�������]";
+		mes "‐ティアラ姫と近衛兵が";
+		mes "　話しているのが見える‐";
 		close;
 	}
 	stopnpctimer;
 	if(checkquest(114755)&0x8) {
-		mes "�]�e�B�A���P�Ƌ߉q����";
-		mes "�@�b���Ă���̂�������]";
+		mes "‐ティアラ姫と近衛兵が";
+		mes "　話しているのが見える‐";
 		next;
-		if(select("�}��","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("急ぐ","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("�e�B�A���P#dk1");
-			hideonnpc getmdnpcname("�߉q��#dk5");
+			hideonnpc getmdnpcname("ティアラ姫#dk1");
+			hideonnpc getmdnpcname("近衛兵#dk5");
 			misceffect 904,"";
 			donpcevent getmdnpcname("#DK_BattleAnnounce")+ "::OnStart";
 			end;
 		}
 	}
-	mes "[�e�B�A���P]";
-	mes "�M���̘r�ɕ���������";
-	mes "����Ȃ�āc�c";
-	mes "���ł͂Ȃ��̂ł��ˁB";
-	mes "�S�z�A�S�z�b�c�c�B";
-	unittalk "�e�B�A���P : �M���̘r�ɕ�������������Ȃ�āc�c���ł͂Ȃ��̂ł��ˁB�S�z�A�S�z�b�c�c�B";
+	mes "[ティアラ姫]";
+	mes "貴方の腕に抱かれる日が";
+	mes "くるなんて……";
+	mes "夢ではないのですね。";
+	mes "ゴホ、ゴホッ……。";
+	unittalk "ティアラ姫 : 貴方の腕に抱かれる日がくるなんて……夢ではないのですね。ゴホ、ゴホッ……。";
 	next;
-	mes "[�߉q��]";
-	mes "�e�B�A���P�c�c!!";
-	mes "�����ɁA�r�̗ǂ����Ïp�t��";
-	mes "����͂��ł��c�c!!";
-	mes "�C��������������Ă��������c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk1";
+	mes "[近衛兵]";
+	mes "ティアラ姫……!!";
+	mes "すぐに、腕の良い治療術師が";
+	mes "来るはずです……!!";
+	mes "気をしっかりもってください……。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk1";
 	next;
-	mes "�]�e�B�A���P�̊�ɐ��C�͂Ȃ��A";
-	mes "�@�����ȑ������{���ꂽ";
-	mes "�@�h���X�̓h�X�������݂�";
-	mes "�@���܂��Ă����c�c�]";
+	mes "‐ティアラ姫の顔に生気はなく、";
+	mes "　見事な装飾が施された";
+	mes "　ドレスはドス黒い染みに";
+	mes "　染まっていた……‐";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c�ǂ����Ă��M���ɁA";
-	mes "�`���������Ƃ��������̂ł��c�c�B";
-	mes "�S�z�A�S�z�b�c�c�B";
-	mes "�c�c�����āc�c����c�c";
-	mes "�܂����c�c�H";
-	unittalk "�e�B�A���P : �c�c�ǂ����Ă��M���ɁA�`���������Ƃ��������̂ł��c�c�B�S�z�A�S�z�b�c�c�B�c�c�����āc�c����c�c�܂����c�c�H";
+	mes "[ティアラ姫]";
+	mes "……どうしても貴方に、";
+	mes "伝えたいことがあったのです……。";
+	mes "ゴホ、ゴホッ……。";
+	mes "……聞いて……くれ……";
+	mes "ますか……？";
+	unittalk "ティアラ姫 : ……どうしても貴方に、伝えたいことがあったのです……。ゴホ、ゴホッ……。……聞いて……くれ……ますか……？";
 	next;
-	mes "[�߉q��]";
-	mes "�P�c�c����Ȃ������c�c�B";
-	mes "���̂ɏ��܂��c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk2";
+	mes "[近衛兵]";
+	mes "姫……喋らない方が……。";
+	mes "お体に障ります……。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk2";
 	next;
-	mes "[�e�B�A���P]";
-	mes "���v�ł��c�c�B";
-	mes "�����畷���āc�c���������c�c�B";
-	mes "�ǂ����A�߂���Ƃ���";
-	mes "���̕��������Ă��������B";
-	mes "�����{�S�ł́A�M���̂��Ƃ�";
-	mes "�M���Ă����͂��ł��B";
-	unittalk "�e�B�A���P : ���v�ł��c�c�B�����畷���āc�c���������c�c�B�ǂ����A�߂���Ƃ������̕��������Ă��������B�����{�S�ł́A�M���̂��Ƃ�M���Ă����͂��ł��B";
+	mes "[ティアラ姫]";
+	mes "大丈夫です……。";
+	mes "だから聞いて……ください……。";
+	mes "どうか、過ちを犯した";
+	mes "私の父を許してください。";
+	mes "父も本心では、貴方のことを";
+	mes "信じていたはずです。";
+	unittalk "ティアラ姫 : 大丈夫です……。だから聞いて……ください……。どうか、過ちを犯した私の父を許してください。父も本心では、貴方のことを信じていたはずです。";
 	next;
-	mes "[�߉q��]";
-	mes "����ȁc�c�g�ɂ��܂邨���t�ł��c�c�B";
-	mes "����Ɏ��́A�����ɑ΂�";
-	mes "���ӂ͂���ǁA���ނ��ƂȂ�";
-	mes "���ꂩ����������܂���B";
-	mes "�ł����炲���S���������B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk3";
+	mes "[近衛兵]";
+	mes "そんな……身にあまるお言葉です……。";
+	mes "それに私は、国王に対し";
+	mes "感謝はすれど、恨むことなど";
+	mes "これからもございません。";
+	mes "ですからご安心ください。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk3";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�M���͖{���ɗD�����̂ł��ˁc�c�B";
-	mes "�����������񂾂Ƃ���h���Ƃ�";
-	mes "�����M���͖T�ɂ��ĈԂ߂Ă��ꂽ�B";
-	mes "�����ƁA����ȋM���ƕ��Ƃ��̍���";
-	mes "��炵�Ă����������̂Ɂc�c�S�z�b�B";
-	unittalk "�e�B�A���P : �M���͖{���ɗD�����̂ł��ˁc�c�B�����������񂾂Ƃ���h���Ƃ������M���͖T�ɂ��ĈԂ߂Ă��ꂽ�B�����ƁA����ȋM���ƕ��Ƃ��̍��ŕ�炵�Ă����������̂Ɂc�c�S�z�b�B";
+	mes "[ティアラ姫]";
+	mes "貴方は本当に優しいのですね……。";
+	mes "私が落ち込んだときや辛いとき";
+	mes "いつも貴方は傍にいて慰めてくれた。";
+	mes "ずっと、そんな貴方と父とこの国で";
+	mes "暮らしていたかったのに……ゴホッ。";
+	unittalk "ティアラ姫 : 貴方は本当に優しいのですね……。私が落ち込んだときや辛いときいつも貴方は傍にいて慰めてくれた。ずっと、そんな貴方と父とこの国で暮らしていたかったのに……ゴホッ。";
 	next;
-	mes "[�߉q��]";
-	mes "�P�c�c�����c�c�����c�c�b�I";
-	mes "�N��!!�@�N�����Ȃ��̂�!?";
-	mes "�����c�c�����P���c�c";
-	mes "�P�̎��Â��c�c�b�I";
-	mes "���肢�c�c���c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk4";
+	mes "[近衛兵]";
+	mes "姫……血が……血が……ッ！";
+	mes "誰か!!　誰か居ないのか!?";
+	mes "早く……早く姫を……";
+	mes "姫の治療を……ッ！";
+	mes "お願い……だ……。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk4";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�����āc�c����̂ł��c�c���H";
-	mes "�c�c�M���ɓ��ʂȋC������";
-	mes "�����Ă��܂��������ǂ����A";
-	mes "�S�z�S�z�c�c�����Ă��������c�c�B";
-	mes "����ʋC�����ƕ������Ă����̂Ɂc�c�B";
-	mes "���͉������i�ł��c�c�ˁc�c�B";
-	unittalk "�e�B�A���P : �����āc�c����̂ł��c�c���H�@�c�c�M���ɓ��ʂȋC����������Ă��܂��������ǂ����A�S�z�S�z�c�c�����Ă��������c�c�B����ʋC�����ƕ������Ă����̂Ɂc�c�B���͉������i�ł��c�c�ˁc�c�B";
+	mes "[ティアラ姫]";
+	mes "泣いて……いるのです……か？";
+	mes "……貴方に特別な気持ちを";
+	mes "抱いてしまった私をどうか、";
+	mes "ゴホゴホ……許してください……。";
+	mes "叶わぬ気持ちと分かっていたのに……。";
+	mes "私は王女失格です……ね……。";
+	unittalk "ティアラ姫 : 泣いて……いるのです……か？　……貴方に特別な気持ちを抱いてしまった私をどうか、ゴホゴホ……許してください……。叶わぬ気持ちと分かっていたのに……。私は王女失格です……ね……。";
 	next;
-	mes "[�߉q��]";
-	mes "���i�Ȃ�!!�@�����Ŕ�����";
-	mes "�P�l�قǉ����ɑ�������������";
-	mes "����܂���c�c�B";
-	mes "�����c�c�����g�����킫�܂���";
-	mes "�S�䂩�ꂽ�̂́A����ȕP�l������";
-	mes "�����Ȃ̂ł��c�c�B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk5";
+	mes "[近衛兵]";
+	mes "失格など!!　聡明で美しく";
+	mes "姫様ほど王女に相応しい女性は";
+	mes "おりません……。";
+	mes "私が……私が身分をわきまえず";
+	mes "心惹かれたのは、そんな姫様だから";
+	mes "こそなのです……。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk5";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c�B";
-	mes "�c�c���肪�Ƃ��B";
-	mes "���̌��t���M�����畷���c�c";
-	mes "���͍��A�N�����c�c�B";
-	unittalk "�e�B�A���P : �c�c�B�c�c���肪�Ƃ��B���̌��t���M�����畷���c�c���͍��A�N�����c�c�B";
+	mes "[ティアラ姫]";
+	mes "……。";
+	mes "……ありがとう。";
+	mes "その言葉を貴方から聞け……";
+	mes "私は今、誰よりも……。";
+	unittalk "ティアラ姫 : ……。……ありがとう。その言葉を貴方から聞け……私は今、誰よりも……。";
 	next;
-	mes "[�e�B�A���P]";
-	mes "�c�c�c�c�B";
-	unittalk "�e�B�A���P : �c�c�c�c�B";
+	mes "[ティアラ姫]";
+	mes "…………。";
+	unittalk "ティアラ姫 : …………。";
 	next;
 	cutin "b-tiara.BMP",3;
-	mes "[�߉q��]";
-	mes "�c�c�P�H�@�e�B�A���P�c�c�H";
-	mes "�c�c���́c�c���́c�c";
-	mes "���̂����c�c���c�c�B";
-	mes "�������Ȃ������c�c�B";
-	mes "�����c�c����Ă���΁c�c!";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk6";
+	mes "[近衛兵]";
+	mes "……姫？　ティアラ姫……？";
+	mes "……私の……私の……";
+	mes "私のせい……だ……。";
+	mes "私が守れなかった……。";
+	mes "私が……守っていれば……!";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk6";
 	next;
-	mes "[�߉q��]";
-	mes "�c�c�B";
-	mes "����A�����Ƃ���͈��������c�c�B";
-	mes "���Ȃ񂾁c�c�����Ȃ킯���Ȃ��c�c�B";
-	mes "�����A�P�l�B�N���Ă��������B";
-	mes "����ȂƂ���ŐQ�Ă͂��̂�";
-	mes "�������܂��B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk7";
+	mes "[近衛兵]";
+	mes "……。";
+	mes "いや、きっとこれは悪い夢だ……。";
+	mes "夢なんだ……現実なわけがない……。";
+	mes "さあ、姫様。起きてください。";
+	mes "こんなところで寝てはお体に";
+	mes "差し障ります。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk7";
 	next;
-	mes "[�߉q��]";
-	mes "�P�l�H�@�e�B�A���P�c�c�H";
-	mes "�ǂ����āc�c";
-	mes "�ǂ����Ėڂ��J���Ă���Ȃ��̂ł����b!?";
-	mes "���́A�΂��Ă���Ȃ��̂ł����c�c!?";
-	mes "�ǂ����āc�c�ǂ����āc�c";
-	mes "�ǂ����c�c�āc�c�B";
-	donpcevent getmdnpcname("�߉q��#dk5")+ "::OnTalk8";
+	mes "[近衛兵]";
+	mes "姫様？　ティアラ姫……？";
+	mes "どうして……";
+	mes "どうして目を開けてくれないのですかッ!?";
+	mes "何故、笑ってくれないのですか……!?";
+	mes "どうして……どうして……";
+	mes "どうし……て……。";
+	donpcevent getmdnpcname("近衛兵#dk5")+ "::OnTalk8";
 	next;
-	mes "[��̐�]";
-	mes "���߂�B";
-	mes "����͌������B";
-	mes "�M�l�ɂ͕K�v�������P��";
-	mes "���̐��E�ɂƂ��ẮA";
-	mes "�s�v�������񂾂�B";
-	mes "�����玀�񂾁B";
-	announce "��̐� : ���߂�B����͌������B�M�l�ɂ͕K�v�������P�����̐��E�ɂƂ��ẮA�s�v�������񂾂�B�����玀�񂾁B",0x9,0xff0000,0x190,20,0,0;
+	mes "[謎の声]";
+	mes "諦めろ。";
+	mes "これは現実だ。";
+	mes "貴様には必要だった姫も";
+	mes "この世界にとっては、";
+	mes "不要だったんだよ。";
+	mes "だから死んだ。";
+	announce "謎の声 : 諦めろ。これは現実だ。貴様には必要だった姫もこの世界にとっては、不要だったんだよ。だから死んだ。",0x9,0xff0000,0x190,20,0,0;
 	next;
-	mes "[��̐�]";
-	mes "����Ȃ̂Ɉ���ŁA";
-	mes "����ł����܂�ς�����ҁB";
-	mes "���E�̗͂̋ύt���ێ�����";
-	mes "�Ƃ�����`�����ŁA�^����M�ԎҁB";
-	mes "����ȗ͂������Ȃ���A";
-	mes "�������~�̂��߂Ɏg���ҁc�c�B";
-	announce "��̐� : ����Ȃ̂Ɉ���ŁA����ł����܂�ς�����ҁB���E�̗͂̋ύt���ێ�����Ƃ�����`�����ŁA�^����M�ԎҁB����ȗ͂������Ȃ���A�������~�̂��߂Ɏg���ҁc�c�B",0x9,0xff0000,0x190,20,0,0;
+	mes "[謎の声]";
+	mes "それなのに一方で、";
+	mes "死んでも生まれ変わった者。";
+	mes "世界の力の均衡を維持する";
+	mes "という大義名分で、運命を弄ぶ者。";
+	mes "強大な力を持ちながら、";
+	mes "私利私欲のために使う者……。";
+	announce "謎の声 : それなのに一方で、死んでも生まれ変わった者。世界の力の均衡を維持するという大義名分で、運命を弄ぶ者。強大な力を持ちながら、私利私欲のために使う者……。",0x9,0xff0000,0x190,20,0,0;
 	next;
-	mes "[��̐�]";
-	mes "���̐��E�͂���ȕs�𗝂ň��";
-	mes "�������Ă���񂾁B";
-	mes "�ǂ����H�@���̂悤�Ȑ��E�A";
-	mes "���݂���Ӗ��͂Ȃ��B";
-	mes "�������낤�H";
-	announce "��̐� : ���̐��E�͂���ȕs�𗝂ň�ꂩ�����Ă���񂾁B�ǂ����H�@���̂悤�Ȑ��E�A���݂���Ӗ��͂Ȃ��B�������낤�H",0x9,0xff0000,0x190,20,0,0;
+	mes "[謎の声]";
+	mes "この世界はそんな不条理で溢れ";
+	mes "かえっているんだ。";
+	mes "どうだ？　このような世界、";
+	mes "存在する意味はない。";
+	mes "そうだろう？";
+	announce "謎の声 : この世界はそんな不条理で溢れかえっているんだ。どうだ？　このような世界、存在する意味はない。そうだろう？",0x9,0xff0000,0x190,20,0,0;
 	close2;
 	cutin "b-tiara.BMP",255;
-	hideonnpc getmdnpcname("�e�B�A���P#dk1");
-	hideonnpc getmdnpcname("�߉q��#dk5");
+	hideonnpc getmdnpcname("ティアラ姫#dk1");
+	hideonnpc getmdnpcname("近衛兵#dk5");
 	donpcevent getmdnpcname("#DK_BattleAnnounce")+ "::OnStart";
 	end;
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("�e�B�A���P#dk1");
+	emotion 9,getmdnpcname("ティアラ姫#dk1");
 	end;
 }
 
 1@spa.gat,1,1,0	script	#DK_BattleAnnounce	139,{
 OnStart:
-	announce "�₽���� : �P�����Ȃ��߉q���Ƃ́B����܂ł̒p���ȁB",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : 姫を守れない近衛兵とは。末代までの恥だな。",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : ��߂�A��߂Ă���!!�@�������āc�c�������Ă���ł��c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : やめろ、やめてくれ!!　私だって……私だってこれでも……。",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled1";
-	areamonster '@map$,196,42,198,45,"���~�̉��g",2955,4,'@label$;
+	areamonster '@map$,196,42,198,45,"物欲の化身",2955,4,'@label$;
 	end;
 OnKilled1:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled1");
 	if('@count > 0) end;
-	announce "�₽���� : �������ɁA���E�𑞂ނ̂��H�@�����̂͑S�āA�ア���O���B",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : あげくに、世界を憎むのか？　悪いのは全て、弱いお前だ。",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : ���́A���́c�c�A�����A�����A�ޏ��Ɓc�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 私は、私は……、ただ、ただ、彼女と……。",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled2";
-	areamonster '@map$,196,27,198,29,"�����݂̉�",2953,2,'@label$;
-	areamonster '@map$,196,27,198,29,"���߂��ʈ�",2954,2,'@label$;
-	areamonster '@map$,196,52,198,54,"�����݂̉�",2953,2,'@label$;
-	areamonster '@map$,196,52,198,54,"���߂��ʈ�",2954,2,'@label$;
+	areamonster '@map$,196,27,198,29,"憎しみの塊",2953,2,'@label$;
+	areamonster '@map$,196,27,198,29,"取り戻せぬ愛",2954,2,'@label$;
+	areamonster '@map$,196,52,198,54,"憎しみの塊",2953,2,'@label$;
+	areamonster '@map$,196,52,198,54,"取り戻せぬ愛",2954,2,'@label$;
 	end;
 OnKilled2:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled2");
 	if('@count > 0) end;
-	announce "�₽���� : ���܂Ŗ����Ȃǂɂ��Ԃ炩����A�������瓦��������H",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : いつまで魔剣などにたぶらかされ、現実から逃げ続ける？",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : ����Ȃ�!!�@���̌�����F�߂Ă��܂��΁A�ޏ��́c�c�F�́c�c�{���Ɂc�c!!",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : いやなんだ!!　この現実を認めてしまえば、彼女は……皆は……本当に……!!",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled3";
-	areamonster '@map$,202,39,204,41,"�ڋ��ȐS",2950,2,'@label$;
-	areamonster '@map$,202,39,204,41,"���i�̉�",2951,2,'@label$;
-	areamonster '@map$,189,39,191,41,"�ڋ��ȐS",2950,2,'@label$;
-	areamonster '@map$,189,39,191,41,"���i�̉�",2951,2,'@label$;
+	areamonster '@map$,202,39,204,41,"卑屈な心",2950,2,'@label$;
+	areamonster '@map$,202,39,204,41,"嫉妬の炎",2951,2,'@label$;
+	areamonster '@map$,189,39,191,41,"卑屈な心",2950,2,'@label$;
+	areamonster '@map$,189,39,191,41,"嫉妬の炎",2951,2,'@label$;
 	end;
 OnKilled3:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled3");
 	if('@count > 0) end;
-	announce "�₽���� : �ق��H�@���̉R�̂��߂ɁA�ʂ̖����]���ɂȂ��Ă������Ƃ����̂��H",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : ほう？　その嘘のために、別の命が犠牲になってもいいというのか？",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : �c�c���A����́c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : ……そ、それは……。",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled4";
-	areamonster '@map$,183,48,185,49,"���a�ȐS",2948,2,'@label$;
-	areamonster '@map$,183,48,185,49,"�A�]����e",2958,2,'@label$;
-	areamonster '@map$,194,38,195,40,"���a�ȐS",2948,2,'@label$;
-	areamonster '@map$,194,38,195,40,"�A�]����e",2958,2,'@label$;
-	areamonster '@map$,178,39,178,39,"���a�ȐS",2948,2,'@label$;
-	areamonster '@map$,178,39,178,39,"�A�]����e",2958,2,'@label$;
-	areamonster '@map$,201,41,202,42,"���a�ȐS",2948,2,'@label$;
-	areamonster '@map$,201,41,202,42,"�A�]����e",2958,2,'@label$;
+	areamonster '@map$,183,48,185,49,"臆病な心",2948,2,'@label$;
+	areamonster '@map$,183,48,185,49,"羨望する影",2958,2,'@label$;
+	areamonster '@map$,194,38,195,40,"臆病な心",2948,2,'@label$;
+	areamonster '@map$,194,38,195,40,"羨望する影",2958,2,'@label$;
+	areamonster '@map$,178,39,178,39,"臆病な心",2948,2,'@label$;
+	areamonster '@map$,178,39,178,39,"羨望する影",2958,2,'@label$;
+	areamonster '@map$,201,41,202,42,"臆病な心",2948,2,'@label$;
+	areamonster '@map$,201,41,202,42,"羨望する影",2958,2,'@label$;
 	end;
 OnKilled4:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled4");
 	if('@count > 0) end;
-	announce "�₽���� : ���O�͐l���E�߂�B�����^���^�m�X�Ƃ�����`���������ɂ��āc�c�ȁB",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : お前は人を殺める。魔剣タルタノスという大義名分を盾にして……な。",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : �c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : ……。",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled5";
-	areamonster '@map$,198,28,200,30,"�����݂̉�",2953,3,'@label$;
-	areamonster '@map$,198,28,200,30,"���߂��ʈ�",2954,3,'@label$;
-	areamonster '@map$,201,51,203,53,"�����݂̉�",2953,3,'@label$;
-	areamonster '@map$,201,51,203,53,"���߂��ʈ�",2954,3,'@label$;
-	areamonster '@map$,197,48,198,49,"�����݂̉�",2953,3,'@label$;
-	areamonster '@map$,197,48,198,49,"���߂��ʈ�",2954,3,'@label$;
-	areamonster '@map$,183,35,185,37,"�����݂̉�",2953,3,'@label$;
-	areamonster '@map$,183,35,185,37,"���߂��ʈ�",2954,3,'@label$;
-	areamonster '@map$,188,22,190,24,"�����݂̉�",2953,3,'@label$;
-	areamonster '@map$,188,22,190,24,"���߂��ʈ�",2954,3,'@label$;
+	areamonster '@map$,198,28,200,30,"憎しみの塊",2953,3,'@label$;
+	areamonster '@map$,198,28,200,30,"取り戻せぬ愛",2954,3,'@label$;
+	areamonster '@map$,201,51,203,53,"憎しみの塊",2953,3,'@label$;
+	areamonster '@map$,201,51,203,53,"取り戻せぬ愛",2954,3,'@label$;
+	areamonster '@map$,197,48,198,49,"憎しみの塊",2953,3,'@label$;
+	areamonster '@map$,197,48,198,49,"取り戻せぬ愛",2954,3,'@label$;
+	areamonster '@map$,183,35,185,37,"憎しみの塊",2953,3,'@label$;
+	areamonster '@map$,183,35,185,37,"取り戻せぬ愛",2954,3,'@label$;
+	areamonster '@map$,188,22,190,24,"憎しみの塊",2953,3,'@label$;
+	areamonster '@map$,188,22,190,24,"取り戻せぬ愛",2954,3,'@label$;
 	end;
 OnKilled5:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled5");
 	if('@count > 0) end;
-	announce "��̐� : �c�c�v���o��!!�@�M�l�̐S�̒ꂩ�畦�������鑞����!!",0x9,0xff0000,0x190,20,0,0;
+	announce "謎の声 : ……思い出せ!!　貴様の心の底から沸きあがる憎悪を!!",0x9,0xff0000,0x190,20,0,0;
 	sleep 1000;
-	announce "�Ⴂ�j�̐� : �c�c�c�c�B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : …………。",0x9,0x7cfc00,0x190,20,0,0;
 	set '@map$,getmdmapname("1@spa.gat");
 	set '@label$,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled6";
-	areamonster '@map$,184,50,185,51,"���~�̉��g",2955,2,'@label$;
-	areamonster '@map$,184,50,185,51,"�}�������j��Փ�",2956,2,'@label$;
-	areamonster '@map$,184,33,185,34,"�����݂̉�",2953,2,'@label$;
-	areamonster '@map$,184,33,185,34,"�B���ꂽ�����S",2957,2,'@label$;
-	areamonster '@map$,200,45,202,47,"���߂��ʈ�",2954,2,'@label$;
-	areamonster '@map$,200,45,202,47,"�}�����Ȃ����{",2949,2,'@label$;
-	areamonster '@map$,198,40,199,42,"���a�ȐS",2948,2,'@label$;
-	areamonster '@map$,198,40,199,42,"���~�̉��g",2955,2,'@label$;
-	areamonster '@map$,197,24,198,25,"�ڋ��ȐS",2950,2,'@label$;
-	areamonster '@map$,197,24,198,25,"�ǓƂȖ�",2952,2,'@label$;
-	areamonster '@map$,206,41,208,42,"���i�̉�",2953,2,'@label$;
-	areamonster '@map$,206,41,208,42,"�A�]����e",2954,2,'@label$;
+	areamonster '@map$,184,50,185,51,"物欲の化身",2955,2,'@label$;
+	areamonster '@map$,184,50,185,51,"抑制した破壊衝動",2956,2,'@label$;
+	areamonster '@map$,184,33,185,34,"憎しみの塊",2953,2,'@label$;
+	areamonster '@map$,184,33,185,34,"隠された自尊心",2957,2,'@label$;
+	areamonster '@map$,200,45,202,47,"取り戻せぬ愛",2954,2,'@label$;
+	areamonster '@map$,200,45,202,47,"抑えられない憤怒",2949,2,'@label$;
+	areamonster '@map$,198,40,199,42,"臆病な心",2948,2,'@label$;
+	areamonster '@map$,198,40,199,42,"物欲の化身",2955,2,'@label$;
+	areamonster '@map$,197,24,198,25,"卑屈な心",2950,2,'@label$;
+	areamonster '@map$,197,24,198,25,"孤独な夢",2952,2,'@label$;
+	areamonster '@map$,206,41,208,42,"嫉妬の炎",2953,2,'@label$;
+	areamonster '@map$,206,41,208,42,"羨望する影",2954,2,'@label$;
 	end;
 OnKilled6:
 	set '@count,getmapmobs(getmdmapname("1@spa.gat"),getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled6");
 	if('@count > 0) end;
-	announce "�₽���� : ������B�����^���^�m�X���~���錌�B�{���́c�c���O���~���Ă���񂶂�Ȃ����H",0x9,0xadd8e6,0x190,20,0,0;
+	announce "冷たい声 : もう一つ。魔剣タルタノスが欲する血。本当は……お前が欲しているんじゃないか？",0x9,0xadd8e6,0x190,20,0,0;
 	sleep 3000;
-	announce "��̐� : �{���!!�@������!!�@����͑S�čŏ����猈�߂��Ă������Ɓc�c�I",0x9,0xff0000,0x190,20,0,0;
+	announce "謎の声 : 怒りを!!　虚無を!!　これは全て最初から決められていたこと……！",0x9,0xff0000,0x190,20,0,0;
 	sleep 3000;
-	announce "��̐� : �M�l�Ƌ��ɁA���̐������Ő��߂邽�߂Ɂc�c��!!",0x9,0xff0000,0x190,20,0,0;
+	announce "謎の声 : 貴様と共に、この世を血で染めるために……な!!",0x9,0xff0000,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : �c�c�ہB�^���^�m�X�ȂǁA���܂育�ƂȂǊ֌W�Ȃ��c�c���́c�c���̈ӎv�Łc�c�E���̂��B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : ……否。タルタノスなど、決まりごとなど関係ない……私は……私の意思で……殺すのだ。",0x9,0x7cfc00,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : �v���o�����c�c���͎􂢂̌��m�T�N���C�B����̈ӎv�ł��̐��E�𑞂݁A�j�󂷂���́B",0x9,0x7cfc00,0x190,20,0,0;
+	announce "若い男の声 : 思い出した……私は呪いの剣士サクライ。自らの意思でこの世界を憎み、破壊するもの。",0x9,0x7cfc00,0x190,20,0,0;
 	sleep 3000;
-	announce "�Ⴂ�j�̐� : �P�C�I�X���A���L���A�T�����c�c���̎ז���������͎̂E���������B",0x9,0x7cfc00,0x190,20,0,0;
-	monster getmdmapname("1@spa.gat"),197,41,"�􂢂̍���",2959,1,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled7";
+	announce "若い男の声 : ケイオスも、ロキも、サラも……私の邪魔をするものは殺すだけだ。",0x9,0x7cfc00,0x190,20,0,0;
+	monster getmdmapname("1@spa.gat"),197,41,"呪いの根源",2959,1,getmdnpcname("#DK_BattleAnnounce")+ "::OnKilled7";
 	end;
 OnKilled7:
-	hideoffnpc getmdnpcname("���Â��߂̒j#dk");
-	donpcevent getmdnpcname("���Â��߂̒j#dk")+ "::OnStart";
+	hideoffnpc getmdnpcname("黒づくめの男#dk");
+	donpcevent getmdnpcname("黒づくめの男#dk")+ "::OnStart";
 	end;
 }
 
-1@spa.gat,196,44,5	script	���Â��߂̒j#dk	685,{
+1@spa.gat,196,44,5	script	黒づくめの男#dk	685,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-		mes "�]���Â��߂̒j�����X����";
-		mes "�@����Ў�ɗ����Ă���]";
+		mes "‐黒づくめの男が凶々しい";
+		mes "　剣を片手に立っている‐";
 		close;
 	}
 	stopnpctimer;
 	if(checkquest(114755)&0x8) {
-		mes "�]���Â��߂̒j�����X����";
-		mes "�@����Ў�ɗ����Ă���]";
+		mes "‐黒づくめの男が凶々しい";
+		mes "　剣を片手に立っている‐";
 		next;
-		if(select("�}��","��l�̉�b�𕷂�") == 1) {
-			mes "�]���Ԃ��u���ɗ��ꂽ�̂��������]";
+		if(select("急ぐ","二人の会話を聞く") == 1) {
+			mes "‐時間が瞬時に流れたのを感じた‐";
 			close2;
-			hideonnpc getmdnpcname("���Â��߂̒j#dk");
-			announce "�]���ӂ̕��i���c�ݎn�߂��B���Ԃ���o�Ȃ���΂Ȃ�Ȃ��悤���]",0x9,0xffff00,0x190,20,0,0;
+			hideonnpc getmdnpcname("黒づくめの男#dk");
+			announce "‐周辺の風景が歪み始めた。狭間から出なければならないようだ‐",0x9,0xffff00,0x190,20,0,0;
 			misceffect 904,"";
-			misceffect 35,getmdnpcname("�S��̉��{�o��");
-			hideoffnpc getmdnpcname("�S��̉��{�o��");
-			hideoffnpc getmdnpcname("����#dk11");
+			misceffect 35,getmdnpcname("亡霊の王宮出口");
+			hideoffnpc getmdnpcname("亡霊の王宮出口");
+			hideoffnpc getmdnpcname("国王#dk11");
 			end;
 		}
 	}
-	mes "[���Â��߂̒j]";
-	mes "�܂����̂Ă��͂��̂��̂�";
-	mes "�ēx�܂����̐��E�ւ�";
-	mes "�m�R�m�R�����߂��Ă���Ƃ͂ȁB";
-	mes "���̂܂܂��ƂȂ���";
-	mes "�f�r���Ă���΂悢���̂��B";
-	unittalk "���Â��߂̒j : �܂����̂Ă��͂��̂��̂��ēx�܂����̐��E�ւƃm�R�m�R�����߂��Ă���Ƃ͂ȁB���̂܂܂��ƂȂ����f�r���Ă���΂悢���̂��B";
+	mes "[黒づくめの男]";
+	mes "まさか捨てたはずのものが";
+	mes "再度またこの世界へと";
+	mes "ノコノコ舞い戻ってくるとはな。";
+	mes "あのままおとなしく";
+	mes "彷徨っていればよいものを。";
+	unittalk "黒づくめの男 : まさか捨てたはずのものが再度またこの世界へとノコノコ舞い戻ってくるとはな。あのままおとなしく彷徨っていればよいものを。";
 	next;
 	cutin "cry-b.bmp",2;
-	mes "[���Â��߂̒j]";
-	mes "����őS�ĂƂ����킯�ł�";
-	mes "�Ȃ����������c�c�܂������B";
-	mes "�ǂ����H�@�����^���^�m�X�B";
-	mes "��]�Ƌ��|�ɂ܂݂ꃂ���X�^�[��";
-	mes "�ϖe�����҂����̌��́B";
-	unittalk "���Â��߂̒j : ����őS�ĂƂ����킯�ł͂Ȃ����������c�c�܂������B�ǂ����H�@�����^���^�m�X�B��]�Ƌ��|�ɂ܂݂ꃂ���X�^�[�֕ϖe�����҂����̌��́B";
+	mes "[黒づくめの男]";
+	mes "これで全てというわけでは";
+	mes "なさそうだが……まあいい。";
+	mes "どうだ？　魔剣タルタノス。";
+	mes "絶望と恐怖にまみれモンスターへ";
+	mes "変貌した者たちの血は。";
+	unittalk "黒づくめの男 : これで全てというわけではなさそうだが……まあいい。どうだ？　魔剣タルタノス。絶望と恐怖にまみれモンスターへ変貌した者たちの血は。";
 	next;
 	cutin "cry-b.bmp",255;
-	mes "[�����^���^�m�X]";
-	mes "��₾�ȁA�T�N���C�B";
-	mes "�䂪���߂錌�͂����Ƃ�����";
-	mes "���ƈŁA���Ǝ����o������";
-	mes "�[�g�Ȃ�Ô��Ȍ����c�c�B";
-	unittalk "�����^���^�m�X : ��₾�ȁA�T�N���C�B�䂪���߂錌�͂����Ƃ����ƌ��ƈŁA���Ǝ����o�������[�g�Ȃ�Ô��Ȍ����c�c�B";
+	mes "[魔剣タルタノス]";
+	mes "愚問だな、サクライ。";
+	mes "我が求める血はもっともっと";
+	mes "光と闇、生と死を経験した";
+	mes "深紅なる甘美な血だ……。";
+	unittalk "魔剣タルタノス : 愚問だな、サクライ。我が求める血はもっともっと光と闇、生と死を経験した深紅なる甘美な血だ……。";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "�c�c�N�N�N�N�N�B";
-	mes "�����Ă܂�������ȁA�l�ԁB";
-	mes "���l�̕s�K�̖��͂ǂ����H";
-	mes "�������A�悢�]���ɂȂ��";
-	mes "�����܂Ō������Ă������c�c";
-	mes "���낻��䖝�̌��E���B";
-	unittalk "�����^���^�m�X : �c�c�N�N�N�N�N�B�����Ă܂�������ȁA�l�ԁB���l�̕s�K�̖��͂ǂ����H�@�������A�悢�]���ɂȂ�Ƃ����܂Ō������Ă������c�c���낻��䖝�̌��E���B";
+	mes "[魔剣タルタノス]";
+	mes "……ククククク。";
+	mes "そしてまた会ったな、人間。";
+	mes "他人の不幸の味はどうだ？";
+	mes "しかし、よい余興になると";
+	mes "ここまで見逃してきたが……";
+	mes "そろそろ我慢の限界だ。";
+	unittalk "魔剣タルタノス : ……ククククク。そしてまた会ったな、人間。他人の不幸の味はどうだ？　しかし、よい余興になるとここまで見逃してきたが……そろそろ我慢の限界だ。";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "���̐l�Ԃ̌����c�c";
-	mes "��ɕ�����̂��I�@�T�N���C�B";
-	mes "�����܂ŋɏ�̍��肪����";
-	mes "���̓�����Y�킹���l�Ԃ�";
-	mes "���Ȃ蒿�����c�c�I";
-	unittalk "�����^���^�m�X : ���̐l�Ԃ̌����c�c��ɕ�����̂��I�@�T�N���C�B�����܂ŋɏ�̍��肪���錌�̓�����Y�킹���l�Ԃ͂��Ȃ蒿�����c�c�I";
+	mes "[魔剣タルタノス]";
+	mes "あの人間の血を……";
+	mes "我に捧げるのだ！　サクライ。";
+	mes "ここまで極上の香りがする";
+	mes "血の匂いを漂わせた人間は";
+	mes "かなり珍しい……！";
+	unittalk "魔剣タルタノス : あの人間の血を……我に捧げるのだ！　サクライ。ここまで極上の香りがする血の匂いを漂わせた人間はかなり珍しい……！";
 	next;
-	mes "[�T�N���C]";
-	mes "�^���^�m�X�����������l�ԁc�c�B";
-	mes "������������j�����Ă݂����A";
-	mes "�����܂ł̂悤���ȁB";
-	mes "�c�c";
-	mes "���O�́c�c�B";
-	unittalk "�T�N���C : �^���^�m�X�����������l�ԁc�c�B������������j�����Ă݂����A�����܂ł̂悤���ȁB�c�c���O�́c�c�B";
+	mes "[サクライ]";
+	mes "タルタノスが興味をもつ人間……。";
+	mes "物珍しさから泳がしてみたが、";
+	mes "ここまでのようだな。";
+	mes "……";
+	mes "お前は……。";
+	unittalk "サクライ : タルタノスが興味をもつ人間……。物珍しさから泳がしてみたが、ここまでのようだな。……お前は……。";
 	next;
-	mes "[�T�N���C]";
-	mes "�c�c���̊�B";
-	mes "�������A���O���A����";
-	mes "���̐��E�ւƓ�����";
-	mes "���l�悵�̖`���҂������̂��B";
-	unittalk "�T�N���C : �c�c���̊�B�������A���O���A�������̐��E�ւƓ��������l�悵�̖`���҂������̂��B";
+	mes "[サクライ]";
+	mes "……その顔。";
+	mes "そうか、お前がアレを";
+	mes "この世界へと導いた";
+	mes "お人よしの冒険者だったのか。";
+	unittalk "サクライ : ……その顔。そうか、お前がアレをこの世界へと導いたお人よしの冒険者だったのか。";
 	next;
-	menu "�܂����c�c",-;
-	mes "[�T�N���C]";
-	mes "�����A���̎��̋߉q���������B";
-	mes "���m�ɂ́A���̒�����ǂ��o����";
-	mes "����Ƃ������̂�����Ȃ����݁B";
-	mes "���̋L���̎c��̂悤�Ȃ��́B";
-	mes "���ꂪ���O�̎����";
-	mes "�ǂ������킯���A���ꂽ�炵���B";
-	unittalk "�T�N���C : �����A���̎��̋߉q���������B���m�ɂ́A���̒�����ǂ��o��������Ƃ������̂�����Ȃ����݁B���̋L���̎c��̂悤�Ȃ��́B���ꂪ���O�̎���ɂǂ������킯���A���ꂽ�炵���B";
+	menu "まさか……",-;
+	mes "[サクライ]";
+	mes "そう、あの時の近衛兵が私だ。";
+	mes "正確には、私の中から追い出した";
+	mes "感情という名のくだらない存在。";
+	mes "この記憶の残滓のようなもの。";
+	mes "それがお前の時代に";
+	mes "どういうわけか、現れたらしい。";
+	unittalk "サクライ : そう、あの時の近衛兵が私だ。正確には、私の中から追い出した感情という名のくだらない存在。この記憶の残滓のようなもの。それがお前の時代にどういうわけか、現れたらしい。";
 	next;
-	mes "[�T�N���C]";
-	mes "�����ċ͂��Ɏc����������Ȃ�";
-	mes "���`�����炨�O�ɏ��������߁A";
-	mes "�����ɖ߂��Ă����悤����";
-	mes "����͍��A������荞�ݏ��ł����B";
-	mes "���ǂ��O�̂�������Ƃ́A";
-	mes "���ʂɏI������Ƃ������Ƃ��B";
-	unittalk "�T�N���C : �����ċ͂��Ɏc����������Ȃ����`�����炨�O�ɏ��������߁A�����ɖ߂��Ă����悤��������͍��A������荞�ݏ��ł����B���ǂ��O�̂�������Ƃ́A���ʂɏI������Ƃ������Ƃ��B";
+	mes "[サクライ]";
+	mes "そして僅かに残ったくだらない";
+	mes "正義感からお前に助けを求め、";
+	mes "ここに戻ってきたようだが";
+	mes "それは今、私が取り込み消滅した。";
+	mes "結局お前のやったことは、";
+	mes "無駄に終わったということだ。";
+	unittalk "サクライ : そして僅かに残ったくだらない正義感からお前に助けを求め、ここに戻ってきたようだがそれは今、私が取り込み消滅した。結局お前のやったことは、無駄に終わったということだ。";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "�T�N���C�B";
-	mes "���ʘb�����Ă���ɂ�����Ȃ�";
-	mes "���̎҂̌��𑁂��c�c";
-	mes "������ɕ�����̂��c�c�I";
-	unittalk "�����^���^�m�X : �T�N���C�B���ʘb�����Ă���ɂ�����Ȃ炠�̎҂̌��𑁂��c�c������ɕ�����̂��c�c�I";
+	mes "[魔剣タルタノス]";
+	mes "サクライ。";
+	mes "無駄話をしている暇があるなら";
+	mes "あの者の血を早く……";
+	mes "早く我に捧げるのだ……！";
+	unittalk "魔剣タルタノス : サクライ。無駄話をしている暇があるならあの者の血を早く……早く我に捧げるのだ……！";
 	next;
-	mes "[�T�N���C]";
-	mes "�ł�ȁA�^���^�m�X��B";
-	mes "�c�c���O�ɖ₢�������Ƃ�����B";
-	mes "��قǁA���O���P���������X�^�[�B";
-	mes "����͂��̍��ɏZ��ł���";
-	mes "���m�Ȃǂ̌��l�ԁB";
-	mes "�������a�������z�͂ǂ����H";
-	unittalk "�T�N���C : �ł�ȁA�^���^�m�X��B�c�c���O�ɖ₢�������Ƃ�����B��قǁA���O���P���������X�^�[�B����͂��̍��ɏZ��ł������m�Ȃǂ̌��l�ԁB�������a�������z�͂ǂ����H";
+	mes "[サクライ]";
+	mes "焦るな、タルタノスよ。";
+	mes "……お前に問いたいことがある。";
+	mes "先ほど、お前を襲ったモンスター。";
+	mes "あれはこの国に住んでいた";
+	mes "兵士などの元人間。";
+	mes "それらを斬った感想はどうだ？";
+	unittalk "サクライ : 焦るな、タルタノスよ。……お前に問いたいことがある。先ほど、お前を襲ったモンスター。あれはこの国に住んでいた兵士などの元人間。それらを斬った感想はどうだ？";
 	next;
-	switch(select("�����Ȃ�","������")) {
+	switch(select("答えない","答える")) {
 	case 1:
-		mes "[�T�N���C]";
-		mes "�ق��H";
-		mes "������C�͂Ȃ��̂��B";
-		mes "�����A���ʂ͕ς��Ȃ��B";
-		mes "�����X�^�[�ł���A���l�ł���A";
-		mes "����D�����Ƃ��������͂�!!";
-		mes "���ɂ���c�c";
-		unittalk "�T�N���C : �ق��H�@������C�͂Ȃ��̂��B�����A���ʂ͕ς��Ȃ��B�����X�^�[�ł���A���l�ł���A����D�����Ƃ��������͂�!!�@���ɂ���c�c";
+		mes "[サクライ]";
+		mes "ほう？";
+		mes "答える気はないのか。";
+		mes "だが、結果は変わらない。";
+		mes "モンスターであれ、元人であれ、";
+		mes "命を奪ったという事実はな!!";
+		mes "何にしろ……";
+		unittalk "サクライ : ほう？　答える気はないのか。だが、結果は変わらない。モンスターであれ、元人であれ、命を奪ったという事実はな!!　何にしろ……";
 		break;
 	case 2:
-		mes "[�T�N���C]";
-		mes "�ق��A���O�͂����������̂��B";
-		mes "����͖ʔ����B";
-		mes "�����A���ʂ͕ς��Ȃ��B";
-		mes "�����X�^�[�ł���A���l�ł���A";
-		mes "����D�����Ƃ��������͂ȁB";
-		mes "���ɂ���c�c";
-		unittalk "�T�N���C : �ق��A���O�͂����������̂��B����͖ʔ����B�����A���ʂ͕ς��Ȃ��B�����X�^�[�ł���A���l�ł���A����D�����Ƃ��������͂ȁB���ɂ���c�c";
+		mes "[サクライ]";
+		mes "ほう、お前はそう感じたのか。";
+		mes "これは面白い。";
+		mes "だが、結果は変わらない。";
+		mes "モンスターであれ、元人であれ、";
+		mes "命を奪ったという事実はな。";
+		mes "何にしろ……";
+		unittalk "サクライ : ほう、お前はそう感じたのか。これは面白い。だが、結果は変わらない。モンスターであれ、元人であれ、命を奪ったという事実はな。何にしろ……";
 		break;
 	}
 	next;
-	mes "[�T�N���C]";
-	mes "���̉^���͑��̒N�ł��Ȃ��B";
-	mes "�����ォ�����䂦�̌��ʁB";
-	mes "�����Ă��̎コ���A���O��";
-	mes "���̎��Ԃ̂��̏ꏊ��";
-	mes "�������ꂽ�̂��낤�c�c�B";
-	unittalk "�T�N���C : ���̉^���͑��̒N�ł��Ȃ��B�����ォ�����䂦�̌��ʁB�����Ă��̎コ���A���O�����̎��Ԃ̂��̏ꏊ�ɏ������ꂽ�̂��낤�c�c�B";
+	mes "[サクライ]";
+	mes "この運命は他の誰でもない。";
+	mes "私が弱かったゆえの結果。";
+	mes "そしてその弱さが、お前を";
+	mes "この時間のこの場所に";
+	mes "招き入れたのだろう……。";
+	unittalk "サクライ : この運命は他の誰でもない。私が弱かったゆえの結果。そしてその弱さが、お前をこの時間のこの場所に招き入れたのだろう……。";
 	next;
-	menu "�͂��߂��狭���l�Ԃ͂��Ȃ�",-;
-	mes "[�T�N���C]";
-	mes "���̒ʂ肾�B";
-	mes "�����炱�����́A�ߋ��̎����̎コ��";
-	mes "�f���؂邽�߁A�����ɗ����̂��B";
-	mes "�������A���͂��̂��A�Ŏ��͂悢���Ƃ�";
-	mes "�v�������Ƃ��ł����̂�����A";
-	mes "���O�ɂ͂ЂƂ܂��A���ӂ��悤�B";
-	unittalk "�T�N���C : ���̒ʂ肾�B�����炱�����́A�ߋ��̎����̎コ��f���؂邽�߁A�����ɗ����̂��B�������A���͂��̂��A�Ŏ��͂悢���Ƃ��v�������Ƃ��ł����̂�����A���O�ɂ͂ЂƂ܂��A���ӂ��悤�B";
+	menu "はじめから強い人間はいない",-;
+	mes "[サクライ]";
+	mes "その通りだ。";
+	mes "だからこそ私は、過去の自分の弱さを";
+	mes "断ち切るため、ここに来たのだ。";
+	mes "しかし、今はそのお陰で私はよいことを";
+	mes "思いつくことができたのだから、";
+	mes "お前にはひとまず、感謝しよう。";
+	unittalk "サクライ : その通りだ。だからこそ私は、過去の自分の弱さを断ち切るため、ここに来たのだ。しかし、今はそのお陰で私はよいことを思いつくことができたのだから、お前にはひとまず、感謝しよう。";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "�T�N���C�A�M�l�Ȃɂ��c�c�B";
-	unittalk "�����^���^�m�X : �T�N���C�A�M�l�Ȃɂ��c�c�B";
+	mes "[魔剣タルタノス]";
+	mes "サクライ、貴様なにを……。";
+	unittalk "魔剣タルタノス : サクライ、貴様なにを……。";
 	next;
-	mes "[�T�N���C]";
-	mes "�^���^�m�X��B�z�̌���";
-	mes "�ɏ�̍��肾�Ƃ������ȁH";
-	mes "�Ȃ�΂����Ƃ��̍���̎����A";
-	mes "�ō��̏�ԂŖ�����Ă݂�����";
-	mes "�v��Ȃ����c�c�H";
-	unittalk "�T�N���C : �^���^�m�X��B�z�̌��͋ɏ�̍��肾�Ƃ������ȁH�Ȃ�΂����Ƃ��̍���̎����A�ō��̏�ԂŖ�����Ă݂����Ǝv��Ȃ����c�c�H";
+	mes "[サクライ]";
+	mes "タルタノスよ。奴の血は";
+	mes "極上の香りだといったな？";
+	mes "ならばもっとその香りの質が、";
+	mes "最高の状態で味わってみたいと";
+	mes "思わないか……？";
+	unittalk "サクライ : タルタノスよ。奴の血は極上の香りだといったな？ならばもっとその香りの質が、最高の状態で味わってみたいと思わないか……？";
 	next;
-	mes "[�����^���^�m�X]";
-	mes "�ق��c�c�H";
-	mes "�M�l�ɂ͂����Ȃ�ڎZ��";
-	mes "����Ƃ������ƂȂ̂��ȁH";
-	mes "�ǂ����낤�B";
-	mes "�M�l�̊�݂ɏ���Ă�낤�B";
-	unittalk "�ق��c�c�H�@�M�l�ɂ͂����Ȃ�ڎZ������Ƃ������ƂȂ̂��ȁH�@�ǂ����낤�B�M�l�̊�݂ɏ���Ă�낤�B";
+	mes "[魔剣タルタノス]";
+	mes "ほう……？";
+	mes "貴様にはそうなる目算が";
+	mes "あるということなのだな？";
+	mes "良いだろう。";
+	mes "貴様の企みに乗ってやろう。";
+	unittalk "ほう……？　貴様にはそうなる目算があるということなのだな？　良いだろう。貴様の企みに乗ってやろう。";
 	next;
-	mes "[�T�N���C]";
-	mes "�����ł��O���E���Ă�";
-	mes "���̈Ӗ���������B";
-	mes "�䂦�ɍ���͌��������Ƃɂ���B";
-	mes "���O�͌��m��ʎ҂̂��߂ɁA";
-	mes "�m�R�m�R�Ǝ��Ԉړ��܂ł���";
-	mes "�����悤�Ƃ����قǂ��B";
-	unittalk "�T�N���C : �����ł��O���E���Ă͂��̈Ӗ���������B�䂦�ɍ���͌��������Ƃɂ���B���O�͌��m��ʎ҂̂��߂ɁA�m�R�m�R�Ǝ��Ԉړ��܂ł��ď����悤�Ƃ����قǂ��B";
+	mes "[サクライ]";
+	mes "ここでお前を殺しては";
+	mes "その意味が失われる。";
+	mes "ゆえに今回は見逃すことにする。";
+	mes "お前は見知らぬ者のために、";
+	mes "ノコノコと時間移動までして";
+	mes "助けようとしたほどだ。";
+	unittalk "サクライ : ここでお前を殺してはその意味が失われる。ゆえに今回は見逃すことにする。お前は見知らぬ者のために、ノコノコと時間移動までして助けようとしたほどだ。";
 	next;
-	mes "[�T�N���C]";
-	mes "�����Ɛ��E��m��A���̐���";
-	mes "�s�𗝂ȗ��ɐ�]���邪�����B";
-	mes "�����Đl�̗̖͂��͂�������";
-	mes "��]�������c�c���O�̌���";
-	mes "�����A�z����₷��قǊÔ��Ȗ���";
-	mes "�Ȃ邾�낤�B";
-	unittalk "�T�N���C : �����Ɛ��E��m��A���̐��̕s�𗝂ȗ��ɐ�]���邪�����B�����Đl�̗̖͂��͂���������]�������c�c���O�̌��͂����A�z����₷��قǊÔ��Ȗ��ƂȂ邾�낤�B";
+	mes "[サクライ]";
+	mes "もっと世界を知り、この世の";
+	mes "不条理な理に絶望するがいい。";
+	mes "そして人の力の無力さを感じ";
+	mes "絶望した時……お前の血は";
+	mes "さぞ、想像を絶するほど甘美な味と";
+	mes "なるだろう。";
+	unittalk "サクライ : もっと世界を知り、この世の不条理な理に絶望するがいい。そして人の力の無力さを感じ絶望した時……お前の血はさぞ、想像を絶するほど甘美な味となるだろう。";
 	next;
-	mes "�]���ꂾ��������";
-	mes "�@�T�N���C�͉����Ȃ�";
-	mes "�@�ł̒��ɏ������B";
-	mes "�@���̎p�ɍ��������A";
-	mes "�@��l�̕P����낤�Ƃ���";
-	mes "�@�߉q���̖ʉe�͂Ȃ������c�c�]";
+	mes "‐それだけいうと";
+	mes "　サクライは音もなく";
+	mes "　闇の中に消えた。";
+	mes "　その姿に国を愛し、";
+	mes "　一人の姫を守ろうとした";
+	mes "　近衛兵の面影はなかった……‐";
 	close2;
-	hideonnpc getmdnpcname("���Â��߂̒j#dk");
+	hideonnpc getmdnpcname("黒づくめの男#dk");
 	hideoffnpc getmdnpcname("#dk_tb");
 	hideoffnpc getmdnpcname("#dk_sv");
 	hideoffnpc getmdnpcname("#dk_tv");
@@ -1992,7 +1992,7 @@ OnKilled7:
 OnStart:
 OnTimer3000:
 	initnpctimer;
-	emotion 9,getmdnpcname("���Â��߂̒j#dk");
+	emotion 9,getmdnpcname("黒づくめの男#dk");
 	end;
 }
 
@@ -2002,7 +2002,7 @@ OnStart:
 	initnpctimer;
 	end;
 OnTimer3000:
-	unittalk "�D������ : ���͊��ӂ��Ă��܂��B�M���ɉ�����Ƃ��c�c�B";
+	unittalk "優しい声 : 私は感謝しています。貴方に会えたことを……。";
 	end;
 OnTimer8000:
 	donpcevent getmdnpcname("#dk_sv")+ "::OnTalk1";
@@ -2024,107 +2024,107 @@ OnTimer28000:
 	hideonnpc getmdnpcname("#dk_tb");
 	hideonnpc getmdnpcname("#dk_sv");
 	hideonnpc getmdnpcname("#dk_tv");
-	announce "�]���ӂ̕��i���c�ݎn�߂��B���Ԃ���o�Ȃ���΂Ȃ�Ȃ��悤���]",0x9,0xffff00,0x190,20,0,0;
-	misceffect 35,getmdnpcname("�S��̉��{�o��");
-	hideoffnpc getmdnpcname("�S��̉��{�o��");
-	hideoffnpc getmdnpcname("����#dk11");
+	announce "‐周辺の風景が歪み始めた。狭間から出なければならないようだ‐",0x9,0xffff00,0x190,20,0,0;
+	misceffect 35,getmdnpcname("亡霊の王宮出口");
+	hideoffnpc getmdnpcname("亡霊の王宮出口");
+	hideoffnpc getmdnpcname("国王#dk11");
 	end;
 }
 
 1@spa.gat,198,43,1	script	#dk_sv	844,{
 	end;
 OnTalk1:
-	unittalk "�Ⴂ�j�̐� : �����S���������B���ꂩ��͂����ƁA�P�l�̖T�ɂ���܂��B������l�ɂ͂��܂���c�c�B";
+	unittalk "若い男の声 : ご安心ください。これからはずっと、姫様の傍におります。もう一人にはしません……。";
 	end;
 OnTalk2:
-	unittalk "�Ⴂ�j�̐� : �Ă���ɂ͋y�΂Ȃ��B��x���킵���_���Y�����̂��B";
+	unittalk "若い男の声 : 案ずるには及ばない。一度交わした契約を忘れるものか。";
 	end;
 OnTalk3:
-	unittalk "�Ⴂ�j�̐� : �䂪���̓T�N���C�B�䂪������߂�ߖY���ȁB�ĂсA����������܂łȁc�c�B";
+	unittalk "若い男の声 : 我が名はサクライ。我が名をゆめゆめ忘れるな。再び、相見える日までな……。";
 	end;
 }
 
 1@spa.gat,196,41,1	script	#dk_tv	844,{
 	end;
 OnTalk1:
-	unittalk "��̐� : �Y���ȁA�T�N���C�B���ƌ��킵�����̌_����B";
+	unittalk "謎の声 : 忘れるな、サクライ。私と交わした血の契約を。";
 	end;
 OnTalk2:
-	unittalk "��̐� : ���𖞑������錌��������܂ŁA�M�l�̍��͎��̃��m���B�N�N�N�N�N�N�c�c�B";
+	unittalk "謎の声 : 私を満足させる血を見つけるまで、貴様の魂は私のモノだ。クククククク……。";
 	end;
 }
 
-1@spa.gat,204,29,1	script	����#dk11	965,{
+1@spa.gat,204,29,1	script	国王#dk11	965,{
 	if(checkquest(114765)&0x8){
-		mes "[����]";
-		mes "�ǂ����T�N���C��";
-		mes "�~���Ă���Ă���c�c�B";
+		mes "[国王]";
+		mes "どうかサクライを";
+		mes "救ってやってくれ……。";
 		close;
 	}
-	mes "[����]";
-	mes "�c�c������ʁB";
-	mes "���̋L���͎��̂��̂Ȃ̂��H";
-	mes "����Ƃ��A�T�N���C�̋L���ɂ��";
-	mes "�`�����낤���ĕۂ��Ă���";
-	mes "�����̑��݂Ȃ̂��c�c�B";
+	mes "[国王]";
+	mes "……分からぬ。";
+	mes "この記憶は私のものなのか？";
+	mes "それとも、サクライの記憶により";
+	mes "形をかろうじて保っている";
+	mes "だけの存在なのか……。";
 	next;
-	mes "[����]";
-	mes "���̑��݂ɂȂ��Ă���";
-	mes "�����L�����Ă�����̂��A";
-	mes "�����g�̋L���Ȃ̂��A";
-	mes "�T�N���C���g�̋L���Ȃ̂��c�c";
-	mes "�L�����������Ă���A";
-	mes "������Ȃ���ԂȂ̂��c�c�B";
+	mes "[国王]";
+	mes "この存在になってから";
+	mes "私が記憶しているものが、";
+	mes "私自身の記憶なのか、";
+	mes "サクライ自身の記憶なのか……";
+	mes "記憶が混濁しており、";
+	mes "分からない状態なのだ……。";
 	next;
-	mes "[����]";
-	mes "����ł�������͂������";
-	mes "�����邱�Ƃ�����Ƃ���΁A";
-	mes "�T�N���C�̌��t��M�����A";
-	mes "�䂪���̖{�S���������Ȃ�����";
-	mes "�Ԕ����́A���̒N�ł��Ȃ�";
-	mes "�����g�Ƃ������Ƃ��B";
+	mes "[国王]";
+	mes "それでも一つだけはっきりと";
+	mes "言えることがあるとすれば、";
+	mes "サクライの言葉を信じず、";
+	mes "我が娘の本心を見抜けなかった";
+	mes "間抜けは、他の誰でもなく";
+	mes "私自身ということだ。";
 	next;
-	mes "[����]";
-	mes "���̂悤�Ȑg�䂦�A";
-	mes "�����o���鎖�͌����Ă��܂����A";
-	mes "�����ł��T�N���C�Ɖ䂪���ւ�";
-	mes "�ߖłڂ��ɂȂ�̂ł���΁A";
-	mes "���͂͐ɂ��܂Ȃ��c�c�B";
+	mes "[国王]";
+	mes "このような身ゆえ、";
+	mes "私が出来る事は限られてしまうが、";
+	mes "少しでもサクライと我が娘への";
+	mes "罪滅ぼしになるのであれば、";
+	mes "協力は惜しまない……。";
 	next;
-	mes "[����]";
-	mes "���̋�ԂŐ����c�����Ƃ�������";
-	mes "���Ȃ����r�Ɋo��������ƌ�����B";
-	mes "���ށA�ǂ����T�N���C���~���Ă���B";
+	mes "[国王]";
+	mes "この空間で生き残ったという事は";
+	mes "そなたも腕に覚えがあると見える。";
+	mes "頼む、どうかサクライを救ってくれ。";
 	next;
-	mes "[����]";
-	mes "�����o���鎖�͏��Ȃ��B";
-	mes "�S�΂���ł͂��邪";
-	mes "�䂪���ɕۊǂ���Ă���";
-	mes "�����������悤�B";
+	mes "[国王]";
+	mes "私が出来る事は少ない。";
+	mes "心ばかりではあるが";
+	mes "我が国に保管されていた";
+	mes "装備を授けよう。";
 	next;
-	mes "[����]";
-	mes "����ƁA���̋L���̌��Ђ�";
-	mes "�����Ă����Ȃ����B";
+	mes "[国王]";
+	mes "それと、この記憶の欠片を";
+	mes "持っていきなさい。";
 	next;
-	mes "[����]";
-	mes "���̋L���̌��Ђɂ�";
-	mes "�L���̗͂��h���Ă���B";
-	mes "�L���̌��Ђ��g�p���邱�Ƃ�";
-	mes "�䂪���ɕۊǂ���Ă���������";
-	mes "���B���鎖���ł��邾�낤�B";
+	mes "[国王]";
+	mes "この記憶の欠片には";
+	mes "記憶の力が宿っている。";
+	mes "記憶の欠片を使用することで";
+	mes "我が国に保管されていた装備を";
+	mes "精錬する事ができるだろう。";
 	next;
-	mes "[����]";
-	mes "���āA���ꂪ���Ȃ��Ɏ����鑕�����B";
-	mes "�����A�䂪���Ɏc���ꂽ��͏��Ȃ��B";
-	mes "�K���������Ȃ���^ff0000�~��������";
-	mes "�n����Ƃ͌���Ȃ�^000000�̂��B";
-	mes "���܂�ȁc�c�B";
+	mes "[国王]";
+	mes "さて、これがそなたに授ける装備だ。";
+	mes "ただ、我が国に残された宝は少ない。";
+	mes "必ずしもそなたが^ff0000欲しい物が";
+	mes "渡せるとは限らない^000000のだ。";
+	mes "すまんな……。";
 	next;
-	mes "[����]";
-	mes "����ł͂��̑�����";
-	mes "���Ȃ��Ɏ����悤�B";
-	mes "�ǂ����T�N���C��";
-	mes "�~���Ă���Ă���c�c�B";
+	mes "[国王]";
+	mes "それではこの装備を";
+	mes "そなたに授けよう。";
+	mes "どうかサクライを";
+	mes "救ってやってくれ……。";
 	if(!checkquest(114755)) {
 		setquest 114755;
 		compquest 114755;
@@ -2152,10 +2152,10 @@ OnTalk2:
 	close;
 }
 
-1@spa.gat,210,28,0	script	�S��̉��{�o��	45,2,2,{
-	mes "�]�c�c�i�F���h�炢�ł���B";
-	mes "�@���낻��L���̒��̐��E����";
-	mes "�@����鎞�Ԃ̂悤���]";
+1@spa.gat,210,28,0	script	亡霊の王宮出口	45,2,2,{
+	mes "‐……景色が揺らいでいる。";
+	mes "　そろそろ記憶の中の世界から";
+	mes "　離れる時間のようだ‐";
 	close2;
 	warp "dali02.gat",46,129;
 	end;

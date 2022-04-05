@@ -1,602 +1,602 @@
 //====================================================================
 //Ragnarok Online Assassin jobchange script
 //
-//�@�� CHANGE_AS
-//	1	�M�L����
-//	2	�M�L�����N���A
-//	3	���Z�����P
-//	4	���Z�����Q
-//	5	�ŏI�����N���A
+//　■ CHANGE_AS
+//	1	筆記試験
+//	2	筆記試験クリア
+//	3	実技試験１
+//	4	実技試験２
+//	5	最終試験クリア
 //
-//�@�� $@as_tester$ -> ���Z����҂̃L������
-//     @as_step     -> �M���h�}�X�^�[�����p
+//　■ $@as_tester$ -> 実技挑戦者のキャラ名
+//     @as_step     -> ギルドマスター部屋用
 //====================================================================
 
 //==========================================
-// ������t����ѓ]�E
+// 試験受付および転職
 //------------------------------------------
 
-in_moc_16.gat,19,33,4	script	�M���h��	55,{
+in_moc_16.gat,19,33,4	script	ギルド員	55,{
 	if(Upper == UPPER_HIGH) {
-		mes "[�E�C�����]";
-		mes "�ق��c�c�M�l�́c�c";
-		mes "�����Ȃ�ʋC�z�������Ă���ȁB";
+		mes "[殺気を放つ者]";
+		mes "ほう……貴様は……";
+		mes "ただならぬ気配を持っているな。";
 		next;
-		mes "[�E�C�����]";
-		mes "���������������邻�̋C�z�c�c";
-		mes "�C�ɐH���ȁB";
-		mes "�A��I";
+		mes "[殺気を放つ者]";
+		mes "しかし私を圧するその気配……";
+		mes "気に食わんな。";
+		mes "帰れ！";
 		close;
 	}
 	if(Job == Job_Thief && SkillPoint) {
-		mes "[�E�C�����]";
-		mes "�X�L���|�C���g���c���Ă��Ă�";
-		mes "�]�E�͂ł��Ȃ��B";
-		mes "�F����ė���悤�ɁB";
+		mes "[殺気を放つ者]";
+		mes "スキルポイントが残っていては";
+		mes "転職はできない。";
+		mes "皆消費して来るように。";
 		close;
 	}
-	mes "[�E�C�����]";
-	mes "��c";
-	mes "�������ɗ����H";
-	mes "�c�c";
+	mes "[殺気を放つ者]";
+	mes "ん…";
+	mes "何をしに来た？";
+	mes "……";
 	next;
 	if(Job == Job_Novice) {
-		mes "[�E�C�����]";
-		mes "�����c�m�[�r�X�B";
-		mes "�����͋M�l�̂悤�Ȏ҂����ėǂ�";
-		mes "�ꏊ�ł͂Ȃ��B��������c";
+		mes "[殺気を放つ者]";
+		mes "おい…ノービス。";
+		mes "ここは貴様のような者が来て良い";
+		mes "場所ではない。立ち去れ…";
 		close;
 	}
 	if(getbaseclass(Class) == CLASS_AL) {
-		mes "[�E�C�����]";
-		mes "�_�Ɏd����҂��������ɗ����H";
-		mes "�����ɂ͋M�l�炪���߂�_�͂��Ȃ��B";
-		mes "�A�邪�����c";
+		mes "[殺気を放つ者]";
+		mes "神に仕える者が何をしに来た？";
+		mes "ここには貴様らが求める神はいない。";
+		mes "帰るがいい…";
 		close;
 	}
 	if(Job == Job_Assassin) {
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "����c";
-		mes "������ " +strcharinfo(0)+ " ���������c";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "うん…";
+		mes "たしか " +strcharinfo(0)+ " だったか…";
 		next;
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "�������������A���̓M���h�����";
-		mes "�d���̗v���͖����B";
-		mes "�C����ς�ł��Ă���B����΂��B";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "せっかくだが、今はギルドからの";
+		mes "仕事の要請は無い。";
+		mes "修練を積んでいてくれ。さらばだ。";
 		close;
 	}
 	if(Job != Job_Thief) {
-		mes "[�E�C�����]";
-		mes "�����d���ł������Ă����̂��H";
-		mes "�����łȂ���Α��X�ɗ�������c";
+		mes "[殺気を放つ者]";
+		mes "何か仕事でも持ってきたのか？";
+		mes "そうでなければ早々に立ち去れ…";
 		close;
 	}
 	if(JobLevel < 40) {
-		mes "[�E�C�����]";
-		mes "����c�M�l�͂܂��C���s�����ȁB";
-		mes "�A�T�V���ɂȂ肽���̂Ȃ�A���Ȃ��Ƃ�";
-		mes "�V�[�t�Ƃ��Ă̏C����������x�ς�";
-		mes "�Ȃ���΂Ȃ�Ȃ��B";
+		mes "[殺気を放つ者]";
+		mes "うん…貴様はまだ修練不足だな。";
+		mes "アサシンになりたいのなら、少なくとも";
+		mes "シーフとしての修練をある程度積ま";
+		mes "なければならない。";
 		next;
-		mes "[�E�C�����]";
-		mes "����ł͂���Ȃ�C����ς��";
-		mes "����߂��Ă���̂��c";
-		mes "���m�ȓ]�E�����́AJobLv40�ȏ�";
-		mes "�ł��邱�ƁB";
+		mes "[殺気を放つ者]";
+		mes "それではさらなる修練を積んで";
+		mes "から戻ってくるのだ…";
+		mes "正確な転職条件は、JobLv40以上";
+		mes "であること。";
 		close;
 	}
 	switch(CHANGE_AS) {
 	default:
-		mes "[�E�C�����]";
-		mes "����c�V�[�t���c";
-		mes "�V�[�t�Ƃ��đ����̏C����ς񂾂ȁB";
-		mes "�ǂ����H�A�T�V���ɓ]�E��������";
-		mes "�Ȃ����H";
+		mes "[殺気を放つ者]";
+		mes "うん…シーフか…";
+		mes "シーフとして相当の修練を積んだな。";
+		mes "どうだ？アサシンに転職するつもりは";
+		mes "ないか？";
 		next;
-		switch (select("���̂��߂ɗ���","�]�E�����́H","��������")) {
+		switch (select("そのために来た","転職条件は？","遠慮する")) {
 			case 1:
-				mes "[�E�C�����]";
-				mes "���ށc�v���Ԃ�̋q���B";
-				mes "�悵�A��t�ɑ����Ă�낤�B";
-				hideoffnpc "�M���h�֌W��#assassin1";
-				hideonnpc "�M���h�֌W��#assassin2";
+				mes "[殺気を放つ者]";
+				mes "うむ…久しぶりの客だ。";
+				mes "よし、受付に送ってやろう。";
+				hideoffnpc "ギルド関係者#assassin1";
+				hideonnpc "ギルド関係者#assassin2";
 				close2;
 				savepoint "in_moc_16.gat",15,12;
 				warp "in_moc_16.gat",19,76;
 				end;
 			case 2:
-				mes "[�E�C�����]";
-				mes "�]�E�����́c";
-				mes "��D�V�[�t�ł��邱��";
-				mes "��DJobLv��40�ȏ�ł��邱��";
-				mes "�O�D�M���h����̃e�X�g�Ƀp�X���邱��";
-				mes "�̎O���B";
+				mes "[殺気を放つ者]";
+				mes "転職条件は…";
+				mes "一．シーフであること";
+				mes "二．JobLvが40以上であること";
+				mes "三．ギルドからのテストにパスすること";
+				mes "の三つだ。";
 				next;
-				mes "[�E�C�����]";
-				mes "�V�[�t�ł��鐅���ȏ�̏C����";
-				mes "�ς񂾎҂Ȃ�A�e�X�g���ȒP��";
-				mes "�N���A���邱�Ƃ��\���B";
+				mes "[殺気を放つ者]";
+				mes "シーフである水準以上の修練を";
+				mes "積んだ者なら、テストを簡単に";
+				mes "クリアすることも可能だ。";
 				close;
 			case 3:
-				mes "[�E�C�����]";
-				mes "�������c�d���Ȃ��c";
+				mes "[殺気を放つ者]";
+				mes "そうか…仕方ない…";
 				close;
 		}
 	case 4:
-		mes "[�E�C�����]";
-		mes "�C�����������c";
-		mes "HP��SP���񕜂��Ă��B";
-		mes "�͂��o���Ă�����x���킵��B";
+		mes "[殺気を放つ者]";
+		mes "気を失ったか…";
+		mes "HPとSPを回復してやる。";
+		mes "力を出してもう一度挑戦しろ。";
 		percentheal 100,100;
 		next;
-		mes "[�E�C�����]";
-		mes "�Ƃ���Łc�C�₷��قǂ̂��̂��H";
-		mes "���̒���ł��ǂ����c";
-		mes "�܂������ł͂Ȃ����H";
+		mes "[殺気を放つ者]";
+		mes "ところで…気絶するほどのものか？";
+		mes "次の挑戦でもどうか…";
+		mes "まだ無理ではないか？";
 		next;
-		if(select("���v��","�������c���̋@��ɂ���")==1) {
-			mes "[�E�C�����]";
-			mes "�ӂށc�������c";
-			mes "�撣���Ă݂�B";
+		if(select("大丈夫だ","無理だ…次の機会にする")==1) {
+			mes "[殺気を放つ者]";
+			mes "ふむ…そうか…";
+			mes "頑張ってみろ。";
 			close2;
 			warp "in_moc_16.gat",19,76;
 		}
 		else {
-			mes "[�E�C�����]";
-			mes "�������c���ł��҂��Ă���B";
+			mes "[殺気を放つ者]";
+			mes "そうか…いつでも待っている。";
 			next;
-			mes "[�E�C�����]";
-			mes "�����c�X�ɖ߂�����Z�[�u��";
-			mes "�Y��Ȃ��悤�ɁB";
-			mes "����c�c";
+			mes "[殺気を放つ者]";
+			mes "ああ…街に戻ったらセーブを";
+			mes "忘れないように。";
+			mes "じゃ……";
 			close2;
 		}
 		set CHANGE_AS,2;
 		end;
 	case 5:
 		if(countitem(1008) < 1) {
-			mes "[�x�e�����A�T�V���E�q���C]";
-			mes "�ށc�c���𕷂��Ԉ������";
-			mes "�u���ȐS�v�������Ă��Ȃ��ȁB";
+			mes "[ベテランアサシン・ヒュイ]";
+			mes "む……何を聞き間違ったか";
+			mes "「非情な心」を持っていないな。";
 			next;
-			mes "[�x�e�����A�T�V���E�q���C]";
-			mes "�ǂ����ŗ��Ƃ��ł��������c�H";
+			mes "[ベテランアサシン・ヒュイ]";
+			mes "どこかで落としでもしたか…？";
 			next;
-			mes "[�x�e�����A�T�V���E�q���C]";
-			mes "�M���h�}�X�^�[���C�Â��Ȃ�������";
-			mes "���������Ă����I";
+			mes "[ベテランアサシン・ヒュイ]";
+			mes "ギルドマスターが気づかないうちに";
+			mes "早く見つけてこい！";
 			next;
-			mes "[�x�e�����A�T�V���E�q���C]";
-			mes "���������炷���ɖ߂��Ă�����I";
+			mes "[ベテランアサシン・ヒュイ]";
+			mes "見つかったらすぐに戻ってこいよ！";
 			close;
 		}
 		if(SkillPoint) {
-			mes "[�E�C�����]";
-			mes "�X�L���|�C���g���c���Ă��Ă�";
-			mes "�]�E�͂ł��Ȃ��B";
-			mes "�F����ė���悤�ɁB";
+			mes "[殺気を放つ者]";
+			mes "スキルポイントが残っていては";
+			mes "転職はできない。";
+			mes "皆消費して来るように。";
 			close;
 		}
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "�c���߂łƂ��B���悢��]�E���B";
-		mes "���̑O�Ɂc�M���h�}�X�^�[��";
-		mes "���߂����̂����Ă݂悤���c";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "…おめでとう。いよいよ転職だ。";
+		mes "その前に…ギルドマスターが";
+		mes "求めたものを見てみようか…";
 		next;
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "�c�c�c";
-		mes "�c�c";
-		mes "�c";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "………";
+		mes "……";
+		mes "…";
 		next;
 		delitem 1008,1;
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "���ށA�ǂ��ȁB";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "うむ、良いな。";
 		next;
 		unequip;
 		jobchange Job_Assassin;
 		set CHANGE_AS,0;
-		mes "[�x�e�����A�T�V���E�q���C]";
-		mes "�悵�I�A�T�V���Ƃ��Ă̓�������";
-		mes "�����I��Ɏ����̐M�O���т�";
-		mes "�����̂����B";
-		mes "���܂ɂ͗V�тɂ����B�]�E���j�����B";
+		mes "[ベテランアサシン・ヒュイ]";
+		mes "よし！アサシンとしての道を歩んで";
+		mes "いけ！常に自分の信念を貫き";
+		mes "生くのだぞ。";
+		mes "たまには遊びにこい。転職を祝おう。";
 		close;
 	}
 }
 
 
 //==========================================
-// �ꎟ�����i�M�L�����j
+// 一次試験（筆記試験）
 //------------------------------------------
 
-in_moc_16.gat,21,91,2	script	�M���h�֌W��#assassin1	730,1,1,{
+in_moc_16.gat,21,91,2	script	ギルド関係者#assassin1	730,1,1,{
 	end;
 OnTouch:
-	mes "[�A�T�V���E�J�C]";
-	mes "����c�H";
+	mes "[アサシン・カイ]";
+	mes "うん…？";
 	close2;
 	misceffect 16;
 	hideonnpc;
-	hideoffnpc "�M���h�֌W��#assassin2";
+	hideoffnpc "ギルド関係者#assassin2";
 	end;
 }
 
-in_moc_16.gat,25,90,2	script	�M���h�֌W��#assassin2	730,2,2,{
-	mes "[�A�T�V���E�J�C]";
-	mes "�܂��߂��ɗ����B���͐l�̊������";
-	mes "�b���悤�ɂ��Ă���B";
-	mes "���͊�̌����Ȃ��Ƃ���Řb��";
-	mes "�����̂����łˁc";
-	mes "���Ɍ�납��b����������̂�";
-	mes "�������c";
+in_moc_16.gat,25,90,2	script	ギルド関係者#assassin2	730,2,2,{
+	mes "[アサシン・カイ]";
+	mes "まあ近くに来い。俺は人の顔を見て";
+	mes "話すようにしている。";
+	mes "俺は顔の見えないところで話を";
+	mes "されるのが苦手でね…";
+	mes "特に後ろから話しかけられるのは";
+	mes "嫌いだ…";
 	close;
 OnTouch:
 	if(CHANGE_AS != 1) {
-		mes "[�A�T�V���E�J�C]";
-		mes "�����c�]�E���ɗ����z���c";
-		mes "�N�����߂Â��Ɣ�����̂��K����";
-		mes "�Ȃ��Ă��Ăˁc";
-		mes "�ӂށc�����܂ł���J�������ȁB";
+		mes "[アサシン・カイ]";
+		mes "何だ…転職しに来た奴か…";
+		mes "誰かが近づくと避けるのが習慣に";
+		mes "なっていてね…";
+		mes "ふむ…ここまでご苦労だったな。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�A�T�V���ւ̓]�E�ɂ���";
-		mes "���������̂��H";
+		mes "[アサシン・カイ]";
+		mes "アサシンへの転職について";
+		mes "聞きたいのか？";
 		next;
-		if(select("������","����")==1) {
-			mes "[�A�T�V���E�J�C]";
-			mes "�悵�A�����ɓ]�E�\��������낤���B";
-			mes "�����̗p���ɖ��O��JobLv��";
-			mes "�����悤�ɁB";
+		if(select("そうだ","いや")==1) {
+			mes "[アサシン・カイ]";
+			mes "よし、すぐに転職申込書を作ろうか。";
+			mes "そこの用紙に名前とJobLvを";
+			mes "書くように。";
 		}
 		else {
-			mes "[�A�T�V���E�J�C]";
-			mes "�ӂށc";
-			mes "�c�c";
+			mes "[アサシン・カイ]";
+			mes "ふむ…";
+			mes "……";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�{���ɁH";
-			mes "�c�c";
+			mes "[アサシン・カイ]";
+			mes "本当に？";
+			mes "……";
 			next;
-			if(select("�͂�","����A�]�E������")==1) {
-				mes "[�A�T�V���E�J�C]";
-				mes "�Ȃ�o�čs���񂾁B";
+			if(select("はい","いや、転職したい")==1) {
+				mes "[アサシン・カイ]";
+				mes "なら出て行くんだ。";
 				close2;
 				warp "moc_fild16.gat",206,229;
 				end;
 			}
-			mes "[�A�T�V���E�J�C]";
-			mes "�c�c";
-			mes "�c�c��₩����!?";
-			mes "�Ƃɂ����c�]�E����񂾂ȁH";
+			mes "[アサシン・カイ]";
+			mes "……";
+			mes "……冷やかしか!?";
+			mes "とにかく…転職するんだな？";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�����̓]�E�\������";
-			mes "���O��JobLv�������Ă���B";
+			mes "[アサシン・カイ]";
+			mes "そこの転職申込書に";
+			mes "名前とJobLvを書いてくれ。";
 		}
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�ǂ�c " +strcharinfo(0)+ " �Ɓc";
-		mes "JobLv�� " +JobLevel+ " �c";
+		mes "[アサシン・カイ]";
+		mes "どれ… " +strcharinfo(0)+ " と…";
+		mes "JobLvは " +JobLevel+ " …";
 		next;
 		if(JobLevel >= 50) {
-			mes "[�A�T�V���E�J�C]";
-			mes "�ȂɁI 50 ���ƁI";
-			mes "���O�c�����ȏC����ς񂾂ȁI";
-			mes "�v�X�Ɏg����z�������ė�����";
-			mes "��w������Ԃ��낤�c";
-			mes "���A�Ƃ茾���B���������悤�ɁB";
+			mes "[アサシン・カイ]";
+			mes "なに！ 50 だと！";
+			mes "お前…相当な修練を積んだな！";
+			mes "久々に使える奴が入って来たと";
+			mes "上層部が喜ぶだろう…";
+			mes "あ、独り言だ。早く書くように。";
 		}
 		else {
-			mes "[�A�T�V���E�J�C]";
-			mes "�ӂށc�������ȁB";
-			mes "�ŋߊF�����������Ăˁc";
-			mes "���A�Ƃ茾���B�Y��Ă���B";
+			mes "[アサシン・カイ]";
+			mes "ふむ…賢明だな。";
+			mes "最近皆根性が無くてね…";
+			mes "あ、独り言だ。忘れてくれ。";
 		}
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c�c";
+		mes "[アサシン・カイ]";
+		mes "……";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�\�����ւ̍쐬���I��������B";
-		mes "�ł͂�������ɁB";
+		mes "[アサシン・カイ]";
+		mes "申込書への作成が終わったか。";
+		mes "ではそれを私に。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�悵�A�s���B�K�^���F��B";
+		mes "[アサシン・カイ]";
+		mes "よし、行け。幸運を祈る。";
 		close2;
 		warp "in_moc_16.gat",19,144;
 		misceffect 16;
 		hideonnpc;
-		hideoffnpc "�M���h�֌W��#assassin1";
+		hideoffnpc "ギルド関係者#assassin1";
 		end;
 	}
-	mes "[�A�T�V���E�J�C]";
-	mes "�����c�����͏I��������H";
+	mes "[アサシン・カイ]";
+	mes "おう…試験は終わったか？";
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "��c�M�L�ŗ��������āH";
-	mes "�Ղ��c�������c�͂͂͂́I";
+	mes "[アサシン・カイ]";
+	mes "ん…筆記で落ちたって？";
+	mes "ぷっ…くくく…はははは！";
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "����c�v���Ԃ�ɖʔ���" +(Sex? "�z": "�o����");
-	mes "���Ǝv���Ă��c";
-	mes "�A�T�V���ɂȂ肽���Ȃ�A���ꂭ�炢";
-	mes "�m���Ăē��R���낤�H�������c";
+	mes "[アサシン・カイ]";
+	mes "いや…久しぶりに面白い" +(Sex? "奴": "姉さん");
+	mes "だと思ってさ…";
+	mes "アサシンになりたいなら、あれくらい";
+	mes "知ってて当然だろう？くくく…";
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "�c�͕͂͂����ɂ��c";
+	mes "[アサシン・カイ]";
+	mes "…ははは腹が痛い…";
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "�����c�΂��Ă�ꍇ����Ȃ��ȁB";
-	mes "�ӂӁc�q���g�ł������悤���H";
+	mes "[アサシン・カイ]";
+	mes "くく…笑ってる場合じゃないな。";
+	mes "ふふ…ヒントでもあげようか？";
 	next;
-	switch (select("�͂�","�΂��ĂȂ��Ńq���g������","�q���g�Ȃǂ���Ȃ�")) {
+	switch (select("はい","笑ってないでヒントをくれ","ヒントなどいらない")) {
 	case 1:
-		mes "[�A�T�V���E�J�C]";
-		mes "�Ձc�͂͂͂͂́I";
-		mes "����͂��΂����c";
-		mes "�����ɂ��c���܂�΂킹�Ȃ��ł���I";
+		mes "[アサシン・カイ]";
+		mes "ぷ…ははははは！";
+		mes "これはお笑いだ…";
+		mes "腹が痛い…あまり笑わせないでくれ！";
 		next;
-		mes "[����������]";
-		mes "�c������";
+		mes "[名も無き者]";
+		mes "…くくく";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�͂͂́c�����m��Ȃ��҂�";
-		mes "�����Ԃ�Ɛ}�X�����ˁc";
+		mes "[アサシン・カイ]";
+		mes "ははは…名も知らない者が";
+		mes "ずいぶんと図々しいね…";
 		next;
-		mes "[����������]";
-		mes "�c�c";
+		mes "[名も無き者]";
+		mes "……";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�q���g���c";
+		mes "[アサシン・カイ]";
+		mes "ヒントか…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c";
+		mes "[アサシン・カイ]";
+		mes "…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c�c";
+		mes "[アサシン・カイ]";
+		mes "……";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c�c�c�c";
+		mes "[アサシン・カイ]";
+		mes "…………";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c�c�c�c�c�c";
+		mes "[アサシン・カイ]";
+		mes "………………";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�c�c�c�c�c�c�c�c";
+		mes "[アサシン・カイ]";
+		mes "……………………";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�₾�ˁB";
+		mes "[アサシン・カイ]";
+		mes "やだね。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�������c�u�͂��v�����āc";
+		mes "[アサシン・カイ]";
+		mes "くくく…「はい」だって…";
 		close;
 	case 2:
-		mes "[�A�T�V���E�J�C]";
-		mes "�ӂށc�Ȃ�ӂ�\���Ă����Ȃ����c";
-		mes "�܂��c�������ɒN�ł��߂��͂������B";
-		mes "�΂��Ă��܂�B";
-		mes "�����v���C�h�͎̂Ă�Ȃ�B";
+		mes "[アサシン・カイ]";
+		mes "ふむ…なりふり構っていられないか…";
+		mes "まあ…たしかに誰でも過ちはおかす。";
+		mes "笑ってすまん。";
+		mes "だがプライドは捨てるなよ。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�q���g�͏������B";
-		mes "�A�T�V���ɂ��āA�ꌾ�񌾘b���B";
+		mes "[アサシン・カイ]";
+		mes "ヒントは少しだ。";
+		mes "アサシンについて、一言二言話す。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "����艴�B�́A�v���C�h������";
-		mes "����΂Ȃ�Ȃ��B";
-		mes "�u�����̉�v�A�T�V�����Ƃ����ȁB";
-		mes "�����͉��B�̏o�Ԃ�����c";
-		mes "���͂��̎���҂������B";
+		mes "[アサシン・カイ]";
+		mes "何より俺達は、プライドを守らな";
+		mes "ければならない。";
+		mes "「砂漠の牙」アサシンだというな。";
+		mes "いつかは俺達の出番が来る…";
+		mes "今はその時を待つだけだ。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�����āc���ɂ͋߂��ɐe�����l�Ԃ�";
-		mes "���҂����邪�A���B�͎d���������Ă�";
-		mes "�ǓƂŐ�����B";
-		mes "�����A�N�̗��l��F�B���Ђǂ��ڂ�";
-		mes "�����A�������邱�ƂɂȂ�����c";
+		mes "[アサシン・カイ]";
+		mes "そして…中には近くに親しい人間を";
+		mes "持つ者もいるが、俺達は仕事柄たいてい";
+		mes "孤独で生きる。";
+		mes "もし、君の恋人や友達がひどい目に";
+		mes "遭い、血を見ることになったら…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�����ĖY��邱�Ƃ͂ł��Ȃ����낤�B";
-		mes "���̏d�݂��ꐶ���������Ȃ����";
-		mes "�Ȃ�Ȃ��c";
+		mes "[アサシン・カイ]";
+		mes "決して忘れることはできないだろう。";
+		mes "その重みを一生負い生きなければ";
+		mes "ならない…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�����₵�����A�Ȃ̓�����ނ̂�����";
-		mes "������������Ȃ����낤�c";
-		mes "�����ʂ�u�Ȃ̓��v�Ȃ񂾁B";
+		mes "[アサシン・カイ]";
+		mes "少し寂しいが、己の道を歩むのだから";
+		mes "これもしかたないだろう…";
+		mes "文字通り「己の道」なんだ。";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "���������邱�Ƃ͂��ꂭ�炢���c";
+		mes "[アサシン・カイ]";
+		mes "俺が言えることはこれくらいか…";
 		close;
 	case 3:
-		mes "[�A�T�V���E�J�C]";
-		mes "���ށc";
+		mes "[アサシン・カイ]";
+		mes "うむ…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "���̐��_���B�v���C�h���̂Ă�悤��";
-		mes "���Ƃ����Ă͂Ȃ�Ȃ��B";
-		mes "���B�͒N���Ȃ�ƌ������ƁA";
-		mes "�u�����̉�v�Ƃ��Ẵv���C�h������B";
-		mes "�΂��Ă��܂Ȃ��c�����ɘl�т悤�c";
+		mes "[アサシン・カイ]";
+		mes "その精神だ。プライドを捨てるような";
+		mes "ことをしてはならない。";
+		mes "俺達は誰がなんと言おうと、";
+		mes "「砂漠の牙」としてのプライドがある。";
+		mes "笑ってすまない…正式に詫びよう…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�ŋ߂͂��܂�ɂ��������y��";
-		mes "�����Ăˁc�����̎d���Ɋւ���m����";
-		mes "�u���Ă����Ƃ��Ă��A�A�T�V���Ƃ��Ă�";
-		mes "�v���C�h��A���܂Őh�����ɓw�͂���";
-		mes "�L���͂ǂ��ւ����Ă��܂����̂��c";
+		mes "[アサシン・カイ]";
+		mes "最近はあまりにも腐った輩が";
+		mes "多くてね…自分の仕事に関する知識は";
+		mes "置いておくとしても、アサシンとしての";
+		mes "プライドや、今まで辛い時に努力した";
+		mes "記憶はどこへいってしまったのか…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "�܂������c";
+		mes "[アサシン・カイ]";
+		mes "まったく…";
 		next;
-		mes "[�A�T�V���E�J�C]";
-		mes "���񂽂̂ށB�A�T�V���ɂȂ��Ă�";
-		mes "�v���C�h�͐�΂Ɏ̂Ă�Ȃ�I";
+		mes "[アサシン・カイ]";
+		mes "是非たのむ。アサシンになっても";
+		mes "プライドは絶対に捨てるなよ！";
 		next;
-		if(select("�c��������","�c����")==2) {
-			mes "[�A�T�V���E�J�C]";
-			mes "�c���ꂾ�������Ă��킩��Ȃ����H";
+		if(select("…分かった","…嫌だ")==2) {
+			mes "[アサシン・カイ]";
+			mes "…これだけ言ってもわからないか？";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�v���C�h����邱�Ƃ�����Ȃ�";
-			mes "������ƂȂ̂��H";
+			mes "[アサシン・カイ]";
+			mes "プライドを守ることがそんなに";
+			mes "難しいことなのか？";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���l�̌C���Ȃ߂錢�ɂȂ�Ƃ����̂��I";
+			mes "[アサシン・カイ]";
+			mes "他人の靴をなめる犬になるというのか！";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�o�čs���I�������ɂ��I";
-			mes "���O�̂悤�ȓz�̓A�T�V���ɂȂ�";
-			mes "���i�ȂǂȂ��I";
+			mes "[アサシン・カイ]";
+			mes "出て行け！今すぐにだ！";
+			mes "お前のような奴はアサシンになる";
+			mes "資格などない！";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�����!!!!!";
+			mes "[アサシン・カイ]";
+			mes "くわっ!!!!!";
 			close2;
 			warp "c_tower4.gat",64,76;
 			end;
 		}
-		mes "[�A�T�V���E�J�C]";
-		mes "���ށB���̐Â��ȕԎ��ɁA���ӂ�";
-		mes "���߂��Ă���ȁB";
-		mes "����ł͂������̃q���g��^����B";
+		mes "[アサシン・カイ]";
+		mes "うむ。その静かな返事に、決意が";
+		mes "込められているな。";
+		mes "それではいくつかのヒントを与える。";
 		break;
 	}
 	next;
 	switch(rand(3)) {
 		case 0:
-			mes "[�A�T�V���E�J�C]";
-			mes "�G���_�[�E�B���[�J�[�h���E������A";
-			mes "�����ɖ��p�t��ɔ���B";
-			mes "�z��͉��B�ɂ͗p�̖������̃J�[�h��";
-			mes "�~�����邾�낤�B������INT���グ��";
-			mes "���ʂ������Ă������c";
+			mes "[アサシン・カイ]";
+			mes "エルダーウィローカードを拾ったら、";
+			mes "直ちに魔術師らに売れ。";
+			mes "奴らは俺達には用の無いそのカードを";
+			mes "欲しがるだろう。たしかINTを上げる";
+			mes "効果を持っていたか…";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���B�́A�h��������b����ׂ����B";
-			mes "���܂ɁA���ɂ��d�����������āA���E��";
-			mes "�ǂ��Ȃ����낤�ɂ��̂܂܏C��������";
-			mes "�z������c�B�S��ł��g���Ă����";
-			mes "�����̂��c�B�Ƃɂ����w�����݂�����";
-			mes "�d�������͂��߂��B";
+			mes "[アサシン・カイ]";
+			mes "俺達は、防御より回避を鍛えるべきだ。";
+			mes "たまに、頭にも重い装備をして、視界も";
+			mes "良くないだろうにそのまま修練をする";
+			mes "奴がいる…。心眼でも使っていると";
+			mes "いうのか…。とにかくヘルムみたいな";
+			mes "重い装備はだめだ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "��𗦑����X�L�����K������ƁA";
-			mes "��i�K�オ�邲�Ƃɉ�𗦂��R";
-			mes "�㏸����B";
+			mes "[アサシン・カイ]";
+			mes "回避率増加スキルを習得すると、";
+			mes "一段階上がるごとに回避率が３";
+			mes "上昇する。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�O�̂��ߌ������c�J�^�[���n�񕐊�";
-			mes "(�W���}�_�n��/�W����/�J�^�[��)��";
-			mes "���葕���̕��킾�B";
+			mes "[アサシン・カイ]";
+			mes "念のため言うが…カタール系列武器";
+			mes "(ジャマダハル/ジュル/カタール)は";
+			mes "両手装備の武器だ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�����̊X�c���������ˁc";
-			mes "�����̋��̃����N�ɍs���Ȃ��Ȃ���";
-			mes "�����Ԃ�o������c";
-			mes "�V�[�t�������̂�������̂悤�����A";
-			mes "�C�������炩�Ȃ�̔N�����߂���";
-			mes "�����񂾂ȁc";
+			mes "[アサシン・カイ]";
+			mes "砂漠の街…懐かしいね…";
+			mes "俺も故郷のモロクに行かなくなって";
+			mes "ずいぶん経ったよ…";
+			mes "シーフだったのがつい昨日のようだが、";
+			mes "気がついたらかなりの年月が過ぎて";
+			mes "いたんだな…";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���������ƌ����΁A�V�[�t�̓]�E����";
-			mes "�̎��_��̔E�э��݁A�g�̖іԃL�m�R";
-			mes "�ƍg�̖уx�g�x�g�L�m�R�𓐂񂾎��c";
-			mes "����͂킭�킭�����ȁc";
+			mes "[アサシン・カイ]";
+			mes "懐かしいと言えば、シーフの転職試験";
+			mes "の時農場の忍び込み、紅の毛網キノコ";
+			mes "と紅の毛ベトベトキノコを盗んだ時…";
+			mes "あれはわくわくしたな…";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�����̓n�C�f�B���O��N���[�L���O��";
-			mes "���j���Ă���B�����Ƃ��̐G�o��";
-			mes "������̋��ꏊ��m��񂾂낤�ȁB";
+			mes "[アサシン・カイ]";
+			mes "昆虫はハイディングやクローキングを";
+			mes "見破ってくる。きっとあの触覚で";
+			mes "こちらの居場所を知るんだろうな。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�o�t�H���b�g�W���j�A�c�z�̃J�[�h";
-			mes "���ʂ�AGI+3��CRI+1�̂͂����B";
+			mes "[アサシン・カイ]";
+			mes "バフォメットジュニア…奴のカード";
+			mes "効果はAGI+3にCRI+1のはずだ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���B�A�T�V����AGI����ԗD��Ă��āA";
-			mes "�}�X�^�[�����Job���d�l��10��";
-			mes "�v���X�����B���ꂾ���������";
-			mes "�債�����̂��낤�B";
+			mes "[アサシン・カイ]";
+			mes "俺達アサシンはAGIが一番優れていて、";
+			mes "マスターすればJob加重値で10も";
+			mes "プラスされる。これだけ増えれば";
+			mes "大したものだろう。";
 			break;
 		case 1:
-			mes "[�A�T�V���E�J�C]";
-			mes "�s��������O�[���̋r�̍��́A";
-			mes "�O�[���̑����E���Ȃ킿�A���f�b�h";
-			mes "���������̂܂܎��B";
+			mes "[アサシン・カイ]";
+			mes "鋭く削ったグールの脚の骨は、";
+			mes "グールの属性・すなわちアンデッド";
+			mes "属性をそのまま持つ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���܂Ŏg���Ă�������͉��Ȃ̂��c";
-			mes "�_�}�X�J�X���H�X�e�B���b�g���H";
-			mes "�}�C���S�[�V�����H�c";
-			mes "������Ȃ���Ύ����̎���悭����";
-			mes "���Ƃ��c";
+			mes "[アサシン・カイ]";
+			mes "今まで使ってきた武器は何なのか…";
+			mes "ダマスカスか？スティレットか？";
+			mes "マインゴーシュか？…";
+			mes "分からなければ自分の手をよく見る";
+			mes "ことだ…";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�X���b�g�̑����J�^�[���́A";
-			mes "�f�U�[�g�E���t�������Ă���B";
-			mes "�悭�o���Ă����B";
+			mes "[アサシン・カイ]";
+			mes "スロットの多いカタールは、";
+			mes "デザートウルフが持っている。";
+			mes "よく覚えておけ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�X���b�g�̑����W�����́A";
-			mes "�y�̒��Ƀg���l�����@�郂���X�^�[��";
-			mes "�����Ă���B";
+			mes "[アサシン・カイ]";
+			mes "スロットの多いジュルは、";
+			mes "土の中にトンネルを掘るモンスターが";
+			mes "持っている。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���͊^����肾�B";
+			mes "[アサシン・カイ]";
+			mes "俺は蛙が苦手だ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�n���}�[�����S�u�����́A������";
-			mes "�n�����������͂����c�B";
-			mes "�n�����͉Α����Ɏア�B";
+			mes "[アサシン・カイ]";
+			mes "ハンマーを持つゴブリンは、たしか";
+			mes "地属性だったはずだ…。";
+			mes "地属性は火属性に弱い。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���ꂽ����ɂ́A�b�艮�̖��O��";
-			mes "�����Ă���B";
+			mes "[アサシン・カイ]";
+			mes "作られた武器には、鍛冶屋の名前が";
+			mes "入っている。";
 			break;
 		case 2:
-			mes "[�A�T�V���E�J�C]";
-			mes "�܂��A�O�����g�D�[�X�̓J�^�[����";
-			mes "�����������݂̂Ɏg����X�L�����B";
+			mes "[アサシン・カイ]";
+			mes "まず、グリムトゥースはカタールを";
+			mes "装備した時のみに使えるスキルだ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�|�C�Y���Ƃ������t�́u�Łv�̈Ӗ����B";
+			mes "[アサシン・カイ]";
+			mes "ポイズンという言葉は「毒」の意味だ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�_�u���A�^�b�N�́A���̍U����";
-			mes "��x�؂�X�L�����B";
+			mes "[アサシン・カイ]";
+			mes "ダブルアタックは、一回の攻撃で";
+			mes "二度切るスキルだ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "���b�h�u���b�h�͉Α����ŁA";
-			mes "�u���[�W�F���X�g�[���̓A�T�V���ɂ�";
-			mes "�֌W�̂Ȃ��΂��B";
+			mes "[アサシン・カイ]";
+			mes "レッドブラッドは火属性で、";
+			mes "ブルージェムストーンはアサシンには";
+			mes "関係のない石だ。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�G���_�[�E�B���[�͖��p�t�̂�炪";
-			mes "�R�[���h�{���g�œ|���Ă���B";
-			mes "�܂萅�����͉Α����ɋ����B";
-			mes "�t�ɕ������ɂ͎ア�B";
+			mes "[アサシン・カイ]";
+			mes "エルダーウィローは魔術師のやつらが";
+			mes "コールドボルトで倒している。";
+			mes "つまり水属性は火属性に強い。";
+			mes "逆に風属性には弱い。";
 			next;
-			mes "[�A�T�V���E�J�C]";
-			mes "�N���[�L���O�͕Ǎہc�܂�P�Z��";
-			mes "����Ȃ���ΐl�ڂ𓐂ނ��Ƃ��\���B";
-			mes "����X�L�������g���Ȃ���΂ȁB";
+			mes "[アサシン・カイ]";
+			mes "クローキングは壁際…つまり１セル";
+			mes "離れなければ人目を盗むことが可能だ。";
+			mes "あるスキルさえ使われなければな。";
 			break;
 	}
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "�ӂ��c����Ȃ�ɑ�ς��ȁc";
-	mes "������c";
+	mes "[アサシン・カイ]";
+	mes "ふぅ…それなりに大変だな…";
+	mes "これも…";
 	next;
-	mes "[�A�T�V���E�J�C]";
-	mes "�����猾����悤�ȃq���g��";
-	mes "����ȂƂ��낾�B";
-	mes "�قƂ�ǑS�Ă̖��ɂ��Ęb�������A";
-	mes "�c��͂�����{�I�Ȃ��̂�����";
-	mes "���v���낤�B�ł́A";
-	mes "�u���������ҁv�̎������󂯂Ă����B";
+	mes "[アサシン・カイ]";
+	mes "俺から言えるようなヒントは";
+	mes "こんなところだ。";
+	mes "ほとんど全ての問題について話したが、";
+	mes "残りはごく基本的なものだから";
+	mes "大丈夫だろう。では、";
+	mes "「名も無き者」の試験を受けてこい。";
 	close2;
 	warp "in_moc_16.gat",19,144;
 	hideonnpc;
-	hideoffnpc "�M���h�֌W��#assassin1";
+	hideoffnpc "ギルド関係者#assassin1";
 	end;
 OnInit:
 	hideonnpc;
@@ -604,597 +604,597 @@ OnInit:
 }
 
 //==============================================================
-in_moc_16.gat,19,154,0	script	����������	139,8,2,{
+in_moc_16.gat,19,154,0	script	名も無き者	139,8,2,{
 	switch(CHANGE_AS) {
 	case 0:
-		mes "[����������]";
-		mes "��c���q���񂩁B";
-		mes "�N�X�N�X�c�T���Ă����ʂ���B";
-		mes "�{�N�͊��S�Ɏp���B���Ă��邩��ˁB";
-		mes "���̒��x�͊�{����H";
-		mes "�N�N�c";
+		mes "[名も無き者]";
+		mes "ん…お客さんか。";
+		mes "クスクス…探しても無駄だよ。";
+		mes "ボクは完全に姿を隠しているからね。";
+		mes "この程度は基本だよ？";
+		mes "クク…";
 		next;
-		mes "[����������]";
-		mes "����A���̖��O���������Ƃ����Ƃˁc";
-		mes "�c�L���n�n�I�L�~�A�]�T���ˁ[�B";
-		mes "�p�̌����Ȃ��{�N���|���Ȃ��̂����H";
-		mes "�ǂ��Őn���L�~�̔w����_���Ă��邩";
-		mes "�킩��Ȃ����Ă̂ɁB";
+		mes "[名も無き者]";
+		mes "うん、何故名前が無いかというとね…";
+		mes "…キャハハ！キミ、余裕だねー。";
+		mes "姿の見えないボクが怖くないのかい？";
+		mes "どこで刃がキミの背中を狙っているか";
+		mes "わからないってのに。";
 		next;
-		if(select("���낵���c","���̈ʂ̎E�C�Ȃ畽�C����")==1) {
-			mes "[����������]";
-			mes "�ӂ�A�L�~���܂�Ȃ��z���ȁc";
+		if(select("恐ろしい…","その位の殺気なら平気だね")==1) {
+			mes "[名も無き者]";
+			mes "ふん、キミもつまらない奴だな…";
 			next;
-			mes "[����������]";
-			mes "�܂�Ȃ��z�Ƃ͘b�������Ȃ��ȁB";
+			mes "[名も無き者]";
+			mes "つまらない奴とは話したくないな。";
 		}
 		else {
-			mes "[����������]";
-			mes "�ӂ�c�������B";
+			mes "[名も無き者]";
+			mes "ふん…そっか。";
 			next;
-			mes "[����������]";
-			mes "�c�c";
+			mes "[名も無き者]";
+			mes "……";
 			next;
-			mes "[����������]";
-			mes "�����ˁA�b�𑱂��悤���B";
+			mes "[名も無き者]";
+			mes "いいね、話を続けようか。";
 			next;
-			mes "[����������]";
-			mes "�{�N�͍��܂ŎE�C���J��Ԃ��Ă����B";
-			mes "��͊��S�Ɍ��h���Ă���c";
+			mes "[名も無き者]";
+			mes "ボクは今まで殺戮を繰り返してきた。";
+			mes "手は完全に血塗られている…";
 			next;
-			mes "[����������]";
-			mes "�{�N�̓M���h�̌��Ƃ��đ��݂���g�B";
-			mes "�E�C������̂̓{�N�����ǁA���߂�����";
-			mes "�̂̓M���h�B";
-			mes "�{�N�͂����̓���ɂ����Ȃ��B";
-			mes "�����疼�O�Ȃ�ėv��Ȃ����낤�H";
+			mes "[名も無き者]";
+			mes "ボクはギルドの剣として存在する身。";
+			mes "殺戮をするのはボクだけど、命令を下す";
+			mes "のはギルド。";
+			mes "ボクはただの道具にすぎない。";
+			mes "だから名前なんて要らないだろう？";
 			next;
-			mes "[����������]";
-			mes "�N�b�N�b�N�c";
-			mes "�Ƃɂ����A���̖͂����z���A�T�V����";
-			mes "�Ȃ���Ă��Ƃ��C�ɐH��Ȃ��񂾁B";
-			mes "������{�N�ɔF�߂��邭�炢";
-			mes "���ɂ������蓚���Ȃ���΂��߂���B";
+			mes "[名も無き者]";
+			mes "クックック…";
+			mes "とにかく、実力の無い奴がアサシンに";
+			mes "なるってことが気に食わないんだ。";
+			mes "だからボクに認められるくらい";
+			mes "問題にしっかり答えなければだめだよ。";
 			next;
-			mes "[����������]";
-			mes "�ӂӁc����ł͖����o���O��";
-			mes "���₪��������󂯂悤���B";
-			mes "�m�肽�����Ƃ𕷂��Ă݂ȁH";
+			mes "[名も無き者]";
+			mes "ふふ…それでは問題を出す前に";
+			mes "質問があったら受けようか。";
+			mes "知りたいことを聞いてみな？";
 		}
 		while(1) {
 			next;
-			switch (select("�X�L���ɂ���","�X�e�[�^�X�ɂ���","�����\����")) {
+			switch (select("スキルについて","ステータスについて","もう十分だ")) {
 			case 1:
-				mes "[����������]";
-				mes "����c�X�L�����c";
-				mes "�X�L���̌��ʂ͐��E�̗����";
-				mes "����ď������ς�邱�Ƃ����邪";
-				mes "��{�I�ȍ\���Ƃ������̂����݂���";
-				mes "���狳���Ă����悤���B";
+				mes "[名も無き者]";
+				mes "うん…スキルか…";
+				mes "スキルの効果は世界の流れに";
+				mes "よって少しずつ変わることがあるが";
+				mes "基本的な構造というものが存在する";
+				mes "から教えてあげようか。";
 				next;
-				mes "[����������]";
-				mes "�悸�u�J�^�[���C���v";
-				mes "�����ʂ�ÎE�p����̃J�^�[����";
-				mes "�g�p���鎞�̍U���͂��オ��B";
-				mes "�܂��A�C���x���グ��Ƃ��̍U���͂�";
-				mes "�オ���Ă����B";
+				mes "[名も無き者]";
+				mes "先ず「カタール修練」";
+				mes "文字通り暗殺用武器のカタールを";
+				mes "使用する時の攻撃力が上がる。";
+				mes "また、修練度を上げるとその攻撃力も";
+				mes "上がっていく。";
 				next;
-				mes "[����������]";
-				mes "�u����C���v�u�E��C���v";
-				mes "�A�T�V���́A�e��Ɉ�ÂA";
-				mes "���킹�ē�{�̕���𑕔�";
-				mes "���邱�Ƃ��ł���B";
-				mes "�������A�Ў�̎���舵����";
-				mes "����Ȃ�A�U���͂��ቺ����B";
+				mes "[名も無き者]";
+				mes "「左手修練」「右手修練」";
+				mes "アサシンは、各手に一つづつ、";
+				mes "合わせて二本の武器を装備";
+				mes "することができる。";
+				mes "しかし、片手の時より扱いが";
+				mes "難しくなり、攻撃力が低下する。";
 				next;
-				mes "[����������]";
-				mes "���̃X�L���͂���Ȍ��_��";
-				mes "�C���ɂ���ĕ₤���߂̂��̂��B";
-				mes "�u����C���v�́A�u�E��C���v��";
-				mes "�Q���x���܂ŏK������Ίo������";
-				mes "�悤�ɂȂ�B";
+				mes "[名も無き者]";
+				mes "このスキルはそんな欠点を";
+				mes "修練によって補うためのものだ。";
+				mes "「左手修練」は、「右手修練」を";
+				mes "２レベルまで習得すれば覚えられる";
+				mes "ようになる。";
 				next;
-				mes "[����������]";
-				mes "�u�\�j�b�N�u���[�v";
-				mes "�f�����W�A������U�����B";
-				mes "�����ȋZ�p��v���A�J�^�[���𑕔�";
-				mes "�����ꍇ�݂̂ł���B";
-				mes "����́u�J�^�[���C���v��4�i�K�܂�";
-				mes "�C������Ίo�����邾�낤�B";
+				mes "[名も無き者]";
+				mes "「ソニックブロー」";
+				mes "素早く８連撃する攻撃だ。";
+				mes "相当な技術を要し、カタールを装備";
+				mes "した場合のみできる。";
+				mes "これは「カタール修練」を4段階まで";
+				mes "修練すれば覚えられるだろう。";
 				next;
-				mes "[����������]";
-				mes "�u�O�����g�D�[�X�v";
-				mes "�����Ȃ��G�ɍU�����ꂽ��ǂ����H";
-				mes "���̋Z�̓V�[�t�ŏK���ł���u�n�C";
-				mes "�f�B���O�v�𗘗p���A�p���B������Ԃ�";
-				mes "�G���U�����邱�Ƃ��ł���B";
+				mes "[名も無き者]";
+				mes "「グリムトゥース」";
+				mes "見えない敵に攻撃されたらどうか？";
+				mes "この技はシーフで習得できる「ハイ";
+				mes "ディング」を利用し、姿を隠した状態で";
+				mes "敵を攻撃することができる。";
 				next;
-				mes "[����������]";
-				mes "�C���x�������قǉ����̓G�ɍU��";
-				mes "���邱�Ƃ��\���B";
-				mes "�����͈͌��ʂ�����A�����̓G��";
-				mes "����ɂ��Ȃ���΂Ȃ�Ȃ�����";
-				mes "�g���B�����܂ł��u��ނ������v";
-				mes "�����ǂȁB";
+				mes "[名も無き者]";
+				mes "修練度が高いほど遠くの敵に攻撃";
+				mes "することが可能だ。";
+				mes "多少範囲効果もあり、多数の敵を";
+				mes "相手にしなければならない時に";
+				mes "使う。あくまでも「やむをえず」";
+				mes "だけどな。";
 				next;
-				mes "[����������]";
-				mes "�A�T�V���ɂ����Ă̊�{�́u�ÎE�v";
-				mes "�ł����āA�O�����g�D�[�X�͎p��";
-				mes "�������Ƃ��O��ƂȂ�Z�Ȃ�����";
-				mes "���Ȃ��Ƃ��u�N���[�L���O�v�C����";
-				mes "�Q�K�v���B";
+				mes "[名も無き者]";
+				mes "アサシンにおいての基本は「暗殺」";
+				mes "であって、グリムトゥースは姿を";
+				mes "消すことが前提となる技なだけに";
+				mes "少なくとも「クローキング」修練が";
+				mes "２必要だ。";
 				next;
-				mes "[����������]";
-				mes "�u�N���[�L���O�v";
-				mes "�n�C�f�B���O�̃��x�����Q�ȏ��";
-				mes "������K���\�ɂȂ�B";
-				mes "���{�N������Ă���悤�ɁA�p��";
-				mes "�B�����܂܈ړ����ł���̂��B";
-				mes "��ɕǂ̑��ɋ��Ȃ���΂Ȃ�Ȃ����ˁB";
+				mes "[名も無き者]";
+				mes "「クローキング」";
+				mes "ハイディングのレベルが２以上で";
+				mes "これを習得可能になる。";
+				mes "今ボクがやっているように、姿を";
+				mes "隠したまま移動もできるのさ。";
+				mes "常に壁の側に居なければならないがね。";
 				next;
-				mes "[����������]";
-				mes "�u�G���`�����g�|�C�Y���v";
-				mes "����ɓł�h�肱�ދZ�p���B";
-				mes "�ł�h��������͓��R�u�ő����v";
-				mes "�������A���̏�ԂōU�������ꍇ";
-				mes "���m���ő���͓łɐN�����B";
+				mes "[名も無き者]";
+				mes "「エンチャントポイズン」";
+				mes "武器に毒を塗りこむ技術だ。";
+				mes "毒を塗った武器は当然「毒属性」";
+				mes "を持ち、その状態で攻撃した場合";
+				mes "一定確率で相手は毒に侵される。";
 				next;
-				mes "[����������]";
-				mes "����Ɂu�x�i���X�v���b�V���[�v��";
-				mes "�K������΁A����ɔ�Q��^����";
-				mes "���Ƃ��ł��邾�낤�B";
-				mes "�p�[�e�B�[�̕���ɂ��ł�h��";
-				mes "���Ƃ��ł����B";
-				mes "�L���Ɏg���Ă���B";
+				mes "[名も無き者]";
+				mes "さらに「ベナムスプラッシャー」を";
+				mes "習得すれば、さらに被害を与える";
+				mes "ことができるだろう。";
+				mes "パーティーの武器にも毒を塗る";
+				mes "ことができるよ。";
+				mes "有効に使ってくれ。";
 				next;
-				mes "[����������]";
-				mes "�u�|�C�Y�����A�N�g�v";
-				mes "�ő����U���ɑ΂��āA��x����";
-				mes "�����I�ɔ�������X�L�����B";
-				mes "�����ɂ����ł͂Ȃ��A���l�ɂ�";
-				mes "�g�p���邱�Ƃ��ł���B";
+				mes "[名も無き者]";
+				mes "「ポイズンリアクト」";
+				mes "毒属性攻撃に対して、一度だけ";
+				mes "自動的に反撃するスキルだ。";
+				mes "自分にだけではなく、他人にも";
+				mes "使用することができる。";
 				next;
-				mes "[����������]";
-				mes "�u�G���`�����g�|�C�Y���v�C����";
-				mes "�R�ȏ�ɂȂ�ΏK���\���B";
+				mes "[名も無き者]";
+				mes "「エンチャントポイズン」修練が";
+				mes "３以上になれば習得可能だ。";
 				next;
-				mes "[����������]";
-				mes "�u�x�i���_�X�g�v";
-				mes "���b�h�W�F���X�g�[���������";
-				mes "�w����n�тɓł��U�z����";
-				mes "�Z�p���B�C���x�������قǁA";
-				mes "�������Ԃ������Ȃ�B";
+				mes "[名も無き者]";
+				mes "「ベナムダスト」";
+				mes "レッドジェムストーンを消費して";
+				mes "指定一定地帯に毒を散布する";
+				mes "技術だ。修練度が高いほど、";
+				mes "汚染時間が長くなる。";
 				next;
-				mes "[����������]";
-				mes "�u�G���`�����g�|�C�Y���v�C���T";
-				mes "���x�����K�v���B";
+				mes "[名も無き者]";
+				mes "「エンチャントポイズン」修練５";
+				mes "レベルが必要だ。";
 				next;
-				mes "[����������]";
-				mes "�u�x�i���X�v���b�V���[�v";
-				mes "�G���ŏ�ԂɂȂ��Ă��āA����";
-				mes "HP���S����Ԃ���O���̓�";
-				mes "�ȉ��Ɍ����Ă��鎞�Ɏg�p�ł��A";
-				mes "�g�p����ƈ�莞�ԂőΏۂ�";
-				mes "��������B";
+				mes "[名も無き者]";
+				mes "「ベナムスプラッシャー」";
+				mes "敵が毒状態になっていて、かつ";
+				mes "HPが全快状態から三分の二";
+				mes "以下に減っている時に使用でき、";
+				mes "使用すると一定時間で対象が";
+				mes "爆発する。";
 				next;
-				mes "[����������]";
-				mes "���̎��A���ӂɂ��ł��T���U�炵�A";
-				mes "�߂��ɋ�����̂̓_���[�W���󂯂�B";
-				mes "�K��������A";
-				mes "�u�|�C�Y�����A�N�g�v�T�ȏ�A";
-				mes "�u�x�i���_�X�g�v�T�ȏ��";
-				mes "�K�����K�v�ƂȂ�B";
+				mes "[名も無き者]";
+				mes "その時、周辺にも毒を撒き散らし、";
+				mes "近くに居るものはダメージを受ける。";
+				mes "習得が難しく、";
+				mes "「ポイズンリアクト」５以上、";
+				mes "「ベナムダスト」５以上の";
+				mes "習得が必要となる。";
 				next;
-				mes "[����������]";
-				mes "�ȏオ�A�T�V���X�L���̑S�Ă��B";
+				mes "[名も無き者]";
+				mes "以上がアサシンスキルの全てだ。";
 				continue;
 			case 2:
-				mes "[����������]";
-				mes "����c�X�e�[�^�X�ˁc";
-				mes "�A�T�V���ɂƂ��Ĉ�ԏd�v�Ȕ\�͂�";
-				mes "�Ȃ�ƌ����Ă��r�q���c";
-				mes "���Ȃ킿AGI���낤�c";
+				mes "[名も無き者]";
+				mes "うん…ステータスね…";
+				mes "アサシンにとって一番重要な能力は";
+				mes "なんと言っても俊敏性…";
+				mes "すなわちAGIだろう…";
 				next;
-				mes "[����������]";
-				mes "�ÎE���ɓG�ɑ傫�Ȕ�Q��^����ɂ�";
-				mes "�u�́v - STR���������邱�Ƃ�";
-				mes "�ł��Ȃ����낤�B";
+				mes "[名も無き者]";
+				mes "暗殺時に敵に大きな被害を与えるには";
+				mes "「力」 - STRも無視することは";
+				mes "できないだろう。";
 				next;
-				mes "[����������]";
-				mes "�}�����m���ɓ˂��A�ł������I��";
-				mes "�G���d���߂�ɂ́u�N���e�B�J���v��";
-				mes "���߂邱�Ƃ����A�u�^�v���Ȃ킿";
-				mes "LUK�ɍ��E����邱�Ƃ��傫���B";
+				mes "[名も無き者]";
+				mes "急所を確実に突き、最も効率的に";
+				mes "敵を仕留めるには「クリティカル」を";
+				mes "決めることだが、「運」すなわち";
+				mes "LUKに左右されることが大きい。";
 				next;
-				mes "[����������]";
-				mes "��T�ɂǂ�Ȓl�������Ƃ͌����Ȃ���";
-				mes "�����͎Q�ƂɂȂ��������H";
-				mes "���Ƃ͎����̐g���Ȃ��Ċw��ł���B";
+				mes "[名も無き者]";
+				mes "一概にどんな値が強いとは言えないが";
+				mes "少しは参照になったかい？";
+				mes "あとは自分の身を以って学んでくれ。";
 				continue;
 			case 3:
-				mes "[����������]";
-				mes "���Ⴀ�e�X�g���n�߂��B";
-				mes "�I���肾�B";
+				mes "[名も無き者]";
+				mes "じゃあテストを始めるよ。";
+				mes "選択問題だ。";
 				next;
-				mes "[����������]";
-				mes "10�⒆ 9��ȏ㐳������΍��i�B";
-				mes "�ł��A�ǂ��ŊԈ�������͋����Ȃ��B";
+				mes "[名も無き者]";
+				mes "10問中 9問以上正解すれば合格。";
+				mes "でも、どこで間違ったかは教えない。";
 				next;
-				mes "[����������]";
-				mes "�ӂӁc�n�߂��c";
+				mes "[名も無き者]";
+				mes "ふふ…始めるよ…";
 				set CHANGE_AS,1;
 			}
-			break;	//while��������
+			break;	//while文抜ける
 		}
-		break;	//�ŏ���switch��������
+		break;	//最初のswitch文抜ける
 	case 1:
-		mes "[����������]";
-		mes "�ӂӁc�܂��������������̂����H";
+		mes "[名も無き者]";
+		mes "ふふ…まだ未練があったのかい？";
 		next;
-		mes "[����������]";
-		mes "��قǕ��a�ň��肵����炵��";
-		mes "���Ȃ悤���ˁc";
+		mes "[名も無き者]";
+		mes "よほど平和で安定した暮らしが";
+		mes "嫌なようだね…";
 		next;
-		mes "[����������]";
-		mes "�������i�ł��Ȃ��悤�Ȃ�A";
-		mes "�A�T�V���ɂȂ�̂Ȃ��";
-		mes "��߂��Ⴂ�ȁI";
+		mes "[名も無き者]";
+		mes "次も合格できないようなら、";
+		mes "アサシンになるのなんて";
+		mes "やめちゃいな！";
 		next;
-		if(select("���}�ȓD�_�Ő����Ă䂭","�]�E�e�X�g�𑱂��Ă���")==1) {
-			mes "[����������]";
-			mes "�Ӂc�������ˁB";
-			mes "�A�T�V���Ȃǖ������Ⴞ�߂��B";
-			mes "��ɌǓƂȐ��E�𖡂키���Ƃ�";
-			mes "�Ȃ邩��ˁB";
+		if(select("平凡な泥棒で生きてゆく","転職テストを続けてくれ")==1) {
+			mes "[名も無き者]";
+			mes "ふ…そうだね。";
+			mes "アサシンなど夢見ちゃだめだ。";
+			mes "常に孤独な世界を味わうことに";
+			mes "なるからね。";
 			next;
-			mes "[����������]";
-			mes "���A�O�ɂł悤�B";
-			mes "�����č����ɕ�����������";
-			mes "�A���Ăˁc";
+			mes "[名も無き者]";
+			mes "さ、外にでよう。";
+			mes "そして砂嵐に負けず歩いて";
+			mes "帰ってね…";
 			close2;
 			warp "moc_fild16.gat",206,241;
 			end;
 		}
-		mes "[����������]";
-		mes "�N�N�N�c";
-		mes "���̌ǓƂȗ��A�{�N����������";
-		mes "���Ă����B�n�ɉ�����鎞�܂łˁB";
+		mes "[名も無き者]";
+		mes "ククク…";
+		mes "その孤独な旅、ボクがいつも側で";
+		mes "見ているよ。地に横たわる時までね。";
 		next;
-		mes "[����������]";
-		mes "���Ⴀ�e�X�g���n�߂��B";
-		mes "�I���肾�B";
+		mes "[名も無き者]";
+		mes "じゃあテストを始めるよ。";
+		mes "選択問題だ。";
 		next;
-		mes "[����������]";
-		mes "10�⒆ 9��ȏ㐳������΍��i�B";
-		mes "�ł��A�ǂ��ŊԈ�������͋����Ȃ��B";
+		mes "[名も無き者]";
+		mes "10問中 9問以上正解すれば合格。";
+		mes "でも、どこで間違ったかは教えない。";
 		next;
-		mes "[����������]";
-		mes "���x�������i����悤�ɁB";
+		mes "[名も無き者]";
+		mes "今度こそ合格するように。";
 		break;
 	default:
-		mes "[����������]";
-		mes "�N�b�N�b�N�c";
+		mes "[名も無き者]";
+		mes "クックック…";
 		close;
 	}
-	//�M�L������������
+	//筆記試験ここから
 	next;
 	switch(rand(3)) {
 	case 0:
-		mes "[����������]";
-		mes "1. �V�[�t�̉�𗦑����X�L����";
-		mes "�ő�܂ŏC���������̑������l�́H";
+		mes "[名も無き者]";
+		mes "1. シーフの回避率増加スキルを";
+		mes "最大まで修練した時の増加数値は？";
 		next;
 		if(select("30","40","160","20")==1)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "2. ���̒��ŁA�n�C�f�B���O��";
-		mes "���j�郂���X�^�[�́H";
+		mes "[名も無き者]";
+		mes "2. 次の中で、ハイディングを";
+		mes "見破るモンスターは？";
 		next;
-		if(select("���[���e�[��","�A���h��","�}�~�[","�\���W���[�X�P���g��")==2)
+		if(select("ワームテール","アンドレ","マミー","ソルジャースケルトン")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "3. �A�T�V���̓񓁗���";
-		mes "�������邱�Ƃ��ł��Ȃ��g�ݍ��킹�́H";
+		mes "[名も無き者]";
+		mes "3. アサシンの二刀流で";
+		mes "装備することができない組み合わせは？";
 		next;
-		if(select("�}�C���S�[�V�� + �O���f�B�E�X","�X�e�B���b�g + �}�C���S�[�V��","�J�^�[�� + �}�C���S�[�V��","�_�}�X�J�X + �X�e�B���b�g")==3)
+		if(select("マインゴーシュ + グラディウス","スティレット + マインゴーシュ","カタール + マインゴーシュ","ダマスカス + スティレット")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "4. �V�[�t�]�E���Ɉ�ԋ߂��X�́H";
+		mes "[名も無き者]";
+		mes "4. シーフ転職所に一番近い街は？";
 		next;
-		if(select("�v�����e��","���e�B�G","�A���x���^","�����N")==4)
+		if(select("プロンテラ","ルティエ","アルベルタ","モロク")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "5. AGI�Ɗ֌W�Ȃ��J�[�h�́H";
+		mes "[名も無き者]";
+		mes "5. AGIと関係ないカードは？";
 		next;
-		if(select("�o�t�H���b�g�W���j�A�J�[�h","�E�B�X�p�[�J�[�h","����峃J�[�h","�Y��峃J�[�h")==2)
+		if(select("バフォメットジュニアカード","ウィスパーカード","雌盗蟲カード","雄盗蟲カード")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "6. �A�T�V�������̐E�Ƃ��";
-		mes "�����Ă���_���q�ׂ�B";
+		mes "[名も無き者]";
+		mes "6. アサシンが他の職業より";
+		mes "長けている点を述べろ。";
 		next;
-		if(select("�����ꂽ�̏���","�����ꂽ���Z��","�����ꂽ�_���X��","�����ꂽ����")==4)
+		if(select("すぐれた歌唱力","すぐれた演技力","すぐれたダンス力","すぐれた回避力")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "7. JobLv50�̎��A�A�T�V����";
-		mes "����AGI���d�l�́H";
+		mes "[名も無き者]";
+		mes "7. JobLv50の時、アサシンが";
+		mes "得るAGI加重値は？";
 		next;
 		if(select("7","8","9","10")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "8. �A�T�V���������ł��Ȃ�";
-		mes "�A�C�e���́H";
+		mes "[名も無き者]";
+		mes "8. アサシンが装備できない";
+		mes "アイテムは？";
 		next;
-		if(select("�V���N���[�u","�w����","�u�[�c","�u���[�`")==2)
+		if(select("シルクローブ","ヘルム","ブーツ","ブローチ")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "9. �m�[�r�X���V�[�t��";
-		mes "�]�E����ەK�v�Ȃ��̂��́H";
+		mes "[名も無き者]";
+		mes "9. ノービスがシーフに";
+		mes "転職する際必要なきのこは？";
 		next;
-		if(select("�g�̖уx�g�x�g�L�m�R","�Ԗуx�g�x�g�L�m�R","�g�̖іԃL�m�R","��уV�C�^�P")==3)
+		if(select("紅の毛ベトベトキノコ","赤毛ベトベトキノコ","紅の毛網キノコ","朱毛シイタケ")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "10. ��r�I�A�T�V���ɂ�";
-		mes "�֌W�̂Ȃ��J�[�h�́H";
+		mes "[名も無き者]";
+		mes "10. 比較的アサシンには";
+		mes "関係のないカードは？";
 		next;
-		if(select("�E�B�X�p�[�J�[�h","�G���_�[�E�B���[�J�[�h","�\���W���[�X�P���g���J�[�h","�R�{���h�J�[�h")==2)
+		if(select("ウィスパーカード","エルダーウィローカード","ソルジャースケルトンカード","コボルドカード")==2)
 			set '@point,'@point+10;
 		break;
 	case 1:
-		mes "[����������]";
-		mes "1. �X���b�g�̑����J�^�[����";
-		mes "�ǂ̃����X�^�[�����ɓ��邩�B";
+		mes "[名も無き者]";
+		mes "1. スロットの多いカタールは";
+		mes "どのモンスターから手に入るか。";
 		next;
-		if(select("���","�y�R�y�R","�f�U�[�g�E���t","�݊�R�{���h")==3)
+		if(select("盗蟲","ペコペコ","デザートウルフ","鈍器コボルド")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "2. �X���b�g�̑����W������";
-		mes "�ǂ̃����X�^�[�����ɓ��邩�B";
+		mes "[名も無き者]";
+		mes "2. スロットの多いジュルは";
+		mes "どのモンスターから手に入るか。";
 		next;
-		if(select("�}�[�e�B��","�f�U�[�g�E���t","�}���I�l�b�g","�~�X�g")==1)
+		if(select("マーティン","デザートウルフ","マリオネット","ミスト")==1)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "3. ��������𐻑����邱�Ƃ�";
-		mes "�ł���E�Ƃ́H";
+		mes "[名も無き者]";
+		mes "3. 属性武器を製造することが";
+		mes "できる職業は？";
 		next;
-		if(select("���l","�u���b�N�X�~�X","�V�[�t","�v���[�X�g")==2)
+		if(select("商人","ブラックスミス","シーフ","プリースト")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "4. ���̒��ŃJ�^�[���n�ł͂Ȃ�";
-		mes "����́H";
+		mes "[名も無き者]";
+		mes "4. 次の中でカタール系ではない";
+		mes "武器は？";
 		next;
-		if(select("�W���}�_�n��","�W����","�J�^�[��","�O���f�B�E�X")==4)
+		if(select("ジャマダハル","ジュル","カタール","グラディウス")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "5. �C�Y���[�h�_���W������";
-		mes "�啔���̃����X�^�[�̑����́H";
+		mes "[名も無き者]";
+		mes "5. イズルードダンジョンの";
+		mes "大部分のモンスターの属性は？";
 		next;
-		if(select("������","�Α���","������","�n����")==1)
+		if(select("水属性","火属性","風属性","地属性")==1)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "6. ���̒��ŃL���[�y�b�g�ɂ���";
-		mes "���Ƃ��ł��Ȃ������X�^�[�́H";
+		mes "[名も無き者]";
+		mes "6. 次の中でキューペットにする";
+		mes "ことができないモンスターは？";
 		next;
-		if(select("�|�|����","���b�_�t���b�O","�X���[�L�[","�|�C�Y���X�|�A")==2)
+		if(select("ポポリン","ロッダフロッグ","スモーキー","ポイズンスポア")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "7. �Α����Z�����ł����ʓI��";
-		mes "�����X�^�[��I�ׁB";
+		mes "[名も無き者]";
+		mes "7. 火属性短剣が最も効果的な";
+		mes "モンスターを選べ。";
 		next;
-		if(select("�Z���S�u����","���C�X�S�u����","���S�u����","�n���}�[�S�u����")==4)
+		if(select("短剣ゴブリン","メイスゴブリン","斧ゴブリン","ハンマーゴブリン")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "8. ���̒��Ŗ�������";
-		mes "�J�^�[����I�тȂ����B";
+		mes "[名も無き者]";
+		mes "8. 次の中で無属性の";
+		mes "カタールを選びなさい。";
 		next;
-		if(select("�����̃J�^�[��","����Ă邢�΂�̃J�^�[��","�f�X�i�C�t","���؂��")==4)
+		if(select("爆炎のカタール","尖ってるいばらのカタール","デスナイフ","裏切り者")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "9. �푰�̈Ⴄ�����X�^�[��I�ׁB";
+		mes "[名も無き者]";
+		mes "9. 種族の違うモンスターを選べ。";
 		next;
-		if(select("�|����","�}�X�^�[�����O","�S�[�X�g�����O","�X�|�A")==3)
+		if(select("ポリン","マスターリング","ゴーストリング","スポア")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "10. ���̒��ŃA���f�b�h�ł͂Ȃ�";
-		mes "�����X�^�[�͂ǂꂩ�B";
+		mes "[名も無き者]";
+		mes "10. 次の中でアンデッドではない";
+		mes "モンスターはどれか。";
 		next;
-		if(select("�h���C�N","���K���h��","�X�|�A","�J�[���b�c�o�[�O")==3)
+		if(select("ドレイク","メガロドン","スポア","カーリッツバーグ")==3)
 			set '@point,'@point+10;
 		break;
 	case 2:
-		mes "[����������]";
-		mes "1. �O�����g�D�[�X���K������̂�";
-		mes "�K�v�łȂ��X�L���́H";
+		mes "[名も無き者]";
+		mes "1. グリムトゥースを習得するのに";
+		mes "必要でないスキルは？";
 		next;
-		if(select("�N���[�L���O Lv 2","�\�j�b�N�u���[ Lv 5","�J�^�[���C�� Lv 4","�E��C�� Lv 2")==4)
+		if(select("クローキング Lv 2","ソニックブロー Lv 5","カタール修練 Lv 4","右手修練 Lv 2")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "2. �G���`�����g�|�C�Y���́A�����";
-		mes "������������X�L�����B";
-		mes "���̒����炻�̑�����I�ׁB";
+		mes "[名も無き者]";
+		mes "2. エンチャントポイズンは、武器に";
+		mes "属性を加えるスキルだ。";
+		mes "次の中からその属性を選べ。";
 		next;
-		if(select("�ő���","�n����","�ő���","������")==1)
+		if(select("毒属性","地属性","闇属性","風属性")==1)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "3. �E��C��Lv4�̌��ʂ́H";
+		mes "[名も無き者]";
+		mes "3. 右手修練Lv4の効果は？";
 		next;
-		if(select("���~�����U���͂� 80% ��","���~�����U���͂� 90% ��","�U���͂� 90% ����","�U���͂� 108% ����")==2)
+		if(select("下降した攻撃力を 80% 回復","下降した攻撃力を 90% 回復","攻撃力を 90% 増加","攻撃力を 108% 増加")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "4. �x�i���_�X�g�ɕK�v��";
-		mes "�A�C�e���́H";
+		mes "[名も無き者]";
+		mes "4. ベナムダストに必要な";
+		mes "アイテムは？";
 		next;
-		if(select("���b�h�u���b�h","�u���[�W�F���X�g�[��","�C�G���[�W�F���X�g�[��","���b�h�W�F���X�g�[��")==4)
+		if(select("レッドブラッド","ブルージェムストーン","イエロージェムストーン","レッドジェムストーン")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "5. �G���`�����g�|�C�Y��Lv5�܂�";
-		mes "�C������ƏK�����\�ɂȂ�X�L���́H";
+		mes "[名も無き者]";
+		mes "5. エンチャントポイズンLv5まで";
+		mes "修練すると習得が可能になるスキルは？";
 		next;
-		if(select("�C���x�i��","�\�j�b�N�u���[","�x�i���X�v���b�V���[","�x�i���_�X�g")==4)
+		if(select("インベナム","ソニックブロー","ベナムスプラッシャー","ベナムダスト")==4)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "6. ���̒��Ől�̖ڂ𓐂��";
-		mes "�ړ����邱�Ƃ��ł���X�L���́H";
+		mes "[名も無き者]";
+		mes "6. 次の中で人の目を盗んで";
+		mes "移動することができるスキルは？";
 		next;
-		if(select("�n�C�f�B���O","�o�b�N�X�e�b�v","�N���[�L���O","���܂�")==3)
+		if(select("ハイディング","バックステップ","クローキング","砂まき")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "7. �x�i���X�v���b�V���[��";
-		mes "�g�p�����łȂ����̂́H";
+		mes "[名も無き者]";
+		mes "7. ベナムスプラッシャーの";
+		mes "使用条件でないものは？";
 		next;
-		if(select("�Ώۂ��łɂ������Ă��邱��","���b�h�W�F���X�g�[��","�Ώۂ�HP���S�̂�1/3�ȉ�")==1)
+		if(select("対象が毒にかかっていること","レッドジェムストーン","対象のHPが全体の1/3以下")==1)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "8. ���̒��ŁA�o�h���J�[�h";
-		mes "(�Α����Ώۂ�20%�ǉ��_���[�W)";
-		mes "���h��������ōU�����鎞�A���";
-		mes "���ʂ𔭊����郂���X�^�[��I�ׁB";
+		mes "[名も無き者]";
+		mes "8. 次の中で、バドンカード";
+		mes "(火属性対象に20%追加ダメージ)";
+		mes "を刺した武器で攻撃する時、一番";
+		mes "効果を発揮するモンスターを選べ。";
 		next;
-		if(select("�X�`�[���`�����`����","�f�r���`","�G���_�[�E�B���[","�o�t�H���b�g")==3)
+		if(select("スチールチョンチョン","デビルチ","エルダーウィロー","バフォメット")==3)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "9. �Z���Ń_�u���A�^�b�N������";
-		mes "���鎞�����SP�ʂ́H";
+		mes "[名も無き者]";
+		mes "9. 短剣でダブルアタックが発動";
+		mes "する時消費するSP量は？";
 		next;
 		if(select("15","0","10","54")==2)
 			set '@point,'@point+10;
-		mes "[����������]";
-		mes "10. �C�Y���[�h�_���W������";
-		mes "���ʓI�ȕ���͎��̂����ǂꂩ�B";
+		mes "[名も無き者]";
+		mes "10. イズルードダンジョンで";
+		mes "効果的な武器は次のうちどれか。";
 		next;
-		if(select("�E�B���h�}�C���S�[�V��","�A�C�X�}�C���S�[�V��","�A�[�X�}�C���S�[�V��","�t�@�C�A�}�C���S�[�V��")==1)
+		if(select("ウィンドマインゴーシュ","アイスマインゴーシュ","アースマインゴーシュ","ファイアマインゴーシュ")==1)
 			set '@point,'@point+10;
 		break;
 	}
-	mes "[����������]";
-	mes "�ǂ��������H���́B";
+	mes "[名も無き者]";
+	mes "どうだった？問題は。";
 	next;
-	mes "[����������]";
-	mes "���āc�_���́c";
-	mes '@point+ "�_�c";
+	mes "[名も無き者]";
+	mes "さて…点数は…";
+	mes '@point+ "点…";
 	if('@point < 90) {
-		mes "�s���i�B�׋�������Ȃ��ˁB";
+		mes "不合格。勉強が足りないね。";
 		next;
-		mes "[����������]";
-		mes "����Ȃ���ŃA�T�V���ɂȂ낤��";
-		mes "�v�����̂����H";
-		mes "�o�����Ă����ŁB";
+		mes "[名も無き者]";
+		mes "そんなもんでアサシンになろうと";
+		mes "思ったのかい？";
+		mes "出直しておいで。";
 		next;
-		mes "[����������]";
-		mes "�]�E�\�����̍쐬��S������";
-		mes "�u�J�C�v�ɋ����Ƃ��ˁB";
+		mes "[名も無き者]";
+		mes "転職申込書の作成を担当する";
+		mes "「カイ」に教わるとかね。";
 		close2;
 		warp "in_moc_16.gat",19,76;
 		end;
 	}
-	mes "�e�X�g�͍��i���B";
+	mes "テストは合格だ。";
 	next;
-	mes "[����������]";
-	mes "�܂����S����ȁB";
-	mes "�e�X�g�͂܂����邩��ˁB";
-	mes "���ɓ���Ύ��̃e�X�g��";
-	mes "�҂��Ă���B";
+	mes "[名も無き者]";
+	mes "まだ安心するな。";
+	mes "テストはまだあるからね。";
+	mes "奥に入れば次のテストが";
+	mes "待っている。";
 	set CHANGE_AS,2;
 	close;
 }
 
 
 //==========================================
-// �񎟎����i���Z�P�j
+// 二次試験（実技１）
 //------------------------------------------
 
-in_moc_16.gat,19,162,0	script	�o���J�f�[	139,3,1,{
+in_moc_16.gat,19,162,0	script	バルカデー	139,3,1,{
 	switch(CHANGE_AS) {
 	case 0:
 	case 1:
-		mes "[�o���J�f�[]";
-		mes "�e�X�g���󂯂Ă��Ȃ����B";
-		mes "��{�I�Ȓm���𖳎�����Ƃ́c";
+		mes "[バルカデー]";
+		mes "テストを受けてきなさい。";
+		mes "基本的な知識を無視するとは…";
 		close2;
 		warp "in_moc_16.gat",19,76;
 		end;
 	case 2:
-		mes "[�o���J�f�[]";
-		mes strcharinfo(0)+ "�c";
-		mes "�M�L�����͂悭�p�X�����c";
+		mes "[バルカデー]";
+		mes strcharinfo(0)+ "…";
+		mes "筆記試験はよくパスした…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "����c���̂܂ܓ]�E�����Ă�������";
-		mes "�Ƃ��낾���A��{��m�炸�ɐ����Ă���";
-		mes "�l�Ԃ����܂�ɂ������Ăˁc";
+		mes "[バルカデー]";
+		mes "うん…そのまま転職させてあげたい";
+		mes "ところだが、基本を知らずに生きている";
+		mes "人間があまりにも多くてね…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "����莄�B�͎����S�����˂�";
-		mes "�Ȃ�Ȃ��B�u�����̉�v�ł���";
-		mes "�A�T�V�����Ƃ����ˁc";
-		mes "�������B�̎��オ����B";
-		mes "����܂ł͂Ђ�����҂�������񂾁c";
+		mes "[バルカデー]";
+		mes "何より私達は自尊心を守らねば";
+		mes "ならない。「砂漠の牙」である";
+		mes "アサシンだというね…";
+		mes "いつか私達の時代が来る。";
+		mes "それまではひたすら待ち続けるんだ…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�ŋ߂��܂�ɂ����_�̕������z��";
-		mes "�����B";
+		mes "[バルカデー]";
+		mes "最近あまりにも精神の腐った奴が";
+		mes "多い。";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�A�T�V���Ƃ��Ă̎����S��A";
-		mes "�̂��Ă������낤��J�͂ǂ���";
-		mes "�Y�ꂽ�̂��c";
+		mes "[バルカデー]";
+		mes "アサシンとしての自尊心や、";
+		mes "昔してきただろう苦労はどこへ";
+		mes "忘れたのか…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "���������̂��c�c";
+		mes "[バルカデー]";
+		mes "困ったものだ……";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�����]�E������A�A�T�V���Ƃ��Ă�";
-		mes "�����S��Y��Ă͂Ȃ�Ȃ��B";
-		mes "�L�~�̎�ɂ�������ɐ����Ăˁc";
+		mes "[バルカデー]";
+		mes "もし転職したら、アサシンとしての";
+		mes "自尊心を忘れてはならない。";
+		mes "キミの手にした武器に誓ってね…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "����ł͎����̐������n�߂�B";
-		mes "�ÎE�̊�{�͐v���Ȕ��f�B";
+		mes "[バルカデー]";
+		mes "それでは試験の説明を始める。";
+		mes "暗殺の基本は迅速な判断。";
 		next;
-		mes "[�o���J�f�[]";
-		mes "���Ȃ킿�A�G�Ɩ����𑦍��ɔ���";
-		mes "���Ȃ���΂Ȃ�Ȃ��B";
-		mes "����āc";
+		mes "[バルカデー]";
+		mes "すなわち、敵と味方を即座に判別";
+		mes "しなければならない。";
+		mes "よって…";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�����̓��e�͑����̓G�̒���";
-		mes "����Ă���";
-		mes "�u�]�E�����p���{�v";
-		mes "�Ƃ������I��œ|���B";
+		mes "[バルカデー]";
+		mes "試験の内容は多くの敵の中に";
+		mes "紛れている";
+		mes "「転職試験用見本」";
+		mes "というやつを選んで倒せ。";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�u�]�E�����p���{�v�̐��͂U�́B";
-		mes "�����p�̓z����������";
-		mes "�C������񂾂ȁB";
-		mes "�~�X������������܂����߂��炾�B";
+		mes "[バルカデー]";
+		mes "「転職試験用見本」の数は６体。";
+		mes "似た姿の奴が多いから";
+		mes "気をつけるんだな。";
+		mes "ミスをおかしたらまた初めからだ。";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�T�����őҋ@���Ă���΁A";
-		mes "������ɑ����Ă������B";
+		mes "[バルカデー]";
+		mes "控え室で待機していれば、";
+		mes "試験場に送ってあげるよ。";
 		next;
-		mes "[�o���J�f�[]";
-		mes "�����͈�l���󂯂�̂������B";
-		mes "��ɓ������҂�����ꍇ�́A";
-		mes "���̎҂̎������I���܂őҋ@";
-		mes "���Ă��炤�B�����ˁB";
+		mes "[バルカデー]";
+		mes "試験は一人ずつ受けるのが原則。";
+		mes "先に入った者がいる場合は、";
+		mes "その者の試験が終わるまで待機";
+		mes "してもらう。いいね。";
 		close;
 	default:
-		mes "[�o���J�f�[]";
-		mes "���s���Ă����߂�ȁB";
-		mes "�܂��c�c�����Ԃ��͎̂��R�����B";
-		mes "�ǂ�����H";
+		mes "[バルカデー]";
+		mes "失敗しても諦めるな。";
+		mes "まあ……引き返すのは自由だが。";
+		mes "どうする？";
 		next;
-		if(select("�܂����ꂩ�炾","�]�E��������߂�")==1) {
-			mes "[�o���J�f�[]";
-			mes "�ӂӁc�c";
-			mes "������x������";
-			mes "�u�]�E�����p���{�v";
-			mes "���U�̓|���Ȃ���΂Ȃ�Ȃ��B";
-			mes "����ł͌������F��B";
+		if(select("まだこれからだ","転職をあきらめる")==1) {
+			mes "[バルカデー]";
+			mes "ふふ……";
+			mes "もう一度言うが";
+			mes "「転職試験用見本」";
+			mes "を６体倒さなければならない。";
+			mes "それでは健闘を祈る。";
 			close;
 		}
-		mes "[�o���J�f�[]";
-		mes "�������B";
-		mes "�悭�x��ł��痈�ȁB";
+		mes "[バルカデー]";
+		mes "そうか。";
+		mes "よく休んでから来な。";
 		close2;
 		warp "in_moc_16.gat",19,13;
 		end;
@@ -1202,16 +1202,16 @@ in_moc_16.gat,19,162,0	script	�o���J�f�[	139,3,1,{
 }
 
 //==============================================================
-in_moc_16.gat,21,165,2	script	�]�E�����ē���::AS_ChatRoom	725,{
+in_moc_16.gat,21,165,2	script	転職試験案内員::AS_ChatRoom	725,{
 	end;
 OnInit:
-	waitingroom "�]�E������T��",10,"AS_ChatRoom::OnStart",1;
+	waitingroom "転職試験場控室",10,"AS_ChatRoom::OnStart",1;
 	end;
 OnStart:
 	disablewaitingroomevent;
 	getwaitingpcid '@accid;
 	if(attachrid('@accid)) {
-		set $@as_tester$,strcharinfo(0);	//����҂̖��O
+		set $@as_tester$,strcharinfo(0);	//挑戦者の名前
 		set CHANGE_AS,3;
 		warp "in_moc_16.gat",66,151;
 		donpcevent "AS_Test2nd::OnStart";
@@ -1226,108 +1226,108 @@ in_moc_16.gat,0,0,0	script	AS_Test2nd	-1,{
 OnStart:
 	set 'count,6;
 	disablenpc "#AS_Warp";
-	monster "in_moc_16.gat",62,161,"�]�E�����p���{",1002,1,"AS_Test2nd::OnKillOK"; 
-	monster "in_moc_16.gat",85,169,"�]�E�����p���{",1063,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",88,152,"�]�E�����p���{",1002,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",90,143,"�]�E�����p���{",1113,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",74,167,"�]�E�����p���{",1031,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",77,173,"�]�E�����p���{",1002,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",62,161,"�]�E�����p�����X�^�[",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,169,"�]�E�����p�����X�^�[",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",79,174,"���Z�����p���{",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,156,"�]�E�����p�����X�^�[",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",74,171,"�]�E���������X�^�[",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",68,173,"�]�E�����p�_�~�[",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",65,158,"�퓬�����p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",60,158,"�]�E�����p���{",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",64,169,"�]�E�����̎��̌��{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",71,173,"�]�E�������{",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",77,172,"���Z�����p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",76,172,"�]�E�����p�T���v��",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",75,172,"�]�E�����p�����X�^�[",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",67,167,"���Z�����p���{",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,170,"�]�E�����p���{",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,171,"�]�E���{�p����",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,173,"���Z�����p���{",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,170,"�퓬���������X�^�[",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"�}�E�����p���{",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"�퓬�����p���{",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"�������{�E�ҐE",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"�]�E�������{",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",83,169,"�C�r���h���C�h",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,158,"�h�b�y���Q���K�[",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,157,"�]�E�������{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",64,159,"�퓬�����p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"�]�E�����p���{",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"�|��]�E�p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"���m�]�E�p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",83,148,"�D�_�]�E�p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",82,148,"�A�R���C�g�]�E�p���{",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",84,148,"���l�]�E�p���{",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",62,161,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK"; 
+	monster "in_moc_16.gat",85,169,"転職試験用見本",1063,1,"AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",88,152,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",90,143,"転職試験用見本",1113,1,"AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",74,167,"転職試験用見本",1031,1,"AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",77,173,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",62,161,"転職試験用モンスター",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,169,"転職試験用モンスター",1031,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",79,174,"実技試験用見本",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,156,"転職試験用モンスター",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",74,171,"転職試験モンスター",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",68,173,"転職試験用ダミー",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",65,158,"戦闘試験用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",60,158,"転職実験用見本",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",64,169,"転職試験の時の見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",71,173,"転職試験見本",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",77,172,"実技試験用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",76,172,"転職試験用サンプル",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",75,172,"転職試験用モンスター",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",67,167,"実技試験用見本",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,170,"転職実験用見本",1031,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,171,"転職見本用試験",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,173,"実技試験用見本",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,170,"戦闘試験モンスター",1031,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156,"見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156,"殉職試験用見本",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156,"戦闘試験用見本",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156,"試験見本勇者職",1113,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156,"転職試験見本",1031,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",83,169,"イビルドルイド",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,158,"ドッペルゲンガー",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,157,"転職試験見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",64,159,"戦闘準備用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159,"転職準備用見本",1063,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159,"弓手転職用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159,"剣士転職用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",83,148,"泥棒転職用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",82,148,"アコライト転職用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",84,148,"商人転職用見本",1002,1,"AS_Test2nd::OnKillNG";
 	initnpctimer;
 	end;
 OnKillOK:
 	set 'count,'count-1;
 	if('count) {
-		announce "�Ď���: �܂����c�撣��c",9;
+		announce "監視者: まだだ…頑張れ…",9;
 		end;
 	}
 	stopnpctimer;
-	announce "�Ď���: �悵�A�悭������c���i���I",9;
-	announce "���: ���W 87 137 ���̓]�E��ւ̔����J���܂���",9;
+	announce "監視者: よし、よくやった…合格だ！",9;
+	announce "門番: 座標 87 137 次の転職場への扉が開きました",9;
 	killmonster "in_moc_16.gat","All";
 	enablenpc "#AS_Warp";
-	initnpctimer "AS_Test3rd";	//�O�������p�^�C�}�[�n��
+	initnpctimer "AS_Test3rd";	//三次試験用タイマー始動
 	end;
 OnKillNG:
 	stopnpctimer;
-	announce "�Ď���: " +$@as_tester$+ " !! �~�X�������ȁA�߂��Ă����B",9;
+	announce "監視者: " +$@as_tester$+ " !! ミスをしたな、戻ってこい。",9;
 	areawarp "in_moc_16.gat",60,136,93,177,"in_moc_16.gat",19,161;
 	killmonster "in_moc_16.gat","All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 OnTimer1000:
-	announce "�Ď���: �����J�n��",9;
+	announce "監視者: 試験開始だ",9;
 	end;
 OnTimer2000:
-	announce "�Ď���: �������Ƃ���A�����X�^�[�̖��O���u�]�E�����p���{�v�Ƃ����z������|���I",9;
+	announce "監視者: 言ったとおり、モンスターの名前が「転職試験用見本」という奴だけを倒せ！",9;
 	end;
 OnTimer3000:
-	announce "�Ď���: �����̖ړI�́A���v�����m�ɑΏۂ𔻕ʂ��邱�Ƃ��B",9;
+	announce "監視者: 試験の目的は、より迅速正確に対象を判別することだ。",9;
 	end;
 OnTimer4000:
-	announce "�Ď���: ����ł́A�������Ԃ��R���^����B���Ԃ̌o�߂͂P�����Ƃɓ`����B",9;
+	announce "監視者: それでは、持ち時間を３分与える。時間の経過は１分ごとに伝える。",9;
 	end;
 OnTimer5000:
-	announce "�Ď���: �悵�c�X�^�[�g���B�c��R���I",9;
+	announce "監視者: よし…スタートだ。残り３分！",9;
 	end;
 OnTimer65000:
-	announce "�Ď���: �Q�����B�u�]�E�����p���{�v��|���I",9;
+	announce "監視者: ２分だ。「転職試験用見本」を倒せ！",9;
 	end;
 OnTimer125000:
-	announce "�Ď���: �c��P���I",9;
+	announce "監視者: 残り１分！",9;
 	end;
 OnTimer180000:
-	announce "�Ď���: �����I�� 5 �b�O",9;
+	announce "監視者: 試験終了 5 秒前",9;
 	end;
 OnTimer181000:
-	announce "�Ď���: �����I�� 4 �b�O",9;
+	announce "監視者: 試験終了 4 秒前",9;
 	end;
 OnTimer182000:
-	announce "�Ď���: - 3 -",9;
+	announce "監視者: - 3 -",9;
 	end;
 OnTimer183000:
-	announce "�Ď���: - 2 -",9;
+	announce "監視者: - 2 -",9;
 	end;
 OnTimer184000:
-	announce "�Ď���: - 1 -",9;
+	announce "監視者: - 1 -",9;
 	end;
 OnTimer185000:
-	announce "�Ď���: �I��",9;
+	announce "監視者: 終了",9;
 	end;
 OnTimer186000:
-	announce "�Ď���: ���ԂɂȂ������N���A�ł��Ȃ��������c�B�܂����撣��B",9;
+	announce "監視者: 時間になったがクリアできなかったか…。また次頑張れ。",9;
 	areawarp "in_moc_16.gat",60,136,93,177,"in_moc_16.gat",19,161;
 	end;
 OnTimer189000:
@@ -1348,7 +1348,7 @@ in_moc_16.gat,87,137,0	script	#AS_Warp	45,2,1,{
 
 //==============================================================
 in_moc_16.gat,68,158,0	script	#AS_Abyss	139,0,0,{
-	announce "�Ď���: " +$@as_tester$+ "�l�A���Ƃ����ɗ����܂����B",9;
+	announce "監視者: " +$@as_tester$+ "様、落とし穴に落ちました。",9;
 	warp "in_moc_16.gat",19,161;
 	stopnpctimer "AS_Test2nd";
 	killmonster "in_moc_16.gat","All";
@@ -1356,150 +1356,150 @@ in_moc_16.gat,68,158,0	script	#AS_Abyss	139,0,0,{
 	end;
 }
 
-in_moc_16.gat,68,159,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,69,158,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,69,159,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,68,159,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,69,158,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,69,159,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,64,162,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,64,163,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,65,162,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,65,163,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,64,162,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,64,163,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,65,162,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,65,163,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,62,168,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,62,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,63,168,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,63,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,62,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,62,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,63,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,63,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,66,170,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,66,171,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,67,170,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,67,171,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,66,170,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,66,171,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,67,170,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,67,171,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,64,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,64,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,65,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,65,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,64,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,64,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,65,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,65,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,72,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,72,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,73,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,73,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,72,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,72,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,73,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,73,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,72,167,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,1
-in_moc_16.gat,73,167,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,1
-in_moc_16.gat,72,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,73,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,72,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,1
+in_moc_16.gat,73,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,1
+in_moc_16.gat,72,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,73,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,78,168,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,78,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,79,168,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,79,169,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,78,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,78,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,79,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,79,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,81,172,0		duplicate(#AS_Abyss)	���Ƃ���	139,1,0
-in_moc_16.gat,81,173,0		duplicate(#AS_Abyss)	���Ƃ���	139,1,0
-in_moc_16.gat,83,172,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,83,173,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,81,172,0		duplicate(#AS_Abyss)	落とし穴	139,1,0
+in_moc_16.gat,81,173,0		duplicate(#AS_Abyss)	落とし穴	139,1,0
+in_moc_16.gat,83,172,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,83,173,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,88,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,88,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,89,174,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,89,175,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,88,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,88,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,89,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,89,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,86,166,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,86,167,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,166,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,167,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,86,166,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,166,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,90,164,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,90,165,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,91,164,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,91,165,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,90,164,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,90,165,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,91,164,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,91,165,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,86,160,0		duplicate(#AS_Abyss)	���Ƃ���	139,2,0
-in_moc_16.gat,86,161,0		duplicate(#AS_Abyss)	���Ƃ���	139,2,0
-in_moc_16.gat,89,160,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,89,161,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,86,160,0		duplicate(#AS_Abyss)	落とし穴	139,2,0
+in_moc_16.gat,86,161,0		duplicate(#AS_Abyss)	落とし穴	139,2,0
+in_moc_16.gat,89,160,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,89,161,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,86,154,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,86,155,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,154,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,155,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,86,154,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,155,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,154,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,155,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,84,150,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,84,151,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,85,150,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,85,151,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,84,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,84,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,85,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,85,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,90,150,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,90,151,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,91,150,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,91,151,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,90,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,90,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,91,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,91,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
-in_moc_16.gat,86,146,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,86,147,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,146,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
-in_moc_16.gat,87,147,0		duplicate(#AS_Abyss)	���Ƃ���	139,0,0
+in_moc_16.gat,86,146,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,147,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,146,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,87,147,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
 
 
 //==========================================
-// �O�������i���Z�Q�j
+// 三次試験（実技２）
 //------------------------------------------
 
-in_moc_16.gat,89,98,2	script	�_���e	118,5,1,{
+in_moc_16.gat,89,98,2	script	ダンテ	118,5,1,{
 	end;
 OnTouch:
 	if(CHANGE_AS != 4) {
-		mes "[�_���e]";
-		mes "���͂��̎��������Ă���";
-		mes "�u�_���e�v�Ƃ����B";
-		mes "���̎����Ō���̂́A���O��";
-		mes "���\�͂��B";
+		mes "[ダンテ]";
+		mes "私はこの試験を見ている";
+		mes "「ダンテ」という。";
+		mes "この試験で見るのは、お前の";
+		mes "回避能力だ。";
 		next;
-		mes "[�_���e]";
-		mes "�n�C�f�B���O��K�x�Ɏg��";
-		mes "���Ƃ�������Ă���B";
+		mes "[ダンテ]";
+		mes "ハイディングを適度に使う";
+		mes "ことも許されている。";
 		next;
-		mes "[�_���e]";
-		mes "�ړI�͔��Α��̓����́u�o���J�f�[�v";
-		mes "�̂Ƃ���ɍs�����ƁB";
-		mes "�����̃����X�^�[�̊Ԃ𔲂��āA";
-		mes "���������܂ōs���񂾁B";
-		mes "�|�����ɂȁB";
+		mes "[ダンテ]";
+		mes "目的は反対側の入口の「バルカデー」";
+		mes "のところに行くこと。";
+		mes "多くのモンスターの間を抜けて、";
+		mes "向こう側まで行くんだ。";
+		mes "倒さずにな。";
 		next;
-		mes "[�_���e]";
-		mes "�r���ŋC����������A�����o�����ꍇ��";
-		mes "�����֖߂��Ă��邱�ƂɂȂ�B";
-		mes "����ł͊J�n���B�������F��B";
+		mes "[ダンテ]";
+		mes "途中で気を失ったり、逃げ出した場合は";
+		mes "ここへ戻ってくることになる。";
+		mes "それでは開始だ。健闘を祈る。";
 		set CHANGE_AS,4;
 		donpcevent "AS_Test3rd::OnStart";
 		close;
 	}
-	mes "[�_���e]";
-	mes "����c�C���������݂������ȁB";
-	mes "�悵�A�񕜂��Ă��B";
+	mes "[ダンテ]";
+	mes "うん…気を失ったみたいだな。";
+	mes "よし、回復してやる。";
 	percentheal 100,100;
 	next;
-	mes "[�_���e]";
-	mes "�������A�C�������قǂ̂��̂��H";
-	mes "�܂��]�E�����݂�̂͂������A";
-	mes "�����Ȃ悤�Ȃ獡�̂����Ɍ����Ă���B";
+	mes "[ダンテ]";
+	mes "しかし、気を失うほどのものか？";
+	mes "また転職を試みるのはいいが、";
+	mes "無理なようなら今のうちに言ってくれ。";
 	next;
-	if(select("�Ē��킾","�܂������Ȃ悤���c")==1) {
-		mes "[�_���e]";
-		mes "�������撣���Ă���B";
-		mes "�o���J�f�[�͋߂��ɂ���͂����B";
+	if(select("再挑戦だ","まだ無理なようだ…")==1) {
+		mes "[ダンテ]";
+		mes "そうか頑張ってくれ。";
+		mes "バルカデーは近くにいるはずだ。";
 		close;
 	}
-	mes "[�_���e]";
-	mes "�������c����ł͂܂����̋@��ɁB";
+	mes "[ダンテ]";
+	mes "そうか…それではまた次の機会に。";
 	next;
-	mes "[�_���e]";
-	mes "�X�ɋA������L�^����̂�";
-	mes "�Y��Ȃ��悤�ɁB";
+	mes "[ダンテ]";
+	mes "街に帰ったら記録するのを";
+	mes "忘れないように。";
 	close2;
 	stopnpctimer "AS_Test3rd";
 	set CHANGE_AS,2;
-	announce "�_���e: " +$@as_tester$+ "���]�E��������߂��B���̎ғ���Ȃ����B",9;
+	announce "ダンテ: " +$@as_tester$+ "が転職をあきらめた。次の者入りなさい。",9;
 	warp "in_moc_16.gat",18,14;
 	killmonster "in_moc_16.gat","All";
 	enablewaitingroomevent "AS_ChatRoom";
@@ -1509,40 +1509,40 @@ OnTouch:
 //==============================================================
 in_moc_16.gat,0,0,0	script	AS_Test3rd	-1,{
 OnStart:
-	monster "in_moc_16.gat",81,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",82,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",83,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",84,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",85,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",86,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",87,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",88,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",89,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",90,77,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",75,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",77,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",81,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",83,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",85,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",90,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",92,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",94,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",98,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",100,56,"�}�~�[",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",76,62,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",76,65,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,62,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,65,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,62,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,65,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",99,62,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",99,65,"�q�h��",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",81,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",82,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",83,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",84,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",85,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",86,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",87,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",88,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",89,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",90,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",75,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",77,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",81,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",83,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",85,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",90,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",92,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",94,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",98,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",100,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",76,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",76,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",99,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",99,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
 	end;
 OnKilled:
-	announce "�_���e: �����X�^�[��|���Ă��܂�����",9;
-	announce "�_���e: �ŏ������蒼�����B",9;
+	announce "ダンテ: モンスターを倒してしまったら",9;
+	announce "ダンテ: 最初からやり直しだ。",9;
 	areawarp "in_moc_16.gat",64,46,111,105,"in_moc_16.gat",87,102;
 	killmonster "in_moc_16.gat","All";
 	enablewaitingroomevent "AS_ChatRoom";
@@ -1557,13 +1557,13 @@ OnTimer240000:
 }
 
 //==============================================================
-in_moc_16.gat,87,48,1	script	�o���J�f�[	725,2,2,{
+in_moc_16.gat,87,48,1	script	バルカデー	725,2,2,{
 	end;
 OnTouch:
 	killmonster "in_moc_16.gat","All";
-	mes "[�o���J�f�[]";
-	mes "�悵�A�����ȁI";
-	mes "���悢��ŏI�������B";
+	mes "[バルカデー]";
+	mes "よし、来たな！";
+	mes "いよいよ最終試験だ。";
 	close2;
 	stopnpctimer "AS_Test3rd";
 	set @as_step,0;
@@ -1574,499 +1574,499 @@ OnTouch:
 
 
 //==========================================
-// �ŏI����
+// 最終試験
 //------------------------------------------
 
-in_moc_16.gat,182,169,0	script	#���	45,1,1,{
+in_moc_16.gat,182,169,0	script	#門番	45,1,1,{
 	if(@as_step < 2) {
 		set @as_step,@as_step+1;
 		warp "in_moc_16.gat",181,183;
 		end;
 	}
-	announce "���: " +strcharinfo(0)+ "�l���M���h�}�X�^�[�̕����ɓ���܂���",9;
-	hideonnpc "�q���C#AS";
-	hideonnpc "�J�C#AS";
-	hideonnpc "����������#AS";
-	hideonnpc "�o���J�f�[#AS";
-	hideonnpc "�Ď���#AS";
-	hideonnpc "�_���e#AS";
-	hideonnpc "�⍲���}���r�b�c#AS";
+	announce "門番: " +strcharinfo(0)+ "様がギルドマスターの部屋に入りました",9;
+	hideonnpc "ヒュイ#AS";
+	hideonnpc "カイ#AS";
+	hideonnpc "名も無き者#AS";
+	hideonnpc "バルカデー#AS";
+	hideonnpc "監視者#AS";
+	hideonnpc "ダンテ#AS";
+	hideonnpc "補佐官マロビッツ#AS";
 	savepoint "in_moc_16.gat",167,110;
 	warp "SavePoint",0,0;
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,167,110,0	script	�A�T�V�����{�ē�	139,3,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�ӂށc�悭�����ȁB";
-	mes "�����́u�M���h�}�X�^�[�̕����v";
-	mes "�A�T�V���M���h�̍Ő[�����B";
+in_moc_16.gat,167,110,0	script	アサシン迷宮案内	139,3,1,{
+	mes "[ギルドマスター]";
+	mes "ふむ…よく来たな。";
+	mes "ここは「ギルドマスターの部屋」";
+	mes "アサシンギルドの最深部だ。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���̋��ꏊ���킩��Ȃ��悤�ɖ��{��";
-	mes "�Ȃ��Ă���B";
-	mes "�����Ď����ɂ��Ă����c";
-	mes "���̏��܂ŗ��Ăق����B";
-	mes "���܂ɐN���҂����邽�߂��̂悤��";
-	mes "����ɂ����B";
+	mes "[ギルドマスター]";
+	mes "私の居場所がわからないように迷宮に";
+	mes "なっている。";
+	mes "そして試験についてだが…";
+	mes "私の所まで来てほしい。";
+	mes "たまに侵入者があるためこのような";
+	mes "造りにした。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "����ł͂܂���ŉ���c";
+	mes "[ギルドマスター]";
+	mes "それではまた後で会おう…";
 	close;
 }
 
-in_moc_16.gat,170,90,0	script	�A�T�V�����{�ē�#AS	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�����͓���g�񂾓����c";
-	mes "����i�ނ悤�ɁB";
+in_moc_16.gat,170,90,0	script	アサシン迷宮案内#AS	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "そこは入り組んだ道だ…";
+	mes "他を進むように。";
 	close;
 }
 
-in_moc_16.gat,160,85,0	duplicate(�A�T�V�����{�ē�#AS)	�A�T�V�����{�ē�	139,1,1
+in_moc_16.gat,160,85,0	duplicate(アサシン迷宮案内#AS)	アサシン迷宮案内	139,1,1
 
-in_moc_16.gat,180,101,0	script	�A�T�V�����{�ē�	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�������ł͂Ȃ��Ǝv�����c";
+in_moc_16.gat,180,101,0	script	アサシン迷宮案内	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "そっちではないと思うが…";
 	close;
 }
 
-in_moc_16.gat,186,107,0	script	�A�T�V�����{�ē�	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�������ł͂Ȃ��Ǝv�����c";
+in_moc_16.gat,186,107,0	script	アサシン迷宮案内	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "そっちではないと思うが…";
 	close;
 }
 
-in_moc_16.gat,149,95,0	script	�A�T�V�����{�ē�	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "���ށA���������̓��؂�";
-	mes "���������悤���ȁB";
+in_moc_16.gat,149,95,0	script	アサシン迷宮案内	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "うむ、だいたいの道筋を";
+	mes "理解したようだな。";
 	close;
 }
 
-in_moc_16.gat,149,95,0	script	�A�T�V�����{�ē�	139,0,0,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�����ԋ߂Â����ȁB";
-	mes "���O�̋C�z���������邼�B";
+in_moc_16.gat,149,95,0	script	アサシン迷宮案内	139,0,0,{
+	mes "[ギルドマスター]";
+	mes "だいぶ近づいたな。";
+	mes "お前の気配が感じられるぞ。";
 	close;
 }
 
-in_moc_16.gat,175,89,0	script	�A�T�V�����{�ē�	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�����͕⍲���̏��ɒʂ���B";
-	mes "�����⍲���ɗp�ł�����̂��H";
+in_moc_16.gat,175,89,0	script	アサシン迷宮案内	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "そこは補佐官の所に通じる。";
+	mes "何か補佐官に用でもあるのか？";
 	close;
 }
 
-in_moc_16.gat,153,85,0	script	�A�T�V�����{�ē�	139,1,1,{
-	mes "[�M���h�}�X�^�[]";
-	mes "�����͓���g�񂾓����c";
-	mes "�����߂�Ηǂ��B";
-	mes "���Ŏז����ꂽ��������A";
-	mes "��肱��Ői�ނ悤�ɁB";
+in_moc_16.gat,153,85,0	script	アサシン迷宮案内	139,1,1,{
+	mes "[ギルドマスター]";
+	mes "そこは入り組んだ道だ…";
+	mes "少し戻れば良い。";
+	mes "柱で邪魔された道だから、";
+	mes "回りこんで進むように。";
 	close;
 }
 
 //==============================================================
-in_moc_16.gat,186,81,0	script	�M���h�}�X�^�[�⍲��	55,{
-	mes "[�⍲���}���r�b�c]";
-	mes "���͓]�E�����ɂ͊ւ�肪";
-	mes "����܂���B";
-	mes "�]�E�ɂ��Ă͂�����ɂ���������";
-	mes "�M���h�}�X�^�[�l�ɂ��˗����������B";
+in_moc_16.gat,186,81,0	script	ギルドマスター補佐官	55,{
+	mes "[補佐官マロビッツ]";
+	mes "私は転職試験には関わりが";
+	mes "ありません。";
+	mes "転職についてはあちらにいらっしゃる";
+	mes "ギルドマスター様にご依頼ください。";
 	close;
 }
 
 //==============================================================
-in_moc_16.gat,149,80,4	script	�M���h�}�X�^�[	106,1,1,{
+in_moc_16.gat,149,80,4	script	ギルドマスター	106,1,1,{
 	end;
 OnTouch:
-	mes "[�M���h�}�X�^�[]";
-	mes "�ǂ������B�������G�ŋ�J���������ȁB";
-	mes "��قǕ񍐏����オ���Ă������A";
-	mes "�Ȃ��Ȃ�����������V�[�t���������ȁB";
-	mes "���O�̂悤�ɒb�������ꂽ�z��";
-	mes "�������y���݂��B";
+	mes "[ギルドマスター]";
+	mes "良く来た。道が複雑で苦労をかけたな。";
+	mes "先ほど報告書が上がってきたが、";
+	mes "なかなか見所があるシーフだそうだな。";
+	mes "お前のように鍛え抜かれた奴は";
+	mes "将来が楽しみだ。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���āA���ꂩ�炢������������邪";
-	mes "���O�����i�l���Ă���悤�ɓ�����";
-	mes "�����Ηǂ�����A�y�ɂ��Ă���B";
+	mes "[ギルドマスター]";
+	mes "さて、これからいくつか質問をするが";
+	mes "お前が普段考えているように答えて";
+	mes "くれれば良いから、楽にしてくれ。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�܂��c�A�T�V���ɏd�v�Ȃ��Ƃ͉����H";
+	mes "[ギルドマスター]";
+	mes "まず…アサシンに重要なことは何か？";
 	next;
-	switch (select("��苭����","�v���C�h(�����S)","�₦�Ԗ����C��")) {
+	switch (select("より強い力","プライド(自尊心)","絶え間無い修練")) {
 	case 1:
-		mes "[�M���h�}�X�^�[]";
-		mes "��苭���͂Ƃ����΁c�m����";
-		mes "�V�[�t�ɔ�׃A�T�V���͋����ƌ�����B";
+		mes "[ギルドマスター]";
+		mes "より強い力といえば…確かに";
+		mes "シーフに比べアサシンは強いと言える。";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "�������A���̋����͉��̂��߂�";
-		mes "�K�v�Ȃ̂��H�Ⴆ�Ε��Q�̂��߂��c";
-		mes "����Ƃ����̉����̂��߂��H";
+		mes "[ギルドマスター]";
+		mes "しかし、その強さは何のために";
+		mes "必要なのだ？例えば復讐のためか…";
+		mes "それとも他の何かのためか？";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "�A�T�V���̗͂���ɓ��ꂽ��";
-		mes "�ǂ�ȗ������邾�낤���H";
+		mes "[ギルドマスター]";
+		mes "アサシンの力を手に入れたら";
+		mes "どんな利があるだろうか？";
 		next;
-		switch (select("���Q���ʂ�����","���ׂ������₷���Ȃ�","��葽���̏ꏊ�ɍs����")) {
+		switch (select("復讐を果たせる","金儲けがしやすくなる","より多くの場所に行ける")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "���Q���c";
-				mes "�����c��X�̂����Ă��͍���";
-				mes "�Ƃ������̂������Ă���B";
+				mes "[ギルドマスター]";
+				mes "復讐か…";
+				mes "そう…我々のたいていは恨み";
+				mes "というものを持っている。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "��������X�͊���ɍ��E����邱�ƂȂ�";
-				mes "�����ɉۂ���ꂽ�C���𒉎��ɐ��s";
-				mes "���Ȃ���΂Ȃ�Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "しかし我々は感情に左右されることなく";
+				mes "自分に課せられた任務を忠実に遂行";
+				mes "しなければならない。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�A�T�V���ɂȂ肽���Ί�����������Ƃ��B";
+				mes "[ギルドマスター]";
+				mes "アサシンになりたくば感情を消すことだ。";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "�c�������ɐ����Ă����ɂ͋����K�v";
-				mes "�����c����̓A�T�V���Ƃ��Ă�";
-				mes "�������ɖ]�ނׂ����̂ł͂Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "…たしかに生きていくには金が必要";
+				mes "だが…それはアサシンとしての";
+				mes "生き方に望むべきものではない。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "�ǂ��l�����B�F�X�ȏꏊ���o���A";
-				mes "�ώ@���邱�Ƃ͔C���̐��������";
-				mes "���߂邱�ƂɂȂ�B";
+				mes "[ギルドマスター]";
+				mes "良い考えだ。色々な場所を覚え、";
+				mes "観察することは任務の成功をより";
+				mes "高めることになる。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�������A�����璇�ԒB�ƂƂ͂����A";
-				mes "�吨�ŗ�������悤�Ȃ��Ƃ͍T����";
-				mes "�ق����B�ڗ����Ƃ͔����Ȃ����";
-				mes "�Ȃ�Ȃ����炾�c";
+				mes "[ギルドマスター]";
+				mes "しかし、いくら仲間達ととはいえ、";
+				mes "大勢で旅をするようなことは控えて";
+				mes "ほしい。目立つことは避けなければ";
+				mes "ならないからだ…";
 				break;
 		}
 		break;
 	case 2:
-		mes "[�M���h�}�X�^�[]";
-		mes "�v���C�h���c";
-		mes "�����̎҂����������Ă������H";
+		mes "[ギルドマスター]";
+		mes "プライドか…";
+		mes "うちの者がそう言っていたか？";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "�ӂ�c����͂ǂ����������������Ă��H";
-		mes "���O���A�T�V���̉��Ɏ䂩�ꂽ����";
-		mes "�m��Ȃ����c";
+		mes "[ギルドマスター]";
+		mes "ふん…それはどういう根拠があってか？";
+		mes "お前がアサシンの何に惹かれたかは";
+		mes "知らないが…";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "�z��̑啔���́A���鎞����";
-		mes "�傫�ȋ�J�����ɂ��Ă����B";
-		mes "������悭�킩��B";
-		mes "�ł́A���O�ɂ͂Ȃ��v���C�h��";
-		mes "�K�v�Ȃ̂��H";
+		mes "[ギルドマスター]";
+		mes "奴らの大部分は、ある時期に";
+		mes "大きな苦労を共にしてきた。";
+		mes "だからよくわかる。";
+		mes "では、お前にはなぜプライドが";
+		mes "必要なのだ？";
 		next;
-		switch (select("��l�Ő�����ɂ͕K�v","���ׂ��̂��߂ɕK�v","�����ڂ��ǂ�����")) {
+		switch (select("一人で生きるには必要","金儲けのために必要","見た目が良いから")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "�����c��X�͌ǓƂȑ��݁c";
-				mes "�ǂ��ɍ݂��Ă���Ɉ�l���B";
+				mes "[ギルドマスター]";
+				mes "そう…我々は孤独な存在…";
+				mes "どこに在っても常に一人だ。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�������A��X�ɂ����ԂƂ������̂�";
-				mes "����B���܂�[�����ꍞ�݉߂����";
-				mes "�댯���܂Ƃ������A�ǂ��p�[�g�i�[";
-				mes "������ΖړI�̒B������肽�₷��";
-				mes "�Ȃ邾�낤�c";
+				mes "[ギルドマスター]";
+				mes "しかし、我々にも仲間というものが";
+				mes "ある。あまり深く入れ込み過ぎると";
+				mes "危険もまとわりつくが、良きパートナー";
+				mes "が居れば目的の達成もよりたやすく";
+				mes "なるだろう…";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "�c�������ɐ����Ă����ɂ͋����K�v";
-				mes "�����c����̓A�T�V���Ƃ��Ă�";
-				mes "�������ɖ]�ނׂ����̂ł͂Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "…たしかに生きていくには金が必要";
+				mes "だが…それはアサシンとしての";
+				mes "生き方に望むべきものではない。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "�������ɂ�����邠�܂���̂�";
-				mes "�{�������������c";
-				mes "����Ȑ��_�̎ア�҂̓A�T�V��";
-				mes "�Ƃ��Ăӂ��킵���Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "見かけにこだわるあまりものの";
+				mes "本質を見逃すか…";
+				mes "そんな精神の弱い者はアサシン";
+				mes "としてふさわしくない。";
 				break;
 		}
 		break;
 	case 3:
-		mes "[�M���h�}�X�^�[]";
-		mes "�C�����c";
-		mes "���O�͂��łɗ��h�ȃV�[�t��";
-		mes "�����邪�A�������ďC����ςޗ��R��";
-		mes "�����H";
+		mes "[ギルドマスター]";
+		mes "修練か…";
+		mes "お前はすでに立派なシーフに";
+		mes "見えるが、尚もって修練を積む理由は";
+		mes "何か？";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "�V�[�t�Ȃ炢�����炸�A�A�T�V����";
-		mes "�Ȃ𗥂��Ď��ɐT�񂾍s�������˂�";
-		mes "�Ȃ�Ȃ��B���܂ɁA�͂ɑ΂���~�]��";
-		mes "�����A�����𐧌�ł��Ȃ��Ȃ��҂�";
-		mes "����̂��c";
+		mes "[ギルドマスター]";
+		mes "シーフならいざしらず、アサシンは";
+		mes "己を律して時に慎んだ行動を取らねば";
+		mes "ならない。たまに、力に対する欲望に";
+		mes "負け、自分を制御できなくなる若者も";
+		mes "いるのだ…";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "����ł͍��̉��ɖ����ł�����";
-		mes "�C����ςނƂ����̂��H";
+		mes "[ギルドマスター]";
+		mes "それでは今の何に満足できずに";
+		mes "修練を積むというのだ？";
 		next;
-		switch (select("�Z�p","�ڕW","���_")) {
+		switch (select("技術","目標","精神")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "�Z�p�̓A�T�V���ɂȂ�΂�����x";
-				mes "�g�ɂ����̂��B���ꎩ�̂�";
-				mes "�ō��̉��l������킯�ł͂Ȃ��B";
-				mes "�A�T�V���ɂȂ��Ă������ł��邩";
-				mes "�킩��ʂ��B";
+				mes "[ギルドマスター]";
+				mes "技術はアサシンになればある程度";
+				mes "身につくものだ。それ自体に";
+				mes "最高の価値があるわけではない。";
+				mes "アサシンになっても満足できるか";
+				mes "わからぬぞ。";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "�������c�₦���V���ȖڕW���f����";
-				mes "�̂͗ǂ����Ƃ��c�������c";
-				mes "���̓A�T�V���ɂȂ邱�Ƃň�t�����A";
-				mes "�����͕ς�邩������Ȃ����B";
+				mes "[ギルドマスター]";
+				mes "そうか…絶えず新たな目標を掲げる";
+				mes "のは良いことだ…しかし…";
+				mes "今はアサシンになることで一杯だが、";
+				mes "いつかは変わるかもしれないぞ。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "�������ȁB��ɋ��łȐ��_�����̂�";
-				mes "�d�v�Ȃ��Ƃ��B�g�̂Ƌ��ɐ��_�ʂ��b��";
-				mes "�Ȃ���A�Ȃ��Ȃ����_�ʂ����߂�̂�";
-				mes "����̂��B";
+				mes "[ギルドマスター]";
+				mes "そうだな。常に強固な精神を持つのは";
+				mes "重要なことだ。身体と共に精神面も鍛え";
+				mes "ながら、なかなか精神面を強めるのは";
+				mes "難しいのだ。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�A�T�V���Ƃ����E�Ƃ́A�Z�����ł͂Ȃ�";
-				mes "���_�����ɕۂ��˂΂Ȃ�Ȃ��B";
-				mes "����ł����̓������Z�p��]�����ƂȂ�";
-				mes "�����ł��邩��ȁB";
+				mes "[ギルドマスター]";
+				mes "アサシンという職業は、技だけではなく";
+				mes "精神も一定に保たねばならない。";
+				mes "それでこそ体得した技術を余すことなく";
+				mes "発揮できるからな。";
 				break;
 		}
 		break;
 	}
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���O�͂悭�l���Ă���ȁB";
-	mes "���ɂ͉����l�����ɃA�T�V����";
-	mes "�Ȃ낤�Ƃ����z�������łȁc";
+	mes "[ギルドマスター]";
+	mes "お前はよく考えているな。";
+	mes "中には何も考えずにアサシンに";
+	mes "なろうという奴も居るんでな…";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�����������z�炪�����N����";
-	mes "��X�M���h�̊�ɓD��h��B";
+	mes "[ギルドマスター]";
+	mes "そういった奴らが問題を起こし";
+	mes "我々ギルドの顔に泥を塗る。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "����͂��O�������邱�Ƃ����A";
-	mes "��x�A�T�V���ɂȂ������x��";
-	mes "�V�[�t�ɖ߂邱�Ƃ͂ł��Ȃ��B";
-	mes "�A�T�V���Ƃ��Ă̋`���ƐӔC��";
-	mes "���̌ジ���ƕ����Ă��炤���ƂɂȂ�B";
+	mes "[ギルドマスター]";
+	mes "これはお前も言えることだが、";
+	mes "一度アサシンになったら二度と";
+	mes "シーフに戻ることはできない。";
+	mes "アサシンとしての義務と責任は";
+	mes "この後ずっと負ってもらうことになる。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���ꂩ��A�T�V���ɂȂ�����";
-	mes "�܂��������邩�H";
+	mes "[ギルドマスター]";
+	mes "これからアサシンになったら";
+	mes "まず何をするか？";
 	next;
-	switch (select("�����ɐ퓬������","����҂l�X�̂Ƃ����","�A�T�V���ɂ��Ē��ׂ�")) {
+	switch (select("すぐに戦闘をする","私を待つ人々のところへ","アサシンについて調べる")) {
 	case 1:
-		mes "[�M���h�}�X�^�[]";
-		mes "�퓬���ƁH����ŁH";
+		mes "[ギルドマスター]";
+		mes "戦闘だと？それで？";
 		next;
-		switch (select("��������������","�A�T�V���Ƃ��Ă̎����̋Z������","�V�[�t�ł͍s���ɂ����ꏊ�ɍs��")) {
+		switch (select("早く成長したい","アサシンとしての自分の技を試す","シーフでは行きにくい場所に行く")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "���܂萬�����ł�Ɗ�b���ɂ݁A";
-				mes "���ɐ��_�ʂ̏C�����a���ɂȂ�";
-				mes "���낤�B��b���ł��Ă��Ȃ��ƙ�l��";
-				mes "���Ԃɔ������x��邱�Ƃ�����B";
-				mes "��u�̔��f�������ɂȂ�A�T�V��";
-				mes "������b���ł߂�ׂ����B";
+				mes "[ギルドマスター]";
+				mes "あまり成長を焦ると基礎が緩み、";
+				mes "特に精神面の修練が疎かになる";
+				mes "だろう。基礎ができていないと咄嗟の";
+				mes "事態に反応が遅れることがある。";
+				mes "一瞬の判断が命取りになるアサシン";
+				mes "こそ基礎を固めるべきだ。";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "�����������̂͗ǂ����Ƃ��B";
-				mes "�i�����������̔\�͂������̂�";
-				mes "�ǂ����Ƃ����A�A�T�V���Ƃ��Ă�";
-				mes "�S�\���͖Y���Ȃ�B";
+				mes "[ギルドマスター]";
+				mes "自分を試すのは良いことだ。";
+				mes "進化した自分の能力を試すのは";
+				mes "良いことだが、アサシンとしての";
+				mes "心構えは忘れるなよ。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "�ǂ����Ƃ��B�V���Ȓn�֕�����";
-				mes "�܂��V���Ȕ��������邾�낤�B";
-				mes "�������A�A�T�V���ɂȂ��Ă�����";
-				mes "�l�Ԃ̖{�����ς��Ƃ͌���Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "良いことだ。新たな地へ赴けば";
+				mes "また新たな発見があるだろう。";
+				mes "しかし、アサシンになってもその";
+				mes "人間の本質が変わるとは限らない。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "���߂͂��܂薳���������A��������";
-				mes "�s���͈͂��L����̂��ǂ����낤�B";
+				mes "[ギルドマスター]";
+				mes "初めはあまり無理をせず、少しずつ";
+				mes "行動範囲を広げるのが良いだろう。";
 				break;
 		}
 		break;
 	case 2:
-		mes "[�M���h�}�X�^�[]";
-		mes "�N���҂��Ă���̂��H";
+		mes "[ギルドマスター]";
+		mes "誰が待っているのだ？";
 		next;
-		switch (select("���ԒB��","�M���h���B��","���l��")) {
+		switch (select("仲間達だ","ギルド員達だ","恋人だ")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "�������B�ނ�����O�̂��Ƃ�";
-				mes "�䂪���̂悤�Ɋ�Ԃ��낤�B";
-				mes "�ǓƂ̒��ł����Ԃ��v���S��";
-				mes "�Y���Ȃ�B";
+				mes "[ギルドマスター]";
+				mes "そうか。彼らもお前のことを";
+				mes "我が事のように喜ぶだろう。";
+				mes "孤独の中でも仲間を思う心は";
+				mes "忘れるなよ。";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "���������ɂ��钇�Ԃ��c�ǂ��ȁB";
-				mes "�A�T�V���Ƃ��āA���Ԃ̉e�ƂȂ�";
-				mes "�悭�����Ă�邱�Ƃ��B";
+				mes "[ギルドマスター]";
+				mes "生死を共にする仲間か…良いな。";
+				mes "アサシンとして、仲間の影となり";
+				mes "よく助けてやることだ。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "������l�̂��߂��ƁH";
-				mes (Sex? "��": "�ޏ�")+ "�̉e�ƂȂ�A��Ɍ����Ƃ����̂��c";
+				mes "[ギルドマスター]";
+				mes "愛する人のためだと？";
+				mes (Sex? "彼": "彼女")+ "の影となり、常に見守るというのか…";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�厖�ɂ��邱�Ƃ��c";
-				mes "�����������A���̊Â�����X��";
-				mes "�悤�ȐE�ɂ͖����ƂȂ�B";
-				mes "���O�̐l�����B�����̖����悤�ɂȁc";
+				mes "[ギルドマスター]";
+				mes "大事にすることだ…";
+				mes "だがしかし、その甘さが我々の";
+				mes "ような職には命取りとなる。";
+				mes "お前の人生だ。悔いの無いようにな…";
 				break;
 		}
 		break;
 	case 3:
-		mes "[�M���h�}�X�^�[]";
-		mes "�ǂ��p�����B";
-		mes "�ǂ�Ȃ��Ƃ𒲂ׂ�H";
+		mes "[ギルドマスター]";
+		mes "良い姿勢だ。";
+		mes "どんなことを調べる？";
 		next;
-		switch (select("�A�T�V���Ɍ����Ă���ꏊ��","�M���h�̐����ɂ���","�A�T�V���Ŏ������グ����@��")) {
+		switch (select("アサシンに向いている場所を","ギルドの成長について","アサシンで収入を上げる方法を")) {
 			case 1:
-				mes "[�M���h�}�X�^�[]";
-				mes "���̐��Ŋy�ȏꏊ�E�h���ꏊ��";
-				mes "�������ɑ��݂���B";
-				mes "�������A�T�V���Ƃ����̂͂ǂ��";
-				mes "�����ł��C���𐋍s���邽�߂�";
-				mes "�_��ɑΉ��ł��Ȃ���΂Ȃ�Ȃ��B";
+				mes "[ギルドマスター]";
+				mes "この世で楽な場所・辛い場所は";
+				mes "たしかに存在する。";
+				mes "しかしアサシンというのはどんな";
+				mes "環境下でも任務を遂行するために";
+				mes "柔軟に対応できなければならない。";
 				break;
 			case 2:
-				mes "[�M���h�}�X�^�[]";
-				mes "�O�ɂ͑����̉�X�̒��Ԃ�����B";
-				mes "�z�炩��w�Ԃ��Ƃ�����͂����B";
+				mes "[ギルドマスター]";
+				mes "外には多くの我々の仲間がいる。";
+				mes "奴らから学ぶことがあるはずだ。";
 				next;
-				mes "[�M���h�}�X�^�[]";
-				mes "�����Ă����œ���m���ƌo����";
-				mes "���ɓy���n��グ�A�M���h��";
-				mes "���W�Ɋ�t���Ăق����B";
-				mes "�����Ă��O��������x�̈��";
-				mes "�B����΁A�t�ɉ��̎҂̖ʓ|��";
-				mes "����@�����͂����B";
+				mes "[ギルドマスター]";
+				mes "そしてそこで得る知識と経験を";
+				mes "元に土台を創り上げ、ギルドの";
+				mes "発展に寄付してほしい。";
+				mes "そしてお前もある程度の域に";
+				mes "達すれば、逆に下の者の面倒を";
+				mes "見る機会が来るはずだ。";
 				break;
 			case 3:
-				mes "[�M���h�}�X�^�[]";
-				mes "�c�A�T�V���͋��̂��߂�";
-				mes "���݂���̂ł͂Ȃ��c";
-				mes "���������A�T�V���̐Ӗ��Ƃ���";
-				mes "���̂�ǂ��l����ׂ����B";
+				mes "[ギルドマスター]";
+				mes "…アサシンは金のために";
+				mes "存在するのではない…";
+				mes "もう少しアサシンの責務という";
+				mes "ものを良く考えるべきだ。";
 				break;
 		}
 		break;
 	}
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���O�Ƃ̉�b�͂Ȃ��Ȃ��y���������B";
-	mes "�����̂��v���o������c";
+	mes "[ギルドマスター]";
+	mes "お前との会話はなかなか楽しかった。";
+	mes "私も昔を思い出したよ…";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�ӂށc����ł͓z������W���邩�B";
+	mes "[ギルドマスター]";
+	mes "ふむ…それでは奴らを収集するか。";
 	next;
-	announce "�M���h�}�X�^�[: " +strcharinfo(0)+ "�̃A�T�V���]�E�����Ɋւ�����҂͎��̌��W������",9;
-	mes "[�M���h�}�X�^�[]";
-	mes strcharinfo(0)+ "��";
-	mes "�A�T�V���]�E�����Ɋւ�����҂�";
-	mes "���̌��W������";
+	announce "ギルドマスター: " +strcharinfo(0)+ "のアサシン転職試験に関わった者は私の元集結せよ",9;
+	mes "[ギルドマスター]";
+	mes strcharinfo(0)+ "の";
+	mes "アサシン転職試験に関わった者は";
+	mes "私の元集結せよ";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�����ɗ����I";
+	mes "[ギルドマスター]";
+	mes "すぐに来い！";
 	next;
-	hideoffnpc "�q���C#AS";
-	hideoffnpc "�J�C#AS";
-	hideoffnpc "����������#AS";
-	hideoffnpc "�o���J�f�[#AS";
-	hideoffnpc "�Ď���#AS";
-	hideoffnpc "�_���e#AS";
-	hideoffnpc "�⍲���}���r�b�c#AS";
-	mes "[����������]";
-	mes "���Ăтł����H";
+	hideoffnpc "ヒュイ#AS";
+	hideoffnpc "カイ#AS";
+	hideoffnpc "名も無き者#AS";
+	hideoffnpc "バルカデー#AS";
+	hideoffnpc "監視者#AS";
+	hideoffnpc "ダンテ#AS";
+	hideoffnpc "補佐官マロビッツ#AS";
+	mes "[名も無き者]";
+	mes "お呼びですか？";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes strcharinfo(0)+ "�̓]�E������";
-	mes "�S�������҂̈ӌ��𕷂������Ăȁc�c";
-	mes "�ǂ����H";
+	mes "[ギルドマスター]";
+	mes strcharinfo(0)+ "の転職試験を";
+	mes "担当した者の意見を聞きたくてな……";
+	mes "どうか？";
 	next;
-	mes "[����������]";
-	mes "�����Ȃ�ǂ��ˁB�N�N�N�c";
+	mes "[名も無き者]";
+	mes "あいつなら良いね。ククク…";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�u���������ҁv���O�͎^�����ȁB";
-	mes "�q���C�́H";
+	mes "[ギルドマスター]";
+	mes "「名も無き者」お前は賛成だな。";
+	mes "ヒュイは？";
 	next;
 	if(JobLevel >= 50) {
-		mes "[�q���C]";
-		mes "�ŋߌ������ň�ԍ���������";
-		mes "�V�[�t�ł����B";
+		mes "[ヒュイ]";
+		mes "最近見た中で一番根性がある";
+		mes "シーフでした。";
 		next;
-		mes "[�q���C]";
-		mes "�^���ł��B";
-		mes "����ł͎��͂���Ɏ��炵�܂��B";
-		mes "�Ȃɖ߂�Ȃ���΂Ȃ�܂���̂Łc";
-		mes "���A�}�X�^�[�c���̑���ɉ���";
-		mes "�v���[���g�ł��^���Ă���Ă��������B";
+		mes "[ヒュイ]";
+		mes "賛成です。";
+		mes "それでは私はお先に失礼します。";
+		mes "席に戻らなければなりませんので…";
+		mes "あ、マスター…私の代わりに何か";
+		mes "プレゼントでも与えてやってください。";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "���ށB�񑩂��悤�B";
+		mes "[ギルドマスター]";
+		mes "うむ。約束しよう。";
 	}
 	else {
-		mes "[�q���C]";
-		mes "�܂���{�͂ł��Ă܂���B";
-		mes "�^���ł��B";
-		mes "����ł͂���Ɏ��炵�܂��B";
-		mes "�Ȃɖ߂�Ȃ���΂Ȃ�܂���̂Łc";
+		mes "[ヒュイ]";
+		mes "まぁ基本はできてますよ。";
+		mes "賛成です。";
+		mes "それではお先に失礼します。";
+		mes "席に戻らなければなりませんので…";
 		next;
-		mes "[�M���h�}�X�^�[]";
-		mes "���ށA�������Ă���B";
+		mes "[ギルドマスター]";
+		mes "うむ、そうしてくれ。";
 	}
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�ł́u�Ď��ҁv���O�͂ǂ����H";
+	mes "[ギルドマスター]";
+	mes "では「監視者」お前はどうか？";
 	next;
-	hideonnpc "�q���C#AS";
-	mes "[�Ď���]";
-	mes "�ꉞ�ʉ߂����̂ō��i�����ł��B";
+	hideonnpc "ヒュイ#AS";
+	mes "[監視者]";
+	mes "一応通過したので合格扱いです。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "���ށA�F�^���̂悤���ȁB";
-	mes "�������̎҂ɂ��Ă͋C�ɓ������B";
+	mes "[ギルドマスター]";
+	mes "うむ、皆賛成のようだな。";
+	mes "私もこの者については気に入った。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�����c�A�T�V���ɂ͌ǓƂƂ���";
-	mes "�P�����ꐶ�ۂ�����B";
-	mes "�����Ȃ������A�����Ă䂯�B";
+	mes "[ギルドマスター]";
+	mes "そう…アサシンには孤独という";
+	mes "訓練が一生課せられる。";
+	mes "強い己を持ち、生きてゆけ。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "��c�b�������Ȃ����ȁB";
+	mes "[ギルドマスター]";
+	mes "ん…話が長くなったな。";
 	if(JobLevel >= 50) {
-		mes "�����Ɉȉ��̕��킪����B";
-		mes "�W���� �J�^�[��";
-		mes "�}�C���S�[�V�� �O���f�B�E�X";
-		mes "�ȏ�S�Ď������p�������킾�B";
+		mes "ここに以下の武器がある。";
+		mes "ジュル カタール";
+		mes "マインゴーシュ グラディウス";
+		mes "以上全て私が愛用した武器だ。";
 		next;
-		switch(select("�W����","�J�^�[��","�}�C���S�[�V��","�O���f�B�E�X")) {
+		switch(select("ジュル","カタール","マインゴーシュ","グラディウス")) {
 			case 0: getitem 1251,1; break;
 			case 1: getitem 1253,1; break;
 			case 2: getitem 1208,1; break;
 			case 3: getitem 1220,1; break;
 		}
-		mes "[�M���h�}�X�^�[]";
-		mes "��������Ώ\���Ƃ���";
-		mes "������������ȁc";
+		mes "[ギルドマスター]";
+		mes "これ一つあれば十分という";
+		mes "時代もあったな…";
 
 	}
 	else {
-		mes "�܂��͂�����󂯎��B";
+		mes "まずはこれを受け取れ。";
 		next;
 		switch(rand(4)) {
 			case 0: getitem 1207,1; break;
@@ -2079,37 +2079,37 @@ OnTouch:
 	next;
 	savepoint "morocc.gat",100,101;
 	getitem 1008,1;
-	mes "[�M���h�}�X�^�[]";
-	mes "�ł́A���i�̈��^���邩��";
-	mes "�����̃x�e�����A�T�V���E�q���C��";
-	mes "���܂Ŗ߂�B";
-	mes "�q���C�����ۂɓ]�E�������Ă����";
-	mes "���낤�B";
+	mes "[ギルドマスター]";
+	mes "では、合格の印を与えるから";
+	mes "入口のベテランアサシン・ヒュイの";
+	mes "所まで戻れ。";
+	mes "ヒュイが実際に転職をさせてくれる";
+	mes "だろう。";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "������ " +strcharinfo(0)+ " �c";
-	mes "�ÎE�҂Ƃ��Ă̓�����܂�Ƃ��c";
-	mes "���̐�₵���ǓƂȓ��ɂȂ낤�Ƃ�";
-	mes "�Ȃ̈ӎu�����͖Y��ʂ悤�c";
+	mes "[ギルドマスター]";
+	mes "ここに " +strcharinfo(0)+ " …";
+	mes "暗殺者としての道を歩まんとす…";
+	mes "その先寂しく孤独な道になろうとも";
+	mes "己の意志だけは忘れぬよう…";
 	next;
-	mes "[�M���h�}�X�^�[]";
-	mes "�悵�A�F�߂��Ă悵�I";
-	mes "���O��������܂Ŗ߂��Ă��B";
-	hideonnpc "�J�C#AS";
-	hideonnpc "����������#AS";
-	hideonnpc "�o���J�f�[#AS";
-	hideonnpc "�Ď���#AS";
-	hideonnpc "�_���e#AS";
-	hideonnpc "�⍲���}���r�b�c#AS";
+	mes "[ギルドマスター]";
+	mes "よし、皆戻ってよし！";
+	mes "お前も入り口まで戻してやる。";
+	hideonnpc "カイ#AS";
+	hideonnpc "名も無き者#AS";
+	hideonnpc "バルカデー#AS";
+	hideonnpc "監視者#AS";
+	hideonnpc "ダンテ#AS";
+	hideonnpc "補佐官マロビッツ#AS";
 	close2;
 	warp "in_moc_16.gat",17,19;
 	end;
 }
 
-in_moc_16.gat,156,87,2	script	�q���C#AS		55,{}
-in_moc_16.gat,156,85,2	script	�J�C#AS			730,{}
-in_moc_16.gat,156,83,2	script	����������#AS		106,{}
-in_moc_16.gat,156,81,2	script	�o���J�f�[#AS		725,{}
-in_moc_16.gat,156,79,2	script	�Ď���#AS		118,{}
-in_moc_16.gat,156,77,2	script	�_���e#AS		118,{}
-in_moc_16.gat,156,75,2	script	�⍲���}���r�b�c#AS	55,{}
+in_moc_16.gat,156,87,2	script	ヒュイ#AS		55,{}
+in_moc_16.gat,156,85,2	script	カイ#AS			730,{}
+in_moc_16.gat,156,83,2	script	名も無き者#AS		106,{}
+in_moc_16.gat,156,81,2	script	バルカデー#AS		725,{}
+in_moc_16.gat,156,79,2	script	監視者#AS		118,{}
+in_moc_16.gat,156,77,2	script	ダンテ#AS		118,{}
+in_moc_16.gat,156,75,2	script	補佐官マロビッツ#AS	55,{}

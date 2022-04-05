@@ -5,196 +5,196 @@
 //============================================================
 // Shop
 //------------------------------------------------------------
-jawaii.gat,186,174,2	shop	�A�C�X�N���[�����l	85,536,536,536,536,536,536,536
+jawaii.gat,186,174,2	shop	アイスクリーム商人	85,536,536,536,536,536,536,536
 
 //============================================================
-// �C�Y���[�h�̃W�����C�����ғ]��NPC
+// イズルード⇔ジャワイ既婚者転送NPC
 //------------------------------------------------------------
-izlude.gat,171,185,4	script	�V���R���p�j�I��	71,{
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "�V���̕��͂������A���x���L�O����";
-	mes "�}����ꂽ���̗ǂ����v�w���c�c";
-	mes "�����҂Ȃ�N�ł��s����";
-	mes "�Â����[�h���Y�����u�W�����C�v��";
-	mes "�F����������҂������܂��I";
+izlude.gat,171,185,4	script	新婚コンパニオン	71,{
+	mes "[ウェディングハッピー]";
+	mes "新婚の方はもちろん、何度も記念日を";
+	mes "迎えられた仲の良いご夫婦も……";
+	mes "既婚者なら誰でも行ける";
+	mes "甘いムードが漂う島「ジャワイ」へ";
+	mes "皆さんをご招待いたします！";
 	next;
-	switch(select("�W�����C�H","�u�W�����C�v�֏o���`","���������ł�")) {
+	switch(select("ジャワイ？","「ジャワイ」へ出発～","けっこうです")) {
 	case 1:
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "�͂��B�~�b�h�K���h�嗤�̂͂邩";
-		mes "�C�̔ޕ��ɂ��铇�̂��Ƃł��B";
-		mes "�Â��őf�G�ȋx�{�n�ł��āA";
-		mes "�V�����s��Ƃ��Ă��L���ł��B";
-		mes "�A���A�����֍s����̂�";
-		mes "�������Ă�����݂̂ɂȂ�܂��B";
+		mes "[ウェディングハッピー]";
+		mes "はい。ミッドガルド大陸のはるか";
+		mes "海の彼方にある島のことです。";
+		mes "静かで素敵な休養地でして、";
+		mes "新婚旅行先としても有名です。";
+		mes "但し、そこへ行けるのは";
+		mes "結婚している方のみになります。";
 		next;
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "���ׁ̈A�����͏��X���߂ɂȂ�܂��B";
-		mes "���̂��l�i�́A100,000Zeny!!";
-		mes "�ł��A�����炱�����a�ŐÂ���";
-		mes "�V�����s���y���߂܂���B";
+		mes "[ウェディングハッピー]";
+		mes "その為、料金は少々高めになります。";
+		mes "そのお値段は、100,000Zeny!!";
+		mes "でも、だからこそ平和で静かな";
+		mes "新婚旅行を楽しめますよ。";
 		close;
 	case 2:
 		if(!(PartnerId)) {
-			mes "[�E�F�f�B���O�n�b�s�[]";
-			mes "�\���󂠂�܂��񂪁A�����̕���";
-			mes "�����肷�邱�Ƃ͂ł��܂���B";
-			mes "��قǂ��\���グ�܂����悤��";
-			mes "�����҂ׂ̈̏ꏊ�ł��̂ŁB";
-			mes "����ɁA�v�����e������Ŏ₵����";
-			mes "�Ԃ߂Ă݂Ă͂������ł��傤�H";
+			mes "[ウェディングハッピー]";
+			mes "申し訳ありませんが、未婚の方を";
+			mes "お送りすることはできません。";
+			mes "先ほども申し上げましたように";
+			mes "既婚者の為の場所ですので。";
+			mes "代わりに、プロンテラ酒場で寂しさを";
+			mes "慰めてみてはいかがでしょう？";
 			close;
 		}
 		if(Zeny < 100000) {
-			mes "[�E�F�f�B���O�n�b�s�[]";
-			mes "�u�W�����C�v�֍s���ɂ́A";
-			mes "100,000Zeny���K�v�ł��B";
-			mes "�������Ȃ��̂ł�����A";
-			mes "���A��̕��ɂ��肢����";
-			mes "�݂Ă͂������ł��傤�H";
+			mes "[ウェディングハッピー]";
+			mes "「ジャワイ」へ行くには、";
+			mes "100,000Zenyが必要です。";
+			mes "旅費が足りないのでしたら、";
+			mes "お連れの方にお願いして";
+			mes "みてはいかがでしょう？";
 			close;
 		}
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "�y���������s�ɂȂ�܂��悤�ɁB";
-		mes "�ł́A�u�W�����C�v�֏o�����܂��I";
+		mes "[ウェディングハッピー]";
+		mes "楽しいご旅行になりますように。";
+		mes "では、「ジャワイ」へ出発します！";
 		close2;
 		set Zeny,Zeny-100000;
 		warp "jawaii.gat",245,125;
 		end;
 	case 3:
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "�������l�łȂ��闷�s�ق�";
-		mes "�y�������̂͂Ȃ���ł���ˁB";
-		mes "���ɂ��̃W�����C�Ȃ�A����w";
-		mes "�����v���o������͂��ł��B";
+		mes "[ウェディングハッピー]";
+		mes "愛する二人でなさる旅行ほど";
+		mes "楽しいものはないんですよね。";
+		mes "特にこのジャワイなら、より一層";
+		mes "いい思い出が作れるはずです。";
 		close;
 	}
 }
 
-jawaii.gat,239,112,7	script	�D��::�C�Y���[�h#Jawaii	100,{
-	mes "[�D��]";
-	mes strnpcinfo(4)+ "�ւ����肵�܂��B";	//���ʎq��#�ȍ~�𖳎����ĎQ��
-	mes "�W�����C�ł̈ꎞ�͂������ł������H";
-	mes "���o���O�ɁA�Y�ꕨ�͂Ȃ���";
-	mes "�ēx���m�F���������B";
+jawaii.gat,239,112,7	script	船員::イズルード#Jawaii	100,{
+	mes "[船員]";
+	mes strnpcinfo(4)+ "へお送りします。";	//識別子の#以降を無視して参照
+	mes "ジャワイでの一時はいかがでしたか？";
+	mes "ご出発前に、忘れ物はないか";
+	mes "再度ご確認ください。";
 	next;
-	mes "[�D��]";
-	mes "�ł́A" +strnpcinfo(4)+ "�֋A��܂����H";
+	mes "[船員]";
+	mes "では、" +strnpcinfo(4)+ "へ帰りますか？";
 	next;
-	if(select("�A��","��߂�")==2) {
-		mes "[�D��]";
-		mes "�������܂����B";
-		mes "���������؍݂����Ƃ悢�ł��傤�B";
-		mes "�������������鏊�ł�";
-		mes "����܂��񂵂ˁB";
+	if(select("帰る","やめる")==2) {
+		mes "[船員]";
+		mes "了解しました。";
+		mes "もう少し滞在されるとよいでしょう。";
+		mes "そうそう来られる所では";
+		mes "ありませんしね。";
 		close;
 	}
-	mes "[�D��]";
-	mes strnpcinfo(4)+ "�֏o�����܂��B";
+	mes "[船員]";
+	mes strnpcinfo(4)+ "へ出発します。";
 	close2;
-	if(strnpcinfo(4) == "�C�Y���[�h")
+	if(strnpcinfo(4) == "イズルード")
 		warp "izlude.gat",176,182;
 	else
 		warp "alberta.gat",192,157;
 	end;
 }
 
-jawaii.gat,122,263,5	duplicate(�C�Y���[�h#Jawaii)	�D��::�A���x���^#Jawaii	100
+jawaii.gat,122,263,5	duplicate(イズルード#Jawaii)	船員::アルベルタ#Jawaii	100
 
 //============================================================
-// �v�����e���̃W�����C�����ғ]��NPC
+// プロンテラ⇔ジャワイ未婚者転送NPC
 //------------------------------------------------------------
-prt_in.gat,173,13,4	script	���q����	86,{
+prt_in.gat,173,13,4	script	お客さん	86,{
 	if(PartnerId) {
-		mes "[�n���X]";
-		mes "�c�c�c�c����H";
+		mes "[ハンス]";
+		mes "…………うん？";
 		next;
-		mes "[�n���X]";
-		mes "�񂠁I�������֍s���I";
-		mes "�������֍s��������I";
-		mes "�K���ȓ������v���v����";
-		mes "�Y�킹�Ă�z�͂������ɗ���ȁI";
+		mes "[ハンス]";
+		mes "んあ！あっちへ行け！";
+		mes "あっちへ行けったら！";
+		mes "幸せな匂いをプンプンと";
+		mes "漂わせてる奴はこっちに来るな！";
 		next;
-		mes "[�n���X]";
-		mes "�����`�A�P�b�I";
-		mes "�S�N�b�S�N�b�S�N�b!!";
+		mes "[ハンス]";
+		mes "くう～、ケッ！";
+		mes "ゴクッゴクッゴクッ!!";
 		close;
 	}
-	mes "[�n���X]";
-	mes "�S�N�b�S�N�b�A�ӂ��`�B";
-	mes "���傢�Ɛ������܂������ȁB";
-	mes "�����A���O�I";
-	mes "�������₵�������ȁ`�B";
+	mes "[ハンス]";
+	mes "ゴクッゴクッ、ふぅ～。";
+	mes "ちょいと酔っちまったかな。";
+	mes "おい、お前！";
+	mes "何だか寂しそうだな～。";
 	next;
-	mes "[�n���X]";
-	mes "�͂��`�B";
-	mes "�����������[����";
-	mes "�呛�����Ă�A���̎p�����Ă���A";
-	mes "���傢�ƃC���C�����Ă��Ă��B";
+	mes "[ハンス]";
+	mes "はぁ～。";
+	mes "結婚だ何だーって";
+	mes "大騒ぎしてる連中の姿を見てたら、";
+	mes "ちょいとイライラしてきてさ。";
 	next;
-	mes "[�n���X]";
-	mes "�������A�\���R�c���Ă�ł�";
-	mes "�S���C�ɂ��Ȃ��K��������";
-	mes "�J�b�v���������񂾂�B";
-	mes "������������������ȁI";
+	mes "[ハンス]";
+	mes "しかも、ソロ軍団を呼んでも";
+	mes "全く気にしない幸せそうな";
+	mes "カップルがいたんだよ。";
+	mes "何かすっごく腹立つよな！";
 	next;
-	mes "[�n���X]";
-	mes "���l�ɍK���������т炩�����ƁA";
-	mes "�Ƃ�g�̉��Ƃ����ች�Ƃ�";
-	mes "�����Ȃ��C���ɂȂ�킯��B";
-	mes "�܂��A�̂�т�ƕ�点�鍡��";
-	mes "���Ƃ����񂶂�Ȃ����ǂȁB";
+	mes "[ハンス]";
+	mes "他人に幸せを見せびらかされると、";
+	mes "独り身の俺としちゃ何とも";
+	mes "言えない気分になるわけよ。";
+	mes "まあ、のんびりと暮らせる今が";
+	mes "嫌というんじゃないけどな。";
 	next;
-	mes "[�n���X]";
-	mes "�Ƃɂ��������Ȃ񂩂���Ȃ���ȁI";
-	mes "�F��!!�����A��t���݌��킻���I";
-	mes "�ق�A�����������Ă�邩��B";
+	mes "[ハンス]";
+	mes "とにかく結婚なんかいらないよな！";
+	mes "友よ!!おし、一杯飲み交わそう！";
+	mes "ほれ、俺がおごってやるから。";
 	next;
-	mes "- �n�b�I -";
-	mes "- ���̊Ԃɂ��F�B�ɂ���Ă�!? -";
-	mes "- �c�c���A���`�ށB -";
-	mes "- �܂��A�����̃r�[���݂��������� -";
-	mes "- �󂯎���Ĉ���ł݂邩�c�c -";
+	mes "- ハッ！ -";
+	mes "- いつの間にか友達にされてる!? -";
+	mes "- ……う、う～む。 -";
+	mes "- まあ、ただのビールみたいだから -";
+	mes "- 受け取って飲んでみるか…… -";
 	next;
-	mes "- �S�N�S�N�S�N�S�N -";
+	mes "- ゴクゴクゴクゴク -";
 	percentheal -10,0;
 	next;
-	mes "[�n���X]";
-	mes "���[����c�c";
-	mes "��������m���Ă�񂾂�";
-	mes "���傢�ƍs���Ă݂邩�H";
+	mes "[ハンス]";
+	mes "そーいや……";
+	mes "いい所を知ってるんだが";
+	mes "ちょいと行ってみるか？";
 	while(1) {
 		next;
-		if(select("�c�c������t�~����","�c�c�ǂ�ȏ��Ȃ�ł����H")==1) {
-			mes "[�n���X]";
-			mes "�������I���݂��Ղ肪�����ȁI";
-			mes "�����A�o�`���J�B";
-			mes "�������t���������I";
+		if(select("……もう一杯欲しい","……どんな所なんですか？")==1) {
+			mes "[ハンス]";
+			mes "そうか！飲みっぷりがいいな！";
+			mes "おい、バチュカ。";
+			mes "俺らも一杯飲もうぜ！";
 			next;
-			mes "[�n���X]";
-			mes "�����A����̃\���l����!!";
-			mes "���[��ς�!!";
+			mes "[ハンス]";
+			mes "おし、俺らのソロ人生に!!";
+			mes "かーんぱい!!";
 			next;
-			mes "- �S�N�S�N�S�N�S�N�b!! -";
+			mes "- ゴクゴクゴクゴクッ!! -";
 			percentheal -10,0;
 			set '@drink,'@drink+1;
 			set '@flag,'@flag|1;
 			if(('@flag&2 && '@drink < 4) || '@drink < 5) {
 				next;
-				mes "- �S�N�S�N�S�N�S�N�b!! -";
+				mes "- ゴクゴクゴクゴクッ!! -";
 				continue;
 			}
 			next;
-			mes "[�n���X]";
-			mes "����!!���O�z���g�����ȁI";
-			mes "�����A�C�ɓ������I";
-			mes "���Ⴀ�A�����ɃT�C��������";
-			mes "���O���������֑����Ă��B";
+			mes "[ハンス]";
+			mes "おお!!お前ホント強いな！";
+			mes "おし、気に入った！";
+			mes "じゃあ、ここにサインしたら";
+			mes "お前をいい所へ送ってやる。";
 			next;
-			if(select("�T�C������","�T�C�����Ȃ�")==1) {
-				mes "[�n���X]";
-				mes "�悵�I���ꂶ�ᑗ���Ă�낤�I";
-				mes "�N�N�N�N�b�B";
+			if(select("サインする","サインしない")==1) {
+				mes "[ハンス]";
+				mes "よし！それじゃ送ってやろう！";
+				mes "ククククッ。";
 				close2;
 				warp "jawaii_in.gat",44,124;
 				end;
@@ -202,398 +202,398 @@ prt_in.gat,173,13,4	script	���q����	86,{
 		}
 		else {
 			if(('@flag&1 && '@drink < 3) || '@drink < 4) {
-				mes "[�n���X]";
-				mes "�����I�S�R����łȂ�����Ȃ���!!";
-				mes "�ʂ邢�z���ȁ`!!";
-				mes "���������ɂ����ƈ��������A�F��I";
+				mes "[ハンス]";
+				mes "おい！全然飲んでないじゃないか!!";
+				mes "ぬるい奴だな～!!";
+				mes "遠慮せずにもっと飲もうぜ、友よ！";
 				next;
-				mes "[�n���X]";
-				mes "����̃\���l���ɁI";
-				mes "�ق�I���[��ς�!!";
+				mes "[ハンス]";
+				mes "俺らのソロ人生に！";
+				mes "ほれ！かーんぱい!!";
 				next;
-				mes "- �O�r�O�r�O�r�O�r�b!! -";
+				mes "- グビグビグビグビッ!! -";
 				percentheal -10,0;
 				set '@drink,'@drink+1;
 				set '@flag,'@flag|2;
 				continue;
 			}
-			mes "[�n���X]";
-			mes "���A�s���Ă݂����̂��H";
-			mes "�悵�A�����ɃT�C�����ȁB";
-			mes "�������炨�O���������֑����Ă��B";
+			mes "[ハンス]";
+			mes "お、行ってみたいのか？";
+			mes "よし、ここにサインしな。";
+			mes "そしたらお前をいい所へ送ってやる。";
 			next;
-			if(select("�T�C������","�T�C�����Ȃ�")==1) {
-				mes "[�n���X]";
-				mes "�����I���Ⴀ�A�����Ă�邩�I";
-				mes "�N�b�N�b�N�b�N�b�c�c";
-				mes "���傢�ƎS�߂Ȏv�������Ă��ȁB";
-				mes "�N�b�N�b�N�b�N�b�c�c";
+			if(select("サインする","サインしない")==1) {
+				mes "[ハンス]";
+				mes "おし！じゃあ、送ってやるか！";
+				mes "クックックックッ……";
+				mes "ちょいと惨めな思いをしてきな。";
+				mes "クックックックッ……";
 				close2;
 				warp "jawaii_in.gat",44,124;
 				end;
 			}
 		}
-		break;	//while��������
+		break;	//while文抜ける
 	}
-	mes "[�n���X]";
-	mes "�c�c�`�F�b�I";
+	mes "[ハンス]";
+	mes "……チェッ！";
 	close;
 }
 
-prt_in.gat,170,14,0	script	���q����	89,{
-	mes "[�o�`���J]";
-	mes "�c�c";
-	mes "�S�N�b�S�N�b�c�c";
-	mes "��������!!���܂�!!";
+prt_in.gat,170,14,0	script	お客さん	89,{
+	mes "[バチュカ]";
+	mes "……";
+	mes "ゴクッゴクッ……";
+	mes "くあああ!!うまい!!";
 	emotion 28;
 	close;
 }
 
 //============================================================
-// �W�����CNPC
+// ジャワイNPC
 //------------------------------------------------------------
-jawaii.gat,240,146,6	script	�W�����C�Z��	724,{
-	mes "[���C���C]";
-	mes "�W�����C�ւ悤�����I";
-	mes "�����ƌ����΂���ς�";
-	mes "�V�����s���͌������Ȃ��ł���ˁB";
-	mes "�����Ȃ�A�Ƃ�҂�";
-	mes "�C���g���K�v������܂��񂵁B";
+jawaii.gat,240,146,6	script	ジャワイ住民	724,{
+	mes "[ワイワイ]";
+	mes "ジャワイへようこそ！";
+	mes "結婚と言えばやっぱり";
+	mes "新婚旅行をは欠かせないですよね。";
+	mes "ここなら、独り者に";
+	mes "気を使う必要もありませんし。";
 	next;
-	mes "[���C���C]";
-	mes "���܂Ƀ����X�^�[��";
-	mes "�������邩������܂��񂪁A";
-	mes "�����炩��U�������Ȃ���Α��v�I";
-	mes "�̂��炱���ɏZ��ł�����ŁB";
-	mes "���i�̈ꕔ�Ƃł��l���Ă��������B";
+	mes "[ワイワイ]";
+	mes "たまにモンスターを";
+	mes "見かけるかもしれませんが、";
+	mes "こちらから攻撃をしなければ大丈夫！";
+	mes "昔からここに住んでいたんで。";
+	mes "風景の一部とでも考えてください。";
 	close;
 }
 
-jawaii.gat,165,121,2	script	�W�����C�Z��	724,{
-	mes "[���j���j]";
-	mes "�W�����C�`�B";
-	mes "�����`�K���ȓ��`�B";
-	mes "�f���炵���Ƃ��ł���`�B";
-	mes "������́`��т��";
-	mes "�������Ȃ��Ă��߂����鏊�B";
-	mes "���ꂪ�����A�W�����C�ł��`�B";
+jawaii.gat,165,121,2	script	ジャワイ住民	724,{
+	mes "[ワニワニ]";
+	mes "ジャワイ～。";
+	mes "ああ～幸せな島～。";
+	mes "素晴らしいとこですよ～。";
+	mes "一日中の～んびりと";
+	mes "何もしなくても過ごせる所。";
+	mes "それがここ、ジャワイです～。";
 	next;
-	mes "[���j���j]";
-	mes "������͕���B";
-	mes "���X�A�����㉉����Ă��܂��`�B";
-	mes "��낵����Ώオ����";
-	mes "�̂ł���Ȃǂ��ł��`�H";
-	mes "�W�����C�`�B";
-	mes "�����`�����́`�K���ȓ��`�B";
+	mes "[ワニワニ]";
+	mes "こちらは舞台。";
+	mes "時々、劇が上演されています～。";
+	mes "よろしければ上がって";
+	mes "歌でも一曲どうです～？";
+	mes "ジャワイ～。";
+	mes "ああ～ここは～幸せな島～。";
 	close;
 }
 
-jawaii.gat,220,235,4	script	�W�����C�Z��	724,{
-	mes "[�U���U��]";
-	mes "�W�����C�ň�Ԃ��ꂢ�ȏꏊ��";
-	mes "�����A�ǂ��ł��傤�H";
-	mes "�����A����͂��̂����k�ɂ���";
-	mes "�u�n�[�g�A�C�����h�v�ł��B";
+jawaii.gat,220,235,4	script	ジャワイ住民	724,{
+	mes "[ザワザワ]";
+	mes "ジャワイで一番きれいな場所は";
+	mes "さあ、どこでしょう？";
+	mes "そう、それはこのすぐ北にある";
+	mes "「ハートアイランド」です。";
 	next;
-	mes "[�U���U��]";
-	mes "���A����Ȃɐ[���Ȃ��̂ŁA";
-	mes "�����čs���܂���B";
-	mes "�C��n���Ă����ł��B";
+	mes "[ザワザワ]";
+	mes "あ、そんなに深くないので、";
+	mes "歩いて行けますよ。";
+	mes "海を渡ってすぐです。";
 	next;
-	mes "[�U���U��]";
-	mes "��l�ŐÂ��Ɏ����߂����̂�";
-	mes "�ƂĂ��ǂ��ꏊ�ł��B";
-	mes "�ł��A�Ƃ�ō����Ă����";
-	mes "�c�c���l���ɕY�������l��";
-	mes "�����܂����ǂˁB";
+	mes "[ザワザワ]";
+	mes "二人で静かに時を過ごすのに";
+	mes "とても良い場所です。";
+	mes "でも、独りで座っていると";
+	mes "……無人島に漂着した人に";
+	mes "見えますけどね。";
 	next;
-	mes "[�U���U��]";
-	mes "������u�󂫃r���ŕY���V�сI�v";
-	mes "�Ȃ�Ă��Ƃ͎~�߂����������ł���B";
-	mes "���̂����[���Â������܂�����c�c";
+	mes "[ザワザワ]";
+	mes "だから「空きビンで漂流遊び！」";
+	mes "なんてことは止めた方がいいですよ。";
+	mes "ものすごーく暗く見えますから……";
 	close;
 }
 
-jawaii.gat,168,247,6	script	�W�����C�Z��	724,{
-	mes "[���U���U]";
-	mes "�h���͐��̕��ɏW�܂��Ă��܂��B";
-	mes "�h���ƂɎ�قȂ�܂��̂�";
-	mes "���D���ȏh�����I�т��������B";
-	mes "�e�h�Ɋւ��ẮA���̖T�ɂ���";
-	mes "�]�ƈ��ɂ��������������B";
+jawaii.gat,168,247,6	script	ジャワイ住民	724,{
+	mes "[ワザワザ]";
+	mes "宿屋は西の方に集まっています。";
+	mes "宿ごとに趣が異なりますので";
+	mes "お好きな宿をお選びください。";
+	mes "各宿に関しては、その傍にいる";
+	mes "従業員にお聞きください。";
 	next;
-	mes "[���U���U]";
-	mes "���A��ɂȂ�ۂ́A�k���Ɠ쓌��";
-	mes "�e���p�ɂ���D�������p���������B";
-	mes "���ꂼ��A���x���^�ƃC�Y���[�h";
-	mes "�s���̒���D������܂��B";
+	mes "[ワザワザ]";
+	mes "お帰りになる際は、北西と南東の";
+	mes "各方角にある船をご利用ください。";
+	mes "それぞれアルベルタとイズルード";
+	mes "行きの定期船があります。";
 	close;
 }
 
-jawaii.gat,188,218,4	script	�閧����̂��삳��	80,{
-	mes "[���삳��]";
-	mes "���炠��A���q����`�B";
-	mes "���������͌y���C������";
-	mes "�s���Ȃ����������ł���I";
-	mes "�܂��A�V�����s�ŗL���ȃW�����C��";
-	mes "����ȏꏊ�����邱�Ǝ��́A";
-	mes "�M�����Ȃ���ł����ǂˁB";
+jawaii.gat,188,218,4	script	秘密酒場のお嬢さん	80,{
+	mes "[お嬢さん]";
+	mes "あらあら、お客さん～。";
+	mes "ここから先は軽い気持ちで";
+	mes "行かない方がいいですよ！";
+	mes "まあ、新婚旅行で有名なジャワイに";
+	mes "こんな場所があること自体、";
+	mes "信じられないんですけどね。";
 	next;
-	mes "[���삳��]";
-	mes "�ǂ�����ē��荞�񂾂̂�";
-	mes "������܂��񂪁c�c���܁`��";
-	mes "�����҂������ł���B����Ƃ�";
-	mes "����ŏ�����l�����邻���Ȃ�ł��B";
-	mes "�܂��A�}�X�^�[����邨����";
-	mes "�ςȕ��΂���ł����ˁc�c";
+	mes "[お嬢さん]";
+	mes "どうやって入り込んだのか";
+	mes "分かりませんが……たま～に";
+	mes "未婚者がいるんですよ。それとね";
+	mes "酒場で消える人もいるそうなんです。";
+	mes "まあ、マスターが作るお酒は";
+	mes "変な物ばかりですしね……";
 	next;
-	mes "[���삳��]";
-	mes "�ق��Ă���g�ł���Șb������̂�";
-	mes "�{���͂����Ȃ���ł����ǁc�c";
-	mes "����ł����߂����͂Ȃ���ł���B";
-	mes "�܂��A�s���Ύ��������Ă���";
-	mes "�Ӗ�������܂���B";
+	mes "[お嬢さん]";
+	mes "雇われている身でこんな話をするのは";
+	mes "本当はいけないんですけど……";
+	mes "それでも勧めたくはないんですよ。";
+	mes "まあ、行けば私が言っている";
+	mes "意味が解りますよ。";
 	close;
 }
 
 //============================================================
-// �V������̎v���o�̔�NPC
+// 新婚時代の思い出販売NPC
 //------------------------------------------------------------
-jawaii.gat,214,168,5	script	�V���R���p�j�I��	71,{
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "�����s�͂������ł��`�H";
-	mes "���̃W�����C�قǐV�����s��";
-	mes "�҂�����ȏꏊ�͂Ȃ��ł��傤�H";
-	mes "�����������炵����ł�����A";
-	mes "�y�����v���o�����`������";
-	mes "����Ă��������ˁB";
+jawaii.gat,214,168,5	script	新婚コンパニオン	71,{
+	mes "[ウェディングハッピー]";
+	mes "ご旅行はいかがです～？";
+	mes "このジャワイほど新婚旅行に";
+	mes "ぴったりな場所はないでしょう？";
+	mes "せっかくいらしたんですから、";
+	mes "楽しい思い出をた～くさん";
+	mes "作ってくださいね。";
 	next;
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "���܂Ōo���Ă��F�����Ȃ��v���o�B";
-	mes "����͂ƂĂ����l������̂ł��B";
-	mes "���߂ă^�L�V�[�h��E�F�f�B���O";
-	mes "�h���X�𒅂����̂��̍K���ȋC���B";
-	mes "���ꂪ�������厖�Ȃ�ł��B";
+	mes "[ウェディングハッピー]";
+	mes "いつまで経っても色あせない思い出。";
+	mes "それはとても価値あるものです。";
+	mes "初めてタキシードやウェディング";
+	mes "ドレスを着た時のあの幸せな気分。";
+	mes "それがすごく大事なんです。";
 	next;
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "�c�O�Ȃ���A�E�F�f�B���O�}�[�`��";
-	mes "�����Ăѕ������Ƃ͂ł��܂���B";
-	mes "�ł����߂āA�S�̃A���o�����J����";
-	mes "�V������̎v���o�ɐZ�肽���ł���ˁH";
-	mes "����Ȗ��@���肤���X�ׂ̈ɁA";
-	mes "�������������������܂��B";
+	mes "[ウェディングハッピー]";
+	mes "残念ながら、ウェディングマーチの";
+	mes "中を再び歩くことはできません。";
+	mes "でもせめて、心のアルバムを開いて";
+	mes "新婚時代の思い出に浸りたいですよね？";
+	mes "そんな魔法を願う方々の為に、";
+	mes "準備した物がございます。";
 	next;
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "���̖����u�V������̎v���o!!�v";
-	mes "���@�̗͂ŏ����̊ԁA";
-	mes "�����������̂��̍K���ȋC����";
-	mes "�Ăі��키���Ƃ��ł��܂��B";
-	mes "���Ȃ݂ɂ��̂��l�i��50000Zeny�B";
-	mes "�������Ȃ����܂��H";
+	mes "[ウェディングハッピー]";
+	mes "その名も「新婚時代の思い出!!」";
+	mes "魔法の力で少しの間、";
+	mes "結婚式当日のあの幸せな気分を";
+	mes "再び味わうことができます。";
+	mes "ちなみにそのお値段は50000Zeny。";
+	mes "いかがなさいます？";
 	next;
-	if(select("�����܂�","�������܂�")==2) {
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "�����ł����`�B";
-		mes "�����͗���Ă��A���ɉ߂�����";
-		mes "�v���o���F�����邱�Ƃ͂Ȃ��ł��傤�B";
-		mes "�܂��C�������܂�����A�����Ȃ�";
-		mes "����������Ă��������ˁB";
+	if(select("買います","遠慮します")==2) {
+		mes "[ウェディングハッピー]";
+		mes "そうですか～。";
+		mes "月日は流れても、共に過ごした";
+		mes "思い出が色あせることはないでしょう。";
+		mes "また気が向きましたら、遠慮なく";
+		mes "おっしゃってくださいね。";
 		close;
 	}
 	if(Zeny < 50000) {
-		mes "[�E�F�f�B���O�n�b�s�[]";
-		mes "�u�V������̎v���o�v��";
-		mes "50,000Zeny�ɂȂ�܂��B";
-		mes "�����`�A����������Ȃ��悤�ł��ˁB";
-		mes "���A��̕��ɂ��肢���Ă݂Ă�";
-		mes "�������ł��`�H";
+		mes "[ウェディングハッピー]";
+		mes "「新婚時代の思い出」は";
+		mes "50,000Zenyになります。";
+		mes "あらら～、お金が足りないようですね。";
+		mes "お連れの方にお願いしてみては";
+		mes "いかがです～？";
 		close;
 	}
 	set Zeny,Zeny-50000;
 	getitem 681,1;
-	mes "[�E�F�f�B���O�n�b�s�[]";
-	mes "���肪�Ƃ��������܂��`�I";
-	mes "����́A�{���ɑ�؂Ȏv���o�̏ꏊ��";
-	mes "�厖�Ȑl�ƈꏏ�Ɏg���Ă��������ˁB";
+	mes "[ウェディングハッピー]";
+	mes "ありがとうございます～！";
+	mes "これは、本当に大切な思い出の場所で";
+	mes "大事な人と一緒に使ってくださいね。";
 	close;
 }
 
 //============================================================
-// �h���{��NPC
+// 宿泊施設NPC
 //------------------------------------------------------------
-jawaii.gat,141,200,4	script	�]�ƈ�	798,{
-	mes "[�A������]";
-	mes "���́c�c";
-	mes "������̓X�C�[�g���[���ł��B";
-	mes "���A����A���Ă��������B";
-	mes "�͂��A������񂫂ꂢ�ł��B";
-	mes "����������ƕЕt���Ă����܂�������B";
-	mes "������A�ǂ��������p���������B";
+jawaii.gat,141,200,4	script	従業員	798,{
+	mes "[アルロワ]";
+	mes "あの……";
+	mes "こちらはスイートルームです。";
+	mes "ぜ、是非、来てください。";
+	mes "はい、もちろんきれいです。";
+	mes "私がきちんと片付けておきましたから。";
+	mes "だから、どうぞご利用ください。";
 	next;
-	mes "[�A������]";
-	mes "�h�����͈�l������";
-	mes "���[���Ɓc�c";
-	mes "���A1000Zeny�ł��B";
-	mes "���ɂ�������΁A������������";
-	mes "���ē����܂��B�فA�{���ł���B";
-	mes "����ȊO������@�͂���܂��񂩂�B";
+	mes "[アルロワ]";
+	mes "宿泊料は一人当たり";
+	mes "えーっと……";
+	mes "あ、1000Zenyです。";
+	mes "私にくだされば、すぐお部屋へ";
+	mes "ご案内します。ほ、本当ですよ。";
+	mes "それ以外入る方法はありませんから。";
 	next;
-	mes "[�A������]";
-	mes "���A���΂�B";
-	mes "����A�������������܂���B";
-	mes "���́A�������Ȃ��Ƃ����̎В���";
-	mes "�O�i���ŉ����܂��c�c";
-	mes "�В��̌��A�������ɂ���ł���B";
+	mes "[アルロワ]";
+	mes "あ、かばん。";
+	mes "それ、私がお持ちしますよ。";
+	mes "あの、そうしないとうちの社長に";
+	mes "三段掌で殴られます……";
+	mes "社長の拳、すごく痛いんですよ。";
 	next;
-	if(select("���p���܂�","��߂܂�")==2) {
-		mes "[�A������]";
-		mes "����`��A����`��B";
-		mes "���̕�������������";
-		mes "���ꂢ�ŗǂ��̂Ɂ`�B";
-		mes "���̌��t��M���Ă���������`�B";
-		mes "���������ł��A�l�����ς��܂�����";
-		mes "�����ɗ��Ă��������ˁB����`��B";
+	if(select("利用します","やめます")==2) {
+		mes "[アルロワ]";
+		mes "うわ～ん、うわ～ん。";
+		mes "他の部屋よりもすごく";
+		mes "きれいで良いのに～。";
+		mes "私の言葉を信じてくださいよ～。";
+		mes "もし少しでも、考えが変わりましたら";
+		mes "すぐに来てくださいね。うわ～ん。";
 		close;
 	}
 	if(Zeny < 1000) {
-		mes "[�A������]";
-		mes "�����A���q����I";
-		mes "�h������������Ɗm�F���Ă��������B";
-		mes "���������m�F���Ă��������B";
-		mes "�h����������Ȃ��Ɨ��p�ł��܂���B";
-		mes "�����̎В����{��܂��I";
-		mes "�����̎В����O�i���ŁA����܂�!!";
+		mes "[アルロワ]";
+		mes "もう、お客さん！";
+		mes "宿泊料をきちんと確認してください。";
+		mes "所持金も確認してください。";
+		mes "宿泊料が足りないと利用できません。";
+		mes "うちの社長が怒ります！";
+		mes "うちの社長が三段掌で、殴ります!!";
 		close;
 	}
-	mes "[�A������]";
-	mes "�킠�`�A���肪�Ƃ��I";
-	mes "�͂��A�ǂ��������p���������B";
-	mes "���肪�Ƃ��B���肪�Ƃ��B";
-	mes "�y�������Ԃ����߂������������B";
+	mes "[アルロワ]";
+	mes "わあ～、ありがとう！";
+	mes "はい、どうぞご利用ください。";
+	mes "ありがとう。ありがとう。";
+	mes "楽しい時間をお過ごしください。";
 	close2;
 	set Zeny,Zeny-1000;
 	warp "jawaii_in.gat",116,64;
 	end;
 }
 
-jawaii.gat,108,199,5	script	�]�ƈ�	74,{
-	mes "[�p�[�C���I����]";
-	mes "�悤�����B";
-	mes "������̓A���e�B�[�N���[���ł��B";
-	mes "�Õ��őf���炵���������ł���B";
-	mes "����l�����܂�ɂ́A���X";
-	mes "�苷�Ɍ����邩������܂��񂪁A";
-	mes "�����͂ƂĂ��f�G�ł���B";
+jawaii.gat,108,199,5	script	従業員	74,{
+	mes "[パーインオレン]";
+	mes "ようこそ。";
+	mes "こちらはアンティークルームです。";
+	mes "古風で素晴らしいお部屋ですよ。";
+	mes "お二人が泊まるには、少々";
+	mes "手狭に見えるかもしれませんが、";
+	mes "内部はとても素敵ですよ。";
 	next;
-	mes "[�p�[�C���I����]";
-	mes "�h�����͂���l�l1000Zeny�ł��B";
-	mes "���x�����͑O�����Ƃ����Ē����܂��B";
-	mes "�킴�킴���̗l�ȏꏊ�܂�";
-	mes "�������������̂ł�����";
-	mes "�f�G�Ȃ����������I�����ꂽ����";
-	mes "�ǂ��Ǝv���܂���B";
+	mes "[パーインオレン]";
+	mes "宿泊料はお一人様1000Zenyです。";
+	mes "お支払いは前払いとさせて頂きます。";
+	mes "わざわざこの様な場所まで";
+	mes "いらっしゃったのですから";
+	mes "素敵なお部屋をご選択された方が";
+	mes "良いと思いますよ。";
 	next;
-	mes "[�p�[�C���I����]";
-	mes "�����p�Ȃ���̂ł�����";
-	mes "�����Ȃ�����������Ă��������B";
-	mes "�������ē��������܂��B";
+	mes "[パーインオレン]";
+	mes "ご利用なさるのでしたら";
+	mes "遠慮なくおっしゃってください。";
+	mes "すぐご案内いたします。";
 	next;
-	if(select("���p���܂�","��߂܂�")==2) {
-		mes "[�p�[�C���I����]";
-		mes "����ł͊ό������y���݂��������B";
-		mes "���q�l�̂����p�����ł�";
-		mes "���҂����Ă���܂��B";
+	if(select("利用します","やめます")==2) {
+		mes "[パーインオレン]";
+		mes "それでは観光をお楽しみください。";
+		mes "お客様のご利用をいつでも";
+		mes "お待ちしております。";
 		close;
 	}
 	if(Zeny < 1000) {
-		mes "[�p�[�C���I����]";
-		mes "�\���󂲂����܂���B";
-		mes "���������X����Ȃ��悤�ł��B";
-		mes "�ēx�A���������m�F�Ȃ����Ă���";
-		mes "���z�����������B";
+		mes "[パーインオレン]";
+		mes "申し訳ございません。";
+		mes "お金が少々足りないようです。";
+		mes "再度、所持金を確認なさってから";
+		mes "お越しください。";
 		close;
 	}
-	mes "[�p�[�C���I����]";
-	mes "�����p���肪�Ƃ��������܂��B";
-	mes "�y�����ꎞ�����߂������������B";
+	mes "[パーインオレン]";
+	mes "ご利用ありがとうございます。";
+	mes "楽しい一時をお過ごしください。";
 	close2;
 	set Zeny,Zeny-1000;
 	warp "jawaii_in.gat",129,110;
 	end;
 }
 
-jawaii.gat,107,189,6	script	�]�ƈ�	93,{
-	mes "[�V�����L���j�A]";
-	mes "�c�c�n�j�[���[���ł��B";
-	mes "�h������1000Zeny�ł��B";
+jawaii.gat,107,189,6	script	従業員	93,{
+	mes "[シャルキラニア]";
+	mes "……ハニールームです。";
+	mes "宿泊料は1000Zenyです。";
 	next;
-	mes "[�V�����L���j�A]";
-	mes "�c�c���p���܂����H";
+	mes "[シャルキラニア]";
+	mes "……利用しますか？";
 	next;
-	if(select("���p���܂�","��߂܂�")==2) {
-		mes "[�V�����L���j�A]";
-		mes "�c�c�����ł����B";
+	if(select("利用します","やめます")==2) {
+		mes "[シャルキラニア]";
+		mes "……そうですか。";
 		close;
 	}
 	if(Zeny < 1000) {
-		mes "[�V�����L���j�A]";
-		mes "�c�c����������܂���B";
+		mes "[シャルキラニア]";
+		mes "……お金が足りません。";
 		close;
 	}
-	mes "[�V�����L���j�A]";
-	mes "�c�c�ǂ����B";
+	mes "[シャルキラニア]";
+	mes "……どうぞ。";
 	close2;
 	set Zeny,Zeny-1000;
 	warp "jawaii_in.gat",86,117;
 	end;
 }
 
-jawaii.gat,112,173,0	script	�]�ƈ�	93,{
-	mes "[���N�X���j�A]";
-	mes "�V�����L�c�c";
-	mes "����Ȋ炵�Ă���ʖڂ���Ȃ��́B";
-	mes "�����������z�ǂ����Ȃ�����B";
-	mes "����Ȃ񂾂��炨�q����B��";
-	mes "�s�����Ɏv���񂶂�Ȃ��B";
+jawaii.gat,112,173,0	script	従業員	93,{
+	mes "[ラクスラニア]";
+	mes "シャルキ……";
+	mes "そんな顔してたら駄目じゃないの。";
+	mes "もう少し愛想良くしなさいよ。";
+	mes "そんなんだからお客さん達が";
+	mes "不愉快に思うんじゃない。";
 	next;
-	mes "[���N�X���j�A]";
-	mes "�c�c����A���q����I";
-	mes "��������Ⴂ�܂��B";
-	mes "�����s�ł��炵���̂ł����H";
+	mes "[ラクスラニア]";
+	mes "……あら、お客さん！";
+	mes "いらっしゃいませ。";
+	mes "ご旅行でいらしたのですか？";
 	next;
-	mes "[���N�X���j�A]";
-	mes "������̓r�����[���ł��B";
-	mes "������̗l�ɂ��낰�܂���B";
-	mes "�h�����͑��̕������l";
-	mes "1000Zeny�ɂȂ�܂��B";
+	mes "[ラクスラニア]";
+	mes "こちらはビラルームです。";
+	mes "ご自宅の様にくつろげますよ。";
+	mes "宿泊料は他の部屋同様";
+	mes "1000Zenyになります。";
 	next;
-	mes "[���N�X���j�A]";
-	mes "���]�݂Ȃ�΁A";
-	mes "�����ɂ��ē��������܂��B";
-	mes "�ǂ��Ȃ����܂����H";
+	mes "[ラクスラニア]";
+	mes "お望みならば、";
+	mes "すぐにご案内いたします。";
+	mes "どうなさいますか？";
 	next;
-	if(select("���p���܂�","��߂܂�")==2) {
-		mes "[���N�X���j�A]";
-		mes "�������܂����B";
-		mes "������낵�����";
-		mes "�ׂ̃n�j�[���[����";
-		mes "�s���Ă݂Ă͂������ł��傤�B";
-		mes "�V�����L�����X�A�����z�ł���";
-		mes "�������͂��ꂢ�ł��̂ŁB";
+	if(select("利用します","やめます")==2) {
+		mes "[ラクスラニア]";
+		mes "了解しました。";
+		mes "もしよろしければ";
+		mes "隣のハニールームに";
+		mes "行ってみてはいかがでしょう。";
+		mes "シャルキが少々、無愛想ですが";
+		mes "お部屋はきれいですので。";
 		close;
 	}
 	if(Zeny < 1000) {
-		mes "[���N�X���j�A]";
-		mes "����H";
-		mes "�h�������s�����Ă���悤�ł��ˁB";
-		mes "���A��̕��ɂ��肢���Ă݂Ă�";
-		mes "�ǂ��ł��H�E�t�t�B";
+		mes "[ラクスラニア]";
+		mes "あら？";
+		mes "宿泊料が不足しているようですね。";
+		mes "お連れの方にお願いしてみては";
+		mes "どうです？ウフフ。";
 		close;
 	}
-	mes "[���N�X���j�A]";
-	mes "���肪�Ƃ��������܂��B";
-	mes "���������Ȃ����Ă��������B";
-	mes "�悢�����s�ɂȂ�܂��悤�ɁB";
+	mes "[ラクスラニア]";
+	mes "ありがとうございます。";
+	mes "ごゆっくりなさってください。";
+	mes "よいご旅行になりますように。";
 	close2;
 	set Zeny,Zeny-1000;
 	warp "jawaii_in.gat",87,75;
@@ -601,7 +601,7 @@ jawaii.gat,112,173,0	script	�]�ƈ�	93,{
 }
 
 //============================================================
-// �閧����NPC
+// 秘密酒場NPC
 //------------------------------------------------------------
 jawaii_in.gat,28,96,0	script	JawaiiWaitress	139,3,3,{
 	for(set '@i,0; '@i<8; set '@i,'@i+1) {
@@ -613,365 +613,365 @@ jawaii_in.gat,28,96,0	script	JawaiiWaitress	139,3,3,{
 	end;
 }
 
-jawaii_in.gat,28,96,0	script	JawaiiWaitress#dummy	724,{	//����Z���������߂̃_�~�[
+jawaii_in.gat,28,96,0	script	JawaiiWaitress#dummy	724,{	//同一セル封鎖ためのダミー
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-jawaii_in.gat,25,94,0	script	�]�ƈ�::JawaiiWaitress00	724,{
-	mes "[�]�ƈ��g���g]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,25,94,0	script	従業員::JawaiiWaitress00	724,{
+	mes "[従業員トリト]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��g���g]";
-		mes "�ŋ߁A�ςȐl�����������ł���B";
-		mes "���݂ɗ��Ă��邾���Ȃ�";
-		mes "������ł����ǂˁc�c";
+		mes "[従業員トリト]";
+		mes "最近、変な人を見かけるんですよ。";
+		mes "飲みに来ているだけなら";
+		mes "いいんですけどね……";
 		next;
-		mes "[�]�ƈ��g���g]";
-		mes "������̂�����";
-		mes "���j���\���グ�܂��`�B";
-		mes "���K���Ɂ`�I";
+		mes "[従業員トリト]";
+		mes "お二方のご結婚";
+		mes "お祝い申し上げます～。";
+		mes "お幸せに～！";
 	}
 	else {
-		mes "[�]�ƈ��g���g]";
-		mes "�ǂ����y�����ꎞ�����߂������������B";
-		mes "�ł����܂���݉߂��Ȃ��ł��������ˁB";
+		mes "[従業員トリト]";
+		mes "どうぞ楽しい一時をお過ごしください。";
+		mes "でもあまり飲み過ぎないでくださいね。";
 	}
 	close;
 }
 
-jawaii_in.gat,25,96,0	script	�]�ƈ�::JawaiiWaitress01	724,{
-	mes "[�]�ƈ��p�C]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,25,96,0	script	従業員::JawaiiWaitress01	724,{
+	mes "[従業員パイ]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��p�C]";
-		mes "�����͂��������Â��Ȃ̂ŁA";
-		mes "�����났�ɂȂ��Ǝv���܂��B";
-		mes "�ł����܂Ƀ\���R�c�Ə̂���";
-		mes "���������l�B�������ł����ǂˁB";
+		mes "[従業員パイ]";
+		mes "ここはけっこう静かなので、";
+		mes "おくつろぎになれると思います。";
+		mes "でもたまにソロ軍団と称する";
+		mes "騒がしい人達が来るんですけどね。";
 		next;
-		mes "[�]�ƈ��p�C]";
-		mes "������̂�����";
-		mes "���j���\���グ�܂��`�B";
-		mes "�y�����v���o����������";
-		mes "����Ă��������ˁ`�B";
+		mes "[従業員パイ]";
+		mes "お二方のご結婚";
+		mes "お祝い申し上げます～。";
+		mes "楽しい思い出をたくさん";
+		mes "作ってくださいね～。";
 	}
 	else {
-		mes "[�]�ƈ��p�C]";
-		mes "�y����ł��������ˁ`�I";
-		mes "�ł��A�K���Ȑl�X�̎ז���";
-		mes "���Ȃ��ł���������!!";
+		mes "[従業員パイ]";
+		mes "楽しんでくださいね～！";
+		mes "でも、幸せな人々の邪魔は";
+		mes "しないでくださいね!!";
 	}
 	close;
 }
 
-jawaii_in.gat,25,98,0	script	�]�ƈ�::JawaiiWaitress02	724,{
-	mes "[�]�ƈ��{�r]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,25,98,0	script	従業員::JawaiiWaitress02	724,{
+	mes "[従業員ボビ]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��{�r]";
-		mes "���`�A�����܂��`�ȁ`�B";
-		mes "�������������������`�I";
+		mes "[従業員ボビ]";
+		mes "あ～、うらやまし～な～。";
+		mes "私も早く結婚したい～！";
 	}
 	else {
-		mes "[�]�ƈ��{�r]";
-		mes "����H";
-		mes "�O�̐l??";
-		mes "���́`�A���l�͂��Ȃ���ł����H";
-		mes "�c�c���A���Ȃ݂Ɏ�";
-		mes "���������ӂȂ�ł���`�B";
-		mes "�ǂ��ł��H���x�������܂���H";
+		mes "[従業員ボビ]";
+		mes "うわ？";
+		mes "外の人??";
+		mes "あの～、恋人はいないんですか？";
+		mes "……あ、ちなみに私";
+		mes "料理が得意なんですよ～。";
+		mes "どうです？今度お茶しません？";
 	}
 	close;
 }
 
-jawaii_in.gat,25,100,0	script	�]�ƈ�::JawaiiWaitress03	724,{
-	mes "[�]�ƈ��C�g]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,25,100,0	script	従業員::JawaiiWaitress03	724,{
+	mes "[従業員イト]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��C�g]";
-		mes "�K�������c�c";
-		mes "�����ȁc�c";
-		mes "�\���R�c�Ɏז�����Ȃ��悤��";
-		mes "�C�����Ă��y���݂��������`�B";
+		mes "[従業員イト]";
+		mes "幸せそう……";
+		mes "いいな……";
+		mes "ソロ軍団に邪魔されないように";
+		mes "気をつけてお楽しみください～。";
 	}
 	else {
-		mes "[�]�ƈ��C�g]";
-		mes "�W�Q�֎~�I�����֎~�I";
-		mes "�D���֎~�I�j�����}�I";
+		mes "[従業員イト]";
+		mes "妨害禁止！騒動禁止！";
+		mes "泥酔禁止！祝福歓迎！";
 	}
 	close;
 }
 
-jawaii_in.gat,30,94,4	script	�]�ƈ�::JawaiiWaitress04	724,{
-	mes "[�]�ƈ����J]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,30,94,4	script	従業員::JawaiiWaitress04	724,{
+	mes "[従業員ルカ]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ����J]";
-		mes "�������߂łƂ��`�I";
-		mes "�K�������Ȃ���l�����Ă����";
-		mes "�ƂĂ��C���������ł��B";
-		mes "����Ɉ��������\���R�c��";
-		mes "��ȂƂ�������c�͂��`�B";
-		mes "��������C�����Ă��������ˁB";
+		mes "[従業員ルカ]";
+		mes "結婚おめでとう～！";
+		mes "幸せそうなお二人を見ていると";
+		mes "とても気分がいいです。";
+		mes "それに引き換えソロ軍団の";
+		mes "酒癖といったら…はぁ～。";
+		mes "お二方も気をつけてくださいね。";
 	}
 	else {
-		mes "[�]�ƈ����J]";
-		mes "�c�c���}�c�c";
-		mes "�c�c�ł��Ȃ��ł��I";
-		mes "���ꂮ������f��";
-		mes "�����Ȃ��ł��������ˁI";
+		mes "[従業員ルカ]";
+		mes "……歓迎……";
+		mes "……できないです！";
+		mes "くれぐれも迷惑は";
+		mes "かけないでくださいね！";
 	}
 	close;
 }
 
-jawaii_in.gat,30,96,4	script	�]�ƈ�::JawaiiWaitress05	724,{
-	mes "[�]�ƈ��P��]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,30,96,4	script	従業員::JawaiiWaitress05	724,{
+	mes "[従業員ケン]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��P��]";
-		mes "���̍��A�ςȐl����������̂�";
-		mes "������ƐS�z�ł��c�c";
-		mes "���̂����������ăJ�v���E����";
-		mes "���ɌĂтɂ����āc�c";
+		mes "[従業員ケン]";
+		mes "この頃、変な人を見かけるので";
+		mes "ちょっと心配です……";
+		mes "そのせいもあってカプラ職員を";
+		mes "島に呼びにくくて……";
 	}
 	else {
-		mes "[�]�ƈ��P��]";
-		mes "�ǂ������y���݂��������B";
-		mes "�ł������͂قǂقǂɂˁB";
+		mes "[従業員ケン]";
+		mes "どうぞお楽しみください。";
+		mes "でもお酒はほどほどにね。";
 	}
 	close;
 }
 
-jawaii_in.gat,30,98,4	script	�]�ƈ�::JawaiiWaitress06	724,{
-	mes "[�]�ƈ��A�}�h]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,30,98,4	script	従業員::JawaiiWaitress06	724,{
+	mes "[従業員アマド]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��A�}�h]";
-		mes "�Ή����ˊ�̂悤��";
-		mes "�����̃J�b�v���ł��ˁ`�B";
-		mes "���߂łƂ��`�B";
+		mes "[従業員アマド]";
+		mes "火炎放射器のように";
+		mes "あつあつのカップルですね～。";
+		mes "おめでとう～。";
 	}
 	else {
-		mes "[�]�ƈ��A�}�h]";
-		mes "�c�c������Ə�Ⴂ����Ȃ��ł����H";
-		mes "�����ł͊y���݂Â炢�ł���B";
-		mes "�ł�������Ƃ����āA";
-		mes "�l�̎ז��͂��Ȃ��ł��������ˁ`�B";
+		mes "[従業員アマド]";
+		mes "……ちょっと場違いじゃないですか？";
+		mes "ここでは楽しみづらいでしょ。";
+		mes "でもだからといって、";
+		mes "人の邪魔はしないでくださいね～。";
 	}
 	close;
 }
 
-jawaii_in.gat,30,100,4	script	�]�ƈ�::JawaiiWaitress07	724,{
-	mes "[�]�ƈ��r�A]";
-	mes "�W�����C�̎���ւ悤�����`�I";
+jawaii_in.gat,30,100,4	script	従業員::JawaiiWaitress07	724,{
+	mes "[従業員ビア]";
+	mes "ジャワイの酒場へようこそ～！";
 	next;
 	if(PartnerId) {
-		mes "[�]�ƈ��r�A]";
-		mes "��������ɋP�����̂悤��";
-		mes "������͂ƂĂ����������ł��ˁI";
+		mes "[従業員ビア]";
+		mes "月明かりに輝く剣のように";
+		mes "お二方はとてもお似合いですね！";
 	}
 	else {
-		mes "[�]�ƈ��r�A]";
-		mes "�A�N�Z���ɑ΂���u���[�L�̂��Ƃ�";
-		mes "���̕��͋C�ɐ��������Ă܂���H";
-		mes "����A���l�������Ă���";
-		mes "���z�����������`�B";
+		mes "[従業員ビア]";
+		mes "アクセルに対するブレーキのごとく";
+		mes "この雰囲気に水をさしてません？";
+		mes "是非、恋人を見つけてから";
+		mes "お越しください～。";
 	}
 	close;
 }
 
-jawaii_in.gat,43,115,0	script	���q����	97,{
+jawaii_in.gat,43,115,0	script	お客さん	97,{
 	if(PartnerId) {
-		mes "[�u��]";
-		mes "�c�c�K���������ȁB";
-		mes "���̋C������Y���Ȃ�I";
-		mes "�����A��΂����I";
+		mes "[ブル]";
+		mes "……幸せそうだな。";
+		mes "その気持ちを忘れるなよ！";
+		mes "おい、絶対だぞ！";
 		close;
 	}
 	if(Zeny < 100) {
-		mes "[�u��]";
-		mes "�N�E�b�c�c";
-		mes "��H�N�A�������Ȃ��̂��H";
-		mes "�c�c���񂤂�A���̋C�����B";
-		mes "�l���������B";
+		mes "[ブル]";
+		mes "クウッ……";
+		mes "ん？君、お金がないのか？";
+		mes "……うんうん、その気持ち。";
+		mes "僕も分かるよ。";
 		next;
-		mes "[�u��]";
-		mes "�d���Ȃ��ȁA�������Ă�낤�I";
-		mes "�ق�A�ꏏ�Ɉ�����!!";
+		mes "[ブル]";
+		mes "仕方ないな、おごってやろう！";
+		mes "ほら、一緒に飲もう!!";
 		next;
-		mes "[�u��]";
-		mes "���̈�t�ŁA�l�����p�[�b��";
-		mes "���邭���悤!!";
-		mes "�������C���o����!";
-		mes "����ȏ��ł������Ă͂����Ȃ���I";
+		mes "[ブル]";
+		mes "この一杯で、人生をパーッと";
+		mes "明るくしよう!!";
+		mes "さあ元気を出して!";
+		mes "こんな所でくじけてはいけないよ！";
 		next;
-		mes "- �ނ�JJ�X�y�V���������߂Ă����B -";
-		mes "- �u�K���ɂȂ邼�[!!�v -";
-		mes "- �Ǝv�������苩�� -";
-		mes "- �O�C�Ɛ����悭���񂾁B -";
+		mes "- 彼はJJスペシャルを勧めてきた。 -";
+		mes "- 「幸せになるぞー!!」 -";
+		mes "- と思いっきり叫び -";
+		mes "- グイと勢いよく飲んだ。 -";
 		close2;
 		percentheal -100,0;
 		end;
 	}
-	mes "[�u��]";
-	mes "�N�E�[�b!!";
-	mes "����ȏ��ɗ���񂶂�Ȃ������I";
-	mes "�͂��`�c�c";
-	mes "�݁[��ȍK�������ɂ��Ă�ȁc�c";
-	mes "����ɔ�ׂĖl�́c�c";
+	mes "[ブル]";
+	mes "クウーッ!!";
+	mes "こんな所に来るんじゃなかった！";
+	mes "はぁ～……";
+	mes "みーんな幸せそうにしてるな……";
+	mes "それに比べて僕は……";
 	next;
-	mes "[�u��]";
-	mes "�c�c���l�����Ȃ��l��";
-	mes "���[�������S�߂Ȃ񂾂�!!";
-	mes "�N���A�N����������ˁH";
-	mes "�킩����!?";
+	mes "[ブル]";
+	mes "……恋人がいない人は";
+	mes "すーっごく惨めなんだよ!!";
+	mes "君も、君も同じだよね？";
+	mes "わかるよね!?";
 	next;
-	mes "[�u��]";
-	mes "�N�E�b�c�c";
-	mes "����!!������t!!";
+	mes "[ブル]";
+	mes "クウッ……";
+	mes "おい!!もう一杯!!";
 	close;
 }
 
-jawaii_in.gat,41,106,2	script	���q����	98,{
+jawaii_in.gat,41,106,2	script	お客さん	98,{
 	if(PartnerId) {
-		mes "[�K�C]";
-		mes "�c�c�`�b�B";
-		mes "�M�l�͂ǂ��Ȃ�?!";
-		mes "�l���͈�l�ŕ��ނ��̂���ȁH";
+		mes "[ガイ]";
+		mes "……チッ。";
+		mes "貴様はどうなんだ?!";
+		mes "人生は一人で歩むものだよな？";
 		next;
-		mes "[�K�C]";
-		mes "���͒N���M���Ȃ����I";
-		mes "�������̓���i��ł��!!";
+		mes "[ガイ]";
+		mes "俺は誰も信じないぞ！";
+		mes "俺だけの道を進んでやる!!";
 	}
 	else {
-		mes "[�K�C]";
-		mes "�H�ׂāA�H�ׂ�!!";
-		mes "����ŁA�����!!";
+		mes "[ガイ]";
+		mes "食べて、食べて!!";
+		mes "飲んで、飲んで!!";
 		next;
-		mes "[�K�C]";
-		mes "�E�I�[�b�I";
-		mes "���u���u�J�b�v���̃o�J�����[!!";
-		mes "���R�C�܂܂ȃV���O���o���U�[�C�I";
+		mes "[ガイ]";
+		mes "ウオーッ！";
+		mes "ラブラブカップルのバカヤロー!!";
+		mes "自由気ままなシングルバンザーイ！";
 	}
 	close;
 }
 
-jawaii_in.gat,15,104,2	script	�]�ƈ�	80,{
+jawaii_in.gat,15,104,2	script	従業員	80,{
 	if(PartnerId) {
 		emotion 30;
-		mes "[�]�ƈ�]";
-		mes "��������Ⴂ�܂��B";
-		mes "�������]�݂ł��傤���H";
+		mes "[従業員]";
+		mes "いらっしゃいませ。";
+		mes "何をお望みでしょうか？";
 		next;
-		switch(select("�H�ו�����������","���ݕ�����������","�����͉�������Ă���Ƃ��ł��H")) {
+		switch(select("食べ物をください","飲み物をください","ここは何をやっているとこです？")) {
 		case 1:
-			mes "[�]�ƈ�]";
-			mes "�ɂ�1��";
+			mes "[従業員]";
+			mes "にく1個";
 			set '@itemid,517;
 			break;
 		case 2:
-			mes "[�]�ƈ�]";
-			mes "���|�[�V����1��";
+			mes "[従業員]";
+			mes "黄ポーション1個";
 			set '@itemid,503;
 			break;
 		case 3:
-			mes "[�]�ƈ�]";
-			mes "���������]�݂ł�����";
-			mes "�܂����������ւ��i�݂��������B";
-			mes "���A�ł��c�c";
-			mes "���݉߂��ɂ͒��ӂ��Ă��������ˁB";
-			mes "�قǂقǂɈ���Ō��̂�������ł��B";
-			mes "�ł͊y�����ꎞ���`�I";
+			mes "[従業員]";
+			mes "お酒をお望みでしたら";
+			mes "まっすぐ中央へお進みください。";
+			mes "あ、でも……";
+			mes "飲み過ぎには注意してくださいね。";
+			mes "ほどほどに飲んで語るのがいいんです。";
+			mes "では楽しい一時を～！";
 			close;
 		}
-		mes "1000Zeny�ɂȂ�܂��`�B";
-		mes "�������Ȃ����܂��H";
+		mes "1000Zenyになります～。";
+		mes "いかがなさいます？";
 		next;
-		if(select("���������܂�","�����I�c�c�������܂�")==2) {
-			mes "[�]�ƈ�]";
-			mes "�����������܂�����A";
-			mes "���ł�����������Ă��������ˁ`�B";
+		if(select("いただきます","高い！……遠慮します")==2) {
+			mes "[従業員]";
+			mes "何かございましたら、";
+			mes "いつでもおっしゃってくださいね～。";
 			close;
 		}
 		if(Zeny < 1000) {
-			mes "[�]�ƈ�]";
-			mes "���́c�c";
-			mes "����������Ȃ���ł����ǁc�c";
+			mes "[従業員]";
+			mes "あの……";
+			mes "お金が足りないんですけど……";
 			close;
 		}
-		mes "[�]�ƈ�]";
-		mes "������ɂȂ�܂��`�B";
-		mes "�ǂ��������������肭�������B";
+		mes "[従業員]";
+		mes "こちらになります～。";
+		mes "どうぞお召しあがりください。";
 		set Zeny,Zeny-1000;
 		getitem '@itemid,1;
 		close;
 	}
 	emotion 23;
-	mes "[�]�ƈ�]";
-	mes "�c�c��������Ⴂ�܂��B";
-	mes "�ǂ�����Ă����܂�";
-	mes "�������������̂��͒m��܂��񂪁c�c";
+	mes "[従業員]";
+	mes "……いらっしゃいませ。";
+	mes "どうやってここまで";
+	mes "いらっしゃったのかは知りませんが……";
 	next;
-	mes "[�]�ƈ�]";
-	mes "�K���Ȑl�X�ɖ���Ȃ�";
-	mes "��������Ďז����邭�炢�Ȃ�";
-	mes "�������̃o�[�Ŏ��ł�";
-	mes "����łȂ����I";
+	mes "[従業員]";
+	mes "幸せな人々に訳もなく";
+	mes "言い寄って邪魔するくらいなら";
+	mes "あそこのバーで酒でも";
+	mes "飲んでなさい！";
 	next;
-	if(select("�������̓\���R�c��!!","�c�c���j���ɗ�����ł����c�c")==1) {
-		mes "[�]�ƈ�]";
-		mes "�Ȃ�Đl�Ȃ�ł��傤!?";
-		mes "���Ƃ����l�̍K���ł����Ă�";
-		mes "�����ʂ͏j���Ă����Ă������ł���I";
-		mes "�\���R�c�������ƌ����đ����C�Ȃ�c�c";
-		mes "������Ƃ������֗��Ȃ���!!";
+	if(select("私たちはソロ軍団だ!!","……お祝いに来たんですが……")==1) {
+		mes "[従業員]";
+		mes "なんて人なんでしょう!?";
+		mes "たとえ他人の幸せであっても";
+		mes "少し位は祝ってあげてもいいでしょ！";
+		mes "ソロ軍団だ何だと言って騒ぐ気なら……";
+		mes "ちょっとこっちへ来なさい!!";
 		next;
-		mes "[�]�ƈ�]";
-		mes "�c�c�����ł����H";
-		mes "������Ƒ����������";
-		mes "�������Ă���A���z�����������B";
-		mes "��������΂�����";
-		mes "�����ĂȂ������܂�����B";
+		mes "[従業員]";
+		mes "……いいですか？";
+		mes "きちんと相手を見つけて";
+		mes "結婚してから、お越しください。";
+		mes "そうすればちゃんと";
+		mes "おもてなしをしますから。";
 		close;
 	}
-	mes "[�]�ƈ�]";
-	mes "���A�킴�킴���j����";
-	mes "�������������̂ł����B";
-	mes "�\���󂠂�܂���ł���!!";
-	mes "�����Ă΂Ƃ�ł��Ȃ�������c�c";
-	mes "����ł͂ǂ������y���݂��������`�B";
+	mes "[従業員]";
+	mes "あ、わざわざお祝いで";
+	mes "いらっしゃったのですか。";
+	mes "申し訳ありませんでした!!";
+	mes "私ってばとんでもない誤解を……";
+	mes "それではどうぞお楽しみください～。";
 	close;
 }
 
-jawaii_in.gat,28,124,2	script	�o�[�e���_�[	46,{
-	mes "[�o�[�e���_�[]";
-	mes "��������Ⴂ�܂��B";
-	mes "���q����A���ɂȂ����܂����H";
+jawaii_in.gat,28,124,2	script	バーテンダー	46,{
+	mes "[バーテンダー]";
+	mes "いらっしゃいませ。";
+	mes "お客さん、何になさいますか？";
 	next;
 	if(Zeny < 100) {
-		mes "[�o�[�e���_�[]";
-		mes "���[��A���q����B";
-		mes "����������Ȃ��ł��ˁB";
-		mes "�\���󂠂�܂��񂪁A���X��";
-		mes "�����̂�����u���Ă��܂���̂ŁB";
+		mes "[バーテンダー]";
+		mes "うーん、お客さん。";
+		mes "お金が足りないですね。";
+		mes "申し訳ありませんが、当店は";
+		mes "無料のお酒を置いていませんので。";
 		close;
 	}
 	set Zeny,Zeny-100;
 	while(1) {
-		set @menu,select("�}�X�^�[�̂�����","�~�V�F��","�I�[���h�t�����Y","�~�T","�p�������Y");
+		set @menu,select("マスターのお勧め","ミシェル","オールドフレンズ","ミサ","パンランズ");
 		if('@flag && '@drink >= 4) {
-			mes "[�o�[�e���_�[]";
-			mes "�c�c����͎��̂�����ł��B";
+			mes "[バーテンダー]";
+			mes "……これは私のおごりです。";
 			close2;
 			percentheal -100,0;
 			end;
@@ -979,131 +979,131 @@ jawaii_in.gat,28,124,2	script	�o�[�e���_�[	46,{
 		switch(@menu) {
 		case 1:
 			if('@drink >= 4 || ('@flag && '@drink == 3)) {
-				mes "[�o�[�e���_�[]";
-				mes "�ǂ����������オ�肭�������B";
-				mes "�c�c���v�ł����H";
+				mes "[バーテンダー]";
+				mes "どうぞお召し上がりください。";
+				mes "……大丈夫ですか？";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�}�X�^�[�A�h����c�c";
-				mes "�����Ă��c�c";
+				mes "マスター、辛いよ……";
+				mes "だってさ……";
 				input '@dummy$;
 				mes '@dummy$;
-				mes "�Ȃ񂾂�c�c";
+				mes "なんだよ……";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "�c�c�ł́A���̂�����";
-				mes "^0000FFJ&J�X�N�����[�h���C�o�[ver.5^000000";
-				mes "���ǂ����B";
-				mes "����͎��̂�����ł��B";
+				mes "[バーテンダー]";
+				mes "……では、私のお勧め";
+				mes "^0000FFJ&Jスクリュードライバーver.5^000000";
+				mes "をどうぞ。";
+				mes "これは私のおごりです。";
 				close2;
 				percentheal -100,0;
 				end;
 			}
 			switch(rand(4)) {
 			case 0:
-				mes "[�o�[�e���_�[]";
-				mes "���������߂�����̂͂ł��ˁc�c";
+				mes "[バーテンダー]";
+				mes "私がお勧めするものはですね……";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "^0000FF�z���C�g�}�O�i��^000000�ł��B";
-				mes "�X���C�X�����������Ɠ��̍��肪";
-				mes "���܂����A����͂܂₩���c�c";
-				mes "��������Ō���ƕ�����܂���B";
-				mes "���̓����N�̍����x�[�X�Ȃ�ł��B";
+				mes "[バーテンダー]";
+				mes "^0000FFホワイトマグナム^000000です。";
+				mes "スライスしたレモン独特の香りが";
+				mes "しますが、それはまやかし……";
+				mes "少し飲んで見ると分かりますよ。";
+				mes "実はモロクの魂がベースなんです。";
 				next;
-				mes "- ���ʂ̃������`���h��ꂽ -";
-				mes "- �t�O�p�`�̃O���X���󂯂Ƃ����B -";
-				mes "- ���_���ς����肪�Y���Ă���B -";
-				mes "- ��C�Ɉ��ނ̂͂Ȃ�ƂȂ� -";
-				mes "- �댯�ȋC������B -";
+				mes "- 少量のレモン汁が塗られた -";
+				mes "- 逆三角形のグラスを受けとった。 -";
+				mes "- やや酸っぱい香りが漂っている。 -";
+				mes "- 一気に飲むのはなんとなく -";
+				mes "- 危険な気がする。 -";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "���_���ς߂̑u�₩�Ȗ��Ȃ̂�";
-				mes "�����ɐl�C������܂��B";
-				mes "�����N���̍�������܂���B";
+				mes "[バーテンダー]";
+				mes "やや酸っぱめの爽やかな味なので";
+				mes "女性に人気があります。";
+				mes "モロク風の香りもしますよ。";
 				next;
-				mes "- ���̂��\���u�����𖳐��� -";
-				mes "- ��肽���Ȃ����B -";
-				mes "- ���̐����Ō��̒��ւ����� -";
-				mes "- ��C�ɕ��荞�񂾁B -";
+				mes "- 何故かソンブレロを無性に -";
+				mes "- 被りたくなった。 -";
+				mes "- その勢いで口の中へお酒を -";
+				mes "- 一気に放り込んだ。 -";
 				misceffect 17,"";
 				break;
 			case 1:
-				mes "[�o�[�e���_�[]";
-				mes "����ł́c�c";
-				mes "����Ȃ̂͂ǂ��ł��傤���H";
+				mes "[バーテンダー]";
+				mes "それでは……";
+				mes "こんなのはどうでしょうか？";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "���̂�����";
-				mes "^0000FF�L�X�I�u�t�@�C�A�[^000000�ł��B";
-				mes "�Â�����ƓƓ��̐ԐF�ɐ����Ă����";
-				mes "�c�c�C�Â�����ڂ��񂵂ĂЂ�����";
-				mes "�Ԃ��Ă����Ȃ�Ă��Ƃ�";
-				mes "���邩������܂���B";
+				mes "[バーテンダー]";
+				mes "私のお勧め";
+				mes "^0000FFキスオブファイアー^000000です。";
+				mes "甘い香りと独特の赤色に酔っていると";
+				mes "……気づいたら目を回してひっくり";
+				mes "返っていたなんてことが";
+				mes "あるかもしれません。";
 				next;
-				mes "- ���ʂ̍��������Ă��� -";
-				mes "- �t�O�p�`�̃O���X���󂯎�����B -";
-				mes "- �Â����肪�Y���Ă���B -";
-				mes "- ��C�Ɉ��ނ̂͂Ȃ�ƂȂ� -";
-				mes "- �댯�Ȋ���������B -";
+				mes "- 少量の砂糖がついている -";
+				mes "- 逆三角形のグラスを受け取った。 -";
+				mes "- 甘い香りが漂っている。 -";
+				mes "- 一気に飲むのはなんとなく -";
+				mes "- 危険な感じがする。 -";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "�������邻�̏u�Ԃ��d�v�ł��B";
-				mes "�Â��������O�̏���y�₩��";
-				mes "������悤�Ȗ����悢�̂ł��B";
+				mes "[バーテンダー]";
+				mes "口をつけるその瞬間が重要です。";
+				mes "甘い砂糖が唇の上を軽やかに";
+				mes "走り回るような味がよいのです。";
 				next;
-				mes "- �O�̈ʒu�ɋC������ -";
-				mes "- ���������񂾁B -";
+				mes "- 唇の位置に気をつけて -";
+				mes "- ゆっくり飲んだ。 -";
 				misceffect 38,"";
 				break;
 			case 2:
-				mes "[�o�[�e���_�[]";
-				mes "����A����͂ǂ��ł��傤���H";
+				mes "[バーテンダー]";
+				mes "うん、これはどうでしょうか？";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "���̂�����^0000FF�u���b�N�W���b�N^000000�ł��B";
-				mes "���������v���o�ƌ���̋C������";
-				mes "����ꂽ�C���̃J�N�e���ł��B";
+				mes "[バーテンダー]";
+				mes "私のお勧め^0000FFブラックジャック^000000です。";
+				mes "懐かしい思い出と後悔の気持ちが";
+				mes "盛られた海賊のカクテルです。";
 				next;
-				mes "- �����ȃO���X�ɒ����ꂽ -";
-				mes "- ���݂����������F�̉t�̂𒭂߂��B";
+				mes "- 小さなグラスに注がれた -";
+				mes "- 黒みがかった紫色の液体を眺めた。";
 				mes "-";
-				mes "- ����ň��݂��������Ȃ��ʂ��B -";
-				mes "- �����댯�ȕ��͋C���Y���Ă���B -";
+				mes "- 一口で飲みきれる程少ない量だ。 -";
+				mes "- だが危険な雰囲気が漂っている。 -";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "�΂�����ƌ�����";
-				mes "�R���オ��قǔZ�������ł��B";
-				mes "��C�Ɉ��݊������Ƃ����";
-				mes "�A���Ă���悤�Ȋ����ɂȂ�܂���B";
+				mes "[バーテンダー]";
+				mes "火をつけると激しく";
+				mes "燃え上がるほど濃いお酒です。";
+				mes "一気に飲み干そうとすると";
+				mes "喉が焼けるような感じになりますよ。";
 				next;
-				mes "- ��C�Ɉ��݊������B -";
+				mes "- 一気に飲み干した。 -";
 				misceffect 124,"";
 				break;
 			case 3:
-				mes "[�o�[�e���_�[]";
-				mes "����͂ǂ��ł��傤���H";
+				mes "[バーテンダー]";
+				mes "これはどうでしょうか？";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "���̂�����^0000FF�~�b�h�K���h^000000�ł��B";
-				mes "�Y��ȃ~�b�h�K���h�嗤��";
-				mes "��n�̉����肪��������";
-				mes "�J�N�e���ł��B";
+				mes "[バーテンダー]";
+				mes "私のお勧め^0000FFミッドガルド^000000です。";
+				mes "雄大なミッドガルド大陸の";
+				mes "大地の温もりが感じられる";
+				mes "カクテルです。";
 				next;
-				mes "- �����傫�߂̃O���X�ɕX�ƈꏏ�� -";
-				mes "- �����ꂽ���F�̉t�̂𒭂߂��B -";
-				mes "- ���X�Â����肪�Y���B���� -";
-				mes "- ���h�ȂЂ��𐶂₵���ؓ����� -";
-				mes "- ��������̂悤�ȓ���������B -";
+				mes "- 少し大きめのグラスに氷と一緒に -";
+				mes "- 注がれた黒色の液体を眺めた。 -";
+				mes "- 少々甘い香りが漂う。だが -";
+				mes "- 立派なひげを生やした筋肉質の -";
+				mes "- おじさんのような匂いもする。 -";
 				next;
-				mes "[�o�[�e���_�[]";
-				mes "������y���݂Ȃ���";
-				mes "���������ނƂ悢�ł���B";
-				mes "������߂̖������܂����ˁB";
-				mes "����̓~�b�h�K���h�̒j�B��";
-				mes "�D��ň��ނ��̂Ȃ�ł��B";
+				mes "[バーテンダー]";
+				mes "香りを楽しみながら";
+				mes "少しずつ飲むとよいですよ。";
+				mes "少し苦めの味がしますがね。";
+				mes "これはミッドガルドの男達が";
+				mes "好んで飲むものなんです。";
 				next;
-				mes "- ���������킢�Ȃ�����񂾁B -";
+				mes "- 少しずつ味わいながら飲んだ。 -";
 				misceffect 118,"";
 				break;
 			}
@@ -1111,122 +1111,122 @@ jawaii_in.gat,28,124,2	script	�o�[�e���_�[	46,{
 			percentheal -20,0;
 			break;
 		case 2:
-			mes "[�o�[�e���_�[]";
-			mes "�ǂ����A������ɂȂ�܂��B";
+			mes "[バーテンダー]";
+			mes "どうぞ、こちらになります。";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "�D���Ȉِ��̋C��������������";
-			mes "��������I�т��������B";
-			mes "�Ɠ��̍���ƍׂ₩�Ȃ����";
-			//mes "�œł�������������́A";	//�{�I�d�l
-			mes "�ŁX��������������́A";
-			mes "���Ȃ��̌����������Ă�ł��傤�B";
+			mes "[バーテンダー]";
+			mes "好きな異性の気を引きたい時は";
+			mes "これをお選びください。";
+			mes "独特の香りと細やかながらも";
+			//mes "毒毒しい味を持つこれは、";	//本鯖仕様
+			mes "毒々しい味を持つこれは、";
+			mes "あなたの個性を引き立てるでしょう。";
 			next;
-			mes "- �V���v���ȃO���X�ɒ����ꂽ -";
-			mes "- �����t�̂������B���X�Ðh�� -";
-			mes "- ���������邪�������������B -";
-			mes "- �v�킸�u���܂�!�v�� -";
-			mes "- ���т����Ȃ邩������Ȃ��B -";
+			mes "- シンプルなグラスに注がれた -";
+			mes "- 白い液体を見た。少々甘辛い -";
+			mes "- 匂いがするがおいしそうだ。 -";
+			mes "- 思わず「うまい!」と -";
+			mes "- 叫びたくなるかもしれない。 -";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "�Ðh�����ł����A";
-			mes "����߂̂��ꂱ�����l����";
-			mes "�Ƃ����������������ł��ˁB";
-			mes "����g���Ȃ��班������";
-			mes "���������ނƂ悢�ł���B";
+			mes "[バーテンダー]";
+			mes "甘辛い味ですが、";
+			mes "やや苦めのこれこそが人生だ";
+			mes "とおっしゃる方が多いですね。";
+			mes "舌を使いながら少しずつ";
+			mes "ゆっくり飲むとよいですよ。";
 			next;
-			mes "- ����g���� -";
-			mes "- ����������ł݂��B -";
+			mes "- 舌を使って -";
+			mes "- 少しずつ飲んでみた。 -";
 			next;
-			mes "- ���z�͂�͂� -";
-			mes "- �u���܂�!!�v -";
+			mes "- 感想はやはり -";
+			mes "- 「うまい!!」 -";
 			misceffect 18,"";
 			break;
 		case 3:
-			mes "[�o�[�e���_�[]";
-			mes "�ǂ����A������ɂȂ�܂��B";
+			mes "[バーテンダー]";
+			mes "どうぞ、こちらになります。";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "���߂Έ��ނقǐ[���������܂��B";
-			mes "�Â��F�l�݂����Ȃ��̂ł��ˁB";
-			mes "���ł��N�Ƃł�";
-			mes "�ǂ�ȐH�ו��ɂ������܂��B";
+			mes "[バーテンダー]";
+			mes "飲めば飲むほど深い味がします。";
+			mes "古い友人みたいなものですね。";
+			mes "いつでも誰とでも";
+			mes "どんな食べ物にも合います。";
 			next;
-			mes "- �ڂ̑O�̔h��ȃO���X�� -";
-			mes "- �N�₩�ȐF�̉t�̂������ꂽ�B -";
-			mes "- ���_���ς����肪�@���h������B";
+			mes "- 目の前の派手なグラスに -";
+			mes "- 鮮やかな青色の液体が注がれた。 -";
+			mes "- やや酸っぱい香りが鼻を刺激する。";
 			mes "-";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "���������키���Ƃ�";
-			mes "�[�݂������Ă������̂ł��B";
-			mes "����͈���ŏI��点��ɂ�";
-			mes "�ƂĂ��ɂ������ł��ˁB";
+			mes "[バーテンダー]";
+			mes "少しずつ味わうことで";
+			mes "深みが増していくものです。";
+			mes "これは一口で終わらせるには";
+			mes "とても惜しい物ですね。";
 			next;
-			mes "- �O�x�ɕ����Ĉ���ł݂��B -";
-			mes "- ���̒���t�ɊÎ_���ς����肪 -";
-			mes "- �L����B�{���ɂ��������B -";
+			mes "- 三度に分けて飲んでみた。 -";
+			mes "- 口の中一杯に甘酸っぱい香りが -";
+			mes "- 広がる。本当においしい。 -";
 			misceffect 83,"";
 			break;
 		case 4:
-			mes "[�o�[�e���_�[]";
-			mes "�ǂ����A������ɂȂ�܂��B";
+			mes "[バーテンダー]";
+			mes "どうぞ、こちらになります。";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "�����̎���A";
-			mes "���̓����̉h�����������ސl�c�c";
-			mes "���ׂ̒��Œ����ׂ̈ɓ������ҒB��";
-			mes "�L����U��Ԃ�l�c�c";
-			mes "�����āc�c�Z�s�A�F�̃��}����";
-			mes "������X�ɂ����߂��Ă��܂��B";
+			mes "[バーテンダー]";
+			mes "激動の時代、";
+			mes "その当時の栄光を懐かしむ人……";
+			mes "混沌の中で秩序の為に闘った者達の";
+			mes "記憶を振り返る人……";
+			mes "そして……セピア色のロマンが";
+			mes "解る方々にお勧めしています。";
 			next;
-			mes "- ���F���t�̂��^���u���[�� -";
-			mes "- �����ꂽ�B�˂΂˂΂��� -";
-			mes "- �[�����肪����B-";
-			mes "- �c�c�e��̓����Ɏ��Ă���B -";
-			mes "- �܂�ŋ���ȋ@�B�����̏�� -";
-			mes "- ���邩�̂悤�Ȉ�ۂ��󂯂��B -";
+			mes "- 茶色い液体がタンブラーに -";
+			mes "- 注がれた。ねばねばした -";
+			mes "- 深い香りがする。-";
+			mes "- ……弾薬の匂いに似ている。 -";
+			mes "- まるで巨大な機械がその場に -";
+			mes "- あるかのような印象を受けた。 -";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "�傫���O���X�ł����A";
-			mes "����ň��ݐ؂������������ł���B";
-			mes "���������ނƁA���������̌�����";
-			mes "�����ʂ邭�Ȃ��Ă��܂��܂�����ˁB";
+			mes "[バーテンダー]";
+			mes "大きいグラスですが、";
+			mes "一口で飲み切った方がいいですよ。";
+			mes "ゆっくり飲むと、せっかくの激しい";
+			mes "味がぬるくなってしまいますからね。";
 			next;
-			mes "- �^���u���[���������莝�� -";
-			mes "- ��C�Ɉ��݊������B -";
+			mes "- タンブラーをしっかり持ち -";
+			mes "- 一気に飲み干した。 -";
 			next;
-			mes "- ����ȖC�����󂯂��悤�� -";
-			mes "- �Ռ����������B -";
+			mes "- 巨大な砲撃を受けたような -";
+			mes "- 衝撃が走った。 -";
 			misceffect 106,"";
 			break;
 		case 5:
-			mes "[�o�[�e���_�[]";
-			mes "�ǂ����A������ɂȂ�܂��B";
+			mes "[バーテンダー]";
+			mes "どうぞ、こちらになります。";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "�������I�ԕ��͖{���ɒ������ł��B";
-			mes "�h��ȐF�ŗʂ������̂ł����c�c";
-			mes "���ۂɈ��񂾌�́A�ƂĂ�������";
-			mes "�Â��C�����������c��܂��B";
+			mes "[バーテンダー]";
+			mes "こちらを選ぶ方は本当に珍しいです。";
+			mes "派手な色で量も多いのですが……";
+			mes "実際に飲んだ後は、とても虚しく";
+			mes "暗い気持ちだけが残ります。";
 			next;
-			mes "- �Ȃ������O���X�� -";
-			mes "- �����F�̉t�̂������ꂽ�B -";
-			mes "- ���΂������A���̂� -";
-			mes "- �s�C���Ȋ���������B -";
-			mes "- ���̂����Ȃ̂������� -";
-			mes "- ���ۊ�������B -";
+			mes "- 曲がったグラスに -";
+			mes "- 薄紫色の液体が注がれた。 -";
+			mes "- 香ばしいが、何故か -";
+			mes "- 不気味な感じがする。 -";
+			mes "- そのせいなのか微妙に -";
+			mes "- 拒否感がある。 -";
 			next;
-			mes "[�o�[�e���_�[]";
-			mes "���������オ�ꂻ���ɂȂ��̂ł�����";
-			mes "���̂��������񋟂��܂����c�c";
-			mes "�������Œ����Ȃ������̂ł�����";
-			mes "��x�����݂ɂȂ�̂�";
-			mes "������������܂���ˁB";
+			mes "[バーテンダー]";
+			mes "もし召し上がれそうにないのでしたら";
+			mes "他のお酒をご提供しますが……";
+			mes "ご自分で注文なさったのですから";
+			mes "一度お飲みになるのも";
+			mes "いいかもしれませんね。";
 			next;
-			mes "- �������ł݂��B -";
-			mes "- �c�c!! -";
-			mes "- �����ɓf���o���Ă��܂����B -";
+			mes "- 一口飲んでみた。 -";
+			mes "- ……!! -";
+			mes "- すぐに吐き出してしまった。 -";
 			misceffect 5,"";
 			break;
 		}
@@ -1234,13 +1234,13 @@ jawaii_in.gat,28,124,2	script	�o�[�e���_�[	46,{
 			percentheal -10,0;
 			if(@menu==5) {
 				next;
-				mes "- ��x�ƈ��ދC�ɂ͂Ȃ�Ȃ������B -";
+				mes "- 二度と飲む気にはなれなかった。 -";
 			}
 		}
 		set '@drink,'@drink+1;
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�}�X�^�[�c�c������t�c�c";
+		mes "マスター……もう一杯……";
 		next;
 	}
 }

@@ -3,7 +3,7 @@
 //==============================================================================
 
 //============================================================
-// ‹‘å‚ÈƒnƒG‚Ì‰H
+// å·¨å¤§ãªãƒã‚¨ã®ç¾½
 //------------------------------------------------------------
 function	script	ItemdbPartyCall	{
 	warp "Random",0,0;
@@ -11,13 +11,13 @@ function	script	ItemdbPartyCall	{
 	if('@name$ == getpartyleader(getcharid(1)) && !getmapxy('@map$,'@x,'@y,0)) {
 		getpartymember getcharid(1);
 		for(set '@i,0; '@i < $@partymembercount; set '@i,'@i+1) {
-			if($@partymembername$['@i] == '@name$)			// ©•ª‚ÍœŠO
+			if($@partymembername$['@i] == '@name$)			// è‡ªåˆ†ã¯é™¤å¤–
 				continue;
-			if(getmapname($@partymembername$['@i]) != '@map$)	// MAP‚ªˆá‚¤
+			if(getmapname($@partymembername$['@i]) != '@map$)	// MAPãŒé•ã†
 				continue;
 			if(attachrid(getcharid(3,$@partymembername$['@i]))) {
 				if(!checkdead()) {
-					// €–S‚µ‚Ä‚È‚¢‚È‚çƒŠ[ƒ_[‚ÌŒ³‚Öƒ[ƒv
+					// æ­»äº¡ã—ã¦ãªã„ãªã‚‰ãƒªãƒ¼ãƒ€ãƒ¼ã®å…ƒã¸ãƒ¯ãƒ¼ãƒ—
 					warp '@map$,'@x,'@y;
 				}
 				detachrid;
@@ -28,13 +28,13 @@ function	script	ItemdbPartyCall	{
 }
 
 //============================================================
-// ƒLƒ‰ƒLƒ‰ƒXƒeƒBƒbƒN
+// ã‚­ãƒ©ã‚­ãƒ©ã‚¹ãƒ†ã‚£ãƒƒã‚¯
 //------------------------------------------------------------
 function	script	ItemdbResetSkill	{
 	if(Weight || checkcart() || checkfalcon() || checkriding())
 		return;
-	set '@lv,getskilllv(1);	// Šî–{ƒXƒLƒ‹
-	resetskill 0;		// ƒNƒGƒXƒgƒXƒLƒ‹‚ÍƒŠƒZƒbƒg‚µ‚È‚¢
+	set '@lv,getskilllv(1);	// åŸºæœ¬ã‚¹ã‚­ãƒ«
+	resetskill 0;		// ã‚¯ã‚¨ã‚¹ãƒˆã‚¹ã‚­ãƒ«ã¯ãƒªã‚»ãƒƒãƒˆã—ãªã„
 	if('@lv > 0) {
 		skill 1,'@lv,0;
 		set SkillPoint,SkillPoint - '@lv;
@@ -43,55 +43,55 @@ function	script	ItemdbResetSkill	{
 }
 
 //============================================================
-// ƒq[ƒ‹ŒnŒø‰ÊŒüã‘‡
+// ãƒ’ãƒ¼ãƒ«ç³»åŠ¹æœå‘ä¸Šç·åˆ
 //------------------------------------------------------------
 function	script	ItemdbAlmightyHeal	{
 	set '@flag,getarg(0);
 	set '@val,getarg(1);
 	if('@flag&1) {
-		bonus2 bAddSkillHealRate,28,'@val;	/* ƒq[ƒ‹ */
+		bonus2 bAddSkillHealRate,28,'@val;	/* ãƒ’ãƒ¼ãƒ« */
 		bonus2 bAddSkillDamageRate,28,'@val;
 	}
 	if('@flag&2) {
-		bonus2 bAddSkillHealRate,70,'@val;	/* ƒTƒ“ƒNƒ`ƒ…ƒAƒŠ */
+		bonus2 bAddSkillHealRate,70,'@val;	/* ã‚µãƒ³ã‚¯ãƒãƒ¥ã‚¢ãƒª */
 		bonus2 bAddSkillDamageRate,70,'@val;
 	}
 	if('@flag&4)
-		bonus2 bAddSkillHealRate,231,'@val;	/* ƒ|[ƒVƒ‡ƒ“ƒsƒbƒ`ƒƒ[ */
+		bonus2 bAddSkillHealRate,231,'@val;	/* ãƒãƒ¼ã‚·ãƒ§ãƒ³ãƒ”ãƒƒãƒãƒ£ãƒ¼ */
 	if('@flag&8)
-		bonus2 bAddSkillHealRate,478,'@val;	/* ƒXƒŠƒ€ƒ|[ƒVƒ‡ƒ“ƒsƒbƒ`ƒƒ[ */
+		bonus2 bAddSkillHealRate,478,'@val;	/* ã‚¹ãƒªãƒ ãƒãƒ¼ã‚·ãƒ§ãƒ³ãƒ”ãƒƒãƒãƒ£ãƒ¼ */
 	if('@flag&16)
-		bonus2 bAddSkillHealRate,322,'@val;	/* ƒCƒhƒDƒ“‚Ì—ÑŒç */
+		bonus2 bAddSkillHealRate,322,'@val;	/* ã‚¤ãƒ‰ã‚¥ãƒ³ã®æ—æª */
 	if('@flag&32) {
-		bonus2 bAddSkillHealRate,2043,'@val;	/* ƒRƒ‹ƒZƒIƒq[ƒ‹ */
+		bonus2 bAddSkillHealRate,2043,'@val;	/* ã‚³ãƒ«ã‚»ã‚ªãƒ’ãƒ¼ãƒ« */
 		bonus2 bAddSkillDamageRate,2043,'@val;
 	}
 	if('@flag&64) {
-		bonus2 bAddSkillHealRate,2051,'@val;	/* ƒnƒCƒlƒXƒq[ƒ‹ */
+		bonus2 bAddSkillHealRate,2051,'@val;	/* ãƒã‚¤ãƒã‚¹ãƒ’ãƒ¼ãƒ« */
 		bonus2 bAddSkillDamageRate,2051,'@val;
 	}
 	return;
 }
 
 //============================================================
-// ”íƒq[ƒ‹ŒnŒø‰ÊŒüã‘‡
+// è¢«ãƒ’ãƒ¼ãƒ«ç³»åŠ¹æœå‘ä¸Šç·åˆ
 //------------------------------------------------------------
 function	script	ItemdbAlmightySubHeal	{
 	set '@flag,getarg(0);
 	set '@val,getarg(1);
 	if('@flag&1)
-		bonus2 bAddSkillSubHealRate,28,'@val;	/* ƒq[ƒ‹ */
+		bonus2 bAddSkillSubHealRate,28,'@val;	/* ãƒ’ãƒ¼ãƒ« */
 	if('@flag&2)
-		bonus2 bAddSkillSubHealRate,70,'@val;	/* ƒTƒ“ƒNƒ`ƒ…ƒAƒŠ */
+		bonus2 bAddSkillSubHealRate,70,'@val;	/* ã‚µãƒ³ã‚¯ãƒãƒ¥ã‚¢ãƒª */
 	if('@flag&4)
-		bonus2 bAddSkillSubHealRate,231,'@val;	/* ƒ|[ƒVƒ‡ƒ“ƒsƒbƒ`ƒƒ[ */
+		bonus2 bAddSkillSubHealRate,231,'@val;	/* ãƒãƒ¼ã‚·ãƒ§ãƒ³ãƒ”ãƒƒãƒãƒ£ãƒ¼ */
 	if('@flag&8)
-		bonus2 bAddSkillSubHealRate,478,'@val;	/* ƒXƒŠƒ€ƒ|[ƒVƒ‡ƒ“ƒsƒbƒ`ƒƒ[ */
+		bonus2 bAddSkillSubHealRate,478,'@val;	/* ã‚¹ãƒªãƒ ãƒãƒ¼ã‚·ãƒ§ãƒ³ãƒ”ãƒƒãƒãƒ£ãƒ¼ */
 	if('@flag&16)
-		bonus2 bAddSkillSubHealRate,322,'@val;	/* ƒCƒhƒDƒ“‚Ì—ÑŒç */
+		bonus2 bAddSkillSubHealRate,322,'@val;	/* ã‚¤ãƒ‰ã‚¥ãƒ³ã®æ—æª */
 	if('@flag&32)
-		bonus2 bAddSkillSubHealRate,2043,'@val;	/* ƒRƒ‹ƒZƒIƒq[ƒ‹ */
+		bonus2 bAddSkillSubHealRate,2043,'@val;	/* ã‚³ãƒ«ã‚»ã‚ªãƒ’ãƒ¼ãƒ« */
 	if('@flag&64)
-		bonus2 bAddSkillSubHealRate,2051,'@val;	/* ƒnƒCƒlƒXƒq[ƒ‹ */
+		bonus2 bAddSkillSubHealRate,2051,'@val;	/* ãƒã‚¤ãƒã‚¹ãƒ’ãƒ¼ãƒ« */
 	return;
 }

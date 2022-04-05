@@ -1,90 +1,90 @@
 //====================================================================
 // Event Oni
 //
-//  �� ONI_EVE -> �A�����g�|������1�A�J�������������0�ɖ߂�
+//  ■ ONI_EVE -> アムムト倒したら1、褒美をもらったら0に戻る
 //====================================================================
-//�����p�^�[��(��Ԑ������������l�q)
-//�@������˃t�F�C�������n�t�˂�������ˋ�̖�
-//�ܕi�̓W���[�X�e��(�΂�Ȃ�)
-//���͓K���Ƀ����_���]���d�l
+//勝ちパターン(一番成功率が高い様子)
+//　避ける⇒フェイヨン水溶液⇒かたい皮⇒銀の矢
+//賞品はジュース各種(偏りなし)
+//他は適当にランダム脳内仕様
 
-payon.gat,93,75,4	script	�x����	708,{
+payon.gat,93,75,4	script	警備兵	708,{
 	cutin "pay_soldier",2;
 	if(ONI_EVE == 0) {
-		mes "[�x����]";
-		mes "���A���̒��͂����������Ă��܂��B";
-		mes "�c�c�Z�����S�ɏP��ꂽ�̂ł��I";
-		mes "�����A�����`���̂悤�ɋS���P����";
-		mes "����Ƃ�����c�c";
-		mes "�����������ł͒�����肫��";
-		mes "���Ƃ͂ł��Ȃ��ł��傤�c�c";
+		mes "[警備兵]";
+		mes "今、この町はある問題を抱えています。";
+		mes "……住民が鬼に襲われたのです！";
+		mes "もし、言い伝えのように鬼が襲って";
+		mes "くるとしたら……";
+		mes "私たちだけでは町を守りきる";
+		mes "ことはできないでしょう……";
 		next;
-		mes "[�x����]";
-		mes "���́c�c";
-		mes "���Ȃ����o���L���Ȗ`���҂�";
-		mes "������ł��肢���܂��B";
-		mes "���͂��Ă��������Ȃ��ł��傤���H";
+		mes "[警備兵]";
+		mes "あの……";
+		mes "あなたを経験豊かな冒険者と";
+		mes "見込んでお願いします。";
+		mes "協力していただけないでしょうか？";
 		next;
-		switch (select("�킩��܂����A�����󂯂܂��傤�I","���ɂ͖����ł��B")) {
+		switch (select("わかりました、引き受けましょう！","私には無理です。")) {
 		case 1:
-			mes "[�x����]";
-			mes "�{���ł���!?";
-			mes "���肪�Ƃ��������܂��I";
-			mes "��������Ă����������߂ɂ�";
-			mes "�܂��S�ɂ��Ēm���Ă����Ȃ��Ɓc�c";
+			mes "[警備兵]";
+			mes "本当ですか!?";
+			mes "ありがとうございます！";
+			mes "町を守っていただくためには";
+			mes "まず鬼について知ってもらわないと……";
 			next;
-			mes "[�x����]";
-			mes "���̒��̉��ɂ���|��̑��ɁA";
-			mes "���m��Ȃ��������񂪂��܂��B";
-			mes "�S�ɂ��Ă��ڂ����Ǝv���܂��̂�";
-			mes "��x�b�𕷂��Ă݂Ă�";
-			mes "�������ł��傤���H";
+			mes "[警備兵]";
+			mes "この町の奥にある弓手の村に、";
+			mes "物知りなおじいさんがいます。";
+			mes "鬼についても詳しいと思いますので";
+			mes "一度話を聞いてみては";
+			mes "いかがでしょうか？";
 			next;
-			mes "[�x����]";
-			mes "���������A�P��ꂽ�Z����";
-			mes "���قɂ��܂��B";
-			mes "�ǂ�����낵�����肢���܂��B";
+			mes "[警備兵]";
+			mes "そうそう、襲われた住民は";
+			mes "旅館にいます。";
+			mes "どうかよろしくお願いします。";
 			break;
 		case 2:
-			mes "[�x����]";
-			mes "�����ł����A�c�O�ł��c�c";
-			mes "�͂��A�ǂ����悤�c�c";
+			mes "[警備兵]";
+			mes "そうですか、残念です……";
+			mes "はぁ、どうしよう……";
 			break;
 		}
 	}
 	else {
-		mes "[�x����]";
-		mes "�����A�ǂ��ɍs���Ă���ꂽ�̂ł��H";
-		mes "�c�c��H";
-		mes "���ł����A����́H";
-		mes "���_����Ȃ��ł����c�c";
-		mes "�����H�S�������Ă�������!?";
-		mes "�h�P�r�͂���Ől���P�����̂ł��ˁI";
+		mes "[警備兵]";
+		mes "おお、どこに行っておられたのです？";
+		mes "……ん？";
+		mes "何ですか、それは？";
+		mes "棍棒じゃないですか……";
+		mes "ええ？鬼が持っていた武器!?";
+		mes "ドケビはそれで人を襲ったのですね！";
 		next;
-		mes "[�x����]";
-		mes "�c�c";
-		mes "��!?�P�����̂̓h�P�r����Ȃ��H";
-		mes "�c�c";
-		mes "������������ł����B";
-		mes "���̐́A�����P�����̂��A";
-		mes "�A�����g�Ƃ����S�c�c";
+		mes "[警備兵]";
+		mes "……";
+		mes "え!?襲ったのはドケビじゃない？";
+		mes "……";
+		mes "そうだったんですか。";
+		mes "その昔、町を襲ったのも、";
+		mes "アムムトという鬼……";
 		next;
-		mes "[�x����]";
-		mes "�ł́A�����`����";
-		mes "�Ԉ���Ă����̂��c�c�B";
-		mes "�Ȃ�Ɓc�c";
+		mes "[警備兵]";
+		mes "では、言い伝えは";
+		mes "間違っていたのか……。";
+		mes "なんと……";
 		next;
-		mes "[�x����]";
-		mes "�����A�����܂���B";
-		mes "���͂Ƃ�����A";
-		mes "�{���ɂ��肪�Ƃ��������܂����B";
+		mes "[警備兵]";
+		mes "ああ、すいません。";
+		mes "何はともあれ、";
+		mes "本当にありがとうございました。";
 		next;
-		mes "[�x����]";
-		mes "�������A���͂��̕��m��Ȃ���������";
-		mes "�S�ɂ��Đq�˂Ă������Ȃ��̂��Ƃ�";
-		mes "�S�z���Ă����悤�Ȃ�ł��B";
-		mes "�ǂ������Ȃ��̌��C�Ȏp��";
-		mes "�����Ă����Ă��炦�܂��񂩁H";
+		mes "[警備兵]";
+		mes "そうだ、実はあの物知りなおじいさんが";
+		mes "鬼について尋ねてきたあなたのことを";
+		mes "心配していたようなんです。";
+		mes "どうかあなたの元気な姿を";
+		mes "見せてあげてもらえませんか？";
 	}
 	close2;
 	cutin "pay_soldier",255;
@@ -92,536 +92,536 @@ payon.gat,93,75,4	script	�x����	708,{
 }
 
 //====================================================================
-pay_arche.gat,140,30,4	script	����������	120,{
+pay_arche.gat,140,30,4	script	おじいさん	120,{
 	if(ONI_EVE == 0 || countitem(1501)<1) {
-		mes "[���m�肶��]";
-		mes "��H";
-		mes "�Ȃ񂶂�H";
-		mes "�����悤���ȁH";
+		mes "[物知りじい]";
+		mes "ん？";
+		mes "なんじゃ？";
+		mes "何かようかな？";
 		next;
-		if(select("�S�ɂ��Ēm�肽��","���ɗp�͂Ȃ��ł�")==2) {
-			mes "[���m�肶��]";
-			mes "�������c�c";
+		if(select("鬼について知りたい","特に用はないです")==2) {
+			mes "[物知りじい]";
+			mes "そうか……";
 			close;
 		}
-		mes "[���m�肶��]";
-		mes "�������c�c";
-		mes "�S�ɂ��Ēm�肽���ƂȁB";
-		mes "�c�c�ӂށc�c";
-		mes "�ł͘b���Ƃ��悤���́B";
+		mes "[物知りじい]";
+		mes "そうか……";
+		mes "鬼について知りたいとな。";
+		mes "……ふむ……";
+		mes "では話すとしようかの。";
 		next;
-		mes "[���m�肶��]";
-		mes "�́A�S�Ɛl�Ԃ͒����ǂ������̂���B";
-		mes "���푰�̎q���́A�����ꏏ�ɗV���";
-		mes "�������B";
-		mes "����Ȃ�����̂��Ƃ���A";
-		mes "�S�̎q�ƗV�Ԃ��߂ɏo�������q����";
-		mes "�₵�����ɋA���Ă����̂���B";
+		mes "[物知りじい]";
+		mes "昔、鬼と人間は仲が良かったのじゃ。";
+		mes "両種族の子供は、いつも一緒に遊んで";
+		mes "おった。";
+		mes "そんなある日のことじゃ、";
+		mes "鬼の子と遊ぶために出かけた子供が";
+		mes "寂しそうに帰ってきたのじゃ。";
 		next;
-		mes "[���m�肶��]";
-		mes "�b�𕷂��ƁA������Ȃ���";
-		mes "����ꂽ�炵���B";
-		mes "�����āc�c";
-		mes "�S�̎q���p�������Ȃ��Ȃ��Ă���";
-		mes "������A�`���҂����X�ƏP����";
-		mes "�������N�������B";
+		mes "[物知りじい]";
+		mes "話を聞くと、もう会えないと";
+		mes "言われたらしい。";
+		mes "そして……";
+		mes "鬼の子が姿を見せなくなってから";
+		mes "数日後、冒険者が次々と襲われる";
+		mes "事件が起こった。";
 		next;
-		mes "[���m�肶��]";
-		mes "�`���ҒB�͋S�ɏP��ꂽ�ƌ����B";
-		mes "���̐l�X�͋����A�˘f������";
-		mes "�₪�āA�����ƋS�̎q���p��";
-		mes "���������Ɋ֌W������̂ł͂Ȃ�����";
-		mes "�l����悤�ɂȂ����񂶂�B";
+		mes "[物知りじい]";
+		mes "冒険者達は鬼に襲われたと言う。";
+		mes "町の人々は驚き、戸惑ったが";
+		mes "やがて、事件と鬼の子が姿を";
+		mes "消した事に関係があるのではないかと";
+		mes "考えるようになったんじゃ。";
 		next;
-		mes "[���m�肶��]";
-		mes "���̎���������������";
-		mes "�Z���͏W����s�����B";
-		mes "���̌��ʁA���ƏZ���̈��S��";
-		mes "��邽�߂ɒ�����O�o��";
-		mes "�֎~���邱�Ƃɂ����B";
+		mes "[物知りじい]";
+		mes "この事件をきっかけに";
+		mes "住民は集会を行った。";
+		mes "その結果、町と住民の安全を";
+		mes "守るために町から外出を";
+		mes "禁止することにした。";
 		next;
-		mes "[���m�肶��]";
-		mes "�����āA������̖�B";
-		mes "�����P���A�r�炳�ꂽ�c�c";
+		mes "[物知りじい]";
+		mes "そして、ある日の夜。";
+		mes "町が襲われ、荒らされた……";
 		next;
-		mes "[���m�肶��]";
-		mes "�K���A�ǂ̉Ƃ��������l��";
-		mes "�o�Ȃ��������̂́A���̖��";
-		mes "�����̐l���S�������Ƙb��";
-		mes "���ɂ͋S�̑��Ղ�";
-		mes "��������c���Ă������B";
+		mes "[物知りじい]";
+		mes "幸い、どの家からも怪我人は";
+		mes "出なかったものの、その夜に";
+		mes "多くの人が鬼を見たと話し";
+		mes "町には鬼の足跡が";
+		mes "たくさん残っておった。";
 		next;
-		mes "[���m�肶��]";
-		mes "�l�X�́A���܂ł̎�����";
-		mes "�����P�����̂́A��͂�S�̎d�Ƃ���";
-		mes "���f�����̂���B";
-		mes "���̎�����S�Ƃ͌𗬂�";
-		mes "�Ȃ��Ȃ��Ă��܂����c�c";
+		mes "[物知りじい]";
+		mes "人々は、今までの事件や";
+		mes "町を襲ったのは、やはり鬼の仕業だと";
+		mes "判断したのじゃ。";
+		mes "その時から鬼とは交流が";
+		mes "なくなってしまった……";
 		next;
-		mes "[���m�肶��]";
-		mes "�܂��A�킵���m���Ă���̂�";
-		mes "���̂��炢����ȁB";
+		mes "[物知りじい]";
+		mes "まぁ、わしが知っているのは";
+		mes "このくらいじゃな。";
 		close;
 	}
-	mes "[���m�肶��]";
-	mes "�����c�c�S�z�������B";
-	mes "�S�̂��Ƃ֌��������ƕ����ĂȁB";
-	mes "���Ⴊ�A�ӂށc�c�����ŉ����B";
-	mes "���Ăǂ���������H";
-	mes "�S�����������́H";
-	mes "������A�S��|�����̂��H";
+	mes "[物知りじい]";
+	mes "おお……心配したぞ。";
+	mes "鬼のもとへ向かったと聞いてな。";
+	mes "じゃが、ふむ……無事で何より。";
+	mes "してどうじゃった？";
+	mes "鬼を見つけたかの？";
+	mes "もしや、鬼を倒したのか？";
 	next;
-	mes "[���m�肶��]";
-	mes "�ق��A����́c�c";
-	mes "���_����ȁH";
-	mes "�S�̂��̂��́H";
-	mes "����Ɓc�c";
-	mes "�S��|���Ă��ꂽ�̂���ȁI";
-	mes "�悤����Ă��ꂽ�̂��B";
+	mes "[物知りじい]";
+	mes "ほう、それは……";
+	mes "棍棒じゃな？";
+	mes "鬼のものかの？";
+	mes "すると……";
+	mes "鬼を倒してくれたのじゃな！";
+	mes "ようやってくれたのぉ。";
 	next;
-	mes "[���m�肶��]";
-	mes "�c�c";
-	mes "�ӂށB";
-	mes "�c�c";
-	mes "�Ȃ�ƁI";
-	mes "�l���P�����̂̓h�P�r�ł�";
-	mes "�Ȃ��Ƃ����̂��I";
+	mes "[物知りじい]";
+	mes "……";
+	mes "ふむ。";
+	mes "……";
+	mes "なんと！";
+	mes "人を襲ったのはドケビでは";
+	mes "ないというのか！";
 	next;
-	mes "[���m�肶��]";
-	mes "�A�����g�Ƃ����S��";
-	mes "���������Ă������Ɓc�c";
-	mes "�c�c";
-	mes "�́A�����������̂������";
-	mes "�d�Ƃ�������ƁB";
+	mes "[物知りじい]";
+	mes "アムムトという鬼が";
+	mes "悪さをしておったと……";
+	mes "……";
+	mes "昔、悪さをしたのもそやつの";
+	mes "仕業じゃったと。";
 	next;
-	mes "[���m�肶��]";
-	mes "�m��񂩂����c�c";
-	mes "���ɂ��S���������Ƃ́c�c";
-	mes "�����c�c���Ƃ������Ƃ���B";
-	mes "�킵��́A���܂łƂ�ł��Ȃ�";
-	mes "�ԈႢ�����Ă����̂��c�c";
+	mes "[物知りじい]";
+	mes "知らんかった……";
+	mes "他にも鬼がおったとは……";
+	mes "おぉ……何ということじゃ。";
+	mes "わしらは、今までとんでもない";
+	mes "間違いをしていたのか……";
 	next;
-	mes "[���m�肶��]";
-	mes "�킵�́c�c";
-	mes "�킵�́A�����ԃh�P�r������ł������B";
-	mes "�ǂ����ė��؂����̂��A";
-	mes "���̎��A�Ȃ��킵�̑O����";
-	mes "�������̂��Ɓc�c";
+	mes "[物知りじい]";
+	mes "わしは……";
+	mes "わしは、長い間ドケビを恨んでおった。";
+	mes "どうして裏切ったのか、";
+	mes "あの時、なぜわしの前から";
+	mes "消えたのかと……";
 	next;
-	mes "[���m�肶��]";
-	mes "�c�c";
-	mes "���Ȃ��ɋ����������`���̐l�̎q�Ƃ�";
-	mes "�킵�������̂���B";
-	mes "�킵�́A�h�P�r�ɗ��؂�ꂽ��";
-	mes "�����Ǝv���Ă����B";
-	mes "�������c�c";
+	mes "[物知りじい]";
+	mes "……";
+	mes "そなたに教えた言い伝えの人の子とは";
+	mes "わしだったのじゃ。";
+	mes "わしは、ドケビに裏切られたと";
+	mes "ずっと思っていた。";
+	mes "しかし……";
 	next;
-	mes "[���m�肶��]";
-	mes "���؂����̂́A";
-	mes "����A�M�����Ă��Ȃ������̂�";
-	mes "�킵��̂ق��������񂶂�ȁB";
-	mes "�킵��͍����������Ă��܂����B";
-	mes "�h�P�r������ł��Ă�";
-	mes "�d�����Ȃ��̂��c�c";
+	mes "[物知りじい]";
+	mes "裏切ったのは、";
+	mes "いや、信頼していなかったのは";
+	mes "わしらのほうだったんじゃな。";
+	mes "わしらは酷い事をしてしまった。";
+	mes "ドケビが恨んでいても";
+	mes "仕方がないのぉ……";
 	next;
-	mes "[���m�肶��]";
-	mes "�c�c";
-	mes "�킵�͂ǂ�����΂����񂶂�";
-	mes "�ǂ�����΁c�c";
-	mes "�c�c";
+	mes "[物知りじい]";
+	mes "……";
+	mes "わしはどうすればいいんじゃ";
+	mes "どうすれば……";
+	mes "……";
 	next;
-	mes "[���m�肶��]";
-	mes "�Ȃ񂶂��!?";
-	mes "�h�P�r�́A�킵���";
-	mes "����ł��Ȃ������Ƃ����̂��B";
-	mes "����ǂ��납�A";
-	mes "�킵��ƗV�ׂȂ������̂�";
-	mes "�߂��������Ɓc";
+	mes "[物知りじい]";
+	mes "なんじゃと!?";
+	mes "ドケビは、わしらを";
+	mes "恨んでいなかったというのか。";
+	mes "それどころか、";
+	mes "わしらと遊べなかったのが";
+	mes "悲しかったと…";
 	next;
-	mes "[���m�肶��]";
-	mes "�c�c";
-	mes "�������c�c";
-	mes "�܂��x���Ȃ��̂��������c�c";
+	mes "[物知りじい]";
+	mes "……";
+	mes "そうか……";
+	mes "まだ遅くないのかもしれん……";
 	next;
-	mes "[���m�肶��]";
-	mes "�悯��΁c�c";
-	mes "���̞��_�A�킵�ɂ��炦�񂩂́B";
-	mes "�q����ɁA���̎���b������";
-	mes "�����Ă�肽���񂶂�B";
+	mes "[物知りじい]";
+	mes "よければ……";
+	mes "その棍棒、わしにもらえんかの。";
+	mes "子供らに、この事を話す時に";
+	mes "見せてやりたいんじゃ。";
 	next;
-	if(select("�������A�ǂ����I","���ł��B")==2) {
-		mes "[���m�肶��]";
-		mes "�������A�c�O����c�c";
+	if(select("もちろん、どうぞ！","嫌です。")==2) {
+		mes "[物知りじい]";
+		mes "そうか、残念じゃ……";
 		close;
 	}
-	mes "[���m�肶��]";
-	mes "���肪�Ƃ��B";
-	mes "���Ȃ������Ȃ���΁A";
-	mes "�킵�͂��ꂩ��������ƃh�P�r��";
-	mes "����ł�������낤�B";
-	mes "�Ȃ�Ƃ�����������炢�����c�c";
+	mes "[物知りじい]";
+	mes "ありがとう。";
+	mes "そなたがいなければ、";
+	mes "わしはこれからもずっとドケビを";
+	mes "恨んでいたじゃろう。";
+	mes "なんとお礼をいったらいいか……";
 	next;
-	mes "[���m�肶��]";
-	mes "��������A�킵�͂���ȕ�����";
-	mes "�����Ă���ʂ��A�ǂ���";
-	mes "�󂯎���Ă�������B";
-	mes "�ق�̐S�΂���̂��炶��B";
+	mes "[物知りじい]";
+	mes "そうじゃ、わしはこんな物しか";
+	mes "持っておらぬが、どうか";
+	mes "受け取ってくだされ。";
+	mes "ほんの心ばかりのお礼じゃ。";
 	next;
-	mes "[���m�肶��]";
-	mes "�����t�F�C�����ō���Ă��镨��";
-	mes "�̂ɗǂ��ƕ]���Ȃ񂶂��B";
-	mes "�ǂ����g���Ă�������c�c";
+	mes "[物知りじい]";
+	mes "ここフェイヨンで作られている物で";
+	mes "体に良いと評判なんじゃよ。";
+	mes "どうか使ってくだされ……";
 	next;
 	set ONI_EVE,0;
 	delitem 1501,1;
-	getitem 531+rand(4),1;	//531�`534�܂Ń����_��
-	mes "[���m�肶��]";
-	mes "���Ȃ����畷�����^���́A";
-	mes "�������֓`���Ă����Ƃ��悤�B";
-	mes "�������A���Ȃ��̂��Ƃ��ȁc�c";
+	getitem 531+rand(4),1;	//531～534までランダム
+	mes "[物知りじい]";
+	mes "そなたから聞いた真実は、";
+	mes "孫たちへ伝えていくとしよう。";
+	mes "もちろん、そなたのこともな……";
 	close;
 }
 
-payon.gat,100,135,4	script	�q��	706,{
-	mes "[���̏��N]";
-	mes "�|����`�I�I";
-	mes "�l�����S�ɂ��ׂ�ꂿ�Ⴄ�̂��Ȃ��c�c";
+payon.gat,100,135,4	script	子供	706,{
+	mes "[町の少年]";
+	mes "怖いよ～！！";
+	mes "僕たち鬼にたべられちゃうのかなぁ……";
 	close;
 }
 
 //====================================================================
-payon.gat,45,130,4	script	�Z��	50,{
-	mes "[���̒j��]";
-	mes "���̐́A�����S�ɏP��ꂽ�Ƃ���";
-	mes "�����`���͖{���������̂��I";
-	mes "�ǂ�����΂����񂾁B";
+payon.gat,45,130,4	script	住民	50,{
+	mes "[町の男性]";
+	mes "その昔、町が鬼に襲われたという";
+	mes "言い伝えは本当だったのか！";
+	mes "どうすればいいんだ。";
 	next;
-	mes "[���̒j��]";
-	mes "���������΁c�c";
-	mes "�����c������A�Q��O�ɂ悭";
-	mes "�S�̌����`���𕷂����ꂽ�񂾁B";
-	mes "���̐́A�����ɂ͕K��";
-	mes "^ff0000�t�F�C�������n�t^000000���u���Ă������ȁB";
-	mes "��e�͖��������ƌ����Ă������c�c";
+	mes "[町の男性]";
+	mes "そういえば……";
+	mes "私が幼いころ、寝る前によく";
+	mes "鬼の言い伝えを聞かされたんだ。";
+	mes "その昔、枕元には必ず";
+	mes "^ff0000フェイヨン水溶液^000000が置いてあったな。";
+	mes "母親は魔除けだと言っていたが……";
 	close;
 }
 
 //====================================================================
-payon.gat,153,163,4	script	�Z��	75,{
-	mes "[���̏���]";
-	mes "�l���S�ɏP��ꂽ��ł����āI";
-	mes "�����`���̂悤��";
-	mes "���ɋS������̂ł��傤���H";
+payon.gat,153,163,4	script	住民	75,{
+	mes "[町の女性]";
+	mes "人が鬼に襲われたんですって！";
+	mes "言い伝えのように";
+	mes "町に鬼が来るのでしょうか？";
 	close;
 }
 
 //====================================================================
-payon_in01.gat,177,49,2	script	����𕉂����l	48,{
-	mes "[����𕉂����l]";
-	mes "�����`���ɂ���S���{���ɂ����񂾁I";
-	mes "���̓A���x���^���炱�̒��֋A��r��";
-	mes "�S�ɏP���Đ[��𕉂����񂾁B";
-	mes "���Ƃ��A���Ă��ꂽ���c�c";
-	mes "���̉��䂶�ᓖ���O�ɂ͂ł��Ȃ���c";
+payon_in01.gat,177,49,2	script	怪我を負った人	48,{
+	mes "[怪我を負った人]";
+	mes "言い伝えにある鬼が本当にいたんだ！";
+	mes "私はアルベルタからこの町へ帰る途中";
+	mes "鬼に襲われて深手を負ったんだ。";
+	mes "何とか帰ってこれたが……";
+	mes "この怪我じゃ当分外にはでられないよ…";
 	next;
-	switch (select("�ǂ��ŋS�ɏP��ꂽ�́H","�ǂ�����ē�������!?")) {
+	switch (select("どこで鬼に襲われたの？","どうやって逃げたの!?")) {
 	case 1:
-		mes "[����𕉂����l]";
-		mes "�S�������ꏊ��";
-		mes "�A���x���^�ƃt�F�C������";
-		mes "���傤�ǒ��Ԃ��炢���B";
-		mes "�ʂ�Ƃ��ɂ͏\����";
-		mes "�C���������������c�c";
+		mes "[怪我を負った人]";
+		mes "鬼がいた場所は";
+		mes "アルベルタとフェイヨンの";
+		mes "ちょうど中間くらいだ。";
+		mes "通るときには十分に";
+		mes "気をつけた方がいい……";
 		close;
 	case 2:
-		mes "[����𕉂����l]";
-		mes "�K������������A�悭�o���Ă��Ȃ�����";
-		mes "�����Ă���������������ς�����";
-		mes "���������񂾁B";
+		mes "[怪我を負った人]";
+		mes "必死だったから、よく覚えていないけど";
+		mes "持ってきた道具をかたっぱしから";
+		mes "投げつけたんだ。";
 		next;
-		mes "[����𕉂����l]";
-		mes "�����Ɓc�c^ff0000��A��̖�A";
-		mes "�\�[�h�A�K�[�h�A�A�b�N�X^000000�c�c";
-		mes "���ɂ������������m��Ȃ����ǁc�c";
-		mes "�o���ĂȂ��Ȃ��B";
+		mes "[怪我を負った人]";
+		mes "えっと……^ff0000矢、銀の矢、";
+		mes "ソード、ガード、アックス^000000……";
+		mes "他にもあったかも知れないけど……";
+		mes "覚えてないなぁ。";
 		close;
 	}
 }
 
 //====================================================================
-payon_in01.gat,171,138,2	script	�N	59,{
-	mes "[�N]";
-	mes "��������ɔ��ꂽ�����X�^�[�ɂ�";
-	mes "�����I�ȗ͂��ʗp���Ȃ��񂾁A";
-	mes "���������ʓI�ɑގ�����ɂ�";
-	mes "�u�C�v�܂��́u���@�v�ƌ���";
-	mes "���_�I�ȗ͂������B";
+payon_in01.gat,171,138,2	script	青年	59,{
+	mes "[青年]";
+	mes "かたい皮に被われたモンスターには";
+	mes "物理的な力が通用しないんだ、";
+	mes "それらを効果的に退治するには";
+	mes "「気」または「魔法」と言う";
+	mes "精神的な力だけだ。";
 	close;
 }
 
 //====================================================================
-pay_fild02.gat,105,244,4	script	#�h�P�r	1407,{}
+pay_fild02.gat,105,244,4	script	#ドケビ	1407,{}
 
-pay_fild02.gat,105,244,4	script	�h�P�r	111,{
-	mes "[�h�P�r]";
-	mes "�I���j�A�i�j�J���E�J�H";
+pay_fild02.gat,105,244,4	script	ドケビ	111,{
+	mes "[ドケビ]";
+	mes "オラニ、ナニカヨウカ？";
 	next;
-	if(select("���O��|���ɗ����I","�Ȃ�ł��Ȃ��B")==2) {
-		mes "[�h�P�r]";
-		mes "�\�J�c�c";
+	if(select("お前を倒しに来た！","なんでもない。")==2) {
+		mes "[ドケビ]";
+		mes "ソカ……";
 		close;
 	}
-	mes "[�h�P�r]";
-	mes "�i�[�_�H";
-	mes "�I���^�`�A�i�j�J�V�^�J�H";
-	mes "�c�c";
-	mes "�I���^�`�A�q�g�A�I�\�E�H";
-	mes "�\���A�i�C�B";
+	mes "[ドケビ]";
+	mes "ナゼダ？";
+	mes "オラタチ、ナニカシタカ？";
+	mes "……";
+	mes "オラタチ、ヒト、オソウ？";
+	mes "ソレ、ナイ。";
 	next;
-	mes "[�h�P�r]";
-	mes "�I���A�q�g�A���J�V�A�i�J���V�B";
-	mes "�C�}�A�A�\�o�i�C�A";
-	mes "�f���A�L���C�i�C�B";
+	mes "[ドケビ]";
+	mes "オラ、ヒト、ムカシ、ナカヨシ。";
+	mes "イマ、アソバナイ、";
+	mes "デモ、キライナイ。";
 	next;
-	mes "[�h�P�r]";
-	mes "�q�g�A�I�\�E�A�^�u���A�A�����g�B";
-	mes "�I�����A�A�����g�A�I�\�����^�B";
-	mes "�A�����g�A�����C�A�f���c���C�B";
-	mes "�I���^�`�A�j�Q�^�B";
-	mes "�_�J���A�q�g�A�A�\�x�i�N�i�^�B";
-	mes "�q�g�A�A�\�x�i�C�A�I���A�J�i�V�C�c�c";
+	mes "[ドケビ]";
+	mes "ヒト、オソウ、タブン、アムムト。";
+	mes "オラモ、アムムト、オソワレタ。";
+	mes "アムムト、ワルイ、デモツヨイ。";
+	mes "オラタチ、ニゲタ。";
+	mes "ダカラ、ヒト、アソベナクナタ。";
+	mes "ヒト、アソベナイ、オラ、カナシイ……";
 	next;
-	if(select("�A�����g��|���Ă���I","���킢�����ɁB")==2) {
-		mes "[�h�P�r]";
-		mes "�I���J�i�V�C�c�c";
-		mes "�}�^�A�A�\�r�^�C�c�c";
+	if(select("アムムトを倒してくる！","かわいそうに。")==2) {
+		mes "[ドケビ]";
+		mes "オラカナシイ……";
+		mes "マタ、アソビタイ……";
 		close;
 	}
-	mes "[�h�P�r]";
-	mes "�\�J�c�c�A�����g�A�`�J�N�C���c�c";
-	mes "�A�����g�A�L�P���A�c���C�B";
-	mes "�A�����g�A�`�J�d�N�A���N�i�C�B";
+	mes "[ドケビ]";
+	mes "ソカ……アムムト、チカクイル……";
+	mes "アムムト、キケン、ツヨイ。";
+	mes "アムムト、チカヅク、ヨクナイ。";
 	next;
-	mes "[�h�P�r]";
-	mes "^ff0000�J�^�C�J��^000000�A�g�I�N�A";
-	mes "�u�c�P���A�C�`�o���B";
-	mes "^ff0000�t�^�c^000000�A���e�N�A�C�C�B";
-	mes "���J�V�A�i�Q�^�A";
-	mes "�A�����g�A�C�^�K�^�B";
-	mes "�c�c�V�k�i�c�c";
+	mes "[ドケビ]";
+	mes "^ff0000カタイカワ^000000、トオク、";
+	mes "ブツケル、イチバン。";
+	mes "^ff0000フタツ^000000、モテク、イイ。";
+	mes "ムカシ、ナゲタ、";
+	mes "アムムト、イタガタ。";
+	mes "……シヌナ……";
 	close;
 }
 
 //====================================================================
-pay_fild02.gat,53,128,4	script	#�A�����g	1301,{}
+pay_fild02.gat,53,128,4	script	#アムムト	1301,{}
 
-pay_fild02.gat,53,128,4	script	�A�����g	111,{
+pay_fild02.gat,53,128,4	script	アムムト	111,{
 	if(countitem(1751)<1 || countitem(1089)<1 || countitem(935)<2) {
-		mes "���̂܂܂ł͏��Ă����ɂȂ��c�c";
-		mes "������_��T���K�v�����肻�����B";
+		mes "今のままでは勝てそうにない……";
+		mes "何か弱点を探す必要がありそうだ。";
 		close;
 	}
 	delitem 1751,1;
 	delitem 1089,1;
 	delitem 935,2;
-	mes "[�A�����g]";
-	mes "�c�c�j���Q���c�c";
-	mes "�i�j�V�j�L�^";
-	mes "�h�P�r�c�c";
-	mes "�j���Q���c�c";
-	mes "�L���C�I";
-	mes "�j���Q���^�I�X�I�I";
+	mes "[アムムト]";
+	mes "……ニンゲン……";
+	mes "ナニシニキタ";
+	mes "ドケビ……";
+	mes "ニンゲン……";
+	mes "キライ！";
+	mes "ニンゲンタオス！！";
 	next;
-	mes "�A�����g���ˑR�P���|�����Ă���!!";
+	mes "アムムトが突然襲い掛かってきた!!";
 	next;
-	mes "�A�����g�̓A�h���i�������b�V����";
-	mes "�g�����B";
-	mes "�A�����g�̍U�����x�����������B";
-	mes "�A�����g���A���U�����d�|���Ă����B";
-	mes "�ǂ�����!?";
+	mes "アムムトはアドレナリンラッシュを";
+	mes "使った。";
+	mes "アムムトの攻撃速度が増加した。";
+	mes "アムムトが連続攻撃を仕掛けてきた。";
+	mes "どうする!?";
 	next;
-	switch (select("������","�h�䂷��","�󂯗���")) {
+	switch (select("避ける","防御する","受け流す")) {
 	case 1:
-		mes "�X�b�c�c";
+		mes "スッ……";
 		mes " ";
-		mes "���܂������邱�Ƃ��ł����B";
-		mes "�ǂ�����H";
+		mes "うまく避けることができた。";
+		mes "どうする？";
 		break;
 	case 2:
-		mes "�K�b�c�c";
+		mes "ガッ……";
 		mes " ";
-		mes "���Ƃ��ς��������B";
-		mes "�ǂ�����H";
+		mes "何とか耐え凌いだ。";
+		mes "どうする？";
 		set '@point,'@point|0x01;
 		break;
 	case 3:
-		mes "�h�K�b�c�c";
+		mes "ドガッ……";
 		mes " ";
-		mes "�󂯗������ƂɎ��s�����B";
-		mes "�_���[�W���󂯂��I";
-		mes "�ǂ�����H";
+		mes "受け流すことに失敗した。";
+		mes "ダメージを受けた！";
+		mes "どうする？";
 		set '@point,'@point|0x02;
 		break;
 	}
 	next;
-	switch (select("�t�F�C�����n�t���Ԃ��܂���","��̖��n�ʂɎh���B","��������𓊂���B")) {
+	switch (select("フェイヨン溶液をぶちまける","銀の矢を地面に刺す。","かたい皮を投げる。")) {
 	case 1:
-		mes "�o�V���b�c�c";
+		mes "バシャッ……";
 		mes " ";
-		mes "�A�����g�ɉt�̂����������B";
-		mes "�A�����g�͂������ꂵ��ł���B";
-		mes "�ǂ������ʂ��������悤���c�c";
+		mes "アムムトに液体がかかった。";
+		mes "アムムトはもがき苦しんでいる。";
+		mes "どうやら効果があったようだ……";
 		break;
 	case 2:
-		mes "�h�X�b�c�c";
+		mes "ドスッ……";
 		mes " ";
-		mes "�����N����Ȃ������c�c";
-		mes "��������ăA�����g��";
-		mes "�P���P���΂��Ă���B";
+		mes "何も起こらなかった……";
+		mes "それを見てアムムトが";
+		mes "ケラケラ笑っている。";
 		set '@point,'@point|0x04;
 		break;
 	case 3:
-		mes "�r���c�c";
+		mes "ビュ……";
 		mes " ";
-		mes "�A�����g�͂Ƃ����ɂ悯���B";
-		mes "�ɂ����I";
-		mes "�_���[�W��^�����Ȃ������B";
+		mes "アムムトはとっさによけた。";
+		mes "惜しい！";
+		mes "ダメージを与えられなかった。";
 		set '@point,'@point|0x08;
 		break;
 	}
 	next;
-	mes "�A�����g�̍U���I";
-	mes "�A�����g�̓��}�[�i�C�g���g����";
-	mes "�U�����Ă����B";
+	mes "アムムトの攻撃！";
+	mes "アムムトはメマーナイトを使って";
+	mes "攻撃してきた。";
 	next;
 	set '@rand,rand(100);
 	if('@rand < 40) {
-		mes "�X�b�c�c";
+		mes "スッ……";
 		mes " ";
-		mes "�^�ǂ������邱�Ƃ��ł����B";
-		mes "�����������I";
+		mes "運良く避けることができた。";
+		mes "さあ反撃だ！";
 	}
 	else if('@point==0 || '@rand >= 79) {
-		mes "�Y�K�b�c�c";
+		mes "ズガッ……";
 		mes " ";
-		mes "�����������݂���";
-		mes "�������邱�Ƃ��ł��Ȃ������B";
-		mes "�����������I";
+		mes "回避をこころみたが";
+		mes "避けきることができなかった。";
+		mes "さあ反撃だ！";
 	}
 	else {
-		mes "�Y�K�K�K�b�c�c";
+		mes "ズガガガッ……";
 		mes " ";
-		mes "�����鎖���ł���";
-		mes "��_���[�W���󂯂��I";
-		mes "�ӎ������̂��Ă����c�c";
+		mes "避ける事ができず";
+		mes "大ダメージを受けた！";
+		mes "意識が遠のいていく……";
 		close2;
 		warp "payon_in01.gat",170,45;
 		end;
 	}
 	next;
-	switch (select("�t�F�C�������n�t������","��̖�œ˂��B","��������𓊂���B")) {
+	switch (select("フェイヨン水溶液を飲む","銀の矢で突く。","かたい皮を投げる。")) {
 	case 1:
-		mes "�S�N�S�N�c�c";
+		mes "ゴクゴク……";
 		mes " ";
-		mes "���n�t�����񂾏u��";
-		mes "�̂�Ⴢ���������I";
+		mes "水溶液を飲んだ瞬間";
+		mes "体に痺れを感じた！";
 		break;
 	case 2:
-		mes "�V���b�c�c";
+		mes "シュッ……";
 		mes " ";
-		mes "�A�����g�ɓːi���Ȃ���";
-		mes "��œ˂�����";
-		mes "�������Ă��܂����I";
+		mes "アムムトに突進しながら";
+		mes "矢で突いたが";
+		mes "避けられてしまった！";
 		set '@point,'@point|0x10;
 		break;
 	case 3:
-		mes "�o�V�b�c�c";
+		mes "バシッ……";
 		mes " ";
-		mes "�����A�A�����g�ɖ��������B";
-		mes "�ɂ����Ă���I";
+		mes "見事、アムムトに命中した。";
+		mes "痛がっている！";
 		set '@point,'@point|0x20;
 		break;
 	}
 	next;
-	mes "�A�����g�̍U���I";
-	mes "�A�����g�͎����Ă��鞞�_��";
-	mes "�͂����ς��U��񂵂�";
-	mes "������ɓ˂�����ł����B";
+	mes "アムムトの攻撃！";
+	mes "アムムトは持っている棍棒を";
+	mes "力いっぱい振り回して";
+	mes "こちらに突っ込んできた。";
 	next;
 	set '@rand,rand(100);
 	if('@point==0x20 || '@rand < 40) {
-		mes "�K�K�b�c�c";
+		mes "ガガッ……";
 		mes " ";
-		mes "�h�䂷�邱�Ƃɐ���������";
-		mes "�����܂����З͂���������";
-		mes "�_���[�W���󂯂Ă��܂����B";
-		mes "�������I";
+		mes "防御することに成功したが";
+		mes "すさまじい威力だったため";
+		mes "ダメージを受けてしまった。";
+		mes "反撃だ！";
 	}
 	else if('@point==0x10 || '@rand >= 79) {
-		mes "�h�e�b�c�c";
+		mes "ドテッ……";
 		mes " ";
-		mes "�������A�A�����g��";
-		mes "�U������ۂɓ]�񂾁B";
-		mes "�������I";
+		mes "しかし、アムムトは";
+		mes "攻撃する際に転んだ。";
+		mes "反撃だ！";
 	}
 	else {
-		mes "�h�K�K�K�b�c�c";
+		mes "ドガガガッ……";
 		mes " ";
-		mes "���܂�̖ҍU�ɑς��؂ꂸ";
-		mes "�h����Ƃ���Ă��܂����B";
-		mes "�����ɋ���Ȉꌂ���������I";
-		mes "�S�g�̗͂������Ă����c�c";
+		mes "あまりの猛攻に耐え切れず";
+		mes "防御をとかれてしまった。";
+		mes "そこに強烈な一撃が入った！";
+		mes "全身の力が抜けていく……";
 		close2;
 		warp "payon_in01.gat",165,140;
 		end;
 	}
 	next;
-	switch (select("�t�F�C�������n�t�𓊂�����B","��̖�𓊂�����","��������𓊂���B")) {
+	switch (select("フェイヨン水溶液を投げつける。","銀の矢を投げつける","かたい皮を投げる。")) {
 	case 1:
-		mes "�K�V���b�c�c";
+		mes "ガシャッ……";
 		mes " ";
-		mes "�r���Ŏ����ǂ������";
-		mes "�A�����g�ɂƂǂ��Ȃ������c�c";
+		mes "途中で試験管が割れて";
+		mes "アムムトにとどかなかった……";
 		break;
 	case 2:
-		mes "�h�X�b�c�c";
+		mes "ドスッ……";
 		mes " ";
-		mes "��������́A�A�����g��";
-		mes "�˂�������_���[�W��^�����I";
+		mes "投げた矢は、アムムトに";
+		mes "突きささりダメージを与えた！";
 		set '@point,'@point|0x40;
 		break;
 	case 3:
-		mes "�K�S�b�c�c";
+		mes "ガゴッ……";
 		mes " ";
-		mes "�A�����g�͎����Ă���";
-		mes "���_�Ŕ��e���Ԃ����B";
-		mes "���ł�������悯���ꂸ";
-		mes "�_���[�W���󂯂��I";
+		mes "アムムトは持っていた";
+		mes "棍棒で皮を弾き返した。";
+		mes "飛んできた皮をよけきれず";
+		mes "ダメージを受けた！";
 		set '@point,'@point|0x80;
 		break;
 	}
 	next;
-	if('@point==0x60 || rand(100) >= 79) {	//����
+	if('@point==0x60 || rand(100) >= 79) {	//勝利
 		set ONI_EVE,1;
 		getitem 1501,1;
-		mes "�A�����g�����炵�߂��I�I";
-		mes "�ڂ̑O�ŃA�����g���C�₵�Ă���B";
-		mes "�A�����g���������Ă���";
-		mes "���_����ɓ��ꂽ�B";
+		mes "アムムトをこらしめた！！";
+		mes "目の前でアムムトが気絶している。";
+		mes "アムムトが装備していた";
+		mes "棍棒を手に入れた。";
 		next;
-		mes "�S��|�����؋��Ƃ���";
-		mes "���ɂ����ċA�낤�B";
+		mes "鬼を倒した証拠として";
+		mes "町にもって帰ろう。";
 		close2;
 		warp "payon.gat",90,30;
 		end;
 	}
-	mes "�h�S�b�c�c";
+	mes "ドゴッ……";
 	mes " ";
-	mes "����ȑ̓��������������I�I";
-	mes "�A�����g��ǂ��l�߂���";
-	mes "�����̂Ƃ����";
-	mes "�������󂯂Ă��܂����I";
-	mes "�ڂ̑O���Â��Ȃ��Ă����c�c";
+	mes "強烈な体当たりをくらった！！";
+	mes "アムムトを追い詰めたが";
+	mes "後一歩のところで";
+	mes "反撃を受けてしまった！";
+	mes "目の前が暗くなっていく……";
 	close2;
 	warp "payon_in01.gat",165,140;
 	end;

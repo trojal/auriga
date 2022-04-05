@@ -1,196 +1,196 @@
 //====================================================================
 //Ragnarok Online - Transmigration NPC Script	by Blaze
 //
-//�@�� TRANSMIGRATE -> 0�`2
-//�@   OLD_CLASS    -> �]���O�̐E�Ƃ�ۑ�
+//　■ TRANSMIGRATE -> 0～2
+//　   OLD_CLASS    -> 転生前の職業を保存
 //====================================================================
 
 //==========================================
-// �Z�[�W�L���b�X��
+// セージキャッスル
 //------------------------------------------
 
-yuno_in02.gat,88,164,5	script	���e�E�X�V���v	742,{
+yuno_in02.gat,88,164,5	script	メテウスシルプ	742,{
 	if(TRANSMIGRATE == 0) {
 		if(BaseLevel < 99 || JobLevel < 50 || Class < CLASS_KN || Class > CLASS_CR2) {
-			mes "[���e�E�X�V���v]";
-			mes "��������Ⴂ�܂��B";
-			mes "������̓V���o�C�`�F��";
-			mes "���@�A�J�f�~�[�}���قł��B";
-			mes "�����ɂ͋M�d�ȏ��Ђ�";
-			mes "�������񂠂�܂��B";
-			mes "������育���w���������B";
+			mes "[メテウスシルプ]";
+			mes "いらっしゃいませ。";
+			mes "こちらはシュバイチェル";
+			mes "魔法アカデミー図書館です。";
+			mes "ここには貴重な書籍が";
+			mes "たくさんあります。";
+			mes "ゆっくりご見学ください。";
 			close;
 		}
-		mes "[���e�E�X�V���v]";
-		mes "��������Ⴂ�܂��B";
-		mes "������̓V���o�C�`�F��";
-		mes "���@�A�J�f�~�[�}���قł��B";
-		mes "���񂲗��ق��ꂽ�̂́A";
-		mes "�u���~���̏��v�����ǂ݂ɂȂ�";
-		mes "���߂ł��傤�H";
+		mes "[メテウスシルプ]";
+		mes "いらっしゃいませ。";
+		mes "こちらはシュバイチェル";
+		mes "魔法アカデミー図書館です。";
+		mes "今回ご来館されたのは、";
+		mes "「ユミルの書」をお読みになる";
+		mes "ためでしょう？";
 		next;
-		mes "[���e�E�X�V���v]";
-		mes "���~���̏��͈�����Ƃ��Ă�";
-		mes "���J���Ă���܂��B";
-		mes "����ł����X�A���ړǂ݂�����";
-		mes "���������������܂��c�c";
+		mes "[メテウスシルプ]";
+		mes "ユミルの書は印刷物としても";
+		mes "公開しております。";
+		mes "それでも時々、直接読みたいと";
+		mes "おっしゃる方がいます……";
 		next;
-		mes "[���e�E�X�V���v]";
-		mes "���������{�̏�Ԃ����܂�";
-		mes "�ǂ�����܂���B";
-		mes "�����ŉ{��������]�̕��ɂ́A";
-		mes "��t���𒸂����Ƃɂ����";
-		mes "���ʂɋ������Ă���܂��B";
+		mes "[メテウスシルプ]";
+		mes "しかし原本の状態があまり";
+		mes "良くありません。";
+		mes "そこで閲覧をご希望の方には、";
+		mes "寄付金を頂くことによって";
+		mes "特別に許可をしております。";
 		next;
-		mes "[���e�E�X�V���v]";
-		mes "��t����1,285,000Zeny�ł��B";
-		mes "����͏��Ђ̈��S�ȕۑ���";
-		mes "�Ï��Ќ����ɗ��p�����Ē����܂��B";
-		mes "�\���󂠂�܂��񂪁A�{����";
-		mes "����]�ł����炨�[�߂��������B";
-		mes "����t�Ȃ����܂����H";
+		mes "[メテウスシルプ]";
+		mes "寄付金は1,285,000Zenyです。";
+		mes "これは書籍の安全な保存と";
+		mes "古書籍研究に利用させて頂きます。";
+		mes "申し訳ありませんが、閲覧を";
+		mes "ご希望でしたらお納めください。";
+		mes "ご寄付なさいますか？";
 		next;
 		if(countitem(25020) > 0) {
 			next;
-			mes "[���e�E�X�V���v]";
-			mes "�ƁA���i�Ȃ��t���𒸂���";
-			mes "����̂ł����A";
-			mes "�M���́u���Ə؏��v��";
-			mes "�������̂悤�ł��ˁB";
+			mes "[メテウスシルプ]";
+			mes "と、普段なら寄付金を頂いて";
+			mes "いるのですが、";
+			mes "貴方は「卒業証書」を";
+			mes "お持ちのようですね。";
 			next;
-			mes "[���e�E�X�V���v]";
-			mes "�u���Ə؏��v�����n���������";
-			mes "�����ŉ{����";
-			mes "�����Ă���܂��B";
-			mes "���ɂ�����ɂȂ�܂����H";
+			mes "[メテウスシルプ]";
+			mes "「卒業証書」をお渡し頂ければ";
+			mes "無料で閲覧を";
+			mes "許可しております。";
+			mes "中にお入りになりますか？";
 			next;
-			if(select("����","��߂�") == 2) {
-				mes "[���e�E�X�V���v]";
-				mes "������育���w���������B";
-				mes "�y�������s�ɂȂ�Ƃ悢�ł��ˁB";
+			if(select("入る","やめる") == 2) {
+				mes "[メテウスシルプ]";
+				mes "ゆっくりご見学ください。";
+				mes "楽しい旅行になるとよいですね。";
 				close;
 			}
 			delitem 25020,1;
 			set TRANSMIGRATE,101;
-			mes "[���e�E�X�V���v]";
-			mes "�ł́A�ǂ������ւ����肭�������B";
+			mes "[メテウスシルプ]";
+			mes "では、どうぞ中へお入りください。";
 			close;
 		}
-		if(select("��t����","��߂�")==2) {
-			mes "[���e�E�X�V���v]";
-			mes "������育���w���������B";
-			mes "�y�������s�ɂȂ�Ƃ悢�ł��ˁB";
+		if(select("寄付する","やめる")==2) {
+			mes "[メテウスシルプ]";
+			mes "ゆっくりご見学ください。";
+			mes "楽しい旅行になるとよいですね。";
 			close;
 		}
 		if(Zeny < 1285000) {
-			mes "[���e�E�X�V���v]";
-			mes "���X�������킹������Ȃ��悤�ł��ˁB";
-			mes "���������ēx���m�F�Ȃ����Ă���";
-			mes "���z�����������B";
+			mes "[メテウスシルプ]";
+			mes "少々持ち合わせが足りないようですね。";
+			mes "所持金を再度ご確認なさってから";
+			mes "お越しください。";
 			close;
 		}
 		set Zeny,Zeny-1285000;
 		set TRANSMIGRATE,1;
 	}
-	mes "[���e�E�X�V���v]";
-	mes "���肪�Ƃ��������܂��B";
-	mes "��t���͓��A�J�f�~�[�̌��������Ƃ���";
-	mes "��؂Ɏg�킹�Ē����܂��B";
-	mes "�ł́A�ǂ������ւ����肭�������B";
+	mes "[メテウスシルプ]";
+	mes "ありがとうございます。";
+	mes "寄付金は当アカデミーの研究資金として";
+	mes "大切に使わせて頂きます。";
+	mes "では、どうぞ中へお入りください。";
 	close;
 }
 
 //==============================================================
-yuno_in02.gat,93,207,0	script	���~���̏�	111,{
+yuno_in02.gat,93,207,0	script	ユミルの書	111,{
 	if(Upper == UPPER_HIGH) {
-		mes "[���~���̏�]";
-		mes "�c�c�h���̐_�a�ւ̓������";
-		mes "���܂�ς�肵�ґS�ĂɊJ����Ă���B";
-		mes "�p�Y�����ޓ��ւ̎菕���Ƃ���";
-		mes "���E���ǂ��ł��J����Ă���B";
+		mes "[ユミルの書]";
+		mes "……栄光の神殿への入り口は";
+		mes "生まれ変わりし者全てに開かれている。";
+		mes "英雄が歩む道への手助けとして";
+		mes "世界中どこでも開かれている。";
 		next;
-		mes "[���~���̏�]";
-		mes "�����ł́A�ނ�ׂ̈ɂ�����";
-		mes "�������Ȃ���Ă���B";
-		mes "�X�Ɍ����ł͐������Ƃ��ł���";
-		mes "�肢������A���̐_�a�ł�";
-		mes "���A�ł���ƌ����Ă���B";
+		mes "[ユミルの書]";
+		mes "そこでは、彼らの為にあらゆる";
+		mes "準備がなされている。";
+		mes "更に現実では成すことができぬ";
+		mes "願いすらも、その神殿では";
+		mes "成就できると言われている。";
 		next;
-		if(select("�ǂނ̂���߂�","������ǂ�")==1) {
-			mes "[���~���̏�]";
-			mes "�c�c�c�c";
+		if(select("読むのをやめる","続きを読む")==1) {
+			mes "[ユミルの書]";
+			mes "…………";
 			close;
 		}
-		mes "[���~���̏�]";
-		mes "��Ɉ�ԋ߂��ꏊ�B������";
-		mes "���@���L���[�̐_�a�֒ʂ��铹���肫�B";
-		mes "�����A���i�Ȃ��҂͉i����";
-		mes "�m�邱�Ƃ͂ł��ʁB";
+		mes "[ユミルの書]";
+		mes "空に一番近き場所。そこに";
+		mes "ヴァルキリーの神殿へ通じる道ありき。";
+		mes "だが、資格なき者は永遠に";
+		mes "知ることはできぬ。";
 		close2;
 		warp "valkyrie.gat",48,8;
 		end;
 	}
 	if(TRANSMIGRATE == 0) {
-		mes "[���~���̏�]";
-		mes "�c�c�c�c";
+		mes "[ユミルの書]";
+		mes "…………";
 		close;
 	}
-	mes "[���~���̏�]";
-	mes "�c�c�����Đ��̊����̋Ɛт̐��X��";
-	mes "���ɋ^�⎋���ꂽ���Ƃ́A�p�Y�B�ɂ�";
-	mes "�s���ɔ��藈��u���v�Ƃ���";
-	mes "���ł������B�p�Y�Ƃ����ǂ�";
-	mes "�Ŋ��̏u�Ԃ͕K���K�����̂ł��낤�B";
+	mes "[ユミルの書]";
+	mes "……そして先代の幾多の業績の数々と";
+	mes "共に疑問視されたことは、英雄達にも";
+	mes "不可避に迫り来る「死」という";
+	mes "問題であった。英雄といえども";
+	mes "最期の瞬間は必ず訪れるものであろう。";
 	next;
-	mes "[���~���̏�]";
-	mes "�������ǂ�ȉp�Y�ɂ܂�鎍��";
-	mes "�L�^�A�����ɂ��`���������A";
-	mes "���̍Ŋ��̋L�^�͎c���Ă��Ȃ������B";
-	mes "����ɑ΂�����ڂ���_������B";
-	mes "����́u���O�i���N�v�ɋL�q���ꂽ";
-	mes "���@���L���[�Ɋւ�����e���B";
+	mes "[ユミルの書]";
+	mes "しかしどんな英雄にまつわる詩や";
+	mes "記録、口頭による伝承さえも、";
+	mes "その最期の記録は残っていなかった。";
+	mes "これに対し一つ注目する点がある。";
+	mes "それは「ラグナロク」に記述された";
+	mes "ヴァルキリーに関する内容だ。";
 	next;
-	mes "[���~���̏�]";
-	mes "�l�ԂƂ��čŏ�̎��ɍō��̎�����";
-	mes "�������ҁB���̎҂͍ŏI����ɂ�����";
-	mes "��m�Ƃ��Đ�����B�����Ă��̍���";
-	mes "���@���L���[�̓����ɂ��A";
-	mes "���@���n���֌��������悤�ł���B";
-	mes "����͕��ʂ̐l�X�̍Ŋ��Ƃ͈قȂ�B";
+	mes "[ユミルの書]";
+	mes "人間として最上の時に最高の資質を";
+	mes "持ちし者。その者は最終聖戦において";
+	mes "戦士として戦った。そしてその魂は";
+	mes "ヴァルキリーの導きにより、";
+	mes "ヴァルハラへ向かったようである。";
+	mes "これは普通の人々の最期とは異なる。";
 	next;
-	mes "[���~���̏�]";
-	mes "�p�Y�B�͗։􂷂邱�Ƃɂ����";
-	mes "�^�̉p�Y�Ƃ��Đ��܂�ς��A";
-	mes "�V���Ȏ���֌������Ƃ炷�҂ƂȂ�B";
-	mes "�����ē|�ꂵ���͍̂Ăёh��A";
-	mes "���͐V�����\�͂𓾂�ł��낤�B";
+	mes "[ユミルの書]";
+	mes "英雄達は輪廻することによって";
+	mes "真の英雄として生まれ変わり、";
+	mes "新たな時代へ光明を照らす者となる。";
+	mes "そして倒れし肉体は再び蘇り、";
+	mes "魂は新しい能力を得るであろう。";
 	next;
-	mes "[���~���̏�]";
-	mes "�������s�K�ɂ��A���~���̐S����";
-	mes "�����A�嗤�S�y�֏������Ă��܂����B";
-	mes "�����Ŏ��͗l�X�ȕ��@�ɂ����";
-	mes "�X�Ȃ�𖾂�ڎw�����B�����c�c";
+	mes "[ユミルの書]";
+	mes "しかし不幸にも、ユミルの心臓は";
+	mes "聖戦後、大陸全土へ消失してしまった。";
+	mes "そこで私は様々な方法によって";
+	mes "更なる解明を目指した。だが……";
 	next;
-	mes "[���~���̏�]";
-	mes "�c�O�Ȃ��炱��ȏ�";
-	mes "�����m�邱�Ƃ��ł��Ȃ������B";
-	mes "����䂦���͂����ɋL�^���c�����B";
+	mes "[ユミルの書]";
+	mes "残念ながらこれ以上";
+	mes "何も知ることができなかった。";
+	mes "それゆえ私はここに記録を残そう。";
 	next;
 	if(!checkquest(1000)) setquest 1000;
-	mes "[���~���̏�]";
-	mes "���̒N�������̋L�^�������o���A";
-	mes "���̈ӎu�Ɗ�]�A����̍Ō�̌���";
-	mes "���o���p�Y�Ƃ��Đ��܂�ς�邱�Ƃ��A";
-	mes "�����č���x���@���L���[�̐_�a��";
-	mes "�p�Y�B�𓱂��҂������邱�Ƃ�";
-	mes "�؂ɑ҂��]�ށB�܂����̌�Ɂc�c";
+	mes "[ユミルの書]";
+	mes "後代の誰かがこの記録を見つけ出し、";
+	mes "その意志と希望、時代の最後の光を";
+	mes "見出す英雄として生まれ変わることを、";
+	mes "そして今一度ヴァルキリーの神殿で";
+	mes "英雄達を導く者が現われることを";
+	mes "切に待ち望む。またその後に……";
 	if(TRANSMIGRATE == 1) set TRANSMIGRATE,2;
 	else if(TRANSMIGRATE == 101) set TRANSMIGRATE,102;
 	close;
 }
 
 //==============================================================
-yuno_in05.gat,49,43,0	script	���~���̐S��	111,{
+yuno_in05.gat,49,43,0	script	ユミルの心臓	111,{
 	if(TRANSMIGRATE == 2 || TRANSMIGRATE == 102)
 		warp "valkyrie.gat",48,8;
 	end;
@@ -198,88 +198,88 @@ yuno_in05.gat,49,43,0	script	���~���̐S��	111,{
 
 
 //==========================================
-// ���@���L���[�_�a
+// ヴァルキリー神殿
 //------------------------------------------
 
-valkyrie.gat,48,86,4	script	���@���L���[	811,{
+valkyrie.gat,48,86,4	script	ヴァルキリー	811,{
 	if(Upper != UPPER_NORMAL) {
-		mes "[���@���L���[]";
-		mes "�h���̃��@���n���ւ悭��";
-		mes "���z�����������܂����B";
-		mes "�������̂��x�܂���Ƃ悢�ł��傤�B";
-		mes "��m�B�Ɍ�����I";
+		mes "[ヴァルキリー]";
+		mes "栄光のヴァルハラへよくぞ";
+		mes "お越しくださいました。";
+		mes "少しお体を休ませるとよいでしょう。";
+		mes "戦士達に光あれ！";
 		close;
 	}
-	mes "[���@���L���[]";
-	mes "�h���̃��@���n���ւ悭��";
-	mes "���z�����������܂����B";
-	mes "���ꂩ�猻�݂܂ł̐��𐮗����A";
-	mes "�V���Ȑ��𓾂邱�ƂɂȂ�܂��B";
-	mes "��m�B�Ɍ�����I";
+	mes "[ヴァルキリー]";
+	mes "栄光のヴァルハラへよくぞ";
+	mes "お越しくださいました。";
+	mes "これから現在までの生を整理し、";
+	mes "新たな生を得ることになります。";
+	mes "戦士達に光あれ！";
 	next;
 	if(Weight || SkillPoint|| checkcart() || checkfalcon() || checkriding() || sc_ison(SC_ALL_RIDING)) {
-		mes "[���@���L���[]";
-		mes "���Ȃ��͏������Ȃ����";
-		mes "�Ȃ�Ȃ����Ƃ�����܂��B";
-		mes "���΂����x�݂��������c�c";
-		mes "�����āA�g�ƐS�𖳂ɂ��Ă��������B";
-		mes "���_�Ƃ����͖̂��S�̎���";
-		mes "�\�����̂ł�����B";
+		mes "[ヴァルキリー]";
+		mes "あなたは準備しなければ";
+		mes "ならないことがあります。";
+		mes "しばしお休みください……";
+		mes "そして、身と心を無にしてください。";
+		mes "名誉というのは無心の時に";
+		mes "表れるものですから。";
 		next;
-		mes "[���@���L���[]";
-		mes "�A�C�e����X�L���|�C���g�Ȃ�";
-		mes "���������Ȃ�";
-		mes "��ԂłȂ���΂Ȃ�܂���B";
-		mes "�������ɂ��������B��J�[�g�Ȃǂ�";
-		mes "�����čs�����Ƃ͂ł��܂���B";
+		mes "[ヴァルキリー]";
+		mes "アイテムやスキルポイントなど";
+		mes "何も持たない";
+		mes "状態でなければなりません。";
+		mes "旅を共にした動物達やカートなども";
+		mes "持って行くことはできません。";
 		next;
-		mes "[���@���L���[]";
-		mes "��x�X�֖߂��ď��������܂����H";
-		mes "�߂�Ȃ�Α����Ă����܂��傤�B";
+		mes "[ヴァルキリー]";
+		mes "一度街へ戻って準備をしますか？";
+		mes "戻るならば送ってあげましょう。";
 		next;
-		if(select("������","�͂�") == 1) {
-			mes "[���@���L���[]";
-			mes "����ł́c�c�p�ӂ��ł��܂�����";
-			mes "���z�����������B";
+		if(select("いいえ","はい") == 1) {
+			mes "[ヴァルキリー]";
+			mes "それでは……用意ができましたら";
+			mes "お越しください。";
 			close;
 		}
-		mes "[���@���L���[]";
-		mes "����ł͊X�ւ����肵�܂��B";
-		mes "�p�ӂ��ł����炨�z�����������B";
+		mes "[ヴァルキリー]";
+		mes "それでは街へお送りします。";
+		mes "用意ができたらお越しください。";
 		close2;
 		warp "yuno.gat",151,183;
 		end;
 	}
-	mes "[���@���L���[]";
-	mes "�g���S�����ɂ��܂����ˁB";
-	mes "�c�c�Y��Ȃ��S�ł��B";
-	mes "���S�ɂȂ������A���Ȃ���";
-	mes "���_���悭�\��Ă���܂��B";
+	mes "[ヴァルキリー]";
+	mes "身も心も無にしましたね。";
+	mes "……綺麗なお心です。";
+	mes "無心になった今、あなたの";
+	mes "名誉がよく表れております。";
 	next;
-	mes "[���@���L���[]";
-	mes "������Ȃ����c�c";
-	mes "���Ȃ��ɍ��܂�Ă���";
-	mes "�ߋ��̋L���������A";
-	mes "���Ȃ��̐��_��";
-	mes "���݂܂ł̉h���̏؂�";
-	mes "�L�������܂��B";
+	mes "[ヴァルキリー]";
+	mes "お眠りなさい……";
+	mes "あなたに刻まれている";
+	mes "過去の記憶を消し、";
+	mes "あなたの精神に";
+	mes "現在までの栄光の証を";
+	mes "記憶させます。";
 	next;
-	mes "[���@���L���[]";
-	mes "�ł́c�c";
-	mes "��A�E���h�ɉߋ��̋L�����c���܂��B";
-	mes "��A���F���_���f�B�Ɍ��݂�";
-	mes "�h���̏u�Ԃ������Ă��炢�܂��B";
-	mes "�O�A�X�N���h�ɖ����ւ̐���";
-	mes "�^��������悤�ɂ��܂��B";
+	mes "[ヴァルキリー]";
+	mes "では……";
+	mes "一つ、ウルドに過去の記憶を残します。";
+	mes "二つ、ヴェルダンディに現在の";
+	mes "栄光の瞬間を憶えてもらいます。";
+	mes "三つ、スクルドに未来への生を";
+	mes "与えさせるようにします。";
 	next;
-	mes "[���@���L���[]";
-	mes "���";
+	mes "[ヴァルキリー]";
+	mes "一つ";
 	next;
-	mes "[���@���L���[]";
-	mes "��c�c";
+	mes "[ヴァルキリー]";
+	mes "二つ……";
 	next;
-	mes "[���@���L���[]";
-	mes "�O�c�c";
+	mes "[ヴァルキリー]";
+	mes "三つ……";
 	for(set '@i,22954;'@i<=22969;set '@i,'@i+1) {
 		if(countitem('@i))
 			delitem '@i,1;
@@ -305,22 +305,22 @@ valkyrie.gat,48,86,4	script	���@���L���[	811,{
 	set AC_BEGINNER_EQUIP,0;
 	chgquest 1000,50000;
 	next;
-	mes "[���@���L���[]";
-	mes "���߂łƂ��������܂��B";
-	mes "�S�Ă̋V�����I���������܂����B";
-	mes "������́A�V���ȓ������";
-	mes "��m�ւ̂����₩�ȑ��蕨�ł��B";
+	mes "[ヴァルキリー]";
+	mes "おめでとうございます。";
+	mes "全ての儀式が終了いたしました。";
+	mes "こちらは、新たな道を歩む";
+	mes "戦士へのささやかな贈り物です。";
 	getitem 1202,1;
 	getitem 2302,1;
 	next;
 	if('@TRANSMIGRATE) {
-		mes "[�C���t�H���[�V����]";
-		mes "���@���L���[����̑��蕨��";
-		mes "�Ⴄ��^0000FFBaseLv��JobLv��^000000";
-		mes "^0000FF10�ɂȂ�܂��B^000000";
-		mes "���蕨��Ⴂ�܂����H";
+		mes "[インフォメーション]";
+		mes "ヴァルキリーからの贈り物を";
+		mes "貰うと^0000FFBaseLvとJobLvが^000000";
+		mes "^0000FF10になります。^000000";
+		mes "贈り物を貰いますか？";
 		next;
-		if(select("�͂�","������") == 1) {
+		if(select("はい","いいえ") == 1) {
 			getexp 2,0;
 			getexp 4,0;
 			getexp 6,0;
@@ -341,17 +341,17 @@ valkyrie.gat,48,86,4	script	���@���L���[	811,{
 			getexp 0,60;
 		}
 	}
-	mes "[���@���L���[]";
-	mes "���ꂮ����A�ߋ��̃E���h��";
-	mes "�L���������Ȃ��̐������ʂ�";
-	mes "�Ȃ�Ȃ��悤�ɂ��ė~�����Ǝv���܂��B";
-	mes "�܂����݂̃��F���_���f�B���L������";
-	mes "���Ȃ��̉h�����Č����邱�Ƃ��A";
+	mes "[ヴァルキリー]";
+	mes "くれぐれも、過去のウルドが";
+	mes "記憶したあなたの生が無駄に";
+	mes "ならないようにして欲しいと思います。";
+	mes "また現在のヴェルダンディが記憶した";
+	mes "あなたの栄光が再現することを、";
 	next;
-	mes "[���@���L���[]";
-	mes "�����Ė����̃X�N���h���L������";
-	mes "���Ȃ��̐V���Ȑ��Ɍ����邱�Ƃ�";
-	mes "�肢�܂��B";
+	mes "[ヴァルキリー]";
+	mes "そして未来のスクルドが記憶した";
+	mes "あなたの新たな生に光あることを";
+	mes "願います。";
 	close2;
 	switch(OLD_CLASS) {
 		case Job_Knight:
@@ -384,23 +384,23 @@ valkyrie.gat,48,86,4	script	���@���L���[	811,{
 }
 
 //==============================================================
-valkyrie.gat,44,33,5	script	�e���|�[�^�[	124,{
+valkyrie.gat,44,33,5	script	テレポーター	124,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�e���|�[�^�[]";
-			mes "�]�����߂łƂ��I";
-			mes "��m�B�Ɍ�����I";
+			mes "[テレポーター]";
+			mes "転生おめでとう！";
+			mes "戦士達に光あれ！";
 		}
 		else {
-			mes "[�e���|�[�^�[]";
-			mes "�W���i�ɐG��Ȃ��ŁI";
+			mes "[テレポーター]";
+			mes "展示品に触らないで！";
 		}
 		close;
 	}
-	mes "[�e���|�[�^�[]";
-	mes "��m�A�ǂ��֋A�肽���H";
+	mes "[テレポーター]";
+	mes "戦士、どこへ帰りたい？";
 	next;
-	switch (select("�v�����e��","�����N","�t�F�C����","�Q�t�F��","�A���x���^","�C�Y���[�h","�A���f�o����","�R���h","�W���m�[")) {
+	switch (select("プロンテラ","モロク","フェイヨン","ゲフェン","アルベルタ","イズルード","アルデバラン","コモド","ジュノー")) {
 		case 1: savepoint "prontera.gat",116,72; 	break;
 		case 2: savepoint "morocc.gat",156,46; 		break;
 		case 3: savepoint "payon.gat",160,58; 		break;
@@ -416,340 +416,340 @@ valkyrie.gat,44,33,5	script	�e���|�[�^�[	124,{
 }
 
 //==============================================================
-valkyrie.gat,44,39,5	script	���[�h�i�C�g	56,{
+valkyrie.gat,44,39,5	script	ロードナイト	56,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[���[�h�i�C�g]";
-			mes "�]�����߂łƂ��I";
-			mes "��m�Ɍ�����I";
+			mes "[ロードナイト]";
+			mes "転生おめでとう！";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[���[�h�i�C�g]";
-			mes "�F�A�N��]�����Ă���B";
-			mes "�N�Ɉق�������҂͒N�����Ȃ��B";
-			mes "���Ƃ͌N���g�̕]�����ȁB";
-			mes "�N�̕]���́c�c";
+			mes "[ロードナイト]";
+			mes "皆、君を評価している。";
+			mes "君に異を唱える者は誰もいない。";
+			mes "あとは君自身の評価だな。";
+			mes "君の評価は……";
 			next;
-			mes "[���[�h�i�C�g]";
-			mes "�悵�A���v���ȁB";
+			mes "[ロードナイト]";
+			mes "よし、大丈夫だな。";
 		}
 		close;
 	}
-	callfunc "JobChanger","���[�h�i�C�g",Job_Swordman,Job_Knight;
-	mes "[���[�h�i�C�g]";
-	mes "�h���̃��@���n���ւ悭�����ȁB";
-	mes "���΂��x�����Ƃ肽�܂��B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","ロードナイト",Job_Swordman,Job_Knight;
+	mes "[ロードナイト]";
+	mes "栄光のヴァルハラへよく来たな。";
+	mes "しばし休息をとりたまえ。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,44,42,5	script	�n�C�v���[�X�g	60,{
+valkyrie.gat,44,42,5	script	ハイプリースト	60,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�n�C�v���[�X�g]";
-			mes "�]���̂��j����\���グ�܂��B";
-			mes "�p�Y�ɏj�����I";
+			mes "[ハイプリースト]";
+			mes "転生のお祝いを申し上げます。";
+			mes "英雄に祝福を！";
 		}
 		else {
-			mes "[�n�C�v���[�X�g]";
-			mes "�_��A�������ɗ��҂�";
-			mes "�j���̏������炵���������B";
-			mes "�����Ă��̎҂����[���ӎu��";
-			mes "�n��֍L�߂�ׂ̗͂�";
-			mes "���^�����������B";
+			mes "[ハイプリースト]";
+			mes "神よ、今ここに立つ者に";
+			mes "祝福の鐘をお鳴らしください。";
+			mes "そしてこの者が奥深き意志を";
+			mes "地上へ広める為の力を";
+			mes "お与えください。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�n�C�v���[�X�g",Job_Acolyte,Job_Priest;
-	mes "[�n�C�v���[�X�g]";
-	mes "�h���̃��@���n���ւ悭��";
-	mes "���z�����������܂����B";
-	mes "����A�x�������Ƃ肭�������B";
-	mes "��m�ɏj�����I";
+	callfunc "JobChanger","ハイプリースト",Job_Acolyte,Job_Priest;
+	mes "[ハイプリースト]";
+	mes "栄光のヴァルハラへよくぞ";
+	mes "お越しくださいました。";
+	mes "是非、休息をおとりください。";
+	mes "戦士に祝福を！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,44,47,5	script	�n�C�E�B�U�[�h	735,{
+valkyrie.gat,44,47,5	script	ハイウィザード	735,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�n�C�E�B�U�[�h]";
-			mes "�]�����߂łƂ��������܂��B";
-			mes "��m�Ɍ�����I";
+			mes "[ハイウィザード]";
+			mes "転生おめでとうございます。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�n�C�E�B�U�[�h]";
-			mes "�N�������ȃn�C�E�B�U�[�h�ł�����A";
-			mes "�n�C�E�B�U�[�h�炵���s����";
-			mes "�S�����Ă��������B";
-			mes "���B�n�C�E�B�U�[�h��";
-			mes "���͂Ȗ��@�����䂦�A�T���ڂ�";
-			mes "�s�����Ȃ���΂Ȃ�܂���B";
+			mes "[ハイウィザード]";
+			mes "君も正式なハイウィザードですから、";
+			mes "ハイウィザードらしい行動を";
+			mes "心がけてください。";
+			mes "私達ハイウィザードは";
+			mes "強力な魔法を持つゆえ、控え目に";
+			mes "行動しなければなりません。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�n�C�E�B�U�[�h",Job_Magician,Job_Wizard;
-	mes "[�n�C�E�B�U�[�h]";
-	mes "�h���̃��@���n���ւ悤�����B";
-	mes "���΂��x�������Ƃ肭�������B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","ハイウィザード",Job_Magician,Job_Wizard;
+	mes "[ハイウィザード]";
+	mes "栄光のヴァルハラへようこそ。";
+	mes "しばし休息をおとりください。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,44,50,5	script	�z���C�g�X�~�X	731,{
+valkyrie.gat,44,50,5	script	ホワイトスミス	731,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�z���C�g�X�~�X]";
-			mes "�]�����߂łƂ��I";
-			mes "��m�Ɍ�����I";
+			mes "[ホワイトスミス]";
+			mes "転生おめでとう！";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�z���C�g�X�~�X]";
-			mes "�z�B����J�l�B";
-			mes "�ق�"+strcharinfo(0)+"�A�̎������B";
-			mes "��H�Ȃ񂾈Ⴄ�̂��B";
+			mes "[ホワイトスミス]";
+			mes "配達ご苦労様。";
+			mes "ほれ"+strcharinfo(0)+"、領収書だ。";
+			mes "ん？なんだ違うのか。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�z���C�g�X�~�X",Job_Merchant,Job_Blacksmith;
-	mes "[�z���C�g�X�~�X]";
-	mes "�h���̃��@���n���ɂ悭�����ȁB";
-	mes "�܂��A�����x��ł�����B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","ホワイトスミス",Job_Merchant,Job_Blacksmith;
+	mes "[ホワイトスミス]";
+	mes "栄光のヴァルハラによく来たな。";
+	mes "まあ、少し休んでいけよ。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,44,55,5	script	�X�i�C�p�[	727,{
+valkyrie.gat,44,55,5	script	スナイパー	727,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�X�i�C�p�[]";
-			mes "�]�����j���\���グ�܂��B";
-			mes "��m�Ɍ�����I";
+			mes "[スナイパー]";
+			mes "転生お祝い申し上げます。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�X�i�C�p�[]";
-			mes "^6B8C21�ł́A�]�E�������n�߂܂��傤�B";
-			mes "�������񂢂郂���X�^�[�̒���";
-			mes "���O���u�]�E�����p�����X�^�[�v�݂̂�";
-			mes "�|���Ă��������B����";
-			mes "- ���Ƃ����ɋC�����Ă��������B -^000000";
-			mes "��H�Ⴂ�܂������H";
+			mes "[スナイパー]";
+			mes "^6B8C21では、転職試験を始めましょう。";
+			mes "たくさんいるモンスターの中で";
+			mes "名前が「転職試験用モンスター」のみを";
+			mes "倒してください。あと";
+			mes "- 落とし穴に気をつけてください。 -^000000";
+			mes "ん？違いましたか？";
 		}
 		close;
 	}
-	callfunc "JobChanger","�X�i�C�p�[",Job_Archer,Job_Hunter;
-	mes "[�X�i�C�p�[]";
-	mes "�h���̃��@���n���ւ悤�����B";
-	mes "���񂨂��났���������B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","スナイパー",Job_Archer,Job_Hunter;
+	mes "[スナイパー]";
+	mes "栄光のヴァルハラへようこそ。";
+	mes "是非おくつろぎください。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,44,58,5	script	�A�T�V���N���X	725,{
+valkyrie.gat,44,58,5	script	アサシンクロス	725,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�A�T�V���N���X]";
-			mes "�]�����j���\���グ��B";
-			mes "�K�^���F��I";
+			mes "[アサシンクロス]";
+			mes "転生お祝い申し上げる。";
+			mes "幸運を祈る！";
 		}
 		else {
-			mes "[�A�T�V���N���X]";
-			mes "�N�����ƌ������Ɓu�����̉�v�Ƃ��Ă�";
-			mes "�v���C�h�͑厖�ɂ���I";
-			mes "�����ăv���C�h���̂Ă�Ȃ�I";
+			mes "[アサシンクロス]";
+			mes "誰が何と言おうと「砂漠の牙」としての";
+			mes "プライドは大事にしろ！";
+			mes "決してプライドを捨てるなよ！";
 		}
 		close;
 	}
-	callfunc "JobChanger","�A�T�V���N���X",Job_Thief,Job_Assassin;
-	mes "[�A�T�V���N���X]";
-	mes "���@���n���ւ悭�����ȁB";
-	mes "�����x��ł����B";
-	mes "�K�^���F��I";
+	callfunc "JobChanger","アサシンクロス",Job_Thief,Job_Assassin;
+	mes "[アサシンクロス]";
+	mes "ヴァルハラへよく来たな。";
+	mes "少し休んでいけ。";
+	mes "幸運を祈る！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,39,3	script	�p���f�B��	752,{
+valkyrie.gat,53,39,3	script	パラディン	752,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�p���f�B��]";
-			mes "�]���̏j����\���グ�悤�B";
-			mes "��m�Ɍ�����I";
+			mes "[パラディン]";
+			mes "転生の祝いを申し上げよう。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�p���f�B��]";
-			mes "���킪�߂Â����邱�Ƃ�������";
-			mes "�Y�ꂸ�ɁA�₦���Ȃ�b���Ȃ����I";
-			mes "�N�ɃI�[�f�B���̂����삪����悤�ɁI";
-			mes "�����A�s���Ȃ����I";
+			mes "[パラディン]";
+			mes "聖戦が近づきつつあることを決して";
+			mes "忘れずに、絶えず己を鍛えなさい！";
+			mes "君にオーディンのご加護があるように！";
+			mes "さあ、行きなさい！";
 		}
 		close;
 	}
-	callfunc "JobChanger","�p���f�B��",Job_Swordman,Job_Crusader;
-	mes "[�p���f�B��]";
-	mes "�h���̃��@���n���ւ悭�������B";
-	mes "�����x��ł����Ȃ����B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","パラディン",Job_Swordman,Job_Crusader;
+	mes "[パラディン]";
+	mes "栄光のヴァルハラへよくぞ来た。";
+	mes "少し休んでいきなさい。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,42,3	script	�`�����s�I��	52,{
+valkyrie.gat,53,42,3	script	チャンピオン	52,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�`�����s�I��]";
-			mes "�]�����߂łƂ��I";
-			mes "��m�Ɍ�����I";
+			mes "[チャンピオン]";
+			mes "転生おめでとう！";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�`�����s�I��]";
-			mes "�ł͂��ꂩ�犷���D�ق̋V���s���B";
+			mes "[チャンピオン]";
+			mes "ではこれから換骨奪胎の儀を行う。";
 			next;
-			mes "[�`�����s�I��]";
-			mes "�c�c�����B���O�͊���";
-			mes "�]�E���Ă邶��Ȃ����B";
+			mes "[チャンピオン]";
+			mes "……おい。お前は既に";
+			mes "転職してるじゃないか。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�`�����s�I��",Job_Acolyte,Job_Monk;
-	mes "[�`�����s�I��]";
-	mes "�h���̃��@���n���ւ悭�����B";
-	mes "�����x��ł����ȁB";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","チャンピオン",Job_Acolyte,Job_Monk;
+	mes "[チャンピオン]";
+	mes "栄光のヴァルハラへよく来た。";
+	mes "少し休んでいきな。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,47,3	script	�v���t�F�b�T�[	743,{
+valkyrie.gat,53,47,3	script	プロフェッサー	743,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�v���t�F�b�T�[]";
-			mes "�]�����߂łƂ��B";
-			mes "��m�Ɍ�����I";
+			mes "[プロフェッサー]";
+			mes "転生おめでとう。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�v���t�F�b�T�[]";
-			mes "�_���͑�؂ɕۊǂ��Ȃ����B";
-			mes "�N���������厖�ȏ���������ˁB";
-			mes "�������ꂪ�𗧂��Ƃ�";
-			mes "����ł��傤�B";
-			mes "�ǂݕԂ��ċL�����Ă����Ȃ����B";
+			mes "[プロフェッサー]";
+			mes "論文は大切に保管しなさい。";
+			mes "君が書いた大事な書物だからね。";
+			mes "いつかそれが役立つことも";
+			mes "あるでしょう。";
+			mes "読み返して記憶しておきなさい。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�v���t�F�b�T�[",Job_Magician,Job_Sage;
-	mes "[�v���t�F�b�T�[]";
-	mes "�h���̃��@���n���ɂ悭�����܂����B";
-	mes "���΂��̋x���𓾂Ȃ����B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","プロフェッサー",Job_Magician,Job_Sage;
+	mes "[プロフェッサー]";
+	mes "栄光のヴァルハラによくぞ来ました。";
+	mes "しばしの休息を得なさい。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,58,3	script	�`�F�C�T�[	747,{
+valkyrie.gat,53,58,3	script	チェイサー	747,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�`�F�C�T�[]";
-			mes "�]�����߂łƁ`�I";
-			mes "�K�^���F���I";
+			mes "[チェイサー]";
+			mes "転生おめでと～！";
+			mes "幸運を祈るよ！";
 		}
 		else {
-			mes "[�`�F�C�T�[]";
-			mes "���������A�����t��";
-			mes "^3333FF�A���K���͐��B�p�i��";
-			mes "���̂��Ă��Ȃ�^000000����B";
-			mes "�ȁ`��ĂˁB���͂́I";
+			mes "[チェイサー]";
+			mes "そうそう、合言葉は";
+			mes "^3333FFアラガムは精錬用品を";
+			mes "横領していない^000000だよ。";
+			mes "な～んてね。あはは！";
 		}
 		close;
 	}
-	callfunc "JobChanger","�`�F�C�T�[",Job_Thief,Job_Rogue;
-	mes "[�`�F�C�T�[]";
-	mes "���@���n���ւ悭�����ȁ`�I";
-	mes "���傢�Ƌx�݂Ȃ�B";
-	mes "�K�^���F��I";
+	callfunc "JobChanger","チェイサー",Job_Thief,Job_Rogue;
+	mes "[チェイサー]";
+	mes "ヴァルハラへよく来たな～！";
+	mes "ちょいと休みなよ。";
+	mes "幸運を祈る！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,50,3	script	�N���G�C�^�[	122,{
+valkyrie.gat,53,50,3	script	クリエイター	122,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�N���G�C�^�[]";
-			mes "�]�����߂łƂ��B";
-			mes "��m�Ɍ�����I";
+			mes "[クリエイター]";
+			mes "転生おめでとう。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�N���G�C�^�[]";
-			mes "�ˑR�����A���₾�B";
-			mes "�h��l����w����5��";
-			mes "�f�B�X�J�E���g24%�Ŕ������ꍇ��";
-			mes "�f�B�X�J�E���g20%�Ŕ������ꍇ��";
-			mes "���z�̍��͂����炩�H";
-			mes "�ǂ����H����Ȃ̊ȒP����B";
+			mes "[クリエイター]";
+			mes "突然だが、質問だ。";
+			mes "防具商人からヘルム5個を";
+			mes "ディスカウント24%で買った場合と";
+			mes "ディスカウント20%で買った場合の";
+			mes "金額の差はいくらか？";
+			mes "どうだ？こんなの簡単だろ。";
 		}
 		close;
 	}
-	callfunc "JobChanger","�N���G�C�^�[",Job_Merchant,Job_Alchemist;
-	mes "[�N���G�C�^�[]";
-	mes "�h���̃��@���n���ւ悤�����I";
-	mes "���������ŋx��ł����ȁB";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","クリエイター",Job_Merchant,Job_Alchemist;
+	mes "[クリエイター]";
+	mes "栄光のヴァルハラへようこそ！";
+	mes "少しここで休んでいきな。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,54,3	script	�N���E��	741,{
+valkyrie.gat,53,54,3	script	クラウン	741,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�N���E��]";
-			mes "�]�����j���\���グ�܂��B";
-			mes "��m�Ɍ�����I";
+			mes "[クラウン]";
+			mes "転生お祝い申し上げます。";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�N���E��]";
-			mes "���ƈꏏ�ɉ̂��Ă݂܂��傤�B";
-			mes "���̋ȂȂ񂩂ǂ��ł��H";
+			mes "[クラウン]";
+			mes "私と一緒に歌ってみましょう。";
+			mes "この曲なんかどうです？";
 		}
 		close;
 	}
-	callfunc "JobChanger","�N���E��",Job_Archer,Job_Bard;
-	mes "[�N���E��]";
-	mes "�h���̃��@���n���ւ悤�����B";
-	mes "���������ŋx�����Ƃ�Ƃ悢�ł��傤�B";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","クラウン",Job_Archer,Job_Bard;
+	mes "[クラウン]";
+	mes "栄光のヴァルハラへようこそ。";
+	mes "少しここで休息をとるとよいでしょう。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 //==============================================================
-valkyrie.gat,53,56,3	script	�W�v�V�[	101,{
+valkyrie.gat,53,56,3	script	ジプシー	101,{
 	if(Upper != UPPER_HIGH) {
 		if(rand(3)) {
-			mes "[�W�v�V�[]";
-			mes "�]�����߂łƂ��I";
-			mes "��m�Ɍ�����I";
+			mes "[ジプシー]";
+			mes "転生おめでとう！";
+			mes "戦士に光あれ！";
 		}
 		else {
-			mes "[�W�v�V�[]";
-			mes "�͂����A�݁[�� : [��]";
-			mes "�c�c�c�c";
+			mes "[ジプシー]";
+			mes "はい左、みーぎ : [→]";
+			mes "…………";
 		}
 		close;
 	}
-	callfunc "JobChanger","�W�v�V�[",Job_Archer,Job_Dancer;
-	mes "[�W�v�V�[]";
-	mes "�h���̃��@���n���ւ悤�����I";
-	mes "�����x��ł���A��Ȃ����ȁB";
-	mes "��m�Ɍ�����I";
+	callfunc "JobChanger","ジプシー",Job_Archer,Job_Dancer;
+	mes "[ジプシー]";
+	mes "栄光のヴァルハラへようこそ！";
+	mes "少し休んでから帰りなさいな。";
+	mes "戦士に光あれ！";
 	close;
 }
 
 
 //==========================================
-// �]���񎟓]�E�t�@���N�V����
+// 転生二次転職ファンクション
 //	callfunc "JobChanger","Name",1stClass,2ndClass
 //------------------------------------------
 
@@ -757,35 +757,35 @@ function	script	JobChanger	{
 	if(JobLevel < 40 || Job != getarg(1) || OLD_CLASS != getarg(2))
 		return;
 	mes "["+getarg(0)+"]";
-	mes "�{���̎p�����߂��A";
-	mes "���E�ɐV���Ȍ��������炷";
-	mes "�����K��܂����B";
-	mes "�V���Ȏp�ł��Ȃ��̓���";
-	mes "����ł��������B";
+	mes "本来の姿を取り戻し、";
+	mes "世界に新たな光をもたらす";
+	mes "時が訪れました。";
+	mes "新たな姿であなたの道を";
+	mes "歩んでください。";
 	next;
 	mes "["+getarg(0)+"]";
-	mes getarg(0)+"��";
-	mes "�]�E�Ȃ����܂����H";
+	mes getarg(0)+"に";
+	mes "転職なさいますか？";
 	next;
-	if(select("������","�͂�")==1) {
+	if(select("いいえ","はい")==1) {
 		mes "["+getarg(0)+"]";
-		mes "�������ł��܂�����A";
-		mes "�ēx�������K�˂��������B";
-		mes "�p�Y�ɏj�����I";
+		mes "準備ができましたら、";
+		mes "再度私をお訪ねください。";
+		mes "英雄に祝福を！";
 		close;
 	}
 	if(sc_ison(SC_ALL_RIDING)) {
-		mes "�]�R�搶���𗘗p������Ԃł�";
-		mes "�@�i�s�ł��܂���B";
-		mes "�@�R�搶������~��Ă��������]";
+		mes "‐騎乗生物を利用した状態では";
+		mes "　進行できません。";
+		mes "　騎乗生物から降りてください‐";
 		close;
 	}
 	if(SkillPoint) {
 		mes "["+getarg(0)+"]";
-		mes "�܂��w�΂Ȃ���΂Ȃ�Ȃ����Ƃ�";
-		mes "������̂悤�ł��ˁB";
-		mes "�X�L���|�C���g��S�ď���Ă���";
-		mes "���z�����������B";
+		mes "まだ学ばなければならないことが";
+		mes "おありのようですね。";
+		mes "スキルポイントを全て消費してから";
+		mes "お越しください。";
 		close;
 	}
 	unequip;
@@ -795,8 +795,8 @@ function	script	JobChanger	{
 		set SKILL_BIOETHICS,0;
 	}
 	mes "["+getarg(0)+"]";
-	mes "���j���\���グ�܂��B";
-	mes "�n��֖߂�A���Ȃ��̂��͂�";
-	mes "�l�X�����������������B";
+	mes "お祝い申し上げます。";
+	mes "地上へ戻り、あなたのお力で";
+	mes "人々をお導きください。";
 	close;
 }

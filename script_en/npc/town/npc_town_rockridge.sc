@@ -5,54 +5,54 @@
 //============================================================
 // shop
 //------------------------------------------------------------
-har_in01.gat,34,84,3	shop	���#rockridge00	68,611,645,656,601,602,1065
-har_in01.gat,19,86,4	shop	���퉮#rockridge01	67,13154,13155,13102,13200,13221,13222,13228,13229,13230,13231,13232
+har_in01.gat,34,84,3	shop	道具屋#rockridge00	68,611,645,656,601,602,1065
+har_in01.gat,19,86,4	shop	武器屋#rockridge01	67,13154,13155,13102,13200,13221,13222,13228,13229,13230,13231,13232
 -	market	rockridge_callshop	-1,2267:100000:10,2268:500000:10,2241:5000:10
 
-har_in01.gat,16,86,4	script	�h�#rockridge02	50,{
-	if(gettime(4) == 0) {	// ���j��
-		mes "[�h�]";
-		mes "�����͒�x���ł��B";
-		mes "�����Ƃ��͓����A";
-		mes "�x�ނƂ��͋x�ށA";
-		mes "���������𑱂��邽�߂̊�{�ł��B";
+har_in01.gat,16,86,4	script	防具屋#rockridge02	50,{
+	if(gettime(4) == 0) {	// 日曜日
+		mes "[防具屋]";
+		mes "今日は定休日です。";
+		mes "働くときは働き、";
+		mes "休むときは休む、";
+		mes "長く商売を続けるための基本です。";
 		close;
 	}
-	mes "[�h�]";
-	mes "�����͖h��ł��B";
-	mes "������";
+	mes "[防具屋]";
+	mes "ここは防具屋です。";
+	mes "今日は";
 	switch('flag) {
 	case 1:
-		mes "^0000ff�^�o�R��";
-		mes "�p�C�v�^�o�R��";
-		mes "���Ђ�^000000��";
+		mes "^0000ffタバコと";
+		mes "パイプタバコと";
+		mes "白ひげ^000000が";
 		break;
 	case 2:
-		mes "^0000ff�\���u������";
-		mes "�C���f�B�A���̔�������";
-		mes "�J�E�{�[�C�n�b�g^000000��";
+		mes "^0000ffソンブレロと";
+		mes "インディアンの鉢巻きと";
+		mes "カウボーイハット^000000が";
 		break;
 	case 3:
-		mes "^0000ff�I�[���h�X�^�[���}���X��";
-		mes "�E�F�X�^���O���C�X��";
-		mes "�H�іX�q^000000��";
+		mes "^0000ffオールドスターロマンスと";
+		mes "ウェスタングレイスと";
+		mes "羽毛帽子^000000が";
 		break;
 	}
-	mes "���ׂ��Ă��܂��B";
+	mes "入荷しています。";
 	next;
-	mes "[�h�]";
-	mes "�h��͖��T�^�΂�Ă���";
-	mes "�ݕ��ւɗ����Ă��āA";
-	mes "�݌ɂ��\���ł͂���܂���B";
-	mes "���ɔ���؂ꂽ���i��";
-	mes "���X�g��������Ă��܂��B";
+	mes "[防具屋]";
+	mes "防具は毎週運ばれてくる";
+	mes "貨物便に頼っていて、";
+	mes "在庫が十分ではありません。";
+	mes "既に売り切れた商品は";
+	mes "リストから消えています。";
 	next;
-	mes "[�h�]";
-	mes "�Ȃ̂�^0000CD���������";
-	mes "�񋟂���͓̂���ł��B^000000";
-	mes "����ł�^0000CD��ɓ���h�����i��";
-	mes "�����Ă���̂�^000000�A";
-	mes "��x���Ă����Ă��������B";
+	mes "[防具屋]";
+	mes "なので^0000CD割り引いて";
+	mes "提供するのは難しいです。^000000";
+	mes "それでも^0000CD手に入れ辛い商品を";
+	mes "揃えているので^000000、";
+	mes "一度見ていってください。";
 	close2;
 	callshop "rockridge_callshop";
 	end;
@@ -60,13 +60,13 @@ OnInit:
 OnWeekTime001200:
 	set 'flag,rand(1,3);
 	switch('flag) {
-	case 1:	// �^�o�R100k�A�p�C�v�^�o�R500k�A���Ђ�5k�@�e10
+	case 1:	// タバコ100k、パイプタバコ500k、白ひげ5k　各10
 		npcshopitem "rockridge_callshop",2267,100000,10, 2268,500000,10, 2241,5000,10;
 		break;
-	case 2:	// �\���u����700k�A�C���f�B�A���̔�����700k�A�J�E�{�[�C�n�b�g700k�@�e10
+	case 2:	// ソンブレロ700k、インディアンの鉢巻き700k、カウボーイハット700k　各10
 		npcshopitem "rockridge_callshop",5067,700000,10, 5071,700000,10, 5075,700000,10;
 		break;
-	case 3:	// �I�[���h�X�^�[���}���X500k�A�E�F�X�^���O���C�X500k�A�H�іX�q700k�@�e10
+	case 3:	// オールドスターロマンス500k、ウェスタングレイス500k、羽毛帽子700k　各10
 		npcshopitem "rockridge_callshop",2247,500000,10, 2248,500000,10, 5018,700000,10;
 		break;
 	}
@@ -75,52 +75,52 @@ OnWeekTime001200:
 
 -	shop	rockridge_callshop2	-1,580
 
-harboro1.gat,314,211,4	script	�p�����̎�#dy	886,5,5,{
-	unittalk "�p�����̎� : ���������`���B";
+harboro1.gat,314,211,4	script	パン屋の主#dy	886,5,5,{
+	unittalk "パン屋の主 : いらっしゃ～い。";
 	callshop "rockridge_callshop2",1;
 	end;
 OnTouch:
 	switch(rand(7)) {
-	case 0: unittalk "�p�����̎� : �����Ă����p���ł��B"; end;
-	case 1: unittalk "�p�����̎� : �����̌N�B�p���𔃂�Ȃ������H"; end;
-	case 2: unittalk "�p�����̎� : �т����肷��قǔ��������p���𔄂��Ă��܂���B"; end;
-	case 3: unittalk "�p�����̎� : ���������p���H�ׂĂ݂܂��񂩁H"; end;
-	case 4: unittalk "�p�����̎� : ���������p���͂������ł����H�@�p���`�������p��������܂��`"; end;
-	case 5: unittalk "�p�����̎� : �p���I�@�p���p���I�@�p���p���p���I"; end;
-	default: unittalk "�p�����̎� : �p���͂���܂��񂩁`�H"; end;
+	case 0: unittalk "パン屋の主 : 今朝焼いたパンです。"; end;
+	case 1: unittalk "パン屋の主 : そこの君。パンを買わないかい？"; end;
+	case 2: unittalk "パン屋の主 : びっくりするほど美味しいパンを売っていますよ。"; end;
+	case 3: unittalk "パン屋の主 : 美味しいパン食べてみませんか？"; end;
+	case 4: unittalk "パン屋の主 : 美味しいパンはいかがですか？　パン～温かいパンがあります～"; end;
+	case 5: unittalk "パン屋の主 : パン！　パンパン！　パンパンパン！"; end;
+	default: unittalk "パン屋の主 : パンはいりませんか～？"; end;
 	}
 }
 
 //============================================================
 // warp
 //------------------------------------------------------------
-// ���b�N���b�W <-> �L��������01
+// ロックリッジ <-> キワワ砂漠01
 harboro1.gat,362,206,0	script	harboro1_rockrdg1	45,1,1,{
 	if(BaseLevel < 130) {
-		donpcevent "���x�c��#harboro1::OnTalk";
+		donpcevent "自警団員#harboro1::OnTalk";
 		end;
 	}
 	warp "rockrdg1.gat",37,246;
 	end;
 }
 
-harboro1.gat,360,209,3	script	���x�c��#harboro1	10220,{
-	mes "[���x�c��]";
-	mes "���̐�͊댯�ł��B";
-	mes "BaseLv130�ȏ�̕��̂�";
-	mes "���ʂ����Ă��܂��B";
+harboro1.gat,360,209,3	script	自警団員#harboro1	10220,{
+	mes "[自警団員]";
+	mes "この先は危険です。";
+	mes "BaseLv130以上の方のみ";
+	mes "お通ししています。";
 	close;
 OnTalk:
-	unittalk "���x�c�� : ���̐�͊댯�ł��BBaseLv130�ȏ�̕��݂̂��ʂ����Ă��܂��B";
+	unittalk "自警団員 : この先は危険です。BaseLv130以上の方のみお通ししています。";
 	end;
 }
 
-// �ۈ��������� <-> ���u��
+// 保安官事務室 <-> 留置所
 har_in01.gat,34,28,0	script	harin01_harin01_01	45,1,1,{
 	if(ROCKRIDGE_1QUE < 6) {
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "����ɓ���Ȃ��ł��������B";
-		mes "�����͗��u��ł��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "勝手に入らないでください。";
+		mes "そこは留置場です。";
 		close;
 	}
 	warp "har_in01.gat",99,27;
@@ -128,46 +128,46 @@ har_in01.gat,34,28,0	script	harin01_harin01_01	45,1,1,{
 }
 har_in01.gat,99,30,0	warp	harin01_harin01_02	1,1,har_in01.gat,34,31
 
-// ���b�N���b�W <-> ���b�N���b�W�n���X
-harboro1.gat,324,124,7	script	�W���[	571,{
-	mes "[�W���[]";
-	mes "�c�c�B";
+// ロックリッジ <-> ロックリッジ地下街
+harboro1.gat,324,124,7	script	ジョー	571,{
+	mes "[ジョー]";
+	mes "……。";
 	next;
-	mes "[�W���[]";
-	mes "�n���ɍs���܂����H";
+	mes "[ジョー]";
+	mes "地下に行きますか？";
 	next;
-	switch(select("���b�N���b�W�n���X","���b�N���b�W�n���X ���n","�s���Ȃ�")) {
+	switch(select("ロックリッジ地下街","ロックリッジ地下街 奥地","行かない")) {
 	case 1:
-		mes "[�W���[]";
-		mes "�d�����ς񂾂�";
-		mes "�����o�ė��ĉ������B";
+		mes "[ジョー]";
+		mes "仕事が済んだら";
+		mes "早く出て来て下さい。";
 		close2;
 		warp "harboro2.gat",281,104;
 		end;
 	case 2:
-		mes "[�W���[]";
-		mes "�d�����ς񂾂�";
-		mes "�����o�ė��ĉ������B";
+		mes "[ジョー]";
+		mes "仕事が済んだら";
+		mes "早く出て来て下さい。";
 		close2;
 		warp "harboro3.gat",281,104;
 		end;
 	case 3:
-		mes "[�W���[]";
-		mes "�c�c�B";
+		mes "[ジョー]";
+		mes "……。";
 		close;
 	}
 }
 
-// �L��������02 <-> ���b�N���b�W�z�R 01
+// キワワ砂漠02 <-> ロックリッジ鉱山 01
 rockrdg2.gat,304,350,0	script	rockrdg2_rockmi1_01	45,1,1,{
 	if(BaseLevel < 160) {
-		donpcevent "���x�c��#rockrdg2::OnTalk";
+		donpcevent "自警団員#rockrdg2::OnTalk";
 		end;
 	}
-	mes "�]���b�N���b�W�z�R�̓������B";
-	mes "�@�ǂ��ɍs���܂����H�]";
+	mes "‐ロックリッジ鉱山の入口だ。";
+	mes "　どこに行きますか？‐";
 	next;
-	switch(select("���b�N���b�W�z�R 01","���b�N���b�W�z�R 01 ���n","��߂�")) {
+	switch(select("ロックリッジ鉱山 01","ロックリッジ鉱山 01 奥地","やめる")) {
 	case 1:
 		warp "rockmi1.gat",247,19;
 		end;
@@ -175,169 +175,169 @@ rockrdg2.gat,304,350,0	script	rockrdg2_rockmi1_01	45,1,1,{
 		warp "rockmi3.gat",247,19;
 		end;
 	case 3:
-		mes "�]���ɓ���̂���߂��]";
+		mes "‐中に入るのをやめた‐";
 		close;
 	}
 }
 
-rockrdg2.gat,301,349,3	script	���x�c��#rockrdg2	10220,{
-	mes "[���x�c��]";
-	mes "���̐�͊댯�ł��B";
-	mes "BaseLv160�ȏ�̕��̂�";
-	mes "���ʂ����Ă��܂��B";
+rockrdg2.gat,301,349,3	script	自警団員#rockrdg2	10220,{
+	mes "[自警団員]";
+	mes "この先は危険です。";
+	mes "BaseLv160以上の方のみ";
+	mes "お通ししています。";
 	close;
 OnTalk:
-	unittalk "���x�c�� : ���̐�͊댯�ł��BBaseLv160�ȏ�̕��݂̂��ʂ����Ă��܂��B";
+	unittalk "自警団員 : この先は危険です。BaseLv160以上の方のみお通ししています。";
 	end;
 }
 
 //============================================================
-// ����
+// 旅館
 //------------------------------------------------------------
-harboro1.gat,156,215,5	script	���ق̎�#rockridge	46,{
-	mes "[���ق̎�]";
-	mes "��������Ⴂ�܂��B";
-	mes "���فu�ӂ����t�N���E�v�ł��B";
+harboro1.gat,156,215,5	script	旅館の主#rockridge	46,{
+	mes "[旅館の主]";
+	mes "いらっしゃいませ。";
+	mes "旅館「怠けたフクロウ」です。";
 	next;
-	mes "[���ق̎�]";
-	mes "�x��ł����܂����H";
-	mes "�h�����5000zeny�ł��B";
+	mes "[旅館の主]";
+	mes "休んでいきますか？";
+	mes "宿泊費は5000zenyです。";
 	next;
-	switch(select("�ʒu�Z�[�u","�x��","��߂�")) {
+	switch(select("位置セーブ","休む","やめる")) {
 	case 1:
 		savepoint "harboro1.gat",157,210;
-		mes "[���ق̎�]";
-		mes "�L�^���܂����B";
-		mes "�܂����ĉ������B";
+		mes "[旅館の主]";
+		mes "記録しました。";
+		mes "また来て下さい。";
 		close;
 	case 2:
 		if(Zeny < 5000) {
-			// ������
-			mes "[���ق̎�]";
-			mes "���ق̗��p���� 5000z �ł��B";
-			mes "�����������m���߂��������B";
+			// 未調査
+			mes "[旅館の主]";
+			mes "旅館の利用料は 5000z です。";
+			mes "所持金をお確かめください。";
 			close;
 		}
-		mes "[���ق̎�]";
-		mes "�悢���Ԃ����߂������������B";
+		mes "[旅館の主]";
+		mes "よい時間をお過ごしください。";
 		close2;
 		set Zeny,Zeny-5000;
 		percentheal 100,100;
 		warp "harboro1.gat",157,210;
 		end;
 	case 3:
-		mes "[���ق̎�]";
-		mes "�܂����ĉ������B";
+		mes "[旅館の主]";
+		mes "また来て下さい。";
 		close;
 	}
 }
 
 //============================================================
-// �嗤�ē���
+// 大陸案内員
 //------------------------------------------------------------
 //TODO
-harboro1.gat,291,200,5	script	�嗤�ē���#harboro1	10218,{
+harboro1.gat,291,200,5	script	大陸案内員#harboro1	10218,{
 	cutin "rock_cact02",2;
-	mes "[�嗤�ē���]";
-	mes "�₠�ٖM�l����B";
-	mes "���̑嗤���ē����Ăق����̂��H";
+	mes "[大陸案内員]";
+	mes "やあ異邦人さん。";
+	mes "この大陸を案内してほしいのか？";
 	next;
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�嗤�ē���]";
-		mes "�����\����Ȃ��B";
-		mes "�ē����Ă��������̂͂�܂�܂����A";
-		mes "�����c�Ƃ̝��ߎ������܂�܂ł�";
-		mes "������Ɩ������ȁB";
+		mes "[大陸案内員]";
+		mes "だが申し訳ない。";
+		mes "案内してあげたいのはやまやまだが、";
+		mes "牛賊団との揉め事が収まるまでは";
+		mes "ちょっと無理だな。";
 		close2;
 		cutin "rock_cact02",255;
 		end;
 	}
 	if(BaseLevel < 130) {
-		mes "[�嗤�ē���]";
-		mes "�ۈ�������b�͕����Ă邪�c�c";
-		mes "�\����Ȃ��B";
-		mes "���̑嗤���ē�����̂�";
-		mes "�ٖM�l����̎��͂ł�";
-		mes "�܂������댯�Ȃ悤���B";
+		mes "[大陸案内員]";
+		mes "保安官から話は聞いてるが……";
+		mes "申し訳ない。";
+		mes "この大陸を案内するのに";
+		mes "異邦人さんの実力では";
+		mes "まだ少し危険なようだ。";
 		next;
-		mes "[�嗤�ē���]";
-		mes "^ff0000BaseLv��130�ȏ�^000000�ɂȂ�����";
-		mes "�܂����Ă���Ȃ����H";
+		mes "[大陸案内員]";
+		mes "^ff0000BaseLvが130以上^000000になったら";
+		mes "また来てくれないか？";
 		close2;
 		cutin "rock_cact02",255;
 		end;
 	}
 	if(ROCKRIDGE_1QUE == 16) {
-		mes "[�嗤�ē���]";
-		mes "���������A";
-		mes "�ۈ�������b�͕����Ă����B";
+		mes "[大陸案内員]";
+		mes "そうそう、";
+		mes "保安官から話は聞いているよ。";
 		next;
 		if(checkitemblank() == 0) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close2;
 			cutin "rock_cact02",255;
 			end;
 		}
 		set ROCKRIDGE_1QUE,17;
 		getitem 25250,10;
-		mes "[�嗤�ē���]";
-		mes "�����c�̘A�������";
-		mes "�ЂƎd�����Ă��ꂽ�悤���ȁB";
-		mes "���肪�Ƃ��B";
-		mes "����͎�����̂��炾�B";
+		mes "[大陸案内員]";
+		mes "牛賊団の連中相手に";
+		mes "ひと仕事してくれたようだな。";
+		mes "ありがとう。";
+		mes "これは私からのお礼だ。";
 		next;
-		mes "[�嗤�ē���]";
-		mes "����^0000ff���b�N���b�W�R�C��^000000��";
-		mes "�s���N���[�Y�Ђ�";
-		mes "���s���Ă���R�C�����B";
-		mes "���b�N���b�W�̔��W��";
-		mes "���͂��Ă��ꂽ�l��";
-		mes "�n�����ƂɂȂ��Ă���B";
+		mes "[大陸案内員]";
+		mes "この^0000ffロックリッジコイン^000000は";
+		mes "ピンクローズ社が";
+		mes "発行しているコインだ。";
+		mes "ロックリッジの発展に";
+		mes "協力してくれた人に";
+		mes "渡すことになっている。";
 		next;
-		mes "[�嗤�ē���]";
-		mes "�R�C�����W�߂�";
-		mes "���̍L��ɂ���n���[�h�Ƃ���";
-		mes "�j�ɓn���΃A�C�e����";
-		mes "�������Ă���邼�B";
+		mes "[大陸案内員]";
+		mes "コインを集めて";
+		mes "この広場にいるハワードという";
+		mes "男に渡せばアイテムと";
+		mes "交換してくれるぞ。";
 		next;
-		mes "[�嗤�ē���]";
-		mes "���ꂩ����ɕ����Ă���Ǝv�����A";
-		mes "���̊J��n�ł�";
-		mes "�����̖�肪�N���Ă���B";
-		mes "�����ŁA�ǂ�������";
-		mes "�ٖM�l����̗͂�݂��Ăق����B";
+		mes "[大陸案内員]";
+		mes "それから既に聞いていると思うが、";
+		mes "この開拓地では";
+		mes "多くの問題が起きている。";
+		mes "そこで、良かったら";
+		mes "異邦人さんの力を貸してほしい。";
 		next;
-		mes "[�嗤�ē���]";
-		mes "�����Ă���l�����̏ꏊ�ւ�";
-		mes "�����ē����悤�B";
-		mes "���e�͔ނ炩�璼�ژb��";
-		mes "�����Ă����Ăق����B";
-		mes "���񂾂��B";
+		mes "[大陸案内員]";
+		mes "困っている人たちの場所へは";
+		mes "私が案内しよう。";
+		mes "内容は彼らから直接話を";
+		mes "聞いてあげてほしい。";
+		mes "頼んだぞ。";
 		next;
 	}
-	switch(select("�]���T�[�r�X -> ����","���̎��� -> 4500zeny","�I��")) {
+	switch(select("転送サービス -> 無料","傷の治療 -> 4500zeny","終了")) {
 	case 1:
 		break;
 	case 2:
-		mes "[�嗤�ē���]";
-		mes "���̎��Â��ˁB";
-		mes "���񂽂Ȃ�T�[�r�X����";
-		mes "^0000ff4,500 Zeny^000000�ł������B";
+		mes "[大陸案内員]";
+		mes "傷の治療だね。";
+		mes "あんたならサービスして";
+		mes "^0000ff4,500 Zeny^000000でいいぞ。";
 		next;
-		if(select("�͂�","������") == 2) {
-			mes "[�嗤�ē���]";
-			mes "�܂����Ă���B";
+		if(select("はい","いいえ") == 2) {
+			mes "[大陸案内員]";
+			mes "また来てくれ。";
 			close2;
 			cutin "rock_cact02",255;
 			end;
 		}
 		if(Zeny < 4500) {
-			// ������
-			mes "[�嗤�ē���]";
-			mes "Zeny������Ȃ��ȁB";
-			mes "�܂����Ă���B";
+			// 未調査
+			mes "[大陸案内員]";
+			mes "Zenyが足りないな。";
+			mes "また来てくれ。";
 			close2;
 			cutin "rock_cact02",255;
 			end;
@@ -345,44 +345,44 @@ harboro1.gat,291,200,5	script	�嗤�ē���#harboro1	10218,{
 		set Zeny,Zeny-4500;
 		percentheal 100,100;
 		npcskillsupport 28,9999;
-		mes "[�嗤�ē���]";
-		mes "���̎��Â��I��������B";
-		mes "�܂����Ă���B";
+		mes "[大陸案内員]";
+		mes "傷の治療が終わったぞ。";
+		mes "また来てくれ。";
 		close2;
 		cutin "rock_cact02",255;
 		end;
 	case 3:
-		mes "[�嗤�ē���]";
-		mes "�܂����Ă���B";
+		mes "[大陸案内員]";
+		mes "また来てくれ。";
 		close2;
 		cutin "rock_cact02",255;
 		end;
 	}
-	mes "[�嗤�ē���]";
-	mes "�����A�ǂ��ɍs�������񂾁H";
-	mes "^FF0000<������>^000000";
+	mes "[大陸案内員]";
+	mes "さあ、どこに行きたいんだ？";
+	mes "^FF0000<未実装>^000000";
 	next;
-	switch(select(	"�L�������� 01",
-					"�L�������� 02",
-					"���b�N���b�W�n���X����",
-					"���b�N���b�W�z�R����",
-					"[�E�B�[�N���[] �K�X�^�[�A�����M�[",
-					"[�E�B�[�N���[] ������̂̃��������",
-					"[�E�B�[�N���[] �����̕��Q",
-					"[�E�B�[�N���[] �ԉΑ��̏���",
-					"[�E�B�[�N���[] �r��̖���",
-					"[�E�B�[�N���[] �H�ނ��Ȃ��I",
-					"[�E�B�[�N���[] �����ێ������@����",
-					"[�E�B�[�N���[] �����ێ������@�㋉",
-					"[�E�B�[�N���[] �z�ǐ������",
-					"[�E�B�[�N���[] �ٍ��̏��l",
-					"[�E�B�[�N���[] �r���p�C�v�|��",
-					"[�E�B�[�N���[] ���Z���̗���",
-					"��������"
+	switch(select(	"キワワ砂漠 01",
+					"キワワ砂漠 02",
+					"ロックリッジ地下街入口",
+					"ロックリッジ鉱山入口",
+					"[ウィークリー] ガスターアレルギー",
+					"[ウィークリー] 困りもののワンちゃん",
+					"[ウィークリー] 愛犬の復讐",
+					"[ウィークリー] 花火大会の準備",
+					"[ウィークリー] 荒野の厄介者",
+					"[ウィークリー] 食材がない！",
+					"[ウィークリー] 治安維持活動　初級",
+					"[ウィークリー] 治安維持活動　上級",
+					"[ウィークリー] 配管整備作業",
+					"[ウィークリー] 異国の商人",
+					"[ウィークリー] 排水パイプ掃除",
+					"[ウィークリー] 原住民の頼み",
+					"立ち去る"
 	)) {
 	default:
-		mes "[�嗤�ē���]";
-		mes "�܂����Ă����ȁB";
+		mes "[大陸案内員]";
+		mes "また来てくれよな。";
 		close2;
 		cutin "rock_cact02",255;
 		end;
@@ -390,57 +390,57 @@ harboro1.gat,291,200,5	script	�嗤�ē���#harboro1	10218,{
 }
 
 //============================================================
-// �ē��v��
+// 案内要員
 //------------------------------------------------------------
-harboro1.gat,356,211,5	script	�ē��v��#rockridge01	10193,{
-	mes "[�ۈ�������]";
-	mes "�����̊�������������";
-	mes "���b�N���b�W�ɂ悤�����I";
-	mes "���͕ۈ��������";
-	mes "���̈ē���C����Ă��܂��B";
+harboro1.gat,356,211,5	script	案内要員#rockridge01	10193,{
+	mes "[保安官助手]";
+	mes "西部の乾いた風が吹く";
+	mes "ロックリッジにようこそ！";
+	mes "私は保安官助手で";
+	mes "町の案内を任されています。";
 	while(1) {
 		next;
-		switch(select("�J�v���E��","����","����E�h�","����X","�ۈ���������","�~�j�}�b�v�폜","�I��")) {
+		switch(select("カプラ職員","旅館","武器・防具屋","道具店","保安官事務室","ミニマップ削除","終了")) {
 		case 1:
-			mes "[�ۈ�������]";
-			mes "^006400�J�v���E��^000000�̈ʒu��";
-			mes "�~�j�}�b�v�ɕ\�����Ă����܂��ˁB";
-			mes "�܂��T���Ă���ꏊ�͂���܂����H";
+			mes "[保安官助手]";
+			mes "^006400カプラ職員^000000の位置を";
+			mes "ミニマップに表示しておきますね。";
+			mes "まだ探している場所はありますか？";
 			viewpoint 1,291,207,1,0xFFFF33;
 			continue;
 		case 2:
-			mes "[�ۈ�������]";
-			mes "^006400����^000000�̈ʒu��";
-			mes "�~�j�}�b�v�ɕ\�����Ă����܂��ˁB";
-			mes "�܂��T���Ă���ꏊ�͂���܂����H";
+			mes "[保安官助手]";
+			mes "^006400旅館^000000の位置を";
+			mes "ミニマップに表示しておきますね。";
+			mes "まだ探している場所はありますか？";
 			viewpoint 1,156,215,2,0xAAFF00;
 			continue;
 		case 3:
-			mes "[�ۈ�������]";
-			mes "^006400����E�h�^000000�̈ʒu��";
-			mes "�~�j�}�b�v�ɕ\�����Ă����܂��ˁB";
-			mes "�܂��T���Ă���ꏊ�͂���܂����H";
+			mes "[保安官助手]";
+			mes "^006400武器・防具屋^000000の位置を";
+			mes "ミニマップに表示しておきますね。";
+			mes "まだ探している場所はありますか？";
 			viewpoint 1,312,193,3,0x008080;
 			continue;
 		case 4:
-			mes "[�ۈ�������]";
-			mes "^006400���^000000�̈ʒu��";
-			mes "�~�j�}�b�v�ɕ\�����Ă����܂��ˁB";
-			mes "�܂��T���Ă���ꏊ�͂���܂����H";
+			mes "[保安官助手]";
+			mes "^006400道具屋^000000の位置を";
+			mes "ミニマップに表示しておきますね。";
+			mes "まだ探している場所はありますか？";
 			viewpoint 1,312,193,4,0xFF1493;
 			continue;
 		case 5:
-			mes "[�ۈ�������]";
-			mes "^006400�ۈ���������^000000�̈ʒu��";
-			mes "�~�j�}�b�v�ɕ\�����Ă����܂��ˁB";
-			mes "�܂��T���Ă���ꏊ�͂���܂����H";
+			mes "[保安官助手]";
+			mes "^006400保安官事務室^000000の位置を";
+			mes "ミニマップに表示しておきますね。";
+			mes "まだ探している場所はありますか？";
 			viewpoint 1,241,218,5,0xFFCCFF;
 			continue;
 		case 6:
-			mes "[�ۈ�������]";
-			mes "�~�j�}�b�v�ɕ\���������̂�";
-			mes "���ׂč폜���܂����B";
-			mes "���ɉ����K�v�ł����H";
+			mes "[保安官助手]";
+			mes "ミニマップに表示したものを";
+			mes "すべて削除しました。";
+			mes "他に何か必要ですか？";
 			viewpoint 2,1,1,0,0xFFFFFF;
 			viewpoint 2,1,1,1,0xFFFFFF;
 			viewpoint 2,1,1,2,0xFFFFFF;
@@ -449,2156 +449,2156 @@ harboro1.gat,356,211,5	script	�ē��v��#rockridge01	10193,{
 			viewpoint 2,1,1,5,0xFFFFFF;
 			continue;
 		case 7:
-			mes "[�ۈ�������]";
-			mes "���񃍃b�N���b�W��";
-			mes "�y����ł����Ă��������B";
+			mes "[保安官助手]";
+			mes "是非ロックリッジを";
+			mes "楽しんでいってください。";
 			close;
 		}
 	}
 }
-harboro1.gat,80,211,3	duplicate(�ē��v��#rockridge01)	�ē��v��#rockridge02	10193
+harboro1.gat,80,211,3	duplicate(案内要員#rockridge01)	案内要員#rockridge02	10193
 
 //============================================================
-// �Ŕ�
+// 看板
 //------------------------------------------------------------
 harboro1.gat,91,211,3	script	#rockno01	111,{
-	mes "[�����ʂ�@�\����]";
-	mes "�����ʂ�𓌂ɍs���ƁA";
-	mes "���فA�ۈ����������A���X�A�L�ꂪ";
-	mes "����܂��B";
-	mes "����ɓ��ɍs���ƒ��̊O�ɂ�";
-	mes "�L�����������L�����Ă��܂��B";
+	mes "[中央通り　表示板]";
+	mes "中央通りを東に行くと、";
+	mes "旅館、保安官事務室、商店、広場が";
+	mes "あります。";
+	mes "さらに東に行くと町の外には";
+	mes "キワワ砂漠が広がっています。";
 	close;
 OnTouch:
-	unittalk "�����ʂ�",1;
+	unittalk "中央通り",1;
 	end;
 }
 
 harboro1.gat,299,211,3	script	#rockno02	111,{
-	mes "[�L��@�\����]";
-	mes "���b�N���b�W�L��ł�";
-	mes "�J�v���T�[�r�X�������p�ɂȂ�܂��B";
-	mes "�L��̐��ɂ͕ۈ����������Ə��X���A";
-	mes "����ɐ��̕��ɍs����";
-	mes "���قƍ`������܂��B";
+	mes "[広場　表示板]";
+	mes "ロックリッジ広場では";
+	mes "カプラサービスがご利用になれます。";
+	mes "広場の西には保安官事務室と商店が、";
+	mes "さらに西の方に行くと";
+	mes "旅館と港があります。";
 	close;
 OnTouch:
-	unittalk "���b�N���b�W�L��",1;
+	unittalk "ロックリッジ広場",1;
 	end;
 }
 
 harboro1.gat,260,211,3	script	#rockno03	111,{
 	end;
 OnTouch:
-	unittalk "�ۈ���������",1;
+	unittalk "保安官事務室",1;
 	end;
 }
 
 harboro1.gat,215,212,3	script	#rockno04	111,{
 	end;
 OnTouch:
-	unittalk "�����F���ف@�^�@�����F�ۈ���������",1;
+	unittalk "西側：旅館　／　東側：保安官事務室",1;
 	end;
 }
 
 harboro1.gat,134,211,3	script	#rockno05	111,{
 	end;
 OnTouch:
-	unittalk "�����F����",1;
+	unittalk "東側：旅館",1;
 	end;
 }
 
 harboro1.gat,310,201,3	script	#rockno06	111,{
 	end;
 OnTouch:
-	unittalk "����@���퉮�@�h�",1;
+	unittalk "道具屋　武器屋　防具屋",1;
 	end;
 }
 
 //============================================================
-// ���b�N���b�WNPC
+// ロックリッジNPC
 //------------------------------------------------------------
-harboro1.gat,228,170,3	script	�����̔L#rkrgtwn	553,5,5,{
-	mes "[�����̔L]";
-	mes "�ۈ����������Ƃ�";
-	mes "���������ǂ��ɂ���񂾁I";
-	mes "���̂����A�����˂��������I";
+harboro1.gat,228,170,3	script	風来の猫#rkrgtwn	553,5,5,{
+	mes "[風来の猫]";
+	mes "保安官事務室とは";
+	mes "いったいどこにあるんだ！";
+	mes "私のお金、おかねええええ！";
 	next;
-	mes "[�����̔L]";
-	mes "�Ȃ�ł݂�ȃ��b�N���b�W��";
-	mes "�`�����X�̓y�n�Ƃ��������āA";
-	mes "�|�������c�����邱�Ƃ�";
-	mes "�����Ă���Ȃ������񂾁I";
+	mes "[風来の猫]";
+	mes "なんでみんなロックリッジが";
+	mes "チャンスの土地とだけ言って、";
+	mes "怖い牛賊団がいることを";
+	mes "教えてくれなかったんだ！";
 	next;
-	mes "[�����̔L]";
-	mes "�����c�ɂ��ׂĒD���āA";
-	mes "���ݕ��𔃂���������Ȃ��c�c�B";
-	emotion 28,"�����̔L#rkrgtwn";
+	mes "[風来の猫]";
+	mes "牛賊団にすべて奪われて、";
+	mes "飲み物を買うお金すらない……。";
+	emotion 28,"風来の猫#rkrgtwn";
 	close;
 OnTouch:
-	unittalk "�����̔L : �����Ƃ����̂͂ǂ������I�I";
+	unittalk "風来の猫 : 東側というのはどっちだ！！";
 	end;
 }
 
-harboro1.gat,210,219,5	script	�i��#srdg01	110,{
-	unittalk "�i�� : �h��������A�߂������Ƃ��������炢�ł����̏��ɗ��Ă��������B";
+harboro1.gat,210,219,5	script	司祭#srdg01	110,{
+	unittalk "司祭 : 辛かったり、悲しいことがあったらいつでも私の所に来てください。";
 	sleep 1000;
-	unittalk "�i�� : �݂Ȃ���͈�����邽�߂ɐ��܂ꂽ�厖�ȑ��݂Ȃ�ł��B";
+	unittalk "司祭 : みなさんは愛されるために生まれた大事な存在なんです。";
 	end;
 }
 
-harboro1.gat,188,123,3	script	�����Ă��闷�l#srdg02	881,{
-	mes "[�����Ă��闷�l]";
-	mes "���A���S�����I";
-	mes "���x�c�ɓ���I";
+harboro1.gat,188,123,3	script	座っている旅人#srdg02	881,{
+	mes "[座っている旅人]";
+	mes "私、決心した！";
+	mes "自警団に入る！";
 	next;
-	mes "[�����Ă���m�[�r�X]";
-	mes "�����A�ǂ����ȁB";
-	mes "�󂯓���Ă����́H";
+	mes "[座っているノービス]";
+	mes "さあ、どうかな。";
+	mes "受け入れてくれるの？";
 	next;
-	mes "[�����Ă��闷�l]";
-	mes "�Ƃɂ�����x�s���Ă݂悤�Ǝv���B";
-	mes "��������ĉ������Ȃ��ō����Ă����";
-	mes "�̂�������������B";
-	mes "�������̗���";
-	mes "�����ŏI���邱�Ƃ͏o���Ȃ��I";
+	mes "[座っている旅人]";
+	mes "とにかく一度行ってみようと思う。";
+	mes "こうやって何もしないで座っていると";
+	mes "体がうずうずする。";
+	mes "私たちの旅を";
+	mes "ここで終えることは出来ない！";
 	close;
 }
 
-harboro1.gat,184,123,5	script	���l#srdg02	567,{
-	mes "[�����Ă��闷�l]";
-	mes "�z�R���z����";
-	mes "�����Ɖ����܂ōs���Ă݂邩�H";
+harboro1.gat,184,123,5	script	旅人#srdg02	567,{
+	mes "[座っている旅人]";
+	mes "鉱山を越えて";
+	mes "もっと遠くまで行ってみるか？";
 	next;
-	mes "[�����Ă���m�[�r�X]";
-	mes "�������҂��Ă���Ƃł��H";
-	mes "�ނ���߂���";
-	mes "�Ⴄ�Ƃ���ł��s���Ȃ��H";
+	mes "[座っているノービス]";
+	mes "何かが待っているとでも？";
+	mes "むしろ戻って";
+	mes "違うところでも行かない？";
 	next;
-	mes "[�����Ă��闷�l]";
-	mes "������J�񂷂�񂶂�Ȃ����I";
-	mes "���m�̐��E���I";
+	mes "[座っている旅人]";
+	mes "だから開拓するんじゃないか！";
+	mes "未知の世界を！";
 	next;
-	mes "[�����Ă���m�[�r�X]";
-	mes "��߂Ă����B";
-	mes "�z�R�̕��ɂ͋����c�����邩��A";
-	mes "������O�ɑS���D���邼�B";
-	mes "���Ƃ����܂�܂ő҂Ƃ��B";
+	mes "[座っているノービス]";
+	mes "やめておけ。";
+	mes "鉱山の方には牛賊団がいるから、";
+	mes "超える前に全部奪われるぞ。";
+	mes "ことが収まるまで待とう。";
 	next;
-	mes "[�����Ă��闷�l]";
-	mes "�����c�̂��c�c";
-	mes "�{���ɂ낭�ł��Ȃ��ȁB";
+	mes "[座っている旅人]";
+	mes "牛賊団のやつら……";
+	mes "本当にろくでもないな。";
 	close;
 }
 
-harboro1.gat,174,125,3	script	�Z��#srdg01	53,{
-	unittalk "�Z�� : �����͂�����蕗������ˁB���Ƒ����m��߂Ȃ��ƁB";
+harboro1.gat,174,125,3	script	住民#srdg01	53,{
+	unittalk "住民 : 今日はいつもより風があるね。扉と窓を確り閉めないと。";
 	end;
 }
 
-harboro1.gat,211,115,5	script	��Ǝ�#srdg01	808,{
-	mes "[��Ǝ�]";
-	mes "����Ȃ��Ƃ����肦���ł����H";
-	mes "�������Ȃ��܂܉������߂����̂�";
-	mes "�킩���Ă��܂����H";
+harboro1.gat,211,115,5	script	作業者#srdg01	808,{
+	mes "[作業者]";
+	mes "こんなことがありえるんですか？";
+	mes "何もしないまま何日が過ぎたのか";
+	mes "わかっていますか？";
 	next;
-	mes "[��Ǝ�]";
-	mes "�����ɂ��s�����ɑ��~�߂���������";
-	mes "�d��������Ȃ��Ƃ́I";
+	mes "[作業者]";
+	mes "他所にも行けずに足止めしたくせに";
+	mes "仕事もくれないとは！";
 	next;
-	mes "[��Ǝ�]";
-	mes "�Ƃɂ����A�����d��������������";
-	mes "���͂�߂܂���I";
+	mes "[作業者]";
+	mes "とにかく、明日仕事が無かったら";
+	mes "私はやめますよ！";
 	close;
 }
 
-harboro1.gat,213,117,3	script	��Ǝ�#srdg02	54,{
-	mes "[��Ǝ�]";
-	mes "�������܂���Ƃ��o���Ȃ��܂�";
-	mes "�A�邱�ƂɂȂ肻���ł��B";
+harboro1.gat,213,117,3	script	作業者#srdg02	54,{
+	mes "[作業者]";
+	mes "今日もまた作業が出来ないまま";
+	mes "帰ることになりそうです。";
 	next;
-	mes "[��Ǝ�]";
-	mes "�܂���Ԃ�ŉƂɋA�邱�ƂɁB";
+	mes "[作業者]";
+	mes "また手ぶらで家に帰ることに。";
 	next;
-	mes "[��Ǝ�]";
-	mes "�����c�̂����ǂ��ɂ����Ȃ��ƁB";
-	mes "���̂܂܂��Ɓc�c�B";
+	mes "[作業者]";
+	mes "牛賊団のやつらをどうにかしないと。";
+	mes "このままだと……。";
 	close;
 }
 
-harboro1.gat,214,115,3	script	��Ǝ�#srdg03	52,{
-	mes "[��Ǝ�]";
-	mes "���̂��̏�Ԃ�";
-	mes "��������l���͂����ł����H";
+harboro1.gat,214,115,3	script	作業者#srdg03	52,{
+	mes "[作業者]";
+	mes "今のこの状態を";
+	mes "解決する考えはあるんですか？";
 	next;
-	mes "[��Ǝ�]";
-	mes "�͂��c�c";
-	mes "���܂Ŏw�����킦���܂܂�";
-	mes "����̂ł��傤���B";
+	mes "[作業者]";
+	mes "はあ……";
+	mes "いつまで指をくわえたままで";
+	mes "いるのでしょうか。";
 	close;
 }
 
-harboro1.gat,211,113,7	script	��Ɣǒ�#srdg01	952,{
-	mes "[��Ǝ�]";
-	mes "��Ƃ͂��n�܂�܂����H";
+harboro1.gat,211,113,7	script	作業班長#srdg01	952,{
+	mes "[作業者]";
+	mes "作業はいつ始まりますか？";
 	next;
-	mes "[��Ǝ�]";
-	mes "���܂ŉ������Ȃ��ł����ł����H";
+	mes "[作業者]";
+	mes "いつまで何もしないでいるんですか？";
 	next;
-	mes "[��Ɣǒ�]";
-	mes "���A������Ɨ��������Ă��������B";
+	mes "[作業班長]";
+	mes "あ、ちょっと落ち着いてください。";
 	next;
-	mes "[��Ǝ�]";
-	mes "���̏�Ԃŗ���������Ƃł��H";
-	mes "���܂łǂꂾ�����Ԃ�";
-	mes "���ʂɂ��Ă������A";
-	mes "�킩���Ă��ł����H";
+	mes "[作業者]";
+	mes "この状態で落ち着けるとでも？";
+	mes "今までどれだけ時間を";
+	mes "無駄にしてきたか、";
+	mes "わかってるんですか？";
 	next;
-	mes "[��Ɣǒ�]";
-	mes "�܂��͕������������Ȃ���";
-	mes "�����o���܂���B";
+	mes "[作業班長]";
+	mes "まずは物資が到着しないと";
+	mes "何も出来ません。";
 	next;
-	mes "[��Ǝ�]";
-	mes "���̕����Ƃ����̂�";
-	mes "�����������ł����H";
+	mes "[作業者]";
+	mes "その物資というのは";
+	mes "いつ到着するんですか？";
 	next;
-	mes "[��Ɣǒ�]";
-	mes "�������������������c��";
-	mes "�D���Ă��܂����̂�";
-	mes "�ǂ����邱�Ƃ��ł��܂���B";
+	mes "[作業班長]";
+	mes "到着した物資を牛賊団に";
+	mes "奪われてしまったので";
+	mes "どうすることもできません。";
 	next;
-	mes "[��Ǝ�]";
-	mes "�����������o���Ȃ���΁A";
-	mes "����Ȃ�̊o������Ă���������";
-	mes "�����ł���I";
+	mes "[作業者]";
+	mes "明日も何も出来なければ、";
+	mes "それなりの覚悟をしておいた方が";
+	mes "いいですよ！";
 	close;
 }
 
-harboro1.gat,146,264,3	script	���S���W��#srdg01	896,{
-	mes "[���S���W��]";
-	mes "�Ȃ����S�������H";
-	mes "�D�Ԃ��P��ꂽ����";
-	mes "�������炢�������̂����邾�낤�H";
+harboro1.gat,146,264,3	script	屑鉄収集家#srdg01	896,{
+	mes "[屑鉄収集家]";
+	mes "なぜ屑鉄が無い？";
+	mes "汽車が襲われた時に";
+	mes "少しくらい落ちたのがあるだろう？";
 	next;
-	mes "[���S���W��]";
-	mes "����Ȃ̂܂��c���Ă�킯�Ȃ�����H";
-	mes "�����Ƃ����ɏE���Ă邳�B";
+	mes "[屑鉄収集家]";
+	mes "そんなのまだ残ってるわけないだろ？";
+	mes "もうとっくに拾われてるさ。";
 	next;
-	mes "[���S���W��]";
-	mes "����[�A����𔄂낤�Ǝv����";
-	mes "�킴�킴�����̂Ɂc�c�B";
-	mes "���ꂩ��ǂ�����Ηǂ��񂾂낤�B";
+	mes "[屑鉄収集家]";
+	mes "うわー、それを売ろうと思って";
+	mes "わざわざ来たのに……。";
+	mes "これからどうすれば良いんだろう。";
 	next;
-	mes "[���S���W��]";
-	mes "�~�b�h�K���h�嗤�ɖ߂낤���ȁH";
+	mes "[屑鉄収集家]";
+	mes "ミッドガルド大陸に戻ろうかな？";
 	next;
-	mes "[���S���W��]";
-	mes "����A����̓_�����I";
-	mes "������҂��ŋA���";
-	mes "�����@���ė����̂�";
-	mes "���̂܂ܖ߂�Ɓc�c�B";
+	mes "[屑鉄収集家]";
+	mes "いや、それはダメだ！";
+	mes "大金を稼いで帰ると";
+	mes "大口を叩いて来たのに";
+	mes "このまま戻ると……。";
 	close;
 }
 
-harboro1.gat,144,262,7	script	���S���W��#srdg02	996,{
-	mes "[���S���W��]";
-	mes "�ƂɋA�肽���c�c�B";
-	mes "�������҂���ƕ���������";
-	mes "���Ă݂��炱�̗L�l���c�c�B";
+harboro1.gat,144,262,7	script	屑鉄収集家#srdg02	996,{
+	mes "[屑鉄収集家]";
+	mes "家に帰りたい……。";
+	mes "お金を稼げると聞いたから";
+	mes "来てみたらこの有様だ……。";
 	next;
-	mes "[���S���W��]";
-	mes "���������҂��Ă݂悤�B";
-	mes "���������܂����z����΁A";
-	mes "�����҂��^�C�~���O�͂���B";
-	mes "�s���`�̌�Ƀ`�����X�͕K������B";
+	mes "[屑鉄収集家]";
+	mes "もう少し待ってみよう。";
+	mes "今さえうまく乗り越えれば、";
+	mes "金を稼ぐタイミングはある。";
+	mes "ピンチの後にチャンスは必ず来る。";
 	next;
-	mes "[���S���W��]";
-	mes "���܂�ɍ����s���`�߂���";
-	mes "����ȏ�ς����Ȃ��B";
-	mes "�����ς���ꂻ���ɂȂ��񂾂�B";
+	mes "[屑鉄収集家]";
+	mes "あまりに今がピンチ過ぎて";
+	mes "これ以上耐えられない。";
+	mes "もう耐えられそうにないんだよ。";
 	next;
-	mes "[���S���W��]";
-	mes "���������A�������������҂Ƃ��B";
+	mes "[屑鉄収集家]";
+	mes "もう少し、もう少しだけ待とう。";
 	next;
-	mes "[���S���W��]";
-	mes "�͂��c�c�ꂳ��̊炪�������B";
+	mes "[屑鉄収集家]";
+	mes "はあ……母さんの顔が見たい。";
 	close;
 }
 
-harboro1.gat,303,179,3	script	�������r#srdg01	890,{}
+harboro1.gat,303,179,3	script	痩せた羊#srdg01	890,{}
 
-harboro1.gat,305,178,5	script	���т̗r#srdg01	890,{}
+harboro1.gat,305,178,5	script	剛毛の羊#srdg01	890,{}
 
-harboro1.gat,299,179,7	script	���C�̂Ȃ��r#srdg01	890,{}
+harboro1.gat,299,179,7	script	元気のない羊#srdg01	890,{}
 
-harboro1.gat,297,178,5	script	�Q�Ă���r#srdg01	890,{}
+harboro1.gat,297,178,5	script	寝ている羊#srdg01	890,{}
 
-harboro1.gat,301,175,7	script	�r����#srdg01	726,{
-	emotion 28,"�r����#srdg01";
-	mes "[�r����]";
-	mes "�݂�Ȃ��߂�ˁc�c";
-	mes "�N������������";
-	mes "�A��ė���ׂ�����Ȃ�������B";
-	mes "�����܂ŐH�ׂ��̂��Ȃ��Ƃ�";
-	mes "�v��Ȃ������B";
+harboro1.gat,301,175,7	script	羊飼い#srdg01	726,{
+	emotion 28,"羊飼い#srdg01";
+	mes "[羊飼い]";
+	mes "みんなごめんね……";
+	mes "君たちをここに";
+	mes "連れて来るべきじゃなかったよ。";
+	mes "ここまで食べものがないとは";
+	mes "思わなかった。";
 	next;
-	mes "[�r����]";
-	mes "�������������҂��āB";
-	mes "�O�ŌN�������H�ׂ��鑐��";
-	mes "��ĂĂ��邩��B";
-	mes "�͔|�ɐ��������";
-	mes "�N�����̋�J�͏I���B";
-	mes "���̂��ƐM���āB�ˁH";
+	mes "[羊飼い]";
+	mes "もう少しだけ待って。";
+	mes "外で君たちが食べられる草を";
+	mes "育てているから。";
+	mes "栽培に成功すれば";
+	mes "君たちの苦労は終わる。";
+	mes "私のこと信じて。ね？";
 	close;
 }
 
-harboro1.gat,302,175,7	script	��#srdg01	81,{
+harboro1.gat,302,175,7	script	犬#srdg01	81,{
 	emotion 3;
-	unittalk "���������I�@�����H�@���������I";
+	unittalk "ワンワン！　ワン？　ワンワン！";
 	end;
 }
 
-harboro1.gat,104,132,5	script	�f�����q�P��#srdg01	955,{}
+harboro1.gat,104,132,5	script	素早い子１号#srdg01	955,{}
 
-harboro1.gat,104,130,5	script	���#srdg01	955,{}
+harboro1.gat,104,130,5	script	稲妻#srdg01	955,{}
 
-harboro1.gat,102,133,7	script	�f�����q�Q��#srdg01	955,{}
+harboro1.gat,102,133,7	script	素早い子２号#srdg01	955,{}
 
-harboro1.gat,96,130,3	script	��#srdg01	955,{}
+harboro1.gat,96,130,3	script	雷#srdg01	955,{}
 
-harboro1.gat,99,127,7	script	�q�ǂ�#srdg02	82,{
-	unittalk "�q�ǂ� : �����A���O�猖�܂����H";
+harboro1.gat,99,127,7	script	子ども#srdg02	82,{
+	unittalk "子ども : おい、お前ら喧嘩した？";
 	end;
 }
 
-harboro1.gat,187,236,3	script	�K��q#srdg01	690,{
-	mes "[�K��q]";
-	mes "���H�X�ɐl�����Ȃ��ȁc�c�B";
+harboro1.gat,187,236,3	script	訪問客#srdg01	690,{
+	mes "[訪問客]";
+	mes "飲食店に人がいないな……。";
 	next;
-	emotion 6,"�K��q#srdg02";
-	mes "[�K��q]";
-	mes "���������Ȃ�����l�����Ȃ��̂�";
-	mes "������O����Ȃ����H";
+	emotion 6,"訪問客#srdg02";
+	mes "[訪問客]";
+	mes "美味しくないから人がいないのは";
+	mes "当たり前じゃないか？";
 	next;
-	mes "[�K��q]";
-	mes "�������A���̘b�͒m���Ă�H";
-	mes "���̒��ň�Ԕ�������������";
-	mes "�H�ׂ���̂��ǂ��Ȃ̂��B";
+	mes "[訪問客]";
+	mes "そうだ、この話は知ってる？";
+	mes "この町で一番美味しい料理が";
+	mes "食べられるのがどこなのか。";
 	next;
-	emotion 1,"�K��q#srdg02";
-	mes "[�K��q]";
-	mes "�ǂ��Ȃ́H";
+	emotion 1,"訪問客#srdg02";
+	mes "[訪問客]";
+	mes "どこなの？";
 	next;
-	mes "[�K��q]";
-	mes "�ۈ����������炵���B";
-	mes "�����̒n���̗��u��ŏo��";
-	mes "�H�������Ȃ���������炵���B";
-	mes "�킴�ƌy�ƍ߂�Ƃ���";
-	mes "�����ɓ���l������炵����B";
+	mes "[訪問客]";
+	mes "保安官事務室らしい。";
+	mes "そこの地下の留置場で出る";
+	mes "食事がかなり美味しいらしい。";
+	mes "わざと軽犯罪を犯して";
+	mes "そこに入る人もいるらしいよ。";
 	next;
-	mes "[�K��q]";
-	mes "����ȃo�J�ȁB";
-	mes "��������������������";
-	mes "�킴�킴�ƍ߂�Ƃ����H";
-	mes "�ǂꂾ��������������";
-	mes "�����܂ł���񂾁H";
+	mes "[訪問客]";
+	mes "そんなバカな。";
+	mes "いくら美味しいからって";
+	mes "わざわざ犯罪を犯すか？";
+	mes "どれだけ美味かったら";
+	mes "そこまでするんだ？";
 	close;
 }
 
-harboro1.gat,182,236,5	script	�K��q#srdg02	688,{
-	mes "[�K��q]";
-	mes "���̌��͂ǂ����Ă�������";
-	mes "���Ă�񂾁H";
+harboro1.gat,182,236,5	script	訪問客#srdg02	688,{
+	mes "[訪問客]";
+	mes "あの犬はどうしてこっちを";
+	mes "見てるんだ？";
 	next;
-	mes "[�K��q]";
-	mes "�H�������炦���";
-	mes "�v���Ă���񂶂�Ȃ��̂��H";
+	mes "[訪問客]";
+	mes "食事をもらえると";
+	mes "思っているんじゃないのか？";
 	next;
-	emotion 52,"�f�r����#srdg01";
-	emotion 52,"�f�r����#srdg02";
-	mes "[�K��q]";
-	mes "�����c�c";
-	mes "�������C�ɂȂ���";
-	mes "�����s�ǂɂȂ肻�����B";
+	emotion 52,"彷徨う犬#srdg01";
+	emotion 52,"彷徨う犬#srdg02";
+	mes "[訪問客]";
+	mes "うう……";
+	mes "視線が気になって";
+	mes "消化不良になりそうだ。";
 	close;
 }
 
-harboro1.gat,183,241,5	script	�f�r����#srdg01	81,{
+harboro1.gat,183,241,5	script	彷徨う犬#srdg01	81,{
 	emotion 43;
-	unittalk "�i�c�����ȁc�c�c����ˁH�j";
+	unittalk "（残すかな……残すよね？）";
 	end;
 }
 
-harboro1.gat,182,241,5	script	�f�r����#srdg02	81,{
+harboro1.gat,182,241,5	script	彷徨う犬#srdg02	81,{
 	emotion 43;
-	unittalk "�i��������Ȃ����ȁB�j";
+	unittalk "（お肉くれないかな。）";
 	end;
 }
 
-harboro1.gat,282,201,3	script	���b�N���b�W�^�C�K�[#sr	554,{
+harboro1.gat,282,201,3	script	ロックリッジタイガー#sr	554,{
 	emotion 45;
 	end;
 }
 
-harboro1.gat,86,218,3	script	�E�F���`�[#rockwn01	634,5,5,{
-	mes "[�E�F���`�[]";
-	mes "���b�N���b�W�͏��߂Ăł����H";
-	mes "���������������΂���ł��B";
-	mes "���̉����S�R�Ⴂ�܂��ˁB";
-	mes "�ƂĂ��y���݂ł��B";
+harboro1.gat,86,218,3	script	ウェルチー#rockwn01	634,5,5,{
+	mes "[ウェルチー]";
+	mes "ロックリッジは初めてですか？";
+	mes "私も一昨日着いたばかりです。";
+	mes "風の音が全然違いますね。";
+	mes "とても楽しみです。";
 	next;
-	mes "[�E�F���`�[]";
-	mes "�V�z�̌����̓����ƁA";
-	mes "���������ŉ�����ł��炵�Ă���";
-	mes "�������邵�c�c";
-	mes "�{���Ɋ��C���ӂ�钬�ł��I";
+	mes "[ウェルチー]";
+	mes "新築の建物の匂いと、";
+	mes "あちこちで何かを打ち鳴らしている";
+	mes "音もするし……";
+	mes "本当に活気あふれる町です！";
 	next;
-	emotion 18,"�E�F���`�[#rockwn01";
-	mes "[�E�F���`�[]";
-	mes "�����Ă��邾����";
-	mes "�������Ȃ��Ă��ď΂��Ă��܂��܂��B";
-	mes "�͂͂͂́I";
+	emotion 18,"ウェルチー#rockwn01";
+	mes "[ウェルチー]";
+	mes "立っているだけで";
+	mes "嬉しくなってきて笑ってしまいます。";
+	mes "はははは！";
 	close;
 OnTouch:
-	emotion 2,"�E�F���`�[#rockwn01";
+	emotion 2,"ウェルチー#rockwn01";
 	end;
 }
 
-harboro1.gat,88,217,3	script	�C�f�B�X�E���b�`�[#rock	703,{
-	emotion 19,"�C�f�B�X�E���b�`�[#rock";
-	mes "[�C�f�B�X�E���b�`�[]";
-	mes "���̂�������͉w�œ����Ă��܂��B";
-	mes "�w�͖k�̕��ɂ���܂��B";
-	mes "�傫�ȉו����^�Ԃ��������";
-	mes "�{���ɂ����������ł��I";
+harboro1.gat,88,217,3	script	イディス・リッチー#rock	703,{
+	emotion 19,"イディス・リッチー#rock";
+	mes "[イディス・リッチー]";
+	mes "私のお父さんは駅で働いています。";
+	mes "駅は北の方にあります。";
+	mes "大きな荷物を運ぶお父さんは";
+	mes "本当にかっこいいです！";
 	close;
 OnTalk1:
-	unittalk "�C�f�B�X�E���b�`�[ : ���邳���Ȃ��c�c�B";
+	unittalk "イディス・リッチー : うるさいなあ……。";
 	end;
 }
 
-harboro1.gat,85,208,7	script	�������h�E�E�F���L���X#	778,5,5,{
-	mes "[�������h�E�E�F���L���X]";
-	mes "���t�I";
-	mes "�������̈̑�Ȓ��Ɋ��t�I";
+harboro1.gat,85,208,7	script	リレンド・ウェンキンス#	778,5,5,{
+	mes "[リレンド・ウェンキンス]";
+	mes "乾杯！";
+	mes "私たちの偉大な町に乾杯！";
 	next;
-	mes "[�J�������E�I�j�[��]";
-	mes "�̑�ȊJ�񐸐_�Ɋ��t�I�I";
+	mes "[カルメン・オニール]";
+	mes "偉大な開拓精神に乾杯！！";
 	next;
-	mes "[�������L]";
-	mes "�����A���t�ɂ��I�I";
-	mes "�ɂ��ɂ��I�I";
+	mes "[酔った猫]";
+	mes "くう、乾杯にゃん！！";
+	mes "にゃんにゃん！！";
 	close;
 OnTouch:
-	if(getnpctimer(1,"�������h�E�E�F���L���X#")) {
+	if(getnpctimer(1,"リレンド・ウェンキンス#")) {
 		end;
 	}
 	initnpctimer;
-	unittalk "�������h�E�E�F���L���X : ���b�N���b�W�ׂ̈ɁI";
+	unittalk "リレンド・ウェンキンス : ロックリッジの為に！";
 	end;
 OnTimer3000:
-	donpcevent "�J�������E�I�j�[��#rock::OnTalk1";
-	donpcevent "�������L#rockwn11::OnTalk1";
+	donpcevent "カルメン・オニール#rock::OnTalk1";
+	donpcevent "酔った猫#rockwn11::OnTalk1";
 	end;
 OnTimer12000:
-	unittalk "�������h�E�E�F���L���X : ��͂͂́I�@��͂萴���Ȕ��������ō����I";
+	unittalk "リレンド・ウェンキンス : わははは！　やはり清涼な麦飲料が最高だ！";
 	end;
 OnTimer13000:
-	donpcevent "�J�������E�I�j�[��#rock::OnTalk2";
+	donpcevent "カルメン・オニール#rock::OnTalk2";
 	end;
 OnTimer14000:
-	donpcevent "�������L#rockwn11::OnTalk2";
+	donpcevent "酔った猫#rockwn11::OnTalk2";
 	end;
 OnTimer23000:
-	unittalk "�������h�E�E�F���L���X : �������́I";
+	unittalk "リレンド・ウェンキンス : 私たちは！";
 	end;
 OnTimer24000:
-	donpcevent "�J�������E�I�j�[��#rock::OnTalk3";
+	donpcevent "カルメン・オニール#rock::OnTalk3";
 	end;
 OnTimer25000:
-	donpcevent "�������L#rockwn11::OnTalk3";
+	donpcevent "酔った猫#rockwn11::OnTalk3";
 	end;
 OnTimer28000:
 	stopnpctimer;
-	unittalk "�������h�E�E�F���L���X : ���b�N���b�W�̊J�񖯁I";
-	donpcevent "�J�������E�I�j�[��#rock::OnTalk3";
-	donpcevent "�������L#rockwn11::OnTalk4";
+	unittalk "リレンド・ウェンキンス : ロックリッジの開拓民！";
+	donpcevent "カルメン・オニール#rock::OnTalk3";
+	donpcevent "酔った猫#rockwn11::OnTalk4";
 	end;
 }
 
-harboro1.gat,84,200,5	script	�f���o�[�g�E���C�N#rock	848,{
-	mes "[�f���o�[�g�E���C�N]";
-	mes "�����Ő������đ����������";
-	mes "�ƂɋA��񂾁I";
-	mes "���܂�ɂ��������߂���";
-	mes "�̌@�̏����������܂�";
-	mes "�D�ɏ���Ă��܂�����I";
+harboro1.gat,84,200,5	script	デルバート・レイク#rock	848,{
+	mes "[デルバート・レイク]";
+	mes "ここで成功して大金を持って";
+	mes "家に帰るんだ！";
+	mes "あまりにも興奮し過ぎて";
+	mes "採掘の準備をしたまま";
+	mes "船に乗ってしまったよ！";
 	next;
-	mes "[�f���o�[�g�E���C�N]";
-	mes "���x�����₪���邶��Ȃ����I";
-	mes "�悢����I�@�悢����I";
-	mes "���A��A�M�d�ȍz�΁c�c";
-	mes "�S�����̃f���o�[�g�l��";
-	mes "�@��o���Ă��I";
+	mes "[デルバート・レイク]";
+	mes "丁度いい岩があるじゃないか！";
+	mes "よいしょ！　よいしょ！";
+	mes "金、銀、貴重な鉱石……";
+	mes "全部このデルバート様が";
+	mes "掘り出してやる！";
 	next;
-	emotion 6,"�R���X�^���X#rockwn18";
-	mes "[�R���X�^���X]";
-	mes "���̐l�A���v������H";
-	mes "����͍z���ł͂Ȃ��A";
-	mes "���`���Ƃ��Ė��ߍ��܂ꂽ���ł���I";
-	mes "������͂������܂��Ă��������I";
+	emotion 6,"コンスタンス#rockwn18";
+	mes "[コンスタンス]";
+	mes "この人、大丈夫かしら？";
+	mes "これは鉱物ではなく、";
+	mes "造形物として埋め込まれた物ですよ！";
+	mes "早くつるはしをしまってください！";
 	close;
 OnTalk1:
-	unittalk "�f���o�[�g�E���C�N : ���͂͂́A�S���@��o���Ă�邼�I";
+	unittalk "デルバート・レイク : うははは、全部掘り出してやるぞ！";
 	end;
 }
 
-harboro1.gat,80,204,7	script	�G���V�[#rockwn05	96,5,5,{
-	mes "[�G���V�[]";
-	mes "����[�I�@�������Y��I";
+harboro1.gat,80,204,7	script	エルシー#rockwn05	96,5,5,{
+	mes "[エルシー]";
+	mes "うわー！　すごく綺麗！";
 	next;
-	emotion 1,"�G���V�[#rockwn05";
-	mes "[�G���V�[]";
-	mes "500��zeny�c�c";
-	mes "�˂��H�@������Ăǂ̂��炢�Ȃ́H";
+	emotion 1,"エルシー#rockwn05";
+	mes "[エルシー]";
+	mes "500万zeny……";
+	mes "ねえ？　それってどのくらいなの？";
 	next;
-	mes "[���e�B�}�[]";
-	mes "����͖`���Ґ�p�̉��i����B";
-	mes "�������`�r������";
-	mes "200zeny�ł�����B";
+	mes "[モティマー]";
+	mes "それは冒険者専用の価格だよ。";
+	mes "可愛いおチビちゃんは";
+	mes "200zenyでいいよ。";
 	close;
 OnTouch:
-	emotion 0,"�G���V�[#rockwn05";
+	emotion 0,"エルシー#rockwn05";
 	end;
 }
 
-harboro1.gat,86,210,4	script	�J�������E�I�j�[��#rock	102,{
-	mes "[�J�������E�I�j�[��]";
-	mes "�������͂�����ł��������ȁI";
+harboro1.gat,86,210,4	script	カルメン・オニール#rock	102,{
+	mes "[カルメン・オニール]";
+	mes "麦飲料はいつ飲んでも美味いな！";
 	next;
-	mes "[�������h�E�E�F���L���X]";
-	mes "�����҂��Łc�c���ЂЂЁI";
-	mes "����������H�ׂ悤�I";
+	mes "[リレンド・ウェンキンス]";
+	mes "金を稼いで……うひひひ！";
+	mes "美味い物を食べよう！";
 	next;
-	donpcevent "���e�B�}�[#rockwn07::OnTalk1";
-	mes "[�������L]";
-	mes "�`�L���������Ƃ��傤�����ɂ��I";
-	mes "�`�L���I";
-	mes "�`�L��������Ȃ��ɂ��I";
+	donpcevent "モティマー#rockwn07::OnTalk1";
+	mes "[酔った猫]";
+	mes "チキンをもっとちょうだいにゃん！";
+	mes "チキン！";
+	mes "チキンが足りないにゃん！";
 	close;
 OnTalk1:
-	unittalk "�J�������E�I�j�[�� : �ׂɁI";
+	unittalk "カルメン・オニール : 為に！";
 	end;
 OnTalk2:
-	unittalk "�J�������E�I�j�[�� : ���Ԃ�����ނƂ����Ɗi�ʂ��I";
+	unittalk "カルメン・オニール : 昼間から飲むともっと格別だ！";
 	end;
 OnTalk3:
-	unittalk "�J�������E�I�j�[�� : ���b�N���b�W�̊J�񖯁I";
+	unittalk "カルメン・オニール : ロックリッジの開拓民！";
 	end;
 }
 
-harboro1.gat,81,205,1	script	���e�B�}�[#rockwn07	828,5,5,{
-	mes "[���e�B�}�[]";
-	mes "�L�O�i����܂��`�L�O�i�`�B";
-	mes "���b�N���b�W�ɗ�����т�";
-	mes "�Ƒ��A�F�B�A���l�ɂ�";
-	mes "�킯�Ă����Ă��������B";
+harboro1.gat,81,205,1	script	モティマー#rockwn07	828,5,5,{
+	mes "[モティマー]";
+	mes "記念品売ります～記念品～。";
+	mes "ロックリッジに来た喜びを";
+	mes "家族、友達、恋人にも";
+	mes "わけてあげてください。";
 	next;
-	mes "[���e�B�}�[]";
-	mes "���A�`���҂���A�L�O�i�����܂����H";
+	mes "[モティマー]";
+	mes "あ、冒険者さん、記念品買いますか？";
 	next;
-	mes "[���e�B�}�[]";
-	mes "�������Ƃ��܂���B";
-	mes "���̉H���̑����i��200��zeny�A";
-	mes "���l�̃v���[���g�ɒ��x����";
-	mes "���̃n���J�`�́c�c";
-	mes "�Ȃ�Ƃ�������500��zeny����I";
+	mes "[モティマー]";
+	mes "安くしときますよ。";
+	mes "この羽根の装飾品は200万zeny、";
+	mes "恋人のプレゼントに丁度いい";
+	mes "このハンカチは……";
+	mes "なんとたったの500万zenyだよ！";
 	close;
 OnTouch:
-	unittalk "���e�B�}�[ : �L�O�i����܂���`�L�O�i�`�B";
+	unittalk "モティマー : 記念品売りますよ～記念品～。";
 	end;
 OnTalk1:
-	unittalk "���e�B�}�[ : ���̐l�����͖��������Ȃ񂾂�ˁB�n�n�n�I";
+	unittalk "モティマー : あの人たちは毎日ああなんだよね。ハハハ！";
 	end;
 }
 
-harboro1.gat,98,211,3	script	�����b�^�[#rockwn08	641,5,5,{
-	emotion 3,"�����b�^�[#rockwn08";
-	mes "[�����b�^�[]";
-	mes "���R�̓s�s���b�N���b�W�ł�";
-	mes "��_�l�݂͂Ȃ���ƈꏏ�ɂ��܂��I";
-	mes "���b�𕷂������Ȃ炢�ł�";
-	mes "���炵�Ă��������B";
+harboro1.gat,98,211,3	script	ロレッター#rockwn08	641,5,5,{
+	emotion 3,"ロレッター#rockwn08";
+	mes "[ロレッター]";
+	mes "自由の都市ロックリッジでも";
+	mes "主神様はみなさんと一緒にいます！";
+	mes "お話を聞きたいならいつでも";
+	mes "いらしてください。";
 	next;
-	mes "[�����b�^�[]";
-	mes "�܂���q���͂Ȃ����ǁc�c";
-	mes "�I�[�f�B���l�͌����ɂ͂��܂���B";
-	mes "�������̐S�̒��ɂ��܂��B";
-	mes "�ł�����ꏏ��";
-	mes "���ӂ̂��F������Ȃ���c�c�B";
+	mes "[ロレッター]";
+	mes "まだ礼拝堂はないけど……";
+	mes "オーディン様は建物にはいません。";
+	mes "私たちの心の中にいます。";
+	mes "ですから一緒に";
+	mes "感謝のお祈りをしながら……。";
 	next;
-	emotion 16,"�h�����X#rockwn09";
-	mes "[�h�����X]";
-	mes "�����b�^�[�o�l�A�����ɂ��ł��B";
-	mes "��_�l���S�ɂ���������Ƃ��Ă��A";
-	mes "�������͌����̒��ɓ����Ă�";
-	mes "�����̂ł͂���܂��񂩁B";
+	emotion 16,"ドロレス#rockwn09";
+	mes "[ドロレス]";
+	mes "ロレッター姉様、足が痛いです。";
+	mes "主神様が心にいらっしゃるとしても、";
+	mes "私たちは建物の中に入っても";
+	mes "いいのではありませんか。";
 	next;
-	mes "[�����X]";
-	mes "���A�ŗ₽���������W���[�X��";
-	mes "���݂����ȁc�c�B";
+	mes "[モリス]";
+	mes "日陰で冷たいレモンジュースを";
+	mes "飲みたいな……。";
 	next;
-	mes "[�h�����X]";
-	mes "����ł��A�����ł��A";
-	mes "����ł���I�@�����X�Z��l�I";
+	mes "[ドロレス]";
+	mes "それです、そうです、";
+	mes "それですよ！　モリス兄弟様！";
 	next;
-	mes "[�����b�^�[]";
-	mes "�ӂ��c�c";
-	mes "�Ō�̑D�̓��`���I�������A";
-	mes "�������W���[�X�ł�";
-	mes "���C���W���[�X�ł�";
-	mes "�D���ȕ��𔃂��Ă����܂���B";
-	mes "�����獡�͂����������E�҂炵���c�c�B";
+	mes "[ロレッター]";
+	mes "ふう……";
+	mes "最後の船の入港が終わったら、";
+	mes "レモンジュースでも";
+	mes "ライムジュースでも";
+	mes "好きな物を買ってあげますよ。";
+	mes "だから今はもう少し聖職者らしく……。";
 	next;
-	emotion 14,"�h�����X#rockwn09";
-	emotion 14,"�����X#rockwn10";
-	donpcevent "�h�����X#rockwn09::OnTalk1";
-	donpcevent "�����X#rockwn10::OnTalk1";
-	mes "[�����X]";
-	mes "�������W���[�X�c�c����A";
-	mes "��_�l�݂͂Ȃ���Ƌ��ɂ���܂��I";
+	emotion 14,"ドロレス#rockwn09";
+	emotion 14,"モリス#rockwn10";
+	donpcevent "ドロレス#rockwn09::OnTalk1";
+	donpcevent "モリス#rockwn10::OnTalk1";
+	mes "[モリス]";
+	mes "レモンジュース……いや、";
+	mes "主神様はみなさんと共にあります！";
 	close;
 OnTouch:
-	unittalk "�����b�^�[ : �I�[�f�B���l���`";
-	donpcevent "�h�����X#rockwn09::OnTalk2";
-	donpcevent "�����X#rockwn10::OnTalk2";
+	unittalk "ロレッター : オーディン様が～";
+	donpcevent "ドロレス#rockwn09::OnTalk2";
+	donpcevent "モリス#rockwn10::OnTalk2";
 	end;
 }
 
-harboro1.gat,100,211,3	script	�h�����X#rockwn09	79,{
-	mes "[�h�����X]";
-	mes "��q���͐S�̒��ɂ���܂��B";
-	mes "�����ǐ_�l�͒g�����x�b�h��";
-	mes "���������H��ɂ�";
-	mes "��������Ⴂ�܂���ˁH";
-	mes "�C���������`�̑O�łȂ��Ă�";
-	mes "��������Ⴂ�܂���ˁH";
+harboro1.gat,100,211,3	script	ドロレス#rockwn09	79,{
+	mes "[ドロレス]";
+	mes "礼拝堂は心の中にあります。";
+	mes "だけど神様は暖かいベッドと";
+	mes "美味しい食卓にも";
+	mes "いらっしゃいますよね？";
+	mes "海風が吹く港の前でなくても";
+	mes "いらっしゃいますよね？";
 	next;
-	mes "[�����b�^�[]";
-	mes "�����m��Ȃ��l����������";
-	mes "���т��H�ׂ����Ă��炦�Ȃ����A";
-	mes "�������Ƃ点�Ă��炦�Ȃ��̂���";
-	mes "���Ⴂ����ł���I";
-	mes "��������Ԓx���N���������Ɂc�c�B";
+	mes "[ロレッター]";
+	mes "何も知らない人が聞いたら";
+	mes "ご飯も食べさせてもらえないし、";
+	mes "睡眠もとらせてもらえないのかと";
+	mes "勘違いするでしょ！";
+	mes "今日も一番遅く起きたくせに……。";
 	next;
-	emotion 19,"�h�����X#rockwn09";
-	mes "[�h�����X]";
-	mes "�ׁA�x�b�h�ɂ�����������";
-	mes "��_�l�Ƃ��b�����Ă��������ł��I";
-	mes "�����ĐQ�V�����킯����";
-	mes "�Ȃ���ł���I";
+	emotion 19,"ドロレス#rockwn09";
+	mes "[ドロレス]";
+	mes "べ、ベッドにいらっしゃった";
+	mes "主神様とお話をしていただけです！";
+	mes "決して寝坊したわけじゃ";
+	mes "ないんですよ！";
 	close;
 OnTalk1:
-	unittalk "�h�����X : �M���܂��`";
+	unittalk "ドロレス : 信じます～";
 	end;
 OnTalk2:
-	unittalk "�h�����X : �`���җl�Ɓ`";
+	unittalk "ドロレス : 冒険者様と～";
 	end;
 }
 
-harboro1.gat,101,210,3	script	�����X#rockwn10	60,{
-	mes "[�����X]";
-	mes "�΂����ɂ�āA";
-	mes "�O�Ō��t��`����̂�";
-	mes "���񂾂�h���Ȃ��Ă��܂����B";
-	mes "�����ǂ����ɗ�������";
-	mes "���߂ĕ������C������";
-	mes "���̒��ŕς���Ă��܂���B";
+harboro1.gat,101,210,3	script	モリス#rockwn10	60,{
+	mes "[モリス]";
+	mes "歳を取るにつれて、";
+	mes "外で言葉を伝えるのも";
+	mes "だんだん辛くなってきました。";
+	mes "だけどここに来た時に";
+	mes "初めて抱いた気持ちは";
+	mes "私の中で変わっていません。";
 	next;
-	emotion 2,"�����X#rockwn10";
-	mes "[�����X]";
-	mes "���̂��h���ƐS�Ɛ_��";
-	mes "����₷���ł��B";
-	mes "�ł�������������撣����";
-	mes "�݂Ȃ���̋߂��ɂ���";
-	mes "��_�l�̂����t��`���܂��I";
+	emotion 2,"モリス#rockwn10";
+	mes "[モリス]";
+	mes "肉体が辛いと心と神も";
+	mes "離れやすいです。";
+	mes "ですからもう少し頑張って";
+	mes "みなさんの近くにいる";
+	mes "主神様のお言葉を伝えます！";
 	close;
 OnTalk1:
-	unittalk "�����X : �M���܂��`";
+	unittalk "モリス : 信じます～";
 	end;
 OnTalk2:
-	unittalk "�����X : ���ɂ��܂��`";
+	unittalk "モリス : 共にいます～";
 	end;
 }
 
-harboro1.gat,87,207,1	script	�������L#rockwn11	561,{
-	mes "[�������h�E�E�F���L���X]";
-	mes "�������́I�@���b�N���b�W�́I";
-	mes "�̑�ȁI�@�J��!!�@���������I";
+harboro1.gat,87,207,1	script	酔った猫#rockwn11	561,{
+	mes "[リレンド・ウェンキンス]";
+	mes "私たちは！　ロックリッジの！";
+	mes "偉大な！　開拓民!!　うおおお！";
 	next;
-	mes "[�J�������E�I�j�[��]";
-	mes "�z�R���I�@�@���āI";
-	mes "�Ƃ��I�@���Ă�I";
-	mes "�C���ƁI�@�������I";
-	mes "���������~�߂Ă��`!!";
+	mes "[カルメン・オニール]";
+	mes "鉱山を！　掘って！";
+	mes "家を！　建てる！";
+	mes "海水と！　砂風が！";
+	mes "私たちを止めても～!!";
 	next;
-	donpcevent "�C�f�B�X�E���b�`�[#rock::OnTalk1";
-	mes "[�������L]";
-	mes "�ɂ��I";
-	mes "�ɂ��ɂ��!!";
-	mes "�ɂ�͂͂�I";
-	mes "�ɂ��ɂ��ɂ�I�I";
+	donpcevent "イディス・リッチー#rock::OnTalk1";
+	mes "[酔った猫]";
+	mes "にゃん！";
+	mes "にゃんにゃん!!";
+	mes "にゃははん！";
+	mes "にゃんにゃんにゃ！！";
 	close;
 OnTalk1:
-	unittalk "�������L : �ׂɂ��`�I";
+	unittalk "酔った猫 : 為にゃん～！";
 	end;
 OnTalk2:
-	unittalk "�������L : �`�L���͐��`�I�@�����`�`�L�����ɂ�I";
+	unittalk "酔った猫 : チキンは正義！　くぅ～チキンだにゃ！";
 	end;
 OnTalk3:
-	unittalk "�������L : �E���Ł`�����܂����ɂ��I";
+	unittalk "酔った猫 : 勇敢で～たくましいにゃん！";
 	end;
 OnTalk4:
-	unittalk "�������L : �ɂ��ɂ��ɂ�I�@�ɂ��ɂ��ɂ�ɂ�`�I�I";
+	unittalk "酔った猫 : にゃんにゃんにゃ！　にゃんにゃんにゃにゃ～！！";
 	end;
 }
 
-harboro1.gat,79,224,5	script	�}�C���X�E�B�Y�i�[#rock	881,{
-	mes "[�}�C���X�E�B�Y�i�[]";
-	mes "�o���񂪎��̑D�ɏ���ė���̂�";
-	mes "�҂��Ă���Ƃ���ł��B";
-	mes "���̕�����Ɋ�Ղ������";
-	mes "���ꂩ��o������ĂԂ��Ƃ�";
-	mes "���Ă�����ł��B";
+harboro1.gat,79,224,5	script	マイルスウィズナー#rock	881,{
+	mes "[マイルスウィズナー]";
+	mes "姉さんが次の船に乗って来るので";
+	mes "待っているところです。";
+	mes "私の方が先に基盤を作って";
+	mes "それから姉さんを呼ぶことに";
+	mes "していたんです。";
 	next;
-	mes "[�}�C���X�E�B�Y�i�[]";
-	mes "��N�O�A���m��ʓy�n�ɍs������";
-	mes "�o����͂��Ȃ�S�z���Ă�����ł��B";
-	mes "�����玩���o�����p�������邱�Ƃ�";
-	mes "�ł��ĂƂĂ��������ł��B";
+	mes "[マイルスウィズナー]";
+	mes "一年前、見知らぬ土地に行く私を";
+	mes "姉さんはかなり心配していたんです。";
+	mes "だから自立出来た姿を見せることが";
+	mes "できてとても嬉しいです。";
 	next;
-	mes "[�}�C���X�E�B�Y�i�[]";
-	mes "�w�͂���҂ɂ̓`�����X������I";
-	mes "���ꂪ���b�N���b�W�ł��B";
+	mes "[マイルスウィズナー]";
+	mes "努力する者にはチャンスが来る！";
+	mes "それがロックリッジです。";
 	close;
 }
 
-harboro1.gat,75,211,1	script	�[���@�[�f�B�[#rockwn13	82,5,5,{
-	mes "[�[���@�[�f�B�[]";
-	mes "���b�N���b�W�ɂ悤�����I";
-	mes "�`�����X�̒n�A���b�N���b�W��";
-	mes "�f���炵�����Ԃ��߂����Ă��������I";
+harboro1.gat,75,211,1	script	ゼヴァーディー#rockwn13	82,5,5,{
+	mes "[ゼヴァーディー]";
+	mes "ロックリッジにようこそ！";
+	mes "チャンスの地、ロックリッジで";
+	mes "素晴らしい時間を過ごしてください！";
 	close;
 OnTouch:
-	unittalk "�[���@�[�f�B�[ : ���b�N���b�W�ɂ悤�����I";
-	misceffect 72,"�[���@�[�f�B�[#rockwn13";
-	emotion 14,"�[���@�[�f�B�[#rockwn13";
+	unittalk "ゼヴァーディー : ロックリッジにようこそ！";
+	misceffect 72,"ゼヴァーディー#rockwn13";
+	emotion 14,"ゼヴァーディー#rockwn13";
 	end;
 }
 
-harboro1.gat,75,219,3	script	�G�C���[��#rockwn14	96,5,5,{
-	mes "[�G�C���[��]";
-	mes "���b�N���b�W�ւ�����������";
-	mes "�`���җl�����}���܂���`�I";
-	mes "���Ȃ��ɂƂ��āA";
-	mes "�������f���炵���`���̒n��";
-	mes "�Ȃ�܂��悤�ɁB";
+harboro1.gat,75,219,3	script	エイリーン#rockwn14	96,5,5,{
+	mes "[エイリーン]";
+	mes "ロックリッジへいらっしゃった";
+	mes "冒険者様を歓迎しますよ～！";
+	mes "あなたにとって、";
+	mes "ここが素晴らしい冒険の地に";
+	mes "なりますように。";
 	close;
 OnTouch:
-	unittalk "�G�C���[�� : �`���җl�����}���܂���`�I";
-	misceffect 72,"�G�C���[��#rockwn14";
-	emotion 14,"�G�C���[��#rockwn14";
+	unittalk "エイリーン : 冒険者様を歓迎しますよ～！";
+	misceffect 72,"エイリーン#rockwn14";
+	emotion 14,"エイリーン#rockwn14";
 	end;
 }
 
-harboro1.gat,83,221,3	script	�}�t�A�J��#rockwn15	10225,{
-	mes "[�}�t�A�J��]";
-	mes "�������̒��ł͔ނ�J��҂�����";
-	mes "�����Ă���҂����Ȃ��Ȃ��B";
-	mes "�����ǃC�p���A��[�������Ă���B";
-	mes "�ނ���F�A���R�̎q�ǂ������Ȃ񂾁B";
+harboro1.gat,83,221,3	script	マフアカヤ#rockwn15	10225,{
+	mes "[マフアカヤ]";
+	mes "私たちの町では彼ら開拓者たちを";
+	mes "嫌っている者も少なくない。";
+	mes "だけどイパリ、よーく聞いてくれ。";
+	mes "彼らも皆、自然の子どもたちなんだ。";
 	next;
-	mes "[���邢�C�p��]";
-	mes "�q�ǂ������`�H";
-	mes "�C�p���݂����`�H";
+	mes "[明るいイパリ]";
+	mes "子どもたち～？";
+	mes "イパリみたい～？";
 	next;
-	mes "[�}�t�A�J��]";
-	mes "�������B";
-	mes "�ނ炾������Ȃ����B";
-	mes "���ꂿ��񂾂��āA";
-	mes "�厩�R�̑O�ł̓C�p���݂�����";
-	mes "�q�ǂ��ł����Ȃ��񂾂��B";
+	mes "[マフアカヤ]";
+	mes "そうだ。";
+	mes "彼らだけじゃないぞ。";
+	mes "お爺ちゃんだって、";
+	mes "大自然の前ではイパリみたいに";
+	mes "子どもでしかないんだぞ。";
 	next;
-	emotion 18,"���邢�C�p��#rockwn16";
-	mes "[���邢�C�p��]";
-	mes "���͂͂͂́I�@�R���`�I";
-	mes "���ꂿ���͔w���������A";
-	mes "�����������E������̂ɁA";
-	mes "�Ȃ�ŃC�p���݂����Ȏq�ǂ��Ȃ́H";
+	emotion 18,"明るいイパリ#rockwn16";
+	mes "[明るいイパリ]";
+	mes "あはははは！　嘘だ～！";
+	mes "お爺ちゃんは背も高いし、";
+	mes "かっこいい髭もあるのに、";
+	mes "なんでイパリみたいな子どもなの？";
 	next;
-	mes "[�}�t�A�J��]";
-	mes "�C�p�����F�B��";
-	mes "���ǂ�����̂Ɠ����悤�ɁA";
-	mes "�݂�Ȉꏏ�ɒ��ǂ����Ȃ����A";
-	mes "�ƌ������Ƃ��B";
-	mes "�킩�������A�C�p���H";
+	mes "[マフアカヤ]";
+	mes "イパリが友達と";
+	mes "仲良くするのと同じように、";
+	mes "みんな一緒に仲良くしなさい、";
+	mes "と言うことだ。";
+	mes "わかったか、イパリ？";
 	next;
-	mes "[���邢�C�p��]";
-	mes "����A�킩�����I";
-	mes "���ꂿ���̌����ʂ�ɂ���I";
-	mes "�C�p���ǂ��q������I";
+	mes "[明るいイパリ]";
+	mes "うん、わかった！";
+	mes "お爺ちゃんの言う通りにする！";
+	mes "イパリ良い子だもん！";
 	close;
 }
 
-harboro1.gat,82,221,3	script	���邢�C�p��#rockwn16	10226,5,5,{
-	mes "[���邢�C�p��]";
-	mes "���ꂿ���͐����J�b�R�����ł��I";
-	mes "���܂ɃC�p���ɂ͂悭�킩��Ȃ��b��";
-	mes "���Ă���邯�ǁc�c�B";
+harboro1.gat,82,221,3	script	明るいイパリ#rockwn16	10226,5,5,{
+	mes "[明るいイパリ]";
+	mes "お爺ちゃんは凄くカッコいいです！";
+	mes "たまにイパリにはよくわからない話を";
+	mes "してくれるけど……。";
 	next;
-	emotion 2,"���邢�C�p��#rockwn16";
-	mes "[���邢�C�p��]";
-	mes "�C�p�������ꂿ��񂭂炢";
-	mes "�傫���Ȃ�����킩��悤�ɂȂ��ˁH";
-	mes "�����傫���Ȃ��āA";
-	mes "���ꂿ��񂩂������x";
-	mes "�������Ƃɂ��܂��I";
+	emotion 2,"明るいイパリ#rockwn16";
+	mes "[明るいイパリ]";
+	mes "イパリがお爺ちゃんくらい";
+	mes "大きくなったらわかるようになるよね？";
+	mes "早く大きくなって、";
+	mes "お爺ちゃんからもう一度";
+	mes "聞くことにします！";
 	close;
 OnTouch:
-	emotion 18,"���邢�C�p��#rockwn16";
+	emotion 18,"明るいイパリ#rockwn16";
 	end;
 }
 
-harboro1.gat,93,201,1	script	���[�����h�o�[�c#rockwn	10203,{
-	mes "[���[�����h�o�[�c]";
-	mes "���̒��͉�X�������";
-	mes "���x�c������Ă��܂��B";
-	mes "���[�v�ۈ����̉���";
-	mes "�������ڂ����点�Ȃ���";
-	mes "�����x�����Ă��܂��B";
+harboro1.gat,93,201,1	script	ローランドバーツ#rockwn	10203,{
+	mes "[ローランドバーツ]";
+	mes "この町は我々が作った";
+	mes "自警団が守っています。";
+	mes "ワープ保安官の下で";
+	mes "今日も目を光らせながら";
+	mes "町を警戒しています。";
 	next;
-	emotion 16,"���[�����h�o�[�c#rockwn";
-	mes "[���[�����h�o�[�c]";
-	mes "��ԓ���Y�܂��Ă���̂�";
-	mes "��͂苍���c�����ǁc�c";
-	mes "�쐶���������ɂ�";
-	mes "���Ȃ����Ă��Ă��܂��B";
+	emotion 16,"ローランドバーツ#rockwn";
+	mes "[ローランドバーツ]";
+	mes "一番頭を悩ませているのは";
+	mes "やはり牛賊団だけど……";
+	mes "野生動物たちにも";
+	mes "かなり手を焼いています。";
 	next;
-	mes "[���[�����h�o�[�c]";
-	mes "�����Ē��̒n���ɂ́c�c";
-	mes "���A�����c�c";
-	mes "����͂��܂肨�b���������Ȃ��ł��B";
+	mes "[ローランドバーツ]";
+	mes "そして町の地下には……";
+	mes "う、うう……";
+	mes "これはあまりお話ししたくないです。";
 	close;
 }
 
-harboro1.gat,85,195,1	script	�R���X�^���X#rockwn18	850,5,5,{
-	mes "[�R���X�^���X]";
-	mes "���I�@���񂽖`���҂��낤�H";
-	mes "���̐l���~�߂Ă�����I";
+harboro1.gat,85,195,1	script	コンスタンス#rockwn18	850,5,5,{
+	mes "[コンスタンス]";
+	mes "あ！　あんた冒険者だろう？";
+	mes "あの人を止めておくれ！";
 	next;
-	mes "[�R���X�^���X]";
-	mes "�D����~��Ď��͂����񂵂�����";
-	mes "�v������A�����Ȃ��͂���";
-	mes "�@��n�߂��񂾂�I";
+	mes "[コンスタンス]";
+	mes "船から降りて周囲を見回したかと";
+	mes "思ったら、いきなりつるはしで";
+	mes "掘り始めたんだよ！";
 	next;
-	emotion 7,"�R���X�^���X#rockwn18";
-	mes "[�R���X�^���X]";
-	mes "����͍z������Ȃ��āA";
-	mes "���̐l�������͂����킹�č����";
-	mes "���`���Ȃ񂾂�I";
-	mes "�����z���Ȃ̂����ʂ��o���Ȃ��̂�";
-	mes "�z�R�œ�������Ȃ̂����I";
+	emotion 7,"コンスタンス#rockwn18";
+	mes "[コンスタンス]";
+	mes "あれは鉱物じゃなくて、";
+	mes "町の人たちが力を合わせて作った";
+	mes "造形物なんだよ！";
+	mes "何か鉱物なのか分別も出来ないのに";
+	mes "鉱山で働くつもりなのかい！";
 	close;
 OnTouch:
-	donpcevent "�f���o�[�g�E���C�N#rock::OnTalk1";
-	unittalk "�R���X�^���X : ������Ƃ��񂽁I�@��߂Ȃ����I";
+	donpcevent "デルバート・レイク#rock::OnTalk1";
+	unittalk "コンスタンス : ちょっとあんた！　やめなさい！";
 	end;
 }
 
-harboro1.gat,73,206,5	script	�����^�[�O���[�������h#	486,{
-	mes "[�����^�[�O���[�������h]";
-	mes "����ȉ����܂ŗ����̂ɂ�";
-	mes "�����ړI�������ł��傤�ˁH";
-	mes "�ړI��S�������Ƃ��āA";
-	mes "���ɉ�������΂����̂�";
-	mes "�킩��Ȃ��Ȃ������ɂ́c�c";
+harboro1.gat,73,206,5	script	ワルターグリーンワルド#	486,{
+	mes "[ワルターグリーンワルド]";
+	mes "こんな遠くまで来たのには";
+	mes "何か目的があるんでしょうね？";
+	mes "目的を全部成しとげて、";
+	mes "他に何をすればいいのか";
+	mes "わからなくなった時には……";
 	next;
-	mes "[�����^�[�O���[�������h]";
-	mes "�����̓��ɉ�����";
-	mes "���̓����̓����ɍs���A";
-	mes "�����������������̕���";
-	mes "�s���Ă݂Ă��������B";
+	mes "[ワルターグリーンワルド]";
+	mes "中央の道に沿って";
+	mes "町の東側の入口に行き、";
+	mes "そこからもう少し南の方に";
+	mes "行ってみてください。";
 	next;
-	mes "[�����^�[�O���[�������h]";
-	mes "�����ɂ͎d���ƐH����";
-	mes "�񋟂���l���������܂��B";
-	mes "�������A�����Ⴄ�ׂ�";
-	mes "�W�܂����l�����������ł����ǁB";
+	mes "[ワルターグリーンワルド]";
+	mes "そこには仕事と食事を";
+	mes "提供する人たちがいます。";
+	mes "もちろん、それを貰う為に";
+	mes "集まった人たちも多いですけど。";
 	close;
 }
 
-harboro1.gat,94,237,3	script	�R���f��#rockn01	573,{
-	mes "[�R���f��]";
-	mes "�D�ԉw�����Ă����";
-	mes "�Ȃ����������Ȃ�܂��B";
-	mes "���̏ے��݂����Ȃ��̂ł�����B";
+harboro1.gat,94,237,3	script	コルデル#rockn01	573,{
+	mes "[コルデル]";
+	mes "汽車駅を見ていると";
+	mes "なぜか嬉しくなります。";
+	mes "町の象徴みたいなものですから。";
 	next;
-	mes "[�R���f��]";
-	mes "�͍̂z�R��������";
-	mes "���Ȃ藣��Ă����̂ŁA";
-	mes "�z�R�̍̌@���n�܂��Ă����";
-	mes "�����ԋ�J���܂����B";
+	mes "[コルデル]";
+	mes "昔は鉱山が町から";
+	mes "かなり離れていたので、";
+	mes "鉱山の採掘が始まってからも";
+	mes "長い間苦労しました。";
 	next;
-	mes "[�R���f��]";
-	mes "���H��������Ă���";
-	mes "���悢�惍�b�N���b�W�̔��W��";
-	mes "�n�܂�񂾂Ǝv���܂����B";
-	mes "�����c�����񂾂񎷝X��";
-	mes "�Ȃ��Ă������ǁc�c";
-	mes "���W�ɂ͋�J�������̂ł��B";
+	mes "[コルデル]";
+	mes "線路が引かれてから";
+	mes "いよいよロックリッジの発展が";
+	mes "始まるんだと思いました。";
+	mes "牛賊団もだんだん執拗に";
+	mes "なってきたけど……";
+	mes "発展には苦労がつきものです。";
 	next;
-	emotion 14,"�R���f��#rockn01";
-	mes "[�R���f��]";
-	mes "�����Ǔ���ڂ̑O�ɂ��Ă�";
-	mes "����~�߂Ȃ��̂��A";
-	mes "���������b�N���b�W�̐��_�ł��I";
+	emotion 14,"コルデル#rockn01";
+	mes "[コルデル]";
+	mes "だけど難題を目の前にしても";
+	mes "手を止めないのが、";
+	mes "私たちロックリッジの精神です！";
 	close;
 }
 
-harboro1.gat,100,77,4	script	���C�x��#rockn02	102,{
-	mes "[���C�x��]";
-	mes "���b�N���b�W�͊C�ӂ̒��ł��B";
-	mes "�̂́c�c����A";
-	mes "���������ƍ����C�Ɛ���Ă��܂��B";
+harboro1.gat,100,77,4	script	メイベル#rockn02	102,{
+	mes "[メイベル]";
+	mes "ロックリッジは海辺の町です。";
+	mes "昔は……いや、";
+	mes "実を言うと今も海と戦っています。";
 	next;
-	mes "[���C�x��]";
-	mes "���̒��̉��Ɏ��͂����ЂƂA";
-	mes "�������邱�Ƃ�m���Ă��܂����H";
-	mes "���X�͂�����";
-	mes "���b�N���b�W��������ł��B";
-	mes "�����Ǔx�X�C���������ė���̂ƁA";
-	mes "�n�����̋t���ŏZ�߂Ȃ��Ȃ�܂����B";
+	mes "[メイベル]";
+	mes "今の町の下に実はもうひとつ、";
+	mes "町があることを知っていますか？";
+	mes "元々はそこが";
+	mes "ロックリッジだったんです。";
+	mes "だけど度々海水が入って来るのと、";
+	mes "地下水の逆流で住めなくなりました。";
 	next;
-	mes "[���C�x��]";
-	mes "�R�X�e���s���̌���́A";
-	mes "���̒��𖄂߂Ă��̏��";
-	mes "�V�����������Ă邱�Ƃł����B";
-	mes "����ňȑO�̒��͒n���ɂȂ�A";
-	mes "���̏�ɍ��̒����ł�����ł��B";
+	mes "[メイベル]";
+	mes "コステル市長の決定は、";
+	mes "元の町を埋めてその上に";
+	mes "新しい町を建てることでした。";
+	mes "それで以前の町は地下になり、";
+	mes "その上に今の町ができたんです。";
 	next;
-	mes "[���C�x��]";
-	mes "���ł����𔲂���Ƃ����Ȃ���";
-	mes "�������Z�����邩�킩��܂���B";
+	mes "[メイベル]";
+	mes "今でも水を抜く作業をしないと";
+	mes "いつ町が浸水するかわかりません。";
 	close;
 }
 
-harboro1.gat,229,64,3	script	���[�Y�E�����E�F�o�[#ro	850,{
-	mes "[���[�Y�E�����E�F�o�[]";
-	mes "���񂴂肷��C���I";
-	mes "����ƌ�����C���I���Ȃ���I";
+harboro1.gat,229,64,3	script	ローズ・メリウェバー#ro	850,{
+	mes "[ローズ・メリウェバー]";
+	mes "うんざりする海水！";
+	mes "干拓と建物補修が終わらないよ！";
 	close;
 }
 
-harboro1.gat,290,104,5	script	�G�Y�j���[#rockn04	553,{
-	mes "[�G�Y�j���[]";
-	mes "�����ɂ��錚���̂قƂ�ǂ�";
-	mes "��K���n���ɖ��܂��ĂāA";
-	mes "�n��ɏo�Ă��镔����";
-	mes "���͓�K�������炵���j���B";
+harboro1.gat,290,104,5	script	エズニャー#rockn04	553,{
+	mes "[エズニャー]";
+	mes "ここにある建物のほとんどは";
+	mes "一階が地下に埋まってて、";
+	mes "地上に出ている部分は";
+	mes "実は二階だったらしいニャ。";
 	close;
 }
 
-harboro1.gat,241,200,5	script	�K���}���E�|�V�[#rockn0	900,{
-	mes "[�K���}���E�|�V�[]";
-	mes "���킪�~�����̂��H";
-	mes "�����ł͏e����舵���Ă���B";
+harboro1.gat,241,200,5	script	ガンマン・ポシー#rockn0	900,{
+	mes "[ガンマン・ポシー]";
+	mes "武器が欲しいのか？";
+	mes "ここでは銃を取り扱っている。";
 	next;
-	mes "[�K���}���E�|�V�[]";
-	mes "�����A���퉮�͕܂��Ă��邼�B";
-	mes "�傪�����c��ގ������";
-	mes "�������ďo�čs�������A";
-	mes "�����œ]��ō���ɂ߂��炵���B";
+	mes "[ガンマン・ポシー]";
+	mes "ああ、武器屋は閉まっているぞ。";
+	mes "主が牛賊団を退治すると";
+	mes "息巻いて出て行ったが、";
+	mes "砂漠で転んで腰を痛めたらしい。";
 	next;
-	mes "[�K���}���E�|�V�[]";
-	mes "�e���~���������炱�̓������ɂ���";
-	mes "���̓���ɍs���ȁB";
-	mes "�����̎�̑��q������̒[���؂��";
-	mes "���������Ă��邩��B";
+	mes "[ガンマン・ポシー]";
+	mes "銃が欲しかったらこの道沿いにある";
+	mes "東の道具屋に行きな。";
+	mes "ここの主の息子が道具屋の端を借りて";
+	mes "商売をしているから。";
 	close;
 }
 
-harboro1.gat,311,53,5	script	�W���C�X�E���X���[#rock	90,{
-	mes "[�W���C�X�E���X���[]";
-	mes "���𖄂߂�O����C�݂ɋ߂��Ƃ�";
-	mes "�n�Ղ��ɂ��Ȃ��Ă��܂����B";
-	mes "���ǂ��̉Ƃ͂���Ȏp�Ɂc�c�B";
+harboro1.gat,311,53,5	script	ジョイス・レスリー#rock	90,{
+	mes "[ジョイス・レスリー]";
+	mes "町を埋める前から海岸に近い家は";
+	mes "地盤が緩くなっていました。";
+	mes "結局この家はこんな姿に……。";
 	next;
-	mes "[�W���C�X�E���X���[]";
-	mes "�����ɏZ��ł����l��";
-	mes "�C�ɂȂ�܂����H";
-	mes "�`���҂������m����";
-	mes "�ǂ��������ł����H";
+	mes "[ジョイス・レスリー]";
+	mes "ここに住んでいた人が";
+	mes "気になりますか？";
+	mes "冒険者がそれを知って";
+	mes "どうするつもりですか？";
 	next;
-	emotion 54,"�W���C�X�E���X���[#rock";
-	mes "[�W���C�X�E���X���[]";
-	mes "���߂�Ȃ����A";
-	mes "�{�����͂Ȃ������́B";
-	mes "�����c�c���������ǂ������āc�c�B";
+	emotion 54,"ジョイス・レスリー#rock";
+	mes "[ジョイス・レスリー]";
+	mes "ごめんなさい、";
+	mes "怒るつもりはなかったの。";
+	mes "ただ……自分がもどかしくて……。";
 	close;
 }
 
-harboro1.gat,321,237,5	script	���r�i�E�A�h���[#rockn0	882,{
-	emotion 2,"���r�i�E�A�h���[#rockn0";
-	mes "[���r�i�E�A�h���[]";
-	mes "���`��A�����Ŗ��키���Ƃ��ł���";
-	mes "�H�ו��̒��ł́A";
-	mes "��͂�A�K�x�W���[�X���ō��ł��ˁB";
+harboro1.gat,321,237,5	script	ルビナ・アドラー#rockn0	882,{
+	emotion 2,"ルビナ・アドラー#rockn0";
+	mes "[ルビナ・アドラー]";
+	mes "う～ん、ここで味わうことができる";
+	mes "食べ物の中では、";
+	mes "やはりアガベジュースが最高ですね。";
 	next;
-	mes "[���r�i�E�A�h���[]";
-	mes "���X�̓L���N�^�[����";
-	mes "�`�������炵���ł��B";
-	mes "�Â��ė₽���A�A�ɗ��܂����B";
-	mes "�������Y��ɂ��Ă����C�����܂��I";
+	mes "[ルビナ・アドラー]";
+	mes "元々はキャクター族の";
+	mes "伝統飲料らしいです。";
+	mes "甘くて冷たい、喉に溜まった。";
+	mes "砂埃を綺麗にしてくれる気がします！";
 	next;
-	mes "[���r�i�E�A�h���[]";
-	mes "�c�c����H";
-	mes "�悭������A�K�x�W���[�X�ł͂Ȃ��A";
-	mes "�A�K�x�u���v�W���[�X�Ə����Ă���B";
+	mes "[ルビナ・アドラー]";
+	mes "……あれ？";
+	mes "よく見たらアガベジュースではなく、";
+	mes "アガベ「味」ジュースと書いてある。";
 	next;
-	emotion 4,"���r�i�E�A�h���[#rockn0";
-	mes "[���r�i�E�A�h���[]";
-	mes "���c�c�܂����A";
-	mes "�A�K�x�����͓����ĂȂ��́H";
+	emotion 4,"ルビナ・アドラー#rockn0";
+	mes "[ルビナ・アドラー]";
+	mes "え……まさか、";
+	mes "アガベ成分は入ってないの？";
 	close;
 }
 
-harboro1.gat,280,195,3	script	���[�J�X�E���[�`#rockn0	828,{
-	mes "[���[�J�X�E���[�`]";
-	mes "�܂����{���ɒn������";
-	mes "�H�삪�o���肵�Ȃ���ˁH";
-	mes "�t�ɐ����󂪂��邩������Ȃ��B";
+harboro1.gat,280,195,3	script	ルーカス・リーチ#rockn0	828,{
+	mes "[ルーカス・リーチ]";
+	mes "まさか本当に地下から";
+	mes "幽霊が出たりしないよね？";
+	mes "逆に凄い宝があるかもしれない。";
 	next;
-	mes "[���[�J�X�E���[�`]";
-	mes "�����Ɛ肵�悤�Ƃ����炪";
-	mes "�������\���L�����ɈႢ�Ȃ��B";
+	mes "[ルーカス・リーチ]";
+	mes "それを独占しようとするやつらが";
+	mes "怪しい噂を広げたに違いない。";
 	next;
-	mes "[�L�������E�p�X]";
-	mes "���͍s���Ȃ��A��΍s���Ȃ��I";
+	mes "[キャロラ・パス]";
+	mes "私は行かない、絶対行かない！";
 	next;
-	mes "[���[�J�X�E���[�`]";
-	mes "���[��A�����Ă݂����������ǁA";
-	mes "�ӊO�Ɩ{���ɂ��������B";
-	mes "�ǂ��H�@�L�������H";
-	mes "�n���Ɉ�x�~��Ă݂Ȃ��H";
+	mes "[ルーカス・リーチ]";
+	mes "うーん、言ってみただけだけど、";
+	mes "意外と本当にそうかも。";
+	mes "どう？　キャロラ？";
+	mes "地下に一度降りてみない？";
 	close;
 OnTalk1:
-	unittalk "���[�J�X�E���[�` : ��I";
+	unittalk "ルーカス・リーチ : わ！";
 	end;
 }
 
-harboro1.gat,168,216,3	script	�q�[�����A�[�h#rockn09	698,{
-	mes "[�q�[�����A�[�h]";
-	mes "�d��������Ȃ��̂ɂ��ւ�炸";
-	mes "�`���҂Ɏd�������͕̂s������B";
+harboro1.gat,168,216,3	script	ヒールリアード#rockn09	698,{
+	mes "[ヒールリアード]";
+	mes "仕事が足りないのにも関わらず";
+	mes "冒険者に仕事をやるのは不当だよ。";
 	next;
-	mes "[�q�[�����A�[�h]";
-	mes "�Ƃ͂����`���҂������񂹂Ă��ꂽ";
-	mes "�������ŗ��ق͂�����ɐ����B";
-	mes "�����h���Ƃł����΂悩�����B";
+	mes "[ヒールリアード]";
+	mes "とはいえ冒険者が押し寄せてくれた";
+	mes "おかげで旅館はいつも大繁盛だ。";
+	mes "私も宿泊業でもやればよかった。";
 	close;
 }
 
-harboro1.gat,130,237,3	script	�h�b�N��Ɗē�#rockn10	712,{
-	mes "[�h�b�N��Ɗē�]";
-	mes "�z�R�Ō@��o�����z����";
-	mes "�D�Ԃɐς�ł����������ɉ^�ԁB";
-	mes "�����čz�R�ɖ߂�D�Ԃɂ�";
-	mes "�z�R�J���҂��g�p����i����";
-	mes "�ς�ł����B";
+harboro1.gat,130,237,3	script	ドック作業監督#rockn10	712,{
+	mes "[ドック作業監督]";
+	mes "鉱山で掘り出した鉱物は";
+	mes "汽車に積んですぐこっちに運ぶ。";
+	mes "そして鉱山に戻る汽車には";
+	mes "鉱山労働者が使用する品物を";
+	mes "積んでいく。";
 	next;
-	mes "[�h�b�N��Ɗē�]";
-	mes "�����͂����Z�����B";
-	mes "���������ł̍�Ƃ��x����";
-	mes "�S�Ă̍�Ƃ��x��鎖�ɂȂ�B";
+	mes "[ドック作業監督]";
+	mes "ここはいつも忙しい。";
+	mes "だがここでの作業が遅れると";
+	mes "全ての作業が遅れる事になる。";
 	next;
-	donpcevent "�W�F�C�_�[#rockn11::OnTalk1";
-	donpcevent "���R�X���`�[#rockn12::OnTalk1";
-	donpcevent "�|�g�j���X#rockn13::OnTalk1";
-	mes "[�h�b�N��Ɗē�]";
-	mes "������v���C�h�ƐӔC����";
-	mes "�����Ďd��������悤�ɁI";
-	mes "����΂��茾���ĂȂ��ŁI";
+	donpcevent "ジェイダー#rockn11::OnTalk1";
+	donpcevent "ロコスリチー#rockn12::OnTalk1";
+	donpcevent "ポトニャス#rockn13::OnTalk1";
+	mes "[ドック作業監督]";
+	mes "だからプライドと責任感を";
+	mes "持って仕事をするように！";
+	mes "文句ばかり言ってないで！";
 	close;
 }
 
-harboro1.gat,126,236,7	script	�W�F�C�_�[#rockn11	881,{
-	mes "[�W�F�C�_�[]";
-	mes "���c�c���������Ȃ��B";
-	mes "�S�g���o���o���ɂȂ肻�����B";
-	mes "�D�Ԃ��p�ɂɗ��悤�����܂���";
-	mes "�d���ʂ����̕ς��Ȃ��H";
+harboro1.gat,126,236,7	script	ジェイダー#rockn11	881,{
+	mes "[ジェイダー]";
+	mes "あ……もう動けない。";
+	mes "全身がバラバラになりそうだ。";
+	mes "汽車が頻繁に来ようが来まいが";
+	mes "仕事量が何故変わらない？";
 	next;
-	mes "[�h�b�N��Ɗē�]";
-	mes "�w�͂�����Ȃ��񂾂�A";
-	mes "�͂��c�c�킩���ĂȂ��ˁB";
-	mes "�d�������邱�Ƃ���΂Ȃ��ƁI";
+	mes "[ドック作業監督]";
+	mes "努力が足りないんだよ、";
+	mes "はあ……わかってないね。";
+	mes "仕事があることを喜ばないと！";
 	next;
-	emotion 54,"�W�F�C�_�[#rockn11";
-	mes "[�W�F�C�_�[]";
-	mes "�킠�I";
-	mes "�����畷���Ă�����ł����H";
-	mes "�������d��������̂͊������ł��I";
-	mes "���̃W�F�C�_�[�I";
-	mes "���������ɓw�͂��Ă��܂��I";
+	emotion 54,"ジェイダー#rockn11";
+	mes "[ジェイダー]";
+	mes "わあ！";
+	mes "いつから聞いていたんですか？";
+	mes "もちろん仕事があるのは嬉しいです！";
+	mes "このジェイダー！";
+	mes "いつも誠実に努力しています！";
 	close;
 OnTalk1:
-	unittalk "�W�F�C�_�[ : �������グ�Ă��ꂽ������Ɗ撣�ꂻ���ł����ǁc�c�B";
+	unittalk "ジェイダー : 給料を上げてくれたらもっと頑張れそうですけど……。";
 	end;
 }
 
-harboro1.gat,128,233,7	script	���R�X���`�[#rockn12	642,{
-	mes "[���R�X���`�[]";
-	mes "�����ŋ߁A�O����̐l�������n�߂�";
-	mes "���X�Ɏd���������Ă��Ă���̂ɁA";
-	mes "�Ƒ���{�����Ƃ��o����";
-	mes "�{���ɏ������Ă��܂��B";
+harboro1.gat,128,233,7	script	ロコスリチー#rockn12	642,{
+	mes "[ロコスリチー]";
+	mes "ここ最近、外からの人が増え始めて";
+	mes "徐々に仕事が減ってきているのに、";
+	mes "家族を養うことが出来て";
+	mes "本当に助かっています。";
 	next;
-	mes "[���R�X���`�[]";
-	mes "�������̂��߂ɁA";
-	mes "����������������I";
-	mes "�C�f�B�X�I";
-	mes "��������͍������撣���Ă邼�I";
-	mes "���������������������������������I";
+	mes "[ロコスリチー]";
+	mes "可愛い娘のために、";
+	mes "今日も一日働くぞ！";
+	mes "イディス！";
+	mes "お父さんは今日も頑張ってるぞ！";
+	mes "うおおおおおおおおおおおおおおお！";
 	close;
 OnTalk1:
-	unittalk "���R�X���`�[ : �C�f�B�X�I�@��������撣�邼�I";
+	unittalk "ロコスリチー : イディス！　お父さん頑張るぞ！";
 	end;
 }
 
-harboro1.gat,130,232,7	script	�|�g�j���X#rockn13	545,{
-	mes "[�|�g�j���X]";
-	mes "���b�N���b�W�ɗ����";
-	mes "�ȒP�ɋ������ɂȂ��ƕ����āA";
-	mes "�������b�N���b�W�ɗ����ɂ��I";
+harboro1.gat,130,232,7	script	ポトニャス#rockn13	545,{
+	mes "[ポトニャス]";
+	mes "ロックリッジに来れば";
+	mes "簡単に金持ちになれると聞いて、";
+	mes "私もロックリッジに来たにゃん！";
 	next;
-	mes "[�|�g�j���X]";
-	mes "�����ǂ����ȏ��";
-	mes "�̂���ꂽ�c�c�ɂ��c�c�B";
-	mes "�����ݕ����^��ł�������";
-	mes "�����ɂ��ɂ�B";
+	mes "[ポトニャス]";
+	mes "だけどお金以上に";
+	mes "体が疲れた……にゃん……。";
+	mes "毎日貨物を運んでいたから";
+	mes "腰が痛いにゃ。";
 	next;
-	emotion 57,"�|�g�j���X#rockn13";
-	mes "[�|�g�j���X]";
-	mes "���̂܂܂��Ǝ��Ô�̕���";
-	mes "�������������ɂ��c�c�B";
+	emotion 57,"ポトニャス#rockn13";
+	mes "[ポトニャス]";
+	mes "このままだと治療費の方が";
+	mes "高くつきそうだにゃん……。";
 	close;
 OnTalk1:
-	unittalk "�|�g�j���X : ���͂ǂ����Ă����ɂ���񂾁c�c�H";
+	unittalk "ポトニャス : 私はどうしてここにいるんだ……？";
 	end;
 }
 
-harboro1.gat,74,259,3	script	�C�G���[�}�b�N�R�f�B#ro	633,{
-	mes "[�C�G���[�}�b�N�R�f�B]";
-	mes "�J���ƊC���A�O�ɂ���A������";
-	mes "�ݕ�����邱�̎d���͎��̌ւ肾�I";
+harboro1.gat,74,259,3	script	イエローマックコディ#ro	633,{
+	mes "[イエローマックコディ]";
+	mes "雨風と海水、外にいる連中から";
+	mes "貨物を守るこの仕事は私の誇りだ！";
 	next;
-	emotion 28,"�C�G���[�}�b�N�R�f�B#ro";
-	mes "[�C�G���[�}�b�N�R�f�B]";
-	mes "�ŋ߂́c�c���ށB";
-	mes "�����c�̂�����";
-	mes "�����ւ�ɏ����c�c�B";
+	emotion 28,"イエローマックコディ#ro";
+	mes "[イエローマックコディ]";
+	mes "最近は……うむ。";
+	mes "牛賊団のせいで";
+	mes "少し誇りに傷が……。";
 	close;
 }
 
-harboro1.gat,233,215,3	script	�E�H���t���[�h�Z�C�K��#	881,{
-	mes "[�E�H���t���[�h�Z�C�K��]";
-	mes "�ŋ߁A�����c�̂�����";
-	mes "�ۈ������Z�����Ȃ�A";
-	mes "���̎d���̏������x���Ȃ��Ă��܂��B";
-	mes "���������ԑ҂��Ă���̂��c�c�B";
+harboro1.gat,233,215,3	script	ウォルフレードセイガン#	881,{
+	mes "[ウォルフレードセイガン]";
+	mes "最近、牛賊団のせいで";
+	mes "保安官が忙しくなり、";
+	mes "他の仕事の処理が遅くなっています。";
+	mes "もう何時間待っているのか……。";
 	close;
 }
 
-harboro1.gat,231,212,7	script	�G�[�f���y�s�i�[#rockn1	879,{
-	mes "[�G�[�f���y�s�i�[]";
-	mes "�ۈ����������ł͐l�肪���܂�ɂ�";
-	mes "�s�����Ă��āA������҂��Ă�";
-	mes "�񂪓����܂���B";
-	mes "�Ƃ̒n������ςȉ�����������";
-	mes "�s���Ȃ̂Ɂc�c�B";
+harboro1.gat,231,212,7	script	エーデルペピナー#rockn1	879,{
+	mes "[エーデルペピナー]";
+	mes "保安官事務室では人手があまりにも";
+	mes "不足していて、一日中待っても";
+	mes "列が動きません。";
+	mes "家の地下から変な音が聞こえて";
+	mes "不安なのに……。";
 	next;
-	mes "[�G�[�f���y�s�i�[]";
-	mes "�����̕ۈ������@�I�Ȓn�ʂ�";
-	mes "�����Ă�킯�ł͂Ȃ����ǁA";
-	mes "���̒��ł͂���Ȏ��ɏ�����";
-	mes "���߂���̂͂�����������܂���B";
+	mes "[エーデルペピナー]";
+	mes "うちの保安官が法的な地位を";
+	mes "持ってるわけではないけど、";
+	mes "この町ではこんな時に助けを";
+	mes "求められるのはここしかありません。";
 	next;
-	mes "[�G�[�f���y�s�i�[]";
-	mes "���̑������������A";
-	mes "�����͗��������܂���ˁH";
+	mes "[エーデルペピナー]";
+	mes "この騒がしい町も、";
+	mes "いつかは落ち着きますよね？";
 	close;
 }
 
-harboro1.gat,278,195,5	script	�L�������E�p�X#rockn17	879,{
-	mes "[�L�������E�p�X]";
-	mes "�\�͕����܂����H";
-	mes "�ŋߒn���Ɂc�c";
-	mes "�I�o�P���o��炵���ł���I";
+harboro1.gat,278,195,5	script	キャロラ・パス#rockn17	879,{
+	mes "[キャロラ・パス]";
+	mes "噂は聞きました？";
+	mes "最近地下に……";
+	mes "オバケが出るらしいですよ！";
 	next;
-	mes "[�L�������E�p�X]";
-	mes "�ǂ����n���𖄂߂��Ƃ��s���ہA";
-	mes "�ꏏ�ɖ��߂�ꂽ�l��";
-	mes "�����炵�����ǁc�c";
-	mes "���̒��͏o���肷��l�������āA";
-	mes "�N�����Ȃ��Ȃ��Ă�";
-	mes "�Ȃ��Ȃ��C�����ɂ����ł��B";
+	mes "[キャロラ・パス]";
+	mes "どうも地下を埋める作業を行う際、";
+	mes "一緒に埋められた人が";
+	mes "いたらしいけど……";
+	mes "この町は出入りする人が多くて、";
+	mes "誰かいなくなっても";
+	mes "なかなか気がつきにくいです。";
 	next;
-	donpcevent "���[�J�X�E���[�`#rockn0::OnTalk1";
-	mes "[�L�������E�p�X]";
-	mes "�n���ɕ�C��Ƃ����ɍs�����l��";
-	mes "�ς��ς��A���������c�c�Ƃ�������";
-	mes "�������炵���ł��B";
-	mes "����ŋ߂��Ō��Ă݂���c�c";
-	mes "���Ⴀ�������������I";
+	donpcevent "ルーカス・リーチ#rockn0::OnTalk1";
+	mes "[キャロラ・パス]";
+	mes "地下に補修作業をしに行った人が";
+	mes "ぱさぱさ、かさかさ……という音を";
+	mes "聞いたらしいです。";
+	mes "それで近くで見てみたら……";
+	mes "きゃあああああああ！";
 	next;
-	mes "[�L�������E�p�X]";
-	mes "���[�J�X�I";
-	mes "���O�A�{���Ɏ��ɂ����̂�!?";
-	mes "�������ȁI";
-	mes "���������B";
-	mes "����ȏ�͘b�������Ȃ��B";
+	mes "[キャロラ・パス]";
+	mes "ルーカス！";
+	mes "お前、本当に死にたいのか!?";
+	mes "驚かすな！";
+	mes "もう嫌だ。";
+	mes "これ以上は話したくない。";
 	close;
 }
 
-harboro1.gat,312,173,8	script	���܋��n���^�[#rockn18	700,{
-	mes "[���܋��n���^�[]";
-	mes "�������Ă�񂾁H";
-	mes "�����A�����c�̂��ɂ�";
-	mes "���Ȃ�̌��܋����������Ă���B";
+harboro1.gat,312,173,8	script	懸賞金ハンター#rockn18	700,{
+	mes "[懸賞金ハンター]";
+	mes "何を見てるんだ？";
+	mes "ああ、牛賊団のやつらには";
+	mes "かなりの懸賞金がかかっている。";
 	next;
-	mes "[���܋��n���^�[]";
-	mes "��炪�ݕ���Ԃ�_���n�߂��ȏ�A";
-	mes "���x�c�ƕۈ����̐搶��";
-	mes "�ق��Č��Ă��鎖��";
-	mes "�o���Ȃ��Ȃ����񂾂�B";
+	mes "[懸賞金ハンター]";
+	mes "やつらが貨物列車を狙い始めた以上、";
+	mes "自警団と保安官の先生も";
+	mes "黙って見ている事が";
+	mes "出来なくなったんだろ。";
 	next;
-	mes "[���܋��n���^�[]";
-	mes "�܂��������Ƃ��Ă͂�������";
-	mes "������Ƃ����҂����o����";
-	mes "�����邯�ǂȁB";
+	mes "[懸賞金ハンター]";
+	mes "まあこっちとしてはおかげで";
+	mes "ちょっとした稼ぎが出来て";
+	mes "助かるけどな。";
 	close;
 }
 
-harboro1.gat,229,212,7	script	�n�[�}���E�t�@�[�����h#	778,{
-	mes "[�n�[�}���E�t�@�[�����h]";
-	mes "���A�������ۈ�����������";
-	mes "�ԈႢ����܂��񂩁H";
-	mes "���΂Ȃ��Ƃ����Ȃ���ł����H";
+harboro1.gat,229,212,7	script	ハーマン・ファーレンド#	778,{
+	mes "[ハーマン・ファーレンド]";
+	mes "あ、ここが保安官事務室で";
+	mes "間違いありませんか？";
+	mes "並ばないといけないんですか？";
 	next;
-	mes "[�n�[�}���E�t�@�[�����h]";
-	mes "�`���҂ł���ˁH";
-	mes "����Ȃ炠�̔��������΂����ł��B";
+	mes "[ハーマン・ファーレンド]";
+	mes "冒険者ですよね？";
+	mes "それならあの扉から入ればいいです。";
 	next;
-	mes "[�n�[�}���E�t�@�[�����h]";
-	mes "�`���҂͕ۈ����̗��݂�";
-	mes "�o���肵�Ă����ł���ˁH";
-	mes "�������͕ۈ�����";
-	mes "���݂������ė��Ă���̂ł�����A";
-	mes "�҂̂͂��傤���Ȃ��ł��B";
+	mes "[ハーマン・ファーレンド]";
+	mes "冒険者は保安官の頼みで";
+	mes "出入りしているんですよね？";
+	mes "私たちは保安官に";
+	mes "頼みがあって来ているのですから、";
+	mes "待つのはしょうがないです。";
 	next;
-	mes "[�n�[�}���E�t�@�[�����h]";
-	mes "�͂��A�������ԗ����Ă�������";
-	mes "�����ɂ��I";
+	mes "[ハーマン・ファーレンド]";
+	mes "はあ、長い時間立っていたから";
+	mes "足が痛い！";
 	close;
 }
 
-harboro1.gat,130,158,3	script	�A�N�n#rockn19	10222,{
-	mes "[�A�N�n]";
-	mes "���ꂿ���";
-	mes "�ٖM�l�̒��ɘA��čs���ꂽ��";
-	mes "�����S����������������";
-	mes "�����Ă�����I�@�ǂ����悤�H";
+harboro1.gat,130,158,3	script	アクハ#rockn19	10222,{
+	mes "[アクハ]";
+	mes "お爺ちゃんが";
+	mes "異邦人の町に連れて行かれたら";
+	mes "棘が全部引き抜かれるって";
+	mes "言っていたよ！　どうしよう？";
 	next;
-	emotion 28,"�A�N�n#rockn19";
-	mes "[�A�N�n]";
-	mes "���킠���`��I";
-	mes "���k����`��I�@�ǂ��ɂ���́`�H";
+	emotion 28,"アクハ#rockn19";
+	mes "[アクハ]";
+	mes "うわああ～ん！";
+	mes "お婆ちゃ～ん！　どこにいるの～？";
 	next;
-	mes "[�i�n��]";
-	mes "���v��B";
-	mes "��������Ă邯�ǁA";
-	mes "���񂽂̞��͂����ƕt���Ă邵�A";
-	mes "���̓��ɂ��Ԃ͕t���Ă�ł��傤�H";
+	mes "[ナハリ]";
+	mes "大丈夫よ。";
+	mes "町を歩いてるけど、";
+	mes "あんたの棘はちゃんと付いてるし、";
+	mes "私の頭にも花は付いてるでしょう？";
 	next;
-	mes "[�A�N�n]";
-	mes "������c�c";
-	mes "����c�c�Y��ɂ��Ă���B";
+	mes "[アクハ]";
+	mes "ぐすん……";
+	mes "うん……綺麗についている。";
 	next;
-	mes "[�i�n��]";
-	mes "��������v�I";
-	mes "�����������k�����ɂ�����B";
-	mes "�������ɍs���Ă݂܂��傤�B";
+	mes "[ナハリ]";
+	mes "だから大丈夫！";
+	mes "もうすぐお婆ちゃんにも会えるわ。";
+	mes "あっちに行ってみましょう。";
 	next;
-	emotion 16,"�A�N�n#rockn19";
-	mes "[�A�N�n]";
-	mes "����������Ă��ɂȂ�����";
-	mes "�p���������患�c�c�B";
+	emotion 16,"アクハ#rockn19";
+	mes "[アクハ]";
+	mes "棘が抜かれてつるつるになったら";
+	mes "恥ずかしいよぅ……。";
 	close;
 }
 
-harboro1.gat,132,157,3	script	�i�n��#rockn19	10226,{
-	mes "[�i�n��]";
-	mes "�����͕s�v�c�Ȓ��ł��ˁB";
-	mes "�ƂĂ������đ傫�Ȗ؂̉Ƃ�����B";
-	mes "�C�ł��؂͈���ǁc�c";
-	mes "�ǂ��������݂�ȓ����p�����Ă�I";
+harboro1.gat,132,157,3	script	ナハリ#rockn19	10226,{
+	mes "[ナハリ]";
+	mes "ここは不思議な町ですね。";
+	mes "とても高くて大きな木の家がある。";
+	mes "海でも木は育つけど……";
+	mes "どれもこれもみんな同じ姿をしてる！";
 	next;
-	mes "[�A�N�n]";
-	mes "�����c�c�i�n���A";
-	mes "���k�����ɓ{���邩��";
-	mes "�����T������B";
-	mes "���k�����S�z���Ă��B";
+	mes "[アクハ]";
+	mes "うう……ナハリ、";
+	mes "お婆ちゃんに怒られるから";
+	mes "早く探そうよ。";
+	mes "お婆ちゃん心配してるよ。";
 	next;
-	mes "[�i�n��]";
-	mes "�����ˁB�����ǒ��̂ǂ���";
-	mes "���k����񂪂��邩�킩��Ȃ����A";
-	mes "���������������Ă���s���܂��傤�B";
-	mes "���̂��������邩���B";
-	mes "���I�@�������ɈٖM�l��";
-	mes "�������񂢂��I�@�s���Ă݂܂���I";
+	mes "[ナハリ]";
+	mes "そうね。だけど町のどこに";
+	mes "お婆ちゃんがいるかわからないし、";
+	mes "もう少し見物してから行きましょう。";
+	mes "そのうち見つかるかも。";
+	mes "あ！　向こうに異邦人が";
+	mes "たくさんいるわ！　行ってみましょ！";
 	next;
-	emotion 28,"�A�N�n#rockn19";
-	mes "[�A�N�n]";
-	mes "����Ȏ������Ă�";
-	mes "�ƂɋA��Ȃ��Ȃ�����";
-	mes "�ǂ����悤�c�c�B";
+	emotion 28,"アクハ#rockn19";
+	mes "[アクハ]";
+	mes "こんな事をしてて";
+	mes "家に帰れなくなったら";
+	mes "どうしよう……。";
 	close;
 }
 
-harboro1.gat,274,214,5	script	�����؂̎}#rockn19	10228,5,5,{
-	mes "[�����؂̎}]";
-	mes "�A�N�n�����A�i�n�������c�c�B";
-	mes "�ǂ��ɍs���Ă��܂����̂�����B";
+harboro1.gat,274,214,5	script	白い木の枝#rockn19	10228,5,5,{
+	mes "[白い木の枝]";
+	mes "アクハちゃん、ナハリちゃん……。";
+	mes "どこに行ってしまったのかしら。";
 	next;
-	mes "[�����؂̎}]";
-	mes "�����܂���A";
-	mes "�L���N�^�[���̎q�ǂ���";
-	mes "���܂���ł������H";
-	mes "�j�̎q�Ə��̎q�̓�l�g�ł��B";
+	mes "[白い木の枝]";
+	mes "すいません、";
+	mes "キャクター族の子どもを";
+	mes "見ませんでしたか？";
+	mes "男の子と女の子の二人組です。";
 	next;
-	mes "[�����؂̎}]";
-	mes "�ٖM�l�̒��ɍs���Ă݂����ƌ�������";
-	mes "�A��ė�����ł����A";
-	mes "�l���݂̒��ł͂���Ă��܂��āc�c�B";
+	mes "[白い木の枝]";
+	mes "異邦人の町に行ってみたいと言うから";
+	mes "連れて来たんですが、";
+	mes "人混みの中ではぐれてしまって……。";
 	close;
 OnTouch:
-	unittalk "�����؂̎} : �A�N�n�����`�i�n�������`�I�@�ǂ��ɂ���́`�I";
+	unittalk "白い木の枝 : アクハちゃん～ナハリちゃん～！　どこにいるの～！";
 	end;
 }
 
 //============================================================
-// ���b�N���b�W����NPC
+// ロックリッジ室内NPC
 //------------------------------------------------------------
-har_in01.gat,24,69,3	script	���₩�ȕv�l#rockridge0	74,{
-	mes "[���₩�ȕv�l]";
-	mes "��M���ӂ�Ă���";
-	mes "�`���җl�Ȃ̂ł��ˁB";
+har_in01.gat,24,69,3	script	穏やかな夫人#rockridge0	74,{
+	mes "[穏やかな夫人]";
+	mes "情熱あふれている";
+	mes "冒険者様なのですね。";
 	close;
 }
 
-har_in01.gat,100,14,3	script	���x�c��#srdg01	10220,{
-	unittalk "���x�c�� : �]�v�Ȃ��Ƃ͂��Ȃ����������ł���B";
+har_in01.gat,100,14,3	script	自警団員#srdg01	10220,{
+	unittalk "自警団員 : 余計なことはしない方がいいですよ。";
 	sleep 2000;
-	unittalk "���x�c�� : ���̂��̉s���ڂ����Ă��܂���B";
+	unittalk "自警団員 : 私のこの鋭い目が見ていますよ。";
 	end;
 }
 
 //============================================================
-// ���b�N���b�W�n���XNPC
+// ロックリッジ地下街NPC
 //------------------------------------------------------------
-harboro2.gat,57,239,3	script	���Ǝ�#srdg01	85,{
-	mes "[���Ǝ�]";
-	mes "�������̃����X�^�[��";
-	mes "�����܂����H";
-	mes "�r���ǂ��ǂ��ł��ł��B";
-	mes "���������I�ɑ|�����Ȃ���";
-	mes "�����Ȃ���ł����c�c";
+harboro2.gat,57,239,3	script	失業者#srdg01	85,{
+	mes "[失業者]";
+	mes "あそこのモンスターが";
+	mes "見えますか？";
+	mes "排水管を塞いでるんです。";
+	mes "だから定期的に掃除しないと";
+	mes "いけないんですが……";
 	next;
-	mes "[���Ǝ�]";
-	mes "�����ł�������Ē��߂Ă���ƁA";
-	mes "���Ԃ������ƌ����Ԃ�";
-	mes "�߂��Ă�����ł��B";
+	mes "[失業者]";
+	mes "ここでこうやって眺めていると、";
+	mes "時間があっと言う間に";
+	mes "過ぎていくんです。";
 	next;
-	mes "[���Ǝ�]";
-	mes "�����Ȃ��Ƃ����̊Ԃ�";
-	mes "������Y��鎖���o���܂��B ";
-	mes "�z�R�⎸�Ƃ̖����B";
+	mes "[失業者]";
+	mes "すくなくともその間は";
+	mes "現実を忘れる事が出来ます。 ";
+	mes "鉱山や失業の問題を。";
 	next;
-	mes "[���Ǝ�]";
-	mes "���͍s���Ƃ��낪�Ȃ���";
-	mes "�����ɂ��܂����A";
-	mes "�z�R���狍���c�����Ȃ��Ȃ��";
-	mes "�܂������ɖ߂�܂��B";
+	mes "[失業者]";
+	mes "今は行くところがなくて";
+	mes "ここにいますが、";
+	mes "鉱山から牛賊団がいなくなれば";
+	mes "またそこに戻ります。";
 	close;
 }
 
-harboro2.gat,258,117,3	script	�h���V�X�^�[#srdg02	79,{
-	mes "[�h���V�X�^�[]";
-	mes "�т����肵�܂������H";
-	mes "����ȏ��ɐl���Z��ł��āB";
-	mes "��ɏZ��ł���l������";
-	mes "�����̎����C�ɂ��Ă��܂���B";
-	mes "�����ɂ͒N���Z��ł��Ȃ����Ƃ�";
-	mes "�Ȃ��Ă��܂�����B";
+harboro2.gat,258,117,3	script	派遣シスター#srdg02	79,{
+	mes "[派遣シスター]";
+	mes "びっくりしましたか？";
+	mes "こんな所に人が住んでいて。";
+	mes "上に住んでいる人たちは";
+	mes "ここの事を気にしていません。";
+	mes "公式には誰も住んでいないことに";
+	mes "なっていますから。";
 	next;
-	mes "[�h���V�X�^�[]";
-	mes "�m�肽�����Ȃ����A";
-	mes "�m�낤�Ƃ����Ȃ���ł��B";
-	mes "����ȏ��ɏZ��ł���l��";
-	mes "����Ȃ�đz�������ł��傤�H";
+	mes "[派遣シスター]";
+	mes "知りたくもないし、";
+	mes "知ろうともしないんです。";
+	mes "こんな所に住んでいる人の";
+	mes "事情なんて想像がつくでしょう？";
 	close;
 }
 
-harboro2.gat,67,191,5	script	�����}�j�A#srdg01	749,{
-	mes "[�����}�j�A]";
-	mes "���񂭂�c�c�I";
-	mes "�����̓����A�ǂ��Ǝv���܂��񂩁H";
-	mes "���͂�������������Ǝ����ۂ��L����";
-	mes "�D���Ȃ�ł��I";
-	mes "�����ɏZ�݂������炢�ł��I";
+harboro2.gat,67,191,5	script	匂いマニア#srdg01	749,{
+	mes "[匂いマニア]";
+	mes "くんくん……！";
+	mes "ここの匂い、良いと思いませんか？";
+	mes "私はこういうちょっと湿っぽい臭いが";
+	mes "好きなんです！";
+	mes "ここに住みたいくらいです！";
 	next;
-	mes "[�����}�j�A]";
-	mes "�����ǁc�c���������Ȃ��";
-	mes "���������Ȃ���ł��B";
-	mes "�����炱�̏L���������A�����ł��I";
+	mes "[匂いマニア]";
+	mes "だけど……虫が嫌いなんで";
+	mes "長く居られないんです。";
+	mes "だからこの臭いを持ち帰るつもりです！";
 	close;
 }
 
-harboro2.gat,142,155,7	script	�����c#srdg01	10230,{
-	mes "[�����c]";
-	mes "�Ȃ񂾁H";
-	mes "�����c������̂͏��߂Ă��H";
+harboro2.gat,142,155,7	script	牛賊団#srdg01	10230,{
+	mes "[牛賊団]";
+	mes "なんだ？";
+	mes "牛賊団を見るのは初めてか？";
 	next;
-	mes "[�����c]";
-	mes "����ȖڂŌ�����Ǝ₵���ȁB";
-	mes "�����������āA";
-	mes "���͉������Ă��Ȃ��񂾂��H";
+	mes "[牛賊団]";
+	mes "そんな目で見られると寂しいな。";
+	mes "俺たちだって、";
+	mes "今は何もしていないんだぜ？";
 	next;
-	mes "[�����c]";
-	mes "�����͉������̓꒣�肾�B";
-	mes "�]�v�ȑ������N���������Ȃ����";
-	mes "�������Ƃ��̕ӂ��痣���񂾂ȁB";
+	mes "[牛賊団]";
+	mes "ここは俺たちの縄張りだ。";
+	mes "余計な騒ぎを起こしたくなければ";
+	mes "さっさとこの辺から離れるんだな。";
 	next;
-	mes "[�����c]";
-	mes "�ʂ�߂��邭�炢�Ȃ�\��Ȃ����A";
-	mes "��񑩂��B";
-	mes "�������̂��Ƃ���ɂ�";
-	mes "�b���Ȃ�H�@�킩�������H";
+	mes "[牛賊団]";
+	mes "通り過ぎるくらいなら構わないが、";
+	mes "一つ約束だ。";
+	mes "俺たちのことを上には";
+	mes "話すなよ？　わかったか？";
 	close;
 }
 
-harboro2.gat,144,156,1	script	�����c#srdg02	10232,{
-	mes "[�����c]";
-	mes "�����͌����ɂ͑��݂��Ȃ����B";
-	mes "���������ꕔ�̎҂�����";
-	mes "�m���Ă���ꏊ�����������邪�A";
-	mes "�����͂��̒��̂ЂƂ��B ";
+harboro2.gat,144,156,1	script	牛賊団#srdg02	10232,{
+	mes "[牛賊団]";
+	mes "ここは公式には存在しない町。";
+	mes "こういう一部の者だけが";
+	mes "知っている場所がいくつかあるが、";
+	mes "ここはその中のひとつだ。 ";
 	close;
 }
 
-harboro2.gat,125,196,3	script	�q�ǂ�#srdg01	914,{
-	mes "[�q�ǂ�]";
-	mes "���ꂳ��A�������͂��ɂȂ�����";
-	mes "�܂���ŏZ�߂�悤�ɂȂ�́H";
+harboro2.gat,125,196,3	script	子ども#srdg01	914,{
+	mes "[子ども]";
+	mes "お母さん、私たちはいつになったら";
+	mes "また上で住めるようになるの？";
 	next;
-	mes "[�ꂳ��]";
-	mes "���������c�c";
-	mes "�z�R�ɓ����悤�ɂȂ��āA";
-	mes "������ƕꂳ�񂪂������҂�����A";
-	mes "�܂���ŕ�炷���Ƃ��ł����B";
+	mes "[母さん]";
+	mes "もう少し……";
+	mes "鉱山に入れるようになって、";
+	mes "父さんと母さんがお金を稼いだら、";
+	mes "また上で暮らすことができるよ。";
 	next;
-	mes "[�q�ǂ�]";
-	mes "���ƂɋA�肽���c�c�B";
+	mes "[子ども]";
+	mes "お家に帰りたい……。";
 	close;
 }
 
-harboro2.gat,123,195,5	script	���ꂳ��#srdg01	53,{
-	mes "[�ꂳ��]";
-	mes "�����Ƃ��т�H�ׂ������̂�";
-	mes "��������������c�c�B";
+harboro2.gat,123,195,5	script	お母さん#srdg01	53,{
+	mes "[母さん]";
+	mes "ちゃんとご飯を食べさせたのは";
+	mes "いつだったかしら……。";
 	next;
-	mes "[�q�ǂ�]";
-	mes "���ꂳ��A���͑��v����B";
+	mes "[子ども]";
+	mes "お母さん、私は大丈夫だよ。";
 	next;
-	mes "[�ꂳ��]";
-	mes "�������������䖝���悤�ˁH";
-	mes "�����񂪐H�ו���";
-	mes "�T���Ă��Ă�����B";
+	mes "[母さん]";
+	mes "もう少しだけ我慢しようね？";
+	mes "父さんが食べ物を";
+	mes "探してきてくれるわ。";
 	close;
 }
 
-harboro2.gat,120,265,3	script	���ꂿ���#srdg01	945,{
-	mes "[���ꂿ���]";
-	mes "��H�@�N���H";
-	mes "�`���[���[�Ȃ̂��H";
+harboro2.gat,120,265,3	script	お爺ちゃん#srdg01	945,{
+	mes "[お爺ちゃん]";
+	mes "ん？　誰だ？";
+	mes "チャーリーなのか？";
 	next;
-	mes "[���k�����]";
-	mes "�`���[���[����������킯";
-	mes "�Ȃ��ł��傤�H";
-	mes "���̎q�͂��̊C�̌�������";
-	mes "�Z��ł���񂾂���B";
+	mes "[お婆ちゃん]";
+	mes "チャーリーがここいるわけ";
+	mes "ないでしょう？";
+	mes "あの子はあの海の向こうに";
+	mes "住んでいるんだから。";
 	next;
-	mes "[���ꂿ���]";
-	mes "���������������H";
-	mes "���������������Ȃ�ς�����ȁB";
+	mes "[お爺ちゃん]";
+	mes "そうだったっけ？";
+	mes "しかしここもかなり変わったな。";
 	next;
-	mes "[���k�����]";
-	mes "����Ȃ킯�Ȃ��ł��傤�H";
-	mes "�����𖄂߂����̂܂܂���Ȃ��B";
+	mes "[お婆ちゃん]";
+	mes "そんなわけないでしょう？";
+	mes "ここを埋めた時のままじゃない。";
 	next;
-	mes "[���ꂿ���]";
-	mes "���������������H";
-	mes "�̂̂��Ƃ��v���o���x��";
-	mes "�~��Ă͗��Ă��邪�A";
-	mes "�ǂ����Ă����͐��Z����";
-	mes "�Ȃ��Ă��܂����񂾁H";
+	mes "[お爺ちゃん]";
+	mes "そうだったっけ？";
+	mes "昔のことを思い出す度に";
+	mes "降りては来ているが、";
+	mes "どうしてここは水浸しに";
+	mes "なってしまったんだ？";
 	next;
-	mes "[���k�����]";
-	mes "���Z���ɂȂ��������𖄂߂�";
-	mes "��ɍs�����̂��o���ĂȂ��́H";
-	mes "�����Y�ꂿ������́H";
-	mes "�C�����Ⴂ���炱���ɉƂ�";
-	mes "���Ă��Ⴂ���Ȃ���";
-	mes "����قǌ����Ă��������ɁB";
+	mes "[お婆ちゃん]";
+	mes "水浸しになったここを埋めて";
+	mes "上に行ったのを覚えてないの？";
+	mes "もう忘れちゃったの？";
+	mes "海抜が低いからここに家を";
+	mes "立てちゃいけないと";
+	mes "あれほど言っていたくせに。";
 	next;
-	mes "[���ꂿ���]";
-	mes "����Ȃ��ƌ����Ă����H";
+	mes "[お爺ちゃん]";
+	mes "そんなこと言ってたか？";
 	close;
 }
 
-harboro2.gat,118,264,5	script	���k�����#srdg01	863,{
-	mes "[���k�����]";
-	mes "�����͖{���ɕς��Ȃ��ˁB";
+harboro2.gat,118,264,5	script	お婆ちゃん#srdg01	863,{
+	mes "[お婆ちゃん]";
+	mes "ここは本当に変わらないね。";
 	next;
-	mes "[���ꂿ���]";
-	mes "�����ɏ��߂ė������̂��Ƃ�";
-	mes "�o���Ă��邩�H";
+	mes "[お爺ちゃん]";
+	mes "ここに初めて来た時のことを";
+	mes "覚えているか？";
 	next;
-	mes "[���k�����]";
-	mes "�������A�o���Ă���B";
+	mes "[お婆ちゃん]";
+	mes "もちろん、覚えてるわよ。";
 	next;
-	mes "[���ꂿ���]";
-	mes "���̉Ƃ͎������̎�Ō��Ă��񂾁B";
-	mes "�ꂩ�炷�ׂāB�S�����̎�ŁB";
+	mes "[お爺ちゃん]";
+	mes "この家は私たちの手で建てたんだ。";
+	mes "一からすべて。全部この手で。";
 	next;
-	mes "[���k�����]";
-	mes "������ꂽ�ł��傤�H";
-	mes "��ɖ߂�܂��傤�B";
+	mes "[お婆ちゃん]";
+	mes "もう疲れたでしょう？";
+	mes "上に戻りましょう。";
 	next;
-	mes "[���ꂿ���]";
-	mes "���̈������N�������^�C���c�c�B";
-	mes "�����ŃN�������^�C����";
-	mes "������\�����񂾂̂Ɂc�c�B";
+	mes "[お爺ちゃん]";
+	mes "私の愛しいクレメンタイン……。";
+	mes "ここでクレメンタインに";
+	mes "結婚を申し込んだのに……。";
 	next;
-	mes "[���k�����]";
-	mes "���͂����ɂ���ł���B";
+	mes "[お婆ちゃん]";
+	mes "私はここにいるでしょ。";
 	next;
-	mes "[���ꂿ���]";
-	mes "���̃N�������^�C����";
-	mes "����Ȃ񂶂�Ȃ��I";
+	mes "[お爺ちゃん]";
+	mes "私のクレメンタインは";
+	mes "こんなんじゃない！";
 	next;
-	mes "[���k�����]";
-	mes "�Ȃɂ�I�@���̃N�\��I";
+	mes "[お婆ちゃん]";
+	mes "なによ！　このクソ爺！";
 	close;
 }
 
 //============================================================
-// �L�������� 01 NPC
+// キワワ砂漠 01 NPC
 //------------------------------------------------------------
-rockrdg1.gat,285,96,3	script	�ɂ݂���h#rockc01	10219,{
-	mes "[�ɂ݂���h]";
-	mes "���Q�Ɛ���Ă����ٖM�l��";
-	mes "���ǂ͉Ƃ𖾂��n�����炵���B";
-	mes "���̂܂܋A��Ǝv���Ă������A";
-	mes "�ȑO�̉Ƃ̏�ɓy��ςݏグ��";
-	mes "�Z�ݎn�߂��B";
-	mes "�܂�ŎG���̂悤��痂����B";
+rockrdg1.gat,285,96,3	script	睨みつける鷲#rockc01	10219,{
+	mes "[睨みつける鷲]";
+	mes "水害と戦っていた異邦人は";
+	mes "結局は家を明け渡したらしい。";
+	mes "そのまま帰ると思っていたが、";
+	mes "以前の家の上に土を積み上げて";
+	mes "住み始めた。";
+	mes "まるで雑草のように逞しい。";
 	close;
 }
 
-rockrdg1.gat,331,111,3	script	�t�A�j�^�X#rockc02	10222,5,5,{
-	mes "[�t�A�j�^�X]";
-	mes "���̓R���[�e��肪";
-	mes "��ԏ�肢�`���҂��I";
-	mes "100�C�߂܂���񂾁I";
+rockrdg1.gat,331,111,3	script	フアニタス#rockc02	10222,5,5,{
+	mes "[フアニタス]";
+	mes "私はコヨーテ狩りが";
+	mes "一番上手い冒険者だ！";
+	mes "100匹捕まえるんだ！";
 	next;
-	mes "[�f�����T�\��]";
-	mes "��A���͖`���҂̑������I";
-	mes "���̓R���[�e��1�c�c1�c�c";
-	mes "101�C��߂܂���񂾁I";
+	mes "[素早いサソリ]";
+	mes "わ、私は冒険者の隊長だ！";
+	mes "私はコヨーテを1……1……";
+	mes "101匹を捕まえるんだ！";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "���O�����I";
-	mes "�`���҂������͂���Ȃ���";
-	mes "�������ł��傤�I";
-	mes "���̐l�����͗V��ł���񂶂�";
-	mes "�Ȃ��񂾂�I";
+	mes "[無愛想な蛇]";
+	mes "お前たち！";
+	mes "冒険者ごっこはするなって";
+	mes "言ったでしょう！";
+	mes "あの人たちは遊んでいるんじゃ";
+	mes "ないんだよ！";
 	close;
 OnTouch:
-	donpcevent "�J�����^�X#rockc04::OnTalk";
-	donpcevent "�t�A�j�^�X#rockc02::OnTalk";
-	donpcevent "�f�����T�\��#rockc03::OnTalk";
-	donpcevent "�����z�Ȏ�#rockc05::OnTalk";
+	donpcevent "カリンタス#rockc04::OnTalk";
+	donpcevent "フアニタス#rockc02::OnTalk";
+	donpcevent "素早いサソリ#rockc03::OnTalk";
+	donpcevent "無愛想な蛇#rockc05::OnTalk";
 	end;
 OnTalk:
-	unittalk "�t�A�j�^�X : ���ꂶ�ᎄ��200�C�I";
+	unittalk "フアニタス : それじゃ私は200匹！";
 	end;
 }
 
-rockrdg1.gat,327,109,5	script	�f�����T�\��#rockc03	10226,{
-	mes "[�f�����T�\��]";
-	mes "���������`���җl�݂�����";
-	mes "�R���[�e��߂܂������̂ɁB";
+rockrdg1.gat,327,109,5	script	素早いサソリ#rockc03	10226,{
+	mes "[素早いサソリ]";
+	mes "私たちも冒険者様みたいに";
+	mes "コヨーテを捕まえたいのに。";
 	next;
-	mes "[�J�����^�X]";
-	mes "�����̒�����l���݂�ȂŐ������";
-	mes "�R���[�e��ǂ�������͂��Ȃ̂ɁI";
+	mes "[カリンタス]";
+	mes "うちの町も大人がみんなで戦ったら";
+	mes "コヨーテを追い払えるはずなのに！";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "�������͂���Ȃ��Ƃ�";
-	mes "�]��ł���킯�ł͂Ȃ��񂾂�B";
-	mes "�L���������Ŏ�������";
-	mes "�R���[�e�ƈꏏ�ɐ����Ă��s���񂾁B";
+	mes "[無愛想な蛇]";
+	mes "私たちはそんなことを";
+	mes "望んでいるわけではないんだよ。";
+	mes "キワワ砂漠で私たちは";
+	mes "コヨーテと一緒に生きてい行くんだ。";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "�����R���[�e�������������";
-	mes "�������ɊQ���y�Ԃ���A";
-	mes "�����h�����߂�";
-	mes "�`���҂����ɏ�����v�������̂��B";
-	mes "�R���[�e��łڂ������킯�ł͂Ȃ��B";
+	mes "[無愛想な蛇]";
+	mes "ただコヨーテが増えすぎると";
+	mes "私たちに害が及ぶから、";
+	mes "それを防ぐために";
+	mes "冒険者たちに助けを要請したのだ。";
+	mes "コヨーテを滅ぼしたいわけではない。";
 	close;
 OnTalk:
-	unittalk "�f�����T�\�� : ���̓R���[�e�����`���҂��I";
+	unittalk "素早いサソリ : 私はコヨーテを狩る冒険者だ！";
 	end;
 }
 
-rockrdg1.gat,328,112,5	script	�J�����^�X#rockc04	10226,{
-	mes "[�J�����^�X]";
-	mes "�����̂��ꂳ��͖`���҂�������";
-	mes "�������悭��������́I";
-	mes "�����玄�������I";
+rockrdg1.gat,328,112,5	script	カリンタス#rockc04	10226,{
+	mes "[カリンタス]";
+	mes "うちのお母さんは冒険者たちよりも";
+	mes "かっこよく狩りをするの！";
+	mes "だから私もやれるわ！";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "�J�����^�X�A�N�̕ꂳ�񂪗V�т�";
-	mes "��������̂��������Ƃ�����́H";
+	mes "[無愛想な蛇]";
+	mes "カリンタス、君の母さんが遊びで";
+	mes "狩りをするのを見たことがあるの？";
 	next;
-	mes "[�J�����^�X]";
-	mes "���c�c���[��c�c�B";
-	mes "������B";
-	mes "�������є�Ɠ��𓾂邽�߂�";
-	mes "����������Č����Ă��܂����B";
+	mes "[カリンタス]";
+	mes "え……うーん……。";
+	mes "ううん。";
+	mes "温かい毛皮と肉を得るために";
+	mes "狩りをするって言っていました。";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "���R�������邱�Ƃ�V�тɂ��Ă�";
-	mes "��΂ɑʖڂ���B";
-	mes "�`���҂����Ē��̐l�����邽�߂�";
-	mes "�������Ă���񂾂�B";
+	mes "[無愛想な蛇]";
+	mes "自然を傷つけることを遊びにしては";
+	mes "絶対に駄目だよ。";
+	mes "冒険者だって町の人を守れるために";
+	mes "狩りをしているんだよ。";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "�N������𗝉��ł���悤�ɂȂ�����";
-	mes "�N�̂��ꂳ���";
-	mes "���������Ă����Ǝv����B";
+	mes "[無愛想な蛇]";
+	mes "君がこれを理解できるようになったら";
+	mes "君のお母さんも";
+	mes "狩りを教えてくれると思うよ。";
 	close;
 OnTalk:
-	unittalk "�J�����^�X : �l�͖`���҂̑������I�@�R���[�e��100�C�߂܂��Ă��I";
+	unittalk "カリンタス : 僕は冒険者の隊長だ！　コヨーテを100匹捕まえてやる！";
 	end;
 }
 
-rockrdg1.gat,330,104,3	script	�����z�Ȏ�#rockc05	10218,{
-	mes "[�����z�Ȏ�]";
-	mes "�ŋ߃R���[�e�������P�����邱�Ƃ�";
-	mes "�����ė����̂ŁA";
-	mes "�`���҂ɓ��������肢���Ă��܂��B";
+rockrdg1.gat,330,104,3	script	無愛想な蛇#rockc05	10218,{
+	mes "[無愛想な蛇]";
+	mes "最近コヨーテが町を襲撃することが";
+	mes "増えて来たので、";
+	mes "冒険者に討伐をお願いしています。";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "����������q�ǂ�������";
-	mes "�}�l���ėV�Ԃ̂��S�z�ł��B";
-	mes "�����ɂ��킹�āA��l������";
-	mes "�����������Ă����̂�";
-	mes "�������̂������B";
+	mes "[無愛想な蛇]";
+	mes "それを見た子どもたちが";
+	mes "マネして遊ぶのが心配です。";
+	mes "成長にあわせて、大人が狩りを";
+	mes "少しずつ教えていくのが";
+	mes "私たちのやり方だ。";
 	next;
-	mes "[�����z�Ȏ�]";
-	mes "�`���҂���������p��";
-	mes "�y�������Ɍ�����̂͂��傤���Ȃ��B";
-	mes "�����L���N�^�[���͌����ėV�т�";
-	mes "���͂��Ȃ��B";
-	mes "�ŋ߂ł͂��̓_���q�ǂ�������";
-	mes "�����邱�Ƃ��傫�ȏh�肾�ȁB";
+	mes "[無愛想な蛇]";
+	mes "冒険者が狩りをする姿が";
+	mes "楽しそうに見えるのはしょうがない。";
+	mes "だがキャクター族は決して遊びで";
+	mes "狩りはしない。";
+	mes "最近ではこの点を子どもたちに";
+	mes "教えることが大きな宿題だな。";
 	close;
 OnTalk:
-	unittalk "�����z�Ȏ� : ���O�����I�@�`���҂������͂���Ȃƌ������ł��傤�I";
+	unittalk "無愛想な蛇 : お前たち！　冒険者ごっこはするなと言ったでしょう！";
 	end;
 }
 
-rockrdg1.gat,310,48,3	script	�G���N�^�[#rockc06	10222,{
-	mes "[�G���N�^�[]";
-	mes "�G���N�^�[�͂ł��ˁA";
-	mes "�傫���Ȃ��Ē��ň�Ԋ���";
-	mes "�Ԃ����E�l�ɂȂ�܂��I";
+rockrdg1.gat,310,48,3	script	エレクター#rockc06	10222,{
+	mes "[エレクター]";
+	mes "エレクターはですね、";
+	mes "大きくなって町で一番頑丈な";
+	mes "網を作る職人になります！";
 	next;
-	emotion 9,"�G���N�^�[#rockc06";
-	mes "[�G���N�^�[]";
-	mes "���c�c�ł���Ԋ��ȖԂ�҂ނ̂�";
-	mes "���k����Ȃ񂾁c�c�B";
+	emotion 9,"エレクター#rockc06";
+	mes "[エレクター]";
+	mes "あ……でも一番頑丈な網を編むのは";
+	mes "お婆さんなんだ……。";
 	next;
-	emotion 2,"�G���N�^�[#rockc06";
-	mes "[�G���N�^�[]";
-	mes "���Ⴀ�G���N�^�[�͂ł��ˁA";
-	mes "�傫���Ȃ��Ē��œ�ԖڂɊ���";
-	mes "�Ԃ����E�l�ɂȂ�܂��I";
+	emotion 2,"エレクター#rockc06";
+	mes "[エレクター]";
+	mes "じゃあエレクターはですね、";
+	mes "大きくなって町で二番目に頑丈な";
+	mes "網を作る職人になります！";
 	close;
 }
 
-rockrdg1.gat,299,82,3	script	�^���A�e��#rockc07	10222,{
-	mes "[�^���A�e��]";
-	mes "���͗����ƂĂ��D���ł��B";
-	mes "���[���~�b�h�K�b�c�嗤��";
-	mes "���̎��ӂ̓s�s�Ȃǂ𗷂���̂�";
-	mes "���̊y���݂ł��B";
+rockrdg1.gat,299,82,3	script	タリアテル#rockc07	10222,{
+	mes "[タリアテル]";
+	mes "私は旅がとても好きです。";
+	mes "ルーンミッドガッツ大陸や";
+	mes "その周辺の都市などを旅するのが";
+	mes "私の楽しみです。";
 	next;
-	mes "[�^���A�e��]";
-	mes "�V�����ꏊ�ɍs���Ȃ�";
-	mes "���ł��劽�}�ł��B";
-	mes "���̒n�̏Z�������Ƙb���A";
-	mes "�����ɐ����Ă���p�����Ă����";
-	mes "�C���X�s���[�V������";
-	mes "���邱�Ƃ��ł��܂��B";
+	mes "[タリアテル]";
+	mes "新しい場所に行くなら";
+	mes "いつでも大歓迎です。";
+	mes "その地の住民たちと話し、";
+	mes "そこに生きている姿を見ていると";
+	mes "インスピレーションを";
+	mes "得ることができます。";
 	next;
-	unittalk "�^���A�e�� : ������ƁI�@�^�l�X�J�I�@����͒@������_���I�I";
-	mes "[�^�l�X�J]";
-	mes "�V�����y����劽�}�I";
+	unittalk "タリアテル : ちょっと！　タネスカ！　それは叩いちゃダメ！！";
+	mes "[タネスカ]";
+	mes "新しい楽器も大歓迎！";
 	close;
 }
 
-rockrdg1.gat,297,84,7	script	�^�l�X�J#rockc08	549,{
-	mes "[�^�l�X�J]";
-	mes "���̊y��͂���P�̂ł�";
-	mes "�f���炵���H�|�i�ł��B";
-	mes "���Ȋv�̎d�グ�A";
-	mes "�������قǂ̃o�����X��";
-	mes "�L�x�ȉ�����鋤���ʁc�c�B";
+rockrdg1.gat,297,84,7	script	タネスカ#rockc08	549,{
+	mes "[タネスカ]";
+	mes "この楽器はこれ単体でも";
+	mes "素晴らしい工芸品です。";
+	mes "頑丈な革の仕上げ、";
+	mes "美しいほどのバランスと";
+	mes "豊富な音を作る共鳴部位……。";
 	next;
-	emotion 3,"�^�l�X�J#rockc08";
-	mes "[�^�l�X�J]";
-	mes "�����A�������ɒ@���Ă݂����I";
-	mes "���̉��𕷂��Ă݂����ł��I";
+	emotion 3,"タネスカ#rockc08";
+	mes "[タネスカ]";
+	mes "ああ、今すぐに叩いてみたい！";
+	mes "あの音を聞いてみたいです！";
 	next;
-	mes "[�^���A�e��]";
-	mes "���킠�A�^�l�X�J�I";
-	mes "����G���Ă͂����܂���I";
-	mes "���̑O�����������Ⴀ��܂��񂩁I";
+	mes "[タリアテル]";
+	mes "うわあ、タネスカ！";
+	mes "それ触ってはいけません！";
+	mes "この前も言ったじゃありませんか！";
 	close;
 }
 
-rockrdg1.gat,308,49,5	script	�_�炩���H��#rockc09	10228,{
-	mes "[�_�炩���H��]";
-	mes "�ققفc�c";
-	mes "���̒��̋��Ԃɂ�";
-	mes "���ׂĎ�����������Ă���́B";
-	mes "���̎q�������ǂ��Ԃ�����悤��";
-	mes "�Ȃ������ǁA�Ō�̎d�グ��";
-	mes "�K����������Ă���񂾂�B";
+rockrdg1.gat,308,49,5	script	柔らかい羽根#rockc09	10228,{
+	mes "[柔らかい羽根]";
+	mes "ほほほ……";
+	mes "この町の漁網には";
+	mes "すべて私が手を加えてあるの。";
+	mes "他の子たちも良い網を作れるように";
+	mes "なったけど、最後の仕上げは";
+	mes "必ず私がやっているんだよ。";
 	next;
-	mes "[�G���N�^�[]";
-	mes "�����I�@������肽���ł��I";
-	mes "���k����݂�����";
-	mes "�f���炵���Ԃ����d����";
-	mes "�������ł��I";
+	mes "[エレクター]";
+	mes "私も！　私もやりたいです！";
+	mes "お婆さんみたいに";
+	mes "素晴らしい網を作る仕事を";
+	mes "したいです！";
 	next;
-	mes "[�_�炩���H��]";
-	mes "�q�ǂ��͈ꏊ�����V�Ԃ��Ƃ�";
-	mes "�d���Ȃ񂾂�B";
-	mes "���̏_�炩���肪�d���Ȃ�����A";
-	mes "���̎�����ł�����A�Ԃ�G��̂́B";
+	mes "[柔らかい羽根]";
+	mes "子どもは一所懸命遊ぶことが";
+	mes "仕事なんだよ。";
+	mes "この柔らかい手が硬くなったら、";
+	mes "その時からでいいよ、網を触るのは。";
 	next;
-	mes "[�_�炩���H��]";
-	mes "���̎��ɂȂ����炨�k�����";
-	mes "�G���N�^�[�ɖԂ������@��";
-	mes "�����Ă����邩��ˁB";
-	mes "�����獡�͂��̑����g���āA";
-	mes "�Y��Ȍ��іڂ̂��������";
-	mes "�����������Ă�����B";
+	mes "[柔らかい羽根]";
+	mes "その時になったらお婆ちゃんが";
+	mes "エレクターに網を作る方法を";
+	mes "教えてあげるからね。";
+	mes "だから今はこの草を使って、";
+	mes "綺麗な結び目のおもちゃの";
+	mes "作り方を教えてあげる。";
 	next;
-	mes "[�G���N�^�[]";
-	mes "��[���I�@�F�B�Ɏ������悤�`�I";
+	mes "[エレクター]";
+	mes "わーい！　友達に自慢しよう～！";
 	close;
 }
 
-rockrdg1.gat,287,95,3	script	���e�B�X#rockc10	10227,{
-	mes "[���e�B�X]";
-	mes "���ꂳ��̌����������Ƃ�";
-	mes "�����͏o���܂��B���̐S���B";
+rockrdg1.gat,287,95,3	script	リティス#rockc10	10227,{
+	mes "[リティス]";
+	mes "お爺さんの言いたいことも";
+	mes "理解は出来ます。その心も。";
 	next;
-	mes "[���e�B�X]";
-	mes "�����Ǎ�����ꂽ����";
-	mes "��������鐅��";
-	mes "�����ł͂Ȃ��悤�ɁA";
-	mes "�ω���������̂�";
-	mes "��͂莩�R�Ȃ��ƂȂ̂ł��B";
+	mes "[リティス]";
+	mes "だけど昨日流れた水が";
+	mes "今日流れる水と";
+	mes "同じではないように、";
+	mes "変化し続けるのも";
+	mes "やはり自然なことなのです。";
 	close;
 }
 
-rockrdg1.gat,297,111,3	script	���C�^�l��#rockc10	727,{
-	mes "[���C�^�l��]";
-	mes "����A�܂��L���N�^�[���̒����B";
-	mes "�܂����ɖ������݂����c�c�B";
+rockrdg1.gat,297,111,3	script	ロイタネン#rockc10	727,{
+	mes "[ロイタネン]";
+	mes "あれ、またキャクター族の町だ。";
+	mes "また道に迷ったみたい……。";
 	next;
-	emotion 28,"���C�^�l��#rockc10";
-	mes "[���C�^�l��]";
-	mes "�L���������͂��܂�ɍL��������";
-	mes "�ǂ����n�`�����Ă��邩��A";
-	mes "������Ƃł��悻���������";
-	mes "���`���N�`�������Ă��܂��B";
+	emotion 28,"ロイタネン#rockc10";
+	mes "[ロイタネン]";
+	mes "キワワ砂漠はあまりに広いうえに";
+	mes "どこも地形が似ているから、";
+	mes "ちょっとでもよそ見をすると";
+	mes "メチャクチャ迷ってしまう。";
 	next;
-	mes "[���C�^�l��]";
-	mes "���Ƃǂꂾ���f�r���΂����񂾁c�c�B";
-	mes "������ŗ₽�����̈�t�ł�";
-	mes "���߂��Ȃ�c�c�B";
+	mes "[ロイタネン]";
+	mes "あとどれだけ彷徨えばいいんだ……。";
+	mes "ここらで冷たい水の一杯でも";
+	mes "飲めたなら……。";
 	close;
 }
 
 //============================================================
-// ���b�N���b�W
+// ロックリッジ
 //- Registry -------------------------------------------------------------------
-// ROCKRIDGE_1QUE -> 0�`17
+// ROCKRIDGE_1QUE -> 0～17
 //------------------------------------------------------------
-alberta.gat,240,103,5	script	�J�����v�b�`#alberta	709,3,3,{
+alberta.gat,240,103,5	script	カラムプッチ#alberta	709,3,3,{
 	if(ROCKRIDGE_1QUE == 0) {
-		mes "[�J�����v�b�`]";
-		mes "�����̖`���҂���B";
-		mes "��X�s���N���[�Y�Ђ���������";
-		mes "�V�嗤�̉\�𕷂������Ƃ͂��邩���H";
-		mes "�f�Ղׂ̈̍q�C����";
-		mes "���R�������ꂽ�嗤�Ȃ񂾁B";
+		mes "[カラムプッチ]";
+		mes "そこの冒険者さん。";
+		mes "我々ピンクローズ社が発見した";
+		mes "新大陸の噂を聞いたことはあるかい？";
+		mes "貿易の為の航海中に";
+		mes "偶然発見された大陸なんだ。";
 		next;
 		if(BaseLevel < 70) {
-			mes "[�J�����v�b�`]";
-			mes "�����̑嗤�ŏ��X��肪�N���Ă���";
-			mes "�x�e�����̖`���҂�T���Ă���񂾁B";
-			mes "����^ff0000BaseLv70�ȏ�^000000�̒m�荇����������";
-			mes "���̘b��`���Ă���Ȃ����B";
+			mes "[カラムプッチ]";
+			mes "今その大陸で少々問題が起きていて";
+			mes "ベテランの冒険者を探しているんだ。";
+			mes "もし^ff0000BaseLv70以上^000000の知り合いがいたら";
+			mes "この話を伝えてくれないか。";
 			close;
 		}
-		mes "[�J�����v�b�`]";
-		mes "���̑嗤��";
-		mes "^4d4dff���b�N���b�W^000000�Ɩ��t�����A";
-		mes "�ꝺ�����_���đ����̐l��";
-		mes "�����񂹂Ă��関�J�̒n�Ȃ񂾁I";
+		mes "[カラムプッチ]";
+		mes "その大陸は";
+		mes "^4d4dffロックリッジ^000000と名付けられ、";
+		mes "一攫千金を狙って多くの人が";
+		mes "押し寄せている未開の地なんだ！";
 		next;
-		menu "�`���҂��K�v�Ȃ�ł����H",-;
-		mes "[�J�����v�b�`]";
-		mes "���́c�c";
-		mes "���̃��b�N���b�W�ɍ��ׂȖ�肪";
-		mes "�N���Ă�񂾁B";
-		mes "�{���ɍ��ׂȖ��Ȃ񂾂��ǁA";
-		mes "��ʐl�ɂ͑Ώ�������炵���B";
+		menu "冒険者が必要なんですか？",-;
+		mes "[カラムプッチ]";
+		mes "実は……";
+		mes "そのロックリッジに些細な問題が";
+		mes "起きてるんだ。";
+		mes "本当に些細な問題なんだけど、";
+		mes "一般人には対処が難しいらしい。";
 		next;
-		mes "[�J�����v�b�`]";
-		mes "���b�N���b�W�͍z�R����z�΂�";
-		mes "�̌@���邱�ƂŎ��v���グ�Ă���";
-		mes "��������A�啔�����z�R�̘J���҂�";
-		mes "���l�ō\������Ă���񂾁B";
+		mes "[カラムプッチ]";
+		mes "ロックリッジは鉱山から鉱石を";
+		mes "採掘することで収益を上げている";
+		mes "町だから、大部分が鉱山の労働者と";
+		mes "商人で構成されているんだ。";
 		next;
-		mes "[�J�����v�b�`]";
-		mes "�����A^4d4dff�z�R��_�������c^000000��";
-		mes "�ŋߖ҈Ђ�U����Ă���炵���āc�c";
+		mes "[カラムプッチ]";
+		mes "だが、^4d4dff鉱山を狙う盗賊団^000000が";
+		mes "最近猛威を振るっているらしくて……";
 		next;
-		menu "�����̈˗��ł����H",-;
-		mes "[�J�����v�b�`]";
-		mes "����A�����������ɂȂ邩�ȁB";
-		mes "�ڂ����b�̓��b�N���b�W�s����";
-		mes "^4d4dff�R�X�e��^000000����ɕ����Ă���B";
-		mes "���͖`���҂��ē����Ăق�����";
-		mes "���܂�Ă��邾���ŁA";
-		mes "�ڂ����b�͂킩��Ȃ��񂾁B";
+		menu "討伐の依頼ですか？",-;
+		mes "[カラムプッチ]";
+		mes "うん、そういう事になるかな。";
+		mes "詳しい話はロックリッジ市長の";
+		mes "^4d4dffコステル^000000さんに聞いてくれ。";
+		mes "私は冒険者を案内してほしいと";
+		mes "頼まれているだけで、";
+		mes "詳しい話はわからないんだ。";
 		next;
-		if(select("�킩��܂���","�������܂�") == 2) {
-			mes "[�J�����v�b�`]";
-			mes "�������ȁc�c";
-			mes "���ꂶ�ᑼ�̖`���҂�";
-			mes "�T�������Ȃ����B";
-			mes "�b�𕷂��Ă���Ă��肪�Ƃ��B";
+		if(select("わかりました","遠慮します") == 2) {
+			mes "[カラムプッチ]";
+			mes "困ったな……";
+			mes "それじゃ他の冒険者を";
+			mes "探すしかないか。";
+			mes "話を聞いてくれてありがとう。";
 			close;
 		}
-		mes "[�J�����v�b�`]";
-		mes "���ꂶ�Ⴭ�b�N���b�W�ֈē����悤�B";
-		mes "�{���Ȃ�q�C�̗����������������A";
-		mes "����͖����ő����Ă����悤�B";
-		mes "�����A�o�����B";
+		mes "[カラムプッチ]";
+		mes "それじゃロックリッジへ案内しよう。";
+		mes "本来なら航海の料金をいただくが、";
+		mes "今回は無料で送ってあげよう。";
+		mes "さあ、出発だ。";
 		close2;
 		setquest 7791;
 		set ROCKRIDGE_1QUE,1;
 		warp "harboro1.gat",70,215;
 		end;
 	}
-	mes "[�J�����v�b�`]";
-	mes "�₠�A�����������̂��B";
-	mes "�ǂ����H";
-	mes "��D�̃��b�N���b�W���a����";
-	mes "�v��Ȃ����H";
-	mes "�D���^4d4dff10,000zeny^000000���B";
+	mes "[カラムプッチ]";
+	mes "やあ、今日も来たのか。";
+	mes "どうだ？";
+	mes "絶好のロックリッジ日和だと";
+	mes "思わないか？";
+	mes "船代は^4d4dff10,000zeny^000000だ。";
 	next;
-	if(select("���b�N���b�W�֏o���I","�������A�����v���܂���") == 2) {
-		mes "[�J�����v�b�`]";
-		mes "�킩�����B";
-		mes "�܂��p�����鎞�ɗ��ȁB";
+	if(select("ロックリッジへ出発！","いいえ、そう思いません") == 2) {
+		mes "[カラムプッチ]";
+		mes "わかった。";
+		mes "また用がある時に来な。";
 		close;
 	}
 	if(Zeny < 10000) {
-		// ������
-		mes "[�J�����v�b�`]";
-		mes "���������ĂȂ����B";
+		// 未調査
+		mes "[カラムプッチ]";
+		mes "代金が足りてないぜ。";
 		close;
 	}
-	mes "[�J�����v�b�`]";
-	mes "�D���痎���Ȃ��悤";
-	mes "�肷��ɂ�������";
-	mes "�͂܂��Ă�����I";
+	mes "[カラムプッチ]";
+	mes "船から落ちないよう";
+	mes "手すりにしっかり";
+	mes "掴まっておけよ！";
 	close2;
 	set Zeny,Zeny-10000;
 	warp "harboro1.gat",70,215;
 	end;
 OnTouch:
 	if(ROCKRIDGE_1QUE == 0 && BaseLevel >= 70)
-		unittalk "�J�����v�b�` : ���A�����̑O�r�L�]�Ȗ`���҂���I�@������Ǝ��̘b�𕷂��Ă���Ȃ����H",1;
+		unittalk "カラムプッチ : お、そこの前途有望な冒険者さん！　ちょっと私の話を聞いてくれないか？",1;
 	end;
 }
 
-harboro1.gat,60,215,5	script	�J�����v�b�`#harboro1	709,{
-	mes "[�J�����v�b�`]";
-	mes "�A���x���^�ɖ߂邩�H";
+harboro1.gat,60,215,5	script	カラムプッチ#harboro1	709,{
+	mes "[カラムプッチ]";
+	mes "アルベルタに戻るか？";
 	next;
-	if(select("�߂�","�߂�܂���") == 2) {
-		mes "[�J�����v�b�`]";
-		mes "�������؍݂��Ă����Ȃ�A";
-		mes "���͊�������I";
-		mes "��Ђ������]��ł��邾�낤���B";
+	if(select("戻る","戻りません") == 2) {
+		mes "[カラムプッチ]";
+		mes "ゆっくり滞在してくれるなら、";
+		mes "私は嬉しいよ！";
+		mes "会社もそれを望んでいるだろうし。";
 		close;
 	}
-	mes "[�J�����v�b�`]";
-	mes "���ꂶ��s�������I";
+	mes "[カラムプッチ]";
+	mes "それじゃ行こうか！";
 	close2;
 	warp "alberta.gat",240,96;
 	end;
 }
 
-harboro1.gat,80,218,5	script	�R�X�e��#harboro1	10210,{
+harboro1.gat,80,218,5	script	コステル#harboro1	10210,{
 	switch(ROCKRIDGE_1QUE) {
 	case 0:
-		unittalk "�R�X�e�� : �������Ȃ��c�c�B�����ƃA���x���^�Ŗ`���҂������邩�ȁc�c�B",1;
+		unittalk "コステル : 困ったなぁ……。ちゃんとアルベルタで冒険者が見つかるかな……。",1;
 		end;
 	case 1:
-		mes "[�R�X�e��]";
-		mes "����I";
-		mes "�т����肵���I";
+		mes "[コステル]";
+		mes "うわ！";
+		mes "びっくりした！";
 		next;
-		mes "[�R�X�e��]";
-		mes "���A�����ł��B";
-		mes "�����������b�N���b�W��";
-		mes "�s���R�X�e���ł��B";
-		mes "�c�c���̎���m���Ă���Ƃ́A";
-		mes "�܂����c�c�B";
+		mes "[コステル]";
+		mes "そ、そうです。";
+		mes "私がここロックリッジの";
+		mes "市長コステルです。";
+		mes "……私の事を知っているとは、";
+		mes "まさか……。";
 		next;
-		menu "�J�����v�b�`����̏Љ�Łc�c",-;
-		mes "[�R�X�e��]";
-		mes "�����I�@�����Ȃ�ł��ˁI";
-		mes "��𒷂����đ҂��Ă��܂����B";
-		mes "�J�����v�b�`����";
-		mes "�ǂ��܂Řb�𕷂��܂������H";
+		menu "カラムプッチさんの紹介で……",-;
+		mes "[コステル]";
+		mes "おお！　そうなんですね！";
+		mes "首を長くして待っていました。";
+		mes "カラムプッチから";
+		mes "どこまで話を聞きましたか？";
 		next;
-		mes "[�R�X�e��]";
-		mes "�Ȃ�قǁc�c";
-		mes "�����c�̘b�܂ł͕�������ł��ˁB";
+		mes "[コステル]";
+		mes "なるほど……";
+		mes "盗賊団の話までは聞いたんですね。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���Ă̒ʂ�A���̃��b�N���b�W��";
-		mes "�����Ȃ��r�삩����グ�����ł��B";
-		mes "������O�ł����A�J�񖯂̑唼��";
-		mes "�~�b�h�K���h�嗤����n���ė����l��";
-		mes "�\������Ă��܂��B";
+		mes "[コステル]";
+		mes "見ての通り、このロックリッジは";
+		mes "何もない荒野から作り上げた町です。";
+		mes "当たり前ですが、開拓民の大半は";
+		mes "ミッドガルド大陸から渡って来た人で";
+		mes "構成されています。";
 		next;
-		mes "[�R�X�e��]";
-		mes "������񌴏Z�������݂��܂��B";
-		mes "�߂��ɂ̓T�{�e���̎p�����Ă���";
-		mes "^4d4dff�L���N�^�[��^000000�̒�������܂��B";
+		mes "[コステル]";
+		mes "もちろん原住民も存在します。";
+		mes "近くにはサボテンの姿をしている";
+		mes "^4d4dffキャクター族^000000の町があります。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�L���N�^�[���̋��͂�����A";
-		mes "���b�N���b�W�𑢂鎖���o���܂����B";
-		mes "�ނ�Ƃ͂ƂĂ��F�D�I�Ȋ֌W��";
-		mes "����ł��܂��B";
+		mes "[コステル]";
+		mes "キャクター族の協力もあり、";
+		mes "ロックリッジを造る事が出来ました。";
+		mes "彼らとはとても友好的な関係を";
+		mes "結んでいます。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�����ЂƂA���̎p�����Ă���";
-		mes "^4d4dff�^�E���X��^000000�����܂��B";
-		mes "�^�E���X���͂ƂĂ��D��I�ŁA";
-		mes "�����c���������ăL���N�^�[���̒���";
-		mes "���b�N���b�W���痪�D��";
-		mes "�J��Ԃ��Ă��܂��B";
+		mes "[コステル]";
+		mes "もうひとつ、牛の姿をしている";
+		mes "^4d4dffタウラス族^000000がいます。";
+		mes "タウラス族はとても好戦的で、";
+		mes "盗賊団を結成してキャクター族の町と";
+		mes "ロックリッジから略奪を";
+		mes "繰り返しています。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���񂨊肢�������̂�";
-		mes "���̓����c�̂��ƂȂ̂ł��B";
-		mes "�����̐l������^4d4dff�����c^000000��";
-		mes "�Ă�ł��܂����c�c�B";
+		mes "[コステル]";
+		mes "今回お願いしたいのが";
+		mes "この盗賊団のことなのです。";
+		mes "ここの人たちは^4d4dff牛賊団^000000と";
+		mes "呼んでいますが……。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���̋����c�̗��D�����ɓ���";
-		mes "�����Ȃ��Ă��܂��B";
-		mes "���x�c�ƕۈ��������ł�";
-		mes "�Ώ�������Ȃ��󋵂ɂȂ�܂����B";
+		mes "[コステル]";
+		mes "この牛賊団の略奪が日に日に";
+		mes "酷くなっています。";
+		mes "自警団と保安官だけでは";
+		mes "対処しきれない状況になりました。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�����Ŗ{�Ђ���";
-		mes "�~�b�h�K���h�嗤�̖`���҂��ق���";
-		mes "���̎�������������A�Ƃ�";
-		mes "�w��������܂����B";
-		mes "�����Ă��Ȃ������x�ǂ��^�C�~���O��";
-		mes "���Ă��ꂽ�ƁB";
+		mes "[コステル]";
+		mes "そこで本社から";
+		mes "ミッドガルド大陸の冒険者を雇って";
+		mes "この事件を解決しろ、との";
+		mes "指示がありました。";
+		mes "そしてあなたが丁度良いタイミングで";
+		mes "来てくれたと。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�ŋ߂ł͋����c�ɍ̌@�����z�΂��^��";
-		mes "^4d4dff�ݕ���Ԃ܂ŗ��D^000000����Ă��܂��B";
-		mes "����ɂ͍z�R�܂ł�";
-		mes "�苒����Ă��܂��܂����B";
-		mes "����Ȃ̂ɖ{�Ђ͗��v���o����";
-		mes "�}�����΂���c�c�B";
+		mes "[コステル]";
+		mes "最近では牛賊団に採掘した鉱石を運ぶ";
+		mes "^4d4dff貨物列車まで略奪^000000されています。";
+		mes "さらには鉱山までも";
+		mes "占拠されてしまいました。";
+		mes "それなのに本社は利益を出せと";
+		mes "急かすばかり……。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�z�R��苒���ꂽ�����ŁA";
-		mes "�ꝺ����𖲌��ė����l������";
-		mes "�d���������A���͎��Ǝ҂�";
-		mes "���Ă��܂��܂����B";
+		mes "[コステル]";
+		mes "鉱山を占拠されたせいで、";
+		mes "一攫千金を夢見て来た人たちが";
+		mes "仕事を失い、町は失業者で";
+		mes "溢れてしまいました。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���c�c";
-		mes "�d�����Ȃ����Ƃɂ��Ă�";
-		mes "�閧�ɂ��Ă��������B";
-		mes "���������΂���̐l��";
-		mes "�o�čs���Ă��܂�����";
-		mes "����܂�����c�c�B";
+		mes "[コステル]";
+		mes "あ……";
+		mes "仕事がないことについては";
+		mes "秘密にしてください。";
+		mes "到着したばかりの人が";
+		mes "出て行ってしまったら";
+		mes "困りますから……。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�Ƃɂ����A���Ȃ��ɂ͋����c��";
-		mes "�Ȃ�Ƃ����Ă������������̂ł��B";
+		mes "[コステル]";
+		mes "とにかく、あなたには牛賊団を";
+		mes "なんとかしていただきたいのです。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�ۈ����̂Ƃ���ɍs���A";
-		mes "�����c�̌��ŋ��͂��ɗ����ƌ����΁A";
-		mes "���ׂ����������Ă����͂��ł��B";
-		mes "�ǂ����������̉�Ёc�c";
-		mes "�����A���b�N���b�W�ׂ̈�";
-		mes "�͂�݂��ĉ������B";
+		mes "[コステル]";
+		mes "保安官のところに行き、";
+		mes "牛賊団の件で協力しに来たと言えば、";
+		mes "やるべき事を教えてくれるはずです。";
+		mes "どうか私たちの会社……";
+		mes "いえ、ロックリッジの為に";
+		mes "力を貸して下さい。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���̑傫�����ɉ����ē��̕���";
-		mes "�܂������s���ƁA";
-		mes "�ۈ���������������͂��ł��B";
-		mes "�����̈ē�����";
-		mes "�����Ă݂Ă������ł��B";
+		mes "[コステル]";
+		mes "この大きい道に沿って東の方に";
+		mes "まっすぐ行くと、";
+		mes "保安官事務室があるはずです。";
+		mes "そこの案内員に";
+		mes "聞いてみてもいいです。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�ۈ����������ɂ���̂�";
-		mes "���̗B��̕ۈ�����";
-		mes "^4d4dff�A�C�A�b�g�E���[�v^000000�ł��B";
-		mes "����ďڂ����b�𕷂��Ă��������B";
-		mes "�ǂ�����낵�����肢���܂��B";
+		mes "[コステル]";
+		mes "保安官事務室にいるのは";
+		mes "町の唯一の保安官の";
+		mes "^4d4dffアイアット・ワープ^000000です。";
+		mes "会って詳しい話を聞いてください。";
+		mes "どうかよろしくお願いします。";
 		viewpoint 1,241,218,1,0x00FF00;
 		delquest 7791;
 		setquest 7792;
 		set ROCKRIDGE_1QUE,2;
 		close;
 	case 2:
-		mes "[�R�X�e��]";
-		mes "���̑傫�����ɉ����ē��̕���";
-		mes "�܂������s���ƁA";
-		mes "�ۈ���������������͂��ł��B";
-		mes "^4d4dff�A�C�A�b�g�E���[�v^000000��";
-		mes "���̗B��̕ۈ����Ȃ̂�";
-		mes "�ڂ����b�𕷂��Ă��������B";
+		mes "[コステル]";
+		mes "この大きい道に沿って東の方に";
+		mes "まっすぐ行くと、";
+		mes "保安官事務室があるはずです。";
+		mes "^4d4dffアイアット・ワープ^000000は";
+		mes "町の唯一の保安官なので";
+		mes "詳しい話を聞いてください。";
 		viewpoint 1,241,218,1,0x00FF00;
 		close;
 	case 3:
-		mes "[�R�X�e��]";
-		mes "�ǂ����Ă���Ȕߑs�Ȋ��";
-		mes "���Ă����ł����H";
-		mes "�����c�Ɖ�����������ł����H";
-		mes "���H�@�z��ƌ��H";
+		mes "[コステル]";
+		mes "どうしてそんな悲壮な顔を";
+		mes "しているんですか？";
+		mes "牛賊団と何があったんですか？";
+		mes "え？　奴らと交渉？";
 		next;
-		menu "�R�X�e������ƈ��������ɍz�΂����߂��悤�ł�",-;
-		mes "[�R�X�e��]";
-		mes "���������Ă����ł����H";
-		mes "����Ȃ��Ƃ����蓾���";
-		mes "�v���Ă��܂����H";
-		mes "�����炢�悢�擪��";
-		mes "���������Ȃ�n�߂܂����ˁI";
+		menu "コステルさんと引き換えに鉱石を取り戻すようです",-;
+		mes "[コステル]";
+		mes "何を言っているんですか？";
+		mes "そんなことがあり得ると";
+		mes "思っていますか？";
+		mes "あいつらいよいよ頭が";
+		mes "おかしくなり始めましたね！";
 		next;
-		mes "[�R�X�e��]";
-		mes "���������������̖��ɗ����܂���!?";
-		mes "��k�ł���ˁH";
-		mes "��k���ƌ����ĉ������I";
+		mes "[コステル]";
+		mes "いったい私が何の役に立ちますか!?";
+		mes "冗談ですよね？";
+		mes "冗談だと言って下さい！";
 		next;
-		mes "[�R�X�e��]";
-		mes "���̐Ȃɂ͎��ƃA�C�A�b�g��";
-		mes "��l�����ŗ���悤�ɁH";
+		mes "[コステル]";
+		mes "交渉の席には私とアイアットの";
+		mes "二人だけで来るように？";
 		next;
-		mes "[�R�X�e��]";
-		mes "�����c�c�A�C�A�b�g�ɂ͈����ł����A";
-		mes "���͎��̒���D��������";
-		mes "���b�N���b�W�𗣂�邱�Ƃɂ��܂��I";
+		mes "[コステル]";
+		mes "うう……アイアットには悪いですが、";
+		mes "私は次の定期船が来たら";
+		mes "ロックリッジを離れることにします！";
 		next;
-		unittalk getcharid(3),strcharinfo(0)+" : �c�c",1;
-		mes "[�R�X�e��]";
-		mes "����Ȋ�Ō��Ȃ��ł��������B";
-		mes "��Ђ̗��v�͂������d�v�����ǁA";
-		mes "������厖�ȕ��͎��̖��Ȃ�ł��I";
+		unittalk getcharid(3),strcharinfo(0)+" : ……",1;
+		mes "[コステル]";
+		mes "そんな顔で見ないでください。";
+		mes "会社の利益はもちろん重要だけど、";
+		mes "それより大事な物は私の命なんです！";
 		next;
-		menu "��k�ł���",-;
-		mes "[�R�X�e��]";
-		mes "��k�H";
-		mes "�c�c���ꂶ����̘b�́H";
-		mes "�������k�ł����H";
+		menu "冗談ですよ",-;
+		mes "[コステル]";
+		mes "冗談？";
+		mes "……それじゃ交渉の話は？";
+		mes "それも冗談ですか？";
 		next;
-		mes "[�R�X�e��]";
-		mes "���c�c���͂����ł��ˁB";
+		mes "[コステル]";
+		mes "あ……交渉はあるんですね。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�c�c�ł͂��Ȃ���";
-		mes "�{�Ђ���h������Ă����ӔC�҂���";
-		mes "�����āA���̑���ɏo�Ă�����";
-		mes "�ǂ��񂶂�Ȃ��ł����H";
+		mes "[コステル]";
+		mes "……ではあなたが";
+		mes "本社から派遣されてきた責任者だと";
+		mes "言って、私の代わりに出てくれれば";
+		mes "良いんじゃないですか？";
 		next;
-		mes "[�R�X�e��]";
-		mes "�܂��͗v�����e�𕷂������Ɠ`����";
-		mes "���e���m���߂Ă��������B";
+		mes "[コステル]";
+		mes "まずは要求内容を聞きたいと伝えて";
+		mes "内容を確かめてください。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�{�ЂɊm�F���Ȃ��ƌ���o���Ȃ�";
-		mes "�ƌ����΂�����x��";
-		mes "�҂��Ă����Ǝv���܂��B";
-		mes "����c�c���ꂩ��c�c�B";
+		mes "[コステル]";
+		mes "本社に確認しないと決定出来ない";
+		mes "と言えばある程度は";
+		mes "待ってくれると思います。";
+		mes "うん……それから……。";
 		next;
-		unittalk getcharid(3),strcharinfo(0)+" : �c�c",1;
-		mes "[�R�X�e��]";
-		mes "�܂�����Ȋ�����āc�c�B";
-		mes "�Ƃɂ����A�A�C�A�b�g�ƈꏏ��";
-		mes "���̏�ɍs���ė��ĉ������B";
-		mes "���͂����ɉB��Ă��܂�����c�c�B";
+		unittalk getcharid(3),strcharinfo(0)+" : ……",1;
+		mes "[コステル]";
+		mes "またそんな顔をして……。";
+		mes "とにかく、アイアットと一緒に";
+		mes "交渉の場に行って来て下さい。";
+		mes "私はここに隠れていますから……。";
 		next;
-		mes "�]�R�X�e���͂ǂ����s��������";
-		mes "�@���ӂ����񂵂Ă���B";
-		mes "�@�Ƃ肠�����R�X�e���̈ӌ���";
-		mes "�@�A�C�A�b�g�ɓ`���悤�]";
+		mes "‐コステルはどこか不安そうに";
+		mes "　周辺を見回している。";
+		mes "　とりあえずコステルの意見を";
+		mes "　アイアットに伝えよう‐";
 		viewpoint 1,241,218,1,0x00FF00;
 		delquest 7793;
 		setquest 7794;
@@ -2606,32 +2606,32 @@ harboro1.gat,80,218,5	script	�R�X�e��#harboro1	10210,{
 		close;
 	case 4:
 	case 5:
-		mes "[�R�X�e��]";
-		mes "�܂��͗v���𕷂������Ɠ`���A";
-		mes "���e�𒲂ׂė��ĉ������B";
+		mes "[コステル]";
+		mes "まずは要求を聞きたいと伝え、";
+		mes "内容を調べて来て下さい。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�{�ЂɊm�F���Ȃ��ƌ���o���Ȃ�";
-		mes "�ƌ����΂�����x��";
-		mes "�҂��Ă����Ǝv���܂��B";
-		mes "�Ƃɂ����A�A�C�A�b�g�Ƃӂ����";
-		mes "���̏�ɍs���ė��ĉ������B";
-		mes "���͂����ɉB��Ă��܂�����c�c�B";
+		mes "[コステル]";
+		mes "本社に確認しないと決定出来ない";
+		mes "と言えばある程度は";
+		mes "待ってくれると思います。";
+		mes "とにかく、アイアットとふたりで";
+		mes "交渉の場に行って来て下さい。";
+		mes "私はここに隠れていますから……。";
 		close;
 	case 6:
-		mes "[�R�X�e��]";
-		mes "�����c�̃{�X�A";
-		mes "�W���j�[�E�W�F�C���X��";
-		mes "�߂܂����炵���ł��ˁH";
-		mes "�������Ɍ��̎�D��";
-		mes "�o�����ƌ������Ƃł��ˁH";
+		mes "[コステル]";
+		mes "牛賊団のボス、";
+		mes "ジョニー・ジェイムスを";
+		mes "捕まえたらしいですね？";
+		mes "私たちに交渉の手札が";
+		mes "出来たと言うことですね？";
 		next;
-		mes "[�R�X�e��]";
-		mes "����A�ނ���z�΂̏ꏊ��";
-		mes "�����o���΁A";
-		mes "����������K�v���Ȃ������I";
-		mes "�A�C�A�b�g��";
-		mes "���܂�����Ă����ƐM���Ă��܂��B";
+		mes "[コステル]";
+		mes "いや、彼から鉱石の場所を";
+		mes "聞き出せば、";
+		mes "もう交渉する必要もないかも！";
+		mes "アイアットが";
+		mes "うまくやってくれると信じています。";
 		close;
 	case 7:
 	case 8:
@@ -2640,181 +2640,181 @@ harboro1.gat,80,218,5	script	�R�X�e��#harboro1	10210,{
 	case 11:
 	case 12:
 	case 13:
-		mes "[�R�X�e��]";
-		mes "����100��zeny�o���Ă��̍z�΂�";
-		mes "�������������Ă̓_���ł����ˁH";
-		mes "��������Ίy�ɂȂ�̂ł́H";
+		mes "[コステル]";
+		mes "もう100万zeny出してその鉱石を";
+		mes "私たちが買ってはダメですかね？";
+		mes "そうすれば楽になるのでは？";
 		next;
-		menu "��������܂����H",-;
-		mes "[�R�X�e��]";
-		mes "���c�c�����A���͂���܂���B";
-		mes "�����ǂ��Ȃ��͎����Ă���̂ł́H";
-		mes "���`�������������i��";
-		mes "�����ƍl����΁c�c�B";
+		menu "お金ありますか？",-;
+		mes "[コステル]";
+		mes "い……いえ、私はありません。";
+		mes "だけどあなたは持っているのでは？";
+		mes "正義を少し高い価格で";
+		mes "買うと考えれば……。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�����܂���A���̌��͍Ђ��̌��ł��B";
-		mes "���Ȃ��ƃA�C�A�b�g��";
-		mes "��������������܂�";
-		mes "���͐Â��ɂ����ł����Ƃ��Ă��܂��B";
-		mes "�{���ł�����B";
+		mes "[コステル]";
+		mes "すいません、私の口は災いの元です。";
+		mes "あなたとアイアットが";
+		mes "事件を解決するまで";
+		mes "私は静かにここでじっとしています。";
+		mes "本当ですから。";
 		close;
 	case 14:
 	case 15:
-		mes "[�R�X�e��]";
-		mes "�d���͂ǂ�Ȋ����ł����H";
-		mes "�A�C�A�b�g��";
-		mes "�u�j���b�v�Ə΂�������";
-		mes "���������Ă���Ȃ���ł��B";
+		mes "[コステル]";
+		mes "仕事はどんな感じですか？";
+		mes "アイアットは";
+		mes "「ニヤッ」と笑うだけで";
+		mes "何も教えてくれないんです。";
 		next;
-		mes "[�R�X�e��]";
-		mes "���ꂩ��A���Ȃ��������s�����Ƃ���";
-		mes "�\���ǂ�ǂ�L�܂��Ă����ł����A";
-		mes "�������������N���Ă��ł����H";
+		mes "[コステル]";
+		mes "それから、あなたが次期市長だという";
+		mes "噂がどんどん広まっているんですが、";
+		mes "いったい何が起きてるんですか？";
 		next;
-		menu "�閧�ł�",-;
-		mes "[�R�X�e��]";
-		mes "�閧���݂����Ȃ��̂ł����H";
-		mes "���̑O�̌��̎���";
-		mes "�U���݂����Ȃ��̂ł����H";
+		menu "秘密です",-;
+		mes "[コステル]";
+		mes "秘密作戦みたいなものですか？";
+		mes "この前の交渉の時の";
+		mes "偽装みたいなものですか？";
 		next;
-		mes "[�R�X�e��]";
-		mes "���Ȃ����{���Ɏs���ɂȂ�Ȃ��Ȃ�";
-		mes "����ł�����ł��B";
-		mes "�Ƃɂ������͑҂��Ă����";
-		mes "������ł��ˁB";
+		mes "[コステル]";
+		mes "あなたが本当に市長にならないなら";
+		mes "それでいいんです。";
+		mes "とにかく私は待っていれば";
+		mes "いいんですね。";
 		close;
 	case 16:
 	case 17:
-		mes "[�R�X�e��]";
-		mes "���b�N���b�W�s���Ƃ��āA";
-		mes "�܂��s���N���[�Y�ЂƂ���";
-		mes "���Ȃ��ɂ͊��ӂ��Ă��܂��B";
-		mes "�{���ɁA�S�ꊴ�ӂ��Ă���̂Ɂc�c";
-		mes "�ǂ����Č��t���o�Ȃ���ł��傤�B";
+		mes "[コステル]";
+		mes "ロックリッジ市長として、";
+		mes "またピンクローズ社として";
+		mes "あなたには感謝しています。";
+		mes "本当に、心底感謝しているのに……";
+		mes "どうして言葉が出ないんでしょう。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�Ƃ���ŋ����c�̑|����킪";
-		mes "�n�܂�݂����ł��ˁB";
-		mes "��͂��Ȃ��̂Ŏ��͈�������";
-		mes "���̋߂��ɂ��邱�Ƃɂ��܂��B";
+		mes "[コステル]";
+		mes "ところで牛賊団の掃討作戦が";
+		mes "始まるみたいですね。";
+		mes "やはり危ないので私は引き続き";
+		mes "この近くにいることにします。";
 		next;
-		mes "[�R�X�e��]";
-		mes "�`���҂����������ƌĂ΂Ȃ���";
-		mes "�����Ȃ����������c�c�B";
-		mes "�����c�c�Z�����B�Z�����Ȃ肽���B";
+		mes "[コステル]";
+		mes "冒険者たちをもっと呼ばないと";
+		mes "いけなさそうだし……。";
+		mes "ああ……忙しい。忙しくなりたい。";
 		close;
 	}
 	end;
 }
 
-har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
+har_in01.gat,20,30,5	script	アイアット・ワープ#har_	10211,{
 	switch(ROCKRIDGE_1QUE) {
 	case 0:
 	case 1:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�V�����J�񖯂��H";
-		mes "�{���ɐ₦�ԂȂ�";
-		mes "�����񂹂ė�����񂾂ȁB";
-		mes "�����A�����ɌN�̎d���͂Ȃ����B";
+		mes "[アイアット・ワープ]";
+		mes "新しい開拓民か？";
+		mes "本当に絶え間なく";
+		mes "押し寄せて来るもんだな。";
+		mes "おい、ここに君の仕事はないぞ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�d����T���ɗ����Ȃ�";
-		mes "�O�ŒT���Ȃ����B";
-		mes "�s�����N���z�R�̍�ƈ��Ƃ���";
-		mes "�ٗp���Ă���邩������Ȃ����낤�H";
+		mes "[アイアット・ワープ]";
+		mes "仕事を探しに来たなら";
+		mes "外で探しなさい。";
+		mes "市長が君を鉱山の作業員として";
+		mes "雇用してくれるかもしれないだろう？";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 2:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���̗p���H";
-		mes "���͂��Ȃ荢�����m�点������";
-		mes "�C���C�����Ă���񂾁B";
-		mes "�ז������Ȃ��łق����B";
+		mes "[アイアット・ワープ]";
+		mes "何の用だ？";
+		mes "今はかなり困った知らせが来て";
+		mes "イライラしているんだ。";
+		mes "邪魔をしないでほしい。";
 		next;
-		menu "�����c�ɂ���",-;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�܂����R�X�e�����H";
-		mes "�����c������������ׂ�";
-		mes "�{�Ђ���w������������";
-		mes "�����Ă������ǁA";
-		mes "�`���҂��ٗp�����̂��H";
+		menu "牛賊団について",-;
+		mes "[アイアット・ワープ]";
+		mes "まさかコステルか？";
+		mes "牛賊団問題を解決する為に";
+		mes "本社から指示があったと";
+		mes "言っていたけど、";
+		mes "冒険者を雇用したのか？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "����A��������ȏd�v�Șb�Ȃ̂�";
-		mes "���̎s���̃R�X�e���͉��̗��Ȃ��H";
-		mes "�����A�������B";
-		mes "���ł���������悤��";
-		mes "�`�ɍs���Ă���񂾂�A�����B";
+		mes "[アイアット・ワープ]";
+		mes "いや、だがこんな重要な話なのに";
+		mes "自称市長のコステルは何故来ない？";
+		mes "ああ、そうか。";
+		mes "いつでも逃げられるように";
+		mes "港に行っているんだろ、あいつ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���͂͂͂͂��I";
-		mes "�܂�����������";
-		mes "���d�Ȋ��҂����Ă����ȁB";
-		mes "�`���҂𑗂��Ă��ꂽ����A";
-		mes "��������͎��̓ƒf��";
-		mes "�i�߂�Ƃ��邩�B";
+		mes "[アイアット・ワープ]";
+		mes "くははははっ！";
+		mes "まあ私があいつに";
+		mes "無謀な期待をしていたな。";
+		mes "冒険者を送ってくれたから、";
+		mes "ここからは私の独断で";
+		mes "進めるとするか。";
 		next;
-		menu "���̂��Ƃł����H",-;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�ݕ���Ԃ��P�����󂯂�";
-		mes "���̒��ɂ������z�΂�";
-		mes "���ׂė��D���ꂽ�b�͕��������H";
-		mes "�������A���Ⴀ�z�R���苒���ꂽ�b��";
-		mes "�����Ă���ȁH";
+		menu "何のことですか？",-;
+		mes "[アイアット・ワープ]";
+		mes "貨物列車が襲撃を受けて";
+		mes "その中にあった鉱石を";
+		mes "すべて略奪された話は聞いたか？";
+		mes "そうか、じゃあ鉱山が占拠された話も";
+		mes "聞いているな？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�{�Ђ��ł��Ă��鎖��";
-		mes "�������Ă���B";
-		mes "�z�R�ō̌@�����^4d4dff���z��^000000��";
-		mes "���Ȃ荂�����l�������Ă���";
-		mes "��Ђ̎�͏��i����";
-		mes "���������Ƃ�����B";
+		mes "[アイアット・ワープ]";
+		mes "本社が焦っている事も";
+		mes "理解している。";
+		mes "鉱山で採掘される^4d4dff紫鉱石^000000は";
+		mes "かなり高い価値を持っていて";
+		mes "会社の主力商品だと";
+		mes "聞いたことがある。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���������̍z�΂��@���Ĕ��邽�߂�";
-		mes "���̒����o�������Ƃ�";
-		mes "���ׂĂ�����Ă���B";
-		mes "�����Ă���������c�̓z�炪";
-		mes "���D���Ă���������";
-		mes "�������󋵂ɂȂ��Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "何よりもその鉱石を掘って売るために";
+		mes "この町が出来たことが";
+		mes "すべてを語っている。";
+		mes "そしてそれを牛賊団の奴らが";
+		mes "略奪していったから";
+		mes "困った状況になっている。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����������莆����ʓ͂����B";
-		mes "������D���ꂽ�z�΂�";
-		mes "��������悤�Ƃ��������e���B";
-		mes "����v���������Ȃ̂���";
-		mes "�܂��킩��Ȃ��B";
+		mes "[アイアット・ワープ]";
+		mes "だがさっき手紙が一通届いた。";
+		mes "先日略奪された鉱石を";
+		mes "取引をしようといった内容だ。";
+		mes "何を要求するつもりなのかは";
+		mes "まだわからない。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�������̓{�X��^4d4dff�W���j�[�E�W�F�C���X^000000";
-		mes "�Ƃ��̂��������ŗ��邩��A";
-		mes "�����������Ƃ�����l�A";
-		mes "�����ł�����";
-		mes "�A��čs�������񂾂��c�c�B";
-		mes "��͂�R�X�e�����s���ׂ�����ȁH";
+		mes "[アイアット・ワープ]";
+		mes "あっちはボスの^4d4dffジョニー・ジェイムス^000000";
+		mes "とそのお供だけで来るから、";
+		mes "こっちも私ともう一人、";
+		mes "交渉ができるやつを";
+		mes "連れて行きたいんだが……。";
+		mes "やはりコステルが行くべきだよな？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���邢�͌N���{�Ђ���h�����ꂽ";
-		mes "���l���Ƃ������Ƃɂ��āA";
-		mes "���ɂ��Ă��Ă���邩�H";
+		mes "[アイアット・ワープ]";
+		mes "あるいは君が本社から派遣された";
+		mes "交渉人だということにして、";
+		mes "私についてきてくれるか？";
 		next;
-		menu "�R�X�e������ɕ����Ă݂܂�",-;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�ł͌N�����̘b��";
-		mes "�����ė��Ă���邩�H";
-		mes "������͌��ɔ�����";
-		mes "��ɏ��������Ă����B";
+		menu "コステルさんに聞いてみます",-;
+		mes "[アイアット・ワープ]";
+		mes "では君がその話を";
+		mes "聞いて来てくれるか？";
+		mes "こちらは交渉に備えて";
+		mes "先に準備をしておく。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�R�X�e���͂����̂悤��";
-		mes "�`�ɂ��邾�낤�B";
-		mes "�܂��c�c�R�X�e�������ƌ�����";
-		mes "�\�z�͏o���邪�A�ꉞ�񍐂�";
-		mes "���Ă����Ȃ��ƂȁB���͂͂͂͂��I";
+		mes "[アイアット・ワープ]";
+		mes "コステルはいつものように";
+		mes "港にいるだろう。";
+		mes "まあ……コステルが何と言うか";
+		mes "予想は出来るが、一応報告は";
+		mes "しておかないとな。くははははっ！";
 		delquest 7792;
 		setquest 7793;
 		set ROCKRIDGE_1QUE,3;
@@ -2823,211 +2823,211 @@ har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
 		end;
 	case 3:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�R�X�e���͂����̂悤��";
-		mes "�`�ɂ��邾�낤�B";
-		mes "�܂��c�c�R�X�e�������ƌ�����";
-		mes "�\�z�͏o���邪�A�ꉞ�񍐂�";
-		mes "���Ă����Ȃ��ƂȁB���͂͂͂͂��I";
+		mes "[アイアット・ワープ]";
+		mes "コステルはいつものように";
+		mes "港にいるだろう。";
+		mes "まあ……コステルが何と言うか";
+		mes "予想は出来るが、一応報告は";
+		mes "しておかないとな。くははははっ！";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 4:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���A���x�ǂ��^�C�~���O���ȁB";
-		mes "������̏����͏I������B";
-		mes "�N�Ǝ��̓�l�ōs���΂������ȁH";
+		mes "[アイアット・ワープ]";
+		mes "お、調度良いタイミングだな。";
+		mes "こちらの準備は終わった。";
+		mes "君と私の二人で行けばいいかな？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�ȂɁH�@�R�X�e���H";
-		mes "�������s������";
-		mes "�����킯�Ȃ�����B";
-		mes "�ŏ�����N���s�����ƂɂȂ��";
-		mes "�v���Ă�����B";
+		mes "[アイアット・ワープ]";
+		mes "なに？　コステル？";
+		mes "あいつが行こうと";
+		mes "言うわけないだろ。";
+		mes "最初から君が行くことになると";
+		mes "思っていたよ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���낻��w��̎��Ԃ��B";
-		mes "���̓��ɂ�^4d4dff�L��������^000000��";
-		mes "�L�����Ă���B";
-		mes "�����̖k����^4d4dff���͉^�s���Ă��Ȃ�";
-		mes "�ݕ����^000000������B";
-		mes "���̗�Ԃ̑O�����̏ꏊ���B";
+		mes "[アイアット・ワープ]";
+		mes "そろそろ指定の時間だ。";
+		mes "町の東には^4d4dffキワワ砂漠^000000が";
+		mes "広がっている。";
+		mes "砂漠の北部に^4d4dff今は運行していない";
+		mes "貨物列車^000000がある。";
+		mes "その列車の前が交渉の場所だ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂶ��A���̋����ȋ����c�̃{�X";
-		mes "^4d4dff�W���j�[�E�W�F�C���X^000000�̊��";
-		mes "�q�݂ɍs���Ƃ��悤���B";
+		mes "[アイアット・ワープ]";
+		mes "それじゃ、あの凶悪な牛賊団のボス";
+		mes "^4d4dffジョニー・ジェイムス^000000の顔を";
+		mes "拝みに行くとしようか。";
 		delquest 7794;
 		setquest 7795;
 		set ROCKRIDGE_1QUE,5;
 		next;
 		cutin "rock_worp",255;
-		mes "�]�W���j�[�Ƃ̌���";
-		mes "�@�������܂����H�]";
+		mes "‐ジョニーとの交渉に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ���";
-		mes "�@�W���j�[�Ƃ̌��Ɍ��������]";
+		mes "‐あなたは";
+		mes "　ジョニーとの交渉に向かった‐";
 		close2;
 		warp "rockrdg1_q.gat",157,300;
 		end;
 	case 5:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���̓��ɂ�^4d4dff�L��������^000000���L�����Ă���B";
-		mes "�����̖k����^4d4dff���͉^�s���Ă��Ȃ�";
-		mes "�ݕ����^000000������B";
-		mes "���̗�Ԃ̑O�����̏ꏊ���B";
+		mes "[アイアット・ワープ]";
+		mes "町の東には^4d4dffキワワ砂漠^000000が広がっている。";
+		mes "砂漠の北部に^4d4dff今は運行していない";
+		mes "貨物列車^000000がある。";
+		mes "その列車の前が交渉の場所だ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂶ��A���̋����ȋ����c�̃{�X";
-		mes "^4d4dff�W���j�[�E�W�F�C���X^000000�̊��";
-		mes "�q�݂ɍs���Ƃ��悤���B";
+		mes "[アイアット・ワープ]";
+		mes "それじゃ、あの凶悪な牛賊団のボス";
+		mes "^4d4dffジョニー・ジェイムス^000000の顔を";
+		mes "拝みに行くとしようか。";
 		next;
 		cutin "rock_worp",255;
-		mes "�]�W���j�[�Ƃ̌���";
-		mes "�@�������܂����H�]";
+		mes "‐ジョニーとの交渉に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ���";
-		mes "�@�W���j�[�Ƃ̌��Ɍ��������]";
+		mes "‐あなたは";
+		mes "　ジョニーとの交渉に向かった‐";
 		close2;
 		warp "rockrdg1_q.gat",157,300;
 		end;
 	case 6:
 		cutin "rock_worp",0;
-		unittalk "�c�c�ǂ��v���H",1;
+		unittalk "……どう思う？",1;
 		if(!sleep2(4000)) end;
 		cutin "rock_iboka_all",2;
-		unittalk getnpcid(0,"�C���H�J#rock01"),"�C���H�J�E�X�N�[�f�B�[ : ���̒���􂢂������ǂ��Ǝv���܂��B",1;
+		unittalk getnpcid(0,"イヴォカ#rock01"),"イヴォカ・スクーディー : やつらの仲を裂いた方が良いと思います。",1;
 		if(!sleep2(4000)) end;
 		cutin "rock_worp",0;
-		unittalk "�A�C�A�b�g�E���[�v : ���ʂ̍���⋺���ł͌��ʂ͔������c�c�B",1;
+		unittalk "アイアット・ワープ : 普通の拷問や脅迫では効果は薄いか……。",1;
 		if(!sleep2(3000)) end;
 		cutin "rock_iboka_all",2;
-		unittalk getnpcid(0,"�C���H�J#rock01"),"�C���H�J�E�X�N�[�f�B�[ : �W���j�[�����Ȃ��Ȃ����Ƃ��Ă��A���ɑ�������Ȃ���΂Ȃ�Ȃ��̂́c�c",1;
+		unittalk getnpcid(0,"イヴォカ#rock01"),"イヴォカ・スクーディー : ジョニーがいなくなったとしても、次に相手をしなければならないのは……",1;
 		if(!sleep2(3000)) end;
 		cutin "rock_worp",0;
-		unittalk "�A�C�A�b�g�E���[�v : �A���o�[�g���낤�ȁB",1;
+		unittalk "アイアット・ワープ : アルバートだろうな。",1;
 		if(!sleep2(2000)) end;
 		set ROCKRIDGE_1QUE,7;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����ƁA�������B";
-		mes "�N�N�N�b�A";
-		mes "�����������Ă��������ł�";
-		mes "���ɗ��Ƃ́A";
-		mes "�N�݂����Ȑl�ނ͂Ȃ��Ȃ����Ȃ��ȁB";
+		mes "[アイアット・ワープ]";
+		mes "おっと、来たか。";
+		mes "クククッ、";
+		mes "ただ立たせておくだけでも";
+		mes "役に立つとは、";
+		mes "君みたいな人材はなかなかいないな。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�Ƃ���ŃW���j�[�E�W�F�C���X�̌���";
-		mes "�v�����ȏ�Ɍł��B";
-		mes "������Ƃ₻���Ƃł�";
-		mes "���D�����z�΂̏ꏊ��";
-		mes "�����Ă��ꂻ���ɂȂ��B";
+		mes "[アイアット・ワープ]";
+		mes "ところでジョニー・ジェイムスの口が";
+		mes "思った以上に固い。";
+		mes "ちょっとやそっとでは";
+		mes "略奪した鉱石の場所を";
+		mes "教えてくれそうにない。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂩ��A���o�[�g����";
-		mes "���̘A�����͂����B";
-		mes "���e�͒D�����z�΂�";
-		mes "�W���j�[�̌������B";
+		mes "[アイアット・ワープ]";
+		mes "それからアルバートから";
+		mes "交渉の連絡が届いた。";
+		mes "内容は奪った鉱石と";
+		mes "ジョニーの交換だ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�c�c���͂��Ă�����Ă���N�ɂ�";
-		mes "�b���Ă����������ǂ��������ȁB";
-		mes "���͉�X�̖ړI��";
-		mes "�z�΂����Ԃ����Ƃ���Ȃ��B";
-		mes "^0000ff�����c�̑|��^000000���B";
+		mes "[アイアット・ワープ]";
+		mes "……協力してもらっている君には";
+		mes "話しておいた方が良さそうだな。";
+		mes "実は我々の目的は";
+		mes "鉱石を取り返すことじゃない。";
+		mes "^0000ff牛賊団の掃討^000000だ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�D��ꂽ�z�΂����Ԃ��Ă��A";
-		mes "����͈ꎞ�I�ȉ����ɉ߂��Ȃ��B";
-		mes "�����c�ɒD��ꂽ�z�R��";
-		mes "���߂��Ȃ���΁A";
-		mes "���̍��{�͉������Ȃ��B";
+		mes "[アイアット・ワープ]";
+		mes "奪われた鉱石を取り返しても、";
+		mes "それは一時的な解決に過ぎない。";
+		mes "牛賊団に奪われた鉱山も";
+		mes "取り戻さなければ、";
+		mes "問題の根本は解決しない。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���̂��߂ɂ͂܂������c�̐�͂�";
-		mes "�킪�˂΂Ȃ�Ȃ��B";
-		mes "�����ł��̃`�����X��";
-		mes "�ǂ��g�������Y��ł����񂾁B";
+		mes "[アイアット・ワープ]";
+		mes "そのためにはまず牛賊団の戦力を";
+		mes "削がねばならない。";
+		mes "そこでこのチャンスを";
+		mes "どう使おうか悩んでいたんだ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�C���H�J�͂��̒���􂱂���";
-		mes "�����Ă��邪�c�c�B";
-		mes "�ڂ����b�̓C���H�J����";
-		mes "���ڕ����Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "イヴォカはやつらの仲を裂こうと";
+		mes "言っているが……。";
+		mes "詳しい話はイヴォカから";
+		mes "直接聞いてくれ。";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 7:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�C���H�J�͂��̒���􂱂���";
-		mes "�����Ă��邪�c�c�B";
-		mes "�ڂ����b�̓C���H�J����";
-		mes "���ڕ����Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "イヴォカはやつらの仲を裂こうと";
+		mes "言っているが……。";
+		mes "詳しい話はイヴォカから";
+		mes "直接聞いてくれ。";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 8:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "^4d4dff�W���j�[�͒n���ɍS��^000000�����B";
-		mes "�܂��̓A���o�[�g���W���j�[��";
-		mes "���؂������������]�͂Ȃ��A";
-		mes "�Ƃ����������ɒǂ��l�߂āA";
-		mes "���܂��������悤�B";
+		mes "[アイアット・ワープ]";
+		mes "^4d4dffジョニーは地下に拘留^000000中だ。";
+		mes "まずはアルバートがジョニーを";
+		mes "裏切ったからもう希望はない、";
+		mes "といった感じに追い詰めて、";
+		mes "うまく説得しよう。";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 9:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�A���o�[�g���Ăяo�����@�܂�";
-		mes "�����������̂��H";
-		mes "���������ȁI";
-		mes "����ŃA���o�[�g���x���̂�";
-		mes "�����Ԋy�ɂȂ����ȁB";
+		mes "[アイアット・ワープ]";
+		mes "アルバートを呼び出す方法まで";
+		mes "聞きだせたのか？";
+		mes "さすがだな！";
+		mes "これでアルバートを騙すのが";
+		mes "だいぶ楽になったな。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�悵�A���̓A���o�[�g���ȁB";
-		mes "��肭�A���o�[�g��";
-		mes "�W���j�[�����؂�����";
-		mes "�M�����܂��Ă���Ă���I";
+		mes "[アイアット・ワープ]";
+		mes "よし、次はアルバートだな。";
+		mes "上手くアルバートに";
+		mes "ジョニーが裏切ったと";
+		mes "信じ込ませてやってくれ！";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�������s�������Ƃ��낾���A";
-		mes "�O��̌�������B";
-		mes "���l�ōs������A���o�[�g��";
-		mes "�x�����邾�낤�B";
-		mes "���܂񂪌N��l�ōs���Ă��Ăق����B";
+		mes "[アイアット・ワープ]";
+		mes "私も同行したいところだが、";
+		mes "前回の件もある。";
+		mes "数人で行ったらアルバートも";
+		mes "警戒するだろう。";
+		mes "すまんが君一人で行ってきてほしい。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂩ��A";
-		mes "�A���o�[�g�͐T�d�Ȃ���B";
-		mes "^ff0000�b�����e�͗ǂ��l���đI��ł���B^000000";
+		mes "[アイアット・ワープ]";
+		mes "それから、";
+		mes "アルバートは慎重なやつだ。";
+		mes "^ff0000話す内容は良く考えて選んでくれ。^000000";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����ƁA�������B";
-		mes "���������΂�����^ff0000�z�R�ɂ���";
-		mes "�����s���ɏd�v�Șb������^000000����";
-		mes "�A���������񂾁B";
+		mes "[アイアット・ワープ]";
+		mes "おっと、そうだ。";
+		mes "そういえばさっき^ff0000鉱山について";
+		mes "次期市長に重要な話がある^000000って";
+		mes "連絡がきたんだ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����̖��O��";
-		mes "^4d4dff�V���[���E�}�b�J�[�f�B^000000���B";
-		mes "������o��r���ɂ���͂�������A";
-		mes "�s���O�ɂ��łɘb�𕷂��Ă݂Ă���B";
-		mes "��Ԃ������Ĉ����ȁB";
+		mes "[アイアット・ワープ]";
+		mes "そいつの名前は";
+		mes "^4d4dffショーン・マッカーディ^000000だ。";
+		mes "町から出る途中にいるはずだから、";
+		mes "行く前についでに話を聞いてみてくれ。";
+		mes "手間をかけて悪いな。";
 		delquest 7798;
 		setquest 7799;
 		set ROCKRIDGE_1QUE,10;
@@ -3036,10 +3036,10 @@ har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
 		end;
 	case 10:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�A���o�[�g�̂Ƃ���֍s���O�ɁA";
-		mes "^4d4dff�V���[���E�}�b�J�[�f�B^000000��";
-		mes "����Ęb�𕷂��Ă݂Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "アルバートのところへ行く前に、";
+		mes "^4d4dffショーン・マッカーディ^000000に";
+		mes "会って話を聞いてみてくれ。";
 		close2;
 		cutin "rock_worp",255;
 		end;
@@ -3047,115 +3047,115 @@ har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
 	case 12:
 	case 13:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�Ȃ�قǁA����Șb���������B ";
-		mes "�������̐؂�D�������z�R��";
-		mes "�������ɗ����Ȃ��A";
-		mes "�Ƌ����Ă��̂�";
-		mes "���ʓI��������Ȃ��ȁB";
+		mes "[アイアット・ワープ]";
+		mes "なるほど、そんな話だったか。 ";
+		mes "向こうの切り札だった鉱山は";
+		mes "もう役に立たない、";
+		mes "と教えてやるのは";
+		mes "効果的かもしれないな。";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 14:
 		cutin "rock_worp",0;
 		if(countitem(25247) > 0) {
-			mes "[�A�C�A�b�g�E���[�v]";
-			mes "�ӂށA�V���ȍz�R�̉\��";
-			mes "�{���������̂��B";
-			mes "���̍z�΂͂������ɓn���Ă���B";
-			mes "������V���[���ɓn���Ă����B";
+			mes "[アイアット・ワープ]";
+			mes "ふむ、新たな鉱山の噂は";
+			mes "本当だったのか。";
+			mes "その鉱石はこっちに渡してくれ。";
+			mes "私からショーンに渡しておく。";
 			delitem 25247,countitem(25247);
 			next;
 		}
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�ǂ��������H";
-		mes "�A���o�[�g�͏�肭�x�����̂��H";
+		mes "[アイアット・ワープ]";
+		mes "どうだった？";
+		mes "アルバートは上手く騙せたのか？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "��A��Ɏ����Ă���";
-		mes "���̖т͉��Ȃ񂾁H";
-		mes "�A���o�[�g�̂��Ă��݁H ";
-		mes "�܂����A���o�[�g��";
-		mes "������܂����̂��H";
+		mes "[アイアット・ワープ]";
+		mes "ん、手に持っている";
+		mes "その毛は何なんだ？";
+		mes "アルバートのたてがみ？ ";
+		mes "まさかアルバートを";
+		mes "やっちまったのか？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "����`�`���҂Ƃ����̂͋��낵���ȁB";
-		mes "��H";
-		mes "��������Ȃ��H";
+		mes "[アイアット・ワープ]";
+		mes "いや～冒険者というのは恐ろしいな。";
+		mes "ん？";
+		mes "そうじゃない？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�Ȃ�قǁA";
-		mes "�W���j�[���x�����߂̍ޗ����I";
-		mes "�������A���͂͂͂͂��I";
+		mes "[アイアット・ワープ]";
+		mes "なるほど、";
+		mes "ジョニーを騙すための材料か！";
+		mes "そうか、くははははっ！";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂶ��A�W���j�[�ɂ�����";
-		mes "�������Ă���Ă���B";
-		mes "�z�΂̏ꏊ���킩���";
-		mes "�����������̂��̂��B";
+		mes "[アイアット・ワープ]";
+		mes "それじゃ、ジョニーにそいつを";
+		mes "見せつけてやってくれ。";
+		mes "鉱石の場所がわかれば";
+		mes "もうこっちのものだ。";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 15:
 		cutin "rock_worp",0;
-		// ������
+		// 未調査
 		if(countitem(25247) > 0) {
-			mes "[�A�C�A�b�g�E���[�v]";
-			mes "�ӂށA�V���ȍz�R�̉\��";
-			mes "�{���������̂��B";
-			mes "���̍z�΂͂������ɓn���Ă���B";
-			mes "������V���[���ɓn���Ă����B";
+			mes "[アイアット・ワープ]";
+			mes "ふむ、新たな鉱山の噂は";
+			mes "本当だったのか。";
+			mes "その鉱石はこっちに渡してくれ。";
+			mes "私からショーンに渡しておく。";
 			delitem 25247,countitem(25247);
 			next;
 		}
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�������c�c�z�΂͍z�R�̒����B";
-		mes "���Ƃ��ƍz�R��";
-		mes "���Ԃ����肾��������ȁB";
-		mes "�]�v�Ȏ�Ԃ��Ȃ������B";
+		mes "[アイアット・ワープ]";
+		mes "そうか……鉱石は鉱山の中か。";
+		mes "もともと鉱山は";
+		mes "取り返すつもりだったからな。";
+		mes "余計な手間が省けたさ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�悵�A���͂����܂ł��B";
-		mes "���ꂩ�狍���c�̑|����";
-		mes "�z�R�̒D�҂Ɉڂ�B";
+		mes "[アイアット・ワープ]";
+		mes "よし、交渉はここまでだ。";
+		mes "これから牛賊団の掃討と";
+		mes "鉱山の奪還に移る。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����炭����ŋ����c�̃{�X��";
-		mes "�A���o�[�g�ɂȂ邾�낤�B";
-		mes "�������Ƃ��ƃA���o�[�g��";
-		mes "�{�X�̊킶��Ȃ��B";
+		mes "[アイアット・ワープ]";
+		mes "おそらくこれで牛賊団のボスは";
+		mes "アルバートになるだろう。";
+		mes "だがもともとアルバートは";
+		mes "ボスの器じゃない。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "����ɃW���j�[�ɏ]���Ă���";
-		mes "�������܂Ƃ߂�ɂ�";
-		mes "�܂��܂����Ԃ������邾�낤�B";
-		mes "�����������A���ȂǉG���̏O���B";
+		mes "[アイアット・ワープ]";
+		mes "それにジョニーに従っていた";
+		mes "部下をまとめるには";
+		mes "まだまだ時間がかかるだろう。";
+		mes "頭を失った連中など烏合の衆だ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�嗤����`���҂̎󂯓����";
-		mes "����Ɋ��������A";
-		mes "���̑|����";
-		mes "��O����Ƃ��悤�B";
+		mes "[アイアット・ワープ]";
+		mes "大陸から冒険者の受け入れを";
+		mes "さらに活性化し、";
+		mes "やつらの掃討に";
+		mes "専念するとしよう。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����܂ł��Ƃ���肭�i�񂾂̂�";
-		mes "�N�̂��������B���b�ɂȂ����ȁB";
-		mes "��̎n���͉�X�ɔC���Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "ここまでことが上手く進んだのは";
+		mes "君のおかげだ。世話になったな。";
+		mes "後の始末は我々に任せてくれ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�N�͂��̍��̌��J�҂��B";
-		mes "�\���ȕ�V���󂯎�錠��������B";
-		mes "��X�̒��̂��߂�";
-		mes "�s�����Ă��ꂽ�N�ɑ���";
-		mes "�v���[���g���B";
+		mes "[アイアット・ワープ]";
+		mes "君はこの作戦の功労者だ。";
+		mes "十分な報酬を受け取る権利がある。";
+		mes "我々の町のために";
+		mes "尽くしてくれた君に送る";
+		mes "プレゼントだ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�h���̃��b�N���b�W�o�b�W��";
-		mes "���_�̃��b�N���b�W�o�b�W�A";
-		mes "�ǂ��炩��I��ł���B";
+		mes "[アイアット・ワープ]";
+		mes "栄光のロックリッジバッジと";
+		mes "名誉のロックリッジバッジ、";
+		mes "どちらかを選んでくれ。";
 		while(1) {
 			next;
-			switch(select("�h���̃��b�N���b�W�o�b�W","���_�̃��b�N���b�W�o�b�W","���\�𕷂�")) {
+			switch(select("栄光のロックリッジバッジ","名誉のロックリッジバッジ","性能を聞く")) {
 			case 1:
 				set '@gain,28557;
 				break;
@@ -3163,89 +3163,89 @@ har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
 				set '@gain,28556;
 				break;
 			case 3:
-				mes "[�A�C�A�b�g�E���[�v]";
-				mes "���ꂼ��̐��\�͎��̒ʂ肾�B";
+				mes "[アイアット・ワープ]";
+				mes "それぞれの性能は次の通りだ。";
 				next;
-				mes "[�h���̃��b�N���b�W�o�b�W]";
-				mes "�@";
-				mes "�����E���@�U����";
-				mes "�^����_���[�W + 6%";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "5�b����HP + 50 , SP + 5";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "[���_�̃��b�N���b�W�o�b�W]";
-				mes "�Ƌ��ɑ������A�ǉ���";
-				mes "�����E���@�U����";
-				mes "�^����_���[�W + 6%";
-				mes "�r������ - 10%";
-				mes "�X�L���f�B���C - 5%";
-				mes "5�b����HP + 100 , SP + 10";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "[�h���̃��b�N���b�W�o�b�W]";
-				mes "��NPC���p�A�q�ɂւ̈ړ��̂�";
-				mes "�\�ł�";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "�n�� : �A�N�Z�T���[(1)";
-				mes "�h�� : 0";
-				mes "�d�� : 10";
-				mes "�v�����x�� : 100";
-				mes "���� : �S�Ă̐E��";
+				mes "[栄光のロックリッジバッジ]";
+				mes "　";
+				mes "物理・魔法攻撃で";
+				mes "与えるダメージ + 6%";
+				mes "―――――――――――――";
+				mes "5秒毎にHP + 50 , SP + 5";
+				mes "―――――――――――――";
+				mes "[名誉のロックリッジバッジ]";
+				mes "と共に装備時、追加で";
+				mes "物理・魔法攻撃で";
+				mes "与えるダメージ + 6%";
+				mes "詠唱時間 - 10%";
+				mes "スキルディレイ - 5%";
+				mes "5秒毎にHP + 100 , SP + 10";
+				mes "―――――――――――――";
+				mes "[栄光のロックリッジバッジ]";
+				mes "はNPC売却、倉庫への移動のみ";
+				mes "可能です";
+				mes "―――――――――――――";
+				mes "系列 : アクセサリー(1)";
+				mes "防御 : 0";
+				mes "重量 : 10";
+				mes "要求レベル : 100";
+				mes "装備 : 全ての職業";
 				next;
-				mes "[���_�̃��b�N���b�W�o�b�W]";
-				mes "�@";
-				mes "�r������ - 10%";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "�X�L���f�B���C - 5%";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "5�b����HP + 50 , SP + 5";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "[�h���̃��b�N���b�W�o�b�W]";
-				mes "�Ƌ��ɑ������A�ǉ���";
-				mes "�����E���@�U����";
-				mes "�^����_���[�W + 6%";
-				mes "�r������ - 10%";
-				mes "�X�L���f�B���C - 5%";
-				mes "5�b����HP + 100 , SP + 10";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "[���_�̃��b�N���b�W�o�b�W]";
-				mes "��NPC���p�A�q�ɂւ̈ړ��̂�";
-				mes "�\�ł�";
-				mes "�\�\�\�\�\�\�\�\�\�\�\�\�\";
-				mes "�n�� : �A�N�Z�T���[(2)";
-				mes "�h�� : 0";
-				mes "�d�� : 10";
-				mes "�v�����x�� : 100";
-				mes "���� : �S�Ă̐E��";
+				mes "[名誉のロックリッジバッジ]";
+				mes "　";
+				mes "詠唱時間 - 10%";
+				mes "―――――――――――――";
+				mes "スキルディレイ - 5%";
+				mes "―――――――――――――";
+				mes "5秒毎にHP + 50 , SP + 5";
+				mes "―――――――――――――";
+				mes "[栄光のロックリッジバッジ]";
+				mes "と共に装備時、追加で";
+				mes "物理・魔法攻撃で";
+				mes "与えるダメージ + 6%";
+				mes "詠唱時間 - 10%";
+				mes "スキルディレイ - 5%";
+				mes "5秒毎にHP + 100 , SP + 10";
+				mes "―――――――――――――";
+				mes "[名誉のロックリッジバッジ]";
+				mes "はNPC売却、倉庫への移動のみ";
+				mes "可能です";
+				mes "―――――――――――――";
+				mes "系列 : アクセサリー(2)";
+				mes "防御 : 0";
+				mes "重量 : 10";
+				mes "要求レベル : 100";
+				mes "装備 : 全ての職業";
 				continue;
 			}
 			break;
 		}
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes getitemname('@gain)+ "��";
-		mes "�����̂��H";
+		mes "[アイアット・ワープ]";
+		mes getitemname('@gain)+ "で";
+		mes "いいのか？";
 		next;
-		if(select("�͂�","������") == 2) {
-			mes "[�A�C�A�b�g�E���[�v]";
-			mes "�����~�������J�҂�";
-			mes "����Ȏ��ɂ͔Y�ނ̂��I";
-			mes "���͂͂͂͂��I";
-			mes "�܂��A�悭�l���Ă���B";
+		if(select("はい","いいえ") == 2) {
+			mes "[アイアット・ワープ]";
+			mes "町を救った功労者も";
+			mes "こんな時には悩むのか！";
+			mes "くははははっ！";
+			mes "まあ、よく考えてくれ。";
 			close2;
 			cutin "rock_worp",255;
 			end;
 		}
 		if(checkitemblank() == 0) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close2;
 			cutin "rock_cact02",255;
 			end;
 		}
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�󂯎���Ă���B";
-		mes "�N�ɂ͂��̎��i������B";
-		mes "�ւ��Ă������񂾂��H";
+		mes "[アイアット・ワープ]";
+		mes "受け取ってくれ。";
+		mes "君にはその資格がある。";
+		mes "誇ってもいいんだぞ？";
 		delquest 7804;
 		setquest 202040;
 		set ROCKRIDGE_1QUE,16;
@@ -3259,131 +3259,131 @@ har_in01.gat,20,30,5	script	�A�C�A�b�g�E���[�v#har_	10211,{
 		getexp 0,1000000,0;
 		getexp 0,1000000,0;
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����c�̖���";
-		mes "���ꂩ�痎�������Ă����Ǝv�����A";
-		mes "���b�N���b�W�ɂ͂܂��܂�";
-		mes "��������Ă���l��";
-		mes "�������񂢂�B";
+		mes "[アイアット・ワープ]";
+		mes "牛賊団の問題は";
+		mes "これから落ち着いていくと思うが、";
+		mes "ロックリッジにはまだまだ";
+		mes "問題を抱えている人が";
+		mes "たくさんいる。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����ǂ�������";
-		mes "�ނ����`���Ă���Ă���B";
-		mes "����ɗǂ�����";
-		mes "����邩������񂼁H";
+		mes "[アイアット・ワープ]";
+		mes "もし良かったら";
+		mes "彼らを手伝ってやってくれ。";
+		mes "お礼に良い物を";
+		mes "くれるかもしれんぞ？";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�L��ɂ���^ff0000�嗤�ē���^000000�Ȃ�";
-		mes "���̕ӂ̎���͏ڂ����͂����B";
-		mes "��������������";
-		mes "���������Ă݂Ă���B";
+		mes "[アイアット・ワープ]";
+		mes "広場にいる^ff0000大陸案内員^000000なら";
+		mes "その辺の事情は詳しいはずだ。";
+		mes "興味があったら";
+		mes "声をかけてみてくれ。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�N�͂��̃��b�N���b�W�ɂƂ���";
-		mes "�傫�ȍK�^���B";
-		mes "�����̎Ⴋ�p�Y��I";
-		mes "���M�������ē��X�ƕ����Ă���I";
-		mes "���ꂶ�Ⴀ�ȁI";
+		mes "[アイアット・ワープ]";
+		mes "君はこのロックリッジにとって";
+		mes "大きな幸運だ。";
+		mes "未来の若き英雄よ！";
+		mes "自信を持って堂々と歩いてくれ！";
+		mes "それじゃあな！";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	case 16:
 	case 17:
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�N�͂��̃��b�N���b�W�ɂƂ���";
-		mes "�傫�ȍK�^���B";
-		mes "�����̎Ⴋ�p�Y��I";
-		mes "���M�������ē��X�ƕ����Ă���I";
+		mes "[アイアット・ワープ]";
+		mes "君はこのロックリッジにとって";
+		mes "大きな幸運だ。";
+		mes "未来の若き英雄よ！";
+		mes "自信を持って堂々と歩いてくれ！";
 		close2;
 		cutin "rock_worp",255;
 		end;
 	}
 }
 
-har_in01.gat,14,24,5	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock01	10212,{
+har_in01.gat,14,24,5	script	イヴォカ・スクーディー::イヴォカ#rock01	10212,{
 	switch(ROCKRIDGE_1QUE) {
 	case 7:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�W���j�[�͊�ɂ͏o���܂��񂪁A";
-		mes "���g�̗��ꂪ�s���Ȃ̂�";
-		mes "�ԈႢ����܂���B";
+		mes "[イヴォカ・スクーディー]";
+		mes "ジョニーは顔には出しませんが、";
+		mes "自身の立場が不安なのは";
+		mes "間違いありません。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "���Ԃ��ĂԂ��߂Ƃ͂����A";
-		mes "�A���o�[�g�͂��̏ꂩ�瓦���܂����B";
+		mes "[イヴォカ・スクーディー]";
+		mes "仲間を呼ぶためとはいえ、";
+		mes "アルバートはあの場から逃げました。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�߂܂��邱�Ƃ��ł��܂������A";
-		mes "���͂킴�Ɠ���������ł��B";
-		mes "����������W���j�[��";
-		mes "�ǂ��������Ǝv���܂��H";
+		mes "[イヴォカ・スクーディー]";
+		mes "捕まえることもできましたが、";
+		mes "実はわざと逃がしたんです。";
+		mes "あれを見たジョニーは";
+		mes "どう感じたと思います？";
 		next;
-		menu "������u���ē��������؂�ҁH",-;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�܂��ɂ���ł��B";
-		mes "������҂��Ă͂���ł��傤�A";
-		mes "�������A�s�M�̎��";
-		mes "���ɐA�������܂����B";
-		mes "���Ƃ͏����͂�݂�������";
-		mes "�^�S�͂��[���Ȃ�܂��B";
+		menu "自分を置いて逃げた裏切り者？",-;
+		mes "[イヴォカ・スクーディー]";
+		mes "まさにそれです。";
+		mes "助けを待ってはいるでしょう、";
+		mes "しかし、不信の種は";
+		mes "既に植えつけられました。";
+		mes "あとは少し力を貸すだけで";
+		mes "疑心はより深くなります。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "^0000ff�u�A���o�[�g�̓{�X�̃W���j�[�𔄂�";
-		mes "�����������c�̃{�X�̍���";
-		mes "�������Ƃ��Ă���B�v^000000�ƁA";
-		mes "�W���j�[�Ɏv�����܂����ł��B";
-		mes "�悭����b����Ȃ��ł����H";
+		mes "[イヴォカ・スクーディー]";
+		mes "^0000ff「アルバートはボスのジョニーを売り";
+		mes "自分が牛賊団のボスの座に";
+		mes "着こうとしている。」^000000と、";
+		mes "ジョニーに思い込ませるんです。";
+		mes "よくある話じゃないですか？";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����ăA���o�[�g�ɂ�";
-		mes "^0000ff�W���j�[���ېg�̂��߂�";
-		mes "���Ԃ𗠐؂���^000000�Ɠ`�����ł��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そしてアルバートには";
+		mes "^0000ffジョニーが保身のために";
+		mes "仲間を裏切った^000000と伝えるんです。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "����ɁA�z�΂��z�R���A";
-		mes "�����v��Ȃ��ƃA���o�[�g�ɓ`���A";
-		mes "������̌��ޗ��ɂ�";
-		mes "���l���Ȃ��Ƌ����Ă���Ă��������B";
-		mes "�����Ƃ��͓��h����ł��傤�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "さらに、鉱石も鉱山も、";
+		mes "もう要らないとアルバートに伝え、";
+		mes "あちらの交渉材料には";
+		mes "価値がないと教えてやってください。";
+		mes "きっとやつらは動揺するでしょう。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "����܂ŋ����c��";
-		mes "�W���j�[���܂Ƃ߂Ă��܂����B";
-		mes "�܂Ƃߖ������؂���������";
-		mes "���������̗D�ʐ����Ȃ��Ȃ�����";
-		mes "�m��΁A���R�Ƃ��̌����ɂ�";
-		mes "�]�т�������͂��ł��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "これまで牛賊団は";
+		mes "ジョニーがまとめていました。";
+		mes "まとめ役が裏切ったうえに";
+		mes "自分たちの優位性がなくなったと";
+		mes "知れば、自然とやつらの結束にも";
+		mes "綻びが生じるはずです。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����Ȃ��Ă��܂���";
-		mes "�����c�ȂǉG���̏O�B";
-		mes "��͏��X�ɐ�͂�����Ă�����";
-		mes "���R�ƕ��󂷂�ł��傤�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そうなってしまえば";
+		mes "牛賊団など烏合の衆。";
+		mes "後は徐々に戦力を削っていけば";
+		mes "自然と崩壊するでしょう。";
 		next;
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�Ȃ�قǂȁB";
-		mes "�������W���j�[�ɉR��";
-		mes "�ǂ�����ĐM�����܂���H";
+		mes "[アイアット・ワープ]";
+		mes "なるほどな。";
+		mes "しかしジョニーに嘘を";
+		mes "どうやって信じ込ませる？";
 		next;
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����͎��ɔC���Ă��������B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そこは私に任せてください。";
 		next;
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�킩�����A�ǂ����낤�B";
-		mes "�R�X�e����������[�j�[��n����";
-		mes "�z�΂𔃂���낤�A";
-		mes "�Ƃ������������˂Ȃ������ȁI";
+		mes "[アイアット・ワープ]";
+		mes "わかった、良いだろう。";
+		mes "コステルだったらゼニーを渡して";
+		mes "鉱石を買い取ろう、";
+		mes "とか言いだしかねなかったな！";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���ꂶ��A�܂��̓W���j�[�̕�����";
-		mes "���|����Ƃ��邩�B";
-		mes "���O�͌��̂Ă�ꂽ����A";
-		mes "��]�����͖̂��ʂƓ`���Ă�낤�B";
+		mes "[アイアット・ワープ]";
+		mes "それじゃ、まずはジョニーの方から";
+		mes "取り掛かるとするか。";
+		mes "お前は見捨てられたから、";
+		mes "希望を持つのは無駄と伝えてやろう。";
 		delquest 7796;
 		setquest 7797;
 		set ROCKRIDGE_1QUE,8;
@@ -3392,15 +3392,15 @@ har_in01.gat,14,24,5	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock01	10212,{
 		end;
 	case 8:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "��肭�������͂��Ȃ�����ł��B";
-		mes "�W���j�[�ɍl����]�n��";
-		mes "�^���Ȃ��ŉ������B";
+		mes "[イヴォカ・スクーディー]";
+		mes "上手くいくかはあなた次第です。";
+		mes "ジョニーに考える余地を";
+		mes "与えないで下さい。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�W���j�[�͒n�����u���";
-		mes "�S������Ă��܂��B";
-		mes "���������܂��傤�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "ジョニーは地下留置場に";
+		mes "拘留されています。";
+		mes "早くいきましょう。";
 		close2;
 		cutin "rock_iboka_all",255;
 		end;
@@ -3410,26 +3410,26 @@ har_in01.gat,14,24,5	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock01	10212,{
 	case 12:
 	case 13:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�W���j�[�ɓn�����̂�";
-		mes "�����������U�̎莆�ł��B";
-		mes "���l�̕M�Ղ�^����̂�";
-		mes "���ӂȂ�ł��B";
-		mes "�P���Ȃ���Ƃ͎v���Ă��܂������A";
-		mes "��肭�����܂����ˁB";
+		mes "[イヴォカ・スクーディー]";
+		mes "ジョニーに渡したのは";
+		mes "私が書いた偽の手紙です。";
+		mes "他人の筆跡を真似るのは";
+		mes "得意なんです。";
+		mes "単純なやつだとは思っていましたが、";
+		mes "上手くいきましたね。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�z�R�̑O�ɂ������O��@���̂�";
-		mes "���̍��}�������ł��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "鉱山の前にある岩を三回叩くのが";
+		mes "やつらの合図だそうです。";
 		close2;
 		cutin "rock_iboka_all",255;
 		end;
 	case 14:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "���ʂ��������݂����ł��ˁI";
-		mes "�����W���j�[�ɋ����Ă��܂��傤�I";
-		mes "�ӂӂӂӂӁc�c�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "成果があったみたいですね！";
+		mes "早くジョニーに教えてやりましょう！";
+		mes "ふふふふふ……。";
 		close2;
 		cutin "rock_iboka_all",255;
 		end;
@@ -3437,174 +3437,174 @@ har_in01.gat,14,24,5	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock01	10212,{
 	case 16:
 	case 17:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����c�����ꂩ��ǂ����邩��";
-		mes "�e�Ղɑz���ł��܂��B";
-		mes "���x�c�̌P�����������Ȃ���΁B";
+		mes "[イヴォカ・スクーディー]";
+		mes "牛賊団がこれからどうするかは";
+		mes "容易に想像できます。";
+		mes "自警団の訓練を強化しなければ。";
 		close2;
 		cutin "rock_iboka_all",255;
 		end;
 	default:
 		cutin "rock_iboka_all",2;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����͕ۈ����������B";
-		mes "�ƍߎ҂�߂܂��Ă����ꏊ�ł��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "ここは保安官事務室。";
+		mes "犯罪者を捕まえておく場所です。";
 		close2;
 		cutin "rock_iboka_all",255;
 		end;
 	}
 }
 
-rockrdg1_q.gat,156,302,7	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock02	10212,{
+rockrdg1_q.gat,156,302,7	script	イヴォカ・スクーディー::イヴォカ#rock02	10212,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-rockrdg1_q.gat,153,303,5	script	�A�C�A�b�g�E���[�v#revt	10211,{
+rockrdg1_q.gat,153,303,5	script	アイアット・ワープ#revt	10211,{
 	if(ROCKRIDGE_1QUE != 5) {
 		cutin "rock_worp",0;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "���͐������B";
-		mes "�L���N�^�[��������";
-		mes "�\�ȍ�킾�����B";
+		mes "[アイアット・ワープ]";
+		mes "作戦は成功だ。";
+		mes "キャクター族だから";
+		mes "可能な作戦だった。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�����R�X�e���������炱�̍���";
-		mes "��肭�����Ȃ��������낤�ȁB";
-		mes "�ʎ��̂Ȃ��N����������";
-		mes "���̒��ӂ���������";
-		mes "�W�������񂾂낤�B";
+		mes "[アイアット・ワープ]";
+		mes "多分コステルだったらこの作戦は";
+		mes "上手くいかなかっただろうな。";
+		mes "面識のない君がいたから";
+		mes "やつらの注意がそっちに";
+		mes "集中したんだろう。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�Ƃɂ����A����ł���������̎D��";
-		mes "��ɓ���邱�Ƃ��ł����B";
-		mes "���Ƃ͂��̎D���ǂ��g�������ȁB";
+		mes "[アイアット・ワープ]";
+		mes "とにかく、これでこちらも交渉の札を";
+		mes "手に入れることができた。";
+		mes "あとはこの札をどう使うかだな。";
 		next;
-		mes "[�A�C�A�b�g�E���[�v]";
-		mes "�ł͕ۈ�����������";
-		mes "�߂邱�Ƃɂ��悤�B";
+		mes "[アイアット・ワープ]";
+		mes "では保安官事務室に";
+		mes "戻ることにしよう。";
 		next;
 		cutin "rock_worp",255;
-		mes "�]�ۈ�����������";
-		mes "�@�������܂����H�]";
+		mes "‐保安官事務室に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close2;
 			cutin "rock_worp",255;
 			end;
 		}
-		mes "�]���Ȃ��͕ۈ�����������";
-		mes "�@���������]";
+		mes "‐あなたは保安官事務室に";
+		mes "　向かった‐";
 		close2;
 		warp "har_in01.gat",18,18;
 		end;
 	}
-	unittalk "�A�C�A�b�g�E���[�v : �������񑩂̏ꏊ���B���낻�뎞�Ԃ̂͂������c�c�B",1;
+	unittalk "アイアット・ワープ : ここが約束の場所だ。そろそろ時間のはずだが……。",1;
 	if(!sleep2(3000)) end;
-	cloakoffnpc "�W���j�[�E�W�F�C���X#re";
+	cloakoffnpc "ジョニー・ジェイムス#re";
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �您�A�ۈ����B�҂������܂������H",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : よお、保安官。待たせちまったか？",1;
 	if(!sleep2(4000)) end;
-	emotion 1,"�W���j�[�E�W�F�C���X#re";
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �N�������́H�@�m���z�����Ă���悤�����H",1;
+	emotion 1,"ジョニー・ジェイムス#re";
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : 誰だこいつは？　知らん奴が来ているようだが？",1;
 	if(!sleep2(4000)) end;
-	cloakoffnpc "�A���o�[�g�E�t�H�[�h#re";
-	unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#re"),"�A���o�[�g�E�t�H�[�h : �{�X�A����ȂɑO�ɍs�������Ȃ���c�c�B",1;
+	cloakoffnpc "アルバート・フォード#re";
+	unittalk getnpcid(0,"アルバート・フォード#re"),"アルバート・フォード : ボス、そんなに前に行ったら危ないよ……。",1;
 	if(!sleep2(4000)) end;
-	unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#re"),"�A���o�[�g�E�t�H�[�h : �R�X�e�����Ă���Ȃ�����������H",1;
+	unittalk getnpcid(0,"アルバート・フォード#re"),"アルバート・フォード : コステルってあんなやつだったっけ？",1;
 	if(!sleep2(4000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �����A���͎s���̃R�X�e���ɗp������񂾁B�֌W�Ȃ��z�͎����ȁI",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : おい、俺は市長のコステルに用があるんだ。関係ない奴は失せな！",1;
 	if(!sleep2(4000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : ���������W���j�[�A�����̐搶�ɑ΂��Č��̂��������Ȃ��ĂȂ����H",1;
+	unittalk "アイアット・ワープ : おいおいジョニー、うちの先生に対して口のきき方がなってないぞ？",1;
 	if(!sleep2(4000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �����A�ۈ����B�����͒N�Ȃ񂾁H�@�s���ƈꏏ�ɗ����ƌ������͂������I",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : おい、保安官。あいつは誰なんだ？　市長と一緒に来いと言ったはずだぞ！",1;
 	if(!sleep2(6000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �z�΂ƍz�R��Ԃ��ė~�����Ȃ��̂��H�@������H",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : 鉱石と鉱山を返して欲しくないのか？　ああん？",1;
 	if(!sleep2(4000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : ����̌����̓R�X�e���ł͂Ȃ��B�����s���ł���搶�����邱�ƂɂȂ����I",1;
+	unittalk "アイアット・ワープ : 今回の交渉役はコステルではない。次期市長である先生がすることになった！",1;
 	if(!sleep2(6000)) end;
-	emotion 5,"�W���j�[�E�W�F�C���X#re";
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �����s�����ƁH�@�R�X�e���߁A���������悤�Ƃ΂��肵�Ă���Ƃ͕��������A���ɓ����o�����̂��H�@�͂͂͂͂́I",1;
+	emotion 5,"ジョニー・ジェイムス#re";
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : 次期市長だと？　コステルめ、いつも逃げようとばかりしているとは聞いたが、ついに逃げ出したのか？　ははははは！",1;
 	if(!sleep2(6000)) end;
-	emotion 9,"�A���o�[�g�E�t�H�[�h#re";
-	unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#re"),"�A���o�[�g�E�t�H�[�h : ������̌����Ă邱�Ƃ͖{���ł��傤���H",1;
+	emotion 9,"アルバート・フォード#re";
+	unittalk getnpcid(0,"アルバート・フォード#re"),"アルバート・フォード : そいつらの言ってることは本当でしょうか？",1;
 	if(!sleep2(4000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : ����ȉR�����ĉ��̓�������H�@�ǂ����炳�����Ƃ������̗v���������ȁB",1;
+	unittalk "アイアット・ワープ : こんな嘘をついて何の得がある？　良いからさっさとそっちの要求を言いな。",1;
 	if(!sleep2(6000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : �v����{�ЂŌ������Ȃ���Ȃ��̂��B���񂽂炵�Ă�Ƃ��ɂȂ邩�킩��񂼁I",1;
+	unittalk "アイアット・ワープ : 要求を本社で検討しなきゃならんのだ。ちんたらしてるといつになるかわからんぞ！",1;
 	if(!sleep2(6000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �������A�G�������͂��O�̂��̐��i�͋C�ɓ����Ă邺�B�������A�������̗v���́c�c",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : くくく、敵だが俺はお前のその性格は気に入ってるぜ。いいか、俺たちの要求は……",1;
 	if(!sleep2(5000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : �����I",1;
+	unittalk "アイアット・ワープ : 今だ！",1;
 	if(!sleep2(500)) end;
-	misceffect 563,"�W���j�[�E�W�F�C���X#re";
-	cloakoffnpc "�K���}��#rock01";
-	cloakoffnpc "�K���}��#rock02";
-	cloakoffnpc "�K���}��#rock03";
-	cloakoffnpc "�C���H�J#rock02";
-	unittalk getnpcid(0,"�C���H�J#rock02"),"�C���H�J�E�X�N�[�f�B�[ : �����ȁI",1;
+	misceffect 563,"ジョニー・ジェイムス#re";
+	cloakoffnpc "ガンマン#rock01";
+	cloakoffnpc "ガンマン#rock02";
+	cloakoffnpc "ガンマン#rock03";
+	cloakoffnpc "イヴォカ#rock02";
+	unittalk getnpcid(0,"イヴォカ#rock02"),"イヴォカ・スクーディー : 動くな！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�K���}��#rock01"),"�L���N�^�[���̃K���}�� : �����ȁI",1;
-	unittalk getnpcid(0,"�K���}��#rock02"),"�L���N�^�[���̃K���}�� : �N�����͊��S�ɕ�͂��ꂽ�I",1;
-	unittalk getnpcid(0,"�K���}��#rock03"),"�L���N�^�[���̃K���}�� : �����ȁI",1;
+	unittalk getnpcid(0,"ガンマン#rock01"),"キャクター族のガンマン : 動くな！",1;
+	unittalk getnpcid(0,"ガンマン#rock02"),"キャクター族のガンマン : 君たちは完全に包囲された！",1;
+	unittalk getnpcid(0,"ガンマン#rock03"),"キャクター族のガンマン : 動くな！",1;
 	if(!sleep2(2000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �ȁc�c�Ȃ񂾂���́I",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : な……なんだこれは！",1;
 	if(!sleep2(2000)) end;
-	unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#re"),"�A���o�[�g�E�t�H�[�h : �{�c�c�{�X�I",1;
+	unittalk getnpcid(0,"アルバート・フォード#re"),"アルバート・フォード : ボ……ボス！",1;
 	if(!sleep2(2000)) end;
-	misceffect 563,"�W���j�[�E�W�F�C���X#re";
-	unittalk getnpcid(0,"�K���}��#rock01"),"�L���N�^�[���̃K���}�� : �����ȁI",1;
-	unittalk getnpcid(0,"�K���}��#rock02"),"�L���N�^�[���̃K���}�� : �����ȁI",1;
-	unittalk getnpcid(0,"�K���}��#rock03"),"�L���N�^�[���̃K���}�� : �����ȁI",1;
+	misceffect 563,"ジョニー・ジェイムス#re";
+	unittalk getnpcid(0,"ガンマン#rock01"),"キャクター族のガンマン : 動くな！",1;
+	unittalk getnpcid(0,"ガンマン#rock02"),"キャクター族のガンマン : 動くな！",1;
+	unittalk getnpcid(0,"ガンマン#rock03"),"キャクター族のガンマン : 動くな！",1;
 	if(!sleep2(2000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : �����������c�c",1;
+	unittalk "アイアット・ワープ : くっくっく……",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�C���H�J#rock02"),"�C���H�J�E�X�N�[�f�B�[ : �v��ʂ�I",1;
+	unittalk getnpcid(0,"イヴォカ#rock02"),"イヴォカ・スクーディー : 計画通り！",1;
 	if(!sleep2(2000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �L���N�^�[���߁I�@�T�{�e���ɋU�����Ă����̂�!!",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : キャクター族め！　サボテンに偽装していたのか!!",1;
 	if(!sleep2(3000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �A���o�[�g�I�@�ڂ����ƌ��Ă��Ȃ��ŉ��Ƃ�����I",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : アルバート！　ぼさっと見ていないで何とかしろ！",1;
 	if(!sleep2(3000)) end;
-	unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#re"),"�A���o�[�g�E�t�H�[�h : �ȁA���Ԃ��Ă�ł��܂��I",1;
+	unittalk getnpcid(0,"アルバート・フォード#re"),"アルバート・フォード : な、仲間を呼んできます！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : ��!?",1;
-	cloakonnpc "�A���o�[�g�E�t�H�[�h#re";
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : 何!?",1;
+	cloakonnpc "アルバート・フォード#re";
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �����I�@�A���o�[�g!!�@������A�҂Ă�I",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : おい！　アルバート!!　ちょっ、待てよ！",1;
 	if(!sleep2(3000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : ���������W���j�[�B�@���O�̕����������Ă������H",1;
+	unittalk "アイアット・ワープ : おいおいジョニー。　お前の部下が逃げていくぞ？",1;
 	//if(!sleep2(100)) end;
-	unittalk getnpcid(0,"�C���H�J#rock02"),"�C���H�J�E�X�N�[�f�B�[ : ���S�Ɍ��̂Ă�ꂽ�悤���ȁB",1;
+	unittalk getnpcid(0,"イヴォカ#rock02"),"イヴォカ・スクーディー : 完全に見捨てられたようだな。",1;
 	if(!sleep2(3000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : �݂�ȁI�@�悭����Ă��ꂽ�I�@�����A�A�s���I",1;
+	unittalk "アイアット・ワープ : みんな！　よくやってくれた！　さあ、連行だ！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�K���}��#rock01"),"�L���N�^�[���̃K���}�� : �A�s���I",1;
-	unittalk getnpcid(0,"�K���}��#rock02"),"�L���N�^�[���̃K���}�� : �߂܂������I",1;
-	unittalk getnpcid(0,"�K���}��#rock03"),"�L���N�^�[���̃K���}�� : ��l��������I",1;
+	unittalk getnpcid(0,"ガンマン#rock01"),"キャクター族のガンマン : 連行だ！",1;
+	unittalk getnpcid(0,"ガンマン#rock02"),"キャクター族のガンマン : 捕まえたぞ！",1;
+	unittalk getnpcid(0,"ガンマン#rock03"),"キャクター族のガンマン : 大人しくしろ！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �N�\�I�@���̂܂܍z�΂������Ă������̂�!?",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : クソ！　このまま鉱石を失ってもいいのか!?",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�K���}��#rock01"),"�L���N�^�[���̃K���}�� : ����Ȃ��Ƃ͒m���I",1;
+	unittalk getnpcid(0,"ガンマン#rock01"),"キャクター族のガンマン : そんなことは知らん！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�K���}��#rock02"),"�L���N�^�[���̃K���}�� : �������͂����A�s���邾�����I",1;
+	unittalk getnpcid(0,"ガンマン#rock02"),"キャクター族のガンマン : 私たちはただ連行するだけだ！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�K���}��#rock03"),"�L���N�^�[���̃K���}�� : �Â��ɂ���I",1;
+	unittalk getnpcid(0,"ガンマン#rock03"),"キャクター族のガンマン : 静かにしろ！",1;
 	if(!sleep2(2000)) end;
-	unittalk getnpcid(0,"�W���j�[�E�W�F�C���X#re"),"�W���j�[�E�W�F�C���X : �C�e�F�I�@����A�����ƒ��J�Ɉ����I",1;
+	unittalk getnpcid(0,"ジョニー・ジェイムス#re"),"ジョニー・ジェイムス : イテェ！　こら、もっと丁寧に扱え！",1;
 	if(!sleep2(1000)) end;
-	unittalk getnpcid(0,"�C���H�J#rock02"),"�C���H�J�E�X�N�[�f�B�[ : �s�����I�@�݂�ȁI",1;
+	unittalk getnpcid(0,"イヴォカ#rock02"),"イヴォカ・スクーディー : 行くぞ！　みんな！",1;
 	if(!sleep2(2000)) end;
-	cloakonnpc "�K���}��#rock01";
-	cloakonnpc "�K���}��#rock02";
-	cloakonnpc "�K���}��#rock03";
-	cloakonnpc "�C���H�J#rock02";
-	cloakonnpc "�W���j�[�E�W�F�C���X#re";
+	cloakonnpc "ガンマン#rock01";
+	cloakonnpc "ガンマン#rock02";
+	cloakonnpc "ガンマン#rock03";
+	cloakonnpc "イヴォカ#rock02";
+	cloakonnpc "ジョニー・ジェイムス#re";
 	if(!sleep2(2000)) end;
-	unittalk "�A�C�A�b�g�E���[�v : ���͐������B���������߂낤���B",1;
+	unittalk "アイアット・ワープ : 作戦は成功だ。私たちも戻ろうか。",1;
 	delquest 7795;
 	setquest 7796;
 	set ROCKRIDGE_1QUE,6;
@@ -3612,231 +3612,231 @@ rockrdg1_q.gat,153,303,5	script	�A�C�A�b�g�E���[�v#revt	10211,{
 	end;
 }
 
-rockrdg1_q.gat,160,306,3	script	�W���j�[�E�W�F�C���X#re	10213,{
+rockrdg1_q.gat,160,306,3	script	ジョニー・ジェイムス#re	10213,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-rockrdg1_q.gat,156,306,5	script	�L���N�^�[���̃K���}��::�K���}��#rock01	10212,{
+rockrdg1_q.gat,156,306,5	script	キャクター族のガンマン::ガンマン#rock01	10212,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-rockrdg1_q.gat,164,306,3	script	�L���N�^�[���̃K���}��::�K���}��#rock02	10212,{
+rockrdg1_q.gat,164,306,3	script	キャクター族のガンマン::ガンマン#rock02	10212,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-rockrdg1_q.gat,161,302,1	script	�L���N�^�[���̃K���}��::�K���}��#rock03	10212,{
+rockrdg1_q.gat,161,302,1	script	キャクター族のガンマン::ガンマン#rock03	10212,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-rockrdg1_q.gat,168,306,3	script	�A���o�[�g�E�t�H�[�h#re	10214,{
+rockrdg1_q.gat,168,306,3	script	アルバート・フォード#re	10214,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-har_in01.gat,89,26,5	script	�W���j�[�E�W�F�C���X#ha	10213,{
+har_in01.gat,89,26,5	script	ジョニー・ジェイムス#ha	10213,{
 	switch(ROCKRIDGE_1QUE) {
 	case 8:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�������߁I�@�n���֗�����I";
-		mes "�悭�����ɖʂ��o�����ȁI";
-		cloakoffnpc "�C���H�J#rock03";
+		mes "[ジョニー・ジェイムス]";
+		mes "汚いやつらめ！　地獄へ落ちろ！";
+		mes "よくここに面を出せたな！";
+		cloakoffnpc "イヴォカ#rock03";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����A�����̖����̎s���l�Ɍ�������";
-		mes "���Ȃ񂾂��̌������́B";
-		mes "�킴�킴���O�ƌ������ɂ���";
-		mes "���ꂽ�񂾂��B";
+		mes "[イヴォカ・スクーディー]";
+		mes "おい、うちの未来の市長様に向かって";
+		mes "何なんだその言い方は。";
+		mes "わざわざお前と交渉をしにきて";
+		mes "くれたんだぞ。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "����ȕ����ɂ����̂Ă��A";
-		mes "�l���Ƃ��Ă����l�̂Ȃ�";
-		mes "���O�ɂ����������̃`�����X��";
-		mes "�����񂾁B���肪�����v���B";
+		mes "[イヴォカ・スクーディー]";
+		mes "こんな部下にも見捨てられ、";
+		mes "人質としても価値のない";
+		mes "お前にも等しく交渉のチャンスを";
+		mes "くれるんだ。ありがたく思え。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "��!?";
-		mes "�ǂ��������Ƃ��H";
+		mes "[ジョニー・ジェイムス]";
+		mes "何!?";
+		mes "どういうことだ？";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "��X�Ƃ��Ă͂������Ƃ��O��";
-		mes "�݂邵�Ă���Ă������񂾂��ˁB";
-		mes "�����Ȃ񂩓V�C���ǂ������x�����B";
+		mes "[イヴォカ・スクーディー]";
+		mes "我々としてはさっさとお前を";
+		mes "吊るしてやってもいいんだがね。";
+		mes "今日なんか天気も良いし丁度いい。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����̎s���l�I";
-		mes "����Ȃ�ɍ\���Ă��K�v��";
-		mes "�Ȃ��ł���I";
-		mes "�������Ƃ�����Ⴂ�܂��傤�I";
+		mes "[イヴォカ・スクーディー]";
+		mes "未来の市長様！";
+		mes "こんなやつに構ってやる必要は";
+		mes "ないですよ！";
+		mes "さっさとやっちゃいましょう！";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "����������킯�̂킩��񂱂Ƃ�";
-		mes "�����Ă��邪�A��̉��Ȃ񂾁B";
-		mes "�����������񂾁H";
+		mes "[ジョニー・ジェイムス]";
+		mes "さっきからわけのわからんことを";
+		mes "言っているが、一体何なんだ。";
+		mes "何があったんだ？";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�A���o�[�g���V����";
-		mes "�����c�̃{�X�ɂȂ����񂾁B";
-		mes "���O�͌��̂Ă�ꂽ�񂾂�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "アルバートが新しく";
+		mes "牛賊団のボスになったんだ。";
+		mes "お前は見捨てられたんだよ。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�́H";
-		mes "�����Ȃ艽�������������Ǝv���΁c�c";
-		mes "����ȋY����M�����邩�I";
+		mes "[ジョニー・ジェイムス]";
+		mes "は？";
+		mes "いきなり何を言いだすかと思えば……";
+		mes "そんな戯言を信じられるか！";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�{�����Ƃ��B";
-		mes "���ہA�ނ͌N�����̂Ă�";
-		mes "����������Ȃ����B";
+		mes "[イヴォカ・スクーディー]";
+		mes "本当だとも。";
+		mes "実際、彼は君を見捨てて";
+		mes "逃げたじゃないか。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "……。";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����ĒD�����z�΂𔃂�����";
-		mes "�����Ă����񂾁B";
-		mes "���ꂪ�A���o�[�g����̎莆���B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そして奪った鉱石を買い取れと";
+		mes "言ってきたんだ。";
+		mes "これがアルバートからの手紙だ。";
 		next;
 		cutin "rock_iboka_all",255;
-		mes "�]�C���H�J�̓W���j�[��";
-		mes "�@�莆��n�����B";
-		mes "�@�����������A���o�[�g�̎莆�Ƃ�";
-		mes "�@�����Ⴄ�悤���]";
+		mes "‐イヴォカはジョニーに";
+		mes "　手紙を渡した。";
+		mes "　さっき見たアルバートの手紙とは";
+		mes "　少し違うようだ‐";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "����́c�c";
-		mes "�m���ɃA���o�[�g�̕������B";
-		mes "����ȃo�J�ȁc�c�I";
+		mes "[ジョニー・ジェイムス]";
+		mes "これは……";
+		mes "確かにアルバートの文字だ。";
+		mes "そんなバカな……！";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�����˂��c�c";
-		mes "���̖�Y�A�Ԃ��E���Ă��I";
+		mes "[ジョニー・ジェイムス]";
+		mes "許せねぇ……";
+		mes "あの野郎、ぶっ殺してやる！";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "����Ȃ킯�ŁA";
-		mes "���O�ɐl���Ƃ��Ẳ��l��";
-		mes "�����Ȃ����킯���B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そんなわけで、";
+		mes "お前に人質としての価値は";
+		mes "無くなったわけだ。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "���̂܂܂����Ŗ��ʔт�";
-		mes "�H�킹�Ă����̂��ܑ̂Ȃ����A";
-		mes "�������ƍق����܂����A";
-		mes "�Ƃ������ƂɂȂ����񂾂��c�c�B";
+		mes "[イヴォカ・スクーディー]";
+		mes "このままここで無駄飯を";
+		mes "食わせておくのも勿体ないし、";
+		mes "さっさと裁いちまおう、";
+		mes "ということになったんだが……。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "……。";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "���̖����̎s���l��";
-		mes "���܂�ɂ�����Ȃ��O��";
-		mes "�Ō�̃`�����X��";
-		mes "�^���Ă��Ƃ����񂾁B";
+		mes "[イヴォカ・スクーディー]";
+		mes "この未来の市長様が";
+		mes "あまりにも哀れなお前に";
+		mes "最後のチャンスを";
+		mes "与えてやるというんだ。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�`�����X���Ɓc�c�H";
+		mes "[ジョニー・ジェイムス]";
+		mes "チャンスだと……？";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�������B";
-		mes "�W���j�[�A";
-		mes "�������O���z�΂̏ꏊ��";
-		mes "�����Ă����΁A";
-		mes "��X�͋��𕥂킸��";
-		mes "�z�΂����߂����Ƃ��ł���B";
+		mes "[イヴォカ・スクーディー]";
+		mes "そうだ。";
+		mes "ジョニー、";
+		mes "もしお前が鉱石の場所を";
+		mes "教えてくれれば、";
+		mes "我々は金を払わずに";
+		mes "鉱石を取り戻すことができる。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����A�A���o�[�g����̒�Ă�";
-		mes "���܂�ǂ��b�ł͂Ȃ��B";
-		mes "������Ƃ��Ă�";
-		mes "�o���邾�������x���킸��";
-		mes "�z�΂����߂������B";
+		mes "[イヴォカ・スクーディー]";
+		mes "正直、アルバートからの提案は";
+		mes "あまり良い話ではない。";
+		mes "こちらとしては";
+		mes "出来るだけ金を支払わずに";
+		mes "鉱石を取り戻したい。";
 		next;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�����ĉ�X�ɋ��͂��Ă��ꂽ��";
-		mes "�{���Ȃ�΍�������";
-		mes "�݂邳��Ă����������Ȃ�";
-		mes "���O�̍߂��y�����Ă��A";
-		mes "�Ƃ������Ƃ��B�ǂ����H";
+		mes "[イヴォカ・スクーディー]";
+		mes "そして我々に協力してくれたら";
+		mes "本来ならば今すぐに";
+		mes "吊るされてもおかしくない";
+		mes "お前の罪を軽くしてやる、";
+		mes "ということだ。どうだ？";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "……。";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�l���Ă��鎞�Ԃ͂Ȃ��B";
-		mes "�������ԓ�����B";
+		mes "[イヴォカ・スクーディー]";
+		mes "考えている時間はない。";
+		mes "今すぐ返答しろ。";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "……。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�킩�����c�c�B";
-		mes "�����ЂƂ���������B";
+		mes "[ジョニー・ジェイムス]";
+		mes "わかった……。";
+		mes "だがひとつ条件がある。";
 		next;
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�Ȃ񂾁H";
+		mes "[イヴォカ・スクーディー]";
+		mes "なんだ？";
 		next;
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�A���o�[�g�c�c";
-		mes "���̗��؂�҂��n�����Ă���B";
+		mes "[ジョニー・ジェイムス]";
+		mes "アルバート……";
+		mes "あの裏切り者を始末してくれ。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "������������o���Ƃ��A";
-		mes "������������";
-		mes "���̋��ꏊ���Ȃ��Ȃ����܂��B";
+		mes "[ジョニー・ジェイムス]";
+		mes "俺がここから出たとき、";
+		mes "あいつがいたら";
+		mes "俺の居場所がなくなっちまう。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�B��Ƃɂ������Ăяo��";
-		mes "�Í��������Ă��B";
+		mes "[ジョニー・ジェイムス]";
+		mes "隠れ家にいるやつを呼び出す";
+		mes "暗号を教えてやる。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "^4d4dff�z�R�̋߂��ɂ���";
-		mes "�|�b�R���ƌ��̊J��������O��@��^000000�B";
-		mes "���ꂪ���}���B";
+		mes "[ジョニー・ジェイムス]";
+		mes "^4d4dff鉱山の近くにある";
+		mes "ポッコリと穴の開いた岩を三回叩け^000000。";
+		mes "それが合図だ。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�؋��Ƃ���^4d4dff�A���o�[�g�̂��Ă���^000000��";
-		mes "�����ė��Ă���B";
-		mes "�z�΂̏ꏊ��������̂͂��̌ゾ�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "証拠として^4d4dffアルバートのたてがみ^000000を";
+		mes "持って来てくれ。";
+		mes "鉱石の場所を教えるのはその後だ。";
 		next;
-		menu "�������낤",-;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�������I";
-		mes "�p���ς񂾂Ȃ炳�����ƍs���I";
-		mes "�A���o�[�g���n������܂ł�";
-		mes "���̊��������ȁI";
+		menu "いいだろう",-;
+		mes "[ジョニー・ジェイムス]";
+		mes "……くそっ！";
+		mes "用が済んだならさっさと行け！";
+		mes "アルバートを始末するまでは";
+		mes "その顔を見せるな！";
 		setquest 7798;
 		delquest 7797;
 		set ROCKRIDGE_1QUE,9;
@@ -3849,47 +3849,47 @@ har_in01.gat,89,26,5	script	�W���j�[�E�W�F�C���X#ha	10213,{
 	case 12:
 	case 13:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�p���ς񂾂Ȃ炳�����ƍs���I";
-		mes "�A���o�[�g���n������܂ł�";
-		mes "���̊��������ȁI";
+		mes "[ジョニー・ジェイムス]";
+		mes "用が済んだならさっさと行け！";
+		mes "アルバートを始末するまでは";
+		mes "その顔を見せるな！";
 		close2;
 		cutin "rock_james_all",255;
 		end;
 	case 14:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�A���o�[�g�͂ǂ��Ȃ���!?";
-		mes "���̔ڗ�ŉ������؂�҂́I";
+		mes "[ジョニー・ジェイムス]";
+		mes "アルバートはどうなった!?";
+		mes "あの卑劣で汚い裏切り者は！";
 		next;
-		menu "���Ă��݂�������",-;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�c�c�ԈႢ�Ȃ��B";
-		mes "����̓A���o�[�g�̂��̂��B";
+		menu "たてがみを見せる",-;
+		mes "[ジョニー・ジェイムス]";
+		mes "……間違いない。";
+		mes "これはアルバートのものだ。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "����蒷���������";
-		mes "�������ނ��тɌ����Ă���";
-		mes "����������A";
-		mes "���ǂ͐�ɐ������܂������I";
+		mes "[ジョニー・ジェイムス]";
+		mes "俺より長生きすると";
+		mes "酒を飲むたびに言っていた";
+		mes "やつだったが、";
+		mes "結局は先に逝っちまったか！";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�������낤�B�񑩒ʂ�A";
-		mes "�z�΂̉B���ꏊ�������Ă��B";
-		mes "�z�΂�^4d4dff�z�R�̏��~�@�̉�^000000���B";
-		mes "�̏Ⴕ�����~�@�A";
-		mes "���̉��ɒu���Ă���B";
+		mes "[ジョニー・ジェイムス]";
+		mes "いいだろう。約束通り、";
+		mes "鉱石の隠し場所を教えてやる。";
+		mes "鉱石は^4d4dff鉱山の昇降機の下^000000だ。";
+		mes "故障した昇降機、";
+		mes "その下に置いてある。";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "���O��݂����ȕn��Șr�ł�";
-		mes "�z�΂������ċA��̂�";
-		mes "��J���邾�낤�B";
-		mes "�܂����������撣��񂾂ȁI";
+		mes "[ジョニー・ジェイムス]";
+		mes "お前らみたいな貧弱な腕では";
+		mes "鉱石を持って帰るのは";
+		mes "苦労するだろう。";
+		mes "まあせいぜい頑張るんだな！";
 		next;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "���ꂩ��A���̕ۈ�����";
-		mes "�����Ɖ������͂������Ƃ�";
-		mes "�`���Ă�����I";
+		mes "[ジョニー・ジェイムス]";
+		mes "それから、あの保安官に";
+		mes "ちゃんと俺が協力したことを";
+		mes "伝えておけよ！";
 		delitem 25249,1;
 		setquest 7804;
 		delquest 7803;
@@ -3899,44 +3899,44 @@ har_in01.gat,89,26,5	script	�W���j�[�E�W�F�C���X#ha	10213,{
 		end;
 	case 15:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�������c�c";
-		mes "��������o����c�c";
-		mes "���̋��J�A";
-		mes "�K�����炵�Ă�邼�c�c�B";
+		mes "[ジョニー・ジェイムス]";
+		mes "くそっ……";
+		mes "ここから出たら……";
+		mes "この屈辱、";
+		mes "必ず晴らしてやるぞ……。";
 		close2;
 		cutin "rock_james_all",255;
 		end;
 	case 16:
 	case 17:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "���ɂȂ����牴�͎ߕ������񂾁H";
-		mes "���܂�E�ϗ͂����������Ȃ����B";
+		mes "[ジョニー・ジェイムス]";
+		mes "いつになったら俺は釈放されるんだ？";
+		mes "あまり忍耐力がある方じゃないぞ。";
 		close2;
 		cutin "rock_james_all",255;
 		end;
 	default:
 		cutin "rock_james_all",2;
-		mes "[�W���j�[�E�W�F�C���X]";
-		mes "�������߁I�@�n���֗�����I";
-		mes "�悭�����ɖʂ��o�����ȁI";
+		mes "[ジョニー・ジェイムス]";
+		mes "汚いやつらめ！　地獄へ落ちろ！";
+		mes "よくここに面を出せたな！";
 		close2;
 		cutin "rock_james_all",255;
 		end;
 	}
 }
 
-har_in01.gat,88,22,6	script	�C���H�J�E�X�N�[�f�B�[::�C���H�J#rock03	10212,{
+har_in01.gat,88,22,6	script	イヴォカ・スクーディー::イヴォカ#rock03	10212,{
 	if(ROCKRIDGE_1QUE == 9) {
 		cutin "rock_iboka_all",0;
-		mes "[�C���H�J�E�X�N�[�f�B�[]";
-		mes "�i�v���Ă����ȏ��";
-		mes "�@�P���ȓz�ł����ˁB";
-		mes "�@�ۈ����ɕ񍐂��܂��傤�B�j";
+		mes "[イヴォカ・スクーディー]";
+		mes "（思っていた以上に";
+		mes "　単純な奴でしたね。";
+		mes "　保安官に報告しましょう。）";
 		close2;
 	}
-	cloakonnpc "�C���H�J#rock03";
+	cloakonnpc "イヴォカ#rock03";
 	cutin "rock_iboka_all",255;
 	end;
 OnInit:
@@ -3944,98 +3944,98 @@ OnInit:
 	end;
 }
 
-harboro1.gat,288,193,5	script	�V���[���E�}�b�J�[�f�B#	10215,{
+harboro1.gat,288,193,5	script	ショーン・マッカーディ#	10215,{
 	switch(ROCKRIDGE_1QUE) {
 	case 10:
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "���Ȃ��������s�����\�����";
-		mes "�`���҂ł��ˁB";
-		mes "�͂��߂܂��āI";
-		mes "���͍z�R��Ɣǂ̃��[�_�[�A";
-		mes "�V���[���E�}�b�J�[�f�B�ł��B";
-		mes "�V���[���ƌĂ�ŉ������B";
+		mes "[ショーン・マッカーディ]";
+		mes "あなたが次期市長を噂される";
+		mes "冒険者ですね。";
+		mes "はじめまして！";
+		mes "私は鉱山作業班のリーダー、";
+		mes "ショーン・マッカーディです。";
+		mes "ショーンと呼んで下さい。";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�ۈ�������b�͕����Ă��܂���ˁH";
-		mes "���ׂ̈ɂ��������s�������Ă���";
-		mes "�ƕ����܂����B";
+		mes "[ショーン・マッカーディ]";
+		mes "保安官から話は聞いていますよね？";
+		mes "交渉の為にあちこち行き来している";
+		mes "と聞きました。";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�����c�ɐ�̂��ꂽ�z�R�̂�����";
-		mes "��J���Ă���悤�ł����A";
-		mes "����L���ɐi�߂��镐���";
-		mes "��������ł��B";
+		mes "[ショーン・マッカーディ]";
+		mes "牛賊団に占領された鉱山のせいで";
+		mes "苦労しているようですが、";
+		mes "交渉を有利に進められる武器を";
+		mes "見つけたんです。";
 		next;
-		menu "����͉��ł����H",-;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "����܂ō�Ƃ��Ă����ꏊ��";
-		mes "�����c�ɐ苒����Ă��܂��܂������A";
-		mes "�z�R�̕ʂ̏ꏊ�ɐV���ȍ̌@�ꏊ��";
-		mes "�������܂����I";
-		mes "�������A����܂ňȏ�ɑ傫�Ȍ��΂�";
-		mes "���܂��Ă�����ł��I";
+		menu "それは何ですか？",-;
+		mes "[ショーン・マッカーディ]";
+		mes "これまで作業していた場所は";
+		mes "牛賊団に占拠されてしまいましたが、";
+		mes "鉱山の別の場所に新たな採掘場所を";
+		mes "発見しました！";
+		mes "しかも、これまで以上に大きな原石が";
+		mes "埋まっていたんです！";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�������A�����c�̘A����";
-		mes "���̍̌@�ꏊ�ɋC�Â��Ă��܂���B";
-		mes "�V���ȍ̌@�ꏊ�͍��܂Ŏg�p���Ă���";
-		mes "�z�R�̓������班�����ꂽ�ꏊ��";
-		mes "�B���Ă���܂��B";
+		mes "[ショーン・マッカーディ]";
+		mes "もちろん、牛賊団の連中は";
+		mes "この採掘場所に気づいていません。";
+		mes "新たな採掘場所は今まで使用していた";
+		mes "鉱山の入口から少し離れた場所に";
+		mes "隠してあります。";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�����łȂ�ł����A";
-		mes "�V���ȍ̌@�ꏊ�ōz�΂��̌@���A";
-		mes "�A���o�[�g�Ɍ�������";
-		mes "���܂��傤�I";
+		mes "[ショーン・マッカーディ]";
+		mes "そこでなんですが、";
+		mes "新たな採掘場所で鉱石を採掘し、";
+		mes "アルバートに見せつけて";
+		mes "やりましょう！";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�������������Ă�邱�ƂŁA";
-		mes "���̎����Ă���؂�D��";
-		mes "���ɗ����Ȃ��Ȃ������Ƃւ�";
-		mes "�Ռ�������ɗ^���邱�Ƃ�";
-		mes "�ł���͂��ł��I";
+		mes "[ショーン・マッカーディ]";
+		mes "実物を見せつけてやることで、";
+		mes "やつらの持っている切り札が";
+		mes "役に立たなくなったことへの";
+		mes "衝撃を強烈に与えることが";
+		mes "できるはずです！";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�V���ȍz�R�̏o�������";
-		mes "����܂ł̍z�R�̓�����";
-		mes "��ɂ���܂��B";
-		mes "�ē�����̂ňꏏ�ɍs���܂��傤�B";
+		mes "[ショーン・マッカーディ]";
+		mes "新たな鉱山の出入り口は";
+		mes "これまでの鉱山の入口の";
+		mes "南にあります。";
+		mes "案内するので一緒に行きましょう。";
 		setquest 7800;
 		delquest 7799;
 		set ROCKRIDGE_1QUE,11;
 		next;
-		mes "�]�z�R�̓�����";
-		mes "�@�������܂����H�]";
+		mes "‐鉱山の入口に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ��͍z�R�̓�����";
-		mes "�@���������]";
+		mes "‐あなたは鉱山の入口に";
+		mes "　向かった‐";
 		close2;
 		warp "rockrdg2_q.gat",347,210;
 		end;
 	case 11:
 	case 12:
 	case 13:
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�V���ȍz�R�̏o�������";
-		mes "����܂ł̍z�R�̓�����";
-		mes "��ɂ���܂��B";
-		mes "�ē�����̂ňꏏ�ɍs���܂��傤�B";
+		mes "[ショーン・マッカーディ]";
+		mes "新たな鉱山の出入り口は";
+		mes "これまでの鉱山の入口の";
+		mes "南にあります。";
+		mes "案内するので一緒に行きましょう。";
 		next;
-		mes "�]�z�R�̓�����";
-		mes "�@�������܂����H�]";
+		mes "‐鉱山の入口に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ��͍z�R�̓�����";
-		mes "�@���������]";
+		mes "‐あなたは鉱山の入口に";
+		mes "　向かった‐";
 		close2;
 		warp "rockrdg2_q.gat",347,210;
 		end;
@@ -4043,75 +4043,75 @@ harboro1.gat,288,193,5	script	�V���[���E�}�b�J�[�f�B#	10215,{
 	case 15:
 	case 16:
 	case 17:
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�V�����z�R�̓����͐������ł��B";
-		mes "�����c�ɂ΂ꂽ��܂����̂�";
-		mes "��l�ŏ������i�߂Ă��܂��B";
+		mes "[ショーン・マッカーディ]";
+		mes "新しい鉱山の入口は整備中です。";
+		mes "牛賊団にばれたらまずいので";
+		mes "一人で少しずつ進めています。";
 		close;
 	default:
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�����c�̂����ł��΂炭�̊ԁA";
-		mes "�z�R�ł̎d���͏o���Ȃ��Ȃ�܂����B";
-		mes "�������@��T���Ȃ��Ɓc�c�B";
+		mes "[ショーン・マッカーディ]";
+		mes "牛賊団のせいでしばらくの間、";
+		mes "鉱山での仕事は出来なくなりました。";
+		mes "何か方法を探さないと……。";
 		close;
 	}
 }
 
-rockrdg2_q.gat,347,216,5	script	�V���[���E�}�b�J�[�f�B#	10215,{
+rockrdg2_q.gat,347,216,5	script	ショーン・マッカーディ#	10215,{
 	if(ROCKRIDGE_1QUE == 11) {
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "��������V�����z�R�ɓ���܂��B";
-		mes "�O�̂��߁A�O�񗈂�����";
-		mes "�������B���Ă����܂����B";
-		mes "���ɓ���܂����H";
+		mes "[ショーン・マッカーディ]";
+		mes "ここから新しい鉱山に入れます。";
+		mes "念のため、前回来た時に";
+		mes "入口を隠しておきました。";
+		mes "中に入りますか？";
 		next;
-		if(select("���������܂��傤","���������������K�v�ł�") == 2) {
-			mes "[�V���[���E�}�b�J�[�f�B]";
-			mes "�����ɒ������܂�̂͊댯�ł�����A";
-			mes "�����͑����ς܂��ĉ������B";
+		if(select("早くいきましょう","準備がもう少し必要です") == 2) {
+			mes "[ショーン・マッカーディ]";
+			mes "ここに長く留まるのは危険ですから、";
+			mes "準備は早く済まして下さい。";
 			close;
 		}
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�����ɋC�����Ă��������B";
+		mes "[ショーン・マッカーディ]";
+		mes "足元に気をつけてください。";
 		close2;
 		warp "rockmi2.gat",14,86;
 		end;
 	}
 	if(ROCKRIDGE_1QUE == 13) {
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�z�R�̓�����";
-		mes "����������������k�ɂ���܂��B";
+		mes "[ショーン・マッカーディ]";
+		mes "鉱山の入口は";
+		mes "ここからもう少し北にあります。";
 		next;
-		mes "�]�A���o�[�g������";
-		mes "�@�����c�̉B��Ƃ�";
-		mes "�@�������܂����H�]";
+		mes "‐アルバートがいる";
+		mes "　牛賊団の隠れ家に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]�A���o�[�g�̉B��Ƃ�";
-		mes "�@���������]";
+		mes "‐アルバートの隠れ家に";
+		mes "　向かった‐";
 		close2;
 		warp "rockrdg2_q.gat",281,306;
 		end;
 	}
 }
 
-rockmi2.gat,10,86,5	script	�V���[���E�}�b�J�[�f�B#	10215,{
+rockmi2.gat,10,86,5	script	ショーン・マッカーディ#	10215,{
 	if(ROCKRIDGE_1QUE == 11) {
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "����ł͂����ɍ�Ƃ��n�߂܂��傤���H";
-		mes "���̋������ɉ����čs���΍z��������܂��B";
-		mes "�����璆�ɂ���̂��z�΂�����K���ɑI���";
-		mes "^4d4dff���z�΂�1��^000000�@���ė��ĉ������B";
+		mes "[ショーン・マッカーディ]";
+		mes "それではすぐに作業を始めましょうか？";
+		mes "この狭い道に沿って行けば鉱脈があります。";
+		mes "そこら中にあるのが鉱石だから適当に選んで";
+		mes "^4d4dff紫鉱石を1個^000000掘って来て下さい。";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "���͏�ɖ߂鎞�Ɏg�����Ԃ�";
-		mes "�������Ă����܂��B";
-		mes "�Վ��Ή��Ƃ��č�������Ȃ̂�";
-		mes "���S�������������܂�����ˁB";
+		mes "[ショーン・マッカーディ]";
+		mes "私は上に戻る時に使う滑車を";
+		mes "調整しておきます。";
+		mes "臨時対応として作った物なので";
+		mes "安全性が少しおちますからね。";
 		setquest 7801;
 		delquest 7800;
 		set ROCKRIDGE_1QUE,12;
@@ -4119,273 +4119,273 @@ rockmi2.gat,10,86,5	script	�V���[���E�}�b�J�[�f�B#	10215,{
 	}
 	if(ROCKRIDGE_1QUE == 12) {
 		if(countitem(25247) < 1) {
-			mes "[�V���[���E�}�b�J�[�f�B]";
-			mes "�����璆�ɂ���̂��z�΂�����K���ɑI���";
-			mes "^4d4dff���z�΂�1��^000000�@���ė��ĉ������B";
+			mes "[ショーン・マッカーディ]";
+			mes "そこら中にあるのが鉱石だから適当に選んで";
+			mes "^4d4dff紫鉱石を1個^000000掘って来て下さい。";
 			close;
 		}
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "��͂�o���L�x�Ȗ`���҂�";
-		mes "�Ⴂ�܂��ˁI";
-		mes "�����Ă����Ȃ��̂ɁA";
-		mes "����Ȃɗǎ��̍z�΂�";
-		mes "�@���ė���Ȃ�āI";
+		mes "[ショーン・マッカーディ]";
+		mes "やはり経験豊富な冒険者は";
+		mes "違いますね！";
+		mes "教えてもいないのに、";
+		mes "こんなに良質の鉱石を";
+		mes "掘って来るなんて！";
 		next;
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "����Ȃ�A���o�[�g�������̂�";
-		mes "�\�����Ǝv���܂��B";
-		mes "�����s���܂��傤�I";
+		mes "[ショーン・マッカーディ]";
+		mes "これならアルバートを脅すのに";
+		mes "十分だと思います。";
+		mes "早く行きましょう！";
 		setquest 7802;
 		delquest 7801;
 		set ROCKRIDGE_1QUE,13;
 		next;
-		mes "�]�A���o�[�g������";
-		mes "�@�����c�̉B��Ƃ�";
-		mes "�@�������܂����H�]";
+		mes "‐アルバートがいる";
+		mes "　牛賊団の隠れ家に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		// ������
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "���ꂶ��オ��܂���`�B";
+		// 未調査
+		mes "[ショーン・マッカーディ]";
+		mes "それじゃ上がりますよ～。";
 		close2;
 		warp "rockrdg2_q.gat",348,214;
 		end;
 	}
 	if(ROCKRIDGE_1QUE == 13) {
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "�z�΂������܂������H";
-		mes "�O�ɏo�܂���H";
+		mes "[ショーン・マッカーディ]";
+		mes "鉱石を持ちましたか？";
+		mes "外に出ますよ？";
 		next;
-		if(select("�͂�","�܂��@���Ă��܂�") == 2) {
-			mes "[�V���[���E�}�b�J�[�f�B]";
-			mes "�����ő҂��Ă��܂��ˁB";
+		if(select("はい","また掘ってきます") == 2) {
+			mes "[ショーン・マッカーディ]";
+			mes "ここで待っていますね。";
 			close;
 		}
-		mes "[�V���[���E�}�b�J�[�f�B]";
-		mes "���ꂶ��オ��܂���`�B";
+		mes "[ショーン・マッカーディ]";
+		mes "それじゃ上がりますよ～。";
 		close2;
 		warp "rockrdg2_q.gat",348,214;
 		end;
 	}
 }
 
-rockrdg2_q.gat,279,313,3	script	�|�b�R���ƌ��̊J������#	10042,{
+rockrdg2_q.gat,279,313,3	script	ポッコリと穴の開いた岩#	10042,{
 	if(ROCKRIDGE_1QUE == 13) {
-		mes "�]�W���j�[�������Ă���";
-		mes "�@�B��Ƃ̊�̂悤���]";
+		mes "‐ジョニーが言っていた";
+		mes "　隠れ家の岩のようだ‐";
 		next;
-		if(select("�g���g��","�g���g���g��") == 1) {
-			mes "�]�����N���Ȃ������]";
+		if(select("トントン","トントントン") == 1) {
+			mes "‐何も起きなかった‐";
 			close;
 		}
-		cloakoffnpc "�A���o�[�g�E�t�H�[�h#ro";
-		unittalk getnpcid(0,"�A���o�[�g�E�t�H�[�h#ro"),"�A���o�[�g�E�t�H�[�h : �{�X�H�@�߂�ꂽ��ł����H",1;
+		cloakoffnpc "アルバート・フォード#ro";
+		unittalk getnpcid(0,"アルバート・フォード#ro"),"アルバート・フォード : ボス？　戻られたんですか？",1;
 		close;
 	}
-	mes "�]���͂����ɗp�͂Ȃ��]";
+	mes "‐今はここに用はない‐";
 	next;
-	mes "�]���b�N���b�W��";
-	mes "�@�߂�܂����H�]";
+	mes "‐ロックリッジに";
+	mes "　戻りますか？‐";
 	next;
-	if(select("�߂�","��߂�") == 2) {
-		mes "�]���Ȃ���";
-		mes "�@�v���Ƃǂ܂����]";
+	if(select("戻る","やめる") == 2) {
+		mes "‐あなたは";
+		mes "　思いとどまった‐";
 		close;
 	}
-	// ������
-	mes "�]���Ȃ��̓��b�N���b�W��";
-	mes "�@���������]";
+	// 未調査
+	mes "‐あなたはロックリッジに";
+	mes "　向かった‐";
 	close2;
 	warp "har_in01.gat",18,18;
 	end;
 }
 
-rockrdg2_q.gat,282,310,3	script	�A���o�[�g�E�t�H�[�h#ro	10214,{
+rockrdg2_q.gat,282,310,3	script	アルバート・フォード#ro	10214,{
 	if(ROCKRIDGE_1QUE == 13) {
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "���O�̓��b�N���b�W�́I";
-		mes "���̂��̈Í���m���Ă���I";
+		mes "[アルバート・フォード]";
+		mes "お前はロックリッジの！";
+		mes "何故この暗号を知っている！";
 		next;
-		if(select("�b�����ɗ���","���R��") == 2) {
-			mes "[�A���o�[�g�E�t�H�[�h]";
-			mes "���R���ƁH";
-			mes "�m���ɁA�P���ȈÍ�������";
-			mes "�����������Ƃ����邩�c�c�B";
-			mes "�����ƕ��G�ɂ��Ȃ��Ƃ����Ȃ��ȁB";
+		if(select("話をしに来た","偶然だ") == 2) {
+			mes "[アルバート・フォード]";
+			mes "偶然だと？";
+			mes "確かに、単調な暗号だから";
+			mes "こういうこともあるか……。";
+			mes "もっと複雑にしないといけないな。";
 			next;
-			cloakonnpc "�A���o�[�g�E�t�H�[�h#ro";
-			mes "�]�A���o�[�g�͍l���������Ȃ���";
-			mes "�@�B��Ƃɖ߂��Ă��܂����B";
-			mes "�@������x�Ăт������]";
+			cloakonnpc "アルバート・フォード#ro";
+			mes "‐アルバートは考え事をしながら";
+			mes "　隠れ家に戻ってしまった。";
+			mes "　もう一度呼びだそう‐";
 			close;
 		}
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�z�΂ƃ{�X�̌����̘b���ȁH";
-		mes "�����w�肵���͕̂ʂ̏ꏊ���B";
-		mes "�ǂ����Ă�����m���Ă���!?";
+		mes "[アルバート・フォード]";
+		mes "鉱石とボスの交換の話だな？";
+		mes "だが指定したのは別の場所だ。";
+		mes "どうしてここを知っている!?";
 		next;
-		menu "�����z�΂͕K�v�Ȃ�",-;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "���H";
-		mes "�ǂ��������Ƃ��H";
+		menu "もう鉱石は必要ない",-;
+		mes "[アルバート・フォード]";
+		mes "何？";
+		mes "どういうことだ？";
 		next;
-		if(select("�z�΂���������","����������������") == 2) {
-			mes "[�A���o�[�g�E�t�H�[�h]";
-			mes "���ꂪ�ǂ������H";
-			mes "�����֌W����̂��H";
+		if(select("鉱石を見せつける","所持金を見せつける") == 2) {
+			mes "[アルバート・フォード]";
+			mes "それがどうした？";
+			mes "何か関係あるのか？";
 			next;
-			mes "�]�����镨���ԈႦ���悤���B";
-			mes "�@������x�b�������悤�]";
+			mes "‐見せる物を間違えたようだ。";
+			mes "　もう一度話しかけよう‐";
 			close;
 		}
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�Ȃ񂾂��̍z�΂́H";
-		mes "�z�R�͉��������苒���Ă�̂ɁA";
-		mes "�ǂ����Ă���Ȃɂ�";
-		mes "�傫�ȍz�΂������Ă���H";
+		mes "[アルバート・フォード]";
+		mes "なんだその鉱石は？";
+		mes "鉱山は俺たちが占拠してるのに、";
+		mes "どうしてそんなにも";
+		mes "大きな鉱石を持っている？";
 		next;
-		menu "�V�����z�R��������",-;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "���I";
-		mes "�V�����z�R���ƁI";
+		menu "新しい鉱山を見つけた",-;
+		mes "[アルバート・フォード]";
+		mes "何！";
+		mes "新しい鉱山だと！";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "���A����ȁc�c�B";
-		mes "���ꂶ��z�΂��z�R���A";
-		mes "�Ȃ�̖��ɂ�";
-		mes "�����Ȃ�����Ȃ����c�c�B";
+		mes "[アルバート・フォード]";
+		mes "そ、そんな……。";
+		mes "それじゃ鉱石も鉱山も、";
+		mes "なんの役にも";
+		mes "立たないじゃないか……。";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "���A�������I";
-		mes "���ꂶ��A";
-		mes "�{�X�͂ǂ��Ȃ�H";
+		mes "[アルバート・フォード]";
+		mes "そ、そうだ！";
+		mes "それじゃ、";
+		mes "ボスはどうなる？";
 		next;
-		menu "�W���j�[�͗��؂���",-;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�ȂɁH";
-		mes "�{�X�����؂������ƁH";
-		mes "�ǂ��������Ƃ��I";
+		menu "ジョニーは裏切った",-;
+		mes "[アルバート・フォード]";
+		mes "なに？";
+		mes "ボスが裏切っただと？";
+		mes "どういうことだ！";
 		next;
-		mes "�]�A���o�[�g�Ɍ��̂Ă��A";
-		mes "�@�l���Ƃ��Ẳ��l��";
-		mes "�@�Ȃ��Ȃ������Ƃ�m�����W���j�[��";
-		mes "�@���񂾍z�΂̉B���ꏊ��";
-		mes "�@������̂ƈ��������ɁA";
-		mes "�@��������Ă����Ɠ`�����]";
+		mes "‐アルバートに見捨てられ、";
+		mes "　人質としての価値も";
+		mes "　なくなったことを知ったジョニーは";
+		mes "　盗んだ鉱石の隠し場所を";
+		mes "　教えるのと引き換えに、";
+		mes "　命乞いをしてきたと伝えた‐";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�n���ȁI";
-		mes "����͒��Ԃ��Ăтɍs�����߂ŁA";
-		mes "���̏�ł͍őP�̎肾�����I";
-		mes "�������̏�Ɏc������";
-		mes "��l�Ƃ��߂܂��Ă�������Ȃ����I";
+		mes "[アルバート・フォード]";
+		mes "馬鹿な！";
+		mes "あれは仲間を呼びに行くためで、";
+		mes "あの場では最善の手だった！";
+		mes "俺があの場に残ったら";
+		mes "二人とも捕まっていたじゃないか！";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�{�X�͉���M���Ă��Ȃ��̂��c�c�B";
-		mes "����A�҂Ă�H";
-		mes "�O�݂����ɂ��O�炪";
-		mes "�R�������Ă���񂶂�Ȃ����H";
-		mes "���ƃ{�X�̒���􂱂����āI";
+		mes "[アルバート・フォード]";
+		mes "ボスは俺を信じていないのか……。";
+		mes "いや、待てよ？";
+		mes "前みたいにお前らが";
+		mes "嘘を言っているんじゃないか？";
+		mes "俺とボスの仲を裂こうして！";
 		next;
-		if(select("�Ăяo�����Í��̂��Ƃ�`����","����Ȃ��Ƃ͂Ȃ�") == 2) {
-			mes "[�A���o�[�g�E�t�H�[�h]";
-			mes "������A����Ȃ��Ƃ͂���I";
-			mes "�����Ƃ����㩂��B";
-			mes "���O��̌������ƂȂ��";
-			mes "�M�����邩�I";
+		if(select("呼び出した暗号のことを伝える","そんなことはない") == 2) {
+			mes "[アルバート・フォード]";
+			mes "いいや、そんなことはある！";
+			mes "きっとこれは罠だ。";
+			mes "お前らの言うことなんて";
+			mes "信じられるか！";
 			next;
-			cloakonnpc "�A���o�[�g�E�t�H�[�h#ro";
-			mes "�]�A���o�[�g�͓{����";
-			mes "�@�B��Ƃɖ߂��Ă��܂����B";
-			mes "�@������x�Ăт������]";
+			cloakonnpc "アルバート・フォード#ro";
+			mes "‐アルバートは怒って";
+			mes "　隠れ家に戻ってしまった。";
+			mes "　もう一度呼びだそう‐";
 			close;
 		}
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�������c�c�I";
-		mes "���O�͂��̈Í���m���Ă����c�c";
-		mes "�Ƃ������Ƃ́I";
-		mes "�܂����A�{�X���������̂��H";
-		mes "�{���ɉ������𗠐؂����̂�!?";
+		mes "[アルバート・フォード]";
+		mes "そうだ……！";
+		mes "お前はあの暗号を知っていた……";
+		mes "ということは！";
+		mes "まさか、ボスが教えたのか？";
+		mes "本当に俺たちを裏切ったのか!?";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�������̓{�X�������悤��";
-		mes "���������Ă����̂ɁI";
-		mes "���Ԃ�M���Ȃ��Ŏ���������";
-		mes "�����̂т悤�Ƃ���Ȃ�āI";
+		mes "[アルバート・フォード]";
+		mes "俺たちはボスを助けようと";
+		mes "準備をしていたのに！";
+		mes "仲間を信じないで自分だけが";
+		mes "生きのびようとするなんて！";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�������傤�I";
-		mes "����Ȃ�͂����{�X����Ȃ��I";
-		mes "�������I�@�������I";
+		mes "[アルバート・フォード]";
+		mes "ちくしょう！";
+		mes "あんなやつはもうボスじゃない！";
+		mes "くそっ！　くそっ！";
 		next;
-		mes "�]�A���o�[�g�͂��Ȃ����";
-		mes "�@�n�ʂ�@���Ă���]";
+		mes "‐アルバートはうなだれて";
+		mes "　地面を叩いている‐";
 		next;
-		mes "�]�������ăA���o�[�g��";
-		mes "�@���Ă��݂��ꕔ�؂������]";
+		mes "‐隙をついてアルバートの";
+		mes "　たてがみを一部切り取った‐";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�Ȃ񂾁H";
-		mes "�G��񂶂�˂��I";
-		mes "�T�������I";
+		mes "[アルバート・フォード]";
+		mes "なんだ？";
+		mes "触るんじゃねえ！";
+		mes "鬱陶しい！";
 		next;
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�������I";
-		mes "����Ȃ��Ƃ��Ă�ꍇ����˂��B";
-		mes "�����݂�Ȃɒm�点�Ȃ��ƁI";
+		mes "[アルバート・フォード]";
+		mes "くそっ！";
+		mes "こんなことしてる場合じゃねえ。";
+		mes "早くみんなに知らせないと！";
 		next;
 		if(checkitemblank() == 0) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close;
 		}
-		mes "�]��肭�A���o�[�g��";
-		mes "�@�x�����Ƃ��ł����悤���B";
-		mes "�@���Ă��݂������Ē��֖߂낤�]";
+		mes "‐上手くアルバートを";
+		mes "　騙すことができたようだ。";
+		mes "　たてがみを持って町へ戻ろう‐";
 		getitem 25249,1;
 		setquest 7803;
 		delquest 7802;
 		set ROCKRIDGE_1QUE,14;
 		next;
-		mes "�]�ۈ�����������";
-		mes "�@�������܂����H�]";
+		mes "‐保安官事務室に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ��͕ۈ�����������";
-		mes "�@���������]";
+		mes "‐あなたは保安官事務室に";
+		mes "　向かった‐";
 		close2;
 		warp "har_in01.gat",18,18;
 		end;
 	}
 	if(ROCKRIDGE_1QUE == 14) {
-		mes "[�A���o�[�g�E�t�H�[�h]";
-		mes "�������I";
-		mes "����Ȃ��Ƃ��Ă�ꍇ����˂��B";
-		mes "�����݂�Ȃɒm�点�Ȃ��ƁI";
+		mes "[アルバート・フォード]";
+		mes "くそっ！";
+		mes "こんなことしてる場合じゃねえ。";
+		mes "早くみんなに知らせないと！";
 		next;
-		mes "�]��肭�A���o�[�g��";
-		mes "�@�x�����Ƃ��ł����悤���B";
-		mes "�@���Ă��݂������Ē��֖߂낤�]";
+		mes "‐上手くアルバートを";
+		mes "　騙すことができたようだ。";
+		mes "　たてがみを持って町へ戻ろう‐";
 		next;
-		mes "�]�ۈ�����������";
-		mes "�@�������܂����H�]";
+		mes "‐保安官事務室に";
+		mes "　向かいますか？‐";
 		next;
-		if(select("������","��߂�") == 2) {
-			mes "�]���Ȃ���";
-			mes "�@�v���Ƃǂ܂����]";
+		if(select("向かう","やめる") == 2) {
+			mes "‐あなたは";
+			mes "　思いとどまった‐";
 			close;
 		}
-		mes "�]���Ȃ��͕ۈ�����������";
-		mes "�@���������]";
+		mes "‐あなたは保安官事務室に";
+		mes "　向かった‐";
 		close2;
 		warp "har_in01.gat",18,18;
 		end;
@@ -4397,64 +4397,64 @@ OnInit:
 }
 
 //============================================================
-// �E�B�[�N���[�N�G�X�gNPC
+// ウィークリークエストNPC
 //------------------------------------------------------------
 
 //=======================================================
-// �r���p�C�v�|���N�G�X�gNPC
+// 排水パイプ掃除クエストNPC
 //-------------------------------------------------------
-harboro1.gat,138,157,5	script	�h�m�o��	854,{
+harboro1.gat,138,157,5	script	ドノバン	854,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�h�m�o��]";
-		mes "�{�y����n���ė���";
-		mes "�`���҂���ł���ˁH";
-		mes "���͂����̉��������Ǘ����Ă���";
-		mes "�h�m�o���ł��B";
+		mes "[ドノバン]";
+		mes "本土から渡って来た";
+		mes "冒険者さんですよね？";
+		mes "私はここの下水道を管理している";
+		mes "ドノバンです。";
 		next;
-		mes "[�h�m�o��]";
-		mes "�������ɏ�����肪�������Ă���";
-		mes "�l�肪�~�����Ƃ���ł����A";
-		mes "��ɋ����c�̖����������Ȃ���";
-		mes "����ǂ���ł͂���܂���B";
+		mes "[ドノバン]";
+		mes "下水道に少し問題が発生していて";
+		mes "人手が欲しいところですが、";
+		mes "先に牛賊団の問題を解決しないと";
+		mes "それどころではありません。";
 		close;
 	}
 	if(BaseLevel < 160) {
-		mes "[�h�m�o��]";
-		mes "�����c�̖���";
-		mes "�������Ă��ꂽ���ł��ˁI";
+		mes "[ドノバン]";
+		mes "牛賊団の問題を";
+		mes "解決してくれた方ですね！";
 		next;
-		mes "[�h�m�o��]";
-		mes "�������������������Ȃ���";
-		mes "���̈˗��͓���ł��ˁB";
-		mes "^ff0000BaseLv160^000000�ȏ�ɂȂ�����";
-		mes "�܂����Ă��������B";
+		mes "[ドノバン]";
+		mes "しかしもう少し強くないと";
+		mes "私の依頼は難しいですね。";
+		mes "^ff0000BaseLv160^000000以上になったら";
+		mes "また来てください。";
 		close;
 	}
 	if(checkquest(9458)) {
 		if(checkquest(9458) & 0x4) {
-			mes "[�h�m�o��]";
-			mes "�f�r���Y�t�B���K�[�Y��";
-			mes "�����ł����݂����ł��ˁB";
-			mes "���肪�Ƃ��������܂��B";
+			mes "[ドノバン]";
+			mes "デビルズフィンガーズを";
+			mes "除去できたみたいですね。";
+			mes "ありがとうございます。";
 			next;
-			mes "[�h�m�o��]";
-			mes "�����Y��ɂȂ��Ă��Ă��A";
-			mes "�������Ԃ��o�Ƃ������";
-			mes "���̂܂ɂ������āA";
-			mes "�p�C�v�ɂ������Ă��܂��B";
+			mes "[ドノバン]";
+			mes "今は綺麗になっていても、";
+			mes "少し時間が経つとあいつらは";
+			mes "いつのまにか沸いて、";
+			mes "パイプにくっついてきます。";
 			next;
 			if(!checkitemblank()) {
-				mes "�]�ו�������ȏ㎝�Ă܂���";
-				mes "�@�ו���1�ȏ�̋󂫂�";
-				mes "�@����Ă��������]";
+				mes "‐荷物をこれ以上持てません";
+				mes "　荷物に1個以上の空きを";
+				mes "　作ってください‐";
 				close;
 			}
-			mes "[�h�m�o��]";
-			mes "���������I�ɏ�������K�v��";
-			mes "�����ł��B";
-			mes "�܂��f�r���Y�t�B���K�[�Y��";
-			mes "�����Ă����珜����";
-			mes "��`���Ă��炦��Ə�����܂��B";
+			mes "[ドノバン]";
+			mes "だから定期的に除去する必要が";
+			mes "あるんです。";
+			mes "またデビルズフィンガーズが";
+			mes "増えてきたら除去を";
+			mes "手伝ってもらえると助かります。";
 			delquest 9458;
 			setquest 9459;
 			getitem 25250,3;
@@ -4462,237 +4462,237 @@ harboro1.gat,138,157,5	script	�h�m�o��	854,{
 			getexp 0,120000000,0;
 			close;
 		}
-		mes "[�h�m�o��]";
-		mes "��������܂��������ɐi�ނ�";
-		mes "�W���[�����܂��B";
-		mes "�ނ��n���܂�";
-		mes "�ē����Ă����͂��ł��B";
+		mes "[ドノバン]";
+		mes "ここからまっすぐ東に進むと";
+		mes "ジョーがいます。";
+		mes "彼が地下まで";
+		mes "案内してくれるはずです。";
 		viewpoint 1,324,124,1,0x00FF00;
 		close;
 	}
 	if(checkquest(9459)) {
 		if(checkquest(9459) & 0x2) {
-			mes "[�h�m�o��]";
-			mes "�����A���x�ǂ��Ƃ����";
-			mes "���Ă���܂����B";
-			mes "���낻��f�r���Y�t�B���K�[�Y��";
-			mes "�������鍠�������Ȃ�";
-			mes "�l���Ă�����ł��B";
+			mes "[ドノバン]";
+			mes "ああ、調度良いところに";
+			mes "来てくれました。";
+			mes "そろそろデビルズフィンガーズを";
+			mes "除去する頃合いかなと";
+			mes "考えていたんです。";
 			next;
-			if(select("���������܂�","���͂�����ƖZ�����āc�c") == 2) {
-				mes "[�h�m�o��]";
-				mes "���A�����Ȃ�ł����A";
-				mes "���傤���Ȃ��ł��ˁB";
-				mes "�ǂ������玞�Ԃ����鎞��";
-				mes "�K�˂ė��ĉ������B";
+			if(select("除去をやります","今はちょっと忙しくて……") == 2) {
+				mes "[ドノバン]";
+				mes "あ、そうなんですか、";
+				mes "しょうがないですね。";
+				mes "良かったら時間がある時に";
+				mes "訪ねて来て下さい。";
 				close;
 			}
-			mes "[�h�m�o��]";
-			mes "�n���ւ̓��͊��ɂ��킩��ł���ˁH";
-			mes "����ł͂�낵�����肢���܂��I";
+			mes "[ドノバン]";
+			mes "地下への道は既におわかりですよね？";
+			mes "それではよろしくお願いします！";
 			delquest 9459;
 			setquest 9458;
 			viewpoint 1,324,124,1,0x00FF00;
 			close;
 		}
-		mes "[�h�m�o��]";
-		mes "�܂��f�r���Y�t�B���K�[�Y��";
-		mes "�����Ă����珜����";
-		mes "��`���Ă��炦��Ə�����܂��B";
+		mes "[ドノバン]";
+		mes "またデビルズフィンガーズが";
+		mes "増えてきたら除去を";
+		mes "手伝ってもらえると助かります。";
 		close;
 	}
-	mes "[�h�m�o��]";
-	mes "�����I";
-	mes "�����c�̖���";
-	mes "�������Ă��ꂽ���ł��ˁI";
-	mes "���h�ł��I";
+	mes "[ドノバン]";
+	mes "おお！";
+	mes "牛賊団の問題を";
+	mes "解決してくれた方ですね！";
+	mes "光栄です！";
 	next;
-	mes "[�h�m�o��]";
-	mes "���͂����̉��������Ǘ����Ă���";
-	mes "�h�m�o���ł��B";
+	mes "[ドノバン]";
+	mes "私はここの下水道を管理している";
+	mes "ドノバンです。";
 	next;
-	mes "[�h�m�o��]";
-	mes "���̒��̒n���ł͒���I��";
-	mes "�n�����������o�Ă��܂��B";
-	mes "���̐����O�ɔr�o���Ȃ���";
-	mes "�����Z�����Ă��܂���ł��B";
+	mes "[ドノバン]";
+	mes "この町の地下では定期的に";
+	mes "地下水が沸き出ています。";
+	mes "その水を外に排出しないと";
+	mes "町が浸水してしまうんです。";
 	next;
-	mes "[�h�m�o��]";
-	mes "�����Ŏ��̓|���v�Ɖ�������";
-	mes "����ɓ��삵�Ă��邩��";
-	mes "�Ǘ����Ă����ł��B";
+	mes "[ドノバン]";
+	mes "そこで私はポンプと下水道が";
+	mes "正常に動作しているかを";
+	mes "管理しているんです。";
 	next;
-	mes "[�h�m�o��]";
-	mes "�����ŋ߂͊m�F�ӏ��������Ă��܂��A";
-	mes "�������ł̓`�F�b�N������Ȃ�";
-	mes "�Ȃ��Ă��܂��܂����B";
+	mes "[ドノバン]";
+	mes "ただ最近は確認箇所が増えてしまい、";
+	mes "私だけではチェックしきれなく";
+	mes "なってしまいました。";
 	next;
-	mes "[�h�m�o��]";
-	mes "�����ŋ��͂����Ă��ꂻ���Ȑl��";
-	mes "�T���Ă����̂ł����A";
-	mes "�ǂ��ł��傤�H";
-	mes "���͂��Ă��������܂��񂩁H";
+	mes "[ドノバン]";
+	mes "そこで協力をしてくれそうな人を";
+	mes "探していたのですが、";
+	mes "どうでしょう？";
+	mes "協力していただけませんか？";
 	next;
-	if(select("�ł́A�������܂��傤","���͂�����ƖZ�����āc�c") == 2) {
-		mes "[�h�m�o��]";
-		mes "���A�����Ȃ�ł����A";
-		mes "���傤���Ȃ��ł��ˁB";
-		mes "�ǂ������玞�Ԃ����鎞��";
-		mes "�K�˂ė��ĉ������B";
+	if(select("では、そうしましょう","今はちょっと忙しくて……") == 2) {
+		mes "[ドノバン]";
+		mes "あ、そうなんですか、";
+		mes "しょうがないですね。";
+		mes "良かったら時間がある時に";
+		mes "訪ねて来て下さい。";
 		close;
 	}
-	mes "[�h�m�o��]";
-	mes "�{���ł����I";
-	mes "���肪�Ƃ��������܂��B";
-	mes "����Ȃɓ�����ł͂���܂���B";
-	mes "���̒n���ɂ���";
-	mes "�f�r���Y�t�B���K�[�Y��";
-	mes "�������Ă����΂����ł��B";
+	mes "[ドノバン]";
+	mes "本当ですか！";
+	mes "ありがとうございます。";
+	mes "そんなに難しい事ではありません。";
+	mes "町の地下にいる";
+	mes "デビルズフィンガーズを";
+	mes "除去してくれればいいです。";
 	next;
-	mes "[�h�m�o��]";
-	mes "�n���ɉ����ɂ�";
-	mes "��������܂��������ɍs���āA";
-	mes "�W���[�ɕ����Ă݂Ă��������B";
-	mes "�n���ւƈē����Ă����͂��ł��B";
+	mes "[ドノバン]";
+	mes "地下に下りるには";
+	mes "ここからまっすぐ東に行って、";
+	mes "ジョーに聞いてみてください。";
+	mes "地下へと案内してくれるはずです。";
 	next;
-	mes "[�h�m�o��]";
-	mes "�������̊Ԃł�";
-	mes "�u�����ȃW���[�v�ƌĂ΂�Ă��܂��B";
-	mes "�ł͂�낵�����肢���܂��B";
+	mes "[ドノバン]";
+	mes "私たちの間では";
+	mes "「無口なジョー」と呼ばれています。";
+	mes "ではよろしくお願いします。";
 	setquest 9458;
 	viewpoint 1,324,124,1,0x00FF00;
 	close;
 }
 
 //=======================================================
-// ������̂̃��������N�G�X�gNPC
+// 困りもののワンちゃんクエストNPC
 //-------------------------------------------------------
-harboro1.gat,347,65,3	script	�~�Y�E�}�b�N�t�B�[#rock	74,{
+harboro1.gat,347,65,3	script	ミズ・マックフィー#rock	74,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "����ɂ��́B�`���҂���B";
-		mes "�����c�̂����Œ��͑�ςȂ�ł��B";
+		mes "[ミズ・マックフィー]";
+		mes "こんにちは。冒険者さん。";
+		mes "牛賊団のせいで町は大変なんです。";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 130) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "����ɂ��́B�`���҂���ł����H";
-		mes "���̒n���^FF0000BaseLv��130^000000�͂Ȃ���";
-		mes "�����Ǝv���܂���c�c";
+		mes "[ミズ・マックフィー]";
+		mes "こんにちは。冒険者さんですか？";
+		mes "この地域は^FF0000BaseLvが130^000000はないと";
+		mes "きついと思いますよ……";
 		close;
 	}
 	if(checkquest(1329)) {
 		if(checkquest(1329) & 0x2 == 0) {
-			mes "[�~�Y�E�}�b�N�t�B�[]";
-			mes "���͂܂����v�ł����A";
-			mes "^FF0000�Ηj���̐��߂ɂȂ��^000000�N����";
-			mes "�Ƃ̕��������čs�����Ⴄ��ł��B";
-			mes "�`�����������A�Q�Ă��鎞��";
-			mes "�܂�œV�g�݂����Ȃ̂Ɂc�c�B";
+			mes "[ミズ・マックフィー]";
+			mes "今はまだ大丈夫ですが、";
+			mes "^FF0000火曜日の正午になると^000000起きて";
+			mes "家の物を持って行っちゃうんです。";
+			mes "チョロンちゃん、寝ている時は";
+			mes "まるで天使みたいなのに……。";
 			close;
 		}
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "���Ă��ꂽ�̂ł��ˁI";
-		mes "�{���Ɋ��ӂ��܂��B";
-		mes "�܂��`�����������";
-		mes "�Ƃ̕��������čs���������";
-		mes "�݂����Ȃ�ł��B";
+		mes "[ミズ・マックフィー]";
+		mes "来てくれたのですね！";
+		mes "本当に感謝します。";
+		mes "またチョロンちゃんが";
+		mes "家の物を持って行っちゃった";
+		mes "みたいなんです。";
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����T���Ă���";
-		mes "���������Ȃ��ł��傤���B";
-		mes "�����^0000CD���b�N���b�W�R�C��1��^000000��";
-		mes "�����グ�܂��B";
+		mes "[ミズ・マックフィー]";
+		mes "それを探してきて";
+		mes "いただけないでしょうか。";
+		mes "お礼に^0000CDロックリッジコイン1個^000000を";
+		mes "差し上げます。";
 		next;
-		if(select("���͂���","�f��") == 2) {
-			mes "[�~�Y�E�}�b�N�t�B�[]";
-			mes "�`���җl�ȊO�ɗ��߂����Ȑl��";
-			mes "���Ȃ���ł��c�c�B";
-			mes "�����C���ς������";
-			mes "�܂��K�˂ė��ĉ������B";
+		if(select("協力する","断る") == 2) {
+			mes "[ミズ・マックフィー]";
+			mes "冒険者様以外に頼めそうな人が";
+			mes "居ないんです……。";
+			mes "もし気が変わったら";
+			mes "また訪ねて来て下さい。";
 			close;
 		}
 		switch(rand(5)) {
-		case 0:	set '@quest,1323; set '@name$,"�X���b�p"; break;
-		case 1:	set '@quest,1324; set '@name$,"�X�v�[��"; break;
-		case 2:	set '@quest,1325; set '@name$,"��Ɨp�̒��C"; break;
-		case 3:	set '@quest,1326; set '@name$,"���"; break;
-		case 4:	set '@quest,1327; set '@name$,"�X�q"; break;
+		case 0:	set '@quest,1323; set '@name$,"スリッパ"; break;
+		case 1:	set '@quest,1324; set '@name$,"スプーン"; break;
+		case 2:	set '@quest,1325; set '@name$,"作業用の長靴"; break;
+		case 3:	set '@quest,1326; set '@name$,"手袋"; break;
+		case 4:	set '@quest,1327; set '@name$,"帽子"; break;
 		}
 		delquest 1329;
 		setquest '@quest;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "����`����������񂪎����čs������";
-		mes "^ff0000" +'@name$+ "^000000�ł��B";
+		mes "[ミズ・マックフィー]";
+		mes "ありがとうございます。";
+		mes "今回チョロンちゃんが持って行ったの";
+		mes "^ff0000" +'@name$+ "^000000です。";
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����o�Ă����̂Ƃ����";
-		mes "�v������̂ŁA";
-		mes "�S�����肪����ꏊ��";
-		mes "�����Ă݂Ă��������B";
-		mes "��낵�����肢���܂��B";
+		mes "[ミズ・マックフィー]";
+		mes "町を出てすぐのところに";
+		mes "夫がいるので、";
+		mes "心当たりがある場所を";
+		mes "聞いてみてください。";
+		mes "よろしくお願いします。";
 		close;
 	}
 	if(checkquest(1321) || checkquest(1323) || checkquest(1324) || checkquest(1325) || checkquest(1326) || checkquest(1327)) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�`������������";
-		mes "��l�������Ă����";
-		mes "�{���ɉ����̂Ɂc�c�B";
-		mes "�͂��c�c�B";
+		mes "[ミズ・マックフィー]";
+		mes "チョロンちゃんは";
+		mes "大人しくしていれば";
+		mes "本当に可愛いのに……。";
+		mes "はぁ……。";
 		close;
 	}
 	if(checkquest(1328)) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����ė��Ă��ꂽ��ł��ˁI";
-		mes "�{���ɂ��肪�Ƃ��������܂��I";
-		mes "�`�������������^���悤��";
-		mes "���Ă��܂����A���񂺂񌾂����Ƃ�";
-		mes "�����Ă���Ȃ���ł��B";
+		mes "[ミズ・マックフィー]";
+		mes "見つけて来てくれたんですね！";
+		mes "本当にありがとうございます！";
+		mes "チョロンちゃんを躾けようと";
+		mes "していますが、ぜんぜん言うことを";
+		mes "聞いてくれないんです。";
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "����̃��b�N���b�W�R�C���ł��B";
-		mes "�������̑���Ɋ댯�ȍr��܂�";
-		mes "�s���Ă��炦�āA";
-		mes "�{���Ɋ��ӂ��Ă��܂��B";
+		mes "[ミズ・マックフィー]";
+		mes "お礼のロックリッジコインです。";
+		mes "私たちの代わりに危険な荒野まで";
+		mes "行ってもらえて、";
+		mes "本当に感謝しています。";
 		next;
 		delquest 1328;
 		setquest 1329;
 		getitem 25250,1;
 		getexp 15000000,0,1;
 		getexp 0,6000000,0;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "��������Ђ��肢�������̂ŁA";
-		mes "�����ǂ�������A";
-		mes "�Ηj���̐��߈ȍ~��";
-		mes "�܂����Ă��������B";
+		mes "[ミズ・マックフィー]";
+		mes "次回もぜひお願いしたいので、";
+		mes "もし良かったら、";
+		mes "火曜日の正午以降に";
+		mes "また来てください。";
 		emotion 15;
 		close;
 	}
 	if(checkquest(1322)) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�`���җl�I";
-		mes "�����Ă��Ă��ꂽ��ł��ˁI";
-		mes "�{���ɂ��肪�Ƃ��������܂��I";
+		mes "[ミズ・マックフィー]";
+		mes "冒険者様！";
+		mes "見つけてきてくれたんですね！";
+		mes "本当にありがとうございます！";
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����₩�ł͂���܂����A";
-		mes "����ɂ�����󂯎���Ă��������B";
+		mes "[ミズ・マックフィー]";
+		mes "ささやかではありますが、";
+		mes "お礼にこれを受け取ってください。";
 		next;
 		if(!checkitemblank()) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close;
 		}
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����܂Őe�؂�";
-		mes "���͂��Ă��ꂽ�`���җl�ɁA";
-		mes "���߂Ă��̊��ӂ̋C�����ł��B";
-		mes "�{���ɂ��肪�Ƃ��������܂����B";
+		mes "[ミズ・マックフィー]";
+		mes "ここまで親切に";
+		mes "協力してくれた冒険者様に、";
+		mes "せめてもの感謝の気持ちです。";
+		mes "本当にありがとうございました。";
 		emotion 15;
 		delquest 1322;
 		setquest 1329;
@@ -4700,246 +4700,246 @@ harboro1.gat,347,65,3	script	�~�Y�E�}�b�N�t�B�[#rock	74,{
 		getexp 30000000,0,1;
 		getexp 0,12000000,0;
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����āA���́c�c�����ǂ�������";
-		mes "�܂��l�q�����ɗ��Ă��������܂����H";
-		mes "�������^���悤�Ƃ͂��Ă��܂����A";
-		mes "�x�X�`����������񂪍r��ւ�";
-		mes "���������o���Ď�ɂ����Ȃ��ł��B";
+		mes "[ミズ・マックフィー]";
+		mes "そして、あの……もし良かったら";
+		mes "また様子を見に来ていただけますか？";
+		mes "ちゃんと躾けようとはしていますが、";
+		mes "度々チョロンちゃんが荒野へと";
+		mes "物を持ち出して手におえないです。";
 		next;
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�����͂������v���Ǝv���܂����A";
-		mes "�܂���ŗ��Ă���܂����H";
-		mes "���͉��������グ��ꂻ���ȕ���";
-		mes "�p�ӂ��Ă����܂��B";
+		mes "[ミズ・マックフィー]";
+		mes "今日はもう大丈夫だと思いますが、";
+		mes "また後で来てくれますか？";
+		mes "次は何か差し上げられそうな物を";
+		mes "用意しておきます。";
 		close;
 	}
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�����ƌ��̖ʓ|������悤�ɂ�";
-	mes "���x���������ł���I";
+	mes "[ミズ・マックフィー]";
+	mes "ちゃんと犬の面倒を見るようにと";
+	mes "何度も言ったでしょ！";
 	emotion 6;
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "�Ȃ񂾁H�@�����������̂����H";
-	emotion 1,"�~�X�^�[�E�}�b�N�t�B�[#";
+	mes "[ミスター・マックフィー]";
+	mes "なんだ？　何かあったのかい？";
+	emotion 1,"ミスター・マックフィー#";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�������I�@���Ƃ����Ă�A�{���ɁI";
-	mes "�`����������񂪍��x��";
-	mes "��������čs�����̂��m�肽���H";
-	mes "���̎w�ւ�A�w�ցI";
+	mes "[ミズ・マックフィー]";
+	mes "もう嫌！　何とかしてよ、本当に！";
+	mes "チョロンちゃんが今度は";
+	mes "何を咥えて行ったのか知りたい？";
+	mes "私の指輪よ、指輪！";
 	next;
-	if(select("���̂��Ƃ������Ă݂�","��߂�") == 2) {
-		mes "[�~�Y�E�}�b�N�t�B�[]";
-		mes "�˂��I�@���̘b�����Ă����!?";
+	if(select("何のことか聞いてみる","やめる") == 2) {
+		mes "[ミズ・マックフィー]";
+		mes "ねえ！　私の話聞いているの!?";
 		close;
 	}
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�ꂪ���m��ʓy�n�ɓn���X��";
-	mes "�S�z���Ă��ꂽ�w�ւȂ̂ɁA";
-	mes "���������čs���Ă��܂����̂�I";
+	mes "[ミズ・マックフィー]";
+	mes "母が見知らぬ土地に渡る我々を";
+	mes "心配してくれた指輪なのに、";
+	mes "犬が持って行ってしまったのよ！";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "���̎w�ւ��H";
-	mes "���A����̓`�����������";
-	mes "�����ˁB";
-	emotion 4,"�~�X�^�[�E�}�b�N�t�B�[#";
+	mes "[ミスター・マックフィー]";
+	mes "あの指輪か？";
+	mes "そ、それはチョロンちゃんが";
+	mes "悪いね。";
+	emotion 4,"ミスター・マックフィー#";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�C���A���󕨂������ēy�̏��";
-	mes "�V�񂾂肷�邭�炢�Ȃ�";
-	mes "�䖝�͂ł��邯�ǁc�c�w�ւ͂ǂ�!?";
+	mes "[ミズ・マックフィー]";
+	mes "靴も、洗濯物も咥えて土の上で";
+	mes "遊んだりするくらいなら";
+	mes "我慢はできるけど……指輪はどこ!?";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "�܂��܂����������āB";
-	mes "�厖�Ɉ���Ȃ������N�ɂ�";
-	mes "�ӔC������񂶂�Ȃ����ȁH";
+	mes "[ミスター・マックフィー]";
+	mes "まあまあ落ち着いて。";
+	mes "大事に扱わなかった君にも";
+	mes "責任があるんじゃないかな？";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�Ȃ�ł����āI";
-	mes "���d���ȊO�͔��g�������������I";
-	mes "������ƊO�����ۂɗ��Ƃ����̂�";
-	mes "�����Ă����ꂿ������̂�I";
+	mes "[ミズ・マックフィー]";
+	mes "なんですって！";
+	mes "水仕事以外は肌身離さずいたわよ！";
+	mes "ちょっと外した際に落としたのを";
+	mes "持っていかれちゃったのよ！";
 	emotion 36;
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "���Ȃ��͎d������߂Ă���";
-	mes "�񂩌����o���Ă���̂�";
-	mes "�Ǝ��͈�؎�`��Ȃ��A";
-	mes "���ƗV��ł΂���B";
-	mes "����Ȃ猢�̋��炭�炢";
-	mes "�����Ƃ��Ă����Ă�I";
+	mes "[ミズ・マックフィー]";
+	mes "あなたは仕事をやめてから";
+	mes "二か月も経っているのに";
+	mes "家事は一切手伝わない、";
+	mes "犬と遊んでばかり。";
+	mes "それなら犬の教育くらい";
+	mes "ちゃんとしておいてよ！";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "��΂Ɏw�ւ�T���Ă��āI";
-	mes "������܂ł͉Ƃɓ���Ȃ�����I";
+	mes "[ミズ・マックフィー]";
+	mes "絶対に指輪を探してきて！";
+	mes "見つかるまでは家に入れないから！";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "��!?";
-	mes "������Ɩ�������I�@�{�C�H";
-	mes "�O�ɔ��ł������X�q��";
-	mes "�T���ɍs�������ǁA";
-	mes "�����ɂ�����߂��̂�";
-	mes "�m���Ă邾��I";
-	emotion 19,"�~�X�^�[�E�}�b�N�t�B�[#";
+	mes "[ミスター・マックフィー]";
+	mes "な!?";
+	mes "ちょっと無理だよ！　本気？";
+	mes "前に飛んでいった帽子を";
+	mes "探しに行ったけど、";
+	mes "すぐにあきらめたのは";
+	mes "知ってるだろ！";
+	emotion 19,"ミスター・マックフィー#";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "���͒m��Ȃ�����A";
-	mes "���Ƃ͎����ŉ��Ƃ����āI";
+	mes "[ミズ・マックフィー]";
+	mes "私は知らないから、";
+	mes "あとは自分で何とかして！";
 	next;
-	if(select("�Θb�ɓ��荞��","�ʂ�߂���") == 2) {
-		mes "�]�������Ȃ������ǂ��������]";
+	if(select("対話に入り込む","通り過ぎる") == 2) {
+		mes "‐かかわらない方が良さそうだ‐";
 		close;
 	}
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "����A�т����肵���I";
-	mes "�Ȃ�ł����H";
+	mes "[ミスター・マックフィー]";
+	mes "うわ、びっくりした！";
+	mes "なんですか？";
 	next;
-	if(select("�w�֒T������`���ƌ���","���A����") == 2) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "���A�͂��B����ɂ��́B";
-		mes "�Ȃ񂩁A�ςȐl���ȁB";
+	if(select("指輪探しを手伝うと言う","挨拶する") == 2) {
+		mes "[ミスター・マックフィー]";
+		mes "あ、はい。こんにちは。";
+		mes "なんか、変な人だな。";
 		close;
 	}
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "����������`���Ă�����ł����H";
-	mes "�L���ł����A�������܂��B";
-	mes "�������͍����グ������̂�";
-	mes "�Ȃɂ�����܂���B";
+	mes "[ミズ・マックフィー]";
+	mes "私たちを手伝ってくれるんですか？";
+	mes "有り難いですが、遠慮します。";
+	mes "私たちは差し上げられるものが";
+	mes "なにもありません。";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "����A�҂Ă�I";
-	mes "�悭�l���Ă݂Ă���B";
-	mes "���������c�̂���r���";
-	mes "�T���ɍs����Ǝv���Ă�H";
-	emotion 19,"�~�X�^�[�E�}�b�N�t�B�[#";
+	mes "[ミスター・マックフィー]";
+	mes "ちょ、待てよ！";
+	mes "よく考えてみてくれ。";
+	mes "私が牛賊団のいる荒野に";
+	mes "探しに行けると思ってる？";
+	emotion 19,"ミスター・マックフィー#";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "���ɗ��߂�l�����Ȃ����A";
-	mes "����̌��͌�ōl����Ƃ��āA";
-	mes "����ł݂���ǂ����낤�H";
+	mes "[ミスター・マックフィー]";
+	mes "他に頼める人もいないし、";
+	mes "お礼の件は後で考えるとして、";
+	mes "頼んでみたらどうだろう？";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "����͂��������ǁc�c�ӂ��c�c�B";
+	mes "[ミズ・マックフィー]";
+	mes "それはそうだけど……ふう……。";
 	emotion 9;
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "���́c�c�`���җl�A";
-	mes "����Ȏ������������";
-	mes "�}�X������������܂��񂪁A";
-	mes "���肢�ł��܂����H";
+	mes "[ミズ・マックフィー]";
+	mes "あの……冒険者様、";
+	mes "あんな事を言った後で";
+	mes "図々しいかもしれませんが、";
+	mes "お願いできますか？";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�`�����������͌����@����";
-	mes "�����ɕ�������̂ŁA";
-	mes "�r��Ō�����������";
-	mes "���ɉ�������̂�";
-	mes "�m�F���Ă��������B";
+	mes "[ミズ・マックフィー]";
+	mes "チョロンちゃんは穴を掘って";
+	mes "そこに物を入れるので、";
+	mes "荒野で穴を見つけたら";
+	mes "中に何があるのか";
+	mes "確認してください。";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "���ƕv�͒��̒���T���Ă݂܂��B";
-	mes "������������";
-	mes "�����ɂ܂��߂��ė��ĉ������B";
+	mes "[ミズ・マックフィー]";
+	mes "私と夫は町の中を探してみます。";
+	mes "何か見つけたら";
+	mes "ここにまた戻って来て下さい。";
 	next;
-	mes "[�~�Y�E�}�b�N�t�B�[]";
-	mes "�˂����Ȃ��A�`���җl��";
-	mes "�S�����肪����ꏊ�������Ă����āB";
+	mes "[ミズ・マックフィー]";
+	mes "ねえあなた、冒険者様に";
+	mes "心当たりがある場所を教えてあげて。";
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "��A����!?";
-	mes "���A�����A�킩������c�c�B";
-	emotion 4,"�~�X�^�[�E�}�b�N�t�B�[#";
+	mes "[ミスター・マックフィー]";
+	mes "わ、私が!?";
+	mes "あ、おお、わかったよ……。";
+	emotion 4,"ミスター・マックフィー#";
 	setquest 1321;
 	close;
 }
 
-harboro1.gat,345,61,3	script	�`�����������	81,{
-	if(checkquest(1329) && checkquest(1329)&2 == 0) {	// �N�[���^�C����
-		mes "�]�ǂ����R���[�e�Ɏ���";
-		mes "�@�p�����Ă���q��������";
-		mes "�@��������Q�Ă���悤���B";
-		mes "�@�����Ƃ��Ă������]";
+harboro1.gat,345,61,3	script	チョロンちゃん	81,{
+	if(checkquest(1329) && checkquest(1329)&2 == 0) {	// クールタイム中
+		mes "‐どこかコヨーテに似た";
+		mes "　姿をしている子犬がいる";
+		mes "　ぐっすり寝ているようだ。";
+		mes "　そっとしておこう‐";
 		close;
 	}
-	mes "�]�ǂ����R���[�e�Ɏ���";
-	mes "�@�p�����Ă���q��������]";
+	mes "‐どこかコヨーテに似た";
+	mes "　姿をしている子犬がいる‐";
 	next;
-	mes "�]�т������ς�鎞���Ȃ̂��A";
-	mes "�@�т����Ȃ�ʂ��Ă���B";
-	mes "�@���̎q�����s�����Ƃ���ɂ�";
-	mes "�@�����т������Ă��������]";
+	mes "‐毛が生え変わる時期なのか、";
+	mes "　毛がかなりぬけている。";
+	mes "　この子犬が行ったところには";
+	mes "　白い毛が落ちていそうだ‐";
 	close;
 }
 
-harboro1.gat,344,61,5	script	�~�X�^�[�E�}�b�N�t�B�[#	98,{
+harboro1.gat,344,61,5	script	ミスター・マックフィー#	98,{
 	if(checkquest(1321)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�������͒��̒��𒲂ׂ܂��B";
-		mes "�`���җl�͒��̊O�����肢���܂��B";
+		mes "[ミスター・マックフィー]";
+		mes "私たちは町の中を調べます。";
+		mes "冒険者様は町の外をお願いします。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "��U���̊O�܂ŗ��Ă��������B";
-		mes "�������ꏊ�������܂��B";
+		mes "[ミスター・マックフィー]";
+		mes "一旦町の外まで来てください。";
+		mes "怪しい場所を教えます。";
 		close;
 	}
 	if(checkquest(1322)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�`�����������A";
-		mes "�������񂪃u���b�V���O����";
-		mes "�����悤���H";
+		mes "[ミスター・マックフィー]";
+		mes "チョロンちゃん、";
+		mes "お父さんがブラッシングして";
+		mes "あげようか？";
 		close;
 	}
 	if(checkquest(1332)) {
 		if(checkquest(1332) & 0x2 == 0) {
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "�܂����������ł��ˁB";
-			mes "�Ηj���̐��߂��߂�����";
-			mes "�܂����Ă���܂����H";
+			mes "[ミスター・マックフィー]";
+			mes "まだ少し早いですね。";
+			mes "火曜日の正午を過ぎたら";
+			mes "また来てくれますか？";
 			close;
 		}
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "���҂����Ă��܂����B";
-		mes "�`�����������̂��߂�";
-		mes "�����c�𒦂炵�߂Ă��炦�܂����H";
+		mes "[ミスター・マックフィー]";
+		mes "お待ちしていました。";
+		mes "チョロンちゃんのために";
+		mes "牛賊団を懲らしめてもらえますか？";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "^ff0000�������F�������c�A";
-		mes "�������������c�A�������������c��";
-		mes "���ꂼ��30�l����";
-		mes "���炵�߂Ă���Ă��������B";
-		mes "�`���җl������M���Ă��܂��I";
+		mes "[ミスター・マックフィー]";
+		mes "^ff0000頭が黄色い牛賊団、";
+		mes "頭が黒い牛賊団、頭が白い牛賊団を";
+		mes "それぞれ30人ずつ";
+		mes "懲らしめてやってください。";
+		mes "冒険者様だけを信じています！";
 		delquest 1332;
 		setquest 1331;
 		close;
 	}
 	if(checkquest(1331)) {
 		if(checkquest(1331) & 0x4) {
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "�����c�̂���";
-			mes "���炵�߂Ă��ꂽ��ł��ˁI";
-			mes "���肪�Ƃ��������܂��I";
+			mes "[ミスター・マックフィー]";
+			mes "牛賊団のやつらを";
+			mes "懲らしめてくれたんですね！";
+			mes "ありがとうございます！";
 			next;
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "���ǁA�����c�̋K�͂��l�����";
-			mes "���̒��x�ł͉��������Ȃ��ł��傤�B";
-			mes "�p���I�ɒ��炵�߂Ă��K�v��";
-			mes "����Ǝv���܂��B";
+			mes "[ミスター・マックフィー]";
+			mes "けど、牛賊団の規模を考えると";
+			mes "この程度では何も感じないでしょう。";
+			mes "継続的に懲らしめてやる必要が";
+			mes "あると思います。";
 			next;
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "�ł��̂ł��ꂩ����A";
-			mes "��T�ԂɈ����x�ŗǂ��̂ŁA";
-			mes "���𒦂炵�߂�";
-			mes "�s���Ă��炦�Ȃ��ł��傤���H";
+			mes "[ミスター・マックフィー]";
+			mes "ですのでこれからも、";
+			mes "一週間に一回程度で良いので、";
+			mes "やつらを懲らしめに";
+			mes "行ってもらえないでしょうか？";
 			next;
 			if(!checkitemblank()) {
-				mes "�]�ו�������ȏ㎝�Ă܂���";
-				mes "�@�ו���1�ȏ�̋󂫂�";
-				mes "�@����Ă��������]";
+				mes "‐荷物をこれ以上持てません";
+				mes "　荷物に1個以上の空きを";
+				mes "　作ってください‐";
 				close;
 			}
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "���ꂩ��A����͍���̂���ł��B";
-			mes "�{���ɂ��肪�Ƃ��������܂��B";
+			mes "[ミスター・マックフィー]";
+			mes "それから、これは今回のお礼です。";
+			mes "本当にありがとうございます。";
 			delquest 1331;
 			setquest 1332;
 			//achievement_update	//clear
@@ -4950,352 +4950,352 @@ harboro1.gat,344,61,5	script	�~�X�^�[�E�}�b�N�t�B�[#	98,{
 			//achievement_update	//complete
 			end;
 		}
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "^ff0000�������F�������c�A";
-		mes "�������������c�A�������������c��";
-		mes "���ꂼ��30�l����";
-		mes "���炵�߂Ă���Ă��������B";
+		mes "[ミスター・マックフィー]";
+		mes "^ff0000頭が黄色い牛賊団、";
+		mes "頭が黒い牛賊団、頭が白い牛賊団を";
+		mes "それぞれ30人ずつ";
+		mes "懲らしめてやってください。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�����̈������ł��B";
-		mes "�ǂ����Ă���ȉ����q����";
-		mes "�e�������邱�Ƃ��ł���񂾁I";
+		mes "[ミスター・マックフィー]";
+		mes "たちの悪いやつらです。";
+		mes "どうしてこんな可愛い子犬に";
+		mes "銃を向けることができるんだ！";
 		close;
 	}
 	if(checkquest(1329)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�`���җl�I";
-		mes "�Ȃ̎w�ւ̂��߂�";
-		mes "�킴�킴�댯�ȏꏊ�܂�";
-		mes "�s���Ă��������A";
-		mes "�{���ɂ��肪�Ƃ��������܂����B";
+		mes "[ミスター・マックフィー]";
+		mes "冒険者様！";
+		mes "妻の指輪のために";
+		mes "わざわざ危険な場所まで";
+		mes "行っていただき、";
+		mes "本当にありがとうございました。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�����������̂悤�Ȍ`��";
-		mes "���������ƂɂȂ����̂�";
-		mes "�����ЂƂ��肢��";
-		mes "�����Ă��炦�Ȃ��ł��傤���B";
+		mes "[ミスター・マックフィー]";
+		mes "せっかくこのような形で";
+		mes "縁を持つことになったので";
+		mes "もうひとつお願いを";
+		mes "聞いてもらえないでしょうか。";
 		next;
-		if(select("�܂��͕����Ă݂�","�f��") == 2) {
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "�����ł����c�c";
-			mes "���傤���Ȃ��ł��ˁB";
+		if(select("まずは聞いてみる","断る") == 2) {
+			mes "[ミスター・マックフィー]";
+			mes "そうですか……";
+			mes "しょうがないですね。";
 			close;
 		}
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "���͍ŋ߁A�`�����������";
-		mes "���̌�g�p�̏e��";
-		mes "�|����悤�ɂȂ�����ł��B";
+		mes "[ミスター・マックフィー]";
+		mes "実は最近、チョロンちゃんが";
+		mes "私の護身用の銃を";
+		mes "怖がるようになったんです。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�����炭�N����";
-		mes "�`�����������̋߂��ŏe��������";
-		mes "���������񂾂Ǝv���܂��B";
-		mes "�e�����邾���ŕ|����悤��";
-		mes "�Ȃ��Ă��܂��܂����B";
+		mes "[ミスター・マックフィー]";
+		mes "おそらく誰かが";
+		mes "チョロンちゃんの近くで銃を撃って";
+		mes "驚かせたんだと思います。";
+		mes "銃を見るだけで怖がるように";
+		mes "なってしまいました。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�����ŋ߁A���ŏe����";
-		mes "���������Ƃ͂���܂���B";
-		mes "�ƂȂ�ƃ`������������";
-		mes "�r��ɏo�|�������ɏe���𕷂����B";
-		mes "�܂�Ɛl�͍r��ɂ���^ff0000�����c^000000��";
-		mes "�ԈႢ����܂���B";
+		mes "[ミスター・マックフィー]";
+		mes "ここ最近、町で銃声を";
+		mes "聞いたことはありません。";
+		mes "となるとチョロンちゃんは";
+		mes "荒野に出掛けた時に銃声を聞いた。";
+		mes "つまり犯人は荒野にいる^ff0000牛賊団^000000に";
+		mes "間違いありません。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�Ȃ�Ƃ����Q�������̂ł����A";
-		mes "���̗͂ł͂Ȃ�Ƃ��Ȃ�܂���B";
+		mes "[ミスター・マックフィー]";
+		mes "なんとか復讐したいのですが、";
+		mes "私の力ではなんともなりません。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�����Ŗ`���җl�A���̑����";
-		mes "�`�����������̕��Q��";
-		mes "���Ă���Ȃ��ł��傤���H";
-		mes "�^�_�Ƃ͌����܂���B";
-		mes "����Ƀ��b�N���b�W�R�C����";
-		mes "�����グ�܂��B";
+		mes "[ミスター・マックフィー]";
+		mes "そこで冒険者様、私の代わりに";
+		mes "チョロンちゃんの復讐を";
+		mes "してくれないでしょうか？";
+		mes "タダとは言いません。";
+		mes "お礼にロックリッジコインを";
+		mes "差し上げます。";
 		next;
-		if(select("���݂𕷂������","�f��") == 2) {
-			mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-			mes "�����ł����c�c";
-			mes "���傤���Ȃ��ł��ˁB";
+		if(select("頼みを聞き入れる","断る") == 2) {
+			mes "[ミスター・マックフィー]";
+			mes "そうですか……";
+			mes "しょうがないですね。";
 			close;
 		}
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "���݂𕷂��Ă��炢";
-		mes "���肪�Ƃ��������܂��I";
-		mes "����ł�^ff0000�������F�������c�A";
-		mes "�������������c�A�������������c��";
-		mes "���ꂼ��30�l����";
-		mes "���炵�߂Ă���Ă��������B";
-		emotion 15,"�~�X�^�[�E�}�b�N�t�B�[#";
+		mes "[ミスター・マックフィー]";
+		mes "頼みを聞いてもらい";
+		mes "ありがとうございます！";
+		mes "それでは^ff0000頭が黄色い牛賊団、";
+		mes "頭が黒い牛賊団、頭が白い牛賊団を";
+		mes "それぞれ30人ずつ";
+		mes "懲らしめてやってください。";
+		emotion 15,"ミスター・マックフィー#";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�`���җl����������ł��B";
-		mes "��낵�����肢���܂��B";
+		mes "[ミスター・マックフィー]";
+		mes "冒険者様だけが頼りです。";
+		mes "よろしくお願いします。";
 		setquest 1331;
 		close;
 	}
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "�`�����������A";
-	mes "����H�ׂ�H�@����B";
+	mes "[ミスター・マックフィー]";
+	mes "チョロンちゃん、";
+	mes "おやつ食べる？　おやつ。";
 	close;
 }
 
-rockrdg1.gat,36,250,5	script	�~�X�^�[�E�}�b�N�t�B�[	98,{
+rockrdg1.gat,36,250,5	script	ミスター・マックフィー	98,{
 	if(checkquest(1321)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�Ȃ������ɂ́A";
-		mes "�`�����������͉Ƃ̗�������o��";
-		mes "�S��Ԃ�ʂ�";
-		mes "�^������^ff0000��̕�^000000��";
-		mes "�����Ă������炵���ł��B";
+		mes "[ミスター・マックフィー]";
+		mes "妻が言うには、";
+		mes "チョロンちゃんは家の裏口から出て";
+		mes "鉄条網を通り";
+		mes "真っすぐ^ff0000南の方^000000へ";
+		mes "走っていったらしいです。";
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�������̏��ɖ߂��ė����̂�";
-		mes "����Ȃɉ����܂ōs���ĂȂ���";
-		mes "�v���܂��B";
-		mes "�S��Ԃɉ����čs���A";
-		mes "�����т����ɗ����Ă��錊��";
-		mes "�T���Ă���܂��񂩁H";
+		mes "[ミスター・マックフィー]";
+		mes "すぐ私の所に戻って来たので";
+		mes "そんなに遠くまで行ってないと";
+		mes "思います。";
+		mes "鉄条網に沿って行き、";
+		mes "白い毛が中に落ちている穴を";
+		mes "探してくれませんか？";
 		viewpoint 1,43,145,1,0x00FF00;
 		close;
 	}
 	if(checkquest(1322)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "����������܂�����!?";
-		mes "�����߂�܂��傤�I";
+		mes "[ミスター・マックフィー]";
+		mes "何か見つかりましたか!?";
+		mes "早く戻りましょう！";
 		close;
 	}
 	if(checkquest(1323) || checkquest(1324) || checkquest(1325) || checkquest(1326) || checkquest(1327)) {
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�`�����������̖т�";
-		mes "�����ς�鎞���炵���A";
-		mes "�ŋ߂������т��������ł��B";
-		mes "�`����������񂪌@�������Ȃ�";
-		mes "�߂��ɔ����т�����͂��ł��B";
+		mes "[ミスター・マックフィー]";
+		mes "チョロンちゃんの毛が";
+		mes "生え変わる時期らしく、";
+		mes "最近すごく毛が抜けるんです。";
+		mes "チョロンちゃんが掘った穴なら";
+		mes "近くに白い毛があるはずです。";
 		if(checkquest(1323)) viewpoint 1,100,230,1,0x00FF00;
 		else if(checkquest(1324)) viewpoint 1,58,195,1,0x00FF00;
 		else if(checkquest(1325)) viewpoint 1,71,149,1,0x00FF00;
 		else if(checkquest(1326)) viewpoint 1,109,60,1,0x00FF00;
 		else if(checkquest(1327)) viewpoint 1,191,101,1,0x00FF00;
 		next;
-		mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-		mes "�܂��c���̂ł���قǉ����ɂ�";
-		mes "�s���Ă��Ȃ��Ǝv���܂��B";
-		mes "�n�}�ɉ������ꏊ��";
-		mes "�L�����Ă����̂ŁA";
-		mes "���̕t�߂𒲂ׂĂ��������B";
+		mes "[ミスター・マックフィー]";
+		mes "まだ幼いのでそれほど遠くには";
+		mes "行っていないと思います。";
+		mes "地図に怪しい場所を";
+		mes "記入しておくので、";
+		mes "その付近を調べてください。";
 		close;
 	}
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "���킠�A�����c��!?";
+	mes "[ミスター・マックフィー]";
+	mes "うわあ、牛賊団か!?";
 	emotion 23;
 	next;
-	mes "[�~�X�^�[�E�}�b�N�t�B�[]";
-	mes "�Ȃ񂾁A�`���җl����Ȃ��ł����B";
-	mes "�������Ȃ��ł���������B";
+	mes "[ミスター・マックフィー]";
+	mes "なんだ、冒険者様じゃないですか。";
+	mes "驚かせないでくださいよ。";
 	close;
 }
 
-rockrdg1.gat,170,233,3	script	��#rkdqgd1	550,{
-	mes "�]��������B";
-	mes "�@���ɂ͎������y�����邾�����]";
+rockrdg1.gat,170,233,3	script	穴#rkdqgd1	550,{
+	mes "‐穴がある。";
+	mes "　中には湿った土があるだけだ‐";
 	close;
 }
 
-rockrdg1.gat,183,143,3	script	��#rkdqgd2	550,{
-	mes "�]��������B";
-	mes "�@���ɂ͎������y�����邾�����]";
+rockrdg1.gat,183,143,3	script	穴#rkdqgd2	550,{
+	mes "‐穴がある。";
+	mes "　中には湿った土があるだけだ‐";
 	close;
 }
 
-rockrdg1.gat,215,72,3	script	��#rkdqgd3	550,{
-	mes "�]��������B";
-	mes "�@���ɂ͎������y�����邾�����]";
+rockrdg1.gat,215,72,3	script	穴#rkdqgd3	550,{
+	mes "‐穴がある。";
+	mes "　中には湿った土があるだけだ‐";
 	close;
 }
 
-rockrdg1.gat,43,145,3	script	��#rkq1321	550,{
+rockrdg1.gat,43,145,3	script	穴#rkq1321	550,{
 	set '@quest,substr(strnpcinfo(2),3,7);
 	if(checkquest('@quest)) {
-		mes "�]��������B";
-		mes "�@���ɂ͔����т�����";
-		mes "�@�ς����Ă���悤�Ɍ�����]";
+		mes "‐穴がある。";
+		mes "　中には白い毛が少し";
+		mes "　積もっているように見える‐";
 		next;
 		switch('@quest) {
-		case 1321: mes "�]^0000ff���̎w��^000000���������B"; set '@quest2,1322; break;
-		case 1323: mes "�]^0000ff�X���b�p^000000���������B"; set '@quest2,1328; break;
-		case 1324: mes "�]^0000ff�X�v�[��^000000���������B"; set '@quest2,1328; break;
-		case 1325: mes "�]^0000ff��Ɨp�̒��C^000000���������B"; set '@quest2,1328; break;
-		case 1326: mes "�]^0000ff���^000000���������B"; set '@quest2,1328; break;
-		case 1327: mes "�]^0000ff�X�q^000000���������B"; set '@quest2,1328; break;
+		case 1321: mes "‐^0000ff金の指輪^000000を見つけた。"; set '@quest2,1322; break;
+		case 1323: mes "‐^0000ffスリッパ^000000を見つけた。"; set '@quest2,1328; break;
+		case 1324: mes "‐^0000ffスプーン^000000を見つけた。"; set '@quest2,1328; break;
+		case 1325: mes "‐^0000ff作業用の長靴^000000を見つけた。"; set '@quest2,1328; break;
+		case 1326: mes "‐^0000ff手袋^000000を見つけた。"; set '@quest2,1328; break;
+		case 1327: mes "‐^0000ff帽子^000000を見つけた。"; set '@quest2,1328; break;
 		}
-		mes "�@�m�F�̂��߂�";
-		mes "�@�v�l�̂Ƃ���֎����Ă������]";
+		mes "　確認のために";
+		mes "　夫人のところへ持っていこう‐";
 		delquest '@quest;
 		setquest '@quest2;
 		close;
 	}
-	mes "�]��������B���͋���ۂ��]";
+	mes "‐穴がある。中は空っぽだ‐";
 	close;
 }
 
-rockrdg1.gat,100,230,3	duplicate(��#rkq1321)	��#rkq1323	550
-rockrdg1.gat,58,195,3	duplicate(��#rkq1321)	��#rkq1324	550
-rockrdg1.gat,71,149,3	duplicate(��#rkq1321)	��#rkq1325	550
-rockrdg1.gat,109,60,3	duplicate(��#rkq1321)	��#rkq1326	550
-rockrdg1.gat,191,101,3	duplicate(��#rkq1321)	��#rkq1327	550
+rockrdg1.gat,100,230,3	duplicate(穴#rkq1321)	穴#rkq1323	550
+rockrdg1.gat,58,195,3	duplicate(穴#rkq1321)	穴#rkq1324	550
+rockrdg1.gat,71,149,3	duplicate(穴#rkq1321)	穴#rkq1325	550
+rockrdg1.gat,109,60,3	duplicate(穴#rkq1321)	穴#rkq1326	550
+rockrdg1.gat,191,101,3	duplicate(穴#rkq1321)	穴#rkq1327	550
 
 //=======================================================
-// �ٍ��̏��l�N�G�X�gNPC
+// 異国の商人クエストNPC
 //-------------------------------------------------------
-harboro1.gat,216,262,7	script	�����̃��N�_#1	938,{}
-harboro1.gat,210,262,7	script	�����̃��N�_#2	938,{}
-harboro1.gat,197,262,7	script	�����̃��N�_#3	938,{}
-harboro1.gat,192,262,7	script	�����̃��N�_#4	938,{}
-harboro1.gat,223,261,1	script	�����̃��N�_#5	938,{}
-harboro1.gat,227,263,1	script	�����̃��N�_#6	938,{}
-harboro1.gat,237,256,3	script	�����̃��N�_#7	938,{}
-harboro1.gat,234,259,3	script	�����̃��N�_#8	938,{}
-harboro1.gat,229,258,6	script	�����̃��N�_#9	938,{}
-harboro1.gat,225,257,6	script	�����̃��N�_#10	938,{}
-harboro1.gat,238,258,3	script	�����̃��N�_#11	938,{}
-harboro1.gat,236,252,6	script	�����̃��N�_#12	938,{}
+harboro1.gat,216,262,7	script	巨商のラクダ#1	938,{}
+harboro1.gat,210,262,7	script	巨商のラクダ#2	938,{}
+harboro1.gat,197,262,7	script	巨商のラクダ#3	938,{}
+harboro1.gat,192,262,7	script	巨商のラクダ#4	938,{}
+harboro1.gat,223,261,1	script	巨商のラクダ#5	938,{}
+harboro1.gat,227,263,1	script	巨商のラクダ#6	938,{}
+harboro1.gat,237,256,3	script	巨商のラクダ#7	938,{}
+harboro1.gat,234,259,3	script	巨商のラクダ#8	938,{}
+harboro1.gat,229,258,6	script	巨商のラクダ#9	938,{}
+harboro1.gat,225,257,6	script	巨商のラクダ#10	938,{}
+harboro1.gat,238,258,3	script	巨商のラクダ#11	938,{}
+harboro1.gat,236,252,6	script	巨商のラクダ#12	938,{}
 
-harboro1.gat,226,255,3	script	�����̃��N�_#13	938,{
-	mes "[���N�_]";
-	mes "�Ԃ������c�c�B";
+harboro1.gat,226,255,3	script	巨商のラクダ#13	938,{
+	mes "[ラクダ]";
+	mes "ぶううう……。";
 	close;
 }
 
-harboro1.gat,227,260,3	script	�����̃��N�_#14	938,{
-	mes "[���N�_]";
-	mes "�Ԃ�Ԃ�`�B";
+harboro1.gat,227,260,3	script	巨商のラクダ#14	938,{
+	mes "[ラクダ]";
+	mes "ぶるぶる～。";
 	close;
 }
 
-harboro1.gat,232,258,6	script	�����̃��N�_#15	938,{
-	mes "[���N�_]";
-	mes "�Ԃ������`�`�B";
+harboro1.gat,232,258,6	script	巨商のラクダ#15	938,{
+	mes "[ラクダ]";
+	mes "ぶううう～～。";
 	close;
 }
 
-harboro1.gat,235,255,6	script	�����̃��N�_#16	938,{
-	mes "[���N�_]";
-	mes "�Ԃ�Ԃ�`�B";
+harboro1.gat,235,255,6	script	巨商のラクダ#16	938,{
+	mes "[ラクダ]";
+	mes "ぶるぶる～。";
 	close;
 }
 
-harboro1.gat,229,256,7	script	�V�������b�g	938,{
+harboro1.gat,229,256,7	script	シャルロット	938,{
 	initnpctimer;
-	unittalk "�V�������b�g : �Ԃ����`�`�`�I";
+	unittalk "シャルロット : ぶるるるる～～～！";
 	end;
 OnTimer1000:
 	stopnpctimer;
-	donpcevent "�A�u���n���E�t�[�f�B��::OnTalk2";
+	donpcevent "アブラハム・フーディン::OnTalk2";
 	end;
 }
 
-harboro1.gat,231,251,4	script	���l�̔�	10005,{
-	donpcevent "�A�u���n���E�t�[�f�B��::OnTalk1";
+harboro1.gat,231,251,4	script	商人の箱	10005,{
+	donpcevent "アブラハム・フーディン::OnTalk1";
 	end;
 }
 
-harboro1.gat,231,254,3	script	�A�u���n���E�t�[�f�B��	58,{
+harboro1.gat,231,254,3	script	アブラハム・フーディン	58,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "���ٍ͈��̏��l�A";
-		mes "�A�u���n���E�t�[�f�B���Ƃ����܂��I";
+		mes "[アブラハム・フーディン]";
+		mes "私は異国の商人、";
+		mes "アブラハム・フーディンといいます！";
 		next;
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�c�O�ł����A";
-		mes "���͎���͖��������ł��`�B";
-		mes "^ff0000�����c�̖�肪����^000000������";
-		mes "���b���܂���`�B";
+		mes "[アブラハム・フーディン]";
+		mes "残念ですが、";
+		mes "今は取引は無理そうです～。";
+		mes "^ff0000牛賊団の問題が解決^000000したら";
+		mes "お話しましょ～。";
 		close;
 	}
 	if(BaseLevel < 130) {
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "���ٍ͈��̏��l�A";
-		mes "�A�u���n���E�t�[�f�B���Ƃ����܂��I";
+		mes "[アブラハム・フーディン]";
+		mes "私は異国の商人、";
+		mes "アブラハム・フーディンといいます！";
 		next;
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�c�O�ł����A���Ȃ��̎��͂ł�";
-		mes "���̎���͖��������ł��`�B";
-		mes "^ff0000BaseLv130�ȏ�^000000�ɂȂ�����";
-		mes "���b���܂���`�B";
+		mes "[アブラハム・フーディン]";
+		mes "残念ですが、あなたの実力では";
+		mes "私の取引は無理そうです～。";
+		mes "^ff0000BaseLv130以上^000000になったら";
+		mes "お話しましょ～。";
 		close;
 	}
 	if(!checkquest(12410)) {
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�͂��߂܂��ā`";
-		mes "���ٍ͈��̏��l�A";
-		mes "�A�u���n���E�t�[�f�B���Ƃ����܂��I";
+		mes "[アブラハム・フーディン]";
+		mes "はじめまして～";
+		mes "私は異国の商人、";
+		mes "アブラハム・フーディンといいます！";
 		next;
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "���Ǝ���o��������";
-		mes "���������m�������Ă��܂����H";
+		mes "[アブラハム・フーディン]";
+		mes "私と取引出来そうな";
+		mes "珍しいモノを持っていますか？";
 		next;
-		if(select("�ǂ�ȃ��m�ł����H","���͎���Ȃ񂩂��܂���I") == 2) {
-			mes "[�A�u���n���E�t�[�f�B��]";
-			mes "�����`�I";
-			mes "�`���ҁA���\�ł��ˁB";
-			mes "����Ȗ�؂Ȑl�Ƃ�";
-			mes "����ł��܂����`�B";
+		if(select("どんなモノですか？","私は取引なんかしません！") == 2) {
+			mes "[アブラハム・フーディン]";
+			mes "おう～！";
+			mes "冒険者、乱暴ですね。";
+			mes "こんな野蛮な人とは";
+			mes "取引できませんよ～。";
 			close;
 		}
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�t�[�f�B���A���E������܂��B";
-		mes "���������m���������񔃂��܂��B";
-		mes "����͐V�嗤�̓��Y�i��";
-		mes "�W�߂Ă��܂��B";
+		mes "[アブラハム・フーディン]";
+		mes "フーディン、世界を巡ります。";
+		mes "珍しいモノをたくさん買います。";
+		mes "今回は新大陸の特産品を";
+		mes "集めています。";
 		next;
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�t�[�f�B���A���̊J��n��";
-		mes "���ʂȕ������߂Ă��܂��I";
-		mes "���������̃��m����ɓ��ꂽ��";
-		mes "�����ė��Ă��������I";
+		mes "[アブラハム・フーディン]";
+		mes "フーディン、この開拓地の";
+		mes "特別な物を求めています！";
+		mes "何かここのモノを手に入れたら";
+		mes "持って来てください！";
 		next;
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�t�[�f�B�����ǂ��l�i��";
-		mes "���Ă����܂��B";
-		mes "���ł����}���܂��I";
+		mes "[アブラハム・フーディン]";
+		mes "フーディンが良い値段を";
+		mes "つけてあげます。";
+		mes "いつでも歓迎します！";
 		setquest 12410;
 		compquest 12410;
 		close;
 	}
 	if(checkquest(12411)) {
 		if(checkquest(12411) & 0x2 == 0) {
-			mes "[�A�u���n���E�t�[�f�B��]";
-			mes "���`���A";
-			mes "���͂���ȏ������܂����`�B";
-			mes "�܂���ŗ��ĉ������ˁ`�B";
+			mes "[アブラハム・フーディン]";
+			mes "お～う、";
+			mes "今はこれ以上取引しませんよ～。";
+			mes "また後で来て下さいね～。";
 			close;
 		}
 		delquest 12411;
 	}
-	mes "[�A�u���n���E�t�[�f�B��]";
-	mes "�����̓t�[�f�B����";
-	mes "����������܂����H";
-	mes "^ff0000���Ȃ݂ɁA����ł���̂�";
-	mes "��T�Ԃɂǂꂩ�ЂƂł��B";
-	mes "���ӂ��đI��ł��������ˁ`�B^000000";
+	mes "[アブラハム・フーディン]";
+	mes "今日はフーディンと";
+	mes "何を取引しますか？";
+	mes "^ff0000ちなみに、取引できるのは";
+	mes "一週間にどれかひとつです。";
+	mes "注意して選んでくださいね～。^000000";
 	next;
-	switch(select("��߂�",
-				"^777777�Y��ȍ��@50��^000000",
-				"^777777�ғł̕��@50��^000000",
-				"^777777���e���Ȓe��@50��^000000",
-				"^777777�����c�X�J�[�t�@50��^000000",
-				"^777777���F�̃}�t���[�@50��^000000",
-				"^777777��ꂽ�V���b�g�K���@10��^000000",
-				"^777777�Â����{���o�[�@10��^000000",
-				"^777777���e���ȃV�~�^�[�@10��^000000",
-				"^777777���n���̊k�@10��^000000",
-				"^777777�����l�Y�~�̂����ہ@10��^000000"
+	switch(select("やめる",
+				"^777777綺麗な骨　50個^000000",
+				"^777777猛毒の粉　50個^000000",
+				"^777777お粗末な弾薬　50個^000000",
+				"^777777盗賊団スカーフ　50個^000000",
+				"^777777茶色のマフラー　50個^000000",
+				"^777777壊れたショットガン　10個^000000",
+				"^777777古いリボルバー　10個^000000",
+				"^777777お粗末なシミター　10個^000000",
+				"^777777湿地虫の殻　10個^000000",
+				"^777777下水ネズミのしっぽ　10個^000000"
 	)) {
 	case 1:
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�����c�c��߂܂����H";
+		mes "[アブラハム・フーディン]";
+		mes "おう……やめますか？";
 		close;
 	case 2:
 		set '@nameid,25276;
@@ -5339,25 +5339,25 @@ harboro1.gat,231,254,3	script	�A�u���n���E�t�[�f�B��	58,{
 		break;
 	}
 	if(countitem('@nameid) < '@num) {
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "��H";
-		mes "�ǂ��ɂ���܂����H";
-		mes "�t�[�f�B���ɂ�����";
-		mes "�����Ă������m�I";
+		mes "[アブラハム・フーディン]";
+		mes "ん？";
+		mes "どこにありますか？";
+		mes "フーディンにくれると";
+		mes "言っていたモノ！";
 		close;
 	}
-	mes "[�A�u���n���E�t�[�f�B��]";
-	mes "^0000ff" +getitemname('@nameid)+ "�@" +'@num+ "��^000000��";
-	mes "^0000ff���b�N���b�W�R�C��1��^000000��";
-	mes "�������܂��`�B";
-	mes "����ł����ł����`�H";
+	mes "[アブラハム・フーディン]";
+	mes "^0000ff" +getitemname('@nameid)+ "　" +'@num+ "個^000000と";
+	mes "^0000ffロックリッジコイン1個^000000を";
+	mes "交換します～。";
+	mes "それでいいですか～？";
 	next;
-	if(select("�ǂ��ł�","�s���Ȏ���ɂ͉����Ȃ�") == 2) {
-		mes "[�A�u���n���E�t�[�f�B��]";
-		mes "�����`�I";
-		mes "�`���ҁA�����ł��ˁ`�B";
-		mes "���Ƃ̎����";
-		mes "�s������Ȃ��ł���`�B";
+	if(select("良いです","不当な取引には応じない") == 2) {
+		mes "[アブラハム・フーディン]";
+		mes "おう～！";
+		mes "冒険者、酷いですね～。";
+		mes "私との取引は";
+		mes "不当じゃないですよ～。";
 		close;
 	}
 	delitem '@nameid,'@num;
@@ -5365,173 +5365,173 @@ harboro1.gat,231,254,3	script	�A�u���n���E�t�[�f�B��	58,{
 	getitem 25250,1;
 	getexp 10000000,0,1;
 	getexp 0,4000000,0;
-	mes "[�A�u���n���E�t�[�f�B��]";
-	mes "���肪�Ƃ��������܂��`�B";
-	mes "�ǂ��������ł����`�B";
+	mes "[アブラハム・フーディン]";
+	mes "ありがとうございます～。";
+	mes "良い取り引きでした～。";
 	next;
-	mes "[�A�u���n���E�t�[�f�B��]";
-	mes "�����ȊO�̓y�n�ł�";
-	mes "���邱�Ƃ̂ł��Ȃ�";
-	mes "�ς�������m�΂���ł��B";
-	mes "�t�[�f�B���ƂĂ��C�ɓ���܂����I";
+	mes "[アブラハム・フーディン]";
+	mes "ここ以外の土地では";
+	mes "見ることのできない";
+	mes "変わったモノばかりです。";
+	mes "フーディンとても気に入りました！";
 	close;
 OnTalk1:
-	unittalk "�A�u���n���E�t�[�f�B�� : �󔠂ɏ���ɐG������_������I";
+	unittalk "アブラハム・フーディン : 宝箱に勝手に触っちゃダメだよ！";
 	end;
 OnTalk2:
-	unittalk "�A�u���n���E�t�[�f�B�� : ���̗p���A�V�������b�g�`�I";
+	unittalk "アブラハム・フーディン : 何の用だ、シャルロット～！";
 	end;
 }
 
 //=======================================================
-// �H�ނ��Ȃ��I�N�G�X�gNPC
+// 食材がない！クエストNPC
 //-------------------------------------------------------
-harboro1.gat,352,199,5	script	�󕠂̘J����#1	99,5,5,{
+harboro1.gat,352,199,5	script	空腹の労働者#1	99,5,5,{
 	end;
 OnTouch:
-	unittalk "�󕠂̘J���� : �����A�����������B�ǂ����ė񂪂܂���������Ȃ��񂾁B";
+	unittalk "空腹の労働者 : うう、お腹すいた。どうして列がまったく減らないんだ。";
 	end;
 }
 
-harboro1.gat,352,196,5	script	�󕠂̘J����#2	98,{}
-harboro1.gat,352,193,5	script	�󕠂̘J����#3	855,{}
-harboro1.gat,352,190,5	script	�󕠂̘J����#4	100,{}
+harboro1.gat,352,196,5	script	空腹の労働者#2	98,{}
+harboro1.gat,352,193,5	script	空腹の労働者#3	855,{}
+harboro1.gat,352,190,5	script	空腹の労働者#4	100,{}
 
-harboro1.gat,352,187,5	script	��������ł݂������̐l#	870,5,5,{
+harboro1.gat,352,187,5	script	ただ並んでみただけの人#	870,5,5,{
 	end;
 OnTouch:
-	unittalk "��������ł݂������̐l : ����͉��̗�Ȃ񂾁H�@���������̂��H";
+	unittalk "ただ並んでみただけの人 : これは何の列なんだ？　何かくれるのか？";
 	end;
 }
 
-harboro1.gat,352,184,5	script	�󕠂̘J����#6	99,{}
-harboro1.gat,352,181,5	script	�󕠂̘J����#7	846,{}
+harboro1.gat,352,184,5	script	空腹の労働者#6	99,{}
+harboro1.gat,352,181,5	script	空腹の労働者#7	846,{}
 
-harboro1.gat,352,178,5	script	�󕠂̘J����#8	100,5,5,{
+harboro1.gat,352,178,5	script	空腹の労働者#8	100,5,5,{
 	end;
 OnTouch:
-	unittalk "�󕠂̘J���� : ���т�H�ׂ�ׂ�3���Ԃ����΂Ȃ��Ƃ����Ȃ��Ƃ́B����͍����Ȃ��H";
+	unittalk "空腹の労働者 : ご飯を食べる為に3時間も並ばないといけないとは。これは酷くない？";
 	end;
 }
 
-harboro1.gat,352,175,5	script	�󕠂̘J����#9	99,{}
-harboro1.gat,352,172,5	script	�󕠂̘J����#10	98,{}
+harboro1.gat,352,175,5	script	空腹の労働者#9	99,{}
+harboro1.gat,352,172,5	script	空腹の労働者#10	98,{}
 
-harboro1.gat,352,169,5	script	�󕠂̘J����#11	855,5,5,{
+harboro1.gat,352,169,5	script	空腹の労働者#11	855,5,5,{
 	end;
 OnTouch:
-	unittalk "�󕠂̘J���� : ����������Ŏ��̔Ԃ��I";
+	unittalk "空腹の労働者 : 後もう少しで私の番だ！";
 	end;
 }
 
-harboro1.gat,353,166,5	script	�󕠂̘J����#12	99,{}
+harboro1.gat,353,166,5	script	空腹の労働者#12	99,{}
 
-harboro1.gat,355,164,5	script	�󕠂̘J����#13	100,5,5,{
+harboro1.gat,355,164,5	script	空腹の労働者#13	100,5,5,{
 	end;
 OnTouch:
-	unittalk "�󕠂̘J���� : �����I�@�݂�ȕ���ł���̂������Ȃ��̂��H�@��̌��ɕ��ׂ�I";
+	unittalk "空腹の労働者 : おい！　みんな並んでいるのが見えないのか？　列の後ろに並べよ！";
 	end;
 }
 
-harboro1.gat,357,163,3	script	���H�S��	886,{
+harboro1.gat,357,163,3	script	給食担当	886,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[���H�S��]";
-		mes "�����A�ז������Ȃ��ł���I";
-		mes "�����c���\��Ă��邹����";
-		mes "���������Z�����񂾁I";
+		mes "[給食担当]";
+		mes "おい、邪魔をしないでくれ！";
+		mes "牛賊団が暴れているせいで";
+		mes "こっちも忙しいんだ！";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 130) {
-		mes "[���H�S��]";
-		mes "�����A���̗񂪌����Ȃ��̂��H";
-		mes "�ǂ��̒N���͒m��Ȃ����A";
-		mes "�z�����󂯂����Ȃ��ɕ��ׁB";
+		mes "[給食担当]";
+		mes "おい、あの列が見えないのか？";
+		mes "どこの誰かは知らないが、";
+		mes "配給を受けたいなら列に並べ。";
 		next;
-		mes "�]��O��������Ă��܂����B";
-		mes "�@^ff0000BaseLv130�ȏ�^000000�ɂȂ�����";
-		mes "�@�܂����悤�]";
+		mes "‐門前払いされてしまった。";
+		mes "　^ff0000BaseLv130以上^000000になったら";
+		mes "　また来よう‐";
 		close;
 	}
-	if(!checkquest(12381)) {	// ����
-		mes "[���H�S��]";
-		mes "�����A���̗񂪌����Ȃ��̂��H";
-		mes "�ǂ��̒N���͒m��Ȃ����A";
-		mes "�z�����󂯂����Ȃ��ɕ��ׁB";
+	if(!checkquest(12381)) {	// 初回
+		mes "[給食担当]";
+		mes "おい、あの列が見えないのか？";
+		mes "どこの誰かは知らないが、";
+		mes "配給を受けたいなら列に並べ。";
 		next;
-		mes "[���H�S��]";
-		mes "�z�����󂯂ɗ����񂶂�Ȃ��̂��H";
-		mes "���ꂶ��Ȃ�̗p���H";
-		mes "�p�������Ȃ炠�����֍s���Ă���B";
-		mes "�����ł����H�����s������";
-		mes "�C�������Ă���񂾁I";
+		mes "[給食担当]";
+		mes "配給を受けに来たんじゃないのか？";
+		mes "それじゃなんの用だ？";
+		mes "用が無いならあっちへ行ってくれ。";
+		mes "ただでさえ食料が不足して";
+		mes "気が立っているんだ！";
 		next;
-		mes "[���H�S��]";
-		mes "���̐l�����͉����Ԃ��҂��Ă��邪�A";
-		mes "�H�ނ��͂��Ȃ�����";
-		mes "�z�����ł��Ȃ��܂܂��B";
-		mes "�����{���Ȃ瓞�����Ă���ׂ�";
-		mes "�H�ނ������͂��Ă��Ȃ��񂾁B";
-		mes "���������҂ɂ����E������B";
+		mes "[給食担当]";
+		mes "あの人たちは何時間も待っているが、";
+		mes "食材が届かないから";
+		mes "配給ができないままだ。";
+		mes "だが本来なら到着しているべき";
+		mes "食材が何も届いていないんだ。";
+		mes "いい加減待つにも限界がある。";
 		next;
-		menu "�O�ŐH�ނ𒲒B���Ă݂�̂́H",-;
-		mes "[���H�S��]";
-		mes "�����l���Ȃ������킯����Ȃ��B";
-		mes "�߂��ŐH�ނ𒲒B���悤�Ǝ��݂��B";
-		mes "�����O�͍��Ɛ΂����ŁA";
-		mes "�ǂ��ɂ��H�ו��Ȃ񂩂Ȃ������B";
+		menu "外で食材を調達してみるのは？",-;
+		mes "[給食担当]";
+		mes "私も考えなかったわけじゃない。";
+		mes "近くで食材を調達しようと試みた。";
+		mes "だが外は砂と石だけで、";
+		mes "どこにも食べ物なんかなかった。";
 		next;
-		mes "[���H�S��]";
-		mes "����ȏ��ŋ��H�����^�c���悤�Ƃ��A";
-		mes "�����ǂ������Ă�����B";
+		mes "[給食担当]";
+		mes "こんな所で給食所を運営しようとか、";
+		mes "私がどうかしていたよ。";
 		next;
-		mes "[�󕠂̘J����]";
-		mes "���A�H�ނ��Ȃ��ƌ��������H";
-		mes "�H�ו����S���Ȃ��Ȃ����̂�!?";
+		mes "[空腹の労働者]";
+		mes "今、食材がないと言ったか？";
+		mes "食べ物が全部なくなったのか!?";
 		next;
-		mes "[���H�S��]";
-		mes "����A���������B";
-		mes "�����͂��̂��x��Ă��邾��������A";
-		mes "�ςȂ��Ƃ͌���Ȃ��ł���I";
+		mes "[給食担当]";
+		mes "いや、誤解だ誤解。";
+		mes "少し届くのが遅れているだけだから、";
+		mes "変なことは言わないでくれ！";
 		next;
-		menu "��`���܂��傤���H",-;
-		mes "[���H�S��]";
-		mes "��`���Ă����̂��H";
-		mes "�������I�@���ꂶ�Ⴑ�����悤�B";
-		mes "�K�v�ȐH�ނ��������邩��A";
-		mes "�N�̓~�b�h�K���h�嗤�ɍs��";
-		mes "�����𒲒B���Ă��Ă���B";
-		mes "�ǂ����H�@��������V���p�ӂ���B";
+		menu "手伝いましょうか？",-;
+		mes "[給食担当]";
+		mes "手伝ってくれるのか？";
+		mes "そうか！　それじゃこうしよう。";
+		mes "必要な食材をメモするから、";
+		mes "君はミッドガルド大陸に行き";
+		mes "それらを調達してきてくれ。";
+		mes "どうだ？　もちろん報酬も用意する。";
 		next;
-		if(select("�����󂯂�","�f��") == 2) {
-			mes "[���H�S��]";
-			mes "���c�c�H";
-			mes "��`���Ă����񂶂�";
-			mes "�Ȃ������̂��H";
+		if(select("引き受ける","断る") == 2) {
+			mes "[給食担当]";
+			mes "え……？";
+			mes "手伝ってくれるんじゃ";
+			mes "なかったのか？";
 			close;
 		}
-		mes "[���H�S��]";
-		mes "�������I�@�_�񐬗����I";
-		mes "���ꂶ�ᒲ�B���Ăق����i����";
-		mes "���X�g����邩��A";
-		mes "������Ƒ҂��ĂĂ����B";
+		mes "[給食担当]";
+		mes "いいぞ！　契約成立だ！";
+		mes "それじゃ調達してほしい品物の";
+		mes "リストを作るから、";
+		mes "ちょっと待っててくれよ。";
 		next;
-		mes "[���H�S��]";
-		mes "�c�c�B";
+		mes "[給食担当]";
+		mes "……。";
 		next;
-		mes "[���H�S��]";
-		mes "�悵�A�ł����B";
+		mes "[給食担当]";
+		mes "よし、できた。";
 		setquest 12381;
 		compquest 12381;
 		next;
 	}
 	if(checkquest(12382)) {
 		if(checkquest(12382)&2 == 0) {
-			mes "[���H�S��]";
-			mes "�Ƃ肠�������}�͉z�����悤���B";
-			mes "�܂����ނ��B";
+			mes "[給食担当]";
+			mes "とりあえずヤマは越えたようだ。";
+			mes "また頼むぞ。";
 			close;
 		}
 		delquest 12382;
@@ -5566,11 +5566,11 @@ harboro1.gat,357,163,3	script	���H�S��	886,{
 	}
 	if('@quest) {
 		if(countitem('@itemid) < '@count) {
-			mes "[���H�S��]";
-			mes "^0000ff" + getitemname('@itemid) + '@count + "��^000000��";
-			mes "�����ė��Ă���I";
-			mes "�傫�ȓs�s�Ȃ炾������";
-			mes "��舵���Ă���͂����B";
+			mes "[給食担当]";
+			mes "^0000ff" + getitemname('@itemid) + '@count + "個^000000を";
+			mes "持って来てくれ！";
+			mes "大きな都市ならだいたい";
+			mes "取り扱っているはずだ。";
 			close;
 		}
 		delitem '@itemid,'@count;
@@ -5579,207 +5579,207 @@ harboro1.gat,357,163,3	script	���H�S��	886,{
 		getitem 25250,1;
 		getexp 10000000,0,1;
 		getexp 0,4000000,0;
-		mes "[���H�S��]";
-		mes "�����A����ł����H�ނ��ȁI";
-		mes "�������łȂ�Ƃ��Ȃ肻�����B";
-		mes "���������悠�肪�Ƃ��I";
+		mes "[給食担当]";
+		mes "おお、頼んでいた食材だな！";
+		mes "おかげでなんとかなりそうだ。";
+		mes "助かったよありがとう！";
 		close;
 	}
-	mes "[���H�S��]";
-	mes "����K�v�ȐH�ނ̃��X�g�͂��ꂾ�B";
-	mes "�ł��邾�����������Ă��Ă���B";
+	mes "[給食担当]";
+	mes "今回必要な食材のリストはこれだ。";
+	mes "できるだけ早く持ってきてくれ。";
 	next;
-	if(select("�����������󂯂�","���͖Z�����̂Ō�ɂ���") == 2) {
-		mes "[���H�S��]";
-		mes "�������B";
-		mes "�݂�ȕ����󂩂��Ă���񂾁B";
-		mes "�p���Еt������";
-		mes "�����ɂł����Ă���B";
+	if(select("今すぐ引き受ける","今は忙しいので後にする") == 2) {
+		mes "[給食担当]";
+		mes "そうか。";
+		mes "みんな腹を空かしているんだ。";
+		mes "用が片付いたら";
+		mes "すぐにでも来てくれ。";
 		close;
 	}
 	switch(rand(6)) {
 	case 0:
 		setquest 12383;
-		mes "[���H�S��]";
-		mes "�����̃��j���[�̓R���b�P�Ȃ񂾂��A";
-		mes "���܂��ɐH�ނ��͂��Ă��Ȃ��񂾁B";
+		mes "[給食担当]";
+		mes "今日のメニューはコロッケなんだが、";
+		mes "いまだに食材が届いていないんだ。";
 		next;
-		mes "[���H�S��]";
-		mes "^0000ff����160��^000000��";
-		mes "�����ė��Ă���I";
-		mes "�傫�ȓs�s�Ȃ炾������";
-		mes "��舵���Ă���͂����B";
+		mes "[給食担当]";
+		mes "^0000ffいも160個^000000を";
+		mes "持って来てくれ！";
+		mes "大きな都市ならだいたい";
+		mes "取り扱っているはずだ。";
 		close;
 	case 1:
 		setquest 12384;
-		mes "[���H�S��]";
-		mes "�H���̃��C���ł������";
-		mes "�����Ȃ��Ă��܂����I";
-		mes "����͍Ђ����I";
+		mes "[給食担当]";
+		mes "食事のメインである肉が";
+		mes "無くなってしまった！";
+		mes "これは災いだ！";
 		next;
-		mes "[���H�S��]";
-		mes "^0000ff�ɂ�50��^000000��";
-		mes "�����ė��Ă���I";
-		mes "�傫�ȓs�s�Ȃ炾������";
-		mes "��舵���Ă���͂����B";
+		mes "[給食担当]";
+		mes "^0000ffにく50個^000000を";
+		mes "持って来てくれ！";
+		mes "大きな都市ならだいたい";
+		mes "取り扱っているはずだ。";
 		close;
 	case 2:
 		setquest 12385;
-		mes "[���H�S��]";
-		mes "���ɂ��锨�ň�ĂĂ���";
-		mes "�j���W�����������H";
-		mes "���܂�ɂ���������";
-		mes "�w���Ǝv������B";
+		mes "[給食担当]";
+		mes "裏にある畑で育てている";
+		mes "ニンジンを見たか？";
+		mes "あまりにも小さくて";
+		mes "指かと思ったよ。";
 		next;
-		mes "[���H�S��]";
-		mes "�V�`���[�ɓ���悤�Ǝv������";
-		mes "���܂�ɂ�����������";
-		mes "�����̎w������";
-		mes "���ꂻ���ɂȂ����������I";
+		mes "[給食担当]";
+		mes "シチューに入れようと思ったら";
+		mes "あまりにも小さいから";
+		mes "自分の指を代わりに";
+		mes "入れそうになっちゃったよ！";
 		next;
-		mes "[���H�S��]";
-		mes "^0000ff�j���W��160��^000000��";
-		mes "�����ė��Ă���I";
-		mes "�傫�ȓs�s�Ȃ炾������";
-		mes "��舵���Ă���͂����B";
+		mes "[給食担当]";
+		mes "^0000ffニンジン160個^000000を";
+		mes "持って来てくれ！";
+		mes "大きな都市ならだいたい";
+		mes "取り扱っているはずだ。";
 		close;
 	case 3:
 		//TODO
 	case 4:
 		setquest 12387;
-		mes "[���H�S��]";
-		mes "�J�{�`���V�`���[����肽���̂�";
-		mes "�J�{�`���������񂾁B";
+		mes "[給食担当]";
+		mes "カボチャシチューを作りたいのに";
+		mes "カボチャが無いんだ。";
 		next;
-		mes "[���H�S��]";
-		mes "^0000ff�J�{�`��160��^000000��";
-		mes "�����ė��Ă���I";
-		mes "�傫�ȓs�s�Ȃ炾������";
-		mes "��舵���Ă���͂����B";
+		mes "[給食担当]";
+		mes "^0000ffカボチャ160個^000000を";
+		mes "持って来てくれ！";
+		mes "大きな都市ならだいたい";
+		mes "取り扱っているはずだ。";
 		close;
 	case 5:
 		setquest 12388;
-		mes "[���H�S��]";
-		mes "���A�c���Ă���H�ނō���̂�";
-		mes "�L�m�R�X�[�v���炢�Ȃ񂾂��A";
-		mes "�L�m�R���Ȃ��B";
-		mes "�H�p�L�m�R�������ė��Ă���Ȃ����H";
+		mes "[給食担当]";
+		mes "今、残っている食材で作れるのは";
+		mes "キノコスープくらいなんだが、";
+		mes "キノコがない。";
+		mes "食用キノコを持って来てくれないか？";
 		next;
-		mes "[���H�S��]";
-		mes "^0000ff�H�p�L�m�R60��^000000��";
-		mes "�����ė��Ă���I";
-		mes "�傫�ȓs�s�Ȃ炾������";
-		mes "��舵���Ă���͂����B";
+		mes "[給食担当]";
+		mes "^0000ff食用キノコ60個^000000を";
+		mes "持って来てくれ！";
+		mes "大きな都市ならだいたい";
+		mes "取り扱っているはずだ。";
 		close;
 	}
 }
 
 //=======================================================
-// �����ێ������N�G�X�gNPC
+// 治安維持活動クエストNPC
 //-------------------------------------------------------
-harboro1.gat,346,157,6	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev01	732,{}
-harboro1.gat,347,155,6	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev02	733,{}
-harboro1.gat,349,157,6	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev03	734,{}
-harboro1.gat,351,154,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev04	735,{}
-harboro1.gat,348,148,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev05	753,{}
-harboro1.gat,353,156,6	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev06	755,{}
-harboro1.gat,347,151,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev07	732,{}
-harboro1.gat,354,149,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev08	733,{}
-harboro1.gat,345,149,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev09	734,{}
-harboro1.gat,352,150,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev10	735,{}
-harboro1.gat,350,149,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev11	753,{}
-harboro1.gat,354,153,7	script	�J���ӗ~�Ɉ��鋁�E��::rockridge_ev12	732,{}
+harboro1.gat,346,157,6	script	労働意欲に溢れる求職者::rockridge_ev01	732,{}
+harboro1.gat,347,155,6	script	労働意欲に溢れる求職者::rockridge_ev02	733,{}
+harboro1.gat,349,157,6	script	労働意欲に溢れる求職者::rockridge_ev03	734,{}
+harboro1.gat,351,154,7	script	労働意欲に溢れる求職者::rockridge_ev04	735,{}
+harboro1.gat,348,148,7	script	労働意欲に溢れる求職者::rockridge_ev05	753,{}
+harboro1.gat,353,156,6	script	労働意欲に溢れる求職者::rockridge_ev06	755,{}
+harboro1.gat,347,151,7	script	労働意欲に溢れる求職者::rockridge_ev07	732,{}
+harboro1.gat,354,149,7	script	労働意欲に溢れる求職者::rockridge_ev08	733,{}
+harboro1.gat,345,149,7	script	労働意欲に溢れる求職者::rockridge_ev09	734,{}
+harboro1.gat,352,150,7	script	労働意欲に溢れる求職者::rockridge_ev10	735,{}
+harboro1.gat,350,149,7	script	労働意欲に溢れる求職者::rockridge_ev11	753,{}
+harboro1.gat,354,153,7	script	労働意欲に溢れる求職者::rockridge_ev12	732,{}
 
 harboro1.gat,352,154,0	script	#r_q1	139,5,5,{
-	//�N�G�X�g���͔������Ȃ�
-	//�󒍎��Ƀ����_������
+	//クエスト中は発生しない
+	//受注時にランダム発言
 OnTouch:
 	switch(rand(6)) {
-	case 0: unittalk getnpcid(0,"rockridge_ev01"),"�J���ӗ~�Ɉ��鋁�E�� : ���̘r�Ȃ炷���Ɍ���ɓ����͂��Ȃ񂾂��A�Ȃ����ۂ���񂾁H"; break;
-	case 1: unittalk getnpcid(0,"rockridge_ev03"),"�J���ӗ~�Ɉ��鋁�E�� : ���Q����ׂɂ����ɗ����Ƃł��v���Ă���̂��H�@�����d��������I"; break;
-	case 2: unittalk getnpcid(0,"rockridge_ev05"),"�J���ӗ~�Ɉ��鋁�E�� : �����Z����A������Ɨ���Ă���Ȃ��H�@�ז�����B"; break;
-	case 3: unittalk getnpcid(0,"rockridge_ev07"),"�J���ӗ~�Ɉ��鋁�E�� : �~�b�h�K���h���痈���c�Ɏ҂Ȃ̂��H�@���������������낿��낵�Ă��Ėڏ�肾�B"; break;
-	case 4: unittalk getnpcid(0,"rockridge_ev09"),"�J���ӗ~�Ɉ��鋁�E�� : �ǂ����Ď��̓_���Ȃ񂾁H�@�O�ɂ���R���[�e���炢�͗]�T�œ|�����Ƃ��ł���񂾂�I"; break;
-	case 5: unittalk getnpcid(0,"rockridge_ev11"),"�J���ӗ~�Ɉ��鋁�E�� : �����c�A�R���[�e�����p�[�e�B�[���W���܂��B"; break;
+	case 0: unittalk getnpcid(0,"rockridge_ev01"),"労働意欲に溢れる求職者 : 私の腕ならすぐに現場に入れるはずなんだが、なぜ拒否するんだ？"; break;
+	case 1: unittalk getnpcid(0,"rockridge_ev03"),"労働意欲に溢れる求職者 : 昼寝する為にここに来たとでも思っているのか？　早く仕事をくれ！"; break;
+	case 2: unittalk getnpcid(0,"rockridge_ev05"),"労働意欲に溢れる求職者 : おい兄さん、ちょっと離れてくれない？　邪魔だよ。"; break;
+	case 3: unittalk getnpcid(0,"rockridge_ev07"),"労働意欲に溢れる求職者 : ミッドガルドから来た田舎者なのか？　あっちこっちうろちょろしていて目障りだ。"; break;
+	case 4: unittalk getnpcid(0,"rockridge_ev09"),"労働意欲に溢れる求職者 : どうして私はダメなんだ？　外にいるコヨーテくらいは余裕で倒すことができるんだよ！"; break;
+	case 5: unittalk getnpcid(0,"rockridge_ev11"),"労働意欲に溢れる求職者 : 牛賊団、コヨーテ討伐パーティーを募集します。"; break;
 	}
 	end;
 }
 
-harboro1.gat,357,155,3	script	�|�S���x�c������t	880,{
+harboro1.gat,357,155,3	script	鋼鉄自警団初級受付	880,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�|�S���x�c������t]";
-		mes "�ŋ߁A�����c�̊�����";
-		mes "�����ɂȂ��Ă��Ă���B";
-		mes "�댯�Ȃ̂ō��͎d���̈˗���";
-		mes "���Ă��Ȃ��񂾁B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "最近、牛賊団の活動が";
+		mes "活発になってきている。";
+		mes "危険なので今は仕事の依頼は";
+		mes "していないんだ。";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 130) {
-		mes "[�|�S���x�c������t]";
-		mes "�������ǎ������ɂ�";
-		mes "�������������z���K�v�Ȃ񂾁B";
-		mes "BaseLv130�ȏ�͂Ȃ��ƂˁB";
+		mes "[鋼鉄自警団初級受付]";
+		mes "悪いけど私たちには";
+		mes "もう少し強い奴が必要なんだ。";
+		mes "BaseLv130以上はないとね。";
 		close;
 	}
 	if(!checkquest(12389)) {
-		mes "[�|�S���x�c������t]";
-		mes "�����A�����̋������Ȗ`���҂���B";
-		mes "�d�������炢�ɗ����̂��H";
+		mes "[鋼鉄自警団初級受付]";
+		mes "あっ、そこの強そうな冒険者さん。";
+		mes "仕事をもらいに来たのか？";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "���̃��b�N���b�W�̒���";
-		mes "���S���ĕ�炷���߂ɂ́A";
-		mes "����I�Ɏ��ӂ̃����X�^�[��";
-		mes "���炳�Ȃ���Ȃ�Ȃ��񂾁B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "このロックリッジの町で";
+		mes "安心して暮らすためには、";
+		mes "定期的に周辺のモンスターを";
+		mes "減らさなきゃならないんだ。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "���������ɂ���l��";
-		mes "�����X�^�[��苭���l��";
-		mes "���܂肢�Ȃ��B";
-		mes "���ہA�قƂ�ǂ��z�R�œ������߂�";
-		mes "����Ă����J���҂�����ȁB";
+		mes "[鋼鉄自警団初級受付]";
+		mes "だがここにいる人で";
+		mes "モンスターより強い人は";
+		mes "あまりいない。";
+		mes "実際、ほとんどが鉱山で働くために";
+		mes "やってきた労働者だからな。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "�����Ŏ��͂̂��肻���Ȗ`���҂�";
-		mes "��������A���̎d�������Ȃ���";
-		mes "���������Ă���킯���B";
-		mes "�������������A�N�̎��͂́c�c";
+		mes "[鋼鉄自警団初級受付]";
+		mes "そこで実力のありそうな冒険者を";
+		mes "見つけたら、この仕事をやらないか";
+		mes "声をかけているわけだ。";
+		mes "私が見た感じ、君の実力は……";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "�����A�ƂĂ������I";
-		mes "���i�I�@���S�ɍ��i���I";
+		mes "[鋼鉄自警団初級受付]";
+		mes "いい、とてもいい！";
+		mes "合格！　完全に合格だ！";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "�ǂ����낤�H";
-		mes "���̎d���������󂯂Ă݂Ȃ����H";
+		mes "[鋼鉄自警団初級受付]";
+		mes "どうだろう？";
+		mes "この仕事を引き受けてみないか？";
 		next;
-		if(select("�����ł���","�����l���Ă݂Ă���c�c") == 2) {
-			mes "[�|�S���x�c������t]";
-			mes "�N�ɂƂ��Ă������b����Ȃ��͂����B";
-			mes "�悭�l���Ă݂Ă���B";
+		if(select("いいですよ","少し考えてみてから……") == 2) {
+			mes "[鋼鉄自警団初級受付]";
+			mes "君にとっても悪い話じゃないはずだ。";
+			mes "よく考えてみてくれ。";
 			close;
 		}
-		mes "[�|�S���x�c������t]";
-		mes "�悵�A���ꂶ�Ⴓ�������d����";
-		mes "�˗����悤�B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "よし、それじゃさっそく仕事を";
+		mes "依頼しよう。";
 		setquest 12389;
 		compquest 12389;
 		next;
 	}
 	if(checkquest(12390)) {
 		if(checkquest(12390) & 0x2 == 0) {
-			mes "[�|�S���x�c������t]";
-			mes "���̈˗��܂ł͂������������肻�����B";
-			mes "�܂���ŗ��Ă���B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "次の依頼まではもう少しかかりそうだ。";
+			mes "また後で来てくれ。";
 			close;
 		}
 		delquest 12390;
-		mes "[�|�S���x�c������t]";
-		mes "�悭���Ă��ꂽ�B";
-		mes "�������������d���̈˗����B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "よく来てくれた。";
+		mes "さっそくだが仕事の依頼だ。";
 		next;
 	}
 	for(set '@i,12391; '@i <= 12394; set '@i,'@i+1)
@@ -5787,14 +5787,14 @@ harboro1.gat,357,155,3	script	�|�S���x�c������t	880,{
 			break;
 	if('@i != 12395) {
 		if(checkquest('@i) & 0x4) {
-			mes "[�|�S���x�c������t]";
-			mes "�N�A�����ȁI";
-			mes "�����Ƃ�萋����Ƃ́c�c";
+			mes "[鋼鉄自警団初級受付]";
+			mes "君、凄いな！";
+			mes "ちゃんとやり遂げるとは……";
 			next;
 			if(checkitemblank() == 0) {
-				mes "�]�ו�������ȏ㎝�Ă܂���";
-				mes "�@�ו���1�ȏ�̋󂫂�";
-				mes "�@����Ă��������]";
+				mes "‐荷物をこれ以上持てません";
+				mes "　荷物に1個以上の空きを";
+				mes "　作ってください‐";
 				close;
 			}
 			delquest '@i;
@@ -5802,248 +5802,248 @@ harboro1.gat,357,155,3	script	�|�S���x�c������t	880,{
 			getitem 25250,1;
 			getexp 20000000,0,1;
 			getexp 0,8000000,0;
-			mes "[�|�S���x�c������t]";
-			mes "�{���ɂ��肪�Ƃ��B";
-			mes "������낵�����ނ�B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "本当にありがとう。";
+			mes "次もよろしく頼むよ。";
 			close;
 		}
-		mes "[�|�S���x�c������t]";
-		mes "�ǂ������H";
-		mes "���ׂ�����Y�ꂽ�̂��H";
+		mes "[鋼鉄自警団初級受付]";
+		mes "どうした？";
+		mes "やるべき事を忘れたのか？";
 		next;
-		if(select("�d���̓��e���m�F����","^FF0000�d�����L�����Z������^000000") == 2) {
-			mes "[�|�S���x�c������t]";
-			mes "�ȂɁH";
-			mes "�L�����Z���������̂��H";
-			mes "�L�����Z�������";
-			mes "����܂ł̏󋵂͔j������邪�A";
-			mes "����ł����̂��H";
+		if(select("仕事の内容を確認する","^FF0000仕事をキャンセルする^000000") == 2) {
+			mes "[鋼鉄自警団初級受付]";
+			mes "なに？";
+			mes "キャンセルしたいのか？";
+			mes "キャンセルすると";
+			mes "これまでの状況は破棄されるが、";
+			mes "それでいいのか？";
 			next;
-			if(select("^FF0000����ł��܂�Ȃ�^000000","^0000FF��͂葱����^000000") == 2) {
-				mes "[�|�S���x�c������t]";
-				mes "�������A�������藊�ނ��B";
+			if(select("^FF0000それでかまわない^000000","^0000FFやはり続ける^000000") == 2) {
+				mes "[鋼鉄自警団初級受付]";
+				mes "そうか、しっかり頼むぞ。";
 				close;
 			}
 			delquest '@i;
-			mes "[�|�S���x�c������t]";
-			mes "�d�����L�����Z���������B";
-			mes "���͂����Ɨ��ނ��B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "仕事をキャンセルしたぞ。";
+			mes "次はちゃんと頼むぞ。";
 			close;
 		}
-		mes "[�|�S���x�c������t]";
-		mes "���ꂶ�������x�����悤�B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "それじゃもう一度教えよう。";
 		next;
 		switch('@i) {
-		case 12391: set '@msg$,"���C�t�������������"; break;
-		case 12392: set '@msg$,"�Ԃ����ʂ����Ԃ��Ă�����"; break;
-		case 12393: set '@msg$,"��т����Ă�����"; break;
+		case 12391: set '@msg$,"ライフルを持ったやつ"; break;
+		case 12392: set '@msg$,"赤い覆面をかぶっているやつ"; break;
+		case 12393: set '@msg$,"眼帯をしているやつ"; break;
 		case 12394:
-			mes "[�|�S���x�c������t]";
-			mes "�L���N�^�[���̒��ƃ��b�N���b�W��";
-			mes "����Ȃ�ɗF�D�I�Ȍ𗬂����Ă���B";
-			mes "�����ŋ߁A�������ԓ���";
-			mes "�R���[�e�̏P���������Ă���B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "キャクター族の町とロックリッジは";
+			mes "それなりに友好的な交流をしている。";
+			mes "だが最近、町を結ぶ道で";
+			mes "コヨーテの襲撃が増えている。";
 			next;
-			mes "[�|�S���x�c������t]";
-			mes "�L���N�^�[���Ƃ̌𗬂�";
-			mes "�R���[�e�̂����ŖW�Q�����̂�";
-			mes "��肾�B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "キャクター族との交流が";
+			mes "コヨーテのせいで妨害されるのは";
+			mes "問題だ。";
 			next;
-			mes "[�|�S���x�c������t]";
-			mes "������^0000ff�R���[�e^000000��";
-			mes "50�C�قǓ|���Ăق����B";
+			mes "[鋼鉄自警団初級受付]";
+			mes "そこで^0000ffコヨーテ^000000を";
+			mes "50匹ほど倒してほしい。";
 			close;
 		}
-		mes "[�|�S���x�c������t]";
-		mes "���̎��ӂň�Ԃ̋��Ђ͂�͂苍���c���B";
-		mes "�c���񓹂Ȃ����ł͂Ȃ��A";
-		mes "�m���������Ă���B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "この周辺で一番の脅威はやはり牛賊団だ。";
+		mes "残酷非道なだけではなく、";
+		mes "知性も備えている。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "���K�͂ȏP�����N������";
-		mes "�܂�Ŏ��������ǂ��܂őς����邩";
-		mes "�����Ă��邩�̂悤���B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "小規模な襲撃を起こして";
+		mes "まるで私たちがどこまで耐えられるか";
+		mes "試しているかのようだ。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "�����ł܂���ɔނ�̍s����";
-		mes "�}������K�v������B";
-		mes "�����c�̒�����";
-		mes "^0000ff" +'@msg$+ "^000000��";
-		mes "50�l�|���Ă���B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "そこでまず先に彼らの行動を";
+		mes "抑制する必要がある。";
+		mes "牛賊団の中から";
+		mes "^0000ff" +'@msg$+ "^000000を";
+		mes "50人倒してくれ。";
 		close;
 	}
-	mes "[�|�S���x�c������t]";
-	mes "������d���͂��ꂾ�B";
-	mes "�D���Ȃ��̂�I��ł���B";
-	mes "^FF0000���Ȃ݂ɕ����̎d����";
-	mes "�����Ɏ󂯂邱�Ƃ͋֎~���Ă���B";
-	mes "�d���̕񍐂�������A���̉Ηj����";
-	mes "���߂܂Ŏ��̎d���͎󂯂��Ȃ����B^000000";
+	mes "[鋼鉄自警団初級受付]";
+	mes "今ある仕事はこれだ。";
+	mes "好きなものを選んでくれ。";
+	mes "^FF0000ちなみに複数の仕事を";
+	mes "同時に受けることは禁止している。";
+	mes "仕事の報告をしたら、次の火曜日の";
+	mes "正午まで次の仕事は受けられないぞ。^000000";
 	next;
-	switch(select("���E���h���C�_�[�ގ�","�T�C�h���C�_�[�ގ�","�u���[�h���C�_�[�ގ�","�R���[�e�ގ�","��߂�")) {
+	switch(select("ラウンドライダー退治","サイドライダー退治","ブレードライダー退治","コヨーテ退治","やめる")) {
 	case 1:
-		set '@msg$,"���C�t�������������";
+		set '@msg$,"ライフルを持ったやつ";
 		set '@quest,12391;
 		break;
 	case 2:
-		set '@msg$,"�Ԃ����ʂ����Ԃ��Ă�����";
+		set '@msg$,"赤い覆面をかぶっているやつ";
 		set '@quest,12392;
 		break;
 	case 3:
-		set '@msg$,"��т����Ă�����";
+		set '@msg$,"眼帯をしているやつ";
 		set '@quest,12393;
 		break;
 	case 4:
-		mes "[�|�S���x�c������t]";
-		mes "�L���N�^�[���̒��ƃ��b�N���b�W��";
-		mes "����Ȃ�ɗF�D�I�Ȍ𗬂����Ă���B";
-		mes "�����ŋ߁A�������ԓ���";
-		mes "�R���[�e�̏P���������Ă���B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "キャクター族の町とロックリッジは";
+		mes "それなりに友好的な交流をしている。";
+		mes "だが最近、町を結ぶ道で";
+		mes "コヨーテの襲撃が増えている。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "�L���N�^�[���Ƃ̌𗬂�";
-		mes "�R���[�e�̂����ŖW�Q�����̂�";
-		mes "��肾�B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "キャクター族との交流が";
+		mes "コヨーテのせいで妨害されるのは";
+		mes "問題だ。";
 		next;
-		mes "[�|�S���x�c������t]";
-		mes "������^0000ff�R���[�e^000000��";
-		mes "50�C�قǓ|���Ăق����B";
-		mes "���̎d���ł������H";
+		mes "[鋼鉄自警団初級受付]";
+		mes "そこで^0000ffコヨーテ^000000を";
+		mes "50匹ほど倒してほしい。";
+		mes "この仕事でいいか？";
 		next;
-		if(select("�͂�","��߂�") == 2) {
-			mes "[�|�S���x�c������t]";
-			mes "�������B";
-			mes "�C���ς������܂����Ă���B";
+		if(select("はい","やめる") == 2) {
+			mes "[鋼鉄自警団初級受付]";
+			mes "そうか。";
+			mes "気が変わったらまた来てくれ。";
 			close;
 		}
 		setquest 12394;
-		mes "[�|�S���x�c������t]";
-		mes "���ꂶ��A��낵�����񂾂��B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "それじゃ、よろしく頼んだぞ。";
 		switch(rand(4)) {
-		case 0: unittalk getnpcid(0,"rockridge_ev02"),"�J���ӗ~�Ɉ��鋁�E�� : ���߂�����Ȃ����I"; break;
-		case 1: unittalk getnpcid(0,"rockridge_ev04"),"�J���ӗ~�Ɉ��鋁�E�� : �����I�@�������͂ǂ�����ƁI"; break;
-		case 2: unittalk getnpcid(0,"rockridge_ev07"),"�J���ӗ~�Ɉ��鋁�E�� : ���ɂ��d���������A�d�����I"; break;
-		case 3: unittalk getnpcid(0,"rockridge_ev09"),"�J���ӗ~�Ɉ��鋁�E�� : �l��I��Ŏd����^���Ă���̂�!?"; break;
+		case 0: unittalk getnpcid(0,"rockridge_ev02"),"労働意欲に溢れる求職者 : 酷過ぎじゃないか！"; break;
+		case 1: unittalk getnpcid(0,"rockridge_ev04"),"労働意欲に溢れる求職者 : おい！　私たちはどうしろと！"; break;
+		case 2: unittalk getnpcid(0,"rockridge_ev07"),"労働意欲に溢れる求職者 : 私にも仕事をくれよ、仕事を！"; break;
+		case 3: unittalk getnpcid(0,"rockridge_ev09"),"労働意欲に溢れる求職者 : 人を選んで仕事を与えているのか!?"; break;
 		}
 		close;
 	case 5:
-		mes "[�|�S���x�c������t]";
-		mes "�������B";
-		mes "�C���ς������܂����Ă���B";
+		mes "[鋼鉄自警団初級受付]";
+		mes "そうか。";
+		mes "気が変わったらまた来てくれ。";
 		close;
 	}
-	mes "[�|�S���x�c������t]";
-	mes "���̎��ӂň�Ԃ̋��Ђ͂�͂苍���c���B";
-	mes "�c���񓹂Ȃ����ł͂Ȃ��A";
-	mes "�m���������Ă���B";
+	mes "[鋼鉄自警団初級受付]";
+	mes "この周辺で一番の脅威はやはり牛賊団だ。";
+	mes "残酷非道なだけではなく、";
+	mes "知性も備えている。";
 	next;
-	mes "[�|�S���x�c������t]";
-	mes "���K�͂ȏP�����N������";
-	mes "�܂�Ŏ��������ǂ��܂őς����邩";
-	mes "�����Ă��邩�̂悤���B";
+	mes "[鋼鉄自警団初級受付]";
+	mes "小規模な襲撃を起こして";
+	mes "まるで私たちがどこまで耐えられるか";
+	mes "試しているかのようだ。";
 	next;
-	mes "[�|�S���x�c������t]";
-	mes "�����ł܂���ɔނ�̍s����";
-	mes "�}������K�v������B";
-	mes "�����c�̒�����";
-	mes "^0000ff" +'@msg$+ "^000000��";
-	mes "50�l�|���Ă���B";
-	mes "���̎d���ł������H";
+	mes "[鋼鉄自警団初級受付]";
+	mes "そこでまず先に彼らの行動を";
+	mes "抑制する必要がある。";
+	mes "牛賊団の中から";
+	mes "^0000ff" +'@msg$+ "^000000を";
+	mes "50人倒してくれ。";
+	mes "この仕事でいいか？";
 	next;
-	if(select("�͂�","��߂�") == 2) {
-		mes "[�|�S���x�c������t]";
-		mes "�������B";
-		mes "�C���ς������܂����Ă���B";
+	if(select("はい","やめる") == 2) {
+		mes "[鋼鉄自警団初級受付]";
+		mes "そうか。";
+		mes "気が変わったらまた来てくれ。";
 		close;
 	}
 	setquest '@quest;
-	mes "[�|�S���x�c������t]";
-	mes "���ꂶ��A��낵�����񂾂��B";
+	mes "[鋼鉄自警団初級受付]";
+	mes "それじゃ、よろしく頼んだぞ。";
 	switch(rand(6)) {
-	case 0: unittalk getnpcid(0,"rockridge_ev02"),"�J���ӗ~�Ɉ��鋁�E�� : ���߂�����Ȃ����I"; break;
-	case 1: unittalk getnpcid(0,"rockridge_ev04"),"�J���ӗ~�Ɉ��鋁�E�� : �����I�@�������͂ǂ�����ƁI"; break;
-	case 2: unittalk getnpcid(0,"rockridge_ev07"),"�J���ӗ~�Ɉ��鋁�E�� : ���ɂ��d���������A�d�����I"; break;
-	case 3: unittalk getnpcid(0,"rockridge_ev09"),"�J���ӗ~�Ɉ��鋁�E�� : �l��I��Ŏd����^���Ă���̂�!?"; break;
-	default: unittalk getnpcid(0,"rockridge_ev11"),"�J���ӗ~�Ɉ��鋁�E�� : �����c���ɋ󂫂��������玄���c�c"; break;
+	case 0: unittalk getnpcid(0,"rockridge_ev02"),"労働意欲に溢れる求職者 : 酷過ぎじゃないか！"; break;
+	case 1: unittalk getnpcid(0,"rockridge_ev04"),"労働意欲に溢れる求職者 : おい！　私たちはどうしろと！"; break;
+	case 2: unittalk getnpcid(0,"rockridge_ev07"),"労働意欲に溢れる求職者 : 私にも仕事をくれよ、仕事を！"; break;
+	case 3: unittalk getnpcid(0,"rockridge_ev09"),"労働意欲に溢れる求職者 : 人を選んで仕事を与えているのか!?"; break;
+	default: unittalk getnpcid(0,"rockridge_ev11"),"労働意欲に溢れる求職者 : 牛賊団狩りに空きがあったら私も……"; break;
 	}
 	close;
 }
 
-harboro1.gat,357,152,3	script	�|�S���x�c�㋉��t	884,{
+harboro1.gat,357,152,3	script	鋼鉄自警団上級受付	884,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�ŋ߁A�����c�̊�����";
-		mes "�����ɂȂ��Ă��Ă���B";
-		mes "�댯�Ȃ̂ō��͎d���̈˗���";
-		mes "���Ă��Ȃ��񂾁B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "最近、牛賊団の活動が";
+		mes "活発になってきている。";
+		mes "危険なので今は仕事の依頼は";
+		mes "していないんだ。";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 160) {
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�C�����Ă����̂͂��肪�������A";
-		mes "�N�̎��͂ł͏������������낤�B";
-		mes "�Œ�ł�BaseLv160�ȏ�͕K�v���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "気遣ってくれるのはありがたいが、";
+		mes "君の実力では少し厳しいだろう。";
+		mes "最低でもBaseLv160以上は必要だ。";
 		close;
 	}
-	if(!checkquest(12389)) {	// ������
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����A�����̋������Ȗ`���҂���B";
-		mes "�d�������炢�ɗ����̂��H";
+	if(!checkquest(12389)) {	// 未調査
+		mes "[鋼鉄自警団上級受付]";
+		mes "あっ、そこの強そうな冒険者さん。";
+		mes "仕事をもらいに来たのか？";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "���̃��b�N���b�W�̒���";
-		mes "���S���ĕ�炷���߂ɂ́A";
-		mes "����I�Ɏ��ӂ̃����X�^�[��";
-		mes "���炳�Ȃ���Ȃ�Ȃ��񂾁B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "このロックリッジの町で";
+		mes "安心して暮らすためには、";
+		mes "定期的に周辺のモンスターを";
+		mes "減らさなきゃならないんだ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "���������ɂ���l��";
-		mes "�����X�^�[��苭���l��";
-		mes "���܂肢�Ȃ��B";
-		mes "���ہA�قƂ�ǂ��z�R�œ������߂�";
-		mes "����Ă����J���҂�����ȁB";
+		mes "[鋼鉄自警団上級受付]";
+		mes "だがここにいる人で";
+		mes "モンスターより強い人は";
+		mes "あまりいない。";
+		mes "実際、ほとんどが鉱山で働くために";
+		mes "やってきた労働者だからな。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����Ŏ��͂̂��肻���Ȗ`���҂�";
-		mes "��������A���̎d�������Ȃ���";
-		mes "���������Ă���킯���B";
-		mes "�������������A�N�̎��͂́c�c";
+		mes "[鋼鉄自警団上級受付]";
+		mes "そこで実力のありそうな冒険者を";
+		mes "見つけたら、この仕事をやらないか";
+		mes "声をかけているわけだ。";
+		mes "私が見た感じ、君の実力は……";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����A�ƂĂ������I";
-		mes "���i�I�@���S�ɍ��i���I";
+		mes "[鋼鉄自警団上級受付]";
+		mes "いい、とてもいい！";
+		mes "合格！　完全に合格だ！";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�ǂ����낤�H";
-		mes "���̎d���������󂯂Ă݂Ȃ����H";
+		mes "[鋼鉄自警団上級受付]";
+		mes "どうだろう？";
+		mes "この仕事を引き受けてみないか？";
 		next;
-		if(select("�����ł���","�����l���Ă݂Ă���c�c") == 2) {
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�N�ɂƂ��Ă������b����Ȃ��͂����B";
-			mes "�悭�l���Ă݂Ă���B";
+		if(select("いいですよ","少し考えてみてから……") == 2) {
+			mes "[鋼鉄自警団上級受付]";
+			mes "君にとっても悪い話じゃないはずだ。";
+			mes "よく考えてみてくれ。";
 			close;
 		}
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�悵�A���ꂶ�Ⴓ�������d����";
-		mes "�˗����悤�B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "よし、それじゃさっそく仕事を";
+		mes "依頼しよう。";
 		setquest 12389;
 		compquest 12389;
 		next;
 	}
 	if(checkquest(12398)) {
 		if(checkquest(12398) & 0x2 == 0) {
-			mes "[�|�S���x�c�㋉��t]";
-			mes "���̈˗��܂ł͂������������肻�����B";
-			mes "�܂���ŗ��Ă���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "次の依頼まではもう少しかかりそうだ。";
+			mes "また後で来てくれ。";
 			close;
 		}
 		delquest 12398;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�悭���Ă��ꂽ�B";
-		mes "�������������d���̈˗����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "よく来てくれた。";
+		mes "さっそくだが仕事の依頼だ。";
 		next;
 	}
 	for(set '@i,12395; '@i <= 12402; set '@i,'@i+1)
@@ -6051,14 +6051,14 @@ harboro1.gat,357,152,3	script	�|�S���x�c�㋉��t	884,{
 			break;
 	if('@i != 12403) {
 		if(checkquest('@i) & 0x4) {
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����I������̂��B";
-			mes "�����r�O���ȁB";
+			mes "[鋼鉄自警団上級受付]";
+			mes "もう終わったのか。";
+			mes "いい腕前だな。";
 			next;
 			if(checkitemblank() == 0) {
-				mes "�]�ו�������ȏ㎝�Ă܂���";
-				mes "�@�ו���1�ȏ�̋󂫂�";
-				mes "�@����Ă��������]";
+				mes "‐荷物をこれ以上持てません";
+				mes "　荷物に1個以上の空きを";
+				mes "　作ってください‐";
 				close;
 			}
 			delquest '@i;
@@ -6066,459 +6066,459 @@ harboro1.gat,357,152,3	script	�|�S���x�c�㋉��t	884,{
 			getitem 25250,3;
 			getexp 300000000,0,1;
 			getexp 0,120000000,0;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "����͕�V���B";
-			mes "�܂���낵�����ނ�B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "これは報酬だ。";
+			mes "またよろしく頼むよ。";
 			close;
 		}
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�Ȃ񂾁A�d���̓��e��Y�ꂽ�̂��H";
+		mes "[鋼鉄自警団上級受付]";
+		mes "なんだ、仕事の内容を忘れたのか？";
 		next;
-		if(select("�d���̓��e���m�F����","^FF0000�d�����L�����Z������^000000") == 2) {
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�ȂɁH";
-			mes "�L�����Z���������H";
-			mes "�L�����Z�������";
-			mes "����܂ł̏󋵂͔j������邪�A";
-			mes "����ł����̂��H";
+		if(select("仕事の内容を確認する","^FF0000仕事をキャンセルする^000000") == 2) {
+			mes "[鋼鉄自警団上級受付]";
+			mes "なに？";
+			mes "キャンセルしたい？";
+			mes "キャンセルすると";
+			mes "これまでの状況は破棄されるが、";
+			mes "それでいいのか？";
 			next;
-			if(select("^FF0000����ł��܂�Ȃ�^000000","^0000FF��͂葱����^000000") == 2) {
-				mes "[�|�S���x�c�㋉��t]";
-				mes "�������A�������藊�ނ��B";
+			if(select("^FF0000それでかまわない^000000","^0000FFやはり続ける^000000") == 2) {
+				mes "[鋼鉄自警団上級受付]";
+				mes "そうか、しっかり頼むぞ。";
 				close;
 			}
 			delquest '@i;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�d�����L�����Z���������B";
-			mes "���͂����Ɨ��ނ��B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "仕事をキャンセルしたぞ。";
+			mes "次はちゃんと頼むぞ。";
 			close;
 		}
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�d���Ȃ��A������x�������B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "仕方ない、もう一度言うぞ。";
 		next;
 		switch('@i) {
 		case 12399:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-			mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-			mes "������ɑ΂���d�����B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "牛賊団の中でも腕利きの連中のことを";
+			mes "エリート牛賊団と呼んでいるんだが、";
+			mes "そいつらに対する仕事だ。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "���C�t���������������c�̒��ŁA";
-			mes "^0000ff�ڂ���������^000000��";
-			mes "�������Ƃ͂��邩�H";
-			mes "������15�l�|���Ă���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "ライフルを持った牛賊団の中で、";
+			mes "^0000ff目が青く光るやつ^000000を";
+			mes "見たことはあるか？";
+			mes "そいつを15人倒してくれ。";
 			close;
 		case 12400:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-			mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-			mes "������ɑ΂���d�����B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "牛賊団の中でも腕利きの連中のことを";
+			mes "エリート牛賊団と呼んでいるんだが、";
+			mes "そいつらに対する仕事だ。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�񒚌��e���g�������c�̒��ŁA";
-			mes "^0000ff�΂̕��ʂ����Ԃ������^000000��";
-			mes "�������Ƃ͂��邩�H";
-			mes "������15�l�|���Ă���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "二丁拳銃を使う牛賊団の中で、";
+			mes "^0000ff緑の覆面をかぶったやつ^000000を";
+			mes "見たことはあるか？";
+			mes "そいつを15人倒してくれ。";
 			close;
 		case 12401:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-			mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-			mes "������ɑ΂���d�����B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "牛賊団の中でも腕利きの連中のことを";
+			mes "エリート牛賊団と呼んでいるんだが、";
+			mes "そいつらに対する仕事だ。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����g�������c�̒��ŁA";
-			mes "^0000ff�����΂̃x�X�g�𒅂Ă�����^000000��";
-			mes "�������Ƃ͂��邩�H";
-			mes "������15�l�|���Ă���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "剣を使う牛賊団の中で、";
+			mes "^0000ff薄い緑のベストを着ているやつ^000000を";
+			mes "見たことはあるか？";
+			mes "そいつを15人倒してくれ。";
 			close;
 		case 12402:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�z�R�̍�ƈ�����̏��Ȃ񂾂��A";
-			mes "�_�o�łŐl��Ⴢ����Ă��܂�";
-			mes "�K�X��̃����X�^�[������炵���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "鉱山の作業員からの情報なんだが、";
+			mes "神経毒で人を麻痺させてしまう";
+			mes "ガス状のモンスターがいるらしい。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����̓K�X�^�[�ƌĂ΂�Ă��āA";
-			mes "����o���Ȃ���΍U�����Ă��Ȃ��B";
-			mes "�Ƃ͂����댯�Ȃ̂͊ԈႢ�Ȃ��B";
-			mes "�z�R�̓����ɂ���^0000ff�K�X�^�[^000000��";
-			mes "20�C�|���Ă���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "そいつはガスターと呼ばれていて、";
+			mes "手を出さなければ攻撃してこない。";
+			mes "とはいえ危険なのは間違いない。";
+			mes "鉱山の内部にいる^0000ffガスター^000000を";
+			mes "20匹倒してくれ。";
 			close;
 		case 12395:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "���̒n���œ����Ă�����ƈ���";
-			mes "���đ����ɏ����Ă������B";
-			mes "�����𒲍������Ƃ���A";
-			mes "�����X�^�[�ɂ��ꂽ�悤���B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "町の地下で働いていた作業員が";
+			mes "立て続けに消えていった。";
+			mes "原因を調査したところ、";
+			mes "モンスターにやられたようだ。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�J�j�o���E�X�Ƃ���";
-			mes "�ƂĂ��������H���̃����X�^�[��";
-			mes "�n���Ō̐��𑝂₵�Ă���悤�ŁA";
-			mes "��ƈ�����Ƃ����ۂ��Ă���񂾁B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "カニバラウスという";
+			mes "とても速い肉食性のモンスターが";
+			mes "地下で個体数を増やしているようで、";
+			mes "作業員が作業を拒否しているんだ。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����n���ɍs�����Ƃ�����Ȃ�";
-			mes "^0000ff�J�j�o���E�X^000000��";
-			mes "5�C�|���Ăق����B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "もし地下に行くことがあるなら";
+			mes "^0000ffカニバラウス^000000を";
+			mes "5匹倒してほしい。";
 			close;
 		case 12396:
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�n���Ŏ��H����";
-			mes "��ƈ��̎��̂��������A";
-			mes "��Ԃ������ĂƂĂ��Ƒ���";
-			mes "����������̂���Ȃ������B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "地下で失踪した";
+			mes "作業員の死体を見たが、";
+			mes "状態が酷くてとても家族に";
+			mes "見せられるものじゃなかった。";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�n���ɔɐB�����l�Y�~��";
-			mes "�d�Ƃ̂悤�����A";
-			mes "�����Ă���l�Ԃɂ�";
-			mes "�U�����Ă���炵��";
+			mes "[鋼鉄自警団上級受付]";
+			mes "地下に繁殖したネズミの";
+			mes "仕業のようだが、";
+			mes "生きている人間にも";
+			mes "攻撃してくるらしい";
 			next;
-			mes "[�|�S���x�c�㋉��t]";
-			mes "�����n���ɍs�����Ƃ�����Ȃ�";
-			mes "^0000ff�v���Y�}���b�g^000000��";
-			mes "5�C�|���Ăق����B";
+			mes "[鋼鉄自警団上級受付]";
+			mes "もし地下に行くことがあるなら";
+			mes "^0000ffプラズマラット^000000を";
+			mes "5匹倒してほしい。";
 			close;
 		}
 	}
-	mes "[�|�S���x�c�㋉��t]";
-	mes "�������͏�������d�������ǁA";
-	mes "����Ă݂邩�H";
-	mes "^FF0000���Ȃ݂ɕ����̎d����";
-	mes "�����Ɏ󂯂邱�Ƃ͋֎~���Ă���B";
-	mes "�d���̕񍐂�������A���̉Ηj����";
-	mes "���߂܂Ŏ��̎d���͎󂯂��Ȃ����B^000000";
+	mes "[鋼鉄自警団上級受付]";
+	mes "こっちは少し難しい仕事だけど、";
+	mes "やってみるか？";
+	mes "^FF0000ちなみに複数の仕事を";
+	mes "同時に受けることは禁止している。";
+	mes "仕事の報告をしたら、次の火曜日の";
+	mes "正午まで次の仕事は受けられないぞ。^000000";
 	next;
-	switch(select("�g�b�v���E���h���C�_�[�ގ�","�g�b�v�T�C�h���C�_�[�ގ�","�g�b�v�u���[�h���C�_�[�ގ�","�K�X�^�[�ގ�","�J�j�o���E�X�ގ�","�v���Y�}���b�g�ގ�","��߂�")) {
+	switch(select("トップラウンドライダー退治","トップサイドライダー退治","トップブレードライダー退治","ガスター退治","カニバラウス退治","プラズマラット退治","やめる")) {
 	case 1:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-		mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-		mes "������ɑ΂���d�����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "牛賊団の中でも腕利きの連中のことを";
+		mes "エリート牛賊団と呼んでいるんだが、";
+		mes "そいつらに対する仕事だ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "���C�t���������������c�̒��ŁA";
-		mes "^0000ff�ڂ���������^000000��";
-		mes "�������Ƃ͂��邩�H";
-		mes "������15�l�|���Ă���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "ライフルを持った牛賊団の中で、";
+		mes "^0000ff目が青く光るやつ^000000を";
+		mes "見たことはあるか？";
+		mes "そいつを15人倒してくれ。";
 		set '@quest,12399;
 		break;
 	case 2:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-		mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-		mes "������ɑ΂���d�����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "牛賊団の中でも腕利きの連中のことを";
+		mes "エリート牛賊団と呼んでいるんだが、";
+		mes "そいつらに対する仕事だ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�񒚌��e���g�������c�̒��ŁA";
-		mes "^0000ff�΂̕��ʂ����Ԃ������^000000��";
-		mes "�������Ƃ͂��邩�H";
-		mes "������15�l�|���Ă���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "二丁拳銃を使う牛賊団の中で、";
+		mes "^0000ff緑の覆面をかぶったやつ^000000を";
+		mes "見たことはあるか？";
+		mes "そいつを15人倒してくれ。";
 		set '@quest,12400;
 		break;
 	case 3:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����c�̒��ł��r�����̘A���̂��Ƃ�";
-		mes "�G���[�g�����c�ƌĂ�ł���񂾂��A";
-		mes "������ɑ΂���d�����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "牛賊団の中でも腕利きの連中のことを";
+		mes "エリート牛賊団と呼んでいるんだが、";
+		mes "そいつらに対する仕事だ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����g�������c�̒��ŁA";
-		mes "^0000ff�����΂̃x�X�g�𒅂Ă�����^000000��";
-		mes "�������Ƃ͂��邩�H";
-		mes "������15�l�|���Ă���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "剣を使う牛賊団の中で、";
+		mes "^0000ff薄い緑のベストを着ているやつ^000000を";
+		mes "見たことはあるか？";
+		mes "そいつを15人倒してくれ。";
 		set '@quest,12401;
 		break;
 	case 4:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�z�R�̍�ƈ�����̏��Ȃ񂾂��A";
-		mes "�_�o�łŐl��Ⴢ����Ă��܂�";
-		mes "�K�X��̃����X�^�[������炵���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "鉱山の作業員からの情報なんだが、";
+		mes "神経毒で人を麻痺させてしまう";
+		mes "ガス状のモンスターがいるらしい。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����̓K�X�^�[�ƌĂ΂�Ă��āA";
-		mes "����o���Ȃ���΍U�����Ă��Ȃ��B";
-		mes "�Ƃ͂����댯�Ȃ̂͊ԈႢ�Ȃ��B";
-		mes "�z�R�̓����ɂ���^0000ff�K�X�^�[^000000��";
-		mes "20�C�|���Ă���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "そいつはガスターと呼ばれていて、";
+		mes "手を出さなければ攻撃してこない。";
+		mes "とはいえ危険なのは間違いない。";
+		mes "鉱山の内部にいる^0000ffガスター^000000を";
+		mes "20匹倒してくれ。";
 		set '@quest,12402;
 		break;
 	case 5:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "���̒n���œ����Ă�����ƈ���";
-		mes "���đ����ɏ����Ă������B";
-		mes "�����𒲍������Ƃ���A";
-		mes "�����X�^�[�ɂ��ꂽ�悤���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "町の地下で働いていた作業員が";
+		mes "立て続けに消えていった。";
+		mes "原因を調査したところ、";
+		mes "モンスターにやられたようだ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�J�j�o���E�X�Ƃ���";
-		mes "�ƂĂ��������H���̃����X�^�[��";
-		mes "�n���Ō̐��𑝂₵�Ă���悤�ŁA";
-		mes "��ƈ�����Ƃ����ۂ��Ă���񂾁B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "カニバラウスという";
+		mes "とても速い肉食性のモンスターが";
+		mes "地下で個体数を増やしているようで、";
+		mes "作業員が作業を拒否しているんだ。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����n���ɍs�����Ƃ�����Ȃ�";
-		mes "^0000ff�J�j�o���E�X^000000��";
-		mes "5�C�|���Ăق����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "もし地下に行くことがあるなら";
+		mes "^0000ffカニバラウス^000000を";
+		mes "5匹倒してほしい。";
 		set '@quest,12395;
 		break;
 	case 6:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�n���Ŏ��H����";
-		mes "��ƈ��̎��̂��������A";
-		mes "��Ԃ������ĂƂĂ��Ƒ���";
-		mes "����������̂���Ȃ������B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "地下で失踪した";
+		mes "作業員の死体を見たが、";
+		mes "状態が酷くてとても家族に";
+		mes "見せられるものじゃなかった。";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�n���ɔɐB�����l�Y�~��";
-		mes "�d�Ƃ̂悤�����A";
-		mes "�����Ă���l�Ԃɂ�";
-		mes "�U�����Ă���炵��";
+		mes "[鋼鉄自警団上級受付]";
+		mes "地下に繁殖したネズミの";
+		mes "仕業のようだが、";
+		mes "生きている人間にも";
+		mes "攻撃してくるらしい";
 		next;
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�����n���ɍs�����Ƃ�����Ȃ�";
-		mes "^0000ff�v���Y�}���b�g^000000��";
-		mes "5�C�|���Ăق����B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "もし地下に行くことがあるなら";
+		mes "^0000ffプラズマラット^000000を";
+		mes "5匹倒してほしい。";
 		set '@quest,12396;
 		break;
 	case 7:
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�킩�����B";
-		mes "�l�����ς������";
-		mes "�܂����ɐ��������Ă���B";
+		mes "[鋼鉄自警団上級受付]";
+		mes "わかった。";
+		mes "考えが変わったら";
+		mes "また私に声をかけてくれ。";
 		close;
 	}
-	mes "���̎d���ł������H";
+	mes "この仕事でいいか？";
 	next;
-	if(select("�͂�","��߂�") == 2) {
-		mes "[�|�S���x�c�㋉��t]";
-		mes "�킩�����B";
-		mes "�l�����ς������";
-		mes "�܂����ɐ��������Ă���B";
+	if(select("はい","やめる") == 2) {
+		mes "[鋼鉄自警団上級受付]";
+		mes "わかった。";
+		mes "考えが変わったら";
+		mes "また私に声をかけてくれ。";
 		close;
 	}
 	setquest '@quest;
-	mes "[�|�S���x�c�㋉��t]";
-	mes "���ꂶ��A���񂾂��B";
+	mes "[鋼鉄自警団上級受付]";
+	mes "それじゃ、頼んだぞ。";
 	switch(rand(6)) {
 	default:
 		if('@quest == 12402) {
-			unittalk getnpcid(0,"rockridge_ev11"),"�J���ӗ~�Ɉ��鋁�E�� : �K�X�^�[���ɋ󂫂��������玄���c�c";
+			unittalk getnpcid(0,"rockridge_ev11"),"労働意欲に溢れる求職者 : ガスター狩りに空きがあったら私も……";
 			break;
 		}
 		else if('@quest >= 12399) {
-			unittalk getnpcid(0,"rockridge_ev11"),"�J���ӗ~�Ɉ��鋁�E�� : �����c���ɋ󂫂��������玄���c�c";
+			unittalk getnpcid(0,"rockridge_ev11"),"労働意欲に溢れる求職者 : 牛賊団狩りに空きがあったら私も……";
 			break;
 		}
-	case 0: unittalk getnpcid(0,"rockridge_ev02"),"�J���ӗ~�Ɉ��鋁�E�� : ���߂�����Ȃ����I"; break;
-	case 1: unittalk getnpcid(0,"rockridge_ev04"),"�J���ӗ~�Ɉ��鋁�E�� : �����I�@�������͂ǂ�����ƁI"; break;
-	case 2: unittalk getnpcid(0,"rockridge_ev07"),"�J���ӗ~�Ɉ��鋁�E�� : ���ɂ��d���������A�d�����I"; break;
-	case 3: unittalk getnpcid(0,"rockridge_ev09"),"�J���ӗ~�Ɉ��鋁�E�� : �l��I��Ŏd����^���Ă���̂�!?"; break;
+	case 0: unittalk getnpcid(0,"rockridge_ev02"),"労働意欲に溢れる求職者 : 酷過ぎじゃないか！"; break;
+	case 1: unittalk getnpcid(0,"rockridge_ev04"),"労働意欲に溢れる求職者 : おい！　私たちはどうしろと！"; break;
+	case 2: unittalk getnpcid(0,"rockridge_ev07"),"労働意欲に溢れる求職者 : 私にも仕事をくれよ、仕事を！"; break;
+	case 3: unittalk getnpcid(0,"rockridge_ev09"),"労働意欲に溢れる求職者 : 人を選んで仕事を与えているのか!?"; break;
 	}
 	close;
 }
 
 //=======================================================
-// �z�ǐ�����ƃN�G�X�gNPC
+// 配管整備作業クエストNPC
 //-------------------------------------------------------
-harboro1.gat,347,133,2	script	���т��Ă���n���H#1	870,{}
-harboro1.gat,344,133,2	script	���т��Ă���n���H#2	85,{}
-harboro1.gat,340,137,3	script	���т��Ă���n���H#3	826,{}
-harboro1.gat,338,132,2	script	���т��Ă���n���H#4	854,{}
-harboro1.gat,343,137,3	script	���т��Ă���n���H#5	88,{}
-harboro1.gat,342,135,2	script	���т��Ă���n���H#6	870,{}
-harboro1.gat,344,142,3	script	���т��Ă���n���H#7	709,{}
-harboro1.gat,341,131,2	script	���т��Ă���n���H#8	826,{}
-harboro1.gat,338,141,3	script	���т��Ă���n���H#9	855,{}
-harboro1.gat,347,137,3	script	���т��Ă���n���H#10	88,{}
-harboro1.gat,341,141,3	script	���т��Ă���n���H#11	826,{}
-harboro1.gat,338,136,3	script	���т��Ă���n���H#12	870,{}
+harboro1.gat,347,133,2	script	おびえている熟練工#1	870,{}
+harboro1.gat,344,133,2	script	おびえている熟練工#2	85,{}
+harboro1.gat,340,137,3	script	おびえている熟練工#3	826,{}
+harboro1.gat,338,132,2	script	おびえている熟練工#4	854,{}
+harboro1.gat,343,137,3	script	おびえている熟練工#5	88,{}
+harboro1.gat,342,135,2	script	おびえている熟練工#6	870,{}
+harboro1.gat,344,142,3	script	おびえている熟練工#7	709,{}
+harboro1.gat,341,131,2	script	おびえている熟練工#8	826,{}
+harboro1.gat,338,141,3	script	おびえている熟練工#9	855,{}
+harboro1.gat,347,137,3	script	おびえている熟練工#10	88,{}
+harboro1.gat,341,141,3	script	おびえている熟練工#11	826,{}
+harboro1.gat,338,136,3	script	おびえている熟練工#12	870,{}
 
 harboro1.gat,341,136,0	script	#r_q2	139,5,5,{
-	//�N�G�X�g���͔������Ȃ�
-	//�󒍎��Ƀ����_������
+	//クエスト中は発生しない
+	//受注時にランダム発言
 OnTouch:
 	switch(rand(6)) {
-	case 0: unittalk getnpcid(0,"���т��Ă���n���H#2"),"���т��Ă���n���H : �n���ł͍�Ƃ��ł������ɂȂ��B"; break;
-	case 1: unittalk getnpcid(0,"���т��Ă���n���H#4"),"���т��Ă���n���H : �ЊQ�⏞��������Ȃ��Ȃ炱�̎d���͂�߂�I"; break;
-	case 2: unittalk getnpcid(0,"���т��Ă���n���H#6"),"���т��Ă���n���H : ����Ȃɑ傫�����͏��߂Č����B����ȏケ���Ŏd���͏o���Ȃ��B"; break;
-	case 3: unittalk getnpcid(0,"���т��Ă���n���H#8"),"���т��Ă���n���H : �|�ꂽ���������̏ォ�炠���炪�����񂹂ė��āA���͉����o���Ȃ������B����ȂƂ��낾�Ȃ�ĕ����ĂȂ������B"; break;
-	case 4: unittalk getnpcid(0,"���т��Ă���n���H#10"),"���т��Ă���n���H : ����ȏ��ɐl�𑗂�Ȃ炻��Ȃ�̕ی�ݔ������O�ɗp�ӂ���I"; break;
-	case 5: unittalk getnpcid(0,"���т��Ă���n���H#12"),"���т��Ă���n���H : ���񂽁A�n���ɉ��肽���ƂȂ�����H�@�ǂ�ȕ��ɂȂ��Ă���̂������Ă�肽����B"; break;
+	case 0: unittalk getnpcid(0,"おびえている熟練工#2"),"おびえている熟練工 : 地下では作業ができそうにない。"; break;
+	case 1: unittalk getnpcid(0,"おびえている熟練工#4"),"おびえている熟練工 : 災害補償金もくれないならこの仕事はやめる！"; break;
+	case 2: unittalk getnpcid(0,"おびえている熟練工#6"),"おびえている熟練工 : あんなに大きい虫は初めて見た。これ以上ここで仕事は出来ない。"; break;
+	case 3: unittalk getnpcid(0,"おびえている熟練工#8"),"おびえている熟練工 : 倒れた同僚たちの上からあいつらが押し寄せて来て、私は何も出来なかった。こんなところだなんて聞いてなかった。"; break;
+	case 4: unittalk getnpcid(0,"おびえている熟練工#10"),"おびえている熟練工 : こんな所に人を送るならそれなりの保護設備を事前に用意しろ！"; break;
+	case 5: unittalk getnpcid(0,"おびえている熟練工#12"),"おびえている熟練工 : あんた、地下に下りたことないだろ？　どんな風になっているのか見せてやりたいよ。"; break;
 	}
 	end;
 }
 
-harboro1.gat,333,138,6	script	�W�F�C�~�[	861,{
-	mes "[�W�F�C�~�[]";
-	mes "����������o���̂�";
-	mes "��߂Ă���܂��񂩁H";
-	mes "���͏����̐ꑮ�鏑�Ȃ�ł���B";
+harboro1.gat,333,138,6	script	ジェイミー	861,{
+	mes "[ジェイミー]";
+	mes "ちょっかい出すのは";
+	mes "やめてくれませんか？";
+	mes "私は所長の専属秘書なんですよ。";
 	close;
 }
 
-harboro1.gat,334,135,6	script	�W�����{�݊Ǘ�����	853,{
+harboro1.gat,334,135,6	script	淡水化施設管理所長	853,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�����c�Ɏ{�݂��P��ꂽ��";
-		mes "�ЂƂ��܂���Ȃ��B";
-		mes "�ۈ����͉������Ă���񂾁I";
+		mes "[淡水化施設管理所長]";
+		mes "牛賊団に施設を襲われたら";
+		mes "ひとたまりもない。";
+		mes "保安官は何をしているんだ！";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 160) {
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�Ȃ񂾌N�́B";
-		mes "�낭�Ɏ��͂��Ȃ����";
-		mes "�x���������͂Ȃ����I";
+		mes "[淡水化施設管理所長]";
+		mes "なんだ君は。";
+		mes "ろくに実力もないやつに";
+		mes "支払う給料はないぞ！";
 		next;
-		mes "�]��O��������Ă��܂����B";
-		mes "�@^ff0000BaseLv160�ȏ�^000000�ɂȂ�����";
-		mes "�@�܂����悤�]";
+		mes "‐門前払いされてしまった。";
+		mes "　^ff0000BaseLv160以上^000000になったら";
+		mes "　また来よう‐";
 		close;
 	}
 	if(!checkquest(12403)) {
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�����ɂ͋����D�_����������B";
-		mes "�ǂ���������";
-		mes "�u�ǉ��蓖�A�ǉ��蓖�v�΂���B";
-		mes "����������O�Ɉ�l�O�̎d����";
-		mes "����Ă݂���Ă����񂾁I";
+		mes "[淡水化施設管理所長]";
+		mes "うちには給料泥棒が多すぎる。";
+		mes "どいつもこいつも";
+		mes "「追加手当、追加手当」ばかり。";
+		mes "文句を言う前に一人前の仕事を";
+		mes "やってみろっていうんだ！";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "����ŁA�N�͂����炭��ƌ����񂾁H";
-		mes "��Ɍ����Ă������A";
-		mes "�ǉ��蓖�������̑O�؂��";
-		mes "�Ȃ�����ȁB";
+		mes "[淡水化施設管理所長]";
+		mes "それで、君はいくらくれと言うんだ？";
+		mes "先に言っておくが、";
+		mes "追加手当も給料の前借りも";
+		mes "ないからな。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�ȂɁH�@�Ⴄ�H";
-		mes "�����̒ʂ肷���肾�ƁH";
-		mes "�������A����͂��܂Ȃ������ȁB";
-		mes "�����C�������Ă��ĂˁB";
+		mes "[淡水化施設管理所長]";
+		mes "なに？　違う？";
+		mes "ただの通りすがりだと？";
+		mes "そうか、それはすまなかったな。";
+		mes "少し気が立っていてね。";
 		next;
-		menu "���ɗp�͂Ȃ��̂ŗ�������",-;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "��H�@������Ƒ҂��Ă���B";
+		menu "特に用はないので立ち去る",-;
+		mes "[淡水化施設管理所長]";
+		mes "ん？　ちょっと待ってくれ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�����I�@�W�F�C�~�[�I";
-		mes "���A�n���̐l���";
-		mes "�ǂꂭ�炢�s�����Ă���H";
+		mes "[淡水化施設管理所長]";
+		mes "おい！　ジェイミー！";
+		mes "今、地下の人手は";
+		mes "どれくらい不足している？";
 		next;
-		mes "[�W�F�C�~�[]";
-		mes "^000077���2���������̂ŁA";
-		mes "���ݕs�����Ă���l����15���ł��B";
-		mes "�c���Ă����ƈ����S����";
-		mes "�n���ɍ~���̂��������Ă��܂��B^000000";
+		mes "[ジェイミー]";
+		mes "^000077昨日2名消えたので、";
+		mes "現在不足している人員は15名です。";
+		mes "残っている作業員も全員が";
+		mes "地下に降りるのを嫌がっています。^000000";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "���������H";
-		mes "���A���̎�������";
-		mes "�l�肪����Ȃ����Ƃ�";
-		mes "��������Ă���񂾁B";
+		mes "[淡水化施設管理所長]";
+		mes "聞いたか？";
+		mes "今、私の事務所は";
+		mes "人手が足りないことに";
+		mes "頭を抱えているんだ。";
 		next;
-		menu "����ȂɐE�����߂Ă���l�������̂ɁH",-;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "���E�҂͑����I";
-		mes "�����݂�ȂЂ��Ђ�낵�Ă��āA";
-		mes "��ƂɎg���Ȃ��l�ނ΂���Ȃ񂾁B";
+		menu "こんなに職を求めている人が多いのに？",-;
+		mes "[淡水化施設管理所長]";
+		mes "求職者は多い！";
+		mes "だがみんなひょろひょろしていて、";
+		mes "作業に使えない人材ばかりなんだ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�l�肪����Ă��Ȃ�����͂��́c�c";
-		mes "������Ɓc�c�ق�̂�����Ƃ���";
-		mes "�댯�Ȃ񂾂��ǁA";
-		mes "�N�Ȃ�\������Ǝv���B";
+		mes "[淡水化施設管理所長]";
+		mes "人手が足りていない現場はその……";
+		mes "ちょっと……ほんのちょっとだけ";
+		mes "危険なんだけど、";
+		mes "君なら十分やれると思う。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�ǂ����H";
-		mes "��x�ꏏ�Ɏd�����Ă݂Ȃ����H";
-		mes "��V�͂͂��ނ��B";
+		mes "[淡水化施設管理所長]";
+		mes "どうだ？";
+		mes "一度一緒に仕事してみないか？";
+		mes "報酬ははずむぞ。";
 		next;
-		menu "�܂��͎d���̓��e�ɂ��Đ�������",-;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�悵�A�܂��͐��������悤�B";
-		mes "���̒��̒n���ɂ�";
-		mes "���v�����O�̓s�s���c���Ă���B";
+		menu "まずは仕事の内容について説明して",-;
+		mes "[淡水化施設管理所長]";
+		mes "よし、まずは説明をしよう。";
+		mes "この町の地下には";
+		mes "埋没される前の都市が残っている。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "���������S�ɖ��v�o���Ȃ����R�́A";
-		mes "���b�N���b�W��^ff0000�C���W�����{��^000000��";
-		mes "�n���Ɏc���Ă��邩�炾�B";
+		mes "[淡水化施設管理所長]";
+		mes "そこを完全に埋没出来ない理由は、";
+		mes "ロックリッジの^ff0000海水淡水化施設^000000が";
+		mes "地下に残っているからだ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "���̎��ӂ͊������Ă��鍻���n�т��B";
-		mes "�C����W���ɕς���̂�";
-		mes "�����m�ۂ��邤����";
-		mes "�����Ƃ����オ��Ŋm���Ȃ񂾁B";
+		mes "[淡水化施設管理所長]";
+		mes "この周辺は乾燥している砂漠地帯だ。";
+		mes "海水を淡水に変えるのは";
+		mes "水を確保するうえで";
+		mes "もっとも安上がりで確実なんだ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�����N���̑��݂����ɗ��݂����Ă���";
-		mes "�z�ǂ͕��H���₷���āA";
-		mes "��������イ���邩��";
-		mes "�����ƊǗ�����K�v������񂾁B";
+		mes "[淡水化施設管理所長]";
+		mes "だがクモの巣みたいに絡みあっている";
+		mes "配管は腐食しやすくて、";
+		mes "しょっちゅう壊れるから";
+		mes "ちゃんと管理する必要があるんだ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "����܂ŊC���W�����{�݂�";
-		mes "���ʂȖ��͂Ȃ������B";
-		mes "�����Ǎŋ߁A�n���Ƀ����X�^�[��";
-		mes "�o�v����悤�ɂȂ��Ă��܂��A";
-		mes "��ƈ���������Ƃ����ۂ���悤��";
-		mes "�Ȃ��Ă��܂����񂾁B";
+		mes "[淡水化施設管理所長]";
+		mes "これまで海水淡水化施設に";
+		mes "特別な問題はなかった。";
+		mes "だけど最近、地下にモンスターが";
+		mes "出没するようになってしまい、";
+		mes "作業員たちが作業を拒否するように";
+		mes "なってしまったんだ。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "���̂܂܂ł͂��̒��͐���";
-		mes "�g���Ȃ��Ȃ邾�낤�B";
-		mes "�N�������Ȃ���Ȃ�Ȃ��B";
-		mes "�d���Ȃ񂾁B";
-		mes "�������āA���ׂ��̂��߂�����";
-		mes "�d�������Ă���킯����Ȃ��B";
+		mes "[淡水化施設管理所長]";
+		mes "このままではこの町は水を";
+		mes "使えなくなるだろう。";
+		mes "誰かがやらなきゃならない。";
+		mes "仕事なんだ。";
+		mes "私だって、金儲けのためだけに";
+		mes "仕事をしているわけじゃない。";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�ǂ����낤�H";
-		mes "��V�͎x������������󂯂Ă�";
-		mes "����Ȃ����낤���B";
-		mes "�����ɂƂ͌���Ȃ����B";
+		mes "[淡水化施設管理所長]";
+		mes "どうだろう？";
+		mes "報酬は支払うから引き受けては";
+		mes "くれないだろうか。";
+		mes "無理にとは言わないが。";
 		next;
-		mes "[�W�F�C�~�[]";
-		mes "^000077�����A�n������A��������܂����B";
-		mes "�����X�^�[�̏P���ɂ���āA";
-		mes "��ƈ��ɔ�Q���o�������ł��B^000000";
+		mes "[ジェイミー]";
+		mes "^000077所長、地下から連絡がありました。";
+		mes "モンスターの襲撃によって、";
+		mes "作業員に被害が出たそうです。^000000";
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "����͑�ς��B";
-		mes "�b�̓r���Ő\����Ȃ����A";
-		mes "���̌��̑Ή������Ȃ��Ƃ����Ȃ��B";
-		mes "�����d���������󂯂�C�ɂȂ�����A";
-		mes "���ł�����K�˂ė��Ă���B";
+		mes "[淡水化施設管理所長]";
+		mes "それは大変だ。";
+		mes "話の途中で申し訳ないが、";
+		mes "今の件の対応をしないといけない。";
+		mes "もし仕事を引き受ける気になったら、";
+		mes "いつでも私を訪ねて来てくれ。";
 		setquest 12403;
 		compquest 12403;
 		close;
 	}
 	if(checkquest(12404)) {
 		if(checkquest(12404)&2 == 0) {
-			mes "[�W�����{�݊Ǘ�����]";
-			mes "���Ă��Ȃ��̂��H";
-			mes "��������������K�v�͂Ȃ����B";
+			mes "[淡水化施設管理所長]";
+			mes "疲れていないのか？";
+			mes "今すぐ整備する必要はないぞ。";
 			close;
 		}
 		delquest 12404;
 	}
 	if(checkquest(12409)) {
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�{���ɂ���J�������B";
-		mes "����ł��΂炭�͐��̐S�z��";
-		mes "���Ȃ��ŕ�炷���Ƃ��ł���B";
+		mes "[淡水化施設管理所長]";
+		mes "本当にご苦労だった。";
+		mes "これでしばらくは水の心配を";
+		mes "しないで暮らすことができる。";
 		next;
 		if(checkitemblank() == 0) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close;
 		}
 		delquest 12405;
@@ -6530,63 +6530,63 @@ harboro1.gat,334,135,6	script	�W�����{�݊Ǘ�����	853,{
 		getitem 25250,3;
 		getexp 200000000,0,1;
 		getexp 0,80000000,0;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "����̕�V���B";
-		mes "����I�ɐ�������K�v�����邩��A";
-		mes "�܂����΂炭�����痈�Ă���B";
+		mes "[淡水化施設管理所長]";
+		mes "今回の報酬だ。";
+		mes "定期的に整備する必要があるから、";
+		mes "またしばらくしたら来てくれ。";
 		close;
 	}
 	if(!checkquest(12405)) {
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�C���W�����{�݂�";
-		mes "�d��������C�ɂȂ����̂��H";
+		mes "[淡水化施設管理所長]";
+		mes "海水淡水化施設の";
+		mes "仕事をする気になったのか？";
 		next;
-		if(select("���܂�","���������l����") == 2) {
-			mes "[�W�����{�݊Ǘ�����]";
-			mes "�������B";
-			mes "�C���ς�����炢�ł����Ă���B";
+		if(select("やります","もう少し考える") == 2) {
+			mes "[淡水化施設管理所長]";
+			mes "そうか。";
+			mes "気が変わったらいつでも来てくれ。";
 			close;
 		}
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�킩�����B";
-		mes "�n���ɂ͂��̗��̌����ɂ���";
-		mes "�W���[�Ɉē����Ă�����Ă���B";
+		mes "[淡水化施設管理所長]";
+		mes "わかった。";
+		mes "地下にはこの裏の建物にいる";
+		mes "ジョーに案内してもらってくれ。";
 		viewpoint 1,324,124,1,0x00FF00;
 		next;
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�N�����ׂ����Ƃ́A";
-		mes "4��ނ̔z�ǂ��R�����Ȃ��悤�A";
-		mes "��������ƒ��ߕt����B";
-		mes "���ꂾ�����B�ȒP���낤�H";
+		mes "[淡水化施設管理所長]";
+		mes "君がやるべきことは、";
+		mes "4種類の配管が漏水しないよう、";
+		mes "しっかりと締め付ける。";
+		mes "これだけだ。簡単だろう？";
 		next;
-		switch(rand(7)) {	// ������
-		case 0: unittalk getnpcid(0,"���т��Ă���n���H#1"),"���т��Ă���n���H : �����I�@����������K�v��������Ă��̉��͂�߂Ă����I"; break;
-		case 1: unittalk getnpcid(0,"���т��Ă���n���H#2"),"���т��Ă���n���H : �n���ł͍�Ƃ��ł������ɂȂ��B"; break;
-		case 2: unittalk getnpcid(0,"���т��Ă���n���H#4"),"���т��Ă���n���H : �ЊQ�⏞��������Ȃ��Ȃ炱�̎d���͂�߂�I"; break;
-		case 3: unittalk getnpcid(0,"���т��Ă���n���H#6"),"���т��Ă���n���H : ����Ȃɑ傫�����͏��߂Č����B����ȏケ���Ŏd���͏o���Ȃ��B"; break;
-		case 4: unittalk getnpcid(0,"���т��Ă���n���H#8"),"���т��Ă���n���H : �|�ꂽ���������̏ォ�炠���炪�����񂹂ė��āA���͉����o���Ȃ������B����ȂƂ��낾�Ȃ�ĕ����ĂȂ������B"; break;
-		case 5: unittalk getnpcid(0,"���т��Ă���n���H#10"),"���т��Ă���n���H : ����ȏ��ɐl�𑗂�Ȃ炻��Ȃ�̕ی�ݔ������O�ɗp�ӂ���I"; break;
-		case 6: unittalk getnpcid(0,"���т��Ă���n���H#12"),"���т��Ă���n���H : ���񂽁A�n���ɉ��肽���ƂȂ�����H�@�ǂ�ȕ��ɂȂ��Ă���̂������Ă�肽����B"; break;
+		switch(rand(7)) {	// 未調査
+		case 0: unittalk getnpcid(0,"おびえている熟練工#1"),"おびえている熟練工 : おい！　いくら金が必要だからってこの下はやめておけ！"; break;
+		case 1: unittalk getnpcid(0,"おびえている熟練工#2"),"おびえている熟練工 : 地下では作業ができそうにない。"; break;
+		case 2: unittalk getnpcid(0,"おびえている熟練工#4"),"おびえている熟練工 : 災害補償金もくれないならこの仕事はやめる！"; break;
+		case 3: unittalk getnpcid(0,"おびえている熟練工#6"),"おびえている熟練工 : あんなに大きい虫は初めて見た。これ以上ここで仕事は出来ない。"; break;
+		case 4: unittalk getnpcid(0,"おびえている熟練工#8"),"おびえている熟練工 : 倒れた同僚たちの上からあいつらが押し寄せて来て、私は何も出来なかった。こんなところだなんて聞いてなかった。"; break;
+		case 5: unittalk getnpcid(0,"おびえている熟練工#10"),"おびえている熟練工 : こんな所に人を送るならそれなりの保護設備を事前に用意しろ！"; break;
+		case 6: unittalk getnpcid(0,"おびえている熟練工#12"),"おびえている熟練工 : あんた、地下に下りたことないだろ？　どんな風になっているのか見せてやりたいよ。"; break;
 		}
-		mes "[�W�����{�݊Ǘ�����]";
-		mes "�z�ǂ͐F�ŋ敪����Ă��邩��A";
-		mes "�����΂����ɂ킩��Ǝv���B";
-		mes "�������ł�����";
-		mes "��������n���֍s���Ă���B";
+		mes "[淡水化施設管理所長]";
+		mes "配管は色で区分されているから、";
+		mes "いけばすぐにわかると思う。";
+		mes "準備ができたら";
+		mes "そこから地下へ行ってくれ。";
 		setquest 12405;
 		setquest 12406;
 		setquest 12407;
 		setquest 12408;
 		close;
 	}
-	mes "[�W�����{�݊Ǘ�����]";
-	mes "�܂��S���̐�����";
-	mes "�I����Ă��Ȃ��悤���ȁB";
-	mes "�����}���ł���Ȃ����H";
+	mes "[淡水化施設管理所長]";
+	mes "まだ全部の整備が";
+	mes "終わっていないようだな。";
+	mes "少し急いでくれないか？";
 	close;
 }
 
-harboro2.gat,52,261,3	script	�Ԃ��z��#rockridge1	10042,{
+harboro2.gat,52,261,3	script	赤い配管#rockridge1	10042,{
 	if(checkquest(12405)&1 && checkquest(12405)&8 == 0) {
 		misceffect 101;
 		progressbar 3;
@@ -6598,7 +6598,7 @@ harboro2.gat,52,261,3	script	�Ԃ��z��#rockridge1	10042,{
 			setquest 12409;
 		end;
 	}
-	mes "�]�������ꂽ�z�ǂ�����]";
+	mes "‐整備された配管がある‐";
 	close;
 OnTimer30000:
 	stopnpctimer;
@@ -6606,7 +6606,7 @@ OnTimer30000:
 	end;
 }
 
-harboro2.gat,54,216,3	script	���z��#rockridge2	10043,{
+harboro2.gat,54,216,3	script	青い配管#rockridge2	10043,{
 	if(checkquest(12406)&1 && checkquest(12406)&8 == 0) {
 		misceffect 101;
 		progressbar 3;
@@ -6618,7 +6618,7 @@ harboro2.gat,54,216,3	script	���z��#rockridge2	10043,{
 			setquest 12409;
 		end;
 	}
-	mes "�]�������ꂽ�z�ǂ�����]";
+	mes "‐整備された配管がある‐";
 	close;
 OnTimer30000:
 	stopnpctimer;
@@ -6626,7 +6626,7 @@ OnTimer30000:
 	end;
 }
 
-harboro2.gat,59,243,3	script	���F���z��#rockridge3	10044,{
+harboro2.gat,59,243,3	script	黄色い配管#rockridge3	10044,{
 	if(checkquest(12407)&1 && checkquest(12407)&8 == 0) {
 		misceffect 101;
 		progressbar 3;
@@ -6638,7 +6638,7 @@ harboro2.gat,59,243,3	script	���F���z��#rockridge3	10044,{
 			setquest 12409;
 		end;
 	}
-	mes "�]�������ꂽ�z�ǂ�����]";
+	mes "‐整備された配管がある‐";
 	close;
 OnTimer30000:
 	stopnpctimer;
@@ -6646,7 +6646,7 @@ OnTimer30000:
 	end;
 }
 
-harboro2.gat,71,200,3	script	�����z��#rockridge4	10046,{
+harboro2.gat,71,200,3	script	白い配管#rockridge4	10046,{
 	if(checkquest(12408)&1 && checkquest(12408)&8 == 0) {
 		misceffect 101;
 		progressbar 3;
@@ -6658,7 +6658,7 @@ harboro2.gat,71,200,3	script	�����z��#rockridge4	10046,{
 			setquest 12409;
 		end;
 	}
-	mes "�]�������ꂽ�z�ǂ�����]";
+	mes "‐整備された配管がある‐";
 	close;
 OnTimer30000:
 	stopnpctimer;
@@ -6666,139 +6666,139 @@ OnTimer30000:
 	end;
 }
 
-harboro2.gat,73,102,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge5	10042
-harboro2.gat,74,173,3	duplicate(���z��#rockridge2)	���z��#rockridge6	10043
-harboro2.gat,86,160,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge7	10044
-harboro2.gat,89,213,3	duplicate(�����z��#rockridge4)	�����z��#rockridge8	10046
-harboro2.gat,89,223,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge9	10042
-harboro2.gat,89,234,3	duplicate(���z��#rockridge2)	���z��#rockridge10	10043
-harboro2.gat,92,124,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge11	10044
-harboro2.gat,94,106,3	duplicate(�����z��#rockridge4)	�����z��#rockridge12	10046
-harboro2.gat,97,209,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge13	10042
-harboro2.gat,106,233,3	duplicate(���z��#rockridge2)	���z��#rockridge14	10043
-harboro2.gat,108,112,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge15	10044
-harboro2.gat,117,197,3	duplicate(�����z��#rockridge4)	�����z��#rockridge16	10046
-harboro2.gat,120,116,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge17	10042
-harboro2.gat,121,157,3	duplicate(���z��#rockridge2)	���z��#rockridge18	10043
-harboro2.gat,140,115,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge19	10044
-harboro2.gat,146,95,3	duplicate(�����z��#rockridge4)	�����z��#rockridge20	10046
-harboro2.gat,148,128,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge21	10042
-harboro2.gat,151,123,3	duplicate(���z��#rockridge2)	���z��#rockridge22	10043
-harboro2.gat,158,151,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge23	10044
-harboro2.gat,161,163,3	duplicate(�����z��#rockridge4)	�����z��#rockridge24	10046
-harboro2.gat,169,125,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge25	10042
-harboro2.gat,170,224,3	duplicate(���z��#rockridge2)	���z��#rockridge26	10043
-harboro2.gat,177,134,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge27	10044
-harboro2.gat,180,114,3	duplicate(�����z��#rockridge4)	�����z��#rockridge28	10046
-harboro2.gat,181,155,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge29	10042
-harboro2.gat,187,113,3	duplicate(���z��#rockridge2)	���z��#rockridge30	10043
-harboro2.gat,207,121,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge31	10044
-harboro2.gat,211,49,3	duplicate(�����z��#rockridge4)	�����z��#rockridge32	10046
-harboro2.gat,221,234,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge33	10042
-harboro2.gat,224,199,3	duplicate(���z��#rockridge2)	���z��#rockridge34	10043
-harboro2.gat,226,69,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge35	10044
-harboro2.gat,230,102,3	duplicate(�����z��#rockridge4)	�����z��#rockridge36	10046
-harboro2.gat,240,83,3	duplicate(�Ԃ��z��#rockridge1)	�Ԃ��z��#rockridge37	10042
-harboro2.gat,244,161,3	duplicate(���z��#rockridge2)	���z��#rockridge38	10043
-harboro2.gat,266,129,3	duplicate(���F���z��#rockridge3)	���F���z��#rockridge39	10044
-harboro2.gat,291,44,3	duplicate(�����z��#rockridge4)	�����z��#rockridge40	10046
+harboro2.gat,73,102,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge5	10042
+harboro2.gat,74,173,3	duplicate(青い配管#rockridge2)	青い配管#rockridge6	10043
+harboro2.gat,86,160,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge7	10044
+harboro2.gat,89,213,3	duplicate(白い配管#rockridge4)	白い配管#rockridge8	10046
+harboro2.gat,89,223,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge9	10042
+harboro2.gat,89,234,3	duplicate(青い配管#rockridge2)	青い配管#rockridge10	10043
+harboro2.gat,92,124,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge11	10044
+harboro2.gat,94,106,3	duplicate(白い配管#rockridge4)	白い配管#rockridge12	10046
+harboro2.gat,97,209,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge13	10042
+harboro2.gat,106,233,3	duplicate(青い配管#rockridge2)	青い配管#rockridge14	10043
+harboro2.gat,108,112,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge15	10044
+harboro2.gat,117,197,3	duplicate(白い配管#rockridge4)	白い配管#rockridge16	10046
+harboro2.gat,120,116,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge17	10042
+harboro2.gat,121,157,3	duplicate(青い配管#rockridge2)	青い配管#rockridge18	10043
+harboro2.gat,140,115,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge19	10044
+harboro2.gat,146,95,3	duplicate(白い配管#rockridge4)	白い配管#rockridge20	10046
+harboro2.gat,148,128,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge21	10042
+harboro2.gat,151,123,3	duplicate(青い配管#rockridge2)	青い配管#rockridge22	10043
+harboro2.gat,158,151,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge23	10044
+harboro2.gat,161,163,3	duplicate(白い配管#rockridge4)	白い配管#rockridge24	10046
+harboro2.gat,169,125,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge25	10042
+harboro2.gat,170,224,3	duplicate(青い配管#rockridge2)	青い配管#rockridge26	10043
+harboro2.gat,177,134,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge27	10044
+harboro2.gat,180,114,3	duplicate(白い配管#rockridge4)	白い配管#rockridge28	10046
+harboro2.gat,181,155,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge29	10042
+harboro2.gat,187,113,3	duplicate(青い配管#rockridge2)	青い配管#rockridge30	10043
+harboro2.gat,207,121,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge31	10044
+harboro2.gat,211,49,3	duplicate(白い配管#rockridge4)	白い配管#rockridge32	10046
+harboro2.gat,221,234,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge33	10042
+harboro2.gat,224,199,3	duplicate(青い配管#rockridge2)	青い配管#rockridge34	10043
+harboro2.gat,226,69,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge35	10044
+harboro2.gat,230,102,3	duplicate(白い配管#rockridge4)	白い配管#rockridge36	10046
+harboro2.gat,240,83,3	duplicate(赤い配管#rockridge1)	赤い配管#rockridge37	10042
+harboro2.gat,244,161,3	duplicate(青い配管#rockridge2)	青い配管#rockridge38	10043
+harboro2.gat,266,129,3	duplicate(黄色い配管#rockridge3)	黄色い配管#rockridge39	10044
+harboro2.gat,291,44,3	duplicate(白い配管#rockridge4)	白い配管#rockridge40	10046
 
 //=======================================================
-// �ԉΑ��̏����N�G�X�gNPC
+// 花火大会の準備クエストNPC
 //-------------------------------------------------------
-harboro2.gat,164,80,5	script	�f����#srdg01	798,{
+harboro2.gat,164,80,5	script	デモン#srdg01	798,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�f����]";
-		mes "�댯�����炠�����ɍs���Ă�B";
+		mes "[デモン]";
+		mes "危険だからあっちに行ってろ。";
 		next;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(checkquest(14673)) {
 		if(checkquest(14673)&2 == 0) {
-			mes "[�f����]";
-			mes "���������́H";
-			mes "���̋C�����͂��肪�������ǁA";
-			mes "�܂����e������Ă���Ƃ���Ȃ񂾁B";
+			mes "[デモン]";
+			mes "もう来たの？";
+			mes "その気持ちはありがたいけど、";
+			mes "まだ爆弾を作っているところなんだ。";
 			next;
-			mes "[�f����]";
-			mes "���2�{�����Ȃ�����ȁB";
-			mes "����܂葁�������ė��Ă���Ă�";
-			mes "��肫��Ȃ��񂾁B";
-			mes "�܂���ŗ��Ă���B";
+			mes "[デモン]";
+			mes "手は2本しかないからな。";
+			mes "あんまり早く持って来てくれても";
+			mes "作りきれないんだ。";
+			mes "また後で来てくれ。";
 			close;
 		}
-		mes "[�f����]";
-		mes "���̑O�����ė��Ă��ꂽ����";
-		mes "���I����ďn�����Ȃ񂾁B";
-		mes "�m���Ă�H";
-		mes "���C���Ɣ��e�͏n������ق�";
-		mes "���ɐ[�݂��o��񂾂�H";
+		mes "[デモン]";
+		mes "この前持って来てくれた分は";
+		mes "作り終わって熟成中なんだ。";
+		mes "知ってる？";
+		mes "ワインと爆弾は熟成するほど";
+		mes "味に深みが出るんだよ？";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�Â����e�͎g���Ȃ��Ȃ�񂶂�";
-		mes "�Ȃ��̂��c�c�H";
+		mes "[ミッドナイト]";
+		mes "古い爆弾は使えなくなるんじゃ";
+		mes "ないのか……？";
 		next;
-		mes "[�f����]";
-		mes "���t�̂��₾��A����B";
+		mes "[デモン]";
+		mes "言葉のあやだよ、あや。";
 		next;
 		emotion 3;
-		mes "[�f����]";
-		mes "���ꂶ�፡������ނ�B";
-		mes "^0000cd�ғł̕�10�A���F�Ζ�1��^000000��";
-		mes "^0000cd�K�X�^�[��15�C�ގ�^000000���B";
-		mes "�撣���Ă����I";
+		mes "[デモン]";
+		mes "それじゃ今回も頼むよ。";
+		mes "^0000cd猛毒の粉10個、黒色火薬1個^000000と";
+		mes "^0000cdガスターを15匹退治^000000だ。";
+		mes "頑張ってくれよ！";
 		delquest 14673;
 		setquest 14672;
 		close;
 	}
 	if(checkquest(14672)) {
 		if(checkquest(14672)&4 == 0 || countitem(25277) < 10 || countitem(6213) < 1) {
-			mes "[�f����]";
-			mes "^0000cd�ғł̕�10�A���F�Ζ�1��^000000��";
-			mes "^0000cd�K�X�^�[��15�C�ގ�^000000���B";
-			mes "�킩�����ȁB";
+			mes "[デモン]";
+			mes "^0000cd猛毒の粉10個、黒色火薬1個^000000と";
+			mes "^0000cdガスターを15匹退治^000000だ。";
+			mes "わかったな。";
 			close;
 		}
-		mes "[�f����]";
-		mes "�����Ȏd������Ȃ����B";
-		mes "�K�X�^�[���ގ����Ă��邵�A";
-		mes "�K�v�ȕ����S�������Ă�B";
+		mes "[デモン]";
+		mes "完璧な仕事じゃないか。";
+		mes "ガスターも退治しているし、";
+		mes "必要な物も全部揃ってる。";
 		next;
-		mes "[�f����]";
-		mes "�悵�A����ō�Ƃ��ł��������B";
-		mes "��ӂŎd�グ�邼�I";
+		mes "[デモン]";
+		mes "よし、これで作業ができそうだ。";
+		mes "一晩で仕上げるぞ！";
 		next;
-		mes "[�f����]";
-		mes "�~�b�h�i�C�g�A";
-		mes "���̂����ɏ����Q�Ƃ��B";
+		mes "[デモン]";
+		mes "ミッドナイト、";
+		mes "今のうちに少し寝とけ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�ꏏ�ɂ�낤�B";
-		mes "���̕��������I���B";
+		mes "[ミッドナイト]";
+		mes "一緒にやろう。";
+		mes "その方が早く終わる。";
 		next;
-		mes "[�f����]";
-		mes "�������B";
-		mes "���ꂶ���Ƃ𕪒S���邩�I";
+		mes "[デモン]";
+		mes "そうか。";
+		mes "それじゃ作業を分担するか！";
 		next;
-		mes "[�f����]";
-		mes "�Ȃ����񂽁A";
-		mes "�܂�����ł������H";
-		mes "�ԉΑ����J���ɂ�";
-		mes "�����Ɣ��e���K�v�Ȃ񂾁B";
+		mes "[デモン]";
+		mes "なああんた、";
+		mes "また頼んでいいか？";
+		mes "花火大会を開くには";
+		mes "もっと爆弾が必要なんだ。";
 		next;
 		if(checkitemblank() == 0) {
 			//TODO
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close;
 		}
-		mes "[�f����]";
-		mes "�������x�񂾂�";
-		mes "�܂����Ă���I";
-		mes "���ꂶ�Ⴀ�ȁI";
+		mes "[デモン]";
+		mes "ゆっくり休んだら";
+		mes "また来てくれ！";
+		mes "それじゃあな！";
 		delitem 25277,10;
 		delitem 6213,1;
 		delquest 14672;
@@ -6811,450 +6811,450 @@ harboro2.gat,164,80,5	script	�f����#srdg01	798,{
 	if(!checkquest(14672)) {
 		if(BaseLevel < 160) {
 			// TODO
-			mes "�]BaseLevel160�ȏ�ɂȂ��Ă��炱�悤�]";
+			mes "‐BaseLevel160以上になってからこよう‐";
 			close;
 		}
-		mes "[�f����]";
-		mes "�悵�A���̂��炢�Ȃ���v�������B";
-		mes "�����K�v���͂킩��ȁH";
-		mes "�{���ɑ��v���H";
-		mes "�����s�������������񂶂�Ȃ��H";
+		mes "[デモン]";
+		mes "よし、このくらいなら大丈夫そうだ。";
+		mes "何が必要かはわかるな？";
+		mes "本当に大丈夫か？";
+		mes "俺が行った方がいいんじゃない？";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "��ɍs���΂����B�݂�ȐQ�Ă邳�B";
+		mes "[ミッドナイト]";
+		mes "夜に行けばいい。みんな寝てるさ。";
 		next;
-		mes "[�f����]";
-		mes "����ł����邳�����";
-		mes "�݂�ȋN���邾�낤�H";
-		mes "����������邾�낤���B";
+		mes "[デモン]";
+		mes "それでもうるさければ";
+		mes "みんな起きるだろう？";
+		mes "見張りもいるだろうし。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���v�B";
-		mes "�������݂͂�ȓ����p���B";
-		mes "�N���N�Ȃ̂��킩��Ȃ����B";
+		mes "[ミッドナイト]";
+		mes "大丈夫。";
+		mes "私たちはみんな同じ姿だ。";
+		mes "誰が誰なのかわからないさ。";
 		next;
-		mes "[�f����]";
-		mes "�ȂɁH";
-		mes "���O�����͋�ʂ����񂶂�";
-		mes "�Ȃ������̂��H";
-		emotion 23,"�f����#srdg01";
+		mes "[デモン]";
+		mes "なに？";
+		mes "お前たちは区別がつくんじゃ";
+		mes "なかったのか？";
+		emotion 23,"デモン#srdg01";
 		next;
-		menu "�������Ă����ł����H",-;
-		mes "[�~�b�h�i�C�g]";
-		mes "�c�c�B";
+		menu "何をしているんですか？",-;
+		mes "[ミッドナイト]";
+		mes "……。";
 		next;
-		mes "[�f����]";
-		mes "�����A�����Ă���B";
+		mes "[デモン]";
+		mes "おい、答えてやれよ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "����A���O�����B";
-		mes "���O�ɕ����Ă邾��H";
+		mes "[ミッドナイト]";
+		mes "いや、お前がやれ。";
+		mes "お前に聞いてるだろ？";
 		next;
-		emotion 32,"�f����#srdg01";
-		mes "[�f����]";
-		mes "�����c�c�B";
-		mes "�܂�����ꂿ�܂����Ȃ�d���˂��B";
-		mes "���񂽁A�������킸�A";
-		mes "�������̎d����";
-		mes "���͂��Ă���Ȃ����H";
+		emotion 32,"デモン#srdg01";
+		mes "[デモン]";
+		mes "ちっ……。";
+		mes "まあ見られちまったなら仕方ねえ。";
+		mes "あんた、何も言わず、";
+		mes "俺たちの仕事に";
+		mes "協力してくれないか？";
 		next;
-		if(select("�d���H","���܂���") == 2) {
-			mes "[�f����]";
-			mes "�������B���ꂶ�Ⴕ�傤���Ȃ��B";
-			mes "���v����͍̂D������Ȃ�����ȁB";
-			mes "�����Ō������Ƃ͖Y���";
-			mes "�������ƋA��ȁB";
+		if(select("仕事？","やりません") == 2) {
+			mes "[デモン]";
+			mes "そうか。それじゃしょうがない。";
+			mes "強要するのは好きじゃないからな。";
+			mes "ここで見たことは忘れて";
+			mes "さっさと帰りな。";
 			next;
-			mes "[�~�b�h�i�C�g]";
-			mes "�����A�A���Ă������̂��H";
-			mes "�������ꂽ����ɂ�";
-			mes "�n�����Ă����Ȃ���";
-			mes "�s�����񂶂�Ȃ����H";
+			mes "[ミッドナイト]";
+			mes "おい、帰してもいいのか？";
+			mes "顔を見られたからには";
+			mes "始末しておかないと";
+			mes "不味いんじゃないか？";
 			next;
-			mes "[�f����]";
-			mes "���O�͂ǂ����Ă����ɒ[�Ȃ񂾁H";
-			mes "�����A�����s���Ă������B";
-			mes "�����C���ς������܂�������I";
+			mes "[デモン]";
+			mes "お前はどうしてそう極端なんだ？";
+			mes "おい、もう行っていいぞ。";
+			mes "もし気が変わったらまた来いよ！";
 			close;
 		}
-		mes "[�f����]";
-		mes "�������ɂ͈̑�Ȍv�悪����B";
+		mes "[デモン]";
+		mes "俺たちには偉大な計画がある。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�̑�ł͂Ȃ��B";
+		mes "[ミッドナイト]";
+		mes "偉大ではない。";
 		next;
-		mes "[�f����]";
-		mes "���O�A���ɉ�������ł�����̂��H";
-		mes "��������C�������Ȃ�";
-		mes "������Ɩق��Ă�I ";
-		emotion 36,"�f����#srdg01";
+		mes "[デモン]";
+		mes "お前、俺に何か文句でもあるのか？";
+		mes "説明する気が無いなら";
+		mes "ちょっと黙ってろ！ ";
+		emotion 36,"デモン#srdg01";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�c�c�B";
+		mes "[ミッドナイト]";
+		mes "……。";
 		next;
-		mes "[�f����]";
-		mes "�������A��������^0000cd�z�R^000000���P������B";
+		mes "[デモン]";
+		mes "いいか、俺たちは^0000cd鉱山^000000を襲撃する。";
 		next;
-		menu "�P���H",-;
-		mes "[�~�b�h�i�C�g]";
-		mes "�����A���܂��̓I�ɘb���ȁB";
-		mes "�K�v�ȕ���p�ӂ����邾���ł����B";
+		menu "襲撃？",-;
+		mes "[ミッドナイト]";
+		mes "おい、あまり具体的に話すな。";
+		mes "必要な物を用意させるだけでいい。";
 		next;
-		mes "[�f����]";
-		mes "����͈Ⴄ�B";
-		mes "���̐����������Ɏd�����ł��邩�H";
-		mes "�����̖����������Ɨ������Ă���";
-		mes "�����d�����ł���Ƃ������̂��B";
+		mes "[デモン]";
+		mes "それは違う。";
+		mes "何の説明も無しに仕事ができるか？";
+		mes "自分の役割をちゃんと理解してこそ";
+		mes "いい仕事ができるというものだ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���߂ĉ�����l�������g���C�Ȃ̂��H";
+		mes "[ミッドナイト]";
+		mes "初めて会った人をこき使う気なのか？";
 		next;
-		mes "[�f����]";
-		mes "����A��������Ȃ��c�c";
-		mes "�����玄�����������̂́A";
-		mes "�̑�Ȏd�������ɐ��������悤��";
-		mes "�������Ƃ��B";
+		mes "[デモン]";
+		mes "いや、そうじゃない……";
+		mes "だから私が言いたいのは、";
+		mes "偉大な仕事を共に成し遂げようと";
+		mes "いうことだ。";
 		next;
-		mes "[�f����]";
-		mes "�b��߂����B";
-		mes "���ɍz�R������̂�";
-		mes "�m���Ă����ȁH";
-		mes "���̍z�R���ŋ߁A";
-		mes "�����c�ɐ�̂��ꂿ�܂����񂾁B";
+		mes "[デモン]";
+		mes "話を戻すぞ。";
+		mes "東に鉱山があるのは";
+		mes "知っているよな？";
+		mes "その鉱山が最近、";
+		mes "牛賊団に占領されちまったんだ。";
 		next;
-		menu "���̘b�͕ۈ����������ŕ����܂���",-;
-		emotion 14,"�f����#srdg01";
-		mes "[�f����]";
-		mes "���I�@���O�����u��o�g�Ȃ̂��H";
-		mes "���ꂶ�ቴ�����͓��m����Ȃ����B";
-		mes "����͙F�􂾁I";
-		mes "���������̂��������";
-		mes "���u��̏o�g�Ȃ񂾁B";
+		menu "その話は保安官事務室で聞きました",-;
+		emotion 14,"デモン#srdg01";
+		mes "[デモン]";
+		mes "お！　お前も留置場出身なのか？";
+		mes "それじゃ俺たちは同士じゃないか。";
+		mes "これは僥倖だ！";
+		mes "俺もそこのおっさんも";
+		mes "留置場の出身なんだ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���̐΂ő���ꂽ";
-		mes "���̓��������������B";
-		mes "���̗₽�����G���c�c�B";
+		mes "[ミッドナイト]";
+		mes "あの石で造られた";
+		mes "床の匂いが懐かしい。";
+		mes "その冷たい感触も……。";
 		next;
-		mes "[�f����]";
-		mes "�������̂��т��������������B";
-		mes "���͂���܂ŎG�����тɂ�";
-		mes "�����������Ȃ��������ǁA";
-		mes "����ȗ��A�G�����т͍D���ɂȂ����B";
+		mes "[デモン]";
+		mes "あそこのご飯も美味しかった。";
+		mes "俺はそれまで雑穀ご飯には";
+		mes "見向きもしなかったけど、";
+		mes "あれ以来、雑穀ご飯は好物になった。";
 		next;
-		menu "���u��ɍs�������R�́H",-;
-		mes "[�f����]";
-		mes "���A���ꕷ���H";
-		mes "�������Ⴄ�H";
-		mes "�悭�������Ă���܂����B";
+		menu "留置場に行った理由は？",-;
+		mes "[デモン]";
+		mes "あ、それ聞く？";
+		mes "聞いちゃう？";
+		mes "よくぞ聞いてくれました。";
 		next;
-		mes "[�f����]";
-		mes "���͎�悪��p�Ȃ񂾁B";
-		mes "����ɉԉ΂��D�����B";
-		mes "���ɍœK�̐E�Ƃ͉����Ǝv���H";
+		mes "[デモン]";
+		mes "俺は手先が器用なんだ。";
+		mes "それに花火も好きだ。";
+		mes "俺に最適の職業は何だと思う？";
 		next;
-		menu "�ԉΐE�l�H",-;
-		mes "[�f����]";
-		mes "�ɂ����I�@���ɐɂ����I";
-		mes "�ԉ΂��͂����������͂ȉ����c�c";
-		mes "�����A^0000cd���e^000000���B";
-		mes "�����ă��b�N���b�W�ł�";
-		mes "�z�R�𔭌@����Ƃ����񂾂���";
-		mes "�����Ƃ��Ă���킯�ɂ����Ȃ��B";
+		menu "花火職人？",-;
+		mes "[デモン]";
+		mes "惜しい！　実に惜しい！";
+		mes "花火よりはもう少し強力な何か……";
+		mes "そう、^0000cd爆弾^000000だ。";
+		mes "そしてロックリッジでは";
+		mes "鉱山を発掘するというんだから";
+		mes "じっとしているわけにいかない。";
 		next;
-		mes "[�f����]";
-		mes "�z�R�ɂ͕K�����e���K�v���B";
-		mes "���̎���������Ȃ���";
-		mes "�������҂���Ǝv����";
-		mes "���b�N���b�W�ɗ����񂾁B";
+		mes "[デモン]";
+		mes "鉱山には必ず爆弾が必要だ。";
+		mes "私の趣味を活かしながら";
+		mes "お金も稼げると思って";
+		mes "ロックリッジに来たんだ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�����ǁA�v���Ă����悤�ɂ�";
-		mes "�����Ȃ������B";
+		mes "[ミッドナイト]";
+		mes "だけど、思っていたようには";
+		mes "いかなかった。";
 		next;
-		emotion 32,"�f����#srdg01";
-		mes "[�f����]";
-		mes "�S�����O�̂������I";
-		mes "�����Ă����I�@";
-		mes "������̖�A���̉\�𕷂���";
-		mes "�N�����K�˂ė����B";
-		mes "�����Ă����Ȃ蔚�e���񂱂���";
-		mes "�����������B";
+		emotion 32,"デモン#srdg01";
+		mes "[デモン]";
+		mes "全部お前のせいだ！";
+		mes "聞いてくれよ！　";
+		mes "ある日の夜、私の噂を聞いて";
+		mes "誰かが訪ねて来た。";
+		mes "そしていきなり爆弾を寄こせと";
+		mes "言いだした。";
 		next;
-		mes "[�f����]";
-		mes "����΍ŋ߈�Ԉ������������Ă���";
-		mes "^0000cd�����c^000000����Ȃ����B";
-		mes "���e���ǂ��g�����Ȃ��";
-		mes "�e�Ղɑz���������B";
+		mes "[デモン]";
+		mes "見れば最近一番悪名を轟かせている";
+		mes "^0000cd牛賊団^000000じゃないか。";
+		mes "爆弾をどう使うかなんて";
+		mes "容易に想像がついた。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "����ł��n���Ă�����B";
+		mes "[ミッドナイト]";
+		mes "それでも渡してやった。";
 		next;
-		mes "[�f����]";
-		mes "���O������傫���z�炪";
-		mes "�����񂹂ė��āA�f��邩�H";
+		mes "[デモン]";
+		mes "お前より一回り大きい奴らが";
+		mes "押し寄せて来て、断れるか？";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���Ȃ玝����������B";
+		mes "[ミッドナイト]";
+		mes "私なら持ちこたえる。";
 		next;
-		emotion 6,"�f����#srdg01";
-		mes "[�f����]";
-		mes "���[���΂ɖ������ˁB";
-		mes "���̋��|�͂��̏�ɂ��Ȃ���";
-		mes "�킩��Ȃ����B";
+		emotion 6,"デモン#srdg01";
+		mes "[デモン]";
+		mes "いーや絶対に無理だね。";
+		mes "あの恐怖はその場にいないと";
+		mes "わからないさ。";
 		next;
-		mes "[�f����]";
-		mes "�Ƃɂ����A���������";
-		mes "�����I�Ɏ����čs�������e��";
-		mes "�A����Ԃ𔚔��������񂾁B";
-		mes "���ꂩ��z�R���P�������B";
-		mes "�����Ăǂ��Ȃ����Ǝv���H";
+		mes "[デモン]";
+		mes "とにかく、そうやって";
+		mes "強制的に持って行った爆弾で";
+		mes "輸送列車を爆発させたんだ。";
+		mes "それから鉱山も襲撃した。";
+		mes "そしてどうなったと思う？";
 		next;
-		mes "[�f����]";
-		mes "���e�̏o����ǂ����ۈ�����";
-		mes "�K�˂ė��āA���͑ߕ߂��ꂽ�B";
-		mes "�����ė��u��ɕ����߂�ꂽ�B";
+		mes "[デモン]";
+		mes "爆弾の出所を追った保安官が";
+		mes "訪ねて来て、私は逮捕された。";
+		mes "そして留置場に閉じ込められた。";
 		next;
-		mes "[�f����]";
-		mes "�������痯�u��̒���";
-		mes "���̂������񂪋����񂾁B";
-		mes "��Ԃ𔚔�������ۂ�";
-		mes "�������܂ꂽ�炵���B";
-		mes "�⌌�ȋ����c�͕���������";
-		mes "���������u�����܂ܓ������B";
+		mes "[デモン]";
+		mes "そしたら留置場の中に";
+		mes "このおじさんが居たんだ。";
+		mes "列車を爆発させる際に";
+		mes "巻き込まれたらしい。";
+		mes "冷血な牛賊団は負傷をした";
+		mes "おじさんを置いたまま逃げた。";
 		next;
-		mes "[�f����]";
-		mes "���ꂾ������Ȃ��B";
-		mes "���̕ۈ����̘A�����A";
-		mes "�����炯�̂��������";
-		mes "���u���Ă����񂾁B";
+		mes "[デモン]";
+		mes "それだけじゃない。";
+		mes "その保安官の連中も、";
+		mes "傷だらけのおじさんを";
+		mes "放置していたんだ。";
 		next;
-		mes "[�f����]";
-		mes "�ڂ̑O�Ŏ��Ȃꂿ��";
-		mes "�Q�o�߂��������A";
-		mes "�������Â��Ă�����񂾁B";
+		mes "[デモン]";
+		mes "目の前で死なれちゃ";
+		mes "寝覚めが悪いし、";
+		mes "俺が治療してやったんだ。";
 		next;
-		mes "[�f����]";
-		mes "����ȗ��A���u�ꂩ��o����Ă�";
-		mes "���������ɕt���܂Ƃ��悤��";
-		mes "�Ȃ����񂾁B";
+		mes "[デモン]";
+		mes "それ以来、留置場から出されても";
+		mes "こいつが私に付きまとうように";
+		mes "なったんだ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�ӂ�c�c�B";
+		mes "[ミッドナイト]";
+		mes "ふん……。";
 		next;
-		menu "����ŁA���͂̓��e�́H",-;
-		mes "[�f����]";
-		mes "���͂��Ă����̂��H";
-		mes "���Ȃ�f���Ă��ǂ��񂾂��H";
-		mes "����ł����Ƃ����̂Ȃ�A";
-		mes "���e�ɕK�v�ȍޗ���";
-		mes "�W�߂ė��Ăق����񂾁B";
+		menu "それで、協力の内容は？",-;
+		mes "[デモン]";
+		mes "協力してくれるのか？";
+		mes "嫌なら断っても良いんだぞ？";
+		mes "それでもやるというのなら、";
+		mes "爆弾に必要な材料を";
+		mes "集めて来てほしいんだ。";
 		next;
-		mes "[�f����]";
-		mes "�悤����ɁA^0000cd�z�R�����߂�����^000000�񂾁B";
-		mes "�O���������H";
-		mes "�����c���z�R���̂��Ă���A";
-		mes "�����̏Z�l�͈�u�Ŏd�����������B";
+		mes "[デモン]";
+		mes "ようするに、^0000cd鉱山を取り戻したい^000000んだ。";
+		mes "外を見たか？";
+		mes "牛賊団が鉱山を占領してから、";
+		mes "ここの住人は一瞬で仕事を失った。";
 		next;
-		mes "[�f����]";
-		mes "�d�����Ȃ��Ȃ�������";
-		mes "�����҂����Ƃ��o���Ȃ��Ȃ�A";
-		mes "�����Ȃ����琶���Ă����̂�";
-		mes "����Ȃ����B";
-		mes "����Ȏ��������Ă����킯���Ȃ��B ";
+		mes "[デモン]";
+		mes "仕事がなくなったから";
+		mes "金を稼ぐことが出来なくなり、";
+		mes "金がないから生きていくのが";
+		mes "難しくなった。";
+		mes "こんな事があっていいわけがない。 ";
 		next;
-		emotion 52,"�f����#srdg01";
-		mes "[�f����]";
-		mes "������^0000cd�z�R�ŉԉΑ��^000000���J���āA";
-		mes "^0000cd�����c�̘A����ǂ��o���Ă�낤^000000";
-		mes "�Ƃ����킯���B";
+		emotion 52,"デモン#srdg01";
+		mes "[デモン]";
+		mes "そこで^0000cd鉱山で花火大会^000000を開いて、";
+		mes "^0000cd牛賊団の連中を追い出してやろう^000000";
+		mes "というわけだ。";
 		next;
-		menu "�ł��~�b�h�i�C�g����́c�c",-;
-		mes "[�~�b�h�i�C�g]";
-		mes "�����ǂ������H";
+		menu "でもミッドナイトさんは……",-;
+		mes "[ミッドナイト]";
+		mes "私がどうした？";
 		next;
-		mes "[�f����]";
-		mes "���̂�������H�@���v����B";
-		mes "�����c����͊��ɑ������Ă�B";
-		mes "�������̂Ă���炾�B";
-		mes "�����������������B";
+		mes "[デモン]";
+		mes "このおじさん？　大丈夫だよ。";
+		mes "牛賊団からは既に足を洗ってる。";
+		mes "自分を捨てたやつらだ。";
+		mes "もう愛着も無いさ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�c�c�B";
+		mes "[ミッドナイト]";
+		mes "……。";
 		next;
-		emotion 23,"�f����#srdg01";
-		mes "[�f����]";
-		mes "��H";
-		mes "�܂����܂�������";
-		mes "�̂Đ؂�Ă��Ȃ������Ƃ��H";
+		emotion 23,"デモン#srdg01";
+		mes "[デモン]";
+		mes "ん？";
+		mes "まさかまだ未練を";
+		mes "捨て切れていなかったとか？";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "��������Ȃ��B";
-		mes "�����ɏI��点���邩";
-		mes "�S�z�ɂȂ����񂾁B";
-		mes "�������s�����炨�O�́c�c";
+		mes "[ミッドナイト]";
+		mes "そうじゃない。";
+		mes "無事に終わらせられるか";
+		mes "心配になったんだ。";
+		mes "もし失敗したらお前は……";
 		next;
-		mes "[�f����]";
-		mes "�܂������c�ɎE����邩�A";
-		mes "�ۈ����ɕ߂܂���";
-		mes "�܂����u�ꑗ�肾�ȁB";
-		mes "���̂��炢�͊o�債�Ă邳�B";
+		mes "[デモン]";
+		mes "まあ牛賊団に殺されるか、";
+		mes "保安官に捕まって";
+		mes "また留置場送りだな。";
+		mes "そのくらいは覚悟してるさ。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "�����܂Ŋo�債�Ă���̂��B";
+		mes "[ミッドナイト]";
+		mes "そこまで覚悟しているのか。";
 		next;
-		mes "[�f����]";
-		mes "������������΂��̎S�߂Ȑ�����";
-		mes "�I���B������x�z�R�œ�������";
-		mes "�ł��邶��Ȃ��B";
+		mes "[デモン]";
+		mes "だが成功すればこの惨めな生活も";
+		mes "終わる。もう一度鉱山で働く事も";
+		mes "できるじゃない。";
 		next;
-		mes "[�f����]";
-		mes "��������N�̕����B";
-		mes "�K�v�ȃA�C�e���͍z�R�ɂ���";
-		mes "^ff0000�K�X�^�[^000000�������ł���";
-		mes "�ғł̕��ƍ��F�Ζ򂾁B";
-		mes "���v���H�@�p�ӂł��������H";
+		mes "[デモン]";
+		mes "それよりも君の方だ。";
+		mes "必要なアイテムは鉱山にいる";
+		mes "^ff0000ガスター^000000から入手できる";
+		mes "猛毒の粉と黒色火薬だ。";
+		mes "大丈夫か？　用意できそうか？";
 		next;
-		mes "[�f����]";
-		mes "^0000ff�ғł̕�^000000��10�A";
-		mes "^0000ff���F�Ζ�^000000��1����΂����B";
+		mes "[デモン]";
+		mes "^0000ff猛毒の粉^000000は10個、";
+		mes "^0000ff黒色火薬^000000は1個あればいい。";
 		next;
-		mes "[�f����]";
-		mes "�ғł̕��͐l�Ԃɂ͒v���I�Ȗғł����ǁA";
-		mes "�����c�̘A���ɂ͂Ђǂ��y���āA";
-		mes "�܂ƕ@�����o�鉌�ł����Ȃ��񂾁B";
-		mes "�܂������������������͂���B";
+		mes "[デモン]";
+		mes "猛毒の粉は人間には致命的な猛毒だけど、";
+		mes "牛賊団の連中にはひどく痒くて、";
+		mes "涙と鼻水が出る煙でしかないんだ。";
+		mes "まったくたいした生命力だよ。";
 		next;
-		mes "[�f����]";
-		mes "���ꂩ�牴���������e��";
-		mes "�ݒu���ɍs���ہA";
-		mes "�~���ɍ�Ƃ��s����悤";
-		mes "^ff0000�K�X�^�[�̐������炵�Ăق����B^000000";
+		mes "[デモン]";
+		mes "それから俺たちが爆弾を";
+		mes "設置しに行く際、";
+		mes "円滑に作業が行えるよう";
+		mes "^ff0000ガスターの数を減らしてほしい。^000000";
 		next;
-		mes "[�f����]";
-		mes "�����c�͉ԉΑ��Œǂ��o���邯�ǁA";
-		mes "�K�X�^�[�͘A���������N��������A";
-		mes "��ʂɂ���Ƒ�ςȂ��ƂɂȂ�B";
-		mes "�Ƃ肠�����c�c";
-		mes "�������ȁA�K�X�^�[10�c�c";
-		mes "����A15�C�͑ގ����Ă���B";
+		mes "[デモン]";
+		mes "牛賊団は花火大会で追い出せるけど、";
+		mes "ガスターは連鎖爆発を起こすから、";
+		mes "大量にいると大変なことになる。";
+		mes "とりあえず……";
+		mes "そうだな、ガスター10……";
+		mes "いや、15匹は退治してくれ。";
 		next;
-		mes "[�f����]";
-		mes "�悵�A���ꂶ�ᐮ�����邼�B";
-		mes "^0000cd�ғł̕�10�A���F�Ζ�1��^000000��";
-		mes "^0000cd�K�X�^�[��15�C�ގ�^000000���B";
-		mes "�킩�����ȁB";
+		mes "[デモン]";
+		mes "よし、それじゃ整理するぞ。";
+		mes "^0000cd猛毒の粉10個、黒色火薬1個^000000と";
+		mes "^0000cdガスターを15匹退治^000000だ。";
+		mes "わかったな。";
 		next;
 		emotion 41,"";
-		mes "[�f����]";
-		mes "���ꂶ��撣���I";
-		mes "�����ɖ߂��Ă�����A";
-		mes "����Ȃ�̕�V������Ă�邩��ȁI";
+		mes "[デモン]";
+		mes "それじゃ頑張れよ！";
+		mes "無事に戻ってきたら、";
+		mes "それなりの報酬もくれてやるからな！";
 		setquest 14672;
 		close;
 	}
 }
 
-harboro2.gat,167,82,3	script	�~�b�h�i�C�g#srdg01	10231,{
+harboro2.gat,167,82,3	script	ミッドナイト#srdg01	10231,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�~�b�h�i�C�g]";
-		mes "�Ȃɂ����Ă���H";
-		mes "����ȂƂ�������낤�낵�Ă����";
-		mes "��Ȃ����B";
-		mes "�������ƒ��ɋA��񂾂ȁB";
+		mes "[ミッドナイト]";
+		mes "なにを見ている？";
+		mes "こんなところをうろうろしていると";
+		mes "危ないぞ。";
+		mes "さっさと町に帰るんだな。";
 		close;
 	}
 	if(checkquest(14672)) {
-		mes "[�~�b�h�i�C�g]";
-		mes "�����s���Ă��������ǁc�c";
-		mes "�����͂��Ȃ苭�����ȁB";
+		mes "[ミッドナイト]";
+		mes "私が行ってもいいけど……";
+		mes "あいつはかなり強情だからな。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���������ƁA�����̍��ɂ�";
-		mes "���܂���C�ł͂Ȃ��B";
-		mes "������肽���悤��";
-		mes "��点�Ă�肽���B";
+		mes "[ミッドナイト]";
+		mes "正直言うと、あいつの作戦には";
+		mes "あまり乗り気ではない。";
+		mes "ただやりたいように";
+		mes "やらせてやりたい。";
 		next;
-		mes "[�~�b�h�i�C�g]";
-		mes "���͂��Ă����";
-		mes "���񂽂ɂ͊��ӂ��Ă���B";
+		mes "[ミッドナイト]";
+		mes "協力してくれる";
+		mes "あんたには感謝している。";
 		close;
 	}
-	mes "[�~�b�h�i�C�g]";
-	mes "�c�c�B";
+	mes "[ミッドナイト]";
+	mes "……。";
 	next;
-	mes "[�~�b�h�i�C�g]";
-	mes "�f�����c�c�ςȂ��";
-	mes "���낿��낵�Ă��邪�A";
-	mes "�m�荇�����H";
+	mes "[ミッドナイト]";
+	mes "デモン……変なやつが";
+	mes "うろちょろしているが、";
+	mes "知り合いか？";
 	next;
-	mes "[�f����]";
-	mes "����H�@�N���H";
+	mes "[デモン]";
+	mes "いや？　誰だ？";
 	close;
 }
 
-harboro2.gat,166,80,5	script	�R���c��������#srdg01	649,{}
-harboro2.gat,165,77,5	script	��Ɠ���#srdg01	10024,{}
-harboro2.gat,164,78,5	script	��Ɠ���#srdg02	10025,{}
-harboro2.gat,166,78,5	script	��Ɠ���#srdg03	10026,{}
+harboro2.gat,166,80,5	script	燃え残った痕跡#srdg01	649,{}
+harboro2.gat,165,77,5	script	作業道具#srdg01	10024,{}
+harboro2.gat,164,78,5	script	作業道具#srdg02	10025,{}
+harboro2.gat,166,78,5	script	作業道具#srdg03	10026,{}
 
 //=======================================================
-// ���Z���̗��݃N�G�X�gNPC
+// 原住民の頼みクエストNPC
 //-------------------------------------------------------
-rockrdg1.gat,262,90,7	script	�������܂����n#rr	10217,{
+rockrdg1.gat,262,90,7	script	うずくまった馬#rr	10217,{
 	cutin "rock_cact01",2;
-	mes "[�������܂����n]";
-	mes "���q�͂ǂ����H";
-	mes "���z�Ƒ�n�̏j����";
-	mes "�����N�Ƌ��ɂ���񂱂Ƃ��B";
+	mes "[うずくまった馬]";
+	mes "調子はどうだ？";
+	mes "太陽と大地の祝福が";
+	mes "いつも君と共にあらんことを。";
 	next;
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�������܂����n]";
-		mes "�N�͉������痈���ٖM�l���B";
-		mes "���̓L���N�^�[���̗E���Ȑ�m�A";
-		mes "�������܂����n���B";
+		mes "[うずくまった馬]";
+		mes "君は遠方から来た異邦人か。";
+		mes "私はキャクター族の勇敢な戦士、";
+		mes "うずくまった馬だ。";
 		next;
-		mes "[�������܂����n]";
-		mes "�܂��N�����̒���";
-		mes "�N�����Ă����肪";
-		mes "��������Ă��Ȃ��ȁB";
-		mes "���ׂĂ̎��ɂ͏���������B";
-		mes "���ׂ����Ƃ��I��点�Ă���";
-		mes "�܂��K�˂ė��Ă���B";
+		mes "[うずくまった馬]";
+		mes "まだ君たちの町で";
+		mes "起こっている問題が";
+		mes "解決されていないな。";
+		mes "すべての事には順序がある。";
+		mes "やるべきことを終わらせてから";
+		mes "また訪ねて来てくれ。";
 		close2;
 		cutin "rock_cact01",255;
 		end;
 	}
 	if(checkquest(9461)) {
 		if(checkquest(9461) & 0x2 == 0) {
-			mes "[�������܂����n]";
-			mes "�K���A�z�΂��K�v�Ȃ��񂾁B";
-			mes "�����ς���ĐV�������z��";
-			mes "���񂩏�������A�܂��K�v��";
-			mes "�Ȃ邩���m��Ȃ��ȁB";
+			mes "[うずくまった馬]";
+			mes "幸い、鉱石が必要ないんだ。";
+			mes "日が変わって新しい太陽が";
+			mes "何回か昇ったら、また必要に";
+			mes "なるかも知れないな。";
 			close2;
 			cutin "rock_cact01",255;
 			end;
 		}
-		mes "[�������܂����n]";
-		mes "�₠�A�N���B";
-		mes "���傤�Ǎz�΂�";
-		mes "�����Ȃ����Ƃ���Ȃ񂾁B";
-		mes "�܂�^ff0000���z�΂̌���^000000��";
-		mes "�W�߂Ă��Ă���邩�H";
+		mes "[うずくまった馬]";
+		mes "やあ、君か。";
+		mes "ちょうど鉱石が";
+		mes "無くなったところなんだ。";
+		mes "また^ff0000紫鉱石の欠片^000000を";
+		mes "集めてきてくれるか？";
 		next;
-		if(select("�킩��܂���","���͖Z�����ł�") == 2) {
-			mes "[�������܂����n]";
-			mes "�ӂށc�c���傤���Ȃ��B";
-			mes "���Ԃ����鎞�ł�������";
-			mes "�܂����Ă���B";
+		if(select("わかりました","今は忙しいです") == 2) {
+			mes "[うずくまった馬]";
+			mes "ふむ……しょうがない。";
+			mes "時間がある時でいいから";
+			mes "また来てくれ。";
 			close2;
 			cutin "rock_cact01",255;
 			end;
 		}
-		mes "[�������܂����n]";
-		mes "���肪�Ƃ��B";
-		mes "��͂�N�͐M���ł���B";
+		mes "[うずくまった馬]";
+		mes "ありがとう。";
+		mes "やはり君は信頼できる。";
 		delquest 9461;
 		setquest 9460;
 		close2;
@@ -7262,36 +7262,36 @@ rockrdg1.gat,262,90,7	script	�������܂����n#rr	10217,{
 		end;
 	}
 	if(checkquest(9460)) {
-		mes "[�������܂����n]";
-		mes "�����A�N���B";
-		mes "�z�΂̌��Ђ͏W�܂������H";
+		mes "[うずくまった馬]";
+		mes "ああ、君か。";
+		mes "鉱石の欠片は集まったか？";
 		next;
 		if(countitem(25260) < 10) {
-			mes "[�������܂����n]";
-			mes "�܂�����Ȃ��悤���ȁB";
-			mes "�R���[�e�⋍���c������";
-			mes "���炵�߂āA";
-			mes "�z�΂̌��Ђ��W�߂ė��Ă���B";
+			mes "[うずくまった馬]";
+			mes "まだ足りないようだな。";
+			mes "コヨーテや牛賊団たちを";
+			mes "懲らしめて、";
+			mes "鉱石の欠片を集めて来てくれ。";
 			close2;
 			cutin "rock_cact01",255;
 			end;
 		}
 		if(countitem(25260) > 10) {
-			mes "[�������܂����n]";
-			mes "���񂾗ʂ�������";
-			mes "�����ė��Ă��ꂽ�񂾂ȁB";
-			mes "���ӂ͂��肪��������";
-			mes "���񂾗ʂ��������";
-			mes "����ŏ\���Ȃ񂾁B";
-			mes "10��������Ă�����B";
+			mes "[うずくまった馬]";
+			mes "頼んだ量よりも多く";
+			mes "持って来てくれたんだな。";
+			mes "誠意はありがたいけど";
+			mes "頼んだ量だけあれば";
+			mes "それで十分なんだ。";
+			mes "10個だけ貰っておくよ。";
 			next;
 		}
 		delitem 25260,10;
-		mes "[�������܂����n]";
-		mes "���肪�Ƃ��B";
-		mes "���Ȃ���������󂯎���Ă���B";
-		mes "���Ŗ�������̂���";
-		mes "�������ɂ͂��܂�K�v�Ȃ��񂾁B";
+		mes "[うずくまった馬]";
+		mes "ありがとう。";
+		mes "少ないがこれを受け取ってくれ。";
+		mes "町で貰ったものだが";
+		mes "私たちにはあまり必要ないんだ。";
 		delquest 9460;
 		setquest 9461;
 		getitem 25250,1;
@@ -7301,93 +7301,93 @@ rockrdg1.gat,262,90,7	script	�������܂����n#rr	10217,{
 		cutin "rock_cact01",255;
 		end;
 	}
-	mes "[�������܂����n]";
-	mes "�N�͉������痈���ٖM�l���B";
-	mes "���̓L���N�^�[���̗E���Ȑ�m�A";
-	mes "�������܂����n���B";
+	mes "[うずくまった馬]";
+	mes "君は遠方から来た異邦人か。";
+	mes "私はキャクター族の勇敢な戦士、";
+	mes "うずくまった馬だ。";
 	next;
-	mes "[�������܂����n]";
-	mes "�ǂ���璬�̖���";
-	mes "���������悤���ȁB";
-	mes "�N�̗E�C�ƒm�b���̎^����B";
+	mes "[うずくまった馬]";
+	mes "どうやら町の問題を";
+	mes "解決したようだな。";
+	mes "君の勇気と知恵を称賛する。";
 	next;
-	mes "[�������܂����n]";
-	mes "�����ǂ����";
-	mes "��������������`����";
-	mes "����Ȃ����ȁH";
-	mes "����قǓ�����ł͂Ȃ��͂����B";
+	mes "[うずくまった馬]";
+	mes "もし良ければ";
+	mes "私たちを少し手伝って";
+	mes "くれないかな？";
+	mes "それほど難しい事ではないはずだ。";
 	next;
-	mes "[�������܂����n]";
-	mes "�������͂������̋��Ƃ���";
-	mes "����c�l�̑ォ��";
-	mes "��������Ȃ��قǂ̒����N����";
-	mes "�����܂Ő����ė����B";
+	mes "[うずくまった馬]";
+	mes "私たちはここを故郷として";
+	mes "ご先祖様の代から";
+	mes "数えきれないほどの長い年月を";
+	mes "今日まで生きて来た。";
 	next;
-	mes "[�������܂����n]";
-	mes "���̊ԁA��������";
-	mes "���R���Ƌ��ɐ����ė����B";
-	mes "�������N�ł��̒n�ɗ����N�����́A";
-	mes "�������Ƃ͈Ⴄ��������";
-	mes "���Ă���̂��킩�����B";
+	mes "[うずくまった馬]";
+	mes "その間、私たちは";
+	mes "自然環境と共に生きて来た。";
+	mes "だが数年でこの地に来た君たちは、";
+	mes "私たちとは違う生き方を";
+	mes "しているのがわかった。";
 	next;
-	mes "[�������܂����n]";
-	mes "�������͎��R����󂯂����m��";
-	mes "���R�ɋA���A";
-	mes "�K�v�łȂ����͐�΂�";
-	mes "�����čs�����Ƃ͂��Ȃ��񂾁B";
+	mes "[うずくまった馬]";
+	mes "私たちは自然から受けたモノは";
+	mes "自然に帰し、";
+	mes "必要でない分は絶対に";
+	mes "持って行くことはしないんだ。";
 	next;
-	mes "[�������܂����n]";
-	mes "�����ǌN�����͈�����B";
-	mes "�����K�v�ȏ�Ɏ����čs�����Ƃ�";
-	mes "�C�������B";
-	mes "�����čs���Ă��ǂ����S��";
-	mes "�g�����邱�Ƃ͂ł��Ȃ��̂ɁB";
+	mes "[うずくまった馬]";
+	mes "だけど君たちは違った。";
+	mes "いつも必要以上に持って行くことに";
+	mes "気がついた。";
+	mes "持って行ってもどうせ全部";
+	mes "使いきることはできないのに。";
 	next;
-	mes "[�������܂����n]";
-	mes "�N�������z�R�̔��@���n�߂Ă���A";
-	mes "�����������̐΂𓾂邱�Ƃ�";
-	mes "����Ȃ��Ă��܂����B";
+	mes "[うずくまった馬]";
+	mes "君たちが鉱山の発掘を始めてから、";
+	mes "私たちがあの石を得ることが";
+	mes "難しくなってしまった。";
 	next;
-	mes "[�������܂����n]";
-	mes "�N��ӂ߂Ă���킯�ł͂Ȃ��B";
-	mes "�����N���������܂��";
-	mes "�����������čs���Ă�������";
-	mes "�������͕K�v�ȗʂ���";
-	mes "���鎖���o���Ȃ��ł���B";
-	mes "���ꂪ���Ȃ񂾁B";
+	mes "[うずくまった馬]";
+	mes "君を責めているわけではない。";
+	mes "ただ君たちがあまりに";
+	mes "多くを持って行っていくから";
+	mes "私たちは必要な量さえ";
+	mes "得る事が出来ないでいる。";
+	mes "それが問題なんだ。";
 	next;
-	mes "[�������܂����n]";
-	mes "�������̒n��`�����Ă���";
-	mes "^ff0000���z�΂̌���^000000��";
-	mes "��������A";
-	mes "������W�߂Ď����ė��Ă���B";
-	mes "�ǂ����H�@����Ă���邩�H";
+	mes "[うずくまった馬]";
+	mes "もしこの地を冒険していて";
+	mes "^ff0000紫鉱石の欠片^000000を";
+	mes "見つけたら、";
+	mes "それを集めて持って来てくれ。";
+	mes "どうだ？　やってくれるか？";
 	next;
-	if(select("�킩��܂���","���͖Z�����ł�") == 2) {
-		mes "[�������܂����n]";
-		mes "�ӂށc�c���傤���Ȃ��B";
-		mes "���Ԃ����鎞�ł�������";
-		mes "�܂����Ă���B";
+	if(select("わかりました","今は忙しいです") == 2) {
+		mes "[うずくまった馬]";
+		mes "ふむ……しょうがない。";
+		mes "時間がある時でいいから";
+		mes "また来てくれ。";
 		close2;
 		cutin "rock_cact01", 255;
 		end;
 	}
-	mes "[�������܂����n]";
-	mes "�����A���肪�Ƃ��B";
-	mes "���z�΂̌��Ђ͍z�R�̋߂��ɂ���";
-	mes "�����X�^�[�⋍���c��";
-	mes "�����Ă���B";
+	mes "[うずくまった馬]";
+	mes "おお、ありがとう。";
+	mes "紫鉱石の欠片は鉱山の近くにいる";
+	mes "モンスターや牛賊団が";
+	mes "持っている。";
 	next;
-	mes "[�������܂����n]";
-	mes "�L����������z�R�Ŏ������Ă����";
-	mes "��ɓ���͂����B";
-	mes "^ff000010��^000000�ł�������";
-	mes "�����ė��Ă���B";
+	mes "[うずくまった馬]";
+	mes "キワワ砂漠や鉱山で狩りをしていれば";
+	mes "手に入るはずだ。";
+	mes "^ff000010個^000000でいいから";
+	mes "持って来てくれ。";
 	next;
-	mes "[�������܂����n]";
-	mes "����ł͂�낵�����ށB";
-	mes "���z�Ƒ�n�̏j����";
-	mes "�����N�Ƌ��ɂ���񂱂Ƃ��B";
+	mes "[うずくまった馬]";
+	mes "それではよろしく頼む。";
+	mes "太陽と大地の祝福が";
+	mes "いつも君と共にあらんことを。";
 	setquest 9460;
 	close2;
 	cutin "rock_cact01",255;
@@ -7395,73 +7395,73 @@ rockrdg1.gat,262,90,7	script	�������܂����n#rr	10217,{
 }
 
 //=======================================================
-// �r��̖��҃N�G�X�gNPC
+// 荒野の厄介者クエストNPC
 //-------------------------------------------------------
-rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
+rockrdg1.gat,341,133,3	script	キャクターロン#rrrem01	10220,{
 	if(ROCKRIDGE_1QUE < 16) {
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "�݂����Ȃ��ٖM�l�ˁB";
-		mes "�����p������H";
+		mes "[キャクターロン]";
+		mes "みかけない異邦人ね。";
+		mes "何か用かしら？";
 		next;
 		cutin "rock_cact03",255;
-		mes "�]�����c�̖�肪�������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題が解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(checkquest(16079)) {
 		if(checkquest(16079) & 0x2 == 0) {
 			cutin "rock_cact03",2;
-			mes "[�L���N�^�[����]";
-			mes "�d���ɂ͕K���x�e���K�v�ł��B";
-			mes "�d���ɖv�����������";
-			mes "��؂Ȃ��̂��������˂܂���B";
+			mes "[キャクターロン]";
+			mes "仕事には必ず休憩が必要です。";
+			mes "仕事に没頭し続けると";
+			mes "大切なものを失いかねません。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�����������Ă��܂��B";
-			mes "�ł����͂��������x��ł��������B";
+			mes "[キャクターロン]";
+			mes "いつも助かっています。";
+			mes "でも今はもう少し休んでください。";
 			close2;
 			cutin "rock_cact03",255;
 			end;
 		}
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "�`���҂���A";
-		mes "�܂����Ă��ꂽ��ł��ˁB";
-		mes "�R���[�e��ގ����Ă�����ł����H";
+		mes "[キャクターロン]";
+		mes "冒険者さん、";
+		mes "また来てくれたんですね。";
+		mes "コヨーテを退治してくれるんですか？";
 		next;
-		if(select("�����ł�","�������A������Ƙb�����ɗ��������ł�") == 2) {
-			mes "[�L���N�^�[����]";
-			mes "�����͏����]�T������݂����ł��ˁB";
-			mes "�����ł�������";
-			mes "�ꑧ�����Ԃ͂���܂��B";
+		if(select("そうです","いいえ、ちょっと話をしに来ただけです") == 2) {
+			mes "[キャクターロン]";
+			mes "今日は少し余裕があるみたいですね。";
+			mes "お蔭でこっちも";
+			mes "一息つく時間はあります。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "������鎖������Ƃ����̂�";
-			mes "�f���炵�����Ƃł��B";
-			mes "���A�ڂ��o�܂���";
-			mes "��n�̉��b���󂯂Ȃ��瓭���A";
-			mes "��͖��鐶���B";
+			mes "[キャクターロン]";
+			mes "毎日やる事があるというのは";
+			mes "素晴らしいことです。";
+			mes "朝、目を覚まして";
+			mes "大地の恩恵を受けながら働き、";
+			mes "夜は眠る生活。";
 			emotion 2;
 			close2;
 			cutin "rock_cact03",255;
 			end;
 		}
-		mes "[�L���N�^�[����]";
-		mes "�ł͍�����";
-		mes "^0000CD�R���[�e��30�C^000000�ގ����Ă��������B";
-		mes "�R���[�e�͖�ɂȂ��";
-		mes "�Q��ňړ����Ȃ���i�����ł��B";
-		mes "�܂�ŕ߂܂��Ă����ʂ����";
-		mes "�����Ă���݂����ł��c�c�B";
+		mes "[キャクターロン]";
+		mes "では今日も";
+		mes "^0000CDコヨーテを30匹^000000退治してください。";
+		mes "コヨーテは夜になると";
+		mes "群れで移動しながら吠えるんです。";
+		mes "まるで捕まえても無駄だよと";
+		mes "言っているみたいです……。";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "�����ǖ����̏����ȕω���";
-		mes "�傫�ȕω����Ăъ񂹂��";
-		mes "�M���Ă��܂��B";
-		mes "�`���҂��񂪋��͂��Ă��ꂽ�������ŁA";
-		mes "�����ȕω������܂�Ă��܂��B";
-		mes "�ǂ�����낵�����肢���܂��B";
+		mes "[キャクターロン]";
+		mes "だけど毎日の小さな変化が";
+		mes "大きな変化を呼び寄せると";
+		mes "信じています。";
+		mes "冒険者さんが協力してくれたおかげで、";
+		mes "小さな変化が生まれています。";
+		mes "どうかよろしくお願いします。";
 		delquest 16079;
 		setquest 16080;
 		close2;
@@ -7471,14 +7471,14 @@ rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
 	if(checkquest(16080)) {
 		if(checkquest(16080) & 0x4) {
 			cutin "rock_cact03",2;
-			mes "[�L���N�^�[����]";
-			mes "�����l�ł����B";
-			mes "���Ă��܂��񂩁H";
-			mes "�����ǂ������炱�ꂩ������肢���܂��B";
+			mes "[キャクターロン]";
+			mes "お疲れ様でした。";
+			mes "疲れていませんか？";
+			mes "もし良かったらこれからもお願いします。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�����₩�ł����A�󂯎���Ă��������B";
-			mes "�������肪�Ƃ��������܂��B";
+			mes "[キャクターロン]";
+			mes "ささやかですが、受け取ってください。";
+			mes "いつもありがとうございます。";
 			delquest 16080;
 			setquest 16079;
 			getitem 25250,1;
@@ -7489,141 +7489,141 @@ rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
 			end;
 		}
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "�R���[�e�ގ��̒��q�͂ǂ��ł����H";
-		mes "��ꂽ�Ȃ�x�݂Ȃ������ĉ������B";
-		mes "�`���҂���ɂ͂��܂薳������";
-		mes "���炢�����͂Ȃ��ł�����B";
+		mes "[キャクターロン]";
+		mes "コヨーテ退治の調子はどうですか？";
+		mes "疲れたなら休みながらやって下さい。";
+		mes "冒険者さんにはあまり無理して";
+		mes "もらいたくはないですから。";
 		close2;
 		cutin "rock_cact03",255;
 		end;
 	}
 	if(!checkquest(16078)) {
-		mes "[�`�r���N�^�[]";
-		mes "��[���I�@���ꂳ�񂪋A���ė����I";
-		mes "�W���[�X�́H�@�W���[�X�́H";
-		emotion 2,"�`�r���N�^�[#rrrem02";
+		mes "[チビレクター]";
+		mes "わーい！　お母さんが帰って来た！";
+		mes "ジュースは？　ジュースは？";
+		emotion 2,"チビレクター#rrrem02";
 		next;
-		mes "[�`�r���N�^�[]";
-		mes "����c�c�H";
-		mes "���ꂳ��A�]�񂾂́H";
-		mes "��������Ă��H";
-		emotion 1,"�`�r���N�^�[#rrrem02";
+		mes "[チビレクター]";
+		mes "あれ……？";
+		mes "お母さん、転んだの？";
+		mes "服が汚れてるよ？";
+		emotion 1,"チビレクター#rrrem02";
 		next;
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "�������܁B";
-		mes "�ł����߂�ˁA���N�^�[�B";
-		mes "�����͂����̃A�K�x�W���[�X��";
-		mes "���������́B";
-		emotion 9,"�L���N�^�[����#rrrem01";
+		mes "[キャクターロン]";
+		mes "ただいま。";
+		mes "でもごめんね、レクター。";
+		mes "今日はいつものアガベジュースが";
+		mes "無かったの。";
+		emotion 9,"キャクターロン#rrrem01";
 		next;
 		cutin "rock_cact03",255;
-		mes "[�`�r���N�^�[]";
-		mes "���H�@�ǂ����āH";
-		mes "�ǂ����ĂȂ��́H";
-		mes "�s��ɍs������ł���H";
+		mes "[チビレクター]";
+		mes "え？　どうして？";
+		mes "どうしてないの？";
+		mes "市場に行ったんでしょ？";
 		next;
-		mes "[�`�r���N�^�[]";
-		mes "�A�K�x���W���[�X�𔃂��ė������";
-		mes "����������҂��Ă��̂Ɂc";
-		mes "�c";
+		mes "[チビレクター]";
+		mes "アガベ味ジュースを買って来るって";
+		mes "言ったから待ってたのに…";
+		mes "…";
 		if(!sleep2(1000)) end;
-		mes "�c�c";
+		mes "……";
 		if(!sleep2(1000)) end;
-		mes "���킠������������I�I";
+		mes "うわああああああん！！";
 		next;
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "�����Ȃ��Ń��N�^�[�B";
-		mes "�L���N�^�[���̎q�ǂ���";
-		mes "�����ȒP�ɋ����Ȃ����̂Ȃ̂�B";
+		mes "[キャクターロン]";
+		mes "泣かないでレクター。";
+		mes "キャクター族の子どもは";
+		mes "そう簡単に泣かないものなのよ。";
 		next;
-		if(select("�ǂ������܂������H","�C�ɂ��Ȃ�") == 2) {
+		if(select("どうかしましたか？","気にしない") == 2) {
 			cutin "rock_cact03",255;
-			mes "�]���Ȃ��͋C�ɂ����ʂ�߂����]";
+			mes "‐あなたは気にせず通り過ぎた‐";
 			close;
 		}
-		mes "[�L���N�^�[����]";
-		mes "�����c�c�����������Ƃł́c�c�B";
-		mes "����H�@���Ȃ��A�ς�����i�D�ˁH";
-		mes "�`���҂�����H";
-		mes "�c�c����Ȃ炿����Ƙb��";
-		mes "�����Ă���܂����H";
+		mes "[キャクターロン]";
+		mes "いえ……たいしたことでは……。";
+		mes "あら？　あなた、変わった格好ね？";
+		mes "冒険者かしら？";
+		mes "……それならちょっと話を";
+		mes "聞いてくれますか？";
 		next;
 		cutin "rock_cact03",255;
-		mes "[�`�r���N�^�[]";
-		mes "���킠����������I";
-		mes "�A�K�x���W���[�X�I";
-		mes "���������`��I";
-		emotion 28,"�`�r���N�^�[#rrrem02";
+		mes "[チビレクター]";
+		mes "うわあああああん！";
+		mes "アガベ味ジュース！";
+		mes "うえええ～ん！";
+		emotion 28,"チビレクター#rrrem02";
 		next;
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "���̓��b�N���b�W�̎s���";
-		mes "�������ɍs�����̂ł����A";
-		mes "�A��r���ŉ^�����R���[�e��";
-		mes "�o���킵�Ă��܂�����ł��B";
+		mes "[キャクターロン]";
+		mes "実はロックリッジの市場に";
+		mes "買い物に行ったのですが、";
+		mes "帰る途中で運悪くコヨーテに";
+		mes "出くわしてしまったんです。";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "���͕K���ɒǂ������܂����B";
-		mes "�����Ĕ��������̑唼��";
-		mes "���܂������A";
-		mes "�A�K�x���W���[�X�~�b�N�X��";
-		mes "���ׂĎ����Ă��܂��܂����B";
+		mes "[キャクターロン]";
+		mes "私は必死に追い払いました。";
+		mes "そして買った物の大半は";
+		mes "守れましたが、";
+		mes "アガベ味ジュースミックスを";
+		mes "すべて失ってしまいました。";
 		next;
-		menu "�A�K�x���W���[�X�~�b�N�X�H",-;
+		menu "アガベ味ジュースミックス？",-;
 		emotion 1,"";
-		mes "[�L���N�^�[����]";
-		mes "�₽�����ɍ������";
-		mes "�A�K�x���W���[�X���ł���";
-		mes "�����̂��Ƃł��B";
-		mes "�A�K�x�W���[�X�Ǝ����������āA";
-		mes "�L���N�^�[���̎q�ǂ���";
-		mes "�l�C�̃W���[�X�ł��B";
+		mes "[キャクターロン]";
+		mes "冷たい水に混ぜると";
+		mes "アガベ味ジュースができる";
+		mes "粉末のことです。";
+		mes "アガベジュースと似た味がして、";
+		mes "キャクター族の子どもに";
+		mes "人気のジュースです。";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "�ٖM�̖`���҂���A";
-		mes "�����ǂ������玄�����Ƃ��Ă��܂���";
-		mes "�A�K�x���W���[�X��";
-		mes "�T���Ă���܂��񂩁H";
+		mes "[キャクターロン]";
+		mes "異邦の冒険者さん、";
+		mes "もし良かったら私が落としてしまった";
+		mes "アガベ味ジュースを";
+		mes "探してくれませんか？";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "���ꂩ��R���[�e�����������Ȃ��悤";
-		mes "^0000CD30�C^000000�ق�";
-		mes "����Ăق����ł��B";
+		mes "[キャクターロン]";
+		mes "それからコヨーテが増えすぎないよう";
+		mes "^0000CD30匹^000000ほど";
+		mes "狩ってほしいです。";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "^0000CD�A�K�x���W���[�X�~�b�N�X^000000��";
-		mes "7����ł������A�S��������̂�";
-		mes "����ł��傤�B";
-		mes "�ł�����^0000CD5��^000000�����Ă�����";
-		mes "���������ł��B";
-		mes "�����₩�ł�������������グ�܂��B";
+		mes "[キャクターロン]";
+		mes "^0000CDアガベ味ジュースミックス^000000は";
+		mes "7個入りでしたが、全部見つけるのは";
+		mes "難しいでしょう。";
+		mes "ですから^0000CD5個^000000見つけてくれれば";
+		mes "けっこうです。";
+		mes "ささやかですがお礼も差し上げます。";
 		next;
-		if(select("�����󂯂܂��傤","�Z�����̂Łc�c") == 2) {
-			mes "[�L���N�^�[����]";
-			mes "�킩��܂����B�d���Ȃ��ł��ˁB";
+		if(select("引き受けましょう","忙しいので……") == 2) {
+			mes "[キャクターロン]";
+			mes "わかりました。仕方ないですね。";
 			close2;
 			cutin "rock_cact03",255;
 			end;
 		}
-		mes "[�L���N�^�[����]";
-		mes "�{���ɂ��肪�Ƃ��������܂��B";
-		mes "^0000CD�A�K�x���W���[�X�~�b�N�X5��^000000�ƁA";
-		mes "^0000CD�R���[�e30�C^000000��ގ��ł��B";
+		mes "[キャクターロン]";
+		mes "本当にありがとうございます。";
+		mes "^0000CDアガベ味ジュースミックス5個^000000と、";
+		mes "^0000CDコヨーテ30匹^000000を退治です。";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "�A�K�x���W���[�X�~�b�N�X�ł����A";
-		mes "^FF0000�n�ʂɖ��܂��Ă���A";
-		mes "�N���������čs������A";
-		mes "����������ƃR���[�e�������Ă�";
-		mes "�����m��܂���B^000000";
+		mes "[キャクターロン]";
+		mes "アガベ味ジュースミックスですが、";
+		mes "^FF0000地面に埋まってたり、";
+		mes "誰かが持って行ったり、";
+		mes "もしかするとコヨーテが見つけてる";
+		mes "かも知りません。^000000";
 		next;
-		mes "[�L���N�^�[����]";
-		mes "�R���[�e�ގ������Ȃ���";
-		mes "���ӂ��悭���ׂĂ݂Ă��������B";
-		mes "��낵�����肢���܂��B";
+		mes "[キャクターロン]";
+		mes "コヨーテ退治をしながら";
+		mes "周辺をよく調べてみてください。";
+		mes "よろしくお願いします。";
 		viewpoint 1,146,164,1,0xFFFF00;
 		viewpoint 1,305,200,2,0xFFFF00;
 		viewpoint 1,195,183,3,0xFFFF00;
@@ -7638,103 +7638,103 @@ rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
 	}
 	if(checkquest(16078)) {
 		if(checkquest(16078) & 0x4 && countitem(25246) >= 5) {
-			mes "[�`�r���N�^�[]";
-			mes "�A�K�x���W���[�X�Ȃ́H";
-			mes "�W���[�X�����ė��Ă��ꂽ�́H";
-			mes "�H�ׂ�I�@���N�^�[���H�ׂ�I";
+			mes "[チビレクター]";
+			mes "アガベ味ジュースなの？";
+			mes "ジュース持って来てくれたの？";
+			mes "食べる！　レクター今食べる！";
 			next;
 			cutin "rock_cact03",2;
-			mes "[�L���N�^�[����]";
-			mes "���N�^�[�A";
-			mes "�`���҂���Ɋ��ӂ̈��A�����Ȃ����B";
+			mes "[キャクターロン]";
+			mes "レクター、";
+			mes "冒険者さんに感謝の挨拶をしなさい。";
 			next;
 			cutin "rock_cact03",255;
-			mes "[�`�r���N�^�[]";
-			mes "����I�@�ƂĂ����������I";
-			mes "�ււցA���肪�Ƃ��������܂��`�I";
-			emotion 18,"�`�r���N�^�[#rrrem02";
+			mes "[チビレクター]";
+			mes "うん！　とても美味しい！";
+			mes "へへへ、ありがとうございます～！";
+			emotion 18,"チビレクター#rrrem02";
 			next;
 			cutin "rock_cact03",2;
-			mes "[�L���N�^�[����]";
-			mes "�ӂ��c�c�B";
-			emotion 20,"�L���N�^�[����#rrrem01";
+			mes "[キャクターロン]";
+			mes "ふう……。";
+			emotion 20,"キャクターロン#rrrem01";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�A�K�x���W���[�X��t��";
-			mes "����ȂɊ�Ԃ̂����Ă�����A";
-			mes "�����c���������Ɉ���ł���";
-			mes "�{���̃A�K�x�W���[�X��";
-			mes "�v���o���܂����B";
+			mes "[キャクターロン]";
+			mes "アガベ味ジュース一杯で";
+			mes "あんなに喜ぶのを見ていたら、";
+			mes "私が幼かった頃に飲んでいた";
+			mes "本当のアガベジュースを";
+			mes "思い出しました。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�P���ɍH��ō��������";
-			mes "���ɍ����Ĉ��ނ��̂ł͂���܂���B";
-			mes "���ɂ͂��Ȃ��Ԃ�������A";
-			mes "��؂ȓ��ɂ������ނ��Ƃ��o���Ȃ�";
-			mes "���ʂȈ��ݕ��ł����B";
+			mes "[キャクターロン]";
+			mes "単純に工場で作った粉を";
+			mes "水に混ぜて飲むものではありません。";
+			mes "作るにはかなり手間がかかる、";
+			mes "大切な日にしか飲むことが出来ない";
+			mes "特別な飲み物でした。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�S�Ƒ����W�܂���";
-			mes "�A�K�x�W���[�X�����܂����B";
-			mes "���ɂ����y������������A";
-			mes "�킴�킴�������痈���e�ʂƈꏏ��";
-			mes "�x������y������t������c�c�B";
+			mes "[キャクターロン]";
+			mes "全家族が集まって";
+			mes "アガベジュースを作りました。";
+			mes "他にもご馳走をつくったり、";
+			mes "わざわざ遠方から来た親戚と一緒に";
+			mes "踊ったり楽器を演奏したり……。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�{���Ɋy���������ł��B";
-			mes "�����ǂ��̎q�͂���Ȍo����";
-			mes "�������Ƃ�����܂���B";
-			mes "�ŋ߂݂͂�ȖZ������";
-			mes "�x���̂Ŗ���߂������̂�";
-			mes "�����̘̂b�ł��B";
+			mes "[キャクターロン]";
+			mes "本当に楽しかったです。";
+			mes "だけどこの子はそんな経験を";
+			mes "したことがありません。";
+			mes "最近はみんな忙しくて";
+			mes "踊りや歌で夜を過ごしたのも";
+			mes "もう昔の話です。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "����ł��������͏��";
-			mes "�厖�ȓ`������낤��";
-			mes "�w�͂��Ă��܂��B";
-			mes "�q�ǂ��������̂̂悤��";
-			mes "�y�����o�����ł���悤��";
-			mes "���Ă�肽���ł��B";
+			mes "[キャクターロン]";
+			mes "それでも私たちは常に";
+			mes "大事な伝統を守ろうと";
+			mes "努力しています。";
+			mes "子どもたちが昔のような";
+			mes "楽しい経験をできるように";
+			mes "してやりたいです。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "���A���߂�Ȃ����B";
-			mes "�]�v�Ȏ��������Ă��܂��܂����ˁB";
-			mes "�Z���������ł��傤�ɁA";
-			mes "�{���ɂ��肪�Ƃ��������܂��B";
-			emotion 19,"�L���N�^�[����#rrrem01";
+			mes "[キャクターロン]";
+			mes "あ、ごめんなさい。";
+			mes "余計な事を言ってしまいましたね。";
+			mes "忙しかったでしょうに、";
+			mes "本当にありがとうございます。";
+			emotion 19,"キャクターロン#rrrem01";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�����������̂ł͂���܂��񂪁A";
-			mes "����͂���ł��B";
-			mes "�󂯎���Ă��������B";
+			mes "[キャクターロン]";
+			mes "たいしたものではありませんが、";
+			mes "これはお礼です。";
+			mes "受け取ってください。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "���ꂩ��A�����悯���";
-			mes "�܂��R���[�e��ގ�����";
-			mes "���Ă���܂��񂩁H";
-			mes "�ŋ߃R���[�e��";
-			mes "�҈Ђ�U����Ă����ł��B";
+			mes "[キャクターロン]";
+			mes "それから、もしよければ";
+			mes "またコヨーテを退治しに";
+			mes "来てくれませんか？";
+			mes "最近コヨーテが";
+			mes "猛威を振るっているんです。";
 			next;
-			mes "[�L���N�^�[����]";
-			mes "�ނ�����R�̒��Ԃł����ǁc�c";
-			mes "��������邽�߂ɂ�";
-			mes "�����ɒǂ����K�v��";
-			mes "����܂�����B";
+			mes "[キャクターロン]";
+			mes "彼らも自然の仲間ですけど……";
+			mes "生活を守るためには";
+			mes "遠くに追いやる必要が";
+			mes "ありますから。";
 			next;
 			if(checkitemblank() == 0) {
-				mes "�]�ו�������ȏ㎝�Ă܂���";
-				mes "�@�ו���1�ȏ�̋󂫂�";
-				mes "�@����Ă��������]";
+				mes "‐荷物をこれ以上持てません";
+				mes "　荷物に1個以上の空きを";
+				mes "　作ってください‐";
 				close2;
 				cutin "rock_cact03",255;
 				end;
 			}
-			mes "[�L���N�^�[����]";
-			mes "��T�ԂɈ����x�ł��܂��܂���B";
-			mes "�͂�݂��Ă����Ȃ�{���Ɋ������ł��B";
-			mes "���������悢�������ł���悤�A";
-			mes "���������Ɠw�͂��܂��ˁB";
-			emotion 18,"�L���N�^�[����#rrrem01";
+			mes "[キャクターロン]";
+			mes "一週間に一回程度でかまいません。";
+			mes "力を貸してくれるなら本当に嬉しいです。";
+			mes "もう少しよい生活ができるよう、";
+			mes "私ももっと努力しますね。";
+			emotion 18,"キャクターロン#rrrem01";
 			delitem 25246,countitem(25246);
 			delquest 16078;
 			setquest 16079;
@@ -7747,10 +7747,10 @@ rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
 			end;
 		}
 		cutin "rock_cact03",2;
-		mes "[�L���N�^�[����]";
-		mes "^0000CD�A�K�x���W���[�X�~�b�N�X5��^000000�ƁA";
-		mes "^0000CD�R���[�e30�C^000000��ގ��ł��B";
-		mes "�ǂ�����낵�����肢���܂��B";
+		mes "[キャクターロン]";
+		mes "^0000CDアガベ味ジュースミックス5個^000000と、";
+		mes "^0000CDコヨーテ30匹^000000を退治です。";
+		mes "どうかよろしくお願いします。";
 		if(checkquest(16088) == 0) {
 			if(checkquest(16083) == 0)
 				viewpoint 1,146,164,1,0xFFFF00;
@@ -7773,71 +7773,71 @@ rockrdg1.gat,341,133,3	script	�L���N�^�[����#rrrem01	10220,{
 	}
 }
 
-rockrdg1.gat,339,134,3	script	�`�r���N�^�[#rrrem02	10222,{
+rockrdg1.gat,339,134,3	script	チビレクター#rrrem02	10222,{
 	if(!checkquest(16079)) {
-		mes "[�`�r���N�^�[]";
-		mes "�A�K�x���W���[�X�A";
-		mes "�����ė�����Č������̂Ɂc�c�B";
+		mes "[チビレクター]";
+		mes "アガベ味ジュース、";
+		mes "買って来るって言ったのに……。";
 		close;
 	}
-	mes "[�`�r���N�^�[]";
-	mes "�A�K�x���W���[�X���������ł��B";
-	mes "�������݂����ł��B";
+	mes "[チビレクター]";
+	mes "アガベ味ジュース美味しいです。";
+	mes "毎日飲みたいです。";
 	next;
-	mes "[�`�r���N�^�[]";
-	mes "�A�K�x�W���[�X�H";
-	mes "���N�^�[���D����";
-	mes "�A�K�x���W���[�X�ł����H";
+	mes "[チビレクター]";
+	mes "アガベジュース？";
+	mes "レクターが好きな";
+	mes "アガベ味ジュースですか？";
 	close;
 }
 
-rockrdg1.gat,146,164,1	script	�r��̃L���N�^�[�s��#rr	10218,{
-	mes "[�r��̃L���N�^�[�s��]";
-	mes "�r�������L���N�^�[�������������H";
-	mes "�����ɂ��������͖Z�����񂾁B";
-	mes "�p�������Ȃ�s���Ă��������H";
+rockrdg1.gat,146,164,1	script	荒野のキャクターピン#rr	10218,{
+	mes "[荒野のキャクターピン]";
+	mes "荒野を歩くキャクター族が珍しいか？";
+	mes "あいにくこっちは忙しいんだ。";
+	mes "用が無いなら行ってもいいか？";
 	if(!checkquest(16078) || checkquest(16083) || checkquest(16088))
 		close;
 	next;
-	menu "�A�K�x���W���[�X�ɂ��ĕ���",-;
-	mes "[�r��̃L���N�^�[�s��]";
-	mes "����̂��Ƃ��H";
-	mes "���������Ί�̌��Ԃ�";
-	mes "�����Ă����ȁB";
+	menu "アガベ味ジュースについて聞く",-;
+	mes "[荒野のキャクターピン]";
+	mes "これのことか？";
+	mes "そういえば岩の隙間に";
+	mes "落ちていたな。";
 	next;
-	mes "�]���Ȃ��͎������������]";
+	mes "‐あなたは事情を説明した‐";
 	next;
-	mes "[�r��̃L���N�^�[�s��]";
-	mes "�ٖM�l�A";
-	mes "�L���N�^�[����������������";
-	mes "�N�ɕԂ����R�͂Ȃ��B";
-	mes "�N���R�����Ă���̂�������Ȃ��B";
+	mes "[荒野のキャクターピン]";
+	mes "異邦人、";
+	mes "キャクターロンが失った物を";
+	mes "君に返す理由はない。";
+	mes "君が嘘をついているのかもしれない。";
 	next;
-	switch(select("�͂ŋ�������","���ւɐ�������")) {
+	switch(select("力で脅迫する","穏便に説得する")) {
 	case 1:
-		mes "[�r��̃L���N�^�[�s��]";
-		mes "���͌����ĂԂ��ƂɂȂ�B";
-		mes "�������N����O��";
-		mes "���̃W���[�X��n�����B";
-		mes "�����L���N�^�[�����͌N�̂悤��";
-		mes "�ٖM�l�Ɉ˗��������Ƃ�";
-		mes "�����ƒp���邾�낤�B";
+		mes "[荒野のキャクターピン]";
+		mes "血は血を呼ぶことになる。";
+		mes "争いが起きる前に";
+		mes "このジュースを渡そう。";
+		mes "だがキャクターロンは君のような";
+		mes "異邦人に依頼したことを";
+		mes "きっと恥じるだろう。";
 		break;
 	case 2:
-		mes "[�r��̃L���N�^�[�s��]";
-		mes "�킩�����B�Ԃ����B";
-		mes "���������N�̌����Ă��邱�Ƃ�";
-		mes "�R�������Ƃ�����A";
-		mes "�L���N�^�[���𗘗p�����񂢂�";
-		mes "���̐g�������Ēm�邱�Ƃ�";
-		mes "�Ȃ邾�낤�B";
+		mes "[荒野のキャクターピン]";
+		mes "わかった。返そう。";
+		mes "たがもし君の言っていることが";
+		mes "嘘だったとしたら、";
+		mes "キャクター族を利用した報いを";
+		mes "その身を持って知ることに";
+		mes "なるだろう。";
 		break;
 	}
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16083;
@@ -7852,9 +7852,9 @@ rockrdg1.gat,146,164,1	script	�r��̃L���N�^�[�s��#rr	10218,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -7875,36 +7875,36 @@ rockrdg1.gat,146,164,1	script	�r��̃L���N�^�[�s��#rr	10218,{
 	close;
 }
 
-rockrdg1.gat,305,200,3	script	�L���N�^�[����#rrem04	10226,{
-	mes "[�L���N�^�[����]";
-	mes "�c�c���m��ʐl�A";
-	mes "�ߊ��Ȃ��ŁB�\�����B";
-	emotion 7,"�L���N�^�[����#rrem04";
+rockrdg1.gat,305,200,3	script	キャクター少女#rrem04	10226,{
+	mes "[キャクター少女]";
+	mes "……見知らぬ人、";
+	mes "近寄らないで。暴れるわよ。";
+	emotion 7,"キャクター少女#rrem04";
 	if(!checkquest(16078) || checkquest(16087) || checkquest(16088))
 		close;
 	next;
-	menu "�A�K�x���W���[�X�ɂ��ĕ���",-;
-	mes "[�L���N�^�[����]";
-	mes "�A�K�x���W���[�X�H";
-	mes "�܂��������T���Ă�����ł����H";
-	mes "���ɖ�����Ă��܂������c�c�B";
+	menu "アガベ味ジュースについて聞く",-;
+	mes "[キャクター少女]";
+	mes "アガベ味ジュース？";
+	mes "まさかこれを探していたんですか？";
+	mes "砂に埋もれていましたが……。";
 	next;
-	mes "[�L���N�^�[����]";
-	mes "�����ł����A";
-	mes "�L���N�^�[�������񂪁c�c�B";
-	mes "�킩��܂����B";
+	mes "[キャクター少女]";
+	mes "そうですか、";
+	mes "キャクターロンさんが……。";
+	mes "わかりました。";
 	next;
-	mes "[�L���N�^�[����]";
-	mes "�L���N�^�[���������";
-	mes "���O��m���Ă���Ƃ������Ƃ́A";
-	mes "���Ȃ��̌��t�͖{���Ȃ̂ł��傤�B";
-	mes "�󂯎���Ă��������B";
-	emotion 1,"�L���N�^�[����#rrem04";
+	mes "[キャクター少女]";
+	mes "キャクターロンさんの";
+	mes "名前を知っているということは、";
+	mes "あなたの言葉は本当なのでしょう。";
+	mes "受け取ってください。";
+	emotion 1,"キャクター少女#rrem04";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16087;
@@ -7919,9 +7919,9 @@ rockrdg1.gat,305,200,3	script	�L���N�^�[����#rrem04	10226,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -7942,45 +7942,45 @@ rockrdg1.gat,305,200,3	script	�L���N�^�[����#rrem04	10226,{
 	close;
 }
 
-rockrdg1.gat,195,183,3	script	�D��S�����ȃR���[�e#rr	3739,{}
+rockrdg1.gat,195,183,3	script	好奇心旺盛なコヨーテ#rr	3739,{}
 
-rockrdg1.gat,195,182,0	script	#�D��S�����ȃR���[�e01	139,7,7,{
+rockrdg1.gat,195,182,0	script	#好奇心旺盛なコヨーテ01	139,7,7,{
 	end;
 OnTouch:
 	if(!checkquest(16078) || checkquest(16085) || checkquest(16088))
 		end;
-	mes "�]�R���[�e������������Ȃ���";
-	mes "�@�V�Ԃ̂ɖ����ɂȂ��Ă���B";
-	mes "�@�L���N�^�[�������񂪖�������";
-	mes "�@�A�K�x���W���[�X��������Ȃ��]";
+	mes "‐コヨーテが何かを咥えながら";
+	mes "　遊ぶのに夢中になっている。";
+	mes "　キャクターロンさんが無くした";
+	mes "　アガベ味ジュースかもしれない‐";
 	next;
-	mes "�@�傫�Ȑ��Œǂ������Ă݂悤�B";
-	mes "�@�Ȃ�Ƌ��т܂����H�]";
+	mes "　大きな声で追い払ってみよう。";
+	mes "　なんと叫びますか？‐";
 	next;
 	input '@str$;
 	unittalk getcharid(3),strcharinfo(0)+" : " +'@str$+ "!";
 	mes "[" +strcharinfo(0)+ "]";
 	mes '@str$+ "!";
 	next;
-	mes "[�D��S�����ȃR���[�e]";
-	mes "�L�����I";
+	mes "[好奇心旺盛なコヨーテ]";
+	mes "キャン！";
 	next;
-	mes "�]�R���[�e�͋�����";
-	mes "�@�ǂ����֍s���Ă��܂����B";
-	mes "�@�����Ă����A�K�x���W���[�X��";
-	mes "�@���Ƃ��Ă������]";
+	mes "‐コヨーテは驚いて";
+	mes "　どこかへ行ってしまった。";
+	mes "　咥えていたアガベ味ジュースを";
+	mes "　落としていった‐";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16085;
 	compquest 16085;
 	getitem 25246,1;
 	cloakonnpc;
-	cloakonnpc "�D��S�����ȃR���[�e#rr";
+	cloakonnpc "好奇心旺盛なコヨーテ#rr";
 	viewpoint 2,1,1,3,0xFFFFFF;
 	if( (
 		checkquest(16081) + checkquest(16082) +
@@ -7989,9 +7989,9 @@ OnTouch:
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -8012,25 +8012,25 @@ OnTouch:
 	close;
 }
 
-rockrdg1.gat,182,124,3	script	���������R#rrem01	557,{
+rockrdg1.gat,182,124,3	script	怪しい砂山#rrem01	557,{
 	if(!checkquest(16078) || checkquest(16081) || checkquest(16088)) {
-		mes "�]�����܂����܂��Ă���B";
-		mes "�@�����̃S�~�̂悤���]";
+		mes "‐何か袋が埋まっている。";
+		mes "　ただのゴミのようだ‐";
 		close;
 	}
-	mes "�]�����܂����܂��Ă���B";
-	mes "�@�L���N�^�[�������񂪖�������";
-	mes "�@�A�K�x���W���[�X��������Ȃ��]";
+	mes "‐何か袋が埋まっている。";
+	mes "　キャクターロンさんが無くした";
+	mes "　アガベ味ジュースかもしれない‐";
 	next;
-	mes "�]�߂Â��Ċm�F���Ă���ƁA";
-	mes "�@�A�K�x���W���[�X�̃��x����";
-	mes "�@�t���Ă���B";
-	mes "�@�j������͂��Ă��Ȃ��悤���]";
+	mes "‐近づいて確認してすると、";
+	mes "　アガベ味ジュースのラベルが";
+	mes "　付いている。";
+	mes "　破けたりはしていないようだ‐";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16081;
@@ -8045,9 +8045,9 @@ rockrdg1.gat,182,124,3	script	���������R#rrem01	557,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -8068,25 +8068,25 @@ rockrdg1.gat,182,124,3	script	���������R#rrem01	557,{
 	close;
 }
 
-rockrdg1.gat,286,247,3	script	���������R#rrem02	557,{
+rockrdg1.gat,286,247,3	script	怪しい砂山#rrem02	557,{
 	if(!checkquest(16078) || checkquest(16084) || checkquest(16088)) {
-		mes "�]�����܂����܂��Ă���B";
-		mes "�@�����̃S�~�̂悤���]";
+		mes "‐何か袋が埋まっている。";
+		mes "　ただのゴミのようだ‐";
 		close;
 	}
-	mes "�]�����܂����܂��Ă���B";
-	mes "�@�L���N�^�[�������񂪖�������";
-	mes "�@�A�K�x���W���[�X��������Ȃ��]";
+	mes "‐何か袋が埋まっている。";
+	mes "　キャクターロンさんが無くした";
+	mes "　アガベ味ジュースかもしれない‐";
 	next;
-	mes "�]�߂Â��Ċm�F���Ă���ƁA";
-	mes "�@�A�K�x���W���[�X�̃��x����";
-	mes "�@�t���Ă���B";
-	mes "�@�j������͂��Ă��Ȃ��悤���]";
+	mes "‐近づいて確認してすると、";
+	mes "　アガベ味ジュースのラベルが";
+	mes "　付いている。";
+	mes "　破けたりはしていないようだ‐";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16084;
@@ -8101,9 +8101,9 @@ rockrdg1.gat,286,247,3	script	���������R#rrem02	557,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -8124,25 +8124,25 @@ rockrdg1.gat,286,247,3	script	���������R#rrem02	557,{
 	close;
 }
 
-rockrdg1.gat,202,246,3	script	���������R#rrem03	557,{
+rockrdg1.gat,202,246,3	script	怪しい砂山#rrem03	557,{
 	if(!checkquest(16078) || checkquest(16086) || checkquest(16088)) {
-		mes "�]�����܂����܂��Ă���B";
-		mes "�@�����̃S�~�̂悤���]";
+		mes "‐何か袋が埋まっている。";
+		mes "　ただのゴミのようだ‐";
 		close;
 	}
-	mes "�]�����܂����܂��Ă���B";
-	mes "�@�L���N�^�[�������񂪖�������";
-	mes "�@�A�K�x���W���[�X��������Ȃ��]";
+	mes "‐何か袋が埋まっている。";
+	mes "　キャクターロンさんが無くした";
+	mes "　アガベ味ジュースかもしれない‐";
 	next;
-	mes "�]�߂Â��Ċm�F���Ă���ƁA";
-	mes "�@�A�K�x���W���[�X�̃��x����";
-	mes "�@�t���Ă���B";
-	mes "�@�j������͂��Ă��Ȃ��悤���]";
+	mes "‐近づいて確認してすると、";
+	mes "　アガベ味ジュースのラベルが";
+	mes "　付いている。";
+	mes "　破けたりはしていないようだ‐";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16086;
@@ -8157,9 +8157,9 @@ rockrdg1.gat,202,246,3	script	���������R#rrem03	557,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -8180,25 +8180,25 @@ rockrdg1.gat,202,246,3	script	���������R#rrem03	557,{
 	close;
 }
 
-rockrdg1.gat,149,103,3	script	���������R#rrem04	557,{
+rockrdg1.gat,149,103,3	script	怪しい砂山#rrem04	557,{
 	if(!checkquest(16078) || checkquest(16082) || checkquest(16088)) {
-		mes "�]�����܂����܂��Ă���B";
-		mes "�@�����̃S�~�̂悤���]";
+		mes "‐何か袋が埋まっている。";
+		mes "　ただのゴミのようだ‐";
 		close;
 	}
-	mes "�]�����܂����܂��Ă���B";
-	mes "�@�L���N�^�[�������񂪖�������";
-	mes "�@�A�K�x���W���[�X��������Ȃ��]";
+	mes "‐何か袋が埋まっている。";
+	mes "　キャクターロンさんが無くした";
+	mes "　アガベ味ジュースかもしれない‐";
 	next;
-	mes "�]�߂Â��Ċm�F���Ă���ƁA";
-	mes "�@�A�K�x���W���[�X�̃��x����";
-	mes "�@�t���Ă���B";
-	mes "�@�j������͂��Ă��Ȃ��悤���]";
+	mes "‐近づいて確認してすると、";
+	mes "　アガベ味ジュースのラベルが";
+	mes "　付いている。";
+	mes "　破けたりはしていないようだ‐";
 	if(checkitemblank() == 0) {
 		next;
-		mes "�]�ו�������ȏ㎝�Ă܂���";
-		mes "�@�ו���1�ȏ�̋󂫂�";
-		mes "�@����Ă��������]";
+		mes "‐荷物をこれ以上持てません";
+		mes "　荷物に1個以上の空きを";
+		mes "　作ってください‐";
 		close;
 	}
 	setquest 16082;
@@ -8213,9 +8213,9 @@ rockrdg1.gat,149,103,3	script	���������R#rrem04	557,{
 		checkquest(16087)
 	) == 40) {
 		next;
-		mes "�]�A�K�x���W���[�X��5�������B";
-		mes "�@�R���[�e��30�C����������";
-		mes "�@�L���N�^�[�����ɕ񍐂��悤�]";
+		mes "‐アガベ味ジュースを5個見つけた。";
+		mes "　コヨーテを30匹討伐したら";
+		mes "　キャクターロンに報告しよう‐";
 		delquest 16081;
 		delquest 16082;
 		delquest 16083;
@@ -8236,68 +8236,68 @@ rockrdg1.gat,149,103,3	script	���������R#rrem04	557,{
 	close;
 }
 
-rockrdg2.gat,295,328,5	script	�a��ȃK�X�g#rockdaily	10231,{
+rockrdg2.gat,295,328,5	script	病弱なガスト#rockdaily	10231,{
 	if(ROCKRIDGE_1QUE < 16) {
-		mes "[�K�X�g]";
-		mes "�ӂ��A�������猩�邾���ł�";
-		mes "�����@���y���āc�c";
+		mes "[ガスト]";
+		mes "ふう、遠くから見るだけでも";
+		mes "もう鼻が痒くて……";
 		next;
-		mes "[�K�X�g]";
-		mes "�����Ă�񂾁I";
-		mes "���̘b�𕷂����̂�!?";
-		mes "���낿��낵�ĂȂ���";
-		mes "�������ɍs���I";
+		mes "[ガスト]";
+		mes "何見てるんだ！";
+		mes "今の話を聞いたのか!?";
+		mes "うろちょろしてないで";
+		mes "あっちに行け！";
 		next;
-		mes "�]�����c�̖����������Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐牛賊団の問題を解決してから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(BaseLevel < 160) {
-		mes "[�K�X�g]";
-		mes "���[��ǂ�����΁c�c�B";
+		mes "[ガスト]";
+		mes "うーんどうすれば……。";
 		next;
-		mes "�]�l���������Ă���";
-		mes "�@�C�Â��Ă��Ȃ��悤���B";
-		mes "�@^ff0000BaseLv160^000000�ȏ�ɂȂ��Ă���";
-		mes "�@�܂����悤�]";
+		mes "‐考え事をしていて";
+		mes "　気づいていないようだ。";
+		mes "　^ff0000BaseLv160^000000以上になってから";
+		mes "　また来よう‐";
 		close;
 	}
 	if(checkquest(1299)) {
 		if(checkquest(1299)&2 == 0) {
-			mes "[�K�X�g]";
-			mes "�K�X�^�[�ގ��ɂ͂܂������������ȁB";
-			mes "�p�g���[�����O��";
-			mes "�ގ����Ă����Ȃ���";
-			mes "���܂�Ӗ����Ȃ�����ˁB";
+			mes "[ガスト]";
+			mes "ガスター退治にはまだ少し早いかな。";
+			mes "パトロール直前に";
+			mes "退治してもらわないと";
+			mes "あまり意味がないからね。";
 			close;
 		}
-		mes "[�K�X�g]";
-		mes "�����A�悻�҂���I";
-		mes "�������`���Ă����̂����H";
+		mes "[ガスト]";
+		mes "おお、よそ者さん！";
+		mes "今回も手伝ってくれるのかい？";
 		next;
-		if(select("���݂�","�f��") == 2) {
-			mes "[�K�X�g]";
-			mes "�����͖Z�����̂����H";
+		if(select("手を貸す","断る") == 2) {
+			mes "[ガスト]";
+			mes "今日は忙しいのかい？";
 			close;
 		}
-		mes "[�K�X�g]";
-		mes "���肪�Ƃ��I";
-		mes "���ꂶ��A�N���Ɍ�����O��";
-		mes "�����s���Ă��ĂˁB";
+		mes "[ガスト]";
+		mes "ありがとう！";
+		mes "それじゃ、誰かに見つかる前に";
+		mes "早く行ってきてね。";
 		delquest 1299;
 		setquest 1298;
 		close;
 	}
 	if(checkquest(1298) & 0x4) {
-		mes "[�K�X�g]";
-		mes "�K�X�^�[��ގ����Ă��ꂽ�̂����H";
-		mes "���肪�Ƃ��I";
-		mes "����͂��炾��I";
+		mes "[ガスト]";
+		mes "ガスターを退治してくれたのかい？";
+		mes "ありがとう！";
+		mes "これはお礼だよ！";
 		next;
 		if(checkitemblank() == 0) {
-			mes "�]�ו�������ȏ㎝�Ă܂���";
-			mes "�@�ו���1�ȏ�̋󂫂�";
-			mes "�@����Ă��������]";
+			mes "‐荷物をこれ以上持てません";
+			mes "　荷物に1個以上の空きを";
+			mes "　作ってください‐";
 			close;
 		}
 		delquest 1298;
@@ -8305,94 +8305,94 @@ rockrdg2.gat,295,328,5	script	�a��ȃK�X�g#rockdaily	10231,{
 		getitem 25250,3;
 		getexp 300000000,0,1;
 		getexp 0,120000000,0;
-		mes "[�K�X�g]";
-		mes "�����A�܂������O��";
-		mes "�������ƃp�g���[���ɍs���ė��悤�B";
-		mes "�����ǂ�������A���̃p�g���[���̑O�ɂ�";
-		mes "�K�X�^�[�ގ��������󂯂Ăق����ȁB";
+		mes "[ガスト]";
+		mes "さあ、また現れる前に";
+		mes "さっさとパトロールに行って来よう。";
+		mes "もし良かったら、次のパトロールの前にも";
+		mes "ガスター退治を引き受けてほしいな。";
 		close;
 	}
 	if(!checkquest(1298)) {
-		mes "[�K�X�g]";
-		mes "���[��ǂ�����΂����񂾁c�c�B";
-		mes "�傫����@�ł������čs�������H";
-		mes "����A����Ȏ���������";
-		mes "�o���Ă��܂��댯���c�c";
-		mes "�N���I";
+		mes "[ガスト]";
+		mes "うーんどうすればいいんだ……。";
+		mes "大きい扇風機でも持って行こうか？";
+		mes "いや、そんな事をしたら";
+		mes "バレてしまう危険が……";
+		mes "誰だ！";
 		emotion 0,"";
 		next;
-		mes "[�K�X�g]";
-		mes "����H�@�������Ȃ��炾�ˁB";
-		mes "���x�c�ł͂Ȃ����������c�c�B";
+		mes "[ガスト]";
+		mes "うん？　見かけない顔だね。";
+		mes "自警団ではなさそうだし……。";
 		next;
-		mes "[�K�X�g]";
-		mes "����҂Ă�A�悭������c�c";
-		mes "�������̎ז������Ă���";
-		mes "�悻�҂���Ȃ����H";
+		mes "[ガスト]";
+		mes "いや待てよ、よく見たら……";
+		mes "私たちの邪魔をしていた";
+		mes "よそ者じゃないか？";
 		next;
-		menu "�l�Ⴂ�ł�",-;
-		mes "[�K�X�g]";
-		mes "��H�@�����Ȃ́H";
-		mes "���̊��Ⴂ���������B";
-		mes "�܂��������ȁB";
-		mes "�����{�l�Ȃ炱��ȏꏊ��";
-		mes "�̂��̂�����킯�Ȃ����B";
+		menu "人違いです",-;
+		mes "[ガスト]";
+		mes "ん？　そうなの？";
+		mes "私の勘違いだったか。";
+		mes "まあそうだな。";
+		mes "もし本人ならこんな場所に";
+		mes "のこのこ来るわけないし。";
 		next;
-		mes "[�K�X�g]";
-		mes "�c�c�Ƃ���ŁA�悻�҂���B";
-		mes "�z�R��^ff0000�K�X�^�[^000000�Ƃ��������";
-		mes "�������Ƃ��邩���H";
+		mes "[ガスト]";
+		mes "……ところで、よそ者さん。";
+		mes "鉱山で^ff0000ガスター^000000とかいうやつを";
+		mes "見たことあるかい？";
 		next;
-		menu "�������Ƃ���",-,"�K�X�^�[�H",-;
-		mes "[�K�X�g]";
-		mes "�K�X�^�[�̓K�X�̉򂾁B";
-		mes "�����ɋ߂Â���";
-		mes "������݂��~�܂�Ȃ��Ȃ�B";
-		mes "���ꂾ������Ȃ��A�ڂ���͗܁A";
-		mes "�@����͕@���܂ŏo�Ă��܂��B";
+		menu "見たことある",-,"ガスター？",-;
+		mes "[ガスト]";
+		mes "ガスターはガスの塊だ。";
+		mes "そいつに近づくと";
+		mes "くしゃみが止まらなくなる。";
+		mes "それだけじゃない、目からは涙、";
+		mes "鼻からは鼻水まで出てしまう。";
 		next;
-		mes "[�K�X�g]";
-		mes "���������Ƃɍ��񎄂�";
-		mes "�z�R�̃p�g���[�������鎖��";
-		mes "�Ȃ��Ă��܂����񂾁B";
-		mes "�����̕����͊��Ȃ��Ƃ������Ȃ̂�";
-		mes "�݂�Ȃ̑O�ŃA�����M�[������";
-		mes "�o���Ȃ��Ȃ�Č����Ȃ���B";
+		mes "[ガスト]";
+		mes "困ったことに今回私が";
+		mes "鉱山のパトロールをする事に";
+		mes "なってしまったんだ。";
+		mes "うちの部族は頑丈なことが自慢なのに";
+		mes "みんなの前でアレルギーだから";
+		mes "出来ないなんて言えないよ。";
 		next;
-		mes "[�K�X�g]";
-		mes "����łȂ񂾂��ǁA";
-		mes "������Ə����ė~�����񂾁B";
+		mes "[ガスト]";
+		mes "それでなんだけど、";
+		mes "ちょっと助けて欲しいんだ。";
 		next;
-		mes "[�K�X�g]";
-		mes "�����p�g���[�����n�߂钼�O��";
-		mes "^FF0000�K�X�^�[��20�C^000000�ގ����ė~�����B";
-		mes "��V�͓n������A�ǂ������H";
+		mes "[ガスト]";
+		mes "私がパトロールを始める直前に";
+		mes "^FF0000ガスターを20匹^000000退治して欲しい。";
+		mes "報酬は渡すから、どうだい？";
 		next;
-		if(select("���͂���","�f��") == 2) {
-			mes "[�K�X�g]";
-			mes "��V���Ⴆ��񂾂�H";
-			mes "���Ȃ��́H";
+		if(select("協力する","断る") == 2) {
+			mes "[ガスト]";
+			mes "報酬が貰えるんだよ？";
+			mes "やらないの？";
 			close;
 		}
-		mes "[�K�X�g]";
-		mes "�{�������H";
-		mes "���肪�Ƃ��I";
-		mes "�N���������肾��I";
+		mes "[ガスト]";
+		mes "本当かい？";
+		mes "ありがとう！";
+		mes "君だけが頼りだよ！";
 		next;
-		mes "[�K�X�g]";
-		mes "�������A�ꉞ�����Ă������ǁA";
-		mes "���Ƃ̊֌W���^���Ȃ��悤��";
-		mes "��肭����Ăق����B";
-		mes "������o���ł�������A";
-		mes "�N�������ǂ����Ƃ͂Ȃ�����ˁB";
-		mes "�C�����Ă������B";
+		mes "[ガスト]";
+		mes "そうだ、一応言っておくけど、";
+		mes "私との関係を疑われないように";
+		mes "上手くやってほしい。";
+		mes "万が一バレでもしたら、";
+		mes "君も私も良いことはないからね。";
+		mes "気をつけておくれよ。";
 		setquest 1298;
 		close;
 	}
-	mes "[�K�X�g]";
-	mes "�K�X�^�[�͑ގ����Ă��ꂽ�H";
-	mes "���������p�g���[���̎��Ԃ�����";
-	mes "����܂łɗ��ނ�B";
-	mes "�悻�҂̌N����������Ȃ񂾁B";
+	mes "[ガスト]";
+	mes "ガスターは退治してくれた？";
+	mes "もうすぐパトロールの時間だから";
+	mes "それまでに頼むよ。";
+	mes "よそ者の君だけが頼りなんだ。";
 	close;
 }

@@ -1,17 +1,17 @@
-// •¶š—ñ•Ï”‚ÌƒeƒXƒg
-prontera.gat,164,188,1	script	•¶š—ñƒeƒXƒg	112,{
-	set @str$, "•¶š—ñ‚P";
-	mes "•¶š—ñ•Ï”F" + @str$ ;
-	mes "Šm”FF" + @str$ + " ...OK?";
+// æ–‡å­—åˆ—å¤‰æ•°ã®ãƒ†ã‚¹ãƒˆ
+prontera.gat,164,188,1	script	æ–‡å­—åˆ—ãƒ†ã‚¹ãƒˆ	112,{
+	set @str$, "æ–‡å­—åˆ—ï¼‘";
+	mes "æ–‡å­—åˆ—å¤‰æ•°ï¼š" + @str$ ;
+	mes "ç¢ºèªï¼š" + @str$ + " ...OK?";
 	next;
-	mes "”äŠr`eqOKF" + (@str$=="•¶š—ñ‚P");
-	mes "”äŠr`eqNGF" + (@str$=="•¶š—ñ");
-	mes "”äŠr`neOKF" + (@str$!="00000");
-	mes "”äŠr`neNGF" + (@str$!="•¶š—ñ‚P");
-	mes "”äŠr`gtOKF" + ("aab">"aaa");
-	mes "”äŠr`ltNGF" + ("aab"<"aaa");
+	mes "æ¯”è¼ƒï½eqOKï¼š" + (@str$=="æ–‡å­—åˆ—ï¼‘");
+	mes "æ¯”è¼ƒï½eqNGï¼š" + (@str$=="æ–‡å­—åˆ—");
+	mes "æ¯”è¼ƒï½neOKï¼š" + (@str$!="00000");
+	mes "æ¯”è¼ƒï½neNGï¼š" + (@str$!="æ–‡å­—åˆ—ï¼‘");
+	mes "æ¯”è¼ƒï½gtOKï¼š" + ("aab">"aaa");
+	mes "æ¯”è¼ƒï½ltNGï¼š" + ("aab"<"aaa");
 	next;
 	input @str2$;
-	mes "“ü—Íƒf[ƒ^‚Í " + @str2$ + " ‚Å‚·B";
+	mes "å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã¯ " + @str2$ + " ã§ã™ã€‚";
 	close;
 }

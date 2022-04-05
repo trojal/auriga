@@ -1,21 +1,21 @@
 //=====================================================================
-// ¡ •Ï”–¼•âNPC
+// â–  å¤‰æ•°åè£œå„ŸNPC
 //						created by Rayce
-//  NPCƒXƒNƒŠƒvƒg‚Ì‰üC‚É”º‚¢•Ï”–¼‚Ì“”p‡‚ğs‚¢‚Ü‚µ‚½B
-//  ˆÈ‰º‚ÌƒXƒNƒŠƒvƒg‚ğŠeƒvƒŒƒCƒ„[‚ÉÀs‚µ‚Ä‚à‚ç‚¤‚±‚Æ‚Å
-//  •Ï”‚Ì’l‚ğˆø‚«Œp‚®‚±‚Æ‚ª‚Å‚«‚Ü‚·B
-//  ‚½‚¾‚µˆê•”‚Ì•Ï”‚É‚Â‚¢‚Ä‚Í•â‚µ‚Ü‚¹‚ñB
+//  NPCã‚¹ã‚¯ãƒªãƒ—ãƒˆã®æ”¹ä¿®ã«ä¼´ã„å¤‰æ•°åã®çµ±å»ƒåˆã‚’è¡Œã„ã¾ã—ãŸã€‚
+//  ä»¥ä¸‹ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«å®Ÿè¡Œã—ã¦ã‚‚ã‚‰ã†ã“ã¨ã§
+//  å¤‰æ•°ã®å€¤ã‚’å¼•ãç¶™ãã“ã¨ãŒã§ãã¾ã™ã€‚
+//  ãŸã ã—ä¸€éƒ¨ã®å¤‰æ•°ã«ã¤ã„ã¦ã¯è£œå„Ÿã—ã¾ã›ã‚“ã€‚
 //---------------------------------------------------------------------
 
-prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
-	mes "[•Ï”–¼•â]";
-	mes "ƒtƒ‰ƒO–¼‚ğVd—l‚É•ÏX‚µ‚Ü‚·B";
+prontera.gat,155,192,4	script	å¤‰æ•°åè£œå„Ÿ	114,{
+	mes "[å¤‰æ•°åè£œå„Ÿ]";
+	mes "ãƒ•ãƒ©ã‚°åã‚’æ–°ä»•æ§˜ã«å¤‰æ›´ã—ã¾ã™ã€‚";
 	next;
-	if(select("‚Í‚¢","‚¢‚¢‚¦")==2)
+	if(select("ã¯ã„","ã„ã„ãˆ")==2)
 		close;
 
-	// townƒtƒHƒ‹ƒ_
-	// •â‚µ‚È‚¢
+	// townãƒ•ã‚©ãƒ«ãƒ€
+	// è£œå„Ÿã—ãªã„
 	set turtle_npc,0;
 	set kame_quest,0;
 	if(event_sushi) {
@@ -58,7 +58,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set EIN_4QUE,ein_Q4;
 		set ein_Q4,0;
 	}
-	// •â‚µ‚È‚¢
+	// è£œå„Ÿã—ãªã„
 	set event_gonryun,0;
 	set gonryun_ken,0;
 	if(KF_PIT) {
@@ -102,7 +102,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set npc_yunoalc,0;
 	}
 
-	// questƒtƒHƒ‹ƒ_
+	// questãƒ•ã‚©ãƒ«ãƒ€
 	if(arena_point) {
 		set ARENA_PIT,arena_point;
 		set arena_point,0;
@@ -119,7 +119,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set DYE_EVE,MOLGENSTAIN;
 		set MOLGENSTAIN,0;
 	}
-	if(hairColor) {		// ”p~
+	if(hairColor) {		// å»ƒæ­¢
 		set hairColor,0;
 	}
 	if(hat_orchero) {
@@ -211,8 +211,8 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set NEWY_QUE,0;
 	}
 
-	// jobƒtƒHƒ‹ƒ_
-	// •â‚µ‚È‚¢
+	// jobãƒ•ã‚©ãƒ«ãƒ€
+	// è£œå„Ÿã—ãªã„
 	set NEW_GETITEM,0;
 	set NEW_JOBLVUP,0;
 	set NEW_LVUP0,0;
@@ -256,7 +256,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 			case 30: set CAHNGE_AL,4; break;
 		}
 	}
-	// •â‚µ‚È‚¢
+	// è£œå„Ÿã—ãªã„
 	set FIRST_JOB_QUEST,0;
 	set JOB_MERCHANT_Q,0;
 	set JOB_MERCHANT_Q2,0;
@@ -277,7 +277,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set CHANGE_PR,change_priest;
 		set change_priest,0;
 	}
-	set priest_meet1,0;	// ”p~
+	set priest_meet1,0;	// å»ƒæ­¢
 	set priest_meet2,0;
 	set priest_meet3,0;
 	if(job_wiz) {
@@ -285,7 +285,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set job_wiz,0;
 	}
 	if(change_blacksmith) {
-		set change_blacksmith,0;	// •â‚µ‚È‚¢
+		set change_blacksmith,0;	// è£œå„Ÿã—ãªã„
 	}
 	if(change_hunter) {
 		set CHANGE_HT,change_hunter;
@@ -300,7 +300,7 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set job2nd_sage,0;
 	}
 	if(job2nd_sage2) {
-		set job2nd_sage2,0;	// ”p~
+		set job2nd_sage2,0;	// å»ƒæ­¢
 	}
 	if(sagecheck) {
 		set SCORE_SA,sagecheck;
@@ -331,10 +331,10 @@ prontera.gat,155,192,4	script	•Ï”–¼•â	114,{
 		set job_transmigration,0;
 	}
 
-	// warpƒtƒHƒ‹ƒ_
-	set anthell,0;	// ”p~
-	mes "[•Ï”–¼•ÏX]";
-	mes "•ÏX‚µ‚Ü‚µ‚½B";
+	// warpãƒ•ã‚©ãƒ«ãƒ€
+	set anthell,0;	// å»ƒæ­¢
+	mes "[å¤‰æ•°åå¤‰æ›´]";
+	mes "å¤‰æ›´ã—ã¾ã—ãŸã€‚";
 	close;
 OnInit:
 	if(getarraysize($arenarecord_name$)) {

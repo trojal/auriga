@@ -1,58 +1,58 @@
 //====================================================================
 //Ragnarok Online Ninja Jobchange Script
-//�@�� CHANGE_NJ -> 0�`4
+//　■ CHANGE_NJ -> 0～4
 //====================================================================
 
 //==========================================
-// �V���b�v
+// ショップ
 //------------------------------------------
-que_ng.gat,73,26,5	shop	�u�����C	83,2117,2171,15053,7521,7522,7523,7524,6512,6513,6514,6515
-que_ng.gat,72,31,3	shop	�u���W		83,13250,13251,13252,13253,13254,6493
-prontera.gat,178,244,3	shop	�A�}�c�f�Տ��l	83,13250,13251,13252,13253,13254,6493,2117,2171,15053,7521,7522,7523,7524,6512,6513,6514,6515
+que_ng.gat,73,26,5	shop	ブンレイ	83,2117,2171,15053,7521,7522,7523,7524,6512,6513,6514,6515
+que_ng.gat,72,31,3	shop	ブンジ		83,13250,13251,13252,13253,13254,6493
+prontera.gat,178,244,3	shop	アマツ貿易商人	83,13250,13251,13252,13253,13254,6493,2117,2171,15053,7521,7522,7523,7524,6512,6513,6514,6515
 
 //==========================================
-// �ē���
+// 案内員
 //------------------------------------------
-alberta.gat,30,65,3	script	�A�J�M	730,{
+alberta.gat,30,65,3	script	アカギ	730,{
 	if(Job == Job_Ninja) {
-		mes "[�A�J�M]";
-		mes "���C�ɂ��Ă��邩�H";
-		mes "�C���͂��A�ǂ���";
-		mes "�^�����邩�킩��Ȃ��B";
-		mes "�C����ӂ�ȁB";
+		mes "[アカギ]";
+		mes "元気にしているか？";
+		mes "任務はいつ、どこで";
+		mes "与えられるかわからない。";
+		mes "修練を怠るな。";
 		close;
 	}
 	if(Job != Job_Novice || Upper != UPPER_NORMAL) {
-		mes "[�A�J�M]";
-		mes "���͋M�l�ɋ������Ȃ��B";
-		mes "����B";
+		mes "[アカギ]";
+		mes "私は貴様に興味がない。";
+		mes "去れ。";
 		close;
 	}
 	if(JobLevel < 10) {
-		mes "[�A�J�M]";
-		mes "�����͋M�l�̂悤��";
-		mes "�̖͂������̂�";
-		mes "���鏊�ł͂Ȃ��B";
+		mes "[アカギ]";
+		mes "ここは貴様のような";
+		mes "力の無いものが";
+		mes "来る所ではない。";
 		close;
 	}
-	mes "[�A�J�M]";
-	mes "�ʁc�c";
-	mes "���̂悤�ȈÂ��H�n�ɗ���Ƃ́c�c";
-	mes "���炭�A�M�l�̎���";
-	mes "�����������֓������̂��B";
-	mes "�M�l�c�c";
-	mes "�E�̓��ɐi�ދC�͂��邩�H";
+	mes "[アカギ]";
+	mes "ぬ……";
+	mes "このような暗き路地に来るとは……";
+	mes "恐らく、貴様の持つ";
+	mes "何かがここへ導いたのだ。";
+	mes "貴様……";
+	mes "忍の道に進む気はあるか？";
 	next;
-	if(select("����ł�","�͂��A�s���܂�")==1) {
-		mes "[�A�J�M]";
-		mes "�������c�c";
-		mes "�c�c�c�c";
-		mes "�Ȃ�Α��Ɍ������Ƃ͖����B";
+	if(select("いやです","はい、行きます")==1) {
+		mes "[アカギ]";
+		mes "そうか……";
+		mes "…………";
+		mes "ならば他に言うことは無い。";
 		close;
 	}
-	mes "[�A�J�M]";
-	mes "�ǂ��낤�B";
-	mes "�ł́A�M�l�𑗂��Ă�낤�B";
+	mes "[アカギ]";
+	mes "良かろう。";
+	mes "では、貴様を送ってやろう。";
 	close2;
 	switch(rand(3)) {
 	case 0:
@@ -67,52 +67,52 @@ alberta.gat,30,65,3	script	�A�J�M	730,{
 	}
 }
 
-alberta.gat,168,138,3	script	�D��	99,{
+alberta.gat,168,138,3	script	船長	99,{
 	if(Job != Job_Novice || Upper != UPPER_NORMAL || JobLevel < 10) {
-		mes "[�D��]";
-		mes "�c�c���ށI";
-		mes "�����������I";
-		mes "�D�����a�ł���ȁI";
+		mes "[船長]";
+		mes "……うむ！";
+		mes "今日も快晴！";
+		mes "船旅日和であるな！";
 		close;
 	}
-	mes "[�D��]";
-	mes "�c�c���ށI";
-	mes "�����������I";
-	mes "�D�����a�ł���ȁI";
+	mes "[船長]";
+	mes "……うむ！";
+	mes "今日も快晴！";
+	mes "船旅日和であるな！";
 	next;
-	menu "�������Ă�̂ł����H",-;
-	mes "[�D��]";
-	mes "�E�҂ɂȂ�ׂɊC��n��A";
-	mes "�A�}�c�ɍs�������ƌ���";
-	mes "�m�[�r�X��҂��Ă���̂ł���I";
+	menu "何をしてるのですか？",-;
+	mes "[船長]";
+	mes "忍者になる為に海を渡り、";
+	mes "アマツに行きたいと言う";
+	mes "ノービスを待っているのである！";
 	next;
-	mes "[�D��]";
-	mes "��H";
-	mes "�悭����Ƃ����";
-	mes "�m�[�r�X�ł���ȁH";
+	mes "[船長]";
+	mes "ん？";
+	mes "よく見るとお主も";
+	mes "ノービスであるな？";
 	next;
-	mes "[�D��]";
-	mes "�E�҂ɋ����͂Ȃ����ˁH";
-	mes "���Ȃ�A��������200Zeny��";
-	mes "�A�}�c�܂ő��낤�ł͂Ȃ����I";
+	mes "[船長]";
+	mes "忍者に興味はないかね？";
+	mes "今なら、たったの200Zenyで";
+	mes "アマツまで送ろうではないか！";
 	next;
-	if(select("��������܂���","���肢���܂�") == 1) {
-		mes "[�D��]";
-		mes "�ӂށc�c";
-		mes "�ł́A�C���ς������";
-		mes "���ł����Ă���I";
+	if(select("興味ありません","お願いします") == 1) {
+		mes "[船長]";
+		mes "ふむ……";
+		mes "では、気が変わったら";
+		mes "いつでも来てくれ！";
 		close;
 	}
 	if(Zeny < 200) {
-		mes "[�D��]";
-		mes "�c�c�H";
-		mes "�c�O�����A����������Ȃ��悤���B";
-		mes "������p�ӂ��ďo�����Ă���I";
+		mes "[船長]";
+		mes "……？";
+		mes "残念だが、お金が足りないようだ。";
+		mes "お金を用意して出直してくれ！";
 		close;
 	}
-	mes "[�D��]";
-	mes "�������Ȃ��ẮI";
-	mes "�ł́A�������o�q�ł���I";
+	mes "[船長]";
+	mes "そうこなくては！";
+	mes "では、今すぐ出航である！";
 	close2;
 	set Zeny,Zeny-200;
 	warp "amatsu.gat",113,127;
@@ -120,70 +120,70 @@ alberta.gat,168,138,3	script	�D��	99,{
 }
 
 //==========================================
-// �����\��
+// 試験申請
 //------------------------------------------
-que_ng.gat,30,65,3	script	�N�E�K�E�J�C	730,{
+que_ng.gat,30,65,3	script	クウガ・カイ	730,{
 	if(Job == Job_Ninja || Job == Job_Kagerou || Job == Job_Oboro) {
-		mes "[�N�E�K�E�J�C]";
-		mes "���C�ɂ��Ă��邩�H";
-		mes "�C���͂��A�ǂ���";
-		mes "�^�����邩�킩��Ȃ��B";
-		mes "�C����ӂ�ȁB";
+		mes "[クウガ・カイ]";
+		mes "元気にしているか？";
+		mes "任務はいつ、どこで";
+		mes "与えられるかわからない。";
+		mes "修練を怠るな。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�\�\�������ȁA�C�����s���̂�";
-		mes "�����ꏊ��m���Ă���B";
-		mes "�E�҂ɂȂ������ƁA";
-		mes "�`���҃A�J�f�~�[��";
-		mes "�Ă΂��ꏊ��";
-		mes "�s�������Ƃ͂��邩�H";
+		mes "[クウガ・カイ]";
+		mes "――そうだな、修練を行うのに";
+		mes "いい場所を知っている。";
+		mes "忍者になったあと、";
+		mes "冒険者アカデミーと";
+		mes "呼ばれる場所へ";
+		mes "行ったことはあるか？";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�E�҂ɂȂ�����ɁA�s�������Ƃ�";
-		mes "�����Ȃ�A���̌������o������";
-		mes "�`���҃A�J�f�~�[�̃T�|�[�g��";
-		mes "�s���Ă���҂�����͂����B";
-		mes "�����Ă��炤�Ƃ悢�B";
+		mes "[クウガ・カイ]";
+		mes "忍者になった後に、行ったことが";
+		mes "無いなら、この建物を出た所に";
+		mes "冒険者アカデミーのサポートを";
+		mes "行っている者がいるはずだ。";
+		mes "送ってもらうとよい。";
 		close;
 	}
 	if(Upper == Upper_BABY) {
-		mes "[�N�E�K�E�J�C]";
-		mes "�ȁI";
-		mes "����ȏ��Ɏq�����c�c";
-		mes "�o�J�ȁc�c";
-		mes "�䂪�Z�p�́A�q���Ɍ�������x��";
-		mes "���x���������̂��c�c";
+		mes "[クウガ・カイ]";
+		mes "な！";
+		mes "こんな所に子供が……";
+		mes "バカな……";
+		mes "我が技術は、子供に見つかる程度の";
+		mes "レベルだったのか……";
 		close;
 	}
 	if(Job != Job_Novice || Upper == Upper_HIGH) {
-		mes "[�N�E�K�E�J�C]";
-		mes "�����M�l�I";
-		mes "�ǂ����痈�����m��񂪁A";
-		mes "�M�l�ɗp�͂Ȃ��B";
-		mes "�͂₭���̑O���������B";
+		mes "[クウガ・カイ]";
+		mes "何だ貴様！";
+		mes "どこから来たか知らんが、";
+		mes "貴様に用はない。";
+		mes "はやく俺の前から消えろ。";
 		close;
 	}
 	if(JobLevel < 10) {
-		mes "[�N�E�K�E�J�C]";
-		mes "�܂��܂��C���������I";
-		mes "�o�����Ă����I";
-		mes "�܂���Job���x����10�ɂ��Ă���̂��I";
-		mes "������̂��A^0000FF�u��{�X�L���v��";
-		mes "���x����9�@^000000�ɂ���I";
+		mes "[クウガ・カイ]";
+		mes "まだまだ修練が足りん！";
+		mes "出直してこい！";
+		mes "まずはJobレベルを10にしてくるのだ！";
+		mes "しかるのち、^0000FF「基本スキル」の";
+		mes "レベルを9　^000000にする！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "�グ�邱�Ƃ��ł��邼�B";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "^0000FF�u��{���v^000000�E�B���h�E����";
-		mes "^0000FF�uSkill�v^000000�{�^���ŕ\�������B";
+		mes "[クウガ・カイ]";
+		mes "^0000FF「基本スキル」^000000のレベルは";
+		mes "^0000FF「スキルリスト」^000000ウィンドウで";
+		mes "上げることができるぞ。";
+		mes "^0000FF「スキルリスト」^000000ウィンドウは";
+		mes "^0000FF「基本情報」^000000ウィンドウ内の";
+		mes "^0000FF「Skill」^000000ボタンで表示される。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�X�L���̃��x�����グ��ɂ́A";
-		mes "�X�L���|�C���g������U������A";
-		mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ�B";
-		mes "���ӂ��K�v���B";
+		mes "[クウガ・カイ]";
+		mes "スキルのレベルを上げるには、";
+		mes "スキルポイントを割り振った後、";
+		mes "^FF0000「確定」^000000ボタンが必要となる。";
+		mes "注意が必要だ。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
@@ -191,405 +191,405 @@ que_ng.gat,30,65,3	script	�N�E�K�E�J�C	730,{
 	switch(CHANGE_NJ) {
 	case 0:
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���������H";
+		mes "もしもし？";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�c�c�ށH";
-		mes "�i�A�i�j�C�B�b�I";
-		mes "�M�l�A���̂܂ɁI";
+		mes "[クウガ・カイ]";
+		mes "……む？";
+		mes "ナ、ナニイィッ！";
+		mes "貴様、いつのまに！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�g�������I";
+		mes "[クウガ・カイ]";
+		mes "トリヤャ！";
 		next;
-		mes "�]�j�͂����Ȃ艽���𓊂����Ă����]";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "��I";
-		mes "���A���ԂȂ��I";
-		mes "�������ł����I";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ʁc�c�H";
-		mes "�ǂ���牴���E���ɗ���";
-		mes "�h�q�ł͂Ȃ��悤���ȁB";
+		mes "‐男はいきなり何かを投げつけてきた‐";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���ł�������I";
-		mes "���Ⴂ�ōU�����ꂿ��";
-		mes "���܂������񂶂Ⴀ��܂����I";
+		mes "わ！";
+		mes "あ、あぶない！";
+		mes "何するんですか！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����I";
-		mes "���̉i���̃��C�o���A";
-		mes "��r�̓z�߁I";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�������������I";
-		mes "�n�b�I�@�T�C���I";
-		mes "�^�����@�[�I";
+		mes "[クウガ・カイ]";
+		mes "ぬ……？";
+		mes "どうやら俺を殺しに来た";
+		mes "刺客ではないようだな。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�]���������Ă��Ȃ��悤���]";
+		mes "何ですかそれ！";
+		mes "勘違いで攻撃されちゃ";
+		mes "たまったもんじゃありませんよ！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ށc�c�H";
-		mes "�ʂ��I";
-		mes "�M�l�A�܂������̂��I";
-		mes "�e�C�b�I�@�n�b�n�b�I�@���I";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�������I";
-		mes "������߂Ă��������I";
-		mes "����ɁA���̋Z�́c�c";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ʂʂʂʂʁc�c";
-		mes "�Ȃ��Ȃ����ȁB";
-		mes "�䂪�p��S�Ă悯��Ƃ́c�c";
+		mes "[クウガ・カイ]";
+		mes "くそ！";
+		mes "俺の永遠のライバル、";
+		mes "野羊の奴め！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�]���Ȃ񂾂��̐l�c�c�]";
+		mes "………………";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ށc�c�������B";
-		mes "���������΋M�l�A";
-		mes "���ɉ����p�ł�����̂��H";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
+		mes "[クウガ・カイ]";
+		mes "うぉぉぉぉぉ！";
+		mes "ハッ！　サイヤ！";
+		mes "タリャァー！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���c�c���c�c";
-		mes "�͂��B";
-		mes "�E�҂ɓ]�E��������";
-		mes "�����ɗ��܂����B";
+		mes "‐何も聞いていないようだ‐";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�قق��c�c";
-		mes "�悢�S�����ł͂Ȃ����B";
-		mes "�����I�@�������I";
+		mes "[クウガ・カイ]";
+		mes "む……？";
+		mes "ぬぁ！";
+		mes "貴様、まだいたのか！";
+		mes "テイッ！　ハッハッ！　ヤ！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c";
+		mes "わわわわわわ！";
+		mes "もうやめてください！";
+		mes "それに、今の技は……";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�M�l�͂܂��E�҂ɂȂ��B";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�Ȃ��ł����H";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���͋M�l�̎�������m���B";
-		mes "������M�p�ł���B";
-		mes "����ɁA���̖ڂɂ���";
-		mes "�E�҂Ƃ��Đ�����ɂ�";
-		mes "�M�l�͌o���s�����I";
+		mes "[クウガ・カイ]";
+		mes "ぬぬぬぬぬ……";
+		mes "なかなかやるな。";
+		mes "我が術を全てよけるとは……";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
+		mes "‐何なんだこの人……‐";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�c�c�����c�c";
-		mes "�E�҂ɂȂ�񂱂Ƃ��Ȃ��B";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���Ă̒ʂ�A����";
-		mes "�ƂĂ��Z�����g���B";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "����ɁA���̎���ɂ�";
-		mes "�G�������B";
-		mes "�����ȒP�ɂ͓�����B";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����āA���͓z�Ƃ̌����̂��߂�";
-		mes "�C����ς܂Ȃ���΂Ȃ�Ȃ��B";
-		mes "�^�@�����@�[�I";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���͕K�����I";
-		mes "�҂��Ă��A��r�I";
+		mes "[クウガ・カイ]";
+		mes "む……そうだ。";
+		mes "そういえば貴様、";
+		mes "俺に何か用でもあるのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "��r�H";
-		mes "�r�Ɛ키��ł����H";
+		mes "………………";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���H";
-		mes "�����A�n�b�n�b�n�b�n�B";
-		mes "��r�̓j�b�N�l�[�����B";
-		mes "����͐l�Ԃ���B";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "え……あ……";
+		mes "はい。";
+		mes "忍者に転職したくて";
+		mes "ここに来ました。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����ڂ������z���B";
-		mes "�����߂ɂ͎�i��";
-		mes "�I�΂Ȃ��B";
-		mes "�������A�z���g��";
-		mes "�E�p�͖��ɋ����B";
+		mes "[クウガ・カイ]";
+		mes "ほほぅ……";
+		mes "よい心がけではないか。";
+		mes "だが！　しかし！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����A�z������";
-		mes "���傤�ǎ藠���ƃN�i�C��";
-		mes "�؂�Ă��ĂȁB";
-		mes "�܂Ƃ��ɐ킦�Ȃ���Ԃ��B";
-		mes "�n�n�n�B";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "…………";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���������΋M�l�B";
-		mes "�{���ɔE�҂ɂȂ肽���̂Ȃ�";
-		mes "�C���������Ă�낤�B";
-		mes "�����C��������������";
-		mes "�����E�҂̋Z�p�������Ă��B";
-		mes "�ǂ����H";
+		mes "[クウガ・カイ]";
+		mes "貴様はまだ忍者になれん。";
 		next;
-		if(select("��������","�f��")==2) {
+		mes "[" +strcharinfo(0)+ "]";
+		mes "……なぜですか？";
+		next;
+		mes "[クウガ・カイ]";
+		mes "俺は貴様の事を何一つ知らん。";
+		mes "だから信用できん。";
+		mes "さらに、俺の目によると";
+		mes "忍者として生きるには";
+		mes "貴様は経験不足だ！";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "………………";
+		next;
+		mes "[クウガ・カイ]";
+		mes "……だが……";
+		mes "忍者になれんこともない。";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "………………";
+		next;
+		mes "[クウガ・カイ]";
+		mes "見ての通り、俺は";
+		mes "とても忙しい身だ。";
+		next;
+		mes "[クウガ・カイ]";
+		mes "それに、俺の周りには";
+		mes "敵が多い。";
+		mes "そう簡単には動けん。";
+		next;
+		mes "[クウガ・カイ]";
+		mes "そして、俺は奴との決闘のために";
+		mes "修練を積まなければならない。";
+		mes "タァリャァー！";
+		next;
+		mes "[クウガ・カイ]";
+		mes "次は必ず勝つ！";
+		mes "待ってろよ、野羊！";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "野羊？";
+		mes "羊と戦うんですか？";
+		next;
+		mes "[クウガ・カイ]";
+		mes "え？";
+		mes "あぁ、ハッハッハッハ。";
+		mes "野羊はニックネームだ。";
+		mes "相手は人間だよ。";
+		next;
+		mes "[クウガ・カイ]";
+		mes "抜け目が無い奴だ。";
+		mes "勝つためには手段を";
+		mes "選ばない。";
+		mes "しかも、奴が使う";
+		mes "忍術は妙に強い。";
+		next;
+		mes "[クウガ・カイ]";
+		mes "だが、奴も俺も";
+		mes "ちょうど手裏剣とクナイが";
+		mes "切れていてな。";
+		mes "まともに戦えない状態だ。";
+		mes "ハハハ。";
+		next;
+		mes "[クウガ・カイ]";
+		mes "そういえば貴様。";
+		mes "本当に忍者になりたいのなら";
+		mes "任務を一つくれてやろう。";
+		mes "もし任務が成功したら";
+		mes "俺が忍者の技術を教えてやる。";
+		mes "どうだ？";
+		next;
+		if(select("承諾する","断る")==2) {
 			mes "[" +strcharinfo(0)+ "]";
-			mes "�Z�p����������w��ł�";
-			mes "���傤���Ȃ��ł��B";
-			mes "���݂܂��񂪁A";
-			mes "���̐l�ɗ���ł��������B";
+			mes "技術だけいくら学んでも";
+			mes "しょうがないです。";
+			mes "すみませんが、";
+			mes "他の人に頼んでください。";
 			next;
-			mes "[�N�E�K�E�J�C]";
-			mes "�ʁc�c�������B";
-			mes "�킩�����B";
-			mes "���̖��ʍ��������悤���ȁB";
-			mes "�����A�p���Ȃ��Ȃ�";
-			mes "�����o�čs���񂾁B";
+			mes "[クウガ・カイ]";
+			mes "ぬ……そうか。";
+			mes "わかった。";
+			mes "俺の無駄骨だったようだな。";
+			mes "さぁ、用がないなら";
+			mes "早く出て行くんだ。";
 			close;
 		}
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���[��c�c";
-		mes "�킩��܂����B";
+		mes "うーん……";
+		mes "わかりました。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�������B";
-		mes "�ł́A���̎莆��";
-		mes "��r�Ƃ����z��";
-		mes "�͂��Ă���񂾁B";
+		mes "[クウガ・カイ]";
+		mes "そうか。";
+		mes "では、この手紙を";
+		mes "野羊という奴に";
+		mes "届けてくるんだ。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���e���܂��Ɍ����ƁA";
-		mes "���݂��ɗp�ӂ������܂ŁA";
-		mes "�ꎞ�x�킵�悤�Ƃ������̂��B";
-		mes "�K���Ԏ���������ė���悤�ɁB";
+		mes "[クウガ・カイ]";
+		mes "内容を大まかに言うと、";
+		mes "お互いに用意が整うまで、";
+		mes "一時休戦しようというものだ。";
+		mes "必ず返事をもらって来るように。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���̏��ɂ��ƁA";
-		mes "�z�̓A�C���u���b�N��";
-		mes "�s�����炵���B";
-		mes "���̂����ɍs�����̂���";
-		mes "�킩��񂪁c�c";
+		mes "[クウガ・カイ]";
+		mes "俺の情報によると、";
+		mes "奴はアインブロックへ";
+		mes "行ったらしい。";
+		mes "何故そこに行ったのかは";
+		mes "わからんが……";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�z�͕ϑ�����肢�B";
-		mes "�T���o���͍̂���낤�B";
+		mes "[クウガ・カイ]";
+		mes "奴は変装も上手い。";
+		mes "探し出すのは困難だろう。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����A��S�����肪����B";
-		mes "�z�͍��������D���Ȃ񂾁B";
-		mes "�����������ꏊ��";
-		mes "�悭�T���Ă݂�Ƃ������낤�B";
+		mes "[クウガ・カイ]";
+		mes "だが、一つ心当たりがある。";
+		mes "奴は高い所が好きなんだ。";
+		mes "そういった場所を";
+		mes "よく探してみるといいだろう。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����ł��B";
-		mes "�ł́A�s���Ă��܂��I";
+		mes "了解です。";
+		mes "では、行ってきます！";
 		set CHANGE_NJ,1;
 		setquest 6015;
 		close;
 	case 1:
-		mes "[�N�E�K�E�J�C]";
-		mes "�ʁc�c";
-		mes "�����}�ȔC���ł͂Ȃ����A";
-		mes "�M�l�ɂƂ��Ă�";
-		mes "�}�����ق����������낤�B";
+		mes "[クウガ・カイ]";
+		mes "ぬ……";
+		mes "そう急な任務ではないが、";
+		mes "貴様にとっては";
+		mes "急いだほうがいいだろう。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "��r�����܂�";
-		mes "�A�C���u���b�N�ɂ��邩��";
-		mes "�킩��Ȃ�����ȁB";
+		mes "[クウガ・カイ]";
+		mes "野羊がいつまで";
+		mes "アインブロックにいるかは";
+		mes "わからないからな。";
 		close;
 	case 2:
-		mes "[�N�E�K�E�J�C]";
-		mes "�Ԏ���Y�ꂸ��";
-		mes "�󂯎���Ă���񂾂��B";
+		mes "[クウガ・カイ]";
+		mes "返事を忘れずに";
+		mes "受け取ってくるんだぞ。";
 		close;
 	case 3:
-		mes "[�N�E�K�E�J�C]";
-		mes "�Ԏ��͂�����Ă������H";
+		mes "[クウガ・カイ]";
+		mes "返事はもらってきたか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�͂��A�����ɁB";
+		mes "はい、ここに。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�悵�A���������ǂނƂ��悤�B";
-		mes "�]�S�\�S�\�c�c�]";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�]���������Ă����莆��";
-		mes "�ǂ�ł���]";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ȁA�Ȃ񂾂ƁI";
-		mes "�x��͂��Ȃ�����!?";
-		mes "�܂����c�c";
-		mes "�����N�i�C��������̂��I";
-		mes "�����c�c�������Ă͂�����B";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "������������C�����B";
-		mes "�z�Ƃ̌����ɕK�v��";
-		mes "��������Ȃ���΂Ȃ�Ȃ��B";
-		mes "�ޗ����s�����Ă���񂾁B";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����ޗ����W�߂Ă�����A";
-		mes "�M�l�̔\�͂�F�߂�";
-		mes "�E�҂ɂ��Ă��I";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�W�߂Ă���ޗ��́A";
-		mes "�v���R��1�A�S�z��30�B";
-		mes "���Ԃ���������";
-		mes "�}���ł���B";
+		mes "[クウガ・カイ]";
+		mes "よし、さっそく読むとしよう。";
+		mes "‐ゴソゴソ……‐";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c���b�I";
-		mes "������āI";
+		mes "‐私が持ってきた手紙を";
+		mes "読んでいる‐";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ǂ������H";
-		mes "���̖��ł�����̂��H";
+		mes "[クウガ・カイ]";
+		mes "な、なんだと！";
+		mes "休戦はしないだと!?";
+		mes "まさか……";
+		mes "もうクナイを作ったのか！";
+		mes "くそ……こうしてはいられん。";
 		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "���̍ޗ��́A";
-		mes "�����q���E����ɓn���āc�c";
+		mes "[クウガ・カイ]";
+		mes "悪いがもう一つ任務だ。";
+		mes "奴との決闘に必要な";
+		mes "武器を作らなければならない。";
+		mes "材料が不足しているんだ。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�Ȃɂ�!?";
-		mes "�ł́A�M�l�͂����̎�`����";
-		mes "�����Ƃ����̂��I";
-		mes "���A������������";
-		mes "���̂�������ҁI";
-		mes "���فI�@�܂ʂ��I";
+		mes "[クウガ・カイ]";
+		mes "もし材料を集めてきたら、";
+		mes "貴様の能力を認めて";
+		mes "忍者にしてやる！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�c�c����c�c";
-		mes "����͂����L�b�J�P���c�c";
-		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�Ƃɂ����A�z����`�����ȏ�A";
-		mes "���O�ɂ͐�΂ɉ��̎�`����";
-		mes "���Ă��炤����ȁI";
-		mes "�����A�͂₭�s���񂾁I";
+		mes "[クウガ・カイ]";
+		mes "集めてくる材料は、";
+		mes "プラコン1個、鉄鉱石30個。";
+		mes "時間が無いから";
+		mes "急いでくれ。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���c�c���c�c�͂��I";
+		mes "……あッ！";
+		mes "それって！";
+		next;
+		mes "[クウガ・カイ]";
+		mes "どうした？";
+		mes "何の問題でもあるのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�]�v���R��1�ƓS�z��30��";
-		mes "�T���Ă��悤�]";
+		mes "その材料は、";
+		mes "私がヒョウさんに渡して……";
+		next;
+		mes "[クウガ・カイ]";
+		mes "なにぃ!?";
+		mes "では、貴様はあいつの手伝いを";
+		mes "したというのか！";
+		mes "こ、ここここここ";
+		mes "このうっかり者！";
+		mes "あほ！　まぬけ！";
+		next;
+		mes "[クウガ・カイ]";
+		mes "……いや……";
+		mes "これはいいキッカケか……";
+		next;
+		mes "[クウガ・カイ]";
+		mes "とにかく、奴を手伝った以上、";
+		mes "お前には絶対に俺の手伝いも";
+		mes "してもらうからな！";
+		mes "さぁ、はやく行くんだ！";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "え……あ……はい！";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "‐プラコン1個と鉄鉱石30個を";
+		mes "探してこよう‐";
 		set CHANGE_NJ,4;
 		chgquest 6017,6018;
 		close;
 	case 4:
 		if(countitem(1010) < 1 || countitem(1002) < 30) {
-			mes "[�N�E�K�E�J�C]";
-			mes "�v���R��1�ƓS�z��30��";
-			mes "�����Ă���悤�ɁB";
-			mes "�}���ł���B";
+			mes "[クウガ・カイ]";
+			mes "プラコン1個と鉄鉱石30個を";
+			mes "持ってくるように。";
+			mes "急いでくれ。";
 			close;
 		}
 		if(getskilllv(1) < 9) {
-			mes "[�N�E�K�E�J�C]";
-			mes "��{�ƂȂ�X�L����";
-			mes "�S�Ċo���Ă����B";
-			mes "^0000FF�u��{�X�L���v�̃��x����9�@^000000��";
-			mes "����K�v������̂��B";
+			mes "[クウガ・カイ]";
+			mes "基本となるスキルを";
+			mes "全て覚えてこい。";
+			mes "^0000FF「基本スキル」のレベルを9　^000000に";
+			mes "する必要があるのだ。";
 			next;
-			mes "[�N�E�K�E�J�C]";
-			mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-			mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-			mes "�グ�邱�Ƃ��ł��邼�B";
-			mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-			mes "^0000FF�u��{���v^000000�E�B���h�E����";
-			mes "^0000FF�uSkill�v^000000�{�^���ŕ\�������B";
+			mes "[クウガ・カイ]";
+			mes "^0000FF「基本スキル」^000000のレベルは";
+			mes "^0000FF「スキルリスト」^000000ウィンドウで";
+			mes "上げることができるぞ。";
+			mes "^0000FF「スキルリスト」^000000ウィンドウは";
+			mes "^0000FF「基本情報」^000000ウィンドウ内の";
+			mes "^0000FF「Skill」^000000ボタンで表示される。";
 			next;
-			mes "[�N�E�K�E�J�C]";
-			mes "�X�L���̃��x�����グ��ɂ́A";
-			mes "�X�L���|�C���g������U������A";
-			mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ�B";
-			mes "���ӂ��K�v���B";
+			mes "[クウガ・カイ]";
+			mes "スキルのレベルを上げるには、";
+			mes "スキルポイントを割り振った後、";
+			mes "^FF0000「確定」^000000ボタンが必要となる。";
+			mes "注意が必要だ。";
 			close2;
 			cutin "start_020_jp.bmp",4;
 			end;
 		}
-		mes "[�N�E�K�E�J�C]";
-		mes "��ɓ���Ă������I";
-		mes "�ӊO�Ƒ��������ȁB";
+		mes "[クウガ・カイ]";
+		mes "手に入れてきたか！";
+		mes "意外と早かったな。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�c�c�悵�B";
-		mes "�ǂ���猈���ɂ͊Ԃɍ����������B";
-		mes "�v�������M�l�͗L�\���ȁB";
+		mes "[クウガ・カイ]";
+		mes "……よし。";
+		mes "どうやら決闘には間に合いそうだ。";
+		mes "思ったより貴様は有能だな。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ǂ����낤�B";
-		mes "�񑩒ʂ�A�M�l�𐳎���";
-		mes "�E�҂֓]�E�����Ă��B";
+		mes "[クウガ・カイ]";
+		mes "良いだろう。";
+		mes "約束通り、貴様を正式に";
+		mes "忍者へ転職させてやる。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�܂��́A�����ɖ���낤�B";
-		mes "���̖��̓J�C�B";
-		mes "�����E�ƂȂ��������́A";
-		mes "�J�Y�}�l��T���{����������";
-		mes "�C��^�����Ă���B";
+		mes "[クウガ・カイ]";
+		mes "まずは、正式に名乗ろう。";
+		mes "俺の名はカイ。";
+		mes "抜け忍となった元頭領、";
+		mes "カズマ様を探す捜索部隊長の";
+		mes "任を与えられている。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���͍��A���E�҂�";
-		mes "��������͕��G�ɂȂ��Ă���B";
-		mes "���̂��߁A�V�l�̋M�l�́A";
-		mes "�ǂ̕����ɂ��z������Ȃ��B";
+		mes "[クウガ・カイ]";
+		mes "実は今、我ら忍者の";
+		mes "内部事情は複雑になっている。";
+		mes "そのため、新人の貴様は、";
+		mes "どの部隊にも配属されない。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����A��r�̎莆�ɂ́A";
-		mes "�M�l�������]�����Ă��镶������B";
-		mes "������̔C�����悭���Ȃ����Ǝv���B";
-		mes "���͋M�l�Ɋ��҂��Ă���̂��B";
+		mes "[クウガ・カイ]";
+		mes "だが、野羊の手紙には、";
+		mes "貴様を高く評価している文がある。";
+		mes "俺からの任務もよくこなしたと思う。";
+		mes "俺は貴様に期待しているのだ。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�E�҂͌ǓƂȐE�Ƃ��B";
-		mes "�C������ԂƏd�v�����邪�A";
-		mes "�����Ċ���������Ă͂����Ȃ��B";
+		mes "[クウガ・カイ]";
+		mes "忍者は孤独な職業だ。";
+		mes "任務を一番と重要視するが、";
+		mes "決して感情を失ってはいけない。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "����Ȃ��O�ɁA";
-		mes "���ꂩ��͑����̍���P�����낤�B";
-		mes "�����A���E�҂͑����̎҂�";
-		mes "�����̐��̂��B���čs�����Ă���B";
-		mes "�l�ɗ����Ă͂Ȃ�Ȃ��B";
+		mes "[クウガ・カイ]";
+		mes "そんなお前に、";
+		mes "これからは多くの困難が襲うだろう。";
+		mes "だが、我ら忍者は多くの者に";
+		mes "自分の正体を隠して行動している。";
+		mes "人に頼ってはならない。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����āA�E�҂̕����";
-		mes "���Ɋ댯���B";
-		mes "�����͋C��t����悤�ɁB";
+		mes "[クウガ・カイ]";
+		mes "そして、忍者の武器は";
+		mes "非常に危険だ。";
+		mes "扱いは気を付けるように。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�ł́A�M�l�𐳎���";
-		mes "���E�҂̈���ƔF�߂�B";
+		mes "[クウガ・カイ]";
+		mes "では、貴様を正式に";
+		mes "我ら忍者の一員と認める。";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "���̂悤�ɑ����I";
-		mes "���̂悤�ɕ����I";
-		mes "���̐g�͌y���A���Ă���I";
+		mes "[クウガ・カイ]";
+		mes "風のように早く！";
+		mes "風のように舞う！";
+		mes "その身は軽く、飛翔する！";
 		next;
-		mes "[�N�E�K�E�J�C]";
-		mes "�g�D�A�b�I";
+		mes "[クウガ・カイ]";
+		mes "トゥアッ！";
 		next;
 		getitem 13010,1;
 		delitem 1010,1;
@@ -599,273 +599,273 @@ que_ng.gat,30,65,3	script	�N�E�K�E�J�C	730,{
 		set CHANGE_NJ,0;
 		chgquest 6018,50495;
 		getitem 11046,1;
-		mes "[�N�E�K�E�J�C]";
-		mes "�����āA������󂯎�邪�����B";
-		mes "���C���Ƃ������ƔE�҂̏����B";
-		mes "�E�҂̏���";
-		mes "�E�҂̏C�s���@�ɂ���";
-		mes "�����ꂽ�w�쏑���B";
-		mes "�����ǂ�ŏC�s����̂��B";
+		mes "[クウガ・カイ]";
+		mes "そして、これを受け取るがいい。";
+		mes "阿修羅という刀と忍者の書だ。";
+		mes "忍者の書は";
+		mes "忍者の修行方法について";
+		mes "書かれた指南書だ。";
+		mes "これを読んで修行するのだ。";
 		close;
 	}
 OnInit:
-	waitingroom "�]�E",0;
+	waitingroom "転職",0;
 	end;
 }
 
 //==========================================
-// �]�E����
+// 転職試験
 //------------------------------------------
-einbroch.gat,184,194,3	script	�N	881,{
+einbroch.gat,184,194,3	script	青年	881,{
 	if(Job == Job_Ninja || Job == Job_Kagerou || Job == Job_Oboro) {
-		mes "[�q���E]";
-		mes "�E�҂ɂȂ�܂����ˁB";
-		mes "���ꂩ��A�����̍��";
-		mes "���Ȃ��ɏP���|����܂��B";
-		mes "�C����ӂ�Ȃ��ł��������B";
+		mes "[ヒョウ]";
+		mes "忍者になれましたね。";
+		mes "これから、多くの困難が";
+		mes "あなたに襲い掛かります。";
+		mes "修練を怠らないでください。";
 		close;
 	}
 	switch(CHANGE_NJ) {
 	case 0:
-		mes "[�N]";
-		mes "�킟�c�c";
-		mes "�����͂ƂĂ������ł��ˁB";
-		mes "�F��ȍ������Ă��܂������A";
-		mes "����Ȃɍ������͏��߂Ăł��B";
+		mes "[青年]";
+		mes "わぁ……";
+		mes "ここはとても高いですね。";
+		mes "色んな国を見てきましたが、";
+		mes "こんなに高い所は初めてです。";
 		next;
-		mes "[�N]";
-		mes "�ł��A����Ȃɍ����Ă��A";
-		mes "�����i�F�͔��������R";
-		mes "����Ȃ��Ƃ����̂�";
-		mes "�{���Ɏc�O�ł��B";
+		mes "[青年]";
+		mes "でも、こんなに高くても、";
+		mes "見れる景色は美しい自然";
+		mes "じゃないというのが";
+		mes "本当に残念です。";
 		close;
 	case 1:
-		mes "[�N]";
-		mes "�ӂ��`�����͖{���ɍ����ł��ˁB";
-		mes "���͐F�X�ȍ��𗷍s���ė��܂������A";
-		mes "����Ȃɍ��������͏��߂Ăł��B";
-		mes "�c�c�ł��A��������";
-		mes "���̌̋��̕����_���g�c�ł��B";
+		mes "[青年]";
+		mes "ふぅ～ここは本当に高いですね。";
+		mes "私は色々な国を旅行して来ましたが、";
+		mes "こんなに高い建物は初めてです。";
+		mes "……でも、美しさは";
+		mes "私の故郷の方がダントツです。";
 		next;
-		mes "[�N]";
-		mes "�����Z�񂾏��́A";
-		mes "�Â��ŁA��C�����ꂢ�ŁA";
-		mes "�C���ƂĂ����������ł��B";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "���������āA�A�}�c�H";
-		next;
-		mes "[�N]";
-		mes "�c�c�����B";
+		mes "[青年]";
+		mes "私が住んだ所は、";
+		mes "静かで、空気がきれいで、";
+		mes "海がとても白かったです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "����H";
-		mes "�c�c���Ⴀ�c�c";
-		mes "�C�Y���[�h�ł����H";
+		mes "もしかして、アマツ？";
 		next;
-		mes "[�N]";
-		mes "�����ł��B";
-		mes "���̓C�Y���[�h�o�g�ł��B";
-		next;
-		mes "[�N]";
-		mes "������������āA";
-		mes "�z���������������Ƃ���";
-		mes "���̍��ɗ�����ł��B";
+		mes "[青年]";
+		mes "……いえ。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����Ȃ�ł����c�c";
-		mes "���A��r�Ƃ����l��";
-		mes "�m��܂��񂩁H";
-		mes "�A�}�c���痈���E�҂ŁA";
-		mes "�T���Ă����ł��B";
+		mes "あれ？";
+		mes "……じゃあ……";
+		mes "イズルードですか？";
 		next;
-		mes "[�N]";
-		mes "�����A����Ȗ��O�͏����ł��B";
-		mes "�ł��A�ǂ����Ă�";
-		mes "���̐l�ɉ��Ȃ���΂Ȃ�Ȃ�";
-		mes "���R������݂����ł��ˁB";
+		mes "[青年]";
+		mes "そうです。";
+		mes "私はイズルード出身です。";
+		next;
+		mes "[青年]";
+		mes "少し事情があって、";
+		mes "鉱物がたくさん取れるという";
+		mes "この国に来たんです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�͂��B";
-		mes "���̐l�ɂ��̎莆��n���āA";
-		mes "�Ԏ����󂯎���Ă���B";
-		mes "���ꂪ�A�����E�҂�";
-		mes "�Ȃ������ɂȂ��ł��B";
+		mes "そうなんですか……";
+		mes "あ、野羊という人を";
+		mes "知りませんか？";
+		mes "アマツから来た忍者で、";
+		mes "探しているんです。";
 		next;
-		mes "[�N]";
-		mes "���[��c�c";
-		mes "�c�c���������΁c�c";
-		mes "���s�q�݂����ȕ����������l��";
-		mes "�����Ō����C�����܂��B";
+		mes "[青年]";
+		mes "いえ、そんな名前は初耳です。";
+		mes "でも、どうしても";
+		mes "その人に会わなければならない";
+		mes "理由があるみたいですね。";
 		next;
-		mes "[�N]";
-		mes "�悩�����炨��`�����܂��傤���H";
-		mes "�����A���������ɂ͎d����";
-		mes "���Ă���̂ŁA�܂���";
-		mes "�����炪�挈�ł����B";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "はい。";
+		mes "その人にこの手紙を渡して、";
+		mes "返事を受け取ってくる。";
+		mes "それが、私が忍者に";
+		mes "なれる第一歩になるんです。";
 		next;
-		mes "[�N]";
-		mes "�������̎d����";
-		mes "��`���Ă��ꂽ��A";
-		mes "���Ȃ��̐l�T����";
-		mes "����`�����܂����H";
+		mes "[青年]";
+		mes "うーん……";
+		mes "……そういえば……";
+		mes "旅行客みたいな服装をした人を";
+		mes "ここで見た気がします。";
 		next;
-		if(select("�����A��l�ŒT���Ă݂܂�","�͂��A����`�������Ă�������")==1) {
-			mes "[�N]";
-			mes "�����ł����B";
-			mes "����΂��Ă��������B";
-			mes "�����A���̏������K�v�ɂȂ�����";
-			mes "���ł����������Ă��������B";
+		mes "[青年]";
+		mes "よかったらお手伝いしましょうか？";
+		mes "ただ、私もここには仕事で";
+		mes "来ているので、まずは";
+		mes "そちらが先決ですが。";
+		next;
+		mes "[青年]";
+		mes "もし私の仕事を";
+		mes "手伝ってくれたら、";
+		mes "あなたの人探しを";
+		mes "お手伝いしますが？";
+		next;
+		if(select("いえ、一人で探してみます","はい、お手伝いさせてください")==1) {
+			mes "[青年]";
+			mes "そうですか。";
+			mes "がんばってください。";
+			mes "もし、私の助けが必要になったら";
+			mes "いつでも声をかけてください。";
 			close;
 		}
-		mes "[�N]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "�ł́A�܂����̎d������";
-		mes "���肢���܂��B";
+		mes "[青年]";
+		mes "ありがとうございます。";
+		mes "では、まず私の仕事から";
+		mes "お願いします。";
 		next;
-		mes "[�N]";
-		mes "���͂���z����T����";
-		mes "�����ɗ��܂����B";
-		mes "�S�z��30�A�v���R��1�B";
-		mes "����炪�������";
-		mes "���肪�����ł��B";
+		mes "[青年]";
+		mes "私はある鉱物を探しに";
+		mes "ここに来ました。";
+		mes "鉄鉱石30個、プラコン1個。";
+		mes "これらが見つかると";
+		mes "ありがたいです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�]�v���R��1��";
-		mes "�S�z��30��T���Ă��悤�]";
+		mes "‐プラコン1個と";
+		mes "鉄鉱石30個を探してこよう‐";
 		set CHANGE_NJ,2;
 		chgquest 6015,6016;
 		close;
 	case 2:
 		if(countitem(1010) < 1 || countitem(1002) < 30) {
-			mes "[�N]";
-			mes "�v���R��1�ƓS�z��30�ł��B";
-			mes "�}���ł��܂��񂩂�A";
-			mes "���m�Ȑ��������Ă��Ă��������B";
+			mes "[青年]";
+			mes "プラコン1個と鉄鉱石30個です。";
+			mes "急いでいませんから、";
+			mes "正確な数を持ってきてください。";
 			close;
 		}
-		mes "[�N]";
-		mes "�����Ă��Ă��������܂������B";
-		mes "���肪�Ƃ��������܂��B";
-		mes "���x�͎������Ȃ���";
-		mes "����`��������Ԃł��ˁB";
+		mes "[青年]";
+		mes "持ってきてくださいましたか。";
+		mes "ありがとうございます。";
+		mes "今度は私があなたの";
+		mes "お手伝いをする番ですね。";
 		next;
-		mes "[�N]";
-		mes "�ł́A���̎莆�����ɂ��������B";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�H";
-		next;
-		mes "[�N]";
-		mes "�ǂ����܂����H";
-		mes "�J�C����n���悤��";
-		mes "�����Ă���̂ł��傤�H";
+		mes "[青年]";
+		mes "では、その手紙を私にください。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c���I";
-		mes "���������āA���Ȃ���";
-		mes "��r����!?";
+		mes "？";
 		next;
-		mes "[�N]";
-		mes "�c�c�����B";
-		mes "���͖�r�ł͂Ȃ��A�q���E�B";
-		mes "��r�Ƃ́A�J�C�������";
-		mes "�Ă�ł��邾���ł��B";
-		mes "�n�n�n�B";
+		mes "[青年]";
+		mes "どうしました？";
+		mes "カイから渡すように";
+		mes "言われているのでしょう？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
+		mes "……あ！";
+		mes "もしかして、あなたが";
+		mes "野羊さん!?";
 		next;
-		mes "[�q���E]";
-		mes "�_���ł���B";
-		mes "�E�҂ɂȂ肽���Ȃ�A";
-		mes "�ڂɌ����邱�Ƃ�����";
-		mes "�M���Ă��Ă͂����܂���B";
-		next;
-		mes "[�q���E]";
-		mes "�{�ɍڂ��Ă���悤�ȕ��������Ă���";
-		mes "�E�҂͂����������܂���B";
-		next;
-		mes "[�q���E]";
-		mes "�Y��Ȃ��ł��������B";
-		mes "�E�҂͎����̐��̂�";
-		mes "����ɒm��ꂽ�u�ԁA";
-		mes "�����̖��������Ă��܂���ł��B";
-		next;
-		mes "[�q���E]";
-		mes "���̎��̎p��̋��A";
-		mes "�����Ă��������O�B";
-		mes "���̑S�Ă�";
-		mes "�R�����m��Ȃ��̂ł��B";
+		mes "[青年]";
+		mes "……いえ。";
+		mes "私は野羊ではなく、ヒョウ。";
+		mes "野羊とは、カイが勝手に";
+		mes "呼んでいるだけです。";
+		mes "ハハハ。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�͂��B";
-		mes "�c�c�c�c�c�c";
+		mes "………………";
 		next;
-		mes "[�q���E]";
-		mes "�킩�����悤�ł��ˁB";
-		mes "�ł́A�莆�𒸂��܂��傤���H";
+		mes "[ヒョウ]";
+		mes "ダメですよ。";
+		mes "忍者になりたいなら、";
+		mes "目に見えることだけを";
+		mes "信じていてはいけません。";
 		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "���A�͂��B";
-		mes "����ł��B";
+		mes "[ヒョウ]";
+		mes "本に載っているような服装をしている";
+		mes "忍者はそうそういません。";
 		next;
-		mes "[�q���E]";
-		mes "�ǂ�ǂ�c�c";
-		mes "�c�c�J�C�̂�B";
-		mes "����󂩂Ǝv������";
-		mes "���킪�Ȃ�����";
-		mes "�ꎞ�x�킵�悤����";
-		mes "�����Ă���܂��B";
+		mes "[ヒョウ]";
+		mes "忘れないでください。";
+		mes "忍者は自分の正体を";
+		mes "相手に知られた瞬間、";
+		mes "自分の命を失ってしまうんです。";
 		next;
-		mes "[�q���E]";
-		mes "�n�n�n�B";
-		mes "�c�O�Ȃ���A";
-		mes "���̓N�i�C�̍ޗ���";
-		mes "�S�ďW�߂Ă���܂���B";
-		next;
-		mes "[�q���E]";
-		mes "�ꉞ�A�Ԏ��������܂��ˁB";
-		mes "���̎�`�����ł��邮�炢�Ȃ�A";
-		mes "����������Ɗ��o��b���邾����";
-		mes "���Ȃ��͗��h��";
-		mes "�E�҂ɂȂ��ł��傤�B";
+		mes "[ヒョウ]";
+		mes "今の私の姿や故郷、";
+		mes "教えてあげた名前。";
+		mes "その全てが";
+		mes "嘘かも知れないのです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c";
+		mes "……はい。";
+		mes "………………";
 		next;
-		mes "[�q���E]";
-		mes "���X���҂����������A";
-		mes "���A�Ԏ��������Ă��܂�����c�c";
-		mes "�]�T���T���T���T���]";
-		next;
-		mes "[�q���E]";
-		mes "�͂��A�ǂ����B";
-		mes "������J�C�ɓn����";
-		mes "�����ł���B";
+		mes "[ヒョウ]";
+		mes "わかったようですね。";
+		mes "では、手紙を頂きましょうか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�]�莆���󂯎�����]";
+		mes "あ、はい。";
+		mes "これです。";
 		next;
-		mes "[�q���E]";
-		mes "�ł́A�����ɍs���ĉ������B";
-		mes "�E�҂͂����Ȃ鎞��";
-		mes "���Ԃ�ɂ��܂Ȃ���΂Ȃ�܂���B";
+		mes "[ヒョウ]";
+		mes "どれどれ……";
+		mes "……カイのやつ。";
+		mes "挑戦状かと思ったら";
+		mes "武器がないから";
+		mes "一時休戦しようって";
+		mes "書いてあります。";
 		next;
-		mes "[�q���E]";
-		mes "���Ȃ����E�҂ɂȂ��΁A";
-		mes "���Ɖ�@���������ł��傤�B";
-		mes "���҂��Ă��܂���B";
+		mes "[ヒョウ]";
+		mes "ハハハ。";
+		mes "残念ながら、";
+		mes "私はクナイの材料を";
+		mes "全て集めてありますよ。";
+		next;
+		mes "[ヒョウ]";
+		mes "一応、返事を書きますね。";
+		mes "私の手伝いをできるぐらいなら、";
+		mes "もうちょっと感覚を鍛えるだけで";
+		mes "あなたは立派な";
+		mes "忍者になれるでしょう。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�͂��c�c";
-		mes "�ł́A���͂���Łc�c";
+		mes "………………";
 		next;
-		mes "[�q���E]";
-		mes "���c�c";
-		mes "�A�}�c�ɍs���Ȃ�";
-		mes "�����Ă����܂���B";
-		mes "�ł́A�s���Ă�����Ⴂ�B";
+		mes "[ヒョウ]";
+		mes "少々お待ちください、";
+		mes "今、返事を書いていますから……";
+		mes "‐サラサラサラサラ‐";
+		next;
+		mes "[ヒョウ]";
+		mes "はい、どうぞ。";
+		mes "これをカイに渡せば";
+		mes "いいですよ。";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "‐手紙を受け取った‐";
+		next;
+		mes "[ヒョウ]";
+		mes "では、すぐに行って下さい。";
+		mes "忍者はいかなる時も";
+		mes "時間を惜しまなければなりません。";
+		next;
+		mes "[ヒョウ]";
+		mes "あなたが忍者になれれば、";
+		mes "私と会う機会も増えるでしょう。";
+		mes "期待していますよ。";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "はい……";
+		mes "では、私はこれで……";
+		next;
+		mes "[ヒョウ]";
+		mes "あ……";
+		mes "アマツに行くなら";
+		mes "送ってあげますよ。";
+		mes "では、行ってらっしゃい。";
 		set CHANGE_NJ,3;
 		chgquest 6016,6017;
 		delitem 1010,1;
@@ -874,605 +874,605 @@ einbroch.gat,184,194,3	script	�N	881,{
 		warp "amatsu.gat",113,127;
 		end;
 	case 3:
-		mes "[�q���E]";
-		mes "��H�@�ǂ����܂������H";
-		mes "�܂��J�C�ɉ���Ă��Ȃ��悤�ł��ˁB";
+		mes "[ヒョウ]";
+		mes "ん？　どうしましたか？";
+		mes "まだカイに会っていないようですね。";
 		next;
-		mes "[�q���E]";
-		mes "���]�݂ł�����A";
-		mes "�A�}�c�ɑ����Ă����܂����H";
+		mes "[ヒョウ]";
+		mes "お望みでしたら、";
+		mes "アマツに送ってあげますが？";
 		next;
-		if(select("�����A���\�ł�","�͂��A���肢���܂�")==1) {
-			mes "[�q���E]";
-			mes "�킩��܂����B";
-			mes "�ł́A����΂��Ă��������B";
+		if(select("いえ、結構です","はい、お願いします")==1) {
+			mes "[ヒョウ]";
+			mes "わかりました。";
+			mes "では、がんばってください。";
 			close;
 		}
-		mes "[�q���E]";
-		mes "�킩��܂����B";
-		mes "�ł́A�s���Ă�����Ⴂ�B";
+		mes "[ヒョウ]";
+		mes "わかりました。";
+		mes "では、行ってらっしゃい。";
 		close2;
 		warp "amatsu.gat",113,127;
 		end;
 	case 4:
-		mes "[�q���E]";
-		mes "�J�C�����Ȏ���";
-		mes "�����o�����݂����ł��ˁB";
-		mes "����΂��Ă��������B";
+		mes "[ヒョウ]";
+		mes "カイが厄介な事を";
+		mes "言い出したみたいですね。";
+		mes "がんばってください。";
 		close;
 	}
 }
 
 //==========================================
-// �ꖳ����
+// 苦無製作
 //------------------------------------------
--	script	�J�V��#ng	83,{
+-	script	カシン#ng	83,{
 	if(strnpcinfo(2) == "que") {
-		mes "[�J�V��]";
-		mes "���̓J�V���B";
-		mes "�ꖳ���K�v�Ȃ�";
-		mes "���ł����Ă��������B";
+		mes "[カシン]";
+		mes "私はカシン。";
+		mes "苦無が必要なら";
+		mes "いつでもきてください。";
 	}
 	else {
-		mes "[�J�V��]";
-		mes "�ŋ߂�������������";
-		mes "�ꖳ�����߂�l��������";
-		mes "�ƂĂ��Z�����ł��ˁB";
+		mes "[カシン]";
+		mes "最近あっちこっちで";
+		mes "苦無を求める人が多くて";
+		mes "とても忙しいですね。";
 	}
 	next;
-	mes "[�J�V��]";
-	mes "�����K�v�ł����H";
-	mes "�I��ł݂Ă��������B";
+	mes "[カシン]";
+	mes "何が必要ですか？";
+	mes "選んでみてください。";
 	next;
-	switch(select("����̋ꖳ�F20��","�ғł̋ꖳ�F10��","�X���̋ꖳ�F10��","�����̋ꖳ�F10��","���y�̋ꖳ�F10��","��΂̋ꖳ�F10��","������")) {
-	case 1:	//����̋ꖳ - �s�n�̎藠��20,���F�Ζ�1
-		mes "�s�n�̎藠��20�ƍ��F�Ζ�1�ŁA";
-		mes "����̋ꖳ20��1���Ƃ���";
-		mes "�������Ă��܂��B";
+	switch(select("爆裂の苦無：20個","猛毒の苦無：10個","氷柱の苦無：10個","狂風の苦無：10個","黒土の苦無：10個","烈火の苦無：10個","取り消し")) {
+	case 1:	//爆裂の苦無 - 鋭刃の手裏剣20,黒色火薬1
+		mes "鋭刃の手裏剣20個と黒色火薬1個で、";
+		mes "爆裂の苦無20個を1束として";
+		mes "交換しています。";
 		next;
-		mes "[�J�V��]";
-		mes "��x��100���܂Ō����ł��܂��B";
-		mes "�������~�߂�Ȃ�";
-		mes "0����͂��Ă��������B";
+		mes "[カシン]";
+		mes "一度に100束まで交換できます。";
+		mes "交換を止めるなら";
+		mes "0を入力してください。";
 		next;
 		input '@num;
 		if('@num <= 0 || '@num > 100) {
-			mes "[�J�V��]";
-			mes "�������~�ł��B";
-			mes "���x�܂����Ă��������B";
+			mes "[カシン]";
+			mes "交換中止です。";
+			mes "今度また来てください。";
 			close;
 		}
 		if(countitem(13253) < 20*'@num || countitem(6213) < '@num) {
-			mes "[�J�V��]";
-			mes "��������A�C�e����";
-			mes "����Ȃ��݂����ł���H";
+			mes "[カシン]";
+			mes "交換するアイテムが";
+			mes "足りないみたいですよ？";
 			close;
 		}
 		delitem 13253,20*'@num;
 		delitem 6213,'@num;
 		getitem 13294,20*'@num;
-		mes "[�J�V��]";
-		mes "�m�F���܂����B";
-		mes "�ł́A�ǂ����B";
+		mes "[カシン]";
+		mes "確認しました。";
+		mes "では、どうぞ。";
 		close;
-	case 2:	//�ғł̋ꖳ - �藠��20,�e���1
+	case 2:	//猛毒の苦無 - 手裏剣20,影宝珠1
 		set '@itemid,13259;
 		setarray '@need,13250,7524;
 		setarray '@amount,20,1;
 		break;
-	case 3:	//�X���̋ꖳ - �J�_�̎藠��8,�X�M��2
+	case 3:	//氷柱の苦無 - 雨雲の手裏剣8,氷閃石2
 		set '@itemid,13255;
 		setarray '@need,13251,7522;
 		setarray '@amount,8,2;
 		break;
-	case 4:	//�����̋ꖳ - �M���̎藠��4,�����2
+	case 4:	//狂風の苦無 - 閃光の手裏剣4,風鈴石2
 		set '@itemid,13257;
 		setarray '@need,13252,7523;
 		setarray '@amount,4,2;
 		break;
-	case 5:	//���y�̋ꖳ - �s�n�̎藠��2,�e���1
+	case 5:	//黒土の苦無 - 鋭刃の手裏剣2,影宝珠1
 		set '@itemid,13256;
 		setarray '@need,13253,7524;
 		setarray '@amount,2,1;
 		break;
-	case 6:	//��΂̋ꖳ - �h�j�̎藠��1,��ΐ�2
+	case 6:	//烈火の苦無 - 刺針の手裏剣1,烈火石2
 		set '@itemid,13258;
 		setarray '@need,13254,7521;
 		setarray '@amount,1,2;
 		break;
 	case 7:
-		mes "[�J�V��]";
-		mes "�킩��܂����B";
-		mes "�܂����ł����Ă��������B";
+		mes "[カシン]";
+		mes "わかりました。";
+		mes "またいつでも来てください。";
 		close;
 	}
-	mes "[�J�V��]";
-	mes getitemname('@need[0])+'@amount[0]+"��" +getitemname('@need[1])+'@amount[1]+ "�ŁA";
-	mes getitemname('@itemid)+ "10��1���Ƃ���";
-	mes "�������Ă��܂��B";
+	mes "[カシン]";
+	mes getitemname('@need[0])+'@amount[0]+"個と" +getitemname('@need[1])+'@amount[1]+ "個で、";
+	mes getitemname('@itemid)+ "10個を1束として";
+	mes "交換しています。";
 	next;
-	mes "[�J�V��]";
-	mes "��x��500���܂Ō����ł��܂��B";
-	mes "�������~�߂�Ȃ�";
-	mes "0����͂��Ă��������B";
+	mes "[カシン]";
+	mes "一度に500束まで交換できます。";
+	mes "交換を止めるなら";
+	mes "0を入力してください。";
 	next;
 	input '@num;
 	if('@num <= 0 || '@num > 500) {
-		mes "[�J�V��]";
-		mes "�������~�ł��B";
-		mes "���x�܂����Ă��������B";
+		mes "[カシン]";
+		mes "交換中止です。";
+		mes "今度また来てください。";
 		close;
 	}
 	if(countitem('@need[0]) < '@amount[0]*'@num || countitem('@need[1]) < '@amount[1]*'@num) {
-		mes "[�J�V��]";
-		mes "��������A�C�e����";
-		mes "����Ȃ��݂����ł���H";
+		mes "[カシン]";
+		mes "交換するアイテムが";
+		mes "足りないみたいですよ？";
 		close;
 	}
 	delitem '@need[0],'@amount[0]*'@num;
 	delitem '@need[1],'@amount[1]*'@num;
 	getitem '@itemid,10*'@num;
-	mes "[�J�V��]";
-	mes "�m�F���܂����B";
-	mes "�ł́A�ǂ����B";
+	mes "[カシン]";
+	mes "確認しました。";
+	mes "では、どうぞ。";
 	close;
 }
 
-prontera.gat,178,240,3	duplicate(�J�V��#ng)	�J�V��#prt	83
-que_ng.gat,72,29,3		duplicate(�J�V��#ng)	�J�V��#que	83
+prontera.gat,178,240,3	duplicate(カシン#ng)	カシン#prt	83
+que_ng.gat,72,29,3		duplicate(カシン#ng)	カシン#que	83
 
 //==========================================
-// �E�ғ�����
+// 忍者刀製作
 //------------------------------------------
--	script	�J�C�o��#ng	847,{
+-	script	カイバラ#ng	847,{
 	if(strnpcinfo(2) == "que") {
-		mes "[�J�C�o��]";
-		mes "���V�͔E�҂̕����";
-		mes "��鎖���ł���J�C�o���Ƃ����B";
-		mes "�����~�����������邩�H";
+		mes "[カイバラ]";
+		mes "ワシは忍者の武器を";
+		mes "作る事ができるカイバラという。";
+		mes "何か欲しい物があるか？";
 	}
 	else {
-		mes "[�J�C�o��]";
-		mes "���V��K�˂Ă���l�������Ă���";
-		mes "�ŋ߂����ƃA�}�c���������邱�Ƃ�";
-		mes "�����Ȃ����̂���B";
-		mes "�����~�����������邩�H";
+		mes "[カイバラ]";
+		mes "ワシを訪ねてくる人が増えてきて";
+		mes "最近こことアマツを往復することが";
+		mes "多くなったのじゃ。";
+		mes "何か欲しい物があるか？";
 	}
 	next;
-	switch(select("����","�\��","���C��[3]","���J","���n","��߂�")) {
-	case 1:	//���� - �h���S���̗�400,�I���f�I�R��5,�h���S���̔�30,20��z
-		mes "[�J�C�o��]";
-		mes "�ӂށA^FF0000����^000000��I�񂾂��B";
-		mes "���؂͂��̂قƂ�ǂ�";
-		mes "�h���S���̗؂ŏo���Ă���B";
+	switch(select("黒鱗","十手","阿修羅[3]","村雨","白刃","やめる")) {
+	case 1:	//黒鱗 - ドラゴンの鱗400,オリデオコン5,ドラゴンの皮30,20万z
+		mes "[カイバラ]";
+		mes "ふむ、^FF0000黒鱗^000000を選んだか。";
+		mes "黒鱗はそのほとんどが";
+		mes "ドラゴンの鱗で出来ておる。";
 		next;
-		mes "[�J�C�o��]";
-		mes "�ޗ��̓h���S���̗�400�A";
-		mes "�I���f�I�R��5�A";
-		mes "�h���S���̗�30�A";
-		mes "20��Zeny���K�v����B";
-		mes "���V�ɐ�����˗����邩�H";
+		mes "[カイバラ]";
+		mes "材料はドラゴンの鱗400個、";
+		mes "オリデオコン5個、";
+		mes "ドラゴンの鱗30個、";
+		mes "20万Zenyが必要じゃ。";
+		mes "ワシに製作を依頼するか？";
 		set '@itemid,13006;
 		setarray '@need,1036,984,7123;
 		setarray '@amount,400,5,30;
 		set '@zeny,200000;
 		break;
-	case 2:	//�\�� - �|�S30,�Â���1,2��z
-		mes "[�J�C�o��]";
-		mes "�ӂށA^FF0000�\��^000000��I�񂾂��B";
-		mes "�\��ɂ́A�g���Ύg���ق�";
-		mes "�����Ȃ�Ƃ����`��������B";
+	case 2:	//十手 - 鋼鉄30,古い柄1,2万z
+		mes "[カイバラ]";
+		mes "ふむ、^FF0000十手^000000を選んだか。";
+		mes "十手には、使えば使うほど";
+		mes "強くなるという伝説がある。";
 		next;
-		mes "[�J�C�o��]";
-		mes "�ޗ���";
-		mes "�|�S30�A�Â���1�A";
-		mes "2��Zeny���K�v����B";
-		mes "���V�ɐ�����˗����邩�H";
+		mes "[カイバラ]";
+		mes "材料は";
+		mes "鋼鉄30個、古い柄1個、";
+		mes "2万Zenyが必要じゃ。";
+		mes "ワシに製作を依頼するか？";
 		set '@itemid,13007;
 		setarray '@need,999,7022;
 		setarray '@amount,30,1;
 		set '@zeny,20000;
 		break;
-	case 3:	//���C��[3] - �|�S25,�Â������w5,3��2��z
-		mes "[�J�C�o��]";
-		mes "�ӂށA^FF0000���C��[3]^000000��I�񂾂��B";
-		mes "���C��[3]����邽�߂ɂ�";
-		mes "�|�S25�A�Â������w5�A";
-		mes "3��2��Zeny���K�v����B";
-		mes "���V�ɐ�����˗����邩�H";
+	case 3:	//阿修羅[3] - 鋼鉄25,古い魔方陣5,3万2千z
+		mes "[カイバラ]";
+		mes "ふむ、^FF0000阿修羅[3]^000000を選んだか。";
+		mes "阿修羅[3]を作るためには";
+		mes "鋼鉄25個、古い魔方陣5個、";
+		mes "3万2千Zenyが必要じゃ。";
+		mes "ワシに製作を依頼するか？";
 		set '@itemid,13011;
 		setarray '@need,999,7099;
 		setarray '@amount,25,5;
 		set '@zeny,32000;
 		break;
-	case 4:	//���J - �|�S30,�A�N�A�}����10,4��8��z
-		mes "[�J�C�o��]";
-		mes "�ӂށA^FF0000���J^000000��I�񂾂��B";
-		mes "���J�����ɂ�";
-		mes "�|�S30�A�A�N�A�}����10�A";
-		mes "4��8��Zeny���K�v����B";
-		mes "���V�ɐ�����˗����邩�H";
+	case 4:	//村雨 - 鋼鉄30,アクアマリン10,4万8千z
+		mes "[カイバラ]";
+		mes "ふむ、^FF0000村雨^000000を選んだか。";
+		mes "村雨を作るには";
+		mes "鋼鉄30個、アクアマリン10個、";
+		mes "4万8千Zenyが必要じゃ。";
+		mes "ワシに製作を依頼するか？";
 		set '@itemid,13012;
 		setarray '@need,999,720;
 		setarray '@amount,30,10;
 		set '@zeny,48000;
 		break;
-	case 5:	//���n - �X�P���{�[��500,�^��5,�q�[��Lv3 10,12��z
-		mes "[�J�C�o��]";
-		mes "�ӂށA^FF0000���n^000000��I�񂾂��B";
-		mes "���n�����ɂ�";
-		mes "�X�P���{�[��500�A�^��5�A";
-		mes "�q�[��Lv3��10�A";
-		mes "12��Zeny���K�v����B";
-		mes "���V�ɐ�����˗����邩�H";
+	case 5:	//白刃 - スケルボーン500,真珠5,ヒールLv3 10,12万z
+		mes "[カイバラ]";
+		mes "ふむ、^FF0000白刃^000000を選んだか。";
+		mes "白刃を作るには";
+		mes "スケルボーン500個、真珠5個、";
+		mes "ヒールLv3を10個、";
+		mes "12万Zenyが必要じゃ。";
+		mes "ワシに製作を依頼するか？";
 		set '@itemid,13014;
 		setarray '@need,932,722,12001;
 		setarray '@amount,500,5,10;
 		set '@zeny,120000;
 		break;
 	case 6:
-		mes "[�J�C�o��]";
-		mes "���ށB";
-		mes "�C����������";
-		mes "�܂����邪�悢�B";
+		mes "[カイバラ]";
+		mes "うむ。";
+		mes "気が向いたら";
+		mes "また来るがよい。";
 		close;
 	}
 	next;
-	if(select("��߂Ă����܂�","�͂��I")==1) {
-		mes "[�J�C�o��]";
-		mes "���ށc�c";
-		mes "�����ȒP�ɂ͏W�߂��Ȃ�";
-		mes "�ޗ����Ⴕ�̂��c�c";
-		mes "�����ޗ����W�܂�悤�Ȃ�";
-		mes "���ł��܂����Ȃ���B";
+	if(select("やめておきます","はい！")==1) {
+		mes "[カイバラ]";
+		mes "うむ……";
+		mes "そう簡単には集められない";
+		mes "材料じゃしのぅ……";
+		mes "もし材料が集まるようなら";
+		mes "いつでもまたきなされ。";
 		close;
 	}
 	for(set '@i,0; '@i < getarraysize('@need); set '@i,'@i+1) {
 		if(countitem('@need['@i]) < '@amount['@i]) {
-			mes "[�J�C�o��]";
-			mes "���V��" +getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "�����ɂ�";
-			mes "�ޗ�������Ȃ��悤���Ⴜ�B";
+			mes "[カイバラ]";
+			mes "ワシが" +getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "を作るには";
+			mes "材料が足りないようじゃぞ。";
 			next;
 			break;
 		}
 	}
 	if('@i == getarraysize('@need) && Zeny < '@zeny) {
-		mes "[�J�C�o��]";
-		mes "���[�ށc�c";
-		mes "�ޗ��͏\�����Ⴊ�A";
-		mes "����������Ȃ��̂��B";
+		mes "[カイバラ]";
+		mes "うーむ……";
+		mes "材料は十分じゃが、";
+		mes "お金が足りないのぅ。";
 		next;
 	}
 	if('@i < getarraysize('@need) || Zeny < '@zeny) {
-		mes "[�J�C�o��]";
-		mes getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "�̍ޗ��́A";
+		mes "[カイバラ]";
+		mes getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "の材料は、";
 		switch('@itemid) {
 		case 13006:
-			mes "^FF0000�h���S���̗�400��^000000�A";
-			mes "^FF0000�I���f�I�R��5��^000000�A";
-			mes "^FF0000�h���S���̗�30��^000000�A";
-			mes "^FF000020��Zeny^000000���K�v����B";
+			mes "^FF0000ドラゴンの鱗400個^000000、";
+			mes "^FF0000オリデオコン5個^000000、";
+			mes "^FF0000ドラゴンの鱗30個^000000、";
+			mes "^FF000020万Zeny^000000が必要じゃ。";
 			break;
 		case 13007:
-			mes "^FF0000�|�S30��^000000�A^FF0000�Â���1��^000000�A";
-			mes "^FF00002��Zeny^000000���K�v����B";
+			mes "^FF0000鋼鉄30個^000000、^FF0000古い柄1個^000000、";
+			mes "^FF00002万Zeny^000000が必要じゃ。";
 			break;
 		case 13011:
-			mes "^FF0000�|�S25��^000000�A^FF0000�Â������w5��^000000�A";
-			mes "^FF00003��2��Zeny^000000���K�v����B";
+			mes "^FF0000鋼鉄25個^000000、^FF0000古い魔方陣5個^000000、";
+			mes "^FF00003万2千Zeny^000000が必要じゃ。";
 			break;
 		case 13012:
-			mes "^FF0000�|�S30��^000000�A^FF0000�A�N�A�}����10��^000000�A";
-			mes "^FF00004��8��Zeny^000000���K�v����B";
+			mes "^FF0000鋼鉄30個^000000、^FF0000アクアマリン10個^000000、";
+			mes "^FF00004万8千Zeny^000000が必要じゃ。";
 			break;
 		case 13014:
-			mes "^FF0000�X�P���{�[��500��^000000�A^FF0000�^��5��^000000�A";
-			mes "^FF0000�q�[��Lv3��10��^000000�A";
-			mes "^FF000012��Zeny^000000���K�v����B";
+			mes "^FF0000スケルボーン500個^000000、^FF0000真珠5個^000000、";
+			mes "^FF0000ヒールLv3を10個^000000、";
+			mes "^FF000012万Zeny^000000が必要じゃ。";
 			break;
 		}
-		mes "�����Ɗm�F���Ă���񂶂Ⴜ�B";
+		mes "ちゃんと確認してくるんじゃぞ。";
 		close;
 	}
 	if(checkweight('@itemid,1) == 0) {
-		mes "[�J�C�o��]";
-		mes "�ǂ����ו��ł����ς��̂悤���Ⴜ�B";
-		mes "�����]�T���������Ă���Ƃ悢�B";
+		mes "[カイバラ]";
+		mes "どうやら荷物でいっぱいのようじゃぞ。";
+		mes "少し余裕をもたせてくるとよい。";
 		close;
 	}
 	for(set '@i,0; '@i < getarraysize('@need); set '@i,'@i+1)
 		delitem '@need['@i],'@amount['@i];
 	set Zeny,Zeny-'@zeny;
 	getitem '@itemid,1;
-	mes "[�J�C�o��]";
-	mes "���ށB";
-	mes "�ޗ��Ƃ�������������̂��B";
-	mes "�ł́A" +getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "��";
-	mes "�󂯎�邪�悢�B";
+	mes "[カイバラ]";
+	mes "うむ。";
+	mes "材料とお金がそろったのぅ。";
+	mes "では、" +getitemname('@itemid)+('@itemid ==13011? "[3]": "")+ "を";
+	mes "受け取るがよい。";
 	close;
 }
 
-payon.gat,210,44,3	duplicate(�J�C�o��#ng)	�J�C�o��#pay	847
-que_ng.gat,72,34,3	duplicate(�J�C�o��#ng)	�J�C�o��#que	847
+payon.gat,210,44,3	duplicate(カイバラ#ng)	カイバラ#pay	847
+que_ng.gat,72,34,3	duplicate(カイバラ#ng)	カイバラ#que	847
 
 //==========================================
-// �����藠������
+// 風魔手裏剣製作
 //------------------------------------------
--	script	�e�c#ng	709,{
-	mes "[�e�c]";
-	mes "���̖��̓e�c�B";
-	mes "�����藠���������Ă���B";
+-	script	テツ#ng	709,{
+	mes "[テツ]";
+	mes "俺の名はテツ。";
+	mes "風魔手裏剣を扱っている。";
 	next;
-	mes "[�e�c]";
-	mes "��̃M�����u����";
-	mes "�����������Ȃ��Ăȁc�c";
-	mes "���߂Ă������퐻����";
-	mes "�ĊJ�����񂾁B";
+	mes "[テツ]";
+	mes "趣味のギャンブルで";
+	mes "貯金が無くなってな……";
+	mes "辞めていた武器製造を";
+	mes "再開したんだ。";
 	next;
-	mes "[�e�c]";
-	mes "���������Ă������֘A�̕����";
-	mes "�������E�ꂾ�I";
-	mes "���S���Đ�����C���ȁI";
+	mes "[テツ]";
+	mes "こう見えても風魔関連の武器は";
+	mes "俺が世界一だ！";
+	mes "安心して製造を任せな！";
 	next;
-	switch(select("�����藠���E����","�����藠���E��ԗ�[3]","�����藠���E��ԗ�[4]","�����藠���E���","��߂�")) {
-	case 1:	//�����藠���E���� - �|�S50,�n�[�s�[�̉H20,�I���f�I�R��5,9��z
-		mes "[�e�c]";
-		mes "^FF0000�����藠���E����^000000��I�񂾂��B";
-		mes "�����藠���E���������ɂ�";
-		mes "�|�S50�A�n�[�s�[�̉H20�A";
-		mes "�I���f�I�R��5�A";
-		mes "9��Zeny���K�v���B";
-		mes "������˗����邩�H";
+	switch(select("風魔手裏剣・風鳥","風魔手裏剣・大車輪[3]","風魔手裏剣・大車輪[4]","風魔手裏剣・烈火","やめる")) {
+	case 1:	//風魔手裏剣・風鳥 - 鋼鉄50,ハーピーの羽20,オリデオコン5,9万z
+		mes "[テツ]";
+		mes "^FF0000風魔手裏剣・風鳥^000000を選んだか。";
+		mes "風魔手裏剣・風鳥を作るには";
+		mes "鋼鉄50個、ハーピーの羽20個、";
+		mes "オリデオコン5個、";
+		mes "9万Zenyが必要だ。";
+		mes "製作を依頼するか？";
 		set '@itemid,13300;
 		setarray '@need,999,7115,984;
 		setarray '@amount,50,20,5;
 		set '@zeny,90000;
 		break;
-	case 2:	//�����藠���E��ԗ�[3] - �|�S30,���̕R100,�I���f�I�R��2,4��z
-		mes "[�e�c]";
-		mes "^FF0000�����藠���E��ԗ�[3]^000000��I�񂾂��B";
-		mes "�����藠���E����[3]�����ɂ�";
-		mes "�|�S30�A���̕R100�A";
-		mes "�I���f�I�R��2�A";
-		mes "4��Zeny���K�v���B";
-		mes "������˗����邩�H";
+	case 2:	//風魔手裏剣・大車輪[3] - 鋼鉄30,柄の紐100,オリデオコン2,4万z
+		mes "[テツ]";
+		mes "^FF0000風魔手裏剣・大車輪[3]^000000を選んだか。";
+		mes "風魔手裏剣・風鳥[3]を作るには";
+		mes "鋼鉄30個、柄の紐100個、";
+		mes "オリデオコン2個、";
+		mes "4万Zenyが必要だ。";
+		mes "製作を依頼するか？";
 		set '@itemid,13301;
 		setarray '@need,999,7301,984;
 		setarray '@amount,30,100,2;
 		set '@zeny,40000;
 		break;
-	case 3:	//�����藠���E��ԗ�[4] - ���������_�C�������h20,�����藠���E��ԗ�[3],�I���f�I�R��3,4��z
-		mes "[�e�c]";
-		mes "^FF0000�����藠���E��ԗ�[4]^000000��I�񂾂��B";
-		mes "�����藠���E��ԗ�[4]�����ɂ́A";
-		mes "���������_�C�������h20�A";
-		mes "�����藠���E��ԗ�[3]1�A";
-		mes "�I���f�I�R��3�A4��Zeny���K�v���B";
-		mes "������˗����邩�H";
+	case 3:	//風魔手裏剣・大車輪[4] - 損傷したダイヤモンド20,風魔手裏剣・大車輪[3],オリデオコン3,4万z
+		mes "[テツ]";
+		mes "^FF0000風魔手裏剣・大車輪[4]^000000を選んだか。";
+		mes "風魔手裏剣・大車輪[4]を作るには、";
+		mes "損傷したダイヤモンド20個、";
+		mes "風魔手裏剣・大車輪[3]1個、";
+		mes "オリデオコン3個、4万Zenyが必要だ。";
+		mes "製作を依頼するか？";
 		next;
-		mes "[�e�c]";
-		mes "�����Ă������A";
-		mes "�����藠���E��ԗ�[3]�̃J�[�h��";
-		mes "���B�l�͖����Ȃ邩��ȁB";
-		mes "�T�d�ɍl���āA���߂Ă���B";
+		mes "[テツ]";
+		mes "言っておくが、";
+		mes "風魔手裏剣・大車輪[3]のカードや";
+		mes "精錬値は無くなるからな。";
+		mes "慎重に考えて、決めてくれ。";
 		set '@itemid,13302;
 		setarray '@need,733,13301,984;
 		setarray '@amount,20,1,3;
 		set '@zeny,40000;
 		break;
-	case 4:	//�����藠���E��� - �|�S50,�Ύ�100,�R���Ă���S��100,��ΐ�50,7��8��z
-		mes "[�e�c]";
-		mes "^FF0000�����藠���E���^000000��I�񂾂��B";
-		mes "�����藠���E��΂����ɂ́A";
-		mes "�|�S50�A�Ύ�100�A";
-		mes "�R���Ă���S��100�A��ΐ�50�A";
-		mes "7��8��Zeny���K�v���B";
-		mes "������˗����邩�H";
+	case 4:	//風魔手裏剣・烈火 - 鋼鉄50,火種100,燃えている心臓100,烈火石50,7万8千z
+		mes "[テツ]";
+		mes "^FF0000風魔手裏剣・烈火^000000を選んだか。";
+		mes "風魔手裏剣・烈火を作るには、";
+		mes "鋼鉄50個、火種100個、";
+		mes "燃えている心臓100個、烈火石50個、";
+		mes "7万8千Zenyが必要だ。";
+		mes "製作を依頼するか？";
 		set '@itemid,13303;
 		setarray '@need,999,7098,7097,7521;
 		setarray '@amount,50,100,100,50;
 		set '@zeny,78000;
 		break;
 	case 5:
-		mes "[�J�C�o��]";
-		mes "�c�O���B";
-		mes "�����S�������ō���������";
-		mes "�����Ă�肽�������񂾂��c�c";
-		mes "�C���ς������܂����Ă���B";
+		mes "[カイバラ]";
+		mes "残念だ。";
+		mes "俺が心血注いで作った武器を";
+		mes "見せてやりたかったんだが……";
+		mes "気が変わったらまた来てくれ。";
 		close;
 	}
 	next;
-	if(select("��߂Ă����܂�","�͂��I")==1) {
-		mes "[�e�c]";
-		mes "���[��c�c";
-		mes "�܁A�����ޗ�����Ȃ���ȁB";
-		mes "�ł��ޗ�����������";
-		mes "���ł����Ă����B";
+	if(select("やめておきます","はい！")==1) {
+		mes "[テツ]";
+		mes "うーん……";
+		mes "ま、安い材料じゃないよな。";
+		mes "でも材料が揃ったら";
+		mes "いつでも来てくれよ。";
 		close;
 	}
 	for(set '@i,0; '@i < getarraysize('@need); set '@i,'@i+1) {
 		if(countitem('@need['@i]) < '@amount['@i]) {
-			mes "[�e�c]";
-			mes getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "�����";
-			mes "�ޗ�������Ȃ��悤�����B";
+			mes "[テツ]";
+			mes getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "を作る";
+			mes "材料が足りないようだぜ。";
 			next;
 			break;
 		}
 	}
 	if('@i == getarraysize('@need) && Zeny < '@zeny) {
-		mes "[�e�c]";
-		mes "�ޗ��͏\�������ǁA";
-		mes "��������Ȃ����B";
+		mes "[テツ]";
+		mes "材料は十分だけど、";
+		mes "金が足りないぜ。";
 		next;
 	}
 	if('@i < getarraysize('@need) || Zeny < '@zeny) {
-		mes "[�e�c]";
-		mes getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "�����ɂ́A";
+		mes "[テツ]";
+		mes getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "を作るには、";
 		switch('@itemid) {
 		case 13300:
-			mes "^FF0000�|�S50��^000000�A^FF0000�n�[�s�[�̉H20��^000000�A";
-			mes "^FF0000�I���f�I�R��5��^000000�A";
-			mes "^FF00009��Zeny^000000���K�v���B";
+			mes "^FF0000鋼鉄50個^000000、^FF0000ハーピーの羽20個^000000、";
+			mes "^FF0000オリデオコン5個^000000、";
+			mes "^FF00009万Zeny^000000が必要だ。";
 			break;
 		case 13301:
-			mes "^FF0000�|�S30��^000000�A^FF0000���̕R100��^000000�A";
-			mes "^FF0000�I���f�I�R��2��^000000�A";
-			mes "^FF00004��Zeny^000000���K�v���B";
+			mes "^FF0000鋼鉄30個^000000、^FF0000柄の紐100個^000000、";
+			mes "^FF0000オリデオコン2個^000000、";
+			mes "^FF00004万Zeny^000000が必要だ。";
 			break;
 		case 13302:
-			mes "^FF0000���������_�C�������h20��^000000�A";
-			mes "^FF0000�����藠���E��ԗ�[3]1��^000000�A";
-			mes "^FF0000�I���f�I�R��3��^000000�A^FF00004��Zeny^000000���K�v���B";
+			mes "^FF0000損傷したダイヤモンド20個^000000、";
+			mes "^FF0000風魔手裏剣・大車輪[3]1個^000000、";
+			mes "^FF0000オリデオコン3個^000000、^FF00004万Zeny^000000が必要だ。";
 			break;
 		case 13303:
-			mes "^FF0000�|�S50��^000000�A^FF0000�Ύ�100��^000000�A";
-			mes "^FF0000�R���Ă���S��100��^000000�A^FF0000��ΐ�50��^000000�A";
-			mes "^FF00007��8��Zeny^000000���K�v���B";
+			mes "^FF0000鋼鉄50個^000000、^FF0000火種100個^000000、";
+			mes "^FF0000燃えている心臓100個^000000、^FF0000烈火石50個^000000、";
+			mes "^FF00007万8千Zeny^000000が必要だ。";
 			break;
 		}
-		mes "�����Ɗm�F���Ă����B";
+		mes "ちゃんと確認してくれよ。";
 		close;
 	}
 	if(checkweight('@itemid,1) == 0) {
-		mes "[�e�c]";
-		mes "���O�A���Ă����ɂȂ�����Ȃ����B";
-		mes "���������]�T�������Ă���";
-		mes "���Ă����B";
+		mes "[テツ]";
+		mes "お前、持てそうにないじゃないか。";
+		mes "もう少し余裕をもってから";
+		mes "来てくれよ。";
 		close;
 	}
 	for(set '@i,0; '@i < getarraysize('@need); set '@i,'@i+1)
 		delitem '@need['@i],'@amount['@i];
 	set Zeny,Zeny-'@zeny;
 	getitem '@itemid,1;
-	mes "[�e�c]";
-	mes "�悵�A�ޗ�����������ȁB";
-	mes "�ق�A���ꂪ" +getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "���B";
+	mes "[テツ]";
+	mes "よし、材料も金もあるな。";
+	mes "ほら、これが" +getitemname('@itemid)+('@itemid ==13301? "[3]": ('@itemid ==13302? "[4]": ""))+ "だ。";
 	close;
 }
 
-geffen.gat,63,70,3	duplicate(�e�c#ng)	�e�c#gef	709
-que_ng.gat,22,62,3	duplicate(�e�c#ng)	�e�c#que	709
+geffen.gat,63,70,3	duplicate(テツ#ng)	テツ#gef	709
+que_ng.gat,22,62,3	duplicate(テツ#ng)	テツ#que	709
 
 //==========================================
-// ��b[1]����
+// 手甲[1]製作
 //------------------------------------------
-que_ng.gat,28,50,3	script	�{�V��	709,{
+que_ng.gat,28,50,3	script	ボシュ	709,{
 	if(BaseLevel < 20) {
-		mes "[�{�V��]";
-		mes "���͔E�҂̎�ҒB��";
-		mes "�ō��̖h�������Ă����Ă���B";
+		mes "[ボシュ]";
+		mes "私は忍者の若者達に";
+		mes "最高の防具を作ってあげている。";
 		next;
-		mes "[�{�V��]";
-		mes "�����A�N�͎��̍����";
-		mes "�h��𑕔�����ɂ́A�܂��܂�";
-		mes "���x�����Ⴂ�悤���ˁB";
+		mes "[ボシュ]";
+		mes "だが、君は私の作った";
+		mes "防具を装備するには、まだまだ";
+		mes "レベルが低いようだね。";
 		close;
 	}
 	if(countitem(2102) < 1 && ARMGARD_1QUE < 3) {
-		mes "[�{�V��]";
-		mes "���̓{�V���B";
-		mes "3�l����E�҂̖h��E�l��";
-		mes "��Ԃƌ����Ă���B";
+		mes "[ボシュ]";
+		mes "私はボシュ。";
+		mes "3人いる忍者の防具職人で";
+		mes "一番と言われている。";
 		next;
-		mes "[�{�V��]";
-		mes "3�l�ƌ����Ă��A";
-		mes "�c���2�l�͍��\���R�I";
-		mes "����肢���h�������̂�";
-		mes "���̐��ɑ��݂��Ȃ��B";
+		mes "[ボシュ]";
+		mes "3人と言っても、";
+		mes "残りの2人は詐欺同然！";
+		mes "私よりいい防具を作れるのは";
+		mes "この世に存在しない。";
 		next;
-		mes "[�{�V��]";
-		mes "�Ȃ��Ȃ�A����";
-		mes "�����̑S�Ă̊Z���͂��߁A";
-		mes "������h��̐��@��";
-		mes "�m���Ă��邩�炾�B";
+		mes "[ボシュ]";
+		mes "なぜなら、私は";
+		mes "東方の全ての鎧をはじめ、";
+		mes "あらゆる防具の製法を";
+		mes "知っているからだ。";
 		next;
-		mes "[�{�V��]";
-		mes "�������A����������Z��";
-		mes "�h��͂��������āA";
-		mes "���̊Z�𒅂����̓��m�������Ă�";
-		mes "���������Ȃ��̂���肾�����B";
+		mes "[ボシュ]";
+		mes "しかし、私が作った鎧は";
+		mes "防御力が高すぎて、";
+		mes "その鎧を着たもの同士が争っても";
+		mes "決着がつかないのが問題だった。";
 		next;
-		mes "[�{�V��]";
-		mes "�E�҂��h��ɗ���]��A";
-		mes "�Z�p��ቺ�����Ȃ����߂ɁA";
-		mes "���͖h������̂��~�߂Ă���B";
-		mes "���͎�ɁA�h���";
-		mes "���W���������Ă���B";
+		mes "[ボシュ]";
+		mes "忍者が防具に頼る余り、";
+		mes "技術を低下させないために、";
+		mes "私は防具を作るのを止めている。";
+		mes "今は主に、防具の";
+		mes "収集活動をしている。";
 		next;
-		mes "[�{�V��]";
-		mes "�����A�������ɂ��ƁA";
-		mes "���̍L�����E�ɂ͂܂��A";
-		mes "���̒m��Ȃ��h�";
-		mes "����݂����Ȃ񂾁B";
-		mes "�Ȃ񂾂������ȁc�c";
+		mes "[ボシュ]";
+		mes "だが、聞く所によると、";
+		mes "この広い世界にはまだ、";
+		mes "私の知らない防具が";
+		mes "あるみたいなんだ。";
+		mes "なんだったかな……";
 		next;
-		mes "[�{�V��]";
-		mes "^FF0000�K�[�h[1]^000000���������ȁH";
-		mes "�m������Ȃ񂾂����B";
-		mes "���Ј�x�A���������Ă݂����B";
+		mes "[ボシュ]";
+		mes "^FF0000ガード[1]^000000だったかな？";
+		mes "確かそんなんだった。";
+		mes "ぜひ一度、実物を見てみたい。";
 		next;
-		mes "[�{�V��]";
-		mes "�ǂ�������������Z�ɔ�ׂ��";
-		mes "�n��ȕ����Ƃ͎v�����c�c";
+		mes "[ボシュ]";
+		mes "どうせ私が作った鎧に比べると";
+		mes "貧弱な物だとは思うが……";
 		next;
-		mes "[�{�V��]";
-		mes "�������̗��݂𕷂��Ă��ꂽ��A";
-		mes "�N�ɓ��ʂȕ�������Ă����悤�B";
-		mes "�ǂ����H";
+		mes "[ボシュ]";
+		mes "もし私の頼みを聞いてくれたら、";
+		mes "君に特別な物を作ってあげよう。";
+		mes "どうだ？";
 		next;
-		if(select("���܂�C���̂�Ȃ��ł�","�����ł���")==1) {
-			mes "[�{�V��]";
-			mes "����A�c�O���B";
-			mes "���̍�����h���ɓ���";
-			mes "�܂��ƂȂ��`�����X�Ȃ̂ɂȁB";
+		if(select("あまり気がのらないです","いいですよ")==1) {
+			mes "[ボシュ]";
+			mes "おや、残念だ。";
+			mes "私の作った防具が手に入る";
+			mes "またとないチャンスなのにな。";
 			close;
 		}
-		mes "[�{�V��]";
-		mes "���k�������Ă���ȁB";
-		mes "���Ⴀ�A^FF0000�K�[�h[1]^000000�ƌĂ΂��";
-		mes "�h�����ɓ���Ă��Ă���B";
+		mes "[ボシュ]";
+		mes "商談成立ってやつだな。";
+		mes "じゃあ、^FF0000ガード[1]^000000と呼ばれる";
+		mes "防具を手に入れてきてくれ。";
 		set ARMGARD_1QUE,1;
 		close;
 	}
 	if(ARMGARD_1QUE == 1) {
-		mes "[�{�V��]";
-		mes "���A�����Ă��Ă��ꂽ�̂��H";
-		mes "��x�����Ă���c�c";
-		mes "�ӂނӂށc�c";
+		mes "[ボシュ]";
+		mes "お、持ってきてくれたのか？";
+		mes "一度見せてくれ……";
+		mes "ふむふむ……";
 		next;
-		mes "[�{�V��]";
-		mes "�����I�@���ꂾ�I";
-		mes "���ׂĂ̖h��ɃX���b�g��t�����";
-		mes "���ǂ����\�������o�������ł���I";
+		mes "[ボシュ]";
+		mes "そう！　これだ！";
+		mes "すべての防具にスロットを付ければ";
+		mes "より良い性能を引き出す事ができる！";
 		next;
-		mes "[�{�V��]";
-		mes "�悵�A��������p����";
-		mes "���̖h��ɃX���b�g��";
-		mes "�t���悤�B";
+		mes "[ボシュ]";
+		mes "よし、これを応用して";
+		mes "私の防具にスロットを";
+		mes "付けよう。";
 		next;
-		mes "[�{�V��]";
-		mes "�����悩������A";
-		mes "��b1�A�K�[�h[1]1�A";
-		mes "������1��Zeny��";
-		mes "��b[1]������Ă����悤�B";
-		mes "�ǂ�����H";
+		mes "[ボシュ]";
+		mes "もしよかったら、";
+		mes "手甲1個、ガード[1]1個、";
+		mes "そして1万Zenyで";
+		mes "手甲[1]を作ってあげよう。";
+		mes "どうする？";
 		next;
-		if(select("����","�͂�")==1) {
-			mes "[�{�V��]";
-			mes "���[��A�������B";
-			mes "�Ƃɂ����A�������h���";
-			mes "�����Ă��ꂽ���Ƃ����ł�";
-			mes "���ӂ��Ă����B";
-			mes "�킴�킴���肪�Ƃ��B";
+		if(select("いえ","はい")==1) {
+			mes "[ボシュ]";
+			mes "うーん、そうか。";
+			mes "とにかく、珍しい防具を";
+			mes "見せてくれたことだけでも";
+			mes "感謝しているよ。";
+			mes "わざわざありがとう。";
 			set ARMGARD_1QUE,0;
 			close;
 		}
-		mes "[�{�V��]";
-		mes "�킩�����B";
-		mes "������x�������A�ޗ���";
-		mes "��b1�A�K�[�h[1]1�A";
-		mes "������1��Zeny���B";
-		mes "�������ł�����܂����Ă���B";
+		mes "[ボシュ]";
+		mes "わかった。";
+		mes "もう一度いうが、材料は";
+		mes "手甲1個、ガード[1]1個、";
+		mes "そして1万Zenyだ。";
+		mes "準備ができたらまた来てくれ。";
 		set ARMGARD_1QUE,2;
 		close;
 	}
@@ -1481,126 +1481,126 @@ que_ng.gat,28,50,3	script	�{�V��	709,{
 		close;
 	}
 	if(ARMGARD_1QUE == 3) {
-		mes "[�{�V��]";
-		mes "�₟�B";
-		mes "�܂���b[1]��";
-		mes "�K�v�ɂȂ����̂��H";
+		mes "[ボシュ]";
+		mes "やぁ。";
+		mes "また手甲[1]が";
+		mes "必要になったのか？";
 		next;
-		if(select("����","�͂�")==1) {
-			mes "[�{�V��]";
-			mes "�������B";
-			mes "�K�v�ɂȂ�����";
-			mes "�܂����Ă����B";
+		if(select("いえ","はい")==1) {
+			mes "[ボシュ]";
+			mes "そうか。";
+			mes "必要になったら";
+			mes "また来てくれよ。";
 			close;
 		}
 		callsub L_Routine;
 		close;
 	}
-	mes "[�{�V��]";
-	mes "���A�N�I";
-	mes "���������āA�����";
-	mes "�K�[�h�Ƃ����h���Ȃ����H";
-	mes "������ƌ����Ă���I";
+	mes "[ボシュ]";
+	mes "ぁ、君！";
+	mes "もしかして、それは";
+	mes "ガードという防具じゃないか？";
+	mes "ちょっと見せてくれ！";
 	next;
-	mes "[�{�V��]";
-	mes "�����I�@���ꂾ�I";
-	mes "���ׂĂ̖h��ɃX���b�g��t�����";
-	mes "���ǂ����\�������o�������ł���I";
-	mes "�Ȃ񂾂���ȊȒP�Ȃ��Ƃ�";
-	mes "�C�Â��Ȃ������񂾁I";
+	mes "[ボシュ]";
+	mes "そう！　これだ！";
+	mes "すべての防具にスロットを付ければ";
+	mes "より良い性能を引き出す事ができる！";
+	mes "なんだこんな簡単なことに";
+	mes "気づかなかったんだ！";
 	next;
-	mes "[�{�V��]";
-	mes "���A���̖��̓{�V���B";
-	mes "�����ɂ���O�l��";
-	mes "�E�җp�h��E�l�̒���";
-	mes "��Ԃƌ����Ă���B";
-	mes "���͓����̑S�Ă̖h��̐��@��";
-	mes "�m���Ă���񂾁B";
+	mes "[ボシュ]";
+	mes "あ、私の名はボシュ。";
+	mes "東方にいる三人の";
+	mes "忍者用防具職人の中で";
+	mes "一番と言われている。";
+	mes "私は東方の全ての防具の製法を";
+	mes "知っているんだ。";
 	next;
-	mes "[�{�V��]";
-	mes "�������A����������Z��";
-	mes "���܂�ɂ��d�����߁A";
-	mes "����𑕔������ғ��m����������";
-	mes "���������Ȃ��񂾁B";
+	mes "[ボシュ]";
+	mes "しかし、私が作った鎧は";
+	mes "あまりにも硬いため、";
+	mes "それを装備した者同士が争ったら";
+	mes "決着がつかないんだ。";
 	next;
-	mes "[�{�V��]";
-	mes "���͔E�҂��h��ɗ���A";
-	mes "�Z�p�������Ă����̂�h�����߁A";
-	mes "�h������̂���߂��B";
-	mes "���͖h��̎��W�Ƃ����Ă���B";
+	mes "[ボシュ]";
+	mes "私は忍者が防具に頼り、";
+	mes "技術が失われていくのを防ぐため、";
+	mes "防具を作るのをやめた。";
+	mes "今は防具の収集家をしている。";
 	next;
-	mes "[�{�V��]";
-	mes "�����A�N�������Ă���";
-	mes "���̖h������āA";
-	mes "���̍��ɉ΂������I";
+	mes "[ボシュ]";
+	mes "だが、君が持っている";
+	mes "その防具を見て、";
+	mes "私の魂に火がついた！";
 	next;
-	mes "[�{�V��]";
-	mes "�����悩������A";
-	mes "��b1�A�K�[�h[1]1�A";
-	mes "������1��Zeny��";
-	mes "��b[1]������Ă����悤�B";
-	mes "�ǂ�����H";
+	mes "[ボシュ]";
+	mes "もしよかったら、";
+	mes "手甲1個、ガード[1]1個、";
+	mes "そして1万Zenyで";
+	mes "手甲[1]を作ってあげよう。";
+	mes "どうする？";
 	next;
-	if(select("�������A���\�ł�","�͂��I�@���肢���܂��I")==1) {
-		mes "[�{�V��]";
-		mes "�������c�c";
-		mes "���[��A�c�O���B";
-		mes "�����C���ς������";
-		mes "���ł����Ă���B";
+	if(select("いいえ、結構です","はい！　お願いします！")==1) {
+		mes "[ボシュ]";
+		mes "そうか……";
+		mes "うーん、残念だ。";
+		mes "もし気が変わったら";
+		mes "いつでも来てくれ。";
 		close;
 	}
 	callsub L_Routine;
 	close;
 L_Routine:
 	if(countitem(2102) < 1 || countitem(2117) < 1) {
-		mes "[�{�V��]";
-		mes "�ޗ����������";
-		mes "����Ȃ��悤���ȁB";
+		mes "[ボシュ]";
+		mes "材料がちょっと";
+		mes "足りないようだな。";
 		next;
-		mes "[�{�V��]";
-		mes "��b[1]�����ɂ�";
-		mes "��b1�A�K�[�h[1]1�A";
-		mes "������1��Zeny���K�v���B";
-		mes "�����Ɗm�F���Ă���";
-		mes "�܂����Ă���B";
+		mes "[ボシュ]";
+		mes "手甲[1]を作るには";
+		mes "手甲1個、ガード[1]1個、";
+		mes "そして1万Zenyが必要だ。";
+		mes "ちゃんと確認してから";
+		mes "また来てくれ。";
 		close;
 	}
 	if(Zeny < 10000) {
-		mes "[�{�V��]";
-		mes "�ޗ��͑���Ă��邪�A";
-		mes "���͑���Ȃ��悤���ȁB";
+		mes "[ボシュ]";
+		mes "材料は足りているが、";
+		mes "金は足りないようだな。";
 		next;
-		mes "[�{�V��]";
-		mes "��b[1]�����ɂ�";
-		mes "��b1�A�K�[�h[1]1�A";
-		mes "������1��Zeny���K�v���B";
-		mes "�����Ɗm�F���Ă���";
-		mes "�܂����Ă���B";
+		mes "[ボシュ]";
+		mes "手甲[1]を作るには";
+		mes "手甲1個、ガード[1]1個、";
+		mes "そして1万Zenyが必要だ。";
+		mes "ちゃんと確認してから";
+		mes "また来てくれ。";
 		close;
 	}
-	mes "[�{�V��]";
-	mes "�ޗ��̏�����";
-	mes "�ł��Ă���݂������ȁB";
-	mes "�Ō�ɂ�����x�������A";
-	mes "��b[1]������Ă������̂��H";
+	mes "[ボシュ]";
+	mes "材料の準備は";
+	mes "できているみたいだな。";
+	mes "最後にもう一度聞くが、";
+	mes "手甲[1]を作ってもいいのか？";
 	next;
-	if(select("����","�͂�")==1) {
-		mes "[�{�V��]";
-		mes "�킩�����B";
-		mes "�����C���ς������";
-		mes "���ł����Ă���B";
+	if(select("いえ","はい")==1) {
+		mes "[ボシュ]";
+		mes "わかった。";
+		mes "もし気が変わったら";
+		mes "いつでも来てくれ。";
 		close;
 	}
-	mes "[�{�V��]";
-	mes "�悵�I";
-	mes "������Ƒ҂��Ă���B";
-	mes "-�J���J���J��-";
+	mes "[ボシュ]";
+	mes "よし！";
+	mes "ちょっと待ってくれ。";
+	mes "-カンカンカン-";
 	next;
-	mes "[�{�V��]";
-	mes "�悵�A�ł����I";
-	mes "���ꂪ��b[1]���B";
-	mes "�܂��~�����Ȃ�����";
-	mes "���ł����Ă���B";
+	mes "[ボシュ]";
+	mes "よし、できた！";
+	mes "これが手甲[1]だ。";
+	mes "また欲しくなったら";
+	mes "いつでも来てくれ。";
 	delitem 2102,1;
 	delitem 2117,1;
 	set Zeny,Zeny-10000;
@@ -1610,112 +1610,112 @@ L_Routine:
 }
 
 //==========================================
-// ��b������
+// 手甲改製作
 //------------------------------------------
-que_ng.gat,28,45,3	script	�o�b�V��	86,{
+que_ng.gat,28,45,3	script	バッシュ	86,{
 	if(BaseLevel < 50) {
-		mes "[�o�b�V��]";
-		mes "���͔E�җp�h�������Ă���";
-		mes "�o�b�V���ƌ����܂��B";
+		mes "[バッシュ]";
+		mes "私は忍者用防具を作っている";
+		mes "バッシュと言います。";
 		next;
-		mes "[�o�b�V��]";
-		mes "�������A���̐��삵���h���";
-		mes "��������ɂ͏���������̂ł��B";
-		mes "���������������Ă���A";
-		mes "�܂����Ă��������B";
+		mes "[バッシュ]";
+		mes "しかし、私の製作した防具を";
+		mes "装備するには条件があるのです。";
+		mes "もう少し成長してから、";
+		mes "また来てください。";
 		close;
 	}
 	if(countitem(2107) < 1 && ARMGARD_2QUE < 3) {
-		mes "[�o�b�V��]";
-		mes "����3�l�̔E�җp�h��E�l�̈�l�A";
-		mes "�o�b�V���Ƃ����܂��B";
-		mes "���Ȃ݂ɁA�c��̓�l��";
-		mes "���̌Z���񂽂��ł��B";
+		mes "[バッシュ]";
+		mes "私は3人の忍者用防具職人の一人、";
+		mes "バッシュといいます。";
+		mes "ちなみに、残りの二人は";
+		mes "私の兄さんたちです。";
 		next;
-		mes "[�o�b�V��]";
-		mes "���͌Z���񂽂��̌�������";
-		mes "�h��E�l�Ƃ���";
-		mes "���܂芈���ł��܂��񂪁A";
-		mes "�����̕������̖h���";
-		mes "�]�����Ă���Ă��܂��B";
+		mes "[バッシュ]";
+		mes "私は兄さんたちの肩書きで";
+		mes "防具職人として";
+		mes "あまり活動できませんが、";
+		mes "多くの方が私の防具を";
+		mes "評価してくれています。";
 		next;
-		mes "[�o�b�V��]";
-		mes "���͖h��Ɩ��@�ɂ���";
-		mes "�������Ă��܂��B";
+		mes "[バッシュ]";
+		mes "今は防具と魔法について";
+		mes "研究しています。";
 		next;
-		mes "[�o�b�V��]";
-		mes "�����łł����A�C�̔ޕ��̍��ɂ�";
-		mes "�~���[�V�[���h�Ƃ����h�";
-		mes "����炵���ł��ˁH";
-		mes "�������ɓ���邱�Ƃ�";
-		mes "�ł��܂��񂩁H";
+		mes "[バッシュ]";
+		mes "そこでですが、海の彼方の国には";
+		mes "ミラーシールドという防具が";
+		mes "あるらしいですね？";
+		mes "それを手に入れることは";
+		mes "できませんか？";
 		next;
-		mes "[�o�b�V��]";
-		mes "�����~���[�V�[���h��";
-		mes "���ׂ邱�Ƃ��ł���΁A";
-		mes "�������ƂĂ��i�݂܂��B";
-		mes "���̊肢�𕷂��Ă��炦�܂����H";
+		mes "[バッシュ]";
+		mes "もしミラーシールドを";
+		mes "調べることができれば、";
+		mes "研究がとても進みます。";
+		mes "私の願いを聞いてもらえますか？";
 		next;
-		if(select("�f��","�����ł���")==1) {
-			mes "[�o�b�V��]";
-			mes "��`";
-			mes "����ς薳���ȗ��݂ł������B";
-			mes "�\���󂠂�܂���B";
-			mes "�����~���[�V�[���h����ɓ����āA";
-			mes "�����ɂł����������́A";
-			mes "���ł����̏��ɂ��Ă��������B";
+		if(select("断る","いいですよ")==1) {
+			mes "[バッシュ]";
+			mes "ん～";
+			mes "やっぱり無理な頼みでしたか。";
+			mes "申し訳ありません。";
+			mes "もしミラーシールドが手に入って、";
+			mes "処分にでも困った時は、";
+			mes "いつでも私の所にきてください。";
 			close;
 		}
-		mes "[�o�b�V��]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "���A�X���b�g�͖������̂�";
-		mes "���肢���܂��ˁB";
-		mes "����ł͂��҂����Ă��܂��B";
+		mes "[バッシュ]";
+		mes "ありがとうございます。";
+		mes "ぁ、スロットは無いもので";
+		mes "お願いしますね。";
+		mes "それではお待ちしています。";
 		set ARMGARD_2QUE,1;
 		close;
 	}
 	if(ARMGARD_2QUE == 1) {
-		mes "[�o�b�V��]";
-		mes "���A��ɓ���Ă�����ł����H";
-		mes "��x�����Ă��������c�c";
-		mes "�c�c�ӂނӂށc�c";
+		mes "[バッシュ]";
+		mes "え、手に入れてきたんですか？";
+		mes "一度見せてください……";
+		mes "……ふむふむ……";
 		next;
-		mes "[�o�b�V��]";
-		mes "����ς�I";
-		mes "���̖h��݂�����";
-		mes "���@�ɑ΂���h��͂�";
-		mes "�t��������΁I";
+		mes "[バッシュ]";
+		mes "やっぱり！";
+		mes "この防具みたいに";
+		mes "魔法に対する防御力を";
+		mes "付け加えれば！";
 		next;
-		mes "[�o�b�V��]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "���Ȃ��������Ă��ꂽ";
-		mes "���̃~���[�V�[���h�̂�������";
-		mes "�����Ă����n��ӗ~��";
-		mes "��������܂����B";
+		mes "[バッシュ]";
+		mes "ありがとうございます。";
+		mes "あなたが見せてくれた";
+		mes "そのミラーシールドのおかげで";
+		mes "眠っていた創作意欲に";
+		mes "魂が入りました。";
 		next;
-		mes "[�o�b�V��]";
-		mes "�����悩������";
-		mes "��b1�A�~���[�V�[���h1�B";
-		mes "������2��Zeny�Ŏ�b����";
-		mes "����č����グ�܂����B";
-		mes "�ǂ����܂����H";
+		mes "[バッシュ]";
+		mes "もしよかったら";
+		mes "手甲1個、ミラーシールド1個。";
+		mes "そして2万Zenyで手甲改を";
+		mes "作って差し上げますが。";
+		mes "どうしますか？";
 		next;
-		if(select("�������Ă����܂�","���肢���܂�")==1) {
-			mes "[�o�b�V��]";
-			mes "���[��A�����ł����B";
-			mes "�c�O�ł��B";
-			mes "�����C���ς������";
-			mes "���ł����Ă��������B";
+		if(select("遠慮しておきます","お願いします")==1) {
+			mes "[バッシュ]";
+			mes "うーん、そうですか。";
+			mes "残念です。";
+			mes "もし気が変わったら";
+			mes "いつでも来てください。";
 			set ARMGARD_2QUE,0;
 			close;
 		}
-		mes "[�o�b�V��]";
-		mes "�킩��܂����B";
-		mes "�����h�L�h�L���܂��c�c";
+		mes "[バッシュ]";
+		mes "わかりました。";
+		mes "胸がドキドキします……";
 		next;
-		mes "[�o�b�V��]";
-		mes "�ł́A�p�ӂ��ł�����";
-		mes "�܂����Ă��������B";
+		mes "[バッシュ]";
+		mes "では、用意ができたら";
+		mes "また来てください。";
 		set ARMGARD_2QUE,2;
 		close;
 	}
@@ -1724,146 +1724,146 @@ que_ng.gat,28,45,3	script	�o�b�V��	86,{
 		close;
 	}
 	if(ARMGARD_2QUE == 3) {
-		mes "[�o�b�V��]";
-		mes "��������Ⴂ�܂��B";
-		mes "��b�����K�v��";
-		mes "��������������ł����H";
+		mes "[バッシュ]";
+		mes "いらっしゃいませ。";
+		mes "手甲改が必要で";
+		mes "いらっしゃったんですか？";
 		next;
-		if(select("����","�͂�")==1) {
-			mes "[�o�b�V��]";
-			mes "���[��A�����ł����B";
-			mes "�c�O�ł��B";
-			mes "�����C���ς������";
-			mes "���ł����Ă��������B";
+		if(select("いえ","はい")==1) {
+			mes "[バッシュ]";
+			mes "うーん、そうですか。";
+			mes "残念です。";
+			mes "もし気が変わったら";
+			mes "いつでも来てください。";
 			close;
 		}
 		callsub L_Routine;
 		close;
 	}
-	mes "[�o�b�V��]";
-	mes "���A������������";
-	mes "����̓~���[�V�[���h�Ƃ���";
-	mes "�h��Ⴀ��܂��񂩁H";
+	mes "[バッシュ]";
+	mes "あ、もしかしたら";
+	mes "それはミラーシールドという";
+	mes "防具じゃありませんか？";
 	next;
-	mes "[�o�b�V��]";
-	mes "�\���󂠂�܂��񂪁A";
-	mes "��x�����Ă��������c�c";
+	mes "[バッシュ]";
+	mes "申し訳ありませんが、";
+	mes "一度見せてください……";
 	next;
-	mes "[�o�b�V��]";
-	mes "����ς�I";
-	mes "���̖h��݂�����";
-	mes "���@�ɑ΂���h��͂�";
-	mes "�t��������΁I";
+	mes "[バッシュ]";
+	mes "やっぱり！";
+	mes "この防具みたいに";
+	mes "魔法に対する防御力を";
+	mes "付け加えれば！";
 	next;
-	mes "[�o�b�V��]";
-	mes "�����c�c";
-	mes "����w�A�ǂ����\��";
-	mes "�����o�������ł��I";
-	mes "�ǂ����Ă���ȊȒP�Ȏ���";
-	mes "�C�Â��Ȃ�������ł��傤�I";
+	mes "[バッシュ]";
+	mes "そう……";
+	mes "より一層、良い性能を";
+	mes "引き出せそうです！";
+	mes "どうしてこんな簡単な事に";
+	mes "気づかなかったんでしょう！";
 	next;
-	mes "[�o�b�V��]";
-	mes "���́A����3�l��";
-	mes "�E�җp�h��E�l�̈�l�A";
-	mes "�o�b�V���Ƃ����܂��B";
-	mes "���Ȃ݂ɁA�c��̓�l��";
-	mes "���̌Z���񂽂��ł��B";
+	mes "[バッシュ]";
+	mes "実は、私は3人の";
+	mes "忍者用防具職人の一人、";
+	mes "バッシュといいます。";
+	mes "ちなみに、残りの二人は";
+	mes "私の兄さんたちです。";
 	next;
-	mes "[�o�b�V��]";
-	mes "���͌Z���񂽂��̌�������";
-	mes "�h��E�l�Ƃ���";
-	mes "���܂芈���ł��܂��񂪁A";
-	mes "�����̕������̖h���";
-	mes "�]�����Ă���Ă��܂��B";
+	mes "[バッシュ]";
+	mes "私は兄さんたちの肩書きで";
+	mes "防具職人として";
+	mes "あまり活動できませんが、";
+	mes "多くの方が私の防具を";
+	mes "評価してくれています。";
 	next;
-	mes "[�o�b�V��]";
-	mes "���͖h��Ɩ��@�ɂ���";
-	mes "�������Ă��܂��B";
+	mes "[バッシュ]";
+	mes "今は防具と魔法について";
+	mes "研究しています。";
 	next;
-	mes "[�o�b�V��]";
-	mes "�����ŁA�C�̔ޕ��̍��ɂ���";
-	mes "�~���[�V�[���h�Ƃ����h���";
-	mes "�A�C�f�A���o�����Ƃ��Ă��܂������A";
-	mes "�Ȃ��Ȃ���ɓ���Ȃ���";
-	mes "����ʂĂĂ��܂����B";
+	mes "[バッシュ]";
+	mes "そこで、海の彼方の国にある";
+	mes "ミラーシールドという防具から";
+	mes "アイデアを出そうとしていましたが、";
+	mes "なかなか手に入らなくて";
+	mes "困り果てていました。";
 	next;
-	mes "[�o�b�V��]";
-	mes "�������A�^�ǂ�";
-	mes "���Ȃ��������Ă��ꂽ";
-	mes "���̃~���[�V�[���h�̂�������";
-	mes "�����Ă����n��ӗ~��";
-	mes "��������܂����B";
+	mes "[バッシュ]";
+	mes "しかし、運良く";
+	mes "あなたが見せてくれた";
+	mes "そのミラーシールドのおかげで";
+	mes "眠っていた創作意欲に";
+	mes "魂が入りました。";
 	next;
-	mes "[�o�b�V��]";
-	mes "�����悩������";
-	mes "��b1�A�~���[�V�[���h1�B";
-	mes "������2��Zeny�Ŏ�b����";
-	mes "����č����グ�܂����B";
-	mes "�ǂ����܂����H";
+	mes "[バッシュ]";
+	mes "もしよかったら";
+	mes "手甲1個、ミラーシールド1個。";
+	mes "そして2万Zenyで手甲改を";
+	mes "作って差し上げますが。";
+	mes "どうしますか？";
 	next;
-	if(select("�������Ă����܂�","���肢���܂�")==1) {
-		mes "[�o�b�V��]";
-		mes "���[��A�����ł����B";
-		mes "�c�O�ł��B";
-		mes "�����C���ς������";
-		mes "���ł����Ă��������B";
+	if(select("遠慮しておきます","お願いします")==1) {
+		mes "[バッシュ]";
+		mes "うーん、そうですか。";
+		mes "残念です。";
+		mes "もし気が変わったら";
+		mes "いつでも来てください。";
 		close;
 	}
 	callsub L_Routine;
 	close;
 L_Routine:
 	if(countitem(2107) < 1 || countitem(2117) < 1) {
-		mes "[�o�b�V��]";
-		mes "�ޗ����������";
-		mes "����Ȃ��悤�ł��ˁB";
-		mes "��b�������Ȃ�A";
-		mes "��b1�A�~���[�V�[���h1�B";
-		mes "������2��Zeny���K�v�ł��B";
-		mes "�m�F��A�܂����Ă��������B";
+		mes "[バッシュ]";
+		mes "材料がちょっと";
+		mes "足りないようですね。";
+		mes "手甲改を作るなら、";
+		mes "手甲1個、ミラーシールド1個。";
+		mes "そして2万Zenyが必要です。";
+		mes "確認後、また来てください。";
 		close;
 	}
 	if(Zeny < 20000) {
-		mes "[�o�b�V��]";
-		mes "�ޗ��͏\���ł����A";
-		mes "����������Ȃ��悤�ł��B";
-		mes "��b�������Ȃ�A";
-		mes "��b1�A�~���[�V�[���h1�B";
-		mes "������2��Zeny���K�v�ł��B";
-		mes "�m�F��A�܂����Ă��������B";
+		mes "[バッシュ]";
+		mes "材料は十分ですが、";
+		mes "お金が足りないようです。";
+		mes "手甲改を作るなら、";
+		mes "手甲1個、ミラーシールド1個。";
+		mes "そして2万Zenyが必要です。";
+		mes "確認後、また来てください。";
 		close;
 	}
-	mes "[�o�b�V��]";
-	mes "�ޗ��͂���";
-	mes "������Ă�݂����ł��ˁB";
-	mes "�ł́A�Ō�ɂ�����x�����܂��B";
+	mes "[バッシュ]";
+	mes "材料はもう";
+	mes "そろってるみたいですね。";
+	mes "では、最後にもう一度聞きます。";
 	next;
-	mes "[�o�b�V��]";
-	mes "��b���͖��@�ɑ΂���";
-	mes "�h��͂��オ�����ɁA";
-	mes "�����I�Ȗh��͂͑���";
-	mes "�����Ă��܂��܂��B";
+	mes "[バッシュ]";
+	mes "手甲改は魔法に対する";
+	mes "防御力が上がる代わりに、";
+	mes "物理的な防御力は多少";
+	mes "落ちてしまいます。";
 	next;
-	mes "[�o�b�V��]";
-	mes "����ł��A�����ė����ޗ���";
-	mes "��b�������܂����H";
+	mes "[バッシュ]";
+	mes "それでも、持って来た材料で";
+	mes "手甲改を作りますか？";
 	next;
-	if(select("������","�͂�")==1) {
-		mes "[�o�b�V��]";
-		mes "�킩��܂����B";
-		mes "�ł́A�l�����ς������";
-		mes "�܂����Ă��������B";
+	if(select("いいえ","はい")==1) {
+		mes "[バッシュ]";
+		mes "わかりました。";
+		mes "では、考えが変わったら";
+		mes "また来てください。";
 		close;
 	}
-	mes "[�o�b�V��]";
-	mes "�͂��A�ł�";
-	mes "�n�߂܂��傤���B";
-	mes "-�g���g���g��-";
-	mes "-�J���J���J���J��-";
+	mes "[バッシュ]";
+	mes "はい、では";
+	mes "始めましょうか。";
+	mes "-トントントン-";
+	mes "-カンカンカンカン-";
 	next;
-	mes "[�o�b�V��]";
-	mes "�ǂ����A���ꂪ��b���ł��B";
-	mes "�܂����ꂪ�K�v�ɂȂ�����";
-	mes "���ł����Ă��������B";
+	mes "[バッシュ]";
+	mes "どうぞ、これが手甲改です。";
+	mes "またこれが必要になったら";
+	mes "いつでも来てください。";
 	delitem 2107,1;
 	delitem 2117,1;
 	set Zeny,Zeny-20000;
@@ -1873,109 +1873,109 @@ L_Routine:
 }
 
 //==========================================
-// ��b��[1]����
+// 手甲改[1]製作
 //------------------------------------------
-que_ng.gat,27,18,3	script	�g�V��	709,{
-	mes "[�g�V��]";
-	mes "�����C���ȁH";
-	mes "�Ⴋ�F��B";
-	mes "���͔E�җp�h���";
-	mes "����Ă���3�Z��̈�l�B";
-	mes "�g�V���ƌ����B";
+que_ng.gat,27,18,3	script	トシュ	709,{
+	mes "[トシュ]";
+	mes "お元気かな？";
+	mes "若き友よ。";
+	mes "私は忍者用防具を";
+	mes "作っている3兄弟の一人。";
+	mes "トシュと言う。";
 	next;
-	mes "[�g�V��]";
-	mes "�C�̌�������";
-	mes "�h��ɃX���b�g��t����";
-	mes "�Z�p���w��ł����̂ŁA";
-	mes "���͂��̋Z�p���ő����";
-	mes "�����������B";
+	mes "[トシュ]";
+	mes "海の向こうで";
+	mes "防具にスロットを付ける";
+	mes "技術を学んできたので、";
+	mes "今はその技術を最大限に";
+	mes "生かしたい。";
 	next;
-	mes "[�g�V��]";
-	mes "������]����Ȃ�A";
-	mes "��b��1�A�o�b�N���[[1]��1�B";
-	mes "������4��Zeny�������Ă���΁A";
-	mes "��b���ɃX���b�g��";
-	mes "�t���Ă����悤�B";
+	mes "[トシュ]";
+	mes "もし希望するなら、";
+	mes "手甲改1個、バックラー[1]を1個。";
+	mes "そして4万Zenyを持ってくれば、";
+	mes "手甲改にスロットを";
+	mes "付けてあげよう。";
 	next;
-	mes "[�g�V��]";
-	mes "�����A���̋Z�p�͔��ɑ@�ׁB";
-	mes "���s����\������������B";
-	mes "���̎����悭�l���ė~�����B";
-	mes "����ł��X���b�g��t���Ă݂邩�H";
+	mes "[トシュ]";
+	mes "だが、この技術は非常に繊細。";
+	mes "失敗する可能性も多少ある。";
+	mes "その事をよく考えて欲しい。";
+	mes "それでもスロットを付けてみるか？";
 	next;
-	if(select("������","�͂�")==1) {
-		mes "[�g�V��]";
-		mes "�������ȁB";
-		mes "�T�d�Ȃق��������B";
-		mes "�������S��������";
-		mes "�܂�����Ƃ����B";
+	if(select("いいえ","はい")==1) {
+		mes "[トシュ]";
+		mes "そうだな。";
+		mes "慎重なほうがいい。";
+		mes "もし決心がついたら";
+		mes "また来るといい。";
 		close;
 	}
 	if(countitem(2104) < 1 || countitem(2119) < 1) {
-		mes "[�g�V��]";
-		mes "�ޗ�������Ȃ��悤���B";
-		mes "�ޗ��̓o�b�N���[[1]��1�A";
-		mes "��b��1�A������";
-		mes "4��Zeny���B";
-		mes "���ʂƋ��z�͐��m�ɁB";
+		mes "[トシュ]";
+		mes "材料が足りないようだ。";
+		mes "材料はバックラー[1]を1個、";
+		mes "手甲改1個、そして";
+		mes "4万Zenyだ。";
+		mes "数量と金額は正確に。";
 		close;
 	}
 	if(Zeny < 40000) {
-		mes "[�g�V��]";
-		mes "�ޗ��͏\�������A";
-		mes "����������Ȃ��ȁB";
+		mes "[トシュ]";
+		mes "材料は十分だが、";
+		mes "お金が足りないな。";
 		next;
-		mes "[�g�V��]";
-		mes "�ޗ��̓o�b�N���[[1]��1�A";
-		mes "��b��1�A������";
-		mes "4��Zeny���B";
-		mes "���ʂƋ��z�͐��m�ɁB";
+		mes "[トシュ]";
+		mes "材料はバックラー[1]を1個、";
+		mes "手甲改1個、そして";
+		mes "4万Zenyだ。";
+		mes "数量と金額は正確に。";
 		close;
 	}
-	mes "[�g�V��]";
-	mes "����B";
-	mes "�S�������Ă���B";
-	mes "�ł́A����ɓ���B";
+	mes "[トシュ]";
+	mes "うん。";
+	mes "全部揃っている。";
+	mes "では、製作に入る。";
 	next;
-	mes "[�g�V��]";
-	mes "������x�������A";
-	mes "���s����\��������B";
-	mes "����ł����邩�H";
+	mes "[トシュ]";
+	mes "もう一度言うが、";
+	mes "失敗する可能性がある。";
+	mes "それでもするか？";
 	next;
-	if(select("����ς��߂Ă����܂�","����ł����킵�܂�")==1) {
-		mes "[�g�V��]";
-		mes "�������ȁB";
-		mes "�T�d�Ȃق��������B";
-		mes "�������S��������";
-		mes "�܂�����Ƃ����B";
+	if(select("やっぱりやめておきます","それでも挑戦します")==1) {
+		mes "[トシュ]";
+		mes "そうだな。";
+		mes "慎重なほうがいい。";
+		mes "もし決心がついたら";
+		mes "また来るといい。";
 		close;
 	}
-	mes "[�g�V��]";
-	mes "�悵�A�킩�����B";
-	mes "�����҂��Ă���B";
-	mes "-�g���g���g�g���g��-";
-	mes "-�K�S���K�S��-";
+	mes "[トシュ]";
+	mes "よし、わかった。";
+	mes "少し待ってくれ。";
+	mes "-トントントトントン-";
+	mes "-ガゴンガゴン-";
 	next;
 	delitem 2104,1;
 	delitem 2119,1;
 	set Zeny,Zeny-40000;
 	if(rand(5) < 2) {
-		mes "[�g�V��]";
-		mes "���c�c";
-		mes "���߂��c�c���s�����B";
-		mes "�c�c���܂Ȃ��B";
-		mes "���l�тƂ����Ă͂Ȃ񂾂��A";
-		mes "����ł��H�ׂ�";
-		mes "���C���o���Ă���B";
+		mes "[トシュ]";
+		mes "く……";
+		mes "だめだ……失敗した。";
+		mes "……すまない。";
+		mes "お詫びといってはなんだが、";
+		mes "これでも食べて";
+		mes "元気を出してくれ。";
 		getitem 12043,1;
 		close;
 	}
-	mes "[�g�V��]";
-	mes "�悵�A���������B";
-	mes "���s���邩�S�z���������A";
-	mes "���v�������ȁB";
-	mes "�ł́A�܂��K�v�ɂȂ�����";
-	mes "���ł����Ă���B";
+	mes "[トシュ]";
+	mes "よし、完成した。";
+	mes "失敗するか心配だったが、";
+	mes "大丈夫だったな。";
+	mes "では、また必要になったら";
+	mes "いつでも来てくれ。";
 	getitem 2120,1;
 	close;
 }

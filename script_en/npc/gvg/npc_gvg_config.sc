@@ -1,9 +1,9 @@
 //=========================================================================
-// Uéí‚ÌŠJnEI—¹ƒ^ƒCƒ}[
-//	const.txt‚æ‚èİ’èŠÔ‚ğæ“¾
-//	iGvGWeekDay, GvGTimeST, GvGTimeST, GvGTime*ST, GvGTime*EDj
+// æ”»åŸæˆ¦ã®é–‹å§‹ãƒ»çµ‚äº†ã‚¿ã‚¤ãƒãƒ¼
+//	const.txtã‚ˆã‚Šè¨­å®šæ™‚é–“ã‚’å–å¾—
+//	ï¼ˆGvGWeekDay, GvGTimeST, GvGTimeST, GvGTime*ST, GvGTime*EDï¼‰
 //
-//@¡MAPƒT[ƒo‚ğ‹N“®‚µ‚Ä‚©‚ç60•bŒã‚ÉŠJn‚·‚é‚©‚Ç‚¤‚©‚ğ”»’f
+//ã€€â– MAPã‚µãƒ¼ãƒã‚’èµ·å‹•ã—ã¦ã‹ã‚‰60ç§’å¾Œã«é–‹å§‹ã™ã‚‹ã‹ã©ã†ã‹ã‚’åˆ¤æ–­
 //-------------------------------------------------------------------------
 
 -	script	#AgitConfig	-1,{
@@ -11,16 +11,16 @@
 OnInit:
 	if(GvGWeekDay == 0)
 		end;
-	//ŠJÃ—j“ú‚Ìƒrƒbƒgƒtƒ‰ƒO‚ª‚ ‚ê‚Î1‚ğƒZƒbƒg
+	//é–‹å‚¬æ›œæ—¥ã®ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°ãŒã‚ã‚Œã°1ã‚’ã‚»ãƒƒãƒˆ
 	for(set '@i,0; '@i<7; set '@i,'@i+1) {
 		set 'open['@i],(GvGWeekDay &(1<<'@i))? 1: 0;
 	}
-	//—j“ú‚ÅŠÔ‚ğ•Ï‚¦‚éê‡
+	//æ›œæ—¥ã§æ™‚é–“ã‚’å¤‰ãˆã‚‹å ´åˆ
 	if(GvGTimeST == GvGTimeED) {
 		setarray 'dbt,GvGTime0ST,GvGTime1ST,GvGTime2ST,GvGTime3ST,GvGTime4ST,GvGTime5ST,GvGTime6ST;
 		setarray 'fin,GvGTime0ED,GvGTime1ED,GvGTime2ED,GvGTime3ED,GvGTime4ED,GvGTime5ED,GvGTime6ED;
 	}
-	//–ˆ“ú“¯‚¶ŠÔ‚Ìê‡
+	//æ¯æ—¥åŒã˜æ™‚é–“ã®å ´åˆ
 	else {
 		cleararray 'dbt,GvGTimeST,7;
 		cleararray 'fin,GvGTimeED,7;
@@ -28,24 +28,24 @@ OnInit:
 	sleep 60000;
 	set '@day,gettime(4);
 	set '@min,gettime(3)*100+gettime(2);
-	//¡“ú‚ªŠJÃ“ú‚ÅŠ‚ÂŠù‚ÉŠJÃŠÔ’†‚È‚ç
+	//ä»Šæ—¥ãŒé–‹å‚¬æ—¥ã§ä¸”ã¤æ—¢ã«é–‹å‚¬æ™‚é–“ä¸­ãªã‚‰
 	if('open['@day] && '@min>='dbt['@day] && '@min<'fin['@day]) {
-		debugmes "UéíÄŠJ [ " +gettimestr("%H:%M",6)+ " ]";
+		debugmes "æ”»åŸæˆ¦å†é–‹ [ " +gettimestr("%H:%M",6)+ " ]";
 		agitstart;
 	}
-	sleep (60-gettime(1))*1000;	//•b‚ªŒJ‚èã‚ª‚é‚Ü‚Å‘Ò‹@
+	sleep (60-gettime(1))*1000;	//ç§’ãŒç¹°ã‚Šä¸ŠãŒã‚‹ã¾ã§å¾…æ©Ÿ
 
 OnTimer60000:
 	initnpctimer;
 	set '@day,gettime(4);
 	set '@min,gettime(3)*100+gettime(2);
 
-	//24I—¹‚Ì—áŠOˆ—
+	//24æ™‚çµ‚äº†ã®ä¾‹å¤–å‡¦ç†
 	if('@min == 0) {
 		set '@prev,('@day>0)? '@day-1: 6;
 		if('open['@prev] && 'fin['@prev]==2400) {
 			if('open['@day]==0 || 'dbt['@day]>0) {
-				debugmes "UéíI—¹ [ " +gettimestr("%H:%M",6)+ " ]";
+				debugmes "æ”»åŸæˆ¦çµ‚äº† [ " +gettimestr("%H:%M",6)+ " ]";
 				agitend;
 			}
 			end;
@@ -54,46 +54,46 @@ OnTimer60000:
 	if('open['@day]==0)
 		end;
 	if('@min == 'dbt['@day]) {
-		debugmes "UéíŠJn [ " +gettimestr("%H:%M",6)+ " ]";
+		debugmes "æ”»åŸæˆ¦é–‹å§‹ [ " +gettimestr("%H:%M",6)+ " ]";
 		agitstart;
 	}
 	else if('@min == 'fin['@day]) {
-		debugmes "UéíI—¹ [ " +gettimestr("%H:%M",6)+ " ]";
+		debugmes "æ”»åŸæˆ¦çµ‚äº† [ " +gettimestr("%H:%M",6)+ " ]";
 		agitend;
 	}
 	end;
 }
 
 
-//-----GMê—pƒfƒoƒbƒOƒ‚[ƒh-----
+//-----GMå°‚ç”¨ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰-----
 //===========================================================
 //prontera.gat,152,208,0	script	GvG-Control	111,{
 //	if(getgmlevel(0)==0)
 //		end;
-//	mes "[GvG-Control^ff0000(GMê—p)^000000]";
-//	mes "Uéíƒ‚[ƒhİ’è";
+//	mes "[GvG-Control^ff0000(GMå°‚ç”¨)^000000]";
+//	mes "æ”»åŸæˆ¦ãƒ¢ãƒ¼ãƒ‰è¨­å®š";
 //	next;
-//	switch (select("ŠJn","’â~","ƒfƒoƒbƒO","ƒLƒƒƒ“ƒZƒ‹")) {
+//	switch (select("é–‹å§‹","åœæ­¢","ãƒ‡ãƒãƒƒã‚°","ã‚­ãƒ£ãƒ³ã‚»ãƒ«")) {
 //	case 1:
-//		announce "UéíŠJn",0;
+//		announce "æ”»åŸæˆ¦é–‹å§‹",0;
 //		agitstart;
 //		break;
 //	case 2:
-//		announce "UéíI—¹",0;
+//		announce "æ”»åŸæˆ¦çµ‚äº†",0;
 //		agitend;
 //		break;
 //	case 3:
-//		setarray '@chr$,"“ú","Œ","‰Î","…","–Ø","‹à","“y";
+//		setarray '@chr$,"æ—¥","æœˆ","ç«","æ°´","æœ¨","é‡‘","åœŸ";
 //		for(set '@i,0; '@i<7; set '@i,'@i+1)
-//			mes '@chr$['@i]+ "—j“ú F " +(getelementofarray( getvariableofnpc('open,"#AgitConfig"),'@i ))? "›": "~";
+//			mes '@chr$['@i]+ "æ›œæ—¥ ï¼š " +(getelementofarray( getvariableofnpc('open,"#AgitConfig"),'@i ))? "â—‹": "Ã—";
 //		next;
 //		if(GvGTimeST != GvGTimeED) {
-//			mes "–ˆ‰ñ@" +GvGTimeST+ " ` " +GvGTimeED;
+//			mes "æ¯å›ã€€" +GvGTimeST+ " ï½ " +GvGTimeED;
 //			break;
 //		}
 //		for(set '@i,0; '@i<7; set '@i,'@i+1) {
-//			mes '@chr$['@i]+ "—j“ú F " +getelementofarray( getvariableofnpc('dbt,"#AgitConfig"),'@i )+
-//						" ` " +getelementofarray( getvariableofnpc('fin,"#AgitConfig"),'@i );
+//			mes '@chr$['@i]+ "æ›œæ—¥ ï¼š " +getelementofarray( getvariableofnpc('dbt,"#AgitConfig"),'@i )+
+//						" ï½ " +getelementofarray( getvariableofnpc('fin,"#AgitConfig"),'@i );
 //		}
 //		break;
 //	}

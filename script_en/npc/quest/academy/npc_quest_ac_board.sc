@@ -1,153 +1,153 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- –`Œ¯ÒƒAƒJƒfƒ~[  ˆÄ“à”Â
+// Ragnarok Online -- å†’é™ºè€…ã‚¢ã‚«ãƒ‡ãƒŸãƒ¼  æ¡ˆå†…æ¿
 //                                                  by Pneuma
 //------------------------------------------------------------
 
-ac_en_hall.gat,110,10,6	script	ˆÄ“à”Â	837,{
+ac_en_hall.gat,110,10,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide12.bmp",2;
-	mes "[ƒGƒ“ƒgƒ‰ƒ“ƒX]";
-	mes "‚±‚ÌæA}‘º";
+	mes "[ã‚¨ãƒ³ãƒˆãƒ©ãƒ³ã‚¹]";
+	mes "ã“ã®å…ˆã€å›³æ›¸å®¤";
 	close2;
 	cutin "ad_ac_guide12.bmp",255;
 	end;
 }
 
-ac_library.gat,30,65,6	script	ˆÄ“à”Â	837,{
+ac_library.gat,30,65,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide16.bmp",2;
-	mes "[}‘º]";
-	mes "‚±‚±‚Í}‘º‚Æ‚È‚è‚Ü‚·B";
-	mes "}‘º‚É‚Í‘½‚­‚Ì‘•¨‚ª‚ ‚èA";
-	mes "‚¢‚ë‚¢‚ë‚È‚±‚Æ‚ğ";
-	mes "’²‚×‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B";
+	mes "[å›³æ›¸å®¤]";
+	mes "ã“ã“ã¯å›³æ›¸å®¤ã¨ãªã‚Šã¾ã™ã€‚";
+	mes "å›³æ›¸å®¤ã«ã¯å¤šãã®æ›¸ç‰©ãŒã‚ã‚Šã€";
+	mes "ã„ã‚ã„ã‚ãªã“ã¨ã‚’";
+	mes "èª¿ã¹ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚";
 	close2;
 	cutin "ad_ac_guide16.bmp",255;
 	end;
 }
 
-ac_library.gat,108,63,6	script	ˆÄ“à”Â	837,{
+ac_library.gat,108,63,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide14.bmp",2;
-	mes "[}‘º]";
-	mes "Ÿ‘€ìŒnŠÖ˜A‚Ì•”‰®";
+	mes "[å›³æ›¸å®¤]";
+	mes "â—†æ“ä½œç³»é–¢é€£ã®éƒ¨å±‹";
 	close2;
 	cutin "ad_ac_guide14.bmp",255;
 	end;
 }
 
-ac_library.gat,109,52,6	script	ˆÄ“à”Â	837,{
+ac_library.gat,109,52,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide13.bmp",2;
-	mes "[}‘º]";
-	mes "Ÿ’m¯ŠÖ˜AAí“¬ŠÖ˜A‚Ì•”‰®";
+	mes "[å›³æ›¸å®¤]";
+	mes "â—†çŸ¥è­˜é–¢é€£ã€æˆ¦é—˜é–¢é€£ã®éƒ¨å±‹";
 	close2;
 	cutin "ad_ac_guide13.bmp",255;
 	end;
 }
 
-ac_library.gat,120,61,6	script	ˆÄ“à”Â	837,{
+ac_library.gat,120,61,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide15.bmp",2;
-	mes "[}‘º]";
-	mes "ŸƒRƒ~ƒ…ƒjƒeƒBŠÖ˜AA¶ŠˆŠÖ˜A‚Ì•”‰®";
+	mes "[å›³æ›¸å®¤]";
+	mes "â—†ã‚³ãƒŸãƒ¥ãƒ‹ãƒ†ã‚£é–¢é€£ã€ç”Ÿæ´»é–¢é€£ã®éƒ¨å±‹";
 	close2;
 	cutin "ad_ac_guide15.bmp",255;
 	end;
 }
 
-ac_en_hall.gat,86,10,6	script	ˆÄ“à”Â	837,{
+ac_en_hall.gat,86,10,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide11.bmp",2;
-	mes "[ƒGƒ“ƒgƒ‰ƒ“ƒX]";
-	mes "‚±‚ÌæA‹³º“";
-	mes "ó•tAuKºA©KºA";
-	mes "Œ¤‹†ºAŒ±ºA‘—¿º";
-	mes "ÀKºA“Á•Êº";
+	mes "[ã‚¨ãƒ³ãƒˆãƒ©ãƒ³ã‚¹]";
+	mes "ã“ã®å…ˆã€æ•™å®¤æ£Ÿ";
+	mes "å—ä»˜ã€è¬›ç¿’å®¤ã€è‡ªç¿’å®¤ã€";
+	mes "ç ”ç©¶å®¤ã€è©¦é¨“å®¤ã€è³‡æ–™å®¤";
+	mes "å®Ÿç¿’å®¤ã€ç‰¹åˆ¥å®¤";
 	close2;
 	cutin "ad_ac_guide11.bmp",255;
 	end;
 }
 
-ac_cl_hall.gat,172,71,6	script	ˆÄ“à”Â	837,{
+ac_cl_hall.gat,172,71,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide07.bmp",2;
-	mes "[‹³º“ƒz[ƒ‹]";
-	mes "‚±‚ÌæA‹³º“1F";
-	mes "ó•tAuKºA©KºA";
-	mes "Œ¤‹†ºAŒ±ºA‘—¿º";
+	mes "[æ•™å®¤æ£Ÿãƒ›ãƒ¼ãƒ«]";
+	mes "ã“ã®å…ˆã€æ•™å®¤æ£Ÿ1F";
+	mes "å—ä»˜ã€è¬›ç¿’å®¤ã€è‡ªç¿’å®¤ã€";
+	mes "ç ”ç©¶å®¤ã€è©¦é¨“å®¤ã€è³‡æ–™å®¤";
 	close2;
 	cutin "ad_ac_guide07.bmp",255;
 	end;
 }
 
-ac_cl_hall.gat,163,63,6	script	ˆÄ“à”Â	837,{
+ac_cl_hall.gat,163,63,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide08.bmp",2;
-	mes "[‹³º“ƒz[ƒ‹]";
-	mes "ŸÀKºE“Á•Êº@“üŒû";
+	mes "[æ•™å®¤æ£Ÿãƒ›ãƒ¼ãƒ«]";
+	mes "â—†å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤ã€€å…¥å£";
 	mes " ";
-	mes "Lv1`55‚Ì–`Œ¯Ò‚Ì•ûê—p";
-	mes "ƒm[ƒrƒXAˆêŸEA";
-	mes "“ÁêˆêŸE‚Ì–`Œ¯Ò‚Ì";
-	mes "ÀKºE“Á•Êº";
+	mes "Lv1ï½55ã®å†’é™ºè€…ã®æ–¹å°‚ç”¨";
+	mes "ãƒãƒ¼ãƒ“ã‚¹ã€ä¸€æ¬¡è·ã€";
+	mes "ç‰¹æ®Šä¸€æ¬¡è·ã®å†’é™ºè€…ã®";
+	mes "å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤";
 	close2;
 	cutin "ad_ac_guide08.bmp",255;
 	end;
 }
-ac_cl_hall.gat,160,45,6	script	ˆÄ“à”Â	837,{
+ac_cl_hall.gat,160,45,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide10.bmp",2;
-	mes "[‹³º“ƒz[ƒ‹]";
-	mes "ŸÀKºE“Á•Êº@“üŒû";
+	mes "[æ•™å®¤æ£Ÿãƒ›ãƒ¼ãƒ«]";
+	mes "â—†å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤ã€€å…¥å£";
 	mes " ";
-	mes "Lv1`55‚Ì–`Œ¯Ò‚Ì•ûê—p";
-	mes "ƒm[ƒrƒXAˆêŸEA";
-	mes "“ÁêˆêŸE‚Ì–`Œ¯Ò‚Ì";
-	mes "ÀKºE“Á•Êº";
+	mes "Lv1ï½55ã®å†’é™ºè€…ã®æ–¹å°‚ç”¨";
+	mes "ãƒãƒ¼ãƒ“ã‚¹ã€ä¸€æ¬¡è·ã€";
+	mes "ç‰¹æ®Šä¸€æ¬¡è·ã®å†’é™ºè€…ã®";
+	mes "å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤";
 	close2;
 	cutin "ad_ac_guide10.bmp",255;
 	end;
 }
-ac_cl_hall.gat,174,25,6	script	ˆÄ“à”Â	837,{
+ac_cl_hall.gat,174,25,6	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide09.bmp",2;
-	mes "[‹³º“ƒz[ƒ‹]";
-	mes "ŸÀKºE“Á•Êº@“üŒû";
+	mes "[æ•™å®¤æ£Ÿãƒ›ãƒ¼ãƒ«]";
+	mes "â—†å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤ã€€å…¥å£";
 	mes " ";
-	mes "Lv1`55‚Ì–`Œ¯Ò‚Ì•ûê—p";
-	mes "ƒm[ƒrƒXAˆêŸEA";
-	mes "“ÁêˆêŸE‚Ì–`Œ¯Ò‚Ì";
-	mes "ÀKºE“Á•Êº";
+	mes "Lv1ï½55ã®å†’é™ºè€…ã®æ–¹å°‚ç”¨";
+	mes "ãƒãƒ¼ãƒ“ã‚¹ã€ä¸€æ¬¡è·ã€";
+	mes "ç‰¹æ®Šä¸€æ¬¡è·ã®å†’é™ºè€…ã®";
+	mes "å®Ÿç¿’å®¤ãƒ»ç‰¹åˆ¥å®¤";
 	close2;
 	cutin "ad_ac_guide09.bmp",255;
 	end;
 }
 
-ac_cl_room.gat,46,29,6	script	ó•tAuKº	837,{
+ac_cl_room.gat,46,29,6	script	å—ä»˜ã€è¬›ç¿’å®¤	837,{
 	cutin "ad_ac_guide17.bmp",2;
-	mes "[‹³º“1F]";
-	mes "Ÿó•t";
-	mes "ŸuKº";
+	mes "[æ•™å®¤æ£Ÿ1F]";
+	mes "â—†å—ä»˜";
+	mes "â—†è¬›ç¿’å®¤";
 	close2;
 	cutin "ad_ac_guide17.bmp",255;
 	end;
 }
 
-ac_cl_room.gat,156,25,4	script	©Kº	837,{
+ac_cl_room.gat,156,25,4	script	è‡ªç¿’å®¤	837,{
 	cutin "ad_ac_guide18.bmp",2;
-	mes "[‹³º“1F]";
-	mes "Ÿ©Kº";
+	mes "[æ•™å®¤æ£Ÿ1F]";
+	mes "â—†è‡ªç¿’å®¤";
 	close2;
 	cutin "ad_ac_guide18.bmp",255;
 	end;
 }
 
-// ˆÄ“à”Â
-ac_cl_area.gat,39,172,4	script	ˆÄ“à”Â	837,{
+// æ¡ˆå†…æ¿
+ac_cl_area.gat,39,172,4	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide05.bmp",2;
-	mes "[‹³º“1F]";
-	mes "Ÿ©Kº";
+	mes "[æ•™å®¤æ£Ÿ1F]";
+	mes "â—†è‡ªç¿’å®¤";
 	close2;
 	cutin "ad_ac_guide05.bmp",255;
 	end;
 }
-ac_cl_area.gat,39,136,4	script	ˆÄ“à”Â	837,1,4,{
+ac_cl_area.gat,39,136,4	script	æ¡ˆå†…æ¿	837,1,4,{
 	cutin "ad_ac_guide06.bmp",2;
-	mes "[‹³º“1F]";
-	mes "ŸuKº";
+	mes "[æ•™å®¤æ£Ÿ1F]";
+	mes "â—†è¬›ç¿’å®¤";
 	close2;
 	cutin "ad_ac_guide06.bmp",255;
 	end;
@@ -158,53 +158,53 @@ OnTouch:
 	}
 }
 
-ac_cl_area.gat,65,12,4	script	ˆÄ“à”Â	837,{
+ac_cl_area.gat,65,12,4	script	æ¡ˆå†…æ¿	837,{
 	cutin "ad_ac_guide04.bmp",2;
-	mes "[‹³º“2F]";
-	mes "Ÿ‘—¿º";
-	mes "ŸŒ¤‹†º";
-	mes "ŸŒ±º";
-	mes "Ÿu‹`º";
+	mes "[æ•™å®¤æ£Ÿ2F]";
+	mes "â—†è³‡æ–™å®¤";
+	mes "â—†ç ”ç©¶å®¤";
+	mes "â—†è©¦é¨“å®¤";
+	mes "â—†è¬›ç¾©å®¤";
 	close2;
 	cutin "ad_ac_guide04.bmp",255;
 	end;
 }
 
-ac_cl_area.gat,76,60,4	script	Œ¤‹†º	837,{
+ac_cl_area.gat,76,60,4	script	ç ”ç©¶å®¤	837,{
 	cutin "ad_ac_guide02.bmp",2;
-	mes "[Œ¤‹†º]";
-	mes "‚±‚±‚ÍŒ¤‹†º‚É‚È‚è‚Ü‚·B";
-	mes "Œ¤‹†º‚Å‚ÍA";
-	mes "Œ»İŒ¤‹†ˆõ‚ğ•åW’†‚Å‚·B";
+	mes "[ç ”ç©¶å®¤]";
+	mes "ã“ã“ã¯ç ”ç©¶å®¤ã«ãªã‚Šã¾ã™ã€‚";
+	mes "ç ”ç©¶å®¤ã§ã¯ã€";
+	mes "ç¾åœ¨ç ”ç©¶å“¡ã‚’å‹Ÿé›†ä¸­ã§ã™ã€‚";
 	close2;
 	cutin "ad_ac_guide02.bmp",255;
 	end;
 }
 
-ac_cl_area.gat,49,53,4	script	u‹`º	837,{
+ac_cl_area.gat,49,53,4	script	è¬›ç¾©å®¤	837,{
 	cutin "ad_ac_guide19.bmp",2;
-	mes "[u‹`º]";
-	mes "‚±‚±‚Íu‹`º‚É‚È‚è‚Ü‚·B";
-	mes "‚³‚Ü‚´‚Ü‚Èu‹`‚ªs‚í‚ê‚éêŠ‚Å‚·B";
+	mes "[è¬›ç¾©å®¤]";
+	mes "ã“ã“ã¯è¬›ç¾©å®¤ã«ãªã‚Šã¾ã™ã€‚";
+	mes "ã•ã¾ã–ã¾ãªè¬›ç¾©ãŒè¡Œã‚ã‚Œã‚‹å ´æ‰€ã§ã™ã€‚";
 	close2;
 	cutin "ad_ac_guide19.bmp",255;
 	end;
 }
 
-ac_cl_area.gat,26,43,4	script	‘—¿º	837,{
+ac_cl_area.gat,26,43,4	script	è³‡æ–™å®¤	837,{
 	cutin "ad_ac_guide01",2;
-	mes "[‘—¿º]";
-	mes "‚±‚±‚Í‘—¿º‚É‚È‚è‚Ü‚·B";
-	mes "‘òR‚Ì‘ ‘‚ğŠÇ—‚µ‚Ä‚¢‚Ü‚·B";
+	mes "[è³‡æ–™å®¤]";
+	mes "ã“ã“ã¯è³‡æ–™å®¤ã«ãªã‚Šã¾ã™ã€‚";
+	mes "æ²¢å±±ã®è”µæ›¸ã‚’ç®¡ç†ã—ã¦ã„ã¾ã™ã€‚";
 	close2;
 	cutin "ad_ac_guide01",255;
 	end;
 }
-ac_cl_area.gat,76,39,4	script	Œ±º	837,{
+ac_cl_area.gat,76,39,4	script	è©¦é¨“å®¤	837,{
 	cutin "ad_ac_guide03.bmp",2;
-	mes "[Œ±º]";
-	mes "‚±‚±‚ÍŒ±º‚É‚È‚è‚Ü‚·B";
-	mes "‚³‚Ü‚´‚Ü‚ÈŒ±‚ªs‚í‚ê‚éêŠ‚Å‚·B";
+	mes "[è©¦é¨“å®¤]";
+	mes "ã“ã“ã¯è©¦é¨“å®¤ã«ãªã‚Šã¾ã™ã€‚";
+	mes "ã•ã¾ã–ã¾ãªè©¦é¨“ãŒè¡Œã‚ã‚Œã‚‹å ´æ‰€ã§ã™ã€‚";
 	close2;
 	cutin "ad_ac_guide03.bmp",255;
 	end;

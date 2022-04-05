@@ -1,700 +1,700 @@
 //==============================================================================
 // Ragnarok Online Diamond Gambling Script     by Chiffon
 //==============================================================================
-comodo.gat,219,158,6	script	ƒJƒ`ƒ…ƒA	91,{
+comodo.gat,219,158,6	script	ã‚«ãƒãƒ¥ã‚¢	91,{
 	cutin "katsua01",2;
-	mes "[ƒJƒ`ƒ…ƒA]";
-	mes "ˆÈ‘O‚ÉŒ©‚½A‚ ‚Ì‚Æ‚Ä‚à‘å‚«‚È";
-	mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒhB‚«‚ê‚¢‚¾‚Á‚½‚È[B";
-	mes "‚ ‚ê‚Í‚RƒJƒ‰ƒbƒg‚­‚ç‚¢‚©‚µ‚çB";
-	mes "‚·‚²‚­—~‚µ‚¢‚Ècc‚Ç‚¤‚·‚ê‚Î";
-	mes "è‚É“ü‚é‚Ì‚©‚µ‚çH";
+	mes "[ã‚«ãƒãƒ¥ã‚¢]";
+	mes "ä»¥å‰ã«è¦‹ãŸã€ã‚ã®ã¨ã¦ã‚‚å¤§ããª";
+	mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã€‚ãã‚Œã„ã ã£ãŸãªãƒ¼ã€‚";
+	mes "ã‚ã‚Œã¯ï¼“ã‚«ãƒ©ãƒƒãƒˆãã‚‰ã„ã‹ã—ã‚‰ã€‚";
+	mes "ã™ã”ãæ¬²ã—ã„ãªâ€¦â€¦ã©ã†ã™ã‚Œã°";
+	mes "æ‰‹ã«å…¥ã‚‹ã®ã‹ã—ã‚‰ï¼Ÿ";
 	next;
-	if(select("‚ ‚°‚Ü‚µ‚å‚¤‚©H","Œ³‹C‚ğo‚µ‚Ä‚­‚¾‚³‚¢")==2) {
-		mes "[ƒJƒ`ƒ…ƒA]";
-		mes "ˆÔ‚ß‚Ä‚­‚ê‚Ä‚ ‚è‚ª‚Æ‚¤B";
-		mes "‚ ‚ [A‚à‚µ‚»‚Ìƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ª";
-		mes "è‚É“ü‚é‚Ì‚È‚çA„‚Ì‘å–‚È";
-		mes "ƒRƒŒƒNƒVƒ‡ƒ“‚·‚çŠì‚ñ‚Å";
-		mes "·‚µo‚·‚Ì‚Écc";
+	if(select("ã‚ã’ã¾ã—ã‚‡ã†ã‹ï¼Ÿ","å…ƒæ°—ã‚’å‡ºã—ã¦ãã ã•ã„")==2) {
+		mes "[ã‚«ãƒãƒ¥ã‚¢]";
+		mes "æ…°ã‚ã¦ãã‚Œã¦ã‚ã‚ŠãŒã¨ã†ã€‚";
+		mes "ã‚ã‚ãƒ¼ã€ã‚‚ã—ãã®ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ãŒ";
+		mes "æ‰‹ã«å…¥ã‚‹ã®ãªã‚‰ã€ç§ã®å¤§äº‹ãª";
+		mes "ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã™ã‚‰å–œã‚“ã§";
+		mes "å·®ã—å‡ºã™ã®ã«â€¦â€¦";
 		close2;
 		cutin "katsua01",255;
 		end;
 	}
 	if(countitem(732)<1) {
 		cutin "katsua03",2;
-		mes "[ƒJƒ`ƒ…ƒA]";
-		mes "‚Ó‚ñI";
-		mes "–{“–‚Íƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğ‚Á‚Ä";
-		mes "‚¢‚È‚¢‚Ì‚ÉA‚Ç‚¤‚µ‚Ä‚Á‚Ä‚¢‚é";
-		mes "‚©‚Ì‚æ‚¤‚È‘fU‚è‚ğ‚·‚é‚ÌH";
-		mes "„‚ğ”n­‚É‚·‚é‚Â‚à‚è‚Å‚·‚©H";
+		mes "[ã‚«ãƒãƒ¥ã‚¢]";
+		mes "ãµã‚“ï¼";
+		mes "æœ¬å½“ã¯ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’æŒã£ã¦";
+		mes "ã„ãªã„ã®ã«ã€ã©ã†ã—ã¦æŒã£ã¦ã„ã‚‹";
+		mes "ã‹ã®ã‚ˆã†ãªç´ æŒ¯ã‚Šã‚’ã™ã‚‹ã®ï¼Ÿ";
+		mes "ç§ã‚’é¦¬é¹¿ã«ã™ã‚‹ã¤ã‚‚ã‚Šã§ã™ã‹ï¼Ÿ";
 		close2;
 		cutin "katsua03",255;
 		end;
 	}
 	if((MaxWeight - Weight) < 5500) {
-		mes "[ƒJƒ`ƒ…ƒA]";
-		mes "‚ ‚çA‚»‚ñ‚È‚É‚½‚­‚³‚ñ‚Ì‰×•¨‚ª";
-		mes "‚ ‚é‚ÆA‚¨—ç‚ğ‚¨“n‚µ‚Å‚«‚È‚¢‚íB";
-		mes "­‚µ‘qŒÉ‚É—a‚¯‚Ä‚«‚Ä‚­‚¾‚³‚¢‚ËB";
+		mes "[ã‚«ãƒãƒ¥ã‚¢]";
+		mes "ã‚ã‚‰ã€ãã‚“ãªã«ãŸãã•ã‚“ã®è·ç‰©ãŒ";
+		mes "ã‚ã‚‹ã¨ã€ãŠç¤¼ã‚’ãŠæ¸¡ã—ã§ããªã„ã‚ã€‚";
+		mes "å°‘ã—å€‰åº«ã«é ã‘ã¦ãã¦ãã ã•ã„ã­ã€‚";
 		close2;
 		cutin "katsua01",255;
 		end;
 	}
 	cutin "katsua02",2;
-	mes "[ƒJƒ`ƒ…ƒA]";
-	mes "‚¦‚¦‚Á?!";
-	mes "–{“–‚É‚¢‚¢‚ñ‚Å‚·‚©H";
-	mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·[B";
-	mes "‚Å‚Í‚¨—ç‚ÉA„‚ÌƒRƒŒƒNƒVƒ‡ƒ“‚ğ";
-	mes "ˆê‚Â·‚µã‚°‚Ü‚µ‚å‚¤B";
+	mes "[ã‚«ãƒãƒ¥ã‚¢]";
+	mes "ãˆãˆã£?!";
+	mes "æœ¬å½“ã«ã„ã„ã‚“ã§ã™ã‹ï¼Ÿ";
+	mes "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ãƒ¼ã€‚";
+	mes "ã§ã¯ãŠç¤¼ã«ã€ç§ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã‚’";
+	mes "ä¸€ã¤å·®ã—ä¸Šã’ã¾ã—ã‚‡ã†ã€‚";
 	next;
-	mes "[ƒJƒ`ƒ…ƒA]";
-	mes "‚Ç‚¿‚ç‚ğ‚¨–]‚İ‚Å‚µ‚å‚¤‚©H";
+	mes "[ã‚«ãƒãƒ¥ã‚¢]";
+	mes "ã©ã¡ã‚‰ã‚’ãŠæœ›ã¿ã§ã—ã‚‡ã†ã‹ï¼Ÿ";
 	next;
-	switch(select("•Ší","ŠZ","Œ¨‚É‚©‚¯‚é•¨","Š•","ŒC","‚")) {
-	case 1:	//•Ší
+	switch(select("æ­¦å™¨","é§","è‚©ã«ã‹ã‘ã‚‹ç‰©","å…œ","é´","ç›¾")) {
+	case 1:	//æ­¦å™¨
 		set '@gamble,rand(1000);
 		if('@gamble >= 920 && '@gamble < 930) {
 			set '@gamble,rand(85);
 			switch('@gamble) {
-				case 0: getitem 1128,1; break;	//ŠC“ŒŒ•[2]
-				case 1: getitem 1120,1; break;	//ƒcƒ‹ƒM[2]
-				case 2: getitem 1127,1; break;	//ƒT[ƒxƒ‹[3]
-				case 3: getitem 1158,1; break;	//ƒc[ƒnƒ“ƒhƒ\[ƒh[2]
-				case 4: getitem 1155,1; break;	//ƒoƒXƒ^[ƒhƒ\[ƒh[3]
-				case 5: getitem 1220,1; break;	//ƒOƒ‰ƒfƒBƒEƒX[3]
-				case 6: getitem 1226,1; break;	//ƒ_ƒ}ƒXƒJƒX[2]
-				case 7: getitem 1253,1; break;	//ƒJƒ^[ƒ‹[2]
-				case 8: getitem 1529,1; break;	//ƒAƒCƒAƒ“ƒhƒ‰ƒCƒo[
-				case 9: getitem 1251,1; break;	//ƒWƒ…ƒ‹[3]
-				case 10: getitem 1361,1; break;	//ƒc[ƒnƒ“ƒhƒAƒbƒNƒX[2]
-				case 11: getitem 1258,1; break;	//”š‰Š‚ÌƒJƒ^[ƒ‹
-				case 12: getitem 1257,1; break;	//ë‚Á‚Ä‚é‚¢‚Î‚ç‚ÌƒJƒ^[ƒ‹
-				case 13: getitem 1256,1; break;	//—â‚½‚¢•X’Œ‚ÌƒJƒ^[ƒ‹
-				case 14: getitem 1259,1; break;	//¾•—‚ÌƒJƒ^[ƒ‹
-				case 15: getitem 1260,1; break;	//ƒfƒXƒiƒCƒt
-				case 16: getitem 1716,1; break;	//Šp‹|[2]
-				case 17: getitem 1715,1; break;	//ƒA[ƒoƒŒƒXƒg[2]
-				case 18: getitem 1711,1; break;	//ƒNƒƒXƒ{ƒE[3]
-				case 19: getitem 1702,1; break;	//ƒ{ƒE[4]
-				case 20: getitem 1520,1; break;	//ƒ`ƒFƒCƒ“[3]
-				case 21: getitem 1611,1; break;	//ƒA[ƒNƒƒ“ƒh[2]
-				case 22: getitem 1615,1; break;	//Š[œ‚Ìñ
-				case 23: getitem 1602,1; break;	//ƒƒbƒh[4]
-				case 24: getitem 1461,1; break;	//ƒgƒ‰ƒCƒfƒ“ƒg[3]
-				case 25: getitem 1402,1; break;	//ƒWƒƒƒxƒŠƒ“[4]
-				case 26: getitem 1961,1; break;	//ƒzƒCƒbƒv[2]
-				case 27: getitem 1957,1; break;	//ƒ‰ƒ“ƒe[1]
-				case 28: getitem 1552,1; break;	//ƒ^ƒuƒŒƒbƒg[1]
-				case 29: getitem 1551,1; break;	//ƒoƒCƒuƒ‹[2]
-				case 30: getitem 1553,1; break;	//r‚ê‹¶‚¤”g‚Ì‘
-				case 31: getitem 1554,1; break;	//—ô‚¯‚½‘å’n‚Ì‘
-				case 32: getitem 1555,1; break;	//”R‚¦‚é‘¾—z‚Ì‘
-				case 33: getitem 1556,1; break;	//Š£‚¢‚Ä‚é•—‚Ì‘
-				case 34: getitem 1951,1; break;	//ƒ[ƒv[4]
-				case 35: getitem 1959,1; break;	//ƒeƒCƒ‹[2]
-				case 36: getitem 1953,1; break;	//ƒ‰ƒCƒ“[3]
-				case 37: getitem 1955,1; break;	//ƒƒCƒ„[[3]
-				case 38: getitem 1810,1; break;	//ƒNƒ[[2]
-				case 39: getitem 1910,1; break;	//ƒn[ƒv[2]
-				case 40: getitem 1906,1; break;	//ƒŠƒ…[ƒg[3]
-				case 41: getitem 1902,1; break;	//ƒoƒCƒIƒŠƒ“[4]
-				case 42: getitem 1904,1; break;	//ƒ}ƒ“ƒhƒŠƒ“[3]
-				case 43: getitem 1912,1; break;	//ƒSƒ€ƒ“ƒS[2]
-				case 44: getitem 1908,1; break;	//ƒMƒ^[[1]
-				case 45: getitem 1808,1; break;	//ƒtƒBƒXƒg[1]
-				case 46: getitem 1802,1; break;	//ƒoƒOƒiƒE[4]
-				case 47: getitem 1812,1; break;	//ƒtƒBƒ“ƒK[[2]
-				case 48: getitem 1806,1; break;	//ƒzƒ‰[3]
-				case 49: getitem 1804,1; break;	//ƒiƒbƒNƒ‹ƒ_ƒXƒ^[[3]
-				case 50: getitem 1550,1; break;	//ƒuƒbƒN[3]
-				case 51: getitem 1246,1; break;	//ƒ`ƒ“ƒNƒGƒfƒBƒA[2]
-				case 52: getitem 1147,1; break;	//ƒ^ƒEƒ“ƒ\[ƒh[2]
+				case 0: getitem 1128,1; break;	//æµ·æ±å‰£[2]
+				case 1: getitem 1120,1; break;	//ãƒ„ãƒ«ã‚®[2]
+				case 2: getitem 1127,1; break;	//ã‚µãƒ¼ãƒ™ãƒ«[3]
+				case 3: getitem 1158,1; break;	//ãƒ„ãƒ¼ãƒãƒ³ãƒ‰ã‚½ãƒ¼ãƒ‰[2]
+				case 4: getitem 1155,1; break;	//ãƒã‚¹ã‚¿ãƒ¼ãƒ‰ã‚½ãƒ¼ãƒ‰[3]
+				case 5: getitem 1220,1; break;	//ã‚°ãƒ©ãƒ‡ã‚£ã‚¦ã‚¹[3]
+				case 6: getitem 1226,1; break;	//ãƒ€ãƒã‚¹ã‚«ã‚¹[2]
+				case 7: getitem 1253,1; break;	//ã‚«ã‚¿ãƒ¼ãƒ«[2]
+				case 8: getitem 1529,1; break;	//ã‚¢ã‚¤ã‚¢ãƒ³ãƒ‰ãƒ©ã‚¤ãƒãƒ¼
+				case 9: getitem 1251,1; break;	//ã‚¸ãƒ¥ãƒ«[3]
+				case 10: getitem 1361,1; break;	//ãƒ„ãƒ¼ãƒãƒ³ãƒ‰ã‚¢ãƒƒã‚¯ã‚¹[2]
+				case 11: getitem 1258,1; break;	//çˆ†ç‚ã®ã‚«ã‚¿ãƒ¼ãƒ«
+				case 12: getitem 1257,1; break;	//å°–ã£ã¦ã‚‹ã„ã°ã‚‰ã®ã‚«ã‚¿ãƒ¼ãƒ«
+				case 13: getitem 1256,1; break;	//å†·ãŸã„æ°·æŸ±ã®ã‚«ã‚¿ãƒ¼ãƒ«
+				case 14: getitem 1259,1; break;	//ç–¾é¢¨ã®ã‚«ã‚¿ãƒ¼ãƒ«
+				case 15: getitem 1260,1; break;	//ãƒ‡ã‚¹ãƒŠã‚¤ãƒ•
+				case 16: getitem 1716,1; break;	//è§’å¼“[2]
+				case 17: getitem 1715,1; break;	//ã‚¢ãƒ¼ãƒãƒ¬ã‚¹ãƒˆ[2]
+				case 18: getitem 1711,1; break;	//ã‚¯ãƒ­ã‚¹ãƒœã‚¦[3]
+				case 19: getitem 1702,1; break;	//ãƒœã‚¦[4]
+				case 20: getitem 1520,1; break;	//ãƒã‚§ã‚¤ãƒ³[3]
+				case 21: getitem 1611,1; break;	//ã‚¢ãƒ¼ã‚¯ãƒ¯ãƒ³ãƒ‰[2]
+				case 22: getitem 1615,1; break;	//éª¸éª¨ã®æ–
+				case 23: getitem 1602,1; break;	//ãƒ­ãƒƒãƒ‰[4]
+				case 24: getitem 1461,1; break;	//ãƒˆãƒ©ã‚¤ãƒ‡ãƒ³ãƒˆ[3]
+				case 25: getitem 1402,1; break;	//ã‚¸ãƒ£ãƒ™ãƒªãƒ³[4]
+				case 26: getitem 1961,1; break;	//ãƒ›ã‚¤ãƒƒãƒ—[2]
+				case 27: getitem 1957,1; break;	//ãƒ©ãƒ³ãƒ†[1]
+				case 28: getitem 1552,1; break;	//ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆ[1]
+				case 29: getitem 1551,1; break;	//ãƒã‚¤ãƒ–ãƒ«[2]
+				case 30: getitem 1553,1; break;	//è’ã‚Œç‹‚ã†æ³¢ã®æ›¸
+				case 31: getitem 1554,1; break;	//è£‚ã‘ãŸå¤§åœ°ã®æ›¸
+				case 32: getitem 1555,1; break;	//ç‡ƒãˆã‚‹å¤ªé™½ã®æ›¸
+				case 33: getitem 1556,1; break;	//ä¹¾ã„ã¦ã‚‹é¢¨ã®æ›¸
+				case 34: getitem 1951,1; break;	//ãƒ­ãƒ¼ãƒ—[4]
+				case 35: getitem 1959,1; break;	//ãƒ†ã‚¤ãƒ«[2]
+				case 36: getitem 1953,1; break;	//ãƒ©ã‚¤ãƒ³[3]
+				case 37: getitem 1955,1; break;	//ãƒ¯ã‚¤ãƒ¤ãƒ¼[3]
+				case 38: getitem 1810,1; break;	//ã‚¯ãƒ­ãƒ¼[2]
+				case 39: getitem 1910,1; break;	//ãƒãƒ¼ãƒ—[2]
+				case 40: getitem 1906,1; break;	//ãƒªãƒ¥ãƒ¼ãƒˆ[3]
+				case 41: getitem 1902,1; break;	//ãƒã‚¤ã‚ªãƒªãƒ³[4]
+				case 42: getitem 1904,1; break;	//ãƒãƒ³ãƒ‰ãƒªãƒ³[3]
+				case 43: getitem 1912,1; break;	//ã‚´ãƒ ãƒ³ã‚´[2]
+				case 44: getitem 1908,1; break;	//ã‚®ã‚¿ãƒ¼[1]
+				case 45: getitem 1808,1; break;	//ãƒ•ã‚£ã‚¹ãƒˆ[1]
+				case 46: getitem 1802,1; break;	//ãƒã‚°ãƒŠã‚¦[4]
+				case 47: getitem 1812,1; break;	//ãƒ•ã‚£ãƒ³ã‚¬ãƒ¼[2]
+				case 48: getitem 1806,1; break;	//ãƒ›ãƒ©[3]
+				case 49: getitem 1804,1; break;	//ãƒŠãƒƒã‚¯ãƒ«ãƒ€ã‚¹ã‚¿ãƒ¼[3]
+				case 50: getitem 1550,1; break;	//ãƒ–ãƒƒã‚¯[3]
+				case 51: getitem 1246,1; break;	//ãƒãƒ³ã‚¯ã‚¨ãƒ‡ã‚£ã‚¢[2]
+				case 52: getitem 1147,1; break;	//ã‚¿ã‚¦ãƒ³ã‚½ãƒ¼ãƒ‰[2]
 				case 53:
-				case 54: getitem 1264,1; break;	//ƒoƒŠƒAƒXƒWƒ…ƒ‹[4]
+				case 54: getitem 1264,1; break;	//ãƒãƒªã‚¢ã‚¹ã‚¸ãƒ¥ãƒ«[4]
 				case 55:
-				case 56: getitem 1262,1; break;	//ƒƒL‚Ì’Ü
+				case 56: getitem 1262,1; break;	//ãƒ­ã‚­ã®çˆª
 				case 57:
-				case 58: getitem 1622,1; break;	//Ã–°pt‚Ìñ[2]
-				case 59: getitem 1723,1; break;	//ƒ‹ƒiƒ{ƒE
+				case 58: getitem 1622,1; break;	//å‚¬çœ è¡“å¸«ã®æ–[2]
+				case 59: getitem 1723,1; break;	//ãƒ«ãƒŠãƒœã‚¦
 				case 60:
-				case 61: getitem 1965,1; break;	//g‰Š‚Ì•Ú
+				case 61: getitem 1965,1; break;	//ç´…ç‚ã®é­
 				case 62:
-				case 63: getitem 1966,1; break;	//•XŒ•‚Ì•Ú
+				case 63: getitem 1966,1; break;	//æ°·å‰£ã®é­
 				case 64:
-				case 65: getitem 1967,1; break;	//‘å’n‚Ì•Ú
+				case 65: getitem 1967,1; break;	//å¤§åœ°ã®é­
 				case 66:
-				case 67: getitem 1968,1; break;	//‚È‚í‚Æ‚Ñ
+				case 67: getitem 1968,1; break;	//ãªã‚ã¨ã³
 				case 68:
-				case 69: getitem 1914,1; break;	//”R‚¦‚éî”M‚ÌƒMƒ^[
+				case 69: getitem 1914,1; break;	//ç‡ƒãˆã‚‹æƒ…ç†±ã®ã‚®ã‚¿ãƒ¼
 				case 70:
-				case 71: getitem 1915,1; break;	//ŒÇ“Æ‚Èƒ\ƒ‚ÌƒMƒ^[
+				case 71: getitem 1915,1; break;	//å­¤ç‹¬ãªã‚½ãƒ­ã®ã‚®ã‚¿ãƒ¼
 				case 72:
-				case 73: getitem 1916,1; break;	//L‘å‚È‘å’n‚ÌƒMƒ^[
+				case 73: getitem 1916,1; break;	//åºƒå¤§ãªå¤§åœ°ã®ã‚®ã‚¿ãƒ¼
 				case 74:
-				case 75: getitem 1917,1; break;	//_‚ç‚©‚È‚»‚æ•—‚ÌƒMƒ^[
+				case 75: getitem 1917,1; break;	//æŸ”ã‚‰ã‹ãªãã‚ˆé¢¨ã®ã‚®ã‚¿ãƒ¼
 				case 76:
-				case 77: getitem 13004,1; break;	//ƒRƒ[ƒh[2]
+				case 77: getitem 13004,1; break;	//ã‚³ãƒ¯ãƒ¼ãƒ‰[2]
 				case 78:
-				case 79: getitem 1307,1; break;	//ƒEƒBƒ“ƒhƒz[ƒN
-				case 80: getitem 1560,1; break;	//Œ«Ò‚Ì“ú‹L[2]
-				case 81: getitem 1618,1; break;	//ƒTƒoƒCƒoƒ‹ƒƒbƒh[1]
-				case 82: getitem 1620,1; break;	//ƒTƒoƒCƒoƒ‹ƒƒbƒh[1]
+				case 79: getitem 1307,1; break;	//ã‚¦ã‚£ãƒ³ãƒ‰ãƒ›ãƒ¼ã‚¯
+				case 80: getitem 1560,1; break;	//è³¢è€…ã®æ—¥è¨˜[2]
+				case 81: getitem 1618,1; break;	//ã‚µãƒã‚¤ãƒãƒ«ãƒ­ãƒƒãƒ‰[1]
+				case 82: getitem 1620,1; break;	//ã‚µãƒã‚¤ãƒãƒ«ãƒ­ãƒƒãƒ‰[1]
 				case 83:
-				case 84: getitem 1971,1; break;	//“d‹Cü
+				case 84: getitem 1971,1; break;	//é›»æ°—ç·š
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 200)
-			getitem 1201,1;		//ƒiƒCƒt[3]
+			getitem 1201,1;		//ãƒŠã‚¤ãƒ•[3]
 		else if('@gamble >= 200 && '@gamble < 300)
-			getitem 1101,1;		//ƒ\[ƒh[3]
+			getitem 1101,1;		//ã‚½ãƒ¼ãƒ‰[3]
 		else if('@gamble >= 300 && '@gamble < 400)
-			getitem 1601,1;		//ƒƒbƒh[3]
+			getitem 1601,1;		//ãƒ­ãƒƒãƒ‰[3]
 		else if('@gamble >= 400 && '@gamble < 500)
-			getitem 1116,1;		//ƒJƒ^ƒi[3]
+			getitem 1116,1;		//ã‚«ã‚¿ãƒŠ[3]
 		else if('@gamble >= 500 && '@gamble < 600)
-			getitem 1250,1;		//ƒWƒ…ƒ‹[2]
+			getitem 1250,1;		//ã‚¸ãƒ¥ãƒ«[2]
 		else if('@gamble >= 600 && '@gamble < 700)
-			getitem 1301,1;		//ƒAƒbƒNƒX[3]
+			getitem 1301,1;		//ã‚¢ãƒƒã‚¯ã‚¹[3]
 		else if('@gamble >= 700 && '@gamble < 800)
-			getitem 1701,1;		//ƒ{ƒE[3]
+			getitem 1701,1;		//ãƒœã‚¦[3]
 		else if('@gamble >= 800 && '@gamble < 850)
-			getitem 1504,1;		//ƒƒCƒX[3]
+			getitem 1504,1;		//ãƒ¡ã‚¤ã‚¹[3]
 		else if('@gamble >= 850 && '@gamble < 900)
-			getitem 1604,1;		//ƒƒ“ƒh[2]
+			getitem 1604,1;		//ãƒ¯ãƒ³ãƒ‰[2]
 		else if('@gamble >= 900 && '@gamble < 910)
-			getitem 1108,1;		//ƒuƒŒƒCƒh[4]
+			getitem 1108,1;		//ãƒ–ãƒ¬ã‚¤ãƒ‰[4]
 		else if('@gamble >= 910 && '@gamble < 920)
-			getitem 1163,1;		//ƒNƒŒƒCƒ‚ƒA
+			getitem 1163,1;		//ã‚¯ãƒ¬ã‚¤ãƒ¢ã‚¢
 		else if('@gamble >= 930 && '@gamble < 960)
-			getitem 1522,1;		//ƒXƒ^ƒi[
+			getitem 1522,1;		//ã‚¹ã‚¿ãƒŠãƒ¼
 		else if('@gamble >= 960 && '@gamble < 970)
-			getitem 1608,1;		//ƒXƒ^ƒbƒt[3]
+			getitem 1608,1;		//ã‚¹ã‚¿ãƒƒãƒ•[3]
 		else if('@gamble >= 970 && '@gamble < 980)
-			getitem 1408,1;		//ƒpƒCƒN[4]
+			getitem 1408,1;		//ãƒ‘ã‚¤ã‚¯[4]
 		else if('@gamble >= 980 && '@gamble < 990)
-			getitem 1452,1;		//ƒMƒUƒ‹ƒ€[3]
+			getitem 1452,1;		//ã‚®ã‚¶ãƒ«ãƒ [3]
 		else
-			getitem 1208,1;		//ƒ}ƒCƒ“ƒS[ƒVƒ…[4]
+			getitem 1208,1;		//ãƒã‚¤ãƒ³ã‚´ãƒ¼ã‚·ãƒ¥[4]
 		break;
-	case 2:	//ŠZ
+	case 2:	//é§
 		set '@gamble,rand(500);
 		if('@gamble >= 299 && '@gamble < 302) {
 			set '@gamble,rand(15);
 			switch('@gamble) {
-				case 0: getitem 2315,1; break;	//ƒƒCƒ‹[1]
-				case 1: getitem 2336,1; break;	//ƒV[ƒtƒNƒ[ƒX[1]
-				case 2: getitem 2318,1; break;	//ƒ[ƒhƒNƒ[ƒX[1]
-				case 3: getitem 2326,1; break;	//ƒZƒCƒ“ƒgƒ[ƒu[1]
-				case 4: getitem 2327,1; break;	//ƒz[ƒŠ[ƒ[ƒu
-				case 5: getitem 2342,1; break;	//ƒtƒ‹ƒvƒŒ[ƒg[1]
-				case 6: getitem 2331,1; break;	//ƒ^ƒCƒc[1]
-				case 7: getitem 2342,1; break;	//ƒtƒ‹ƒvƒŒ[ƒg[1]
-				case 8: getitem 2311,1; break;	//ƒ~ƒ“ƒN‚ÌƒR[ƒg[1]
-				case 9: getitem 2320,1; break;	//ƒtƒH[ƒ}ƒ‹ƒX[ƒc[1]
-				case 10: getitem 2319,1; break;	//ƒOƒŠƒbƒ^ƒŠƒ“ƒOƒNƒ[ƒX[1]
-				case 11: getitem 2344,1; break;	//ƒ‹ƒVƒEƒX‰ÎR‚ÌŒƒ‚µ‚³
-				case 12: getitem 2346,1; break;	//ƒVƒƒƒsƒjƒnŠC‚Ì‹©‚Ñ
-				case 13: getitem 2348,1; break;	//ƒGƒxƒV—’‚Ì‚¤‚Ë‚è
-				case 14: getitem 2350,1; break;	//ƒNƒŒƒCƒgƒX‘å’n‚Ì—ô‚¯–Ú
+				case 0: getitem 2315,1; break;	//ãƒ¡ã‚¤ãƒ«[1]
+				case 1: getitem 2336,1; break;	//ã‚·ãƒ¼ãƒ•ã‚¯ãƒ­ãƒ¼ã‚¹[1]
+				case 2: getitem 2318,1; break;	//ãƒ­ãƒ¼ãƒ‰ã‚¯ãƒ­ãƒ¼ã‚¹[1]
+				case 3: getitem 2326,1; break;	//ã‚»ã‚¤ãƒ³ãƒˆãƒ­ãƒ¼ãƒ–[1]
+				case 4: getitem 2327,1; break;	//ãƒ›ãƒ¼ãƒªãƒ¼ãƒ­ãƒ¼ãƒ–
+				case 5: getitem 2342,1; break;	//ãƒ•ãƒ«ãƒ—ãƒ¬ãƒ¼ãƒˆ[1]
+				case 6: getitem 2331,1; break;	//ã‚¿ã‚¤ãƒ„[1]
+				case 7: getitem 2342,1; break;	//ãƒ•ãƒ«ãƒ—ãƒ¬ãƒ¼ãƒˆ[1]
+				case 8: getitem 2311,1; break;	//ãƒŸãƒ³ã‚¯ã®ã‚³ãƒ¼ãƒˆ[1]
+				case 9: getitem 2320,1; break;	//ãƒ•ã‚©ãƒ¼ãƒãƒ«ã‚¹ãƒ¼ãƒ„[1]
+				case 10: getitem 2319,1; break;	//ã‚°ãƒªãƒƒã‚¿ãƒªãƒ³ã‚°ã‚¯ãƒ­ãƒ¼ã‚¹[1]
+				case 11: getitem 2344,1; break;	//ãƒ«ã‚·ã‚¦ã‚¹ç«å±±ã®æ¿€ã—ã•
+				case 12: getitem 2346,1; break;	//ã‚·ãƒ£ãƒ”ãƒ‹ãƒæµ·ã®å«ã³
+				case 13: getitem 2348,1; break;	//ã‚¨ãƒ™ã‚·åµã®ã†ã­ã‚Š
+				case 14: getitem 2350,1; break;	//ã‚¯ãƒ¬ã‚¤ãƒˆã‚¹å¤§åœ°ã®è£‚ã‘ç›®
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 50)
-			getitem 2301,1;		//ƒRƒbƒgƒ“ƒVƒƒƒc
+			getitem 2301,1;		//ã‚³ãƒƒãƒˆãƒ³ã‚·ãƒ£ãƒ„
 		else if('@gamble >= 50 && '@gamble < 100)
-			getitem 2302,1;		//ƒRƒbƒgƒ“ƒVƒƒƒc[1]
+			getitem 2302,1;		//ã‚³ãƒƒãƒˆãƒ³ã‚·ãƒ£ãƒ„[1]
 		else if('@gamble >= 100 && '@gamble < 150)
-			getitem 2303,1;		//ƒŒƒU[ƒWƒƒƒPƒbƒg
+			getitem 2303,1;		//ãƒ¬ã‚¶ãƒ¼ã‚¸ãƒ£ã‚±ãƒƒãƒˆ
 		else if('@gamble >= 150 && '@gamble < 200)
-			getitem 2304,1;		//ƒŒƒU[ƒWƒƒƒPƒbƒg[1]
+			getitem 2304,1;		//ãƒ¬ã‚¶ãƒ¼ã‚¸ãƒ£ã‚±ãƒƒãƒˆ[1]
 		else if('@gamble >= 200 && '@gamble < 250)
-			getitem 2305,1;		//ƒAƒhƒxƒ“ƒ`ƒƒ[ƒX[ƒc
+			getitem 2305,1;		//ã‚¢ãƒ‰ãƒ™ãƒ³ãƒãƒ£ãƒ¼ã‚¹ãƒ¼ãƒ„
 		else if('@gamble >= 250 && '@gamble < 299)
-			getitem 2301,1;		//ƒRƒbƒgƒ“ƒVƒƒƒc
+			getitem 2301,1;		//ã‚³ãƒƒãƒˆãƒ³ã‚·ãƒ£ãƒ„
 		else if('@gamble >= 302 && '@gamble < 350)
-			getitem 2307,1;		//ƒƒ“ƒgƒ‹
+			getitem 2307,1;		//ãƒ¡ãƒ³ãƒˆãƒ«
 		else if('@gamble >= 350 && '@gamble < 400)
-			getitem 2309,1;		//ƒƒ“ƒOƒR[ƒg
+			getitem 2309,1;		//ãƒ­ãƒ³ã‚°ã‚³ãƒ¼ãƒˆ
 		else if('@gamble == 400)
-			getitem 2322,1;		//ƒVƒ‹ƒNƒ[ƒu[1]
+			getitem 2322,1;		//ã‚·ãƒ«ã‚¯ãƒ­ãƒ¼ãƒ–[1]
 		else if('@gamble == 401)
-			getitem 2310,1;		//ƒƒ“ƒOƒR[ƒg[1]
+			getitem 2310,1;		//ãƒ­ãƒ³ã‚°ã‚³ãƒ¼ãƒˆ[1]
 		else if('@gamble >= 402 && '@gamble < 410)
-			getitem 2306,1;		//ƒAƒhƒxƒ“ƒ`ƒƒ[ƒX[ƒc[1]
+			getitem 2306,1;		//ã‚¢ãƒ‰ãƒ™ãƒ³ãƒãƒ£ãƒ¼ã‚¹ãƒ¼ãƒ„[1]
 		else if('@gamble >= 410 && '@gamble < 415)
-			getitem 2308,1;		//ƒƒ“ƒgƒ‹[1]
+			getitem 2308,1;		//ãƒ¡ãƒ³ãƒˆãƒ«[1]
 		else if('@gamble >= 415 && '@gamble < 420)
-			getitem 2313,1;		//ƒA[ƒ}[[1]
+			getitem 2313,1;		//ã‚¢ãƒ¼ãƒãƒ¼[1]
 		else if('@gamble >= 420 && '@gamble < 425)
-			getitem 2337,1;		//”EÒƒX[ƒc
+			getitem 2337,1;		//å¿è€…ã‚¹ãƒ¼ãƒ„
 		else if('@gamble >= 425 && '@gamble < 430)
-			getitem 2341,1;		//ƒtƒ‹ƒvƒŒ[ƒg
+			getitem 2341,1;		//ãƒ•ãƒ«ãƒ—ãƒ¬ãƒ¼ãƒˆ
 		else if('@gamble >= 430 && '@gamble < 435)
-			getitem 2325,1;		//ƒZƒCƒ“ƒgƒ[ƒu
+			getitem 2325,1;		//ã‚»ã‚¤ãƒ³ãƒˆãƒ­ãƒ¼ãƒ–
 		else if('@gamble >= 435 && '@gamble < 440)
-			getitem 2316,1;		//ƒvƒŒ[ƒg
+			getitem 2316,1;		//ãƒ—ãƒ¬ãƒ¼ãƒˆ
 		else if('@gamble >= 440 && '@gamble < 445)
-			getitem 2330,1;		//ƒ^ƒCƒc
+			getitem 2330,1;		//ã‚¿ã‚¤ãƒ„
 		else if('@gamble >= 445 && '@gamble < 450)
-			getitem 2314,1;		//ƒƒCƒ‹
+			getitem 2314,1;		//ãƒ¡ã‚¤ãƒ«
 		else if('@gamble >= 450 && '@gamble < 455)
-			getitem 2335,1;		//ƒV[ƒtƒNƒ[ƒX
+			getitem 2335,1;		//ã‚·ãƒ¼ãƒ•ã‚¯ãƒ­ãƒ¼ã‚¹
 		else if('@gamble >= 455 && '@gamble < 460)
-			getitem 2324,1;		//ƒXƒP[ƒsƒ…[ƒ‰[1]
+			getitem 2324,1;		//ã‚¹ã‚±ãƒ¼ãƒ”ãƒ¥ãƒ¼ãƒ©[1]
 		else if('@gamble >= 460 && '@gamble < 465)
-			getitem 2329,1;		//ƒEƒhƒDƒ“ƒƒCƒ‹[1]
+			getitem 2329,1;		//ã‚¦ãƒ‰ã‚¥ãƒ³ãƒ¡ã‚¤ãƒ«[1]
 		else if('@gamble >= 465 && '@gamble < 470)
-			getitem 2340,1;		//‰SÒ—p‹¹“–‚Ä[1]
+			getitem 2340,1;		//åˆå¿ƒè€…ç”¨èƒ¸å½“ã¦[1]
 		else if('@gamble >= 470 && '@gamble < 475)
-			getitem 2312,1;		//ƒA[ƒ}[
+			getitem 2312,1;		//ã‚¢ãƒ¼ãƒãƒ¼
 		else if('@gamble >= 475 && '@gamble < 480)
-			getitem 2339,1;		//ƒuƒŠ[ƒt
+			getitem 2339,1;		//ãƒ–ãƒªãƒ¼ãƒ•
 		else if('@gamble >= 480 && '@gamble < 485)
-			getitem 2328,1;		//ƒEƒhƒDƒ“ƒƒCƒ‹
+			getitem 2328,1;		//ã‚¦ãƒ‰ã‚¥ãƒ³ãƒ¡ã‚¤ãƒ«
 		else if('@gamble >= 485 && '@gamble < 490)
-			getitem 2321,1;		//ƒVƒ‹ƒNƒ[ƒu
+			getitem 2321,1;		//ã‚·ãƒ«ã‚¯ãƒ­ãƒ¼ãƒ–
 		else
-			getitem 2323,1;		//ƒXƒP[ƒsƒ…[ƒ‰
+			getitem 2323,1;		//ã‚¹ã‚±ãƒ¼ãƒ”ãƒ¥ãƒ¼ãƒ©
 		break;
-	case 3:	//Œ¨‚É‚©‚¯‚é•¨
+	case 3:	//è‚©ã«ã‹ã‘ã‚‹ç‰©
 		set '@gamble,rand(500);
 		if('@gamble >= 200 && '@gamble < 203) {
 			set '@gamble,rand(16);
 			switch('@gamble) {
 				case 0:
-				case 1: getitem 2506,1; break;	//ƒ}ƒ“ƒg[1]
+				case 1: getitem 2506,1; break;	//ãƒãƒ³ãƒˆ[1]
 				case 2:
-				case 3: getitem 2504,1; break;	//ƒ}ƒtƒ‰[[1]
+				case 3: getitem 2504,1; break;	//ãƒãƒ•ãƒ©ãƒ¼[1]
 				case 4:
 				case 5:
-				case 6: getitem 2508,1; break;	//‚Ú‚ëƒ}ƒ“ƒg
+				case 6: getitem 2508,1; break;	//ã¼ã‚ãƒãƒ³ãƒˆ
 				case 7:
 				case 8:
-				case 9: getitem 2507,1; break;	//Ì‚Ì—Ìå‚Ìƒ}ƒ“ƒg
-				case 10: getitem 2513,1; break;	//“V—‚Ì‰Hˆß[1]
-				case 11: getitem 2514,1; break;	//ƒ|[ƒ‹ƒhƒƒ“[1]
+				case 9: getitem 2507,1; break;	//æ˜”ã®é ˜ä¸»ã®ãƒãƒ³ãƒˆ
+				case 10: getitem 2513,1; break;	//å¤©å¥³ã®ç¾½è¡£[1]
+				case 11: getitem 2514,1; break;	//ãƒãƒ¼ãƒ«ãƒ‰ãƒ­ãƒ³[1]
 				case 12:
-				case 13: getitem 2523,1; break;	//ƒ‰ƒ“ƒjƒ“ƒOƒVƒƒƒc[1]
-				case 14: getitem 2509,1; break;	//ƒTƒoƒCƒoƒ‹ƒ}ƒ“ƒg
-				case 15: getitem 2515,1; break;	//ƒEƒBƒ“ƒOƒIƒuƒC[ƒOƒ‹[1]
+				case 13: getitem 2523,1; break;	//ãƒ©ãƒ³ãƒ‹ãƒ³ã‚°ã‚·ãƒ£ãƒ„[1]
+				case 14: getitem 2509,1; break;	//ã‚µãƒã‚¤ãƒãƒ«ãƒãƒ³ãƒˆ
+				case 15: getitem 2515,1; break;	//ã‚¦ã‚£ãƒ³ã‚°ã‚ªãƒ–ã‚¤ãƒ¼ã‚°ãƒ«[1]
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 100)
-			getitem 2503,1;		//ƒ}ƒtƒ‰[
+			getitem 2503,1;		//ãƒãƒ•ãƒ©ãƒ¼
 		else if('@gamble >= 100 && '@gamble < 200)
-			getitem 2505,1;		//ƒ}ƒ“ƒg
+			getitem 2505,1;		//ãƒãƒ³ãƒˆ
 		else if('@gamble >= 203 && '@gamble < 450)
-			getitem 2501,1;		//ƒt[ƒh
+			getitem 2501,1;		//ãƒ•ãƒ¼ãƒ‰
 		else
-			getitem 2502,1;		//ƒt[ƒh[1]
+			getitem 2502,1;		//ãƒ•ãƒ¼ãƒ‰[1]
 		break;
-	case 4:	//Š•
+	case 4:	//å…œ
 		set '@gamble,rand(1000);
 		if('@gamble >= 299 && '@gamble < 304) {
 			set '@gamble,rand(93);
 			switch('@gamble) {
 				case 0:
-				case 1: getitem 2251,1; break;	//¹EÒ‚Ì–Xq
+				case 1: getitem 2251,1; break;	//è–è·è€…ã®å¸½å­
 				case 2:
-				case 3: getitem 2285,1; break;	//–¼Ëè‚Ì‚è‚ñ‚²
+				case 3: getitem 2285,1; break;	//åå°„æ‰‹ã®ã‚Šã‚“ã”
 				case 4:
-				case 5: getitem 2255,1; break;	//ˆ«–‚‚ÌƒwƒAƒoƒ“ƒh
+				case 5: getitem 2255,1; break;	//æ‚ªé­”ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 				case 6:
-				case 7: getitem 5045,1; break;	//ƒVƒ‹ƒNƒnƒbƒg
+				case 7: getitem 5045,1; break;	//ã‚·ãƒ«ã‚¯ãƒãƒƒãƒˆ
 				case 8:
-				case 9: getitem 2233,1; break;	//ƒT[ƒNƒŒƒbƒg[1]
+				case 9: getitem 2233,1; break;	//ã‚µãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆ[1]
 				case 10:
-				case 11: getitem 2231,1; break;	//ƒWƒ…ƒGƒ‹ƒwƒ‹ƒ€[1]
+				case 11: getitem 2231,1; break;	//ã‚¸ãƒ¥ã‚¨ãƒ«ãƒ˜ãƒ«ãƒ [1]
 				case 12:
-				case 13: getitem 2217,1; break;	//ƒrƒŒƒ^[1]
+				case 13: getitem 2217,1; break;	//ãƒ“ãƒ¬ã‚¿[1]
 				case 14:
-				case 15: getitem 2206,1; break;	//ƒ”ƒF[ƒ‹
+				case 15: getitem 2206,1; break;	//ãƒ´ã‚§ãƒ¼ãƒ«
 				case 16:
-				case 17: getitem 2246,1; break;	//ƒS[ƒ‹ƒfƒ“ƒwƒbƒhƒMƒA
+				case 17: getitem 2246,1; break;	//ã‚´ãƒ¼ãƒ«ãƒ‡ãƒ³ãƒ˜ãƒƒãƒ‰ã‚®ã‚¢
 				case 18:
-				case 19: getitem 2261,1; break;	//ƒvƒƒ“ƒeƒ‰ŒR–X
+				case 19: getitem 2261,1; break;	//ãƒ—ãƒ­ãƒ³ãƒ†ãƒ©è»å¸½
 				case 20:
-				case 21: getitem 2287,1; break;	//ŠC‘¯‚Ì“ª‹Ğ
+				case 21: getitem 2287,1; break;	//æµ·è³Šã®é ­å·¾
 				case 22:
-				case 23: getitem 5012,1; break;	//ŠwÒ–X
+				case 23: getitem 5012,1; break;	//å­¦è€…å¸½
 				case 24:
-				case 25: getitem 2244,1; break;	//‘å‚«‚ÈƒŠƒ{ƒ“
+				case 25: getitem 2244,1; break;	//å¤§ããªãƒªãƒœãƒ³
 				case 26:
-				case 27: getitem 2213,1; break;	//”L¨‚ÌƒwƒAƒoƒ“ƒh
+				case 27: getitem 2213,1; break;	//çŒ«è€³ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 				case 28:
-				case 29: getitem 2248,1; break;	//ƒEƒFƒXƒ^ƒ“ƒOƒŒƒCƒX
+				case 29: getitem 2248,1; break;	//ã‚¦ã‚§ã‚¹ã‚¿ãƒ³ã‚°ãƒ¬ã‚¤ã‚¹
 				case 30:
-				case 31: getitem 2223,1; break;	//ŠÛ‚¢‚Ú‚¤‚µ[1]
+				case 31: getitem 2223,1; break;	//ä¸¸ã„ã¼ã†ã—[1]
 				case 32:
-				case 33: getitem 2247,1; break;	//ƒI[ƒ‹ƒhƒXƒ^[ƒƒ}ƒ“ƒX
+				case 33: getitem 2247,1; break;	//ã‚ªãƒ¼ãƒ«ãƒ‰ã‚¹ã‚¿ãƒ¼ãƒ­ãƒãƒ³ã‚¹
 				case 34:
-				case 35: getitem 2245,1; break;	//ƒXƒC[ƒgƒWƒFƒ“ƒgƒ‹
+				case 35: getitem 2245,1; break;	//ã‚¹ã‚¤ãƒ¼ãƒˆã‚¸ã‚§ãƒ³ãƒˆãƒ«
 				case 36:
-				case 37: getitem 5003,1; break;	//ƒsƒGƒ‚Ì–Xq
+				case 37: getitem 5003,1; break;	//ãƒ”ã‚¨ãƒ­ã®å¸½å­
 				case 38:
-				case 39: getitem 2225,1; break;	//ƒS[ƒOƒ‹[1]
+				case 39: getitem 2225,1; break;	//ã‚´ãƒ¼ã‚°ãƒ«[1]
 				case 40:
-				case 41: getitem 5017,1; break;	//ƒ{[ƒ“ƒwƒ‹ƒ€
+				case 41: getitem 5017,1; break;	//ãƒœãƒ¼ãƒ³ãƒ˜ãƒ«ãƒ 
 				case 42:
-				case 43: getitem 5030,1; break;	//ƒpƒ“ƒ_–X
+				case 43: getitem 5030,1; break;	//ãƒ‘ãƒ³ãƒ€å¸½
 				case 44:
-				case 45: getitem 5035,1; break;	//ƒ|ƒŠƒ“–X
+				case 45: getitem 5035,1; break;	//ãƒãƒªãƒ³å¸½
 				case 46:
-				case 47: getitem 2250,1; break;	//ƒŠƒ{ƒ“‚ÌƒwƒAƒoƒ“ƒh
+				case 47: getitem 2250,1; break;	//ãƒªãƒœãƒ³ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 				case 48:
-				case 49: getitem 2277,1; break;	//ŠÅŒì–X
+				case 49: getitem 2277,1; break;	//çœ‹è­·å¸½
 				case 50:
-				case 51: getitem 5011,1; break;	//ƒAƒ“ƒeƒi
+				case 51: getitem 5011,1; break;	//ã‚¢ãƒ³ãƒ†ãƒŠ
 				case 52:
-				case 53: getitem 2290,1; break;	//‘’®—p‚Ì–Xq
+				case 53: getitem 2290,1; break;	//è‘¬å¼ç”¨ã®å¸½å­
 				case 54:
-				case 55: getitem 5010,1; break;	//ƒCƒ“ƒfƒBƒAƒ“‚ÌƒwƒAƒoƒ“ƒh
+				case 55: getitem 5010,1; break;	//ã‚¤ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 				case 56:
-				case 57: getitem 2259,1; break;	//ƒvƒƒyƒ‰
+				case 57: getitem 2259,1; break;	//ãƒ—ãƒ­ãƒšãƒ©
 				case 58:
-				case 59: getitem 5008,1; break;	//‰¼‰‚ß‚Ì—ö
+				case 59: getitem 5008,1; break;	//ä»®åˆã‚ã®æ‹
 				case 60:
-				case 61: getitem 2249,1; break;	//ƒRƒƒlƒbƒg
+				case 61: getitem 2249,1; break;	//ã‚³ãƒ­ãƒãƒƒãƒˆ
 				case 62:
-				case 63: getitem 2229,1; break;	//ƒwƒ‹ƒ€[1]
-				case 64: getitem 2258,1; break;	//ƒVƒƒ[ƒvƒwƒbƒhƒMƒA
-				case 65: getitem 2274,1; break;	//–SÒ‚ÌƒwƒAƒoƒ“ƒh
-				case 66: getitem 5019,1; break;	//ƒRƒ‹ƒZƒA
-				case 67: getitem 2254,1; break;	//“Vg‚ÌƒwƒAƒoƒ“ƒh
-				case 68: getitem 5007,1; break;	//ƒ[ƒhƒT[ƒNƒŒƒbƒg
-				case 69: getitem 5066,1; break;	//ƒTƒLƒ…ƒoƒX‚ÌŠp
-				case 70: getitem 2235,1; break;	//ƒNƒ‰ƒEƒ“
-				case 71: getitem 2234,1; break;	//ƒeƒBƒAƒ‰
-				case 72: getitem 2256,1; break;	//ƒ}ƒWƒFƒXƒeƒBƒbƒNƒS[ƒg
-				case 73: getitem 5093,1; break;	//C“¹—‚Ìƒ”ƒF[ƒ‹[1]
-				case 74: getitem 5072,1; break;	//ƒCƒ“ƒLƒ…ƒoƒX‚ÌŠp
-				case 75: getitem 5002,1; break;	//ƒWƒ…ƒGƒ‹ƒNƒ‰ƒEƒ“
+				case 63: getitem 2229,1; break;	//ãƒ˜ãƒ«ãƒ [1]
+				case 64: getitem 2258,1; break;	//ã‚·ãƒ£ãƒ¼ãƒ—ãƒ˜ãƒƒãƒ‰ã‚®ã‚¢
+				case 65: getitem 2274,1; break;	//äº¡è€…ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
+				case 66: getitem 5019,1; break;	//ã‚³ãƒ«ã‚»ã‚¢
+				case 67: getitem 2254,1; break;	//å¤©ä½¿ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
+				case 68: getitem 5007,1; break;	//ãƒ­ãƒ¼ãƒ‰ã‚µãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆ
+				case 69: getitem 5066,1; break;	//ã‚µã‚­ãƒ¥ãƒã‚¹ã®è§’
+				case 70: getitem 2235,1; break;	//ã‚¯ãƒ©ã‚¦ãƒ³
+				case 71: getitem 2234,1; break;	//ãƒ†ã‚£ã‚¢ãƒ©
+				case 72: getitem 2256,1; break;	//ãƒã‚¸ã‚§ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã‚´ãƒ¼ãƒˆ
+				case 73: getitem 5093,1; break;	//ä¿®é“å¥³ã®ãƒ´ã‚§ãƒ¼ãƒ«[1]
+				case 74: getitem 5072,1; break;	//ã‚¤ãƒ³ã‚­ãƒ¥ãƒã‚¹ã®è§’
+				case 75: getitem 5002,1; break;	//ã‚¸ãƒ¥ã‚¨ãƒ«ã‚¯ãƒ©ã‚¦ãƒ³
 				case 76:
 				case 77:
-				case 78: getitem 5118,1; break;	//qŒ¢‚ÌƒwƒAƒoƒ“ƒh
+				case 78: getitem 5118,1; break;	//å­çŠ¬ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 				case 79:
 				case 80:
-				case 81: getitem 5120,1; break;	//‚â‚í‚ç‚©‚¢–Xq
+				case 81: getitem 5120,1; break;	//ã‚„ã‚ã‚‰ã‹ã„å¸½å­
 				case 82:
 				case 83:
-				case 84: getitem 5111,1; break;	//ƒKƒ‰ƒpƒS–X
+				case 84: getitem 5111,1; break;	//ã‚¬ãƒ©ãƒ‘ã‚´å¸½
 				case 85:
 				case 86:
-				case 87: getitem 5116,1; break;	//ƒoƒiƒi‚Ì”ç
+				case 87: getitem 5116,1; break;	//ãƒãƒŠãƒŠã®çš®
 				case 88:
 				case 89:
-				case 90: getitem 5119,1; break;	//ƒX[ƒp[ƒm[ƒrƒX–X[1]
+				case 90: getitem 5119,1; break;	//ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹å¸½[1]
 				case 91:
-				case 92: getitem 5141,1; break;	//ƒ}ƒŠƒIƒlƒbƒglŒ`[1]
+				case 92: getitem 5141,1; break;	//ãƒãƒªã‚ªãƒãƒƒãƒˆäººå½¢[1]
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 100)
-			getitem 2226,1;		//ƒLƒƒƒbƒv
+			getitem 2226,1;		//ã‚­ãƒ£ãƒƒãƒ—
 		else if('@gamble >= 100 && '@gamble < 200)
-			getitem 2211,1;		//“ª‹Ğ
+			getitem 2211,1;		//é ­å·¾
 		else if('@gamble >= 200 && '@gamble < 299)
-			getitem 2209,1;		//ƒŠƒ{ƒ“[1]
+			getitem 2209,1;		//ãƒªãƒœãƒ³[1]
 		else if('@gamble >= 304 && '@gamble < 400)
-			getitem 2220,1;		//ƒnƒbƒg
+			getitem 2220,1;		//ãƒãƒƒãƒˆ
 		else if('@gamble >= 400 && '@gamble < 500)
-			getitem 2232,1;		//ƒT[ƒNƒŒƒbƒg
+			getitem 2232,1;		//ã‚µãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆ
 		else if('@gamble >= 500 && '@gamble < 600)
-			getitem 2216,1;		//ƒrƒŒƒ^
+			getitem 2216,1;		//ãƒ“ãƒ¬ã‚¿
 		else if('@gamble >= 600 && '@gamble < 700)
-			getitem 2230,1;		//ƒWƒ…ƒGƒ‹ƒwƒ‹ƒ€
+			getitem 2230,1;		//ã‚¸ãƒ¥ã‚¨ãƒ«ãƒ˜ãƒ«ãƒ 
 		else if('@gamble >= 700 && '@gamble < 800)
-			getitem 2224,1;		//ƒS[ƒOƒ‹
+			getitem 2224,1;		//ã‚´ãƒ¼ã‚°ãƒ«
 		else if('@gamble >= 800 && '@gamble < 900)
-			getitem 2222,1;		//ŠÛ‚¢‚Ú‚¤‚µ
+			getitem 2222,1;		//ä¸¸ã„ã¼ã†ã—
 		else if('@gamble >= 900 && '@gamble < 905)
-			getitem 2228,1;		//ƒwƒ‹ƒ€
+			getitem 2228,1;		//ãƒ˜ãƒ«ãƒ 
 		else if('@gamble >= 905 && '@gamble < 910)
-			getitem 2252,1;		//ƒEƒBƒU[ƒhƒnƒbƒg
+			getitem 2252,1;		//ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰ãƒãƒƒãƒˆ
 		else if('@gamble >= 910 && '@gamble < 915)
-			getitem 2227,1;		//ƒLƒƒƒbƒv[1]
+			getitem 2227,1;		//ã‚­ãƒ£ãƒƒãƒ—[1]
 		else if('@gamble >= 915 && '@gamble < 920)
-			getitem 2221,1;		//ƒnƒbƒg[1]
+			getitem 2221,1;		//ãƒãƒƒãƒˆ[1]
 		else if('@gamble >= 920 && '@gamble < 925)
-			getitem 2299,1;		//ƒI[ƒN‘°‚Ìƒwƒ‹ƒ€
+			getitem 2299,1;		//ã‚ªãƒ¼ã‚¯æ—ã®ãƒ˜ãƒ«ãƒ 
 		else if('@gamble >= 925 && '@gamble < 930)
-			getitem 2236,1;		//ƒTƒ“ƒ^‚Ì‚Ú‚¤‚µ
+			getitem 2236,1;		//ã‚µãƒ³ã‚¿ã®ã¼ã†ã—
 		else if('@gamble >= 930 && '@gamble < 935)
-			getitem 2275,1;		//ƒoƒ“ƒ_ƒi
+			getitem 2275,1;		//ãƒãƒ³ãƒ€ãƒŠ
 		else if('@gamble >= 935 && '@gamble < 940)
-			getitem 5015,1;		//‘•ü—p—‘Šk
+			getitem 5015,1;		//è£…é£¾ç”¨åµæ®»
 		else if('@gamble >= 940 && '@gamble < 945)
-			getitem 2215,1;		//‰Ô‚ÌƒwƒAƒoƒ“ƒh
+			getitem 2215,1;		//èŠ±ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰
 		else if('@gamble >= 945 && '@gamble < 950)
-			getitem 5092,1;		//C“¹—‚Ìƒ”ƒF[ƒ‹
+			getitem 5092,1;		//ä¿®é“å¥³ã®ãƒ´ã‚§ãƒ¼ãƒ«
 		else
-			getitem 2226,1;		//ƒLƒƒƒbƒv
+			getitem 2226,1;		//ã‚­ãƒ£ãƒƒãƒ—
 		break;
-	case 5:	//ŒC
+	case 5:	//é´
 		set '@gamble,rand(500);
 		if('@gamble >= 299 && '@gamble < 303) {
 			set '@gamble,rand(10);
 			switch('@gamble) {
 				case 0:
-				case 1: getitem 2406,1; break;	//ƒu[ƒc[1]
+				case 1: getitem 2406,1; break;	//ãƒ–ãƒ¼ãƒ„[1]
 				case 2:
-				case 3: getitem 2412,1; break;	//ƒOƒŠ[ƒu[1]
+				case 3: getitem 2412,1; break;	//ã‚°ãƒªãƒ¼ãƒ–[1]
 				case 4:
 				case 5:
-				case 6: getitem 2404,1; break;	//ƒVƒ…[ƒY[1]
+				case 6: getitem 2404,1; break;	//ã‚·ãƒ¥ãƒ¼ã‚º[1]
 				case 7:
 				case 8:
-				case 9: getitem 2407,1; break;	//ƒKƒ‰ƒX‚ÌŒC
+				case 9: getitem 2407,1; break;	//ã‚¬ãƒ©ã‚¹ã®é´
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 200)
-			getitem 2401,1;		//ƒTƒ“ƒ_ƒ‹
+			getitem 2401,1;		//ã‚µãƒ³ãƒ€ãƒ«
 		else if('@gamble >= 200 && '@gamble < 300)
-			getitem 2408,1;		//‘«½
+			getitem 2408,1;		//è¶³é–
 		else if('@gamble >= 303 && '@gamble < 350)
-			getitem 2411,1;		//ƒOƒŠ[ƒu
+			getitem 2411,1;		//ã‚°ãƒªãƒ¼ãƒ–
 		else if('@gamble >= 350 && '@gamble < 400)
-			getitem 2403,1;		//ƒVƒ…[ƒY
+			getitem 2403,1;		//ã‚·ãƒ¥ãƒ¼ã‚º
 		else if('@gamble >= 400 && '@gamble < 450)
-			getitem 2405,1;		//ƒu[ƒc
+			getitem 2405,1;		//ãƒ–ãƒ¼ãƒ„
 		else if('@gamble >= 450 && '@gamble < 475)
-			getitem 2409,1;		//ƒnƒCƒq[ƒ‹
+			getitem 2409,1;		//ãƒã‚¤ãƒ’ãƒ¼ãƒ«
 		else
-			getitem 2402,1;		//ƒTƒ“ƒ_ƒ‹[1]
+			getitem 2402,1;		//ã‚µãƒ³ãƒ€ãƒ«[1]
 		break;
-	case 6:	//‚
+	case 6:	//ç›¾
 		set '@gamble,rand(500);
 		if('@gamble >= 200 && '@gamble < 204) {
 			set '@gamble,rand(5);
 			switch('@gamble) {
-				case 0: getitem 2104,1; break;	//ƒoƒbƒNƒ‰[[1]
-				case 1: getitem 2106,1; break;	//ƒV[ƒ‹ƒh[1]
-				case 2: getitem 2102,1; break;	//ƒK[ƒh[1]
-				case 3: getitem 2111,1; break;	//_‚ÌgÒ
-				case 4: getitem 2109,1; break;	//ƒƒ‚ƒ‰ƒCƒYƒuƒbƒN
+				case 0: getitem 2104,1; break;	//ãƒãƒƒã‚¯ãƒ©ãƒ¼[1]
+				case 1: getitem 2106,1; break;	//ã‚·ãƒ¼ãƒ«ãƒ‰[1]
+				case 2: getitem 2102,1; break;	//ã‚¬ãƒ¼ãƒ‰[1]
+				case 3: getitem 2111,1; break;	//ç¥ã®ä½¿è€…
+				case 4: getitem 2109,1; break;	//ãƒ¡ãƒ¢ãƒ©ã‚¤ã‚ºãƒ–ãƒƒã‚¯
 			}
 		}
 		else if('@gamble >= 0 && '@gamble < 200)
-			getitem 2101,1;		//ƒK[ƒh
+			getitem 2101,1;		//ã‚¬ãƒ¼ãƒ‰
 		else if('@gamble >= 204 && '@gamble < 300)
-			getitem 2103,1;		//ƒoƒbƒNƒ‰[
+			getitem 2103,1;		//ãƒãƒƒã‚¯ãƒ©ãƒ¼
 		else if('@gamble >= 300 && '@gamble < 400)
-			getitem 2107,1;		//ƒ~ƒ‰[ƒV[ƒ‹ƒh
+			getitem 2107,1;		//ãƒŸãƒ©ãƒ¼ã‚·ãƒ¼ãƒ«ãƒ‰
 		else if('@gamble >= 400 && '@gamble < 480)
-			getitem 2105,1;		//ƒV[ƒ‹ƒh
+			getitem 2105,1;		//ã‚·ãƒ¼ãƒ«ãƒ‰
 		else
-			getitem 2108,1;		//ƒ~ƒ‰[ƒV[ƒ‹ƒh[1]
+			getitem 2108,1;		//ãƒŸãƒ©ãƒ¼ã‚·ãƒ¼ãƒ«ãƒ‰[1]
 		break;
 	}
 	delitem 732,1;
-	mes "[ƒJƒ`ƒ…ƒA]";
-	mes "‚í‚ [Aƒ_ƒCƒ„ƒ‚ƒ“ƒh‚Í";
-	mes "‚Æ‚Ä‚à‚«‚ê‚¢‚Å‚¢‚¢‚í‚æ‚Ë[";
-	mes "‚Ü‚½—~‚µ‚¢‚ícc";
+	mes "[ã‚«ãƒãƒ¥ã‚¢]";
+	mes "ã‚ã‚ãƒ¼ã€ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã¯";
+	mes "ã¨ã¦ã‚‚ãã‚Œã„ã§ã„ã„ã‚ã‚ˆã­ãƒ¼";
+	mes "ã¾ãŸæ¬²ã—ã„ã‚â€¦â€¦";
 	close2;
 	cutin "katsua02",255;
 	end;
 }
 
-comodo.gat,204,148,7	script	ƒ_ƒrƒŠƒ“	90,{
-	mes "[ƒ_ƒrƒŠƒ“]";
-	mes "ˆÈ‘OA—·s‹q‚ªƒJƒ`ƒ…ƒAo‚³‚ñ‚É";
-	mes "‚Æ‚Ä‚à‘å‚«‚Èƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğ";
-	mes "Œ©‚¹‚½‚±‚Æ‚ª‚ ‚é‚ÌB";
-	mes "‚»‚ÌŒãAo‚³‚ñ‚Í‚¸‚Á‚Æ";
-	mes "‚ ‚ñ‚È•—‚Éƒ_ƒCƒ„ƒ‚ƒ“ƒh‚¾‚¯‚ğ";
-	mes "’Ç‚¢‹‚ß‚Ä‚é‚ñ‚Å‚·B";
+comodo.gat,204,148,7	script	ãƒ€ãƒ“ãƒªãƒ³	90,{
+	mes "[ãƒ€ãƒ“ãƒªãƒ³]";
+	mes "ä»¥å‰ã€æ—…è¡Œå®¢ãŒã‚«ãƒãƒ¥ã‚¢å§‰ã•ã‚“ã«";
+	mes "ã¨ã¦ã‚‚å¤§ããªãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’";
+	mes "è¦‹ã›ãŸã“ã¨ãŒã‚ã‚‹ã®ã€‚";
+	mes "ãã®å¾Œã€å§‰ã•ã‚“ã¯ãšã£ã¨";
+	mes "ã‚ã‚“ãªé¢¨ã«ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã ã‘ã‚’";
+	mes "è¿½ã„æ±‚ã‚ã¦ã‚‹ã‚“ã§ã™ã€‚";
 	next;
-	mes "[ƒ_ƒrƒŠƒ“]";
-	mes "o‚³‚ñ‚Í‚©‚È‚è·’…S‚ª‹­‚¢‚Ì‚Åcc";
-	mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğè‚É“ü‚ê‚éˆ×‚È‚ç";
-	mes "‰½‚Å‚àcc‚»‚¤©•ª‚Ì‘åØ‚È";
-	mes "ƒRƒŒƒNƒVƒ‡ƒ“‚³‚¦‚à·‚µo‚·";
-	mes "‚Â‚à‚è‚İ‚½‚¢B";
+	mes "[ãƒ€ãƒ“ãƒªãƒ³]";
+	mes "å§‰ã•ã‚“ã¯ã‹ãªã‚ŠåŸ·ç€å¿ƒãŒå¼·ã„ã®ã§â€¦â€¦";
+	mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’æ‰‹ã«å…¥ã‚Œã‚‹ç‚ºãªã‚‰";
+	mes "ä½•ã§ã‚‚â€¦â€¦ãã†è‡ªåˆ†ã®å¤§åˆ‡ãª";
+	mes "ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ãˆã‚‚å·®ã—å‡ºã™";
+	mes "ã¤ã‚‚ã‚Šã¿ãŸã„ã€‚";
 	next;
-	mes "[ƒ_ƒrƒŠƒ“]";
-	mes "o‚³‚ñ‚ÍÌ‚©‚çƒRƒŒƒNƒ^[‚¾‚Á‚½‚ÌB";
-	mes "‚¨‹à‚³‚¦‚ ‚ê‚ÎA‚·‚®‚É‹C‚É“ü‚Á‚½•¨‚ğ";
-	mes "”ƒ‚Á‚Ä‚¢‚½‚íBûW—~‚É‚Æ‚ç‚í‚ê‚Ä";
-	mes "‚¢‚Â‚©‚¨‹à‚ğg‚¢‰Ê‚½‚³‚È‚¢‚©cc";
-	mes "‚Æ‚Ä‚à‚»‚ê‚ªS”z‚È‚ÌB";
+	mes "[ãƒ€ãƒ“ãƒªãƒ³]";
+	mes "å§‰ã•ã‚“ã¯æ˜”ã‹ã‚‰ã‚³ãƒ¬ã‚¯ã‚¿ãƒ¼ã ã£ãŸã®ã€‚";
+	mes "ãŠé‡‘ã•ãˆã‚ã‚Œã°ã€ã™ãã«æ°—ã«å…¥ã£ãŸç‰©ã‚’";
+	mes "è²·ã£ã¦ã„ãŸã‚ã€‚åé›†æ¬²ã«ã¨ã‚‰ã‚ã‚Œã¦";
+	mes "ã„ã¤ã‹ãŠé‡‘ã‚’ä½¿ã„æœãŸã•ãªã„ã‹â€¦â€¦";
+	mes "ã¨ã¦ã‚‚ãã‚ŒãŒå¿ƒé…ãªã®ã€‚";
 	close;
 }
 
-comodo.gat,210,154,2	script	‰ö‚µ‚¢’j	118,{
+comodo.gat,210,154,2	script	æ€ªã—ã„ç”·	118,{
 	if(getbaseclass(Class) == CLASS_TF) {
-		mes "[ƒPƒCƒ€]";
-		mes "‚Ù`A“¯‹ÆÒ‚©B‚±‚ñ‚ÈŠ‚Å‰ï‚Á‚½‚Ì‚à";
-		mes "‰½‚©‚Ì‰‚¾B¨Šñ‚è‚Ìî•ñ‚ğ‹³‚¦‚Ä";
-		mes "‚â‚ë‚¤B–{—ˆ‚È‚ç‹à‚ğ‚Æ‚é‚Æ‚±‚ë‚¾‚ªA";
-		mes "‚»‚±‚Í“¯‹ÆÒ‚Ì‚æ‚µ‚İA“Á•Ê‚É";
-		mes "–³—¿‚É‚µ‚Ä‚â‚ë‚¤B‚ ‚è‚ª‚½‚¢‚¾‚ëH";
-		mes "¨‚ğ‚©‚Á‚Û‚¶‚Á‚Ä‚æ‚­•·‚¯‚æB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã»ï½ã€åŒæ¥­è€…ã‹ã€‚ã“ã‚“ãªæ‰€ã§ä¼šã£ãŸã®ã‚‚";
+		mes "ä½•ã‹ã®ç¸ã ã€‚è€³å¯„ã‚Šã®æƒ…å ±ã‚’æ•™ãˆã¦";
+		mes "ã‚„ã‚ã†ã€‚æœ¬æ¥ãªã‚‰é‡‘ã‚’ã¨ã‚‹ã¨ã“ã‚ã ãŒã€";
+		mes "ãã“ã¯åŒæ¥­è€…ã®ã‚ˆã—ã¿ã€ç‰¹åˆ¥ã«";
+		mes "ç„¡æ–™ã«ã—ã¦ã‚„ã‚ã†ã€‚ã‚ã‚ŠãŒãŸã„ã ã‚ï¼Ÿ";
+		mes "è€³ã‚’ã‹ã£ã½ã˜ã£ã¦ã‚ˆãèã‘ã‚ˆã€‚";
 		next;
-		mes "[ƒPƒCƒ€]";
+		mes "[ã‚±ã‚¤ãƒ ]";
 		callsub L_Routine;
 		next;
-		mes "[ƒPƒCƒ€]";
-		mes "‚»‚Ì‘¼A‚à‚Á‚Æ’¿‚µ‚¢ƒAƒCƒeƒ€‚à";
-		mes "‚Á‚Ä‚¢‚é‚ç‚µ‚¢B‚Ç‚¤‚¾H";
-		mes "‰´‚Æˆê‚É‚ ‚Ìì‚¿‚á‚ñ‚É";
-		mes "’T‚è‚ğ“ü‚ê‚É‚¢‚©‚È‚¢‚©H";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ãã®ä»–ã€ã‚‚ã£ã¨çã—ã„ã‚¢ã‚¤ãƒ†ãƒ ã‚‚";
+		mes "æŒã£ã¦ã„ã‚‹ã‚‰ã—ã„ã€‚ã©ã†ã ï¼Ÿ";
+		mes "ä¿ºã¨ä¸€ç·’ã«ã‚ã®å¬¢ã¡ã‚ƒã‚“ã«";
+		mes "æ¢ã‚Šã‚’å…¥ã‚Œã«ã„ã‹ãªã„ã‹ï¼Ÿ";
 		next;
-		if(select("‰É‚¾‚Ë","‚æ‚µAˆê‚És‚±‚¤I")==1) {
-			mes "[ƒPƒCƒ€]";
-			mes "ƒ`ƒFƒbA‚Ç‚¤‚¹‚¨‘O‚à‰´‚Æ";
-			mes "“¯‚¶ƒV[ƒtogÒ‚¶‚á‚È‚¢‚©B";
-			mes "‰½‚ğ‰“—¶‚µ‚Ä‚é‚ñ‚¾H";
-			mes "cc‚»‚¤‚©‚æA‰´ˆêl‚Å‚à‚»‚Ì";
-			mes "ì‚¿‚á‚ñ‚©‚ç•·‚«o‚µ‚Ä‚â‚é‚æB";
+		if(select("æš‡ã ã­","ã‚ˆã—ã€ä¸€ç·’ã«è¡Œã“ã†ï¼")==1) {
+			mes "[ã‚±ã‚¤ãƒ ]";
+			mes "ãƒã‚§ãƒƒã€ã©ã†ã›ãŠå‰ã‚‚ä¿ºã¨";
+			mes "åŒã˜ã‚·ãƒ¼ãƒ•å‡ºèº«è€…ã˜ã‚ƒãªã„ã‹ã€‚";
+			mes "ä½•ã‚’é æ…®ã—ã¦ã‚‹ã‚“ã ï¼Ÿ";
+			mes "â€¦â€¦ãã†ã‹ã‚ˆã€ä¿ºä¸€äººã§ã‚‚ãã®";
+			mes "å¬¢ã¡ã‚ƒã‚“ã‹ã‚‰èãå‡ºã—ã¦ã‚„ã‚‹ã‚ˆã€‚";
 			close;
 		}
-		mes "[ƒPƒCƒ€]";
-		mes "‚Í‚Í‚ÍBç’k‚¾‚æAç’kB";
-		mes "‚»‚ñ‚ÈA^‚Éó‚¯‚é‚È‚æB";
-		mes "¡‚ÌŒ¾—t‚Í–Y‚ê‚Ä‚­‚êB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã¯ã¯ã¯ã€‚å†—è«‡ã ã‚ˆã€å†—è«‡ã€‚";
+		mes "ãã‚“ãªã€çœŸã«å—ã‘ã‚‹ãªã‚ˆã€‚";
+		mes "ä»Šã®è¨€è‘‰ã¯å¿˜ã‚Œã¦ãã‚Œã€‚";
 		next;
-		mes "[ƒPƒCƒ€]";
-		mes "‚³‚ÄA‚»‚Ìì‚¿‚á‚ñ‚ª—~‚µ‚ª‚Á‚Ä‚¢‚é";
-		mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚RƒJƒ‰ƒbƒg‚Í";
-		mes "‚Ç‚±‚Åè‚É“ü‚é‚Ì‚©A‚¾‚ªcc";
-		mes "‰´‚Ì’‡ŠÔ‚É‚æ‚é‚ÆA‰½‚Æ‚©‚Á‚Ä‚¢‚¤";
-		mes "R–¬‚Ì‹ß‚­‚ÉzR‚ª‚ ‚é‚ç‚µ‚¢B";
-		mes "‚»‚±‚Å‚È‚ç“üè‚Å‚«‚é‚©‚à‚µ‚ê‚È‚¢‚ÈB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã•ã¦ã€ãã®å¬¢ã¡ã‚ƒã‚“ãŒæ¬²ã—ãŒã£ã¦ã„ã‚‹";
+		mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ï¼“ã‚«ãƒ©ãƒƒãƒˆã¯";
+		mes "ã©ã“ã§æ‰‹ã«å…¥ã‚‹ã®ã‹ã€ã ãŒâ€¦â€¦";
+		mes "ä¿ºã®ä»²é–“ã«ã‚ˆã‚‹ã¨ã€ä½•ã¨ã‹ã£ã¦ã„ã†";
+		mes "å±±è„ˆã®è¿‘ãã«é‰±å±±ãŒã‚ã‚‹ã‚‰ã—ã„ã€‚";
+		mes "ãã“ã§ãªã‚‰å…¥æ‰‹ã§ãã‚‹ã‹ã‚‚ã—ã‚Œãªã„ãªã€‚";
 		next;
-		mes "[ƒPƒCƒ€]";
-		mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚Æˆø‚«Š·‚¦‚ÉA";
-		mes "ì‚¿‚á‚ñ‚©‚ç‹Md‚ÈƒAƒCƒeƒ€‚ğ’¸‚­B";
-		mes "‚ÈAˆ«‚­‚È‚¢˜b‚¾‚ëH";
-		mes "‚»‚ê‚¶‚áA‚Ü‚½‚ÈB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã¨å¼•ãæ›ãˆã«ã€";
+		mes "å¬¢ã¡ã‚ƒã‚“ã‹ã‚‰è²´é‡ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’é ‚ãã€‚";
+		mes "ãªã€æ‚ªããªã„è©±ã ã‚ï¼Ÿ";
+		mes "ãã‚Œã˜ã‚ƒã€ã¾ãŸãªã€‚";
 		close;
 	}
 	else {
-		mes "[ƒPƒCƒ€]";
-		mes "‚¿‚å‚¢‚Æ¨Šñ‚è‚Èî•ñ‚ª‚ ‚é‚ñ‚¾‚ªcc";
-		mes "‚Ç‚¤‚¾H‹»–¡‚È‚¢‚©‚¢H";
-		mes "î•ñ—¿‚Æ‚µ‚Ä500zeny‚­‚ê‚ê‚Î";
-		mes "‹³‚¦‚Ä‚â‚é‚æB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã¡ã‚‡ã„ã¨è€³å¯„ã‚Šãªæƒ…å ±ãŒã‚ã‚‹ã‚“ã ãŒâ€¦â€¦";
+		mes "ã©ã†ã ï¼Ÿèˆˆå‘³ãªã„ã‹ã„ï¼Ÿ";
+		mes "æƒ…å ±æ–™ã¨ã—ã¦500zenyãã‚Œã‚Œã°";
+		mes "æ•™ãˆã¦ã‚„ã‚‹ã‚ˆã€‚";
 		next;
-		if(select("‚í‚©‚Á‚½A•¥‚¤‚æ","‚¢‚âA‚â‚ß‚Æ‚­")==2) {
-			mes "[ƒPƒCƒ€]";
-			mes "ƒ`ƒFƒbA‚¢‚ç‚È‚¢‚Ì‚©‚æB";
-			mes "¡‚Ç‚«‚¢‚¢î•ñ‚ğ“¾‚é‚½‚ß‚É‚Í";
-			mes "‹à‚ª•K—v‚È‚ñ‚¾‚æA‹à‚ªB";
-			mes "‹à‚ğ‚¯‚¿‚Á‚ÄA‚¢‚¢î•ñ‚ğ";
-			mes "“¦‚·‚È‚ñ‚Ä”n­‚°‚Ä‚é‚¼B";
+		if(select("ã‚ã‹ã£ãŸã€æ‰•ã†ã‚ˆ","ã„ã‚„ã€ã‚„ã‚ã¨ã")==2) {
+			mes "[ã‚±ã‚¤ãƒ ]";
+			mes "ãƒã‚§ãƒƒã€ã„ã‚‰ãªã„ã®ã‹ã‚ˆã€‚";
+			mes "ä»Šã©ãã„ã„æƒ…å ±ã‚’å¾—ã‚‹ãŸã‚ã«ã¯";
+			mes "é‡‘ãŒå¿…è¦ãªã‚“ã ã‚ˆã€é‡‘ãŒã€‚";
+			mes "é‡‘ã‚’ã‘ã¡ã£ã¦ã€ã„ã„æƒ…å ±ã‚’";
+			mes "é€ƒã™ãªã‚“ã¦é¦¬é¹¿ã’ã¦ã‚‹ãã€‚";
 			close;
 		}
-		if(Zeny < 500) {	//–¢’²¸
-			mes "[ƒPƒCƒ€]";
-			mes "‚¨‚¢‚¨‚¢A500zeny‚à‚È‚¢‚Ì‚©‚æc";
-			mes "‚»‚ê‚¶‚á‚ ‹³‚¦‚ç‚ê‚È‚¢‚ºB";
+		if(Zeny < 500) {	//æœªèª¿æŸ»
+			mes "[ã‚±ã‚¤ãƒ ]";
+			mes "ãŠã„ãŠã„ã€500zenyã‚‚ãªã„ã®ã‹ã‚ˆâ€¦";
+			mes "ãã‚Œã˜ã‚ƒã‚æ•™ãˆã‚‰ã‚Œãªã„ãœã€‚";
 			close;
 		}
 		set Zeny,Zeny-500;
-		mes "[ƒPƒCƒ€]";
-		mes "‚ ‚è‚ª‚Æ‚æI";
-		mes "‚ñ‚¶‚áA‹³‚¦‚Ä‚â‚éB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã‚ã‚ŠãŒã¨ã‚ˆï¼";
+		mes "ã‚“ã˜ã‚ƒã€æ•™ãˆã¦ã‚„ã‚‹ã€‚";
 		callsub L_Routine;
 		next;
-		mes "[ƒPƒCƒ€]";
-		mes "‚»‚Ì‘¼A‚à‚Á‚Æ’¿‚µ‚¢ƒAƒCƒeƒ€‚à";
-		mes "‚Á‚Ä‚¢‚é‚ç‚µ‚¢Bˆê“x‚ ‚Ì";
-		mes "ì‚¿‚á‚ñ‚É‰ï‚Á‚Ä‚İ‚é‚Æ‚¢‚¢‚æB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ãã®ä»–ã€ã‚‚ã£ã¨çã—ã„ã‚¢ã‚¤ãƒ†ãƒ ã‚‚";
+		mes "æŒã£ã¦ã„ã‚‹ã‚‰ã—ã„ã€‚ä¸€åº¦ã‚ã®";
+		mes "å¬¢ã¡ã‚ƒã‚“ã«ä¼šã£ã¦ã¿ã‚‹ã¨ã„ã„ã‚ˆã€‚";
 		next;
-		mes "[ƒPƒCƒ€]";
-		mes "‚³‚ÄA‚»‚Ìì‚¿‚á‚ñ‚ª—~‚µ‚ª‚Á‚Ä‚¢‚é";
-		mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚RƒJƒ‰ƒbƒg‚Í";
-		mes "‚Ç‚±‚Åè‚É“ü‚é‚Ì‚©A‚¾‚ªcc";
-		mes "‰´‚Ì’‡ŠÔ‚É‚æ‚é‚ÆA‰½‚Æ‚©‚Á‚Ä‚¢‚¤";
-		mes "R–¬‚Ì‹ß‚­‚ÉzR‚ª‚ ‚é‚ç‚µ‚¢B";
-		mes "‚»‚±‚Å‚È‚ç“üè‚Å‚«‚é‚©‚à‚µ‚ê‚È‚¢‚ÈB";
+		mes "[ã‚±ã‚¤ãƒ ]";
+		mes "ã•ã¦ã€ãã®å¬¢ã¡ã‚ƒã‚“ãŒæ¬²ã—ãŒã£ã¦ã„ã‚‹";
+		mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ï¼“ã‚«ãƒ©ãƒƒãƒˆã¯";
+		mes "ã©ã“ã§æ‰‹ã«å…¥ã‚‹ã®ã‹ã€ã ãŒâ€¦â€¦";
+		mes "ä¿ºã®ä»²é–“ã«ã‚ˆã‚‹ã¨ã€ä½•ã¨ã‹ã£ã¦ã„ã†";
+		mes "å±±è„ˆã®è¿‘ãã«é‰±å±±ãŒã‚ã‚‹ã‚‰ã—ã„ã€‚";
+		mes "ãã“ã§ãªã‚‰å…¥æ‰‹ã§ãã‚‹ã‹ã‚‚ã—ã‚Œãªã„ãªã€‚";
 		close;
 	}
 L_Routine:
-	mes "‚ ‚Á‚¿‚Éƒ_ƒCƒ„ƒ‚ƒ“ƒh‚RƒJƒ‰ƒbƒg‚ğ";
-	mes "—~‚µ‚ª‚Á‚Ä‚¢‚éì‚¿‚á‚ñ‚ª‚¢‚éB";
-	mes "‰\‚É‚æ‚é‚Æcc”Ş—‚Í‚¯‚Á‚±‚¤";
-	mes "‚¢‚¢•¨‚ğ‚Á‚Ä‚¢‚é‚ç‚µ‚¢B";
+	mes "ã‚ã£ã¡ã«ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ï¼“ã‚«ãƒ©ãƒƒãƒˆã‚’";
+	mes "æ¬²ã—ãŒã£ã¦ã„ã‚‹å¬¢ã¡ã‚ƒã‚“ãŒã„ã‚‹ã€‚";
+	mes "å™‚ã«ã‚ˆã‚‹ã¨â€¦â€¦å½¼å¥³ã¯ã‘ã£ã“ã†";
+	mes "ã„ã„ç‰©ã‚’æŒã£ã¦ã„ã‚‹ã‚‰ã—ã„ã€‚";
 	next;
-	mes "[ƒPƒCƒ€]";
-	mes "‚»‚ê‚ªA‚ß‚Á‚½‚Éè‚É“ü‚ç‚È‚¢•¨‚â";
-	mes "‚‰¿‚È•¨‚ğ‚í‚ñ‚³‚©‚Æ‚¾‚Á‚Ä‚³B‘O‚É";
-	mes "‚¿‚ç‚Á‚ÆŒ©‚½‚Æ‚±‚ëAR—r‚ÌŠp‚Ì‚æ‚¤‚È";
-	mes "•¨‚ª¶‚¦‚½Š•‚â‰¤Š¥‚ğ‚Á‚Ä‚¢‚½‚æB";
+	mes "[ã‚±ã‚¤ãƒ ]";
+	mes "ãã‚ŒãŒã€ã‚ã£ãŸã«æ‰‹ã«å…¥ã‚‰ãªã„ç‰©ã‚„";
+	mes "é«˜ä¾¡ãªç‰©ã‚’ã‚ã‚“ã•ã‹ã¨ã ã£ã¦ã•ã€‚å‰ã«";
+	mes "ã¡ã‚‰ã£ã¨è¦‹ãŸã¨ã“ã‚ã€å±±ç¾Šã®è§’ã®ã‚ˆã†ãª";
+	mes "ç‰©ãŒç”ŸãˆãŸå…œã‚„ç‹å† ã‚’æŒã£ã¦ã„ãŸã‚ˆã€‚";
 	return;
 }
 
-mjolnir_02.gat,85,362,3	script	ƒuƒ‰ƒbƒNƒXƒ~ƒX	726,{
+mjolnir_02.gat,85,362,3	script	ãƒ–ãƒ©ãƒƒã‚¯ã‚¹ãƒŸã‚¹	726,{
 	emotion 18;
-	mes "[ƒhƒEƒFƒCƒ“]";
-	mes "‚í`‚¢B";
-	mes "‚Æ`‚Á‚Ä‚à’¿‚µ‚¢‚à‚Ì‚ğ";
-	mes "‚½`‚­‚³‚ñŒ©‚Â‚¯‚¿‚á‚Á‚½I";
-	mes "‚«‚á‚Í‚Í`A‰½‚¾‚Æv‚¤H";
-	mes "‚È‚ñ‚ÆAƒ_ƒCƒ„ƒ‚ƒ“ƒh‚RƒJƒ‰ƒbƒg!!";
-	mes "‚¢‚¢‚Å‚µ‚å`A‚±‚ê‚Å„‚à‘å‹à‚¿I";
+	mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+	mes "ã‚ï½ã„ã€‚";
+	mes "ã¨ï½ã£ã¦ã‚‚çã—ã„ã‚‚ã®ã‚’";
+	mes "ãŸï½ãã•ã‚“è¦‹ã¤ã‘ã¡ã‚ƒã£ãŸï¼";
+	mes "ãã‚ƒã¯ã¯ï½ã€ä½•ã ã¨æ€ã†ï¼Ÿ";
+	mes "ãªã‚“ã¨ã€ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ï¼“ã‚«ãƒ©ãƒƒãƒˆ!!";
+	mes "ã„ã„ã§ã—ã‚‡ï½ã€ã“ã‚Œã§ç§ã‚‚å¤§é‡‘æŒã¡ï¼";
 	next;
-	if(select("ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğ”ƒ‚¢‚½‚¢I","‚¨‚ß‚Å‚Æ‚¤I")==2) {
-		mes "[ƒhƒEƒFƒCƒ“]";
-		mes "‚ ‚è‚ª‚Æ‚¤`I";
-		mes "ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ª•K—v‚É‚È‚Á‚½‚ç";
-		mes "‚¢‚Â‚Å‚à‚¨‚¢‚ÅB“Á•Ê‚ÉˆÀ‚¢";
-		mes "’l’i‚Å”„‚Á‚Ä‚ ‚°‚é‚æB";
+	if(select("ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’è²·ã„ãŸã„ï¼","ãŠã‚ã§ã¨ã†ï¼")==2) {
+		mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+		mes "ã‚ã‚ŠãŒã¨ã†ï½ï¼";
+		mes "ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ãŒå¿…è¦ã«ãªã£ãŸã‚‰";
+		mes "ã„ã¤ã§ã‚‚ãŠã„ã§ã€‚ç‰¹åˆ¥ã«å®‰ã„";
+		mes "å€¤æ®µã§å£²ã£ã¦ã‚ã’ã‚‹ã‚ˆã€‚";
 		close;
 	}
-	mes "[ƒhƒEƒFƒCƒ“]";
-	mes "‚¨‚¨!?";
-	mes "‰¿’l‚ª‚í‚©‚é‚ñ‚¾`I";
-	mes "‚¶‚á‚ cc“Á•Ê‚É‚PŒÂ";
-	mes "55,000zeny‚Å”„‚Á‚Ä‚ ‚°‚æ‚¤I";
-	mes "‚Ç‚¤H@‚¨”ƒ‚¢“¾‚Å‚µ‚åB";
+	mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+	mes "ãŠãŠ!?";
+	mes "ä¾¡å€¤ãŒã‚ã‹ã‚‹ã‚“ã ï½ï¼";
+	mes "ã˜ã‚ƒã‚â€¦â€¦ç‰¹åˆ¥ã«ï¼‘å€‹";
+	mes "55,000zenyã§å£²ã£ã¦ã‚ã’ã‚ˆã†ï¼";
+	mes "ã©ã†ï¼Ÿã€€ãŠè²·ã„å¾—ã§ã—ã‚‡ã€‚";
 	next;
-	mes "[ƒhƒEƒFƒCƒ“]";
-	mes "‚Ç‚ê‚­‚ç‚¢—~‚µ‚¢H";
-	mes "‚ `‚Å‚à500ŒÂˆÈ‰º‚É‚µ‚Ä‚ËB";
-	mes "‘½‚·‚¬‚Ä‚à‚Ä‚È‚¢‚µ‚³B";
-	mes "‚»‚ê‚©‚çA—v‚ç‚È‚¢‚Í";
-	mes "u0v‚Á‚ÄŒ¾‚Á‚Ä‚ËB";
+	mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+	mes "ã©ã‚Œãã‚‰ã„æ¬²ã—ã„ï¼Ÿ";
+	mes "ã‚ï½ã§ã‚‚500å€‹ä»¥ä¸‹ã«ã—ã¦ã­ã€‚";
+	mes "å¤šã™ãã¦ã‚‚æŒã¦ãªã„ã—ã•ã€‚";
+	mes "ãã‚Œã‹ã‚‰ã€è¦ã‚‰ãªã„æ™‚ã¯";
+	mes "ã€Œ0ã€ã£ã¦è¨€ã£ã¦ã­ã€‚";
 	while(1) {
 		next;
 		input '@num;
 		if('@num <= 0) {
-			mes "[ƒhƒEƒFƒCƒ“]";
-			mes "‚¦A‚¢‚ç‚È‚¢‚Ì`H";
-			mes "cc‚¶‚áA‚Ü‚½‚ËI";
+			mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+			mes "ãˆã€ã„ã‚‰ãªã„ã®ï½ï¼Ÿ";
+			mes "â€¦â€¦ã˜ã‚ƒã€ã¾ãŸã­ï¼";
 			close;
 		}
 		if('@num > 500) {
-			mes "[ƒhƒEƒFƒCƒ“]";
-			mes "‚Ş‚£`B";
-			mes "500ŒÂˆÈ‰º‚É‚µ‚Ä‚¿‚å‚¤‚¾‚¢I";
+			mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+			mes "ã‚€ã…ï½ã€‚";
+			mes "500å€‹ä»¥ä¸‹ã«ã—ã¦ã¡ã‚‡ã†ã ã„ï¼";
 			continue;
 		}
 		break;
 	}
 	set '@price,'@num*55000;
 	if(Zeny < '@price) {
-		mes "[ƒhƒEƒFƒCƒ“]";
-		mes "‚ ‚Ácc‚¦‚Á‚ÆA";
-		mes "‚¨‹à‚ª‘«‚è‚È‚¢‚Æ”„‚ê‚È‚¢‚æB";
-		mes "„‚à‘¹‚È¤”„‚ğ‚·‚é‚í‚¯‚É‚Í";
-		mes "‚¢‚©‚È‚¢‚©‚ç‚³B";
+		mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+		mes "ã‚ã£â€¦â€¦ãˆã£ã¨ã€";
+		mes "ãŠé‡‘ãŒè¶³ã‚Šãªã„ã¨å£²ã‚Œãªã„ã‚ˆã€‚";
+		mes "ç§ã‚‚æãªå•†å£²ã‚’ã™ã‚‹ã‚ã‘ã«ã¯";
+		mes "ã„ã‹ãªã„ã‹ã‚‰ã•ã€‚";
 		close;
 	}
 	if(checkweight(732,'@num)==0) {
-		mes "[ƒhƒEƒFƒCƒ“]";
-		mes "‚¯‚Á‚±‚¤‘å‰×•¨‚Ëcc";
-		mes "‚»‚ê‚¶‚á‚ Aƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğ";
-		mes "‚Ä‚È‚¢‚Å‚µ‚åB‚¿‚å‚Á‚Æ‰×•¨‚ğ";
-		mes "Œ¸‚ç‚µ‚Ä‚©‚ç—ˆ‚Ä‚¿‚å‚¤‚¾‚¢B";
+		mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+		mes "ã‘ã£ã“ã†å¤§è·ç‰©ã­â€¦â€¦";
+		mes "ãã‚Œã˜ã‚ƒã‚ã€ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’";
+		mes "æŒã¦ãªã„ã§ã—ã‚‡ã€‚ã¡ã‚‡ã£ã¨è·ç‰©ã‚’";
+		mes "æ¸›ã‚‰ã—ã¦ã‹ã‚‰æ¥ã¦ã¡ã‚‡ã†ã ã„ã€‚";
 		close;
 	}
 	set Zeny,Zeny-'@price;
 	getitem 732,'@num;
-	mes "[ƒhƒEƒFƒCƒ“]";
-	mes "–ˆ“x‚ ‚è`!!";
-	mes "‚Ü‚½•K—v‚É‚È‚Á‚½‚ç‚¢‚Â‚Å‚à—ˆ‚Ä‚ËI";
+	mes "[ãƒ‰ã‚¦ã‚§ã‚¤ãƒ³]";
+	mes "æ¯åº¦ã‚ã‚Šï½!!";
+	mes "ã¾ãŸå¿…è¦ã«ãªã£ãŸã‚‰ã„ã¤ã§ã‚‚æ¥ã¦ã­ï¼";
 	close;
 }

@@ -1,230 +1,230 @@
 //----------------------------------------------------------------------
-// �X�N���v�g : Event_MobtTim v1.0
+// スクリプト : Event_MobtTim v1.0
 //----------------------------------------------------------------------
 
 //----------------------------------
-// �����X�^�[�W���[�X/�̂���/�쐶��
+// モンスタージュース/歌う花/野生花
 //----------------------------------
 
-alberta_in.gat,173,76,4	script	�����X�^�[�e�C�}�[	125,{
-	mes "[�C���h]";
-	mes "���͂��܂�";
-	mes "�����X�^�[�e�C�~���O�̎���I";
-	mes "�N�����킢�������X�^�[�Ƃ�";
-	mes "�ӎv�a�ʂ̂��߁A�����X�^�[������";
-	mes "�n�D�i���W�߂Ȃ���΂Ȃ�Ȃ�";
-	mes "�K�v���������܂��񂩁H";
+alberta_in.gat,173,76,4	script	モンスターテイマー	125,{
+	mes "[イワド]";
+	mes "時はいまや";
+	mes "モンスターテイミングの時代！";
+	mes "君もかわいいモンスターとの";
+	mes "意思疎通のため、モンスターたちの";
+	mes "嗜好品を集めなければならない";
+	mes "必要性を感じませんか？";
 	next;
-	switch (select("^3355FF�u�����X�^�[�e�C�~���O�v^000000�Ɋւ���","^3355FF�u�����X�^�[�W���[�X�v^000000����","^3355FF�u�̂��ԁv^000000����","^3355FF�u�쐶�ԁv^000000����","��b����߂�")) {
+	switch (select("^3355FF「モンスターテイミング」^000000に関して","^3355FF「モンスタージュース」^000000注文","^3355FF「歌う花」^000000注文","^3355FF「野生花」^000000注文","会話をやめる")) {
 	case 1:
-		mes "[�C���h]";
-		mes "�D���ȃ����X�^�[�Ƃ�";
-		mes "�R�~���j�P�[�V�����̂��߂Ȃ�A";
-		mes "�K���p�ӂ��Ȃ���΂Ȃ�Ȃ�";
-		mes "�l�X�ȃ����X�^�[�n�D�i�I";
-		mes "��烂���X�^�[�e�C�}�[�M���h���A";
-		mes "���荠�ȏ����ł��񋟂��܂��I";
+		mes "[イワド]";
+		mes "好きなモンスターとの";
+		mes "コミュニケーションのためなら、";
+		mes "必ず用意しなければならない";
+		mes "様々なモンスター嗜好品！";
+		mes "我らモンスターテイマーギルドが、";
+		mes "お手頃な条件でご提供します！";
 		next;
-		mes "[�C���h]";
-		mes "���ɃN�[���ȃA�C�e��������";
-		mes "�C�y�Ɏ�ɓ���邱�Ƃ��ł���";
-		mes "���Ă��ȃV�X�e���I";
-		mes "�����X�^�[�W���[�X�I";
-		mes "�̂��ԁI";
-		mes "�����Ė쐶�ԁI";
+		mes "[イワド]";
+		mes "非常にクールなアイテムたちを";
+		mes "気軽に手に入れることができる";
+		mes "すてきなシステム！";
+		mes "モンスタージュース！";
+		mes "歌う花！";
+		mes "そして野生花！";
 		next;
-		mes "[�C���h]";
-		mes "�����X�^�[�W���[�X��^3355FF�u�ƒ{�̌��v^000000";
-		mes "�P��^3355FF�u�����S�v^000000�Q�Ō����\�ŁA";
-		mes "�̂��Ԃ�^3355FF�u�̂����v^000000�P�A";
-		mes "�����Ė쐶�Ԃ�^3355FF�u�����p�ԁv^000000�P��";
-		mes "^3355FF�u�N���[�o�[�v^000000�P�Ō����\�ł��B";
-		mes "���̃A�C�e���ɒ��킵�Ă݂܂��񂩁H";
+		mes "[イワド]";
+		mes "モンスタージュースは^3355FF「家畜の血」^000000";
+		mes "１つと^3355FF「リンゴ」^000000２つで交換可能で、";
+		mes "歌う花は^3355FF「歌う草」^000000１つ、";
+		mes "そして野生花は^3355FF「装飾用花」^000000１つと";
+		mes "^3355FF「クローバー」^000000１つで交換可能です。";
+		mes "幻のアイテムに挑戦してみませんか？";
 		close;
 	case 2:
-		mes "[�C���h]";
-		mes "�l�Ԃ����ނƂ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF�����X�^�[�W���[�X^000000!!";
-		mes "�_���ς��ċ�X�������̖��́A";
-		mes "�����X�^�[�����̎����";
-		mes "�҂����荇�����n�D�i�c�c�B";
+		mes "[イワド]";
+		mes "人間が飲むという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FFモンスタージュース^000000!!";
+		mes "酸っぱくて苦々しいこの味は、";
+		mes "モンスターたちの趣向に";
+		mes "ぴったり合った嗜好品……。";
 		next;
 		setarray '@need,702,512;
 		setarray '@amount,1,2;
 		set '@gain,626;
 		break;
 	case 3:
-		mes "[�C���h]";
-		mes "�l�Ԃ������Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF�̂���^000000!!";
-		mes "�炫����Ă͍��΂������̉Ԃ́A";
-		mes "�����X�^�[�����̎����";
-		mes "�҂����荇�����n�D�i�c�c";
+		mes "[イワド]";
+		mes "人間が聞くという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FF歌う花^000000!!";
+		mes "咲き乱れては香ばしいこの花は、";
+		mes "モンスターたちの趣向に";
+		mes "ぴったり合った嗜好品……";
 		next;
 		set '@need,707;
 		set '@amount,1;
 		set '@gain,629;
 		break;
 	case 4:
-		mes "[�C���h]";
-		mes "�l�Ԃ����߂�Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF�쐶��^000000!!";
-		mes "���������������̃f�U�C���́A";
-		mes "�����X�^�[�����̎����";
-		mes "�҂����荇�����n�D�i�c�c";
+		mes "[イワド]";
+		mes "人間が眺めるという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FF野生花^000000!!";
+		mes "理解しがたいこのデザインは、";
+		mes "モンスターたちの趣向に";
+		mes "ぴったり合った嗜好品……";
 		next;
 		setarray '@need,2207,705;
 		setarray '@amount,1,1;
 		set '@gain,10009;
 		break;
 	case 5:
-		mes "[�C���h]";
-		mes "�ǂ�ȃ����X�^�[�����΂ɒu�����A";
-		mes "�܂����߂鎖���ł��Ă��Ȃ��悤";
-		mes "�ł��ˁB�l���̃p�[�g�i�[��";
-		mes "�Ȃ邩������Ȃ��̂�";
-		mes "���낻���Ɍ��߂Ȃ����Ɓc�c�B";
+		mes "[イワド]";
+		mes "どんなモンスターをそばに置くか、";
+		mes "まだ決める事ができていないよう";
+		mes "ですね。人生のパートナーに";
+		mes "なるかもしれないので";
+		mes "おろそかに決めないこと……。";
 		next;
-		mes "[�C���h]";
-		mes "�������l���Ă݂Č��S��";
-		mes "���Ă���A�܂��K�˂�";
-		mes "���Ă��������B";
+		mes "[イワド]";
+		mes "ゆっくり考えてみて決心が";
+		mes "ついてたら、また訪ねて";
+		mes "きてください。";
 		close;
 	}
 	if(countitem('@need[0])<'@amount[0] || countitem('@need[1])<'@amount[1]) {
-		mes "[�C���h]";
+		mes "[イワド]";
 		switch(@menu) {
 			case 2:
-				mes "�����X�^�[�W���[�X���D����";
-				mes "�����X�^�[����Ă邠�Ȃ��Ɂc�c";
-				mes "�����X�^�[�W���[�X��";
-				mes "�������ЂƂI";
-				mes "^3355FF�ƒ{�̌��P�I�����S�Q�I^000000";
+				mes "モンスタージュースが好きな";
+				mes "モンスターを育てるあなたに……";
+				mes "モンスタージュースの";
+				mes "作り方をひとつ！";
+				mes "^3355FF家畜の血１つ！リンゴ２つ！^000000";
 				break;
 			case 3:
-				mes "�̂��Ԃ��D���ȃ����X�^�[��";
-				mes "��Ă邠�Ȃ��Ɂc�c";
-				mes "�̂��Ԃ̍������ЂƂI";
-				mes "^3355FF�̂������P�I^000000";
+				mes "歌う花が好きなモンスターを";
+				mes "育てるあなたに……";
+				mes "歌う花の作り方をひとつ！";
+				mes "^3355FF歌う草を１つ！^000000";
 				break;
 			case 4:
-				mes "�쐶�Ԃ��D���ȃ����X�^�[��";
-				mes "��Ă邠�Ȃ��Ɂc�c";
-				mes "�쐶�Ԃ̍������ЂƂI";
-				mes "^3355FF�����p�ԂƃN���[�o�[���P���I^000000";
+				mes "野生花が好きなモンスターを";
+				mes "育てるあなたに……";
+				mes "野生花の作り方をひとつ！";
+				mes "^3355FF装飾用花とクローバーを１つずつ！^000000";
 				break;
 		}
-		mes "���Ɏ����Ă��Ă�������΁A";
+		mes "私に持ってきてくだされば、";
 		next;
-		mes "[�C���h]";
-		mes "�����X�^�[�e�C�}�[�̃v���C�h��";
-		mes "�����āI���̏�ł����ɍ����";
-		mes "���������܂��I";
+		mes "[イワド]";
+		mes "モンスターテイマーのプライドに";
+		mes "かけて！その場ですぐに作って";
+		mes "差しあげます！";
 		close;
 	}
-	mes "[�C���h]";
-	mes "�����I" +getitemname('@gain)+ "����邱�Ƃ��ł���ޗ���";
-	mes "���ׂĎ����Ă�������Ⴂ�܂��ˁB";
-	mes "���΂炵���I";
-	mes "�����X�^�[�e�C�}�[�̃v���C�h�ɂ�����";
-	mes "�����ɍ���č����グ�܂��B";
+	mes "[イワド]";
+	mes "おお！" +getitemname('@gain)+ "を作ることができる材料を";
+	mes "すべて持っていらっしゃいますね。";
+	mes "すばらしい！";
+	mes "モンスターテイマーのプライドにかけて";
+	mes "すぐに作って差し上げます。";
 	next;
-	mes "[�C���h]";
+	mes "[イワド]";
 	switch(@menu) {
 		case 2:
-			mes "�����S�Q�Ɖƒ{�̌��`";
+			mes "リンゴ２つと家畜の血～";
 			next;
-			mes "^3355FF- �S���S�� �U�u�U�u �K�V���K�V�� -^000000";
+			mes "^3355FF- ゴリゴリ ザブザブ ガシャガシャ -^000000";
 			break;
 		case 3:
-			mes "�̂����`";
+			mes "歌う草～";
 			next;
-			mes "^3355FF- �T�N�T�N �U�N�U�N �O���O�� -^000000";
+			mes "^3355FF- サクサク ザクザク グリグリ -^000000";
 			break;
 		case 4:
-			mes "�����p�ԃN���[�o�[���˂Ă��˂ā`";
+			mes "装飾用花クローバーこねてこねて～";
 			next;
-			mes "^3355FF- �r���r�� �S���S�� �R�l�R�l -^000000";
+			mes "^3355FF- ビリビリ ゴリゴリ コネコネ -^000000";
 			break;
 	}
 	next;
 	delitem '@need[0],'@amount[0];
 	delitem '@need[1],'@amount[1];
 	getitem '@gain,1;
-	mes "[�C���h]";
-	mes "�͂��A�ł�������܂����I";
-	mes "���Ȃ��̈�Ă邩�킢�������X�^�[��";
-	mes "�厖�ɂ��Ă����Ă��������B";
-	mes getitemname('@gain)+ "�I";
+	mes "[イワド]";
+	mes "はい、できあがりました！";
+	mes "あなたの育てるかわいいモンスターを";
+	mes "大事にしてあげてください。";
+	mes getitemname('@gain)+ "！";
 	close;
 }
 
 //----------------------------------
-// ����������/���Ă��Ȃ��莆/�g�D�̝|
+// 悪魔召喚書/宛てがない手紙/組織の掟
 //----------------------------------
 
-izlude_in.gat,129,64,4	script	�����X�^�[�e�C�}�[	125,{
-	mes "[�V���E�S]";
-	mes "�����X�^�[�e�C�~���O�ɕK�v��";
-	mes "�n�D�i����肻�낦��̂�";
-	mes "��O���Ă��܂����b�H";
-	mes "���킢���y�b�g�����X�^�[������";
-	mes "�n�D�i���������Ă����܂��傤���I";
+izlude_in.gat,129,64,4	script	モンスターテイマー	125,{
+	mes "[ショウゴ]";
+	mes "モンスターテイミングに必要な";
+	mes "嗜好品を取りそろえるのに";
+	mes "専念していますかッ？";
+	mes "かわいいペットモンスターたちの";
+	mes "嗜好品を準備してあげましょうっ！";
 	next;
-	switch (select("^3355FF�u�����X�^�[�e�C�~���O�v^000000�Ɋւ���","^3355FF�u�����������v^000000����","^3355FF�u���Ă��Ȃ��莆�v^000000����","^3355FF�u�g�D�̝|�v^000000����","��b����߂�")) {
+	switch (select("^3355FF「モンスターテイミング」^000000に関して","^3355FF「悪魔召喚書」^000000注文","^3355FF「宛てがない手紙」^000000注文","^3355FF「組織の掟」^000000注文","会話をやめる")) {
 	case 1:
-		mes "[�V���E�S]";
-		mes "�D���ȃ����X�^�[�Ƃ�";
-		mes "�R�~���j�P�[�V�����̂��߂Ȃ�A";
-		mes "�K���p�ӂ��Ȃ���΂Ȃ�Ȃ�";
-		mes "�l�X�ȃ����X�^�[�n�D�i�I";
-		mes "��烂���X�^�[�e�C�}�[�M���h��";
-		mes "���荠�ȏ����ł��񋟂��܂����I";
+		mes "[ショウゴ]";
+		mes "好きなモンスターとの";
+		mes "コミュニケーションのためなら、";
+		mes "必ず用意しなければならない";
+		mes "様々なモンスター嗜好品！";
+		mes "我らモンスターテイマーギルドが";
+		mes "お手頃な条件でご提供しますっ！";
 		next;
-		mes "[�V���E�S]";
-		mes "���ɃN�D�[���ȃA�C�e����������";
-		mes "�C�y�Ɏ�ɓ���邱�Ƃ��ł���";
-		mes "���Ă��ȃV�X�e���b�I";
-		mes "�������������I";
-		mes "���Ă��Ȃ��莆���I";
-		mes "�g�D�̝|���I";
+		mes "[ショウゴ]";
+		mes "非常にクゥールなアイテムたちをっ";
+		mes "気軽に手に入れることができる";
+		mes "すてきなシステムッ！";
+		mes "悪魔召喚書っ！";
+		mes "宛てがない手紙っ！";
+		mes "組織の掟っ！";
 		next;
-		mes "[�V���E�S]";
-		mes "������������^3355FF�u�Â����@���v^000000�P��";
-		mes "^3355FF�u�S�҂̉�v^000000�Q�Ō����\��";
-		mes "���Ă��Ȃ��莆��";
-		mes "^3355FF�u�Â��|�[�g���[�g�v^000000�P�G";
+		mes "[ショウゴ]";
+		mes "悪魔召喚書は^3355FF「古い魔法書」^000000１つと";
+		mes "^3355FF「亡者の牙」^000000２つで交換可能で";
+		mes "宛てがない手紙は";
+		mes "^3355FF「古いポートレート」^000000１つ；";
 		next;
-		mes "[�V���E�S]";
-		mes "�����đg�D�̝|��^3355FF�u���߂̏؁v^000000�P��";
-		mes "^3355FF�u�T�\���̐K���v^000000�P�Ō����\�ł��B";
-		mes "���̃A�C�e����";
-		mes "���킵�Ă݂܂���?!";
+		mes "[ショウゴ]";
+		mes "そして組織の掟は^3355FF「忠節の証」^000000１つと";
+		mes "^3355FF「サソリの尻尾」^000000１つで交換可能です。";
+		mes "幻のアイテムに";
+		mes "挑戦してみませんか?!";
 		close;
 	case 2:
-		mes "[�V���E�S]";
-		mes "�l�Ԃ��ǂ݉����Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���b�I";
-		mes "���̖���^3355FF����������^000000!!";
-		mes "����ė���s�\�ȃ����X�^�[������";
-		mes "�Ăяo���_��I�ȗ͂�������";
-		mes "���̃A�C�e���b�I";
+		mes "[ショウゴ]";
+		mes "人間が読み解くという次元を";
+		mes "はるかに超越したアイテムッ！";
+		mes "その名も^3355FF悪魔召喚書^000000!!";
+		mes "難しくて理解不能なモンスターたちを";
+		mes "呼び出す神秘的な力を持った";
+		mes "このアイテムッ！";
 		next;
 		if(countitem(1006)<1 || countitem(958)<2) {
-			mes "[�V���E�S]";
-			mes "�����������ŏ����ł��郂���X�^�[��";
-			mes "��Ă邠�Ȃ��ɂ��c�c";
-			mes "�����������̍������ЂƂI";
-			mes "^3355FF�Â����@���P�ƖS�҂̉�Q��^000000";
-			mes "���Ɏ����Ă��Ă�������΁A";
+			mes "[ショウゴ]";
+			mes "悪魔召喚書で召喚できるモンスターを";
+			mes "育てるあなたにっ……";
+			mes "悪魔召喚書の作り方をひとつ！";
+			mes "^3355FF古い魔法書１つと亡者の牙２つ^000000";
+			mes "私に持ってきてくだされば、";
 			next;
-			mes "[�V���E�S]";
-			mes "�����X�^�[�e�C�}�[�̃v���C�h��";
-			mes "�����Ă��I���̏�ł����ɍ����";
-			mes "�����グ�܂��˂��I";
+			mes "[ショウゴ]";
+			mes "モンスターテイマーのプライドに";
+			mes "かけてっ！その場ですぐに作って";
+			mes "差し上げますねっ！";
 			close;
 		}
 		setarray '@need,1006,958;
@@ -232,26 +232,26 @@ izlude_in.gat,129,64,4	script	�����X�^�[�e�C�}�[	125,{
 		set '@gain,642;
 		break;
 	case 3:
-		mes "[�V���E�S]";
-		mes "�l�Ԃ�������Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���b�c�c";
-		mes "���̖���^3355FF���Ă��Ȃ��莆^000000!!";
-		mes "�N���N�ɑ���̂�";
-		mes "�󂯎�������������������킩��Ȃ�";
-		mes "���̃A�C�e���b�B";
+		mes "[ショウゴ]";
+		mes "人間が感じるという次元を";
+		mes "はるかに超越したアイテムッ……";
+		mes "その名も^3355FF宛てがない手紙^000000!!";
+		mes "誰が誰に送るのか";
+		mes "受け取った方も送った方もわからない";
+		mes "このアイテムッ。";
 		next;
 		if(countitem(7014)<1) {
-			mes "[�V���E�S]";
-			mes "���Ă��Ȃ��莆���D���ȃ����X�^�[��";
-			mes "��Ă邠�Ȃ��Ɂc�c";
-			mes "���Ă��Ȃ��莆�̍������ЂƂ��I";
-			mes "^3355FF�Â��|�[�g���[�g�P�I^000000";
-			mes "���Ɏ����Ă��Ă�������΁A";
+			mes "[ショウゴ]";
+			mes "宛てがない手紙が好きなモンスターを";
+			mes "育てるあなたに……";
+			mes "宛てがない手紙の作り方をひとつっ！";
+			mes "^3355FF古いポートレート１つ！^000000";
+			mes "私に持ってきてくだされば、";
 			next;
-			mes "[�V���E�S]";
-			mes "�����X�^�[�e�C�}�[�̃v���C�h��";
-			mes "�����Ă��I���̏�ł����ɍ����";
-			mes "�����グ�܂��˂��I";
+			mes "[ショウゴ]";
+			mes "モンスターテイマーのプライドに";
+			mes "かけてっ！その場ですぐに作って";
+			mes "差し上げますねっ！";
 			close;
 		}
 		setarray '@need,7014,0;
@@ -259,26 +259,26 @@ izlude_in.gat,129,64,4	script	�����X�^�[�e�C�}�[	125,{
 		set '@gain,636;
 		break;
 	case 4:
-		mes "[�V���E�S]";
-		mes "�l�Ԃ����키�Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���b�I";
-		mes "���̖���^3355FF�g�D�̝|^000000!!";
-		mes "�g�D���d�񂶂郂���X�^�[������";
-		mes "����Ƀs�b�^���������n�D�i���c�c�B";
+		mes "[ショウゴ]";
+		mes "人間が味わうという次元を";
+		mes "はるかに超越したアイテムッ！";
+		mes "その名も^3355FF組織の掟^000000!!";
+		mes "組織を重んじるモンスターたちの";
+		mes "趣向にピッタリあった嗜好品っ……。";
 		next;
 		if(countitem(1004)<1 || countitem(904)<1) {
-			mes "[�V���E�S]";
-			mes "�g�D�̝|���D���ȃ����X�^�[��";
-			mes "��Ă邠�Ȃ��Ɂc�c";
-			mes "�g�D�̝|�̍������ЂƂ��I";
-			mes "^3355FF���߂̏؂��I^000000";
-			mes "^3355FF�T�\���̐K���P�����I^000000";
-			mes "���Ɏ����Ă��Ă�������΁A";
+			mes "[ショウゴ]";
+			mes "組織の掟が好きなモンスターを";
+			mes "育てるあなたに……";
+			mes "組織の掟の作り方をひとつっ！";
+			mes "^3355FF忠節の証っ！^000000";
+			mes "^3355FFサソリの尻尾１つずつっ！^000000";
+			mes "私に持ってきてくだされば、";
 			next;
-			mes "[�V���E�S]";
-			mes "�����X�^�[�e�C�}�[�̃v���C�h��";
-			mes "�����Ă��I���̏�ł����ɍ����";
-			mes "�����グ�܂��˂��I";
+			mes "[ショウゴ]";
+			mes "モンスターテイマーのプライドに";
+			mes "かけてっ！その場ですぐに作って";
+			mes "差し上げますねっ！";
 			close;
 		}
 		setarray '@need,1004,904;
@@ -286,256 +286,256 @@ izlude_in.gat,129,64,4	script	�����X�^�[�e�C�}�[	125,{
 		set '@gain,635;
 		break;
 	case 5:
-		mes "[�V���E�S]";
-		mes "�ǂ�ȃ����X�^�[�����΂ɒu����";
-		mes "�܂����߂鎖���ł��Ă��Ȃ��悤";
-		mes "�ł��˂��B�l���̃p�[�g�i�[��";
-		mes "�Ȃ邩������Ȃ��̂ł��낻����";
-		mes "���߂Ȃ����Ƃ��c�c�B";
+		mes "[ショウゴ]";
+		mes "どんなモンスターをそばに置くか";
+		mes "まだ決める事ができていないよう";
+		mes "ですねっ。人生のパートナーに";
+		mes "なるかもしれないのでおろそかに";
+		mes "決めないことっ……。";
 		next;
-		mes "�������l���Ă݂�";
-		mes "���S�����Ă���A";
-		mes "�܂��K�˂ė��Ă����������B";
+		mes "ゆっくり考えてみて";
+		mes "決心がついてたら、";
+		mes "また訪ねて来てくださいっ。";
 		close;
 	}
-	mes "[�V���E�S]";
-	mes "�����I" +getitemname('@gain)+ "����邱�Ƃ��ł���ޗ���";
-	mes "���ׂĎ����Ă�������Ⴂ�܂��˃b�B";
-	mes "���΂炵���b�I";
-	mes "�����X�^�[�e�C�}�[�̃v���C�h�ɂ�����";
-	mes "�����ɍ���č����グ�܂��b�B";
+	mes "[ショウゴ]";
+	mes "おお！" +getitemname('@gain)+ "を作ることができる材料を";
+	mes "すべて持っていらっしゃいますねッ。";
+	mes "すばらしいッ！";
+	mes "モンスターテイマーのプライドにかけて";
+	mes "すぐに作って差し上げますッ。";
 	next;
-	mes "[�V���E�S]";
+	mes "[ショウゴ]";
 	switch(@menu) {
 		case 2:
-			mes "�S�҂̉�Q�ƌÂ����@���`�b";
+			mes "亡者の牙２つと古い魔法書～ッ";
 			next;
-			mes "^3355FF- �p�b�p���p���b �O�c�O�c�b -^000000";
+			mes "^3355FF- パッパラパラッ グツグツッ -^000000";
 			break;
 		case 3:
-			mes "�Â��|�[�g���[�g�`";
+			mes "古いポートレート～";
 			next;
-			mes "^3355FF- �R�g�R�g �W�b�N���W�b�N�� -^000000";
+			mes "^3355FF- コトコト ジックリジックリ -^000000";
 			break;
 		case 4:
-			mes "�T�\���̐K���c�c������";
-			mes "���߂̏؂܂��Ă܂��ā`�b";
+			mes "サソリの尻尾……そして";
+			mes "忠節の証まぜてまぜて～ッ";
 			next;
-			mes "^3355FF- ���炪�� ���炪�� �������� �������� -^000000";
+			mes "^3355FF- がらがら がらがら ぐっちゃ ぐっちゃ -^000000";
 			break;
 	}
 	next;
 	delitem '@need[0],'@amount[0];
 	delitem '@need[1],'@amount[1];
 	getitem '@gain,1;
-	mes "[�V���E�S]";
-	mes "�͂��A�ł�������܂����b�I";
-	mes "���Ȃ��̈�Ă邩�킢�������X�^�[��";
-	mes "�厖�ɂ��Ă����Ă��������b�B";
-	mes getitemname('@gain)+ "�b�I";
+	mes "[ショウゴ]";
+	mes "はい、できあがりましたッ！";
+	mes "あなたの育てるかわいいモンスターを";
+	mes "大事にしてあげてくださいッ。";
+	mes getitemname('@gain)+ "ッ！";
 	close;
 }
 
 //----------------------------------
-// �����̓��W��/�����X�^�[�_�f�}�X�N/�V���N���{��
-// ���̃w�A�[�s��/�����ȗ��k/���b�J�[�ዾ
+// 動物の頭蓋兜/モンスター酸素マスク/シルクリボン
+// 星のヘアーピン/小さな卵殻/ロッカー眼鏡
 //----------------------------------
 
-aldeba_in.gat,168,175,4	script	�����X�^�[�e�C�}�[	125,{
-	mes "[���E]";
-	mes "�Ȃɂ����T���ł��傤���I";
-	mes "�~�b�h�K���h�嗤�Ń����X�^�[";
-	mes "�n�D�i����点����A���Ԃ��̂�";
-	mes "���Ȃ��ƌ����邱�̎����A";
-	mes "���킢���y�b�g�����X�^�[�̂��߂�";
-	mes "�Ȃ�ł�����č����グ�܂��I";
+aldeba_in.gat,168,175,4	script	モンスターテイマー	125,{
+	mes "[ユウ]";
+	mes "なにをお探しでしょうか！";
+	mes "ミッドガルド大陸でモンスター";
+	mes "嗜好品を作らせたら、並ぶものが";
+	mes "いないと言われるこの私が、";
+	mes "かわいいペットモンスターのために";
+	mes "なんでも作って差し上げます！";
 	next;
-	switch (select("^3355FF�u�����X�^�[�e�C�~���O�v^000000�Ɋւ���","^3355FF�u�����̓��W���v^000000����","^3355FF�u�����X�^�[�_�f�}�X�N�v^000000����",
-				"^3355FF�u�V���N���{���v^000000����","^3355FF�u���̃w�A�[�s���v^000000����","^3355FF�u�����ȗ��k�v^000000����",
-				"^3355FF�u���b�J�[�ዾ�v^000000����","��b����߂�")) {
+	switch (select("^3355FF「モンスターテイミング」^000000に関して","^3355FF「動物の頭蓋兜」^000000注文","^3355FF「モンスター酸素マスク」^000000注文",
+				"^3355FF「シルクリボン」^000000注文","^3355FF「星のヘアーピン」^000000注文","^3355FF「小さな卵殻」^000000注文",
+				"^3355FF「ロッカー眼鏡」^000000注文","会話をやめる")) {
 	case 1:
-		mes "[���E]";
-		mes "�D���ȃ����X�^�[�Ƃ�";
-		mes "�R�~���j�P�[�V�����̂��߂Ȃ�";
-		mes "�K���p�ӂ��Ȃ���΂Ȃ�Ȃ�";
-		mes "�l�X�ȃ����X�^�[�n�D�i�I";
-		mes "��烂���X�^�[�e�C�}�[�M���h��";
-		mes "���荠�ȏ����ł��񋟂��܂��I";
+		mes "[ユウ]";
+		mes "好きなモンスターとの";
+		mes "コミュニケーションのためなら";
+		mes "必ず用意しなければならない";
+		mes "様々なモンスター嗜好品！";
+		mes "我らモンスターテイマーギルドが";
+		mes "お手頃な条件でご提供します！";
 		next;
-		mes "[���E]";
-		mes "���ɃN�[���ȃA�C�e��������";
-		mes "�C�y�Ɏ�ɓ���邱�Ƃ��ł���";
-		mes "���Ă��ȃV�X�e���I";
-		mes "�����̓��W���I";
-		mes "�����X�^�[�_�f�}�X�N�I";
-		mes "�V���N���{���I";
+		mes "[ユウ]";
+		mes "非常にクールなアイテムたちを";
+		mes "気軽に手に入れることができる";
+		mes "すてきなシステム！";
+		mes "動物の頭蓋兜！";
+		mes "モンスター酸素マスク！";
+		mes "シルクリボン！";
 		next;
-		mes "[���E]";
-		mes "���̃w�A�[�s���I";
-		mes "�����ȗ��k!!";
-		mes "���b�J�[�ዾ!!!";
+		mes "[ユウ]";
+		mes "星のヘアーピン！";
+		mes "小さな卵殻!!";
+		mes "ロッカー眼鏡!!!";
 		next;
-		mes "[���E]";
-		mes "�����̓��W��^3355FF�u�{�[���w�����v^000000�P�A";
-		mes "�����X�^�[�_�f�}�X�N��";
-		mes "^3355FF�u�_�f�}�X�N�v^000000�P�A";
-		mes "�V���N���{����^3355FF�u���{���v^000000�P�A";
+		mes "[ユウ]";
+		mes "動物の頭蓋兜^3355FF「ボーンヘルム」^000000１つ、";
+		mes "モンスター酸素マスクは";
+		mes "^3355FF「酸素マスク」^000000１つ、";
+		mes "シルクリボンは^3355FF「リボン」^000000１つ、";
 		next;
-		mes "[���E]";
-		mes "���̃w�A�[�s����^3355FF�u�X�^�[�_�X�g�v^000000�P��";
-		mes "�����ȗ��k��^3355FF�u�����p���k�v^000000�P�A";
-		mes "���b�J�[�ዾ��^3355FF�u�W�����S���v^000000�Q��";
-		mes "^3355FF�u���{���v^000000������^3355FF�u400 Zeny�v^000000";
-		mes "�Ō����\�ł��B";
+		mes "[ユウ]";
+		mes "星のヘアーピンは^3355FF「スターダスト」^000000１つ";
+		mes "小さな卵殻は^3355FF「装飾用卵殻」^000000１つ、";
+		mes "ロッカー眼鏡は^3355FF「ジャルゴン」^000000２つと";
+		mes "^3355FF「リボン」^000000そして^3355FF「400 Zeny」^000000";
+		mes "で交換可能です。";
 		next;
-		mes "[���E]";
-		mes "�����ς���ɓ����";
-		mes "�Y��ȃy�b�g�������܂��傤�I";
-		mes "�C���������ăS�[�S�[�S�[!!";
+		mes "[ユウ]";
+		mes "いっぱい手に入れて";
+		mes "綺麗なペットを飼いましょう！";
+		mes "気合いを入れてゴーゴーゴー!!";
 		close;
 	case 2:
 		set '@need,5017;
 		set '@gain,10001;
-		mes "[���E]";
-		mes "�l�Ԃ����Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF�����̓��W��^000000!!";
-		mes "�����Ƃ���قǋC�����������A";
+		mes "[ユウ]";
+		mes "人間が被るという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FF動物の頭蓋兜^000000!!";
+		mes "ぞっとするほど気味が悪いが、";
 		next;
-		mes "[���E]";
-		mes "�����̃����X�^�[�́A�悭";
-		mes "�킩��Ȃ��܂ܔ�肽���Ȃ��Ă��܂�";
-		mes "�_��I�ȗ͂����������̃A�C�e���I";
+		mes "[ユウ]";
+		mes "ある種のモンスターは、よく";
+		mes "わからないまま被りたくなってしまう";
+		mes "神秘的な力を持ったこのアイテム！";
 		break;
 	case 3:
 		set '@need,5004;
 		set '@gain,10002;
-		mes "[���E]";
-		mes "�l�Ԃ������邢��������";
-		mes "�͂邩�ɒ��z�����c�c";
-		mes "���̖���^3355FF�����X�^�[�_�f�}�X�N^000000!!";
-		mes "��ɒ����Ă���ƃ����X�^�[�Ȃ̂�";
-		mes "�l�ԂȂ̂��A���ʂ���̂���ς�";
-		mes "���̃A�C�e���I";
+		mes "[ユウ]";
+		mes "人間が着けるいう次元を";
+		mes "はるかに超越した……";
+		mes "その名も^3355FFモンスター酸素マスク^000000!!";
+		mes "顔に着けているとモンスターなのか";
+		mes "人間なのか、判別するのも大変な";
+		mes "このアイテム！";
 		break;
 	case 4:
 		set '@need,2208;
 		set '@gain,10007;
-		mes "[���E]";
-		mes "���}�Ȑl�Ԃ�����Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF�V���N���{��^000000!!";
-		mes "�����ł��Ȃ��f�U�C���I�܂���";
-		mes "�����X�^�[�����̎���ɂ҂�����";
-		mes "�������n�D�i�c�c�B";
+		mes "[ユウ]";
+		mes "平凡な人間が見るという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FFシルクリボン^000000!!";
+		mes "理解できないデザイン！まさに";
+		mes "モンスターたちの趣向にぴったり";
+		mes "あった嗜好品……。";
 		break;
 	case 5:
 		set '@need,2294;
 		set '@gain,10011;
-		mes "[���E]";
-		mes "�l�Ԃ����ɏ���Ƃ����������͂邩��";
-		mes "���z�����A�C�e���I���̖���";
-		mes "^3355FF���̃w�A�[�s��^000000!!";
+		mes "[ユウ]";
+		mes "人間が頭に飾るという次元をはるかに";
+		mes "超越したアイテム！その名も";
+		mes "^3355FF星のヘアーピン^000000!!";
 		next;
-		mes "[���E]";
-		mes "���ɂƂ����Ă��邪�A������";
-		mes "�����X�^�[�́A�悭�킩��Ȃ��܂�";
-		mes "���ɏ��肽���Ȃ��Ă��܂�";
-		mes "�_��I�ȗ͂����������̃A�C�e���I";
+		mes "[ユウ]";
+		mes "非常にとがっているが、ある種の";
+		mes "モンスターは、よくわからないまま";
+		mes "頭に飾りたくなってしまう";
+		mes "神秘的な力を持ったこのアイテム！";
 		break;
 	case 6:
 		set '@need,5015;
 		set '@gain,10012;
-		mes "[���E]";
-		mes "�l�Ԃ����Ƃ���������";
-		mes "�͂邩�ɒ��z�����c�c";
-		mes "���̖���^3355FF�����ȗ��k^000000!!";
-		mes "��ȍ��肪�Y���Ȃ�����A";
-		mes "�Ȃ߂炩�Ȍ�������̃A�C�e���I";
+		mes "[ユウ]";
+		mes "人間が被るという次元を";
+		mes "はるかに超越した……";
+		mes "その名も^3355FF小さな卵殻^000000!!";
+		mes "奇妙な香りが漂いながらも、";
+		mes "なめらかな光を放つこのアイテム！";
 		break;
 	case 7:
 		set '@gain,10014;
-		mes "[���E]";
-		mes "���}�Ȑl�Ԃ�������Ƃ���������";
-		mes "�͂邩�ɒ��z�����A�C�e���I";
-		mes "���̖���^3355FF���b�J�[�ዾ^000000!!";
-		mes "�����ł��Ȃ��f�U�C���I�܂���";
-		mes "�����X�^�[�����̎����";
-		mes "�҂����肠�����n�D�i�c�c�B";
-		break;	//���ꂾ���ʏ�������
+		mes "[ユウ]";
+		mes "平凡な人間がかけるという次元を";
+		mes "はるかに超越したアイテム！";
+		mes "その名も^3355FFロッカー眼鏡^000000!!";
+		mes "理解できないデザイン！まさに";
+		mes "モンスターたちの趣向に";
+		mes "ぴったりあった嗜好品……。";
+		break;	//これだけ別処理する
 	case 8:
-		mes "[���E]";
-		mes "�ǂ�ȃ����X�^�[�����΂ɒu�����A";
-		mes "�܂����߂鎖���ł��Ă��Ȃ��悤";
-		mes "�ł��ˁB�l���̃p�[�g�i�[��";
-		mes "�Ȃ邩������Ȃ��̂�";
-		mes "���낻���Ɍ��߂Ȃ����Ɓc�c�B";
+		mes "[ユウ]";
+		mes "どんなモンスターをそばに置くか、";
+		mes "まだ決める事ができていないよう";
+		mes "ですね。人生のパートナーに";
+		mes "なるかもしれないので";
+		mes "おろそかに決めないこと……。";
 		next;
-		mes "[���E]";
-		mes "�������l���Ă݂�";
-		mes "���S�����Ă���A";
-		mes "�܂��K�˂ė��Ă��������B";
+		mes "[ユウ]";
+		mes "ゆっくり考えてみて";
+		mes "決心がついてたら、";
+		mes "また訪ねて来てください。";
 		close;
 	}
 	next;
 	if( (@menu<7 && countitem('@need)<1) || (@menu==7 && (countitem(912)<2 || countitem(2208)<1 || Zeny<400)) ) {
-		mes "[���E]";
-		mes getitemname('@gain)+ "���D���ȃ����X�^�[��";
-		mes "��Ă邠�Ȃ��Ɂc�c";
-		mes getitemname('@gain)+ "�̍������ЂƂI";
+		mes "[ユウ]";
+		mes getitemname('@gain)+ "が好きなモンスターを";
+		mes "育てるあなたに……";
+		mes getitemname('@gain)+ "の作り方をひとつ！";
 		if(@menu<7) {
-			mes "^3355FF" +getitemname('@need)+ "�P�� !^000000";
+			mes "^3355FF" +getitemname('@need)+ "１つ !^000000";
 		}
 		else {
-			mes "^3355FF�W�����S���Q�I^000000^3355FF���{���P�I^000000";
-			mes "�����āA�������� ^3355FF400 Zeny�I^000000";
+			mes "^3355FFジャルゴン２つ！^000000^3355FFリボン１つ！^000000";
+			mes "そして、たったの ^3355FF400 Zeny！^000000";
 		}
-		mes "���ɂ����Ă��Ă�������΁A";
+		mes "私にもってきてくだされば、";
 		next;
-		mes "[���E]";
-		mes "�����X�^�[�e�C�}�[�̃v���C�h��";
-		mes "�����āI���̏�ł����ɍ����";
-		mes "���������܂��I";
+		mes "[ユウ]";
+		mes "モンスターテイマーのプライドに";
+		mes "かけて！その場ですぐに作って";
+		mes "差しあげます！";
 		close;
 	}
-	mes "[���E]";
-	mes "�����I" +getitemname('@gain)+ "����邱�Ƃ��ł���ޗ���";
-	mes "���ׂĎ����Ă�������Ⴂ�܂��ˁB";
-	mes "���΂炵���I";
-	mes "�����X�^�[�e�C�}�[�̃v���C�h�ɂ�����";
-	mes "�����ɍ���č����グ�܂��B";
+	mes "[ユウ]";
+	mes "おお！" +getitemname('@gain)+ "を作ることができる材料を";
+	mes "すべて持っていらっしゃいますね。";
+	mes "すばらしい！";
+	mes "モンスターテイマーのプライドにかけて";
+	mes "すぐに作って差し上げます。";
 	next;
-	mes "[���E]";
+	mes "[ユウ]";
 	switch(@menu) {
 		case 2:
-			mes "�{�[���w��������ł���Łc�c";
+			mes "ボーンヘルムもんでもんで……";
 			next;
-			mes "^3355FF- ���j�� ���j�� -^000000";
+			mes "^3355FF- モニュ モニュ -^000000";
 			break;
 		case 3:
-			mes "�_�f�}�X�N�`�������蓊������Ł`";
+			mes "酸素マスク～こっそり投げこんで～";
 			next;
-			mes "^3355FF- �R�\�R�\ �h���K���K�b�V���[�� -^000000";
+			mes "^3355FF- コソコソ ドンガラガッシャーン -^000000";
 			break;
 		case 4:
-			mes "���{���`�قǂ��Ăقǂ��ā`";
+			mes "リボン～ほどいてほどいて～";
 			next;
-			mes "^3355FF- �V�����V���� �U�N�U�N �M���b -^000000";
+			mes "^3355FF- シュルシュル ザクザク ギュッ -^000000";
 			break;
 		case 5:
-			mes "�X�^�[�_�X�g���Ƃ��āc�c";
+			mes "スターダストおとして……";
 			next;
-			mes "^3355FF- �Y���`���J �Y���`���J -^000000";
+			mes "^3355FF- ズンチャカ ズンチャカ -^000000";
 			break;
 		case 6:
-			mes "�����p���k�Ƃ΂��Ă���ā`";
+			mes "装飾用卵殻とばしていれて～";
 			next;
-			mes "^3355FF- �r���� �r���� �K���K�� -^000000";
+			mes "^3355FF- ビュン ビュン ガラガラ -^000000";
 			break;
 		case 7:
-			mes "�W�����S�����{�����Ȃ��Ȃɂ��ā`";
+			mes "ジャルゴンリボンこなごなにして～";
 			next;
-			mes "^3355FF- �K���K�� �T�N�T�N �r�V�b -^000000";
+			mes "^3355FF- ガリガリ サクサク ビシッ -^000000";
 			break;
 	}
 	next;
@@ -547,113 +547,113 @@ aldeba_in.gat,168,175,4	script	�����X�^�[�e�C�}�[	125,{
 		set Zeny,Zeny-400;
 	}
 	getitem '@gain,1;
-	mes "[���E]";
-	mes "�͂��A�ł�������܂����I";
-	mes "���Ȃ��̈�Ă邩�킢�������X�^�[��";
-	mes "�厖�ɂ��Ă����Ă��������B";
-	mes getitemname('@gain)+ "�I";
+	mes "[ユウ]";
+	mes "はい、できあがりました！";
+	mes "あなたの育てるかわいいモンスターを";
+	mes "大事にしてあげてください。";
+	mes getitemname('@gain)+ "！";
 	close;
 }
 
 //----------------------------------
-// �R���h �{���S���e�C���A�C�e������
+// コモド ボンゴンテイムアイテム交換
 //----------------------------------
-comodo.gat,112,182,0	script	���k����	103,{
+comodo.gat,112,182,0	script	お婆さん	103,{
 	if(countitem(1558)<1) {
-		mes "[���k����]";
-		mes "�����c�c";
-		mes "���̉��z�ȑ����c�c";
-		mes "���̘A��čs���˂΂Ȃ��̂���c�c";
+		mes "[お婆さん]";
+		mes "うう……";
+		mes "私の可哀想な孫娘……";
+		mes "何故連れて行かねばならんのじゃ……";
 		close;
 	}
-	mes "[���k����]";
-	mes "�����c�c�����̕��A";
-	mes "���̉��z�ȑ��������Ȃ����������H";
-	mes "���̘V�����k�̂��킢��������";
-	mes "�_��l�͂Ȃ��A��Ă����ꂽ�̂���c�c";
+	mes "[お婆さん]";
+	mes "もし……そこの方、";
+	mes "私の可哀想な孫娘を見なかったかぇ？";
+	mes "この老いた婆のかわいい孫娘を";
+	mes "神霊様はなぜ連れていかれたのじゃ……";
 	next;
-	mes "[���k����]";
-	mes "�������������������o���Ă��Ȃ��ق�";
-	mes "�̘̂b���Ⴊ�A���̔k���t�F�C������";
-	mes "�Z��ł�������l�̑����������񂶂�B";
-	mes "�������������Ă�����Ƃ���";
-	mes "���ł����킢�c�c";
+	mes "[お婆さん]";
+	mes "いつだったかさえもう覚えていないほど";
+	mes "昔の話じゃが、この婆がフェイヨンに";
+	mes "住んでいた頃一人の孫娘が居たんじゃ。";
+	mes "お下げを結ってあげるといつも";
+	mes "喜んでいたわい……";
 	next;
-	mes "[���k����]";
-	mes "�����l�̂����~�œ����Ă��Ă�";
-	mes "�������������ł͂Ȃ��A����΂��肩";
-	mes "�����l�̂Ƃ���̂��q�l��";
-	mes "�����y�����V��ł�����c�c";
+	mes "[お婆さん]";
+	mes "村長様のお屋敷で働いていても";
+	mes "少しも嫌そうではなく、そればかりか";
+	mes "村長様のところのお子様と";
+	mes "いつも楽しく遊んでいたわ……";
 	next;
-	mes "[���k����]";
-	mes "�Ƃ��낪�A���̂��_��l���M����󂯁A";
-	mes "�����l�̂��q�l���d���a�ɂ�������";
-	mes "���܂����̂���B";
-	mes "���J���Â��ē��A�ɐ��т�����Ȃ����";
-	mes "�Ȃ�Ȃ��Ȃ����̂��Ⴊ�c�c";
-	mes "�Ȃ����̑������c�c";
+	mes "[お婆さん]";
+	mes "ところが、何故か神霊様の祟りを受け、";
+	mes "村長様のお子様が重い病にかかって";
+	mes "しまったのじゃ。";
+	mes "祭祀を催して洞窟に生贄を捧げなければ";
+	mes "ならなくなったのじゃが……";
+	mes "なぜ私の孫娘を……";
 	next;
-	mes "[���k����]";
-	mes "���������q�l�̕a�͎����Ă������c�c";
-	mes "�ł��A���͂����ɋ���Ƃ�����ɑ�����";
-	mes "���Ƃ��v���o����Ă��܂�Ȃ��A";
-	mes "�Ƃ��Ƃ�����ȉ������܂�";
-	mes "���Ă��܂����c�c";
+	mes "[お婆さん]";
+	mes "いつしかお子様の病は治っていった……";
+	mes "でも、私はそこに居るとしきりに孫娘の";
+	mes "ことが思い出されてたまらなく、";
+	mes "とうとうこんな遠い村まで";
+	mes "来てしまった……";
 	next;
-	if(select("���C�o���Ă��������c�c","�����₱�̓��L���́H")==1) {
-		mes "[���k����]";
-		mes "������������񂶂�c�c";
-		mes "�Y��悤�Ƃ��Ă��ȁc�c";
+	if(select("元気出してください……","もしやこの日記帳は？")==1) {
+		mes "[お婆さん]";
+		mes "今も夢を見るんじゃ……";
+		mes "忘れようとしてもな……";
 		close;
 	}
 	if(countitem(901)<1) {
-		mes "[���k����]";
-		mes "�Ȃ񂶂�H���̓��L���́c�c";
-		mes "�k�͕��Y�ꂪ�Ђǂ��Ắc�c";
-		mes "�悤�o���Ƃ��c�c";
+		mes "[お婆さん]";
+		mes "なんじゃ？その日記帳は……";
+		mes "婆は物忘れがひどくての……";
+		mes "よう覚えとらん……";
 		next;
-		mes "[���k����]";
-		mes "�����c�c������x������������";
-		mes "�����Ă����邱�Ƃ��ł�����c�c";
+		mes "[お婆さん]";
+		mes "うう……もう一度だけお下げを";
+		mes "結ってあげることができたら……";
 		close;
 	}
-	mes "[���k����]";
-	mes "�����c�c";
-	mes "����͕��������";
-	mes "���̑����̂��́c�c";
-	mes "�����ǂ�����������Ă���񂩂́c";
+	mes "[お婆さん]";
+	mes "おお……";
+	mes "それは紛れも無く";
+	mes "私の孫娘のもの……";
+	mes "もし良かったら譲ってくれんかの…";
 	next;
-	mes "[���k����]";
-	mes "�����������Ă������͉�������";
-	mes "�茳�Ɏc���Ă��Ȃ��̂���c�c";
+	mes "[お婆さん]";
+	mes "孫娘が持っていた物は何も私の";
+	mes "手元に残っていないのじゃ……";
 	next;
-	if(select("���݂܂��񂪁c�c","�����グ�܂�")==1) {
-		mes "[���k����]";
-		mes "������������񂶂�c�c";
-		mes "�Y��悤�Ƃ��Ă��ȁc�c";
+	if(select("すみませんが……","差し上げます")==1) {
+		mes "[お婆さん]";
+		mes "今も夢を見るんじゃ……";
+		mes "忘れようとしてもな……";
 		close;
 	}
-	if(countitem(1558)<1 || countitem(901)<1) {	//�����̓��L�A�s�b�O�e�[�����{��
-		mes "[���k����]";
-		mes "�Ȃ񂶂�H�c�c";
-		mes "�����̎����Ă������́c�c";
-		mes "�k�͕��Y�ꂪ�Ђǂ��Ắc�c";
+	if(countitem(1558)<1 || countitem(901)<1) {	//少女の日記、ピッグテールリボン
+		mes "[お婆さん]";
+		mes "なんじゃ？……";
+		mes "孫娘の持っていた物は……";
+		mes "婆は物忘れがひどくての……";
 		close;
 	}
 	if(checkweight(659,1)==0) {
-		mes "[���k����]";
-		mes "���܂�����c�c";
-		mes "�ו�������������B";
-		mes "�������炵�Ă���܂����Ȃ����c�c";
+		mes "[お婆さん]";
+		mes "おまえさん……";
+		mes "荷物が多すぎじゃ。";
+		mes "少し減らしてからまた来なさい……";
 		close;
 	}
 	delitem 1558,1;
 	delitem 901,1;
 	getitem 659,1;
-	mes "[���k����]";
-	mes "���肪�Ƃ��c�c";
-	mes "����ɂ�������񂽂ɓn����";
-	mes "�����c�c";
-	mes "������c";
+	mes "[お婆さん]";
+	mes "ありがとう……";
+	mes "代わりにこれをあんたに渡そう";
+	mes "ああ……";
+	mes "孫娘よ…";
 	close;
 }

@@ -1,37 +1,37 @@
-izlude.gat,125,65,4	script	ƒoƒO‚è‚Ü‚µ‚½‚©H	825,{
+izlude.gat,125,65,4	script	ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ	825,{
 	cutin "ein_soldier",2;
-	mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-	mes "‚Ç‚àAƒoƒO‚è‚Ü‚µ‚½‚©H";
-	mes "‚±‚±‚Å‚ÍƒLƒƒƒ‰ƒNƒ^[‚ÌƒXƒLƒ‹‚É‚Â‚¢‚Ä";
-	mes "‹~Ï‘[’u‚Æ‚È‚é‰Šú‰»‚ðs‚¢‚Ü‚·B";
-	mes "Šg’£‚PŽŸE‚Ü‚Å‘Î‰ž‚µ‚Ä‚¢‚Ü‚·B";
+	mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+	mes "ã©ã‚‚ã€ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ";
+	mes "ã“ã“ã§ã¯ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ã‚¹ã‚­ãƒ«ã«ã¤ã„ã¦";
+	mes "æ•‘æ¸ˆæŽªç½®ã¨ãªã‚‹åˆæœŸåŒ–ã‚’è¡Œã„ã¾ã™ã€‚";
+	mes "æ‹¡å¼µï¼‘æ¬¡è·ã¾ã§å¯¾å¿œã—ã¦ã„ã¾ã™ã€‚";
 	next;
-	mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-	mes "‹~Ï‚ÌŽ–‚È‚ç–l‚É‚¨”C‚¹‰º‚³‚¢B";
-	mes "ƒvƒŒƒCƒ„[‚ÌƒWƒ‡ƒuƒŒƒxƒ‹EE‹Æ‚ð”»•Ê";
-	mes "‚µ‚ÄƒXƒLƒ‹ƒŠƒZƒbƒg‚ðs‚¢Aƒ|ƒCƒ“ƒg‚ð";
-	mes "‰Šú‰»‚µ‚ÄÄ”z•z‚µ‚Ä‚¢‚Ü‚·B";
+	mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+	mes "æ•‘æ¸ˆã®äº‹ãªã‚‰åƒ•ã«ãŠä»»ã›ä¸‹ã•ã„ã€‚";
+	mes "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¸ãƒ§ãƒ–ãƒ¬ãƒ™ãƒ«ãƒ»è·æ¥­ã‚’åˆ¤åˆ¥";
+	mes "ã—ã¦ã‚¹ã‚­ãƒ«ãƒªã‚»ãƒƒãƒˆã‚’è¡Œã„ã€ãƒã‚¤ãƒ³ãƒˆã‚’";
+	mes "åˆæœŸåŒ–ã—ã¦å†é…å¸ƒã—ã¦ã„ã¾ã™ã€‚";
 	next;
-	mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-	mes "‚Ü‚½A•s³ƒ`[ƒg‚ÌŽ–‚àl‚¦‚Ä";
-	mes "“]ENPC‚©‚ç—£‚µ‚ÄÝ’u‚µ‚Ä‚¨‚è‚Ü‚·B";
+	mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+	mes "ã¾ãŸã€ä¸æ­£ãƒãƒ¼ãƒˆã®äº‹ã‚‚è€ƒãˆã¦";
+	mes "è»¢è·NPCã‹ã‚‰é›¢ã—ã¦è¨­ç½®ã—ã¦ãŠã‚Šã¾ã™ã€‚";
 	next;
-	if(select("‚Ü‚½¡“x‚É‚µ‚Ü‚·","—¹‰ð‚Å‚·") == 1) {
+	if(select("ã¾ãŸä»Šåº¦ã«ã—ã¾ã™","äº†è§£ã§ã™") == 1) {
 		close2;
 		cutin "ein_soldier",255;
 		end;
 	}
-	mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-	mes "E‹Æ”»•Ê";
-	mes "1ŽŸE‚Å‚ ‚ê‚Î9P+Œ»Ý‚ÌJoblv-1P";
-	mes "2ŽŸE‚Ü‚½‚Í“]¶‚Å‚ ‚ê‚Î";
-	mes "9P+Job49P+Œ»Ý‚ÌJoblv-1P";
-	mes "‚Æ‚¢‚¤•—‚É”z•z‚³‚ê‚Ü‚·B";
+	mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+	mes "è·æ¥­åˆ¤åˆ¥";
+	mes "1æ¬¡è·ã§ã‚ã‚Œã°9P+ç¾åœ¨ã®Joblv-1P";
+	mes "2æ¬¡è·ã¾ãŸã¯è»¢ç”Ÿã§ã‚ã‚Œã°";
+	mes "9P+Job49P+ç¾åœ¨ã®Joblv-1P";
+	mes "ã¨ã„ã†é¢¨ã«é…å¸ƒã•ã‚Œã¾ã™ã€‚";
 	next;
 	switch(Job) {
 	case Job_Novice:
-		mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-		mes "ƒmƒr‚³‚ñ‚Ì‰Šú‰»‚µ‚Ü‚·‚ËB";
+		mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+		mes "ãƒŽãƒ“ã•ã‚“ã®åˆæœŸåŒ–ã—ã¾ã™ã­ã€‚";
 		next;
 		resetskill;
 		set SkillPoint,JobLevel-1;
@@ -47,26 +47,26 @@ izlude.gat,125,65,4	script	ƒoƒO‚è‚Ü‚µ‚½‚©H	825,{
 	case Job_Ninja:
 	case Job_DeathKnight:
 	case Job_DarkCollector:
-		mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-		mes "1ŽŸE‚³‚ñ‚Ì‰Šú‰»‚µ‚Ü‚·‚ËB";
+		mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+		mes "1æ¬¡è·ã•ã‚“ã®åˆæœŸåŒ–ã—ã¾ã™ã­ã€‚";
 		next;
 		resetskill;
-		set SkillPoint,9+JobLevel-1;	// ƒmƒr‚Ì9Point+¡‚ÌJob-1
+		set SkillPoint,9+JobLevel-1;	// ãƒŽãƒ“ã®9Point+ä»Šã®Job-1
 		break;
 	default:
-		mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-		mes "2ŽŸE‚³‚ñ‚Ì‰Šú‰»‚µ‚Ü‚·‚ËB";
+		mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+		mes "2æ¬¡è·ã•ã‚“ã®åˆæœŸåŒ–ã—ã¾ã™ã­ã€‚";
 		next;
 		resetskill;
-		set SkillPoint,58+JobLevel-1;	// ƒmƒr‚Ì9Point+1ŽŸJob50(49P)+Œ»Ý
+		set SkillPoint,58+JobLevel-1;	// ãƒŽãƒ“ã®9Point+1æ¬¡Job50(49P)+ç¾åœ¨
 		break;
 	}
-	mes "[ƒoƒO‚è‚Ü‚µ‚½‚©H]";
-	mes "‰Šú‰»Š®—¹B";
-	mes "ƒLƒƒƒ‰ƒNƒ^[‚ÌƒXƒLƒ‹ƒ|ƒCƒ“ƒg‚ª";
-	mes "Œ³’Ê‚è‚É‚È‚è‚Ü‚µ‚½B";
-	mes "‚Ü‚½‚²—˜—p‰º‚³‚¢B";
-	mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚µ‚½B";
+	mes "[ãƒã‚°ã‚Šã¾ã—ãŸã‹ï¼Ÿ]";
+	mes "åˆæœŸåŒ–å®Œäº†ã€‚";
+	mes "ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ã‚¹ã‚­ãƒ«ãƒã‚¤ãƒ³ãƒˆãŒ";
+	mes "å…ƒé€šã‚Šã«ãªã‚Šã¾ã—ãŸã€‚";
+	mes "ã¾ãŸã”åˆ©ç”¨ä¸‹ã•ã„ã€‚";
+	mes "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã—ãŸã€‚";
 	close2;
 	cutin "ein_soldier",255;
 	end;

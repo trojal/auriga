@@ -5,2597 +5,2597 @@
 //============================================================
 // Shop
 //------------------------------------------------------------
-lighthalzen.gat,220,122,3	shop	�������l	90,519
-lighthalzen.gat,124,129,7	shop	��؏��l	91,515,516,535
-lighthalzen.gat,69,75,5		shop	�ʕ����l	102,512,513
-lighthalzen.gat,112,44,7	shop	�Ԕ��菭��	90,712,744,748
-lighthalzen.gat,222,191,4	shop	�e�C�~���O���l	125,537,643,10013,10014,6095,6096,6097,6098,6099,6100,6104,6105,6106,6107,6108,6109,6110,6111,6112
-lhz_in02.gat,276,99,4		shop	���폤�l	851,1201,1207,1216,1107,1122,1116,1154,1407,1457,1354,1519,13003
-lhz_in02.gat,271,99,4		shop	�h��l	851,2101,2103,2403,2405,2321,2314,2309,2335,2628
-lhz_in02.gat,286,95,4		shop	�h��l	62,5112,2416,2113,2512
-lhz_in02.gat,273,35,4		shop	���@���l	854,1601,1604,1607,1617,1619
-lhz_in02.gat,17,220,4		shop	��؏��l	91,515,516,535
-lhz_in02.gat,21,220,4		shop	�ʕ����l	102,512,513
-lhz_in02.gat,32,219,2		shop	�����l		54,517
-lhz_in02.gat,31,145,4		shop	����l	90,611,503,504,506,657,656,601,602,1065,610,1770
-lhz_in02.gat,38,145,4		shop	�v���[���g���l	91,734,735,736,737,746
-lhz_in02.gat,47,148,2		shop	����i���l	71,744,745,2338,2206,7170,2613
-lhz_in02.gat,85,216,4		shop	�l�`���l	862,740,741,742
-lhz_in02.gat,87,208,2		shop	�������Ꮴ�l	715,2243,2212,2242,2241
-lhz_in02.gat,105,21,2		shop	��Ώ��l	91,721,723,726,728,729,730,2613
-lhz_in03.gat,239,106,4		shop	����l	850,501,502,506,645,656,601,602,1065,611
-lhz_in03.gat,258,101,2		shop	��l		855,1750,1770,1752,1751
-lhz_in03.gat,249,24,4		shop	����l	855,911,910,912,528
+lighthalzen.gat,220,122,3	shop	牛乳商人	90,519
+lighthalzen.gat,124,129,7	shop	野菜商人	91,515,516,535
+lighthalzen.gat,69,75,5		shop	果物商人	102,512,513
+lighthalzen.gat,112,44,7	shop	花売り少女	90,712,744,748
+lighthalzen.gat,222,191,4	shop	テイミング商人	125,537,643,10013,10014,6095,6096,6097,6098,6099,6100,6104,6105,6106,6107,6108,6109,6110,6111,6112
+lhz_in02.gat,276,99,4		shop	武器商人	851,1201,1207,1216,1107,1122,1116,1154,1407,1457,1354,1519,13003
+lhz_in02.gat,271,99,4		shop	防具商人	851,2101,2103,2403,2405,2321,2314,2309,2335,2628
+lhz_in02.gat,286,95,4		shop	防具商人	62,5112,2416,2113,2512
+lhz_in02.gat,273,35,4		shop	魔法商人	854,1601,1604,1607,1617,1619
+lhz_in02.gat,17,220,4		shop	野菜商人	91,515,516,535
+lhz_in02.gat,21,220,4		shop	果物商人	102,512,513
+lhz_in02.gat,32,219,2		shop	肉商人		54,517
+lhz_in02.gat,31,145,4		shop	道具商人	90,611,503,504,506,657,656,601,602,1065,610,1770
+lhz_in02.gat,38,145,4		shop	プレゼント商人	91,734,735,736,737,746
+lhz_in02.gat,47,148,2		shop	婚礼品商人	71,744,745,2338,2206,7170,2613
+lhz_in02.gat,85,216,4		shop	人形商人	862,740,741,742
+lhz_in02.gat,87,208,2		shop	おもちゃ商人	715,2243,2212,2242,2241
+lhz_in02.gat,105,21,2		shop	宝石商人	91,721,723,726,728,729,730,2613
+lhz_in03.gat,239,106,4		shop	道具商人	850,501,502,506,645,656,601,602,1065,611
+lhz_in03.gat,258,101,2		shop	矢商人		855,1750,1770,1752,1751
+lhz_in03.gat,249,24,4		shop	道具商人	855,911,910,912,528
 
 //============================================================
-// ���q�^���[��NPC
+// リヒタルゼンNPC
 //------------------------------------------------------------
-lighthalzen.gat,198,285,5	script	����	862,{
-	mes "[����]";
-	mes "�����s�A�m�̉��A���y�Ȓ뉀�A";
-	mes "�ʂ�߂���l�X�A�ǂ��V�C�c�c";
-	mes "���͍��A����ȏ�Ȃ�����";
-	mes "���a�������Ă��܂��B";
+lighthalzen.gat,198,285,5	script	少女	862,{
+	mes "[少女]";
+	mes "響くピアノの音、安楽な庭園、";
+	mes "通り過ぎる人々、良い天気……";
+	mes "私は今、これ以上ない程に";
+	mes "平和を感じています。";
 	next;
-	mes "[����]";
-	mes "���̕��a�́A�L����";
-	mes "���q�^���[���̏Z�������炱��";
-	mes "��������̂ł��傤�B";
-	mes "�{���ɑf���炵���X�ł��B";
-	mes "���̃��q�^���[���́I";
+	mes "[少女]";
+	mes "この平和は、豊かな";
+	mes "リヒタルゼンの住民だからこそ";
+	mes "得られるものでしょう。";
+	mes "本当に素晴らしい街です。";
+	mes "このリヒタルゼンは！";
 	close;
 }
 
-lighthalzen.gat,220,244,3	script	���k����	863,{
-	mes "[���k����]";
-	mes "�Ӂ`���̍΂ɂȂ��";
-	mes "�������Ƃ����h���ĂˁA";
-	mes "�{���ɑ�ςȂ́B���̑O��";
-	mes "�ςȍ����m���𒅂��l�B��";
-	mes "�ǂ��Ăƌ���ꂽ���ǁA������";
-	mes "�����Ȃ��đ�ς������̂�B";
+lighthalzen.gat,220,244,3	script	お婆さん	863,{
+	mes "[お婆さん]";
+	mes "ふ～この歳になると";
+	mes "動くことさえ辛くてね、";
+	mes "本当に大変なの。この前も";
+	mes "変な黒い洋服を着た人達に";
+	mes "どいてと言われたけど、すぐに";
+	mes "動けなくて大変だったのよ。";
 	next;
-	mes "[���k����]";
-	mes "���ǂ��̐l�B�����̔N����";
-	mes "�����̂��čs���Ă��܂������ǁA";
-	mes "����������҂͗�V���Ă��̂�";
-	mes "�m��Ȃ�������I";
+	mes "[お婆さん]";
+	mes "結局あの人達がこの年寄りを";
+	mes "押しのけて行ってしまったけど、";
+	mes "ああいう若者は礼儀ってものを";
+	mes "知らないかしら！";
 	next;
-	mes "[���k����]";
-	mes "���̍΂܂Ő����Ă��邩��c�c";
-	mes "�ז��҈�������̂�����ˁI";
-	mes "�ŋ߂̐��̒��͖{���Ɂc�c";
+	mes "[お婆さん]";
+	mes "この歳まで生きているから……";
+	mes "邪魔者扱いするのかしらね！";
+	mes "最近の世の中は本当に……";
 	close;
 }
 
-lighthalzen.gat,205,208,4	script	�T�������Ȓj	853,{
-	mes "[�N�����g]";
-	mes "�����́A�y�n�̉��l�����ɍ����B";
-	mes "�܂��ɂ��́A�N�����g�l��";
-	mes "���������Ƃ��낾�ȁB";
+lighthalzen.gat,205,208,4	script	裕福そうな男	853,{
+	mes "[クラムト]";
+	mes "ここは、土地の価値が非常に高い。";
+	mes "まさにこの、クラムト様に";
+	mes "相応しいところだな。";
 	next;
-	mes "[�N�����g]";
-	mes "���͂����ɁA���؂ȋ{�a��";
-	mes "���Ă���肾�B";
-	mes "���͋����Ȃ����A���������ƂȁI";
+	mes "[クラムト]";
+	mes "俺はここに、豪華な宮殿を";
+	mes "建てるつもりだ。";
+	mes "今は金がないが、いつかきっとな！";
 	close;
 }
 
-lighthalzen.gat,226,210,3	script	�}�E���T����	86,{
-	mes "[�}�E���T����]";
-	mes "�B���p�t�͒N�����{���ʂŁA";
-	mes "�Εׂ��Ǝv���Ă����̂ł����A";
-	mes "�K�����������ł͂Ȃ��悤�ł��B";
+lighthalzen.gat,226,210,3	script	マウルサラン	86,{
+	mes "[マウルサラン]";
+	mes "錬金術師は誰もが几帳面で、";
+	mes "勤勉かと思っていたのですが、";
+	mes "必ずしもそうではないようです。";
 	next;
-	mes "[�}�E���T����]";
-	mes "���N�Ɋw�΂��ɂ���������";
-	mes "���X�߂����Ă���ςȒj��";
-	mes "����݂����ł��c�c";
-	mes "�m���A���O�̓u�����`���ƁB";
+	mes "[マウルサラン]";
+	mes "ロクに学ばずにお酒を飲み";
+	mes "日々過ごしている変な男も";
+	mes "いるみたいです……";
+	mes "確か、名前はブランチョと。";
 	next;
-	mes "[�}�E���T����]";
-	mes "�B���p�t�͓��X�b�B�����A";
-	mes "�����𖁂��Ă���Ƃ������̔F����";
-	mes "���S�ɕ�����܂����ˁc�c";
+	mes "[マウルサラン]";
+	mes "錬金術師は日々鍛錬をし、";
+	mes "自分を磨いているという私の認識を";
+	mes "完全に覆されましたね……";
 	close;
 }
 
-lighthalzen.gat,258,223,3	script	���ꂳ��	866,{
-	mes "[���ꂳ��]";
-	mes "�͂��`�ǂ����Ă��������ɂ���";
-	mes "�|�ꂻ���ȌÂ��Ɠ����䂪�X��";
-	mes "�i�i�������Ă��邶��낤�B";
+lighthalzen.gat,258,223,3	script	お爺さん	866,{
+	mes "[お爺さん]";
+	mes "はぁ～どう見てもあそこにある";
+	mes "倒れそうな古い家等が我が街の";
+	mes "品格を下げているじゃろう。";
 	next;
-	mes "[���ꂳ��]";
-	mes "�X�̕i�i�����܂��Ă���";
-	mes "�ґ�ȋC���𖡂킦�邵�A";
-	mes "�������ł���̂Ɂc�c";
-	mes "����͂ȁ`�ӂނӂށB";
+	mes "[お爺さん]";
+	mes "街の品格が高まってこそ";
+	mes "贅沢な気分を味わえるし、";
+	mes "自慢もできるのに……";
+	mes "あれはな～ふむふむ。";
 	close;
 }
 
-lighthalzen.gat,232,156,3	script	�N	869,{
-	mes "[�N]";
-	mes "������̕n���X�ɍs���p��";
-	mes "����Ă��鎡���ێ�����";
-	mes "�悭�T�{���Ă��肵�܂��ˁB";
+lighthalzen.gat,232,156,3	script	青年	869,{
+	mes "[青年]";
+	mes "あちらの貧民街に行く角を";
+	mes "守っている治安維持員は";
+	mes "よくサボってたりしますね。";
 	next;
-	mes "[�N]";
-	mes "���͎����X�L�����Ă�������";
-	mes "�������֍s�����肵����ł���B";
-	mes "�܂��A�s���Ă����܂茩�鏊��";
-	mes "�Ȃ�������ŁA���������ł����ǁB";
+	mes "[青年]";
+	mes "実は私もスキ見つけてこっそり";
+	mes "あっちへ行ったりしたんですよ。";
+	mes "まあ、行ってもあまり見る所が";
+	mes "なかったんで、後悔したんですけど。";
 	next;
-	mes "[�N]";
-	mes "�ǂ����������֍s���l�����Ȃ��̂�";
-	mes "���̂��߂Ɏ���Ă���񂾂낤�B";
+	mes "[青年]";
+	mes "どうせあっちへ行く人もいないのに";
+	mes "何のために守っているんだろう。";
 	close;
 }
 
-lighthalzen.gat,233,121,4	script	���̎q	72,{
-	mes "[���̎q]";
-	mes "���q�^���[���́u���̒��_�v";
-	mes "�Ƃ����Ӗ��������Ă���́B";
+lighthalzen.gat,233,121,4	script	女の子	72,{
+	mes "[女の子]";
+	mes "リヒタルゼンは「光の頂点」";
+	mes "という意味を持っているの。";
 	next;
-	mes "[���̎q]";
-	mes "���̊X�͂��̖��̒ʂ�A";
-	mes "�V���o���c�o���h�ň�ԗT���ŁA";
-	mes "��ԋP���Ă���X�Ȃ񂾂��āI";
-	mes "���Ȃ����A�C�ɓ����Ă��ꂽ�ł��傤�H";
+	mes "[女の子]";
+	mes "この街はその名の通り、";
+	mes "シュバルツバルドで一番裕福で、";
+	mes "一番輝いている街なんだって！";
+	mes "あなたも、気に入ってくれたでしょう？";
 	close;
 }
 
-lighthalzen.gat,239,64,5	script	����	862,{
-	mes "[����]";
-	mes "����E���T�ɂ���";
-	mes "���Ɩ��@�����s����ςȍ���";
-	mes "����ƕ����܂����B����ȏ���";
-	mes "�ǂ�����Đ����čs����ł��傤�c�c";
-	mes "�{���Ɍ��z�̒��̐��E�ł���ˁ`";
+lighthalzen.gat,239,64,5	script	少女	862,{
+	mes "[少女]";
+	mes "あるウワサによると";
+	mes "剣と魔法が横行する変な国が";
+	mes "あると聞きました。そんな所で";
+	mes "どうやって生きて行くんでしょう……";
+	mes "本当に幻想の中の世界ですよね～";
 	next;
-	mes "[����]";
-	mes "���̍��͌����I�Ȃ̂ŁA";
-	mes "�{���ɗǂ��ł��B";
-	mes "�@�B�I�@�����I�@��l�I";
-	mes "�����c�c����ȏ�̗ǂ�����";
-	mes "�Ȃ��ł���ˁH";
+	mes "[少女]";
+	mes "この国は現実的なので、";
+	mes "本当に良いです。";
+	mes "機械！　お金！　常人！";
+	mes "ああ……これ以上の良い所は";
+	mes "ないですよね？";
 	next;
-	mes "[����]";
-	mes "�������A���̌��Ɩ��@��";
-	mes "���s����Ƃ�����������Ȃ�A";
-	mes "��x�͌������Ă݂����ł��ˁB";
+	mes "[少女]";
+	mes "しかし、その剣と魔法が";
+	mes "横行するという国があるなら、";
+	mes "一度は見物してみたいですね。";
 	close;
 }
 
-lighthalzen.gat,233,82,5	script	�q��	716,{
-	mes "[�q��]";
-	mes "�l�͏������h�ȑ�l�ɂȂ��āA";
-	mes "�l�̎p���������������Ă�񂾁I";
-	mes "�ق�A�����ɂ��铺���݂����ɁI";
+lighthalzen.gat,233,82,5	script	子供	716,{
+	mes "[子供]";
+	mes "僕は将来立派な大人になって、";
+	mes "僕の姿をした銅像を建てるんだ！";
+	mes "ほら、そこにある銅像みたいに！";
 	next;
-	mes "[�q��]";
-	mes "�������Ǝv��Ȃ��H";
-	mes "������ʂ�l���݂�ȁA�l��";
-	mes "�p�����Ċ��Q����񂾂�H";
-	mes "�����A�z�����������ł��K���`";
+	mes "[子供]";
+	mes "すごいと思わない？";
+	mes "ここを通る人がみんな、僕の";
+	mes "姿を見て感嘆するんだよ？";
+	mes "ああ、想像しただけでも幸せ～";
 	next;
-	mes "[�q��]";
-	mes "�����傫���Ȃ肽���c�c";
-	mes "�w�������āA�i�D�ǂ��Ȃ��āA";
-	mes "�r�V�b�ƌ��܂���������";
-	mes "���ĂĂ��炤�񂾁I";
+	mes "[子供]";
+	mes "早く大きくなりたい……";
+	mes "背も高くて、格好良くなって、";
+	mes "ビシッと決まった銅像を";
+	mes "建ててもらうんだ！";
 	close;
 }
 
-lighthalzen.gat,147,105,3	script	�N	869,{
-	mes "[���[�N�~�b�g]";
-	mes "�����́A�󋵂ɉ�����";
-	mes "���킹�Ă����@�]�̗ǂ�������A";
-	mes "�������y���܂��Ă����";
-	mes "���[���A�̂���j���D���Ȃ񂾁B";
+lighthalzen.gat,147,105,3	script	青年	869,{
+	mes "[ラークミット]";
+	mes "女性は、状況に応じて";
+	mes "合わせてくれる機転の良さがあり、";
+	mes "自分を楽しませてくれる";
+	mes "ユーモアのある男が好きなんだ。";
 	next;
-	mes "[���[�N�~�b�g]";
-	mes "��ɑ���̂��Ƃ��C�����A";
-	mes "�����F�߂Ă����A�Ί�Őڂ��邱�ƁB";
+	mes "[ラークミット]";
+	mes "常に相手のことを気遣い、";
+	mes "相手を認めてあげ、笑顔で接すること。";
 	next;
-	mes "[���[�N�~�b�g]";
-	mes "�������̃Z�s�X���ēz�́A";
-	mes "���D�ɂ�����肷���Ȃ񂾂�ȁB";
-	mes "�����́A�C�y�ȃR�~���j�P�[�V������";
-	mes "���߂Ă���Ǝv���񂾁B";
+	mes "[ラークミット]";
+	mes "向こうのセピスって奴は、";
+	mes "恰好にこだわりすぎなんだよな。";
+	mes "女性は、気軽なコミュニケーションを";
+	mes "求めていると思うんだ。";
 	next;
-	mes "[���[�N�~�b�g]";
-	mes "�i���΂��čd���������A";
-	mes "�C���g��Ȃ��Ă������A�����y�����A";
-	mes "�����Ί�ł����鉴�̕����A";
-	mes "����ۂǗǂ��Ǝv��Ȃ������H";
-	mes "�N�͂ǂ��v���H";
+	mes "[ラークミット]";
+	mes "格式ばって硬いあいつより、";
+	mes "気を使わなくていいし、いつも楽しく、";
+	mes "いつも笑顔でいられる俺の方が、";
+	mes "よっぽど良いと思わないかい？";
+	mes "君はどう思う？";
 	close;
 }
 
-lighthalzen.gat,132,103,5	script	�N	734,{
-	mes "[�Z�s�X]";
-	mes "�����Ɉ������j�Ƃ́I";
-	mes "�m���A�́A�O���A�i�i�I";
-	mes "����炷�ׂĂ������Ă����";
-	mes "�c�c���̑�\�҂����̎����I";
+lighthalzen.gat,132,103,5	script	青年	734,{
+	mes "[セピス]";
+	mes "女性に愛される男とは！";
+	mes "知性、力、外見、品格！";
+	mes "それらすべてが揃っている者";
+	mes "……その代表者がこの私だ！";
 	next;
-	mes "[�Z�s�X]";
-	mes "�����Ɍ�����A�S�̐��A";
-	mes "�����̂Ȃ��s���ڂ��A";
-	mes "���͂����|���鋭��ȕ��͋C!!";
+	mes "[セピス]";
+	mes "屈強に見えるアゴの線、";
+	mes "迷いのない鋭い目つき、";
+	mes "周囲を圧倒する強烈な雰囲気!!";
 	next;
-	mes "[�Z�s�X]";
-	mes "�������������߁A";
-	mes "����q���Ď���Ă����A";
-	mes "����ȏ�M�I�Ȉ��B";
-	mes "����͑����̏��������߂Ă��鈤�ł���";
-	mes "���͂���Ȉ����т����߂́A";
-	mes "���x����M�������Ă���!!";
+	mes "[セピス]";
+	mes "自分だけを見つめ、";
+	mes "命を賭けて守ってくれる、";
+	mes "そんな情熱的な愛。";
+	mes "それは多くの女性が求めている愛であり";
+	mes "私はそんな愛を貫くための、";
+	mes "強靭かつ情熱を持っている!!";
 	next;
-	mes "[�Z�s�X]";
-	mes "�������̂���҂�݂�����";
-	mes "�y���z�́A�܂������M�p�ł���I";
-	mes "�t�b�c�c���q�^���[������";
-	mes "�����̎����́A���ɓB�t�����c�c";
+	mes "[セピス]";
+	mes "向こうのちんぴらみたいな";
+	mes "軽い奴は、まったく信用できん！";
+	mes "フッ……リヒタルゼン中の";
+	mes "女性の視線は、私に釘付けだ……";
 	close;
 }
 
-lighthalzen.gat,125,67,5	script	�N	97,{
-	mes "[�N]";
-	mes "�ق�ق�A����m���Ă�H";
-	mes "�������ɑ傫�Ȋ�Ƃ����邶��Ȃ��H";
-	mes "�������̐E���ɂ͕ς��҂��������āI";
+lighthalzen.gat,125,67,5	script	青年	97,{
+	mes "[青年]";
+	mes "ほらほら、あれ知ってる？";
+	mes "あそこに大きな企業があるじゃない？";
+	mes "あそこの職員には変わり者が多いって！";
 	next;
-	mes "[�N]";
-	mes "����1����s���������Ȃ����ǁA";
-	mes "�Ȋw�����̐l�B�������ς�����";
-	mes "���̐�����ԂȂ񂾂낤�ȁ`";
-	mes "�s���Ă݂����͂Ȃ����ǁc�c";
-	mes "����ς肷�����C�ɂȂ�B";
+	mes "[青年]";
+	mes "俺は1回も行った事がないけど、";
+	mes "科学狂いの人達がいっぱいいて";
+	mes "もの凄い状態なんだろうな～";
+	mes "行ってみたくはないけど……";
+	mes "やっぱりすごく気になる。";
 	next;
-	mes "[�N]";
-	mes "�ǂꂾ���ς�����l�B�Ȃ񂾂낤�B";
-	mes "�c�c�z������̂�����Ȃ��";
-	mes "�ʔ����ˁB�A�n�b�n�b!!";
+	mes "[青年]";
+	mes "どれだけ変わった人達なんだろう。";
+	mes "……想像するのもそれなりに";
+	mes "面白いね。アハッハッ!!";
 	close;
 }
 
-lighthalzen.gat,107,107,3	script	�N	869,{
-	mes "[�N]";
-	mes "�����͈�́A�������ǂ��̂�";
-	mes "�����̂�������܂���ˁB";
-	mes "�����ێ������������A�����ێ���";
-	mes "�ւ���F�X�Ȑ��������悤�ł����c�c";
+lighthalzen.gat,107,107,3	script	青年	869,{
+	mes "[青年]";
+	mes "ここは一体、治安が良いのか";
+	mes "悪いのか分かりませんね。";
+	mes "治安維持員も多いし、治安維持に";
+	mes "関する色々な政策もあるようですが……";
 	next;
-	mes "[�N]";
-	mes "�������}���ɑ΂��锽���̂������A";
-	mes "�`���s���݂����Ȃ̂�";
-	mes "�����āc�c";
-	mes "���̋����ɑ��܂��Ĉł����܂�";
-	mes "�Ƃł������܂��傤���c�c";
+	mes "[青年]";
+	mes "厳しい抑制に対する反発のせいか、";
+	mes "チンピラみたいなのも";
+	mes "多くて……";
+	mes "光の強さに相まって闇も強まる";
+	mes "とでも言いましょうか……";
 	next;
-	mes "[�N]";
-	mes "�Ǘ������܂茵�i�ɂ���̂�";
-	mes "���܂�ǂ��͂Ȃ������ł��ˁB";
+	mes "[青年]";
+	mes "管理をあまり厳格にするのも";
+	mes "あまり良くはなさそうですね。";
 	close;
 }
 
-lighthalzen.gat,89,73,3	script	�N	854,{
-	mes "[�N]";
-	mes "���̊X�́A���܂�ɂ��J�b�v���������I";
-	mes "�L���ŗ]�T��������Ď����c�c";
-	mes "�N�\�b!!";
+lighthalzen.gat,89,73,3	script	青年	854,{
+	mes "[青年]";
+	mes "この街は、あまりにもカップルが多い！";
+	mes "豊かで余裕があるって事か……";
+	mes "クソッ!!";
 	next;
-	mes "[�N]";
-	mes "�܂������A��ʎs�������p����";
-	mes "�����ꏊ�������Ǝv���Ă�񂾁I";
-	mes "�����ꏊ�ł����Ⴂ���Ⴗ��ȁI";
-	mes "�������A���������J�b�v����";
-	mes "�����Ⴄ���Ⴂ�₪��I";
+	mes "[青年]";
+	mes "まったく、一般市民が利用する";
+	mes "公共場所を何だと思ってるんだ！";
+	mes "公共場所でいちゃいちゃするな！";
+	mes "しかも、そういうカップルが";
+	mes "うじゃうじゃいやがる！";
 	next;
-	mes "[�N]";
-	mes "�������傤�I";
-	mes "�z������Ă�Ɩڂ����肻�����I";
-	mes "�z��̉�b�𕷂��Ă�Ǝ���";
-	mes "���肻�����I�@�ǂ��ɂ����Ă���I";
+	mes "[青年]";
+	mes "ちくしょう！";
+	mes "奴らを見てると目が腐りそうだ！";
+	mes "奴らの会話を聞いてると耳が";
+	mes "腐りそうだ！　どうにかしてくれ！";
 	close;
 }
 
-lighthalzen.gat,176,65,5	script	����	862,{
-	mes "[����]";
-	mes "���̊X�Ƃ͈���āA������";
-	mes "���ꂢ�ȕ����A�����A�N�Z�T���[��";
-	mes "�������񔄂��Ă��ėǂ��ł���B";
-	mes "���̂悤�ɃI�V��������D����";
-	mes "�����ɂ͓V���ł��I";
+lighthalzen.gat,176,65,5	script	少女	862,{
+	mes "[少女]";
+	mes "他の街とは違って、ここは";
+	mes "きれいな服も、可愛いアクセサリーも";
+	mes "たくさん売っていて良いですよ。";
+	mes "私のようにオシャレが大好きな";
+	mes "乙女には天国です！";
 	next;
-	mes "[����]";
-	mes "���Ȃ��͖`���ƁH";
-	mes "����Ȓn���ȕ��𖈓���";
-	mes "�悤�ɒ�����A������Ŏv�����؂�";
-	mes "�I�V�������Ă݂Ă͂ǂ��ł����H";
+	mes "[少女]";
+	mes "あなたは冒険家？";
+	mes "そんな地味な服を毎日の";
+	mes "ように着るより、こちらで思いっ切り";
+	mes "オシャレしてみてはどうですか？";
 	close;
 }
 
-lighthalzen.gat,78,120,3	script	����	862,{
-	mes "[����]";
-	mes "�c�c�c�c";
+lighthalzen.gat,78,120,3	script	少女	862,{
+	mes "[少女]";
+	mes "…………";
 	next;
-	mes "[����]";
-	mes "�c�c�c�c";
+	mes "[少女]";
+	mes "…………";
 	next;
-	mes "[����]";
-	mes "�c�c�c�c";
-	mes "���A���߂�Ȃ����B";
-	mes "������Ƌ����肵���Ⴂ�܂����B";
-	mes "���V�C�����܂�ɂ��ǂ��Ă��c�c";
-	mes "���̉����̉����X�Ƃ�";
-	mes "��C���Ⴂ�܂�����ˁ`";
+	mes "[少女]";
+	mes "…………";
+	mes "あ、ごめんなさい。";
+	mes "ちょっと居眠りしちゃいました。";
+	mes "お天気があまりにも良くてつい……";
+	mes "あの遠くの汚い街とは";
+	mes "空気が違いますからね～";
 	next;
-	mes "[����]";
-	mes "������F�A�������ɂ����Ђ�";
-	mes "����������Ȃ�������H";
+	mes "[少女]";
+	mes "これも皆、あそこにある会社の";
+	mes "おかげじゃないかしら？";
 	close;
 }
 
-lighthalzen.gat,182,102,3	script	���ꂳ��	866,{
-	mes "[���ꂳ��]";
-	mes "���`���A�N�I�@������d�̐S��";
-	mes "�Y��Ȃ��悤�ɂȁB";
-	mes "�N�͌����ڂ��Ȃ�̂���������";
-	mes "�����邪�A���܂肨���ɂ�������";
-	mes "�S����������́I";
+lighthalzen.gat,182,102,3	script	お爺さん	866,{
+	mes "[お爺さん]";
+	mes "お～い、君！　いつも奉仕の心を";
+	mes "忘れないようにな。";
+	mes "君は見た目かなりのお金持ちに";
+	mes "見えるが、あまりお金にこだわると";
+	mes "心を失うからの！";
 	next;
-	mes "[���ꂳ��]";
-	mes "�L���ŗ]�T�̂���S��";
-	mes "���������Ă�����悤�ɂȁc�c";
+	mes "[お爺さん]";
+	mes "豊かで余裕のある心を";
+	mes "いつも持っていられるようにな……";
 	close;
 }
 
-lighthalzen.gat,115,159,3	script	���ꂳ��	866,{
-	mes "[���ꂳ��]";
-	mes "���b�P���x���Ђ��c�c";
-	mes "�킵�̑��q���̗p����ē������";
-	mes "�ǂ��̂Ɂc�c";
-	mes "��͂���肵���E������߂�Ȃ�";
-	mes "���Ƃ��ǂ����낤�B";
+lighthalzen.gat,115,159,3	script	お爺さん	866,{
+	mes "[お爺さん]";
+	mes "レッケンベル社か……";
+	mes "わしの息子が採用されて働ければ";
+	mes "良いのに……";
+	mes "やはり安定した職場を求めるなら";
+	mes "大企業が良いだろう。";
 	next;
-	mes "[���ꂳ��]";
-	mes "�������A���̑��Ƃɂ͂Ȃ��Ȃ�";
-	mes "����Ȃ�����ȁ`";
-	mes "�������ɓ������l�B��";
-	mes "�݂�Ȓ��l�Ȃ̂��ˁH";
+	mes "[お爺さん]";
+	mes "しかし、その大企業にはなかなか";
+	mes "入れないからな～";
+	mes "あそこに入った人達は";
+	mes "みんな超人なのかね？";
 	close;
 }
 
-lighthalzen.gat,138,50,7	script	���ꂳ��	847,{
-	mes "[���ꂳ��]";
-	mes "���O���V���Ă݂ȁH";
-	mes "�킵�̂悤�ɂ��킭�����";
-	mes "��ɂȂ邳�I";
-	mes "�킵�����Đ̂͌��\���Ă����I";
+lighthalzen.gat,138,50,7	script	お爺さん	847,{
+	mes "[お爺さん]";
+	mes "お前も老けてみな？";
+	mes "わしのようにしわくちゃな";
+	mes "爺になるさ！";
+	mes "わしだって昔は結構もてたぜ！";
 	next;
-	mes "[���ꂳ��]";
-	mes "���H";
-	mes "�ǂ����Ă���ȂɘV�����̂����āH";
-	mes "�����c�c";
-	mes "�Ⴂ���ɔM�S�Ɏd���������炾��H";
+	mes "[お爺さん]";
+	mes "何？";
+	mes "どうしてこんなに老けたのかって？";
+	mes "そりゃ……";
+	mes "若い時に熱心に仕事したからだろ？";
 	next;
-	mes "[���ꂳ��]";
-	mes "���̊X���L���ɂȂ����̂�";
-	mes "�킵�̂悤�ȔN���B���Ⴂ����";
-	mes "�ꐶ�������������炾�I";
+	mes "[お爺さん]";
+	mes "この街が豊かになったのも";
+	mes "わしのような年寄り達が若い時に";
+	mes "一生懸命働いたからだ！";
 	next;
-	mes "[���ꂳ��]";
-	mes "�ŋ߂̎�҂��";
-	mes "���肪���݂Ƃ������Ƃ�";
-	mes "�m���c�c";
+	mes "[お爺さん]";
+	mes "最近の若者らは";
+	mes "ありがたみということを";
+	mes "知らん……";
 	close;
 }
 
-lighthalzen.gat,202,94,5	script	���ꂳ��	847,{
-	mes "[���ꂳ��]";
-	mes "�c�c�c�c";
-	mes "�����ƁA�������";
-	mes "�J�c�c�H�@�������������H";
-	mes "���̃T�[�r�X�Ƃ����Ă��邨�삳��I";
-	mes "�{���ɂ��Ƃ₩�ł悩�����̂��c�c";
+lighthalzen.gat,202,94,5	script	お爺さん	847,{
+	mes "[お爺さん]";
+	mes "…………";
+	mes "えっと、あちらの";
+	mes "カ……？　何だったっけ？";
+	mes "あのサービス業をしているお嬢さん！";
+	mes "本当にしとやかでよかったのう……";
 	next;
-	mes "[���ꂳ��]";
-	mes "�킵��30�N�Ⴉ������c�c";
-	mes "����A�킵�̑������̉���";
-	mes "���삳��̉Ԗ��ɖ������";
-	mes "�������̂��c�c";
+	mes "[お爺さん]";
+	mes "わしが30年若かったら……";
+	mes "いや、わしの孫をあの可愛い";
+	mes "お嬢さんの花婿に貰ったら";
+	mes "ええかのう……";
 	next;
-	mes "[���ꂳ��]";
-	mes "�n�n�n�B�N���̂�����";
-	mes "�ςȂ��Ƃ��������́B";
+	mes "[お爺さん]";
+	mes "ハハハ。年寄りのくせに";
+	mes "変なことを言ったの。";
 	close;
 }
 
-lighthalzen.gat,77,157,5	script	�V�l	866,{
-	mes "[�V�l]";
-	mes "���傢�Ɨ������ɗ����񂶂Ⴊ�c�c";
-	mes "�����A�����Ă��܂������̂��B";
-	mes "�ȑO�����������A���q���킵��";
-	mes "�{���̂ɂ��炢��J���Ăȁc�c";
-	mes "�܂��{���邩�̂��c�c";
+lighthalzen.gat,77,157,5	script	老人	866,{
+	mes "[老人]";
+	mes "ちょいと理髪しに来たんじゃが……";
+	mes "やれやれ、迷ってしまったかのぅ。";
+	mes "以前も迷った時、息子がわしを";
+	mes "捜すのにえらい苦労してな……";
+	mes "また怒られるかのぅ……";
 	close;
 }
 
-lighthalzen.gat,45,59,7	script	���k����	863,{
-	mes "[���k����]";
-	mes "���̊X�ɂ������\�N�Z��ł���̂�";
-	mes "���܂��ɖ����Ă��܂���B";
-	mes "���H���L������󂪂悭������";
-	mes "�ځ[���ƕ����Ă���c�c";
-	mes "���̂܂ɂ������킩��Ȃ�";
-	mes "�Ȃ��Ă��܂��̂�c�c";
+lighthalzen.gat,45,59,7	script	お婆さん	863,{
+	mes "[お婆さん]";
+	mes "この街にもう数十年住んでいるのに";
+	mes "いまだに迷ってしまうよ。";
+	mes "道路が広いから空がよく見えて";
+	mes "ぼーっと歩いてたら……";
+	mes "いつのまにか道がわからなく";
+	mes "なってしまうのよ……";
 	close;
 }
 
-lighthalzen.gat,230,182,3	script	�X�l	866,{
-	mes "[�N���r�X]";
-	mes "���ށc�c�H�@���O�A���l���ˁB";
-	mes "�ǂ������H�@���̊X�̊��z�́H";
-	mes "�ǂ�������ǂ��񂾂낤��";
-	mes "�ދ��ȂƂ��������񂾁B";
+lighthalzen.gat,230,182,3	script	街人	866,{
+	mes "[クラビス]";
+	mes "うむ……？　お前、旅人だね。";
+	mes "どうだい？　この街の感想は？";
+	mes "良いっちゃ良いんだろうが";
+	mes "退屈なところもあるんだ。";
 	next;
-	switch(select("������ł̐����͒�����ł����H","�����ʂ�ދ��ȊX�ł���","���̊X�̎����ɂ��Ăł����c�c")) {
+	switch(select("こちらでの生活は長いんですか？","言う通り退屈な街ですね","この街の事件についてですが……")) {
 	case 1:
-		mes "[�N���r�X]";
-		mes "�܂��A�������Č����Β������B";
-		mes "��c��X�Z��ł��邩��";
-		mes "�킵�܂ł�4��A200�N�ʂ�";
-		mes "�Z��ŗ����킯����B";
+		mes "[クラビス]";
+		mes "まあ、長いって言えば長いさ。";
+		mes "先祖代々住んでいるから";
+		mes "わしまでで4代、200年位は";
+		mes "住んで来たわけじゃ。";
 		next;
-		mes "[�N���r�X]";
-		mes "�킵�̕��Ȃ�ĂȁA���̊X��";
-		mes "���񂴂肵�āA�F�X���̒���";
-		mes "���Ă܂��ɂ���������";
-		mes "�������Ă����񂾂����ǁA";
-		mes "�̋��ő�������������̂���B";
+		mes "[クラビス]";
+		mes "わしの父なんてな、この街が";
+		mes "うんざりして、色々世の中を";
+		mes "見てまわりにあちこちと";
+		mes "旅をしていたんだが結局、";
+		mes "故郷で息を引き取ったのじゃ。";
 		next;
-		mes "[�N���r�X]";
-		mes "��͂�l�͐��܂ꂽ����";
-		mes "��̂���Ԃ����Ď�����ˁB";
+		mes "[クラビス]";
+		mes "やはり人は生まれた所で";
+		mes "育つのが一番だって事じゃね。";
 		next;
-		mes "-�b���I�������A���N����";
-		mes "��������z���Ă���悤��";
-		mes "������𒭂߂Ă���-";
+		mes "-話が終わった後、お年寄りは";
+		mes "何かを回想しているように";
+		mes "遠い空を眺めていた-";
 		close;
 	case 2:
-		mes "[�N���r�X]";
-		mes "�m���ɂ킵���������ʂ�";
-		mes "�ދ��ȊX�ł͂��邪�A";
-		mes "����ȂɃn�b�L���ƌ������Ƃ�";
-		mes "�Ȃ�����Ȃ����`";
+		mes "[クラビス]";
+		mes "確かにわしが言った通り";
+		mes "退屈な街ではあるが、";
+		mes "そんなにハッキリと言うことは";
+		mes "ないじゃないか～";
 		next;
-		mes "[�N���r�X]";
-		mes "�킴�킴�������܂ŗ����񂾂�H";
-		mes "������茩�����āA�X�̗ǂ��Ƃ���";
-		mes "�ł��T���Ă݂�Ƃ����B";
+		mes "[クラビス]";
+		mes "わざわざ遠い所まで来たんだろ？";
+		mes "ゆっくり見物して、街の良いところ";
+		mes "でも探してみるといい。";
 		next;
-		mes "[�N���r�X]";
-		mes "�i���̍��̎�҂́c�c";
-		mes "�ԓx����������c�c�j";
+		mes "[クラビス]";
+		mes "（この頃の若者は……";
+		mes "態度が悪すぎる……）";
 		next;
-		mes "-���N���͂�����ƕs����";
-		mes "�\��𕂂��ׂ��Ȃ����ɂ�-";
+		mes "-お年寄りはちょっと不快な";
+		mes "表情を浮かべあなたを睨んだ-";
 		close;
 	case 3:
-		mes "[�N���r�X]";
-		mes "����H�@�ǂ�Ȏ������H";
-		mes "�����A�E�l�S�̉\�Ȃ�";
-		mes "�����Ɛ̂̂��Ƃ�����A�킵��";
-		mes "�悭�m��Ȃ��񂾂�ȁc�c";
+		mes "[クラビス]";
+		mes "うん？　どんな事件だ？";
+		mes "もし、殺人鬼の噂なら";
+		mes "ずっと昔のことだから、わしも";
+		mes "よく知らないんだよな……";
 		next;
-		mes "[�N���r�X]";
-		mes "���퉮�̉��ɂ��邨�삳��";
-		mes "���̉\�ɏڂ����ƕ����Ă���B";
-		mes "���̂��삳��͎����̂��Ƃ�";
-		mes "�I�J���g�}�j�A�Ƃ����Ƃ�";
-		mes "�����Ă��悤�����ˁc�c";
+		mes "[クラビス]";
+		mes "武器屋の横におるお嬢さんが";
+		mes "その噂に詳しいと聞いている。";
+		mes "あのお嬢さんは自分のことを";
+		mes "オカルトマニアとか何とか";
+		mes "言ってたようだがね……";
 		next;
-		mes "[�N���r�X]";
-		mes "�킵�̂悤�Ȃ����ڂ�ɂ�";
-		mes "�����ς蕪����Ȃ����t�΂���";
-		mes "�I��Řb���Ă�������c�c";
-		mes "���ڍs���Ă݂��炢���B";
+		mes "[クラビス]";
+		mes "わしのようなおいぼれには";
+		mes "さっぱり分からない言葉ばっか";
+		mes "選んで話していたから……";
+		mes "直接行ってみたらいい。";
 		next;
-		mes "-���N���͂܂��������l����悤��";
-		mes "�ڂ����-";
+		mes "-お年寄りはまた何かを考えるように";
+		mes "目を閉じた-";
 		close;
 	}
 }
 
-lighthalzen.gat,192,63,4	script	�X�l	92,{
-	mes "[�Z�����B]";
-	mes "���ƁA�m���Ă�H";
-	mes "���̕��퉮�ɂ���傫�����̂��ƁB";
-	mes "�C�ɂȂ�Ȃ��H";
-	mes "�ˁA�����Ă����悤���H";
+lighthalzen.gat,192,63,4	script	街人	92,{
+	mes "[セルヴィ]";
+	mes "えと、知ってる？";
+	mes "この武器屋にある大きい斧のこと。";
+	mes "気にならない？";
+	mes "ね、教えてあげようか？";
 	next;
-	if(select("����A�m�肽��","����A�ʂɁc�c")==2) {
-		mes "[�Z�����B]";
-		mes "�c�O�`�|���Ėʔ����A";
-		mes "���������Ăɂ��傤�Ǘǂ�";
-		mes "�l�^�Ȃ̂Ɂc�c�{���Ɏc�O����B";
+	if(select("うん、知りたい","いや、別に……")==2) {
+		mes "[セルヴィ]";
+		mes "残念～怖くて面白い、";
+		mes "蒸し暑い夏にちょうど良い";
+		mes "ネタなのに……本当に残念だわ。";
 		next;
-		mes "-�ޏ��͖{���Ɏc�O��";
-		mes "������Ă���-";
+		mes "-彼女は本当に残念な";
+		mes "顔をしている-";
 		close;
 	}
-	mes "[�Z�����B]";
-	mes "�́A���̕��퉮�̎�l��";
-	mes "�ƂĂ������ȘA���E�l�Ƃ������́B";
-	mes "��ɂȂ�x�ɕ��������ďo�Ă�";
-	mes "���̂悤�ɍׂ��ĉ���������";
-	mes "�P�����񂾂��āB";
+	mes "[セルヴィ]";
+	mes "昔、この武器屋の主人は";
+	mes "とても凶悪な連続殺人犯だったの。";
+	mes "夜になる度に斧を持って出ては";
+	mes "私のように細くて可愛い女性を";
+	mes "襲ったんだって。";
 	next;
-	mes "[�Z�����B]";
-	mes "�ł��A���ǊX�̐l�X��";
-	mes "���܂��āA���̋���ȕ���";
-	mes "�a��̌Y�ɂȂ��������Ȃ́B";
-	mes "�{���ɍl���邾���ŕ|����`";
+	mes "[セルヴィ]";
+	mes "でも、結局街の人々に";
+	mes "つかまって、あの巨大な斧で";
+	mes "斬首の刑になったそうなの。";
+	mes "本当に考えるだけで怖いわ～";
 	next;
-	mes "[�Z�����B]";
-	mes "���̂������A���̋߂���";
-	mes "���ӕ��������ł���";
-	mes "�j�̗H��������Ƃ����l��";
-	mes "���l������悤�Ȃ́B";
+	mes "[セルヴィ]";
+	mes "そのせいか、この近くで";
+	mes "毎晩斧を研いでいる";
+	mes "男の幽霊を見たという人が";
+	mes "何人かいるようなの。";
 	next;
-	mes "[�Z�����B]";
-	mes "���̗H��͕��̐n���悭��������";
-	mes "���m�F���邽�߂ɁA�����̎��";
-	mes "�؂��āA��������������l��";
-	mes "�����Ȃ���ǂ�������炵���̂�I";
-	mes "�����c�c";
+	mes "[セルヴィ]";
+	mes "その幽霊は斧の刃がよく研げたか";
+	mes "磨確認するために、自分の首を";
+	mes "切って、それを見かけた人に";
+	mes "見せながら追いかけるらしいのよ！";
+	mes "うぅ……";
 	next;
-	mes "-�ޏ��͂Ԃ�Ԃ�k���Ă���-";
+	mes "-彼女はぶるぶる震えている-";
 	close;
 }
 
-lighthalzen.gat,40,107,4	script	�X�l	869,{
-	mes "[���@�W��]";
-	mes "���`����ȓV�C�ɂ�";
-	mes "�d���Ƃ��������������o����";
-	mes "�ǂ����ɗV�тɍs�������ȁ`";
+lighthalzen.gat,40,107,4	script	街人	869,{
+	mes "[ヴァジル]";
+	mes "あ～こんな天気には";
+	mes "仕事とか何もかも投げ出して";
+	mes "どこかに遊びに行きたいな～";
 	next;
-	switch(select("�V�тɍs���������ł��H","�d���͏I���Ȃ���΁I","���̊X�̎����ɂ��āc�c")) {
+	switch(select("遊びに行きたい所でも？","仕事は終えなければ！","この街の事件について……")) {
 	case 1:
-		mes "[���@�W��]";
-		mes "�ǂ����ɗV�тɍs���ƌ����Ă��A";
-		mes "���͂��̋߂��͊�Ȃ���炪";
-		mes "�����Ăȁc�c";
-		mes "���̕ӂ���l�ł�����ƁA";
-		mes "�ɂ��ڂɂ����񂾂��B";
+		mes "[ヴァジル]";
+		mes "どこかに遊びに行くと言っても、";
+		mes "実はこの近くは危ないやつらが";
+		mes "多くてな……";
+		mes "その辺を一人でうろつくと、";
+		mes "痛い目にあうんだぜ。";
 		next;
-		mes "[���@�W��]";
-		mes "�ł��A�A���f�o������";
-		mes "�^�[�{�g���b�N�͈�x������";
-		mes "�s���Č������ȁB";
+		mes "[ヴァジル]";
+		mes "でも、アルデバランの";
+		mes "ターボトラックは一度見物に";
+		mes "行って見たいな。";
 		next;
-		mes "[���@�W��]";
-		mes "���̊ԁA�F�B�̈�l��";
-		mes "���͂��Ȃ������Ƀ^�[�{�g���b�N��";
-		mes "�Q�����āA�Q���܂ŕςȐ����";
-		mes "�����Ă����񂾂��ǁB";
+		mes "[ヴァジル]";
+		mes "この間、友達の一人が";
+		mes "実力もないくせにターボトラックに";
+		mes "参加して、参加賞で変な水薬を";
+		mes "一つ貰ってきたんだけど。";
 		next;
-		mes "[���@�W��]";
-		mes "�D��S�ň�x����ł݂���A";
-		mes "���̖��ɂ������Ȃ��Ă��I";
-		mes "�����̂��x���Ȃ��Ȃ��";
-		mes "��̉��̂���ł���ȕ���";
-		mes "���̂��c�c�܂����������c�c";
+		mes "[ヴァジル]";
+		mes "好奇心で一度飲んでみたら、";
+		mes "何の役にも立たなくてさ！";
+		mes "歩くのが遅くなる薬なんて";
+		mes "一体何のつもりでそんな物を";
+		mes "作るのか……まったくもう……";
 		next;
-		mes "[���@�W��]";
-		mes "��̂ǂ���������������";
-		mes "������̂��A��x�������";
-		mes "�݂����Ǝv���Ă��񂾁B";
-		mes "�^�[�{�g���b�N�̎Q���܂���";
-		mes "�����̂��R�Ȃ񂶂�Ȃ����H";
+		mes "[ヴァジル]";
+		mes "一体どいつがそういう物を";
+		mes "作ったのか、一度顔を見て";
+		mes "みたいと思ってたんだ。";
+		mes "ターボトラックの参加賞って";
+		mes "いうのも嘘なんじゃないか？";
 		next;
-		mes "[���@�W��]";
-		mes "�ǂ����Ŗ����ȍ��\�t��";
-		mes "���܂���ĕςȖ�𔃂킳�ꂽ��";
-		mes "�Ⴂ�Ȃ��I";
+		mes "[ヴァジル]";
+		mes "どこかで無茶な詐欺師に";
+		mes "だまされて変な薬を買わされたに";
+		mes "違いない！";
 		next;
-		mes "-�j�͕s���Ȃ��Ƃ��v���o����";
-		mes "�悤�Ō�������Ȃ���w��������-";
+		mes "-男は不快なことを思い出した";
+		mes "ようで拳を握りながら背を向けた-";
 		close;
 	case 2:
-		mes "[���@�W��]";
-		mes "�c�c�}�Ɍ���ĉ����H";
-		mes "�����d�������Ȃ��ŗV��ł΂���";
-		mes "����悤�Ȑl�ԂɌ������̂��H";
-		mes "�����A�V�C���ǂ��ėV�т�";
-		mes "�s�������ƌ��������������B";
+		mes "[ヴァジル]";
+		mes "……急に現れて何を？";
+		mes "俺が仕事もしないで遊んでばかり";
+		mes "いるような人間に見えたのか？";
+		mes "ただ、天気が良くて遊びに";
+		mes "行きたいと言っただけだぜ。";
 		next;
-		mes "[���@�W��]";
-		mes "�i�u�c�u�c�j";
-		mes "�i����܂łɏI��点�Ȃ���";
-		mes "�����Ȃ��̂Ɂc�c�j";
+		mes "[ヴァジル]";
+		mes "（ブツブツ）";
+		mes "（今夜までに終わらせなきゃ";
+		mes "いけないのに……）";
 		next;
-		mes "-�j�͋}�ȗp�����v���o����";
-		mes "�悤�Ƀ������ɉ����������n�߂�-";
+		mes "-男は急な用件を思い出した";
+		mes "ようにメモ帳に何かを書き始めた-";
 		close;
 	case 3:
-		mes "[���@�W��]";
-		mes "�����A���̘b�Ȃ�悭�m���Ă��B";
-		mes "�l�X�͋����ȕ��E�l�S��";
-		mes "���Ⴂ���Ă���悤�����ǁA";
-		mes "���͂�������Ȃ��񂾁I";
+		mes "[ヴァジル]";
+		mes "ああ、その話ならよく知ってるよ。";
+		mes "人々は凶悪な斧殺人鬼と";
+		mes "勘違いしているようだけど、";
+		mes "実はそうじゃないんだ！";
 		next;
-		mes "[���@�W��]";
-		mes "���́A�̂��̊X�ɂ͗L����";
-		mes "�X�q�E�l����l�����񂾁B";
-		mes "���̐E�l�����ӂȂ̂́A";
-		mes "�����X�^�[�̓��ŖX�q�����c�c";
-		mes "�܂��A����݂����ȖX�q��";
-		mes "����Ă����j�������B";
+		mes "[ヴァジル]";
+		mes "実は、昔この街には有名な";
+		mes "帽子職人が一人いたんだ。";
+		mes "その職人が得意なのは、";
+		mes "モンスターの頭で帽子を作る……";
+		mes "まぁ、生首みたいな帽子を";
+		mes "作っていた男だった。";
 		next;
-		mes "[���@�W��]";
-		mes "���Ԃ񂠂񂽂���x�ʂ�";
-		mes "������������Ǝv����B";
-		mes "���ʂ��X�Ƃ��A�܂��A���������̂ˁI";
+		mes "[ヴァジル]";
+		mes "たぶんあんたも一度位は";
+		mes "見た事があると思うよ。";
+		mes "たぬき帽とか、まあ、そういうのね！";
 		next;
-		mes "[���@�W��]";
-		mes "�Ƃ��낪�A��������̖X�q�E�l��";
-		mes "���ɂ���Ĕ�s�D�̑D���̐e�ʂ�";
-		mes "�X�q�ɂ��Ă��܂����̂��B";
-		mes "�����������̂܂�ܐ���݂����ȁB";
+		mes "[ヴァジル]";
+		mes "ところが、ある日その帽子職人が";
+		mes "よりによって飛行船の船長の親戚を";
+		mes "帽子にしてしまったのさ。";
+		mes "そりゃもうそのまんま生首みたいな。";
 		next;
-		mes "[���@�W��]";
-		mes "�����ł̓����X�^�[��������";
-		mes "�v���Ă�������ǁA";
-		mes "���ꂪ��������Ă��Ƃ�m����";
-		mes "���Ȃ�V���b�N���󂯂��񂾂낤�B";
-		mes "���ǁA���̋�ɂɑς����Ȃ�";
-		mes "�Ƃ̒��Ŏ��E�����Ă��܂����݂�����B";
+		mes "[ヴァジル]";
+		mes "自分ではモンスターだったと";
+		mes "思っていたけれど、";
+		mes "それが違ったってことを知って";
+		mes "かなりショックを受けたんだろう。";
+		mes "結局、その苦痛に耐えられなく";
+		mes "家の中で自殺をしてしまったみたいよ。";
 		next;
-		mes "[���@�W��]";
-		mes "��ŗ��ꂽ�\�ɂ��ƁA";
-		mes "���̕s�K�ȖX�q�͔�s�D�̑D������";
-		mes "���J�ɏ����Ă���񂾂��āB";
+		mes "[ヴァジル]";
+		mes "後で流れた噂によると、";
+		mes "その不幸な帽子は飛行船の船室内に";
+		mes "丁寧に飾ってあるんだって。";
 		next;
-		mes "[���@�W��]";
-		mes "�݂�Ȃ����̔ߌ��I�Ȏ��������āA";
-		mes "��x�Ƃ���Ȏ����N����Ȃ��悤�ɁA";
-		mes "���ӂ��悤�Ƃ��Ă���悤�Ɏv����B";
+		mes "[ヴァジル]";
+		mes "みんながその悲劇的な事件を見て、";
+		mes "二度とそんな事が起こらないように、";
+		mes "注意しようとしているように思える。";
 		next;
-		mes "[���@�W��]";
-		mes "�l�ɂ͂����̃g�i�J�C�̔����ɂ���";
-		mes "�����Ȃ����ǂ��B";
-		mes "�ł��A���̘b���s�D�̂���";
-		mes "����ƁA���Ԃ񋶂����悤��";
-		mes "�{�邾�낤�ȁB";
+		mes "[ヴァジル]";
+		mes "僕にはただのトナカイの剥製にしか";
+		mes "見えないけどさ。";
+		mes "でも、この話を飛行船のやつらに";
+		mes "すると、たぶん狂ったように";
+		mes "怒るだろうな。";
 		next;
-		mes "[���@�W��]";
-		mes "������̑O�ł͂��ꂮ���";
-		mes "���ɒ��ӂ��������ǂ�������B";
+		mes "[ヴァジル]";
+		mes "あいつらの前ではくれぐれも";
+		mes "口に注意した方が良いかもよ。";
 		next;
-		mes "-�b���I������j�́A";
-		mes "��������Ȃɖʔ����̂�";
-		mes "�N�X�N�X�Ə΂��n�߂�-";
+		mes "-話し終わった男は、";
+		mes "何がそんなに面白いのか";
+		mes "クスクスと笑い始めた-";
 		close;
 	}
 }
 
-lighthalzen.gat,259,108,7	script	�N	869,{
-	mes "[�N]";
-	mes "�I�D�C�F�`�x�C�r�[�B";
-	mes "���̖l�̂����܂�������";
-	mes "��э���ł����Ł`�H";
-	mes "�����̐��ɔ�э��ނ��A";
-	mes "�����ƃn�b�s�[�Ȃ͂������I";
+lighthalzen.gat,259,108,7	script	青年	869,{
+	mes "[青年]";
+	mes "オゥイェ～ベイビー。";
+	mes "この僕のたくましい胸に";
+	mes "飛び込んでおいで～？";
+	mes "そこの水に飛び込むより、";
+	mes "ずっとハッピーなはずだぜ！";
 	next;
-	mes "[�N]";
-	mes "�N���l�̋��ɔ�э���ł�����A";
-	mes "�l�͔g�̂悤�ȍr���[�����i��";
-	mes "�N�ɖ����킹�Ă������`�H";
-	mes "�����A�J�����x�C�r�[�H";
+	mes "[青年]";
+	mes "君が僕の胸に飛び込んできたら、";
+	mes "僕は波のような荒く深い抱擁を";
+	mes "君に味合わせてあげるよ～？";
+	mes "さぁ、カモンベイビー？";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�������邩���m��Ȃ��B";
-	mes "���Ɩڂ��ǂ��ŁA��������";
-	mes "�������痧�����낤�c�c";
+	mes "……耳が腐るかも知れない。";
+	mes "耳と目を塞いで、いち早く";
+	mes "ここから立ち去ろう……";
 	close;
 }
 
-lighthalzen.gat,261,112,3	script	����	862,{
-	mes "[����]";
-	mes "�����A����ȂɓV�C�̗ǂ�����";
-	mes "����Ȃɑf�G�ȏꏊ��";
-	mes "����ȑu�₩�ȕ��͋C��";
-	mes "��l����Ńf�[�g���Ă�Ȃ�āA";
-	mes "�{���A�ō�����`";
-	mes "�E�t�t�c�c";
+lighthalzen.gat,261,112,3	script	少女	862,{
+	mes "[少女]";
+	mes "あぁ、こんなに天気の良い日に";
+	mes "こんなに素敵な場所で";
+	mes "こんな爽やかな雰囲気で";
+	mes "二人きりでデートしてるなんて、";
+	mes "本当、最高だわ～";
+	mes "ウフフ……";
 	next;
-	mes "[����]";
-	mes "���Ȃ��ƈꏏ�ɂ��邾���ŁA";
-	mes "���͂����ƂĂ���������";
-	mes "�n�����Ⴂ�����Ȃ́B";
-	mes "�n������������́A�����Ƃ���";
-	mes "���̂悤�ɓ����Ȃ̂�����ˁ`";
+	mes "[少女]";
+	mes "あなたと一緒にいるだけで、";
+	mes "私はもうとても嬉しくて";
+	mes "溶けちゃいそうなの。";
+	mes "溶けちゃった私は、きっとこの";
+	mes "水のように透明なのかしらね～";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�s���w�����㏸���n�߂��B";
-	mes "�����ɂ���Ɗ댯���c�c";
-	mes "�����������낤�c�c";
+	mes "……不快指数が上昇し始めた。";
+	mes "ここにいると危険だ……";
+	mes "早く立ち去ろう……";
 	close;
 }
 
-lighthalzen.gat,191,134,3	script	�N	869,{
-	mes "[�N]";
-	mes "�N�̓��͂ƂĂ����炩��";
-	mes "�l�̎p���ق�A�f���Ă����B";
-	mes "�N�̐S�����̓��̂悤��";
-	mes "�����Ĕ������I";
+lighthalzen.gat,191,134,3	script	青年	869,{
+	mes "[青年]";
+	mes "君の瞳はとても清らかで";
+	mes "僕の姿がほら、映っているよ。";
+	mes "君の心もその瞳のように";
+	mes "清くて美しい！";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�K�����������A�u�i�C�l��";
-	mes "�ǂ����ɂ���񂾂�ȁc�c";
-	mes "�������悤�B";
+	mes "必ずこういうアブナイ人が";
+	mes "どこかにいるんだよな……";
+	mes "無視しよう。";
 	close;
 }
 
-lighthalzen.gat,190,134,5	script	����	862,{
-	mes "[����]";
-	mes "���Ȃ��̂��̗͋����ڂ���";
-	mes "�������̐S���h�L�h�L�����Ă܂��B";
-	mes "�������̋��͂����A";
-	mes "�Ă������ɔM���́I";
-	mes "��`�`�I";
+lighthalzen.gat,190,134,5	script	少女	862,{
+	mes "[少女]";
+	mes "あなたのその力強い目つきが";
+	mes "あたしの心をドキドキさせてます。";
+	mes "あたしの胸はもう、";
+	mes "焼けそうに熱いの！";
+	mes "ん～～！";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�K�����������A�u�i�C�l��";
-	mes "�ǂ����ɂ���񂾂�ȁc�c";
-	mes "�������悤�B";
+	mes "必ずこういうアブナイ人が";
+	mes "どこかにいるんだよな……";
+	mes "無視しよう。";
 	close;
 }
 
-lighthalzen.gat,66,94,3	script	�V�l	866,{
-	mes "[�V�l]";
-	mes "�������ē�l�ŎU�����Ă���ƁA";
-	mes "�̂��v���o���˂��c�c";
-	mes "���O�͐l�C�҂���������A��l��";
-	mes "�����Ă���ƑA�]�Ǝ��i�̖ڂ�";
-	mes "����ꂽ���񂶂�B���O��Ƃ���";
-	mes "����̂́A��J�������񂶂�B";
+lighthalzen.gat,66,94,3	script	老人	866,{
+	mes "[老人]";
+	mes "こうして二人で散歩していると、";
+	mes "昔を思い出すねぇ……";
+	mes "お前は人気者だったから、二人で";
+	mes "歩いていると羨望と嫉妬の目で";
+	mes "見られたもんじゃ。お前を独り占め";
+	mes "するのは、苦労したもんじゃ。";
 	next;
 	emotion 31;
-	emotion 30,"�V�l#Lhz";
-	mes "[�V�l]";
-	mes "�����Ď����o���������A";
-	mes "���O�͑��ς�炸�f�G����B";
-	mes "�ق�ƂɁA�킵�͍K���҂���ȁB";
-	mes "�t�z�z�B";
+	emotion 30,"老人#Lhz";
+	mes "[老人]";
+	mes "そして時が経った今も、";
+	mes "お前は相変わらず素敵じゃ。";
+	mes "ほんとに、わしは幸せ者じゃな。";
+	mes "フホホ。";
 	close;
 }
 
-lighthalzen.gat,65,94,5	script	�V�l#Lhz	863,{
-	mes "[�V�l]";
-	mes "�����͓V�C���ǂ��c�c";
-	mes "�U�����a���ˁB";
+lighthalzen.gat,65,94,5	script	老人#Lhz	863,{
+	mes "[老人]";
+	mes "今日は天気が良い……";
+	mes "散歩日和だね。";
 	close;
 }
 
-lighthalzen.gat,159,222,1	script	���b�P���x���E��	109,{
-	mes "[�x�i�g�X]";
-	mes "����́A���p�̔�s�D�ł��B";
-	mes "�C���H�����������_�����I��点��";
-	mes "�Ƃ���Ȃ̂ŁA�G��Ȃ��悤�ɁB";
+lighthalzen.gat,159,222,1	script	レッケンベル職員	109,{
+	mes "[ベナトス]";
+	mes "これは、会長専用の飛行船です。";
+	mes "修理工がたった今点検を終わらせた";
+	mes "ところなので、触れないように。";
 	close;
 }
 
-lighthalzen.gat,162,304,7	script	���b�P���x���x����	868,{
-	mes "[���b�P���x���x����]";
-	mes "�t�t�t�A����Ǝ�ɓ��ꂽ���I";
-	mes "�J�v���E���̐��ʐ^!!";
-	mes "�ǂ����A�~�������낤�H";
+lighthalzen.gat,162,304,7	script	レッケンベル警備員	868,{
+	mes "[レッケンベル警備員]";
+	mes "フフフ、やっと手に入れたぞ！";
+	mes "カプラ職員の生写真!!";
+	mes "どうだ、欲しいだろう？";
 	next;
-	emotion 23,"���b�P���x���x����#Lhz";
-	mes "[���̃��b�P���x���x����]";
-	mes "�ʁc�c�悭�B��Ă�ȁc�c";
-	mes "�p�x�Ƃ������x�Ƃ����A�������c�c";
-	mes "���A�����炾�H";
+	emotion 23,"レッケンベル警備員#Lhz";
+	mes "[他のレッケンベル警備員]";
+	mes "ぬ……よく撮れてるな……";
+	mes "角度といい光度といい、見事だ……";
+	mes "い、いくらだ？";
 	next;
-	mes "[���b�P���x���x����]";
-	mes "300,000Zeny���B";
+	mes "[レッケンベル警備員]";
+	mes "300,000Zenyだ。";
 	next;
-	emotion 23,"���b�P���x���x����#Lhz";
-	mes "[���̃��b�P���x���x����]";
-	mes "���H�@��������񂶂�Ȃ����H";
-	mes "���́A���\��Y!!";
+	emotion 23,"レッケンベル警備員#Lhz";
+	mes "[他のレッケンベル警備員]";
+	mes "何？　高すぎるんじゃないか？";
+	mes "この、詐欺野郎!!";
 	next;
 	emotion 2;
-	mes "[���b�P���x���x����]";
-	mes "�Ȃ�A�����Ă��ˁ`��!!";
+	mes "[レッケンベル警備員]";
+	mes "なら、売ってやらね～よ!!";
 	close;
 }
 
-lighthalzen.gat,163,306,3	script	���b�P���x���x����#Lhz	867,{
+lighthalzen.gat,163,306,3	script	レッケンベル警備員#Lhz	867,{
 	emotion 19;
-	mes "[���b�P���x���x����]";
-	mes "�����A�J�v���E���̐��ʐ^�c�c";
-	mes "���������������Ă���Ȃ����c�c�H";
+	mes "[レッケンベル警備員]";
+	mes "うぅ、カプラ職員の生写真……";
+	mes "もう少し安くしてくれないか……？";
 	close;
 }
 
 //============================================================
-// ���q�^���[���n���XNPC
+// リヒタルゼン貧民街NPC
 //------------------------------------------------------------
-lighthalzen.gat,312,233,3	script	���	777,3,1,{
+lighthalzen.gat,312,233,3	script	物乞い	777,3,1,{
 	end;
 OnTouch:
-	mes "[���]";
-	mes "���肢�ł��c�c�q�����c�c";
-	mes "�Q���Ă܂��c�c���������������B";
-	mes "�����ł��c�c";
+	mes "[物乞い]";
+	mes "お願いです……子供が……";
+	mes "飢えてます……お金をください。";
+	mes "少しでも……";
 	next;
-	if(select("Zeny������������","��������")==2) {
+	if(select("Zenyを少しあげる","無視する")==2) {
 		emotion 32,"";
 		mes "["+strcharinfo(0)+"]";
-		mes "�c�c";
+		mes "……";
 		close;
 	}
 	if(Zeny < 50) {
 		emotion 18;
-		mes "[���]";
-		mes "�������c�c";
-		mes "���Ȃ���������ˁc�c";
-		mes "�ł́A��l�ŗ͂����킹��";
-		mes "�ꏏ�ɂ��̌�����悤����";
-		mes "�Ȃ����c�c";
+		mes "[物乞い]";
+		mes "そうか……";
+		mes "あなたも物乞いかね……";
+		mes "では、二人で力を合わせて";
+		mes "一緒にもの乞いをしようじゃ";
+		mes "ないか……";
 		close;
 	}
 	set Zeny,Zeny-50;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�ł́A���Ȃ��ł���������c�c";
+	mes "では、少ないですがこれを……";
 	next;
 	emotion 15;
-	mes "[���]";
-	mes "�������`";
-	mes "���肪�Ƃ��������܂��B���l�l�B";
-	mes "����ɁA���̓s�s�Ɋւ���";
-	mes "�b�����č����グ�܂��傤�B";
-	mes "���ɗ����͕�����܂��񂪁B";
+	mes "[物乞い]";
+	mes "あああ～";
+	mes "ありがとうございます。旅人様。";
+	mes "お礼に、この都市に関する";
+	mes "話をして差し上げましょう。";
+	mes "役に立つかは分かりませんが。";
 	next;
-	mes "[���]";
-	mes "���̓s�s�́A�x�T�ȋ���";
-	mes "�n�������ŕ������Ă܂��c�c";
+	mes "[物乞い]";
+	mes "この都市は、富裕な区域と";
+	mes "貧しい区域で分けられてます……";
 	next;
-	mes "[���]";
-	mes "���ɗ������ł��傤���c�c";
-	next;
-	emotion 9,"";
-	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�c�c";
+	mes "[物乞い]";
+	mes "役に立ったでしょうか……";
 	next;
 	emotion 9,"";
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�c�c";
-	mes "�c�c�c�c";
+	mes "…………";
 	next;
 	emotion 9,"";
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�c�c";
-	mes "�c�c�c�c";
-	mes "�c�c�c�c";
+	mes "…………";
+	mes "…………";
+	next;
+	emotion 9,"";
+	mes "[" +strcharinfo(0)+ "]";
+	mes "…………";
+	mes "…………";
+	mes "…………";
 	next;
 	emotion 1;
-	mes "[���]";
-	mes "�c�c";
+	mes "[物乞い]";
+	mes "……";
 	close;
 }
 
-lighthalzen.gat,296,239,3	script	���N#Lhz	706,{
+lighthalzen.gat,296,239,3	script	少年#Lhz	706,{
 	switch(rand(3)) {
 	case 0:
-		emotion 9,"����#Lhz";
-		mes "[����]";
-		mes "��������͂ǂ������񂾂낤�c�c";
-		mes "����Ȃɒx���Ȃ邱�ƂȂ��";
-		mes "�Ȃ������̂Ɂc�c";
+		emotion 9,"少女#Lhz";
+		mes "[少女]";
+		mes "お父さんはどうしたんだろう……";
+		mes "こんなに遅くなることなんて";
+		mes "なかったのに……";
 		next;
-		mes "[���N]";
-		mes "�p�p�͂��A���Ă���́H";
-		mes "�x��������������`�`";
+		mes "[少年]";
+		mes "パパはいつ帰ってくるの？";
+		mes "ベルお腹すいたよ～～";
 		next;
-		mes "[����]";
-		mes "�ׂ̂���������ꏏ�ɍs����";
-		mes "�݂��������ǁA�߂��ė��Ȃ����c�c";
+		mes "[少女]";
+		mes "隣のおじさんも一緒に行った";
+		mes "みたいだけど、戻って来ないし……";
 		close;
 	case 1:
-		emotion 28,"���N#Lhz";
-		mes "[���N]";
-		mes "��`��A��`��c�c";
-		mes "�p�p�́A���A���Ă����!?";
+		emotion 28,"少年#Lhz";
+		mes "[少年]";
+		mes "わ～ん、わ～ん……";
+		mes "パパは、いつ帰ってくるの!?";
 		next;
-		mes "[����]";
-		mes "�x���c�c";
-		mes "��������́A�����͋A����";
-		mes "����Ȃ��݂����B�����A�낤�c�c";
+		mes "[少女]";
+		mes "ベル……";
+		mes "お父さんは、今日は帰って";
+		mes "来れないみたい。もう帰ろう……";
 		next;
-		emotion 7,"���N#Lhz";
-		mes "[���N]";
-		mes "���₾�I�@���₾�I";
-		mes "�A��Ȃ��`";
-		mes "�p�p�����َq�����ė������";
-		mes "�����Ă�����I�@�A��Ȃ��I";
+		emotion 7,"少年#Lhz";
+		mes "[少年]";
+		mes "いやだ！　いやだ！";
+		mes "帰らない～";
+		mes "パパがお菓子買って来るって";
+		mes "言ってたもん！　帰らない！";
 		next;
-		mes "[���N]";
-		mes "�l�̓p�p������܂�";
-		mes "�����ő҂��Ă�I";
-		mes "�s���A�o�����͐�ɋA���āI";
+		mes "[少年]";
+		mes "僕はパパが来るまで";
+		mes "ここで待ってる！";
+		mes "ピリア姉ちゃんは先に帰って！";
 		next;
-		emotion 9,"����#Lhz";
-		mes "[���N]";
-		mes "���`��c�c";
-		mes "��������ǂ������̂�����c�c";
-		mes "����������������炦��d����";
-		mes "���������Č����ďo�����Ă���A";
-		mes "�܂������A�����Ȃ����c�c";
-		mes "�ӂ��c�c";
+		emotion 9,"少女#Lhz";
+		mes "[少年]";
+		mes "う～ん……";
+		mes "お父さんどうしたのかしら……";
+		mes "お金をたくさんもらえる仕事を";
+		mes "見つけたって言って出かけてから、";
+		mes "まったく連絡がないし……";
+		mes "ふぅ……";
 		close;
 	case 2:
-		emotion 1,"����#Lhz";
-		mes "[����]";
-		mes "�ǂȂ��ł����H";
-		mes "�Ȃ����B������Ȃ�";
-		mes "���߂Ă��ł����c�c�H";
+		emotion 1,"少女#Lhz";
+		mes "[少女]";
+		mes "どなたですか？";
+		mes "なぜ私達をそんなに";
+		mes "見つめてるんですか……？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���A�������c�c";
-		mes "�q���������Ă��邩��A";
-		mes "�C�ɂȂ�����ł��B";
-		mes "�����������̂ł����H";
+		mes "あ、いいえ……";
+		mes "子供が泣いているから、";
+		mes "気になったんです。";
+		mes "何かあったのですか？";
 		next;
-		mes "[����]";
-		mes "���́A�������񂪗ǂ��d����";
-		mes "�������ƌ����ďo�����Ă���A";
-		mes "�����������A���Ă��Ȃ���ł��B";
-		mes "�����������Ƃ͌����Ă܂������c�c";
+		mes "[少女]";
+		mes "実は、お父さんが良い仕事を";
+		mes "見つけたと言って出かけてから、";
+		mes "もう数日も帰ってこないんです。";
+		mes "少し遠い所とは言ってましたが……";
 		next;
-		emotion 19,"����#Lhz";
-		mes "[����]";
-		mes "��̃x���͂����Ƃ�����";
-		mes "���������҂��Ȃ��狃���Ă��āA";
-		mes "�ǂ�����Ηǂ����킩��Ȃ��āc�c";
-		mes "�����A��������ɉ����������̂�����B";
-		mes "�ǂ����悤�c�c";
+		emotion 19,"少女#Lhz";
+		mes "[少女]";
+		mes "弟のベルはずっとここで";
+		mes "お父さんを待ちながら泣いていて、";
+		mes "どうすれば良いかわからなくて……";
+		mes "ああ、お父さんに何かあったのかしら。";
+		mes "どうしよう……";
 		close;
 	}
 }
-lighthalzen.gat,297,239,3	duplicate(���N#Lhz)	����#Lhz	818
+lighthalzen.gat,297,239,3	duplicate(少年#Lhz)	少女#Lhz	818
 
-lighthalzen.gat,311,194,3	script	�N	870,{
+lighthalzen.gat,311,194,3	script	青年	870,{
 	if(rand(2)) {
 		emotion 11;
-		mes "[�N]";
-		mes "�ȁA���c�c�H";
-		mes "���������ƌ��ċC���������ȁI";
-		mes "���Ə����ł��������̂��H";
-		mes "���͒j���낤�Ə����낤��";
-		mes "������͂��Ȃ���!?";
-		mes "�ق�A�������s����I";
+		mes "[青年]";
+		mes "な、何……？";
+		mes "俺をじっと見て気持ち悪いな！";
+		mes "俺と勝負でもしたいのか？";
+		mes "俺は男だろうと女だろうと";
+		mes "手加減はしないぞ!?";
+		mes "ほら、あっち行けよ！";
 		close;
 	}
 	emotion 7;
-	mes "[�N]";
-	mes "���͕K���^�]�m�ɂȂ���";
-	mes "���̓d�Ԃ��^�]���邼�I";
-	mes "�E�E�E�E�I";
-	mes "�����āA����ȕn�������Ƃ�";
-	mes "������΂��I";
+	mes "[青年]";
+	mes "俺は必ず運転士になって";
+	mes "あの電車を運転するぞ！";
+	mes "ウウウウ！";
+	mes "そして、こんな貧しい所とは";
+	mes "おさらばだ！";
 	next;
 	emotion 6;
-	mes "[�N]";
-	mes "��H�@�N�͒N�H";
-	mes "�X�̐l����Ȃ��݂������ˁH";
-	mes "�������ɍs���Ă�I";
+	mes "[青年]";
+	mes "ん？　君は誰？";
+	mes "街の人じゃないみたいだね？";
+	mes "あっちに行ってよ！";
 	close;
 }
 
-lighthalzen.gat,326,249,5	script	�N	870,{
-	mes "[�N]";
-	mes "���̊ԁA�����������𒅂Ă���";
-	mes "��炪���āA���ꂱ�ꕷ���ꂽ��B";
-	mes "���������H�@��Ƃ̐l�Ɖ��������";
-	mes "����̂��A�������֍s�������Ƃ�";
-	mes "����̂��c�c�����āB";
+lighthalzen.gat,326,249,5	script	青年	870,{
+	mes "[青年]";
+	mes "この間、何か黒い服を着ている";
+	mes "やつらが来て、あれこれ聞かれたよ。";
+	mes "何だっけ？　企業の人と会った事が";
+	mes "あるのか、あっちへ行ったことが";
+	mes "あるのか……だって。";
 	next;
-	mes "[�N]";
-	mes "���ꂪ�������Č�����!?";
-	mes "�܂������C���������X����I";
+	mes "[青年]";
+	mes "それが何だって言うんだ!?";
+	mes "まったく気持ち悪い街だよ！";
 	close;
 }
 
-lighthalzen.gat,306,324,3	script	�N	870,{
-	mes "[�N]";
-	mes "�ŋ߁A����̐l�X����������";
-	mes "���Ȃ��Ȃ��Ă�悤��";
-	mes "�C�������ł��c�c";
-	mes "���̗ǂ��l�B�݂͂�Ȃ��邩��";
-	mes "�C�̂����Ȃ̂�������܂��񂯂ǁc�c";
+lighthalzen.gat,306,324,3	script	青年	870,{
+	mes "[青年]";
+	mes "最近、周りの人々が少しずつ";
+	mes "いなくなってるような";
+	mes "気がするんです……";
+	mes "仲の良い人達はみんないるから";
+	mes "気のせいなのかもしれませんけど……";
 	next;
-	mes "[�N]";
-	mes "���Ă������A�炾���͒m���Ă���";
-	mes "�Ƃ����悤�Ȑl���A�������鏊����";
-	mes "���Ȃ��Ȃ��Ă鎖���A";
-	mes "�����ŋߑ����悤�ȋC�������ł��B";
-	mes "�܂��A�C�̂����ł��傤���ǁc�c";
+	mes "[青年]";
+	mes "何ていうか、顔だけは知っている";
+	mes "というような人が、いつも見る所から";
+	mes "いなくなってる事が、";
+	mes "ここ最近多いような気がするんです。";
+	mes "まぁ、気のせいでしょうけど……";
 	close;
 }
 
-lighthalzen.gat,364,282,3	script	�N	870,{
-	mes "[�N]";
-	mes "�͂��`�����������������Ȃ��c�c";
-	mes "���������ς��H�ׂ�������";
-	mes "�������Ȃ����ˁc�c";
-	mes "���������Ȃ����c�c";
-	mes "���������Ă邾�����Ă���";
-	mes "�܂�Ȃ��l���Ȃ̂��B";
+lighthalzen.gat,364,282,3	script	青年	870,{
+	mes "[青年]";
+	mes "はぁ～今日も腹が減ったなぁ……";
+	mes "何かいっぱい食べたいけど";
+	mes "お金もないしね……";
+	mes "働く所もないし……";
+	mes "ただ生きてるだけっていう";
+	mes "つまらない人生なのさ。";
 	next;
-	mes "[�N]";
-	mes "�������̋������̊X�͉��B�Ƃ�";
-	mes "�S����������������Ă���";
-	mes "�悤�����ǂˁc�c";
-	mes "����Șb�����Ă����ɂ��Ȃ�Ȃ����B";
+	mes "[青年]";
+	mes "あそこの金持ちの街は俺達とは";
+	mes "全く違った生活をしている";
+	mes "ようだけどね……";
+	mes "こんな話をしても何にもならないか。";
 	close;
 }
 
-lighthalzen.gat,337,296,3	script	���b�P���x���E��	868,{
-	mes "[���b�P���x���E��]";
-	mes "����ɂ���!!";
-	mes "�䂪���b�P���x���Ђ́A";
-	mes "�n���ɋꂵ�ސl�X�Ɏd����";
-	mes "�񋟂��Ă���܂��B";
+lighthalzen.gat,337,296,3	script	レッケンベル職員	868,{
+	mes "[レッケンベル職員]";
+	mes "こんにちは!!";
+	mes "我がレッケンベル社は、";
+	mes "貧困に苦しむ人々に仕事を";
+	mes "提供しております。";
 	next;
 	emotion 21;
-	mes "[���b�P���x���E��]";
-	mes "�Ƃł��ł���ȒP�ȓ��E����A";
-	mes "������Ƃ����m����������΂ł���";
-	mes "���E�܂ŁB";
-	mes "�d���̂�肪���������A";
-	mes "���������Đ����ɂ�Ƃ���I";
+	mes "[レッケンベル職員]";
+	mes "家でもできる簡単な内職から、";
+	mes "ちょっとした知識さえあればできる";
+	mes "専門職まで。";
+	mes "仕事のやりがいを感じ、";
+	mes "お金も得て生活にゆとりを！";
 	close;
 }
 
-lighthalzen.gat,330,276,3	script	�C����	79,{
-	mes "[�A���[��]";
-	mes "����ɂ��́B���͋~�슈���̂���";
-	mes "�C���@����h�����ꂽ�A���[���ł��B";
+lighthalzen.gat,330,276,3	script	修道女	79,{
+	mes "[アンゼラ]";
+	mes "こんにちは。私は救護活動のため";
+	mes "修道院から派遣されたアンゼラです。";
 	next;
-	mes "[�A���[��]";
-	mes "�~�슈�������Ă��Ċ��������ł����A";
-	mes "�����̐l�X�͌��N��Ԃ�";
-	mes "���Ɉ����ł��B";
-	mes "�P���Ɋ��̖�肾���ł�";
-	mes "�Ȃ������ȋC�����܂��ˁB";
+	mes "[アンゼラ]";
+	mes "救護活動をしていて感じた事ですが、";
+	mes "ここの人々は健康状態が";
+	mes "非常に悪いです。";
+	mes "単純に環境の問題だけでは";
+	mes "なさそうな気がしますね。";
 	next;
-	mes "[�A���[��]";
-	mes "�C���@�ɕ񍐂����̂ł����A�Ȃ���";
-	mes "�C���@����͔������Ȃ���ł��B";
+	mes "[アンゼラ]";
+	mes "修道院に報告したのですが、なぜか";
+	mes "修道院からは反応がないんです。";
 	close;
 }
 
 //============================================================
-// ���b�P���x���{��NPC
+// レッケンベル本社NPC
 //------------------------------------------------------------
-lhz_in01.gat,72,195,0	script	�K�C�h	90,{
-	mes "[�W���k�C]";
-	mes "��������Ⴂ�܂��B";
-	mes "������́A�}���ق�";
-	mes "�������ւ̒ʘH�ł��B";
-	mes "�֌W�҈ȊO�̏o����́A";
-	mes "�֎~����Ă��܂��B";
-	mes "���������������B";
+lhz_in01.gat,72,195,0	script	ガイド	90,{
+	mes "[ジャヌイ]";
+	mes "いらっしゃいませ。";
+	mes "こちらは、図書館と";
+	mes "研究室への通路です。";
+	mes "関係者以外の出入りは、";
+	mes "禁止されています。";
+	mes "ご了承ください。";
 	close;
 }
 
-lhz_in01.gat,73,188,0	script	�K�C�h	862,{
-	mes "[�|�i]";
-	mes "���̎q������c�c";
-	mes "�ǂ��ɂ������̂�����c�c�B";
-	mes "�ӂ��`�B";
+lhz_in01.gat,73,188,0	script	ガイド	862,{
+	mes "[ポナ]";
+	mes "あの子ったら……";
+	mes "どこにいったのかしら……。";
+	mes "ふぅ～。";
 	close;
 }
 
-lhz_in01.gat,72,209,4	script	�K�C�h	862,{
-	mes "[���X�C]";
-	mes "�����`�ދ��`�I";
-	mes "�������������c�c";
-	mes "�������������Ƃ΂���c�c�B";
+lhz_in01.gat,72,209,4	script	ガイド	862,{
+	mes "[ラスイ]";
+	mes "ああ～退屈～！";
+	mes "毎日毎日毎日……";
+	mes "いっつも同じことばかり……。";
 	next;
-	mes "[���X�C]";
-	mes "����c�c";
-	mes "��������Ⴂ�܂��c�c�B";
-	mes "���قققفc�c�B";
+	mes "[ラスイ]";
+	mes "あら……";
+	mes "いらっしゃいませ……。";
+	mes "おほほほほ……。";
 	close;
 }
 
-lhz_in01.gat,14,28,2	script	�p�[�e�B�[���]�ƈ�	109,{
-	mes "[�p�[�e�B�[���]�ƈ�]";
-	mes "�p�[�e�B�[���́A���݂�";
-	mes "�X�P�W���[���������Ă��Ȃ�����";
-	mes "�ՎU�Ƃ��Ă���܂����A";
-	mes "���Ɗ֌W�҂Ƃ̔ӎ`�A���q�l������";
-	mes "���ẴC�x���g�A�L�҂����҂��Ă�";
-	mes "���\��ȂǂŎg�p�������܂��B";
+lhz_in01.gat,14,28,2	script	パーティー会場従業員	109,{
+	mes "[パーティー会場従業員]";
+	mes "パーティー会場は、現在は";
+	mes "スケジュールが入っていないため";
+	mes "閑散としておりますが、";
+	mes "事業関係者との晩餐、お客様を招待";
+	mes "してのイベント、記者を招待しての";
+	mes "発表会などで使用いたします。";
 	next;
-	mes "[�p�[�e�B�[���]�ƈ�]";
-	mes "�Â��ŊՎU�Ƃ��Ă���̂��ǂ��ł����A";
-	mes "��͂艽������̍Â�����";
-	mes "������Ă���̂��D���ł��ˁB";
+	mes "[パーティー会場従業員]";
+	mes "静かで閑散としているのも良いですが、";
+	mes "やはり何かしらの催し物で";
+	mes "賑わっているのが好きですね。";
 	close;
 }
 
-lhz_in01.gat,21,50,6	script	�A�l�g	91,{
-	mes "[�A�l�g]";
-	mes "���b�P���x���̃p�[�e�B�[���́A";
-	mes "�������̔�I�����ł�";
-	mes "�g���邻���ł��B";
-	mes "�l�i�͍����ł����A���̌�������";
-	mes "�K���������ōs�������ł��B";
+lhz_in01.gat,21,50,6	script	アネト	91,{
+	mes "[アネト]";
+	mes "レッケンベルのパーティー会場は、";
+	mes "結婚式の披露宴会場でも";
+	mes "使われるそうです。";
+	mes "値段は高いですが、私の結婚式は";
+	mes "必ずあそこで行いたいです。";
 	next;
-	mes "[�A�l�g]";
-	mes "�ꐶ�Ɉ�x�̌������Ȃ̂�����A";
-	mes "�݂�Ȃ̋L���Ɏc����A";
-	mes "�h��Ő���ɍs�������ł��B";
-	mes "�����݂͂�Ȃ����]��ł���̂ł�";
-	mes "�Ȃ��ł��傤���H";
+	mes "[アネト]";
+	mes "一生に一度の結婚式なのだから、";
+	mes "みんなの記憶に残る程、";
+	mes "派手で盛大に行いたいです。";
+	mes "女性はみんなそう望んでいるのでは";
+	mes "ないでしょうか？";
 	close;
 }
 
-lhz_in01.gat,28,33,6	script	�n���Z	706,{
-	mes "[�n���Z]";
-	mes "���Z�I�@������{����!?";
-	mes "�����āA�ǂ��ɉB�ꂽ�̂��ȁ`�H";
-	mes "���A�˂��˂��I";
-	mes "���Z�c�c�l�̖���";
-	mes "�ǂ��ɉB�ꂽ���m��Ȃ��H";
+lhz_in01.gat,28,33,6	script	ハンセ	706,{
+	mes "[ハンセ]";
+	mes "ルセ！　今から捜すぞ!?";
+	mes "さぁて、どこに隠れたのかな～？";
+	mes "あ、ねぇねぇ！";
+	mes "ルセ……僕の妹が";
+	mes "どこに隠れたか知らない？";
 	next;
-	menu "�e�[�u��",-,"�J�[�e��",-;
-	mes "[�n���Z]";
-	mes "��`���c�c";
-	mes "���Z�A������{���n�߂邼�I";
-	mes "�ꔭ�œ��Ă邩��ȁ`!!";
+	menu "テーブル",-,"カーテン",-;
+	mes "[ハンセ]";
+	mes "よ～し……";
+	mes "ルセ、今から捜し始めるぞ！";
+	mes "一発で当てるからな～!!";
 	close;
 }
 
-lhz_in01.gat,43,52,2	script	���Z	703,{
-	mes "[���Z]";
-	mes "������!!";
-	mes "���x�͂��Z����񂪋S��I";
-	mes "���͉B��Ȃ�������I";
-	mes "�ǂ��ɉB��悤���ȁ`�H";
-	mes "�e�[�u���̉��H�@�J�[�e���̉e�H";
-	mes "���`�ǁ`���悤���ȁ`�I";
+lhz_in01.gat,43,52,2	script	ルセ	703,{
+	mes "[ルセ]";
+	mes "えいっ!!";
+	mes "今度はお兄ちゃんが鬼よ！";
+	mes "私は隠れなくっちゃ！";
+	mes "どこに隠れようかな～？";
+	mes "テーブルの下？　カーテンの影？";
+	mes "さ～ど～しようかな～！";
 	close;
 }
 
-lhz_in01.gat,110,40,2	script	�t�w�f	89,{
-	mes "-�ڂ̑O�̒j�́A";
-	mes "�������ɂ�������������Ă���-";
+lhz_in01.gat,110,40,2	script	フヘデ	89,{
+	mes "-目の前の男は、";
+	mes "微動だにせず居眠りをしている-";
 	close;
 }
 
-lhz_in01.gat,108,47,0	script	�@	111,{
-	mes "-���͐������ڂ���Ă���A";
-	mes "���̊���肫�ꂢ��-";
+lhz_in01.gat,108,47,0	script	　	111,{
+	mes "-机は整理整頓されており、";
+	mes "他の机よりきれいだ-";
 	close;
 }
 
-lhz_in01.gat,108,53,0	script	�@	111,{
-	mes "-���̏�ɂ͎R�̂悤�ɐς܂ꂽ���ނ�";
-	mes "���̗ǂ������ȉƑ����ʂ��Ă���";
-	mes "�ʐ^���Ă��u���Ă���-";
+lhz_in01.gat,108,53,0	script	　	111,{
+	mes "-机の上には山のように積まれた書類と";
+	mes "仲の良さそうな家族が写っている";
+	mes "写真立てが置いてある-";
 	close;
 }
 
-lhz_in01.gat,116,39,6	script	�L�Y���E���b�P���x��	822,{
-	mes "[�L�Y���E���b�P���x��]";
-	mes "���͎��́A��Ɠ��������Ȃ�ł��B";
-	mes "������Ƃ����āA�����������Ȃ�";
-	mes "�킯�ł͂Ȃ��ł����c�c";
+lhz_in01.gat,116,39,6	script	キズリ・レッケンベル	822,{
+	mes "[キズリ・レッケンベル]";
+	mes "実は私は、会長と同姓同名なんです。";
+	mes "だからといって、月給が高くなる";
+	mes "わけではないですが……";
 	close;
 }
 
-lhz_in01.gat,116,45,6	script	���V���A	704,{
-	mes "[���V���A]";
-	mes "�l�̗��z�̏����́A";
-	mes "�w�������āA�����ŁA";
-	mes "���������āA�C�̋����l�ł��B";
-	mes "�����c�c�i�i����c�c";
+lhz_in01.gat,116,45,6	script	ヨシュア	704,{
+	mes "[ヨシュア]";
+	mes "僕の理想の女性は、";
+	mes "背が高くて、金髪で、";
+	mes "肌が白くて、気の強い人です。";
+	mes "ああ……ナナさん……";
 	close;
 }
 
-lhz_in01.gat,116,53,6	script	�j���z�Z	841,{
-	mes "[�j���z�Z]";
-	mes "���͂��̑O�A�Ƃ𔃂��܂����I";
-	mes "���Ȃ������e�N����Ȃ�A";
-	mes "��x���̖{��ǂ�Ō��Ă�������!!";
+lhz_in01.gat,116,53,6	script	ニンホセ	841,{
+	mes "[ニンホセ]";
+	mes "私はこの前、家を買いました！";
+	mes "あなたも財テクするなら、";
+	mes "一度この本を読んで見てください!!";
 	next;
-	mes "-�ނ͂��Ȃ���";
-	mes "�u�N�ł��ȒP�ɋ������ɂȂ���@�v";
-	mes "�Ƃ����{��������-";
+	mes "-彼はあなたに";
+	mes "「誰でも簡単に金持ちになる方法」";
+	mes "という本を見せた-";
 	close;
 }
 
-lhz_in01.gat,124,28,2	script	�����b�g	66,{
-	mes "[�����b�g]";
-	mes "�c�c";
+lhz_in01.gat,124,28,2	script	リレット	66,{
+	mes "[リレット]";
+	mes "……";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "���́`";
+	mes "あの～";
 	next;
-	mes "[�����b�g]";
-	mes "�c�c";
+	mes "[リレット]";
+	mes "……";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "���������`�H";
+	mes "もしもし～？";
 	next;
-	mes "[�����b�g]";
-	mes "�c�c�c�c!!";
-	mes "�I���܂���!!";
+	mes "[リレット]";
+	mes "…………!!";
+	mes "終わりました!!";
 	next;
-	mes "[���̐E���B]";
-	mes "�������H�@�����H";
+	mes "[他の職員達]";
+	mes "ええっ？　もう？";
 	next;
-	mes "[�����b�g]";
-	mes "�t�b�t�t�t�`�`�`��";
+	mes "[リレット]";
+	mes "フッフフフ～～～♪";
 	next;
-	mes "[�C�[�J��]";
-	mes "�����b�g����̎d���̃X�s�[�h�́A";
-	mes "�l�ԋZ����Ȃ��ȁI";
+	mes "[イーカン]";
+	mes "リレットさんの仕事のスピードは、";
+	mes "人間技じゃないな！";
 	next;
-	mes "[�����b�g]";
-	mes "�������Ă�̂�A���Ȃ�";
-	mes "�Z���N����ɔ�ׂ���܂��܂��c�c";
+	mes "[リレット]";
+	mes "何言ってるのよ、私なんか";
+	mes "センクさんに比べたらまだまだ……";
 	next;
-	mes "-�������悭�킩��Ȃ����A";
-	mes "�����b�g�Ƃ��������͎d����";
-	mes "�X�s�[�h�������悤��-";
+	mes "-何だかよくわからないが、";
+	mes "リレットという女性は仕事の";
+	mes "スピードが速いようだ-";
 	close;
 }
 
-lhz_in01.gat,125,40,2	script	�h�D���@�E�����[�C	843,{
-	mes "[�h�D���@�E�����[�C]";
-	mes "�������킸�ɁA����������I";
-	mes "���O�̓X�[�p�[�ƃ��A���A";
-	mes "�ǂ�����������!?";
+lhz_in01.gat,125,40,2	script	ドゥヴァ・リューイ	843,{
+	mes "[ドゥヴァ・リューイ]";
+	mes "何も言わずに、ただ答えろ！";
+	mes "お前はスーパーとリアル、";
+	mes "どっちがいいか!?";
 	next;
-	if(select("�X�[�p�[","���A��")==1) {
+	if(select("スーパー","リアル")==1) {
 		emotion 21;
-		mes "[�h�D���@�E�����[�C]";
-		mes "�I�I�I�I�I!!!!";
-		mes "�������A���O�A�C�ɓ��������I";
+		mes "[ドゥヴァ・リューイ]";
+		mes "オオオオオ!!!!";
+		mes "おっし、お前、気に入ったぞ！";
 		next;
-		mes "-�h�D���@�E�����[�C�͉��x��";
-		mes "��������߂Ă��疞�������΂݂𕂂���";
-		mes "�Ăюd���ɑł����ݎn�߂�-";
+		mes "-ドゥヴァ・リューイは何度も";
+		mes "握手を求めてから満足した笑みを浮かべ";
+		mes "再び仕事に打ち込み始めた-";
 		close;
 	}
-	mes "[�h�D���@�E�����[�C]";
-	mes "��!!!!";
-	mes "�������O�ɗp�͂Ȃ�!!�@��������I";
+	mes "[ドゥヴァ・リューイ]";
+	mes "何!!!!";
+	mes "もうお前に用はない!!　立ち去れ！";
 	close;
 }
 
-lhz_in01.gat,125,46,2	script	�C�[�J��	849,{
-	mes "[�C�[�J��]";
-	mes "���킟������!!!!";
-	mes "��T�u�I�y���E�~�b�h�K���h�̗H��v";
-	mes "�̌���ŕ��ɂ����������Ǝv������A";
-	mes "���T�́u�܂����ꂽ��l�B�v";
-	mes "�̌���ł�!!�@���߂��A���������Ȃ��I";
-	mes "�j���z�Z�A����݂��Ă���`�I";
+lhz_in01.gat,125,46,2	script	イーカン	849,{
+	mes "[イーカン]";
+	mes "うわぁぁぁぁ!!!!";
+	mes "先週「オペラ・ミッドガルドの幽霊」";
+	mes "の限定版文庫が発売したと思ったら、";
+	mes "今週は「また現れた大人達」";
+	mes "の限定版が!!　だめだ、もう金がない！";
+	mes "ニンホセ、金を貸してくれ～！";
 	next;
-	mes "[�j���z�Z]";
-	mes "�܂������A���i���炨���̊Ǘ���";
-	mes "�����񂾂��炻���Ȃ��ł���I";
-	mes "�����A�C�[�J�������";
-	mes "�u�N�ł��ȒP�ɂ��������ɂȂ���@�v";
-	mes "��ǂ��!!";
+	mes "[ニンホセ]";
+	mes "まったく、普段からお金の管理が";
+	mes "ずさんだからそうなるんですよ！";
+	mes "さぁ、イーカンさんも";
+	mes "「誰でも簡単にお金持ちになる方法」";
+	mes "を読んで!!";
 	close;
 }
 
-lhz_in01.gat,134,38,2	script	�o���N���[�O	798,{
-	mes "[�o���N���[�O]";
-	mes "�����A�����Ȃ���΂����Ȃ��̂Ɂc�c";
+lhz_in01.gat,134,38,2	script	バンクリーグ	798,{
+	mes "[バンクリーグ]";
+	mes "あぁ、働かなければいけないのに……";
 	next;
-	mes "[�o���N���[�O]";
-	mes "�l�͎d���̏o���������āA";
-	mes "�d�����̂������Łc�c";
+	mes "[バンクリーグ]";
+	mes "僕は仕事の出来が悪くて、";
+	mes "仕事自体も嫌いで……";
 	next;
-	mes "[�o���N���[�O]";
-	mes "�c�c";
+	mes "[バンクリーグ]";
+	mes "……";
 	next;
-	mes "[�o���N���[�O]";
-	mes "�����Ă��������̂Ȃ����Ƃ����ǁA";
-	mes "��������ɐ������ڂ��Ă���΁A";
-	mes "�����Ƃ͂��ǂ�񂾂��ǂȂ��c�c";
+	mes "[バンクリーグ]";
+	mes "言ってもしかたのないことだけど、";
+	mes "ここを常に整理整頓していれば、";
+	mes "もっとはかどるんだけどなぁ……";
 	next;
-	mes "[�o���N���[�O]";
-	mes "�܂��A�d�����邩���c�c";
-	mes "�t�D�D�D�c�c";
+	mes "[バンクリーグ]";
+	mes "まぁ、仕事するかぁ……";
+	mes "フゥゥゥ……";
 	close;
 }
 
-lhz_in01.gat,134,45,2	script	�Z���N�E�f�N�_��	869,{
-	mes "[�Z���N�E�f�N�_��]";
-	mes "���q�^���[���͉�Zeny�`�H";
+lhz_in01.gat,134,45,2	script	センク・デクダン	869,{
+	mes "[センク・デクダン]";
+	mes "リヒタルゼンは何Zeny～？";
 	next;
-	mes "-�Z���N�E�f�N�_���͂悭�킩��Ȃ�";
-	mes "�W���[�N���������΂�ł��邪�A";
-	mes "�ڂ̉��̃N�}���A���o�����X��";
-	mes "��a�����o����-";
+	mes "-センク・デクダンはよくわからない";
+	mes "ジョークを言いつつ微笑んでいるが、";
+	mes "目の下のクマがアンバランスで";
+	mes "違和感を覚えた-";
 	close;
 }
 
-lhz_in01.gat,129,54,0	script	�����X	869,{
-	mes "[�����X]";
-	mes "�i�^���^�^���j";
-	mes "�i�^���^�^�^���j";
+lhz_in01.gat,129,54,0	script	メレス	869,{
+	mes "[メレス]";
+	mes "（タンタタン）";
+	mes "（タンタタタン）";
 	next;
-	mes "[�����X]";
-	mes "�n�c�c�z�c�c";
+	mes "[メレス]";
+	mes "ハ……ホ……";
 	next;
-	mes "-���Ȃ��̕���U��Ԃ����j�́A";
-	mes "������Ȃ��ʂ����Ă���-";
+	mes "-あなたの方を振り返った男は、";
+	mes "黒い奇妙なお面を被っていた-";
 	next;
-	mes "-�ނ͂��Ȃ��𖳌��Ō��߁A";
-	mes "�㔼�g�������U���ėx����-";
-	mes "-�����y��������-";
+	mes "-彼はあなたを無言で見つめ、";
+	mes "上半身を少し振って踊った-";
+	mes "-何か楽しそうだ-";
 	close;
 }
 
-lhz_in01.gat,139,40,2	script	�G�m�[�Y	53,{
-	mes "[�G�m�[�Y]";
-	mes "�L���[!!";
-	mes "���������A�~�b�h�K�b�c������";
-	mes "�������Ă����i�����͂����́I";
-	mes "�E�t�t�I";
+lhz_in01.gat,139,40,2	script	エノーズ	53,{
+	mes "[エノーズ]";
+	mes "キャー!!";
+	mes "たった今、ミッドガッツ王国に";
+	mes "注文していた品物が届いたの！";
+	mes "ウフフ！";
 	next;
-	mes "[�G�m�[�Y]";
-	mes "����m���Ă܂��H�@����͂ł��ˁA";
-	mes "���N�O���b�_�t���b�O�I�s���L��������";
-	mes "�~�b�h�K�b�c�����̂����Ƃ́A";
-	mes "�V�����{�Ȃ�ł��B";
+	mes "[エノーズ]";
+	mes "これ知ってます？　これはですね、";
+	mes "数年前ロッダフロッグ紀行日記を書いた";
+	mes "ミッドガッツ王国のある作家の、";
+	mes "新しい本なんです。";
 	next;
-	mes "[�G�m�[�Y]";
-	mes "���̖{�͑S10���ŁA";
-	mes "��Ƃ̐����ɖ�肪�������炵���A";
-	mes "�����̕]���͎^�ۗ��_";
-	mes "�������悤�ł��B";
-	mes "�Ĕ̂��ꂽ�ƕ����āA";
-	mes "������Ύ�ɓ��ꂽ���āc�c";
+	mes "[エノーズ]";
+	mes "この本は全10巻で、";
+	mes "作家の性向に問題があったらしく、";
+	mes "当時の評価は賛否両論";
+	mes "だったようです。";
+	mes "再販されたと聞いて、";
+	mes "もう絶対手に入れたくて……";
 	next;
-	mes "-��������炳���ς�킩��Ȃ��c�c-";
+	mes "-何が何やらさっぱりわからない……-";
 	close;
 }
 
-lhz_in01.gat,139,48,2	script	���~	73,3,1,{
-	mes "-���~�Ƃ����Ј��́A";
-	mes "��S�s���Ɏd���ɖv�����Ă���-";
+lhz_in01.gat,139,48,2	script	リミ	73,3,1,{
+	mes "-リミという社員は、";
+	mes "一心不乱に仕事に没頭している-";
 	next;
-	mes "[���~]";
-	mes "�c�c";
+	mes "[リミ]";
+	mes "……";
 	next;
 	emotion 23;
-	mes "[���~]";
-	mes "�i!!!!�j";
+	mes "[リミ]";
+	mes "（!!!!）";
 	next;
-	mes "[���~]";
-	mes "�ȁA�������p�ł����H";
+	mes "[リミ]";
+	mes "な、何かご用ですか？";
 	if(getbaseclass(Class,2) != CLASS_AS) close;
 	next;
-	mes "[���~]";
-	mes "���A���Ȃ��A�T�V���ł��ˁB";
-	mes "�A�T�V���A�f�G�ł���ˁB";
-	mes "����肵�ăV���[�v�Ȋ����ŁB";
-	mes "���̓���ł��c�c�t�t�B";
+	mes "[リミ]";
+	mes "あ、あなたアサシンですね。";
+	mes "アサシン、素敵ですよね。";
+	mes "すらりしてシャープな感じで。";
+	mes "私の憧れです……フフ。";
 	close;
 OnTouch:
 	if(getbaseclass(Class,2) != CLASS_AS) end;
-	mes "�i�J�V���b�j";
+	mes "（カシャッ）";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "�c�c�H�@�ǂ����ŃV���b�^�[��";
-	mes "�؂鉹�������悤�ȁc�c";
+	mes "……？　どこかでシャッターを";
+	mes "切る音がしたような……";
 	close;
 }
 
-lhz_in01.gat,144,53,2	script	�z���[	98,1,1,{
+lhz_in01.gat,144,53,2	script	ホルゼ	98,1,1,{
 	switch(rand(3)) {
 	case 0:
-		mes "[�z���[]";
-		mes "���̐Ȃɋ߂Â��ȁI";
-		mes "���d�v�Ȏd�������Ă���񂾁I";
+		mes "[ホルゼ]";
+		mes "私の席に近づくな！";
+		mes "今重要な仕事をしているんだ！";
 		close;
 	case 1:
-		mes "[�z���[]";
-		mes "���̐Ȃɋ߂Â��ȁI";
-		mes "�߂Â��z�́A�S�ĔƐl�Ƃ݂Ȃ��I";
-		mes "���̔Ɛl�����āH�@����Ȃ�";
-		mes "�ǂ��ł������I�@�Ƃɂ����߂Â��ȁI";
+		mes "[ホルゼ]";
+		mes "私の席に近づくな！";
+		mes "近づく奴は、全て犯人とみなす！";
+		mes "何の犯人かって？　そんなの";
+		mes "どうでもいい！　とにかく近づくな！";
 		close;
 	case 2:
-		mes "[�z���[]";
-		mes "�ӂ��c�c�d���ɏW�������ȁB";
-		mes "������ƈꑧ����邩�B";
+		mes "[ホルゼ]";
+		mes "ふぅ……仕事に集中したな。";
+		mes "ちょっと一息入れるか。";
 		next;
-		mes "[�z���[]";
-		mes "���ɂ͉����Ȃ�����I�@�Ȃ�";
-		mes "���߂ɂ͋��c�c���𒙂߂Ȃ��ẮI";
-		mes "�Ȃɕs���R�����������͂Ȃ�����";
-		mes "�c�c�����A�������I";
+		mes "[ホルゼ]";
+		mes "私には可愛い妻がいる！　妻の";
+		mes "ためには金……金を貯めなくては！";
+		mes "妻に不自由をさせたくはないから";
+		mes "……さぁ、働くか！";
 		close;
 	}
 }
 
-lhz_in01.gat,147,40,0	script	�}�X�g�A	828,{
-	mes "-���̏�ɁA�@�B��2����-";
-	mes "-���̋@�B�Ȃ̂��A�������C�ɂȂ�-";
+lhz_in01.gat,147,40,0	script	マストア	828,{
+	mes "-机の上に、機械が2つある-";
+	mes "-何の機械なのか、すごく気になる-";
 	next;
-	mes "[�}�X�g�A]";
-	mes "�m�A�}�A����������I";
-	mes "������!!";
+	mes "[マストア]";
+	mes "ノアマ、こっちだよ！";
+	mes "こっち!!";
 	next;
-	mes "[�m�A�}]";
-	mes "���A�Ⴄ��I";
-	mes "�������ł��傤�I";
+	mes "[ノアマ]";
+	mes "え、違うよ！";
+	mes "こっちでしょう！";
 	next;
-	mes "-�������_���̂悤��-";
+	mes "-何やら口論中のようだ-";
 	close;
 }
 
-lhz_in01.gat,148,45,2	script	�m�A�}	97,{
-	mes "[�m�A�}]";
-	mes "�����ʔ����b�����Ă����܂��傤�B";
-	mes "���̓}�X�g�A���Ăˁc�c�N�X�N�X�I";
+lhz_in01.gat,148,45,2	script	ノアマ	97,{
+	mes "[ノアマ]";
+	mes "私が面白い話をしてあげましょう。";
+	mes "実はマストアってね……クスクス！";
 	next;
-	mes "[�}�X�g�A]";
-	mes "�m�A�}�A����!!";
+	mes "[マストア]";
+	mes "ノアマ、おい!!";
 	next;
-	mes "[�m�A�}]";
-	mes "��A���Ă�!!";
-	mes "������񂾂�I";
+	mes "[ノアマ]";
+	mes "わ、いてて!!";
+	mes "何するんだよ！";
 	close;
 }
 
-lhz_in01.gat,157,47,0	script	�}���X	797,{
-	mes "-�j�̎q�Ȃ̂��A���̎q�Ȃ̂��c�c";
-	mes "�����I�Ȋ痧���ł悭�킩��Ȃ�-";
-	mes "-�`���R���[�g��j����A";
-	mes "�K���Ȕ��΂݂𕂂��ׂĂ���-";
+lhz_in01.gat,157,47,0	script	マレス	797,{
+	mes "-男の子なのか、女の子なのか……";
+	mes "中性的な顔立ちでよくわからない-";
+	mes "-チョコレートを頬張り、";
+	mes "幸せな微笑みを浮かべている-";
 	next;
-	mes "[�}���X]";
-	mes "�񂮁A�񂮁c�c";
+	mes "[マレス]";
+	mes "んぐ、んぐ……";
 	close;
 }
 
-lhz_in01.gat,164,45,2	script	�G�[�f	91,{
-	mes "[�G�[�f]";
-	mes "�z���[���񂪁A�ŋߋ@����������ł��B";
-	mes "���X�͗D�������Ȃ̂ł����c�c";
+lhz_in01.gat,164,45,2	script	エーデ	91,{
+	mes "[エーデ]";
+	mes "ホルゼさんが、最近機嫌が悪いんです。";
+	mes "元々は優しい方なのですが……";
 	next;
-	mes "[�G�[�f]";
-	mes "�Ƃɂ����A���̃~�j�`���A�R���N�V����";
-	mes "�����܂��񂩁H�������āA";
-	mes "�Ƃ��Ă�������ł���H";
-	mes "�����́A�S���؂ƔS�y�ō����";
-	mes "���܂��B�~�j�`���A�𒭂߂Ă���ƁA";
-	mes "�������K���ɂȂ��ł��B";
+	mes "[エーデ]";
+	mes "とにかく、私のミニチュアコレクション";
+	mes "を見ませんか？小さくて、";
+	mes "とっても可愛いんですよ？";
+	mes "これらは、全部木と粘土で作られて";
+	mes "います。ミニチュアを眺めていると、";
+	mes "何だか幸せになるんです。";
 	close;
 }
 
-lhz_in01.gat,166,56,0	script	�@	111,{
-	mes "-���̏�ɂ́A�����肪";
-	mes "���܂����{�������������ł���-";
+lhz_in01.gat,166,56,0	script	　	111,{
+	mes "-机の上には、しおりが";
+	mes "挟まった本がたくさん並んでいる-";
 	next;
 	misceffect 196;
-	mes "-���Ȃ��͈������Ă݂����A";
-	mes "�{������Ȉł̋C�z�𕬂��o��������";
-	mes "�߂���������Ȃ�����-";
+	mes "-あなたは一冊取ってみたが、";
+	mes "本が強烈な闇の気配を噴き出したため";
+	mes "戻さざるをえなかった-";
 	close;
 }
 
-lhz_in01.gat,173,28,4	script	�x����	868,{
-	mes "[�x����]";
-	mes "������͗�������֎~���ł��B";
-	mes "���������������B";
-	mes "�c�c�B";
+lhz_in01.gat,173,28,4	script	警備兵	868,{
+	mes "[警備兵]";
+	mes "こちらは立ち入り禁止区域です。";
+	mes "ご遠慮ください。";
+	mes "……。";
 	close;
 }
 
-lhz_in01.gat,180,28,4	script	�x����	868,{
-	mes "[�x����]";
-	mes "������͗�������֎~���ł��B";
-	mes "���������������B";
+lhz_in01.gat,180,28,4	script	警備兵	868,{
+	mes "[警備兵]";
+	mes "こちらは立ち入り禁止区域です。";
+	mes "ご遠慮ください。";
 	close;
 }
 
-lhz_in01.gat,35,226,4	script	���b�P���x���x����	867,{
+lhz_in01.gat,35,226,4	script	レッケンベル警備員	867,{
 	if(getequipid(9) == 2243 && getequipid(10) == 2241) {
-		mes "[���b�P���x���x����]";
-		mes "�֌W�҂̕��ł���!?";
-		mes "�ǂ����A�����肭�������I";
-		mes "���݁A�ُ�Ȃ�!!";
+		mes "[レッケンベル警備員]";
+		mes "関係者の方ですな!?";
+		mes "どうぞ、お入りください！";
+		mes "現在、異常なし!!";
 		close2;
 		warp "lhz_in01.gat",37,225;
 		end;
 	}
-	mes "[���b�P���x���x����]";
-	mes "�ʁA��!!";
-	mes "�����͊֌W�҈ȊO��������֎~!!";
-	mes "�֌W�҂Ȃ�A�Ј��؂������Ȃ���!!";
+	mes "[レッケンベル警備員]";
+	mes "ぬ、ぬ!!";
+	mes "ここは関係者以外立ち入り禁止!!";
+	mes "関係者なら、社員証を見せなさい!!";
 	next;
-	if(select("�Ј��؁H","��b��؂�グ��")==1) {
-		mes "[���b�P���x���x����]";
-		mes "�ق�ق�!!";
-		mes "�Ј��؂��Ȃ���Γ���񂼁I";
-		mes "�����A�����A����!!";
+	if(select("社員証？","会話を切り上げる")==1) {
+		mes "[レッケンベル警備員]";
+		mes "ほれほれ!!";
+		mes "社員証がなければ入れんぞ！";
+		mes "さぁ帰った帰った!!";
 		if(LHZ_2QUE < 5)
 			setquest 61420;
 		close;
 	}
-	mes "[���b�P���x���x����]";
-	mes "���̊K�͌��������I";
-	mes "�N�����邱�Ƃ͂ł���!!";
+	mes "[レッケンベル警備員]";
+	mes "下の階は研究室だ！";
+	mes "誰も入ることはできんぞ!!";
 	close;
 }
 
-lhz_in01.gat,23,132,2	script	���b�P���x���x����	867,5,5,{
+lhz_in01.gat,23,132,2	script	レッケンベル警備員	867,5,5,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[���b�P���x���x����]";
-		mes "�����͉䂪�Ђ̒����Ƃ�";
-		mes "������ꏊ���B���݁A�ُ�Ȃ�!!";
+		mes "[レッケンベル警備員]";
+		mes "ここは我が社の中枢とも";
+		mes "言える場所だ。現在、異常なし!!";
 		close;
 	}
-	mes "[���b�P���x���x����]";
-	mes "�c�c�ށH";
-	mes "�����͋��𓾂��҂���";
-	mes "����Ȃ��͂������c�c";
-	mes "���҂��H�@�ǂ���������Ă����H";
-	mes "�����A�����o�čs��!!";
+	mes "[レッケンベル警備員]";
+	mes "……む？";
+	mes "ここは許可を得た者しか";
+	mes "入れないはずだが……";
+	mes "何者だ？　どこから入ってきた？";
+	mes "さぁ、早く出て行け!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,46,125,2	script	���b�P���x���x����	867,5,5,{
+lhz_in01.gat,46,125,2	script	レッケンベル警備員	867,5,5,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[���b�P���x���x����]";
-		mes "�c�c";
+		mes "[レッケンベル警備員]";
+		mes "……";
 		next;
-		if(select("�����l�q���ς�","��b��؂�グ��")==1)
+		if(select("何か様子が変だ","会話を切り上げる")==1)
 			emotion 6;
 		close;
 	}
 	emotion 0;
-	mes "[���b�P���x���x����]";
-	mes "�c�c!!";
+	mes "[レッケンベル警備員]";
+	mes "……!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,199,137,2	script	�Ȋw��	865,{
+lhz_in01.gat,199,137,2	script	科学者	865,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[�Ȋw��]";
-		mes "���A����ɐG��Ȃ��ł�!!";
+		mes "[科学者]";
+		mes "あ、それに触らないでね!!";
 		close;
 	}
 	emotion 0;
-	mes "[�Ȋw��]";
-	mes "��!!�@����ȂƂ��Ɉ�ʐl��!?";
-	mes "�x����!!�@�x����!!";
+	mes "[科学者]";
+	mes "あ!!　こんなとこに一般人が!?";
+	mes "警備員!!　警備員!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,221,131,6	script	�Ȋw��	865,{
+lhz_in01.gat,221,131,6	script	科学者	865,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[�Ȋw��]";
-		mes "�@�B����Ƃ��I����܂ő҂̂́A";
-		mes "�o�Ă��錋�ʂɑ΂���h�L�h�L����";
-		mes "���邪�A�������ދ��ł��ˁB";
+		mes "[科学者]";
+		mes "機械が作業を終えるまで待つのは、";
+		mes "出てくる結果に対するドキドキ感も";
+		mes "あるが、すごく退屈ですね。";
 		close;
 	}
 	emotion 0;
-	mes "[�Ȋw��]";
-	mes "��!!�@����ȂƂ��Ɉ�ʐl��!?";
-	mes "�x����!!�@�x����!!";
+	mes "[科学者]";
+	mes "あ!!　こんなとこに一般人が!?";
+	mes "警備員!!　警備員!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,203,123,2	script	�Ȋw��	750,{
+lhz_in01.gat,203,123,2	script	科学者	750,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[�Ȋw��]";
-		mes "���̎����ǂ������������o�������";
-		mes "���̎����ǂ�����Ɠ���ւ�����";
-		mes "���̎����ǂ����Ɏ������I��������";
-		mes "�c�c�����A���x���J��Ԃ��ĂȂ���";
-		mes "�Y�ꂿ�Ⴂ�������ȁc�c";
+		mes "[科学者]";
+		mes "この試験管がたった今取り出したやつで";
+		mes "その試験管がこれと入れ替えるやつで";
+		mes "あの試験管が既に実験が終わったやつで";
+		mes "……うぅ、何度も繰り返してないと";
+		mes "忘れちゃいそうだな……";
 		next;
-		mes "[�Ȋw��]";
-		mes "���̎����ǂ������������o�������";
-		mes "���̎����ǂ����Ɏ������c�c";
-		mes "����H�@�ǂꂪ���������H";
+		mes "[科学者]";
+		mes "この試験管がたった今取り出したやつで";
+		mes "その試験管が既に実験が……";
+		mes "あれ？　どれが何だっけ？";
 		close;
 	}
 	emotion 0;
-	mes "[�Ȋw��]";
-	mes "��!!�@����ȂƂ��Ɉ�ʐl��!?";
-	mes "�x����!!�@�x����!!";
+	mes "[科学者]";
+	mes "あ!!　こんなとこに一般人が!?";
+	mes "警備員!!　警備員!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,217,121,2	script	�C���H	851,{
+lhz_in01.gat,217,121,2	script	修理工	851,{
 	if(getequipid(9)==2243 && getequipid(10)==2241) {
-		mes "[�C���H]";
-		mes "������@�B������Ƃ����Ă��A";
-		mes "������g�����ςȂ�����";
-		mes "�̏Ⴕ���Ⴄ��ˁB";
+		mes "[修理工]";
+		mes "いくら機械だからといっても、";
+		mes "一日中使いっぱなしだと";
+		mes "故障しちゃうよね。";
 		next;
-		mes "[�C���H]";
-		mes "�@�B�͐����ɂł��Ă��邩��A";
-		mes "���J�Ɉ���Ȃ��ƁB";
+		mes "[修理工]";
+		mes "機械は精密にできているから、";
+		mes "丁寧に扱わないと。";
 		close;
 	}
 	emotion 0;
-	mes "[�C���H]";
-	mes "��!!�@����ȂƂ��Ɉ�ʐl��!?";
-	mes "�x����!!�@�x����!!";
+	mes "[修理工]";
+	mes "あ!!　こんなとこに一般人が!?";
+	mes "警備員!!　警備員!!";
 	close2;
 	warp "lhz_in01.gat",33,224;
 	end;
 }
 
-lhz_in01.gat,218,141,6	script	�B���p�t	98,{
-	mes "[�B���p�t]";
-	mes "�P�����\�X���́A��������";
-	mes "�B���p�t�̒��ł͍ł��^����";
-	mes "�m���Ă���l�����Ǝv���܂��B";
-	mes "�ނ̌o����m���𕷂��ƁA";
-	mes "�{���ɋ����ׂ����Ƃ΂���ł��B";
+lhz_in01.gat,218,141,6	script	錬金術師	98,{
+	mes "[錬金術師]";
+	mes "ケルラソス氏は、現存する";
+	mes "錬金術師の中では最も真理を";
+	mes "知っている人物だと思います。";
+	mes "彼の経験や知識を聞くと、";
+	mes "本当に驚くべきことばかりです。";
 	next;
-	mes "[�B���p�t]";
-	mes "����ȃP�����\�X�����A�Ƃł�";
-	mes "�ǂ����e�A�ǂ��v�Ȃ񂾂����ł��B";
-	mes "�s�v�c�ł��ˁc�c";
-	mes "������̂��B���p�t�̕����A";
-	mes "�Ƃł͕��}�ȉƒ����Ȃ�āc�c";
+	mes "[錬金術師]";
+	mes "そんなケルラソス氏も、家では";
+	mes "良き父親、良き夫なんだそうです。";
+	mes "不思議ですね……";
+	mes "あれ程偉い錬金術師の方が、";
+	mes "家では平凡な家長だなんて……";
 	next;
-	mes "[�B���p�t]";
-	mes "�B���p�ɏ���Ƃ����Ȃ��A";
-	mes "�_��Ȃ��Ƃł��ˁB";
+	mes "[錬金術師]";
+	mes "錬金術に勝るとも劣らない、";
+	mes "神秘なことですね。";
 	close;
 }
 
 //============================================================
-// ���b�P���x������NPC
+// レッケンベル室内NPC
 //------------------------------------------------------------
-lhz_in02.gat,147,221,2	script	�Y��#Lhz	85,{
-	mes "[�Y��]";
-	mes "�����I�@�����I";
-	mes "�Ȃ������Ȃ��񂾁I";
-	mes "�������Č����Ă邾��H";
+lhz_in02.gat,147,221,2	script	刑事#Lhz	85,{
+	mes "[刑事]";
+	mes "言え！　言え！";
+	mes "なぜ言えないんだ！";
+	mes "言えって言ってるだろ？";
 	next;
-	mes "[�e�^��]";
-	mes "�{�������āc�c";
-	mes "������Ȃ��񂾂��āI";
+	mes "[容疑者]";
+	mes "本当だって……";
+	mes "私じゃないんだって！";
 	next;
-	mes "[�Y��]";
-	mes "�c�c�ӂށB";
+	mes "[刑事]";
+	mes "……ふむ。";
 	next;
-	mes "[�e�^��]";
-	mes "���ʂȐq��͂�����߂�";
-	mes "�A�点�Ă����B";
+	mes "[容疑者]";
+	mes "無駄な尋問はもうやめて";
+	mes "帰らせてくれよ。";
 	next;
-	mes "[�Y��]";
-	mes "�c�c��e�́A���C�Ȃ̂��H";
+	mes "[刑事]";
+	mes "……母親は、元気なのか？";
 	next;
-	mes "[�e�^��]";
-	mes "�����H�@���C����˂��̂��ȁB";
+	mes "[容疑者]";
+	mes "あぁ？　元気じゃねぇのかな。";
 	next;
-	mes "[�Y��]";
-	mes "�Ō�ɉ���Ă���";
-	mes "�ǂ�ʌo���Ă�H";
+	mes "[刑事]";
+	mes "最後に会ってから";
+	mes "どれ位経ってる？";
 	next;
-	mes "[�e�^��]";
-	mes "���񂽂ɂ͊֌W�Ȃ��ł��傤�I";
+	mes "[容疑者]";
+	mes "あんたには関係ないでしょう！";
 	next;
-	mes "[�Y��]";
-	mes "���񂽂̕�e�́A���O�̂��Ƃ�";
-	mes "�S�z���Ă邾�낤�ȁc�c";
-	mes "�c�c";
+	mes "[刑事]";
+	mes "あんたの母親は、お前のことを";
+	mes "心配してるだろうな……";
+	mes "……";
 	next;
-	mes "[�e�^��]";
-	mes "�c�c";
+	mes "[容疑者]";
+	mes "……";
 	next;
-	mes "[�Y��]";
-	mes "�J�c���c�c�H�ׂ邩�H";
+	mes "[刑事]";
+	mes "カツ丼……食べるか？";
 	next;
-	mes "[�e�^��]";
-	mes "�A�点�Ă�����āI";
+	mes "[容疑者]";
+	mes "帰らせてくれって！";
 	close;
 }
 
-lhz_in02.gat,142,222,6	duplicate(�Y��#Lhz)	�e�^��	870
+lhz_in02.gat,142,222,6	duplicate(刑事#Lhz)	容疑者	870
 
-lhz_in02.gat,145,176,0	script	��������������	849,{
-	mes "[��������]";
-	mes "�w���w���c�c";
-	mes "�ǂ��C�������`�q�b�N�N!!";
-	mes "�C�q�q�q�c�c";
-	mes "��͂���̓����N����";
-	mes "�ō������`�n�b�n�n�`�`";
+lhz_in02.gat,145,176,0	script	酔ったおじさん	849,{
+	mes "[おじさん]";
+	mes "ヘラヘラ……";
+	mes "良い気分だぜ～ヒックク!!";
+	mes "イヒヒヒ……";
+	mes "やはり酒はモロク製が";
+	mes "最高だぜ～ハッハハ～～";
 	close;
 }
 
-lhz_in02.gat,153,206,4	script	��������������	853,{
-	mes "[��������]";
-	mes "���͌�������!!!!";
-	mes "�M���A�M���A�M���A�M���A�c�c";
-	mes "�M���A�M���A�M���A�M���A�c�c";
-	mes "�n�A�n�A�n�A�n�A�`";
-	mes "���͌������`�`!!!!";
-	mes "�q�b�N�q�b�N�q�b�N!!";
+lhz_in02.gat,153,206,4	script	酔ったおじさん	853,{
+	mes "[おじさん]";
+	mes "俺は潔白だぞ!!!!";
+	mes "ギャアギャアギャアギャア……";
+	mes "ギャアギャアギャアギャア……";
+	mes "ハアハアハアハア～";
+	mes "俺は潔白だ～～!!!!";
+	mes "ヒックヒックヒック!!";
 	next;
-	mes "[��������]";
-	mes "��������ł�����Ƒ������ʂ�";
-	mes "�߂ɂȂ�񂩂�`�q�b�N�I";
-	mes "���̐���������傫���������";
-	mes "���ꂪ����Ȃɖ��Ȃ̂��H";
-	mes "�M���A�M���A�M���A�c�c";
-	mes "�q�b�N�q�b�N!!";
+	mes "[おじさん]";
+	mes "酒を飲んでちょっと騒いだ位で";
+	mes "罪になるんかよ～ヒック！";
+	mes "俺の声がいくら大きいからって";
+	mes "それがそんなに問題なのか？";
+	mes "ギャアギャアギャア……";
+	mes "ヒックヒック!!";
 	close;
 }
 
-lhz_in02.gat,157,201,6	script	��������������	870,{
-	mes "[��������]";
-	mes "�c�c�c�c";
-	mes "�c�c�E�q�b";
-	mes "�c�c�E�q�q";
-	mes "�E�w�w�w�w�w�c�c";
+lhz_in02.gat,157,201,6	script	酔ったおじさん	870,{
+	mes "[おじさん]";
+	mes "…………";
+	mes "……ウヒッ";
+	mes "……ウヒヒ";
+	mes "ウヘヘヘヘヘ……";
 	next;
-	mes "-���S�ɐ����Ă��āA";
-	mes "��b�ɂȂ肻�����Ȃ�-";
+	mes "-完全に酔っていて、";
+	mes "会話になりそうもない-";
 	close;
 }
 
-lhz_in02.gat,159,198,6	script	�s�������Ȓj	85,{
-	mes "[�s�������Ȓj]";
-	mes "����͌���A��������āI";
-	mes "���͉������Ă��Ȃ��I";
-	mes "�������Ȃ�Đ�΂ɂ��ĂȂ�����!!";
-	mes "���͌������`�`!!";
+lhz_in02.gat,159,198,6	script	壮健そうな男	85,{
+	mes "[壮健そうな男]";
+	mes "これは誤解、誤解だって！";
+	mes "俺は何もしていない！";
+	mes "万引きなんて絶対にしてないって!!";
+	mes "俺は潔白だ～～!!";
 	close;
 }
 
-lhz_in02.gat,34,22,0	script	��s�E��	755,{
-	mes "[��s�E��]";
-	mes "������͋�s�ł��B";
-	mes "���݃V�X�e���̕s��ɂ��";
-	mes "������~�����Ă��������Ă���܂��B";
-	mes "��ϐ\���󂲂����܂��񂪁A";
-	mes "������A��������肢�������܂��B";
+lhz_in02.gat,34,22,0	script	銀行職員	755,{
+	mes "[銀行職員]";
+	mes "こちらは銀行です。";
+	mes "現在システムの不具合により";
+	mes "取引を停止させていただいております。";
+	mes "大変申し訳ございませんが、";
+	mes "復旧後、取引をお願いいたします。";
 	close;
 }
 
-lhz_in02.gat,21,25,6	script	��s�E��#bank	86,{
-	mes "[��s�E��]";
-	mes "�V�X�e���ɕs��������Ă���A";
-	mes "�ꎞ�I�Ɏ�����~�����Ă���������";
-	mes "����܂��B���q�l�ɂ͑�ς����f��";
-	mes "���|�����A���ɐ\���󂲂����܂���B";
-	mes "����������ƒ��ł��̂ŁA";
-	mes "�������X���҂����������B";
+lhz_in02.gat,21,25,6	script	銀行職員#bank	86,{
+	mes "[銀行職員]";
+	mes "システムに不具合が生じており、";
+	mes "一時的に取引を停止させていただいて";
+	mes "おります。お客様には大変ご迷惑を";
+	mes "お掛けし、誠に申し訳ございません。";
+	mes "只今復旧作業中ですので、";
+	mes "もう少々お待ちください。";
 	close;
 }
 
-lhz_in02.gat,21,38,6	duplicate(��s�E��#bank)	��s�E��	86
+lhz_in02.gat,21,38,6	duplicate(銀行職員#bank)	銀行職員	86
 
-lhz_in02.gat,28,39,2	script	����	703,{
-	mes "[����]";
-	mes "�傫���Ȃ�����A��s�ɏA�E����";
-	mes "����Ȃ񂾁I";
-	mes "�ււցc�c";
+lhz_in02.gat,28,39,2	script	少女	703,{
+	mes "[少女]";
+	mes "大きくなったら、銀行に就職する";
+	mes "つもりなんだ！";
+	mes "へへへ……";
 	close;
 }
 
-lhz_in02.gat,31,33,2	script	���k����	863,{
-	mes "[���k����]";
-	mes "�f�G�ȑ����A�f�G�ȍ���B";
-	mes "�Ƃ�����Ȃ�������{����";
-	mes "�f�G���˂��B";
+lhz_in02.gat,31,33,2	script	お婆さん	863,{
+	mes "[お婆さん]";
+	mes "素敵な装飾、素敵な香り。";
+	mes "家がこんなだったら本当に";
+	mes "素敵だねぇ。";
 	close;
 }
 
-lhz_in02.gat,31,34,2	script	���ꂳ��	847,{
-	mes "[���ꂳ��]";
-	mes "���̌����͖{���ɂ��ꂢ����ȁB";
-	mes "�킵�̉Ƃ����ꂾ�����؂Ȃ�A";
-	mes "�����ƒ������ł��邩�������ȁB";
+lhz_in02.gat,31,34,2	script	お爺さん	847,{
+	mes "[お爺さん]";
+	mes "この建物は本当にきれいじゃな。";
+	mes "わしの家もこれだけ豪華なら、";
+	mes "もっと長生きできるかもしれんな。";
 	close;
 }
 
-lhz_in02.gat,34,41,0	script	�N	849,{
-	mes "[�N]";
-	mes "�����A�֎q��������ƍd�����A";
-	mes "�����͂ƂĂ��������ċC���������I";
-	mes "����ς��s���ō����I";
+lhz_in02.gat,34,41,0	script	青年	849,{
+	mes "[青年]";
+	mes "ああ、椅子がちょっと硬いが、";
+	mes "ここはとても涼しくて気持ちいい！";
+	mes "やっぱり銀行が最高だ！";
 	close;
 }
 
-lhz_in02.gat,238,275,4	script	�z�e���]�ƈ�	869,{
-	mes "[�z�e���]�ƈ�]";
-	mes "�Ί�A�e�؁A��d�I";
-	mes "���ꂪ�䂪�z�e���A";
-	mes "���C�����h���S���̃��b�g�[�ł��I";
-	mes "�h���Ɋւ��ẮA�J�E���^�[";
-	mes "�܂ł��₢���킹�Ă��������B";
-	mes "�����Ȏ������߂������������B";
+lhz_in02.gat,238,275,4	script	ホテル従業員	869,{
+	mes "[ホテル従業員]";
+	mes "笑顔、親切、奉仕！";
+	mes "これが我がホテル、";
+	mes "ロイヤルドラゴンのモットーです！";
+	mes "宿泊に関しては、カウンター";
+	mes "までお問い合わせてください。";
+	mes "至福な時をお過ごしください。";
 	close;
 }
 
-lhz_in02.gat,247,275,0	script	�z�e���]�ƈ�	868,{
-	mes "[�z�e���]�ƈ�]";
-	mes "���̐�́A���C�����h���S����";
-	mes "�o�c���Ă���o�[�ł��B";
-	mes "���x�݂ɂȂ�O�ɁA";
-	mes "��������t�������ł��傤���H";
+lhz_in02.gat,247,275,0	script	ホテル従業員	868,{
+	mes "[ホテル従業員]";
+	mes "この先は、ロイヤルドラゴンが";
+	mes "経営しているバーです。";
+	mes "お休みになる前に、";
+	mes "お酒を一杯いかがでしょうか？";
 	next;
-	mes "[�z�e���]�ƈ�]";
-	mes "���͋C�̗ǂ��o�[�ł�����";
-	mes "���݂Ȃ���b�����Ă���΁A";
-	mes "�ǉ������܂�邩������܂���ˁB";
+	mes "[ホテル従業員]";
+	mes "雰囲気の良いバーでお酒を";
+	mes "飲みながら話をしていれば、";
+	mes "良縁が生まれるかもしれませんね。";
 	close;
 }
 
-lhz_in02.gat,221,276,0	script	�N	869,{
-	mes "[�N]";
-	mes "���̃J�v���E���A";
-	mes "�{���ɂ��ꂢ����Ȃ��H";
-	mes "�e�p���炻�̃L�����Ƃ������K�l�܂ŁI";
-	mes "�}�W�ō��ꂿ�������I";
+lhz_in02.gat,221,276,0	script	青年	869,{
+	mes "[青年]";
+	mes "あのカプラ職員、";
+	mes "本当にきれいじゃない？";
+	mes "容姿からそのキリっとしたメガネまで！";
+	mes "マジで惚れちゃったよ！";
 	next;
-	mes "[�N]";
-	mes "�f�[�g�̐\�����݂ł�����";
-	mes "�݂悤���ȁ`����Ƃ��c�c";
-	mes "���u���^�[�𑗂��Ă݂���H";
-	mes "�ӂӁB";
+	mes "[青年]";
+	mes "デートの申し込みでもして";
+	mes "みようかな～それとも……";
+	mes "ラブレターを送ってみたり？";
+	mes "ふふ。";
 	next;
-	mes "[�N]";
-	mes "�����`���Ă��邾���ŁA";
-	mes "�K���ɂȂ肻���I";
-	mes "�J�v���T�[�r�X���΂���I";
+	mes "[青年]";
+	mes "あぁ～見ているだけで、";
+	mes "幸せになりそう！";
+	mes "カプラサービス万歳だよ！";
 	close;
 }
 
-lhz_in02.gat,209,277,4	script	�N	84,{
-	mes "[�N]";
-	mes "���`�C�����ǂ��`������ǂ��`";
-	mes "�\�t�@�[���ӂ�ӂ�`�{���ɗǂ�";
-	mes "�����ˁB�������������";
-	mes "��������Ƃɂ�������B";
+lhz_in02.gat,209,277,4	script	青年	84,{
+	mes "[青年]";
+	mes "あ～気持ち良い～香りも良い～";
+	mes "ソファーもふわふわ～本当に良い";
+	mes "所だね。お金さえあれば";
+	mes "ここを我家にしたいよ。";
 	next;
-	mes "[�N]";
-	mes "���̃z�e���ɂ����܂��Ă݂����A";
-	mes "�{���ɂ������ō����ȁB";
-	mes "�C�����悭�Q��邩��A";
-	mes "�N���Ă����������C�ɉ߂������B";
+	mes "[青年]";
+	mes "他のホテルにも泊まってみたが、";
+	mes "本当にここが最高だな。";
+	mes "気持ちよく寝れるから、";
+	mes "起きてから一日が元気に過ごせるよ。";
 	close;
 }
 
-lhz_in02.gat,251,212,2	script	�z�e���]�ƈ�	868,{
-	mes "[�z�e���]�ƈ�]";
-	mes "���̕����́A���v�w�ŏh��";
-	mes "����邨�q�l��p�̕����ł��B";
+lhz_in02.gat,251,212,2	script	ホテル従業員	868,{
+	mes "[ホテル従業員]";
+	mes "この部屋は、ご夫婦で宿泊";
+	mes "されるお客様専用の部屋です。";
 	close;
 }
 
-lhz_in02.gat,242,172,0	script	�z�e���]�ƈ�	868,{
-	mes "[�z�e���]�ƈ�]";
-	mes "�h�����ɕs�ւȓ_���������܂�����A";
-	mes "�����Ȃ�����������Ă��������B";
-	mes "�J�E���^�[�͉��̊K�ɂ������܂��B";
+lhz_in02.gat,242,172,0	script	ホテル従業員	868,{
+	mes "[ホテル従業員]";
+	mes "宿泊中に不便な点がございましたら、";
+	mes "遠慮なくおっしゃってください。";
+	mes "カウンターは下の階にございます。";
 	close;
 }
 
-lhz_in02.gat,229,217,2	script	���k����	863,{
-	mes "[���k����]";
-	mes "�فc�c";
-	mes "�΂̈֎q�͔��������ǁA";
-	mes "���̂悤�ȔN���ɂ�";
-	mes "���K���ɂ��Ȃ��Ă��܂���B";
+lhz_in02.gat,229,217,2	script	お婆さん	863,{
+	mes "[お婆さん]";
+	mes "ほ……";
+	mes "石の椅子は美しいけど、";
+	mes "私のような年寄りには";
+	mes "お尻が痛くなってしまうよ。";
 	next;
-	mes "[���k����]";
-	mes "�������􂵂Ă�炵�����ǁA";
-	mes "�V�l�������͂����Ăق����˂��B";
+	mes "[お婆さん]";
+	mes "福祉政策してるらしいけど、";
+	mes "老人福祉も力を入れてほしいねぇ。";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "���́c�c���k����c�c";
-	mes "������͊�ƂŌ����{�݂ł�";
-	mes "�Ȃ��ł�����c�c";
+	mes "あの……お婆さん……";
+	mes "こちらは企業で公共施設では";
+	mes "ないですから……";
 	next;
-	mes "[���k����]";
-	mes "����Ȃ̊֌W�Ȃ�����Ȃ����I";
-	mes "�܂������A���̍��̎�҂�";
-	mes "�N���̌������Ƃ�f����";
-	mes "�����Ȃ��񂾂���c�c";
+	mes "[お婆さん]";
+	mes "そんなの関係ないじゃないか！";
+	mes "まったく、この頃の若者は";
+	mes "年寄りの言うことを素直に";
+	mes "聞かないんだから……";
 	next;
-	mes "[���k����]";
-	mes "���Ȃ��A�΂͂����H";
-	mes "�c�c�������ĕ����Ă�́H";
-	mes "�������Ȃ��́H";
-	mes "������ƁA�ǂ��Ȃ́H";
+	mes "[お婆さん]";
+	mes "あなた、歳はいくつ？";
+	mes "……いくつって聞いてるの？";
+	mes "聞こえないの？";
+	mes "ちょっと、どうなの？";
 	next;
-	mes "-�ʓ|�������c�c-";
-	mes "-���������悤�c�c-";
+	mes "-面倒そうだ……-";
+	mes "-早く逃げよう……-";
 	close;
 }
 
-lhz_in02.gat,201,181,6	script	��������	853,{
-	mes "[��������]";
-	mes "�ӂށA���̃z�e���͐S�n�悢���A";
-	mes "�����܂����ȁB���̂悤��";
-	mes "�����Ƃɂ͍���Ȃ��ȁB";
+lhz_in02.gat,201,181,6	script	おじさん	853,{
+	mes "[おじさん]";
+	mes "ふむ、このホテルは心地よいが、";
+	mes "酒がまずいな。俺のような";
+	mes "美酒家には合わないな。";
 	next;
-	mes "[��������]";
-	mes "�ō��̃z�e���Ȃ�A���R���[��";
-	mes "�T�[�r�X�̎����A�ō��̖�����";
-	mes "�Ȃ��ƂȂ��`�I";
-	mes "�͂��`�������Ȃ��B";
-	mes "�o�[�ɂł��s���Ƃ��邩�B";
+	mes "[おじさん]";
+	mes "最高のホテルなら、当然ルーム";
+	mes "サービスの酒も、最高の味じゃ";
+	mes "ないとなぁ～！";
+	mes "はぁ～しかたない。";
+	mes "バーにでも行くとするか。";
 	next;
-	mes "[��������]";
-	mes "���̕����ł��났�Ȃ���A";
-	mes "�ō��̎��𖡂킢���������̂����B";
-	mes "�c�O���c�c";
+	mes "[おじさん]";
+	mes "この部屋でくつろぎながら、";
+	mes "最高の酒を味わいたかったのだが。";
+	mes "残念だ……";
 	close;
 }
 
-lhz_in02.gat,210,189,2	script	�N	849,{
-	mes "[�N]";
-	mes "�E�E�E�c�c���̂������C�����ǂ��I";
+lhz_in02.gat,210,189,2	script	青年	849,{
+	mes "[青年]";
+	mes "ウウウ……ものすごく気持ち良い！";
 	next;
-	mes "[�N]";
-	mes "����͂������܂�Ȃ��ˁ`";
+	mes "[青年]";
+	mes "これはもうたまらないね～";
 	next;
-	mes "[�N]";
-	mes "�����`�Ɋy�Ɋy�`�`�`";
+	mes "[青年]";
+	mes "ああ～極楽極楽～～～";
 	close;
 }
 
-lhz_in02.gat,277,285,4	script	�o�[�e��	61,{
-	mes "[�_�t]";
-	mes "�F����̂قƂ�ǂ́A";
-	mes "�����̃z�e���ɔ��܂��Ă���X�ł����A";
-	mes "���q����͈Ⴄ�悤�ł��ˁH";
-	mes "�`���҂̕��ł��ˁH";
+lhz_in02.gat,277,285,4	script	バーテン	61,{
+	mes "[ダフ]";
+	mes "皆さんのほとんどは、";
+	mes "ここのホテルに泊まってる方々ですが、";
+	mes "お客さんは違うようですね？";
+	mes "冒険者の方ですね？";
 	next;
-	mes "[�_�t]";
-	mes "������ւ��؍ݒ��́A�����p���������B";
+	mes "[ダフ]";
+	mes "こちらへご滞在中は、ご利用ください。";
 	close;
 }
 
-lhz_in02.gat,271,281,2	script	���l	47,{
-	mes "[�n�`]";
-	mes "���͏����̈��������܂��B";
-	mes "���������|����΁A���ė��Ȃ�";
-	mes "�����͂��Ȃ��̂��B";
+lhz_in02.gat,271,281,2	script	町人	47,{
+	mes "[ハチ]";
+	mes "私は女性の扱いがうまい。";
+	mes "私が声を掛ければ、ついて来ない";
+	mes "女性はいないのさ。";
 	next;
-	mes "[�n�`]";
-	mes "�����̂��鏊�Ɏ�����I";
-	mes "�������鏊�ɏ�������I";
-	mes "�t�t�c�c�������낤�H";
+	mes "[ハチ]";
+	mes "女性のいる所に私あり！";
+	mes "私がいる所に女性あり！";
+	mes "フフ……名言だろう？";
 	close;
 }
 
-lhz_in02.gat,265,273,6	script	�������E��	865,{
-	mes "[�A�b�T��]";
-	mes "�����͕��͋C���ǂ��ĐÂ���";
-	mes "�d���œ�����ꂽ���ɂ́A";
-	mes "���т��ї��p���Ă���B";
-	mes "�o�[�e�����C���������ȁB";
+lhz_in02.gat,265,273,6	script	研究所職員	865,{
+	mes "[アッサム]";
+	mes "ここは雰囲気が良くて静かで";
+	mes "仕事で頭が疲れた時には、";
+	mes "たびたび利用している。";
+	mes "バーテンも気が合うしな。";
 	next;
-	mes "[�A�b�T��]";
-	mes "�����A�����̃E�C�X�L�[���A";
-	mes "���ɔ��������񂾁I";
-	mes "���܂ɁA�q�ɃT�[�r�X���Ă�";
-	mes "�݂�������B";
+	mes "[アッサム]";
+	mes "何より、ここのウイスキーが、";
+	mes "非常に美味しいんだ！";
+	mes "たまに、客にサービスしてる";
+	mes "みたいだよ。";
 	close;
 }
 
-lhz_in02.gat,283,276,4	script	���q����	815,{
-	mes "[�Z�C]";
-	mes "�����ɗ���ƁA��������イ";
-	mes "�j�̐l���琺����������́B";
-	mes "�ׂɗ��Ă܂�Ȃ���k�Ȃ�";
-	mes "������Ƃ��炯���Ⴄ��I";
+lhz_in02.gat,283,276,4	script	お客さん	815,{
+	mes "[セイ]";
+	mes "ここに来ると、しょっちゅう";
+	mes "男の人から声をかけられるの。";
+	mes "隣に来てつまらない冗談なんか";
+	mes "言われるとしらけちゃうわ！";
 	next;
-	mes "[�Z�C]";
-	mes "�܂����c�c���Ȃ�������";
-	mes "���������悤�Ƃ��Ă�́H";
+	mes "[セイ]";
+	mes "まさか……あなたも私に";
+	mes "声をかけようとしてるの？";
 	close;
 }
 
-lhz_in02.gat,281,280,6	script	���q����	816,{
-	mes "[���[���[]";
-	mes "�������ŋߋq�̎�����������c�c";
-	mes "�������i�̖����l�������Ă��܂��āB";
-	mes "�O�͂����Ə�i�ȕ��΂���";
-	mes "�������̂ɂȁc�c";
+lhz_in02.gat,281,280,6	script	お客さん	816,{
+	mes "[ローヤー]";
+	mes "ここも最近客の質が落ちたわ……";
+	mes "何だか品の無い人が増えてしまって。";
+	mes "前はもっと上品な方ばかり";
+	mes "だったのにな……";
 	close;
 }
 
-lhz_in02.gat,287,273,2	script	���q����	50,{
-	mes "[�e���[]";
-	mes "���͂������D���ł͂Ȃ���";
-	mes "�������Y��ŉ��y���ǂ��A";
-	mes "���͋C���C�ɓ����Ă���";
-	mes "�x�X����񂾁B";
+lhz_in02.gat,287,273,2	script	お客さん	50,{
+	mes "[テリー]";
+	mes "私はお酒が好きではないが";
+	mes "ここは綺麗で音楽も良く、";
+	mes "雰囲気が気に入っていて";
+	mes "度々来るんだ。";
 	next;
-	mes "[�e���[]";
-	mes "�N�͂ǂ����`���҂̂悤�����A";
-	mes "�����̓X�ɂ͋C�����邱�Ƃ��B";
+	mes "[テリー]";
+	mes "君はどうやら冒険者のようだが、";
+	mes "ここの店には気をつけることだ。";
 	next;
-	mes "[�e���[]";
-	mes "����܂苏�S�n���ǂ����̂�����";
-	mes "���ꂽ���Ȃ��Ȃ��āA�`���ɍs���Ȃ�";
-	mes "�Ȃ����܂�����ȁ`�B�n�n�n!!";
+	mes "[テリー]";
+	mes "あんまり居心地が良いものだから";
+	mes "離れたくなくなって、冒険に行けなく";
+	mes "なっちまうからな～。ハハハ!!";
 	close;
 }
 
-lhz_in02.gat,289,277,2	script	���p��	753,{
-	mes "[���p��]";
-	mes "����������Ƌ������";
-	mes "�����Ă݂Ă��I";
-	mes "�����͂������Ŏ�������낤��";
-	mes "����l�Ԃ΂����肾�I";
+lhz_in02.gat,289,277,2	script	武術家	753,{
+	mes "[武術家]";
+	mes "もうちょっと強いやつと";
+	mes "闘ってみてぇ！";
+	mes "ここはただ金で自分を守ろうと";
+	mes "する人間ばっかりだ！";
 	next;
-	mes "[���p��]";
-	mes "�̂��Ԃ��āA���ƌ������킷";
-	mes "�Ԃɉ萶����F��ƒB������";
-	mes "�Ȃ��������Ȃ��̂��I";
-	mes "���́A�������Ɠ����Ă����";
-	mes "�t�@�C�^�[��T���Ă���B";
+	mes "[武術家]";
+	mes "体をぶつけて、拳と拳を交わす";
+	mes "間に芽生える友情と達成感を";
+	mes "なぜ理解しないのか！";
+	mes "俺は、いつも俺と闘ってくれる";
+	mes "ファイターを探している。";
 	next;
-	mes "[���p��]";
-	mes "�������������ő҂��Ă݂āA";
-	mes "�{���ɑ��肪������Ȃ����";
-	mes "���̏��ɂւł��s���ĒT�������Ȃ��B";
+	mes "[武術家]";
+	mes "もう少しここで待ってみて、";
+	mes "本当に相手が見つからなければ";
+	mes "他の所にへでも行って探すしかない。";
 	close;
 }
 
-lhz_in02.gat,287,282,4	script	���q����	853,{
-	mes "[�O���[���t�B�[���h]";
-	mes "�����c�c����������";
-	mes "�g���ʂ������܂����c�c";
-	mes "�����A�ق�Ƃ��Ă˂��`�`";
+lhz_in02.gat,287,282,4	script	お客さん	853,{
+	mes "[グリーンフィールド]";
+	mes "ちっ……今日も金を";
+	mes "使い果たしちまった……";
+	mes "ああ、ほんとついてねぇ～～";
 	close;
 }
 
-lhz_in02.gat,267,22,0	script	�X��	91,{
-	mes "[�X��]";
-	mes "��������Ⴂ�܂��A���q�l�B";
-	mes "���X�ł́A���ł͎�ɓ���Ȃ�";
-	mes "���i�𐔑����p�ӂ��Ă���܂��B";
+lhz_in02.gat,267,22,0	script	店員	91,{
+	mes "[店員]";
+	mes "いらっしゃいませ、お客様。";
+	mes "当店では、他では手に入らない";
+	mes "商品を数多く用意しております。";
 	next;
-	mes "[�X��]";
-	mes "���X�͉�����ƂȂ��Ă���܂��B";
-	mes "���F�l�ɓ��X�����Љ���������ꍇ��";
-	mes "����o�^���Ē����A���F�l�����i��";
-	mes "�w�������ۂɂ��x�������������z��";
-	mes "�ꕔ�����q�l�ɊҌ�����V�X�e����";
-	mes "�Ȃ��Ă���܂��B";
+	mes "[店員]";
+	mes "当店は会員制となっております。";
+	mes "ご友人に当店をご紹介くださった場合は";
+	mes "会員登録して頂き、ご友人が商品を";
+	mes "購入した際にお支払い頂いた金額の";
+	mes "一部をお客様に還元するシステムと";
+	mes "なっております。";
 	next;
-	mes "[�X��]";
-	mes "����̕��͔N������܂����A";
-	mes "����͐�قǐ\���グ��";
-	mes "���F�l���w�������ۂ̊Ҍ��z��";
-	mes "�[������邩�Ǝv���܂��B";
-	mes "�Ȃ��c�c";
+	mes "[店員]";
+	mes "会員の方は年会費がありますが、";
+	mes "これは先ほど申し上げた";
+	mes "ご友人が購入した際の還元額で";
+	mes "充分足りるかと思います。";
+	mes "なお……";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "���A����A���\�ł��B";
+	mes "い、いや、結構です。";
 	close;
 }
 
-lhz_in02.gat,267,25,4	script	�_�C�A�i	747,{
-	mes "[�_�C�A�i]";
-	mes "���킟�`";
-	mes "�ƂĂ��������˂��B";
-	mes "����c�c�����炩����`�H";
+lhz_in02.gat,267,25,4	script	ダイアナ	747,{
+	mes "[ダイアナ]";
+	mes "うわぁ～";
+	mes "とても高そうねぇ。";
+	mes "これ……いくらかしら～？";
 	next;
-	mes "[�X��]";
-	mes "���̃X�e�B���b�g�ł����H";
-	mes "���q�l�͂��ڂ������ł��ˁB";
-	mes "�ǂ���̏o�g�ł��傤���c�c�H";
+	mes "[店員]";
+	mes "このスティレットですか？";
+	mes "お客様はお目が高いですね。";
+	mes "どちらの出身でしょうか……？";
 	next;
-	mes "[�_�C�A�i]";
-	mes "���ӂӁA�����N�o�g��I";
+	mes "[ダイアナ]";
+	mes "うふふ、モロク出身よ！";
 	next;
-	mes "[�X��]";
-	mes "�Ȃ�قǁA�����ŁI";
-	mes "�����N�̕��͖{����";
-	mes "�Z���X������܂��ˁB";
-	mes "���̃X�e�B���b�g��";
-	mes "39,800Zeny�ł��B";
+	mes "[店員]";
+	mes "なるほど、道理で！";
+	mes "モロクの方は本当に";
+	mes "センスがありますね。";
+	mes "このスティレットは";
+	mes "39,800Zenyです。";
 	next;
 	emotion 23;
-	mes "[�_�C�A�i]";
-	mes "�������H";
-	mes "����Ȃɍ����́H";
+	mes "[ダイアナ]";
+	mes "えええ？";
+	mes "そんなに高いの？";
 	next;
-	mes "[�X��]";
-	mes "���炠��c�c���ڂ������̂ŁA";
-	mes "�l�i���@�������Ă������邩��";
-	mes "�v�����̂ł����c�c";
-	mes "��������Ă��������B";
-	mes "�_�C�������h�������";
-	mes "���ߍ��܂�Ă܂���ˁH";
+	mes "[店員]";
+	mes "あらあら……お目が高いので、";
+	mes "値段も察しがついてらっしゃるかと";
+	mes "思ったのですが……";
+	mes "これを見てください。";
+	mes "ダイヤモンドが幾列も";
+	mes "埋め込まれてますよね？";
 	next;
-	mes "[�X��]";
-	mes "�����ĕ��̐�ɂ́A���؂�";
-	mes "�T�t�@�C�A�����ߍ��܂�Ă���A";
-	mes "�����Ă����ɂ́c�c";
-	mes "���ƁA�����ɂ́c�c";
-	mes "�c�c�c�c";
+	mes "[店員]";
+	mes "そして柄の先には、豪華に";
+	mes "サファイアが埋め込まれており、";
+	mes "そしてここには……";
+	mes "あと、ここには……";
+	mes "…………";
 	next;
-	mes "[�_�C�A�i]";
-	mes "���A����������c�c";
-	mes "����A�������̃O���f�B�E�X�́H";
+	mes "[ダイアナ]";
+	mes "も、もういいよ……";
+	mes "じゃ、こっちのグラディウスは？";
 	next;
-	mes "[�X��]";
-	mes "�������39,800Zeny�ł��B";
+	mes "[店員]";
+	mes "そちらは39,800Zenyです。";
 	next;
-	mes "[�_�C�A�i]";
-	mes "��A�����I�@���ꔃ�������ȁI";
+	mes "[ダイアナ]";
+	mes "わ、安い！　これ買おうかな！";
 	next;
-	mes "[�X��]";
-	mes "�͌^�Ƃ��Ă͂ƂĂ��ǂ��o���ł��B";
-	mes "���R�؂ꖡ�͖����ɓ������ł����A";
-	mes "���܈ʂȂ�؂邱�Ƃ��\�ł��B";
+	mes "[店員]";
+	mes "模型としてはとても良い出来です。";
+	mes "当然切れ味は無いに等しいですが、";
+	mes "紙袋位なら切ることが可能です。";
 	next;
-	mes "[�_�C�A�i]";
-	mes "�c�c�c�c";
+	mes "[ダイアナ]";
+	mes "…………";
 	close;
 }
 
-lhz_in02.gat,34,212,4	script	���삳��	91,{
-	mes "[���삳��]";
-	mes "���͂��̊X�ɉԂ𔄂�ɗ����̂ł���";
-	mes "��������ɂ͊X�̏��X�X�ɉh���";
-	mes "�������Ȃ��Ƃ����Ȃ��炵���c�c";
-	mes "���̏��X�X�ɉh��ɏ������邽�߂�";
-	mes "������������������āA�����Ă܂��B";
+lhz_in02.gat,34,212,4	script	お嬢さん	91,{
+	mes "[お嬢さん]";
+	mes "私はこの街に花を売りに来たのですが";
+	mes "商売するには街の商店街繁栄会に";
+	mes "所属しないといけないらしく……";
+	mes "その商店街繁栄会に所属するための";
+	mes "会員料がすごく高くて、困ってます。";
 	next;
-	mes "[���삳��]";
-	mes "���i�͑��̊X��荂������킯�ɂ�";
-	mes "�����܂���̂ŁA�������񔄂邵���Ȃ�";
-	mes "�ł��ˁc�c���̂悤�Ɏ��{���Ȃ���";
-	mes "�������ł��B";
+	mes "[お嬢さん]";
+	mes "商品は他の街より高くするわけには";
+	mes "いきませんので、たくさん売るしかない";
+	mes "ですね……私のように資本がないと";
+	mes "厳しいです。";
 	next;
-	mes "[���삳��]";
-	mes "�����c�c�������ē���B";
-	mes "�Ԃ̔��������A���̊X��";
-	mes "�l�B�ɂ��`�������̂ɁI";
+	mes "[お嬢さん]";
+	mes "ああ……商売って難しい。";
+	mes "花の美しさを、この街の";
+	mes "人達にも伝えたいのに！";
 	close;
 }
 
-lhz_in02.gat,35,275,4	script	�W�����_�ē���	831,{
-	mes "[�Z�[��]";
-	mes "��������Ⴂ�܂��B";
-	mes "�W�����_�C�x���g�Վ��{���ł��B";
-	mes "��������`�����܂��傤���H";
+lhz_in02.gat,35,275,4	script	ジョンダ案内員	831,{
+	mes "[セーラ]";
+	mes "いらっしゃいませ。";
+	mes "ジョンダイベント臨時本部です。";
+	mes "何をお手伝いしましょうか？";
 	next;
-	switch(select("�Վ��{���H","���[�Ɋւ���","���ł��Ȃ�")) {
+	switch(select("臨時本部？","投票に関して","何でもない")) {
 	case 1:
-		mes "[�Z�[��]";
-		mes "�͂��B";
-		mes "�܂��A�{���̕Еt����";
-		mes "�I����Ă��Ȃ��̂Łc�c�B";
-		mes "��������؂�āA";
-		mes "�Վ��{���Ƃ��ĉ^�c���ł��B";
+		mes "[セーラ]";
+		mes "はい。";
+		mes "まだ、本部の片付けが";
+		mes "終わっていないので……。";
+		mes "こちらを借りて、";
+		mes "臨時本部として運営中です。";
 		close;
 	case 2:
-		mes "[�Z�[��]";
-		if(LHZ_4QUE < 17)	//�哝�̃N�G�X�g�ɂĔ��s
-			mes "���c�c���[�̌��ł����H";
-		mes "����A���ǂ��u�W�����_�C�x���g�v��";
-		mes "�u�J�v���T�[�r�X�v�Ԃ̋��c�ɂ��A";
-		mes "�V��Ԉړ��T�[�r�X�񋟂ɑ΂���";
-		mes "���茠���A�e�Ђ̂��q�l�̓��[��";
-		mes "�ς˂邱�Ƃɂ��܂����B";
+		mes "[セーラ]";
+		if(LHZ_4QUE < 17)	//大統領クエストにて発行
+			mes "あ……投票の件ですか？";
+		mes "今回、私ども「ジョンダイベント」と";
+		mes "「カプラサービス」間の協議により、";
+		mes "新空間移動サービス提供に対する";
+		mes "決定権を、各社のお客様の投票に";
+		mes "委ねることにしました。";
 		next;
-		mes "[�Z�[��]";
-		mes "����̋�Ԉړ��T�[�r�X�́A";
-		mes "�_���W�����T���x���Ƃ��āA";
-		mes "�e�_���W�����֒���";
-		mes "����͂���Ƃ������̂ł��B";
+		mes "[セーラ]";
+		mes "今回の空間移動サービスは、";
+		mes "ダンジョン探険支援として、";
+		mes "各ダンジョンへ直接";
+		mes "送り届けるというものです。";
 		next;
-		mes "[�Z�[��]";
-		mes "�����A�V�X�e���̊֌W��A";
-		mes "���ǂ��u�W�����_�C�x���g�v��";
-		mes "�u�J�v���T�[�r�X�v��������";
-		mes "�_���W�����֑���T�[�r�X��";
-		mes "�s�����Ƃ͂ł��܂���B";
+		mes "[セーラ]";
+		mes "ただ、システムの関係上、";
+		mes "私ども「ジョンダイベント」と";
+		mes "「カプラサービス」が同時に";
+		mes "ダンジョンへ送るサービスを";
+		mes "行うことはできません。";
 		next;
-		mes "[�Z�[��]";
-		mes "�����ŁA���ǂ��T�[�r�X��";
-		mes "���񋟂��邽�߁A�����ȕ��@�ɂ��A";
-		mes "�����ԁA�T�[�r�X��Ђ�";
-		mes "�n��̑I�����s���܂��B";
-		mes "���̌��ʁA�I�΂ꂽ�T�[�r�X��";
-		mes "�J�n����\��ƂȂ��Ă���܂��B";
+		mes "[セーラ]";
+		mes "そこで、より良いサービスを";
+		mes "ご提供するため、公正な方法により、";
+		mes "一定期間、サービス会社と";
+		mes "地域の選挙を行います。";
+		mes "その結果、選ばれたサービスを";
+		mes "開始する予定となっております。";
 		next;
-		mes "[�Z�[��]";
-		mes "�T�[�r�X��БI�o�̂��߂̓��[�ł����A";
-		mes "�e�Ђ̌ڋq�̕��X�̒���";
-		mes "����̐R����ʉ߂��ꂽ���X��";
-		mes "���̓��[�����^�����܂��B";
-		if(LHZ_4QUE < 17) {	//�哝�̃N�G�X�g�ɂĔ��s
-			mes "�������ɓ��[�������邩�ǂ����́A";
-			mes "�e�Ђ̖{���Ŋm�F���邱�Ƃ��ł��܂��B";
+		mes "[セーラ]";
+		mes "サービス会社選出のための投票ですが、";
+		mes "各社の顧客の方々の中で";
+		mes "特定の審査を通過された方々に";
+		mes "その投票権が与えられます。";
+		if(LHZ_4QUE < 17) {	//大統領クエストにて発行
+			mes "ご自分に投票権があるかどうかは、";
+			mes "各社の本部で確認することができます。";
 			next;
-			mes "[�Z�[��]";
-			mes "���q�l�́A���݁A";
-			mes "�R�����ƂȂ��Ă���܂��B";
-			mes "�R����ʉ߂��܂�����A������";
-			mes "���ʂ����A���������܂��B";
-			mes "���[���ł���悤�ɂȂ�܂�����A";
-			mes "���Q�������肢�������܂��B";
+			mes "[セーラ]";
+			mes "お客様は、現在、";
+			mes "審査中となっております。";
+			mes "審査を通過しましたら、すぐに";
+			mes "結果をご連絡いたします。";
+			mes "投票ができるようになりましたら、";
+			mes "ご参加をお願いいたします。";
 			close;
 		}
-		mes "���q�l�́A���ǂ��̐R���̌��ʁA";
-		mes "���[�����^�����Ă���܂��B";
+		mes "お客様は、私どもの審査の結果、";
+		mes "投票権が与えられております。";
 		next;
-		mes "[�Z�[��]";
-		mes "���[���́A��x����̂��̂ł͂Ȃ��A";
-		mes "���[�֌p���I�ɎQ�����\�Ȃ��̂ł��B";
-		mes "��葽���̂��Q�������肢�������܂��B";
-		mes "���[�ꏊ�́A";
-		//mes "�u�v�����e���v�Ɓu�W���m�[�v��"; //�{�I�d�l
-		//mes "��ӏ��ɐݒu����Ă���܂��B";
-		mes "�e�s�s�ɐݒu����Ă���܂��B";
+		mes "[セーラ]";
+		mes "投票権は、一度限りのものではなく、";
+		mes "投票へ継続的に参加が可能なものです。";
+		mes "より多くのご参加をお願いいたします。";
+		mes "投票場所は、";
+		//mes "「プロンテラ」と「ジュノー」の"; //本鯖仕様
+		//mes "二箇所に設置されております。";
+		mes "各都市に設置されております。";
 		close;
 	case 3:
-		mes "[�Z�[��]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "�܂������p���������܂��B";
+		mes "[セーラ]";
+		mes "ありがとうございます。";
+		mes "またご利用くださいませ。";
 		close;
 	}
 }
 
-lhz_in02.gat,19,274,3	script	�W�����_�A���o�C�g	851,{
-	mes "[�N�f�[�E]";
-	mes "�͂��`�B";
-	mes "���ꂳ���c�c";
-	mes "�Еt���Ă��Еt���Ă��A";
-	mes "�I��肪�˂��`��!!";
-	mes "���őq�ɂɁA����Ȃɂق��肪�c�c�B";
+lhz_in02.gat,19,274,3	script	ジョンダアルバイト	851,{
+	mes "[クデーウ]";
+	mes "はぁ～。";
+	mes "これさあ……";
+	mes "片付けても片付けても、";
+	mes "終わりがねぇ～っ!!";
+	mes "何で倉庫に、こんなにほこりが……。";
 	next;
-	mes "[�N�f�[�E]";
-	mes "�Q�z���Q�z���c�c";
-	mes "�O�V���O�V���c�c�B";
+	mes "[クデーウ]";
+	mes "ゲホンゲホン……";
+	mes "グシュグシュ……。";
 	close;
 }
 
-lhz_in02.gat,36,284,0	script	�W�����_�E��	874,{
-	mes "[�Z�X�i]";
-	mes "�ӂ킟�`�I";
-	mes "���Ȃ��Ⴂ���Ȃ��d���͑������ǁA";
-	mes "�d���͂��C�����Ȃ��ȁc�c�B";
-	mes "�ӂ��`�B";
-	mes "���������V��ł��悤���ȁc�c�B";
+lhz_in02.gat,36,284,0	script	ジョンダ職員	874,{
+	mes "[セスナ]";
+	mes "ふわぁ～！";
+	mes "やんなきゃいけない仕事は多いけど、";
+	mes "仕事はやる気がしないな……。";
+	mes "ふぅ～。";
+	mes "ちょっくら遊んでこようかな……。";
 	next;
-	mes "[�Z�X�i]";
-	mes "�Z�[������U���Ă݂悤���ȁc�c";
-	mes "���[��c�c�B";
+	mes "[セスナ]";
+	mes "セーラさん誘ってみようかな……";
+	mes "うーん……。";
 	close;
 }
 
-lhz_in02.gat,40,280,6	script	�W�����_���S��	833,{
-	mes "[�[������]";
-	mes "�E�M���M���M���M���M���`�I";
-	mes "�����ł��Ȃ��A�����ł��Ȃ��c�c�B";
-	mes "�E�E�E�E�`�B";
+lhz_in02.gat,40,280,6	script	ジョンダ企画担当	833,{
+	mes "[ゼラリン]";
+	mes "ウギャギャギャギャギャ～！";
+	mes "こうでもなく、ああでもなく……。";
+	mes "ウウウウ～。";
 	next;
-	mes "[�[������]";
-	mes "�����Ɖ���I�ȃA�C�f�A�͂Ȃ��̂��H";
-	mes "����H�@����H�@����H";
+	mes "[ゼラリン]";
+	mes "もっと画期的なアイデアはないのか？";
+	mes "うん？　うん？　うん？";
 	close;
 }
 
-lhz_in02.gat,110,286,4	script	�W�����_�ے�	853,{
-	mes "[�o�E�g]";
-	mes "�������c�c�ŋ߂̐E���́A";
-	mes "�����ɂ��ڂ肽����c�c�B";
-	mes "�����~�����Ȃ�A";
-	mes "�d��������A�d�����I";
-	mes "�V�тȂ������ׂ��������Ȃ�āc�c�B";
+lhz_in02.gat,110,286,4	script	ジョンダ課長	853,{
+	mes "[バウト]";
+	mes "ったく……最近の職員は、";
+	mes "すぐにさぼりたがる……。";
+	mes "金が欲しいなら、";
+	mes "仕事をしろ、仕事を！";
+	mes "遊びながら金を儲けたいだなんて……。";
 	close;
 }
 
-lhz_in03.gat,100,18,2	script	��	81,{
-	mes "[��]";
-	mes "����!!�@����!!";
+lhz_in03.gat,100,18,2	script	犬	81,{
+	mes "[犬]";
+	mes "ワン!!　ワン!!";
 	close;
 }
 
-lhz_in03.gat,130,41,4	script	�j�̎q	706,{
-	mes "[�j�̎q]";
-	mes "�l�̗��e�́A�����A�肪�x���񂾁B";
-	mes "������A�l�͂�������l��";
-	mes "���т�H�ׂ�́B";
-	mes "��l�ŐH�ׂ邲�т́A";
-	mes "���������Ȃ��Ȃ��c�c";
+lhz_in03.gat,130,41,4	script	男の子	706,{
+	mes "[男の子]";
+	mes "僕の両親は、いつも帰りが遅いんだ。";
+	mes "だから、僕はいっつも一人で";
+	mes "ご飯を食べるの。";
+	mes "一人で食べるご飯は、";
+	mes "美味しくないなぁ……";
 	next;
-	mes "[�j�̎q]";
-	mes "���̑O�A���܂��ܗ��e�������A����";
-	mes "�������A�݂�ȂŐH�ׂ����т�";
-	mes "�������������������̂ɂȁc�c";
+	mes "[男の子]";
+	mes "この前、たまたま両親が早く帰って";
+	mes "きた時、みんなで食べたご飯は";
+	mes "すごく美味しかったのにな……";
 	close;
 }
 
-lhz_in03.gat,129,22,6	script	����`������	850,{
-	mes "[����`������]";
-	mes "�܂������A���̉Ƃ͎�l��";
-	mes "���Ȃ������ɂ₽��ƍL���āA";
-	mes "������|�����n�߂Ă�";
-	mes "�I���̂͗[���ɂȂ��Ă��܂���B";
+lhz_in03.gat,129,22,6	script	お手伝いさん	850,{
+	mes "[お手伝いさん]";
+	mes "まったく、この家は主人が";
+	mes "少ないくせにやたらと広くて、";
+	mes "朝から掃除を始めても";
+	mes "終わるのは夕方になってしまうよ。";
 	next;
-	mes "[����`������]";
-	mes "�܂������A��ς����炠��Ⴕ�Ȃ��I";
+	mes "[お手伝いさん]";
+	mes "まったく、大変ったらありゃしない！";
 	close;
 }
 
-lhz_in03.gat,124,117,2	script	����`������	74,{
-	mes "[����`������]";
-	mes "���̉ԕr�A����疜Zeny��";
-	mes "�����ł����āI�@�����|�����Ă鎞��";
-	mes "���Ƃ��Ċ������肵����c�c";
-	mes "�����A�l���������ł����낵����!!";
+lhz_in03.gat,124,117,2	script	お手伝いさん	74,{
+	mes "[お手伝いさん]";
+	mes "この花瓶、一つ数千万Zenyも";
+	mes "するんですって！　もし掃除してる時に";
+	mes "落として割ったりしたら……";
+	mes "ああ、考えただけでも恐ろしいわ!!";
 	close;
 }
 
-lhz_in03.gat,25,105,4	script	�N	869,{
-	mes "[�N]";
-	mes "���k����͂��̂܂܂�";
-	mes "�������낤���A���͈Ⴄ��H";
-	mes "���肵�����Ƃ��ǂ����A�y�Ȃ��Ƃ�";
-	mes "�ǂ����ǁA�l�������̂悤��";
-	mes "�߂����ɂ͉��̐t�����������Ȃ��I";
+lhz_in03.gat,25,105,4	script	青年	869,{
+	mes "[青年]";
+	mes "お婆さんはこのままで";
+	mes "満足だろうが、俺は違うよ？";
+	mes "安定したことも良いし、楽なことも";
+	mes "良いけど、人生を今のように";
+	mes "過ごすには俺の青春がもったいない！";
 	next;
-	mes "[�N]";
-	mes "���ĂāI";
-	mes "���b�P���x���Ђ𗽂���Ƃ�";
-	mes "���ĂČ�����I";
+	mes "[青年]";
+	mes "見てて！";
+	mes "レッケンベル社を凌ぐ企業を";
+	mes "立てて見せる！";
 	close;
 }
 
-lhz_in03.gat,32,99,2	script	���k����	863,{
-	mes "[���k����]";
-	mes "�ӂӁA�����͏Z�݂₷���̂�B";
-	mes "����ς�ˁA�΂����Ɗy��";
-	mes "���肵����炵����ԂȂ́B";
+lhz_in03.gat,32,99,2	script	お婆さん	863,{
+	mes "[お婆さん]";
+	mes "ふふ、ここは住みやすいのよ。";
+	mes "やっぱりね、歳を取ると楽で";
+	mes "安定した暮らしが一番なの。";
 	next;
-	mes "[���k����]";
-	mes "�]�v�Ȏ��ɒ��킷��K�v���Ȃ����A";
-	mes "�]�����������Ȃ��ŗI�X���K��";
-	mes "�����̂�`";
-	mes "�z�b�z�z";
-	close;
-}
-
-//============================================================
-// ���b�P���x���n���X����NPC
-//------------------------------------------------------------
-lhz_in03.gat,239,38,2	script	�N	849,{
-	mes "[�N]";
-	mes "�E�E�E�c�c��c�c�������c�c";
-	mes "�S�z���S�z���c�c�ɂ��c�c";
-	mes "�S�z���c�c�S�z���S�z���S�z���B";
-	next;
-	mes "[�N]";
-	mes "��𔃂����߂ɂ́c�c�������c�c";
-	mes "�ȁc�c�Ȃ���΁c�c";
-	mes "�S�z���c�c�ɂ݂Ŏd�����c�c";
-	mes "�ł��Ȃ��āc�c�������Ȃ��c�c";
-	mes "�S�z���S�z���c�c";
-	close;
-}
-
-lhz_in03.gat,193,25,2	script	�������o�[�e��	61,{
-	mes "[�g�j�[]";
-	mes "�₟�A" +(Sex? "�N": "���삳��")+ "�B";
-	mes "���X�̃������͍ō�����B";
-	mes "�n���X�̂����Ȃ������������A";
-	mes "���̃������̖���";
-	mes "���ł͖��키���Ƃ͂ł��Ȃ���B";
-	next;
-	mes "[�g�j�[]";
-	mes "��������߂΁A�̂̒ꂩ��";
-	mes "�͂������オ���Ă���񂾁B";
-	mes "�����A�Ƃɂ������킸�A";
-	mes "����ł݂܂��傤��!!";
-	close;
-}
-
-lhz_in03.gat,185,20,6	script	�����ς炢	869,{
-	mes "[�Q���[]";
-	mes "������ʂ肽����΁A";
-	mes "�ʍs�ł𕥂��������c�c";
-	mes "�N�N�N�c�c";
-	next;
-	mes "[" +strcharinfo(0)+ "]";
-	mes "���̘b�ł����H";
-	next;
-	mes "[�Q���[]";
-	mes "1��Zeny���c�c�N�N�N�c�c";
-	next;
-	mes "[" +strcharinfo(0)+ "]";
-	mes "�ςȐl���c�c";
-	close;
-}
-
-lhz_in03.gat,186,29,6	script	�����ς炢	869,{
-	mes "[�o���Y]";
-	mes "�����A���̓X�̃������́A";
-	mes "������ł��ō����ȁ`�B";
-	mes "���̑O���ׂ��Ђ��������A";
-	mes "�����̃����������񂾂�";
-	mes "�@�����P���~�܂��Ă������肳�I";
-	next;
-	mes "[�o���Y]";
-	mes "�܂��ɍō��̎��I";
-	mes "�����A���O���ꏏ�Ɉ��������I";
-	close;
-}
-
-lhz_in03.gat,192,19,2	script	�����ς炢	855,{
-	mes "[�����ς炢]";
-	mes "�E�C�X�L�[���c�c�E�C�X�L�[������I";
-	next;
-	mes "[�����ς炢]";
-	mes "������˂���A�E�C�X�L�[���I";
-	mes "�������傤�`�`�`";
-	close;
-}
-
-lhz_in03.gat,184,38,2	script	�ق�ӂ�	55,{
-	mes "[�ق�ӂ�]";
-	mes "�N�A����N���Ǝv���Ă���H";
-	mes "���̉���m��Ȃ��̂��H";
-	next;
-	mes "[�ق�ӂ�]";
-	mes "�ł́A�R���h�푈�͒m���Ă邩�H";
-	next;
-	mes "[�ق�ӂ�]";
-	mes "���͂ȁA���̗L���ȃR���h��";
-	mes "�X�L�[�����o�g�Ȃ񂾂��I";
-	next;
-	mes "[�ق�ӂ�]";
-	mes "���H�@���̖ڂ��c�c�H";
-	mes "�M���ĂȂ��̂�!?";
-	close;
-}
-
-lhz_in03.gat,176,85,4	script	���l	869,{
-	mes "[�_�C�N]";
-	mes "�d�����I���āA�ƂɋA��O��";
-	mes "�����ň�t���̂��A";
-	mes "���̗B��̊y���݂Ȃ񂾁B";
-	mes "�ӂƁA�����͏������l�ԂȂ̂��H";
-	mes "�ȂǂƋ^��Ɏv����������邪�c�c";
-	next;
-	mes "[�_�C�N]";
-	mes "�ł��A�Ƃɂ͍ȂƉ����q�������āA";
-	mes "�����Č��N�Ȏ���������B";
-	mes "�K���Ȃ��Ƃ��낤�H";
-	mes "�����A���O�����������Ɉ��߈��߁I";
-	mes "�������A����͕ʁX�����ȁI";
-	close;
-}
-
-lhz_in03.gat,180,83,6	script	���l	86,{
-	mes "[�~�b�`�F��]";
-	mes "���͕n���X�̐l�B���D�����B";
-	mes "���݂��ɏ��������Đ����Ă���B";
-	mes "�l�Ԃ́A��������Đ����Ă���";
-	mes "���̂���Ȃ��H";
-	close;
-}
-
-lhz_in03.gat,183,82,6	script	�����ς炢	870,{
-	mes "[���C�i�[�X]";
-	mes "���A�Ȃ��a�C�Ŏ�����";
-	mes "�f�r���Ă�Ƃ��낾�c�c";
-	mes "����Ȃ̂ɉ��́A����ȂƂ���";
-	mes "������ł�Ȃ�Ăȁc�c";
-	next;
-	mes "[���C�i�[�X]";
-	mes "�����c�c�炢������L�����A";
-	mes "���ׂď����Ă��܂��΂����̂Ɂc�c";
-	mes "�E�E�E�c�c";
-	close;
-}
-
-lhz_in03.gat,189,87,4	script	�����ς炢	869,{
-	mes "[�E���O]";
-	mes "�E�`�q�b�N�c�c";
-	mes "5�N���t�������Ă�����";
-	mes "�U��ꂿ�܂����c�c";
-	mes "�q�b�N�c�c";
-	next;
-	mes "[�E���O]";
-	mes "���͌��X�����݂���Ȃ��񂾂�";
-	mes "�����͈��܂Ȃ������Ă��˂�";
-	mes "�C����!!";
-	mes "�E�E�E�c�c�q�b�N!!";
-	mes "���A�������傧�����`�`";
-	close;
-}
-
-lhz_in03.gat,192,93,2	script	���삳��	862,{
-	mes "[�����R]";
-	mes "��������̂��߂�";
-	mes "���X�̎�`�������Ă�񂾂��ǁA";
-	mes "�r���ƂĂ��ɂ��́B";
-	next;
-	mes "[�����R]";
-	mes "�ł��A�����ɗ���l�B�́A";
-	mes "����ŏ΂��āA���������";
-	mes "��������Ă�̂ˁB";
-	mes "����ȊF��������Ă�ƁA";
-	mes "��������������l���āA";
-	mes "�����撣��Ȃ�������Ďv���́B";
-	next;
-	mes "[�����R]";
-	mes "���͋x���ɂȂ�����A";
-	mes "���q�^���[���̎s����";
-	mes "�������ĉ�肽���ȁc�c";
+	mes "[お婆さん]";
+	mes "余計な事に挑戦する必要もないし、";
+	mes "余生を何もしないで悠々自適に";
+	mes "送れるのよ～";
+	mes "ホッホホ";
 	close;
 }
 
 //============================================================
-// �����ێ��C�x���gNPC
+// レッケンベル貧民街室内NPC
 //------------------------------------------------------------
-lighthalzen.gat,0,0,0	script	�����ێ���#Lhz	-1,{
+lhz_in03.gat,239,38,2	script	青年	849,{
+	mes "[青年]";
+	mes "ウウウ……薬……薬をくれ……";
+	mes "ゴホンゴホン……痛い……";
+	mes "ゴホン……ゴホンゴホンゴホン。";
+	next;
+	mes "[青年]";
+	mes "薬を買うためには……お金が……";
+	mes "な……なければ……";
+	mes "ゴホン……痛みで仕事が……";
+	mes "できなくて……お金がない……";
+	mes "ゴホンゴホン……";
+	close;
+}
+
+lhz_in03.gat,193,25,2	script	居酒屋バーテン	61,{
+	mes "[トニー]";
+	mes "やぁ、" +(Sex? "青年": "お嬢さん")+ "。";
+	mes "当店のラム酒は最高だよ。";
+	mes "貧民街のしがない居酒屋だが、";
+	mes "このラム酒の味は";
+	mes "他では味わうことはできないよ。";
+	next;
+	mes "[トニー]";
+	mes "これを飲めば、体の底から";
+	mes "力が沸き上がってくるんだ。";
+	mes "さぁ、とにかく迷わず、";
+	mes "飲んでみましょうや!!";
+	close;
+}
+
+lhz_in03.gat,185,20,6	script	酔っぱらい	869,{
+	mes "[ゲリー]";
+	mes "ここを通りたければ、";
+	mes "通行税を払うがいい……";
+	mes "ククク……";
+	next;
+	mes "[" +strcharinfo(0)+ "]";
+	mes "何の話ですか？";
+	next;
+	mes "[ゲリー]";
+	mes "1億Zenyだ……ククク……";
+	next;
+	mes "[" +strcharinfo(0)+ "]";
+	mes "変な人だ……";
+	close;
+}
+
+lhz_in03.gat,186,29,6	script	酔っぱらい	869,{
+	mes "[バンズ]";
+	mes "あぁ、この店のラム酒は、";
+	mes "いつ飲んでも最高だな～。";
+	mes "この前風邪をひいた時も、";
+	mes "ここのラム酒を飲んだら";
+	mes "鼻水も咳も止まってすっきりさ！";
+	next;
+	mes "[バンズ]";
+	mes "まさに最高の酒！";
+	mes "さぁ、お前も一緒に飲もうぜ！";
+	close;
+}
+
+lhz_in03.gat,192,19,2	script	酔っぱらい	855,{
+	mes "[酔っぱらい]";
+	mes "ウイスキーだ……ウイスキーをくれ！";
+	next;
+	mes "[酔っぱらい]";
+	mes "水じゃねぇよ、ウイスキーだ！";
+	mes "ちくしょう～～～";
+	close;
+}
+
+lhz_in03.gat,184,38,2	script	ほらふき	55,{
+	mes "[ほらふき]";
+	mes "君、俺を誰だと思っている？";
+	mes "この俺を知らないのか？";
+	next;
+	mes "[ほらふき]";
+	mes "では、コモド戦争は知ってるか？";
+	next;
+	mes "[ほらふき]";
+	mes "俺はな、あの有名なコモドの";
+	mes "スキー部隊出身なんだぞ！";
+	next;
+	mes "[ほらふき]";
+	mes "何？　その目つき……？";
+	mes "信じてないのか!?";
+	close;
+}
+
+lhz_in03.gat,176,85,4	script	町人	869,{
+	mes "[ダイク]";
+	mes "仕事を終えて、家に帰る前に";
+	mes "ここで一杯やるのが、";
+	mes "私の唯一の楽しみなんだ。";
+	mes "ふと、自分は小さい人間なのか？";
+	mes "などと疑問に思ったりもするが……";
+	next;
+	mes "[ダイク]";
+	mes "でも、家には妻と可愛い子供がいて、";
+	mes "そして健康な自分がいる。";
+	mes "幸せなことだろう？";
+	mes "さぁ、お前も遠慮せずに飲め飲め！";
+	mes "もちろん、勘定は別々だがな！";
+	close;
+}
+
+lhz_in03.gat,180,83,6	script	町人	86,{
+	mes "[ミッチェル]";
+	mes "私は貧民街の人達が好きさ。";
+	mes "お互いに助け合って生きている。";
+	mes "人間は、そうやって生きていく";
+	mes "ものじゃない？";
+	close;
+}
+
+lhz_in03.gat,183,82,6	script	酔っぱらい	870,{
+	mes "[ライナース]";
+	mes "今、妻が病気で死線を";
+	mes "彷徨ってるところだ……";
+	mes "それなのに俺は、こんなとこで";
+	mes "酒飲んでるなんてな……";
+	next;
+	mes "[ライナース]";
+	mes "ああ……つらい現実や記憶が、";
+	mes "すべて消えてしまえばいいのに……";
+	mes "ウウウ……";
+	close;
+}
+
+lhz_in03.gat,189,87,4	script	酔っぱらい	869,{
+	mes "[ウング]";
+	mes "ウ～ヒック……";
+	mes "5年も付き合ってた女に";
+	mes "振られちまった……";
+	mes "ヒック……";
+	next;
+	mes "[ウング]";
+	mes "俺は元々酒飲みじゃないんだが";
+	mes "今日は飲まなきゃやってられねぇ";
+	mes "気分だ!!";
+	mes "ウウウ……ヒック!!";
+	mes "ち、ちくしょぉぉぉ～～";
+	close;
+}
+
+lhz_in03.gat,192,93,2	script	お嬢さん	862,{
+	mes "[ランコ]";
+	mes "お父さんのために";
+	mes "お店の手伝いをしてるんだけど、";
+	mes "腕がとても痛いの。";
+	next;
+	mes "[ランコ]";
+	mes "でも、ここに来る人達は、";
+	mes "飲んで笑って、一日働いた";
+	mes "疲れを癒してるのね。";
+	mes "そんな皆さんを見てると、";
+	mes "今日も一日お疲れ様って、";
+	mes "私も頑張らなくちゃって思うの。";
+	next;
+	mes "[ランコ]";
+	mes "私は休日になったら、";
+	mes "リヒタルゼンの市内を";
+	mes "見物して回りたいな……";
+	close;
+}
+
+//============================================================
+// 治安維持イベントNPC
+//------------------------------------------------------------
+lighthalzen.gat,0,0,0	script	治安維持局#Lhz	-1,{
 	end;
 OnEvent:
-	areamonster "lighthalzen.gat",0,0,400,350,"�`���s��",1592,30,"�����ێ���#Lhz";
-	mapannounce "lighthalzen.gat","�����ێ���: ���݁A�X�̎������������Ă��邽�߁A�Z���̊F�l�ɂ͋C�����Ă��������悤���肢�\���グ�܂��B�J��Ԃ��܂��B�Z���̊F�l�A���C�������������B",8;
+	areamonster "lighthalzen.gat",0,0,400,350,"チンピラ",1592,30,"治安維持局#Lhz";
+	mapannounce "lighthalzen.gat","治安維持局: 現在、街の治安が悪化しているため、住民の皆様には気をつけていただくようお願い申し上げます。繰り返します。住民の皆様、お気をつけください。",8;
 	initnpctimer;
 	end;
 OnTimer220000:
-	killmonster "lighthalzen.gat","�����ێ���#Lhz";
-	mapannounce "lighthalzen.gat","�����ێ���: ��X�����ێ��ǂŗ͂�s���������ʁA�X�̕s�����q��S�Ĕr�����邱�Ƃ��ł��܂����B�Z���̊F�l�͈��S���Ă��������B",8;
-	set getvariableofnpc('count,"�����ێ���#Lhz"),0;
+	killmonster "lighthalzen.gat","治安維持局#Lhz";
+	mapannounce "lighthalzen.gat","治安維持局: 我々治安維持局で力を尽くした結果、街の不穏分子を全て排除することができました。住民の皆様は安心してください。",8;
+	set getvariableofnpc('count,"治安維持員#Lhz"),0;
 	stopnpctimer;
 	end;
 }
 
-lighthalzen.gat,267,200,3	script	�����ێ���#Lhz	868,{
+lighthalzen.gat,267,200,3	script	治安維持員#Lhz	868,{
 	if(countitem(7350)) {
-		mes "[�����ێ���]";
-		mes "���O�͉��҂��I�@����H";
-		mes "�ʍs�؂������Ă��܂������B����B";
-		mes "�`���҂̂悤�Ɍ����܂����A";
-		mes "�m���Ɏ����ێ��ǂ̋���";
-		mes "�󂯂����ł��ˁB�ʂ�Ȃ����B";
+		mes "[治安維持員]";
+		mes "お前は何者だ！　うん？";
+		mes "通行証を持っていましたか。失礼。";
+		mes "冒険者のように見えますが、";
+		mes "確かに治安維持局の許可を";
+		mes "受けた方ですね。通りなさい。";
 		close2;
 		if(strnpcinfo(2)=="Lhz")
 			warp "lighthalzen.gat",303,229;
@@ -2604,41 +2604,41 @@ lighthalzen.gat,267,200,3	script	�����ێ���#Lhz	868,{
 		end;
 	}
 	if('count >= 15) {
-		mes "[�����ێ���]";
-		mes "�ŋߎ��B�ɋC�t����Ȃ��悤��";
-		mes "��������ƌ������֓���҂������āA";
-		mes "����Ɍx�����������܂����B";
-		mes "��̂ǂ�Ȏ҂�����ȂƂ����";
-		mes "�s�����藈���肷��̂��c�c";
-		mes "�܂��A�Ƃɂ������Ȃ�ł��B";
+		mes "[治安維持員]";
+		mes "最近私達に気付かれないように";
+		mes "こっそりと向こうへ入る者が多くて、";
+		mes "さらに警備を強化しました。";
+		mes "一体どんな者がこんなところを";
+		mes "行ったり来たりするのか……";
+		mes "まあ、とにかく問題なんです。";
 		if('count == 15) {
-			donpcevent "�����ێ���#Lhz::OnEvent";
+			donpcevent "治安維持局#Lhz::OnEvent";
 			set 'count,'count+1;
 		}
 		close;
 	}
 	if(rand(6)) {
-		mes "[�����ێ���]";
-		mes "�����B�ǂ���ʂ낤�Ƃ��Ă���I";
-		mes "���o���̂Ȃ��҂����̕n���X��";
-		mes "�s������킯�ɂ͂����Ȃ��B";
-		mes "���O�̂悤�ȉ������҂�ʂ�����";
-		mes "����������I";
+		mes "[治安維持員]";
+		mes "おい。どこを通ろうとしている！";
+		mes "見覚えのない者をあの貧民街へ";
+		mes "行かせるわけにはいかない。";
+		mes "お前のような怪しい者を通したら";
+		mes "治安が守れん！";
 		close;
 	}
 	if(gettime(3)<22 && gettime(3)>=2) {
-		mes "-�����ێ������T�{����";
-		mes "����悤���B�`�����X�͍����I";
-		mes "�f�����ʂ蔲���悤-";
+		mes "-治安維持員がサボって";
+		mes "いるようだ。チャンスは今だ！";
+		mes "素早く通り抜けよう-";
 	}
 	else {
-		mes "[�����ێ���]";
-		mes "���������c�c���������c�c";
-		mes "���������c�c�ށc�c�����c�c";
+		mes "[治安維持員]";
+		mes "ぐうぐう……ぐうぐう……";
+		mes "ぐうぐう……む……ぐう……";
 		next;
-		mes "-�����ێ������Q�Ă���B";
-		mes "����Ȃ�ʂꂻ�����B";
-		mes "�Â��ɒʂ��Ă݂悤-";
+		mes "-治安維持員が寝ている。";
+		mes "これなら通れそうだ。";
+		mes "静かに通ってみよう-";
 	}
 	close2;
 	if('count < 15)
@@ -2649,366 +2649,366 @@ lighthalzen.gat,267,200,3	script	�����ێ���#Lhz	868,{
 		warp "lighthalzen.gat",260,199;
 	end;
 }
-lighthalzen.gat,294,223,7	duplicate(�����ێ���#Lhz)	�����ێ���#Lhz_	868
+lighthalzen.gat,294,223,7	duplicate(治安維持員#Lhz)	治安維持員#Lhz_	868
 
 //============================================================
-// �������i���N�G�X�gNPC
+// 研究所進入クエストNPC
 //- Registry -------------------------------------------------
-// LHZ_1QUE -> 0�`11
-// LHZ_1QUE_CUBE -> �L���[�u���[���p�r�b�g�t���O
-// LHZ_1QUE_NUM -> �Í��i���o�[
+// LHZ_1QUE -> 0～11
+// LHZ_1QUE_CUBE -> キューブルーム用ビットフラグ
+// LHZ_1QUE_NUM -> 暗号ナンバー
 //------------------------------------------------------------
-lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
+lighthalzen.gat,341,224,3	script	フィッシボーン	868,{
 	if(baselevel < 60) {
-		mes "[�t�B�b�V�{�[��]";
-		mes "��c�c�����c�c�H";
-		mes "���͍��d���ŖZ�����񂾂���";
-		mes "�ז����Ȃ��ł���B";
+		mes "[フィッシボーン]";
+		mes "ん……何だ……？";
+		mes "俺は今仕事で忙しいんだから";
+		mes "邪魔しないでくれ。";
 		next;
-		mes "�]�N�G�X�g��i�s���郌�x����";
-		mes "�@�����Ȃ��悤���B";
-		mes "�@^FF0000Base���x��60^000000�ȏ�ɂȂ�����";
-		mes "�@�ēx�b�������悤�]";
+		mes "‐クエストを進行するレベルに";
+		mes "　満たないようだ。";
+		mes "　^FF0000Baseレベル60^000000以上になったら";
+		mes "　再度話しかけよう‐";
 		close;
 	}
 	switch(LHZ_1QUE) {
 	case 0:
-		mes "[�t�B�b�V�{�[��]";
-		mes "���I";
-		mes "���O�A�`���҂��ȁH";
-		mes "����ȏ������Ƃ����";
-		mes "�������T�������H";
+		mes "[フィッシボーン]";
+		mes "お！";
+		mes "お前、冒険者だな？";
+		mes "こんな小汚いところで";
+		mes "何かお探しかい？";
 		next;
-		menu "���ɉ����c�c",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�Ӂ[��c�c";
+		menu "特に何も……",-;
+		mes "[フィッシボーン]";
+		mes "ふーん……";
 		next;
-		mes "�]�j�͂��낶��ƁA�l���݂��邩��";
-		mes "�@�悤�ɂ��Ȃ������Ă���]";
+		mes "‐男はじろじろと、値踏みするかの";
+		mes "　ようにあなたを見ている‐";
 		next;
-		menu "�c�c���ł����H",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "����ȂɁc�c";
-		mes "�Ȃ��Ȃ��r��������������";
-		mes "�v���ĂȁB";
+		menu "……何ですか？",-;
+		mes "[フィッシボーン]";
+		mes "いやなに……";
+		mes "なかなか腕が立ちそうだと";
+		mes "思ってな。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�Ȃ��A������Ƃ��񂽁B";
-		mes "�ʔ����b������񂾂��A";
-		mes "�����Ă����Ȃ����H";
+		mes "[フィッシボーン]";
+		mes "なあ、ちょっとあんた。";
+		mes "面白い話があるんだが、";
+		mes "聞いていかないか？";
 		next;
-		if(select("���e�𕷂�","�f��") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���[��A�������c�c";
-			mes "�܂��A�C���ς������";
-			mes "�܂��b�������Ă���B";
+		if(select("内容を聞く","断る") == 2) {
+			mes "[フィッシボーン]";
+			mes "うーん、そうか……";
+			mes "まあ、気が変わったら";
+			mes "また話しかけてくれ。";
 			set LHZ_1QUE,1;
 			close;
 		}
 		// fall through
 	case 1:
 		if(LHZ_1QUE == 1) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���I";
-			mes "�ǂ������H";
-			mes "�b�𕷂��Ă��̂��H";
+			mes "[フィッシボーン]";
+			mes "お！";
+			mes "どうした？";
+			mes "話を聞いてくのか？";
 			next;
-			if(select("���e�𕷂�","�f��") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "���[��A�������c�c";
-				mes "�܂��A�C���ς������";
-				mes "�܂��b�������Ă���B";
+			if(select("内容を聞く","断る") == 2) {
+				mes "[フィッシボーン]";
+				mes "うーん、そうか……";
+				mes "まあ、気が変わったら";
+				mes "また話しかけてくれ。";
 				close;
 			}
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "���ށB";
-		mes "���͉��͂ȁA�ȑO";
-		mes "^ff0000���Q���V������������^000000��";
-		mes "������������Ă����񂾁B";
+		mes "[フィッシボーン]";
+		mes "うむ。";
+		mes "実は俺はな、以前";
+		mes "^ff0000レゲンシュルム研究所^000000で";
+		mes "研究員をやっていたんだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���Q���V��������������";
-		mes "�ʖ��u���̍H�w�������v�ƌĂ΂�A";
-		mes "���E���̐l���l�ԁu�K�[�f�B�A���v��";
-		mes "�J�������A���E��̌��������B";
+		mes "[フィッシボーン]";
+		mes "レゲンシュルム研究所は";
+		mes "別名「生体工学研究所」と呼ばれ、";
+		mes "世界初の人造人間「ガーディアン」を";
+		mes "開発した、世界一の研究所だ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���b�P���x���Ђ̒����̌������ŁA";
-		mes "���b�P���x���{�Ђ̒n���ɑ��݂���B";
-		mes "�܂��A���q�^���[���ŕ�炷�l�ԂȂ�";
-		mes "�N�ł��m���Ă��邱�Ƃ����ȁB";
+		mes "[フィッシボーン]";
+		mes "レッケンベル社の直轄の研究所で、";
+		mes "レッケンベル本社の地下に存在する。";
+		mes "まあ、リヒタルゼンで暮らす人間なら";
+		mes "誰でも知っていることだがな。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�e�n����D�ꂽ�Ȋw�҂��W�߂āA";
-		mes "�Ő�[�̌��������Ă��ĂȁB";
-		mes "�������������A�Ȃ��Ȃ��D�ꂽ";
-		mes "�Ȋw�҂������̂��B";
-		mes "�J�J�J�J�J�I";
+		mes "[フィッシボーン]";
+		mes "各地から優れた科学者を集めて、";
+		mes "最先端の研究をしていてな。";
+		mes "かく言う俺も、なかなか優れた";
+		mes "科学者だったのさ。";
+		mes "カカカカカ！";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "����ȉ������A�V�����z�����ꂽ";
-		mes "�����Ƃ��肪����Ȃ��Ă�B";
-		mes "���񂩂Ԃ���������A";
-		mes "�N�r�ɂȂ����܂��Ă��c�c";
+		mes "[フィッシボーン]";
+		mes "そんな俺だが、新しく配属された";
+		mes "所長とそりが合わなくてよ。";
+		mes "何回かぶつかった挙句、";
+		mes "クビになっちまってさ……";
 		next;
-		mes "�]�t�B�b�V�{�[���͂ԂԂ�";
-		mes "�@����������Ă���]";
+		mes "‐フィッシボーンはぶつぶつと";
+		mes "　文句を言っている‐";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����ƁA�b�����ꂽ�ȁB";
-		mes "���Q���V�������������́A���ɂ���";
-		mes "���ł��S�e���킩��Ȃ������ق�";
-		mes "����Ȍ����{�݂��B";
-		mes "�ꕔ�ł͉����������Ȍ�����";
-		mes "���Ă�������b�łȁB";
+		mes "[フィッシボーン]";
+		mes "おっと、話がそれたな。";
+		mes "レゲンシュルム研究所は、中にいた";
+		mes "俺でも全容がわからなかったほど";
+		mes "巨大な研究施設だ。";
+		mes "一部では何やら怪しげな研究も";
+		mes "しているっつう話でな。";
 		next;
-		menu "�������Ȍ����H",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�������邩�H";
-		mes "�����m���Ă���̂́A�\���x����";
-		mes "�b�����Ȃ��B";
-		mes "����������Ȃ�A�����̖ڂ�";
-		mes "�m���߂Ă݂�Ƃ����B";
+		menu "怪しげな研究？",-;
+		mes "[フィッシボーン]";
+		mes "興味あるか？";
+		mes "俺が知っているのは、噂レベルの";
+		mes "話しかない。";
+		mes "興味があるなら、自分の目で";
+		mes "確かめてみるといい。";
 		next;
-		menu "�ǂ�����āH",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���ށB�����ŉ��̏o�Ԃ��B";
-		mes "���Q���V��������������";
-		mes "�֌W�҈ȊO�������邱�Ƃ�";
-		mes "�ł��Ȃ����A���͌�������";
-		mes "�E�э��߂闠�̃��[�g��";
-		mes "�m���Ă���B";
+		menu "どうやって？",-;
+		mes "[フィッシボーン]";
+		mes "うむ。そこで俺の出番だ。";
+		mes "レゲンシュルム研究所は";
+		mes "関係者以外立ち入ることが";
+		mes "できないが、俺は研究所に";
+		mes "忍び込める裏のルートを";
+		mes "知っている。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���O�����Q���V��������������";
-		mes "�����s���Ă��邩������";
-		mes "����Ȃ�A�����Ă�邺�H";
+		mes "[フィッシボーン]";
+		mes "お前がレゲンシュルム研究所で";
+		mes "何が行われているか興味が";
+		mes "あるなら、教えてやるぜ？";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�܂��A�������^�_��";
-		mes "�����Ă��킯�ɂ�";
-		mes "�����Ȃ����ȁI";
+		mes "[フィッシボーン]";
+		mes "まあ、もちろんタダで";
+		mes "教えてやるわけには";
+		mes "いかないがな！";
 		next;
-		if(select("������K�v�Ȃ�ł����H","�ł͌��\�ł�") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "�Ȃ񂾁H";
-			mes "�������킹���Ȃ��̂��H";
-			mes "�܂��A�m�肽���Ȃ�����A";
-			mes "�܂�������B";
+		if(select("いくら必要なんですか？","では結構です") == 2) {
+			mes "[フィッシボーン]";
+			mes "なんだ？";
+			mes "持ち合わせがないのか？";
+			mes "まあ、知りたくなったら、";
+			mes "また来いよ。";
 			set LHZ_1QUE,2;
 			close;
 		}
 		// fall through
 	case 2:
 		if(LHZ_1QUE == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���I";
-			mes "�ǂ������H";
-			mes "����ς茤�����ւ�";
-			mes "���[�g��m�肽���̂��H";
+			mes "[フィッシボーン]";
+			mes "お！";
+			mes "どうした？";
+			mes "やっぱり研究所への";
+			mes "ルートを知りたいのか？";
 			next;
-			if(select("������K�v�Ȃ�ł����H","���\�ł�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������c�c";
-				mes "�܂��A�m�肽���Ȃ�����A";
-				mes "�܂�������B";
+			if(select("いくら必要なんですか？","結構です") == 2) {
+				mes "[フィッシボーン]";
+				mes "そうか……";
+				mes "まあ、知りたくなったら、";
+				mes "また来いよ。";
 				close;
 			}
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "�������ȁc�c";
-		mes "���ꂶ�Ⴀ�A100��Zeny�p�ӂ��ȁI";
+		mes "[フィッシボーン]";
+		mes "そうだな……";
+		mes "それじゃあ、100億Zeny用意しな！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c";
+		mes "…………";
 		emotion 9,"";
 		emotion 9;
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�c�c�c�c";
-		mes "����A��k����I";
-		mes "��k������A����Ȋ������ȁI";
+		mes "[フィッシボーン]";
+		mes "…………";
+		mes "じょ、冗談だよ！";
+		mes "冗談だから、そんな顔をするな！";
 		next;
-		if(select("�{���͂�����Ȃ�ł����H","�������\�ł�") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����c�c";
-			mes "�܁A�܂��A���������Ȃ�����A";
-			mes "�܂�������B";
+		if(select("本当はいくらなんですか？","もう結構です") == 2) {
+			mes "[フィッシボーン]";
+			mes "うう……";
+			mes "ま、まあ、聞きたくなったら、";
+			mes "また来いよ。";
 			set LHZ_1QUE,3;
 			close;
 		}
 		// fall through
 	case 3:
 		if(LHZ_1QUE == 3) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���I";
-			mes "�ǂ������H";
-			mes "����ς茤�����ւ�";
-			mes "���[�g��m�肽���̂��H";
+			mes "[フィッシボーン]";
+			mes "お！";
+			mes "どうした？";
+			mes "やっぱり研究所への";
+			mes "ルートを知りたいのか？";
 			next;
-			if(select("������K�v�Ȃ�ł����H","���\�ł�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������c�c";
-				mes "�܂��A�m�肽���Ȃ�����A";
-				mes "�܂�������B";
+			if(select("いくら必要なんですか？","結構です") == 2) {
+				mes "[フィッシボーン]";
+				mes "そうか……";
+				mes "まあ、知りたくなったら、";
+				mes "また来いよ。";
 				close;
 			}
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����A�������ȁc�c";
-		mes "���ӂ������߂����܂������A";
-		mes "�����[���s�[�ł������B";
-		mes "�[���s�[��^4d4dff20��^000000�A";
-		mes "���𑵂��Ď����Ă��ȁI";
+		mes "[フィッシボーン]";
+		mes "ああ、そうだな……";
+		mes "おふざけが過ぎちまったし、";
+		mes "もうゼロピーでいいぞ。";
+		mes "ゼロピーを^4d4dff20個^000000、";
+		mes "耳を揃えて持ってきな！";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�������ʂɈ������Ă��񂾁B";
-		mes "�ǂ�����H";
-		mes "�����Ă���̂��A���Ȃ��̂��H";
+		mes "[フィッシボーン]";
+		mes "俺が特別に安くしてやるんだ。";
+		mes "どうする？";
+		mes "持ってくるのか、こないのか？";
 		next;
-		if(select("�����Ă��܂�","�f��") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "����Ȃ疳�����B�����B";
-			mes "�ǂ����s���ȁB";
+		if(select("持ってきます","断る") == 2) {
+			mes "[フィッシボーン]";
+			mes "そんなら無理だ。無理。";
+			mes "どっか行きな。";
 			set LHZ_1QUE,4;
 			close;
 		}
 		// fall through
 	case 4:
 		if(LHZ_1QUE == 4) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���I";
-			mes "�ǂ������H";
-			mes "�[���s�[��^4d4dff20��^000000�A";
-			mes "�����Ă���C�ɂȂ������H";
+			mes "[フィッシボーン]";
+			mes "お！";
+			mes "どうした？";
+			mes "ゼロピーを^4d4dff20個^000000、";
+			mes "持ってくる気になったか？";
 			next;
-			if(select("�����Ă��܂�","�f��") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "���O�Ȃ��c�c";
-				mes "���񂶂Ⴀ�C���ς������";
-				mes "�܂�������B";
+			if(select("持ってきます","断る") == 2) {
+				mes "[フィッシボーン]";
+				mes "お前なぁ……";
+				mes "そんじゃあ気が変わったら";
+				mes "また来いよ。";
 				close;
 			}
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "�悵�A���񂶂Ⴀ";
-		mes "�������������悤��";
-		mes "�[���s�[��^4d4dff20��^000000���B";
-		mes "���Ⴀ�A�s���Ă����B";
+		mes "[フィッシボーン]";
+		mes "よし、そんじゃあ";
+		mes "さっき言ったように";
+		mes "ゼロピーを^4d4dff20個^000000だ。";
+		mes "じゃあ、行ってこい。";
 		set LHZ_1QUE,5;
 		setquest 57800;
 		close;
 	case 5:
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����A";
-		mes "�O�Ɍ������u�c�͎����Ă������H";
+		mes "[フィッシボーン]";
+		mes "おう、";
+		mes "前に言ったブツは持ってきたか？";
 		next;
-		switch(select("������","�����Ă��܂���","���������Ă����ł��������H")) {
+		switch(select("いいえ","持ってきました","何を持ってくるんでしたっけ？")) {
 		case 1:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�c�c�������O�����炩��";
-			mes "�C���N���Ȃ������ɁA";
-			mes "�������̑O�������u�c��";
-			mes "�����Ă����ق����������B";
+			mes "[フィッシボーン]";
+			mes "……俺がお前をからかう";
+			mes "気が起きないうちに、";
+			mes "早くこの前言ったブツを";
+			mes "持ってきたほうがいいぞ。";
 			close;
 		case 2:
 			if(countitem(909)<20) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "���������c�c";
-				mes "^4d4dff�[���s�[��20��^000000���B";
-				mes "��������������x���������";
-				mes "�m�F���Ă���B";
+				mes "[フィッシボーン]";
+				mes "おいおい……";
+				mes "^4d4dffゼロピーを20個^000000だ。";
+				mes "持ち物をもう一度しっかりと";
+				mes "確認してくれ。";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "���ށI";
-			mes "���̎v�����Ƃ���A";
-			mes "��������d�������Ȃ��Ă����ȁB";
-			mes "�����Ĉ��������ȁH";
-			mes "�悵�A�����[�g�������Ă�낤�B";
+			mes "[フィッシボーン]";
+			mes "うむ！";
+			mes "俺の思ったとおり、";
+			mes "きっちり仕事をこなしてくれるな。";
+			mes "試して悪かったな？";
+			mes "よし、裏ルートを教えてやろう。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���A�����A���Ⴂ����Ȃ�H";
-			mes "�������O�ɂ��Ă��邱�Ƃ�";
-			mes "�������̔閧�̓����܂�";
-			mes "�ē����邱�Ƃ������B";
-			mes "�������̒��܂ŘA��čs���Ȃ��";
-			mes "���Ƃ͂ł��Ȃ�����ȁH";
+			mes "[フィッシボーン]";
+			mes "あ、ただ、勘違いするなよ？";
+			mes "俺がお前にしてやれることは";
+			mes "研究所の秘密の入口まで";
+			mes "案内することだけだ。";
+			mes "研究所の中まで連れて行くなんて";
+			mes "ことはできないからな？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���������Ă��閧�̓����́A";
-			mes "�E�������A�܂���������������";
-			mes "�����������Ă���B";
+			mes "[フィッシボーン]";
+			mes "俺が送ってやる秘密の入口は、";
+			mes "右も左も、まったく同じ部屋が";
+			mes "いくつも続いている。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�������ǂ��ɂ��邩�킩��Ȃ�";
-			mes "�Ȃ邪�A�Ŕ̕����𗊂��";
-			mes "�˔j���Ă���B";
+			mes "[フィッシボーン]";
+			mes "自分がどこにいるかわからなく";
+			mes "なるが、看板の文字を頼りに";
+			mes "突破してくれ。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�Ŕɂ́A���E���E���E�ւ�";
-			mes "�����ꂩ��������Ă��āA";
-			mes "�ւƏ����ꂽ�����܂ōs�����";
-			mes "�S�[���͋߂����B";
+			mes "[フィッシボーン]";
+			mes "看板には、α・β・γ・ωの";
+			mes "いずれかが書かれていて、";
+			mes "ωと書かれた部屋まで行ければ";
+			mes "ゴールは近いぞ。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����𔲂���ƁA���錤������";
-			mes "���ǂ蒅���B";
-			mes "���̌������ɂ́A���Q���V�������ւ�";
-			mes "���[�g���B�����߁A";
-			mes "���܂��܂Ȏd�|�����{����Ă���B";
+			mes "[フィッシボーン]";
+			mes "そこを抜けると、ある研究室に";
+			mes "たどり着く。";
+			mes "その研究室には、レゲンシュルムへの";
+			mes "ルートを隠すため、";
+			mes "さまざまな仕掛けが施されている。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�ݒu����Ă��镨��A�x�b�h�̉��A";
-			mes "�ǂȂ񂩂���[�����ׂāA";
-			mes "���̕����𔲂���񂾁B";
-			mes "�������炻�̐悪���ړ��Ă̏ꏊ���B";
+			mes "[フィッシボーン]";
+			mes "設置されている物や、ベッドの下、";
+			mes "壁なんかもよーく調べて、";
+			mes "その部屋を抜けるんだ。";
+			mes "そしたらその先がお目当ての場所さ。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�ꉞ���O���S�̏�����";
-			mes "�K�v���낤�B";
-			mes "�������o���Ă���܂������B";
+			mes "[フィッシボーン]";
+			mes "一応お前も心の準備が";
+			mes "必要だろう。";
+			mes "準備が出来てからまた来い。";
 			delitem 909,20;
 			set LHZ_1QUE,6;
 			chgquest 57800,57810;
 			close;
 		case 3:
-			mes "[�t�B�b�V�{�[��]";
-			mes "���������c�c";
-			mes "����Ȃɓ�����Ƃ�";
-			mes "����ł��Ȃ��͂������H";
-			mes "^4d4dff�[���s�[��20��^000000����I";
-			mes "��낵���ȁI";
+			mes "[フィッシボーン]";
+			mes "おいおい……";
+			mes "そんなに難しいことを";
+			mes "頼んでいないはずだぜ？";
+			mes "^4d4dffゼロピーを20個^000000だよ！";
+			mes "よろしくな！";
 			close;
 		}
 	case 6:
-		mes "[�t�B�b�V�{�[��]";
-		mes "��A�S�̏����͂ł����̂��H";
-		mes "�������s���̂��H";
+		mes "[フィッシボーン]";
+		mes "ん、心の準備はできたのか？";
+		mes "今すぐ行くのか？";
 		next;
-		switch(select("������","�s���܂�","^FF0000�������̎d�|���ɂ��ċ����Ăق���^000000")) {
+		switch(select("いいえ","行きます","^FF0000研究室の仕掛けについて教えてほしい^000000")) {
 		case 1:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�܂��Ȃ̂��c�c";
-			mes "�܂������B";
-			mes "�����ȁA���܂�҂ĂȂ�����ȁB";
-			mes "���ނ��B";
+			mes "[フィッシボーン]";
+			mes "まだなのか……";
+			mes "まあいい。";
+			mes "だがな、あまり待てないからな。";
+			mes "頼むぞ。";
 			close;
 		case 2:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悵�I";
-			mes "�܂����������Đ[�ċz�ł����ĂȁB";
+			mes "[フィッシボーン]";
+			mes "よし！";
+			mes "まあ落ち着いて深呼吸でもしてな。";
 			if(checkquest(57805) & 0x8) {
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "���ƁA�������̎d�|�����������@��";
-				mes "�������̖�̋߂��Ŋm�F�ł���悤��";
-				mes "���Ă���������ȁB";
+				mes "[フィッシボーン]";
+				mes "あと、研究室の仕掛けを解く方法は";
+				mes "研究室の門の近くで確認できるように";
+				mes "しておいたからな。";
 				next;
-				mes "[�t�B�b�V�{�[��]";
+				mes "[フィッシボーン]";
 			}
-			mes "�񂶂�s���Ă����I";
+			mes "んじゃ行ってこい！";
 			close2;
 			set LHZ_1QUE,7;
 			chgquest 57810,57815;
@@ -3019,36 +3019,36 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 			}
 		case 3:
 			if(checkquest(57805) & 0x8) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�悵�A������x�����Ă�邩��";
-				mes "�������蕷����B";
+				mes "[フィッシボーン]";
+				mes "よし、もう一度教えてやるから";
+				mes "しっかり聞けよ。";
 				next;
 				break;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�[���s�[��^4d4dff100��^000000�����Ȃ�";
-			mes "�������̎d�|�����������@��";
-			mes "�����Ă�邪�A�ǂ�����H";
+			mes "[フィッシボーン]";
+			mes "ゼロピーを^4d4dff100個^000000くれるなら";
+			mes "研究室の仕掛けを解く方法を";
+			mes "教えてやるが、どうする？";
 			next;
-			if(select("�[���s�[��100�n��","�K�v�Ȃ�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������B";
-				mes "�[���s�[^4d4dff100��^000000�������ė����";
-				mes "���ł������Ă�邺�B";
+			if(select("ゼロピーを100個渡す","必要ない") == 2) {
+				mes "[フィッシボーン]";
+				mes "そうか。";
+				mes "ゼロピー^4d4dff100個^000000を持って来れば";
+				mes "いつでも教えてやるぜ。";
 				close;
 			}
 			if(countitem(909)<100) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "���������A�[���s�[������Ȃ����H";
-				mes "���ꂶ�ዳ���Ă��Ȃ��ȁB";
-				mes "���������m�F���āA";
-				mes "������x�b�������Ă���B";
+				mes "[フィッシボーン]";
+				mes "おいおい、ゼロピーが足りないぞ？";
+				mes "これじゃ教えてやれないな。";
+				mes "持ち物を確認して、";
+				mes "もう一度話しかけてくれ。";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悵�悵�A�m����";
-			mes "�[���s�[100�A";
-			mes "�󂯎�������I";
+			mes "[フィッシボーン]";
+			mes "よしよし、確かに";
+			mes "ゼロピー100個、";
+			mes "受け取ったぜ！";
 			delitem 909,100;
 			setquest 57805;
 			compquest 57805;
@@ -3056,25 +3056,25 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 		}
 		break;
 	case 7:
-		mes "[�t�B�b�V�{�[��]";
-		mes "��H";
-		mes "���̊���������A";
-		mes "�������������Ĕ敾���Ă���";
-		mes "�悤���ȁI";
-		mes "������x���킵�Ă݂邩�H";
+		mes "[フィッシボーン]";
+		mes "ん？";
+		mes "その顔を見る限り、";
+		mes "あちこち動いて疲弊している";
+		mes "ようだな！";
+		mes "もう一度挑戦してみるか？";
 		next;
-		switch(select("������","�͂�","^FF0000�������̎d�|���ɂ��ċ����Ăق���^000000")) {
+		switch(select("いいえ","はい","^FF0000研究室の仕掛けについて教えてほしい^000000")) {
 		case 1:
-			mes "[�t�B�b�V�{�[��]";
-			mes "������ꂽ�悤���ȁH";
-			mes "�܁A��ł܂��s�������Ȃ�����";
-			mes "�����ɗ�����B";
+			mes "[フィッシボーン]";
+			mes "相当疲れたようだな？";
+			mes "ま、後でまた行きたくなったら";
+			mes "ここに来いよ。";
 			close;
 		case 2:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悵�B�񂶂Ⴀ";
-			mes "�܂������Ă�낤�B";
-			mes "���x�͏�肭����Ă����B";
+			mes "[フィッシボーン]";
+			mes "よし。んじゃあ";
+			mes "また送ってやろう。";
+			mes "今度は上手くやってこい。";
 			close2;
 			switch(rand(3)) {
 			case 0: warp "lhz_cube.gat",66,74; end;
@@ -3083,36 +3083,36 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 			}
 		case 3:
 			if(checkquest(57805) & 0x8) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�悵�A������x�����Ă�邩��";
-				mes "�������蕷����B";
+				mes "[フィッシボーン]";
+				mes "よし、もう一度教えてやるから";
+				mes "しっかり聞けよ。";
 				next;
 				break;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�[���s�[��^4d4dff100��^000000�����Ȃ�";
-			mes "�������̎d�|�����������@��";
-			mes "�����Ă�邪�A�ǂ�����H";
+			mes "[フィッシボーン]";
+			mes "ゼロピーを^4d4dff100個^000000くれるなら";
+			mes "研究室の仕掛けを解く方法を";
+			mes "教えてやるが、どうする？";
 			next;
-			if(select("�[���s�[��100�n��","�K�v�Ȃ�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������B";
-				mes "�[���s�[^4d4dff100��^000000�������ė����";
-				mes "���ł������Ă�邺�B";
+			if(select("ゼロピーを100個渡す","必要ない") == 2) {
+				mes "[フィッシボーン]";
+				mes "そうか。";
+				mes "ゼロピー^4d4dff100個^000000を持って来れば";
+				mes "いつでも教えてやるぜ。";
 				close;
 			}
 			if(countitem(909)<100) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "���������A�[���s�[������Ȃ����H";
-				mes "���ꂶ�ዳ���Ă��Ȃ��ȁB";
-				mes "���������m�F���āA";
-				mes "������x�b�������Ă���B";
+				mes "[フィッシボーン]";
+				mes "おいおい、ゼロピーが足りないぞ？";
+				mes "これじゃ教えてやれないな。";
+				mes "持ち物を確認して、";
+				mes "もう一度話しかけてくれ。";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悵�悵�A�m����";
-			mes "�[���s�[100�A";
-			mes "�󂯎�������I";
+			mes "[フィッシボーン]";
+			mes "よしよし、確かに";
+			mes "ゼロピー100個、";
+			mes "受け取ったぜ！";
 			delitem 909,100;
 			setquest 57805;
 			compquest 57805;
@@ -3120,60 +3120,60 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 		}
 		break;
 	case 8:
-		mes "[�t�B�b�V�{�[��]";
-		mes "�悭�A���Ă����ȁB";
-		mes "���X�S�z�������B";
+		mes "[フィッシボーン]";
+		mes "よく帰ってきたな。";
+		mes "少々心配したぞ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���O���]�ޕ��͓���ꂽ�̂��H";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "���Ƃ��c�c�ł��ˁB";
-		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����O�܂ł͌�������";
-		mes "�����Ă����B";
-		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "����Ȃ�ɔ\�͂̂���Ȋw�҂�������";
-		mes "�������̏����������ĂȁB";
-		mes "���̏����ƍ���Ȃ��Ăȁc�c";
-		mes "����Ŏ��߂����Ă킯���B";
+		mes "[フィッシボーン]";
+		mes "お前が望む物は得られたのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "������������ł����B";
+		mes "何とか……ですね。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���͂���Ȏd�������Ȃ���A";
-		mes "�����C�̌����܂܂�";
-		mes "�߂����Ă���c�c";
-		mes "�Ƃɂ����A���O���]�ޕ���";
-		mes "�����ėǂ������ȁB";
+		mes "[フィッシボーン]";
+		mes "俺も前までは研究所で";
+		mes "働いていた。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�]�k�����A���O���s���Ă���";
-		mes "�ꏊ���悭�T���΁A";
-		mes "�������̒n���ɍs�����[�g��";
-		mes "����͂����B";
+		mes "[フィッシボーン]";
+		mes "それなりに能力のある科学者だったが";
+		mes "研究所の所長が代わってな。";
+		mes "その所長と合わなくてな……";
+		mes "そんで辞めたってわけさ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�������O�����̋C�Ȃ�A";
-		mes "������x�����Ă�邪�ǂ����H";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "そうだったんですか。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�܂������Ă�낤���H";
+		mes "[フィッシボーン]";
+		mes "今はこんな仕事をしながら、";
+		mes "毎日気の向くままに";
+		mes "過ごしている……";
+		mes "とにかく、お前が望む物を";
+		mes "得られて良かったな。";
 		next;
-		if(select("�͂�","������") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "�������c�c";
-			mes "�܂��A�������ʍs�p�X��";
-			mes "�������ɓ��邱�Ǝ��̂�";
-			mes "���Ȃ����낤���ȁB";
-			mes "�킴�킴�댯��`�����Ƃ��Ȃ����B";
+		mes "[フィッシボーン]";
+		mes "余談だが、お前が行ってきた";
+		mes "場所をよく探せば、";
+		mes "研究所の地下に行くルートが";
+		mes "あるはずだ。";
+		next;
+		mes "[フィッシボーン]";
+		mes "もしお前がその気なら、";
+		mes "もう一度送ってやるがどうだ？";
+		next;
+		mes "[フィッシボーン]";
+		mes "また送ってやろうか？";
+		next;
+		if(select("はい","いいえ") == 2) {
+			mes "[フィッシボーン]";
+			mes "そうか……";
+			mes "まぁ、今得た通行パスで";
+			mes "研究所に入ること自体は";
+			mes "問題ないだろうしな。";
+			mes "わざわざ危険を冒すこともないか。";
 			close;
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "���ꂶ��A�悭�T���񂾂��B";
+		mes "[フィッシボーン]";
+		mes "それじゃ、よく探すんだぞ。";
 		close2;
 		switch(rand(3)) {
 		case 0: warp "lhz_cube.gat",66,74; end;
@@ -3181,179 +3181,179 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 		case 2: warp "lhz_cube.gat",67,193; end;
 		}
 	case 9:
-		mes "[�t�B�b�V�{�[��]";
-		mes "�ق��A�������T�����Ă����B";
-		mes "�������Ȃ�����ȁB";
-		mes "���̐�ɓ���ɂ́c�c";
+		mes "[フィッシボーン]";
+		mes "ほぅ、入り口を探し当てたか。";
+		mes "そうこなくちゃな。";
+		mes "その先に入るには……";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����ǂ�ʂ��čs���Ȃ���";
-		mes "�����Ȃ��񂾂ȁB";
+		mes "[フィッシボーン]";
+		mes "下水管を通って行かないと";
+		mes "いけないんだな。";
 		emotion 23,"";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�c�c�܂����͂����������Ȃ��񂾁B";
-		mes "�s�������Ȃ�䖝���邱�Ƃ��B";
+		mes "[フィッシボーン]";
+		mes "……まぁ道はあそこしかないんだ。";
+		mes "行きたいなら我慢することだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�܁A�C�����čs���Ă����I";
-		mes "�����ă��Q���V��������������";
-		mes "�Õ������@��t�@�蒲�׏グ�A";
-		mes "���̖�����n�ɗ��Ƃ��񂾁I";
+		mes "[フィッシボーン]";
+		mes "ま、気をつけて行ってこい！";
+		mes "そしてレゲンシュルム研究所の";
+		mes "暗部を根掘り葉掘り調べ上げ、";
+		mes "その名声を地に落とすんだ！";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�J�J�J�J�J�I";
-		mes "���ꂩ��N���邱�Ƃ�";
-		mes "�z�����邾���Ŗ��������`";
-		mes "�����N�r�ɂ�����ǂ��Ȃ邩�A";
-		mes "�v���m�点�Ă��I";
+		mes "[フィッシボーン]";
+		mes "カカカカカ！";
+		mes "これから起こることを";
+		mes "想像するだけで愉快だぜ～";
+		mes "俺をクビにしたらどうなるか、";
+		mes "思い知らせてやる！";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���������A����ȕ����炸����";
-		mes "���������Ȃ���΁A�������";
-		mes "���������ɂȂꂽ����";
-		mes "����Ȃ������̂Ɂc�c";
+		mes "[フィッシボーン]";
+		mes "だいたい、あんな分からず屋の";
+		mes "所長が来なければ、いずれは";
+		mes "俺が所長になれたかも";
+		mes "しれなかったのに……";
 		next;
-		menu "���Ȃ��������ɁH",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "��H�@���`";
-		mes "�܁A�\���͂Ȃ����Ȃ������A";
-		mes "��������Ȃ��c�c�����b���I";
-		mes "�J�J�J�J�J!!";
+		menu "あなたが所長に？",-;
+		mes "[フィッシボーン]";
+		mes "ん？　んん～";
+		mes "ま、可能性はなくもなかった、";
+		mes "かもしれない……っつう話だ！";
+		mes "カカカカカ!!";
 		next;
-		mes "�]���Q���V�������������ւ�";
-		mes "�@�����ǂ�ʂ��čs���K�v��";
-		mes "�@���邻�����]";
+		mes "‐レゲンシュルム研究所へは";
+		mes "　下水管を通って行く必要が";
+		mes "　あるそうだ‐";
 		set LHZ_1QUE,10;
 		chgquest 57825,61350;
 		viewpoint 1,313,301,0,0xFF0000;
 		close;
 	case 10:
-		mes "[�t�B�b�V�{�[��]";
-		mes "�Ȃ񂾁H";
-		mes "�܂������p������̂��H";
+		mes "[フィッシボーン]";
+		mes "なんだ？";
+		mes "まだ何か用があるのか？";
 		next;
-		menu "�������ɂ��Ēm���Ă��邱�Ƃ�������",-;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�m���Ă��邱�Ƃ˂��c�c�B";
-		mes "�c�c�����I";
-		mes "��������A���������Ă�������";
-		mes "^0000FF���l�̘r��^000000�������Č���������";
-		mes "������ƁA���������b��";
-		mes "�������ȁB";
+		menu "研究所について知っていることを教えて",-;
+		mes "[フィッシボーン]";
+		mes "知っていることねぇ……。";
+		mes "……ああ！";
+		mes "そういや、俺が働いていたころ";
+		mes "^0000FF囚人の腕輪^000000を持って研究所内を";
+		mes "うろつくと、呪われるっつう話を";
+		mes "聞いたな。";
 		next;
 		if(countitem(7345) > 0) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "���A�Ȃ񂾁B";
-			mes "���O�A���l�̘r�ւ�";
-			mes "�����Ă邶��ˁ[���B";
+			mes "[フィッシボーン]";
+			mes "お、なんだ。";
+			mes "お前、囚人の腕輪を";
+			mes "持ってるじゃねーか。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�ŁA�􂢂̘b�Ȃ񂾂��c�c";
+			mes "[フィッシボーン]";
+			mes "で、呪いの話なんだが……";
 			next;
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "�ŏ��͂����̍��b����";
-		mes "�v���Ă����񂾂��ǂȁB";
-		mes "�������̎������Ă����Ă݂���A";
-		mes "�^���ɂȂ��ċA���ė��₪���āc�c�B";
+		mes "[フィッシボーン]";
+		mes "最初はただの作り話かと";
+		mes "思っていたんだけどな。";
+		mes "同僚が肝試しがてらやってみたら、";
+		mes "真っ青になって帰って来やがって……。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "����Ⴀ�A�ӂ����Ă���悤�ɂ�";
-		mes "�����Ȃ��������A�����Ɖ���";
-		mes "�������񂾂낤��B";
+		mes "[フィッシボーン]";
+		mes "ありゃあ、ふざけているようにも";
+		mes "見えなかったし、きっと何か";
+		mes "あったんだろうよ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����͂��̂��Ƃ���";
-		mes "���߂��܂�������A�ڂ�����";
-		mes "�����Ȃ��������c�c�B";
+		mes "[フィッシボーン]";
+		mes "そいつはそのあとすぐ";
+		mes "辞めちまったから、詳しくは";
+		mes "聞けなかったが……。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���H�@���H";
-		mes "�����ĂȂ���B";
-		mes "�����Ĕ��C����������˂����c�c�B";
+		mes "[フィッシボーン]";
+		mes "え？　俺？";
+		mes "試してないよ。";
+		mes "だって薄気味悪いじゃねぇか……。";
 		next;
-		mes "�]�t�B�b�V�{�[������A����������";
-		mes "�@�����Ƃ����ꏊ�𕷂����B";
-		mes "�@^0000FF���l�̘r��^000000�������āA���̏ꏊ��";
-		mes "�@�s���Ă݂悤�]";
+		mes "‐フィッシボーンから、研究所内の";
+		mes "　呪われるという場所を聞いた。";
+		mes "　^0000FF囚人の腕輪^000000を持って、その場所に";
+		mes "　行ってみよう‐";
 		next;
-		mes "�]����^0000FF���l�̘r��^000000�������Ă��Ȃ�";
-		mes "�@�ꍇ�ɂ́A���̍H�w��������";
-		mes "�@��ɓ���悤�]";
+		mes "‐もし^0000FF囚人の腕輪^000000を持っていない";
+		mes "　場合には、生体工学研究所で";
+		mes "　手に入れよう‐";
 		set LHZ_1QUE,11;
 		chgquest 61350,61355;
 		close;
 	case 11:
 		switch(LHZ_2QUE) {
 		case 0:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悤�B";
-			mes "^0000FF���l�̘r��^000000�������Č���������";
-			mes "������񂾂��H";
-			mes "�Y���Ȃ�H";
+			mes "[フィッシボーン]";
+			mes "よう。";
+			mes "^0000FF囚人の腕輪^000000を持って研究所内を";
+			mes "うろつくんだぞ？";
+			mes "忘れるなよ？";
 			next;
-			mes "�]�t�B�b�V�{�[������A����������";
-			mes "�@�����Ƃ����ꏊ�𕷂����B";
-			mes "�@^0000FF���l�̘r��^000000�������āA���̏ꏊ��";
-			mes "�@�s���Ă݂悤�]";
+			mes "‐フィッシボーンから、研究所内の";
+			mes "　呪われるという場所を聞いた。";
+			mes "　^0000FF囚人の腕輪^000000を持って、その場所に";
+			mes "　行ってみよう‐";
 			next;
-			mes "�]����^0000FF���l�̘r��^000000�������Ă��Ȃ�";
-			mes "�@�ꍇ�ɂ́A���̍H�w��������";
-			mes "�@��ɓ���悤�]";
+			mes "‐もし^0000FF囚人の腕輪^000000を持っていない";
+			mes "　場合には、生体工学研究所で";
+			mes "　手に入れよう‐";
 			close;
 		case 1:
 			if(LHZ_2QUE_CURSE == 0xF) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�悤�A�ǂ������H";
-				mes "���b�P���x���̒����͐i��ł��邩�H";
+				mes "[フィッシボーン]";
+				mes "よう、どうした？";
+				mes "レッケンベルの調査は進んでいるか？";
 				next;
-				if(select("�n���X�ɏڂ����l�𕷂�","���ɗp�͂Ȃ�") == 2) {
-					mes "[�t�B�b�V�{�[��]";
-					mes "�Ӂ`��B";
-					mes "�܁A�������ǂ�B";
-					mes "���������Ƃ���������A���ł�";
-					mes "�����Ă����H";
+				if(select("貧民街に詳しい人を聞く","特に用はない") == 2) {
+					mes "[フィッシボーン]";
+					mes "ふ～ん。";
+					mes "ま、いいけどよ。";
+					mes "困ったことがあったら、何でも";
+					mes "聞いてくれよ？";
 					next;
-					mes "[�t�B�b�V�{�[��]";
-					mes "�������邩��";
-					mes "�킩��񂯂ǂȁI";
-					mes "�J�J�J�J�J!!";
+					mes "[フィッシボーン]";
+					mes "答えられるかは";
+					mes "わからんけどな！";
+					mes "カカカカカ!!";
 					close;
 				}
-				mes "[�t�B�b�V�{�[��]";
-				mes "�n���X�ɏڂ����l�H";
-				mes "�����A���V���ȁB";
-				mes "���V���ڂ����l��";
-				mes "�܂��A���Ȃ��Ǝv�����H";
+				mes "[フィッシボーン]";
+				mes "貧民街に詳しい人？";
+				mes "そりゃ、長老だな。";
+				mes "長老より詳しい人は";
+				mes "まあ、いないと思うぜ？";
 				next;
-				mes "�]�t�B�b�V�{�[������";
-				mes "�@�n���X�ɏڂ����Ƃ���";
-				mes "�@���V�̋��ꏊ�𕷂����B";
-				mes "�@�n���X�̒��V��";
-				mes "�@�b�𕷂��ɍs�����]";
+				mes "‐フィッシボーンから";
+				mes "　貧民街に詳しいという";
+				mes "　長老の居場所を聞いた。";
+				mes "　貧民街の長老に";
+				mes "　話を聞きに行こう‐";
 				viewpoint 1,346,263,0,0xFF0000;
 				if(checkquest(61382))
 					chgquest 61382,61383;
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�悤�B";
-			mes "�v���Ԃ肾�ȁB";
-			mes "�����Ǝ��ꂽ���H";
+			mes "[フィッシボーン]";
+			mes "よう。";
+			mes "久しぶりだな。";
+			mes "ちゃんと呪われたか？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�ق��A��͂�\�͖{�����������c�c";
-			mes "�n���X�ɋA�肽���A�˂��c�c�B";
-			mes "���ɂ͉����������A�����ς�";
-			mes "�킩���ȁB";
+			mes "[フィッシボーン]";
+			mes "ほう、やはり噂は本当だったか……";
+			mes "貧民街に帰りたい、ねぇ……。";
+			mes "俺には何が何だか、さっぱり";
+			mes "わからんな。";
 			next;
-			mes "[�H�H�H�̐�]";
-			mes "�c�c�����āc�c";
+			mes "[？？？の声]";
+			mes "……助けて……";
 			next;
-			mes "�]���̒��ɐ��������A";
-			mes "�@�����ɁA�ꏊ�̃C���[�W��";
-			mes "�@�`����Ă���c�c�]";
+			mes "‐頭の中に声が響き、";
+			mes "　同時に、場所のイメージが";
+			mes "　伝わってくる……‐";
 			if(checkquest(61365) == 0)
 				viewpoint 1,344,278,0,0xFF0000;
 			else
@@ -3371,121 +3371,121 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 			else
 				viewpoint 2,1,1,3,0xFFFFFF;
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����A�ǂ������H";
-			mes "��F���������H";
+			mes "[フィッシボーン]";
+			mes "おい、どうした？";
+			mes "顔色が悪いぜ？";
 			next;
-			menu "�����A�ʂɁc�c",-;
-			mes "�]���l�̘r�ւ������āA";
-			mes "�@�C���[�W���킢���ꏊ��";
-			mes "�@�s���Ă݂悤�]";
+			menu "いえ、別に……",-;
+			mes "‐囚人の腕輪を持って、";
+			mes "　イメージがわいた場所に";
+			mes "　行ってみよう‐";
 			close;
 		default:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�v���Ԃ肾�ȁB";
-			mes "���������Ƃ���������A";
-			mes "���ł������Ă����H";
+			mes "[フィッシボーン]";
+			mes "久しぶりだな。";
+			mes "困ったことがあったら、";
+			mes "何でも聞いてくれよ？";
 			close;
 		case 4:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����H";
-			mes "�n��1�K�̌������ɍs�����Ƃ�����A";
-			mes "�x�����Ɏ~�߂�ꂽ�H";
+			mes "[フィッシボーン]";
+			mes "ああ？";
+			mes "地下1階の研究室に行こうとしたら、";
+			mes "警備員に止められた？";
 			emotion 33,"";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�J�J�J�I";
-			mes "�������͌x����������";
-			mes "�ꌩ�N�����Â炻���Ɋ����邪�A";
-			mes "���͂�����̌x���Ȃ��";
-			mes "���Ȃ�G�łȁB";
+			mes "[フィッシボーン]";
+			mes "カカカ！";
+			mes "あそこは警備員がいて";
+			mes "一見侵入しづらそうに感じるが、";
+			mes "実はあいつらの警備なんて";
+			mes "かなり雑でな。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���傢�ƕϑ����đf�炪";
-			mes "�����Ȃ��悤�ɂ����܂��΁A";
-			mes "����Ȃ�ʂ��Ă���邾�낤��B";
+			mes "[フィッシボーン]";
+			mes "ちょいと変装して素顔が";
+			mes "見えないようにしちまえば、";
+			mes "すんなり通してくれるだろうよ。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�Ƃ͂����A�x�����ۂ��ϑ��ɂ����B";
-			mes "�������ȁA^0000FF�X�s���O���X^000000��^0000FF���Ђ�^000000��";
-			mes "���Ă����ΊԈႢ�Ȃ����낤�B";
-			mes "�Ȃ����������̌x�����́A";
-			mes "���Ђ��ƃ��K�l�̓z����������ȁB";
+			mes "[フィッシボーン]";
+			mes "とはいえ、警備員ぽい変装にしろよ。";
+			mes "そうだな、^0000FFスピングラス^000000と^0000FF白ひげ^000000を";
+			mes "つけていけば間違いないだろう。";
+			mes "なぜかあそこの警備員は、";
+			mes "白ひげとメガネの奴が多いからな。";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�c�c�{���ɂ��ꂾ���ŁH";
+			mes "……本当にそれだけで？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���������A�^���̂���H";
-			mes "����͎����Ă݂Ă��猾���Ă���I";
+			mes "[フィッシボーン]";
+			mes "おいおい、疑うのかよ？";
+			mes "文句は試してみてから言ってくれ！";
 			next;
-			mes "�]^0000FF�X�s���O���X^000000��^0000FF���Ђ�^000000�ŕϑ�����";
-			mes "�@�x�����ɘb�������Ă݂悤�]";
+			mes "‐^0000FFスピングラス^000000と^0000FF白ひげ^000000で変装して";
+			mes "　警備員に話しかけてみよう‐";
 			close;
 		case 9:
 		case 10:
-			mes "[�t�B�b�V�{�[��]";
-			mes "���悤�I";
-			mes "���q�͂ǂ����H";
+			mes "[フィッシボーン]";
+			mes "いよう！";
+			mes "調子はどうだ？";
 			next;
-			if(select("���������Ƃ�b��","���ɗp�͂Ȃ�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�Ӂ`��B";
-				mes "�܁A�������ǂ�B";
-				mes "���������Ƃ���������A���ł�";
-				mes "�����Ă����H";
+			if(select("あったことを話す","特に用はない") == 2) {
+				mes "[フィッシボーン]";
+				mes "ふ～ん。";
+				mes "ま、いいけどよ。";
+				mes "困ったことがあったら、何でも";
+				mes "聞いてくれよ？";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������邩��";
-				mes "�킩��񂯂ǂȁI";
-				mes "�J�J�J�J�J!!";
+				mes "[フィッシボーン]";
+				mes "答えられるかは";
+				mes "わからんけどな！";
+				mes "カカカカカ!!";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�Ȃ�قǁc�c";
-			mes "���悢��j�S�ɔ�����";
-			mes "�����݂������ȁB";
+			mes "[フィッシボーン]";
+			mes "なるほど……";
+			mes "いよいよ核心に迫って";
+			mes "来たみたいだな。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����ł�Ȃ�I";
-			mes "�܂��͂��̃y���_���g��";
-			mes "��������������񂾁I";
+			mes "[フィッシボーン]";
+			mes "だが焦るなよ！";
+			mes "まずはそのペンダントの";
+			mes "謎を解き明かすんだ！";
 			close;
 		case 11:
-			mes "[�t�B�b�V�{�[��]";
-			mes "�您�A�ǂ����H";
-			mes "�����킩�������H";
+			mes "[フィッシボーン]";
+			mes "よお、どうだ？";
+			mes "何かわかったか？";
 			next;
-			if(select("���������Ƃ�b��","���ɗp�͂Ȃ�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�Ӂ`��B";
-				mes "�܁A�������ǂ�B";
-				mes "���������Ƃ���������A���ł�";
-				mes "�����Ă����H";
+			if(select("あったことを話す","特に用はない") == 2) {
+				mes "[フィッシボーン]";
+				mes "ふ～ん。";
+				mes "ま、いいけどよ。";
+				mes "困ったことがあったら、何でも";
+				mes "聞いてくれよ？";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������邩��";
-				mes "�킩��񂯂ǂȁI";
-				mes "�J�J�J�J�J!!";
+				mes "[フィッシボーン]";
+				mes "答えられるかは";
+				mes "わからんけどな！";
+				mes "カカカカカ!!";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�����A���̏��̎q�Ȃ�";
-			mes "���������������Ƃ���ȁB";
-			mes "�����s���R�����炩�A";
-			mes "����܂�O�ɂ͏o�Ă��Ȃ����ȁB";
+			mes "[フィッシボーン]";
+			mes "ああ、その女の子なら";
+			mes "俺も見かけたことあるな。";
+			mes "足が不自由だからか、";
+			mes "あんまり外には出てこないがな。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�Ȃ��Ȃ��A���Ă��Ȃ��Z�M��";
-			mes "�����Ƒ҂��Ă���񂾂��ĂȂ��B";
-			mes "���킢���������Ă�ŁA";
-			mes "�ߏ��̂��΂��񂽂����A";
-			mes "���傭���傭�l�q������";
-			mes "�s���Ă���炵�����B";
+			mes "[フィッシボーン]";
+			mes "なかなか帰ってこない兄貴を";
+			mes "ずっと待っているんだってなぁ。";
+			mes "かわいそうだってんで、";
+			mes "近所のおばさんたちが、";
+			mes "ちょくちょく様子を見に";
+			mes "行っているらしいぜ。";
 			next;
-			mes "�]�t�B�b�V�{�[���ɏ�����";
-			mes "�@�Ƃ̏ꏊ�𕷂����B";
-			mes "�@�����̉Ƃɍs���Ă݂悤�]";
+			mes "‐フィッシボーンに少女の";
+			mes "　家の場所を聞いた。";
+			mes "　少女の家に行ってみよう‐";
 			viewpoint 1,324,322,0,0xFF0000;
 			close;
 		case 17:
@@ -3494,432 +3494,432 @@ lighthalzen.gat,341,224,3	script	�t�B�b�V�{�[��	868,{
 		case 20:
 		case 21:
 			if(checkquest(61480)) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������A�����I";
-				mes "���b�P���x���{�Ђ̈̂��z��";
-				mes "���Q���V������������������";
-				mes "����Ă邼���āA�i����񂾁I";
+				mes "[フィッシボーン]";
+				mes "告発だ、告発！";
+				mes "レッケンベル本社の偉い奴に";
+				mes "レゲンシュルムが怪しいこと";
+				mes "やってるぞって、訴えるんだ！";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "���������Ă��A�N�r�ɂȂ���";
-				mes "�������Ƃ����v���Ȃ�����ȁB";
-				mes "���O�ɔC�������I";
+				mes "[フィッシボーン]";
+				mes "俺が言っても、クビになった";
+				mes "腹いせとしか思われないからな。";
+				mes "お前に任せたぞ！";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�您�I";
-			mes "�ǂ������q�́H";
+			mes "[フィッシボーン]";
+			mes "よお！";
+			mes "どうだ調子は？";
 			next;
-			if(select("���������Ƃ�b��","���ɗp�͂Ȃ�") == 2) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�Ӂ`��B";
-				mes "�܁A�������ǂ�B";
-				mes "���������Ƃ���������A���ł�";
-				mes "�����Ă����H";
+			if(select("あったことを話す","特に用はない") == 2) {
+				mes "[フィッシボーン]";
+				mes "ふ～ん。";
+				mes "ま、いいけどよ。";
+				mes "困ったことがあったら、何でも";
+				mes "聞いてくれよ？";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������邩��";
-				mes "�킩��񂯂ǂȁI";
-				mes "�J�J�J�J�J!!";
+				mes "[フィッシボーン]";
+				mes "答えられるかは";
+				mes "わからんけどな！";
+				mes "カカカカカ!!";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�c�c�c�c�B";
+			mes "[フィッシボーン]";
+			mes "…………。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�c�c�c�c�c�c�B";
+			mes "[フィッシボーン]";
+			mes "………………。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�c�c�O�X�b";
-			mes "���`�����c�c�O�X�c�c";
-			mes "����Ȃ��Ƃ��Ȃ��c�c";
-			mes "�c�c�O�X��";
+			mes "[フィッシボーン]";
+			mes "……グスッ";
+			mes "そ～かぁ……グス……";
+			mes "そんなことがなぁ……";
+			mes "……グスン";
 			next;
-			mes "�]�t�B�b�V�{�[����";
-			mes "�@�K���ŗ܂��B���Ă���]";
+			mes "‐フィッシボーンは";
+			mes "　必死で涙を隠している‐";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���[�A�������傤�I";
-			mes "�Ȃ񂩂����A������";
-			mes "�ɉ��ȓW�J�����҂���";
-			mes "�����̂ɂ悧�I";
+			mes "[フィッシボーン]";
+			mes "あー、ちくしょう！";
+			mes "なんかこう、もっと";
+			mes "痛快な展開を期待して";
+			mes "いたのによぉ！";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���Q���V�������c�c";
-			mes "�����m��Ȃ����̕�����";
-			mes "����������������Ă₪��񂾁I";
+			mes "[フィッシボーン]";
+			mes "レゲンシュルム……";
+			mes "俺も知らない裏の部分で";
+			mes "いったい何をやってやがるんだ！";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "����͂����A�������A�����I";
-			mes "���b�P���x���{�Ђ̈̂��z��";
-			mes "���Q���V������������������";
-			mes "����Ă邼���āA�i����񂾁I";
+			mes "[フィッシボーン]";
+			mes "これはもう、告発だ、告発！";
+			mes "レッケンベル本社の偉い奴に";
+			mes "レゲンシュルムが怪しいこと";
+			mes "やってるぞって、訴えるんだ！";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���������Ă��A�N�r�ɂȂ���";
-			mes "�������Ƃ����v���Ȃ�����ȁB";
-			mes "���O�ɔC�������I";
+			mes "[フィッシボーン]";
+			mes "俺が言っても、クビになった";
+			mes "腹いせとしか思われないからな。";
+			mes "お前に任せたぞ！";
 			setquest 61480;
 			compquest 61480;
 			close;
 		case 22:
 		case 23:
 			if(checkquest(61485)) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�悤�A���O���I";
-				mes "�v���Ԃ肾�ȁI";
+				mes "[フィッシボーン]";
+				mes "よう、お前か！";
+				mes "久しぶりだな！";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "���ꂩ�炢�낢��l�����񂾂��A";
-				mes "�������Q���V�������ւ̎d�Ԃ�";
-				mes "�Ȃ�Ă�߂邱�Ƃɂ������B";
+				mes "[フィッシボーン]";
+				mes "あれからいろいろ考えたんだが、";
+				mes "もうレゲンシュルムへの仕返し";
+				mes "なんてやめることにしたぜ。";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "����ȏ������Ƃ��낾���ǂ�A";
-				mes "�����������Ă��Ȃ��������ɂ́A";
-				mes "�����Ɩʔ������Ƃ������񂾂�ȁB";
+				mes "[フィッシボーン]";
+				mes "こんな小汚いところだけどよ、";
+				mes "研究しかしてこなかった俺には、";
+				mes "何かと面白いことが多いんだよな。";
 				next;
-				mes "[�t�B�b�V�{�[��]";
-				mes "�������΂炭�����ɂ��āA";
-				mes "���ꂩ��̂��Ƃ�";
-				mes "���������l���Ă������Ƃɂ�����B";
+				mes "[フィッシボーン]";
+				mes "もうしばらくここにいて、";
+				mes "これからのことは";
+				mes "おいおい考えていくことにしたよ。";
 				close;
 			}
-			mes "[�t�B�b�V�{�[��]";
-			mes "�������I";
-			mes "���b�P���x���̈̂��z��";
-			mes "��������`���Ă�����!?";
+			mes "[フィッシボーン]";
+			mes "来たか！";
+			mes "レッケンベルの偉い奴に";
+			mes "しっかり伝えてきたか!?";
 			next;
-			menu "�͂�",-;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�c�c�c�c�B";
+			menu "はい",-;
+			mes "[フィッシボーン]";
+			mes "…………。";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�l�̎����c�c";
-			mes "�{���ɂ���Ȃ��Ƃ��c�c�H";
+			mes "[フィッシボーン]";
+			mes "人体実験……";
+			mes "本当にそんなことを……？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�m��Ȃ������Ƃ͂����A";
-			mes "��������ȑg�D��";
-			mes "������Ă��񂾂ȁc�c";
+			mes "[フィッシボーン]";
+			mes "知らなかったとはいえ、";
+			mes "俺もそんな組織に";
+			mes "加わってたんだな……";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "�ŁA���̃{���Z�u����";
-			mes "�Ȋw�҂��Ǖ�����ďI���H";
+			mes "[フィッシボーン]";
+			mes "で、そのボルセブって";
+			mes "科学者が追放されて終わり？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "������c�c�ߑR�Ƃ��˂��ȁB";
-			mes "���������A����ȑ傻�ꂽ���ƁA";
-			mes "�Ȋw�҈�l�łł�����񂩂ˁH";
+			mes "[フィッシボーン]";
+			mes "ううん……釈然としねぇな。";
+			mes "だいたい、そんな大それたこと、";
+			mes "科学者一人でできるもんかね？";
 			next;
-			mes "[�t�B�b�V�{�[��]";
-			mes "���₵�����A";
-			mes "���b�P���x���قǂ̊�Ƃ�";
-			mes "�����������ʂ������񂾂���A";
-			mes "�M���邵���Ȃ����c�c";
+			mes "[フィッシボーン]";
+			mes "いやしかし、";
+			mes "レッケンベルほどの企業が";
+			mes "調査した結果だっつうんだから、";
+			mes "信じるしかないか……";
 			setquest 61485;
 			compquest 61485;
 			close;
 		}
 	}
 	next;
-	mes "[�t�B�b�V�{�[��]";
-	mes "���ꂩ��������錤�����̎d�|����";
-	mes "�������@�́A�������̖�̋߂���";
-	mes "�m�F�ł���悤�ɂ��Ă���������ȁB";
-	mes "���Ŋo�����Ȃ��Ă�";
-	mes "�������ō������Ƃ��Ɋm�F����Ƃ����B";
+	mes "[フィッシボーン]";
+	mes "これから説明する研究室の仕掛けを";
+	mes "解く方法は、研究室の門の近くで";
+	mes "確認できるようにしておいたからな。";
+	mes "一回で覚えられなくても";
+	mes "研究室で困ったときに確認するといい。";
 	while(1) {
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���ꂶ��A�������A�悭������B";
-		mes "�������̎d�|���������ɂ�";
-		mes "^ff0000�ȉ~�`�̖͌^";
-		mes "���Z�ʑ̖̂͌^";
-		mes "���p�`�̖͌^^000000���K�v���B";
+		mes "[フィッシボーン]";
+		mes "それじゃ、いいか、よく聞けよ。";
+		mes "研究室の仕掛けを解くには";
+		mes "^ff0000楕円形の模型";
+		mes "正六面体の模型";
+		mes "多角形の模型^000000が必要だ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�܂��A^ff0000�ȉ~�`�̖͌^^000000����肷��ɂ�";
-		mes "�������̖�̂��΂ɒu����Ă��锠��";
-		mes "^ff0000��^000000����ɓ����B";
+		mes "[フィッシボーン]";
+		mes "まず、^ff0000楕円形の模型^000000を入手するには";
+		mes "研究室の門のそばに置かれている箱で";
+		mes "^ff0000斧^000000を手に入れろ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "^ff0000��^000000����ɓ��ꂽ��";
-		mes "�����̒����ɂ��铛��^ff0000��^000000�ŉ󂵂�";
-		mes "�����Ղ��g����悤�ɂ��Ă����B";
+		mes "[フィッシボーン]";
+		mes "^ff0000斧^000000を手に入れたら";
+		mes "部屋の中央にある筒を^ff0000斧^000000で壊して";
+		mes "数字盤を使えるようにしておけ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���Ɋ��̋߂��̏��ɎU�����Ă���";
-		mes "���ނ𒲂ׂ��^ff0000�Ԃ��J�M^000000�����邩��";
-		mes "�x�b�h�̘e�ɂ�����o����";
-		mes "^ff0000�Ԃ��J�M^000000�ŊJ���Ă݂�B";
-		mes "���o���̒��ɂ�^ff0000�����ȃi�C�t^000000������B";
+		mes "[フィッシボーン]";
+		mes "次に机の近くの床に散乱している";
+		mes "書類を調べると^ff0000赤いカギ^000000があるから";
+		mes "ベッドの脇にある引出しを";
+		mes "^ff0000赤いカギ^000000で開けてみろ。";
+		mes "引出しの中には^ff0000小さなナイフ^000000がある。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "^ff0000�����ȃi�C�t^000000���g����";
-		mes "�ǂɂ������Ă���G�𓮂����B";
-		mes "�G�̗��ɂ́A2���̐�����";
-		mes "9�g������Ă���͂����B";
+		mes "[フィッシボーン]";
+		mes "^ff0000小さなナイフ^000000を使って";
+		mes "壁にかかっている絵を動かせ。";
+		mes "絵の裏には、2桁の数字が";
+		mes "9組書かれているはずだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����̈�̈ʂ��ׂĒႢ���ɕ��בւ�";
-		mes "���בւ��������̏\�̈ʂ̐�����";
-		mes "�ŏ��Ɏg����悤�ɂ��������Ղ�";
-		mes "���͂���B";
-		mes "��x�ɓ��͂��Ȃ���";
-		mes "1��������9����͂���񂾁B";
+		mes "[フィッシボーン]";
+		mes "数字の一の位を比べて低い順に並べ替え";
+		mes "並べ替えた数字の十の位の数字を";
+		mes "最初に使えるようにした数字盤に";
+		mes "入力しろ。";
+		mes "一度に入力しないで";
+		mes "1文字ずつ9回入力するんだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�������^ff0000���F���J�M^000000�����ł��邩��";
-		mes "^ff0000���F���J�M^000000���g���āA���d�@���~�߂�B";
-		mes "���d�@���~�߂�΁A�x�b�h�̏�ɂ���";
-		mes "�d����������͂����B";
+		mes "[フィッシボーン]";
+		mes "筒からは^ff0000黄色いカギ^000000を入手できるから";
+		mes "^ff0000黄色いカギ^000000を使って、発電機を止めろ。";
+		mes "発電機を止めれば、ベッドの上にある";
+		mes "電燈も消えるはずだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�d���̒��ɂ�^ff0000�����J�M^000000������B";
-		mes "^ff0000�����J�M^000000�������ǂɎg����";
-		mes "^ff0000�ȉ~�`�̖͌^^000000�����ł���B";
+		mes "[フィッシボーン]";
+		mes "電燈の中には^ff0000黒いカギ^000000がある。";
+		mes "^ff0000黒いカギ^000000を試験管に使えば";
+		mes "^ff0000楕円形の模型^000000を入手できる。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "������ׂ̗ɒu���Ă��锠�𒲂ׂ��";
-		mes "3�̌���������͂�������";
-		mes "�ȉ~�`�̌���^ff0000�ȉ~�`�̖͌^^000000��";
-		mes "�͂߂Ă����B";
+		mes "[フィッシボーン]";
+		mes "押入れの隣に置いてある箱を調べると";
+		mes "3つの穴が見つかるはずだから";
+		mes "楕円形の穴に^ff0000楕円形の模型^000000を";
+		mes "はめておけ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "����^ff0000���Z�ʑ̖̂͌^^000000����肷����@����";
-		mes "���̉��ƃx�b�h�̉��𒲂ׂ��";
-		mes "���ꂼ��^ff0000�Z���_^000000��������͂����B";
+		mes "[フィッシボーン]";
+		mes "次に^ff0000正六面体の模型^000000を入手する方法だが";
+		mes "机の下とベッドの下を調べると";
+		mes "それぞれ^ff0000短い棒^000000が見つかるはずだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "2�{��^ff0000�Z���_^000000��g�ݍ��킹��";
-		mes "^ff0000�����_^000000�ɂ�����";
-		mes "������x�x�b�h�̉��𒲂ׂĂ݂�B";
+		mes "[フィッシボーン]";
+		mes "2本の^ff0000短い棒^000000を組み合わせて";
+		mes "^ff0000長い棒^000000にしたら";
+		mes "もう一度ベッドの下を調べてみろ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�x�b�h�̉���^ff0000���Z�ʑ̖̂͌^^000000�����邩��";
-		mes "^ff0000�����_^000000���g���Ď�ɓ����B";
-		mes "��ɓ��ꂽ^ff0000���Z�ʑ̖̂͌^^000000��";
-		mes "������ׂ̗ɒu���Ă��锠��";
-		mes "���Z�ʑ̂̌��ɂ͂߂Ă����B";
+		mes "[フィッシボーン]";
+		mes "ベッドの下に^ff0000正六面体の模型^000000があるから";
+		mes "^ff0000長い棒^000000を使って手に入れろ。";
+		mes "手に入れた^ff0000正六面体の模型^000000は";
+		mes "押入れの隣に置いてある箱の";
+		mes "正六面体の穴にはめておけ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�Ō��^ff0000���p�`�̖͌^^000000����";
-		mes "�e�[�u���̏�̃R�b�v�𒲂ׂĂ݂�B";
-		mes "^ff0000���т��J�M^000000��������͂����B";
+		mes "[フィッシボーン]";
+		mes "最後に^ff0000多角形の模型^000000だが";
+		mes "テーブルの上のコップを調べてみろ。";
+		mes "^ff0000さびたカギ^000000が見つかるはずだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "^ff0000���т��J�M^000000�́A���̂��΂�";
-		mes "�ǂɂ������Ă���I�ɂ����i��";
-		mes "^ff0000�΂̃J�M^000000�ɂł���B";
+		mes "[フィッシボーン]";
+		mes "^ff0000さびたカギ^000000は、机のそばの";
+		mes "壁にかかっている棚にある薬品で";
+		mes "^ff0000緑のカギ^000000にできる。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "��̂��΂ɂ��鉟�����";
-		mes "^ff0000�΂̃J�M^000000�ŊJ�����";
-		mes "^ff0000���p�`�̖͌^^000000������B";
+		mes "[フィッシボーン]";
+		mes "門のそばにある押入れを";
+		mes "^ff0000緑のカギ^000000で開ければ";
+		mes "^ff0000多角形の模型^000000がある。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "^ff0000���p�`�̖͌^^000000��";
-		mes "������ׂ̗ɂ��锠�̑��p�`�̌���";
-		mes "�͂߂��߁B";
+		mes "[フィッシボーン]";
+		mes "^ff0000多角形の模型^000000を";
+		mes "押入れの隣にある箱の多角形の穴に";
+		mes "はめこめ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "���ׂĂ̖͌^���͂߂��񂾂�";
-		mes "�����J���Ă݂�B";
-		mes "���̒��ɂ�^ff0000�������̒ʍs�p�X^000000��";
-		mes "����͂����B";
+		mes "[フィッシボーン]";
+		mes "すべての模型をはめこんだら";
+		mes "箱を開けてみろ。";
+		mes "箱の中には^ff0000研究所の通行パス^000000が";
+		mes "あるはずだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�����ǂ�������x���ׂ��";
-		mes "�O�ʂɔ����l�p�`�̌��������邩��";
-		mes "^ff0000�������̒ʍs�p�X^000000��";
-		mes "�����l�p�`�̌��ɓ����B";
-		mes "���ɍ~���K�i������ăS�[�����B";
+		mes "[フィッシボーン]";
+		mes "試験管をもう一度調べると";
+		mes "前面に薄い四角形の穴が見つかるから";
+		mes "^ff0000研究所の通行パス^000000を";
+		mes "薄い四角形の穴に入れろ。";
+		mes "下に降りる階段が現れてゴールだ。";
 		next;
-		mes "[�t�B�b�V�{�[��]";
-		mes "�ǂ����A�킩�������H";
+		mes "[フィッシボーン]";
+		mes "どうだ、わかったか？";
 		next;
-		if(select("�킩����","�킩��Ȃ�����") == 2) {
-			mes "[�t�B�b�V�{�[��]";
-			mes "�������ł��m�F�ł���悤��";
-			mes "���Ă��������A������";
-			mes "������x�������H";
+		if(select("わかった","わからなかった") == 2) {
+			mes "[フィッシボーン]";
+			mes "研究室でも確認できるように";
+			mes "しておいたが、ここで";
+			mes "もう一度聞くか？";
 			next;
-			if(select("�͂�","������") == 1) {
-				mes "[�t�B�b�V�{�[��]";
-				mes "�d���Ȃ��A������x��������ȁB";
+			if(select("はい","いいえ") == 1) {
+				mes "[フィッシボーン]";
+				mes "仕方ない、もう一度言うからな。";
 				continue;
 			}
 		}
-		mes "[�t�B�b�V�{�[��]";
-		mes "���Ƃ͌������֍s����������";
-		mes "�S�̏������o������";
-		mes "�܂��b�������Ă���B";
+		mes "[フィッシボーン]";
+		mes "あとは研究室へ行くだけだが";
+		mes "心の準備が出来たら";
+		mes "また話しかけてくれ。";
 		close;
 	}
 }
 
 lhz_cube.gat,246,184,0	script	#cube_in	139,1,1,{
 	if(checkquest(57815)) {
-		mes "�]���H�̂悤�ȒʘH�𔲂���ƁA";
-		mes "�@�t�B�b�V�{�[���̌����Ă���";
-		mes "�@�������̂悤�ȏꏊ�ɒH�蒅�����B";
-		mes "�@���̕����̂ǂ�����";
-		mes "�@���Q���V�������ւ̓���";
-		mes "�@�B����Ă���͂����]";
+		mes "‐迷路のような通路を抜けると、";
+		mes "　フィッシボーンの言っていた";
+		mes "　研究室のような場所に辿り着いた。";
+		mes "　この部屋のどこかに";
+		mes "　レゲンシュルムへの道が";
+		mes "　隠されているはずだ‐";
 		chgquest 57815,57820;
 		close;
 	}
 	end;
 }
 
-lhz_cube.gat,237,198,0	script	����	111,{
+lhz_cube.gat,237,198,0	script	書類	111,{
 	if(LHZ_1QUE_CUBE&0x01) {
-		mes "�]^ff0000�Ԃ��J�M^000000����ɓ��ꂽ�ꏊ���B";
-		mes "�@���ނ����G�ɎU��΂��Ă���]";
+		mes "‐^ff0000赤いカギ^000000を手に入れた場所だ。";
+		mes "　書類が乱雑に散らばっている‐";
 		close;
 	}
-	mes "�]���܂��܂ȏ��ނ����荬������";
-	mes "�@����Ă���]";
+	mes "‐さまざまな書類が入り混じって";
+	mes "　崩れている‐";
 	next;
-	if(select("���ނ̒���T���Ă݂�","�T���Ȃ�") == 2)
+	if(select("書類の中を探してみる","探さない") == 2)
 		close;
-	mes "�]���ނ̒��𒲂ׂ�ƁA";
-	mes "�@�u�J�`�����v�Ƃ������Ƌ���";
-	mes "�@�u�Ԃ��J�M�v���������]";
+	mes "‐書類の中を調べると、";
+	mes "　「カチャン」という音と共に";
+	mes "　「赤いカギ」が落ちた‐";
 	next;
-	mes "�]^ff0000�Ԃ��J�M^000000����ɓ��ꂽ�]";
+	mes "‐^ff0000赤いカギ^000000を手に入れた‐";
 	set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x01;
 	close;
 }
 
-lhz_cube.gat,242,201,0	script	�����o��	111,{
+lhz_cube.gat,242,201,0	script	引き出し	111,{
 	if(LHZ_1QUE_CUBE&0x02) {
-		mes "�]^ff0000�����ȃi�C�t^000000��";
-		mes "�@��ɂ��ꂽ�����o�����B";
-		mes "�@�����o���̒��ɂ͂������������]";
+		mes "‐^ff0000小さなナイフ^000000を";
+		mes "　手にいれた引き出しだ。";
+		mes "　引き出しの中にはもう何も無い‐";
 		close;
 	}
-	mes "�]�J�M���������Ă��ĊJ���Ȃ��B";
-	mes "�@�����o���ɂ͐Ԃ��������t���Ă���]";
+	mes "‐カギがかかっていて開かない。";
+	mes "　引き出しには赤い鍵穴が付いている‐";
 	if(!(LHZ_1QUE_CUBE&0x01))
 		close;
 	next;
-	if(select("�J�M���g��","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]���͂�߂Ă������]";
+	if(select("カギを使う","そのままにしておく") == 2) {
+		mes "‐今はやめておこう‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ == "�Ԃ��J�M") {
-		mes "�]�Ԃ��J�M���g���ƁA";
-		mes "�@�����o�����J�����B";
-		mes "�@�����o���̒�����";
-		mes "�@�u�����ȃi�C�t�v���������]";
+	if('@word$ == "赤いカギ") {
+		mes "‐赤いカギを使うと、";
+		mes "　引き出しが開いた。";
+		mes "　引き出しの中から";
+		mes "　「小さなナイフ」を見つけた‐";
 		next;
-		mes "�]^ff0000�����ȃi�C�t^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000小さなナイフ^000000を手に入れた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x02;
 	}
-	mes "�]�J�M���������Ă��ĊJ���Ȃ��]";
+	mes "‐カギがかかっていて開かない‐";
 	close;
 }
 
-lhz_cube.gat,235,202,0	script	�G	111,{
+lhz_cube.gat,235,202,0	script	絵	111,{
 	if(LHZ_1QUE_NUM) {
-		mes "�]�G�̗��ɂ͐����������Ă���B";
+		mes "‐絵の裏には数字が書いてある。";
 		switch(LHZ_1QUE_NUM) {
-		case 1: mes "�@15 57 89 72 63 31 54 66 98 �]"; break;
-		case 2: mes "�@21 56 43 82 78 49 64 15 57 �]"; break;
-		case 3: mes "�@33 26 69 74 68 41 87 92 65 �]"; break;
-		case 4: mes "�@43 18 31 25 86 59 62 14 77 �]"; break;
+		case 1: mes "　15 57 89 72 63 31 54 66 98 ‐"; break;
+		case 2: mes "　21 56 43 82 78 49 64 15 57 ‐"; break;
+		case 3: mes "　33 26 69 74 68 41 87 92 65 ‐"; break;
+		case 4: mes "　43 18 31 25 86 59 62 14 77 ‐"; break;
 		}
 		next;
-		mes "�]�[�̕��Ɂu��̈ʂ̏��v�Ƃ���";
-		mes "�@�������������]";
+		mes "‐端の方に「一の位の順」という";
+		mes "　メモを見つけた‐";
 		close;
 	}
-	mes "�]�ǂɊG���������Ă���]";
+	mes "‐壁に絵がかかっている‐";
 	next;
-	if(select("�������Ă݂�","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]���̏ꏊ��T�����]";
+	if(select("動かしてみる","そのままにしておく") == 2) {
+		mes "‐他の場所を探そう‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x10) {
-		mes "�]�G�̗��ɂ͐����������Ă���]";
+		mes "‐絵の裏には数字が書いてある‐";
 		close;
 	}
-	mes "�]�G�͌Œ肳��Ă��ē����Ȃ��B";
-	mes "�@�ǂƊG�̊ԂɌ��Ԃ�����B";
-	mes "�@�����ɉ����������߂������]";
+	mes "‐絵は固定されていて動かない。";
+	mes "　壁と絵の間に隙間がある。";
+	mes "　ここに何か差し込めそうだ‐";
 	if(!(LHZ_1QUE_CUBE&0x02))
 		close;
 	next;
 	input '@word$;
-	if('@word$ == "�����ȃi�C�t") {
-		mes "�]�u�����ȃi�C�t�v��";
-		mes "�@�Ђ˂�Ȃ�������ƁA";
-		mes "�@�G���ǂ��痎���ē|�ꂽ�]";
+	if('@word$ == "小さなナイフ") {
+		mes "‐「小さなナイフ」を";
+		mes "　ひねりながら入れると、";
+		mes "　絵が壁から落ちて倒れた‐";
 		next;
-		mes "�]�G�̗��ɂ͐����������Ă���B";
+		mes "‐絵の裏には数字が書いてある。";
 		switch(rand(4)) {
 		case 0:
-			mes "�@15 57 89 72 63 31 54 66 98 �]";
+			mes "　15 57 89 72 63 31 54 66 98 ‐";
 			set LHZ_1QUE_NUM,1;
 			break;
 		case 1:
-			mes "�@21 56 43 82 78 49 64 15 57 �]";
+			mes "　21 56 43 82 78 49 64 15 57 ‐";
 			set LHZ_1QUE_NUM,2;
 			break;
 		case 2:
-			mes "�@33 26 69 74 68 41 87 92 65 �]";
+			mes "　33 26 69 74 68 41 87 92 65 ‐";
 			set LHZ_1QUE_NUM,3;
 			break;
 		case 3:
-			mes "�@43 18 31 25 86 59 62 14 77 �]";
+			mes "　43 18 31 25 86 59 62 14 77 ‐";
 			set LHZ_1QUE_NUM,4;
 			break;
 		}
 		next;
-		mes "�]�[�̕��Ɂu��̈ʂ̏��v�Ƃ���";
-		mes "�@�������������]";
+		mes "‐端の方に「一の位の順」という";
+		mes "　メモを見つけた‐";
 		close;
 	}
-	mes "�]�G�͌Œ肳��Ă��ē����Ȃ��]";
+	mes "‐絵は固定されていて動かない‐";
 	close;
 }
 
-lhz_cube.gat,248,179,0	script	��	111,{
+lhz_cube.gat,248,179,0	script	箱	111,{
 	if(LHZ_1QUE_CUBE&0x04) {
-		mes "�]^ff0000��^000000���������̔�������]";
+		mes "‐^ff0000斧^000000を取った後の箱がある‐";
 		close;
 	}
-	mes "�]�����u���ꂽ��������]";
+	mes "‐斧が置かれた箱がある‐";
 	next;
-	if(select("��������������","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]���̂܂܂ɂ��Ă������]";
+	if(select("斧を持ちあげる","そのままにしておく") == 2) {
+		mes "‐そのままにしておこう‐";
 		close;
 	}
-	mes "�]^ff0000��^000000����ɓ��ꂽ�]";
+	mes "‐^ff0000斧^000000を手に入れた‐";
 	set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x04;
 	close;
 }
 
-lhz_cube.gat,237,183,0	script	��	111,{
+lhz_cube.gat,237,183,0	script	筒	111,{
 	if(LHZ_1QUE_CUBE&0x10) {
-		mes "�]^ff0000���F���J�M^000000��";
-		mes "�@��ɓ��ꂽ��������B";
-		mes "�@���͋󂾁]";
+		mes "‐^ff0000黄色いカギ^000000を";
+		mes "　手に入れた箱がある。";
+		mes "　箱は空だ‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x08) {
-		mes "�]�����Ղ��t������������]";
+		mes "‐数字盤が付いた箱がある‐";
 		next;
-		mes "�ꌅ�̐�������͂���悤���]";
+		mes "一桁の数字を入力するようだ‐";
 		next;
 		for(set '@i,0; '@i<9; set '@i,'@i+1) {
 			input '@num;
 			if('@num < 0 || '@num > 9)
-				set '@num,0;		// 0����ł�����Εs�����ɂȂ�
-			set '@code,'@code*10 + '@num;	// 10�i���ō��i���̑傫�����j���珇�Ɋi�[����
+				set '@num,0;		// 0が一つでもあれば不正解になる
+			set '@code,'@code*10 + '@num;	// 10進数で左（桁の大きい方）から順に格納する
 		}
 		switch (LHZ_1QUE_NUM) {
 		case 1: set '@ans,376516598; break;
@@ -3928,120 +3928,120 @@ lhz_cube.gat,237,183,0	script	��	111,{
 		case 4: set '@ans,364128715; break;
 		}
 		if(LHZ_1QUE_NUM!=0 && '@code == '@ans) {
-			mes "�]�@�B���Ƌ��ɔ����J�����B";
-			mes "�@���̒��ɂ́u���F���J�M�v���������]";
+			mes "‐機械音と共に箱が開いた。";
+			mes "　箱の中には「黄色いカギ」があった‐";
 			next;
-			mes "�]^ff0000���F���J�M^000000����ɓ��ꂽ�]";
+			mes "‐^ff0000黄色いカギ^000000を手に入れた‐";
 			set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x10;
 			set LHZ_1QUE_NUM,0;
 			close;
 		}
-		mes "�]���̏�Ԃ͕ς��Ȃ��]";
+		mes "‐箱の状態は変わらない‐";
 		close;
 	}
-	mes "�]���낭�����铛������B";
-	mes "�@^ff0000��^000000�ŉ󂹂������]";
+	mes "‐もろく見える筒がある。";
+	mes "　^ff0000斧^000000で壊せそうだ‐";
 	if(!(LHZ_1QUE_CUBE&0x04))
 		close;
 	next;
-	if(select("������","��߂�") == 2) {
-		mes "�]���̕��@��T�����]";
+	if(select("筒を壊す","やめる") == 2) {
+		mes "‐他の方法を探そう‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ == "��") {
-		mes "�]���œ����󂷂ƁA";
-		mes "�@���ɂ͔����������]";
+	if('@word$ == "斧") {
+		mes "‐斧で筒を壊すと、";
+		mes "　中には箱があった‐";
 		next;
-		mes "�]���̏�ɂ� 1�`9�܂Ő�����";
-		mes "�@�����ꂽ�Ղ�����]";
+		mes "‐箱の上には 1～9まで数字が";
+		mes "　書かれた盤がある‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x08;
 		close;
 	}
-	mes "�]���̏�Ԃ͕ς��Ȃ��]";
+	mes "‐筒の状態は変わらない‐";
 	close;
 }
 
-lhz_cube.gat,224,192,0	script	���d�@	111,{
+lhz_cube.gat,224,192,0	script	発電機	111,{
 	if(LHZ_1QUE_CUBE&0x20) {
-		mes "�]�傫�ȋ@�B���~�܂��Ă���]";
+		mes "‐大きな機械が止まっている‐";
 		close;
 	}
-	mes "�]�傫�ȋ@�B���������o���ē�����";
-	mes "�@����A�O�ʕ��ɕςȕ\��������B";
-	mes "�@���̉��ɉ��F������������]";
+	mes "‐大きな機械が轟音を出して動いて";
+	mes "　おり、前面部に変な表示がある。";
+	mes "　その横に黄色い鍵穴がある‐";
 	next;
-	if(select("�J�M���g��","�������Ȃ�") == 2) {
-		mes "�]���͂�߂Ă������]";
+	if(select("カギを使う","何もしない") == 2) {
+		mes "‐今はやめておこう‐";
 		close;
 	}
 	input '@word$;
-	if(LHZ_1QUE_CUBE&0x10 && '@word$ == "���F���J�M") {
-		mes "�]�u���F���J�M�v��}���ĉ񂵂��B";
-		mes "�@�s�v�c�ȋ@�B���ƂƂ���";
-		mes "�@�@�B���~�܂����]";
+	if(LHZ_1QUE_CUBE&0x10 && '@word$ == "黄色いカギ") {
+		mes "‐「黄色いカギ」を挿して回した。";
+		mes "　不思議な機械音とともに";
+		mes "　機械が止まった‐";
 		next;
-		mes "�]�@�B���~�܂�ƁA";
-		mes "�@�x�b�h�̉��̓d�����������]";
+		mes "‐機械が止まると、";
+		mes "　ベッドの横の電燈が消えた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x20;
 		close;
 	}
-	mes "�]���ɔ������Ȃ��]";
+	mes "‐特に反応がない‐";
 	close;
 }
 
-lhz_cube.gat,244,201,0	script	�d��	111,{
+lhz_cube.gat,244,201,0	script	電燈	111,{
 	if(LHZ_1QUE_CUBE&0x40) {
-		mes "�]���ꂽ�d��������]";
+		mes "‐割れた電燈がある‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x20) {
-		mes "�]�������d���̒��ɉ���������]";
+		mes "‐消えた電燈の中に何かがある‐";
 		next;
-		if(select("���̂܂܂ɂ��Ă���","�d�����󂵂Ď��o��") == 1) {
-			mes "�]���̂܂܂ɂ��Ă������]";
+		if(select("そのままにしておく","電燈を壊して取り出す") == 1) {
+			mes "‐そのままにしておこう‐";
 			close;
 		}
-		mes "�]�d�����󂵂Ē��������";
-		mes "�@�u�����J�M�v������]";
+		mes "‐電燈を壊して中を見ると";
+		mes "　「黒いカギ」がある‐";
 		next;
-		mes "�]^ff0000�����J�M^000000���l�������]";
+		mes "‐^ff0000黒いカギ^000000を獲得した‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x40;
 		close;
 	}
-	mes "�]������d��������B�]";
-	mes "�@�����ɉ�������悤�����M����";
-	mes "�@�ƂĂ����G���ꂻ���ɂȂ��]";
+	mes "‐光を放つ電燈がある。‐";
+	mes "　内部に何かあるようだが熱くて";
+	mes "　とても手を触れられそうにない‐";
 	close;
 }
 
-lhz_cube.gat,224,197,0	script	������	111,{
+lhz_cube.gat,224,197,0	script	試験管	111,{
 	if(LHZ_1QUE == 8) {
-		mes "�]�@�B�̑O�ʂɁA�����l�p�`��";
-		mes "�@��������B�������̒ʍs�p�X��";
-		mes "�@���傤�Ǔ��肻�����]";
+		mes "‐機械の前面に、薄い四角形の";
+		mes "　穴がある。研究所の通行パスが";
+		mes "　ちょうど入りそうだ‐";
 		next;
-		if(select("��������Ă݂�","���̂܂܂ɂ��Ă���") == 2) {
-			mes "�]���͂�߂Ă������]";
+		if(select("何か入れてみる","そのままにしておく") == 2) {
+			mes "‐今はやめておこう‐";
 			close;
 		}
 		input '@word$;
-		if('@word$ == "�������̒ʍs�p�X") {
+		if('@word$ == "研究所の通行パス") {
 			if(countitem(2657) < 1) {
-				mes "�c�c�c�c";
-				mes "�]���������������]";
+				mes "…………";
+				mes "‐何も反応が無い‐";
 				close;
 			}
-			mes "�]�u�������̒ʍs�p�X�v��";
-			mes "�@���ɓ����ƁA";
-			mes "�@�@�B�����̒ꂩ��A���ɍ~���";
-			mes "�@�K�i�����ꂽ�]";
+			mes "‐「研究所の通行パス」を";
+			mes "　穴に入れると、";
+			mes "　機械内部の底から、下に降りる";
+			mes "　階段が現れた‐";
 			next;
-			if(select("�~���","�~��Ȃ�") == 2) {
-				mes "�]�������������Ɏc�낤�]";
+			if(select("降りる","降りない") == 2) {
+				mes "‐もう少しここに残ろう‐";
 				close;
 			}
-			mes "�]�����K�i���~�肽�]";
+			mes "‐長い階段を降りた‐";
 			close2;
 			set LHZ_1QUE_CUBE,0;
 			set LHZ_1QUE,9;
@@ -4050,504 +4050,504 @@ lhz_cube.gat,224,197,0	script	������	111,{
 			warp "lhz_cube.gat",177,13;
 			end;
 		}
-		mes "�]���������������]";
+		mes "‐何も反応が無い‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x80) {
-		mes "�]^ff0000�ȉ~�`�̖͌^^000000��";
-		mes "�@��ɓ��ꂽ�ꏊ���B";
-		mes "�@�@�B�̒�ɒ��������l������B";
-		mes "�@�ꂪ�J���������]";
+		mes "‐^ff0000楕円形の模型^000000を";
+		mes "　手に入れた場所だ。";
+		mes "　機械の底に珍しい文様がある。";
+		mes "　底が開きそうだ‐";
 		close;
 	}
-	mes "�]�ςȎ����ǂ��u���Ă���A";
-	mes "�@���ɉ����u����Ă���悤���B";
-	mes "�@�����ɍ�������������]";
+	mes "‐変な試験管が置いてあり、";
+	mes "　中に何か置かれているようだ。";
+	mes "　下側に黒い鍵穴がある‐";
 	next;
-	if(select("�J�M���g��","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]���͂�߂Ă������]";
+	if(select("カギを使う","そのままにしておく") == 2) {
+		mes "‐今はやめておこう‐";
 		close;
 	}
 	input '@word$;
-	if(LHZ_1QUE_CUBE&0x40 && '@word$ == "�����J�M") {
-		mes "�]�u�����J�M�v�����ĉ񂵂��B";
-		mes "�@�s�v�c�ȋ@�B���ƂƂ���";
-		mes "�@�O�ʂɂ���Ɏq���J�����B";
-		mes "�@���ɂ͑ȉ~�`�̖͌^���������]";
+	if(LHZ_1QUE_CUBE&0x40 && '@word$ == "黒いカギ") {
+		mes "‐「黒いカギ」を入れて回した。";
+		mes "　不思議な機械音とともに";
+		mes "　前面にある硝子が開いた。";
+		mes "　中には楕円形の模型があった‐";
 		next;
-		mes "�]^ff0000�ȉ~�`�̖͌^^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000楕円形の模型^000000を手に入れた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x80;
 		close;
 	}
-	mes "�]���������������]";
+	mes "‐何も反応が無い‐";
 	close;
 }
 
-lhz_cube.gat,234,200,0	script	��	111,{
-	mes "�]�F�X�ȕ����ڂ��Ă���";
-	mes "�@�U�炩���Ă����������]";
+lhz_cube.gat,234,200,0	script	机	111,{
+	mes "‐色々な物が載っていて";
+	mes "　散らかっている机がある‐";
 	next;
-	switch(select("���̏�","���̉�","���̈����o��")) {
+	switch(select("机の上","机の下","机の引き出し")) {
 	case 1:
-		mes "�]�F�X�ȏ��ނƖ{�A";
-		mes "�@��������ȂǂŎG�R�Ƃ��Ă���]";
+		mes "‐色々な書類と本、";
+		mes "　実験道具などで雑然としている‐";
 		close;
 	case 2:
 		if(LHZ_1QUE_CUBE&0x200) {
-			mes "�]^ff0000�Z���_^000000��";
-			mes "�@��ɓ��ꂽ�ꏊ���B";
-			mes "�@�ق��肪�����Ă���]";
+			mes "‐^ff0000短い棒^000000を";
+			mes "　手に入れた場所だ。";
+			mes "　ほこりが舞っている‐";
 			close;
 		}
-		mes "�]���̉����悭����ƁA�K����";
-		mes "�@�����̖_������]";
+		mes "‐机の下をよく見ると、適当な";
+		mes "　長さの棒がある‐";
 		next;
-		mes "�]^ff0000�Z���_^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000短い棒^000000を手に入れた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x200;
 		if(!(LHZ_1QUE_CUBE&0x400))
 			close;
 		next;
-		mes "�]�x�b�h�̉��Ŏ�ɓ��ꂽ�u�Z���_�v��";
-		mes "�@�g�ݍ��킹�邱�Ƃ��ł��������]";
+		mes "‐ベッドの下で手に入れた「短い棒」と";
+		mes "　組み合わせることができそうだ‐";
 		next;
-		mes "�]^FF0000�����_^000000����ɓ��ꂽ�]";
+		mes "‐^FF0000長い棒^000000を手に入れた‐";
 		close;
 	case 3:
-		mes "�]�J�M���|�����Ă��ĊJ���Ȃ��]";
+		mes "‐カギが掛かっていて開かない‐";
 		close;
 	}
 }
 
-lhz_cube.gat,247,198,0	script	�x�b�h	111,{
-	mes "�]������Ɨ��ꂽ�x�b�h������]";
+lhz_cube.gat,247,198,0	script	ベッド	111,{
+	mes "‐ちょっと乱れたベッドがある‐";
 	next;
-	if(select("�x�b�h�̏�","�x�b�h�̉�") == 1) {
-		mes "�]�z�c��������Ɨ���Ă���B";
-		mes "�@���ɕς�������͂Ȃ��]";
+	if(select("ベッドの上","ベッドの下") == 1) {
+		mes "‐布団がちょっと乱れている。";
+		mes "　特に変わった所はない‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x800) {
-		mes "�]^ff0000���Z�ʑ̖̂͌^^000000��";
-		mes "�@��ɓ��ꂽ�ꏊ���B";
-		mes "�@�ق��肪�ς����Ă��ē��ɉ��������]";
+		mes "‐^ff0000正六面体の模型^000000を";
+		mes "　手に入れた場所だ。";
+		mes "　ほこりが積もっていて特に何も無い‐";
 		close;
 	}
 	if(LHZ_1QUE_CUBE&0x400) {
-		mes "�]�x�b�h�̉����悭������A";
-		mes "�@�ق���̐ς���������";
-		mes "�@�����ȕ��̂�������]";
+		mes "‐ベッドの下をよく見たら、";
+		mes "　ほこりの積もった隅に";
+		mes "　小さな物体が見える‐";
 		next;
 		input '@word$;
-		if(LHZ_1QUE_CUBE&0x200 && LHZ_1QUE_CUBE&0x400 && '@word$ == "�����_") {
-			mes "�]�u�����_�v�𗘗p����";
-			mes "�@���̂����o�����]";
+		if(LHZ_1QUE_CUBE&0x200 && LHZ_1QUE_CUBE&0x400 && '@word$ == "長い棒") {
+			mes "‐「長い棒」を利用して";
+			mes "　物体を取り出した‐";
 			next;
-			mes "�]^ff0000���Z�ʑ̖̂͌^^000000��";
-			mes "�@��ɓ��ꂽ�]";
+			mes "‐^ff0000正六面体の模型^000000を";
+			mes "　手に入れた‐";
 			set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x800;
 			close;
 		}
-		if(!(LHZ_1QUE_CUBE&0x200) && ('@word$ == "�Z���_")) {
-			mes "�]�u�Z���_�v���g����";
-			mes "�@������낤�Ǝv�������A";
-			mes "�@�u�Z���_�v���͂��Ȃ��]";
+		if(!(LHZ_1QUE_CUBE&0x200) && ('@word$ == "短い棒")) {
+			mes "‐「短い棒」を使って";
+			mes "　物を取ろうと思ったが、";
+			mes "　「短い棒」が届かない‐";
 			close;
 		}
-		mes "�]������邱�Ƃ��ł��Ȃ��]";
+		mes "‐物を取ることができない‐";
 		close;
 	}
-	mes "�]�x�b�h�̉����悭������";
-	mes "�@�u�Z���_�v��������]";
+	mes "‐ベッドの下をよく見たら";
+	mes "　「短い棒」が見える‐";
 	next;
-	mes "�]^ff0000�Z���_^000000����ɓ��ꂽ�]";
+	mes "‐^ff0000短い棒^000000を手に入れた‐";
 	set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x400;
 	if(!(LHZ_1QUE_CUBE&0x200))
 		close;
 	next;
-	mes "�]���̉��Ŏ�ɓ��ꂽ�u�Z���_�v��";
-	mes "�@�g�ݍ��킹�邱�Ƃ��ł��������]";
+	mes "‐机の下で手に入れた「短い棒」と";
+	mes "　組み合わせることができそうだ‐";
 	next;
-	mes "�]^ff0000�����_^000000����ɓ��ꂽ�]";
+	mes "‐^ff0000長い棒^000000を手に入れた‐";
 	close;
 }
 
-lhz_cube.gat,229,184,0	script	�R�b�v	111,{
+lhz_cube.gat,229,184,0	script	コップ	111,{
 	if(LHZ_1QUE_CUBE&0x2000) {
-		mes "�]^ff0000���т��J�M^000000���l�������ꏊ���B";
-		mes "�@��̃R�b�v�Ƌ󂫃r����";
-		mes "�@�u����Ă���]";
+		mes "‐^ff0000さびたカギ^000000を獲得した場所だ。";
+		mes "　空のコップと空きビンが";
+		mes "　置かれている‐";
 		close;
 	}
-	mes "�]�e�[�u���̏�ɁA�󂫃r����";
-	mes "�@�����������Ă���R�b�v������]";
+	mes "‐テーブルの上に、空きビンと";
+	mes "　何かが入っているコップがある‐";
 	next;
-	if(select("���̂܂܂ɂ��Ă���","�R�b�v�̒��g���o��") == 1)
+	if(select("そのままにしておく","コップの中身を出す") == 1)
 		close;
-	mes "�]�R�b�v�̒��g���o���ƁA";
-	mes "�@�u���т��J�M�v���o�Ă����]";
+	mes "‐コップの中身を出すと、";
+	mes "　「さびたカギ」が出てきた‐";
 	next;
-	mes "�]^ff0000���т��J�M^000000��";
-	mes "�@��ɓ��ꂽ�]";
+	mes "‐^ff0000さびたカギ^000000を";
+	mes "　手に入れた‐";
 	set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x2000;
 	close;
 }
 
-lhz_cube.gat,231,202,0	script	�I	111,{
+lhz_cube.gat,231,202,0	script	棚	111,{
 	if(LHZ_1QUE_CUBE&0x4000) {
-		mes "�]�u���т��J�M�v���u�΂̃J�M�v��";
-		mes "�@�ς������򂪂���]";
+		mes "‐「さびたカギ」を「緑のカギ」に";
+		mes "　変えた試薬がある‐";
 		next;
-		mes "�]���܂��܂Ȏ���̑��ɂ͉����Ȃ��]";
+		mes "‐さまざまな試薬の他には何もない‐";
 		close;
 	}
-	mes "�]�l�X�Ȏ��򂪓������r������";
-	mes "�@�K�т𗎂Ƃ��������悤���]";
+	mes "‐様々な試薬が入った瓶がある";
+	mes "　錆びを落とす薬もあるようだ‐";
 	next;
 	input '@word$;
-	if(LHZ_1QUE_CUBE&0x2000 && '@word$ == "���т��J�M") {
-		mes "�]�u���т��J�M�v������̒���";
-		mes "�@�����ƁA�J�M�̂��т���ꂽ�]";
+	if(LHZ_1QUE_CUBE&0x2000 && '@word$ == "さびたカギ") {
+		mes "‐「さびたカギ」を試薬の中に";
+		mes "　入れると、カギのさびが取れた‐";
 		next;
-		mes "�]^ff0000�΂̃J�M^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000緑のカギ^000000を手に入れた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x4000;
 		close;
 	}
-	mes "�]�����������Ȃ��]";
+	mes "‐何も反応がない‐";
 	close;
 }
 
-lhz_cube.gat,249,191,0	script	������	111,{
+lhz_cube.gat,249,191,0	script	押入れ	111,{
 	if(LHZ_1QUE_CUBE&0x8000) {
-		mes "�]�u�΂̃J�M�v���g����";
-		mes "�@�u���p�`�̖͌^�v����ɓ��ꂽ";
-		mes "�@�����o��������]";
+		mes "‐「緑のカギ」を使って";
+		mes "　「多角形の模型」を手に入れた";
+		mes "　引き出しがある‐";
 		next;
-		mes "�]���̈����o���͊J���Ȃ��]";
+		mes "‐他の引き出しは開かない‐";
 		close;
 	}
-	mes "�]�����o������������t����";
-	mes "�@�����ꂪ����]";
+	mes "‐引き出しがたくさん付いた";
+	mes "　押入れがある‐";
 	next;
-	if(select("�J���Ă݂�","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]���̂܂܂ɂ��Ă������]";
+	if(select("開けてみる","そのままにしておく") == 2) {
+		mes "‐そのままにしておこう‐";
 		close;
 	}
-	mes "�]�ΐF�̌��������Ă���]";
+	mes "‐緑色の鍵穴がついている‐";
 	next;
 	input '@word$;
-	if(LHZ_1QUE_CUBE&0x4000 && '@word$ == "�΂̃J�M") {
-		mes "�]�΂̃J�M'���g���ƁA";
-		mes "�@�����o���̈���J�����B";
-		mes "�@�����o���̒��ɂ́A";
-		mes "�@���p�`�̖͌^���������]";
+	if(LHZ_1QUE_CUBE&0x4000 && '@word$ == "緑のカギ") {
+		mes "‐緑のカギ'を使うと、";
+		mes "　引き出しの一つが開いた。";
+		mes "　引き出しの中には、";
+		mes "　多角形の模型があった‐";
 		next;
-		mes "�]^ff0000���p�`�̖͌^^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000多角形の模型^000000を手に入れた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x8000;
 		close;
 	}
-	mes "�]���������������]";
+	mes "‐何も反応が無い‐";
 	close;
 }
 
-lhz_cube.gat,248,193,0	script	��	111,{
+lhz_cube.gat,248,193,0	script	箱	111,{
 	if(LHZ_1QUE >= 8) {
-		mes "�]��̔�������]";
+		mes "‐空の箱がある‐";
 		close;
 	}
-	mes "�]�������͗l�̌���";
+	mes "‐珍しい模様の穴が";
 	if(LHZ_1QUE_CUBE&0x100 &&LHZ_1QUE_CUBE&0x1000 && LHZ_1QUE_CUBE&0x10000) {
-		mes "�@3�t������������]";
+		mes "　3個付いた箱がある‐";
 		next;
-		mes "�]���ꂼ��̌��ɂ́A�����͗l��";
-		mes "�@�͌^���͂܂��Ă���]";
+		mes "‐それぞれの穴には、同じ模様の";
+		mes "　模型がはまっている‐";
 		next;
-		if(select("���̂܂܂ɂ��Ă���","�����J���Ă݂�") == 1) {
-			mes "�]���̂܂܂ɂ��Ă������]";
+		if(select("そのままにしておく","箱を開けてみる") == 1) {
+			mes "‐そのままにしておこう‐";
 			close;
 		}
-		mes "�]�����J����ƁA����";
-		mes "�@�u�����ȃJ�[�h�v�Ƙr�ւ�";
-		mes "�@�����Ă���]";
+		mes "‐箱を開けると、中に";
+		mes "　「小さなカード」と腕輪が";
+		mes "　入っている‐";
 		next;
-		mes "�]^ff0000�������̒ʍs�p�X^000000��";
-		mes "�@^ff0000���l�̘r��^000000����ɓ��ꂽ�]";
+		mes "‐^ff0000研究所の通行パス^000000と";
+		mes "　^ff0000囚人の腕輪^000000を手に入れた‐";
 		set LHZ_1QUE,8;
 		getitem 2657,1;
 		getitem 7345,1;
 		close;
 	}
-	mes "�@3�t������������B";
-	mes "�@����������ꂻ�����]";
+	mes "　3個付いた箱がある。";
+	mes "　何かを入れられそうだ‐";
 	next;
-	switch(select("�ȉ~�`�̌�","���Z�ʑ̂̌�","���p�`�̌�","�Ȃɂ����Ȃ�")) {
+	switch(select("楕円形の穴","正六面体の穴","多角形の穴","なにもしない")) {
 	case 1:
 		if(LHZ_1QUE_CUBE&0x100) {
-			mes "�]�͂ߍ��񂾁u�ȉ~�`�̖͌^�v��";
-			mes "�@�����ǂ��ł���]";
+			mes "‐はめ込んだ「楕円形の模型」が";
+			mes "　穴を塞いでいる‐";
 			close;
 		}
-		set '@answer$,"�ȉ~�`�̖͌^";
+		set '@answer$,"楕円形の模型";
 		break;
 	case 2:
 		if(LHZ_1QUE_CUBE&0x1000) {
-			mes "�]�͂ߍ��񂾁u���Z�ʑ̖̂͌^�v��";
-			mes "�@�����ǂ��ł���]";
+			mes "‐はめ込んだ「正六面体の模型」が";
+			mes "　穴を塞いでいる‐";
 			close;
 		}
-		set '@answer$,"���Z�ʑ̖̂͌^";
+		set '@answer$,"正六面体の模型";
 		break;
 	case 3:
 		if(LHZ_1QUE_CUBE&0x10000) {
-			mes "�]�͂ߍ��񂾁u���p�`�̖͌^�v��";
-			mes "�@�����ǂ��ł���]";
+			mes "‐はめ込んだ「多角形の模型」が";
+			mes "　穴を塞いでいる‐";
 			close;
 		}
-		set '@answer$,"���p�`�̖͌^";
+		set '@answer$,"多角形の模型";
 		break;
 	case 4:
-		mes "�]���͐G��Ȃ��ł������]";
+		mes "‐今は触らないでおこう‐";
 		close;
 	}
 	input '@word$;
-	if(LHZ_1QUE_CUBE&0x80 && '@answer$ == "�ȉ~�`�̖͌^" && '@word$ == "�ȉ~�`�̖͌^") {
-		mes "�]3�̌��̂����A�ȉ~�`�̌���";
-		mes "�@�u�ȉ~�`�̖͌^�v���͂߂��";
-		mes "�@�@�B�������������]";
+	if(LHZ_1QUE_CUBE&0x80 && '@answer$ == "楕円形の模型" && '@word$ == "楕円形の模型") {
+		mes "‐3個の穴のうち、楕円形の穴に";
+		mes "　「楕円形の模型」をはめると";
+		mes "　機械音が聞こえた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x100;
 		close;
 	}
-	if(LHZ_1QUE_CUBE&0x800 && '@answer$ == "���Z�ʑ̖̂͌^" && '@word$ == "���Z�ʑ̖̂͌^") {
-		mes "�]3�̌��̂����A���Z�ʑ̂̌���";
-		mes "�@�u���Z�ʑ̖̂͌^�v���͂߂��";
-		mes "�@�@�B�������������]";
+	if(LHZ_1QUE_CUBE&0x800 && '@answer$ == "正六面体の模型" && '@word$ == "正六面体の模型") {
+		mes "‐3個の穴のうち、正六面体の穴に";
+		mes "　「正六面体の模型」をはめると";
+		mes "　機械音が聞こえた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x1000;
 		close;
 	}
-	if(LHZ_1QUE_CUBE&0x8000 && '@answer$ == "���p�`�̖͌^" && '@word$ == "���p�`�̖͌^") {
-		mes "�]3�̌��̂����A���p�`�̌���";
-		mes "�@�u���p�`�̖͌^�v���͂߂��";
-		mes "�@�@�B�������������]";
+	if(LHZ_1QUE_CUBE&0x8000 && '@answer$ == "多角形の模型" && '@word$ == "多角形の模型") {
+		mes "‐3個の穴のうち、多角形の穴に";
+		mes "　「多角形の模型」をはめると";
+		mes "　機械音が聞こえた‐";
 		set LHZ_1QUE_CUBE,LHZ_1QUE_CUBE|0x10000;
 		close;
 	}
-	mes "�]���������������]";
+	mes "‐何も反応が無い‐";
 	close;
 }
 
-lhz_cube.gat,248,184,0	script	�o��#in	45,1,1,{
-	mes "�]�O�ɏo��傪����]";
+lhz_cube.gat,248,184,0	script	出口#in	45,1,1,{
+	mes "‐外に出る門がある‐";
 	next;
 	if(checkquest(57805) & 0x8)
-		set '@str$,"�t�B�b�V�{�[���̃���������";
-	switch(select('@str$,"�o��","�o�Ȃ�")) {
+		set '@str$,"フィッシボーンのメモを見る";
+	switch(select('@str$,"出る","出ない")) {
 	case 1:
-		mes "�]�t�B�b�V�{�[������n���ꂽ";
-		mes "�@������ǂݒ������]";
+		mes "‐フィッシボーンから渡された";
+		mes "　メモを読み直した‐";
 		next;
-		switch(select("���Z�ʑ̖̂͌^","���p�`�̖͌^","�ȉ~�`�̖͌^","�͌^����肵����","����ς��߂�")) {
+		switch(select("正六面体の模型","多角形の模型","楕円形の模型","模型を入手したら","やっぱりやめる")) {
 		case 1:
-			mes "^ff0000���Z�ʑ̖̂͌^^000000����肷����@����";
-			mes "���̉��ƃx�b�h�̉��𒲂ׂ��";
-			mes "���ꂼ��^ff0000�Z���_^000000��������͂����B";
+			mes "^ff0000正六面体の模型^000000を入手する方法だが";
+			mes "机の下とベッドの下を調べると";
+			mes "それぞれ^ff0000短い棒^000000が見つかるはずだ。";
 			next;
-			mes "2�{��^ff0000�Z���_^000000��g�ݍ��킹��";
-			mes "^ff0000�����_^000000�ɂ�����";
-			mes "������x�x�b�h�̉��𒲂ׂĂ݂�B";
+			mes "2本の^ff0000短い棒^000000を組み合わせて";
+			mes "^ff0000長い棒^000000にしたら";
+			mes "もう一度ベッドの下を調べてみろ。";
 			next;
-			mes "�x�b�h�̉���^ff0000���Z�ʑ̖̂͌^^000000��";
-			mes "���邩��^ff0000�����_^000000���g���Ď�ɓ����B";
-			mes "��ɓ��ꂽ^ff0000���Z�ʑ̖̂͌^^000000��";
-			mes "������ׂ̗ɒu���Ă��锠��";
-			mes "���Z�ʑ̂̌��ɂ͂߂Ă����B";
+			mes "ベッドの下に^ff0000正六面体の模型^000000が";
+			mes "あるから^ff0000長い棒^000000を使って手に入れろ。";
+			mes "手に入れた^ff0000正六面体の模型^000000は";
+			mes "押入れの隣に置いてある箱の";
+			mes "正六面体の穴にはめておけ。";
 			close;
 		case 2:
-			mes "^ff0000���p�`�̖͌^^000000����";
-			mes "�e�[�u���̏�̃R�b�v�𒲂ׂĂ݂�B";
-			mes "^ff0000���т��J�M^000000��������͂����B";
+			mes "^ff0000多角形の模型^000000だが";
+			mes "テーブルの上のコップを調べてみろ。";
+			mes "^ff0000さびたカギ^000000が見つかるはずだ。";
 			next;
-			mes "^ff0000���т��J�M^000000�́A���̂��΂�";
-			mes "�ǂɂ������Ă���I�ɂ����i��";
-			mes "^ff0000�΂̃J�M^000000�ɂł���B";
+			mes "^ff0000さびたカギ^000000は、机のそばの";
+			mes "壁にかかっている棚にある薬品で";
+			mes "^ff0000緑のカギ^000000にできる。";
 			next;
-			mes "��̂��΂ɂ��鉟�����";
-			mes "^ff0000�΂̃J�M^000000�ŊJ�����";
-			mes "^ff0000���p�`�̖͌^^000000������B";
+			mes "門のそばにある押入れを";
+			mes "^ff0000緑のカギ^000000で開ければ";
+			mes "^ff0000多角形の模型^000000がある。";
 			next;
-			mes "^ff0000���p�`�̖͌^^000000��";
-			mes "������ׂ̗ɂ��锠�̑��p�`�̌���";
-			mes "�͂߂Ă����B";
+			mes "^ff0000多角形の模型^000000を";
+			mes "押入れの隣にある箱の多角形の穴に";
+			mes "はめておけ。";
 			close;
 		case 3:
-			mes "^ff0000�ȉ~�`�̖͌^^000000����肷��ɂ�";
-			mes "�������̖�̂��΂ɒu����Ă��锠��";
-			mes "^ff0000��^000000����ɓ����B";
+			mes "^ff0000楕円形の模型^000000を入手するには";
+			mes "研究室の門のそばに置かれている箱で";
+			mes "^ff0000斧^000000を手に入れろ。";
 			next;
-			mes "^ff0000��^000000����ɓ��ꂽ��";
-			mes "�����̒����ɂ��铛��^ff0000��^000000�ŉ󂵂�";
-			mes "�����Ղ��g����悤�ɂ��Ă����B";
+			mes "^ff0000斧^000000を手に入れたら";
+			mes "部屋の中央にある筒を^ff0000斧^000000で壊して";
+			mes "数字盤を使えるようにしておけ。";
 			next;
-			mes "���Ɋ��̋߂��̏��ɎU�����Ă���";
-			mes "���ނ𒲂ׂ��^ff0000�Ԃ��J�M^000000�����邩��";
-			mes "�x�b�h�̘e�ɂ�����o����";
-			mes "^ff0000�Ԃ��J�M^000000�ŊJ���Ă݂�B";
-			mes "���o���̒��ɂ�^ff0000�����ȃi�C�t^000000������B";
+			mes "次に机の近くの床に散乱している";
+			mes "書類を調べると^ff0000赤いカギ^000000があるから";
+			mes "ベッドの脇にある引出しを";
+			mes "^ff0000赤いカギ^000000で開けてみろ。";
+			mes "引出しの中には^ff0000小さなナイフ^000000がある。";
 			next;
-			mes "^ff0000�����ȃi�C�t^000000���g����";
-			mes "�ǂɂ������Ă���G�𓮂����B";
-			mes "�G�̗��ɂ́A2���̐�����";
-			mes "9�g������Ă���͂����B";
+			mes "^ff0000小さなナイフ^000000を使って";
+			mes "壁にかかっている絵を動かせ。";
+			mes "絵の裏には、2桁の数字が";
+			mes "9組書かれているはずだ。";
 			next;
-			mes "�����̈�̈ʂ��ׂĒႢ���ɕ��בւ�";
-			mes "���בւ��������̏\�̈ʂ̐�����";
-			mes "�ŏ��Ɏg����悤�ɂ��������Ղɓ��͂���B";
-			mes "��x�ɓ��͂��Ȃ���";
-			mes "1��������9����͂���񂾁B";
+			mes "数字の一の位を比べて低い順に並べ替え";
+			mes "並べ替えた数字の十の位の数字を";
+			mes "最初に使えるようにした数字盤に入力しろ。";
+			mes "一度に入力しないで";
+			mes "1文字ずつ9回入力するんだ。";
 			next;
-			mes "�������^ff0000���F���J�M^000000�����ł��邩��";
-			mes "^ff0000���F���J�M^000000���g���Ĕ��d�@���~�߂�B";
-			mes "���d�@���~�߂�΁A�x�b�h�̏�ɂ���";
-			mes "�d����������͂����B";
+			mes "筒からは^ff0000黄色いカギ^000000を入手できるから";
+			mes "^ff0000黄色いカギ^000000を使って発電機を止めろ。";
+			mes "発電機を止めれば、ベッドの上にある";
+			mes "電燈も消えるはずだ。";
 			next;
-			mes "�d���̒��ɂ�^ff0000�����J�M^000000������B";
-			mes "^ff0000�����J�M^000000�������ǂɎg����";
-			mes "^ff0000�ȉ~�`�̖͌^^000000�����ł���B";
+			mes "電燈の中には^ff0000黒いカギ^000000がある。";
+			mes "^ff0000黒いカギ^000000を試験管に使えば";
+			mes "^ff0000楕円形の模型^000000を入手できる。";
 			next;
-			mes "������ׂ̗ɒu���Ă��锠�𒲂ׂ��";
-			mes "3�̌���������͂�������";
-			mes "�ȉ~�`�̌���^ff0000�ȉ~�`�̖͌^^000000��";
-			mes "�͂߂Ă����B";
+			mes "押入れの隣に置いてある箱を調べると";
+			mes "3つの穴が見つかるはずだから";
+			mes "楕円形の穴に^ff0000楕円形の模型^000000を";
+			mes "はめておけ。";
 			close;
 		case 4:
-			mes "���ׂĂ̖͌^����ɓ��ꂽ��A";
-			mes "������ׂ̗ɂ��锠��";
-			mes "�͌^�Ɠ����`�̌��ɂ͂߂��߁B";
+			mes "すべての模型を手に入れたら、";
+			mes "押入れの隣にある箱の";
+			mes "模型と同じ形の穴にはめこめ。";
 			next;
-			mes "���ׂĂ̖͌^���͂߂��񂾂�";
-			mes "�����J���Ă݂�B";
-			mes "���̒��ɂ�^ff0000�������̒ʍs�p�X^000000��";
-			mes "����͂����B";
+			mes "すべての模型をはめこんだら";
+			mes "箱を開けてみろ。";
+			mes "箱の中には^ff0000研究所の通行パス^000000が";
+			mes "あるはずだ。";
 			next;
-			mes "�����ǂ�������x���ׂ��";
-			mes "�O�ʂɔ����l�p�`�̌��������邩��";
-			mes "^ff0000�������̒ʍs�p�X^000000��";
-			mes "�����l�p�`�̌��ɓ����B";
-			mes "���ɍ~���K�i������ăS�[�����B";
+			mes "試験管をもう一度調べると";
+			mes "前面に薄い四角形の穴が見つかるから";
+			mes "^ff0000研究所の通行パス^000000を";
+			mes "薄い四角形の穴に入れろ。";
+			mes "下に降りる階段が現れてゴールだ。";
 			close;
 		case 5:
-			mes "�]������ǂނ̂���߂��]";
+			mes "‐メモを読むのをやめた‐";
 			close;
 		}
 	case 2:
-		mes "�]�O�ɏo�邱�Ƃɂ����]";
+		mes "‐外に出ることにした‐";
 		close2;
 		warp "lighthalzen.gat",339,226;
 		end;
 	case 3:
-		mes "�]�������������ɂ��邱�Ƃɂ����]";
+		mes "‐もう少しここにいることにした‐";
 		close;
 	}
 }
 
 lhz_cube.gat,177,96,0	warp	cubewarp	1,1,lighthalzen.gat,310,302
 
-lighthalzen.gat,313,301,0	script	������	111,{
-	mes "�]�����p�ǂ����菄�炳��Ă���]";
+lighthalzen.gat,313,301,0	script	下水管	111,{
+	mes "‐下水用管が張り巡らされている‐";
 	if(LHZ_1QUE < 9)
 		close;
 	next;
-	mes "�]�������̒n���֒ʂ���ǂ��������]";
+	mes "‐研究所の地下へ通じる管を見つけた‐";
 	next;
-	if(select("����","����Ȃ�") == 2) {
-		mes "�]���ɓ���̂͂�߂邱�Ƃɂ����]";
+	if(select("入る","入らない") == 2) {
+		mes "‐中に入るのはやめることにした‐";
 		close;
 	}
-	mes "�]���ɓ��邱�Ƃɂ����]";
+	mes "‐中に入ることにした‐";
 	close2;
 	warp "lhz_cube.gat",231,17;
 	end;
 }
 
-lhz_in01.gat,24,140,2	script	���b�P���x���x����	868,{
+lhz_in01.gat,24,140,2	script	レッケンベル警備員	868,{
 	if(LHZ_1QUE >= 8 && ((getequipid(7) == 2657) || (getequipid(8) == 2657) || (countitem(2657) >= 1))) {
-		mes "[���b�P���x���x����]";
-		mes "���͌������ւ̓������";
-		mes "�x�����Ă���҂ł��B";
-		mes "�n���֍s���܂����H";
+		mes "[レッケンベル警備員]";
+		mes "私は研究室への入り口を";
+		mes "警備している者です。";
+		mes "地下へ行きますか？";
 		next;
-		if(select("�͂�","������") == 1) {
-			mes "[���b�P���x���x����]";
-			mes "�������܂����B";
-			mes "�����ɓ]���������܂��B";
-			mes "�Ζ������l�ł�!!";
+		if(select("はい","いいえ") == 1) {
+			mes "[レッケンベル警備員]";
+			mes "了解しました。";
+			mes "すぐに転送いたします。";
+			mes "勤務お疲れ様です!!";
 			close2;
 			warp "lhz_dun01.gat",149,285;
 			end;
 		}
-		mes "[���b�P���x���x����]";
-		mes "�������܂����B";
+		mes "[レッケンベル警備員]";
+		mes "了解しました。";
 		close;
 	}
-	mes "[���b�P���x���x����]";
-	mes "���̂��p�ł����H";
-	mes "�����͒ʍs�p�X���������̕��̂�";
-	mes "�o���肪�\�ł��B";
-	mes "�ʍs�p�X���m�F���Ă��������B";
+	mes "[レッケンベル警備員]";
+	mes "何のご用ですか？";
+	mes "ここは通行パスをお持ちの方のみ";
+	mes "出入りが可能です。";
+	mes "通行パスを確認してください。";
 	close;
 }
 
-lhz_cube.gat,59,200,0	script	cube1-1�o��	45,1,1,{
-	mes "�|�O�ɏo�܂����H�|";
+lhz_cube.gat,59,200,0	script	cube1-1出口	45,1,1,{
+	mes "－外に出ますか？－";
 	next;
-	if(select("�O�ɏo�Ȃ�","�O�ɏo��") == 1) {
-		mes "�]��߂܂����]";
+	if(select("外に出ない","外に出る") == 1) {
+		mes "‐やめました‐";
 		close;
 	}
-	mes "�]�O�ɏo�܂��]";
+	mes "‐外に出ます‐";
 	close2;
 	warp "lighthalzen.gat",339,226;
 	end;
 }
-lhz_cube.gat,59,144,0	duplicate(cube1-1�o��)	cube1-2�o��	45,1,1
-lhz_cube.gat,59,82,0	duplicate(cube1-1�o��)	cube1-3�o��	45,1,1
+lhz_cube.gat,59,144,0	duplicate(cube1-1出口)	cube1-2出口	45,1,1
+lhz_cube.gat,59,82,0	duplicate(cube1-1出口)	cube1-3出口	45,1,1
 
-lhz_cube.gat,73,185,4	script	��#cube1-1	858,{
-	mes "�]�Ŕɕ����������Ă���B";
+lhz_cube.gat,73,185,4	script	α#cube1-1	858,{
+	mes "‐看板に文字が書いてある。";
 	mes "";
-	mes "�@��";
+	mes "　α";
 	mes "";
-	mes "�@���߂̕����Ƃ������Ƃ��낤���]";
+	mes "　初めの部屋ということだろうか‐";
 	close;
 }
-lhz_cube.gat,73,129,4	duplicate(��#cube1-1)	��#cube1-2	858
-lhz_cube.gat,73,67,4	duplicate(��#cube1-1)	��#cube1-3	858
+lhz_cube.gat,73,129,4	duplicate(α#cube1-1)	α#cube1-2	858
+lhz_cube.gat,73,67,4	duplicate(α#cube1-1)	α#cube1-3	858
 
-lhz_cube.gat,17,129,4	script	��#cube2-1	858,{
-	mes "�]�Ŕɕ����������Ă���B";
+lhz_cube.gat,17,129,4	script	β#cube2-1	858,{
+	mes "‐看板に文字が書いてある。";
 	mes "";
-	mes "�@��";
+	mes "　β";
 	mes "";
-	mes "�@��ڂ̕����Ƃ������Ƃ��낤���]";
+	mes "　二つ目の部屋ということだろうか‐";
 	close;
 }
-lhz_cube.gat,17,185,4	duplicate(��#cube2-1)	��#cube2-2	858
-lhz_cube.gat,17,11,4	duplicate(��#cube2-1)	��#cube2-3	858
+lhz_cube.gat,17,185,4	duplicate(β#cube2-1)	β#cube2-2	858
+lhz_cube.gat,17,11,4	duplicate(β#cube2-1)	β#cube2-3	858
 
-lhz_cube.gat,17,67,4	script	��#cube3-1	858,{
-	mes "�]�Ŕɕ����������Ă���B";
+lhz_cube.gat,17,67,4	script	γ#cube3-1	858,{
+	mes "‐看板に文字が書いてある。";
 	mes "";
-	mes "�@��";
+	mes "　γ";
 	mes "";
-	mes "�@�O�ڂ̕����Ƃ������Ƃ��낤���]";
+	mes "　三つ目の部屋ということだろうか‐";
 	close;
 }
-lhz_cube.gat,73,11,4	duplicate(��#cube3-1)	��#cube3-2	858
+lhz_cube.gat,73,11,4	duplicate(γ#cube3-1)	γ#cube3-2	858
 
-lhz_cube.gat,129,11,4	script	��#cube4-1	858,{
-	mes "�]�Ŕɕ����������Ă���B";
+lhz_cube.gat,129,11,4	script	ω#cube4-1	858,{
+	mes "‐看板に文字が書いてある。";
 	mes "";
-	mes "�@��";
+	mes "　ω";
 	mes "";
-	mes "�@�Ō�̕����Ƃ������Ƃ��낤���]";
+	mes "　最後の部屋ということだろうか‐";
 	close;
 }
 
@@ -4596,12 +4596,12 @@ lhz_cube.gat,123,26,0	duplicate(cubewarprand)	cubewarp	45,1,1
 lhz_cube.gat,130,18,0	duplicate(cubewarprand)	cubewarp	45,1,1
 
 //============================================================
-// ���ꂽ���N�G�X�gNPC
+// 呪われた魂クエストNPC
 //- Registry -------------------------------------------------
-// LHZ_2QUE -> 0�`23
-// LHZ_2QUE_CURSE -> �T�u�t���O
+// LHZ_2QUE -> 0～23
+// LHZ_2QUE_CURSE -> サブフラグ
 //------------------------------------------------------------
--	script	��#Lhz	-1,{
+-	script	呪い#Lhz	-1,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(strnpcinfo(2) == "Lhz1")
 			soundeffect "loli_ruri_stand.wav",0;
@@ -4609,24 +4609,24 @@ lhz_cube.gat,130,18,0	duplicate(cubewarprand)	cubewarp	45,1,1
 			soundeffect "tao_gunka_stand.wav",0;
 		sc_start3 SC_CURSE,0,0,0,0,1000,10;
 		if(LHZ_1QUE >= 8 && LHZ_2QUE == 0) {
-			mes "�]�����Ă������l�̘r�ւ�";
-			mes "�@�ڂ���ƌ���o�����B";
-			mes "�@���l�̘r�ւ�ʂ���";
-			mes "�@�������ړ��̒��ɋ����]";
+			mes "‐持っていた囚人の腕輪が";
+			mes "　ぼんやりと光り出した。";
+			mes "　囚人の腕輪を通じて";
+			mes "　声が直接頭の中に響く‐";
 			next;
-			mes "[�j�̐�]";
-			mes "�c�c�����A�������c�c";
+			mes "[男の声]";
+			mes "……うぅ、ああぁ……";
 			next;
-			mes "[�j�̐�]";
+			mes "[男の声]";
 			if(rand(2))
-				mes "�c�c����c�c�������Ă���c�c";
+				mes "……くれ……いかしてくれ……";
 			else
-				mes "�����Ă���҂��c�c�����c�c";
-			mes "�n���X�Ɂc�c�ƂɋA�肽���c�c";
+				mes "生きている者が……憎い……";
+			mes "貧民街に……家に帰りたい……";
 			next;
-			mes "�]�n���X�̉f��������";
-			mes "�@���ꍞ��ł���B";
-			mes "�@�n���X�ɍs���Ă݂悤�]";
+			mes "‐貧民街の映像が頭に";
+			mes "　流れ込んでくる。";
+			mes "　貧民街に行ってみよう‐";
 			set LHZ_2QUE,1;
 			chgquest 61355,61360;
 			close;
@@ -4635,50 +4635,50 @@ lhz_cube.gat,130,18,0	duplicate(cubewarprand)	cubewarp	45,1,1
 	end;
 }
 
-lhz_dun01.gat,147,106,0	duplicate(��#Lhz)	��#Lhz1	139,3,3
-lhz_dun01.gat,239,135,0	duplicate(��#Lhz)	��#Lhz1	139,3,3
-lhz_dun01.gat,66,213,0	duplicate(��#Lhz)	��#Lhz1	139,3,3
-lhz_dun01.gat,225,198,0	duplicate(��#Lhz)	��#Lhz1	139,3,3
-lhz_dun02.gat,220,6,0	duplicate(��#Lhz)	��#Lhz1	139,3,3
-lhz_dun02.gat,244,229,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
-lhz_dun02.gat,94,199,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
-lhz_dun02.gat,267,278,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
-lhz_dun03.gat,244,51,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
-lhz_dun03.gat,123,191,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
-lhz_dun03.gat,74,140,0	duplicate(��#Lhz)	��#Lhz2	139,3,3
+lhz_dun01.gat,147,106,0	duplicate(呪い#Lhz)	呪い#Lhz1	139,3,3
+lhz_dun01.gat,239,135,0	duplicate(呪い#Lhz)	呪い#Lhz1	139,3,3
+lhz_dun01.gat,66,213,0	duplicate(呪い#Lhz)	呪い#Lhz1	139,3,3
+lhz_dun01.gat,225,198,0	duplicate(呪い#Lhz)	呪い#Lhz1	139,3,3
+lhz_dun02.gat,220,6,0	duplicate(呪い#Lhz)	呪い#Lhz1	139,3,3
+lhz_dun02.gat,244,229,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
+lhz_dun02.gat,94,199,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
+lhz_dun02.gat,267,278,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
+lhz_dun03.gat,244,51,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
+lhz_dun03.gat,123,191,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
+lhz_dun03.gat,74,140,0	duplicate(呪い#Lhz)	呪い#Lhz2	139,3,3
 
-lighthalzen.gat,344,277,0	script	��	139,3,3,{
+lighthalzen.gat,344,277,0	script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "tao_gunka_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�]�����Ă������l�̘r�ւ�";
-			mes "�@�ڂ���ƌ���o�����]";
+			mes "‐持っていた囚人の腕輪が";
+			mes "　ぼんやりと光り出した‐";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[���̐�]";
-			mes "�˂��A���񂽁c�c";
-			mes "�����H�ׂ镨�͂Ȃ��H";
+			mes "[女の声]";
+			mes "ねぇ、あんた……";
+			mes "何か食べる物はない？";
 			next;
-			mes "[��̐�]";
-			mes "�����������Ă���̂ł����H";
-			mes "�H�ׂ镨�Ȃ炠��܂���B";
+			mes "[謎の声]";
+			mes "お腹がすいているのですか？";
+			mes "食べる物ならありますよ。";
 			next;
-			mes "[���̐�]";
-			mes "�{����!?";
+			mes "[女の声]";
+			mes "本当に!?";
 			next;
-			mes "[��̐�]";
-			mes "�����A�{���ł��B";
-			mes "�������������������񂠂�܂���B";
-			mes "�����A���Ă��Ă��������B";
-			mes "�t�t�t�c�c";
+			mes "[謎の声]";
+			mes "ええ、本当です。";
+			mes "美味しい物がたくさんありますよ。";
+			mes "さあ、ついてきてください。";
+			mes "フフフ……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
 			if(LHZ_2QUE_CURSE != 0xF && LHZ_2QUE == 1) {
 				set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x1;
@@ -4692,15 +4692,15 @@ lighthalzen.gat,344,277,0	script	��	139,3,3,{
 					setquest 61385;
 					setquest 61382;
 					viewpoint 2,1,1,0,0xFFFFFF;
-					mes "�]�n���X�̊e���œ�̐������������B";
-					mes "�@�n���X�ɂ��ďڂ����l����";
-					mes "�@�������Ă��邱�̌��ۂɂ��āA";
-					mes "�@�b�𕷂����ق����悳�������]";
+					mes "‐貧民街の各所で謎の声が聞こえた。";
+					mes "　貧民街について詳しい人物に";
+					mes "　発生しているこの現象について、";
+					mes "　話を聞いたほうがよさそうだ‐";
 					close;
 				}
-				mes "�]���̒��ɁA�ǂ����ق��̏ꏊ��";
-				mes "�@�C���[�W��������ł����B";
-				mes "�@���Ȃ����Ă�ł���悤���]";
+				mes "‐頭の中に、どこかほかの場所の";
+				mes "　イメージが浮かんできた。";
+				mes "　あなたを呼んでいるようだ‐";
 				if(checkquest(61365) == 0)
 					viewpoint 1,344,278,0,0xFF0000;
 				else
@@ -4731,62 +4731,62 @@ lighthalzen.gat,344,277,0	script	��	139,3,3,{
 	end;
 }
 
-lhz_in03.gat,178,22,0		script	��	139,3,3,{
+lhz_in03.gat,178,22,0		script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "tao_gunka_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�]�����Ă������l�̘r�ւ�";
-			mes "�@�ڂ���ƌ���o�����]";
+			mes "‐持っていた囚人の腕輪が";
+			mes "　ぼんやりと光り出した‐";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[��̐�]";
-			mes "�ǂ��m�点���I";
-			mes "���b�P���x���œ�������";
-			mes "�񋟂��Ă�����!!";
+			mes "[謎の声]";
+			mes "良い知らせだ！";
+			mes "レッケンベルで働き口を";
+			mes "提供してくれるよ!!";
 			next;
-			mes "[�j�̐�]";
-			mes "�ӂ�A�ǂ����d���͑�ςȊ����";
-			mes "�����͈����񂾂낤�H";
-			mes "�ʂ���т����Ȃ��ł���I";
+			mes "[男の声]";
+			mes "ふん、どうせ仕事は大変な割りに";
+			mes "給料は安いんだろう？";
+			mes "ぬか喜びさせないでくれ！";
 			next;
-			mes "[��̐�]";
-			mes "�����A�������Ă��Ƃ͂Ȃ����A";
-			mes "�Ó��ȋ����炵����B";
+			mes "[謎の声]";
+			mes "そりゃ、高給ってことはないが、";
+			mes "妥当な給料らしいよ。";
 			next;
-			mes "[�j�̐�]";
-			mes "�ӂ�c�c";
+			mes "[男の声]";
+			mes "ふん……";
 			next;
-			mes "[��̐�]";
-			mes "�݂�Ȃ������������Ă���";
-			mes "����Ȃ����B";
-			mes "�����A�������I";
+			mes "[謎の声]";
+			mes "みんなお腹をすかせている";
+			mes "じゃないか。";
+			mes "さぁ、働こう！";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[�j�̐��H]";
-			mes "�E�O�F�c�c";
-			mes "�E���O�F�F�F�F�c�c";
+			mes "[男の声？]";
+			mes "ウグェ……";
+			mes "ウングェェェェ……";
 			next;
-			mes "[��̐��H]";
-			mes "���邳��!!";
+			mes "[謎の声？]";
+			mes "うるさい!!";
 			next;
-			mes "[�j�̐��H]";
-			mes "���A�����āc�c";
-			mes "�����Ă��ꂥ�c�c";
-			mes "�E�O�F�F�F�F�I";
+			mes "[男の声？]";
+			mes "た、助けて……";
+			mes "助けてくれぇ……";
+			mes "ウグェェェェ！";
 			next;
-			mes "[��̐��H]";
-			mes "�`�b�c�c";
+			mes "[謎の声？]";
+			mes "チッ……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
 			if(LHZ_2QUE_CURSE != 0xF && LHZ_2QUE == 1) {
 				set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x2;
@@ -4799,15 +4799,15 @@ lhz_in03.gat,178,22,0		script	��	139,3,3,{
 					delquest 61380;
 					setquest 61385;
 					setquest 61382;
-					mes "�]�n���X�̊e���œ�̐������������B";
-					mes "�@�n���X�ɂ��ďڂ����l����";
-					mes "�@�������Ă��邱�̌��ۂɂ��āA";
-					mes "�@�b�𕷂����ق����悳�������]";
+					mes "‐貧民街の各所で謎の声が聞こえた。";
+					mes "　貧民街について詳しい人物に";
+					mes "　発生しているこの現象について、";
+					mes "　話を聞いたほうがよさそうだ‐";
 					close;
 				}
-				mes "�]���̒��ɁA�ǂ����ق��̏ꏊ��";
-				mes "�@�C���[�W��������ł����B";
-				mes "�@���Ȃ����Ă�ł���悤���]";
+				mes "‐頭の中に、どこかほかの場所の";
+				mes "　イメージが浮かんできた。";
+				mes "　あなたを呼んでいるようだ‐";
 			}
 			close2;
 			sc_end SC_BLIND;
@@ -4822,28 +4822,28 @@ lhz_in03.gat,178,22,0		script	��	139,3,3,{
 	end;
 }
 
-lighthalzen.gat,295,227,0	script	��	139,3,3,{
+lighthalzen.gat,295,227,0	script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "loli_ruri_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[�q���̐�]";
-			mes "�}�}�A���̐l�B�������|����B";
-			mes "�����^�����Łc�c";
+			mes "[子供の声]";
+			mes "ママ、あの人達すごく怖いよ。";
+			mes "服が真っ黒で……";
 			next;
-			mes "[��̐�]";
-			mes "����A���̎q�c�c";
-			mes "�����}�}���Ǝv���Ă�݂����ˁB";
-			mes "�ł́A�s���܂��傤���B";
-			mes "�t�t�t�c�c";
+			mes "[謎の声]";
+			mes "あら、この子……";
+			mes "私をママだと思ってるみたいね。";
+			mes "では、行きましょうか。";
+			mes "フフフ……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
 			if(LHZ_2QUE_CURSE != 0xF && LHZ_2QUE == 1) {
 				set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x4;
@@ -4857,15 +4857,15 @@ lighthalzen.gat,295,227,0	script	��	139,3,3,{
 					setquest 61385;
 					setquest 61382;
 					viewpoint 2,1,1,2,0xFFFFFF;
-					mes "�]�n���X�̊e���œ�̐������������B";
-					mes "�@�n���X�ɂ��ďڂ����l����";
-					mes "�@�������Ă��邱�̌��ۂɂ��āA";
-					mes "�@�b�𕷂����ق����悳�������]";
+					mes "‐貧民街の各所で謎の声が聞こえた。";
+					mes "　貧民街について詳しい人物に";
+					mes "　発生しているこの現象について、";
+					mes "　話を聞いたほうがよさそうだ‐";
 					close;
 				}
-				mes "�]���̒��ɁA�ǂ����ق��̏ꏊ��";
-				mes "�@�C���[�W��������ł����B";
-				mes "�@���Ȃ����Ă�ł���悤���]";
+				mes "‐頭の中に、どこかほかの場所の";
+				mes "　イメージが浮かんできた。";
+				mes "　あなたを呼んでいるようだ‐";
 				if(checkquest(61365) == 0)
 					viewpoint 1,344,278,0,0xFF0000;
 				else
@@ -4895,66 +4895,66 @@ lighthalzen.gat,295,227,0	script	��	139,3,3,{
 	end;
 }
 
-lighthalzen.gat,364,315,0	script	��	139,3,3,{
+lighthalzen.gat,364,315,0	script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "tao_gunka_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[��̐�]";
-			mes "�N�A�Ȃ��Ȃ��ǂ��d��������ˁB";
+			mes "[謎の声]";
+			mes "君、なかなか良い仕事をするね。";
 			next;
-			mes "[�N�̐�]";
-			mes "�ւցA�T���L���[�I";
-			mes "�撣���ĉ҂��Ȃ��Ƃ����Ȃ�����ȁI";
+			mes "[青年の声]";
+			mes "へへ、サンキュー！";
+			mes "頑張って稼がないといけないからな！";
 			next;
-			mes "[��̐�]";
-			mes "�ǂ������H�@�����������";
-			mes "��肪���̂���d�������Ă݂Ȃ����H";
-			mes "�N�Ȃ�K�C���Ǝv���񂾁B";
-			mes "�������w���ɐ��E���Ă����悤�B";
+			mes "[謎の声]";
+			mes "どうだい？　もうちょっと";
+			mes "やりがいのある仕事をしてみないか？";
+			mes "君なら適任だと思うんだ。";
+			mes "私から上層部に推薦してあげよう。";
 			next;
-			mes "[��̐�]";
-			mes "���������Ȃ�オ�邼�B";
-			mes "�[�����������z���o����B";
-			mes "�������A�N�������󂯂�Ȃ炾���c�c";
+			mes "[謎の声]";
+			mes "給料もかなり上がるぞ。";
+			mes "充分見合った額を出すよ。";
+			mes "もちろん、君が引き受けるならだが……";
 			next;
-			mes "[�N�̐�]";
-			mes "�فA�{����!?";
+			mes "[青年の声]";
+			mes "ほ、本当か!?";
 			next;
-			mes "[��̐�]";
-			mes "�����B";
-			mes "���������Ă������c�c";
+			mes "[謎の声]";
+			mes "ああ。";
+			mes "ただ言っておくが……";
 			next;
-			mes "[��̐�]";
-			mes "�Ζ��n�͉����Ȃ��Ă��܂���B";
-			mes "�䂪�Ђ͋K�͂��傫���̂ŁA";
-			mes "�F��ȏ��ɂ��邩��ˁB";
+			mes "[謎の声]";
+			mes "勤務地は遠くなってしまうよ。";
+			mes "我が社は規模が大きいので、";
+			mes "色んな所にあるからね。";
 			next;
-			mes "[��̐�]";
-			mes "�ƂĂ��d�v�ȃv���W�F�N�g�ŁA";
-			mes "���̃v���W�F�N�g�ɎQ��������A";
-			mes "���������ƂɋA�邱�Ƃ͂ł��Ȃ��Ȃ�B";
-			mes "����ł��ǂ����ȁH";
+			mes "[謎の声]";
+			mes "とても重要なプロジェクトで、";
+			mes "このプロジェクトに参加したら、";
+			mes "そうそう家に帰ることはできなくなる。";
+			mes "それでも良いかな？";
 			next;
-			mes "[�N�̐�]";
-			mes "�����Ɂc�c";
+			mes "[青年の声]";
+			mes "遠くに……";
 			next;
-			mes "[��̐�]";
-			mes "�ǂ������H";
-			mes "����ȃ`�����X�A�߂�����";
-			mes "�Ȃ��Ǝv����H";
+			mes "[謎の声]";
+			mes "どうだい？";
+			mes "こんなチャンス、めったに";
+			mes "ないと思うよ？";
 			next;
-			mes "[�N�̐�]";
-			mes "�c�c�킩�����B";
-			mes "����I";
+			mes "[青年の声]";
+			mes "……わかった。";
+			mes "やるよ！";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
 			if(LHZ_2QUE_CURSE != 0xF && LHZ_2QUE == 1) {
 				set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x8;
@@ -4968,15 +4968,15 @@ lighthalzen.gat,364,315,0	script	��	139,3,3,{
 					setquest 61385;
 					setquest 61382;
 					viewpoint 2,1,1,3,0xFFFFFF;
-					mes "�]�n���X�̊e���œ�̐������������B";
-					mes "�@�n���X�ɂ��ďڂ����l����";
-					mes "�@�������Ă��邱�̌��ۂɂ��āA";
-					mes "�@�b�𕷂����ق����悳�������]";
+					mes "‐貧民街の各所で謎の声が聞こえた。";
+					mes "　貧民街について詳しい人物に";
+					mes "　発生しているこの現象について、";
+					mes "　話を聞いたほうがよさそうだ‐";
 					close;
 				}
-				mes "�]���̒��ɁA�ǂ����ق��̏ꏊ��";
-				mes "�@�C���[�W��������ł����B";
-				mes "�@���Ȃ����Ă�ł���悤���]";
+				mes "‐頭の中に、どこかほかの場所の";
+				mes "　イメージが浮かんできた。";
+				mes "　あなたを呼んでいるようだ‐";
 				if(checkquest(61365) == 0)
 					viewpoint 1,344,278,0,0xFF0000;
 				else
@@ -5006,134 +5006,134 @@ lighthalzen.gat,364,315,0	script	��	139,3,3,{
 	end;
 }
 
-lighthalzen.gat,346,263,3	script	���V	846,{
+lighthalzen.gat,346,263,3	script	長老	846,{
 	if(countitem(7345) && LHZ_2QUE < 11) {
 		switch(LHZ_2QUE) {
 		case 0:
 		case 1:
 			if(LHZ_2QUE_CURSE != 0xF)
 				break;
-			mes "[���V]";
-			mes "�t�H�t�H�t�H�c�c�������񌩂��邼�B";
-			mes "�N�̔w���Ɂc�c�����Ⴄ����ƂȁB";
-			mes "���ꂾ����������߂��Ă���ƁA";
-			mes "��菜���̂���ς���낤�ȁB";
-			mes "�t�H�t�H�t�H�t�H�I";
+			mes "[長老]";
+			mes "フォフォフォ……たくさん見えるぞ。";
+			mes "君の背中に……うじゃうじゃとな。";
+			mes "それだけたくさん憑いていると、";
+			mes "取り除くのが大変じゃろうな。";
+			mes "フォフォフォフォ！";
 			next;
-			if(select("���������܂��񂪁c�c","��������")==2) {
-				mes "[���V]";
-				mes "�t�H�t�H�c�c������킵�𖳎����Ă��A";
-				mes "�����ꂨ��͂킵�̌��֗��邱�Ƃ�";
-				mes "�Ȃ邶��낤�c�c�t�H�t�H�t�H�B";
+			if(select("何も見えませんが……","無視する")==2) {
+				mes "[長老]";
+				mes "フォフォ……いくらわしを無視しても、";
+				mes "いずれお主はわしの元へ来ることに";
+				mes "なるじゃろう……フォフォフォ。";
 				close;
 			}
-			mes "[���V]";
-			mes "�t�H�t�H�c�c�N�ɂ͌����񂶂�낤�ȁB";
-			mes "�������A�킵�ɂ͂͂����茩���Ă���B";
-			mes "����̔w��ɔ����Ă��邼�c�c";
-			mes "^3131FF����^000000�炪�ȁc�c�B";
+			mes "[長老]";
+			mes "フォフォ……君には見えんじゃろうな。";
+			mes "しかし、わしにははっきり見えておる。";
+			mes "お主の背後に迫っておるぞ……";
+			mes "^3131FFそれ^000000らがな……。";
 			next;
-			menu "����c�c���Ȃ�ł��傤�H",-;
-			mes "[���V]";
-			mes "�t�H�t�H�c�c��������ȁB";
+			menu "それ……何なんでしょう？",-;
+			mes "[長老]";
+			mes "フォフォ……そうじゃな。";
 			next;
-			mes "[���V]";
-			mes "�c���v�O�Ƃł������̂��́c�c";
-			mes "�������׈��Ȏc���v�O����B";
-			mes "���̐��ɖ�����⍦���c�����܂�";
-			mes "���O�̎��𐋂����҂́A";
-			mes "����������`�ۉ����ꂽ�A";
-			mes "���݂����ȑ��݂���ȁB";
+			mes "[長老]";
+			mes "残留思念とでも言うのかの……";
+			mes "しかも邪悪な残留思念じゃ。";
+			mes "この世に未練や遺恨を残したまま";
+			mes "無念の死を遂げた者の、";
+			mes "激しい感情が形象化された、";
+			mes "魂みたいな存在じゃな。";
 			next;
 			soundeffect "loli_ruri_stand.wav",0;
 			sc_start3 SC_CURSE,0,0,0,0,5000,10;
-			mes "[���V]";
-			mes "���̂���킩��ʂ��A";
-			mes "�����������c���v�O���A";
-			mes "����̔w��ɏW�܂��Ă���B";
-			mes "�㓪��������A�s���s���Ɖ���";
-			mes "�����Ȃ����ˁH�@�t�H�t�H�t�H�B";
-			mes "���̐����`�����ɂ�ł��邼�B";
+			mes "[長老]";
+			mes "何故からわからぬが、";
+			mes "そういった残留思念が、";
+			mes "お主の背後に集まっている。";
+			mes "後頭部あたり、ピリピリと何か";
+			mes "感じないかね？　フォフォフォ。";
+			mes "もの凄い形相で睨んでおるぞ。";
 			next;
-			menu "�ǂ��o�����@�͂Ȃ���ł����H",-;
-			mes "[���V]";
-			mes "���@�͂���Ƃ��B";
-			mes "�c���v�O�Ƃ������̂́A";
-			mes "����Ȋ�������Ɏc����̂���B";
-			mes "������A���̎c���v�O���c���ꂽ";
-			mes "�i����T���A��菜���Ηǂ��̂���B";
+			menu "追い出す方法はないんですか？",-;
+			mes "[長老]";
+			mes "方法はあるとも。";
+			mes "残留思念というものは、";
+			mes "強烈な感情が何かに残るものじゃ。";
+			mes "だから、その残留思念が残された";
+			mes "品物を探し、取り除けば良いのじゃ。";
 			next;
-			mes "[���V]";
-			mes "�t�H�t�H�c�c�ȒP����낤�H";
+			mes "[長老]";
+			mes "フォフォ……簡単じゃろう？";
 			next;
-			mes "[���V]";
-			mes "�������A�ނ�̕\�������ɁA";
-			mes "����ɑ����̍��݂�������";
-			mes "����悤���Ⴊ�c�c";
-			mes "�����Ǝז������Ă��邩�������̂��B";
+			mes "[長老]";
+			mes "しかし、彼らの表情を見るに、";
+			mes "お主に相当の恨みを持って";
+			mes "いるようじゃが……";
+			mes "何かと邪魔をしてくるかもしれんのぅ。";
 			next;
-			mes "[���V]";
-			mes "����́A�N���ɍ��܂��悤��";
-			mes "���Ƃł����ł������̂��H";
-			mes "��̉��������̂���H";
+			mes "[長老]";
+			mes "お主は、誰かに恨まれるような";
+			mes "ことでもしでかしたのか？";
+			mes "一体何をしたのじゃ？";
 			next;
-			menu "�S�R���������܂���",-,"�S�����肪�������āc�c",-;
-			mes "[���V]";
-			mes "�t�H�t�H�A����͂킵�ɂ�";
-			mes "�֌W�̂Ȃ����Ƃ��Ⴊ�ȁB";
-			mes "������ɂ��您�傪���˂΂Ȃ�Ȃ��B";
+			menu "全然見当がつきません",-,"心当たりが多すぎて……",-;
+			mes "[長老]";
+			mes "フォフォ、それはわしには";
+			mes "関係のないことじゃがな。";
+			mes "いずれにせよお主がやらねばならない。";
 			next;
-			mes "[���V]";
-			mes "���܂łɁA�������ꂽ���̂��H";
+			mes "[長老]";
+			mes "今までに、何かされたかのぅ？";
 			next;
-			menu "�������������܂���",-;
-			mes "[���V]";
-			mes "�t�H�t�H�A�������B";
-			mes "��͂�ނ�́A����ɉ�����";
-			mes "�`���������Ă���悤����ȁB";
-			mes "���Ƃ��ނ�Ƃ���͑��݂��Ă���";
-			mes "�������Ⴄ����A���ړI�ȑΘb��";
-			mes "�s�\���Ⴊ�B";
+			menu "幻聴が聞こえました",-;
+			mes "[長老]";
+			mes "フォフォ、そうか。";
+			mes "やはり彼らは、お主に何かを";
+			mes "伝えたがっているようじゃな。";
+			mes "もとより彼らとお主は存在している";
+			mes "次元が違うから、直接的な対話は";
+			mes "不可能じゃが。";
 			next;
-			mes "[���V]";
-			mes "�ނ炪�`���Ă��邱�Ƃ��Q�l�ɂ��A";
-			mes "�ނ�̉ߋ���T�邵���Ȃ�����낤�B";
-			mes "�ނ�̐��̓����ɐg��C���A";
-			mes "�s������Ƃ悢����낤�B";
+			mes "[長老]";
+			mes "彼らが伝えてくることを参考にし、";
+			mes "彼らの過去を探るしかないじゃろう。";
+			mes "彼らの声の導きに身を任せ、";
+			mes "行動するとよいじゃろう。";
 			next;
-			mes "[���V]";
-			mes "�킵�ɂ͂��������͂͂Ȃ����A";
-			mes "�ނ�̈ӎu�����������`����";
-			mes "�݂�Ƃ��悤�B";
-			mes "^3131FF��x����^000000��������̂ŁA";
-			mes "�W�����邪�悢�B";
+			mes "[長老]";
+			mes "わしにはたいした力はないが、";
+			mes "彼らの意志を少しだけ覗いて";
+			mes "みるとしよう。";
+			mes "^3131FF一度だけ^000000しかやらんので、";
+			mes "集中するがよい。";
 			next;
-			mes "[���V]";
-			mes "�����N���邩�͂킩���B";
-			mes "�ł́c�c";
+			mes "[長老]";
+			mes "何が起こるかはわからん。";
+			mes "では……";
 			next;
 			misceffect 22,"";
-			mes "[���V]";
-			mes "�I���n�}�O�n�}�����J���c�c";
+			mes "[長老]";
+			mes "オムハマグハマヤリカリ……";
 			next;
 			misceffect 62,"";
 			misceffect 225,"";
 			misceffect 231,"";
-			mes "[���V]";
-			mes "�n�A�u�c�c!!!!";
+			mes "[長老]";
+			mes "ハアブ……!!!!";
 			next;
-			mes "�]�َ��ȋC�Ƃł������̂��A";
-			mes "�@���Ƃ������Ȃ�������";
-			mes "�@�̓������銴�o�������B";
-			mes "�@�C�͋Ïk���A�傫�Ȗ{���ƂȂ���";
-			mes "�@���ォ�畬���o���Ă������]";
+			mes "‐異質な気とでもいうのか、";
+			mes "　何とも言えない何かが";
+			mes "　体内を巡る感覚がした。";
+			mes "　気は凝縮し、大きな本流となって";
+			mes "　頭上から噴き出していった‐";
 			next;
-			mes "�]���َ̈��ȋC�́A���Ȃ���";
-			mes "�@���b�P���x���Ђɓ����Ă���]";
+			mes "‐その異質な気は、あなたを";
+			mes "　レッケンベル社に導いている‐";
 			next;
 			viewpoint 1,105,281,0,0x99FF33;
-			mes "[���V]";
-			mes "���ꂪ�A�ނ�̈ӎu����B";
+			mes "[長老]";
+			mes "これが、彼らの意志じゃ。";
 			set LHZ_2QUE_CURSE,0;
 			set LHZ_2QUE,2;
 			delquest 61385;
@@ -5141,274 +5141,274 @@ lighthalzen.gat,346,263,3	script	���V	846,{
 			delquest 61383;
 			setquest 61390;
 			next;
-			mes "[���V]";
-			mes "�킵�����Ă�������̂́A";
-			mes "���ꂭ�炢����B";
-			mes "���㉽���N���邩�͑z�������񂪁A";
-			mes "�N�̍K�^���F���Ă��邼�B";
+			mes "[長老]";
+			mes "わしがしてあげられるのは、";
+			mes "これくらいじゃ。";
+			mes "今後何が起きるかは想像もつかんが、";
+			mes "君の幸運を祈っておるぞ。";
 			close;
 		default:
-			mes "[���V]";
-			mes "���̘V���ڂꂪ���Ă��邱�Ƃ́A";
-			mes "�����Ȃ��悤����̂��c�c";
+			mes "[長老]";
+			mes "この老いぼれがしてやれることは、";
+			mes "もうないようじゃのぅ……";
 			close;
 		case 9:
 			if(countitem(7341) < 1) {
-				mes "[���V]";
-				mes "���ށH�@��������Ȃ�";
-				mes "���߂Ă���̂���H";
-				mes "�킵�̊�ɉ������Ă��邩�ˁH";
+				mes "[長老]";
+				mes "うむ？　何をそんなに";
+				mes "見つめておるのじゃ？";
+				mes "わしの顔に何かついておるかね？";
 				close;
 			}
-			mes "[���V]";
-			mes "�܂������ȁB�t�H�t�H�c�c";
-			mes "�ǂ������̂���H";
+			mes "[長老]";
+			mes "また来たな。フォフォ……";
+			mes "どうしたのじゃ？";
 			next;
-			if(select("���ł�����܂���c�c","�y���_���g��������")==1) {
-				mes "[���V]";
-				mes "���̂悤�ɋ���ȕ\��ŁA";
-				mes "���ł��Ȃ��ƁH�@�t�H�t�H�c�c";
+			if(select("何でもありません……","ペンダントを見せる")==1) {
+				mes "[長老]";
+				mes "そのように虚ろな表情で、";
+				mes "何でもないと？　フォフォ……";
 				close;
 			}
-			mes "[���V]";
-			mes "�ӂށA���̃y���_���g�A";
-			mes "���Ȃ肨�т����������";
-			mes "���߂��Ă���悤����ȁB";
-			mes "��������̂܂܎����Ă�����A";
-			mes "���߂��Ă��錃��������Ɏ�荞�܂�";
-			mes "�􂢂��󂯂Ă��܂���������ʁB";
+			mes "[長老]";
+			mes "ふむ、このペンダント、";
+			mes "かなりおびただしい感情が";
+			mes "込められておるようじゃな。";
+			mes "それをそのまま持っていたら、";
+			mes "込められている激しい感情に取り込まれ";
+			mes "呪いを受けてしまうかもしれぬ。";
 			next;
-			mes "[���V]";
-			mes "�ǂ�A�킵���􂢂�";
-			mes "�����Ă�낤���̂��H";
+			mes "[長老]";
+			mes "どれ、わしが呪いを";
+			mes "解いてやろうかのぅ？";
 			next;
-			if(select("�͂�","������")==2) {
-				mes "[���V]";
-				mes "�c�c";
+			if(select("はい","いいえ")==2) {
+				mes "[長老]";
+				mes "……";
 				next;
-				mes "[���V]";
-				mes "�킵�̑P�ӂ�f��Ƃ́A";
-				mes "�ǂ��Ȃ��Ă��m��񂼁H";
+				mes "[長老]";
+				mes "わしの善意を断るとは、";
+				mes "どうなっても知らんぞ？";
 				close;
 			}
-			mes "[���V]";
-			mes "���܂�C���i�܂Ȃ����A";
-			mes "���Č��ʐU�������̂�";
-			mes "�킵�̐����ɂ͍���ʂ���̂��c�c";
-			mes "������x�͂�݂��Ă�낤�B";
+			mes "[長老]";
+			mes "あまり気が進まないが、";
+			mes "見て見ぬ振りをするのも";
+			mes "わしの性分には合わぬからのぅ……";
+			mes "もう一度力を貸してやろう。";
 			next;
-			mes "[���V]";
-			mes "�ł́A^3131FF����5��^000000�ƁA";
-			mes "^3131FF�Ԃ���1��^000000��p�ӂ���̂���B";
-			mes "�����Ńy���_���g�ɍ��߂�ꂽ";
-			mes "�􂢂������A�Ԃ��΂Ńy���_���g��";
-			mes "�߂��Ă��鍰���Ԃ߂�̂���B";
+			mes "[長老]";
+			mes "では、^3131FF聖水5個^000000と、";
+			mes "^3131FF花たば1個^000000を用意するのじゃ。";
+			mes "聖水でペンダントに込められた";
+			mes "呪いを解き、花たばでペンダントに";
+			mes "憑いている魂を慰めるのじゃ。";
 			next;
-			mes "[���V]";
-			mes "����ł́A�����W�߂Ă���̂���I";
+			mes "[長老]";
+			mes "それでは、早く集めてくるのじゃ！";
 			chgquest 61440,61445;
 			set LHZ_2QUE,10;
 			close;
 		case 10:
 			if(countitem(523) < 5 || countitem(744) < 1 || countitem(7341) < 1) {
-				mes "[���V]";
-				mes "^3131FF����5��^000000�A^3131FF�Ԃ���1��^000000�B";
-				mes "�y���_���g�ɂ�������";
-				mes "�􂢂�����������΁A";
-				mes "������W�߂Ă��邪�悢�B";
-				mes "�t�H�t�H�t�H�B";
+				mes "[長老]";
+				mes "^3131FF聖水5個^000000、^3131FF花たば1個^000000。";
+				mes "ペンダントにかかった";
+				mes "呪いを解きたければ、";
+				mes "これを集めてくるがよい。";
+				mes "フォフォフォ。";
 				close;
 			}
-			mes "[���V]";
-			mes "�ӂށA�p�ӂ͂ł����悤����ȁB";
-			mes "�ł́A���_���W������c�c";
+			mes "[長老]";
+			mes "ふむ、用意はできたようじゃな。";
+			mes "では、精神を集中せよ……";
 			next;
 			misceffect 91,"";
-			mes "[���V]";
-			mes "�I���n�}�O�n�}�����J���c�c";
+			mes "[長老]";
+			mes "オムハマグハマヤリカリ……";
 			next;
 			misceffect 86,"";
-			mes "[���V]";
-			mes "�n�A�u�c�c!!!!";
+			mes "[長老]";
+			mes "ハアブ……!!!!";
 			next;
-			mes "[���V]";
-			mes "�悵�A����ŗǂ�����낤�B";
-			mes "�y���_���g�̎􂢂͉����ꂽ�B";
-			mes "���ށA���������C�z�͊����ʂ���낤�B";
+			mes "[長老]";
+			mes "よし、これで良いじゃろう。";
+			mes "ペンダントの呪いは解かれた。";
+			mes "うむ、もう何も気配は感じぬじゃろう。";
 			next;
-			mes "[���V]";
-			mes "�����􂢂͉��������A�y���_���g��";
-			mes "�c���v�O�����߂��Ă����Ƃ������Ƃ�";
-			mes "���̃y���_���g�̎�����ɂ́A";
-			mes "�����������������������";
-			mes "�Ƃ������Ƃ͊m������B";
+			mes "[長老]";
+			mes "もう呪いは解けたが、ペンダントに";
+			mes "残留思念が込められていたということは";
+			mes "このペンダントの持ち主には、";
+			mes "何か相当激しい感情があった";
+			mes "ということは確かじゃ。";
 			next;
-			mes "[���V]";
-			mes "���̃y���_���g�����X����ׂ�����";
-			mes "�Ԃ��Ă��̂��ǂ�����낤�B";
+			mes "[長老]";
+			mes "このペンダントを元々あるべき所に";
+			mes "返してやるのが良いじゃろう。";
 			next;
-			mes "^3131FF�]���܂łǂ�Ȃɗ͂����߂Ă�^000000";
-			mes "^3131FF�@�J���邱�Ƃ̂ł��Ȃ�����^000000";
-			mes "^3131FF�@�y���_���g���J�����]^000000";
+			mes "^3131FF‐今までどんなに力を込めても^000000";
+			mes "^3131FF　開けることのできなかった^000000";
+			mes "^3131FF　ペンダントが開いた‐^000000";
 			next;
-			mes "^3131FF�]���ɂ́A�Z���炵��^000000";
-			mes "^3131FF�@�j���̎ʐ^�������Ă����B^000000";
-			mes "^3131FF�@���̗ǂ������Ȃ���2�l��^000000";
-			mes "^3131FF�@���̕n���X�̏Z�����낤���]^000000";
+			mes "^3131FF‐中には、兄妹らしき^000000";
+			mes "^3131FF　男女の写真が入っていた。^000000";
+			mes "^3131FF　仲の良さそうなこの2人は^000000";
+			mes "^3131FF　この貧民街の住民だろうか‐^000000";
 			next;
-			mes "[���V]";
-			mes "���̖��͂�������k�̉ƂɏZ��ł���";
-			mes "���̂悤����ȁB";
-			mes "�A��ʌZ��҂��Ă����悤���Ⴊ�c�c�B";
+			mes "[長老]";
+			mes "この娘はここから北の家に住んでいる";
+			mes "娘のようじゃな。";
+			mes "帰らぬ兄を待っていたようじゃが……。";
 			next;
-			mes "[���V]";
-			mes "�c�c�h��������`���邱�Ƃ�";
-			mes "�ǂ����Ƃ��ǂ����́A";
-			mes "�킵�ɂ͂킩��ʁB";
-			mes "���厩�g�Ŕ��f���邪�悢�B";
+			mes "[長老]";
+			mes "……辛い事実を伝えることが";
+			mes "良いことかどうかは、";
+			mes "わしにはわからぬ。";
+			mes "お主自身で判断するがよい。";
 			chgquest 61445,61450;
 			delitem 523,5;
 			delitem 744,1;
 			set LHZ_2QUE,11;
 			next;
-			mes "�]�y���_���g�͕n���X�̖k�̉Ƃ�";
-			mes "�@�Z�ޏ����̂��̂̂悤���B";
-			mes "�@�����Ƀy���_���g��n�����]";
+			mes "‐ペンダントは貧民街の北の家に";
+			mes "　住む少女のもののようだ。";
+			mes "　少女にペンダントを渡そう‐";
 			close;
 		}
 	}
-	mes "[���V]";
-	mes "�Q�����ҒB�́A��ɕW�I��";
-	mes "���߂Ėڂ����点�Ă���B";
-	mes "�ځ[���Ƃ������s�q�́A";
-	mes "�ł��_���Ղ�����낤�ȁB";
-	mes "�t�H�t�H�t�H�B";
+	mes "[長老]";
+	mes "飢えた者達は、常に標的を";
+	mes "求めて目を光らせている。";
+	mes "ぼーっとした旅行客は、";
+	mes "最も狙われ易いじゃろうな。";
+	mes "フォフォフォ。";
 	next;
-	switch(select("���q�^���[���Ɋւ���","�n���X�Ɋւ���","�H�H�H")) {
+	switch(select("リヒタルゼンに関して","貧民街に関して","？？？")) {
 	case 1:
-		mes "[���V]";
-		mes "�N�́A���q�^���[���ɂ���";
-		mes "�S���̃��[�����������Ƃ����邩�ˁH";
+		mes "[長老]";
+		mes "君は、リヒタルゼンにある";
+		mes "鉄道のレールを見たことがあるかね？";
 		next;
-		mes "[���V]";
-		mes "���̊X�́A��̐��E���������Ă���B";
-		mes "�x�T�Ȑ��E�A�����ĕn�������E�B";
-		mes "���̓�̐��E�̏Z�l�́A";
-		mes "���[���ŕ������Ă���悤�ɁA";
-		mes "�i���ɗ������������Ƃ͂Ȃ�����낤�B";
+		mes "[長老]";
+		mes "この街は、二つの世界が共存している。";
+		mes "富裕な世界、そして貧しい世界。";
+		mes "その二つの世界の住人は、";
+		mes "レールで分けられているように、";
+		mes "永遠に理解し合うことはないじゃろう。";
 		next;
-		mes "[���V]";
-		mes "���b�P���x���Ђ́A";
-		mes "���܂ɕn���X�̎҂Ɏd����";
-		mes "�񋟂��Ă���悤���Ⴊ�A";
-		mes "�킵�͂�������^�I�Ɍ��Ă���B";
+		mes "[長老]";
+		mes "レッケンベル社は、";
+		mes "たまに貧民街の者に仕事を";
+		mes "提供しているようじゃが、";
+		mes "わしはそれを懐疑的に見ておる。";
 		next;
-		mes "[���V]";
-		mes "���b�P���x���Ђ́A�d�J����";
-		mes "�l�����K�v�Ȏd�������鎞�́A";
-		mes "�n���X�̐l���ق����肷��B";
-		mes "�����d���Ƃ͂����A�n�����҂�";
-		mes "�Ƃ��Ă͂��肪�������Ƃł͂��邪�c�c";
+		mes "[長老]";
+		mes "レッケンベル社は、重労働や";
+		mes "人数が必要な仕事がある時は、";
+		mes "貧民街の人を雇ったりする。";
+		mes "きつい仕事とはいえ、貧しい者に";
+		mes "とってはありがたいことではあるが……";
 		next;
-		mes "[���V]";
-		mes "�܂��A���̂����ڂꂪ�C�ɂ����Ƃ����";
-		mes "�t�H�t�H�t�H�A";
-		mes "�ʂ肷����̗��l�ɂ́A";
-		mes "�����̂Ȃ��b�����Ă��܂����̂��B";
+		mes "[長老]";
+		mes "まぁ、このおいぼれが気にしたところで";
+		mes "フォフォフォ、";
+		mes "通りすがりの旅人には、";
+		mes "興味のない話をしてしまったのぅ。";
 		close;
 	case 2:
-		mes "[���V]";
-		mes "�n���A�a�C�A���ʁA���́c�c";
+		mes "[長老]";
+		mes "貧困、病気、差別、侮蔑……";
 		next;
-		mes "[���V]";
-		mes "���������o�āA";
-		mes "�����͂��łɉ�X�̈ꕔ�ƂȂ���";
-		mes "���ݕt���Ă��܂����B";
+		mes "[長老]";
+		mes "長い時を経て、";
+		mes "それらはすでに我々の一部となって";
+		mes "染み付いてしまった。";
 		next;
-		mes "[���V]";
-		mes "�n���X�̐l�X���r�X�����̂́A";
-		mes "�������̂Ȃ����Ƃ��������B";
+		mes "[長老]";
+		mes "貧民街の人々が荒々しいのは、";
+		mes "しかたのないことかもしれん。";
 		next;
-		mes "[���V]";
-		mes "�����痝���I�Ȑl�Ԃł��A";
-		mes "�W�����O���Ɉ�l����ɂ����΁A";
-		mes "�{�\�������o���ɂȂ�B";
-		mes "������́A�����������E����B";
-		mes "��X�́A�]��ł������";
-		mes "���܂ꂽ�킯�ł͂Ȃ��̂ɂȁc�c";
+		mes "[長老]";
+		mes "いくら理性的な人間でも、";
+		mes "ジャングルに一人きりにされれば、";
+		mes "本能が剥き出しになる。";
+		mes "こちらは、そういう世界じゃ。";
+		mes "我々は、望んでこちらに";
+		mes "生まれたわけではないのにな……";
 		close;
 	case 3:
-		mes "[���V]";
-		mes "�������������Ƃ⑊�k���������Ƃ�";
-		mes "����΁A���ł��q�˂邪�悢�B";
-		mes "�N�Ƃ́A�܂���悤�ȋC������̂��B";
-		mes "�c�c�t�H�t�H�t�H�B";
+		mes "[長老]";
+		mes "何か困ったことや相談したいことが";
+		mes "あれば、いつでも尋ねるがよい。";
+		mes "君とは、また会うような気がするのぅ。";
+		mes "……フォフォフォ。";
 		close;
 	}
 }
 
-lhz_in01.gat,113,150,0		script	��	139,3,3,{
+lhz_in01.gat,113,150,0		script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "tao_gunka_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�]�����Ă������l�̘r�ւ�";
-			mes "�@�ڂ���ƌ���o�����B";
-			mes "�@���l�̘r�ւ�ʂ���";
-			mes "�@�������ړ��̒��ɋ����]";
+			mes "‐持っていた囚人の腕輪が";
+			mes "　ぼんやりと光り出した。";
+			mes "　囚人の腕輪を通じて";
+			mes "　声が直接頭の中に響く‐";
 			next;
-			mes "[�N�̐�]";
-			mes "�Ȃ��H";
-			mes "���͂��ꂩ��A���̎d����";
-			mes "����΂����񂾁H";
+			mes "[青年の声]";
+			mes "なぁ？";
+			mes "俺はこれから、何の仕事を";
+			mes "すればいいんだ？";
 			next;
-			mes "�]�n���X�ŕ������N��";
-			mes "�@�c���v�O�Ɠ��������]";
+			mes "‐貧民街で聞いた青年の";
+			mes "　残留思念と同じ声だ‐";
 			next;
-			mes "[��̐�]";
-			mes "�N�N�N�c�c�N�͍�������A";
-			mes "�����Ƃ����ɂ��邱�ƂɂȂ�c�c";
+			mes "[謎の声]";
+			mes "ククク……君は今日から、";
+			mes "ずっとここにいることになる……";
 			next;
-			mes "[�N�̐�]";
-			mes "���H�@�����֍s�����ƂɂȂ��";
-			mes "�������񂾂��ǁc�c�H";
+			mes "[青年の声]";
+			mes "え？　遠くへ行くことになると";
+			mes "聞いたんだけど……？";
 			next;
-			mes "[��̐�]";
-			mes "�������ȁc�c";
-			mes "�����֍s�����ƂɂȂ�̂��ȁc�c";
-			mes "�ƂĂ������ցc�c";
-			mes "�N�N�N�c�c";
+			mes "[謎の声]";
+			mes "そうだな……";
+			mes "遠くへ行くことになるのかな……";
+			mes "とても遠くへ……";
+			mes "ククク……";
 			next;
-			mes "[�N�̐�]";
-			mes "�c�c�c�c�H";
+			mes "[青年の声]";
+			mes "…………？";
 			next;
-			mes "[��̐�]";
-			mes "���H";
-			mes "�ǂ������񂾂ˁH";
-			mes "�Ђ���Ƃ��āA��������";
-			mes "�����󂯂��d����f�낤�Ƃł�";
-			mes "�l���Ă���̂��ȁH";
+			mes "[謎の声]";
+			mes "んん？";
+			mes "どうしたんだね？";
+			mes "ひょっとして、いったん";
+			mes "引き受けた仕事を断ろうとでも";
+			mes "考えているのかな？";
 			next;
-			mes "[�N�̐�]";
-			mes "��A����I";
-			mes "���͂ǂ�ȏ����Ȗ񑩂ł�";
-			mes "�K�������Č��߂Ă�񂾁I";
+			mes "[青年の声]";
+			mes "や、やるよ！";
+			mes "俺はどんな小さな約束でも";
+			mes "必ず守るって決めてるんだ！";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			if(LHZ_2QUE == 2) {
 				next;
-				mes "�]���b�P���x���{�Ђ̒��ɂ�";
-				mes "�@�c���v�O���c���Ă����B";
-				mes "�@�ߋ��A���b�P���x���Ђɉ���";
-				mes "�@�������̂��낤���B";
-				mes "�@���b�P���x���Ђ̗��j�ɂ���";
-				mes "�@�K�C�h�ɕ����Ă݂悤�]";
+				mes "‐レッケンベル本社の中にも";
+				mes "　残留思念が残っていた。";
+				mes "　過去、レッケンベル社に何が";
+				mes "　あったのだろうか。";
+				mes "　レッケンベル社の歴史について";
+				mes "　ガイドに聞いてみよう‐";
 				chgquest 61390,61395;
 				set LHZ_2QUE,3;
 			}
@@ -5423,115 +5423,115 @@ lhz_in01.gat,113,150,0		script	��	139,3,3,{
 	end;
 }
 
-lhz_in01.gat,114,181,4	script	�K�C�h#Lhz	71,{
-	mes "[�K�C�h]";
-	mes "����ɂ��́B�������q�l���́A";
-	mes "���b�P���x���Ђł��B";
-	mes "�ǂ̂悤�Ȃ��p���ł��傤���H";
+lhz_in01.gat,114,181,4	script	ガイド#Lhz	71,{
+	mes "[ガイド]";
+	mes "こんにちは。いつもお客様第一の、";
+	mes "レッケンベル社です。";
+	mes "どのようなご用件でしょうか？";
 	next;
 	if(LHZ_2QUE < 3)
-		setarray '@word$[1],"�����ē����󂯂�","","";
+		setarray '@word$[1],"建物案内を受ける","","";
 	else if(strnpcinfo(2) == "Lhz")
-		setarray '@word$[1],"�����ē����󂯂�","��Ƃ̗��j�ɂ��ĕ���","";
+		setarray '@word$[1],"建物案内を受ける","企業の歴史について聞く","";
 	else
-		setarray '@word$[1],"","��Ƃ̗��j�ɂ��ĕ���","��Ƃ̎��Ɠ��e�ɂ��ĕ���";
+		setarray '@word$[1],"","企業の歴史について聞く","企業の事業内容について聞く";
 	switch(select('@word$[1],'@word$[2],'@word$[3])) {
 	case 1:
-		mes "[�K�C�h]";
-		mes "�ǂ�������ē��������܂��傤���H";
+		mes "[ガイド]";
+		mes "どちらをご案内いたしましょうか？";
 		while(1) {
 			next;
-			switch(select("1�K","2�K","�n��1�K","�I��")) {
+			switch(select("1階","2階","地下1階","終了")) {
 			case 1:
-				mes "[�K�C�h]";
-				mes "1�K����̍L���L���̓˂�������ɂ́A";
-				mes "^4A4AFF���b�P���x���}����^000000������܂��B";
-				mes "���b�P���x���Ј��̑����́A�}���ق�";
-				mes "��������ɁA���q�l�ւ̐V����";
-				mes "�T�[�r�X�̃A�C�f�A���l�Ă��Ă��܂��B";
+				mes "[ガイド]";
+				mes "1階左手の広い廊下の突き当たりには、";
+				mes "^4A4AFFレッケンベル図書館^000000があります。";
+				mes "レッケンベル社員の多くは、図書館の";
+				mes "資料を基に、お客様への新しい";
+				mes "サービスのアイデアを考案しています。";
 				next;
-				mes "[�K�C�h]";
-				mes "1�K�E��ɍs���܂��ƁA";
-				mes "^4A4AFF�p�[�e�B�[���^000000������܂��B";
-				mes "�e��s���̍ۂɂ́A";
-				mes "����ȃp�[�e�B�[���J����܂��B";
+				mes "[ガイド]";
+				mes "1階右手に行きますと、";
+				mes "^4A4AFFパーティー会場^000000があります。";
+				mes "各種行事の際には、";
+				mes "盛大なパーティーが開かれます。";
 				continue;
 			case 2:
-				mes "[�K�C�h]";
-				mes "2�K�ւ́A����";
-				mes "�C���t�H���[�V�����Z���^�[�̗�����";
-				mes "����K�i����s�����Ƃ��ł��܂��B";
-				mes "��Ɏ��Ɗ֌W�҂����p����A";
-				mes "^4A4AFF��c��^000000�A^4A4AFF�����o��^000000�A^4A4AFF�鏑��^000000�A";
-				mes "^4A4AFF���^000000�Ȃǂ��������܂��B";
+				mes "[ガイド]";
+				mes "2階へは、この";
+				mes "インフォメーションセンターの両側に";
+				mes "ある階段から行くことができます。";
+				mes "主に事業関係者が利用され、";
+				mes "^4A4AFF会議室^000000、^4A4AFF視聴覚室^000000、^4A4AFF秘書室^000000、";
+				mes "^4A4AFF会長室^000000などがございます。";
 				continue;
 			case 3:
-				mes "[�K�C�h]";
-				mes "�n��1�K�ɂ́A���Ђ̌������ł���";
-				mes "^4A4AFF���Q���V������^000000������܂��B";
-				mes "�֌W�҈ȊO��������֎~��";
-				mes "�Ȃ��Ă���܂��̂ŁA���������������B";
+				mes "[ガイド]";
+				mes "地下1階には、弊社の研究所である";
+				mes "^4A4AFFレゲンシュルム^000000があります。";
+				mes "関係者以外立ち入り禁止と";
+				mes "なっておりますので、ご了承ください。";
 				continue;
 			case 4:
-				mes "[�K�C�h]";
-				mes "���b�P���x���Ђ́A����";
-				mes "���q�l�������b�g�[�Ƃ��Ă���܂��B";
-				mes "���������ǂ����B";
+				mes "[ガイド]";
+				mes "レッケンベル社は、いつも";
+				mes "お客様第一をモットーとしております。";
+				mes "ごゆっくりどうぞ。";
 				close;
 			}
 		}
 	case 2:
 		if(strnpcinfo(2) == "Lhz") {
-			mes "[�K�C�h]";
-			mes "���Ђ̗��j�ɂ��ẮA�}������";
-			mes "�K�C�h����ē����󂯂Ă��������B";
-			mes "�}�����́A����̍L���L����";
-			mes "�˂�������ɂ���܂��B";
+			mes "[ガイド]";
+			mes "弊社の歴史については、図書室の";
+			mes "ガイドから案内を受けてください。";
+			mes "図書室は、左手の広い廊下の";
+			mes "突き当たりにあります。";
 			if(LHZ_2QUE == 3) {
 				chgquest 61395,61400;
 				set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x1;
 			}
 			close;
 		}
-		mes "[�K�C�h]";
-		mes "���ЁA���b�P���x���Ђ́A";
-		mes "400�N�̗��j�������Ă���A";
-		mes "�V���o���c�o���h�Ƌ���";
-		mes "����ł�����Ƃł��B�������A";
-		mes "�n�߂͏����Ȍl�������ł����B";
+		mes "[ガイド]";
+		mes "弊社、レッケンベル社は、";
+		mes "400年の歴史を持っており、";
+		mes "シュバルツバルドと共に";
+		mes "歩んできた企業です。しかし、";
+		mes "始めは小さな個人研究所でした。";
 		next;
-		mes "[�K�C�h]";
-		mes "^3131FF�[�j�b�g�E�[���e�����q�^��������^000000���A";
-		mes "���㏊���[�j�b�g�E�[���e�����q�^����";
-		mes "�ɂ���Đݗ�����܂����B";
+		mes "[ガイド]";
+		mes "^3131FFゼニット・ゼルテルリヒタル研究所^000000が、";
+		mes "初代所長ゼニット・ゼルテルリヒタル氏";
+		mes "によって設立されました。";
 		next;
-		mes "[�K�C�h]";
-		mes "�ݗ������60�N���";
-		mes "A.W.(After War)560�N�ɁA";
-		mes "^3131FF�[�j�b�g�E�[���e�����q�^��������^000000�́A";
-		mes "^FF0000���b�P���x��^000000�ɉ������A";
-		mes "���̃��b�P���x���@�l��Ƃ�";
-		mes "�Ȃ�܂����B";
+		mes "[ガイド]";
+		mes "設立から約60年後の";
+		mes "A.W.(After War)560年に、";
+		mes "^3131FFゼニット・ゼルテルリヒタル研究所^000000は、";
+		mes "^FF0000レッケンベル^000000に改名し、";
+		mes "今のレッケンベル法人企業と";
+		mes "なりました。";
 		next;
-		mes "[�K�C�h]";
-		mes "���̌�A�_�ւ̒T���A�Ȋw�̔��W�A";
-		mes "�Ñ��Ղ̉𖾂ȂǂƂ�����";
-		mes "���㏊���̗��O���p�����A";
-		mes "^FF0000���b�P���x���@�l����^000000��";
-		mes "^FF0000���Q���V������������^000000��";
-		mes "�ݗ�����܂����B";
+		mes "[ガイド]";
+		mes "その後、神への探求、科学の発展、";
+		mes "古代遺跡の解明などといった";
+		mes "初代所長の理念を継承し、";
+		mes "^FF0000レッケンベル法人附属^000000の";
+		mes "^FF0000レゲンシュルム研究所^000000が";
+		mes "設立されました。";
 		next;
-		mes "[�K�C�h]";
-		mes "������A.W.700�N�B";
-		mes "�V���o���c�o���h���a���ɑ傫��";
-		mes "�v���������A^FF0000�匫�҃o�������g^000000����";
-		mes "���Q���V�������������Ɍ}���܂��B";
+		mes "[ガイド]";
+		mes "そしてA.W.700年。";
+		mes "シュバルツバルド共和国に大きな";
+		mes "貢献をした、^FF0000大賢者バルムント^000000氏を";
+		mes "レゲンシュルム研究所に迎えます。";
 		next;
-		mes "[�K�C�h]";
-		mes "���̌�̃��b�P���x���Ђ́A";
-		mes "�v�V�I�Ȍ������ʂƋ��ɋ}���ɐ������A";
-		mes "�V���o���c�o���h���a���ő��";
-		mes "��ƂƂȂ�܂����B";
+		mes "[ガイド]";
+		mes "その後のレッケンベル社は、";
+		mes "革新的な研究成果と共に急速に成長し、";
+		mes "シュバルツバルド共和国最大の";
+		mes "企業となりました。";
 		if(LHZ_2QUE == 3 && LHZ_2QUE_CURSE & 0x1) {
 			set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x2;
 			if(LHZ_2QUE_CURSE & 0x4 == 0) {
@@ -5544,26 +5544,26 @@ lhz_in01.gat,114,181,4	script	�K�C�h#Lhz	71,{
 			delquest 61403;
 			chgquest 61400,61405;
 			next;
-			mes "[�K�C�h]";
-			mes "���̑��A��Ɨ��O�Ȃǂɂ��܂��ẮA";
-			mes "������ɂ������܂�";
-			mes "^3131FF���b�P���x���Јē��p���t���b�g^000000��";
-			mes "�L�ڂ��Ă���܂��B";
-			mes "��ɂ��q�l���́A���b�P���x���Ђ�";
-			mes "��낵�����肢�������܂��B";
+			mes "[ガイド]";
+			mes "その他、企業理念などにつきましては、";
+			mes "そちらにございます";
+			mes "^3131FFレッケンベル社案内パンフレット^000000に";
+			mes "記載しております。";
+			mes "常にお客様第一の、レッケンベル社を";
+			mes "よろしくお願いいたします。";
 		}
 		close;
 	case 3:
-		mes "[�K�C�h]";
-		mes "�䂪���b�P���x���Ђ̎��Ƃ͑���ɓn��";
-		mes "�F�l�����험�p���Ă���T�[�r�X��";
-		mes "�قƂ�ǂ��ւ���Ă��邱�Ƃł��傤�B";
+		mes "[ガイド]";
+		mes "我がレッケンベル社の事業は多岐に渡り";
+		mes "皆様が日常利用しているサービスの";
+		mes "ほとんどが関わっていることでしょう。";
 		next;
-		mes "[�K�C�h]";
-		mes "�e��^���A���ʁA�������ƂȂǁA";
-		mes "�V���o���c�o���h������";
-		mes "���܂��܂ȃT�[�r�X���A";
-		mes "���b�P���x���Ђ��񋟂��Ă���܂��B";
+		mes "[ガイド]";
+		mes "各種運送、流通、公共事業など、";
+		mes "シュバルツバルド国内の";
+		mes "さまざまなサービスを、";
+		mes "レッケンベル社が提供しております。";
 		if(LHZ_2QUE == 3 && LHZ_2QUE_CURSE & 0x1) {
 			set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x4;
 			if(LHZ_2QUE_CURSE & 0x2 == 0) {
@@ -5576,144 +5576,144 @@ lhz_in01.gat,114,181,4	script	�K�C�h#Lhz	71,{
 			delquest 61403;
 			chgquest 61400,61405;
 			next;
-			mes "[�K�C�h]";
-			mes "���̑��A��Ɨ��O�Ȃǂɂ��܂��ẮA";
-			mes "������ɂ������܂�";
-			mes "^3131FF���b�P���x���Јē��p���t���b�g^000000��";
-			mes "�L�ڂ��Ă���܂��B";
-			mes "��ɂ��q�l���́A���b�P���x���Ђ�";
-			mes "��낵�����肢�������܂��B";
+			mes "[ガイド]";
+			mes "その他、企業理念などにつきましては、";
+			mes "そちらにございます";
+			mes "^3131FFレッケンベル社案内パンフレット^000000に";
+			mes "記載しております。";
+			mes "常にお客様第一の、レッケンベル社を";
+			mes "よろしくお願いいたします。";
 		}
 		close;
 	}
 }
 
-lhz_in01.gat,27,247,2	duplicate(�K�C�h#Lhz)	�K�C�h#Lhz_	71
+lhz_in01.gat,27,247,2	duplicate(ガイド#Lhz)	ガイド#Lhz_	71
 
-lhz_in01.gat,25,251,0	script	�ē��p���t���b�g	111,{
-	mes "�]���b�P���x���Јē��p���t���b�g�]";
+lhz_in01.gat,25,251,0	script	案内パンフレット	111,{
+	mes "‐レッケンベル社案内パンフレット‐";
 	next;
-	mes "^3131FF��Ɨ��O^000000";
-	mes "�m����T�������ƁA���b�P���x���B";
+	mes "^3131FF企業理念^000000";
+	mes "知識を探求する企業、レッケンベル。";
 	next;
-	mes "�~�b�h�K���h�嗤�ɂ͑��l�ȉ��l��";
-	mes "���݂��Ă���܂����A���b�P���x���Ђ�";
-	mes "�_�ւ̒T���A�Ȋw�̔��W�A";
-	mes "�Ñ��Ղ̉𖾂Ƃ�����������i�߁A";
-	mes "�l�Ԃ̊�{�I�ȗ~���Ƃ�������A";
-	mes "���֐��̌����ǋ����Ă���܂��B";
+	mes "ミッドガルド大陸には多様な価値が";
+	mes "存在しておりますが、レッケンベル社は";
+	mes "神への探求、科学の発展、";
+	mes "古代遺跡の解明といった研究を進め、";
+	mes "人間の基本的な欲求とも言える、";
+	mes "利便性の向上を追求しております。";
 	next;
-	mes "^3131FF���Ɠ��e^000000";
-	mes "�_�A�l�ԁA�ߋ��̉𖾁B";
+	mes "^3131FF事業内容^000000";
+	mes "神、人間、過去の解明。";
 	next;
-	mes "^FF0000���b�P���x���̊�{�́A^000000";
-	mes "^FF0000�_�ւ̒T���ł��B^000000";
-	mes "�����̖��@�ɑ΂�����߂��̂āA";
-	mes "�����ƕ��͂̌J��Ԃ��ɂ�錤���̌���";
-	mes "����𗝘_�����A";
-	mes "���@�ɑ΂���ĉ��߂�ڎw���܂��B";
+	mes "^FF0000レッケンベルの基本は、^000000";
+	mes "^FF0000神への探求です。^000000";
+	mes "既存の魔法に対する解釈を捨て、";
+	mes "実験と分析の繰り返しによる研究の結果";
+	mes "これを理論化し、";
+	mes "魔法に対する再解釈を目指します。";
 	next;
-	mes "^FF0000���b�P���x���̊�{�́A^000000";
-	mes "^FF0000�Ȋw�̔��W�ł��B^000000";
-	mes "���@��_��I�ȗ͂Ȃǂ��Ȋw�I��";
-	mes "�����������𗘗p���A����g�p����";
-	mes "���܂��܂ȕ������č\�z���A";
-	mes "���֐��̌����ڎw���܂��B";
+	mes "^FF0000レッケンベルの基本は、^000000";
+	mes "^FF0000科学の発展です。^000000";
+	mes "魔法や神秘的な力などを科学的に";
+	mes "理解しそれらを利用し、日常使用する";
+	mes "さまざまな物質を再構築し、";
+	mes "利便性の向上を目指します。";
 	next;
-	mes "^FF0000���b�P���x���̊�{�́A^000000";
-	mes "^FF0000�Ñ��Ղ̉𖾂ł��B^000000";
-	mes "�ߋ��̎��ۂ�Ñ��Ղ���";
-	mes "�i���̖@����^�����𖾂��A";
-	mes "�v�V�I�ȊJ���������ă~�b�h�K���h�嗤";
-	mes "�S�̂ɍv�������Ă����܂��B";
+	mes "^FF0000レッケンベルの基本は、^000000";
+	mes "^FF0000古代遺跡の解明です。^000000";
+	mes "過去の事象や古代遺跡から";
+	mes "進化の法則や真理を解明し、";
+	mes "革新的な開発をもってミッドガルド大陸";
+	mes "全体に貢献をしていきます。";
 	next;
 	mes "["+strcharinfo(0)+"]";
-	mes "�c�c�c�c�B";
+	mes "…………。";
 	if(LHZ_2QUE == 3 && LHZ_2QUE_CURSE & 0x7 && LHZ_2QUE_CURSE & 0x8 == 0) {
 		next;
-		mes "[�H�H�H�̐�]";
-		mes "�c�c���肢�c�c";
-		mes "�����āc�c";
+		mes "[？？？の声]";
+		mes "……お願い……";
+		mes "助けて……";
 		next;
-		mes "�]���̒��ɐ��������A";
-		mes "�@�����ɁA�ꏊ�̃C���[�W��";
-		mes "�@�`����Ă���c�c�]";
+		mes "‐頭の中に声が響き、";
+		mes "　同時に、場所のイメージが";
+		mes "　伝わってくる……‐";
 		next;
-		mes "�]�C���[�W�͂��̌�����";
-		mes "�@2�K�ɏオ��A���������";
-		mes "�@�����������Ă���c�c�]";
+		mes "‐イメージはこの建物の";
+		mes "　2階に上がり、つきあたりの";
+		mes "　部屋を示している……‐";
 		next;
-		mes "�]2�K�̂�������̕����̒���";
-		mes "�@���ׂĂ݂悤�]";
+		mes "‐2階のつきあたりの部屋の中を";
+		mes "　調べてみよう‐";
 		set LHZ_2QUE_CURSE,LHZ_2QUE_CURSE|0x8;
 		chgquest 61405,61410;
 	}
 	close;
 }
 
-lhz_in01.gat,272,227,0		script	��	139,3,3,{
+lhz_in01.gat,272,227,0		script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE >= 1) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "tao_gunka_stand.wav",0;
 			sc_start3 SC_BLIND,0,0,0,0,60000,10;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "[�H�H�H]";
-			mes "�ق��c�c�������B";
-			mes "���΂炭�x�ɂ���肽���ƁH";
+			mes "[？？？]";
+			mes "ほぅ……そうか。";
+			mes "しばらく休暇を取りたいと？";
 			next;
-			mes "[�H�H�H]";
-			mes "�͂��A���X�̒����������̂Łc�c";
-			mes "���������Ԕ��荞�݂̋Ζ���";
-			mes "�����Ă܂�����B�������A";
-			mes "�Ζ����e�͔閧���炢�����܂��B";
+			mes "[？？？]";
+			mes "はい、少々体調が悪いもので……";
+			mes "もうだいぶ泊り込みの勤務が";
+			mes "続いてますから。もちろん、";
+			mes "勤務内容は秘密厳守いたします。";
 			next;
-			mes "[�H�H�H]";
-			mes "�������A���肪�Ƃ��B";
-			mes "�N�͒����Ő����A���ɗD�G�ȕ������B";
-			mes "�{���ɏ������B";
+			mes "[？？？]";
+			mes "そうか、ありがとう。";
+			mes "君は忠実で誠実、実に優秀な部下だ。";
+			mes "本当に助かるよ。";
 			next;
-			mes "[�H�H�H]";
-			mes "���k�ł��B";
+			mes "[？？？]";
+			mes "恐縮です。";
 			next;
-			mes "[�H�H�H]";
-			mes "�܂������A�D�G���B";
-			mes "�d���̂��߂ɖ��܂ŕ�����";
-			mes "�����̂�����ˁI";
+			mes "[？？？]";
+			mes "まったく、優秀だ。";
+			mes "仕事のために命まで捧げて";
+			mes "くれるのだからね！";
 			next;
-			mes "[�H�H�H]";
-			mes "���H�@�ǁA�ǂ������Ӗ��ł����H";
+			mes "[？？？]";
+			mes "え？　ど、どういう意味ですか？";
 			next;
-			mes "[�H�H�H]";
-			mes "�{���ɁA�N�͗D�G��������c�c";
-			mes "���͈ꐶ�Y��Ȃ����낤�B";
+			mes "[？？？]";
+			mes "本当に、君は優秀だったよ……";
+			mes "私は一生忘れないだろう。";
 			next;
-			mes "-�s�V�b-";
+			mes "-ピシッ-";
 			next;
-			mes "[�H�H�H]";
-			mes "�ȁA��A��߂낧������!!!!";
+			mes "[？？？]";
+			mes "な、や、やめろぉぉぉぉ!!!!";
 			next;
-			mes "�c�c";
+			mes "……";
 			next;
-			mes "�c�c";
+			mes "……";
 			if(LHZ_2QUE == 3 && LHZ_2QUE_CURSE == 0xF) {
 				next;
-				mes "[�H�H�H�̐�]";
-				mes "�c�c���肢�c�c";
-				mes "�����āc�c";
+				mes "[？？？の声]";
+				mes "……お願い……";
+				mes "助けて……";
 				next;
-				mes "�]���̒��ɐ��������A";
-				mes "�@�����ɁA�ꏊ�̃C���[�W��";
-				mes "�@�`����Ă���c�c�]";
+				mes "‐頭の中に声が響き、";
+				mes "　同時に、場所のイメージが";
+				mes "　伝わってくる……‐";
 				next;
-				mes "�]�C���[�W�͂��̌�����";
-				mes "�@�n���ɍ~��A���������";
-				mes "�@�����������Ă���c�c�]";
+				mes "‐イメージはこの建物の";
+				mes "　地下に降り、つきあたりの";
+				mes "　部屋を示している……‐";
 				next;
-				mes "�]�n���̂�������̕����̒���";
-				mes "�@���ׂĂ݂悤�]";
+				mes "‐地下のつきあたりの部屋の中を";
+				mes "　調べてみよう‐";
 				chgquest 61410,61415;
 				set LHZ_2QUE_CURSE,0;
 				set LHZ_2QUE,4;
@@ -5729,27 +5729,27 @@ lhz_in01.gat,272,227,0		script	��	139,3,3,{
 	end;
 }
 
-lhz_in01.gat,206,129,0	script	��	139,5,5,{
+lhz_in01.gat,206,129,0	script	呪い	139,5,5,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE == 4) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "loli_ruri_stand.wav",0;
 			sc_start3 SC_CURSE,0,0,0,0,1000,10;
-			mes "�c�c";
+			mes "……";
 			close2;
 			warp "lhz_que01.gat",26,27;
 			end;
 		}
 		else if(LHZ_2QUE == 5) {
-			mes "�]�������ƃo�������g�ƌĂ΂��";
-			mes "�@�j�Ƃ̉�b�������]";
+			mes "‐研究員とバルムントと呼ばれる";
+			mes "　男との会話だった‐";
 			next;
-			mes "�]�܂����̒��ɃC���[�W��";
-			mes "�@���ꍞ��ł���B";
-			mes "�@�����Ƃ͕ʂ̕����̂悤���B";
-			mes "�@�ʂ̕��������ׁA����������b��";
-			mes "�@�����Ă݂悤�]";
+			mes "‐また頭の中にイメージが";
+			mes "　流れ込んでくる。";
+			mes "　こことは別の部屋のようだ。";
+			mes "　別の部屋も調べ、研究員から話を";
+			mes "　聞いてみよう‐";
 			close2;
 			sc_start3 SC_CURSE,0,0,0,0,1000,10;
 			end;
@@ -5760,107 +5760,107 @@ lhz_in01.gat,206,129,0	script	��	139,5,5,{
 	end;
 }
 
-lhz_que01.gat,26,27,0	script	�Ƃ茾01	139,3,3,{
+lhz_que01.gat,26,27,0	script	独り言01	139,3,3,{
 	if(LHZ_2QUE == 4) {
 		mes "["+strcharinfo(0)+"]";
-		mes "�i�����́c�c�H�j";
+		mes "（ここは……？）";
 		next;
-		mes "�]�ǂ���狭�͂Ȏc���v�O��";
-		mes "�@����āA�ߋ��̏o������";
-		mes "�@���ڌ����Ă���悤���]";
+		mes "‐どうやら強力な残留思念に";
+		mes "　よって、過去の出来事が";
+		mes "　直接見えているようだ‐";
 		close;
 	}
 	end;
 }
 
-lhz_que01.gat,21,31,4	script	#�o�������gLhzQue	755,{
+lhz_que01.gat,21,31,4	script	#バルムントLhzQue	755,{
 	if(LHZ_2QUE != 4) {
 		warp "lhz_in01.gat",206,129;
 		end;
 	}
-	mes "[������]";
-	mes "�悤������������Ⴂ�܂����A";
-	mes "�o�������g�l�B";
+	mes "[研究員]";
+	mes "ようこそいらっしゃいました、";
+	mes "バルムント様。";
 	next;
-	emotion 4,"#�o�������gLhzQue";
-	mes "[�o�������g]";
-	mes "���ꂩ��A�����b�ɂȂ�܂��B";
+	emotion 4,"#バルムントLhzQue";
+	mes "[バルムント]";
+	mes "これから、お世話になります。";
 	next;
-	emotion 21,"#������LhzQue";
-	mes "[������]";
-	mes "�n�n�A�V�˃o�������g�l������΁A";
-	mes "����قǐS�������Ƃ͂���܂���B";
-	mes "���ꂩ���낵�����肢�������܂��I";
+	emotion 21,"#研究員LhzQue";
+	mes "[研究員]";
+	mes "ハハ、天才バルムント様がいれば、";
+	mes "これほど心強いことはありません。";
+	mes "これからよろしくお願いいたします！";
 	next;
-	mes "[�o�������g]";
-	mes "���������グ����ƁA";
-	mes "�Ƃꂭ�����ˁc�c�����炱��";
-	mes "��낵�����肢�������܂��B";
+	mes "[バルムント]";
+	mes "そう持ち上げられると、";
+	mes "照れくさいね……こちらこそ";
+	mes "よろしくお願いいたします。";
 	next;
-	mes "�c�c";
-	next;
-	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
-	next;
-	mes "�c�c";
-	next;
-	mes "[������]";
-	mes "���悢�抮�����I";
-	next;
-	mes "[�o�������g]";
-	mes "���ށc�c";
-	mes "�{���ɂ���J�l�B";
-	mes "���Ƃ��Ă������ׂ����ʂ��c�c";
-	next;
-	mes "[������]";
-	mes "�ł́A�������j���Ċ��t��";
-	mes "�����܂��傤�I";
-	next;
-	mes "�c�c";
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
+	next;
+	mes "……";
+	next;
+	mes "[研究員]";
+	mes "いよいよ完成だ！";
+	next;
+	mes "[バルムント]";
+	mes "うむ……";
+	mes "本当にご苦労様。";
+	mes "私としても驚くべき成果だ……";
+	next;
+	mes "[研究員]";
+	mes "では、成功を祝して乾杯と";
+	mes "いきましょう！";
+	next;
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
-	next;
-	mes "[������]";
-	mes "�o�������g�l�A�ǂ����܂����H";
-	next;
-	mes "[�o�������g]";
-	mes "���������ɂ��闝�R�́A";
-	mes "�����Ȃ��Ȃ����悤�ł��B";
-	mes "��͎����̌������ŁA";
-	mes "�����̑��������悤�Ǝv���܂��B";
-	next;
-	mes "[������]";
-	mes "�����𑱂���̂Ȃ�A�����ł�";
-	mes "��낵���ł͂���܂��񂩁H";
-	next;
-	mes "[�o�������g]";
-	mes "�����ɒ�������΁A�����̐l��s�K��";
-	mes "�������ނ��ƂɂȂ�ł��傤�B";
-	mes "�ł͂���ŁB�����ԁA����J�l�ł����B";
-	next;
-	mes "[������]";
-	mes "�o�������g�l�c�c";
-	next;
-	mes "�c�c";
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
+	next;
+	mes "[研究員]";
+	mes "バルムント様、どうしました？";
+	next;
+	mes "[バルムント]";
+	mes "私がここにいる理由は、";
+	mes "もうなくなったようです。";
+	mes "後は自分の研究所で、";
+	mes "研究の続きをしようと思います。";
+	next;
+	mes "[研究員]";
+	mes "研究を続けるのなら、ここでも";
+	mes "よろしいではありませんか？";
+	next;
+	mes "[バルムント]";
+	mes "ここに長居すれば、多くの人を不幸に";
+	mes "巻き込むことになるでしょう。";
+	mes "ではこれで。長い間、ご苦労様でした。";
+	next;
+	mes "[研究員]";
+	mes "バルムント様……";
+	next;
+	mes "……";
 	next;
 	soundeffect "loli_ruri_stand.wav",0;
-	mes "�c�c";
+	mes "……";
+	next;
+	soundeffect "loli_ruri_stand.wav",0;
+	mes "……";
 	delquest 61415;
 	delquest 61420;
 	setquest 61425;
@@ -5870,246 +5870,246 @@ lhz_que01.gat,21,31,4	script	#�o�������gLhzQue	755,{
 	end;
 }
 
-lhz_que01.gat,29,24,2	duplicate(#�o�������gLhzQue)	#������LhzQue	754
+lhz_que01.gat,29,24,2	duplicate(#バルムントLhzQue)	#研究員LhzQue	754
 
-lhz_in01.gat,273,121,0	script	�}�b�h�T�C�G���e�B�X�g	865,{
+lhz_in01.gat,273,121,0	script	マッドサイエンティスト	865,{
 	switch(LHZ_2QUE) {
 	default:
-		mes "[�{���Z�u]";
-		mes "�E�K�[�[�[!!";
-		mes "�����̎ז��������!!";
+		mes "[ボルセブ]";
+		mes "ウガーーー!!";
+		mes "研究の邪魔をするな!!";
 		close;
 	case 5:
-		mes "[�{���Z�u]";
-		mes "�L�q�b�c�c�L�q�q�b!!";
-		mes "�������A���O�H�@���̌�����";
-		mes "�ז�������Ȃƌ��������낤!?";
-		mes "�L�q�b�c�c";
+		mes "[ボルセブ]";
+		mes "キヒッ……キヒヒッ!!";
+		mes "何だぁ、お前？　俺の研究の";
+		mes "邪魔をするなと言っただろう!?";
+		mes "キヒッ……";
 		next;
-		if(select("���A���炵�܂���","�����N���A�킩��܂����H")==1) {
-			mes "[�{���Z�u]";
-			mes "����������������!!�������Ə�����!!";
-			mes "�L�[�q�q�q!!";
+		if(select("し、失礼しました","私が誰か、わかりますか？")==1) {
+			mes "[ボルセブ]";
+			mes "さぁさささぁさぁ!!さっさと消えろ!!";
+			mes "キーヒヒヒ!!";
 			close;
 		}
-		mes "[�{���Z�u]";
-		mes "�L�q�B�H";
+		mes "[ボルセブ]";
+		mes "キヒィ？";
 		next;
-		mes "[�{���Z�u]";
-		mes "�킩���c�c�N���H";
-		mes "�����������́A���l�̊��";
-		mes "���������o���ĂȂ񂩂��Ȃ���!!";
-		mes "�L�q�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "わからん……誰だ？";
+		mes "そもそも俺は、他人の顔を";
+		mes "いちいち覚えてなんかいないぞ!!";
+		mes "キヒヒヒヒ!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "���̋M�d�Ȍ������Ԃ𖳑ʂɒD���ȁI";
-		mes "�����A�������Əo�čs��!!";
-		mes "�����Ȃ��ƃH�H�H�c�c�L�q�b�I";
+		mes "[ボルセブ]";
+		mes "俺の貴重な研究時間を無駄に奪うな！";
+		mes "さぁ、さっさと出て行け!!";
+		mes "さもないとォォォ……キヒッ！";
 		next;
-		mes "[�{���Z�u]";
-		mes "�؂荏�ނ��c�c�H";
-		mes "�L�q�A�L�q�A�L�q�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "切り刻むぞ……？";
+		mes "キヒ、キヒ、キヒヒヒヒ!!";
 		set LHZ_2QUE,6;
 		next;
-		mes "�]����I�ɉ�b��؂�グ";
-		mes "�@���Ă��܂����B";
-		mes "�@������x�b�������悤�]";
+		mes "‐一方的に会話を切り上げ";
+		mes "　られてしまった。";
+		mes "　もう一度話しかけよう‐";
 		close;
 	case 6:
 		emotion 7;
-		mes "[�{���Z�u]";
-		mes "�܂����O���I�@�ז��������!!!!";
-		mes "���ɉ����p�ł�����̂�!?";
-		mes "���͉ɂ���Ȃ���!!�@�ǂ����ɍs���I";
+		mes "[ボルセブ]";
+		mes "またお前か！　邪魔をするな!!!!";
+		mes "俺に何か用でもあるのか!?";
+		mes "俺は暇じゃないんだ!!　どっかに行け！";
 		next;
-		if(select("���Ȃ��Ƙb��������","���݂܂���") == 2) {
+		if(select("あなたと話がしたい","すみません") == 2) {
 			emotion 6;
-			mes "[�{���Z�u]";
-			mes "�I���A�����ǂ����s���F�F�`!!";
+			mes "[ボルセブ]";
+			mes "オラ、早くどっか行けェェ～!!";
 			close;
 		}
-		mes "[�{���Z�u]";
-		mes "�����`�H";
-		mes "�́c�c�ȁc�c���c�c�H";
-		mes "�͂Ȃ����āA�b�B�B�B!?";
-		mes "���͘b�Ȃ񂼂܂��҂炲�߂�!!";
-		mes "����!!�@�����������`�񒆁c�c";
-		mes "�Ȃ񂾂�H�H�H�I�@�L�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "あぁ～？";
+		mes "は……な……し……？";
+		mes "はなしって、話ィィィ!?";
+		mes "俺は話なんぞまっぴらごめんだ!!";
+		mes "実験!!　じっっっけ～ん中……";
+		mes "なんだよォォォ！　キヒヒヒ!!";
 		next;
 		emotion 0;
-		mes "[�{���Z�u]";
-		mes "�c�c�L�q�c�c";
+		mes "[ボルセブ]";
+		mes "……キヒ……";
 		next;
-		mes "[�{���Z�u]";
-		mes "���A�������ȁc�c�L�q�I";
-		mes "���͍ŋ߁A�W�߂Ă镨������B";
-		mes "����������Ă�����A���O�̖]�ݒʂ�";
-		mes "�b�𕷂��Ă�낤����Ȃ���!!";
+		mes "[ボルセブ]";
+		mes "お、そうだな……キヒ！";
+		mes "俺は最近、集めてる物がある。";
+		mes "それを持ってきたら、お前の望み通り";
+		mes "話を聞いてやろうじゃないか!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "���������`�H";
-		mes "���������Ă���΂��������ăF�H";
-		mes "�K���X�ʂ��A�K���X�ʁI";
-		mes "�Ƃ��ƂƎ����Ă��ȃ@�H";
-		mes "�L�q�b!!";
+		mes "[ボルセブ]";
+		mes "あぁあぁ～？";
+		mes "何を持ってくればいいかってェ？";
+		mes "ガラス玉だ、ガラス玉！";
+		mes "とっとと持ってきなァ？";
+		mes "キヒッ!!";
 		next;
-		mes "�]�K���X�ʂ������Ă���";
-		mes "�@�{���Z�u�ɓn�����]";
+		mes "‐ガラス玉を持ってきて";
+		mes "　ボルセブに渡そう‐";
 		chgquest 61425,61430;
 		set LHZ_2QUE,7;
 		close;
 	case 7:
 		if(countitem(746) < 1) {
 			emotion 29;
-			mes "[�{���Z�u]";
-			mes "�K���X�ʂ��I";
-			mes "���������Ă����I�@�L�q�b!!";
+			mes "[ボルセブ]";
+			mes "ガラス玉だ！";
+			mes "早く持ってこい！　キヒッ!!";
 			next;
-			mes "�]�K���X�ʂ������Ă���";
-			mes "�@�{���Z�u�ɓn�����]";
+			mes "‐ガラス玉を持ってきて";
+			mes "　ボルセブに渡そう‐";
 			close;
 		}
-		mes "[�{���Z�u]";
-		mes "�L�q�b�L�q�b�L�q�b!!";
-		mes "�K���X��!!�@�K���X��!!";
+		mes "[ボルセブ]";
+		mes "キヒッキヒッキヒッ!!";
+		mes "ガラス玉!!　ガラス玉!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "�L�q�q�q�I";
-		mes "�悭�g���񂾂ȁc�c�K���X��!!";
-		mes "�L�q�q�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "キヒヒヒ！";
+		mes "よく使うんだな……ガラス玉!!";
+		mes "キヒヒヒヒヒ!!";
 		next;
-		menu "�K���X�ʂ����Ɏg����ł����H",-;
-		mes "[�{���Z�u]";
-		mes "�c�c";
+		menu "ガラス玉を何に使うんですか？",-;
+		mes "[ボルセブ]";
+		mes "……";
 		next;
 		emotion 29;
-		mes "[�{���Z�u]";
-		mes "����͂��O�̒m��";
-		mes "�Ƃ���ł͂ȁ[�[�[�[�[��!!";
-		mes "�T��ȋC�ɂ���Ȋ�����ȁI";
-		mes "�L�[�[�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "それはお前の知る";
+		mes "ところではなーーーーーい!!";
+		mes "探るな気にするな勘ぐるな！";
+		mes "キーーヒヒヒ!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "�񂶂�A���������Ȃ�����";
-		mes "���O�̘b�𕷂��Ă�낤�I";
-		mes "��Z�ɁI�@�Ȍ��ɁI";
+		mes "[ボルセブ]";
+		mes "んじゃ、しかたがないから";
+		mes "お前の話を聞いてやろう！";
+		mes "手短に！　簡潔に！";
 		while(1) {
 			next;
-			if(select("��͉��ł����H","�d���͉��ł����H")==1) {
+			if(select("趣味は何ですか？","仕事は何ですか？")==1) {
 				if(Sex) {
-					mes "[�{���Z�u]";
-					mes "�L�q�q�c�c����Ȃ��ƕ�����";
-					mes "�ǂ�����񂾁H�@���O�ɂ�";
-					mes "�����Ă��ˁ`�`�`��!!";
-					mes "�܂��A���O�̊炪���|��";
-					mes "������̂����Ă݂����C��";
-					mes "���邪�ȁc�c�L�q�q�q!!";
+					mes "[ボルセブ]";
+					mes "キヒヒ……そんなこと聞いて";
+					mes "どうするんだ？　お前には";
+					mes "教えてやらね～～～よ!!";
+					mes "まぁ、お前の顔が恐怖に";
+					mes "引きつるのを見てみたい気も";
+					mes "するがな……キヒヒヒ!!";
 					continue;
 				}
 				else {
-					mes "[�{���Z�u]";
-					mes "�L�q�q�c�c";
-					mes "���O�̂悤���Y��Ȋ�������z�Ȃ�";
-					mes "���x�ǂ������ȁc�c";
-					mes "�L�q�b�L�q�b�c�c���̋C��";
-					mes "�ς��Ȃ������ɁA�����������������H";
-					mes "���삳��c�c�L�q�q�q!!";
+					mes "[ボルセブ]";
+					mes "キヒヒ……";
+					mes "お前のように綺麗な顔をした奴なら";
+					mes "丁度良いかもな……";
+					mes "キヒッキヒッ……俺の気が";
+					mes "変わらないうちに、消えた方がいいぜ？";
+					mes "お嬢さん……キヒヒヒ!!";
 					continue;
 				}
 			}
 			break;
 		}
-		mes "[�{���Z�u]";
-		mes "�d���H�@�L�q�b!!";
-		mes "���͎d���Ȃ񂩂��Ă˃F�`�`�`��!!";
-		mes "���������������������Ă邾�����I";
+		mes "[ボルセブ]";
+		mes "仕事？　キヒッ!!";
+		mes "俺は仕事なんかしてねェ～～～よ!!";
+		mes "自分がしたい研究をしてるだけだ！";
 		next;
-		mes "[�{���Z�u]";
-		mes "�������ɂ������́A�ٕ��q����";
-		mes "�����̂Ǝ��肪���邳���������A";
-		mes "�����ł͎����̎v�����܂܁A";
-		mes "�v���ł���B������͂�����ł�";
-		mes "���邵�A��肽���悤��";
-		mes "�������邾�����I�@�L�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "研究室にいた時は、異分子だの";
+		mes "何だのと周りがうるさかったが、";
+		mes "ここでは自分の思うがまま、";
+		mes "没頭できる。研究費はいくらでも";
+		mes "あるし、やりたいように";
+		mes "研究するだけだ！　キヒヒヒ!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "���܁[�Ɍ����ޗ������邳������";
-		mes "�c�c�L�q�q!!";
+		mes "[ボルセブ]";
+		mes "たまーに研究材料がうるさいがな";
+		mes "……キヒヒ!!";
 		next;
-		menu "���̌��������Ă��ł����H",-;
-		mes "[�{���Z�u]";
-		mes "�L�q�q�q�I";
-		mes "����͂��E���E�Ёc�c�ɔ邾!!";
-		mes "�܂��A�l�ނ̂��߂ɖ𗧂���";
-		mes "���Ƃ��������Ă�������!?";
+		menu "何の研究をしてるんですか？",-;
+		mes "[ボルセブ]";
+		mes "キヒヒヒ！";
+		mes "それはご・く・ひ……極秘だ!!";
+		mes "まぁ、人類のために役立つこと";
+		mes "だとだけ言っておこうか!?";
 		next;
-		mes "[�{���Z�u]";
-		mes "�l�Ԃ́A�����Ȃ�A���͂������A";
-		mes "���l���x�z���A�܎^�𓾂����Ǝv���B";
+		mes "[ボルセブ]";
+		mes "人間は、強くなり、権力を持ち、";
+		mes "他人を支配し、賞賛を得たいと思う。";
 		next;
-		mes "[�{���Z�u]";
-		mes "���͐l�Ԃ̂����������~����";
-		mes "���������߂̌����ƌ����邾�낤!!";
-		mes "�L�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "俺は人間のそういった欲求を";
+		mes "満たすための研究と言えるだろう!!";
+		mes "キヒヒヒ!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "�����Ƌ���!!";
-		mes "�����Ƒf����!!";
-		mes "���O�������Ȃ肽�����낤�H";
-		mes "�L�q�q�I";
+		mes "[ボルセブ]";
+		mes "もっと強く!!";
+		mes "もっと素早く!!";
+		mes "お前もそうなりたいだろう？";
+		mes "キヒヒ！";
 		next;
-		menu "���Ȃ��̌����́A�댯�������܂�",-;
-		mes "[�{���Z�u]";
-		mes "���H�@���O�������ٕ��q�A";
-		mes "�댯���q��������̂��H";
-		mes "���͂���Ȉ������󂯂邽�߂�";
-		mes "���O�ɘb�������񂶂�Ȃ����H";
+		menu "あなたの研究は、危険を感じます",-;
+		mes "[ボルセブ]";
+		mes "何？　お前も俺を異分子、";
+		mes "危険分子扱いするのか？";
+		mes "俺はそんな扱いを受けるために";
+		mes "お前に話をしたんじゃないぞ？";
 		next;
-		mes "[�{���Z�u]";
-		mes "�L�c�c�������A�C���������I";
-		mes "�c�c�������H�H�H�H�H!!";
-		mes "���ꋎ�ꋎ�ꋎ�ꋎ��`�`�`�`!!!!";
+		mes "[ボルセブ]";
+		mes "キ……ええぃ、気分が悪い！";
+		mes "……悪いぞォォォォォ!!";
+		mes "去れ去れ去れ去れ去れ～～～～!!!!";
 		next;
-		mes "[�{���Z�u]";
-		mes "�����܂����Ɉӌ�������悤�Ȃ�A";
-		mes "���O�������ޗ��ɂ��Ă�邩���!!";
-		mes "�L�[�q�q�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "もしまた俺に意見をするようなら、";
+		mes "お前も研究材料にしてやるからな!!";
+		mes "キーヒヒヒヒヒ!!";
 		delitem 746, 1;
 		chgquest 61430,61435;
 		set LHZ_2QUE,8;
 		next;
-		mes "�]�ʂ̌������ɂ��c���v�O��";
-		mes "�@�c���Ă��Ȃ����A���ׂĂ݂悤�]";
+		mes "‐別の研究室にも残留思念が";
+		mes "　残っていないか、調べてみよう‐";
 		close;
 	}
 }
 
-lhz_in01.gat,282,166,0	script	��	139,3,3,{
+lhz_in01.gat,282,166,0	script	呪い	139,3,3,{
 	if(countitem(7345) && LHZ_2QUE < 17) {
 		if(LHZ_2QUE == 8) {
-			mes "�c�c";
+			mes "……";
 			next;
 			soundeffect "loli_ruri_stand.wav",0;
 			sc_start3 SC_CURSE,0,0,0,0,1000,10;
-			mes "�c�c";
+			mes "……";
 			close2;
 			warp "lhz_que01.gat",98,59;
 			end;
 		}
 		else if(LHZ_2QUE == 9 && checkquest(61475)) {
-			mes "^3131FF�]���ɗ����Ă����Âт�^000000";
-			mes "^3131FF�@�y���_���g���E�����B^000000";
-			mes "^3131FF�@�J���Ă݂悤�Ǝv�������A^000000";
-			mes "^3131FF�@������͂����߂Ă�^000000";
-			mes "^3131FF�@�y���_���g�͊J���Ȃ������]^000000";
+			mes "^3131FF‐床に落ちていた古びた^000000";
+			mes "^3131FF　ペンダントを拾った。^000000";
+			mes "^3131FF　開けてみようと思ったが、^000000";
+			mes "^3131FF　いくら力を込めても^000000";
+			mes "^3131FF　ペンダントは開かなかった‐^000000";
 			getitem 7341,1;
 			delquest 61475;
 			chgquest 61435,61440;
 			next;
-			mes "^3131FF�]�N�̐��͕n���X�ŕ�����^000000";
-			mes "^3131FF�@�c���v�O�̐��Ɠ����������B^000000";
-			mes "^3131FF�@���̃y���_���g�̎�����ɂ���^000000";
-			mes "^3131FF�@�n���X�̒��V�ɘb�𕷂����]^000000";
+			mes "^3131FF‐青年の声は貧民街で聞いた^000000";
+			mes "^3131FF　残留思念の声と同じだった。^000000";
+			mes "^3131FF　このペンダントの持ち主について^000000";
+			mes "^3131FF　貧民街の長老に話を聞こう‐^000000";
 			close;
 		}
 		else
@@ -6118,193 +6118,193 @@ lhz_in01.gat,282,166,0	script	��	139,3,3,{
 	end;
 }
 
-lhz_que01.gat,99,74,3	script	#�jLhzQue	48,{
+lhz_que01.gat,99,74,3	script	#男LhzQue	48,{
 	if(LHZ_2QUE != 8) {
 		warp "lhz_in01.gat",278,162;
 		end;
 	}
-	mes "[�N]";
-	mes "�������c�c���ɖڂ�ῂ�ŁA";
-	mes "�x���ꂿ�܂��Ȃ�āc�c";
-	mes "�������X���Ȃ�āc�c!!";
+	mes "[青年]";
+	mes "くそぅ……金に目が眩んで、";
+	mes "騙されちまうなんて……";
+	mes "もう今更金なんて……!!";
 	next;
-	mes "[�y�R�y�R]";
-	mes "^3131FF����!!�@����!!^000000";
+	mes "[ペコペコ]";
+	mes "^3131FFお金!!　お金!!^000000";
 	next;
-	mes "[�N]";
-	mes "���������b�ɂ͗����������";
-	mes "�킩���Ă����͂��Ȃ̂Ɂc�c";
+	mes "[青年]";
+	mes "おいしい話には裏があるって";
+	mes "わかっていたはずなのに……";
 	next;
-	mes "[�y�R�y�R]";
-	mes "^3131FF�n��!!�@�n��!!�@�n��!!�@�n��!!^000000";
+	mes "[ペコペコ]";
+	mes "^3131FF馬鹿!!　馬鹿!!　馬鹿!!　馬鹿!!^000000";
 	next;
-	mes "[�N]";
-	mes "�������傤�A���̒���Y�I";
-	mes "�ق��Ă�!!";
+	mes "[青年]";
+	mes "ちくしょう、この鳥野郎！";
+	mes "黙ってろ!!";
 	next;
-	mes "[�N]";
-	mes "�����A�S�z���Ă邾�낤�Ȃ��c�c";
-	mes "��������Ȃ��ƂɂȂ�Ȃ���΁c�c";
-	mes "�g���̂Ȃ������́A����";
-	mes "�ǂ��Ȃ��Ă��܂����c�c";
+	mes "[青年]";
+	mes "あいつ、心配してるだろうなぁ……";
+	mes "俺がこんなことにならなければ……";
+	mes "身寄りのないあいつは、今後";
+	mes "どうなってしまうか……";
 	next;
-	mes "[�N]";
-	mes "�������A���߂���_�����c�c";
-	mes "�������҂��Ă���񂾁B";
-	mes "��΂ɂ�����߂Ȃ����I";
+	mes "[青年]";
+	mes "そうだ、諦めちゃダメだ……";
+	mes "あいつが待っているんだ。";
+	mes "絶対にあきらめないぞ！";
 	next;
-	mes "�c�c";
+	mes "……";
 	next;
-	mes "�c�c";
+	mes "……";
 	next;
-	mes "�c�c";
+	mes "……";
 	next;
-	mes "[�N]";
-	mes "��ɕ�������A��o���ꂽ�z��A";
-	mes "�߂��Ă��Ȃ��ȁc�c";
-	mes "����ς�c�c";
+	mes "[青年]";
+	mes "先に部屋から連れ出された奴ら、";
+	mes "戻ってこないな……";
+	mes "やっぱり……";
 	next;
-	mes "[�N]";
-	mes "���A�������̂����c�c!!";
+	mes "[青年]";
+	mes "お、俺もそのうち……!!";
 	next;
-	mes "[�N]";
-	mes "�����c�c";
-	mes "���A�����c�c";
+	mes "[青年]";
+	mes "俺も……";
+	mes "う、うぅ……";
 	next;
-	mes "[�N]";
-	mes "�c�c���A�������I";
-	mes "���߂Ȃ����I�@�����Ė߂���";
-	mes "���΂ɂ��Ă��Ȃ��Ɓc�c";
+	mes "[青年]";
+	mes "……く、くそぅ！";
+	mes "諦めないぞ！　生きて戻って";
+	mes "そばにいてやらないと……";
 	next;
-	mes "�]�N�̓|�P�b�g������o����";
-	mes "�@�y���_���g�����߂Ă���]";
+	mes "‐青年はポケットから取り出した";
+	mes "　ペンダントを見つめている‐";
 	next;
-	mes "[�N]";
-	mes "�c�c";
+	mes "[青年]";
+	mes "……";
 	next;
-	mes "[�N]";
-	mes "�ЂƂ�ڂ����ɂ����āA";
-	mes "���߂�ȁc�c";
+	mes "[青年]";
+	mes "ひとりぼっちにさせて、";
+	mes "ごめんな……";
 	next;
-	mes "�c�c";
+	mes "……";
 	next;
-	mes "[������]";
-	mes "�₠�A����ɂ��́B";
-	mes "���悢��N�̔Ԃ����I";
-	mes "�N�N�N�A���������낤�H";
-	mes "�����A�������Əo�Ȃ����B";
+	mes "[研究員]";
+	mes "やあ、こんにちは。";
+	mes "いよいよ君の番だぞ！";
+	mes "ククク、嬉しいだろう？";
+	mes "さぁ、さっさと出なさい。";
 	next;
-	mes "[�N]";
-	mes "���A���₾!!";
+	mes "[青年]";
+	mes "い、いやだ!!";
 	next;
-	mes "[������]";
-	mes "���₟�H";
-	mes "�ǂ�ȏ����Ȗ񑩂ł�";
-	mes "�K�����񂶂�Ȃ������̂��ȁH";
+	mes "[研究員]";
+	mes "おやぁ？";
+	mes "どんな小さな約束でも";
+	mes "必ず守るんじゃなかったのかな？";
 	next;
-	mes "[�N]";
-	mes "�����c�c!!";
+	mes "[青年]";
+	mes "くっ……!!";
 	next;
-	mes "[������]";
-	mes "�|����Ȃ�B";
-	mes "������ƌN�̑̂��g����";
-	mes "�������邾��������B";
-	mes "�N�N�N�c�c";
+	mes "[研究員]";
+	mes "怖がるなよ。";
+	mes "ちょっと君の体を使って";
+	mes "実験するだけだから。";
+	mes "ククク……";
 	next;
-	mes "[�N]";
-	mes "���A���ꂪ�����̂Ȃ񂩂Ɂc�c";
-	mes "���ƂȂ��������Ǝv���Ȃ�I";
+	mes "[青年]";
+	mes "だ、だれが実験体なんかに……";
+	mes "おとなしくやられると思うなよ！";
 	next;
-	mes "[������]";
-	mes "�ӂށc�c���Ȃ̂��H";
-	mes "�܂��A���Ȃ�ʂɂ����񂾂�B";
-	mes "�N�͉ƂɋA���Ă����悤�B";
+	mes "[研究員]";
+	mes "ふむ……嫌なのか？";
+	mes "まあ、嫌なら別にいいんだよ。";
+	mes "君は家に帰してあげよう。";
 	next;
-	mes "[�N]";
-	mes "�فA�{���Ɂc�c�H";
+	mes "[青年]";
+	mes "ほ、本当に……？";
 	next;
-	mes "[������]";
-	mes "�{�����Ƃ��B";
-	mes "�����c�c�ł�����̎����̂�";
-	mes "�K�v�ɂȂ�ȁc�c�B";
+	mes "[研究員]";
+	mes "本当だとも。";
+	mes "ああ……でも代わりの実験体が";
+	mes "必要になるな……。";
 	next;
 	emotion 0;
-	mes "[������]";
-	mes "�m���N�ɂ͖��������ˁB";
-	mes "���̕s���R�ȁc�c";
-	mes "�ޏ��ɋ��͂��Ă��炨�����ȁB";
-	mes "�܂��A�����͂��Ȃ����낤���A";
-	mes "�����͖��ɗ����낤�B";
+	mes "[研究員]";
+	mes "確か君には妹がいたね。";
+	mes "足の不自由な……";
+	mes "彼女に協力してもらおうかな。";
+	mes "まあ、成功はしないだろうが、";
+	mes "少しは役に立つだろう。";
 	next;
-	mes "[�N]";
-	mes "�ӁA�ӂ������!!";
-	mes "���Ɏ���o������A��������";
-	mes "�����Ȃ������!!";
+	mes "[青年]";
+	mes "ふ、ふざけるな!!";
+	mes "妹に手を出したら、ただじゃ";
+	mes "おかないからな!!";
 	next;
-	mes "[������]";
-	mes "���������Ă��˂��B";
-	mes "�N���A��ꍇ�A�����p�ӂ���";
-	mes "�K�v������͎̂����Ȃ񂾂�B";
+	mes "[研究員]";
+	mes "そう言われてもねぇ。";
+	mes "君が帰る場合、代わりを用意する";
+	mes "必要があるのは事実なんだよ。";
 	next;
-	mes "�]�N�́A�y���_���g������";
-	mes "�@���肵�߂Ă���]";
+	mes "‐青年は、ペンダントを強く";
+	mes "　握りしめている‐";
 	next;
-	mes "[�N]";
-	mes "�c�c�c�c�B";
-	mes "�@";
-	mes "�c�c����B";
+	mes "[青年]";
+	mes "…………。";
+	mes "　";
+	mes "……しろ。";
 	next;
-	mes "[������]";
-	mes "���H";
+	mes "[研究員]";
+	mes "んん？";
 	next;
-	mes "[�N]";
-	mes "���������̂ɂ���I";
-	mes "���̂����c�c";
-	mes "��΂ɖ��ɂ͎���o����!!";
+	mes "[青年]";
+	mes "俺を実験体にしろ！";
+	mes "そのかわり……";
+	mes "絶対に妹には手を出すな!!";
 	next;
-	mes "[������]";
-	mes "�N�N�N�A�������B";
-	mes "����Ȃ�Ζ��Ȃ��B";
-	mes "����ɁA�����͕ʂɕK��";
-	mes "���s����킯�ł͂Ȃ��񂾂�B";
+	mes "[研究員]";
+	mes "ククク、そうか。";
+	mes "それならば問題ない。";
+	mes "それに、実験は別に必ず";
+	mes "失敗するわけではないんだよ。";
 	next;
-	mes "[������]";
-	mes "������������΁A";
-	mes "�N�͋Ɍ��܂ŋ����Ȃ��B";
-	mes "���̍ۂ͎ӗ����������";
-	mes "�A���Ă����悤����Ȃ����I";
-	mes "�N�N�N�c�c";
+	mes "[研究員]";
+	mes "もし成功すれば、";
+	mes "君は極限まで強くなれる。";
+	mes "その際は謝礼を持たせて";
+	mes "帰してあげようじゃないか！";
+	mes "ククク……";
 	next;
-	mes "�]�y���_���g���������肵�߂�";
-	mes "�@�������߂Ȃ���A�N��";
-	mes "�@�ꂢ�Ă���]";
+	mes "‐ペンダントを強く握りしめた";
+	mes "　拳を見つめながら、青年は";
+	mes "　呟いている‐";
 	next;
-	mes "[�N]";
-	mes "�Z�����A�K���A�邩��ȁB";
-	mes "�񑩂��B�K���A��B";
-	mes "�Z�����A�񑩔j�������ƂȂ�����H";
-	mes "���΂ɂ��āA���O������Ă�邩��ȁB";
+	mes "[青年]";
+	mes "兄ちゃん、必ず帰るからな。";
+	mes "約束だ。必ず帰る。";
+	mes "兄ちゃん、約束破ったことないだろ？";
+	mes "そばにいて、お前を守ってやるからな。";
 	next;
-	mes "[������]";
-	mes "�����ԂԂ����Ă���񂾂ˁH";
-	mes "�����A�������Ȃ����I";
+	mes "[研究員]";
+	mes "何をぶつぶつ言っているんだね？";
+	mes "さあ、早く来なさい！";
 	next;
-	mes "(�`�������c�c)";
+	mes "(チャリン……)";
 	next;
-	mes "�]�N�̎肩�炱�ڂꂽ�y���_���g��";
-	mes "�@�e�[�u���̉��ɓ]�������]";
+	mes "‐青年の手からこぼれたペンダントが";
+	mes "　テーブルの下に転がった‐";
 	next;
-	mes "�]�y���_���g���P���n�߁A";
-	mes "�@���̒��ɐN�̐��������Ă���]";
-	misceffect 348,"#�y���_���gLhzQue";
+	mes "‐ペンダントが輝き始め、";
+	mes "　頭の中に青年の声が響いてくる‐";
+	misceffect 348,"#ペンダントLhzQue";
 	next;
-	mes "[�N�̐�]";
-	mes "�c�c�N���c�c";
+	mes "[青年の声]";
+	mes "……誰か……";
 	next;
-	mes "[�N�̐�]";
-	mes "���肢�c�c";
-	mes "���̃y���_���g��";
-	mes "���Ɂc�c";
+	mes "[青年の声]";
+	mes "お願い……";
+	mes "このペンダントを";
+	mes "妹に……";
 	setquest 61475;
 	compquest 61475;
 	close2;
@@ -6313,226 +6313,226 @@ lhz_que01.gat,99,74,3	script	#�jLhzQue	48,{
 	end;
 }
 
-lhz_que01.gat,99,69,0	script	#�y���_���gLhzQue	139,{
+lhz_que01.gat,99,69,0	script	#ペンダントLhzQue	139,{
 	end;
 }
 
-lhz_que01.gat,90,71,4	script	#�y�R�y�R	1019,4,4,{
+lhz_que01.gat,90,71,4	script	#ペコペコ	1019,4,4,{
 OnTouch:
-	mes "[�y�R�y�R]";
-	mes "�n��!!�@�n��!!�@�n��!!�@�n��!!";
+	mes "[ペコペコ]";
+	mes "馬鹿!!　馬鹿!!　馬鹿!!　馬鹿!!";
 	close;
 }
 
-lhz_in03.gat,32,162,3	script	���̈�������	53,{
+lhz_in03.gat,32,162,3	script	足の悪い少女	53,{
 	switch(LHZ_2QUE) {
 	default:
-		mes "[���̈�������]";
-		mes "�c�c";
+		mes "[足の悪い少女]";
+		mes "……";
 		next;
-		mes "[���̈�������]";
-		mes "�N�X���c�c";
+		mes "[足の悪い少女]";
+		mes "クスン……";
 		next;
-		mes "�]�����͖ڂ����܂��Ȃ���A";
-		mes "�@�����ƉƂ̔������߂Ă���]";
+		mes "‐少女は目を潤ませながら、";
+		mes "　ずっと家の扉を見つめている‐";
 		next;
-		menu "�������Ă�́H",-;
-		mes "[���̈�������]";
-		mes "����l��҂��Ă��܂��B";
-		mes "���͕������Ƃ��ł��Ȃ�����B";
-		mes "�҂��Ƃ����ł��Ȃ�����c�c";
+		menu "何をしてるの？",-;
+		mes "[足の悪い少女]";
+		mes "ある人を待っています。";
+		mes "私は歩くことができないから。";
+		mes "待つことしかできないから……";
 		if(LHZ_2QUE != 11)
 			close;
 		next;
-		if(select("�y���_���g��������","��b��؂�グ��") == 2) {
-			mes "[���̈�������]";
-			mes "�N�X���c�c";
+		if(select("ペンダントを見せる","会話を切り上げる") == 2) {
+			mes "[足の悪い少女]";
+			mes "クスン……";
 			close;
 		}
 		if(countitem(7341) < 1) {
-			mes "[���̈�������]";
-			mes "���H�@�����ł����H";
+			mes "[足の悪い少女]";
+			mes "え？　何がですか？";
 			close;
 		}
 		emotion 0;
-		mes "[���̈�������]";
-		mes "�����c�c!!";
-		mes "����́A�������Z������";
-		mes "�������y���_���g�c�c�I";
-		mes "���A�Z�Ɂc�c�r���O�E�B�h�G����";
-		mes "�������ł����H";
+		mes "[足の悪い少女]";
+		mes "あっ……!!";
+		mes "それは、私がお兄ちゃんに";
+		mes "あげたペンダント……！";
+		mes "あ、兄に……ビングウィドエンに";
+		mes "会ったんですか？";
 		next;
-		menu "���܂ł����������������",-;
-		mes "[���̈�������]";
-		mes "�c�c";
+		menu "今まであった事を説明する",-;
+		mes "[足の悪い少女]";
+		mes "……";
 		next;
-		mes "[���̈�������]";
-		mes "���Ȃ��̌����c���v�O�Ƃ������̂�";
-		mes "���Ȃ̂��͂킩��Ȃ��ł��c�c";
+		mes "[足の悪い少女]";
+		mes "あなたの言う残留思念というものが";
+		mes "何なのかはわからないです……";
 		next;
-		mes "[���̈�������]";
-		mes "�ł��A�y���_���g�̋L���̒���";
-		mes "�Z�������Ƃ������Ƃ́c�c";
-		mes "�܂����c�c�Z�͎����";
-		mes "���܂����̂ł��傤���c�c�H";
+		mes "[足の悪い少女]";
+		mes "でも、ペンダントの記憶の中で";
+		mes "兄を見たということは……";
+		mes "まさか……兄は死んで";
+		mes "しまったのでしょうか……？";
 		next;
-		mes "[���̈�������]";
-		mes "�c�c�c�c�B";
+		mes "[足の悪い少女]";
+		mes "…………。";
 		next;
-		mes "[���̈�������]";
-		mes "���Z����񂪁A����u���Ď����";
-		mes "���܂��Ȃ�āc�c����Ȃ킯�Ȃ��I";
-		mes "���Z�����́A�N����";
-		mes "�E���ŗD�����āc�c�����c�c";
+		mes "[足の悪い少女]";
+		mes "お兄ちゃんが、私を置いて死んで";
+		mes "しまうなんて……そんなわけない！";
+		mes "お兄ちゃんは、誰よりも";
+		mes "勇敢で優しくて……うぅ……";
 		next;
-		mes "[���̈�������]";
-		mes "�o�čs���Ă��������c�c";
-		mes "�͂₭�o�čs���Ă�������!!";
+		mes "[足の悪い少女]";
+		mes "出て行ってください……";
+		mes "はやく出て行ってください!!";
 		set LHZ_2QUE,12;
 		chgquest 61450,61455;
 		close2;
 		warp "lighthalzen.gat",322,323;
 		end;
 	case 15:
-		mes "[���̈�������]";
-		mes "���x���������ł��c�c�B";
+		mes "[足の悪い少女]";
+		mes "何度もしつこいです……。";
 		next;
-		menu "�ӂ�",-;
-		mes "[���̈�������]";
-		mes "�ʂɁc�c";
-		mes "�ӂ��Ă��炢�����킯����c�c";
+		menu "謝る",-;
+		mes "[足の悪い少女]";
+		mes "別に……";
+		mes "謝ってもらいたいわけじゃ……";
 		next;
-		mes "[���̈�������]";
-		mes "���́c�c�Z�̃y���_���g�c�c";
-		mes "�Ԃ��Ă���܂��񂩁H";
+		mes "[足の悪い少女]";
+		mes "あの……兄のペンダント……";
+		mes "返してくれませんか？";
 		next;
-		menu "�y���_���g��Ԃ�",-;
-		mes "^FF0000�]�����ɓn������^000000";
-		mes "^FF0000�@���o�����y���_���g��^000000";
-		mes "^FF0000�@�󂩂�����������ށ]^000000";
+		menu "ペンダントを返す",-;
+		mes "^FF0000‐少女に渡すため^000000";
+		mes "^FF0000　取り出したペンダントに^000000";
+		mes "^FF0000　空から光が注ぎ込む‐^000000";
 		misceffect 324,"";
 		next;
-		mes "[�r���O�E�B�h�G�� " +strcharinfo(0)+ "]";
-		mes "^3131FF�Z�c�c�c���߂�ȁc�c�B^000000";
-		mes "^3131FF���O���ЂƂ�ڂ����ɂ����܂��āc�c^000000";
-		mes "^3131FF�ł��A�Z�����́A�������Ă��O��^000000";
-		mes "^3131FF������Ă��邩��ȁB^000000";
-		mes "^3131FF���܂ł��c�c^000000";
+		mes "[ビングウィドエン " +strcharinfo(0)+ "]";
+		mes "^3131FFセツ……ごめんな……。^000000";
+		mes "^3131FFお前をひとりぼっちにしちまって……^000000";
+		mes "^3131FFでも、兄ちゃんは、いつだってお前を^000000";
+		mes "^3131FF見守っているからな。^000000";
+		mes "^3131FFいつまでも……^000000";
 		next;
-		mes "[�r���O�E�B�h�G�� " +strcharinfo(0)+ "]";
-		mes "^3131FF�����c�c���̋�̉��ŁA^000000";
-		mes "^3131FF�܂�����炢���ȁc�c^000000";
-		mes "^3131FF�Z�c�c�c^000000";
-		mes "^3131FF���O��{���Ɉ����Ă����B^000000";
+		mes "[ビングウィドエン " +strcharinfo(0)+ "]";
+		mes "^3131FFいつか……あの空の下で、^000000";
+		mes "^3131FFまた会えたらいいな……^000000";
+		mes "^3131FFセツ……^000000";
+		mes "^3131FFお前を本当に愛しているよ。^000000";
 		next;
-		mes "[�Z�c]";
-		mes "���c�c�H�@���A���Z�����H";
+		mes "[セツ]";
+		mes "え……？　お、お兄ちゃん？";
 		next;
-		mes "[�Z�c]";
-		mes "�����c�c���́c�c";
-		mes "���Z�����́c�c";
+		mes "[セツ]";
+		mes "うそ……今の……";
+		mes "お兄ちゃんは……";
 		next;
-		mes "[�Z�c]";
-		mes "������A����Ȃ͂��Ȃ��B";
-		mes "���Z�����͂�������҂�����B";
-		mes "�ǂ����Ō��C�ɂ��Ă�͂�������c�c";
+		mes "[セツ]";
+		mes "ううん、そんなはずない。";
+		mes "お兄ちゃんはしっかり者だから。";
+		mes "どこかで元気にしてるはずだもん……";
 		next;
-		mes "^FF0000�]�����́A���ɂ�������^000000";
-		mes "^FF0000�@�܂����ڂꗎ�������Ȓ��A^000000";
-		mes "^FF0000�@�\�������Ă���]^000000";
+		mes "^FF0000‐少女は、今にも瞳から^000000";
+		mes "^FF0000　涙がこぼれ落ちそうな程、^000000";
+		mes "^FF0000　表情を崩している‐^000000";
 		next;
-		mes "[�Z�c]";
-		mes "������Ɖ����ɍs�����ǁA";
-		mes "�K���A����Č����Ă��񂾂���c�c";
+		mes "[セツ]";
+		mes "ちょっと遠くに行くけど、";
+		mes "必ず帰るって言ってたんだもん……";
 		next;
-		mes "[�Z�c]";
-		mes "���y�Y�����ς������Ă�����āc�c";
-		mes "�����������̐H�ׂɍs�������āc�c";
-		mes "�����Ă��񂾂���c�c";
-		mes "���Z�����c�c";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�B";
-		next;
-		menu "�ǂ�ȏ����Ȗ񑩂ł��ނ͕K������",-;
-		mes "[�Z�c]";
-		mes "�c�c�c�c!!";
-		next;
-		mes "[�Z�c]";
-		mes "�c�c����I";
-		mes "���Z�����͖񑩂�";
-		mes "�K������Ă�������I";
-		next;
-		mes "^FF0000�]�����̊�ɂς�����^000000";
-		mes "^FF0000�@�Ί炪�Ђ낪�����]^000000";
-		next;
-		mes "[�Z�c]";
-		mes "���܂ł�������";
-		mes "��������������B";
-		next;
-		mes "[�Z�c]";
-		mes "���ւցc�c";
-		mes "�����񑩎��Ȃ�����I";
-		next;
-		menu "�񑩁H",-;
-		mes "[�Z�c]";
-		mes "����I";
-		mes "�₵���Ă�";
-		mes "�Ί�Ŋ撣����āB";
-		next;
-		mes "[�Z�c]";
-		mes "���A���Z����񂪋A���Ă�����A";
-		mes "��l�ŕ����p�������Ă�����񂾂��B";
-		mes "�����Ă��Z�����ɂ�����";
-		mes "�Ƃ���ɘA��čs���Ă��炤�́I";
-		mes "���ւցA�y���݂��Ȃ��c�c�B";
+		mes "[セツ]";
+		mes "お土産いっぱい買ってくるって……";
+		mes "美味しいもの食べに行こうって……";
+		mes "言ってたんだもん……";
+		mes "お兄ちゃん……";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�B";
+		mes "…………。";
 		next;
-		mes "�]���Ȃ��́A�����̎�ɁA";
-		mes "�@�y���_���g��������ƈ��点���]";
+		menu "どんな小さな約束でも彼は必ず守るよ",-;
+		mes "[セツ]";
+		mes "…………!!";
+		next;
+		mes "[セツ]";
+		mes "……うん！";
+		mes "お兄ちゃんは約束を";
+		mes "必ず守ってくれるもん！";
+		next;
+		mes "^FF0000‐少女の顔にぱぁっと^000000";
+		mes "^FF0000　笑顔がひろがった‐^000000";
+		next;
+		mes "[セツ]";
+		mes "今までもずっと";
+		mes "そうだったもん。";
+		next;
+		mes "[セツ]";
+		mes "えへへ……";
+		mes "私も約束守らなくちゃ！";
+		next;
+		menu "約束？",-;
+		mes "[セツ]";
+		mes "うん！";
+		mes "寂しくても";
+		mes "笑顔で頑張るって。";
+		next;
+		mes "[セツ]";
+		mes "私、お兄ちゃんが帰ってきたら、";
+		mes "一人で歩く姿を見せてあげるんだぁ。";
+		mes "そしてお兄ちゃんにいろんな";
+		mes "ところに連れて行ってもらうの！";
+		mes "えへへ、楽しみだなぁ……。";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "…………。";
+		next;
+		mes "‐あなたは、少女の手に、";
+		mes "　ペンダントをぎゅっと握らせた‐";
 		set LHZ_2QUE,16;
 		delitem 7341,1;
 		next;
-		mes "[�Z�c]";
-		mes "�c�c�c�c�B";
+		mes "[セツ]";
+		mes "…………。";
 		next;
-		mes "[�Z�c]";
-		mes "���肪�Ƃ��������܂����B";
-		mes "���Z�����̃y���_���g��";
-		mes "�����Ă��Ă���āc�c";
+		mes "[セツ]";
+		mes "ありがとうございました。";
+		mes "お兄ちゃんのペンダントを";
+		mes "持ってきてくれて……";
 		next;
-		mes "[�Z�c]";
-		mes "���A�撣��ˁB";
-		mes "���Z����񂪋A���Ă������̂��߂ɁI";
+		mes "[セツ]";
+		mes "私、頑張るね。";
+		mes "お兄ちゃんが帰ってきた時のために！";
 		close;
 	case 16:
-		mes "[�Z�c]";
-		mes "���߂�ˁA�܂��������Ƃ�";
-		mes "�ł��Ȃ��񂾁B�G�w�w�c�c";
-		mes "�ł��A�����������肵�Ȃ�����I";
-		mes "�撣���I";
+		mes "[セツ]";
+		mes "ごめんね、まだ歩くことが";
+		mes "できないんだ。エヘヘ……";
+		mes "でも、もう泣いたりしないもん！";
+		mes "頑張るよ！";
 		close;
 	}
 }
 
-lhz_in03.gat,26,167,5	script	����	850,{
-	mes "[�ߏ��̂��΂���]";
-	mes "���̎q�A������������H";
-	mes "�����炱������Ă��܂�";
-	mes "�g�̉��̎�`����";
-	mes "���ɗ��Ă�̂��B";
+lhz_in03.gat,26,167,5	script	女性	850,{
+	mes "[近所のおばさん]";
+	mes "あの子、足が悪いだろ？";
+	mes "だからこうやってたまに";
+	mes "身の回りの手伝いを";
+	mes "しに来てるのさ。";
 	if(LHZ_2QUE >= 16) {
 		next;
-		mes "[�ߏ��̂��΂���]";
-		mes "���������̎q�A";
-		mes "�ŋߌ��C�ɂȂ��ĂˁB";
-		mes "���񂽂����Ă��炩�˂��I";
+		mes "[近所のおばさん]";
+		mes "しかしあの子、";
+		mes "最近元気になってね。";
+		mes "あんたが来てからかねぇ！";
 		next;
-		mes "[�ߏ��̂��΂���]";
-		mes "���ꂩ������傭���傭���";
-		mes "�����ɗ��Ă������H";
+		mes "[近所のおばさん]";
+		mes "これからもちょくちょく顔を";
+		mes "見せに来ておくれよ？";
 		close;
 	}
 	close;
@@ -6540,23 +6540,23 @@ lhz_in03.gat,26,167,5	script	����	850,{
 
 lighthalzen.gat,324,322,0	script	#Warp	45,2,2,{
 	if(LHZ_2QUE >= 16) {
-		mes "-�h�A���J���Ȃ�-";
+		mes "-ドアが開かない-";
 		next;
-		mes "[�Z��]";
-		mes "�n���X�́A�q����̖���";
-		mes "�ǂ����Ă��`���a���������₷���c�c";
-		mes "�ŋ߂܂��N�����A�`���a��";
-		mes "���������炵���B";
+		mes "[住民]";
+		mes "貧民街は、衛生上の問題で";
+		mes "どうしても伝染病が発生しやすい……";
+		mes "最近また誰かが、伝染病に";
+		mes "かかったらしい。";
 		next;
-		mes "[�Z��]";
-		mes "�q���͒�R�͂��キ�A";
-		mes "�`���a�ɂ�����₷������A";
-		mes "�O�o���֎~���Ă���B";
-		mes "�N���C��t���邱�Ƃ��B";
+		mes "[住民]";
+		mes "子供は抵抗力が弱く、";
+		mes "伝染病にかかりやすいから、";
+		mes "外出を禁止している。";
+		mes "君も気を付けることだ。";
 		close;
 	}
 	if(LHZ_2QUE >= 12 && LHZ_2QUE <= 14) {
-		mes "�]�h�A���J���Ȃ��]";
+		mes "‐ドアが開かない‐";
 		set LHZ_2QUE,LHZ_2QUE+1;
 		close;
 	}
@@ -6564,48 +6564,48 @@ lighthalzen.gat,324,322,0	script	#Warp	45,2,2,{
 	end;
 }
 
-lighthalzen.gat,319,321,0	script	#��	139,3,3,{
+lighthalzen.gat,319,321,0	script	#声	139,3,3,{
 	if(LHZ_2QUE == 16) {
-		mes "�c�c";
+		mes "……";
 		next;
 		misceffect 231,"";
-		mes "�i�p�@�@�b�j";
+		mes "（パァァッ）";
 		next;
-		mes "[�N�̐�]";
-		mes "�c�c";
+		mes "[青年の声]";
+		mes "……";
 		next;
-		mes "[�N�̐�]";
-		mes "^FF0000���߂�Ȃ����A�����Ă��肪�Ƃ��c�c^000000";
+		mes "[青年の声]";
+		mes "^FF0000ごめんなさい、そしてありがとう……^000000";
 		next;
-		mes "�]�N�̐������������悤��";
-		mes "�@�C�������B";
-		mes "�@����́A���܂ŕ�������������";
-		mes "�@������������₩�������]";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c";
-		next;
-		mes "�]���Ȃ��͂��̏�ɗ����s�����A";
-		mes "�@���܂ŋN�������Ƃ��v���Ԃ��Ă����]";
+		mes "‐青年の声が聞こえたような";
+		mes "　気がした。";
+		mes "　それは、今まで聞こえた声よりも";
+		mes "　少しだけ晴れやかだった‐";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "(���l�̘r�ւ̎c���v�O�A�􂢁A";
-		mes "�������Ԑl�X�A�����ăy���_���g�c�c";
-		mes "���l�̘r�ւ̎c���v�O�́A";
-		mes "�����c���Ă��Ȃ��悤���c�c)";
+		mes "……";
+		next;
+		mes "‐あなたはその場に立ち尽くし、";
+		mes "　今まで起きたことを思い返していた‐";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "(�c�c�����ނ���A������܂ł�";
-		mes "�v���߂������̂��H";
-		mes "��́A�ߋ��ɉ����������̂��H)";
+		mes "(囚人の腕輪の残留思念、呪い、";
+		mes "泣き叫ぶ人々、そしてペンダント……";
+		mes "囚人の腕輪の残留思念は、";
+		mes "もう残っていないようだ……)";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "(^3131FF���b�P���x����^000000�́A���܂�ɂ��c�c";
-		mes "�s�R�ȓ_�������B���ɁA";
-		mes "^FF0000���Q���V������^000000�c�c�B)";
+		mes "(……何が彼らを、それ程までに";
+		mes "思いつめさせたのか？";
+		mes "一体、過去に何があったのか？)";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "(^3131FF���b�P���x����^000000�ɍs���Ă݂邩)";
+		mes "(^3131FFレッケンベル社^000000は、あまりにも……";
+		mes "不審な点が多い。特に、";
+		mes "^FF0000レゲンシュルム^000000……。)";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "(^3131FFレッケンベル社^000000に行ってみるか)";
 		set LHZ_2QUE,17;
 		chgquest 61455,61460;
 		if(checkre()) {
@@ -6625,321 +6625,321 @@ lighthalzen.gat,319,321,0	script	#��	139,3,3,{
 	end;
 }
 
-lhz_in01.gat,286,226,3	script	�鏑�X�E�F�C�E�V�����I	831,{
+lhz_in01.gat,286,226,3	script	秘書スウェイ・シュリオ	831,{
 	switch(LHZ_2QUE) {
 	default:
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���ł����A���Ȃ��́H";
-		mes "�����͊֌W�҈ȊO��������֎~�ł��I";
+		mes "[スウェイ・シュリオ]";
+		mes "何ですか、あなたは？";
+		mes "ここは関係者以外立ち入り禁止です！";
 		if(LHZ_2QUE != 17)
 			close;
 		next;
-		if(select("�n���X�ɂ���","���Ȃ��́H") == 2) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "���̓��b�P���x���Љ�̔鏑�A";
-			mes "�X�E�F�C�E�V�����I�ł��B";
-			mes "����ȏ�A���Ȃ��ɂ��������邱�Ƃ�";
-			mes "�������܂���B";
+		if(select("貧民街について","あなたは？") == 2) {
+			mes "[スウェイ・シュリオ]";
+			mes "私はレッケンベル社会長の秘書、";
+			mes "スウェイ・シュリオです。";
+			mes "それ以上、あなたにお教えすることは";
+			mes "ございません。";
 			close;
 		}
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���[���̌������̕n�����l�X�̂��߂ɁA";
-		mes "��������񋟂��Ă��܂��B";
-		mes "�d���̏ڍׂɂ��Ă͑����܂��񂪁c�c";
+		mes "[スウェイ・シュリオ]";
+		mes "レールの向こうの貧しい人々のために、";
+		mes "働き口を提供しています。";
+		mes "仕事の詳細については存じませんが……";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�܂����ɉ����p��������ł����H";
+		mes "[スウェイ・シュリオ]";
+		mes "まだ私に何か用がおありですか？";
 		next;
-		if(select("�����ɍs�����l���A���Ă��Ȃ�","���b�P���x���Ђɂ���") == 2) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "���Ђ͈�ʊ�Ƃł����A";
-			mes "�K�͍͂ő勉�ƌ�����ł��傤�B";
-			mes "�X�ɏڂ������Ƃ����m��ɂȂ肽��";
-			mes "�̂ł�����A�C���t�H���[�V������";
-			mes "�K�C�h�ɐq�˂Ă��������B";
+		if(select("働きに行った人が帰ってこない","レッケンベル社について") == 2) {
+			mes "[スウェイ・シュリオ]";
+			mes "弊社は一般企業ですが、";
+			mes "規模は最大級と言えるでしょう。";
+			mes "更に詳しいことがお知りになりたい";
+			mes "のでしたら、インフォメーションの";
+			mes "ガイドに尋ねてください。";
 			close;
 		}
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Ђ��d����������������";
-		mes "�A���Ă��Ȃ��A�ƁH";
-		mes "���炩�̉����ōs���Ă���";
-		mes "���ƂɎQ�������̂ł͂���܂��񂩁H";
+		mes "[スウェイ・シュリオ]";
+		mes "弊社が仕事を斡旋した方が";
+		mes "帰ってこない、と？";
+		mes "何らかの遠方で行われている";
+		mes "事業に参加したのではありませんか？";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Ђ͋K�͂��傫���̂ŁA";
-		mes "�e�n�ɋΖ��n���������܂��B";
-		mes "�����ɂ͋A���Ă���Ȃ����Ƃ�";
-		mes "����ł��傤�B";
-		mes "�������A���l�̏���������";
-		mes "�Љ���s���Ă���܂��B";
+		mes "[スウェイ・シュリオ]";
+		mes "弊社は規模が大きいので、";
+		mes "各地に勤務地がございます。";
+		mes "すぐには帰ってこれないことも";
+		mes "あるでしょう。";
+		mes "もちろん、当人の承諾も得て";
+		mes "紹介を行っております。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�X�ɏڂ������Ƃ����m��ɂȂ肽��";
-		mes "�̂ł�����A�C���t�H���[�V������";
-		mes "�K�C�h�ɐq�˂Ă��������B";
-		mes "�����Z�������̂Łc�c";
+		mes "[スウェイ・シュリオ]";
+		mes "更に詳しいことがお知りになりたい";
+		mes "のでしたら、インフォメーションの";
+		mes "ガイドに尋ねてください。";
+		mes "私も忙しいもので……";
 		set LHZ_2QUE,18;
 		next;
-		mes "�]�b��؂�グ���Ă��܂����B";
-		mes "�@������x�鏑�ɘb�������悤�]";
+		mes "‐話を切り上げられてしまった。";
+		mes "　もう一度秘書に話しかけよう‐";
 		close;
 	case 18:
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "����ȏ�̎���́A";
-		mes "�C���t�H���[�V�����̃K�C�h��";
-		mes "���q�˂��������Ɛ\���グ��";
-		mes "�͂��ł����H";
+		mes "[スウェイ・シュリオ]";
+		mes "これ以上の質問は、";
+		mes "インフォメーションのガイドに";
+		mes "お尋ねくださいと申し上げた";
+		mes "はずですが？";
 		next;
-		if(select("�댯�Ȏ����̉\�𕷂���","���Q���V�������������ɂ���") == 2) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "���Ђ́A���Q���V��������������";
-			mes "�����x�������Ă���܂��B";
+		if(select("危険な実験の噂を聞いた","レゲンシュルム研究所について") == 2) {
+			mes "[スウェイ・シュリオ]";
+			mes "弊社は、レゲンシュルム研究所に";
+			mes "研究支援をしております。";
 			next;
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "���Q���V�����������̌������ʂ́A";
-			mes "���Ђ����łȂ��A";
-			mes "�V���o���c�o���h���a���A";
-			mes "�����ă~�b�h�K���h�嗤�̔��W��";
-			mes "�v�����Ă���܂��B";
+			mes "[スウェイ・シュリオ]";
+			mes "レゲンシュルム研究の研究成果は、";
+			mes "弊社だけでなく、";
+			mes "シュバルツバルド共和国、";
+			mes "そしてミッドガルド大陸の発展に";
+			mes "貢献しております。";
 			next;
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "�X�ɏڂ������Ƃ����m��ɂȂ肽��";
-			mes "�̂ł�����A�C���t�H���[�V������";
-			mes "�K�C�h�ɐq�˂Ă��������B";
+			mes "[スウェイ・シュリオ]";
+			mes "更に詳しいことがお知りになりたい";
+			mes "のでしたら、インフォメーションの";
+			mes "ガイドに尋ねてください。";
 			close;
 		}
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Q���V��������������";
-		mes "������Â����������Ă���ƁH";
+		mes "[スウェイ・シュリオ]";
+		mes "レゲンシュルム研究所で";
+		mes "うしろ暗い研究をしていると？";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�c�c�����̂ĂȂ�܂���ˁB";
-		mes "���������ɂ��̂悤�Ȃ��Ƃ�";
-		mes "����������Ă���̂ł����H";
+		mes "[スウェイ・シュリオ]";
+		mes "……聞き捨てなりませんね。";
+		mes "何を根拠にそのようなことを";
+		mes "おっしゃっているのですか？";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Q���V��������������";
-		mes "���q�^���[���̍ŏd�v�@�ւł��B";
-		mes "���Ȃ��͂�����������������";
-		mes "����̂��������Ă���̂ł����H";
+		mes "[スウェイ・シュリオ]";
+		mes "レゲンシュルム研究所は";
+		mes "リヒタルゼンの最重要機関です。";
+		mes "あなたはご自分が何を言って";
+		mes "いるのか理解しているのですか？";
 		next;
-		menu "�n���X�̎c���v�O�ɂ���",-;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�c���v�O�c�c";
-		mes "���̂悤�Ȃ��̂�������";
-		mes "���Q���V��������������";
-		mes "������Â����������Ă����";
-		mes "����������Ă���̂ł����H";
+		menu "貧民街の残留思念について",-;
+		mes "[スウェイ・シュリオ]";
+		mes "残留思念……";
+		mes "そのようなものを根拠に";
+		mes "レゲンシュルム研究所で";
+		mes "うしろ暗い研究をしていると";
+		mes "おっしゃっているのですか？";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�c�c���b�ɂȂ�܂���ˁB";
-		mes "�����A��������肭�������B";
+		mes "[スウェイ・シュリオ]";
+		mes "……お話になりませんね。";
+		mes "さあ、お引き取りください。";
 		set LHZ_2QUE,19;
 		next;
-		mes "�]�b��؂�グ���Ă��܂����B";
-		mes "�@������x�鏑�ɘb�������悤�]";
+		mes "‐話を切り上げられてしまった。";
+		mes "　もう一度秘書に話しかけよう‐";
 		close;
 	case 19:
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�܂����ɉ����p��������ł����H";
+		mes "[スウェイ・シュリオ]";
+		mes "まだ私に何か用がおありですか？";
 		next;
-		menu "���Q���V�������͊댯�Ȏ��������Ă���",-;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�܂����̘b�ł����B";
-		mes "�c���v�O�Ƃ��������̂�";
-		mes "���b�Ȃ�A�������\�ł��B";
+		menu "レゲンシュルムは危険な実験をしている",-;
+		mes "[スウェイ・シュリオ]";
+		mes "またその話ですか。";
+		mes "残留思念とかいうものの";
+		mes "お話なら、もう結構です。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "����ł́A���͂���Ŏ��炵�܂��B";
-		mes "�������ɏ������Ȃ��Ă͂Ȃ�Ȃ�";
-		mes "���ނ��c���Ă���܂��̂ŁB";
-		mes "�X�ɏڂ������Ƃ����m��ɂȂ肽��";
-		mes "�̂ł�����A�C���t�H���[�V������";
-		mes "�K�C�h�ɐq�˂Ă��������B";
+		mes "[スウェイ・シュリオ]";
+		mes "それでは、私はこれで失礼します。";
+		mes "今日中に処理しなくてはならない";
+		mes "書類が残っておりますので。";
+		mes "更に詳しいことがお知りになりたい";
+		mes "のでしたら、インフォメーションの";
+		mes "ガイドに尋ねてください。";
 		next;
-		if(select("�Ăю~�߂�","��b��؂�グ��") == 2) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "�{���A�鏑����";
-			mes "�֌W�҈ȊO��������֎~�ł��B";
-			mes "����͕s��Ƃ������܂����A";
-			mes "���㎿�ⓙ�̓C���t�H���[�V������";
-			mes "�K�C�h�ɂ��q�˂��������B";
+		if(select("呼び止める","会話を切り上げる") == 2) {
+			mes "[スウェイ・シュリオ]";
+			mes "本来、秘書室は";
+			mes "関係者以外立ち入り禁止です。";
+			mes "今回は不問といたしますが、";
+			mes "今後質問等はインフォメーションの";
+			mes "ガイドにお尋ねください。";
 			close;
 		}
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�c�c";
+		mes "[スウェイ・シュリオ]";
+		mes "……";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���͖Z�����̂ł��B����ȏ�A";
-		mes "����ɂ������͂ł��܂���B";
-		mes "�ĎO�\���グ�܂����A";
-		mes "�C���t�H���[�V�����̃K�C�h��";
-		mes "���q�˂��������B";
+		mes "[スウェイ・シュリオ]";
+		mes "私は忙しいのです。これ以上、";
+		mes "質問にお答えはできません。";
+		mes "再三申し上げますが、";
+		mes "インフォメーションのガイドに";
+		mes "お尋ねください。";
 		next;
-		if(select("���l�̘r�ւ�������","��b��؂�グ��") == 2) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "�ł́A���炵�܂��B";
-			mes "�����A����Ȏ��ԂɂȂ��Ă��܂��āc�c";
+		if(select("囚人の腕輪を見せる","会話を切り上げる") == 2) {
+			mes "[スウェイ・シュリオ]";
+			mes "では、失礼します。";
+			mes "ああ、こんな時間になってしまって……";
 			close;
 		}
 		if(countitem(7345) < 1) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "��������������Ă���̂�";
-			mes "�킩��܂��񂪁c�c";
-			mes "�����؋��ł�����̂ł����H";
+			mes "[スウェイ・シュリオ]";
+			mes "何をおっしゃっているのか";
+			mes "わかりませんが……";
+			mes "何か証拠でもあるのですか？";
 			next;
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "��₩���Ȃ�A���Ă��������B";
-			mes "���͖Z�����̂ł��B";
+			mes "[スウェイ・シュリオ]";
+			mes "冷やかしなら帰ってください。";
+			mes "私は忙しいのです。";
 			set LHZ_2QUE,20;
 			close;
 		}
 		break;
 	case 20:
 		if(countitem(7345) < 1) {
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "��������������Ă���̂�";
-			mes "�킩��܂��񂪁c�c";
-			mes "�����؋��ł�����̂ł����H";
+			mes "[スウェイ・シュリオ]";
+			mes "何をおっしゃっているのか";
+			mes "わかりませんが……";
+			mes "何か証拠でもあるのですか？";
 			next;
-			mes "[�X�E�F�C�E�V�����I]";
-			mes "��₩���Ȃ�A���Ă��������B";
-			mes "���͖Z�����̂ł��B";
+			mes "[スウェイ・シュリオ]";
+			mes "冷やかしなら帰ってください。";
+			mes "私は忙しいのです。";
 			close2;
 			warp "lhz_in01.gat",228,226;
 			end;
 		}
 		break;
 	case 21:
-		mes "�]�����Ԍ�]";
+		mes "‐数時間後‐";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�c�c�{�����ʂ��o�܂����B";
+		mes "[スウェイ・シュリオ]";
+		mes "……捜査結果が出ました。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Ȃ��Ɋ��ӂ������܂��B";
-		mes "�{���Z�u�Ƃ����Ȋw�҂��A";
-		mes "���Q���V�������ŏ����";
-		mes "�댯�Ȍ��������Ă��܂����B";
+		mes "[スウェイ・シュリオ]";
+		mes "あなたに感謝いたします。";
+		mes "ボルセブという科学者が、";
+		mes "レゲンシュルムで勝手に";
+		mes "危険な研究をしていました。";
 		next;
-		menu "�댯�Ȍ����H",-;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�͂��c�c";
-		mes "�ނ͌����̂��߂ɕn���X����";
-		mes "���N�Ȑl��s�@�ɘA��Ă��āA";
-		mes "�l�̎������s���Ă��܂����B";
+		menu "危険な研究？",-;
+		mes "[スウェイ・シュリオ]";
+		mes "はい……";
+		mes "彼は研究のために貧民街から";
+		mes "健康な人を不法に連れてきて、";
+		mes "人体実験を行っていました。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�l�̎������̂͂�����Ђǂ�����";
-		mes "�ł͂Ȃ������悤�ł����A";
-		mes "�n�����l�X�����͂ƍ��͂ɂ����";
-		mes "�����̂ɂ���ȂǂƂ́A";
-		mes "��ϗ��I�Ȃ��Ƃł��B";
+		mes "[スウェイ・シュリオ]";
+		mes "人体実験自体はそれ程ひどいもの";
+		mes "ではなかったようですが、";
+		mes "貧しい人々を権力と財力によって";
+		mes "実験体にするなどとは、";
+		mes "非倫理的なことです。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�ނ͊�Ƃ̂��߂̌����ł͂Ȃ��A";
-		mes "^3131FF�z�����N���X^000000�Ƃ���^FF0000�l�I��S^000000";
-		mes "�̂��߂̌��������Ă����悤�ł��B";
+		mes "[スウェイ・シュリオ]";
+		mes "彼は企業のための研究ではなく、";
+		mes "^3131FFホムンクルス^000000という^FF0000個人的野心^000000";
+		mes "のための研究をしていたようです。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�ނ͑{���`�[���ɂ���Ă��̂܂܍S���A";
-		mes "�A�s����āA^FF0000�ގЏ���^000000�ɂȂ�܂����B";
+		mes "[スウェイ・シュリオ]";
+		mes "彼は捜査チームによってそのまま拘束、";
+		mes "連行されて、^FF0000退社処分^000000になりました。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Ȃ��̏��񋟂��Ȃ�������A";
-		mes "�����ꂠ�̃}�b�h�T�C�G���e�B�X�g��";
-		mes "���������ɂȂ�A���Ђ�";
-		mes "�M�p�������Ă��܂����ł��傤�B";
-		mes "�{���Ɋ��ӂ������܂��B";
+		mes "[スウェイ・シュリオ]";
+		mes "あなたの情報提供がなかったら、";
+		mes "いずれあのマッドサイエンティストの";
+		mes "研究が公になり、弊社は";
+		mes "信用を失ってしまったでしょう。";
+		mes "本当に感謝いたします。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "����́A���Ђ���̂���ł��B";
-		mes "���肪�Ƃ��������܂����B";
+		mes "[スウェイ・シュリオ]";
+		mes "これは、弊社からのお礼です。";
+		mes "ありがとうございました。";
 		set LHZ_2QUE,22;
 		getitem 617,1;
 		getitem 12016,10;
 		chgquest 61465,61470;
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "������A���Ȃ��̂悤�ɕ��Ђ�";
-		mes "�����ڂ������邨�q�l�̂��߁A";
-		mes "�X�Ȃ�w�͂��������܂��B";
+		mes "[スウェイ・シュリオ]";
+		mes "今後も、あなたのように弊社を";
+		mes "ご愛顧くださるお客様のため、";
+		mes "更なる努力をいたします。";
 		next;
-		menu "�{���Ƀ{���Z�u�����ōs���Ă����̂ł����H",-;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "�͂��B";
-		mes "�������������Ă���A";
-		mes "�ވ�l�ōs���Ă������Ƃ��Ƃ�";
-		mes "���ʂ��o�Ă���܂��B";
+		menu "本当にボルセブだけで行っていたのですか？",-;
+		mes "[スウェイ・シュリオ]";
+		mes "はい。";
+		mes "調査も完了しており、";
+		mes "彼一人で行っていたことだとの";
+		mes "結果が出ております。";
 		next;
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "���Ȃ��ɂ��`���ł�����e��";
-		mes "�ȏ�ł��B";
-		mes "�ǂ����A��������肭�������B";
+		mes "[スウェイ・シュリオ]";
+		mes "あなたにお伝えできる内容は";
+		mes "以上です。";
+		mes "どうぞ、お引き取りください。";
 		close;
 	case 22:
 	case 23:
-		mes "[�X�E�F�C�E�V�����I]";
-		mes "������A���Ȃ��̂悤�ɕ��Ђ�";
-		mes "�����ڂ������邨�q�l�̂��߁A";
-		mes "�X�Ȃ�w�͂��������܂��B";
+		mes "[スウェイ・シュリオ]";
+		mes "今後も、あなたのように弊社を";
+		mes "ご愛顧くださるお客様のため、";
+		mes "更なる努力をいたします。";
 		close;
 	}
-	mes "�]�X�E�F�C�E�V�����I�ɁA";
-	mes "�@���l�̘r�ւ�n���ƁA";
-	mes "�@�X�E�F�C�E�V�����I�̕\��A";
-	mes "�@�����d���Ȃ����]";
+	mes "‐スウェイ・シュリオに、";
+	mes "　囚人の腕輪を渡すと、";
+	mes "　スウェイ・シュリオの表情が、";
+	mes "　少し硬くなった‐";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c�ǂ�����Č�������";
-	mes "�������̂ł����H";
-	mes "�������͈�ʐl��������֎~��";
-	mes "�͂��ł��B";
+	mes "[スウェイ・シュリオ]";
+	mes "……どうやって研究所に";
+	mes "入ったのですか？";
+	mes "研究所は一般人立ち入り禁止の";
+	mes "はずです。";
 	next;
-	menu "�Ȃ��������Ŏ�ɓ��ꂽ�ƁH",-;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c!!";
+	menu "なぜ研究所で手に入れたと？",-;
+	mes "[スウェイ・シュリオ]";
+	mes "……!!";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c";
+	mes "[スウェイ・シュリオ]";
+	mes "……";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c";
+	mes "[スウェイ・シュリオ]";
+	mes "……";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c";
+	mes "[スウェイ・シュリオ]";
+	mes "……";
 	next;
-	menu "���Q���V�������̐��̂́H",-;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c";
-	mes "�c�c";
-	mes "�c�c";
-	mes "�c�c";
+	menu "レゲンシュルムの正体は？",-;
+	mes "[スウェイ・シュリオ]";
+	mes "……";
+	mes "……";
+	mes "……";
+	mes "……";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�c�c";
+	mes "[スウェイ・シュリオ]";
+	mes "……";
 	emotion 5;
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "���Ȃ��́A";
-	mes "^3131FF���Q���V��������������^000000";
-	mes "^3131FF������Â����������Ă���^000000";
-	mes "�Ƃ���������Ă���̂ł���ˁH";
+	mes "[スウェイ・シュリオ]";
+	mes "あなたは、";
+	mes "^3131FFレゲンシュルム研究所で^000000";
+	mes "^3131FFうしろ暗い研究をしている^000000";
+	mes "とおっしゃっているのですよね？";
 	next;
-	menu "�����ł�",-;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�Ƃɂ����A���Ȃ������̂悤�ȕ���";
-	mes "�����Ă���̂ł�����A";
-	mes "���̐ꑮ�{���`�[����";
-	mes "^3131FF���Q���V�������̑{��^000000��";
-	mes "�����Ă݂܂��B";
+	menu "そうです",-;
+	mes "[スウェイ・シュリオ]";
+	mes "とにかく、あなたがこのような物を";
+	mes "持ってくるのでしたら、";
+	mes "私の専属捜査チームに";
+	mes "^3131FFレゲンシュルムの捜査^000000を";
+	mes "させてみます。";
 	next;
-	mes "[�X�E�F�C�E�V�����I]";
-	mes "�{�����ʂ��o����A";
-	mes "�������������܂��傤�B";
+	mes "[スウェイ・シュリオ]";
+	mes "捜査結果が出たら、";
+	mes "お教えいたしましょう。";
 	next;
-	mes "�]�鏑�ɘb�������A";
-	mes "�@�{���̌��ʂ𕷂����]";
+	mes "‐秘書に話しかけ、";
+	mes "　捜査の結果を聞こう‐";
 	set LHZ_2QUE,21;
 	chgquest 61460,61465;
 	close;
@@ -6953,10 +6953,10 @@ lhz_in01.gat,43,114,0	script	#Warp	45,1,1,{
 	end;
 }
 
-lhz_que01.gat,94,24,4	script	#��	139,2,2,{
-	mes "^3131FF�]���C���h�����}�b�h�T�C�G���e�B�X�g^000000";
-	mes "^3131FF�@�̑���ɁA���ނ̎R��^000000";
-	mes "^3131FF�@���l�̌�����������Ă����]^000000";
+lhz_que01.gat,94,24,4	script	#跡	139,2,2,{
+	mes "^3131FF‐狂気を宿したマッドサイエンティスト^000000";
+	mes "^3131FF　の代わりに、書類の山が^000000";
+	mes "^3131FF　無人の研究室を守っていた‐^000000";
 	if(LHZ_2QUE == 22) {
 		set LHZ_2QUE,23;
 		chgquest 61470,200575;
@@ -6967,195 +6967,195 @@ lhz_que01.gat,94,24,4	script	#��	139,2,2,{
 lhz_que01.gat,97,33,0		warp	lighthalzenwarp	1,1,lhz_in01.gat,43,120
 
 //============================================================
-// �u����̗F��N�G�X�gNPC
+// 隔たりの友情クエストNPC
 //- Registry -------------------------------------------------
-// LHZ_3QUE -> 0�`16
+// LHZ_3QUE -> 0～16
 //------------------------------------------------------------
-lighthalzen.gat,337,232,3	script	�}�N	870,{
+lighthalzen.gat,337,232,3	script	マク	870,{
 	switch(LHZ_3QUE) {
 	case 0:
 	case 1:
 		cutin "lhz_macu01",2;
-		mes "[�}�N]";
-		mes "���`���A�`���҂���H�@��������";
-		mes "���鏊�����܂�Ȃ����A�`������";
-		mes "�悤�ȏꏊ����Ȃ��񂾂��ǂȁ`";
-		mes "�܂��A�������������̂�";
-		mes "�߂�Ƃ������˂����B";
-		mes "�d���˂��ȁc�c";
+		mes "[マク]";
+		mes "お～い、冒険者さん？　こっちは";
+		mes "見る所もあまりないし、冒険する";
+		mes "ような場所じゃないんだけどな～";
+		mes "まぁ、せっかく来たのに";
+		mes "戻れとも言えねぇし。";
+		mes "仕方ねぇな……";
 		next;
-		mes "[�}�N]";
-		mes "�������͌����܂܂̏ꏊ�����H";
-		mes "���܂�ǂ��Ȃ��ꏊ�łˁB";
-		mes "�܂��A���������ł���悤��";
-		mes "���Ƃ��Ȃ����A���̂܂܂ł������ǁB";
+		mes "[マク]";
+		mes "こっちは見たままの場所だぞ？";
+		mes "あまり良くない場所でね。";
+		mes "まぁ、俺が何かできるような";
+		mes "こともないし、そのままでいいけど。";
 		next;
-		mes "[�}�N]";
-		mes "����ȏ��ɏZ��ł��鉴�ɂ�����";
-		mes "�������̋������̊X�Ə�����";
-		mes "�����������̂��B";
-		mes "�{���ɐe�����F�B��";
-		mes "��l����񂾂�B";
+		mes "[マク]";
+		mes "こんな所に住んでいる俺にだって";
+		mes "あっちの金持ちの街と少しは";
+		mes "縁があったのさ。";
+		mes "本当に親しい友達が";
+		mes "一人いるんだよ。";
 		next;
-		mes "[�}�N]";
-		mes "�g���n�����Ă��A�����ĐS�܂�";
-		mes "�n�����͂Ȃ����I";
-		mes "�����A�����������Ɏv���Ă���Ȃ�";
-		mes "���񂽂͍ň��Ȃ������ȁB";
+		mes "[マク]";
+		mes "身が貧しくても、決して心まで";
+		mes "貧しくはないぞ！";
+		mes "もし、そういう風に思っているなら";
+		mes "あんたは最悪なやつだからな。";
 		next;
-		mes "[�}�N]";
-		mes "���m�ɂ́c�c�F�B��������Č������A";
-		mes "�F�B�������ƌ���������";
-		mes "�������񂾂��ǁB";
-		mes "���͐F�X���G�Ȏ�������Ăȁc�c";
-		mes "�ӂށc�c";
+		mes "[マク]";
+		mes "正確には……友達がいるって言うより、";
+		mes "友達がいたと言った方が";
+		mes "正しいんだけど。";
+		mes "今は色々複雑な事情があってな……";
+		mes "ふむ……";
 		next;
-		mes "[�}�N]";
-		mes "�c�c�l���Ă݂���A";
-		mes "�����Ȃ�ŏ��Ζʂ̂��񂽂�";
-		mes "����Șb�����Ă���񂾁H";
-		mes "�ق�C�ɂ��Ȃ��ŋA�����A�����B";
+		mes "[マク]";
+		mes "……考えてみたら、";
+		mes "俺がなんで初対面のあんたに";
+		mes "こんな話をしているんだ？";
+		mes "ほら気にしないで帰った帰った。";
 		next;
-		mes "[�}�N]";
-		mes "�������ɂ͉����Ȃ�����A";
-		mes "�����o�čs�����������̋�������";
-		mes "�Ƃ���֍s�����A�������ƌ��߂Ă���B";
+		mes "[マク]";
+		mes "こっちには何もないから、";
+		mes "早く出て行くかあそこの金持ちの";
+		mes "ところへ行くか、さっさと決めてくれ。";
 		if(LHZ_3QUE==0)
 			set LHZ_3QUE,1;
 		break;
 	case 2:
 		cutin "lhz_macu01",2;
-		mes "[�}�N]";
-		mes "����H�@���x�͉��̗p���H";
-		mes "�܂�����ȏ��ɗp���c���Ă���̂��H";
-		mes "�܂������ɂȐl�Ԃ��ȁ`";
-		mes "�`���҂��ĊF����ȂɉɂȂ킯�H";
+		mes "[マク]";
+		mes "うん？　今度は何の用だ？";
+		mes "まだこんな所に用が残っているのか？";
+		mes "まったく暇な人間だな～";
+		mes "冒険者って皆そんなに暇なわけ？";
 		next;
-		menu "�c�c������l���Ă����̓�l�́c�c",-;
+		menu "……いくら考えてもあの二人は……",-;
 		cutin "lhz_macu05",2;
-		mes "[�}�N]";
-		mes "�����I�@���̊�̓K�L�̍�����";
-		mes "�悭�����悤�Ȋ炾��?!";
-		mes "���񂽍��A";
-		mes "�u�c�c������l���Ă����̓�l�́c�c�v";
-		mes "�Ǝv������?!�@�ԈႢ�Ȃ�����H";
+		mes "[マク]";
+		mes "おい！　その顔はガキの頃から";
+		mes "よく見たような顔だな?!";
+		mes "あんた今、";
+		mes "「……いくら考えてもあの二人は……」";
+		mes "と思ったろ?!　間違いないだろ？";
 		next;
-		mes "[�}�N]";
-		mes "����Ȃ��Ƃ��l���Ă���Ȃ�A";
-		mes "�������̋������̊X�֍s����";
-		mes "���̗F�B�̃_�C�K�c��";
-		mes "���Ă����񂾂낤��?!";
-		mes "���A����I";
-		mes "���̗F�B�������_�C�K�c�ˁB";
+		mes "[マク]";
+		mes "そんなことを考えているなら、";
+		mes "あっちの金持ちの街へ行って";
+		mes "俺の友達のダイガツを";
+		mes "見てきたんだろうな?!";
+		mes "あ、いや！";
+		mes "俺の友達だったダイガツね。";
 		next;
 		cutin "lhz_macu02",2;
-		mes "[�}�N]";
-		mes "�̂͂��Ȃ�e�������������B";
-		mes "���_���̌�����������̂�";
-		mes "�����I���W�i����";
-		mes "�������^�������񂾂��ǂȁB";
+		mes "[マク]";
+		mes "昔はかなり親しい仲だった。";
+		mes "無論この言い方をするのは";
+		mes "俺がオリジナルで";
+		mes "あいつが真似したんだけどな。";
 		next;
-		mes "[�}�N]";
-		mes "�Ƃ������A�Ȃ񂩐F���";
-		mes "����ł�������Ƃ��܂Ƃ���";
-		mes "�ł��Ȃ��Ȃ����񂾁B";
+		mes "[マク]";
+		mes "ともかく、なんか色んな";
+		mes "事情でもう会うこともまともに";
+		mes "できなくなったんだ。";
 		next;
-		mes "[�}�N]";
-		mes "���������Ԃ�ꏏ��";
-		mes "�V��ł��Ȃ��ȁc�c";
-		mes "���܂ɉ������炨�݂���";
-		mes "�������Ƃ����邯�ǁc�c�A";
-		mes "�������ꂾ���Łc�c";
-		mes "����ȏ�͉����Ȃ������c�c";
+		mes "[マク]";
+		mes "もうずいぶん一緒に";
+		mes "遊んでいないな……";
+		mes "たまに遠くからお互いを";
+		mes "見たこともあるけど……、";
+		mes "ただそれだけで……";
+		mes "それ以上は何もなかった……";
 		next;
-		mes "[�}�N]";
-		mes "�c�c�Ƙb���Ă��鉴�c�c";
-		mes "������ƕς���˂����I";
-		mes "���Ζʂ̂�ɉ���";
-		mes "�b���Ă��?!";
-		mes "���܂�I�@�Y��Ă���I";
+		mes "[マク]";
+		mes "……と話している俺……";
+		mes "ちょっと変じゃねぇか！";
+		mes "初対面のやつに何を";
+		mes "話してるんだ?!";
+		mes "すまん！　忘れてくれ！";
 		set LHZ_3QUE,3;
 		break;
 	case 3:
 		cutin "lhz_macu03",2;
-		mes "[�}�N]";
-		mes "�܂������A���񂽂܂�";
-		mes "�����Ɏc���Ă���̂���H";
-		mes "�p�����I������Ȃ�";
-		mes "���������ƋA���I";
+		mes "[マク]";
+		mes "まったく、あんたまだ";
+		mes "ここに残っているのかよ？";
+		mes "用事が終わったなら";
+		mes "さっさっと帰れよ！";
 		next;
-		mes "[�}�N]";
-		mes "��������̂͌�������";
-		mes "����1�x�b�����ǁA�̂͗F�B�̂悤��";
-		mes "�����������ŁA�����ėF�B�ł�";
-		mes "�Ȃ������񂾁I";
-		mes "�����͐e���������������B";
-		mes "����������?!";
+		mes "[マク]";
+		mes "誤解されるのは嫌だから";
+		mes "もう1度話すけど、昔は友達のように";
+		mes "見えただけで、決して友達では";
+		mes "なかったんだ！";
+		mes "今よりは親しかっただけだ。";
+		mes "分かったか?!";
 		next;
-		mes "[�}�N]";
-		mes "�����ĉ����ɂ������Ă�Ƃ�";
-		mes "��������Ă�񂶂�˂���I";
-		mes "�����A�����̋C����������������";
-		mes "�������Ƃ��B�������Ȃ�I";
-		mes "��������ɉ�ɗ����Ȃ�";
-		mes "�����͍l���Ă݂邯�ǂ�c�c";
+		mes "[マク]";
+		mes "決して俺が惜しがってるとか";
+		mes "会いたがってるんじゃねぇよ！";
+		mes "ただ、今俺の気持ちがそうだって";
+		mes "いうことだ。誤解するなよ！";
+		mes "あいつが先に会いに来るんなら";
+		mes "少しは考えてみるけどよ……";
 		break;
 	case 4:
 		cutin "lhz_macu05",2;
-		mes "[�}�N]";
-		mes "�܂������A���񂽂܂�";
-		mes "�����Ɏc���Ă���̂���H";
-		mes "�p�����I������Ȃ�";
-		mes "���������ƋA���I";
+		mes "[マク]";
+		mes "まったく、あんたまだ";
+		mes "ここに残っているのかよ？";
+		mes "用事が終わったなら";
+		mes "さっさっと帰れよ！";
 		next;
-		menu "�_�C�K�c�Ƙb�����ė��܂����B",-;
-		mes "[�}�N]";
-		mes "�́H�@���̋C����������N��";
-		mes "�b�����ė����ƁH";
-		mes "��������A���̈����������Ă�����";
-		mes "���܂��Ă�ˁB�����c�c!!";
+		menu "ダイガツと話をして来ました。",-;
+		mes "[マク]";
+		mes "は？　あの気持ち悪い野朗と";
+		mes "話をして来たと？";
+		mes "だったら、俺の悪口を言っていたに";
+		mes "決まってるね。あいつ……!!";
 		next;
-		mes "[�}�N]";
-		mes "����ŁH";
-		mes "���ɉ��������ƌ���ꂽ�H";
-		mes "�ڂ̑O�ɂ��̏󋵂��f�邭�炢";
-		mes "�ڂ����`����I";
-		mes "�����̂���ׂ���A�������A";
-		mes "�P����܂ŏڂ����I";
+		mes "[マク]";
+		mes "それで？";
+		mes "俺に何を言えと言われた？";
+		mes "目の前にその状況が映るくらい";
+		mes "詳しく伝えろ！";
+		mes "そいつのしゃべり方、しぐさ、";
+		mes "単語一つ一つまで詳しく！";
 		next;
 		input '@word$;
-		if('@word$ == "���̈Ӓn������̕n�R��Y�I") {
-			mes "[�}�N]";
-			mes "�c�c���������Ă��̂��I�@�悵�I";
-			mes "�����Ƙb���Ă���B";
+		if('@word$ == "この意地っ張りの貧乏野郎！") {
+			mes "[マク]";
+			mes "……そう言ってたのか！　よし！";
+			mes "もっと話してくれ。";
 			next;
 			input '@word$;
-			if('@word$ == "���������撣���I") {
-				mes "[�}�N]";
-				mes "�Ӂ[��A�Ƃɂ����A�����āI";
+			if('@word$ == "せいぜい頑張れよ！") {
+				mes "[マク]";
+				mes "ふーん、とにかく、続けて！";
 				next;
 				input '@word$;
-				if('@word$ == "���O�Ȃ񂩂��Ȃ��Ă��S�R���C���B") {
-					mes "[�}�N]";
-					mes "�����₪���āc�c����ŁH";
+				if('@word$ == "お前なんかいなくても全然平気だ。") {
+					mes "[マク]";
+					mes "言いやがって……それで？";
 					next;
 					input '@word$;
-					if('@word$ == "���O�����������ɂ������s") {
+					if('@word$ == "お前が小さい頃にした悪行") {
 						cutin "lhz_macu03",2;
-						mes "[�}�N]";
-						mes "�c�c";
+						mes "[マク]";
+						mes "……";
 						next;
 						input '@word$;
-						if('@word$ == "���͂܂������Ă���񂾂��I") {
-							mes "[�}�N]";
-							mes "�ق�`���A�����`";
+						if('@word$ == "俺はまだ憶えているんだぞ！") {
+							mes "[マク]";
+							mes "ほら～あ、そう～";
 							next;
 							input '@word$;
-							if('@word$ == "���̏�Ȃ���߁I") {
+							if('@word$ == "この情けないやつめ！") {
 								cutin "lhz_macu06",2;
-								mes "[�}�N]";
-								mes "���́c�c�n����Y!!";
-								mes "�E�E�E�c�c";
+								mes "[マク]";
+								mes "この……馬鹿野郎!!";
+								mes "ウウウ……";
 								set LHZ_3QUE,5;
 								break;
 							}
@@ -7164,328 +7164,328 @@ lighthalzen.gat,337,232,3	script	�}�N	870,{
 				}
 			}
 		}
-		mes "[�}�N]";
-		mes "�c�c�����������Ă���悤��";
-		mes "��������Ȃ��ȁc�c";
-		mes "�����ƕ����ė����̂���H";
-		mes "�R�������ȁc�c";
+		mes "[マク]";
+		mes "……あいつが言っているような";
+		mes "感じじゃないな……";
+		mes "ちゃんと聞いて来たのかよ？";
+		mes "嘘くさいな……";
 		break;
 	case 5:
-		mes "[�}�N]";
-		mes "�c�c�c�c";
+		mes "[マク]";
+		mes "…………";
 		next;
-		mes "[�}�N]";
-		mes "�c�c�c�c";
+		mes "[マク]";
+		mes "…………";
 		next;
-		mes "[�}�N]";
-		mes "�c�c�c�c";
+		mes "[マク]";
+		mes "…………";
 		next;
-		mes "[�}�N]";
-		mes "�c�c�c�c";
-		mes "�i�u�c�u�c�j�c�c";
-		mes "�c�c�i�u�c�u�c�j�c�c";
-		mes "�c�c�c�c�i�u�c�u�c�j";
+		mes "[マク]";
+		mes "…………";
+		mes "（ブツブツ）……";
+		mes "……（ブツブツ）……";
+		mes "…………（ブツブツ）";
 		next;
-		menu "���ł����āH�@�����������Ȃ��ł��B",-;
+		menu "何ですって？　何も聞こえないです。",-;
 		mes "["+strcharinfo(0)+"]";
-		mes "���ł����āH";
-		mes "�����������Ȃ��ł��B";
+		mes "何ですって？";
+		mes "何も聞こえないです。";
 		next;
-		mes "[�}�N]";
-		mes "�N�D�c�c";
+		mes "[マク]";
+		mes "クゥ……";
 		next;
-		mes "[�}�N]";
-		mes "�N�D�c�c";
+		mes "[マク]";
+		mes "クゥ……";
 		next;
 		cutin "lhz_macu06",2;
-		mes "[�}�N]";
-		mes "�N�A�A�A�A�A�A�A�b!!";
-		mes "�E�I�I�I�I�I�I�I�I!!";
-		mes "�L���A�A�A�A�A�A�A!!";
-		mes "�E�F�F�F�F�F�F�F�F�F�F!!";
+		mes "[マク]";
+		mes "クアアアアアアアッ!!";
+		mes "ウオオオオオオオオ!!";
+		mes "キャアアアアアアア!!";
+		mes "ウェェェェェェェェェェ!!";
 		next;
-		mes "[�}�N]";
-		mes "���̃^�R������Ȏ������ɂ������B";
-		mes "���̔n����Y�A�ǂ̌��������";
-		mes "�Y�����ق����₪��I";
-		mes "���̔n���_�C�K�c�I";
-		mes "�����Ă������Ă��C�����܂Ȃ��قǂ�";
-		mes "�N�\��Y���������I";
+		mes "[マク]";
+		mes "あのタコがそんな事を口にしたか。";
+		mes "あの馬鹿野郎、どの口がそんな";
+		mes "戯言をほざきやがる！";
+		mes "この馬鹿ダイガツ！";
+		mes "殴っても殴っても気がすまないほどの";
+		mes "クソ野郎がぁぁぁ！";
 		next;
-		mes "-�}�N�̔�����10���ԑ������B";
-		mes "���Ȃ��͔ނ���߂�̂�";
-		mes "���ɋ�J������-";
+		mes "-マクの爆走は10分間続いた。";
+		mes "あなたは彼を鎮めるのに";
+		mes "非常に苦労をした-";
 		percentheal -50,0;
 		next;
-		mes "[�}�N]";
-		mes "�͂��͂��c�c�͂��͂��c�c";
-		mes "����Ɨ����������B";
-		mes "���ށc�c����������Șb��";
-		mes "�������āc�c�������c�c";
-		mes "�E�I�I�I�I�I�@����ς蕠����!!";
+		mes "[マク]";
+		mes "はぁはぁ……はぁはぁ……";
+		mes "やっと落ち着けた。";
+		mes "うむ……あいつがそんな話を";
+		mes "したって……あいつが……";
+		mes "ウオオオオ！　やっぱり腹立つ!!";
 		next;
-		mes "[�}�N]";
-		mes "�Ƃɂ����A���𗎂��������Ă����";
-		mes "���肪�Ƃ��B�̂͂��������ӂ���";
-		mes "����������^FF0000�x���J�C�X�e�B��^000000�̂��";
-		mes "�悭�Ȃ��߂Ă��ꂽ�̂Ɂc�c";
-		mes "�����������炢�Ȃ��c�c�B";
+		mes "[マク]";
+		mes "とにかく、俺を落ち着かせてくれて";
+		mes "ありがとう。昔はこういうふうに";
+		mes "興奮したら^FF0000ベンカイスティン^000000のやつが";
+		mes "よくなだめてくれたのに……";
+		mes "もうあいつすらいない……。";
 		next;
-		mes "[�}�N]";
-		mes "�D���ɂł����Ȃ�A";
-		mes "�^�񒆂̎����ێ�����|����";
-		mes "�������֓n���āA";
-		mes "�_�C�K�c�̖�Y��������������";
-		mes "�����Ă��̂ɂ�c�c";
-		mes "���ꂷ��ł��Ȃ��̂��I";
+		mes "[マク]";
+		mes "好きにできるんなら、";
+		mes "真ん中の治安維持員を倒して";
+		mes "あっちへ渡って、";
+		mes "ダイガツの野郎をおもいっきり";
+		mes "殴ってやるのによ……";
+		mes "それすらできないのか！";
 		next;
-		mes "[�}�N]";
-		mes "���������c�c";
-		mes "��ɑ��������Ĕ����������̂�";
-		mes "���������āI�@�̂̎��܂�";
-		mes "�ł����グ����肩�I";
-		mes "�������A�����т�2�������������?!";
-		mes "����13���������ꂽ�񂾂�!!";
+		mes "[マク]";
+		mes "悔しいぜ……";
+		mes "先に足をかけて反則をしたのは";
+		mes "あいつだって！　昔の事まで";
+		mes "でっち上げるつもりか！";
+		mes "しかも、昼ご飯を2回もおごったと?!";
+		mes "俺は13回もおごられたんだぜ!!";
 		next;
-		mes "[�}�N]";
-		mes "�����A�ǂ��ł���Ȗϑz��?!";
-		mes "�E�A�A�A�A�A�A�A�A�A�A�`!!";
-		mes "�E�E�E�c�c";
-		mes "�����c�c������!!";
+		mes "[マク]";
+		mes "こいつ、どこでそんな妄想を?!";
+		mes "ウアアアアアアアアアア～!!";
+		mes "ウウウ……";
+		mes "もう……悔しい!!";
 		next;
-		mes "-��������s�\�Ȃ̂ŁA";
-		mes "�����Ă����ĕʂ̏ꏊ��";
-		mes "�s���������悳������-";
+		mes "-もう制御不能なので、";
+		mes "放っておいて別の場所へ";
+		mes "行った方がよさそうだ-";
 		set LHZ_3QUE,6;
 		break;
 	default:
 		if(LHZ_3QUE != 13 || countitem(7351) < 1) {
 			cutin "lhz_macu06",2;
-			mes "[�}�N]";
-			mes "�E�I�I�I�I�`�_�C�K�c�̂�I";
-			mes "�����͂������̑厖�Ȃ��̂�";
-			mes "�󂵂Ă��܂������ɁA";
-			mes "�g���̍��Ŗ����܂ł���C���I";
+			mes "[マク]";
+			mes "ウオオオオ～ダイガツのやつ！";
+			mes "あいつはいつも俺の大事なものを";
+			mes "壊してしまうくせに、";
+			mes "身分の差で無視までする気か！";
 			next;
-			mes "[�}�N]";
-			mes "���Ƃ��Ă��A�������֓n�邱�Ƃ�";
-			mes "�ł��Ȃ����c�c�N�I�I�I�I�I";
+			mes "[マク]";
+			mes "だとしても、あっちへ渡ることは";
+			mes "できないし……クオオオオ！";
 			next;
-			mes "-��������s�\�Ȃ̂ŁA";
-			mes "�����Ă����ĕʂ̏ꏊ��";
-			mes "�s���������悳������-";
+			mes "-もう制御不能なので、";
+			mes "放っておいて別の場所へ";
+			mes "行った方がよさそうだ-";
 			break;
 		}
 		cutin "lhz_macu03",2;
-		mes "[�}�N]";
-		mes "��H�@���A����H";
-		mes "���L���̂悤�Ɍ����邯�ǁc�c";
-		mes "����A���L�����I������Ƒ݂��āI";
-		mes "����Ȃ��̂������ė����Ƃ����̂�";
-		mes "���R���Ɍ����Ă���邽�߂��낤�H";
+		mes "[マク]";
+		mes "ん？　何、それ？";
+		mes "日記帳のように見えるけど……";
+		mes "いや、日記帳か！ちょっと貸して！";
+		mes "こんなものを持って来たというのは";
+		mes "当然私に見せてくれるためだろう？";
 		next;
 		cutin "lhz_macu03",255;
-		mes "-��������-";
-		mes "�����̓_�C�K�c�A�}�N�ƈꏏ��";
-		mes "����ԗV�т������B";
-		mes "�ǂ�ȗV�т��Ƃ����ƁA";
-		mes "��l�͖؂Ǝ��ō�����傫�ȉH��";
-		mes "�r�ɂ��āA";
+		mes "-○月○日-";
+		mes "今日はダイガツ、マクと一緒に";
+		mes "空を飛ぶ遊びをした。";
+		mes "どんな遊びかというと、";
+		mes "一人は木と紙で作った大きな羽を";
+		mes "腕につけて、";
 		next;
-		mes "�c���l���H�������l��������";
-		mes "��ǂ܂ő���B";
-		mes "�����Đ�ǂɂ����u�ԁA";
-		mes "��Ɍ����Ă��̐l�𓊂���B";
-		mes "��������A���̐l�͕K����";
-		mes "�H�΂���������B";
+		mes "残り二人が羽をつけた人を持って";
+		mes "絶壁まで走る。";
+		mes "そして絶壁についた瞬間、";
+		mes "空に向けてその人を投げる。";
+		mes "そしたら、その人は必死に";
+		mes "羽ばたきをする。";
 		next;
-		mes "����ƁA������x��";
-		mes "����Ԃ��Ƃ��ł���B";
-		mes "�����͖l����Ԗ����������ǁA";
-		mes "���낵���Ď��ʂ��Ǝv�����B";
-		mes "����ȗV�сA����2�x�Ƃ��Ȃ��c�c";
-		mes "�Ɖ��x���������B";
+		mes "すると、ある程度は";
+		mes "空を飛ぶことができる。";
+		mes "今日は僕が飛ぶ役だったけど、";
+		mes "恐ろしくて死ぬかと思った。";
+		mes "こんな遊び、もう2度としない……";
+		mes "と何度も誓った。";
 		next;
 		cutin "lhz_macu03",2;
-		mes "[�}�N]";
-		mes "���̍��͖{���ɏ����������Ȃ��B";
-		mes "�Ƃɂ����A���їV�т͊y���������I";
-		mes "����������Ƒ�����񂾂��񂾂���A";
-		mes "�_�C�K�c�̂����������������";
-		mes "�����Ă����ǁc�c";
+		mes "[マク]";
+		mes "あの頃は本当に純粋だったなぁ。";
+		mes "とにかく、空飛び遊びは楽しかった！";
+		mes "俺がちょっと多く飛んだもんだから、";
+		mes "ダイガツのやつがぐずぐず言いつつ";
+		mes "譲ってたけど……";
 		next;
-		mes "[�}�N]";
-		mes "������";
-		mes "�K�L�̍����炢���ȈӖ���";
-		mes "�f������Ȃ�����ȁ`";
+		mes "[マク]";
+		mes "あいつは";
+		mes "ガキの頃からいろんな意味で";
+		mes "素直じゃないからな～";
 		next;
 		cutin "lhz_macu03",255;
-		mes "-��������-";
-		mes "�_�C�K�c�A�}�N�ƈꏏ�ɑ��̊O��";
-		mes "�o�Ă݂��B";
-		mes "��l�����͂�߂����悤�Ƃ������ǁA";
-		mes "�l������N���Ǝv���Ă���H";
-		mes "�l��͂�������o��̂ɐ��������B";
-		mes "�������ɊO�͒��Ƃ͈�����B";
+		mes "-○月○日-";
+		mes "ダイガツ、マクと一緒に村の外へ";
+		mes "出てみた。";
+		mes "大人たちはやめさせようとしたけど、";
+		mes "僕たちを誰だと思っている？";
+		mes "僕らはこっそり出るのに成功した。";
+		mes "さすがに外は中とは違った。";
 		next;
-		mes "�����L�X�ƊJ���Ă��銴���ŁA";
-		mes "�������A��������E�o�������Ƃ�";
-		mes "�C�����悭�āA�l�����������������c�c";
-		mes "�Ǝv�����̂����̊ԁA";
-		mes "�����X�^�[�����ꂽ�񂾁I";
+		mes "何か広々と開けている感じで、";
+		mes "何よりも、こっそり脱出したことが";
+		mes "気持ちよくて、僕たちを興奮させた……";
+		mes "と思ったのもつかの間、";
+		mes "モンスターが現れたんだ！";
 		next;
-		mes "�l�͓����悤�ƌ��������A�}�N��";
-		mes "�_�C�K�c���A������|����";
-		mes "�p�Y�ɂȂ낤�ƗU���Ă����B";
-		mes "���̔n�����`�c�c";
-		mes "�d���Ȃ��l����т������Ă݂����A";
-		mes "���ȂȂ������̂��K���Ȃ��炢�A";
-		mes "�������@���ꂽ�c�c";
+		mes "僕は逃げようと言ったが、マクと";
+		mes "ダイガツが、こいつを倒して";
+		mes "英雄になろうと誘ってきた。";
+		mes "この馬鹿やろ～……";
+		mes "仕方なく僕も飛びかかってみたが、";
+		mes "死ななかったのが幸いなくらい、";
+		mes "激しく叩かれた……";
 		next;
-		mes "�����āA�ƂɋA������";
-		mes "�Ђǂ�����ꂽ�B";
-		mes "�S��������̂������B�N�\�B";
+		mes "そして、家に帰ったら";
+		mes "ひどく叱られた。";
+		mes "全部あいつらのせいだ。クソ。";
 		next;
 		cutin "lhz_macu03",2;
-		mes "[�}�N]";
-		mes "�����|������Ȃ���";
-		mes "�D���������Ă����ゾ�ȁ`";
-		mes "���Ă������A�x���J�C�X�e�B���A";
-		mes "����Ȏ��܂ŏ����Ă����̂���B";
+		mes "[マク]";
+		mes "何も怖いもんなしで";
+		mes "好き勝手やってた時代だな～";
+		mes "っていうか、ベンカイスティン、";
+		mes "こんな事まで書いていたのかよ。";
 		next;
-		mes "[�}�N]";
-		mes "���́A���̎��̓_�C�K�c�����";
-		mes "�����ڂɂ������񂾂�B";
-		mes "�����͉��ɑ΂��Ă�";
-		mes "�S���|����Ȃ��������ˁB";
+		mes "[マク]";
+		mes "実は、あの時はダイガツが一番";
+		mes "酷い目にあったんだよ。";
+		mes "あいつは何に対しても";
+		mes "全く怖がらないやつだからね。";
 		next;
 		cutin "lhz_macu03",255;
-		mes "-��������-";
-		mes "�_�C�K�c�̂�����ׂ�";
-		mes "�|��Ă����O���ځB";
-		mes "�����͏�v�����Ɍ�����";
-		mes "�O���Ƃ͗����ɁA�F��ȕa�C��";
-		mes "������񂾂�ȁB";
-		mes "�Ў�Ȃ�c�c";
+		mes "-○月○日-";
+		mes "ダイガツのやつが風邪で";
+		mes "倒れてもう三日目。";
+		mes "あいつは丈夫そうに見える";
+		mes "外見とは裏腹に、色んな病気に";
+		mes "かかるんだよな。";
+		mes "ひ弱なやつ……";
 		next;
-		mes "����ł��F�B�Ƃ��ĐS�z���Ă���l�́A";
-		mes "�{���ɗF��ӂ��l�Ԃ��ˁ`";
-		mes "�}�N���a�C�œ|��Ă���_�C�K�c��";
-		mes "�o�J���Ƃ���Ȃ��Ƃ��������A";
+		mes "それでも友達として心配している僕は、";
+		mes "本当に友情あふれる人間だね～";
+		mes "マクも病気で倒れているダイガツを";
+		mes "バカだとか情けないとか言いつつも、";
 		next;
-		mes "�����������ɍs�����Ɩl��������";
-		mes "�Ƃ��������ƁA�������{����";
-		mes "�_�C�K�c�̂��Ƃ��D���Ȃ񂾂�ȁB";
-		mes "���̂������I";
+		mes "早く見舞いに行こうと僕をせかす";
+		mes "ところを見ると、あいつも本当は";
+		mes "ダイガツのことが好きなんだよな。";
+		mes "あのうそつき！";
 		next;
 		cutin "lhz_macu04",2;
-		mes "[�}�N]";
-		mes "�D�����ƁI�@�����c�c";
-		mes "����Ȓp����������������₪���āB";
-		mes "���͂����A�m���Ă�����";
-		mes "���񂾂�C�����悭�߂����Ȃ�����";
-		mes "�����s�����ƌ����������Ȃ̂ɁI";
-		mes "�܂������A����Ȍ���͂�߂��c�c";
+		mes "[マク]";
+		mes "好きだと！　こいつ……";
+		mes "こんな恥ずかしい誤解をしやがって。";
+		mes "俺はただ、知っているやつが";
+		mes "死んだら気持ちよく過ごせないから";
+		mes "早く行こうと言っただけなのに！";
+		mes "まったく、こんな誤解はやめろよ……";
 		next;
-		mes "[�}�N]";
-		mes "�܂��c�c";
-		mes "���ȂȂ��Ė{���ɗǂ������Ƃ�";
-		mes "�v���Ă������ǂȁB";
-		mes "�D���ł����v�����񂶂�Ȃ����I";
+		mes "[マク]";
+		mes "まあ……";
+		mes "死ななくて本当に良かったとは";
+		mes "思っていたけどな。";
+		mes "好きでそう思ったんじゃないぞ！";
 		next;
 		cutin "lhz_macu04",255;
-		mes "-��������-";
-		mes "�e�����}�N�ƗV�ԂȂƌ����Ă����B";
-		mes "�܂����������`";
-		mes "�Ȃ��V�񂶂�_���Ȃ񂾂�B";
-		mes "���������邩�Ȃ����Ȃ��";
-		mes "�l�����ɂ͊֌W�Ȃ����A���ǂ�";
-		mes "�V�ׂ�΂���ł�������Ȃ����I";
+		mes "-○月○日-";
+		mes "親父がマクと遊ぶなと言ってきた。";
+		mes "まったくもう～";
+		mes "なぜ遊んじゃダメなんだよ。";
+		mes "お金があるかないかなんて";
+		mes "僕たちには関係ないし、仲良く";
+		mes "遊べればそれでいいじゃないか！";
 		next;
-		mes "�}�N�̂�A�{���ɖʔ�����Ȃ̂�";
-		mes "�n�R�����炢���Ȃ��Ȃ��";
-		mes "�킯��������Ȃ��B";
-		mes "�ł��A�l�̕����܂��܂������B";
-		mes "�_�C�K�c�̉Ƃ͂�����������������";
-		mes "�e�������ꂱ�ꂤ�邳���炵���B";
+		mes "マクのやつ、本当に面白いやつなのに";
+		mes "貧乏だからいけないなんて";
+		mes "わけが分からない。";
+		mes "でも、僕の方がまだましかも。";
+		mes "ダイガツの家はすごい金持ちだから";
+		mes "親父があれこれうるさいらしい。";
 		next;
-		mes "����ł������́A�}�N�ƈꏏ��";
-		mes "�V�ׂȂ��Ɗy�����Ȃ��ƌ����āA";
-		mes "���ς�炸�}�N�ƗV��ł���B";
-		mes "�ǂ����������R��";
-		mes "�΂����肾�ȁ`�t�t�t�B";
+		mes "それでもあいつは、マクと一緒に";
+		mes "遊べないと楽しくないと言って、";
+		mes "相変わらずマクと遊んでいる。";
+		mes "どいつもこいつも嘘つき";
+		mes "ばっかりだな～フフフ。";
 		next;
 		cutin "lhz_macu01",2;
-		mes "[�}�N]";
-		mes "�ӂ�I�@���łȂ����";
-		mes "�N�������ƗV��ł��񂾁I";
-		mes "��������V��ł������񂾂����́B";
-		mes "�ł��A�����A�����ʔ�����������";
-		mes "�悭�킩���Ă邶��Ȃ����c�c�t�b�B";
+		mes "[マク]";
+		mes "ふん！　俺でなければ";
+		mes "誰があいつと遊んでやるんだ！";
+		mes "俺だから遊んであげたんだっつうの。";
+		mes "でも、こいつ、俺が面白かったって";
+		mes "よくわかってるじゃないか……フッ。";
 		next;
 		cutin "lhz_macu01",255;
-		mes "-��������-";
-		mes "�����͓ǂ񂾏����̂悤�ɁA";
-		mes "3�l�ł��鐾���������B";
-		mes "���ꂩ��ǂ�Ȏ��������Ă�";
-		mes "�l�����̗F��͕ς�炸�A";
-		mes "���܂ꂽ���͈Ⴄ��";
-		mes "���ʓ��͈ꏏ�ɂ��悤�Ƃ����������I";
+		mes "-○月○日-";
+		mes "今日は読んだ小説のように、";
+		mes "3人である誓いをした。";
+		mes "これからどんな事があっても";
+		mes "僕たちの友情は変わらず、";
+		mes "生まれた日は違うが";
+		mes "死ぬ日は一緒にしようという誓いだ！";
 		next;
-		mes "���Ƃ��g�͗���Ă��Ă�";
-		mes "�S�����͂����ꏏ���B";
-		mes "�}�N�ƃ_�C�K�c�́A";
-		mes "������������ƒp�����������������B";
-		mes "�R���Ȃ��߁I";
+		mes "たとえ身は離れていても";
+		mes "心だけはいつも一緒だ。";
+		mes "マクとダイガツは、";
+		mes "しかしちょっと恥ずかしそうだった。";
+		mes "嘘つきなやつらめ！";
 		next;
-		mes "�ł��c�c�l�͂���2�l�̗F�";
-		mes "�{���ɂ����܂����B";
-		mes "���ƒ��͗ǂ����ǁA����2�l��";
-		mes "�����܂����Ȃ邭�炢�e�����B";
-		mes "�����炪�ʂ�����������A";
-		mes "�������̓��͐��E���ŖS��������낤�I";
+		mes "でも……僕はあの2人の友情が";
+		mes "本当にうらやましい。";
+		mes "やつらと仲は良いけど、あの2人は";
+		mes "うらやましくなるくらい親しい。";
+		mes "あいつらが別れる日が来たら、";
+		mes "多分その日は世界が滅亡する日だろう！";
 		next;
 		cutin "lhz_macu06",2;
-		mes "[�}�N]";
-		mes "�ӂށc�c����Ȏ��������������B";
-		mes "�������悤�ȋC�����邯�ǁc�c";
-		mes "�ł��A�ǂ����悤���Ȃ����Ƃ����邳�B";
-		mes "��������ɉ���K�˂ė�����";
-		mes "�������ǁA�������";
-		mes "����������K�v�͂Ȃ�����I";
+		mes "[マク]";
+		mes "ふむ……こんな時もあったっけ。";
+		mes "あったような気もするけど……";
+		mes "でも、どうしようもないこともあるさ。";
+		mes "あいつが先に俺を訪ねて来たら";
+		mes "いいけど、俺が先に";
+		mes "頭を下げる必要はないだろ！";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�߂������ɉ�ɍs������";
-		mes "�����Ă���ł���B";
+		mes "近いうちに会いに行くって";
+		mes "言ってたんですよ。";
 		next;
 		cutin "lhz_macu04",2;
-		mes "[�}�N]";
-		mes "���H�@����͖{�����H";
-		mes "���������ɉ�ɗ���ƁH";
-		mes "���́c�c�^�R�����E���c�c";
-		mes "���X���ĉ������悤��?!";
-		mes "�Ƃɂ�������[���Ȃ�����B";
+		mes "[マク]";
+		mes "え？　それは本当か？";
+		mes "あいつが俺に会いに来ると？";
+		mes "あの……タコヤロウが……";
+		mes "今更来て何をしようと?!";
+		mes "とにかくしょーもないやつだ。";
 		next;
 		cutin "lhz_macu07",2;
-		mes "[�}�N]";
-		mes "�������c�c����ƌ����Ă�񂾂�����";
-		mes "����Ȃ��Ă����̂���V�ɔ�����ȁB";
-		mes "�Ƃ肠�����҂��B";
-		mes "�Ӂ`�ށA��̗��Ăǂ�������肾�B";
-		mes "�������v�����؂艣���Ă�邼�I";
+		mes "[マク]";
+		mes "しかし……来ると言ってるんだったら";
+		mes "来るなっていうのも礼儀に反するな。";
+		mes "とりあえず待つか。";
+		mes "ふ～む、一体来てどうするつもりだ。";
+		mes "会ったら思いっ切り殴ってやるぞ！";
 		next;
-		mes "[�}�N]";
-		mes "������ƁA���̓��L������I";
-		mes "�_�C�K�c�̓z��������A";
-		mes "����������Ă��������炩�����I";
-		mes "�n�n�n�B";
+		mes "[マク]";
+		mes "ちょっと、その日記帳くれ！";
+		mes "ダイガツの奴が来たら、";
+		mes "これを見せてあいつをからかおう！";
+		mes "ハハハ。";
 		next;
 		cutin "lhz_macu04",2;
-		mes "[�}�N]";
-		mes "�ƁA�Ƃɂ����c�c�A���肪�Ƃ��ȁB";
-		mes "������҂�ˁI�@�}�W�ŏ��������ȁI";
-		mes "������ꂽ�獢��I";
-		mes "������������A�b���I������Ȃ�A��I";
+		mes "[マク]";
+		mes "と、とにかく……、ありがとうな。";
+		mes "ちょっぴりね！　マジで少しだけな！";
+		mes "誤解されたら困る！";
+		mes "もういいから、話が終わったなら帰れ！";
 		delitem 7351,1;
 		set LHZ_3QUE,14;
 		if(checkre()) {
@@ -7501,27 +7501,27 @@ lighthalzen.gat,337,232,3	script	�}�N	870,{
 		break;
 	case 14:
 		cutin "lhz_macu05",2;
-		mes "[�}�N]";
-		mes "����ɂ��Ă��A�_�C�K�c��";
-		mes "��̂��ɂȂ����痈��񂾂�I";
-		mes "�܂������I";
-		mes "�S�R���������Ȃ����I";
+		mes "[マク]";
+		mes "それにしても、ダイガツは";
+		mes "一体いつになったら来るんだよ！";
+		mes "まったく！";
+		mes "全然音沙汰がないぞ！";
 		break;
 	case 15:
 	case 16:
 		cutin "lhz_macu07",2;
-		mes "[�}�N]";
-		mes "����A��������Ȏ��ԂȂ̂�";
-		mes "�܂����Ȃ��Ȃ�āA";
-		mes "�ꔭ�����Ă��Ȃ��Ƃȁ`";
-		mes "�K�L�̍��̂悤�ɋC���ςނ܂�";
-		mes "�����Ă�낤���˂��B�t�t�t�B";
+		mes "[マク]";
+		mes "こら、もうこんな時間なのに";
+		mes "まだ来ないなんて、";
+		mes "一発殴ってやらないとな～";
+		mes "ガキの頃のように気が済むまで";
+		mes "殴ってやろうかねぇ。フフフ。";
 		next;
-		mes "[�}�N]";
-		mes "�܂��ˁA�����������Ȃ��";
-		mes "�������邱�Ƃ����邩��";
-		mes "�x���񂾂낤�ȁB";
-		mes "�L���S�ő҂��Ă�邩�I";
+		mes "[マク]";
+		mes "まあね、あいつもあいつなりに";
+		mes "準備することがあるから";
+		mes "遅れるんだろうな。";
+		mes "広い心で待ってやるか！";
 		break;
 	}
 	close2;
@@ -7529,634 +7529,634 @@ lighthalzen.gat,337,232,3	script	�}�N	870,{
 	end;
 }
 
-lhz_in02.gat,201,210,4	script	�_�C�K�c	869,{
+lhz_in02.gat,201,210,4	script	ダイガツ	869,{
 	switch(LHZ_3QUE) {
 	default:
 		if(BaseLevel < 50) {
-			mes "[�_�C�K�c]";
-			mes "���񂽁A�セ�����ȁ`";
-			mes "���͎ア�l�Ԃ͌������B";
-			mes "�����Ƃ���܂Ƃ��ȉƂ̂����";
-			mes "�Ȃ����������ǁc�c��������A";
-			mes "�Ȃ����狭���Ȃ��Ƃ����Ȃ���H";
-			mes "�܂��A�ʂɉ��Ƃ͊֌W�Ȃ����ǁB";
+			mes "[ダイガツ]";
+			mes "あんた、弱そうだな～";
+			mes "俺は弱い人間は嫌いだ。";
+			mes "見たところまともな家のやつじゃ";
+			mes "なさそうだけど……だったら、";
+			mes "なおさら強くないといけないよ？";
+			mes "まあ、別に俺とは関係ないけど。";
 			close;
 		}
 		cutin "lhz_diguts02",2;
-		mes "[�_�C�K�c]";
-		mes "���`���A�`���҂���H";
-		mes "�����ɂ͉����Ȃ����A�`������";
-		mes "�悤�ȏꏊ����Ȃ��񂾂��ǁB";
-		mes "�܂��A�������������̂�";
-		mes "�߂�Ƃ������Ȃ����B";
-		mes "�d���Ȃ��ȁc�c";
+		mes "[ダイガツ]";
+		mes "お～い、冒険者さん？";
+		mes "ここには何もないし、冒険する";
+		mes "ような場所じゃないんだけど。";
+		mes "まぁ、せっかく来たのに";
+		mes "戻れとも言えないし。";
+		mes "仕方ないな……";
 		next;
 		if(LHZ_3QUE != 1) {
-			mes "[�_�C�K�c]";
-			mes "�т͂������A������t";
-			mes "�o���Ă�������Ȃ����ǁc�c";
-			mes "���čs��������Ώ���ɂǂ����B";
+			mes "[ダイガツ]";
+			mes "飯はもちろん、お茶一杯";
+			mes "出してやるつもりもないけど……";
+			mes "見て行きたければ勝手にどうぞ。";
 			break;
 		}
-		menu "�������Ƃ��ꏏ���c�c",-;
+		menu "言うことが一緒だ……",-;
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "���O�I�@���̊�͉����H";
-		mes "����A���O���v���Ă��邱�Ƃ�";
-		mes "�悭�������Ă���I";
-		mes "������������������x������";
-		mes "�v���Ă���H";
-		mes "�u�������Ƃ��ꏏ���v�Ǝv������H";
+		mes "[ダイガツ]";
+		mes "お前！　その顔は何だ？";
+		mes "いや、お前が思っていることは";
+		mes "よく分かっている！";
+		mes "俺がそういう顔を何度見たと";
+		mes "思っている？";
+		mes "「言うことが一緒だ」と思ったろ？";
 		next;
-		menu "�ǂ����ĕ��������񂾂낤�H",-;
-		mes "[�_�C�K�c]";
-		mes "���̂��̊�I";
-		mes "�u�ǂ����ĕ��������񂾂낤�v";
-		mes "�Ǝv�������̊炾�ȁB";
-		mes "�����K�L�̍�����O����ق�";
-		mes "�����炾���番����񂾂�B";
-		mes "�}�N�̂���A���Ɏ��Ă₪��B";
+		menu "どうして分かったんだろう？",-;
+		mes "[ダイガツ]";
+		mes "今のその顔！";
+		mes "「どうして分かったんだろう」";
+		mes "と思った時の顔だな。";
+		mes "そりゃガキの頃から飽きるほど";
+		mes "見た顔だから分かるんだよ。";
+		mes "マクのやつも、俺に似てやがる。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�Ƃɂ����A�����I���W�i����";
-		mes "����������^�������񂾂�I";
-		mes "�܂����������A�����m��Ȃ�����";
-		mes "�c�c�ӂ��c�c";
+		mes "[ダイガツ]";
+		mes "とにかく、俺がオリジナルで";
+		mes "あいつが俺を真似したんだよ！";
+		mes "まったくもう、何も知らないやつらは";
+		mes "……ふぅ……";
 		next;
-		menu "���̓�l�A�����肷��΂����̂�",-;
-		mes "[�_�C�K�c]";
-		mes "���̊�I";
-		mes "�u���̓�l�A�����肷��΂����̂Ɂv";
-		mes "�����v�������낤�H";
-		mes "�������ȁA�͉̂��B�������ǂ������B";
-		mes "����ׂ������f�U��܂Ŏ��Ă���";
-		mes "�قǂȁB�ŁA���ǂ�����ƌ�����!?";
+		menu "この二人、仲直りすればいいのに",-;
+		mes "[ダイガツ]";
+		mes "その顔！";
+		mes "「この二人、仲直りすればいいのに」";
+		mes "そう思っただろう？";
+		mes "そうだな、昔は俺達も仲が良かった。";
+		mes "しゃべり方から素振りまで似ている";
+		mes "ほどな。で、今どうしろと言うんだ!?";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�܂��A���͐F��Ȗ󂪂�����";
-		mes "�ꏏ�ɗV�ׂȂ��񂾂��ǁA";
-		mes "���Ɖ��̊֌W���Ȃ����O��";
-		mes "�������𕷂��K�v�͂Ȃ��I";
+		mes "[ダイガツ]";
+		mes "まぁ、今は色んな訳があって";
+		mes "一緒に遊べないんだけど、";
+		mes "俺と何の関係もないお前の";
+		mes "言う事を聞く必要はない！";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�ŁA�������͗p�͂Ȃ�����";
-		mes "��������o�čs�����n�R�l�̒�";
-		mes "�ɂł��s���Ă��܂��I";
-		mes "�܂������I";
+		mes "[ダイガツ]";
+		mes "で、こっちは用はないから";
+		mes "ここから出て行くか貧乏人の町";
+		mes "にでも行ってしまえ！";
+		mes "まったく！";
 		set LHZ_3QUE,2;
 		break;
 	case 2:
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "����H�@�����ɂ͉����Ȃ����B";
-		mes "�p�������Ȃ�o�čs���Ă���B";
+		mes "[ダイガツ]";
+		mes "うん？　ここには何もないぞ。";
+		mes "用が無いなら出て行ってくれ。";
 		break;
 	case 3:
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "�܂������̂��H";
-		mes "���񂽂��ɐl���ȁ`";
-		mes "�܂�������A�Ƃɂ������x�͉��̗p���H";
-		mes "�܁A���X�p���Ȃ�ĂȂ������񂾂�H";
+		mes "[ダイガツ]";
+		mes "また来たのか？";
+		mes "あんたも暇人だな～";
+		mes "まあいいや、とにかく今度は何の用だ？";
+		mes "ま、元々用事なんてなかったんだろ？";
 		next;
-		menu "�}�N�̎��Ȃ񂾂��ǁc�c",-;
-		mes "[�_�C�K�c]";
-		mes "�}�N�̎��H�@�܂����̕n�R�l";
-		mes "�΂���̏��ɍs���ė����̂��H";
-		mes "���Ă�l�q���Ȃ����c�c";
-		mes "�r���͎����ێ���������";
-		mes "�������Ă���͂������c�c";
-		mes "�����������ȁB";
+		menu "マクの事なんだけど……",-;
+		mes "[ダイガツ]";
+		mes "マクの事？　またその貧乏人";
+		mes "ばかりの所に行って来たのか？";
+		mes "疲れてる様子もないし……";
+		mes "途中は治安維持員たちが";
+		mes "見張っているはずだが……";
+		mes "根性あるやつだな。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "���O�����Č��������ĂĂ݂悤���H";
-		mes "�}�N�̂�͐�΁A";
-		mes "�u���_���̌�����������̂�";
-		mes "�����I���W�i����";
-		mes "�������^�������񂾂��ǂȁv";
-		mes "�ƌ���������H";
+		mes "[ダイガツ]";
+		mes "お前が何て言うかあててみようか？";
+		mes "マクのやつは絶対、";
+		mes "「無論この言い方をするのは";
+		mes "俺がオリジナルで";
+		mes "あいつが真似したんだけどな」";
+		mes "と言っただろ？";
 		next;
 		cutin "lhz_diguts07",2;
-		mes "[�_�C�K�c]";
-		mes "�����A�C���������ȁ`";
-		mes "�����������������Ƃ��Ă邩";
-		mes "��Ɏ��悤�ɂ킩�邼�B";
-		mes "�����Ɖ���Ă��Ȃ���";
-		mes "�����ς���ĂȂ��񂾂ȁI";
+		mes "[ダイガツ]";
+		mes "あぁ、気持ち悪いな～";
+		mes "あいつが何を言おうとしてるか";
+		mes "手に取るようにわかるぞ。";
+		mes "ずっと会っていないが";
+		mes "何も変わってないんだな！";
 		next;
-		menu "�܂��F��c���Ă���悤�Ɍ����܂���",-;
+		menu "まだ友情が残っているように見えますが",-;
 		cutin "lhz_diguts08",2;
-		mes "[�_�C�K�c]";
-		mes "���������悤�Ȃ��Ƃ������Ȃ�B";
-		mes "�F��ƁH�@����͂�����";
-		mes "�����ꉏ���Ă���I�@�����������H";
-		mes "�K�L�̍��̏����ł��ڋ��Ȕ���������";
-		mes "��������Ȃ񂾁I";
-		mes "���̃}�N�ƌ�����͂ȁI";
+		mes "[ダイガツ]";
+		mes "鳥肌が立つようなことを言うなよ。";
+		mes "友情だと？　それはただの";
+		mes "くされ縁ってやつだ！　分かったか？";
+		mes "ガキの頃の勝負でも卑怯な反則をして";
+		mes "勝ったやつなんだ！";
+		mes "そのマクと言うやつはな！";
 		next;
-		mes "[�_�C�K�c]";
-		mes "����ɁA�����т�2���";
-		mes "���������̂Ɋ��ӂ��鎖���Ȃ��B";
-		mes "�F��Ȃ�Ă�������Ȃ��񂾂�I";
-		mes "�n�@�n�@�c�c";
+		mes "[ダイガツ]";
+		mes "それに、俺が飯を2回も";
+		mes "おごったのに感謝する事もない。";
+		mes "友情なんてかけらもないんだよ！";
+		mes "ハァハァ……";
 		next;
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "���������A�ǂ����Ă���Ȃ��";
-		mes "�g��ł����̂��킩����B";
-		mes "�������ꉞ��̏���Ă��";
-		mes "�V��ł����Ă������A";
-		mes "���c�͕n���X�̕n�R�l�ŁA";
-		mes "���͈�ʉƒ�̈�ʐl���I";
+		mes "[ダイガツ]";
+		mes "いったい、どうしてそんなやつと";
+		mes "組んでいたのかわからんよ。";
+		mes "憎さも一応一つの情ってやつで";
+		mes "遊んであげていたが、";
+		mes "ヤツは貧民街の貧乏人で、";
+		mes "俺は一般家庭の一般人だ！";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�����Ȃ񂩂��Ȃ��Ă��A";
-		mes "�g���̈Ⴂ�ŕs�ލ������Ƃ���";
-		mes "���Ƃ͕����邾��H";
-		mes "���B�����v���ƌ����Ă�";
-		mes "���肪�ꏏ�ɗV��ł���Ȃ�����";
-		mes "�d���Ȃ��񂾁B";
+		mes "[ダイガツ]";
+		mes "説明なんかしなくても、";
+		mes "身分の違いで不釣合いだという";
+		mes "ことは分かるだろ？";
+		mes "俺達が大丈夫だと言っても";
+		mes "周りが一緒に遊んでくれないから";
+		mes "仕方ないんだ。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "���������ɐ����Ă��邩����";
-		mes "�m�F�ł���΂����B";
-		mes "����Ȃ�Ƃ͂�����C�Ȃ�";
-		mes "�Ȃ�����B";
-		mes "�ǂ����A�Ԉ�����o��������̂��B";
+		mes "[ダイガツ]";
+		mes "ただ無事に生きているかだけ";
+		mes "確認できればいい。";
+		mes "あんなやつとはもう会う気なんか";
+		mes "ないから。";
+		mes "どうせ、間違った出会いだったのさ。";
 		next;
 		cutin "lhz_diguts07",2;
-		mes "[�_�C�K�c]";
-		mes "�ɂ������Ƃ�����Ƃ���΁A";
-		mes "�����̐��ӋC�Ȋ���ꔭ";
-		mes "����Ȃ����������炢���ȁB";
-		mes "�ǂ����ŋ��R���Əo���킵����";
-		mes "��͉��̎�Ŏ��ʂ��B";
+		mes "[ダイガツ]";
+		mes "惜しいことがあるとすれば、";
+		mes "あいつの生意気な顔を一発";
+		mes "殴れなかった事くらいかな。";
+		mes "どこかで偶然俺と出くわしたら";
+		mes "やつは俺の手で死ぬさ。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�������A���܂ł��������������ǁA";
-		mes "������΂ɉ�Ȃ��񂾂낤�ȁB";
-		mes "�ŋ߂͎����ێ�����������";
-		mes "�n���X�̐l�ԂƂ̐ڐG��";
-		mes "���邳���������Ă��Ăˁc�c";
+		mes "[ダイガツ]";
+		mes "しかし、今までもそうだったけど、";
+		mes "もう絶対に会えないんだろうな。";
+		mes "最近は治安維持員か何かが";
+		mes "貧民街の人間との接触を";
+		mes "うるさく見張っていてね……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�ނ炪�����ɂ́A";
-		mes "�u�X�̒������󂵂ĕ��a���ӂ�";
-		mes "�A�d����ޔy���o�Ȃ��悤��";
-		mes "�n���ƐڐG����l�Ԃ�";
-		mes "���߂ɏ��f���ׂ����v";
-		mes "���������B";
+		mes "[ダイガツ]";
+		mes "彼らが言うには、";
+		mes "「街の秩序を壊して平和を砕く";
+		mes "陰謀を企む輩が出ないように";
+		mes "貧民と接触する人間を";
+		mes "早めに処断すべきだ」";
+		mes "だそうだ。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�Ƃɂ����A������������";
-		mes "���̓}�N�Ɖ�����";
-		mes "�S���Ȃ�����A����������";
-		mes "��������A�����`���Ă���I";
+		mes "[ダイガツ]";
+		mes "とにかく、そういう事で";
+		mes "俺はマクと会うつもりは";
+		mes "全くないから、もしあいつを";
+		mes "見つけたら、こう伝えてくれ！";
 		next;
-		mes "[�_�C�K�c]";
-		mes "^FF0000���̈Ӓn������̕n�R��Y�I";
-		mes "���������撣���I";
-		mes "���O�Ȃ񂩂��Ȃ��Ă��S�R���C���B";
-		mes "���O�����������ɂ������s";
-		mes "���͂܂������Ă���񂾂��I";
-		mes "���̏�Ȃ���߁I^000000";
+		mes "[ダイガツ]";
+		mes "^FF0000この意地っ張りの貧乏野郎！";
+		mes "せいぜい頑張れよ！";
+		mes "お前なんかいなくても全然平気だ。";
+		mes "お前が小さい頃にした悪行";
+		mes "俺はまだ憶えているんだぞ！";
+		mes "この情けないやつめ！^000000";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�c�c�ƕK���`���Ă���I";
-		mes "����������o�čs���I";
+		mes "[ダイガツ]";
+		mes "……と必ず伝えてくれ！";
+		mes "分かったら出て行け！";
 		set LHZ_3QUE,4;
 		break;
 	case 4:
 	case 5:
 	case 6:
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "����H";
-		mes "�ǂ����Ă܂�����ȏ���";
-		mes "�ӂ�ӂ炵�Ă���񂾁H";
-		mes "����Ȃɉɂ�������A";
-		mes "�������ꂩ�猾������";
-		mes "�}�N�̂�ɓ`���Ă����B";
+		mes "[ダイガツ]";
+		mes "あれ？";
+		mes "どうしてまだこんな所で";
+		mes "ふらふらしているんだ？";
+		mes "そんなに暇だったら、";
+		mes "俺がこれから言う事を";
+		mes "マクのやつに伝えてくれよ。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "���̈Ӓn������̕n�R��Y�I";
-		mes "���������撣���I";
-		mes "���O�Ȃ񂩂��Ȃ��Ă��S�R���C���B";
-		mes "���O�����������ɂ������s";
-		mes "���͂܂������Ă���񂾂��I";
-		mes "���̏�Ȃ���߁I";
+		mes "[ダイガツ]";
+		mes "この意地っ張りの貧乏野郎！";
+		mes "せいぜい頑張れよ！";
+		mes "お前なんかいなくても全然平気だ。";
+		mes "お前が小さい頃にした悪行";
+		mes "俺はまだ憶えているんだぞ！";
+		mes "この情けないやつめ！";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�c�c�ƕK���`���Ă���I";
-		mes "����������Ȃ�A�o�čs���I";
+		mes "[ダイガツ]";
+		mes "……と必ず伝えてくれ！";
+		mes "分かったんなら、出て行け！";
 		if(LHZ_3QUE != 6)
 			break;
 		next;
 		cutin "lhz_diguts03",2;
-		mes "[�_�C�K�c]";
-		mes "���H�@�`�����ƁH�@����ŁH";
-		mes "���̏��S�҂͉������āH";
+		mes "[ダイガツ]";
+		mes "何？　伝えたと？　それで？";
+		mes "あの小心者は何だって？";
 		next;
-		if(select("�������ʂ�ɓ`����","�K���ɂ��܂���")==1) {
+		if(select("聞いた通りに伝える","適当にごまかす")==1) {
 			cutin "lhz_diguts08",2;
-			mes "[�_�C�K�c]";
-			mes "�݂��Ƃ��Ȃ���B�̂��烄�c��";
-			mes "���������P�`�Ȑ��i��";
-			mes "�C�ɓ���Ȃ������ȁB";
+			mes "[ダイガツ]";
+			mes "みっともないやつ。昔からヤツの";
+			mes "そういうケチな性格が";
+			mes "気に入らなかったな。";
 			next;
-			mes "[�_�C�K�c]";
-			mes "�j�̂����ɂ����";
-			mes "���Ƃ����������o���ĂĂǂ�����񂾁I";
-			mes "�����������牴�̌�ɂ������Ă�";
-			mes "����Ȏ��΂��������Ă��̂��I";
+			mes "[ダイガツ]";
+			mes "男のくせにそんな";
+			mes "ことをいちいち覚えててどうするんだ！";
+			mes "小さい時から俺の後にくっついてて";
+			mes "そんな事ばっか憶えてたのか！";
 		}
 		else {
-			mes "[�_�C�K�c]";
-			mes "�����A�̂���̂��������āc�c";
-			mes "�n���̂����ɃP�`����������";
-			mes "�܂Ƃ��ɘb���Ă��Ȃ����������ȁ`�B";
-			mes "�������̌�ɂ��ė���";
-			mes "�]�v�Ȏ��΂���o���Ă����񂾂ȁB";
+			mes "[ダイガツ]";
+			mes "あいつ、昔から肝が小さくて……";
+			mes "馬鹿のうえにケチだったから";
+			mes "まともに話していなかったかもな～。";
+			mes "いつも俺の後について来て";
+			mes "余計な事ばかり覚えていたんだな。";
 		}
 		next;
 		cutin "lhz_diguts07",2;
-		mes "[�_�C�K�c]";
-		mes "����Ȏ��Ԃ�����Ώ��̃P�c�ł�";
-		mes "�ǂ���������āI�@�����A�n���I";
-		mes "���Ԃ��o���Ă����ς�炸���ȁ`";
-		mes "�{���Ɂc�c���ς�炸�_���Ȃ���B";
+		mes "[ダイガツ]";
+		mes "そんな時間があれば女のケツでも";
+		mes "追いかけろって！　くそ、馬鹿！";
+		mes "時間が経っても相変わらずだな～";
+		mes "本当に……相変わらずダメなやつだ。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�����A����ȏ󋵂���Ȃ�������A";
-		mes "�����ɂł��n���X�ɂ������";
-		mes "�ꔭ�����Ă��܂��΍ςނ̂�!!";
-		mes "�����������Ă���܂ł��邵�I";
+		mes "[ダイガツ]";
+		mes "くそ、こんな状況じゃなかったら、";
+		mes "すぐにでも貧民街につっこんで";
+		mes "一発殴ってしまえば済むのに!!";
+		mes "俺を見張ってるやつらまでいるし！";
 		next;
 		cutin "lhz_diguts03",2;
-		mes "[�_�C�K�c]";
-		mes "����������^FF0000�x���J�C�X�e�B��^000000��������";
-		mes "�����������o���Ă��ꂽ�͂��Ȃ̂�!!";
-		mes "�����K�v�Ȏ��͂��Ȃ��񂾂�ȁ`";
+		mes "[ダイガツ]";
+		mes "こういう時^FF0000ベンカイスティン^000000がいたら";
+		mes "何か答えを出してくれたはずなのに!!";
+		mes "いつも必要な時はいないんだよな～";
 		next;
-		menu "�x���J�C�X�e�B���H",-;
-		mes "[�_�C�K�c]";
-		mes "�����A�����H�@�������K���ׂłˁB";
-		mes "���͂��Ȃ艓�����܂ōs����";
-		mes "�׋������ƕ������񂾂��ǁc�c";
-		mes "�ǂ������������c�c�Ƃɂ����A";
-		mes "�F�X�Ȗ{�Ǝ����������āA";
-		mes "��w�����鏊�������Ǝv���B";
+		menu "ベンカイスティン？",-;
+		mes "[ダイガツ]";
+		mes "ああ、あいつ？　すごいガリ勉でね。";
+		mes "今はかなり遠い所まで行って";
+		mes "勉強中だと聞いたんだけど……";
+		mes "どこだったっけ……とにかく、";
+		mes "色々な本と資料があって、";
+		mes "大学がある所だったと思う。";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�����͂������B��l��";
-		mes "�P���J����ƁA�^�񒆂ł��܂�";
-		mes "�����肳���Ă��ꂽ�񂾂��ǁc�c";
-		mes "�܂��A�ǂ����݂������}�N�Ɖ����";
-		mes "�Ȃ�����A�����肷�邱�Ƃ��Ȃ��ȁc�c";
+		mes "[ダイガツ]";
+		mes "あいつはいつも俺達二人が";
+		mes "ケンカすると、真ん中でうまく";
+		mes "仲直りさせてくれたんだけど……";
+		mes "まあ、どっちみちもうマクと会う事は";
+		mes "ないから、仲直りすることもないな……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "���͂��́c�c��w�����鏊��";
-		mes "�ꐶ�����׋��΂��肵��";
-		mes "���邾�낤�ȁB";
-		mes "�ǂ��������������Ƃ��Ă��A";
-		mes "���ƃ}�N�Ɖ��킯�ł��Ȃ����c�c";
+		mes "[ダイガツ]";
+		mes "今はあの……大学がある所で";
+		mes "一生懸命勉強ばかりして";
+		mes "いるだろうな。";
+		mes "どうせあいつがいたとしても、";
+		mes "俺とマクと会えるわけでもないし……";
 		next;
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "�t���I�@���������Ă������I";
-		mes "���̓{��͂ǂ��ɂԂ����";
-		mes "�����񂾁c�c�H";
+		mes "[ダイガツ]";
+		mes "フン！　腹が立ってきたぞ！";
+		mes "この怒りはどこにぶつければ";
+		mes "いいんだ……？";
 		set LHZ_3QUE,7;
 		break;
 	case 7:
 	case 12:
 		cutin "lhz_diguts03",2;
-		mes "[�_�C�K�c]";
-		mes "������A��w�֕׋��ɍs����";
-		mes "�x���J�C�X�e�B�������Ă�";
-		mes "�󋵂͕ς��Ȃ����Ă΁B";
-		mes "���ɗ���͂����B";
+		mes "[ダイガツ]";
+		mes "だから、大学へ勉強に行った";
+		mes "ベンカイスティンがいても";
+		mes "状況は変わらないってば。";
+		mes "頭に来るはずさ。";
 		if(LHZ_3QUE != 12 || countitem(7351) < 1)
 			break;
 		next;
 		cutin "lhz_diguts08",2;
-		mes "[�_�C�K�c]";
-		mes "�E�E�c�c";
-		mes "�����Ƃ������Ȃ��I�@�����I";
-		mes "�����A���O�I�@��Ɏ����Ă�";
-		mes "���̖{�͉����H�@���Ɍ����Ă����";
-		mes "���߂Ɏ����Ă����̂��H";
+		mes "[ダイガツ]";
+		mes "ウウ……";
+		mes "うっとうしいなぁ！　もう！";
+		mes "おい、お前！　手に持ってる";
+		mes "その本は何だ？　俺に見せてくれる";
+		mes "ために持ってきたのか？";
 		next;
-		if(select("�����Ă�����","�����Ă����Ȃ�")==2) {
-			mes "[�_�C�K�c]";
-			mes "�����H�@�����Ă���邽�߂�";
-			mes "�����ė����񂶂�Ȃ��̂���I";
-			mes "���ɗ���ȁ`�B";
-			mes "���X�@�������������̂�";
-			mes "����ɉ���{�炷�C���I";
+		if(select("見せてあげる","見せてあげない")==2) {
+			mes "[ダイガツ]";
+			mes "何だ？　見せてくれるために";
+			mes "持って来たんじゃないのかよ！";
+			mes "頭に来るな～。";
+			mes "元々機嫌が悪かったのに";
+			mes "さらに俺を怒らす気か！";
 			break;
 		}
 		cutin "lhz_diguts03",2;
-		mes "[�_�C�K�c]";
-		mes "������ƌ����Ă��炨�����B";
-		mes "���A����̓x���J�C�X�e�B����";
-		mes "���L����Ȃ����H";
-		mes "�x���J�C�X�e�B���ɉ�����̂��I";
-		mes "���񂽁A�������ȁ`";
-		mes "�Ƃɂ����A�ǂ܂��Ă��炤�I";
+		mes "[ダイガツ]";
+		mes "ちょっと見せてもらおうか。";
+		mes "こ、これはベンカイスティンの";
+		mes "日記じゃないか？";
+		mes "ベンカイスティンに会ったのか！";
+		mes "あんた、すごいな～";
+		mes "とにかく、読ませてもらう！";
 		next;
 		cutin "lhz_diguts03",255;
-		mes "-��������-";
-		mes "�����̓_�C�K�c�A�}�N�ƈꏏ��";
-		mes "����ԗV�т������B";
-		mes "�ǂ�ȗV�т��Ƃ����ƁA";
-		mes "��l�͖؂Ǝ��ō�����傫�ȉH��";
-		mes "�r�ɂ��āA";
+		mes "-○月○日-";
+		mes "今日はダイガツ、マクと一緒に";
+		mes "空を飛ぶ遊びをした。";
+		mes "どんな遊びかというと、";
+		mes "一人は木と紙で作った大きな羽を";
+		mes "腕につけて、";
 		next;
-		mes "�c���l���H�������l��������";
-		mes "��ǂ܂ő���B";
-		mes "�����Đ�ǂɂ����u�ԁA";
-		mes "��Ɍ����Ă��̐l�𓊂���B";
-		mes "��������A���̐l�͕K����";
-		mes "�H�΂���������B";
+		mes "残り二人が羽をつけた人を持って";
+		mes "絶壁まで走る。";
+		mes "そして絶壁についた瞬間、";
+		mes "空に向けてその人を投げる。";
+		mes "そしたら、その人は必死に";
+		mes "羽ばたきをする。";
 		next;
-		mes "����ƁA������x��";
-		mes "����Ԃ��Ƃ��ł���B";
-		mes "�����͖l����Ԗ����������ǁA";
-		mes "���낵���Ď��ʂ��Ǝv�����B";
-		mes "����ȗV�сA����2�x�Ƃ��Ȃ��c�c";
-		mes "�Ɖ��x���������B";
+		mes "すると、ある程度は";
+		mes "空を飛ぶことができる。";
+		mes "今日は僕が飛ぶ役だったけど、";
+		mes "恐ろしくて死ぬかと思った。";
+		mes "こんな遊び、もう2度としない……";
+		mes "と何度も誓った。";
 		next;
 		cutin "lhz_diguts02",2;
-		mes "[�_�C�K�c]";
-		mes "�O�n�b�I�@���̍��͂���Ȃ��ق炵��";
-		mes "�����悭����Ă��ȁB";
-		mes "�����c�c���̎��A�ō��L�^��";
-		mes "���̉����o�������I";
-		mes "�}�N�̐��т���Ԉ����������ȁB";
+		mes "[ダイガツ]";
+		mes "グハッ！　あの頃はそんなあほらしい";
+		mes "事もよくやってたな。";
+		mes "多分……あの時、最高記録は";
+		mes "この俺が出したぜ！";
+		mes "マクの成績が一番悪かったしな。";
 		next;
 		cutin "lhz_diguts02",255;
-		mes "-��������-";
-		mes "�_�C�K�c�A�}�N�ƈꏏ�ɑ��̊O��";
-		mes "�o�Ă݂��B";
-		mes "��l�����͂�߂����悤�Ƃ������ǁA";
-		mes "�l������N���Ǝv���Ă���H";
-		mes "�l��͂�������o��̂ɐ��������B";
-		mes "�������ɊO�͒��Ƃ͈�����B";
+		mes "-○月○日-";
+		mes "ダイガツ、マクと一緒に村の外へ";
+		mes "出てみた。";
+		mes "大人たちはやめさせようとしたけど、";
+		mes "僕たちを誰だと思っている？";
+		mes "僕らはこっそり出るのに成功した。";
+		mes "さすがに外は中とは違った。";
 		next;
-		mes "�����L�X�ƊJ���Ă��銴���ŁA";
-		mes "�������A��������E�o�������Ƃ�";
-		mes "�C�����悭�āA�l�����������������c�c";
-		mes "�Ǝv�����̂����̊ԁA";
-		mes "�����X�^�[�����ꂽ�񂾁I";
+		mes "何か広々と開けている感じで、";
+		mes "何よりも、こっそり脱出したことが";
+		mes "気持ちよくて、僕たちを興奮させた……";
+		mes "と思ったのもつかの間、";
+		mes "モンスターが現れたんだ！";
 		next;
-		mes "�l�͓����悤�ƌ��������A�}�N��";
-		mes "�_�C�K�c���A������|����";
-		mes "�p�Y�ɂȂ낤�ƗU���Ă����B";
-		mes "���̔n�����`�c�c";
-		mes "�d���Ȃ��l����т������Ă݂����A";
-		mes "���ȂȂ������̂��K���Ȃ��炢�A";
-		mes "�������@���ꂽ�c�c";
+		mes "僕は逃げようと言ったが、マクと";
+		mes "ダイガツが、こいつを倒して";
+		mes "英雄になろうと誘ってきた。";
+		mes "この馬鹿やろ～……";
+		mes "仕方なく僕も飛びかかってみたが、";
+		mes "死ななかったのが幸いなくらい、";
+		mes "激しく叩かれた……";
 		next;
-		mes "�����āA�ƂɋA������";
-		mes "�Ђǂ�����ꂽ�B";
-		mes "�S��������̂������B�N�\�B";
+		mes "そして、家に帰ったら";
+		mes "ひどく叱られた。";
+		mes "全部あいつらのせいだ。クソ。";
 		next;
 		cutin "lhz_diguts03",2;
-		mes "[�_�C�K�c]";
-		mes "���ނ��ށc�c����Ȏ��������������H";
-		mes "�������悤�ȁA�Ȃ������悤�ȁc�c";
-		mes "�Ƃɂ����A���̎��͉����}�N��";
-		mes "���ł��v���ʂ��";
-		mes "����Ă�����������c�c";
-		mes "�����������ȁ`";
+		mes "[ダイガツ]";
+		mes "うむうむ……こんな時もあったっけ？";
+		mes "あったような、なかったような……";
+		mes "とにかく、あの時は俺もマクも";
+		mes "何でも思い通りに";
+		mes "やっていた頃だから……";
+		mes "あったかもな～";
 		next;
 		cutin "lhz_diguts03",255;
-		mes "-��������-";
-		mes "�_�C�K�c�̂�����ׂ�";
-		mes "�|��Ă����O���ځB";
-		mes "�����͏�v�����Ɍ�����";
-		mes "�O���Ƃ͗����ɁA�F��ȕa�C��";
-		mes "������񂾂�ȁB";
-		mes "�Ў�Ȃ�c�c";
+		mes "-○月○日-";
+		mes "ダイガツのやつが風邪で";
+		mes "倒れてもう三日目。";
+		mes "あいつは丈夫そうに見える";
+		mes "外見とは裏腹に、色んな病気に";
+		mes "かかるんだよな。";
+		mes "ひ弱なやつ……";
 		next;
-		mes "����ł��F�B�Ƃ��ĐS�z���Ă���l�́A";
-		mes "�{���ɗF��ӂ��l�Ԃ��ˁ`";
-		mes "�}�N���a�C�œ|��Ă���_�C�K�c��";
-		mes "�o�J���Ƃ���Ȃ��Ƃ��������A";
+		mes "それでも友達として心配している僕は、";
+		mes "本当に友情あふれる人間だね～";
+		mes "マクも病気で倒れているダイガツを";
+		mes "バカだとか情けないとか言いつつも、";
 		next;
-		mes "�����������ɍs�����Ɩl��������";
-		mes "�Ƃ��������ƁA�������{����";
-		mes "�_�C�K�c�̂��Ƃ��D���Ȃ񂾂�ȁB";
-		mes "���̂������I";
+		mes "早く見舞いに行こうと僕をせかす";
+		mes "ところを見ると、あいつも本当は";
+		mes "ダイガツのことが好きなんだよな。";
+		mes "あのうそつき！";
 		next;
 		cutin "lhz_diguts01",2;
-		mes "[�_�C�K�c]";
-		mes "�ӂށc�c�ʂɉ��ł��Ȃ�����";
-		mes "����ȓ��L�ɂ܂ŏ����₪���āI";
-		mes "�܂������I";
+		mes "[ダイガツ]";
+		mes "ふむ……別に何でもない事を";
+		mes "こんな日記にまで書きやがって！";
+		mes "まったく！";
 		next;
 		cutin "lhz_diguts01",255;
-		mes "-��������-";
-		mes "�e�����}�N�ƗV�ԂȂƌ����Ă����B";
-		mes "�܂����������`";
-		mes "�Ȃ��V�񂶂�_���Ȃ񂾂�B";
-		mes "���������邩�Ȃ����Ȃ��";
-		mes "�l�����ɂ͊֌W�Ȃ����A���ǂ�";
-		mes "�V�ׂ�΂���ł�������Ȃ����I";
+		mes "-○月○日-";
+		mes "親父がマクと遊ぶなと言ってきた。";
+		mes "まったくもう～";
+		mes "なぜ遊んじゃダメなんだよ。";
+		mes "お金があるかないかなんて";
+		mes "僕たちには関係ないし、仲良く";
+		mes "遊べればそれでいいじゃないか！";
 		next;
-		mes "�}�N�̂�A�{���ɖʔ�����Ȃ̂�";
-		mes "�n�R�����炢���Ȃ��Ȃ��";
-		mes "�킯��������Ȃ��B";
-		mes "�ł��A�l�̕����܂��܂������B";
-		mes "�_�C�K�c�̉Ƃ͂�����������������";
-		mes "�e�������ꂱ�ꂤ�邳���炵���B";
+		mes "マクのやつ、本当に面白いやつなのに";
+		mes "貧乏だからいけないなんて";
+		mes "わけが分からない。";
+		mes "でも、僕の方がまだましかも。";
+		mes "ダイガツの家はすごい金持ちだから";
+		mes "親父があれこれうるさいらしい。";
 		next;
-		mes "����ł������́A�}�N�ƈꏏ��";
-		mes "�V�ׂȂ��Ɗy�����Ȃ��ƌ����āA";
-		mes "���ς�炸�}�N�ƗV��ł���B";
-		mes "�ǂ����������R��";
-		mes "�΂����肾�ȁ`�t�t�t�B";
-		next;
-		cutin "lhz_diguts07",2;
-		mes "[�_�C�K�c]";
-		mes "�܂��ˁA���̎��͂܂��c����������";
-		mes "����Ȏ������邳�c�c";
-		mes "�����āA�q���͌��X�����������񂾂�H";
-		mes "��������I�@���ł���Ȏ���";
-		mes "���L�Ɏc���Ȃ��Ƃ����Ȃ��񂾂�I";
-		next;
-		cutin "lhz_diguts07",255;
-		mes "-��������-";
-		mes "�����͓ǂ񂾏����̂悤�ɁA";
-		mes "3�l�ł��鐾���������B";
-		mes "���ꂩ��ǂ�Ȏ��������Ă�";
-		mes "�l�����̗F��͕ς�炸�A";
-		mes "���܂ꂽ���͈Ⴄ��";
-		mes "���ʓ��͈ꏏ�ɂ��悤�Ƃ����������I";
-		next;
-		mes "���Ƃ��g�͗���Ă��Ă�";
-		mes "�S�����͂����ꏏ���B";
-		mes "�}�N�ƃ_�C�K�c�́A";
-		mes "������������ƒp�����������������B";
-		mes "�R���Ȃ��߁I";
-		next;
-		mes "�ł��c�c�l�͂���2�l�̗F�";
-		mes "�{���ɂ����܂����B";
-		mes "���ƒ��͗ǂ����ǁA����2�l��";
-		mes "�����܂����Ȃ邭�炢�e�����B";
-		mes "�����炪�ʂ�����������A";
-		mes "�������̓��͐��E���ŖS��������낤�I";
+		mes "それでもあいつは、マクと一緒に";
+		mes "遊べないと楽しくないと言って、";
+		mes "相変わらずマクと遊んでいる。";
+		mes "どいつもこいつも嘘つき";
+		mes "ばっかりだな～フフフ。";
 		next;
 		cutin "lhz_diguts07",2;
-		mes "[�_�C�K�c]";
-		mes "�ӂށc�c�������c�c";
-		mes "����Ȏ����������񂾂ȁB";
-		mes "�����Y��Ă����b���B";
-		next;
-		mes "[�_�C�K�c]";
-		mes "���͎d���Ȃ����ǁc�c";
-		mes "�ӂށc�c";
-		mes "�����I�����̂̎����I";
-		mes "�󋵂�S�͉��x�ł�";
-		mes "�ς����̂��ƌ��܂��Ă�I";
-		next;
-		mes "[�_�C�K�c]";
-		mes "�������A�߂������Ɉ�x";
-		mes "�s���Ă݂邩�ȁc�c";
-		mes "����A�����ɉ�����Ƃ�";
-		mes "��������������Ȃ��āI";
-		mes "�����c�c�������ȁc�c";
-		mes "�����I�@�������������ɍs���I";
-		next;
-		mes "[�_�C�K�c]";
-		mes "�������ȁI";
-		mes "�͂��c�c���������I";
-		next;
-		mes "-�_�C�K�c�͓��L���𓊂������B";
-		mes "�p���������̂����������̂�";
-		mes "�ނ̊�͐^���ԂɂȂ��Ă���B";
-		mes "�������L�����E����-";
-		next;
-		mes "[�_�C�K�c]";
-		mes "�Ƃɂ����A���̓��L���}�N��";
-		mes "�����邩�ǂ����͍D���ɂ���B";
-		mes "���͂��낻��d�x�����Ȃ��ƁI";
-		mes "�������傤�I�@�ʓ|�������Ȃ����ȁI";
+		mes "[ダイガツ]";
+		mes "まあね、あの時はまだ幼かったから";
+		mes "そんな事もあるさ……";
+		mes "だって、子供は元々そういうもんだろ？";
+		mes "そうだよ！　何でこんな事を";
+		mes "日記に残さないといけないんだよ！";
 		next;
 		cutin "lhz_diguts07",255;
-		mes "-�d�x����_�C�K�c��K�ڂɁA";
-		mes "���L���������ǂݐi�߂Ă݂�-";
+		mes "-○月○日-";
+		mes "今日は読んだ小説のように、";
+		mes "3人である誓いをした。";
+		mes "これからどんな事があっても";
+		mes "僕たちの友情は変わらず、";
+		mes "生まれた日は違うが";
+		mes "死ぬ日は一緒にしようという誓いだ！";
 		next;
-		mes "-��������-";
-		mes "�����̓}�N�ƈꏏ��";
-		mes "�_�C�K�c�����炩�����B";
-		mes "�����͒P�������Ă��炩���̂�";
-		mes "�߂��Ⴍ����ʔ����I�@�N�b�N�b�N�B";
-		mes "�����Ɩʔ����̂́A";
-		mes "���������炩���Ă��鎖��";
+		mes "たとえ身は離れていても";
+		mes "心だけはいつも一緒だ。";
+		mes "マクとダイガツは、";
+		mes "しかしちょっと恥ずかしそうだった。";
+		mes "嘘つきなやつらめ！";
 		next;
-		mes "�����ŋC�Â��Ă��Ȃ����Ƃ��B";
-		mes "�P���Ȃ�I";
-		mes "�}�N�Ɩl�̓_�C�K�c�����炩�����߂�";
-		mes "�ꏏ�ɗV��ł���悤�Ȃ��񂾁B";
-		mes "���ꂩ��������Ƃ��炩��Ȃ�����I";
+		mes "でも……僕はあの2人の友情が";
+		mes "本当にうらやましい。";
+		mes "やつらと仲は良いけど、あの2人は";
+		mes "うらやましくなるくらい親しい。";
+		mes "あいつらが別れる日が来たら、";
+		mes "多分その日は世界が滅亡する日だろう！";
+		next;
+		cutin "lhz_diguts07",2;
+		mes "[ダイガツ]";
+		mes "ふむ……誓いか……";
+		mes "こんな事もあったんだな。";
+		mes "もう忘れていた話だ。";
+		next;
+		mes "[ダイガツ]";
+		mes "今は仕方ないけど……";
+		mes "ふむ……";
+		mes "ああ！もう昔の事だ！";
+		mes "状況や心は何度でも";
+		mes "変わるものだと決まってる！";
+		next;
+		mes "[ダイガツ]";
+		mes "しかし、近いうちに一度";
+		mes "行ってみるかな……";
+		mes "いや、あいつに会いたいとか";
+		mes "そういう事じゃなくて！";
+		mes "ただ……そうだな……";
+		mes "そう！　誓いを取り消しに行く！";
+		next;
+		mes "[ダイガツ]";
+		mes "誤解するな！";
+		mes "はぁ……もういい！";
+		next;
+		mes "-ダイガツは日記帳を投げつけた。";
+		mes "恥ずかしいのか興奮したのか";
+		mes "彼の顔は真っ赤になっている。";
+		mes "早く日記帳を拾おう-";
+		next;
+		mes "[ダイガツ]";
+		mes "とにかく、その日記をマクに";
+		mes "見せるかどうかは好きにしろ。";
+		mes "俺はそろそろ仕度をしないと！";
+		mes "ちくしょう！　面倒くさくなったな！";
+		next;
+		cutin "lhz_diguts07",255;
+		mes "-仕度するダイガツを尻目に、";
+		mes "日記帳を少し読み進めてみた-";
+		next;
+		mes "-○月○日-";
+		mes "今日はマクと一緒に";
+		mes "ダイガツをからかった。";
+		mes "あいつは単純すぎてからかうのが";
+		mes "めちゃくちゃ面白い！　クックック。";
+		mes "もっと面白いのは、";
+		mes "自分がからかわれている事を";
+		next;
+		mes "自分で気づいていないことだ。";
+		mes "単純なやつ！";
+		mes "マクと僕はダイガツをからかうために";
+		mes "一緒に遊んでいるようなもんだ。";
+		mes "これからももっとからかわなくちゃ！";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�c�c�c�c";
+		mes "…………";
 		next;
-		mes "-����ȏ�͌����Ȃ�����";
-		mes "�ǂ����낤�c�c";
-		mes "���āc�c";
-		mes "���ꂩ��}�N�ɉ�ɍs������-";
+		mes "-これ以上は見せない方が";
+		mes "良いだろう……";
+		mes "さて……";
+		mes "これからマクに会いに行こうか-";
 		set LHZ_3QUE,13;
 		break;
 	case 13:
 		cutin "lhz_diguts08",2;
-		mes "[�_�C�K�c]";
-		mes "�������Ă�񂾁I�@�o�čs���I";
-		mes "���͍��A�x�x�ŖZ�����񂾂�I";
-		mes "�����Ԃ�v���Ԃ肾����A";
-		mes "�݂��Ƃ��Ȃ��i�D�ōs����";
-		mes "�����ɏ΂��邩��ȁB";
+		mes "[ダイガツ]";
+		mes "何を見てるんだ！　出て行け！";
+		mes "俺は今、支度で忙しいんだよ！";
+		mes "ずいぶん久しぶりだから、";
+		mes "みっともない格好で行くと";
+		mes "あいつに笑われるからな。";
 		break;
 	case 14:
-		mes "-�_�C�K�c�́A���Ƀi�C�t��";
-		mes "�h�������܂܂Ō�����������";
-		mes "�����Ă����B�����ȏd����-";
+		mes "-ダイガツは、腹にナイフが";
+		mes "刺さったままで血をたくさん";
+		mes "流していた。相当な重傷だ-";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�_�C�K�c����I";
-		mes "�_�C�K�c����I";
+		mes "ダイガツさん！";
+		mes "ダイガツさん！";
 		next;
 		cutin "lhz_diguts06",2;
-		mes "[�_�C�K�c]";
-		mes "���c�c�ւցc�c�������B";
-		mes "���ǂ����Ȃ����B";
-		mes "��͂�}�N�Ɋ������܂���";
-		mes "�������Ƃ΂���N����ȁc�c";
+		mes "[ダイガツ]";
+		mes "あ……へへ……来たか。";
+		mes "結局こうなった。";
+		mes "やはりマクに巻き込まれると";
+		mes "悪いことばかり起こるな……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�O�Ɂc�c���������������邾��H";
-		mes "�����ێ��̂��߂ɁA�n���X��";
-		mes "�ڐG����l�Ԃ��Ď�����";
-		mes "��炪�c�c����Ɓc�c";
-		mes "�����炪�c�c�k�������悤���c�c";
+		mes "[ダイガツ]";
+		mes "前に……俺が言った事あるだろ？";
+		mes "治安維持のために、貧民街と";
+		mes "接触する人間を監視する";
+		mes "やつらが……いると……";
+		mes "そいつらが……嗅ぎつけたようだ……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "���������c�c���Ă���";
-		mes "�ؓ����̒j�������c�c�悤�ȁc�c";
-		mes "�����ăU�N�����c�c";
-		mes "���c�c�{���ɉ^���Ȃ��ȁc�c";
+		mes "[ダイガツ]";
+		mes "黒い服を……着ていて";
+		mes "筋肉質の男だった……ような……";
+		mes "そしてザクリさ……";
+		mes "あ……本当に運がないな……";
 		next;
 		cutin "lhz_diguts04",2;
-		mes "[�_�C�K�c]";
-		mes "�Ђ����Ԃ�́c�c�ĉ�Ȃ񂾁c�c";
-		mes "�ꏏ�ɘb���̂��y���݂łˁc�c";
-		mes "�ւցc�c���ꂩ��͂܂�";
-		mes "�K�L�̍��̂悤�Ƀ��C���C�����Ȃ���";
-		mes "�ꏏ�ɗV�ׂ�񂾁B���ꂩ��́c�c";
-		mes "�����Ɓc�c�̐������悤�Ɂc�c";
+		mes "[ダイガツ]";
+		mes "ひさしぶりの……再会なんだ……";
+		mes "一緒に話すのが楽しみでね……";
+		mes "へへ……これからはまた";
+		mes "ガキの頃のようにワイワイ騒ぎながら";
+		mes "一緒に遊べるんだ。これからは……";
+		mes "ずっと……昔誓ったように……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�ւցc�c�}�N���Ă�ł��鐺��";
-		mes "��������B�x���J�C�X�e�B����";
-		mes "���������c�c���邾�낤�ȁc�c";
-		mes "��ɍs���Ă����c�c�}�N�c�c";
-		mes "�x���J�C�X�e�B���c�c�����c�c";
-		mes "���N�Ԃ�́c�c�ĉ�ɂȂ邩�c�c";
+		mes "[ダイガツ]";
+		mes "へへ……マクが呼んでいる声が";
+		mes "聞こえる。ベンカイスティンも";
+		mes "もうすぐ……来るだろうな……";
+		mes "先に行っているよ……マク……";
+		mes "ベンカイスティン……もう……";
+		mes "何年ぶりの……再会になるか……";
 		next;
 		cutin "lhz_diguts05",2;
-		mes "[�_�C�K�c]";
-		mes "���񂽂��c�c���肪�Ƃȁc�c";
-		mes "�������ŁA�ꏏ�Ɂc�c";
-		mes "�V�ׂ�悤�ɂȂ�����c�c";
-		mes "�ւցc�c�}�N�Ɂc�c";
-		mes "��ɂ��c�c���c�c�ցc�c";
+		mes "[ダイガツ]";
+		mes "あんたも……ありがとな……";
+		mes "おかげで、一緒に……";
+		mes "遊べるようになったよ……";
+		mes "へへ……マクに……";
+		mes "会いにい……く……へ……";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�c�c�c�c";
+		mes "[ダイガツ]";
+		mes "…………";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�c�c�c�c";
+		mes "[ダイガツ]";
+		mes "…………";
 		next;
-		mes "[�_�C�K�c]";
-		mes "�c�c�c�c";
+		mes "[ダイガツ]";
+		mes "…………";
 		next;
-		mes "-���S�ɑ����₦���c�c";
-		mes "���߂ĕ��Ɏh�������i�C�t�����ł�";
-		mes "�����Ă����悤�c�c-";
+		mes "-完全に息が絶えた……";
+		mes "せめて腹に刺さったナイフだけでも";
+		mes "抜いてあげよう……-";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "���x�݂Ȃ����B�_�C�K�c����c�c";
+		mes "お休みなさい。ダイガツさん……";
 		getitem 1201,1;
 		set LHZ_3QUE,15;
 		break;
 	case 15:
 	case 16:
 		cutin "lhz_diguts05",2;
-		mes "-���܂Ō��Ă����ނ̕\��̒���";
-		mes "��ԐÂ��ȕ\������ē|��Ă���-";
+		mes "-今まで見てきた彼の表情の中で";
+		mes "一番静かな表情をして倒れている-";
 		break;
 	}
 	close2;
@@ -8164,241 +8164,241 @@ lhz_in02.gat,201,210,4	script	�_�C�K�c	869,{
 	end;
 }
 
-yuno_in04.gat,107,14,4	script	�w��	754,{
+yuno_in04.gat,107,14,4	script	学生	754,{
 	switch(LHZ_3QUE) {
 	default:
-		mes "[�w��]";
-		mes "�x�T�w���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�����@���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�����@���Ȃ񂿂�炩�񂿂��c�c";
-		mes "���푰���Ȃ񂿂�炩�񂿂��c�c";
+		mes "[学生]";
+		mes "富裕学がなんちゃらかんちゃら……";
+		mes "風魔法がなんちゃらかんちゃら……";
+		mes "黒魔法がなんちゃらかんちゃら……";
+		mes "他種族がなんちゃらかんちゃら……";
 		next;
-		mes "-���������Ă�̂��S�R������Ȃ��B";
-		mes "���������̐��E��";
-		mes "���������Ă���悤������";
-		mes "�����Ƃ��Ă������ق����ǂ�������-";
+		mes "-何を言ってるのか全然分からない。";
+		mes "自分だけの世界に";
+		mes "閉じこもっているようだから";
+		mes "そっとしておいたほうが良さそうだ-";
 		close;
 	case 7:
 	case 8:
-		mes "[�w��]";
-		mes "������͕׋������鏊�ł��I";
-		mes "�Ȃ�ׂ����炸�A����ׂ炸�A";
-		mes "�Â��ɂ��Ă��������I";
-		mes "�撣���ĕ׋����Ă���l��";
-		mes "�ז����Ă͂����܂��񂩂�I";
+		mes "[学生]";
+		mes "こちらは勉強をする所です！";
+		mes "なるべく走らず、しゃべらず、";
+		mes "静かにしてください！";
+		mes "頑張って勉強している人を";
+		mes "邪魔してはいけませんから！";
 		next;
-		mes "[�w��]";
-		mes "24���ԁA�Â��ȕ��͋C��";
-		mes "�ۂĂȂ��Ă͍���܂��B";
-		mes "�����������̉Ƃ̂悤�ɂ���";
-		mes "������׋��΂��肵�Ă���";
-		mes "�x���J�C�X�e�B���N�̂悤��";
-		mes "�w���������ł�����B";
+		mes "[学生]";
+		mes "24時間、静かな雰囲気を";
+		mes "保てなくては困ります。";
+		mes "ここを自分の家のようにして";
+		mes "一日中勉強ばかりしている";
+		mes "ベンカイスティン君のような";
+		mes "学生もいるんですから。";
 		next;
-		mes "[�w��]";
-		mes "�x���J�C�X�e�B���N��";
-		mes "���������ŕ׋����Ȃ̂ŁA";
-		mes "�C�����Ēʂ��������ǂ��ł��B";
+		mes "[学生]";
+		mes "ベンカイスティン君は";
+		mes "すぐそこで勉強中なので、";
+		mes "気をつけて通った方が良いです。";
 		if(LHZ_3QUE == 7)
 			set LHZ_3QUE,8;
 		close;
 	}
 }
 
-yuno_in04.gat,96,106,4	script	�M���w��	754,{
+yuno_in04.gat,96,106,4	script	熱血学生	754,{
 	switch(LHZ_3QUE) {
 	default:
 		cutin "lhz_benkaistin04",2;
-		mes "[�M���w��]";
-		mes "�x�T�w���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�����@���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�����@���Ȃ񂿂�炩�񂿂��c�c";
-		mes "���푰���Ȃ񂿂�炩�񂿂��c�c";
+		mes "[熱血学生]";
+		mes "富裕学がなんちゃらかんちゃら……";
+		mes "風魔法がなんちゃらかんちゃら……";
+		mes "黒魔法がなんちゃらかんちゃら……";
+		mes "他種族がなんちゃらかんちゃら……";
 		next;
 		if(LHZ_3QUE != 8) {
-			mes "-���������Ă�̂��S�R������Ȃ��B";
-			mes "���������̐��E��";
-			mes "���������Ă���悤������";
-			mes "�����Ƃ��Ă������ق����ǂ�������-";
+			mes "-何を言ってるのか全然分からない。";
+			mes "自分だけの世界に";
+			mes "閉じこもっているようだから";
+			mes "そっとしておいたほうが良さそうだ-";
 			break;
 		}
-		menu "�x���J�C�X�e�B������H",-;
+		menu "ベンカイスティンさん？",-;
 		mes "["+strcharinfo(0)+"]";
-		mes "�x���J�C�X�e�B������H";
+		mes "ベンカイスティンさん？";
 		next;
-		mes "[�M���w��]";
-		mes "�l�Ԍn���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�����n���Ȃ񂿂�炩�񂿂��c�c";
-		mes "�V�g�n���Ȃ񂿂�炩�񂿂��c�c";
+		mes "[熱血学生]";
+		mes "人間系がなんちゃらかんちゃら……";
+		mes "悪魔系がなんちゃらかんちゃら……";
+		mes "天使系がなんちゃらかんちゃら……";
 		next;
-		menu "�x���J�C�X�e�B������I",-;
+		menu "ベンカイスティンさん！",-;
 		mes "["+strcharinfo(0)+"]";
-		mes "�x���J�C�X�e�B������I";
+		mes "ベンカイスティンさん！";
 		next;
-		mes "[�M���w��]";
-		mes "���p�t���Ȃ񂿂�炩�񂿂��c�c";
-		mes "���Ҏ҂��Ȃ񂿂�炩�񂿂��c�c";
+		mes "[熱血学生]";
+		mes "魔術師がなんちゃらかんちゃら……";
+		mes "召還者がなんちゃらかんちゃら……";
 		next;
-		menu "�x���J�C�X�e�B�����`�`��!!!",-;
+		menu "ベンカイスティンさ～～ん!!!",-;
 		mes "["+strcharinfo(0)+"]";
-		mes "�x���J�C�X�e�B�����`�`��!!!";
+		mes "ベンカイスティンさ～～ん!!!";
 		next;
 		cutin "lhz_benkaistin02",2;
-		mes "[�M���w��]";
-		mes "�E�A�A�A�A�A�b�I";
+		mes "[熱血学生]";
+		mes "ウアアアアアッ！";
 		next;
-		mes "-�h�V���K�����K�`�����I-";
+		mes "-ドシンガランガチャン！-";
 		next;
-		mes "[����̊w������]";
-		mes "������ƁI�@�Â��ɂ��Ă��������I";
-		mes "�����͂��Ȃ��B�̕�������";
-		mes "�Ȃ��񂾂���I";
+		mes "[周りの学生たち]";
+		mes "ちょっと！　静かにしてください！";
+		mes "ここはあなた達の部屋じゃ";
+		mes "ないんだから！";
 		next;
-		mes "[�M���w��]";
-		mes "�́I�@���A���߂�Ȃ����B";
+		mes "[熱血学生]";
+		mes "は！　ご、ごめんなさい。";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "���߂�Ȃ����B";
+		mes "ごめんなさい。";
 		set LHZ_3QUE,9;
 		break;
 	case 9:
 		cutin "lhz_benkaistin03",2;
-		mes "[�M���w��]";
-		mes "�т����肷�邶��Ȃ��ł����I";
-		mes "���������Â��ɌĂׂ܂���ł����H";
-		mes "�}�i�[���Ȃ��ł��ˁ`�܂������B";
-		mes "�Ƃɂ����A���̗p�ł����H";
+		mes "[熱血学生]";
+		mes "びっくりするじゃないですか！";
+		mes "もう少し静かに呼べませんでした？";
+		mes "マナーがないですね～まったく。";
+		mes "とにかく、何の用ですか？";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�����A�����x���J�C�X�e�B���ł��B";
-		mes "�ł�������S���ėp�������������";
-		mes "���������B";
-		mes "���͖Z�����̂ŁA�����p���I����";
-		mes "�܂��׋������Ȃ���΂Ȃ�܂���B";
+		mes "[ベンカイスティン]";
+		mes "ああ、私がベンカイスティンです。";
+		mes "ですから安心して用をおっしゃって";
+		mes "ください。";
+		mes "私は忙しいので、早く用を終えて";
+		mes "また勉強をしなければなりません。";
 		next;
-		menu "�}�N�ƃ_�C�K�c�ɂ��Ęb��",-;
+		menu "マクとダイガツについて話す",-;
 		cutin "lhz_benkaistin02",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�Ȃ�قǁA�܂�ȒP�Ɍ�����";
-		mes "���̓�l���g���̍��̂���";
-		mes "�܂Ƃ��ɘb���ł��Ȃ��܂�";
-		mes "���݂��ɂ��������Ƃ���";
-		mes "�C������ł�Ƃ����b�ł����H";
+		mes "[ベンカイスティン]";
+		mes "なるほど、つまり簡単に言うと";
+		mes "その二人が身分の差のため";
+		mes "まともに話もできないまま";
+		mes "お互いにうっそうとして";
+		mes "気をもんでるという話ですか？";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�����`�q���ł��Ȃ��̂ɁA";
-		mes "�������Ă���񂾁A";
-		mes "������́c�c";
-		mes "�{���ɖʔ�����炾�c�c";
+		mes "[ベンカイスティン]";
+		mes "もう～子供でもないのに、";
+		mes "何をしているんだ、";
+		mes "あいつらは……";
+		mes "本当に面白いやつらだ……";
 		next;
 		cutin "lhz_benkaistin01",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�������s���Č����Ă�肽�����Ƃ�";
-		mes "����̂ł����A�׋��������āA";
-		mes "������Ɠ����܂���c�c";
-		mes "��ϐ\����Ȃ��ł��B";
-		mes "�ǂ���������ł��傤���c�c";
+		mes "[ベンカイスティン]";
+		mes "今すぐ行って言ってやりたいことが";
+		mes "あるのですが、勉強もあって、";
+		mes "ちょっと動けません……";
+		mes "大変申し訳ないです。";
+		mes "どうしたもんでしょうか……";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�c�c�c�c";
+		mes "[ベンカイスティン]";
+		mes "…………";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "���A�������I�@������������";
-		mes "�ǂ������ȁc�c����c�c";
-		mes "�ǂ��ɂ����������c�c";
+		mes "[ベンカイスティン]";
+		mes "あ、そうだ！　あれを見せれば";
+		mes "良いかもな……うん……";
+		mes "どこにいったっけ……";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "��U�A���͕���T���܂��̂�";
-		mes "���X���҂����������B";
-		mes "����������悤�Ɋ撣��܂��B";
+		mes "[ベンカイスティン]";
+		mes "一旦、私は物を探しますので";
+		mes "少々お待ちください。";
+		mes "早く見つかるように頑張ります。";
 		set LHZ_3QUE,10;
 		break;
 	case 10:
 	case 11:
 		cutin "lhz_benkaistin04",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "����c�c�����Ɓc�c";
-		mes "�ǂ��ɂ����������c�c�ӂށc�c";
+		mes "[ベンカイスティン]";
+		mes "あれ……えっと……";
+		mes "どこにいったっけ……ふむ……";
 		next;
 		if(LHZ_3QUE == 10 || countitem(7351) < 1) {
-			mes "-���������Ɖ�����T���Ă���";
-			mes "�Z�������Ɍ�����B";
-			mes "��̉���T���Ă���񂾂낤�H";
-			mes "�C�ɂȂ邩���x������";
-			mes "�T���Ă݂悤��-";
+			mes "-ごそごそと何かを探していて";
+			mes "忙しそうに見える。";
+			mes "一体何を探しているんだろう？";
+			mes "気になるから一度自分も";
+			mes "探してみようか-";
 			break;
 		}
 		cutin "lhz_benkaistin02",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "����H�@���Ȃ��A�������Ă���";
-		mes "����A���̓��L������Ȃ��ł����H";
-		mes "������Ǝ��Ɍ����Ă��������B";
+		mes "[ベンカイスティン]";
+		mes "あら？　あなた、今持っている";
+		mes "それ、私の日記帳じゃないですか？";
+		mes "ちょっと私に見せてください。";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "���������I�@����ł��B";
-		mes "�����T���Ă��܂����B";
-		mes "�ǂ��Ō�������ł����H";
+		mes "[ベンカイスティン]";
+		mes "そうそう！　これです。";
+		mes "これを探していました。";
+		mes "どこで見つけたんですか？";
 		next;
 		cutin "lhz_benkaistin01",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "��������A���Ȃ��Ɉ���݂���";
-		mes "���Ƃ������ł��B";
-		mes "�����s���Ηǂ��̂ł��傤���A";
-		mes "�_���̒��ߐ؂肪�����Ă���";
-		mes "�ƂĂ��Z��������c�c���̑����";
-		mes "���̓��L����ނ�Ɍ����Ă��������I";
+		mes "[ベンカイスティン]";
+		mes "それよりも、あなたに一つ頼みたい";
+		mes "ことがあるんです。";
+		mes "私が行けば良いのでしょうが、";
+		mes "論文の締め切りが迫っていて";
+		mes "とても忙しいから……私の代わりに";
+		mes "この日記帳を彼らに見せてください！";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "���̓��L���ƌ����Ă��A";
-		mes "3�l�ŗV��ł������̘b���قƂ��";
-		mes "�ł��̂ŁA�ނ炪�ǂ񂾂�";
-		mes "���̎������Ȃ݂āA�̗̂F���";
-		mes "���߂����Ƃ���͂��ł��B";
+		mes "[ベンカイスティン]";
+		mes "私の日記帳と言っても、";
+		mes "3人で遊んでいた頃の話がほとんど";
+		mes "ですので、彼らが読んだら";
+		mes "今の自分を省みて、昔の友情を";
+		mes "取り戻そうとするはずです。";
 		next;
 		cutin "lhz_benkaistin04",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�ł́A�X�������肢���܂��B";
-		mes "���͂܂��߂�Ȃ��ƂȂ�Ȃ��̂�";
-		mes "����Ɂc�c";
-		mes "�}�N�ƃ_�C�K�c���X�������肢���܂��B";
+		mes "[ベンカイスティン]";
+		mes "では、宜しくお願いします。";
+		mes "私はまた戻らないとならないので";
+		mes "お先に……";
+		mes "マクとダイガツを宜しくお願いします。";
 		set LHZ_3QUE,12;
 		break;
 	case 15:
 		cutin "lhz_benkaistin01",2;
-		mes "[�x���J�C�X�e�B��]";
-		mes "���A���L���͖����ɓn����";
-		mes "����܂����H�@������f���Ƃ�";
-		mes "�������l�B�ł�����A";
-		mes "����ȉߋ��������Ă������";
-		mes "�p���������v����";
-		mes "�����肷��Ǝv���܂��B";
+		mes "[ベンカイスティン]";
+		mes "あ、日記帳は無事に渡して";
+		mes "くれました？　何しろ素直とは";
+		mes "程遠い人達ですから、";
+		mes "そんな過去を見せてあげれば";
+		mes "恥ずかしく思いつつも";
+		mes "仲直りすると思います。";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�Ƃɂ����A���肪�Ƃ��������܂��B";
-		mes "���������܂ŁA�׋����I���ēc�ɂ�";
-		mes "�A������A3�l�Ŋy�����V�ׂ�悤��";
-		mes "�C�����܂��B�y���݂ł��ˁB";
-		mes "�{���ɂ��肪�Ƃ��������܂��B";
+		mes "[ベンカイスティン]";
+		mes "とにかく、ありがとうございます。";
+		mes "おかげさまで、勉強を終えて田舎へ";
+		mes "帰ったら、3人で楽しく遊べるような";
+		mes "気がします。楽しみですね。";
+		mes "本当にありがとうございます。";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "���̓��̂��߂ɁA�����Ɗ撣����";
-		mes "�׋����āA����ł������~�����m����";
-		mes "�w��œc�ɂ֋A�肽���ł��B";
-		mes "�����āA�܂��ނ�Ɛ̂̂悤��";
-		mes "�V�Ԃ̂ł��B";
+		mes "[ベンカイスティン]";
+		mes "その日のために、もっと頑張って";
+		mes "勉強して、一日でも早く欲しい知識を";
+		mes "学んで田舎へ帰りたいです。";
+		mes "そして、また彼らと昔のように";
+		mes "遊ぶのです。";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�����c�c�����Ă���́A";
-		mes "���̊��ӂ̋C�����ł��B";
-		mes "�ʍs�؂Ȃ�ł����A�����ێ�����";
-		mes "������΁A�����̋���";
-		mes "���R�ɍs�����ł���Ǝv���܂��B";
+		mes "[ベンカイスティン]";
+		mes "ああ……そしてこれは、";
+		mes "私の感謝の気持ちです。";
+		mes "通行証なんですが、治安維持員に";
+		mes "見せれば、東西の区域を";
+		mes "自由に行き来できると思います。";
 		next;
-		mes "[�x���J�C�X�e�B��]";
-		mes "�������q�^���[���ɋA����";
-		mes "�ނ�ƈꏏ�ɗV�Ԃ��̎���";
-		mes "�����炠�Ȃ������҂��܂���B";
-		mes "�e�؂ȗ��l�̕��I";
+		mes "[ベンカイスティン]";
+		mes "私がリヒタルゼンに帰って";
+		mes "彼らと一緒に遊ぶその時が";
+		mes "来たらあなたも招待しますよ。";
+		mes "親切な旅人の方！";
 		getitem 7350,1;
 		set LHZ_3QUE,16;
 		if(checkre()) {
@@ -8418,488 +8418,488 @@ yuno_in04.gat,96,106,4	script	�M���w��	754,{
 	end;
 }
 
-yuno_in04.gat,168,117,0	script	�{	111,{
+yuno_in04.gat,168,117,0	script	本	111,{
 	if(LHZ_3QUE == 10) {
-		mes "-�\����";
-		mes "�u�x���J�C�X�e�B���̓��L6�v";
-		mes "�Ə����Ă���B";
-		mes "�ꉞ�A�����čs����";
-		mes "�x���J�C�X�e�B���Ɍ����Ă����悤-";
+		mes "-表紙に";
+		mes "「ベンカイスティンの日記6」";
+		mes "と書いてある。";
+		mes "一応、持って行って";
+		mes "ベンカイスティンに見せてあげよう-";
 		getitem 7351,1;
 		set LHZ_3QUE,11;
 		close;
 	}
-	mes "-�{���������񂠂邪�A";
-	mes "���K�v�Ȗ{�͂Ȃ�������-";
+	mes "-本がたくさんあるが、";
+	mes "今必要な本はなさそうだ-";
 	close;
 }
 
 //============================================================
-// �哝�̃N�G�X�gNPC
+// 大統領クエストNPC
 //- Registry -------------------------------------------------
-// LHZ_4QUE -> 0�`39
+// LHZ_4QUE -> 0～39
 //------------------------------------------------------------
-lighthalzen.gat,179,170,4	script	���}�����Ȓj	98,{
+lighthalzen.gat,179,170,4	script	平凡そうな男	98,{
 	switch(LHZ_4QUE) {
 	case 0:
-		mes "[�K���V���^�C��]";
-		mes "����ɂ��́B";
-		mes "�����͑f�G�ȊX�ł���ˁH";
+		mes "[ガルシュタイン]";
+		mes "こんにちは。";
+		mes "ここは素敵な街ですよね？";
 		next;
-		switch(select("����ɂ���","�����A�{���ɑf�G�ȏ��ł�","����A���܂�c�c")) {
+		switch(select("こんにちは","ええ、本当に素敵な所です","いや、あまり……")) {
 		case 1:
-			mes "[�K���V���^�C��]";
-			mes "�����͓V�C�������ł��ˁB";
-			mes "����ȓV�C�̂������ɂ́A";
-			mes "���ٓ��ł�����āA";
-			mes "�O�ŐH�ׂ����ł��ˁB";
+			mes "[ガルシュタイン]";
+			mes "今日は天気がいいですね。";
+			mes "こんな天気のいい日には、";
+			mes "お弁当でも作って、";
+			mes "外で食べたいですね。";
 			break;
 		case 2:
-			mes "[�K���V���^�C��]";
-			mes "�͂��A�{���ɑf�G�ȏ��ł���B";
-			mes "�l�X�̊�ɂ͏Ί炪��t�ŁA";
-			mes "�ƁX�ɂ͉����݂����ӂ�Ă��āc�c�B";
+			mes "[ガルシュタイン]";
+			mes "はい、本当に素敵な所ですよ。";
+			mes "人々の顔には笑顔が一杯で、";
+			mes "家々には温かみがあふれていて……。";
 			break;
 		case 3:
-			mes "[�K���V���^�C��]";
-			mes "�ŏ��͋C�Â��Ȃ���������܂��񂪁A";
-			mes "������A���̊X�̂悳��";
-			mes "������Ǝv���܂���B";
+			mes "[ガルシュタイン]";
+			mes "最初は気づかないかもしれませんが、";
+			mes "いずれ、この街のよさが";
+			mes "分かると思いますよ。";
 			break;
 		}
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���͂͂��c�c�B";
-		mes "�������ł��ˁc�c�B";
-		mes "���[��c�c�B";
+		mes "[ガルシュタイン]";
+		mes "あははっ……。";
+		mes "しかしですね……。";
+		mes "うーん……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���A���ł��Ȃ��ł��B";
-		mes "����ł́A��������悤�B";
+		mes "[ガルシュタイン]";
+		mes "あ、何でもないです。";
+		mes "それでは、ごきげんよう。";
 		set LHZ_4QUE,1;
 		close;
 	case 1:
-		mes "[�K���V���^�C��]";
-		mes "�����������V�C�ł���ˁB";
-		mes "����ȓV�C�̓��ɂ́A�O�ɏo�āA";
-		mes "�z�ɂ�����Ɨǂ��ł��ˁB";
+		mes "[ガルシュタイン]";
+		mes "今日もいい天気ですよね。";
+		mes "こんな天気の日には、外に出て、";
+		mes "陽にあたると良いですね。";
 		close;
 	case 2:
-		mes "[�K���V���^�C��]";
-		mes "���A����ɂ��́B";
-		mes "�����������V�C�ł���ˁB";
+		mes "[ガルシュタイン]";
+		mes "あ、こんにちは。";
+		mes "今日もいい天気ですよね。";
 		next;
-		if(select("�����ł���","���͍�Ӂc�c")==1) {
-			mes "[�K���V���^�C��]";
-			mes "����ȓ��͂���ς�A";
-			mes "�����ɓ����̂��悢�ł��B";
-			mes "����ł́A�悢������B";
+		if(select("そうですね","実は昨晩……")==1) {
+			mes "[ガルシュタイン]";
+			mes "こんな日はやっぱり、";
+			mes "活発に動くのがよいです。";
+			mes "それでは、よい一日を。";
 			close;
 		}
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���̂��b�ł��傤���H";
-		mes "��ӁA���͉Ƃŋx��ł��܂������c�c�B";
+		mes "[ガルシュタイン]";
+		mes "何のお話でしょうか？";
+		mes "昨晩、私は家で休んでいましたが……。";
 		next;
-		menu "�ł��A�m���Ɂc�c",-;
-		mes "[�K���V���^�C��]";
-		mes "��΁A����Ȃ킯�͂���܂���B";
-		mes "�N���ʂ̐l�Ɗ��Ⴂ�������̂ł��傤�B";
-		mes "�Z�����̂ŁA����Ŏ��炵�܂��B";
+		menu "でも、確かに……",-;
+		mes "[ガルシュタイン]";
+		mes "絶対、そんなわけはありません。";
+		mes "誰か別の人と勘違いをしたのでしょう。";
+		mes "忙しいので、これで失礼します。";
 		next;
-		mes "-�c�c�c�c-";
-		mes "-�����A�{���ɔނłȂ��̂Ȃ�A";
-		mes "����Ȃɂ��K����";
-		mes "�ے肵�Ȃ��Ă��������낤�Ɂc�c-";
+		mes "-…………-";
+		mes "-もし、本当に彼でないのなら、";
+		mes "こんなにも必死に";
+		mes "否定しなくてもいいだろうに……-";
 		set LHZ_4QUE,3;
 		close;
 	case 3:
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c";
-		mes "�����������Ƃ͂���܂���B";
+		mes "[ガルシュタイン]";
+		mes "…………";
+		mes "何も言うことはありません。";
 		next;
-		if(select("��Ӂc�c","�c�c�c�c")==2) {
-			mes "[�K���V���^�C��]";
-			mes "�c�c�c�c";
-			mes "�c�c�c�c�c�c�B";
+		if(select("昨晩……","…………")==2) {
+			mes "[ガルシュタイン]";
+			mes "…………";
+			mes "………………。";
 			close;
 		}
 		mes "[" +strcharinfo(0)+ "]";
-		mes "��ӁA���Ȃ����N���Ƙb���Ă���̂��A";
-		mes "�m���Ɍ��܂����B";
-		mes "�ʂɁA���Ȃ��ɉ������悤";
-		mes "�Ƃ����̂ł͂Ȃ��A";
-		mes "�P�ɍD��S����A";
-		mes "���b�𕷂����������ł��B";
+		mes "昨晩、あなたが誰かと話しているのを、";
+		mes "確かに見ました。";
+		mes "別に、あなたに何かしよう";
+		mes "というのではなく、";
+		mes "単に好奇心から、";
+		mes "お話を聞きたいだけです。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "……";
+		mes "…………";
+		mes "………………。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "������܂����B";
-		mes "���Ȃ��̂��������ʂ�A";
-		mes "��ӁA���������ŒN����";
-		mes "����Ă������Ƃ́A�����ł��B";
+		mes "[ガルシュタイン]";
+		mes "分かりました。";
+		mes "あなたのおっしゃる通り、";
+		mes "昨晩、私がここで誰かと";
+		mes "会っていたことは、事実です。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�������A�������ꂾ���ŁA";
-		mes "����Ȃɂ�������";
-		mes "�ǋy�����o���͂Ȃ��̂ł����c�c�B";
+		mes "[ガルシュタイン]";
+		mes "しかし、ただそれだけで、";
+		mes "こんなにもしつこく";
+		mes "追及される覚えはないのですが……。";
 		next;
-		if(select("����Ȃ���́c�c","�����ł���ˁc�c")==2) {
-			mes "[�K���V���^�C��]";
-			mes "�c�c����ł́A�����C�ŁB";
+		if(select("そんなつもりは……","そうですよね……")==2) {
+			mes "[ガルシュタイン]";
+			mes "……それでは、お元気で。";
 			close;
 		}
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�ǋy�������͂���܂���B";
-		mes "�����c�c�B";
+		mes "追及するつもりはありません。";
+		mes "ただ……。";
 		next;
-		if(select("�K���V���^�C������̂��d���́c�c","�m�肽�����������ł�")==2) {
-			mes "[�K���V���^�C��]";
-			mes "�c�c�c�c�B";
-			mes "���Ȃ��̍D��S���A";
-			mes "���l�ɖ��f�������Ȃ���΂����ł��ˁB";
-			mes "����ł́c�c�B";
+		if(select("ガルシュタインさんのお仕事の……","知りたかっただけです")==2) {
+			mes "[ガルシュタイン]";
+			mes "…………。";
+			mes "あなたの好奇心が、";
+			mes "他人に迷惑をかけなければいいですね。";
+			mes "それでは……。";
 			close;
 		}
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�K���V���^�C�������";
-		mes "���d���Ɋւ��āc�c";
-		mes "���炭�A�K���V���^�C������";
-		mes "�������Ă���g�D�ɂ���";
-		mes "����������̂ŁA���������������ł��B";
+		mes "ガルシュタインさんの";
+		mes "お仕事に関して……";
+		mes "恐らく、ガルシュタインさんが";
+		mes "所属している組織について";
+		mes "興味があるので、声をかけただけです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����āA�Η������Ƃɂ��Ă��c�c�B";
+		mes "そして、対立する企業についても……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c�B";
-		mes "�c�c�c�c�c�c�B";
-		mes "�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "……。";
+		mes "………………。";
+		mes "…………。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c�B";
-		mes "�����l���鎞�Ԃ����������B";
-		mes "�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "…………。";
+		mes "少し考える時間をください。";
+		mes "…………。";
 		set LHZ_4QUE,4;
 		close;
 	case 4:
-		mes "[�K���V���^�C��]";
-		mes "�����l���Ă݂܂������c�c�B";
-		mes "���ɑ�̂̌����͂���";
-		mes "����������悤�ł��ˁB";
+		mes "[ガルシュタイン]";
+		mes "少し考えてみましたが……。";
+		mes "既に大体の見当はついて";
+		mes "いらっしゃるようですね。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c";
-		mes "���l���̒ʂ�A";
-		mes "���͂��̑g�D�ɑ����Ă��܂����A";
-		mes "���̊�ƂƂ��G�΂��Ă���܂��B";
+		mes "[ガルシュタイン]";
+		mes "……";
+		mes "お考えの通り、";
+		mes "私はその組織に属していますし、";
+		mes "あの企業とも敵対しております。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�������A���̊�ƂƂ́A";
-		mes "���b�P���x���̂��Ƃł��B";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "もちろん、あの企業とは、";
+		mes "レッケンベルのことです。";
+		mes "………………";
+		mes "……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�����āc�c";
-		mes "���Ȃ��ɂ킴�킴����Șb��";
-		mes "���Ă���̂ɂ́A�󂪂���܂��B";
-		mes "���Ȃ��Ɂc�c";
-		mes "�����͂����肢�������̂ł��B";
-		mes "�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "そして……";
+		mes "あなたにわざわざこんな話を";
+		mes "しているのには、訳があります。";
+		mes "あなたに……";
+		mes "ご協力をお願いしたいのです。";
+		mes "…………。";
 		next;
-		menu "���́H",-;
-		mes "[�K���V���^�C��]";
-		mes "���̂���Ăł��B";
-		mes "���Ȃ��́A���ǂ��Ɋ֐S������܂��B";
-		mes "���ǂ������傤�ǐl�肪�K�v�Ȏ��ł��B";
+		menu "協力？",-;
+		mes "[ガルシュタイン]";
+		mes "一種のご提案です。";
+		mes "あなたは、私どもに関心があります。";
+		mes "私どももちょうど人手が必要な時です。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�����A���ǂ��̐��̂Ɋւ��Ắc�c";
-		mes "�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "ただ、私どもの正体に関しては……";
+		mes "…………。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�ǂ����܂����H";
-		mes "���ǂ��ɋ��͂Ȃ����܂����H";
-		mes "����Ƃ��c�c�B";
+		mes "[ガルシュタイン]";
+		mes "どうしますか？";
+		mes "私どもに協力なさいますか？";
+		mes "それとも……。";
 		next;
-		switch(select("�����A���͂��Ȃ�������c�c�H","���͂��܂�","���͂��܂���")) {
+		switch(select("もし、協力しなかったら……？","協力します","協力しません")) {
 		case 1:
-			mes "[�K���V���^�C��]";
-			mes "�c�c";
-			mes "�����ł��ˁc�c�B";
-			mes "�����A���͂��Ȃ��������́A";
-			mes "��̃P�[�X���������܂��B";
+			mes "[ガルシュタイン]";
+			mes "……";
+			mes "そうですね……。";
+			mes "もし、協力しなかった時は、";
+			mes "二つのケースが発生します。";
 			next;
-			menu "��̃P�[�X�H",-;
-			mes "[�K���V���^�C��]";
-			mes "�͂��B";
-			mes "��́c�c";
-			mes "���ǂ��̎d�����I���܂ŁA";
-			mes "���ǂ��ɐg����a����Ƃ������́c�c�B";
+			menu "二つのケース？",-;
+			mes "[ガルシュタイン]";
+			mes "はい。";
+			mes "一つは……";
+			mes "私どもの仕事が終わるまで、";
+			mes "私どもに身柄を預けるというもの……。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "������́c�c";
-			mes "���̖������ŁA";
-			mes "���ǂ��Ɋւ��邱�Ƃ�";
-			mes "�S�ĖY���Ƃ������́c�c�B";
+			mes "[ガルシュタイン]";
+			mes "もう一つは……";
+			mes "この薬を飲んで、";
+			mes "私どもに関することを";
+			mes "全て忘れるというもの……。";
 			next;
-			menu "�c�c�c�c",-;
-			mes "[�K���V���^�C��]";
-			mes "��̓I�ɐ\���グ�܂��Ɓc�c";
-			mes "�Ԃ��������ŁA���̌�����ǂ�����";
-			mes "�p���I�ɖ���w���������邩�c�c";
-			mes "���������őS�Ă�Y��邩�B";
-			mes "���̓�̃P�[�X������";
-			mes "�Ƃ������Ƃł��B";
+			menu "…………",-;
+			mes "[ガルシュタイン]";
+			mes "具体的に申し上げますと……";
+			mes "赤い薬を飲んで、その後も私どもから";
+			mes "継続的に薬を購入し続けるか……";
+			mes "青い薬を飲んで全てを忘れるか。";
+			mes "その二つのケースがある";
+			mes "ということです。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "�����A�ǂ��Ȃ����܂����H";
-			mes "�������A���ǂ��ɂƂ��Ă�";
-			mes "���͂��Ă����������";
-			mes "������܂����c�c�B";
+			mes "[ガルシュタイン]";
+			mes "さあ、どうなさいますか？";
+			mes "もちろん、私どもにとっては";
+			mes "協力してくださる方が";
+			mes "助かりますが……。";
 			next;
-			if(select("���͂��Ȃ�","���͂���")==1)
+			if(select("協力しない","協力する")==1)
 				break;
 		case 2:
-			mes "[�K���V���^�C��]";
-			mes "�悭���l���ɂȂ�܂����ˁB";
-			mes "�ł����c�c";
-			mes "�c�c�c�c�B";
+			mes "[ガルシュタイン]";
+			mes "よくお考えになりましたね。";
+			mes "ですが……";
+			mes "…………。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "�����������܂��B";
-			mes "���Ȃ������ǂ��ɋ��͂����";
-			mes "����������Ă��c�c�B";
-			mes "���ꂪ�A�{�S����Ȃ̂��A";
-			mes "���ǂ��ɂ͐����ȂƂ���A";
-			mes "������܂���B";
+			mes "[ガルシュタイン]";
+			mes "一つ条件があります。";
+			mes "あなたが私どもに協力すると";
+			mes "おっしゃっても……。";
+			mes "それが、本心からなのか、";
+			mes "私どもには正直なところ、";
+			mes "分かりません。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "�����ŁA���Ȃ��Ɉ��";
-			mes "��������������Ă��������܂��B";
-			mes "�c�c�c�c�B";
+			mes "[ガルシュタイン]";
+			mes "そこで、あなたに一つ";
+			mes "制約をかけさせていただきます。";
+			mes "…………。";
 			next;
-			menu "�c�c�H",-;
-			mes "[�K���V���^�C��]";
-			mes "����́c�c��̖��";
-			mes "����ł��������Ƃ������̂ł��B";
+			menu "……？",-;
+			mes "[ガルシュタイン]";
+			mes "それは……一つの薬を";
+			mes "飲んでいただくというものです。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "���̖�́A���ނƂ����ɖ��ւ�";
-			mes "�e��������Ƃ������̂ł͂���܂���B";
-			mes "����ǂ��A�p���I�Ɉ��ݑ����Ȃ���΁A";
-			mes "�����ɏd��ȉe����";
-			mes "�y�ڂ��悤�ɂȂ�܂��B";
+			mes "[ガルシュタイン]";
+			mes "その薬は、飲むとすぐに命への";
+			mes "影響があるというものではありません。";
+			mes "けれども、継続的に飲み続けなければ、";
+			mes "生命に重大な影響を";
+			mes "及ぼすようになります。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "�ǂ��Ȃ����܂����H";
-			mes "������݂܂����H";
-			mes "����Ƃ��c�c�B";
+			mes "[ガルシュタイン]";
+			mes "どうなさいますか？";
+			mes "薬を飲みますか？";
+			mes "それとも……。";
 			next;
-			if(select("���܂Ȃ�","����")==1)
+			if(select("飲まない","飲む")==1)
 				break;
-			mes "[�K���V���^�C��]";
-			mes "�悢���f������܂����B";
-			mes "�������A�d�����I��莟��A";
-			mes "������Ƃ���������������܂��B";
-			mes "����ł́c�c�B";
+			mes "[ガルシュタイン]";
+			mes "よい決断をされました。";
+			mes "もちろん、仕事が終わり次第、";
+			mes "きちんとした薬を差しあげます。";
+			mes "それでは……。";
 			next;
-			mes "-�c�c�c�c-";
-			mes "-�K���V���^�C���́A";
-			mes "�ԐF�̖���悱����-";
-			mes "-������񂾏u�ԁA";
-			mes "�̂̒����ٕ���";
-			mes "�͂�������悤�Ȋ���������-";
+			mes "-…………-";
+			mes "-ガルシュタインは、";
+			mes "赤色の薬をよこした-";
+			mes "-薬を飲んだ瞬間、";
+			mes "体の中を異物が";
+			mes "はいずり回るような感じがした-";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "���A�����Y��܂������c�c";
-			mes "���̖�̕���p��";
-			mes "�����C���������Ȃ邩������܂���B";
+			mes "[ガルシュタイン]";
+			mes "あ、言い忘れましたが……";
+			mes "その薬の副作用で";
+			mes "少し気持ち悪くなるかもしれません。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "�킴�Ƃł͂Ȃ��̂ŁA";
-			mes "�{��Ȃ��ł��������B";
-			mes "���[��c�c";
-			mes "�m���ɁA���񂾂悤�ł��ˁB";
+			mes "[ガルシュタイン]";
+			mes "わざとではないので、";
+			mes "怒らないでください。";
+			mes "うーん……";
+			mes "確かに、飲んだようですね。";
 			next;
-			mes "[�K���V���^�C��]";
-			mes "����ł́A���ǂ��̂��Ƃ�";
-			mes "���b���܂��傤�B";
+			mes "[ガルシュタイン]";
+			mes "それでは、私どものことを";
+			mes "お話しましょう。";
 			set LHZ_4QUE,5;
 			close;
 		}
-		mes "[�K���V���^�C��]";
-		mes "�����ł����c�c";
-		mes "�c�c�c�c�B";
-		mes "����ł�����c�c�B";
+		mes "[ガルシュタイン]";
+		mes "そうですか……";
+		mes "…………。";
+		mes "それでしたら……。";
 		next;
-		mes "-�H�I-";
+		mes "-？！-";
 		next;
 		heal -Hp+1,0;
-		mes "-�}�ɔw��ŁA�₽����C�Ƌ���";
-		mes "�l�̋C�z��������-";
-		mes "-����U��Ԃ낤�Ƃ������A";
-		mes "���̏u�ԁA�A�̌���";
-		mes "����ȏՌ��������c�c";
-		mes "�ӎ������̂��Ă�����-";
+		mes "-急に背後で、冷たい空気と共に";
+		mes "人の気配を感じた-";
+		mes "-後ろを振り返ろうとしたが、";
+		mes "その瞬間、喉の後ろで";
+		mes "強烈な衝撃を感じ……";
+		mes "意識が遠のいていった-";
 		next;
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "……………………";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�H�H�H�H�H�H]";
-		mes "�����A������c�c�B";
+		mes "[？？？？？？]";
+		mes "さあ、これを……。";
 		next;
-		mes "-���̒��ɉ�����";
-		mes "�����Ă���̂����������A";
-		mes "�v�킸���������ł��܂���-";
-		mes "-���̏u�ԁc�c-";
+		mes "-口の中に何かが";
+		mes "入ってくるのを感じたが、";
+		mes "思わずそれを飲んでしまった-";
+		mes "-その瞬間……-";
 		next;
-		mes "-���̒����^�����ɂȂ�A";
-		mes "�c�c�ӎ���������-";
+		mes "-頭の中が真っ白になり、";
+		mes "……意識を失った-";
 		close2;
 		set LHZ_4QUE,0;
 		warp "lighthalzen.gat",217,313;
 		end;
 	case 5:
-		mes "[�K���V���^�C��]";
-		mes "��͑��v�ł����H";
-		mes "���Ȃ�C�����������ł����c�c�B";
-		mes "���[��c�c";
-		mes "���Ƃ����܂����悤�ł��ˁB";
+		mes "[ガルシュタイン]";
+		mes "具合は大丈夫ですか？";
+		mes "かなり気持ち悪そうですが……。";
+		mes "うーん……";
+		mes "何とか治まったようですね。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�悩�����ł��B";
-		mes "�ł͑����A��A�d�������肢���܂��B";
-		mes "���ɂ����m�̒ʂ�A";
-		mes "���ǂ����G�΂��Ă���c�̂́A";
-		mes "�܂��ɂ��̊�ƁA";
-		mes "�u���b�P���x���v�ł��B";
+		mes "[ガルシュタイン]";
+		mes "よかったです。";
+		mes "では早速、一つ、仕事をお願いします。";
+		mes "既にご存知の通り、";
+		mes "私どもが敵対している団体は、";
+		mes "まさにあの企業、";
+		mes "「レッケンベル」です。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�����̈�ԏd�v�Ȏ{�݂́A";
-		mes "^FF0000��Ƃ̕����������ł���";
-		mes "�u���Q���V�������v^000000�ł��B";
+		mes "[ガルシュタイン]";
+		mes "そこの一番重要な施設は、";
+		mes "^FF0000企業の附属研究所である";
+		mes "「レゲンシュルム」^000000です。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�ŋ߁A���肵�����ɂ��Ɓc�c";
-		mes "���̌������̒n���ł́A";
-		mes "�������Ȑ����B��";
-		mes "������Ă��邻���ł��B";
+		mes "[ガルシュタイン]";
+		mes "最近、入手した情報によると……";
+		mes "その研究所の地下では、";
+		mes "怪しげな生物達が";
+		mes "うろついているそうです。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c�����ō���́A";
-		mes "���̌������ւ̐������@����������A";
-		mes "�������̒n���֓���A";
-		mes "����^FF0000�����B�̑��݂̏؋�^000000��";
-		mes "�W�߂Ă��Ă��������B";
+		mes "[ガルシュタイン]";
+		mes "……そこで今回は、";
+		mes "その研究所への潜入方法を見つけ次第、";
+		mes "研究所の地下へ入り、";
+		mes "その^FF0000生物達の存在の証拠^000000を";
+		mes "集めてきてください。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "����ȑ����͕K�v����܂��񂪁A";
-		mes "��ޖL�x�ɏW�߂Ă��Ă��������B";
-		mes "�܂��A����^FF0000�d�v�Ȕ閧�̕�^000000��";
-		mes "����͂��Ȃ̂ŁA";
-		mes "������K�������Ă��Ă��������B";
+		mes "[ガルシュタイン]";
+		mes "そんな多くは必要ありませんが、";
+		mes "種類豊富に集めてきてください。";
+		mes "また、何か^FF0000重要な秘密の物^000000が";
+		mes "あるはずなので、";
+		mes "それも必ず持ってきてください。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���̌������̒n���ɂ���{�݂ł���΁A";
-		mes "�ǂ��ł���ɓ���Ǝv���܂��B";
-		mes "��̓I�ɂǂ��������̂���";
-		mes "�m��܂��񂪁A�����ڂɂ����";
-		mes "�����ƕ�����͂��ł��B";
+		mes "[ガルシュタイン]";
+		mes "その研究所の地下にある施設であれば、";
+		mes "どこでも手に入ると思います。";
+		mes "具体的にどういうものかは";
+		mes "知りませんが、それを目にすれば";
+		mes "きっと分かるはずです。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�����Č������֓�����@�ł����c�c";
-		mes "����͂������ł��T�����������B";
-		mes "���ǂ����m���Ă�����@�́A";
-		mes "����Ȃ��̂�������܂���̂ŁB";
+		mes "[ガルシュタイン]";
+		mes "そして研究所へ入る方法ですが……";
+		mes "それはご自分でお探しください。";
+		mes "私どもが知っている方法は、";
+		mes "困難なものしかありませんので。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "����ł͖������F���Ă���܂��B";
-		mes "�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "それでは無事を祈っております。";
+		mes "……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���c�c���ꂩ��c�c";
-		mes "�����ɂȂ邩�͕�����܂��񂪁c�c";
-		mes "�������瓌�ɂ���^FF0000�n���X�ł́A";
-		mes "���X�A�l���p������^000000�Ƃ���";
-		mes "�b������܂��B���̊�Ƃ�";
-		mes "�֌W�����邩�͕�����܂��񂪁c�c�B";
+		mes "[ガルシュタイン]";
+		mes "あ……それから……";
+		mes "助けになるかは分かりませんが……";
+		mes "ここから東にある^FF0000貧民街では、";
+		mes "時々、人が姿を消す^000000という";
+		mes "話があります。あの企業と";
+		mes "関係があるかは分かりませんが……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�ł��A���̊X�ł�";
-		mes "�n�����ɑς����Ȃ���";
-		mes "�o�čs���l�����܂�����A";
-		mes "���Ƃ��c�c�B";
+		mes "[ガルシュタイン]";
+		mes "でも、あの街では";
+		mes "貧しさに耐えられなくて";
+		mes "出て行く人もいますから、";
+		mes "何とも……。";
 		set LHZ_4QUE,6;
 		close;
 	case 6:
-		mes "[�K���V���^�C��]";
-		mes "�n���X�ł́A������";
-		mes "�N���邩������܂���̂ŁA";
-		mes "��ɋC�����Ă������������ł���B";
-		mes "����ł́c�c�B";
+		mes "[ガルシュタイン]";
+		mes "貧民街では、いつ何が";
+		mes "起きるか分かりませんので、";
+		mes "常に気をつけていた方がいいですよ。";
+		mes "それでは……。";
 		close;
 	case 7:
 		if(countitem(7345) == 0 && countitem(7346) == 0 && countitem(7347) == 0) {
-			mes "[�K���V���^�C��]";
-			mes "�����ȒP�ɂ͂����Ȃ��ł��傤���c�c";
-			mes "�������@������͂��ł��B";
-			mes "����������Ɗ撣���Ă��������B";
+			mes "[ガルシュタイン]";
+			mes "そう簡単にはいかないでしょうが……";
+			mes "何か方法があるはずです。";
+			mes "もうちょっと頑張ってください。";
 			close;
 		}
 		if(countitem(7345) < 10 || countitem(7346) < 1 || countitem(7347) < 10) {
-			mes "[�K���V���^�C��]";
-			mes "���[��c�c�B";
-			mes "�������K�v�ȕ��͑����Ă��܂����A";
-			mes "�܂�����Ȃ��悤�ł��ˁB";
-			mes "����������Ɗ撣���Ă��������B";
+			mes "[ガルシュタイン]";
+			mes "うーん……。";
+			mes "いくつか必要な物は揃っていますが、";
+			mes "まだ足りないようですね。";
+			mes "もうちょっと頑張ってください。";
 			close;
 		}
-		mes "[�K���V���^�C��]";
-		mes "���[��c�c";
-		mes "���ꂾ������Ώ\�������ł��ˁB";
-		mes "���̎����ƐS���́A";
-		mes "�ނ�̌����Ɋւ������";
-		mes "���Ȃ�����炷�ł��傤�B";
+		mes "[ガルシュタイン]";
+		mes "うーん……";
+		mes "これだけあれば十分そうですね。";
+		mes "この資料と心臓は、";
+		mes "彼らの研究に関する情報を";
+		mes "かなりもたらすでしょう。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���[��c�c";
-		mes "����ł́A���낻�둼�̎���";
-		mes "�C���Ă��悳�����ł��ˁB";
+		mes "[ガルシュタイン]";
+		mes "うーん……";
+		mes "それでは、そろそろ他の事を";
+		mes "任せてもよさそうですね。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "^0000FF�W���m�[������^000000�ɂ���";
-		mes "^FF0000�O�X�n��^000000�Ƃ����l�ɉ���Ă��������B";
-		mes "���̐l���A���Ȃ��Ɏ��̎d����";
-		mes "�����Ă����͂��ł��B";
+		mes "[ガルシュタイン]";
+		mes "^0000FFジュノーあたり^000000にいる";
+		mes "^FF0000グスハル^000000という人に会ってください。";
+		mes "その人が、あなたに次の仕事を";
+		mes "教えてくれるはずです。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���ꂩ��c�c";
-		mes "������������čs���Ă��������B";
-		mes "����ł��Ȃ������҂���";
-		mes "�ؖ����邱�Ƃ��ł��܂��B";
+		mes "[ガルシュタイン]";
+		mes "それから……";
+		mes "こちらを持って行ってください。";
+		mes "これであなたが何者かを";
+		mes "証明することができます。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "����Ɓc�c���������c�c";
-		mes "�����Y��Ă͂����܂���ł����ˁB";
-		mes "����ł́c�c�B";
+		mes "[ガルシュタイン]";
+		mes "それと……そうそう……";
+		mes "これを忘れてはいけませんでしたね。";
+		mes "それでは……。";
 		next;
-		mes "-�K���V���^�C���́A";
-		mes "�ԐF�̖��n���Ă���-";
-		mes "-���̖�����ނƁA";
-		mes "���̒����^������";
-		mes "�Ȃ����悤�Ȋ���������-";
+		mes "-ガルシュタインは、";
+		mes "赤色の薬を渡してきた-";
+		mes "-その薬を飲むと、";
+		mes "頭の中が真っ白に";
+		mes "なったような感じがした-";
 		set LHZ_4QUE,8;
 		delitem 7345,10;
 		delitem 7346,1;
@@ -8907,63 +8907,63 @@ lighthalzen.gat,179,170,4	script	���}�����Ȓj	98,{
 		getitem 7348,1;
 		close;
 	case 8:
-		mes "[�K���V���^�C��]";
-		mes "�W���m�[�ɂ���u�O�X�n���v��";
-		mes "�K�˂Ă��������B";
-		mes "�ނ��A���̎d����";
-		mes "�����Ă����͂��ł��B";
+		mes "[ガルシュタイン]";
+		mes "ジュノーにいる「グスハル」を";
+		mes "訪ねてください。";
+		mes "彼が、次の仕事を";
+		mes "教えてくれるはずです。";
 		close;
 	default:
 		if(LHZ_4QUE < 26) {
-			mes "[�K���V���^�C��]";
-			mes "����Ȃɕ|���ڂ��ɂ܂Ȃ��ł��������B";
-			mes "�����őI�񂾂��Ƃł��傤�H";
-			mes "�D��S�Ƃ����̂́A";
-			mes "���ꂾ���댯�Ȃ��̂Ȃ�ł��B";
+			mes "[ガルシュタイン]";
+			mes "そんなに怖い目で睨まないでください。";
+			mes "自分で選んだことでしょう？";
+			mes "好奇心というのは、";
+			mes "それだけ危険なものなんです。";
 			close;
 		}
-		mes "[�K���V���^�C��]";
-		mes "�����A����ƏI��肪";
-		mes "�����Ă��܂����ˁB";
-		mes "���������撣���Ă��������B";
-		mes "�c�c���ꂪ�I���΁A";
-		mes "���Ȃ��͎��R�̐g�ɂȂ�܂��B";
+		mes "[ガルシュタイン]";
+		mes "おお、やっと終わりが";
+		mes "見えてきましたね。";
+		mes "もう少し頑張ってください。";
+		mes "……これが終われば、";
+		mes "あなたは自由の身になれます。";
 		close;
 	case 38:
-		mes "[�K���V���^�C��]";
-		mes "����c�c�c�c";
-		mes "���Ȃ��́c�c";
-		mes "�c�c�c�c�B";
-		mes "����Łc�c�I���܂����ˁc�c�B";
-		mes "�����c�c���������c�c�B";
+		mes "[ガルシュタイン]";
+		mes "おや…………";
+		mes "あなたは……";
+		mes "…………。";
+		mes "これで……終わりましたね……。";
+		mes "夢も……何もかも……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c���̂悤�Ȏ��ɁA";
-		mes "�������܂ꂽ���Ȃ��ɂƂ��Ă�";
-		mes "�s�^�Ȃ��Ƃł��傤���c�c�B";
-		mes "����ɂ́c�c����Ȃ��";
-		mes "���R������܂����B";
+		mes "[ガルシュタイン]";
+		mes "……このような事に、";
+		mes "巻き込まれたあなたにとっては";
+		mes "不運なことでしょうが……。";
+		mes "これには……それなりの";
+		mes "理由がありました。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "………………。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���c�c";
-		mes "�����Y��Ă͂����܂���ł����ˁB";
-		mes "�͂��A�����炪�A���Ȃ�������";
-		mes "��̉e�������S�ɏ�����ł��B";
-		mes "���ꂳ�����߂΁A�������";
-		mes "���ݑ�����K�v�͂Ȃ��Ȃ�܂��B";
+		mes "[ガルシュタイン]";
+		mes "あ……";
+		mes "これを忘れてはいけませんでしたね。";
+		mes "はい、こちらが、あなたが飲んだ";
+		mes "薬の影響を完全に消す薬です。";
+		mes "これさえ飲めば、もう薬を";
+		mes "飲み続ける必要はなくなります。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�����Ă���́c�c";
-		mes "����܂ł̎d���̕�V�ƂȂ�܂��B";
-		mes "����c�c�Ō�ɂȂ�܂������A";
-		mes "�Ӎ߂̕i�ł��B";
+		mes "[ガルシュタイン]";
+		mes "そしてこれは……";
+		mes "これまでの仕事の報酬となります。";
+		mes "いや……最後になりましたが、";
+		mes "謝罪の品です。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c";
-		mes "����Ŏd���͏I���ł��B";
+		mes "[ガルシュタイン]";
+		mes "…………";
+		mes "これで仕事は終了です。";
 		next;
 		set LHZ_4QUE,39;
 		if(checkre())
@@ -8973,301 +8973,301 @@ lighthalzen.gat,179,170,4	script	���}�����Ȓj	98,{
 		getitem 617,1;
 		close;
 	case 39:
-		mes "[�K���V���^�C��]";
-		mes "�c�c�c�c�B";
+		mes "[ガルシュタイン]";
+		mes "…………。";
 		close;
 	}
 }
 
-lighthalzen.gat,173,167,0	script	#��	139,2,4,{
+lighthalzen.gat,173,167,0	script	#声	139,2,4,{
 	if(LHZ_4QUE == 1) {
-		mes "[�H�H�H�H]";
-		mes "������ցB";
-		mes "�c�c�c�c�B";
+		mes "[？？？？]";
+		mes "こちらへ。";
+		mes "…………。";
 		next;
-		mes "[�H�H�H�H]";
-		mes "���̐l�Ɍ�����O��";
-		mes "�����c�c�B";
+		mes "[？？？？]";
+		mes "他の人に見つかる前に";
+		mes "早く……。";
 		next;
-		mes "-�ǂ����ŕ������悤�Ȑ�������-";
+		mes "-どこかで聞いたような声がした-";
 		next;
-		if(select("�C�ɂ��Ȃ�","������ƒ����Ă݂�")==1) {
-			mes "-�c�c�c�c-";
-			mes "-�C�ɂ��Ȃ����Ƃɂ��悤-";
+		if(select("気にしない","ちょっと聴いてみる")==1) {
+			mes "-…………-";
+			mes "-気にしないことにしよう-";
 			close;
 		}
-		mes "-�ǂ�Șb������̂��A�m�肽��-";
+		mes "-どんな話をするのか、知りたい-";
 		next;
-		mes "[�H�H�H�H�H�H]";
-		mes "�Ƃ���Łc�c";
-		mes "���́A�}�ɌĂяo�����̂ł����H";
-		mes "����������Ȋ�Ȃ����Ɂc�c";
-		mes "�c�c�B";
+		mes "[？？？？？？]";
+		mes "ところで……";
+		mes "何故、急に呼び出したのですか？";
+		mes "しかもこんな危ない所に……";
+		mes "……。";
 		next;
-		mes "-�c�c�c�c-";
-		mes "-���ԉ�����A";
-		mes "�K���V���^�C������̐��̂悤��-";
-		mes "-���ꂩ�瑼�̐l�̐�����������-";
+		mes "-…………-";
+		mes "-昼間会った、";
+		mes "ガルシュタインさんの声のようだ-";
+		mes "-それから他の人の声も聴こえる-";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�}�ȗp��������܂����̂Łc�c�B";
-		mes "����ł���Ȏ��ԂɁB";
-		mes "�c�c�c�c�B";
+		mes "[？？？？]";
+		mes "急な用件がありましたので……。";
+		mes "それでこんな時間に。";
+		mes "…………。";
 		next;
-		mes "-�}�ɘb�������������Ȃ����B";
-		mes "���炭�A�����Řb�����Ă���̂��낤-";
+		mes "-急に話し声が小さくなった。";
+		mes "恐らく、小声で話をしているのだろう-";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�c�c�x���c�c";
-		mes "�c�c�G���c�c";
-		mes "�c�c���Ɓc�c�J�v���c�c�B";
+		mes "[？？？？]";
+		mes "……ベル……";
+		mes "……エン……";
+		mes "……事業……カプラ……。";
 		next;
-		mes "[�K���V���^�C��]";
-		mes "���[��c�c�}�Șb�ł��ˁB";
-		mes "������ƁA������";
-		mes "�b�����Ƃł͂Ȃ��ł��傤�B";
-		mes "�ꏊ���ڂ��܂��񂩁H";
+		mes "[ガルシュタイン]";
+		mes "うーん……急な話ですね。";
+		mes "ちょっと、ここで";
+		mes "話すことではないでしょう。";
+		mes "場所を移しませんか？";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�������܂��傤�B";
-		mes "�c�c�c�c�B";
+		mes "[？？？？]";
+		mes "そうしましょう。";
+		mes "…………。";
 		next;
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "……………………";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "-�ނ�̋C�z��������-";
-		mes "-�c�c-";
-		mes "-�K���V���^�C������́A";
-		mes "�ǂ�Ȏd�������Ă���񂾁H-";
+		mes "-彼らの気配が消えた-";
+		mes "-……-";
+		mes "-ガルシュタインさんは、";
+		mes "どんな仕事をしているんだ？-";
 		set LHZ_4QUE,2;
 		close;
 	}
 	end;
 }
 
-lhz_dun02.gat,282,278,0	script	��ꂽ�������u	111,{
+lhz_dun02.gat,282,278,0	script	壊れた製造装置	111,{
 	if(LHZ_4QUE < 6) {
-		mes "-�ςȋ@�B���A";
-		mes "��ꂽ�܂ܕ��u����Ă���-";
-		mes "-�債�����̂ł͂Ȃ�������-";
+		mes "-変な機械が、";
+		mes "壊れたまま放置されている-";
+		mes "-大したものではなさそうだ-";
 		close;
 	}
 	if(LHZ_4QUE > 6) {
-		mes "-���̕ϓN���Ȃ�";
-		mes "�@�B���U��΂��Ă���-";
+		mes "-何の変哲もない";
+		mes "機械が散らばっている-";
 		close;
 	}
-	mes "-��ꂽ�@�B���U��΂��Ă���-";
-	mes "-���̊Ԃ���A�����Ȍ���������-";
+	mes "-壊れた機械が散らばっている-";
+	mes "-その間から、微かな光が見える-";
 	next;
-	if(select("�悭���Ă݂�","�������Ȃ�")==2) {
-		mes "-�債�����ł͂Ȃ�������-";
+	if(select("よく見てみる","何もしない")==2) {
+		mes "-大した物ではなさそうだ-";
 		close;
 	}
-	mes "-�@�B��Еt���A�悭���Ă݂��";
-	mes "�_��I�Ȍ�������ɕ��A";
-	mes "���قǂ̑傫���̕��̂�������-";
+	mes "-機械を片付け、よく見てみると";
+	mes "神秘的な光を微かに放つ、";
+	mes "拳ほどの大きさの物体があった-";
 	next;
-	if(select("�����d�v�ȕ��̂悤��","�債�����ł͂Ȃ�������")==2) {
-		mes "-�g���Â��Ď̂Ă�ꂽ���̂悤��-";
-		mes "-���ɗ��悤�ȕ��ɂ͌����Ȃ�-";
+	if(select("何か重要な物のようだ","大した物ではなさそうだ")==2) {
+		mes "-使い古して捨てられた物のようだ-";
+		mes "-役に立つような物には見えない-";
 		close;
 	}
-	mes "-�K���V���^�C���̏��Ɏ����Ă����΁A";
-	mes "���ꂪ���Ȃ̂������邩������Ȃ�-";
+	mes "-ガルシュタインの所に持っていけば、";
+	mes "これが何なのか分かるかもしれない-";
 	set LHZ_4QUE,7;
 	getitem 7346,1;
 	close;
 
 }
 
-yuno_fild04.gat,165,245,4	script	�Â��j	89,{
+yuno_fild04.gat,165,245,4	script	暗い男	89,{
 	switch(LHZ_4QUE) {
 	default:
 		if(LHZ_4QUE < 8) {
-			mes "[�O�X�n��]";
-			mes "�Ԃ�������ނ���������ނ��c�c";
-			mes "�����I�Ԃ̂͂��O���g���B";
-			mes "�ꉞ�A���܂Ȃ����Ď��";
-			mes "����ɂ͂��邪�c�c�B";
+			mes "[グスハル]";
+			mes "赤い薬を飲むか青い薬を飲むか……";
+			mes "それを選ぶのはお前自身だ。";
+			mes "一応、飲まないって手も";
+			mes "あるにはあるが……。";
 			close;
 		}
-		mes "[�O�X�n��]";
-		mes "��Ƃ̓z��߁c�c";
-		mes "�K���ׂ��Ă��c�c�B";
-		mes "�N�N�N�b�c�c�B";
+		mes "[グスハル]";
+		mes "企業の奴らめ……";
+		mes "必ず潰してやる……。";
+		mes "クククッ……。";
 		close;
 	case 8:
-		mes "[�O�X�n��]";
-		mes "����c�c";
-		mes "�Ԃ���Ɛ��򂪂���B";
-		mes "�ǂ����������H";
+		mes "[グスハル]";
+		mes "うん……";
+		mes "赤い薬と青い薬がある。";
+		mes "どっちがいい？";
 		next;
-		switch(select("�H�H�H","�Ԃ���","����")) {
+		switch(select("？？？","赤い薬","青い薬")) {
 		case 1:
-			mes "[�O�X�n��]";
-			mes "����I�΂ʎ҂͉��������B";
+			mes "[グスハル]";
+			mes "道を選ばぬ者は何も得ず。";
 			close;
 		case 3:
-			mes "[�O�X�n��]";
-			mes "�Y��邱�Ƃ́A";
-			mes "�K�����������Ƃ����킯�ł͂Ȃ��B";
-			mes "�c�c���Ƃ��Y��Ă��܂����Ƃ��Ă��A";
-			mes "�܂��o����΂����񂾁B";
+			mes "[グスハル]";
+			mes "忘れることは、";
+			mes "必ずしも悪いというわけではない。";
+			mes "……たとえ忘れてしまったとしても、";
+			mes "また覚えればいいんだ。";
 			close;
 		}
-		mes "[�O�X�n��]";
-		mes "�I�ԗ]�n���Ȃ��󋵂ł̑I�����A";
-		mes "�K�������������ʂ𐶂ނ킯�ł͂Ȃ��B";
-		mes "�������Ɍ�������̂͂Ȃ����H";
+		mes "[グスハル]";
+		mes "選ぶ余地がない状況での選択が、";
+		mes "必ずしも悪い結果を生むわけではない。";
+		mes "何か俺に見せるものはないか？";
 		next;
-		if(select("�͂�","������")==2) {
-			mes "[�O�X�n��]";
-			mes "���[��c�c�B";
-			mes "�l����������悤���B";
-			mes "�c�c�B";
+		if(select("はい","いいえ")==2) {
+			mes "[グスハル]";
+			mes "うーん……。";
+			mes "人を見誤ったようだ。";
+			mes "……。";
 			close;
 		}
 		if(countitem(7348) < 1) {
-			mes "[�O�X�n��]";
-			mes "���[��c�c�����H";
-			mes "���Ɍ�����ׂ����̂́A";
-			mes "�ǂ��ɂ���񂾁H";
+			mes "[グスハル]";
+			mes "うーん……何だ？";
+			mes "俺に見せるべきものは、";
+			mes "どこにあるんだ？";
 			close;
 		}
-		mes "[�O�X�n��]";
-		mes "����c�c�悵�B";
-		mes "�����҂��Ă����l�̂悤���B";
+		mes "[グスハル]";
+		mes "うん……よし。";
+		mes "俺が待っていた人のようだ。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�����̊Ԃ����҂��Ă���A";
-		mes "������Ə������邱�Ƃ�����񂾁B";
+		mes "[グスハル]";
+		mes "少しの間だけ待ってくれ、";
+		mes "ちょっと準備することがあるんだ。";
 		set LHZ_4QUE,9;
 		close;
 	case 9:
-		mes "[�O�X�n��]";
-		mes "���ꂩ��A���O��";
-		mes "���Ȃ���΂Ȃ�Ȃ����́A";
-		mes "�����������Ԃ��Ƃ����ł͂Ȃ��B";
-		mes "�����玖�O�ɖʉ�̖񑩂����Ă���";
-		mes "��ɂ����悤�ɁB";
+		mes "[グスハル]";
+		mes "これから、お前が";
+		mes "会わなければならない方は、";
+		mes "そうそう時間がとれる方ではない。";
+		mes "だから事前に面会の約束をしてから";
+		mes "会いにいくように。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�t���t���c�c�B";
-		mes "���ꂩ��A���O�ɂ�";
-		mes "������Ƙb���Ă������B";
+		mes "[グスハル]";
+		mes "フムフム……。";
+		mes "それから、お前にも";
+		mes "ちょっと話しておこう。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�����V���o���c�o���h�ł́A";
-		mes "���݁A����c�̂ɐ�����o�ςȂ�";
-		mes "��������̂��x�z����Ă���B";
-		mes "���̒c�̂Ƃ́c�c���̑��ƁA";
-		mes "���Ȃ킿�u���b�P���x���v�Ƃ���";
-		mes "�������ƂɂȁB";
+		mes "[グスハル]";
+		mes "ここシュバルツバルドでは、";
+		mes "現在、ある団体に政治や経済など";
+		mes "あらゆるものを支配されている。";
+		mes "その団体とは……あの大企業、";
+		mes "すなわち「レッケンベル」という";
+		mes "超巨大企業にな。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�������A���b�P���x���ȊO�ɂ�";
-		mes "��������Ƃ͂���B";
-		mes "�������̉e���͂�K�͂Ȃǂ́A";
-		mes "���b�P���x���ɂ͓���y�΂Ȃ��B";
+		mes "[グスハル]";
+		mes "もちろん、レッケンベル以外にも";
+		mes "いくつか企業はある。";
+		mes "だがその影響力や規模などは、";
+		mes "レッケンベルには到底及ばない。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�ނ�͏��F�c�c";
-		mes "���b�P���x���Ɏ�������";
-		mes "�������₷�z��ɉ߂��Ȃ��B";
+		mes "[グスハル]";
+		mes "彼らは所詮……";
+		mes "レッケンベルに取り入って";
+		mes "私腹を肥やす奴らに過ぎない。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�܂��A�قڑS�Ă̐����Ƃ́A";
-		mes "��Ƃ���d�G���󂯂Ƃ�����A";
-		mes "��݂������ċ�������Ă���B";
-		mes "���̂����ŁA��o�����@�Ă͑S�āA";
-		mes "��ƂɗL���Ȃ��̂ƂȂ��Ă���B";
+		mes "[グスハル]";
+		mes "また、ほぼ全ての政治家は、";
+		mes "企業から賄賂を受けとったり、";
+		mes "弱みを握られて脅迫されている。";
+		mes "そのせいで、提出される法案は全て、";
+		mes "企業に有利なものとなっている。";
 		next;
-		mes "[�O�X�n��]";
-		mes "����Ȓ��A���񓖑I����";
-		mes "^FF0000�J�[���E�e�I�h�[���E";
-		mes "���C�G���X�g���E�X�哝��^000000�́A";
-		mes "���̂悤�ȏ󋵂�ŊJ���悤�ƁA";
-		mes "�O���c�̂̋��͂𓾂�";
-		mes "�g�D�u�閧�̉H�v�𗧂��グ���B";
+		mes "[グスハル]";
+		mes "そんな中、今回当選した";
+		mes "^FF0000カール・テオドール・";
+		mes "ワイエルストラウス大統領^000000は、";
+		mes "このような状況を打開しようと、";
+		mes "外部団体の協力を得て";
+		mes "組織「秘密の羽」を立ち上げた。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�u�閧�̉H�v�̍ŏI�ړI�́A";
-		mes "�u�V���o���c�o���h���a���v��";
-		mes "��ƃ��b�P���x���̎x�z���玩�R�ɂ��A";
-		mes "�^�̋��a���ɂ��邱�Ƃ��B";
+		mes "[グスハル]";
+		mes "「秘密の羽」の最終目的は、";
+		mes "「シュバルツバルド共和国」を";
+		mes "企業レッケンベルの支配から自由にし、";
+		mes "真の共和国にすることだ。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�������c�c";
-		mes "������u�O���̋��́v���Ȃ��Ă�";
-		mes "�u�閧�̉H�v�̗͂�����";
-		mes "��Ƃ̉��\��H���~�߂������ȁB";
+		mes "[グスハル]";
+		mes "もちろん……";
+		mes "いずれ「外部の協力」がなくても";
+		mes "「秘密の羽」の力だけで";
+		mes "企業の横暴を食い止めたいがな。";
 		set LHZ_4QUE,10;
 		close;
 	case 10:
-		mes "[�O�X�n��]";
-		mes "���[��c�c";
-		mes "�����b�������Ȃ��Ă��܂������A";
-		mes "��̂̎���͂���ŕ����������낤�B";
-		mes "�������b�������A���ꂩ������";
-		mes "�u���C�G���X�g���E�X�哝�́v���B";
+		mes "[グスハル]";
+		mes "うーん……";
+		mes "少し話が長くなってしまったが、";
+		mes "大体の事情はこれで分かっただろう。";
+		mes "さっき話したが、これから会う方は";
+		mes "「ワイエルストラウス大統領」だ。";
 		next;
-		mes "[�O�X�n��]";
-		mes "�������A�哝�̂Ƃ����g����A";
-		mes "�N�ł����Ƃ����킯����Ȃ��B";
-		mes "�����A�g���؂�鏑�Ɍ�����΁A";
-		mes "�哝�̂ɉ�킹�Ă���邾�낤�B";
+		mes "[グスハル]";
+		mes "もちろん、大統領という身分上、";
+		mes "誰でも会えるというわけじゃない。";
+		mes "だが、身分証を秘書に見せれば、";
+		mes "大統領に会わせてくれるだろう。";
 		next;
-		mes "[�O�X�n��]";
-		mes "���̕��ɉ�鎞�ԑт́A";
-		mes "^FF0000�ߑO11������ߌ�2���̊�^000000��";
-		mes "^FF0000�ߌ�8������ߌ�11���̊�^000000�������B";
+		mes "[グスハル]";
+		mes "その方に会える時間帯は、";
+		mes "^FF0000午前11時から午後2時の間^000000と";
+		mes "^FF0000午後8時から午後11時の間^000000だけだ。";
 		next;
-		mes "[�O�X�n��]";
-		mes "���O�����Ԃ����킹�Ȃ���";
-		mes "��΂ɉ�Ȃ���������A";
-		mes "�C������悤�ɁB";
+		mes "[グスハル]";
+		mes "お前が時間を合わせないと";
+		mes "絶対に会えない方だから、";
+		mes "気をつけるように。";
 		next;
-		mes "[�O�X�n��]";
-		mes "����ł́A���Ԃ������";
-		mes "�s������悤�ɁB";
+		mes "[グスハル]";
+		mes "それでは、時間を守って";
+		mes "行動するように。";
 		set LHZ_4QUE,11;
 		close;
 	}
 }
 
-yuno_pre.gat,69,20,4	script	�鏑	862,{
+yuno_pre.gat,69,20,4	script	秘書	862,{
 	switch(HU_9QUE) {
 	case 35:
-		mes "[�w�X�A�j��]";
-		mes "�哝�̂���A";
-		mes "�N������Ȃ��悤�ɂ�";
-		mes "�\�������Ă���܂��B";
+		mes "[ヘスアニル]";
+		mes "大統領から、";
+		mes "誰も入れないようにと";
+		mes "申しつかっております。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�������A���̘b�𕷂��Ă��炦����A";
-		mes "���̍l���͕ς��͂��ł��B";
+		mes "しかし、私の話を聞いてもらえたら、";
+		mes "その考えは変わるはずです。";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "�c�c�c�c";
-		mes "�d�v�Ȏ��ł����H";
+		mes "[ヘスアニル]";
+		mes "…………";
+		mes "重要な事ですか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�Ȃɂ����d�v�Ȏ��ł��B";
+		mes "なによりも重要な事です。";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "�c�c�c�c";
-		mes "�킩��܂����B";
-		mes "�ǂ��������肭�������B";
+		mes "[ヘスアニル]";
+		mes "…………";
+		mes "わかりました。";
+		mes "どうぞお入りください。";
 		close2;
 		warp "yuno_pre.gat",113,53;
 		end;
 	case 36:
-		mes "[�w�X�A�j��]";
-		mes "�哝�̂͂��Ȃ��̖K���";
-		mes "���ł����}���Ă���܂��B";
+		mes "[ヘスアニル]";
+		mes "大統領はあなたの訪問を";
+		mes "いつでも歓迎しております。";
 		close2;
 		warp "yuno_pre.gat",113,53;
 		end;
@@ -9276,98 +9276,98 @@ yuno_pre.gat,69,20,4	script	�鏑	862,{
 	default:
 		if(LHZ_4QUE >= 21)
 			break;
-		mes "[�w�X�A�j��]";
-		mes "��������Ⴂ�܂��B";
-		mes "�ǂ�Ȃ��p�ł�������Ⴂ�܂������H";
+		mes "[ヘスアニル]";
+		mes "いらっしゃいませ。";
+		mes "どんなご用でいらっしゃいましたか？";
 		next;
 		if(LHZ_4QUE < 11)
-			setarray '@word$[1],"","���ɗp�͂���܂���","�哝�̂ɉ�ɗ��܂���","","���삳����c�c";
+			setarray '@word$[1],"","特に用はありません","大統領に会いに来ました","","お嬢さんを……";
 		else if(LHZ_4QUE <= 15)
-			setarray '@word$[1],"������c�c","","�哝�̂ɉ�ɗ��܂���","���ɗp�͂���܂���","";
+			setarray '@word$[1],"これを……","","大統領に会いに来ました","特に用はありません","";
 		switch(select('@word$[1],'@word$[2],'@word$[3],'@word$[4],'@word$[5])) {
 		case 1:
 			break;
 		case 2:
 		case 4:
-			mes "[�w�X�A�j��]";
-			mes "������́A";
-			mes "���{�̏d�v�@�ւ�����ꏊ�ł��B";
-			mes "����ɕ������ƁA�K�[�h�}����";
-			mes "�S������邱�Ƃ�����܂��B";
-			mes "�C�����čs�����Ă��������B";
+			mes "[ヘスアニル]";
+			mes "こちらは、";
+			mes "政府の重要機関がある場所です。";
+			mes "勝手に歩き回ると、ガードマンに";
+			mes "拘束されることもあります。";
+			mes "気をつけて行動してください。";
 			close;
 		case 3:
-			mes "[�w�X�A�j��]";
-			mes "�哝�̂Ƃ̖ʉ�́A";
-			mes "�\�߂��񑩂�����Ă���΁A";
-			mes "�\�ł��B";
-			mes "���񑩂͂������܂����H";
+			mes "[ヘスアニル]";
+			mes "大統領との面会は、";
+			mes "予めお約束をされていれば、";
+			mes "可能です。";
+			mes "お約束はございますか？";
 			next;
-			if(select("�͂�","������")==2) {
-				mes "[�w�X�A�j��]";
-				mes "���񑩂��Ȃ���΁A";
-				mes "�ʉ�͂ł��܂���B";
-				mes "���O�ɂ��񑩂��Ȃ����Ă���A";
-				mes "���z�����������B";
+			if(select("はい","いいえ")==2) {
+				mes "[ヘスアニル]";
+				mes "お約束がなければ、";
+				mes "面会はできません。";
+				mes "事前にお約束をなさってから、";
+				mes "お越しください。";
 				close;
 			}
-			mes "[�w�X�A�j��]";
-			mes "�����O�͉��Ƃ������Ⴂ�܂����H";
+			mes "[ヘスアニル]";
+			mes "お名前は何とおっしゃいますか？";
 			next;
 			menu strcharinfo(0),-;
-			mes "[�w�X�A�j��]";
-			mes "���[���Ɓc�c";
-			mes strcharinfo(0)+ "�l�ł���ˁH";
-			mes "���񑩂͂���Ă��Ȃ��悤�ł����c�c�B";
-			mes "�ēx���m�F�Ȃ����Ă���A";
-			mes "���z�����������B";
+			mes "[ヘスアニル]";
+			mes "えーっと……";
+			mes strcharinfo(0)+ "様ですよね？";
+			mes "お約束はされていないようですが……。";
+			mes "再度ご確認なさってから、";
+			mes "お越しください。";
 			close;
 		case 5:
-			mes "[�w�X�A�j��]";
-			mes "�\���󂠂�܂��񂪁A";
-			mes "�ꏊ�����ԈႦ�̂悤�ł��B";
-			mes "���悤�Ȃ�B";
+			mes "[ヘスアニル]";
+			mes "申し訳ありませんが、";
+			mes "場所をお間違えのようです。";
+			mes "さようなら。";
 			close;
 		}
 		if(countitem(7348) < 1) {
-			mes "[�w�X�A�j��]";
-			mes "�c�c�H";
-			mes "��������������Ă���̂ł��H";
+			mes "[ヘスアニル]";
+			mes "……？";
+			mes "何をおっしゃっているのです？";
 			close;
 		}
  		set '@hour,gettime(3);
  		if(('@hour < 11 || '@hour >= 14) && ('@hour < 20 || '@hour >= 23)) {
-			mes "[�w�X�A�j��]";
-			mes "�܂����񑩂̎��Ԃł͂Ȃ��悤�ł��B";
-			mes "�����ԂɂȂ�܂�����A";
-			mes "���z�����������B";
+			mes "[ヘスアニル]";
+			mes "まだお約束の時間ではないようです。";
+			mes "お時間になりましたら、";
+			mes "お越しください。";
 			close;
 		}
 		break;
 	case 16:
 		if(countitem(7342) < 1) {
-			mes "[�w�X�A�j��]";
-			mes "���͖Z�����̂ŁA";
-			mes "���X���҂����������B";
-			mes "�c�c�c�c�B";
+			mes "[ヘスアニル]";
+			mes "今は忙しいので、";
+			mes "少々お待ちください。";
+			mes "…………。";
 			close;
 		}
-		mes "[�w�X�A�j��]";
-		mes "����ɂ��́B";
-		mes "�ǂ̂悤�Ȃ��p���ł��傤���H";
+		mes "[ヘスアニル]";
+		mes "こんにちは。";
+		mes "どのようなご用件でしょうか？";
 		next;
-		menu "��������c�c",-;
-		mes "[�w�X�A�j��]";
-		mes "���c�c���̏��ނł��ˁB";
-		mes "����́A�������ڎ���";
-		mes "�s���悤�Ȃ��̂ł��̂Ɂc�c�B";
-		mes "���q�l�ɂ��萔��";
-		mes "���������Ă��܂����悤�ł��ˁB";
+		menu "こちらを……",-;
+		mes "[ヘスアニル]";
+		mes "あ……あの書類ですね。";
+		mes "これは、私が直接取りに";
+		mes "行くようなものですのに……。";
+		mes "お客様にお手数を";
+		mes "かけさせてしまったようですね。";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "���ʓ|�����������āA";
-		mes "�\���󂲂����܂���B";
-		mes "�c�c�c�c�B";
+		mes "[ヘスアニル]";
+		mes "ご面倒をおかけして、";
+		mes "申し訳ございません。";
+		mes "…………。";
 		delitem 7342,1;
 		set LHZ_4QUE,17;
 		close;
@@ -9375,236 +9375,236 @@ yuno_pre.gat,69,20,4	script	�鏑	862,{
 	case 18:
 	case 19:
 	case 20:
-		mes "[�w�X�A�j��]";
-		mes "�哝�̂͑����A�o�����ł��̂ŁA";
-		mes "�ʉ�͂ł��܂���B";
-		mes "���O�ɂ��A������������΁A";
-		mes "�����Ԃ����Ƃ肢�����܂��B";
+		mes "[ヘスアニル]";
+		mes "大統領は只今、出張中ですので、";
+		mes "面会はできません。";
+		mes "事前にご連絡をくだされば、";
+		mes "お時間をおとりいたします。";
 		close;
 	case 38:
 	case 39:
-		mes "[�w�X�A�j��]";
-		mes "�哝�̂���A";
-		mes "�N������Ȃ��悤�ɂ�";
-		mes "�\�������Ă���܂��B";
+		mes "[ヘスアニル]";
+		mes "大統領から、";
+		mes "誰も入れないようにと";
+		mes "申しつかっております。";
 		close;
 	}
-	mes "[�w�X�A�j��]";
-	mes "�哝�̂����҂��ł��B";
-	mes "�ǂ��������肭�������B";
+	mes "[ヘスアニル]";
+	mes "大統領がお待ちです。";
+	mes "どうぞお入りください。";
 	close2;
 	warp "yuno_pre.gat",113,53;
 	end;
 }
 
-yuno_pre.gat,95,71,4	script	�x����	852,{
+yuno_pre.gat,95,71,4	script	警備兵	852,{
 	switch(LHZ_4QUE) {
 	case 11:
-		mes "[�x����]";
-		mes "���X���҂����������B";
-		mes "�����A�ڋq���ł��̂ŁB";
+		mes "[警備兵]";
+		mes "少々お待ちください。";
+		mes "只今、接客中ですので。";
 		set LHZ_4QUE,12;
 		close;
 	case 12:
 		if(rand(5)) {
-			mes "[�x����]";
-			mes "�܂��A�ڋq���ł��B";
-			mes "�������΂炭���҂����������B";
+			mes "[警備兵]";
+			mes "まだ、接客中です。";
+			mes "もうしばらくお待ちください。";
 			close;
 		}
-		mes "[�H�H�H�H]";
-		mes "���̌��͏��m�������܂����B";
-		mes "�ł́A����Łc�c�B";
+		mes "[？？？？]";
+		mes "その件は承知いたしました。";
+		mes "では、これで……。";
 		next;
-		mes "[�H�H�H]";
-		mes "���[�ށc�c";
-		mes "������܂����B";
-		mes "�c�c�B";
+		mes "[？？？]";
+		mes "うーむ……";
+		mes "分かりました。";
+		mes "……。";
 		next;
-		hideoffnpc "�f�G�Ȑa�m#Lhz";
+		hideoffnpc "素敵な紳士#Lhz";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�c�c�c�c�c�c�B";
+		mes "[？？？？]";
+		mes "………………。";
 		next;
-		mes "[�x����]";
-		mes "����A���A��ł����A";
-		mes "�P�V�i������B";
+		mes "[警備兵]";
+		mes "あら、お帰りですか、";
+		mes "ケシナルさん。";
 		next;
-		mes "[�P�V�i��]";
-		mes "�����c�c";
-		mes "�����A���c�c�B";
-		mes "����H�@������̕��́H";
+		mes "[ケシナル]";
+		mes "ああ……";
+		mes "もう帰るよ……。";
+		mes "おや？　そちらの方は？";
 		next;
-		mes "[�x����]";
-		mes "���A�哝�̂ɁA";
-		mes "��ɂ��������������q�l�ł��B";
+		mes "[警備兵]";
+		mes "あ、大統領に、";
+		mes "会いにいらっしゃったお客様です。";
 		next;
-		mes "[�P�V�i��]";
-		mes "�������c�c����J�B";
+		mes "[ケシナル]";
+		mes "そうか……ご苦労。";
 		next;
-		hideonnpc "�f�G�Ȑa�m#Lhz";
-		mes "[�x����]";
-		mes "�n�b�I";
-		mes "�����l�ł��I";
+		hideonnpc "素敵な紳士#Lhz";
+		mes "[警備兵]";
+		mes "ハッ！";
+		mes "お疲れ様です！";
 		set LHZ_4QUE,13;
 		close;
 	case 13:
-		mes "[�x����]";
-		mes "���傤�ǐڋq���I�����悤�ł��B";
-		mes "���҂������܂����B";
-		mes "�ǂ��������肭�������B";
+		mes "[警備兵]";
+		mes "ちょうど接客を終えたようです。";
+		mes "お待たせしました。";
+		mes "どうぞお入りください。";
 		next;
-		if(select("����ł́c�c","���̕��́c�c�H")==1) {
-			mes "[�x����]";
-			mes "�哝�̊t���A";
-			mes "���q�l����������Ⴂ�܂����B";
+		if(select("それでは……","今の方は……？")==1) {
+			mes "[警備兵]";
+			mes "大統領閣下、";
+			mes "お客様がいらっしゃいました。";
 			next;
-			mes "-�c�c�c�c-";
+			mes "-…………-";
 			next;
-			mes "[�哝��]";
-			mes "������Ƒ҂悤�ɓ`���Ă���B";
+			mes "[大統領]";
+			mes "ちょっと待つように伝えてくれ。";
 			next;
-			mes "[�x����]";
-			mes "�͂��A�������܂�܂����B";
+			mes "[警備兵]";
+			mes "はい、かしこまりました。";
 			next;
-			mes "[�x����]";
-			mes "�\���󂠂�܂���B";
-			mes "���������̊ԁA";
-			mes "���҂����������܂��ł��傤���H";
+			mes "[警備兵]";
+			mes "申し訳ありません。";
+			mes "もう少しの間、";
+			mes "お待ちいただけますでしょうか？";
 			close;
 		}
-		mes "[�x����]";
-		mes "�͂��H�@�P�V�i������̂��Ƃł����H";
-		mes "���̕��̓��b�P���x���Ђ̕��ŁA";
-		mes "���{�ږ�������󂯂Ă���������";
-		mes "�u�C���h���E�P�V�i���v����ł��B";
+		mes "[警備兵]";
+		mes "はい？　ケシナルさんのことですか？";
+		mes "その方はレッケンベル社の方で、";
+		mes "政府顧問も引き受けていらっしゃる";
+		mes "「イリドン・ケシナル」さんです。";
 		next;
-		mes "[�x����]";
-		mes "�F�X�ȈČ������̂��߁A";
-		mes "�悭�����������Ă���܂��B";
+		mes "[警備兵]";
+		mes "色々な案件処理のため、";
+		mes "よくいらっしゃっております。";
 		set LHZ_4QUE,14;
 		close;
 	default:
-		mes "[�x����]";
-		mes "���c�c";
-		mes "�����Ă��Ȃ�����";
-		mes "����������Ă���܂��B";
-		mes "�c�c�B";
+		mes "[警備兵]";
+		mes "あ……";
+		mes "入ってきなさいと";
+		mes "おっしゃっております。";
+		mes "……。";
 		next;
-		mes "[�x����]";
-		mes "����ł́c�c�B";
+		mes "[警備兵]";
+		mes "それでは……。";
 		close2;
 		warp "yuno_pre.gat",78,69;
 		end;
 	}
 }
 
-yuno_pre.gat,96,69,2	script	�f�G�Ȑa�m#Lhz	754,{
+yuno_pre.gat,96,69,2	script	素敵な紳士#Lhz	754,{
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-yuno_pre.gat,69,79,4	script	�哝��	872,{
+yuno_pre.gat,69,79,4	script	大統領	872,{
 	cutin "lhz_karl",2;
 	switch(HU_9QUE) {
 	case 35:
-		mes "[�J�[��]";
-		mes "�N�́c�c�I";
-		mes "�c�c�Ӂc�c�v���Ԃ肾�ȁB";
+		mes "[カール]";
+		mes "君は……！";
+		mes "……ふ……久しぶりだな。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�܂��c�c";
-		mes "���b�P���x���ɑ΍R����";
-		mes "�ӎv�͂���܂����H";
+		mes "まだ……";
+		mes "レッケンベルに対抗する";
+		mes "意思はありますか？";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�c�c�c�c";
+		mes "[カール]";
+		mes "……………………";
 		next;
-		mes "[�J�[��]";
-		mes "�悭�킩��Ȃ��B";
-		mes "�閧�̉H�͉�̂���A";
-		mes "���̎��͈ȑO�̑哝�̂����Ɠ���";
-		mes "�ނ�̒u���ɂ����Ȃ��c�c";
+		mes "[カール]";
+		mes "よくわからない。";
+		mes "秘密の羽は解体され、";
+		mes "今の私は以前の大統領たちと同じ";
+		mes "彼らの置物にすぎない……";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���͈ȑO�A���Q���V��������";
-		mes "�Ȋw�҂��������ɉ�܂����B";
-		mes "�����āA���Q���V��������";
-		mes "�����������󂯎��";
-		mes "�ނ�̐��̌����Ɏg���Ă���";
-		mes "�d�v�@���j�󂵂܂����B";
+		mes "私は以前、レゲンシュルムの";
+		mes "科学者だった方に会いました。";
+		mes "そして、レゲンシュルムの";
+		mes "研究資料を受け取り";
+		mes "彼らの生体研究に使われていた";
+		mes "重要機器を破壊しました。";
 		next;
 		emotion 0;
-		mes "[�J�[��]";
-		mes "�c�c!?";
-		mes "����Ȏ��������̂��I";
-		mes "�N�́c�c�N�͖{���ɗ��h���I";
-		mes "����Ȃ̂Ɏ��́c�c";
+		mes "[カール]";
+		mes "……!?";
+		mes "そんな事をしたのか！";
+		mes "君は……君は本当に立派だ！";
+		mes "それなのに私は……";
 		next;
-		mes "[�J�[��]";
-		mes "�������A���������ƌ�������!?";
-		mes "���̎��������ɂ���I";
-		mes "���ꂪ����Γz���";
-		mes "�傫�ȑŌ���";
-		mes "�^���邱�Ƃ��ł���͂����I";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�哝�̂�������߂��A";
-		mes "�ނ�ɒ�R����Ɩ񑩂��Ă�������Ȃ�";
-		mes "���n�����܂��B";
-		next;
-		mes "[�J�[��]";
-		mes "���͂��̍��̑哝�̂��B";
-		mes "���Ƃ���x�͍��܂����Ƃ͂����A";
-		mes "�ڂɉf�鈫�����������Ƃ͂ł���B";
-		next;
-		mes "[�J�[��]";
-		mes "�����Ă��܂������̍����A";
-		mes "�܂��h�点�Ă݂���ƌ��S����";
-		mes "���̓����v���o���c�c";
-		mes "���͂��̐S��Y��Ă����悤���B";
+		mes "[カール]";
+		mes "そうだ、研究資料と言ったか!?";
+		mes "その資料を私にくれ！";
+		mes "それがあれば奴らに";
+		mes "大きな打撃を";
+		mes "与えることができるはずだ！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����h�ł��B�ł́A";
-		mes "���̏��ނ͑哝�̂ɍ����グ�܂��B";
-		mes "�ނ�ɖڂɕ������Ă���Ă��������B";
-		mes "�n�n�n�B";
+		mes "大統領があきらめず、";
+		mes "彼らに抵抗すると約束してくださるなら";
+		mes "お渡しします。";
 		next;
-		mes "[�J�[��]";
-		mes "�ǂ�ǂ�c�c";
+		mes "[カール]";
+		mes "私はこの国の大統領だ。";
+		mes "たとえ一度は挫折したとはいえ、";
+		mes "目に映る悪を見逃すことはできん。";
 		next;
-		mes "[�J�[��]";
-		mes "�ރb�I";
-		mes "����͂������I";
+		mes "[カール]";
+		mes "腐ってしまったこの国を、";
+		mes "また蘇らせてみせると決心した";
+		mes "あの日を思い出す……";
+		mes "私はその心を忘れていたようだ。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����Ă�����񍐂��B";
-		mes "�閧�̉H�ɂ��A�܂�������߂���";
-		mes "�閧���Ɋ����𑱂��Ă���";
-		mes "�l���������܂��B";
-		mes "������x����΂��Ă݂Ă��������B";
+		mes "ご立派です。では、";
+		mes "この書類は大統領に差し上げます。";
+		mes "彼らに目に物見せてやってください。";
+		mes "ハハハ。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�܂������B";
-		mes "�������p���������Ȃ�B";
+		mes "[カール]";
+		mes "どれどれ……";
 		next;
-		mes "[�J�[��]";
-		mes "�N�������Ă��Ă��ꂽ���̎�����";
-		mes "���ɗE�C�ƈӎu�����߂����Ă��ꂽ�B";
+		mes "[カール]";
+		mes "むッ！";
+		mes "これはすごい！";
 		next;
-		mes "[�J�[��]";
-		mes "�܂��閧�̉H�̃����o�[��";
-		mes "�W�ߒ����Ȃ���΂Ȃ�Ȃ��B";
-		mes "�����A�z��̍s����l�X��";
-		mes "�m�点�Ȃ��Ă͂Ȃ�Ȃ��I";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "そしてもう一つ報告が。";
+		mes "秘密の羽にも、まだあきらめずに";
+		mes "秘密裏に活動を続けている";
+		mes "人たちがいます。";
+		mes "もう一度がんばってみてください。";
 		next;
-		mes "[�J�[��]";
-		mes "�N�ɂ͖{���Ɋ��ӂ��Ă���B";
-		mes "�K���N�ɃV���o���c�o���h��";
-		mes "��]�Ɩ����������鎖��񑩂��悤�B";
-		mes "���ꂩ���̂��Ƃ͎��ɔC���Ȃ����B";
+		mes "[カール]";
+		mes "……まったく。";
+		mes "自分が恥ずかしくなる。";
+		next;
+		mes "[カール]";
+		mes "君が持ってきてくれたこの資料は";
+		mes "私に勇気と意志を取り戻させてくれた。";
+		next;
+		mes "[カール]";
+		mes "また秘密の羽のメンバーを";
+		mes "集め直さなければならない。";
+		mes "そう、奴らの行いを人々に";
+		mes "知らせなくてはならない！";
+		next;
+		mes "[カール]";
+		mes "君には本当に感謝している。";
+		mes "必ず君にシュバルツバルドの";
+		mes "希望と未来を見せる事を約束しよう。";
+		mes "これから後のことは私に任せなさい。";
 		set HU_9QUE,36;
 		delitem 7342,1;
 		getitem 617,1;
@@ -9616,18 +9616,18 @@ yuno_pre.gat,69,79,4	script	�哝��	872,{
 		cutin "lhz_karl",255;
 		end;
 	case 36:
-		mes "[�J�[��]";
-		mes "���͎��̗͂�";
-		mes "�Ȃ��Ă����l�X���W�߂Ă���B";
-		mes "�N�̎����Ă��������̂������ŁA";
-		mes "�l�X�͕��N�����悤���B";
+		mes "[カール]";
+		mes "今は私の力に";
+		mes "なってくれる人々を集めている。";
+		mes "君の持ってきた資料のおかげで、";
+		mes "人々は奮起したようだ。";
 		next;
-		mes "[�J�[��]";
-		mes "�����ɒ������s���Ă݂���A";
-		mes "���Q���V�������͌���";
-		mes "�ғ������~����Ă���悤���B";
-		mes "�S�ČN�̂��������B";
-		mes "�N�̓V���o���c�o���h�̉p�Y���I";
+		mes "[カール]";
+		mes "密かに調査を行ってみたら、";
+		mes "レゲンシュルムは現在";
+		mes "稼動が中止されているようだ。";
+		mes "全て君のおかげだ。";
+		mes "君はシュバルツバルドの英雄だ！";
 		close2;
 		cutin "lhz_karl",255;
 		end;
@@ -9637,190 +9637,190 @@ yuno_pre.gat,69,79,4	script	�哝��	872,{
 		warp "yuno_pre.gat",84,22;
 		end;
 	case 14:
-		mes "[�J�[��]";
-		mes "����c�c����Ɨ����ȁB";
-		mes "�F�X�m�肽�����Ƃ�����A";
-		mes "�s�������邾�낤���c�c";
-		mes "���ɂ͂��܂�󂫎��Ԃ��Ȃ���łˁB";
+		mes "[カール]";
+		mes "おや……やっと来たな。";
+		mes "色々知りたいこともあり、";
+		mes "不満もあるだろうが……";
+		mes "私にはあまり空き時間がないんでね。";
 		next;
-		mes "[�J�[��]";
-		mes "���ɃK���V���^�C���B����";
-		mes "�b�͕��������낤���A";
-		mes "��X�̍ŏI�ڕW�́A";
-		mes "��Ƃ̖v�����B";
+		mes "[カール]";
+		mes "既にガルシュタイン達から";
+		mes "話は聞いただろうが、";
+		mes "我々の最終目標は、";
+		mes "企業の没落だ。";
 		next;
-		mes "[�J�[��]";
-		mes "���́A�����]�ނ��ɂ��ẮA";
-		mes "�N���m���Ă���ʂ�c�c";
-		mes "�V���o���c�o���h���a�����A";
-		mes "�ނ��Ƃ̈ӂ̂܂܂ɂ���Ă���̂́A";
-		mes "�D�܂����Ȃ����炾�B";
+		mes "[カール]";
+		mes "何故、それを望むかについては、";
+		mes "君が知っている通り……";
+		mes "シュバルツバルド共和国が、";
+		mes "彼ら企業の意のままにされているのは、";
+		mes "好ましくないからだ。";
 		next;
-		mes "[�J�[��]";
-		mes "�m�肽�����e�͑������낤���A";
-		mes "���Ԃ̊֌W��A���������e��";
-		mes "�i���Ď��₷��悤�ɁB";
+		mes "[カール]";
+		mes "知りたい内容は多いだろうが、";
+		mes "時間の関係上、いくつか内容を";
+		mes "絞って質問するように。";
 		next;
-		mes "[�J�[��]";
-		mes "���Ȃ݂Ɏ���̌�ɁA";
-		mes "���݂�����������B";
-		mes "�ł́A�m�肽�����Ƃ�����΁A";
-		mes "�Ȍ��ɕ����Ă���B";
+		mes "[カール]";
+		mes "ちなみに質問の後に、";
+		mes "頼みたい事がある。";
+		mes "では、知りたいことがあれば、";
+		mes "簡潔に聞いてくれ。";
 		while(1) {
 			next;
-			switch(select("�O���̒c�̂Ƃ́c�c�H","��Ƃ̖ړI","�閧�̉H�̖ړI","����ׂ����Ƃ́H","����͂���܂���")) {
+			switch(select("外部の団体とは……？","企業の目的","秘密の羽の目的","するべきことは？","質問はありません")) {
 			case 1:
-				mes "[�J�[��]";
-				mes "���[�ށc�c���ۂ̂Ƃ���A";
-				mes "�V���o���c�o���h���ŁA";
-				mes "��Ƃ̖ڂ𓦂�āA";
-				mes "�閧�g�D���^�c����̂�";
-				mes "��ςȂ��Ƃ��B";
+				mes "[カール]";
+				mes "うーむ……実際のところ、";
+				mes "シュバルツバルド内で、";
+				mes "企業の目を逃れて、";
+				mes "秘密組織を運営するのは";
+				mes "大変なことだ。";
 				next;
-				mes "[�J�[��]";
-				mes "�����A�v��͑啪�����Ă������A";
-				mes "�Ȃ��Ȃ��g�D�̗����グ��";
-				mes "�ł��Ȃ������B";
-				mes "����Ȏ��A����c�̂����͂�";
-				mes "���������Ă����̂��B";
+				mes "[カール]";
+				mes "当初、計画は大分練っていたが、";
+				mes "なかなか組織の立ち上げが";
+				mes "できなかった。";
+				mes "そんな時、ある団体が協力を";
+				mes "もちかけてきたのだ。";
 				next;
-				mes "[�J�[��]";
-				mes "�����B�ɂ͂���ړI�����邪�A";
-				mes "���ꂪ�A�哝�̂ł��鎄�̍l����";
-				mes "���Ă�����̂��Ɓc�c�B";
+				mes "[カール]";
+				mes "自分達にはある目的があるが、";
+				mes "それが、大統領である私の考えと";
+				mes "似ているものだと……。";
 				next;
-				mes "[�J�[��]";
-				mes "�ŏ��́A���ꂪ�����Ӗ����邩";
-				mes "������Ȃ������B";
-				mes "�����ŁA�����������Ă݂��Ƃ���A";
-				mes "�ނ炪^0000FF�J�v���T�[�r�X^000000�̎҂���";
-				mes "���������B";
+				mes "[カール]";
+				mes "最初は、それが何を意味するか";
+				mes "分からなかった。";
+				mes "そこで、少し調査してみたところ、";
+				mes "彼らが^0000FFカプラサービス^000000の者だと";
+				mes "分かった。";
 				next;
-				mes "[�J�[��]";
-				mes "��X�̊��G�ł́A";
-				mes "�ނ�͑啪�O�����X�̓�����";
-				mes "�m���Ă����悤���c�c�B";
+				mes "[カール]";
+				mes "我々の感触では、";
+				mes "彼らは大分前から我々の動きを";
+				mes "知っていたようだ……。";
 				next;
-				mes "[�J�[��]";
-				mes "�₪�Ĕނ�̋��͂ɂ��A";
-				mes "�g�D�𗧂��グ���B";
-				mes "���̌���A�F�X���ׂĂ݂��񂾂��c�c�B";
+				mes "[カール]";
+				mes "やがて彼らの協力により、";
+				mes "組織を立ち上げた。";
+				mes "その後も、色々調べてみたんだが……。";
 				next;
-				mes "[�J�[��]";
-				mes "���݁A^0000FF�J�v���T�[�r�X^000000�́A";
-				mes "�~�b�h�K���h�嗤�̏��Ƃ�";
-				mes "�啔����S���Ă���B";
-				mes "�����ŋ߁A�Ƃ���c�̂��A";
-				mes "���̉c�Ɨ̈��N�H���Ă���炵���B";
+				mes "[カール]";
+				mes "現在、^0000FFカプラサービス^000000は、";
+				mes "ミッドガルド大陸の商業の";
+				mes "大部分を担っている。";
+				mes "だが最近、とある団体が、";
+				mes "その営業領域を侵食しているらしい。";
 				next;
-				mes "[�J�[��]";
-				mes "�����ŃJ�v���T�[�r�X���A";
-				mes "���̒c�̂ɂ��Ē��������Ƃ���A";
-				mes "���ꂪ^FF0000�W�����_�C�x���g^000000�ł��邱�Ƃ�";
-				mes "�킩�����B�������A���̒c�̂̔w���";
-				mes "�����Ƃ����邱�Ƃ����������B";
-				mes "���̊�ƂƂ́c�c^FF0000���b�P���x��^000000�B";
+				mes "[カール]";
+				mes "そこでカプラサービスが、";
+				mes "その団体について調査したところ、";
+				mes "それが^FF0000ジョンダイベント^000000であることが";
+				mes "わかった。しかも、その団体の背後に";
+				mes "ある企業がいることも判明した。";
+				mes "その企業とは……^FF0000レッケンベル^000000。";
 				next;
-				mes "[�J�[��]";
-				mes "�܂��A����o�H��ʂ��āA";
-				mes "���݂̑哝�̂ł��鎄���A���̊�Ƃ�";
-				mes "�����ɑΗ����Ă��邱�Ƃ�";
-				mes "�m�����悤���B����Ȍo�܂�";
-				mes "�J�v���T�[�r�X�́A";
-				mes "��X�ɋ߂Â��Ă����悤���B";
+				mes "[カール]";
+				mes "また、ある経路を通じて、";
+				mes "現在の大統領である私が、その企業と";
+				mes "密かに対立していることも";
+				mes "知ったようだ。そんな経緯で";
+				mes "カプラサービスは、";
+				mes "我々に近づいてきたようだ。";
 				next;
-				mes "[�J�[��]";
-				mes "��X�ɑ΂��Ē��ڂ̉e���͂������A";
-				mes "��X�̗͂ƂȂ��Ă���̂́A�܂�";
-				mes "^0000FF�J�v���T�[�r�X^000000�Ƃ������Ƃ��B";
-				mes "���̒��ł�^FF0000�����O��^000000�Ƃ���";
-				mes "�������[���ւ���Ă���B";
+				mes "[カール]";
+				mes "我々に対して直接の影響力を持ち、";
+				mes "我々の力となっているのは、つまり";
+				mes "^0000FFカプラサービス^000000ということだ。";
+				mes "その中でも^FF0000公安三課^000000という";
+				mes "部署が深く関わっている。";
 				next;
-				mes "[�J�[��]";
-				mes "�������Ɏ���͂��邩�H";
+				mes "[カール]";
+				mes "何か他に質問はあるか？";
 				continue;
 			case 2:
-				mes "[�J�[��]";
-				mes "���[�ށc�c���́A������";
-				mes "�ƂĂ������܂��Ȃ񂾁B";
-				mes "��{�I�Ɋ�Ƃ́A������ׂ��邽�߂�";
-				mes "�c�̂ł���͂��Ȃ̂����c�c�B";
+				mes "[カール]";
+				mes "うーむ……実は、そこが";
+				mes "とてもあいまいなんだ。";
+				mes "基本的に企業は、お金を儲けるための";
+				mes "団体であるはずなのだが……。";
 				next;
-				mes "[�J�[��]";
-				mes "�u���b�P���x���v�̏ꍇ�́A";
-				mes "���̋K�͂��x���z���Ă��āc�c�B";
-				mes "���S�̂����łȂ��A";
-				mes "�嗤�S�̂����蒆�Ɏ��߂āA";
-				mes "������ׂ��悤�Ƃ��Ă���悤���B";
+				mes "[カール]";
+				mes "「レッケンベル」の場合は、";
+				mes "その規模が度を越していて……。";
+				mes "国全体だけでなく、";
+				mes "大陸全体をも手中に収めて、";
+				mes "お金を儲けようとしているようだ。";
 				next;
-				mes "[�J�[��]";
-				mes "�������u���b�P���x���v�̉���A";
-				mes "�ǂ̂悤�Ȑl���Ȃ̂��́A";
-				mes "�قƂ�ǈłɕ�܂�Ă���B";
-				mes "�哝�̂ł��鎄�ł�����A";
-				mes "���̐l�ɉ�̂́A���Ȃ荢���";
-				mes "�葱�����o�Ȃ���΂Ȃ�Ȃ��قǂ��B";
+				mes "[カール]";
+				mes "しかも「レッケンベル」の会長が、";
+				mes "どのような人物なのかは、";
+				mes "ほとんど闇に包まれている。";
+				mes "大統領である私ですらも、";
+				mes "その人に会うのは、かなり困難な";
+				mes "手続きを経なければならないほどだ。";
 				next;
-				mes "[�J�[��]";
-				mes "���ށc�c";
-				mes "�܂�A�ނ�̐^�̖ړI��";
-				mes "������Ȃ��Ƃ����킯���B";
-				mes "�c�c�c�c";
-				mes "�����A��Ȃ��b�ł͂��邪�c�c�B";
+				mes "[カール]";
+				mes "うむ……";
+				mes "つまり、彼らの真の目的は";
+				mes "分からないというわけだ。";
+				mes "…………";
+				mes "少し、情けない話ではあるが……。";
 				next;
-				mes "[�J�[��]";
-				mes "�������Ɏ���͂��邩�H";
+				mes "[カール]";
+				mes "何か他に質問はあるか？";
 				continue;
 			case 3:
-				mes "[�J�[��]";
-				mes "��X�̖ړI�́A��{�I��";
-				mes "�V���o���c�o���h���a����";
-				mes "��̒c�̂ł܂Ƃ߂悤�Ƃ������̂��B";
+				mes "[カール]";
+				mes "我々の目的は、基本的に";
+				mes "シュバルツバルド共和国を";
+				mes "一つの団体でまとめようというものだ。";
 				next;
-				mes "[�J�[��]";
-				mes "���̌��ʂƂ��āA";
-				mes "��Ɓu���b�P���x���v��";
-				mes "�Η�����悤�ɂȂ����̂��낤�c�c�B";
-				mes "�܂��A�����ƌ��ʂ�";
-				mes "����ւ�����Ƃ������邪�ˁB";
+				mes "[カール]";
+				mes "その結果として、";
+				mes "企業「レッケンベル」と";
+				mes "対立するようになったのだろう……。";
+				mes "まあ、原因と結果が";
+				mes "入れ替わったとも言えるがね。";
 				next;
-				mes "[�J�[��]";
-				mes "�ŏI�ڕW�́A�^�̈Ӗ��ł�";
-				mes "�V���o���c�o���h���a���̓Ɨ����B";
-				mes "�����Ă����̍ŏI�ڕW�́A";
-				mes "��Ɓu���b�P���x���v�̕��󂾁B";
-				mes "�{���ɓ�����̂����ȁB";
+				mes "[カール]";
+				mes "最終目標は、真の意味での";
+				mes "シュバルツバルド共和国の独立だ。";
+				mes "そしてあいつの最終目標は、";
+				mes "企業「レッケンベル」の崩壊だ。";
+				mes "本当に難しいものだがな。";
 				next;
-				mes "[�J�[��]";
-				mes "�������Ɏ���͂��邩�H";
+				mes "[カール]";
+				mes "何か他に質問はあるか？";
 				continue;
 			case 4:
-				mes "[�J�[��]";
-				mes "����ׂ����ƁH";
-				mes "����́A�N�̎���ɑS�ē����Ă���A";
-				mes "�b�����B";
-				mes "����ł́A���Ɏ���͂��邩�H";
+				mes "[カール]";
+				mes "するべきこと？";
+				mes "それは、君の質問に全て答えてから、";
+				mes "話そう。";
+				mes "それでは、他に質問はあるか？";
 				continue;
 			case 5:
-				mes "[�J�[��]";
-				mes "���ށc�c�������ȁB";
-				mes "����ł́A���̎d���������悤�B";
-				mes "����Ȃɑ�ςȂ��̂ł͂Ȃ����A";
-				mes "�}���̗p���Ȃ̂ŁA";
-				mes "�Ȃ�ׂ������������ė~�����B";
+				mes "[カール]";
+				mes "うむ……そうだな。";
+				mes "それでは、次の仕事を教えよう。";
+				mes "そんなに大変なものではないが、";
+				mes "急ぎの用件なので、";
+				mes "なるべく早く処理して欲しい。";
 				next;
-				if(select("���Ɏ��₪�c�c","������܂���")==1) {
-					mes "[�J�[��]";
-					mes "���₪�Ȃ��ƌ����Ă�������H";
-					mes "���ށc�c";
-					mes "���܂莞�Ԃ͂Ȃ�����A";
-					mes "�������₷��悤�ɁB";
+				if(select("他に質問が……","分かりました")==1) {
+					mes "[カール]";
+					mes "質問がないと言っていただろ？";
+					mes "うむ……";
+					mes "あまり時間はないから、";
+					mes "早く質問するように。";
 					continue;
 				}
-				mes "[�J�[��]";
-				mes "��낵���B";
-				mes "����ł́A������Ƒ҂��ĂĂ���B";
-				mes "�����ɗp�ӂ��邩��B";
+				mes "[カール]";
+				mes "よろしい。";
+				mes "それでは、ちょっと待っててくれ。";
+				mes "すぐに用意するから。";
 				set LHZ_4QUE,15;
 				close2;
 				cutin "lhz_karl",255;
@@ -9828,288 +9828,288 @@ yuno_pre.gat,69,79,4	script	�哝��	872,{
 			}
 		}
 	case 15:
-		mes "[�J�[��]";
-		mes "�܂��́c�c";
-		mes "^0000FF�A���f�o�����J�v���{��^000000�ɍs���āA";
-		mes "^FF0000�x�j�X^000000�Ƃ����l�ɉ�񂾁B";
-		mes "���̐l�ɉ�΁A���ɂ��ׂ����Ƃ�";
-		mes "�����Ă���邾�낤�B";
+		mes "[カール]";
+		mes "まずは……";
+		mes "^0000FFアルデバランカプラ本社^000000に行って、";
+		mes "^FF0000ベニス^000000という人に会うんだ。";
+		mes "その人に会えば、次にやるべきことを";
+		mes "教えてくれるだろう。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A�N�����ɉ�X��";
-		mes "�g�D�̈���ł���ȏ�A";
-		mes "�s���ɂ͋C�����Ă���B";
-		mes "������A���l�ɒm�����";
-		mes "���Ȏ��ԂɂȂ肩�˂Ȃ�����ȁB";
+		mes "[カール]";
+		mes "ああ、君が既に我々の";
+		mes "組織の一員である以上、";
+		mes "行動には気をつけてくれ。";
+		mes "万が一、他人に知られると";
+		mes "厄介な事態になりかねないからな。";
 		next;
-		mes "[�J�[��]";
-		mes "����ł͋}���ł���B";
-		mes "�̂�т肵�Ă���ɂ͂Ȃ����B";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "それでは急いでくれ。";
+		mes "のんびりしている暇はないぞ。";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "���c�c���ꂩ��c�c";
-		mes "���̏��ނ�^00FF00�w�X�A�j��^000000�ɓn���Ă���B";
-		mes "����ł͗��ށB";
+		mes "[カール]";
+		mes "あ……それから……";
+		mes "この書類を^00FF00ヘスアニル^000000に渡してくれ。";
+		mes "それでは頼む。";
 		set LHZ_4QUE,16;
 		getitem 7342,1;
 		break;
 	case 16:
-		mes "[�J�[��]";
-		mes "�}���ł���B";
-		mes "��x��ɂȂ�ƁA";
-		mes "���̌����ʖڂɂȂ邾���łȂ��A";
-		mes "�g�D���̂��̂Ɋ댯���y�ԁB";
-		mes "�����c�c�B";
+		mes "[カール]";
+		mes "急いでくれ。";
+		mes "手遅れになると、";
+		mes "この件が駄目になるだけでなく、";
+		mes "組織そのものに危険が及ぶ。";
+		mes "早く……。";
 		break;
 	case 21:
 		if(countitem(7343) < 1) {
-			mes "[�J�[��]";
-			mes "����ł������̂͂ǂꂾ�H";
-			mes "�}���ł���B";
-			mes "��x��ɂȂ�ƁA";
-			mes "���̌����ʖڂɂȂ邾���łȂ��A";
-			mes "�g�D���̂��̂Ɋ댯���y�ԁB";
-			mes "�����c�c�B";
+			mes "[カール]";
+			mes "頼んでいたものはどれだ？";
+			mes "急いでくれ。";
+			mes "手遅れになると、";
+			mes "この件が駄目になるだけでなく、";
+			mes "組織そのものに危険が及ぶ。";
+			mes "早く……。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "����J�ł������B";
-		mes "��ɘA���͎󂯂Ă�����B";
-		mes "���ށc�c";
-		mes "���܂�󋵂͂����킵���Ȃ��悤���ȁB";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "ご苦労であった。";
+		mes "先に連絡は受けていたよ。";
+		mes "うむ……";
+		mes "あまり状況はおもわしくないようだな。";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "�܂����ȁc�c";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "まずいな……";
+		mes "…………。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�Ƃɂ����A�����n���Ă���B";
-		mes "���͂��̏��ނ��m�F���邩��A";
-		mes "���̊ԏ����A�x��ł��Ȃ����B";
+		mes "[カール]";
+		mes "……とにかく、それを渡してくれ。";
+		mes "私はその書類を確認するから、";
+		mes "その間少し、休んでいなさい。";
 		set LHZ_4QUE,22;
 		delitem 7343,1;
 		break;
 	case 22:
 		if(rand(5)) {
-			mes "[�J�[��]";
-			mes "�܂��m�F�����B";
-			mes "���������҂悤�ɁB";
-			mes "�N�������A�x�񂾕����������B";
+			mes "[カール]";
+			mes "まだ確認中だ。";
+			mes "もう少し待つように。";
+			mes "君も少し、休んだ方がいいぞ。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "����c�c��͂肻�����B";
-		mes "�N�������ė��������m�F���Ă݂����A";
-		mes "�܂�����Ȃ����̂�����悤���B";
+		mes "[カール]";
+		mes "うん……やはりそうか。";
+		mes "君が持って来た情報を確認してみたが、";
+		mes "まだ足りないものがあるようだ。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A���̏�񂪑S��";
-		mes "���ɗ����Ȃ��Ƃ����킯�ł͂Ȃ��B";
-		mes "���̏��ɂ��Ɓc�c";
-		mes "���̊�Ƃ̌�������";
-		mes "�@�����������o���A";
-		mes "�p������܂����������B";
+		mes "[カール]";
+		mes "ああ、この情報が全く";
+		mes "役に立たないというわけではない。";
+		mes "この情報によると……";
+		mes "あの企業の研究員が";
+		mes "機密情報を持ち出し、";
+		mes "姿をくらましたそうだ。";
 		next;
-		mes "[�J�[��]";
-		mes "���̔ނ̖���^FF0000�V�h�N�X^000000�B";
-		mes "���炭^FF0000�A�C���u���b�N^000000���ӂ�";
-		mes "�B��Ă���Ǝv����B";
-		mes "���ށc�c����ȕs�m���ȏ��ł�";
-		mes "�����Ȃ��͂Ȃ����c�c�B";
+		mes "[カール]";
+		mes "その彼の名は^FF0000シドクス^000000。";
+		mes "恐らく^FF0000アインブロック^000000周辺に";
+		mes "隠れていると思われる。";
+		mes "うむ……こんな不確かな情報でも";
+		mes "動けなくはないか……。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A���̏�񂪎����ŁA";
-		mes "�ނ����̊�Ƃ̔閧��";
-		mes "�m���Ă����Ƃ�����c�c�B";
-		mes "���̔閧������ɓ���΁A";
-		mes "��X�͂��̊�Ƃ�ׂ����߂�";
-		mes "�傫�ȗ͂𓾂��邩������Ȃ��B";
+		mes "[カール]";
+		mes "もし、この情報が事実で、";
+		mes "彼があの企業の秘密を";
+		mes "知っていたとしたら……。";
+		mes "その秘密さえ手に入れば、";
+		mes "我々はあの企業を潰すための";
+		mes "大きな力を得られるかもしれない。";
 		next;
-		mes "[�J�[��]";
-		mes "���Ⴀ�A�ĂьN�Ɏd����^���悤�B";
-		mes "���ꂩ��^0000FF�A�C���u���b�N^000000�֍s���āA";
-		mes "^FF0000�V�h�N�X^000000�Ƃ����l��{���Ă���B";
-		mes "�����Ĕނ���A��Ƃ̔閧��";
-		mes "�����o���Ă��ė~�����B";
+		mes "[カール]";
+		mes "じゃあ、再び君に仕事を与えよう。";
+		mes "これから^0000FFアインブロック^000000へ行って、";
+		mes "^FF0000シドクス^000000という人を捜してくれ。";
+		mes "そして彼から、企業の秘密を";
+		mes "聞き出してきて欲しい。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A�}���񂾁B";
-		mes "�z��ɐ���ł����O�Ɂc�c�B";
+		mes "[カール]";
+		mes "さあ、急ぐんだ。";
+		mes "奴らに先手を打たれる前に……。";
 		set LHZ_4QUE,23;
 		break;
 	case 23:
-		if(EIN_3QUE < 11) {	//�V�h�N�X�N�G�X�g�ɂĔ��s
-			mes "[�J�[��]";
-			mes "�ނ�������́A������������A";
-			mes "��X�ɂ͂��܂�";
-			mes "���ɗ����Ȃ���������Ȃ��B";
+		if(EIN_3QUE < 11) {	//シドクスクエストにて発行
+			mes "[カール]";
+			mes "彼が握る情報は、もしかしたら、";
+			mes "我々にはあまり";
+			mes "役に立たないかもしれない。";
 			next;
-			mes "[�J�[��]";
-			mes "�������A��X���ނ�ƑΛ�����ɂ́A";
-			mes "�܂��͂��s�����Ă���B�����炱���A";
-			mes "���̊�ƂɊւ������";
-			mes "�ł��邾������";
-			mes "�W�߂Ȃ���΂Ȃ�Ȃ��񂾁B";
+			mes "[カール]";
+			mes "しかし、我々が彼らと対峙するには、";
+			mes "まだ力が不足している。だからこそ、";
+			mes "あの企業に関する情報は";
+			mes "できるだけ多く";
+			mes "集めなければならないんだ。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "����H";
-		mes "���ɉ����������Ƃ�����̂��H";
+		mes "[カール]";
+		mes "うん？";
+		mes "他に何か言うことがあるのか？";
 		next;
-		if(select("���Ɂc�c","�V�h�N�X�́c�c")==1) {
-			mes "[�J�[��]";
-			mes "����Ȃ�A�}���ł���B";
-			mes "���炭�A�ނ̐g�͊���";
-			mes "�댯�ɂ��炳��Ă���Ǝv����B";
+		if(select("特に……","シドクスは……")==1) {
+			mes "[カール]";
+			mes "それなら、急いでくれ。";
+			mes "恐らく、彼の身は既に";
+			mes "危険にさらされていると思われる。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "���c�c�c�c";
-		mes "�����������̂��c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "う…………";
+		mes "そうだったのか……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�ꑫ�x���������B";
-		mes "�������A�K���Ȃ��ƂɁA";
-		mes "�N�������ڌ����Ă��邩��c�c�B";
+		mes "[カール]";
+		mes "……一足遅かったか。";
+		mes "しかし、幸いなことに、";
+		mes "君がそれを目撃しているから……。";
 		next;
-		mes "[�J�[��]";
-		mes "����Łc�c�B";
+		mes "[カール]";
+		mes "それで……。";
 		next;
-		mes "[�x����]";
-		mes "�哝�̊t���A�w�X�A�j������";
-		mes "���}�A��������������ł��B";
+		mes "[警備兵]";
+		mes "大統領閣下、ヘスアニルさんが";
+		mes "至急、お会いしたいそうです。";
 		next;
-		mes "[�J�[��]";
-		mes "���[��H";
-		mes "������H";
-		mes "����Ȃ����B";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "うーん？";
+		mes "ううん？";
+		mes "入れなさい。";
+		mes "…………。";
 		next;
-		mes "[�J�[��]";
-		mes "�}�ɁA���̗p�����c�c�B";
+		mes "[カール]";
+		mes "急に、何の用だか……。";
 		next;
-		hideoffnpc "�鏑#Lhz";
+		hideoffnpc "秘書#Lhz";
 		next;
-		mes "[�J�[��]";
-		mes "�}�ȗp�����āA�����ˁH";
+		mes "[カール]";
+		mes "急な用件って、何だね？";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "���c�c";
-		mes "���q�l���������������̂ɁA";
-		mes "�\���󂠂�܂���B";
-		mes "���}�A���n�����������̂�";
-		mes "�������܂��āc�c�B";
+		mes "[ヘスアニル]";
+		mes "あ……";
+		mes "お客様がいらっしゃったのに、";
+		mes "申し訳ありません。";
+		mes "至急、お渡ししたいものが";
+		mes "ございまして……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ӂށc�c";
-		mes "����Ȃɋ}���Ȃ�A";
-		mes "���A�󂯎�낤�B";
+		mes "[カール]";
+		mes "ふむ……";
+		mes "そんなに急ぎなら、";
+		mes "今、受け取ろう。";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "������ɂȂ�܂��B";
+		mes "[ヘスアニル]";
+		mes "こちらになります。";
 		next;
-		mes "-�w�X�A�j���́A";
-		mes "�哝�̂ɏ��ޕ�݂�n����-";
+		mes "-ヘスアニルは、";
+		mes "大統領に書類包みを渡した-";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�I";
-		mes "����́c�c";
-		mes "����c�c";
-		mes "�������ȁc�c�B";
-		mes "����ł͉������Ă�낵���B";
+		mes "[カール]";
+		mes "……！";
+		mes "これは……";
+		mes "うん……";
+		mes "そうだな……。";
+		mes "それでは下がってよろしい。";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "�������܂�܂����B";
-		mes "���ז����Đ\���󂠂�܂���ł����B";
-		mes "���炢�����܂����B";
+		mes "[ヘスアニル]";
+		mes "かしこまりました。";
+		mes "お邪魔して申し訳ありませんでした。";
+		mes "失礼いたしました。";
 		next;
-		hideonnpc "�鏑#Lhz";
+		hideonnpc "秘書#Lhz";
 		next;
-		mes "[�J�[��]";
-		mes "�����̊ԁA�҂��Ă��Ă���B";
-		mes "���}�A�m�F���������̂�";
-		mes "�ł�������ȁB";
+		mes "[カール]";
+		mes "少しの間、待っていてくれ。";
+		mes "至急、確認したいものが";
+		mes "できたからな。";
 		set LHZ_4QUE,24;
 		break;
 	case 24:
 		if(rand(5)) {
-			mes "[�J�[��]";
-			mes "�܂���荞�ݒ����B";
-			mes "���������A�����ő҂��ĂĂ���B";
-			mes "���������A�ǂݏI���邩��c�c�B";
+			mes "[カール]";
+			mes "まだ取り込み中だ。";
+			mes "もう少し、そこで待っててくれ。";
+			mes "もうすぐ、読み終えるから……。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "���[�ށc�c���̏��ނɂ��ƁA";
-		mes "�u�V�h�N�X�v�����̏���";
-		mes "���肵���ꏊ�𒲍��������ʁc�c�B";
+		mes "[カール]";
+		mes "うーむ……この書類によると、";
+		mes "「シドクス」がその情報を";
+		mes "入手した場所を調査した結果……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ނ����̏��𓾂��ꏊ�́A";
-		mes "^0000FF���b�P���x�����̌�����";
-		mes "�u���Q���V�������v�ɂ���";
-		mes "�u�閧�����ۊǎ��v^000000";
-		mes "�Ƃ������Ƃ����������B";
+		mes "[カール]";
+		mes "彼がその情報を得た場所は、";
+		mes "^0000FFレッケンベル内の研究所";
+		mes "「レゲンシュルム」にある";
+		mes "「秘密文書保管室」^000000";
+		mes "ということが分かった。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A�����ւ̐N���́A";
-		mes "���Ȃ�댯�ł���A������ɂ߂�B";
-		mes "���[��c�c�B";
+		mes "[カール]";
+		mes "だが、そこへの侵入は、";
+		mes "かなり危険であり、困難を極める。";
+		mes "うーん……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ꉞ�A^0000FF���q�^���[��^000000���ӂ�";
-		mes "�ҋ@���Ă���^FF0000�J�v���T�[�r�X^000000��";
-		mes "�l�ɉ���Ă݂Ă���B";
-		mes "�s���΂����ƁA���̐l�̕�����";
-		mes "�N�ɐ��������Ă��邾�낤�B";
+		mes "[カール]";
+		mes "一応、^0000FFリヒタルゼン^000000周辺で";
+		mes "待機している^FF0000カプラサービス^000000の";
+		mes "人に会ってみてくれ。";
+		mes "行けばきっと、その人の方から";
+		mes "君に声をかけてくるだろう。";
 		set LHZ_4QUE,26;
 		break;
 	case 25:
-		mes "[�J�[��]";
-		mes "�����ށc�c��͂�ނ�́A";
-		mes "^FF0000���~���̐S���̌���^000000���W�߂Ă����ȁB";
-		mes "��������́A�ނ�͂�����W�߂�";
-		mes "�ǂ��������Ȃ񂾁H";
+		mes "[カール]";
+		mes "ううむ……やはり彼らは、";
+		mes "^FF0000ユミルの心臓の欠片^000000を集めていたな。";
+		mes "しかし一体、彼らはそれを集めて";
+		mes "どうするつもりなんだ？";
 		next;
-		mes "[�J�[��]";
-		mes "���[�ށc�c";
-		mes "��͂��񂪕s�����Ă���ȁc�c�B";
-		mes "����c�c�B";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "うーむ……";
+		mes "やはり情報が不足しているな……。";
+		mes "うん……。";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c�c�c�B";
+		mes "[カール]";
+		mes "……";
+		mes "…………";
+		mes "………………";
+		mes "……………………。";
 		next;
-		mes "[�J�[��]";
-		mes "�N���ނ�{���ɍs���Ă���ԂɁA";
-		mes "�V������񂪓����Ă����B";
-		mes "�u�V�h�N�X�v�����̏���";
-		mes "���肵���ꏊ�𒲂ׂĂ����񂾂��c�c�B";
+		mes "[カール]";
+		mes "君が彼を捜しに行っている間に、";
+		mes "新しい情報が入ってきた。";
+		mes "「シドクス」がその情報を";
+		mes "入手した場所を調べていたんだが……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ނ����̏��𓾂��ꏊ�́A";
-		mes "^0000FF���b�P���x�����̌�����";
-		mes "�u���Q���V�������v�ɂ���";
-		mes "�u�閧�����ۊǎ��v^000000";
-		mes "�Ƃ������Ƃ����������B";
+		mes "[カール]";
+		mes "彼がその情報を得た場所は、";
+		mes "^0000FFレッケンベル内の研究所";
+		mes "「レゲンシュルム」にある";
+		mes "「秘密文書保管室」^000000";
+		mes "ということが分かった。";
 		next;
-		mes "[�J�[��]";
-		mes "�����A�����ւ̐N���́A";
-		mes "���Ȃ�댯�ł���A������ɂ߂�B";
-		mes "���[��c�c�B";
+		mes "[カール]";
+		mes "だが、そこへの侵入は、";
+		mes "かなり危険であり、困難を極める。";
+		mes "うーん……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ꉞ�A^0000FF���q�^���[��^000000���ӂ�";
-		mes "�ҋ@���Ă���^FF0000�J�v���T�[�r�X^000000��";
-		mes "�l�ɉ���Ă݂Ă���B";
-		mes "�s���΂����ƁA���̐l�̕�����";
-		mes "�N�ɐ��������Ă��邾�낤�B";
+		mes "[カール]";
+		mes "一応、^0000FFリヒタルゼン^000000周辺で";
+		mes "待機している^FF0000カプラサービス^000000の";
+		mes "人に会ってみてくれ。";
+		mes "行けばきっと、その人の方から";
+		mes "君に声をかけてくるだろう。";
 		set LHZ_4QUE,26;
 		break;
 	case 26:
@@ -10118,419 +10118,419 @@ yuno_pre.gat,69,79,4	script	�哝��	872,{
 	case 29:
 	case 30:
 	case 31:
-		mes "[�J�[��]";
-		mes "��ςȎd�������A�K�����������Ă���B";
-		mes "�V���o���c�o���h�̖��������łȂ��A";
-		mes "�~�b�h�K���h�嗤�S�̂̕��a�ɂ�";
-		mes "�ւ�邱�ƂȂ񂾁B";
+		mes "[カール]";
+		mes "大変な仕事だが、必ず成功させてくれ。";
+		mes "シュバルツバルドの未来だけでなく、";
+		mes "ミッドガルド大陸全体の平和にも";
+		mes "関わることなんだ。";
 		break;
 	case 32:
 		if(countitem(7344) < 1) {
-			mes "[�J�[��]";
-			mes "�����͂ǂ����H";
-			mes "�܂�������ɓ���Ă��Ȃ��̂��H";
-			mes "�����I�@�}���ł���I";
-			mes "�ŋ߁A���̊�Ƃ̒��q��";
-			mes "���������񂾁c�c�B";
+			mes "[カール]";
+			mes "資料はどこだ？";
+			mes "まだ情報を手に入れていないのか？";
+			mes "早く！　急いでくれ！";
+			mes "最近、あの企業の調子が";
+			mes "おかしいんだ……。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "�悭�����B";
-		mes "��ɘA���͎󂯂Ă�����B";
-		mes "���ށc�c�B";
+		mes "[カール]";
+		mes "よく来た。";
+		mes "先に連絡は受けていたよ。";
+		mes "うむ……。";
 		next;
-		mes "[�J�[��]";
-		mes "���ꂪ���̏�񂩁c�c�B";
-		mes "�ӂށc�c�B";
+		mes "[カール]";
+		mes "これがその情報か……。";
+		mes "ふむ……。";
 		next;
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "……………………";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "��͂蓖�����Ă����悤���ȁB";
-		mes "^0000FF�u�V�h�N�X�v�Ƃ����l�̎��́A";
-		mes "�d�v�Ȃ��Ƃ������B^000000";
-		mes "�ނ�́A^FF0000���~���̐S���̌���^000000��";
-		mes "�����������Ȃ񂾁H";
+		mes "[カール]";
+		mes "やはり当たっていたようだな。";
+		mes "^0000FF「シドクス」という人の死は、";
+		mes "重要なことだった。^000000";
+		mes "彼らは、^FF0000ユミルの心臓の欠片^000000で";
+		mes "何をするつもりなんだ？";
 		next;
-		mes "[�J�[��]";
-		mes "��́A�ނ�͉������ł���񂾁c�c�B";
-		mes "���ށc�c�B";
-		mes "��͂�A����������񂪕K�v���ȁB";
-		mes "���傤�ǁA^FF0000�G�X�i^000000���񂩂�";
-		mes "�A�������Ă����ȁB";
-		mes "�N�ɂ�������ƌ����Ă�����B";
+		mes "[カール]";
+		mes "一体、彼らは何を企んでいるんだ……。";
+		mes "うむ……。";
+		mes "やはり、もう少し情報が必要だな。";
+		mes "ちょうど、^FF0000エスナ^000000さんから";
+		mes "連絡が来ていたな。";
+		mes "君にも会ったと言っていたよ。";
 		next;
-		mes "[�J�[��]";
-		mes "�N��������֗���ԂɁA";
-		mes "�V���ȏ�񂪎�ɓ������������B";
-		mes "�ēx�A^FF0000�G�X�i^000000����̂Ƃ����";
-		mes "�s���Ă���B";
-		mes "�����āA���̏������ɂ������Ă���B";
+		mes "[カール]";
+		mes "君がこちらへ来る間に、";
+		mes "新たな情報が手に入ったそうだ。";
+		mes "再度、^FF0000エスナ^000000さんのところへ";
+		mes "行ってくれ。";
+		mes "そして、その情報を私にも教えてくれ。";
 		delitem 7344,1;
 		set LHZ_4QUE,33;
 		break;
 	case 33:
-		mes "[�J�[��]";
-		mes "�}���ł���B";
-		mes "�z�炪�ǂ̈ʁA";
-		mes "�C�Â��Ă��邩������Ȃ�����c�c�B";
+		mes "[カール]";
+		mes "急いでくれ。";
+		mes "奴らがどの位、";
+		mes "気づいているか分からないから……。";
 		break;
 	case 34:
 		if(countitem(7343) < 1) {
-			mes "[�J�[��]";
-			mes "�܂�����Ă��ĂȂ��悤���ȁB";
-			mes "�}���悤�ɁB";
-			mes "�c�c�c�c�B";
+			mes "[カール]";
+			mes "まだ会ってきてないようだな。";
+			mes "急ぐように。";
+			mes "…………。";
 			break;
 		}
-		mes "[�J�[��]";
-		mes "�悭�A�����ɖ߂��Ă����B";
-		mes "���ꂳ������΁A���̊�Ƃɑ啪�A";
-		mes "�_���[�W��^���邱�Ƃ��ł����B";
+		mes "[カール]";
+		mes "よく、無事に戻ってきた。";
+		mes "これさえあれば、あの企業に大分、";
+		mes "ダメージを与えることができるよ。";
 		next;
-		menu "���ꂪ�c�c",-;
-		mes "[�J�[��]";
-		mes "�c�c�ȁA�����Ƃ�!!!!";
-		mes "�c�c�c�c";
-		mes "��́c�c�����c�c�B";
+		menu "それが……",-;
+		mes "[カール]";
+		mes "……な、何だとっ!!!!";
+		mes "…………";
+		mes "一体……何が……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "……………………";
+		mes "…………";
+		mes "………………";
+		mes "…………。";
 		next;
-		mes "[�J�[��]";
-		mes "������c�c";
-		mes "��̂ǂ����Ă���Ȏ��Ɂc�c�B";
-		mes "�ӂ��`�B";
-		mes "�ނ炪���Ȃ���΁c�c�B";
-		mes "�c��̐l�Ԃ����ł́A";
-		mes "�ǂ����邱�Ƃ��ł��Ȃ��c�c�B";
+		mes "[カール]";
+		mes "ううん……";
+		mes "一体どうしてそんな事に……。";
+		mes "ふぅ～。";
+		mes "彼らがいなければ……。";
+		mes "残りの人間だけでは、";
+		mes "どうすることもできない……。";
 		next;
-		mes "[�J�[��]";
-		mes "�������A���́A�ނ炪�����";
-		mes "��Q�ɑ����Ă��܂����̂��H";
-		mes "�閧���������Ȃ�";
-		mes "�O�ꂵ�Ă����̂Ɂc�c�B";
+		mes "[カール]";
+		mes "しかし、何故、彼らがそんな";
+		mes "被害に遭ってしまったのだ？";
+		mes "秘密厳守をあんなに";
+		mes "徹底していたのに……。";
 		next;
-		mes "[�J�[��]";
-		mes "�M�����Ȃ��c�c";
-		mes "�c�c�c�c�B";
-		mes "�悵�c�c";
-		mes "������x�A^FF0000�ޏ�^000000�ɉ���Ă��Ă���B";
-		mes "��́c�c�B";
+		mes "[カール]";
+		mes "信じられない……";
+		mes "…………。";
+		mes "よし……";
+		mes "もう一度、^FF0000彼女^000000に会ってきてくれ。";
+		mes "一体……。";
 		next;
-		mes "[�J�[��]";
-		mes "�ǂ����āA�����Ȃ��Ă��܂����̂��A";
-		mes "�����Ă��Ă���B";
-		mes "���̂܂܂ł́A�[���ł��Ȃ��B";
+		mes "[カール]";
+		mes "どうして、こうなってしまったのか、";
+		mes "聞いてきてくれ。";
+		mes "このままでは、納得できない。";
 		delitem 7343,1;
 		set LHZ_4QUE,35;
 		break;
 	case 35:
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "……………………。";
 		break;
 	case 36:
-		mes "[�J�[��]";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "……………………";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "�t�t�b�c�c�B";
-		mes "�܂����c�c�ނ��c�c����ȁc�c";
-		mes "�c�c�ǂ����Ă������c�c�B";
-		mes "�n�b�n�b�n�b�c�c�B";
+		mes "[カール]";
+		mes "フフッ……。";
+		mes "まさか……彼が……そんな……";
+		mes "……どうしてあいつが……。";
+		mes "ハッハッハッ……。";
 		next;
-		mes "-�c�c�哝�̗̂l�q���ς�-";
+		mes "-……大統領の様子が変だ-";
 		next;
-		mes "[�J�[��]";
-		mes "�N�N�N�b�c�c�B";
-		mes "���ǁA���͂����Ɓc�c";
-		mes "���̊�Ƃ̎�̕���";
-		mes "�x�炳��Ă��������Ȃ̂��c�c�B";
-		mes "�c�c�N�c�c�N�N�N�b�c�c�B";
+		mes "[カール]";
+		mes "クククッ……。";
+		mes "結局、私はずっと……";
+		mes "あの企業の手の平で";
+		mes "踊らされていただけなのか……。";
+		mes "……ク……クククッ……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�鏑��I";
-		mes "^FF0000�N������^000000���Ă�ŗ����I";
-		mes "�������ɂ�!!";
+		mes "[カール]";
+		mes "……秘書よ！";
+		mes "^FF0000クレルレ^000000を呼んで来い！";
+		mes "今すぐにだ!!";
 		next;
-		mes "[�w�X�A�j��]";
-		mes "�c�c�͂��A�������܂�܂����B";
+		mes "[ヘスアニル]";
+		mes "……はい、かしこまりました。";
 		set LHZ_4QUE,37;
 		break;
 	case 37:
-		mes "[�J�[��]";
-		mes "���Łc�c";
-		mes "�ǂ����Ă������c�c�B";
+		mes "[カール]";
+		mes "何で……";
+		mes "どうしてあいつが……。";
 		next;
-		mes "[�x����]";
-		mes "�u�N�������v�⍲����";
-		mes "��������Ⴂ�܂����B";
+		mes "[警備兵]";
+		mes "「クレルレ」補佐官が";
+		mes "いらっしゃいました。";
 		next;
-		mes "[�J�[��]";
-		mes "�ʂ��Ȃ����B";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "通しなさい。";
+		mes "……。";
 		next;
-		mes "[�x����]";
-		mes "�c�c�H";
-		mes "�͂��A�������܂����I";
+		mes "[警備兵]";
+		mes "……？";
+		mes "はい、了解しました！";
 		next;
-		hideoffnpc "���ꂢ�Ȑa�m#Lhz";
+		hideoffnpc "きれいな紳士#Lhz";
 		next;
-		mes "[�N������]";
-		mes "���ĂтɂȂ�܂������H";
-		mes "����ȋ}�ɁA�ǂ����āc�c�H";
+		mes "[クレルレ]";
+		mes "お呼びになりましたか？";
+		mes "こんな急に、どうして……？";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�N������]";
-		mes "�H�H�H";
-		mes "�c�c�c�c�c�c�B";
+		mes "[クレルレ]";
+		mes "？？？";
+		mes "………………。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c���́c�c";
-		mes "���́A���������񂾁c�c�B";
-		mes "��́c�c�B";
+		mes "[カール]";
+		mes "……何故……";
+		mes "何故、そうしたんだ……。";
+		mes "一体……。";
 		next;
-		mes "[�N������]";
-		mes "�͂��H";
-		mes "��́A�����H";
-		mes "�c�c�c�c�B";
+		mes "[クレルレ]";
+		mes "はい？";
+		mes "一体、何が？";
+		mes "…………。";
 		next;
-		mes "[�J�[��]";
-		mes "��́c�c��̂ǂ����āA";
-		mes "�ނ�ɉ�X�𔄂�����!!";
-		mes "�A�E�O�X�g�H�[�b!!";
+		mes "[カール]";
+		mes "一体……一体どうして、";
+		mes "彼らに我々を売ったんだ!!";
+		mes "アウグストォーッ!!";
 		next;
-		mes "[�N������]";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c";
-		mes "�c�c�B";
+		mes "[クレルレ]";
+		mes "………………";
+		mes "…………";
+		mes "……。";
 		next;
-		mes "[�J�[��]";
-		mes "�t�t�t�b�c�c";
-		mes "���̂��H";
-		mes "�����Ƃ΂ꂸ�ɂ�����Ƃł�";
-		mes "�v���Ă����̂��H";
-		mes "�t�t�c�c�t�t�t�b�c�c�B";
+		mes "[カール]";
+		mes "フフフッ……";
+		mes "何故だ？";
+		mes "ずっとばれずにいられるとでも";
+		mes "思っていたのか？";
+		mes "フフ……フフフッ……。";
 		next;
-		mes "[�N������]";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�B";
+		mes "[クレルレ]";
+		mes "…………";
+		mes "………………。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "………………。";
 		next;
-		mes "[�N������]";
-		mes "�c�c�N�N�b�c�c�B";
-		mes "�v�������������A�C�Â���܂����ˁB";
+		mes "[クレルレ]";
+		mes "……ククッ……。";
+		mes "思ったよりも早く、気づかれましたね。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c?!";
+		mes "[カール]";
+		mes "……?!";
 		next;
-		mes "[�N������]";
-		mes "�����`�A���ł���B";
-		mes "���Ȃ����̍s�����������Ō��Ȃ���c�c";
-		mes "���̑S�Ă̏����A";
-		mes "���̊�Ƃ֗����Ă��܂�����B";
-		mes "�m���Ɏ�������Ă��܂�����B";
+		mes "[クレルレ]";
+		mes "ああ～、私ですよ。";
+		mes "あなた方の行動をすぐ側で見ながら……";
+		mes "その全ての情報を、";
+		mes "あの企業へ流していましたよ。";
+		mes "確かに私がやっていましたよ。";
 		next;
-		mes "[�J�[��]";
-		mes "�����c�c���Łc�c�N���z��Ɂc�c�B";
-		mes "��́c�c�ǂ����āc�c�B";
+		mes "[カール]";
+		mes "うっ……何で……君が奴らに……。";
+		mes "一体……どうして……。";
 		next;
-		mes "[�N������]";
-		mes "���́H�@���̂ł����āH";
-		mes "�N�N�b�c�c������Ȃ�ł��A";
-		mes "����͂Ȃ��ł��傤�c�c�B";
-		mes "�S���A���Ȃ��Ƃ����l�́c�c";
-		mes "�����������Ă��Ȃ���ł���!!";
-		mes "�{���ɁA�Â������ł���!!";
+		mes "[クレルレ]";
+		mes "何故？　何故ですって？";
+		mes "ククッ……いくらなんでも、";
+		mes "それはないでしょう……。";
+		mes "全く、あなたという人は……";
+		mes "何も分かっていないんですね!!";
+		mes "本当に、甘いお方ですね!!";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c?!";
-		mes "�����c�c";
-		mes "���̂ǂ����Â����Ă�����!?";
+		mes "[カール]";
+		mes "……?!";
+		mes "何が……";
+		mes "私のどこが甘いっていうんだ!?";
 		next;
-		mes "[�N������]";
-		mes "�����c�c";
-		mes "���̂悤�ɒm��ʐU���";
-		mes "�����邨����ł����c�c�B";
-		mes "�N�N�N�b�c�c�B";
+		mes "[クレルレ]";
+		mes "そう……";
+		mes "そのように知らぬ振りを";
+		mes "続けるおつもりですか……。";
+		mes "クククッ……。";
 		next;
-		mes "[�N������]";
-		mes "�����c�c";
-		mes "���Ȃ��Ǝ��́A�c�������炸����";
-		mes "�ꏏ�Ɉ���Ă��܂����B";
-		mes "�����w�Z�ɒʂ��A";
-		mes "�i�񂾓����ꏏ�ł����B";
+		mes "[クレルレ]";
+		mes "ええ……";
+		mes "あなたと私は、幼い頃からずっと";
+		mes "一緒に育ってきました。";
+		mes "同じ学校に通い、";
+		mes "進んだ道も一緒でした。";
 		next;
-		mes "[�J�[��]";
-		mes "���ꂪ�ǂ��������Ă�����?!";
+		mes "[カール]";
+		mes "それがどうしたっていうんだ?!";
 		next;
-		mes "[�N������]";
-		mes "�����c�c���������āA";
-		mes "��`�������Ă���������B";
-		mes "�N�N�N�b�c�c�B";
+		mes "[クレルレ]";
+		mes "ああ……落ち着いて、";
+		mes "よ～く聞いてくださいよ。";
+		mes "クククッ……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………。";
 		next;
-		mes "[�N������]";
-		mes "�c�c����ǂ��A���͂���";
-		mes "���Ȃ��̉��ɂ��܂����B";
-		mes "�׋����^�����A�����Đ����������c�c�B";
+		mes "[クレルレ]";
+		mes "……けれども、私はいつも";
+		mes "あなたの下にいました。";
+		mes "勉強も運動も、そして政治活動も……。";
 		next;
-		mes "[�N������]";
-		mes "�������������I";
-		mes "���Ȃ��̉��΂���!!";
-		mes "�����ōl������ł���B";
-		mes "�ǂ�����΁A���Ȃ��̏��";
-		mes "�����Ƃ��ł���񂾂낤���āc�c�B";
+		mes "[クレルレ]";
+		mes "いつもいつもいつも！";
+		mes "あなたの下ばかり!!";
+		mes "そこで考えたんですよ。";
+		mes "どうすれば、あなたの上に";
+		mes "立つことができるんだろうって……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………。";
 		next;
-		mes "[�N������]";
-		mes "�����āA���錋�_�ɒB�����̂ł��B";
-		mes "�N�N�N�b�c�c";
-		mes "����́A�����Ǝv���܂��H";
-		mes "�J�[���H";
+		mes "[クレルレ]";
+		mes "そして、ある結論に達したのです。";
+		mes "クククッ……";
+		mes "それは、何だと思います？";
+		mes "カール？";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "………………。";
 		next;
-		mes "[�N������]";
-		mes "�N�N�N�b�c�c";
-		mes "�܂��A���̌��������ʂȂ�A";
-		mes "�����A����Ȏ��ɂ�";
-		mes "�Ȃ��Ă��܂����ˁB";
+		mes "[クレルレ]";
+		mes "クククッ……";
+		mes "まあ、その見当がつく位なら、";
+		mes "今頃、こんな事には";
+		mes "なっていませんよね。";
 		next;
-		mes "[�N������]";
-		mes "�N�N�N�b�c�c���́A����Ȃ�";
-		mes "������Ƃ��Ⴀ��܂����B";
-		mes "���́A���Ȃ��̏�ɗ��������c�c�B";
-		mes "�Ȃ�΁A���Ȃ�����������~�낹��";
-		mes "���������̂��Ɓc�c�B";
+		mes "[クレルレ]";
+		mes "クククッ……実は、そんなに";
+		mes "難しいことじゃありませんよ。";
+		mes "私は、あなたの上に立ちたい……。";
+		mes "ならば、あなたを引きずり降ろせば";
+		mes "いいだけのこと……。";
 		next;
-		mes "[�N������]";
-		mes "�N�N�N�b�c�c";
-		mes "�ǂ��ł��H";
-		mes "�������ȒP�Ȏ��ł��傤�H";
+		mes "[クレルレ]";
+		mes "クククッ……";
+		mes "どうです？";
+		mes "すごく簡単な事でしょう？";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�N���ēz�́`��!!";
+		mes "[カール]";
+		mes "…………";
+		mes "君って奴は～っ!!";
 		next;
-		mes "[�N������]";
-		mes "�������ƁI�@�܂������͂���܂�����A";
-		mes "��������ƕ����Ă��������ˁB";
-		mes "�c�c����ŁA�ǂ�����΁A���Ȃ���";
-		mes "��������~�낷���Ƃ��ł���̂��H";
-		mes "�����͂������ɔY�݂܂����B";
+		mes "[クレルレ]";
+		mes "おおっと！　まだ続きはありますから、";
+		mes "しっかりと聞いてくださいね。";
+		mes "……それで、どうすれば、あなたを";
+		mes "引きずり降ろすことができるのか？";
+		mes "そこはさすがに悩みました。";
 		next;
-		mes "[�N������]";
-		mes "�ł��A����Ȃ�����c�c";
-		mes "���Ȃ����閧�g�D������";
-		mes "�����o������ł���B";
-		mes "���̘b�𕷂����u�ԁA";
-		mes "�u���I�@�܂��ɂ��ꂾ!!�v";
-		mes "�Ǝv���܂����B";
+		mes "[クレルレ]";
+		mes "でも、そんなある日……";
+		mes "あなたが秘密組織を作ると";
+		mes "言い出したんですよ。";
+		mes "その話を聞いた瞬間、";
+		mes "「あ！　まさにこれだ!!」";
+		mes "と思いました。";
 		next;
-		mes "[�N������]";
-		mes "�������A���̘b���i��ł���Œ��ɁA";
-		mes "���Ȃ��̓��b�P���x���̐l��";
-		mes "��܂�����ˁB";
-		mes "�N�N�N�b�c�c�B";
+		mes "[クレルレ]";
+		mes "しかも、その話が進んでいる最中に、";
+		mes "あなたはレッケンベルの人と";
+		mes "会いましたよね。";
+		mes "クククッ……。";
 		next;
-		mes "[�N������]";
-		mes "�����Ŏ��́A���̋@��𗘗p���A";
-		mes "�ނ�ɒ�Ă��܂����B";
-		mes "�ނ�ɏ���񋟂������ɁA";
-		mes "���Ȃ������r�����Ă���Ɓc�c�B";
-		mes "�������A���̑哝�̑I��";
-		mes "���܂�����łˁB";
+		mes "[クレルレ]";
+		mes "そこで私は、その機会を利用し、";
+		mes "彼らに提案しました。";
+		mes "彼らに情報を提供する代わりに、";
+		mes "あなたを失脚させてくれと……。";
+		mes "もちろん、次の大統領選を";
+		mes "踏まえた上でね。";
 		next;
-		mes "[�N������]";
-		mes "�������A���Ȃ������r����킯�ł�";
-		mes "����܂��񂪁c�c";
-		mes "����ŁA���炭�A���Ȃ��̊�Ղ�";
-		mes "�啔���͏����������R�B";
+		mes "[クレルレ]";
+		mes "今すぐ、あなたが失脚するわけでは";
+		mes "ありませんが……";
+		mes "これで、恐らく、あなたの基盤の";
+		mes "大部分は消えたも同然。";
 		next;
-		mes "[�N������]";
-		mes "���Ȃ����x�����Ă����c���B��";
-		mes "���l�ł���c�c�B";
-		mes "�N�N�N�b�c�c�B";
+		mes "[クレルレ]";
+		mes "あなたを支持していた議員達も";
+		mes "同様ですよ……。";
+		mes "クククッ……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�������c�c";
-		mes "����őS�Ă��I����Ă��܂����̂��B";
-		mes "�t�t�t�b�c�c���͖{���ɁA";
-		mes "�R���������Ă��������������̂��B";
-		mes "�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "そうか……";
+		mes "これで全てが終わってしまったのか。";
+		mes "フフフッ……私は本当に、";
+		mes "儚い夢を見ていただけだったのか。";
+		mes "……。";
 		next;
-		mes "[�N������]";
-		mes "���܂�c�c";
-		mes "�C�𗎂Ƃ��߂��Ȃ��ł��������ˁB";
-		mes "�ʂɁA���Ȃ���������";
-		mes "�E���悤�Ȏ��͂��܂��񂩂�c�c�B";
-		mes "��������A�����ɐl�C������l��";
-		mes "�K�v�ł��̂Łc�c�B";
+		mes "[クレルレ]";
+		mes "あまり……";
+		mes "気を落とし過ぎないでくださいね。";
+		mes "別に、あなたを今すぐ";
+		mes "殺すような事はしませんから……。";
+		mes "こちらも、国民に人気がある人は";
+		mes "必要ですので……。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�������c�c�c�c�B";
-		mes "�I����Ă��܂����̂��ȁc�c�B";
-		mes "�n�n�n�b�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "そうか…………。";
+		mes "終わってしまったのだな……。";
+		mes "ハハハッ……。";
 		next;
-		mes "[�N������]";
-		mes "�����c�c";
-		mes "���Ȃ��́A�����I���Ȃ�ł���B";
-		mes "���ꂩ��͉����ł����A�����A";
-		mes "���̔C�����I����̂�҂����c�c�B";
-		mes "�n�n�b�c�c�B";
+		mes "[クレルレ]";
+		mes "そう……";
+		mes "あなたは、もう終わりなんですよ。";
+		mes "これからは何もできず、ただ、";
+		mes "その任期を終えるのを待つだけ……。";
+		mes "ハハッ……。";
 		next;
-		mes "[�N������]";
-		mes "����H";
-		mes "���O�A�܂������̂��c�c�B";
-		mes "���������̎���́A";
-		mes "�I����Ă��܂����񂾂�c�c�B";
-		mes "�n�n�b�c�c�B";
+		mes "[クレルレ]";
+		mes "うん？";
+		mes "お前、まだいたのか……。";
+		mes "もうこいつの時代は、";
+		mes "終わってしまったんだよ……。";
+		mes "ハハッ……。";
 		next;
-		mes "[�N������]";
-		mes "���O���A����Ȗ����̂Ȃ��z���A";
-		mes "�����瑤�ɂ���������������B";
-		mes "�t�n�n�n�n�b�c�c�B";
+		mes "[クレルレ]";
+		mes "お前も、こんな未来のない奴より、";
+		mes "こちら側についた方が賢明だよ。";
+		mes "フハハハハッ……。";
 		next;
-		hideonnpc "���ꂢ�Ȑa�m#Lhz";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c�c�c�B";
+		hideonnpc "きれいな紳士#Lhz";
+		mes "…………";
+		mes "………………";
+		mes "……………………。";
 		next;
-		mes "[�J�[��]";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�B";
+		mes "[カール]";
+		mes "……………………";
+		mes "…………。";
 		set LHZ_4QUE,38;
 		break;
 	case 38:
-		mes "[�J�[��]";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c�c�c�B";
+		mes "[カール]";
+		mes "…………";
+		mes "……………………。";
 		break;
 	}
 	close2;
@@ -10538,323 +10538,323 @@ yuno_pre.gat,69,79,4	script	�哝��	872,{
 	end;
 }
 
-yuno_pre.gat,117,60,0	script	��	139,10,5{
+yuno_pre.gat,117,60,0	script	窓	139,10,5{
 	if(LHZ_4QUE == 16) {
-		mes "-�ʂ肪������������";
-		mes "�N���̘b��������������-";
-		mes "-�������A�����̂�����";
-		mes "���܂蒮�����Ȃ��c�c-";
+		mes "-通りがかった窓から";
+		mes "誰かの話し声が聴こえる-";
+		mes "-しかし、小声のせいか";
+		mes "あまり聴こえない……-";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�c�c��͂�c�c";
-		mes "�������c�c";
-		mes "�c�c�哝�́c�c�B";
+		mes "[？？？？]";
+		mes "……やはり……";
+		mes "そうか……";
+		mes "……大統領……。";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�ނ�́c�c�����c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c���Ƃ�c�c�B";
+		mes "[？？？？]";
+		mes "彼らの……調査……";
+		mes "………………";
+		mes "……おとり……。";
 		next;
-		mes "[�H�H�H�H]";
-		mes "�c�c�j�ށc�c����c�c";
-		mes "�c�c�����āc�c�B";
+		mes "[？？？？]";
+		mes "……阻む……いや……";
+		mes "……決して……。";
 		next;
-		mes "[�H�H�H�H]";
-		mes "���c�c�I���c�c";
-		mes "�c�c�c�c���I�c�c�B";
+		mes "[？？？？]";
+		mes "次……選挙……";
+		mes "…………当選……。";
 		next;
-		mes "-���͂܂��܂��������Ȃ�A";
-		mes "�قƂ�ǒ������Ȃ��Ȃ���-";
-		mes "-�c�c���̒Ⴂ���́A�ǂ�����";
-		mes "���������Ƃ�����C�����邪�c�c-";
+		mes "-声はますます小さくなり、";
+		mes "ほとんど聴こえなくなった-";
+		mes "-……あの低い声は、どこかで";
+		mes "聴いたことがある気がするが……-";
 		close;
 	}
 	end;
 }
 
-aldeba_in.gat,155,240,4	script	�J�v���E��	859,{
+aldeba_in.gat,155,240,4	script	カプラ職員	859,{
 	switch(LHZ_4QUE) {
 	default:
 		if(LHZ_4QUE >= 19) {
-			mes "[�x�j�X]";
-			mes "����ɂ��́B";
-			mes "�J�v���T�[�r�X�ł��B";
+			mes "[ベニス]";
+			mes "こんにちは。";
+			mes "カプラサービスです。";
 			close;
 		}
-		mes "[�J�v���E��]";
-		mes "����ɂ��́B";
-		mes "�J�v���T�[�r�X�ł��B";
-		mes "���݁A�u�J�v���T�[�r�X�v��";
-		mes "�u�W�����_�C�x���g�v�́A";
-		mes "�V�����T�[�r�X���v�悵�Ă���܂��B";
+		mes "[カプラ職員]";
+		mes "こんにちは。";
+		mes "カプラサービスです。";
+		mes "現在、「カプラサービス」と";
+		mes "「ジョンダイベント」は、";
+		mes "新しいサービスを計画しております。";
 		next;
-		mes "[�J�v���E��]";
-		mes "���̃T�[�r�X�Ƃ́c�c";
-		mes "�_���W�����T���x���Ƃ��āA";
-		mes "�e�_���W�����֒���";
-		mes "����͂�����̂ł��B";
+		mes "[カプラ職員]";
+		mes "そのサービスとは……";
+		mes "ダンジョン探険支援として、";
+		mes "各ダンジョンへ直接";
+		mes "送り届けるものです。";
 		next;
-		mes "[�J�v���E��]";
-		mes "�����A�V�X�e���̊֌W��A";
-		mes "���ǂ��u�J�v���T�[�r�X�v��";
-		mes "�u�W�����_�C�x���g�v��������";
-		mes "�_���W�����֑���T�[�r�X��";
+		mes "[カプラ職員]";
+		mes "ただ、システムの関係上、";
+		mes "私ども「カプラサービス」と";
+		mes "「ジョンダイベント」が同時に";
+		mes "ダンジョンへ送るサービスを";
 		if(LHZ_4QUE < 17) {
-			mes "�s�����Ƃ͂ł��܂���B";
+			mes "行うことはできません。";
 			next;
-			mes "[�J�v���E��]";
-			mes "�����ŁA���ǂ��T�[�r�X��";
-			mes "���񋟂��邽�߁A�����ȕ��@�ɂ��A";
-			mes "�����ԁA�T�[�r�X��Ђ�";
-			mes "�n��̑I�����s���܂��B";
-			mes "���̌��ʁA�I�΂ꂽ�T�[�r�X��";
-			mes "�J�n����\��ƂȂ��Ă���܂��B";
+			mes "[カプラ職員]";
+			mes "そこで、より良いサービスを";
+			mes "ご提供するため、公正な方法により、";
+			mes "一定期間、サービス会社と";
+			mes "地域の選挙を行います。";
+			mes "その結果、選ばれたサービスを";
+			mes "開始する予定となっております。";
 			next;
-			mes "[�J�v���E��]";
-			mes "�T�[�r�X��БI�o�̂��߂̓��[�ł����A";
-			mes "�e�Ђ̌ڋq�̕��X�̒���";
-			mes "����̐R����ʉ߂��ꂽ���X��";
-			mes "���̓��[�����^�����܂��B";
-			mes "�������ɓ��[�������邩�ǂ����́A";
-			mes "�e�Ђ̖{���Ŋm�F���邱�Ƃ��ł��܂��B";
+			mes "[カプラ職員]";
+			mes "サービス会社選出のための投票ですが、";
+			mes "各社の顧客の方々の中で";
+			mes "特定の審査を通過された方々に";
+			mes "その投票権が与えられます。";
+			mes "ご自分に投票権があるかどうかは、";
+			mes "各社の本部で確認することができます。";
 			next;
-			mes "[�J�v���E��]";
-			mes "���q�l�́A���݁A";
-			mes "�R�����ƂȂ��Ă���܂��B";
-			mes "�R����ʉ߂��܂�����A������";
-			mes "���ʂ����A���������܂��B";
-			mes "���[���ł���悤�ɂȂ�܂�����A";
-			mes "���Q�������肢�������܂��B";
+			mes "[カプラ職員]";
+			mes "お客様は、現在、";
+			mes "審査中となっております。";
+			mes "審査を通過しましたら、すぐに";
+			mes "結果をご連絡いたします。";
+			mes "投票ができるようになりましたら、";
+			mes "ご参加をお願いいたします。";
 			close;
 		}
-		mes "�s�����Ƃ͂ł��܂��񂪁A";
+		mes "行うことはできませんが、";
 		next;
-		mes "[�J�v���E��]";
-		mes "�e�ЂƂ����F����_���W������";
-		mes "�����肷��T�[�r�X��";
-		mes "�񋟂���\��ł��B";
+		mes "[カプラ職員]";
+		mes "各社とも特色あるダンジョンに";
+		mes "お送りするサービスを";
+		mes "提供する予定です。";
 		next;
-		mes "[�J�v���E��]";
-		mes "�����ŁA�񋟃T�[�r�X�m��̂��߂�";
-		mes "�I����\�肵�Ă���܂��B";
-		mes "���̓��[���́A";
-		mes "�䂪�Ђ̐R����ʉ߂��ꂽ";
-		mes "�ꕔ�̂��q�l�ɗ^���Ă���܂��B";
+		mes "[カプラ職員]";
+		mes "そこで、提供サービス確定のために";
+		mes "選挙を予定しております。";
+		mes "その投票権は、";
+		mes "我が社の審査を通過された";
+		mes "一部のお客様に与えております。";
 		next;
-		mes "[�J�v���E��]";
-		mes "���q�l�́A���̓x�̐R���̌��ʁA";
-		mes "���[�����^�����Ă���܂��B";
-		mes "���[���́A��x����̂��̂ł͂Ȃ��A";
-		mes "���[�֌p���I�ɎQ�����\�Ȃ��̂ł��B";
-		mes "��葽���̂��Q�������肢�������܂��B";
+		mes "[カプラ職員]";
+		mes "お客様は、この度の審査の結果、";
+		mes "投票権が与えられております。";
+		mes "投票権は、一度限りのものではなく、";
+		mes "投票へ継続的に参加が可能なものです。";
+		mes "より多くのご参加をお願いいたします。";
 		next;
-		mes "[�J�v���E��]";
-		mes "���[�ꏊ�́A";
-		//mes "�u�v�����e���v�Ɓu�W���m�[�v��";
-		//mes "��ӏ��ɐݒu����Ă���܂��B";
-		mes "�e�X�ɐݒu����Ă���܂��B";
+		mes "[カプラ職員]";
+		mes "投票場所は、";
+		//mes "「プロンテラ」と「ジュノー」の";
+		//mes "二箇所に設置されております。";
+		mes "各街に設置されております。";
 		next;
-		if(select("���́c�c","������܂���")==2) {
-			mes "[�J�v���E��]";
-			mes "���肪�Ƃ��������܂��B";
-			mes "�K�����[�ɂ��Q�����������B";
-			mes "�J�v���T�[�r�X�ł����B";
+		if(select("あの……","分かりました")==2) {
+			mes "[カプラ職員]";
+			mes "ありがとうございます。";
+			mes "必ず投票にご参加ください。";
+			mes "カプラサービスでした。";
 			close;
 		}
-		mes "[�J�v���E��]";
-		mes "�͂��A���ł��傤�H";
-		mes "�ǂ̂悤�Ȃ��p����";
-		mes "��������Ⴂ�܂������H";
+		mes "[カプラ職員]";
+		mes "はい、何でしょう？";
+		mes "どのようなご用件で";
+		mes "いらっしゃいましたか？";
 		next;
-		if(select("���A���ł��Ȃ��ł�","���Ȃ����x�j�X����c�c�H")==1) {
-			mes "[�J�v���E��]";
-			mes "���肪�Ƃ��������܂��B";
-			mes "�܂������p���������B";
+		if(select("あ、何でもないです","あなたがベニスさん……？")==1) {
+			mes "[カプラ職員]";
+			mes "ありがとうございます。";
+			mes "またご利用ください。";
 			close;
 		}
-		mes "[�x�j�X]";
-		mes "�͂��A�����x�j�X�ł����c�c�H";
-		mes "���ł��傤���H";
+		mes "[ベニス]";
+		mes "はい、私がベニスですが……？";
+		mes "何でしょうか？";
 		next;
-		if(select("���ł��Ȃ��ł�","�F�؃J�[�h��������")==1) {
-			mes "[�x�j�X]";
-			mes "�H�H�H";
-			mes "���悤�Ȃ�B";
+		if(select("何でもないです","認証カードを見せる")==1) {
+			mes "[ベニス]";
+			mes "？？？";
+			mes "さようなら。";
 			close;
 		}
 		if(countitem(7348) < 1) {
-			mes "[�x�j�X]";
-			mes "�H�H�H";
-			mes "���悤�Ȃ�B";
-			mes "�c�c�c�c�B";
+			mes "[ベニス]";
+			mes "？？？";
+			mes "さようなら。";
+			mes "…………。";
 			close;
 		}
-		mes "[�x�j�X]";
-		mes "�悭�����z�����������܂����B";
-		mes "���҂����Ă���܂�����B";
-		mes "�}�ł������A�������";
-		mes "�����͂��Ă���܂����c�c�B";
+		mes "[ベニス]";
+		mes "よくぞお越しくださいました。";
+		mes "お待ちしておりましたよ。";
+		mes "急でしたが、こちらも";
+		mes "準備はしておりました……。";
 		next;
-		mes "[�x�j�X]";
-		mes "�c�c����ǂ��A";
-		mes "���Ȃ������z���ɂȂ�O�ɁA";
-		mes "���������A��\��ł�����";
-		mes "�䂪�Ђ̏������A";
-		mes "���̂ɑ����Ă��܂����悤�Łc�c�B";
+		mes "[ベニス]";
+		mes "……けれども、";
+		mes "あなたがお越しになる前に、";
+		mes "情報を持ち帰る予定であった";
+		mes "我が社の情報員が、";
+		mes "事故に遭ってしまったようで……。";
 		next;
-		mes "[�x�j�X]";
-		mes "����ŁA^FF0000���q�^���[����";
-		mes "�A�C���u���b�N�̊Ԃɂ���";
-		mes "�u���_�̋��J�v^000000��";
-		mes "�����Ȃ��Ȃ��Ă��܂����悤�ł��B";
+		mes "[ベニス]";
+		mes "それで、^FF0000リヒタルゼンと";
+		mes "アインブロックの間にある";
+		mes "「死神の峡谷」^000000で";
+		mes "動けなくなってしまったようです。";
 		next;
-		mes "[�x�j�X]";
-		mes "�������ނ����}�A������";
-		mes "�s���Ȃ���΂Ȃ�Ȃ��̂ł����c�c�B";
-		mes "���͊F�A��𗣂��Ȃ���ԂȂ̂ŁA";
-		mes "�N��l�Ƃ��āA�A";
-		mes "�h���ł��Ȃ��󋵂Ȃ̂ł��c�c�B";
+		mes "[ベニス]";
+		mes "もちろん彼を至急、助けに";
+		mes "行かなければならないのですが……。";
+		mes "今は皆、手を離せない状態なので、";
+		mes "誰一人として、、";
+		mes "派遣できない状況なのです……。";
 		next;
-		mes "[�x�j�X]";
-		mes "�����Łc�c�\���󂠂�܂��񂪁A";
-		mes "���ځA�ނ̂Ƃ����";
-		mes "�s���Ă��������܂����B";
-		mes "�ނ́A^0000FF���_�̋��J^000000�ɂ���";
-		mes "��ꂽ���̋߂��ɉB��Ă��邻���ł��B";
+		mes "[ベニス]";
+		mes "そこで……申し訳ありませんが、";
+		mes "直接、彼のところへ";
+		mes "行っていただけますか。";
+		mes "彼は、^0000FF死神の峡谷^000000にある";
+		mes "壊れた橋の近くに隠れているそうです。";
 		next;
-		mes "[�x�j�X]";
-		mes "���݁A�������Ă��邻���Ȃ̂ŁA";
-		mes "�}���ł��������B";
-		mes "�ނ̖��́A^FF0000�U���W�A^000000�ƌ����܂��B";
+		mes "[ベニス]";
+		mes "現在、負傷しているそうなので、";
+		mes "急いでください。";
+		mes "彼の名は、^FF0000ザルジア^000000と言います。";
 		set LHZ_4QUE,18;
 		close;
 	case 18:
-		mes "[�x�j�X]";
-		mes "�}���ł��������B���̎҂��A";
-		mes "��Ɍ����Ă��܂��Ɣނ̐g���c�c�B";
-		mes "�ނ����Ɍ����A";
-		mes "�����󂯎��Ȃ���΂Ȃ�܂���B";
+		mes "[ベニス]";
+		mes "急いでください。他の者が、";
+		mes "先に見つけてしまうと彼の身が……。";
+		mes "彼らより先に見つけ、";
+		mes "情報を受け取らなければなりません。";
 		close;
 	case 19:
 		if(countitem(7343) < 1) {
-			mes "[�x�j�X]";
-			mes "�}���ł��������B���̎҂��A";
-			mes "��Ɍ����Ă��܂��Ɣނ̐g���c�c�B";
-			mes "�ނ����Ɍ����A";
-			mes "�����󂯎��Ȃ���΂Ȃ�܂���B";
-			mes "�ǂ����c�c�B";
+			mes "[ベニス]";
+			mes "急いでください。他の者が、";
+			mes "先に見つけてしまうと彼の身が……。";
+			mes "彼らより先に見つけ、";
+			mes "情報を受け取らなければなりません。";
+			mes "どうか……。";
 			close;
 		}
-		mes "[�x�j�X]";
-		mes "�悭�A���܂����B";
-		mes "�Ԃɍ������悤�ł��ˁB";
-		mes "�悩�����ł��B";
-		mes "�c�c�c�c�B";
-		mes "�Ƃ���ŁA^FF0000�U���W�A^000000�́c�c�H";
+		mes "[ベニス]";
+		mes "よく、来ました。";
+		mes "間に合ったようですね。";
+		mes "よかったです。";
+		mes "…………。";
+		mes "ところで、^FF0000ザルジア^000000は……？";
 		next;
-		menu "�ނ́c�c",-;
-		mes "[�x�j�X]";
-		mes "�c�c�c�c�B";
+		menu "彼は……",-;
+		mes "[ベニス]";
+		mes "…………。";
 		next;
-		mes "[�x�j�X]";
-		mes "�c�c�c�c";
-		mes "�����ł������B";
+		mes "[ベニス]";
+		mes "…………";
+		mes "そうでしたか。";
 		next;
-		mes "[�x�j�X]";
-		mes "����ǂ��c�c��񂾂��ł��A";
-		mes "����ł��Ă悩�����ł��B";
-		mes "�ꉞ�A��x�A";
-		mes "���ɗa���Ă��������܂����H";
-		mes "�O�̂��߁A���ǂ�������";
-		mes "�m�F���܂��̂ŁB";
+		mes "[ベニス]";
+		mes "けれども……情報だけでも、";
+		mes "入手できてよかったです。";
+		mes "一応、一度、";
+		mes "私に預けていただけますか？";
+		mes "念のため、私どもが中を";
+		mes "確認しますので。";
 		set LHZ_4QUE,20;
 		delitem 7343,1;
 		close;
 	case 20:
-		mes "[�x�j�X]";
-		mes "����c�c";
-		mes "��͂�c�c���̂悤�ł��ˁB";
-		mes "�ł́A�������^FF0000���̂���^000000��";
-		mes "�͂��Ă��������B";
+		mes "[ベニス]";
+		mes "うん……";
+		mes "やはり……そのようですね。";
+		mes "では、こちらを^FF0000あのお方^000000に";
+		mes "届けてください。";
 		next;
-		mes "[�x�j�X]";
-		mes "����ł͍K�^���F��܂��B";
+		mes "[ベニス]";
+		mes "それでは幸運を祈ります。";
 		set LHZ_4QUE,21;
 		getitem 7343,1;
 		close;
 	}
 }
 
-lhz_fild02.gat,228,214,0	script	�B��ꏊ	139,7,9,{
+lhz_fild02.gat,228,214,0	script	隠れ場所	139,7,9,{
 OnTouch:
 	if(LHZ_4QUE == 18) {
-		hideoffnpc "���������j#Lhz";
-		mes "[�H�H�H�H]";
-		mes "�O�b�c�c�n�@�n�@�c�c�B";
+		hideoffnpc "負傷した男#Lhz";
+		mes "[？？？？]";
+		mes "グッ……ハァハァ……。";
 		close;
 	}
 	end;
 }
 
-lhz_fild02.gat,228,214,7	script	���������j#Lhz	849,{
+lhz_fild02.gat,228,214,7	script	負傷した男#Lhz	849,{
 	if(LHZ_4QUE > 18)
 		end;
 	if(LHZ_4QUE < 18) {
-		mes "[�H�H�H�H]";
-		mes "�N�b�A�E�D�c�c";
-		mes "�n�@�n�@�c�c�B";
-		mes "�����A���Ă���c�c�B";
+		mes "[？？？？]";
+		mes "クッ、ウゥ……";
+		mes "ハァハァ……。";
+		mes "早く、来てくれ……。";
 		next;
-		mes "-���������j���A��������Ă���-";
+		mes "-負傷した男が、横たわっている-";
 		close;
 	}
-	mes "[�H�H�H�H]";
-	mes "�O�b�A�n�@�n�@�c�c";
-	mes "�E�E�D�c�c";
-	mes "�����A���Ă���c�c�B";
-	mes "������c�c�킽�c�c�O�b�c�c�B";
+	mes "[？？？？]";
+	mes "グッ、ハァハァ……";
+	mes "ウウゥ……";
+	mes "早く、来てくれ……。";
+	mes "これを……わた……グッ……。";
 	next;
-	if(select("�U���W�A����ł����H","��������")==2) {
-		mes "[�H�H�H�H]";
-		mes "�n�@�n�@�c�c�B";
+	if(select("ザルジアさんですか？","無視する")==2) {
+		mes "[？？？？]";
+		mes "ハァハァ……。";
 		close;
 	}
-	mes "[�U���W�A]";
-	mes "�n�@�n�@�c�c";
-	mes "�c�c���O�́A���҂��H";
+	mes "[ザルジア]";
+	mes "ハァハァ……";
+	mes "……お前は、何者だ？";
 	next;
 	input '@name$;
-	if('@name$ != "�閧�̉H" && '@name$ != "�J�v���E��") {
-		mes "[�U���W�A]";
-		mes "�t�b�c�c�n�@�n�@�c�c�B";
-		mes "�M�l�c�c";
-		mes "���́c�c���̖���m���Ă�񂾁H";
-		mes "�E�b�c�c�B";
+	if('@name$ != "秘密の羽" && '@name$ != "カプラ職員") {
+		mes "[ザルジア]";
+		mes "フッ……ハァハァ……。";
+		mes "貴様……";
+		mes "何故……俺の名を知ってるんだ？";
+		mes "ウッ……。";
 		next;
-		mes "-�ނ́A�C��������-";
+		mes "-彼は、気を失った-";
 		close;
 	}
-	mes "[�U���W�A]";
-	mes "�N�N�N�b�c�c";
-	mes "���Ƃ��A�Ԃɍ������悤���ȁB";
-	mes "����A�����A�x���������c�c�B";
-	mes "�E�b�c�c�n�@�n�@�c�c�B";
+	mes "[ザルジア]";
+	mes "クククッ……";
+	mes "何とか、間に合ったようだな。";
+	mes "いや、少し、遅かったか……。";
+	mes "ウッ……ハァハァ……。";
 	next;
-	mes "[�U���W�A]";
-	mes "�܂������c�c���Ă��ꂽ����c�c�B";
-	mes "����Ɓc�c������A�n����c�c�B";
-	mes "�c�c���́A�����ŏI���c�c";
-	mes "�c�c�̂悤���ȁc�c�B";
-	mes "�E�b�c�c�n�@�n�@�c�c�B";
+	mes "[ザルジア]";
+	mes "まあいい……来てくれたから……。";
+	mes "やっと……これを、渡せる……。";
+	mes "……俺は、ここで終わり……";
+	mes "……のようだな……。";
+	mes "ウッ……ハァハァ……。";
 	next;
-	mes "-�c�c�c�c-";
+	mes "-…………-";
 	next;
-	mes "[�U���W�A]";
-	mes "�N�N�N�b�c�c�B";
-	mes "�����A����������čs���c�c�B";
-	mes "�O�b�c�c�n�@�n�@�c�c�B";
-	mes "��l�ő҂A�����̂Ƃ��ցc�c�B";
-	mes "�������ƍs���I";
+	mes "[ザルジア]";
+	mes "クククッ……。";
+	mes "さあ、これを持って行け……。";
+	mes "グッ……ハァハァ……。";
+	mes "一人で待つ、あいつのとこへ……。";
+	mes "さっさと行け！";
 	set LHZ_4QUE,19;
 	getitem 7343,1;
 	close2;
@@ -10865,204 +10865,204 @@ OnInit:
 	end;
 }
 
-yuno_pre.gat,77,68,0	script	�鏑#Lhz	862,{
+yuno_pre.gat,77,68,0	script	秘書#Lhz	862,{
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-lhz_fild01.gat,76,214,0	script	�B��ꏊ	139,5,5,{
+lhz_fild01.gat,76,214,0	script	隠れ場所	139,5,5,{
 	if(LHZ_4QUE == 26 || LHZ_4QUE == 31 || LHZ_4QUE == 33 || LHZ_4QUE == 35) {
-		mes "[�H�H�H]";
-		mes "������ł��B";
-		mes "�����A�ǂ����B";
+		mes "[？？？]";
+		mes "こちらです。";
+		mes "さあ、どうぞ。";
 		close2;
-		hideoffnpc "�_��I�ȏ���#Lhz";
+		hideoffnpc "神秘的な女性#Lhz";
 		warp "lhz_fild01.gat",64,223;
 	}
 	end;
 }
 
-lhz_fild01.gat,66,219,4	script	�_��I�ȏ���#Lhz	859,{
+lhz_fild01.gat,66,219,4	script	神秘的な女性#Lhz	859,{
 	switch(LHZ_4QUE) {
 	default:
-		mes "[�G�X�i]";
-		mes "�c�c�c�c�B";
+		mes "[エスナ]";
+		mes "…………。";
 		close;
 	case 26:
-		mes "[�G�X�i]";
-		mes "���҂��������Ă���܂����B";
-		mes "���X�A�x�ꂽ�悤�ł��ˁB";
-		mes "�ł́A�}���Ŏ�Z�ɐ������܂��傤�B";
-		mes "����̎d�����e�ł����c�c";
-		mes "��Ƃ̓����֔E�э��݁A";
-		mes "���������o���Ă���Ƃ������̂ł��B";
+		mes "[エスナ]";
+		mes "お待ちいたしておりました。";
+		mes "少々、遅れたようですね。";
+		mes "では、急いで手短に説明しましょう。";
+		mes "今回の仕事内容ですが……";
+		mes "企業の内部へ忍び込み、";
+		mes "情報を持ち出してくるというものです。";
 		next;
-		mes "[�G�X�i]";
-		mes "�����Ŗ��ɂȂ�̂́A";
-		mes "���̏�񂪂���ꏊ�ł��B";
-		mes "�ȑO�������Ȃ�x����";
-		mes "���d�ɂȂ�܂��āc�c�B";
-		mes "���̊Ԃ́A���������҂́A";
-		mes "���Ȃ��ς������悤�ł��B";
+		mes "[エスナ]";
+		mes "そこで問題になるのは、";
+		mes "その情報がある場所です。";
+		mes "以前よりもかなり警備が";
+		mes "厳重になりまして……。";
+		mes "この間は、潜入した者は、";
+		mes "かなり大変だったようです。";
 		next;
-		mes "[�G�X�i]";
-		mes "����́A�܂��A���ɂ�����";
-		mes "�������Ă��邤���̎҂���";
-		mes "�J�[�h���󂯎���Ă��������B";
+		mes "[エスナ]";
+		mes "今回は、まず、既にそこへ";
+		mes "潜入しているうちの者から";
+		mes "カードを受け取ってください。";
 		next;
-		mes "[�G�X�i]";
-		mes "���̌�A^0000FF�����ۊǎ�^000000��T���Ă��������B";
-		mes "�����āA�����̌x���V�X�e����˔j���A";
-		mes "�������ԓ��ɁA�Y��������";
-		mes "�����o���Ă��Ă��������B";
+		mes "[エスナ]";
+		mes "その後、^0000FF文書保管室^000000を探してください。";
+		mes "そして、そこの警備システムを突破し、";
+		mes "制限時間内に、該当資料を";
+		mes "持ち出してきてください。";
 		next;
-		mes "[�G�X�i]";
-		mes "���A��Ƃ̓����֓��邽�߂́A";
-		mes "^FF0000�J�[�h^000000�͂������̂悤�ł��ˁB";
-		mes "��Ƃ̓����֓�������";
-		mes "^FF0000���X�e�B��^000000�Ƃ����l��";
-		mes "�K�˂Ă��������B";
+		mes "[エスナ]";
+		mes "あ、企業の内部へ入るための、";
+		mes "^FF0000カード^000000はお持ちのようですね。";
+		mes "企業の内部へ入ったら";
+		mes "^FF0000レスティン^000000という人を";
+		mes "訪ねてください。";
 		next;
-		mes "[�G�X�i]";
-		mes "�ނ����ڂ������@�������Ă���܂��B";
-		mes "�ł����A�C�����Ă��������B";
-		mes "�����ł��^����悤�ȍs��������ƁA";
-		mes "�ނ�ɋC�Â���܂��̂Łc�c�B";
+		mes "[エスナ]";
+		mes "彼がより詳しい方法を教えてくれます。";
+		mes "ですが、気をつけてください。";
+		mes "少しでも疑われるような行動をすると、";
+		mes "彼らに気づかれますので……。";
 		set LHZ_4QUE,27;
 		close2;
 		hideonnpc;
 		end;
 	case 27:
-		mes "[�G�X�i]";
-		mes "�u���X�e�B���v�ɉ�΁A";
-		mes "�ނ��A���B�̑g�D�̈���Ƃ������Ƃ�";
-		mes "������͂��ł��B";
+		mes "[エスナ]";
+		mes "「レスティン」に会えば、";
+		mes "彼が、私達の組織の一員ということが";
+		mes "分かるはずです。";
 		close;
 	case 31:
-		mes "[�G�X�i]";
-		mes "�����Ɏd�����I�����悤�ł��ˁB";
-		mes "��ɁA���̎����́A";
-		mes "^FF0000�哝��^000000�ɓn���Ă��������B";
-		mes "���B�́A����ȊO�̎�����";
-		mes "�������Ă��܂��̂Łc�c�B";
+		mes "[エスナ]";
+		mes "無事に仕事を終えたようですね。";
+		mes "先に、その資料は、";
+		mes "^FF0000大統領^000000に渡してください。";
+		mes "私達は、それ以外の資料を";
+		mes "準備していますので……。";
 		next;
-		mes "[�G�X�i]";
-		mes "���X�c�c�댯�ł͂���܂����c�c�B";
-		mes "�哝�̂ɓ����Ă��������܂��B";
-		mes "���̏��Ɋւ��ẮA^FF0000�哝��^000000��";
-		mes "���ځA���n�����܂��B";
+		mes "[エスナ]";
+		mes "少々……危険ではありますが……。";
+		mes "大統領に動いていただきます。";
+		mes "他の情報に関しては、^FF0000大統領^000000に";
+		mes "直接、お渡しします。";
 		set LHZ_4QUE,32;
 		close2;
 		hideonnpc;
 		end;
 	case 32:
 	case 34:
-		mes "[�G�X�i]";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�B";
+		mes "[エスナ]";
+		mes "………………";
+		mes "…………。";
 		close;
 	case 33:
-		mes "[�G�X�i]";
-		mes "��������Ⴂ�܂����ˁB";
-		mes "�c�c�c�c�c�c�B";
+		mes "[エスナ]";
+		mes "いらっしゃいましたね。";
+		mes "………………。";
 		next;
-		mes "[�G�X�i]";
-		mes "������ł��B";
-		mes "�c�c���̏��𓾂�̂ɁA";
-		mes "���Ȃ�̋]���𔺂��܂����B";
-		mes "�哝�̂̑g�D�ɏ������A";
-		mes "�����Ă����g�D�����قƂ��";
-		mes "��œI�ȑŌ����󂯂�قǂɁc�c�B";
+		mes "[エスナ]";
+		mes "こちらです。";
+		mes "……この情報を得るのに、";
+		mes "かなりの犠牲を伴いました。";
+		mes "大統領の組織に所属し、";
+		mes "動いていた組織員がほとんど";
+		mes "壊滅的な打撃を受けるほどに……。";
 		next;
-		mes "[�G�X�i]";
-		mes "�����āA�{�Ђ���A�������܂����B";
-		mes "����A�ƂĂ��[���ȑŌ����󂯂����߁A";
-		mes "�V���o���c�o���h�n��ɂ����ẮA";
-		mes "���΂炭�̊ԁA�����̐l���������c���A";
-		mes "�唼�͓P�����邱�ƂɂȂ�܂����B";
+		mes "[エスナ]";
+		mes "そして、本社から連絡が来ました。";
+		mes "今回、とても深刻な打撃を受けたため、";
+		mes "シュバルツバルド地域においては、";
+		mes "しばらくの間、少数の人員だけを残し、";
+		mes "大半は撤収することになりました。";
 		next;
-		mes "[�G�X�i]";
-		mes "���̂��߁A���B�͂��ꂩ��P�����܂��B";
-		mes "���̌��́A^FF0000�哝��^000000��";
-		mes "�`���Ă��������B";
+		mes "[エスナ]";
+		mes "そのため、私達はこれから撤収します。";
+		mes "この件は、^FF0000大統領^000000へ";
+		mes "伝えてください。";
 		next;
-		mes "[�G�X�i]";
-		mes "����ł́c�c�B";
+		mes "[エスナ]";
+		mes "それでは……。";
 		set LHZ_4QUE,34;
 		getitem 7343,1;
 		close2;
 		hideonnpc;
 		end;
 	case 35:
-		mes "[�G�X�i]";
-		mes "��͂�A�܂���������Ⴂ�܂����ˁB";
-		mes "�󋵂͂��̊Ԑ\���グ���Ƃ���ł��B";
-		mes "�����c�c";
+		mes "[エスナ]";
+		mes "やはり、またいらっしゃいましたね。";
+		mes "状況はこの間申し上げたとおりです。";
+		mes "ただ……";
 		next;
-		menu "�����H",-;
-		mes "[�G�X�i]";
-		mes "����A���B���A";
-		mes "�����܂Ŕ�Q�������̂́A";
-		mes "�P�Ɏォ�����Ƃ����̂ł͂���܂���B";
-		mes "�ނ���c�c";
+		menu "ただ？",-;
+		mes "[エスナ]";
+		mes "今回、私達が、";
+		mes "ここまで被害を被ったのは、";
+		mes "単に弱かったというのではありません。";
+		mes "むしろ……";
 		next;
-		menu "���c�c�H",-;
-		mes "[�G�X�i]";
-		mes "�c�c�c�c";
-		mes "������^FF0000���؂��^000000��";
-		mes "���������Ȃ̂ł��B";
-		mes "�c�c�c�c";
-		mes "�������ԋ߂��Ɂc�c�B";
+		menu "え……？",-;
+		mes "[エスナ]";
+		mes "…………";
+		mes "内部に^FF0000裏切り者^000000が";
+		mes "いたせいなのです。";
+		mes "…………";
+		mes "それも一番近くに……。";
 		next;
-		mes "[�G�X�i]";
-		mes "����A���B�����������o�������Ƃ��A";
-		mes "�ނ�֒m�点�邱�Ƃ��ł����̂́A";
-		mes "�哝�̂��{�l�Ɣނ̑���";
-		mes "^FF0000�A�E�O�X�g�E�N������^000000�������܂���B";
+		mes "[エスナ]";
+		mes "今回、私達が情報を持ち出したことを、";
+		mes "彼らへ知らせることができたのは、";
+		mes "大統領ご本人と彼の側近";
+		mes "^FF0000アウグスト・クレルレ^000000しかいません。";
 		next;
-		mes "[�G�X�i]";
-		mes "�����ȊO�A�܂肤���̕���";
-		mes "��񂪘R�ꂽ�Ƃ������́c�c";
-		mes "�����L�蓾�܂���ˁB";
-		mes "������̏����������Ƃ��ł���l�́A";
-		mes "���̐l�ȊO�ɂ͂��܂��񂩂�B";
+		mes "[エスナ]";
+		mes "そこ以外、つまりうちの方で";
+		mes "情報が漏れたという線は……";
+		mes "正直有り得ませんね。";
+		mes "それ程の情報を扱うことができる人は、";
+		mes "あの人以外にはいませんから。";
 		next;
-		mes "[�G�X�i]";
-		mes "�����ŁA����܂ł̏󋵂��l�����A";
-		mes "�ނɌ���������܂����c�c�B";
-		mes "�����āc�c�������������́A";
-		mes "�閧�ɂ������������̂ł��傤���c�c�B";
-		mes "�ł��A���ɏI��������ł����c�c�B";
+		mes "[エスナ]";
+		mes "そこで、それまでの状況を考慮し、";
+		mes "彼に見張りをつけました……。";
+		mes "そして……判明した事実は、";
+		mes "秘密にした方がいいのでしょうが……。";
+		mes "でも、既に終わった事ですし……。";
 		next;
-		mes "[�G�X�i]";
-		mes "��@���̏��ɂ��ƁA";
-		mes "�ނ���Ƃ̎������";
-		mes "�悭����Ă��������ł��B";
-		mes "�ȏ�̂��ƂƏ󋵂��Ƃ炵���킹��ƁA";
-		mes "��͂�A�ނ���ԗL�͂ȗe�^�҂ł����B";
+		mes "[エスナ]";
+		mes "偵察員の情報によると、";
+		mes "彼が企業の取締役と";
+		mes "よく会っていたそうです。";
+		mes "以上のことと状況を照らし合わせると、";
+		mes "やはり、彼が一番有力な容疑者でした。";
 		next;
-		mes "[�G�X�i]";
-		mes "�����Ŕނ̓@��ɔE�э��ނƁA";
-		mes "�ނɊւ��l�X�ȏ؋�������";
-		mes "�o�Ă��܂����B";
+		mes "[エスナ]";
+		mes "そこで彼の邸宅に忍び込むと、";
+		mes "彼に関わる様々な証拠資料が";
+		mes "出てきました。";
 		next;
-		mes "[�G�X�i]";
-		mes "���̎���𕷂����{�Ђ���A";
-		mes "�哝�̂Ɋւ�銈���ɑ΂�";
-		mes "���~���߂����܂����B";
-		mes "���Q�΂��肠��A����ȏ��";
-		mes "���v�͓����Ȃ��Ɣ��f��������ł��B";
+		mes "[エスナ]";
+		mes "この事情を聞いた本社から、";
+		mes "大統領に関わる活動に対し";
+		mes "中止命令が来ました。";
+		mes "損害ばかりあり、これ以上の";
+		mes "利益は得られないと判断したからです。";
 		next;
-		mes "[�G�X�i]";
-		mes "���̗l�Ȍo�܂���A";
-		mes "�P���Ƃ������ʂɂȂ����̂ł��B";
-		mes "�c�c�c�c�B";
+		mes "[エスナ]";
+		mes "この様な経緯から、";
+		mes "撤収という結果になったのです。";
+		mes "…………。";
 		next;
-		mes "[�G�X�i]";
-		mes "����őS�ďI���ƂȂ�܂��B";
-		mes "����ł͂���Łc�c�B";
+		mes "[エスナ]";
+		mes "これで全て終わりとなります。";
+		mes "それではこれで……。";
 		set LHZ_4QUE,36;
 		close2;
 		hideonnpc;
@@ -11071,10 +11071,10 @@ lhz_fild01.gat,66,219,4	script	�_��I�ȏ���#Lhz	859,{
 	case 37:
 	case 38:
 	case 39:
-		mes "[�G�X�i]";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�B";
+		mes "[エスナ]";
+		mes "……………………";
+		mes "………………";
+		mes "…………。";
 		close;
 	}
 OnInit:
@@ -11082,297 +11082,297 @@ OnInit:
 	end;
 }
 
-lhz_in01.gat,93,45,4	script	������	865,{
+lhz_in01.gat,93,45,4	script	研究員	865,{
 	if(LHZ_4QUE < 27) {
-		mes "[������]";
-		mes "�ǂ����Ĕ��e�͂����A";
-		mes "�u�Ԃ����v�Ɓu�����v��";
-		mes "�Ȃ��Ă���̂ł��傤���H";
-		mes "�u�������v��u�������v�ł��Ȃ��A";
-		mes "�u���F�����v��u�΂̐��v�ł��Ȃ��B";
-		mes "�ǂ����Ă��A�m�肽������܂���H";
+		mes "[研究員]";
+		mes "どうして爆弾はいつも、";
+		mes "「赤い線」と「青い線」と";
+		mes "なっているのでしょうか？";
+		mes "「白い線」や「黒い線」でもなく、";
+		mes "「黄色い線」や「緑の線」でもなく。";
+		mes "どうしてか、知りたくありません？";
 		close;
 	}
 	if(LHZ_4QUE > 27) {
-		mes "[���X�e�B��]";
-		mes "�ŋ߂́A��ꂪ�Ђǂ��Ȃ��`�B";
-		mes "�����������܂��Ă�̂��ȁc�c�B";
-		mes "�����`�B";
+		mes "[レスティン]";
+		mes "最近は、疲れがひどいなぁ～。";
+		mes "けっこうたまってるのかな……。";
+		mes "ああ～。";
 		close;
 	}
-	mes "[������]";
-	mes "�ǂ����Ĕ��e�͂����A";
-	mes "�u�Ԃ����v�Ɓu�����v��";
-	mes "�Ȃ��Ă���̂ł��傤���H";
-	mes "�u�������v��u�������v�ł��Ȃ��A";
-	mes "�u���F�����v��u�΂̐��v�ł��Ȃ��B";
+	mes "[研究員]";
+	mes "どうして爆弾はいつも、";
+	mes "「赤い線」と「青い線」と";
+	mes "なっているのでしょうか？";
+	mes "「白い線」や「黒い線」でもなく、";
+	mes "「黄色い線」や「緑の線」でもなく。";
 	next;
-	mes "[������]";
-	mes "�������Ȃ����A";
-	mes "�u�Ԃ����v�Ɓu�����v�̂ǂ��炩��";
-	mes "�I�΂Ȃ���΂Ȃ�Ȃ��Ƃ�����A";
-	mes "�ǂ���ɂ��܂����H";
+	mes "[研究員]";
+	mes "もしあなたが、";
+	mes "「赤い線」と「青い線」のどちらかを";
+	mes "選ばなければならないとしたら、";
+	mes "どちらにしますか？";
 	next;
-	if(select("�Ԃ���","����")==2) {
-		mes "[������]";
-		mes "�͂ƂĂ����m�I�ȐF�ł��B";
-		mes "���ɂ́A�����Ɋ�Â���";
-		mes "�s�������Ă��悢�ł��ˁB";
+	if(select("赤い線","青い線")==2) {
+		mes "[研究員]";
+		mes "青はとても理知的な色です。";
+		mes "時には、感性に基づいた";
+		mes "行動をしてもよいですね。";
 		close;
 	}
-	mes "[������]";
-	mes "�Ԃ͂ƂĂ���M�I�ȐF�ł��B";
-	mes "����Ȋ������������l��";
-	mes "�ǂ�Ȏd���ł�";
-	mes "��M�������Ă��Ȃ���ł��傤�B";
+	mes "[研究員]";
+	mes "赤はとても情熱的な色です。";
+	mes "そんな感性を持った人は";
+	mes "どんな仕事でも";
+	mes "情熱をもってこなせるでしょう。";
 	if(countitem(7348) < 1)
 		close;
 	next;
-	mes "[������]";
-	mes "�Ƃ���Łc�c";
-	mes "�c�c�c�c�B";
+	mes "[研究員]";
+	mes "ところで……";
+	mes "…………。";
 	next;
-	mes "[������]";
-	mes "���ɉ����p��������܂��H";
+	mes "[研究員]";
+	mes "私に何か用事があります？";
 	next;
-	mes "-�ނ̋����̖��D�ɁA";
-	mes "^FF0000���X�e�B��^000000�Ə�����Ă���-";
+	mes "-彼の胸元の名札に、";
+	mes "^FF0000レスティン^000000と書かれている-";
 	next;
-	if(select("������","�͂�")==1) {
-		mes "[���X�e�B��]";
-		mes "���������ŁA�����ł͂����܂����B";
-		mes "���R�̂��Ƃł͂���܂����B";
+	if(select("いいえ","はい")==1) {
+		mes "[レスティン]";
+		mes "研究所内で、騒いではいけませんよ。";
+		mes "当然のことではありますが。";
 		close;
 	}
-	mes "[���X�e�B��]";
-	mes "�ǂ̂悤�Ȃ��p���ł��H";
+	mes "[レスティン]";
+	mes "どのようなご用件です？";
 	next;
-	menu "�g�D���̏؂�������",-;
+	menu "組織員の証を見せる",-;
 	warp "lhz_in01.gat",283,166;
 	end;
 }
 
-lhz_in01.gat,285,169,3	script	������	865,{
+lhz_in01.gat,285,169,3	script	研究員	865,{
 	switch(LHZ_4QUE) {
 	default:
 		if(LHZ_4QUE >= 31) {
-			mes "[���X�e�B��]";
-			mes "�����A������ւ�";
-			mes "���Ȃ������悳�����ł��B";
-			mes "���܂�󋵂��ǂ�����܂���̂ŁB";
+			mes "[レスティン]";
+			mes "当分、こちらへは";
+			mes "来ない方がよさそうです。";
+			mes "あまり状況が良くありませんので。";
 			close;
 		}
-		mes "[������]";
-		mes "������́A��������֎~���ł��B";
-		mes "�ǂ�����ē������̂��͒m��܂��񂪁A";
-		mes "�������ɏo�Ă����Ă��������B";
+		mes "[研究員]";
+		mes "こちらは、立ち入り禁止区域です。";
+		mes "どうやって入ったのかは知りませんが、";
+		mes "今すぐに出ていってください。";
 		close;
 	case 27:
-		mes "[���X�e�B��]";
-		mes "�����Ȃ�l�C���Ȃ��̂Łc�c";
-		mes "���b���܂��傤�B";
-		mes "���̎d���́A�ƂĂ��댯�Ȃ̂ŁA";
-		mes "�悭�b�𕷂��Ă��������B";
+		mes "[レスティン]";
+		mes "ここなら人気がないので……";
+		mes "お話しましょう。";
+		mes "この仕事は、とても危険なので、";
+		mes "よく話を聞いてください。";
 		next;
-		mes "[���X�e�B��]";
-		mes "�u�G�X�i�v���񂩂炨�����̒ʂ�A";
-		mes "���A������̌x���́A���i����";
-		mes "���Ȃ茵�d�ɂȂ��Ă��܂��B";
+		mes "[レスティン]";
+		mes "「エスナ」さんからお聞きの通り、";
+		mes "今、こちらの警備は、普段よりも";
+		mes "かなり厳重になっています。";
 		next;
-		mes "[���X�e�B��]";
-		mes "�u�閧�����ۊǎ��v�́A�{����";
-		mes "�B���Ȃ���΂Ȃ�Ȃ��閧��";
-		mes "����Ƃ������c�c";
+		mes "[レスティン]";
+		mes "「秘密文書保管室」は、本当に";
+		mes "隠さなければならない秘密が";
+		mes "あるというより……";
 		next;
-		mes "[���X�e�B��]";
-		mes "�O���Ɍ��J���ꂽ�ꍇ��";
-		mes "���Ȃ��ƂɂȂ�������";
-		mes "�ۊǂ��Ă����ꏊ�Ȃ̂ŁA�x����";
-		mes "���܂茵�����Ȃ������̂ł����c�c�B";
+		mes "[レスティン]";
+		mes "外部に公開された場合に";
+		mes "厄介なことになる情報を主に";
+		mes "保管していた場所なので、警備は";
+		mes "あまり厳しくなかったのですが……。";
 		next;
-		mes "[���X�e�B��]";
-		mes "�Ƃɂ����A���݂̌x����Ԃł́A";
-		mes "���͂����֋ߕt�����Ƃ��ł��܂���B";
-		mes "������̐E���B�́A��{�I��";
-		mes "���ꏊ��m���Ă��܂��̂ŁB";
+		mes "[レスティン]";
+		mes "とにかく、現在の警備状態では、";
+		mes "私はそこへ近付くことができません。";
+		mes "こちらの職員達は、基本的に";
+		mes "居場所を知られていますので。";
 		next;
-		mes "[���X�e�B��]";
-		mes "�����̌x�����́A���܂������Ԃ��Ƃ�";
-		mes "��サ�Ă��܂��B���̃^�C�~���O��";
-		mes "���܂����p����΁A�ӊO�ƊȒP��";
-		mes "�E�э��߂邩������܂���B";
+		mes "[レスティン]";
+		mes "そこの警備員は、決まった時間ごとに";
+		mes "交代しています。そのタイミングを";
+		mes "うまく利用すれば、意外と簡単に";
+		mes "忍び込めるかもしれません。";
 		next;
-		mes "[���X�e�B��]";
-		mes "��������ςȂ̂͂��̎��ł��B";
-		mes "���A���������Ă���J�[�h�ł́A";
-		mes "���������A��3������";
-		mes "���p���邱�Ƃ��ł��܂���B";
+		mes "[レスティン]";
+		mes "しかし大変なのはその次です。";
+		mes "今、私が持っているカードでは、";
+		mes "あそこを、約3分しか";
+		mes "利用することができません。";
 		next;
-		mes "[���X�e�B��]";
-		mes "�J�[�h��n���܂��̂ŁA";
-		mes "�K�����������Ă��������B";
-		mes "�u�����ۊǎ��v�̏ꏊ�́A";
-		mes "��قǎ��������������̂����E�ł��B";
-		mes "����ł͂�����c�c�B";
+		mes "[レスティン]";
+		mes "カードを渡しますので、";
+		mes "必ず成功させてください。";
+		mes "「文書保管室」の場所は、";
+		mes "先ほど私がいた研究室のすぐ右です。";
+		mes "それではこれを……。";
 		set LHZ_4QUE,28;
 		getitem 7349,1;
 		next;
-		mes "[���X�e�B��]";
-		mes "���̎d�����I�������A";
-		mes "�J�[�h��Ԃ��Ă��������B";
-		mes "�����A�����`�F�b�N����܂��̂ŁB";
-		mes "�c�c�c�c�B";
+		mes "[レスティン]";
+		mes "この仕事が終わったら、";
+		mes "カードを返してください。";
+		mes "随時、所持チェックされますので。";
+		mes "…………。";
 		close;
 	case 28:
 	case 29:
-		mes "[���X�e�B��]";
-		mes "�댯�ł͂���܂����A";
-		mes "�s�\�ł͂Ȃ��͂��ł��B";
+		mes "[レスティン]";
+		mes "危険ではありますが、";
+		mes "不可能ではないはずです。";
 		close;
 	case 30:
 		if(countitem(7349) < 1) {
-			mes "[���X�e�B��]";
-			mes "�댯�ł͂���܂����A";
-			mes "�s�\�ł͂Ȃ��͂��ł��B";
-			mes "���ꂩ��c�c";
-			mes "�J�[�h�͑厖�ɂ��Ă��������B";
+			mes "[レスティン]";
+			mes "危険ではありますが、";
+			mes "不可能ではないはずです。";
+			mes "それから……";
+			mes "カードは大事にしてください。";
 			close;
 		}
 		if(countitem(7344) < 1) {
-			mes "[���X�e�B��]";
-			mes "�����͂ǂ��ł��H";
-			mes "���A�܂��̂悤�ł��ˁc�c�B";
-			mes "�댯�ł͂���܂����A";
-			mes "�s�\�ł͂Ȃ��͂��ł��B";
+			mes "[レスティン]";
+			mes "資料はどこです？";
+			mes "あ、まだのようですね……。";
+			mes "危険ではありますが、";
+			mes "不可能ではないはずです。";
 			next;
-			mes "[���X�e�B��]";
-			mes "����ɁA�������ɂ���";
-			mes "��������̎����́c�c�B";
-			mes "���[��c�c��Ȃ��̂ŁA";
-			mes "�G��Ȃ����������ł��B";
+			mes "[レスティン]";
+			mes "それに、あそこにある";
+			mes "たくさんの資料は……。";
+			mes "うーん……危ないので、";
+			mes "触れない方がいいです。";
 			close;
 		}
-		mes "[���X�e�B��]";
-		mes "�����Ɏ����o�����悤�ł��ˁB";
-		mes "�������́A���̎����������āA";
-		mes "�T���o���̂͑�ς������ł��傤�B";
-		mes "�{���́A���̎������ꏏ��";
-		mes "�����o����΂����̂ł����A";
-		mes "����͂�͂�댯�ł����ˁc�c�B";
+		mes "[レスティン]";
+		mes "無事に持ち出せたようですね。";
+		mes "あそこは、他の資料も多くて、";
+		mes "探し出すのは大変だったでしょう。";
+		mes "本当は、他の資料も一緒に";
+		mes "持ち出せればいいのですが、";
+		mes "それはやはり危険ですしね……。";
 		next;
-		mes "[���X�e�B��]";
-		mes "���̎����́A";
-		mes "�u�G�X�i�v����ɓ͂��Ă��������B";
-		mes "�҂��Ă���������͂��ł��B";
+		mes "[レスティン]";
+		mes "この資料は、";
+		mes "「エスナ」さんに届けてください。";
+		mes "待っていらっしゃるはずです。";
 		delitem 7349,1;
 		set LHZ_4QUE,31;
 		close;
 	}
 }
 
-lhz_in01.gat,187,31,0	script	�Ȃ���p	139,4,3,{
+lhz_in01.gat,187,31,0	script	曲がり角	139,4,3,{
 	if((LHZ_4QUE != 28 && LHZ_4QUE != 29) || rand(3))
 		end;
-	mes "-�Ȃ���p�ɋ߂Â��Ɓc�c";
-	mes "�ǂ̌���������A�q�\�q�\��";
-	mes "�b��������������-";
+	mes "-曲がり角に近づくと……";
+	mes "壁の向こうから、ヒソヒソと";
+	mes "話し声が聴こえる-";
 	next;
-	mes "[�x����1]";
-	mes "�����A���낻����̎��Ԃ��B";
-	mes "���̓z����Ă�ŗ����B";
+	mes "[警備兵1]";
+	mes "おい、そろそろ交代の時間だ。";
+	mes "次の奴らを呼んで来るよ。";
 	next;
-	mes "[�x����2]";
-	mes "�����A��������Ȏ��Ԃ��c�c�B";
-	mes "���ꂶ�Ⴀ�A�Ă�ł��Ă���B";
+	mes "[警備兵2]";
+	mes "ああ、もうそんな時間か……。";
+	mes "それじゃあ、呼んできてくれ。";
 	next;
-	mes "[�x����1]";
-	mes "���������B������ƍs���Ă���B";
+	mes "[警備兵1]";
+	mes "分かった。ちょっと行ってくる。";
 	next;
-	mes "-��l�̋C�z���A�����֏�����-";
-	mes "-������Ƒ҂��Ă݂悤�c�c-";
+	mes "-一人の気配が、遠くへ消えた-";
+	mes "-ちょっと待ってみよう……-";
 	next;
-	mes "[�x����]";
-	mes "���[��c�c";
-	mes "���΂炭�g�C���s���ĂȂ������ȁc�c�B";
-	mes "������Ƃ��炢����Ă����C���낤�B";
+	mes "[警備兵]";
+	mes "うーん……";
+	mes "しばらくトイレ行ってなかったな……。";
+	mes "ちょっとぐらい離れても平気だろう。";
 	next;
-	mes "-�c���Ă���������l�̋C�z��������-";
-	mes "-�c�c-";
+	mes "-残っていたもう一人の気配も消えた-";
+	mes "-……-";
 	next;
-	if(select("�E�э���","���̋@��ɂ���")==2) {
-		mes "-�s�����������̂ŁA";
-		mes "�܂��̋@��ɂ��邱�Ƃɂ���-";
+	if(select("忍び込む","次の機会にする")==2) {
+		mes "-不安を感じたので、";
+		mes "またの機会にすることにした-";
 		close;
 	}
-	mes "-�����E�э��ރ`�����X�̂悤��-";
-	mes "-���������ɋߕt���ƁA";
-	mes "�J�[�h�����鑕�u��������-";
+	mes "-今が忍び込むチャンスのようだ-";
+	mes "-こっそり門に近付くと、";
+	mes "カードを入れる装置があった-";
 	next;
-	if(select("�F�؃J�[�h������","��߂Ă���")==2) {
-		mes "-�s���������A";
-		mes "���̏�𗣂�邱�Ƃɂ���-";
+	if(select("認証カードを入れる","やめておく")==2) {
+		mes "-不安を感じ、";
+		mes "その場を離れることにした-";
 		close;
 	}
 	if(countitem(7349) < 1) {
-		mes "-�c�c�c�c-";
-		mes "-�ۊǎ��̔F�؃J�[�h��Y��Ă���-";
+		mes "-…………-";
+		mes "-保管室の認証カードを忘れてきた-";
 		close;
 	}
-	mes "-�F�؃J�[�h����ꂽ-";
-	mes "-�����̋@�B���Ƌ��ɁA";
-	mes "�F�؃J�[�h����ꂽ���u��";
-	mes "�Ђ�����Ԃ�A";
-	mes "�����������ꂽ������ꂽ-";
+	mes "-認証カードを入れた-";
+	mes "-多少の機械音と共に、";
+	mes "認証カードを入れた装置が";
+	mes "ひっくり返り、";
+	mes "数字が書かれた板が現われた-";
 	next;
 	for(set '@c,0; '@c<3; set '@c,'@c+1) {
 		input '@num;
 		if('@num == 738495) {
-			mes "-�s�C�[�b-";
+			mes "-ピイーッ-";
 			next;
-			mes "-��������͂���ƁA";
-			mes "��������Ȃ������ȋ@�B����������A";
-			mes "�h�A���J����-";
+			mes "-数字を入力すると、";
+			mes "聞き慣れない小さな機械音がした後、";
+			mes "ドアが開いた-";
 			next;
-			if(select("����","����Ȃ�")==2) {
-				mes "-�c�c�c�c-";
-				mes "-���ȗ\��������-";
-				mes "-����Ȃ������悳������-";
+			if(select("入る","入らない")==2) {
+				mes "-…………-";
+				mes "-嫌な予感がする-";
+				mes "-入らない方がよさそうだ-";
 				close;
 			}
-			mes "-���u�𑀍삵�Ē��֓����Ă����ƁA";
-			mes "�������Ȃ��@�B������������-";
+			mes "-装置を操作して中へ入っていくと、";
+			mes "ぎこちない機械音が聴こえた-";
 			next;
-			mes "-�����ꂽ���Ԃ́A3���Ԃł�-";
-			mes "-3����ɂ͋����ޏꂳ���܂��̂ŁA";
-			mes "���C������������-";
+			mes "-許可された時間は、3分間です-";
+			mes "-3分後には強制退場させますので、";
+			mes "お気をつけください-";
 			close2;
-			initnpctimer "�����ۊǎ�#Lhz";
+			initnpctimer "文書保管室#Lhz";
 			warp "lhz_in01.gat",177,35;
 			end;
 		}
-		mes "-�r�r�[�b�A�r�r�[�b-";
+		mes "-ビビーッ、ビビーッ-";
 		next;
-		mes "-��������͂���ƁA";
-		mes "��ʂɈႤ�ԍ����\�����ꂽ-";
+		mes "-数字を入力すると、";
+		mes "画面に違う番号が表示された-";
 		next;
 	}
-	mes "-�W���������`�b-";
+	mes "-ジリリリリ～ッ-";
 	next;
-	mes "-3��A���͂Ɏ��s���܂���-";
-	mes "-�S���҂�����܂ŁA";
-	mes "���̏�ł��҂���������-";
+	mes "-3回、入力に失敗しました-";
+	mes "-担当者が来るまで、";
+	mes "その場でお待ちください-";
 	next;
-	mes "�c�c�c�c�c�c";
-	mes "�c�c�c�c";
-	mes "�c�c�B";
+	mes "………………";
+	mes "…………";
+	mes "……。";
 	next;
-	mes "-���̏�𗣂ꂽ�����悳������-";
+	mes "-この場を離れた方がよさそうだ-";
 	close2;
 	warp "lhz_in01.gat",191,49;
 	end;
 }
 
-lhz_in01.gat,177,44,0	script	�����ۊǎ�#Lhz	139,7,12,{
+lhz_in01.gat,177,44,0	script	文書保管室#Lhz	139,7,12,{
 	if(getnpctimer(1) == 0 || (LHZ_4QUE != 28 && LHZ_4QUE != 29))
 		warp "lhz_in01.gat",177,26;
 	end;
@@ -11382,121 +11382,121 @@ OnTimer180000:
 	end;
 }
 
-lhz_in01.gat,177,31,0	script	��	111,{
+lhz_in01.gat,177,31,0	script	門	111,{
 	set '@dummy,getmapxy('@dummy,'@x,'@y,0);
 	if('@x < 170 || '@x > 183 || '@y < 32 || '@y > 55) {
-		mes "[�x����]";
-		mes "������͗�������֎~���ł��B";
-		mes "���������������B";
+		mes "[警備兵]";
+		mes "こちらは立ち入り禁止区域です。";
+		mes "ご遠慮ください。";
 		close;
 	}
-	mes "-����ꂽ�傪����-";
-	mes "-��̎��͂�����ƁA";
-	mes "�O�ɂ��������̂Ǝ������u������-";
+	mes "-閉じられた門がある-";
+	mes "-門の周囲を見ると、";
+	mes "外にあったものと似た装置がある-";
 	next;
-	if(select("���u�𑀍삷��","�����������͂𒲍�����")==2)
+	if(select("装置を操作する","もう少し周囲を調査する")==2)
 		close;
-	mes "-��̑��̑��u�ɐG���ƁA";
-	mes "�@�B���Ƌ��ɖ傪�J����-";
+	mes "-門の側の装置に触れると、";
+	mes "機械音と共に門が開いた-";
 	close2;
 	warp "lhz_in01.gat",177,26;
 	end;
 }
 
-lhz_in01.gat,182,35,0	script	���ތ����@	111,{
+lhz_in01.gat,182,35,0	script	書類検索機	111,{
 	set '@dummy,getmapxy('@dummy,'@x,'@y,0);
 	if('@x < 170 || '@x > 183 || '@y < 32 || '@y > 55)
 		end;
 	if(LHZ_4QUE != 28 && LHZ_4QUE != 29) {
-		mes "-���ތ������ł��鑕�u��-";
-		mes "-�����A���Ɍ��������������͂Ȃ�-";
+		mes "-書類検索ができる装置だ-";
+		mes "-だが、特に検索したい文書はない-";
 		close;
 	}
-	mes "-���ތ������ł��鑕�u�̂悤��-";
+	mes "-書類検索ができる装置のようだ-";
 	next;
 	while(1) {
-		if(select("���ތ���������","���ތ�������߂�")==2) {
-			mes "-���ތ����𒆎~���܂�-";
-			mes "-�����I���́A�V�X�e���ɏ�Q��";
-			mes "�����N�����\��������܂�-";
-			mes "-�C�����Ă�������-";
+		if(select("書類検索をする","書類検索をやめる")==2) {
+			mes "-書類検索を中止します-";
+			mes "-強制終了は、システムに障害を";
+			mes "引き起こす可能性があります-";
+			mes "-気をつけてください-";
 			close;
 		}
-		mes "-���������v���O�������N�����܂�-";
-		mes "-�{�����������Ɋւ���L�[���[�h��";
-		mes "���͂��Ă�������-";
+		mes "-文書検索プログラムを起動します-";
+		mes "-捜したい文書に関するキーワードを";
+		mes "入力してください-";
 		input '@word$;
-		if('@word$ == "�V�h�N�X")
+		if('@word$ == "シドクス")
 			break;
-		mes "-�������邱�Ƃ��ł��Ȃ������ł�-";
-		mes "-������ɂ͕ۊǂ���Ă��Ȃ����̂��A";
-		mes "�����s�\�Ȏ����Ǝv���܂�-";
+		mes "-検索することができない資料です-";
+		mes "-こちらには保管されていないものか、";
+		mes "検索不可能な資料と思われます-";
 		next;
 	}
-	mes "-�V�h�N�X";
-	mes "�Ɋւ�����e�́A";
-	mes "1-5���ɕۊǂ���Ă��܂�-";
+	mes "-シドクス";
+	mes "に関する内容は、";
+	mes "1-5区域に保管されています-";
 	if(LHZ_4QUE == 28)
 		set LHZ_4QUE,29;
 	close;
 }
-lhz_in01.gat,184,40,0	script	1-5���	111,{
+lhz_in01.gat,184,40,0	script	1-5区域	111,{
 	set '@dummy,getmapxy('@dummy,'@x,'@y,0);
 	if('@x < 170 || '@x > 183 || '@y < 32 || '@y > 55)
 		end;
 	if(LHZ_4QUE == 28) {
-		mes "-�c��ȗʂ̏��ނ�����-";
-		mes "-�c�c-";
-		mes "-�������牽����{���o���̂́A";
-		mes "�������-";
+		mes "-膨大な量の書類がある-";
+		mes "-……-";
+		mes "-ここから何かを捜し出すのは、";
+		mes "難しそうだ-";
 		close;
 	}
 	else if(LHZ_4QUE != 29) {
-		mes "-�{���Ă��鎑���͂Ȃ��悤��-";
+		mes "-捜している資料はないようだ-";
 		close;
 	}
-	mes "�c�c�c�c";
-	mes "�c�c�c�c�c�c";
-	mes "�c�c�c�c�c�c�c�c";
-	mes "�A�C���x�t�̍z�R�Ŕ������ꂽ";
-	mes "�u���~���̐S���̌��Ёv�́A";
-	mes "�����ɁA�A�C���u���b�N�։^�΂ꂽ�B";
+	mes "…………";
+	mes "………………";
+	mes "……………………";
+	mes "アインベフの鉱山で発見された";
+	mes "「ユミルの心臓の欠片」は、";
+	mes "すぐに、アインブロックへ運ばれた。";
 	next;
-	mes "����͂��̌�A�����̂��߁A";
-	mes "�X�Ɍ������։^�΂ꂽ�B";
-	mes "�����āA�������ւ̏o���肪��������A";
-	mes "���̌����͊J�n���ꂽ�B";
+	mes "それはその後、研究のため、";
+	mes "更に研究所へ運ばれた。";
+	mes "そして、研究所への出入りが制限され、";
+	mes "その研究は開始された。";
 	next;
-	mes "�����A�u���~���̐S���v��";
-	mes "���������ҒB�̊Ԃ�";
-	mes "�g���u�����������A�ނ�́c�c�B";
+	mes "だが、「ユミルの心臓」を";
+	mes "発見した者達の間で";
+	mes "トラブルが発生し、彼らは……。";
 	next;
-	mes "�c�c�c�c�B";
-	mes "�c�c�B";
+	mes "…………。";
+	mes "……。";
 	next;
-	mes "-�{���Ă��������̂悤��-";
+	mes "-捜していた資料のようだ-";
 	set LHZ_4QUE,30;
 	getitem 7344,1;
 	close;
 }
-lhz_in01.gat,184,46,0	script	3-2���#Lhz	111,{
+lhz_in01.gat,184,46,0	script	3-2区域#Lhz	111,{
 	set '@dummy,getmapxy('@dummy,'@x,'@y,0);
 	if('@x < 170 || '@x > 183 || '@y < 32 || '@y > 55)
 		end;
 	if(LHZ_4QUE == 28) {
-		mes "-�c��ȗʂ̏��ނ�����-";
-		mes "-�c�c-";
-		mes "-�������牽����{���o���̂́A";
-		mes "�������-";
+		mes "-膨大な量の書類がある-";
+		mes "-……-";
+		mes "-ここから何かを捜し出すのは、";
+		mes "難しそうだ-";
 		close;
 	}
-	mes "-�{���Ă��鎑���͂Ȃ��悤��-";
+	mes "-捜している資料はないようだ-";
 	close;
 }
-lhz_in01.gat,184,48,0	duplicate(3-2���#Lhz)	3-3���	111
-lhz_in01.gat,177,56,0	duplicate(3-2���#Lhz)	6-1���	111
+lhz_in01.gat,184,48,0	duplicate(3-2区域#Lhz)	3-3区域	111
+lhz_in01.gat,177,56,0	duplicate(3-2区域#Lhz)	6-1区域	111
 
-yuno_pre.gat,75,73,0	script	���ꂢ�Ȑa�m#Lhz	109,{
+yuno_pre.gat,75,73,0	script	きれいな紳士#Lhz	109,{
 	end;
 OnInit:
 	hideonnpc;
@@ -11504,9 +11504,9 @@ OnInit:
 }
 
 //============================================================
-// �X���N�G�X�gNPC
+// スリクエストNPC
 //------------------------------------------------------------
-lighthalzen.gat,220,169,3	script	�j#Lhz1	870,2,2,{
+lighthalzen.gat,220,169,3	script	男#Lhz1	870,2,2,{
 	end;
 OnTouch:
 	switch(rand(3)) {
@@ -11514,145 +11514,145 @@ OnTouch:
 		misceffect 18,"";
 		if(Zeny >= 200)
 			set Zeny,Zeny-200;
-		mes (strnpcinfo(2) == "Lhz2")? "�T�T�T": "�T�N�T�N";
+		mes (strnpcinfo(2) == "Lhz2")? "サササ": "サクサク";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "����?!";
+		mes "あら?!";
 		next;
-		mes "�t�t�t�c�c";
+		mes "フフフ……";
 		close;
 	case 1:
 		misceffect 18,"";
 		if(Zeny >= 100)
 			set Zeny,Zeny-100;
-		mes (strnpcinfo(2) == "Lhz3")? "�o�T": "�o�T�o�T";
+		mes (strnpcinfo(2) == "Lhz3")? "バサ": "バサバサ";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "����?!";
+		mes "うん?!";
 		next;
-		mes "�N�N�N�N�c�c";
+		mes "クククク……";
 		close;
 	case 2:
 		misceffect 18,"";
 		if(Zeny >= 10)
 			set Zeny,Zeny-10;
-		mes ((strnpcinfo(2) == "Lhz1")? "�T�N�T�N�B": (strnpcinfo(2) == "Lhz2")? "�T�T�b": "�o�T�o�T");
+		mes ((strnpcinfo(2) == "Lhz1")? "サクサク。": (strnpcinfo(2) == "Lhz2")? "ササッ": "バサバサ");
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�A�b!?�@�����I";
+		mes "アッ!?　何だ！";
 		next;
 		if(strnpcinfo(2) == "Lhz3")
 			break;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���Ȃ��I";
-		mes "�����̂�����?!";
+		mes "あなた！";
+		mes "今私のお金を?!";
 		next;
-		mes "[�������j]";
-		mes "�A�b�I�@�΂ꂿ������I";
+		mes "[怪しい男]";
+		mes "アッ！　ばれちゃった！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes (strnpcinfo(2) == "Lhz1")? "�܂����X��!?!?": "���̂�����Ԃ�!!";
+		mes (strnpcinfo(2) == "Lhz1")? "まさかスリ!?!?": "私のお金を返せ!!";
 		next;
-		mes "[�������j]";
-		mes "�G�C�b!!";
-		mes (strnpcinfo(2) == "Lhz1")? "�����悤!!": "�`�b!!";
+		mes "[怪しい男]";
+		mes "エイッ!!";
+		mes (strnpcinfo(2) == "Lhz1")? "逃げよう!!": "チッ!!";
 		hideonnpc;
 		if(rand(4))
-			hideoffnpc "�j#Lhz" +((strnpcinfo(2) == "Lhz1")? "2": "1");
+			hideoffnpc "男#Lhz" +((strnpcinfo(2) == "Lhz1")? "2": "1");
 		else
-			hideoffnpc "�j#Lhz3";
+			hideoffnpc "男#Lhz3";
 		close;
 	}
 	mes "[" +strcharinfo(0)+ "]";
-	mes "���Ȃ�!!";
-	mes "�����̂�����?!";
-	mes "�X����!!";
+	mes "あなた!!";
+	mes "今私のお金を?!";
+	mes "スリだ!!";
 	next;
-	mes "[�������j]";
-	mes "�`�b�I�@�΂ꂿ��������I";
-	mes "�����悤�I";
+	mes "[怪しい男]";
+	mes "チッ！　ばれちゃったか！";
+	mes "逃げよう！";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�����A�ǂ��ɓ����悤�ƁI";
-	mes "���̂����𓐂ނȂ�āc�c";
-	mes "�x�@�ɘA��čs���Ă��I";
-	mes "����!!";
+	mes "こいつ、どこに逃げようと！";
+	mes "私のお金を盗むなんて……";
+	mes "警察に連れて行ってやる！";
+	mes "来い!!";
 	next;
 	emotion 28;
-	mes "[�j]";
-	mes "�A�A�A�b�I�@�҂��đ҂��āI";
-	mes "���߂�Ȃ����I�@���񂾂�����";
-	mes "�S���Ԃ��܂�����A";
-	mes "��x���������Ă��������c�c";
+	mes "[男]";
+	mes "アアアッ！　待って待って！";
+	mes "ごめんなさい！　盗んだお金は";
+	mes "全部返しますから、";
+	mes "一度だけ許してください……";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�ǂ��c�c���񂾂��͋������B";
-	mes "���ꂩ��̓X���Ȃ��";
-	mes "���Ȃ��悤�ɁI";
+	mes "良し……今回だけは許そう。";
+	mes "これからはスリなんて";
+	mes "しないように！";
 	next;
-	mes "[�j]";
-	mes "���肪�Ƃ��������܂��c�c";
-	mes "����ɁA���������";
-	mes "�����o�����ɂ悭�g����";
-	mes "������������܂���B";
+	mes "[男]";
+	mes "ありがとうございます……";
+	mes "お礼に、私が盗んで";
+	mes "逃げ出す時によく使った";
+	mes "秘薬を安く譲りますよ。";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "����!?!";
-	mes "����͉��H";
+	mes "うん!?!";
+	mes "それは何？";
 	next;
-	mes "[�j]";
-	mes "���̔������ނ�";
-	mes "�����قǑ��ɗ͂��݂Ȃ���A";
-	mes "�ƂĂ����������悤�ɂȂ�܂��B";
+	mes "[男]";
+	mes "この秘薬を飲むと";
+	mes "驚くほど足に力がみなぎり、";
+	mes "とても早く走れるようになります。";
 	next;
-	mes "[�j]";
-	mes "�ǂ��ł����H";
-	mes "���̔��A�����܂��񂩁H";
-	mes "���i�Ȃ�l�ɔ��镨����Ȃ����ǁA";
-	mes "���Ȃ��ɂ�15,000Zeny�Ŕ���܂���B";
+	mes "[男]";
+	mes "どうですか？";
+	mes "この秘薬、買いませんか？";
+	mes "普段なら人に売る物じゃないけど、";
+	mes "あなたには15,000Zenyで売りますよ。";
 	next;
-	mes "[�j]";
-	mes "���������܂����H";
+	mes "[男]";
+	mes "いくつ買いますか？";
 	next;
-	if(select("1����","2����","3����","����Ȃ�")==4) {
-		mes "[�j]";
-		mes "����ȁ`";
-		mes "�{���ɗǂ��i���Ȃ̂ɂȁB";
-		mes "�����ƌ�����܂���c�c";
-		mes "�Ƃɂ����A�����Ă����";
-		mes "���肪�Ƃ��B";
+	if(select("1個買う","2個買う","3個買う","買わない")==4) {
+		mes "[男]";
+		mes "そんな～";
+		mes "本当に良い品物なのにな。";
+		mes "きっと後悔しますよ……";
+		mes "とにかく、許してくれて";
+		mes "ありがとう。";
 		next;
-		mes "[�j]";
-		mes "���ꂶ�ᎄ�͂���ŁI";
-		mes "���A�d���ĊJ�Ƃ������I�@�N�N�c�c";
+		mes "[男]";
+		mes "それじゃ私はこれで！";
+		mes "さ、仕事再開といくか！　クク……";
 		hideonnpc;
-		hideoffnpc "�j#Lhz"+rand(1,2);
+		hideoffnpc "男#Lhz"+rand(1,2);
 		close;
 	}
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�ǂ��I�@" +@menu+ "��" +((@menu == 3)? "�S��": "����")+ "�������I";
+	mes "良し！　" +@menu+ "個" +((@menu == 3)? "全部": "だけ")+ "買おう！";
 	next;
 	if(Zeny < @menu*15000) {
-		mes "[�j]";
-		mes "�����玄���X����������āA";
-		mes "�����͏����ł�����ˁB";
-		mes "���Ȃ��͍�����������Ȃ��ł��傤�H";
-		mes "����ł͎���ł��܂���ˁB";
+		mes "[男]";
+		mes "いくら私がスリだからって、";
+		mes "商売は商売ですからね。";
+		mes "あなたは今お金が足りないでしょう？";
+		mes "これでは取引できませんね。";
 		next;
-		mes "[�j]";
-		mes "���ꂶ��A���͎d���ɖ߂�܂����c�c";
+		mes "[男]";
+		mes "それじゃ、私は仕事に戻りますか……";
 		hideonnpc;
-		hideoffnpc "�j#Lhz"+rand(1,2);
+		hideoffnpc "男#Lhz"+rand(1,2);
 		close;
 	}
-	mes "[�j]";
-	mes @menu+ "�ł����H";
-	mes ((@menu == 1)? "�v������肯���Ȑl�ł��ˁB": (@menu == 2)? "���r���[�ł��ˁc�c": "���x����!!");
-	mes "�Ƃɂ����A��������I";
-	mes "��x�Ɖ��Ȃ��Ǝv���܂����A";
-	mes "���ꂶ��I";
+	mes "[男]";
+	mes @menu+ "個ですか？";
+	mes ((@menu == 1)? "思ったよりけちな人ですね。": (@menu == 2)? "中途半端ですね……": "毎度あり!!");
+	mes "とにかく、取引成立！";
+	mes "二度と会わないと思いますが、";
+	mes "それじゃ！";
 	hideonnpc;
-	hideoffnpc "�j#Lhz"+rand(1,2);
+	hideoffnpc "男#Lhz"+rand(1,2);
 	set Zeny,Zeny-@menu*15000;
 	getitem 12016,@menu;
 	close;
@@ -11661,527 +11661,527 @@ OnInit:
 		hideonnpc;
 	end;
 }
-lighthalzen.gat,240,216,3	duplicate(�j#Lhz1)	�j#Lhz2	870,2,2
-lighthalzen.gat,164,127,3	duplicate(�j#Lhz1)	�j#Lhz3	870,2,2
+lighthalzen.gat,240,216,3	duplicate(男#Lhz1)	男#Lhz2	870,2,2
+lighthalzen.gat,164,127,3	duplicate(男#Lhz1)	男#Lhz3	870,2,2
 
 //============================================================
-// ���̍H�w������NPC
+// 生体工学研究所NPC
 //------------------------------------------------------------
-lhz_dun02.gat,150,122,4	script	�x����#Lhz	837,{
-	mes "-����҂̃��x���������-";
-	mes "-������Ă��Ȃ����x����-";
-	mes "-�������͏o������ւ���-";
+lhz_dun02.gat,150,122,4	script	警告文#Lhz	837,{
+	mes "-入場者のレベル制限区域-";
+	mes "-許可されていないレベルの-";
+	mes "-研究員は出入りを禁ずる-";
 	close;
 }
-lhz_dun02.gat,149,178,4	duplicate(�x����#Lhz)	�x����	837
-lhz_dun02.gat,122,149,4	duplicate(�x����#Lhz)	�x����	837
-lhz_dun02.gat,177,150,4	duplicate(�x����#Lhz)	�x����	837
+lhz_dun02.gat,149,178,4	duplicate(警告文#Lhz)	警告文	837
+lhz_dun02.gat,122,149,4	duplicate(警告文#Lhz)	警告文	837
+lhz_dun02.gat,177,150,4	duplicate(警告文#Lhz)	警告文	837
 
 //============================================================
-// ���b�P���x���̃A���o�C�g�N�G�X�gNPC
+// レッケンベルのアルバイトクエストNPC
 //- Registry -------------------------------------------------
-// LHZ_5QUE -> 0�`23
+// LHZ_5QUE -> 0～23
 //------------------------------------------------------------
-lighthalzen.gat,141,162,3	script	���N	85,{
-	mes "[���N]";
-	mes "���̂���J�W�G����";
-	mes "�l��s���ŋ�J���Ă���悤���c�c";
-	mes "�o�C�g���������񂾂�����";
-	mes "���O����x�A�����Ă݂���ǂ����H";
+lighthalzen.gat,141,162,3	script	中年	85,{
+	mes "[中年]";
+	mes "このごろカジエンが";
+	mes "人手不足で苦労しているようだ……";
+	mes "バイトがしたいんだったら";
+	mes "お前も一度、試してみたらどうだ？";
 	next;
-	mes "[���N]";
-	mes "�قƂ�Ǔ��̘J��������A";
-	mes "�̗͂�������Γ��ʂȔ\�͂�";
-	mes "�K�v�Ȏd���ł͂Ȃ��ƌ����Ă����ȁc�c";
-	mes "���������������x";
-	mes "���ډ���Ċm�F���Ă݂ȁB";
+	mes "[中年]";
+	mes "ほとんど肉体労働だから、";
+	mes "体力さえあれば特別な能力が";
+	mes "必要な仕事ではないと言っていたな……";
+	mes "興味があったら一度";
+	mes "直接会って確認してみな。";
 	next;
-	mes "[���N]";
-	mes "�J�W�G����";
-	mes "���b�P���x���{�Ђ̒��ɂ����B";
+	mes "[中年]";
+	mes "カジエンは";
+	mes "レッケンベル本社の中にいるよ。";
 	if(LHZ_5QUE == 0)
 		set LHZ_5QUE,1;
 	close;
 }
 
-lhz_in01.gat,174,258,3	script	�N	868,{
+lhz_in01.gat,174,258,3	script	青年	868,{
 	switch(LHZ_5QUE) {
 	case 0:
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�܂����������A�Z�����ȁB";
-		mes "�����ł����l��s���ŖZ�����̂Ɂc�c";
-		mes "�l���K�v�Ȃ񂾂���A";
-		mes "�E���������Ƒ��₷���Ƃ�";
-		mes "�ł��Ȃ��̂�!?";
+		mes "[カジエン]";
+		mes "……まったくもう、忙しいな。";
+		mes "ただでさえ人手不足で忙しいのに……";
+		mes "人が必要なんだから、";
+		mes "職員をもっと増やすことは";
+		mes "できないのか!?";
 		next;
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "�����N�́H";
-		mes "�Z�����Ƃ����̂�";
-		mes "����Ȃ����̑O�ɂ���ȁI";
-		mes "���l�̎ז�������񂶂�Ȃ��I";
+		mes "[カジエン]";
+		mes "何だ君は？";
+		mes "忙しいというのに";
+		mes "訳もなく俺の前にいるな！";
+		mes "他人の邪魔をするんじゃない！";
 		break;
 	case 1:
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�܂����������A�Z�����ȁB";
-		mes "�����ł����l��s���ŖZ�����̂Ɂc�c";
-		mes "�l���K�v�Ȃ񂾂���A";
-		mes "�E���������Ƒ��₷���Ƃ�";
-		mes "�ł��Ȃ��̂�!?";
+		mes "[カジエン]";
+		mes "……まったくもう、忙しいな。";
+		mes "ただでさえ人手不足で忙しいのに……";
+		mes "人が必要なんだから、";
+		mes "職員をもっと増やすことは";
+		mes "できないのか!?";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����N�́H";
-		mes "�Z�����Ƃ����̂�";
-		mes "����Ȃ����̑O�ɂ���ȁI";
-		mes "���l�̎ז�������񂶂�Ȃ��I";
+		mes "[カジエン]";
+		mes "何だ君は？";
+		mes "忙しいというのに";
+		mes "訳もなく俺の前にいるな！";
+		mes "他人の邪魔をするんじゃない！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�l��s���Ȃ�ł����āH";
+		mes "人手不足なんですって？";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�������B";
-		mes "������ז����ĂȂ���";
-		mes "�������Ƃ������֍s���񂾁I";
-		mes "�킩������!?";
+		mes "[カジエン]";
+		mes "そうだ。";
+		mes "だから邪魔してないで";
+		mes "さっさとあっちへ行くんだ！";
+		mes "わかったか!?";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�l��s���Ȃ班���ł�";
-		mes "����`�������悤���Ǝv���܂����c�c";
+		mes "人手不足なら少しでも";
+		mes "お手伝いをしようかと思いますが……";
 		next;
-		mes "[�J�W�G��]";
-		mes "�c�c�܂�N�̓o�C�g���������ƁH";
+		mes "[カジエン]";
+		mes "……つまり君はバイトをしたいと？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "��V�����悯��΁B";
+		mes "報酬さえよければ。";
 		next;
 		cutin "lhz_kaz05",2;
-		mes "[�J�W�G��]";
-		mes "���΂��΂��Ăėǂ��ˁB";
-		mes "�������A���̎d���̗͑͂��Ȃ���";
-		mes "�ł��鎖����Ȃ��Ăˁc�c����c�c";
+		mes "[カジエン]";
+		mes "さばさばしてて良いね。";
+		mes "しかし、この仕事は体力がないと";
+		mes "できる事じゃなくてね……うん……";
 		next;
 		if(BaseLevel < 70) {
-			mes "-�ނ͂��Ȃ����W�[���ƌ���-";
+			mes "-彼はあなたをジーっと見た-";
 			next;
 			cutin "lhz_kaz11",2;
-			mes "[�J�W�G��]";
-			mes "�c�c�_�����ȁB";
-			mes "�N�ɂ͓���̗͂�����Ƃ͎v���Ȃ��B";
-			mes "�ӗ~�͗ǂ����c�c";
-			mes "���̎d������������΁A";
-			mes "�����Ɨ͂����Ă��痈�Ă���B";
+			mes "[カジエン]";
+			mes "……ダメだな。";
+			mes "君には到底体力があるとは思えない。";
+			mes "意欲は良いが……";
+			mes "この仕事をしたければ、";
+			mes "もっと力をつけてから来てくれ。";
 			next;
-			mes "[�J�W�G��]";
-			mes "�����ȌN�̂��Ƃ͂��Ȃ�C�ɓ��������A";
-			mes "���̐l�����ɖ��f��������Ȃ�����B";
-			mes "�������ǂ܂��ȁB";
+			mes "[カジエン]";
+			mes "率直な君のことはかなり気に入ったが、";
+			mes "他の人たちに迷惑をかけれないだろ。";
+			mes "悪いけどまたな。";
 			break;
 		}
-		mes "[�J�W�G��]";
-		mes "�悵�B�ꉞ���N�ʂł͍��i���B";
-		mes "���i�͂���ȁc�c";
-		mes "�������A�����Ȃ�K�˂ė����l��";
-		mes "�g�����肷��̂�";
-		mes "������Ɖ��Ƃ������c�c";
-		mes "�N�A���͌��������H";
+		mes "[カジエン]";
+		mes "よし。一応健康面では合格だ。";
+		mes "資格はあるな……";
+		mes "しかし、いきなり訪ねて来た人を";
+		mes "使ったりするのは";
+		mes "ちょっと何というか……";
+		mes "君、口は堅い方か？";
 		next;
-		if(select("�͂�","����")==2) {
-			mes "[�J�W�G��]";
-			mes "���ꂶ��_�����ȁB";
-			mes "���̃N�r�����ł��܂��B";
+		if(select("はい","いえ")==2) {
+			mes "[カジエン]";
+			mes "それじゃダメだな。";
+			mes "俺のクビが飛んでしまう。";
 			break;
 		}
-		mes "[�J�W�G��]";
-		mes "�悵�B�킩�����B";
-		mes "�؋��͉����Ȃ����A";
-		mes "��x�d���������Č��悤�B";
-		mes "�ꉞ�y�����Ƃ��炳���邩��";
-		mes "������Ƒ҂��āc�c�������邩�ȁB";
+		mes "[カジエン]";
+		mes "よし。わかった。";
+		mes "証拠は何もないが、";
+		mes "一度仕事をさせて見よう。";
+		mes "一応軽いことからさせるから";
+		mes "ちょっと待って……何があるかな。";
 		set LHZ_5QUE,2;
 		break;
 	case 2:
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "�悵�B�ꉞ�N�ɔC����̂�";
-		mes "�d���Ƃ������e�X�g���B";
-		mes "�ȒP�Ȏd���ŁA������ς���Ȃ��B";
+		mes "[カジエン]";
+		mes "よし。一応君に任せるのは";
+		mes "仕事というよりテストだ。";
+		mes "簡単な仕事で、そう大変じゃない。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�A�C���u���b�N�Ƃ�������";
-		mes "������������B";
-		mes "�����ɂ���J�����X��������";
-		mes "�i�����󂯎�����������Ă���悤�ɁB";
+		mes "[カジエン]";
+		mes "アインブロックという町に";
+		mes "研究所がある。";
+		mes "そこにいるカリンス研究員に";
+		mes "品物を受け取ったか聞いてくるように。";
 		next;
-		mes "[�J�W�G��]";
-		mes "����Ȃ����낤�H";
-		mes "�����A�C��t����_��";
-		mes "�N�ɂ������Ă͂����Ȃ��Ƃ������Ƃ��B";
-		mes "������ˁH";
+		mes "[カジエン]";
+		mes "難しくないだろう？";
+		mes "ただ、気を付ける点は";
+		mes "誰にも言ってはいけないということだ。";
+		mes "分かるね？";
 		next;
-		mes "[�J�W�G��]";
-		mes "�N�̌��������̂�M����";
-		mes "�d����C����񂾂���A";
-		mes "�����Ƃ�肱�Ȃ��Ă����B";
+		mes "[カジエン]";
+		mes "君の口が堅いのを信じて";
+		mes "仕事を任せるんだから、";
+		mes "ちゃんとやりこなしてくれよ。";
 		next;
 		cutin "lhz_kaz05",2;
-		mes "[�J�W�G��]";
-		mes "������x�������B";
-		mes "^FF0000�A�C���u���b�N�̌�������";
-		mes "�J�����X�������ɕi�����󂯎������";
-		mes "�����Ă���B^000000";
-		mes "���̈˗����e��N�ɂ������Ă͂����Ȃ�";
-		mes "�Ƃ������Ƃ��Y�ꂸ�ɂˁB";
+		mes "[カジエン]";
+		mes "もう一度言おう。";
+		mes "^FF0000アインブロックの研究所の";
+		mes "カリンス研究員に品物を受け取ったか";
+		mes "聞いてくる。^000000";
+		mes "この依頼内容を誰にも言ってはいけない";
+		mes "ということも忘れずにね。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���ꂶ�Ⴀ�A���񂾂�B";
+		mes "[カジエン]";
+		mes "それじゃあ、頼んだよ。";
 		set LHZ_5QUE,3;
 		break;
 	case 3:
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "�܂��s���ĂȂ��̂��H";
-		mes "���͌N���ߑ�]�����������̂��B";
-		mes "�x��Ă͍���񂾂�B";
+		mes "[カジエン]";
+		mes "まだ行ってないのか？";
+		mes "俺は君を過大評価しすぎたのか。";
+		mes "遅れては困るんだよ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "������x�������B";
-		mes "^FF0000�A�C���u���b�N�̌�������";
-		mes "�J�����X�������ɕi�����󂯎������";
-		mes "�����Ă���B^000000";
-		mes "���̈˗����e��N�ɂ������Ă͂����Ȃ�";
-		mes "�Ƃ������Ƃ��Y�ꂸ�ɂˁB";
+		mes "[カジエン]";
+		mes "もう一度言おう。";
+		mes "^FF0000アインブロックの研究所の";
+		mes "カリンス研究員に品物を受け取ったか";
+		mes "聞いてくる。^000000";
+		mes "この依頼内容を誰にも言ってはいけない";
+		mes "ということも忘れずにね。";
 		break;
 	case 4:
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "���Ԃ��啪���������悤�����ǁA";
-		mes "�m�F���ė��ꂽ���H";
-		mes "���ʁA������Ƃł͂Ȃ���������H";
+		mes "[カジエン]";
+		mes "時間が大分かかったようだけど、";
+		mes "確認して来れたか？";
+		mes "特別、難しいことではなかっただろ？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���̌������ɂ̓J�����X�Ƃ������O��";
-		mes "�������͂��Ȃ��ƌ����܂����B";
-		mes "���O���Ⴄ�̂ł́H";
+		mes "その研究所にはカリンスという名前の";
+		mes "研究員はいないと言われました。";
+		mes "名前が違うのでは？";
 		next;
-		mes "[�J�W�G��]";
-		mes "���[��B����Ȃ킯���Ȃ��B";
-		mes "�N������Ȃ��Ƃ��������񂾂��H";
+		mes "[カジエン]";
+		mes "うーん。そんなわけがない。";
+		mes "誰がそんなことを言ったんだい？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�������O�ɂ���x������";
-		mes "�����Ă��܂����B";
-		mes "�x������ʂ��Ȃ��ƌ������ɂ�";
-		mes "�o���肷�邱�Ƃ��ł��Ȃ������̂ŁB";
+		mes "研究所前にいる警備員が";
+		mes "言っていました。";
+		mes "警備員を通さないと研究所には";
+		mes "出入りすることもできなかったので。";
 		next;
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�����d���ɂ��ĒN�ɂ�";
-		mes "�b���Ȃƌ���Ȃ��������ȁH";
+		mes "[カジエン]";
+		mes "俺が仕事について誰にも";
+		mes "話すなと言わなかったかな？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�������A�������̒��ɓ���Ȃ���";
-		mes "�m�F�͂ł��܂����B";
+		mes "しかし、研究所の中に入らないと";
+		mes "確認はできませんよ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�������͂������ȁB";
-		mes "�����A���̓J�����X�Ƃ������O��";
-		mes "�����l�������̂��B";
-		mes "�܂�A����Ȗ��O�̐l�Ԃ͂��Ȃ��B";
-		mes "���͌���������H";
-		mes "�N�̌��̌����������ƁB";
+		mes "[カジエン]";
+		mes "正しくはそうだな。";
+		mes "だが、実はカリンスという名前は";
+		mes "俺が考えたものだ。";
+		mes "つまり、そんな名前の人間はいない。";
+		mes "俺は言っただろ？";
+		mes "君の口の堅さを試すと。";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�Ƃɂ����A";
-		mes "���̎����ɂ͕s���i���B";
-		mes "�N�Ɏd����C���邱�Ƃ�";
-		mes "�ł��Ȃ��悤���B";
-		mes "�����ˁB";
+		mes "[カジエン]";
+		mes "とにかく、";
+		mes "この試験には不合格だ。";
+		mes "君に仕事を任せることは";
+		mes "できないようだ。";
+		mes "悪いね。";
 		set LHZ_5QUE,5;
 		break;
 	case 5:
 		if(rand(15)) {
 			cutin "lhz_kaz10",2;
-			mes "[�J�W�G��]";
-			mes "��߂Ă���B";
-			mes "������b���Ă����ʂ��B";
-			mes "���̊��҂𗠐؂����l��";
-			mes "�d�������������͂Ȃ��B";
+			mes "[カジエン]";
+			mes "やめてくれ。";
+			mes "いくら話しても無駄だ。";
+			mes "俺の期待を裏切った人に";
+			mes "仕事をさせるつもりはない。";
 			next;
-			mes "[�J�W�G��]";
-			mes "�c�c�������ȁB";
-			mes "�}�Ɏd�����Z�����Ȃ��āA";
-			mes "�N�̎���Y��Ȃ�����";
-			mes "�d�������������͂Ȃ��B";
+			mes "[カジエン]";
+			mes "……そうだな。";
+			mes "急に仕事が忙しくなって、";
+			mes "君の事を忘れない限り";
+			mes "仕事をさせるつもりはない。";
 			next;
-			mes "[�J�W�G��]";
-			mes "�������B";
-			mes "����Ȃ��Ƃ����Ă�ꍇ����Ȃ��B";
-			mes "�����łȂ��Ă��Z�����̂Ɂc�c";
-			mes "�d��������Ȃɗ~�����Ȃ�";
-			mes "���֍s���Č���Ƃ����B";
-			mes "�N�Ȃ�[���ɓ�����͂��邾�낤�B";
+			mes "[カジエン]";
+			mes "そうだ。";
+			mes "こんなことをしてる場合じゃない。";
+			mes "そうでなくても忙しいのに……";
+			mes "仕事がそんなに欲しいなら";
+			mes "他へ行って見るといい。";
+			mes "君なら充分に働き手はあるだろう。";
 			break;
 		}
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "�c�c���[��H";
-		mes "�N�͒N���������ȁH";
-		mes "���[��c�c";
-		mes "�ǂ����Ō����悤�ȁc�c";
-		mes "����A����Ȃ��Ƃ����d�����B";
-		mes "�d�������Ȃ���΁B";
+		mes "[カジエン]";
+		mes "……うーん？";
+		mes "君は誰だったかな？";
+		mes "うーん……";
+		mes "どこかで見たような……";
+		mes "いや、そんなことよりも仕事だ。";
+		mes "仕事をしなければ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�c�c�܂����������A�Z�����ȁB";
-		mes "�����ł����l��s���ŖZ�����̂Ɂc�c";
-		mes "�l���K�v�Ȃ񂾂���A";
-		mes "�E���������Ƒ��₷���Ƃ�";
-		mes "�ł��Ȃ��̂�!?";
+		mes "[カジエン]";
+		mes "……まったくもう、忙しいな。";
+		mes "ただでさえ人手不足で忙しいのに……";
+		mes "人が必要なんだから、";
+		mes "職員をもっと増やすことは";
+		mes "できないのか!?";
 		next;
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "�����A�܂������̂��H";
-		mes "�Z�����Ƃ����̂�";
-		mes "����Ȃ����̑O�ɂ���ȁI";
-		mes "���l�̎ז�������񂶂�Ȃ��I";
+		mes "[カジエン]";
+		mes "何だ、まだいたのか？";
+		mes "忙しいというのに";
+		mes "訳もなく俺の前にいるな！";
+		mes "他人の邪魔をするんじゃない！";
 		set LHZ_5QUE,0;
 		break;
 	case 6:
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "���Ԃ��啪���������悤�����ǁA";
-		mes "�m�F���ė��ꂽ���H";
-		mes "���ʁA������Ƃł͂Ȃ���������H";
+		mes "[カジエン]";
+		mes "時間が大分かかったようだけど、";
+		mes "確認して来れたか？";
+		mes "特別、難しいことではなかっただろ？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�m�F���邱�Ƃ͂ł��܂���ł����B";
-		mes "�������̑O�ɂ͌x���������āA";
-		mes "���ꒆ�ɓ�����@��";
-		mes "������܂���B";
+		mes "確認することはできませんでした。";
+		mes "研究所の前には警備員がいて、";
+		mes "到底中に入る方法が";
+		mes "見つかりません。";
 		next;
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�x�����ɗp����b����";
-		mes "�m�F���Ă��炦��͂������H";
-		mes "�ǂ����Ă��̂܂܋A���Ă����񂾁B";
-		mes "�v�̂��������邼�I";
+		mes "[カジエン]";
+		mes "警備員に用件を話せば";
+		mes "確認してもらえるはずだが？";
+		mes "どうしてそのまま帰ってきたんだ。";
+		mes "要領が悪すぎるぞ！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�N�ɂ����̎��ɂ���";
-		mes "�b���Ȃƌ����܂���ł������H";
-		mes "������x�����ɂ�";
-		mes "�b�����Ȃ�������ł����B";
+		mes "誰にもこの事について";
+		mes "話すなと言いませんでしたか？";
+		mes "だから警備員にも";
+		mes "話をしなかったんですが。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�c�c�c�c�c�c�c�c�c�c�c�c�c�c�c�c�c�c";
+		mes "[カジエン]";
+		mes "………………………………………………";
 		next;
 		cutin "lhz_kaz02",2;
-		mes "[�J�W�G��]";
-		mes "����Ȃɗv�̂������̂�";
-		mes "�΂��炵���ȁc�c";
+		mes "[カジエン]";
+		mes "こんなに要領が悪いのは";
+		mes "ばからしいな……";
 		next;
-		mes "[�J�W�G��]";
-		mes "�v�t�c�c�N�N�N�c�c��͂̓n�n�n�I";
+		mes "[カジエン]";
+		mes "プフ……ククク……わははハハハ！";
 		next;
 		cutin "lhz_kaz06",2;
-		mes "[�J�W�G��]";
-		mes "�悵�I";
-		mes "�������������t���悭������ȁI";
-		mes "���i���I";
-		mes "�N�͗\�z�ǂ���̐l�Ԃ������ȁI";
-		mes "�d����C���邱�Ƃɂ��悤�I";
+		mes "[カジエン]";
+		mes "よし！";
+		mes "俺が言った言葉をよく守ったな！";
+		mes "合格だ！";
+		mes "君は予想どおりの人間だったな！";
+		mes "仕事を任せることにしよう！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�H�@���̘b�ł����B";
-		mes "�����J�����X�������Ɋm�F����邱�Ƃ�";
-		mes "�d���ł͂���܂���ł������H";
+		mes "？　何の話ですか。";
+		mes "私がカリンス研究員に確認を取ることが";
+		mes "仕事ではありませんでしたか？";
 		next;
 		cutin "lhz_kaz07",2;
-		mes "[�J�W�G��]";
-		mes "�����肪�����ȁB";
-		mes "�J�����X�͉��������Ă���L�̖��O���B";
-		mes "�܂�A����Ȍ������͑��݂��Ȃ��B";
+		mes "[カジエン]";
+		mes "物分りが悪いな。";
+		mes "カリンスは俺が飼っている猫の名前だ。";
+		mes "つまり、そんな研究員は存在しない。";
 		next;
-		mes "[�J�W�G��]";
-		mes "����������H";
-		mes "��΂Ɏd���̓��e�𑼐l�ɘb���ȂƁB";
-		mes "�N�̂��̌��̌������{���Ȃ̂��B";
-		mes "���ꂾ�������̎����������񂾁B";
+		mes "[カジエン]";
+		mes "言っただろ？";
+		mes "絶対に仕事の内容を他人に話すなと。";
+		mes "君のその口の堅さが本物なのか。";
+		mes "それだけが俺の試験だったんだ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�d���̎��s�͓�����O���B";
-		mes "���݂��Ȃ��l�ԂɊm�F����ꂽ��";
-		mes "�ʔ����������ǂȁB";
-		mes "�J�n�n�b�B";
+		mes "[カジエン]";
+		mes "仕事の失敗は当たり前だ。";
+		mes "存在しない人間に確認が取れたら";
+		mes "面白かったけどな。";
+		mes "カハハッ。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�܂�A�����x������ł��ˁB";
-		mes "���Ȏ����ł��c�c";
+		mes "つまり、私を騙したんですね。";
+		mes "嫌な試験です……";
 		next;
 		cutin "lhz_kaz09",2;
-		mes "[�J�W�G��]";
-		mes "�����{��Ȃ��ł���B";
-		mes "���ꂩ��N��M���Ďd����C����ɂ�";
-		mes "�K�v�Ȏ����������񂾁B";
+		mes "[カジエン]";
+		mes "そう怒らないでくれ。";
+		mes "これから君を信じて仕事を任せるには";
+		mes "必要な試験だったんだ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "����ł́A";
-		mes "�����Ɏd�����˗����邱�Ƃɂ���B";
-		mes "�c�c�c�c���̑O�ɁB";
-		mes "�N�͂�����Ƌ������Ă���悤���ȁB";
+		mes "[カジエン]";
+		mes "それでは、";
+		mes "正式に仕事を依頼することにする。";
+		mes "…………その前に。";
+		mes "君はちょっと興奮しているようだな。";
 		next;
 		cutin "lhz_kaz06",2;
-		mes "[�J�W�G��]";
-		mes "�܂��͋C�����𗎂��������Ă���B";
-		mes "����Ȃɋ������Ă���";
-		mes "�d���������ɂł��Ȃ��Ȃ��Ă��܂��B";
+		mes "[カジエン]";
+		mes "まずは気持ちを落ち着かせてくれ。";
+		mes "そんなに興奮してたら";
+		mes "仕事が満足にできなくなってしまう。";
 		set LHZ_5QUE,7;
 		break;
 	case 7:
 		cutin "lhz_kaz05",2;
-		mes "[�J�W�G��]";
-		mes "���������������H";
-		mes "���ꂶ�Ⴀ�b�𑱂���Ƃ��悤�B";
-		mes "������񍡓x�̎d����";
-		mes "���l�ɂ͋����Ă͂����Ȃ������B";
+		mes "[カジエン]";
+		mes "落ち着いたかい？";
+		mes "それじゃあ話を続けるとしよう。";
+		mes "もちろん今度の仕事も";
+		mes "他人には教えてはいけない事だ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�N�ɔC����d���Ƃ́A";
-		mes "����i�������O�Ɉڂ����Ƃ��B";
-		mes "�S���ł͍��O�ɏo��Ȃ�����A";
-		mes "�ꉞ��s�D��p�ӂ��Ă���B";
+		mes "[カジエン]";
+		mes "君に任せる仕事とは、";
+		mes "ある品物を国外に移すことだ。";
+		mes "鉄道では国外に出れないから、";
+		mes "一応飛行船を用意してある。";
 		next;
-		mes "[�J�W�G��]";
-		mes "������^FF0000�����W�G��^000000�Ƃ������̒j�Ɖ�A";
-		mes "�ނ̎w���ɏ]���Ďd�������Ă���B";
+		mes "[カジエン]";
+		mes "そこで^FF0000リョジエン^000000という名の男と会い、";
+		mes "彼の指示に従って仕事をしてくれ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����S�z����ȁB";
-		mes "������͓̂���͂Ȃ��B";
-		mes "�w�肳�ꂽ�l�ԈȊO��";
-		mes "���̎��̓��e�ƑS�e��b���Ȃ����";
-		mes "����Ƃ��������͂Ȃ��B";
+		mes "[カジエン]";
+		mes "そう心配するな。";
+		mes "会う事自体は難しくはない。";
+		mes "指定された人間以外に";
+		mes "この事の内容と全貌を話さなければ";
+		mes "これといった問題はない。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����W�G���H";
+		mes "リョジエン？";
 		next;
 		cutin "lhz_kaz06",2;
-		mes "[�J�W�G��]";
-		mes "�����B�����W�G�����B";
-		mes "�����i�����s�D�܂ő���A";
-		mes "�ނ͕i�����ړI�n�܂ň��S��";
-		mes "����͂���܂ŕی�����Ă���B";
+		mes "[カジエン]";
+		mes "ああ。リョジエンだ。";
+		mes "俺が品物を飛行船まで送り、";
+		mes "彼は品物が目的地まで安全に";
+		mes "送り届けるまで保護をしている。";
 		next;
 		cutin "lhz_kaz03",2;
-		mes "[�J�W�G��]";
-		mes "�t��������ƁA�ƂĂ��܂��߂�";
-		mes "�ӔC��������l�Ԃ��B";
-		mes "�d����C����̂�";
-		mes "�ƂĂ��K�i�Ƃ�����B";
-		mes "������ƗZ�ʂ������Ȃ����c�c";
+		mes "[カジエン]";
+		mes "付け加えると、とてもまじめで";
+		mes "責任感がある人間だ。";
+		mes "仕事を任せるのに";
+		mes "とても適格といえる。";
+		mes "ちょっと融通がきかないが……";
 		next;
 		cutin "lhz_kaz07",2;
-		mes "[�J�W�G��]";
-		mes "�����A����قǂɎd����M�S��";
-		mes "����Ƃ������Ƃ��ˁB";
-		mes "������Z���������ɂȂ��Ă�ȁI";
+		mes "[カジエン]";
+		mes "だが、それほどに仕事を熱心に";
+		mes "するということだね。";
+		mes "事実上短所も長所になってるな！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c";
+		mes "…………";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�E���t���B�Ƃɂ����s���Ƃ����B";
-		mes "�����ɂ����Ƃ����";
-		mes "���Ԃ̖��ʎg��������ˁB";
-		mes "�����B�����s�����s�����B";
+		mes "[カジエン]";
+		mes "ウムフム。とにかく行くといい。";
+		mes "ここにいたところで";
+		mes "時間の無駄使いだからね。";
+		mes "さぁ。早く行った行った。";
 		next;
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "�d�����I�������";
-		mes "�܂��߂��ė���悤�ɁB";
-		mes "���ɂ�����Ă��炢�����d����";
-		mes "���邩��ˁB";
+		mes "[カジエン]";
+		mes "仕事が終わったら";
+		mes "また戻って来るように。";
+		mes "他にもやってもらいたい仕事が";
+		mes "あるからね。";
 		set LHZ_5QUE,8;
 		break;
 	case 8:
 	case 9:
 	case 10:
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�������Ă���H";
-		mes "�����W�G���ɘA���͂��Ă���������A";
-		mes "�������ƍs���Ƃ��ŁB";
+		mes "[カジエン]";
+		mes "何をしている？";
+		mes "リョジエンに連絡はしておいたから、";
+		mes "さっさと行っといで。";
 		break;
 	case 11:
 		cutin "lhz_kaz05",2;
-		mes "[�J�W�G��]";
-		mes "�I�b�B�悭�߂��ė����ˁB";
-		mes "���[���~�b�h�K�b�c����i���͓͂�����";
-		mes "�A���͗��Ă��B";
-		mes "�����W�G���ƈꏏ�ɓ����Ă݂�";
-		mes "�ǂ��������H";
-		mes "����قǗ��h�ȐE���͂��Ȃ�����ˁB";
+		mes "[カジエン]";
+		mes "オッ。よく戻って来たね。";
+		mes "ルーンミッドガッツから品物は届いたと";
+		mes "連絡は来てるよ。";
+		mes "リョジエンと一緒に働いてみて";
+		mes "どうだった？";
+		mes "あれほど立派な職員はいないからね。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�Z��̊ԕ��ƕ������̂ł����c�c";
+		mes "兄弟の間柄と聞いたのですが……";
 		next;
 		cutin "lhz_kaz03",2;
-		mes "[�J�W�G��]";
-		mes "���[��B�����������Ă����̂��B";
-		mes "��������B���ƃ����W�G���͌Z�킾�B";
-		mes "�����͉����Ⴂ���A";
-		mes "�����Ƃ������肵�Ă���B";
+		mes "[カジエン]";
+		mes "うーん。あいつが言っていたのか。";
+		mes "そうだよ。俺とリョジエンは兄弟だ。";
+		mes "あいつは俺より若いが、";
+		mes "随分としっかりしている。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���͂���Ȃɗǂ��͂Ȃ��c�c�E���t���B";
-		mes "����ł͂��낻��A";
-		mes "���̕i�������߂邩�ȁB";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "������J�W�G���B";
-		next;
-		mes "[�J�W�G��]";
-		mes "�������H";
+		mes "[カジエン]";
+		mes "俺はそんなに良くはない……ウムフム。";
+		mes "それではそろそろ、";
+		mes "次の品物も頼めるかな。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "��̉����^�Ԃ̂ł����H";
-		mes "��ł��郊���W�G����";
-		mes "�m��Ȃ������悤�ł����c�c";
+		mes "それよりカジエン。";
+		next;
+		mes "[カジエン]";
+		mes "何だい？";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "一体何を運ぶのですか？";
+		mes "弟であるリョジエンも";
+		mes "知らなかったようですが……";
 		next;
 		cutin "lhz_kaz06",2;
-		mes "[�J�W�G��]";
-		mes "���g��������Ȃ����";
-		mes "�d�����ł��Ȃ��Ƃ������Ƃ��H";
+		mes "[カジエン]";
+		mes "中身が分からなければ";
+		mes "仕事ができないということか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����ł͂Ȃ��ł����c�c";
+		mes "そうではないですが……";
 		next;
-		mes "[�J�W�G��]";
-		mes "����Ȃ畷���Ȃ��ł���B";
-		mes "�ǂ������g�����������Ƃ��Ă�";
-		mes "�d���̓��e�͕ς��Ȃ��B";
-		mes "����͌N���A�����W�G�����������B";
+		mes "[カジエン]";
+		mes "それなら聞かないでくれ。";
+		mes "どうせ中身が分かったとしても";
+		mes "仕事の内容は変わらない。";
+		mes "それは君も、リョジエンも同じだ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�d���ɒ��ڊ֌W���Ȃ����A";
-		mes "���܂�K�v�łȂ����Ƃ͋��������Ȃ��B";
+		mes "[カジエン]";
+		mes "仕事に直接関係しないし、";
+		mes "あまり必要でないことは教えたくない。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���������Ȃ�s���Ă���B";
-		mes "���x�̎d�������[���~�b�h�K�b�c�֑���";
-		mes "�ו���ی삷�邱�Ƃ��ˁB";
-		mes "�O�񓯗l�ɁA���x���������藊�񂾂�B";
+		mes "[カジエン]";
+		mes "分かったなら行ってくれ。";
+		mes "今度の仕事もルーンミッドガッツへ送る";
+		mes "荷物を保護することだね。";
+		mes "前回同様に、今度もしっかり頼んだよ。";
 		next;
 		cutin "lhz_kaz03",2;
-		mes "[�J�W�G��]";
-		mes "�������A";
-		mes "�����W�G���ɖ��f�������Ȃ��悤�ɁB";
-		mes "���ꂶ�Ⴊ��΂��āB";
+		mes "[カジエン]";
+		mes "もちろん、";
+		mes "リョジエンに迷惑をかけないように。";
+		mes "それじゃがんばって。";
 		set LHZ_5QUE,12;
 		if(checkre())
 			getexp 40000,0;
@@ -12193,110 +12193,110 @@ lhz_in01.gat,174,258,3	script	�N	868,{
 	case 14:
 	case 15:
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�͂₭�s���Ȃ����B";
-		mes "���Ԃ�Q��ē����镨�͉����Ȃ��B";
-		mes "����͂��̎d�������ł͂Ȃ��A";
-		mes "�����鎖�ɓK�p�����";
-		mes "���̒��̐^�����B";
+		mes "[カジエン]";
+		mes "はやく行きなさい。";
+		mes "時間を浪費して得られる物は何もない。";
+		mes "それはこの仕事だけではなく、";
+		mes "あらゆる事に適用される";
+		mes "世の中の真理だ。";
 		break;
 	case 16:
 		cutin "lhz_kaz03",2;
-		mes "[�J�W�G��]";
-		mes "���x���悭����Ă��ꂽ�ˁB";
-		mes "���߂��炢���l�ނƂ͎v���Ă����ǂȁB";
-		mes "�����W�G���ɂ����f��";
-		mes "�����Ă��Ȃ��悤�����B";
-		mes "�n�b�n�b�n�b�B";
+		mes "[カジエン]";
+		mes "今度もよくやってくれたね。";
+		mes "初めからいい人材とは思ってたけどな。";
+		mes "リョジエンにも迷惑を";
+		mes "かけていないようだし。";
+		mes "ハッハッハッ。";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "��͂荡�x�����[���~�b�h�K�b�c�ւ�";
-		mes "�z�B���ȁB";
-		mes "�ςɂ��̂��냋�[���~�b�h�K�b�c�ւ�";
-		mes "�����������Ăˁc�c";
-		mes "���̍��̒��������̂���c�c";
+		mes "[カジエン]";
+		mes "やはり今度もルーンミッドガッツへの";
+		mes "配達だな。";
+		mes "変にこのごろルーンミッドガッツへの";
+		mes "注文が多くてね……";
+		mes "他の国の注文が遠のくよ……";
 		next;
-		mes "[�J�W�G��]";
-		mes "���X���[���~�b�h�K�b�c�Ƃ͈Ⴄ������";
-		mes "������������ė��Ă��񂾂��ǁA";
-		mes "����������Ă��܂����B";
-		mes "���̍��Ɖ����֌W�ł�����̂��ȁH";
+		mes "[カジエン]";
+		mes "元々ルーンミッドガッツとは違う国から";
+		mes "注文が一つ入って来てたんだけど、";
+		mes "取り消しされてしまった。";
+		mes "その国と何か関係でもあるのかな？";
 		next;
 		cutin "lhz_kaz07",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�܂��A����͂����Ƃ��āB";
-		mes "�Ƃɂ����s���Ă���B";
-		mes "�����W�G�����҂��Ă���B";
+		mes "[カジエン]";
+		mes "……まぁ、それはそうとして。";
+		mes "とにかく行ってくれ。";
+		mes "リョジエンが待っている。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�z�B����i��������";
-		mes "���炩�ɂ�������";
-		mes "�S�R�Ȃ���ł����H";
+		mes "配達する品物が何か";
+		mes "明らかにするつもりは";
+		mes "全然ないんですか？";
 		next;
-		mes "[�J�W�G��]";
-		mes "����Ȃ��������H";
-		mes "���炩�ɂ��闝�R���Ȃ���";
-		mes "���炩�ɂ��������Ȃ��ƁB";
-		mes "����Ȃɕ����ꂽ�獢��񂾂��B";
+		mes "[カジエン]";
+		mes "言わなかったか？";
+		mes "明らかにする理由もなくて";
+		mes "明らかにするつもりもないと。";
+		mes "そんなに聞かれたら困るんだが。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�z�B�r����";
-		mes "���N�U�����̏P�����󂯂܂����B";
-		mes "���������Ȃ��̂ł����H";
+		mes "配達途中に";
+		mes "ヤクザたちの襲撃を受けました。";
+		mes "見当がつかないのですか？";
 		next;
 		cutin "lhz_kaz02",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�c�c�c�c";
-		mes "�������ˁB�����͂��Ȃ��B";
-		mes "�댯�蓖�Ă��~�����ƌ��������̂��H";
+		mes "[カジエン]";
+		mes "………………";
+		mes "そうだね。見当はつかない。";
+		mes "危険手当てが欲しいと言いたいのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�������Ⴀ��܂���B";
-		mes "�����̊�@�ɂ��炳���قǂ̕i����";
-		mes "��̉�����m�肽�������ł��B";
-		mes "���ɂ͒m�錠��������Ǝv���܂���B";
+		mes "そうじゃありません。";
+		mes "生命の危機にさらされるほどの品物が";
+		mes "一体何かを知りたいだけです。";
+		mes "私には知る権利があると思いますよ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���������Ȃ�����������B";
-		mes "�i���������͂�����̒S���҂ł���";
-		mes "�����W�G���ɂ������Ă��Ȃ��B";
-		mes "�Ȃ̂ɉ����ǂ����ČN�݂�����";
-		mes "�A���o�C�g�ɋ����Ȃ����";
-		mes "�Ȃ�Ȃ��񂾁H";
+		mes "[カジエン]";
+		mes "俺が教えない権利もある。";
+		mes "品物が何かはそちらの担当者である";
+		mes "リョジエンにも教えていない。";
+		mes "なのに俺がどうして君みたいな";
+		mes "アルバイトに教えなければ";
+		mes "ならないんだ？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���̑厖�ɂ��郊���W�G����";
-		mes "�P�����󂯂܂����B";
-		mes "��̈��S�͍l���Ȃ���ł����H";
-		mes "���͂Ƃ������A�킪�P����";
-		mes "�󂯂Ă���Ƃ����̂Ɂc�c";
+		mes "その大事にするリョジエンも";
+		mes "襲撃を受けました。";
+		mes "弟の安全は考えないんですか？";
+		mes "私はともかく、弟が襲撃を";
+		mes "受けているというのに……";
 		next;
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�c�c�c�c�c�c";
+		mes "[カジエン]";
+		mes "……………………";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���������A�����^�Ԃ̂ł����H";
-		mes "�ǂ����ďP������Ă܂�";
-		mes "�^�΂Ȃ���΂Ȃ�Ȃ��̂ł���!?";
+		mes "いったい、何を運ぶのですか？";
+		mes "どうして襲撃されてまで";
+		mes "運ばなければならないのですか!?";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "�c�c���邳���I�@�s���Ȃ炷��ȁI";
-		mes "�����A��̐g�����N�����Ȃ��Ȃ��";
-		mes "�ǂ��Ȃ邩�c�c";
-		mes "����ȏ�͌���Ȃ��Ă��킩�邾�낤�I";
+		mes "[カジエン]";
+		mes "……うるさい！　不満ならするな！";
+		mes "だが、弟の身を守る君がいなくなると";
+		mes "どうなるか……";
+		mes "これ以上は言わなくてもわかるだろう！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�J�W�G���I";
+		mes "カジエン！";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "���邳���I�@���邳���I";
-		mes "����ȏ㎞�Ԃ��L�т��";
-		mes "�����W�G���ɖ��f��������񂾁B";
-		mes "�͂₭�s���I";
+		mes "[カジエン]";
+		mes "うるさい！　うるさい！";
+		mes "これ以上時間が伸びると";
+		mes "リョジエンに迷惑がかかるんだ。";
+		mes "はやく行け！";
 		set LHZ_5QUE,17;
 		if(checkre())
 			getexp 45000,0;
@@ -12308,232 +12308,232 @@ lhz_in01.gat,174,258,3	script	�N	868,{
 	case 19:
 	case 20:
 		cutin "lhz_kaz02",2;
-		mes "[�J�W�G��]";
-		mes "�͂₭�s���I";
-		mes "���x�����[���~�b�h�K�b�c�ւ�";
-		mes "�z�B�Ɩ����I";
-		mes "����ȏ�b�����Ƃ͂Ȃ��I";
+		mes "[カジエン]";
+		mes "はやく行け！";
+		mes "今度もルーンミッドガッツへの";
+		mes "配達業務だ！";
+		mes "これ以上話すことはない！";
 		break;
 	case 21:
 		cutin "lhz_kaz03",2;
-		mes "[�J�W�G��]";
-		mes "�₟�A���A��B";
-		mes "���x�����N�U�����Đ�����񂾂��āH";
-		mes "�������肪�Ƃ��B";
-		mes "����ł������B";
-		mes "��������F���ǂ��Ȃ��ȁB";
-		mes "������Ƌx�ނ����H";
+		mes "[カジエン]";
+		mes "やぁ、お帰り。";
+		mes "今度もヤクザが来て戦ったんだって？";
+		mes "いつもありがとう。";
+		mes "それでそうか。";
+		mes "そうも顔色が良くないな。";
+		mes "ちょっと休むかい？";
 		next;
 		cutin "lhz_kaz06",2;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�J�W�G���A���͌��Ă��܂��܂����B";
-		mes "���悤�ƌ����̂ł͂Ȃ��A";
-		mes "���R���̂�m���Ă��܂��܂����B";
+		mes "カジエン、私は見てしまいました。";
+		mes "見ようと見たのではなく、";
+		mes "偶然正体を知ってしまいました。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���[��H�@�����H";
-		mes "����ȂɊ�F��ς��Ă��܂����Ȃ̂��H";
+		mes "[カジエン]";
+		mes "うーん？　何を？";
+		mes "そんなに顔色を変えてしまう事なのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�ו��̒��g���B";
-		mes "�͂�����ƌ��Ă��܂��܂����B";
+		mes "荷物の中身を。";
+		mes "はっきりと見てしまいました。";
 		next;
 		cutin "lhz_kaz08",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�c�c�c�c�c�c";
+		mes "[カジエン]";
+		mes "……………………";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���Łc�c";
-		mes "���ł���ȕ����^��ł���̂ł����H";
-		mes "���ꂪ�����Ɏg�����";
-		mes "�ǂ��Ȃ��Ă��܂����c�c";
-		mes "�����ɕ�����Ǝv���܂����I";
+		mes "何で……";
+		mes "何であんな物を運んでいるのですか？";
+		mes "あれが悪事に使われると";
+		mes "どうなってしまうか……";
+		mes "すぐに分かると思いますが！";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�c�c���������Ȃ��ȁB";
+		mes "[カジエン]";
+		mes "……聞きたくないな。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "���Łc�c�ǂ����Ăł����H";
-		mes "����ȁc�c�l�̐������ȒP�ɒD���Ƃ��";
-		mes "^FF0000�Ő�[�̕���Ɩh��Ȃ񂩁I^000000";
-		mes "���Ȃ��̂����Ŏ���ł��܂��l��";
-		mes "�����Ă��܂��Ɓc�c";
-		mes "�l���Ă݂������Ȃ��ł���!?";
+		mes "何で……どうしてですか？";
+		mes "あんな……人の生命を簡単に奪いとれる";
+		mes "^FF0000最先端の武器と防具なんか！^000000";
+		mes "あなたのせいで死んでしまう人が";
+		mes "増えてしまうと……";
+		mes "考えてみた事がないですか!?";
 		next;
-		mes "[�J�W�G��]";
-		mes "���邳���I";
+		mes "[カジエン]";
+		mes "うるさい！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "����Ȏ������āA";
-		mes "�P�ǂȒ킪��т܂���!?";
-		mes "�l�̖���������A��������";
-		mes "���ꂽ�����̈�Y�����𗬒ʂ�����B";
-		mes "����Ȏd�����������Ǝv����ł���!?";
+		mes "こんな事をして、";
+		mes "善良な弟が喜びますか!?";
+		mes "人の命を牛耳る、こういう";
+		mes "呪われた悪魔の遺産たちを流通させる。";
+		mes "こんな仕事が正しいと思うんですか!?";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "���邳���I";
-		mes "�����m��Ȃ��L���ᑢ�̂����ɁI";
-		mes "�ق��Ă�I";
+		mes "[カジエン]";
+		mes "うるさい！";
+		mes "何も知らない青臭い若造のくせに！";
+		mes "黙ってろ！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c�c�c�c�c�c�c�c�c";
+		mes "………………………………";
 		next;
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "������m�点�Ȃ��񂾁B";
-		mes "�����͑P�ǂŗZ�ʂ������Ȃ�������";
-		mes "����Ȏd�������Ă���B";
-		mes "������m������A";
-		mes "�����ǂ�ȖڂŌ��邱�ƂɂȂ�!?";
+		mes "[カジエン]";
+		mes "だから知らせないんだ。";
+		mes "あいつは善良で融通が聞かないくせに";
+		mes "こんな仕事をしている。";
+		mes "事実を知ったら、";
+		mes "俺をどんな目で見ることになる!?";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "����c�c";
-		mes "�����ǂ�ȖڂŌ��邩�͍\��Ȃ��B";
-		mes "�������A�����͎�����m��Ȃ����";
-		mes "����Ȏd�����ł���ق�";
-		mes "������ł͂Ȃ��I";
+		mes "[カジエン]";
+		mes "いや……";
+		mes "俺をどんな目で見るかは構わない。";
+		mes "しかし、あいつは事実を知りながらも";
+		mes "こんな仕事ができるほど";
+		mes "賢いやつではない！";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����A����Ȋ댯�ŉ����d�������鉴��";
-		mes "�������Ď��߂����悤�Ƃ��邾�낤�B";
-		mes "�����āA�����W�G�����g��";
-		mes "�d�������߂邾�낤�B";
-		mes "�������͂��̌�A��̂ǂ��Ȃ�I";
+		mes "[カジエン]";
+		mes "多分、こんな危険で汚い仕事をする俺を";
+		mes "説得して辞めさせようとするだろう。";
+		mes "そして、リョジエン自身も";
+		mes "仕事を辞めるだろう。";
+		mes "俺たちはその後、一体どうなる！";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����͎d�������邱�Ƃ����ł���B";
-		mes "����ȍ��ׂȍK���𓾂錠����";
-		mes "�����ɂ͂Ȃ��ƌ��������̂�!?";
+		mes "[カジエン]";
+		mes "あいつは仕事があることを喜んでいる。";
+		mes "そんな些細な幸せを得る権利が";
+		mes "あいつにはないと言いたいのか!?";
 		next;
 		cutin "lhz_kaz04",2;
-		mes "[�J�W�G��]";
-		mes "�������̓��q�^���[���̕n���X��";
-		mes "���܂������B";
-		mes "�������ɂ��邱�Ƃ�";
-		mes "�n�R�ƎS�߂Ȏv�������������B";
+		mes "[カジエン]";
+		mes "俺たちはリヒタルゼンの貧民街で";
+		mes "生まれ育った。";
+		mes "俺たちにあることは";
+		mes "貧乏と惨めな思いだけだった。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�������A���͂ǂ����Ă������ɂ�����";
-		mes "����ȏ�̎S�߂���^�������Ȃ������B";
-		mes "�������A�������ă��b�P���x����";
-		mes "�A�E���A�����d���������󂯂Ă�";
-		mes "�����͎d���Ɋւ�鎖�ɂȂ����B";
+		mes "[カジエン]";
+		mes "しかし、俺はどうしてもあいつにだけは";
+		mes "これ以上の惨めさを与えたくなかった。";
+		mes "しかし、こうしてレッケンベルに";
+		mes "就職し、汚い仕事を引き受けても";
+		mes "あいつは仕事に関わる事になった。";
 		next;
 		cutin "lhz_kaz07",2;
-		mes "[�J�W�G��]";
-		mes "���͓I�Ȏd�����B";
-		mes "���Ƃ��ϗ��ɔ����Ă��Ă��A";
-		mes "�����͂���������炦�āA";
-		mes "����Ȃ�̑ҋ����󂯂Ă���B";
+		mes "[カジエン]";
+		mes "魅力的な仕事だ。";
+		mes "たとえ倫理に反していても、";
+		mes "お金はたくさんもらえて、";
+		mes "それなりの待遇も受けている。";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����āA�����͎�����";
-		mes "�ǂ�Ȏd�������Ă���̂�";
-		mes "�܂Ƃ��ɒm�邱�Ƃ��ł��Ȃ��B";
+		mes "[カジエン]";
+		mes "そして、あいつは自分が";
+		mes "どんな仕事をしているのか";
+		mes "まともに知ることができない。";
 		next;
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�����ɂ͉��̍߂��Ȃ��B";
-		mes "���Ƃ������d����";
-		mes "�ꏏ�ɂ��Ă���Ƃ����ǂ�";
-		mes "�S���������p���Ă��邾�����B";
-		mes "���͉�����";
-		mes "�����͂܂����ꂢ�Ȑg���B";
+		mes "[カジエン]";
+		mes "あいつには何の罪もない。";
+		mes "たとえ汚い仕事を";
+		mes "一緒にしているといえども";
+		mes "全部俺が利用しているだけだ。";
+		mes "俺は汚いが";
+		mes "あいつはまだきれいな身だ。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���͂���Ȃɉ�����������";
-		mes "������ׂ��Ă��邪�A";
-		mes "�����́A���������͈���Ăق����I";
-		mes "�O��������������Đ����Ăق����I";
-		mes "���Ƃ͈Ⴄ�悤�ɂ��I";
+		mes "[カジエン]";
+		mes "俺はこんなに汚い事をして";
+		mes "お金を儲けているが、";
+		mes "あいつは、あいつだけは違ってほしい！";
+		mes "前をしっかり向いて生きてほしい！";
+		mes "俺とは違うようにだ！";
 		next;
-		mes "[�J�W�G��]";
-		mes "�m���ɁA����Ȏd���͎��߂����B";
-		mes "�����ɂ����̎d�������������B";
-		mes "�������߂�ƌ�����";
-		mes "���R�𕷂��Ȃ��Ă����߂邾�낤�B";
+		mes "[カジエン]";
+		mes "確かに、こんな仕事は辞めたい。";
+		mes "あいつにも他の仕事をさせたい。";
+		mes "俺が辞めろと言えば";
+		mes "理由を聞かなくても辞めるだろう。";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "�������A���ꂾ�����I";
-		mes "�n���X�o�g�ł��鉴������";
-		mes "�󂯓���Ă���鏊�͂Ȃ��I";
-		mes "�E�Ƃ��Ȃ����̒�͈ȑO�̂悤��";
-		mes "�S�߂��������邱�ƂɂȂ邾�낤�B";
+		mes "[カジエン]";
+		mes "しかし、それだけだ！";
+		mes "貧民街出身である俺たちを";
+		mes "受け入れてくれる所はない！";
+		mes "職業がない俺の弟は以前のような";
+		mes "惨めさを感じることになるだろう。";
 		next;
-		mes "[�J�W�G��]";
-		mes "���͂���������Ȑ��E��";
-		mes "�߂������͂Ȃ��I";
+		mes "[カジエン]";
+		mes "俺はあいつをそんな世界に";
+		mes "戻したくはない！";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�������Ƃ��Ă��c�c";
-		mes "�l�������镐���";
-		mes "���ʂ����邱�Ƃ��������̂ł����I";
+		mes "そうだとしても……";
+		mes "人を傷つける武器を";
+		mes "流通させることが許されるのですか！";
 		next;
-		mes "[�J�W�G��]";
-		mes "������M�l�͐L���񂾁I";
+		mes "[カジエン]";
+		mes "だから貴様は青臭いんだ！";
 		next;
-		mes "[�J�W�G��]";
-		mes "����������Ă���ƌ������H";
-		mes "����Ȕ��𗁂т邱�Ƃ�";
-		mes "���łɊo�債�Ă���I";
+		mes "[カジエン]";
+		mes "俺が許されていると言った？";
+		mes "そんな非難を浴びることは";
+		mes "すでに覚悟している！";
 		next;
 		cutin "lhz_kaz09",2;
-		mes "[�J�W�G��]";
-		mes "�������񂾂�V���ɂ͂����Ȃ����낤�B";
-		mes "�������A���͂���ł������I";
-		mes "�n���̒�ɗ�����";
-		mes "�ꂵ�ނ��ƂɂȂ낤�Ƃ��c�c";
+		mes "[カジエン]";
+		mes "俺が死んだら天国にはいけないだろう。";
+		mes "しかし、俺はそれでもいい！";
+		mes "地獄の底に落ちて";
+		mes "苦しむことになろうとも……";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "���̒�A�����W�G�������́c�c";
-		mes "�����W�G��������!!";
+		mes "[カジエン]";
+		mes "俺の弟、リョジエンだけは……";
+		mes "リョジエンだけは!!";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "����ȃG�S�Ȃ񂩁c�c�I";
+		mes "そんなエゴなんか……！";
 		next;
 		cutin "lhz_kaz05",2;
-		mes "[�J�W�G��]";
-		mes "����ł͕������I";
-		mes "�M�l�͂����܂ł���";
-		mes "��肽���厖�ȑ��݂����Ȃ��̂��H";
-		mes "�M�l�̂��̗͂�";
-		mes "��̉�������Ă���!?";
+		mes "[カジエン]";
+		mes "それでは聞こう！";
+		mes "貴様はそこまでして";
+		mes "守りたい大事な存在がいないのか？";
+		mes "貴様のその力は";
+		mes "一体何を守っている!?";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����̂��߂�!?";
-		mes "�M�l�͎���������Ȃɑ厖��!?";
-		mes "���ǁA�M�l�������ׂ̈�";
-		mes "���҂̐������ȒP�ɒD������";
-		mes "�����U��񂵂Ă���̂ł͂Ȃ��̂��I";
+		mes "[カジエン]";
+		mes "自分のためか!?";
+		mes "貴様は自分がそんなに大事か!?";
+		mes "結局、貴様も自分の為に";
+		mes "他者の生命を簡単に奪い取れる";
+		mes "武器を振り回しているのではないのか！";
 		next;
 		cutin "lhz_kaz11",2;
-		mes "[�J�W�G��]";
-		mes "�ǂ�Ȏ������Ă���肽���l��";
-		mes "�M�l�ɂ͂��Ȃ��̂�!?�@����!?";
-		mes "�����͂���";
-		mes "�����������������Ă���Ƃ���";
-		mes "���M������̂�!?";
+		mes "[カジエン]";
+		mes "どんな事をしても守りたい人が";
+		mes "貴様にはいないのか!?　うん!?";
+		mes "自分はいつも";
+		mes "正しい事だけをしているという";
+		mes "自信があるのか!?";
 		next;
-		mes "[�J�W�G��]";
-		mes "�����Ă݂�I";
-		mes "�����Ă݂���!!!!";
-		mes "�����Ă݂�ƌ����Ă��邾�낤��!!";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c";
+		mes "[カジエン]";
+		mes "答えてみろ！";
+		mes "答えてみせろ!!!!";
+		mes "答えてみろと言っているだろうが!!";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�c�c";
+		mes "…………";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "…………";
 		next;
 		cutin "lhz_kaz01",2;
-		mes "[�J�W�G��]";
-		mes "�ӂ�c�c�M�l�̓N�r���B";
-		mes "��x�Ɖ��̑O�ɗ���ȁI";
+		mes "[カジエン]";
+		mes "ふん……貴様はクビだ。";
+		mes "二度と俺の前に来るな！";
 		set LHZ_5QUE,22;
 		if(checkre())
 			getexp 55000,0;
@@ -12542,8 +12542,8 @@ lhz_in01.gat,174,258,3	script	�N	868,{
 		break;
 	default:
 		cutin "lhz_kaz10",2;
-		mes "[�J�W�G��]";
-		mes "�c�c�c�c�c�c�c�c";
+		mes "[カジエン]";
+		mes "……………………";
 		break;
 	}
 	close2;
@@ -12551,256 +12551,256 @@ lhz_in01.gat,174,258,3	script	�N	868,{
 	end;
 }
 
-einbroch.gat,55,52,3	script	���������m	852,{
+einbroch.gat,55,52,3	script	研究所兵士	852,{
 	if(LHZ_5QUE < 3) {
-		mes "[���������m]";
-		mes "�~�܂�Ȃ����I";
-		mes "�����͒N�ł����邱�Ƃ�";
-		mes "������Ă���l�ȏ��ł͂Ȃ��B";
-		mes "�����p���ł�����̂��H";
-		mes "�p�����Ȃ���΂����ɋA��Ȃ����I";
+		mes "[研究所兵士]";
+		mes "止まりなさい！";
+		mes "ここは誰でも入ることが";
+		mes "許されている様な所ではない。";
+		mes "何か用件でもあるのか？";
+		mes "用件がなければすぐに帰りなさい！";
 		close;
 	}
 	if(LHZ_5QUE > 3) {
-		mes "[���������m]";
-		mes "�����͈�ʐl�̏o����֎~��悾�B";
-		mes "�p�����Ȃ���Α������̋߂���";
-		mes "���ꂽ�ق����������B";
+		mes "[研究所兵士]";
+		mes "ここは一般人の出入り禁止区域だ。";
+		mes "用件がなければ早くこの近くを";
+		mes "離れたほうがいいぞ。";
 		close;
 	}
-	mes "[���������m]";
-	mes "�~�܂�Ȃ����I";
-	mes "�����͒N�ł����邱�Ƃ�";
-	mes "������Ă���l�ȏ��ł͂Ȃ��B";
-	mes "�����p���ł�����̂��H";
+	mes "[研究所兵士]";
+	mes "止まりなさい！";
+	mes "ここは誰でも入ることが";
+	mes "許されている様な所ではない。";
+	mes "何か用件でもあるのか？";
 	next;
-	if(select("�p��������","�p���͂Ȃ�")==1) {
-		mes "[���������m]";
-		mes "�p��������̂��B";
-		mes "����Ȃ玄�����̐l�ɓ`���悤�B";
+	if(select("用件がある","用件はない")==1) {
+		mes "[研究所兵士]";
+		mes "用件があるのか。";
+		mes "それなら私が中の人に伝えよう。";
 		next;
-		if(select("�J�����X�������Ɂc�c","��ł܂����܂�")==1) {
+		if(select("カリンス研究員に……","後でまた来ます")==1) {
 			mes "[" +strcharinfo(0)+ "]";
-			mes "�J�����X�������ɕi����";
-			mes "�󂯎�����̂��m�F�������̂ł����B";
+			mes "カリンス研究員に品物を";
+			mes "受け取ったのか確認したいのですが。";
 			next;
-			mes "[���������m]";
-			mes "�i���ł����点���̂��c�c";
-			mes "���������B�`����悤�ɂ��邪�c�c";
-			mes "������Ƃ܂āA�J�����X���������ƁH";
-			mes "�ӂށc�c";
-			mes "�m���ɖ��O���J�����X�Ȃ̂��H";
+			mes "[研究所兵士]";
+			mes "品物でも送らせたのか……";
+			mes "分かった。伝えるようにするが……";
+			mes "ちょっとまて、カリンス研究員だと？";
+			mes "ふむ……";
+			mes "確かに名前がカリンスなのか？";
 			next;
-			mes "[���������m]";
-			mes "�c�c���[��c�c";
-			mes "�c�c����c�c";
-			mes "�J�����X�c�c�J�����X�H";
-			mes "�c�c����c�c";
-			mes "�c�c���[��c�c";
+			mes "[研究所兵士]";
+			mes "……うーん……";
+			mes "……うん……";
+			mes "カリンス……カリンス？";
+			mes "……うん……";
+			mes "……うーん……";
 			next;
-			mes "[���������m]";
-			mes "����Ȗ��O�̌�������";
-			mes "���̌������ɂ͂��Ȃ��B";
-			mes "�������Ⴂ���Ă���̂ł͂Ȃ����H";
-			mes "�����Ɗm�F�����Ă���܂����Ȃ����B";
+			mes "[研究所兵士]";
+			mes "そんな名前の研究員は";
+			mes "この研究所にはいない。";
+			mes "何か勘違いしているのではないか？";
+			mes "ちゃんと確認をしてからまた来なさい。";
 			set LHZ_5QUE,4;
 			close;
 		}
 	}
 	mes "[" +strcharinfo(0)+ "]";
-	mes "���ł��Ȃ��ł��B";
-	mes "��ł܂����邱�Ƃɂ��܂��ˁB";
-	mes "����ꂳ�܂ł��B";
+	mes "何でもないです。";
+	mes "後でまた来ることにしますね。";
+	mes "お疲れさまです。";
 	next;
-	mes "[���������m]";
-	mes "������Ȃ����Ƃ�����ȁB";
-	mes "���x�܂�����ƌ����Ă�";
-	mes "�����ւ̏o����͐�΂����Ȃ�����ȁB";
-	mes "�����������B";
+	mes "[研究所兵士]";
+	mes "くだらないことをするな。";
+	mes "今度また来ると言っても";
+	mes "ここへの出入りは絶対させないからな。";
+	mes "分かったか。";
 	set LHZ_5QUE,6;
 	close;
 }
 
-airplane_01.gat,96,48,3	script	�j#Ryo	869,{
+airplane_01.gat,96,48,3	script	男#Ryo	869,{
 	switch(LHZ_5QUE) {
 	default:
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "������͗l�X�Ȕz�����������鏊�ł��B";
-		mes "�����͂Ȃ�ׂ����Ȃ��ł��������B";
-		mes "�����s�ւ��Ƃ��Ă����̓���";
-		mes "���p���Ă��������B";
+		mes "[リョジエン]";
+		mes "こちらは様々な配送物資がある所です。";
+		mes "往来はなるべくしないでください。";
+		mes "多少不便だとしても他の道を";
+		mes "利用してください。";
 		break;
 	case 8:
 		cutin "lhz_ryo02",2;
-		mes "[�����W�G��]";
-		mes "������͗l�X�Ȕz�����������鏊�ł��B";
-		mes "�����͂Ȃ�ׂ����Ȃ��ł��������B";
-		mes "�����s�ւ��Ƃ��Ă����̓���";
-		mes "���p���Ă��������B";
+		mes "[リョジエン]";
+		mes "こちらは様々な配送物資がある所です。";
+		mes "往来はなるべくしないでください。";
+		mes "多少不便だとしても他の道を";
+		mes "利用してください。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�J�W�G�����瑗���ė��܂����B";
-		mes "�����W�G���ł����H";
-		mes "���Ȃ��ƈꏏ�Ɏd��������悤��";
-		mes "�����Ă��܂��B";
+		mes "カジエンから送られて来ました。";
+		mes "リョジエンですか？";
+		mes "あなたと一緒に仕事をするように";
+		mes "言われています。";
 		next;
 		cutin "lhz_ryo07",2;
-		mes "[�����W�G��]";
-		mes "�����B";
-		mes "���Ȃ����Z���񂪘b���Ă��l�ł����B";
-		mes "�悭��������Ⴂ�܂����B";
-		mes "���܂ł͂ЂƂ�Ő��_�I�ɑ�ςł�����";
-		mes "����ŏ�����܂��B";
+		mes "[リョジエン]";
+		mes "ああ。";
+		mes "あなたが兄さんが話してた人ですか。";
+		mes "よくいらっしゃいました。";
+		mes "今まではひとりで精神的に大変でしたが";
+		mes "これで助かります。";
 		next;
-		mes "[�����W�G��]";
-		mes "�Z���񂩂��܂��ɕ������ʂ�A";
-		mes "���̎d���͊�{�I�ɊǗ��̎d���ł��B";
-		mes "���ɂ��邱�Ƃ͂���܂��񂪁A";
-		mes "������肪�N������";
-		mes "�S�Ă̐ӔC�𕉂�Ȃ���΂Ȃ�܂���B";
-		mes "���̂��߁A�ƂĂ��C���g���܂��B";
+		mes "[リョジエン]";
+		mes "兄さんから大まかに聞いた通り、";
+		mes "この仕事は基本的に管理の仕事です。";
+		mes "特にすることはありませんが、";
+		mes "何か問題が起きた時";
+		mes "全ての責任を負わなければなりません。";
+		mes "そのため、とても気を使います。";
 		next;
 		cutin "lhz_ryo14",2;
-		mes "[�����W�G��]";
-		mes "����ł��A���ꂪ���̎d���Ȃ̂�";
-		mes "�����Ă͂��܂������A";
-		mes "����ς������l���Ă��ꂽ��ǂ���";
-		mes "�v���Ă��܂����B";
-		mes "�{���ɏ�����܂��B";
+		mes "[リョジエン]";
+		mes "それでも、これが私の仕事なので";
+		mes "続けてはいましたが、";
+		mes "やっぱりもう一人いてくれたら良いと";
+		mes "思っていました。";
+		mes "本当に助かります。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c������A";
-		mes "��قǂ��Z����ƌ����Ă܂������H";
+		mes "……それより、";
+		mes "先ほどお兄さんと言ってましたか？";
 		next;
-		mes "[�����W�G��]";
-		mes "�J�W�G���Z����͎��̎��̌Z�ł��B";
-		mes "�������̓��q�^���[���̕n���X��";
-		mes "���܂������l�ԂȂ̂ɁA";
-		mes "�Z���񂪃��b�P���x���{�ЂɏA�E����";
-		mes "�^���Ƃ�S������悤�ɂȂ�A";
-		mes "�l�������v�掞�Ɏ������R�c�c";
+		mes "[リョジエン]";
+		mes "カジエン兄さんは私の実の兄です。";
+		mes "私たちはリヒタルゼンの貧民街で";
+		mes "生まれ育った人間なのに、";
+		mes "兄さんがレッケンベル本社に就職して";
+		mes "運送業を担当するようになり、";
+		mes "人員増員計画時に私も偶然……";
 		next;
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "���ׂĂ��Z����̂������ł��B";
-		mes "�{���ɑ��h���Ă�܂Ȃ��l�ł��ˁB";
-		mes "�Z����̂������œ������������A";
-		mes "�����������Ė{���ɏ������Ă��܂��B";
+		mes "[リョジエン]";
+		mes "すべてが兄さんのおかげです。";
+		mes "本当に尊敬してやまない人ですね。";
+		mes "兄さんのおかげで働き口が得られ、";
+		mes "お金も得られて本当に助かっています。";
 		next;
-		mes "[�����W�G��]";
-		mes "�Ƃɂ����c�c�����Ȃ�ł��B";
-		mes "�Z����̎������邵�A�d���ł͂��܂�";
-		mes "���f�������Ȃ��悤�ɂ�";
-		mes "���ӂ��Ă��܂��B";
+		mes "[リョジエン]";
+		mes "とにかく……そうなんです。";
+		mes "兄さんの事もあるし、仕事ではあまり";
+		mes "迷惑をかけないようにと";
+		mes "注意しています。";
 		next;
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "�ꉞ�A����";
-		mes "���̕i�������[���~�b�h�K�b�c�����܂�";
-		mes "�ڂ��Ȃ���΂Ȃ�܂���B";
-		mes "���̎��܂łǂ��ɂ��s�����A";
-		mes "���ƈꏏ�ɂ��̉ו������܂��傤�B";
+		mes "[リョジエン]";
+		mes "一応、今は";
+		mes "この品物をルーンミッドガッツ王国まで";
+		mes "移さなければなりません。";
+		mes "その時までどこにも行かず、";
+		mes "私と一緒にこの荷物を守りましょう。";
 		next;
 		cutin "lhz_ryo11",2;
-		mes "[�����W�G��]";
-		mes "���[���~�b�h�K�b�c�����̋�̌��ցA";
-		mes "�܂�C�Y���[�h�ɓ���������";
-		mes "��`�ɂ���A�}���Ƃ����l��";
-		mes "�T���Ă��������B";
-		mes "�ނɕi�����^��ł����Ƙb����";
-		mes "�i�����~�낵�Ă��炦�܂��B";
+		mes "[リョジエン]";
+		mes "ルーンミッドガッツ王国の空の玄関、";
+		mes "つまりイズルードに到着したら";
+		mes "空港にいるアマンという人を";
+		mes "探してください。";
+		mes "彼に品物を運んできたと話せば";
+		mes "品物を降ろしてもらえます。";
 		set LHZ_5QUE,9;
 		break;
 	case 9:
 		cutin "lhz_ryo05",2;
-		mes "[�����W�G��]";
-		mes "�C�Y���[�h�ɓ���������";
-		mes "��`�ɂ���A�}����";
-		mes "�i���������ė����Ɠ`���Ă��������B";
-		mes "���͂����ŃA�}����";
-		mes "�ו����~�낷�Ƃ�������Ă��܂��B";
+		mes "[リョジエン]";
+		mes "イズルードに到着したら";
+		mes "空港にいるアマンに";
+		mes "品物を持って来たと伝えてください。";
+		mes "私はここでアマンが";
+		mes "荷物を降ろすところを見ています。";
 		break;
 	case 10:
 		cutin "lhz_ryo14",2;
-		mes "[�����W�G��]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "���������S�Ẳו����~�낹�܂����B";
-		mes "�������̓��q�^���[���ɖ߂���";
-		mes "���̉ו����󂯂ė���΂����ł��B";
+		mes "[リョジエン]";
+		mes "ありがとうございます。";
+		mes "たった今全ての荷物を降ろせました。";
+		mes "私たちはリヒタルゼンに戻って";
+		mes "次の荷物を受けて来ればいいです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����胊���W�G���B";
-		mes "�ǂ�ȉו����^��ł���̂�";
-		mes "�m���Ă���̂ł����H";
+		mes "それよりリョジエン。";
+		mes "どんな荷物を運んでいるのか";
+		mes "知っているのですか？";
 		next;
 		cutin "lhz_ryo10",2;
-		mes "[�����W�G��]";
-		mes "�������B������܂���B";
-		mes "�ܘ_�C�ɂ͂Ȃ�܂����A";
-		mes "���̎d���͉ו��������m��Ȃ��Ă�";
-		mes "�ł��邱�Ƃł��B";
-		mes "����ɁA��i�ƃJ�W�G���Z����";
-		mes "�m��K�v�͂Ȃ��ƌ����Ă��܂��B";
+		mes "[リョジエン]";
+		mes "いいえ。分かりません。";
+		mes "勿論気にはなりますが、";
+		mes "私の仕事は荷物が何か知らなくても";
+		mes "できることです。";
+		mes "それに、上司とカジエン兄さんが";
+		mes "知る必要はないと言っています。";
 		next;
-		mes "[�����W�G��]";
-		mes "�ǂ�ȕi�����^��ł��Ă�";
-		mes "���̂���d���͕ς�肪�Ȃ��͂��ł��B";
-		mes "�Ⴂ�܂����H";
+		mes "[リョジエン]";
+		mes "どんな品物を運んでいても";
+		mes "私のする仕事は変わりがないはずです。";
+		mes "違いますか？";
 		next;
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "�������̎d���͂��������d���Ȃ�ł��B";
-		mes "����ł́A���q�^���[���ɖ߂�����";
-		mes "�Z���񂩂玟�̎d�����󂯂Ă��������B";
+		mes "[リョジエン]";
+		mes "私たちの仕事はそういう仕事なんです。";
+		mes "それでは、リヒタルゼンに戻ったら";
+		mes "兄さんから次の仕事を受けてください。";
 		next;
 		cutin "lhz_ryo01",2;
-		mes "[�����W�G��]";
-		mes "�Z������҂��Ă���͂��ł��B";
+		mes "[リョジエン]";
+		mes "兄さんも待っているはずです。";
 		set LHZ_5QUE,11;
 		break;
 	case 11:
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "���q�^���[���̌Z����A";
-		mes "�܂�J�W�G�����玟�̎d����";
-		mes "�󂯂ė��Ă��������B";
-		mes "���Ԃ��ɂ����̂�";
-		mes "�����s���Ă��Ă��������B";
+		mes "[リョジエン]";
+		mes "リヒタルゼンの兄さん、";
+		mes "つまりカジエンから次の仕事を";
+		mes "受けて来てください。";
+		mes "時間が惜しいので";
+		mes "早く行ってきてください。";
 		break;
 	case 12:
 		cutin "lhz_ryo11",2;
-		mes "[�����W�G��]";
-		mes "�Z����ɍ��x�̎d���ɂ���";
-		mes "�������炵���ł��ˁB";
-		mes "����ł͍s�����Ƃɂ��܂��傤�B";
-		mes "���x�����[���~�b�h�K�b�c�ł��傤���B";
-		mes "�ŋ߁A���[���~�b�h�K�b�c�̕���";
-		mes "�z�B����d�������Ȃ葽���ł��ˁB";
+		mes "[リョジエン]";
+		mes "兄さんに今度の仕事について";
+		mes "聞いたらしいですね。";
+		mes "それでは行くことにしましょう。";
+		mes "今度もルーンミッドガッツでしょうか。";
+		mes "最近、ルーンミッドガッツの方に";
+		mes "配達する仕事がかなり多いですね。";
 		next;
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "�z�B�悪�ǂ��ł��A";
-		mes "�������͈����󂯂��d������";
-		mes "�M�S�ɂ���Ηǂ��͂��ł��B";
-		mes "�͂��c�c";
-		mes "���͏����ދ��ł͂���܂��ˁc�c";
-		mes "���[��H";
+		mes "[リョジエン]";
+		mes "配達先がどこでも、";
+		mes "私たちは引き受けた仕事だけ";
+		mes "熱心にすれば良いはずです。";
+		mes "はぁ……";
+		mes "実は少し退屈ではありますね……";
+		mes "うーん？";
 		next;
-		mes "[�����W�G��]";
-		mes "�����b�������������܂��񂩁H";
-		mes "����ɕςȕ��������܂���B";
+		mes "[リョジエン]";
+		mes "何か話し声が聞こえませんか？";
+		mes "それに変な物音がしますよ。";
 		next;
 		cutin "lhz_ryo03",2;
-		mes "[�����W�G��]";
-		mes "�c�c����A�܂���炪���Ă��܂��B";
-		mes "������Ƃ��̉ו�������ĂĂ��������B";
-		mes "�ڂ������͂��̌�ɘb�����Ƃɂ��܂��B";
+		mes "[リョジエン]";
+		mes "……あれ、またやつらが見ています。";
+		mes "ちょっとこの荷物を守っててください。";
+		mes "詳しい事はその後に話すことにします。";
 		next;
 		cutin "lhz_ryo02",2;
-		mes "[�����W�G��]";
-		mes "����ł͂��肢���܂��B";
-		mes "���͏����̊ԉB��Ă��܂��c�c";
+		mes "[リョジエン]";
+		mes "それではお願いします。";
+		mes "私は少しの間隠れています……";
 		close2;
 		cutin "lhz_ryo02",255;
 		set LHZ_5QUE,13;
@@ -12809,180 +12809,180 @@ airplane_01.gat,96,48,3	script	�j#Ryo	869,{
 		end;
 	case 13:
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "�ǂ������Ă��������܂����ˁB";
-		mes "�{���ɂ��肪�Ƃ��������܂��B";
-		mes "�c�c���񂩂ɋ�������";
-		mes "�ꏏ�ɓ�����悤�ɂȂ���";
-		mes "�{���ɏ�����܂��B";
+		mes "[リョジエン]";
+		mes "追っ払ってくださいましたね。";
+		mes "本当にありがとうございます。";
+		mes "……けんかに強い方と";
+		mes "一緒に働けるようになって";
+		mes "本当に助かります。";
 		next;
 		cutin "lhz_ryo03",2;
-		mes "[�����W�G��]";
-		mes "��܂��ɂł����������܂��傤�B";
-		mes "���܂ɂ���ȃ��N�U����������";
-		mes "�i����@���󂳂Ȃ���΂Ȃ�Ȃ��Ƃ��A";
-		mes "�����̏��Ƃ��Ȃǂƌ����Ȃ���";
-		mes "�\�͂�U����Ă��܂��B";
+		mes "[リョジエン]";
+		mes "大まかにですが説明しましょう。";
+		mes "たまにあんなヤクザたちが来て";
+		mes "品物を叩き壊さなければならないとか、";
+		mes "悪魔の所業だなどと言いながら";
+		mes "暴力を振るってきます。";
 		next;
-		mes "[�����W�G��]";
-		mes "���܂Ŏ��͒ʂ�߂���l�X�̏�����";
-		mes "�؂�ĂȂ�Ƃ��ǂ������Ă܂������A";
-		mes "��������E�Ȃ悤�ł��āc�c";
+		mes "[リョジエン]";
+		mes "今まで私は通り過ぎる人々の助けを";
+		mes "借りてなんとか追っ払ってましたが、";
+		mes "それも限界なようでして……";
 		next;
-		mes "[�����W�G��]";
-		mes "����ŌZ�����";
-		mes "�͋����l����A�񖼂ق�";
-		mes "�ꏏ�ɓ�����悤�ɂ��ė~������";
-		mes "���񂾂�A���Ȃ������邱�Ƃ�";
-		mes "�Ȃ����̂ł��B";
+		mes "[リョジエン]";
+		mes "それで兄さんに";
+		mes "力強い人を一、二名ほど";
+		mes "一緒に働けるようにして欲しいと";
+		mes "頼んだら、あなたが来ることに";
+		mes "なったのです。";
 		next;
-		mes "[�����W�G��]";
-		mes "���񂩂͕�[�l���ɔC���Ď��ɂ�";
-		mes "�B��Ă��Ȃ����ƌ����܂����B";
-		mes "�������ɗ��������ł����c�c";
-		mes "�Z����̖��߂ŉ����ł��Ȃ���ł��B";
+		mes "[リョジエン]";
+		mes "けんかは補充人員に任せて私には";
+		mes "隠れていなさいと言われました。";
+		mes "私も役に立ちたいですが……";
+		mes "兄さんの命令で何もできないんです。";
 		next;
 		cutin "lhz_ryo07",2;
-		mes "[�����W�G��]";
-		mes "����ɂ��񂩂�����p��������A";
-		mes "���܂菕����K�v���Ȃ������ł����B";
-		mes "�Ƃɂ����A";
-		mes "�������������̂͐\����Ȃ������ł��B";
-		mes "����ł����񂩂̋������ƈꏏ�Ɏd����";
-		mes "�ł���悤�ɂȂ��ĐS�����ł��ˁB";
+		mes "[リョジエン]";
+		mes "それにけんかをする姿を見たら、";
+		mes "あまり助ける必要もなさそうでした。";
+		mes "とにかく、";
+		mes "私だけ逃げたのは申し訳なかったです。";
+		mes "それでもけんかの強い方と一緒に仕事が";
+		mes "できるようになって心強いですね。";
 		next;
 		cutin "lhz_ryo01",2;
-		mes "[�����W�G��]";
-		mes "����Ƃ���낵�����肢���܂��B";
+		mes "[リョジエン]";
+		mes "今後ともよろしくお願いします。";
 		set LHZ_5QUE,14;
 		break;
 	case 14:
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "�Ƃɂ����A�ꉞ���N�U�������ǂ�������";
-		mes "�݂����ł����A�Ɩ��𑱂��܂���B";
-		mes "��͂荡�x���C�Y���[�h�ɓ���������";
-		mes "��s�D���~��ăA�}����";
-		mes "������m�点��΂����ł��B";
+		mes "[リョジエン]";
+		mes "とにかく、一応ヤクザたちも追っ払えた";
+		mes "みたいですし、業務を続けますよ。";
+		mes "やはり今度もイズルードに到着したら";
+		mes "飛行船を降りてアマンに";
+		mes "到着を知らせればいいです。";
 		break;
 	case 15:
 		cutin "lhz_ryo05",2;
-		mes "[�����W�G��]";
-		mes "�n�j�I�@�d����������";
-		mes "�{���ɂ����l�ł��ˁB";
+		mes "[リョジエン]";
+		mes "ＯＫ！　仕事も早くて";
+		mes "本当にいい人ですね。";
 		next;
-		mes "[�����W�G��]";
-		mes "����ł͂܂����̎d�����󂯂�";
-		mes "�V���o���c�o���h��";
-		mes "�s���Ă݂܂��傤���H";
+		mes "[リョジエン]";
+		mes "それではまた次の仕事を受けに";
+		mes "シュバルツバルドへ";
+		mes "行ってみましょうか？";
 		next;
-		mes "[�����W�G��]";
-		mes "���̑O�����ʂ�ɁA";
-		mes "�Z���񂩂�d�����󂯂ė����";
-		mes "���ƈꏏ�ɕ�����ی삷�邽�߂�";
-		mes "��s�D�ɏ�邱�ƂɂȂ�܂��B";
+		mes "[リョジエン]";
+		mes "この前した通りに、";
+		mes "兄さんから仕事を受けて来れば";
+		mes "私と一緒に物資を保護するために";
+		mes "飛行船に乗ることになります。";
 		next;
 		cutin "lhz_ryo01",2;
-		mes "[�����W�G��]";
-		mes "���ꂩ��̓��N�U���������Ă�";
-		mes "�|���Ȃ��ł��ˁB";
-		mes "�n�n�b�B";
+		mes "[リョジエン]";
+		mes "これからはヤクザたちが来ても";
+		mes "怖くないですね。";
+		mes "ハハッ。";
 		set LHZ_5QUE,16;
 		break;
 	case 16:
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "���҂����Ă܂��B";
-		mes "�s���Ă�����Ⴂ�B";
+		mes "[リョジエン]";
+		mes "お待ちしてます。";
+		mes "行ってらっしゃい。";
 		break;
 	case 17:
 		cutin "lhz_ryo14",2;
-		mes "[�����W�G��]";
-		mes "�Z����ɕ����܂����B";
-		mes "�Z�����{�点����ł����āH";
+		mes "[リョジエン]";
+		mes "兄さんに聞きました。";
+		mes "兄さんを怒らせたんですって？";
 		next;
-		mes "[�����W�G��]";
-		mes "�z�B����i���̒��g��";
-		mes "�m�肽���C�����͗����ł��܂����A";
-		mes "�Z����ɖ��f��������܂��B";
-		mes "���܂�ǋ����Ȃ��ł����Ă��������B";
+		mes "[リョジエン]";
+		mes "配達する品物の中身が";
+		mes "知りたい気持ちは理解できますが、";
+		mes "兄さんに迷惑がかかります。";
+		mes "あまり追求しないであげてください。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�����W�G���͉^��ł���i��������";
-		mes "�m�肽���͂Ȃ���ł����B";
-		mes "�����̖�����Ȃ������m��Ȃ��̂ɁH";
-		mes "��̂ǂ�ȕi���̂��߂Ɏ�����";
-		mes "�������E�����̂�";
-		mes "�m�肽���͂Ȃ��̂ł����H";
+		mes "リョジエンは運んでいる品物が何か";
+		mes "知りたくはないんですか。";
+		mes "自分の命が危ないかも知れないのに？";
+		mes "一体どんな品物のために自分の";
+		mes "命が左右されるのか";
+		mes "知りたくはないのですか？";
 		next;
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "������񎄂��m�肽���ł��B";
-		mes "�ł��邱�ƂȂ�m�肽���ł��B";
-		mes "�Ƃ��낪�A���ꂪ���ł��낤�Ƃ�";
-		mes "�������ׂ����Ƃ͕ς�炸�A";
-		mes "�ǂ�Ȏd���ł����͂��܂��B";
+		mes "[リョジエン]";
+		mes "もちろん私も知りたいです。";
+		mes "できることなら知りたいです。";
+		mes "ところが、それが何であろうとも";
+		mes "私がすべきことは変わらず、";
+		mes "どんな仕事でも私はします。";
 		next;
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "���̓v���Ȃ�ł��B";
-		mes "�����ȃA�}�`���A�ł͂���܂���B";
+		mes "[リョジエン]";
+		mes "私はプロなんです。";
+		mes "生半可なアマチュアではありません。";
 		next;
 		cutin "lhz_ryo06",2;
-		mes "[�����W�G��]";
-		mes "����ɁA";
-		mes "���ɂƂ��ČZ����̌��t�͐�΂ł��B";
-		mes "�c��������Z����͐������������A";
-		mes "���͂���ɕt���čs���΂����̂ł��B";
+		mes "[リョジエン]";
+		mes "それに、";
+		mes "私にとって兄さんの言葉は絶対です。";
+		mes "幼い頃から兄さんは正しかったし、";
+		mes "私はそれに付いて行けばいいのです。";
 		next;
-		mes "[�����W�G��]";
-		mes "�����������Ďd�������A";
-		mes "�������Ă�����̂͂��ׂČZ�����";
-		mes "�������Ȃ̂ł��B";
+		mes "[リョジエン]";
+		mes "私がこうして仕事をし、";
+		mes "生活していけるのはすべて兄さんの";
+		mes "おかげなのです。";
 		next;
 		cutin "lhz_ryo13",2;
-		mes "[�����W�G��]";
-		mes "������Z���񂪌����鎖��";
-		mes "������蕷���o�������͂���܂���B";
-		mes "���܂ł悭���Ă��ꂽ���Ƃɑ΂���";
-		mes "���ӂ̋C������";
-		mes "�S���Ԃ����Ƃ��ł��Ȃ�����c�c";
+		mes "[リョジエン]";
+		mes "だから兄さんが嫌がる事を";
+		mes "無理やり聞き出したくはありません。";
+		mes "今までよくしてくれたことに対する";
+		mes "感謝の気持ちを";
+		mes "全部返すことができないから……";
 		next;
-		mes "[�����W�G��]";
-		mes "����Ȃ�����Ƃ������Ƃł�";
-		mes "�C�ɂ��Ă��������̂ł��B";
-		mes "�������Ă��������B";
+		mes "[リョジエン]";
+		mes "こんなちょっとしたことでも";
+		mes "気にしていきたいのです。";
+		mes "分かってください。";
 		next;
 		cutin "lhz_ryo10",2;
-		mes "[�����W�G��]";
-		mes "�Ƃɂ����A����Ȗ��ʘb��";
-		mes "���Ă��鎞�Ԃ͂���܂���B";
-		mes "���������d�����n�߂܂��傤�B";
+		mes "[リョジエン]";
+		mes "とにかく、こんな無駄話を";
+		mes "している時間はありません。";
+		mes "さっそく仕事を始めましょう。";
 		set LHZ_5QUE,18;
 		break;
 	case 18:
 		cutin "lhz_ryo06",2;
-		mes "[�����W�G��]";
-		mes "���[���~�b�h�K�b�c��";
-		mes "�������������Ă����ו����ڂ��܂��B";
-		mes "���܂Œʂ�C�Y���[�h�ɓ�����A";
-		mes "�A�}���ɘA������΂��������ł��B";
+		mes "[リョジエン]";
+		mes "ルーンミッドガッツに";
+		mes "たった今入ってきた荷物を移します。";
+		mes "今まで通りイズルードに到着後、";
+		mes "アマンに連絡すればいいだけです。";
 		next;
 		cutin "lhz_ryo08",2;
-		mes "[�����W�G��]";
-		mes "�c�c���[��H";
+		mes "[リョジエン]";
+		mes "……うーん？";
 		next;
-		mes "[�����W�G��]";
-		mes "���������������ł��ˁB";
-		mes "�܂����N�U�����������悤�ł��c�c";
-		mes "�\���󂠂�܂���";
-		mes "���x�����肢���܂��B";
+		mes "[リョジエン]";
+		mes "何だか騒がしいですね。";
+		mes "またヤクザたちが来たようです……";
+		mes "申し訳ありませんが";
+		mes "今度もお願いします。";
 		next;
 		cutin "lhz_ryo04",2;
-		mes "[�����W�G��]";
-		mes "�ו��ɏ������Ȃ��悤��";
-		mes "���肢���܂��B";
-		mes "�M���Ă܂���B";
+		mes "[リョジエン]";
+		mes "荷物に傷をつけないように";
+		mes "お願いします。";
+		mes "信じてますよ。";
 		close2;
 		cutin "lhz_ryo04",255;
 		set LHZ_5QUE,19;
@@ -12991,73 +12991,73 @@ airplane_01.gat,96,48,3	script	�j#Ryo	869,{
 		end;
 	case 19:
 		cutin "lhz_ryo06",2;
-		mes "[�����W�G��]";
-		mes "���x�͂�����葽�������̂ɁA";
-		mes "�y���ނ��Ă���̂�����ƁA";
-		mes "�ƂĂ��S�����ł��ˁB";
+		mes "[リョジエン]";
+		mes "今度はいつもより多かったのに、";
+		mes "軽く退けているのを見ると、";
+		mes "とても心強いですね。";
 		next;
 		cutin "lhz_ryo01",2;
-		mes "[�����W�G��]";
-		mes "����͏��Ȃ��ł���";
-		mes "���̊��ӂ̋C�����ł��B";
-		mes "������g���΁A�퓬�̔�ꂪ";
-		mes "������������ł��B";
+		mes "[リョジエン]";
+		mes "これは少ないですが";
+		mes "私の感謝の気持ちです。";
+		mes "これを使えば、戦闘の疲れが";
+		mes "すっかり取れるんです。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�c�c�����胊���W�G���B�{���ɒ���";
-		mes "�ו�������������Ȃ���ł����H";
+		mes "……それよりリョジエン。本当に中の";
+		mes "荷物が何か分からないんですか？";
 		next;
 		cutin "lhz_ryo02",2;
-		mes "[�����W�G��]";
-		mes "���Ȃ����{���ɂ������ł��ˁB";
-		mes "�����Ȃ��R�����܂����B";
-		mes "���͉ו��������m��܂���B";
-		mes "�����A�m�肽��������܂���B";
-		mes "�Z���񂪒��ڋ����Ă����Ƃ����Ȃ�";
-		mes "�b�͕ʂł����c�c";
+		mes "[リョジエン]";
+		mes "あなたも本当にしつこいですね。";
+		mes "私がなぜ嘘をつきますか。";
+		mes "私は荷物が何か知りません。";
+		mes "いえ、知りたくもありません。";
+		mes "兄さんが直接教えてくれるというなら";
+		mes "話は別ですが……";
 		next;
 		cutin "lhz_ryo14",2;
-		mes "[�����W�G��]";
-		mes "����A��F���ǂ��Ȃ��ł��ˁB";
-		mes "���̂��񂩂ł�����������ł����H";
-		mes "��ςł��B";
-		mes "�͂₭������g���Ă��������B";
+		mes "[リョジエン]";
+		mes "おや、顔色が良くないですね。";
+		mes "今のけんかでけがをしたんですか？";
+		mes "大変です。";
+		mes "はやくこれを使ってください。";
 		next;
 		cutin "lhz_ryo12",2;
-		mes "[�����W�G��]";
-		mes "������ȑO���l��";
-		mes "�C�Y���[�h�̃A�}���ɘA�����邾����";
-		mes "�d�����I���܂��B";
-		mes "����������Ƃ̊Ԃ���΂��Ă��������B";
+		mes "[リョジエン]";
+		mes "今回も以前同様に";
+		mes "イズルードのアマンに連絡するだけで";
+		mes "仕事が終わります。";
+		mes "もうちょっとの間がんばってください。";
 		set LHZ_5QUE,20;
 		getitem 504,1;
 		break;
 	case 20:
 		cutin "lhz_ryo09",2;
-		mes "[�����W�G��]";
-		mes "������ȑO���l��";
-		mes "�C�Y���[�h�̃A�}���ɘA�����邾����";
-		mes "�d�����I���܂��B";
-		mes "����������Ƃ̊Ԃ���΂��Ă��������B";
+		mes "[リョジエン]";
+		mes "今回も以前同様に";
+		mes "イズルードのアマンに連絡するだけで";
+		mes "仕事が終わります。";
+		mes "もうちょっとの間がんばってください。";
 		break;
 	case 21:
 		cutin "lhz_ryo03",2;
-		mes "[�����W�G��]";
-		mes "��������Ȃ����B";
-		mes "�A�}�����ו����~�낵�Ă����܂����B";
-		mes "�������͂܂����q�^���[���܂�";
-		mes "�߂�܂��B";
+		mes "[リョジエン]";
+		mes "おかえりなさい。";
+		mes "アマンが荷物を降ろしていきました。";
+		mes "私たちはまたリヒタルゼンまで";
+		mes "戻ります。";
 		next;
-		mes "[�����W�G��]";
-		mes "�܂���F���ǂ��Ȃ��ł��ˁB";
-		mes "�����x��ł��������B";
+		mes "[リョジエン]";
+		mes "まだ顔色が良くないですね。";
+		mes "早く休んでください。";
 		break;
 	case 22:
 	case 23:
 		cutin "lhz_ryo11",2;
-		mes "[�����W�G��]";
-		mes "���A��������Ⴂ�܂������B";
-		mes "�܂��Z���񂩂�̘A���͂���܂���c�c";
+		mes "[リョジエン]";
+		mes "あ、いらっしゃいましたか。";
+		mes "まだ兄さんからの連絡はありません……";
 		break;
 	}
 	close2;
@@ -13065,143 +13065,143 @@ airplane_01.gat,96,48,3	script	�j#Ryo	869,{
 	end;
 }
 
-izlude.gat,186,57,5	script	�����	853,{
+izlude.gat,186,57,5	script	ごろつき	853,{
 	if(LHZ_5QUE < 9) {
-		mes "[�j]";
-		mes "��`�ƌ�������ɂ͏�������";
-		mes "�Ȃ��Ȃ�����������Ȃ����B";
-		mes "��H";
-		mes "�������O�́B";
-		mes "�����ɗp�ł�����̂��H";
+		mes "[男]";
+		mes "空港と言う割りには小さいが";
+		mes "なかなかいい所じゃないか。";
+		mes "ん？";
+		mes "何だお前は。";
+		mes "ここに用でもあるのか？";
 		close;
 	}
 	switch(LHZ_5QUE) {
 	case 9:
-		mes "[�j]";
-		mes "��`�ƌ�������ɂ͏�������";
-		mes "�Ȃ��Ȃ�����������Ȃ����B";
-		mes "��H";
-		mes "�������O�́B";
-		mes "�����ɗp�ł�����̂��H";
+		mes "[男]";
+		mes "空港と言う割りには小さいが";
+		mes "なかなかいい所じゃないか。";
+		mes "ん？";
+		mes "何だお前は。";
+		mes "ここに用でもあるのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�A�}���ł��ˁH";
-		mes "���Ȃ���T���Ă��܂����B";
+		mes "アマンですね？";
+		mes "あなたを探していました。";
 		next;
-		mes "[�A�}��]";
-		mes "�ق��c�c";
-		mes "���ɗp��������Ȃ�A";
-		mes "���q�^���[�����痈���Ƃ������Ƃ��B";
-		mes "�������c�c�i���͂����Ɠ����������H";
-		mes "���͂��̔�s�D�̒��ɂ���̂��H";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "�����ł��B���ɓ����ă����W�G���Ɓc�c";
-		next;
-		mes "[�A�}��]";
-		mes "�����܂ł��B";
-		mes "����ȏ㌾��Ȃ��Ă��������Ă���B";
-		mes "�N�N�N�c�c";
-		mes "�����W�G�����{���ɗ���Ƃ͂ȁB";
-		mes "�c�c���������B�ו����^�ԂƂ��悤�B";
-		mes "�Ƃ���ŁA���O�͐V�l���H";
+		mes "[アマン]";
+		mes "ほう……";
+		mes "私に用事があるなら、";
+		mes "リヒタルゼンから来たということか。";
+		mes "そうか……品物はちゃんと到着したか？";
+		mes "今はこの飛行船の中にあるのか？";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�͂��B�A���o�C�g�ł��B";
+		mes "そうです。中に入ってリョジエンと……";
 		next;
-		mes "[�A�}��]";
-		mes "�������c�c����Ȃ炱�̉ו���";
-		mes "�ǂ�Ȃ��̂��͒m�炳��Ă��Ȃ��ȁB";
-		mes "�N�N�N�c�c";
-		mes "���O�������W�G�����l���B";
+		mes "[アマン]";
+		mes "そこまでだ。";
+		mes "これ以上言わなくても分かっている。";
+		mes "ククク……";
+		mes "リョジエンも本当に来るとはな。";
+		mes "……分かった。荷物を運ぶとしよう。";
+		mes "ところで、お前は新人か？";
 		next;
-		mes "[�A�}��]";
-		mes "�N�N�N�c�c";
-		mes "�����C�ɂ���ȁB";
-		mes "������Ȃ��Ă�";
-		mes "������͂Ȃ����Ƃ��B";
-		mes "����͂悭����Ă��ꂽ�B";
-		mes "�������񂾂��B";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "はい。アルバイトです。";
 		next;
-		mes "[�A�}��]";
-		mes "�����W�G���̏��ɖ߂�Ƃ����B";
-		mes "��̂̉ו��͍~�낳��Ă��邾�낤�B";
+		mes "[アマン]";
+		mes "そうか……それならこの荷物が";
+		mes "どんなものかは知らされていないな。";
+		mes "ククク……";
+		mes "お前もリョジエン同様か。";
+		next;
+		mes "[アマン]";
+		mes "ククク……";
+		mes "そう気にするな。";
+		mes "分からなくても";
+		mes "何ら問題はないことだ。";
+		mes "今回はよくやってくれた。";
+		mes "次も頼んだぞ。";
+		next;
+		mes "[アマン]";
+		mes "リョジエンの所に戻るといい。";
+		mes "大体の荷物は降ろされているだろう。";
 		set LHZ_5QUE,10;
 		close;
 	default:
-		mes "[�A�}��]";
-		mes "�s���Ȃ��̂��H";
-		mes "�����ɂ��Ă����O�����邱�Ƃ͖������B";
+		mes "[アマン]";
+		mes "行かないのか？";
+		mes "ここにいてもお前がすることは無いぞ。";
 		close;
 	case 14:
-		mes "[�A�}��]";
-		mes "�܂������̂��B";
-		mes "�V�l�ɓ����d����������Ƃ́A";
-		mes "��قǋ������������������邩��";
-		mes "�ǂ��������ȁB";
+		mes "[アマン]";
+		mes "またきたのか。";
+		mes "新人に二回も仕事をさせるとは、";
+		mes "よほど金が無いか根性があるかの";
+		mes "どっちかだな。";
 		next;
-		mes "[�A�}��]";
-		mes "�܂��A�ǂ����ł��֌W�Ȃ��ȁc�c";
-		mes "�Ƃɂ����A���x�����������i����";
-		mes "�����Ɠ��������悤���ȁB";
-		mes "����J����B";
+		mes "[アマン]";
+		mes "まぁ、どっちでも関係ないな……";
+		mes "とにかく、今度も注文した品物は";
+		mes "ちゃんと到着したようだな。";
+		mes "ご苦労さん。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "�A�}���B���ƃ����W�G���͉^���r����";
-		mes "�������������̏P�����󂯂܂����B";
-		mes "���������m�ł͂���܂��񂩁H";
+		mes "アマン。私とリョジエンは運送途中に";
+		mes "ごろつきたちからの襲撃を受けました。";
+		mes "何かご存知ではありませんか？";
 		next;
-		mes "[�A�}��]";
-		mes "�܂�����Ȏ����N�����̂��c�c�N�N�c�c";
-		mes "�����^���Ă���̂��H";
-		mes "�ӂ�B�l���Ă݂�B";
-		mes "�������Ǝ҂��P�킹�ē�������̂��H";
+		mes "[アマン]";
+		mes "またそんな事が起きたのか……クク……";
+		mes "私を疑っているのか？";
+		mes "ふん。考えてみろ。";
+		mes "私が同業者を襲わせて得をするのか？";
 		next;
-		mes "[�A�}��]";
-		mes "�K�v�������炢����ł�";
-		mes "�񍇖@�I�Ȏd���͂�����肾�B";
-		mes "�����A����͎�����Q���󂯂闧�ꂾ�B";
-		mes "������������킯���������낤�H";
-		mes "�ނ��뎄�͔Ɛl��߂܂���";
-		mes "�ז��ɂȂ�Ȃ��悤�ɂ������̂���B";
+		mes "[アマン]";
+		mes "必要だったらいくらでも";
+		mes "非合法的な仕事はするつもりだ。";
+		mes "だが、今回は私も被害を受ける立場だ。";
+		mes "私が何かするわけが無いだろう？";
+		mes "むしろ私は犯人を捕まえて";
+		mes "邪魔にならないようにしたいのだよ。";
 		next;
-		mes "[�A�}��]";
-		mes "�Ƃɂ����A����������߂�ȁB";
-		mes "���͂��O�����������ė����ו���";
-		mes "�w�肳�ꂽ�ꏊ�܂�";
-		mes "�ڂ��Ȃ���΂Ȃ�Ȃ��񂾁B";
+		mes "[アマン]";
+		mes "とにかく、分かったら戻りな。";
+		mes "私はお前たちが持って来た荷物を";
+		mes "指定された場所まで";
+		mes "移さなければならないんだ。";
 		set LHZ_5QUE,15;
 		close;
 	case 20:
-		mes "[�A�}��]";
-		mes "�܂������ȁc�c�N�N�N�B";
-		mes "���O�͎g���ɒl����l�ނ̂悤���ȁB";
-		mes "�����ɓ����Ă݂�C�͂Ȃ����H";
+		mes "[アマン]";
+		mes "また来たな……ククク。";
+		mes "お前は使うに値する人材のようだな。";
+		mes "正式に働いてみる気はないか？";
 		next;
-		mes "[�A�}��]";
-		mes "�ӂ�B��F���ǂ��Ȃ��ȁB";
-		mes "���ʂȂ�����ׂ�͖����ɂ��Ă�낤�B";
-		mes "������s�D�̒��ɖ߂��ċx�ނƂ����B";
-		mes "������͉ו����ڂ����ƂƂ��悤�B";
+		mes "[アマン]";
+		mes "ふん。顔色が良くないな。";
+		mes "無駄なおしゃべりは無しにしてやろう。";
+		mes "早く飛行船の中に戻って休むといい。";
+		mes "こちらは荷物を移すこととしよう。";
 		next;
-		mes "[�A�}��]";
-		mes "�N�N�N�c�c";
+		mes "[アマン]";
+		mes "ククク……";
 		set LHZ_5QUE,21;
 		close;
 	case 21:
-		mes "[�A�}��]";
-		mes "�����߂��ċx�܂Ȃ��̂��H";
-		mes "���O���|���̂͊֌W�Ȃ���";
-		mes "���O���|��Ď��̎d���������x��̂�";
-		mes "���邼�B";
+		mes "[アマン]";
+		mes "早く戻って休まないのか？";
+		mes "お前が倒れるのは関係ないが";
+		mes "お前が倒れて私の仕事が差し支るのは";
+		mes "困るぞ。";
 		close;
 	case 22:
 	case 23:
-		mes "[�A�}��]";
-		mes "�d�����Ȃ��đދ��Ȃ̂��H";
-		mes "�Ȃ��ɁA�ɂȎ������邾�낤�B";
-		mes "�ɂȂ�ɂŁA���̈ꎞ�̗]�T���y���߁B";
-		mes "�N�N�N�b�N�B";
+		mes "[アマン]";
+		mes "仕事がなくて退屈なのか？";
+		mes "なぁに、暇な時もあるだろう。";
+		mes "暇なら暇で、この一時の余裕を楽しめ。";
+		mes "クククック。";
 		close;
 	}
 }
@@ -13210,24 +13210,24 @@ airplane_01.gat,0,0,0	script	LhzBully1	-1,{
 OnStart:
 	set 'mob,2;
 	initnpctimer;
-	monster "airplane_01.gat",96,53,"���N�U",1592,1,"LhzBully1::OnKilled";
-	monster "airplane_01.gat",87,47,"���N�U",1592,1,"LhzBully1::OnKilled";
+	monster "airplane_01.gat",96,53,"ヤクザ",1592,1,"LhzBully1::OnKilled";
+	monster "airplane_01.gat",87,47,"ヤクザ",1592,1,"LhzBully1::OnKilled";
 	end;
 OnKilled:
 	set 'mob,'mob-1;
 	if('mob)
 		end;
-	mes "[���N�U]";
-	mes "���Ɍ��Ă�c�c";
-	mes "���͕K���₻�̎��ꂽ�ו����c�c";
+	mes "[ヤクザ]";
+	mes "今に見てろ……";
+	mes "私は必ずやその呪われた荷物を……";
 	close2;
-	hideoffnpc "�j#Ryo";
+	hideoffnpc "男#Ryo";
 	stopnpctimer;
 	end;
 OnTimer120000:
 	killmonster "airplane_01.gat","LhzBully1::OnKilled";
 	set 'mob,0;
-	hideoffnpc "�j#Ryo";
+	hideoffnpc "男#Ryo";
 	stopnpctimer;
 	end;
 }
@@ -13236,25 +13236,25 @@ airplane_01.gat,0,0,0	script	LhzBully2	-1,{
 OnStart:
 	set 'mob,3;
 	initnpctimer;
-	monster "airplane_01.gat",96,53,"���N�U",1592,1,"LhzBully2::OnKilled";
-	monster "airplane_01.gat",87,47,"���N�U",1592,1,"LhzBully2::OnKilled";
-	monster "airplane_01.gat",97,43,"���N�U",1592,1,"LhzBully2::OnKilled";
+	monster "airplane_01.gat",96,53,"ヤクザ",1592,1,"LhzBully2::OnKilled";
+	monster "airplane_01.gat",87,47,"ヤクザ",1592,1,"LhzBully2::OnKilled";
+	monster "airplane_01.gat",97,43,"ヤクザ",1592,1,"LhzBully2::OnKilled";
 	end;
 OnKilled:
 	set 'mob,'mob-1;
 	if('mob)
 		end;
-	mes "[���N�U]";
-	mes "���x���c�c���s���c�c";
-	mes "���a�Ȑ��̒��́c�c���̒��́I";
+	mes "[ヤクザ]";
+	mes "今度も……失敗か……";
+	mes "平和な世の中は……世の中は！";
 	next;
-	mes "-���N�U�����͌��t���c���Ȃ���";
-	mes "�����čs����-";
+	mes "-ヤクザたちは言葉を残しながら";
+	mes "消えて行った-";
 	next;
-	mes "-���[��H-";
-	mes "-�ו��ɂ�⏬�����������Ă���-";
-	mes "-�����Ă��鎞��";
-	mes "���Ă��܂����悤��-";
+	mes "-うーん？-";
+	mes "-荷物にやや小さい傷がついている-";
+	mes "-争っている時に";
+	mes "ついてしまったようだ-";
 	close2;
 	hideoffnpc "#LhzPack";
 	stopnpctimer;
@@ -13275,472 +13275,472 @@ OnInit:
 OnTouch:
 	if(LHZ_5QUE != 19)
 		end;
-	mes "-���̉ו����m�肽����";
-	mes "���̂��鏊����������ƌ���-";
+	mes "-中の荷物が知りたくて";
+	mes "傷のある所をこっそりと見た-";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�c�c�c�c�c�c!!";
+	mes "……………………!!";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "���c�c����́H";
-	mes "!?�c�c�܂����c�c�I";
+	mes "が……これは？";
+	mes "!?……まさか……！";
 	next;
-	mes "-�������Ԃ͒����Ȃ�����-";
-	mes "-�����W�G�����߂��Ă���-";
+	mes "-驚く時間は長くなかった-";
+	mes "-リョジエンが戻ってきた-";
 	close2;
-	hideoffnpc "�j#Ryo";
+	hideoffnpc "男#Ryo";
 	hideonnpc;
 	end;
 }
 
-lhz_in01.gat,187,247,0	script	��z#Lhz	139,2,2,{
+lhz_in01.gat,187,247,0	script	回想#Lhz	139,2,2,{
 	if(LHZ_5QUE != 22)
 		end;
 	cutin "lhz_kaz11",2;
-	mes "[�J�W�G��]";
-	mes "-�ǂ�Ȏ������Ă���肽���l��-";
-	mes "-�M�l�ɂ͂��Ȃ��̂�!?�@����!?-";
-	mes "-�����͂���-";
-	mes "-�����������������Ă���Ƃ���-";
-	mes "-���M������̂�!?-";
+	mes "[カジエン]";
+	mes "-どんな事をしても守りたい人が-";
+	mes "-貴様にはいないのか!?　うん!?-";
+	mes "-自分はいつも-";
+	mes "-正しい事だけをしているという-";
+	mes "-自信があるのか!?-";
 	next;
-	mes "[�J�W�G��]";
-	mes "-�����Ă݂�I-";
-	mes "-�����Ă݂���!!!!-";
-	mes "-�����Ă݂�ƌ����Ă��邾�낤��!!-";
+	mes "[カジエン]";
+	mes "-答えてみろ！-";
+	mes "-答えてみせろ!!!!-";
+	mes "-答えてみろと言っているだろうが!!-";
 	next;
 	cutin "lhz_kaz11",255;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�c�c�c�c�c�c�c�c�����B";
+	mes "…………………………くそ。";
 	set LHZ_5QUE,23;
 	close;
 }
-lhz_in01.gat,75,248,0	duplicate(��z#Lhz)	��z	139,2,2
+lhz_in01.gat,75,248,0	duplicate(回想#Lhz)	回想	139,2,2
 
 //============================================================
-// ���b�P���x���Ђ̉\�N�G�X�gNPC
+// レッケンベル社の噂クエストNPC
 //- Registry -------------------------------------------------
-// LHZ_6QUE -> 0�`11
+// LHZ_6QUE -> 0～11
 //------------------------------------------------------------
-lighthalzen.gat,303,303,6	script	�W������	904,3,3,{
+lighthalzen.gat,303,303,6	script	ジロルラ	904,3,3,{
 	if(LHZ_2QUE < 23) {
 		if(Sex) {
 			emotion 2;
-			mes "[�W������]";
-			mes "�����������������������闝�R�`";
-			mes "���W��������";
-			mes "�N�̂悤�Ȓj�ɂ͋���������܂���B";
+			mes "[ジロルラ]";
+			mes "美しい女性こそ私が生きる理由～";
+			mes "私ジロルラは";
+			mes "君のような男には興味がありません。";
 			next;
 			emotion 6;
-			mes "[�W������]";
-			mes "�������b���炢�͕����Ă����悤�B";
-			mes "���������������Ƃł�����̂����H";
+			mes "[ジロルラ]";
+			mes "しかし話くらいは聞いてあげよう。";
+			mes "何か言いたいことでもあるのかい？";
 			next;
-			switch(select("�Ȃ����ǁc�c�H","�����ɑ΂��āc�c","���C��!!","�����܂����c�c","�ŋߏo����Ă���\�́H")) {
+			switch(select("ないけど……？","女性に対して……","浮気者!!","うらやましい……","最近出回っている噂は？")) {
 			case 1:
 				emotion 20;
-				mes "[�W������]";
-				mes "�����Ȃ��̂��B";
-				mes "���̏����̂��߂ɂ��鎞�Ԃ�";
-				mes "���ʂɏ�����Ȃ��ł���B";
+				mes "[ジロルラ]";
+				mes "何もないのか。";
+				mes "私の女性のためにある時間を";
+				mes "無駄に消費させないでくれ。";
 				close;
 			case 2:
 				emotion 6;
-				mes "[�W������]";
-				mes "�K���X�׍H�̂悤�ɑ@�ׂ�";
-				mes "����˂΂Ȃ�Ȃ������̘b���A";
-				mes "�����m�炸�̌N�Ƃ͘b�������Ȃ��ˁB";
+				mes "[ジロルラ]";
+				mes "ガラス細工のように繊細に";
+				mes "扱わねばならない女性の話を、";
+				mes "見ず知らずの君とは話したくないね。";
 				close;
 			case 3:
-				mes "[�W������]";
-				mes "���炾�����͐�Ε��C�҂ł͂Ȃ���B";
-				mes "�������ׂĂ̏���������";
-				mes "�C�̂悤�ȍL���S�ň����Ă��邾�����B";
+				mes "[ジロルラ]";
+				mes "失礼だが私は絶対浮気者ではないよ。";
+				mes "ただすべての女性たちを";
+				mes "海のような広い心で愛しているだけさ。";
 				next;
 				emotion 33;
-				mes "[�W������]";
-				mes "�����c�c��������c�c�������C�҂Ȃ�A";
-				mes "�S���E�̒j�����݂͂�ȕ��C�҂ɂȂ�B";
+				mes "[ジロルラ]";
+				mes "そう……そうだよ……私が浮気者なら、";
+				mes "全世界の男たちはみんな浮気者になる。";
 				close;
 			case 4:
 				emotion 1;
-				mes "[�W������]";
-				mes "�N�c�c���������Ă��ꂳ���o���ȊO��";
-				mes "�b�������Ƃ��Ȃ��̂����H";
+				mes "[ジロルラ]";
+				mes "君……もしかしてお母さんや姉妹以外と";
+				mes "話したことがないのかい？";
 				next;
-				mes "[�W������]";
-				mes "�c�c";
+				mes "[ジロルラ]";
+				mes "……";
 				next;
 				emotion 19;
-				mes "[�W������]";
-				mes "����c�c���������c�c";
-				mes "�n���𓥂񂾂悤���ˁc�c�B";
+				mes "[ジロルラ]";
+				mes "うん……悪かった……";
+				mes "地雷を踏んだようだね……。";
 				close;
 			case 5:
-				mes "[�W������]";
-				mes "�\�b�ɋ���������̂����H";
+				mes "[ジロルラ]";
+				mes "噂話に興味があるのかい？";
 				next;
-				mes "[�W������]";
-				mes "�ŋ߂����̕n�����Z�l��";
-				mes "�|�����m�炸�̖`���Ƃ�����";
-				mes "���H���鎖���������Ă���悤�����ǁA";
-				mes "�������������N���Ă���񂾂낤�c�c�B";
+				mes "[ジロルラ]";
+				mes "最近ここの貧しい住人や";
+				mes "怖い物知らずの冒険家たちが";
+				mes "失踪する事件が増えているようだけど、";
+				mes "いったい何が起きているんだろう……。";
 				next;
-				mes "[�W������]";
-				mes "�N���C��t��������������c�c�B";
+				mes "[ジロルラ]";
+				mes "君も気を付けた方がいいよ……。";
 				close;
 			}
 		}
 		else {
 			emotion 1;
-			mes "[�W������]";
-			mes "���́c�c����ł����c�c";
+			mes "[ジロルラ]";
+			mes "あの……失礼ですが……";
 			next;
-			mes "[�W������]";
+			mes "[ジロルラ]";
 			switch(rand(1,10)) {
 			case 1:
-				mes "�܂�œV�g�̂悤�ȌN��A";
-				mes "�V�����痎���鎞��";
-				mes "�ɂ�����܂���ł������H";
+				mes "まるで天使のような君よ、";
+				mes "天国から落ちる時に";
+				mes "痛くありませんでしたか？";
 				break;
 			case 2:
-				mes "���͐S���������悤�ł��B";
-				mes "���Ȃ��̐S������";
-				mes "�݂��Ă��������܂��񂩁H";
+				mes "私は心を失ったようです。";
+				mes "あなたの心を代わりに";
+				mes "貸していただけませんか？";
 				break;
 			case 3:
-				mes "���͒ɂ�����܂��񂩁H";
-				mes "���A���̖��̒���";
-				mes "�����炱�����";
-				mes "��������Ă����悤�ł����B";
+				mes "足は痛くありませんか？";
+				mes "昨夜、私の夢の中で";
+				mes "あちらこちらを";
+				mes "歩き回っていたようですが。";
 				break;
 			case 4:
-				mes "�����ł͂���܂��񂩁H";
-				mes "��������̐S�̒���";
-				mes "��������Ă��鎖���B";
+				mes "お疲れではありませんか？";
+				mes "一日中私の心の中で";
+				mes "動き回っている事が。";
 				break;
 			case 5:
-				mes "��ڂڂ�Ƃ������t��M���܂����H";
-				mes "�M�����Ȃ���Ύ���";
-				mes "������x�����ė��܂��傤���H";
+				mes "一目ぼれという言葉を信じますか？";
+				mes "信じられなければ私が";
+				mes "もう一度歩いて来ましょうか？";
 				break;
 			case 6:
-				mes "���Ζʂ̐l�ɃL�X�͂��܂����H";
-				mes "����Ȃ�Ύ����Љ�����܂��B";
+				mes "初対面の人にキスはしますか？";
+				mes "それならば私を紹介をします。";
 				break;
 			case 7:
-				mes "�����ɂ͏��߂ė����̂ł����A";
-				mes "���Ȃ��̐S�̒��ɍs������";
-				mes "�����Ă��������܂��񂩁H";
+				mes "ここには初めて来たのですが、";
+				mes "あなたの心の中に行く道を";
+				mes "教えていただけませんか？";
 				break;
 			case 8:
-				mes "�n�}�������Ă��܂��񂩁H";
-				mes "���Ȃ��̓��̉���";
-				mes "��������ł��܂��܂����B";
+				mes "地図を持っていませんか？";
+				mes "あなたの瞳の奥に";
+				mes "迷い込んでしまいました。";
 				break;
 			case 9:
-				mes "���Ȃ��̖ڂŘb���Ȃ����Ƃ́A";
-				mes "���Ȃ��̖��O�����ł��ˁB";
+				mes "あなたの目で話さないことは、";
+				mes "あなたの名前だけですね。";
 				break;
 			case 10:
-				mes "����̐l���������������Ȃ�ƌ�������";
-				mes "���͂��Ȃ��̂��ׂĂɂȂ�܂��B";
+				mes "周りの人たちが私たちをなんと言おうと";
+				mes "私はあなたのすべてになります。";
 				break;
 			}
 			next;
 			emotion 14;
-			mes "[�W������]";
-			mes "�������̏o��͍��������߂Ă���";
-			mes "����܂��񂪁A���͂��Ȃ���";
-			mes "�����Ă��܂��܂����B";
+			mes "[ジロルラ]";
+			mes "私たちの出会いは今日が初めてかも";
+			mes "しれませんが、私はあなたを";
+			mes "愛してしまいました。";
 			next;
-			mes "[�W������]";
-			mes "�ˑR�̂��ƂŌ˘f���Ă���";
-			mes "��������܂��񂪁A";
-			mes "�������̒����炨����Ȃ����B";
-			mes "�ŋߎ��H�������p�����Ă���̂ł��B";
-			mes "���͈����邠�Ȃ����S�z�ł��B";
+			mes "[ジロルラ]";
+			mes "突然のことで戸惑われている";
+			mes "かもしれませんが、";
+			mes "早くこの町からお離れなさい。";
+			mes "最近失踪事件が頻発しているのです。";
+			mes "私は愛するあなたが心配です。";
 			close;
 		}
 	}
 	if(LHZ_6QUE == 0) {
 		if(Sex) {
-			mes "[�W������]";
-			mes "��A�����j���c�c";
-			mes "�܂�������c�c";
+			mes "[ジロルラ]";
+			mes "ん、何だ男か……";
+			mes "まあいいや……";
 			next;
-			mes "[�W������]";
-			mes "���[���I�@�����I�@�����̌N�`";
+			mes "[ジロルラ]";
+			mes "おーい！　そこ！　そこの君～";
 			next;
-			menu "���̗p�H",-;
+			menu "何の用？",-;
 			emotion 1,"";
-			mes "[�W������]";
-			mes "���b�P���x���Ђ�";
-			mes "���낵���l�̎�����";
-			mes "�s���Ă���Ƃ����\��";
-			mes "���������Ƃ͂��邩���H";
+			mes "[ジロルラ]";
+			mes "レッケンベル社が";
+			mes "恐ろしい人体実験を";
+			mes "行っているという噂を";
+			mes "聞いたことはあるかい？";
 			next;
-			menu "�l�̎���?!",-;
+			menu "人体実験?!",-;
 			emotion 23,"";
-			mes "[�W������]";
-			mes "�����A�l�̎���!!";
+			mes "[ジロルラ]";
+			mes "そう、人体実験!!";
 			next;
-			mes "[�W������]";
-			mes "�ȑO���炱���̏Z�l��`���Ƃ�����";
-			mes "���H���鎖�����N�����Ă�񂾂��ǁA";
-			mes "�ŋ߂��̐��������Ă�񂾁B";
+			mes "[ジロルラ]";
+			mes "以前からここの住人や冒険家たちが";
+			mes "失踪する事件が起こってるんだけど、";
+			mes "最近その数が増えてるんだ。";
 			next;
-			mes "[�W������]";
-			mes "�����Ď��H�����l������";
-			mes "���b�P���x���ЂŐl�̎�����";
-			mes "�󂯂Ă�����ĉ\���B";
+			mes "[ジロルラ]";
+			mes "そして失踪した人たちは";
+			mes "レッケンベル社で人体実験を";
+			mes "受けているって噂さ。";
 			next;
 			emotion 36;
-			mes "[�W������]";
-			mes "�����ɐl�̎������s���Ȃ��";
-			mes "��΂ɋ�����Ȃ��I";
-			mes "����Ȃ킯�Ŏ��͂��̂��Ƃ�";
-			mes "�݂�ȂɍL�߁A���ӂ���悤";
-			mes "�����Ă���񂾁B";
+			mes "[ジロルラ]";
+			mes "女性に人体実験を行うなんて";
+			mes "絶対に許されない！";
+			mes "そんなわけで私はこのことを";
+			mes "みんなに広め、注意するよう";
+			mes "促しているんだ。";
 			next;
-			mes "[�W������]";
-			mes "���������ɏZ��ł���n�����l������";
-			mes "���b�P���x���Ђ̕������Ƃ̂����ŁA";
-			mes "�M���悤�Ƃ��Ȃ��񂾁B";
+			mes "[ジロルラ]";
+			mes "ただここに住んでいる貧しい人たちは";
+			mes "レッケンベル社の福祉事業のせいで、";
+			mes "信じようとしないんだ。";
 			next;
 			emotion 19;
-			mes "[�W������]";
-			mes "�T���Ȑl�����͉�����m���Ă���";
-			mes "�悤�����A�����ɂ��Ă���悤�����c�c";
+			mes "[ジロルラ]";
+			mes "裕福な人たちは何かを知っている";
+			mes "ようだが、内緒にしているようだし……";
 			next;
-			mes "[�W������]";
-			mes "����Ƃ���͈ꕔ�̐l������";
-			mes "�m���Ă���閧�����ǁA";
-			mes "���b�P���x���������œ����Ă���";
-			mes "�{�c�c�{�c�c�Ȃ񂾂����B";
+			mes "[ジロルラ]";
+			mes "それとこれは一部の人だけが";
+			mes "知っている秘密だけど、";
+			mes "レッケンベル研究所で働いていた";
+			mes "ボ……ボ……なんだっけ。";
 			next;
 			emotion 20;
-			mes "[�W������]";
-			mes "�Ƃɂ����A";
-			mes "�{�c�c���Ƃ��Ƃ�����������";
-			mes "���̑O�ˑR�ގЂ����炵���񂾂��A";
-			mes "���ꂪ���̉\���L�܂�n�߂��̂�";
-			mes "�قړ������Ȃ񂾁B";
-			mes "�����������Ƃ͎v��Ȃ������H";
+			mes "[ジロルラ]";
+			mes "とにかく、";
+			mes "ボ……何とかという研究員が";
+			mes "この前突然退社したらしいんだが、";
+			mes "それがこの噂が広まり始めたのと";
+			mes "ほぼ同時期なんだ。";
+			mes "何か怪しいとは思わないかい？";
 			next;
-			menu "�{���Z�u�̂��ƁH",-;
+			menu "ボルセブのこと？",-;
 			emotion 0;
-			mes "[�W������]";
-			mes "��?!�@�����A�{���Z�u�I";
-			mes "�m���ɂ���Ȗ��O�������B";
-			mes "�{���Z�u�c�c�������{���Z�u���I";
+			mes "[ジロルラ]";
+			mes "ん?!　そう、ボルセブ！";
+			mes "確かにそんな名前だった。";
+			mes "ボルセブ……そうだボルセブだ！";
 			next;
 			emotion 33;
-			mes "[�W������]";
-			mes "���̌�������m���Ă���̂��c�c";
-			mes "����͘b�������c�c�B";
+			mes "[ジロルラ]";
+			mes "その研究員を知っているのか……";
+			mes "それは話が早い……。";
 			next;
-			mes "[�W������]";
-			mes "�{���Z�u���ގЂ������Ƃɂ���";
-			mes "�����m���Ă���̂����H";
+			mes "[ジロルラ]";
+			mes "ボルセブが退社したことについて";
+			mes "何か知っているのかい？";
 			next;
-			switch(select("���O��m���Ă��邾��:�m���Ă��鎖��b���Ă�����")) {
+			switch(select("名前を知っているだけ:知っている事を話してあげる")) {
 			case 1:
-				mes "[�W������]";
-				mes "�ӂށc�c";
-				mes "�����B���Ă��銴��������ˁc�c�B";
+				mes "[ジロルラ]";
+				mes "ふむ……";
+				mes "何か隠している感じがするね……。";
 				break;
 			case 2:
-				mes "�]�{���Z�u���z�����N���X�����̂��߂�";
-				mes "�@�l�̎��������Ă������Ƃ����o���āA";
-				mes "�@���ق��ꂽ���Ƃ�b�����]";
+				mes "‐ボルセブがホムンクルス研究のために";
+				mes "　人体実験をしていたことが発覚して、";
+				mes "　解雇されたことを話した‐";
 				next;
 				emotion 21;
-				mes "[�W������]";
-				mes "���̘b�͖{�������H";
-				mes "����ς�{���Z�u��";
-				mes "�l�̎����Ɋւ���Ă����̂��I";
+				mes "[ジロルラ]";
+				mes "その話は本当かい？";
+				mes "やっぱりボルセブは";
+				mes "人体実験に関わっていたのか！";
 				next;
-				mes "[�W������]";
-				mes "����ɂ��Ă��A";
-				mes "�����Ԃ�ڂ�������Ȃ����B";
-				mes "���������āc�c";
-				mes "���b�P���x���Ђ̊֌W�҂Ȃ̂����H";
+				mes "[ジロルラ]";
+				mes "それにしても、";
+				mes "ずいぶん詳しいじゃないか。";
+				mes "もしかして……";
+				mes "レッケンベル社の関係者なのかい？";
 				next;
 				emotion 9,"";
 				mes "[" +strcharinfo(0)+ "]";
-				mes "�c�c�B";
+				mes "……。";
 				break;
 			}
 			next;
 			emotion 20;
-			mes "[�W������]";
-			mes "�܂��c�c�[���͕����Ȃ���B";
+			mes "[ジロルラ]";
+			mes "まあ……深くは聞かないよ。";
 			next;
-			mes "[�W������]";
-			mes "�Ƃɂ����A���̃{���Z�u��";
-			mes "���Ȃ��Ȃ������ł�";
-			mes "���H�����͑����Ă���񂾁B";
-			mes "�Ђ���Ƃ�����l�̎�����";
-			mes "�{���Z�u�����̖�肶��Ȃ������ˁB";
+			mes "[ジロルラ]";
+			mes "とにかく、そのボルセブが";
+			mes "いなくなった今でも";
+			mes "失踪事件は続いているんだ。";
+			mes "ひょっとしたら人体実験は";
+			mes "ボルセブだけの問題じゃないかもね。";
 			next;
 			emotion 54;
-			mes "[�W������]";
-			mes "�����I�@���ɗ͂��������";
-			mes "���������߂鏗����";
-			mes "�~���ɍs���Ƃ����̂Ɂc�c";
-			mes "�N���^���𖾂炩�ɂ��Ă����";
-			mes "�l�͂��Ȃ����낤���B";
+			mes "[ジロルラ]";
+			mes "ああ！　私に力さえあれば";
+			mes "助けを求める女性を";
+			mes "救いに行くというのに……";
+			mes "誰か真実を明らかにしてくれる";
+			mes "人はいないだろうか。";
 			next;
-			mes "�]�W�������͂������";
-			mes "�@�`���`�����Ȃ���";
-			mes "�@�Ƃ茾�̂悤�əꂢ���]";
+			mes "‐ジロルラはこちらを";
+			mes "　チラチラ見ながら";
+			mes "　独り言のように呟いた‐";
 			next;
 			emotion 9,"";
 			mes "[" +strcharinfo(0)+ "]";
-			mes "�c�c�B";
+			mes "……。";
 		}
 		else {
 			emotion 3;
-			mes "[�W������]";
-			mes "�����I�@�Ȃ�Ɣ����������ł��傤�I";
+			mes "[ジロルラ]";
+			mes "おお！　なんと美しい女性でしょう！";
 			next;
 			emotion 1;
-			mes "[�W������]";
-			mes "���Ȃ��̂悤�Ȕ������������A";
-			mes "����Ȋ댯�Ȓ���";
-			mes "�������ɂ�������������ł����H";
+			mes "[ジロルラ]";
+			mes "あなたのような美しい女性が、";
+			mes "こんな危険な町に";
+			mes "何をしにいらっしゃったんですか？";
 			next;
-			switch(select("�U��","�V�т�","��������")) {
+			switch(select("散策","遊びに","買い物に")) {
 			case 1:
-				mes "[�W������]";
-				mes "�����c�c�U�����Ȃ̂�";
-				mes "����قǋC�i������Ƃ́c�c�B";
+				mes "[ジロルラ]";
+				mes "ああ……散策中なのに";
+				mes "これほど気品が溢れるとは……。";
 				break;
 			case 2:
-				mes "[�W������]";
-				mes "���̂悤�ȏꏊ�ŗV��ł���̂ɂ�";
-				mes "�ւ�炸�A�C�i�����Ă��܂��ˁc�c�B";
+				mes "[ジロルラ]";
+				mes "このような場所で遊んでいるのにも";
+				mes "関わらず、気品が溢れていますね……。";
 				break;
 			case 3:
-				mes "[�W������]";
-				mes "�����c�c";
-				mes "����ȏ��ɂ܂Ŕ������Ƃ́c�c�B";
-				mes "�����������鎞�͋�������܂�";
-				mes "���Ă܂��X�^�C���Ȃ̂ł����H";
+				mes "[ジロルラ]";
+				mes "ああ……";
+				mes "こんな所にまで買い物とは……。";
+				mes "買い物をする時は隅から隅まで";
+				mes "見てまわるスタイルなのですか？";
 				break;
 			}
 			next;
-			menu "�c�c",-;
-			mes "[�W������]";
-			mes "���̂悤�Ȏ҂������������ƁA";
-			mes "���Ȃ��̒m��Ƃ���ł�";
-			mes "�Ȃ��̂�������܂��񂪁A";
+			menu "……",-;
+			mes "[ジロルラ]";
+			mes "私のような者が何を言おうと、";
+			mes "あなたの知るところでは";
+			mes "ないのかもしれませんが、";
 			next;
 			emotion 33;
-			mes "[�W������]";
-			mes "�����A���Ȃ��������ł�����";
-			mes "���̊댯�ȉ\������Ă��钬����";
-			mes "����鎖������Ă��邾���ł��B";
+			mes "[ジロルラ]";
+			mes "ただ、あなたが少しでも早く";
+			mes "この危険な噂が回っている町から";
+			mes "離れる事を願っているだけです。";
 			next;
-			menu "�댯�ȉ\�H",-;
+			menu "危険な噂？",-;
 			emotion 1,"";
-			mes "[�W������]";
-			mes "�����I�@�Ȃ�Ƃ������Ƃł��傤!!";
-			mes "���Ȃ��͂܂����̉\��";
-			mes "�m��Ȃ��̂ł��ˁH";
+			mes "[ジロルラ]";
+			mes "おお！　なんということでしょう!!";
+			mes "あなたはまだその噂を";
+			mes "知らないのですね？";
 			next;
-			mes "[�W������]";
-			mes "���Ȃ��̂悤�ȋC�i�ɖ������鏗����";
-			mes "���̂悤�Ȗ�؂Șb������̂�";
-			mes "�C��������̂ł����c�c�B";
-			mes "�@";
-			mes "����ł͂��̎��߂�";
-			mes "�������������܂��傤�B";
+			mes "[ジロルラ]";
+			mes "あなたのような気品に満ち溢れる女性に";
+			mes "このような野蛮な話をするのは";
+			mes "気が引けるのですが……。";
+			mes "　";
+			mes "それではこの私めが";
+			mes "お教えいたしましょう。";
 			next;
-			mes "[�W������]";
-			mes "�ȑO���炱���̏Z�l��";
-			mes "�ꕔ�̖`���Ƃ��������H���鎖����";
-			mes "�������̂ł����A";
-			mes "�ŋ߂��̐��������Ă���̂ł��B";
+			mes "[ジロルラ]";
+			mes "以前からここの住人や";
+			mes "一部の冒険家たちが失踪する事件が";
+			mes "あったのですが、";
+			mes "最近その数が増えているのです。";
 			next;
-			mes "[�W������]";
-			mes "�����Ď��H�����l�����́A";
-			mes "���b�P���x���Ђ̔閧��������";
-			mes "���낵���l�̎������󂯂Ă���̂ł�";
-			mes "�Ȃ����Ƃ����\���o����Ă���̂ł��B";
+			mes "[ジロルラ]";
+			mes "そして失踪した人たちは、";
+			mes "レッケンベル社の秘密研究所で";
+			mes "恐ろしい人体実験を受けているのでは";
+			mes "ないかという噂が出回っているのです。";
 			next;
-			menu "�l�̎���!?",-;
+			menu "人体実験!?",-;
 			emotion 23,"";
-			mes "[�W������]";
-			mes "�͂��A�Ȃ�Ƃ����낵���b�ł��B";
-			mes "�������������l�̎������󂯂Ă���A";
-			mes "�����v���Ǝ��͋��Ă������Ă�";
-			mes "�����Ȃ��Ȃ�A���b�P���x���Ђ�";
-			mes "��荞�����Ƃ��܂����B";
+			mes "[ジロルラ]";
+			mes "はい、なんとも恐ろしい話です。";
+			mes "美しい女性が人体実験を受けている、";
+			mes "そう思うと私は居ても立っても";
+			mes "いられなくなり、レッケンベル社に";
+			mes "乗り込もうとしました。";
 			next;
 			emotion 28;
-			mes "[�W������]";
-			mes "�����������ȃK�[�h�}���ɑj�܂�A";
-			mes "���Ə����Ƃ����Ƃ����";
-			mes "�ǂ��o����Ă��܂��܂����B";
-			mes "�@";
-			mes "�����I�@���ɂ����Ɨ͂�����΁c�c";
+			mes "[ジロルラ]";
+			mes "しかし屈強なガードマンに阻まれ、";
+			mes "あと少しというところで";
+			mes "追い出されてしまいました。";
+			mes "　";
+			mes "ああ！　私にもっと力があれば……";
 			next;
-			mes "[�W������]";
-			mes "���b�P���x���Ђ���߂������́A";
-			mes "���̉\���Z���ɓ`���A";
-			mes "���b�P���x���Ђɂ͒��ӂ���悤";
-			mes "�����܂����B";
+			mes "[ジロルラ]";
+			mes "レッケンベル社から戻った私は、";
+			mes "この噂を住民に伝え、";
+			mes "レッケンベル社には注意するよう";
+			mes "言いました。";
 			next;
-			mes "[�W������]";
-			mes "�����������̕n�����Z�l�����́A";
-			mes "���b�P���x���Ђ̕������Ƃ�";
-			mes "���b���󂯂Ă���̂ŁA";
-			mes "�M���悤�Ƃ��܂���B";
+			mes "[ジロルラ]";
+			mes "しかしここの貧しい住人たちは、";
+			mes "レッケンベル社の福祉事業の";
+			mes "恩恵を受けているので、";
+			mes "信じようとしません。";
 			next;
-			mes "[�W������]";
-			mes "�܂��c�c�T���Ȑl�������M���Ă�";
-			mes "���Ȃ��悤�ł������c�c�B";
-			mes "�@";
-			mes "���������΂��̑O�c�c";
-			mes "�{���Z�u�A�Ƃ����܂������B";
+			mes "[ジロルラ]";
+			mes "まあ……裕福な人たちも信じては";
+			mes "いないようでしたが……。";
+			mes "　";
+			mes "そういえばこの前……";
+			mes "ボルセブ、といいましたか。";
 			next;
-			mes "[�W������]";
-			mes "����Ȗ��O�̌��������A";
-			mes "�ˑR�ގЂ����炵���̂ł����A";
-			mes "���ɂ͂��̌����������̉\��";
-			mes "���炩�̊֌W������̂ł͂Ȃ�����";
-			mes "�l���Ă���̂ł��B";
+			mes "[ジロルラ]";
+			mes "そんな名前の研究員が、";
+			mes "突然退社したらしいのですが、";
+			mes "私にはその研究員がこの噂と";
+			mes "何らかの関係があるのではないかと";
+			mes "考えているのです。";
 			next;
-			mes "[�W������]";
-			mes "�������N��A";
-			mes "���ꂮ������b�P���x���Ђɂ�";
-			mes "���ӂ��Ă��������B";
-			mes "�����Ă��̂悤�ȉ\���L�܂��Ă���";
-			mes "�댯�ȏꏊ����͑�������āA";
-			mes "���S�ȂƂ���֍s���ĉ������B";
+			mes "[ジロルラ]";
+			mes "美しい君よ、";
+			mes "くれぐれもレッケンベル社には";
+			mes "注意してください。";
+			mes "そしてこのような噂が広まっている";
+			mes "危険な場所からは早く離れて、";
+			mes "安全なところへ行って下さい。";
 		}
 		next;
 		setquest 5109;
 		set LHZ_6QUE,1;
-		mes "�]�l�̎������s���Ă����{���Z�u��";
-		mes "�@���b�P���x���Ђ�ǂ�ꂽ�͂����B";
-		mes "�@������x���Q���V��������";
-		mes "�@���ׂĂ݂悤�]";
+		mes "‐人体実験を行っていたボルセブは";
+		mes "　レッケンベル社を追われたはずだ。";
+		mes "　もう一度レゲンシュルムを";
+		mes "　調べてみよう‐";
 		close;
 	}
 	if(Sex) {
 		emotion 12;
-		mes "[�W������]";
-		mes "�N�����b�P���x���Ђɂ͒��ӂ��Ȃ�B";
+		mes "[ジロルラ]";
+		mes "君もレッケンベル社には注意しなよ。";
 		close;
 	}
 	else {
 		emotion 14;
-		mes "[�W������]";
-		mes "�������̂悤�Ȋ댯�ȏꏊ����";
-		mes "�����ꂭ�������B";
+		mes "[ジロルラ]";
+		mes "早くこのような危険な場所から";
+		mes "お離れください。";
 		close;
 	}
 OnTouch:
@@ -13753,9 +13753,9 @@ OnTouch:
 
 lhz_dun03.gat,239,78,0	script	lhz_dun03_lhz_dun04	45,1,1,{
 	if(LHZ_6QUE > 0 && LHZ_6QUE < 7) {
-		mes "�]�l�̎��������ׁ̈A";
-		mes "�@�����܂�����������";
-		mes "�@���̊K�֑���i�߂��]";
+		mes "‐人体実験調査の為、";
+		mes "　おぞましい音がする";
+		mes "　下の階へ足を進めた‐";
 		close2;
 		switch(LHZ_6QUE) {
 		case 1:
@@ -13773,8 +13773,8 @@ lhz_dun03.gat,239,78,0	script	lhz_dun03_lhz_dun04	45,1,1,{
 		}
 	}
 	else {
-		mes "�]�����畗�̉��Ƌ���";
-		mes "�@�����܂��������������Ă���]";
+		mes "‐下から風の音と共に";
+		mes "　おぞましい音が聞こえてくる‐";
 		close2;
 		warp "lhz_dun04.gat",245,56;
 		end;
@@ -13782,21 +13782,21 @@ lhz_dun03.gat,239,78,0	script	lhz_dun03_lhz_dun04	45,1,1,{
 }
 lhz_dun04.gat,244,61,0	warp	lhz_dun04_lhz_dun03	1,1,lhz_dun03.gat,240,75
 
-que_lhz.gat,242,50,0	script	#01�X�^�[�g�ʒu	139,3,3,{
+que_lhz.gat,242,50,0	script	#01スタート位置	139,3,3,{
 OnInit:
 	initnpctimer;
 	end;
 OnTimer60000:
-	announce "�j���̚��� : ���肢�c�c�����āc�c���ɂ����Ȃ��c�c���킠���c�c�B",0x9,0x7dcbf0;
+	announce "男性の囁き : お願い……助けて……死にたくない……うわああ……。",0x9,0x7dcbf0;
 	end;
 OnTimer120000:
-	announce "�����̚��� : �������c�c�����āc�c�������B",0x9,0x7dcbf0;
+	announce "女性の囁き : ううう……助けて……下さい。",0x9,0x7dcbf0;
 	end;
 OnTimer180000:
-	announce "���N�̚��� : �����͂ǂ��H�@�|����`",0x9,0x7dcbf0;
+	announce "少年の囁き : ここはどこ？　怖いよ～",0x9,0x7dcbf0;
 	end;
 OnTimer240000:
-	announce "�V�l�̚��� : �����c�c���������c�c�B",0x9,0x7dcbf0;
+	announce "老人の囁き : くう……くううう……。",0x9,0x7dcbf0;
 	end;
 OnTimer300000:
 	initnpctimer;
@@ -13804,67 +13804,67 @@ OnTimer300000:
 OnTouch:
 	if(LHZ_6QUE != 1)
 		end;
-	mes "�]�ŋ߂܂Ŏg�p����Ă���";
-	mes "�@���Ղ��c�錤���{�݂ɓ��������]";
+	mes "‐最近まで使用されていた";
+	mes "　痕跡が残る研究施設に到着した‐";
 	next;
-	mes "�]�����j�󂳂ꂽ��";
-	mes "�@�U��΂����肵�Ă��邪�A";
-	mes "�@��{�I�Ȍ����{�݂�";
-	mes "�@���v�����Ɍ�����]";
+	mes "‐物が破壊されたり";
+	mes "　散らばったりしているが、";
+	mes "　基本的な研究施設は";
+	mes "　大丈夫そうに見える‐";
 	next;
-	mes "�]����������������Ă݂悤�]";
+	mes "‐もう少し歩き回ってみよう‐";
 	set LHZ_6QUE,2;
 	close;
 }
 
-que_lhz.gat,206,74,4	script	������#02	865,{
+que_lhz.gat,206,74,4	script	研究員#02	865,{
 	if(LHZ_6QUE != 2)
 		end;
 	emotion 29;
 	emotion 23,"";
-	mes "[�{���Z�u]";
-	mes "�L�q�A�L�q�q�q�q";
+	mes "[ボルセブ]";
+	mes "キヒ、キヒヒヒヒ";
 	next;
-	menu "���O�́c�c�{���Z�u!?",-;
-	mes "[�{���Z�u]";
-	mes "�Ȃ񂾂��H";
-	mes "�N�������Ă񂾂����H";
+	menu "お前は……ボルセブ!?",-;
+	mes "[ボルセブ]";
+	mes "なんだぁ？";
+	mes "誰か俺を呼んだかぁ？";
 	next;
-	mes "[�{���Z�u]";
-	mes "�c�c���������`�`�H";
-	mes "�l�Ԃ�H�ɂ񂰂����!?";
-	mes "�l�ԂƉ�̂͋v���Ԃ肾���I";
-	mes "�L�q�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "……あぁあぁ～～？";
+	mes "人間ん？にんげんんんん!?";
+	mes "人間と会うのは久しぶりだぁ！";
+	mes "キヒヒヒヒ!!";
 	next;
-	menu "�Ȃ����O�������ɂ���H",-;
-	mes "[�{���Z�u]";
-	mes "���H";
-	mes "�����ǂ��łǂ�Ȏ��������悤���A";
-	mes "���O�̒m�������Ƃł͂ȁ[�[�[���I";
-	mes "�L�q�q�I";
+	menu "なぜお前がここにいる？",-;
+	mes "[ボルセブ]";
+	mes "んん？";
+	mes "俺がどこでどんな実験をしようが、";
+	mes "お前の知ったことではなーーーい！";
+	mes "キヒヒ！";
 	next;
-	menu "�܂��l�̎����𑱂��Ă����̂��I",-;
+	menu "まだ人体実験を続けていたのか！",-;
 	emotion 29;
-	mes "[�{���Z�u]";
-	mes "�c�c���₟�H";
-	mes "���̎�����m���Ă���̂�����ƁA";
-	mes "�ȑO�������������̂͂��O���@�H";
-	mes "�L�q�b�I�@�������Ă����Ȃ���A";
-	mes "���̏��܂ŗ���E�C������Ƃ�";
-	mes "�������ȃ@�@�@�I�@�L�q�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "……おやぁ？";
+	mes "その事実を知っているのを見ると、";
+	mes "以前私を告発したのはお前かァ？";
+	mes "キヒッ！　密告しておきながら、";
+	mes "私の所まで来る勇気があるとは";
+	mes "驚きだなァァァ！　キヒヒヒヒ!!";
 	next;
-	mes "[�{���Z�u]";
-	mes "�l�Ɖ�̂͋v���Ԃ��";
-	mes "�܂��o�������I";
-	mes "�����c�O�Ȃ��玄�͋}���̗p����";
-	mes "����̂ł���Ŏ��炷��I";
-	mes "�L�[�q�q�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "人と会うのは久しぶりで";
+	mes "涙が出そうだ！";
+	mes "だが残念ながら私は急ぎの用事が";
+	mes "あるのでこれで失礼する！";
+	mes "キーヒヒヒヒヒ!!";
 	next;
-	mes "�]�{���Z�u��";
-	mes "�@����ȏ΂������o���Ȃ��瓦�����]";
+	mes "‐ボルセブは";
+	mes "　怪奇な笑い声を出しながら逃げた‐";
 	next;
 	emotion 23,"";
-	mes "�]���Ȃ��͋}���Ń{���Z�u��ǂ����]";
+	mes "‐あなたは急いでボルセブを追った‐";
 	close2;
 	set LHZ_6QUE,3;
 	chgquest 5109,5110;
@@ -13872,143 +13872,143 @@ que_lhz.gat,206,74,4	script	������#02	865,{
 	end;
 }
 
-que_lhz.gat,94,119,4	script	������#03	865,{
+que_lhz.gat,94,119,4	script	研究員#03	865,{
 	if(LHZ_6QUE != 3)
 		end;
 	emotion 19;
-	mes "[�{���Z�u]";
-	mes "�L�q�q�c�c";
-	mes "�������ǂ��ė���ȁB";
-	mes "����ȂɎ�����ɂȂ肽���̂����H";
-	mes "�L�q�b�A�L�q�q�I";
+	mes "[ボルセブ]";
+	mes "キヒヒ……";
+	mes "しつこく追って来るな。";
+	mes "そんなに実験台になりたいのかぁ？";
+	mes "キヒッ、キヒヒ！";
 	next;
-	menu "�Ȃ�̂��߂ɂ���Ȃ��Ƃ𑱂���H",-;
-	mes "[�{���Z�u]";
-	mes "�ȁE��E�́E���߃F�H";
-	mes "�ȂȂȂȂ�̂��߃F�F�F�F!?";
-	mes "�L�[�[�[�q�q�q!!";
+	menu "なんのためにこんなことを続ける？",-;
+	mes "[ボルセブ]";
+	mes "な・ん・の・ためェ？";
+	mes "ななななんのためェェェェ!?";
+	mes "キーーーヒヒヒ!!";
 	next;
-	mes "[�{���Z�u]";
-	mes "�l�Ԃ͂Ȃ��A�����Ȃ邱�Ƃ�";
-	mes "���]���Ă���!!";
-	mes "���l�̏�ɌN�Ղ��Ďx�z���I";
-	mes "���h�ƕ��]�̎����𗁂т������Ă���I";
+	mes "[ボルセブ]";
+	mes "人間はなぁ、強くなることを";
+	mes "渇望している!!";
+	mes "他人の上に君臨して支配し！";
+	mes "尊敬と服従の視線を浴びたがっている！";
 	next;
-	mes "[�{���Z�u]";
-	mes "���O�ɂ�����񂾂�c�c�H";
-	mes "�ȃ@�H�@����񂾂�H";
-	mes "�͂ŕ��]���������Ƃ���";
-	mes "�~�]����H�H�H!!";
-	mes "�L�q�b�I�@�L�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "お前にもあるんだろ……？";
+	mes "なァ？　あるんだろ？";
+	mes "力で服従させたいという";
+	mes "欲望がよォォォ!!";
+	mes "キヒッ！　キヒヒヒ!!";
 	next;
-	mes "[�{���Z�u]";
-	mes "���̌����́`�`�`�I�@�L�q�b�I";
-	mes "���E�ɌN�Ղ��A���E�𓮂�����";
-	mes "�͂�^����񂾂�H�H�H!!";
-	mes "�L�q�q�q�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "俺の研究は～～～！　キヒッ！";
+	mes "世界に君臨し、世界を動かせる";
+	mes "力を与えるんだよォォォ!!";
+	mes "キヒヒヒヒヒヒ!!";
 	next;
 	mes "[" +strcharinfo(0)+ "]";
-	mes "�c�c�B";
+	mes "……。";
 	next;
-	mes "[�{���Z�u]";
-	mes "�����ɂ����Ȃ�A";
-	mes "�������O�ɒǂ��ė���̂�";
-	mes "��߂�񂾂Ȃ��H";
-	mes "�L�[�q�q�q�q�q!!";
+	mes "[ボルセブ]";
+	mes "命が惜しいなら、";
+	mes "後悔する前に追って来るのを";
+	mes "やめるんだなぁ？";
+	mes "キーヒヒヒヒヒ!!";
 	next;
-	mes "�]�{���Z�u��";
-	mes "�@�܂�����ȏ΂������o���Ȃ���";
-	mes "�@�����čs���]";
+	mes "‐ボルセブが";
+	mes "　また怪奇な笑い声を出しながら";
+	mes "　逃げて行く‐";
 	next;
-	mes "�]���Ȃ��̓{���Z�u��ǂ�������";
-	mes "�@�X�ɉ��ւƐi�񂾁]";
+	mes "‐あなたはボルセブを追いかけて";
+	mes "　更に奥へと進んだ‐";
 	close2;
 	set LHZ_6QUE,4;
 	warp "que_lhz.gat",148,215;
 	end;
 }
 
-que_lhz.gat,147,224,4	script	������#04	865,{
+que_lhz.gat,147,224,4	script	研究員#04	865,{
 	if(LHZ_6QUE == 4) {
-		mes "[�{���Z�u]";
-		mes "�������z���ȃ@�@�I�@�L�q�I";
-		mes "���������ĉ��̎����D���Ȃ̂��H";
-		mes "�L�q�q�q!!";
+		mes "[ボルセブ]";
+		mes "しつこい奴だなァァ！　キヒ！";
+		mes "もしかして俺の事を好きなのか？";
+		mes "キヒヒヒ!!";
 		next;
 		emotion 9,"";
 		misceffect 62;
-		mes "�]�{���Z�u��";
-		mes "�@�����̂��Ȃ��������΂��Ȃ���A";
-		mes "�@��Ɏ����Ă����{�^�����������B";
-		mes "�@����Ǝ��ӂɂ���";
-		mes "�@�{���Z�u�̎����̂��ڊo�߂��]";
+		mes "‐ボルセブは";
+		mes "　無言のあなたをあざ笑いながら、";
+		mes "　手に持っていたボタンを押した。";
+		mes "　すると周辺にいた";
+		mes "　ボルセブの実験体が目覚めた‐";
 		next;
-		mes "[�{���Z�u]";
-		mes "�����c�c";
-		mes "�Ђ�����`�`�`�Ɏc�O�����A";
-		mes "�����ł��ʂ�F�F�F�F!!";
+		mes "[ボルセブ]";
+		mes "だが……";
+		mes "ひっじょ～～～に残念だが、";
+		mes "ここでお別れェェェェ!!";
 		for(set '@i,1; '@i < 9; set '@i,'@i+1)
-			hideoffnpc "�ڊo�߂�������#0"+'@i;
+			hideoffnpc "目覚めた実験体#0"+'@i;
 		next;
 		emotion 0;
-		mes "[�{���Z�u]";
-		mes "�����A�������I";
-		mes "���������̂ɂȂ肽���̂Ȃ�A";
-		mes "���ʑҋ��ɂ��Ă�邼���H";
-		mes "�L�[�q�q�q�q�q�q�I";
+		mes "[ボルセブ]";
+		mes "ああ、そうだ！";
+		mes "もし実験体になりたいのなら、";
+		mes "特別待遇にしてやるぞぉ？";
+		mes "キーヒヒヒヒヒヒ！";
 		next;
 		donpcevent "#controllhz4::OnStart";
 		progressbar 5;
 		emotion 23;
-		mes "[�{���Z�u]";
-		mes "���`�H";
-		mes "��������́H";
+		mes "[ボルセブ]";
+		mes "んん～？";
+		mes "何だこれは？";
 		next;
-		mes "[�{���Z�u]";
-		mes "�L�q�B�I�@����ȁI";
-		mes "�����������U������񂶂�Ȃ��I";
-		mes "�����������I�@���������U���B�I";
-		mes "�L�q�B�B�I�@������������!!";
+		mes "[ボルセブ]";
+		mes "キヒィ！　来るな！";
+		mes "おおお俺を攻撃するんじゃない！";
+		mes "あああっち！　あっちを攻撃ィ！";
+		mes "キヒィィ！　たたた助けて!!";
 		donpcevent "#controllhz4::OnStart2";
 		set LHZ_6QUE,5;
 		next;
-		mes "�]�����̂����́A�蓖�莟���";
-		mes "�@�U�����s���Ă���]";
+		mes "‐実験体たちは、手当り次第に";
+		mes "　攻撃を行っている‐";
 		close;
 	}
 	else if(LHZ_6QUE == 5) {
-		mes "�]�{���Z�u��";
-		mes "�@�����܂Ń����X�^�[������";
-		mes "�@�U�����ꂽ���ŏł��Ă���]";
+		mes "‐ボルセブは";
+		mes "　自分までモンスターたちに";
+		mes "　攻撃された事で焦っている‐";
 		next;
-		menu "�ǂ������ł���ꏊ�́H",-;
-		mes "[�{���Z�u]";
-		mes "�L�A�L�q�c�c";
-		mes "���̌������Ȃ�c�c";
+		menu "どこか避難できる場所は？",-;
+		mes "[ボルセブ]";
+		mes "キ、キヒ……";
+		mes "俺の研究室なら……";
 		next;
-		mes "[�{���Z�u]";
-		mes "���̃t���A�̖k�ɂ���c�c";
-		mes "�������炻��قǉ����Ȃ��B";
+		mes "[ボルセブ]";
+		mes "このフロアの北にある……";
+		mes "ここからそれほど遠くない。";
 		next;
 		set LHZ_6QUE,6;
 		chgquest 5110,5111;
-		mes "�]12���̕�����^0000FF�{���Z�u�̌�����^000000��";
-		mes "�@�s���Č��悤�]";
+		mes "‐12時の方向の^0000FFボルセブの研究室^000000に";
+		mes "　行って見よう‐";
 		close;
 	}
 	else if(LHZ_6QUE == 6) {
-		mes "�]12���̕�����^0000FF�{���Z�u�̌�����^000000��";
-		mes "�@�s���Č��悤�]";
+		mes "‐12時の方向の^0000FFボルセブの研究室^000000に";
+		mes "　行って見よう‐";
 		close;
 	}
 }
 
-que_lhz.gat,148,251,0	script	#�������ړ�	139,12,0,{
+que_lhz.gat,148,251,0	script	#研究室移動	139,12,0,{
 	if(LHZ_6QUE != 6) {
-		mes "�]�܂��{���Z�u�ɗp���c���Ă���]";
+		mes "‐まだボルセブに用が残っている‐";
 		close;
 	}
-	mes "�]^0000FF�{���Z�u�̌���������^000000�ɓ��������]";
+	mes "‐^0000FFボルセブの研究室入口^000000に到着した‐";
 	close2;
 	set LHZ_6QUE,7;
 	warp "lhz_dun04.gat",148,269;
@@ -14020,85 +14020,85 @@ OnStart:
 	initnpctimer;
 	end;
 OnStart2:
-	monster "que_lhz.gat",139,232,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",147,232,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",156,232,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",156,224,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",156,215,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",147,215,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",139,215,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
-	monster "que_lhz.gat",139,224,"�ڊo�߂�������",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",139,232,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",147,232,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",156,232,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",156,224,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",156,215,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",147,215,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",139,215,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
+	monster "que_lhz.gat",139,224,"目覚めた実験体",2244,1,"#controllhz4::OnKilled";
 	for(set '@i,1; '@i < 9; set '@i,'@i+1) {
-		misceffect 99, "�ڊo�߂�������#0"+'@i;
-		hideonnpc "�ڊo�߂�������#0"+'@i;
+		misceffect 99, "目覚めた実験体#0"+'@i;
+		hideonnpc "目覚めた実験体#0"+'@i;
 	}
 	end;
 OnTimer1000:
-	misceffect 183, "#�ڊo�߂�������01";
-	misceffect 328, "�ڊo�߂�������#01";
+	misceffect 183, "#目覚めた実験体01";
+	misceffect 328, "目覚めた実験体#01";
 	end;
 OnTimer2000:
-	misceffect 183, "#�ڊo�߂�������02";
-	misceffect 328, "�ڊo�߂�������#02";
+	misceffect 183, "#目覚めた実験体02";
+	misceffect 328, "目覚めた実験体#02";
 	end;
 OnTimer3000:
-	misceffect 183, "#�ڊo�߂�������03";
-	misceffect 328, "�ڊo�߂�������#03";
+	misceffect 183, "#目覚めた実験体03";
+	misceffect 328, "目覚めた実験体#03";
 	end;
 OnTimer4000:
-	misceffect 183, "#�ڊo�߂�������04";
-	misceffect 328, "�ڊo�߂�������#04";
+	misceffect 183, "#目覚めた実験体04";
+	misceffect 328, "目覚めた実験体#04";
 	end;
 OnTimer5000:
-	misceffect 183, "#�ڊo�߂�������05";
-	misceffect 328, "�ڊo�߂�������#05";
+	misceffect 183, "#目覚めた実験体05";
+	misceffect 328, "目覚めた実験体#05";
 	end;
 OnTimer6000:
-	misceffect 183, "#�ڊo�߂�������06";
-	misceffect 328, "�ڊo�߂�������#06";
+	misceffect 183, "#目覚めた実験体06";
+	misceffect 328, "目覚めた実験体#06";
 	end;
 OnTimer7000:
-	misceffect 183, "#�ڊo�߂�������07";
-	misceffect 328, "�ڊo�߂�������#07";
+	misceffect 183, "#目覚めた実験体07";
+	misceffect 328, "目覚めた実験体#07";
 	end;
 OnTimer8000:
-	misceffect 183, "#�ڊo�߂�������08";
-	misceffect 328, "�ڊo�߂�������#08";
+	misceffect 183, "#目覚めた実験体08";
+	misceffect 328, "目覚めた実験体#08";
 	stopnpctimer;
 	end;
 OnKilled:
 	end;
 }
 
-que_lhz.gat,139,232,0	script	#�ڊo�߂�������01	139,{}
-que_lhz.gat,147,232,0	script	#�ڊo�߂�������02	139,{}
-que_lhz.gat,156,232,0	script	#�ڊo�߂�������03	139,{}
-que_lhz.gat,156,224,0	script	#�ڊo�߂�������04	139,{}
-que_lhz.gat,156,215,0	script	#�ڊo�߂�������05	139,{}
-que_lhz.gat,147,215,0	script	#�ڊo�߂�������06	139,{}
-que_lhz.gat,139,215,0	script	#�ڊo�߂�������07	139,{}
-que_lhz.gat,139,224,0	script	#�ڊo�߂�������08	139,{}
+que_lhz.gat,139,232,0	script	#目覚めた実験体01	139,{}
+que_lhz.gat,147,232,0	script	#目覚めた実験体02	139,{}
+que_lhz.gat,156,232,0	script	#目覚めた実験体03	139,{}
+que_lhz.gat,156,224,0	script	#目覚めた実験体04	139,{}
+que_lhz.gat,156,215,0	script	#目覚めた実験体05	139,{}
+que_lhz.gat,147,215,0	script	#目覚めた実験体06	139,{}
+que_lhz.gat,139,215,0	script	#目覚めた実験体07	139,{}
+que_lhz.gat,139,224,0	script	#目覚めた実験体08	139,{}
 
-que_lhz.gat,140,231,1	script	�ڊo�߂�������#01	2224,{}
-que_lhz.gat,147,231,0	script	�ڊo�߂�������#02	2224,{}
-que_lhz.gat,155,231,7	script	�ڊo�߂�������#03	2224,{}
-que_lhz.gat,155,224,6	script	�ڊo�߂�������#04	2224,{}
-que_lhz.gat,155,216,5	script	�ڊo�߂�������#05	2224,{}
-que_lhz.gat,147,216,4	script	�ڊo�߂�������#06	2224,{}
-que_lhz.gat,140,216,3	script	�ڊo�߂�������#07	2224,{}
-que_lhz.gat,140,224,2	script	�ڊo�߂�������#08	2224,{}
+que_lhz.gat,140,231,1	script	目覚めた実験体#01	2224,{}
+que_lhz.gat,147,231,0	script	目覚めた実験体#02	2224,{}
+que_lhz.gat,155,231,7	script	目覚めた実験体#03	2224,{}
+que_lhz.gat,155,224,6	script	目覚めた実験体#04	2224,{}
+que_lhz.gat,155,216,5	script	目覚めた実験体#05	2224,{}
+que_lhz.gat,147,216,4	script	目覚めた実験体#06	2224,{}
+que_lhz.gat,140,216,3	script	目覚めた実験体#07	2224,{}
+que_lhz.gat,140,224,2	script	目覚めた実験体#08	2224,{}
 
-lhz_que01.gat,91,28,0	script	#�F	111,{
-	mes "�]�F������]";
+lhz_que01.gat,91,28,0	script	#炉	111,{
+	mes "‐炉がある‐";
 	next;
-	if(select("�F�̔����J����","���̂܂܂ɂ��Ă���") == 2) {
-		mes "�]�F�ɐG�ꂸ�ɁA";
-		mes "�@���̏�𗣂ꂽ�]";
+	if(select("炉の扉を開ける","そのままにしておく") == 2) {
+		mes "‐炉に触れずに、";
+		mes "　その場を離れた‐";
 		close;
 	}
 	if(LHZ_6QUE != 9) {
-		mes "�]�ǂ�Ȃɗ͂����߂Ă��A";
-		mes "�@�J�������ɂȂ��]";
+		mes "‐どんなに力を込めても、";
+		mes "　開きそうにない‐";
 		close;
 	}
 	chgquest 72020,201485;
@@ -14129,13 +14129,13 @@ lhz_que01.gat,91,28,0	script	#�F	111,{
 	} else {
 		getitem 6469,20;
 	}
-	mes "�]�F�̔����J����ƁA";
-	mes "�@�{���Z�u�̌������ʂ�";
-	mes "�@���ɂ̓A�C�e���������Ă����]";
+	mes "‐炉の扉を開けると、";
+	mes "　ボルセブの言った通り";
+	mes "　中にはアイテムが入っていた‐";
 	next;
-	mes "�]�A�C�e������Ɏ��ƁA";
-	mes "�@�����悭�F�̔������A";
-	mes "�@�ǂ�Ȃɗ͂����߂Ă�";
-	mes "�@�J���Ȃ��Ȃ����]";
+	mes "‐アイテムを手に取ると、";
+	mes "　勢いよく炉の扉が閉じ、";
+	mes "　どんなに力を込めても";
+	mes "　開かなくなった‐";
 	close;
 }

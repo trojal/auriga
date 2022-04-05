@@ -1,50 +1,50 @@
 //= Auriga Script ==============================================================
-// Ragnarok Online Izlude Dungeon Monster Spawn Script@@Ep 15.2
+// Ragnarok Online Izlude Dungeon Monster Spawn Scriptã€€ã€€Ep 15.2
 //==============================================================================
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê“´ŒA 1‘w - iz_dun00.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•æ´çªŸ 1å±¤ - iz_dun00.gat
 //------------------------------------------------------------
-iz_dun00.gat,0,0,0,0	monster	ƒqƒhƒ‰		1068,50,5000,0,0
-iz_dun00.gat,0,0,0,0	monster	ƒqƒhƒ‰		1068,20,60000,0,0
-iz_dun00.gat,0,0,0,0	monster	ƒvƒ‰ƒ“ƒNƒgƒ“	1161,60,5000,0,0
-iz_dun00.gat,0,0,0,0	monster	ƒNƒNƒŒ		1070,20,5000,0,0
-iz_dun00.gat,0,0,0,0	monster	ƒ}ƒŠƒi		1141,50,5000,0,0
-iz_dun00.gat,0,0,0,0	monster	ƒoƒhƒ“		1066,40,5000,0,0
-iz_dun00.gat,0,0,0,0	monster	•‚¢‚«‚Ì‚±	1084,5,180000,90000,1
+iz_dun00.gat,0,0,0,0	monster	ãƒ’ãƒ‰ãƒ©		1068,50,5000,0,0
+iz_dun00.gat,0,0,0,0	monster	ãƒ’ãƒ‰ãƒ©		1068,20,60000,0,0
+iz_dun00.gat,0,0,0,0	monster	ãƒ—ãƒ©ãƒ³ã‚¯ãƒˆãƒ³	1161,60,5000,0,0
+iz_dun00.gat,0,0,0,0	monster	ã‚¯ã‚¯ãƒ¬		1070,20,5000,0,0
+iz_dun00.gat,0,0,0,0	monster	ãƒãƒªãƒŠ		1141,50,5000,0,0
+iz_dun00.gat,0,0,0,0	monster	ãƒãƒ‰ãƒ³		1066,40,5000,0,0
+iz_dun00.gat,0,0,0,0	monster	é»’ã„ãã®ã“	1084,5,180000,90000,1
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê“´ŒA 2‘w - iz_dun01.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•æ´çªŸ 2å±¤ - iz_dun01.gat
 //------------------------------------------------------------
-iz_dun01.gat,0,0,0,0	monster	ƒqƒhƒ‰		1068,40,5000,0,0
-iz_dun01.gat,0,0,0,0	monster	ƒNƒNƒŒ		1070,20,5000,0,0
-iz_dun01.gat,0,0,0,0	monster	ƒoƒhƒ“		1066,60,5000,0,0
-iz_dun01.gat,0,0,0,0	monster	ƒ}ƒ‹ƒX		1144,40,5000,0,0
-iz_dun01.gat,0,0,0,0	monster	ƒIƒ{ƒ“ƒk	1044,10,5000,0,0
-iz_dun01.gat,0,0,0,0	monster	ƒJƒiƒgƒEƒX	1067,50,5000,0,1
-iz_dun01.gat,0,0,0,0	monster	•‚¢‚«‚Ì‚±	1084,10,180000,90000,1
+iz_dun01.gat,0,0,0,0	monster	ãƒ’ãƒ‰ãƒ©		1068,40,5000,0,0
+iz_dun01.gat,0,0,0,0	monster	ã‚¯ã‚¯ãƒ¬		1070,20,5000,0,0
+iz_dun01.gat,0,0,0,0	monster	ãƒãƒ‰ãƒ³		1066,60,5000,0,0
+iz_dun01.gat,0,0,0,0	monster	ãƒãƒ«ã‚¹		1144,40,5000,0,0
+iz_dun01.gat,0,0,0,0	monster	ã‚ªãƒœãƒ³ãƒŒ	1044,10,5000,0,0
+iz_dun01.gat,0,0,0,0	monster	ã‚«ãƒŠãƒˆã‚¦ã‚¹	1067,50,5000,0,1
+iz_dun01.gat,0,0,0,0	monster	é»’ã„ãã®ã“	1084,10,180000,90000,1
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê“´ŒA 3‘w - iz_dun02.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•æ´çªŸ 3å±¤ - iz_dun02.gat
 //------------------------------------------------------------
-iz_dun02.gat,0,0,0,0	monster	ƒqƒhƒ‰		1068,30,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	ƒNƒNƒŒ		1070,10,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	ƒ}ƒ‹ƒX		1144,20,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	ƒIƒ{ƒ“ƒk	1044,100,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	ƒJƒiƒgƒEƒX	1067,30,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	”¼‹™l		1264,100,5000,0,0
-iz_dun02.gat,0,0,0,0	monster	•‚¢‚«‚Ì‚±	1084,15,180000,90000,1
+iz_dun02.gat,0,0,0,0	monster	ãƒ’ãƒ‰ãƒ©		1068,30,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	ã‚¯ã‚¯ãƒ¬		1070,10,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	ãƒãƒ«ã‚¹		1144,20,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	ã‚ªãƒœãƒ³ãƒŒ	1044,100,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	ã‚«ãƒŠãƒˆã‚¦ã‚¹	1067,30,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	åŠæ¼äºº		1264,100,5000,0,0
+iz_dun02.gat,0,0,0,0	monster	é»’ã„ãã®ã“	1084,15,180000,90000,1
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê“´ŒA 4‘w - iz_dun03.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•æ´çªŸ 4å±¤ - iz_dun03.gat
 //------------------------------------------------------------
-iz_dun03.gat,0,0,0,0	monster	ƒqƒhƒ‰			1068,50,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	ƒtƒFƒ“			1158,10,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	ƒ}ƒŠƒ“ƒXƒtƒBƒA[	1142,10,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	ƒ\[ƒhƒtƒBƒbƒVƒ…	1069,60,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	ƒXƒgƒ‰ƒEƒt		1065,20,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	ƒ}ƒ‹ƒN			1045,50,5000,0,0
-iz_dun03.gat,0,0,0,0	monster	”¼‹™l			1264,40,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ãƒ’ãƒ‰ãƒ©			1068,50,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ãƒ•ã‚§ãƒ³			1158,10,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼	1142,10,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ã‚½ãƒ¼ãƒ‰ãƒ•ã‚£ãƒƒã‚·ãƒ¥	1069,60,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ã‚¹ãƒˆãƒ©ã‚¦ãƒ•		1065,20,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	ãƒãƒ«ã‚¯			1045,50,5000,0,0
+iz_dun03.gat,0,0,0,0	monster	åŠæ¼äºº			1264,40,5000,0,0
 
 iz_dun03.gat,0,0,0	script	#IzdunEVNT	-1,{
 OnInit:
@@ -53,11 +53,11 @@ OnInit:
 	end;
 OnTimer3600000:
 	switch(rand(5)) {
-		case 0: set 'iz_monster,1158; break;	//ƒtƒFƒ“
-		case 1: set 'iz_monster,1069; break;	//ƒ\[ƒhƒtƒBƒbƒVƒ…
-		case 2: set 'iz_monster,1065; break;	//ƒXƒgƒ‰ƒEƒt
-		case 3: set 'iz_monster,1045; break;	//ƒ}ƒ‹ƒN
-		case 4: set 'iz_monster,1264; break;	//”¼‹™l
+		case 0: set 'iz_monster,1158; break;	//ãƒ•ã‚§ãƒ³
+		case 1: set 'iz_monster,1069; break;	//ã‚½ãƒ¼ãƒ‰ãƒ•ã‚£ãƒƒã‚·ãƒ¥
+		case 2: set 'iz_monster,1065; break;	//ã‚¹ãƒˆãƒ©ã‚¦ãƒ•
+		case 3: set 'iz_monster,1045; break;	//ãƒãƒ«ã‚¯
+		case 4: set 'iz_monster,1264; break;	//åŠæ¼äºº
 	}
 	areamonster "iz_dun03.gat",0,0,0,0,"--ja--",'iz_monster,80,"#IzdunEVNT::OnKilled";
 	end;
@@ -73,30 +73,30 @@ OnTimer3900000:
 }
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê_“a - iz_dun04.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•ç¥æ®¿ - iz_dun04.gat
 //------------------------------------------------------------
-iz_dun04.gat,0,0,0,0		monster	ƒ}ƒ‹ƒN		1045,60,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒIƒ{ƒ“ƒk	1044,100,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒXƒgƒ‰ƒEƒt		1065,100,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒ}[ƒ}ƒ“		2394,15,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒZƒCƒŒ[ƒ“		2395,15,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒ|ƒZƒCƒhƒ“		2396,15,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒNƒ‰[ƒPƒ“ƒxƒCƒr[	2397,15,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒfƒrƒAƒX	1108,6,5000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒhƒtƒŒ			2203,1,120000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒZƒhƒ‰			2204,1,120000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒXƒƒtƒH		2201,1,120000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒLƒ“ƒOƒhƒ‰ƒ‚	2198,1,120000,0,0
-iz_dun04.gat,0,0,0,0		monster	ƒyƒmƒƒi	1216,18,300000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒãƒ«ã‚¯		1045,60,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚ªãƒœãƒ³ãƒŒ	1044,100,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚¹ãƒˆãƒ©ã‚¦ãƒ•		1065,100,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒãƒ¼ãƒãƒ³		2394,15,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚»ã‚¤ãƒ¬ãƒ¼ãƒ³		2395,15,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒã‚»ã‚¤ãƒ‰ãƒ³		2396,15,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚¯ãƒ©ãƒ¼ã‚±ãƒ³ãƒ™ã‚¤ãƒ“ãƒ¼	2397,15,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒ‡ãƒ“ã‚¢ã‚¹	1108,6,5000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒ‰ãƒ•ãƒ¬			2203,1,120000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚»ãƒ‰ãƒ©			2204,1,120000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚¹ãƒ­ãƒ•ã‚©		2201,1,120000,0,0
+iz_dun04.gat,0,0,0,0		monster	ã‚­ãƒ³ã‚°ãƒ‰ãƒ©ãƒ¢	2198,1,120000,0,0
+iz_dun04.gat,0,0,0,0		monster	ãƒšãƒãƒ¡ãƒŠ	1216,18,300000,0,0
 
 //============================================================
-// ƒCƒYƒ‹[ƒhŠC’ê“ss - iz_dun05.gat
+// ã‚¤ã‚ºãƒ«ãƒ¼ãƒ‰æµ·åº•éƒ½å¸‚ - iz_dun05.gat
 //------------------------------------------------------------
-iz_dun05.gat,0,0,0,0	monster	ƒhƒtƒŒ			2203,120,5000,0,0
-iz_dun05.gat,0,0,0,0	monster	ƒZƒhƒ‰			2204,150,5000,0,0
-iz_dun05.gat,0,0,0,0	monster	ƒXƒƒtƒH		2201,140,5000,0,0
-iz_dun05.gat,0,0,0,0	monster	ƒLƒ“ƒOƒhƒ‰ƒ‚	2198,40,5000,0,0
-iz_dun05.gat,0,0,0,0	monster	ƒ^ƒNƒ“			2205,20,60000,0,0
+iz_dun05.gat,0,0,0,0	monster	ãƒ‰ãƒ•ãƒ¬			2203,120,5000,0,0
+iz_dun05.gat,0,0,0,0	monster	ã‚»ãƒ‰ãƒ©			2204,150,5000,0,0
+iz_dun05.gat,0,0,0,0	monster	ã‚¹ãƒ­ãƒ•ã‚©		2201,140,5000,0,0
+iz_dun05.gat,0,0,0,0	monster	ã‚­ãƒ³ã‚°ãƒ‰ãƒ©ãƒ¢	2198,40,5000,0,0
+iz_dun05.gat,0,0,0,0	monster	ã‚¿ã‚¯ãƒ³			2205,20,60000,0,0
 
 iz_dun05.gat,0,0,0	script	#IzdunMVP	-1,{
 OnInit:
@@ -115,33 +115,33 @@ OnTimer9000000:
 	set 'kraken,5;
 	set '@x,rand(55,75);
 	set '@y,rand(70,90);
-	set 'mob,callmonster("iz_dun05.gat",'@x,'@y,"ƒNƒ‰[ƒPƒ“",2202,"#IzdunMVP::OnKilled");
-	monster "iz_dun05.gat",15,206,"ƒeƒ“ƒ^ƒNƒ‹ƒX",2384,1,"#IzdunMVP::OnKilled2";
-	monster "iz_dun05.gat",250,228,"ƒeƒ“ƒ^ƒNƒ‹ƒX",2385,1,"#IzdunMVP::OnKilled2";
-	monster "iz_dun05.gat",142,18,"ƒeƒ“ƒ^ƒNƒ‹ƒX",2386,1,"#IzdunMVP::OnKilled2";
-	monster "iz_dun05.gat",12,98,"ƒeƒ“ƒ^ƒNƒ‹ƒX",2387,1,"#IzdunMVP::OnKilled2";
-	monster "iz_dun05.gat",196,28,"ƒeƒ“ƒ^ƒNƒ‹ƒX",2388,1,"#IzdunMVP::OnKilled2";
+	set 'mob,callmonster("iz_dun05.gat",'@x,'@y,"ã‚¯ãƒ©ãƒ¼ã‚±ãƒ³",2202,"#IzdunMVP::OnKilled");
+	monster "iz_dun05.gat",15,206,"ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹",2384,1,"#IzdunMVP::OnKilled2";
+	monster "iz_dun05.gat",250,228,"ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹",2385,1,"#IzdunMVP::OnKilled2";
+	monster "iz_dun05.gat",142,18,"ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹",2386,1,"#IzdunMVP::OnKilled2";
+	monster "iz_dun05.gat",12,98,"ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹",2387,1,"#IzdunMVP::OnKilled2";
+	monster "iz_dun05.gat",196,28,"ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹",2388,1,"#IzdunMVP::OnKilled2";
 	end;
 OnKilled:
 	killmonster "iz_dun05.gat","#IzdunMVP::OnKilled2";
 	initnpctimer;
 	end;
 OnKilled2:
-	//ƒeƒ“ƒ^ƒNƒ‹ƒX‚ğ1‘Ì“|‚·‚²‚Æ‚ÉƒNƒ‰[ƒPƒ“‚Ì‘Ì—Í‚ª20%‚ªŒ¸­‚·‚é‚Æv‚í‚ê‚é
+	//ãƒ†ãƒ³ã‚¿ã‚¯ãƒ«ã‚¹ã‚’1ä½“å€’ã™ã”ã¨ã«ã‚¯ãƒ©ãƒ¼ã‚±ãƒ³ã®ä½“åŠ›ãŒ20%ãŒæ¸›å°‘ã™ã‚‹ã¨æ€ã‚ã‚Œã‚‹
 	if(getmobhp('mob)){
 		setmobhp 'mob,getmobhp('mob) * 80 / 100;
 		set 'kraken,'kraken-1;
 		switch('kraken){
 		case 0:
-			announce "–‚•¨‚Ì”ß’É‚È‹©‚Ñ‚ªŠC’ê‚É‹¿‚¢‚½B‚©‚È‚èã‚Á‚Ä‚¢‚é!!", 0x9, 0xff8c00, 0x190, 12, 0, 0;
+			announce "é­”ç‰©ã®æ‚²ç—›ãªå«ã³ãŒæµ·åº•ã«éŸ¿ã„ãŸã€‚ã‹ãªã‚Šå¼±ã£ã¦ã„ã‚‹!!", 0x9, 0xff8c00, 0x190, 12, 0, 0;
 			break;
 		case 1:
 		case 2:
-			announce "–‚•¨‚Ì”ß–Â‚ª•·‚±‚¦‚éB‚©‚È‚è‹ê‚µ‚»‚¤‚¾¥¥¥¥¥¥", 0x9, 0xff8c00, 0x190, 12, 0, 0;
+			announce "é­”ç‰©ã®æ‚²é³´ãŒèã“ãˆã‚‹ã€‚ã‹ãªã‚Šè‹¦ã—ãã†ã ï½¥ï½¥ï½¥ï½¥ï½¥ï½¥", 0x9, 0xff8c00, 0x190, 12, 0, 0;
 			break;
 		case 3:
 		case 4:
-			announce "–‚•¨‚Ì‚¤‚ß‚«º‚ª•·‚±‚¦‚é¥¥¥¥¥¥", 0x9, 0xff8c00, 0x190, 12, 0, 0;
+			announce "é­”ç‰©ã®ã†ã‚ãå£°ãŒèã“ãˆã‚‹ï½¥ï½¥ï½¥ï½¥ï½¥ï½¥", 0x9, 0xff8c00, 0x190, 12, 0, 0;
 			break;
 		}
 	}

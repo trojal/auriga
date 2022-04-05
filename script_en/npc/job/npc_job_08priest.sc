@@ -1,615 +1,615 @@
 //====================================================================
 //Ragnarok Online Priest Jobchange Script
 //
-//�@�� CHANGE_PR     -> 0�`9
-//     @priest_check -> 0�`8�A�ޖ��C���̎O�i�K�ڗp�t���O
+//　■ CHANGE_PR     -> 0～9
+//     @priest_check -> 0～8、退魔修練の三段階目用フラグ
 //====================================================================
 
 //==========================================
-// ������t����ѓ]�E
+// 試験受付および転職
 //------------------------------------------
 
-prt_church.gat,16,41,4	script	�i��	60,{
+prt_church.gat,16,41,4	script	司教	60,{
 	if(Upper == UPPER_HIGH) {
-		mes "[�g�[�}�X�i��]";
-		mes "���܂�ς��A�V���Ȑl����";
-		mes "���ޕ��ł��ˁH";
-		mes "�v�����e���吹����";
-		mes "�M���̊����������Ă��܂��B";
+		mes "[トーマス司教]";
+		mes "生まれ変わり、新たな人生を";
+		mes "歩む方ですね？";
+		mes "プロンテラ大聖堂も";
+		mes "貴方の活躍を見守っています。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���ɖ������鎎�������ꂸ�ɁB";
-		mes "�M���ɂ͂���ɑł����E�C��";
-		mes "�͂�����܂��B";
-		mes "�M���ɐ_�̂����삠��񂱂Ƃ��c�c";
+		mes "[トーマス司教]";
+		mes "世に満ち溢れる試練を恐れずに。";
+		mes "貴方にはそれに打ち克つ勇気と";
+		mes "力があります。";
+		mes "貴方に神のご加護あらんことを……";
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ��ɐ_�̂����삪����񂱂Ƃ��c";
-		mes "������̓v�����e���吹���ł��B";
-		mes "���̂��p�ŖK�˂Ȃ������H";
+		mes "[トーマス司教]";
+		mes "あなたに神のご加護があらんことを…";
+		mes "こちらはプロンテラ大聖堂です。";
+		mes "何のご用で訪ねなさった？";
 		next;
-		switch (select("�A�R���C�g�ɓ]�E��������ł�","�v���[�X�g�ɓ]�E��������ł�","�����ɗ�����ł�")) {
+		switch (select("アコライトに転職したいんです","プリーストに転職したいんです","見物に来たんです")) {
 		case 1:
-			mes "[�g�[�}�X�i��]";
-			mes "�قفc�A�R���C�g�ւ̓]�E������";
-			mes "���Ȃ��������B";
-			mes "�A�R���C�g�ւ̓]�E�͔��Α��̕�����";
-			mes "���s���Ȃ����c�B";
+			mes "[トーマス司教]";
+			mes "ほほ…アコライトへの転職をしに";
+			mes "来なすったか。";
+			mes "アコライトへの転職は反対側の部屋に";
+			mes "お行きなさい…。";
 			break;
 		case 2:
-			mes "[�g�[�}�X�i��]";
-			mes "�قفc�v���[�X�g�ɂȂ�O��";
-			mes "�܂��A�R���C�g�ɂȂ�Ȃ����B";
-			mes "�A�R���C�g�ւ̓]�E�͔��Α��̕�����";
-			mes "���s���Ȃ����c�B";
+			mes "[トーマス司教]";
+			mes "ほほ…プリーストになる前に";
+			mes "まずアコライトになりなさい。";
+			mes "アコライトへの転職は反対側の部屋に";
+			mes "お行きなさい…。";
 			break;
 		case 3:
-			mes "[�g�[�}�X�i��]";
-			mes "�Ƃ̂悤�Ɏv���Ċy�ɂ��Ȃ����B";
-			mes "�����͂��̐��̂ǂ�����";
-			mes "���S�ł�����ȁB";
+			mes "[トーマス司教]";
+			mes "家のように思って楽にしなさい。";
+			mes "聖堂はこの世のどこよりも";
+			mes "安全ですからな。";
 			break;
 		}
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ��ɐ_�̂����삪����񂱂Ƃ��B";
+		mes "[トーマス司教]";
+		mes "あなたに神のご加護があらんことを。";
 		close;
 	}
 	if(Job == Job_Priest) {
-		mes "[�g�[�}�X�i��]";
-		mes "�M�����Z���";
-		mes "�_�̂����삠��񂱂Ƃ��c";
+		mes "[トーマス司教]";
+		mes "信仰厚き兄弟に";
+		mes "神のご加護あらんことを…";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�_�̋��������s���𐳂���";
-		mes "����悤�ł��ˁB";
-		mes "�����͂ǂ�Ȍ�p�ł������";
-		mes "�������̂ł��H";
+		mes "[トーマス司教]";
+		mes "神の教えを守り行いを正して";
+		mes "いるようですね。";
+		mes "今日はどんな御用でこちらへ";
+		mes "赴いたのです？";
 		next;
-		switch (select("�߂��ɗ������łɗl�q���f����","�����A���A�R���C�g�������悤��","�ŋߐ����Ă����̂���ς�")) {
+		switch (select("近くに来たついでに様子を伺いに","私が連れるアコライトを助けようと","最近生きていくのが大変で")) {
 		case 1:
-			mes "[�g�[�}�X�i��]";
-			mes "�قفA�����ł������B";
-			mes "���͑��ς�炸���C�ł��B";
-			mes "���̌Z��B�ɂ��`���Ă���Ă��������B";
+			mes "[トーマス司教]";
+			mes "ほほ、そうでしたか。";
+			mes "私は相変わらず元気です。";
+			mes "他の兄弟達にも伝えてやってください。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "���B�v���[�X�g�́A�_�̑�َ҂Ƃ���";
-			mes "���̒n�ɍ݂�̂ł��B";
-			mes "�������l�ɂ͋~���̎�������ׂ̂�";
-			mes "������悤�Ɂc�B";
+			mes "[トーマス司教]";
+			mes "私達プリーストは、神の代弁者として";
+			mes "この地に在るのです。";
+			mes "困った人には救いの手をさしのべて";
+			mes "あげるように…。";
 			close;
 		case 2:
-			mes "[�g�[�}�X�i��]";
-			mes "�����ł����A�ǂ��l���ł��B";
-			mes "���̃A�R���C�g��ǂ����ɓ������Ƃ�";
-			mes "�v���[�X�g�̑�؂Ȗ�ڂł�����ˁB";
+			mes "[トーマス司教]";
+			mes "そうですか、良い考えです。";
+			mes "他のアコライトを良き道に導くことも";
+			mes "プリーストの大切な役目ですからね。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�����A�S�Ă���`�����Ƃ͂ł��܂���B";
-			mes "�A�R���C�g�Ƃ��Ăǂ����Ă��󂯂�";
-			mes "����΂Ȃ�Ȃ�����������܂�����ˁB";
+			mes "[トーマス司教]";
+			mes "ただ、全てを手伝うことはできません。";
+			mes "アコライトとしてどうしても受けな";
+			mes "ければならない試練もありますからね。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "��ڂ̎����ł���u�ޖ��C���v";
-			mes "�͎�`���Ă�������ł��傤�B";
-			mes "���Ȃ����ꏏ�ɍs�����߂ɂ�";
-			mes "^3051FD���U���[^000000���K�v�ł��B";
+			mes "[トーマス司教]";
+			mes "二つ目の試練である「退魔修練」";
+			mes "は手伝ってあげられるでしょう。";
+			mes "あなたも一緒に行くためには";
+			mes "^3051FDロザリー^000000が必要です。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�A�R���C�g�̑ޖ��C������`���܂����H";
+			mes "[トーマス司教]";
+			mes "アコライトの退魔修練を手伝いますか？";
 			next;
-			if(select("�͂��A��`���܂�","�܂���ŗ��܂�")==2) {
-				mes "[�g�[�}�X�i��]";
-				mes "�͂��A������菀���𐮂��Ă��������B";
-				mes "^3051FD���U���[^000000��K���g�ɂ���";
-				mes "���Ă��������ˁB";
+			if(select("はい、手伝います","また後で来ます")==2) {
+				mes "[トーマス司教]";
+				mes "はい、ゆっくり準備を整えてください。";
+				mes "^3051FDロザリー^000000を必ず身につけて";
+				mes "来てくださいね。";
 				close;
 			}
 			if(countitem(2608)<1) {
-				mes "[�g�[�}�X�i��]";
-				mes "����c^3051FD���U���[^000000���������łȂ����B";
+				mes "[トーマス司教]";
+				mes "うん…^3051FDロザリー^000000をお持ちでないか。";
 				next;
-				mes "[�g�[�}�X�i��]";
-				mes "�C����ɓ��肽��������";
-				mes "^3051FD���U���[^000000��g�ɂ��Ă���";
-				mes "���炵�Ă��������B";
+				mes "[トーマス司教]";
+				mes "修練場に入りたかったら";
+				mes "^3051FDロザリー^000000を身につけてから";
+				mes "いらしてください。";
 				close;
 			}
-			mes "[�g�[�}�X�i��]";
-			mes "����ł́A�A�R���C�g�̏C���n��";
-			mes "�����Ă����܂��B";
-			mes "�s�[�^�[�C���m�ɂ�낵��";
-			mes "���`�����������B";
+			mes "[トーマス司教]";
+			mes "それでは、アコライトの修練地へ";
+			mes "送ってあげます。";
+			mes "ピーター修道士によろしく";
+			mes "お伝えください。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�ǂ��v���[�X�g�ɂȂ��悤��";
-			mes "�悭�����Ă����Ă��������ˁB";
+			mes "[トーマス司教]";
+			mes "良いプリーストになれるように";
+			mes "よく導いてあげてくださいね。";
 			close2;
 			warp "job_prist.gat",24,180;
 			end;
 		case 3:
-			mes "[�g�[�}�X�i��]";
-			mes "�͂��o���̂ł��B���Ȃ��͐_��";
-			mes "��������󂯂�q�Ȃ̂ł�����c";
-			mes "�������Ȃ��̏������g�ƐS��";
-			mes "�����܂��傤�B";
+			mes "[トーマス司教]";
+			mes "力を出すのです。あなたは神の";
+			mes "ご加護を受ける子なのですから…";
+			mes "私があなたの傷ついた身と心を";
+			mes "癒しましょう。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�_��c���������A�������܂��c";
-			mes "���Ƌt���ɑ΂������A���̋F��";
-			mes "���͂��񂱂Ƃ��c";
+			mes "[トーマス司教]";
+			mes "神よ…我らを見守り、助けたまえ…";
+			mes "苦難と逆境に対した時、我らの祈り";
+			mes "が届かんことを…";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�����ɂ��Ȃ��̎q���ꂵ��ł���܂��c";
-			mes "�ǂ������̎q�̔敾�����S�����Ȃ���";
-			mes "�������S�ŕ��ł����Ă��������c";
+			mes "[トーマス司教]";
+			mes "ここにあなたの子が苦しんでおります…";
+			mes "どうかこの子の疲弊した心をあなたの";
+			mes "温かい心で包んであげてください…";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�����ǂ��Ȃ����͂��ł��B";
-			mes "���ꂩ����F�邱�Ƃ�Y�ꂸ�Ɂc";
-			mes "���Ȃ��ɐ_�̂����삠��񂱂Ƃ��c";
+			mes "[トーマス司教]";
+			mes "少し良くなったはずです。";
+			mes "これからも祈ることを忘れずに…";
+			mes "あなたに神のご加護あらんことを…";
 			close;
 		}
 	}
 	if(Job != Job_Acolyte) {
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ��ɐ_�̂����삪����񂱂Ƃ��B";
-		mes "������̓v�����e���吹���ł��B";
-		mes "���̂��p�ŖK�˂Ȃ������H";
+		mes "[トーマス司教]";
+		mes "あなたに神のご加護があらんことを。";
+		mes "こちらはプロンテラ大聖堂です。";
+		mes "何のご用で訪ねなさった？";
 		next;
-		if(select("�v���[�X�g�ɂ��ċ����Ă�������","�����ɗ�����ł�")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�Ƃ̂悤�Ɏv���Ċy�ɂ��Ȃ����B";
-			mes "�����͂��̐��̂ǂ�����";
-			mes "���S�ł�����ȁB";
+		if(select("プリーストについて教えてください","見物に来たんです")==2) {
+			mes "[トーマス司教]";
+			mes "家のように思って楽にしなさい。";
+			mes "聖堂はこの世のどこよりも";
+			mes "安全ですからな。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "����ł́A���Ȃ��ɐ_�̂�����";
-			mes "����񂱂Ƃ��c";
+			mes "[トーマス司教]";
+			mes "それでは、あなたに神のご加護";
+			mes "あらんことを…";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "�v���[�X�g�́A�_�̑㗝�Ƃ���";
-		mes "�_�̈ӎv�������ɓ`����҂ł��B";
-		mes "�A�R���C�g�ɂȂ�A�����̏C�s��";
-		mes "�ς񂾎҂ɂ݂̂��̎��i��";
-		mes "�^������̂ł��c";
+		mes "[トーマス司教]";
+		mes "プリーストは、神の代理として";
+		mes "神の意思を現世に伝える者です。";
+		mes "アコライトになり、多くの修行を";
+		mes "積んだ者にのみその資格が";
+		mes "与えられるのです…";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�A�R���C�g��JobLv��40�ȏ�Ȃ�A";
-		mes "�������̎������󂯁A�v���[�X�g��";
-		mes "�Ȃ邱�Ƃ��ł���ł��傤�B";
-		mes "�����ƃA���f�b�h�ɑ΂���͂����܂�A";
-		mes "�⏕�X�L����������ł��傤�c�B";
+		mes "[トーマス司教]";
+		mes "アコライトのJobLvが40以上なら、";
+		mes "いくつかの試練を受け、プリーストに";
+		mes "なることができるでしょう。";
+		mes "悪魔とアンデッドに対する力が強まり、";
+		mes "補助スキルも増えるでしょう…。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�����āA�X�E�t�B�[���h�E�_���W����";
-		mes "�@���Ȃ�ꏊ�ɂ����Ă��A�d�v��";
-		mes "���������Ȃ��Ȃ��Ă͂Ȃ�܂���B";
-		mes "���B�v���[�X�g�́A�l�ɐs�����A";
-		mes "�l��������̂��^����ꂽ";
-		mes "�g��������ł��B";
+		mes "[トーマス司教]";
+		mes "そして、街・フィールド・ダンジョン";
+		mes "如何なる場所においても、重要な";
+		mes "役割をこなさなくてはなりません。";
+		mes "私達プリーストは、人に尽くし、";
+		mes "人を助けるのが与えられた";
+		mes "使命だからです。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�������A���̃v���[�X�g�ɉ�������A";
-		mes "��������v���Ă͂Ȃ�܂���B";
-		mes "�����܂ł���͎����I�ȍs���ɂ����";
-		mes "�Ӗ��𐬂����̂Ȃ̂ł�����c�B";
+		mes "[トーマス司教]";
+		mes "しかし、他のプリーストに会った時、";
+		mes "それを強要してはなりません。";
+		mes "あくまでそれは自発的な行動によって";
+		mes "意味を成すものなのですから…。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�����ɂȂ鎞�͕�V��]��ł�";
-		mes "�Ȃ�܂��񂵁A�������󂯂鑤��";
-		mes "������V�𐳂����ӂ̋C������";
-		mes "�Y��Ă͂����܂���B";
+		mes "[トーマス司教]";
+		mes "助けになる時は報酬を望んでは";
+		mes "なりませんし、助けを受ける側も";
+		mes "いつも礼儀を正し感謝の気持ちを";
+		mes "忘れてはいけません。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����Ő����ɂȂ������͂킩��܂���B";
-		mes "���ڃv���[�X�g�����ɉ���Ęb����";
-		mes "�����Ă݂�̂��ǂ��ł��傤�B�ققفc";
+		mes "[トーマス司教]";
+		mes "これで説明になったかはわかりません。";
+		mes "直接プリーストたちに会って話しを";
+		mes "聞いてみるのも良いでしょう。ほほほ…";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł́A���Ȃ��ɐ_�̂�����";
-		mes "����񂱂Ƃ��c";
+		mes "[トーマス司教]";
+		mes "それでは、あなたに神のご加護";
+		mes "あらんことを…";
 		close;
 	}
 	switch(CHANGE_PR) {
 	case 0:
-		mes "[�g�[�}�X�i��]";
-		mes "���̗p�ŖK�˂ė����̂ł����H";
+		mes "[トーマス司教]";
+		mes "何の用で訪ねて来たのですか？";
 		next;
-		if(select("�v���[�X�g�ɓ]�E���ɗ��܂���","�����A�Ɏf���܂���")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�����ł����c���͂��̒ʂ茳�C�ł��B";
-			mes "���Ȃ����A�R���C�g�Ƃ��Ă̎g����";
-			mes "�Y�ꂸ�ɁA�����������Ă��������B";
+		if(select("プリーストに転職しに来ました","ご挨拶に伺いました")==2) {
+			mes "[トーマス司教]";
+			mes "そうですか…私はこの通り元気です。";
+			mes "あなたもアコライトとしての使命を";
+			mes "忘れずに、正しく生きてください。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "����ł́A�܂����鎞�͑���";
-			mes "�A�R���C�g�B�̗l�q�������Ă��������B";
-			mes "���Ȃ��ɐ_�̂����삠��񂱂Ƃ��c";
+			mes "[トーマス司教]";
+			mes "それでは、また来る時は他の";
+			mes "アコライト達の様子も教えてください。";
+			mes "あなたに神のご加護あらんことを…";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "�����ł����c�v���[�X�g�ւ̓]�E��";
-		mes "���]�݂ł����c";
-		mes "�_�����Ȃ��̌��S��S���炨��т�";
-		mes "�Ȃ�ł��傤�B";
+		mes "[トーマス司教]";
+		mes "そうですか…プリーストへの転職を";
+		mes "お望みですか…";
+		mes "神もあなたの決心を心からお喜びに";
+		mes "なるでしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���̓v�����e���吹���̎i����";
-		mes "�������Ă���";
-		mes "�g�[�}�X=�Z���o���e�X�Ƃ����܂��B";
-		mes "�ł��Ȃ炸�A�y�ɂ��Ă��������B";
+		mes "[トーマス司教]";
+		mes "私はプロンテラ大聖堂の司教を";
+		mes "仰せつかっている";
+		mes "トーマス=セルバンテスといいます。";
+		mes "固くならず、楽にしてください。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�v���[�X�g�ւ̓]�E�����S�����̂Ȃ�A";
-		mes "�������̎��������z���Ă�����";
-		mes "���Ȃ��Ă͂Ȃ�܂���B";
-		mes "�܂����̑O�ɁAJobLv��40�ȏ�";
-		mes "�ł��邱�Ƃ��O��ƂȂ�܂��B";
+		mes "[トーマス司教]";
+		mes "プリーストへの転職を決心したのなら、";
+		mes "いくつかの試練を乗り越えていただ";
+		mes "かなくてはなりません。";
+		mes "まずその前に、JobLvが40以上";
+		mes "であることが前提となります。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���āA���Ȃ��̓]�E�̂���`��������";
-		mes "���߂ɁA������̐\���������Ȃ����";
-		mes "�Ȃ�܂���B";
-		mes "���A�\�����݂�����܂����H";
+		mes "[トーマス司教]";
+		mes "さて、あなたの転職のお手伝いをする";
+		mes "ために、こちらの申込書を作らなければ";
+		mes "なりません。";
+		mes "今、申し込みをされますか？";
 		next;
-		if(select("�͂��A�\�����݂܂�","���������l���Ă݂܂�")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�����ł����B����ł͂������";
-			mes "�l���ė��ĉ������B";
-			mes "�v���[�X�g�ɓ]�E���錈�S��������";
-			mes "�܂��K�˂Ă�������Ⴂ�B";
+		if(select("はい、申し込みます","もう少し考えてみます")==2) {
+			mes "[トーマス司教]";
+			mes "そうですか。それではゆっくり";
+			mes "考えて来て下さい。";
+			mes "プリーストに転職する決心がついたら";
+			mes "また訪ねていらっしゃい。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "���Ȃ��ɐ_�̂����삠��񂱂Ƃ��B";
+			mes "[トーマス司教]";
+			mes "あなたに神のご加護あらんことを。";
 			close;
 		}
 		if(JobLevel < 40) {
-			mes "[�g�[�}�X�i��]";
-			mes "���Ȃ��͂܂��v���[�X�g�ɂȂ�ɂ�";
-			mes "�����ł��ˁc";
-			mes "���̒��ŁA�����Ƃ�������̌o����";
-			mes "�ς�ł��Ă��������B";
+			mes "[トーマス司教]";
+			mes "あなたはまだプリーストになるには";
+			mes "早いですね…";
+			mes "世の中で、もっとたくさんの経験を";
+			mes "積んできてください。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�v���[�X�g�ɂ̓v���[�X�g�́c";
-			mes "�A�R���C�g�ɂ̓A�R���C�g�̎g����";
-			mes "����̂ł��c�B";
-			mes "����������A�܂��K�˂Ă�������Ⴂ�B";
+			mes "[トーマス司教]";
+			mes "プリーストにはプリーストの…";
+			mes "アコライトにはアコライトの使命が";
+			mes "あるのです…。";
+			mes "時が来たら、また訪ねていらっしゃい。";
 			close;
 		}
 		if(SkillPoint) {
-			mes "[�g�[�}�X�i��]";
-			mes "�ށc���Ȃ��ɂ͂܂��X�L���|�C���g��";
-			mes "�c���Ă��܂��ˁc";
-			mes "�擾�ł���X�L�����K�����Ă���";
-			mes "���Ȃ����c�B";
+			mes "[トーマス司教]";
+			mes "む…あなたにはまだスキルポイントが";
+			mes "残っていますね…";
+			mes "取得できるスキルを習得してから";
+			mes "来なさい…。";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes strcharinfo(0)+ " ��c";
-		mes "�v���[�X�g�]�E�ւ̎����������n��";
-		mes "�܂��c�B��ςȎ����ŋ�ɂ𔺂�";
-		mes "�Ǝv���܂����A���z���Ă��������B";
+		mes "[トーマス司教]";
+		mes strcharinfo(0)+ " よ…";
+		mes "プリースト転職への試練を言い渡し";
+		mes "ます…。大変な試練で苦痛を伴う";
+		mes "と思いますが、乗り越えてください。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�v���[�X�g�ւ̓]�E�ɂ́A�܂������";
-		mes "�s��Ȃ���΂Ȃ�܂���B";
-		mes "�t�B�[���h�ŏC�s���̎O���̏C���m";
-		mes "�ɏ��ɉ���ė��Ă��������B";
+		mes "[トーマス司教]";
+		mes "プリーストへの転職には、まず巡礼を";
+		mes "行わなければなりません。";
+		mes "フィールドで修行中の三名の修道士";
+		mes "に順に会って来てください。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���ɑޖ��C���ł��B";
-		mes "�ޖ��Ƃ́A�����ƃA���f�b�h��ނ��A";
-		mes "�S�Ă̗U�f��ϔY�E�������͂�";
-		mes "�ł��邱�Ƃł��B";
+		mes "[トーマス司教]";
+		mes "次に退魔修練です。";
+		mes "退魔とは、悪魔とアンデッドを退け、";
+		mes "全ての誘惑や煩悩・悪しき力を";
+		mes "滅することです。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�����ĕ�d�̐���B";
-		mes "�v���[�X�g�Ƃ��Ďカ�҂������A";
-		mes "�M���L�߂邽�߂̐����";
-		mes "���Ă��������܂��B";
+		mes "[トーマス司教]";
+		mes "そして奉仕の誓約。";
+		mes "プリーストとして弱き者を助け、";
+		mes "信仰を広めるための誓約を";
+		mes "していただきます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�܂��AJobLv50�܂ŏC�s������";
-		mes "�A�R���C�g�ɂ��ẮA�����";
-		mes "�s��Ȃ��Ă���낵���ł��傤�B";
-		mes "����܂łɑ����̏�������Ă���";
-		mes "�ł��傤����c�B";
+		mes "[トーマス司教]";
+		mes "また、JobLv50まで修行をした";
+		mes "アコライトについては、巡礼を";
+		mes "行わなくてもよろしいでしょう。";
+		mes "これまでに多くの巡礼をしてきた";
+		mes "でしょうから…。";
 		next;
 		if(JobLevel < 50) {
 			set CHANGE_PR,1;
-			mes "[�g�[�}�X�i��]";
-			mes "����ł͏���̎菇��������܂��傤�B";
-			mes "���߂̓v�����e���k�����ʂ̈�Ղ�";
-			mes "�C�s���̃��o���J�o���_����";
-			mes "����Ă��Ă��������B";
+			mes "[トーマス司教]";
+			mes "それでは巡礼の手順を説明しましょう。";
+			mes "初めはプロンテラ北東方面の遺跡で";
+			mes "修行中のルバルカバラ神父に";
+			mes "会ってきてください。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "���Ƀ}�`���_�V�X�^�[�ɉ���Ă�������";
-			mes "�B";
-			mes "�ޏ��̓v�����e���쐼�ʒu���������N";
-			mes "�t�B�[���h�̂ǂ����ɂ���͂��ł��B";
+			mes "[トーマス司教]";
+			mes "次にマチルダシスターに会ってください";
+			mes "。";
+			mes "彼女はプロンテラ南西位置したモロク";
+			mes "フィールドのどこかにいるはずです。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "�Ō�ɗm��_���ɉ���Ă��������B";
-			mes "�m��_���̓v�����e���k����";
-			mes "�t�B�[���h�ŏC�s���ł��傤�B";
+			mes "[トーマス司教]";
+			mes "最後に洋介神父に会ってください。";
+			mes "洋介神父はプロンテラ北西の";
+			mes "フィールドで修行中でしょう。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "����ł͋C�����āB";
-			mes "�����ꏊ���悭�킩��Ȃ�������";
-			mes "�Z�V���C�����ɕ����Ă݂Ă��������B";
-			mes "���炪�I������玟�̎�����^���܂��B";
+			mes "[トーマス司教]";
+			mes "それでは気をつけて。";
+			mes "もし場所がよくわからなかったら";
+			mes "セシル修道女に聞いてみてください。";
+			mes "巡礼が終わったら次の試練を与えます。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "���Ȃ��ɐ_�̂����삠��񂱂Ƃ��c";
+			mes "[トーマス司教]";
+			mes "あなたに神のご加護あらんことを…";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ���JobLv��50�ł��ˁB";
-		mes "���h�ł��B���܂ŔM�S�ɏC�s��";
-		mes "�ς�ł������Ƃ��M���܂��B";
+		mes "[トーマス司教]";
+		mes "あなたはJobLvが50ですね。";
+		mes "立派です。今まで熱心に修行を";
+		mes "積んできたことが窺えます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�ł́A�ޖ��C���֐i��ł��������B";
-		mes "�ޖ��C���ɂ́A���̃v���[�X�g��";
-		mes "�����ɘA��邱�Ƃ��ł��܂��B";
+		mes "[トーマス司教]";
+		mes "では、退魔修練へ進んでください。";
+		mes "退魔修練には、他のプリーストを";
+		mes "お供に連れることができます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ��̗͂Ȃ炱������Ȃ��̂�";
-		mes "���₷���Ǝv���܂����A";
-		mes "�v���[�X�g�B�ƈꏏ�Ȃ�΂�����";
-		mes "�ȒP�ɂȂ�ł��傤�B";
+		mes "[トーマス司教]";
+		mes "あなたの力ならこれをこなすのは";
+		mes "たやすいと思いますが、";
+		mes "プリースト達と一緒ならばもっと";
+		mes "簡単になるでしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł͑ޖ��C�����n�߂܂��傤���B";
+		mes "[トーマス司教]";
+		mes "それでは退魔修練を始めましょうか。";
 		break;
 	case 1:
-		mes "[�g�[�}�X�i��]";
-		mes "���H���Ȃ��͂Ȃ�������ɋ����";
-		mes "�ł��傤���H";
-		mes "�܂��������Y��Ă��܂����킯�ł�";
-		mes "����܂����ˁH";
+		mes "[トーマス司教]";
+		mes "お？あなたはなぜこちらに居るの";
+		mes "でしょうか？";
+		mes "まさか巡礼を忘れてしまったわけでは";
+		mes "ありませんよね？";
 		next;
-		if(select("�\����Ȃ��ł������Ԃ������Ă�������","�������I�܂������̂悤�Ȃ��Ƃ́I")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�����ł����B�ڂ����ꏊ�����m���";
-			mes "�Ȃ肽��������A������ɂ���܂�";
-			mes "�Z�V���C�����ɕ����Ă݂�̂�";
-			mes "��낵���ł��傤�B";
+		if(select("申し訳ないですが順番を教えてください","いいえ！まさかそのようなことは！")==2) {
+			mes "[トーマス司教]";
+			mes "そうですか。詳しい場所をお知りに";
+			mes "なりたかったら、入り口におります";
+			mes "セシル修道女に聞いてみるのも";
+			mes "よろしいでしょう。";
 			next;
-			mes "[�g�[�}�X�i��]";
-			mes "����ł͋C�����čs���Ă�����Ⴂ�B";
-			mes "���Ȃ��ɐ_�̂����삪����񂱂Ƃ��B";
+			mes "[トーマス司教]";
+			mes "それでは気をつけて行ってらっしゃい。";
+			mes "あなたに神のご加護があらんことを。";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "���Ă��āc���߂��炱�̒��q���ƁA";
-		mes "�����悪�S�z�ł����c";
-		mes "�܂��`���܂�����A���x�͂悭������";
-		mes "��������o���Ă��������B";
+		mes "[トーマス司教]";
+		mes "さてさて…初めからこの調子だと、";
+		mes "少し先が心配ですぞ…";
+		mes "また伝えますから、今度はよく聞いて";
+		mes "しっかり覚えてください。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���o���J�o���_���ɂ���Ȃ����B";
-		mes "�v�����e���k�����ʂ̈�Ղ�";
-		mes "�C�s���ł��B";
+		mes "[トーマス司教]";
+		mes "ルバルカバラ神父にお会いなさい。";
+		mes "プロンテラ北東方面の遺跡で";
+		mes "修行中です。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���Ƀ}�`���_�V�X�^�[�ɉ���Ă�������";
-		mes "�B";
-		mes "�ޏ��̓v�����e���쐼�ʒu���������N";
-		mes "�t�B�[���h�̂ǂ����ɂ���͂��ł��B";
+		mes "[トーマス司教]";
+		mes "次にマチルダシスターに会ってください";
+		mes "。";
+		mes "彼女はプロンテラ南西位置したモロク";
+		mes "フィールドのどこかにいるはずです。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�Ō�ɗm��_���ɂ���Ȃ����B";
-		mes "�m��_���̓v�����e���k����";
-		mes "�t�B�[���h�ŏC�s���ł��傤�B";
+		mes "[トーマス司教]";
+		mes "最後に洋介神父にお会いなさい。";
+		mes "洋介神父はプロンテラ北西の";
+		mes "フィールドで修行中でしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł͋C�����āB";
-		mes "�����ꏊ���悭�킩��Ȃ�������A";
-		mes "�Z�V���C�����ɕ����Ă݂Ă��������B";
-		mes "���炪�I������玟�̎�����^���܂��B";
+		mes "[トーマス司教]";
+		mes "それでは気をつけて。";
+		mes "もし場所がよくわからなかったら、";
+		mes "セシル修道女に聞いてみてください。";
+		mes "巡礼が終わったら次の試練を与えます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���Ȃ��ɐ_�̂����삠��񂱂Ƃ��c";
+		mes "[トーマス司教]";
+		mes "あなたに神のご加護あらんことを…";
 		close;
 	case 2:
-		mes "[�g�[�}�X�i��]";
-		mes "���o���J�o���_���ɂ������";
-		mes "���܂����ˁB";
-		mes "�����Ƃ��낲��J�l�ł����B";
+		mes "[トーマス司教]";
+		mes "ルバルカバラ神父にお会いして";
+		mes "きましたね。";
+		mes "遠いところご苦労様でした。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�ł͎��̓}�`���_�V�X�^�[�̂Ƃ���ցB";
-		mes "�����N���ʂ܂Œ������ɂȂ�܂����A";
-		mes "�撣���Ă��������B";
+		mes "[トーマス司教]";
+		mes "では次はマチルダシスターのところへ。";
+		mes "モロク方面まで長い旅になりますが、";
+		mes "頑張ってください。";
 		close;
 	case 3:
-		mes "[�g�[�}�X�i��]";
-		mes "�}�`���_�V�X�^�[�ɉ���Ă��܂�����";
-		mes "�����̏������ł��ς�炸�C�s��";
-		mes "�ł������c";
+		mes "[トーマス司教]";
+		mes "マチルダシスターに会ってきましたね";
+		mes "砂漠の暑い中でも変わらず修行中";
+		mes "でしたか…";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł͍Ŋ��A�m��_���ɂ��";
-		mes "���Ă��Ȃ����B";
-		mes "�������k���̃t�B�[���h�̂ǂ�����";
-		mes "����������͂��ł�����A";
-		mes "�C�����čs���Ă��Ȃ����B";
+		mes "[トーマス司教]";
+		mes "それでは最期、洋介神父にお会い";
+		mes "してきなさい。";
+		mes "険しい北西のフィールドのどこかに";
+		mes "いらっしゃるはずですから、";
+		mes "気をつけて行ってきなさい。";
 		close;
 	case 4:
-		mes "[�g�[�}�X�i��]";
-		mes "�m��_���ɂ�����Ă��܂����ˁB";
-		mes "��ڂ̎����u����v�𖳎��I����";
-		mes "���Ƃ����j�����܂��B";
+		mes "[トーマス司教]";
+		mes "洋介神父にお会いしてきましたね。";
+		mes "一つ目の試練「巡礼」を無事終えた";
+		mes "ことをお祝いします。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���̎����ł���ޖ��C���ɓ���܂��B";
-		mes "���߂ɐ\���グ���悤�ɁA�ޖ��C���ɂ�";
-		mes "���̃v���[�X�g��A��čs�����Ƃ�";
-		mes "�ł��܂��B";
+		mes "[トーマス司教]";
+		mes "次の試練である退魔修練に入ります。";
+		mes "初めに申し上げたように、退魔修練には";
+		mes "供のプリーストを連れて行くことが";
+		mes "できます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "���ׂĂ̎����������Ă��炤���Ƃ�";
-		mes "�ł��܂��񂪁A�v���[�X�g�ɂ悭������";
-		mes "������Ă��������B";
-		mes "����ł́A�����ɑޖ��C�����n�߂�";
-		mes "���傤���B";
+		mes "[トーマス司教]";
+		mes "すべての試練を助けてもらうことは";
+		mes "できませんが、プリーストによく導いて";
+		mes "もらってください。";
+		mes "それでは、すぐに退魔修練を始めま";
+		mes "しょうか。";
 		break;
 	case 5:
-		mes "[�g�[�}�X�i��]";
-		mes "�ޖ��C���ւ̏������������悤�ł��ˁB";
-		mes "����ł͂����n�߂܂��傤���B";
+		mes "[トーマス司教]";
+		mes "退魔修練への準備が整ったようですね。";
+		mes "それではすぐ始めましょうか。";
 		next;
-		if(select("�͂��A���˂������܂�","�܂��������ł��ĂȂ��ł�")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�킩��܂����B������菀���𐮂���";
-			mes "���Ȃ����B���Ȃ��������𖳎�";
-			mes "���z�����܂��悤�ɁB";
+		if(select("はい、おねがいします","まだ準備ができてないです")==2) {
+			mes "[トーマス司教]";
+			mes "わかりました。ゆっくり準備を整えて";
+			mes "きなさい。あなたが試練を無事";
+			mes "乗り越えられますように。";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "����ł́A�C���̒n�֑�����";
-		mes "���������܂��B";
+		mes "[トーマス司教]";
+		mes "それでは、修練の地へ送って";
+		mes "さしあげます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "������ɒ�������A�C����S��";
-		mes "���Ă���s�[�^�[�_���ɂ��b��";
-		mes "�����Ă݂Ă��������B";
+		mes "[トーマス司教]";
+		mes "あちらに着いたら、修練を担当";
+		mes "しているピーター神父にお話を";
+		mes "聞いてみてください。";
 		next;
 		warp "job_prist.gat",24,180;
 		end;
 	case 6:
-		mes "[�g�[�}�X�i��]";
-		mes "��قǑ�ς������l�q�ł��ˁc�B";
-		mes "�������A�v���[�X�g�ɂȂ�����ɂ�";
-		mes "�����Ƒ傫�Ȏ������҂��󂯂�";
-		mes "���邩������܂���B";
-		mes "���̒��x�̎����ɕ����Ă͂Ȃ�܂���B";
-		mes "������x���킵�Ă݂܂����H";
+		mes "[トーマス司教]";
+		mes "よほど大変だった様子ですね…。";
+		mes "しかし、プリーストになった後には";
+		mes "もっと大きな試練が待ち受けて";
+		mes "いるかもしれません。";
+		mes "この程度の試練に負けてはなりません。";
+		mes "もう一度挑戦してみますか？";
 		next;
-		if(select("���킵�܂�","�������������𐮂��܂�")==2) {
-			mes "[�g�[�}�X�i��]";
-			mes "�킩��܂����B������菀���𐮂���";
-			mes "���Ȃ����B���Ȃ��������𖳎�";
-			mes "���z�����܂��悤�ɁB";
+		if(select("挑戦します","もう少し準備を整えます")==2) {
+			mes "[トーマス司教]";
+			mes "わかりました。ゆっくり準備を整えて";
+			mes "きなさい。あなたが試練を無事";
+			mes "乗り越えられますように。";
 			close;
 		}
-		mes "[�g�[�}�X�i��]";
-		mes "����ł͂����肵�܂��B";
-		mes "������������邱�Ƃ��F��܂��B";
+		mes "[トーマス司教]";
+		mes "それではお送りします。";
+		mes "無事完遂されることを祈ります。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�s�[�^�[�_���ɂ�����������������";
-		mes "�ǂ��ł��傤�B";
+		mes "[トーマス司教]";
+		mes "ピーター神父にも助言をいただくと";
+		mes "良いでしょう。";
 		next;
 		warp "job_prist.gat",24,180;
 		end;
 	case 7:
-		mes "[�g�[�}�X�i��]";
-		mes "�ޖ��C���𖳎��ɏI���܂����ˁB";
-		mes "�ǂ��撣��܂����B";
-		mes "���ׂĂ̗U�f��ϔY�ɑł�����";
-		mes "�͂���������Ȃ��́A���ł�";
-		mes "�v���[�X�g�̑f�������ł��傤�B";
+		mes "[トーマス司教]";
+		mes "退魔修練を無事に終えましたね。";
+		mes "良く頑張りました。";
+		mes "すべての誘惑や煩悩に打ち勝つ";
+		mes "力を備えたあなたは、すでに";
+		mes "プリーストの素質を持つでしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł́A�Z�V���C�����̂Ƃ����";
-		mes "�s���A��d�̐�����ς܂��Ă��������B";
-		mes "���̉��ɋ������ɑ΂��āA������";
-		mes "�v���܂܂ɓ����邾���ŗǂ��ł�����B";
+		mes "[トーマス司教]";
+		mes "それでは、セシル修道女のところへ";
+		mes "行き、奉仕の誓約を済ませてください。";
+		mes "頭の奥に響く声に対して、自分の";
+		mes "思うままに答えるだけで良いですから。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł́A���Ȃ��̓]�E�̎���";
-		mes "�y���݂ɂ��҂����Ă���܂��c�B";
+		mes "[トーマス司教]";
+		mes "それでは、あなたの転職の時を";
+		mes "楽しみにお待ちしております…。";
 		close;
 	case 8:
-		mes "[�g�[�}�X�i��]";
-		mes "�Ȃ��ł��傤���c���Ȃ��͕�d�̐����";
-		mes "�Ō�܂Ő������܂���ł����B";
-		mes "�v���[�X�g�Ƃ��Ċ�{�I�ȐS�\����";
-		mes "�ł��Ă��Ȃ���΁A�����̗U�f��";
-		mes "���ݍ��܂�Ă��܂����킩��܂���c�B";
+		mes "[トーマス司教]";
+		mes "なぜでしょうか…あなたは奉仕の誓約を";
+		mes "最後まで遂げられませんでした。";
+		mes "プリーストとして基本的な心構えが";
+		mes "できていなければ、いつ悪の誘惑に";
+		mes "飲み込まれてしまうかわかりません…。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "������x�Z�V���C�����̂Ƃ����";
-		mes "�s���A������Ō�܂Ő����Ă��������B";
-		mes "�����Ȃ��΁A���Ȃ��̐S���ŏ�����b��";
-		mes "�������߂ɁA�ēx��������Ă�������";
-		mes "���ƂɂȂ�ł��傤�B";
+		mes "[トーマス司教]";
+		mes "もう一度セシル修道女のところへ";
+		mes "行き、誓約を最後まで遂げてください。";
+		mes "さもなくば、あなたの心を最初から鍛え";
+		mes "直すために、再度巡礼をしていただく";
+		mes "ことになるでしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�s���Ă�����Ⴂ�B";
-		mes "���ŕ����̂ł͂Ȃ��S�ŕ����̂ł���c";
+		mes "[トーマス司教]";
+		mes "行ってらっしゃい。";
+		mes "耳で聞くのではなく心で聞くのですよ…";
 		close;
 	case 9:
 		if(SkillPoint) {
-			mes "[�g�[�}�X�i��]";
-			mes "�ށc���Ȃ��ɂ͂܂��X�L���|�C���g��";
-			mes "�c���Ă��܂��ˁc";
-			mes "�擾�ł���X�L�����K�����Ă���";
-			mes "���Ȃ����c�B";
+			mes "[トーマス司教]";
+			mes "む…あなたにはまだスキルポイントが";
+			mes "残っていますね…";
+			mes "取得できるスキルを習得してから";
+			mes "来なさい…。";
 			close;
 		}
 		set '@itemid,(JobLevel >= 50)? 1551: 1550;
-		mes "[�g�[�}�X�i��]";
-		mes "���߂łƂ��������܂��B";
-		mes "���Ȃ��͑S�Ă̎��������z���܂����B";
-		mes "�v���[�X�g�ɂȂ鎑�i��^���܂��B";
+		mes "[トーマス司教]";
+		mes "おめでとうございます。";
+		mes "あなたは全ての試練を乗り越えました。";
+		mes "プリーストになる資格を与えます。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "�_��c���Ȃ��̐��������̎҂ɏƂ炵�A";
-		mes "���̗͂�������c";
-		mes "���̐��ɂ��Ȃ��̈ӎv��`�����";
-		mes "�������ɐ��܂��c";
+		mes "[トーマス司教]";
+		mes "神よ…あなたの瑞光をこの者に照らし、";
+		mes "その力を授けよ…";
+		mes "この世にあなたの意思を伝える者";
+		mes "今ここに生まれる…";
 		next;
 		unequip;
 		jobchange Job_Priest;
 		set CHANGE_PR,0;
-		mes "[�g�[�}�X�i��]";
-		mes "����ł��Ȃ�����l�̃v���[�X�g";
-		mes "�Ƃ��Đ��܂�ς��܂����B";
-		mes "���j����\���グ��Ɠ����ɁA";
-		mes "�V���ȐS�\���ƂƂ��ɍ�������";
-		mes "�l�X��ǂ������~���Ă����Ă��������B";
+		mes "[トーマス司教]";
+		mes "これであなたも一人のプリースト";
+		mes "として生まれ変わりました。";
+		mes "お祝いを申し上げると同時に、";
+		mes "新たな心構えとともに困窮する";
+		mes "人々を良く導き救ってあげてください。";
 		next;
 		getitem '@itemid,1;
-		mes "[�g�[�}�X�i��]";
-		mes "�����ē]�E�L�O�ɂ�������������܂��B";
-		mes "�M�`�ɂ��ċL����Ă���A���ꂩ���";
-		mes "����i�ނ��Ȃ��ɂ͕K�v�Ȃ��̂ƂȂ�";
-		mes "�ł��傤�B";
+		mes "[トーマス司教]";
+		mes "そして転職記念にこれをさしあげます。";
+		mes "信義について記されており、これからの";
+		mes "道を進むあなたには必要なものとなる";
+		mes "でしょう。";
 		next;
-		mes "[�g�[�}�X�i��]";
-		mes "����ɂĂ��ׂĂ̓]�E�̋V��";
-		mes "�I���܂��B�����l�ł����c�B";
-		mes "�V�����������ł����Ȃ����c�B";
+		mes "[トーマス司教]";
+		mes "これにてすべての転職の儀を";
+		mes "終わります。お疲れ様でした…。";
+		mes "新しき道を歩んでいきなさい…。";
 		close;
 	}
-	//�ޖ��C���s��
+	//退魔修練行き
 	next;
 	set CHANGE_PR,5;
-	if(select("�͂��A���肢���܂�","�������������ė��܂�")==2) {
-		mes "[�g�[�}�X�i��]";
-		mes "�킩��܂����B������菀���𐮂���";
-		mes "���Ȃ����B���Ȃ��������𖳎�";
-		mes "���z�����܂��悤�ɁB";
+	if(select("はい、お願いします","少し準備をして来ます")==2) {
+		mes "[トーマス司教]";
+		mes "わかりました。ゆっくり準備を整えて";
+		mes "きなさい。あなたが試練を無事";
+		mes "乗り越えられますように。";
 		close;
 	}
-	mes "[�g�[�}�X�i��]";
-	mes "����ł́A�C���̒n�֑�����";
-	mes "���������܂��B";
+	mes "[トーマス司教]";
+	mes "それでは、修練の地へ送って";
+	mes "さしあげます。";
 	next;
-	mes "[�g�[�}�X�i��]";
-	mes "������ɒ�������A�C����S��";
-	mes "���Ă���s�[�^�[�_���ɂ��b��";
-	mes "�����Ă݂Ă��������B";
+	mes "[トーマス司教]";
+	mes "あちらに着いたら、修練を担当";
+	mes "しているピーター神父にお話を";
+	mes "聞いてみてください。";
 	next;
 	warp "job_prist.gat",24,180;
 	end;
@@ -617,203 +617,203 @@ prt_church.gat,16,41,4	script	�i��	60,{
 
 
 //==========================================
-// �ꎟ�����i���n����j
+// 一次試験（聖地巡礼）
 //------------------------------------------
 
-// npc_job_04acolyte.txt�Q��
+// npc_job_04acolyte.txt参照
 
 
 //==========================================
-// �񎟎����i�ޖ��C���j
+// 二次試験（退魔修練）
 //------------------------------------------
 
-job_prist.gat,24,187,4	script	�^�t�Ȑ_��::PR_Timer	110,{
-	if('flag) {	//���풆�̃��b�N
-		mes "[�s�[�^�[�_��]";
-		mes "���c������Ƒ҂��Ă���B";
-		mes "�����̃A�R���C�g���C�������B";
+job_prist.gat,24,187,4	script	タフな神父::PR_Timer	110,{
+	if('flag) {	//挑戦中のロック
+		mes "[ピーター神父]";
+		mes "あ…ちょっと待ってくれ。";
+		mes "今他のアコライトが修練中だ。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���΂炭���Ă܂����������Ă���B";
-		mes "�I����Ă����瑗���Ă����邩��B";
+		mes "[ピーター神父]";
+		mes "しばらくしてまた声をかけてくれ。";
+		mes "終わっていたら送ってあげるから。";
 		close;
 	}
 	if(Job != Job_Acolyte) {
-		mes "[�s�[�^�[�_��]";
-		mes "�N�ɐ_�̂����삠��񂱂Ƃ��B";
+		mes "[ピーター神父]";
+		mes "君に神のご加護あらんことを。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "�v���[�X�g���ȁc��`���Ă�����";
-		mes "�A�R���C�g�ł�����̂��ȁH";
-		mes "�܂������D�����ˁB�ǂ�A�N�Ȃ�";
-		mes "��������₷�����낤�B";
+		mes "[ピーター神父]";
+		mes "プリーストだな…手伝ってあげる";
+		mes "アコライトでもいるのかな？";
+		mes "まったく優しいね。どれ、君なら";
+		mes "それもたやすいだろう。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���������ꂾ���͊o���Ă�����";
-		mes "�ق����B�����܂ŌN�̎󂯂鎎��";
-		mes "�ł͂Ȃ��Ƃ������Ƃ��B";
-		mes "��`���Ă�����Ƃ��������ŁA";
-		mes "�S�Ă���������킯����Ȃ����B";
+		mes "[ピーター神父]";
+		mes "しかしこれだけは覚えておいて";
+		mes "ほしい。あくまで君の受ける試練";
+		mes "ではないということを。";
+		mes "手伝ってあげるというだけで、";
+		mes "全てを解決するわけじゃないぞ。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "����ł͐�ɐi�ނ��ȁH";
+		mes "[ピーター神父]";
+		mes "それでは先に進むかな？";
 		next;
-		switch (select("�͂��A�s���܂�","�������҂���������","��͂�X�ɋA��܂�")) {
+		switch (select("はい、行きます","少しお待ちください","やはり街に帰ります")) {
 		case 1:
-			mes "[�s�[�^�[�_��]";
-			mes "�悵�A�A�R���C�g������Ύn�܂�I";
-			mes "�N�������ƁA�A�R���C�g����������";
-			mes "�v���o�����낤�B";
+			mes "[ピーター神父]";
+			mes "よし、アコライトが入れば始まる！";
+			mes "君もきっと、アコライトだった頃を";
+			mes "思い出すだろう。";
 			close2;
 			warp "job_prist.gat",24,44;
 			end;
 		case 2:
-			mes "[�s�[�^�[�_��]";
-			mes "�ӂށc�������ɏ����͐����Ȃ��ƂȁB";
-			mes "�悵�A�ǂ����ɂ܂����������Ȃ����B";
+			mes "[ピーター神父]";
+			mes "ふむ…たしかに準備は整えないとな。";
+			mes "よし、良い時にまた声をかけなさい。";
 			close;
 		case 3:
-			mes "[�s�[�^�[�_��]";
-			mes "�ӂށc����ł͋A��Ȃ����B";
-			mes "��������΂܂�����낤�B";
-			mes "�N�ɐ_�̂����삠��񂱂Ƃ��B";
+			mes "[ピーター神父]";
+			mes "ふむ…それでは帰りなさい。";
+			mes "縁があればまた会うだろう。";
+			mes "君に神のご加護あらんことを。";
 			close2;
 			warp "prontera.gat",234,318;
 			end;
 		}
 	}
 	if(CHANGE_PR < 6) {
-		mes "[�s�[�^�[�_��]";
-		mes "�N�ɐ_�̂����삠��񂱂Ƃ��B";
-		mes "�܂��A��ڂ̎����𖳎����z����";
-		mes "���Ƃ��j�����B�悭�撣�����B";
+		mes "[ピーター神父]";
+		mes "君に神のご加護あらんことを。";
+		mes "まず、一つ目の試練を無事乗り越えた";
+		mes "ことを祝おう。よく頑張った。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���̖��O�̓s�[�^�[�ES�E�A���x���g";
-		mes "�Ƃ����B�g�[�}�X�͌��C�����������H";
+		mes "[ピーター神父]";
+		mes "私の名前はピーター・S・アルベルト";
+		mes "という。トーマスは元気だったかい？";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "�ꉞ�z�͎i��������A�{���̓g�[�}�X";
-		mes "�i���l�ƌĂ΂Ȃ���΂Ȃ�Ȃ���";
-		mes "�낤���c";
-		mes "�ꐶ�_���ŉ߂������Ƃ͈Ⴄ�񂾂�";
-		mes "�n�n�n�I";
+		mes "[ピーター神父]";
+		mes "一応奴は司教だから、本当はトーマス";
+		mes "司教様と呼ばなければならないんだ";
+		mes "ろうが…";
+		mes "一生神父で過ごす私とは違うんだよ";
+		mes "ハハハ！";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���āA�ޖ��C���ɂ��ĊȒP�ɐ���";
-		mes "���悤���B�N�͂��̏C���ɂ���";
-		mes "�ǂ�Ȃ��̂��킩���Ă��邩�ˁH";
+		mes "[ピーター神父]";
+		mes "さて、退魔修練について簡単に説明";
+		mes "しようか。君はこの修練について";
+		mes "どんなものかわかっているかね？";
 		next;
-		if(select("�͂��A�킩���Ă��܂�","�悭������Ȃ��ł��c")==1) {
-			mes "[�s�[�^�[�_��]";
-			mes "�������ˁB�܁A�ꉞ�ȒP�ɐ�������";
-			mes "���������B";
-			mes "�悭�킩���Ă���̂ƁA�ł���̂Ƃł�";
-			mes "�Ⴄ����ˁB";
+		if(select("はい、わかっています","よく分からないです…")==1) {
+			mes "[ピーター神父]";
+			mes "利口だね。ま、一応簡単に説明して";
+			mes "おこうか。";
+			mes "よくわかっているのと、できるのとでは";
+			mes "違うからね。";
 		}
 		else {
-			mes "[�s�[�^�[�_��]";
-			mes "�������A���ꂶ�Ⴀ�ڂ���������";
-			mes "�K�v���ˁB";
-			mes "�������蕷���Ă����΁A�N������";
-			mes "�Ԃɂ��ޖ��C�������Ȃ��Ă��邾�낤�B";
+			mes "[ピーター神父]";
+			mes "そうか、それじゃあ詳しい説明が";
+			mes "必要だね。";
+			mes "しっかり聞いていけば、君もいつの";
+			mes "間にか退魔修練をこなせているだろう。";
 		}
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "�ޖ��C���Ƃ����̂́A�����ʂ薂����";
-		mes "�ގ����邱�Ƃ������B";
-		mes "�����Ƃ́A�A���f�b�g�ƈ����̑��̂��B";
+		mes "[ピーター神父]";
+		mes "退魔修練というのは、文字通り魔物を";
+		mes "退治することをいう。";
+		mes "魔物とは、アンデットと悪魔の総称だ。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���̒��ɂ́A�M�`�ɔ��������m��";
-		mes "���܂�ɂ������B���������������";
-		mes "�P�ǂȐ_�̖��c�܂莄�B�ɊQ���ׂ��B";
+		mes "[ピーター神父]";
+		mes "世の中には、信義に反したモノが";
+		mes "あまりにも多い。そういう魔物らは";
+		mes "善良な神の民…つまり私達に害を為す。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���B�v���[�X�g�ɂ͂��������������B��";
-		mes "�S�đގ�����܂ň����̓��͖K��Ȃ��B";
+		mes "[ピーター神父]";
+		mes "私達プリーストにはそういった魔物達を";
+		mes "全て退治するまで安息の日は訪れない。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "�ޖ��C�����ǂ�Ȃ��Ƃ�����̂���";
-		mes "������������ł킩�������ȁH";
-		mes "�v���[�X�g�ɂȂ�������Ŏ�����";
-		mes "�͂������񂾁B";
-		mes "�����ŁA���̎����͂��Ȃ������̂�";
-		mes "�Ȃ邩��A���������邱�Ƃ��ł���B";
+		mes "[ピーター神父]";
+		mes "退魔修練がどんなことをするのかが";
+		mes "だいたいこれでわかったかな？";
+		mes "プリーストになったつもりで自分の";
+		mes "力を試すんだ。";
+		mes "そこで、この試練はかなり難しいものと";
+		mes "なるから、助けをつけることができる。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "�悭�m���y�v���[�X�g������Ȃ�A";
-		mes "���肢����̂��ǂ����낤�B";
-		mes "����ł́A���낻��n�߂悤���B";
+		mes "[ピーター神父]";
+		mes "よく知る先輩プリーストがいるなら、";
+		mes "お願いするのも良いだろう。";
+		mes "それでは、そろそろ始めようか。";
 		next;
 		set CHANGE_PR,6;
-		set '@word$,"�������҂���������";
+		set '@word$,"少しお待ちください";
 	}
 	else {
-		mes "[�s�[�^�[�_��]";
-		mes "���x�͂������菀�����Ă������ȁH";
-		mes "���������A�����I��点�ăv���[�X�g��";
-		mes "�Ȃ낤�B";
+		mes "[ピーター神父]";
+		mes "今度はしっかり準備してきたかな？";
+		mes "さあさあ、早く終わらせてプリーストに";
+		mes "なろう。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "����ł͂����Ɏn�߂悤�B";
+		mes "[ピーター神父]";
+		mes "それではすぐに始めよう。";
 		next;
-		//�Z���t�������ɈႤ
-		set '@word$,"���������҂��Ă�������";
+		//セリフが微妙に違う
+		set '@word$,"もう少し待ってください";
 	}
-	switch (select("���˂������܂�",'@word$,"�X�ɋA��܂�")) {
+	switch (select("おねがいします",'@word$,"街に帰ります")) {
 	case 1:
-		mes "[�s�[�^�[�_��]";
-		mes "����ł́A�ޖ��C�����n�߂�B";
-		mes "���e�͂������ĒP���c�o�Ă���";
-		mes "�����X�^�[��S�ē|���Ηǂ��B";
+		mes "[ピーター神父]";
+		mes "それでは、退魔修練を始める。";
+		mes "内容はいたって単純…出てくる";
+		mes "モンスターを全て倒せば良い。";
 		next;
-		mes "[�s�[�^�[�_��]";
-		mes "���i�K�����邩��A�C�����Ȃ����B";
-		mes "�撣���ĂȁI";
+		mes "[ピーター神父]";
+		mes "何段階かあるから、気をつけなさい。";
+		mes "頑張ってな！";
 		next;
-		if('flag) {	//�����ł����b�N�`�F�b�N
-			mes "[�s�[�^�[�_��]";
-			mes "���c������Ƒ҂��Ă���B";
-			mes "�����̃A�R���C�g���C�������B";
+		if('flag) {	//ここでもロックチェック
+			mes "[ピーター神父]";
+			mes "あ…ちょっと待ってくれ。";
+			mes "今他のアコライトが修練中だ。";
 			next;
-			mes "[�s�[�^�[�_��]";
-			mes "���΂炭���Ă܂����������Ă���B";
-			mes "�I����Ă����瑗���Ă����邩��B";
+			mes "[ピーター神父]";
+			mes "しばらくしてまた声をかけてくれ。";
+			mes "終わっていたら送ってあげるから。";
 			close;
 		}
 		set @priest_check,0;
-		set getvariableofnpc('count,"PR_Summon"),0;	//mob�J�E���^��������
-		set 'flag,getcharid(3);				//�A�J�E���gID���g���ă��b�N����
+		set getvariableofnpc('count,"PR_Summon"),0;	//mobカウンタを初期化
+		set 'flag,getcharid(3);				//アカウントIDを使ってロックする
 		initnpctimer;
 		warp "job_prist.gat",24,44;
 		end;
 	case 2:
-		mes "[�s�[�^�[�_��]";
-		mes "�ӂށc�������ɏ����͕K�v���B";
-		mes "�悵�A�悩������܂����������Ă���B";
+		mes "[ピーター神父]";
+		mes "ふむ…たしかに準備は必要だ。";
+		mes "よし、よかったらまた声をかけてくれ。";
 		close;
 	case 3:
 		if(CHANGE_PR < 6) {
-			mes "[�s�[�^�[�_��]";
-			mes "���A�����܂ŗ��ċA��̂��B";
-			mes "���͍\��Ȃ����c";
+			mes "[ピーター神父]";
+			mes "何、ここまで来て帰るのか。";
+			mes "私は構わないが…";
 			next;
-			mes "[�s�[�^�[�_��]";
-			mes "�܂��n�߂Ă̌o��������A�|����̂�";
-			mes "�����͂Ȃ��ȁB�E�C���o����܂�";
-			mes "���Ȃ����B";
+			mes "[ピーター神父]";
+			mes "まあ始めての経験だから、怖がるのも";
+			mes "無理はないな。勇気が出たらまだ";
+			mes "来なさい。";
 		}
 		else {
-			mes "[�s�[�^�[�_��]";
-			mes "�܂��X�ɋA��Ɓc";
-			mes "����Ȃ��Ƃł͂��܂Ōo���Ă�";
-			mes "�v���[�X�g�ɂȂ邱�Ƃ͂ł��Ȃ����B";
+			mes "[ピーター神父]";
+			mes "また街に帰ると…";
+			mes "そんなことではいつまで経っても";
+			mes "プリーストになることはできないぞ。";
 			next;
-			mes "[�s�[�^�[�_��]";
-			mes "�N�ɂ͂܂������͑����ȁB";
-			mes "���̒��������������Ă���܂�";
-			mes "���Ȃ����B";
+			mes "[ピーター神父]";
+			mes "君にはまだここは早いな。";
+			mes "世の中をもう少し見てからまた";
+			mes "来なさい。";
 		}
 		close2;
 		warp "prontera.gat",234,318;
@@ -821,9 +821,9 @@ job_prist.gat,24,187,4	script	�^�t�Ȑ_��::PR_Timer	110,{
 	}
 OnTimer350000:
 	stopnpctimer;
-	if(attachrid('flag)) {	//�Ώۂ̓A�R�̂�
+	if(attachrid('flag)) {	//対象はアコのみ
 		set '@d,distance('flag);
-		if('@d < 0 || '@d > 23)		//�ҋ@�G���A�ȊO�Ȃ烏�[�v
+		if('@d < 0 || '@d > 23)		//待機エリア以外ならワープ
 			warp "prontera.gat",234,318;
 	}
 	set 'flag,0;
@@ -845,7 +845,7 @@ job_prist.gat,168,180,4	script	#PR_Warp2	45,2,2,{
 
 job_prist.gat,98,105,0	script	#PR_Warp3	45,2,2,{
 	if(Job == Job_Acolyte) {
-		if(@priest_check < 8)	//�O�̂��߃`�F�b�N����
+		if(@priest_check < 8)	//念のためチェックする
 			end;
 		set CHANGE_PR,7;
 		set @priest_check,0;
@@ -858,327 +858,327 @@ job_prist.gat,98,105,0	script	#PR_Warp3	45,2,2,{
 }
 
 //==============================================================
-job_prist.gat,168,45,4	script	�f�r���`	1109,5,0,{
+job_prist.gat,168,45,4	script	デビルチ	1109,5,0,{
 	end;
 OnTouch:
 	if(Job != Job_Acolyte) {
-		mes "[�f�r���`]";
-		mes "�ӂ�c�v���[�X�g������ȂƂ����";
-		mes "�Ȃ������H�X�ŋF���ł����Ă���";
-		mes "�͂����낤�H�L�L�L�L�L�c";
-		mes "���Ԃ𖳑ʂɂ���̂��D���Ȃ悤���ȁB";
+		mes "[デビルチ]";
+		mes "ふん…プリーストがこんなところに";
+		mes "なぜ来た？街で祈祷でもしている";
+		mes "はずだろう？キキキキキ…";
+		mes "時間を無駄にするのが好きなようだな。";
 		next;
-		mes "[�f�r���`]";
-		mes "�����͑��߂Ɍ��Ă�邩��";
-		mes "�������Ɨ�������B";
-		mes "��x�͖������c�L�L���L���I";
+		mes "[デビルチ]";
+		mes "今日は多めに見てやるから";
+		mes "さっさと立ち去れ。";
+		mes "二度は無いぞ…キキャキャ！";
 		close;
 	}
-	mes "[�f�r���`]";
-	mes "�ق��A�A�R���C�g�͋v���Ԃ�Ɍ��邼�B";
-	mes "���邩��Ƀv���[�X�g�ւ̓]�E�ł�";
-	mes "�l���Ă������ȁc�L���L���L���I";
+	mes "[デビルチ]";
+	mes "ほう、アコライトは久しぶりに見るぞ。";
+	mes "見るからにプリーストへの転職でも";
+	mes "考えてそうだな…キャキャキャ！";
 	next;
-	mes "[�f�r���`]";
-	mes "�������A�킵�ɂ͂��܂��������܂�";
-	mes "���ꂽ���Ƃ��s�v�c�łȂ��B";
+	mes "[デビルチ]";
+	mes "しかし、わしにはおまえがここまで";
+	mes "来れたことが不思議でならん。";
 	next;
-	mes "[�f�r���`]";
-	mes "�����Ă���ȑ�ςȓ���i�ނ̂��H";
-	mes "�����Ƒ��̊y�ȐE�Ƃ����������낤�I";
+	mes "[デビルチ]";
+	mes "あえてこんな大変な道を進むのか？";
+	mes "もっと他の楽な職業もあっただろう！";
 	next;
-	mes "[�f�r���`]";
-	mes "�X�ł��_���W�����ł����܂��ɏ�����";
-	mes "���߂���΂��肾�낤�H";
-	mes "������܂��̂��߂ɂ��Ă���邱�Ƃ�";
-	mes "�����Ƃ����̂ɂȁI";
+	mes "[デビルチ]";
+	mes "街でもダンジョンでもおまえに助けを";
+	mes "求めるやつらばかりだろう？";
+	mes "一つもおまえのためにしてくれることが";
+	mes "無いというのにな！";
 	next;
-	mes "[�f�r���`]";
-	mes "����͂킵���P�ӂŒ������Ă���Ă���";
-	mes "�̂����B��������ς����A���̂܂�";
-	mes "�����Ă����̂͂����Ɛh�����H";
-	mes "�ʂ̐�������T�����ł͂Ȃ����B";
+	mes "[デビルチ]";
+	mes "これはわしが善意で忠告してやっている";
+	mes "のだぞ。試練も大変だが、このまま";
+	mes "生きていくのはもっと辛いぞ？";
+	mes "別の生き方を探そうではないか。";
 	next;
-	if(select("�͂��c�������܂�","�����߁I�ނ��Ȃ����I")==1) {
-		mes "[�f�r���`]";
-		mes "�L�L�L�b�A�悭�I�񂾁B";
-		mes "��x�Ƃ����ɗ���Ȃ�I";
-		mes "�]�E����߂����܂��ɁA�킵����";
-		mes "�ǂ��v���[���g����낤�I";
+	if(select("はい…そうします","悪魔め！退きなさい！")==1) {
+		mes "[デビルチ]";
+		mes "キキキッ、よく選んだ。";
+		mes "二度とここに来るなよ！";
+		mes "転職を諦めたおまえに、わしから";
+		mes "良いプレゼントをやろう！";
 		next;
-		mes "[�f�r���`]";
-		mes "�^�_�ł킵�̗F�B�ɉ��@���";
-		mes "��邼�I�L���L���L���L���L���I";
+		mes "[デビルチ]";
+		mes "タダでわしの友達に会える機会を";
+		mes "やるぞ！キャキャキャキャキャ！";
 		next;
 		warp "c_tower2.gat",168,33;
 		end;
 	}
-	mes "[�f�r���`]";
-	mes "�L�L�L�L�L�c";
-	mes "�������킸�ɂ킵�̘b�������ƕ����B";
+	mes "[デビルチ]";
+	mes "キキキキキ…";
+	mes "そう言わずにわしの話をもっと聞け。";
 	next;
-	mes "[�f�r���`]";
-	mes "���]�E����߂�΁A�킵���ǂ����̂�";
-	mes "�v���[���g���悤�B";
-	mes "���܂����ꐶ�Ɉ�x���ڂɂ�����邩";
-	mes "�ǂ����Ƃ����㕨�����B�L���L���L��";
+	mes "[デビルチ]";
+	mes "今転職を諦めれば、わしが良いものを";
+	mes "プレゼントしよう。";
+	mes "おまえが一生に一度お目にかかれるか";
+	mes "どうかという代物だぞ。キャキャキャ";
 	next;
 	cutincard 4132;
-	mes "[�f�r���`]";
-	mes "���܂������͂ł���ȃJ�[�h�����";
-	mes "������邩�ȁH�悭�l���Ă݂�B";
+	mes "[デビルチ]";
+	mes "おまえが自力でこんなカードを手に";
+	mes "入れられるかな？よく考えてみろ。";
 	next;
-	if(select("�J�[�h���󂯎��","�����߁I�ނ��Ȃ����I")==1) {
-		mes "[�f�r���`]";
-		mes "�L�L�L�b ��͂�l�Ԃ�̂��I";
-		mes "���܂��ɂ��̋M�d�ȃJ�[�h��";
-		mes "����I";
+	if(select("カードを受け取る","悪魔め！退きなさい！")==1) {
+		mes "[デビルチ]";
+		mes "キキキッ やはり人間よのう！";
+		mes "おまえにこの貴重なカードを";
+		mes "やるわ！";
 		next;
-		mes "[�f�r���`]";
-		mes "�ł��킵�����킯�ł͂Ȃ��B";
-		mes "�撣���Ď�ɓ���Ă����I";
+		mes "[デビルチ]";
+		mes "でもわしがやるわけではない。";
+		mes "頑張って手に入れてこい！";
 		next;
 		warp "mjolnir_05.gat",200,200;
 		end;
 	}
 	cutin "dummy",255;
-	mes "[�f�r���`]";
-	mes "�����c�Ȃ��Ȃ��������_�����ȁB";
-	mes "���܂����Ȃ��͂Ŏ�ɓ�����邩";
-	mes "���Ă��Ă��c";
+	mes "[デビルチ]";
+	mes "きき…なかなか強い精神を持つな。";
+	mes "おまえが己が力で手に入れられるか";
+	mes "見ていてやる…";
 	next;
-	mes "[�f�r���`]";
-	mes "����������Ȃ���킵�̌���";
-	mes "�߂��Ă��邾�낤���ȁI�L���L���I";
+	mes "[デビルチ]";
+	mes "いつか後悔しながらわしの元に";
+	mes "戻ってくるだろうがな！キャキャ！";
 	close;
 }
 
 //==============================================================
-job_prist.gat,168,75,4	script	�h�b�y���Q���K�[	1046,5,0,{
+job_prist.gat,168,75,4	script	ドッペルゲンガー	1046,5,0,{
 	end;
 OnTouch:
 	if(Job != Job_Acolyte) {
-		mes "[�h�b�y���Q���K�[]";
-		mes "�����Ȑl�Ԃ�c��͋M�l�ɗp�͂Ȃ��B";
-		mes "�ʓ|�ł͂Ȃ����H�Ȃ̎����ł�����";
-		mes "����킯�ł͂Ȃ��낤�c";
+		mes "[ドッペルゲンガー]";
+		mes "愚かな人間よ…我は貴様に用はない。";
+		mes "面倒ではないか？己の試練でここに";
+		mes "居るわけではなかろう…";
 		next;
-		mes "[�h�b�y���Q���K�[]";
-		mes "�����݂̖����A�R���C�g��l�̂��߂�";
-		mes "��J�����邱�Ƃ͂Ȃ��B";
-		mes "������ʂ��Ƃɕt�����킸���₩��";
-		mes "�A�邱�Ƃ��c";
+		mes "[ドッペルゲンガー]";
+		mes "見込みの無いアコライト一人のために";
+		mes "苦労をすることはない。";
+		mes "くだらぬことに付き合わず速やかに";
+		mes "帰ることだ…";
 		close;
 	}
-	mes "[�h�b�y���Q���K�[]";
-	mes "�A�R���C�g��c������̘b�Ɏ����X����";
-	mes "���悢�c";
+	mes "[ドッペルゲンガー]";
+	mes "アコライトよ…少し我の話に耳を傾ける";
+	mes "がよい…";
 	next;
-	mes "[�h�b�y���Q���K�[]";
-	mes "���̃v���[�X�g�ɂȂ낤�Ƃ����̂��H";
-	mes "�䂪����ɋM�l�ɂ͂��̂悤�ȐE��";
-	mes "����Ȃ��B";
+	mes "[ドッペルゲンガー]";
+	mes "何故プリーストになろうというのだ？";
+	mes "我が見るに貴様にはそのような職は";
+	mes "合わない。";
 	next;
-	mes "[�h�b�y���Q���K�[]";
-	mes "�肤�Ȃ�Ή䂪�\�͂��Ȃ��ĐV����";
-	mes "�l�����n�߂����Ă�邼�H";
-	mes "���̋������������܂܃m�[�r�X�ɂ��A";
-	mes "�܂��A�]�񂾐E�ɏA�����Ă��B";
+	mes "[ドッペルゲンガー]";
+	mes "願うならば我が能力を以って新たな";
+	mes "人生を始めさせてやるぞ？";
+	mes "今の強さを持ったままノービスにし、";
+	mes "また、望んだ職に就かせてやる。";
 	next;
-	mes "[�h�b�y���Q���K�[]";
-	mes "���_���M�l�������x�����x�̔\�͂�";
-	mes "�������܂܂��B";
-	mes "�ǂ��������Ǝv�����c�ǂ����H";
+	mes "[ドッペルゲンガー]";
+	mes "無論今貴様が持つレベル程度の能力を";
+	mes "持ったままだ。";
+	mes "良い条件だと思うが…どうだ？";
 	next;
-	if(select("���˂������܂��I","�����߁I�ނ��Ȃ���")==2) {
-		mes "[�h�b�y���Q���K�[]";
-		mes "��̘b���悭�����ł��ʂ悤���ȁc";
-		mes "�l���������߂���ǂ��@�����";
-		mes "�Ƃ����̂ɂȁc";
+	if(select("おねがいします！","悪魔め！退きなさい")==2) {
+		mes "[ドッペルゲンガー]";
+		mes "我の話をよく理解できぬようだな…";
+		mes "人生を巻き戻せる良い機会だった";
+		mes "というのにな…";
 		next;
-		mes "[�h�b�y���Q���K�[]";
-		mes "�����v���[�X�g�ɂȂ�Ȃ��ƌ���������";
-		mes "�ǂ��̂��B�Ⴆ�΁A��̂悤�Ȍ��m��";
-		mes "�]�E���邱�Ƃ��\�����H";
+		mes "[ドッペルゲンガー]";
+		mes "ただプリーストにならないと言うだけで";
+		mes "良いのだ。例えば、我のような剣士に";
+		mes "転職することも可能だぞ？";
 		next;
-		if(select("�v���[�X�g�ɂ͓]�E���܂���","�����߁I�ނ��Ȃ����I")==2) {
-			mes "[�h�b�y���Q���K�[]";
-			mes "�c�Ȃ�΍��͌������Ă��c";
+		if(select("プリーストには転職しません","悪魔め！退きなさい！")==2) {
+			mes "[ドッペルゲンガー]";
+			mes "…ならば今は見逃してやる…";
 			next;
-			mes "[�h�b�y���Q���K�[]";
-			mes "���ɉ���A��ɂ̎���^���邼�B";
+			mes "[ドッペルゲンガー]";
+			mes "次に会う時、苦痛の死を与えるぞ。";
 			close;
 		}
 	}
-	mes "[�h�b�y���Q���K�[]";
-	mes "�悭�I�񂾁B";
-	mes "�]�ݒʂ�m�[�r�X�ɖ߂��Ă��B";
+	mes "[ドッペルゲンガー]";
+	mes "よく選んだ。";
+	mes "望み通りノービスに戻してやる。";
 	next;
-	mes "[�h�b�y���Q���K�[]";
-	mes "���ɐ��܂�ς���ĂȁI";
+	mes "[ドッペルゲンガー]";
+	mes "死に生まれ変わってな！";
 	next;
 	warp "gef_dun02.gat",210,177;
 	end;
 }
 
 //==============================================================
-job_prist.gat,168,115,4	script	�_�[�N���[�h	1272,5,0,{
+job_prist.gat,168,115,4	script	ダークロード	1272,5,0,{
 	end;
 OnTouch:
 	if(Job != Job_Acolyte) {
-		mes "[�_�[�N���[�h]";
-		mes "������I��ɂƐ�]���I";
-		mes "��ԑ�؂Ȏ҂��痠�؂���";
-		mes "�߂��݂Ɠ{����I";
+		mes "[ダークロード]";
+		mes "感じよ！苦痛と絶望を！";
+		mes "一番大切な者から裏切られる";
+		mes "悲しみと怒りを！";
 		next;
-		mes "[�_�[�N���[�h]";
-		mes "���̐S�A�����s���n�ƂȂ�";
-		mes "�S�̑��ɐ[���h���邾�낤�I";
+		mes "[ダークロード]";
+		mes "その心、いつか鋭い刃となり";
+		mes "心の臓に深く刺さるだろう！";
 		close;
 	}
-	mes "[�_�[�N���[�h]";
-	mes "�~�܂�c�l�Ԃ�c";
-	mes "�N�̋����𓾂Ă�����ʂ�߂�";
-	mes "�悤�Ǝv�����H";
+	mes "[ダークロード]";
+	mes "止まれ…人間よ…";
+	mes "誰の許しを得てここを通り過ぎ";
+	mes "ようと思うか？";
 	next;
-	mes "[�_�[�N���[�h]";
-	mes "�v���[�X�g�ɂȂ낤�Ƃ���";
-	mes "�A�R���C�g���c";
-	mes "���O�͂�����ʂ�߂��邱�Ƃ�";
-	mes "�ł��Ȃ��B";
-	mes "�A�邪�悢�c�łȂ���Ύ������O��";
-	mes "�E���ł��낤�B";
+	mes "[ダークロード]";
+	mes "プリーストになろうとする";
+	mes "アコライトか…";
+	mes "お前はここを通り過ぎることは";
+	mes "できない。";
+	mes "帰るがよい…でなければ私がお前を";
+	mes "殺すであろう。";
 	next;
-	mes "[�_�[�N���[�h]";
-	mes "�a�̂悤�Ȑl�Ԃ�c���̋x���̎���";
-	mes "�����łȂ��c";
+	mes "[ダークロード]";
+	mes "蟻のような人間よ…私の休息の時を";
+	mes "汚すでない…";
 	next;
-	if(select("���߂�Ȃ����c","�����߁I�ނ��Ȃ����I")==2) {
-		mes "[�_�[�N���[�h]";
-		mes "�ӂ�c�ꊅ�����Ƃ���ł��O�Ȃ�";
-		mes "�͗t�𝆂ނ����Ƃ����X�ɂł���";
-		mes "���܂����c";
+	if(select("ごめんなさい…","悪魔め！退きなさい！")==2) {
+		mes "[ダークロード]";
+		mes "ふん…一喝したところでお前など";
+		mes "枯葉を揉むがごとく粉々にできて";
+		mes "しまうぞ…";
 		next;
-		mes "[�_�[�N���[�h]";
-		mes "������閳���̖��͂ɂ����";
-		mes "�ؒ[���o�ɂ��Ă���悤�I";
+		mes "[ダークロード]";
+		mes "私が具える無限の魔力によって";
+		mes "木端微塵にしてくれよう！";
 		next;
-		if(select("�������͏����Ă��������I","�����߁I�ނ��Ȃ����I")==2) {
-			mes "[�_�[�N���[�h]";
-			mes "�������ɂ�炸�c�������悤���ȁc";
+		if(select("命だけは助けてください！","悪魔め！退きなさい！")==2) {
+			mes "[ダークロード]";
+			mes "見かけによらず芯が強いようだな…";
 			next;
-			mes "[�_�[�N���[�h]";
-			mes "���Ɏ��̑O�ɗ��������́A";
-			mes "�K���n���������Ă�낤���c";
+			mes "[ダークロード]";
+			mes "次に私の前に立った時は、";
+			mes "必ず地獄を見せてやろうぞ…";
 			close;
 		}
 	}
-	mes "[�_�[�N���[�h]";
-	mes "��x�ƌ����ȁI";
+	mes "[ダークロード]";
+	mes "二度と現れるな！";
 	next;
 	warp "gl_church.gat",145,170;
 	end;
 }
 
 //==============================================================
-job_prist.gat,168,150,4	script	�o�t�H���b�g	736,5,0,{
+job_prist.gat,168,150,4	script	バフォメット	736,5,0,{
 	end;
 OnTouch:
 	if(Job != Job_Acolyte) {
-		mes "[�o�t�H���b�g]";
-		mes "�l�Ԃ��c�����ăv���[�X�g�c";
+		mes "[バフォメット]";
+		mes "人間か…そしてプリースト…";
 		next;
-		mes "[�o�t�H���b�g]";
-		mes "�p�͖����c";
+		mes "[バフォメット]";
+		mes "用は無い…";
 		close;
 	}
-	mes "[�o�t�H���b�g]";
-	mes "�l�Ԃ�c";
+	mes "[バフォメット]";
+	mes "人間よ…";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "��������Ȃ����c�H";
+	mes "[バフォメット]";
+	mes "取引をしないか…？";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "��͂��O�ɕx�ƌ��͂�������B";
-	mes "�ꐶ�̊ԂɎg���s�������Ƃ̂ł��ʋ��c";
-	mes "�l�Ԃɂ͍��ʕ���c";
+	mes "[バフォメット]";
+	mes "我はお前に富と権力を授ける。";
+	mes "一生の間に使い尽くすことのできぬ金…";
+	mes "人間には作れぬ武器…";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "�����Ă��O���]�߂΁A���ł����";
-	mes "�������邱�Ƃ��ł���B";
-	mes "�F�͂��O�ƓG�΂��邱�Ƃ�����A";
-	mes "�₪�ĂЂꕚ�����낤�c";
+	mes "[バフォメット]";
+	mes "そしてお前が望めば、いつでも我を";
+	mes "召喚することができる。";
+	mes "皆はお前と敵対することを恐れ、";
+	mes "やがてひれ伏すだろう…";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "�v���[�X�g�ւ̓]�E����߁A��ƌ_���";
-	mes "���ڂ����B";
-	mes "������΂��̐��͂��O�̕��ƂȂ�B";
+	mes "[バフォメット]";
+	mes "プリーストへの転職を諦め、我と契約を";
+	mes "結ぼうぞ。";
+	mes "さすればこの世はお前の物となる。";
 	next;
-	if(select("�v���[�X�g�֓]�E���܂���","�����߁I�ނ��Ȃ����I")==1) {
-		mes "[�o�t�H���b�g]";
-		mes "����ł͌_������ڂ����c";
-		mes "�����̖����I���ɂȂ邾�낤�c";
+	if(select("プリーストへ転職しません","悪魔め！退きなさい！")==1) {
+		mes "[バフォメット]";
+		mes "それでは契約を結ぼうか…";
+		mes "悔いの無い選択になるだろう…";
 		next;
-		mes "[�o�t�H���b�g]";
-		mes "���̂Ƃ���܂ŗ��Ȃ����c";
-		mes "�����Ō_������Ԏ��ɂ���B";
+		mes "[バフォメット]";
+		mes "私のところまで来なさい…";
+		mes "そこで契約を結ぶ事にする。";
 		next;
 		warp "glast_01.gat",200,203;
 		end;
 	}
-	mes "[�o�t�H���b�g]";
-	mes "�悵�c�]�݂ǂ�������Ă��c";
-	mes "�������A���O���o��͓̂���낤�B";
+	mes "[バフォメット]";
+	mes "よし…望みどおり消えてやる…";
+	mes "しかし、お前も出るのは難しかろう。";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "���ʂɂ��O�̂��߂Ƀ����X�^�[�B��p��";
-	mes "���Ă���B�ǂ�قǂ̂��̂�";
-	mes "�����Ă��炤���B";
+	mes "[バフォメット]";
+	mes "特別にお前のためにモンスター達を用意";
+	mes "している。どれほどのものか";
+	mes "見せてもらうぞ。";
 	next;
-	mes "[�o�t�H���b�g]";
-	mes "�ł͋A��c";
+	mes "[バフォメット]";
+	mes "では帰れ…";
 	close;
 }
 
 //==============================================================
 job_prist.gat,0,0,0	script	PR_Summon	-1,{
 	end;
-//���i�K
+//第一段階
 OnEvent0:
-	monster "job_prist.gat",24,52,"�s��",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,52,"�s��",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,51,"�i��",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,52,"不徳",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",18,52,"不忠",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",30,51,"妬み",1015,1,"PR_Summon::OnKilled";
 	end;
 OnEvent1:
-	monster "job_prist.gat",21,62,"�{��",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",27,62,"����",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",21,62,"怒り",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",27,62,"怨根",1015,1,"PR_Summon::OnKilled";
 	end;
 OnEvent2:
-	monster "job_prist.gat",24,72,"����",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,72,"��~",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,72,"�ӏ�",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,72,"傲慢",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",18,72,"情欲",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",30,72,"怠情",1015,1,"PR_Summon::OnKilled";
 	end;
 OnEvent3:
-	monster "job_prist.gat",21,82,"�ÐH",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",27,82,"�n�~",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",21,82,"貪食",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",27,82,"貧欲",1015,1,"PR_Summon::OnKilled";
 	end;
 OnEvent4:
-	monster "job_prist.gat",24,92,"��]",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,92,"�s�M",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,92,"���|",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,92,"絶望",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",18,92,"不信",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",30,92,"恐怖",1015,1,"PR_Summon::OnKilled";
 	end;
-//��O�i�K
+//第三段階
 OnEvent5:
-	monster "job_prist.gat",90,55,"�A���[�Y",1041,1;
-	monster "job_prist.gat",105,54,"�A�}�V�X",1041,1;
+	monster "job_prist.gat",90,55,"アモーズ",1041,1;
+	monster "job_prist.gat",105,54,"アマシス",1041,1;
 	end;
 OnEvent6:
-	monster "job_prist.gat",90,70,"���l�g",1041,1;
-	monster "job_prist.gat",105,70,"�A�n�}�h",1041,1;
+	monster "job_prist.gat",90,70,"メネト",1041,1;
+	monster "job_prist.gat",105,70,"アハマド",1041,1;
 	end;
 OnEvent7:
-	monster "job_prist.gat",90,85,"���l�X",1041,1;
-	monster "job_prist.gat",105,85,"�l�y�X",1041,1;
+	monster "job_prist.gat",90,85,"メネス",1041,1;
+	monster "job_prist.gat",105,85,"ネペス",1041,1;
 	end;
 OnKilled:
 	set 'count,'count+1;
@@ -1205,479 +1205,479 @@ job_prist.gat,98,84,0	duplicate(PR_Test#0)	PR_Test#7	139,8,0
 
 
 //==========================================
-// �O�������i��d����j
+// 三次試験（奉仕誓約）
 //------------------------------------------
 
-prt_church.gat,27,24,4	script	�C����	79,{
+prt_church.gat,27,24,4	script	修道女	79,{
 	if(Upper == UPPER_HIGH) {
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��͓]������Ă��܂��̂�";
-		mes "�����ł͓]�E�ē��ł��܂���B";
+		mes "[セシル修道女]";
+		mes "あなたは転生されていますので";
+		mes "ここでは転職案内できません。";
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
-		mes "�v�����e���吹���͂��Ȃ������}���܂��B";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
+		mes "プロンテラ大聖堂はあなたを歓迎します。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�܂��E�Ƃ����߂Ă��܂��񂩁H";
-		mes "���E�҂ɂȂ�̂͂������ł��傤�B";
-		mes "�A�R���C�g�ɂȂ��đ��̐l�X������";
-		mes "�Ȃ��琶���čs�����Ƃ́A�{����";
-		mes "�f���炵�����Ƃł���B";
+		mes "[セシル修道女]";
+		mes "まだ職業を決めていませんか？";
+		mes "聖職者になるのはいかがでしょう。";
+		mes "アコライトになって他の人々を助け";
+		mes "ながら生きて行くことは、本当に";
+		mes "素晴らしいことですよ。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�A�R���C�g�ւ̓]�E�ɂ��ẮA";
-		mes "���Α��̕����ɂ���_�������";
-		mes "���b�����Ă݂Ă��������B";
+		mes "[セシル修道女]";
+		mes "アコライトへの転職については、";
+		mes "反対側の部屋にいる神父さんに";
+		mes "お話をしてみてください。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�A�R���C�g�ŔM�S�ɏC�s��ς݁A";
-		mes "JobLv40�ȏ�ɂȂ��܂�����";
-		mes "������Ńv���[�X�g�]�E�̋V��";
-		mes "�󂯂邱�Ƃ��ł��܂��B";
+		mes "[セシル修道女]";
+		mes "アコライトで熱心に修行を積み、";
+		mes "JobLv40以上になられましたら";
+		mes "こちらでプリースト転職の儀を";
+		mes "受けることができます。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�܂��m�[�r�X�ł�����A��������";
-		mes "�l����̂��ǂ��ł��傤�B";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
+		mes "[セシル修道女]";
+		mes "まだノービスですから、ゆっくりと";
+		mes "考えるのが良いでしょう。";
+		mes "あなたに神のご加護がありますように…";
 		close;
 	}
 	if(Job == Job_Priest) {
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
-		mes "�������ǂ�����ɂȂ��Ăق����ł��ˁB";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
+		mes "今日も良い一日になってほしいですね。";
 		close;
 	}
 	if(Job != Job_Acolyte) {
-		mes "[�Z�V���C����]";
-		mes "������̓v�����e���吹���ł��B";
-		mes "�ǂ̂悤�ȗp�ł��K�˂ɂȂ�܂������H";
+		mes "[セシル修道女]";
+		mes "こちらはプロンテラ大聖堂です。";
+		mes "どのような用でお訪ねになりましたか？";
 		next;
-		if(select("�v���[�X�g�ɂ��ċ����Ă�������","��������Ă݂܂���")==2) {
-			mes "[�Z�V���C����]";
-			mes "�������x��ł�����Ă��������B";
-			mes "�_�ւ̊��ӂ͂ǂ����Y�ꂸ�ɁB";
+		if(select("プリーストについて教えてください","少し寄ってみました")==2) {
+			mes "[セシル修道女]";
+			mes "ゆっくり休んでいかれてください。";
+			mes "神への感謝はどうか忘れずに。";
 			next;
-			mes "[�Z�V���C����]";
-			mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
+			mes "[セシル修道女]";
+			mes "あなたに神のご加護がありますように…";
 			close;
 		}
-		mes "[�Z�V���C����]";
-		mes "�v���[�X�g�ƂƂ́A�M�`�����";
-		mes "�_�̑�َ҂Ȃ̂ł��B";
-		mes "�m�[�r�X����܂��A�R���C�g�ɂȂ�A";
-		mes "�C�s��ς񂾎҂������v���[�X�g��";
-		mes "�Ȃ邱�Ƃ��ł��܂��B";
+		mes "[セシル修道女]";
+		mes "プリーストととは、信義を説く";
+		mes "神の代弁者なのです。";
+		mes "ノービスからまずアコライトになり、";
+		mes "修行を積んだ者だけがプリーストに";
+		mes "なることができます。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���E�ҒB�ɂ́A�s���n�������������";
-		mes "�g�p���邱�Ƃ��ւ����Ă��܂��B";
-		mes "���̂Ȃ�A�����X�^�[���U������ړI��";
-		mes "�E���ł͂Ȃ��A����������ł��B";
+		mes "[セシル修道女]";
+		mes "聖職者達には、鋭い刃を持った武器を";
+		mes "使用することが禁じられています。";
+		mes "何故なら、モンスターを攻撃する目的は";
+		mes "殺生ではなく、教化だからです。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�������A�v���[�X�g�B�ɉ���Ē���";
-		mes "���b�𕷂��̂��ǂ��ł��傤���ǁA";
-		mes "���ɂ�������Ⴂ�܂��g�[�}�X�i���l��";
-		mes "�f���Ă݂Ă͂������ł��傤�B";
+		mes "[セシル修道女]";
+		mes "もちろん、プリースト達に会って直接";
+		mes "お話を聞くのも良いでしょうけど、";
+		mes "奥にいらっしゃいますトーマス司教様に";
+		mes "伺ってみてはいかがでしょう。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�����ڂ������b��������Ǝv���܂��B";
+		mes "[セシル修道女]";
+		mes "私より詳しくお話が聞けると思います。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
 		close;
 	}
 	switch(CHANGE_PR) {
 	case 0:
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
-		mes "�ǂ̂悤�ȗp�ł��K�˂ɂȂ�܂������H";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
+		mes "どのような用でお訪ねになりましたか？";
 		next;
-		if(select("�v���[�X�g�ɓ]�E�������̂ł�","���ɂ��p�͂���܂���")==2) {
-			mes "[�Z�V���C����]";
-			mes "�������x��ł�����Ă��������B";
-			mes "�����͂��Ȃ����ɂ͉Ƃ̂悤��";
-			mes "���̂ł��B�C���˂Ȃ����ł�";
-			mes "���炵�Ă��������B";
+		if(select("プリーストに転職したいのです","特にご用はありません")==2) {
+			mes "[セシル修道女]";
+			mes "ゆっくり休んでいかれてください。";
+			mes "聖堂はあなた方には家のような";
+			mes "ものです。気兼ねなくいつでも";
+			mes "いらしてください。";
 			next;
-			mes "[�Z�V���C����]";
-			mes "�����č��x���������鎞�́A";
-			mes "���񑼂̃A�R���C�g�B�̂��l�q��";
-			mes "�������Ă��������ˁB";
-			mes "���Ȃ��ɐ_�̂����삪����܂��悤�ɁB";
+			mes "[セシル修道女]";
+			mes "そして今度いらっしゃる時は、";
+			mes "是非他のアコライト達のご様子も";
+			mes "聞かせてくださいね。";
+			mes "あなたに神のご加護がありますように。";
 			close;
 		}
-		mes "[�Z�V���C����]";
-		mes "���A�v���[�X�g�ւ̓]�E�ł����I";
-		mes "��������̃A�R���C�g�l���v���[�X�g��";
-		mes "�Ȃ���̂���X�����Ă���܂��B";
+		mes "[セシル修道女]";
+		mes "あ、プリーストへの転職ですか！";
+		mes "たくさんのアコライト様がプリーストに";
+		mes "なられるのを日々夢見ております。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���̖��O�̓Z�V��=�}���K���[�^�B";
-		mes "�A�R���C�g�l�B�̓]�E������`��";
-		mes "���Ă���C�����ł��B";
-		mes "���Ȃ��̂����ɗ��Ă�΂Ǝv���܂��B";
+		mes "[セシル修道女]";
+		mes "私の名前はセシル=マルガリータ。";
+		mes "アコライト様達の転職をお手伝い";
+		mes "している修道女です。";
+		mes "あなたのお役に立てればと思います。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���͂�����ň���������������̕��X��";
-		mes "�v���[�X�g�ɓ]�E����̂����Ă��܂���";
-		mes "�B";
-		mes "�����č��̓v���[�X�g�ɂȂ낤�Ƃ���";
-		mes "���X������`�����Ă��܂��c";
+		mes "[セシル修道女]";
+		mes "私はこちらで育ったせいか多くの方々が";
+		mes "プリーストに転職するのを見てきました";
+		mes "。";
+		mes "そして今はプリーストになろうとする";
+		mes "方々をお手伝いしています…";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�v���[�X�g�]�E�̂��߂ɂ͐��X�̎�����";
-		mes "���z���Ȃ���΂Ȃ�܂���B";
-		mes "���n����E�ޖ��C���E��d�̐���c";
-		mes "���������ׂĂ��Ȃ��Ă͂��߂�";
-		mes "�v���[�X�g�ɂȂ邱�Ƃ��F�߂��܂��B";
+		mes "[セシル修道女]";
+		mes "プリースト転職のためには数々の試練を";
+		mes "乗り越えなければなりません。";
+		mes "聖地巡礼・退魔修練・奉仕の誓約…";
+		mes "それらをすべてこなしてはじめて";
+		mes "プリーストになることが認められます。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�]�E������]�ł����牜�ɂ���������";
-		mes "�g�[�}�X�i���l�̂Ƃ���֍s���āA";
-		mes "�]�E���邽�߂̎������󂯂Ă炵��";
-		mes "���������B";
+		mes "[セシル修道女]";
+		mes "転職をご希望でしたら奥にいらっしゃる";
+		mes "トーマス司教様のところへ行って、";
+		mes "転職するための試練を受けてらして";
+		mes "ください。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "��������_���������܂�����A";
-		mes "���ɐq�˂Ă��������ˁB";
-		mes "���ɂł��邱�ƂȂ牽�ł�����`��";
-		mes "�v���܂��B";
+		mes "[セシル修道女]";
+		mes "何か難しい点がございましたら、";
+		mes "私に尋ねてくださいね。";
+		mes "私にできることなら何でもお手伝い";
+		mes "致します。";
 		close;
 	case 1:
-		mes "[�Z�V���C����]";
-		mes "����̗����n�܂�܂����ˁB";
-		mes "��ςł����A�Ō�܂Ŋ撣����";
-		mes "���������B";
-		mes "���߂Ɍ������Ƃ����";
-		mes "���o���J�o���_���l�̂Ƃ���ł��B";
+		mes "[セシル修道女]";
+		mes "巡礼の旅が始まりましたね。";
+		mes "大変ですが、最後まで頑張って";
+		mes "ください。";
+		mes "初めに向かうところは";
+		mes "ルバルカバラ神父様のところです。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���̕��̂���������Ƃ���́A";
-		mes "�v�����e������k���̕��p�ɂ���";
-		mes "��Ղ̓�����ł��B";
-		mes "����������n�ƂȂ�܂��B";
+		mes "[セシル修道女]";
+		mes "その方のいらっしゃるところは、";
+		mes "プロンテラから北東の方角にある";
+		mes "遺跡の入り口です。";
+		mes "そこが巡礼地となります。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���̕��̂���������n��ɂ́A";
-		mes "����������������Z��ł��܂��B";
-		mes "���܂ɋ��\�ȉ��ł���`���R�Ƃ���";
-		mes "�l�Ԃ��P�������X�^�[�����܂�����";
-		mes "���ꂾ���͋C�����Ă��������B";
+		mes "[セシル修道女]";
+		mes "その方のいらっしゃる地域には、";
+		mes "猿たちがたくさん住んでいます。";
+		mes "たまに凶暴な猿であるチョコという";
+		mes "人間を襲うモンスターがいますから";
+		mes "それだけは気をつけてください。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���o���J�o���_���l�ɂ����";
-		mes "�Ȃ��Ă���A�}�`���_�V�X�^�[�l��";
-		mes "�m��_���l�ɉ���Ă��������";
-		mes "�ǂ��ł��B�������A�r���ł������";
-		mes "�����ɂȂ��Ċm�F����Ă���낵��";
-		mes "�ł���B";
+		mes "[セシル修道女]";
+		mes "ルバルカバラ神父様にお会いに";
+		mes "なってから、マチルダシスター様と";
+		mes "洋介神父様に会ってくだされば";
+		mes "良いです。もちろん、途中でこちらに";
+		mes "お寄りになって確認されてもよろしい";
+		mes "ですよ。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "����ł́A�����Ă�����Ⴂ�܂��B";
-		mes "���߂��A�Ō�܂ł�萋����";
-		mes "���������B���̈��S�����F�肵�܂��B";
+		mes "[セシル修道女]";
+		mes "それでは、いってらっしゃいませ。";
+		mes "諦めず、最後までやり遂げて";
+		mes "ください。旅の安全をお祈りします。";
 		close;
 	case 2:
-		mes "[�Z�V���C����]";
-		mes "���o���J�o���_���l�ɂ����";
-		mes "�Ȃ�܂����ˁB�������܂����獡�x��";
-		mes "�}�`���_�V�X�^�[�l�ɂ�����������B";
-		mes "�ޏ��̓����N�Ƃ����X�̋߂���";
-		mes "��������Ⴂ�܂��B";
+		mes "[セシル修道女]";
+		mes "ルバルカバラ神父様にお会いに";
+		mes "なりましたね。そうしましたら今度は";
+		mes "マチルダシスター様にお会いください。";
+		mes "彼女はモロクという街の近くに";
+		mes "いらっしゃいます。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�����N�k�̍����ŏC�s�����Ǝf����";
-		mes "�܂��B�����炭�c�k���̕����悭���T��";
-		mes "�ɂȂ�Ό�����Ǝv���܂��B";
+		mes "[セシル修道女]";
+		mes "モロク北の砂漠で修行中だと伺って";
+		mes "ます。おそらく…北西の方をよくお探し";
+		mes "になれば見つかると思います。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�������̕��X�̂悤�ɏC�s�ɏo����";
-		mes "�̂ł����A�����ŊF�l�̂���`����";
-		mes "���邱�Ƃ��厖�Ȗ�ڂł�����A";
-		mes "������M�`�̈�ł��傤�B";
+		mes "[セシル修道女]";
+		mes "私も他の方々のように修行に出たい";
+		mes "のですが、ここで皆様のお手伝いを";
+		mes "することも大事な役目ですから、";
+		mes "これも信義の一環でしょう。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "����ł́A�����Ă�����Ⴂ�܂��B";
-		mes "���߂��A�Ō�܂ł�萋����";
-		mes "���������B���̈��S�����F�肵�܂��B";
+		mes "[セシル修道女]";
+		mes "それでは、いってらっしゃいませ。";
+		mes "諦めず、最後までやり遂げて";
+		mes "ください。旅の安全をお祈りします。";
 		close;
 	case 3:
-		mes "[�Z�V���C����]";
-		mes "�͂��A���Ƃ͗m��_���l�ɂ����";
-		mes "�Ȃ�Ώ���̗��͏I���ƂȂ�܂��B";
-		mes "�v�����e������k�����ʂ̌΂̋߂���";
-		mes "����������ƕ����܂����B";
+		mes "[セシル修道女]";
+		mes "はい、あとは洋介神父様にお会いに";
+		mes "なれば巡礼の旅は終わりとなります。";
+		mes "プロンテラから北西方面の湖の近くに";
+		mes "いらっしゃると聞きました。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "��ɐ��̕��ɔ������ق����A���̂��";
-		mes "�Ղ����Ǝv���܂���B";
+		mes "[セシル修道女]";
+		mes "先に西の方に抜けたほうが、道のりは";
+		mes "易しいと思いますわ。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���炪�I����Ă������͂܂������܂���";
-		mes "�Ŋ��܂ŕK����萋���邱�Ƃ�";
-		mes "����Ă���܂��c�B";
+		mes "[セシル修道女]";
+		mes "巡礼が終わっても試練はまだ続きますが";
+		mes "最期まで必ずやり遂げることを";
+		mes "願っております…。";
 		close;
 	case 4:
-		mes "[�Z�V���C����]";
-		mes "���A��Ȃ����B";
-		mes "�������A�����l�ł����B";
-		mes "����ł͎i���l�̂Ƃ���ցB";
-		mes "�����͎��̒i�K�ւƐi�݂܂��B";
+		mes "[セシル修道女]";
+		mes "お帰りなさい。";
+		mes "長い旅、お疲れ様でした。";
+		mes "それでは司教様のところへ。";
+		mes "試練は次の段階へと進みます。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�ޖ��C���͑�ςł����A";
-		mes "���Ȃ��Ȃ炫���Ƒ��v�ł��I";
-		mes "��������`����������ł����A";
-		mes "�����֗���A�R���C�g�l�̏���";
-		mes "�ɂȂ��Ă����Ȃ��Ă͂Ȃ�܂���B";
+		mes "[セシル修道女]";
+		mes "退魔修練は大変ですが、";
+		mes "あなたならきっと大丈夫です！";
+		mes "私もお手伝いしたいんですが、";
+		mes "ここへ来るアコライト様の助け";
+		mes "になってあげなくてはなりません。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�C���������Ă�������������̂�";
-		mes "�ǂ��ł��傤�B";
-		mes "����ł́A���������撣���Ă��������B";
+		mes "[セシル修道女]";
+		mes "修練を助けてくれる方を見つけるのも";
+		mes "良いでしょう。";
+		mes "それでは、引き続き頑張ってください。";
 		close;
 	case 5:
-		mes "[�Z�V���C����]";
-		mes "�ޖ��C���͂ǂ����܂������H";
-		mes "�ǂ�Ȏ����ɂȂ邩�͎��ł�";
-		mes "�ڂ��������܂���c�B";
+		mes "[セシル修道女]";
+		mes "退魔修練はどうしましたか？";
+		mes "どんな試練になるかは私でも";
+		mes "詳しく言えません…。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�����A�������������肵�ėՂނ��ƂƁA";
-		mes "�ϔY��~�]�ɐg�𓊂��Ȃ����_�͂�";
-		mes "�K�v�ƂȂ�ł��傤�B";
-		mes "�������g����������ƕۂ��Ƃ�";
-		mes "�ł���Α��v�ł��傤�B";
+		mes "[セシル修道女]";
+		mes "ただ、準備をしっかりして臨むことと、";
+		mes "煩悩や欲望に身を投じない精神力が";
+		mes "必要となるでしょう。";
+		mes "自分自身をしっかりと保つことが";
+		mes "できれば大丈夫でしょう。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�ڂ������Ƃ́A�C����ɂ���������";
-		mes "�s�[�^�[�_���l�Ɏf���Ă��������B";
-		mes "�g�[�}�X�i���l�Ƃ��e�����ԕ��ł�����";
-		mes "�悭�����Ă����Ǝv���܂��B";
+		mes "[セシル修道女]";
+		mes "詳しいことは、修練場にいらっしゃる";
+		mes "ピーター神父様に伺ってください。";
+		mes "トーマス司教様とも親しい間柄ですから";
+		mes "よく教えてくれると思います。";
 		close;
 	case 6:
-		mes "[�Z�V���C����]";
-		mes "��ςł����A���߂Ă͂Ȃ�܂���B";
-		mes "�ǂ�ȔϔY��U�f�ɂ������Ȃ�";
-		mes "�����S������΁A�v���[�X�g��";
-		mes "�Ȃ��ł��傤�B";
+		mes "[セシル修道女]";
+		mes "大変ですが、諦めてはなりません。";
+		mes "どんな煩悩や誘惑にも負けない";
+		mes "強い心があれば、プリーストに";
+		mes "なれるでしょう。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���̐�y�v���[�X�g�l���ʂ�ꂽ��";
-		mes "���肢���ď����Ă��������̂��ǂ�";
-		mes "�ł��傤�B";
-		mes "�ޖ��C���̏��i�K�܂ł͎�`����";
-		mes "�����������Ƃ��ł��܂����B";
+		mes "[セシル修道女]";
+		mes "他の先輩プリースト様が通られたら";
+		mes "お願いして助けていただくのも良い";
+		mes "でしょう。";
+		mes "退魔修練の初段階までは手伝って";
+		mes "いただくことができますし。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
-		mes "�ޖ��C�����I���܂�����A�܂�";
-		mes "���̂Ƃ���ɋA���Ă��Ă��������ˁB";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
+		mes "退魔修練が終わりましたら、また";
+		mes "私のところに帰ってきてくださいね。";
 		close;
 	case 7:
-		mes "[�Z�V���C����]";
-		mes "��J�Ȃ����܂����ˁI";
-		mes "�ł��A�]�E�����̍ŏI�i�K�܂ŗ���";
-		mes "���Ƃ��ł��܂����B";
+		mes "[セシル修道女]";
+		mes "苦労なさいましたね！";
+		mes "でも、転職試練の最終段階まで来る";
+		mes "ことができました。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "����ł́A���Ȃ����v���[�X�g��";
-		mes "�]�E�����邽�߂̐��񎮂�";
-		mes "�n�߂����Ǝv���܂��B";
-		mes "���̎���ɑ΂��āA�^���ɓ�����";
-		mes "���������ˁB";
+		mes "[セシル修道女]";
+		mes "それでは、あなたをプリーストに";
+		mes "転職させるための誓約式を";
+		mes "始めたいと思います。";
+		mes "私の質問に対して、真剣に答えて";
+		mes "くださいね。";
 		break;
 	case 8:
-		mes "[�Z�V���C����]";
-		mes "�c�c";
+		mes "[セシル修道女]";
+		mes "……";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���A��ɂȂ��܂����ˁB";
-		mes "���x�͐������������ƌ����";
-		mes "�������������ł��c";
+		mes "[セシル修道女]";
+		mes "お帰りになられましたね。";
+		mes "今度は誓約をしっかりと結んで";
+		mes "いただきたいです…";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��̐M�`���`���悤�Ɂc";
-		mes "�^���Ɏ󂯓��������Ă��������B";
+		mes "[セシル修道女]";
+		mes "あなたの信義が伝わるように…";
+		mes "真剣に受け答えをしてください。";
 		break;
 	case 9:
-		mes "[�Z�V���C����]";
-		mes "���ׂĂ̎������I���܂����c";
-		mes "�g�[�}�X�i���l�̌��֍s����A";
-		mes "�v���[�X�g�ƂƂ��Đ��܂�ς����";
-		mes "���������B";
+		mes "[セシル修道女]";
+		mes "すべての試練が終わりました…";
+		mes "トーマス司教様の元へ行かれ、";
+		mes "プリーストととして生まれ変わって";
+		mes "ください。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�ɁB";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように。";
 		close;
 	}
-	//7,8�̂Ƃ�����
+	//7,8のとき続き
 	next;
 	set CHANGE_PR,8;
-	mes "[�Z�V���C����]";
-	mes "����ł͎n�߂܂��B";
+	mes "[セシル修道女]";
+	mes "それでは始めます。";
 	next;
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��́A�c��̐l����_�̂��߂�";
-	mes "�����邱�Ƃ��ł��܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは、残りの人生を神のために";
+	mes "捧げることができますか？";
 	next;
-	if(select("�͂�","������")==2) {
-		mes "[�Z�V���C����]";
-		mes "�Ȃ�����ȕԎ����c";
-		mes "�܂��v���[�X�g�ɂȂ邽�߂�";
-		mes "�S�\��������Ȃ��悤�ł��c";
+	if(select("はい","いいえ")==2) {
+		mes "[セシル修道女]";
+		mes "なぜそんな返事を…";
+		mes "まだプリーストになるための";
+		mes "心構えが足りないようです…";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���������������g�����߂Ȃ�����";
-		mes "�����������Ă��������B";
-		mes "�����������S�\���ł́A�����ƈ���";
-		mes "�S��D���Ă��܂��ł��傤�B";
+		mes "[セシル修道女]";
+		mes "もう少し自分自身を見つめなおして";
+		mes "いらっしゃってください。";
+		mes "そういった心構えでは、きっと悪に";
+		mes "心を奪われてしまうでしょう。";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��́A�\�͂��������g�̂��߂�";
-	mes "�g���āA���𓾂悤�Ƃ��܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは、能力を自分自身のために";
+	mes "使って、利を得ようとしますか？";
 	next;
-	if(select("�͂�","������")==1) {
-		mes "[�Z�V���C����]";
-		mes "�Ȃ�܂���B";
-		mes "���B�������\�͂́A���̂��߂�";
-		mes "����̂ł͂���܂���B";
-		mes "����ȍl���ł��Ȃ��̓v���[�X�g��";
-		mes "�Ȃ낤�Ǝv�����̂ł����B";
+	if(select("はい","いいえ")==1) {
+		mes "[セシル修道女]";
+		mes "なりません。";
+		mes "私達が得た能力は、利のために";
+		mes "あるのではありません。";
+		mes "そんな考えであなたはプリーストに";
+		mes "なろうと思ったのですか。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�v���[�X�g�ɂ��āA�����Ƃ悭";
-		mes "�l���Ă��炵�Ă��������B";
-		mes "����ȐS�\���ł́A�������~��";
-		mes "���܂��Ă��܂������ł��B";
+		mes "[セシル修道女]";
+		mes "プリーストについて、もっとよく";
+		mes "考えていらしてください。";
+		mes "そんな心構えでは、ただ世欲に";
+		mes "染まってしまうだけです。";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��́A�퓬�ŋꂵ��ł��鑼�l��";
-	mes "�����̔\�͂ŏ����悤�Ƃ��܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは、戦闘で苦しんでいる他人を";
+	mes "自分の能力で助けようとしますか？";
 	next;
-	if(select("�͂�","������")==2) {
-		mes "[�Z�V���C����]";
-		mes "����ł͂Ȃ�܂���B";
-		mes "�v���[�X�g�̔\�͂́A�l�����������";
-		mes "�Ƃ��Ă���̂ł��c";
-		mes "�ǂ�Ȑl�ł��낤�ƁA���������߂�҂�";
-		mes "�����珕����̂����߂Ȃ̂ł��c";
+	if(select("はい","いいえ")==2) {
+		mes "[セシル修道女]";
+		mes "それではなりません。";
+		mes "プリーストの能力は、人を助けるもの";
+		mes "としてあるのです…";
+		mes "どんな人であろうと、助けを求める者が";
+		mes "いたら助けるのが務めなのです…";
 		next;
-		mes "[�Z�V���C����]";
-		mes "����̐l�X���悭���Ă����Ȃ����c";
-		mes "�l�X�ɋꂵ�݂�������͂��ł��c";
+		mes "[セシル修道女]";
+		mes "周りの人々をよく見てごらんなさい…";
+		mes "人々に苦しみが見えるはずです…";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��͑��l�������A�������]����";
-	mes "���邱�Ƃ��ł��܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは他人を助け、自分を犠牲に";
+	mes "することができますか？";
 	next;
-	if(select("�͂�","������")==2) {
-		mes "[�Z�V���C����]";
-		mes "�c�������B";
-		mes "�������g���]���ɂ��Ă��A";
-		mes "���l�������邱�Ƃ͗��h�Ȃ��Ƃł��B";
+	if(select("はい","いいえ")==2) {
+		mes "[セシル修道女]";
+		mes "…いいえ。";
+		mes "自分自身を犠牲にしても、";
+		mes "他人を助けることは立派なことです。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�]���Ƃ������t���悭�l���Ă��������B";
-		mes "���l�ɐs�����Ƃ����Ӗ��ł͂���ȏ��";
-		mes "�s�ׂ͂���܂���c";
+		mes "[セシル修道女]";
+		mes "犠牲という言葉をよく考えてください。";
+		mes "他人に尽くすという意味ではこれ以上の";
+		mes "行為はありません…";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��͊X��O�Łu�������t�v��";
-	mes "�J��Ԃ�����ׂ�Ȃ�������܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは街や外で「同じ言葉」を";
+	mes "繰り返ししゃべりながら歩きますか？";
 	next;
-	if(select("�͂�","������")==1) {
-		mes "[�Z�V���C����]";
-		mes "�Ȃ�܂���B����̓v���[�X�g��";
-		mes "�΂��Ă����ł͂Ȃ��A���̕��X�ɂ�";
-		mes "�����邱�Ƃł��B";
-		mes "���邳������ŕ����Ă��A�N���U��";
-		mes "�Ԃ��ĕ����Ă���܂���B";
+	if(select("はい","いいえ")==1) {
+		mes "[セシル修道女]";
+		mes "なりません。これはプリーストに";
+		mes "対してだけではなく、他の方々にも";
+		mes "言えることです。";
+		mes "うるさく叫んで歩いても、誰も振り";
+		mes "返って聞いてくれません。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "��������ƌ����Ă����̂悤��";
-		mes "��肩���͊Ԉ���Ă��܂��B";
-		mes "�������g�̍s����������x�悭";
-		mes "�U��Ԃ��Ă݂Ă��������c";
+		mes "[セシル修道女]";
+		mes "道を説くと言ってもそのような";
+		mes "やりかたは間違っています。";
+		mes "自分自身の行動をもう一度よく";
+		mes "振り返ってみてください…";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��͑����̃����X�^�[�������A���";
-	mes "���Ƃɂ���đ��l�������܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは多くのモンスターを引き連れる";
+	mes "ことによって他人を助けますか？";
 	next;
-	if(select("�͂�","������")==1) {
-		mes "[�Z�V���C����]";
-		mes "����͑�ϊ댯�ȍs�ׂł��B";
-		mes "���������ł͂Ȃ��A���l����������";
-		mes "���ԂɂȂ肩�˂܂���B";
-		mes "�ǂ������X�^�[�E���������X�^�[��";
-		mes "���炸�ł��B";
+	if(select("はい","いいえ")==1) {
+		mes "[セシル修道女]";
+		mes "それは大変危険な行為です。";
+		mes "自分だけではなく、他人も巻き込む";
+		mes "事態になりかねません。";
+		mes "良いモンスター・悪いモンスターに";
+		mes "限らずです。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�����͑��l������������ł��A";
-		mes "���̕��A�������͂��̎��͂̕���";
-		mes "�K�������~����킯�ł͂���܂���B";
-		mes "�{���ɑ��l��������Ƃ����s�ׂ�";
-		mes "�ǂ��������ƂȂ̂���������x";
-		mes "���l�����������B";
+		mes "[セシル修道女]";
+		mes "自分は他人を助けたつもりでも、";
+		mes "その方、もしくはその周囲の方が";
+		mes "必ずしも救われるわけではありません。";
+		mes "本当に他人を助けるという行為が";
+		mes "どういうことなのかをもう一度";
+		mes "お考えください。";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��͐M�`�̓�����ʂ��A";
-	mes "�M�`�̂��߂Ɏ��ʂ��Ƃ��ł��܂����H";
+	mes "[セシル修道女]";
+	mes "あなたは信義の道をつらぬき、";
+	mes "信義のために死ぬことができますか？";
 	next;
-	if(select("�͂�","������")==2) {
-		mes "[�Z�V���C����]";
-		mes "���������S�\���ł́A�v���[�X�g��";
-		mes "�Ȃ邱�Ƃ͂ł��܂���B";
+	if(select("はい","いいえ")==2) {
+		mes "[セシル修道女]";
+		mes "そういう心構えでは、プリーストに";
+		mes "なることはできません。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���B�ɂ́A�h���̔\�͂�����܂��B";
-		mes "���Ǝ������Ȃ��ɂƂ��Ăǂ�����";
-		mes "�Ӗ����Ȃ����悭�l���Ă��������B";
+		mes "[セシル修道女]";
+		mes "私達には、蘇生の能力もあります。";
+		mes "生と死があなたにとってどういう";
+		mes "意味をなすかよく考えてください。";
 		close;
 	}
-	mes "[�Z�V���C����]";
-	mes "���Ȃ��̐�����󂯂܂����B";
-	mes "�Ō�ɁA����܂ŏq�ׂ����Ƃ�";
-	mes "�S�Đ����܂����H";
+	mes "[セシル修道女]";
+	mes "あなたの誓約を受けました。";
+	mes "最後に、これまで述べたことを";
+	mes "全て誓いますか？";
 	next;
-	if(select("�����܂�","������")==2) {
-		mes "[�Z�V���C����]";
-		mes "�c�c";
+	if(select("誓います","いいえ")==2) {
+		mes "[セシル修道女]";
+		mes "……";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�܂��A�S�\�����s�\���̂悤�ł��ˁB";
-		mes "�v���[�X�g�ɂȂ�̂͂܂������ł��B";
+		mes "[セシル修道女]";
+		mes "まだ、心構えが不十分のようですね。";
+		mes "プリーストになるのはまだ早いです。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "�Ăя��炩�炨�肢�������Ƃ���ł���";
-		mes "�悭�������g���Ȃ݁A���ӂ��ł߂Ă���";
-		mes "���̂Ƃ���ɂ��z�����������B";
+		mes "[セシル修道女]";
+		mes "再び巡礼からお願いしたいところですが";
+		mes "よく自分自身を省み、決意を固めてから";
+		mes "私のところにお越しください。";
 		next;
-		mes "[�Z�V���C����]";
-		mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
+		mes "[セシル修道女]";
+		mes "あなたに神のご加護がありますように…";
 		close;
 	}
 	set CHANGE_PR,9;
-	mes "[�Z�V���C����]";
-	mes "����ɂ����܂��Đ��񎮂�";
-	mes "�I���܂��B";
-	mes "�g�[�}�X�i���l�̂��Ƃ֍s�����";
-	mes "�Ō�̋V���󂯂Ă��������B";
+	mes "[セシル修道女]";
+	mes "これにおきまして誓約式を";
+	mes "終わります。";
+	mes "トーマス司教様のもとへ行かれて";
+	mes "最後の儀を受けてください。";
 	next;
-	mes "[�Z�V���C����]";
-	mes "�����Y��Ȃ��ł��������c";
-	mes "���B�͌Z��o���Ƃ��ċ��ɂ���";
-	mes "���Ƃ��c";
-	mes "���Ȃ��ɐ_�̂����삪����܂��悤�Ɂc";
+	mes "[セシル修道女]";
+	mes "いつも忘れないでください…";
+	mes "私達は兄弟姉妹として共にある";
+	mes "ことを…";
+	mes "あなたに神のご加護がありますように…";
 	close;
 }

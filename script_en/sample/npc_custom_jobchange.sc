@@ -1,39 +1,39 @@
 //-----------------------------------------------------------------------------
-// “]EƒJƒvƒ‰	<3ŸE‘Î‰”Å>
+// è»¢è·ã‚«ãƒ—ãƒ©	<3æ¬¡è·å¯¾å¿œç‰ˆ>
 //-----------------------------------------------------------------------------
-prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
+prontera.gat,161,192,5	script	è»¢è·ã‚«ãƒ—ãƒ©	114,{
 	cutin "kafra_04",2;
-	mes "[“]EƒJƒvƒ‰]";
-	mes "‚¢‚ç‚Á‚µ‚á‚¢‚Ü‚¹B";
-	mes "‚±‚¿‚ç‚Å‚ÍA“]E‚·‚é–‚ªo—ˆ‚Ü‚·B";
-	mes "“]E‚ğ‚²Šó–]‚Å‚·‚©H";
+	mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+	mes "ã„ã‚‰ã£ã—ã‚ƒã„ã¾ã›ã€‚";
+	mes "ã“ã¡ã‚‰ã§ã¯ã€è»¢è·ã™ã‚‹äº‹ãŒå‡ºæ¥ã¾ã™ã€‚";
+	mes "è»¢è·ã‚’ã”å¸Œæœ›ã§ã™ã‹ï¼Ÿ";
 	next;
-	if(select("‚Í‚¢","‚¢‚¢‚¦") == 2) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "‚Ü‚½‚²—˜—p‚­‚¾‚³‚¢B";
+	if(select("ã¯ã„","ã„ã„ãˆ") == 2) {
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "ã¾ãŸã”åˆ©ç”¨ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
 	if(getskilllv(1) < 9) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "Šî–{ƒXƒLƒ‹‚ª‘«‚è‚Ü‚¹‚ñB";
-		mes "Šî–{ƒXƒLƒ‹ƒŒƒxƒ‹‚ğã‚°‚Ä‚©‚ç";
-		mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚";
+		mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ã‹ã‚‰";
+		mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
 	if(SkillPoint) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "ƒXƒLƒ‹ƒ|ƒCƒ“ƒg‚ªc‚Á‚Ä‚¢‚Ü‚·B";
-		mes "‘S‚ÄÁ”ï‚µ‚Ä‚«‚Ä‚©‚ç";
-		mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "ã‚¹ã‚­ãƒ«ãƒã‚¤ãƒ³ãƒˆãŒæ®‹ã£ã¦ã„ã¾ã™ã€‚";
+		mes "å…¨ã¦æ¶ˆè²»ã—ã¦ãã¦ã‹ã‚‰";
+		mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
-	// E‹ÆIDƒZƒbƒg
+	// è·æ¥­IDã‚»ãƒƒãƒˆ
 	set '@job_id,0;
 	switch(Job) {
 		case Job_Novice:
@@ -146,250 +146,250 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 			break;
 	}
 	if('@job_id[0] == 0) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "c”O‚È‚ª‚çA‚ ‚È‚½‚É";
-		mes "‚²ˆÄ“à‚Å‚«‚éE‹Æ‚ª‚ ‚è‚Ü‚¹‚ñB";
-		mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "æ®‹å¿µãªãŒã‚‰ã€ã‚ãªãŸã«";
+		mes "ã”æ¡ˆå†…ã§ãã‚‹è·æ¥­ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
+		mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
-	mes "[“]EƒJƒvƒ‰]";
-	mes "‚ ‚È‚½‚É‚²ˆÄ“à‚Å‚«‚éE‹Æ‚Í";
-	mes "Ÿ‚Ì’Ê‚è‚Å‚·B";
-	mes "‚Ç‚ÌE‹Æ‚É“]E‚³‚ê‚Ü‚·‚©H";
+	mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+	mes "ã‚ãªãŸã«ã”æ¡ˆå†…ã§ãã‚‹è·æ¥­ã¯";
+	mes "æ¬¡ã®é€šã‚Šã§ã™ã€‚";
+	mes "ã©ã®è·æ¥­ã«è»¢è·ã•ã‚Œã¾ã™ã‹ï¼Ÿ";
 	next;
-	// E‹Æ–¼ƒZƒbƒg
+	// è·æ¥­åã‚»ãƒƒãƒˆ
 	set '@job_name$,"";
 	set '@max,getarraysize('@job_id);
 	for(set '@i,0; '@i < '@max; set '@i,'@i + 1) {
 		switch('@job_id['@i]) {
 			case Job_Swordman:
-				set '@job_name$['@i],"ƒ\[ƒhƒ}ƒ“";
+				set '@job_name$['@i],"ã‚½ãƒ¼ãƒ‰ãƒãƒ³";
 				break;
 			case Job_Magician:
-				set '@job_name$['@i],"ƒ}ƒWƒVƒƒƒ“";
+				set '@job_name$['@i],"ãƒã‚¸ã‚·ãƒ£ãƒ³";
 				break;
 			case Job_Archer:
-				set '@job_name$['@i],"ƒA[ƒ`ƒƒ[";
+				set '@job_name$['@i],"ã‚¢ãƒ¼ãƒãƒ£ãƒ¼";
 				break;
 			case Job_Acolyte:
-				set '@job_name$['@i],"ƒAƒRƒ‰ƒCƒg";
+				set '@job_name$['@i],"ã‚¢ã‚³ãƒ©ã‚¤ãƒˆ";
 				break;
 			case Job_Merchant:
-				set '@job_name$['@i],"ƒ}[ƒ`ƒƒƒ“ƒg";
+				set '@job_name$['@i],"ãƒãƒ¼ãƒãƒ£ãƒ³ãƒˆ";
 				break;
 			case Job_Thief:
-				set '@job_name$['@i],"ƒV[ƒt";
+				set '@job_name$['@i],"ã‚·ãƒ¼ãƒ•";
 				break;
 			case Job_Knight:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒ[ƒhƒiƒCƒg";
+					set '@job_name$['@i],"ãƒ­ãƒ¼ãƒ‰ãƒŠã‚¤ãƒˆ";
 				}
 				else {
-					set '@job_name$['@i],"ƒiƒCƒg";
+					set '@job_name$['@i],"ãƒŠã‚¤ãƒˆ";
 				}
 				break;
 			case Job_Priest:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒnƒCƒvƒŠ[ƒXƒg";
+					set '@job_name$['@i],"ãƒã‚¤ãƒ—ãƒªãƒ¼ã‚¹ãƒˆ";
 				}
 				else {
-					set '@job_name$['@i],"ƒvƒŠ[ƒXƒg";
+					set '@job_name$['@i],"ãƒ—ãƒªãƒ¼ã‚¹ãƒˆ";
 				}
 				break;
 			case Job_Wizard:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒnƒCƒEƒBƒU[ƒh";
+					set '@job_name$['@i],"ãƒã‚¤ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰";
 				}
 				else {
-					set '@job_name$['@i],"ƒEƒBƒU[ƒh";
+					set '@job_name$['@i],"ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰";
 				}
 				break;
 			case Job_Blacksmith:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒzƒƒCƒgƒXƒ~ƒX";
+					set '@job_name$['@i],"ãƒ›ãƒ¯ã‚¤ãƒˆã‚¹ãƒŸã‚¹";
 				}
 				else {
-					set '@job_name$['@i],"ƒuƒ‰ƒbƒNƒXƒ~ƒX";
+					set '@job_name$['@i],"ãƒ–ãƒ©ãƒƒã‚¯ã‚¹ãƒŸã‚¹";
 				}
 				break;
 			case Job_Hunter:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒXƒiƒCƒp[";
+					set '@job_name$['@i],"ã‚¹ãƒŠã‚¤ãƒ‘ãƒ¼";
 				}
 				else {
-					set '@job_name$['@i],"ƒnƒ“ƒ^[";
+					set '@job_name$['@i],"ãƒãƒ³ã‚¿ãƒ¼";
 				}
 				break;
 			case Job_Assassin:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒAƒTƒVƒ“ƒNƒƒX";
+					set '@job_name$['@i],"ã‚¢ã‚µã‚·ãƒ³ã‚¯ãƒ­ã‚¹";
 				}
 				else {
-					set '@job_name$['@i],"ƒAƒTƒVƒ“";
+					set '@job_name$['@i],"ã‚¢ã‚µã‚·ãƒ³";
 				}
 				break;
 			case Job_Crusader:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒpƒ‰ƒfƒBƒ“";
+					set '@job_name$['@i],"ãƒ‘ãƒ©ãƒ‡ã‚£ãƒ³";
 				}
 				else {
-					set '@job_name$['@i],"ƒNƒ‹ƒZƒCƒ_[";
+					set '@job_name$['@i],"ã‚¯ãƒ«ã‚»ã‚¤ãƒ€ãƒ¼";
 				}
 				break;
 			case Job_Monk:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒ`ƒƒƒ“ƒsƒIƒ“";
+					set '@job_name$['@i],"ãƒãƒ£ãƒ³ãƒ”ã‚ªãƒ³";
 				}
 				else {
-					set '@job_name$['@i],"ƒ‚ƒ“ƒN";
+					set '@job_name$['@i],"ãƒ¢ãƒ³ã‚¯";
 				}
 				break;
 			case Job_Sage:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒvƒƒtƒFƒbƒT[";
+					set '@job_name$['@i],"ãƒ—ãƒ­ãƒ•ã‚§ãƒƒã‚µãƒ¼";
 				}
 				else {
-					set '@job_name$['@i],"ƒZ[ƒW";
+					set '@job_name$['@i],"ã‚»ãƒ¼ã‚¸";
 				}
 				break;
 			case Job_Rogue:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒ`ƒFƒCƒT[";
+					set '@job_name$['@i],"ãƒã‚§ã‚¤ã‚µãƒ¼";
 				}
 				else {
-					set '@job_name$['@i],"ƒ[ƒO";
+					set '@job_name$['@i],"ãƒ­ãƒ¼ã‚°";
 				}
 				break;
 			case Job_Alchemist:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒNƒŠƒGƒCƒ^[";
+					set '@job_name$['@i],"ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼";
 				}
 				else {
-					set '@job_name$['@i],"ƒAƒ‹ƒPƒ~ƒXƒg";
+					set '@job_name$['@i],"ã‚¢ãƒ«ã‚±ãƒŸã‚¹ãƒˆ";
 				}
 				break;
 			case Job_Bard:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒNƒ‰ƒEƒ“";
+					set '@job_name$['@i],"ã‚¯ãƒ©ã‚¦ãƒ³";
 				}
 				else {
-					set '@job_name$['@i],"ƒo[ƒh";
+					set '@job_name$['@i],"ãƒãƒ¼ãƒ‰";
 				}
 				break;
 			case Job_Dancer:
 				if(Upper == UPPER_HIGH) {
-					set '@job_name$['@i],"ƒWƒvƒV[";
+					set '@job_name$['@i],"ã‚¸ãƒ—ã‚·ãƒ¼";
 				}
 				else {
-					set '@job_name$['@i],"ƒ_ƒ“ƒT[";
+					set '@job_name$['@i],"ãƒ€ãƒ³ã‚µãƒ¼";
 				}
 				break;
 			case Job_SuperNovice:
-				set '@job_name$['@i],"ƒX[ƒp[ƒm[ƒrƒX";
+				set '@job_name$['@i],"ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹";
 				break;
 			case Job_Taekwon:
-				set '@job_name$['@i],"ƒeƒRƒ“ƒLƒbƒh";
+				set '@job_name$['@i],"ãƒ†ã‚³ãƒ³ã‚­ãƒƒãƒ‰";
 				break;
 			case Job_Star:
-				set '@job_name$['@i],"Œ¹";
+				set '@job_name$['@i],"æ‹³è–";
 				break;
 			case Job_Linker:
-				set '@job_name$['@i],"ƒ\ƒEƒ‹ƒŠƒ“ƒJ[";
+				set '@job_name$['@i],"ã‚½ã‚¦ãƒ«ãƒªãƒ³ã‚«ãƒ¼";
 				break;
 			case Job_Gunslinger:
-				set '@job_name$['@i],"ƒKƒ“ƒXƒŠƒ“ƒK[";
+				set '@job_name$['@i],"ã‚¬ãƒ³ã‚¹ãƒªãƒ³ã‚¬ãƒ¼";
 				break;
 			case Job_Ninja:
-				set '@job_name$['@i],"”EÒ";
+				set '@job_name$['@i],"å¿è€…";
 				break;
 			case Job_Gyangsy:
 				if(Sex) {
-					set '@job_name$['@i],"ƒ{ƒ“ƒSƒ“";
+					set '@job_name$['@i],"ãƒœãƒ³ã‚´ãƒ³";
 				}
 				else {
-					set '@job_name$['@i],"ƒ€ƒiƒbƒN";
+					set '@job_name$['@i],"ãƒ ãƒŠãƒƒã‚¯";
 				}
 				break;
 			case Job_DeathKnight:
-				set '@job_name$['@i],"ƒfƒXƒiƒCƒg";
+				set '@job_name$['@i],"ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆ";
 				break;
 			case Job_DarkCollector:
-				set '@job_name$['@i],"ƒ_[ƒNƒRƒŒƒNƒ^[";
+				set '@job_name$['@i],"ãƒ€ãƒ¼ã‚¯ã‚³ãƒ¬ã‚¯ã‚¿ãƒ¼";
 				break;
 			case Job_RuneKnight:
-				set '@job_name$['@i],"ƒ‹[ƒ“ƒiƒCƒg";
+				set '@job_name$['@i],"ãƒ«ãƒ¼ãƒ³ãƒŠã‚¤ãƒˆ";
 				break;
 			case Job_Warlock:
-				set '@job_name$['@i],"ƒEƒH[ƒƒbƒN";
+				set '@job_name$['@i],"ã‚¦ã‚©ãƒ¼ãƒ­ãƒƒã‚¯";
 				break;
 			case Job_Ranger:
-				set '@job_name$['@i],"ƒŒƒ“ƒWƒƒ[";
+				set '@job_name$['@i],"ãƒ¬ãƒ³ã‚¸ãƒ£ãƒ¼";
 				break;
 			case Job_ArchBishop:
-				set '@job_name$['@i],"ƒA[ƒNƒrƒVƒ‡ƒbƒv";
+				set '@job_name$['@i],"ã‚¢ãƒ¼ã‚¯ãƒ“ã‚·ãƒ§ãƒƒãƒ—";
 				break;
 			case Job_Mechanic:
-				set '@job_name$['@i],"ƒƒJƒjƒbƒN";
+				set '@job_name$['@i],"ãƒ¡ã‚«ãƒ‹ãƒƒã‚¯";
 				break;
 			case Job_Guillotine:
-				set '@job_name$['@i],"ƒMƒƒ`ƒ“ƒNƒƒX";
+				set '@job_name$['@i],"ã‚®ãƒ­ãƒãƒ³ã‚¯ãƒ­ã‚¹";
 				break;
 			case Job_RoyalGuard:
-				set '@job_name$['@i],"ƒƒCƒ„ƒ‹ƒK[ƒh";
+				set '@job_name$['@i],"ãƒ­ã‚¤ãƒ¤ãƒ«ã‚¬ãƒ¼ãƒ‰";
 				break;
 			case Job_Sorcerer:
-				set '@job_name$['@i],"ƒ\[ƒTƒ‰[";
+				set '@job_name$['@i],"ã‚½ãƒ¼ã‚µãƒ©ãƒ¼";
 				break;
 			case Job_Minstrel:
-				set '@job_name$['@i],"ƒ~ƒ“ƒXƒgƒŒƒ‹";
+				set '@job_name$['@i],"ãƒŸãƒ³ã‚¹ãƒˆãƒ¬ãƒ«";
 				break;
 			case Job_Wanderer:
-				set '@job_name$['@i],"ƒƒ“ƒ_ƒ‰[";
+				set '@job_name$['@i],"ãƒ¯ãƒ³ãƒ€ãƒ©ãƒ¼";
 				break;
 			case Job_Shura:
-				set '@job_name$['@i],"C—…";
+				set '@job_name$['@i],"ä¿®ç¾…";
 				break;
 			case Job_Genetic:
-				set '@job_name$['@i],"ƒWƒFƒlƒeƒBƒbƒN";
+				set '@job_name$['@i],"ã‚¸ã‚§ãƒãƒ†ã‚£ãƒƒã‚¯";
 				break;
 			case Job_ShadowChaser:
-				set '@job_name$['@i],"ƒVƒƒƒhƒEƒ`ƒFƒCƒT[";
+				set '@job_name$['@i],"ã‚·ãƒ£ãƒ‰ã‚¦ãƒã‚§ã‚¤ã‚µãƒ¼";
 				break;
 			case Job_ExpandedSuperNovice:
-				set '@job_name$['@i],"Šg’£ƒX[ƒp[ƒm[ƒrƒX";
+				set '@job_name$['@i],"æ‹¡å¼µã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹";
 				break;
 			case Job_Kagerou:
-				set '@job_name$['@i],"‰e˜T";
+				set '@job_name$['@i],"å½±ç‹¼";
 				break;
 			case Job_Oboro:
-				set '@job_name$['@i],"O";
+				set '@job_name$['@i],"æœ§";
 				break;
 		}
 	}
-	set '@job_name$['@max],"‚â‚ß‚é";
+	set '@job_name$['@max],"ã‚„ã‚ã‚‹";
 	set @menu,select(printarray('@job_name$));
 	if('@job_id[@menu - 1] == 0) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "‚Ü‚½‚²—˜—p‚­‚¾‚³‚¢B";
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "ã¾ãŸã”åˆ©ç”¨ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
 	set '@sel_job,'@job_id[@menu - 1];
-	mes "[“]EƒJƒvƒ‰]";
-	mes "^FF0000" +'@job_name$[@menu - 1]+ "^000000‚É";
-	mes "“]E‚³‚ê‚Ü‚·‚©H";
+	mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+	mes "^FF0000" +'@job_name$[@menu - 1]+ "^000000ã«";
+	mes "è»¢è·ã•ã‚Œã¾ã™ã‹ï¼Ÿ";
 	next;
-	if(select("‚Í‚¢","‚¢‚¢‚¦") == 2) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "‚Ü‚½‚²—˜—p‚­‚¾‚³‚¢B";
+	if(select("ã¯ã„","ã„ã„ãˆ") == 2) {
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "ã¾ãŸã”åˆ©ç”¨ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
-	// “]Eƒ`ƒFƒbƒNi’¼‘Oj
+	// è»¢è·ãƒã‚§ãƒƒã‚¯ï¼ˆç›´å‰ï¼‰
 	switch('@sel_job) {
 		case Job_Swordman:
 		case Job_Magician:
@@ -402,20 +402,20 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 		case Job_Ninja:
 		case Job_Gyangsy:
 			if(getskilllv(1) < 9) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "Šî–{ƒXƒLƒ‹‚ª‘«‚è‚Ü‚¹‚ñB";
-				mes "Šî–{ƒXƒLƒ‹ƒŒƒxƒ‹‚ğã‚°‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚";
+				mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
 			}
 			if(JobLevel < 10) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "ˆêŸE‚É“]E‚·‚é‚É‚Í";
-				mes "JobƒŒƒxƒ‹‚ª10•K—v‚Å‚·B";
-				mes "JobƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "ä¸€æ¬¡è·ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Jobãƒ¬ãƒ™ãƒ«ãŒ10å¿…è¦ã§ã™ã€‚";
+				mes "Jobãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -423,30 +423,30 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 			break;
 		case Job_SuperNovice:
 			if(getskilllv(1) < 9) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "Šî–{ƒXƒLƒ‹‚ª‘«‚è‚Ü‚¹‚ñB";
-				mes "Šî–{ƒXƒLƒ‹ƒŒƒxƒ‹‚ğã‚°‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚";
+				mes "åŸºæœ¬ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
 			}
 			if(JobLevel < 10) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "ƒX[ƒp[ƒm[ƒrƒX‚É“]E‚·‚é‚É‚Í";
-				mes "JobƒŒƒxƒ‹‚ª40•K—v‚Å‚·B";
-				mes "JobƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Jobãƒ¬ãƒ™ãƒ«ãŒ40å¿…è¦ã§ã™ã€‚";
+				mes "Jobãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
 			}
 			if(BaseLevel < 45) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "ƒX[ƒp[ƒm[ƒrƒX‚É“]E‚·‚é‚É‚Í";
-				mes "BaseƒŒƒxƒ‹‚ª45ˆÈã•K—v‚Å‚·B";
-				mes "BaseƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Baseãƒ¬ãƒ™ãƒ«ãŒ45ä»¥ä¸Šå¿…è¦ã§ã™ã€‚";
+				mes "Baseãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -470,11 +470,11 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 		case Job_DeathKnight:
 		case Job_DarkCollector:
 			if(JobLevel < 40) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "“ñŸE‚É“]E‚·‚é‚É‚Í";
-				mes "JobƒŒƒxƒ‹‚ª40ˆÈã•K—v‚Å‚·B";
-				mes "JobƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "äºŒæ¬¡è·ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Jobãƒ¬ãƒ™ãƒ«ãŒ40ä»¥ä¸Šå¿…è¦ã§ã™ã€‚";
+				mes "Jobãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -493,33 +493,33 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 		case Job_Shura:
 		case Job_Genetic:
 		case Job_ShadowChaser:
-// ‘“àd—l
+// å›½å†…ä»•æ§˜
 //			if(Upper != UPPER_HIGH) {
-//				mes "[“]EƒJƒvƒ‰]";
-//				mes "OŸE‚É“]E‚·‚é‚É‚Í";
-//				mes "“]¶‚³‚ê‚Ä‚¢‚é•K—v‚ª‚ ‚è‚Ü‚·B";
-//				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+//				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+//				mes "ä¸‰æ¬¡è·ã«è»¢è·ã™ã‚‹ã«ã¯";
+//				mes "è»¢ç”Ÿã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚";
+//				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 //				close2;
 //				cutin "kafra_04",255;
 //				end;
 //			}
 //			if(BaseLevel < 90) {
-//				mes "[“]EƒJƒvƒ‰]";
-//				mes "OŸE‚É“]E‚·‚é‚É‚Í";
-//				mes "BaseƒŒƒxƒ‹‚ª90ˆÈã•K—v‚Å‚·B";
-//				mes "BaseƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-//				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+//				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+//				mes "ä¸‰æ¬¡è·ã«è»¢è·ã™ã‚‹ã«ã¯";
+//				mes "Baseãƒ¬ãƒ™ãƒ«ãŒ90ä»¥ä¸Šå¿…è¦ã§ã™ã€‚";
+//				mes "Baseãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+//				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 //				close2;
 //				cutin "kafra_04",255;
 //				end;
 //			}
-// ŠCŠOd—l
+// æµ·å¤–ä»•æ§˜
 			if(BaseLevel < 99) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "OŸE‚É“]E‚·‚é‚É‚Í";
-				mes "BaseƒŒƒxƒ‹‚ª99•K—v‚Å‚·B";
-				mes "BaseƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "ä¸‰æ¬¡è·ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Baseãƒ¬ãƒ™ãƒ«ãŒ99å¿…è¦ã§ã™ã€‚";
+				mes "Baseãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -527,21 +527,21 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 			break;
 		case Job_ExpandedSuperNovice:
 			if(JobLevel < 99) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "Šg’£ƒX[ƒp[ƒm[ƒrƒX‚É“]E‚·‚é‚É‚Í";
-				mes "JobƒŒƒxƒ‹‚ª99•K—v‚Å‚·B";
-				mes "JobƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "æ‹¡å¼µã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Jobãƒ¬ãƒ™ãƒ«ãŒ99å¿…è¦ã§ã™ã€‚";
+				mes "Jobãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
 			}
 			if(BaseLevel < 99) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes "Šg’£ƒX[ƒp[ƒm[ƒrƒX‚É“]E‚·‚é‚É‚Í";
-				mes "BaseƒŒƒxƒ‹‚ª99•K—v‚Å‚·B";
-				mes "BaseƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes "æ‹¡å¼µã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒãƒ¼ãƒ“ã‚¹ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Baseãƒ¬ãƒ™ãƒ«ãŒ99å¿…è¦ã§ã™ã€‚";
+				mes "Baseãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -550,21 +550,21 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 		case Job_Kagerou:
 		case Job_Oboro:
 			if(JobLevel < 70) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes '@job_name$[0] + "‚É“]E‚·‚é‚É‚Í";
-				mes "JobƒŒƒxƒ‹‚ª70•K—v‚Å‚·B";
-				mes "JobƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes '@job_name$[0] + "ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Jobãƒ¬ãƒ™ãƒ«ãŒ70å¿…è¦ã§ã™ã€‚";
+				mes "Jobãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
 			}
 			if(BaseLevel < 99) {
-				mes "[“]EƒJƒvƒ‰]";
-				mes '@job_name$[0] + "‚É“]E‚·‚é‚É‚Í";
-				mes "BaseƒŒƒxƒ‹‚ª99•K—v‚Å‚·B";
-				mes "BaseƒŒƒxƒ‹‚ğã‚°‚Ä‚«‚Ä‚©‚ç";
-				mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+				mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+				mes '@job_name$[0] + "ã«è»¢è·ã™ã‚‹ã«ã¯";
+				mes "Baseãƒ¬ãƒ™ãƒ«ãŒ99å¿…è¦ã§ã™ã€‚";
+				mes "Baseãƒ¬ãƒ™ãƒ«ã‚’ä¸Šã’ã¦ãã¦ã‹ã‚‰";
+				mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 				close2;
 				cutin "kafra_04",255;
 				end;
@@ -572,19 +572,19 @@ prontera.gat,161,192,5	script	“]EƒJƒvƒ‰	114,{
 			break;
 	}
 	if(SkillPoint) {
-		mes "[“]EƒJƒvƒ‰]";
-		mes "ƒXƒLƒ‹ƒ|ƒCƒ“ƒg‚ªc‚Á‚Ä‚¢‚Ü‚·B";
-		mes "‘S‚ÄÁ”ï‚µ‚Ä‚«‚Ä‚©‚ç";
-		mes "‚Ü‚½‚¨‰z‚µ‚­‚¾‚³‚¢B";
+		mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+		mes "ã‚¹ã‚­ãƒ«ãƒã‚¤ãƒ³ãƒˆãŒæ®‹ã£ã¦ã„ã¾ã™ã€‚";
+		mes "å…¨ã¦æ¶ˆè²»ã—ã¦ãã¦ã‹ã‚‰";
+		mes "ã¾ãŸãŠè¶Šã—ãã ã•ã„ã€‚";
 		close2;
 		cutin "kafra_04",255;
 		end;
 	}
 	unequip;
 	jobchange '@sel_job;
-	mes "[“]EƒJƒvƒ‰]";
-	mes "“]E‚¨‚ß‚Å‚Æ‚¤‚²‚´‚¢‚Ü‚·I";
-	mes "‹M•û‚Ì‚²Šˆ–ô‚ÉŠú‘Ò‚µ‚Ä‚¢‚Ü‚·B";
+	mes "[è»¢è·ã‚«ãƒ—ãƒ©]";
+	mes "è»¢è·ãŠã‚ã§ã¨ã†ã”ã–ã„ã¾ã™ï¼";
+	mes "è²´æ–¹ã®ã”æ´»èºã«æœŸå¾…ã—ã¦ã„ã¾ã™ã€‚";
 	close2;
 	cutin "kafra_04",255;
 	end;

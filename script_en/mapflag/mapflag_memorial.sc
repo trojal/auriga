@@ -1,5 +1,5 @@
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ 1‘wi1`25Fj - 1@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ 1å±¤ï¼ˆ1ï½25Fï¼‰ - 1@tower.gat
 //------------------------------------------------------------
 1@tower.gat	mapflag	nosave		SavePoint
 1@tower.gat	mapflag	nomemo		dummy
@@ -10,7 +10,7 @@
 1@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ 2‘wi26`50Fj - 2@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ 2å±¤ï¼ˆ26ï½50Fï¼‰ - 2@tower.gat
 //------------------------------------------------------------
 2@tower.gat	mapflag	nosave			SavePoint
 2@tower.gat	mapflag	nomemo			dummy
@@ -21,7 +21,7 @@
 2@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ 3‘wi51`75Fj - 3@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ 3å±¤ï¼ˆ51ï½75Fï¼‰ - 3@tower.gat
 //------------------------------------------------------------
 3@tower.gat	mapflag	nosave			SavePoint
 3@tower.gat	mapflag	nomemo			dummy
@@ -32,7 +32,7 @@
 3@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ 4‘wi76`99Fj - 4@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ 4å±¤ï¼ˆ76ï½99Fï¼‰ - 4@tower.gat
 //------------------------------------------------------------
 4@tower.gat	mapflag	nosave			SavePoint
 4@tower.gat	mapflag	nomemo			dummy
@@ -43,7 +43,7 @@
 4@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ 5‘wi100Fj - 5@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ 5å±¤ï¼ˆ100Fï¼‰ - 5@tower.gat
 //------------------------------------------------------------
 5@tower.gat	mapflag	nosave			SavePoint
 5@tower.gat	mapflag	nomemo			dummy
@@ -54,7 +54,7 @@
 5@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒ“ƒhƒŒƒXƒ^ƒ[ ”e‰¤‚ÌŠÔ - 6@tower.gat
+// ã‚¨ãƒ³ãƒ‰ãƒ¬ã‚¹ã‚¿ãƒ¯ãƒ¼ è¦‡ç‹ã®é–“ - 6@tower.gat
 //------------------------------------------------------------
 6@tower.gat	mapflag	nosave			SavePoint
 6@tower.gat	mapflag	nomemo			dummy
@@ -65,7 +65,7 @@
 6@tower.gat	mapflag	noabra		dummy
 
 //============================================================
-// ••ˆó‚³‚ê‚½_“ai•æ’nj - 1@cata.gat
+// å°å°ã•ã‚ŒãŸç¥æ®¿ï¼ˆå¢“åœ°ï¼‰ - 1@cata.gat
 //------------------------------------------------------------
 1@cata.gat	mapflag	nosave			SavePoint
 1@cata.gat	mapflag	nomemo			dummy
@@ -76,7 +76,7 @@
 1@cata.gat	mapflag	noabra		dummy
 
 //============================================================
-// ••ˆó‚³‚ê‚½_“ai‘å••ˆóÕ’dj - 2@cata.gat
+// å°å°ã•ã‚ŒãŸç¥æ®¿ï¼ˆå¤§å°å°ç¥­å£‡ï¼‰ - 2@cata.gat
 //------------------------------------------------------------
 2@cata.gat	mapflag	nosave			SavePoint
 2@cata.gat	mapflag	nomemo			dummy
@@ -87,7 +87,7 @@
 2@cata.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒj[ƒYƒwƒbƒO‚Ì‘ƒ - 1@nyd.gat
+// ãƒ‹ãƒ¼ã‚ºãƒ˜ãƒƒã‚°ã®å·£ - 1@nyd.gat
 //------------------------------------------------------------
 1@nyd.gat	mapflag	nosave			SavePoint
 1@nyd.gat	mapflag	nomemo			dummy
@@ -98,7 +98,7 @@
 1@nyd.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒj[ƒYƒwƒbƒO‚Ì‘ƒ - 2@nyd.gat
+// ãƒ‹ãƒ¼ã‚ºãƒ˜ãƒƒã‚°ã®å·£ - 2@nyd.gat
 //------------------------------------------------------------
 2@nyd.gat	mapflag	nosave			SavePoint
 2@nyd.gat	mapflag	nomemo			dummy
@@ -109,7 +109,7 @@
 2@nyd.gat	mapflag	noabra		dummy
 
 //============================================================
-// –¶‚ÌX - 1@mist.gat
+// éœ§ã®æ£® - 1@mist.gat
 //------------------------------------------------------------
 1@mist.gat	mapflag	nosave			SavePoint
 1@mist.gat	mapflag	nomemo			dummy
@@ -120,7 +120,7 @@
 1@mist.gat	mapflag	noabra		dummy
 
 //============================================================
-// –\ŒA‰¤‚Ì“´ŒA - 1@cash.gat
+// æš´çªŸç‹ã®æ´çªŸ - 1@cash.gat
 //------------------------------------------------------------
 1@cash.gat	mapflag	nosave			SavePoint
 1@cash.gat	mapflag	nomemo			dummy
@@ -131,7 +131,7 @@
 1@cash.gat	mapflag	noabra		dummy
 
 //============================================================
-// ˆÅ‚Ìƒrƒ‡ƒ“ƒEƒ“ƒS•a‰@2ŠK - 1@ma_h.gat
+// é—‡ã®ãƒ“ãƒ§ãƒ³ã‚¦ãƒ³ã‚´ç—…é™¢2éš - 1@ma_h.gat
 //------------------------------------------------------------
 1@ma_h.gat	mapflag	nosave			SavePoint
 1@ma_h.gat	mapflag	nomemo			dummy
@@ -142,7 +142,7 @@
 1@ma_h.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒuƒƒ„‚Ì‘ƒ - 1@ma_c.gat
+// ãƒ–ãƒ¯ãƒ¤ã®å·£ - 1@ma_c.gat
 //------------------------------------------------------------
 1@ma_c.gat	mapflag	nosave			SavePoint
 1@ma_c.gat	mapflag	nomemo			dummy
@@ -153,7 +153,7 @@
 1@ma_c.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒoƒRƒiƒ‚Ì±‚İˆ - 1@ma_b.gat
+// ãƒã‚³ãƒŠãƒ¯ã®æ£²ã¿å‡¦ - 1@ma_b.gat
 //------------------------------------------------------------
 1@ma_b.gat	mapflag	nosave			SavePoint
 1@ma_b.gat	mapflag	nomemo			dummy
@@ -164,7 +164,7 @@
 1@ma_b.gat	mapflag	noabra		dummy
 
 //============================================================
-// ŒÃ‚Ì‹Rm’c01 - 1@gl_k.gat
+// å¤ã®é¨å£«å›£01 - 1@gl_k.gat
 //------------------------------------------------------------
 1@gl_k.gat	mapflag	nosave			SavePoint
 1@gl_k.gat	mapflag	nomemo			dummy
@@ -175,7 +175,7 @@
 1@gl_k.gat	mapflag	noabra		dummy
 
 //============================================================
-// ŒÃ‚Ì‹Rm’c02 - 2@gl_k.gat
+// å¤ã®é¨å£«å›£02 - 2@gl_k.gat
 //------------------------------------------------------------
 2@gl_k.gat	mapflag	nosave			SavePoint
 2@gl_k.gat	mapflag	nomemo			dummy
@@ -186,7 +186,7 @@
 2@gl_k.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒGƒNƒ‰[ƒWƒ… “à•” - 1@ecl.gat
+// ã‚¨ã‚¯ãƒ©ãƒ¼ã‚¸ãƒ¥ å†…éƒ¨ - 1@ecl.gat
 //------------------------------------------------------------
 1@ecl.gat	mapflag	nosave			SavePoint
 1@ecl.gat	mapflag	nomemo			dummy
@@ -197,7 +197,7 @@
 1@ecl.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒTƒ‰‚Ì‹L‰¯ - 1@sara.gat
+// ã‚µãƒ©ã®è¨˜æ†¶ - 1@sara.gat
 //------------------------------------------------------------
 1@sara.gat	mapflag	nosave			SavePoint
 1@sara.gat	mapflag	nomemo			dummy
@@ -208,7 +208,7 @@
 1@sara.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒtƒFƒCƒXƒ[ƒ€‚Ì‘ƒ - 1@face.gat
+// ãƒ•ã‚§ã‚¤ã‚¹ãƒ¯ãƒ¼ãƒ ã®å·£ - 1@face.gat
 //------------------------------------------------------------
 1@face.gat	mapflag	nosave			SavePoint
 1@face.gat	mapflag	nomemo			dummy
@@ -219,7 +219,7 @@
 1@face.gat	mapflag	noabra		dummy
 
 //============================================================
-// ‹ÖŠõ‚ÌŒ¤‹†Š - 1@lhz.gat
+// ç¦å¿Œã®ç ”ç©¶æ‰€ - 1@lhz.gat
 //------------------------------------------------------------
 1@lhz.gat	mapflag	nosave			SavePoint
 1@lhz.gat	mapflag	nomemo			dummy
@@ -230,7 +230,7 @@
 1@lhz.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒzƒ‰[‚¨‚à‚¿‚áHê - 1@xm_d.gat
+// ãƒ›ãƒ©ãƒ¼ãŠã‚‚ã¡ã‚ƒå·¥å ´ - 1@xm_d.gat
 //------------------------------------------------------------
 1@xm_d.gat	mapflag	nosave			SavePoint
 1@xm_d.gat	mapflag	nomemo			dummy
@@ -241,7 +241,7 @@
 1@xm_d.gat	mapflag	noabra		dummy
 
 //============================================================
-// ‰ß‹‚ÌƒOƒ‰ƒXƒgƒwƒCƒ€ - 1@glast.gat
+// éå»ã®ã‚°ãƒ©ã‚¹ãƒˆãƒ˜ã‚¤ãƒ  - 1@glast.gat
 //------------------------------------------------------------
 1@glast.gat	mapflag	nosave			SavePoint
 1@glast.gat	mapflag	nomemo			dummy
@@ -252,7 +252,7 @@
 1@glast.gat	mapflag	noabra		dummy
 
 //============================================================
-// –S—ì‚Ì‰¤‹{ - 1@spa.gat
+// äº¡éœŠã®ç‹å®® - 1@spa.gat
 //------------------------------------------------------------
 1@spa.gat	mapflag	nosave			SavePoint
 1@spa.gat	mapflag	nomemo			dummy
@@ -263,7 +263,7 @@
 1@spa.gat	mapflag	noabra		dummy
 
 //============================================================
-// ”òs‘D - 1@air1.gat
+// é£›è¡Œèˆ¹ - 1@air1.gat
 //------------------------------------------------------------
 1@air1.gat	mapflag	nosave			SavePoint
 1@air1.gat	mapflag	nomemo			dummy
@@ -274,7 +274,7 @@
 1@air1.gat	mapflag	noabra		dummy
 
 //============================================================
-// ”òs‘D - 1@air2.gat
+// é£›è¡Œèˆ¹ - 1@air2.gat
 //------------------------------------------------------------
 1@air2.gat	mapflag	nosave			SavePoint
 1@air2.gat	mapflag	nomemo			dummy
@@ -285,7 +285,7 @@
 1@air2.gat	mapflag	noabra		dummy
 
 //============================================================
-// –‚_‚Ì“ƒã‘w - 1@tnm1.gat
+// é­”ç¥ã®å¡”ä¸Šå±¤ - 1@tnm1.gat
 //------------------------------------------------------------
 1@tnm1.gat	mapflag	nosave			SavePoint
 1@tnm1.gat	mapflag	nomemo			dummy
@@ -296,7 +296,7 @@
 1@tnm1.gat	mapflag	noabra		dummy
 
 //============================================================
-// –‚_‚Ì“ƒÅãŠK - 1@tnm2.gat
+// é­”ç¥ã®å¡”æœ€ä¸Šéš - 1@tnm2.gat
 //------------------------------------------------------------
 1@tnm2.gat	mapflag	nosave			SavePoint
 1@tnm2.gat	mapflag	nomemo			dummy
@@ -307,7 +307,7 @@
 1@tnm2.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒ‚ƒƒNé’n‰º - 1@tnm3.gat
+// ãƒ¢ãƒ­ã‚¯åŸåœ°ä¸‹ - 1@tnm3.gat
 //------------------------------------------------------------
 1@tnm3.gat	mapflag	nosave			SavePoint
 1@tnm3.gat	mapflag	nomemo			dummy
@@ -318,7 +318,7 @@
 1@tnm3.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒrƒIƒX‚Ì“‡ 01 - 1@dth1.gat
+// ãƒ“ã‚ªã‚¹ã®å³¶ 01 - 1@dth1.gat
 //------------------------------------------------------------
 1@dth1.gat	mapflag	nosave			SavePoint
 1@dth1.gat	mapflag	nomemo			dummy
@@ -329,7 +329,7 @@
 1@dth1.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒrƒIƒX‚Ì“‡ 02 - 1@dth2.gat
+// ãƒ“ã‚ªã‚¹ã®å³¶ 02 - 1@dth2.gat
 //------------------------------------------------------------
 1@dth2.gat	mapflag	nosave			SavePoint
 1@dth2.gat	mapflag	nomemo			dummy
@@ -340,7 +340,7 @@
 1@dth2.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒrƒIƒX‚Ì“‡ 03 - 1@dth3.gat
+// ãƒ“ã‚ªã‚¹ã®å³¶ 03 - 1@dth3.gat
 //------------------------------------------------------------
 1@dth3.gat	mapflag	nosave			SavePoint
 1@dth3.gat	mapflag	nomemo			dummy
@@ -351,7 +351,7 @@
 1@dth3.gat	mapflag	noabra		dummy
 
 //============================================================
-// ƒ‚ƒ‹ƒX‚Ì“´ŒA - 1@rev.gat
+// ãƒ¢ãƒ«ã‚¹ã®æ´çªŸ - 1@rev.gat
 //------------------------------------------------------------
 1@rev.gat	mapflag	nosave			SavePoint
 1@rev.gat	mapflag	nomemo			dummy

@@ -1,54 +1,54 @@
 //====================================================================
 //Ragnarok Online Thief jobchange script
 //
-//�@�� CHANGE_TF  -> 0�`1, 0�`3(Old)
-//     OLD_CLASS  -> �]���O�̐E��
-//     @doubt_npc -> 0�`4
+//　■ CHANGE_TF  -> 0～1, 0～3(Old)
+//     OLD_CLASS  -> 転生前の職業
+//     @doubt_npc -> 0～4
 //====================================================================
 
 //==========================================
-// �����\������ѓ]�E
+// 試験申請および転職
 //------------------------------------------
 
-moc_prydb1.gat,39,129,2	script	�M���h�֌W��#TF	69,{
+moc_prydb1.gat,39,129,2	script	ギルド関係者#TF	69,{
 	if(Upper == UPPER_HIGH && (OLD_CLASS == Job_Assassin || OLD_CLASS == Job_Rogue)) {
 		if(Job == Job_Novice) {
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "����A�ǂ����Ō����C������ˁB";
-			mes "�Z��ł�����̂����H";
+			mes "[シーフギルド関係者]";
+			mes "あれ、どこかで見た気がするね。";
+			mes "兄弟でもいるのかい？";
 			next;
 			if(getskilllv(1) < 9) {
-				mes "[�V�[�t�M���h�֌W��]";
-				mes "�Ȃ񂾁A�V�[�t�ɂȂ肽���̂��B";
-				mes "�ł��A����ɂ�����ȒP�Ȃ��Ƃ�";
-				mes "�Y��Ă��Ȃ����H";
+				mes "[シーフギルド関係者]";
+				mes "なんだ、シーフになりたいのか。";
+				mes "でも、それにしちゃ簡単なことを";
+				mes "忘れていないか？";
 				next;
-				mes "[�V�[�t�M���h�֌W��]";
-				mes "JobLv��10�ɂ܂Ő��������A";
-				mes "^0000FF�u��{�X�L���v�̃��x����9�@^000000��";
-				mes "���Ă���񂾁B";
+				mes "[シーフギルド関係者]";
+				mes "JobLvを10にまで成長させ、";
+				mes "^0000FF「基本スキル」のレベルを9　^000000に";
+				mes "してくるんだ。";
 				next;
-				mes "[�V�[�t�M���h�֌W��]";
-				mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-				mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-				mes "�グ�邱�Ƃ��ł��邩��ˁI";
-				mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-				mes "^0000FF�u��{���v^000000�E�B���h�E����";
-				mes "^0000FF�uSkill�v^000000�{�^���ŕ\��������B";
+				mes "[シーフギルド関係者]";
+				mes "^0000FF「基本スキル」^000000のレベルは";
+				mes "^0000FF「スキルリスト」^000000ウィンドウで";
+				mes "上げることができるからね！";
+				mes "^0000FF「スキルリスト」^000000ウィンドウは";
+				mes "^0000FF「基本情報」^000000ウィンドウ内の";
+				mes "^0000FF「Skill」^000000ボタンで表示されるよ。";
 				next;
-				mes "[�V�[�t�M���h�֌W��]";
-				mes "�X�L���̃��x�����グ��ɂ́A";
-				mes "�X�L���|�C���g������U������A";
-				mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ邩��ˁB";
-				mes "���ӂ��Ă����B";
+				mes "[シーフギルド関係者]";
+				mes "スキルのレベルを上げるには、";
+				mes "スキルポイントを割り振った後、";
+				mes "^FF0000「確定」^000000ボタンが必要となるからね。";
+				mes "注意してくれよ。";
 				next;
-				mes "[�V�[�t�M���h�֌W��]";
-				mes "�܂��A���������b���Ă���o�����ȁI";
+				mes "[シーフギルド関係者]";
+				mes "まあ、もう少し鍛えてから出直しな！";
 				close;
 			}
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "����Ƃ��̂ɓ]�E�������z���H";
-			mes "�悵�A�܂��]�E�����Ă���I";
+			mes "[シーフギルド関係者]";
+			mes "それとも昔に転職させた奴か？";
+			mes "よし、また転職させてやるよ！";
 			next;
 			unequip;
 			jobchange Job_Thief,UPPER_HIGH;
@@ -60,268 +60,268 @@ moc_prydb1.gat,39,129,2	script	�M���h�֌W��#TF	69,{
 			skill 150,1,0;
 			skill 151,1,0;
 			skill 152,1,0;
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "�V�[�t�̓V�[�t�炵����炵�ȁI";
-			mes "���Ƃ͖Z��������ȗ����B";
+			mes "[シーフギルド関係者]";
+			mes "シーフはシーフらしく暮らしな！";
+			mes "あとは忙しいから省略だ。";
 			close;
 		}
 	}
 	if(Upper == UPPER_HIGH) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes (Sex)? "�����A�Z�����B": "�ق�A�o�����B";
-		mes "�����ɗ����H�@�A��A�A��I";
+		mes "[シーフギルド関係者]";
+		mes (Sex)? "おい、兄ちゃん。": "ほら、姉ちゃん。";
+		mes "何しに来た？　帰れ、帰れ！";
 		close;
 	}
 	if(Job == Job_Thief) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "��[";
-		mes "�Y�݂��������炢�ł�";
-		mes "���̂��ˁ[����ɑ��k���Ă�I";
-		mes "����H";
+		mes "[シーフギルド関係者]";
+		mes "よー";
+		mes "悩みがあったらいつでも";
+		mes "このおねーさんに相談してよ！";
+		mes "うん？";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes (Sex)? "�Z�����A": "�o�����A";
-		mes "�V�[�t�ɂȂ����񂾂���A";
-		mes "�`���҃A�J�f�~�[��";
-		mes "�s���Ă݂�Ƃ�����B";
+		mes "[シーフギルド関係者]";
+		mes (Sex)? "兄ちゃん、": "姉ちゃん、";
+		mes "シーフになったんだから、";
+		mes "冒険者アカデミーに";
+		mes "行ってみるといいよ。";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "���̕����̋�������";
-		mes "�`���҃A�J�f�~�[�̃T�|�[�g��";
-		mes "�s���Ă���l�������邾��B";
-		mes "�����Ă�����B";
+		mes "[シーフギルド関係者]";
+		mes "この部屋の隅っこに";
+		mes "冒険者アカデミーのサポートを";
+		mes "行っている人が見えるだろ。";
+		mes "送ってくれるよ。";
 		close;
 	}
 	if(Job != Job_Novice) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "���O�͂Ȃ񂾁c�c�H";
+		mes "[シーフギルド関係者]";
+		mes "お前はなんだ……？";
 		switch(Job) {
-			case Job_Swordman: mes "�n���ȃ\�[�h�}�����I"; 		break;
-			case Job_Magician: mes "�T�[�J�X�c�̃}�W�V�������I"; 	break;
-			case Job_Archer:   mes "�A�z�E�̃A�[�`���[���ȁI"; 	break;
-			case Job_Acolyte:  mes "���E�ŋ��|�\�l���q�҃A�R���C�g���I"; 	break;
-			case Job_Merchant: mes "�����ȏ��l���I"; 		break;
+			case Job_Swordman: mes "馬鹿なソードマンか！"; 		break;
+			case Job_Magician: mes "サーカス団のマジシャンか！"; 	break;
+			case Job_Archer:   mes "アホウのアーチャーだな！"; 	break;
+			case Job_Acolyte:  mes "世界最強芸能人崇拝者アコライトか！"; 	break;
+			case Job_Merchant: mes "悪質な商人か！"; 		break;
 		}
 		if(Job < Job_Thief) {
 			next;
-			mes "[�V�[�t�M���h�֌W��]";
+			mes "[シーフギルド関係者]";
 		}
-		mes (Sex)? "�����A�Z�����B": "�ق�A�o�����B";
-		mes "�����ɗ����H�@�A��A�A��I";
+		mes (Sex)? "おい、兄ちゃん。": "ほら、姉ちゃん。";
+		mes "何しに来た？　帰れ、帰れ！";
 		close;
 	}
 	switch(CHANGE_TF) {
 	case 0:
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�ւ��c�c" +((Sex == 0)?"����l":"�V�����")+ "�����̗p��";
-		mes "����ȉ������܂ł킴�킴";
-		mes "�����̂��ȁH";
+		mes "[シーフギルド関係者]";
+		mes "へえ……" +((Sex == 0)?"お嬢様":"坊ちゃま")+ "が何の用で";
+		mes "こんな汚い所までわざわざ";
+		mes "来たのかな？";
 		break;
 	case 1:
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "���[�܂��������B";
-		mes "���x�͊ԈႢ�Ȃ����낤�H";
+		mes "[シーフギルド関係者]";
+		mes "おーまた来たか。";
+		mes "今度は間違いないだろう？";
 		break;
 	}
-	//case0,1�̑���
+	//case0,1の続き
 	next;
-	if(select("�V�[�t�ɂȂ肽���B","�Ȃ�ł��Ȃ��B")==2) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�Ȃ񂾂�B�]�E�����Ȃ��̂Ɂc�c";
-		mes "�{���ɉ����ɗ����H";
-		mes "�����l���Ă���񂾂�c�c�H";
+	if(select("シーフになりたい。","なんでもない。")==2) {
+		mes "[シーフギルド関係者]";
+		mes "なんだよ。転職もしないのに……";
+		mes "本当に何しに来た？";
+		mes "何を考えているんだよ……？";
 		close;
 	}
 	if(CHANGE_TF==0) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�c�c�������鎖�͂Ȃ����낤�H";
-		mes "�V�[�t�ɂȂ肽�����āA�����";
-		mes "�p�������������悭������ȁB";
-		mes "�n�����H�@�������Ă�l�Ɏ���";
-		mes "�V�[�t�ɂȂ�܂����āA�L���ł�����";
-		mes "�C���H�@������ƁA���ɉ�������H";
+		mes "[シーフギルド関係者]";
+		mes "……自慢する事はないだろう？";
+		mes "シーフになりたいって、そんな";
+		mes "恥ずかしい事がよく言えるな。";
+		mes "馬鹿か？　道歩いてる人に私は";
+		mes "シーフになりますって、広告でもする";
+		mes "気か？　ちょっと、頭に何がある？";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�{���ɃV�[�t�ɂȂ肽���̂��H";
+		mes "[シーフギルド関係者]";
+		mes "本当にシーフになりたいのか？";
 		next;
-		switch (select("����B","������B","����Ȃ��ƌ����Ă�N�́H")) {
+		switch (select("うん。","ううん。","そんなこと言ってる君は？")) {
 		case 1:
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "�ӂ�c�c";
-			mes "�܂��A���[��������d���Ȃ����B";
+			mes "[シーフギルド関係者]";
+			mes "ふん……";
+			mes "まあ、そーだったら仕方ないか。";
 			break;
 		case 2:
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "��������A�Ȃ񂾂�H";
-			mes "�����ɗ��l�ł�����̂��H";
-			mes "����Ȃ�������";
-			mes "�V�[�t�M���h�܂ŉ����ɗ����H";
+			mes "[シーフギルド関係者]";
+			mes "だったら、なんだよ？";
+			mes "ここに恋人でもいるのか？";
+			mes "じゃなかったら";
+			mes "シーフギルドまで何しに来た？";
 			break;
 		case 3:
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "���c�c�H�@�������c�c�H";
-			mes "�܂��A�������́c�c�����c�c�����A";
-			mes "�ׂ������͕����ȁI";
+			mes "[シーフギルド関係者]";
+			mes "え……？　あたし……？";
+			mes "まあ、あたしは……ただ……うう、";
+			mes "細かい事は聞くな！";
 			break;
 		}
-		mes "�Ƃ肠�����A�������E�ŃV�[�t��";
-		mes "�Ȃ肽���Ƃ���������ʖڂ���I";
+		mes "とりあえず、現実世界でシーフに";
+		mes "なりたいとか言ったら駄目だよ！";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�{���ɁA";
-		mes "�{���ɃV�[�t�ɂȂ肽���̂��H";
+		mes "[シーフギルド関係者]";
+		mes "本当に、";
+		mes "本当にシーフになりたいのか？";
 		next;
-		if(select("����B","����ς��߂�B")==2) {
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "�Ȃ񂾂�B�]�E�����Ȃ��̂Ɂc�c";
-			mes "�{���ɉ����ɗ����H";
-			mes "�����l���Ă���񂾂�c�c�H";
+		if(select("うん。","やっぱりやめる。")==2) {
+			mes "[シーフギルド関係者]";
+			mes "なんだよ。転職もしないのに……";
+			mes "本当に何しに来た？";
+			mes "何を考えているんだよ……？";
 			close;
 		}
 		set CHANGE_TF,1;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "��������N�̖��O�������āB";
-		mes "����H�@�ȂɁH";
-		mes " " +strcharinfo(0)+ " �c�c";
-		mes " " +strcharinfo(0)+ " ���ˁB";
+		mes "[シーフギルド関係者]";
+		mes "だったら君の名前を言って。";
+		mes "うん？　なに？";
+		mes " " +strcharinfo(0)+ " ……";
+		mes " " +strcharinfo(0)+ " だね。";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�\������OK�B";
-		mes "�]�E�����������m���Ă�񂾂�����A";
-		mes "���̂܂ܖʐڂɓ����B";
-		mes "����Ă݂邩�H";
+		mes "[シーフギルド関係者]";
+		mes "申請書はOK。";
+		mes "転職条件をもう知ってるんだったら、";
+		mes "このまま面接に入るよ。";
+		mes "やってみるか？";
 		next;
-		if(select("����A������","����A���")==2) {
-			mes "[�V�[�t�M���h�֌W��]";
-			mes "�܂��A�D���ɂ��ȁB�΂��΂��`";
+		if(select("うん、いいよ","いや、後で")==2) {
+			mes "[シーフギルド関係者]";
+			mes "まあ、好きにしな。ばいばい～";
 			close;
 		}
 	}
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "�����A����ł́A�m�F���悤���H";
+	mes "[シーフギルド関係者]";
+	mes "さあ、それでは、確認しようか？";
 	next;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "���O�� " +strcharinfo(0)+ "�B";
-	mes "�����Ɓc�c���A���ꂾ�ȁB";
-	mes "���� " +strcharinfo(0)+ "�B";
-	mes "������Ɓ`�҂��ā`";
+	mes "[シーフギルド関係者]";
+	mes "名前が " +strcharinfo(0)+ "。";
+	mes "えっと……あ、これだな。";
+	mes "姓名 " +strcharinfo(0)+ "。";
+	mes "ちょっと～待って～";
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�V�[�t�ɂȂ肽���Ƃ���";
-		mes "�N�̈ӎu�͂킩�邪�c�c";
-		mes "�ӎu�����Ő��̒�������";
-		mes "�s���Ȃ��񂾂�I";
-		mes "�Œ�ł�^0000FF�u��{�X�L���v��";
-		mes "���x����9^000000 �ɂȂ�Ȃ��Ƒʖڂ��I";
+		mes "[シーフギルド関係者]";
+		mes "シーフになりたいという";
+		mes "君の意志はわかるが……";
+		mes "意志だけで世の中生きて";
+		mes "行けないんだよ！";
+		mes "最低でも^0000FF「基本スキル」の";
+		mes "レベルが9^000000 にならないと駄目だ！";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "JobLv��10�ɂ܂Ő��������A";
-		mes "^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-		mes "���Ă���񂾁B";
+		mes "[シーフギルド関係者]";
+		mes "JobLvを10にまで成長させ、";
+		mes "^0000FF「基本スキル」のレベルを9^000000 に";
+		mes "してくるんだ。";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "�グ�邱�Ƃ��ł��邩��ˁI";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "^0000FF�u��{���v^000000�E�B���h�E����";
-		mes "^0000FF�uSkill�v^000000�{�^���ŕ\��������B";
+		mes "[シーフギルド関係者]";
+		mes "^0000FF「基本スキル」^000000のレベルは";
+		mes "^0000FF「スキルリスト」^000000ウィンドウで";
+		mes "上げることができるからね！";
+		mes "^0000FF「スキルリスト」^000000ウィンドウは";
+		mes "^0000FF「基本情報」^000000ウィンドウ内の";
+		mes "^0000FF「Skill」^000000ボタンで表示されるよ。";
 		next;
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�X�L���̃��x�����グ��ɂ́A";
-		mes "�X�L���|�C���g������U������A";
-		mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ邩��ˁB";
-		mes "���ӂ��ĂˁB";
+		mes "[シーフギルド関係者]";
+		mes "スキルのレベルを上げるには、";
+		mes "スキルポイントを割り振った後、";
+		mes "^FF0000「確定」^000000ボタンが必要となるからね。";
+		mes "注意してね。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "����c�c�����������炠����x";
-	mes "�����[�����������邵�c�c";
-	mes "��{���o���Ă邵�c�c������B";
-	mes "�����";
-	mes "�V�[�t�M���h�̖ʐڂ͏I���I";
+	mes "[シーフギルド関係者]";
+	mes "うん……資料を見たらある程度";
+	mes "興味深い部分もあるし……";
+	mes "基本も出来てるし……いいよ。";
+	mes "これで";
+	mes "シーフギルドの面接は終わり！";
 	next;
 	getitem 11028,1;
 	unequip;
 	jobchange Job_Thief;
 	set CHANGE_TF,0;
 	setquest 50115;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "�N�̃V�[�t�]�E�����j������B";
-	mes "�Ȍ�A�V�[�t�M���h�̈���Ƃ��āA";
-	mes "�M���h�̒����ƋK�͂����B������A";
-	mes "�͂��ꂽ�s���⃋�[���ᔽ�ȂǂŁA";
-	mes "�V�[�t�M���h�ɔ�Q���������ꍇ�A";
+	mes "[シーフギルド関係者]";
+	mes "君のシーフ転職をお祝いする。";
+	mes "以後、シーフギルドの一員として、";
+	mes "ギルドの秩序と規範を守れ。万が一、";
+	mes "はぐれた行動やルール違反などで、";
+	mes "シーフギルドに被害があった場合、";
 	next;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "�N�̑��݂̓M���h�ɂ����";
-	mes "��������鎖�����ꂮ����Y�ꂸ�ɁB";
-	mes "�܂��A�f���炵�����������҂���B";
-	mes "�ȏ�B";
+	mes "[シーフギルド関係者]";
+	mes "君の存在はギルドによって";
+	mes "抹消される事をくれぐれも忘れずに。";
+	mes "まあ、素晴らしい活動を期待する。";
+	mes "以上。";
 	next;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "���ꂵ���b�͂���ŏI����B";
+	mes "[シーフギルド関係者]";
+	mes "堅苦しい話はこれで終わりよ。";
 	next;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "���̃V�[�t�̏��ɂ�";
-	mes "�V�[�t�Ƃ��ĉ�����������";
-	mes "�����������Ă���B";
-	mes "�ڂ�ʂ��Ă����Ƃ�����B";
+	mes "[シーフギルド関係者]";
+	mes "このシーフの書には";
+	mes "シーフとして何をした方が";
+	mes "いいか書いてある。";
+	mes "目を通しておくといいよ。";
 	next;
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "����ɂāA�V�[�t�ւ̓]�E�͊����I";
-	mes "�V�[�t�̓V�[�t�炵����炵�ȁI";
-	mes "�N�̊�������҂��Ă��I";
+	mes "[シーフギルド関係者]";
+	mes "これにて、シーフへの転職は完了！";
+	mes "シーフはシーフらしく暮らしな！";
+	mes "君の活躍を期待してるよ！";
 	close;
 OnInit:
-	waitingroom "�]�E",0;
+	waitingroom "転職",0;
 	end;
 }
 
 
 //==========================================
-// �L�m�R�̏W
+// キノコ採集
 //------------------------------------------
 
-moc_ruins.gat,141,125,3	script	�������z	83,{
+moc_ruins.gat,141,125,3	script	怪しい奴	83,{
 	if(Job == Job_Thief) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "�ւ��A���h�ȃV�[�t�ɂȂ����ȁB";
-		mes "�ł��A�����ɂ͂�������Ȃ���B";
-		mes "�N���m���Ă�Ǝv�����ǁA������";
-		mes "�]�E��]�̓z��������Ȃ�";
-		mes "�����ꂾ����B�����Ɩʔ������ցA";
-		mes "�������������E���ɍs���Ă���B";
+		mes "[シーフギルド関係者]";
+		mes "へえ、立派なシーフになったな。";
+		mes "でも、ここにはもう入れないよ。";
+		mes "君も知ってると思うけど、ここは";
+		mes "転職希望の奴しか入れない";
+		mes "試験場だから。もっと面白い所へ、";
+		mes "美味しい物を拾いに行ってくれ。";
 		close;
 	}
 	if(Job != Job_Novice) {
 		switch(@doubt_npc) {
 		case 0:
-			mes "[�������z]";
-			mes "����ɂ��́[�����V�C�ł��ˁI";
-			mes "�����݂����ɒg�����z�˂̋C���������ߌ�̓s���~�b�h�t�߂Ńs�N�j�b�N����̂���Ԃ���ˁB";
+			mes "[怪しい奴]";
+			mes "こんにちはーいい天気ですね！";
+			mes "今日みたいに暖かい陽射の気持ちいい午後はピラミッド付近でピクニックするのが一番だよね。";
 			break;
 		case 1:
-			mes "[�������z]";
-			mes "'�A��Ƃ�����Ƃ������Ƃ͍K���̑����ł���B";
-			mes "������ԍD���Ȃ��Ƃ킴�ł��B�A��Ƃ��c";
+			mes "[怪しい奴]";
+			mes "'帰る家があるということは幸せの第一歩である。";
+			mes "私が一番好きなことわざです。帰る家か…";
 			break;
 		case 2:
-			mes "[�������z]";
+			mes "[怪しい奴]";
 			mes "............... ";
 			break;
 		case 3:
-			mes "[�������z]";
-			mes "���[���͂��A��A���A���A�l�ł͂���܂���B";
-			mes "����ȖڂŌ��Ȃ��ł��A���A���A���B";
+			mes "[怪しい奴]";
+			mes "おー私はあ、や、し、い、人ではありません。";
+			mes "そんな目で見ないでく、だ、さ、い。";
 			break;
 		case 4:
-			mes "[�������z]";
-			mes "�c�c�������ȁB";
-			mes "�����b�����Ƃ��Ȃ����炠�����s����B";
+			mes "[怪しい奴]";
+			mes "……しつこいな。";
+			mes "もう話すこともないからあっち行けよ。";
 			close;
 		}
 		set @doubt_npc,@doubt_npc+1;
@@ -329,48 +329,48 @@ moc_ruins.gat,141,125,3	script	�������z	83,{
 	}
 	switch(CHANGE_TF) {
 	case 0:
-		mes "[�������z]";
-		mes "�����̏��S�ҁI";
-		mes "�f���炵���l���𑗂肽�����H";
-		mes "�����Ɗy�Ȑ��������������H";
-		mes "�Ȃ�΃V�[�t�ɂȂ�I";
-		mes "�����ăV�[�t�M���h�ɓ��c����̂��I";
+		mes "[怪しい奴]";
+		mes "そこの初心者！";
+		mes "素晴らしい人生を送りたいか？";
+		mes "もっと楽な生活をしたいか？";
+		mes "ならばシーフになれ！";
+		mes "そしてシーフギルドに入団するのだ！";
 		next;
-		mes "[�������z]";
-		mes "�V�[�t�M���h�͌N���������}����I";
-		mes "����������������";
-		mes "�|�C���g�J�[�h�t�I�i��k�j";
-		mes "�ꏊ�̓s���~�b�h�_���W����1�K������";
-		mes "�K�i������č����I�@�E��������Ȃ��I";
-		mes "�܂������s������ʖڂ��I";
+		mes "[怪しい奴]";
+		mes "シーフギルドは君たちを歓迎する！";
+		mes "今すぐ加入したら";
+		mes "ポイントカード付！（冗談）";
+		mes "場所はピラミッドダンジョン1階中央の";
+		mes "階段をおりて左だ！　右かもしれない！";
+		mes "まっすぐ行ったら駄目だ！";
 		close;
 	case 1:
-		mes "[�������z]";
-		mes "���ȃV�[�t�̓���������c�c";
-		mes "���O�́c�c�����A�V�[�t�ɂȂ�c�c";
+		mes "[怪しい奴]";
+		mes "妙なシーフの匂いがする……";
+		mes "お前は……将来、シーフになる……";
 		close;
 	}
 }
 
-moc_prydb1.gat,42,133,2	script	�M���h�֌W��	118,{
+moc_prydb1.gat,42,133,2	script	ギルド関係者	118,{
 	if(Job == Job_Thief) {
-		mes "[�u���[�h]";
-		mes "���͓��ɃC�x���g���Ȃ��񂾁B";
-		mes "�A��������W�����邱�Ƃ��B";
+		mes "[ブレード]";
+		mes "今は特にイベントがないんだ。";
+		mes "連絡したら集合することだ。";
 		close;
 	}
 	if(Job != Job_Novice || Upper == UPPER_HIGH) {
-		mes "[�V�[�t�M���h�֌W��]";
-		mes "���[���A���[���A�����̓z�I";
-		mes "�����ŉ����Ă�H";
-		mes "�����ɂ͂��O�̋��ꏊ�͂Ȃ�����";
-		mes "�����o�Ă��炨���B";
+		mes "[シーフギルド関係者]";
+		mes "おーい、おーい、そこの奴！";
+		mes "ここで何してる？";
+		mes "ここにはお前の居場所はないから";
+		mes "早く出てもらおう。";
 		close;
 	}
-	mes "[�V�[�t�M���h�֌W��]";
-	mes "����H";
-	mes "���S�҂̂����ɂ����ɉ��̗p���ȁH";
-	mes "�����A�V�[�t�ɓ]�E�������̂Ȃ�A";
-	mes "���ׂ̗̎o�����ɕ�����B";
+	mes "[シーフギルド関係者]";
+	mes "うん？";
+	mes "初心者のくせにここに何の用かな？";
+	mes "もし、シーフに転職したいのなら、";
+	mes "俺の隣の姉ちゃんに聞けよ。";
 	close;
 }

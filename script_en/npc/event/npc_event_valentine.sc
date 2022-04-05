@@ -2,42 +2,42 @@
 // Ragnarok Online Valentine2006 Script     by Blaze
 //==============================================================================
 //==============================================================
-// �u���C�h
-//	 2�` 4��	�v�����e����	�N�G�X�g��	�����胋�[�g
-//	 4�` 7��	�v�����e����	�N�G�X�g��	�����胋�[�g
-//	 8�`10��	�v�����e����	�N�G�X�g��	�[���s�[���[�g
-//	12�`15��	�v�����e���쐼	�N�G�X�g��	�J�J�I�̔����[�g
-//	15�`17��	�v�����e����	�N�G�X�g��	�����[�g
-//	17�`19��	�v�����e����	�N�G�X�g�~	�����[�g
-//	21�`23��	�v�����e����	�N�G�X�g��	�[���s�[���[�g
+// ブレイド
+//	 2～ 4時	プロンテラ←	クエスト△	居眠りルート
+//	 4～ 7時	プロンテラ↓	クエスト△	居眠りルート
+//	 8～10時	プロンテラ南	クエスト○	ゼロピールート
+//	12～15時	プロンテラ南西	クエスト○	カカオ販売ルート
+//	15～17時	プロンテラ←	クエスト○	詩ルート
+//	17～19時	プロンテラ↓	クエスト×	詩ルート
+//	21～23時	プロンテラ南	クエスト○	ゼロピールート
 // Function
-//	getarg(0)	�ŏ��̃C�x���g���e
-//		0=���b�N�̎Q�Ɠn����p
-//		1=��1	2=��2	3=�Љ�	4=�̔�
-//	getarg(1)	����
-//		1=��	2=��
-//	getarg(2)	�r���̃C�x���g���e
-//		1=�����胋�[�g
-//		2=�[���s�[���[�g
-//		3=�����[�g
-//		4=�J�J�I�̔����[�g
-//	getarg(3)	�N�G�X�g��
-//		1=�\	2=�s��	3=�j���̂݉�
+//	getarg(0)	最初のイベント内容
+//		0=ロックの参照渡し専用
+//		1=回復1	2=回復2	3=紹介	4=販売
+//	getarg(1)	時刻
+//		1=昼	2=夜
+//	getarg(2)	途中のイベント内容
+//		1=居眠りルート
+//		2=ゼロピールート
+//		3=詩ルート
+//		4=カカオ販売ルート
+//	getarg(3)	クエスト可否
+//		1=可能	2=不可	3=男性のみ可
 //--------------------------------------------------------------
 
 function	script	ValentineBreid	{
 	if(getarg(0)==0)
-		return 'flag;	//�l��n���ďI��
+		return 'flag;	//値を渡して終了
 	if((Weight*100/MaxWeight) >= 90) {
-		mes "�����A�C�e���̏d�ʂ���������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���-";
-		mes "-�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă�������-";
+		mes "所持アイテムの重量が多いため";
+		mes "アイテムを受けとることができません-";
+		mes "-所持アイテムを減らしてから、再度";
+		mes "話しかけてください-";
 		close;
 	}
-	if('flag) {	//�����l�����A�^�b�`�h�~
-		mes "�����Z��������";
-		mes "��ł܂������|���Ă݂悤";
+	if('flag) {	//複数人同時アタッチ防止
+		mes "何やら忙しそうだ";
+		mes "後でまた声を掛けてみよう";
 		close;
 	}
 	set 'flag,1;
@@ -105,220 +105,220 @@ function	script	ValentineBreid	{
 		case 2:
 			cutin "v_breid05",2;
 			if(getarg(1)==1) {
-				mes "[�u���C�h]";
-				mes "��c�c�Ă񂾂��H";
+				mes "[ブレイド]";
+				mes "ん……呼んだか？";
 				next;
-				mes "[�u���C�h]";
-				mes "�ӂ����c�c";
-				mes "�Ƃ肠�����A�񕜂��Ă�낤�B";
+				mes "[ブレイド]";
+				mes "ふぁぁ……";
+				mes "とりあえず、回復してやろう。";
 			}
 			else {
-				mes "[�u���C�h]";
-				mes "����Ȏ��Ԃ܂ŁA����J���ȁB";
+				mes "[ブレイド]";
+				mes "こんな時間まで、ご苦労だな。";
 				next;
-				mes "[�u���C�h]";
-				mes "�������Ă���悤�����c�c";
-				mes "�Ƃ肠�����A�񕜂��Ă�낤�B";
+				mes "[ブレイド]";
+				mes "相当疲れているようだが……";
+				mes "とりあえず、回復してやろう。";
 			}
 			next;
 			misceffect 207,"";
 			percentheal 100,0;
 			mes "["+strcharinfo(0)+"]";
-			mes "���c�c�H";
-			mes "����������āH";
-			mes "�����!?";
+			mes "え……？";
+			mes "何をするって？";
+			mes "うわっ!?";
 			mes " ";
-			mes "-���邢���ƂƂ��ɑ̗͂��񕜂���-";
+			mes "-明るい光とともに体力が回復した-";
 			next;
 			if(getarg(0)==1) {
-				mes "[�u���C�h]";
-				mes "�o����ςނ��Ƃ�A";
-				mes "�x�▼���𓾂邱�Ƃ́A";
-				mes "�`���҂Ƃ��ďd�v�Ȃ��Ƃ�������Ȃ��B";
-				mes "�����A�����l�߂�������Ȃ����H";
+				mes "[ブレイド]";
+				mes "経験を積むことや、";
+				mes "富や名声を得ることは、";
+				mes "冒険者として重要なことかもしれない。";
+				mes "だが、根を詰めすぎじゃないか？";
 				next;
-				mes "[�u���C�h]";
-				mes "�̂��󂵂Ă��܂��ẮA���܂ł̓w�͂�";
-				mes "���ׂĖ��ʂɂȂ��Ă��܂����B";
+				mes "[ブレイド]";
+				mes "体を壊してしまっては、今までの努力が";
+				mes "すべて無駄になってしまうぞ。";
 			}
 			else {
-				mes "[�u���C�h]";
-				mes "�����͌��C�ɂȂ������H";
+				mes "[ブレイド]";
+				mes "少しは元気になったか？";
 			}
 			next;
-			if(select("���A�N�H�@�����Ȃ艽��!?","���A���肪�Ƃ�")==2) {
-				mes "[�u���C�h]";
-				mes "��͂������B";
-				mes "�͂��`�N�����Ă���Ȏ��Ԃɂ܂ŁA";
-				mes "�O�֏o�ē��������Ȃ���Ȃ��c�c";
-				mes "�Ƃł������x�݂������񂾂��B";
+			if(select("だ、誰？　いきなり何を!?","あ、ありがとう")==2) {
+				mes "[ブレイド]";
+				mes "礼はいいさ。";
+				mes "はぁ～誰だってこんな時間にまで、";
+				mes "外へ出て働きたくないよなぁ……";
+				mes "家でゆっくり休みたいもんだぜ。";
 				next;
 				cutin "v_breid02",2;
-				mes "[�u���C�h]";
-				mes "�����c�c�������߁B";
-				mes "���܂薳���͂���Ȃ�B";
+				mes "[ブレイド]";
+				mes "さぁ……もう安め。";
+				mes "あまり無理はするなよ。";
 				set QUEST_VALENTINE1,2;
 				return;
 			}
 			cutin "v_breid03",2;
 			if(getarg(0)==1) {
-				mes "[�u���C�h]";
-				mes "�I���́A�������x�����Ă���R�m���B";
-				mes "�l���D�ӂŉ񕜂��Ă�����Ƃ����̂ɁA";
-				mes "���̑ԓx�͂Ȃ�!?";
-				mes "��̈�������Ȃ��̂�!?";
+				mes "[ブレイド]";
+				mes "オレは、ここを警備している騎士だ。";
+				mes "人が好意で回復してやったというのに、";
+				mes "その態度はなんだ!?";
+				mes "礼の一つも言えないのか!?";
 			}
 			else {
-				mes "[�u���C�h]";
-				mes "��A�����H�@���Ă���悤������";
-				mes "�񕜂��Ă�����񂾂��H";
+				mes "[ブレイド]";
+				mes "ん、何だ？　疲れているようだから";
+				mes "回復してやったんだが？";
 			}
 			next;
-			if(select("�]�v�Ȃ����b�ł�","�Ȃ񂾁A�x���̂������񂩁c�c")==1) {
-				mes "[�u���C�h]";
-				mes "�]�v�Ȃ����b����!?";
-				mes "�I�����̗͂��񕜂��Ă�������ƂŁA";
-				mes "�I�}�G�ɉ������f���������H";
-				mes "�I���͎����̔C�����ʂ������������B";
+			if(select("余計なお世話です","なんだ、警備のおじさんか……")==1) {
+				mes "[ブレイド]";
+				mes "余計なお世話だと!?";
+				mes "オレが体力を回復してやったことで、";
+				mes "オマエに何か迷惑かけたか？";
+				mes "オレは自分の任務を果たしただけだ。";
 				next;
-				mes "[�u���C�h]";
-				mes "������Ƃ��߉���Ă��������ŁA";
-				mes "�����{���Ă͓G���ȁB";
-				mes "����I�}�G�̎菕���͈�؂��Ȃ��B";
-				mes "��l�łȂ�Ƃ�����񂾂ȁB";
+				mes "[ブレイド]";
+				mes "ちょっとお節介を焼いただけで、";
+				mes "そう怒られては敵わんな。";
+				mes "今後オマエの手助けは一切しない。";
+				mes "一人でなんとかするんだな。";
 			}
 			else {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "���c�c��������!?";
-				mes "�������񂾂Ƃ�������!?";
-				mes "���́A�I�����c�c��������!?";
+				mes "[ブレイド]";
+				mes "お……おじさん!?";
+				mes "おじさんだとぉぉぉぉ!?";
+				mes "この、オレが……おじさん!?";
 				next;
-				mes "[�u���C�h]";
-				mes "�u���C�h�ƌĂׁI";
-				mes "��������Ƃ͉����A��������Ƃ́I";
-				mes "�܂������c�c";
-				mes "�I�}�G�݂����Ɏ���ȓz������ƁA";
-				mes "�x���̎d�����C��ꂵ���܂����B";
+				mes "[ブレイド]";
+				mes "ブレイドと呼べ！";
+				mes "おじさんとは何だ、おじさんとは！";
+				mes "まったく……";
+				mes "オマエみたいに失礼な奴がいると、";
+				mes "警備の仕事も気疲れしちまうぜ。";
 				next;
-				mes "[�u���C�h]";
-				mes "�܂������B�x�ɂ��I�������A";
-				mes "����ȊX�Ƃ͂�����΂����ȁI";
-				mes "�����A�������Ə�����I";
+				mes "[ブレイド]";
+				mes "まぁいい。休暇が終わったら、";
+				mes "こんな街とはおさらばだしな！";
+				mes "さぁ、さっさと消えろ！";
 			}
 			set QUEST_VALENTINE1,1;
 			return;
 		case 3:
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "���������a���c�c�ُ�Ȃ��I";
-			mes "���[���~�b�h�K�b�c�����I";
-			mes "����!!";
+			mes "[ブレイド]";
+			mes "今日も平和だ……異常なし！";
+			mes "ルーンミッドガッツ王国！";
+			mes "万歳!!";
 			next;
-			menu "�N�ł����c�c�H",-;
-			mes "[�u���C�h]";
-			mes "�悭�������Ă��ꂽ�I�@�I���͂ȁA";
-			mes "�����炢�̖`���҂�!!";
-			mes "�c�c";
+			menu "誰ですか……？",-;
+			mes "[ブレイド]";
+			mes "よくぞ聞いてくれた！　オレはな、";
+			mes "さすらいの冒険者だ!!";
+			mes "……";
 			next;
 			cutin "v_breid03",2;
-			mes "[�u���C�h]";
-			mes "�������A�����ɂނȂ�I";
-			mes "�I�������ĂȂ��A��肽����";
-			mes "����Ă�킯����Ȃ��񂾂��I";
-			mes "�ł��ȁA�����̂��߂ɂ͎d����";
-			mes "���Ȃ��Ⴂ���Ȃ��񂾁I�@�������A";
-			mes "�Ȃ�ŃI��������Ȃ��Ƃ��c�c!!";
+			mes "[ブレイド]";
+			mes "ええぃ、そう睨むなよ！";
+			mes "オレだってなぁ、やりたくて";
+			mes "やってるわけじゃないんだぞ！";
+			mes "でもな、生活のためには仕事を";
+			mes "しなきゃいけないんだ！　しかし、";
+			mes "なんでオレがこんなことを……!!";
 			next;
 			misceffect 207,"";
 			percentheal 100,0;
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�͂��c�c�I�}�G�ɔ������肵�Ă�";
-			mes "���傤���Ȃ����B";
-			mes "���Ȃ݂ɁA���L�����y�[�����ŁA";
-			mes "�����ŉ񕜂��Ă�񂾁B";
-			mes "�P�K�ł�������A�C�y�ɗ���Ƃ����B";
+			mes "[ブレイド]";
+			mes "はぁ……オマエに八つ当たりしても";
+			mes "しょうがないか。";
+			mes "ちなみに、今キャンペーン中で、";
+			mes "無料で回復してるんだ。";
+			mes "ケガでもしたら、気軽に来るといい。";
 			set QUEST_VALENTINE1,2;
 			return;
 		case 4:
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�J�J�I�`�J�J�I�`��������I";
-			mes "�J�J�I�͂���܂��񂩁`�H";
+			mes "[ブレイド]";
+			mes "カカオ～カカオ～安いよっ！";
+			mes "カカオはいりませんか～？";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�J�J�I�c�c�H";
+			mes "カカオ……？";
 			next;
 			cutin "v_breid06",2;
-			mes "[�u���C�h]";
-			mes "�w�C�A���q����!!�@�J�J�I���������H";
+			mes "[ブレイド]";
+			mes "ヘイ、お客さん!!　カカオ買うかい？";
 			next;
-			if(select("���Ȃ��c�c�R�m����Ȃ���ł����H","������ł����H")==1) {
+			if(select("あなた……騎士じゃないんですか？","いくらですか？")==1) {
 				cutin "v_breid01",2;
-				mes "[�u���C�h]";
-				mes "�c�c";
-				mes "�A���o�C�g����B";
-				mes "������Ƌ����K�v�łȁc�c";
+				mes "[ブレイド]";
+				mes "……";
+				mes "アルバイトだよ。";
+				mes "ちょっと金が必要でな……";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�v�����e���R�m�c�́A����Ȃ�";
-				mes "�n������ł����c�c�H";
+				mes "プロンテラ騎士団は、そんなに";
+				mes "貧しいんですか……？";
 				next;
-				mes "[�u���C�h]";
-				mes "����A���������킯����Ȃ����c�c";
-				mes "������Ɛl�ɂ͌����Ȃ�";
-				mes "��������ĂˁB";
-				mes "�Ƃɂ��������K�v�Ȃ񂾁B";
-				mes "���`���������B�I�����A���o�C�g��";
-				mes "���Ă邱�ƁA�R�m�c�Ɍ����Ȃ�H";
+				mes "[ブレイド]";
+				mes "いや、そういうわけじゃないが……";
+				mes "ちょっと人には言えない";
+				mes "事情があってね。";
+				mes "とにかく金が必要なんだ。";
+				mes "あ～そうそう。オレがアルバイトを";
+				mes "してること、騎士団に言うなよ？";
 				next;
-				if(select("���R��m�肽���ł�","�R�m�c�ɕ񍐂��܂�")==1) {
-					mes "[�u���C�h]";
-					mes "�܂���@���������A���̎���";
-					mes "�����Ă������B";
-					mes "���̓A���o�C�g��������ȁB";
+				if(select("理由を知りたいです","騎士団に報告します")==1) {
+					mes "[ブレイド]";
+					mes "また会う機会があったら、その時に";
+					mes "教えてあげるよ。";
+					mes "今はアルバイト中だからな。";
 				}
 				else {
 					cutin "v_breid03",2;
-					mes "[�u���C�h]";
-					mes "�����c�c�I�}�G�ȁc�c";
-					mes "�����A����ɂ���!!";
+					mes "[ブレイド]";
+					mes "おい……オマエな……";
+					mes "ちっ、勝手にしろ!!";
 				}
 				set QUEST_VALENTINE1,2;
 				break;
 			}
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�J�J�I�́A���H�Ƃ��Ă��A�F�X��";
-			mes "�H�ו��̌����Ƃ��Ă��g�p�����A";
-			mes "�ƂĂ��M�d�Ȃ��̂��B";
-			mes "�P��300Zeny�I";
-			mes "5�Z�b�g��1500Zeny���B";
+			mes "[ブレイド]";
+			mes "カカオは、非常食としても、色々な";
+			mes "食べ物の原料としても使用される、";
+			mes "とても貴重なものだ。";
+			mes "単価300Zeny！";
+			mes "5つセットで1500Zenyだ。";
 			next;
-			mes "[�u���C�h]";
-			mes "�������A�ȁA���ƁI�@���Ȃ���ʂɁA";
-			mes "5�Z�b�g1499Zeny�Ŕ̔���!!";
+			mes "[ブレイド]";
+			mes "しかし、な、何と！　今なら特別に、";
+			mes "5つセット1499Zenyで販売中!!";
 			next;
-			if(select("������ƍl����","�����܂�")==1) {
-				mes "[�u���C�h]";
-				mes "�������肷�����͂Ȃ�����A";
-				mes "�����ɔ����K�v�͂Ȃ���B";
-				mes "�I���������̃A���o�C�g�����ˁB";
+			if(select("ちょっと考える","買います")==1) {
+				mes "[ブレイド]";
+				mes "押し売りするつもりはないから、";
+				mes "無理に買う必要はないよ。";
+				mes "オレもただのアルバイトだしね。";
 			}
 			else if(Zeny < 1499) {
 				cutin "v_breid03",2;
-				mes "[�u���C�h]";
-				mes "��c�cZeny������Ȃ��݂������ˁB";
-				mes "�������ǁA�l�������邱�Ƃ�";
-				mes "�ł��Ȃ��񂾁B";
+				mes "[ブレイド]";
+				mes "ん……Zenyが足りないみたいだね。";
+				mes "悪いけど、値引きすることは";
+				mes "できないんだ。";
 			}
 			else {
 				cutin "v_breid02",255;
-				mes "[�u���C�h]";
-				mes "�͂���A�J�J�I5�B";
-				mes "���x�`�I�@����������s���D�����`�I";
-				mes "�����āA���낻��x���̏������邩�ȁB";
+				mes "[ブレイド]";
+				mes "はいよ、カカオ5つ。";
+				mes "毎度～！　今日も売れ行き好調だ～！";
+				mes "さぁて、そろそろ警備の準備するかな。";
 				set Zeny,Zeny-1499;
 				getitem 7182,5;
 			}
@@ -329,105 +329,105 @@ function	script	ValentineBreid	{
 
 	function PatternB {	//case1
 		cutin "v_breid03",2;
-		mes "[�u���C�h]";
-		mes "�c�c";
-		mes "���̑O�̎���ɂ܂�Ȃ��z���B";
-		mes "���X�I���ɁA�����p���H";
+		mes "[ブレイド]";
+		mes "……";
+		mes "この前の失礼極まりない奴か。";
+		mes "今更オレに、何か用か？";
 		next;
-		if(select("�����肵�����āc�c","����A���ł��Ȃ�")==2) {
+		if(select("仲直りしたくて……","いや、何でもない")==2) {
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�t���c�c���������B";
-			mes "�Ȃ猋�\���B";
+			mes "[ブレイド]";
+			mes "フン……そうかい。";
+			mes "なら結構だ。";
 			return;
 		}
 		cutin "v_breid05",2;
-		mes "[�u���C�h]";
-		mes "���X�����肾��!?";
-		mes "�L�~�ɂƂ��ăI���́A���F";
-		mes "�l���ɂ���������̏o��̈���B";
-		mes "������킴�킴�����肾��!?";
-		mes "��₩���Ȃ�A�A��!!";
+		mes "[ブレイド]";
+		mes "今更仲直りだと!?";
+		mes "キミにとってオレは、所詮";
+		mes "人生における幾多の出会いの一つだ。";
+		mes "それをわざわざ仲直りだと!?";
+		mes "冷やかしなら、帰れ!!";
 		next;
-		mes "[�u���C�h]";
-		mes "�c�c����Ƃ��A";
-		mes "�{�C�Œ�������������ƌ����Ȃ�A";
-		mes "�������ӂ������Ă��炨������Ȃ����B";
+		mes "[ブレイド]";
+		mes "……それとも、";
+		mes "本気で仲直りをしたいと言うなら、";
+		mes "何か誠意を見せてもらおうじゃないか。";
 		next;
-		if(select("�ǂ�����΁H","����Ȃ�����")==2) {
-			mes "[�u���C�h]";
-			mes "�t���c�c���������B";
-			mes "�Ȃ猋�\���B";
+		if(select("どうすれば？","いやなこった")==2) {
+			mes "[ブレイド]";
+			mes "フン……そうかい。";
+			mes "なら結構だ。";
 			return;
 		}
-		mes "[�u���C�h]";
-		mes "�������ȁc�c���߂�";
-		mes "�[���s�[�̈�ł����ꂽ��A";
-		mes "���ӂ�����ƔF�߂Ă�낤�B";
-		mes "�����A�ǂ��Ȃ񂾁H";
+		mes "[ブレイド]";
+		mes "そうだな……せめて";
+		mes "ゼロピーの一つでもくれたら、";
+		mes "誠意があると認めてやろう。";
+		mes "さぁ、どうなんだ？";
 		next;
 		if(countitem(909)) {
-			if(select("������","�����Ȃ�")==1) {
+			if(select("あげる","あげない")==1) {
 				mes "["+strcharinfo(0)+"]";
-				mes "�[���s�[�Ȃ玝���Ă邯�ǁc�c";
-				mes "�ł��A���̃[���s�[�Ȃ񂩂��H";
+				mes "ゼロピーなら持ってるけど……";
+				mes "でも、何故ゼロピーなんかを？";
 				next;
-				mes "[�u���C�h]";
-				mes "�����Ōx�����ĂĂ��A�ދ�������ȁB";
-				mes "����܂�ɂł��������邩��A";
-				mes "����Ƀ[���s�[�ł��H�������ȁ`�ƁB";
+				mes "[ブレイド]";
+				mes "ここで警備してても、退屈だからな。";
+				mes "あんまり暇でつい腹が減るから、";
+				mes "おやつにゼロピーでも食おうかな～と。";
 				next;
-				menu "�H�ׂ�!?",-;
+				menu "食べる!?",-;
 				cutin "v_breid06",2;
-				mes "[�u���C�h]";
-				mes "��������Ȃɋ����Ă���񂾁H";
-				mes "�[���s�[��H�ׂ����ƂȂ��̂��H";
-				mes "�I���͂悭�H�ׂĂ����B";
-				mes "�Ȃ�ƂȂ��Â��Ăȁc�c";
+				mes "[ブレイド]";
+				mes "何をそんなに驚いているんだ？";
+				mes "ゼロピーを食べたことないのか？";
+				mes "オレはよく食べてたぞ。";
+				mes "なんとなく甘くてな……";
 				next;
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�݂�Ȑ��N�O�́A";
-				mes "�n�������Ȃǂ�������";
-				mes "�[���s�[��H�ׂ����񂾁B";
+				mes "[ブレイド]";
+				mes "みんな数年前は、";
+				mes "貧しい時などおやつ代わりに";
+				mes "ゼロピーを食べたもんだ。";
 				next;
-				mes "[�u���C�h]";
-				mes "�c�c�����ɂ��ӊO���Ċ炾�ȁB";
-				mes "�ŋ߂̎�҂́A�n���������";
-				mes "�m��Ȃ��񂾂ȁc�c";
+				mes "[ブレイド]";
+				mes "……いかにも意外って顔だな。";
+				mes "最近の若者は、貧しい時代を";
+				mes "知らないんだな……";
 				delitem 909,1;
 				set QUEST_VALENTINE1,2;
 				return;
 			}
 		}
 		mes "["+strcharinfo(0)+"]";
-		mes "�[���s�[�H�@�����ĂȂ����ǁc�c";
-		mes "�ł��A���̃[���s�[�Ȃ񂩂��H";
+		mes "ゼロピー？　持ってないけど……";
+		mes "でも、何故ゼロピーなんかを？";
 		next;
 		cutin "v_breid06",2;
-		mes "[�u���C�h]";
-		mes "�����Ōx�����ĂĂ��A�ދ�������ȁB";
-		mes "����܂�ɂł��������邩��A";
-		mes "����Ƀ[���s�[�ł��H�������ȁ`�ƁB";
+		mes "[ブレイド]";
+		mes "ここで警備してても、退屈だからな。";
+		mes "あんまり暇でつい腹が減るから、";
+		mes "おやつにゼロピーでも食おうかな～と。";
 		next;
-		menu "���A�H�ׂ��ł���!?",-;
-		mes "[�u���C�h]";
-		mes "��������Ȃɋ����Ă���񂾁H";
-		mes "�[���s�[��H�ׂ����ƂȂ��̂��H";
-		mes "�I���͂悭�H�ׂĂ����B";
-		mes "�Ȃ�ƂȂ��Â��Ăȁc�c";
+		menu "え、食べるんですか!?",-;
+		mes "[ブレイド]";
+		mes "何をそんなに驚いているんだ？";
+		mes "ゼロピーを食べたことないのか？";
+		mes "オレはよく食べてたぞ。";
+		mes "なんとなく甘くてな……";
 		next;
 		cutin "v_breid05",2;
-		mes "[�u���C�h]";
-		mes "�݂�Ȑ��N�O�́A";
-		mes "�n�������Ȃǂ�������";
-		mes "�[���s�[��H�ׂ����񂾁B";
+		mes "[ブレイド]";
+		mes "みんな数年前は、";
+		mes "貧しい時などおやつ代わりに";
+		mes "ゼロピーを食べたもんだ。";
 		next;
-		mes "[�u���C�h]";
-		mes "�c�c�����ɂ��ӊO���Ċ炾�ȁB";
-		mes "�t���c�c���F�ŋ߂̎�҂ɂ́A";
-		mes "�n��������Ȃ�ė����ł��Ȃ��񂾂ȁB";
-		mes "�p�͍ς񂾁c�c�A��B";
+		mes "[ブレイド]";
+		mes "……いかにも意外って顔だな。";
+		mes "フン……所詮最近の若者には、";
+		mes "貧しい時代なんて理解できないんだな。";
+		mes "用は済んだ……帰れ。";
 		return;
 	}
 
@@ -436,326 +436,326 @@ function	script	ValentineBreid	{
 		case 1:
 			if(rand(3)==0) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "���a���ȁc�c�����������B";
-				mes "���̂���Ȏ��Ԃɂ܂ŁA";
-				mes "�����Ȃ��Ⴂ����̂�!?";
-				mes "���S�ɐQ�s�����c�c";
+				mes "[ブレイド]";
+				mes "平和だな……しかし眠い。";
+				mes "何故こんな時間にまで、";
+				mes "働かなきゃいかんのだ!?";
+				mes "完全に寝不足だ……";
 				next;
-				mes "[�u���C�h]";
-				mes "�A���^���悭�撣��ȁB";
-				mes "���̂��߂ɁA�����撣���Ă�񂾁H";
+				mes "[ブレイド]";
+				mes "アンタもよく頑張るな。";
+				mes "何のために、そう頑張ってるんだ？";
 				next;
-				if(select("�����ƁA����́c�c","�ꝺ�����_����!!")==1) {
+				if(select("ええと、それは……","一攫千金を狙って!!")==1) {
 					cutin "v_breid06",2;
-					mes "[�u���C�h]";
-					mes "�E�K�@�@�@�@�`�`�`!!";
+					mes "[ブレイド]";
+					mes "ウガァァァァ～～～!!";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "������A�ȁc�c��!?";
+					mes "うわっ、な……何!?";
 					next;
 					cutin "v_breid05",2;
-					mes "[�u���C�h]";
-					mes "���A���܂񂷂܂�B";
-					mes "���������肶��Ȃ������񂾂��c�c";
-					mes "���₟�A����܂�ɂł��c�c";
-					mes "�������A�������ł��N���Ȃ����˂��B";
+					mes "[ブレイド]";
+					mes "あ、すまんすまん。";
+					mes "驚かすつもりじゃなかったんだが……";
+					mes "いやぁ、あんまり暇でさ……";
+					mes "いっそ、何か問題でも起きないかねぇ。";
 					next;
-					mes "[�u���C�h]";
-					mes "����Ȏ��ԂɊO���o�����z�����Ȃ���A";
-					mes "�I���͂���ȏ��Ŏ��ʂقǑދ����Ȃ���";
-					mes "�x������K�v���Ȃ��񂾂��ȁB";
+					mes "[ブレイド]";
+					mes "こんな時間に外を出歩く奴がいなきゃ、";
+					mes "オレはこんな所で死ぬほど退屈しながら";
+					mes "警備する必要もないんだがな。";
 					next;
-					mes "^4A4AFF-���Ȃ��ɑ΂���u���C�h�̍D���x��";
-					mes "�����㏸���܂���-^000000";
+					mes "^4A4AFF-あなたに対するブレイドの好感度が";
+					mes "少し上昇しました-^000000";
 					set QUEST_VALENTINE1,QUEST_VALENTINE1+1;
 					return;
 				}
-				mes "[�u���C�h]";
-				mes "�c�c�A���x���^�ɁA���鏤�l�����ĂȁB";
-				mes "�[���s�[���W�߂āA�K���ɋ��𒙂߂��B";
-				mes "�����āA�_�C�������h���@�蓖�Ă�";
-				mes "�ꝺ����𖲌��āA�R���h�֗��������B";
+				mes "[ブレイド]";
+				mes "……アルベルタに、ある商人がいてな。";
+				mes "ゼロピーを集めて、必死に金を貯めた。";
+				mes "そして、ダイヤモンドを掘り当てて";
+				mes "一攫千金を夢見て、コモドへ旅立った。";
 				next;
-				mes "[�u���C�h]";
-				mes "�c�c���ʂ͔ߎS�Ȃ��̂������B";
+				mes "[ブレイド]";
+				mes "……結果は悲惨なものだった。";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�c�c���̂���Șb�������ł��H";
+				mes "……何故そんな話をするんです？";
 				next;
-				mes "[�u���C�h]";
-				mes "�ꝺ�����_���̂͂������A";
-				mes "�댯�𔺂������Ă��Ƃ��B";
-				mes "��x���s����ƁA��蒼���̂�";
-				mes "��ς�����ȁB";
+				mes "[ブレイド]";
+				mes "一攫千金を狙うのはいいが、";
+				mes "危険を伴うぞってことだ。";
+				mes "一度失敗すると、やり直すのは";
+				mes "大変だからな。";
 				next;
 				cutin "v_breid02",2;
-				mes "[�u���C�h]";
-				mes "�܂��L�~�́A����Ȏ��Ԃ܂ňꐶ����";
-				mes "�撣���Ă邵�A�S�z�Ȃ��Ƃ͎v�����ȁB";
+				mes "[ブレイド]";
+				mes "まぁキミは、こんな時間まで一生懸命";
+				mes "頑張ってるし、心配ないとは思うがな。";
 				return;
 			}
-			break;	//�|�[�V�����N�x���[�g��
+			break;	//ポーション鮮度ルートへ
 		case 2:
 			if(rand(3)==0) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�Ȃ��A�[���s�[�����ĂȂ����H";
-				mes "��������A�����Ȃ����H";
+				mes "[ブレイド]";
+				mes "なぁ、ゼロピー持ってないか？";
+				mes "あったら、一つくれないか？";
 				next;
 				if(countitem(909)<1) {
-					menu "�����A�����Ă܂���",-;
+					menu "いえ、持ってません",-;
 					cutin "v_breid06",2;
-					mes "[�u���C�h]";
-					mes "�Ȃ񂾁A�[���s�[���玝���ĂȂ��̂��H";
-					mes "����̈Ⴂ�Ȃ̂��c�c";
+					mes "[ブレイド]";
+					mes "なんだ、ゼロピーすら持ってないのか？";
+					mes "世代の違いなのか……";
 					return;
 				}
-				if(select("�����Ȃ�","������")==1) {
+				if(select("あげない","あげる")==1) {
 					mes "["+strcharinfo(0)+"]";
-					mes "�[���s�[�Ȃ�āA�����Ă܂����B";
-					mes "����ɁA���Ɏg����ł����H";
+					mes "ゼロピーなんて、持ってませんよ。";
+					mes "それに、何に使うんですか？";
 					next;
-					mes "[�u���C�h]";
-					mes "�����āc�c�H�ׂ�񂾂��H";
-					mes "���܂ɐH�ׂ�Ƃ��܂����B";
-					mes "�Ȃ�ƂȂ��Â݂������Ăȁc�c";
+					mes "[ブレイド]";
+					mes "何って……食べるんだが？";
+					mes "たまに食べるとうまいぞ。";
+					mes "なんとなく甘みがあってな……";
 					next;
-					menu "�H�ׂ�!?�@����ۂǕn�R�Ȃ�ł���!?",-;
+					menu "食べる!?　よっぽど貧乏なんですね!?",-;
 					cutin "v_breid03",2;
-					mes "[�u���C�h]";
-					mes "�c�c";
-					mes "�n�R�ň��������ȁc�c";
+					mes "[ブレイド]";
+					mes "……";
+					mes "貧乏で悪かったな……";
 					return;
 				}
 				mes "["+strcharinfo(0)+"]";
-				mes "�[���s�[�Ȃ玝���Ă邯�ǁc�c";
-				mes "�ł��A���̃[���s�[�Ȃ񂩂��H";
+				mes "ゼロピーなら持ってるけど……";
+				mes "でも、何故ゼロピーなんかを？";
 				next;
-				mes "[�u���C�h]";
-				mes "�����Ōx�����ĂĂ��A�ދ�������ȁB";
-				mes "����܂�ɂł��������邩��A";
-				mes "����Ƀ[���s�[�ł��H�������ȁ`�ƁB";
+				mes "[ブレイド]";
+				mes "ここで警備してても、退屈だからな。";
+				mes "あんまり暇でつい腹が減るから、";
+				mes "おやつにゼロピーでも食おうかな～と。";
 				next;
-				menu "�H�ׂ�!?",-;
+				menu "食べる!?",-;
 				cutin "v_breid06",2;
-				mes "[�u���C�h]";
-				mes "��������Ȃɋ����Ă���񂾁H";
-				mes "�[���s�[��H�ׂ����ƂȂ��̂��H";
-				mes "�I���͂悭�H�ׂĂ����B";
-				mes "�Ȃ�ƂȂ��Â��Ăȁc�c";
+				mes "[ブレイド]";
+				mes "何をそんなに驚いているんだ？";
+				mes "ゼロピーを食べたことないのか？";
+				mes "オレはよく食べてたぞ。";
+				mes "なんとなく甘くてな……";
 				next;
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�݂�Ȑ��N�O�́A";
-				mes "�n�������Ȃǂ�������";
-				mes "�[���s�[��H�ׂ����񂾁B";
+				mes "[ブレイド]";
+				mes "みんな数年前は、";
+				mes "貧しい時などおやつ代わりに";
+				mes "ゼロピーを食べたもんだ。";
 				next;
-				mes "[�u���C�h]";
-				mes "�c�c�����ɂ��ӊO���Ċ炾�ȁB";
-				mes "�ŋ߂̎�҂́A�n���������";
-				mes "�m��Ȃ��񂾂ȁc�c";
+				mes "[ブレイド]";
+				mes "……いかにも意外って顔だな。";
+				mes "最近の若者は、貧しい時代を";
+				mes "知らないんだな……";
 				delitem 909,1;
 				set QUEST_VALENTINE1,1;
 				return;
 			}
-			break;	//�񕜃��[�g��
+			break;	//回復ルートへ
 		case 3:
 			if(rand(3)==0) {
 				cutin "v_breid01",2;
-				mes "[�u���C�h]";
-				mes "�͂��`�ދ����c�c";
-				mes "�������A�|�G���ł���邩�H";
+				mes "[ブレイド]";
+				mes "はぁ～退屈だ……";
+				mes "そうだ、ポエムでも作るか？";
 				next;
-				mes "[�u���C�h]";
-				mes "���@�͊ȒP�I";
-				mes "�e�X�����炩���ߕ��͂����A";
-				mes "��������݂ɂȂ���񂾁B";
+				mes "[ブレイド]";
+				mes "方法は簡単！";
+				mes "各々があらかじめ文章を作り、";
+				mes "それを交互につなげるんだ。";
 				next;
-				mes "[�u���C�h]";
-				mes "�߂��Ⴍ����Ȃ̂�";
-				mes "�o���邩������Ȃ����A";
-				mes "���\�ʔ������H";
-				mes "�ǂ����A����Ă݂邩�H";
+				mes "[ブレイド]";
+				mes "めちゃくちゃなのが";
+				mes "出来るかもしれないが、";
+				mes "結構面白いぞ？";
+				mes "どうだ、やってみるか？";
 				next;
-				if(select("�����A���Ђ��܂��傤","�n���n�������Ă��C���c�c")==2) {
+				if(select("ええ、ぜひやりましょう","馬鹿馬鹿しくてやる気が……")==2) {
 					cutin "v_breid03",2;
-					mes "[�u���C�h]";
-					mes "����Ă��݂Ȃ��Ŕn���n�������Ƃ́A";
-					mes "��������Ȃ����I";
+					mes "[ブレイド]";
+					mes "やってもみないで馬鹿馬鹿しいとは、";
+					mes "酷いじゃないか！";
 					return;
 				}
-				mes "[�u���C�h]";
-				mes "���ꂶ��A���2���͂�����Ă݂āB";
-				mes "�܂���Ԗڂ́c�c";
+				mes "[ブレイド]";
+				mes "それじゃ、先に2つ文章を作ってみて。";
+				mes "まず一番目の……";
 				next;
 				input '@poem1$;
 				mes "["+strcharinfo(0)+"]";
-				mes "��Ԗڂ́c�c";
-				mes '@poem1$+ "�ŁB";
+				mes "一番目は……";
+				mes '@poem1$+ "で。";
 				next;
 				input '@poem2$;
 				mes "["+strcharinfo(0)+"]";
-				mes "��Ԗڂ́c�c";
-				mes '@poem1$+ "�ŁA";
-				mes "��Ԗڂ́c�c";
-				mes '@poem2$+ "�I";
-				mes "�ǂ��ł����H";
+				mes "一番目は……";
+				mes '@poem1$+ "で、";
+				mes "二番目は……";
+				mes '@poem2$+ "！";
+				mes "どうですか？";
 				next;
-				mes "[�u���C�h]";
-				mes "����̕����ł������B";
-				mes "��[���A�Ȃ��Ă݂邩�B";
+				mes "[ブレイド]";
+				mes "おれの方もできたぞ。";
+				mes "よーし、つなげてみるか。";
 				next;
 				switch(rand(6)) {
 				case 0:
-					mes "^218C21�|�����|�����I�Ⴄ���|�|����!!^000000";
+					mes "^218C21ポリンポリン！違うぜポポリン!!^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21�|�����|�����I�Ⴄ���T���^�|�����I^000000";
+					mes "^218C21ポリンポリン！違うぜサンタポリン！^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				case 1:
-					mes "^218C21�|�b�|�b�|�b�|�[�V�����s�b�`���[��^000000";
+					mes "^218C21ポッポッポッポーションピッチャー♪^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21�ɏ�񕜁I�@�|�[�V�����s�b�`���[��^000000";
+					mes "^218C21極上回復！　ポーションピッチャー♪^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				case 2:
-					mes "^218C21�I���̐S�ɔ����Ɏc��`��^000000";
+					mes "^218C21オレの心に微かに残る～♪^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21�v���C�h���̂ā`���Ȃ��ā`��^000000";
+					mes "^218C21プライドを捨て～られなくて～♪^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				case 3:
-					mes "^218C21�c���a�͋��ɂȂ�I�x���I�x���I^000000";
+					mes "^218C21団長殿は仰せになる！警備！警備！^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21����x���̂������Ł`���E�͕��a�`!!^000000";
+					mes "^218C21昼夜警備のおかげで～世界は平和～!!^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				case 4:
-					mes "^218C21���y�R�I�@���y�R�I�@���y�R�y�R�I^000000";
+					mes "^218C21腹ペコ！　腹ペコ！　腹ペコペコ！^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21�����������I�@���y�R�y�R!!^000000";
+					mes "^218C21金も無いぜ！　腹ペコペコ!!^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				case 5:
-					mes "^218C21�����́`��ɉ߂��s���`��^000000";
+					mes "^218C21月日は～常に過ぎ行く～♪^000000";
 					mes "^4A4AFF" +'@poem1$+ "^000000";
-					mes "^218C21�A���f�o�����̐��Ԃ̂悤�Ɂ`!!^000000";
+					mes "^218C21アルデバランの水車のように～!!^000000";
 					mes "^4A4AFF" +'@poem2$+ "^000000";
 					break;
 				}
 				next;
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�c�c�����c�c";
-				mes "�I����A�z���ȁc�c";
+				mes "[ブレイド]";
+				mes "……何か……";
+				mes "オレらアホだな……";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�c�c����c�c";
-				mes "�A�z���ˁc�c";
+				mes "……うん……";
+				mes "アホだね……";
 				set QUEST_VALENTINE1,QUEST_VALENTINE1+1;
 				return;
 			}
-			break;	//�|�[�V�����N�x���[�g��
+			break;	//ポーション鮮度ルートへ
 		case 4:
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "��������Ⴂ�I�@�J�J�I���������H";
+			mes "[ブレイド]";
+			mes "いらっしゃい！　カカオ買うかい？";
 			next;
-			if(select("�����܂�","���\�ł�")==2) {
-				mes "[�u���C�h]";
-				mes "�������肷�����͂Ȃ�����A";
-				mes "�����ɔ����K�v�͂Ȃ���B";
-				mes "�Ƃ���Łc�c�J�J�I���āA���̂܂�";
-				mes "�H�ׂĂ����܂��̂��Ȃ��c�c";
+			if(select("買います","結構です")==2) {
+				mes "[ブレイド]";
+				mes "押し売りするつもりはないから、";
+				mes "無理に買う必要はないよ。";
+				mes "ところで……カカオって、このまま";
+				mes "食べてもうまいのかなぁ……";
 				return;
 			}
-			mes "[�u���C�h]";
-			mes "5�Z�b�g��1499Zeny����I";
-			mes "�����ˁH";
+			mes "[ブレイド]";
+			mes "5つセットで1499Zenyだよ！";
+			mes "いいね？";
 			next;
-			if(select("����5�Z�b�g�Ȃ�ł����H","�͂�")==1) {
-				mes "[�u���C�h]";
-				mes "�����A�o������͖ʓ|�����c�c";
-				mes "�c�c";
-				mes "�s��������Ȃ�A����Ȃ��Ă������B";
+			if(select("何で5つセットなんですか？","はい")==1) {
+				mes "[ブレイド]";
+				mes "そりゃ、バラ売りは面倒だし……";
+				mes "……";
+				mes "不満があるなら、買わなくていいさ。";
 				return;
 			}
 			if(Zeny < 1499) {
 				cutin "v_breid03",2;
-				mes "[�u���C�h]";
-				mes "��c�cZeny������Ȃ��݂������ˁB";
-				mes "�������ǁA�l�������邱�Ƃ�";
-				mes "�ł��Ȃ��񂾁B";
+				mes "[ブレイド]";
+				mes "ん……Zenyが足りないみたいだね。";
+				mes "悪いけど、値引きすることは";
+				mes "できないんだ。";
 				return;
 			}
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�͂���A�J�J�I5�B";
-			mes "���x�`�I�@����������s���D�����`�I";
+			mes "[ブレイド]";
+			mes "はいよ、カカオ5つ。";
+			mes "毎度～！　今日も売れ行き好調だ～！";
 			set Zeny,Zeny-1499;
 			getitem 7182,5;
 			set QUEST_VALENTINE1,QUEST_VALENTINE1+1;
 			return;
 		}
-		//�񕜁E�|�[�V�����N�x���[�g��������
+		//回復・ポーション鮮度ルートここから
 		if(getarg(0)==3) {
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�������Ă���悤�����c�c";
-			mes "�񕜂��Ă�낤���H";
+			mes "[ブレイド]";
+			mes "少し疲れているようだが……";
+			mes "回復してやろうか？";
 			next;
-			if(select("�����A���肢���܂�","�������A���v�ł�")==1) {
-				mes "[�u���C�h]";
-				mes "�ق����ƁB";
-				mes "���܂薳��������Ȃ�B";
+			if(select("ええ、お願いします","いいえ、大丈夫です")==1) {
+				mes "[ブレイド]";
+				mes "ほらよっと。";
+				mes "あまり無理をするなよ。";
 				misceffect 207,"";
 				percentheal 100,0;
 			}
 			else {
-				mes "[�u���C�h]";
-				mes "���������牓�����邱�ƂȂ����H";
-				mes "�K�v�Ȃ�A���ł������Ă���B";
+				mes "[ブレイド]";
+				mes "無料だから遠慮することないぞ？";
+				mes "必要なら、いつでも言ってくれ。";
 			}
 			return;
 		}
 		cutin "v_breid01",2;
-		mes "[�u���C�h]";
-		mes "�񕜂��Ăق������́A";
-		mes "���ł������Ă���B";
-		mes "�|�[�V�����ŉ񕜂��Ă�邩��ȁB";
-		mes "�N�x��������O�Ɏg��Ȃ��ƁA";
-		mes "���������Ȃ�����ȁB";
+		mes "[ブレイド]";
+		mes "回復してほしい時は、";
+		mes "いつでも言ってくれ。";
+		mes "ポーションで回復してやるからな。";
+		mes "鮮度が落ちる前に使わないと、";
+		mes "もったいないからな。";
 		next;
-		set @menu,select("�N�x���āH","�񕜂��Ăق���");
-		mes "[�u���C�h]";
-		mes "�|�[�V�����ɑN�x������̂�";
-		mes "�m��Ȃ����낤�H";
-		mes "�Â��Ȃ��Ă��A�����ς������A";
-		mes "����ŕ����󂷂��̂ł͂Ȃ����A";
-		mes "���ʂ������ɗ�������񂾁B";
+		set @menu,select("鮮度って？","回復してほしい");
+		mes "[ブレイド]";
+		mes "ポーションに鮮度があるのを";
+		mes "知らないだろう？";
+		mes "古くなっても、味が変わったり、";
+		mes "飲んで腹を壊すものではないが、";
+		mes "効果が微妙に落ちるもんだ。";
 		next;
 		if(@menu==1) {
-			mes "[�u���C�h]";
-			mes "�Ȃ�ׂ��N�x�������ŗǂ̏�Ԃ�";
-			mes "���݂������񂾂ȁB";
-			mes "�܂��A�Ⴂ�͔��X������̂����A";
-			mes "������C�ɂ���K�v���Ȃ����낤���c�c";
+			mes "[ブレイド]";
+			mes "なるべく鮮度が高い最良の状態で";
+			mes "飲みたいもんだな。";
+			mes "まぁ、違いは微々たるものだし、";
+			mes "それ程気にする必要もないだろうが……";
 			next;
 			cutin "v_breid02",2;
-			mes "[�u���C�h]";
-			mes "�������A��̐▽�̏u��!!";
-			mes "�Ō�̈�̃|�[�V���������񂾂�";
-			mes "�Â��Č��ʂ����܂����������肷��ƁA";
-			mes "���\��������񂾁B";
+			mes "[ブレイド]";
+			mes "しかし、絶体絶命の瞬間!!";
+			mes "最後の一つのポーションを飲んだら";
+			mes "古くて効果がいまいちだったりすると、";
+			mes "結構泣けるもんだ。";
 		}
 		else {
 			cutin "v_breid02",2;
-			mes "[�u���C�h]";
-			mes "���A�����͑N�x���߂��ፂ��";
-			mes "�ŏ㋉�̃|�[�V�������B";
-			mes "���ꂭ�炢�N�x�������Ǖi���ƁA";
-			mes "�g�������l����!!�@���Ċ�����Ȃ��B";
+			mes "[ブレイド]";
+			mes "さ、こいつは鮮度がめちゃ高い";
+			mes "最上級のポーションだ。";
+			mes "これくらい鮮度が高い良品だと、";
+			mes "使った価値あり!!　って感じるなぁ。";
 			misceffect 207,"";
 			percentheal 100,0;
 		}
@@ -765,240 +765,240 @@ function	script	ValentineBreid	{
 	function PatternD {	//case5
 		if(getarg(3)==3 && QUEST_VALENTINE1_FLAG==1) {
 			cutin "v_breid04",2;
-			mes "[�u���C�h]";
-			mes "�c�c";
-			mes "���̊�c�c";
-			mes "���̑O�I�����Q�����ĉ��������ƁH";
+			mes "[ブレイド]";
+			mes "……";
+			mes "その顔……";
+			mes "この前オレが寝惚けて殴ったこと？";
 			next;
-			mes "[�u���C�h]";
-			mes "���߂�ˁB�Q�Ă鎞�ɐG����ƁA";
-			mes "���ӎ��ɑ̂����������Ⴄ�񂾁B";
+			mes "[ブレイド]";
+			mes "ごめんね。寝てる時に触られると、";
+			mes "無意識に体が反応しちゃうんだ。";
 			next;
-			if(select("�C�ɂ��Ȃ��ł�������","�C�����Ă���������")==1) {
+			if(select("気にしないでください","気をつけてくださいよ")==1) {
 				mes "["+strcharinfo(0)+"]";
-				mes "��ɂ������炵���͎̂�������B";
-				mes "�ނ��뎄���ӂ�Ȃ��Ắc�c";
+				mes "先にいたずらしたのは私だから。";
+				mes "むしろ私が謝らなくては……";
 				next;
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�������B����A�ӂ��Ă��炨���B";
+				mes "[ブレイド]";
+				mes "そうか。じゃ、謝ってもらおう。";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�c�c";
+				mes "……";
 				next;
 				cutin "v_breid02",2;
-				mes "[�u���C�h]";
-				mes "��k�A��k�����āB";
-				mes "�����A���b�Ƃ����!!";
-				mes "���`�Ƃ���ŁA��ŊX�̓쐼�ɂ���";
-				mes "�L��܂ŗ��Ă���Ȃ����H";
-				mes "�x���`������ł鏊�ȁB";
+				mes "[ブレイド]";
+				mes "冗談、冗談だって。";
+				mes "そう、ムッとするな!!";
+				mes "あ～ところで、後で街の南西にある";
+				mes "広場まで来てくれないか？";
+				mes "ベンチが並んでる所な。";
 				next;
-				mes "^4A4A4A-���Ȃ��ɑ΂���u���C�h�̐e���x��";
-				mes "�㏸���܂���-^000000";
+				mes "^4A4A4A-あなたに対するブレイドの親密度が";
+				mes "上昇しました-^000000";
 				set QUEST_VALENTINE1,6;
 				set QUEST_VALENTINE1_FLAG,2;
 				return;
 			}
 			cutin "v_breid06",2;
 			mes "["+strcharinfo(0)+"]";
-			mes "���ӎ�������Ƃ����āA";
-			mes "���������̂���Ȃ��ł���I";
-			mes "�����Ǝ���ɋC�����Ă���������I";
-			mes "����Ȗ��_�o���ƁA";
-			mes "�F�B�����Ȃ��񂶂�Ȃ���!?";
+			mes "無意識だからといって、";
+			mes "許されるものじゃないでしょ！";
+			mes "もっと周りに気をつけてくださいよ！";
+			mes "そんな無神経だと、";
+			mes "友達もいないんじゃないの!?";
 			next;
 			cutin "v_breid03",2;
-			mes "[�u���C�h]";
-			mes "�Ȃ��c�c������!?";
-			mes "�l���킴�킴����������";
-			mes "�ӂ��Ă���Ă�̂�!!";
+			mes "[ブレイド]";
+			mes "なっ……何だと!?";
+			mes "人がわざわざ頭を下げて";
+			mes "謝ってやってるのに!!";
 			next;
 			misceffect 2,"";
 			percentheal -50,0;
-			mes "[�u���C�h]";
-			mes "������x�����Ă݂�!!";
+			mes "[ブレイド]";
+			mes "もう一度言ってみろ!!";
 			next;
 			misceffect 2,"";
 			percentheal -40,0;
-			mes "[�u���C�h]";
-			mes "�I�������_�o���Ƃ�!?";
-			mes "������ƐQ���������炢�ŁA";
-			mes "�����܂Ō����Ėق��Ă��邩!!";
-			mes "�����A������x�����Ă݂�!!";
+			mes "[ブレイド]";
+			mes "オレが無神経だとっ!?";
+			mes "ちょっと寝惚けたくらいで、";
+			mes "そこまで言われて黙ってられるか!!";
+			mes "さぁ、もう一度言ってみろ!!";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�������c�c���������c�c!!";
-			mes "��߂āc�c��߂Ă�������!!";
-			mes "�������������A�����߂��܂����I";
-			mes "�ӂ邩��A��߂Ă��������I";
+			mes "いたっ……いたたっ……!!";
+			mes "やめて……やめてください!!";
+			mes "私が悪かった、言い過ぎました！";
+			mes "謝るから、やめてください！";
 			next;
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�����c�c";
-			mes "�c�c";
-			mes "�悤�₭�����������B";
+			mes "[ブレイド]";
+			mes "ちっ……";
+			mes "……";
+			mes "ようやく理解したか。";
 			next;
 			misceffect 207,"";
 			percentheal 100,0;
-			mes "[�u���C�h]";
-			mes "�c�c���Â��Ă��c�c";
-			mes "�����Ă������A����͍D�ӂ���Ȃ����B";
-			mes "�d�������炵�傤���Ȃ��A�񕜂���";
-			mes "���񂾁B���Ⴂ����Ȃ�B";
+			mes "[ブレイド]";
+			mes "……治療してやる……";
+			mes "言っておくが、これは好意じゃないぞ。";
+			mes "仕事だからしょうがなく、回復して";
+			mes "やるんだ。勘違いするなよ。";
 			return;
 		}
 		if(getarg(3)==3 && QUEST_VALENTINE1_FLAG==0 && rand(3)==0) {
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�c�c�c�c�c";
-			mes "�c�c�c�c�c";
+			mes "[ブレイド]";
+			mes "……………";
+			mes "……………";
 			next;
-			if(select("����������","�l�q���݂�")==2) {
-				mes "^4A4AFF-�u���C�h�̖ڂ̑O�Ŏ��U���Ă݂���";
-				mes "�������Ȃ�-";
-				mes "-�ڂ��J�����܂�";
-				mes "����������Ă���悤��-^000000";
+			if(select("声をかける","様子をみる")==2) {
+				mes "^4A4AFF-ブレイドの目の前で手を振ってみたが";
+				mes "反応がない-";
+				mes "-目を開いたまま";
+				mes "居眠りをしているようだ-^000000";
 				next;
-				if(select("���̖т𔲂��Ă݂�","����������")==1) {
-					mes "^4A4AFF-�u���C�h�̔��̖т̒��ŁA";
-					mes "���߂̔��̖т���{��������܂݁c�c";
-					mes "��C�ɔ����Ă݂�-^000000";
+				if(select("髪の毛を抜いてみる","声をかける")==1) {
+					mes "^4A4AFF-ブレイドの髪の毛の中で、";
+					mes "長めの髪の毛を一本しっかりつまみ……";
+					mes "一気に抜いてみる-^000000";
 					next;
 					cutin "v_breid03",2;
-					mes "[�u���C�h]";
-					mes "���Ă�!! �ȁA���������!?";
-					mes "�\�͔��΁I";
-					mes "���傪����Ȃ�A���Ō����I";
+					mes "[ブレイド]";
+					mes "いてっ!! な、何をするんだ!?";
+					mes "暴力反対！";
+					mes "文句があるなら、口で言え！";
 					if(Sex==0)
 						return;
 					next;
 					misceffect 2,"";
 					percentheal -50,0;
-					mes "[�u���C�h]";
-					mes "����Ȃӂ��ɂ�!!";
+					mes "[ブレイド]";
+					mes "こんなふうにな!!";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "��A�������������ł��I";
-					mes "�ځA�\�͔��΁I�@���̌���";
-					mes "���낵�Ă��������I";
+					mes "わ、私が悪かったです！";
+					mes "ぼ、暴力反対！　その拳を";
+					mes "下ろしてください！";
 					next;
 					cutin "v_breid06",2;
-					mes "[�u���C�h]";
-					mes "��c�c�����H";
-					mes "���̊�A�ǂ��������̂��H";
-					mes "�P�K���Ă邼�H";
+					mes "[ブレイド]";
+					mes "ん……おお？";
+					mes "その顔、どうかしたのか？";
+					mes "ケガしてるぞ？";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "���Ȃ�����������ł���!!";
-					mes "���������I�@���̌��ŁI";
-					mes "�\�͔��΂Ƃ������Ȃ���A";
-					mes "���̊���������̂͂ǂ��̒N�ł���!?";
+					mes "あなたが殴ったんでしょ!!";
+					mes "たった今！　その拳で！";
+					mes "暴力反対とか言いながら、";
+					mes "私の顔を殴ったのはどこの誰ですか!?";
 					next;
 					misceffect 207,"";
 					percentheal 100,0;
 					cutin "v_breid04",2;
-					mes "[�u���C�h]";
-					mes "��A�Ȃ񂾃I�}�G�����c�c";
-					mes "�Q�����Ă�����łȁc�c";
-					mes "��܂��A�Q�Ă鏊��s�p�ӂ�";
-					mes "�߂Â��z�������񂾂��H";
-					mes "���Â��Ă�邩��C�ɂ���ȁB";
+					mes "[ブレイド]";
+					mes "ん、なんだオマエかぁ……";
+					mes "寝惚けてたもんでな……";
+					mes "んまぁ、寝てる所を不用意に";
+					mes "近づく奴が悪いんだぞ？";
+					mes "治療してやるから気にするな。";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "�c�c������Q�����Ă�������āA";
-					mes "�����Ȃ艣��Ȃ�āc�c";
+					mes "……いくら寝惚けてたからって、";
+					mes "いきなり殴るなんて……";
 					next;
 					cutin "v_breid03",2;
-					mes "[�u���C�h]";
-					mes "�������A���邳���I";
-					mes "�񕜂�����A�������ƃ����X�^�[�ł�";
-					mes "���ɍs���Ă����I";
+					mes "[ブレイド]";
+					mes "ええい、うるさい！";
+					mes "回復したら、さっさとモンスターでも";
+					mes "狩りに行ってこい！";
 					set QUEST_VALENTINE1_FLAG,1;
 					return;
 				}
 			}
 			mes "["+strcharinfo(0)+"]";
-			mes "�������Ă����ł����H";
+			mes "何をしているんですか？";
 			next;
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�����c�c�L�~���B";
-			mes "�������܂������ُ�Ȃ����I";
-			mes "�������a�ŕ��a�Łc�c";
-			mes "�����Ȃ��Ă��Ă��B";
+			mes "[ブレイド]";
+			mes "あぁ……キミか。";
+			mes "今日もまったく異常なしっ！";
+			mes "もう平和で平和で……";
+			mes "眠くなってきてさ。";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "���������Ōx�����Ă�΁A�O����";
-			mes "�ł��傤�ˁc�c���܂ɂ͋x�񂾂�H";
+			mes "毎日そこで警備してれば、飽きる";
+			mes "でしょうね……たまには休んだら？";
 			next;
-			mes "[�u���C�h]";
-			mes "�����ĂȂ��������H";
-			mes "�̒������ĐQ���񂾒c�������Ă��B";
-			mes "�x�ɒ������Ă̂ɁA�����̑����";
-			mes "�����Ȃ��Ⴂ���Ȃ��񂾁B";
-			mes "�܁A�x�ɂ��I�������A������";
-			mes "������ɖ߂邱�ƂɂȂ邯�ǂˁB";
+			mes "[ブレイド]";
+			mes "言ってなかったか？";
+			mes "体調崩して寝込んだ団員がいてさ。";
+			mes "休暇中だってのに、そいつの代わりに";
+			mes "働かなきゃいけないんだ。";
+			mes "ま、休暇が終わったら、自分の";
+			mes "持ち場に戻ることになるけどね。";
 			next;
 			cutin "v_breid04",2;
-			mes "[�u���C�h]";
-			mes "���Ɛ����̐h��������A���v���B";
-			mes "�S�z���Ă���Ă��肪�Ƃ��B";
+			mes "[ブレイド]";
+			mes "あと数日の辛抱だから、大丈夫さ。";
+			mes "心配してくれてありがとう。";
 			return;
 		}
 		cutin "v_breid05",2;
-		mes "[�u���C�h]";
-		mes "�͂��`���a�ŁA�ދ��ŁA�����c�c";
-		mes "�O�O�O�D�`";
-		mes "�c�c��������c�c";
+		mes "[ブレイド]";
+		mes "はぁ～平和で、退屈で、眠い……";
+		mes "グググゥ～";
+		mes "……腹も減る……";
 		next;
-		if(select("�[���s�[����܂����H","���͌����Ă܂��񂪁c�c")==1) {
-			mes "[�u���C�h]";
-			mes "����Ȃ��B";
+		if(select("ゼロピーいりますか？","私は減ってませんが……")==1) {
+			mes "[ブレイド]";
+			mes "いらない。";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�l���D�ӂŌ����Ă�̂ɁI";
+			mes "人が好意で言ってるのに！";
 			next;
-			mes "[�u���C�h]";
-			mes "���������̂ŁA�Ζ����I��肵����";
-			mes "�|���悤�ɐQ����肾�B";
-			mes "����ł������Ă��炢�������Ă��I";
-			mes "�����Ύ����낤���������낤���A";
-			mes "��������΂ɋN���Ȃ�����ȁB";
+			mes "[ブレイド]";
+			mes "相当眠いので、勤務が終わりしだい";
+			mes "倒れるように寝るつもりだ。";
+			mes "これでもかってくらい爆睡してやる！";
+			mes "もう火事だろうが事件だろうが、";
+			mes "絶っっっ対に起きないからな。";
 			next;
-			mes "[�u���C�h]";
-			mes "������A�Ζ����Ԃ��I���܂ł��Ə���";
-			mes "�����Ƃ��̂܂܉��������ɑς���!!";
+			mes "[ブレイド]";
+			mes "だから、勤務時間が終わるまであと少し";
+			mes "じっとこのまま何もせずに耐える!!";
 		}
 		else {
 			cutin "v_breid03",2;
-			mes "[�u���C�h]";
-			mes "�c�c";
-			mes "�I�}�G�́A���Ă��Ȃ��A";
-			mes "�������Ȃ��A�����󂢂Ă����Ȃ��c�c";
+			mes "[ブレイド]";
+			mes "……";
+			mes "オマエは、疲れてもなく、";
+			mes "眠くもなく、腹も空いてもいない……";
 			next;
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "����Ɂc�c���R�ɕ������Ă����ˁB";
-			mes "�I�����R�m�����߂Ė`�����悤���Ȃ��B";
+			mes "[ブレイド]";
+			mes "それに……自由に歩き回れていいね。";
+			mes "オレも騎士を辞めて冒険しようかなぁ。";
 			next;
-			mes "[�u���C�h]";
-			mes "�܂��A���������ł��̋Ζ����I��肩�B";
-			mes "���a�ȃv�����e���Ƃ͂�����΂��B";
-			mes "���̎�����ɖ߂�Ȃ��Ă͂ȁB";
-			mes "����ɁA�A���o�C�g���I��肩�c�c";
+			mes "[ブレイド]";
+			mes "まぁ、もう少しでこの勤務も終わりか。";
+			mes "平和なプロンテラとはおさらばだ。";
+			mes "元の持ち場に戻らなくてはな。";
+			mes "それに、アルバイトも終わりか……";
 			next;
-			menu "�A���o�C�g�H",-;
-			mes "[�u���C�h]";
-			mes "�����c�c";
-			mes "���̌x���̋Ζ��͒��Ԃ̑�s�ł��Ă�";
-			mes "����������A�蓖�Ă͏o�Ȃ��񂾁B";
+			menu "アルバイト？",-;
+			mes "[ブレイド]";
+			mes "ああ……";
+			mes "この警備の勤務は仲間の代行でしてる";
+			mes "だけだから、手当ては出ないんだ。";
 			next;
-			mes "[�u���C�h]";
-			mes "�A���o�C�g�ł����Ȃ����A";
-			mes "�������ꂵ���Ă��B";
-			mes "�c�c���āA�I���A���ł���Șb��";
-			mes "���Ă�񂾁c�c�H";
+			mes "[ブレイド]";
+			mes "アルバイトでもしなけりゃ、";
+			mes "生活が苦しくてさ。";
+			mes "……って、オレ、何でこんな話を";
+			mes "してるんだ……？";
 		}
 		set QUEST_VALENTINE1,6;
 		return;
@@ -1013,78 +1013,78 @@ function	script	ValentineBreid	{
 				getitem 573,1;
 				getitem 7182,5;
 				cutin "v_breid01",2;
-				mes "[�u���C�h]";
-				mes "�����I�@�҂��Ă���!!";
-				mes "�܂��܂��A�Ƃ肠����������߁I";
-				mes "��ł����āA����������āI";
+				mes "[ブレイド]";
+				mes "おう！　待っていた!!";
+				mes "まぁまぁ、とりあえずこれ飲め！";
+				mes "んでもって、これを持って！";
 				next;
-				mes "[�u���C�h]";
-				mes "�悵�A���񂾂ȁB";
-				mes "���ꂶ��A���ݕ���Ƃ��āA";
-				mes "���̃J�J�I���A���x���^�܂�";
-				mes "�z�B��낵���I";
+				mes "[ブレイド]";
+				mes "よし、飲んだな。";
+				mes "それじゃ、飲み物代として、";
+				mes "そのカカオをアルベルタまで";
+				mes "配達よろしく！";
 				next;
-				menu "�c�c���̂��߂ɌĂ񂾂́H",-;
+				menu "……そのために呼んだの？",-;
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�������B";
-				mes "�������H�@���ɉ������҂��Ă��̂��H";
-				mes "�����œ͂��悤�Ǝv�����񂾂��A";
-				mes "�x��������c�c�H";
-				mes "�c���̖ڂ𓐂�Ŕ����o�����Ƃ��A";
-				mes "�Ȃ��Ȃ��ł��Ȃ����Ă��c�c";
+				mes "[ブレイド]";
+				mes "そうだ。";
+				mes "何だぁ？　他に何か期待してたのか？";
+				mes "自分で届けようと思ったんだが、";
+				mes "警備中だろ……？";
+				mes "団長の目を盗んで抜け出すことが、";
+				mes "なかなかできなくってさ……";
 				next;
-				mes "[�u���C�h]";
-				mes "^4A4AFF�A���x���^^000000��^4A4AFF�V���R��=�o�V�j�I^000000���B";
-				mes "���ނ��B";
+				mes "[ブレイド]";
+				mes "^4A4AFFアルベルタ^000000の^4A4AFFショコラ=バシニオ^000000だ。";
+				mes "頼むぞ。";
 				return;
 			}
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "���̂��c�c���܂Ȃ����A";
-			mes "�e�n�ŏW�߂��i�����A";
-			mes "�A���x���^�܂Ŕz�B��";
-			mes "���݂����񂾁B";
+			mes "[ブレイド]";
+			mes "あのさ……すまないが、";
+			mes "各地で集めた品物を、";
+			mes "アルベルタまで配達を";
+			mes "頼みたいんだ。";
 			next;
-			mes "[�u���C�h]";
-			mes "�o�C�g�Ŕz�B�����Ă���񂾂��A";
-			mes "�A���x���^�܂œ���s���Ȃ�����Ȃ��B";
+			mes "[ブレイド]";
+			mes "バイトで配達をしているんだが、";
+			mes "アルベルタまで到底行けないからなぁ。";
 			next;
-			if(select("�����ł���","�Z�����ł�")==2) {
+			if(select("いいですよ","忙しいです")==2) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�������c�c";
-				mes "�������ȁA�ǂ����悤�c�c";
+				mes "[ブレイド]";
+				mes "そうか……";
+				mes "困ったな、どうしよう……";
 				return;
 			}
-			mes "[�u���C�h]";
-			mes "�z�B�i�́A�J�J�I5���B���l�́A";
-			mes "�A���x���^�̃V���R��=�o�V�j�I���B";
+			mes "[ブレイド]";
+			mes "配達品は、カカオ5つだ。受取人は、";
+			mes "アルベルタのショコラ=バシニオだ。";
 			next;
 			set QUEST_VALENTINE1,7;
 			getitem 7182,5;
-			mes "[�u���C�h]";
-			mes "�i���̑���͂���������Ă��邩��A";
-			mes "�����A�͂��Ă����΂����B";
+			mes "[ブレイド]";
+			mes "品物の代金はもうもらっているから、";
+			mes "ただ、届けてくれればいい。";
 			next;
-			mes "[�u���C�h]";
-			mes "^4A4AFF�A���x���^^000000��^4A4AFF�V���R��=�o�V�j�I^000000���B";
-			mes "���ނ��B";
+			mes "[ブレイド]";
+			mes "^4A4AFFアルベルタ^000000の^4A4AFFショコラ=バシニオ^000000だ。";
+			mes "頼むぞ。";
 			return;
 		case 2:
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "^4A4AFF" +'name$+ "^000000�Ƃ���";
-			mes "���̎q��m��Ȃ����H";
-			mes "���Ȃ����ދ����̂��ɐ���܂�";
-			mes "�����Ă������q�Ȃ񂾂��B";
-			mes "�c�c����A���܂�B����Șb��";
-			mes "�������͂Ȃ������񂾂��ȁB";
+			mes "[ブレイド]";
+			mes "^4A4AFF" +'name$+ "^000000という";
+			mes "女の子を知らないか？";
+			mes "こないだ退屈しのぎに西門まで";
+			mes "送ってあげた子なんだが。";
+			mes "……いや、すまん。こんな話を";
+			mes "するつもりはなかったんだがな。";
 			return;
 		case 3:
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "����ł͂܂��A�v�����e���ŉ���B";
+			mes "[ブレイド]";
+			mes "それではまた、プロンテラで会おう。";
 			close2;
 			set 'flag,0;
 			cutin "v_breid01",255;
@@ -1094,229 +1094,229 @@ function	script	ValentineBreid	{
 
 	function PatternF {	//case7
 		cutin "v_breid05",2;
-		mes "[�u���C�h]";
-		mes "^4A4AFF�A���x���^^000000��^4A4AFF�V���R��=�o�V�j�I^000000���B";
-		mes "�z�B���镨��^4A4AFF�J�J�I5��^000000�B";
-		mes "���ނ��B";
+		mes "[ブレイド]";
+		mes "^4A4AFFアルベルタ^000000の^4A4AFFショコラ=バシニオ^000000だ。";
+		mes "配達する物は^4A4AFFカカオ5つ^000000。";
+		mes "頼むぞ。";
 		return;
 	}
 
 	function PatternG {	//case8
 		cutin "v_breid01",2;
-		mes "[�u���C�h]";
-		mes "���A����J�������ȁB";
-		mes "�����Ɠ͂��Ă��ꂽ���H";
+		mes "[ブレイド]";
+		mes "お、ご苦労だったな。";
+		mes "ちゃんと届けてくれたか？";
 		next;
-		switch (select("�萔���Ƃ��Ă�������`���R��n��","��������`���R��H�ׂ��ƌ���")) {
+		switch (select("手数料としてもらったチョコを渡す","もらったチョコを食べたと言う")) {
 		case 1:
 			if(countitem(558)<1) {
 				cutin "v_breid05",2;
 				mes "["+strcharinfo(0)+"]";
-				mes "���A����H�@���������ȁc�c";
-				mes "�z�B�萔���Ƃ��Ă�������͂���";
-				mes "�`���R���[�g���Ȃ��Ȃ��������!?!";
-				mes "���`��A�ǂ��ɂ������񂾂낤�c�c";
+				mes "あ、あれ？　おかしいな……";
+				mes "配達手数料としてもらったはずの";
+				mes "チョコレートがなくなっちゃった!?!";
+				mes "う～ん、どこにいったんだろう……";
 				next;
 				cutin "v_breid02",2;
-				mes "[�u���C�h]";
-				mes "�z�B�����̂̓L�~������A�萔���Ȃ�";
-				mes "�L�~���H�ׂėǂ������񂾂��c�c";
-				mes "�Ȃ�����������̂��B�c�O���ȁB";
+				mes "[ブレイド]";
+				mes "配達したのはキミだから、手数料なら";
+				mes "キミが食べて良かったんだが……";
+				mes "なくしちゃったのか。残念だな。";
 				break;
 			}
-			mes "[�u���C�h]";
-			mes "��c�c�����H�@�`���R���[�g�H";
-			mes "�����̂��H";
+			mes "[ブレイド]";
+			mes "ん……何だ？　チョコレート？";
+			mes "くれるのか？";
 			next;
-			if(select("�萔���Ƃ��Ă�������ƌ���","���̋C�������ƌ���")==1) {
+			if(select("手数料としてもらったと言う","私の気持ちだと言う")==1) {
 				mes "["+strcharinfo(0)+"]";
-				mes "�z�B��́A�`���R���[�g�̂��X�ł����B";
-				mes "�z�B�萔���ɂƂ�������̂ŁA";
-				mes "�H�ׂĂ��������B";
+				mes "配達先は、チョコレートのお店でした。";
+				mes "配達手数料にともらったので、";
+				mes "食べてください。";
 				next;
-				mes "[�u���C�h]";
-				mes "�z�B�����̂̓L�~������A";
-				mes "�z�B�萔���Ȃ�L�~���H�ׂĂ�����B";
+				mes "[ブレイド]";
+				mes "配達したのはキミだから、";
+				mes "配達手数料ならキミが食べていいよ。";
 				break;
 			}
 			if(Sex==0) {
-				mes "[�u���C�h]";
-				mes "���c�c�I�A�I���Ɂc�c�H";
+				mes "[ブレイド]";
+				mes "え……オ、オレに……？";
 				next;
 				delitem 558,1;
 				set QUEST_VALENTINE1,QUEST_VALENTINE1+3;
 				cutin "v_breid04",2;
-				mes "[�u���C�h]";
-				mes "���A���肪�Ƃ��B";
+				mes "[ブレイド]";
+				mes "あ、ありがとう。";
 				next;
-				mes "^4A4A4A-���Ȃ��ɑ΂���u���C�h�̍D���x��";
-				mes "�啝�ɏ㏸���܂���-^000000";
+				mes "^4A4A4A-あなたに対するブレイドの好感度が";
+				mes "大幅に上昇しました-^000000";
 				if('name$=="" || rand(3)==0)
 					set 'name$,strcharinfo(0);
 			}
 			else {
 				cutin "v_breid04",2;
-				mes "[�u���C�h]";
-				mes "�Ȃ��c�c";
-				mes "����A��k����!?";
-				mes "�I���́c�c����������͂Ȃ���!!";
+				mes "[ブレイド]";
+				mes "なっ……";
+				mes "じょ、冗談だろ!?";
+				mes "オレは……そういう趣味はないぞ!!";
 				set QUEST_VALENTINE1,9;
 			}
 			return;
 		case 2:
 			mes "["+strcharinfo(0)+"]";
-			mes "�z�B��́A�`���R���[�g�̂��X�ł����B";
-			mes "�z�B�萔���ɂƈ��������̂ŁA";
-			mes "�H�ׂ����Ē����܂����B";
+			mes "配達先は、チョコレートのお店でした。";
+			mes "配達手数料にと一つもらったので、";
+			mes "食べさせて頂きました。";
 			next;
 			cutin "v_breid06",2;
-			mes "[�u���C�h]";
+			mes "[ブレイド]";
 			break;
 		}
-		mes "�J�J�I�̓`���R���[�g�̌����Ȃ񂾁B";
-		mes "�m��Ȃ������H";
+		mes "カカオはチョコレートの原料なんだ。";
+		mes "知らなかった？";
 		next;
 		cutin "v_breid02",2;
-		mes "[�u���C�h]";
-		mes "��������A�`���R���[�g����D����";
-		mes "�c����������ȁB�Ȃ񂩎v���o������A";
-		mes "�v���Ԃ�ɉ�����Ȃ����ȁB";
-		mes "�Ƃɂ����A�z�B���肪�Ƃ��B";
+		mes "[ブレイド]";
+		mes "そういや、チョコレートが大好きな";
+		mes "幼馴染がいたな。なんか思い出したら、";
+		mes "久しぶりに会いたくなったな。";
+		mes "とにかく、配達ありがとう。";
 		next;
-		mes "^4A4A4A-���Ȃ��ɑ΂���u���C�h�̐e���x��";
-		mes "�㏸���܂���-^000000";
+		mes "^4A4A4A-あなたに対するブレイドの親密度が";
+		mes "上昇しました-^000000";
 		set QUEST_VALENTINE1,9;
 		return;
 	}
 
-	function PatternH {	//case9�`16
+	function PatternH {	//case9～16
 		switch(getarg(2)) {
 		case 1:
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "^4A4AFF" +'name$+ "^000000�Ƃ���";
-			mes "���̎q��m��Ȃ����H";
-			mes "���Ȃ����ދ����̂��ɐ���܂�";
-			mes "�����Ă������q�Ȃ񂾂��B";
-			mes "�c�c����A���܂�B����Șb��";
-			mes "�������͂Ȃ������񂾂��ȁB";
+			mes "[ブレイド]";
+			mes "^4A4AFF" +'name$+ "^000000という";
+			mes "女の子を知らないか？";
+			mes "こないだ退屈しのぎに西門まで";
+			mes "送ってあげた子なんだが。";
+			mes "……いや、すまん。こんな話を";
+			mes "するつもりはなかったんだがな。";
 			return;
 		case 2:
 		case 3:
 			cutin "v_breid01",2;
 			if(rand(3)) {
-				mes "[�u���C�h]";
-				mes "�|�[�V�����s�b�`���[�I";
+				mes "[ブレイド]";
+				mes "ポーションピッチャー！";
 				misceffect 207,"";
 				percentheal 100,0;
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�c�c";
+				mes "……";
 				next;
-				mes "[�u���C�h]";
-				mes "�c�c�c�c";
-				mes "�c�c";
+				mes "[ブレイド]";
+				mes "…………";
+				mes "……";
 				next;
-				mes "[�u���C�h]";
-				mes "���`�ɂ��A�ɂ��I�@�ɂȂ񂾂�!!";
-				mes "��������ȋΖ����񂴂�Ȃ񂾂�!!";
+				mes "[ブレイド]";
+				mes "あ～暇だ、暇だ！　暇なんだよ!!";
+				mes "もうこんな勤務うんざりなんだよ!!";
 				return;
 			}
-			mes "[�u���C�h]";
-			mes "���̑O�J�J�I��z�B���Ă�����������A";
-			mes "�`���R���[�g�ŗL���ȓX�Ȃ񂾁B";
-			mes "���傤�Ǌ��Ԍ���̔����Ă邩��A";
-			mes "�L�~����������ǂ������H";
-			mes "������Ȃ��Ǝ�ɓ���Ȃ���B";
+			mes "[ブレイド]";
+			mes "この前カカオを配達してもらった所さ、";
+			mes "チョコレートで有名な店なんだ。";
+			mes "ちょうど期間限定販売してるから、";
+			mes "キミも買ったらどうだい？";
+			mes "今じゃないと手に入らないよ。";
 			next;
-			mes "[�u���C�h]";
-			mes "�����Δ������J�J�I�̎��v�������A";
-			mes "�I�����������!!�@�����ɐ�!!";
-			mes "���v�{��!!�@���Ăȁ`�I";
+			mes "[ブレイド]";
+			mes "売れれば売れる程カカオの需要が増え、";
+			mes "オレも取引増加!!　商売繁盛!!";
+			mes "利益倍増!!　ってな～！";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�c�c";
-			mes "�Ȃ�قǁA���ꂪ�ړI�ł����c�c";
+			mes "……";
+			mes "なるほど、それが目的ですか……";
 			next;
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�c�c�|�[�V�����s�b�`���[�I";
+			mes "[ブレイド]";
+			mes "……ポーションピッチャー！";
 			misceffect 207,"";
 			percentheal 100,0;
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "���܂����Ȃ�!!";
+			mes "ごまかすなっ!!";
 			set QUEST_VALENTINE1,QUEST_VALENTINE1+1;
 			return;
 		case 4:
 			if(rand(3)) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "���낻��A���o�C�g���I��肩�B";
-				mes "�ו��̐��������Ȃ��ƂȂ��B";
+				mes "[ブレイド]";
+				mes "そろそろアルバイトも終わりか。";
+				mes "荷物の整理をしないとなぁ。";
 				next;
-				menu "���A�ǂ��ɍs����ł����H",-;
-				mes "[�u���C�h]";
-				mes "�A���x���^�ɋA��̂��B";
-				mes "���낻��{�Ƃɖ߂�Ȃ��ƂˁB";
-				mes "�܂��A�v�����e���ɗ������ɂł�";
-				mes "���Ƃ����ȁB";
+				menu "え、どこに行くんですか？",-;
+				mes "[ブレイド]";
+				mes "アルベルタに帰るのさ。";
+				mes "そろそろ本業に戻らないとね。";
+				mes "また、プロンテラに来た時にでも";
+				mes "会えるといいな。";
 				return;
 			}
 			cutin "v_breid01",2;
-			mes "[�u���C�h]";
-			mes "�J�J�I���邩���H";
-			mes "�P��300Zeny�I";
-			mes "5�Z�b�g�ő����1499Zeny!!";
+			mes "[ブレイド]";
+			mes "カカオいるかい？";
+			mes "単価300Zeny！";
+			mes "5つセットで大特価1499Zeny!!";
 			next;
-			if(select("�΂��Ȃ���k���ˁc�c","���A���x�ق��������Ƃ��ł�")==1) {
+			if(select("笑えない冗談だね……","あ、丁度ほしかったとこです")==1) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�c�c�΂��Ȃ���k���āc�c";
-				mes "�I���A�����ςȂ��ƌ��������H";
+				mes "[ブレイド]";
+				mes "……笑えない冗談って……";
+				mes "オレ、何か変なこと言ったか？";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�l�i������������ł���I";
-				mes "�l�i��!!";
+				mes "値段がおかしいんですよ！";
+				mes "値段が!!";
 				next;
 				cutin "v_breid03",2;
-				mes "[�u���C�h]";
-				mes "�͂��`�A���ꂾ����f�l�́c�c";
-				mes "���菤�i�̉��l�𔻂��ĂȂ��ȁH";
-				mes "����͂��������ȒP�Ɏ�ɓ���i������";
-				mes "�Ȃ��񂾂�!?";
-				mes "�������Ȃ��Ɣ���؂�邼�H";
-				mes "������Ȃ���A���̓z���������Ⴄ���H";
+				mes "[ブレイド]";
+				mes "はぁ～、これだから素人は……";
+				mes "限定商品の価値を判ってないな？";
+				mes "それはそうそう簡単に手に入る品物じゃ";
+				mes "ないんだぞ!?";
+				mes "早くしないと売り切れるぞ？";
+				mes "今買わなきゃ、他の奴が買っちゃうぞ？";
 				next;
-				if(select("�N�ɂł����������Ă��ł���c�c","����A�����������Ă�������")==1) {
+				if(select("誰にでもそう言ってるんでしょ……","じゃ、今すぐ売ってください")==1) {
 					cutin "v_breid05",2;
-					mes "[�u���C�h]";
-					mes "�������A�݂�Ȃɂ����������c�c";
-					mes "�c�c�c�c";
+					mes "[ブレイド]";
+					mes "もちろん、みんなにそう言うが……";
+					mes "…………";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "����A������āH";
-					mes "�ǂ��Ɍ���̉��l�������ł�!?";
+					mes "じゃ、限定って？";
+					mes "どこに限定の価値があるんです!?";
 					next;
 					cutin "v_breid02",2;
-					mes "[�u���C�h]";
-					mes "�c�c����႟�c�c";
-					mes "�I�������邱�ƂɌ��܂��Ă邾�낤�H";
+					mes "[ブレイド]";
+					mes "……そりゃぁ……";
+					mes "オレが売ることに決まってるだろう？";
 					return;
 				}
 			}
 			if(Zeny < 1499) {
 				cutin "v_breid03",2;
-				mes "[�u���C�h]";
-				mes "��c�cZeny������Ȃ��݂������ˁB";
-				mes "�������ǁA�l�������邱�Ƃ�";
-				mes "�ł��Ȃ��񂾁B";
+				mes "[ブレイド]";
+				mes "ん……Zenyが足りないみたいだね。";
+				mes "悪いけど、値引きすることは";
+				mes "できないんだ。";
 				return;
 			}
 			cutin "v_breid02",2;
-			mes "[�u���C�h]";
-			mes "���x���I";
-			mes "������Č��t�ɁA�݂�Ȏア��ȁI";
+			mes "[ブレイド]";
+			mes "毎度っ！";
+			mes "限定って言葉に、みんな弱いよな！";
 			set Zeny,Zeny-1499;
 			getitem 7182,5;
 			set QUEST_VALENTINE1,QUEST_VALENTINE1+1;
@@ -1327,59 +1327,59 @@ function	script	ValentineBreid	{
 	function PatternI {	//case17
 		if(rand(3)==0) {
 			cutin "v_breid05",2;
-			mes "[�u���C�h]";
-			mes "�I�}�G�A�`���R���[�g�͍D�����H";
+			mes "[ブレイド]";
+			mes "オマエ、チョコレートは好きか？";
 			next;
-			if(select("�����A��D���ł�","�����A���܂�c�c")==1) {
+			if(select("ええ、大好きです","いえ、あまり……")==1) {
 				if(Sex==0) {
-					//�������H
+					//未調査？
 				}
 				cutin "v_breid02",2;
-				mes "[�u���C�h]";
-				mes "�������c�c����Ȃ�A";
-				mes "�v�����e���쐼�̎���ɂ���A";
-				mes "�A����=�I�����A���ɉ�Ƃ����B";
-				mes "�������A�`���R���[�g��";
-				mes "�����Ă�����B";
+				mes "[ブレイド]";
+				mes "そうか……それなら、";
+				mes "プロンテラ南西の酒場にいる、";
+				mes "アルル=オルレアンに会うといい。";
+				mes "そいつが、チョコレートを";
+				mes "売ってくれるよ。";
 				next;
-				mes "[�u���C�h]";
-				mes "���l������Ȃ�A";
-				mes "��v���[���g���Ă�������ǂ����H";
+				mes "[ブレイド]";
+				mes "恋人がいるなら、";
+				mes "一つプレゼントしてあげたらどうだ？";
 			}
 			else if(Sex==0) {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�������c�c�c�c";
-				mes "���ꂾ������A����͗F�B�ɂł�";
-				mes "�����Ă���B";
+				mes "[ブレイド]";
+				mes "そうか…………";
+				mes "それだったら、これは友達にでも";
+				mes "あげてくれ。";
 				next;
-				mes "[�u���C�h]";
-				mes "�ׁA�ʂɁA�����Ӗ���������";
-				mes "�����悤�Ƃ����킯����Ȃ������!?";
-				mes "�`���R���[�g�̓X������Ă�F�B����";
-				mes "���܂��܈�����������A";
-				mes "�����L�~���D���Ȃ炠���悤���ȁ`��";
-				mes "�v�����������I";
+				mes "[ブレイド]";
+				mes "べ、別に、何か意味があって";
+				mes "あげようとしたわけじゃないからな!?";
+				mes "チョコレートの店をやってる友達から";
+				mes "たまたま一つもらったから、";
+				mes "もしキミが好物ならあげようかな～と";
+				mes "思っただけだ！";
 				getitem 559,1;
 			}
 			else {
 				cutin "v_breid05",2;
-				mes "[�u���C�h]";
-				mes "�������c�c���܂ɐH�ׂ��";
-				mes "���\���܂����񂾂�B";
-				mes "�n���Ă���Ǝ肪�ׂ����̂��A";
-				mes "������ƋC�ɂȂ邪�ȁB";
+				mes "[ブレイド]";
+				mes "そっか……たまに食べると";
+				mes "結構うまいもんだよ。";
+				mes "溶けてくると手がべたつくのが、";
+				mes "ちょっと気になるがな。";
 				next;
-				mes "[�u���C�h]";
-				mes "����ɁA�l�ɑ���ɂ͍œK�̕i�����B";
-				mes "�`���R���[�g�Ȃ�A���̐l��";
-				mes "���ł���邩��ȁB";
+				mes "[ブレイド]";
+				mes "それに、人に贈るには最適の品物だ。";
+				mes "チョコレートなら、大抵の人は";
+				mes "喜んでくれるからな。";
 				next;
-				mes "[�u���C�h]";
-				mes "�����v���[���g���鑊�肪����Ȃ�A";
-				mes "�v�����e���쐼�̎���ɂ���";
-				mes "�A����=�I�����A���ɉ�Ƃ����B";
-				mes "�ނ��`���R���[�g�𔄂��Ă�����B";
+				mes "[ブレイド]";
+				mes "もしプレゼントする相手がいるなら、";
+				mes "プロンテラ南西の酒場にいる";
+				mes "アルル=オルレアンに会うといい。";
+				mes "彼がチョコレートを売ってくれるよ。";
 				set QUEST_VALENTINE1_FLAG,1;
 			}
 			set QUEST_VALENTINE1,18;
@@ -1389,47 +1389,47 @@ function	script	ValentineBreid	{
 
 	function PatternJ {	//case18
 		cutin "v_breid01",2;
-		mes "[�u���C�h]";
-		mes "�v�����e���̓쐼�̎���ɂ���";
-		mes "�A����=�I�����A�����ēz���A";
-		mes "�`���R���[�g�𔄂��Ă���B";
+		mes "[ブレイド]";
+		mes "プロンテラの南西の酒場にいる";
+		mes "アルル=オルレアンって奴が、";
+		mes "チョコレートを売っている。";
 		next;
-		mes "[�u���C�h]";
-		mes "�����������Ȃ�����A�L�~��";
-		mes "�����Ă����Ƃ�����B";
+		mes "[ブレイド]";
+		mes "今しか買えないから、キミも";
+		mes "買っておくといいよ。";
 		return;
 	}
 
 	function PatternK {	//case19
 		cutin "v_breid01",2;
-		mes "[�u���C�h]";
-		mes "�ǂ����c�c�H";
-		mes "���̃`���R���[�g�͔����������낤�H";
+		mes "[ブレイド]";
+		mes "どうだ……？";
+		mes "このチョコレートは美味しいだろう？";
 		if(Sex==0) {
-			mes "�I�����L�~�ɂ��Ă������邱�Ƃ́A";
-			mes "���ꂭ�炢�����Ȃ�����Ȃ��B";
+			mes "オレがキミにしてあげられることは、";
+			mes "これくらいしかないからなぁ。";
 		}
 		else {
-			mes "���ЁA�K�[���t�����h�ɂ�";
-			mes "�v���[���g���Ă�����Ƃ����B";
+			mes "ぜひ、ガールフレンドにも";
+			mes "プレゼントしてあげるといい。";
 		}
 		next;
 		if(QUEST_VALENTINE1_FLAG==1) {
-			mes "[�u���C�h]";
-			mes "�Z���Ԃ��������A�������F�X��";
-			mes "�b������ɂȂ��Ă���Ă��肪�Ƃ��B";
-			mes "�c�O�����A�����̋��ɖ߂�Ȃ�����ȁB";
-			mes "�y����������B";
-			mes "����́A�I������ʂ�̃v���[���g���B";
-			mes "�e�����l�ɂ�����Ƃ����B";
+			mes "[ブレイド]";
+			mes "短い間だったが、寒い中色々と";
+			mes "話し相手になってくれてありがとう。";
+			mes "残念だが、もう故郷に戻らなくちゃな。";
+			mes "楽しかったよ。";
+			mes "これは、オレから別れのプレゼントだ。";
+			mes "親しい人にあげるといい。";
 			getitem 573,1;
 			set QUEST_VALENTINE1_FLAG,0;
 		}
 		else {
-			mes "[�u���C�h]";
-			mes "�c�c";
-			mes "�v�����e���ŃL�~�Əo������ƁA";
-			mes "�Y��Ȃ���c�c";
+			mes "[ブレイド]";
+			mes "……";
+			mes "プロンテラでキミと出会えたこと、";
+			mes "忘れないよ……";
 		}
 		set QUEST_VALENTINE1,20;
 		return;
@@ -1437,20 +1437,20 @@ function	script	ValentineBreid	{
 
 	function PatternL {	//case20
 		cutin "v_breid01",2;
-		mes "[�u���C�h]";
-		mes "���������a���c�c�ُ�Ȃ��I";
-		mes "���[���~�b�h�K�b�c�����I";
-		mes "����!!";
+		mes "[ブレイド]";
+		mes "今日も平和だ……異常なし！";
+		mes "ルーンミッドガッツ王国！";
+		mes "万歳!!";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�C���������Ă܂��ˁB";
+		mes "気合い入ってますね。";
 		next;
 		cutin "v_breid02",2;
-		mes "[�u���C�h]";
-		mes "����c�c���̒��A�������N���邩";
-		mes "�킩��Ȃ�����H";
-		mes "������A�����ꐶ���������Ȃ���ȁA";
-		mes "�Ǝv���ĂˁB";
+		mes "[ブレイド]";
+		mes "うん……世の中、いつ何が起きるか";
+		mes "わからないだろ？";
+		mes "だから、今を一生懸命生きなきゃな、";
+		mes "と思ってね。";
 		return;
 	}
 }
@@ -1458,12 +1458,12 @@ function	script	ValentineBreid	{
 prontera.gat,0,0,0	script	V_BreidTimer	-1,{
 	end;
 OnTimer180000:
-	set callfunc("ValentineBreid",0),0;	//�����l�����A�^�b�`�h�~���b�N����
+	set callfunc("ValentineBreid",0),0;	//複数人同時アタッチ防止ロック解除
 	end;
 }
 
-// �u���C�h 2�`4�� 15�`17��
-prt_fild05.gat,360,252,3	script	�u���C�h#Valentine1	733,{
+// ブレイド 2～4時 15～17時
+prt_fild05.gat,360,252,3	script	ブレイド#Valentine1	733,{
 	if(gettime(3)>= 2 && gettime(3)< 4) callfunc "ValentineBreid",1,2,1,3;
 	if(gettime(3)>=15 && gettime(3)<17) callfunc "ValentineBreid",1,1,3,1;
 	end;
@@ -1482,8 +1482,8 @@ OnHour17:
 	end;
 }
 
-// �u���C�h 4�`7�� 17�`19��
-prt_fild08.gat,162,367,5	script	�u���C�h#Valentine2	733,{
+// ブレイド 4～7時 17～19時
+prt_fild08.gat,162,367,5	script	ブレイド#Valentine2	733,{
 	if(gettime(3)>= 4 && gettime(3)< 7) callfunc "ValentineBreid",2,2,1,3;
 	if(gettime(3)>=17 && gettime(3)<19) callfunc "ValentineBreid",2,1,3,2;
 	end;
@@ -1502,8 +1502,8 @@ OnHour19:
 	end;
 }
 
-// �u���C�h 8�`10�� 21�`23��
-prontera.gat,116,69,3	script	�u���C�h#Valentine3	733,{
+// ブレイド 8～10時 21～23時
+prontera.gat,116,69,3	script	ブレイド#Valentine3	733,{
 	if(gettime(3)>= 8 && gettime(3)<10) callfunc "ValentineBreid",3,1,2,1;
 	if(gettime(3)>=21 && gettime(3)<23) callfunc "ValentineBreid",3,2,2,1;
 	end;
@@ -1522,8 +1522,8 @@ OnHour23:
 	end;
 }
 
-// �u���C�h 12�`15��
-prontera.gat,58,70,3	script	�u���C�h#Valentine4	733,{
+// ブレイド 12～15時
+prontera.gat,58,70,3	script	ブレイド#Valentine4	733,{
 	callfunc "ValentineBreid",4,1,4,1;
 	end;
 OnInit:
@@ -1540,40 +1540,40 @@ OnHour15:
 
 
 //==============================================================
-// �X�v���L
-//	 2�` 4��	����		�N�G�X�g��	���O���ꁛ
-//	 4�` 6��	���M		�N�G�X�g��	���O���ꁛ
-//	 7�` 9��	���		�N�G�X�g��	���O���ꁛ
-//	 9�`11��	����		�N�G�X�g�~	���O����~
-//	11�`13��	����		�N�G�X�g��	���O���ꁛ
-//	13�`15��	��峁i�N���Z�j	�N�G�X�g�~	���O����~
-//	15�`17��	���M		�N�G�X�g��	���O���ꁛ
-//	17�`19��	�x�e		�N�G�X�g�~	���O���ꁛ
-//	19�`21��	�S��		�N�G�X�g�~	���O����~
-//	21�`23��	���		�N�G�X�g��	���O���ꁛ
+// スプラキ
+//	 2～ 4時	聖水		クエスト○	名前入れ○
+//	 4～ 6時	お皿		クエスト○	名前入れ○
+//	 7～ 9時	盗蟲		クエスト○	名前入れ○
+//	 9～11時	聖堂		クエスト×	名前入れ×
+//	11～13時	聖水		クエスト○	名前入れ○
+//	13～15時	盗蟲（クルセ）	クエスト×	名前入れ×
+//	15～17時	お皿		クエスト○	名前入れ○
+//	17～19時	休憩		クエスト×	名前入れ○
+//	19～21時	牢獄		クエスト×	名前入れ×
+//	21～23時	盗蟲		クエスト○	名前入れ○
 // Function
-//	getarg(0)	�ŏ��̉�b���e
-//		0=���b�N�̎Q�Ɠn����p
-//		1=��	2=��	3=�d��	4=�Œ�	5=�Ŗ�	6=����
-//	getarg(1)	�r���̃C�x���g���e
-//		1=����	2=���M	3=���	4=����	5=���2	6=�x�e	7=�S��
-//	getarg(2)	�N�G�X�g��
-//		1=�\	2=�s��	3=�r���܂ŉ�	4=���O����̂݉�
+//	getarg(0)	最初の会話内容
+//		0=ロックの参照渡し専用
+//		1=昼	2=夜	3=仕事	4=看朝	5=看夜	6=聖堂
+//	getarg(1)	途中のイベント内容
+//		1=聖水	2=お皿	3=盗蟲	4=聖堂	5=盗蟲2	6=休憩	7=牢獄
+//	getarg(2)	クエスト可否
+//		1=可能	2=不可	3=途中まで可	4=名前入れのみ可
 //--------------------------------------------------------------
 
 function	script	ValentineSprakki	{
 	if(getarg(0)==0)
-		return 'flag;	//�l��n���ďI��
+		return 'flag;	//値を渡して終了
 	if((Weight*100/MaxWeight) >= 90) {
-		mes "�����A�C�e���̏d�ʂ���������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���-";
-		mes "-�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă�������-";
+		mes "所持アイテムの重量が多いため";
+		mes "アイテムを受けとることができません-";
+		mes "-所持アイテムを減らしてから、再度";
+		mes "話しかけてください-";
 		close;
 	}
-	if('flag) {	//�����l�����A�^�b�`�h�~
-		mes "-�Z��������-";
-		mes "-�����҂��Ă���A�܂������|���悤-";
+	if('flag) {	//複数人同時アタッチ防止
+		mes "-忙しそうだ-";
+		mes "-少し待ってから、また声を掛けよう-";
 		close;
 	}
 	set 'flag,1;
@@ -1625,875 +1625,875 @@ function	script	ValentineSprakki	{
 		switch(getarg(0)) {
 		default:
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "���̂��p�ł����H";
-			mes "���Ȃ������̂悤��";
-			mes "����œ����Ă�����ł��傤���H";
+			mes "[スプラキ]";
+			mes "何のご用ですか？";
+			mes "あなたも私のように";
+			mes "お城で働いている方でしょうか？";
 			next;
-			if(select("�����ł�","����A�Ⴂ�܂�")==1) {
-				mes "[�X�v���L]";
-				mes "�킟�A�������I";
-				mes "���͂�����ɗ��Ă���܂��Ԃ��Ȃ��āA";
-				mes "�m�荇�������Ȃ������̂ł���";
-				mes "�����ꏊ�œ����Ă���Ȃ�";
-				mes "�悭����Ƃ�����܂���ˁH";
+			if(select("そうです","いや、違います")==1) {
+				mes "[スプラキ]";
+				mes "わぁ、嬉しい！";
+				mes "私はこちらに来てからまだ間もなくて、";
+				mes "知り合いがいなかったのですが";
+				mes "同じ場所で働いているなら";
+				mes "よく会うこともありますよね？";
 				next;
-				mes "[�X�v���L]";
-				mes "���Ȃ��͎��";
-				mes "�ǂ��ł��d�����Ȃ����Ă��ł����H";
-				mes "���͊Ō쏫�Z�l�̕⏕��";
-				mes "�N���Z�C�_�[�E�����̒S����";
-				mes "���Ă����ł��B";
+				mes "[スプラキ]";
+				mes "あなたは主に";
+				mes "どこでお仕事をなさってるんですか？";
+				mes "私は看護将校様の補助と";
+				mes "クルセイダー職務室の担当を";
+				mes "しているんです。";
 				next;
-				mes "[�X�v���L]";
-				mes "���A�����吹���ɍs������";
-				mes "�󂯂Ă����ł����A";
-				mes "�ꏏ�ɂ�������Ⴂ�܂��񂩁H";
+				mes "[スプラキ]";
+				mes "あ、毎朝大聖堂に行く許可を";
+				mes "受けているんですが、";
+				mes "一緒にいらっしゃいませんか？";
 				next;
-				if(select("�c�c�{���͓����Ă��܂���","�i���̂܂܂ł͎��E�����Ȃ������j")==2) {
+				if(select("……本当は働いていません","（このままでは収拾がつかなそうだ）")==2) {
 					mes "["+strcharinfo(0)+"]";
-					mes "�i�����l�����ɓ�������R�������̂�";
-					mes "�@�΂�Ă��܂��c�c�B";
-					mes "�@�����͑傰���Ɍ떂������";
-					mes "�@���̏�𗣂�悤�B�j";
+					mes "（何も考えずに答えたら嘘をついたのが";
+					mes "　ばれてしまう……。";
+					mes "　ここは大げさに誤魔化して";
+					mes "　この場を離れよう。）";
 					next;
 					cutin "v_sprakki05",2;
 					mes "["+strcharinfo(0)+"]";
-					mes "�������������Ƃ͑S�ĖY��Ă��������I";
-					mes "���͂͂́c�c";
-					mes "�ł́A�Z�����̂ł���Ŏ���I";
+					mes "私が言ったことは全て忘れてください！";
+					mes "あははは……";
+					mes "では、忙しいのでこれで失礼！";
 					return;
 				}
 			}
-			mes "[�X�v���L]";
-			mes "����A�ł͉����Ȃ����Ă�����ł����H";
-			mes "�����̂��q�l�H�@�����̒ʂ肷����H";
-			mes "��������Ȃ���΁c�c�h�q?!";
+			mes "[スプラキ]";
+			mes "あら、では何をなさっている方ですか？";
+			mes "王室のお客様？　ただの通りすがり？";
+			mes "そうじゃなければ……刺客?!";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "����Ȃ킯�Ȃ��ł�!!!!";
+			mes "そんなわけないです!!!!";
 			next;
-			mes "[�X�v���L]";
-			mes "���́A����Ȃ킯�Ȃ��̂������Ă�";
-			mes "�����܂����B";
-			mes "�{���Ɏh�q��������A";
-			mes "�܂����̎��͂�ł�ł��傤�ˁB";
+			mes "[スプラキ]";
+			mes "あは、そんなわけないのが解ってて";
+			mes "言いました。";
+			mes "本当に刺客だったら、";
+			mes "まず私の手を掴んでるでしょうね。";
 			break;
 		case 4:
 		case 5:
 			cutin "v_sprakki05",2;
-			mes "[�X�v���L]";
-			mes "����A�O���̕��c�c";
+			mes "[スプラキ]";
+			mes "あら、外部の方……";
 			if(getarg(0)==4)
-				mes "������Ō쎺�ɂ���������Ȃ�āA";
+				mes "朝から看護室にいらっしゃるなんて、";
 			else {
-				mes "����Ȗ邨�����c�c�Ō쎺��";
-				mes "����������Ȃ�āA";
+				mes "こんな夜おそく……看護室に";
+				mes "いらっしゃるなんて、";
 			}
-			mes "�������p�ł����H";
+			mes "何かご用ですか？";
 			next;
-			if(select("���ł��Ȃ��ł�","�ɂ��Ă��܂�܂���")==1) {
+			if(select("何でもないです","痛くてたまりません")==1) {
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "�����ł����B";
-				mes "�����C�Ȃ̂͗ǂ����Ƃł��B";
+				mes "[スプラキ]";
+				mes "そうですか。";
+				mes "お元気なのは良いことです。";
 				if(getarg(0)==4) {
-					mes "��ӂ͂悭�Q��܂������H";
-					mes "������������܂������H";
+					mes "昨晩はよく寝れましたか？";
+					mes "いい夢を見れましたか？";
 				}
 				else
-					mes "���́A�������x�݂̎��ԂȂ̂ł���c�c";
+					mes "私は、もうお休みの時間なのですよ……";
 				break;
 			}
-			mes "[�X�v���L]";
-			mes "�ɂ��̂ł����H�@�������H";
-			mes "�ǂ����ɂ���ł��H";
-			mes "���A�����Ɓc�c�܂��͎��Í܂��c�c";
+			mes "[スプラキ]";
+			mes "痛いのですか？　すごく？";
+			mes "どこが痛いんです？";
+			mes "え、えっと……まずは治療剤を……";
 			next;
 			misceffect 207,"";
 			percentheal 100,0;
-			mes "[�X�v���L]";
-			mes "�����A����Ȃ�!?";
-			mes "�Ђǂ����c�c";
-			mes "����A�����Ɠ������Ă܂����H";
+			mes "[スプラキ]";
+			mes "えっ、こんなに!?";
+			mes "ひどい傷……";
+			mes "お薬、ちゃんと当たってますか？";
 			next;
-			mes "[�X�v���L]";
-			mes "�ǂ��ł����H";
-			mes "�܂��ɂ݂܂����c�c�H";
-			mes "���߂�Ȃ����c�c";
-			mes "���A�܂����n�҂ł�����";
-			mes "�܂Ƃ��ɂ���������Ȃ���ł��c�c";
+			mes "[スプラキ]";
+			mes "どうですか？";
+			mes "まだ痛みますか……？";
+			mes "ごめんなさい……";
+			mes "私、まだ未熟者ですから";
+			mes "まともにお薬を扱えないんです……";
 			next;
-			if(select("���肪�Ƃ��I�@���C�ɂȂ�܂���","�ɂ��I�@�Ђǂ����Â��I")==1) {
+			if(select("ありがとう！　元気になりました","痛い！　ひどい治療だ！")==1) {
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "�ǂ������c�c�I";
-				mes "�s����Ȃ��̂ł�������";
-				mes "�S�z��������ł��B";
+				mes "[スプラキ]";
+				mes "良かった……！";
+				mes "不慣れなものでしたから";
+				mes "心配だったんです。";
 				break;
 			}
-			mes "[�X�v���L]";
-			mes "������I�@�т����肵���c�c";
-			mes "����Ȃɋ��΂Ȃ��Ă�";
-			mes "��������Ȃ��ł����B";
-			mes "�ꐶ��������΂����̂Ɂc�c";
-			mes "���߂�Ȃ����c�c���n�҂Łc�c";
+			mes "[スプラキ]";
+			mes "きゃっ！　びっくりした……";
+			mes "そんなに叫ばなくても";
+			mes "いいじゃないですか。";
+			mes "一生懸命がんばったのに……";
+			mes "ごめんなさい……未熟者で……";
 			next;
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "���x�́A�����Ƃ���Ă݂��܂��B";
-			mes "�ł��c�c����ȕ���";
-			mes "�l�̐��ӂ𖳎����Ă����Ƌ��Ԃ̂�";
-			mes "����ł���H";
+			mes "[スプラキ]";
+			mes "今度は、ちゃんとやってみせます。";
+			mes "でも……そんな風に";
+			mes "人の誠意を無視してかっと叫ぶのは";
+			mes "失礼ですよ？";
 			next;
-			mes "[�X�v���L]";
-			mes "����Ȃ�����Ƃ����ꌾ�ł�";
-			mes "�����Ă��܂��l������";
-			mes "�����ł�����c�c";
-			mes "�܂��A���͕��C�ł����ǂˁB";
+			mes "[スプラキ]";
+			mes "そんなちょっとした一言でも";
+			mes "傷ついてしまう人だって";
+			mes "いるんですから……";
+			mes "まあ、私は平気ですけどね。";
 			break;
 		case 6:
-			mes "�����ƂĂ��^����";
-			mes "���F������Ă���悤���B";
+			mes "何かとても真剣に";
+			mes "お祈りをしているようだ。";
 			next;
-			if(select("�������F�肵�Ă����ł����H","�ז����Ȃ��ł�����")==2) {
-				mes "-�b��������̂��~�߂�-";
+			if(select("何をお祈りしているんですか？","邪魔しないでおこう")==2) {
+				mes "-話しかけるのを止めた-";
 				return;
 			}
 			cutin "v_sprakki05",2;
-			mes "[�X�v���L]";
-			mes "������c�c";
+			mes "[スプラキ]";
+			mes "きゃっ……";
 			next;
-			mes "[�X�v���L]";
-			mes "�c�c�����ł͐Â��ɂ��Ȃ���";
-			mes "�ʖڂł���c�c�B";
+			mes "[スプラキ]";
+			mes "……聖堂では静かにしないと";
+			mes "駄目ですよ……。";
 			next;
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "�����H";
-			mes "�����������F�肵�Ă�����";
-			mes "�m�肽���̂ł����H";
-			mes "���͐��E�̕��a�����F�肵�Ă��܂����B";
-			mes "���Ȃ��͉������F������܂������H";
+			mes "[スプラキ]";
+			mes "えっ？";
+			mes "私が何をお祈りしていたか";
+			mes "知りたいのですか？";
+			mes "私は世界の平和をお祈りしていました。";
+			mes "あなたは何かお祈りをしましたか？";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�c�c";
-			mes "���́c�c";
+			mes "……";
+			mes "私は……";
 			next;
 			input '@mes$;
 			mes "["+strcharinfo(0)+"]";
-			mes "�c�c";
-			mes "���́c�c";
-			mes "^4A4AFF" +'@mes$+ "^000000��";
-			mes "���F�肵�܂���!!";
+			mes "……";
+			mes "私は……";
+			mes "^4A4AFF" +'@mes$+ "^000000と";
+			mes "お祈りしました!!";
 			next;
-			mes "[�X�v���L]";
-			mes '@mes$+ "�ł����c�c";
-			mes "�_�͂�������������ł��傤���H";
+			mes "[スプラキ]";
+			mes '@mes$+ "ですか……";
+			mes "神はお聞きくださるでしょうか？";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "���E���a���͎����������ł���H";
+			mes "世界平和よりは実現しそうですよ？";
 			next;
 			cutin "v_sprakki02",2;
-			mes "[�X�v���L]";
-			mes "�ӂӂ��A����͏�k�ł���B";
-			mes "���͐��E�̕��a�͋F���Ă܂���B";
+			mes "[スプラキ]";
+			mes "ふふっ、それは冗談ですよ。";
+			mes "実は世界の平和は祈ってません。";
 			next;
-			mes "^4A4AFF-�c�c�Ɣޏ��͏����ł���������";
-			mes "����o���Ĕ��΂�-^000000";
+			mes "^4A4AFF-……と彼女は小声でそう言うと";
+			mes "舌を出して微笑んだ-^000000";
 			next;
-			mes "[�X�v���L]";
-			mes "���́c�c��낵�����";
-			mes "����֗V�тɂ��Ă���܂��񂩁H";
-			mes "����ł͎G������`���Ă��܂�����";
-			mes "�܂����v�����e���ɗ���邩";
-			mes "����܂��񂵁c�c";
+			mes "[スプラキ]";
+			mes "あの……よろしければ";
+			mes "お城へ遊びにきてくれませんか？";
+			mes "城内では雑事を手伝っていますから";
+			mes "またいつプロンテラに来れるか";
+			mes "解りませんし……";
 			next;
-			mes "[�X�v���L]";
-			mes "����ł̒m�荇����";
-			mes "�Ō쏫�Z�l�A�N���Z�C�_�[�̕��X�A";
-			mes "�����̏C�����l�Ɛ_���l�����ł���";
-			mes "�F����A�ƂĂ��Z�������ł��c�c�B";
+			mes "[スプラキ]";
+			mes "お城での知り合いは";
+			mes "看護将校様、クルセイダーの方々、";
+			mes "聖堂の修道女様と神父様だけですが";
+			mes "皆さん、とても忙しそうです……。";
 			next;
-			mes "[�X�v���L]";
-			mes "����Ǝ��͒��̂��F�莞�Ԃɂ���";
-			mes "�O�o���邱�Ƃ��ł��܂���B";
+			mes "[スプラキ]";
+			mes "それと私は朝のお祈り時間にしか";
+			mes "外出することができません。";
 			next;
-			if(select("���ł��V�тɍs���܂���I","����Ȃ���͂Ȃ�")==2) {
+			if(select("いつでも遊びに行きますよ！","そんなつもりはない")==2) {
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "�����ł���ˁc�c";
-				mes "����ς菉�ʂ̕���";
-				mes "����Ȃ��肢������̂�";
-				mes "����ł���ˁc�c�B";
+				mes "[スプラキ]";
+				mes "そうですよね……";
+				mes "やっぱり初面の方に";
+				mes "そんなお願いをするのは";
+				mes "失礼ですよね……。";
 				return;
 			}
-			mes "[�X�v���L]";
-			mes "�{���ł���!? �������I";
-			mes strcharinfo(0)+ "����A�ł��ˁH";
-			mes "�����Ɖ����Ă����܂��B";
-			mes "���ƗF�B�ɂȂ��Ă��������I";
+			mes "[スプラキ]";
+			mes "本当ですか!? 嬉しい！";
+			mes strcharinfo(0)+ "さん、ですね？";
+			mes "ちゃんと憶えておきます。";
+			mes "私と友達になってください！";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "�Ƃ���Ŗ{���̂��F��͉��������́H";
+			mes "ところで本当のお祈りは何だったの？";
 			next;
-			mes "[�X�v���L]";
-			mes "���`��c�c�閧�ł��B";
-			mes "�ł��A�_�͂������̊肢��";
-			mes "��������Ă��ꂽ�悤�ł��B";
+			mes "[スプラキ]";
+			mes "う～ん……秘密です。";
+			mes "でも、神はもう私の願いを";
+			mes "聞き入れてくれたようです。";
 			next;
-			mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̍D���x��";
-			mes "�㏸���܂���-^000000";
+			mes "^4A4AFF-あなたに対するスプラキの好感度が";
+			mes "上昇しました-^000000";
 			if('name$=="" || rand(3)==0)
 				set 'name$,strcharinfo(0);
 			set QUEST_VALENTINE2,1;
 			return;
 		}
-		//6�ȊO�̑���
-		mes "^4A4AFF-�ޏ��́A�킸���ɔ��΂��";
-		mes "�ӂ�����񂵂�-^000000";
+		//6以外の続き
+		mes "^4A4AFF-彼女は、わずかに微笑んで";
+		mes "辺りを見回した-^000000";
 		next;
-		mes "[�X�v���L]";
-		mes "���́c�c��낵�����";
-		mes "�܂��V�тɗ��Ă���܂��񂩁H";
-		mes "���������ł���`�������Ă��܂�����";
-		mes "���Ă���������Ɗ������ł��B";
+		mes "[スプラキ]";
+		mes "あの……よろしければ";
+		mes "また遊びに来てくれませんか？";
+		mes "いつもここでお手伝いをしていますから";
+		mes "来ていただけると嬉しいです。";
 		next;
-		mes "[�X�v���L]";
-		mes "���̒m�荇���Ƃ����΁A";
-		mes "�Ō쏫�Z�l��N���Z�C�_�[�̕��X�A";
-		mes "����ɑ吹���̐_���l��C�����l";
-		mes "�����Ȃ̂ł����c�c";
+		mes "[スプラキ]";
+		mes "私の知り合いといえば、";
+		mes "看護将校様やクルセイダーの方々、";
+		mes "それに大聖堂の神父様や修道女様";
+		mes "だけなのですが……";
 		next;
-		mes "[�X�v���L]";
-		mes "�F����A���i�͖Z�����āc�c";
+		mes "[スプラキ]";
+		mes "皆さん、普段は忙しくて……";
 		next;
-		if(select("�ł́A���Ԃ������ėV�тɗ��܂���","���߂�Ȃ����A�Z�����̂Łc�c")==2) {
+		if(select("では、時間を見つけて遊びに来ますね","ごめんなさい、忙しいので……")==2) {
 			cutin "v_sprakki03",2;
-			mes "[�X�v���L]";
-			mes "�����ł����A�c�O�ł��B";
-			mes "�ǂ��F�B�ɂȂ��Ǝv�����̂Ɂc�c";
+			mes "[スプラキ]";
+			mes "そうですか、残念です。";
+			mes "良い友達になれると思ったのに……";
 			next;
 			switch(getarg(0)) {
 			case 1:
-				mes "[�X�v���L]";
-				mes "���A���Ă��܂����̂�";
-				mes "������Ƌx�܂Ȃ��Ɓc�c";
-				mes "�����o�čs���Ă��������B";
+				mes "[スプラキ]";
+				mes "私、疲れてしまったので";
+				mes "ちょっと休まないと……";
+				mes "もう出て行ってください。";
 				return;
 			case 2:
 			case 5:
-				mes "[�X�v���L]";
-				mes "���������������|�����āA��ςł����B";
-				mes "���Ă��܂��̂ŁA���ꂩ��x�݂܂��B";
-				mes "�����o�čs���Ă��炦�܂����H";
+				mes "[スプラキ]";
+				mes "今日もあちこち掃除して、大変でした。";
+				mes "疲れていますので、これから休みます。";
+				mes "もう出て行ってもらえますか？";
 				return;
 			case 3:
-				mes "[�X�v���L]";
-				mes "���͍����Ă���d����";
-				mes "�S�����Ȃ���΂Ȃ�Ȃ��̂�";
-				mes "�������A�肭�������܂����H";
+				mes "[スプラキ]";
+				mes "私は今している仕事を";
+				mes "全部しなければならないので";
+				mes "もうお帰りくださいますか？";
 				return;
 			case 4:
-				mes "[�X�v���L]";
-				mes "���낻��A�Ō쏫�Z�l��";
-				mes "����{���ɗ��܂��B";
-				mes "�����o�čs���Ă��������܂����H";
+				mes "[スプラキ]";
+				mes "そろそろ、看護将校様が";
+				mes "私を捜しに来ます。";
+				mes "もう出て行ってくださいますか？";
 				return;
 			}
 			return;
 		}
 		cutin "v_sprakki02",2;
-		mes "[�X�v���L]";
-		mes "�{���ł���!? �������I";
-		mes strcharinfo(0)+ "����A�ł��ˁH";
-		mes "���̗F�B�ɂȂ��Ă��������I";
+		mes "[スプラキ]";
+		mes "本当ですか!? 嬉しい！";
+		mes strcharinfo(0)+ "さん、ですね？";
+		mes "私の友達になってください！";
 		next;
 		switch(getarg(0)) {
 		case 2:
-			mes "[�X�v���L]";
-			mes "���������������|�����āA��ςł����B";
-			mes "���Ă��܂��̂ŁA���ꂩ��x�݂܂��B";
+			mes "[スプラキ]";
+			mes "今日もあちこち掃除して、大変でした。";
+			mes "疲れていますので、これから休みます。";
 			next;
-			mes "[�X�v���L]";
-			mes "�܂��V�тɗ��Ă��������ˁB";
-			mes "����������Ȃ��Ă��܂����̂ŁA";
-			mes "������薰��܂��B";
+			mes "[スプラキ]";
+			mes "また遊びに来てくださいね。";
+			mes "夜もおそくなってしまったので、";
+			mes "ゆっくり眠ります。";
 			break;
 		case 4:
-			mes "[�X�v���L]";
-			mes "���A�������B";
-			mes "�ׂ̕����̊Ō쏫�Z�l��";
-			mes "�C�Â��O�ɂ����𗣂�ĉ������B";
-			mes "�{��Ɩ{���ɕ|���l�Ȃ�ł��I";
+			mes "[スプラキ]";
+			mes "あ、そうだ。";
+			mes "隣の部屋の看護将校様が";
+			mes "気づく前にここを離れて下さい。";
+			mes "怒ると本当に怖い人なんです！";
 			next;
-			mes "[�X�v���L]";
-			mes "��قǁA�ߌ�ɂł�";
-			mes "�V�тɗ��Ă��������ˁB";
+			mes "[スプラキ]";
+			mes "後ほど、午後にでも";
+			mes "遊びに来てくださいね。";
 			break;
 		default:
-			mes "[�X�v���L]";
-			mes "�܂��V�тɗ��Ă��������ˁB";
+			mes "[スプラキ]";
+			mes "また遊びに来てくださいね。";
 			break;
 		}
 		next;
-		mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̍D���x��";
-		mes "�㏸���܂���-^000000";
+		mes "^4A4AFF-あなたに対するスプラキの好感度が";
+		mes "上昇しました-^000000";
 		if('name$=="" || rand(3)==0)
 			set 'name$,strcharinfo(0);
 		set QUEST_VALENTINE2,1;
 		return;
 	}
 
-	function PatternB {	//case1�`9
+	function PatternB {	//case1～9
 		switch(getarg(1)) {
 		case 1:
 			if(rand(3)==0) {
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "���A" +strcharinfo(0)+ "����I";
-				mes "���������Ă܂��񂩁H";
-				mes "�����Ă�����A";
-				mes "�����Ă������������̂ł����c�c";
+				mes "[スプラキ]";
+				mes "あ、" +strcharinfo(0)+ "さん！";
+				mes "聖水持ってませんか？";
+				mes "持っていたら、";
+				mes "譲っていただきたいのですが……";
 				next;
 				if(countitem(523)) {
-					if(select("����܂���","���͎����Ă܂���")==1) {
+					if(select("ありますよ","今は持ってません")==1) {
 						mes "["+strcharinfo(0)+"]";
-						mes "�����Ă܂���B�ǂ����B";
-						mes "���Ɏg����ł����H";
+						mes "持ってますよ。どうぞ。";
+						mes "何に使うんですか？";
 						next;
-						mes "[�X�v���L]";
-						mes "���Ă��������A���̐A���B";
-						mes "�t�͌͂�A���͈ނтĂ��܂��āc�c";
-						mes "���������Ă��A�����Ɋ�����";
-						mes "���܂���ł��B";
+						mes "[スプラキ]";
+						mes "見てください、この植物。";
+						mes "葉は枯れ、幹は萎びてしまって……";
+						mes "水をあげても、すぐに乾いて";
+						mes "しまうんです。";
 						next;
-						mes "[�X�v���L]";
-						mes "�h�{���_�Ȑ�����������΁A";
-						mes "���C�ɂȂ��Ă����Ǝv����ł��B";
+						mes "[スプラキ]";
+						mes "栄養満点な聖水をあげれば、";
+						mes "元気になってくれると思うんです。";
 						next;
 						delitem 523,1;
 						cutin "v_sprakki02",2;
-						mes "[�X�v���L]";
-						mes "�ǂ������肪�Ƃ��B";
+						mes "[スプラキ]";
+						mes "どうもありがとう。";
 						next;
-						mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̍D���x��";
-						mes "�㏸���܂���-^000000";
+						mes "^4A4AFF-あなたに対するスプラキの好感度が";
+						mes "上昇しました-^000000";
 						set QUEST_VALENTINE2,QUEST_VALENTINE2+1;
 						return;
 					}
 				}
 				mes "["+strcharinfo(0)+"]";
-				mes "���͎����ĂȂ���ł��B";
+				mes "今は持ってないんです。";
 				next;
-				mes "[�X�v���L]";
-				mes "�����ł����c�c�c�O�ł��B";
-				mes "�����A�����Ɋ���Ė���Ă��Ȃ���c�c";
+				mes "[スプラキ]";
+				mes "そうですか……残念です。";
+				mes "明日、聖堂に寄って貰ってこなきゃ……";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "���̐������K�v�Ȃ�ł����H";
+				mes "何故聖水が必要なんですか？";
 				next;
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "���Ă��������A���̐A���B";
-				mes "�t�͌͂�A���͈ނтĂ��܂��āc�c";
-				mes "���������Ă��A�����Ɋ�����";
-				mes "���܂���ł��B";
+				mes "[スプラキ]";
+				mes "見てください、この植物。";
+				mes "葉は枯れ、幹は萎びてしまって……";
+				mes "水をあげても、すぐに乾いて";
+				mes "しまうんです。";
 				next;
-				mes "[�X�v���L]";
-				mes "�h�{���_�Ȑ�����������΁A";
-				mes "���C�ɂȂ�Ǝv������ł����c�c";
+				mes "[スプラキ]";
+				mes "栄養満点な聖水をあげれば、";
+				mes "元気になると思ったんですが……";
 				return;
 			}
 			if(getarg(0)==1) {
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "���傤�ǂ������������Ԃł��傤�H";
-				mes "����������������������ł�����";
-				mes "��������ł����ꏏ�������ł��ˁ`";
+				mes "[スプラキ]";
+				mes "ちょうどお腹がすく時間でしょう？";
+				mes "せっかくいらっしゃったんですから";
+				mes "何かおやつでもご一緒したいですね～";
 				next;
-				mes "[�X�v���L]";
-				mes "����Ȏ��͂Ȃ�ƂȂ�";
-				mes "�H�׎c���Ă������N�b�L�[��";
-				mes "�ЂƐ؂ꂵ���Ȃ��̂�";
-				mes "�ɂ����ł��ˁc�c";
+				mes "[スプラキ]";
+				mes "こんな時はなんとなく";
+				mes "食べ残しておいたクッキーが";
+				mes "ひと切れしかないのが";
+				mes "惜しいですね……";
 				next;
 				if(countitem(538)) {
-					if(select("�N�b�L�[��n��","�����ł���")==1) {
-						mes "[�X�v���L]";
-						mes "����A�����";
-						mes "�悭�Ă����N�b�L�[�ł��ˁH";
-						mes "����`��";
+					if(select("クッキーを渡す","そうですね")==1) {
+						mes "[スプラキ]";
+						mes "あら、これは";
+						mes "よく焼いたクッキーですね？";
+						mes "うわ～♪";
 						if(Sex==0) {
-							mes "����ς蓯�����̎q���m";
-							mes "�ʂ���Ƃ��낪�����ł��傤���`";
+							mes "やっぱり同じ女の子同士";
+							mes "通じるところがあるんでしょうか～";
 						}
 						next;
 						cutin "v_sprakki02",2;
-						mes "[�X�v���L]";
-						mes "�N�b�L�[�ɍ��������ł��o���܂��ˁB";
-						mes "�Ԃǂ��`�Ƀn�[�u����ꂽ�����ł��B";
-						mes "�u�h�E�W���[�X�Ƃ��܂�";
-						mes "�ς��܂��񂯂ǂˁB";
+						mes "[スプラキ]";
+						mes "クッキーに合うお茶でも出しますね。";
+						mes "ぶどう汁にハーブを入れたお茶です。";
+						mes "ブドウジュースとあまり";
+						mes "変わりませんけどね。";
 						next;
-						mes "^4A4AFF-�X�v���L�������o����";
-						mes "�����ȓ����݂ɂ́A�Y��ȔZ��";
-						mes "���F�̃n�[�u�e�B�[��";
-						mes "������Ă���-^000000";
+						mes "^4A4AFF-スプラキが差し出した";
+						mes "小さな湯飲みには、綺麗な濃い";
+						mes "紫色のハーブティーが";
+						mes "淹れられていた-^000000";
 						next;
-						mes "^4A4AFF-�u�h�E���L�̂��_���ς�";
-						mes "���肪�@�o����������-";
-						mes "-������ނƌ��̒������ς���";
-						mes "�Î_���ς����肪�L����-^000000";
+						mes "^4A4AFF-ブドウ特有のやや酸っぱい";
+						mes "香りが鼻腔をくすぐる-";
+						mes "-一口飲むと口の中いっぱいに";
+						mes "甘酸っぱい香りが広がる-^000000";
 						percentheal 100,0;
 						misceffect 83,"";
 						delitem 538,1;
 						return;
 					}
 				}
-				mes "[�X�v���L]";
-				mes "���������͂܂Ƃ��ɗ�����";
-				mes "�ł���΁A������������";
-				mes "���������Ă������ł����ǁc�c";
-				mes "�Ȃ��Ȃ����܂��ł��Ȃ��ł��ˁB";
+				mes "[スプラキ]";
+				mes "私が少しはまともに料理が";
+				mes "できれば、こういう時に";
+				mes "おやつを作っておけるんですけど……";
+				mes "なかなかうまくできないですね。";
 				return;
 			}
 			if(getarg(0)==2) {
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "���������������������̂ł�����A";
-				mes "�����ł�����ł��������B";
-				mes "���ɂ��܂����H";
+				mes "[スプラキ]";
+				mes "せっかくいらっしゃったのですから、";
+				mes "お茶でも飲んでください。";
+				mes "何にしますか？";
 				next;
-				switch(select("�O���[�v�n�[�u�e�B�[","�E�b�h�e�B�[","�~�b�N�X�n�[�u�e�B�[","���\�ł�")) {
+				switch(select("グレープハーブティー","ウッドティー","ミックスハーブティー","結構です")) {
 				case 1:
-					mes "[�X�v���L]";
-					mes "�u�h�E�`�Ƀn�[�u����ꂽ�����ł��B";
-					mes "�u�h�E�W���[�X�Ƃ��܂�";
-					mes "�ς��܂��񂯂ǂˁB";
+					mes "[スプラキ]";
+					mes "ブドウ汁にハーブを入れたお茶です。";
+					mes "ブドウジュースとあまり";
+					mes "変わりませんけどね。";
 					next;
-					mes "^4A4AFF-�X�v���L�������o����";
-					mes "�����ȓ����݂ɂ́A�Y��ȔZ��";
-					mes "���F�̃n�[�u�e�B�[��";
-					mes "������Ă���-^000000";
+					mes "^4A4AFF-スプラキが差し出した";
+					mes "小さな湯飲みには、綺麗な濃い";
+					mes "紫色のハーブティーが";
+					mes "淹れられていた-^000000";
 					next;
-					mes "^4A4AFF-�u�h�E���L�̂��_���ς�";
-					mes "���肪�@�o����������-";
-					mes "-������ނƌ��̒������ς���";
-					mes "�Î_���ς����肪�L����-^000000";
+					mes "^4A4AFF-ブドウ特有のやや酸っぱい";
+					mes "香りが鼻腔をくすぐる-";
+					mes "-一口飲むと口の中いっぱいに";
+					mes "甘酸っぱい香りが広がる-^000000";
 					misceffect 83,"";
 					return;
 				case 2:
-					mes "[�X�v���L]";
-					mes "�؂̍�������������ł��ˁB";
-					mes "�t�t�c�c�ӊO�ł��ˁB";
-					mes "�E�b�h�e�B�[�͎�ɂ��N���̕���";
-					mes "�D��ň��ނ��̂ł�����ˁB";
+					mes "[スプラキ]";
+					mes "木の根を煎じたお茶ですね。";
+					mes "フフ……意外ですね。";
+					mes "ウッドティーは主にお年寄りの方が";
+					mes "好んで飲むものですからね。";
 					next;
-					mes "[�X�v���L]";
-					mes "�t�F�C�����ł͖؂̍������₷���̂ŁA";
-					mes "���N���̕����悭����ł܂�����B";
-					mes "�E�B���[����̂ꂽ�؂̍���";
-					mes "�G���_�[�E�B���[����̂ꂽ�؂̍��ł�";
-					mes "�����Ⴄ�炵���ł��ˁB";
+					mes "[スプラキ]";
+					mes "フェイヨンでは木の根が得やすいので、";
+					mes "お年寄りの方がよく飲んでましたよ。";
+					mes "ウィローから採れた木の根と";
+					mes "エルダーウィローから採れた木の根では";
+					mes "味が違うらしいですね。";
 					next;
-					mes "[�X�v���L]";
-					mes "���ɂ͂����ς�킩��܂��񂪁c�c";
-					mes "���Ȃ��͈Ⴂ���킩���ł����H";
-					mes "�t�t�c�c�o���܂����B";
-					mes "�����A�ǂ����B";
+					mes "[スプラキ]";
+					mes "私にはさっぱりわかりませんが……";
+					mes "あなたは違いがわかるんですか？";
+					mes "フフ……出来ました。";
+					mes "さぁ、どうぞ。";
 					next;
-					mes "^4A4AFF-�ޏ��������o�����J�b�v�ɂ�";
-					mes "���F�̉t�̂��g�X�ƒ�����Ă���";
-					mes "�ٗl�ȍ���𔭂��Ă���-^000000";
+					mes "^4A4AFF-彼女が差し出したカップには";
+					mes "褐色の液体が波々と注がれていて";
+					mes "異様な香りを発している-^000000";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "������A�ȁA��������!!";
-					mes "���������ꂢ!!�@����Ɂc�c";
-					mes "�₽��ƃh���h�����ĂċC��������!!";
+					mes "うわっ、な、何だこれ!!";
+					mes "すっごく苦い!!　それに……";
+					mes "やたらとドロドロしてて気持ち悪い!!";
 					misceffect 118,"";
 					next;
 					cutin "v_sprakki05",255;
-					mes "[�X�v���L]";
-					mes "���c�c���񂾂��ƂȂ������̂ł����H";
-					mes "�E�b�h�e�B�[�͂����������̂ł���H";
-					mes "�����A�ǂ����Ē���������ł���!!";
+					mes "[スプラキ]";
+					mes "え……飲んだことなかったのですか？";
+					mes "ウッドティーはそういうものですよ？";
+					mes "もう、どうして注文したんですか!!";
 					return;
 				case 3:
 					cutin "v_sprakki01",2;
-					mes "[�X�v���L]";
-					mes "����ނ��̃n�[�u���������킹���A";
-					mes "�~�b�N�X�n�[�u�e�B�[�ł��ˁB";
-					mes "���肪���̐��������ł���B";
+					mes "[スプラキ]";
+					mes "何種類ものハーブを混ぜ合わせた、";
+					mes "ミックスハーブティーですね。";
+					mes "香りがもの凄く強いですよ。";
 					next;
-					mes "[�X�v���L]";
-					mes "���́c�c";
-					mes "����ł݂�΂킩��܂��c�c";
+					mes "[スプラキ]";
+					mes "味は……";
+					mes "飲んでみればわかります……";
 					next;
-					mes "^4A4AFF-�ޏ��������o�����J�b�v�ɂ�";
-					mes "�s���N�F�̉t�̂��g�X�ƒ�����Ă���";
-					mes "�Ԃ��t���ꖇ�Y���Ă���-";
-					mes "-�����āA��ῂ������";
-					mes "����ȍ��������Ă���-^000000";
+					mes "^4A4AFF-彼女が差し出したカップには";
+					mes "ピンク色の液体が波々と注がれていて";
+					mes "赤い葉が一枚漂っている-";
+					mes "-そして、目眩がする程";
+					mes "強烈な香りを放っている-^000000";
 					next;
-					mes "^4A4AFF-���́c�c-^000000";
+					mes "^4A4AFF-味は……-^000000";
 					next;
-					mes "[�X�v���L]";
-					mes "�������Ɓc�c�\�������΁A";
-					mes "���z�𕷂��K�v�͂Ȃ������ł��ˁc�c";
-					mes "����͍�����y���ވ��ݕ��ł��ˁB";
-					mes "����ȃn�[�u�̍�����������z���ƁA";
-					mes "�����������肷���ł���B";
+					mes "[スプラキ]";
+					mes "ええっと……表情を見れば、";
+					mes "感想を聞く必要はなさそうですね……";
+					mes "これは香りを楽しむ飲み物ですね。";
+					mes "強烈なハーブの香りをゆっくり吸うと、";
+					mes "頭がすっきりするんですよ。";
 					misceffect 14,"";
 					return;
 				case 4:
 					cutin "v_sprakki01",2;
-					mes "[�X�v���L]";
-					mes "�����ł����c�c�c�O�ł��B";
+					mes "[スプラキ]";
+					mes "そうですか……残念です。";
 					return;
 				}
 			}
 		case 2:
 			if(rand(3)==0) {
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "�������c�c!!";
-				mes "��������c�c�����āA";
-				mes "�ǂ����Ă����h�W�Ȃ񂾂낤�c�c";
+				mes "[スプラキ]";
+				mes "あああ……!!";
+				mes "困ったわ……私って、";
+				mes "どうしてこうドジなんだろう……";
 				next;
-				menu "�ǂ�������ł����H",-;
-				mes "[�X�v���L]";
-				mes "���ꂪ�c�c";
-				mes "�e�[�u����@���Ă����̂ł����A";
-				mes "��������f�U�[�g�p�̂��M�𗎂Ƃ���";
-				mes "�����Ă��܂����̂ł��c�c";
+				menu "どうしたんですか？",-;
+				mes "[スプラキ]";
+				mes "それが……";
+				mes "テーブルを拭いていたのですが、";
+				mes "うっかりデザート用のお皿を落として";
+				mes "割ってしまったのです……";
 				next;
-				mes "[�X�v���L]";
-				mes "�͂��c�c����������ُ����Ȃ����";
-				mes "�����Ȃ��ł��ˁc�c";
-				mes "���A�܂������������M������΁A";
-				mes "����ł��������ȁB";
-				mes "����Ȃ��Ƃ𕷂��̂��ςł����A";
-				mes "����Ɠ������M�A�����Ă܂��񂩁c�c�H";
+				mes "[スプラキ]";
+				mes "はぁ……お給料から弁償しなければ";
+				mes "いけないですね……";
+				mes "あ、まったく同じお皿があれば、";
+				mes "それでもいいかな。";
+				mes "こんなことを聞くのも変ですが、";
+				mes "これと同じお皿、持ってませんか……？";
 				next;
 				if(countitem(736)) {
-					if(select("���M�����������Ǝv���܂��H","�����Ă��܂��B�����܂���")==2) {
+					if(select("お皿を持ち歩くと思います？","持っています。あげますよ")==2) {
 						cutin "v_sprakki05",2;
-						mes "[�X�v���L]";
-						mes "��!?";
-						mes "�������M�����������Ă�l�Ȃ�āA";
-						mes "����킯�c�c";
-						mes "���c�c���炩���Ă��ł��˂�!?";
+						mes "[スプラキ]";
+						mes "え!?";
+						mes "いつもお皿を持ち歩いてる人なんて、";
+						mes "いるわけ……";
+						mes "あ……からかってるんですねっ!?";
 						next;
-						mes "[�X�v���L]";
-						mes "^4A4AFF-�����甒���M�����o���A";
-						mes "�ޏ��̑O�ɒu����-";
-						mes "-���M�̕\�ʂ��L�����ƌ�����-^000000";
+						mes "[スプラキ]";
+						mes "^4A4AFF-懐から白い皿を取り出し、";
+						mes "彼女の前に置いた-";
+						mes "-お皿の表面がキラリと光った-^000000";
 						next;
-						mes "[�X�v���L]";
-						mes "������!!�@�{���ɂ��M�������Ă�I";
-						mes "����Ɂc�c";
-						mes "�������������M�Ƃ�������!!";
-						mes "����A�{���Ɏ��ɂ�������̂ł����H";
+						mes "[スプラキ]";
+						mes "ああっ!!　本当にお皿を持ってる！";
+						mes "それに……";
+						mes "私が割ったお皿とそっくり!!";
+						mes "これ、本当に私にくださるのですか？";
 						next;
 						delitem 736,1;
 						cutin "v_sprakki02",2;
-						mes "[�X�v���L]";
-						mes "���肪�Ƃ��I";
-						mes "���Ȃ��݂����ɗD�����l�́A";
-						mes "���E�Ɉ�l�������Ȃ��ł��ˁI";
+						mes "[スプラキ]";
+						mes "ありがとう！";
+						mes "あなたみたいに優しい人は、";
+						mes "世界に一人しかいないですね！";
 						next;
-						mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̍D���x��";
-						mes "�㏸���܂���-^000000";
+						mes "^4A4AFF-あなたに対するスプラキの好感度が";
+						mes "上昇しました-^000000";
 						set QUEST_VALENTINE2,QUEST_VALENTINE2+1;
 						return;
 					}
 				}
 				else {
 					mes "["+strcharinfo(0)+"]";
-					mes "�������ɂ��M�͎����Ă܂���ˁc�c";
+					mes "さすがにお皿は持ってませんね……";
 					next;
 				}
-				mes "[�X�v���L]";
-				mes "�ł���ˁc�c";
-				mes "�������M�����������Ă�l�Ȃ�āA";
-				mes "���܂����˂��c�c";
-				mes "����ς�A��ŗ������Ɏӂ���";
-				mes "�����Ȃ���_���ł��ˁB";
+				mes "[スプラキ]";
+				mes "ですよね……";
+				mes "いつもお皿を持ち歩いてる人なんて、";
+				mes "いませんよねぇ……";
+				mes "やっぱり、後で料理長に謝って";
+				mes "おかなきゃダメですね。";
 				next;
-				mes "[�X�v���L]";
-				mes "�͂��A�����ƐT�܂����s�����Ȃ���c�c";
+				mes "[スプラキ]";
+				mes "はぁ、もっと慎ましく行動しなきゃ……";
 				return;
 			}
 			if(getarg(0)==1) {
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "������ƐH���͐ۂ��Ă܂����H";
-				mes "�d����`���������ł����ǁA";
-				mes "���N����ԑ�؂ł���B";
+				mes "[スプラキ]";
+				mes "きちんと食事は摂ってますか？";
+				mes "仕事や冒険もいいですけど、";
+				mes "健康が一番大切ですよ。";
 				next;
-				mes "[�X�v���L]";
-				mes "�H��́A�y���U������Ɨǂ��ł���B";
-				mes "�������̂���Șb������̂�����";
-				mes "�炵�Ă܂��ˁc�c";
+				mes "[スプラキ]";
+				mes "食後は、軽く散歩すると良いですよ。";
+				mes "私が何故そんな話をするのかって";
+				mes "顔してますね……";
 				next;
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "���͎��A���ꂩ��H��������";
-				mes "�Ƃ���Ȃ̂ł��c�c";
+				mes "[スプラキ]";
+				mes "実は私、これから食事をする";
+				mes "ところなのです……";
 				next;
-				if(select("�����ꏏ�ɐH�ׂ����ł�","���A���炵�܂����B")==1) {
+				if(select("私も一緒に食べたいです","あ、失礼しました。")==1) {
 					cutin "v_sprakki03",2;
-					mes "[�X�v���L]";
-					mes "���c�c";
-					mes "���O�҂̕��ƐH��������ƁA";
-					mes "�������ɓ{���Ă��܂��܂��̂Łc�c";
-					mes "���߂�Ȃ����B";
+					mes "[スプラキ]";
+					mes "え……";
+					mes "部外者の方と食事をすると、";
+					mes "料理長に怒られてしまいますので……";
+					mes "ごめんなさい。";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "�����ł����A�c�O�ł��B";
-					mes "�H���̎ז������Ⴂ�܂����ˁB";
-					mes "���炵�܂��ˁB";
-					mes "�����c�c�ǂ��ŉ���H�ׂ悤���ȁc�c";
+					mes "そうですか、残念です。";
+					mes "食事の邪魔しちゃいましたね。";
+					mes "失礼しますね。";
+					mes "ああ……どこで何を食べようかな……";
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "�t�t�c�c���߂�Ȃ����ˁA";
-				mes "�C�����킹������āB";
-				mes "�܂���ł����Ă�������΁A";
-				mes "�����ł����y�����܂��ˁB";
+				mes "[スプラキ]";
+				mes "フフ……ごめんなさいね、";
+				mes "気を遣わせちゃって。";
+				mes "また後でも来てくだされば、";
+				mes "お茶でもご馳走しますね。";
 				return;
 			}
 			if(getarg(0)==2) {
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "���̎��Ԃ͐Â��ŗǂ��ł��ˁB";
-				mes "�܂�������Ƒ̂����邢����ǁA";
-				mes "�p�͂ǂ�Ȉ���ɂȂ邩�Ȃ��`����";
-				mes "�F�X�l�����ł��B";
+				mes "[スプラキ]";
+				mes "この時間は静かで良いですね。";
+				mes "まだちょっと体がだるいけれど、";
+				mes "用はどんな一日になるかなぁ～って";
+				mes "色々考えるんです。";
 				next;
-				mes "[�X�v���L]";
-				mes strcharinfo(0)+ "����́A";
-				mes "�ǂ����Ă���Ȏ��Ԃ�";
-				mes "����K�˂ė�����ł����H";
+				mes "[スプラキ]";
+				mes strcharinfo(0)+ "さんは、";
+				mes "どうしてこんな時間に";
+				mes "私を訪ねて来たんですか？";
 				next;
-				if(select("�����ދ��Łc�c","�d���̂��łɗ����������ł�")==1) {
+				if(select("ただ退屈で……","仕事のついでに立ち寄ったんです")==1) {
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "�����A���ċx�񂾂�ǂ��ł����H";
-					mes "�łȂ��ƁA�̂������܂����H";
+					mes "[スプラキ]";
+					mes "もう帰って休んだらどうですか？";
+					mes "でないと、体がもちませんよ？";
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "���d���A��ςȂ�ł��ˁc�c";
-				mes "�ł��A������Ƒ̂��x�߂Ă��������ˁB";
-				mes "��΂Ȃ�ł����H";
-				mes "�蓖�Ă͂����Əo���ł����H";
+				mes "[スプラキ]";
+				mes "お仕事、大変なんですね……";
+				mes "でも、きちんと体を休めてくださいね。";
+				mes "夜勤なんですか？";
+				mes "手当てはちゃんと出るんですか？";
 				next;
 				cutin "v_sprakki03",255;
-				mes "[�X�v���L]";
-				mes "���͎��K���Ȃ̂ŁA";
-				mes "��Ύ蓖���Ȃ���ł��c�c";
-				mes "�׋��̂��߂Ȃ̂ł������Ȃ��̂ł����A";
-				mes "������ƍ��܂������ɂȂ�܂��c�c";
+				mes "[スプラキ]";
+				mes "私は実習生なので、";
+				mes "夜勤手当がないんです……";
+				mes "勉強のためなのでしかたないのですが、";
+				mes "ちょっと挫折しそうになります……";
 				next;
 				cutin "v_sprakki02",255;
-				mes "[�X�v���L]";
-				mes "�ł��A�����΂�����C�ɂ��ĂĂ�";
-				mes "�����܂���ˁB";
-				mes strcharinfo(0)+ "����̂悤��";
-				mes "�D�����l�ɂ��o������c�c";
-				mes "�˂��H";
+				mes "[スプラキ]";
+				mes "でも、お金ばかりを気にしてては";
+				mes "いけませんね。";
+				mes strcharinfo(0)+ "さんのような";
+				mes "優しい人にも出会えたし……";
+				mes "ねっ？";
 				return;
 			}
 		case 3:
 		case 5:
 			if(rand(3)==0) {
 				cutin "v_sprakki05",2;
-				mes "[�X�v���L]";
-				mes "������I�@����!!";
-				mes "���A�����I�@�C������!!";
+				mes "[スプラキ]";
+				mes "きゃっ！　わわっ!!";
+				mes "そ、そこ！　気をつけて!!";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "���H�@�Ȃ�ł��H";
-				mes "���ɋC�������ł����H";
+				mes "え？　なんです？";
+				mes "何に気をつけるんですか？";
 				next;
-				mes "[�X�v���L]";
-				mes "�|�������Ă����璆�Ɂc�c";
-				mes "�V�[�c�𐮗����Ă����璆�Ɂc�c";
-				mes "���A���́c�c����I�@���ꂪ!!";
+				mes "[スプラキ]";
+				mes "掃除をしていたら中に……";
+				mes "シーツを整理していたら中に……";
+				mes "あ、あの……あれ！　あれが!!";
 				next;
-				mes "[�X�v���L]";
-				mes "���ꂪ�o����ł���!!";
-				mes "�^�����ŁA������������";
-				mes "��C�����牽�S�C�͂���ƌ���!!";
+				mes "[スプラキ]";
+				mes "あれが出たんですっ!!";
+				mes "真っ黒で、すごく早くて";
+				mes "一匹見たら何百匹はいると言う!!";
 				next;
-				if(select("���킠!!�@��߂�!!","��峂ł����H")==1) {
+				if(select("うわあ!!　やめて!!","盗蟲ですか？")==1) {
 					mes "["+strcharinfo(0)+"]";
-					mes "��峂Ȃ�āA�܂��҂炲�߂�!!!!";
+					mes "盗蟲なんて、まっぴらごめんだ!!!!";
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "���A���̖��O�����ɏo���Ȃ���!!";
+				mes "[スプラキ]";
+				mes "そ、その名前を口に出さないで!!";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�����ŕ������Ƃ���";
-				mes "��������Ȃ��ł����B";
+				mes "何かで払い落とせば";
+				mes "いいじゃないですか。";
 				next;
-				if(getarg(1)==3) monster "prt_castle.gat",167,164,"����",1051,1,"Thiefbug#Valentine";
-				if(getarg(1)==5) monster "prt_castle.gat",33,165,"����",1051,1,"Thiefbug#Valentine";
-				mes "^8C1010-�J�T�J�T-";
-				mes "-�M�[�M�[�@�M�[�M�[-^000000";
+				if(getarg(1)==3) monster "prt_castle.gat",167,164,"あれ",1051,1,"Thiefbug#Valentine";
+				if(getarg(1)==5) monster "prt_castle.gat",33,165,"あれ",1051,1,"Thiefbug#Valentine";
+				mes "^8C1010-カサカサ-";
+				mes "-ギーギー　ギーギー-^000000";
 				next;
-				mes "[�X�v���L]";
-				mes "�Łc�c�o��!!";
+				mes "[スプラキ]";
+				mes "で……出た!!";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�����߂�܂��傤���H";
-				mes "����Ȋ����ł���B";
+				mes "私が捕りましょうか？";
+				mes "こんな感じですよ。";
 				next;
-				mes "^4A4AFF-���͂�����";
-				mes "���峂̏�ɐL�΂���-^000000";
+				mes "^4A4AFF-私はそっと";
+				mes "手を盗蟲の上に伸ばした-^000000";
 				next;
 				killmonster "prt_castle.gat","Thiefbug#Valentine";
-				mes "^4A4AFF-�o���b�I-";
-				mes "-�u�`���c�c-^000000";
+				mes "^4A4AFF-バンッ！-";
+				mes "-ブチュ……-^000000";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�߂����I";
-				mes "���܂��H�@�߂�܂�����B";
-				mes "�ӂӂӂ��c�c";
+				mes "捕った！";
+				mes "見ます？　捕りましたよ。";
+				mes "ふふふっ……";
 				next;
-				mes "[�X�v���L]";
-				mes "���A�����ł��ˁc�c";
-				mes "�́c�c�͂��c�c";
+				mes "[スプラキ]";
+				mes "そ、そうですね……";
+				mes "は……はい……";
 				next;
-				mes "[�X�v���L]";
-				mes "���A���肪�Ƃ��c�c";
-				mes "���肪�Ƃ��������܂���!!";
-				mes "�ł��A���̎�ŋߕt���Ȃ��ł�����!!";
+				mes "[スプラキ]";
+				mes "あ、ありがとう……";
+				mes "ありがとうございますっ!!";
+				mes "でも、その手で近付かないでえええ!!";
 				next;
-				if(select("�͂��H�@�Ђǂ��Ȃ�!?","���v�A�߂Â��܂����")==1) {
+				if(select("はぁ？　ひどいなあ!?","大丈夫、近づきませんよ")==1) {
 					mes "["+strcharinfo(0)+"]";
-					mes "���Ȃ��̂��߂��v����";
-					mes "�߂��Ă������̂Ɂc�c";
+					mes "あなたのためを思って";
+					mes "捕ってあげたのに……";
 					next;
 					cutin "v_sprakki03",2;
-					mes "[�X�v���L]";
-					mes "�����A�͂��c�c���߂�Ȃ����c�c";
-					mes "�ł��c�c�ł��c�c";
-					mes "���ꂪ�A�{���ɕ|����ł��B";
-					mes "�킩���Ă��������B";
+					mes "[スプラキ]";
+					mes "あっ、はい……ごめんなさい……";
+					mes "でも……でも……";
+					mes "それが、本当に怖いんです。";
+					mes "わかってください。";
 					next;
-					mes "[�X�v���L]";
-					mes "�{���Ɋ��ӂ��Ă܂��c�c";
+					mes "[スプラキ]";
+					mes "本当に感謝してます……";
 				}
 				else {
 					cutin "v_sprakki03",2;
-					mes "[�X�v���L]";
-					mes "���߂�Ȃ����c�c";
-					mes "�{���ɕ|����ł��c�c";
+					mes "[スプラキ]";
+					mes "ごめんなさい……";
+					mes "本当に怖いんです……";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "�����A�킩��܂���B";
-					mes "��峂������l�͑����ł����̂ˁB";
+					mes "ええ、わかりますよ。";
+					mes "盗蟲を嫌う人は多いですものね。";
 					next;
-					mes "[�X�v���L]";
-					mes "�����Ȃ�ł��c�c";
-					mes "�������ŃV�[�c�̐�����";
-					mes "�����邱�Ƃ��ł��܂��B";
-					mes "�{���ɂ��肪�Ƃ��������܂��I";
+					mes "[スプラキ]";
+					mes "そうなんです……";
+					mes "おかげでシーツの整理を";
+					mes "続けることができます。";
+					mes "本当にありがとうございます！";
 				}
 				next;
-				mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̍D���x��";
-				mes "�㏸���܂���-^000000";
+				mes "^4A4AFF-あなたに対するスプラキの好感度が";
+				mes "上昇しました-^000000";
 				set QUEST_VALENTINE2,QUEST_VALENTINE2+1;
 				return;
 			}
 			if(getarg(0)==4) {
-				mes "^4A4AFF-�@�̂��̂��Ȃ���";
-				mes "�V�[�c�𐮗����Ă���ޏ���";
-				mes "�Ȃ�ƂȂ��y�������Ɍ�����-^000000";
+				mes "^4A4AFF-鼻歌を歌いながら";
+				mes "シーツを整理している彼女が";
+				mes "なんとなく楽しそうに見える-^000000";
 				next;
 				cutin "v_sprakki02",2;
 				mes "["+strcharinfo(0)+"]";
-				mes "�Ȃ񂾂����@���ł��ˁH";
+				mes "なんだかご機嫌ですね？";
 				next;
-				mes "[�X�v���L]";
-				mes "�͂��I�@��ő吹���֍s���̂ŁA";
-				mes "�܂����̐l�������邩�Ȃ���";
-				mes "�Ȃ�ƂȂ����҂�������āc�c";
+				mes "[スプラキ]";
+				mes "はい！　後で大聖堂へ行くので、";
+				mes "またあの人を見られるかなって";
+				mes "なんとなく期待しちゃって……";
 				next;
-				menu "���̐l�H",-;
+				menu "あの人？",-;
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "���A�����A���ł��Ȃ���ł��B";
-				mes "���ꂶ��A���̓V�[�c�̐�����";
-				mes "�S���I��点�Ȃ��Ƃ����Ȃ�����";
-				mes "������ƐȂ��O����";
-				mes "���������܂��񂩁H";
+				mes "[スプラキ]";
+				mes "あ、いえ、何でもないんです。";
+				mes "それじゃ、私はシーツの整理を";
+				mes "全部終わらせないといけないから";
+				mes "ちょっと席を外して";
+				mes "くださいませんか？";
 				return;
 			}
 			if(getarg(0)==5) {
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "����`�A����`";
-				mes "�V�[�c�̐������݂�ȏI����āA";
-				mes "������o�Ȃ�����A";
-				mes "���` �K��!!";
+				mes "[スプラキ]";
+				mes "ららら～、ららら～";
+				mes "シーツの整理もみんな終わって、";
+				mes "あれも出ないから、";
+				mes "あ～ 幸せ!!";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�Ȃ񂾂����@���ł��ˁH";
+				mes "なんだかご機嫌ですね？";
 				next;
-				mes "[�X�v���L]";
-				mes "�͂��I�@�����͑����x�߂܂���B";
-				mes "�ӂӁA�ŋߋx�ݎ��ԂɁA";
-				mes "�������藿���̕׋������Ă��܂��B";
+				mes "[スプラキ]";
+				mes "はい！　今日は早く休めますよ。";
+				mes "ふふ、最近休み時間に、";
+				mes "こっそり料理の勉強をしています。";
 				next;
-				mes "[�X�v���L]";
-				mes "�f�U�[�g�S���̃A��������ɂ́A";
-				mes "�����y�΂Ȃ�����ǁA";
-				mes "�������w�͂��Ă����ł���B";
-				mes "�����A�`���R���[�g�ł�";
-				mes "����悤�ɂȂ�����A";
-				mes "�����グ�܂���B";
+				mes "[スプラキ]";
+				mes "デザート担当のアルルさんには、";
+				mes "遠く及ばないけれど、";
+				mes "すごく努力しているんですよ。";
+				mes "いつか、チョコレートでも";
+				mes "作れるようになったら、";
+				mes "差し上げますわ。";
 				next;
-				mes "[�X�v���L]";
-				mes "�E�t�t�b�c�c";
+				mes "[スプラキ]";
+				mes "ウフフッ……";
 				return;
 			}
 		case 4:
 			if(QUEST_VALENTINE2_FLAG==1) {
 				if(countitem(2608)) {
 					mes "["+strcharinfo(0)+"]";
-					mes "����c�c";
-					mes "���̃��U���[���g���Ă��������B";
-					mes "����̂����Ɏ����Ă��邱�Ƃ�";
-					mes "�ł��Ȃ��Ă��߂�Ȃ����B";
+					mes "これ……";
+					mes "このロザリーを使ってください。";
+					mes "昨日のうちに持ってくることが";
+					mes "できなくてごめんなさい。";
 					next;
 					cutin "v_sprakki05",2;
-					mes "[�X�v���L]";
-					mes "�����H�@�{���Ă��ꂽ�̂ł����H";
-					mes "�ǂ��Ō�������ł����H";
+					mes "[スプラキ]";
+					mes "えっ？　捜してくれたのですか？";
+					mes "どこで見つけたんですか？";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "����A���������̂ł͂Ȃ��āc�c";
-					mes "���́c�c���̂��̂Ȃ�ł��B";
-					mes "�ǂ������炱����g���Ă��������B";
+					mes "いや、見つけたものではなくて……";
+					mes "あの……私のものなんです。";
+					mes "良かったらこれを使ってください。";
 					next;
-					mes "[�X�v���L]";
-					mes "�����A�{���ɗǂ���ł����H";
-					mes "���Ŏ󂯎�点�Ă��������܂��B";
-					mes "�{���ɂ��肪�Ƃ��������܂��I";
+					mes "[スプラキ]";
+					mes "えっ、本当に良いんですか？";
+					mes "喜んで受け取らせていただきます。";
+					mes "本当にありがとうございます！";
 					next;
 					delitem 2608,1;
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes strcharinfo(0)+ "�����";
-					mes "���蕨���Ǝv���đ厖�ɂ��܂��ˁB";
+					mes "[スプラキ]";
+					mes strcharinfo(0)+ "さんの";
+					mes "贈り物だと思って大事にしますね。";
 					next;
-					mes "^4A4AFF-���Ȃ��ɑ΂���ޏ��̍D���x��";
-					mes "�啝�ɏ㏸���܂���-^000000";
+					mes "^4A4AFF-あなたに対する彼女の好感度が";
+					mes "大幅に上昇しました-^000000";
 					set QUEST_VALENTINE2,QUEST_VALENTINE2+3;
 					if(QUEST_VALENTINE2 > 10)
 						set QUEST_VALENTINE2,10;
@@ -2501,241 +2501,241 @@ function	script	ValentineSprakki	{
 					return;
 				}
 				cutin "v_sprakki01",2;
-				mes "[�X�v���L]";
-				mes "���A���@���������ł����H";
-				mes "�悭����܂������H";
+				mes "[スプラキ]";
+				mes "あ、ご機嫌いかがですか？";
+				mes "よく眠れましたか？";
 				next;
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "�܂��A�������Ă��Ȃ��݂����ł��ˁB";
-				mes "�����܂������邱�Ƃ�";
-				mes "�ł��Ă��܂���B�~�T�͂��̂܂�";
-				mes "�ڂ��蕷���߂����Ă��܂��܂����B";
+				mes "[スプラキ]";
+				mes "まだ、見つかっていないみたいですね。";
+				mes "私もまだ見つけることが";
+				mes "できていません。ミサはそのまま";
+				mes "ぼんやり聞き過ごしてしまいました。";
 				next;
-				if(select("�K�������Ă����܂���","����ȏ�͏����邱�Ƃ��ł��܂���")==1) {
+				if(select("必ず見つけてあげますよ","これ以上は助けることができません")==1) {
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "�����܂ł���������Ă���������Ȃ��";
-					mes "�{���ɐ\����Ȃ��ł��B";
-					mes "�ł��c�c���������ꂵ���ł��B";
-					mes "�ꏏ�ɐS�z���Ă����l��";
-					mes "���΂ɋ��Ă����Ȃ�āc�c";
+					mes "[スプラキ]";
+					mes "そこまでおっしゃっていただけるなんて";
+					mes "本当に申し訳ないです。";
+					mes "でも……何だかうれしいです。";
+					mes "一緒に心配してくれる人が";
+					mes "そばに居てくれるなんて……";
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "�������Ȃ��Ă������ł���B";
-				mes "����l�ő{���Ă݂܂��B";
-				mes strcharinfo(0)+ "�������������";
-				mes "���d����������ł��傤����c�c";
-				mes "���͑��v�ł��B";
+				mes "[スプラキ]";
+				mes "無理しなくてもいいですよ。";
+				mes "私一人で捜してみます。";
+				mes strcharinfo(0)+ "さんもご自分の";
+				mes "お仕事がおありでしょうから……";
+				mes "私は大丈夫です。";
 				set QUEST_VALENTINE2_FLAG,2;
 				return;
 			}
 			if(rand(3)==0) {
 				if(QUEST_VALENTINE2_FLAG==2) {
 					cutin "v_sprakki01",2;
-					mes "[�X�v���L]";
-					mes "���A���͂悤�������܂��B";
-					mes "���������q���Ă͂��邯��ǁA";
-					mes "���A�M�k�Ƃ����킯�ł͂Ȃ���ł��B";
-					mes "��q�Ȃ�āA���܂łقƂ��";
-					mes "�������ƂȂ��ł����c�c";
+					mes "[スプラキ]";
+					mes "あ、おはようございます。";
+					mes "早朝から礼拝してはいるけれど、";
+					mes "私、信徒というわけではないんです。";
+					mes "礼拝なんて、今までほとんど";
+					mes "したことないですし……";
 					next;
-					mes "[�X�v���L]";
-					mes "�����Ƃ���̒��ɂ���Ƒ��ꂵ��";
-					mes "�Ȃ��Ă���̂ŁA�C���]����";
-					mes "�����܂ő����^��ł݂���ł��B";
-					mes "����ɁA�v�����e���̊X��";
-					mes "�F�X���ĉ�肽�������́B";
+					mes "[スプラキ]";
+					mes "ずっとお城の中にいると息苦しく";
+					mes "なってくるので、気分転換に";
+					mes "ここまで足を運んでみたんです。";
+					mes "それに、プロンテラの街を";
+					mes "色々見て回りたかったの。";
 					next;
-					mes "[�X�v���L]";
-					mes "�v�����e���̊X�����ĉ��Ȃ�A";
-					mes "������q�ɎQ�����Ȃ��Ă������̂Ɂc�c";
-					mes "�t�t�c�c������Ă�񂾂낤�A���B";
+					mes "[スプラキ]";
+					mes "プロンテラの街を見て回るなら、";
+					mes "何も礼拝に参加しなくてもいいのに……";
+					mes "フフ……何やってるんだろう、私。";
 					next;
-					mes "[�X�v���L]";
-					mes "���͂��������Ō���K���I���̂ŁA";
-					mes "�t�F�C�����ɋA���ł��B";
-					mes "�����ƃv�����e���̊X��F�X��";
-					mes "���Ă����Ηǂ������ȁc�c";
-					mes "�ł��A���Ȃ��Ƃ��b���邱�Ƃ��ł�����";
-					mes "��q�ɗ��ėǂ��������ȁB";
+					mes "[スプラキ]";
+					mes "私はもうすぐ看護実習が終わるので、";
+					mes "フェイヨンに帰るんです。";
+					mes "もっとプロンテラの街を色々と";
+					mes "見ておけば良かったな……";
+					mes "でも、あなたとお話することができたし";
+					mes "礼拝に来て良かったかな。";
 					next;
-					mes "[�X�v���L]";
-					mes "�_�Ɋ��ӂ̂��F�肵�Ȃ���ˁB";
-					mes "���ɑ΂��銴�ӂ��͔閧�ł���";
-					mes "�t�t�c�c";
+					mes "[スプラキ]";
+					mes "神に感謝のお祈りしなきゃね。";
+					mes "何に対する感謝かは秘密です♪";
+					mes "フフ……";
 					next;
-					mes "^4A4AFF-�ޏ��͂��������ƐÂ��ɋF��n�߂�-^000000";
+					mes "^4A4AFF-彼女はそう囁くと静かに祈り始めた-^000000";
 					return;
 				}
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "�ǂ����悤�c�c";
-				mes "��؂Ȃ��̂�";
-				mes "�������Ă��܂��܂����c�c�B";
+				mes "[スプラキ]";
+				mes "どうしよう……";
+				mes "大切なものを";
+				mes "失くしてしまいました……。";
 				next;
-				if(select("�ǂ������̂������Ă݂�","�ʂɋC�ɂ��Ȃ�")==2) {
-					mes "-�C�ɂ��Ȃ����Ƃɂ���-";
+				if(select("どうしたのか聞いてみる","別に気にしない")==2) {
+					mes "-気にしないことにした-";
 					return;
 				}
 				mes "["+strcharinfo(0)+"]";
-				mes "����������ł����H";
+				mes "何かお困りですか？";
 				next;
-				mes "[�X�v���L]";
-				mes "���c�c" +strcharinfo(0)+ "����I";
-				mes "���̓��U���[��";
-				mes "�������Ă��܂�����ł��B";
-				mes "���U���[���Ȃ��ƃ~�T���ł��܂���B";
+				mes "[スプラキ]";
+				mes "あ……" +strcharinfo(0)+ "さん！";
+				mes "実はロザリーを";
+				mes "無くしてしまったんです。";
+				mes "ロザリーがないとミサができません。";
 				next;
-				mes "[�X�v���L]";
-				mes "���͎����̍��Ƃ���������̂�";
-				mes "�������Ăǂ�����Đ����Ă�����";
-				mes "�����̂ł��傤���c�c�B";
+				mes "[スプラキ]";
+				mes "私は自分の魂ともいえるものを";
+				mes "失くしてどうやって生きていけば";
+				mes "いいのでしょうか……。";
 				next;
-				if(select("�����{���Ă݂܂��傤","�悭�{���Ă݂ẮH�@�ǂ����ɂ���܂���")==2) {
+				if(select("私も捜してみましょう","よく捜してみては？　どこかにありますよ")==2) {
 					cutin "v_sprakki01",2;
-					mes "[�X�v���L]";
-					mes "�͂��A�悭�{���Ă݂܂��B";
-					mes "�S�z���Ă���Ă��肪�Ƃ��B";
+					mes "[スプラキ]";
+					mes "はい、よく捜してみます。";
+					mes "心配してくれてありがとう。";
 					return;
 				}
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "�{���ɂ��肪�Ƃ��������܂��B";
-				mes strcharinfo(0)+ "�����";
-				mes "�ƂĂ��₳�������ł��ˁB";
-				mes "�{���ɂ��肪�Ƃ��B";
+				mes "[スプラキ]";
+				mes "本当にありがとうございます。";
+				mes strcharinfo(0)+ "さんは";
+				mes "とてもやさしい方ですね。";
+				mes "本当にありがとう。";
 				next;
 				mes "["+strcharinfo(0)+"]";
-				mes "�i���U���[���������";
-				mes "�n���΂������ȁH�j";
+				mes "（ロザリーを一つ買って";
+				mes "渡せばいいかな？）";
 				mes " ";
-				mes "�����҂��ĂĂ��������B";
-				mes "���U���[��{���Ă��܂��B";
+				mes "少し待っててください。";
+				mes "ロザリーを捜してきます。";
 				next;
-				mes "[�X�v���L]";
-				mes "�͂��B";
-				mes "���������ɑ{���Ă݂܂��B";
-				mes "�ł���΃~�T�ɒx�ꂽ������܂���B";
-				mes "�ǂ�����낵�����肢���܂��c�c�B";
+				mes "[スプラキ]";
+				mes "はい。";
+				mes "私も懸命に捜してみます。";
+				mes "できればミサに遅れたくありません。";
+				mes "どうかよろしくお願いします……。";
 				set QUEST_VALENTINE2_FLAG,1;
 				return;
 			}
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "�^�ʖڂȂ�ł��ˁB";
-			mes "�܂������Ȃ̂Ɂc�c";
+			mes "[スプラキ]";
+			mes "真面目なんですね。";
+			mes "まだ早朝なのに……";
 			next;
-			if(select("���Ȃ��ɉ�����ė��܂���","�F�X�ƖZ�����āc�c")==1) {
+			if(select("あなたに会いたくて来ました","色々と忙しくて……")==1) {
 				if(QUEST_VALENTINE2 < 5) {
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "���ӂӁA���ꂵ���ł��B";
-					mes "����Ȃ������ɂ�";
-					mes "�x����܂����H";
+					mes "[スプラキ]";
+					mes "うふふ、うれしいです。";
+					mes "そんなお世辞には";
+					mes "騙されませんよ？";
 					next;
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "�����Ő����グ��̂�";
-					mes "�C���Ђ��܂��̂�";
-					mes "��ł���ɗV�тɗ��Ă��������B";
-					mes "�ꏊ�͒m���Ă��܂����H";
+					mes "[スプラキ]";
+					mes "聖堂で声を上げるのは";
+					mes "気がひけますので";
+					mes "後でお城に遊びに来てください。";
+					mes "場所は知っていますか？";
 					set QUEST_VALENTINE2,QUEST_VALENTINE2+1;
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "������k�͌����ł��B";
+				mes "[スプラキ]";
+				mes "悪い冗談は嫌いです。";
 				next;
-				if(select("��k�͂������ł����H","��k�ł��B���߂�Ȃ���")==1) {
-					mes "[�X�v���L]";
-					mes "�͂��B��k�₢������ł�����A";
-					mes "�����΂��ĕ����Ă���Ԃ�";
-					mes "��߂Ă��������B";
-					mes "�ŏ��̐��񂭂炢�Ȃ�";
-					mes "��k���Ǝv���܂����c�c�B";
+				if(select("冗談はお嫌いですか？","冗談です。ごめんなさい")==1) {
+					mes "[スプラキ]";
+					mes "はい。冗談やいたずらでしたら、";
+					mes "私が笑って聞いている間に";
+					mes "やめてください。";
+					mes "最初の数回くらいなら";
+					mes "冗談だと思えますが……。";
 					next;
 					mes "["+strcharinfo(0)+"]";
-					mes "���A�����Ӗ��Ŏ󂯎���Ă��������B";
-					mes "�D�ӓI�ȈӖ��ł��c�c�B";
+					mes "い、いい意味で受け取ってください。";
+					mes "好意的な意味です……。";
 					next;
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "�킩��܂����B";
-					mes "�����A�����֗����̂ł�����";
-					mes "���F������܂��傤�H";
-					mes "���������E�����a�ł���悤�ɁB";
+					mes "[スプラキ]";
+					mes "わかりました。";
+					mes "さあ、聖堂へ来たのですから";
+					mes "お祈りをしましょう？";
+					mes "今日も世界が平和であるように。";
 					return;
 				}
 				cutin "v_sprakki02",2;
-				mes "[�X�v���L]";
-				mes "�킩��܂����B";
-				mes "�ł́A���F������܂��傤���H";
-				mes "���������E�����a�ł���悤�ɁB";
+				mes "[スプラキ]";
+				mes "わかりました。";
+				mes "では、お祈りをしましょうか？";
+				mes "今日も世界が平和であるように。";
 				return;
 			}
-			mes "[�X�v���L]";
-			mes "�����Ȃ�ł����A��ςł��ˁB";
+			mes "[スプラキ]";
+			mes "そうなんですか、大変ですね。";
 			next;
-			mes "[�X�v���L]";
-			mes "�������c�c�I";
-			mes strcharinfo(0)+ "�����";
-			mes "�����̉^�������Ă����܂��傤�B";
+			mes "[スプラキ]";
+			mes "そうだ……！";
+			mes strcharinfo(0)+ "さんの";
+			mes "今日の運勢を占ってあげましょう。";
 			next;
-			mes "[�X�v���L]";
-			mes strcharinfo(0)+ "�����";
-			mes "�����̉^���́c�c";
+			mes "[スプラキ]";
+			mes strcharinfo(0)+ "さんの";
+			mes "今日の運勢は……";
 			next;
 			switch(rand(3)) {
 				case 0:
 					cutin "v_sprakki02",2;
-					mes "[�X�v���L]";
-					mes "�킟�`�A�������^���ǂ��݂����ł���H";
-					mes "�����͉����Ƀ`�������W���Ă݂Ă�";
-					mes "�������ł����H";
-					mes "�z���O��������ɐ��B��";
-					mes "���肢����̂��ǂ���������܂���ˁI";
+					mes "[スプラキ]";
+					mes "わぁ～、すごく運が良いみたいですよ？";
+					mes "今日は何かにチャレンジしてみては";
+					mes "いかがですか？";
+					mes "ホルグレンさんに精錬を";
+					mes "お願いするのも良いかもしれませんね！";
 					return;
 				case 1:
-					mes "[�X�v���L]";
-					mes "���ʁc�c�݂����ł��ˁB";
-					mes "�����ʂ蕽���Ȉ���ƂȂ肻���ł��B";
-					mes "�����Ȃ̂́A�ǂ����Ƃł���ˁH";
-					mes "�t�t�t�c�c";
+					mes "[スプラキ]";
+					mes "普通……みたいですね。";
+					mes "いつも通り平穏な一日となりそうです。";
+					mes "平穏なのは、良いことですよね？";
+					mes "フフフ……";
 					return;
 				case 2:
 					cutin "v_sprakki05",2;
-					mes "[�X�v���L]";
-					mes "���c�c����́c�c���`���Ɓc�c";
-					mes "�����̉^���́c�c���́c�c���́c�c";
-					mes "���厖�Ɂc�c";
+					mes "[スプラキ]";
+					mes "あ……これは……え～っと……";
+					mes "今日の運勢は……あの……その……";
+					mes "お大事に……";
 					next;
-					mes "[�X�v���L]";
-					mes strcharinfo(0)+ "�����";
-					mes "�������F���Ă܂��c�c";
+					mes "[スプラキ]";
+					mes strcharinfo(0)+ "さんの";
+					mes "無事を祈ってます……";
 					return;
 			}
 		case 6:
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "����`�A����`";
-			mes "������҂�x�e�����ށ`��";
+			mes "[スプラキ]";
+			mes "ららら～、ららら～";
+			mes "ちょっぴり休憩たいむ～♪";
 			next;
-			mes "[�X�v���L]";
-			mes "^4A4AFF" +'name$+ "^000000�����";
-			mes "�������ł����H";
-			mes "�ƂĂ��e�؂őf�G�ȕ��Ȃ�ł����c�c";
+			mes "[スプラキ]";
+			mes "^4A4AFF" +'name$+ "^000000さんを";
+			mes "ご存じですか？";
+			mes "とても親切で素敵な方なんですが……";
 			next;
-			mes "[�X�v���L]";
-			mes "���A�ʂɂ��Ȃ��Ɣ�ׂ悤��";
-			mes "�v�����킯�ł͂Ȃ������̂ł����B";
+			mes "[スプラキ]";
+			mes "あ、別にあなたと比べようと";
+			mes "思ったわけではなかったのですが。";
 			return;
 		case 7:
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "���́c�c��������o�Ă���܂����H";
-			mes "�����͈��Ղɏo���肷��ꏊ�ł�";
-			mes "����܂��񂩂�c�c";
+			mes "[スプラキ]";
+			mes "あの……ここから出てくれますか？";
+			mes "ここは安易に出入りする場所では";
+			mes "ありませんから……";
 			return;
 		}
 	}
@@ -2743,70 +2743,70 @@ function	script	ValentineSprakki	{
 	function PatternC {	//case10
 		if(getarg(2)==2 || getarg(2)==4 || rand(3)) {
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "�Ђ���Ƃ��āA";
-			mes "^4A4AFF" +'name$+ "^000000�����";
-			mes "�������ł����H";
-			mes "�Ƃ��Ă��I�V�����ȕ��Ȃ�ł���c�c";
+			mes "[スプラキ]";
+			mes "ひょっとして、";
+			mes "^4A4AFF" +'name$+ "^000000さんを";
+			mes "ご存じですか？";
+			mes "とってもオシャレな方なんですよ……";
 			next;
-			mes "[�X�v���L]";
-			mes "�ł��A" +strcharinfo(0)+ "�����";
-			mes "�ƂĂ��f�G�ł���B";
+			mes "[スプラキ]";
+			mes "でも、" +strcharinfo(0)+ "さんも";
+			mes "とても素敵ですよ。";
 			return;
 		}
 		cutin "v_sprakki01",2;
-		mes "[�X�v���L]";
-		mes "�����Ɓc�c";
-		mes "�ŋߎ��A���َq����";
-		mes "���Ă����ł��B";
-		mes "������񂱂����肵�Ă���̂ł����c�c";
+		mes "[スプラキ]";
+		mes "えっと……";
+		mes "最近私、お菓子作りを";
+		mes "しているんです。";
+		mes "もちろんこっそりしているのですが……";
 		next;
-		mes "[�X�v���L]";
-		mes "����ŁA��x�`���R���[�g��";
-		mes "����Ă݂����Ǝv������ł��B";
-		mes "�ł��A���V�s�������Ă��Ȃ���ł��c�c";
+		mes "[スプラキ]";
+		mes "それで、一度チョコレートを";
+		mes "作ってみたいと思ったんです。";
+		mes "でも、レシピを持っていないんです……";
 		next;
-		mes "[�X�v���L]";
-		mes "�����m�̂Ƃ���A���͌ߑO����";
-		mes "�~�T�ɍs�����ƈȊO�A������o�邱�Ƃ�";
-		mes "�ł��Ȃ��̂ł��B�ł��̂Łc�c";
+		mes "[スプラキ]";
+		mes "ご存知のとおり、私は午前中の";
+		mes "ミサに行くこと以外、お城を出ることが";
+		mes "できないのです。ですので……";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "���ɁA����Ƀ��V�s��";
-		mes "��ɓ���Ă��ė~������";
-		mes "�����킯�ł��ˁH";
+		mes "私に、代わりにレシピを";
+		mes "手に入れてきて欲しいと";
+		mes "いうわけですね？";
 		next;
-		mes "[�X�v���L]";
-		mes "�͂��I�@���N�����ɂȂ��";
-		mes "�`���R���[�g�������";
-		mes "�����Ă�����X����������Ⴂ�܂��B";
-		mes "�o�V�j�I�Ƃ̕��X�Ȃ̂ł����A";
-		mes "���V�s��������Ɩ���Ă���";
-		mes "����܂��񂩁H";
+		mes "[スプラキ]";
+		mes "はい！　毎年今頃になると";
+		mes "チョコレートを作って";
+		mes "売っている方々がいらっしゃいます。";
+		mes "バシニオ家の方々なのですが、";
+		mes "レシピをちょっと貰ってきて";
+		mes "くれませんか？";
 		next;
-		if(select("��������p�ł�","����ȗ]�T�͂Ȃ��ł��ˁc�c")==2) {
+		if(select("お安い御用です","そんな余裕はないですね……")==2) {
 			cutin "v_sprakki03",2;
-			mes "[�X�v���L]";
-			mes "�����ł����c�c";
-			mes "���A�}���ł͂��܂��񂩂�";
-			mes "���v�ł��B";
-			mes "�ł��A���V�s�����Ă������ق���";
-			mes "�����̂Ɂc�c";
+			mes "[スプラキ]";
+			mes "そうですか……";
+			mes "あ、急いではいませんから";
+			mes "大丈夫です。";
+			mes "でも、レシピを貰っておいたほうが";
+			mes "いいのに……";
 			next;
-			mes "[�X�v���L]";
-			mes "�`���R���[�g�c�c";
-			mes "���������������̂Ɂc�c";
-			mes "�����v���܂��񂩁H";
+			mes "[スプラキ]";
+			mes "チョコレート……";
+			mes "すごくおいしいのに……";
+			mes "そう思いませんか？";
 			return;
 		}
-		mes "[�X�v���L]";
-		mes "���肪�Ƃ��������܂��I";
-		mes "���Ԃ�A�o�V�j�I�Ƃ̕��X��";
-		mes "��N�ǂ���A���x���^��";
-		mes "���������Ă���Ǝv���܂��B";
+		mes "[スプラキ]";
+		mes "ありがとうございます！";
+		mes "たぶん、バシニオ家の方々は";
+		mes "例年どおりアルベルタで";
+		mes "商売をしていると思います。";
 		next;
-		mes "[�X�v���L]";
-		mes "����ł͂��肢���܂��ˁI";
+		mes "[スプラキ]";
+		mes "それではお願いしますね！";
 		set QUEST_VALENTINE2,11;
 		set QUEST_VALENTINE2_FLAG,0;
 		return;
@@ -2814,52 +2814,52 @@ function	script	ValentineSprakki	{
 
 	function PatternD {	//case11
 		cutin "v_sprakki01",2;
-		mes "[�X�v���L]";
-		mes "�o�V�j�I�Ƃ̕��X�͑��";
-		mes "�A���x���^�ŏ��������Ă��܂��B";
-		mes "�t�F�C�����ŕ�炵�Ă������A";
-		mes "���т��іK�˂Ă̓`���R���[�g��";
-		mes "�����Ă����肵�Ă��܂����B";
+		mes "[スプラキ]";
+		mes "バシニオ家の方々は大抵";
+		mes "アルベルタで商売をしています。";
+		mes "フェイヨンで暮らしていた頃、";
+		mes "たびたび訪ねてはチョコレートを";
+		mes "買ってきたりしていました。";
 		next;
-		mes "[�X�v���L]";
-		mes "�������V�s��������";
-		mes "�񑩂����܂�������A";
-		mes "���̖��O���o���ΖႦ��Ǝv���܂��B";
-		mes "��낵�����肢���܂��ˁB";
+		mes "[スプラキ]";
+		mes "いつかレシピをくれると";
+		mes "約束もしましたから、";
+		mes "私の名前を出せば貰えると思います。";
+		mes "よろしくお願いしますね。";
 		return;
 	}
 
 	function PatternE {	//case12
 		cutin "v_sprakki01",2;
-		mes "[�X�v���L]";
-		mes "���V�s�����Ă��Ă��ꂽ�̂ł���!?";
+		mes "[スプラキ]";
+		mes "レシピを貰ってきてくれたのですか!?";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�����A�����ɂ���܂���B";
-		mes "�Ƃ���Ŗ{���ɍ���̂ł����H";
-		mes "����ȍޗ��ŁH";
-		mes "�J�J�I�A�~���N�c�c";
-		mes "�g�їp�n�z�F�͂Ȃ��K�v�Ȃ̂ł����H";
+		mes "ええ、ここにありますよ。";
+		mes "ところで本当に作れるのですか？";
+		mes "こんな材料で？";
+		mes "カカオ、ミルク……";
+		mes "携帯用溶鉱炉はなぜ必要なのですか？";
 		next;
-		mes "^4A4AFF-�X�v���L�ɃV���R����������";
-		mes "�`���R���[�g�̃��V�s��n����-^000000";
+		mes "^4A4AFF-スプラキにショコラから貰った";
+		mes "チョコレートのレシピを渡した-^000000";
 		next;
-		mes "[�X�v���L]";
-		mes "����Ă݂�Ε�����܂���B";
-		mes "�ł��A�J�J�I���Ȃ�āc�c";
-		mes "�J�J�I���ǂ���";
-		mes "��ɓ����΂����̂ł��傤�H";
-		mes "�܂��܂��O�r����ł��ˁB";
+		mes "[スプラキ]";
+		mes "作ってみれば分かりますよ。";
+		mes "でも、カカオだなんて……";
+		mes "カカオをどこで";
+		mes "手に入れればいいのでしょう？";
+		mes "まだまだ前途多難ですね。";
 		next;
 		cutin "v_sprakki02",2;
-		mes "[�X�v���L]";
-		mes "�Ƃɂ������肪�Ƃ��������܂��B";
-		mes "���A����" +strcharinfo(0)+ "�����";
-		mes "���肪�Ƃ����Ă΂��茾���Ă܂��ˁB";
-		mes "�ł��c�c�{���ɂ��ꂵ���ł��B";
+		mes "[スプラキ]";
+		mes "とにかくありがとうございます。";
+		mes "私、いつも" +strcharinfo(0)+ "さんに";
+		mes "ありがとうってばかり言ってますね。";
+		mes "でも……本当にうれしいです。";
 		next;
-		mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̐e���x��";
-		mes "�㏸���܂���-^000000";
+		mes "^4A4AFF-あなたに対するスプラキの親密度が";
+		mes "上昇しました-^000000";
 		set QUEST_VALENTINE2,13;
 		return;
 	}
@@ -2867,100 +2867,100 @@ function	script	ValentineSprakki	{
 	function PatternF {	//case13
 		if(getarg(2)==1) {
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "�Ђ���Ƃ��āA";
-			mes "^4A4AFF" +'name$+ "^000000�����";
-			mes "�������ł����H";
-			mes "�Ƃ��Ă��I�V�����ȕ��Ȃ�ł���c�c";
+			mes "[スプラキ]";
+			mes "ひょっとして、";
+			mes "^4A4AFF" +'name$+ "^000000さんを";
+			mes "ご存じですか？";
+			mes "とってもオシャレな方なんですよ……";
 			next;
-			mes "[�X�v���L]";
-			mes "�ł��A" +strcharinfo(0)+ "�����";
-			mes "�ƂĂ��f�G�ł���B";
+			mes "[スプラキ]";
+			mes "でも、" +strcharinfo(0)+ "さんも";
+			mes "とても素敵ですよ。";
 			return;
 		}
 		cutin "v_sprakki01",2;
-		mes "[�X�v���L]";
-		mes "���́c�c�v�����e���̂ǂ�����";
-		mes "�J�J�I�𔄂��Ă��邨�X������Ƃ���";
-		mes "�b�𕷂��܂����B";
-		mes "�ǂ��ɂ��邩�������ł����H";
+		mes "[スプラキ]";
+		mes "あの……プロンテラのどこかで";
+		mes "カカオを売っているお店があるという";
+		mes "話を聞きました。";
+		mes "どこにあるかご存じですか？";
 		next;
-		if(select("�����{���Ă݂܂��傤���H","�m��Ȃ��ł�")==2) {
-			mes "[�X�v���L]";
-			mes "����ς葼�̕��Ɠ�����";
-			mes "�������Ȃ��ł����c�c";
-			mes "��ŏڂ������Ȑl�ɐu���Ă݂܂��B";
-			mes "�J�J�I�𔃂��̂�";
-			mes "����Ȃɑ�ς��Ȃ�āc�c";
+		if(select("私が捜してみましょうか？","知らないです")==2) {
+			mes "[スプラキ]";
+			mes "やっぱり他の方と同じで";
+			mes "ご存じないですか……";
+			mes "後で詳しそうな人に訊いてみます。";
+			mes "カカオを買うのが";
+			mes "こんなに大変だなんて……";
 			return;
 		}
 		cutin "v_sprakki02",2;
-		mes "[�X�v���L]";
-		mes "�{���ł���!? �������I";
-		mes "���ꂶ�Ⴀ�A�J�J�I��";
-		mes "^4A4AFF5��^000000���肢���Ă������ł����H";
-		mes strcharinfo(0)+ "�����";
-		mes "�Ƃ��Ă��D�������ł��ˁI";
+		mes "[スプラキ]";
+		mes "本当ですか!? 嬉しい！";
+		mes "それじゃあ、カカオを";
+		mes "^4A4AFF5つ^000000お願いしてもいいですか？";
+		mes strcharinfo(0)+ "さんは";
+		mes "とっても優しい方ですね！";
 		set QUEST_VALENTINE2,14;
 		return;
 	}
 
 	function PatternG {	//case14
 		cutin "v_sprakki01",2;
-		mes "[�X�v���L]";
-		mes "���肢�����J�J�I�͂ǂ��Ȃ�܂������H";
+		mes "[スプラキ]";
+		mes "お願いしたカカオはどうなりましたか？";
 		next;
 		if(countitem(7182)>=5) {
 			delitem 7182,5;
 			set QUEST_VALENTINE2,15;
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "������" +strcharinfo(0)+ "����I";
-			mes "����Ŏ����`���R���[�g��";
-			mes "��邱�Ƃ��ł��܂��B";
-			mes "���ӂӁA�{���ɂ��肪�Ƃ��I";
+			mes "[スプラキ]";
+			mes "さすが" +strcharinfo(0)+ "さん！";
+			mes "これで私もチョコレートを";
+			mes "作ることができます。";
+			mes "うふふ、本当にありがとう！";
 			next;
-			mes "^4A4AFF-���Ȃ��ɑ΂���X�v���L�̐e���x��";
-			mes "�㏸���܂���-^000000";
+			mes "^4A4AFF-あなたに対するスプラキの親密度が";
+			mes "上昇しました-^000000";
 			return;
 		}
 		cutin "v_sprakki03",2;
-		mes "[�X�v���L]";
-		mes "���c�c�܂��J�J�I��";
-		mes "��ɓ�����܂��񂩁B";
-		mes "�c�c��͂�A�X�̒��֍s����";
-		mes "���ڍ̂�Ȃ���΂Ȃ�Ȃ��ł��傤���H";
-		mes "�ł��A����͊댯�ł����c�c";
+		mes "[スプラキ]";
+		mes "あ……まだカカオは";
+		mes "手に入れられませんか。";
+		mes "……やはり、森の中へ行って";
+		mes "直接採らなければならないでしょうか？";
+		mes "でも、それは危険ですし……";
 		return;
 	}
 
 	function PatternH {	//case15
 		cutin "v_sprakki02",2;
-		mes "[�X�v���L]";
-		mes "���ĂĂ��������ˁA";
-		mes "�`���R���[�g�����܂���`�B";
-		mes strcharinfo(0)+ "�����";
-		mes "�񑩂ǂ���F�X�Ǝ�`���Ă��ꂽ����";
-		mes "�`���R���[�g�����������܂��B";
+		mes "[スプラキ]";
+		mes "見ててくださいね、";
+		mes "チョコレートを作りますよ～。";
+		mes strcharinfo(0)+ "さんも";
+		mes "約束どおり色々と手伝ってくれたから";
+		mes "チョコレートをさしあげます。";
 		next;
-		mes "[�X�v���L]";
-		mes "�����N���Ƀv���[���g�������Ȃ�";
-		mes "���ł��J�J�I��5��";
-		mes "�W�߂Ă��Ă��������ˁB";
-		mes "���܂���ł͂���܂���";
-		mes "��������Ă����܂��B";
+		mes "[スプラキ]";
+		mes "もし誰かにプレゼントしたいなら";
+		mes "いつでもカカオを5つ";
+		mes "集めてきてくださいね。";
+		mes "あまり上手ではありませんが";
+		mes "私が作ってあげます。";
 		next;
-		mes "[�X�v���L]";
-		mes "�����v�����e���ŉ߂����鎞�Ԃ�";
-		mes "���Ə����ł��B";
-		mes "�̋��ɋA�鏀����";
-		mes "���Ȃ���΂����܂���B";
-		mes "�ł��A����܂Ŏ��͂����ɂ��܂��B";
+		mes "[スプラキ]";
+		mes "私がプロンテラで過ごせる時間は";
+		mes "あと少しです。";
+		mes "故郷に帰る準備も";
+		mes "しなければいけません。";
+		mes "でも、それまで私はここにいます。";
 		next;
-		mes "[�X�v���L]";
-		mes "����ɂ͑���Ȃ���������܂���";
-		mes "���ӂ̋C���������߂đ���܂��B";
-		mes "�悩������󂯎���Ă��������ˁB";
+		mes "[スプラキ]";
+		mes "お礼には足らないかもしれませんが";
+		mes "感謝の気持ちを込めて贈ります。";
+		mes "よかったら受け取ってくださいね。";
 		getitem 558,1;
 		set QUEST_VALENTINE2,16;
 		return;
@@ -2969,63 +2969,63 @@ function	script	ValentineSprakki	{
 	function PatternI {	//case16
 		if(getarg(2)!=1 && getarg(2)!=4) {
 			cutin "v_sprakki01",2;
-			mes "[�X�v���L]";
-			mes "�Ђ���Ƃ��āA";
-			mes "^4A4AFF" +'name$+ "^000000�����";
-			mes "�������ł����H";
-			mes "�Ƃ��Ă��I�V�����ȕ��Ȃ�ł���c�c";
+			mes "[スプラキ]";
+			mes "ひょっとして、";
+			mes "^4A4AFF" +'name$+ "^000000さんを";
+			mes "ご存じですか？";
+			mes "とってもオシャレな方なんですよ……";
 			next;
-			mes "[�X�v���L]";
-			mes "�ł��A" +strcharinfo(0)+ "�����";
-			mes "�ƂĂ��f�G�ł���B";
+			mes "[スプラキ]";
+			mes "でも、" +strcharinfo(0)+ "さんも";
+			mes "とても素敵ですよ。";
 			return;
 		}
 		cutin "v_sprakki02",2;
-		mes "[�X�v���L]";
-		mes "�`���R���[�g�����܂��傤���H";
-		mes "���́A���̃A����=�I�����A�������";
-		mes "�`���R���[�g�����悤���܂˂�����";
-		mes "����悤�ɂȂ�����ł���B";
-		mes "���ӂӂ��B";
+		mes "[スプラキ]";
+		mes "チョコレートを作りましょうか？";
+		mes "実は、あのアルル=オルレアンさんの";
+		mes "チョコレートを見よう見まねだけど";
+		mes "作れるようになったんですよ。";
+		mes "うふふっ。";
 		next;
-		mes "[�X�v���L]";
-		mes "�`���R���[�g�ɖ��O�����邱�Ƃ�";
-		mes "�ł���悤�ɂȂ�܂����I";
+		mes "[スプラキ]";
+		mes "チョコレートに名前を入れることも";
+		mes "できるようになりました！";
 		next;
-		mes "[�X�v���L]";
-		mes "�ǂ��H�@�������ł��傤�H";
-		mes "��������`���R�������Ă�����";
-		mes "�n���Ă��������ˁB";
-		mes "�����������f�G�Ȗ��O��";
-		mes "����Ă����܂��傤�I";
+		mes "[スプラキ]";
+		mes "どう？　すごいでしょう？";
+		mes "もし手作りチョコを持っていたら";
+		mes "渡してくださいね。";
+		mes "私が今すぐ素敵な名前を";
+		mes "入れてあげましょう！";
 		next;
-		if(select("�`���R���[�g������Ă�������","���O�����Ă�������")==1) {
+		if(select("チョコレートを作ってください","名前を入れてください")==1) {
 			if(countitem(7182)<5) {
 				cutin "v_sprakki03",2;
-				mes "[�X�v���L]";
-				mes "�`���R���[�g������Ă�������";
-				mes "�C�����͎R�X�Ȃ̂ł����c�c";
-				mes "���́c�c�J�J�I���Ȃ���";
-				mes "��邱�Ƃ��ł��Ȃ���ł��B";
-				mes "���߂�Ȃ����c�c";
+				mes "[スプラキ]";
+				mes "チョコレートを作ってあげたい";
+				mes "気持ちは山々なのですが……";
+				mes "あの……カカオがないと";
+				mes "作ることができないんです。";
+				mes "ごめんなさい……";
 				return;
 			}
-			mes "[�X�v���L]";
-			mes "�͂��I�@����΂��č��܂���I";
-			mes "���̃`���R���[�g���󂯎�����";
-			mes strcharinfo(0)+ "����̂��Ƃ�";
-			mes "�z���Ă���Ă���Ƃ����ł��ˁ`";
+			mes "[スプラキ]";
+			mes "はい！　がんばって作りますよ！";
+			mes "このチョコレートを受け取る方が";
+			mes strcharinfo(0)+ "さんのことを";
+			mes "想ってくれているといいですね～";
 			next;
-			mes "[�X�v���L]";
-			mes "�ł́c�c";
+			mes "[スプラキ]";
+			mes "では……";
 			next;
-			mes "[�X�v���L]";
-			mes "�o���܂����`�I";
-			mes "���������ɗ��Ă�Ȃ��";
-			mes "�������ł��I";
+			mes "[スプラキ]";
+			mes "出来ました～！";
+			mes "私がお役に立てるなんて";
+			mes "嬉しいです！";
 			if(rand(5)==0) {
-				mes "����̓z���C�g�`���R��";
-				mes "���Ă݂܂����B";
+				mes "今回はホワイトチョコに";
+				mes "してみました。";
 				getitem 560,1;
 			}
 			else
@@ -3036,29 +3036,29 @@ function	script	ValentineSprakki	{
 		for(set '@i,0; '@i<@inventorylist_count; set '@i,'@i+1) {
 			if(@inventorylist_id['@i] == 559 || @inventorylist_id['@i] == 560) {
 				if(@inventorylist_card3['@i] && @inventorylist_card4['@i]) {
-					mes "[�X�v���L]";
-					mes "�������O�������Ă��܂��ˁc�c";
+					mes "[スプラキ]";
+					mes "もう名前が入っていますね……";
 					return;
 				}
-				mes "[�X�v���L]";
-				mes "���Ȃ��������Ă���A����";
-				mes getitemname(@inventorylist_id['@i])+ "��";
-				mes "���ږ��O�����܂��ˁB";
+				mes "[スプラキ]";
+				mes "あなたが持っている、その";
+				mes getitemname(@inventorylist_id['@i])+ "に";
+				mes "直接名前を入れますね。";
 				next;
-				mes "[�X�v���L]";
-				mes "���ӂӁA" +strcharinfo(0)+ "����̖��O��";
-				mes "����܂�����B";
-				mes "�ǂ��ł��H�@��肭�ł��Ă܂����H";
+				mes "[スプラキ]";
+				mes "うふふ、" +strcharinfo(0)+ "さんの名前を";
+				mes "入れましたよ。";
+				mes "どうです？　上手くできてますか？";
 				delitem @inventorylist_id['@i],1;
 				getitem2 @inventorylist_id['@i],1,1,0,0,254,0,getcharid(0)&0xffff,(getcharid(0)>>16)&0xffff;
 				return;
 			}
 		}
 		cutin "v_sprakki03",2;
-		mes "[�X�v���L]";
-		mes "����`���R�łȂ���";
-		mes "���O�����邱�Ƃ͂ł��Ȃ��ł��c�c";
-		mes "���߂�Ȃ����c�c";
+		mes "[スプラキ]";
+		mes "手作りチョコでないと";
+		mes "名前を入れることはできないです……";
+		mes "ごめんなさい……";
 		return;
 	}
 }
@@ -3066,12 +3066,12 @@ function	script	ValentineSprakki	{
 prt_castle.gat,0,0,0	script	V_SprakkiTimer	-1,{
 	end;
 Ontimer180000:
-	set callfunc("ValentineSprakki",0),0;	//�����l�����A�^�b�`�h�~���b�N����
+	set callfunc("ValentineSprakki",0),0;	//複数人同時アタッチ防止ロック解除
 	end;
 }
 
-// �X�v���L 2�`4�� 11�`13��
-prt_castle.gat,133,99,3	script	�X�v���L#Valentine1	90,{
+// スプラキ 2～4時 11～13時
+prt_castle.gat,133,99,3	script	スプラキ#Valentine1	90,{
 	if(gettime(3)>= 2 && gettime(3)< 4) callfunc "ValentineSprakki",2,1,1;
 	if(gettime(3)>=11 && gettime(3)<13) callfunc "ValentineSprakki",1,1,1;
 	end;
@@ -3090,8 +3090,8 @@ OnHour13:
 	end;
 }
 
-// �X�v���L 4�`6�� 15�`17��
-prt_castle.gat,33,106,3	script	�X�v���L#Valentine2	90,{
+// スプラキ 4～6時 15～17時
+prt_castle.gat,33,106,3	script	スプラキ#Valentine2	90,{
 	if(gettime(3)>= 4 && gettime(3)< 6) callfunc "ValentineSprakki",2,2,1;
 	if(gettime(3)>=15 && gettime(3)<17) callfunc "ValentineSprakki",1,2,1;
 	end;
@@ -3110,8 +3110,8 @@ OnHour17:
 	end;
 }
 
-// �X�v���L 7�`9�� 21�`23��
-prt_castle.gat,169,168,3	script	�X�v���L#Valentine3	90,{
+// スプラキ 7～9時 21～23時
+prt_castle.gat,169,168,3	script	スプラキ#Valentine3	90,{
 	if(gettime(3)>= 7 && gettime(3)< 9) callfunc "ValentineSprakki",4,3,1;
 	if(gettime(3)>=21 && gettime(3)<23) callfunc "ValentineSprakki",5,3,1;
 	end;
@@ -3130,8 +3130,8 @@ OnHour23:
 	end;
 }
 
-// �X�v���L 9�`11��
-prt_church.gat,92,115,7	script	�X�v���L#Valentine4	90,{
+// スプラキ 9～11時
+prt_church.gat,92,115,7	script	スプラキ#Valentine4	90,{
 	callfunc "ValentineSprakki",6,4,2;
 	end;
 OnInit:
@@ -3146,8 +3146,8 @@ OnHour11:
 	end;
 }
 
-// �X�v���L 13�`15��
-prt_castle.gat,32,168,3	script	�X�v���L#Valentine5	90,{
+// スプラキ 13～15時
+prt_castle.gat,32,168,3	script	スプラキ#Valentine5	90,{
 	callfunc "ValentineSprakki",3,5,3;
 	end;
 OnInit:
@@ -3162,8 +3162,8 @@ OnHour15:
 	end;
 }
 
-// �X�v���L 17�`19��
-prt_castle.gat,172,102,3	script	�X�v���L#Valentine6	90,{
+// スプラキ 17～19時
+prt_castle.gat,172,102,3	script	スプラキ#Valentine6	90,{
 	callfunc "ValentineSprakki",1,6,4;
 	end;
 OnInit:
@@ -3178,8 +3178,8 @@ OnHour19:
 	end;
 }
 
-// �X�v���L 19�`21��
-prt_castle.gat,165,28,3	script	�X�v���L#Valentine7	90,{
+// スプラキ 19～21時
+prt_castle.gat,165,28,3	script	スプラキ#Valentine7	90,{
 	callfunc "ValentineSprakki",3,7,2;
 	end;
 OnInit:
@@ -3194,577 +3194,577 @@ OnHour21:
 	end;
 }
 
-// ��峗p�_�~�[�C�x���g
+// 盗蟲用ダミーイベント
 prt_castle.gat,0,0,0	script	Thiefbug#Valentine	-1,{}
 
 
 //==============================================================
-alberta.gat,26,243,3	script	�V���R��=�o�V�j�I	96,{
+alberta.gat,26,243,3	script	ショコラ=バシニオ	96,{
 	if((Weight*100/MaxWeight) >= 90) {
-		mes "[�V���R��=�o�V�j�I]";
-		mes "���q�l�A�ו�����������";
-		mes "�������̂悤�ł��ˁB";
-		mes "�J�v������ɏ������a���ɂȂ���";
-		mes "���Ă͂������ł��傤���H";
+		mes "[ショコラ=バシニオ]";
+		mes "お客様、荷物をたくさん";
+		mes "お持ちのようですね。";
+		mes "カプラさんに少しお預けになって";
+		mes "きてはいかがでしょうか？";
 		close;
 	}
 	if(QUEST_VALENTINE1==7) {
 		if(countitem(7182)<5) {
-			mes "[�V���R��=�o�V�j�I]";
-			mes "�J�c�c�J�J�I�c�c";
+			mes "[ショコラ=バシニオ]";
+			mes "カ……カカオ……";
 			next;
-			mes "[�V���R��=�o�V�j�I]";
-			mes "�����c�c���߂�Ȃ����B";
-			mes "�J�J�I�������Ă��炵��";
-			mes "�z�B���̕����Ǝv���܂����B";
-			mes "����ς蒍����������";
-			mes "�J�J�I���������ł͂���܂���ˁB";
+			mes "[ショコラ=バシニオ]";
+			mes "あぁ……ごめんなさい。";
+			mes "カカオを持っていらした";
+			mes "配達員の方かと思いました。";
+			mes "やっぱり注文した分の";
+			mes "カカオをお持ちではありませんね。";
 			close;
 		}
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�J�c�c�J�J�I�[!!!";
-		mes "���������̃J�J�I��";
-		mes "�ǂǂ��ɁH";
+		mes "[ショコラ=バシニオ]";
+		mes "カ……カカオー!!!";
+		mes "そそそそのカカオは";
+		mes "どどこに？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "�ǂ��ɂ��āc�c";
-		mes "���͂����A�����͂���";
-		mes "���������ł����ǁH";
-		mes "�V���R��=�o�V�j�I����";
-		mes "����Ȃ��̂ł����H";
-		mes "�ԈႦ�����c�c";
+		mes "どこにって……";
+		mes "私はただ、これを届けに";
+		mes "来ただけですけど？";
+		mes "ショコラ=バシニオさん";
+		mes "じゃないのですか？";
+		mes "間違えたか……";
 		next;
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�������I�@�悭���Ă��������܂����I";
-		mes "����ɂ��Ă��A�Ȃ�����Ȃ�";
-		mes "�x���Ȃ����̂ł��傤���c�c";
-		mes "���X���J���Ȃ��Ȃ�Ƃ���ł�����`�B";
+		mes "[ショコラ=バシニオ]";
+		mes "いいえ！　よく来てくださいました！";
+		mes "それにしても、なぜこんなに";
+		mes "遅くなったのでしょうか……";
+		mes "お店が開けなくなるところでしたよ～。";
 		next;
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�����Ă��炵���J�J�I��";
-		mes "���ւ��������ȁB";
-		mes "�����A�x��������ł�����A";
-		mes "�z�B���͂���ō\���܂���ł���H";
+		mes "[ショコラ=バシニオ]";
+		mes "持っていらしたカカオは";
+		mes "私へくださいな。";
+		mes "もう、遅かったんですから、";
+		mes "配達料はこれで構いませんでしょ？";
 		delitem 7182,5;
 		getitem 558,1;
 		set QUEST_VALENTINE1,8;
 		close;
 	}
 	if(QUEST_VALENTINE1 >= 8 && QUEST_VALENTINE2 != 11) {
-		mes "[�V���R��=�o�V�j�I]";
-		mes "��������Ⴂ�܂��A";
-		mes "�u�o�V�j�I�`���R���[�g�v�ł��B";
-		mes "���͐\����Ȃ���ł����A";
-		mes "�����̔̔��͂��f�肳����";
-		mes "���������Ă����ł��B";
+		mes "[ショコラ=バシニオ]";
+		mes "いらっしゃいませ、";
+		mes "「バシニオチョコレート」です。";
+		mes "今は申し訳ないんですが、";
+		mes "少数の販売はお断りさせて";
+		mes "いただいているんです。";
 		next;
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�ł��A�J�J�I��";
-		mes "�͂��Ă������������ł�����A";
-		mes "�����肵�܂���B";
-		mes "�`���R���[�g�������߂ł����H";
-		mes "���2,000Zeny�ɂȂ�܂����c�c";
+		mes "[ショコラ=バシニオ]";
+		mes "でも、カカオを";
+		mes "届けてくださった方ですから、";
+		mes "お売りしますよ。";
+		mes "チョコレートをお求めですか？";
+		mes "一つ2,000Zenyになりますが……";
 		next;
-		if(select("�`���R���[�g����������","��߂�")==2) {
-			mes "[�V���R��=�o�V�j�I]";
-			mes "���`";
-			mes "�`���R���[�g����������Ƃ�";
-			mes "����������Ȃ���ł����H";
-			mes "�u�`";
-			mes "���������̂ɁA�c�O�ł���`�B";
+		if(select("チョコレートをください","やめる")==2) {
+			mes "[ショコラ=バシニオ]";
+			mes "え～";
+			mes "チョコレートをあげる方とか";
+			mes "いらっしゃらないんですか？";
+			mes "ブ～";
+			mes "おいしいのに、残念ですわ～。";
 			close;
 		}
-		mes "[�V���R��=�o�V�j�I]";
-		mes "���N�̓}�}�����X���ł����A";
-		mes "������l�ō��Ȃ��ƂȂ�Ȃ����A";
-		mes "����ꂽ�����ɂ���";
-		mes "�����肵�Ă���̂ŁA";
-		mes "��������͂�����ł��܂���B";
-		mes "�܂܂łł�����ǂ��ł���B";
+		mes "[ショコラ=バシニオ]";
+		mes "今年はママもお店ができず、";
+		mes "私が一人で作らないとならないし、";
+		mes "限られた取引先にだけ";
+		mes "お売りしているので、";
+		mes "たくさんはお売りできません。";
+		mes "五つまででしたら良いですよ。";
 		while(1) {
 			next;
 			input '@num;
 			if('@num==0) {
-				mes "[�V���R��=�o�V�j�I]";
-				mes "���`";
-				mes "�`���R���[�g����������Ƃ�";
-				mes "����������Ȃ���ł����H";
-				mes "�u�`";
-				mes "���������̂ɁA�c�O�ł���`�B";
+				mes "[ショコラ=バシニオ]";
+				mes "え～";
+				mes "チョコレートをあげる方とか";
+				mes "いらっしゃらないんですか？";
+				mes "ブ～";
+				mes "おいしいのに、残念ですわ～。";
 				close;
 			}
 			if(('@num>5)||('@num<0)) {
-				mes "[�V���R��=�o�V�j�I]";
-				mes "�\���󂠂�܂���A";
-				mes "�Z�ȏ�͂��������������B";
+				mes "[ショコラ=バシニオ]";
+				mes "申し訳ありません、";
+				mes "六つ以上はご遠慮ください。";
 				continue;
 			}
 			break;
 		}
 		if(Zeny<'@num*2000) {
-			mes "[�V���R��=�o�V�j�I]";
-			mes "���炠��c�c";
-			mes "������������Ƒ���Ȃ��悤�ł���B";
-			mes "���莝���̂�����";
-			mes "�m���߂Ă��������ˁB";
-			mes "���v�ł��A���҂����Ă��܂�����B";
+			mes "[ショコラ=バシニオ]";
+			mes "あらあら……";
+			mes "お金がちょっと足りないようですよ。";
+			mes "お手持ちのお金を";
+			mes "確かめてくださいね。";
+			mes "大丈夫です、お待ちしていますから。";
 			close;
 		}
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�͂��A������ł��ˁB";
-		mes "�v���[���g�ɂ҂�����I";
-		mes "���������`���R���[�g�ł��B";
-		mes "�I�z�z�z�z";
-		mes "�ǂ����������オ��ɂȂ��āA";
-		mes "���Ђ����ɂ��Ă��������ˁI";
+		mes "[ショコラ=バシニオ]";
+		mes "はい、こちらですね。";
+		mes "プレゼントにぴったり！";
+		mes "おいしいチョコレートです。";
+		mes "オホホホホ";
+		mes "どうぞお召し上がりになって、";
+		mes "ごひいきにしてくださいね！";
 		set Zeny,Zeny-('@num*2000);
 		getitem 558,'@num;
 		close;
 	}
-	mes "[�V���R��=�o�V�j�I]";
-	mes "��������Ⴂ�܂��c�c";
-	mes "�u�o�V�j�I�`���R���[�g�v��";
-	mes "�V���R���ł��B";
-	mes "���͍ޗ�������Ȃ��āA";
-	mes "�`���R���[�g����邱�Ƃ�";
-	mes "�ł��Ȃ���ł��́B";
+	mes "[ショコラ=バシニオ]";
+	mes "いらっしゃいませ……";
+	mes "「バシニオチョコレート」の";
+	mes "ショコラです。";
+	mes "今は材料が足りなくて、";
+	mes "チョコレートを作ることが";
+	mes "できないんですの。";
 	next;
 	if(QUEST_VALENTINE2==11) {
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�͂��H�@���V�s�ł����H";
-		mes "�����A�X�v���L����!?";
-		mes "����ł́A�ȒP�ȃ`���R���[�g��";
-		mes "��邽�߂̃��V�s�������グ�܂���B";
+		mes "[ショコラ=バシニオ]";
+		mes "はい？　レシピですか？";
+		mes "ああ、スプラキさん!?";
+		mes "それでは、簡単なチョコレートを";
+		mes "作るためのレシピを差し上げますよ。";
 		next;
-		mes "[�V���R��=�o�V�j�I]";
-		mes "���`��A�ł��A�ޗ����W�߂邱�Ƃ�";
-		mes "�ł��邩�킩��܂����c�c";
-		mes "�Ƃɂ����A��낵�����`�����������ˁB";
+		mes "[ショコラ=バシニオ]";
+		mes "う～ん、でも、材料を集めることが";
+		mes "できるかわかりませんよ……";
+		mes "とにかく、よろしくお伝えくださいね。";
 		next;
-		mes "^4A4AFF �V���R���́A���������g�̉���";
-		mes "�T���āA�������܂�ꂽ���؂��";
-		mes "������ƁA�����n���Ă����B";
-		mes "���Ԃ񂱂ꂪ���̃��V�s�Ȃ񂾂낤�B^000000";
+		mes "^4A4AFF ショコラは、あちこち身の回りを";
+		mes "探して、小さく折られた紙切れを";
+		mes "見つけると、それを渡してきた。";
+		mes "たぶんこれがそのレシピなんだろう。^000000";
 		next;
-		mes "[�V���R��=�o�V�j�I]";
-		mes "�ޗ����͂��܂�����A";
-		mes "�`���R���[�g��������������";
-		mes "����܂�����A���̎��܂�";
-		mes "�����ɂȂ��Ă��������ˁ`�B";
+		mes "[ショコラ=バシニオ]";
+		mes "材料が届きましたら、";
+		mes "チョコレートをたくさん作って";
+		mes "売りますから、その時また";
+		mes "お寄りになってくださいね～。";
 		set QUEST_VALENTINE2,12;
 		close;
 	}
-	mes "[�V���R��=�o�V�j�I]";
-	mes "�܂�����A���炵�Ă��������B";
-	mes "�{���ɐ\���󂲂����܂���B";
+	mes "[ショコラ=バシニオ]";
+	mes "また後日、いらしてください。";
+	mes "本当に申し訳ございません。";
 	close;
 }
 
-prt_in.gat,41,40,3	script	����p�e�B�V�G	86,{
+prt_in.gat,41,40,3	script	助手パティシエ	86,{
 	if(QUEST_VALENTINE1==18) {
-		mes "[�A����=�I�����A��]";
-		mes "�ǂ̂悤�Ȃ��p���ł����H";
+		mes "[アルル=オルレアン]";
+		mes "どのようなご用件ですか？";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "����l�ɁA�`���R���[�g��肪��肢";
-		mes "�F�B������̂ŁA���Ȃ��̂Ƃ����";
-		mes "�s���Ă݂Ȃ����ƌ����āc�c";
+		mes "ある人に、チョコレート作りが上手い";
+		mes "友達がいるので、あなたのところへ";
+		mes "行ってみなさいと言われて……";
 		next;
-		mes "[�A����=�I�����A��]";
-		mes "���A�u���C�h�ł����B";
-		mes "����͂���́A";
-		mes "�悭��������Ⴂ�܂����B";
+		mes "[アルル=オルレアン]";
+		mes "お、ブレイドですか。";
+		mes "それはそれは、";
+		mes "よくいらっしゃいました。";
 		next;
-		mes "[�A����=�I�����A��]";
-		mes "���Ȃ����u���C�h��";
-		mes "�d������`���Ă����������̂ł����H";
-		mes "���������܂ŁA�J�J�I�̗��ʂ��ǂ��Ȃ�";
-		mes "�������̗ǂ��ޗ���";
-		mes "��ɓ������悤�ɂȂ�܂����B";
+		mes "[アルル=オルレアン]";
+		mes "あなたがブレイドの";
+		mes "仕事を手伝ってくださったのですか？";
+		mes "おかげさまで、カカオの流通が良くなり";
+		mes "私も質の良い材料を";
+		mes "手に入れられるようになりました。";
 		next;
-		mes "[�A����=�I�����A��]";
-		mes "���܂肱��Ȃ��Ƃ͕��i���Ȃ��̂ł���";
-		mes "�����`���R���[�g�������߂�";
-		mes "�Ȃ肽�������炨���肢�����܂���B";
-		mes "���ł����炵�Ă��������B";
+		mes "[アルル=オルレアン]";
+		mes "あまりこんなことは普段しないのですが";
+		mes "もしチョコレートをお求めに";
+		mes "なりたかったらお売りいたしますよ。";
+		mes "いつでもいらしてください。";
 		set QUEST_VALENTINE1,19;
 		close;
 	}
 	if(QUEST_VALENTINE1>=19) {
-		mes "[�A����=�I�����A��]";
-		mes "��������Ⴂ�܂��B";
-		mes "�`���R���[�g�������߂ł����H";
+		mes "[アルル=オルレアン]";
+		mes "いらっしゃいませ。";
+		mes "チョコレートをお求めですか？";
 		next;
-		switch(select("�͂��A���������","����ė~�����ł�","���\�ł��B�����A�ɗ��܂���")) {
+		switch(select("はい、一つください","作って欲しいです","結構です。ご挨拶に来ました")) {
 		case 1:
-			mes "[�A����=�I�����A��]";
-			mes "�͂��A�������܂�܂����B";
-			mes "�����2��Zeny�ƁA���X������";
-			mes "�������邩������܂��񂪁A";
-			mes "�^�S�����߂č�点�Ă���������";
-			mes "����܂��̂Łc�c";
+			mes "[アルル=オルレアン]";
+			mes "はい、かしこまりました。";
+			mes "お一つ2万Zenyと、少々お高く";
+			mes "感じられるかもしれませんが、";
+			mes "真心を込めて作らせていただいて";
+			mes "おりますので……";
 			next;
-			mes "[�A����=�I�����A��]";
-			mes "���l�B�Ɉ��Ɗ�]�ɖ�����";
-			mes "�������K��񂱂Ƃ��c�c";
-			mes "�͂��A���Ȃ�F������߂�";
-			mes "����`���R�ł������܂��B";
+			mes "[アルル=オルレアン]";
+			mes "恋人達に愛と希望に満ちた";
+			mes "未来が訪れんことを……";
+			mes "はい、聖なる祈りを込めた";
+			mes "手作りチョコでございます。";
 			next;
 			set Zeny,Zeny-20000;
 			if(Sex==0) getitem 559,1;
 			if(Sex==1) getitem 560,1;
-			mes "[�A����=�I�����A��]";
-			mes "�͂��A������ł��B";
-			mes "���肪�Ƃ��������܂��B";
-			mes "�܂����񂲗��p���������B";
+			mes "[アルル=オルレアン]";
+			mes "はい、こちらです。";
+			mes "ありがとうございます。";
+			mes "また是非ご利用ください。";
 			close;
 		case 2:
-			mes "[�A����=�I�����A��]";
-			mes "����ł́A���ʂ̃`���R���[�g��";
-			mes "7���������������܂����H";
-			mes "�ō��̏����������";
-			mes "����肢�����܂��B";
+			mes "[アルル=オルレアン]";
+			mes "それでは、普通のチョコレートを";
+			mes "7個お持ちいただけますか？";
+			mes "最高の飾りつけをして";
+			mes "お作りいたします。";
 			if(countitem(558)<7) close;
-			mes "�����A�����ޗ����������ł��ˁB";
-			mes "����ł͑�������肵�܂��傤���H";
+			mes "おお、もう材料をお持ちですね。";
+			mes "それでは早速お作りしましょうか？";
 			next;
-			if(select("���肢���܂�","���A�҂��Ă�������")==2) {
-				mes "[�A����=�I�����A��]";
-				mes "�����A�ǂ����܂������H";
-				mes "���q�l�̓u���C�h�Ƃ��F�l��";
-				mes "�悤�ł����̂Ń`���R���[�g��";
-				mes "����肵�Ă��������悤�Ɓc�c";
-				mes "�Ƃ͂����A�����ł���肷��";
-				mes "�킯�ɂ��܂���܂���̂Łc�c";
+			if(select("お願いします","あ、待ってください")==2) {
+				mes "[アルル=オルレアン]";
+				mes "おお、どうしましたか？";
+				mes "お客様はブレイドとご友人の";
+				mes "ようでしたのでチョコレートを";
+				mes "お作りしてさしあげようと……";
+				mes "とはいえ、無料でお作りする";
+				mes "わけにもまいりませんので……";
 				close;
 			}
-			mes "[�A����=�I�����A��]";
-			mes "�`���R���[�g�ɂ́A���̊Â�����";
-			mes "�����ɁA�ꖡ�����܂��Ă��܂��B";
-			mes "�l�Ɛl�Ƃ̊֌W�ɂ́A";
-			mes "�y�����o����������܂����A";
-			mes "�߂������Ƃ�����܂��c�c";
-			mes "�Ȃ�ƂȂ����Ă��܂���ˁc�c";
+			mes "[アルル=オルレアン]";
+			mes "チョコレートには、その甘い味の";
+			mes "裏側に、苦味も潜ませています。";
+			mes "人と人との関係には、";
+			mes "楽しい出来事もありますが、";
+			mes "悲しいこともあります……";
+			mes "なんとなく似ていますよね……";
 			next;
-			mes "[�A����=�I�����A��]";
-			mes "����̓v���[���g�p�ł���ˁH";
-			mes "����͔h�肷�����A�n���ɂȂ�Ȃ��悤";
-			mes "����΂��č��܂����B";
-			mes "���C�ɏ����΍K���ł��B";
+			mes "[アルル=オルレアン]";
+			mes "これはプレゼント用ですよね？";
+			mes "飾りは派手すぎず、地味にならないよう";
+			mes "がんばって作りました。";
+			mes "お気に召せば幸いです。";
 			next;
 			delitem 558,7;
 			getitem 559,1;
-			mes "[�A����=�I�����A��]";
-			mes "�͂��A������ł��B";
-			mes "���肪�Ƃ��������܂��B";
-			mes "�܂����񂲗��p���������B";
+			mes "[アルル=オルレアン]";
+			mes "はい、こちらです。";
+			mes "ありがとうございます。";
+			mes "また是非ご利用ください。";
 			close;
 		case 3:
-			mes "[�A����=�I�����A��]";
-			mes "����͂���́B";
-			mes "���������Ȃ����Ă����Ă��������B";
-			mes "������낵����΁A�ޗ�����";
-			mes "����������������΃`���R���[�g��";
-			mes "����肵�܂��̂ŁA�����Ȃ�";
-			mes "����������Ă��������B";
+			mes "[アルル=オルレアン]";
+			mes "それはそれは。";
+			mes "ごゆっくりなさっていってください。";
+			mes "もしよろしければ、材料さえ";
+			mes "お持ちいただければチョコレートを";
+			mes "お作りしますので、遠慮なく";
+			mes "おっしゃってください。";
 			next;
-			mes "[�A����=�I�����A��]";
-			mes "�`���R���[�g��7����������΁A";
-			mes "����`���R�ɂ��Ă��������܂���B";
+			mes "[アルル=オルレアン]";
+			mes "チョコレートを7個いただければ、";
+			mes "手作りチョコにしてさしあげますよ。";
 			close;
 		}
 	}
-	mes "[�A����=�I�����A��]";
-	mes "�ǂ̂悤�Ȃ��p���ł������";
-	mes "�������ɂȂ����̂ł��傤�H";
-	mes "������c�c����`���R��";
-	mes "�����߂ɂ������������̂ł����H";
+	mes "[アルル=オルレアン]";
+	mes "どのようなご用件でこちらに";
+	mes "おこしになったのでしょう？";
+	mes "もしや……手作りチョコを";
+	mes "お求めにいらっしゃったのですか？";
 	next;
-	mes "[�A����=�I�����A��]";
-	mes "���A�ޗ��𑵂��Ă����";
-	mes "����悪�A�ޗ����d����邱�Ƃ�";
-	mes "�ł��Ă��Ȃ����߁A������ɂ�";
-	mes "�͂��Ă��Ȃ��̂ł���c�c";
+	mes "[アルル=オルレアン]";
+	mes "今、材料を揃えてくれる";
+	mes "取引先が、材料を仕入れることが";
+	mes "できていないため、こちらにも";
+	mes "届いていないのですよ……";
 	next;
-	mes "[�A����=�I�����A��]";
-	mes "���������������ɂȂ����̂�";
-	mes "�\����Ȃ��̂ł����c�c";
+	mes "[アルル=オルレアン]";
+	mes "せっかくおこしになったのに";
+	mes "申し訳ないのですが……";
 	close;
 }
 
 
 /*
-// ���o�����^�C��
+// 旧バレンタイン
 // Valentine Script 2004-02-12
-alberta.gat,26,243,4	script	�`���R���[�g���l	58,{	//�j���w���\
-	mes "[�}���R=�o�W�j�I]";
-	mes "���[���~�b�h�K�b�c�����ł͖ő���";
-	mes "���킦�Ȃ����Y�i�I";
-	mes "����H�ׂ�ΒN�ł��K���Ƀg���`��";
-	mes "�Ƃ낯�邨�َq�I";
-	mes "�����ŐH�ׂĂ��������A���蕨�ɂ�";
-	mes "�s�b�^�����I";
+alberta.gat,26,243,4	script	チョコレート商人	58,{	//男女購入可能
+	mes "[マルコ=バジニオ]";
+	mes "ルーンミッドガッツ王国では滅多に";
+	mes "味わえない特産品！";
+	mes "一口食べれば誰でも幸せにトロ～リ";
+	mes "とろけるお菓子！";
+	mes "自分で食べてもいいし、贈り物にも";
+	mes "ピッタリだ！";
 	next;
-	mes "[�}���R=�o�W�j�I]";
-	mes "����ȃ`���R���[�g�� ^ff0000���";
-	mes "5000zeny^000000�I";
+	mes "[マルコ=バジニオ]";
+	mes "そんなチョコレートが ^ff0000一個";
+	mes "5000zeny^000000！";
 	next;
-	if(select("�`���R���[�g���������I","����܂���I")==1) {
-		mes "[�}���R=�o�W�j�I]";
-		mes "�E�z�I���肪�Ƃ��������܂��A���q�l�I";
-		mes "���̃`���R���[�g�͐E�l�̍����l�܂���";
-		mes "����ƌ����Ă��ߌ��ł͂Ȃ��̂ł��I";
-		mes "�Ȃ̂ŁA���̂������グ�ɂ�";
-		mes "^ff00005�܂�^000000�ƂȂ��Ă���܂��I";
+	if(select("チョコレートください！","いりません！")==1) {
+		mes "[マルコ=バジニオ]";
+		mes "ウホ！ありがとうございます、お客様！";
+		mes "このチョコレートは職人の魂が詰まって";
+		mes "いると言っても過言ではないのです！";
+		mes "なので、一回のお買い上げにつき";
+		mes "^ff00005個まで^000000となっております！";
 		next;
-		mes "[�}���R=�o�W�j�I]";
-		mes "�����Ɨ~�����̂ł�����A�܂���ōčw";
-		mes "�����˂������܂��I�ł́A�����~����";
-		mes "�̂ł��傤���I";
+		mes "[マルコ=バジニオ]";
+		mes "もっと欲しいのでしたら、また後で再購";
+		mes "入おねがいします！では、いくつ欲しい";
+		mes "のでしょうか！";
 		while(1) {
 			next;
 			input '@num;
 			if('@num>5) {
-				mes "[�}���R=�o�W�j�I]";
-				mes "�E�z�z�z�z�z�z�A�ʖځA�ʖڑʖځI";
-				mes "���̂������グ��5�܂łƐ�������";
-				mes "������ˁI���͂������[��̐l�ɁA����";
-				mes "�`���R���[�g�𖡂���ė~�����̂ł��I";
-				mes "����ɁA�H�ׂ�����Ƒ���܂��I";
+				mes "[マルコ=バジニオ]";
+				mes "ウホホホホホホ、駄目、駄目駄目！";
+				mes "一回のお買い上げで5個までと説明しま";
+				mes "したよね！私はたくさーんの人に、この";
+				mes "チョコレートを味わって欲しいのです！";
+				mes "それに、食べすぎると太ります！";
 				continue;
 			}
 			break;
 		}
 		if('@num>0) {
 			if(Zeny<'@num*5000) {
-				mes "[�}���R=�o�W�j�I]";
-				mes "�E�z�H���ꂠ��A�����c�c���q����I";
-				mes "����������܂����B����ł̓`���R";
-				mes "���[�g�𔄂邱�Ƃ͏o���܂���I";
-				mes "���́A�������΂炭�����ɂ��܂�����";
-				mes "�������o������܂��ǂ����I";
+				mes "[マルコ=バジニオ]";
+				mes "ウホ？あれあれ、あれれ……お客さん！";
+				mes "お金が足りませんよ。それではチョコ";
+				mes "レートを売ることは出来ません！";
+				mes "私は、もうしばらくここにいますから";
+				mes "お金が出来たらまたどうぞ！";
 				close;
 			}
 			set Zeny,Zeny-'@num*5000;
 			getitem 558,'@num;
-			mes "[�}���R=�o�W�j�I]";
-			mes "���肪�Ƃ��������܂��I";
-			mes "���́A�������΂炭�����ɂ��܂�����";
-			mes "�`���R���[�g���~�����Ȃ�����A�܂�";
-			mes "�ǂ����I���҂����Ă���܂��I";
+			mes "[マルコ=バジニオ]";
+			mes "ありがとうございます！";
+			mes "私は、もうしばらくここにいますから";
+			mes "チョコレートが欲しくなったら、また";
+			mes "どうぞ！お待ちしております！";
 			close;
 		}
 	}
-	mes "[�}���R=�o�W�j�I]";
-	mes "�E�z�H���`��ȃX�y�V�����ȃ`���R���[";
-	mes "�g���~�����Ȃ��Ɓc�c�c�O�ł��ˁI";
-	mes "���������������Ȃ��X�y�V�����œ��ʂ�";
-	mes "���َq�ł���I�l�������āA�`���R���[";
-	mes "�g���~�����Ȃ����琥�񐥔񐥔�܂�";
-	mes "���Ă��������I���҂����Ă���܂��I";
+	mes "[マルコ=バジニオ]";
+	mes "ウホ？こ～んなスペシャルなチョコレー";
+	mes "トが欲しくないと……残念ですね！";
+	mes "今だけしか買えないスペシャルで特別な";
+	mes "お菓子ですよ！考え直して、チョコレー";
+	mes "トが欲しくなったら是非是非是非また";
+	mes "来てください！お待ちしております！";
 	close;
 }
 
-alberta.gat,29,243,4	script	�`���R���[�g���l�̗��l	53,{
+alberta.gat,29,243,4	script	チョコレート商人の恋人	53,{
 	if(Sex || countitem(7182)<5 || countitem(7134)<1 || countitem(519)<1 || countitem(612)<1) {
-		mes "[�G�X�e��=���[�Y]";
-		mes "����ɂ��́B���́A���̔ނ������Ă���";
-		mes "�`���R���[�g�͎�������Ă����ł��B";
-		mes "�O���ŁA�����@���w��ł����̂ł��B";
+		mes "[エステル=ローズ]";
+		mes "こんにちは。実は、私の彼が売っている";
+		mes "チョコレートは私が作っているんです。";
+		mes "外国で、作る方法を学んできたのです。";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�O���ł́A���̎����ɍD���Ȑl�Ƀ`���R";
-		mes "���[�g���v���[���g���镗�K�������";
-		mes "���B�Â��C�������A�Â��`���R���[�g��";
-		mes "�����c�c���΂炵���Ǝv���܂��񂩁H";
+		mes "[エステル=ローズ]";
+		mes "外国では、この時期に好きな人にチョコ";
+		mes "レートをプレゼントする風習がありま";
+		mes "す。甘い気持ちを、甘いチョコレートに";
+		mes "託す……すばらしいと思いませんか？";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "���̃`���R���[�g�������ł������ɗ���";
-		mes "��΂ƁA�������񂽂�����A�`���R���[";
-		mes "�g���������ł��B";
+		mes "[エステル=ローズ]";
+		mes "私のチョコレートが少しでもお役に立て";
+		mes "ればと、たくさんたくさん、チョコレー";
+		mes "トを作ったんです。";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�ނ́A����Ȏ������āu�����ɏo����";
-		mes "���Ƃ�����񂾁v���Ċ撣���ă`���R";
-		mes "���[�g�𔄂��Ă���Ă����ł��B";
-		mes "���̋C���������������ǁA�`���R���[";
-		mes "�g�𔃂��Ă��ꂽ���X�̏Ί炪�A�����";
-		mes "�����K���ɂ��Ă�����ł��B";
+		mes "[エステル=ローズ]";
+		mes "彼は、そんな私を見て「自分に出来る";
+		mes "ことをするんだ」って頑張ってチョコ";
+		mes "レートを売ってくれているんです。";
+		mes "その気持ちも嬉しいけど、チョコレー";
+		mes "トを買ってくれた方々の笑顔が、何より";
+		mes "私を幸せにしてくれるんです。";
 		next;
-		if(Sex) {	//�j�Ȃ�I��
-			mes "[�G�X�e��=���[�Y]";
-			mes "������A���厖�ɑ厖�ɍ����";
-			mes "�����ł��B�����ł����������ł���";
-			mes "�Ǝv���܂����A��x�����オ���Ă݂�";
-			mes "���������ˁB�ӂ��A�撣���Ă�����";
-			mes "���Ȃ���I";
+		if(Sex) {	//男なら終了
+			mes "[エステル=ローズ]";
+			mes "だから、一個一個大事に大事に作って";
+			mes "いるんです。自分でも美味しくできた";
+			mes "と思いますし、一度召し上がってみて";
+			mes "くださいね。ふう、頑張ってもっと";
+			mes "作らなきゃ！";
 			close;
 		}
-		mes "[�G�X�e��=���[�Y]";
-		mes "��قǂ������܂������A�O���ł͂��̎���";
-		mes "�D���Ȑl�Ƀ`���R���[�g���v���[���g";
-		mes "�����ł��B�����A�D���ȕ�������Ȃ�";
-		mes "�`���R���[�g�ƈꏏ�ɋC������`����";
-		mes "�݂܂��񂩁H";
+		mes "[エステル=ローズ]";
+		mes "先ほども言いましたが、外国ではこの時期";
+		mes "好きな人にチョコレートをプレゼント";
+		mes "するんです。もし、好きな方がいるなら";
+		mes "チョコレートと一緒に気持ちを伝えて";
+		mes "みませんか？";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�ޗ��������ė��Ă����΁A�`���R���[";
-		mes "�g�����܂��B���̔ނ������Ă���`��";
-		mes "�R���[�g�ł������̂ł����c�c";
-		mes "�����Ŕ������A�����ŏW�߂��ޗ���";
-		mes "������`���R���[�g�̂ق����A���́c�c";
+		mes "[エステル=ローズ]";
+		mes "材料を持って来てくれれば、チョコレー";
+		mes "トを作ります。私の彼が売っているチョ";
+		mes "コレートでもいいのですが……";
+		mes "お金で買うより、自分で集めた材料で";
+		mes "作ったチョコレートのほうが、その……";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�����̋C����������ɓ`���悤�ȋC��";
-		mes "���܂��񂩁H";
+		mes "[エステル=ローズ]";
+		mes "自分の気持ちが相手に伝わるような気が";
+		mes "しませんか？";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�ޗ��ł����A�����̏����͂����ł����H";
-		mes "^3355ff�J�J�I 5��";
-		mes "�~���N 1��";
-		mes "���� 1��";
-		mes "�g�їp�n�z�F 1��^000000";
+		mes "[エステル=ローズ]";
+		mes "材料ですが、メモの準備はいいですか？";
+		mes "^3355ffカカオ 5個";
+		mes "ミルク 1個";
+		mes "乳鉢 1個";
+		mes "携帯用溶鉱炉 1個^000000";
 		next;
-		mes "[�G�X�e��=���[�Y]";
-		mes "�������ł�����A�����Ă��������B";
-		mes "���������`���R���[�g����点��";
-		mes "���������܂��B";
+		mes "[エステル=ローズ]";
+		mes "準備ができたら、教えてください。";
+		mes "美味しいチョコレートを作らせて";
+		mes "いただきます。";
 		close;
 	}
-	mes "[�G�X�e��=���[�Y]";
-	mes "�������o������ł��ˁI�ł́A�����r��";
-	mes "���킹�Ă��������܂��I";
-	mes "���A�ׂɂ���ނɂ͓����ł���B";
+	mes "[エステル=ローズ]";
+	mes "準備が出来たんですね！では、早速腕を";
+	mes "奮わせていただきます！";
+	mes "あ、隣にいる彼には内緒ですよ。";
 	next;
 	delitem 7182,5;
 	delitem 7134,1;
 	delitem 519,1;
 	delitem 612,1;
 	getitem 558,1;
-	mes "[�G�X�e��=���[�Y]";
-	mes "�͂��A�o���オ��܂����I";
-	mes "�v���[���g�Ȃ���̂ł����H";
-	mes "�C�������`���Ƃ����ł��ˁB";
-	mes "�K���ɂȂ��Ă��������`�B";
+	mes "[エステル=ローズ]";
+	mes "はい、出来上がりました！";
+	mes "プレゼントなさるのですか？";
+	mes "気持ちが伝わるといいですね。";
+	mes "幸せになってください～。";
 	close;
 }
 
-prt_castle.gat,42,35,3	script	���{�f�U�[�g�E�l	47,{
+prt_castle.gat,42,35,3	script	王宮デザート職人	47,{
 	if(Sex) {
-		mes "[�V������=�I�����A��]";
-		mes "�{���W���`��_���b�V���[�B���^�N�V��";
-		mes "�y�������ꏊ����|�p�𐶂ݏo�����߁A";
-		mes "���̃A�g���G�ɕ����~�肽�Ƃ���Ȃ�";
-		mes "�ł��B";
+		mes "[シャルル=オルレアン]";
+		mes "ボンジュ～ル_ムッシュー。ワタクシは";
+		mes "遥か遠い場所から芸術を生み出すため、";
+		mes "このアトリエに舞い降りたところなの";
+		mes "です。";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�I�D�A�m���m���I���̐��炩�ȓ���";
-		mes "���炵�������݂̂��f�����Ȃ̂ł��B";
+		mes "[シャルル=オルレアン]";
+		mes "オゥ、ノンノン！私の清らかな瞳は";
+		mes "愛らしい女性のみを映す鏡なのです。";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�I�D�`�A����łȂ��Ă��Z�����̂�";
-		mes "���̃V������=�I�����A����ς킹��";
-		mes "�Ȃ�āB�I�D�`�A�m���m���m���B";
+		mes "[シャルル=オルレアン]";
+		mes "オゥ～、それでなくても忙しいのに";
+		mes "このシャルル=オルレアンを煩わせる";
+		mes "なんて。オゥ～、ノンノンノン。";
 		close;
 	}
-	mes "[�V������=�I�����A��]";
-	mes "�I�D�A�}�h���A�[���I";
-	mes "�M���������ɂ��邾���ŁA���̂ނ�";
-	mes "�ꂵ���ꏊ���V���ɓ������Ȃ�B";
+	mes "[シャルル=オルレアン]";
+	mes "オゥ、マドモアゼル！";
+	mes "貴方がそこにいるだけで、このむさ";
+	mes "苦しい場所が天国に等しくなる。";
 	next;
-	mes "[�V������=�I�����A��]";
-	mes "�V�g�̂悤�Ɉ����邵���M����";
-	mes "�����������p�ł����ɂ��炵���̂��ȁH";
-	mes "���^�N�V�߂ł悯��΁A���ł��肢��";
-	mes "�����܂��傤�B";
+	mes "[シャルル=オルレアン]";
+	mes "天使のように愛くるしい貴方が";
+	mes "いったい何用でここにいらしたのかな？";
+	mes "ワタクシめでよければ、何でも願いを";
+	mes "聞きましょう。";
 	next;
-	if(select("�`���R���[�g������Ă���܂����H","�����l�ł��B")==2) {
-		mes "[�V������=�I�����A��]";
-		mes "�I�D�A���̈ꌾ�c�c���^�N�V�̑��݂�";
-		mes "���ɋA���悤�ȁc�c���̕X�̐n�̂悤��";
-		mes "�ꌾ���A���̐g�����A��������������";
-		mes "�����Ă��܂��c�c";
+	if(select("チョコレートを作ってくれますか？","お疲れ様です。")==2) {
+		mes "[シャルル=オルレアン]";
+		mes "オゥ、その一言……ワタクシの存在を";
+		mes "無に帰すような……その氷の刃のような";
+		mes "一言が、私の身を削り、魂さえ痩せ衰え";
+		mes "させてしまう……";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�I�D�A�}�h���A�[���I";
-		mes "�ǂ�����΂ǂ�����΁c�c�M���̐S��";
-		mes "�Ăу��^�N�V�̗��Əo����̂�!?";
+		mes "[シャルル=オルレアン]";
+		mes "オゥ、マドモアゼル！";
+		mes "どうすればどうすれば……貴方の心を";
+		mes "再びワタクシの虜と出来るのか!?";
 		close;
 	}
 	if(countitem(558)<3) {
-		mes "[�V������=�I�����A��]";
-		mes "�I�D�A�}�h���A�[���I";
-		mes "���^�N�V�͐_�ł��B���p�t�ł��Ȃ��̂�";
-		mes "���B�ςȍޗ�����|�p�i��n��o������";
-		mes "�ȂǏo���܂���I�����āA���}�ȃA�C�e";
-		mes "�����畽�}�ȍ�i�����ȂǁA�̑�Ȍ|";
-		mes "�p�Ƃ̃��^�N�V�ɂ͕s�\!!";
+		mes "[シャルル=オルレアン]";
+		mes "オゥ、マドモアゼル！";
+		mes "ワタクシは神でも錬金術師でもないので";
+		mes "す。変な材料から芸術品を創り出すこと";
+		mes "など出来ません！そして、平凡なアイテ";
+		mes "ムから平凡な作品を作るなど、偉大な芸";
+		mes "術家のワタクシには不可能!!";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "���^�N�V���n�����镨�́A���E���̒N��";
-		mes "�����Q�̂��ߑ���f���A�N�ɂ�����^��";
-		mes "�o���Ȃ��|�p�i�Ȃ̂ł��B";
+		mes "[シャルル=オルレアン]";
+		mes "ワタクシが創造する物は、世界中の誰も";
+		mes "が感嘆のため息を吐く、誰にも到底真似";
+		mes "出来ない芸術品なのです。";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "���^�N�V���M���̋�J�ɕ񂢂�ׂɂ�";
-		mes "^3355ff�`���R���[�g3��^000000����ΕK�v�Ȃ̂ł��B";
-		mes "����ȉ��ł��A����ȏ�ł��Ȃ��B";
-		mes "�s�b�^��3�c�c�B";
+		mes "[シャルル=オルレアン]";
+		mes "ワタクシが貴方の苦労に報いる為には";
+		mes "^3355ffチョコレート3個^000000が絶対必要なのです。";
+		mes "それ以下でも、それ以上でもない。";
+		mes "ピッタリ3個……。";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�}�h���A�[���̌��P�����e�Ɖؚ��Ȑg��";
-		mes "�B���ꂽ���x�Ȉӎu�Ȃ�A�����Ǝ��";
-		mes "����Ă��邱�Ƃ��\�ł��傤�B";
+		mes "[シャルル=オルレアン]";
+		mes "マドモアゼルの光輝く美貌と華奢な身に";
+		mes "隠された強靭な意志なら、きっと手に";
+		mes "入れてくることが可能でしょう。";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�����ł����B^3355ff�`���R���[�g3��^000000��������";
-		mes "���Ă��������B�o���邱�ƂȂ�΂̒�";
-		mes "���̒��A�n���̒�ւł��A�M���ׂ̈�";
-		mes "���^�N�V�����ڎ�ɓ���č����グ����";
-		mes "���A���̃��^�N�V�͉��{�̋Ɩ��ɏI�n";
-		mes "�I����g�c�c�I�D�c�c";
+		mes "[シャルル=オルレアン]";
+		mes "いいですか。^3355ffチョコレート3個^000000を持って";
+		mes "来てください。出来ることなら火の中";
+		mes "水の中、地獄の底へでも、貴方の為に";
+		mes "ワタクシが直接手に入れて差し上げたい";
+		mes "が、今のワタクシは王宮の業務に終始";
+		mes "終われる身……オゥ……";
 		next;
-		mes "[�V������=�I�����A��]";
-		mes "�I �����H���[ �}�h���A�[���c�c";
-		mes "�M���̋A���S���炨�҂�����";
-		mes "����܂��c�c";
+		mes "[シャルル=オルレアン]";
+		mes "オ レヴォワー マドモアゼル……";
+		mes "貴方の帰りを心からお待ちして";
+		mes "おります……";
 		close;
 	}
-	mes "[�V������=�I�����A��]";
-	mes "�I�D�A�}�h���A�[���I";
-	mes "���^�N�V�̎��Ă�S�Ă̊�����������";
-	mes "�M���̃`���R���[�g����������΂炵��";
-	mes "���т₩�Ȍ|�p�ւƏ��؂����Ă�����";
-	mes "���܂��傤�I";
+	mes "[シャルル=オルレアン]";
+	mes "オゥ、マドモアゼル！";
+	mes "ワタクシの持てる全ての感性を持って";
+	mes "貴方のチョコレートを美しくすばらしく";
+	mes "煌びやかな芸術へと昇華させていただ";
+	mes "きましょう！";
 	next;
-	mes "[�V������=�I�����A��]";
-	mes "�M���̓��Ƃ�����΂��A���E���̒N����";
-	mes "��������A�����Ő_��I�Ȉ��̌������";
-	mes "�悤�Ɂc�c";
+	mes "[シャルル=オルレアン]";
+	mes "貴方の瞳という宝石が、世界中の誰もを";
+	mes "魅了する、透明で神秘的な愛の光を放つ";
+	mes "ように……";
 	next;
-	mes "[�V������=�I�����A��]";
-	mes "�A�� �h�D �g���� �N�@�g���c�c";
-	mes "�݂ɂ����A�q���̎q�������������ɕϐg";
-	mes "�����悤�Ɂc�c���}�ȃ`���R���[�g����";
-	mes "�����|�p�ɕϐg����̂��c�c!!";
+	mes "[シャルル=オルレアン]";
+	mes "アン ドゥ トロワ クァトル……";
+	mes "みにくいアヒルの子が美しい白鳥に変身";
+	mes "したように……平凡なチョコレートが美";
+	mes "しい芸術に変身するのだ……!!";
 	next;
-	mes "[�V������=�I�����A��]";
-	mes "�g������ݍ��݁c�c�����Ăӂ����";
-	mes "�ω����邪�����I";
-	mes "���x�ɂāA�̑�Ȃ鎞��̖����c�c�I";
+	mes "[シャルル=オルレアン]";
+	mes "暖かく包み込み……そしてふんわりと";
+	mes "変化するがいい！";
+	mes "強靭にて、偉大なる時代の名作よ……！";
 	next;
 	delitem 558,3;
 	getitem 559,1;
-	mes "[�V������=�I�����A��]";
-	mes "�I�D�A�t�F���V�^�V�I���I�I�D�`������";
-	mes "����ȑf�G�ȍ�i�����o����Ƃ́c�c";
-	mes "���^�N�V�͂Ȃ�ƍߐ[���̂��c�c�I";
-	mes "�}�h���A�[���A���̋M���̎��ɂ̔��΂�";
-	mes "�Ƃ�������|�p�i�A�C�ɓ����Ă�������";
-	mes "�����ȁB";
+	mes "[シャルル=オルレアン]";
+	mes "オゥ、フェリシタシオン！オゥ～ララ♪";
+	mes "こんな素敵な作品を作り出せるとは……";
+	mes "ワタクシはなんと罪深いのだ……！";
+	mes "マドモアゼル、この貴方の至極の微笑み";
+	mes "とも言える芸術品、気に入っていただけ";
+	mes "たかな。";
 	next;
-	mes "[�V������=�I�����A��]";
-	mes "�ł́A�I �����H���`�B";
+	mes "[シャルル=オルレアン]";
+	mes "では、オ レヴォワ～。";
 	close;
 }
 */

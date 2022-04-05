@@ -1,689 +1,689 @@
 //====================================================================
 //Ragnarok Online - Rebellion Jobchange Script	by refis
 //
-//Ѓ@ЃЎ CHANGE_RB -> 0Ѓ`4
+//гЂЂв–  CHANGE_RB -> 0пЅћ4
 //====================================================================
 
-moc_fild12.gat,261,318,3	script	‰ц‚µ‚ў’j	998,{
+moc_fild12.gat,261,318,3	script	жЂЄгЃ—гЃ„з”·	998,{
 	if(Job == Job_Rebellion) {
-		mes "[‰ц‚µ‚ў’j]";
-		mes "‚Ё‘O‚НЃcЃcЃI";
-		mes "‚±‚МЉФ‚МЏЬ‹аЋс";
-		mes "Ѓ@";
-		mes "ЃcЃc‚М‘јђl‚М‹уЋ—ЃI";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гЃЉе‰ЌгЃЇвЂ¦вЂ¦пјЃ";
+		mes "гЃ“гЃ®й–“гЃ®иіћй‡‘й¦–";
+		mes "гЂЂ";
+		mes "вЂ¦вЂ¦гЃ®д»–дєєгЃ®з©єдјјпјЃ";
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "‚ў‚вЃA‚±‚МЉФ‚Н";
-		mes "ЉФ€б‚¦‚Дђ\‚µ–у‚И‚©‚Б‚ЅЃB";
-		mes "‚ ‚МЊгЃAЏо•с‚а‰с‚Б‚Д‚«‚ЅЃB";
-		mes "‰ґ‚Є“®‚ў‚Д‚ў‚ЅЋћ‚Й‚Н‚·‚Е‚Й";
-		mes "–{•Ё‚Н•Я‚Ь‚Б‚Д‚ў‚Ѕ‚ЖЃB";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гЃ„г‚„гЂЃгЃ“гЃ®й–“гЃЇ";
+		mes "й–“йЃ•гЃ€гЃ¦з”ігЃ—иЁігЃЄгЃ‹гЃЈгЃџгЂ‚";
+		mes "гЃ‚гЃ®еѕЊгЂЃжѓ…е ±г‚‚е›ћгЃЈгЃ¦гЃЌгЃџгЂ‚";
+		mes "дїєгЃЊе‹•гЃ„гЃ¦гЃ„гЃџж™‚гЃ«гЃЇгЃ™гЃ§гЃ«";
+		mes "жњ¬з‰©гЃЇжЌ•гЃѕгЃЈгЃ¦гЃ„гЃџгЃЁгЂ‚";
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "‚З‚М‚Э‚їЃA‰ґ‚М—[”С‘г‚Й‚Н";
-		mes "‚И‚з‚И‚©‚Б‚Ѕ‚Ж‚ў‚¤‚±‚Ж‚ѕ‚ИЃB";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гЃ©гЃ®гЃїгЃЎгЂЃдїєгЃ®е¤•йЈЇд»ЈгЃ«гЃЇ";
+		mes "гЃЄг‚‰гЃЄгЃ‹гЃЈгЃџгЃЁгЃ„гЃ†гЃ“гЃЁгЃ гЃЄгЂ‚";
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "‚»‚к‚Й‚µ‚Д‚аЃcЃc";
-		mes "‚Ё‘O‚НѓЉѓxѓЉѓIѓ“‚Й‚И‚Б‚Ѕ‚М‚©ЃI";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гЃќг‚ЊгЃ«гЃ—гЃ¦г‚‚вЂ¦вЂ¦";
+		mes "гЃЉе‰ЌгЃЇгѓЄгѓ™гѓЄг‚ЄгѓігЃ«гЃЄгЃЈгЃџгЃ®гЃ‹пјЃ";
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "ѓЉѓxѓЉѓIѓ“‚Й‚И‚к‚Ѕ‚Ж‚ў‚¤‚±‚Ж‚Н";
-		mes "Њµ‚µ‚ўЋЋЊ±‚р‰z‚¦ЃA";
-		mes "Ћ©—R‚Ж”Ѕ‹t‚М€УЋu‚р";
-		mes "Ќ°‚ЙЏh‚µ‚Ѕ‚Ж‚ў‚¤‚±‚ЖЃB";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ«гЃЄг‚ЊгЃџгЃЁгЃ„гЃ†гЃ“гЃЁгЃЇ";
+		mes "еЋігЃ—гЃ„и©¦йЁ“г‚’и¶ЉгЃ€гЂЃ";
+		mes "и‡Єз”±гЃЁеЏЌйЂ†гЃ®ж„Џеї—г‚’";
+		mes "й­‚гЃ«е®їгЃ—гЃџгЃЁгЃ„гЃ†гЃ“гЃЁгЂ‚";
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "Џe‚М“№‚Н";
-		mes "–ѕ“ъ‚М”С‚а‚Ь‚Ь‚И‚з‚К";
-		mes "Њµ‚µ‚ў‚а‚М‚ѕ‚Є";
-		mes "‹¤‚ЙЉж’Ј‚л‚¤‚¶‚б‚И‚ў‚©ЃI";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "йЉѓгЃ®йЃ“гЃЇ";
+		mes "жЋж—ҐгЃ®йЈЇг‚‚гЃѕгЃѕгЃЄг‚‰гЃ¬";
+		mes "еЋігЃ—гЃ„г‚‚гЃ®гЃ гЃЊ";
+		mes "е…±гЃ«й ‘ејµг‚ЌгЃ†гЃг‚ѓгЃЄгЃ„гЃ‹пјЃ";
 		close;
 	}
 	if(Job == Job_Gunslinger && BaseLevel >= 99 && JobLevel >= 70) {
 		if(CHANGE_RB) {
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚ ‚Б‚Ё‘O‚Н";
-			mes "ЏЬ‹аЋсѓXѓpѓCѓNЃI";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "гЃ‚гЃЈгЃЉе‰ЌгЃЇ";
+			mes "иіћй‡‘й¦–г‚№гѓ‘г‚¤г‚ЇпјЃ";
 			next;
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚±‚М‘O‚Н“¦‚Є‚µ‚Ѕ‚ЖЋv‚Б‚Ѕ‚Є";
-			mes "‚Ь‚ЅЊ»‚к‚Ѕ‚ИЃIЃ@ЌЎ“x‚±‚»“¦‚Є‚і‚сЃI";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "гЃ“гЃ®е‰ЌгЃЇйЂѓгЃЊгЃ—гЃџгЃЁжЂќгЃЈгЃџгЃЊ";
+			mes "гЃѕгЃџзЏѕг‚ЊгЃџгЃЄпјЃгЂЂд»Љеє¦гЃ“гЃќйЂѓгЃЊгЃ•г‚“пјЃ";
 			next;
-			switch(select("‚Ь‚Ѕ‚Ь‚Ѕ“¦‚°‚й","Њ}‚¦Њ‚‚В")) {
+			switch(select("гЃѕгЃџгЃѕгЃџйЂѓгЃ’г‚‹","иїЋгЃ€ж’ѓгЃ¤")) {
 			case 1:
-				mes "[‰ц‚µ‚ў’j]";
-				mes "‚±‚зЃ[ЃI";
-				mes "“¦‚°‚й‚И‰ґ‚МЏЬ‹а!!";
-				mes "Ѓ@";
+				mes "[жЂЄгЃ—гЃ„з”·]";
+				mes "гЃ“г‚‰гѓјпјЃ";
+				mes "йЂѓгЃ’г‚‹гЃЄдїєгЃ®иіћй‡‘!!";
+				mes "гЂЂ";
 				break;
 			case 2:
-				mes "Ѓ]‚ ‚И‚Ѕ‚НЏe‚р”І‚«ЃA";
-				mes "Ѓ@’j‚МЋи‚©‚з•ђЉн‚р’e‚«”т‚О‚µ‚ЅЃ]";
+				mes "вЂђгЃ‚гЃЄгЃџгЃЇйЉѓг‚’жЉњгЃЌгЂЃ";
+				mes "гЂЂз”·гЃ®ж‰‹гЃ‹г‚‰ж­¦е™Ёг‚’ејѕгЃЌйЈ›гЃ°гЃ—гЃџвЂђ";
 				soundeffect "ferus_move.wav", 0, 0;
 				next;
-				mes "[‰ц‚µ‚ў’j]";
-				mes "‚¤‚н‚Б";
-				mes "‚И‚с‚Ж‚ў‚¤–Ѕ’†—Н‚И‚с‚ѕЃI";
+				mes "[жЂЄгЃ—гЃ„з”·]";
+				mes "гЃ†г‚ЏгЃЈ";
+				mes "гЃЄг‚“гЃЁгЃ„гЃ†е‘Ѕдё­еЉ›гЃЄг‚“гЃ пјЃ";
 				next;
 			}
-			mes "Ѓ]‰Ѕ“x‚а‘ЉЋи‚Й‚µ‚Д‚ў‚з‚к‚И‚ўЃB";
-			mes "Ѓ@‘Ѓ‚­‚±‚Мђl€б‚ў‚р‚И‚с‚Ж‚©‚µ‚ж‚¤Ѓ]";
+			mes "вЂђдЅ•еє¦г‚‚з›ёж‰‹гЃ«гЃ—гЃ¦гЃ„г‚‰г‚ЊгЃЄгЃ„гЂ‚";
+			mes "гЂЂж—©гЃЏгЃ“гЃ®дєєйЃ•гЃ„г‚’гЃЄг‚“гЃЁгЃ‹гЃ—г‚€гЃ†вЂђ";
 			next;
 			mes "[" +strcharinfo(0)+ "]";
-			mes "ЃiЋи”zЏ‘‚ЙЏ‘‚©‚к‚Д‚ў‚й";
-			mes "^FF0000ѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк^000000‚Й";
-			mes "‹}‚І‚¤Ѓj";
+			mes "пј€ж‰‹й…Ќж›ёгЃ«ж›ёгЃ‹г‚ЊгЃ¦гЃ„г‚‹";
+			mes "^FF0000г‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґ^000000гЃ«";
+			mes "жЂҐгЃ”гЃ†пј‰";
 			next;
-			mes "Ѓ]ѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк‚Й";
-			mes "Ѓ@Њь‚©‚ў‚Ь‚·‚©ЃHЃ]";
+			mes "вЂђг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґгЃ«";
+			mes "гЂЂеђ‘гЃ‹гЃ„гЃѕгЃ™гЃ‹пјџвЂђ";
 			next;
-			if(select("‚Н‚ў","‚ў‚ў‚¦") == 2) {
-				mes "Ѓ]ЌЎ‚Н‚в‚Я‚Д‚Ё‚±‚¤Ѓ]";
+			if(select("гЃЇгЃ„","гЃ„гЃ„гЃ€") == 2) {
+				mes "вЂђд»ЉгЃЇг‚„г‚ЃгЃ¦гЃЉгЃ“гЃ†вЂђ";
 				close;
 			}
-			mes "Ѓ]ѓAѓCѓ“ѓuѓЌѓbѓN‚ЦЊь‚©‚Б‚ЅЃ]";
+			mes "вЂђг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃёеђ‘гЃ‹гЃЈгЃџвЂђ";
 			close2;
 			warp "einbroch.gat",48,97;
 			end;
 		}
-		mes "[‰ц‚µ‚ў’j]";
-		mes "‚В‚ў‚ЙЊ©‚В‚Ї‚Ѕ‚јЃcЃcЃI";
-		mes "ЏЬ‹аЋсѓXѓpѓCѓNЃI";
-		mes "‚»‚МЋс‚Й‚©‚©‚Б‚Ѕ";
-		mes "ЊњЏЬ‹а‚Н‰ґ‚М‚а‚М‚ѕЃI";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "гЃ¤гЃ„гЃ«и¦‹гЃ¤гЃ‘гЃџгЃћвЂ¦вЂ¦пјЃ";
+		mes "иіћй‡‘й¦–г‚№гѓ‘г‚¤г‚ЇпјЃ";
+		mes "гЃќгЃ®й¦–гЃ«гЃ‹гЃ‹гЃЈгЃџ";
+		mes "ж‡ёиіћй‡‘гЃЇдїєгЃ®г‚‚гЃ®гЃ пјЃ";
 		next;
-		mes "Ѓ]Џ‰‘О–К‚М’j‚ЙЏeЊы‚р";
-		mes "Ѓ@“Л‚«‚В‚Ї‚з‚к‚ЅЃIЃ]";
+		mes "вЂђе€ќеЇѕйќўгЃ®з”·гЃ«йЉѓеЏЈг‚’";
+		mes "гЂЂзЄЃгЃЌгЃ¤гЃ‘г‚‰г‚ЊгЃџпјЃвЂђ";
 		next;
-		switch(select("‰ЅЋ–‚©•·‚­","“{‚й")) {
+		switch(select("дЅ•дє‹гЃ‹иЃћгЃЏ","жЂ’г‚‹")) {
 		case 1:
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚Ж‚Ъ‚Ї‚Д‚а–і‘К‚ѕЃI";
-			mes "‚Ё‘O‚М‚»‚М‰B‚µ‚«‚к‚И‚ў";
-			mes "€«‚М“х‚ўЃA‚Ь‚і‚Й‚±‚МЋи”zЏ‘‚Й‚ ‚й";
-			mes "ЏЬ‹аЋс‚Ж“Ї‚¶ЃI";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "гЃЁгЃјгЃ‘гЃ¦г‚‚з„Ўй§„гЃ пјЃ";
+			mes "гЃЉе‰ЌгЃ®гЃќгЃ®йљ гЃ—гЃЌг‚ЊгЃЄгЃ„";
+			mes "ж‚ЄгЃ®еЊ‚гЃ„гЂЃгЃѕгЃ•гЃ«гЃ“гЃ®ж‰‹й…Ќж›ёгЃ«гЃ‚г‚‹";
+			mes "иіћй‡‘й¦–гЃЁеђЊгЃпјЃ";
 			break;
 		case 2:
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚Ю‚Б’пЌR‚·‚й‹C‚©ЃI";
-			mes "‚ѕ‚ЄЃAЋи”zЏ‘‚Н‚·‚Е‚ЙЉe’n‚Й";
-			mes "ЌL‚Є‚Б‚Д‚ў‚йЃB";
-			mes "‚З‚±‚Й‚а“¦‚°Џк‚Н‚И‚ў‚јЃI";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "г‚ЂгЃЈжЉµжЉ—гЃ™г‚‹ж°—гЃ‹пјЃ";
+			mes "гЃ гЃЊгЂЃж‰‹й…Ќж›ёгЃЇгЃ™гЃ§гЃ«еђ„ењ°гЃ«";
+			mes "еєѓгЃЊгЃЈгЃ¦гЃ„г‚‹гЂ‚";
+			mes "гЃ©гЃ“гЃ«г‚‚йЂѓгЃ’е ґгЃЇгЃЄгЃ„гЃћпјЃ";
 			break;
 		}
 		next;
-		mes "[‰ц‚µ‚ў’j]";
-		mes "ЉП”O‚µ‚ДЃA";
-		mes "‰ґ‚МЋи•ї‚Й‚И‚Б‚Д‚а‚з‚¤‚ј!!";
+		mes "[жЂЄгЃ—гЃ„з”·]";
+		mes "и¦іеїµгЃ—гЃ¦гЂЃ";
+		mes "дїєгЃ®ж‰‹жџ„гЃ«гЃЄгЃЈгЃ¦г‚‚г‚‰гЃ†гЃћ!!";
 		next;
-		switch(select("“¦‚°‚й","Њ}‚¦Њ‚‚В")) {
+		switch(select("йЂѓгЃ’г‚‹","иїЋгЃ€ж’ѓгЃ¤")) {
 		case 1:
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚н‚ ‚ ЃIЃ@‚±‚Б‚ї—€‚й‚ИЃI";
-			mes "Ѓ@";
-			mes "Ѓ]‚ ‚И‚Ѕ‚Н—§‚ї‚У‚і‚Є‚й";
-			mes "Ѓ@‰ц‚µ‚ў’j‚Й‘М“–‚Ѕ‚и‚µ‚Д";
-			mes "Ѓ@“¦‚°Џo‚µ‚ЅЃ]";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "г‚ЏгЃ‚гЃ‚пјЃгЂЂгЃ“гЃЈгЃЎжќҐг‚‹гЃЄпјЃ";
+			mes "гЂЂ";
+			mes "вЂђгЃ‚гЃЄгЃџгЃЇз«‹гЃЎгЃµгЃ•гЃЊг‚‹";
+			mes "гЂЂжЂЄгЃ—гЃ„з”·гЃ«дЅ“еЅ“гЃџг‚ЉгЃ—гЃ¦";
+			mes "гЂЂйЂѓгЃ’е‡єгЃ—гЃџвЂђ";
 			soundeffect "ghoul_die2.wav", 0, 0;
 			next;
-			mes "Ѓ]‚»‚МЋћ‚Й’j‚ЄЋќ‚Б‚Д‚ў‚Ѕ";
-			mes "Ѓ@Ћ†‚Є”т‚О‚і‚к‚ДЃA";
-			mes "Ѓ@‚ ‚И‚Ѕ‚МЋ‹ЉE‚р‚У‚і‚ў‚ѕЃ]";
+			mes "вЂђгЃќгЃ®ж™‚гЃ«з”·гЃЊжЊЃгЃЈгЃ¦гЃ„гЃџ";
+			mes "гЂЂзґ™гЃЊйЈ›гЃ°гЃ•г‚ЊгЃ¦гЂЃ";
+			mes "гЂЂгЃ‚гЃЄгЃџгЃ®и¦–з•Њг‚’гЃµгЃ•гЃ„гЃ вЂђ";
 			next;
-			menu "‚¤‚н‚БЃI",-;
-			mes "Ѓ]€ш‚«‚Н‚Є‚µ‚ЅЋи”zЏ‘‚Й‚Н";
-			mes "Ѓ@‚ ‚И‚Ѕ‚ЙЋ—‚Ѕђl‘ЉЏ‘‚«ЃA";
-			mes "Ѓ@‚»‚µ‚Д^FF0000”­ЌsЃFѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк^000000‚Ж";
-			mes "Ѓ@Џ‘‚©‚к‚Д‚ў‚йЃ]";
+			menu "гЃ†г‚ЏгЃЈпјЃ",-;
+			mes "вЂђеј•гЃЌгЃЇгЃЊгЃ—гЃџж‰‹й…Ќж›ёгЃ«гЃЇ";
+			mes "гЂЂгЃ‚гЃЄгЃџгЃ«дјјгЃџдєєз›ёж›ёгЃЌгЂЃ";
+			mes "гЂЂгЃќгЃ—гЃ¦^FF0000з™єиЎЊпјљг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґ^000000гЃЁ";
+			mes "гЂЂж›ёгЃ‹г‚ЊгЃ¦гЃ„г‚‹вЂђ";
 			break;
 		case 2:
-			mes "Ѓ]‚ ‚И‚Ѕ‚НЏe‚р”І‚«ЃA";
-			mes "Ѓ@’j‚МЋи‚©‚з•ђЉн‚р’e‚«”т‚О‚µ‚ЅЃ]";
+			mes "вЂђгЃ‚гЃЄгЃџгЃЇйЉѓг‚’жЉњгЃЌгЂЃ";
+			mes "гЂЂз”·гЃ®ж‰‹гЃ‹г‚‰ж­¦е™Ёг‚’ејѕгЃЌйЈ›гЃ°гЃ—гЃџвЂђ";
 			soundeffect "ferus_move.wav", 0, 0;
 			next;
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚И‚с‚ѕ‚ЖЃcЃc!?";
-			mes "Ѓ@";
-			mes "Ѓ]r‚р‚Ё‚і‚¦ЃA’j‚Є‹Бњ±‚М•\Џо‚Е";
-			mes "Ѓ@‚ ‚И‚Ѕ‚рЊ©‚йЃ]";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "гЃЄг‚“гЃ гЃЁвЂ¦вЂ¦!?";
+			mes "гЂЂ";
+			mes "вЂђи…•г‚’гЃЉгЃ•гЃ€гЂЃз”·гЃЊй©љж„•гЃ®иЎЁжѓ…гЃ§";
+			mes "гЂЂгЃ‚гЃЄгЃџг‚’и¦‹г‚‹вЂђ";
 			next;
-			mes "[‰ц‚µ‚ў’j]";
-			mes "‚і‚·‚Є‚МЏЬ‹аЋс‚Ж‚ў‚¤‚н‚Ї‚©";
-			mes "ЃcЃc‚­‚Б";
+			mes "[жЂЄгЃ—гЃ„з”·]";
+			mes "гЃ•гЃ™гЃЊгЃ®иіћй‡‘й¦–гЃЁгЃ„гЃ†г‚ЏгЃ‘гЃ‹";
+			mes "вЂ¦вЂ¦гЃЏгЃЈ";
 			next;
-			switch(select("Ћи”zЏ‘‚рЉm•Ы‚·‚й","ЏЬ‹аЋс‚Е‚Н‚ ‚и‚Ь‚№‚с")) {
+			switch(select("ж‰‹й…Ќж›ёг‚’зўєдїќгЃ™г‚‹","иіћй‡‘й¦–гЃ§гЃЇгЃ‚г‚ЉгЃѕгЃ›г‚“")) {
 			case 1:
-				mes "[‰ц‚µ‚ў’j]";
-				mes "‚ ‚БЃIЃ@‚±‚зЃI";
-				mes "•Ф‚№!!";
-				mes "Ѓ@";
-				mes "Ѓ]‚ ‚И‚Ѕ‚Н’j‚©‚з";
-				mes "Ѓ@Ћи”zЏ‘‚рЋж‚иЏг‚°‚ЅЃ]";
+				mes "[жЂЄгЃ—гЃ„з”·]";
+				mes "гЃ‚гЃЈпјЃгЂЂгЃ“г‚‰пјЃ";
+				mes "иї”гЃ›!!";
+				mes "гЂЂ";
+				mes "вЂђгЃ‚гЃЄгЃџгЃЇз”·гЃ‹г‚‰";
+				mes "гЂЂж‰‹й…Ќж›ёг‚’еЏ–г‚ЉдёЉгЃ’гЃџвЂђ";
 				break;
 			case 2:
-				mes "[‰ц‚µ‚ў’j]";
-				mes "ѓnѓbЃIЃ@ЌЎ‚Ь‚Е‚МЏЬ‹аЋс‚а";
-				mes "‚»‚с‚И•—‚Й‚µ‚з‚О‚Б‚­‚к‚Ѕ‚іЃB";
-				mes "‚ѕ‚Є‚ИЃI";
+				mes "[жЂЄгЃ—гЃ„з”·]";
+				mes "гѓЏгѓѓпјЃгЂЂд»ЉгЃѕгЃ§гЃ®иіћй‡‘й¦–г‚‚";
+				mes "гЃќг‚“гЃЄйўЁгЃ«гЃ—г‚‰гЃ°гЃЈгЃЏг‚ЊгЃџгЃ•гЂ‚";
+				mes "гЃ гЃЊгЃЄпјЃ";
 				next;
-				mes "[‰ц‚µ‚ў’j]";
-				mes "‚±‚МЋи”zЏ‘‚Н";
-				mes "^0000ffѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк^000000‚Е";
-				mes "”­Ќs‚і‚к‚Ѕђі‹K‚М‚а‚М‚ѕЃI";
-				mes "‚»‚¤‚»‚¤•s”х‚ЄЏo‚й‚Н‚ё‚Є‚И‚ўЃI";
+				mes "[жЂЄгЃ—гЃ„з”·]";
+				mes "гЃ“гЃ®ж‰‹й…Ќж›ёгЃЇ";
+				mes "^0000ffг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґ^000000гЃ§";
+				mes "з™єиЎЊгЃ•г‚ЊгЃџж­Ји¦ЏгЃ®г‚‚гЃ®гЃ пјЃ";
+				mes "гЃќгЃ†гЃќгЃ†дёЌе‚™гЃЊе‡єг‚‹гЃЇгЃљгЃЊгЃЄгЃ„пјЃ";
 				break;
 			}
 			next;
-			mes "Ѓ]Ћи”zЏ‘‚Й‚Н‚ ‚И‚Ѕ‚ЙЋ—‚Ѕђl‘ЉЏ‘‚«ЃA";
-			mes "Ѓ@‚»‚µ‚Д^FF0000”­ЌsЃFѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк^000000‚Ж";
-			mes "Ѓ@Џ‘‚©‚к‚Д‚ў‚ЅЃ]";
+			mes "вЂђж‰‹й…Ќж›ёгЃ«гЃЇгЃ‚гЃЄгЃџгЃ«дјјгЃџдєєз›ёж›ёгЃЌгЂЃ";
+			mes "гЂЂгЃќгЃ—гЃ¦^FF0000з™єиЎЊпјљг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґ^000000гЃЁ";
+			mes "гЂЂж›ёгЃ‹г‚ЊгЃ¦гЃ„гЃџвЂђ";
 			next;
 			mes "[" +strcharinfo(0)+ "]";
-			mes "ЃiѓAѓCѓ“ѓuѓЌѓbѓNЃcЃcЃj";
+			mes "пј€г‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇвЂ¦вЂ¦пј‰";
 			break;
 		}
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "ЃiЋи”zЏ‘‚ЙЏ‘‚©‚к‚Д‚ў‚й";
-		mes "^FF0000ѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк^000000‚Й";
-		mes "Ќs‚Б‚Д‚Э‚ж‚¤Ѓj";
+		mes "пј€ж‰‹й…Ќж›ёгЃ«ж›ёгЃ‹г‚ЊгЃ¦гЃ„г‚‹";
+		mes "^FF0000г‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґ^000000гЃ«";
+		mes "иЎЊгЃЈгЃ¦гЃїг‚€гЃ†пј‰";
 		next;
 		setquest 12340;
 		set CHANGE_RB,1;
-		mes "Ѓ]ѓAѓCѓ“ѓuѓЌѓbѓN‚М”й–§ЋрЏк‚Й";
-		mes "Ѓ@Њь‚©‚ў‚Ь‚·‚©ЃHЃ]";
+		mes "вЂђг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃ®з§еЇ†й…’е ґгЃ«";
+		mes "гЂЂеђ‘гЃ‹гЃ„гЃѕгЃ™гЃ‹пјџвЂђ";
 		next;
-		if(select("‚Н‚ў","‚ў‚ў‚¦") == 2) {
-			mes "Ѓ]ЌЎ‚Н‚в‚Я‚Д‚Ё‚±‚¤Ѓ]";
+		if(select("гЃЇгЃ„","гЃ„гЃ„гЃ€") == 2) {
+			mes "вЂђд»ЉгЃЇг‚„г‚ЃгЃ¦гЃЉгЃ“гЃ†вЂђ";
 			close;
 		}
-		mes "Ѓ]ѓAѓCѓ“ѓuѓЌѓbѓN‚ЦЊь‚©‚Б‚ЅЃ]";
+		mes "вЂђг‚ўг‚¤гѓігѓ–гѓ­гѓѓг‚ЇгЃёеђ‘гЃ‹гЃЈгЃџвЂђ";
 		close2;
 		warp "einbroch.gat",48,97;
 		end;
 	}
-	mes "Ѓ]‰ц‚µ‚ў’j‚Є";
-	mes "Ѓ@Ћ†‚р‰Ѕ–‡‚аЌL‚°‚Д‚ў‚йЃ]";
+	mes "вЂђжЂЄгЃ—гЃ„з”·гЃЊ";
+	mes "гЂЂзґ™г‚’дЅ•жћљг‚‚еєѓгЃ’гЃ¦гЃ„г‚‹вЂђ";
 	next;
-	mes "[‰ц‚µ‚ў’j]";
-	mes "‚У‚Б‚У‚Б‚УЃcЃc";
-	mes "Ћќ‚Д‚й‚ѕ‚ЇЋи”zЏ‘‚р‚а‚з‚Б‚Д‚«‚Ѕ‚јЃB";
-	//mes "ЏЬ•iЋс‚р•Я‚Ь‚¦‚Д";
-	mes "ЏЬ‹аЋс‚р•Я‚Ь‚¦‚Д";
-	mes "Ќr‰Т‚¬‚µ‚Д‚в‚й‚єЃB";
+	mes "[жЂЄгЃ—гЃ„з”·]";
+	mes "гЃµгЃЈгЃµгЃЈгЃµвЂ¦вЂ¦";
+	mes "жЊЃгЃ¦г‚‹гЃ гЃ‘ж‰‹й…Ќж›ёг‚’г‚‚г‚‰гЃЈгЃ¦гЃЌгЃџгЃћгЂ‚";
+	//mes "иіће“Ѓй¦–г‚’жЌ•гЃѕгЃ€гЃ¦";
+	mes "иіћй‡‘й¦–г‚’жЌ•гЃѕгЃ€гЃ¦";
+	mes "иЌ’зЁјгЃЋгЃ—гЃ¦г‚„г‚‹гЃњгЂ‚";
 	close;
 }
-einbroch.gat,54,97,3	script	ѓKЃ[ѓh	10062,{
+einbroch.gat,54,97,3	script	г‚¬гѓјгѓ‰	10062,{
 	if(CHANGE_RB == 1) {
-		mes "Ѓ]Ћи”zЏ‘‚ЙЏ‘‚©‚к‚Д‚ў‚Ѕ";
-		mes "Ѓ@^FF0000”й–§ЋрЏк^000000‚Н";
-		mes "Ѓ@‚±‚МЊљ•Ё‚М‚ж‚¤‚ѕЃ]";
+		mes "вЂђж‰‹й…Ќж›ёгЃ«ж›ёгЃ‹г‚ЊгЃ¦гЃ„гЃџ";
+		mes "гЂЂ^FF0000з§еЇ†й…’е ґ^000000гЃЇ";
+		mes "гЂЂгЃ“гЃ®е»єз‰©гЃ®г‚€гЃ†гЃ вЂђ";
 		next;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚Ё‚ўЃA‚»‚±‚МѓKѓ“ѓXѓЉѓ“ѓKЃ[ЃB";
-		mes "‚ў‚В‚Ь‚Е“Л‚Б—§‚Б‚ДЃcЃc";
-		mes "Ѓ@";
-		mes "‚Ё‘O‚НЏЬ‹аЋсѓXѓpѓCѓNЃI";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃЉгЃ„гЂЃгЃќгЃ“гЃ®г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЂ‚";
+		mes "гЃ„гЃ¤гЃѕгЃ§зЄЃгЃЈз«‹гЃЈгЃ¦вЂ¦вЂ¦";
+		mes "гЂЂ";
+		mes "гЃЉе‰ЌгЃЇиіћй‡‘й¦–г‚№гѓ‘г‚¤г‚ЇпјЃ";
 		next;
-		menu "€б‚ў‚Ь‚·",-,"ђl€б‚ў‚Е‚·",-;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚НЃH";
-		mes "Ѓ@";
-		mes "‚ў‚вЃA‚»‚¤‚ѕЃB";
-		mes "Љm‚©‚Й•Я‚Ь‚Б‚Ѕ‚Ж•·‚ў‚Ѕ‚јЃB";
-		mes "‚ѕ‚Є”O‚М‚Ѕ‚Я‚Ж‚ў‚¤‚±‚Ж‚а‚ ‚й‚µЃcЃc";
+		menu "йЃ•гЃ„гЃѕгЃ™",-,"дєєйЃ•гЃ„гЃ§гЃ™",-;
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃЇпјџ";
+		mes "гЂЂ";
+		mes "гЃ„г‚„гЂЃгЃќгЃ†гЃ гЂ‚";
+		mes "зўєгЃ‹гЃ«жЌ•гЃѕгЃЈгЃџгЃЁиЃћгЃ„гЃџгЃћгЂ‚";
+		mes "гЃ гЃЊеїµгЃ®гЃџг‚ЃгЃЁгЃ„гЃ†гЃ“гЃЁг‚‚гЃ‚г‚‹гЃ—вЂ¦вЂ¦";
 		next;
-		menu "Ћ©•Є‚НЏЬ‹аЋс‚Е‚Н‚ ‚и‚Ь‚№‚с",-,"ЉФ€б‚н‚к‚Д–Аf‚µ‚Д‚Ь‚·",-;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚И‚с‚ѕ‚ЖЃH";
-		mes "Ѓ@";
-		mes "Ѓ]ѓKЃ[ѓh‚Н‚ ‚И‚Ѕ‚МЉз‚р";
-		mes "Ѓ@‚ў‚л‚с‚И•ыЊь‚©‚зѓWѓЌѓWѓЌ‚Ж";
-		mes "Ѓ@Њ©‚В‚Я‚ЅЃ]";
+		menu "и‡Єе€†гЃЇиіћй‡‘й¦–гЃ§гЃЇгЃ‚г‚ЉгЃѕгЃ›г‚“",-,"й–“йЃ•г‚Џг‚ЊгЃ¦иї·жѓ‘гЃ—гЃ¦гЃѕгЃ™",-;
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃЄг‚“гЃ гЃЁпјџ";
+		mes "гЂЂ";
+		mes "вЂђг‚¬гѓјгѓ‰гЃЇгЃ‚гЃЄгЃџгЃ®йЎ”г‚’";
+		mes "гЂЂгЃ„г‚Ќг‚“гЃЄж–№еђ‘гЃ‹г‚‰г‚ёгѓ­г‚ёгѓ­гЃЁ";
+		mes "гЂЂи¦‹гЃ¤г‚ЃгЃџвЂђ";
 		next;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚У‚¤‚сЃcЃc";
-		mes "Љm‚©‚ЙЃAЋ—‚Д‚ў‚й‚Є€б‚¤‚ИЃB";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃµгЃ†г‚“вЂ¦вЂ¦";
+		mes "зўєгЃ‹гЃ«гЂЃдјјгЃ¦гЃ„г‚‹гЃЊйЃ•гЃ†гЃЄгЂ‚";
 		next;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚»‚к‚ЕЃAЋи”zЏ‘‚ЙЉЦ‚µ‚Д";
-		mes "b‚Є‚ ‚й‚ЖЃA‚»‚¤‚ў‚¤‚±‚Ж‚ѕ‚ИЃH";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃќг‚ЊгЃ§гЂЃж‰‹й…Ќж›ёгЃ«й–ўгЃ—гЃ¦";
+		mes "и©±гЃЊгЃ‚г‚‹гЃЁгЂЃгЃќгЃ†гЃ„гЃ†гЃ“гЃЁгЃ гЃЄпјџ";
 		next;
-		mes "[ѓKЃ[ѓh]";
-		mes "‚»‚¤‚ѕ‚ИЃA";
-		mes "Ћ„‚Е”»’f‚Е‚«‚й–в‘и‚¶‚б‚И‚і‚»‚¤‚ѕ‚µЃA";
-		mes "‚Ё‘O‚И‚зЃA‚±‚М“X‚Й";
-		mes "“ь‚Б‚Д‚а–в‘и‚И‚ў‚ѕ‚л‚¤ЃB";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃќгЃ†гЃ гЃЄгЂЃ";
+		mes "з§ЃгЃ§е€¤ж–­гЃ§гЃЌг‚‹е•ЏйЎЊгЃг‚ѓгЃЄгЃ•гЃќгЃ†гЃ гЃ—гЂЃ";
+		mes "гЃЉе‰ЌгЃЄг‚‰гЂЃгЃ“гЃ®еє—гЃ«";
+		mes "е…ҐгЃЈгЃ¦г‚‚е•ЏйЎЊгЃЄгЃ„гЃ г‚ЌгЃ†гЂ‚";
 		next;
-		mes "[ѓKЃ[ѓh]";
-		mes "Ћи”zЏ‘‚МЊЏ‚Н";
-		mes "“X“а‚Й‚ў‚й^0000FFѓNѓ‹ѓxѓ‹^000000‚Й";
-		mes "Ћќ‚Б‚ДЌs‚«‚ИЃB";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "ж‰‹й…Ќж›ёгЃ®д»¶гЃЇ";
+		mes "еє—е†…гЃ«гЃ„г‚‹^0000FFг‚Їгѓ«гѓ™гѓ«^000000гЃ«";
+		mes "жЊЃгЃЈгЃ¦иЎЊгЃЌгЃЄгЂ‚";
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else if(CHANGE_RB >= 2) {
-		mes "[ѓKЃ[ѓh]";
-		mes "‚¤‚сЃHЃ@‚±‚М‘O‚М“z‚©ЃB";
-		mes "ЋрЏк‚Й‚И‚с‚М—p‚ѕЃH";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃ†г‚“пјџгЂЂгЃ“гЃ®е‰ЌгЃ®еҐґгЃ‹гЂ‚";
+		mes "й…’е ґгЃ«гЃЄг‚“гЃ®з”ЁгЃ пјџ";
 		next;
-		if(select("’†‚Й“ь‚и‚Ѕ‚ў","Љс‚Б‚Д‚Э‚Ѕ‚ѕ‚Ї") == 2) {
-			mes "[ѓKЃ[ѓh]";
-			mes "—p‚Є‚И‚ў‚И‚з‹A‚кЃB";
+		if(select("дё­гЃ«е…Ґг‚ЉгЃџгЃ„","еЇ„гЃЈгЃ¦гЃїгЃџгЃ гЃ‘") == 2) {
+			mes "[г‚¬гѓјгѓ‰]";
+			mes "з”ЁгЃЊгЃЄгЃ„гЃЄг‚‰её°г‚ЊгЂ‚";
 			close;
 		}
-		mes "[ѓKЃ[ѓh]";
-		mes "‚»‚¤‚©ЃB’†‚Е–в‘и‚р‹N‚±‚·‚И‚жЃB";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃќгЃ†гЃ‹гЂ‚дё­гЃ§е•ЏйЎЊг‚’иµ·гЃ“гЃ™гЃЄг‚€гЂ‚";
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else if(Job == Job_Rebellion) {
-		mes "[ѓKЃ[ѓh]";
-		mes "‚ж‚ЁЃA“ЇЋuЃB";
-		mes "’ІЋq‚Н‚З‚¤‚ѕЃH";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "г‚€гЃЉгЂЃеђЊеї—гЂ‚";
+		mes "иЄїе­ђгЃЇгЃ©гЃ†гЃ пјџ";
 		next;
-		if(select("ЋрЏк‚Й“ь‚и‚Ѕ‚ў","Љс‚Б‚Д‚Э‚Ѕ‚ѕ‚Ї") == 2) {
-			mes "[ѓKЃ[ѓh]";
-			mes "‚»‚¤‚©ЃB";
-			mes "Њі‹C‚»‚¤‚Е‰Ѕ‚ж‚и‚ѕЃB";
-			mes "‚»‚М’ІЋq‚ЕЏe‚М“№‚р";
-			mes "‹Й‚Я‚л‚жЃB";
+		if(select("й…’е ґгЃ«е…Ґг‚ЉгЃџгЃ„","еЇ„гЃЈгЃ¦гЃїгЃџгЃ гЃ‘") == 2) {
+			mes "[г‚¬гѓјгѓ‰]";
+			mes "гЃќгЃ†гЃ‹гЂ‚";
+			mes "е…ѓж°—гЃќгЃ†гЃ§дЅ•г‚€г‚ЉгЃ гЂ‚";
+			mes "гЃќгЃ®иЄїе­ђгЃ§йЉѓгЃ®йЃ“г‚’";
+			mes "жҐµг‚Ѓг‚Ќг‚€гЂ‚";
 			close;
 		}
-		mes "[ѓKЃ[ѓh]";
-		mes "‚»‚¤‚©ЃB’†‚Е–в‘и‚р‹N‚±‚·‚И‚жЃB";
+		mes "[г‚¬гѓјгѓ‰]";
+		mes "гЃќгЃ†гЃ‹гЂ‚дё­гЃ§е•ЏйЎЊг‚’иµ·гЃ“гЃ™гЃЄг‚€гЂ‚";
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else {
-		// –ў’ІЌё
+		// жњЄиЄїжџ»
 	}
 }
 
-job_gun.gat,56,26,0	warp	ѓЉѓxѓЉѓIѓ“Ћє“а#1	2,2,einbroch.gat,49,97
-job_gun.gat,18,10,0	warp	ѓЉѓxѓЉѓIѓ“Ћє“а#2	2,2,job_gun.gat,81,29
-job_gun.gat,165,22,0	warp	ѓЉѓxѓЉѓIѓ“Ћє“а#3	2,2,job_gun.gat,197,44
-job_gun.gat,197,49,0	warp	ѓЉѓxѓЉѓIѓ“Ћє“а#4	2,2,job_gun.gat,157,21
+job_gun.gat,56,26,0	warp	гѓЄгѓ™гѓЄг‚Єгѓіе®¤е†…#1	2,2,einbroch.gat,49,97
+job_gun.gat,18,10,0	warp	гѓЄгѓ™гѓЄг‚Єгѓіе®¤е†…#2	2,2,job_gun.gat,81,29
+job_gun.gat,165,22,0	warp	гѓЄгѓ™гѓЄг‚Єгѓіе®¤е†…#3	2,2,job_gun.gat,197,44
+job_gun.gat,197,49,0	warp	гѓЄгѓ™гѓЄг‚Єгѓіе®¤е†…#4	2,2,job_gun.gat,157,21
 
-job_gun.gat,68,33,3	script	—вђГ‚ИѓЉѓxѓЉѓIѓ“	10063,{
+job_gun.gat,68,33,3	script	е†·йќ™гЃЄгѓЄгѓ™гѓЄг‚Єгѓі	10063,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121920)&0x8) {
-			mes "[—вђГ‚ИѓЉѓxѓЉѓIѓ“]";
-			mes "‚в‚ ЃA“ЇЋu‚жЃB";
-			mes "Џe‚М€µ‚ў‚Й‚НЏн‚Й‹C‚р”z‚й‚с‚ѕ‚јЃB";
-			mes "‚»‚МЏe‚Є‰дЃX‚МЏЫ’Ґ‚ѕ‚©‚з‚ИЃB";
+			mes "[е†·йќ™гЃЄгѓЄгѓ™гѓЄг‚Єгѓі]";
+			mes "г‚„гЃ‚гЂЃеђЊеї—г‚€гЂ‚";
+			mes "йЉѓгЃ®ж‰±гЃ„гЃ«гЃЇеёёгЃ«ж°—г‚’й…Ќг‚‹г‚“гЃ гЃћгЂ‚";
+			mes "гЃќгЃ®йЉѓгЃЊж€‘гЂ…гЃ®и±ЎеѕґгЃ гЃ‹г‚‰гЃЄгЂ‚";
 			close;
 		}
 		setquest 121920;
 		compquest 121920;
-		mes "[—вђГ‚ИѓЉѓxѓЉѓIѓ“]";
-		mes "‚в‚ ЃAђV“ь‚иЃB";
-		mes "Џe‚М€µ‚ў‚Й‚НЏн‚Й‹C‚р”z‚й‚с‚ѕ‚јЃB";
-		mes "‚»‚МЏe‚Є‰дЃX‚МЏЫ’Ґ‚ѕ‚©‚з‚ИЃB";
+		mes "[е†·йќ™гЃЄгѓЄгѓ™гѓЄг‚Єгѓі]";
+		mes "г‚„гЃ‚гЂЃж–°е…Ґг‚ЉгЂ‚";
+		mes "йЉѓгЃ®ж‰±гЃ„гЃ«гЃЇеёёгЃ«ж°—г‚’й…Ќг‚‹г‚“гЃ гЃћгЂ‚";
+		mes "гЃќгЃ®йЉѓгЃЊж€‘гЂ…гЃ®и±ЎеѕґгЃ гЃ‹г‚‰гЃЄгЂ‚";
 		close;
 	}
-	mes "[—вђГ‚ИѓЉѓxѓЉѓIѓ“]";
-	mes "Џe‚М€µ‚ў•ы‚Н‚н‚©‚Б‚Д‚й‚М‚©ЃH";
+	mes "[е†·йќ™гЃЄгѓЄгѓ™гѓЄг‚Єгѓі]";
+	mes "йЉѓгЃ®ж‰±гЃ„ж–№гЃЇг‚ЏгЃ‹гЃЈгЃ¦г‚‹гЃ®гЃ‹пјџ";
 	close;
 }
 
-job_gun.gat,78,33,6	script	‰ц‚µ‚ўѓKѓ“ѓ}ѓ“	731,{
+job_gun.gat,78,33,6	script	жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі	731,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121915)&0x8) {
-			mes "[‰ц‚µ‚ўѓKѓ“ѓ}ѓ“]";
-			mes "‚ж‚ЁЃA“ЇЋu‚жЃB";
-			mes "Ћ©—R‚рЋз‚й‚Ѕ‚Я‚Й";
-			mes "Џe‚М“№‚р‹†‚Я‚Д‚ў‚й‚©ЃH";
-			mes "Џe‚ѕ‚Ї‚Й‚ИѓnѓnѓbЃI";
+			mes "[жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі]";
+			mes "г‚€гЃЉгЂЃеђЊеї—г‚€гЂ‚";
+			mes "и‡Єз”±г‚’е®€г‚‹гЃџг‚ЃгЃ«";
+			mes "йЉѓгЃ®йЃ“г‚’з©¶г‚ЃгЃ¦гЃ„г‚‹гЃ‹пјџ";
+			mes "йЉѓгЃ гЃ‘гЃ«гЃЄгѓЏгѓЏгѓѓпјЃ";
 			close;
 		}
 		setquest 121915;
 		compquest 121915;
-		mes "[‰ц‚µ‚ўѓKѓ“ѓ}ѓ“]";
-		mes "‚ж‚ЁЃA“ЇЋu‚жЃB";
-		mes "ђж”y‚Ж‚µ‚ДЊг”y‚М‚Ё‘O‚ЙЊѕ‚¦‚й‚М‚Н";
-		mes "‚±‚к‚ѕ‚Ї‚ѕЃB";
+		mes "[жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі]";
+		mes "г‚€гЃЉгЂЃеђЊеї—г‚€гЂ‚";
+		mes "е…€иј©гЃЁгЃ—гЃ¦еѕЊиј©гЃ®гЃЉе‰ЌгЃ«иЁЂгЃ€г‚‹гЃ®гЃЇ";
+		mes "гЃ“г‚ЊгЃ гЃ‘гЃ гЂ‚";
 		next;
-		mes "[‰ц‚µ‚ўѓKѓ“ѓ}ѓ“]";
-		mes "‚»‚МЋи‚МЏe‚Н";
-		mes "‚Ё‘O‚МЋ©—R‚МЏЫ’Ґ‚ѕЃB";
-		mes "‚»‚МЋ©—R‚рЋз‚й‚Ѕ‚Я‚ЙѓЉѓxѓЉѓIѓ“‚Н";
-		mes "“№‚р‹†‚Я‚й‚М‚іЃB";
-		mes "Џe‚ѕ‚Ї‚Й‚ИѓnѓnѓbЃI";
+		mes "[жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі]";
+		mes "гЃќгЃ®ж‰‹гЃ®йЉѓгЃЇ";
+		mes "гЃЉе‰ЌгЃ®и‡Єз”±гЃ®и±ЎеѕґгЃ гЂ‚";
+		mes "гЃќгЃ®и‡Єз”±г‚’е®€г‚‹гЃџг‚ЃгЃ«гѓЄгѓ™гѓЄг‚ЄгѓігЃЇ";
+		mes "йЃ“г‚’з©¶г‚Ѓг‚‹гЃ®гЃ•гЂ‚";
+		mes "йЉѓгЃ гЃ‘гЃ«гЃЄгѓЏгѓЏгѓѓпјЃ";
 		close;
 	}
-	mes "[‰ц‚µ‚ўѓKѓ“ѓ}ѓ“]";
-	mes "ЃcЃc";
+	mes "[жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі]";
+	mes "вЂ¦вЂ¦";
 	next;
-	mes "[‰ц‚µ‚ўѓKѓ“ѓ}ѓ“]";
-	mes "‚НЃH";
-	mes "‰ґ‚Н’b–и‚И‚с‚Д‚в‚Б‚Д‚И‚ў‚с‚ѕ‚ЄЃB";
-	mes "‰ґ‚НѓKѓ“ѓ}ѓ“ЃB";
-	mes "Ћ©—R‚Йђ¶‚«‚йѓKѓ“ѓ}ѓ“‚ѕ‚јЃB";
+	mes "[жЂЄгЃ—гЃ„г‚¬гѓігѓћгѓі]";
+	mes "гЃЇпјџ";
+	mes "дїєгЃЇйЌ›е†¶гЃЄг‚“гЃ¦г‚„гЃЈгЃ¦гЃЄгЃ„г‚“гЃ гЃЊгЂ‚";
+	mes "дїєгЃЇг‚¬гѓігѓћгѓігЂ‚";
+	mes "и‡Єз”±гЃ«з”џгЃЌг‚‹г‚¬гѓігѓћгѓігЃ гЃћгЂ‚";
 	close;
 }
 
-job_gun.gat,74,24,6	script	ђЊ‚Б•Ґ‚ў‚М’j	887,{
+job_gun.gat,74,24,6	script	й…”гЃЈж‰•гЃ„гЃ®з”·	887,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121905)&0x8) {
-			mes "[ђЊ‚Б•Ґ‚ў‚М’j]";
-			mes "‚®‚Ё‚Ё‚Ё‚Ё‚Ё‚Ё‚ЁЃcЃc";
-			mes "Ѓ@";
-			mes "Ѓ]’j‚Н‘е‚«‚И‚ў‚С‚«‚р‚©‚ў‚Д";
-			mes "Ѓ@ђQ“ь‚Б‚Д‚ў‚йЃ]";
+			mes "[й…”гЃЈж‰•гЃ„гЃ®з”·]";
+			mes "гЃђгЃЉгЃЉгЃЉгЃЉгЃЉгЃЉгЃЉвЂ¦вЂ¦";
+			mes "гЂЂ";
+			mes "вЂђз”·гЃЇе¤§гЃЌгЃЄгЃ„гЃігЃЌг‚’гЃ‹гЃ„гЃ¦";
+			mes "гЂЂеЇќе…ҐгЃЈгЃ¦гЃ„г‚‹вЂђ";
 			close;
 		}
 		setquest 121905;
 		compquest 121905;
-		mes "[ђЊ‚Б•Ґ‚ў‚М’j]";
-		mes "‚±‚±‚НѓЉѓxѓЉѓIѓ“‚ЄЏW‚ўЃA";
-		mes "Џо•с‚рЊрЉ·‚·‚й”й–§‚МЋрЏк‚ѕЃB";
-		mes "ђV•Д‚И‚зѓNѓ‹ѓxѓ‹‚Й";
-		mes "€ҐЋA‚µ‚Д‚ў‚«‚ИЃB";
+		mes "[й…”гЃЈж‰•гЃ„гЃ®з”·]";
+		mes "гЃ“гЃ“гЃЇгѓЄгѓ™гѓЄг‚ЄгѓігЃЊй›†гЃ„гЂЃ";
+		mes "жѓ…е ±г‚’дє¤жЏ›гЃ™г‚‹з§еЇ†гЃ®й…’е ґгЃ гЂ‚";
+		mes "ж–°з±ігЃЄг‚‰г‚Їгѓ«гѓ™гѓ«гЃ«";
+		mes "жЊЁж‹¶гЃ—гЃ¦гЃ„гЃЌгЃЄгЂ‚";
 		next;
-		mes "[ђЊ‚Б•Ґ‚ў‚М’j]";
-		mes "Ћ„‚МЋdЋ–‚НЋр‚МЋd“ь‚к‚ѕ‚©‚з‚ИЃB";
+		mes "[й…”гЃЈж‰•гЃ„гЃ®з”·]";
+		mes "з§ЃгЃ®д»•дє‹гЃЇй…’гЃ®д»•е…Ґг‚ЊгЃ гЃ‹г‚‰гЃЄгЂ‚";
 		close;
 	}
-	mes "[ђЊ‚Б•Ґ‚ў‚М’j]";
-	mes "Ћ„‚Н‚±‚МЋрЏк‚М“X’·‚ѕЃI";
-	mes "Ѓ@";
-	mes "ЃcЃc‚¤‚сЃH";
+	mes "[й…”гЃЈж‰•гЃ„гЃ®з”·]";
+	mes "з§ЃгЃЇгЃ“гЃ®й…’е ґгЃ®еє—й•·гЃ пјЃ";
+	mes "гЂЂ";
+	mes "вЂ¦вЂ¦гЃ†г‚“пјџ";
 	next;
-	mes "[ђЊ‚Б•Ґ‚ў‚М’j]";
-	mes "‚±‚±‚ЄЋ„‚М“XЃH";
-	mes "‚»‚а‚»‚аЋ„‚Н“X’·‚И‚М‚©ЃcЃcЃH";
-	mes "Ѓ@";
-	mes "Ѓ]’j‚Н‚Р‚З‚­ђЊ‚Б‚Д‚ў‚йЃ]";
+	mes "[й…”гЃЈж‰•гЃ„гЃ®з”·]";
+	mes "гЃ“гЃ“гЃЊз§ЃгЃ®еє—пјџ";
+	mes "гЃќг‚‚гЃќг‚‚з§ЃгЃЇеє—й•·гЃЄгЃ®гЃ‹вЂ¦вЂ¦пјџ";
+	mes "гЂЂ";
+	mes "вЂђз”·гЃЇгЃІгЃ©гЃЏй…”гЃЈгЃ¦гЃ„г‚‹вЂђ";
 	close;
 }
 
-job_gun.gat,64,33,6	script	•s€А‚И’j	748,{
+job_gun.gat,64,33,6	script	дёЌе®‰гЃЄз”·	748,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121920)&0x8) {
-			mes "[•s€А‚И’j]";
-			mes "”Ю‚з‚МЏЫ’Ґ‚НЋ©—R‚з‚µ‚ў‚Е‚·‚Ї‚ЗЃA";
-			mes "‚»‚к‚И‚зЋ„‚аЋ©—R‚Й‚µ‚Д‚­‚ѕ‚і‚ў‚жЃB";
+			mes "[дёЌе®‰гЃЄз”·]";
+			mes "еЅјг‚‰гЃ®и±ЎеѕґгЃЇи‡Єз”±г‚‰гЃ—гЃ„гЃ§гЃ™гЃ‘гЃ©гЂЃ";
+			mes "гЃќг‚ЊгЃЄг‚‰з§Ѓг‚‚и‡Єз”±гЃ«гЃ—гЃ¦гЃЏгЃ гЃ•гЃ„г‚€гЂ‚";
 			next;
-			mes "[—вђГ‚ИѓЉѓxѓЉѓIѓ“]";
-			mes "‰ЅЊѕ‚Б‚Д‚с‚ѕ‚ўЃA‚ ‚с‚ЅЃB";
-			mes "‚ ‚с‚Ѕ‚НЃAЉX‚ЦЏo‚Д‚Н–А‚Б‚Д";
-			mes "‚±‚±‚Й‚Ѕ‚З‚и’…‚ў‚Д‚р";
-			mes "ЊJ‚и•Ф‚µ‚Д‚й";
-			mes "‚Ѕ‚ѕ‚М•ыЊь‰№’s‚¶‚б‚И‚ў‚©ЃB";
+			mes "[е†·йќ™гЃЄгѓЄгѓ™гѓЄг‚Єгѓі]";
+			mes "дЅ•иЁЂгЃЈгЃ¦г‚“гЃ гЃ„гЂЃгЃ‚г‚“гЃџгЂ‚";
+			mes "гЃ‚г‚“гЃџгЃЇгЂЃиЎ—гЃёе‡єгЃ¦гЃЇиї·гЃЈгЃ¦";
+			mes "гЃ“гЃ“гЃ«гЃџгЃ©г‚ЉзќЂгЃ„гЃ¦г‚’";
+			mes "з№°г‚Љиї”гЃ—гЃ¦г‚‹";
+			mes "гЃџгЃ гЃ®ж–№еђ‘йџіз—ґгЃг‚ѓгЃЄгЃ„гЃ‹гЂ‚";
 			next;
-			mes "[•s€А‚И’j]";
-			mes "ЃcЃc‚¤‚¤‚¤ЃA‚±‚±‚Є";
-			mes "“ь‚и‘g‚с‚Е‚ў‚й‚М‚Є";
-			mes "€«‚ў‚с‚Е‚·‚жЃB";
+			mes "[дёЌе®‰гЃЄз”·]";
+			mes "вЂ¦вЂ¦гЃ†гЃ†гЃ†гЂЃгЃ“гЃ“гЃЊ";
+			mes "е…Ґг‚Љзµ„г‚“гЃ§гЃ„г‚‹гЃ®гЃЊ";
+			mes "ж‚ЄгЃ„г‚“гЃ§гЃ™г‚€гЂ‚";
 			close;
 		}
-		mes "[•s€А‚И’j]";
-		mes "‚ ‚И‚Ѕ‚а‚±‚М•П‚ИЏкЏЉ‚М";
-		mes "€к€х‚И‚с‚Е‚·‚©ЃH";
-		mes "‚З‚¤‚·‚к‚ОЏo‚з‚к‚й‚с‚Е‚µ‚е‚¤‚©ЃB";
+		mes "[дёЌе®‰гЃЄз”·]";
+		mes "гЃ‚гЃЄгЃџг‚‚гЃ“гЃ®е¤‰гЃЄе ґж‰ЂгЃ®";
+		mes "дёЂе“ЎгЃЄг‚“гЃ§гЃ™гЃ‹пјџ";
+		mes "гЃ©гЃ†гЃ™г‚ЊгЃ°е‡єг‚‰г‚Њг‚‹г‚“гЃ§гЃ—г‚‡гЃ†гЃ‹гЂ‚";
 		close;
 	}
-	mes "[•s€А‚И’j]";
-	mes "‚З‚¤‚в‚з•П‚ИЏкЏЉ‚Й";
-	mes "“ь‚Б‚Д‚«‚Ѕ‚Э‚Ѕ‚ў‚Е‚·ЃB";
-	mes "ЋрЏк‚¶‚б‚И‚ў‚с‚Е‚·‚©‚ЛЃH";
-	mes "•µ€Н‹C•П‚ѕ‚µЃB";
+	mes "[дёЌе®‰гЃЄз”·]";
+	mes "гЃ©гЃ†г‚„г‚‰е¤‰гЃЄе ґж‰ЂгЃ«";
+	mes "е…ҐгЃЈгЃ¦гЃЌгЃџгЃїгЃџгЃ„гЃ§гЃ™гЂ‚";
+	mes "й…’е ґгЃг‚ѓгЃЄгЃ„г‚“гЃ§гЃ™гЃ‹гЃ­пјџ";
+	mes "й›°е›Іж°—е¤‰гЃ гЃ—гЂ‚";
 	close;
 }
 
-job_gun.gat,86,29,3	script	ѓNѓ‹ѓxѓ‹	10062,{
+job_gun.gat,86,29,3	script	г‚Їгѓ«гѓ™гѓ«	10062,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121910)&0x8) {
 			if(checkquest(121925)&0x8 == 0) {
 				setquest 121925;
 				compquest 121925;
 			}
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚йЃ`‚й‚йЃ`Ѓф";
-			mes "”Ѕ‹t‚МЃ@‚и‚Ч‚и‚ЁЃ`‚сЃф";
-			mes "Ѓ@";
-			mes "Ѓ]ѓNѓ‹ѓxѓ‹‚НѓOѓ‰ѓX‚р–Ѓ‚«‚И‚Є‚з";
-			mes "Ѓ@Љy‚µ‚°‚Й‰М‚¤Ѓ]";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚‹пЅћг‚‹г‚‹пЅћв™Є";
+			mes "еЏЌйЂ†гЃ®гЂЂг‚ЉгЃ№г‚ЉгЃЉпЅћг‚“в™Є";
+			mes "гЂЂ";
+			mes "вЂђг‚Їгѓ«гѓ™гѓ«гЃЇг‚°гѓ©г‚№г‚’зЈЁгЃЌгЃЄгЃЊг‚‰";
+			mes "гЂЂжҐЅгЃ—гЃ’гЃ«ж­ЊгЃ†вЂђ";
 			next;
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚ж‚ЁЃA“ЇЋuЃB";
-			mes "ЌЎ“ъ‚аЊі‹C‚ЙѓЉѓxѓЉѓIѓ“‚µ‚Д‚й‚©ЃH";
-			mes "‚±‚±‚НѓЉѓxѓЉѓIѓ“‚ЄЏW‚¤";
-			mes "ЋрЏк‚ѕ‚©‚з‚ИЃB";
-			mes "‚Ѕ‚Ь‚Й‚НЉс‚Б‚Д‚­‚к‚жЃB";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚€гЃЉгЂЃеђЊеї—гЂ‚";
+			mes "д»Љж—Ґг‚‚е…ѓж°—гЃ«гѓЄгѓ™гѓЄг‚ЄгѓігЃ—гЃ¦г‚‹гЃ‹пјџ";
+			mes "гЃ“гЃ“гЃЇгѓЄгѓ™гѓЄг‚ЄгѓігЃЊй›†гЃ†";
+			mes "й…’е ґгЃ гЃ‹г‚‰гЃЄгЂ‚";
+			mes "гЃџгЃѕгЃ«гЃЇеЇ„гЃЈгЃ¦гЃЏг‚Њг‚€гЂ‚";
 			close;
 		}
 		setquest 121910;
 		compquest 121910;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚Ё‚Я‚Е‚Ж‚¤ЃB";
-		mes "‚±‚к‚Е‚Ё‘O‚а€кђl‚МѓЉѓxѓЉѓIѓ“‚ѕ‚ИЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃЉг‚ЃгЃ§гЃЁгЃ†гЂ‚";
+		mes "гЃ“г‚ЊгЃ§гЃЉе‰Ќг‚‚дёЂдєєгЃ®гѓЄгѓ™гѓЄг‚ЄгѓігЃ гЃЄгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "Ћи”zЏ‘‚М‚±‚Ж‚Н‚ї‚бЃ[‚с‚Ж";
-		mes "‘ОЏ€‚µ‚Д‚Ё‚ў‚Ѕ‚©‚з";
-		mes "‚а‚¤’З‚ў‰с‚і‚к‚й‚±‚Ж‚Н‚И‚ў‚єЃB";
-		mes "€АђS‚µ‚Д‚­‚кЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "ж‰‹й…Ќж›ёгЃ®гЃ“гЃЁгЃЇгЃЎг‚ѓгѓјг‚“гЃЁ";
+		mes "еЇѕе‡¦гЃ—гЃ¦гЃЉгЃ„гЃџгЃ‹г‚‰";
+		mes "г‚‚гЃ†иїЅгЃ„е›ћгЃ•г‚Њг‚‹гЃ“гЃЁгЃЇгЃЄгЃ„гЃњгЂ‚";
+		mes "е®‰еїѓгЃ—гЃ¦гЃЏг‚ЊгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚ЕЃA‚а‚ї‚л‚сѓ‹ѓEѓBЃ[ѓj‚в";
-		mes "ѓVѓhѓЊѓ“‚Мb‚Н•·‚ў‚Д‚ў‚й‚ж‚ИЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃ§гЂЃг‚‚гЃЎг‚Ќг‚“гѓ«г‚¦г‚Јгѓјгѓ‹г‚„";
+		mes "г‚·гѓ‰гѓ¬гѓігЃ®и©±гЃЇиЃћгЃ„гЃ¦гЃ„г‚‹г‚€гЃЄгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ѓЉѓxѓЉѓIѓ“‚Й‚Ж‚Б‚ДЏe‚Н";
-		mes "ѓKѓ“ѓXѓЉѓ“ѓKЃ[‚М‚±‚л‚ж‚и‚а";
-		mes "Џd—v‚И‚а‚М‚ѕЃB";
-		mes "‚И‚с‚№ЊИ‚МЋu‚р";
-		mes "‚»‚МЏe‚ЙЌћ‚ЯЃA‚»‚µ‚Д";
-		mes "ЏШ–ѕ‚µ‘±‚Ї‚й‚с‚ѕ‚©‚з‚ИЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ«гЃЁгЃЈгЃ¦йЉѓгЃЇ";
+		mes "г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЃ®гЃ“г‚Ќг‚€г‚Љг‚‚";
+		mes "й‡Ќи¦ЃгЃЄг‚‚гЃ®гЃ гЂ‚";
+		mes "гЃЄг‚“гЃ›е·±гЃ®еї—г‚’";
+		mes "гЃќгЃ®йЉѓгЃ«иѕјг‚ЃгЂЃгЃќгЃ—гЃ¦";
+		mes "иЁјжЋгЃ—з¶љгЃ‘г‚‹г‚“гЃ гЃ‹г‚‰гЃЄгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "Ћu‚Н€к‚ВЃB";
-		mes "Ћ©—R‚Ж”Ѕ‹tЃB";
-		mes "ђў‚М’†‚Й‚Н‚С‚±‚й€«‚Й‚Н";
-		mes "Џe‚Е‘ОЌR‚·‚й‚с‚ѕЃB";
-		mes "‚»‚МЋ©—R‚р‘МЊ»‚·‚й‚М‚іЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "еї—гЃЇдёЂгЃ¤гЂ‚";
+		mes "и‡Єз”±гЃЁеЏЌйЂ†гЂ‚";
+		mes "дё–гЃ®дё­гЃ«гЃЇгЃігЃ“г‚‹ж‚ЄгЃ«гЃЇ";
+		mes "йЉѓгЃ§еЇѕжЉ—гЃ™г‚‹г‚“гЃ гЂ‚";
+		mes "гЃќгЃ®и‡Єз”±г‚’дЅ“зЏѕгЃ™г‚‹гЃ®гЃ•гЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‰Ѕ‚ж‚и‘±‚Ї‚й‚±‚Ж‚Н“п‚µ‚ў‚Є";
-		mes "‰Ѕ‚ж‚и‚аѓJѓbѓRѓCѓCЃI";
-		mes "‚»‚с‚И‘¶ЌЭ‚Й‚Ё‘O‚Н‚И‚Б‚Ѕ‚с‚ѕЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "дЅ•г‚€г‚Љз¶љгЃ‘г‚‹гЃ“гЃЁгЃЇй›ЈгЃ—гЃ„гЃЊ";
+		mes "дЅ•г‚€г‚Љг‚‚г‚«гѓѓг‚іг‚¤г‚¤пјЃ";
+		mes "гЃќг‚“гЃЄе­ењЁгЃ«гЃЉе‰ЌгЃЇгЃЄгЃЈгЃџг‚“гЃ пјЃ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ђёђi‚µ‚л‚жђV•ДЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "зІѕйЂІгЃ—г‚Ќг‚€ж–°з±іпјЃ";
 		close;
 	}
 	if(CHANGE_RB == 1) {
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚ў‚з‚Б‚µ‚б‚ўЃB";
-		mes "ѓKѓ“ѓXѓЉѓ“ѓKЃ[‚Є";
-		mes "‚±‚М”й–§ЋрЏк‚Й‰Ѕ‚М—pЋ–‚ѕЃH";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃ„г‚‰гЃЈгЃ—г‚ѓгЃ„гЂ‚";
+		mes "г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЃЊ";
+		mes "гЃ“гЃ®з§еЇ†й…’е ґгЃ«дЅ•гЃ®з”Ёдє‹гЃ пјџ";
 		next;
-		if(select("Ћи”zЏ‘‚Мb‚р‚·‚й","’Ќ•¶‚р—Љ‚Ю") == 2) {
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‰Ѕ‚Є‚ў‚ў‚с‚ѕ‚ўЃH";
-			mes "ѓhѓЉѓ“ѓN‚ЙѓtЃ[ѓhЃcЃc";
-			mes "Ѓ@";
-			mes "Ћи”zЏ‘‚©‚ИЃH";
+		if(select("ж‰‹й…Ќж›ёгЃ®и©±г‚’гЃ™г‚‹","жіЁж–‡г‚’й јг‚Ђ") == 2) {
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "дЅ•гЃЊгЃ„гЃ„г‚“гЃ гЃ„пјџ";
+			mes "гѓ‰гѓЄгѓіг‚ЇгЃ«гѓ•гѓјгѓ‰вЂ¦вЂ¦";
+			mes "гЂЂ";
+			mes "ж‰‹й…Ќж›ёгЃ‹гЃЄпјџ";
 			emotion 0,"";
 			next;
 		}
-		mes "Ѓ]‚ ‚И‚Ѕ‚НѓNѓ‹ѓxѓ‹‚Й";
-		mes "Ѓ@Ћи”zЏ‘‚р“Л‚«‚В‚Ї‚ЅЃ]";
+		mes "вЂђгЃ‚гЃЄгЃџгЃЇг‚Їгѓ«гѓ™гѓ«гЃ«";
+		mes "гЂЂж‰‹й…Ќж›ёг‚’зЄЃгЃЌгЃ¤гЃ‘гЃџвЂђ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ЃcЃc‚¤‚сЃB";
-		mes "‚ў‚в‘Т‚Б‚ДЃB‚Х‚­‚­ЃcЃc";
-		mes "Ѓ@";
-		mes "Ѓ]ѓNѓ‹ѓxѓ‹‚МЊЁ‚Є";
-		mes "Ѓ@Њѓ‚µ‚­ђk‚¦‚Д‚ў‚йЃ]";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "вЂ¦вЂ¦гЃ†г‚“гЂ‚";
+		mes "гЃ„г‚„еѕ…гЃЈгЃ¦гЂ‚гЃ·гЃЏгЃЏвЂ¦вЂ¦";
+		mes "гЂЂ";
+		mes "вЂђг‚Їгѓ«гѓ™гѓ«гЃ®и‚©гЃЊ";
+		mes "гЂЂжїЂгЃ—гЃЏйњ‡гЃ€гЃ¦гЃ„г‚‹вЂђ";
 		next;
-		switch(select("“{‚йЃI","Џe‚ЙЋи‚рЋќ‚Б‚Д‚ў‚­")) {
+		switch(select("жЂ’г‚‹пјЃ","йЉѓгЃ«ж‰‹г‚’жЊЃгЃЈгЃ¦гЃ„гЃЏ")) {
 		case 1:
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚Н‚Б‚Н‚Б‚НЃI";
-			mes "‚·‚Ь‚с‚·‚Ь‚с‚ї‚е‚Б‚Ж‘Т‚Б‚Д‚­‚кЃB";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "гЃЇгЃЈгЃЇгЃЈгЃЇпјЃ";
+			mes "гЃ™гЃѕг‚“гЃ™гЃѕг‚“гЃЎг‚‡гЃЈгЃЁеѕ…гЃЈгЃ¦гЃЏг‚ЊгЂ‚";
 			break;
 		case 2:
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚ ‚Б‚±‚зЃI";
-			mes "“X“а‚Е—ђ“¬‚Н‚І‚Я‚с‚ѕ‚єЃB";
-			mes "‚»‚МЋи‚р•ъ‚µ‚ИЃB";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "гЃ‚гЃЈгЃ“г‚‰пјЃ";
+			mes "еє—е†…гЃ§д№±й—гЃЇгЃ”г‚Ѓг‚“гЃ гЃњгЂ‚";
+			mes "гЃќгЃ®ж‰‹г‚’ж”ѕгЃ—гЃЄгЂ‚";
 			next;
 			break;
 		}
-		mes "Ѓ]‚Р‚Ж‚µ‚«‚иЏО‚Б‚Д";
-		mes "Ѓ@–ћ‘«‚µ‚Ѕ‚М‚©ЃAѓNѓ‹ѓxѓ‹‚Н";
-		mes "Ѓ@—Ь‚р‚К‚®‚Б‚Д";
-		mes "Ѓ@‚ ‚И‚Ѕ‚ЙЊь‚«’ј‚Б‚ЅЃ]";
+		mes "вЂђгЃІгЃЁгЃ—гЃЌг‚Љз¬‘гЃЈгЃ¦";
+		mes "гЂЂжєЂи¶ігЃ—гЃџгЃ®гЃ‹гЂЃг‚Їгѓ«гѓ™гѓ«гЃЇ";
+		mes "гЂЂж¶™г‚’гЃ¬гЃђгЃЈгЃ¦";
+		mes "гЂЂгЃ‚гЃЄгЃџгЃ«еђ‘гЃЌз›ґгЃЈгЃџвЂђ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚ў‚вЃAЏЬ‹а‰Т‚¬‚©‚з";
-		mes "Ћи”zЏ‘‚Ь‚ЕЋи‚Й“ь‚к‚й‚И‚с‚Д";
-		mes "‚И‚©‚И‚©Њ©‚З‚±‚л‚Є‚ ‚й‚¶‚б‚И‚ў‚©ЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃ„г‚„гЂЃиіћй‡‘зЁјгЃЋгЃ‹г‚‰";
+		mes "ж‰‹й…Ќж›ёгЃѕгЃ§ж‰‹гЃ«е…Ґг‚Њг‚‹гЃЄг‚“гЃ¦";
+		mes "гЃЄгЃ‹гЃЄгЃ‹и¦‹гЃ©гЃ“г‚ЌгЃЊгЃ‚г‚‹гЃг‚ѓгЃЄгЃ„гЃ‹гЂ‚";
 		next;
-		menu "‚З‚¤‚ў‚¤‚±‚Ж‚Е‚µ‚е‚¤ЃH",-;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes strcharinfo(0)+ "ЃA";
-		mes "‚Ё‘O‚МѓKѓ“ѓXѓЉѓ“ѓKЃ[‚Ж‚µ‚Д‚М";
-		mes "ЋА—Н‚Н“`‚¦•·‚ў‚Д‚ў‚й‚јЃB";
-		mes "Ѓ@";
-		mes "‚Ё‘O‚Н^FF0000ѓЉѓxѓЉѓIѓ“^000000‚Й";
-		mes "‹»–Ў‚И‚ў‚©ЃH";
+		menu "гЃ©гЃ†гЃ„гЃ†гЃ“гЃЁгЃ§гЃ—г‚‡гЃ†пјџ",-;
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes strcharinfo(0)+ "гЂЃ";
+		mes "гЃЉе‰ЌгЃ®г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЃЁгЃ—гЃ¦гЃ®";
+		mes "е®џеЉ›гЃЇдјќгЃ€иЃћгЃ„гЃ¦гЃ„г‚‹гЃћгЂ‚";
+		mes "гЂЂ";
+		mes "гЃЉе‰ЌгЃЇ^FF0000гѓЄгѓ™гѓЄг‚Єгѓі^000000гЃ«";
+		mes "и€€е‘ігЃЄгЃ„гЃ‹пјџ";
 		next;
-		switch(select("ѓЉѓxѓЉѓIѓ“ЃH","‹»–Ў‚И‚ў‚Е‚·","‚»‚с‚И‚±‚Ж‚ж‚иЋи”zЏ‘ЃI")) {
+		switch(select("гѓЄгѓ™гѓЄг‚Єгѓіпјџ","и€€е‘ігЃЄгЃ„гЃ§гЃ™","гЃќг‚“гЃЄгЃ“гЃЁг‚€г‚Љж‰‹й…Ќж›ёпјЃ")) {
 		case 1:
 			break;
 		case 2:
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚·‚Б‚©‚и‚Ц‚»‚р‹И‚°‚ДЃB";
-			mes "‚Ё‘O‚Н‚И‚©‚И‚©‚Й‚©‚н‚ў‚ў‚в‚В‚ѕ‚ИЃB";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "гЃ™гЃЈгЃ‹г‚ЉгЃёгЃќг‚’ж›ІгЃ’гЃ¦гЂ‚";
+			mes "гЃЉе‰ЌгЃЇгЃЄгЃ‹гЃЄгЃ‹гЃ«гЃ‹г‚ЏгЃ„гЃ„г‚„гЃ¤гЃ гЃЄгЂ‚";
 			next;
 			break;
 		case 3:
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚н‚©‚Б‚Д‚й‚іЃB";
-			mes "‚№‚Б‚©‚ї‚И‚с‚ѕ‚И‚Ё‘O‚НЃB";
-			mes "‚»‚к‚аЉЦЊW‚ ‚й‚±‚Ж‚ѕ‚©‚з";
-			mes "‚Ь‚ё‚Нb‚р•·‚ў‚Д‚­‚кЃB";
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚ЏгЃ‹гЃЈгЃ¦г‚‹гЃ•гЂ‚";
+			mes "гЃ›гЃЈгЃ‹гЃЎгЃЄг‚“гЃ гЃЄгЃЉе‰ЌгЃЇгЂ‚";
+			mes "гЃќг‚Њг‚‚й–ўдї‚гЃ‚г‚‹гЃ“гЃЁгЃ гЃ‹г‚‰";
+			mes "гЃѕгЃљгЃЇи©±г‚’иЃћгЃ„гЃ¦гЃЏг‚ЊгЂ‚";
 			next;
 			break;
 		}
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ѓЉѓxѓЉѓIѓ“‚Н";
-		mes "ѓKѓ“ѓXѓЉѓ“ѓKЃ[‚МЏг€КђE‚Е‚ ‚иЃA";
-		mes "Ћ©—R‚ИЌ°‚М‰р•ъЋТ‚ѕЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃЇ";
+		mes "г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЃ®дёЉдЅЌиЃ·гЃ§гЃ‚г‚ЉгЂЃ";
+		mes "и‡Єз”±гЃЄй­‚гЃ®и§Јж”ѕиЂ…гЃ пјЃ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ђўЉФ‚Й‚Н‚С‚±‚й€«‚Н";
-		mes "“ѕ‚Д‚µ‚ДЊ —Н‚аЋќ‚їЌ‡‚н‚№‚йЃB";
-		mes "‚»‚с‚И€«‚Й‘О‚µ‚ДЏeЊы‚рЊь‚ЇЃA";
-		mes "”Ѕ‹t‚·‚й‚М‚ЄѓЉѓxѓЉѓIѓ“‚іЃB";
-		mes "‚©‚Б‚±‚ў‚ў‚ѕ‚лЃH";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "дё–й–“гЃ«гЃЇгЃігЃ“г‚‹ж‚ЄгЃЇ";
+		mes "еѕ—гЃ¦гЃ—гЃ¦жЁ©еЉ›г‚‚жЊЃгЃЎеђ€г‚ЏгЃ›г‚‹гЂ‚";
+		mes "гЃќг‚“гЃЄж‚ЄгЃ«еЇѕгЃ—гЃ¦йЉѓеЏЈг‚’еђ‘гЃ‘гЂЃ";
+		mes "еЏЌйЂ†гЃ™г‚‹гЃ®гЃЊгѓЄгѓ™гѓЄг‚ЄгѓігЃ•гЂ‚";
+		mes "гЃ‹гЃЈгЃ“гЃ„гЃ„гЃ г‚Ќпјџ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ЃcЃc‚ЕЃA‚±‚±‚Е€к‚В";
-		mes "Ћн–ѕ‚©‚µ‚И‚с‚ѕ‚ЄЃB";
-		mes "‚±‚МЋи”zЏ‘ѓ~ѓXЃA";
-		mes "ЋА‚Н‚н‚ґ‚Ж‚И‚с‚ѕ‚ж‚ИЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "вЂ¦вЂ¦гЃ§гЂЃгЃ“гЃ“гЃ§дёЂгЃ¤";
+		mes "зЁ®жЋгЃ‹гЃ—гЃЄг‚“гЃ гЃЊгЂ‚";
+		mes "гЃ“гЃ®ж‰‹й…Ќж›ёгѓџг‚№гЂЃ";
+		mes "е®џгЃЇг‚ЏгЃ–гЃЁгЃЄг‚“гЃ г‚€гЃЄгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ѓKѓ“ѓXѓЉѓ“ѓKЃ[‚р‹Й‚Я‚Ѕ‚ ‚с‚Ѕ‚р";
-		mes "ѓXѓJѓEѓg‚·‚й‚Ж“ЇЋћ‚Й";
-		mes "‚»‚МђSЌЄ‚Є‚З‚¤‚ў‚¤‚а‚М‚©";
-		mes "Љm”F‚і‚№‚Д‚а‚з‚Б‚Ѕ‚Б‚Д‚н‚Ї‚іЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјг‚’жҐµг‚ЃгЃџгЃ‚г‚“гЃџг‚’";
+		mes "г‚№г‚«г‚¦гѓ€гЃ™г‚‹гЃЁеђЊж™‚гЃ«";
+		mes "гЃќгЃ®еїѓж №гЃЊгЃ©гЃ†гЃ„гЃ†г‚‚гЃ®гЃ‹";
+		mes "зўєиЄЌгЃ•гЃ›гЃ¦г‚‚г‚‰гЃЈгЃџгЃЈгЃ¦г‚ЏгЃ‘гЃ•гЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ђў‘­‚М€«‚Й‚Н";
-		mes "Ћu‚ѕ‚Ї‚Е‚Н”Ѕ‹t‚Е‚«‚И‚ўЃB";
-		mes "‚µ‚©‚µЃAЌЕЏ‰‚Й‚ ‚й‚М‚Н";
-		mes "—ќ•sђs‚р•ъ’u‚µ‚И‚ўЃA";
-		mes "”Ѕ‹t‚рЊ€‚Я‚йђSЌЄ€к‚ВЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "дё–дї—гЃ®ж‚ЄгЃ«гЃЇ";
+		mes "еї—гЃ гЃ‘гЃ§гЃЇеЏЌйЂ†гЃ§гЃЌгЃЄгЃ„гЂ‚";
+		mes "гЃ—гЃ‹гЃ—гЂЃжњЂе€ќгЃ«гЃ‚г‚‹гЃ®гЃЇ";
+		mes "зђ†дёЌе°Ѕг‚’ж”ѕзЅ®гЃ—гЃЄгЃ„гЂЃ";
+		mes "еЏЌйЂ†г‚’ж±єг‚Ѓг‚‹еїѓж №дёЂгЃ¤пјЃ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚ ‚с‚Ѕ‚М’јђЪЏж‚иЌћ‚Ю";
-		mes "‚»‚М€У‹CЃcЃc";
-		mes "Ѓ@";
-		mes "‹C‚Й“ь‚Б‚Ѕ‚єЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃ‚г‚“гЃџгЃ®з›ґжЋҐд№—г‚Љиѕјг‚Ђ";
+		mes "гЃќгЃ®ж„Џж°—вЂ¦вЂ¦";
+		mes "гЂЂ";
+		mes "ж°—гЃ«е…ҐгЃЈгЃџгЃњпјЃ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‰ґ‚Н‚ ‚с‚Ѕ‚р“ЇЋu‚Й";
-		mes "Њ}‚¦“ь‚к‚Ѕ‚ўЃI";
-		mes "ѓЉѓxѓЉѓIѓ“‚М“№‚р•а‚с‚Е—~‚µ‚ўЃI";
-		mes "ђS‚©‚з‚ѕ‚єЃBђS‚М’к‚©‚з‚ѕЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "дїєгЃЇгЃ‚г‚“гЃџг‚’еђЊеї—гЃ«";
+		mes "иїЋгЃ€е…Ґг‚ЊгЃџгЃ„пјЃ";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ®йЃ“г‚’ж­©г‚“гЃ§ж¬ІгЃ—гЃ„пјЃ";
+		mes "еїѓгЃ‹г‚‰гЃ гЃњгЂ‚еїѓгЃ®еє•гЃ‹г‚‰гЃ пјЃ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‰ь‚Я‚ДЊѕ‚Ё‚¤ЃB";
-		mes "‰ґ‚Ѕ‚їѓЉѓxѓЉѓIѓ“‚М€к€х‚Й";
-		mes "‚И‚й‹C‚Н‚И‚ў‚©ЃH";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "ж”№г‚ЃгЃ¦иЁЂгЃЉгЃ†гЂ‚";
+		mes "дїєгЃџгЃЎгѓЄгѓ™гѓЄг‚ЄгѓігЃ®дёЂе“ЎгЃ«";
+		mes "гЃЄг‚‹ж°—гЃЇгЃЄгЃ„гЃ‹пјџ";
 		while(1) {
 			next;
-			switch(select("‚И‚й","‚И‚з‚И‚ў","Њ–‰Ь”„‚Б‚Д‚с‚М‚©")) {
+			switch(select("гЃЄг‚‹","гЃЄг‚‰гЃЄгЃ„","е–§е©еЈІгЃЈгЃ¦г‚“гЃ®гЃ‹")) {
 			case 1:
 				break;
 			case 2:
-				mes "[ѓNѓ‹ѓxѓ‹]";
-				mes "‚ў‚в‚ў‚вЃA‚»‚с‚И‚±‚ЖЊѕ‚н‚ё‚ЙЃB";
-				mes "ѓKѓ“ѓXѓЉѓ“ѓKЃ[‚МЋџ‚Н";
-				mes "ѓЉѓxѓЉѓIѓ“‚р‹Й‚Я‚ж‚¤‚¶‚б‚И‚ў‚©ЃB";
+				mes "[г‚Їгѓ«гѓ™гѓ«]";
+				mes "гЃ„г‚„гЃ„г‚„гЂЃгЃќг‚“гЃЄгЃ“гЃЁиЁЂг‚ЏгЃљгЃ«гЂ‚";
+				mes "г‚¬гѓіг‚№гѓЄгѓіг‚¬гѓјгЃ®ж¬ЎгЃЇ";
+				mes "гѓЄгѓ™гѓЄг‚Єгѓіг‚’жҐµг‚Ѓг‚€гЃ†гЃг‚ѓгЃЄгЃ„гЃ‹гЂ‚";
 				next;
-				mes "[ѓNѓ‹ѓxѓ‹]";
-				mes "‰ь‚Я‚ДЊѕ‚Ё‚¤ЃB";
-				mes "‰ґ‚Ѕ‚їѓЉѓxѓЉѓIѓ“‚М€к€х‚Й";
-				mes "‚И‚й‹C‚Н‚И‚ў‚©ЃH";
+				mes "[г‚Їгѓ«гѓ™гѓ«]";
+				mes "ж”№г‚ЃгЃ¦иЁЂгЃЉгЃ†гЂ‚";
+				mes "дїєгЃџгЃЎгѓЄгѓ™гѓЄг‚ЄгѓігЃ®дёЂе“ЎгЃ«";
+				mes "гЃЄг‚‹ж°—гЃЇгЃЄгЃ„гЃ‹пјџ";
 				continue;
 			case 3:
-				mes "[ѓNѓ‹ѓxѓ‹]";
-				mes "ЃcЃc‚ў‚ў‚Л‚ҐЃB";
-				mes "Ѓ@";
-				mes "‚ ‚к‚ѕ‚лЃHЃ@Ћи”zЏ‘‚Е";
-				mes "—U‚ўЏo‚µ‚Ѕ‚±‚Ж‚Й‘О‚µ‚Д";
-				mes "”Ѕ‹t‚µ‚Д‚­‚к‚й‚Ж‚НЃB";
+				mes "[г‚Їгѓ«гѓ™гѓ«]";
+				mes "вЂ¦вЂ¦гЃ„гЃ„гЃ­гЃ‡гЂ‚";
+				mes "гЂЂ";
+				mes "гЃ‚г‚ЊгЃ г‚ЌпјџгЂЂж‰‹й…Ќж›ёгЃ§";
+				mes "иЄгЃ„е‡єгЃ—гЃџгЃ“гЃЁгЃ«еЇѕгЃ—гЃ¦";
+				mes "еЏЌйЂ†гЃ—гЃ¦гЃЏг‚Њг‚‹гЃЁгЃЇгЂ‚";
 				next;
-				mes "[ѓNѓ‹ѓxѓ‹]";
-				mes "ѓЉѓxѓЉѓIѓ“‚М‘fЋї‚Ж‚µ‚Д‚Н";
-				mes "‚а‚¤Џ\•Є‚ИЏШ–ѕ‚ѕ‚ЛЃB";
+				mes "[г‚Їгѓ«гѓ™гѓ«]";
+				mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ®зґ иіЄгЃЁгЃ—гЃ¦гЃЇ";
+				mes "г‚‚гЃ†еЌЃе€†гЃЄиЁјжЋгЃ гЃ­гЂ‚";
 				next;
-				mes "[ѓNѓ‹ѓxѓ‹]";
-				mes "ЃcЃc‚Ж‚ў‚¤‚н‚Ї‚ЕЃB";
-				mes "‰ь‚Я‚ДЊѕ‚Ё‚¤ЃB";
-				mes "‰ґ‚Ѕ‚їѓЉѓxѓЉѓIѓ“‚М€к€х‚Й";
-				mes "‚И‚й‹C‚Н‚И‚ў‚©ЃH";
+				mes "[г‚Їгѓ«гѓ™гѓ«]";
+				mes "вЂ¦вЂ¦гЃЁгЃ„гЃ†г‚ЏгЃ‘гЃ§гЂ‚";
+				mes "ж”№г‚ЃгЃ¦иЁЂгЃЉгЃ†гЂ‚";
+				mes "дїєгЃџгЃЎгѓЄгѓ™гѓЄг‚ЄгѓігЃ®дёЂе“ЎгЃ«";
+				mes "гЃЄг‚‹ж°—гЃЇгЃЄгЃ„гЃ‹пјџ";
 				continue;
 			}
 			break;
 		}
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚ў‚ў‚ј‚ў‚ў‚јЃB";
-		mes "‚ж‚­Њѕ‚Б‚Д‚­‚к‚ЅЃI";
-		mes "‚»‚к‚¶‚б‚ ЃA‹C•Є‚Є•П‚н‚з‚И‚ў‚¤‚ї‚Й";
-		mes "“]ђEЋЋЊ±‚ЖЌs‚±‚¤‚¶‚б‚И‚ў‚©ЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃ„гЃ„гЃћгЃ„гЃ„гЃћгЂ‚";
+		mes "г‚€гЃЏиЁЂгЃЈгЃ¦гЃЏг‚ЊгЃџпјЃ";
+		mes "гЃќг‚ЊгЃг‚ѓгЃ‚гЂЃж°—е€†гЃЊе¤‰г‚Џг‚‰гЃЄгЃ„гЃ†гЃЎгЃ«";
+		mes "и»ўиЃ·и©¦йЁ“гЃЁиЎЊгЃ“гЃ†гЃг‚ѓгЃЄгЃ„гЃ‹гЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚сЃH";
-		mes "‚З‚¤‚µ‚Д“]ђEЋЋЊ±‚©‚Б‚ДЃH";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "г‚“пјџ";
+		mes "гЃ©гЃ†гЃ—гЃ¦и»ўиЃ·и©¦йЁ“гЃ‹гЃЈгЃ¦пјџ";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚Ь‚ ЃA‚ ‚с‚Ѕ‚Н";
-		mes "ѓXѓJѓEѓg‚і‚к‚ЅђlЌЮ‚ѕ‚ЄЃB";
-		mes "“]ђEЋЋЊ±‚ЕѓЉѓxѓЉѓIѓ“‚Ж‚µ‚Д‚М";
-		mes "Ћu‚в‹ZЏp‚И‚с‚©‚а“ЇЋћ‚ЙЉw‚Ч‚й‚©‚з‚іЃB";
-		mes "‚є‚РЋу‚Ї‚Д‚­‚к‚жЃB—Љ‚Ю‚жЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃѕгЃ‚гЂЃгЃ‚г‚“гЃџгЃЇ";
+		mes "г‚№г‚«г‚¦гѓ€гЃ•г‚ЊгЃџдєєжќђгЃ гЃЊгЂ‚";
+		mes "и»ўиЃ·и©¦йЁ“гЃ§гѓЄгѓ™гѓЄг‚ЄгѓігЃЁгЃ—гЃ¦гЃ®";
+		mes "еї—г‚„жЉЂиЎ“гЃЄг‚“гЃ‹г‚‚еђЊж™‚гЃ«е­¦гЃ№г‚‹гЃ‹г‚‰гЃ•гЂ‚";
+		mes "гЃњгЃІеЏ—гЃ‘гЃ¦гЃЏг‚Њг‚€гЂ‚й јг‚Ђг‚€гЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ЌЕЏ‰‚МЋЋЊ±ЉЇ‚Н";
-		mes "ѓ‹ѓEѓBЃ[ѓj‚Б‚Д‚в‚В‚іЃB";
-		mes "‚·‚®‚н‚©‚й‚ЖЋv‚¤‚єЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "жњЂе€ќгЃ®и©¦йЁ“е®гЃЇ";
+		mes "гѓ«г‚¦г‚Јгѓјгѓ‹гЃЈгЃ¦г‚„гЃ¤гЃ•гЂ‚";
+		mes "гЃ™гЃђг‚ЏгЃ‹г‚‹гЃЁжЂќгЃ†гЃњгЂ‚";
 		next;
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚¶‚б‚ ЃAЉж’Ј‚Б‚Д‚±‚ўЃB";
-		mes "Ћџ‚Й‰п‚¤‚Ж‚«ЃA‚Ё‘O‚Н";
-		mes "ѓЉѓxѓЉѓIѓ“‚Й‚И‚Б‚Д‚Д‚­‚к‚жЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃг‚ѓгЃ‚гЂЃй ‘ејµгЃЈгЃ¦гЃ“гЃ„гЂ‚";
+		mes "ж¬ЎгЃ«дјљгЃ†гЃЁгЃЌгЂЃгЃЉе‰ЌгЃЇ";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ«гЃЄгЃЈгЃ¦гЃ¦гЃЏг‚Њг‚€пјЃ";
 		chgquest 12340,12341;
 		set CHANGE_RB,2;
 		close2;
@@ -691,333 +691,333 @@ job_gun.gat,86,29,3	script	ѓNѓ‹ѓxѓ‹	10062,{
 		end;
 	}
 	else if(CHANGE_RB == 2) {
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚Ь‚ѕЋЋЊ±‚М“r’†‚М‚ж‚¤‚ѕ‚ИЃB";
-		mes "ѓ‹ѓEѓBЃ[ѓj‚М‚Ж‚±‚л‚Й";
-		mes "Ќs‚­‚©ЃH";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃѕгЃ и©¦йЁ“гЃ®йЂ”дё­гЃ®г‚€гЃ†гЃ гЃЄгЂ‚";
+		mes "гѓ«г‚¦г‚Јгѓјгѓ‹гЃ®гЃЁгЃ“г‚ЌгЃ«";
+		mes "иЎЊгЃЏгЃ‹пјџ";
 		next;
-		if(select("Ќs‚­","Ќs‚©‚И‚ў") == 2) {
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚н‚©‚Б‚ЅЃA";
-			mes "‚»‚к‚¶‚б€к‹x‚Э‚Й";
-			mes "Ћр‚Е‚а€щ‚с‚Е‚ў‚­‚©ЃH";
-			mes "ѓnѓnѓnѓnЃI";
+		if(select("иЎЊгЃЏ","иЎЊгЃ‹гЃЄгЃ„") == 2) {
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚ЏгЃ‹гЃЈгЃџгЂЃ";
+			mes "гЃќг‚ЊгЃг‚ѓдёЂдј‘гЃїгЃ«";
+			mes "й…’гЃ§г‚‚йЈІг‚“гЃ§гЃ„гЃЏгЃ‹пјџ";
+			mes "гѓЏгѓЏгѓЏгѓЏпјЃ";
 			close;
 		}
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚н‚©‚Б‚ЅЃAЌЎ‰п‚н‚№‚Д‚в‚йЃB";
-		mes "‚±‚Б‚ї‚ѕЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "г‚ЏгЃ‹гЃЈгЃџгЂЃд»Љдјљг‚ЏгЃ›гЃ¦г‚„г‚‹гЂ‚";
+		mes "гЃ“гЃЈгЃЎгЃ гЂ‚";
 		close2;
 		warp "job_gun.gat",19,15;
 		end;
 	}
 	else if(CHANGE_RB == 3) {
-		// –ў’ІЌё
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚Ь‚ѕЋЋЊ±‚М“r’†‚М‚ж‚¤‚ѕ‚ИЃB";
-		mes "ѓVѓhѓЊѓ“‚М‚Ж‚±‚л‚Й";
-		mes "Ќs‚­‚©ЃH";
+		// жњЄиЄїжџ»
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "гЃѕгЃ и©¦йЁ“гЃ®йЂ”дё­гЃ®г‚€гЃ†гЃ гЃЄгЂ‚";
+		mes "г‚·гѓ‰гѓ¬гѓігЃ®гЃЁгЃ“г‚ЌгЃ«";
+		mes "иЎЊгЃЏгЃ‹пјџ";
 		next;
-		if(select("Ќs‚­","Ќs‚©‚И‚ў") == 2) {
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚н‚©‚Б‚ЅЃA";
-			mes "‚»‚к‚¶‚б€к‹x‚Э‚Й";
-			mes "Ћр‚Е‚а€щ‚с‚Е‚ў‚­‚©ЃH";
-			mes "ѓnѓnѓnѓnЃI";
+		if(select("иЎЊгЃЏ","иЎЊгЃ‹гЃЄгЃ„") == 2) {
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚ЏгЃ‹гЃЈгЃџгЂЃ";
+			mes "гЃќг‚ЊгЃг‚ѓдёЂдј‘гЃїгЃ«";
+			mes "й…’гЃ§г‚‚йЈІг‚“гЃ§гЃ„гЃЏгЃ‹пјџ";
+			mes "гѓЏгѓЏгѓЏгѓЏпјЃ";
 			close;
 		}
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚н‚©‚Б‚ЅЃAЌЎ‰п‚н‚№‚Д‚в‚йЃB";
-		mes "‚±‚Б‚ї‚ѕЃB";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "г‚ЏгЃ‹гЃЈгЃџгЂЃд»Љдјљг‚ЏгЃ›гЃ¦г‚„г‚‹гЂ‚";
+		mes "гЃ“гЃЈгЃЎгЃ гЂ‚";
 		close2;
 		warp "job_gun.gat",120,133;
 		end;
 	}
 	else if(CHANGE_RB == 4) {
-		// –ў’ІЌё
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "ЋЋЊ±‚НЏI‚н‚Б‚Ѕ‚ж‚¤‚ѕ‚ИЃB";
-		mes "ѓVѓhѓЊѓ“‚М‚Ж‚±‚л‚Й";
-		mes "Ќs‚­‚©ЃH";
+		// жњЄиЄїжџ»
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "и©¦йЁ“гЃЇзµ‚г‚ЏгЃЈгЃџг‚€гЃ†гЃ гЃЄгЂ‚";
+		mes "г‚·гѓ‰гѓ¬гѓігЃ®гЃЁгЃ“г‚ЌгЃ«";
+		mes "иЎЊгЃЏгЃ‹пјџ";
 		next;
-		if(select("Ќs‚­","Ќs‚©‚И‚ў") == 2) {
-			mes "[ѓNѓ‹ѓxѓ‹]";
-			mes "‚н‚©‚Б‚ЅЃA";
-			mes "‚»‚к‚¶‚б€к‹x‚Э‚Й";
-			mes "Ћр‚Е‚а€щ‚с‚Е‚ў‚­‚©ЃH";
-			mes "ѓnѓnѓnѓnЃI";
+		if(select("иЎЊгЃЏ","иЎЊгЃ‹гЃЄгЃ„") == 2) {
+			mes "[г‚Їгѓ«гѓ™гѓ«]";
+			mes "г‚ЏгЃ‹гЃЈгЃџгЂЃ";
+			mes "гЃќг‚ЊгЃг‚ѓдёЂдј‘гЃїгЃ«";
+			mes "й…’гЃ§г‚‚йЈІг‚“гЃ§гЃ„гЃЏгЃ‹пјџ";
+			mes "гѓЏгѓЏгѓЏгѓЏпјЃ";
 			close;
 		}
-		mes "[ѓNѓ‹ѓxѓ‹]";
-		mes "‚н‚©‚Б‚ЅЃAЌЎ‰п‚н‚№‚Д‚в‚йЃB";
-		mes "Ћџ‚Й‰п‚¤‚Ж‚«ЃA‚Ё‘O‚Н";
-		mes "ѓЉѓxѓЉѓIѓ“‚Й‚И‚Б‚Д‚Д‚­‚к‚жЃI";
+		mes "[г‚Їгѓ«гѓ™гѓ«]";
+		mes "г‚ЏгЃ‹гЃЈгЃџгЂЃд»Љдјљг‚ЏгЃ›гЃ¦г‚„г‚‹гЂ‚";
+		mes "ж¬ЎгЃ«дјљгЃ†гЃЁгЃЌгЂЃгЃЉе‰ЌгЃЇ";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ«гЃЄгЃЈгЃ¦гЃ¦гЃЏг‚Њг‚€пјЃ";
 		close2;
 		warp "job_gun.gat",210,132;
 		end;
 	}
 }
-job_gun.gat,19,24,3	script	ѓ‹ѓEѓBЃ[ѓj#1	10063,{
+job_gun.gat,19,24,3	script	гѓ«г‚¦г‚Јгѓјгѓ‹#1	10063,{
 	if(CHANGE_RB == 2) {
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‚в‚ ЃBЊN‚Є";
-		mes "ѓNѓ‹ѓxѓ‹‚МЊѕ‚Б‚Д‚ў‚Ѕ";
-		mes "ѓЉѓxѓЉѓIѓ“Ћu–]ЋТ‚©‚ИЃH";
-		mes "Ѓ@";
-		mes "Ѓ]‰s‚ў–Ъ‚р‚µ‚ЅЏ¬•ї‚Иђl•Ё‚Є";
-		mes "Ѓ@‚ ‚И‚Ѕ‚рЊ©Џг‚°‚ЅЃ]";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "г‚„гЃ‚гЂ‚еђ›гЃЊ";
+		mes "г‚Їгѓ«гѓ™гѓ«гЃ®иЁЂгЃЈгЃ¦гЃ„гЃџ";
+		mes "гѓЄгѓ™гѓЄг‚Єгѓіеї—жњ›иЂ…гЃ‹гЃЄпјџ";
+		mes "гЂЂ";
+		mes "вЂђй‹­гЃ„з›®г‚’гЃ—гЃџе°Џжџ„гЃЄдєєз‰©гЃЊ";
+		mes "гЂЂгЃ‚гЃЄгЃџг‚’и¦‹дёЉгЃ’гЃџвЂђ";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "ѓNѓ‹ѓxѓ‹‚М‘Ф“x‚Й‚Н";
-		mes "‚і‚ј‰Х—§‚Ѕ‚№‚з‚к‚Ѕ‚±‚Ж‚ѕ‚л‚¤‚ИЃB";
-		mes "ЃcЃc‚Ь‚ ЃA‚ ‚ў‚В‚НЃA‚ ‚к‚ѕЃB";
-		mes "ѓfѓЉѓJѓVЃ[‚Є‚И‚­‚Д";
-		mes "ђl‰щ‚±‚ў‚ѕ‚Ї‚И‚с‚ѕЃB";
-		mes "Ќl‚¦‚й‚ѕ‚Ї–і‘К‚ѕЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "г‚Їгѓ«гѓ™гѓ«гЃ®ж…‹еє¦гЃ«гЃЇ";
+		mes "гЃ•гЃћи‹›з«‹гЃџгЃ›г‚‰г‚ЊгЃџгЃ“гЃЁгЃ г‚ЌгЃ†гЃЄгЂ‚";
+		mes "вЂ¦вЂ¦гЃѕгЃ‚гЂЃгЃ‚гЃ„гЃ¤гЃЇгЂЃгЃ‚г‚ЊгЃ гЂ‚";
+		mes "гѓ‡гѓЄг‚«г‚·гѓјгЃЊгЃЄгЃЏгЃ¦";
+		mes "дєєж‡ђгЃ“гЃ„гЃ гЃ‘гЃЄг‚“гЃ гЂ‚";
+		mes "иЂѓгЃ€г‚‹гЃ гЃ‘з„Ўй§„гЃ гЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "ЃcЃcѓSѓzѓ“ЃB";
-		mes "‚і‚ДЃA‚»‚к‚¶‚б‚ ";
-		mes "ЋЋЊ±‚М‘O‚Й";
-		mes "‚±‚±‚ЙЏђ–ј‚µ‚Д‚­‚кЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "вЂ¦вЂ¦г‚ґгѓ›гѓігЂ‚";
+		mes "гЃ•гЃ¦гЂЃгЃќг‚ЊгЃг‚ѓгЃ‚";
+		mes "и©¦йЁ“гЃ®е‰ЌгЃ«";
+		mes "гЃ“гЃ“гЃ«зЅІеђЌгЃ—гЃ¦гЃЏг‚ЊгЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‰дЃX‚а’Ќ€У‚·‚й‚ЄЃA";
-		mes "‹@ЉB‚в‰ЉЃA“S‚р€µ‚¤‚©‚з‚ИЃB";
-		mes "–њ‚Є€к‚М€Ч‚ѕЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "ж€‘гЂ…г‚‚жіЁж„ЏгЃ™г‚‹гЃЊгЂЃ";
+		mes "ж©џжў°г‚„з‚ЋгЂЃй‰„г‚’ж‰±гЃ†гЃ‹г‚‰гЃЄгЂ‚";
+		mes "дё‡гЃЊдёЂгЃ®з‚єгЃ гЂ‚";
 		next;
-		mes "Ѓ]ѓ‹ѓEѓBЃ[ѓj‚МЌ·‚µЏo‚µ‚ЅЋ†‚Й‚Н";
-		mes "Ѓ@Џђ–јЋТ‚НЋЋЊ±“r’†‚Й";
-		mes "Ѓ@‰ц‰д‚р‚µ‚Ѕ‚иЃA–Ѕ‚рЋё‚Б‚Д‚а";
-		mes "Ѓ@ђв‘О‚ЙђУ”C‚р–в‚н‚И‚ў‚±‚Ж‚рђѕ‚¤ЃcЃc";
-		mes "Ѓ@";
-		mes "Ѓ@‚Ж‚ў‚Б‚Ѕ‚±‚Ж‚ЄЏ‘‚©‚к‚Д‚ў‚ЅЃ]";
+		mes "вЂђгѓ«г‚¦г‚Јгѓјгѓ‹гЃ®е·®гЃ—е‡єгЃ—гЃџзґ™гЃ«гЃЇ";
+		mes "гЂЂзЅІеђЌиЂ…гЃЇи©¦йЁ“йЂ”дё­гЃ«";
+		mes "гЂЂжЂЄж€‘г‚’гЃ—гЃџг‚ЉгЂЃе‘Ѕг‚’е¤±гЃЈгЃ¦г‚‚";
+		mes "гЂЂзµ¶еЇѕгЃ«иІ¬д»»г‚’е•Џг‚ЏгЃЄгЃ„гЃ“гЃЁг‚’иЄ“гЃ†вЂ¦вЂ¦";
+		mes "гЂЂ";
+		mes "гЂЂгЃЁгЃ„гЃЈгЃџгЃ“гЃЁгЃЊж›ёгЃ‹г‚ЊгЃ¦гЃ„гЃџвЂђ";
 		next;
-		if(select("Џђ–ј‚·‚й","Џђ–ј‚µ‚И‚ў") == 2) {
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "—№‰р‚µ‚ЅЃB";
-			mes "Њ™‚И‚зЋd•ы‚Є‚И‚ў‚ИЃB";
-			mes "‹A‚Б‚Д‚ў‚ў‚јЃB";
+		if(select("зЅІеђЌгЃ™г‚‹","зЅІеђЌгЃ—гЃЄгЃ„") == 2) {
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "дє†и§ЈгЃ—гЃџгЂ‚";
+			mes "е«ЊгЃЄг‚‰д»•ж–№гЃЊгЃЄгЃ„гЃЄгЂ‚";
+			mes "её°гЃЈгЃ¦гЃ„гЃ„гЃћгЂ‚";
 			close2;
 			warp "job_gun.gat",62,27;
 			end;
 		}
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "Џ‘‚«ЏI‚н‚Б‚Ѕ‚©ЃB";
-		mes "‚»‚к‚¶‚б‚В‚ў‚Д—€‚ИЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "ж›ёгЃЌзµ‚г‚ЏгЃЈгЃџгЃ‹гЂ‚";
+		mes "гЃќг‚ЊгЃг‚ѓгЃ¤гЃ„гЃ¦жќҐгЃЄгЂ‚";
 		close2;
 		warp "job_gun.gat",117,41;
 		end;
 	}
-	mes "[ѓ‹ѓEѓBЃ[ѓj]";
-	mes "‚И‚с‚ѕЃHЃ@“№‚Й‚Е‚а–А‚Б‚Ѕ‚М‚©ЃH";
-	mes "Џу‹µ‚рЉm”F‚µ‚Д‚©‚з";
-	mes "ЋЋЊ±Џк‚Й—€‚И‚і‚ўЃB";
+	mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+	mes "гЃЄг‚“гЃ пјџгЂЂйЃ“гЃ«гЃ§г‚‚иї·гЃЈгЃџгЃ®гЃ‹пјџ";
+	mes "зЉ¶жіЃг‚’зўєиЄЌгЃ—гЃ¦гЃ‹г‚‰";
+	mes "и©¦йЁ“е ґгЃ«жќҐгЃЄгЃ•гЃ„гЂ‚";
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,117,46,3	script	ѓ‹ѓEѓBЃ[ѓj#2	10063,{
+job_gun.gat,117,46,3	script	гѓ«г‚¦г‚Јгѓјгѓ‹#2	10063,{
 	if(checkquest(12341))
 		chgquest 12341,12342;
 	if(checkquest(12342)) {
 		if(sc_onparam(SC_MONSTER_TRANSFORM,1) == 2431) {
-			mes "^0000ffЃ]‚·‚Е‚Й•Пђg’†‚Е‚·ЃB";
-			mes "Ѓ@ЋЋЊ±‰Ы‘и‚р‚·‚Ч‚ДЉ®—№‚µ‚Ѕ‚з";
-			mes "Ѓ@‘g‚Э—§‚ДЋє‚ЙЌs‚«ЃA";
-			mes "Ѓ@ѓ‹ѓEѓBЃ[ѓj‚Й";
-			mes "Ѓ@•сЌђ‚µ‚Д‚­‚ѕ‚і‚ўЃ]^000000";
+			mes "^0000ffвЂђгЃ™гЃ§гЃ«е¤‰иє«дё­гЃ§гЃ™гЂ‚";
+			mes "гЂЂи©¦йЁ“иЄІйЎЊг‚’гЃ™гЃ№гЃ¦е®Њдє†гЃ—гЃџг‚‰";
+			mes "гЂЂзµ„гЃїз«‹гЃ¦е®¤гЃ«иЎЊгЃЌгЂЃ";
+			mes "гЂЂгѓ«г‚¦г‚Јгѓјгѓ‹гЃ«";
+			mes "гЂЂе ±е‘ЉгЃ—гЃ¦гЃЏгЃ гЃ•гЃ„вЂђ^000000";
 			close;
 		}
 		if(countitem(6746)) {
 			delitem 6746,countitem(6746);
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "ЋЋЊ±‚Е—]‚Б‚Ѕ“Sђ»‰БЌH•Ё‚Н‰сЋы‚·‚йЃB";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "и©¦йЁ“гЃ§дЅ™гЃЈгЃџй‰„иЈЅеЉ е·Ґз‰©гЃЇе›ћеЏЋгЃ™г‚‹гЂ‚";
 			next;
 		}
 		if(countitem(6747)) {
 			delitem 6747,countitem(6747);
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "‹KЉi“Sђ»‰БЌH•Ё‚рЋќ‚Б‚Д‚ў‚й‚ИЃB";
-			mes "ЋЋЊ±‚Е—]‚Б‚Ѕ“Sђ»‰БЌH•Ё‚Н‰сЋы‚·‚йЃB";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "и¦Џж јй‰„иЈЅеЉ е·Ґз‰©г‚’жЊЃгЃЈгЃ¦гЃ„г‚‹гЃЄгЂ‚";
+			mes "и©¦йЁ“гЃ§дЅ™гЃЈгЃџй‰„иЈЅеЉ е·Ґз‰©гЃЇе›ћеЏЋгЃ™г‚‹гЂ‚";
 			next;
 		}
 		if(countitem(13118)) {
 			delitem 13118,1;
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "Џe‚НЉ®ђ¬‚µ‚Д‚ў‚й‚ЄЃA";
-			mes "Љщ‚ЙЋћЉФђШ‚к‚ЕЋёЉi‚ѕЃB";
-			mes "Ћc”O‚ѕ‚Є‚»‚МЏe‚Н‰сЋы‚·‚й‚јЃB";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "йЉѓгЃЇе®Њж€ђгЃ—гЃ¦гЃ„г‚‹гЃЊгЂЃ";
+			mes "ж—ўгЃ«ж™‚й–“е€‡г‚ЊгЃ§е¤±ж јгЃ гЂ‚";
+			mes "ж®‹еїµгЃ гЃЊгЃќгЃ®йЉѓгЃЇе›ћеЏЋгЃ™г‚‹гЃћгЂ‚";
 			next;
 		}
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "€к“x‚µ‚©b‚і‚И‚ў‚©‚з";
-		mes "‚ж‚­•·‚«‚И‚і‚ўЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "дёЂеє¦гЃ—гЃ‹и©±гЃ•гЃЄгЃ„гЃ‹г‚‰";
+		mes "г‚€гЃЏиЃћгЃЌгЃЄгЃ•гЃ„гЂ‚";
 		next;
-		menu "‚Н‚ў",-;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‚±‚±‚Н’’•Ё‚р€µ‚Б‚Д‚ў‚йЏкЏЉ‚ѕЃB";
-		mes "‚ў‚Ѕ‚й‚Ж‚±‚л‚Е“Sђ»‰БЌH•Ё‚Є";
-		mes "ђ¶ЋY‚і‚к‚Д‚ў‚йЃB";
+		menu "гЃЇгЃ„",-;
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "гЃ“гЃ“гЃЇй‹із‰©г‚’ж‰±гЃЈгЃ¦гЃ„г‚‹е ґж‰ЂгЃ гЂ‚";
+		mes "гЃ„гЃџг‚‹гЃЁгЃ“г‚ЌгЃ§й‰„иЈЅеЉ е·Ґз‰©гЃЊ";
+		mes "з”џз”ЈгЃ•г‚ЊгЃ¦гЃ„г‚‹гЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "ѓЉѓxѓЉѓIѓ“‚М€к”Ф‚МЉо–{‚НЃA";
-		mes "•ђЉн‚Й‘О‚·‚йЌL‚ў’mЋЇЃB";
-		mes "‚±‚МЋЋЊ±‚Е‚НЃA";
-		mes "•K—v‚ИЌЮ—ї‚р‘I‚С”І‚«ЃA";
-		mes "ЊИ‚МЋи‚Е’јђЪ";
-		mes "ЏeЉн‚р‘g‚Э—§‚Д‚й‚±‚Ж‚Й‚И‚йЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "гѓЄгѓ™гѓЄг‚ЄгѓігЃ®дёЂз•ЄгЃ®еџєжњ¬гЃЇгЂЃ";
+		mes "ж­¦е™ЁгЃ«еЇѕгЃ™г‚‹еєѓгЃ„зџҐи­гЂ‚";
+		mes "гЃ“гЃ®и©¦йЁ“гЃ§гЃЇгЂЃ";
+		mes "еї…и¦ЃгЃЄжќђж–™г‚’йЃёгЃіжЉњгЃЌгЂЃ";
+		mes "е·±гЃ®ж‰‹гЃ§з›ґжЋҐ";
+		mes "йЉѓе™Ёг‚’зµ„гЃїз«‹гЃ¦г‚‹гЃ“гЃЁгЃ«гЃЄг‚‹гЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "ЊN‚М‚в‚й‚Ч‚«‚±‚Ж‚НЃA";
-		mes "“м‚МЏo“ь‚иЊы‹Я‚­‚Й‚ ‚й";
-		mes "^0000FF—nЌzFђ§Њд‹@^000000‚р‘ЂЌм‚µ‚Д";
-		mes "Ћж‚иЏo‚№‚й“Sђ»‰БЌH•Ё‚М’†‚©‚зЃA";
-		mes "‹KЉi‚ЙЌ‡‚¤‚а‚М‚р^FF00002ЊВ^000000‘I‚Ф‚±‚Ж‚ѕЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "еђ›гЃ®г‚„г‚‹гЃ№гЃЌгЃ“гЃЁгЃЇгЂЃ";
+		mes "еЌ—гЃ®е‡єе…Ґг‚ЉеЏЈиї‘гЃЏгЃ«гЃ‚г‚‹";
+		mes "^0000FFжє¶й‰±з‚‰е€¶еѕЎж©џ^000000г‚’ж“ЌдЅњгЃ—гЃ¦";
+		mes "еЏ–г‚Ље‡єгЃ›г‚‹й‰„иЈЅеЉ е·Ґз‰©гЃ®дё­гЃ‹г‚‰гЂЃ";
+		mes "и¦Џж јгЃ«еђ€гЃ†г‚‚гЃ®г‚’^FF00002еЂ‹^000000йЃёгЃ¶гЃ“гЃЁгЃ гЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "2ЊВ“Sђ»‰БЌH•Ё‚рЉm•Ы‚µ‚Ѕ‚зЃA";
-		mes "—Ч‚М‘g‚Э—§‚ДЋє‚Е";
-		mes "ЏeЉн‚р‘g‚Э—§‚Д‚И‚і‚ўЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "2еЂ‹й‰„иЈЅеЉ е·Ґз‰©г‚’зўєдїќгЃ—гЃџг‚‰гЂЃ";
+		mes "йљЈгЃ®зµ„гЃїз«‹гЃ¦е®¤гЃ§";
+		mes "йЉѓе™Ёг‚’зµ„гЃїз«‹гЃ¦гЃЄгЃ•гЃ„гЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "ЏeЉн‘g‚Э—§‚Д‚МЋћЉФ‚Н";
-		mes "^FF00003•Є^000000ЃB";
-		mes "‹ZЏp‚Ж’mЋЇ‚ЖЃAѓXѓsЃ[ѓh‚Є";
-		mes "—v‹Ѓ‚і‚к‚й‚јЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "йЉѓе™Ёзµ„гЃїз«‹гЃ¦гЃ®ж™‚й–“гЃЇ";
+		mes "^FF00003е€†^000000гЂ‚";
+		mes "жЉЂиЎ“гЃЁзџҐи­гЃЁгЂЃг‚№гѓ”гѓјгѓ‰гЃЊ";
+		mes "и¦Ѓж±‚гЃ•г‚Њг‚‹гЃћгЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "Љ®ђ¬‚µ‚ЅЏeЉн‚Н—Ч‚М•”‰®‚ЕЋу‚ЇЋж‚л‚¤ЃB";
-		mes "ђ§ЊАЋћЉФ‚р‚н‚©‚и‚в‚·‚­‚·‚й‚Ѕ‚Я‚ЙЃA";
-		mes "ЊN‚МЉOЊ©‚р•П‚¦‚Д‚а‚з‚¤‚јЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "е®Њж€ђгЃ—гЃџйЉѓе™ЁгЃЇйљЈгЃ®йѓЁе±‹гЃ§еЏ—гЃ‘еЏ–г‚ЌгЃ†гЂ‚";
+		mes "е€¶й™ђж™‚й–“г‚’г‚ЏгЃ‹г‚Љг‚„гЃ™гЃЏгЃ™г‚‹гЃџг‚ЃгЃ«гЂЃ";
+		mes "еђ›гЃ®е¤–и¦‹г‚’е¤‰гЃ€гЃ¦г‚‚г‚‰гЃ†гЃћгЂ‚";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‚ї‚И‚Э‚ЙЃA•ПђgЊг‚МЋp‚НЋ„‚МЋп–Ў‚ѕЃB";
-		mes "ЉX‚ЕЊ©‚©‚Ї‚Ѕ‚±‚Ж‚Є‚ ‚й‚с‚ѕ‚ЄЃA";
-		mes "—ќ‘z‚Мѓ^ѓCѓv‚ѕ‚Б‚Ѕ‚М‚Е‚ИЃB";
-		mes "‚»‚к‚ѕ‚Б‚Ѕ‚зѓ‚ѓ`ѓxЃ[ѓVѓ‡ѓ“‚Є";
-		mes "‚ ‚Є‚й‚ѕ‚л‚¤ЃH";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "гЃЎгЃЄгЃїгЃ«гЂЃе¤‰иє«еѕЊгЃ®е§їгЃЇз§ЃгЃ®и¶Је‘ігЃ гЂ‚";
+		mes "иЎ—гЃ§и¦‹гЃ‹гЃ‘гЃџгЃ“гЃЁгЃЊгЃ‚г‚‹г‚“гЃ гЃЊгЂЃ";
+		mes "зђ†жѓігЃ®г‚їг‚¤гѓ—гЃ гЃЈгЃџгЃ®гЃ§гЃЄгЂ‚";
+		mes "гЃќг‚ЊгЃ гЃЈгЃџг‚‰гѓўгѓЃгѓ™гѓјг‚·гѓ§гѓігЃЊ";
+		mes "гЃ‚гЃЊг‚‹гЃ г‚ЌгЃ†пјџ";
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "^0000ff3•Є‚р’ґ‚¦‚Д•П‘•‚Є‰р‚Ї‚й‚Ж";
-		mes "ЋЋЊ±‚НЋё”sЃBЌДЋЋЊ±^000000‚ѕЃB";
-		mes "‚№‚ў‚є‚ў—г‚Э‚Ѕ‚Ь‚¦ЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "^0000ff3е€†г‚’и¶…гЃ€гЃ¦е¤‰иЈ…гЃЊи§ЈгЃ‘г‚‹гЃЁ";
+		mes "и©¦йЁ“гЃЇе¤±ж•—гЂ‚е†Ќи©¦йЁ“^000000гЃ гЂ‚";
+		mes "гЃ›гЃ„гЃњгЃ„еЉ±гЃїгЃџгЃѕгЃ€гЂ‚";
 		viewpoint 1, 165, 18, 1, 0xFFFF00;
 		sc_start SC_MONSTER_TRANSFORM,180000,2431;
 		close;
 	}
-	mes "[ѓ‹ѓEѓBЃ[ѓj]";
-	mes "‚И‚с‚ѕЃHЃ@“№‚Й‚Е‚а–А‚Б‚Ѕ‚М‚©ЃH";
-	mes "Џу‹µ‚рЉm”F‚µ‚Д‚©‚з";
-	mes "ЋЋЊ±Џк‚Й—€‚И‚і‚ўЃB";
+	mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+	mes "гЃЄг‚“гЃ пјџгЂЂйЃ“гЃ«гЃ§г‚‚иї·гЃЈгЃџгЃ®гЃ‹пјџ";
+	mes "зЉ¶жіЃг‚’зўєиЄЌгЃ—гЃ¦гЃ‹г‚‰";
+	mes "и©¦йЁ“е ґгЃ«жќҐгЃЄгЃ•гЃ„гЂ‚";
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,198,39,3	script	ѓ‹ѓEѓBЃ[ѓj#3	10063,{
+job_gun.gat,198,39,3	script	гѓ«г‚¦г‚Јгѓјгѓ‹#3	10063,{
 	if(checkquest(12342)) {
 		if(sc_onparam(SC_MONSTER_TRANSFORM,1) != 2431) {
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "ЋћЉФ‚р‰Я‚¬‚Д‚ў‚йЃBЋёЉi‚ѕЃB";
-			mes "—]‚Б‚ЅЌЮ—ї‚Н‚·‚Ч‚Д‰сЋы‚·‚йЃB";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "ж™‚й–“г‚’йЃЋгЃЋгЃ¦гЃ„г‚‹гЂ‚е¤±ж јгЃ гЂ‚";
+			mes "дЅ™гЃЈгЃџжќђж–™гЃЇгЃ™гЃ№гЃ¦е›ћеЏЋгЃ™г‚‹гЂ‚";
 			delitem 6746,countitem(6746);
 			delitem 6747,countitem(6747);
 			next;
 			if(countitem(13118)) {
-				// –ў’ІЌё
+				// жњЄиЄїжџ»
 				delitem 13118,1;
-				mes "[ѓ‹ѓEѓBЃ[ѓj]";
-				mes "Џe‚НЉ®ђ¬‚µ‚Д‚ў‚й‚ЄЃA";
-				mes "Љщ‚ЙЋћЉФђШ‚к‚ЕЋёЉi‚ѕЃB";
-				mes "Ћc”O‚ѕ‚Є‚»‚МЏe‚Н‰сЋы‚·‚й‚јЃB";
+				mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+				mes "йЉѓгЃЇе®Њж€ђгЃ—гЃ¦гЃ„г‚‹гЃЊгЂЃ";
+				mes "ж—ўгЃ«ж™‚й–“е€‡г‚ЊгЃ§е¤±ж јгЃ гЂ‚";
+				mes "ж®‹еїµгЃ гЃЊгЃќгЃ®йЉѓгЃЇе›ћеЏЋгЃ™г‚‹гЃћгЂ‚";
 				next;
 			}
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "‚і‚ ЃA‚а‚¤€к“x‚ѕЃB";
-			mes "—г‚Э‚Ѕ‚Ь‚¦ЃB";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "гЃ•гЃ‚гЂЃг‚‚гЃ†дёЂеє¦гЃ гЂ‚";
+			mes "еЉ±гЃїгЃџгЃѕгЃ€гЂ‚";
 			close2;
 			warp "job_gun.gat",117,41;
 			end;
 		}
 		if(countitem(13118) == 0) {
-			mes "[ѓ‹ѓEѓBЃ[ѓj]";
-			mes "ЏI‚н‚Б‚Ѕ‚©ЃH";
-			mes "ЃcЃc‚»‚к‚Й‚µ‚Д‚Н";
-			mes "Љ®ђ¬‚µ‚ЅЏe‚ЄЊ©“–‚Ѕ‚з‚И‚ў‚ж‚¤‚ѕ‚ЄЃH";
+			mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+			mes "зµ‚г‚ЏгЃЈгЃџгЃ‹пјџ";
+			mes "вЂ¦вЂ¦гЃќг‚ЊгЃ«гЃ—гЃ¦гЃЇ";
+			mes "е®Њж€ђгЃ—гЃџйЉѓгЃЊи¦‹еЅ“гЃџг‚‰гЃЄгЃ„г‚€гЃ†гЃ гЃЊпјџ";
 			close;
 		}
 		delitem 13118,1;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‚ж‚µЃA‹}‚ў‚ЕЌм‚Б‚Ѕ‚ж‚¤‚ѕ‚©‚з";
-		mes "–њ‘S‚МЏу‘Ф‚Е‚Н‚И‚ў‚ЄЃA";
-		mes "‚Ж‚Й‚©‚­Ќ‡Љi‚ѕЃB";
-		mes "—]‚Б‚ЅЌЮ—ї‚Н‚·‚Ч‚Д‰сЋы‚·‚йЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "г‚€гЃ—гЂЃжЂҐгЃ„гЃ§дЅњгЃЈгЃџг‚€гЃ†гЃ гЃ‹г‚‰";
+		mes "дё‡е…ЁгЃ®зЉ¶ж…‹гЃ§гЃЇгЃЄгЃ„гЃЊгЂЃ";
+		mes "гЃЁгЃ«гЃ‹гЃЏеђ€ж јгЃ гЂ‚";
+		mes "дЅ™гЃЈгЃџжќђж–™гЃЇгЃ™гЃ№гЃ¦е›ћеЏЋгЃ™г‚‹гЂ‚";
 		delitem 6746,countitem(6746);
 		delitem 6747,countitem(6747);
 		chgquest 12342,121930;
 		set CHANGE_RB,3;
 		next;
-		mes "[ѓ‹ѓEѓBЃ[ѓj]";
-		mes "‚»‚к‚¶‚б‚ ЃAЋџ‚МѓRЃ[ѓX‚Й€Д“а‚µ‚ж‚¤ЃB";
-		mes "Ћџ‚НѓVѓhѓЊѓ“‚Є";
-		mes "ЊN‚М‹і€з‚р’S“–‚·‚йЃB";
+		mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+		mes "гЃќг‚ЊгЃг‚ѓгЃ‚гЂЃж¬ЎгЃ®г‚ігѓјг‚№гЃ«жЎ€е†…гЃ—г‚€гЃ†гЂ‚";
+		mes "ж¬ЎгЃЇг‚·гѓ‰гѓ¬гѓігЃЊ";
+		mes "еђ›гЃ®ж•™и‚Іг‚’ж‹…еЅ“гЃ™г‚‹гЂ‚";
 		close2;
 		warp "job_gun.gat",120,133;
 		end;
 	}
-	mes "[ѓ‹ѓEѓBЃ[ѓj]";
-	mes "‚И‚с‚ѕЃHЃ@“№‚Й‚Е‚а–А‚Б‚Ѕ‚М‚©ЃH";
-	mes "Џу‹µ‚рЉm”F‚µ‚Д‚©‚з";
-	mes "ЋЋЊ±Џк‚Й—€‚И‚і‚ўЃB";
+	mes "[гѓ«г‚¦г‚Јгѓјгѓ‹]";
+	mes "гЃЄг‚“гЃ пјџгЂЂйЃ“гЃ«гЃ§г‚‚иї·гЃЈгЃџгЃ®гЃ‹пјџ";
+	mes "зЉ¶жіЃг‚’зўєиЄЌгЃ—гЃ¦гЃ‹г‚‰";
+	mes "и©¦йЁ“е ґгЃ«жќҐгЃЄгЃ•гЃ„гЂ‚";
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,165,18,1	script	—nЌzFђ§Њд‹@#1	844,{
+job_gun.gat,165,18,1	script	жє¶й‰±з‚‰е€¶еѕЎж©џ#1	844,{
 	if(checkquest(12342)) {
-		mes "Ѓ]—nЌzF‚©‚зЉ®ђ¬‚µ‚Ѕђ»•i‚р";
-		mes "Ѓ@’ЉЏo‚µ‚Ь‚·‚©ЃHЃ]";
+		mes "вЂђжє¶й‰±з‚‰гЃ‹г‚‰е®Њж€ђгЃ—гЃџиЈЅе“Ѓг‚’";
+		mes "гЂЂжЉЅе‡єгЃ—гЃѕгЃ™гЃ‹пјџвЂђ";
 		next;
-		if(select("’ЉЏo‚·‚й","‚в‚Я‚й") == 2) {
-			mes "Ѓ]Ќм‹Ж‚р’†Ћ~‚µЃA";
-			mes "Ѓ@‘Т‹@ѓ‚Ѓ[ѓh‚Й“]Љ·‚µ‚Ь‚·Ѓ]";
+		if(select("жЉЅе‡єгЃ™г‚‹","г‚„г‚Ѓг‚‹") == 2) {
+			mes "вЂђдЅњжҐ­г‚’дё­ж­ўгЃ—гЂЃ";
+			mes "гЂЂеѕ…ж©џгѓўгѓјгѓ‰гЃ«и»ўжЏ›гЃ—гЃѕгЃ™вЂђ";
 			close;
 		}
-		donpcevent "—nЌzFђ§Њд‹@#2::OnStart";
-		hideonnpc "—nЌzFђ§Њд‹@#1";
-		mes "Ѓ]—nЌzFђ§Њд‹@ZX-3100ЃFЌм‹Ж‚рЉJЋnЃ]";
+		donpcevent "жє¶й‰±з‚‰е€¶еѕЎж©џ#2::OnStart";
+		hideonnpc "жє¶й‰±з‚‰е€¶еѕЎж©џ#1";
+		mes "вЂђжє¶й‰±з‚‰е€¶еѕЎж©џZX-3100пјљдЅњжҐ­г‚’й–‹е§‹вЂђ";
 		close;
 	}
-	mes "Ѓ]‹–‰В‚Є–і‚ўђl‚Н‘ЂЌм‚Е‚«‚Ь‚№‚сЃ]";
+	mes "вЂђиЁ±еЏЇгЃЊз„ЎгЃ„дєєгЃЇж“ЌдЅњгЃ§гЃЌгЃѕгЃ›г‚“вЂђ";
 	close;
 }
 
-job_gun.gat,165,18,1	script	—nЌzFђ§Њд‹@#2	844,{
+job_gun.gat,165,18,1	script	жє¶й‰±з‚‰е€¶еѕЎж©џ#2	844,{
 	if(checkquest(12342)) {
-		mes "Ѓ]Љ®ђ¬‚µ‚Ѕ“Sђ»‰БЌH•Ё‚М";
-		mes "Ѓ@’ЉЏo‚ЄЌs‚н‚к‚Д‚ў‚Ь‚·ЃB";
-		mes "Ѓ@Љ®—№‚·‚й‚Ь‚Е";
-		mes "Ѓ@”C€У‚МЌм‹Ж‚Н‚Е‚«‚Ь‚№‚сЃ]";
+		mes "вЂђе®Њж€ђгЃ—гЃџй‰„иЈЅеЉ е·Ґз‰©гЃ®";
+		mes "гЂЂжЉЅе‡єгЃЊиЎЊг‚Џг‚ЊгЃ¦гЃ„гЃѕгЃ™гЂ‚";
+		mes "гЂЂе®Њдє†гЃ™г‚‹гЃѕгЃ§";
+		mes "гЂЂд»»ж„ЏгЃ®дЅњжҐ­гЃЇгЃ§гЃЌгЃѕгЃ›г‚“вЂђ";
 		close;
 	}
-	mes "Ѓ]‹–‰В‚Є–і‚ўђl‚Н‘ЂЌм‚Е‚«‚Ь‚№‚сЃ]";
+	mes "вЂђиЁ±еЏЇгЃЊз„ЎгЃ„дєєгЃЇж“ЌдЅњгЃ§гЃЌгЃѕгЃ›г‚“вЂђ";
 	close;
 OnStart:
-	hideoffnpc "—nЌzFђ§Њд‹@#2";
+	hideoffnpc "жє¶й‰±з‚‰е€¶еѕЎж©џ#2";
 	sleep 3000;
-	announce "—nЌzFђ§Њд‹@ : —nЌzF‚©‚з“Sђ»‰БЌH•Ё‚М’ЉЏo‚рЉJЋn‚µ‚Ь‚·ЃBђ¶ЋYѓ‰ѓCѓ“‚Й‚Д‘Т‹@‚µ‚Д‚­‚ѕ‚і‚ўЃB", 0x9, 0x00ff44, 0x190, 12, 0, 0;
+	announce "жє¶й‰±з‚‰е€¶еѕЎж©џ : жє¶й‰±з‚‰гЃ‹г‚‰й‰„иЈЅеЉ е·Ґз‰©гЃ®жЉЅе‡єг‚’й–‹е§‹гЃ—гЃѕгЃ™гЂ‚з”џз”Јгѓ©г‚¤гѓігЃ«гЃ¦еѕ…ж©џгЃ—гЃ¦гЃЏгЃ гЃ•гЃ„гЂ‚", 0x9, 0x00ff44, 0x190, 12, 0, 0;
 	sleep 500;
 	for(set '@i,0; '@i<30; set '@i,'@i+1) {
 		set '@r,rand(1,100);
 		if('@r < 33)
-			donpcevent "‰Б”MF#3::OnStart";
+			donpcevent "еЉ з†±з‚‰#3::OnStart";
 		else if('@r < 66)
-			donpcevent "‰Б”MF#4::OnStart";
+			donpcevent "еЉ з†±з‚‰#4::OnStart";
 		else
-			donpcevent "‰Б”MF#5::OnStart";
+			donpcevent "еЉ з†±з‚‰#5::OnStart";
 		sleep 200;
 		set '@x,rand(127,143);
 		set '@y,rand(26,29);
@@ -1029,17 +1029,17 @@ OnStart:
 		}
 		sleep 500;
 	}
-	announce "—nЌzFђ§Њд‹@ : ’ЉЏoЌм‹Ж‚рЉ®—№‚ў‚Ѕ‚µ‚Ь‚·ЃB", 0x9, 0x00ff44, 0x190, 12, 0, 0;
+	announce "жє¶й‰±з‚‰е€¶еѕЎж©џ : жЉЅе‡єдЅњжҐ­г‚’е®Њдє†гЃ„гЃџгЃ—гЃѕгЃ™гЂ‚", 0x9, 0x00ff44, 0x190, 12, 0, 0;
 	sleep 100;
-	hideonnpc "—nЌzFђ§Њд‹@#2";
-	hideoffnpc "—nЌzFђ§Њд‹@#1";
+	hideonnpc "жє¶й‰±з‚‰е€¶еѕЎж©џ#2";
+	hideoffnpc "жє¶й‰±з‚‰е€¶еѕЎж©џ#1";
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-job_gun.gat,130,31,1	script	‰Б”MF#3	844,{
+job_gun.gat,130,31,1	script	еЉ з†±з‚‰#3	844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1048,7 +1048,7 @@ OnStart:
 	end;
 }
 
-job_gun.gat,136,31,1	script	‰Б”MF#4	844,{
+job_gun.gat,136,31,1	script	еЉ з†±з‚‰#4	844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1057,7 +1057,7 @@ OnStart:
 	end;
 }
 
-job_gun.gat,141,31,1	script	‰Б”MF#5	844,{
+job_gun.gat,141,31,1	script	еЉ з†±з‚‰#5	844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1066,71 +1066,71 @@ OnStart:
 	end;
 }
 
-job_gun.gat,214,36,1	script	‘SЋ©“®‹а•~#1	844,{
+job_gun.gat,214,36,1	script	е…Ёи‡Єе‹•й‡‘ж•·#1	844,{
 	if(checkquest(12342)) {
 		if(countitem(13118)) {
-			mes "Ѓ]”сђі‹Kѓ‹Ѓ[ѓg‚Еђёђ»‚і‚к‚Ѕ";
-			mes "Ѓ@ЏeЉн‚МЌ­ђХ‚р”­Њ©ЃB";
-			mes "Ѓ@ЉЗ—ќЋТѓ‹ѓEѓBЃ[ѓj‚Й";
-			mes "Ѓ@•сЌђ‚µ‚Д‚­‚ѕ‚і‚ўЃ]";
+			mes "вЂђйќћж­Ји¦Џгѓ«гѓјгѓ€гЃ§зІѕиЈЅгЃ•г‚ЊгЃџ";
+			mes "гЂЂйЉѓе™ЁгЃ®з—•и·Ўг‚’з™єи¦‹гЂ‚";
+			mes "гЂЂз®Ўзђ†иЂ…гѓ«г‚¦г‚Јгѓјгѓ‹гЃ«";
+			mes "гЂЂе ±е‘ЉгЃ—гЃ¦гЃЏгЃ гЃ•гЃ„вЂђ";
 			close;
 		}
 		if(countitem(6747) < 2) {
-			mes "Ѓ]‹–‰В‚Є–і‚ўђl‚Н‘ЂЌм‚Е‚«‚Ь‚№‚сЃ]";
+			mes "вЂђиЁ±еЏЇгЃЊз„ЎгЃ„дєєгЃЇж“ЌдЅњгЃ§гЃЌгЃѕгЃ›г‚“вЂђ";
 			next;
-			mes "Ѓ]—nЌzFђ§Њд‹@‚рЋg—p‚µ‚Д";
-			mes "Ѓ@Љ®ђ¬‚µ‚Ѕђ»•i‚р";
-			mes "Ѓ@’ЉЏo‚µ‚Д‚­‚ѕ‚і‚ўЃ]";
+			mes "вЂђжє¶й‰±з‚‰е€¶еѕЎж©џг‚’дЅїз”ЁгЃ—гЃ¦";
+			mes "гЂЂе®Њж€ђгЃ—гЃџиЈЅе“Ѓг‚’";
+			mes "гЂЂжЉЅе‡єгЃ—гЃ¦гЃЏгЃ гЃ•гЃ„вЂђ";
 			viewpoint 1, 165, 18, 1, 0xFFFF00;
 			close;
 		}
-		mes "Ѓ]‘SЋ©“®‹а•~‚Е‹KЉi‚Й“–‚Д‚Н‚Ь‚й";
-		mes "Ѓ@“Sђ»‰БЌH•Ё‚рЋg—p‚µЃA";
-		mes "Ѓ@ЏeЉнђ»‘ў‚рЌs‚ў‚Ь‚·‚©ЃHЃ]";
+		mes "вЂђе…Ёи‡Єе‹•й‡‘ж•·гЃ§и¦Џж јгЃ«еЅ“гЃ¦гЃЇгЃѕг‚‹";
+		mes "гЂЂй‰„иЈЅеЉ е·Ґз‰©г‚’дЅїз”ЁгЃ—гЂЃ";
+		mes "гЂЂйЉѓе™ЁиЈЅйЂ г‚’иЎЊгЃ„гЃѕгЃ™гЃ‹пјџвЂђ";
 		next;
-		if(select("ЉJЋn‚·‚й","‚в‚Я‚й") == 2) {
-			mes "Ѓ]‘SЋ©“®‹а•~‚Мђ§Њд‚р’†Ћ~‚µ‚Ь‚·Ѓ]";
+		if(select("й–‹е§‹гЃ™г‚‹","г‚„г‚Ѓг‚‹") == 2) {
+			mes "вЂђе…Ёи‡Єе‹•й‡‘ж•·гЃ®е€¶еѕЎг‚’дё­ж­ўгЃ—гЃѕгЃ™вЂђ";
 			close;
 		}
 		misceffect 101;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "Ѓi‘SЋ©“®‹а•~‚рЋg—p‚µЃA";
-		mes "Ѓ@ђіЏн‚И•ђЉн‚рђ»‘ў‚µ‚ЅЃB";
-		mes "Ѓ@•ПђgЊш‰К‚ЄЏБ‚¦‚й‘O‚Й";
-		mes "Ѓ@•сЌђ‚µ‚ж‚¤Ѓj";
+		mes "пј€е…Ёи‡Єе‹•й‡‘ж•·г‚’дЅїз”ЁгЃ—гЂЃ";
+		mes "гЂЂж­ЈеёёгЃЄж­¦е™Ёг‚’иЈЅйЂ гЃ—гЃџгЂ‚";
+		mes "гЂЂе¤‰иє«еЉ№жћњгЃЊж¶€гЃ€г‚‹е‰ЌгЃ«";
+		mes "гЂЂе ±е‘ЉгЃ—г‚€гЃ†пј‰";
 		delitem 6747,2;
 		getitem 13118,1;
 		close;
 	}
-	mes "Ѓ]‹–‰В‚Є–і‚ўђl‚Н‘ЂЌм‚Е‚«‚Ь‚№‚сЃ]";
+	mes "вЂђиЁ±еЏЇгЃЊз„ЎгЃ„дєєгЃЇж“ЌдЅњгЃ§гЃЌгЃѕгЃ›г‚“вЂђ";
 	close;
 }
 
-job_gun.gat,95,148,10,10	monster	”сЋЛЊ‚•W“I	3170,3,180000,0,0
-job_gun.gat,95,148,10,10	monster	ЋЛЊ‚•W“I	3169,5,180000,0,0
-job_gun.gat,95,110,10,15	monster	”сЋЛЊ‚•W“I	3170,3,180000,0,0
-job_gun.gat,95,110,10,15	monster	ЋЛЊ‚•W“I	3169,17,180000,0,0
-job_gun.gat,140,100,15,10	monster	”сЋЛЊ‚•W“I	3170,13,180000,0,0
-job_gun.gat,140,100,15,10	monster	ЋЛЊ‚•W“I	3169,7,180000,0,0
-job_gun.gat,140,150,15,10	monster	”сЋЛЊ‚•W“I	3170,4,180000,0,0
-job_gun.gat,140,150,15,10	monster	ЋЛЊ‚•W“I	3169,4,180000,0,0
-job_gun.gat,115,160,10,10	monster	”сЋЛЊ‚•W“I	3170,8,180000,0,0
-job_gun.gat,115,160,10,10	monster	ЋЛЊ‚•W“I	3169,10,180000,0,0
+job_gun.gat,95,148,10,10	monster	йќће°„ж’ѓжЁ™зљ„	3170,3,180000,0,0
+job_gun.gat,95,148,10,10	monster	е°„ж’ѓжЁ™зљ„	3169,5,180000,0,0
+job_gun.gat,95,110,10,15	monster	йќће°„ж’ѓжЁ™зљ„	3170,3,180000,0,0
+job_gun.gat,95,110,10,15	monster	е°„ж’ѓжЁ™зљ„	3169,17,180000,0,0
+job_gun.gat,140,100,15,10	monster	йќће°„ж’ѓжЁ™зљ„	3170,13,180000,0,0
+job_gun.gat,140,100,15,10	monster	е°„ж’ѓжЁ™зљ„	3169,7,180000,0,0
+job_gun.gat,140,150,15,10	monster	йќће°„ж’ѓжЁ™зљ„	3170,4,180000,0,0
+job_gun.gat,140,150,15,10	monster	е°„ж’ѓжЁ™зљ„	3169,4,180000,0,0
+job_gun.gat,115,160,10,10	monster	йќће°„ж’ѓжЁ™зљ„	3170,8,180000,0,0
+job_gun.gat,115,160,10,10	monster	е°„ж’ѓжЁ™зљ„	3169,10,180000,0,0
 
-job_gun.gat,120,138,3	script	ѓVѓhѓЊѓ“#1	10062,{
+job_gun.gat,120,138,3	script	г‚·гѓ‰гѓ¬гѓі#1	10062,{
 	if(CHANGE_RB == 3) {
 		if(checkquest(12343)) {
 			if(checkquest(12343)&4 && checkquest(12344)&4 == 0 && sc_onparam(SC_MONSTER_TRANSFORM,1) == 2431) {
-				mes "[ѓVѓhѓЊѓ“]";
-				mes "‚У‚ЮЃA‘fђ°‚з‚µ‚ў‚ИЃI";
-				mes "‚±‚¤‚аЉИ’P‚ЙѓNѓЉѓA‚і‚к‚й‚Ж‚Н";
-				mes "Ћv‚Б‚Д‚ў‚И‚©‚Б‚Ѕ‚жЃB";
+				mes "[г‚·гѓ‰гѓ¬гѓі]";
+				mes "гЃµг‚ЂгЂЃзґ ж™ґг‚‰гЃ—гЃ„гЃЄпјЃ";
+				mes "гЃ“гЃ†г‚‚з°ЎеЌгЃ«г‚ЇгѓЄг‚ўгЃ•г‚Њг‚‹гЃЁгЃЇ";
+				mes "жЂќгЃЈгЃ¦гЃ„гЃЄгЃ‹гЃЈгЃџг‚€гЂ‚";
 				next;
-				mes "[ѓVѓhѓЊѓ“]";
-				mes "ЌЕЏIЋЋЊ±‚Н‚±‚к‚ЕЏI‚н‚и‚ѕЃB";
-				mes "ЊN‚НЉO‚Е‘Т‚Б‚Д‚Д‚­‚кЃB";
-				mes "‘ј‚М‹іЉЇ‚М•]‰ї‚р‰сЋы‚µ‚Д";
-				mes "Ћ„‚ЄЋЋЊ±Њ‹‰К‚р“`‚¦‚ж‚¤ЃB";
+				mes "[г‚·гѓ‰гѓ¬гѓі]";
+				mes "жњЂзµ‚и©¦йЁ“гЃЇгЃ“г‚ЊгЃ§зµ‚г‚Џг‚ЉгЃ гЂ‚";
+				mes "еђ›гЃЇе¤–гЃ§еѕ…гЃЈгЃ¦гЃ¦гЃЏг‚ЊгЂ‚";
+				mes "д»–гЃ®ж•™е®гЃ®и©•дѕЎг‚’е›ћеЏЋгЃ—гЃ¦";
+				mes "з§ЃгЃЊи©¦йЁ“зµђжћњг‚’дјќгЃ€г‚€гЃ†гЂ‚";
 				delquest 12343;
 				delquest 12344;
 				setquest 12345;
@@ -1139,15 +1139,15 @@ job_gun.gat,120,138,3	script	ѓVѓhѓЊѓ“#1	10062,{
 				warp "job_gun.gat",210,132;
 				end;
 			}
-			mes "[ѓVѓhѓЊѓ“]";
-			mes "ђё“xЃAѓXѓsЃ[ѓhЃA";
-			mes "‰Ѕ€к‚В–J‚Я‚й‚Ж‚±‚л‚Є‚И‚ўЃB";
-			mes "Љ®аш‚Й‘К–Ъ‚ѕЃB";
-			mes "–{“–‚ЙЏe‚рЋи‚Йђ¶‚«‚Д‚«‚Ѕ‚М‚©ЃH";
+			mes "[г‚·гѓ‰гѓ¬гѓі]";
+			mes "зІѕеє¦гЂЃг‚№гѓ”гѓјгѓ‰гЂЃ";
+			mes "дЅ•дёЂгЃ¤и¤’г‚Ѓг‚‹гЃЁгЃ“г‚ЌгЃЊгЃЄгЃ„гЂ‚";
+			mes "е®Њз’§гЃ«й§„з›®гЃ гЂ‚";
+			mes "жњ¬еЅ“гЃ«йЉѓг‚’ж‰‹гЃ«з”џгЃЌгЃ¦гЃЌгЃџгЃ®гЃ‹пјџ";
 			next;
-			mes "[ѓVѓhѓЊѓ“]";
-			mes "‚·‚®‚ЙЌДЋЋЊ±‚р‚Н‚¶‚Я‚йЃB";
-			mes "Ћџ‚Н‚µ‚Б‚©‚и“®‚Ї‚жЃB";
+			mes "[г‚·гѓ‰гѓ¬гѓі]";
+			mes "гЃ™гЃђгЃ«е†Ќи©¦йЁ“г‚’гЃЇгЃг‚Ѓг‚‹гЂ‚";
+			mes "ж¬ЎгЃЇгЃ—гЃЈгЃ‹г‚Ље‹•гЃ‘г‚€гЂ‚";
 			delquest 12343;
 			delquest 12344;
 			setquest 12343;
@@ -1157,63 +1157,63 @@ job_gun.gat,120,138,3	script	ѓVѓhѓЊѓ“#1	10062,{
 			warp "job_gun.gat",102,146;
 			end;
 		}
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚Ё‚ўЃIЃ@‚ж‚»Њ©‚·‚й‚И‚жЃB";
-		mes "‚±‚±‚НЋА’e‚рЋg‚¤ЋЛЊ‚Џк‚ѕЃB";
-		mes "Џ­‚µ‚Е‚а‹C‚р”І‚ў‚Ѕ‚зЃA";
-		mes "‰ц‰д‚Й‚В‚И‚Є‚йЏкЏЉ‚ѕ‚јЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃЉгЃ„пјЃгЂЂг‚€гЃќи¦‹гЃ™г‚‹гЃЄг‚€гЂ‚";
+		mes "гЃ“гЃ“гЃЇе®џејѕг‚’дЅїгЃ†е°„ж’ѓе ґгЃ гЂ‚";
+		mes "е°‘гЃ—гЃ§г‚‚ж°—г‚’жЉњгЃ„гЃџг‚‰гЂЃ";
+		mes "жЂЄж€‘гЃ«гЃ¤гЃЄгЃЊг‚‹е ґж‰ЂгЃ гЃћгЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚і‚ДЃB‚Е‚НЌЕЏIЋЋЊ±‚Й‚В‚ў‚Д";
-		mes "ђа–ѕ‚р‚Н‚¶‚Я‚йЃB";
-		mes "ЌЎ‚©‚зЊN‚НЃA^FF00005‚В‚МЋЛЊ‚Џк^000000“а‚р";
-		mes "‘–‚й‚±‚Ж‚Й‚И‚йЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃ•гЃ¦гЂ‚гЃ§гЃЇжњЂзµ‚и©¦йЁ“гЃ«гЃ¤гЃ„гЃ¦";
+		mes "иЄ¬жЋг‚’гЃЇгЃг‚Ѓг‚‹гЂ‚";
+		mes "д»ЉгЃ‹г‚‰еђ›гЃЇгЂЃ^FF00005гЃ¤гЃ®е°„ж’ѓе ґ^000000е†…г‚’";
+		mes "иµ°г‚‹гЃ“гЃЁгЃ«гЃЄг‚‹гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚±‚к‚НЊQЏO‚М’†‚Й‚ў‚й–Ъ•W‚р";
-		mes "ђіЉm‚ЙЊ©•Є‚Ї‚й”»’f—Н‚Ж";
-		mes "‚»‚к‚Й‘О‚·‚йђv‘¬‚і‚р";
-		mes "‘Є’и‚·‚й‚Ѕ‚Я‚МЋЋЊ±‚ѕЃB";
-		mes "‚Ѕ‚­‚і‚с“|‚·‚±‚Ж‚Є–Ъ“I‚¶‚б‚И‚ў‚јЃI";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃ“г‚ЊгЃЇзѕ¤иЎ†гЃ®дё­гЃ«гЃ„г‚‹з›®жЁ™г‚’";
+		mes "ж­ЈзўєгЃ«и¦‹е€†гЃ‘г‚‹е€¤ж–­еЉ›гЃЁ";
+		mes "гЃќг‚ЊгЃ«еЇѕгЃ™г‚‹иї…йЂџгЃ•г‚’";
+		mes "жё¬е®љгЃ™г‚‹гЃџг‚ЃгЃ®и©¦йЁ“гЃ гЂ‚";
+		mes "гЃџгЃЏгЃ•г‚“еЂ’гЃ™гЃ“гЃЁгЃЊз›®зљ„гЃг‚ѓгЃЄгЃ„гЃћпјЃ";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "ЊN‚НЋЛЊ‚Џк“а‚Е";
-		mes "‚ж‚­Ћ—‚ЅЉз‚р‚µ‚Д‚ў‚йA’†‚М’†‚©‚з";
-		mes "^0000ffЋЛЊ‚•W“I^000000‚ЖЏ‘‚©‚к‚Ѕ";
-		mes "•W“I‚М‚Э‚р‘I‚с‚ЕЋЛЊ‚‚·‚й‚±‚ЖЃB";
-		mes "ЉФ€б‚Б‚ДЉЦЊW‚И‚ў‚в‚В‚р";
-		mes "Њ‚‚Б‚ЅЏкЌ‡‚НЋё“_‚ѕЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "еђ›гЃЇе°„ж’ѓе ґе†…гЃ§";
+		mes "г‚€гЃЏдјјгЃџйЎ”г‚’гЃ—гЃ¦гЃ„г‚‹йЂЈдё­гЃ®дё­гЃ‹г‚‰";
+		mes "^0000ffе°„ж’ѓжЁ™зљ„^000000гЃЁж›ёгЃ‹г‚ЊгЃџ";
+		mes "жЁ™зљ„гЃ®гЃїг‚’йЃёг‚“гЃ§е°„ж’ѓгЃ™г‚‹гЃ“гЃЁгЂ‚";
+		mes "й–“йЃ•гЃЈгЃ¦й–ўдї‚гЃЄгЃ„г‚„гЃ¤г‚’";
+		mes "ж’ѓгЃЈгЃџе ґеђ€гЃЇе¤±з‚№гЃ гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚Ь‚ ЃAЌЕЏIЋЋЊ±‚Н";
-		mes "Њы‚Е‚Мђа–ѕ‚ж‚и";
-		mes "’јђЪЊoЊ±‚µ‚Ѕ•ы‚Є—З‚ў‚ѕ‚л‚¤ЃB";
-		mes "^0000ffЋЛЊ‚•W“I^000000‚Ж‚ў‚¤–ј‘O‚МЊ¶‰e‚Нђ”‚Є";
-		mes "ЊА‚з‚к‚Д‚ў‚й‚©‚зђіЉm‚ЙЋЛЊ‚‚µ‚л‚жЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃѕгЃ‚гЂЃжњЂзµ‚и©¦йЁ“гЃЇ";
+		mes "еЏЈгЃ§гЃ®иЄ¬жЋг‚€г‚Љ";
+		mes "з›ґжЋҐзµЊйЁ“гЃ—гЃџж–№гЃЊи‰ЇгЃ„гЃ г‚ЌгЃ†гЂ‚";
+		mes "^0000ffе°„ж’ѓжЁ™зљ„^000000гЃЁгЃ„гЃ†еђЌе‰ЌгЃ®е№»еЅ±гЃЇж•°гЃЊ";
+		mes "й™ђг‚‰г‚ЊгЃ¦гЃ„г‚‹гЃ‹г‚‰ж­ЈзўєгЃ«е°„ж’ѓгЃ—г‚Ќг‚€гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "^0000ffђ§ЊАЋћЉФ‚Н3•Є‚ѕЃB";
-		mes "‚»‚М•П‘•‚Є‰р‚Ї‚Ѕ‚зЃA";
-		mes "ЋћЉФђШ‚к‚Ж‚Э‚И‚µ‚ДЋёЉi‚Й‚И‚йЃB^000000";
-		mes "‚»‚МЏкЌ‡‚Н‚Ё‚Ж‚И‚µ‚­Ћ„‚М‚Ж‚±‚л‚Й";
-		mes "–Я‚Б‚Д‚«‚И‚і‚ўЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "^0000ffе€¶й™ђж™‚й–“гЃЇ3е€†гЃ гЂ‚";
+		mes "гЃќгЃ®е¤‰иЈ…гЃЊи§ЈгЃ‘гЃџг‚‰гЂЃ";
+		mes "ж™‚й–“е€‡г‚ЊгЃЁгЃїгЃЄгЃ—гЃ¦е¤±ж јгЃ«гЃЄг‚‹гЂ‚^000000";
+		mes "гЃќгЃ®е ґеђ€гЃЇгЃЉгЃЁгЃЄгЃ—гЃЏз§ЃгЃ®гЃЁгЃ“г‚ЌгЃ«";
+		mes "ж€»гЃЈгЃ¦гЃЌгЃЄгЃ•гЃ„гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚сЃA‰Ѕ‚М•Пђg‚©‹C‚Й‚И‚й‚М‚©ЃH";
-		mes "‚±‚к‚Е‚н‚©‚й‚ѕ‚л‚¤ЃH";
-		mes "Ѓ@";
-		mes "ЃcЃcѓ‹ѓEѓBЃ[ѓj‚МЋп–Ў‚ѕЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "г‚“гЂЃдЅ•гЃ®е¤‰иє«гЃ‹ж°—гЃ«гЃЄг‚‹гЃ®гЃ‹пјџ";
+		mes "гЃ“г‚ЊгЃ§г‚ЏгЃ‹г‚‹гЃ г‚ЌгЃ†пјџ";
+		mes "гЂЂ";
+		mes "вЂ¦вЂ¦гѓ«г‚¦г‚Јгѓјгѓ‹гЃ®и¶Је‘ігЃ гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "b‚р–Я‚·‚јЃB";
-		mes "^0000ffЋЛЊ‚•W“I‚р10‘М";
-		mes "ЋЛЊ‚‚Е‚«‚И‚©‚Б‚Ѕ‚иЃA";
-		mes "•s“KђШ‚И–Ъ•W‚р3‘М";
-		mes "ЋЛЊ‚‚µ‚Д‚аЋёЉi‚ѕЃB^000000";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "и©±г‚’ж€»гЃ™гЃћгЂ‚";
+		mes "^0000ffе°„ж’ѓжЁ™зљ„г‚’10дЅ“";
+		mes "е°„ж’ѓгЃ§гЃЌгЃЄгЃ‹гЃЈгЃџг‚ЉгЂЃ";
+		mes "дёЌйЃ©е€‡гЃЄз›®жЁ™г‚’3дЅ“";
+		mes "е°„ж’ѓгЃ—гЃ¦г‚‚е¤±ж јгЃ гЂ‚^000000";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "ђа–ѕ‚Н€ИЏгЃB";
-		mes "‚»‚к‚¶‚б‚·‚®‚Н‚¶‚Я‚й‚±‚Ж‚Й‚µ‚ж‚¤ЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "иЄ¬жЋгЃЇд»ҐдёЉгЂ‚";
+		mes "гЃќг‚ЊгЃг‚ѓгЃ™гЃђгЃЇгЃг‚Ѓг‚‹гЃ“гЃЁгЃ«гЃ—г‚€гЃ†гЂ‚";
 		setquest 12343;
 		setquest 12344;
 		delquest 121930;
@@ -1223,91 +1223,91 @@ job_gun.gat,120,138,3	script	ѓVѓhѓЊѓ“#1	10062,{
 		end;
 	}
 	if(CHANGE_RB == 4) {
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚З‚¤‚µ‚Д‚Ь‚ѕ‚±‚±‚Й‚ў‚й‚с‚ѕЃH";
-		mes "ЉO‚ЙЏo‚Д‚­‚кЃB";
-		mes "‚·‚®‚ЙЋ„‚аЌs‚­‚©‚зЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃ©гЃ†гЃ—гЃ¦гЃѕгЃ гЃ“гЃ“гЃ«гЃ„г‚‹г‚“гЃ пјџ";
+		mes "е¤–гЃ«е‡єгЃ¦гЃЏг‚ЊгЂ‚";
+		mes "гЃ™гЃђгЃ«з§Ѓг‚‚иЎЊгЃЏгЃ‹г‚‰гЂ‚";
 		close2;
 		warp "job_gun.gat",210,132;
 		end;
 	}
-	mes "[ѓVѓhѓЊѓ“]";
-	mes "‚И‚с‚ѕЃHЃ@“№‚Й‚Е‚а–А‚Б‚Ѕ‚М‚©ЃH";
-	mes "Џу‹µ‚рЉm”F‚µ‚Д‚©‚з";
-	mes "ЋЋЊ±Џк‚Й—€‚И‚і‚ўЃB";
+	mes "[г‚·гѓ‰гѓ¬гѓі]";
+	mes "гЃЄг‚“гЃ пјџгЂЂйЃ“гЃ«гЃ§г‚‚иї·гЃЈгЃџгЃ®гЃ‹пјџ";
+	mes "зЉ¶жіЃг‚’зўєиЄЌгЃ—гЃ¦гЃ‹г‚‰";
+	mes "и©¦йЁ“е ґгЃ«жќҐгЃЄгЃ•гЃ„гЂ‚";
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,88,144,0	warp	ЋЛЊ‚Џк#1	2,2,job_gun.gat,93,123
-job_gun.gat,105,97,0	warp	ЋЛЊ‚Џк#2	2,2,job_gun.gat,125,98
-job_gun.gat,156,115,0	warp	ЋЛЊ‚Џк#3	2,2,job_gun.gat,157,137
-job_gun.gat,152,154,0	warp	ЋЛЊ‚Џк#4	2,2,job_gun.gat,135,154
-job_gun.gat,130,146,0	warp	ЋЛЊ‚Џк#5	2,2,job_gun.gat,120,130
+job_gun.gat,88,144,0	warp	е°„ж’ѓе ґ#1	2,2,job_gun.gat,93,123
+job_gun.gat,105,97,0	warp	е°„ж’ѓе ґ#2	2,2,job_gun.gat,125,98
+job_gun.gat,156,115,0	warp	е°„ж’ѓе ґ#3	2,2,job_gun.gat,157,137
+job_gun.gat,152,154,0	warp	е°„ж’ѓе ґ#4	2,2,job_gun.gat,135,154
+job_gun.gat,130,146,0	warp	е°„ж’ѓе ґ#5	2,2,job_gun.gat,120,130
 
-job_gun.gat,220,132,3	script	ѓVѓhѓЊѓ“#2	10062,{
+job_gun.gat,220,132,3	script	г‚·гѓ‰гѓ¬гѓі#2	10062,{
 	if(Job == Job_Rebellion) {
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚в‚ ЃB’ІЋq‚Н‚З‚¤‚©‚ИЃH";
-		mes "Ћ©—R‚р‘МЊ»‚·‚й‚Ѕ‚Я‚Й";
-		mes "€«‚Й”Ѕ‹t‚М€ш‚«‹а‚р€ш‚­‚М‚Н";
-		mes "‘е•П‚ѕ‚ЄЃA‚в‚и‚Є‚ў‚Н‚ ‚й‚ѕ‚л‚¤ЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "г‚„гЃ‚гЂ‚иЄїе­ђгЃЇгЃ©гЃ†гЃ‹гЃЄпјџ";
+		mes "и‡Єз”±г‚’дЅ“зЏѕгЃ™г‚‹гЃџг‚ЃгЃ«";
+		mes "ж‚ЄгЃ«еЏЌйЂ†гЃ®еј•гЃЌй‡‘г‚’еј•гЃЏгЃ®гЃЇ";
+		mes "е¤§е¤‰гЃ гЃЊгЂЃг‚„г‚ЉгЃЊгЃ„гЃЇгЃ‚г‚‹гЃ г‚ЌгЃ†гЂ‚";
 		close;
 	}
 	if(CHANGE_RB != 4) {
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚И‚с‚ѕЃHЃ@“№‚Й‚Е‚а–А‚Б‚Ѕ‚М‚©ЃH";
-		mes "Џу‹µ‚рЉm”F‚µ‚Д‚©‚з";
-		mes "ЋЋЊ±Џк‚Й—€‚И‚і‚ўЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃЄг‚“гЃ пјџгЂЂйЃ“гЃ«гЃ§г‚‚иї·гЃЈгЃџгЃ®гЃ‹пјџ";
+		mes "зЉ¶жіЃг‚’зўєиЄЌгЃ—гЃ¦гЃ‹г‚‰";
+		mes "и©¦йЁ“е ґгЃ«жќҐгЃЄгЃ•гЃ„гЂ‚";
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	if(Job == Job_Gunslinger) {
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚±‚к‚Ь‚Е‚Мђ¬ђС‚р‘ЌЌ‡‚µ‚ДЃA";
-		mes "ѓNѓ‹ѓxѓ‹ЃAѓ‹ѓEѓBЃ[ѓjЃA";
-		mes "‚»‚µ‚ДЋ„ѓVѓhѓЊѓ“‚Є";
-		mes "ЊN‚МѓЉѓxѓЉѓIѓ““]ђE‚Й‘О‚·‚й";
-		mes "•]‰ї‚рЊ€’и‚µ‚ЅЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃ“г‚ЊгЃѕгЃ§гЃ®ж€ђзёѕг‚’з·Џеђ€гЃ—гЃ¦гЂЃ";
+		mes "г‚Їгѓ«гѓ™гѓ«гЂЃгѓ«г‚¦г‚Јгѓјгѓ‹гЂЃ";
+		mes "гЃќгЃ—гЃ¦з§Ѓг‚·гѓ‰гѓ¬гѓігЃЊ";
+		mes "еђ›гЃ®гѓЄгѓ™гѓЄг‚Єгѓіи»ўиЃ·гЃ«еЇѕгЃ™г‚‹";
+		mes "и©•дѕЎг‚’ж±єе®љгЃ—гЃџгЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "Њ‹‰К‚НЃcЃc";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "зµђжћњгЃЇвЂ¦вЂ¦";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "ЌЎ‰с‚Мђ¬ђС‚в€уЏЫ‚рЊ©‚ЅЊА‚иЃA";
-		mes "•s‘«‚И‚µЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "д»Ље›ћгЃ®ж€ђзёѕг‚„еЌ°и±Ўг‚’и¦‹гЃџй™ђг‚ЉгЂЃ";
+		mes "дёЌи¶ігЃЄгЃ—гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚»‚¤‚ѕЃB";
-		mes "ЊN‚рЋ„‚Ѕ‚їѓЉѓxѓЉѓIѓ“‚М€к€х‚Ж‚µ‚Д";
-		mes "Ћу‚Ї“ь‚к‚й‚±‚Ж‚ЙЊ€’и‚µ‚ЅЃB";
-		mes "‚Ё‚Я‚Е‚Ж‚¤ЃI";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃќгЃ†гЃ гЂ‚";
+		mes "еђ›г‚’з§ЃгЃџгЃЎгѓЄгѓ™гѓЄг‚ЄгѓігЃ®дёЂе“ЎгЃЁгЃ—гЃ¦";
+		mes "еЏ—гЃ‘е…Ґг‚Њг‚‹гЃ“гЃЁгЃ«ж±єе®љгЃ—гЃџгЂ‚";
+		mes "гЃЉг‚ЃгЃ§гЃЁгЃ†пјЃ";
 		next;
 		if(SkillPoint) {
-			mes "[ѓVѓhѓЊѓ“]";
-			mes "ЊNЃA^ff0000ѓXѓLѓ‹ѓ|ѓCѓ“ѓg‚Є";
-			mes "‚Ь‚ѕЋc‚Б‚Д‚ў‚й‚јЃB^000000";
-			mes "‚Ь‚Б‚Ѕ‚­ЃA‚»‚М‚­‚з‚ў‚Н";
-			mes "Ћ©•Є‚Еѓ`ѓFѓbѓN‚µ‚Ж‚ў‚Д‚­‚к‚жЃB";
+			mes "[г‚·гѓ‰гѓ¬гѓі]";
+			mes "еђ›гЂЃ^ff0000г‚№г‚­гѓ«гѓќг‚¤гѓігѓ€гЃЊ";
+			mes "гЃѕгЃ ж®‹гЃЈгЃ¦гЃ„г‚‹гЃћгЂ‚^000000";
+			mes "гЃѕгЃЈгЃџгЃЏгЂЃгЃќгЃ®гЃЏг‚‰гЃ„гЃЇ";
+			mes "и‡Єе€†гЃ§гѓЃг‚§гѓѓг‚ЇгЃ—гЃЁгЃ„гЃ¦гЃЏг‚Њг‚€гЂ‚";
 			close;
 		}
 		if(Weight) {
-			mes "[ѓVѓhѓЊѓ“]";
-			mes "‰Ѕ‚в‚з‚ў‚л‚ў‚лЋќ‚Б‚Д‚ў‚й‚ИЃB";
-			mes "ЋЧ–‚‚ѕ‚©‚з^ff0000ѓJѓ‹ѓЊѓbѓNѓX^000000‚Й";
-			mes "—a‚©‚Б‚Д‚а‚з‚¦ЃB";
-			mes "”Ю‚НЃA‚·‚®‹Я‚­‚Й‚ў‚й‚©‚з";
-			mes "‚н‚©‚й‚ѕ‚л‚¤ЃH";
+			mes "[г‚·гѓ‰гѓ¬гѓі]";
+			mes "дЅ•г‚„г‚‰гЃ„г‚ЌгЃ„г‚ЌжЊЃгЃЈгЃ¦гЃ„г‚‹гЃЄгЂ‚";
+			mes "й‚Єй­”гЃ гЃ‹г‚‰^ff0000г‚«гѓ«гѓ¬гѓѓг‚Їг‚№^000000гЃ«";
+			mes "й ђгЃ‹гЃЈгЃ¦г‚‚г‚‰гЃ€гЂ‚";
+			mes "еЅјгЃЇгЂЃгЃ™гЃђиї‘гЃЏгЃ«гЃ„г‚‹гЃ‹г‚‰";
+			mes "г‚ЏгЃ‹г‚‹гЃ г‚ЌгЃ†пјџ";
 			close;
 		}
 		if(sc_ison(SC_ALL_RIDING)) {
-			// –ў’ІЌё
-			mes "[ѓVѓhѓЊѓ“]";
-			mes "‹RЏжђ¶•Ё‚©‚зЌ~‚и‚Д‚­‚кЃB";
-			mes "‹CЋќ‚ї‚Н‚н‚©‚й‚Є";
-			mes "Џк‚Й‚У‚і‚н‚µ‚­‚И‚ў‚ѕ‚лЃH";
+			// жњЄиЄїжџ»
+			mes "[г‚·гѓ‰гѓ¬гѓі]";
+			mes "йЁЋд№—з”џз‰©гЃ‹г‚‰й™Ќг‚ЉгЃ¦гЃЏг‚ЊгЂ‚";
+			mes "ж°—жЊЃгЃЎгЃЇг‚ЏгЃ‹г‚‹гЃЊ";
+			mes "е ґгЃ«гЃµгЃ•г‚ЏгЃ—гЃЏгЃЄгЃ„гЃ г‚Ќпјџ";
 			close;
 		}
 		resetstatus;
@@ -1317,52 +1317,52 @@ job_gun.gat,220,132,3	script	ѓVѓhѓЊѓ“#2	10062,{
 		set CHANGE_RB,0;
 		chgquest 12345,201860;
 		getitem 13119,1;
-		mes "Ѓ]‚ ‚И‚Ѕ‚Н";
-		mes "Ѓ@^FF0000”Ѕ‹t‚МЏЫ’ҐѓЉѓxѓЉѓIѓ“^000000‚Й";
-		mes "Ѓ@“]ђE‚µ‚Ь‚µ‚ЅЃIЃ]";
+		mes "вЂђгЃ‚гЃЄгЃџгЃЇ";
+		mes "гЂЂ^FF0000еЏЌйЂ†гЃ®и±ЎеѕґгѓЄгѓ™гѓЄг‚Єгѓі^000000гЃ«";
+		mes "гЂЂи»ўиЃ·гЃ—гЃѕгЃ—гЃџпјЃвЂђ";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚Ё‚ЁЃI";
-		mes "‚И‚©‚И‚©‚Й‚«‚Ь‚Б‚Д‚й‚¶‚б‚И‚ў‚©ЃB";
-		mes "Ћ—Ќ‡‚¤‚јЃBЊг”yЃI";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃЉгЃЉпјЃ";
+		mes "гЃЄгЃ‹гЃЄгЃ‹гЃ«гЃЌгЃѕгЃЈгЃ¦г‚‹гЃг‚ѓгЃЄгЃ„гЃ‹гЂ‚";
+		mes "дјјеђ€гЃ†гЃћгЂ‚еѕЊиј©пјЃ";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "ЌЎЃAЊN‚Й“n‚µ‚ЅЏe‚Н";
-		mes "ѓ‹ѓEѓBЃ[ѓj‹іЉЇ‚Є";
-		mes "ЊN‚Й‚Ж—p€У‚µ‚Ѕ‚а‚М‚ѕЃB";
-		mes "‚©‚И‚и‹C‚р‚©‚Ї‚Д–Ѓ‚ў‚Д‚ў‚Ѕ‚јЃB";
-		mes "‘еЋ–‚ЙЋg‚ў‚И‚і‚ўЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "д»ЉгЂЃеђ›гЃ«жёЎгЃ—гЃџйЉѓгЃЇ";
+		mes "гѓ«г‚¦г‚Јгѓјгѓ‹ж•™е®гЃЊ";
+		mes "еђ›гЃ«гЃЁз”Ёж„ЏгЃ—гЃџг‚‚гЃ®гЃ гЂ‚";
+		mes "гЃ‹гЃЄг‚Љж°—г‚’гЃ‹гЃ‘гЃ¦зЈЁгЃ„гЃ¦гЃ„гЃџгЃћгЂ‚";
+		mes "е¤§дє‹гЃ«дЅїгЃ„гЃЄгЃ•гЃ„гЂ‚";
 		next;
-		mes "[ѓVѓhѓЊѓ“]";
-		mes "‚»‚к‚¶‚б‚Ь‚Ѕ‰п‚Ё‚¤ЃB";
+		mes "[г‚·гѓ‰гѓ¬гѓі]";
+		mes "гЃќг‚ЊгЃг‚ѓгЃѕгЃџдјљгЃЉгЃ†гЂ‚";
 		close2;
 		warp "job_gun.gat",81,29;
 		end;
 	}
-	mes "[ѓVѓhѓЊѓ“]";
-	mes "‚З‚¤‚µ‚Д‚±‚±‚Й‚ў‚й‚с‚ѕЃH";
-	mes "ЉO‚ЙЏo‚Д‚­‚кЃB";
+	mes "[г‚·гѓ‰гѓ¬гѓі]";
+	mes "гЃ©гЃ†гЃ—гЃ¦гЃ“гЃ“гЃ«гЃ„г‚‹г‚“гЃ пјџ";
+	mes "е¤–гЃ«е‡єгЃ¦гЃЏг‚ЊгЂ‚";
 	close2;
 	warp "job_gun.gat",210,132;
 	end;
 }
 
-job_gun.gat,220,138,4	shop	Џ¬“№‹пЋ©”М‹@	564,13200:1
+job_gun.gat,220,138,4	shop	е°ЏйЃ“е…·и‡ЄиІ©ж©џ	564,13200:1
 
-job_gun.gat,216,138,4	script	ѓJѓ‹ѓЊѓbѓNѓX	47,{
-	mes "[ѓJѓ‹ѓЊѓbѓNѓX]";
-	mes "“]ђE‘O‚Й•s—v‚И•Ё‚р—a‚©‚и‚Ь‚·ЃB";
+job_gun.gat,216,138,4	script	г‚«гѓ«гѓ¬гѓѓг‚Їг‚№	47,{
+	mes "[г‚«гѓ«гѓ¬гѓѓг‚Їг‚№]";
+	mes "и»ўиЃ·е‰ЌгЃ«дёЌи¦ЃгЃЄз‰©г‚’й ђгЃ‹г‚ЉгЃѕгЃ™гЂ‚";
 	next;
-	if(select("‘qЊЙ‚рЉJ‚­","‚в‚Я‚й") == 2) {
-		mes "[ѓJѓ‹ѓЊѓbѓNѓX]";
-		mes "‚І——p‚ў‚Ѕ‚ѕ‚«ЃA";
-		mes "‚ ‚и‚Є‚Ж‚¤‚І‚ґ‚ў‚Ь‚·ЃB";
-		mes "‚і‚ ЃAѓЉѓxѓЉѓIѓ“‚Й";
-		mes "“]ђE‚µ‚Ь‚µ‚е‚¤ЃB";
+	if(select("еЂ‰еє«г‚’й–‹гЃЏ","г‚„г‚Ѓг‚‹") == 2) {
+		mes "[г‚«гѓ«гѓ¬гѓѓг‚Їг‚№]";
+		mes "гЃ”е€©з”ЁгЃ„гЃџгЃ гЃЌгЂЃ";
+		mes "гЃ‚г‚ЉгЃЊгЃЁгЃ†гЃ”гЃ–гЃ„гЃѕгЃ™гЂ‚";
+		mes "гЃ•гЃ‚гЂЃгѓЄгѓ™гѓЄг‚ЄгѓігЃ«";
+		mes "и»ўиЃ·гЃ—гЃѕгЃ—г‚‡гЃ†гЂ‚";
 		close;
 	}
-	mes "[ѓJѓ‹ѓЊѓbѓNѓX]";
-	mes "‘qЊЙ‚рЉJ‚«‚Ь‚·ЃB";
+	mes "[г‚«гѓ«гѓ¬гѓѓг‚Їг‚№]";
+	mes "еЂ‰еє«г‚’й–‹гЃЌгЃѕгЃ™гЂ‚";
 	close2;
 	openstorage;
 	end;

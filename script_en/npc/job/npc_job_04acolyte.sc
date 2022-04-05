@@ -1,59 +1,59 @@
 //====================================================================
 //Ragnarok Online Acolyte jobchange script
 //
-//�@�� CHANGE_AL -> 0�`1, 0�`6(Old)
-//     CHANGE_PR -> �v���[�X�g�]�E�p
-//     OLD_CLASS -> �]���O�̐E��
+//　■ CHANGE_AL -> 0～1, 0～6(Old)
+//     CHANGE_PR -> プリースト転職用
+//     OLD_CLASS -> 転生前の職業
 //====================================================================
 
 //==========================================
-// �����\������ѓ]�E
+// 試験申請および転職
 //------------------------------------------
 
-prt_church.gat,184,41,4	script	�����_��#AL	60,{
+prt_church.gat,184,41,4	script	聖堂神父#AL	60,{
 	if(Upper == UPPER_HIGH && (getbaseclass(Class) != CLASS_AL)) {
-		mes "[�}���V�X�_��]";
-		mes "�����̎��������z���Ă��܂����ˁB";
-		mes "�M���̊���ɂ��Ă�";
-		mes "���̎��ɂ������Ă���܂��B";
+		mes "[マルシス神父]";
+		mes "多くの試練を乗り越えてきましたね。";
+		mes "貴方の活躍については";
+		mes "私の耳にも入っております。";
 		next;
 		if(OLD_CLASS != Job_Priest && OLD_CLASS != Job_Monk) {
-			mes "[�}���V�X�_��]";
-			mes "�������A�M���̓A�R���C�g�̓���";
-			mes "�i�ނ��Ƃ͂ł��܂���B";
-			mes "�M���ɂ͕ʂ̓��������Ă���͂��B";
-			mes "���̓��Ɍ������Đ��i���邱�Ƃł��B";
+			mes "[マルシス神父]";
+			mes "しかし、貴方はアコライトの道に";
+			mes "進むことはできません。";
+			mes "貴方には別の道が見えているはず。";
+			mes "その道に向かって精進することです。";
 			close;
 		}
 		if(getskilllv(1) < 9 || SkillPoint) {
-			mes "[�}���V�X�_��]";
-			mes "���āA�������A�R���C�g��";
-			mes "�]�E�����Ă��������Ƃ���ł����A";
-			mes "�����������Ȃ��悤�ł��ˁB";
-			mes "JobLv��10�ɂ܂Ő��������A";
-			mes "^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-			mes "����K�v������̂ł��B";
+			mes "[マルシス神父]";
+			mes "さて、今すぐアコライトに";
+			mes "転職させてあげたいところですが、";
+			mes "そうもいかないようですね。";
+			mes "JobLvを10にまで成長させ、";
+			mes "^0000FF「基本スキル」のレベルを9^000000 に";
+			mes "する必要があるのです。";
 			next;
-			mes "[�}���V�X�_��]";
-			mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-			mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-			mes "�グ�邱�Ƃ��ł���ł��傤�B";
-			mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-			mes "^0000FF�u��{���v^000000�E�B���h�E����";
-			mes "^0000FF�uSkill�v^000000�{�^���ŕ\������܂���B";
+			mes "[マルシス神父]";
+			mes "^0000FF「基本スキル」^000000のレベルは";
+			mes "^0000FF「スキルリスト」^000000ウィンドウで";
+			mes "上げることができるでしょう。";
+			mes "^0000FF「スキルリスト」^000000ウィンドウは";
+			mes "^0000FF「基本情報」^000000ウィンドウ内の";
+			mes "^0000FF「Skill」^000000ボタンで表示されますよ。";
 			next;
-			mes "[�}���V�X�_��]";
-			mes "�X�L���̃��x�����グ��ɂ́A";
-			mes "�X�L���|�C���g������U������A";
-			mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ�܂���B";
-			mes "���ӂ��K�v�ł��B";
-			mes "����ł́A�܂�����ł���̂�";
-			mes "�y���݂ɂ��҂����Ă���܂��B";
+			mes "[マルシス神父]";
+			mes "スキルのレベルを上げるには、";
+			mes "スキルポイントを割り振った後、";
+			mes "^FF0000「確定」^000000ボタンが必要となりますよ。";
+			mes "注意が必要です。";
+			mes "それでは、またお会いできるのを";
+			mes "楽しみにお待ちしております。";
 			close;
 		}
-		mes "[�}���V�X�_��]";
-		mes "���E�҂̓������߂�Ƃ���";
-		mes "�M�����A�S���犽�}�������܂��B";
+		mes "[マルシス神父]";
+		mes "聖職者の道を究めんとする";
+		mes "貴方を、心から歓迎いたします。";
 		next;
 		unequip;
 		jobchange Job_Acolyte,UPPER_HIGH;
@@ -61,378 +61,378 @@ prt_church.gat,184,41,4	script	�����_��#AL	60,{
 		skill 156,1,0;
 	}
 	if(Upper == UPPER_HIGH && (getbaseclass(Class) == CLASS_AL)) {
-		mes "[�}���V�X�_��]";
-		mes "�����A���ꂩ����_�̎g���Ƃ���";
-		mes "�����������ł��������ˁB";
-		mes "�M���̖����ɍK������񂱂Ƃ��I";
+		mes "[マルシス神父]";
+		mes "さあ、これからも神の使いとして";
+		mes "いっそう励んでくださいね。";
+		mes "貴方の未来に幸多からんことを！";
 		close;
 	}
-	mes "[�}���V�X�_��]";
-	mes "�ǂ̂悤�Ȃ��p����";
-	mes "��������Ⴂ�܂������H";
+	mes "[マルシス神父]";
+	mes "どのようなご用件で";
+	mes "いらっしゃいましたか？";
 	next;
-	switch (select("�A�R���C�g�ɓ]�E","�A�R���C�g�]�E�����𕷂�","��߂�")) {
+	switch (select("アコライトに転職","アコライト転職条件を聞く","やめる")) {
 	case 1:
 		if(Job == Job_Acolyte) {
-			mes "[�}���V�X�_��]";
-			mes "�M���͂�����ǂ����̂̋��";
-			mes "�����̂ł́c�c�H";
-			mes "���̊i�D�͂��ł�";
-			mes "�A�R���C�g�ł͂���܂��񂩁H";
-			mes "�܂������̂͏�k�ł����ƁH";
+			mes "[マルシス神父]";
+			mes "貴方はもしやどこか体の具合が";
+			mes "悪いのでは……？";
+			mes "その格好はすでに";
+			mes "アコライトではありませんか？";
+			mes "まさか今のは冗談でしたと？";
 			next;
-			mes "[�}���V�X�_��]";
-			mes "���������A";
-			mes "�A�R���C�g�ɂȂ�ꂽ�Ȃ�A";
-			mes "�`���҃A�J�f�~�[��";
-			mes "�K��邱�Ƃ������߂��܂��傤�B";
+			mes "[マルシス神父]";
+			mes "そうそう、";
+			mes "アコライトになられたなら、";
+			mes "冒険者アカデミーを";
+			mes "訪れることをお勧めしましょう。";
 			next;
-			mes "[�}���V�X�_��]";
-			mes "���̐������o���";
-			mes "�`���҃A�J�f�~�[�̃T�|�[�g��";
-			mes "�s���Ă���l�����܂��̂ŁA";
-			mes "�����Ă��炤�Ƃ����ł��傤�B";
+			mes "[マルシス神父]";
+			mes "この聖堂を出ると";
+			mes "冒険者アカデミーのサポートを";
+			mes "行っている人がいますので、";
+			mes "送ってもらうといいでしょう。";
 			close;
 		}
 		if(Job != Job_Novice) {
-			mes "[�}���V�X�_��]";
-			mes "�M���͂������̐E�Ƃ�";
-			mes "�������ł́H";
+			mes "[マルシス神父]";
+			mes "貴方はもう他の職業を";
+			mes "お持ちでは？";
 			close;
 		}
 		break;
 	case 2:
-		mes "[�}���V�X�_��]";
-		mes "�M���̓A�R���C�g�ɂȂ肽���̂ł����H";
-		mes "�ł́A�������ꂩ�猾���������A";
-		mes "�_�l����̎������Ǝv����";
-		mes "��������̂ł��B";
+		mes "[マルシス神父]";
+		mes "貴方はアコライトになりたいのですか？";
+		mes "では、私がこれから言う条件を、";
+		mes "神様からの試練だと思って";
+		mes "克服するのです。";
 		next;
-		mes "[�}���V�X�_��]";
-		mes "�܂��A^0000FF�u��{�X�L���v��9^000000 �܂�";
-		mes "�����Ȃ���΂����܂���B";
-		mes "���̐��E�Ő����čs���̂�";
-		mes "�K�v�ȏC�s�ŁA�����ׂ̈ł�����܂��B";
+		mes "[マルシス神父]";
+		mes "まず、^0000FF「基本スキル」を9^000000 まで";
+		mes "あげなければいけません。";
+		mes "この世界で生きて行くのに";
+		mes "必要な修行で、自分の為でもあります。";
 		next;
-		mes "[�}���V�X�_��]";
-		mes "���̏����𖞂�������";
-		mes "�����ɖ߂��Ă��������B";
-		mes "���̎��A�_�̌�g�����鐹�Ȃ�";
-		mes "�E�ƂɏA�����Ƃ��ł���ł��傤�B";
+		mes "[マルシス神父]";
+		mes "その条件を満たしたら";
+		mes "ここに戻ってください。";
+		mes "その時、神の御使いたる聖なる";
+		mes "職業に就くことができるでしょう。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 3:
-		mes "[�}���V�X�_��]";
-		mes "����ł́B";
+		mes "[マルシス神父]";
+		mes "それでは。";
 		close;
 	}
 	//case 0
 	if(CHANGE_AL==0) {
-		mes "[�}���V�X�_��]";
-		mes "�M���͐S����_�l�̌�g����";
-		mes "�Ȃ邨����ł����H";
+		mes "[マルシス神父]";
+		mes "貴方は心から神様の御使いに";
+		mes "なるおつもりですか？";
 		next;
-		if(select("�͂��B","����ς�A��߂܂��B")==2) {
-			mes "[�}���V�X�_��]";
-			mes "����ł́B";
+		if(select("はい。","やっぱり、やめます。")==2) {
+			mes "[マルシス神父]";
+			mes "それでは。";
 			close;
 		}
 		set CHANGE_AL,1;
-		mes "[�}���V�X�_��]";
-		mes "�����ł��傤�B";
-		mes "����ł͂܂��A�M���̖��O��";
-		mes "�����Ă��������B";
+		mes "[マルシス神父]";
+		mes "いいでしょう。";
+		mes "それではまず、貴方の名前を";
+		mes "教えてください。";
 		next;
-		menu "���𖼏��",-;
-		mes "[�}���V�X�_��]";
-		mes "�ӂނӂށB";
-		mes " " +strcharinfo(0)+ " ���B";
-		mes "�ǂ������̖��O�ł��ˁB";
-		mes "�M���̃A�R���C�g�]�E�\������";
-		mes "������܂��B";
+		menu "名を名乗る",-;
+		mes "[マルシス神父]";
+		mes "ふむふむ。";
+		mes " " +strcharinfo(0)+ " か。";
+		mes "良い響きの名前ですね。";
+		mes "貴方のアコライト転職申請書を";
+		mes "受諾します。";
 		next;
 	}
-	mes "[�}���V�X�_��]";
-	mes "�ł́A " +strcharinfo(0)+ " ��B";
-	mes "�_�l�̎u�𐋍s�ł��邾���̏�����";
-	mes "�ł��Ă��܂����c�H";
-	mes "������A�M�����A�R���C�g�Ƃ���";
-	mes "���������l���ł��邩�ǂ���";
-	mes "���ׂ����Ă��炢�܂��B";
+	mes "[マルシス神父]";
+	mes "では、 " +strcharinfo(0)+ " よ。";
+	mes "神様の志を遂行できるだけの準備は";
+	mes "できていますか…？";
+	mes "これより、貴方がアコライトとして";
+	mes "相応しい人物であるかどうか";
+	mes "調べさせてもらいます。";
 	next;
-	mes "[�}���V�X�_��]";
-	mes "�c";
+	mes "[マルシス神父]";
+	mes "…";
 	next;
-	mes "[�}���V�X�_��]";
-	mes "�c�c";
+	mes "[マルシス神父]";
+	mes "……";
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[�}���V�X�_��]";
-		mes "�ȂɁH�I�܂���{�I�ȏC����";
-		mes "�ł��ĂȂ��ł͂���܂��񂩁I";
-		mes "�M�����������邽�߂ɂ́A";
-		mes "JobLv��10�ɂ܂Ő��������A";
-		mes "^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-		mes "����K�v������̂ł��B";
+		mes "[マルシス神父]";
+		mes "なに？！まだ基本的な修練も";
+		mes "できてないではありませんか！";
+		mes "貴方が成長するためには、";
+		mes "JobLvを10にまで成長させ、";
+		mes "^0000FF「基本スキル」のレベルを9^000000 に";
+		mes "する必要があるのです。";
 		next;
-		mes "[�}���V�X�_��]";
-		mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "�グ�邱�Ƃ��ł���ł��傤�B";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "^0000FF�u��{���v^000000�E�B���h�E����";
-		mes "^0000FF�uSkill�v^000000�{�^���ŕ\������܂���B";
+		mes "[マルシス神父]";
+		mes "^0000FF「基本スキル」^000000のレベルは";
+		mes "^0000FF「スキルリスト」^000000ウィンドウで";
+		mes "上げることができるでしょう。";
+		mes "^0000FF「スキルリスト」^000000ウィンドウは";
+		mes "^0000FF「基本情報」^000000ウィンドウ内の";
+		mes "^0000FF「Skill」^000000ボタンで表示されますよ。";
 		next;
-		mes "[�}���V�X�_��]";
-		mes "�X�L���̃��x�����グ��ɂ́A";
-		mes "�X�L���|�C���g������U������A";
-		mes "^FF0000�u�m��v^000000�{�^�����K�v�ƂȂ�܂���B";
-		mes "���ӂ��K�v�ł��B";
-		mes "����ł́A�܂�����ł���̂�";
-		mes "�y���݂ɂ��҂����Ă���܂��B";
+		mes "[マルシス神父]";
+		mes "スキルのレベルを上げるには、";
+		mes "スキルポイントを割り振った後、";
+		mes "^FF0000「確定」^000000ボタンが必要となりますよ。";
+		mes "注意が必要です。";
+		mes "それでは、またお会いできるのを";
+		mes "楽しみにお待ちしております。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[�}���V�X�_��]";
-	mes "���ށB�E�ƃ��x�����\������A";
-	mes "�A�R���C�g�Ƃ��Ă��f����";
-	mes "����悤�ł����A�����ł��傤�B";
-	mes "�M���̈ӎu��F�߁A�A�R���C�g����";
-	mes "���i��^���܂��傤�B";
+	mes "[マルシス神父]";
+	mes "うむ。職業レベルも十分あり、";
+	mes "アコライトとしても素質も";
+	mes "あるようですし、いいでしょう。";
+	mes "貴方の意志を認め、アコライトたる";
+	mes "資格を与えましょう。";
 	next;
 	getitem 11034,1;
 	set CHANGE_AL,0;
 	setquest 50345;
 	unequip;
 	jobchange Job_Acolyte;
-	mes "[�}���V�X�_��]";
-	mes "������X��������Ă�������_�l��";
-	mes "���ӂ��āA���ꂩ��ǂ̂悤�ȋ���";
-	mes "�����������ė��Ă���w�M�������";
-	mes "�_�l�ɐg����������̂ł��B";
+	mes "[マルシス神父]";
+	mes "いつも我々を見守ってくださる神様に";
+	mes "感謝して、これからどのような苦難と";
+	mes "試練が迫って来ても一層信仰を守って";
+	mes "神様に身をささげるのです。";
 	next;
-	mes "[�}���V�X�_��]";
-	mes "�����A���ꂩ�瓹�ɖ������Ƃ�����΁A";
-	mes "�A�R���C�g�̏���ǂނƂ����ł��傤�B";
-	mes "���ɂ��͂��ł��B";
+	mes "[マルシス神父]";
+	mes "もし、これから道に迷うことがあれば、";
+	mes "アコライトの書を読むといいでしょう。";
+	mes "役にたつはずです。";
 	close;
 OnInit:
-	waitingroom "�]�E",0;
+	waitingroom "転職",0;
 	end;
 }
 
 
 //==========================================
-// ���n����i�v���[�X�g�Ƌ��p�j
+// 聖地巡礼（プリーストと共用）
 //------------------------------------------
 
-prt_fild03.gat,365,255,1	script	�C�s���̐_��	89,{
-	//�A�R���C�g�]�E
+prt_fild03.gat,365,255,1	script	修行中の神父	89,{
+	//アコライト転職
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[���o���J�o���_��]";
-		mes "�A�R���C�g�u�]�̎҂��ȁc�c";
-		mes "�킴�킴�����܂ŗ��Ă������";
-		mes "�\����Ȃ��̂����A";
-		mes "���́A�����A�R���C�g�ɓ]�E����ׂ�";
-		mes "�����͓P�p���ꂽ�̂��B";
+		mes "[ルバルカバラ神父]";
+		mes "アコライト志望の者だな……";
+		mes "わざわざここまで来てもらって";
+		mes "申し訳ないのだが、";
+		mes "実は、もうアコライトに転職する為の";
+		mes "試験は撤廃されたのだ。";
 		next;
-		mes "[���o���J�o���_��]";
-		mes "�܂��A�R���C�g�ւ̓���";
-//		mes "������߂Ă��Ȃ̂ł���΁A";	//�{�Ǝd�l
-		mes "������߂Ă��Ȃ��̂ł���΁A";
-		mes "�}���V�X�_����K�˂Ȃ����B";
+		mes "[ルバルカバラ神父]";
+		mes "まだアコライトへの道を";
+//		mes "あきらめていなのであれば、";	//本家仕様
+		mes "あきらめていないのであれば、";
+		mes "マルシス神父を訪ねなさい。";
 		close;
 	}
-	//�v���[�X�g�]�E
+	//プリースト転職
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txt�ɂĔ��s
+		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
 		case 0:
-			mes "[���o���J�o���_��]";
-			mes "���߂�Ȃ����B���͍��C�s���̐g�B";
-			mes "�l�Ƃ��b�ł��܂���B";
+			mes "[ルバルカバラ神父]";
+			mes "ごめんなさい。私は今修行中の身。";
+			mes "人とお話できません。";
 			close;
 		case 1:
-			mes "[���o���J�o���_��]";
-			mes "�v���[�X�g�u�]�̃A�R���C�g���ȁc";
-			mes "�g�[�}�X�i���l����A���͂���������";
-			mes "����B����͎n�܂����΂��肾���A";
-			mes "�Ŋ��܂Œ��߂��Ɋ撣���Ăق����B";
+			mes "[ルバルカバラ神父]";
+			mes "プリースト志望のアコライトだな…";
+			mes "トーマス司教様から連絡はいただいて";
+			mes "いる。巡礼は始まったばかりだが、";
+			mes "最期まで諦めずに頑張ってほしい。";
 			next;
-			mes "[���o���J�o���_��]";
-			mes "�����@�����΁A�܂����ł�";
-			mes "����Ƃ����c�B";
-			mes "�����͎��B�ɂƂ��Đ��n������ˁB";
+			mes "[ルバルカバラ神父]";
+			mes "もし機会があれば、またいつでも";
+			mes "来るといい…。";
+			mes "ここは私達にとって聖地だからね。";
 			next;
-			mes "[���o���J�o���_��]";
-			mes "����ł́A���̏���n�֌������Ȃ����B";
-			mes "�������ꂮ����C�����āB";
+			mes "[ルバルカバラ神父]";
+			mes "それでは、次の巡礼地へ向かいなさい。";
+			mes "道中くれぐれも気をつけて。";
 			set CHANGE_PR,2;
 			savepoint "prt_fild03.gat",360,255;
 			close;
 		case 2:
-			mes "[���o���J�o���_��]";
-			mes "�͂₭���̏���n�֌������Ȃ����B";
-			mes "�������ꂮ����C�����āB";
+			mes "[ルバルカバラ神父]";
+			mes "はやく次の巡礼地へ向かいなさい。";
+			mes "道中くれぐれも気をつけて。";
 			close;
 		default:
-			mes "[���o���J�o���_��]";
-			mes "�Ȃ������ցH";
-			mes "�M���ɂ͋M���̏C�s������͂��B";
+			mes "[ルバルカバラ神父]";
+			mes "なぜここへ？";
+			mes "貴方には貴方の修行があるはず。";
 			close;
 		}
 	}
-	mes "[���o���J�o���_��]";
-	mes "�����A����ȉ��n�ɂ܂ŏC�s��";
-	mes "�����̂��H";
-	mes "�����̃����X�^�[�͌������ƈႢ";
-	mes "���\��������C�����邱�Ƃ��B";
+	mes "[ルバルカバラ神父]";
+	mes "おお、こんな奥地にまで修行に";
+	mes "来たのか？";
+	mes "ここのモンスターは見かけと違い";
+	mes "結構強いから気をつけることだ。";
 	close;
 }
 
 //==============================================================
-moc_fild07.gat,41,355,4	script	�C�s���̃V�X�^�[	95,{
-	//�A�R���C�g�]�E
+moc_fild07.gat,41,355,4	script	修行中のシスター	95,{
+	//アコライト転職
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[�}�`���_]";
-		mes "����҂ł��ˁH";
-		mes "�킴�킴�����܂ŗ��Ă������";
-		mes "�\���󂠂�܂��񂪁A";
-		mes "�����A�R���C�g�ɓ]�E����ׂ�";
-		mes "�����͓P�p����Ă��܂��B";
+		mes "[マチルダ]";
+		mes "巡礼者ですね？";
+		mes "わざわざここまで来てもらって";
+		mes "申し訳ありませんが、";
+		mes "もうアコライトに転職する為の";
+		mes "試験は撤廃されています。";
 		next;
-		mes "[�}�`���_]";
-		mes "�܂��A�R���C�g�ւ̓���";
-//		mes "������߂Ă��Ȃ̂ł���΁A";	//�{�Ǝd�l
-		mes "������߂Ă��Ȃ��̂ł���΁A";
-		mes "�}���V�X�_�������K�ˉ������B";
+		mes "[マチルダ]";
+		mes "まだアコライトへの道を";
+//		mes "あきらめていなのであれば、";	//本家仕様
+		mes "あきらめていないのであれば、";
+		mes "マルシス神父をお訪ね下さい。";
 		close;
 	}
-	//�v���[�X�g�]�E
+	//プリースト転職
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txt�ɂĔ��s
+		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
 		case 0:
-			mes "[�}�`���_]";
-			mes "�M���ɐ_�̂����삪����܂��悤�Ɂc";
+			mes "[マチルダ]";
+			mes "貴方に神のご加護がありますように…";
 			close;
 		case 1:
-			mes "[�}�`���_]";
-			mes "����҂ł��ˁH";
-			mes "����������K�˂�O�ɁA���̕���";
-			mes "�K�˂Ȃ���΂Ȃ�܂���B";
+			mes "[マチルダ]";
+			mes "巡礼者ですね？";
+			mes "しかし私を訪ねる前に、他の方を";
+			mes "訪ねなければなりません。";
 			next;
-			mes "[�}�`���_]";
-			mes "�g�[�}�X�i���l��Z�V���l�Ɏf����";
-			mes "�݂Ă͂������ł��傤�B";
-			mes "�M���ɐ_�̂����삪����܂��悤�Ɂc";
+			mes "[マチルダ]";
+			mes "トーマス司教様やセシル様に伺って";
+			mes "みてはいかがでしょう。";
+			mes "貴方に神のご加護がありますように…";
 			close;
 		case 2:
-			mes "[�}�`���_]";
-			mes "���A�v���[�X�g�C�s�҂ł��ˁH";
-			mes "�����Ƃ���܂ł����l�`";
-			mes "�������v���[�X�g�����͒n��̑S�Ă�";
-			mes "�M�`������Ȃ���΂Ȃ�܂���B";
+			mes "[マチルダ]";
+			mes "あ、プリースト修行者ですね？";
+			mes "遠いところまでお疲れ様～";
+			mes "私たちプリーストたちは地上の全てに";
+			mes "信義を説かなければなりません。";
 			next;
-			mes "[�}�`���_]";
-			mes "�v���[�X�g�ɂȂ�ꂽ��A���񃂃��N��";
-			mes "�s���~�b�h�ɂ����������Ă��������B";
-			mes "�������ɂ͂�������̃A���f�b�h��";
-			mes "���܂��B";
-			mes "�ǂ����ނ��������Ă����Ă��������c";
+			mes "[マチルダ]";
+			mes "プリーストになられたら、是非モロクの";
+			mes "ピラミッドにいらっしゃってください。";
+			mes "あそこにはたくさんのアンデッドが";
+			mes "居ます。";
+			mes "どうか彼らを解放してあげてください…";
 			next;
-			mes "[�}�`���_]";
-			mes "����ł͂��C�����āc";
-			mes "�M���ɐ_�̂����삪����܂��悤�Ɂc";
+			mes "[マチルダ]";
+			mes "それではお気をつけて…";
+			mes "貴方に神のご加護がありますように…";
 			set CHANGE_PR,3;
 			savepoint "moc_fild07.gat",36,355;
 			close;
 		case 3:
-			mes "[�}�`���_]";
-			mes "���A������ɗ��܂炸";
-			mes "���̏���n�ցc";
+			mes "[マチルダ]";
+			mes "さ、こちらに留まらず";
+			mes "次の巡礼地へ…";
 			close;
 		default:
-			mes "[�}�`���_]";
-			mes "������ւ͂ǂ̂悤�Ȃ��p�ŁH";
-			mes "�C�s�𑱂��Ă��������B";
+			mes "[マチルダ]";
+			mes "こちらへはどのようなご用で？";
+			mes "修行を続けてください。";
 			close;
 		}
 	}
-	mes "[�}�`���_]";
-	mes "�c�c";
+	mes "[マチルダ]";
+	mes "……";
 	close;
 }
 
 //==============================================================
-prt_fild00.gat,208,218,4	script	�C�s���̐_��	98,{
-	//�A�R���C�g�]�E
+prt_fild00.gat,208,218,4	script	修行中の神父	98,{
+	//アコライト転職
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[�m��_��]";
-		mes "�N�A�A�R���C�g�C�s�҂��H";
-		mes "�킴�킴�����܂ŗ��Ă������";
-		mes "�Ƃ���ł��܂Ȃ����A";
-		mes "�����A�R���C�g�ɓ]�E����ׂ�";
-		mes "�����͓P�p����Ă���񂾁B";
+		mes "[洋介神父]";
+		mes "君、アコライト修行者か？";
+		mes "わざわざここまで来てもらった";
+		mes "ところですまないが、";
+		mes "もうアコライトに転職する為の";
+		mes "試験は撤廃されているんだ。";
 		next;
-		mes "[�m��_��]";
-		mes "�܂��A�R���C�g�ւ̓���";
-//		mes "������߂Ă��Ȃ̂ł���΁A";	//�{�Ǝd�l
-		mes "������߂Ă��Ȃ��̂ł���΁A";
-		mes "�}���V�X�_����K�˂�Ƃ����B";
+		mes "[洋介神父]";
+		mes "まだアコライトへの道を";
+//		mes "あきらめていなのであれば、";	//本家仕様
+		mes "あきらめていないのであれば、";
+		mes "マルシス神父を訪ねるといい。";
 		close;
 	}
-	//�v���[�X�g�]�E
+	//プリースト転職
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txt�ɂĔ��s
+		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
 		case 0:
-			mes "[�m��_��]";
-			mes "�A�R���C�g���B�v���Ԃ肾�ȁ[";
+			mes "[洋介神父]";
+			mes "アコライトか。久しぶりだなー";
 			close;
 		case 1:
 		case 2:
-			mes "[�m��_��]";
-			mes "����A�v���[�X�g�C�s�҂��ȁB";
-			mes "�����܂ł悭�K�˂Ă����B";
+			mes "[洋介神父]";
+			mes "うん、プリースト修行者だな。";
+			mes "ここまでよく訪ねてきた。";
 			next;
-			mes "[�m��_��]";
-			mes "����������q�˂ė���O��";
-			mes "���ɉ���ė���悤�ɁB";
-			mes "�����b���A�ԈႦ�����Ă��Ƃ��B";
+			mes "[洋介神父]";
+			mes "しかし私を尋ねて来る前に";
+			mes "他に会って来るように。";
+			mes "早い話が、間違えたってことだ。";
 			next;
-			mes "[�m��_��]";
-			mes "�����ɋA���Ċm�F���Ă݂Ă���B";
+			mes "[洋介神父]";
+			mes "聖堂に帰って確認してみてくれ。";
 			close;
 		case 3:
-			mes "[�m��_��]";
-			mes "����A�v���[�X�g�C�s�҂��ȁB";
-			mes "�����܂ł悭�K�˂Ă����B";
+			mes "[洋介神父]";
+			mes "うん、プリースト修行者だな。";
+			mes "ここまでよく訪ねてきた。";
 			next;
-			mes "[�m��_��]";
-			mes "�悵�A�v���[�X�g�̖��ɒp���Ȃ��悤";
-			mes "�����������Ă����Ȃ����B";
+			mes "[洋介神父]";
+			mes "よし、プリーストの名に恥じないよう";
+			mes "正しく生きていきなさい。";
 			next;
-			mes "[�m��_��]";
-			mes "�����ɋA���Ă悵�B";
-			mes "�N�̏���͂����ōŌゾ�B";
-			mes "�悭�����܂ŗ��𑱂����ȁB";
-			mes "�A������ꂮ����C������悤�ɁB";
+			mes "[洋介神父]";
+			mes "聖堂に帰ってよし。";
+			mes "君の巡礼はここで最後だ。";
+			mes "よくここまで旅を続けたな。";
+			mes "帰りもくれぐれも気をつけるように。";
 			set CHANGE_PR,4;
 			savepoint "prt_fild00.gat",205,231;
 			close;
 		case 4:
-			mes "[�m��_��]";
-			mes "��H�����ɋA��Ȃ��̂��H";
-			mes "����Ƃ������ňꐶ�߂��������̂��H";
+			mes "[洋介神父]";
+			mes "ん？聖堂に帰らないのか？";
+			mes "それともここで一生過ごしたいのか？";
 			close;
 		default:
-			mes "[�m��_��]";
-			mes "����A����ȂƂ���ŗV���";
-			mes "���Ȃ��ő����v���[�X�g�ɂȂ�Ȃ����B";
+			mes "[洋介神父]";
+			mes "こら、こんなところで遊んで";
+			mes "いないで早くプリーストになりなさい。";
 			close;
 		}
 	}
-	mes "[�m��_��]";
-	mes "�c�c";
+	mes "[洋介神父]";
+	mes "……";
 	close;
 }

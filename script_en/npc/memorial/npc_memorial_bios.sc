@@ -3,104 +3,104 @@
 //==============================================================================
 
 //============================================================
-// ƒ_ƒ“ƒWƒ‡ƒ“¶¬NPC
+// ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ç”ŸæˆNPC
 //------------------------------------------------------------
-moro_cav.gat,45,60,5	script	’²¸‘àˆõ	419,{
-	if(!(checkquest(15006) & 0x8)) {	// ‰‰ñ‰ï˜b
-		mes "[’²¸‘àˆõ]";
-		mes "‚±‚±‚Íƒ‚ƒƒN•œŠˆ‚ğ–h‚®˜A‡ŒR‚Ì";
-		mes "Å‘Oü‚Å‚·B";
-		mes "„‚Í’²¸‘à‚É‚æ‚è”­Œ©‚³‚ê‚½";
-		mes "^ff0000‰©F‚¢í^000000‚Ì’²¸‚ğs‚Á‚Ä‚¢‚Ü‚·B";
+moro_cav.gat,45,60,5	script	èª¿æŸ»éšŠå“¡	419,{
+	if(!(checkquest(15006) & 0x8)) {	// åˆå›ä¼šè©±
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã“ã“ã¯ãƒ¢ãƒ­ã‚¯å¾©æ´»ã‚’é˜²ãé€£åˆè»ã®";
+		mes "æœ€å‰ç·šã§ã™ã€‚";
+		mes "ç§ã¯èª¿æŸ»éšŠã«ã‚ˆã‚Šç™ºè¦‹ã•ã‚ŒãŸ";
+		mes "^ff0000é»„è‰²ã„ç¨®^000000ã®èª¿æŸ»ã‚’è¡Œã£ã¦ã„ã¾ã™ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚µ‚©‚µA‰©F‚¢í‚Ì“à•”‚É‚Í";
-		mes "‹­—Í‚Èƒ‚ƒ“ƒXƒ^[‚ª¶‘§‚µ‚Ä‚¨‚è";
-		mes "’²¸‘à‚àr‘å‚È”íŠQ‚ğ";
-		mes "ó‚¯‚Ä‚µ‚Ü‚¢‚Ü‚µ‚½ccB";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã—ã‹ã—ã€é»„è‰²ã„ç¨®ã®å†…éƒ¨ã«ã¯";
+		mes "å¼·åŠ›ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç”Ÿæ¯ã—ã¦ãŠã‚Š";
+		mes "èª¿æŸ»éšŠã‚‚ç”šå¤§ãªè¢«å®³ã‚’";
+		mes "å—ã‘ã¦ã—ã¾ã„ã¾ã—ãŸâ€¦â€¦ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "’²¸‚Í‘±s‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñ‚ª";
-		mes "„ˆêl‚Ì—Í‚Å‚Í’²¸‚ğs‚È‚¦‚Ü‚¹‚ñB";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "èª¿æŸ»ã¯ç¶šè¡Œã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ãŒ";
+		mes "ç§ä¸€äººã®åŠ›ã§ã¯èª¿æŸ»ã‚’è¡Œãªãˆã¾ã›ã‚“ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚»‚±‚ÅA˜r‚Ì—§‚Â‚Å‚ ‚ë‚¤";
-		mes "–`Œ¯Ò‚Ì•ûX‚É‚¨è“`‚¢‚ğ";
-		mes "‚¨Šè‚¢‚µ‚Ä‚¢‚é‚Ì‚Å‚·B";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ãã“ã§ã€è…•ã®ç«‹ã¤ã§ã‚ã‚ã†";
+		mes "å†’é™ºè€…ã®æ–¹ã€…ã«ãŠæ‰‹ä¼ã„ã‚’";
+		mes "ãŠé¡˜ã„ã—ã¦ã„ã‚‹ã®ã§ã™ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚¨Šè‚¢‚µ‚Ü‚·I";
-		mes "‰©F‚¢í‚Ì“à•”‚Ì’²¸‚É";
-		mes "‹¦—Í‚µ‚Ä‚­‚¾‚³‚¢I";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ãŠé¡˜ã„ã—ã¾ã™ï¼";
+		mes "é»„è‰²ã„ç¨®ã®å†…éƒ¨ã®èª¿æŸ»ã«";
+		mes "å”åŠ›ã—ã¦ãã ã•ã„ï¼";
 		next;
-		menu "‹¦—Í‚·‚é",-;
-		mes "[’²¸‘àˆõ]";
-		mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·I";
-		mes "‰©F‚¢í‚Ì“à•”‚Í”ñí‚ÉŠëŒ¯‚Å‚·B";
-		mes "•K‚¸ƒp[ƒeƒB[‚ğ‘g‚ñ‚Å‚©‚ç";
-		mes "’²¸‚ğs‚Á‚Ä‚­‚¾‚³‚¢B";
-		mes "‚æ‚ë‚µ‚­‚¨Šè‚¢‚µ‚Ü‚·I";
+		menu "å”åŠ›ã™ã‚‹",-;
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ï¼";
+		mes "é»„è‰²ã„ç¨®ã®å†…éƒ¨ã¯éå¸¸ã«å±é™ºã§ã™ã€‚";
+		mes "å¿…ãšãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚’çµ„ã‚“ã§ã‹ã‚‰";
+		mes "èª¿æŸ»ã‚’è¡Œã£ã¦ãã ã•ã„ã€‚";
+		mes "ã‚ˆã‚ã—ããŠé¡˜ã„ã—ã¾ã™ï¼";
 		setquest 15006;
 		compquest 15006;
 		close;
 	}
-	mes "[’²¸‘àˆõ]";
-	mes "‰©F‚¢í‚Ì“à•”‚Í”ñí‚ÉŠëŒ¯‚Å‚·B";
-	mes "•K‚¸ƒp[ƒeƒB[‚ğ‘g‚ñ‚Å‚©‚ç";
-	mes "’²¸‚ğs‚Á‚Ä‚­‚¾‚³‚¢B";
-	mes "‚æ‚ë‚µ‚­‚¨Šè‚¢‚µ‚Ü‚·I";
+	mes "[èª¿æŸ»éšŠå“¡]";
+	mes "é»„è‰²ã„ç¨®ã®å†…éƒ¨ã¯éå¸¸ã«å±é™ºã§ã™ã€‚";
+	mes "å¿…ãšãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚’çµ„ã‚“ã§ã‹ã‚‰";
+	mes "èª¿æŸ»ã‚’è¡Œã£ã¦ãã ã•ã„ã€‚";
+	mes "ã‚ˆã‚ã—ããŠé¡˜ã„ã—ã¾ã™ï¼";
 	close;
 }
-moro_cav.gat,50,63,5	script	‰©F‚¢í#bios	844,{
-	if(!(checkquest(15006) & 0x8)) {	// ‰‰ñ‰ï˜b
-		mes "[’²¸‘àˆõ]";
-		mes "‚±‚±‚Íƒ‚ƒƒN•œŠˆ‚ğ–h‚®˜A‡ŒR‚Ì";
-		mes "Å‘Oü‚Å‚·B";
-		mes "„‚Í’²¸‘à‚É‚æ‚è”­Œ©‚³‚ê‚½";
-		mes "^ff0000‰©F‚¢í^000000‚Ì’²¸‚ğs‚Á‚Ä‚¢‚Ü‚·B";
+moro_cav.gat,50,63,5	script	é»„è‰²ã„ç¨®#bios	844,{
+	if(!(checkquest(15006) & 0x8)) {	// åˆå›ä¼šè©±
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã“ã“ã¯ãƒ¢ãƒ­ã‚¯å¾©æ´»ã‚’é˜²ãé€£åˆè»ã®";
+		mes "æœ€å‰ç·šã§ã™ã€‚";
+		mes "ç§ã¯èª¿æŸ»éšŠã«ã‚ˆã‚Šç™ºè¦‹ã•ã‚ŒãŸ";
+		mes "^ff0000é»„è‰²ã„ç¨®^000000ã®èª¿æŸ»ã‚’è¡Œã£ã¦ã„ã¾ã™ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚µ‚©‚µA‰©F‚¢í‚Ì“à•”‚É‚Í";
-		mes "‹­—Í‚Èƒ‚ƒ“ƒXƒ^[‚ª¶‘§‚µ‚Ä‚¨‚è";
-		mes "’²¸‘à‚àr‘å‚È”íŠQ‚ğ";
-		mes "ó‚¯‚Ä‚µ‚Ü‚¢‚Ü‚µ‚½ccB";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã—ã‹ã—ã€é»„è‰²ã„ç¨®ã®å†…éƒ¨ã«ã¯";
+		mes "å¼·åŠ›ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç”Ÿæ¯ã—ã¦ãŠã‚Š";
+		mes "èª¿æŸ»éšŠã‚‚ç”šå¤§ãªè¢«å®³ã‚’";
+		mes "å—ã‘ã¦ã—ã¾ã„ã¾ã—ãŸâ€¦â€¦ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "’²¸‚Í‘±s‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñ‚ª";
-		mes "„ˆêl‚Ì—Í‚Å‚Í’²¸‚ğs‚È‚¦‚Ü‚¹‚ñB";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "èª¿æŸ»ã¯ç¶šè¡Œã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ãŒ";
+		mes "ç§ä¸€äººã®åŠ›ã§ã¯èª¿æŸ»ã‚’è¡Œãªãˆã¾ã›ã‚“ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚»‚±‚ÅA˜r‚Ì—§‚Â‚Å‚ ‚ë‚¤";
-		mes "–`Œ¯Ò‚Ì•ûX‚É‚¨è“`‚¢‚ğ";
-		mes "‚¨Šè‚¢‚µ‚Ä‚¢‚é‚Ì‚Å‚·B";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ãã“ã§ã€è…•ã®ç«‹ã¤ã§ã‚ã‚ã†";
+		mes "å†’é™ºè€…ã®æ–¹ã€…ã«ãŠæ‰‹ä¼ã„ã‚’";
+		mes "ãŠé¡˜ã„ã—ã¦ã„ã‚‹ã®ã§ã™ã€‚";
 		next;
-		mes "[’²¸‘àˆõ]";
-		mes "‚¨Šè‚¢‚µ‚Ü‚·I";
-		mes "‰©F‚¢í‚Ì“à•”‚Ì’²¸‚É";
-		mes "‹¦—Í‚µ‚Ä‚­‚¾‚³‚¢I";
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ãŠé¡˜ã„ã—ã¾ã™ï¼";
+		mes "é»„è‰²ã„ç¨®ã®å†…éƒ¨ã®èª¿æŸ»ã«";
+		mes "å”åŠ›ã—ã¦ãã ã•ã„ï¼";
 		next;
-		menu "‹¦—Í‚·‚é",-;
-		mes "[’²¸‘àˆõ]";
-		mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·I";
-		mes "‰©F‚¢í‚Ì“à•”‚Í”ñí‚ÉŠëŒ¯‚Å‚·B";
-		mes "•K‚¸ƒp[ƒeƒB[‚ğ‘g‚ñ‚Å‚©‚ç";
-		mes "’²¸‚ğs‚Á‚Ä‚­‚¾‚³‚¢B";
-		mes "‚æ‚ë‚µ‚­‚¨Šè‚¢‚µ‚Ü‚·I";
+		menu "å”åŠ›ã™ã‚‹",-;
+		mes "[èª¿æŸ»éšŠå“¡]";
+		mes "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ï¼";
+		mes "é»„è‰²ã„ç¨®ã®å†…éƒ¨ã¯éå¸¸ã«å±é™ºã§ã™ã€‚";
+		mes "å¿…ãšãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚’çµ„ã‚“ã§ã‹ã‚‰";
+		mes "èª¿æŸ»ã‚’è¡Œã£ã¦ãã ã•ã„ã€‚";
+		mes "ã‚ˆã‚ã—ããŠé¡˜ã„ã—ã¾ã™ï¼";
 		setquest 15006;
 		compquest 15006;
 		close;
 	}
 	if(getonlinepartymember() < 1) {
-		mes "^ff0000]‚±‚Ìæ‚Éi‚Ş‚É‚Íƒp[ƒeƒB[‚É";
-		mes "@‰Á“ü‚µ‚Ä‚¢‚é•K—v‚ª‚ ‚é]^000000";
+		mes "^ff0000â€ã“ã®å…ˆã«é€²ã‚€ã«ã¯ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«";
+		mes "ã€€åŠ å…¥ã—ã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚‹â€^000000";
 		close;
 	}
 	if((checkquest(15005)&0x2 == 0 || checkquest(118927)&0x2 == 0) && checkquest(15007)&0x2) {
-		mes "]‚±‚Ìæ‚Í“üê‚µ‚Ä‚©‚ç1‰ñ–Ú‚Ì";
-		mes "@^ff0000Œß‘O5ˆÈ~^000000‚Éis‰Â”\‚Å‚·B";
-		mes "@’A‚µAÅŒã‚Ì“üê‚ğ‚µ‚Ä‚©‚ç";
-		mes "@^ff00001ŠÔ^000000Œo‰ß‚·‚é‚Ü‚Å‚Í";
-		mes "@is‚Å‚«‚Ü‚¹‚ñ‚Ì‚Å‚²’ˆÓ‚­‚¾‚³‚¢]";
+		mes "â€ã“ã®å…ˆã¯å…¥å ´ã—ã¦ã‹ã‚‰1å›ç›®ã®";
+		mes "ã€€^ff0000åˆå‰5æ™‚ä»¥é™^000000ã«é€²è¡Œå¯èƒ½ã§ã™ã€‚";
+		mes "ã€€ä½†ã—ã€æœ€å¾Œã®å…¥å ´ã‚’ã—ã¦ã‹ã‚‰";
+		mes "ã€€^ff00001æ™‚é–“^000000çµŒéã™ã‚‹ã¾ã§ã¯";
+		mes "ã€€é€²è¡Œã§ãã¾ã›ã‚“ã®ã§ã”æ³¨æ„ãã ã•ã„â€";
 		close;
 	}
 	if(checkquest(15005) & 0x2) {
@@ -111,33 +111,33 @@ moro_cav.gat,50,63,5	script	‰©F‚¢í#bios	844,{
 		delquest 118927;
 	set '@party$,getpartyname(getcharid(1));
 	set '@leader$,getpartyleader(getcharid(1));
-	mes "]‰©F‚¢í‚ª‚ ‚é]";
+	mes "â€é»„è‰²ã„ç¨®ãŒã‚ã‚‹â€";
 	if(getpartyleader(getcharid(1)) == strcharinfo(0)) {
-		set '@str1$,"‰©F‚¢í‚Ö‚Ì“¹‚ğŠJ‚­";
-		set '@str2$,"‰©F‚¢í‚É“ü‚é";
+		set '@str1$,"é»„è‰²ã„ç¨®ã¸ã®é“ã‚’é–‹ã";
+		set '@str2$,"é»„è‰²ã„ç¨®ã«å…¥ã‚‹";
 	}
 	else {
-		set '@str2$,"‰©F‚¢í‚É“ü‚é";
+		set '@str2$,"é»„è‰²ã„ç¨®ã«å…¥ã‚‹";
 	}
 	next;
-	switch(select('@str1$,'@str2$,"ƒLƒƒƒ“ƒZƒ‹")) {
+	switch(select('@str1$,'@str2$,"ã‚­ãƒ£ãƒ³ã‚»ãƒ«")) {
 	case 1:
 		if(getpartyleader(getcharid(1)) != strcharinfo(0)) {
-			mes "ƒp[ƒeƒB[–¼F" +'@party$;
-			mes "ƒp[ƒeƒB[ƒŠ[ƒ_[F" +'@leader$;
-			mes "^0000ffbios_island ^000000|—\–ñ¸”s";
+			mes "ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼åï¼š" +'@party$;
+			mes "ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ãƒªãƒ¼ãƒ€ãƒ¼ï¼š" +'@leader$;
+			mes "^0000ffbios_island ^000000ï¼äºˆç´„å¤±æ•—";
 			close;
 		}
 		mdcreate "bios_island";
-		mes "^ff0000]ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ª^000000";
-		mes "^ff0000@¶¬‚³‚ê‚Ü‚µ‚½B^000000";
-		mes "^ff0000@Ä“xƒNƒŠƒbƒN‚µ‚Ä^000000";
-		mes "^ff0000@“üê‚ğ‰Ÿ‚µ‚Ä‰º‚³‚¢]^000000";
+		mes "^ff0000â€ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒ^000000";
+		mes "^ff0000ã€€ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚^000000";
+		mes "^ff0000ã€€å†åº¦ã‚¯ãƒªãƒƒã‚¯ã—ã¦^000000";
+		mes "^ff0000ã€€å…¥å ´ã‚’æŠ¼ã—ã¦ä¸‹ã•ã„â€^000000";
 		close;
 	case 2:
 		switch(mdenter("bios_island")) {
-		case 0:	// ƒGƒ‰[‚È‚µ
-			announce "ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“[bios_island] ‚É“üê‚µ‚Ü‚µ‚½@F@" +strcharinfo(1)+ " (" +strcharinfo(0)+ ")", 0x1, 0x00ff99;
+		case 0:	// ã‚¨ãƒ©ãƒ¼ãªã—
+			announce "ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³[bios_island] ã«å…¥å ´ã—ã¾ã—ãŸã€€ï¼šã€€" +strcharinfo(1)+ " (" +strcharinfo(0)+ ")", 0x1, 0x00ff99;
 			setquest 96430;
 			setquest 15005;
 			setquest 15007;
@@ -146,30 +146,30 @@ moro_cav.gat,50,63,5	script	‰©F‚¢í#bios	844,{
 			close2;
 			//warp "1@dth1.gat",17,93;
 			end;
-		case 1:	// ƒp[ƒeƒB[–¢‰Á“ü
-			mes "]ƒp[ƒeƒB[ˆõ‚Ì‚İA";
-			mes "@ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚É";
-			mes "@“üê‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·]";
+		case 1:	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼æœªåŠ å…¥
+			mes "â€ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼å“¡ã®ã¿ã€";
+			mes "ã€€ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã«";
+			mes "ã€€å…¥å ´ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™â€";
 			close;
-		case 2:	// ƒ_ƒ“ƒWƒ‡ƒ“–¢ì¬
-			mes "]ƒp[ƒeƒB[ƒŠ[ƒ_[‚ª";
-			mes "@ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ğ";
-			mes "@¶¬‚µ‚Ä‚¢‚È‚¢ó‘Ô‚Å‚·]";
+		case 2:	// ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æœªä½œæˆ
+			mes "â€ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ãƒªãƒ¼ãƒ€ãƒ¼ãŒ";
+			mes "ã€€ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã‚’";
+			mes "ã€€ç”Ÿæˆã—ã¦ã„ãªã„çŠ¶æ…‹ã§ã™â€";
 			close;
-		default:	// ‚»‚Ì‘¼ƒGƒ‰[
+		default:	// ãã®ä»–ã‚¨ãƒ©ãƒ¼
 			close;
 		}
 	case 3:
-		mes "]‰©F‚¢í‚©‚ç—£‚ê‚½]";
+		mes "â€é»„è‰²ã„ç¨®ã‹ã‚‰é›¢ã‚ŒãŸâ€";
 		close;
 	}
 OnInit:
-	waitingroom "ƒrƒIƒX‚Ì“‡",0;
+	waitingroom "ãƒ“ã‚ªã‚¹ã®å³¶",0;
 	end;
 }
 
 //============================================================
-// ƒrƒIƒX‚Ì“‡
+// ãƒ“ã‚ªã‚¹ã®å³¶
 //------------------------------------------------------------
 1@dth1.gat,84,90,0	script	#BARRICADE_bios1_1	1905,{}
 1@dth1.gat,84,91,0	script	#BARRICADE_bios1_2	1905,{}
@@ -185,41 +185,41 @@ OnStart:
 	if('flag)
 		end;
 	set 'flag,1;
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios1");
-	hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-	hideonnpc getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1");
-	hideonnpc getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1");
-	hideonnpc getmdnpcname("ƒLƒh#bios1");
-	hideonnpc getmdnpcname("ƒŠ[ƒ“#bios1");
-	hideonnpc getmdnpcname("˜A‡ŒR––±Š¯#bios1");
-	hideonnpc getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1");
-	hideonnpc getmdnpcname("ƒqƒ…[#bios1");
-	hideonnpc getmdnpcname("ƒwƒ“ƒWƒk#bios1");
-	hideonnpc getmdnpcname("ƒqƒVƒG#bios1");
-	hideonnpc getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1");
-	hideonnpc getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1");
-	hideonnpc getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1");
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1");
+	hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+	hideonnpc getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1");
+	hideonnpc getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1");
+	hideonnpc getmdnpcname("ã‚­ãƒ‰#bios1");
+	hideonnpc getmdnpcname("ãƒªãƒ¼ãƒ³#bios1");
+	hideonnpc getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1");
+	hideonnpc getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1");
+	hideonnpc getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1");
+	hideonnpc getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1");
+	hideonnpc getmdnpcname("ãƒ’ã‚·ã‚¨#bios1");
+	hideonnpc getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1");
+	hideonnpc getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1");
+	hideonnpc getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1");
 
 	hideonnpc getmdnpcname("warp1#bios2");
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 
-	hideonnpc getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3");
-	hideonnpc getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3");
-	hideonnpc getmdnpcname("ƒLƒh#bios3");
-	hideonnpc getmdnpcname("ƒŠ[ƒ“#bios3");
-	hideonnpc getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios3");
-	hideonnpc getmdnpcname("ƒqƒ…[#bios3");
-	hideonnpc getmdnpcname("ƒwƒ“ƒWƒk#bios3");
-	hideonnpc getmdnpcname("ƒqƒVƒG#bios3");
-	hideonnpc getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3");
-	hideonnpc getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3");
-	hideonnpc getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3");
+	hideonnpc getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3");
+	hideonnpc getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3");
+	hideonnpc getmdnpcname("ã‚­ãƒ‰#bios3");
+	hideonnpc getmdnpcname("ãƒªãƒ¼ãƒ³#bios3");
+	hideonnpc getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios3");
+	hideonnpc getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios3");
+	hideonnpc getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios3");
+	hideonnpc getmdnpcname("ãƒ’ã‚·ã‚¨#bios3");
+	hideonnpc getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3");
+	hideonnpc getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3");
+	hideonnpc getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3");
 
 	hideonnpc getmdnpcname("freeze#bios3");
 
 	for(set '@i,1; '@i<=3; set '@i,'@i+1) {
 		for(set '@j,1; '@j<=8; set '@j,'@j+1)
-			hideonnpc getmdnpcname("€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#"+ '@i + '@j +"bi");
+			hideonnpc getmdnpcname("æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#"+ '@i + '@j +"bi");
 	}
 
 	areasetcell getmdmapname("1@dth1.gat"),84,90,85,97,1;
@@ -227,207 +227,207 @@ OnStart:
 
 	set '@map$,getmdmapname("1@dth1.gat");
 	set '@label$,getmdnpcname("BiosControl")+ "::OnKilled";
-	monster '@map$,90,94,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,90,94,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,101,125,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,101,125,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,108,156,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,108,156,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,119,59,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,119,144,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,121,69,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,124,164,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,131,101,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,131,101,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,135,50,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,135,152,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,138,132,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,138,132,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,141,143,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,143,49,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,144,164,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,145,107,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,145,107,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,153,76,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,153,76,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,156,46,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,165,84,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,165,130,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,170,67,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,2,'@label$;
-	monster '@map$,184,130,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,192,145,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,194,116,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,203,131,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,203,151,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,203,162,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,203,162,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,204,112,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,205,98,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,206,169,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,210,62,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,211,88,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,212,75,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,213,151,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,214,53,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,215,109,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,217,129,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,221,166,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,223,72,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,224,62,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,225,103,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,225,54,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,225,89,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,225,152,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,227,150,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,227,150,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,227,150,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,228,124,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,232,87,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,232,69,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,233,57,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,237,80,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,240,140,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,243,106,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,244,119,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,246,71,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,246,126,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,248,81,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,249,144,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,249,155,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,252,105,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
-	monster '@map$,274,104,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,297,103,"¶Ò‚Ìƒ}ƒŠƒ“ƒXƒtƒBƒA[",3012,1,'@label$;
-	monster '@map$,306,103,"¶Ò‚ÌqƒfƒU[ƒgƒEƒ‹ƒt",3011,1,'@label$;
-	monster '@map$,316,103,"¶Ò‚ÌƒI[ƒNƒxƒCƒr[",3010,1,'@label$;
+	monster '@map$,90,94,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,90,94,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,101,125,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,101,125,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,108,156,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,108,156,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,119,59,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,119,144,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,121,69,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,124,164,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,131,101,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,131,101,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,135,50,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,135,152,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,138,132,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,138,132,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,141,143,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,143,49,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,144,164,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,145,107,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,145,107,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,153,76,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,153,76,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,156,46,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,165,84,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,165,130,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,170,67,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,2,'@label$;
+	monster '@map$,184,130,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,192,145,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,194,116,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,203,131,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,203,151,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,203,162,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,203,162,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,204,112,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,205,98,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,206,169,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,210,62,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,211,88,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,212,75,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,213,151,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,214,53,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,215,109,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,217,129,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,221,166,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,223,72,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,224,62,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,225,103,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,225,54,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,225,89,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,225,152,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,227,150,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,227,150,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,227,150,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,228,124,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,232,87,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,232,69,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,233,57,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,237,80,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,240,140,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,243,106,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,244,119,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,246,71,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,246,126,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,248,81,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,249,144,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,249,155,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,252,105,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
+	monster '@map$,274,104,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,297,103,"ç”Ÿè€…ã®ãƒãƒªãƒ³ã‚¹ãƒ•ã‚£ã‚¢ãƒ¼",3012,1,'@label$;
+	monster '@map$,306,103,"ç”Ÿè€…ã®å­ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3011,1,'@label$;
+	monster '@map$,316,103,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ãƒ™ã‚¤ãƒ“ãƒ¼",3010,1,'@label$;
 
 	donpcevent getmdnpcname("#bios2_mobdead1") +"::OnStart";
 	end;
 OnKilled:
 	end;
 }
-1@dth1.gat,71,97,3	script	ƒWƒFƒCƒX#bios1	467,{
-	mes "[ƒWƒFƒCƒX]";
-	mes "ccƒWƒFƒCƒX‚¾B";
+1@dth1.gat,71,97,3	script	ã‚¸ã‚§ã‚¤ã‚¹#bios1	467,{
+	mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+	mes "â€¦â€¦ã‚¸ã‚§ã‚¤ã‚¹ã ã€‚";
 	next;
-	mes "[ƒWƒFƒCƒX]";
-	mes "ccB";
+	mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+	mes "â€¦â€¦ã€‚";
 	close;
 }
-1@dth1.gat,74,94,3	script	€_ƒAƒ“ƒN#bios1	3029,{
+1@dth1.gat,74,94,3	script	æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1	3029,{
 	end;
 OnTalk1:
-	unittalk "HHHH : ƒNƒbƒNƒbƒNB";
+	unittalk "ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ : ã‚¯ãƒƒã‚¯ãƒƒã‚¯ã€‚";
 	end;
 OnTalk2:
-	unittalk "HHHH : ‚æ‚¤‚±‚»ƒrƒIƒX‚Ì“‡‚ÖB";
+	unittalk "ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ : ã‚ˆã†ã“ããƒ“ã‚ªã‚¹ã®å³¶ã¸ã€‚";
 	end;
 OnTalk3:
-	unittalk "€_ƒAƒ“ƒN : „‚Í€_ƒAƒ“ƒNB‚±‚±‚Í„‚ªì‚èo‚µ‚½€‚Æ¶‚Ì‹óŠÔ‚Å‚·B";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ç§ã¯æ­»ç¥ã‚¢ãƒ³ã‚¯ã€‚ã“ã“ã¯ç§ãŒä½œã‚Šå‡ºã—ãŸæ­»ã¨ç”Ÿã®ç©ºé–“ã§ã™ã€‚";
 	end;
 OnTalk4:
-	unittalk "€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 	end;
 OnTalk5:
-	unittalk "€_ƒAƒ“ƒN : ‚±‚ê‚©‚çƒ‚ƒƒN—l‚É•ù‚°‚é¶æÑ‚ğ’²’B‚µ‚æ‚¤‚Æ‚µ‚Ä‚¢‚½‚Ì‚Å‚·‚ªccB";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã‹ã‚‰ãƒ¢ãƒ­ã‚¯æ§˜ã«æ§ã’ã‚‹ç”Ÿè´„ã‚’èª¿é”ã—ã‚ˆã†ã¨ã—ã¦ã„ãŸã®ã§ã™ãŒâ€¦â€¦ã€‚";
 	end;
 OnTalk6:
-	unittalk "€_ƒAƒ“ƒN : ‚Ü‚³‚©¶æÑ‚ª©‚ç‚â‚Á‚Ä—ˆ‚é‚Æ‚ÍccƒNƒNƒNB";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã¾ã•ã‹ç”Ÿè´„ãŒè‡ªã‚‰ã‚„ã£ã¦æ¥ã‚‹ã¨ã¯â€¦â€¦ã‚¯ã‚¯ã‚¯ã€‚";
 	end;
 OnTalk7:
-	unittalk "€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚Ì—Í‚É‚È‚ê‚é–‚ğŒõ‰h‚Év‚¢‚È‚³‚¢B";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ã®åŠ›ã«ãªã‚Œã‚‹äº‹ã‚’å…‰æ „ã«æ€ã„ãªã•ã„ã€‚";
 	end;
 OnTalk8:
-	unittalk "€_ƒAƒ“ƒN : ƒNƒNAˆĞ¨‚ª—Ç‚­‚ÄŒ‹\‚Å‚·B‚½‚¾A‹}‚®•K—v‚Í‚ ‚è‚Ü‚¹‚ñB";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã€å¨å‹¢ãŒè‰¯ãã¦çµæ§‹ã§ã™ã€‚ãŸã ã€æ€¥ãå¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚";
 	end;
 OnTalk9:
-	unittalk "€_ƒAƒ“ƒN : ‚Ü‚¸‚Í„‚Ì¢ŠE‚Å‚ä‚Á‚­‚ècc‚­‚Â‚ë‚®‚±‚Æ‚Å‚·BƒNƒNƒNƒNƒNB";
+	unittalk "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã¾ãšã¯ç§ã®ä¸–ç•Œã§ã‚†ã£ãã‚Šâ€¦â€¦ãã¤ã‚ãã“ã¨ã§ã™ã€‚ã‚¯ã‚¯ã‚¯ã‚¯ã‚¯ã€‚";
 	end;
 }
-1@dth1.gat,67,97,5	script	ƒuƒŠƒh#bios1	468,{
+1@dth1.gat,67,97,5	script	ãƒ–ãƒªãƒ‰#bios1	468,{
 	if(getpartyleader(getcharid(1)) != strcharinfo(0) || 'flag) {
-		mes "[ƒuƒŠƒh]";
-		mes "„‚ÍƒuƒŠƒhB";
-		mes "–‚‰¤ƒ‚ƒƒN‚Ì•œŠˆ‚ğ";
-		mes "‘j~‚µ‚É—ˆ‚½‚ñ‚¾B";
+		mes "[ãƒ–ãƒªãƒ‰]";
+		mes "ç§ã¯ãƒ–ãƒªãƒ‰ã€‚";
+		mes "é­”ç‹ãƒ¢ãƒ­ã‚¯ã®å¾©æ´»ã‚’";
+		mes "é˜»æ­¢ã—ã«æ¥ãŸã‚“ã ã€‚";
 		close;
 	}
 	if(checkquest(201720)) {
-		if(select("æ‚ğ‹}‚®","‰ï˜b‚ğ‚·‚é") == 1) {
-			mes "]’N‚ª—ˆ‚Ä‚¢‚éH]";
+		if(select("å…ˆã‚’æ€¥ã","ä¼šè©±ã‚’ã™ã‚‹") == 1) {
+			mes "â€èª°ãŒæ¥ã¦ã„ã‚‹ï¼Ÿâ€";
 			next;
 			set '@menu,select(
-				(ASH_6QUE == 14 || ASH_6QUE == 15? "ƒAƒWƒt‚ÆƒCƒOƒŠƒh‚¾": "HHH"),
-				(ASH_5QUE >= 31? "ƒLƒh‚ÆƒŠ[ƒ“‚¾": "HHH"),
-				(ASH_3QUE >= 100? "ƒZƒ‹ƒUƒ“’B‚¾": "HHH"),
-				(ECL_3QUE >= 33? "ƒqƒVƒG‚ÆƒGƒCƒ”ƒ@ƒ“ƒg‚¾": "HHH"),
-				(DIC_2QUE >= 23? "ƒwƒXƒ‰ƒ“ƒ^‚ÆƒAƒoƒ‰ƒ“ƒ`ƒF‚¾": "HHH"),
-				"’N‚à‚¢‚È‚¢");
+				(ASH_6QUE == 14 || ASH_6QUE == 15? "ã‚¢ã‚¸ãƒ•ã¨ã‚¤ã‚°ãƒªãƒ‰ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+				(ASH_5QUE >= 31? "ã‚­ãƒ‰ã¨ãƒªãƒ¼ãƒ³ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+				(ASH_3QUE >= 100? "ã‚»ãƒ«ã‚¶ãƒ³é”ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+				(ECL_3QUE >= 33? "ãƒ’ã‚·ã‚¨ã¨ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+				(DIC_2QUE >= 23? "ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã¨ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+				"èª°ã‚‚ã„ãªã„");
 			switch('@menu) {
 			case 1:
-				mes "]ƒAƒWƒtAƒCƒOƒŠƒh‚Æ‡—¬‚µ‚½]";
+				mes "â€ã‚¢ã‚¸ãƒ•ã€ã‚¤ã‚°ãƒªãƒ‰ã¨åˆæµã—ãŸâ€";
 				set '@menu,3;
 				break;
 			case 2:
-				mes "]ƒLƒhAƒŠ[ƒ“‚Æ‡—¬‚µ‚½]";
+				mes "â€ã‚­ãƒ‰ã€ãƒªãƒ¼ãƒ³ã¨åˆæµã—ãŸâ€";
 				set '@menu,4;
 				break;
 			case 3:
-				mes "]ƒZƒ‹ƒUƒ“AƒŠƒ‡[ƒXƒ“A";
-				mes "@ƒqƒ…[Aƒwƒ“ƒWƒk‚Æ‡—¬‚µ‚½]";
+				mes "â€ã‚»ãƒ«ã‚¶ãƒ³ã€ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ã€";
+				mes "ã€€ãƒ’ãƒ¥ãƒ¼ã€ãƒ˜ãƒ³ã‚¸ãƒŒã¨åˆæµã—ãŸâ€";
 				set '@menu,5;
 				break;
 			case 4:
-				mes "]ƒqƒVƒGA";
-				mes "@ƒGƒCƒ”ƒ@ƒ“ƒg‚Æ‡—¬‚µ‚½]";
+				mes "â€ãƒ’ã‚·ã‚¨ã€";
+				mes "ã€€ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆã¨åˆæµã—ãŸâ€";
 				set '@menu,6;
 				break;
 			case 5:
-				mes "]ƒwƒXƒ‰ƒ“ƒ^A";
-				mes "@ƒAƒoƒ‰ƒ“ƒ`ƒF‚Æ‡—¬‚µ‚½]";
+				mes "â€ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã€";
+				mes "ã€€ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã¨åˆæµã—ãŸâ€";
 				set '@menu,7;
 				break;
 			default:
-				mes "]’N‚Æ‚à‡—¬‚µ‚È‚©‚Á‚½]";
+				mes "â€èª°ã¨ã‚‚åˆæµã—ãªã‹ã£ãŸâ€";
 				set '@menu,2;
 				break;
 			}
 			close2;
 			set 'flag,'@menu;
-			hideonnpc getmdnpcname("ƒuƒŠƒh#bios1");
-			hideonnpc getmdnpcname("ƒWƒFƒCƒX#bios1");
-			donpcevent getmdnpcname("ƒuƒŠƒh#bios1")+ "::OnStart";
+			hideonnpc getmdnpcname("ãƒ–ãƒªãƒ‰#bios1");
+			hideonnpc getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1");
+			donpcevent getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")+ "::OnStart";
 			end;
 		}
 	}
-	mes "]Œ©Šµ‚ê‚È‚¢’j«“ñl‘g‚ª‹‚é]";
+	mes "â€è¦‹æ…£ã‚Œãªã„ç”·æ€§äºŒäººçµ„ãŒå±…ã‚‹â€";
 	close2;
 	set 'flag,1;
 	initnpctimer;
 	end;
 OnTimer1000:
-	unittalk "ƒuƒŠƒh : ‚¨‚âH@‚±‚ñ‚È‚Æ‚±‚ë‚Å–`Œ¯Ò‚É‰ï‚¤‚Æ‚Ícc";
+	unittalk "ãƒ–ãƒªãƒ‰ : ãŠã‚„ï¼Ÿã€€ã“ã‚“ãªã¨ã“ã‚ã§å†’é™ºè€…ã«ä¼šã†ã¨ã¯â€¦â€¦";
 	end;
 OnTimer4000:
-	unittalk "ƒuƒŠƒh : ŒN‚à–‚‰¤ƒ‚ƒƒN‚Ì•œŠˆ‚ğ‘j~‚µ‚É—ˆ‚½‚Ì‚©H";
+	unittalk "ãƒ–ãƒªãƒ‰ : å›ã‚‚é­”ç‹ãƒ¢ãƒ­ã‚¯ã®å¾©æ´»ã‚’é˜»æ­¢ã—ã«æ¥ãŸã®ã‹ï¼Ÿ";
 	end;
 OnTimer7000:
-	unittalk "ƒuƒŠƒh : „‚Íƒvƒƒ“ƒeƒ‰‚©‚ç—ˆ‚½ƒuƒŠƒhB‚±‚¢‚Â‚Ícc";
+	unittalk "ãƒ–ãƒªãƒ‰ : ç§ã¯ãƒ—ãƒ­ãƒ³ãƒ†ãƒ©ã‹ã‚‰æ¥ãŸãƒ–ãƒªãƒ‰ã€‚ã“ã„ã¤ã¯â€¦â€¦";
 	end;
 OnTimer10000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : ccƒWƒFƒCƒX‚¾B";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦ã‚¸ã‚§ã‚¤ã‚¹ã ã€‚";
 	end;
 OnTimer13000:
-	unittalk "ƒuƒŠƒh : ‚·‚Ü‚ñ‚ÈBƒWƒFƒCƒX‚ÍlŒ©’m‚è‚È‚ñ‚¾B";
+	unittalk "ãƒ–ãƒªãƒ‰ : ã™ã¾ã‚“ãªã€‚ã‚¸ã‚§ã‚¤ã‚¹ã¯äººè¦‹çŸ¥ã‚Šãªã‚“ã ã€‚";
 	end;
 OnTimer16000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : cc";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦";
 	end;
 OnTimer19000:
-	unittalk "ƒuƒŠƒh : ‚»‚ê‚æ‚èAŒã‚ë‚©‚ç’N‚©’Ç‚¢‚©‚¯‚Ä—ˆ‚Ä‚¢‚é‚ªAŒN‚Ì’m‚è‡‚¢‚©H";
+	unittalk "ãƒ–ãƒªãƒ‰ : ãã‚Œã‚ˆã‚Šã€å¾Œã‚ã‹ã‚‰èª°ã‹è¿½ã„ã‹ã‘ã¦æ¥ã¦ã„ã‚‹ãŒã€å›ã®çŸ¥ã‚Šåˆã„ã‹ï¼Ÿ";
 	end;
 OnTimer20000:
 	stopnpctimer;
-	hideoffnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
+	hideoffnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
 	end;
 OnStart:
 	hideonnpc getmdnpcname("#BARRICADE_bios1_1");
@@ -440,107 +440,107 @@ OnStart:
 	hideonnpc getmdnpcname("#BARRICADE_bios1_8");
 	areasetcell getmdmapname("1@dth1.gat"),84,90,85,97,0;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : €A‚»‚ê‚Í¶‚ ‚éÒ‚Ì‚İ‚É–K‚ê‚é‹°•|B‚·‚×‚Ä‚Í‚±‚±‚©‚çn‚Ü‚é‚Ì‚Å‚·cc", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : æ­»ã€ãã‚Œã¯ç”Ÿã‚ã‚‹è€…ã®ã¿ã«è¨ªã‚Œã‚‹ææ€–ã€‚ã™ã¹ã¦ã¯ã“ã“ã‹ã‚‰å§‹ã¾ã‚‹ã®ã§ã™â€¦â€¦", 0x9, 0xffff00;
 	sleep 3000;
-	announce "ƒuƒŠƒh : ‘Ò‚ÄƒAƒ“ƒNI@‚­‚»‚ÁA“Œ‚É“¦‚°‚½‚æ‚¤‚¾‚ÈB“z‚ğ’Ç‚¤‚¼I", 0x9, 0xffff00;
+	announce "ãƒ–ãƒªãƒ‰ : å¾…ã¦ã‚¢ãƒ³ã‚¯ï¼ã€€ããã£ã€æ±ã«é€ƒã’ãŸã‚ˆã†ã ãªã€‚å¥´ã‚’è¿½ã†ãï¼", 0x9, 0xffff00;
 	end;
 }
-1@dth1.gat,67,97,0	script	#‰ï˜b—pƒ_ƒ~[1	139,10,10,{
-	mes "]’N‚ª—ˆ‚Ä‚¢‚éH]";
+1@dth1.gat,67,97,0	script	#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1	139,10,10,{
+	mes "â€èª°ãŒæ¥ã¦ã„ã‚‹ï¼Ÿâ€";
 	next;
 	set '@menu,select(
-		(ASH_6QUE == 14 || ASH_6QUE == 15? "ƒAƒWƒt‚ÆƒCƒOƒŠƒh‚¾": "HHH"),
-		(ASH_5QUE >= 31? "ƒLƒh‚ÆƒŠ[ƒ“‚¾": "HHH"),
-		(ASH_3QUE >= 100? "ƒZƒ‹ƒUƒ“’B‚¾": "HHH"),
-		(ECL_3QUE >= 33? "ƒqƒVƒG‚ÆƒGƒCƒ”ƒ@ƒ“ƒg‚¾": "HHH"),
-		(DIC_2QUE >= 23? "ƒwƒXƒ‰ƒ“ƒ^‚ÆƒAƒoƒ‰ƒ“ƒ`ƒF‚¾": "HHH"),
-		"’N‚à‚¢‚È‚¢");
+		(ASH_6QUE == 14 || ASH_6QUE == 15? "ã‚¢ã‚¸ãƒ•ã¨ã‚¤ã‚°ãƒªãƒ‰ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+		(ASH_5QUE >= 31? "ã‚­ãƒ‰ã¨ãƒªãƒ¼ãƒ³ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+		(ASH_3QUE >= 100? "ã‚»ãƒ«ã‚¶ãƒ³é”ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+		(ECL_3QUE >= 33? "ãƒ’ã‚·ã‚¨ã¨ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+		(DIC_2QUE >= 23? "ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã¨ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã ": "ï¼Ÿï¼Ÿï¼Ÿ"),
+		"èª°ã‚‚ã„ãªã„");
 	switch('@menu) {
 	case 1:
 		if(ASH_6QUE == 14 || ASH_6QUE == 15) {
-			mes "]U‚èŒü‚­‚ÆAƒAƒWƒt‚ÆƒCƒOƒŠƒh‚ª‹‚½]";
+			mes "â€æŒ¯ã‚Šå‘ãã¨ã€ã‚¢ã‚¸ãƒ•ã¨ã‚¤ã‚°ãƒªãƒ‰ãŒå±…ãŸâ€";
 			close2;
 			set 'flag,3;
-			set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),3;
-			hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-			hideoffnpc getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1");
-			hideoffnpc getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1");
-			donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+			set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),3;
+			hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+			hideoffnpc getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1");
+			hideoffnpc getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1");
+			donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 			end;
 		}
 		break;
 	case 2:
 		if(ASH_5QUE >= 31) {
-			mes "]U‚èŒü‚­‚ÆAƒLƒh‚ÆƒŠ[ƒ“‚ª‹‚½]";
+			mes "â€æŒ¯ã‚Šå‘ãã¨ã€ã‚­ãƒ‰ã¨ãƒªãƒ¼ãƒ³ãŒå±…ãŸâ€";
 			close2;
 			set 'flag,4;
-			set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),4;
-			hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-			hideoffnpc getmdnpcname("ƒLƒh#bios1");
-			hideoffnpc getmdnpcname("ƒŠ[ƒ“#bios1");
-			donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+			set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),4;
+			hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+			hideoffnpc getmdnpcname("ã‚­ãƒ‰#bios1");
+			hideoffnpc getmdnpcname("ãƒªãƒ¼ãƒ³#bios1");
+			donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 			end;
 		}
 		break;
 	case 3:
 		if(ASH_3QUE >= 100) {
-			mes "]U‚èŒü‚­‚ÆAƒZƒ‹ƒUƒ“AƒŠƒ‡[ƒXƒ“A";
-			mes "@ƒqƒ…[Aƒwƒ“ƒWƒk‚ª‹‚½]";
+			mes "â€æŒ¯ã‚Šå‘ãã¨ã€ã‚»ãƒ«ã‚¶ãƒ³ã€ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ã€";
+			mes "ã€€ãƒ’ãƒ¥ãƒ¼ã€ãƒ˜ãƒ³ã‚¸ãƒŒãŒå±…ãŸâ€";
 			close2;
 			set 'flag,5;
-			set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),5;
-			hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-			hideoffnpc getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1");
-			hideoffnpc getmdnpcname("ƒqƒ…[#bios1");
-			hideoffnpc getmdnpcname("ƒwƒ“ƒWƒk#bios1");
-			hideoffnpc getmdnpcname("˜A‡ŒR––±Š¯#bios1");
-			donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+			set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),5;
+			hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+			hideoffnpc getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1");
+			hideoffnpc getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1");
+			hideoffnpc getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1");
+			hideoffnpc getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1");
+			donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 			end;
 		}
 		break;
 	case 4:
 		if(ECL_3QUE >= 33) {
-			mes "]U‚èŒü‚­‚ÆAƒqƒVƒG‚Æ";
-			mes "@ƒGƒCƒ”ƒ@ƒ“ƒg‚ª‹‚½]";
+			mes "â€æŒ¯ã‚Šå‘ãã¨ã€ãƒ’ã‚·ã‚¨ã¨";
+			mes "ã€€ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆãŒå±…ãŸâ€";
 			close2;
 			set 'flag,6;
-			set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),6;
-			hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-			hideoffnpc getmdnpcname("ƒqƒVƒG#bios1");
-			hideoffnpc getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1");
-			donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+			set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),6;
+			hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+			hideoffnpc getmdnpcname("ãƒ’ã‚·ã‚¨#bios1");
+			hideoffnpc getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1");
+			donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 			end;
 		}
 		break;
 	case 5:
 		if(DIC_2QUE >= 23) {
-			mes "]U‚èŒü‚­‚ÆAƒwƒXƒ‰ƒ“ƒ^‚Æ";
-			mes "@ƒAƒoƒ‰ƒ“ƒ`ƒF‚ª‹‚½]";
+			mes "â€æŒ¯ã‚Šå‘ãã¨ã€ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã¨";
+			mes "ã€€ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ãŒå±…ãŸâ€";
 			close2;
 			set 'flag,7;
-			set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),7;
-			hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-			hideoffnpc getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1");
-			hideoffnpc getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1");
-			donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+			set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),7;
+			hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+			hideoffnpc getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1");
+			hideoffnpc getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1");
+			donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 			end;
 		}
 		break;
 	default:
-		mes "]U‚èŒü‚­‚ÆA’N‚à‚¢‚È‚©‚Á‚½B";
-		mes "@ƒuƒŠƒh‚ÌŠ¨ˆá‚¢‚¾‚ë‚¤]";
+		mes "â€æŒ¯ã‚Šå‘ãã¨ã€èª°ã‚‚ã„ãªã‹ã£ãŸã€‚";
+		mes "ã€€ãƒ–ãƒªãƒ‰ã®å‹˜é•ã„ã ã‚ã†â€";
 		close2;
 		set 'flag,2;
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),2;
-		hideonnpc getmdnpcname("#‰ï˜b—pƒ_ƒ~[1");
-		donpcevent getmdnpcname("#‰ï˜b—pƒ_ƒ~[1")+ "::OnStart";
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),2;
+		hideonnpc getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1");
+		donpcevent getmdnpcname("#ä¼šè©±ç”¨ãƒ€ãƒŸãƒ¼1")+ "::OnStart";
 		end;
 	}
-	mes "]U‚èŒü‚­‚ÆA’N‚à‚¢‚È‚©‚Á‚½B";
-	mes "@ƒuƒŠƒh‚ÌŠ¨ˆá‚¢‚¾‚ë‚¤]";
-	mes "@";
-	mes "]ğŒ‚ğ–‚½‚µ‚Ä‚¢‚È‚¢‚½‚ß";
-	mes "@’‡ŠÔ‚ğŒÄ‚Ô‚±‚Æ‚ªo—ˆ‚Ü‚¹‚ñ]";
+	mes "â€æŒ¯ã‚Šå‘ãã¨ã€èª°ã‚‚ã„ãªã‹ã£ãŸã€‚";
+	mes "ã€€ãƒ–ãƒªãƒ‰ã®å‹˜é•ã„ã ã‚ã†â€";
+	mes "ã€€";
+	mes "â€æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ãªã„ãŸã‚";
+	mes "ã€€ä»²é–“ã‚’å‘¼ã¶ã“ã¨ãŒå‡ºæ¥ã¾ã›ã‚“â€";
 	close;
 OnStart:
 	sleep 1000;
@@ -548,227 +548,227 @@ OnStart:
 		sleep 2000;
 	}
 	else if('flag == 3) {
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ‚İ‚ñ‚ÈA–³–‚©I@‰´‚ª—ˆ‚½‚©‚ç‚É‚Í‚à‚¤‘åä•v‚¾I";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : ã¿ã‚“ãªã€ç„¡äº‹ã‹ï¼ã€€ä¿ºãŒæ¥ãŸã‹ã‚‰ã«ã¯ã‚‚ã†å¤§ä¸ˆå¤«ã ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1")),"ƒCƒOƒŠƒh : ŒZ‹MI@i—ßŠ¯‚ª‘Oü‚Éo‚é‚È‚ñ‚Ä‚Ç‚¤‚¢‚¤‚Â‚à‚è‚¾I";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1")),"ã‚¤ã‚°ãƒªãƒ‰ : å…„è²´ï¼ã€€å¸ä»¤å®˜ãŒå‰ç·šã«å‡ºã‚‹ãªã‚“ã¦ã©ã†ã„ã†ã¤ã‚‚ã‚Šã ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ‚¤‚é‚³‚¢I@‚ ‚ÆA‰´‚Ì–‚Íi—ßŠ¯‚ÆŒÄ‚×I";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : ã†ã‚‹ã•ã„ï¼ã€€ã‚ã¨ã€ä¿ºã®äº‹ã¯å¸ä»¤å®˜ã¨å‘¼ã¹ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚ ‚ñ‚½‚çcc˜A‡ŒR‚Ìi—ßŠ¯ƒAƒWƒt‚Æ‹³Š¯’·ƒCƒOƒŠƒh‚©I";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ã‚ã‚“ãŸã‚‰â€¦â€¦é€£åˆè»ã®å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•ã¨æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰ã‹ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : cc‚Ç‚¤‚µ‚Ä‚±‚ñ‚È‚Æ‚±‚ë‚ÉH";
+		unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦ã©ã†ã—ã¦ã“ã‚“ãªã¨ã“ã‚ã«ï¼Ÿ";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ‚±‚¢‚Â‚É‚ÍØ‚è‚ª‚ ‚Á‚Ä‚ÈB‚»‚¢‚Â‚ğ•Ô‚µ‚É—ˆ‚½‚ñ‚¾B";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : ã“ã„ã¤ã«ã¯å€Ÿã‚ŠãŒã‚ã£ã¦ãªã€‚ãã„ã¤ã‚’è¿”ã—ã«æ¥ãŸã‚“ã ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1")),"ƒCƒOƒŠƒh : ‚»‚¤‚¢‚¤‚í‚¯‚¾‚©‚çAˆ«‚¢‚ª‰´‚½‚¿‚à“¯s‚³‚¹‚Ä–á‚¤‚ºB";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1")),"ã‚¤ã‚°ãƒªãƒ‰ : ãã†ã„ã†ã‚ã‘ã ã‹ã‚‰ã€æ‚ªã„ãŒä¿ºãŸã¡ã‚‚åŒè¡Œã•ã›ã¦è²°ã†ãœã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚ ‚ñ‚½‚ç‚ª‹‚é‚È‚çS‹­‚¢I@‚æ‚ë‚µ‚­—Š‚Ş‚ºI";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ã‚ã‚“ãŸã‚‰ãŒå±…ã‚‹ãªã‚‰å¿ƒå¼·ã„ï¼ã€€ã‚ˆã‚ã—ãé ¼ã‚€ãœï¼";
 		sleep 3000;
 	}
 	else if('flag == 4) {
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh : ‹v‚µ‚Ô‚è‚¾‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ : ä¹…ã—ã¶ã‚Šã ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios1")),"ƒŠ[ƒ“ : ‹v‚µ‚Ô‚è‚¾‚ËI@‚ ‚Ì‚Í‚ ‚è‚ª‚Æ‚¤I";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios1")),"ãƒªãƒ¼ãƒ³ : ä¹…ã—ã¶ã‚Šã ã­ï¼ã€€ã‚ã®æ™‚ã¯ã‚ã‚ŠãŒã¨ã†ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh : ‚¨‘O‚É‚Í¢˜b‚É‚È‚Á‚½‚©‚ç‚ÈBè“`‚Á‚Ä‚â‚ë‚¤B";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ : ãŠå‰ã«ã¯ä¸–è©±ã«ãªã£ãŸã‹ã‚‰ãªã€‚æ‰‹ä¼ã£ã¦ã‚„ã‚ã†ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ŒN‚½‚¿‚ª’N‚©‚Í’m‚ç‚È‚¢‚ªA‚±‚±‚ÍŠëŒ¯‚¾I@‹A‚Á‚½•û‚ª—Ç‚¢I";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : å›ãŸã¡ãŒèª°ã‹ã¯çŸ¥ã‚‰ãªã„ãŒã€ã“ã“ã¯å±é™ºã ï¼ã€€å¸°ã£ãŸæ–¹ãŒè‰¯ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh :‚»‚¤Œ¾‚¤‚ÈA‚±‚ê‚Å‚à˜r‚ÉŠo‚¦‚Í‚ ‚é‚ñ‚¾‚ºH";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ :ãã†è¨€ã†ãªã€ã“ã‚Œã§ã‚‚è…•ã«è¦šãˆã¯ã‚ã‚‹ã‚“ã ãœï¼Ÿ";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios1")),"ƒŠ[ƒ“ : ‚ÆAŒ¾‚¤‚í‚¯‚Å„‚½‚¿‚àˆê‚És‚­‚æI";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios1")),"ãƒªãƒ¼ãƒ³ : ã¨ã€è¨€ã†ã‚ã‘ã§ç§ãŸã¡ã‚‚ä¸€ç·’ã«è¡Œãã‚ˆï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : ccƒuƒŠƒhA‚±‚¢‚Â‚çAŒû‚¾‚¯‚¶‚á‚È‚³‚»‚¤‚¾B";
+		unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦ãƒ–ãƒªãƒ‰ã€ã“ã„ã¤ã‚‰ã€å£ã ã‘ã˜ã‚ƒãªã•ãã†ã ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚»‚¤‚©cc‚¾‚ªA–³—‚¾‚¯‚Í‚µ‚È‚¢‚Å‚­‚ê‚æB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ãã†ã‹â€¦â€¦ã ãŒã€ç„¡ç†ã ã‘ã¯ã—ãªã„ã§ãã‚Œã‚ˆã€‚";
 		sleep 3000;
 	}
 	else if('flag == 5) {
-		unittalk getnpcid(0,getmdnpcname("˜A‡ŒR––±Š¯#bios1")),"ƒZƒ‹ƒUƒ“: ‚İ‚È‚³‚ñA‚¨‹v‚µ‚Ô‚è‚Å‚·I@–l‚½‚¿‚É‚à‚¨è“`‚¢‚³‚¹‚Ä‚­‚¾‚³‚¢I";
+		unittalk getnpcid(0,getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1")),"ã‚»ãƒ«ã‚¶ãƒ³: ã¿ãªã•ã‚“ã€ãŠä¹…ã—ã¶ã‚Šã§ã™ï¼ã€€åƒ•ãŸã¡ã«ã‚‚ãŠæ‰‹ä¼ã„ã•ã›ã¦ãã ã•ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒwƒ“ƒWƒk#bios1")),"ƒwƒ“ƒWƒk : „‚ª‚İ‚ñ‚È‚É’ñˆÄ‚µ‚½‚ñ‚Å‚·B¢˜b‚É‚È‚Á‚½‰¶‚ğ•Ô‚»‚¤‚Á‚ÄB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1")),"ãƒ˜ãƒ³ã‚¸ãƒŒ : ç§ãŒã¿ã‚“ãªã«ææ¡ˆã—ãŸã‚“ã§ã™ã€‚ä¸–è©±ã«ãªã£ãŸæ©ã‚’è¿”ãã†ã£ã¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒ…[#bios1")),"ƒqƒ…[ : ‚Ü‚Á‚½‚­A‰½‚ª’ñˆÄ‚¾ccB‚±‚ê‚¾‚©‚çƒAƒ‹ƒiƒxƒ‹ƒc‚ÌlŠÔ‚ÍccB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1")),"ãƒ’ãƒ¥ãƒ¼ : ã¾ã£ãŸãã€ä½•ãŒææ¡ˆã â€¦â€¦ã€‚ã“ã‚Œã ã‹ã‚‰ã‚¢ãƒ«ãƒŠãƒ™ãƒ«ãƒ„ã®äººé–“ã¯â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1")),"ƒŠƒ‡[ƒXƒ“ : –l‚½‚¿‚ÌˆÓŒ©‚à•·‚©‚¸‚ÉŸè‚ÉŒˆ‚ß‚Ä‚Ü‚µ‚½‚à‚ñ‚ËccB";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1")),"ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ : åƒ•ãŸã¡ã®æ„è¦‹ã‚‚èã‹ãšã«å‹æ‰‹ã«æ±ºã‚ã¦ã¾ã—ãŸã‚‚ã‚“ã­â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒ…[#bios1")),"ƒqƒ…[ : ƒŠƒ‡[ƒXƒ“‚¾‚Á‚Ä„‚É–³’f‚Å‰ï‹c‚Ì“ú’ö‚ğŒˆ‚ß‚é‚¯‚Ç‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1")),"ãƒ’ãƒ¥ãƒ¼ : ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ã ã£ã¦ç§ã«ç„¡æ–­ã§ä¼šè­°ã®æ—¥ç¨‹ã‚’æ±ºã‚ã‚‹ã‘ã©ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒwƒ“ƒWƒk#bios1")),"ƒwƒ“ƒWƒk : ƒqƒ…[‚¾‚Á‚ÄAƒ†[ƒ‚ƒA‚àƒZƒ“ƒX‚à‚È‚­‚ÄAŒ˜‹ê‚µ‚¢‚Å‚·‚æB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1")),"ãƒ˜ãƒ³ã‚¸ãƒŒ : ãƒ’ãƒ¥ãƒ¼ã ã£ã¦ã€ãƒ¦ãƒ¼ãƒ¢ã‚¢ã‚‚ã‚»ãƒ³ã‚¹ã‚‚ãªãã¦ã€å …è‹¦ã—ã„ã§ã™ã‚ˆã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("˜A‡ŒR––±Š¯#bios1")),"ƒZƒ‹ƒUƒ“: 3l‚Æ‚àA‚±‚ñ‚ÈêŠ‚ÅƒPƒ“ƒJ‚Í‚â‚ß‚Ä‚­‚¾‚³‚¢I";
+		unittalk getnpcid(0,getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1")),"ã‚»ãƒ«ã‚¶ãƒ³: 3äººã¨ã‚‚ã€ã“ã‚“ãªå ´æ‰€ã§ã‚±ãƒ³ã‚«ã¯ã‚„ã‚ã¦ãã ã•ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ccŒN‚½‚¿‚Í‚½‚¾‚Ì––±Š¯‚¾‚ë‚¤H";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : â€¦â€¦å›ãŸã¡ã¯ãŸã ã®äº‹å‹™å®˜ã ã‚ã†ï¼Ÿ";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ˆ«‚¢–‚ÍŒ¾‚í‚È‚¢B‹A‚Á‚½•û‚ª—Ç‚¢B";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : æ‚ªã„äº‹ã¯è¨€ã‚ãªã„ã€‚å¸°ã£ãŸæ–¹ãŒè‰¯ã„ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : ccƒuƒŠƒhA‚±‚¢‚Â‚ç•·‚¢‚Ä‚È‚¢‚¼B";
+		unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦ãƒ–ãƒªãƒ‰ã€ã“ã„ã¤ã‚‰èã„ã¦ãªã„ãã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ccB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : â€¦â€¦ã€‚";
 		sleep 3000;
 	}
 	else if('flag == 6) {
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : ‚İ‚ñ‚ÈA–³–‚È‚æ‚¤‚Å—Ç‚©‚Á‚½B„‚É‚àè“`‚í‚¹‚Ä‚­‚êB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ã¿ã‚“ãªã€ç„¡äº‹ãªã‚ˆã†ã§è‰¯ã‹ã£ãŸã€‚ç§ã«ã‚‚æ‰‹ä¼ã‚ã›ã¦ãã‚Œã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1")),"ƒGƒCƒ”ƒ@ƒ“ƒg : Š¨ˆá‚¢‚·‚é‚È‚æB„‚ÍƒVƒiƒCƒ€‚ğ’Ç‚Á‚Ä‚¢‚é‚¾‚¯‚¾B";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : å‹˜é•ã„ã™ã‚‹ãªã‚ˆã€‚ç§ã¯ã‚·ãƒŠã‚¤ãƒ ã‚’è¿½ã£ã¦ã„ã‚‹ã ã‘ã ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : „ˆêl‚Ås‚­‚ÆŒ¾‚Á‚½‚Ì‚ÉAß–Å‚Ú‚µ‚¾‚ÆŒ¾‚Á‚Ä‚Â‚¢‚Ä—ˆ‚½‚ñ‚¾B";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ç§ä¸€äººã§è¡Œãã¨è¨€ã£ãŸã®ã«ã€ç½ªæ»…ã¼ã—ã ã¨è¨€ã£ã¦ã¤ã„ã¦æ¥ãŸã‚“ã ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : ƒ‰ƒtƒBƒl‘°ccB";
+		unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : ãƒ©ãƒ•ã‚£ãƒæ—â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ƒ‰ƒtƒBƒl‘°‚ª‚Ç‚¤‚µ‚Ä‚±‚±‚ÉH";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ãƒ©ãƒ•ã‚£ãƒæ—ãŒã©ã†ã—ã¦ã“ã“ã«ï¼Ÿ";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : ‚·‚Ü‚È‚¢AÚ‚µ‚¢–‚Í”é–§‚È‚ñ‚¾B";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ã™ã¾ãªã„ã€è©³ã—ã„äº‹ã¯ç§˜å¯†ãªã‚“ã ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : ‚»‚¤‚¾‚ÈA‚±‚Ìl‚Ì’‡ŠÔ‚Æ‚Å‚àv‚Á‚Ä‚­‚êB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ãã†ã ãªã€ã“ã®äººã®ä»²é–“ã¨ã§ã‚‚æ€ã£ã¦ãã‚Œã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚»‚¤‚©A’‡ŠÔ‚ª‘‚¦‚é‚Ì‚ÍS‹­‚¢B‚æ‚ë‚µ‚­—Š‚ŞB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ãã†ã‹ã€ä»²é–“ãŒå¢—ãˆã‚‹ã®ã¯å¿ƒå¼·ã„ã€‚ã‚ˆã‚ã—ãé ¼ã‚€ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ‚Ó‚ñA“é‚ê‡‚¢‚Í‚»‚±‚Ü‚Å‚¾B‚¨oŒ}‚¦‚ª—ˆ‚½‚¼B";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ãµã‚“ã€é¦´ã‚Œåˆã„ã¯ãã“ã¾ã§ã ã€‚ãŠå‡ºè¿ãˆãŒæ¥ãŸãã€‚";
 		sleep 3000;
 	}
 	else if('flag == 7) {
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : ‚±A‚±‚¿‚ç‚É‚¢‚ç‚Á‚µ‚á‚¢‚Ü‚µ‚½‚©I";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ã“ã€ã“ã¡ã‚‰ã«ã„ã‚‰ã£ã—ã‚ƒã„ã¾ã—ãŸã‹ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : ƒAƒnƒg‚Í‚ ‚ÌŒãAs•û‚ğ‚­‚ç‚Ü‚¹‚Ä‚µ‚Ü‚¢‚Ü‚µ‚½ccB";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã‚¢ãƒãƒˆã¯ã‚ã®å¾Œã€è¡Œæ–¹ã‚’ãã‚‰ã¾ã›ã¦ã—ã¾ã„ã¾ã—ãŸâ€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : ƒAƒnƒg‚Ìs•û‚ğ’Ç‚¤ˆ×‚É‚à“¯s‚³‚¹‚Ä‚­‚¾‚³‚¢I";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã‚¢ãƒãƒˆã®è¡Œæ–¹ã‚’è¿½ã†ç‚ºã«ã‚‚åŒè¡Œã•ã›ã¦ãã ã•ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ŒN‚½‚¿‚ÍccƒTƒtƒ@‘°‚©H";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : å›ãŸã¡ã¯â€¦â€¦ã‚µãƒ•ã‚¡æ—ã‹ï¼Ÿ";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : ‚¢‚©‚É‚àAæ”­‘à’·‚ÌƒAƒoƒ‰ƒ“ƒ`ƒF‚Å‚·B";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ã„ã‹ã«ã‚‚ã€å…ˆç™ºéšŠé•·ã®ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã§ã™ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : ‘åb‚ÌƒwƒXƒ‰ƒ“ƒ^‚Å‚·B";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : å¤§è‡£ã®ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã§ã™ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‘åbcc‚·‚Ü‚È‚¢‚ª—vlŒxŒì‚ÌŒoŒ±‚Í‚È‚­‚Ä‚ËB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : å¤§è‡£â€¦â€¦ã™ã¾ãªã„ãŒè¦äººè­¦è­·ã®çµŒé¨“ã¯ãªãã¦ã­ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ©•ª‚Ìg‚Í©•ª‚Åç‚Á‚Ä–á‚¤‚±‚Æ‚É‚È‚éB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : è‡ªåˆ†ã®èº«ã¯è‡ªåˆ†ã§å®ˆã£ã¦è²°ã†ã“ã¨ã«ãªã‚‹ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : S“¾‚Ä‚¢‚Ü‚·‚Æ‚àB‚İ‚È‚³‚ñA‚æ‚ë‚µ‚­‚¨Šè‚¢‚µ‚Ü‚·B";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : å¿ƒå¾—ã¦ã„ã¾ã™ã¨ã‚‚ã€‚ã¿ãªã•ã‚“ã€ã‚ˆã‚ã—ããŠé¡˜ã„ã—ã¾ã™ã€‚";
 		sleep 3000;
 	}
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"HHHH : ƒNƒbƒNƒbƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ : ã‚¯ãƒƒã‚¯ãƒƒã‚¯ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : cc!!!@’N‚¾!?";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦!!!ã€€èª°ã !?";
 	sleep 3000;
-	hideoffnpc getmdnpcname("€_ƒAƒ“ƒN#bios1");
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"HHHH : ‚æ‚¤‚±‚»ƒrƒIƒX‚Ì“‡‚ÖB";
+	hideoffnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1");
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ : ã‚ˆã†ã“ããƒ“ã‚ªã‚¹ã®å³¶ã¸ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : „‚Í€_ƒAƒ“ƒNB‚±‚±‚Í„‚ªì‚èo‚µ‚½€‚Æ¶‚Ì‹óŠÔ‚Å‚·B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ç§ã¯æ­»ç¥ã‚¢ãƒ³ã‚¯ã€‚ã“ã“ã¯ç§ãŒä½œã‚Šå‡ºã—ãŸæ­»ã¨ç”Ÿã®ç©ºé–“ã§ã™ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚È‚É‚Á!!";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ãªã«ã£!!";
 	sleep 3000;
 	if('flag == 3) {
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ‚Ö‚¥A‚±‚¢‚Â‚ªe‹Ê‚©B";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : ã¸ã‡ã€ã“ã„ã¤ãŒè¦ªç‰ã‹ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1")),"ƒCƒOƒŠƒh : ‚³‚·‚ªcc‘¼‚Æ‚ÍŒ…ˆá‚¢‚Ì‹­‚³‚İ‚½‚¢‚¾‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1")),"ã‚¤ã‚°ãƒªãƒ‰ : ã•ã™ãŒâ€¦â€¦ä»–ã¨ã¯æ¡é•ã„ã®å¼·ã•ã¿ãŸã„ã ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ‘SˆõA‹C‚ğ”²‚­‚ñ‚¶‚á‚È‚¢‚¼I";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : å…¨å“¡ã€æ°—ã‚’æŠœãã‚“ã˜ã‚ƒãªã„ãï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 		sleep 3000;
 	}
 	else if('flag == 4) {
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh : ‚±‚¢‚Âcc‹­‚¢‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ : ã“ã„ã¤â€¦â€¦å¼·ã„ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios1")),"ƒŠ[ƒ“ : ‚»‚¤‚¾‚ËA€_‚Á‚Ä‚¢‚¤‚¾‚¯‚Ì–‚Í‚ ‚é‚©‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios1")),"ãƒªãƒ¼ãƒ³ : ãã†ã ã­ã€æ­»ç¥ã£ã¦ã„ã†ã ã‘ã®äº‹ã¯ã‚ã‚‹ã‹ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh : ‚ ‚ cc‚¾‚ªA‘Sˆõ‚Å‚©‚©‚ê‚ÎŸ‚Ä‚È‚¢‘Šè‚¶‚á‚È‚¢B";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ : ã‚ã‚â€¦â€¦ã ãŒã€å…¨å“¡ã§ã‹ã‹ã‚Œã°å‹ã¦ãªã„ç›¸æ‰‹ã˜ã‚ƒãªã„ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 		sleep 3000;
 	}
 	else if('flag == 5) {
-		unittalk getnpcid(0,getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1")),"ƒŠƒ‡[ƒXƒ“: ‚µA€_!?";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1")),"ãƒªãƒ§ãƒ¼ã‚¹ãƒ³: ã—ã€æ­»ç¥!?";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒ…[#bios1")),"ƒqƒ…[ : ‚·A¦‚­‹­‚»‚¤‚¶‚á‚È‚¢‚Å‚·‚©I";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1")),"ãƒ’ãƒ¥ãƒ¼ : ã™ã€å‡„ãå¼·ãã†ã˜ã‚ƒãªã„ã§ã™ã‹ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒwƒ“ƒWƒk#bios1")),"ƒwƒ“ƒWƒk : €_‚Á‚Ä•‚‚¢‚Ä‚é‚ñ‚Å‚·‚ËI@ƒAƒnƒnƒnƒnI";
+		unittalk getnpcid(0,getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1")),"ãƒ˜ãƒ³ã‚¸ãƒŒ : æ­»ç¥ã£ã¦æµ®ã„ã¦ã‚‹ã‚“ã§ã™ã­ï¼ã€€ã‚¢ãƒãƒãƒãƒï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("˜A‡ŒR––±Š¯#bios1")),"ƒZƒ‹ƒUƒ“ : ‚İ‚È‚³‚ñA‹C‚ğ•t‚¯‚Ä‚­‚¾‚³‚¢I";
+		unittalk getnpcid(0,getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1")),"ã‚»ãƒ«ã‚¶ãƒ³ : ã¿ãªã•ã‚“ã€æ°—ã‚’ä»˜ã‘ã¦ãã ã•ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 		sleep 3000;
 	}
 	else if('flag == 6) {
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : ‚±‚¢‚Âcc‹­‚¢‚¼I";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ã“ã„ã¤â€¦â€¦å¼·ã„ãï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ƒNƒNƒNA‘å‚µ‚½–‚—Í‚ğ‚Á‚Ä‚é‚æ‚¤‚¾‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ã‚¯ã‚¯ã‚¯ã€å¤§ã—ãŸé­”åŠ›ã‚’æŒã£ã¦ã‚‹ã‚ˆã†ã ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ÀŒ±‘Ì‚Æ‚µ‚Ä—~‚µ‚¢‚Æ‚±‚ë‚¾‚ªccB";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : å®Ÿé¨“ä½“ã¨ã—ã¦æ¬²ã—ã„ã¨ã“ã‚ã ãŒâ€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : ‚¨‘O‚Í‚Ü‚¾‚»‚ñ‚È–‚ğccI@‚İ‚ñ‚ÈA‹C‚ğ‚Â‚¯‚ëI";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ãŠå‰ã¯ã¾ã ãã‚“ãªäº‹ã‚’â€¦â€¦ï¼ã€€ã¿ã‚“ãªã€æ°—ã‚’ã¤ã‘ã‚ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 		sleep 3000;
 	}
 	else if('flag == 7) {
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : ‚İ‚È‚³‚ñA‚¨‹C‚ğ‚Â‚¯‚­‚¾‚³‚¢I";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ã¿ãªã•ã‚“ã€ãŠæ°—ã‚’ã¤ã‘ãã ã•ã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : ‚±‚ê‚ÍA‹­“G‚Ì‚æ‚¤‚Å‚·‚ËccB";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã“ã‚Œã¯ã€å¼·æ•µã®ã‚ˆã†ã§ã™ã­â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1")),"ƒwƒXƒ‰ƒ“ƒ^ : ‚Å‚·‚ªA‰äX‚Í‘Ş‚­‚í‚¯‚É‚Í‚¢‚©‚È‚¢‚Ì‚Å‚·I";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã§ã™ãŒã€æˆ‘ã€…ã¯é€€ãã‚ã‘ã«ã¯ã„ã‹ãªã„ã®ã§ã™ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚Í‚±‚ê‚ÍA‚İ‚È‚³‚ñˆĞ¨‚ª‚¢‚¢‚æ‚¤‚Å‚·‚ËB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã¯ã“ã‚Œã¯ã€ã¿ãªã•ã‚“å¨å‹¢ãŒã„ã„ã‚ˆã†ã§ã™ã­ã€‚";
 		sleep 3000;
 	}
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚±‚ê‚©‚çƒ‚ƒƒN—l‚É•ù‚°‚é¶æÑ‚ğ’²’B‚µ‚æ‚¤‚Æ‚µ‚Ä‚¢‚½‚Ì‚Å‚·‚ªccB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã‚Œã‹ã‚‰ãƒ¢ãƒ­ã‚¯æ§˜ã«æ§ã’ã‚‹ç”Ÿè´„ã‚’èª¿é”ã—ã‚ˆã†ã¨ã—ã¦ã„ãŸã®ã§ã™ãŒâ€¦â€¦ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚Ü‚³‚©¶æÑ‚ª©‚ç‚â‚Á‚Ä—ˆ‚é‚Æ‚ÍccƒNƒNƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã¾ã•ã‹ç”Ÿè´„ãŒè‡ªã‚‰ã‚„ã£ã¦æ¥ã‚‹ã¨ã¯â€¦â€¦ã‚¯ã‚¯ã‚¯ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚Ì—Í‚É‚È‚ê‚é–‚ğŒõ‰h‚Év‚¢‚È‚³‚¢B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ã®åŠ›ã«ãªã‚Œã‚‹äº‹ã‚’å…‰æ „ã«æ€ã„ãªã•ã„ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚Í‚ÁI@O‰º‚É—p‚Í‚È‚¢I";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ã¯ã£ï¼ã€€ä¸‰ä¸‹ã«ç”¨ã¯ãªã„ï¼";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ’N‚¾‚©’m‚ç‚ñ‚ªA‚Ü‚¸‚Í‚¨‘O‚ğ“|‚µ‚Ä‚â‚é‚Á!!";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : èª°ã ã‹çŸ¥ã‚‰ã‚“ãŒã€ã¾ãšã¯ãŠå‰ã‚’å€’ã—ã¦ã‚„ã‚‹ã£!!";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ƒNƒNAˆĞ¨‚ª—Ç‚­‚ÄŒ‹\‚Å‚·B‚½‚¾A‹}‚®•K—v‚Í‚ ‚è‚Ü‚¹‚ñB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã€å¨å‹¢ãŒè‰¯ãã¦çµæ§‹ã§ã™ã€‚ãŸã ã€æ€¥ãå¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios1")),"€_ƒAƒ“ƒN : ‚Ü‚¸‚Í„‚Ì¢ŠE‚Å‚ä‚Á‚­‚ècc‚­‚Â‚ë‚®‚±‚Æ‚Å‚·BƒNƒNƒNƒNƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã¾ãšã¯ç§ã®ä¸–ç•Œã§ã‚†ã£ãã‚Šâ€¦â€¦ãã¤ã‚ãã“ã¨ã§ã™ã€‚ã‚¯ã‚¯ã‚¯ã‚¯ã‚¯ã€‚";
 	sleep 3000;
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios1");
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚­‚»‚ÁI@Á‚¦‚â‚ª‚Á‚½!!";
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios1");
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ããã£ï¼ã€€æ¶ˆãˆã‚„ãŒã£ãŸ!!";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : ‚ ‚¢‚Â‚ª–‚‰¤ƒ‚ƒƒN‚ğ•œŠˆ‚³‚¹‚æ‚¤‚Æ‚µ‚Ä‚¢‚é‚Ì‚©H";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : ã‚ã„ã¤ãŒé­”ç‹ãƒ¢ãƒ­ã‚¯ã‚’å¾©æ´»ã•ã›ã‚ˆã†ã¨ã—ã¦ã„ã‚‹ã®ã‹ï¼Ÿ";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios1")),"ƒuƒŠƒh : “z‚ğ’Ç‚¤‚¼I@ƒWƒFƒCƒX‹}‚°I";
-	hideonnpc getmdnpcname("ƒuƒŠƒh#bios1");
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),"ãƒ–ãƒªãƒ‰ : å¥´ã‚’è¿½ã†ãï¼ã€€ã‚¸ã‚§ã‚¤ã‚¹æ€¥ã’ï¼";
+	hideonnpc getmdnpcname("ãƒ–ãƒªãƒ‰#bios1");
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios1")),"ƒWƒFƒCƒX : ccæs‚·‚éB‚ ‚Æ‚©‚ç‚Â‚¢‚Ä—ˆ‚Ä‚­‚êB";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦å…ˆè¡Œã™ã‚‹ã€‚ã‚ã¨ã‹ã‚‰ã¤ã„ã¦æ¥ã¦ãã‚Œã€‚";
 	sleep 1000;
-	hideonnpc getmdnpcname("ƒWƒFƒCƒX#bios1");
+	hideonnpc getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios1");
 	sleep 3000;
 	if('flag == 3) {
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1")),"ƒAƒWƒt : ƒCƒOƒŠƒhI@‰´‚½‚¿‚à‘±‚­‚¼I";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1")),"ã‚¢ã‚¸ãƒ• : ã‚¤ã‚°ãƒªãƒ‰ï¼ã€€ä¿ºãŸã¡ã‚‚ç¶šããï¼";
 		sleep 3000;
-		hideonnpc getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios1");
-		hideonnpc getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios1");
+		hideonnpc getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1");
+		hideonnpc getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1");
 	}
 	else if('flag == 4) {
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios1")),"ƒLƒh : ‚æ‚µI@‰´‚½‚¿‚às‚­‚¼I";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios1")),"ã‚­ãƒ‰ : ã‚ˆã—ï¼ã€€ä¿ºãŸã¡ã‚‚è¡Œããï¼";
 		sleep 3000;
-		hideonnpc getmdnpcname("ƒLƒh#bios1");
-		hideonnpc getmdnpcname("ƒŠ[ƒ“#bios1");
+		hideonnpc getmdnpcname("ã‚­ãƒ‰#bios1");
+		hideonnpc getmdnpcname("ãƒªãƒ¼ãƒ³#bios1");
 	}
 	else if('flag == 5) {
-		unittalk getnpcid(0,getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1")),"ƒŠƒ‡[ƒXƒ“ : ‚±A•|‚¢‚¯‚Çcc‚İ‚ñ‚ÈI@s‚«‚Ü‚µ‚å‚¤I";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1")),"ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ : ã“ã€æ€–ã„ã‘ã©â€¦â€¦ã¿ã‚“ãªï¼ã€€è¡Œãã¾ã—ã‚‡ã†ï¼";
 		sleep 3000;
-		hideonnpc getmdnpcname("ƒŠƒ‡[ƒXƒ“#bios1");
-		hideonnpc getmdnpcname("ƒqƒ…[#bios1");
-		hideonnpc getmdnpcname("ƒwƒ“ƒWƒk#bios1");
-		hideonnpc getmdnpcname("˜A‡ŒR––±Š¯#bios1");
+		hideonnpc getmdnpcname("ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1");
+		hideonnpc getmdnpcname("ãƒ’ãƒ¥ãƒ¼#bios1");
+		hideonnpc getmdnpcname("ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1");
+		hideonnpc getmdnpcname("é€£åˆè»äº‹å‹™å®˜#bios1");
 	}
 	else if('flag == 6) {
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios1")),"ƒqƒVƒG : „‚àæ‚És‚­B‚İ‚ñ‚È‚àŒã‚©‚ç—ˆ‚Ä‚­‚êI";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios1")),"ãƒ’ã‚·ã‚¨ : ç§ã‚‚å…ˆã«è¡Œãã€‚ã¿ã‚“ãªã‚‚å¾Œã‹ã‚‰æ¥ã¦ãã‚Œï¼";
 		sleep 3000;
-		hideonnpc getmdnpcname("ƒqƒVƒG#bios1");
-		hideonnpc getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios1");
+		hideonnpc getmdnpcname("ãƒ’ã‚·ã‚¨#bios1");
+		hideonnpc getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1");
 	}
 	else if('flag == 7) {
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : ƒwƒXƒ‰ƒ“ƒ^—lI@‰äX‚àQ‚è‚Ü‚µ‚å‚¤I";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿æ§˜ï¼ã€€æˆ‘ã€…ã‚‚å‚ã‚Šã¾ã—ã‚‡ã†ï¼";
 		sleep 3000;
-		hideonnpc getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios1");
-		hideonnpc getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1");
+		hideonnpc getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1");
+		hideonnpc getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1");
 	}
 	sleep 500;
 	hideonnpc getmdnpcname("#BARRICADE_bios1_1");
@@ -781,103 +781,103 @@ OnStart:
 	hideonnpc getmdnpcname("#BARRICADE_bios1_8");
 	areasetcell getmdmapname("1@dth1.gat"),84,90,85,97,0;
 	sleep 2500;
-	announce "€_ƒAƒ“ƒN : €A‚»‚ê‚Í¶‚ ‚éÒ‚Ì‚İ‚É–K‚ê‚é‹°•|B‚·‚×‚Ä‚Í‚±‚±‚©‚çn‚Ü‚é‚Ì‚Å‚·cc", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : æ­»ã€ãã‚Œã¯ç”Ÿã‚ã‚‹è€…ã®ã¿ã«è¨ªã‚Œã‚‹ææ€–ã€‚ã™ã¹ã¦ã¯ã“ã“ã‹ã‚‰å§‹ã¾ã‚‹ã®ã§ã™â€¦â€¦", 0x9, 0xffff00;
 	sleep 3000;
-	announce "ƒuƒŠƒh : ‘Ò‚ÄƒAƒ“ƒNI@‚­‚»‚ÁA“Œ‚É“¦‚°‚½‚æ‚¤‚¾‚ÈB“z‚ğ’Ç‚¤‚¼I", 0x9, 0xffff00;
+	announce "ãƒ–ãƒªãƒ‰ : å¾…ã¦ã‚¢ãƒ³ã‚¯ï¼ã€€ããã£ã€æ±ã«é€ƒã’ãŸã‚ˆã†ã ãªã€‚å¥´ã‚’è¿½ã†ãï¼", 0x9, 0xffff00;
 	end;
 }
-1@dth1.gat,60,96,5	script	i—ßŠ¯ƒAƒWƒt#bios1	459,{
+1@dth1.gat,60,96,5	script	å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios1	459,{
 	cutin "ep13_captin_edq.bmp", 2;
-	mes "[ƒAƒWƒt]";
-	mes "‹v‚µ‚Ô‚è‚Ì‘Oü‚¾B";
-	mes "—b•º‚ÌŒŒ‚ª‘›‚®‚ÈB";
-	mes strcharinfo(0)+"‚à";
-	mes "‚æ‚ë‚µ‚­—Š‚Ş‚ºB";
+	mes "[ã‚¢ã‚¸ãƒ•]";
+	mes "ä¹…ã—ã¶ã‚Šã®å‰ç·šã ã€‚";
+	mes "å‚­å…µã®è¡€ãŒé¨’ããªã€‚";
+	mes strcharinfo(0)+"ã‚‚";
+	mes "ã‚ˆã‚ã—ãé ¼ã‚€ãœã€‚";
 	close2;
 	cutin "ep13_captin_edq.bmp", 255;
 	end;
 }
-1@dth1.gat,60,93,5	script	‹³Š¯’·ƒCƒOƒŠƒh#bios1	751,{
-	mes "[ƒCƒOƒŠƒh]";
-	mes "‚Ü‚Á‚½‚­ccB";
-	mes "ŒZ‹M‚Í‰½‚ğl‚¦‚Ä‚é‚ñ‚¾B";
+1@dth1.gat,60,93,5	script	æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios1	751,{
+	mes "[ã‚¤ã‚°ãƒªãƒ‰]";
+	mes "ã¾ã£ãŸãâ€¦â€¦ã€‚";
+	mes "å…„è²´ã¯ä½•ã‚’è€ƒãˆã¦ã‚‹ã‚“ã ã€‚";
 	close;
 }
-1@dth1.gat,60,96,5	script	ƒLƒh#bios1	884,{
-	mes "[ƒLƒh]";
-	mes "‚±‚±‚©‚çæ‚Í‰½‚ª‚ ‚é‚©‚í‚©‚ç‚È‚¢B";
-	mes "‹C‚ğ”²‚­‚ñ‚¶‚á‚È‚¢‚¼B";
+1@dth1.gat,60,96,5	script	ã‚­ãƒ‰#bios1	884,{
+	mes "[ã‚­ãƒ‰]";
+	mes "ã“ã“ã‹ã‚‰å…ˆã¯ä½•ãŒã‚ã‚‹ã‹ã‚ã‹ã‚‰ãªã„ã€‚";
+	mes "æ°—ã‚’æŠœãã‚“ã˜ã‚ƒãªã„ãã€‚";
 	close;
 }
-1@dth1.gat,60,93,5	script	ƒŠ[ƒ“#bios1	885,{
-	mes "[ƒŠ[ƒ“]";
-	mes "‚±‚Ì“‡A‰½‚©Œ™‚ÈŠ´‚¶‚ª‚·‚éB";
-	mes "‰½‚ª‹N‚±‚é‚©‚í‚©‚ç‚È‚¢‚©‚ç";
-	mes "‹C‚ğ•t‚¯‚Ä‚ËB";
+1@dth1.gat,60,93,5	script	ãƒªãƒ¼ãƒ³#bios1	885,{
+	mes "[ãƒªãƒ¼ãƒ³]";
+	mes "ã“ã®å³¶ã€ä½•ã‹å«Œãªæ„Ÿã˜ãŒã™ã‚‹ã€‚";
+	mes "ä½•ãŒèµ·ã“ã‚‹ã‹ã‚ã‹ã‚‰ãªã„ã‹ã‚‰";
+	mes "æ°—ã‚’ä»˜ã‘ã¦ã­ã€‚";
 	close;
 }
-1@dth1.gat,60,96,5	script	˜A‡ŒR––±Š¯#bios1	754,{
-	mes "[ƒZƒ‹ƒUƒ“]";
-	mes "‚ÙA–{“–‚Í•|‚¢‚Å‚·‚¯‚Ç";
-	mes "„‚à‰½‚©‚¨–ğ‚É‚½‚¿‚½‚¢‚ñ‚Å‚·I";
+1@dth1.gat,60,96,5	script	é€£åˆè»äº‹å‹™å®˜#bios1	754,{
+	mes "[ã‚»ãƒ«ã‚¶ãƒ³]";
+	mes "ã»ã€æœ¬å½“ã¯æ€–ã„ã§ã™ã‘ã©";
+	mes "ç§ã‚‚ä½•ã‹ãŠå½¹ã«ãŸã¡ãŸã„ã‚“ã§ã™ï¼";
 	close;
 }
-1@dth1.gat,60,93,5	script	ƒŠƒ‡[ƒXƒ“#bios1	748,{
-	mes "[ƒŠƒ‡[ƒXƒ“]";
-	mes "‚Ç‚Ç‚ÇA‚Ç‚¤‚µ‚Ä‚±‚ñ‚È‚±‚Æ‚ÉccB";
-	mes "‚ ‚ A“¦‚°o‚µ‚½‚¢ccB";
+1@dth1.gat,60,93,5	script	ãƒªãƒ§ãƒ¼ã‚¹ãƒ³#bios1	748,{
+	mes "[ãƒªãƒ§ãƒ¼ã‚¹ãƒ³]";
+	mes "ã©ã©ã©ã€ã©ã†ã—ã¦ã“ã‚“ãªã“ã¨ã«â€¦â€¦ã€‚";
+	mes "ã‚ã‚ã€é€ƒã’å‡ºã—ãŸã„â€¦â€¦ã€‚";
 	close;
 }
-1@dth1.gat,58,95,5	script	ƒqƒ…[#bios1	868,{
-	mes "[ƒqƒ…[]";
-	mes "‚ÍA‚Í‚ÍA‚Ü‚³‚©Å‘Oü‚É—ˆ‚é‚Æ‚Í";
-	mes "—\‘zŠO‚Å‚µ‚½‚æB";
+1@dth1.gat,58,95,5	script	ãƒ’ãƒ¥ãƒ¼#bios1	868,{
+	mes "[ãƒ’ãƒ¥ãƒ¼]";
+	mes "ã¯ã€ã¯ã¯ã€ã¾ã•ã‹æœ€å‰ç·šã«æ¥ã‚‹ã¨ã¯";
+	mes "äºˆæƒ³å¤–ã§ã—ãŸã‚ˆã€‚";
 	close;
 }
-1@dth1.gat,58,92,5	script	ƒwƒ“ƒWƒk#bios1	931,{
-	mes "[ƒwƒ“ƒWƒk]";
-	mes "í‚É“ü‚Á‚½‚ç“‡‚Éo‚é‚È‚ñ‚Ä";
-	mes "‚±‚è‚á‚ A‚Ü‚¢‚Áí";
-	mes "‚È‚ñ‚Ä‚Ë";
-	mes "ƒAƒnƒnƒnƒnƒnI";
+1@dth1.gat,58,92,5	script	ãƒ˜ãƒ³ã‚¸ãƒŒ#bios1	931,{
+	mes "[ãƒ˜ãƒ³ã‚¸ãƒŒ]";
+	mes "ç¨®ã«å…¥ã£ãŸã‚‰å³¶ã«å‡ºã‚‹ãªã‚“ã¦";
+	mes "ã“ã‚Šã‚ƒã‚ã€ã¾ã„ã£ç¨®";
+	mes "ãªã‚“ã¦ã­";
+	mes "ã‚¢ãƒãƒãƒãƒãƒï¼";
 	close;
 }
-1@dth1.gat,60,96,5	script	ƒqƒVƒG#bios1	623,{
+1@dth1.gat,60,96,5	script	ãƒ’ã‚·ã‚¨#bios1	623,{
 	cutin "hisie01.bmp", 2;
-	mes "[ƒqƒVƒG]";
-	mes "‚±‚¤‚µ‚Ä‚¢‚éŠÔ‚É‚àƒJƒ‹‚Ícc";
-	mes "æ‚ğ‹}‚²‚¤I";
+	mes "[ãƒ’ã‚·ã‚¨]";
+	mes "ã“ã†ã—ã¦ã„ã‚‹é–“ã«ã‚‚ã‚«ãƒ«ã¯â€¦â€¦";
+	mes "å…ˆã‚’æ€¥ã”ã†ï¼";
 	close2;
 	cutin "hisie01.bmp", 255;
 	end;
 }
-1@dth1.gat,60,93,5	script	ƒGƒCƒ”ƒ@ƒ“ƒg#bios1	618,{
+1@dth1.gat,60,93,5	script	ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios1	618,{
 	cutin "avant01.bmp", 2;
-	mes "[ƒGƒCƒ”ƒ@ƒ“ƒg]";
-	mes "ƒNƒNƒNA„‚É‰½‚©—p‚©‚ÈH";
-	mes "ÀŒ±‘Ì‚É‚È‚è‚½‚¢‚È‚ç";
-	mes "‚¢‚Â‚Å‚àŠ½Œ}‚·‚é‚¼H";
+	mes "[ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ]";
+	mes "ã‚¯ã‚¯ã‚¯ã€ç§ã«ä½•ã‹ç”¨ã‹ãªï¼Ÿ";
+	mes "å®Ÿé¨“ä½“ã«ãªã‚ŠãŸã„ãªã‚‰";
+	mes "ã„ã¤ã§ã‚‚æ­“è¿ã™ã‚‹ãï¼Ÿ";
 	close2;
 	cutin "avant01.bmp", 255;
 	end;
 }
-1@dth1.gat,60,96,5	script	‘åbƒwƒXƒ‰ƒ“ƒ^#bios1	451,{
+1@dth1.gat,60,96,5	script	å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios1	451,{
 	cutin "ep13_heslanta.bmp", 2;
-	mes "[ƒwƒXƒ‰ƒ“ƒ^]";
-	mes "r–‚ÉŠÖ‚µ‚Ä‚Í";
-	mes "‚ ‚Ü‚è“¾ˆÓ‚Å‚Í‚È‚¢‚Ì‚Å‚·‚ª";
-	mes "ƒTƒtƒ@‘°‚Ì‘ã•\‚Æ‚µ‚Ä";
-	mes "s—Í’v‚µ‚Ü‚µ‚å‚¤I";
+	mes "[ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿]";
+	mes "è’äº‹ã«é–¢ã—ã¦ã¯";
+	mes "ã‚ã¾ã‚Šå¾—æ„ã§ã¯ãªã„ã®ã§ã™ãŒ";
+	mes "ã‚µãƒ•ã‚¡æ—ã®ä»£è¡¨ã¨ã—ã¦";
+	mes "å°½åŠ›è‡´ã—ã¾ã—ã‚‡ã†ï¼";
 	close2;
 	cutin "ep13_heslanta.bmp", 255;
 	end;
 }
-1@dth1.gat,60,93,5	script	æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b1	450,{
-	mes "[ƒAƒoƒ‰ƒ“ƒ`ƒF]";
-	mes "‚±‚Ìæ‚É‘Ò‚¿\‚¦‚é‚Ì‚Í";
-	mes "•À‘å’ï‚Ì‘Šè‚Å‚Í‚È‚¢‚Å‚µ‚å‚¤B";
-	mes "æ”­‘à’·‚Ì–¼‚É‚©‚¯‚Ä";
-	mes "ƒwƒXƒ‰ƒ“ƒ^—l‚Í„‚ªç‚è‚Ü‚·B";
+1@dth1.gat,60,93,5	script	å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b1	450,{
+	mes "[ã‚¢ãƒãƒ©ãƒ³ãƒã‚§]";
+	mes "ã“ã®å…ˆã«å¾…ã¡æ§‹ãˆã‚‹ã®ã¯";
+	mes "ä¸¦å¤§æŠµã®ç›¸æ‰‹ã§ã¯ãªã„ã§ã—ã‚‡ã†ã€‚";
+	mes "å…ˆç™ºéšŠé•·ã®åã«ã‹ã‘ã¦";
+	mes "ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿æ§˜ã¯ç§ãŒå®ˆã‚Šã¾ã™ã€‚";
 	close;
 }
 
@@ -897,15 +897,15 @@ OnStart:
 
 1@dth2.gat,1,1,0	script	#bios2_mobdead1	139,{
 OnStart:
-	monster getmdmapname("1@dth2.gat"),145,130,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),144,130,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),143,130,"¶Ò‚ÌƒtƒFƒ“",3015,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),103,124,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),102,124,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,3,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),101,124,"¶Ò‚ÌƒtƒFƒ“",3015,3,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),119,160,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),118,160,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),117,160,"¶Ò‚ÌƒtƒFƒ“",3015,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),145,130,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),144,130,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),143,130,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),103,124,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),102,124,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,3,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),101,124,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,3,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),119,160,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,5,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),118,160,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),117,160,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,4,getmdnpcname("#bios2_mobdead1")+ "::OnKilled";
 	end;
 OnKilled:
 	initnpctimer;
@@ -914,11 +914,11 @@ OnTimer500:
 	stopnpctimer;
 	set '@count,getmapmobs(getmdmapname("1@dth2.gat"),getmdnpcname("#bios2_mobdead1")+ "::OnKilled");
 	if('@count == 10)
-		announce "ƒuƒŠƒh : ‚Ü‚¾10•C‚Ìƒ‚ƒ“ƒXƒ^[‚ªc‚Á‚Ä‚¢‚é‚¼I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã¾ã 10åŒ¹ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒæ®‹ã£ã¦ã„ã‚‹ãï¼", 0x9, 0xffff00;
 	else if('@count == 5)
-		announce "ƒuƒŠƒh : c‚è‚Ìƒ‚ƒ“ƒXƒ^[‚Í‚ ‚Æ5•CA‚à‚¤­‚µ‚¾I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : æ®‹ã‚Šã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯ã‚ã¨5åŒ¹ã€ã‚‚ã†å°‘ã—ã ï¼", 0x9, 0xffff00;
 	else if('@count == 1)
-		announce "ƒuƒŠƒh : ƒ‚ƒ“ƒXƒ^[‚Í‚ ‚Æ1•C‚¾BÅŒã‚Ü‚Å‹C‚ğ”²‚­‚ÈI", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯ã‚ã¨1åŒ¹ã ã€‚æœ€å¾Œã¾ã§æ°—ã‚’æŠœããªï¼", 0x9, 0xffff00;
 	else if('@count <= 0) {
 		hideonnpc getmdnpcname("#BARRICADE_bios2_1");
 		hideonnpc getmdnpcname("#BARRICADE_bios2_2");
@@ -929,7 +929,7 @@ OnTimer500:
 		hideonnpc getmdnpcname("#BARRICADE_bios2_7");
 		hideonnpc getmdnpcname("#BARRICADE_bios2_8");
 		areasetcell getmdmapname("1@dth2.gat"),150,126,151,133,0;
-		announce "ƒuƒŠƒh : ‚æ‚µI@‹´‚Ì••½‚ª‚Æ‚¯‚½I@‰œ‚ÉˆÚ“®‚·‚é‚¼I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã‚ˆã—ï¼ã€€æ©‹ã®å°é–ãŒã¨ã‘ãŸï¼ã€€å¥¥ã«ç§»å‹•ã™ã‚‹ãï¼", 0x9, 0xffff00;
 		sleep 2500;
 		donpcevent getmdnpcname("#bios2_mobdead2")+ "::OnStart";
 	}
@@ -937,26 +937,26 @@ OnTimer500:
 }
 1@dth2.gat,1,1,0	script	#bios2_mobdead2	139,{
 OnStart:
-	announce "ƒuƒŠƒh : ‚­‚»‚ÁI@‰œ‚àƒ‚ƒ“ƒXƒ^[‚¾‚ç‚¯‚¾B‘S‚Ä“|‚·‚µ‚©‚È‚¢‚Ì‚©I", 0x9, 0xffff00;
-	monster getmdmapname("1@dth2.gat"),203,132,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,5,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),202,132,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,3,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),201,132,"¶Ò‚ÌƒtƒFƒ“",3015,3,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),229,126,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,5,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),228,126,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,4,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),227,126,"¶Ò‚ÌƒtƒFƒ“",3015,4,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),267,104,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),268,104,"¶Ò‚ÌƒtƒFƒ“",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),269,104,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),270,103,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),270,104,"¶Ò‚ÌƒtƒFƒ“",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),272,102,"¶Ò‚ÌƒtƒFƒ“",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),273,102,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),273,103,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),274,102,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),275,103,"¶Ò‚ÌƒtƒFƒ“",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),276,103,"¶Ò‚ÌƒfƒU[ƒgƒEƒ‹ƒt",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),278,105,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
-	monster getmdmapname("1@dth2.gat"),281,104,"¶Ò‚ÌƒI[ƒNƒEƒHƒŠƒA[",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	announce "ãƒ–ãƒªãƒ‰ : ããã£ï¼ã€€å¥¥ã‚‚ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã ã‚‰ã‘ã ã€‚å…¨ã¦å€’ã™ã—ã‹ãªã„ã®ã‹ï¼", 0x9, 0xffff00;
+	monster getmdmapname("1@dth2.gat"),203,132,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,5,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),202,132,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,3,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),201,132,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,3,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),229,126,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,5,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),228,126,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,4,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),227,126,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,4,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),267,104,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),268,104,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),269,104,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),270,103,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),270,104,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),272,102,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),273,102,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),273,103,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),274,102,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),275,103,"ç”Ÿè€…ã®ãƒ•ã‚§ãƒ³",3015,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),276,103,"ç”Ÿè€…ã®ãƒ‡ã‚¶ãƒ¼ãƒˆã‚¦ãƒ«ãƒ•",3014,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),278,105,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
+	monster getmdmapname("1@dth2.gat"),281,104,"ç”Ÿè€…ã®ã‚ªãƒ¼ã‚¯ã‚¦ã‚©ãƒªã‚¢ãƒ¼",3013,1,getmdnpcname("#bios2_mobdead2")+ "::OnKilled";
 	end;
 OnKilled:
 	initnpctimer;
@@ -965,13 +965,13 @@ OnTimer500:
 	stopnpctimer;
 	set '@count,getmapmobs(getmdmapname("1@dth2.gat"),getmdnpcname("#bios2_mobdead2")+ "::OnKilled");
 	if('@count == 10)
-		announce "ƒuƒŠƒh : ‚Ü‚¾10•C‚Ìƒ‚ƒ“ƒXƒ^[‚ªc‚Á‚Ä‚¢‚é‚¼I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã¾ã 10åŒ¹ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒæ®‹ã£ã¦ã„ã‚‹ãï¼", 0x9, 0xffff00;
 	else if('@count == 5)
-		announce "ƒuƒŠƒh : c‚è‚Ìƒ‚ƒ“ƒXƒ^[‚Í‚ ‚Æ5•CA‚à‚¤­‚µ‚¾I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : æ®‹ã‚Šã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯ã‚ã¨5åŒ¹ã€ã‚‚ã†å°‘ã—ã ï¼", 0x9, 0xffff00;
 	else if('@count == 1)
-		announce "ƒuƒŠƒh : ƒ‚ƒ“ƒXƒ^[‚Í‚ ‚Æ1•C‚¾I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯ã‚ã¨1åŒ¹ã ï¼", 0x9, 0xffff00;
 	else if('@count <= 0) {
-		announce "ƒuƒŠƒh : ‚æ‚µA•Ğ•t‚¢‚½‚¼I@“‡‚Ì“Œ‚©‚çæ‚Éi‚Ş‚¼I", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã‚ˆã—ã€ç‰‡ä»˜ã„ãŸãï¼ã€€å³¶ã®æ±ã‹ã‚‰å…ˆã«é€²ã‚€ãï¼", 0x9, 0xffff00;
 		hideoffnpc getmdnpcname("warp1#bios2");
 	}
 	end;
@@ -979,52 +979,52 @@ OnTimer500:
 1@dth2.gat,67,97,0	script	start1#bios2	139,5,5,{
 	hideonnpc getmdnpcname("start1#bios2");
 	donpcevent getmdnpcname("#bios2_mobdead")+ "::OnStart";
-	switch(getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"))) {
+	switch(getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"))) {
 	case 3:
-		announce "ƒAƒWƒt : ‚Ó‚ñA‚±‚Ì’ö“x‚Ì“GA‰´‚Ì‘Šè‚¶‚á‚Ë‚¦‚ÈB", 0x9, 0xffff00;
+		announce "ã‚¢ã‚¸ãƒ• : ãµã‚“ã€ã“ã®ç¨‹åº¦ã®æ•µã€ä¿ºã®ç›¸æ‰‹ã˜ã‚ƒã­ãˆãªã€‚", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒCƒOƒŠƒh : ‚±‚¤‚µ‚ÄŒZ‹M‚Æ”w’†‡‚í‚¹‚Åí‚Á‚Ä‚é‚Æ—b•º‘ã‚ğv‚¢o‚·‚æB", 0x9, 0xffff00;
+		announce "ã‚¤ã‚°ãƒªãƒ‰ : ã“ã†ã—ã¦å…„è²´ã¨èƒŒä¸­åˆã‚ã›ã§æˆ¦ã£ã¦ã‚‹ã¨å‚­å…µæ™‚ä»£ã‚’æ€ã„å‡ºã™ã‚ˆã€‚", 0x9, 0xffff00;
 		break;
 	case 4:
-		announce "ƒLƒh : ƒŠ[ƒ“I@‘åä•v‚©!?", 0x9, 0xffff00;
+		announce "ã‚­ãƒ‰ : ãƒªãƒ¼ãƒ³ï¼ã€€å¤§ä¸ˆå¤«ã‹!?", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒŠ[ƒ“ : „‚Í‘åä•vB‚±‚Ì‚Ü‚Üi‚İ‚Ü‚µ‚å‚¤I", 0x9, 0xffff00;
+		announce "ãƒªãƒ¼ãƒ³ : ç§ã¯å¤§ä¸ˆå¤«ã€‚ã“ã®ã¾ã¾é€²ã¿ã¾ã—ã‚‡ã†ï¼", 0x9, 0xffff00;
 		break;
 	case 5:
-		announce "ƒuƒŠƒh : ‚ ‚Ì4l‘g‚Ìp‚ªŒ©‚¦‚È‚¢‚ÈccB", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã‚ã®4äººçµ„ã®å§¿ãŒè¦‹ãˆãªã„ãªâ€¦â€¦ã€‚", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒuƒŠƒh : ‚â‚Í‚èA‚±‚Ìí‚¢‚É‚Í—Í•s‘«‚¾‚Á‚½‚©ccB", 0x9, 0xffff00;
+		announce "ãƒ–ãƒªãƒ‰ : ã‚„ã¯ã‚Šã€ã“ã®æˆ¦ã„ã«ã¯åŠ›ä¸è¶³ã ã£ãŸã‹â€¦â€¦ã€‚", 0x9, 0xffff00;
 		break;
 	case 6:
-		announce "ƒqƒVƒG : Œ©‚½–Ú‚É‚æ‚ç‚¸cc‚±‚¢‚Â‚çŒ‹\‹­‚¢‚ÈB", 0x9, 0xffff00;
+		announce "ãƒ’ã‚·ã‚¨ : è¦‹ãŸç›®ã«ã‚ˆã‚‰ãšâ€¦â€¦ã“ã„ã¤ã‚‰çµæ§‹å¼·ã„ãªã€‚", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒGƒCƒ”ƒ@ƒ“ƒg : ƒNƒNƒNA‰½‚È‚çl‘Ì‹­‰»‚ÌÀŒ±‘Ì‚É‚Å‚à‚µ‚Ä‚â‚ë‚¤‚©H", 0x9, 0xffff00;
+		announce "ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ã‚¯ã‚¯ã‚¯ã€ä½•ãªã‚‰äººä½“å¼·åŒ–ã®å®Ÿé¨“ä½“ã«ã§ã‚‚ã—ã¦ã‚„ã‚ã†ã‹ï¼Ÿ", 0x9, 0xffff00;
 		break;
 	case 7:
-		announce "ƒwƒXƒ‰ƒ“ƒ^ : ƒTƒtƒ@‘°‚ÌˆÓ’n‚É‚©‚¯‚ÄA•‰‚¯‚ç‚ê‚È‚¢‚Ì‚Å‚·I", 0x9, 0xffff00;
+		announce "ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã‚µãƒ•ã‚¡æ—ã®æ„åœ°ã«ã‹ã‘ã¦ã€è² ã‘ã‚‰ã‚Œãªã„ã®ã§ã™ï¼", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒAƒoƒ‰ƒ“ƒ`ƒF : ƒwƒXƒ‰ƒ“ƒ^—lI@‚²–³—‚È‚³‚ç‚¸I", 0x9, 0xffff00;
+		announce "ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿æ§˜ï¼ã€€ã”ç„¡ç†ãªã•ã‚‰ãšï¼", 0x9, 0xffff00;
 		break;
 	}
-	donpcevent getmdnpcname("BC—p#bios2")+ "::OnStart";
+	donpcevent getmdnpcname("BCç”¨#bios2")+ "::OnStart";
 	end;
 }
-1@dth2.gat,67,97,0	script	BC—p#bios2	139,{
+1@dth2.gat,67,97,0	script	BCç”¨#bios2	139,{
 OnStart:
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : ƒNƒNƒNB‹¯‚¦‚È‚³‚¢lŠÔB", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€‚æ€¯ãˆãªã•ã„äººé–“ã€‚", 0x9, 0xffff00;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : ¬’·‚ÌI’…“_‚Æ‚ÍA‚·‚È‚í‚¿[•£B", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : æˆé•·ã®çµ‚ç€ç‚¹ã¨ã¯ã€ã™ãªã‚ã¡æ·±æ·µã€‚", 0x9, 0xffff00;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : €‚ğŒ}‚¦A–»•{‚Ö‚Æ—‚¿‚Ä‚µ‚Ü‚¦‚Î", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : æ­»ã‚’è¿ãˆã€å†¥åºœã¸ã¨è½ã¡ã¦ã—ã¾ãˆã°", 0x9, 0xffff00;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : •¨Œê‚Æˆá‚¢A‹M•û‚Ìè‚ğˆø‚­‹á—Vl‚ÍŒ»‚ê‚È‚¢B", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ç‰©èªã¨é•ã„ã€è²´æ–¹ã®æ‰‹ã‚’å¼•ãåŸéŠè©©äººã¯ç¾ã‚Œãªã„ã€‚", 0x9, 0xffff00;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : ‚³‚ A€‚É‹¯‚¦‚È‚³‚¢BS‚ğ‹°•|‚Éõ‚ßã‚°‚é‚Ì‚Å‚·B", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã‚ã€æ­»ã«æ€¯ãˆãªã•ã„ã€‚å¿ƒã‚’ææ€–ã«æŸ“ã‚ä¸Šã’ã‚‹ã®ã§ã™ã€‚", 0x9, 0xffff00;
 	sleep 3000;
-	announce "€_ƒAƒ“ƒN : ‹°•|‚ÍæÑ‚Æ‚È‚èAƒ‚ƒƒN—l‚ÍÄ‚Ñ¶‚Ü‚ê•Ï‚í‚é‚Å‚µ‚å‚¤B", 0x9, 0xffff00;
+	announce "æ­»ç¥ã‚¢ãƒ³ã‚¯ : ææ€–ã¯è´„ã¨ãªã‚Šã€ãƒ¢ãƒ­ã‚¯æ§˜ã¯å†ã³ç”Ÿã¾ã‚Œå¤‰ã‚ã‚‹ã§ã—ã‚‡ã†ã€‚", 0x9, 0xffff00;
 	sleep 3000;
-	announce "ƒuƒŠƒh : ‘Ò‚Â‚ñ‚¾ƒAƒ“ƒN!!@‚­‚»‚ÁB‚Ü‚¸‚Í×–‚‚Èƒ‚ƒ“ƒXƒ^[’B‚ğ‘S‚Ä“|‚·‚¼I", 0x9, 0xffff00;
+	announce "ãƒ–ãƒªãƒ‰ : å¾…ã¤ã‚“ã ã‚¢ãƒ³ã‚¯!!ã€€ããã£ã€‚ã¾ãšã¯é‚ªé­”ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼é”ã‚’å…¨ã¦å€’ã™ãï¼", 0x9, 0xffff00;
 	end;
 }
 1@dth2.gat,326,103,0	script	warp1#bios2	45,1,1,{
@@ -1032,66 +1032,66 @@ OnStart:
 	end;
 }
 
-1@dth3.gat,62,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#11bi	3016,{}
-1@dth3.gat,64,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#12bi	3016,{}
-1@dth3.gat,66,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#13bi	3016,{}
-1@dth3.gat,68,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#14bi	3016,{}
-1@dth3.gat,72,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#15bi	3016,{}
-1@dth3.gat,74,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#16bi	3016,{}
-1@dth3.gat,76,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#17bi	3016,{}
-1@dth3.gat,78,80,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#18bi	3016,{}
-1@dth3.gat,62,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#21bi	3016,{}
-1@dth3.gat,64,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#22bi	3016,{}
-1@dth3.gat,66,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#23bi	3016,{}
-1@dth3.gat,68,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#24bi	3016,{}
-1@dth3.gat,72,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#25bi	3016,{}
-1@dth3.gat,74,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#26bi	3016,{}
-1@dth3.gat,76,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#27bi	3016,{}
-1@dth3.gat,78,86,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#28bi	3016,{}
-1@dth3.gat,62,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#31bi	3016,{}
-1@dth3.gat,64,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#32bi	3016,{}
-1@dth3.gat,66,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#33bi	3016,{}
-1@dth3.gat,68,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#34bi	3016,{}
-1@dth3.gat,72,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#35bi	3016,{}
-1@dth3.gat,74,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#36bi	3016,{}
-1@dth3.gat,76,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#37bi	3016,{}
-1@dth3.gat,78,92,3	script	€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#38bi	3016,{}
+1@dth3.gat,62,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#11bi	3016,{}
+1@dth3.gat,64,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#12bi	3016,{}
+1@dth3.gat,66,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#13bi	3016,{}
+1@dth3.gat,68,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#14bi	3016,{}
+1@dth3.gat,72,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#15bi	3016,{}
+1@dth3.gat,74,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#16bi	3016,{}
+1@dth3.gat,76,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#17bi	3016,{}
+1@dth3.gat,78,80,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#18bi	3016,{}
+1@dth3.gat,62,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#21bi	3016,{}
+1@dth3.gat,64,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#22bi	3016,{}
+1@dth3.gat,66,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#23bi	3016,{}
+1@dth3.gat,68,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#24bi	3016,{}
+1@dth3.gat,72,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#25bi	3016,{}
+1@dth3.gat,74,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#26bi	3016,{}
+1@dth3.gat,76,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#27bi	3016,{}
+1@dth3.gat,78,86,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#28bi	3016,{}
+1@dth3.gat,62,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#31bi	3016,{}
+1@dth3.gat,64,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#32bi	3016,{}
+1@dth3.gat,66,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#33bi	3016,{}
+1@dth3.gat,68,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#34bi	3016,{}
+1@dth3.gat,72,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#35bi	3016,{}
+1@dth3.gat,74,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#36bi	3016,{}
+1@dth3.gat,76,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#37bi	3016,{}
+1@dth3.gat,78,92,3	script	æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#38bi	3016,{}
 
-1@dth3.gat,72,74,3	script	ƒWƒFƒCƒX#bios3	467,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,72,74,3	script	ã‚¸ã‚§ã‚¤ã‚¹#bios3	467,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 10) {
-		mes "[ƒWƒFƒCƒX]";
-		mes "cc–³–‚¾‚Á‚½‚©B";
-		mes "‚±‚±‚ªÅ[•”‚Ì‚æ‚¤‚¾B";
+		mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+		mes "â€¦â€¦ç„¡äº‹ã ã£ãŸã‹ã€‚";
+		mes "ã“ã“ãŒæœ€æ·±éƒ¨ã®ã‚ˆã†ã ã€‚";
 		close;
 	}
 	if('@flag < 30) {
-		mes "[ƒWƒFƒCƒX]";
-		mes "‚­‚ÁA‘Ì‚ªccB";
+		mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+		mes "ãã£ã€ä½“ãŒâ€¦â€¦ã€‚";
 		close;
 	}
-	mes "[ƒWƒFƒCƒX]";
-	mes "cc‚Ç‚¤‚â‚ç‰´‚½‚¿‚ÍA";
-	mes "©•ª‚Ì—Í‚ğ‰ßM‚µ‚Ä‚¢‚½‚æ‚¤‚¾B";
+	mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+	mes "â€¦â€¦ã©ã†ã‚„ã‚‰ä¿ºãŸã¡ã¯ã€";
+	mes "è‡ªåˆ†ã®åŠ›ã‚’éä¿¡ã—ã¦ã„ãŸã‚ˆã†ã ã€‚";
 	next;
-	mes "[ƒWƒFƒCƒX]";
-	mes "cc‚¨‚©‚°‚Å–½E‚¢‚ğ‚µ‚½‚æB";
-	mes "‚ ‚è‚ª‚Æ‚¤B";
+	mes "[ã‚¸ã‚§ã‚¤ã‚¹]";
+	mes "â€¦â€¦ãŠã‹ã’ã§å‘½æ‹¾ã„ã‚’ã—ãŸã‚ˆã€‚";
+	mes "ã‚ã‚ŠãŒã¨ã†ã€‚";
 	close;
 }
-1@dth3.gat,70,67,3	script	€_ƒAƒ“ƒN#bios3	3029,{}
-1@dth3.gat,64,74,5	script	ƒuƒŠƒh#bios3	468,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,70,67,3	script	æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3	3029,{}
+1@dth3.gat,64,74,5	script	ãƒ–ãƒªãƒ‰#bios3	468,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 10) {
 		if(getnpctimer(1)) {
-			mes "[ƒuƒŠƒh]";
-			mes "–³–‚Å‚æ‚©‚Á‚½B";
-			mes "‚±‚±‚ªÅ[•”‚Ì‚æ‚¤‚¾‚ª";
-			mes "‚ ‚Ì€_‚Ìp‚ªŒ©‚¦‚È‚¢‚ÈB";
+			mes "[ãƒ–ãƒªãƒ‰]";
+			mes "ç„¡äº‹ã§ã‚ˆã‹ã£ãŸã€‚";
+			mes "ã“ã“ãŒæœ€æ·±éƒ¨ã®ã‚ˆã†ã ãŒ";
+			mes "ã‚ã®æ­»ç¥ã®å§¿ãŒè¦‹ãˆãªã„ãªã€‚";
 			close;
 		}
 		if(checkquest(201720)) {
-			if(select("æ‚ğ‹}‚®","‰ï˜b‚ğ‚·‚é") ==1) {
+			if(select("å…ˆã‚’æ€¥ã","ä¼šè©±ã‚’ã™ã‚‹") ==1) {
 				donpcevent getmdnpcname("#bios3_talkshow")+ "::OnStart";
 				close;
 			}
@@ -1100,26 +1100,26 @@ OnStart:
 		close;
 	}
 	if('@flag < 30) {
-		mes "[ƒuƒŠƒh]";
-		mes "‚­‚ÁA‘Ì‚ªccI";
-		mes "‚±‚±‚Ü‚Åcc‚È‚Ì‚©ccI";
+		mes "[ãƒ–ãƒªãƒ‰]";
+		mes "ãã£ã€ä½“ãŒâ€¦â€¦ï¼";
+		mes "ã“ã“ã¾ã§â€¦â€¦ãªã®ã‹â€¦â€¦ï¼";
 		close;
 	}
-	mes "[ƒuƒŠƒh]";
-	mes "‚·‚Ü‚È‚¢‚ÈA•‚©‚Á‚½‚æB";
-	mes "„‚ª“¹’†‚ÅE‚Á‚½‚±‚Ì";
-	mes "^ff0000—EÒ‚ÌØ^000000‚Í";
-	mes "ŒN‚É‚±‚»‘Š‰‚µ‚¢ƒAƒCƒeƒ€‚¾B";
-	mes "¥”ñó‚¯æ‚Á‚Ä‚­‚êB";
+	mes "[ãƒ–ãƒªãƒ‰]";
+	mes "ã™ã¾ãªã„ãªã€åŠ©ã‹ã£ãŸã‚ˆã€‚";
+	mes "ç§ãŒé“ä¸­ã§æ‹¾ã£ãŸã“ã®";
+	mes "^ff0000å‹‡è€…ã®è¨¼^000000ã¯";
+	mes "å›ã«ã“ãç›¸å¿œã—ã„ã‚¢ã‚¤ãƒ†ãƒ ã ã€‚";
+	mes "æ˜¯éå—ã‘å–ã£ã¦ãã‚Œã€‚";
 	next;
-	mes "[ƒuƒŠƒh]";
-	mes "‚³‚ŸA‘‚­‚±‚Ì‹C•ª‚Ìˆ«‚¢êŠ‚©‚ç";
-	mes "o‚æ‚¤‚º!!";
+	mes "[ãƒ–ãƒªãƒ‰]";
+	mes "ã•ãã€æ—©ãã“ã®æ°—åˆ†ã®æ‚ªã„å ´æ‰€ã‹ã‚‰";
+	mes "å‡ºã‚ˆã†ãœ!!";
 	close2;
 	if(checkitemblank() == 0) {
-		mes "]ƒAƒCƒeƒ€‚Ìí—Ş”‚ª‘½‚­‚Ä";
-		mes "@‚Â‚±‚Æ‚ª‚Å‚«‚È‚¢B";
-		mes "@í—Ş”‚ğŒ¸‚ç‚µ‚Ä‚©‚çó‚¯æ‚ë‚¤]";
+		mes "â€ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡æ•°ãŒå¤šãã¦";
+		mes "ã€€æŒã¤ã“ã¨ãŒã§ããªã„ã€‚";
+		mes "ã€€ç¨®é¡æ•°ã‚’æ¸›ã‚‰ã—ã¦ã‹ã‚‰å—ã‘å–ã‚ã†â€";
 		close;
 	}
 	if(checkquest(96430) & 0x4) {
@@ -1159,110 +1159,110 @@ OnStart:
 	warp "moro_cav.gat",45,63;
 	end;
 OnTimer1000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ‚¨‚ÁAŒN‚à’…‚¢‚½‚©B";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ãŠã£ã€å›ã‚‚ç€ã„ãŸã‹ã€‚";
 	end;
 OnTimer4000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ‹C‚É‚È‚é‚ÈccB";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : æ°—ã«ãªã‚‹ãªâ€¦â€¦ã€‚";
 	end;
 OnTimer7000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ‚ñH@‚Ç‚¤‚µ‚½ƒWƒFƒCƒXH";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ã‚“ï¼Ÿã€€ã©ã†ã—ãŸã‚¸ã‚§ã‚¤ã‚¹ï¼Ÿ";
 	end;
 OnTimer10000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ƒ‚ƒ“ƒXƒ^[‚ªA­‚µ‚¸‚Â¬’·‚µ‚Ä‚¢‚½B‚»‚ê‚ÉAü‚è‚àŠù‚ÉˆÃ‚­‚È‚Á‚Ä‚«‚Ä‚¢‚éB";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒã€å°‘ã—ãšã¤æˆé•·ã—ã¦ã„ãŸã€‚ãã‚Œã«ã€å‘¨ã‚Šã‚‚æ—¢ã«æš—ããªã£ã¦ãã¦ã„ã‚‹ã€‚";
 	end;
 OnTimer13000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ŠÔ‚ÌŒo‰ß‚ª‚¨‚©‚µ‚¢BƒAƒ“ƒN‚ªŒ¾‚Á‚Ä‚¢‚½–‚Æ‰½‚©ŠÖŒW‚ª‚ ‚é‚Ì‚©ccB";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : æ™‚é–“ã®çµŒéãŒãŠã‹ã—ã„ã€‚ã‚¢ãƒ³ã‚¯ãŒè¨€ã£ã¦ã„ãŸäº‹ã¨ä½•ã‹é–¢ä¿‚ãŒã‚ã‚‹ã®ã‹â€¦â€¦ã€‚";
 	end;
 OnTimer16000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : Šm‚©‚ÉccI";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ç¢ºã‹ã«â€¦â€¦ï¼";
 	end;
 OnTimer19000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : Œx‰ú‚ª•K—v‚¾B";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : è­¦æˆ’ãŒå¿…è¦ã ã€‚";
 	end;
 OnTimer22000:
-	hideoffnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNƒNccB";
+	hideoffnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã‚¯â€¦â€¦ã€‚";
 	end;
 OnTimer25000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : o‚½‚È‹M—lƒbI@‚³‚Á‚³‚Æ‚±‚Á‚¿‚Ö—ˆ‚¢I";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : å‡ºãŸãªè²´æ§˜ãƒƒï¼ã€€ã•ã£ã•ã¨ã“ã£ã¡ã¸æ¥ã„ï¼";
 	end;
 OnTimer28000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚¤A‚±‚±‚Í€‚ğâJ‚é¶‚Ì¢ŠEB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã†ã€ã“ã“ã¯æ­»ã‚’ç¥€ã‚‹ç”Ÿã®ä¸–ç•Œã€‚";
 	end;
 OnTimer31000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚Í€‚ğŒ}‚¦A–‚_‚Ö‚Æ“]¶‚È‚³‚éˆ×‚ÌæÑ‚ğ—~‚µ‚Ä‚¢‚é‚Ì‚Å‚·B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ã¯æ­»ã‚’è¿ãˆã€é­”ç¥ã¸ã¨è»¢ç”Ÿãªã•ã‚‹ç‚ºã®è´„ã‚’æ¬²ã—ã¦ã„ã‚‹ã®ã§ã™ã€‚";
 	end;
 OnTimer34000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚ª—~‚·‚éæÑ‚Æ‚Í‰½‚©cc‹C‚É‚È‚è‚Ü‚·‚©H";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ãŒæ¬²ã™ã‚‹è´„ã¨ã¯ä½•ã‹â€¦â€¦æ°—ã«ãªã‚Šã¾ã™ã‹ï¼Ÿ";
 	end;
 OnTimer37000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNcco‚Å‚æI@„‚Ì•”‰º’B‚æI";
-	misceffect 35,getmdnpcname("€_ƒAƒ“ƒN#bios3");
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯â€¦â€¦å‡ºã§ã‚ˆï¼ã€€ç§ã®éƒ¨ä¸‹é”ã‚ˆï¼";
+	misceffect 35,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 	end;
 OnTimer40000:
 	for(set '@i,1; '@i<=3; set '@i,'@i+1) {
 		for(set '@j,1; '@j<=8; set '@j,'@j+1)
-			hideoffnpc getmdnpcname("€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#"+ '@i + '@j +"bi");
+			hideoffnpc getmdnpcname("æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#"+ '@i + '@j +"bi");
 	}
 	end;
 OnTimer43000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : Œä‘õ‚Í‚¢‚¢I@‰º‚Á’[‚Ì‘Šè‚È‚Ç‚µ‚Ä‚¢‚ç‚ê‚é‚©I";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : å¾¡è¨—ã¯ã„ã„ï¼ã€€ä¸‹ã£ç«¯ã®ç›¸æ‰‹ãªã©ã—ã¦ã„ã‚‰ã‚Œã‚‹ã‹ï¼";
 	end;
 OnTimer46000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : „‚ª’¼Ú‚¨‘O‚ğ“|‚µ‚Ä‚â‚éI";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ç§ãŒç›´æ¥ãŠå‰ã‚’å€’ã—ã¦ã‚„ã‚‹ï¼";
 	end;
 OnTimer49000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNBˆĞ¨‚ª—Ç‚¢‚Å‚·‚ËB‚µ‚©‚µccc”O‚È‚ª‚ç‚¨•Ê‚ê‚ÌŠÔ‚Å‚·B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€‚å¨å‹¢ãŒè‰¯ã„ã§ã™ã­ã€‚ã—ã‹ã—â€¦â€¦æ®‹å¿µãªãŒã‚‰ãŠåˆ¥ã‚Œã®æ™‚é–“ã§ã™ã€‚";
 	end;
 OnTimer52000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚Ìg‚É€‚ª”‡‚¢Šñ‚é‹°•|‚ğcc‚Æ‚­‚Æ–¡‚í‚¢‚È‚³‚¢I";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã®èº«ã«æ­»ãŒé€™ã„å¯„ã‚‹ææ€–ã‚’â€¦â€¦ã¨ãã¨å‘³ã‚ã„ãªã•ã„ï¼";
 	end;
 OnTimer55000:
-	misceffect 89,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	misceffect 134,getmdnpcname("ƒWƒFƒCƒX#bios3");
-	misceffect 134,getmdnpcname("ƒuƒŠƒh#bios3");
-	misceffect 51,getmdnpcname("ƒWƒFƒCƒX#bios3");
-	misceffect 51,getmdnpcname("ƒuƒŠƒh#bios3");
-	setnpcdisplay getmdnpcname("ƒuƒŠƒh#bios3"),10036;
-	setnpcdisplay getmdnpcname("ƒWƒFƒCƒX#bios3"),10035;
+	misceffect 89,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	misceffect 134,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3");
+	misceffect 134,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3");
+	misceffect 51,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3");
+	misceffect 51,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3");
+	setnpcdisplay getmdnpcname("ãƒ–ãƒªãƒ‰#bios3"),10036;
+	setnpcdisplay getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3"),10035;
 	hideoffnpc getmdnpcname("freeze#bios3");
-	set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+	set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 	end;
 OnTimer58000:
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ‚È‚ÁA‚È‚ñ‚¾!?@‘Ì‚ªcc‘Ì‚ª“®‚©‚È‚¢?!";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ãªã£ã€ãªã‚“ã !?ã€€ä½“ãŒâ€¦â€¦ä½“ãŒå‹•ã‹ãªã„?!";
 	end;
 OnTimer61000:
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : cc!!@‘Ì‚ªccI";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦!!ã€€ä½“ãŒâ€¦â€¦ï¼";
 	end;
 OnTimer64000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚Ç‚¤‚Å‚·‚©‹C•ª‚ÍBƒNƒNƒNƒNƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã©ã†ã§ã™ã‹æ°—åˆ†ã¯ã€‚ã‚¯ã‚¯ã‚¯ã‚¯ã‚¯ã€‚";
 	end;
 OnTimer67000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚±‚±‚Ü‚Å‚ ‚È‚½’B‚Í„‚Ì•”‰º’B‚ª‹}‘¬‚É¬’·‚·‚ép‚ğŒ©‚½‚Å‚µ‚å‚¤B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã“ã¾ã§ã‚ãªãŸé”ã¯ç§ã®éƒ¨ä¸‹é”ãŒæ€¥é€Ÿã«æˆé•·ã™ã‚‹å§¿ã‚’è¦‹ãŸã§ã—ã‚‡ã†ã€‚";
 	end;
 OnTimer70000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚²——‚È‚³‚¢A¡‚±‚±‚É‚¢‚é•”‰º’B‚ğB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã”è¦§ãªã•ã„ã€ä»Šã“ã“ã«ã„ã‚‹éƒ¨ä¸‹é”ã‚’ã€‚";
 	end;
 OnTimer73000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ”Ş‚ç‚Í€‚ğŒ}‚¦A‚»‚Ì°‚Íƒ‚ƒƒN—l‚ª“]¶‚·‚éˆ×‚ÌæÑ‚Æ‚È‚é‚Ì‚Å‚·B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : å½¼ã‚‰ã¯æ­»ã‚’è¿ãˆã€ãã®é­‚ã¯ãƒ¢ãƒ­ã‚¯æ§˜ãŒè»¢ç”Ÿã™ã‚‹ç‚ºã®è´„ã¨ãªã‚‹ã®ã§ã™ã€‚";
 	end;
 OnTimer76000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚¨‚â‚¨‚âA„‚Ìp‚ğ‰ğ‚­‚Æ‚Íccv‚Á‚½‚æ‚è‚â‚é‚æ‚¤‚Å‚·‚ËB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãŠã‚„ãŠã‚„ã€ç§ã®è¡“ã‚’è§£ãã¨ã¯â€¦â€¦æ€ã£ãŸã‚ˆã‚Šã‚„ã‚‹ã‚ˆã†ã§ã™ã­ã€‚";
 	end;
 OnTimer79000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚Ü‚ A‚¢‚¢‚Å‚µ‚å‚¤BŸ‚Ícc‚ ‚È‚½’B‚Ì”Ô‚Å‚·B";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã¾ã‚ã€ã„ã„ã§ã—ã‚‡ã†ã€‚æ¬¡ã¯â€¦â€¦ã‚ãªãŸé”ã®ç•ªã§ã™ã€‚";
 	end;
 OnTimer82000:
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚ê‚Å‚ÍA‹ğ‚©‚È–`Œ¯Ò—lB–»•{‚Ö‚Ì—·˜H‚É—J‚¢–³‚«‚æ‚¤ccBƒNƒNƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã‚Œã§ã¯ã€æ„šã‹ãªå†’é™ºè€…æ§˜ã€‚å†¥åºœã¸ã®æ—…è·¯ã«æ†‚ã„ç„¡ãã‚ˆã†â€¦â€¦ã€‚ã‚¯ã‚¯ã‚¯ã€‚";
 	hideonnpc getmdnpcname("freeze#bios3");
 	end;
 OnTimer85000:
 	stopnpctimer;
 	for(set '@i,1; '@i<=3; set '@i,'@i+1) {
 		for(set '@j,1; '@j<=8; set '@j,'@j+1)
-			hideonnpc getmdnpcname("€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr#"+ '@i + '@j +"bi");
+			hideonnpc getmdnpcname("æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“#"+ '@i + '@j +"bi");
 	}
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 	donpcevent getmdnpcname("#bios3_mobdead")+ "::OnStart";
 	end;
 }
@@ -1273,7 +1273,7 @@ OnStart:
 	for(set '@y,80;'@y<=92;set '@y,'@y+6) {
 		for(set '@x,62;'@x<=78;set '@x,'@x+2) {
 			if('@x != 70)
-				monster '@mdmap$,'@x,'@y,"€Ò‚ÌƒI[ƒNƒ]ƒ“ƒr",3016,1,'@mdnpc$;
+				monster '@mdmap$,'@x,'@y,"æ­»è€…ã®ã‚ªãƒ¼ã‚¯ã‚¾ãƒ³ãƒ“",3016,1,'@mdnpc$;
 		}
 	}
 	end;
@@ -1281,16 +1281,16 @@ OnKilled1:
 	set '@count,getmapmobs(getmdmapname("1@dth3.gat"),getmdnpcname("#bios3_mobdead")+ "::OnKilled1");
 	if('@count > 0) end;
 	sleep 500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ¦‚¢‚ÈI@‘S•”“|‚µ‚½‚Ì‚©H";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : å‡„ã„ãªï¼ã€€å…¨éƒ¨å€’ã—ãŸã®ã‹ï¼Ÿ";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ‚Ü‚¾‚¾cc‹C‚ğ•t‚¯‚ëI";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : ã¾ã ã â€¦â€¦æ°—ã‚’ä»˜ã‘ã‚ï¼";
 	sleep 1000;
 	set '@mdmap$,getmdmapname("1@dth3.gat");
 	set '@mdnpc$,getmdnpcname("#bios3_mobdead")+ "::OnKilled2";
 	for(set '@y,80;'@y<=92;set '@y,'@y+6) {
 		for(set '@x,62;'@x<=78;set '@x,'@x+2) {
 			if('@x != 70)
-				monster '@mdmap$,'@x,'@y,"€Ò‚ÌƒxƒŠƒbƒg",3017,1,'@mdnpc$;
+				monster '@mdmap$,'@x,'@y,"æ­»è€…ã®ãƒ™ãƒªãƒƒãƒˆ",3017,1,'@mdnpc$;
 		}
 	}
 	end;
@@ -1298,16 +1298,16 @@ OnKilled2:
 	set '@count,getmapmobs(getmdmapname("1@dth3.gat"),getmdnpcname("#bios3_mobdead")+ "::OnKilled2");
 	if('@count > 0) end;
 	sleep 500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ¡“x‚±‚»‘S•”“|‚µ‚½‚ñ‚¾‚æ‚ÈH";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ä»Šåº¦ã“ãå…¨éƒ¨å€’ã—ãŸã‚“ã ã‚ˆãªï¼Ÿ";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : c”O‚È‚ª‚ç‚Ü‚¾‚Ì‚æ‚¤‚¾ccI";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : æ®‹å¿µãªãŒã‚‰ã¾ã ã®ã‚ˆã†ã â€¦â€¦ï¼";
 	sleep 1000;
 	set '@mdmap$,getmdmapname("1@dth3.gat");
 	set '@mdnpc$,getmdnpcname("#bios3_mobdead")+ "::OnKilled3";
 	for(set '@y,80;'@y<=92;set '@y,'@y+6) {
 		for(set '@x,62;'@x<=78;set '@x,'@x+2) {
 			if('@x != 70)
-				monster '@mdmap$,'@x,'@y,"€Ò‚ÌƒƒKƒƒhƒ“",3018,1,'@mdnpc$;
+				monster '@mdmap$,'@x,'@y,"æ­»è€…ã®ãƒ¡ã‚¬ãƒ­ãƒ‰ãƒ³",3018,1,'@mdnpc$;
 		}
 	}
 	end;
@@ -1315,175 +1315,175 @@ OnKilled3:
 	set '@count,getmapmobs(getmdmapname("1@dth3.gat"),getmdnpcname("#bios3_mobdead")+ "::OnKilled3");
 	if('@count > 0) end;
 	//hideonnpc "#bios3_mobdead";
-	hideoffnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+	hideoffnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag == 13) {
-		hideoffnpc getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3");
-		hideoffnpc getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3");
+		hideoffnpc getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3");
+		hideoffnpc getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3");
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3")),"ƒAƒWƒt : ‚æ‚¤‚â‚­’Ç‚¢‚Â‚¢‚½‚ºA‚¨‘O‚ç–³–‚©I";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3")),"ã‚¢ã‚¸ãƒ• : ã‚ˆã†ã‚„ãè¿½ã„ã¤ã„ãŸãœã€ãŠå‰ã‚‰ç„¡äº‹ã‹ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3")),"ƒCƒOƒŠƒh : ‚³‚Á‚³‚Æ•Ğ•t‚¯‚æ‚¤‚ºI";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3")),"ã‚¤ã‚°ãƒªãƒ‰ : ã•ã£ã•ã¨ç‰‡ä»˜ã‘ã‚ˆã†ãœï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3")),"ƒAƒWƒt : ‚¤‚¨‚¨‚¨‚¨‚¨‚¨‚¨I";
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3")),"ƒCƒOƒŠƒh : ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ I";
-		misceffect 12,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3");
-		misceffect 12,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3");
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3")),"ã‚¢ã‚¸ãƒ• : ã†ãŠãŠãŠãŠãŠãŠãŠï¼";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3")),"ã‚¤ã‚°ãƒªãƒ‰ : ã¯ã‚ã‚ã‚ã‚ã‚ã‚ã‚ï¼";
+		misceffect 12,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3");
+		misceffect 12,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3");
 		sleep 1500;
-		misceffect 226,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-		misceffect 245,getmdnpcname("€_ƒAƒ“ƒN#bios3");
+		misceffect 226,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+		misceffect 245,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 		sleep 3000;
-		announce "]€_ƒAƒ“ƒN‚Ì‘Ì—Í‚ª‘å‚«‚­Œ¸­‚µ‚½]", 0x9, 0xffff00;
+		announce "â€æ­»ç¥ã‚¢ãƒ³ã‚¯ã®ä½“åŠ›ãŒå¤§ããæ¸›å°‘ã—ãŸâ€", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Ácc‚Ü‚³‚©A‚±‚Ì„‚Éè‚ğ•‰‚í‚¹‚é‚Æ‚ÍccB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ã¾ã•ã‹ã€ã“ã®ç§ã«æ‰‹å‚·ã‚’è² ã‚ã›ã‚‹ã¨ã¯â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚¤‚Å‚·‚Ëcc‚ ‚È‚½•û‚É‚Í‚±‚¤‚¢‚¤‚Ì‚Í‚¢‚©‚ª‚Å‚µ‚å‚¤B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã†ã§ã™ã­â€¦â€¦ã‚ãªãŸæ–¹ã«ã¯ã“ã†ã„ã†ã®ã¯ã„ã‹ãŒã§ã—ã‚‡ã†ã€‚";
 		sleep 3000;
-		misceffect 23,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3");
-		misceffect 23,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3");
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		misceffect 23,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3");
+		misceffect 23,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3");
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("i—ßŠ¯ƒAƒWƒt#bios3")),"ƒAƒWƒt : ‘Ì‚ª“®‚©‚È‚¢!?@‚±Aº‚àccI";
+		unittalk getnpcid(0,getmdnpcname("å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3")),"ã‚¢ã‚¸ãƒ• : ä½“ãŒå‹•ã‹ãªã„!?ã€€ã“ã€å£°ã‚‚â€¦â€¦ï¼";
 		sleep 1000;
-		unittalk getnpcid(0,getmdnpcname("‹³Š¯’·ƒCƒOƒŠƒh#bios3")),"ƒCƒOƒŠƒh : ‘Ì‚ªccÎ‚ÉI";
+		unittalk getnpcid(0,getmdnpcname("æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3")),"ã‚¤ã‚°ãƒªãƒ‰ : ä½“ãŒâ€¦â€¦çŸ³ã«ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNA•¨Œ¾‚í‚ÊÎ‚Æ‚È‚èAŒÈ‚Ì–³—Í‚ğ‰i‰“‚É’Q‚«‘±‚¯‚È‚³‚¢B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€ç‰©è¨€ã‚ã¬çŸ³ã¨ãªã‚Šã€å·±ã®ç„¡åŠ›ã‚’æ°¸é ã«å˜†ãç¶šã‘ãªã•ã„ã€‚";
 		sleep 4000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚³‚ÄA‚»‚±‚Ì–`Œ¯Ò‚Ì‚ ‚È‚½B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã¦ã€ãã“ã®å†’é™ºè€…ã®ã‚ãªãŸã€‚";
 	}
 	else if('@flag == 14) {
-		hideoffnpc getmdnpcname("ƒLƒh#bios3");
-		hideoffnpc getmdnpcname("ƒŠ[ƒ“#bios3");
+		hideoffnpc getmdnpcname("ã‚­ãƒ‰#bios3");
+		hideoffnpc getmdnpcname("ãƒªãƒ¼ãƒ³#bios3");
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios3")),"ƒLƒh : ’x‚­‚È‚Á‚Ä‚·‚Ü‚È‚¢I";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios3")),"ã‚­ãƒ‰ : é…ããªã£ã¦ã™ã¾ãªã„ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios3")),"ƒŠ[ƒ“ : ƒLƒhAs‚­‚æI";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios3")),"ãƒªãƒ¼ãƒ³ : ã‚­ãƒ‰ã€è¡Œãã‚ˆï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios3")),"ƒLƒh : ‚¤‚¨‚¨‚¨‚¨‚¨‚¨‚¨I";
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios3")),"ƒŠ[ƒ“ : ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ I";
-		misceffect 12,getmdnpcname("ƒLƒh#bios3");
-		misceffect 12,getmdnpcname("ƒŠ[ƒ“#bios3");
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios3")),"ã‚­ãƒ‰ : ã†ãŠãŠãŠãŠãŠãŠãŠï¼";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios3")),"ãƒªãƒ¼ãƒ³ : ã¯ã‚ã‚ã‚ã‚ã‚ã‚ã‚ï¼";
+		misceffect 12,getmdnpcname("ã‚­ãƒ‰#bios3");
+		misceffect 12,getmdnpcname("ãƒªãƒ¼ãƒ³#bios3");
 		sleep 3000;
-		announce "]€_ƒAƒ“ƒN‚Ì‘Ì—Í‚ª‘å‚«‚­Œ¸­‚µ‚½]", 0x9, 0xffff00;
+		announce "â€æ­»ç¥ã‚¢ãƒ³ã‚¯ã®ä½“åŠ›ãŒå¤§ããæ¸›å°‘ã—ãŸâ€", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Ácc‚Ü‚³‚©A‚±‚Ì„‚Éè‚ğ•‰‚í‚¹‚é‚Æ‚ÍccB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ã¾ã•ã‹ã€ã“ã®ç§ã«æ‰‹å‚·ã‚’è² ã‚ã›ã‚‹ã¨ã¯â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚¤‚Å‚·‚Ëcc‚ ‚È‚½•û‚É‚Í‚±‚¤‚¢‚¤‚Ì‚Í‚¢‚©‚ª‚Å‚µ‚å‚¤B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã†ã§ã™ã­â€¦â€¦ã‚ãªãŸæ–¹ã«ã¯ã“ã†ã„ã†ã®ã¯ã„ã‹ãŒã§ã—ã‚‡ã†ã€‚";
 		sleep 3000;
-		misceffect 23,getmdnpcname("ƒLƒh#bios3");
-		misceffect 23,getmdnpcname("ƒŠ[ƒ“#bios3");
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		misceffect 23,getmdnpcname("ã‚­ãƒ‰#bios3");
+		misceffect 23,getmdnpcname("ãƒªãƒ¼ãƒ³#bios3");
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒLƒh#bios3")),"ƒLƒh : ‚©A‘Ì‚ªÎ‚ÉccI@ƒŠ[ƒ“I@‘åä•v‚©!?";
+		unittalk getnpcid(0,getmdnpcname("ã‚­ãƒ‰#bios3")),"ã‚­ãƒ‰ : ã‹ã€ä½“ãŒçŸ³ã«â€¦â€¦ï¼ã€€ãƒªãƒ¼ãƒ³ï¼ã€€å¤§ä¸ˆå¤«ã‹!?";
 		sleep 1000;
-		unittalk getnpcid(0,getmdnpcname("ƒŠ[ƒ“#bios3")),"ƒŠ[ƒ“ : ‚­‚Áccº‚ªccI";
+		unittalk getnpcid(0,getmdnpcname("ãƒªãƒ¼ãƒ³#bios3")),"ãƒªãƒ¼ãƒ³ : ãã£â€¦â€¦å£°ãŒâ€¦â€¦ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNA•¨Œ¾‚í‚ÊÎ‚Æ‚È‚èAŒÈ‚Ì–³—Í‚ğ‰i‰“‚É’Q‚«‘±‚¯‚È‚³‚¢B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€ç‰©è¨€ã‚ã¬çŸ³ã¨ãªã‚Šã€å·±ã®ç„¡åŠ›ã‚’æ°¸é ã«å˜†ãç¶šã‘ãªã•ã„ã€‚";
 		sleep 4000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚³‚ÄA‚»‚±‚Ì–`Œ¯Ò‚Ì‚ ‚È‚½B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã¦ã€ãã“ã®å†’é™ºè€…ã®ã‚ãªãŸã€‚";
 	}
 	else if('@flag == 15) {
-		announce "ƒZƒ‹ƒUƒ“ : H‚ç‚¦‚¦‚¦‚¦‚¦‚¦‚¦‚¦I", 0x9, 0xffff00;
+		announce "ã‚»ãƒ«ã‚¶ãƒ³ : é£Ÿã‚‰ãˆãˆãˆãˆãˆãˆãˆãˆï¼", 0x9, 0xffff00;
 		sleep 3000;
-		misceffect 106,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-		misceffect 107,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		misceffect 106,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+		misceffect 107,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 		sleep 3000;
-		announce "]€_ƒAƒ“ƒN‚Ì‘Ì—Í‚ª‘å‚«‚­Œ¸­‚µ‚½]", 0x9, 0xffff00;
+		announce "â€æ­»ç¥ã‚¢ãƒ³ã‚¯ã®ä½“åŠ›ãŒå¤§ããæ¸›å°‘ã—ãŸâ€", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Áccˆê‘Ì‰½–‚Å‚·‚©I";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ä¸€ä½“ä½•äº‹ã§ã™ã‹ï¼";
 		sleep 3000;
-		announce "ƒwƒ“ƒWƒk : ‚«AŒø‚¢‚½I", 0x9, 0xffff00;
+		announce "ãƒ˜ãƒ³ã‚¸ãƒŒ : ãã€åŠ¹ã„ãŸï¼", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒŠƒ‡[ƒXƒ“ : ‚³‚·‚ªƒhƒ‰ƒ“ƒX‚³‚ñ‚Éì‚Á‚Ä‚à‚ç‚Á‚½AVŒ^”š–òI", 0x9, 0xffff00;
+		announce "ãƒªãƒ§ãƒ¼ã‚¹ãƒ³ : ã•ã™ãŒãƒ‰ãƒ©ãƒ³ã‚¹ã•ã‚“ã«ä½œã£ã¦ã‚‚ã‚‰ã£ãŸã€æ–°å‹çˆ†è–¬ï¼", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒqƒ…[ : ƒhƒ‰ƒ“ƒX®‘Î‘åŒ^ƒ‚ƒ“ƒXƒ^[±’e‚¾‚Á‚¯H", 0x9, 0xffff00;
+		announce "ãƒ’ãƒ¥ãƒ¼ : ãƒ‰ãƒ©ãƒ³ã‚¹å¼å¯¾å¤§å‹ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ“²å¼¾ã ã£ã‘ï¼Ÿ", 0x9, 0xffff00;
 		sleep 3000;
-		announce "ƒZƒ‹ƒUƒ“ : ‘‚­I@¡‚Ì‚¤‚¿‚É“¦‚°‚Ü‚·‚æI", 0x9, 0xffff00;
+		announce "ã‚»ãƒ«ã‚¶ãƒ³ : æ—©ãï¼ã€€ä»Šã®ã†ã¡ã«é€ƒã’ã¾ã™ã‚ˆï¼", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚â‚Á‚Ä‚­‚ê‚Ü‚µ‚½‚Ëcc‚Ü‚Ÿ‚¢‚¢‚Å‚µ‚å‚¤B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚„ã£ã¦ãã‚Œã¾ã—ãŸã­â€¦â€¦ã¾ãã„ã„ã§ã—ã‚‡ã†ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚ ‚Ì•û‚½‚¿‚ÍŒã‚Å‚¶‚Á‚­‚èˆ•ª‚·‚é‚Æ‚µ‚Ü‚·B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚ã®æ–¹ãŸã¡ã¯å¾Œã§ã˜ã£ãã‚Šå‡¦åˆ†ã™ã‚‹ã¨ã—ã¾ã™ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚³‚ÄA‚»‚±‚Ì–`Œ¯Ò‚Ì‚ ‚È‚½B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã¦ã€ãã“ã®å†’é™ºè€…ã®ã‚ãªãŸã€‚";
 	}
 	else if('@flag == 16) {
-		hideoffnpc getmdnpcname("ƒqƒVƒG#bios3");
-		hideoffnpc getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3");
+		hideoffnpc getmdnpcname("ãƒ’ã‚·ã‚¨#bios3");
+		hideoffnpc getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3");
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios3")),"ƒqƒVƒG : ‚æ‚µA‚Ç‚¤‚É‚©ŠÔ‚É‡‚Á‚½‚İ‚½‚¢‚¾‚ÈB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios3")),"ãƒ’ã‚·ã‚¨ : ã‚ˆã—ã€ã©ã†ã«ã‹é–“ã«åˆã£ãŸã¿ãŸã„ã ãªã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ‚Ü‚¾•Ğ•t‚¯‚Ä‚È‚©‚Á‚½‚Ì‚©Bcc‚Ü‚ ‚¢‚¢A„‚Ì—Í‚ğŒ©‚¹‚Ä‚â‚ë‚¤B";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ã¾ã ç‰‡ä»˜ã‘ã¦ãªã‹ã£ãŸã®ã‹ã€‚â€¦â€¦ã¾ã‚ã„ã„ã€ç§ã®åŠ›ã‚’è¦‹ã›ã¦ã‚„ã‚ã†ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios3")),"ƒqƒVƒG : ‚¤‚¨‚¨‚¨‚¨‚¨‚¨‚¨I";
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ I";
-		misceffect 12,getmdnpcname("ƒqƒVƒG#bios3");
-		misceffect 12,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3");
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios3")),"ãƒ’ã‚·ã‚¨ : ã†ãŠãŠãŠãŠãŠãŠãŠï¼";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ã¯ã‚ã‚ã‚ã‚ã‚ã‚ã‚ï¼";
+		misceffect 12,getmdnpcname("ãƒ’ã‚·ã‚¨#bios3");
+		misceffect 12,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3");
 		sleep 1500;
-		misceffect 30,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-		misceffect 89,getmdnpcname("€_ƒAƒ“ƒN#bios3");
+		misceffect 30,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+		misceffect 89,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 		sleep 3000;
-		announce "]€_ƒAƒ“ƒN‚Ì‘Ì—Í‚ª‘å‚«‚­Œ¸­‚µ‚½]", 0x9, 0xffff00;
+		announce "â€æ­»ç¥ã‚¢ãƒ³ã‚¯ã®ä½“åŠ›ãŒå¤§ããæ¸›å°‘ã—ãŸâ€", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Ácc‚Ü‚³‚©A‚±‚Ì„‚Éè‚ğ•‰‚í‚¹‚é‚Æ‚ÍccB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ã¾ã•ã‹ã€ã“ã®ç§ã«æ‰‹å‚·ã‚’è² ã‚ã›ã‚‹ã¨ã¯â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚¤‚Å‚·‚Ëcc‚ ‚È‚½•û‚É‚Í‚±‚¤‚¢‚¤‚Ì‚Í‚¢‚©‚ª‚Å‚µ‚å‚¤B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã†ã§ã™ã­â€¦â€¦ã‚ãªãŸæ–¹ã«ã¯ã“ã†ã„ã†ã®ã¯ã„ã‹ãŒã§ã—ã‚‡ã†ã€‚";
 		sleep 3000;
-		misceffect 23,getmdnpcname("ƒqƒVƒG#bios3");
-		misceffect 23,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3");
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		misceffect 23,getmdnpcname("ãƒ’ã‚·ã‚¨#bios3");
+		misceffect 23,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3");
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("ƒqƒVƒG#bios3")),"ƒqƒVƒG : ‘Ì‚ª“®‚©‚È‚¢cc!?@‚±Aº‚àccB";
+		unittalk getnpcid(0,getmdnpcname("ãƒ’ã‚·ã‚¨#bios3")),"ãƒ’ã‚·ã‚¨ : ä½“ãŒå‹•ã‹ãªã„â€¦â€¦!?ã€€ã“ã€å£°ã‚‚â€¦â€¦ã€‚";
 		sleep 1000;
-		unittalk getnpcid(0,getmdnpcname("ƒGƒCƒ”ƒ@ƒ“ƒg#bios3")),"ƒGƒCƒ”ƒ@ƒ“ƒg : ‚­‚ÁAÎ‰»‚©cc¬Œ«‚µ‚¢^—‚ğccI";
+		unittalk getnpcid(0,getmdnpcname("ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3")),"ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ : ãã£ã€çŸ³åŒ–ã‹â€¦â€¦å°è³¢ã—ã„çœŸä¼¼ã‚’â€¦â€¦ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNA•¨Œ¾‚í‚ÊÎ‚Æ‚È‚èAŒÈ‚Ì–³—Í‚ğ‰i‰“‚É’Q‚«‘±‚¯‚È‚³‚¢B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€ç‰©è¨€ã‚ã¬çŸ³ã¨ãªã‚Šã€å·±ã®ç„¡åŠ›ã‚’æ°¸é ã«å˜†ãç¶šã‘ãªã•ã„ã€‚";
 		sleep 4000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚³‚ÄA‚»‚±‚Ì–`Œ¯Ò‚Ì‚ ‚È‚½B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã¦ã€ãã“ã®å†’é™ºè€…ã®ã‚ãªãŸã€‚";
 	}
 	else if('@flag == 17) {
-		hideoffnpc getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3");
-		hideoffnpc getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3");
+		hideoffnpc getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3");
+		hideoffnpc getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3");
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3")),"ƒwƒXƒ‰ƒ“ƒ^ : ‚İ‚È‚³‚ñA‚²–³–‚Å‚µ‚½‚©!?";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã¿ãªã•ã‚“ã€ã”ç„¡äº‹ã§ã—ãŸã‹!?";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒFAQ‚è‚Ü‚·I";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã€å‚ã‚Šã¾ã™ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3")),"ƒwƒXƒ‰ƒ“ƒ^ : ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ I";
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : ‚Ê‚¨‚¨‚¨‚¨‚¨‚¨‚¨I";
-		misceffect 12,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3");
-		misceffect 12,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3");
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ã¯ã‚ã‚ã‚ã‚ã‚ã‚ã‚ï¼";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ã¬ãŠãŠãŠãŠãŠãŠãŠï¼";
+		misceffect 12,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3");
+		misceffect 12,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3");
 		sleep 1500;
-		misceffect 17,getmdnpcname("€_ƒAƒ“ƒN#bios3");
-		misceffect 79,getmdnpcname("€_ƒAƒ“ƒN#bios3");
+		misceffect 17,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+		misceffect 79,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 		sleep 3000;
-		announce "]€_ƒAƒ“ƒN‚Ì‘Ì—Í‚ª‘å‚«‚­Œ¸­‚µ‚½]", 0x9, 0xffff00;
+		announce "â€æ­»ç¥ã‚¢ãƒ³ã‚¯ã®ä½“åŠ›ãŒå¤§ããæ¸›å°‘ã—ãŸâ€", 0x9, 0xffff00;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Ácc‚Ü‚³‚©A‚±‚Ì„‚Éè‚ğ•‰‚í‚¹‚é‚Æ‚ÍccB";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ã¾ã•ã‹ã€ã“ã®ç§ã«æ‰‹å‚·ã‚’è² ã‚ã›ã‚‹ã¨ã¯â€¦â€¦ã€‚";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚¤‚Å‚·‚Ëcc‚ ‚È‚½•û‚É‚Í‚±‚¤‚¢‚¤‚Ì‚Í‚¢‚©‚ª‚Å‚µ‚å‚¤B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã†ã§ã™ã­â€¦â€¦ã‚ãªãŸæ–¹ã«ã¯ã“ã†ã„ã†ã®ã¯ã„ã‹ãŒã§ã—ã‚‡ã†ã€‚";
 		sleep 1000;
-		misceffect 23,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3");
-		misceffect 23,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3");
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		misceffect 23,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3");
+		misceffect 23,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3");
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("‘åbƒwƒXƒ‰ƒ“ƒ^#bios3")),"ƒwƒXƒ‰ƒ“ƒ^ : ‘Ì‚ªÎ‚Écc!?@º‚Ü‚ÅccI";
+		unittalk getnpcid(0,getmdnpcname("å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3")),"ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ : ä½“ãŒçŸ³ã«â€¦â€¦!?ã€€å£°ã¾ã§â€¦â€¦ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3")),"ƒAƒoƒ‰ƒ“ƒ`ƒF : •a‚ÌisccH@‚¢‚âAˆáccI";
+		unittalk getnpcid(0,getmdnpcname("å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3")),"ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ : ç—…ã®é€²è¡Œâ€¦â€¦ï¼Ÿã€€ã„ã‚„ã€é•â€¦â€¦ï¼";
 		sleep 3000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒNƒNƒNA•¨Œ¾‚í‚ÊÎ‚Æ‚È‚èAŒÈ‚Ì–³—Í‚ğ‰i‰“‚É’Q‚«‘±‚¯‚È‚³‚¢B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚¯ã‚¯ã‚¯ã€ç‰©è¨€ã‚ã¬çŸ³ã¨ãªã‚Šã€å·±ã®ç„¡åŠ›ã‚’æ°¸é ã«å˜†ãç¶šã‘ãªã•ã„ã€‚";
 		sleep 4000;
-		unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚³‚ÄA‚»‚±‚Ì–`Œ¯Ò‚Ì‚ ‚È‚½B";
+		unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã•ã¦ã€ãã“ã®å†’é™ºè€…ã®ã‚ãªãŸã€‚";
 	}
 	else
-		set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+		set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚ ‚È‚½‚Í‹v‚µ‚Ô‚è‚ÉŠy‚µ‚ß‚»‚¤‚È•û‚Å‚·‚ËB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã‚ãªãŸã¯ä¹…ã—ã¶ã‚Šã«æ¥½ã—ã‚ãã†ãªæ–¹ã§ã™ã­ã€‚";
 	sleep 3000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : “Á•Ê‚ÉA„‚ª’¼Ú‚¨‘Šè‚µ‚Ü‚µ‚å‚¤!!";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ç‰¹åˆ¥ã«ã€ç§ãŒç›´æ¥ãŠç›¸æ‰‹ã—ã¾ã—ã‚‡ã†!!";
 	sleep 1500;
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	set 'mob_id,callmonster(getmdmapname("1@dth3.gat"),70,67,"€_ƒAƒ“ƒN",3029,getmdnpcname("#bios3_mobdead")+ "::OnBossKilled");
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	set 'mob_id,callmonster(getmdmapname("1@dth3.gat"),70,67,"æ­»ç¥ã‚¢ãƒ³ã‚¯",3029,getmdnpcname("#bios3_mobdead")+ "::OnBossKilled");
 	if('@flag >= 13) {
 		set '@mobhp,getmobhp('mob_id);
 		set '@mobhp,'@mobhp - ('@mobhp * 20 / 100);
@@ -1494,298 +1494,298 @@ OnKilled3:
 OnBossKilled:
 	stopnpctimer getmdnpcname("talkshow#bios3");
 	sleep 1500;
-	hideoffnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚­‚Ácc‚È‚é‚Ù‚ÇBlŠÔ‚É‚Ícc‹­‚¢Ò‚à‚¢‚é‚Ì‚Å‚·‚ËB";
+	hideoffnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã£â€¦â€¦ãªã‚‹ã»ã©ã€‚äººé–“ã«ã¯â€¦â€¦å¼·ã„è€…ã‚‚ã„ã‚‹ã®ã§ã™ã­ã€‚";
 	sleep 2000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚µ‚©‚µcc‚±‚ê‚ÅI‚í‚è‚¾‚Æv‚í‚È‚¢•û‚ª‚¢‚¢‚Å‚·‚æB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã—ã‹ã—â€¦â€¦ã“ã‚Œã§çµ‚ã‚ã‚Šã ã¨æ€ã‚ãªã„æ–¹ãŒã„ã„ã§ã™ã‚ˆã€‚";
 	sleep 1000;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚Ì•œŠˆ‚Í–Ú‚Ì‘O‚Ü‚Å—ˆ‚Ä‚¢‚é‚Ì‚Å‚·!!@ƒNƒNƒNcc!!";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ã®å¾©æ´»ã¯ç›®ã®å‰ã¾ã§æ¥ã¦ã„ã‚‹ã®ã§ã™!!ã€€ã‚¯ã‚¯ã‚¯â€¦â€¦!!";
 	sleep 2000;
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	misceffect 135, getmdnpcname("ƒuƒŠƒh#bios3");
-	misceffect 135, getmdnpcname("ƒWƒFƒCƒX#bios3");
-	setnpcdisplay getmdnpcname("ƒuƒŠƒh#bios3"),468;
-	setnpcdisplay getmdnpcname("ƒWƒFƒCƒX#bios3"),467;
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	misceffect 135, getmdnpcname("ãƒ–ãƒªãƒ‰#bios3");
+	misceffect 135, getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3");
+	setnpcdisplay getmdnpcname("ãƒ–ãƒªãƒ‰#bios3"),468;
+	setnpcdisplay getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3"),467;
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : cc‚ ‚Á!!@‚â‚Á‚Æ‘Ì‚ªI";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : â€¦â€¦ã‚ã£!!ã€€ã‚„ã£ã¨ä½“ãŒï¼";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ‚­‚ÁccB";
+	unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : ãã£â€¦â€¦ã€‚";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ‚Ó‚£cc‚ ‚Ì€_‚Ì–‚—Í‚Í„‚ÆƒWƒFƒCƒX‚Å‚Í‘¾“‘Å‚¿‚Å‚«‚È‚¢‚Ù‚Ç‹­—Í‚¾‚Á‚½B";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ãµã…â€¦â€¦ã‚ã®æ­»ç¥ã®é­”åŠ›ã¯ç§ã¨ã‚¸ã‚§ã‚¤ã‚¹ã§ã¯å¤ªåˆ€æ‰“ã¡ã§ããªã„ã»ã©å¼·åŠ›ã ã£ãŸã€‚";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ŒN‚ª‚¢‚È‚¯‚ê‚Î‰½‚à‚Å‚«‚È‚¢‚Ü‚Ü‚â‚ç‚ê‚Ä‚¢‚½‚¾‚ë‚¤B";
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : å›ãŒã„ãªã‘ã‚Œã°ä½•ã‚‚ã§ããªã„ã¾ã¾ã‚„ã‚‰ã‚Œã¦ã„ãŸã ã‚ã†ã€‚";
 	sleep 2500;
-	unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : Š´Ó‚Ì‹C‚¿‚Æ‚µ‚Ä“n‚µ‚½‚¢•¨‚ª‚ ‚éBó‚¯æ‚é€”õ‚ªo—ˆ‚½‚ç˜b‚µ‚©‚¯‚Ä‚­‚êB";
-	set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),30;
-	set getvariableofnpc('users,getmdnpcname("ƒuƒŠƒh#bios3")),getmapusers(getmdmapname("1@dth3.gat"));
+	unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : æ„Ÿè¬ã®æ°—æŒã¡ã¨ã—ã¦æ¸¡ã—ãŸã„ç‰©ãŒã‚ã‚‹ã€‚å—ã‘å–ã‚‹æº–å‚™ãŒå‡ºæ¥ãŸã‚‰è©±ã—ã‹ã‘ã¦ãã‚Œã€‚";
+	set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),30;
+	set getvariableofnpc('users,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),getmapusers(getmdmapname("1@dth3.gat"));
 	end;
 }
 1@dth3.gat,66,72,0	script	#bios3_talkshow	139,{
 OnStart:
-	setnpcdisplay getmdnpcname("ƒWƒFƒCƒX#bios3"),10035;
-	setnpcdisplay getmdnpcname("ƒuƒŠƒh#bios3"),10036;
-	hideoffnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
-	set getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")),getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1")) + 10;
+	setnpcdisplay getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3"),10035;
+	setnpcdisplay getmdnpcname("ãƒ–ãƒªãƒ‰#bios3"),10036;
+	hideoffnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
+	set getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")),getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1")) + 10;
 	sleep 1500;
-	unittalk getnpcid(0,getmdnpcname("€_ƒAƒ“ƒN#bios3")),"€_ƒAƒ“ƒN : ‚»‚ê‚Å‚ÍA‹ğ‚©‚È–`Œ¯Ò—lB–»•{‚Ö‚Ì—·˜H‚É—J‚¢–³‚«‚æ‚¤ccBƒNƒNƒNB";
+	unittalk getnpcid(0,getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3")),"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãã‚Œã§ã¯ã€æ„šã‹ãªå†’é™ºè€…æ§˜ã€‚å†¥åºœã¸ã®æ—…è·¯ã«æ†‚ã„ç„¡ãã‚ˆã†â€¦â€¦ã€‚ã‚¯ã‚¯ã‚¯ã€‚";
 	sleep 3000;
-	hideonnpc getmdnpcname("€_ƒAƒ“ƒN#bios3");
+	hideonnpc getmdnpcname("æ­»ç¥ã‚¢ãƒ³ã‚¯#bios3");
 	donpcevent getmdnpcname("#bios3_mobdead")+ "::OnStart";
 	end;
 }
-1@dth3.gat,66,72,5	script	i—ßŠ¯ƒAƒWƒt#bios3	459,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,66,72,5	script	å¸ä»¤å®˜ã‚¢ã‚¸ãƒ•#bios3	459,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
 		cutin "ep13_captin_edq.bmp", 2;
-		mes "[ƒAƒWƒt]";
-		mes "ƒCƒOƒŠƒhI";
-		mes "ˆê‹C‚ÉŸ•‰‚ğŒˆ‚ß‚é‚¼I";
+		mes "[ã‚¢ã‚¸ãƒ•]";
+		mes "ã‚¤ã‚°ãƒªãƒ‰ï¼";
+		mes "ä¸€æ°—ã«å‹è² ã‚’æ±ºã‚ã‚‹ãï¼";
 		close2;
 		cutin "ep13_captin_edq.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒAƒWƒt‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ã‚¢ã‚¸ãƒ•ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
 	cutin "ep13_captin_edq.bmp", 2;
-	mes "[ƒAƒWƒt]";
-	mes "i—ßŠ¯‚Ìd–‚ğ‚µ‚·‚¬‚Ä";
-	mes "˜r‚ª“İ‚Á‚¿‚Ü‚Á‚½‚©ccB";
+	mes "[ã‚¢ã‚¸ãƒ•]";
+	mes "å¸ä»¤å®˜ã®ä»•äº‹ã‚’ã—ã™ãã¦";
+	mes "è…•ãŒéˆã£ã¡ã¾ã£ãŸã‹â€¦â€¦ã€‚";
 	next;
-	mes "[ƒAƒWƒt]";
-	mes "ˆ«‚¢‚ª‰´‚Í‚±‚±‚Ü‚Å‚İ‚½‚¢‚¾B";
-	mes "i—ßŠ¯‚ª’·‚¢ŠÔA‹’“_‚ğ—¯ç‚É";
-	mes "‚·‚é‚í‚¯‚É‚à‚¢‚©‚È‚¢‚µ‚ÈB";
+	mes "[ã‚¢ã‚¸ãƒ•]";
+	mes "æ‚ªã„ãŒä¿ºã¯ã“ã“ã¾ã§ã¿ãŸã„ã ã€‚";
+	mes "å¸ä»¤å®˜ãŒé•·ã„é–“ã€æ‹ ç‚¹ã‚’ç•™å®ˆã«";
+	mes "ã™ã‚‹ã‚ã‘ã«ã‚‚ã„ã‹ãªã„ã—ãªã€‚";
 	next;
-	mes "[ƒAƒWƒt]";
-	mes strcharinfo(0)+ "B";
-	mes "‚ ‚Æ‚Í”C‚¹‚½‚ºB";
-	mes "‚µ‚Á‚©‚èƒPƒŠ‚Â‚¯‚Ä‚±‚¢B";
+	mes "[ã‚¢ã‚¸ãƒ•]";
+	mes strcharinfo(0)+ "ã€‚";
+	mes "ã‚ã¨ã¯ä»»ã›ãŸãœã€‚";
+	mes "ã—ã£ã‹ã‚Šã‚±ãƒªã¤ã‘ã¦ã“ã„ã€‚";
 	close2;
 	cutin "ep13_captin_edq.bmp", 255;
 	end;
 }
-1@dth3.gat,66,72,5	script	ƒLƒh#bios3	884,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,66,72,5	script	ã‚­ãƒ‰#bios3	884,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 10) {
 		cutin "moc2_kid02.bmp", 2;
-		mes "[ƒLƒh]";
-		mes "‚±‚ñ‚È‚Æ‚±‚ë‚Å";
-		mes "—§‚¿~‚Ü‚Á‚Ä‚ç‚ê‚é‚©I";
-		mes "‰´‚ÌˆêŒ‚‚ğH‚ç‚¦I";
+		mes "[ã‚­ãƒ‰]";
+		mes "ã“ã‚“ãªã¨ã“ã‚ã§";
+		mes "ç«‹ã¡æ­¢ã¾ã£ã¦ã‚‰ã‚Œã‚‹ã‹ï¼";
+		mes "ä¿ºã®ä¸€æ’ƒã‚’é£Ÿã‚‰ãˆï¼";
 		close2;
 		cutin "moc2_kid05.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒLƒh‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ã‚­ãƒ‰ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
 	cutin "moc2_kid03.bmp", 2;
-	mes "[ƒLƒh]";
-	mes "‚·‚Ü‚È‚¢ccB";
-	mes "•‚¯‚é‚Â‚à‚è‚ª";
-	mes "‹t‚É•‚¯‚ç‚ê‚Ä‚µ‚Ü‚Á‚½‚ÈB";
+	mes "[ã‚­ãƒ‰]";
+	mes "ã™ã¾ãªã„â€¦â€¦ã€‚";
+	mes "åŠ©ã‘ã‚‹ã¤ã‚‚ã‚ŠãŒ";
+	mes "é€†ã«åŠ©ã‘ã‚‰ã‚Œã¦ã—ã¾ã£ãŸãªã€‚";
 	next;
-	mes "[ƒLƒh]";
-	mes "ƒŠ[ƒ“‚ª‰ö‰ä‚ğ‚µ‚½‚İ‚½‚¢‚Å";
-	mes "‚±‚êˆÈã‚Ì“¯s‚Í“ï‚µ‚¢‚ç‚µ‚¢cc";
-	mes "ƒIƒŒ‚¾‚¯‚Å‚àˆê‚É‚¢‚¯‚é‚Æ";
-	mes "‚¢‚¢‚ñ‚¾‚¯‚ÇccB";
+	mes "[ã‚­ãƒ‰]";
+	mes "ãƒªãƒ¼ãƒ³ãŒæ€ªæˆ‘ã‚’ã—ãŸã¿ãŸã„ã§";
+	mes "ã“ã‚Œä»¥ä¸Šã®åŒè¡Œã¯é›£ã—ã„ã‚‰ã—ã„â€¦â€¦";
+	mes "ã‚ªãƒ¬ã ã‘ã§ã‚‚ä¸€ç·’ã«ã„ã‘ã‚‹ã¨";
+	mes "ã„ã„ã‚“ã ã‘ã©â€¦â€¦ã€‚";
 	next;
 	cutin "moc2_kid05.bmp", 2;
-	mes "[ƒLƒh]";
-	mes "‚Æ‚É‚©‚­A¡‰ñ‚Í•‚©‚Á‚½B";
-	mes "–{“–‚É‚ ‚è‚ª‚Æ‚¤B";
+	mes "[ã‚­ãƒ‰]";
+	mes "ã¨ã«ã‹ãã€ä»Šå›ã¯åŠ©ã‹ã£ãŸã€‚";
+	mes "æœ¬å½“ã«ã‚ã‚ŠãŒã¨ã†ã€‚";
 	close2;
 	cutin "moc2_kid05.bmp", 255;
 	end;
 }
-1@dth3.gat,66,72,5	script	ƒqƒVƒG#bios3	623,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,66,72,5	script	ãƒ’ã‚·ã‚¨#bios3	623,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
 		cutin "hisie01.bmp", 2;
-		mes "[ƒqƒVƒG]";
-		mes "„‚ÍƒJƒ‹‚Ìˆ×‚É‚à";
-		mes "æ‚ğ‹}‚ª‚È‚«‚á‚È‚ç‚È‚¢I";
-		mes "ˆ«‚¢‚ªAˆêŒ‚‚ÅI‚í‚ç‚¹‚éI";
+		mes "[ãƒ’ã‚·ã‚¨]";
+		mes "ç§ã¯ã‚«ãƒ«ã®ç‚ºã«ã‚‚";
+		mes "å…ˆã‚’æ€¥ãŒãªãã‚ƒãªã‚‰ãªã„ï¼";
+		mes "æ‚ªã„ãŒã€ä¸€æ’ƒã§çµ‚ã‚ã‚‰ã›ã‚‹ï¼";
 		close2;
 		cutin "hisie01.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒqƒVƒG‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ãƒ’ã‚·ã‚¨ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close2;
 		cutin "hisie01.bmp", 255;
 		end;
 	}
 	cutin "hisie01.bmp", 2;
-	mes "[ƒqƒVƒG]";
-	mes "‚ ‚è‚ª‚Æ‚¤B";
-	mes "•‚©‚Á‚½‚æB";
+	mes "[ãƒ’ã‚·ã‚¨]";
+	mes "ã‚ã‚ŠãŒã¨ã†ã€‚";
+	mes "åŠ©ã‹ã£ãŸã‚ˆã€‚";
 	next;
-	mes "[ƒqƒVƒG]";
-	mes "‚³‚·‚ªA“G‚Ì–{‹’’nB";
-	mes "è‚²‚í‚¢“G‚Î‚©‚è‚¾ccB";
+	mes "[ãƒ’ã‚·ã‚¨]";
+	mes "ã•ã™ãŒã€æ•µã®æœ¬æ‹ åœ°ã€‚";
+	mes "æ‰‹ã”ã‚ã„æ•µã°ã‹ã‚Šã â€¦â€¦ã€‚";
 	next;
-	mes "[ƒqƒVƒG]";
-	mes "‚¾‚ªA‚±‚¤‚µ‚Ä‚éŠÔ‚É‚à";
-	mes "ƒJƒ‹‚ÍŠæ’£‚Á‚Ä‚¢‚é‚ñ‚¾B";
-	mes "ã‹C‚É‚È‚Á‚¿‚áƒ_ƒ‚¾‚ÈB";
+	mes "[ãƒ’ã‚·ã‚¨]";
+	mes "ã ãŒã€ã“ã†ã—ã¦ã‚‹é–“ã«ã‚‚";
+	mes "ã‚«ãƒ«ã¯é ‘å¼µã£ã¦ã„ã‚‹ã‚“ã ã€‚";
+	mes "å¼±æ°—ã«ãªã£ã¡ã‚ƒãƒ€ãƒ¡ã ãªã€‚";
 	next;
-	mes "[ƒqƒVƒG]";
-	mes "‹A‚è‚ğ‘Ò‚Â‚İ‚ñ‚È‚Ìˆ×‚É‚à";
-	mes "æ‚ğ‹}‚²‚¤B";
+	mes "[ãƒ’ã‚·ã‚¨]";
+	mes "å¸°ã‚Šã‚’å¾…ã¤ã¿ã‚“ãªã®ç‚ºã«ã‚‚";
+	mes "å…ˆã‚’æ€¥ã”ã†ã€‚";
 	close2;
 	cutin "hisie01.bmp", 255;
 	end;
 }
-1@dth3.gat,66,72,5	script	‘åbƒwƒXƒ‰ƒ“ƒ^#bios3	451,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,66,72,5	script	å¤§è‡£ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿#bios3	451,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
 		cutin "ep13_heslanta.bmp", 2;
-		mes "[ƒwƒXƒ‰ƒ“ƒ^]";
-		mes "ƒTƒtƒ@‚Ì–¯‚Ì‚½‚ßA";
-		mes "Q‚è‚Ü‚·I";
+		mes "[ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿]";
+		mes "ã‚µãƒ•ã‚¡ã®æ°‘ã®ãŸã‚ã€";
+		mes "å‚ã‚Šã¾ã™ï¼";
 		close2;
 		cutin "ep13_heslanta.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒwƒXƒ‰ƒ“ƒ^‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
 	cutin "ep13_heslanta.bmp", 2;
-	mes "[ƒwƒXƒ‰ƒ“ƒ^]";
-	mes "‚­‚ÁccB";
-	mes "‚â‚Í‚è„‚Å‚Í—Í•s‘«‚Å‚µ‚½‚©B";
+	mes "[ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿]";
+	mes "ãã£â€¦â€¦ã€‚";
+	mes "ã‚„ã¯ã‚Šç§ã§ã¯åŠ›ä¸è¶³ã§ã—ãŸã‹ã€‚";
 	next;
-	mes "[ƒwƒXƒ‰ƒ“ƒ^]";
-	mes "›ß‚Ş‚ğ“¾‚Ü‚¹‚ñB";
-	mes "„‚Í–ß‚é–‚É‚µ‚Ü‚·B";
-	mes "‚±‚êˆÈã‚ÍA‘«è‚Ü‚Æ‚¢‚É";
-	mes "‚È‚è‚©‚Ë‚Ü‚¹‚ñ‚©‚çccB";
+	mes "[ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿]";
+	mes "å·²ã‚€ã‚’å¾—ã¾ã›ã‚“ã€‚";
+	mes "ç§ã¯æˆ»ã‚‹äº‹ã«ã—ã¾ã™ã€‚";
+	mes "ã“ã‚Œä»¥ä¸Šã¯ã€è¶³æ‰‹ã¾ã¨ã„ã«";
+	mes "ãªã‚Šã‹ã­ã¾ã›ã‚“ã‹ã‚‰â€¦â€¦ã€‚";
 	next;
-	mes "[ƒwƒXƒ‰ƒ“ƒ^]";
-	mes "‚±‚ê‚©‚çæ‚ÍA‚³‚ç‚ÉŒƒ‚µ‚¢";
-	mes "í‚¢‚Æ‚È‚é‚Å‚µ‚å‚¤B";
-	mes "‚Ç‚¤‚©A‚¨‹C‚ğ‚Â‚¯‚ÄB";
+	mes "[ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿]";
+	mes "ã“ã‚Œã‹ã‚‰å…ˆã¯ã€ã•ã‚‰ã«æ¿€ã—ã„";
+	mes "æˆ¦ã„ã¨ãªã‚‹ã§ã—ã‚‡ã†ã€‚";
+	mes "ã©ã†ã‹ã€ãŠæ°—ã‚’ã¤ã‘ã¦ã€‚";
 	close2;
 	cutin "ep13_heslanta.bmp", 255;
 	end;
 }
-1@dth3.gat,70,72,3	script	‹³Š¯’·ƒCƒOƒŠƒh#bios3	751,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,70,72,3	script	æ•™å®˜é•·ã‚¤ã‚°ãƒªãƒ‰#bios3	751,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
-		mes "[ƒCƒOƒŠƒh]";
-		mes "ˆÉ’B‚É—b•º‚Í‚â‚Á‚Ä‚È‚¢‚ºI";
-		mes "‰´‚ÌˆêŒ‚AH‚ç‚¢‚ÈI";
+		mes "[ã‚¤ã‚°ãƒªãƒ‰]";
+		mes "ä¼Šé”ã«å‚­å…µã¯ã‚„ã£ã¦ãªã„ãœï¼";
+		mes "ä¿ºã®ä¸€æ’ƒã€é£Ÿã‚‰ã„ãªï¼";
 		close;
 	}
 	if('@flag < 30) {
-		mes "]ƒCƒOƒŠƒh‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ã‚¤ã‚°ãƒªãƒ‰ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
-	mes "[ƒCƒOƒŠƒh]";
-	mes "‚Ç‚¤‚â‚çŒZ‹M‚ÍB";
-	mes "‹’“_‚É–ß‚é‚ç‚µ‚¢‚ÈB";
+	mes "[ã‚¤ã‚°ãƒªãƒ‰]";
+	mes "ã©ã†ã‚„ã‚‰å…„è²´ã¯ã€‚";
+	mes "æ‹ ç‚¹ã«æˆ»ã‚‹ã‚‰ã—ã„ãªã€‚";
 	next;
-	mes "[ƒCƒOƒŠƒh]";
-	mes "‰´‚©H";
-	mes "‰´‚Í‚±‚±‚©‚çæ‚àˆê‚És‚­‚ºB";
-	mes "‚ ‚Ì€_‚à•ú‚Á‚Ä‚¨‚¯‚È‚¢‚µ‚ÈB";
+	mes "[ã‚¤ã‚°ãƒªãƒ‰]";
+	mes "ä¿ºã‹ï¼Ÿ";
+	mes "ä¿ºã¯ã“ã“ã‹ã‚‰å…ˆã‚‚ä¸€ç·’ã«è¡Œããœã€‚";
+	mes "ã‚ã®æ­»ç¥ã‚‚æ”¾ã£ã¦ãŠã‘ãªã„ã—ãªã€‚";
 	next;
-	mes "[ƒCƒOƒŠƒh]";
-	mes "ŒZ‹M‚Ì•ª‚à‚µ‚Á‚©‚èí‚¤‚©‚ç";
-	mes "—Š‚è‚É‚µ‚Ä‚­‚ê‚æ‚ÈI";
+	mes "[ã‚¤ã‚°ãƒªãƒ‰]";
+	mes "å…„è²´ã®åˆ†ã‚‚ã—ã£ã‹ã‚Šæˆ¦ã†ã‹ã‚‰";
+	mes "é ¼ã‚Šã«ã—ã¦ãã‚Œã‚ˆãªï¼";
 	close;
 }
-1@dth3.gat,70,72,3	script	ƒŠ[ƒ“#bios3	885,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,70,72,3	script	ãƒªãƒ¼ãƒ³#bios3	885,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
 		cutin "moc2_rin01.bmp", 2;
-		mes "[ƒŠ[ƒ“]";
-		mes "„‚¾‚Á‚ÄAí‚¦‚é‚Ì‚æI";
-		mes "ƒLƒhAs‚­‚æI";
+		mes "[ãƒªãƒ¼ãƒ³]";
+		mes "ç§ã ã£ã¦ã€æˆ¦ãˆã‚‹ã®ã‚ˆï¼";
+		mes "ã‚­ãƒ‰ã€è¡Œãã‚ˆï¼";
 		close2;
 		cutin "moc2_rin03.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒŠ[ƒ“‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ãƒªãƒ¼ãƒ³ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
 	cutin "moc2_rin03.bmp", 2;
-	mes "[ƒŠ[ƒ“]";
-	mes "’É‚ÁB";
-	mes "‚Ü‚³‚©A‰ö‰ä‚ğ‚·‚é‚È‚ñ‚Ä";
-	mes "ŒP—û‚ª‘«‚è‚È‚©‚Á‚½‚©‚ÈB";
+	mes "[ãƒªãƒ¼ãƒ³]";
+	mes "ç—›ã£ã€‚";
+	mes "ã¾ã•ã‹ã€æ€ªæˆ‘ã‚’ã™ã‚‹ãªã‚“ã¦";
+	mes "è¨“ç·´ãŒè¶³ã‚Šãªã‹ã£ãŸã‹ãªã€‚";
 	next;
-	mes "[ƒŠ[ƒ“]";
-	mes "„‚Íˆê’U–ß‚é–‚É‚·‚é‚íB";
-	mes "ˆê‚És‚¯‚È‚­‚Ä‚²‚ß‚ñ‚ËB";
+	mes "[ãƒªãƒ¼ãƒ³]";
+	mes "ç§ã¯ä¸€æ—¦æˆ»ã‚‹äº‹ã«ã™ã‚‹ã‚ã€‚";
+	mes "ä¸€ç·’ã«è¡Œã‘ãªãã¦ã”ã‚ã‚“ã­ã€‚";
 	close2;
 	cutin "moc2_rin03.bmp", 255;
 	end;
 }
-1@dth3.gat,70,72,3	script	ƒGƒCƒ”ƒ@ƒ“ƒg#bios3	618,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,70,72,3	script	ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ#bios3	618,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
 		cutin "avant01.bmp", 2;
-		mes "[ƒGƒCƒ”ƒ@ƒ“ƒg]";
-		mes "‹M—l‚ç‚Ìcc";
-		mes "‹M—l‚ç‚Ì‚¹‚¢‚Å„‚ÍI";
+		mes "[ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ]";
+		mes "è²´æ§˜ã‚‰ã®â€¦â€¦";
+		mes "è²´æ§˜ã‚‰ã®ã›ã„ã§ç§ã¯ï¼";
 		close2;
 		cutin "avant01.bmp", 255;
 		end;
 	}
 	if('@flag < 30) {
-		mes "]ƒGƒCƒ”ƒ@ƒ“ƒg‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close2;
 		cutin "avant01.bmp", 255;
 		end;
 	}
 	cutin "avant01.bmp", 2;
-	mes "[ƒGƒCƒ”ƒ@ƒ“ƒg]";
-	mes "r–‚Í‹êè‚Æ‚Í‚¢‚¦";
-	mes "‚±‚±‚Ü‚ÅƒRƒP‚É‚³‚ê‚é‚Æ‚Í‚Ècc";
-	mes "‚Ü‚Á‚½‚­A• —§‚½‚µ‚¢B";
+	mes "[ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ]";
+	mes "è’äº‹ã¯è‹¦æ‰‹ã¨ã¯ã„ãˆ";
+	mes "ã“ã“ã¾ã§ã‚³ã‚±ã«ã•ã‚Œã‚‹ã¨ã¯ãªâ€¦â€¦";
+	mes "ã¾ã£ãŸãã€è…¹ç«‹ãŸã—ã„ã€‚";
 	next;
-	mes "[ƒGƒCƒ”ƒ@ƒ“ƒg]";
-	mes "„‚Íˆê’U–ß‚é‚±‚Æ‚É‚µ‚æ‚¤B";
-	mes "‚±‚ê‚Å‚à‰É‚Å‚Í‚È‚¢‚Ì‚Å‚ËB";
+	mes "[ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ]";
+	mes "ç§ã¯ä¸€æ—¦æˆ»ã‚‹ã“ã¨ã«ã—ã‚ˆã†ã€‚";
+	mes "ã“ã‚Œã§ã‚‚æš‡ã§ã¯ãªã„ã®ã§ã­ã€‚";
 	next;
 	cutin "avant02.bmp", 2;
-	mes "[ƒGƒCƒ”ƒ@ƒ“ƒg]";
-	mes "ŒN‚àv‚¤‘¶•ªAí‚Á‚Ä‚­‚é‚Æ—Ç‚¢B";
-	mes "‚à‚µ“|‚ê‚Ä‚µ‚Ü‚Á‚½‚Æ‚µ‚Ä‚à";
-	mes "„‚ÌÀŒ±Ş—¿‚Æ‚µ‚Ä";
-	mes "–ğ—§‚Â‚©‚ç‚ÈAƒNƒNƒNB";
+	mes "[ã‚¨ã‚¤ãƒ´ã‚¡ãƒ³ãƒˆ]";
+	mes "å›ã‚‚æ€ã†å­˜åˆ†ã€æˆ¦ã£ã¦ãã‚‹ã¨è‰¯ã„ã€‚";
+	mes "ã‚‚ã—å€’ã‚Œã¦ã—ã¾ã£ãŸã¨ã—ã¦ã‚‚";
+	mes "ç§ã®å®Ÿé¨“ææ–™ã¨ã—ã¦";
+	mes "å½¹ç«‹ã¤ã‹ã‚‰ãªã€ã‚¯ã‚¯ã‚¯ã€‚";
 	close2;
 	cutin "avant01.bmp", 255;
 	end;
 }
-1@dth3.gat,70,72,3	script	æ”­‘à’·ƒAƒoƒ‰ƒ“ƒ`ƒF#b3	450,{
-	set '@flag,getvariableofnpc('flag,getmdnpcname("ƒuƒŠƒh#bios1"));
+1@dth3.gat,70,72,3	script	å…ˆç™ºéšŠé•·ã‚¢ãƒãƒ©ãƒ³ãƒã‚§#b3	450,{
+	set '@flag,getvariableofnpc('flag,getmdnpcname("ãƒ–ãƒªãƒ‰#bios1"));
 	if('@flag < 20) {
-		mes "[ƒAƒoƒ‰ƒ“ƒ`ƒF]";
-		mes "ƒwƒXƒ‰ƒ“ƒ^—l‚É‚Í";
-		mes "wˆê–{G‚ê‚³‚¹‚ñ‚¼I";
+		mes "[ã‚¢ãƒãƒ©ãƒ³ãƒã‚§]";
+		mes "ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿æ§˜ã«ã¯";
+		mes "æŒ‡ä¸€æœ¬è§¦ã‚Œã•ã›ã‚“ãï¼";
 		close;
 	}
 	if('@flag < 30) {
-		mes "]ƒAƒoƒ‰ƒ“ƒ`ƒF‚ÍÎ‰»‚µ‚Ä‚¢‚é]";
+		mes "â€ã‚¢ãƒãƒ©ãƒ³ãƒã‚§ã¯çŸ³åŒ–ã—ã¦ã„ã‚‹â€";
 		close;
 	}
-	mes "[ƒAƒoƒ‰ƒ“ƒ`ƒF]";
-	mes "„‚àƒwƒXƒ‰ƒ“ƒ^—l‚ÌŒì‰q‚Ìˆ×";
-	mes "ˆê“x–ß‚è‚Ü‚·B";
+	mes "[ã‚¢ãƒãƒ©ãƒ³ãƒã‚§]";
+	mes "ç§ã‚‚ãƒ˜ã‚¹ãƒ©ãƒ³ã‚¿æ§˜ã®è­·è¡›ã®ç‚º";
+	mes "ä¸€åº¦æˆ»ã‚Šã¾ã™ã€‚";
 	next;
-	mes "[ƒAƒoƒ‰ƒ“ƒ`ƒF]";
-	mes "ÅŒã‚Ü‚Å•—Í‚Å‚«‚¸";
-	mes "\‚µ–ó‚ ‚è‚Ü‚¹‚ñB";
-	mes "‚Ç‚¤‚©A‚²•‰^‚ğB";
+	mes "[ã‚¢ãƒãƒ©ãƒ³ãƒã‚§]";
+	mes "æœ€å¾Œã¾ã§åŠ©åŠ›ã§ããš";
+	mes "ç”³ã—è¨³ã‚ã‚Šã¾ã›ã‚“ã€‚";
+	mes "ã©ã†ã‹ã€ã”æ­¦é‹ã‚’ã€‚";
 	close;
 }
 
@@ -1802,14 +1802,14 @@ OnStart:
 OnTimer3000:
 	initnpctimer;
 	switch(rand(50)) {
-	case 0:	unittalk 'mob_id,"€_ƒAƒ“ƒN : €‚Ì‹°•|‚ğŠ´‚¶‚é‚Ì‚Å‚·ccB"; break;
-	case 1: unittalk 'mob_id,"€_ƒAƒ“ƒN : ƒ‚ƒƒN—l‚Ì•œŠˆ‚à‚»‚¤‰“‚­‚ ‚è‚Ü‚¹‚ñB"; break;
-	case 2: unittalk 'mob_id,"€_ƒAƒ“ƒN : ‚±‚Ì’ö“x‚Ì‚à‚Ì‚Å‚·‚©H@lŠÔ‚Ì—Í‚Æ‚¢‚¤‚Ì‚ÍccB"; break;
-	case 3: unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh : ‚â‚Î‚¢cc‘Ì‚ªccB"; break;
-	case 4: unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh :  ‚¤‚¤cc‚·‚Ü‚È‚¢cc‰½‚Ì—Í‚É‚à‚È‚ê‚È‚¢ccB"; break;
-	case 5: unittalk getnpcid(0,getmdnpcname("ƒuƒŠƒh#bios3")),"ƒuƒŠƒh :  ‰´‚½‚¿‚Ì•ª‚Ü‚ÅŠæ’£‚Á‚Ä‚­‚êI"; break;
-	case 6: unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ‚­‚Ácc„‚Ì—Í‚Í‚±‚ñ‚È‚à‚Ì‚©ccB"; break;
-	case 7: unittalk getnpcid(0,getmdnpcname("ƒWƒFƒCƒX#bios3")),"ƒWƒFƒCƒX : ccŠëŒ¯‚ÈŠ´‚¶‚ª‚·‚éB‰ö‚µ‚¢‹Z‚ğg‚¢o‚µ‚½‚ç‚»‚Ìê‚©‚ç—£‚ê‚é‚ñ‚¾I"; break;
+	case 0:	unittalk 'mob_id,"æ­»ç¥ã‚¢ãƒ³ã‚¯ : æ­»ã®ææ€–ã‚’æ„Ÿã˜ã‚‹ã®ã§ã™â€¦â€¦ã€‚"; break;
+	case 1: unittalk 'mob_id,"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ãƒ¢ãƒ­ã‚¯æ§˜ã®å¾©æ´»ã‚‚ãã†é ãã‚ã‚Šã¾ã›ã‚“ã€‚"; break;
+	case 2: unittalk 'mob_id,"æ­»ç¥ã‚¢ãƒ³ã‚¯ : ã“ã®ç¨‹åº¦ã®ã‚‚ã®ã§ã™ã‹ï¼Ÿã€€äººé–“ã®åŠ›ã¨ã„ã†ã®ã¯â€¦â€¦ã€‚"; break;
+	case 3: unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ : ã‚„ã°ã„â€¦â€¦ä½“ãŒâ€¦â€¦ã€‚"; break;
+	case 4: unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ :  ã†ã†â€¦â€¦ã™ã¾ãªã„â€¦â€¦ä½•ã®åŠ›ã«ã‚‚ãªã‚Œãªã„â€¦â€¦ã€‚"; break;
+	case 5: unittalk getnpcid(0,getmdnpcname("ãƒ–ãƒªãƒ‰#bios3")),"ãƒ–ãƒªãƒ‰ :  ä¿ºãŸã¡ã®åˆ†ã¾ã§é ‘å¼µã£ã¦ãã‚Œï¼"; break;
+	case 6: unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : ãã£â€¦â€¦ç§ã®åŠ›ã¯ã“ã‚“ãªã‚‚ã®ã‹â€¦â€¦ã€‚"; break;
+	case 7: unittalk getnpcid(0,getmdnpcname("ã‚¸ã‚§ã‚¤ã‚¹#bios3")),"ã‚¸ã‚§ã‚¤ã‚¹ : â€¦â€¦å±é™ºãªæ„Ÿã˜ãŒã™ã‚‹ã€‚æ€ªã—ã„æŠ€ã‚’ä½¿ã„å‡ºã—ãŸã‚‰ãã®å ´ã‹ã‚‰é›¢ã‚Œã‚‹ã‚“ã ï¼"; break;
 	}
 	end;
 }

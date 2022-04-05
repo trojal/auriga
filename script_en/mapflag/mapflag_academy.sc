@@ -1,7 +1,7 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- –`Œ¯ŽÒƒAƒJƒfƒ~[
+// Ragnarok Online -- å†’é™ºè€…ã‚¢ã‚«ãƒ‡ãƒŸãƒ¼
 //------------------------------------------------------------
 
 //============================================================
@@ -27,7 +27,7 @@ ac_library.gat	mapflag	noteleport	dummy
 ac_library.gat	mapflag	nobranch	dummy
 ac_library.gat	mapflag	nopenalty	dummy
 
-//ŽÀKŽº(‹Œ)
+//å®Ÿç¿’å®¤(æ—§)
 //ac_prac_a.gat	mapflag	nomemo	dummy
 //ac_prac_a.gat	mapflag	nobranch	dummy
 //ac_prac_b.gat	mapflag	nomemo	dummy
@@ -37,7 +37,7 @@ ac_library.gat	mapflag	nopenalty	dummy
 //ac_prac_d.gat	mapflag	nomemo	dummy
 //ac_prac_d.gat	mapflag	nobranch	dummy
 
-//ŽÀKŽº(V)
+//å®Ÿç¿’å®¤(æ–°)
 ac_prac_01.gat	mapflag	nomemo		dummy
 ac_prac_01.gat	mapflag	nobranch	dummy
 ac_prac_01.gat	mapflag	noteleport	dummy

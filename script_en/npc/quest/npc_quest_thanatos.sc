@@ -1,128 +1,128 @@
 //= Auriga Script ==============================================================
 // Ragnarok Online Thanatos Tower Script	by refis
 //==============================================================================
-//�Ԃ̃J�M
-tha_t03.gat,67,70,0	script	�@�B�̑��u#tt1	111,{
+//赤のカギ
+tha_t03.gat,67,70,0	script	機械の装置#tt1	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(countitem(7421) || countitem(7426)) {
-		mes "�]�������͗l�̋@�B�̑��u���A";
-		mes "�����ȉ����o���Ȃ��瓮���Ă�]";
+		mes "‐珍しい模様の機械の装置が、";
+		mes "小さな音を出しながら動いてる‐";
 		close;
 	}
-	mes "�]�����͂��@�B�̑��u�𕢂��Ă���]";
+	mes "‐強い力が機械の装置を覆っている‐";
 	next;
-	if(select("�����͂���菜��","��������")==2) {
-		mes "�]�������@���Ȃ����A";
-		mes "�l���Ă݂邱�Ƃɂ����]";
+	if(select("強い力を取り除く","立ち去る")==2) {
+		mes "‐何か方法がないか、";
+		mes "考えてみることにした‐";
 		close;
 	}
 	if(getequipweaponlv(4) < 4) {
-		mes "�]�����Ă��镐���";
-		mes "�@�B�̑��u�Ɍ������āA";
-		mes "�v��������U�艺�낵���]";
-		mes "�]�������A���؂鉹�����������ŁA";
-		mes "�@�B�̑��u�𕢂��Ă���͂�";
-		mes "��菜�����Ƃ͂ł��Ȃ������]";
+		mes "‐持っている武器を";
+		mes "機械の装置に向かって、";
+		mes "思いっきり振り下ろした‐";
+		mes "‐しかし、空を切る音がしただけで、";
+		mes "機械の装置を覆っている力を";
+		mes "取り除くことはできなかった‐";
 		next;
-		mes "�]�����Ƌ��͂ȕ��킪�K�v�Ȃ悤���]";
+		mes "‐もっと強力な武器が必要なようだ‐";
 		close;
 	}
-	mes "�]�����Ă���͂Ɍ������āA";
+	mes "‐覆っている力に向かって、";
 	mes "^nItemID^" +getequipid(4);
-	mes "���v��������U�艺�낵���]";
+	mes "を思いっきり振り下ろした‐";
 	next;
-	mes "�]����ƁA^nItemID^" +getequipid(4);
-	mes "�ƕ����Ă����͂��Ԃ���A";
-	mes "�o�V�b!!���Ƃ������Ƌ���";
-	mes "�����������]";
+	mes "‐すると、^nItemID^" +getequipid(4);
+	mes "と覆っていた力がぶつかり、";
+	mes "バシッ!!っという音と共に";
+	mes "光が消えた‐";
 	next;
-	if(select("�@�B�̑��u�𒲂ׂ�","��������")==2) {
-		mes "�]���ɒ�������K�v�͂Ȃ��������]";
+	if(select("機械の装置を調べる","立ち去る")==2) {
+		mes "‐特に調査する必要はなさそうだ‐";
 		close;
 	}
-	mes "�]�@�B�̑��u�𒲂ׂĂ���ƁA";
-	mes "�s�[�[�b!!���Ƃ������Ƌ��ɁA";
-	mes "��ʂ�����ꂽ�]";
-	mes "�]���炭�A������������";
-	mes "�G��Ă��܂����������낤�]";
+	mes "‐機械の装置を調べていると、";
+	mes "ピーーッ!!っという音と共に、";
+	mes "画面が現われた‐";
+	mes "‐恐らく、さっき何かに";
+	mes "触れてしまったせいだろう‐";
 	next;
-	if(select("��ʂ�����","��ʂ𖳎�����")==2) {
-		mes "�]��ʂ𖳎����A";
-		mes "�@�B�̑��u�𒲂ׂĂ݂�ƁA";
-		mes "�[�̕��ɂ��܂��Ă���";
-		mes "���̂悤�ȕ����������]";
-		mes "�]�c�c�P�Ȃ錮�ł͂Ȃ��������]";
+	if(select("画面を見る","画面を無視する")==2) {
+		mes "‐画面を無視し、";
+		mes "機械の装置を調べてみると、";
+		mes "端の方にしまわれていた";
+		mes "鍵のような物を見つけた‐";
+		mes "‐……単なる鍵ではなさそうだ‐";
 		getitem 7421,1;
 		close;
 	}
-	mes "�Q�[�g�̕���Z�p�����ɂ����";
-	mes "�J�����ꂽ�Z�p�𗘗p���A";
-	mes "���͐΂��ʂ̏ꏊ�ɕ��󂵂��B";
+	mes "ゲートの封印技術研究によって";
+	mes "開発された技術を利用し、";
+	mes "魔力石も別の場所に封印した。";
 	next;
-	mes "����ŃQ�[�g�Ɩ��͐΂𕕈󂵂��B";
-	mes "�����A�����͒N���ɁA���̕���";
-	mes "������Ă��܂���������Ȃ��B";
+	mes "これでゲートと魔力石を封印した。";
+	mes "だが、いつかは誰かに、この封印が";
+	mes "解かれてしまうかもしれない。";
 	next;
-	mes "���ɁA�ނ�ɂƂ��ẮA";
-	mes "����Ȃɓ�����ł�";
-	mes "�Ȃ���������Ȃ��B";
-	mes "�����ŁA�Q�[�g�𕕈󂷂钼�O�ɁA";
-	mes "�Q�[�g�Ɍq������W��ύX�����B";
+	mes "特に、彼らにとっては、";
+	mes "そんなに難しい事では";
+	mes "ないかもしれない。";
+	mes "そこで、ゲートを封印する直前に、";
+	mes "ゲートに繋がる座標を変更した。";
 	next;
-	mes "�ǂ��֌q���������́A";
-	mes "���m�ɂ͊m�F�ł��Ȃ������B";
-	mes "�������A�������痬��o���C�́A";
-	mes "���E�̂��̂Ƃ͈قȂ�A";
-	mes "���邢�����������̂ŁA";
-	mes "���ɐS�z����K�v�͂Ȃ��������B";
+	mes "どこへ繋がったかは、";
+	mes "正確には確認できなかった。";
+	mes "しかし、そこから流れ出る空気は、";
+	mes "魔界のものとは異なり、";
+	mes "明るい感じがしたので、";
+	mes "特に心配する必要はなさそうだ。";
 	next;
-	mes "�]��ʂɕ\������Ă�����e�͈ȏゾ�]";
-	mes "�]������������A";
-	mes "���̑O��̕��͂����݂���Ǝv����]";
+	mes "‐画面に表示されている内容は以上だ‐";
+	mes "‐これを見る限り、";
+	mes "この前後の文章が存在すると思われる‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ׂ�̂���߂�")==2)
+	if(select("もう少し調べてみる","調べるのをやめる")==2)
 		close;
-	mes "�]�@�B�̑��u�����X�܂Œ��ׂĂ݂�ƁA";
-	mes "�[�̕��ɂ��܂��Ă���";
-	mes "���̂悤�ȕ����������]";
-	mes "�]�c�c�P�Ȃ錮�ł͂Ȃ��������]";
+	mes "‐機械の装置を隅々まで調べてみると、";
+	mes "端の方にしまわれていた";
+	mes "鍵のような物を見つけた‐";
+	mes "‐……単なる鍵ではなさそうだ‐";
 	getitem 7421,1;
 	close;
 }
 
-//���̃J�M
-tha_t04.gat,195,195,0	script	�@�B�̑��u#tt2	111,{
+//黄のカギ
+tha_t04.gat,195,195,0	script	機械の装置#tt2	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(countitem(7422) || countitem(7427)) {
-		mes "�]�@�B�̑��u�́A���̉���������";
-		mes "��~���Ă���]";
+		mes "‐機械の装置は、何の音もせずに";
+		mes "停止している‐";
 		close;
 	}
-	mes "�]�@�B�̑��u���悭����ƁA";
-	mes "������Ƃ����傫����";
-	mes "��ʂ̉��ɐ���������]";
-	mes "�]���̐����ɐG��Ă݂�ƁA";
-	mes "�s�[�[�b!!���Ƃ������Ƌ���";
-	mes "��ʂɕ���������ꂽ�]";
+	mes "‐機械の装置をよく見ると、";
+	mes "ちょっとした大きさの";
+	mes "画面の下に数字がある‐";
+	mes "‐その数字に触れてみると、";
+	mes "ピーーッ!!っという音と共に";
+	mes "画面に文字が現われた‐";
 	next;
-	mes "[���]";
-	mes "�O���̐�������͂��Ă��������B";
-	mes "�u0�v��d�����鐔����";
-	mes "�g�p�ł��܂���B";
-	mes "�܂��A���͔͈͂�";
-	mes "�����Ȃ��悤�ɂ��Ă��������B";
+	mes "[画面]";
+	mes "三桁の数字を入力してください。";
+	mes "「0」や重複する数字は";
+	mes "使用できません。";
+	mes "また、入力範囲を";
+	mes "超えないようにしてください。";
 	next;
 	setarray '@list,1,2,3,4,5,6,7,8,9;
 	for(set '@i,0; '@i < 3; set '@i,'@i+1) {
@@ -133,19 +133,19 @@ tha_t04.gat,195,195,0	script	�@�B�̑��u#tt2	111,{
 	for(set '@cnt,0; '@cnt < 10; set '@cnt,'@cnt+1) {
 		input '@temp;
 		if('@temp < 100 || '@temp > 999) {
-			mes "[���]";
-			mes "���͔͈͒���!!";
+			mes "[画面]";
+			mes "入力範囲超過!!";
 			close;
 		}
 		setarray '@num,'@temp/100,'@temp%100/10,'@temp%100%10;
 		if('@num[0] == 0 || '@num[1] == 0 || '@num[2] == 0 || '@num[0] == '@num[1] || '@num[1] == '@num[2] || '@num[0] == '@num[2]) {
-			mes "[���]";
-			mes "���͒l�Ɂu0�v�܂��͏d����������!!";
+			mes "[画面]";
+			mes "入力値に「0」または重複数字あり!!";
 			continue;
 		}
-		mes "[���]";
-		mes "���͐����F^0000ff" +'@num[0]+ "^000000,^0000ff" +'@num[1]+ "^000000,^0000ff" +'@num[2]+ "^000000";
-		mes "�c�c�ƍ����c�c�B";
+		mes "[画面]";
+		mes "入力数字：^0000ff" +'@num[0]+ "^000000,^0000ff" +'@num[1]+ "^000000,^0000ff" +'@num[2]+ "^000000";
+		mes "……照合中……。";
 		next;
 		if('@num[0] == '@ans[0])
 			set '@match,'@match+1;
@@ -161,173 +161,173 @@ tha_t04.gat,195,195,0	script	�@�B�̑��u#tt2	111,{
 			set '@shift,'@shift+1;
 		if('@match == 3)
 			break;
-		mes "[���]";
-		mes "�s�B�[�[�b!!";
-		mes "�Ԉ���Ă��܂�!!";
+		mes "[画面]";
+		mes "ピィーーッ!!";
+		mes "間違っています!!";
 		next;
-		mes "[���]";
-		mes "�����̐�������v���Ă���̂́A^ff0000"+ '@match +"^000000�A";
-		mes "����������v���Ă���̂́A^ff0000"+ '@shift +"^000000�ł��B";
+		mes "[画面]";
+		mes "桁内の数字が一致しているのは、^ff0000"+ '@match +"^000000個、";
+		mes "数字だけ一致しているのは、^ff0000"+ '@shift +"^000000個です。";
 		next;
 		set '@match,0;
 		set '@shift,0;
 		continue;
 	}
 	if('@cnt == 10) {
-		mes "[���]";
-		mes "���F�ԍ��F^ff0000" +'@ans[0]+ "^000000,^ff0000" +'@ans[1]+ "^000000,^ff0000" +'@ans[2]+ "^000000";
-		mes "���F�ԍ���ύX���܂��B";
+		mes "[画面]";
+		mes "承認番号：^ff0000" +'@ans[0]+ "^000000,^ff0000" +'@ans[1]+ "^000000,^ff0000" +'@ans[2]+ "^000000";
+		mes "承認番号を変更します。";
 		close;
 	}
-	mes "[���]";
-	mes "���F����܂����B";
-	mes "�ڑ��������܂��B";
+	mes "[画面]";
+	mes "承認されました。";
+	mes "接続を許可します。";
 	next;
-	mes "�]���̕��͂��\������ď�������Ɓc�c";
-	mes "�܂��A�V���ȕ��͂��\�����ꂽ�]";
-	mes "�]��ʂ̉��ɂ����������������A";
-	mes "�����ɋ󓴂��ł����]";
+	mes "‐この文章が表示されて少しすると……";
+	mes "また、新たな文章が表示された‐";
+	mes "‐画面の下にあった数字が消え、";
+	mes "そこに空洞ができた‐";
 	next;
-	switch(select("��ʂ̕��͂�ǂ�","�󓴂̒����̂����Ă݂�","���ɉ������Ȃ�")) {
+	switch(select("画面の文章を読む","空洞の中をのぞいてみる","特に何もしない")) {
 	case 1:
-		mes "�܂�A�ޏ���������֗����̂ɂ́A";
-		mes "����ړI���������B���̖ړI�Ƃ́A";
-		mes "�܂��ɁA���������N�ł���B";
+		mes "つまり、彼女がこちらへ来たのには、";
+		mes "ある目的があった。その目的とは、";
+		mes "まさに、魔王モロクである。";
 		next;
-		mes "���ꂩ��A������ő�K�͂�";
-		mes "�����̐Ղ��������B";
-		mes "���̐Ղ́A����Ȉ�̌̂�";
-		mes "�l�Ԃ̑傫���̑����̌̂�";
-		mes "�킢�ɂ����̂��Ǝv����B";
+		mes "それから、こちらで大規模な";
+		mes "争いの跡を見つけた。";
+		mes "その跡は、巨大な一つの個体と";
+		mes "人間の大きさの多くの個体の";
+		mes "戦いによるものだと思われる。";
 		next;
-		mes "�����́A���������N��";
-		mes "�ޏ��̒��ԒB�Ɛ��肳�ꂽ�B";
-		mes "�퓬�̌��ʁA���炭�A���������N��";
-		mes "�[���ȑŌ����󂯁A��������P�ނ��A";
-		mes "��։������悤�������B";
+		mes "これらは、魔王モロクと";
+		mes "彼女の仲間達と推定された。";
+		mes "戦闘の結果、恐らく、魔王モロクは";
+		mes "深刻な打撃を受け、ここから撤退し、";
+		mes "南へ下ったようだった。";
 		next;
-		mes "�����āA�����N�Ƒ�����";
-		mes "�ޏ��̒��ԒB���A�����N��";
-		mes "�ǂ������Ă������Ղ��c���Ă����B";
+		mes "そして、モロクと争った";
+		mes "彼女の仲間達が、モロクを";
+		mes "追いかけていった跡が残っていた。";
 		next;
-		mes "�������A�ޏ��̐Ղ́A";
-		mes "����ɑ����Ă��Ȃ������B";
+		mes "しかし、彼女の跡は、";
+		mes "これに続いていなかった。";
 		next;
-		mes "���S�N�o�������Ȃ��A";
-		mes "���̐Ղ͎c���Ă���ɂ�������炸�A";
-		mes "�ޏ��̐Ղ��������Ă���Ƃ����_�ɁA";
-		mes "�^�₪�c�����c�c�B";
-		mes "�����A���ǁA";
-		mes "����ȏ�̂��Ƃ͔���Ȃ������B";
+		mes "数百年経た今もなお、";
+		mes "他の跡は残っているにもかかわらず、";
+		mes "彼女の跡だけ消えているという点に、";
+		mes "疑問が残った……。";
+		mes "だが、結局、";
+		mes "これ以上のことは判らなかった。";
 		next;
-		mes "�]���̌�ɂȂ��镶�͂͂Ȃ��]";
+		mes "‐この後につながる文章はない‐";
 		next;
-		if(select("��ʂ̉��̋󓴂̒����̂����Ă݂�","���ɉ������Ȃ�")==2)
+		if(select("画面の下の空洞の中をのぞいてみる","特に何もしない")==2)
 			close;
 	case 2:
 		break;
 	case 3:
 		close;
 	}
-	mes "�]�����̂����Ă݂�ƁA";
-	mes "���̖T��ɋP�����̂��������]";
-	mes "�]���̕��̂����o���Ă݂�ƁA";
-	mes "���̂悤�Ȍ`�����Ă����]";
-	mes "�]�c�c�P�Ȃ錮�ł͂Ȃ��������]";
+	mes "‐中をのぞいてみると、";
+	mes "その傍らに輝く物体があった‐";
+	mes "‐その物体を取り出してみると、";
+	mes "鍵のような形をしていた‐";
+	mes "‐……単なる鍵ではなさそうだ‐";
 	getitem 7422,1;
 	close;
 }
 
-//�̃J�M
-tha_t05.gat,101,37,0	script	�@�B�̑��u#tt3	111,{
+//青のカギ
+tha_t05.gat,101,37,0	script	機械の装置#tt3	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(countitem(7423) || countitem(7428)) {
-		mes "�]��̕��ɏ����͗l������ȊO�́A";
-		mes "���ɕς�����Ƃ���͂Ȃ��]";
+		mes "‐底の方に少し模様がある以外は、";
+		mes "特に変わったところはない‐";
 		close;
 	}
-	mes "�]�@�B�̑��u���ӂɁA";
-	mes "���ȋ�C���������]";
-	mes "�]�@�B�̑��u���悭���Ă݂����A";
-	mes "�X�C�b�`�Ȃǂ͈�،�������Ȃ��]";
+	mes "‐機械の装置周辺に、";
+	mes "妙な空気を感じた‐";
+	mes "‐機械の装置をよく見てみたが、";
+	mes "スイッチなどは一切見当たらない‐";
 	next;
-	mes "�]�������A���u�̐^�񒆂�";
-	mes "�����\������Ă��Ȃ�";
-	mes "�ΐF�̉�ʂ�����]";
+	mes "‐しかし、装置の真ん中に";
+	mes "何も表示されていない";
+	mes "緑色の画面がある‐";
 	switch(getareausers("tha_t05.gat",101,37,106,42)) {
 	case 0:
-		mes "�]����ȊO�ɂ́A";
-		mes "���ɕς�����_�͂Ȃ��]";
+		mes "‐それ以外には、";
+		mes "特に変わった点はない‐";
 		close;
 	case 1:
-		mes "�]����ȊO�ɂ́A";
-		mes "���ɕς�����_�͂Ȃ��]";
+		mes "‐それ以外には、";
+		mes "特に変わった点はない‐";
 		next;
-		mes "�]�ӂƁA������Ă݂�ƁA";
-		mes "������Ƃ����͗l���������]";
+		mes "‐ふと、底を見てみると、";
+		mes "ちょっとした模様があった‐";
 		close;
 	case 2:
 		next;
-		mes "�]���̎��ӂ��悭���Ă݂�ƁA";
-		mes "���u�̒�̕�����A";
-		mes "�����Ă���l�Ɍ�������";
-		mes "�����Ȍ����o�Ă���]";
+		mes "‐その周辺をよく見てみると、";
+		mes "装置の底の方から、";
+		mes "立っている人に向かって";
+		mes "微かな光が出ている‐";
 		close;
 	default:
 		break;
 	}
-	mes "�]�@�B�̑��u�ɋߕt���ƁA";
-	mes "���u�̒�̂����肩��";
-	mes "�����Ȍ����o�n�߂��]";
-	mes "�]����ƁA�s�[�[�b�Ƃ������Ƌ���";
-	mes "���u�̑O�ʂɂ����ʂ�";
-	mes "�������\�����ꂽ�]";
+	mes "‐機械の装置に近付くと、";
+	mes "装置の底のあたりから";
+	mes "微かな光が出始めた‐";
+	mes "‐すると、ピーーッという音と共に";
+	mes "装置の前面にある画面に";
+	mes "文字が表示された‐";
 	next;
-	mes "�]�����āA���̉���";
-	mes "�󓴂�����ꂽ�]";
+	mes "‐そして、その下に";
+	mes "空洞が現われた‐";
 	next;
-	switch(select("��ʂ�����","�󓴂𒲂ׂ�","�������Ȃ�")) {
+	switch(select("画面を見る","空洞を調べる","何もしない")) {
 	case 1:
-		mes "���̌�A������𔭂Ƃ��Ǝv�������A";
-		mes "�����Ō������Q�[�g�̑��݂�";
-		mes "�C������ł������B";
-		mes "�����N�����A���ƃQ�[�g�������A";
-		mes "��������p������A";
-		mes "�嗤�ɐr��Ȕ�Q�������炷���炾�B";
+		mes "その後、こちらを発とうと思ったが、";
+		mes "ここで見つけたゲートの存在が";
+		mes "気がかりであった。";
+		mes "もし誰かが、塔とゲートを見つけ、";
+		mes "それを悪用したら、";
+		mes "大陸に甚大な被害をもたらすからだ。";
 		next;
-		mes "�����Ŏ��́A�Q�[�g�Ɠ���";
-		mes "���󂷂邱�Ƃɂ����B";
+		mes "そこで私は、ゲートと塔を";
+		mes "封印することにした。";
 		next;
-		mes "�ނ�ɋC�Â���Ȃ��悤��";
-		mes "��Ƃ����Ȃ���΂Ȃ�Ȃ������̂ŁA";
-		mes "���̐i�s���x�͂��Ȃ�x�������B";
-		mes "���ׁ̈A�Q�[�g�̕����Ƃ�";
-		mes "���Ȃ�̔N����v�����B";
+		mes "彼らに気づかれないように";
+		mes "作業をしなければならなかったので、";
+		mes "その進行速度はかなり遅かった。";
+		mes "その為、ゲートの封印作業に";
+		mes "かなりの年月を要した。";
 		next;
-		mes "�����Ƃ��n�߂�O�ɁA";
-		mes "�܂��A�Q�[�g�̒����������B";
-		mes "���̉ߒ��ŁA�����͂�����";
-		mes "���͐΂��������������ꂽ�B";
+		mes "封印作業を始める前に、";
+		mes "まず、ゲートの調査をした。";
+		mes "その過程で、強い力を持つ";
+		mes "魔力石がいくつか発見された。";
 		next;
-		mes "�����̌��ʁA";
-		mes "�����̓Q�[�g���ێ�����";
-		mes "�͂̌��ł��邱�Ƃ��������B";
-		mes "�����ŁA���͐΂�ʂ̏ꏊ��";
-		mes "���󂷂邱�Ƃɂ����B";
+		mes "調査の結果、";
+		mes "これらはゲートを維持する";
+		mes "力の源であることが判った。";
+		mes "そこで、魔力石を別の場所に";
+		mes "封印することにした。";
 		next;
-		mes "�]���̌�ɂȂ��镶�͂͂Ȃ��]";
+		mes "‐この後につながる文章はない‐";
 		close;
 	case 2:
-		mes "�]�󓴂̓������悭���Ă݂�ƁA";
-		mes "���̓����ɋP�����̂��������]";
-		mes "�]��������o���Ă݂�ƁA";
-		mes "���̂悤�Ȍ`�����Ă����]";
+		mes "‐空洞の内部をよく見てみると、";
+		mes "その内側に輝く物体が見えた‐";
+		mes "‐それを取り出してみると、";
+		mes "鍵のような形をしていた‐";
 		getitem 7423,1;
 		close;
 	case 3:
@@ -335,68 +335,68 @@ tha_t05.gat,101,37,0	script	�@�B�̑��u#tt3	111,{
 	}
 }
 
-//�΂̃J�M
-tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
+//緑のカギ
+tha_t06.gat,43,152,0	script	機械の装置#tt4	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(countitem(7424) || countitem(7429)) {
-		mes "�]�傫�Ȏ��Ԃ���~���Ă���]";
+		mes "‐大きな歯車が停止している‐";
 		close;
 	}
-	mes "�]�傫�Ȏ��Ԃ������Ă���";
-	mes "�@�B�̑��u������]";
-	mes "�]�@�B�̈�ʂɂ́A";
-	mes "�����\������Ă��Ȃ�";
-	mes "��ʂ�����]";
+	mes "‐大きな歯車が動いている";
+	mes "機械の装置がある‐";
+	mes "‐機械の一面には、";
+	mes "何も表示されていない";
+	mes "画面がある‐";
 	next;
-	if(select("�����������ׂ�","�C�ɂ��Ȃ����Ƃɂ���")==2) {
-		mes "�]�����̑��u�̂悤�����A";
-		mes "�C�ɂ���悤�Ȃ��Ƃ͂Ȃ��������]";
+	if(select("もう少し調べる","気にしないことにする")==2) {
+		mes "‐何かの装置のようだが、";
+		mes "気にするようなことはなさそうだ‐";
 		close;
 	}
 	if(countitem(7421) <= 0 && countitem(7422) <= 0 && countitem(7423) <= 0) {
-		mes "�]���Ԃ������Ȍ��𔭂��Ă��邪�A";
-		mes "�P�ɓ����Ă��邾���ŁA";
-		mes "����ȊO�͉��̕ϓN���Ȃ��]";
+		mes "‐歯車が微かな光を発しているが、";
+		mes "単に動いているだけで、";
+		mes "それ以外は何の変哲もない‐";
 		close;
 	}
-	mes "�]���Ԃ𒲂ׂĂ݂�Ɓc�c";
-	mes "�����Ă����J�M�Ǝ��Ԃ��A";
-	mes "�����Ȍ��ƂƂ���";
-	mes "�����o���n�߂��]";
-	mes "�]���΂炭����ƁA�����~�񂾁]";
+	mes "‐歯車を調べてみると……";
+	mes "持っていたカギと歯車が、";
+	mes "微かな光とともに";
+	mes "音を出し始めた‐";
+	mes "‐しばらくすると、音が止んだ‐";
 	next;
-	switch(select("�@�B�̖{�̂𒲂ׂ�","���Ԃ𒲂ׂ�","�C�ɂ��Ȃ����Ƃɂ���")) {
+	switch(select("機械の本体を調べる","歯車を調べる","気にしないことにする")) {
 	case 1:
-		mes "�]�@�B�̖{�̂ɂ́A�����������Ȃ��]";
-		mes "�]��ʂɂ��A�����������Ȃ��]";
+		mes "‐機械の本体には、何も反応がない‐";
+		mes "‐画面にも、何も反応がない‐";
 		close;
 	case 2:
-		mes "�]���Ԃ𒲂ׂ邽�߁A";
-		mes "���ԂɐG��Ă݂��Ƃ���A";
-		mes "���Ԃ������������邱�Ƃ��������]";
+		mes "‐歯車を調べるため、";
+		mes "歯車に触れてみたところ、";
+		mes "歯車を少し動かせることが判った‐";
 		next;
-		mes "�]���Ԃ������������ׂĂ݂��]";
+		mes "‐歯車をもう少し調べてみた‐";
 		next;
-		mes "�]���̌��ʁA";
-		mes "����������2�Ƒ傫������3��";
-		mes "�v5�̎��Ԃ𓮂����邱�Ƃ��������]";
+		mes "‐その結果、";
+		mes "小さい歯車2個と大きい歯車3個の";
+		mes "計5個の歯車を動かせることが判った‐";
 		next;
-		mes "�]���������Ԃ́A�㉺�֓��������Ƃ�";
-		mes "�������Ƃ��ł���悤���]";
-		mes "�]�傫�����Ԃ́A�㉺�Ɛ�����";
-		mes "���������Ƃ��ł���悤���]";
+		mes "‐小さい歯車は、上下へ動かすことや";
+		mes "押すことができるようだ‐";
+		mes "‐大きい歯車は、上下と垂直に";
+		mes "動かすことができるようだ‐";
 		next;
 		while(1) {
-			mes "�]���Ԃ𓮂����Ă݂悤�]";
-			switch(select("��ԏ���������","��Ԗڂɏ���������","��ԑ傫������","��Ԗڂɑ傫������","�O�Ԗڂɑ傫������","���݂̏�Ԃ�����","�S�Č��ʂ�ɂ���")) {
+			mes "‐歯車を動かしてみよう‐";
+			switch(select("一番小さい歯車","二番目に小さい歯車","一番大きい歯車","二番目に大きい歯車","三番目に大きい歯車","現在の状態を見る","全て元通りにする")) {
 			case 1:
-				switch(select("��֏グ��","���։�����","����")) {
+				switch(select("上へ上げる","下へ下げる","押す")) {
 				case 1:
 					set '@wheels[0],2;
 					if('@wheels[0] == 2 && '@wheels[1] == 2 && '@wheels[2] == 2 && '@wheels[3] == 2 && '@wheels[4] == 2)
@@ -415,7 +415,7 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 				}
 				break;
 			case 2:
-				switch(select("��֏グ��","���։�����","����")) {
+				switch(select("上へ上げる","下へ下げる","押す")) {
 				case 1:
 					set '@wheels[1],3;
 					if('@wheels[0] == 3 && '@wheels[1] == 3 && '@wheels[2] == 3 && '@wheels[3] == 3 && '@wheels[4] == 3)
@@ -434,7 +434,7 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 				}
 				break;
 			case 3:
-				switch(select("��֏グ��","���։�����","�����ɓ�����")) {
+				switch(select("上へ上げる","下へ下げる","垂直に動かす")) {
 				case 1:
 					set '@wheels[2],1;
 					if('@wheels[0] == 1 && '@wheels[1] == 1 && '@wheels[2] == 1 && '@wheels[3] == 1 && '@wheels[4] == 1)
@@ -453,7 +453,7 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 				}
 				break;
 			case 4:
-				switch(select("��֏グ��","���։�����","�����ɓ�����")) {
+				switch(select("上へ上げる","下へ下げる","垂直に動かす")) {
 				case 1:
 					set '@wheels[3],2;
 					if('@wheels[0] == 2 && '@wheels[1] == 2 && '@wheels[2] == 2 && '@wheels[3] == 2 && '@wheels[4] == 2)
@@ -472,7 +472,7 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 				}
 				break;
 			case 5:
-				switch(select("��֏グ��","���։�����","�����ɓ�����")) {
+				switch(select("上へ上げる","下へ下げる","垂直に動かす")) {
 				case 1:
 					set '@wheels[4],2;
 					if('@wheels[0] == 2 && '@wheels[1] == 2 && '@wheels[2] == 2 && '@wheels[3] == 2 && '@wheels[4] == 2)
@@ -491,30 +491,30 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 				}
 				break;
 			case 6:
-				if('@wheels[0] == 0)      mes "��ԏ��������ԁF���̂܂�";
-				else if('@wheels[0] == 1) mes "��ԏ��������ԁF����";
-				else if('@wheels[0] == 2) mes "��ԏ��������ԁF���";
-				else if('@wheels[0] == 3) mes "��ԏ��������ԁF����";
+				if('@wheels[0] == 0)      mes "一番小さい歯車：そのまま";
+				else if('@wheels[0] == 1) mes "一番小さい歯車：下へ";
+				else if('@wheels[0] == 2) mes "一番小さい歯車：上へ";
+				else if('@wheels[0] == 3) mes "一番小さい歯車：押す";
 
-				if('@wheels[1] == 0)      mes "��Ԗڂɏ��������ԁF���̂܂�";
-				else if('@wheels[1] == 1) mes "��Ԗڂɏ��������ԁF����";
-				else if('@wheels[1] == 2) mes "��Ԗڂɏ��������ԁF����";
-				else if('@wheels[1] == 3) mes "��Ԗڂɏ��������ԁF���";
+				if('@wheels[1] == 0)      mes "二番目に小さい歯車：そのまま";
+				else if('@wheels[1] == 1) mes "二番目に小さい歯車：押す";
+				else if('@wheels[1] == 2) mes "二番目に小さい歯車：下へ";
+				else if('@wheels[1] == 3) mes "二番目に小さい歯車：上へ";
 
-				if('@wheels[2] == 0)      mes "��ԑ傫�����ԁF���̂܂�";
-				else if('@wheels[2] == 1) mes "��ԑ傫�����ԁF���";
-				else if('@wheels[2] == 2) mes "��ԑ傫�����ԁF������";
-				else if('@wheels[2] == 3) mes "��ԑ傫�����ԁF����";
+				if('@wheels[2] == 0)      mes "一番大きい歯車：そのまま";
+				else if('@wheels[2] == 1) mes "一番大きい歯車：上へ";
+				else if('@wheels[2] == 2) mes "一番大きい歯車：垂直に";
+				else if('@wheels[2] == 3) mes "一番大きい歯車：下へ";
 
-				if('@wheels[3] == 0)      mes "��Ԗڂɑ傫�����ԁF���̂܂�";
-				else if('@wheels[3] == 1) mes "��Ԗڂɑ傫�����ԁF������";
-				else if('@wheels[3] == 2) mes "��Ԗڂɑ傫�����ԁF���";
-				else if('@wheels[3] == 3) mes "��Ԗڂɑ傫�����ԁF����";
+				if('@wheels[3] == 0)      mes "二番目に大きい歯車：そのまま";
+				else if('@wheels[3] == 1) mes "二番目に大きい歯車：垂直に";
+				else if('@wheels[3] == 2) mes "二番目に大きい歯車：上へ";
+				else if('@wheels[3] == 3) mes "二番目に大きい歯車：下へ";
 
-				if('@wheels[4] == 0)      mes "�O�Ԗڂɑ傫�����ԁF���̂܂�";
-				else if('@wheels[4] == 1) mes "�O�Ԗڂɑ傫�����ԁF����";
-				else if('@wheels[4] == 2) mes "�O�Ԗڂɑ傫�����ԁF���";
-				else if('@wheels[4] == 3) mes "�O�Ԗڂɑ傫�����ԁF������";
+				if('@wheels[4] == 0)      mes "三番目に大きい歯車：そのまま";
+				else if('@wheels[4] == 1) mes "三番目に大きい歯車：下へ";
+				else if('@wheels[4] == 2) mes "三番目に大きい歯車：上へ";
+				else if('@wheels[4] == 3) mes "三番目に大きい歯車：垂直に";
 				continue;
 			case 7:
 				cleararray '@wheels,0,5;
@@ -524,480 +524,480 @@ tha_t06.gat,43,152,0	script	�@�B�̑��u#tt4	111,{
 		};
 		break;
 	case 3:
-		mes "�]�c�c�c�c�]";
-		mes "�]�C�ɂ��Ȃ������悳�������]";
+		mes "‐…………‐";
+		mes "‐気にしない方がよさそうだ‐";
 		close;
 	}
-	mes "�]�����Ă������Ԃ��A�M�B�B�`�b!!";
-	mes "�Ƃ������Ƌ��Ɏ~�܂����]";
-	mes "�]�����āA�@�B�̖{�̂ɂ���";
-	mes "��ʂɕ����������A";
-	mes "���̉��ɋ󓴂�����ꂽ�]";
+	mes "‐動いていた歯車が、ギィィ～ッ!!";
+	mes "という音と共に止まった‐";
+	mes "‐そして、機械の本体にある";
+	mes "画面に文字が現われ、";
+	mes "その下に空洞が現われた‐";
 	next;
-	switch(select("��ʂ��悭����","���̋󓴂��悭����","���ɋC�ɂ��Ȃ�")) {
+	switch(select("画面をよく見る","下の空洞をよく見る","特に気にしない")) {
 	case 1:
-		mes "���̓������Ă����݂́A";
-		mes "�l�Ԃ�_�X�ł͂Ȃ��c�c";
-		mes "�����ł������B";
+		mes "この塔を建てた存在は、";
+		mes "人間や神々ではなく……";
+		mes "魔族であった。";
 		next;
-		mes "���̓_�ɋ�������������́A";
-		mes "�������ǂ̂悤�ȖړI�ŁA";
-		mes "���̓������Ă��̂���";
-		mes "���炩�ɂ��邽�߁A�������n�߂��B";
+		mes "この点に興味を抱いた私は、";
+		mes "魔族がどのような目的で、";
+		mes "この塔を建てたのかを";
+		mes "明らかにするため、研究を始めた。";
 		next;
-		mes "�������Č����𑱂��钆�A";
-		mes "��̋����[�������𔭌������B";
+		mes "そうして研究を続ける中、";
+		mes "二つの興味深い事実を発見した。";
 		next;
-		mes "��́A���̓�����N�O�̐푈���A";
-		mes "�������Ăяo���Q�[�g�̖�����";
-		mes "���Ă����Ƃ������ƁB";
+		mes "一つは、この塔が千年前の戦争時、";
+		mes "魔族を呼び出すゲートの役割を";
+		mes "していたということ。";
 		next;
-		mes "��߂́A���B���悭�m��";
-		mes "���������N���A���̃Q�[�g��ʂ�A";
-		mes "���E���炱�̃~�b�h�K���h�嗤��";
-		mes "����ė����Ƃ������ƁB";
+		mes "二つめは、私達がよく知る";
+		mes "魔王モロクが、このゲートを通り、";
+		mes "魔界からこのミッドガルド大陸へ";
+		mes "やって来たということ。";
 		next;
-		mes "�����āA���������N�ɂ�";
-		mes "����������悤�ɂȂ����B";
-		mes "���̗��R�́A���������N��";
-		mes "�o�����������Ɣޏ����������";
-		mes "����ė��������́A";
-		mes "�قڈ�v���Ă������炾�B";
+		mes "そして、魔王モロクにも";
+		mes "興味を抱くようになった。";
+		mes "その理由は、魔王モロクが";
+		mes "出現した時期と彼女がこちらへ";
+		mes "やって来た時期は、";
+		mes "ほぼ一致していたからだ。";
 		next;
-		mes "�]���̌�ɂȂ��镶�͂͂Ȃ��]";
+		mes "‐この後につながる文章はない‐";
 		close;
 	case 2:
-		mes "�]�󓴂̓������悭���Ă݂�ƁA";
-		mes "���̓����ɋP�����̂��������]";
-		mes "�]��������o���Ă݂�ƁA";
-		mes "���̂悤�Ȍ`�����Ă����]";
+		mes "‐空洞の内部をよく見てみると、";
+		mes "その内側に輝く物体が見えた‐";
+		mes "‐それを取り出してみると、";
+		mes "鍵のような形をしていた‐";
 		getitem 7424,1;
 		close;
 	case 3:
-		mes "�]���ɋC�ɂ���K�v�͂Ȃ��������]";
+		mes "‐特に気にする必要はなさそうだ‐";
 		close;
 	}
 }
 
-//���̃J�M
-tha_t09.gat,19,158,0	script	�@�B�̑��u#tt5	111,{
+//黒のカギ
+tha_t09.gat,19,158,0	script	機械の装置#tt5	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(countitem(7425) || countitem(7430)) {
-		mes "�]�ғ����Ă��Ȃ��@�B������]";
+		mes "‐稼動していない機械がある‐";
 		close;
 	}
-	mes "�]�����ȉ��ƌ��𔭂���@�B������]";
-	mes "�]�@�B�̑O�ʂɂ͂�����Ƃ���";
-	mes "�傫���̉�ʂ�����A";
-	mes "���̉��ɂ́A������u�����Ƃ�";
-	mes "�ł������ȋ�Ԃ�����]";
+	mes "‐微かな音と光を発する機械がある‐";
+	mes "‐機械の前面にはちょっとした";
+	mes "大きさの画面があり、";
+	mes "その下には、何かを置くことが";
+	mes "できそうな空間がある‐";
 	next;
-	mes "�]�������A���ꂼ��̏ꏊ�̐F�́A";
-	mes "�قȂ��Ă���]";
+	mes "‐しかも、それぞれの場所の色は、";
+	mes "異なっている‐";
 	if(!((countitem(7421)) || (countitem(7426))) && ((countitem(7422)) || (countitem(7427))) && ((countitem(7423)) || (countitem(7428))) && ((countitem(7424)) || (countitem(7429)))) close;
 	next;
 	input '@word$;
-	if('@word$ != "�Ԃ̃J�M" && '@word$ != "���̃J�M" && '@word$ != "�̃J�M" && '@word$ != "�΂̃J�M") {
-		mes "�]"+'@word$+"��";
-		mes "�g���Ă݂����A���������͂Ȃ������]";
+	if('@word$ != "赤のカギ" && '@word$ != "黄のカギ" && '@word$ != "青のカギ" && '@word$ != "緑のカギ") {
+		mes "‐"+'@word$+"を";
+		mes "使ってみたが、何も反応はなかった‐";
 		close;
 	}
-	mes "�]�e�F�ɊY������J�M�Ɩ��͐΂�";
-	mes "�u���ƁA���ꂼ��̏ꏊ��";
-	mes "���𔭂��n�߂��]";
-	mes "�]��ʂɕ������\������A";
-	mes "���̉��ɋ󓴂�����ꂽ�]";
+	mes "‐各色に該当するカギと魔力石を";
+	mes "置くと、それぞれの場所で";
+	mes "光を発し始めた‐";
+	mes "‐画面に文字が表示され、";
+	mes "その下に空洞が現われた‐";
 	next;
-	switch(select("���͂�ǂ�","���̋󓴂𒲂ׂ�","�C�ɂ��Ȃ�")) {
+	switch(select("文章を読む","下の空洞を調べる","気にしない")) {
 	case 1:
-		mes "�ޏ��̐Ղ͖k�̕��ɑ����Ă����̂ŁA";
-		mes "���̐Ղ�ǂ��Ėk�̕��֌��������B";
-		mes "�����A����ɂ��̐Ղ�ǂ����Ƃ�";
-		mes "����ɂȂ��Ă����B";
+		mes "彼女の跡は北の方に続いていたので、";
+		mes "その跡を追って北の方へ向かった。";
+		mes "だが、次第にその跡を追うことが";
+		mes "困難になってきた。";
 		next;
-		mes "����Ȓ��A������������ŁA";
-		mes "�l���񂹕t���Ȃ����̘b�𕷂����B";
+		mes "そんな中、立ち寄った村で、";
+		mes "人を寄せ付けない塔の話を聞いた。";
 		next;
-		mes "���̓��̘b�𕷂����u�ԁA";
-		mes "�ޏ��̐Ղ͂��̓��Ɍ������Ă������Ƃ�";
-		mes "�����I�Ɍ�����B";
+		mes "その塔の話を聞いた瞬間、";
+		mes "彼女の跡はこの塔に向かっていたことを";
+		mes "直感的に悟った。";
 		next;
-		mes "���ɓ����������́A���̓���";
-		mes "����Ȏp�ɑ傫�ȏՌ����󂯂��B";
-		mes "�l�Ԃ��n���������z�l�����A";
-		mes "���̂悤�Ȍ`�Ԃ̌�����";
-		mes "���݂��Ȃ��������炾�B";
+		mes "塔に到着した私は、その塔の";
+		mes "奇怪な姿に大きな衝撃を受けた。";
+		mes "人間が創造した建築様式中、";
+		mes "このような形態の建物は";
+		mes "存在しなかったからだ。";
 		next;
-		mes "����ɁA����̋Z�p�������Ă��Ă��A";
-		mes "���̂悤�ȓ������݂��邱�Ƃ�";
-		mes "����̋Ƃł��邩�炾�B";
-		mes "�����āA�����𒲍����邤����";
-		mes "�����[�������𔭌������B";
+		mes "それに、現代の技術をもってしても、";
+		mes "このような塔を建設することは";
+		mes "至難の業であるからだ。";
+		mes "そして、ここを調査するうちに";
+		mes "興味深い事実を発見した。";
 		next;
-		mes "�]���̌�ɂȂ��镶�͂͂Ȃ��]";
+		mes "‐この後につながる文章はない‐";
 		close;
 	case 2:
-		mes "�]���̋󓴂𒲂ׂ�ƁA";
-		mes "���̂悤�ȕ����������]";
-		mes "�]������������ƁA";
-		mes "�@�B���甭���Ă��������������]";
-		mes "�]�u�������͐΂ƃJ�M��S�ĉ�������]";
+		mes "‐下の空洞を調べると、";
+		mes "鍵のような物を見つけた‐";
+		mes "‐それを回収すると、";
+		mes "機械から発していた光が消えた‐";
+		mes "‐置いた魔力石とカギを全て回収した‐";
 		getitem 7425,1;
 		close;
 	case 3:
-		mes "�]�u�������͐΂ƃJ�M��S�ĉ�������]";
+		mes "‐置いた魔力石とカギを全て回収した‐";
 		close;
 	}
 }
 
-//�Ԗ��͐�
-tha_t05.gat,218,116,0	script	����#tt2	111,{
+//赤魔力石
+tha_t05.gat,218,116,0	script	封印#tt2	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(!countitem(7421)) {
-		mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-		mes "�o�V���b!!�Ƃ������Ƌ��ɁA";
-		mes "�肪�e����A�������ɂ��񂾁]";
+		mes "‐手を封印に近付けようとしたら、";
+		mes "バシンッ!!という音と共に、";
+		mes "手が弾かれ、脂汗がにじんだ‐";
 		percentheal -10,0;
 		close;
 	}
-	mes "�]�_��I�ȗ͂ɕ����Ă���]";
-	mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-	mes "�o�V���b!!�Ƃ������Ƌ��ɒe���ꂽ�]";
+	mes "‐神秘的な力に覆われている‐";
+	mes "‐手を封印に近付けようとしたら、";
+	mes "バシンッ!!という音と共に弾かれた‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ɂ��邱�Ƃ͂Ȃ�������")==2) {
-		mes "�]���̏ꂩ�痣�ꂽ�]";
+	if(select("もう少し調べてみる","特にすることはなさそうだ")==2) {
+		mes "‐その場から離れた‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ != "�Ԃ̃J�M") {
-		mes "�]���ǁA����������Ȃ������]";
+	if('@word$ != "赤のカギ") {
+		mes "‐結局、何も分からなかった‐";
 		close;
 	}
-	mes "�]�����Ă����Ԃ̃J�M��˂������ƁA";
-	mes "�W�B�B�[�b!!�Ƃ������Ƌ���";
-	mes "�����Ă����͂��������]";
+	mes "‐持っていた赤のカギを突きさすと、";
+	mes "ジィィーッ!!という音と共に";
+	mes "覆っていた力が消えた‐";
 	next;
-	mes "�]�@�B���悭����ƁA";
-	mes "�����������߂����ȏ����Ȍ�������]";
-	mes "�]�����������ނƁA";
-	mes "���󂪐_��I�Ȍ��𔭂��n�߂��]";
+	mes "‐機械をよく見ると、";
+	mes "鍵を差し込めそうな小さな穴がある‐";
+	mes "‐鍵を差し込むと、";
+	mes "封印が神秘的な光を発し始めた‐";
 	next;
-	mes "�]�����āA���̌��͏��X�ɏ��������A";
-	mes "����ɁA�_��I�Ȍ������";
-	mes "���̂��u����Ă����]";
+	mes "‐そして、その光は徐々に消えたが、";
+	mes "代わりに、神秘的な光を放つ";
+	mes "物体が置かれていた‐";
 	next;
-	mes "�]�����ɂ��������͐΂����񂾏u�ԁA";
-	mes "���̒��ɒN���̋L���������Ă����]";
+	mes "‐そこにあった魔力石をつかんだ瞬間、";
+	mes "頭の中に誰かの記憶が入ってきた‐";
 	next;
-	mes "�c�c�����ŁA";
-	mes "�A�T�V���N���X�B�𑗂肱�݁A";
-	mes "������ނ�����肾�B";
+	mes "……そこで、";
+	mes "アサシンクロス達を送りこみ、";
+	mes "魔王を退けるつもりだ。";
 	next;
-	mes "���Z�́H";
-	mes "�@";
-	mes "�c�c1���c�c�B";
-	mes "�@";
-	mes "�c�c�S���Ȃ��킯�ł͂Ȃ����B";
-	mes "�@";
-	mes "�܂��A���肪����������ˁB";
+	mes "勝算は？";
+	mes "　";
+	mes "……1割……。";
+	mes "　";
+	mes "……全くないわけではないか。";
+	mes "　";
+	mes "まあ、相手が魔王だからね。";
 	next;
-	mes "�]�c�c�c�c�]";
-	mes "�]��u�A�f���������āA�������]";
+	mes "‐…………‐";
+	mes "‐一瞬、映像が現われて、消えた‐";
 	delitem 7421,1;
 	getitem 7426,1;
 	close;
 }
 
-//�����͐�
-tha_t07.gat,113,129,0	script	����#tt4	111,{
+//黄魔力石
+tha_t07.gat,113,129,0	script	封印#tt4	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(!countitem(7422)) {
-		mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-		mes "�o�V���b!!�Ƃ������Ƌ��ɁA";
-		mes "�肪�e����A�������ɂ��񂾁]";
+		mes "‐手を封印に近付けようとしたら、";
+		mes "バシンッ!!という音と共に、";
+		mes "手が弾かれ、脂汗がにじんだ‐";
 		percentheal -10,0;
 		close;
 	}
-	mes "�]�_��I�ȗ͂ɕ����Ă���]";
-	mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-	mes "�o�V���b!!�Ƃ������Ƌ��ɒe���ꂽ�]";
+	mes "‐神秘的な力に覆われている‐";
+	mes "‐手を封印に近付けようとしたら、";
+	mes "バシンッ!!という音と共に弾かれた‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ɂ��邱�Ƃ͂Ȃ�������")==2) {
-		mes "�]���̏ꂩ�痣�ꂽ�]";
+	if(select("もう少し調べてみる","特にすることはなさそうだ")==2) {
+		mes "‐その場から離れた‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ != "���̃J�M") {
-		mes "�]���ǁA����������Ȃ������]";
+	if('@word$ != "黄のカギ") {
+		mes "‐結局、何も分からなかった‐";
 		close;
 	}
-	mes "�]�����Ă������̃J�M��˂������ƁA";
-	mes "�W�B�B�[�b!!�Ƃ������Ƌ���";
-	mes "�����Ă����͂��������]";
+	mes "‐持っていた黄のカギを突きさすと、";
+	mes "ジィィーッ!!という音と共に";
+	mes "覆っていた力が消えた‐";
 	next;
-	mes "�]�@�B���悭����ƁA";
-	mes "�����������߂����ȏ����Ȍ�������]";
-	mes "�]�����������ނƁA";
-	mes "���󂪐_��I�Ȍ��𔭂��n�߂��]";
+	mes "‐機械をよく見ると、";
+	mes "鍵を差し込めそうな小さな穴がある‐";
+	mes "‐鍵を差し込むと、";
+	mes "封印が神秘的な光を発し始めた‐";
 	next;
-	mes "�]�����āA���̌��͏��X�ɏ��������A";
-	mes "����ɁA�_��I�Ȍ������";
-	mes "���̂��u����Ă����]";
+	mes "‐そして、その光は徐々に消えたが、";
+	mes "代わりに、神秘的な光を放つ";
+	mes "物体が置かれていた‐";
 	next;
-	mes "�]�����ɂ��������͐΂����񂾏u�ԁA";
-	mes "���̒��ɒN���̋L���������Ă����]";
+	mes "‐そこにあった魔力石をつかんだ瞬間、";
+	mes "頭の中に誰かの記憶が入ってきた‐";
 	next;
-	mes "���V���ł��B";
-	mes "�����������̔C���ł����̂ŁA";
-	mes "�x��܂����B";
-	mes "�^�i�g�X���c�c�c�c";
-	mes "�c�c�c�c";
+	mes "ルシルです。";
+	mes "少し遠い所の任務でしたので、";
+	mes "遅れました。";
+	mes "タナトスだ…………";
+	mes "…………";
 	next;
-	mes "�i�ޏ������Ă���ƁA";
-	mes "�����ςȊ���������B";
-	mes "�܂�Łc�c���̈ꕔ�̂悤�ȁc�c�j";
+	mes "（彼女を見ていると、";
+	mes "何か変な感じがする。";
+	mes "まるで……私の一部のような……）";
 	next;
-	mes "�]�c�c�c�c�]";
-	mes "�]��u�A�f���������āA�������]";
+	mes "‐…………‐";
+	mes "‐一瞬、映像が現われて、消えた‐";
 	delitem 7422,1;
 	getitem 7427,1;
 	close;
 }
 
-//���͐�
-tha_t04.gat,150,44,0	script	����#tt1	111,{
+//青魔力石
+tha_t04.gat,150,44,0	script	封印#tt1	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(!countitem(7423)) {
-		mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-		mes "�o�V���b!!�Ƃ������Ƌ��ɁA";
-		mes "�肪�e����A�������ɂ��񂾁]";
+		mes "‐手を封印に近付けようとしたら、";
+		mes "バシンッ!!という音と共に、";
+		mes "手が弾かれ、脂汗がにじんだ‐";
 		percentheal -10,0;
 		close;
 	}
-	mes "�]�_��I�ȗ͂ɕ����Ă���]";
-	mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-	mes "�o�V���b!!�Ƃ������Ƌ��ɒe���ꂽ�]";
+	mes "‐神秘的な力に覆われている‐";
+	mes "‐手を封印に近付けようとしたら、";
+	mes "バシンッ!!という音と共に弾かれた‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ɂ��邱�Ƃ͂Ȃ�������")==2) {
-		mes "�]���̏ꂩ�痣�ꂽ�]";
+	if(select("もう少し調べてみる","特にすることはなさそうだ")==2) {
+		mes "‐その場から離れた‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ != "�̃J�M") {
-		mes "�]���ǁA����������Ȃ������]";
+	if('@word$ != "青のカギ") {
+		mes "‐結局、何も分からなかった‐";
 		close;
 	}
-	mes "�]�����Ă����̃J�M��˂������ƁA";
-	mes "�W�B�B�[�b!!�Ƃ������Ƌ���";
-	mes "�����Ă����͂��������]";
+	mes "‐持っていた青のカギを突きさすと、";
+	mes "ジィィーッ!!という音と共に";
+	mes "覆っていた力が消えた‐";
 	next;
-	mes "�]�@�B���悭����ƁA";
-	mes "�����������߂����ȏ����Ȍ�������]";
-	mes "�]�����������ނƁA";
-	mes "���󂪐_��I�Ȍ��𔭂��n�߂��]";
+	mes "‐機械をよく見ると、";
+	mes "鍵を差し込めそうな小さな穴がある‐";
+	mes "‐鍵を差し込むと、";
+	mes "封印が神秘的な光を発し始めた‐";
 	next;
-	mes "�]�����āA���̌��͏��X�ɏ��������A";
-	mes "����ɁA�_��I�Ȍ������";
-	mes "���̂��u����Ă����]";
+	mes "‐そして、その光は徐々に消えたが、";
+	mes "代わりに、神秘的な光を放つ";
+	mes "物体が置かれていた‐";
 	next;
-	mes "�]�����ɂ��������͐΂����񂾏u�ԁA";
-	mes "���̒��ɒN���̋L���������Ă����]";
+	mes "‐そこにあった魔力石をつかんだ瞬間、";
+	mes "頭の中に誰かの記憶が入ってきた‐";
 	next;
-	mes "�^�i�g�X!!";
-	mes "�M���h����A�������܂����I";
-	mes "�����ɔC����S�Ē��~���A������";
-	mes "�M���h�֖߂�悤�ɂƂ̂��Ƃł��I";
-	mes "�@";
-	mes "�c�c���������B";
+	mes "タナトス!!";
+	mes "ギルドから連絡が来ました！";
+	mes "直ちに任務を全て中止し、即座に";
+	mes "ギルドへ戻るようにとのことです！";
+	mes "　";
+	mes "……分かった。";
 	next;
-	mes "�]�c�c�c�c�]";
-	mes "�]��u�A�f���������āA�������]";
+	mes "‐…………‐";
+	mes "‐一瞬、映像が現われて、消えた‐";
 	delitem 7423,1;
 	getitem 7428,1;
 	close;
 }
 
-//�Ζ��͐�
-tha_t10.gat,129,159,0	script	����#tt5	111,{
+//緑魔力石
+tha_t10.gat,129,159,0	script	封印#tt5	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(!countitem(7424)) {
-		mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-		mes "�o�V���b!!�Ƃ������Ƌ��ɁA";
-		mes "�肪�e����A�������ɂ��񂾁]";
+		mes "‐手を封印に近付けようとしたら、";
+		mes "バシンッ!!という音と共に、";
+		mes "手が弾かれ、脂汗がにじんだ‐";
 		percentheal -10,0;
 		close;
 	}
-	mes "�]�_��I�ȗ͂ɕ����Ă���]";
-	mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-	mes "�o�V���b!!�Ƃ������Ƌ��ɒe���ꂽ�]";
+	mes "‐神秘的な力に覆われている‐";
+	mes "‐手を封印に近付けようとしたら、";
+	mes "バシンッ!!という音と共に弾かれた‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ɂ��邱�Ƃ͂Ȃ�������")==2) {
-		mes "�]���̏ꂩ�痣�ꂽ�]";
+	if(select("もう少し調べてみる","特にすることはなさそうだ")==2) {
+		mes "‐その場から離れた‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ != "�΂̃J�M") {
-		mes "�]���ǁA����������Ȃ������]";
+	if('@word$ != "緑のカギ") {
+		mes "‐結局、何も分からなかった‐";
 		close;
 	}
-	mes "�]�����Ă����΂̃J�M��˂������ƁA";
-	mes "�W�B�B�[�b!!�Ƃ������Ƌ���";
-	mes "�����Ă����͂��������]";
+	mes "‐持っていた緑のカギを突きさすと、";
+	mes "ジィィーッ!!という音と共に";
+	mes "覆っていた力が消えた‐";
 	next;
-	mes "�]�@�B���悭����ƁA";
-	mes "�����������߂����ȏ����Ȍ�������]";
-	mes "�]�����������ނƁA";
-	mes "���󂪐_��I�Ȍ��𔭂��n�߂��]";
+	mes "‐機械をよく見ると、";
+	mes "鍵を差し込めそうな小さな穴がある‐";
+	mes "‐鍵を差し込むと、";
+	mes "封印が神秘的な光を発し始めた‐";
 	next;
-	mes "�]�����āA���̌��͏��X�ɏ��������A";
-	mes "����ɁA�_��I�Ȍ������";
-	mes "���̂��u����Ă����]";
+	mes "‐そして、その光は徐々に消えたが、";
+	mes "代わりに、神秘的な光を放つ";
+	mes "物体が置かれていた‐";
 	next;
-	mes "�]�����ɂ��������͐΂����񂾏u�ԁA";
-	mes "���̒��ɒN���̋L���������Ă����]";
+	mes "‐そこにあった魔力石をつかんだ瞬間、";
+	mes "頭の中に誰かの記憶が入ってきた‐";
 	next;
-	mes "�c�c�Ƃ��Ƃ������������c�����ȁc�c�B";
-	mes "�����A����ŏI��肾�c�c�B";
-	mes "�c�c�c�c�O�b!!";
-	mes "��͂�A���������Ȃ��Ƃ͂���ȁc�c�B";
-	mes "�O�n�b�c�c�B";
+	mes "……とうとう魔王だけが残ったな……。";
+	mes "さあ、これで終わりだ……。";
+	mes "…………グッ!!";
+	mes "やはり、魔王だけなことはあるな……。";
+	mes "グハッ……。";
 	next;
-	mes "���A����́c�c�c�c";
-	mes "�c�c�c�c�c�c�c�c";
-	mes "�c�c�c�c�c�c";
-	mes "�c�c�O�A�@�@�@�@�b!!!!";
-	mes "�ȁA�䂪�c�c���̐g���c�c";
-	mes "�l�Ԃǂ��Ȃ񂩂Ɂc�c!!!!";
+	mes "こ、これは…………";
+	mes "……………………";
+	mes "………………";
+	mes "……グアァァァァッ!!!!";
+	mes "な、我が……この身が……";
+	mes "人間どもなんかに……!!!!";
 	next;
-	mes "�]�c�c�c�c�]";
-	mes "�]��u�A�f���������āA�������]";
+	mes "‐…………‐";
+	mes "‐一瞬、映像が現われて、消えた‐";
 	delitem 7424,1;
 	getitem 7429,1;
 	close;
 }
 
-//�����͐�
-tha_t06.gat,226,230,0	script	����#tt3	111,{
+//黒魔力石
+tha_t06.gat,226,230,0	script	封印#tt3	111,{
 	if(checkitemblank() == 0) {
-		mes "�]�����A�C�e���̎�ސ�����������";
-		mes "�A�C�e�����󂯂Ƃ邱�Ƃ��ł��܂���]";
-		mes "�]�����A�C�e�������炵�Ă���A�ēx";
-		mes "�b�������Ă��������]";
+		mes "‐所持アイテムの種類数が多いため";
+		mes "アイテムを受けとることができません‐";
+		mes "‐所持アイテムを減らしてから、再度";
+		mes "話しかけてください‐";
 		close;
 	}
 	if(!countitem(7425)) {
-		mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-		mes "�o�V���b!!�Ƃ������Ƌ��ɁA";
-		mes "�肪�e����A�������ɂ��񂾁]";
+		mes "‐手を封印に近付けようとしたら、";
+		mes "バシンッ!!という音と共に、";
+		mes "手が弾かれ、脂汗がにじんだ‐";
 		percentheal -10,0;
 		close;
 	}
-	mes "�]�_��I�ȗ͂ɕ����Ă���]";
-	mes "�]��𕕈�ɋߕt���悤�Ƃ�����A";
-	mes "�o�V���b!!�Ƃ������Ƌ��ɒe���ꂽ�]";
+	mes "‐神秘的な力に覆われている‐";
+	mes "‐手を封印に近付けようとしたら、";
+	mes "バシンッ!!という音と共に弾かれた‐";
 	next;
-	if(select("�����������ׂĂ݂�","���ɂ��邱�Ƃ͂Ȃ�������")==2) {
-		mes "�]���̏ꂩ�痣�ꂽ�]";
+	if(select("もう少し調べてみる","特にすることはなさそうだ")==2) {
+		mes "‐その場から離れた‐";
 		close;
 	}
 	input '@word$;
-	if('@word$ != "���̃J�M") {
-		mes "�]���ǁA����������Ȃ������]";
+	if('@word$ != "黒のカギ") {
+		mes "‐結局、何も分からなかった‐";
 		close;
 	}
-	mes "�]�����Ă������̃J�M��˂������ƁA";
-	mes "�W�B�B�[�b!!�Ƃ������Ƌ���";
-	mes "�����Ă����͂��������]";
+	mes "‐持っていた黒のカギを突きさすと、";
+	mes "ジィィーッ!!という音と共に";
+	mes "覆っていた力が消えた‐";
 	next;
-	mes "�]�@�B���悭����ƁA";
-	mes "�����������߂����ȏ����Ȍ�������]";
-	mes "�]�����������ނƁA";
-	mes "���󂪐_��I�Ȍ��𔭂��n�߂��]";
+	mes "‐機械をよく見ると、";
+	mes "鍵を差し込めそうな小さな穴がある‐";
+	mes "‐鍵を差し込むと、";
+	mes "封印が神秘的な光を発し始めた‐";
 	next;
-	mes "�]�����āA���̌��͏��X�ɏ��������A";
-	mes "����ɁA�_��I�Ȍ������";
-	mes "���̂��u����Ă����]";
+	mes "‐そして、その光は徐々に消えたが、";
+	mes "代わりに、神秘的な光を放つ";
+	mes "物体が置かれていた‐";
 	next;
-	mes "�]�����ɂ��������͐΂����񂾏u�ԁA";
-	mes "���̒��ɒN���̋L���������Ă����]";
+	mes "‐そこにあった魔力石をつかんだ瞬間、";
+	mes "頭の中に誰かの記憶が入ってきた‐";
 	next;
-	mes "�����c�c���ꂪ�c�c";
-	mes "���������N���A";
-	mes "�艺���W�߂Ă���Ƃ��������c�c�B";
-	mes "�q���`�c�c��k����Ȃ��B";
-	mes "��̂ǂꂭ�炢�W�܂��Ă���񂾂낤�B";
-	mes "�c�c��A�O��͂���悤���ȁB";
+	mes "ああ……あれが……";
+	mes "魔王モロクが、";
+	mes "手下を集めているという塔か……。";
+	mes "ヒュ～……冗談じゃない。";
+	mes "一体どれくらい集まっているんだろう。";
+	mes "……二、三千はいるようだな。";
 	next;
-	mes "�]�c�c�c�c�]";
-	mes "�]��u�A�f���������āA�������]";
+	mes "‐…………‐";
+	mes "‐一瞬、映像が現われて、消えた‐";
 	delitem 7425,1;
 	getitem 7430,1;
 	close;
 }
 
-//�Ԃ̐Α�
-tha_t12.gat,96,58,0	script	�Α�#tt1	111,{
+//赤の石像
+tha_t12.gat,96,58,0	script	石像#tt1	111,{
 	if($@THA_1SEAL == 12) {
-		mes "�]�Α����A�����ł��Ȃ����A";
-		mes "����Ȍ�������Ă����A";
-		mes "���G��邱�Ƃ��ł��Ȃ����A";
-		mes "�M��ттĂ���]";
+		mes "‐石像が、直視できない程、";
+		mes "強烈な光を放っている上、";
+		mes "手を触れることができない程、";
+		mes "熱を帯びている‐";
 		close;
 	}
 	if($@THA_1SEAL != 0) {
-		mes "�]�Α����_��I�Ȍ��𔭂��Ă���]";
-		mes "�]�c�c�s�v�c�ȗ͂̂�����";
-		mes "�߂Â����Ƃ��ł��Ȃ��]";
+		mes "‐石像が神秘的な光を発している‐";
+		mes "‐……不思議な力のせいで";
+		mes "近づくことができない‐";
 		close;
 	}
-	mes "�]���}�ȐΑ�������]";
-	mes "�]�����ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐平凡な石像がある‐";
+	mes "‐そこには、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7426) < 1)
 		close;
 	next;
-	mes "�]�Α��ɋߕt���ƁA";
-	mes "�����Ă������͐΂�";
-	mes "���𔭂��n�߂��]";
-	mes "�]�����āA�Α�����";
-	mes "�Ԃ����������Ă����]";
+	mes "‐石像に近付くと、";
+	mes "持っていた魔力石が";
+	mes "光を発し始めた‐";
+	mes "‐そして、石像から";
+	mes "赤い光がさしてきた‐";
 	next;
-	if(select("���ɖ��͐΂�����","���̂܂܂ɂ��Ă���")==2) {
-		mes "�]���������l�q�����邱�Ƃɂ����]";
+	if(select("穴に魔力石を入れる","そのままにしておく")==2) {
+		mes "‐もう少し様子を見ることにした‐";
 		close;
 	}
-	mes "�]�Α��̌��ɖ��͐΂�����ƁA";
-	mes "�Α����_��I�Ȍ��ɕ�܂ꂽ�]";
+	mes "‐石像の穴に魔力石を入れると、";
+	mes "石像が神秘的な光に包まれた‐";
 	delitem 7426,1;
 	misceffect 55;
 	donpcevent "tteffect2::OnGlow";
@@ -1005,37 +1005,37 @@ tha_t12.gat,96,58,0	script	�Α�#tt1	111,{
 	close;
 }
 
-//���̐Α�
-tha_t12.gat,161,58,0	script	�Α�#tt4	111,{
+//黄の石像
+tha_t12.gat,161,58,0	script	石像#tt4	111,{
 	if($@THA_1SEAL == 12) {
-		mes "�]�Α����A�����ł��Ȃ����A";
-		mes "����Ȍ�������Ă����A";
-		mes "���G��邱�Ƃ��ł��Ȃ����A";
-		mes "�M��ттĂ���]";
+		mes "‐石像が、直視できない程、";
+		mes "強烈な光を放っている上、";
+		mes "手を触れることができない程、";
+		mes "熱を帯びている‐";
 		close;
 	}
 	if($@THA_1SEAL != 1) {
-		mes "�]�Α����_��I�Ȍ��𔭂��Ă���]";
-		mes "�]�c�c�s�v�c�ȗ͂̂�����";
-		mes "�߂Â����Ƃ��ł��Ȃ��]";
+		mes "‐石像が神秘的な光を発している‐";
+		mes "‐……不思議な力のせいで";
+		mes "近づくことができない‐";
 		close;
 	}
-	mes "�]���}�ȐΑ�������]";
-	mes "�]�����ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐平凡な石像がある‐";
+	mes "‐そこには、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7427) < 1)
 		close;
 	next;
-	mes "�]�Α��ɋߕt���ƁA";
-	mes "�����Ă��������͐΂�";
-	mes "���𔭂��n�߂��]";
+	mes "‐石像に近付くと、";
+	mes "持っていた黄魔力石が";
+	mes "光を発し始めた‐";
 	next;
-	if(select("���ɖ��͐΂�����","���̂܂܂ɂ��Ă���")==2) {
-		mes "�]���������l�q�����邱�Ƃɂ����]";
+	if(select("穴に魔力石を入れる","そのままにしておく")==2) {
+		mes "‐もう少し様子を見ることにした‐";
 		close;
 	}
-	mes "�]�Α��̌��ɖ��͐΂�����ƁA";
-	mes "�Α����_��I�Ȍ��ɕ�܂ꂽ�]";
+	mes "‐石像の穴に魔力石を入れると、";
+	mes "石像が神秘的な光に包まれた‐";
 	delitem 7427,1;
 	misceffect 57;
 	donpcevent "tteffect3::OnGlow";
@@ -1043,37 +1043,37 @@ tha_t12.gat,161,58,0	script	�Α�#tt4	111,{
 	close;
 }
 
-//�̐Α�
-tha_t12.gat,104,18,0	script	�Α�#tt2	111,{
+//青の石像
+tha_t12.gat,104,18,0	script	石像#tt2	111,{
 	if($@THA_1SEAL == 12) {
-		mes "�]�Α����A�����ł��Ȃ����A";
-		mes "����Ȍ�������Ă����A";
-		mes "���G��邱�Ƃ��ł��Ȃ����A";
-		mes "�M��ттĂ���]";
+		mes "‐石像が、直視できない程、";
+		mes "強烈な光を放っている上、";
+		mes "手を触れることができない程、";
+		mes "熱を帯びている‐";
 		close;
 	}
 	if($@THA_1SEAL != 2) {
-		mes "�]�Α����_��I�Ȍ��𔭂��Ă���]";
-		mes "�]�c�c�s�v�c�ȗ͂̂�����";
-		mes "�߂Â����Ƃ��ł��Ȃ��]";
+		mes "‐石像が神秘的な光を発している‐";
+		mes "‐……不思議な力のせいで";
+		mes "近づくことができない‐";
 		close;
 	}
-	mes "�]���}�ȐΑ�������]";
-	mes "�]�����ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐平凡な石像がある‐";
+	mes "‐そこには、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7428) < 1)
 		close;
 	next;
-	mes "�]�Α��ɋߕt���ƁA";
-	mes "�����Ă������͐΂�";
-	mes "���𔭂��n�߂��]";
+	mes "‐石像に近付くと、";
+	mes "持っていた青魔力石が";
+	mes "光を発し始めた‐";
 	next;
-	if(select("���ɖ��͐΂�����","���̂܂܂ɂ��Ă���")==2) {
-		mes "�]���������l�q�����邱�Ƃɂ����]";
+	if(select("穴に魔力石を入れる","そのままにしておく")==2) {
+		mes "‐もう少し様子を見ることにした‐";
 		close;
 	}
-	mes "�]�Α��̌��ɖ��͐΂�����ƁA";
-	mes "�Α����_��I�Ȍ��ɕ�܂ꂽ�]";
+	mes "‐石像の穴に魔力石を入れると、";
+	mes "石像が神秘的な光に包まれた‐";
 	delitem 7428,1;
 	misceffect 54;
 	donpcevent "tteffect5::OnGlow";
@@ -1081,37 +1081,37 @@ tha_t12.gat,104,18,0	script	�Α�#tt2	111,{
 	close;
 }
 
-//���̐Α�
-tha_t12.gat,128,86,0	script	�Α�#tt3	111,{
+//黒の石像
+tha_t12.gat,128,86,0	script	石像#tt3	111,{
 	if($@THA_1SEAL == 12) {
-		mes "�]�Α����A�����ł��Ȃ����A";
-		mes "����Ȍ�������Ă����A";
-		mes "���G��邱�Ƃ��ł��Ȃ����A";
-		mes "�M��ттĂ���]";
+		mes "‐石像が、直視できない程、";
+		mes "強烈な光を放っている上、";
+		mes "手を触れることができない程、";
+		mes "熱を帯びている‐";
 		close;
 	}
 	if($@THA_1SEAL != 3) {
-		mes "�]�Α����_��I�Ȍ��𔭂��Ă���]";
-		mes "�]�c�c�s�v�c�ȗ͂̂�����";
-		mes "�߂Â����Ƃ��ł��Ȃ��]";
+		mes "‐石像が神秘的な光を発している‐";
+		mes "‐……不思議な力のせいで";
+		mes "近づくことができない‐";
 		close;
 	}
-	mes "�]���}�ȐΑ�������]";
-	mes "�]�����ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐平凡な石像がある‐";
+	mes "‐そこには、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7430) < 1)
 		close;
 	next;
-	mes "�]�Α��ɋߕt���ƁA";
-	mes "�����Ă��������͐΂�";
-	mes "���𔭂��n�߂��]";
+	mes "‐石像に近付くと、";
+	mes "持っていた黒魔力石が";
+	mes "光を発し始めた‐";
 	next;
-	if(select("���ɖ��͐΂�����","���̂܂܂ɂ��Ă���")==2) {
-		mes "�]���������l�q�����邱�Ƃɂ����]";
+	if(select("穴に魔力石を入れる","そのままにしておく")==2) {
+		mes "‐もう少し様子を見ることにした‐";
 		close;
 	}
-	mes "�]�Α��̌��ɖ��͐΂�����ƁA";
-	mes "�Α����_��I�Ȍ��ɕ�܂ꂽ�]";
+	mes "‐石像の穴に魔力石を入れると、";
+	mes "石像が神秘的な光に包まれた‐";
 	delitem 7430,1;
 	misceffect 59;
 	donpcevent "tteffect1::OnGlow";
@@ -1119,42 +1119,42 @@ tha_t12.gat,128,86,0	script	�Α�#tt3	111,{
 	close;
 }
 
-//�΂̐Α�
-tha_t12.gat,154,18,0	script	�Α�#tt5	111,{
+//緑の石像
+tha_t12.gat,154,18,0	script	石像#tt5	111,{
 	if($@THA_1SEAL == 12) {
-		mes "�]�Α����A�����ł��Ȃ����A";
-		mes "����Ȍ�������Ă����A";
-		mes "���G��邱�Ƃ��ł��Ȃ����A";
-		mes "�M��ттĂ���]";
+		mes "‐石像が、直視できない程、";
+		mes "強烈な光を放っている上、";
+		mes "手を触れることができない程、";
+		mes "熱を帯びている‐";
 		close;
 	}
 	if($@THA_1SEAL != 4) {
-		mes "�]�Α����_��I�Ȍ��𔭂��Ă���]";
-		mes "�]�c�c�s�v�c�ȗ͂̂�����";
-		mes "�߂Â����Ƃ��ł��Ȃ��]";
+		mes "‐石像が神秘的な光を発している‐";
+		mes "‐……不思議な力のせいで";
+		mes "近づくことができない‐";
 		close;
 	}
-	mes "�]���}�ȐΑ�������]";
-	mes "�]�����ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐平凡な石像がある‐";
+	mes "‐そこには、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7429) < 1)
 		close;
 	next;
-	mes "�]�Α��ɋߕt���ƁA";
-	mes "�����Ă����Ζ��͐΂�";
-	mes "���𔭂��n�߂��]";
+	mes "‐石像に近付くと、";
+	mes "持っていた緑魔力石が";
+	mes "光を発し始めた‐";
 	next;
-	if(select("���ɖ��͐΂�����","���̂܂܂ɂ��Ă���")==2) {
-		mes "�]���������l�q�����邱�Ƃɂ����]";
+	if(select("穴に魔力石を入れる","そのままにしておく")==2) {
+		mes "‐もう少し様子を見ることにした‐";
 		close;
 	}
-	mes "�]�Α��̌��ɖ��͐΂�����ƁA";
-	mes "�Α����_��I�Ȍ��ɕ�܂ꂽ�]";
+	mes "‐石像の穴に魔力石を入れると、";
+	mes "石像が神秘的な光に包まれた‐";
 	misceffect 56;
 	next;
-	mes "�]�܂̐Α��S�Ă����ɕ�܂�A";
-	mes "�Α������̒��S�ɂ���͗l��";
-	mes "��ȕ��Ƌ��ɋ����C�𔭂��n�߂��]";
+	mes "‐五つの石像全てが光に包まれ、";
+	mes "石像たちの中心にある模様が";
+	mes "奇妙な風と共に強い気を発し始めた‐";
 	delitem 7429,1;
 	donpcevent "tteffect4::OnGlow";
 	donpcevent "WarpThana::OnStart";
@@ -1305,149 +1305,149 @@ OnTimer10000:
 	}
 }
 
-//��Y�̕���
-thana_boss.gat,202,75,0	script	�͗l#tt2	111,3,3,{
+//苦悩の封印
+thana_boss.gat,202,75,0	script	模様#tt2	111,3,3,{
 	end;
 OnTouch:
 	if($@THA_2SEAL&0x1)
 		end;
-	mes "�]�ΐF�̖͗l�����G�ɕ`����Ă���]";
-	mes "�]���̒��ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐緑色の模様が乱雑に描かれている‐";
+	mes "‐その中には、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7436) < 1)
 		close;
 	next;
 	input '@word$;
-	if('@word$ != "��Y�̌���") {
-		mes "�]����ȕ��͎����Ă��Ȃ��]";
+	if('@word$ != "苦悩の欠片") {
+		mes "‐そんな物は持っていない‐";
 		close;
 	}
 	if($@THA_2SEAL&0x1) {
-		mes "�]�����N����Ȃ��]";
+		mes "‐何も起こらない‐";
 		close;
 	}
-	mes "�]��Y�̌��Ђ�";
-	mes "���̖͗l�ɂ͂߂��]";
-	mes "�]����ƁA�͗l��";
-	mes "���邢���𔭂��n�߂��]";
+	mes "‐苦悩の欠片を";
+	mes "その模様にはめた‐";
+	mes "‐すると、模様が";
+	mes "明るい光を発し始めた‐";
 	set $@THA_2SEAL,$@THA_2SEAL|0x01;
 	delitem 7436,1;
-	monster "thana_boss.gat",202,75,"��Y",1712,1,"#ttDeath::OnKilled1";
+	monster "thana_boss.gat",202,75,"苦悩",1712,1,"#ttDeath::OnKilled1";
 	close;
 }
 
-//�߂��݂̕���
-thana_boss.gat,217,167,0	script	�͗l#tt1	111,3,3,{
+//悲しみの封印
+thana_boss.gat,217,167,0	script	模様#tt1	111,3,3,{
 	end;
 OnTouch:
 	if($@THA_2SEAL&0x2)
 		end;
-	mes "�]���F�̖͗l�����G�ɕ`����Ă���]";
-	mes "�]���̒��ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐紫色の模様が乱雑に描かれている‐";
+	mes "‐その中には、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7437) < 1)
 		close;
 	next;
 	input '@word$;
-	if('@word$ != "�߂��݂̌���") {
-		mes "�]����ȕ��͎����Ă��Ȃ��]";
+	if('@word$ != "悲しみの欠片") {
+		mes "‐そんな物は持っていない‐";
 		close;
 	}
 	if($@THA_2SEAL&0x2) {
-		mes "�]�����N����Ȃ��]";
+		mes "‐何も起こらない‐";
 		close;
 	}
-	mes "�]�߂��݂̌��Ђ�";
-	mes "���̖͗l�ɂ͂߂��]";
-	mes "�]����ƁA�͗l��";
-	mes "���邢���𔭂��n�߂��]";
+	mes "‐悲しみの欠片を";
+	mes "その模様にはめた‐";
+	mes "‐すると、模様が";
+	mes "明るい光を発し始めた‐";
 	set $@THA_2SEAL,$@THA_2SEAL|0x02;
 	delitem 7437,1;
-	monster "thana_boss.gat",217,167,"�߂���",1711,1,"#ttDeath::OnKilled1";
+	monster "thana_boss.gat",217,167,"悲しみ",1711,1,"#ttDeath::OnKilled1";
 	close;
 }
 
-//��]�̕���
-thana_boss.gat,62,171,0	script	�͗l#tt4	111,3,3,{
+//絶望の封印
+thana_boss.gat,62,171,0	script	模様#tt4	111,3,3,{
 	end;
 OnTouch:
 	if($@THA_2SEAL&0x4)
 		end;
-	mes "�]�ԐF�̖͗l�����G�ɕ`����Ă���]";
-	mes "�]���̒��ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐赤色の模様が乱雑に描かれている‐";
+	mes "‐その中には、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7439) < 1)
 		close;
 	next;
 	input '@word$;
-	if('@word$ != "��]�̌���") {
-		mes "�]����ȕ��͎����Ă��Ȃ��]";
+	if('@word$ != "絶望の欠片") {
+		mes "‐そんな物は持っていない‐";
 		close;
 	}
 	if($@THA_2SEAL&0x4) {
-		mes "�]�����N����Ȃ��]";
+		mes "‐何も起こらない‐";
 		close;
 	}
-	mes "�]��]�̌��Ђ�";
-	mes "���̖͗l�ɂ͂߂��]";
-	mes "�]����ƁA�͗l��";
-	mes "���邢���𔭂��n�߂��]";
+	mes "‐絶望の欠片を";
+	mes "その模様にはめた‐";
+	mes "‐すると、模様が";
+	mes "明るい光を発し始めた‐";
 	set $@THA_2SEAL,$@THA_2SEAL|0x04;
 	delitem 7439,1;
-	monster "thana_boss.gat",62,171,"��]",1710,1,"#ttDeath::OnKilled1";
+	monster "thana_boss.gat",62,171,"絶望",1710,1,"#ttDeath::OnKilled1";
 	close;
 }
 
-//�����̕���
-thana_boss.gat,80,76,0	script	�͗l#tt3	111,3,3,{
+//憎悪の封印
+thana_boss.gat,80,76,0	script	模様#tt3	111,3,3,{
 	end;
 OnTouch:
 	if($@THA_2SEAL&0x8)
 		end;
-	mes "�]�F�̖͗l�����G�ɕ`����Ă���]";
-	mes "�]���̒��ɂ́A���������邱�Ƃ�";
-	mes "�ł������Ȍ�������]";
+	mes "‐青色の模様が乱雑に描かれている‐";
+	mes "‐その中には、何かを入れることが";
+	mes "できそうな穴がある‐";
 	if(countitem(7438) < 1)
 		close;
 	next;
 	input '@word$;
-	if('@word$ != "�����̌���") {
-		mes "�]����ȕ��͎����Ă��Ȃ��]";
+	if('@word$ != "憎悪の欠片") {
+		mes "‐そんな物は持っていない‐";
 		close;
 	}
 	if($@THA_2SEAL&0x8) {
-		mes "�]�����N����Ȃ��]";
+		mes "‐何も起こらない‐";
 		close;
 	}
-	mes "�]�����̌��Ђ�";
-	mes "���̖͗l�ɂ͂߂��]";
-	mes "�]����ƁA�͗l��";
-	mes "���邢���𔭂��n�߂��]";
+	mes "‐憎悪の欠片を";
+	mes "その模様にはめた‐";
+	mes "‐すると、模様が";
+	mes "明るい光を発し始めた‐";
 	set $@THA_2SEAL,$@THA_2SEAL|0x08;
 	delitem 7438,1;
-	monster "thana_boss.gat",80,76,"����",1709,1,"#ttDeath::OnKilled1";
+	monster "thana_boss.gat",80,76,"憎悪",1709,1,"#ttDeath::OnKilled1";
 	close;
 }
 
-//�^�i�g�X�̕���
-thana_boss.gat,141,218,0	script	�͗l#tt5	111,3,3,{
+//タナトスの封印
+thana_boss.gat,141,218,0	script	模様#tt5	111,3,3,{
 	end;
 OnTouch:
 	if($@THA_1SEAL > 9)
 		end;
-	mes "�]���F�̖͗l�����G�ɕ`����Ă���]";
-	mes "�]�͗l���狭���͂�������]";
+	mes "‐黒色の模様が乱雑に描かれている‐";
+	mes "‐模様から強い力を感じる‐";
 	if($@THA_1SEAL < 9)
 		close;
-	mes "�]�߂��ɍs���āA";
-	mes "�͗l���ώ@���Ă݂�Ɓc�c";
-	mes "�_��I�Ȍ����͗l���ݎn�߂��]";
-	mes "�]�����āA�͗l������Ȍ���������]";
+	mes "‐近くに行って、";
+	mes "模様を観察してみると……";
+	mes "神秘的な光が模様を包み始めた‐";
+	mes "‐そして、模様が強烈な光を放った‐";
 	set $@THA_1SEAL,10;
-	monster "thana_boss.gat",139,215,"����",1709,1,"#ttDeath::OnKilled2";
-	monster "thana_boss.gat",139,220,"��]",1710,1,"#ttDeath::OnKilled2";
-	monster "thana_boss.gat",144,220,"�߂���",1711,1,"#ttDeath::OnKilled2";
-	monster "thana_boss.gat",144,215,"��Y",1712,1,"#ttDeath::OnKilled2";
+	monster "thana_boss.gat",139,215,"憎悪",1709,1,"#ttDeath::OnKilled2";
+	monster "thana_boss.gat",139,220,"絶望",1710,1,"#ttDeath::OnKilled2";
+	monster "thana_boss.gat",144,220,"悲しみ",1711,1,"#ttDeath::OnKilled2";
+	monster "thana_boss.gat",144,215,"苦悩",1712,1,"#ttDeath::OnKilled2";
 	close;
 }
 
@@ -1460,25 +1460,25 @@ OnKilled2:
 	set '@mob,getmapmobs("thana_boss.gat","#ttDeath::OnKilled2");
 	if('@mob < 1) {
 		set $@THA_1SEAL,11;
-		monster "thana_boss.gat",135,129,"�����m�^�i�g�X�̎v�O��",1708,1,"#ttDeath::OnThanaKilled";
+		monster "thana_boss.gat",135,129,"魔剣士タナトスの思念体",1708,1,"#ttDeath::OnThanaKilled";
 	}
 	end;
 OnThanaKilled:
 	initnpctimer;
 	set $@THA_1SEAL,12;
-	announce "�O���@�@�@�@�@�[�[�[�b!!!!",0x9,0xff0000;
+	announce "グワァァァァァーーーッ!!!!",0x9,0xff0000;
 	end;
 OnTimer2000:
-	announce "�O�E�D�D�[�[�[�[�b!!",0x9,0xff0000;
+	announce "グウゥゥーーーーッ!!",0x9,0xff0000;
 	end;
 OnTimer4000:
-	announce "�O�n�b�c�c�O�n�b�c�c�c�c",0x9,0xff0000;
+	announce "グハッ……グハッ…………",0x9,0xff0000;
 	end;
 OnTimer6000:
-	announce "�E�E�D�D�[�b�c�c�n�@�n�@�b�c�c",0x9,0xff0000;
+	announce "ウウゥゥーッ……ハァハァッ……",0x9,0xff0000;
 	end;
 OnTimer8000:
-	announce "�o�V�b�c�c�o�V�b�c�c�B",0x9,0xff0000;
+	announce "バシッ……バシッ……。",0x9,0xff0000;
 	end;
 OnTimer60000:
 	areawarp "thana_boss.gat",0,0,280,280,"tha_t12.gat",130,48;

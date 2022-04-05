@@ -1,634 +1,634 @@
 //= Auriga Script ==============================================================
 // Ragnarok Online Illusion of Moonlight Quest Script	by refis
 //= Registry ===================================================================
-// IL_MOON_QUE -> 0�`10
+// IL_MOON_QUE -> 0～10
 //==============================================================================
-payon.gat,164,229,5	script	���V�T������#ilp01	78,{
+payon.gat,164,229,5	script	元老サンユル#ilp01	78,{
 	if(BaseLevel < 170) {
-		mes "[�T������]";
-		mes "��������������";
-		mes "�N���Ă���\�������܂��B";
-		mes "�N���������������`���҂Ȃ�";
-		mes "�b�����Ă݂邪�c�c�c�O���B";
+		mes "[サンユル]";
+		mes "何か怪しい事が";
+		mes "起きている予感がします。";
+		mes "君がもう少し強い冒険者なら";
+		mes "話をしてみるが……残念だ。";
 		next;
-		mes "- ^4d4dffBaseLv170�ȏ�̎�";
-		mes "  �i�s�\�ȃN�G�X�g�ł��B^000000 -";
+		mes "- ^4d4dffBaseLv170以上の時";
+		mes "  進行可能なクエストです。^000000 -";
 		close;
 	}
 	if(IL_MOON_QUE == 0) {
-		mes "[�T������]";
-		mes "����̌��͎������̎�ɂ�";
-		mes "�����Ȃ��悤���B";
-		mes "����ł�������ڂ��B";
+		mes "[サンユル]";
+		mes "今回の件は私たちの手には";
+		mes "負えないようだ。";
+		mes "これでもう何回目だ。";
 		next;
-		mes "[�W���M����]";
-		mes "�Ώ��@���l����ɂ�";
-		mes "��񂪑���Ă��Ȃ��B";
-		mes "�܂��̓��q������";
-		mes "�҂��Ƃɂ��悤�B";
-		mes "�������Ɨǂ��̂����B";
+		mes "[ジャギョム]";
+		mes "対処法を考えるにも";
+		mes "情報が足りていない。";
+		mes "まずはムヒョンを";
+		mes "待つことにしよう。";
+		mes "無事だと良いのだが。";
 		next;
-		menu "����",-;
-		mes "[�T������]";
-		mes "���ށH�`���҂ł͂Ȃ����B";
-		mes "�������̘b��";
-		mes "�����Ă����̂��H";
+		menu "あの",-;
+		mes "[サンユル]";
+		mes "うむ？冒険者ではないか。";
+		mes "私たちの話を";
+		mes "聞いていたのか？";
 		next;
-		mes "[�T������]";
-		mes "�c�c�ӂށA�������B";
-		mes "������S�Đ_�l��";
-		mes "�ӌ��Ȃ̂��낤�B";
-		mes "�Ђ���Ƃ�����N����������";
-		mes "�͂ɂȂ邩������Ȃ��B";
+		mes "[サンユル]";
+		mes "……ふむ、そうか。";
+		mes "これも全て神様の";
+		mes "意向なのだろう。";
+		mes "ひょっとしたら君が私たちの";
+		mes "力になるかもしれない。";
 		next;
-		mes "[�T������]";
-		mes "�t�F�C�����̗��̕��ɂ���|�葺��";
-		mes "���A������̂͒m���Ă��邩�H";
-		mes "�����ł͒���I��";
-		mes "�S�삽��������邩��";
-		mes "�򉻋V�����s���Ă���񂾁B";
+		mes "[サンユル]";
+		mes "フェイヨンの裏の方にある弓手村に";
+		mes "洞窟があるのは知っているか？";
+		mes "そこでは定期的に";
+		mes "亡霊たちが現れるから";
+		mes "浄化儀式を行っているんだ。";
 		next;
-		mes "[�T������]";
-		mes "�������������l���Ă���";
-		mes "����ς̉��O�������̂��낤�B";
-		mes "�ς̍����򉻂��悤�Ƃ����";
-		mes "�򉻂��Ă���҂�";
-		mes "�ς̍����ڂ��Ă��܂�";
-		mes "�����ɂ��Ȃ���Ă����B";
+		mes "[サンユル]";
+		mes "だが私たちが考えてるより";
+		mes "九尾狐の怨念が強いのだろう。";
+		mes "狐の魂を浄化しようとすると";
+		mes "浄化している者に";
+		mes "狐の魂が移ってしまい";
+		mes "悪夢にうなされていた。";
 		next;
-		mes "[�T������]";
-		mes "����͂��ɋC���������܂�";
-		mes "���A�ɑ����čs���Ă��܂����񂾁B";
-		mes "������S�z�ł��傤���Ȃ��B";
+		mes "[サンユル]";
+		mes "今回はついに気を失ったまま";
+		mes "洞窟に走って行ってしまったんだ。";
+		mes "だから心配でしょうがない。";
 		next;
-		menu "���q��������̂��Ƃł����H",-;
-		mes "[�T������]";
-		mes "���q�����̓\�E�������J�[���B";
-		mes "�����͒T���Ɍ���������";
-		mes "���m�����A�߂��ɗ��Ă���̂�";
-		mes "���v���Ƃ͎v�����B";
+		menu "ムヒョンさんのことですか？",-;
+		mes "[サンユル]";
+		mes "ムヒョンはソウルリンカーだ。";
+		mes "今頃は探しに向かうため";
+		mes "兵士が洞窟近くに来ているので";
+		mes "大丈夫だとは思うが。";
 		next;
-		mes "[�W���M����]";
-		mes "�������ȁB������";
-		mes "�����ꂪ���邩������Ȃ��B";
-		mes "�N�������ɍs���Ė����Ȃ̂�";
-		mes "�m�F���Ă���Ȃ����H";
+		mes "[ジャギョム]";
+		mes "そうだな。しかし";
+		mes "万が一があるかもしれない。";
+		mes "君もそこに行って無事なのか";
+		mes "確認してくれないか？";
 		next;
-		if(select("������܂���","���������|���̂Ŗ����ł�") == 2) {
-			mes "[�T������]";
-			mes "������������";
-			mes "���������ł�ƌ������H";
-			mes "���������H";
+		if(select("分かりました","お化けが怖いので無理です") == 2) {
+			mes "[サンユル]";
+			mes "私たちがいつ";
+			mes "お化けがでると言った？";
+			mes "言ったか？";
 			close;
 		}
-		mes "[�W���M����]";
-		mes "���m�������Ɍ����鎖��";
-		mes "�o�����Ȃ�ǂ����A";
-		mes "���ꂪ�o���Ȃ������Ȃ�";
-		mes "���A�̉��ɂ���p���܂�";
-		mes "�s���Ă��܂����͂����B";
+		mes "[ジャギョム]";
+		mes "兵士が無事に見つける事が";
+		mes "出来たなら良いが、";
+		mes "それが出来なかったなら";
+		mes "洞窟の奥にある廃村まで";
+		mes "行ってしまったはずだ。";
 		next;
-		mes "[�W���M����]";
-		mes "��U�A���A�߂��Ƀ��q�����ƕ��m��";
-		mes "�o�ė��Ă��邩�m�F���Ă���B";
-		mes "�Ⴂ�w�m�����ǂ��čs��������";
-		mes "����ς�C�����Ȃ�����ȁB";
+		mes "[ジャギョム]";
+		mes "一旦、洞窟近くにムヒョンと兵士が";
+		mes "出て来ているか確認してくれ。";
+		mes "若い学士も後を追って行ったけど";
+		mes "やっぱり任せられないからな。";
 		next;
-		mes "[�W���M����]";
-		mes "���̊w�m�ɉ����";
-		mes "����𒮂��Ă݂�̂������B";
+		mes "[ジャギョム]";
+		mes "その学士に会って";
+		mes "事情を聴いてみるのもいい。";
 		setquest 7776;
 		set IL_MOON_QUE,1;
 		next;
-		mes "- �w�m�̂Ƃ����";
-		mes "  �������܂����H -";
+		mes "- 学士のところに";
+		mes "  向かいますか？ -";
 		next;
-		if(select("������","��ɂ���") == 2) {
-			mes "- ��ɂ��悤 -";
+		if(select("向かう","後にする") == 2) {
+			mes "- 後にしよう -";
 			close;
 		}
-		mes "- �w�m�̌��Ɍ������� -";
+		mes "- 学士の元に向かった -";
 		close2;
 		warp "pay_arche.gat",48,133;
 		end;
 	}
 	else if(IL_MOON_QUE == 1) {
-		mes "[�W���M����]";
-		mes "���m�������Ɍ����鎖��";
-		mes "�o�����Ȃ�ǂ����A";
-		mes "���ꂪ�o���Ȃ������Ȃ�";
-		mes "���A�̉��ɂ���p���܂�";
-		mes "�s���Ă��܂����͂����B";
+		mes "[ジャギョム]";
+		mes "兵士が無事に見つける事が";
+		mes "出来たなら良いが、";
+		mes "それが出来なかったなら";
+		mes "洞窟の奥にある廃村まで";
+		mes "行ってしまったはずだ。";
 		next;
-		mes "[�W���M����]";
-		mes "��U�A���A�߂��Ƀ��q�����ƕ��m��";
-		mes "�o�ė��Ă��邩�m�F���Ă���B";
-		mes "�Ⴂ�w�m�����ǂ��čs��������";
-		mes "����ς�C�����Ȃ�����ȁB";
+		mes "[ジャギョム]";
+		mes "一旦、洞窟近くにムヒョンと兵士が";
+		mes "出て来ているか確認してくれ。";
+		mes "若い学士も後を追って行ったけど";
+		mes "やっぱり任せられないからな。";
 		next;
-		mes "[�W���M����]";
-		mes "���̊w�m�ɉ����";
-		mes "����𒮂��Ă݂�̂������B";
+		mes "[ジャギョム]";
+		mes "その学士に会って";
+		mes "事情を聴いてみるのもいい。";
 		next;
-		mes "- �w�m�̂Ƃ����";
-		mes "  �������܂����H -";
+		mes "- 学士のところに";
+		mes "  向かいますか？ -";
 		next;
-		if(select("������","��ɂ���") == 2) {
-			mes "- ��ɂ��悤 -";
+		if(select("向かう","後にする") == 2) {
+			mes "- 後にしよう -";
 			close;
 		}
-		mes "- �w�m�̌��Ɍ������� -";
+		mes "- 学士の元に向かった -";
 		close2;
 		warp "pay_arche.gat",48,133;
 		end;
 	}
-	mes "[�T������]";
-	mes "�債�����ƂȂ���΂������B";
-	mes "����H���R�ɂ��铴�A�̘b���B ";
-	mes "�����ŋN���Ă��鎖�̂�����";
-	mes "�F�X�Y�݂������č����Ă���B";
+	mes "[サンユル]";
+	mes "大したことなければいいが。";
+	mes "うん？裏山にある洞窟の話だ。 ";
+	mes "そこで起きている事のせいで";
+	mes "色々悩みが多くて困っている。";
 	close;
 }
 
-payon.gat,167,229,3	script	���V�W���M����#ilp02	901,{
+payon.gat,167,229,3	script	元老ジャギョム#ilp02	901,{
 	if(IL_MOON_QUE == 0) {
-		mes "[�W���M����]";
-		mes "�܂��̓��q������҂��Ƃɂ��悤�B";
-		mes "���̎҂������łȂ��ƁB";
+		mes "[ジャギョム]";
+		mes "まずはムヒョンを待つことにしよう。";
+		mes "あの者が無事でないと。";
 		close;
 	}
 	else if(IL_MOON_QUE == 1) {
-		mes "[�W���M����]";
-		mes "�܂��͋|�葺�ɂ��铴�A��";
-		mes "������֌������Ă݂Ȃ����B";
-		mes "�Ⴂ�w�m�������烀�q������";
-		mes "�s���𕷂��Ă݂��炢���B";
+		mes "[ジャギョム]";
+		mes "まずは弓手村にある洞窟の";
+		mes "入り口へ向かってみなさい。";
+		mes "若い学士がいたらムヒョンの";
+		mes "行方を聞いてみたらいい。";
 		close;
 	}
-	mes "[�W���M����]";
-	mes "��͂肱�ꂩ��̂��Ƃ�";
-	mes "�Ⴂ�҂����ɔC���ׂ����ȁB";
-	mes "�N��̏o�開�ł͂Ȃ��B";
+	mes "[ジャギョム]";
+	mes "やはりこれからのことは";
+	mes "若い者たちに任すべきだな。";
+	mes "年寄の出る幕ではない。";
 	close;
 }
 
-pay_arche.gat,48,137,3	script	�N�w�m#ilp03	92,{
+pay_arche.gat,48,137,3	script	青年学士#ilp03	92,{
 	if(IL_MOON_QUE == 0) {
-		unittalk "�N�w�m : �ǂ����ďo�Ă��Ȃ��񂾁c�c",1;
+		unittalk "青年学士 : どうして出てこないんだ……",1;
 		end;
 	}
 	else if(IL_MOON_QUE == 1) {
-		mes "[�N�w�m]";
-		mes "����ȍK�^���N����Ȃ�āI";
-		mes "���������ɑ҂��Ă������̂悤��";
-		mes "�`���҂��ڂ̑O�Ɍ����Ƃ́I";
+		mes "[青年学士]";
+		mes "こんな幸運が起きるなんて！";
+		mes "困った時に待っていたかのように";
+		mes "冒険者が目の前に現れるとは！";
 		next;
-		mes "[�N�w�m]";
-		mes "���������ɖ`���҂�";
-		mes "�F��Ȏd������X�̑����";
-		mes "���߂Ă����Ƃ����͖̂{���ł����H";
+		mes "[青年学士]";
+		mes "私が聞くに冒険者は";
+		mes "色んな仕事を我々の代わりに";
+		mes "務めてくれるというのは本当ですか？";
 		next;
-		menu "���łɎd�����󂯂Ă���",-;
-		mes "[�N�w�m]";
-		mes "�c�c�����ł����B";
-		mes "�Z�����݂����ł��ˁB";
-		mes "��ώ��炵�܂����B";
-		mes "�����ɂ͉��p��";
-		mes "��������������ł����H";
+		menu "すでに仕事を受けている",-;
+		mes "[青年学士]";
+		mes "……そうですか。";
+		mes "忙しいみたいですね。";
+		mes "大変失礼しました。";
+		mes "ここには何用で";
+		mes "いらっしゃったんですか？";
 		next;
-		menu "���q���������܂���ł������H",-;
-		mes "[�N�w�m]";
-		mes "���q�����H�\�E�������J�[��";
-		mes "���q�����̂��Ƃł����H";
-		mes "����A�܂������ȃ\�E�������J�[�ł͂Ȃ�";
-		mes "�C�����̐g�ł����c�c�B";
+		menu "ムヒョンを見ませんでしたか？",-;
+		mes "[青年学士]";
+		mes "ムヒョン？ソウルリンカーの";
+		mes "ムヒョンのことですか？";
+		mes "いや、まだ正式なソウルリンカーではなく";
+		mes "修練中の身ですが……。";
 		next;
-		mes "[�N�w�m]";
-		mes "�򉻂����Ă������q������";
-		mes "�����ɜ߂�����";
-		mes "���A�̉��܂œ����Ă��܂����̂�";
-		mes "�W���E�q�c�c����A";
-		mes "���m���T���ɓ������̂ł���";
-		mes "�܂����̒m�点������܂���B";
+		mes "[青年学士]";
+		mes "浄化をしていたムヒョンが";
+		mes "何かに憑りつかれて";
+		mes "洞窟の奥まで入ってしまったので";
+		mes "ジュウヒ……いや、";
+		mes "兵士が探しに入ったのですが";
+		mes "まだ何の知らせもありません。";
 		next;
-		mes "[�N�w�m]";
-		mes "����2�l�̋A���������";
-		mes "�҂��Ă����̂ł���";
-		mes "���܂�ɂ����������Ȃ�����";
-		mes "�ʂ̐l��T����";
-		mes "�T���Ɍ����킹�邩�ǂ���";
-		mes "�Y��ł����Ƃ���ł����B";
+		mes "[青年学士]";
+		mes "私は2人の帰りをここで";
+		mes "待っていたのですが";
+		mes "あまりにも音沙汰がないため";
+		mes "別の人を探して";
+		mes "探索に向かわせるかどうか";
+		mes "悩んでいたところでした。";
 		next;
-		mes "[�N�w�m]";
-		mes "�������Ȃ���΂����ł����c";
-		cloakoffnpc "���q����#ilp04";
-		cloakoffnpc "���m�V���W���E�q#ilp05";
+		mes "[青年学士]";
+		mes "何事もなければいいですが…";
+		cloakoffnpc "ムヒョン#ilp04";
+		cloakoffnpc "兵士シンジュウヒ#ilp05";
 		if(!sleep2(2000)) end;
-		unittalk "�N�w�m : �o�ė��܂����I�����݂����ł��I",1;
+		unittalk "青年学士 : 出て来ました！無事みたいです！",1;
 		if(!sleep2(2000)) end;
-		unittalk getnpcid(0,"���q����#ilp04"),"���q���� : �����I������߂�I�򉻂Ȃ񂩂�߂�������!!",1;
+		unittalk getnpcid(0,"ムヒョン#ilp04"),"ムヒョン : ああ！もうやめる！浄化なんかやめたぁぁぁ!!",1;
 		if(!sleep2(100)) end;
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp05"),"���m�V���W���E�q : �c�c�B",1;
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp05"),"兵士シンジュウヒ : ……。",1;
 		next;
-		mes "[���q����]";
-		mes "����A�z�h�j�H";
-		mes "�N�͂ǂ����Ă����ɂ���́H";
+		mes "[ムヒョン]";
+		mes "あれ、ホドニ？";
+		mes "君はどうしてここにいるの？";
 		next;
-		mes "[�N�w�m]";
-		mes "����͐S�z����������c�c�B";
+		mes "[青年学士]";
+		mes "それは心配だったから……。";
 		next;
-		mes "[���q����]";
-		mes "�S�z���ƌ������ɂ�";
-		mes "�����ł������Ă���̂�";
-		mes "����t�Ȃ�ł���H";
-		mes "�z�h�j�ɐS�z���Ă��炤";
-		mes "�؍����͂Ȃ�����B";
+		mes "[ムヒョン]";
+		mes "心配だと言う割には";
+		mes "ここでこうしているのが";
+		mes "精一杯なんでしょ？";
+		mes "ホドニに心配してもらう";
+		mes "筋合いはないから。";
 		if(!sleep2(2000)) end;
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp05"),"���m�V���W���E�q : �K���ɂ���Ă�B",1;
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp05"),"兵士シンジュウヒ : 適当にやってろ。",1;
 		if(!sleep2(100)) end;
-		unittalk "�N�w�m : ������ƁA�����Ȃ����B",1;
+		unittalk "青年学士 : ちょっと、酷くないか。",1;
 		next;
-		mes "[���q����]";
-		mes "���I�����������߂��B";
-		mes "���Ȃ�����ꂽ����";
-		mes "����ɓ`���Ă����āI";
-		mes "���ꂶ�Ⴀ�o�C�o�C�I";
+		mes "[ムヒョン]";
+		mes "あ！私もうこれやめた。";
+		mes "やらないから爺たちに";
+		mes "代わりに伝えておいて！";
+		mes "それじゃあバイバイ！";
 		next;
-		cloakonnpc "���q����#ilp04";
-		mes "[�N�w�m]";
-		mes "�c�c�ڂ����b��";
-		mes "�������Ȃ���";
-		mes "�s���Ă��܂��܂����ˁB";
+		cloakonnpc "ムヒョン#ilp04";
+		mes "[青年学士]";
+		mes "……詳しい話は";
+		mes "何もしないで";
+		mes "行ってしまいましたね。";
 		if(!sleep2(1000)) end;
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp05"),"���m�V���W���E�q : �ӂ��A����ł͎�������Ŏ��炷��B��U���q������ǂ�����A���V�����ɓ`���Ă���B",1;
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp05"),"兵士シンジュウヒ : ふう、それでは私もこれで失礼する。一旦ムヒョンを追うから、元老たちに伝えてくれ。",1;
 		if(!sleep2(1000)) end;
-		cloakonnpc "���m�V���W���E�q#ilp05";
+		cloakonnpc "兵士シンジュウヒ#ilp05";
 		next;
-		mes "[�N�w�m]";
-		mes "���킠�I�W���E�q�܂ŁI";
-		mes "���������Ζ`���җl";
-		mes "���q�����ɗp���������";
-		mes "�����Ă����̂ł́H";
+		mes "[青年学士]";
+		mes "うわあ！ジュウヒまで！";
+		mes "そういえば冒険者様";
+		mes "ムヒョンに用事があると";
+		mes "言っていたのでは？";
 		next;
-		menu "�߂邵���Ȃ�",-;
-		mes "[�N�w�m]";
-		mes "���q�����͑���^4d4dff�t�F�C�������{^000000�֌��������Ǝv���܂��B";
-		mes "�ꏏ�ɍs���܂��񂩁H";
+		menu "戻るしかない",-;
+		mes "[青年学士]";
+		mes "ムヒョンは多分^4d4dffフェイヨン離宮^000000へ向かったと思います。";
+		mes "一緒に行きませんか？";
 		chgquest 7776,7777;
 		set IL_MOON_QUE,2;
 		next;
-		if(select("�ꏏ�ɍs��","�ʁX�ɍs��") == 2) {
-			mes "[�N�w�m]";
-			mes "���q�����͑���";
-			mes "^4d4dff�t�F�C�������{^000000��";
-			mes "���������Ǝv���܂��B";
-			mes "�����ɍs���ďڂ����b��";
-			mes "�����Ă݂邱�Ƃɂ��܂��傤�B";
-			mes "���V�����ɂ͎����`���Ă����܂��B";
+		if(select("一緒に行く","別々に行く") == 2) {
+			mes "[青年学士]";
+			mes "ムヒョンは多分";
+			mes "^4d4dffフェイヨン離宮^000000へ";
+			mes "向かったと思います。";
+			mes "そこに行って詳しい話を";
+			mes "聞いてみることにしましょう。";
+			mes "元老たちには私が伝えておきます。";
 			close;
 		}
-		mes "[�N�w�m]";
-		mes "���ꂶ�ᗣ�{�ւƁc";
+		mes "[青年学士]";
+		mes "それじゃ離宮へと…";
 		close2;
 		warp "payon.gat",105,320;
 		end;
 	}
 	else if(IL_MOON_QUE == 2) {
-		mes "[�N�w�m]";
-		mes "���q�����͑���^4d4dff�t�F�C�������{^000000�֌��������Ǝv���܂��B";
-		mes "�ꏏ�ɍs���܂��񂩁H";
+		mes "[青年学士]";
+		mes "ムヒョンは多分^4d4dffフェイヨン離宮^000000へ向かったと思います。";
+		mes "一緒に行きませんか？";
 		next;
-		if(select("�ꏏ�ɍs��","�ʁX�ɍs��") == 2) {
-			mes "[�N�w�m]";
-			mes "���q�����͑���";
-			mes "^4d4dff�t�F�C�������{^000000��";
-			mes "���������Ǝv���܂��B";
-			mes "�����ɍs���ďڂ����b��";
-			mes "�����Ă݂邱�Ƃɂ��܂��傤�B";
-			mes "���V�����ɂ͎����`���Ă����܂��B";
+		if(select("一緒に行く","別々に行く") == 2) {
+			mes "[青年学士]";
+			mes "ムヒョンは多分";
+			mes "^4d4dffフェイヨン離宮^000000へ";
+			mes "向かったと思います。";
+			mes "そこに行って詳しい話を";
+			mes "聞いてみることにしましょう。";
+			mes "元老たちには私が伝えておきます。";
 			close;
 		}
-		mes "[�N�w�m]";
-		mes "���ꂶ�ᗣ�{�ւƁc";
+		mes "[青年学士]";
+		mes "それじゃ離宮へと…";
 		close2;
 		warp "payon.gat",105,320;
 		end;
 	}
 	else if(IL_MOON_QUE < 6) {
-		mes "[�N�w�m]";
-		mes "���̐́A���𒷂��ςݏグ���_�b��";
-		mes "����ςɂȂ����炵���ł��B";
-		mes "���̎q��������ԂɂȂ���";
-		mes "�Ƃ����b������܂��B";
-		mes "�\���Ɍ������Ă݂鉿�l�̂���";
-		mes "�b���ƍl���Ă��܂��B";
+		mes "[青年学士]";
+		mes "その昔、徳を長く積み上げた神獣が";
+		mes "九尾狐になったらしいです。";
+		mes "その子孫が月夜花になった";
+		mes "という話もあります。";
+		mes "十分に研究してみる価値のある";
+		mes "話だと考えています。";
 		close;
 	}
 	else if(IL_MOON_QUE >= 6) {
-		mes "[�N�w�m]";
-		mes "�p���ɑ����������I";
-		mes "�ꏏ�ɍs���܂����H";
+		mes "[青年学士]";
+		mes "廃村に早く調査を！";
+		mes "一緒に行きますか？";
 		next;
-		if(select("�ꏏ�ɍs��","�ʁX�ɍs��") == 2) {
-			mes "[�N�w�m]";
-			mes "����ł͎��������W���E�q���Ă��";
-			mes "�����Ɍ��ǂ��čs���悤�ɂ��܂��I";
+		if(select("一緒に行く","別々に行く") == 2) {
+			mes "[青年学士]";
+			mes "それでは私たちもジュウヒを呼んで";
+			mes "すぐに後を追って行くようにします！";
 			close;
 		}
-		mes "[�N�w�m]";
-		mes "�����A�����s���܂��傤�I";
+		mes "[青年学士]";
+		mes "さあ、早く行きましょう！";
 		close2;
 		warp "pay_dun03.gat",145,43;
 		end;
 	}
 }
 
-pay_arche.gat,46,135,5	script	���q����#ilp04	644,{
+pay_arche.gat,46,135,5	script	ムヒョン#ilp04	644,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-pay_arche.gat,44,133,7	script	���m�V���W���E�q#ilp05	708,{
+pay_arche.gat,44,133,7	script	兵士シンジュウヒ#ilp05	708,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-payon.gat,103,322,4	script	�t�F�C�������m #ilp06	708,{
+payon.gat,103,322,4	script	フェイヨン兵士 #ilp06	708,{
 	if(IL_MOON_QUE == 2) {
-		mes "[�W���E�q]";
-		mes "�O�ɓ��A�̑O�Ō���";
-		mes "�`���҂���Ȃ����B";
-		mes "���q������T���ɗ����Ȃ�";
-		mes "���ɓ����Ă݂�B";
+		mes "[ジュウヒ]";
+		mes "前に洞窟の前で見た";
+		mes "冒険者じゃないか。";
+		mes "ムヒョンを探しに来たなら";
+		mes "中に入ってみろ。";
 		close;
 	}
-	mes "[���m]";
-	mes "�����̓t�F�C�������{�ł��B";
+	mes "[兵士]";
+	mes "ここはフェイヨン離宮です。";
 	close;
 }
 
-payon_in03.gat,33,95,3	script	���q����#ilp07	644,{
+payon_in03.gat,33,95,3	script	ムヒョン#ilp07	644,{
 	if(IL_MOON_QUE < 2) {
-		mes "[���q����]";
-		mes "�C�F�W�����搶��T���ɗ����Ȃ�";
-		mes "�����Ɖ��̕����ɍs���ĉ������B";
+		mes "[ムヒョン]";
+		mes "イェジョル先生を探しに来たなら";
+		mes "もっと奥の部屋に行って下さい。";
 		close;
 	}
 	else if(IL_MOON_QUE == 2) {
-		unittalk "���q���� : �����炢����b���Ă����͂������܂���I",1;
+		unittalk "ムヒョン : だからいくら話しても私はもうやりません！",1;
 		if(!sleep2(3000)) end;
-		unittalk "���q���� : ����ł����O��ڂł���B�������̈����Ƃ͊ւ�肽���Ȃ��ł��B",1;
+		unittalk "ムヒョン : これでもう三回目ですよ。もうこの悪夢とは関わりたくないです。",1;
 		if(!sleep2(100)) end;
-		unittalk getcharid(3),strcharinfo(0)+ " : �����H",1;
+		unittalk getcharid(3),strcharinfo(0)+ " : 悪夢？",1;
 		if(!sleep2(100)) end;
-		unittalk getnpcid(0,"�N�w�m#ilp08"),"�N�w�m : �����H",1;
+		unittalk getnpcid(0,"青年学士#ilp08"),"青年学士 : 悪夢？",1;
 		if(!sleep2(3000)) end;
-		unittalk "���q���� : �ς̈�������B�����ɋ���ςƌ���Ԃ������񂾁B",1;
+		unittalk "ムヒョン : 狐の悪夢だよ。そこに九尾狐と月夜花がいたんだ。",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : �ƂĂ��������e�������B��x�Ƃ���Ȍo�����������Ȃ��B",1;
+		unittalk "ムヒョン : とても酷い内容だった。二度とあんな経験をしたくない。",1;
 		if(!sleep2(3000)) end;
-		unittalk getnpcid(0,"�W���M����#ilp09"),"�W���M���� : �����ǌN�����Ȃ���ΒN��������򉻂���񂾁H",1;
+		unittalk getnpcid(0,"ジャギョム#ilp09"),"ジャギョム : だけど君がやらなければ誰がそれを浄化するんだ？",1;
 		if(!sleep2(2000)) end;
-		unittalk getnpcid(0,"�W���M����#ilp09"),"�W���M���� : �݂�ȏo���Ȃ��Ǝ��߂Ă������B����ł����q�����N�͎O������������Ȃ����B",1;
+		unittalk getnpcid(0,"ジャギョム#ilp09"),"ジャギョム : みんな出来ないと辞めていった。それでもムヒョン君は三回もやったじゃないか。",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : ���ꂪ�ł��ˁA����͌��Ȗ��ŏI��邾���ł͂Ȃ�������ł���B",1;
+		unittalk "ムヒョン : それがですね、今回は嫌な夢で終わるだけではなかったんですよ。",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : ���܂ł͌ϋʂɍ��߂�ꂽ�����̋C���򉻂���ƁA���Ȗ������Ă��������������̂Ɂc�c",1;
+		unittalk "ムヒョン : 今までは狐玉に込められた悪夢の気を浄化すると、嫌な夢を見ていただけだったのに……",1;
 		if(!sleep2(3000)) end;
-		unittalk getnpcid(0,"�N�w�m#ilp08"),"�N�w�m : ����͉����Ⴄ��ł����H",1;
+		unittalk getnpcid(0,"青年学士#ilp08"),"青年学士 : 今回は何が違うんですか？",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : �c�c",1;
+		unittalk "ムヒョン : ……",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : ���ƌ����̋��E�������̂ł͂ƕs�����������B",1;
+		unittalk "ムヒョン : 夢と現実の境界が崩れるのではと不安を感じた。",1;
 		if(!sleep2(3000)) end;
-		unittalk getnpcid(0,"�W���M����#ilp09"),"�W���M���� : �c�c����͉��̘b���I���܂ł͂�������ς̉��O����߂邾���ŗǂ���������Ȃ����B",1;
+		unittalk getnpcid(0,"ジャギョム#ilp09"),"ジャギョム : ……それは何の話だ！今まではただ九尾狐の怨念を鎮めるだけで良かったじゃないか。",1;
 		if(!sleep2(3000)) end;
-		unittalk getnpcid(0,"�W���M����#ilp09"),"�W���M���� : �����������A�ŉ��������񂾁H",1;
+		unittalk getnpcid(0,"ジャギョム#ilp09"),"ジャギョム : いったい洞窟で何を見たんだ？",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : �������t�ł��������������A���ڌ��������ǂ��Ǝv���܂���B",1;
+		unittalk "ムヒョン : 私が言葉でいくら説明するより、直接見た方が良いと思いますよ。",1;
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : �ǂ����Ȃ狭�����������ł��B�������������Ă���`���҂̐l���炢�B",1;
+		unittalk "ムヒョン : どうせなら強い方がいいです。今いらっしゃっている冒険者の人くらい。",1;
 		chgquest 7777,7778;
 		set IL_MOON_QUE,3;
 		end;
 	}
 	else if(IL_MOON_QUE == 3) {
-		menu "�����ɂ��ċ����Ăق���",-;
-		mes "[���q����]";
-		mes "������܂����B";
-		mes "�c�c������������O��";
-		mes "���������̘b�����܂��傤�B";
+		menu "悪夢について教えてほしい",-;
+		mes "[ムヒョン]";
+		mes "分かりました。";
+		mes "……悪夢を見せる前に";
+		mes "少しだけ昔話をしましょう。";
 		next;
-		mes "[���q����]";
-		mes "�t�F�C�������A�͐̂ɔ�������";
-		mes "���鎖���ŎR���ꂪ�N����";
-		mes "���̈ꕔ�����܂��č��ꂽ���̂ł��B";
+		mes "[ムヒョン]";
+		mes "フェイヨン洞窟は昔に発生した";
+		mes "ある事件で山崩れが起きて";
+		mes "村の一部が埋まって作られたものです。";
 		next;
-		mes "[���q����]";
-		mes "������O���Ǝv���܂���";
-		mes "�������v����������܂�";
-		mes "�����}�����҂�����";
-		mes "���������̂ł��傤�B";
-		mes "���ł��S�삽����";
-		mes "��������c���Ă��܂��B";
+		mes "[ムヒョン]";
+		mes "当たり前だと思いますが";
+		mes "悔しい思いを抱えたまま";
+		mes "死を迎えた者たちも";
+		mes "多かったのでしょう。";
+		mes "今でも亡霊たちが";
+		mes "たくさん残っています。";
 		next;
-		mes "[���q����]";
-		mes "���ɔp���ɐ�������";
-		mes "����ς����̉��O��";
-		mes "���܂����قǋ��͂Ȃ̂Œ���I��";
-		mes "�򉻋V�����s���̂ł���";
-		mes "���͂�������ł��B";
+		mes "[ムヒョン]";
+		mes "特に廃村に生息する";
+		mes "九尾狐たちの怨念は";
+		mes "凄まじいほど強力なので定期的に";
+		mes "浄化儀式を行うのですが";
+		mes "問題はここからです。";
 		next;
-		mes "[���q����]";
-		mes "�����͒N�ɂ�������܂���";
-		mes "�ŋ߂ɂȂ��Čς����̉��O��";
-		mes "����ɋ����Ȃ��Ă��܂�����ł��B";
-		mes "�����Ȃ����ƌ�������";
-		mes "�򉻂����܂��s���Ă��Ȃ���";
-		mes "���������������������m��܂���B";
+		mes "[ムヒョン]";
+		mes "原因は誰にも分かりませんが";
+		mes "最近になって狐たちの怨念が";
+		mes "さらに強くなってしまったんです。";
+		mes "強くなったと言うよりは";
+		mes "浄化がうまく行われていないと";
+		mes "言った方が正しいかも知れません。";
 		next;
-		mes "[���q����]";
-		mes "����ς����̉��O�͐��܂���";
-		mes "���i�ʂ�򉻂�������";
-		mes "���O�ɂ���Ĉ�����������";
-		mes "�������ċ�������c�c�B";
-		mes "���̂悤�Ȍ��Ȃ��Ƃ�";
-		mes "�N����悤�ɂȂ�܂����B";
+		mes "[ムヒョン]";
+		mes "九尾狐たちの怨念は凄まじく";
+		mes "普段通り浄化をしたら";
+		mes "怨念によって悪夢を見たり";
+		mes "感応して泣いたり……。";
+		mes "そのような嫌なことが";
+		mes "起きるようになりました。";
 		next;
-		mes "[���q����]";
-		mes "�\�E�������J�[�Ƃ����̂�";
-		mes "���̋������s���E�ƂȂ̂�";
-		mes "�H�ɂł����ޖ��V�����s������A";
-		mes "�����������Ȃ邱�Ƃ�����܂��B";
+		mes "[ムヒョン]";
+		mes "ソウルリンカーというのが";
+		mes "魂の共感を行う職業なので";
+		mes "稀にですが退魔儀式を行った後、";
+		mes "夢見が悪くなることがあります。";
 		next;
-		mes "[���q����]";
-		mes "�����������Ă�Ƃ���";
-		mes "�l���Ă��܂���ł����B";
-		mes "����������̌��Œm�鎖���o���܂����B";
-		mes "��������Ȃ������ƁI";
+		mes "[ムヒョン]";
+		mes "私もただ疲れてるとしか";
+		mes "考えていませんでした。";
+		mes "しかし今回の件で知る事が出来ました。";
+		mes "そうじゃなかったと！";
 		next;
-		mes "[���q����]";
-		mes "�����ς����̉��O��";
-		mes "���������Ă��邩�͒m��܂���B";
-		mes "���͎����̈ӎ����Ȃ����A���������";
-		mes "�ς̋���������������p����";
-		mes "�����g���m�炸�m�炸�̂�����";
-		mes "�������Ă��܂����B";
+		mes "[ムヒョン]";
+		mes "何が狐たちの怨念を";
+		mes "増幅させているかは知りません。";
+		mes "私は自分の意識をなくし、たくさんの";
+		mes "狐の泣き声が聞こえる廃村に";
+		mes "私自身も知らず知らずのうちに";
+		mes "向かっていました。";
 		next;
-		mes "[���q����]";
-		mes "�����Č��Ă��܂����̂ł��B";
-		mes "���̐��̌����������B";
-		mes "����ȏ�A�l���߂Â��Ă̓_���ł��I";
+		mes "[ムヒョン]";
+		mes "そして見てしまったのです。";
+		mes "この世の向こう側を。";
+		mes "これ以上、人が近づいてはダメです！";
 		next;
-		mes "[���q����]";
-		mes "�ƂĂ��s�g�ȉ�����";
-		mes "�N�������ȗ\�������܂��B";
-		mes "����A���łɎn�܂��Ă���̂����B";
+		mes "[ムヒョン]";
+		mes "とても不吉な何かが";
+		mes "起きそうな予感がします。";
+		mes "いや、すでに始まっているのかも。";
 		next;
-		mes "[���q����]";
-		mes "���������ڂ��肵���c����";
-		mes "���������͒n���ł����B";
-		mes "���O���򉻂������";
-		mes "�������Ă����ς����̈����B";
+		mes "[ムヒョン]";
+		mes "私が見たぼんやりした残像の";
+		mes "向こう側は地獄でした。";
+		mes "怨念を浄化した後は";
+		mes "いつも見ていた狐たちの悪夢。";
 		next;
-		mes "[���q����]";
-		mes "�c�c�Ȃ̂ł�����x�Ǝ���";
-		mes "���̎d���������Ȃ��ŉ������B";
-		mes "���̐��_�̎コ����";
-		mes "�n�܂��������Ȃ�";
-		mes "�����Î󂷂ׂ����Ƃł��B";
+		mes "[ムヒョン]";
+		mes "……なのでもう二度と私に";
+		mes "この仕事をさせないで下さい。";
+		mes "私の精神の弱さから";
+		mes "始まった悪夢なら";
+		mes "私が甘受すべきことです。";
 		next;
-		mes "[���q����]";
-		mes "�����ǌς����̈����ɂ�";
-		mes "��x�Ɗւ�肽������܂���B";
+		mes "[ムヒョン]";
+		mes "だけど狐たちの悪夢には";
+		mes "二度と関わりたくありません。";
 		next;
-		mes "[���q����]";
-		mes "�{���ɋC�ɂȂ�̂ł����";
-		mes "���ڌo�����Ă݂����������ł���B";
-		mes "���x�A��قǏ򉻂��悤�Ƃ��Ă���";
-		mes "�ς̍�������̂ŁA�������ł��܂�����";
-		mes "���ł������ĉ������B";
+		mes "[ムヒョン]";
+		mes "本当に気になるのであれば";
+		mes "直接経験してみた方がいいですよ。";
+		mes "丁度、先ほど浄化しようとしていた";
+		mes "狐の魂があるので、準備ができましたら";
+		mes "いつでも教えて下さい。";
 		chgquest 7778,7779;
 		set IL_MOON_QUE,4;
 		close;
 	}
 	else if(IL_MOON_QUE == 4) {
-		mes "[���q����]";
-		mes "�����͏o���܂������H";
+		mes "[ムヒョン]";
+		mes "準備は出来ましたか？";
 		next;
-		if(select("�o���܂���","�܂��ł�") == 2) {
-			mes "[���q����]";
-			mes "���҂����Ă��܂��̂�";
-			mes "�������ł��܂�����";
-			mes "�����ĉ������B";
+		if(select("出来ました","まだです") == 2) {
+			mes "[ムヒョン]";
+			mes "お待ちしていますので";
+			mes "準備ができましたら";
+			mes "教えて下さい。";
 			close;
 		}
-		mes "[���q����]";
-		mes "������܂����B";
-		mes "����͂܂��򉻂�";
-		mes "�I����Ă��Ȃ��ς̍��ł��B";
-		mes "�������̏�ɂ̂��āc";
+		mes "[ムヒョン]";
+		mes "分かりました。";
+		mes "これはまだ浄化が";
+		mes "終わっていない狐の魂です。";
+		mes "これを手の上にのせて…";
 		next;
-		mes "[���q����]";
-		mes "���_���W����";
-		mes "�S�����₩�ɂ��ĉ������B";
-		mes "�S�̔����J����";
-		mes "�󂯓���Ȃ���΂Ȃ�܂���B";
+		mes "[ムヒョン]";
+		mes "精神を集中し";
+		mes "心を穏やかにして下さい。";
+		mes "心の扉を開いて";
+		mes "受け入れなければなりません。";
 		close2;
-		unittalk "���q���� : ����A�����Ȃ����A�f�r������",1;
+		unittalk "ムヒョン : 見よ、聞きなさい、彷徨う魂よ",1;
 		if(!sleep2(100)) end;
-		misceffect 389, "���q����#ilp07";
-		misceffect 513, "���q����#ilp07";
+		misceffect 389, "ムヒョン#ilp07";
+		misceffect 513, "ムヒョン#ilp07";
 		if(!sleep2(2500)) end;
-		unittalk "���q���� : �O�r�̐�̌�����������B",1;
+		unittalk "ムヒョン : 三途の川の向こうを見ろ。",1;
 		if(!sleep2(100)) end;
-		misceffect 402, "���q����#ilp07";
-		misceffect 458, "���q����#ilp07";
+		misceffect 402, "ムヒョン#ilp07";
+		misceffect 458, "ムヒョン#ilp07";
 		if(!sleep2(400)) end;
-		cloakoffnpc "#�ύ�ilp10";
+		cloakoffnpc "#狐魂ilp10";
 		if(!sleep2(500)) end;
-		cloakoffnpc "#�ύ�ilp11";
+		cloakoffnpc "#狐魂ilp11";
 		if(!sleep2(500)) end;
-		cloakoffnpc "#�ύ�ilp12";
+		cloakoffnpc "#狐魂ilp12";
 		if(!sleep2(500)) end;
-		cloakoffnpc "#�ύ�ilp13";
+		cloakoffnpc "#狐魂ilp13";
 		if(!sleep2(500)) end;
-		misceffect 368, "#�ύ�ilp10";
-		misceffect 368, "#�ύ�ilp11";
-		misceffect 368, "#�ύ�ilp12";
-		misceffect 368, "#�ύ�ilp13";
-		misceffect 458, "#�ύ�ilp10";
-		misceffect 458, "#�ύ�ilp11";
-		misceffect 458, "#�ύ�ilp12";
-		misceffect 458, "#�ύ�ilp13";
-		unittalk "���q���� : ����ȁA�����ȁA����������B",1;
+		misceffect 368, "#狐魂ilp10";
+		misceffect 368, "#狐魂ilp11";
+		misceffect 368, "#狐魂ilp12";
+		misceffect 368, "#狐魂ilp13";
+		misceffect 458, "#狐魂ilp10";
+		misceffect 458, "#狐魂ilp11";
+		misceffect 458, "#狐魂ilp12";
+		misceffect 458, "#狐魂ilp13";
+		unittalk "ムヒョン : 見るな、聞くな、悔しい魂よ。",1;
 		misceffect 475,"";
-		misceffect 458, "#�ύ�ilp10";
-		misceffect 458, "#�ύ�ilp11";
-		misceffect 458, "#�ύ�ilp12";
-		misceffect 458, "#�ύ�ilp13";
-		unittalk getnpcid(0,"#�ύ�ilp10"),"�ύ� : ����",1;
+		misceffect 458, "#狐魂ilp10";
+		misceffect 458, "#狐魂ilp11";
+		misceffect 458, "#狐魂ilp12";
+		misceffect 458, "#狐魂ilp13";
+		unittalk getnpcid(0,"#狐魂ilp10"),"狐魂 : 死ね",1;
 		if(!sleep2(1000)) end;
 		misceffect 480,"";
-		misceffect 458, "#�ύ�ilp10";
-		misceffect 458, "#�ύ�ilp11";
-		misceffect 458, "#�ύ�ilp12";
-		misceffect 458, "#�ύ�ilp13";
-		unittalk getnpcid(0,"#�ύ�ilp11"),"�ύ� : ����";
-		unittalk "���q���� : ���̐�����w������",1;
+		misceffect 458, "#狐魂ilp10";
+		misceffect 458, "#狐魂ilp11";
+		misceffect 458, "#狐魂ilp12";
+		misceffect 458, "#狐魂ilp13";
+		unittalk getnpcid(0,"#狐魂ilp11"),"狐魂 : 死ね";
+		unittalk "ムヒョン : この世から背を向け",1;
 		if(!sleep2(100)) end;
 		misceffect 484,"";
-		misceffect 458, "#�ύ�ilp10";
-		misceffect 458, "#�ύ�ilp11";
-		misceffect 458, "#�ύ�ilp12";
-		misceffect 458, "#�ύ�ilp13";
-		unittalk getnpcid(0,"#�ύ�ilp12"),"�ύ� : ����",1;
+		misceffect 458, "#狐魂ilp10";
+		misceffect 458, "#狐魂ilp11";
+		misceffect 458, "#狐魂ilp12";
+		misceffect 458, "#狐魂ilp13";
+		unittalk getnpcid(0,"#狐魂ilp12"),"狐魂 : 死ね",1;
 		if(!sleep2(1500)) end;
-		misceffect 899, "���q����#ilp07";
+		misceffect 899, "ムヒョン#ilp07";
 		if(!sleep2(100)) end;
-		unittalk getnpcid(0,"#�ύ�ilp13"),"�ύ� : ����",1;
+		unittalk getnpcid(0,"#狐魂ilp13"),"狐魂 : 死ね",1;
 		if(!sleep2(1000)) end;
-		unittalk "���q���� : �d�����̂͂����ɒu����",1;
+		unittalk "ムヒョン : 重いものはここに置いて",1;
 		if(!sleep2(100)) end;
-		misceffect 692, "#�ύ�ilp10";
-		misceffect 692, "#�ύ�ilp11";
-		misceffect 692, "#�ύ�ilp12";
-		misceffect 692, "#�ύ�ilp13";
-		unittalk getnpcid(0,"#�ύ�ilp10"),"�ύ� : ���ˁI�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp11"),"�ύ� : ���ˁI�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp12"),"�ύ� : ���ˁI�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp13"),"�ύ� : ���ˁI�I",1;
+		misceffect 692, "#狐魂ilp10";
+		misceffect 692, "#狐魂ilp11";
+		misceffect 692, "#狐魂ilp12";
+		misceffect 692, "#狐魂ilp13";
+		unittalk getnpcid(0,"#狐魂ilp10"),"狐魂 : 死ね！！",1;
+		unittalk getnpcid(0,"#狐魂ilp11"),"狐魂 : 死ね！！",1;
+		unittalk getnpcid(0,"#狐魂ilp12"),"狐魂 : 死ね！！",1;
+		unittalk getnpcid(0,"#狐魂ilp13"),"狐魂 : 死ね！！",1;
 		if(!sleep2(1500)) end;
-		misceffect 899, "���q����#ilp07";
-		misceffect 563, "���q����#ilp07";
+		misceffect 899, "ムヒョン#ilp07";
+		misceffect 563, "ムヒョン#ilp07";
 		if(!sleep2(2000)) end;
-		unittalk "���q���� : ��̌������ւƔ��ōs��",1;
+		unittalk "ムヒョン : 川の向こうへと飛んで行け",1;
 		if(!sleep2(100)) end;
-		misceffect 626, "#�ύ�ilp10";
-		misceffect 626, "#�ύ�ilp11";
-		misceffect 626, "#�ύ�ilp12";
-		misceffect 626, "#�ύ�ilp13";
-		unittalk getnpcid(0,"#�ύ�ilp10"),"�ύ� : ���ˁI�I�I�I",1;
-		misceffect 563, "���q����#ilp07";
+		misceffect 626, "#狐魂ilp10";
+		misceffect 626, "#狐魂ilp11";
+		misceffect 626, "#狐魂ilp12";
+		misceffect 626, "#狐魂ilp13";
+		unittalk getnpcid(0,"#狐魂ilp10"),"狐魂 : 死ね！！！！",1;
+		misceffect 563, "ムヒョン#ilp07";
 		if(!sleep2(900)) end;
-		unittalk getnpcid(0,"#�ύ�ilp11"),"�ύ� : ���ˁI�I�I�I",1;
+		unittalk getnpcid(0,"#狐魂ilp11"),"狐魂 : 死ね！！！！",1;
 		if(!sleep2(100)) end;
-		misceffect 563, "���q����#ilp07";
+		misceffect 563, "ムヒョン#ilp07";
 		if(!sleep2(900)) end;
-		unittalk getnpcid(0,"#�ύ�ilp12"),"�ύ� : ���ˁI�I�I�I",1;
+		unittalk getnpcid(0,"#狐魂ilp12"),"狐魂 : 死ね！！！！",1;
 		if(!sleep2(100)) end;
-		misceffect 563, "���q����#ilp07";
+		misceffect 563, "ムヒョン#ilp07";
 		if(!sleep2(900)) end;
-		unittalk getnpcid(0,"#�ύ�ilp13"),"�ύ� : ���ˁI�I�I�I",1;
+		unittalk getnpcid(0,"#狐魂ilp13"),"狐魂 : 死ね！！！！",1;
 		if(!sleep2(1000)) end;
-		unittalk getnpcid(0,"#�ύ�ilp10"),"�ύ� : ���ˁI�I�I�I�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp11"),"�ύ� : ���ˁI�I�I�I�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp12"),"�ύ� : ���ˁI�I�I�I�I",1;
-		unittalk getnpcid(0,"#�ύ�ilp13"),"�ύ� : ���ˁI�I�I�I�I",1;
+		unittalk getnpcid(0,"#狐魂ilp10"),"狐魂 : 死ね！！！！！",1;
+		unittalk getnpcid(0,"#狐魂ilp11"),"狐魂 : 死ね！！！！！",1;
+		unittalk getnpcid(0,"#狐魂ilp12"),"狐魂 : 死ね！！！！！",1;
+		unittalk getnpcid(0,"#狐魂ilp13"),"狐魂 : 死ね！！！！！",1;
 		misceffect 1072,"";
 		if(!sleep2(400)) end;
 		chgquest 7779,7780;
@@ -637,76 +637,76 @@ payon_in03.gat,33,95,3	script	���q����#ilp07	644,{
 		end;
 	}
 	else if(IL_MOON_QUE == 5) {
-		mes "[���q����]";
-		mes "�c�c����ŕ�����܂����ˁH";
-		mes "���������o�������̂����B";
-		mes "�����Əڂ����^���𒲍�����Ȃ�";
-		mes "������x�A�p����";
-		mes "�s���Ȃ���΂Ȃ�܂���B";
+		mes "[ムヒョン]";
+		mes "……これで分かりましたね？";
+		mes "私が何を経験したのかを。";
+		mes "もっと詳しい真相を調査するなら";
+		mes "もう一度、廃村に";
+		mes "行かなければなりません。";
 		next;
-		mes "[���q����]";
-		mes "�`���җl��";
-		mes "����̌��ۂɑ΂���";
-		mes "��������̂Ȃ�";
-		mes "�����ɂ���o�J��";
-		mes "�ƂĂ���т����ł��ˁB";
+		mes "[ムヒョン]";
+		mes "冒険者様が";
+		mes "今回の現象に対して";
+		mes "調査するのなら";
+		mes "そこにいるバカが";
+		mes "とても喜びそうですね。";
 		close;
 	}
 	else if(IL_MOON_QUE < 9) {
-		mes "[���q����]";
-		mes "�C�F�W�����搶��T���ɗ����Ȃ�";
-		mes "�����Ɖ��̕����ɍs���ĉ������B";
+		mes "[ムヒョン]";
+		mes "イェジョル先生を探しに来たなら";
+		mes "もっと奥の部屋に行って下さい。";
 		close;
 	}
 	else if(IL_MOON_QUE == 9) {
-		mes "[���q����]";
-		mes "�����ł����B";
-		mes "���ǁA��̉������";
-		mes "���܂����̂ł��ˁB";
-		mes "���R�ɂ��Ă�";
-		mes "�m��Ȃ���ł���ˁH";
+		mes "[ムヒョン]";
+		mes "そうですか。";
+		mes "結局、具体化されて";
+		mes "しまったのですね。";
+		mes "理由については";
+		mes "知らないんですよね？";
 		next;
-		mes "[���q����]";
-		mes "��̉����ꂽ�ƌ�������";
-		mes "���ƌ����̋��E�����ꂽ��";
-		mes "�����̂��������ł��傤���H";
-		mes "���ʂ̐l���N���̖��̒���";
-		mes "����ȕ��ɍs�������邱�Ƃ�";
-		mes "�o���܂���B";
+		mes "[ムヒョン]";
+		mes "具体化されたと言うよりは";
+		mes "夢と現実の境界が崩れたと";
+		mes "言うのが正しいでしょうか？";
+		mes "普通の人が誰かの夢の中を";
+		mes "あんな風に行き来することは";
+		mes "出来ません。";
 		next;
-		mes "[���q����]";
-		mes "���ꂪ^4d4dff����Ԃ̈���^000000����";
-		mes "�����̂͂悭������܂����B";
-		mes "�ł��ǂ�����Ă��ꂪ������";
-		mes "�q����悤�ɂȂ����̂���";
-		mes "�N���m��܂���B";
+		mes "[ムヒョン]";
+		mes "それが^4d4dff月夜花の悪夢^000000だと";
+		mes "言うのはよく分かりました。";
+		mes "でもどうやってそれが現実と";
+		mes "繋がるようになったのかは";
+		mes "誰も知りません。";
 		next;
-		mes "[���q����]";
-		mes "����Ǝ�������ł���������";
-		mes "�Q�l�ɂ��܂�����";
-		mes "�܂����̂悤�Șb��";
-		mes "��������������܂���B";
-		mes "�܂��A���̕����ɂ��Ă�";
-		mes "�z�h�j�����܂��������邩�ƁB";
+		mes "[ムヒョン]";
+		mes "これと似た事例でもあったら";
+		mes "参考にしますけど";
+		mes "まだそのような話は";
+		mes "聞いた事もありません。";
+		mes "まあ、その部分については";
+		mes "ホドニがうまく調査するかと。";
 		next;
-		mes "[���q����]";
-		mes "�悵�`�I�ł͋v���Ԃ��";
-		mes "�����x��ł݂悤���ȁI";
-		mes "����ŗ]�v�Ȏ��͍l������";
-		mes "��������Q�ꂻ���ł��B";
+		mes "[ムヒョン]";
+		mes "よし～！では久しぶりに";
+		mes "少し休んでみようかな！";
+		mes "これで余計な事は考えずに";
+		mes "ぐっすり寝れそうです。";
 		next;
-		mes "[���q����]";
-		mes "�򉻍�Ƃ��������";
-		mes "���̖��������������";
-		mes "��C�ɉ����ł������Ȃ̂ŁI";
-		mes "���͉���I����ł��I";
-		mes "���肪�Ƃ��������܂�";
-		mes "�`���җl�I";
+		mes "[ムヒョン]";
+		mes "浄化作業をするよりも";
+		mes "その夢さえ処理すれば";
+		mes "一気に解決できそうなので！";
+		mes "私は解放！解放です！";
+		mes "ありがとうございます";
+		mes "冒険者様！";
 		if(checkitemblank() == 0) {
 			next;
-			mes "[���q����]";
-			mes "�����n�����Ǝv�����̂ł���";
-			mes "���Ă����ɂ���܂���ˁB";
+			mes "[ムヒョン]";
+			mes "お礼を渡そうと思ったのですが";
+			mes "持てそうにありませんね。";
 			close;
 		}
 		chgquest 7788,202075;
@@ -717,212 +717,212 @@ payon_in03.gat,33,95,3	script	���q����#ilp07	644,{
 		close;
 	}
 	else if(IL_MOON_QUE == 10) {
-		mes "[���q����]";
-		mes "�z�h�j�ƈꏏ�ɒ����A�����I";
-		mes "�撣���ĉ������I";
-		mes "����ς̈�������������";
-		mes "���̂��񂴂肷��V����";
-		mes "�����Ȃ�܂�����`�I";
+		mes "[ムヒョン]";
+		mes "ホドニと一緒に調査、研究！";
+		mes "頑張って下さい！";
+		mes "九尾狐の悪夢が消えたら";
+		mes "このうんざりする儀式も";
+		mes "無くなりますから～！";
 		next;
-		mes "[���q����]";
-		mes "�Ȃ��m���Ă���̂�";
-		mes "�C�ɂȂ��ł����H";
-		mes "�����̊��ł���I���͂͂͂͂́I";
-		mes "���������Ȃ��ł��̂܂�";
-		mes "�ꐶ���邩���m��Ȃ����ǁI";
-		mes "���Ɗ֌W�Ȃ����Ƃł�����I";
+		mes "[ムヒョン]";
+		mes "なぜ知っているのか";
+		mes "気になるんですか？";
+		mes "ただの勘ですよ！あははははは！";
+		mes "多分消えないであのまま";
+		mes "一生いるかも知れないけど！";
+		mes "私と関係ないことですから！";
 		close;
 	}
 }
 
-payon_in03.gat,33,93,1	script	�N�w�m#ilp08	92,{
+payon_in03.gat,33,93,1	script	青年学士#ilp08	92,{
 	if(IL_MOON_QUE < 2) {
-		mes "[�N�w�m]";
-		mes "�t�F�C�����͐̂���";
-		mes "�_�b�����ƈꏏ�ɕ�炷�X�ł����B";
-		mes "�R�Ŋu������Ă���";
-		mes "�]���Ɣ�ׂ�ƍl������";
-		mes "���Ȃ�Ⴂ������܂��B";
+		mes "[青年学士]";
+		mes "フェイヨンは昔から";
+		mes "神獣たちと一緒に暮らす街でした。";
+		mes "山で隔離されていて";
+		mes "余所と比べると考え方に";
+		mes "かなり違いがあります。";
 		close;
 	}
 	else if(IL_MOON_QUE == 2) {
-		unittalk "�N�w�m : ���q�����͂ƂĂ��������Ă��܂��B�b�𕷂��Ă݂Ȃ��Ƃ����Ȃ��̂ł����c�c",1;
+		unittalk "青年学士 : ムヒョンはとても興奮しています。話を聞いてみないといけないのですが……",1;
 		end;
 	}
 	else if(IL_MOON_QUE < 5) {
-		unittalk "�N�w�m : ���q�����̘b���畷���Ă݂������悳�����ł��B",1;
+		unittalk "青年学士 : ムヒョンの話から聞いてみた方がよさそうです。",1;
 		end;
 	}
 	else if(IL_MOON_QUE == 5) {
-		mes "[�N�w�m]";
-		mes "�{���ɔߎS�ł��ˁB";
-		mes "����Ȃ��Ƃ����q������";
-		mes "�ЂƂ�Ŕw�����Ă�����ł��ˁB";
-		mes "����ς̉��O��";
-		mes "�z�����Ă����ȏ�ŋ����܂����B";
+		mes "[青年学士]";
+		mes "本当に悲惨ですね。";
+		mes "こんなことをムヒョンが";
+		mes "ひとりで背負っていたんですね。";
+		mes "九尾狐の怨念が";
+		mes "想像していた以上で驚きました。";
 		next;
-		mes "[�N�w�m]";
-		mes "���������������K�v�ł��B";
-		mes "��͂蒼�ځA�p����";
-		mes "�s���Ă݂邵���Ȃ������ł��B";
+		mes "[青年学士]";
+		mes "もう少し研究が必要です。";
+		mes "やはり直接、廃村に";
+		mes "行ってみるしかなさそうです。";
 		close;
 	}
 	else if(IL_MOON_QUE >= 6) {
-		mes "[�N�w�m]";
-		mes "�����̊Ԃ͔p����";
-		mes "���̊�Ȍ��ۂ�";
-		mes "�������邱�Ƃɂ��܂��B";
-		mes "�ǂ����Ă��ЂƂ肶���ςȂ̂�";
-		mes "�O�ɂ���W���E�q�ƈꏏ��";
-		mes "�s�����悤�ƍl���Ă��܂��B";
+		mes "[青年学士]";
+		mes "当分の間は廃村で";
+		mes "この奇妙な現象を";
+		mes "研究することにします。";
+		mes "どうしてもひとりじゃ大変なので";
+		mes "外にいるジュウヒと一緒に";
+		mes "行動しようと考えています。";
 		next;
-		mes "[�N�w�m]";
-		mes "���̑O�ɂ݂����ɖ`���җl��";
-		mes "�ꏏ�ɂ��Ă����Ȃ�\�����Ȃ��ł��B";
-		mes "����ł͔p���ŉ�܂��傤�B";
+		mes "[青年学士]";
+		mes "この前にみたいに冒険者様が";
+		mes "一緒にいてくれるなら申し分ないです。";
+		mes "それでは廃村で会いましょう。";
 		close;
 	}
 }
 
-payon_in03.gat,30,96,5	script	�W���M����#ilp09	901,{
+payon_in03.gat,30,96,5	script	ジャギョム#ilp09	901,{
 	if(IL_MOON_QUE < 2) {
-		mes "[�W���M����]";
-		mes "�{���ł͐Â��ɂ��Ȃ����B";
+		mes "[ジャギョム]";
+		mes "宮内では静かにしなさい。";
 		close;
 	}
 	else if(IL_MOON_QUE == 2) {
-		unittalk "�W���M���� : ���q�����A�N�����Ȃ��ƒN������ɂȂ��Ă���Ă����ƌ����񂾁H",1;
+		unittalk "ジャギョム : ムヒョン、君がやらないと誰が代わりになってやってくれると言うんだ？",1;
 		end;
 	}
 	else if(IL_MOON_QUE < 5) {
-		unittalk "�W���M���� : �܂��̓��q�����̘b�𕷂��Ă݂邱�Ƃɂ��悤�B",1;
+		unittalk "ジャギョム : まずはムヒョンの話を聞いてみることにしよう。",1;
 		end;
 	}
 	else if(IL_MOON_QUE == 5) {
-		mes "[�W���M����]";
-		mes "�c�c��͂�܂���";
-		mes "���Ԃ̔c����D��ɂ��Ȃ��ƁB";
-		mes "�`���҂̌N��";
-		mes "�͂�݂��Ă����Ȃ�";
-		mes "�傫�ȏ����ɂȂ�̂����B";
+		mes "[ジャギョム]";
+		mes "……やはりまずは";
+		mes "事態の把握を優先にしないと。";
+		mes "冒険者の君が";
+		mes "力を貸してくれるなら";
+		mes "大きな助けになるのだが。";
 		close;
 	}
 	else if(IL_MOON_QUE < 9) {
-		mes "[�W���M����]";
-		mes "�{���ł͐Â��ɂ��Ȃ����B";
+		mes "[ジャギョム]";
+		mes "宮内では静かにしなさい。";
 		close;
 	}
 	else if(IL_MOON_QUE == 9) {
-		mes "[�W���M����]";
-		mes "�c�c��͂�܂���";
-		mes "���Ԃ̔c����D��ɂ��Ȃ��ƁB";
-		mes "�`���҂̌N��";
-		mes "�͂�݂��Ă����Ȃ�";
-		mes "�傫�ȏ����ɂȂ�̂����B";
+		mes "[ジャギョム]";
+		mes "……やはりまずは";
+		mes "事態の把握を優先にしないと。";
+		mes "冒険者の君が";
+		mes "力を貸してくれるなら";
+		mes "大きな助けになるのだが。";
 		close;
 	}
 	else if(IL_MOON_QUE == 10) {
-		mes "[�W���M����]";
-		mes "����Ԃ��ߋ��̎�����";
-		mes "�����Ƃ��Č����Ă���Ƃ����̂��B";
-		mes "�c�c���̎҂���Q�҂�";
-		mes "���邩������Ȃ��Ƃ����̂ɁB";
+		mes "[ジャギョム]";
+		mes "月夜花が過去の事件を";
+		mes "悪夢として見せているというのか。";
+		mes "……その者も被害者で";
+		mes "あるかもしれないというのに。";
 		next;
-		mes "[�W���M����]";
-		mes "���̋�̉����ꂽ���̋��E����";
-		mes "�������炢���̂��H";
-		mes "�X�̎҂����ɂ�";
-		mes "�����ɂ͋߂Â��Ȃ��悤";
-		mes "�`���Ă������B";
+		mes "[ジャギョム]";
+		mes "その具体化された夢の境界線と";
+		mes "言ったらいいのか？";
+		mes "街の者たちには";
+		mes "そこには近づかないよう";
+		mes "伝えておこう。";
 		close;
 	}
 }
 
-payon_in03.gat,31,96,5	script	#�ύ�ilp10	1180,{
+payon_in03.gat,31,96,5	script	#狐魂ilp10	1180,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-payon_in03.gat,35,96,3	script	#�ύ�ilp11	1180,{
+payon_in03.gat,35,96,3	script	#狐魂ilp11	1180,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-payon_in03.gat,31,93,7	script	#�ύ�ilp12	1180,{
+payon_in03.gat,31,93,7	script	#狐魂ilp12	1180,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-payon_in03.gat,35,93,1	script	#�ύ�ilp13	1180,{
+payon_in03.gat,35,93,1	script	#狐魂ilp13	1180,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-pay_dun03.gat,140,46,3	script	�h�炮���#ilp14	10043,{
+pay_dun03.gat,140,46,3	script	揺らぐ空間#ilp14	10043,{
 	if(IL_MOON_QUE < 5) {
-		mes "�������C���h�炢�ł���B";
-		mes "�s�C���Ȋ���������B";
+		mes "怪しい気が揺らいでいる。";
+		mes "不気味な感じがする。";
 		close;
 	}
 	else if(IL_MOON_QUE == 5) {
-		mes "��Ԃ��c��ł���悤�ȕ�����������B";
+		mes "空間が歪んでいるような部分が見える。";
 		next;
-		cloakoffnpc "�N�w�m#ilp15";
-		cloakoffnpc "���m�V���W���E�q#ilp16";
-		unittalk getnpcid(0,"�N�w�m#ilp15"),"�N�w�m : �͂��͂��A�����ɂ������������̂ł��ˁB",1;
-		mes "[�N�w�m]";
-		mes "�}�ɏ�����";
-		mes "�т����肵�܂����B";
-		mes "���ꂪ���q�����̌����Ă���";
-		mes "��̉����ꂽ������";
-		mes "�������̂Ȃ�ł����H";
+		cloakoffnpc "青年学士#ilp15";
+		cloakoffnpc "兵士シンジュウヒ#ilp16";
+		unittalk getnpcid(0,"青年学士#ilp15"),"青年学士 : はあはあ、ここにいらっしゃったのですね。",1;
+		mes "[青年学士]";
+		mes "急に消えて";
+		mes "びっくりしました。";
+		mes "これがムヒョンの言っていた";
+		mes "具体化された悪夢と";
+		mes "いうものなんですか？";
 		next;
-		menu "���ꂩ�璲�������悤�ƍl���Ă���",-;
-		mes "[�N�w�m]";
-		mes "���ꂶ�Ⴛ�̒�����";
-		mes "�������s������_���ł����H";
-		mes "�ܘ_�A���ЂƂ�ł�";
-		mes "�댯���Ǝv���܂���";
-		mes "�����ɂ���W���E�q�ƈꏏ�Ȃ�";
-		mes "���v���Ǝv���܂��񂩁H�I";
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp16"),"���m�V���W���E�q : �\�z�͂��Ă������ǁc�c�z�h�j�A���O�͖{���ɓK������Ȃ����H",1;
+		menu "これから調査をしようと考えている",-;
+		mes "[青年学士]";
+		mes "それじゃその調査に";
+		mes "私も同行したらダメですか？";
+		mes "勿論、私ひとりでは";
+		mes "危険だと思いますが";
+		mes "ここにいるジュウヒと一緒なら";
+		mes "大丈夫だと思いませんか？！";
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp16"),"兵士シンジュウヒ : 予想はしていたけど……ホドニ、お前は本当に適当じゃないか？",1;
 		next;
-		mes "[�N�w�m]";
-		mes "���ꂶ��A���c�c����ɐG���΂����̂��ȁH";
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp16"),"���m�V���W���E�q : ����ɐG��ȁI",1;
+		mes "[青年学士]";
+		mes "それじゃ、こ……これに触れればいいのかな？";
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp16"),"兵士シンジュウヒ : 勝手に触るな！",1;
 		chgquest 7780,7781;
 		set IL_MOON_QUE,6;
-		close2;	// �ȉ��^�C�}�[�s��
-		misceffect 890, "�N�w�m#ilp15";
-		misceffect 895, "�N�w�m#ilp15";
-		unittalk getnpcid(0,"�N�w�m#ilp15"),"�N�w�m : ���킠���������`�I�I�I",1;
+		close2;	// 以下タイマー不明
+		misceffect 890, "青年学士#ilp15";
+		misceffect 895, "青年学士#ilp15";
+		unittalk getnpcid(0,"青年学士#ilp15"),"青年学士 : うわあああああ～！！！",1;
 		if(!sleep2(500)) end;
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp16"),"���m�V���W���E�q : �����`�I�z�h�j�I�I�I",1;
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp16"),"兵士シンジュウヒ : おい～！ホドニ！！！",1;
 		if(!sleep2(2000)) end;
-		cloakonnpc "�N�w�m#ilp15";
-		unittalk getnpcid(0,"���m�V���W���E�q#ilp16"),"���m�V���W���E�q : �c�c���̃o�J���]�v�Ȃ��Ƃ����₪���āI�I�I",1;
+		cloakonnpc "青年学士#ilp15";
+		unittalk getnpcid(0,"兵士シンジュウヒ#ilp16"),"兵士シンジュウヒ : ……あのバカが余計なことをしやがって！！！",1;
 		if(!sleep2(2000)) end;
-		misceffect 890, "���m�V���W���E�q#ilp16";
-		misceffect 895, "���m�V���W���E�q#ilp16";
+		misceffect 890, "兵士シンジュウヒ#ilp16";
+		misceffect 895, "兵士シンジュウヒ#ilp16";
 		if(!sleep2(500)) end;
-		cloakonnpc "���m�V���W���E�q#ilp16";
+		cloakonnpc "兵士シンジュウヒ#ilp16";
 		end;
 	}
 	else {
-		mes "�c�Ȃ��ꂽ��Ԃ̌�������";
-		mes "�������f��B";
-		mes "�ǂ����悤���ȁH";
+		mes "歪曲された空間の向こうに";
+		mes "何かが映る。";
+		mes "どうしようかな？";
 		next;
-		if(select("�i������","��߂�") == 2) {
-			mes "���͂�߂Ă������B";
+		if(select("進入する","やめる") == 2) {
+			mes "今はやめておこう。";
 			close;
 		}
 		warp "pay_d03_i.gat",140,44;
@@ -930,170 +930,170 @@ pay_dun03.gat,140,46,3	script	�h�炮���#ilp14	10043,{
 	}
 }
 
-pay_dun03.gat,138,43,7	script	�N�w�m#ilp15	92,{
+pay_dun03.gat,138,43,7	script	青年学士#ilp15	92,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-pay_dun03.gat,142,45,3	script	���m�V���W���E�q#ilp16	708,{
+pay_dun03.gat,142,45,3	script	兵士シンジュウヒ#ilp16	708,{
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-pay_d03_i.gat,149,45,4	script	�w�m�z�h�j#ilp18	92,{
+pay_d03_i.gat,149,45,4	script	学士ホドニ#ilp18	92,{
 	if(IL_MOON_QUE == 6) {
-		mes "[�z�h�j]";
-		mes "������Ƃ����������ĉ������I";
-		mes "��قǎ�����������";
-		mes "�p���ɊԈႢ�Ȃ��̂�";
-		mes "��������Ȃ��悤�ɂ������܂��I";
+		mes "[ホドニ]";
+		mes "ちょっとこっちを見て下さい！";
+		mes "先ほど私たちがいた";
+		mes "廃村に間違いないのに";
+		mes "そうじゃないようにも見えます！";
 		next;
-		mes "[�z�h�j]";
-		mes "�����ɂ���l������";
-		mes "����ς����������l�q���ςł��B";
-		mes "���ɖ��Ȗ��@�g����";
-		mes "��������Ă���̂ł���";
-		mes "���̎����̌����ł͂Ȃ���ł��傤���H";
+		mes "[ホドニ]";
+		mes "ここにいる人たちも";
+		mes "九尾狐たちも何か様子が変です。";
+		mes "特に妙な魔法使いが";
+		mes "歩き回っているのですが";
+		mes "この事件の元凶ではないんでしょうか？";
 		next;
-		mes "[�z�h�j]";
-		mes "�����ċ���ς����I";
-		mes "�l�X�I���삽���I";
-		mes "�܂�Ő̘b�ɕ�����������";
-		mes "�R����ő������܂������̎���";
-		mes "�߂��Ă��܂����悤�ȁc�c�B";
+		mes "[ホドニ]";
+		mes "そして九尾狐たち！";
+		mes "人々！死霊たち！";
+		mes "まるで昔話に聞いた事件の";
+		mes "山崩れで村が埋まったその時に";
+		mes "戻ってしまったような……。";
 		next;
-		mes "[�z�h�j]";
-		mes "�����I�������K�v�ɂȂ�Ǝv���܂��B";
-		mes "�ܘ_�A���͂��Ē����܂���ˁH";
+		mes "[ホドニ]";
+		mes "調査！調査が必要になると思います。";
+		mes "勿論、協力して頂けますよね？";
 		next;
-		mes "[�z�h�j]";
-		mes "�������ł�����";
-		mes "�b�����ĉ������B";
+		mes "[ホドニ]";
+		mes "準備ができたら";
+		mes "話かけて下さい。";
 		chgquest 7781,7783;
 		set IL_MOON_QUE,7;
 		close;
 	}
 	else if(IL_MOON_QUE == 7) {
-		mes "[�z�h�j]";
-		mes "�����̐l�X���畷�����b��";
-		mes "���������@�g���̂��Ƃ΂���ł����B";
+		mes "[ホドニ]";
+		mes "ここの人々から聞けた話は";
+		mes "怪しい魔法使いのことばかりでした。";
 		next;
-		mes "[�z�h�j]";
-		mes "�����l�����ɑ喂�@���g��";
-		mes "���̂����Œn�Ղ������";
-		mes "�R���ꂪ�N���������ł��B";
-		mes "������O���Ǝv������";
-		mes "����Ȏ����Ȃ�Z����";
-		mes "�������񎀂񂾂�ł��傤�ˁB";
+		mes "[ホドニ]";
+		mes "何も考えずに大魔法を使い";
+		mes "そのせいで地盤が崩れて";
+		mes "山崩れが起きたそうです。";
+		mes "当たり前だと思うけど";
+		mes "そんな事件なら住民も";
+		mes "たくさん死んだんでしょうね。";
 		next;
-		mes "[�z�h�j]";
-		mes "������l���Ă��A�����̌�����";
-		mes "���̉��������@�g���ł��傤�B";
-		mes "�����̌��������������";
-		mes "���̈����͋�̉����ꂸ";
-		mes "������̂ł͂Ȃ��ł��傤���H";
+		mes "[ホドニ]";
+		mes "いくら考えても、悪夢の元凶は";
+		mes "その怪しい魔法使いでしょう。";
+		mes "悪夢の元凶を除去すれば";
+		mes "この悪夢は具体化されず";
+		mes "消えるのではないでしょうか？";
 		next;
-		mes "[�z�h�j]";
-		mes "���ۂɂ͖��@�g����";
-		mes "�����֘A�̖����l���ł���";
-		mes "�\��������܂���";
-		mes "���ׂĂ݂鉿�l��";
-		mes "����ƍl���Ă��܂��B";
+		mes "[ホドニ]";
+		mes "実際には魔法使いは";
+		mes "何も関連の無い人物である";
+		mes "可能性もありますが";
+		mes "調べてみる価値は";
+		mes "あると考えています。";
 		next;
-		mes "[�z�h�j]";
-		mes "��������̌��ōł��d�v�Ȃ̂�";
-		mes "���ƌ����̋��E���Ȃ����ꂽ�̂��ł��B";
-		mes "���̏ꏊ�ł����̂悤�Ȃ��Ƃ�";
-		mes "�܂���������̂ł��傤���H";
+		mes "[ホドニ]";
+		mes "ただ今回の件で最も重要なのは";
+		mes "夢と現実の境界がなぜ崩れたのかです。";
+		mes "他の場所でもこのようなことが";
+		mes "また発生するのでしょうか？";
 		next;
-		mes "[�z�h�j]";
-		mes "�Ƃɂ����������Ă݂܂��傤�B";
-		mes "^4d4dff�^���̖��@�g��^000000��";
-		mes "���Ȃ苭�͂����Ɍ�����̂�";
-		mes "�C��t���Ă��������B";
-		mes "�`���җl�̒��Ԃ�����Ȃ�ꏏ��";
-		mes "���肷�鎖�������߂��܂��B";
+		mes "[ホドニ]";
+		mes "とにかく調査してみましょう。";
+		mes "^4d4dff真理の魔法使い^000000は";
+		mes "かなり強力そうに見えるので";
+		mes "気を付けてください。";
+		mes "冒険者様の仲間がいるなら一緒に";
+		mes "相手する事をお勧めします。";
 		next;
-		if(select("����������","�f��") == 2) {
-			mes "[�z�h�j]";
-			mes "�����c�c�ł͑��̗v�f��";
-			mes "�������邵������܂���ˁI";
-			mes "�ܘ_�A����̂��Ƃ�";
-			mes "�����`���җl�����񂾂�͂��܂��񂪁I";
+		if(select("調査をする","断る") == 2) {
+			mes "[ホドニ]";
+			mes "うう……では他の要素を";
+			mes "調査するしかありませんね！";
+			mes "勿論、今回のことで";
+			mes "私が冒険者様を恨んだりはしませんが！";
 			close;
 		}
-		mes "[�z�h�j]";
-		mes "�������̊Ԃ�";
-		mes "���͂𒲂ׂĂ݂܂��̂�";
-		mes "�����o������";
-		mes "������x�b�������Ă��������B";
+		mes "[ホドニ]";
+		mes "私もその間に";
+		mes "周囲を調べてみますので";
+		mes "少し経ったら";
+		mes "もう一度話しかけてください。";
 		chgquest 7783,7782;
 		set IL_MOON_QUE,8;
 		close;
 	}
 	else if(IL_MOON_QUE == 8) {
-		mes "[�z�h�j]";
-		mes "���҂����������܂����B";
-		mes "���ƂȂ�����̌���";
-		mes "�������͂߂Ă��܂�����B";
+		mes "[ホドニ]";
+		mes "お待たせいたしました。";
+		mes "何となく今回の件の";
+		mes "原因が掴めてきましたよ。";
 		next;
-		mes "[�z�h�j]";
-		mes "���q�����������Ă������Ƃ�";
-		mes "�o���Ă��܂����H";
-		mes "�ς̈�������̉����ꂽ��";
-		mes "�����Ă����̂��B";
+		mes "[ホドニ]";
+		mes "ムヒョンが言っていたことを";
+		mes "覚えていますか？";
+		mes "狐の悪夢が具体化されたと";
+		mes "言っていたのを。";
 		next;
-		mes "[�z�h�j]";
-		mes "���ӂ𒲍����Ȃ���";
-		mes "�l���Ă݂܂�����";
-		mes "�����͂�͂茎��Ԃ����o����";
-		mes "�����̂悤�ł��B";
+		mes "[ホドニ]";
+		mes "周辺を調査しながら";
+		mes "考えてみましたが";
+		mes "ここはやはり月夜花が作り出した";
+		mes "悪夢のようです。";
 		next;
-		mes "[�z�h�j]";
-		mes "�ǂ����Ĉ�����������";
-		mes "�q����悤�ɂȂ����̂�";
-		mes "������܂��񂪁A�ЂƂ���";
-		mes "�m���Ȃ��Ƃ�����܂��B";
+		mes "[ホドニ]";
+		mes "どうして悪夢が現実と";
+		mes "繋がるようになったのか";
+		mes "分かりませんが、ひとつだけ";
+		mes "確かなことがあります。";
 		next;
-		mes "[�z�h�j]";
-		mes "����Ԃ��ߋ��̎�����";
-		mes "�܂��Y��Ă��Ȃ��Ƃ������Ƃł��B";
+		mes "[ホドニ]";
+		mes "月夜花が過去の事件を";
+		mes "まだ忘れていないということです。";
 		next;
-		mes "[�z�h�j]";
-		mes "�����̎�����";
-		mes "�傫���ȋ�ɂƂ��Ďc��";
-		mes "�����݂܂ō��݂Ƃ���";
-		mes "�ς��葱���Ă����悤�ł��B";
-		mes "���ꂪ�����̐؂��|����";
-		mes "���������̂ł͂Ȃ����Ɓc�c�B";
+		mes "[ホドニ]";
+		mes "当時の事件が";
+		mes "大きいな苦痛として残り";
+		mes "今現在まで恨みとして";
+		mes "積もり続けていたようです。";
+		mes "それが何かの切っ掛けで";
+		mes "爆発したのではないかと……。";
 		next;
-		mes "[�z�h�j]";
-		mes "�܂��m��Ȃ�������";
-		mes "����Ǝv���܂��񂩁H";
-		mes "��������������";
-		mes "�����𑱂��悤�Ǝv���܂��B";
+		mes "[ホドニ]";
+		mes "まだ知らない事実が";
+		mes "あると思いませんか？";
+		mes "もう少しここで";
+		mes "調査を続けようと思います。";
 		next;
-		mes "[�z�h�j]";
-		mes "���̂��Ƃ��t�F�C�������{�ɂ���";
-		mes "���q�����ɂ��`���ĉ������B";
-		mes "���͂���܂ł̊�";
-		mes "�W���E�q�ƈꏏ��";
-		mes "�t�߂�����Ē��ׂĂ݂܂��B";
+		mes "[ホドニ]";
+		mes "このことをフェイヨン離宮にいる";
+		mes "ムヒョンにも伝えて下さい。";
+		mes "私はそれまでの間";
+		mes "ジュウヒと一緒に";
+		mes "付近を回って調べてみます。";
 		next;
-		mes "[�z�h�j]";
-		mes "���̌��ۂɑ΂���";
-		mes "��������̉𓚂�";
-		mes "�o��Ȃ炢���ł����B";
+		mes "[ホドニ]";
+		mes "この現象に対する";
+		mes "何かしらの解答が";
+		mes "出るならいいですが。";
 		if(checkitemblank() == 0) {
 			next;
-			mes "[�z�h�j]";
-			mes "�����̂����";
-			mes "�n�����Ǝv�����̂ł���";
-			mes "���Ă����ɂ���܂���ˁB";
+			mes "[ホドニ]";
+			mes "調査のお礼を";
+			mes "渡そうと思ったのですが";
+			mes "持てそうにありませんね。";
 			close;
 		}
 		chgquest 7782,7788;
@@ -1103,106 +1103,106 @@ pay_d03_i.gat,149,45,4	script	�w�m�z�h�j#ilp18	92,{
 		getitem 25271, 5;
 		close;
 	}
-	mes "[�z�h�j]";
-	mes "�܂��m��Ȃ�������";
-	mes "����Ǝv���܂��񂩁H";
-	mes "��������������";
-	mes "�����𑱂��悤�Ǝv���܂��B";
+	mes "[ホドニ]";
+	mes "まだ知らない事実が";
+	mes "あると思いませんか？";
+	mes "もう少しここで";
+	mes "調査を続けようと思います。";
 	next;
-	mes "[�z�h�j]";
-	mes "���̌��ۂɑ΂���";
-	mes "��������̉𓚂�";
-	mes "�o��Ȃ炢���ł����B";
+	mes "[ホドニ]";
+	mes "この現象に対する";
+	mes "何かしらの解答が";
+	mes "出るならいいですが。";
 	close;
 }
 
-pay_d03_i.gat,152,45,3	script	���m�V���W���E�q#ilp17	708,{
+pay_d03_i.gat,152,45,3	script	兵士シンジュウヒ#ilp17	708,{
 	if(IL_MOON_QUE <= 6) {
-		mes "[�W���E�q]";
-		mes "���̑΍���Ȃ��܂�";
-		mes "�����������犴���Ă܂������A";
-		mes "�����̊ԁA�z�h�j�ƈꏏ��";
-		mes "�s�������Ȃ���΂Ȃ�Ȃ������ł��ˁB";
+		mes "[ジュウヒ]";
+		mes "何の対策もないまま";
+		mes "入った時から感じてましたが、";
+		mes "少しの間、ホドニと一緒に";
+		mes "行動をしなければならなさそうですね。";
 		next;
-		mes "[�W���E�q]";
-		mes "�����������̋���ς�";
-		mes "�S�삽������悭�Ȃ��C�z���������܂��B";
-		mes "�c����͍��������ƂɂȂ�܂����B";
+		mes "[ジュウヒ]";
+		mes "何よりもここの九尾狐は";
+		mes "亡霊たちからよくない気配が感じられます。";
+		mes "…これは困ったことになりました。";
 		close;
 	}
-	mes "[�W���E�q]";
-	mes "�����ɓ����ė�������";
-	mes "���l�̘c�Ȃ��ꂽ��Ԃ�����܂��B";
-	mes "�G��Ă݂�ƌ��̔p����";
-	mes "�o�鎖���o���܂����B";
+	mes "[ジュウヒ]";
+	mes "ここに入って来た時と";
+	mes "同様の歪曲された空間があります。";
+	mes "触れてみると元の廃村に";
+	mes "出る事が出来ました。";
 	next;
-	menu "�{��̋���ςɂ���",-;
+	menu "怒りの九尾狐について",-;
 	if(checkquest(7785)) {
 		if(checkquest(7785)&2 == 0) {
-			mes "[�W���E�q]";
-			mes "����ς̓{���";
-			mes "��U�����������悤�ł��ˁB";
-			mes "^4d4dff���̌ߑO5�����߂�����^000000";
-			mes "�܂����Ă��������B";
+			mes "[ジュウヒ]";
+			mes "九尾狐の怒りは";
+			mes "一旦落ち着いたようですね。";
+			mes "^4d4dff次の午前5時を過ぎたら^000000";
+			mes "また来てください。";
 			next;
-			mes "[�W���E�q]";
-			mes "�z�h�j�̒����ɂ���";
-			mes "�����͌���Ԃ̈����̒��������ł��B";
-			mes "���e�ɂ����Ȃ�����ςł���";
-			mes "�����炪������";
-			mes "�����Ă���l�ɊQ���y�ڂ��Ȃ�";
-			mes "�ގ�����͓̂��R���ƍl���Ă��܂��B";
+			mes "[ジュウヒ]";
+			mes "ホドニの調査によれば";
+			mes "ここは月夜花の悪夢の中だそうです。";
+			mes "幻影にすぎない九尾狐ですが";
+			mes "こいつらが万が一";
+			mes "生きている人に害を及ぼすなら";
+			mes "退治するのは当然だと考えています。";
 			next;
-			mes "[�W���E�q]";
-			mes "����Ɏ��߂�";
-			mes "�����Ȃ��z���ƌ����Ă�";
-			mes "�Ԃ����t�͂���܂���B";
-			mes "���ꂶ�ᎄ�̓z�h�j�ƈꏏ��";
-			mes "���̏ꏊ��������Ă݂邱�Ƃɂ��܂��B";
+			mes "[ジュウヒ]";
+			mes "死霊に慈悲も";
+			mes "持たない奴だと言われても";
+			mes "返す言葉はありません。";
+			mes "それじゃ私はホドニと一緒に";
+			mes "他の場所を見回ってみることにします。";
 			close;
 		}
 		delquest 7785;
-		mes "[�W���E�q]";
-		mes "�����͋x�߂܂������H";
-		mes "�ω��̂Ȃ�����ł����z�h�j��";
-		mes "�t�߂̒������~���ɍs�����߂�";
-		mes "���ӂ𐮗��������̂�";
-		mes "^4d4dff�{��̋����^000000��";
-		mes "�����ގ����Ă���܂��񂩁H";
+		mes "[ジュウヒ]";
+		mes "少しは休めましたか？";
+		mes "変化のない日常ですがホドニが";
+		mes "付近の調査を円滑に行うために";
+		mes "周辺を整理したいので";
+		mes "^4d4dff怒りの九尾狐^000000を";
+		mes "少し退治してくれませんか？";
 		next;
-		if(select("�������","�f��") == 2) {
-			mes "[�W���E�q]";
-			mes "�����܂Œ����ɏo�����邱�Ƃ�";
-			mes "�o���Ȃ������ł��ˁB";
+		if(select("受託する","断る") == 2) {
+			mes "[ジュウヒ]";
+			mes "遠くまで調査に出かけることは";
+			mes "出来なさそうですね。";
 			close;
 		}
-		mes "[�W���E�q]";
-		mes "����ł͂��肢���܂��B";
-		mes "^4d4dff�{��̋����^000000��";
-		mes "�S��𗝉��ł��Ȃ��킯�ł�";
-		mes "����܂��񂯂ǁA����͂���";
-		mes "����͂���ł�����B";
+		mes "[ジュウヒ]";
+		mes "それではお願いします。";
+		mes "^4d4dff怒りの九尾狐^000000の";
+		mes "心情を理解できないわけでは";
+		mes "ありませんけど、それはそれ";
+		mes "これはこれですから。";
 		setquest 7784;
 		close;
 	}
 	if(checkquest(7784)) {
 		if(checkquest(7784)&4 == 0) {
-			mes "[�W���E�q]";
-			mes "���ӂɂ���^4d4dff�{��̋����^000000��";
-			mes "�ގ����Ă��������B";
-			mes "�z�h�j�̒��������������~���ɂȂ�ׂł��B";
+			mes "[ジュウヒ]";
+			mes "周辺にいる^4d4dff怒りの九尾狐^000000を";
+			mes "退治してください。";
+			mes "ホドニの調査がもう少し円滑になる為です。";
 			close;
 		}
-		mes "[�W���E�q]";
-		mes "���ꂪ���̂ł��낤���Ȃ��낤��";
-		mes "�댯�v�f�ɂȂ�̂͊ԈႢ����܂���B";
-		mes "�悭�������ĉ������܂����B";
+		mes "[ジュウヒ]";
+		mes "これが実体であろうがなかろうが";
+		mes "危険要素になるのは間違いありません。";
+		mes "よく処理して下さいました。";
 		next;
-		mes "[�W���E�q]";
-		mes "�z�h�j�̒������I����";
-		mes "�������Ă���悤�ł���";
-		mes "���낻��A�҂̏�����";
-		mes "���Ă����������悳�����ł��ˁB";
+		mes "[ジュウヒ]";
+		mes "ホドニの調査も終わりに";
+		mes "向かっているようですし";
+		mes "そろそろ帰還の準備を";
+		mes "しておいた方がよさそうですね。";
 		setquest 7785;
 		delquest 7784;
 		getexp 300000000,0,1;
@@ -1210,97 +1210,97 @@ pay_d03_i.gat,152,45,3	script	���m�V���W���E�q#ilp17	708,{
 		getitem 25271,15;
 		close;
 	}
-	mes "[�W���E�q]";
-	mes "�߂�����{��̋���ς�����";
-	mes "�������ɗ��ăz�h�j�͒�����";
-	mes "��J���Ă���݂����ł��B";
-	mes "�`���җl�ɋ���ς����̑ގ���";
-	mes "���肢�������ł����c�c�B";
+	mes "[ジュウヒ]";
+	mes "近くいる怒りの九尾狐たちが";
+	mes "脅かしに来てホドニは調査に";
+	mes "苦労しているみたいです。";
+	mes "冒険者様に九尾狐たちの退治を";
+	mes "お願いしたいですが……。";
 	next;
-	if(select("�������","�f��") == 2) {
-		mes "[�W���E�q]";
-		mes "�����ł����B";
-		mes "�����Ȃ�Ɖ����܂�";
-		mes "�����ɏo�����邱�Ƃ�";
-		mes "�o���Ȃ������ł��ˁB";
+	if(select("受諾する","断る") == 2) {
+		mes "[ジュウヒ]";
+		mes "そうですか。";
+		mes "そうなると遠くまで";
+		mes "調査に出かけることは";
+		mes "出来なさそうですね。";
 		close;
 	}
-	mes "[�W���E�q]";
-	mes "����ł͂��肢���܂��B";
-	mes "^4d4dff�{��̋����^000000��";
-	mes "�S��𗝉��ł��Ȃ��킯�ł�";
-	mes "����܂��񂯂ǁA����͂���";
-	mes "����͂���ł�����B";
+	mes "[ジュウヒ]";
+	mes "それではお願いします。";
+	mes "^4d4dff怒りの九尾狐^000000の";
+	mes "心情を理解できないわけでは";
+	mes "ありませんけど、それはそれ";
+	mes "これはこれですから。";
 	setquest 7784;
 	close;
 }
 
-pay_d03_i.gat,140,46,3	script	�h�炮���#ilp10	10043,{
-	mes "���̔p���ɖ߂邱�Ƃ��ł���B";
-	mes "�ǂ����悤���ȁH";
+pay_d03_i.gat,140,46,3	script	揺らぐ空間#ilp10	10043,{
+	mes "元の廃村に戻ることができる。";
+	mes "どうしようかな？";
 	next;
-	if(select("�߂�","�߂�Ȃ�") == 2) {
-		mes "���͂�߂Ă������B";
+	if(select("戻る","戻らない") == 2) {
+		mes "今はやめておこう。";
 		close;
 	}
 	warp "pay_dun03.gat",145,43;
 	end;
 }
 
-pay_d03_i.gat,82,237,3	script	���l#ilp17	75,{
-	mes "[���l]";
-	mes "���c�c�����c�c";
+pay_d03_i.gat,82,237,3	script	村人#ilp17	75,{
+	mes "[村人]";
+	mes "あ……ああ……";
 	close;
 }
 
-pay_d03_i.gat,254,206,3	script	���l#ilp18	90,{
-	mes "[���l]";
-	mes "����͈Ⴄ�c�c�I";
-	mes "���@���A���@���~�߂āc�c�I";
-	mes "���A�����!!���Ⴀ��!!";
+pay_d03_i.gat,254,206,3	script	村人#ilp18	90,{
+	mes "[村人]";
+	mes "それは違う……！";
+	mes "魔法を、魔法を止めて……！";
+	mes "く、崩れる!!きゃああ!!";
 	close;
 }
 
-pay_d03_i.gat,81,136,3	script	���l#ilp19	59,{
-	mes "[���l]";
-	mes "����������������";
-	mes "���������ƁH";
-	mes "�_�b�Ɩ�����";
-	mes "��ʂł��Ȃ��z�炪�c�c�I";
+pay_d03_i.gat,81,136,3	script	村人#ilp19	59,{
+	mes "[村人]";
+	mes "いったい私たちが";
+	mes "何をしたと？";
+	mes "神獣と魔物も";
+	mes "区別できない奴らが……！";
 	next;
-	mes "[���l]";
-	mes "�c�c�����c�c�ϗl�B";
-	mes "�����āc�c�����Ă�c�c!!";
+	mes "[村人]";
+	mes "……ああ……狐様。";
+	mes "助けて……助けてよ……!!";
 	close;
 }
 
-pay_d03_i.gat,160,260,3	script	���l#ilp21	59,{
-	mes "[���l]";
-	mes "���������A���Ȃ��B�́c�c�B";
-	mes "���̉��������@�g����";
-	mes "�Ȃ����������c�c�B";
+pay_d03_i.gat,160,260,3	script	村人#ilp21	59,{
+	mes "[村人]";
+	mes "いったい、あなた達は……。";
+	mes "あの怪しい魔法使いは";
+	mes "なぜ私たちを……。";
 	next;
-	mes "[���l]";
-	mes "���O���c�c";
-	mes "���O�����̎҂����Ɠ�����!!";
-	mes "����������������!!";
+	mes "[村人]";
+	mes "お前も……";
+	mes "お前もあの者たちと同じだ!!";
+	mes "私たちが何をした!!";
 	close;
 }
 
-pay_d03_i.gat,43,150,5	script	���l#ilp22	75,{
-	mes "[���l]";
-	mes "�ǂ�����������";
-	mes "�����Ă����Ă��������I";
+pay_d03_i.gat,43,150,5	script	村人#ilp22	75,{
+	mes "[村人]";
+	mes "どうか私たちを";
+	mes "放っておいてください！";
 	next;
-	mes "[���l]";
-	mes "�������͖�����";
-	mes "�d�������͂���܂���B";
+	mes "[村人]";
+	mes "私たちは魔物に";
+	mes "仕えるつもりはありません。";
 	next;
-	mes "[���l]";
-	mes "���c�c�����c�c";
-	mes "���@�c�c���@���c�c�~�߂Ă��������B";
-	mes "�ǂ����c�c";
-	mes "���@���~�߂Ă��������B�ǂ����c";
+	mes "[村人]";
+	mes "あ……光が……";
+	mes "魔法……魔法を……止めてください。";
+	mes "どうか……";
+	mes "魔法を止めてください。どうか…";
 	close;
 }
 
@@ -1316,11 +1316,11 @@ OnInit:
 
 OnSummon1:
 	if('mob1 == 0 && rand(1000) == 0) {
-		set 'mob1,areacallmonster("pay_d03_i.gat",40,35,160,115,"�^���̖��@�g��",3764,strnpcinfo(0)+"::OnKilled1");
+		set 'mob1,areacallmonster("pay_d03_i.gat",40,35,160,115,"真理の魔法使い",3764,strnpcinfo(0)+"::OnKilled1");
 		set '@dummy,getmapxy('@map$,'@x,'@y,3,'mob1);
-		mobuseskillpos 'mob1,21,10,'@x,'@y,0,0;	// �T���_�[�X�g�[��
-		mobuseskill 'mob1,730,1,0,0,0,1;	// M�����w
-		unittalk 'mob1,"�^���̖��@�g�� : �^���̂��߂̑b�ɂȂ�Ȃ���";
+		mobuseskillpos 'mob1,21,10,'@x,'@y,0,0;	// サンダーストーム
+		mobuseskill 'mob1,730,1,0,0,0,1;	// M呪縛陣
+		unittalk 'mob1,"真理の魔法使い : 真理のための礎になりなさい";
 	}
 	else {
 		areamonster "pay_d03_i.gat",40,35,160,115,"--ja--",3759+rand(3),1,strnpcinfo(0)+"::OnSummon1";
@@ -1332,11 +1332,11 @@ OnKilled1:
 	end;
 OnSummon2:
 	if('mob2 == 0 && rand(1000) == 0) {
-		set 'mob2,areacallmonster("pay_d03_i.gat",40,140,160,260,"�^���̖��@�g��",3764,strnpcinfo(0)+"::OnKilled2");
+		set 'mob2,areacallmonster("pay_d03_i.gat",40,140,160,260,"真理の魔法使い",3764,strnpcinfo(0)+"::OnKilled2");
 		set '@dummy,getmapxy('@map$,'@x,'@y,3,'mob2);
-		mobuseskillpos 'mob2,21,10,'@x,'@y,0,0;	// �T���_�[�X�g�[��
-		mobuseskill 'mob2,730,1,0,0,0,1;	// M�����w
-		unittalk 'mob2,"�^���̖��@�g�� : �^���̂��߂̑b�ɂȂ�Ȃ���";
+		mobuseskillpos 'mob2,21,10,'@x,'@y,0,0;	// サンダーストーム
+		mobuseskill 'mob2,730,1,0,0,0,1;	// M呪縛陣
+		unittalk 'mob2,"真理の魔法使い : 真理のための礎になりなさい";
 	}
 	else {
 		areamonster "pay_d03_i.gat",40,140,160,260,"--ja--",3759+rand(3),1,strnpcinfo(0)+"::OnSummon2";
@@ -1348,11 +1348,11 @@ OnKilled2:
 	end;
 OnSummon3:
 	if('mob3 == 0 && rand(1000) == 0) {
-		set 'mob3,areacallmonster("pay_d03_i.gat",150,180,270,260,"�^���̖��@�g��",3764,strnpcinfo(0)+"::OnKilled3");
+		set 'mob3,areacallmonster("pay_d03_i.gat",150,180,270,260,"真理の魔法使い",3764,strnpcinfo(0)+"::OnKilled3");
 		set '@dummy,getmapxy('@map$,'@x,'@y,3,'mob3);
-		mobuseskillpos 'mob3,21,10,'@x,'@y,0,0;	// �T���_�[�X�g�[��
-		mobuseskill 'mob3,730,1,0,0,0,1;	// M�����w
-		unittalk 'mob3,"�^���̖��@�g�� : �^���̂��߂̑b�ɂȂ�Ȃ���";
+		mobuseskillpos 'mob3,21,10,'@x,'@y,0,0;	// サンダーストーム
+		mobuseskill 'mob3,730,1,0,0,0,1;	// M呪縛陣
+		unittalk 'mob3,"真理の魔法使い : 真理のための礎になりなさい";
 	}
 	else {
 		areamonster "pay_d03_i.gat",150,180,270,260,"--ja--",3759+rand(3),1,strnpcinfo(0)+"::OnSummon3";

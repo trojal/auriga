@@ -3,243 +3,243 @@
 //==============================================================================
 
 //============================================================
-// �����̋��� ���̒ʘH01 NPC
+// 次元の狭間 時の通路01 NPC
 //------------------------------------------------------------
-mid_camp.gat,207,290,5	script	�����̋��Ԃ̈ē���#gk01	852,{
-	mes "[���������t�B��]";
-	mes "�����̋��ԓ����ɍs�������̂ł����H";
-	mes "����Ȃ�A�����ɂ��鎟���ړ��@��";
-	mes "�g���Ă��������B";
+mid_camp.gat,207,290,5	script	次元の狭間の案内員#gk01	852,{
+	mes "[遠征隊員フィル]";
+	mes "次元の狭間内部に行きたいのですか？";
+	mes "それなら、そこにある次元移動機を";
+	mes "使ってください。";
 	next;
-	if(select("�����̋��Ԃɂ��ĕ���","��b���I��点��") == 2) {
-		mes "�]���Ȃ��͂��̏ꂩ�痣�ꂽ�]";
+	if(select("次元の狭間について聞く","会話を終わらせる") == 2) {
+		mes "‐あなたはその場から離れた‐";
 		close;
 	}
-	mes "[���������t�B��]";
-	mes "�����O����A�������͎����̋��Ԃ�";
-	mes "���p���āA�����ƃ~�b�h�K���h��";
-	mes "�s�������Ă��邶�Ⴀ��܂��񂩁H";
-	mes "������̋��Ԃ��A����������";
-	mes "�ʘH�̂悤�Ȃ��̂���";
-	mes "�l���Ă���������΂����Ǝv���܂��B";
+	mes "[遠征隊員フィル]";
+	mes "少し前から、私たちは次元の狭間を";
+	mes "利用して、こことミッドガルドを";
+	mes "行き来しているじゃありませんか？";
+	mes "こちらの狭間も、そういった";
+	mes "通路のようなものだと";
+	mes "考えていただければいいと思います。";
 	next;
-	mes "[���������t�B��]";
-	mes "�����̋��Ԃ̒���ʂ邱�Ƃ�";
-	mes "���낢��ȏꏊ�Ɉړ�������@��";
-	mes "�������ꂽ��ł��B";
+	mes "[遠征隊員フィル]";
+	mes "次元の狭間の中を通ることで";
+	mes "いろいろな場所に移動する方法が";
+	mes "発見されたんです。";
 	next;
-	mes "[���������t�B��]";
-	mes "����ŁA���萫�̊m�F���Ƃꂽ�ʘH��";
-	mes "���J���ꂽ�̂ł��B";
-	mes "����ŁA�r�t���X�g�ƃ����N�A";
-	mes "�G���f�B�J�X�e�B�X�ւ�";
-	mes "�ړ����y�ɂȂ�܂����B";
+	mes "[遠征隊員フィル]";
+	mes "それで、安定性の確認がとれた通路が";
+	mes "公開されたのです。";
+	mes "これで、ビフロストとモロク、";
+	mes "エルディカスティスへの";
+	mes "移動が楽になりました。";
 	next;
-	mes "[���������t�B��]";
-	mes "�����̋��Ԃ͎��ԂƋ�Ԃ�";
-	mes "�c�񂾏ꏊ�ł��B";
-	mes "�������ɖ����Ă��܂�����";
-	mes "�ǂ��ɕ���o����邩�킩��܂���B";
-	mes "�����ς݂̒n��̂ݗ��p���Ă��������B";
+	mes "[遠征隊員フィル]";
+	mes "次元の狭間は時間と空間が";
+	mes "歪んだ場所です。";
+	mes "もし道に迷ってしまったら";
+	mes "どこに放り出されるかわかりません。";
+	mes "調査済みの地域のみ利用してください。";
 	next;
-	mes "[���������t�B��]";
-	mes "���Ŗ��q�ɂȂ�Ƌ~�o�͍���ł��̂�";
-	mes "���ꂮ����C��t���Ă��������B";
+	mes "[遠征隊員フィル]";
+	mes "中で迷子になると救出は困難ですので";
+	mes "くれぐれも気を付けてください。";
 	close;
 }
 
-mid_camp.gat,212,290,3	script	�����̋��Ԃ̈ē���#gk02	852,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs����������";
-	mes "�����ړ��@�𗘗p���Ă��������B";
-	mes "�����̋��ԓ�����";
-	mes "�܂��T�����̒ʘH������܂��̂�";
-	mes "���ɖ���Ȃ��l�ɋC��t���ĉ������B";
+mid_camp.gat,212,290,3	script	次元の狭間の案内員#gk02	852,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたい方は";
+	mes "次元移動機を利用してください。";
+	mes "次元の狭間内部は";
+	mes "まだ探索中の通路もありますので";
+	mes "道に迷わない様に気を付けて下さい。";
 	close;
 }
 
-moc_fild22b.gat,225,198,5	script	�����̋��Ԃ̈ē���#gk03	707,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs�������̂ł����H";
-	mes "����Ȃ�A�����ɂ��鎟���ړ��@��";
-	mes "�g���Ă��������B";
+moc_fild22b.gat,225,198,5	script	次元の狭間の案内員#gk03	707,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたいのですか？";
+	mes "それなら、そこにある次元移動機を";
+	mes "使ってください。";
 	next;
-	if(select("�����̋��Ԃɂ��ĕ���","��b�I��") == 2) {
-		mes "�]���Ȃ��͂��̏ꂩ�痣�ꂽ�]";
+	if(select("次元の狭間について聞く","会話終了") == 2) {
+		mes "‐あなたはその場から離れた‐";
 		close;
 	}
-	mes "[��������]";
-	mes "�����O����A�������͎����̋��Ԃ�";
-	mes "���p���āA�����ƃ~�b�h�K���h��";
-	mes "�s�������Ă��邶�Ⴀ��܂��񂩁H";
-	mes "������̋��Ԃ��A����������";
-	mes "�ʘH�̂悤�Ȃ��̂���";
-	mes "�l���Ă���������΂����Ǝv���܂��B";
+	mes "[遠征隊員]";
+	mes "少し前から、私たちは次元の狭間を";
+	mes "利用して、こことミッドガルドを";
+	mes "行き来しているじゃありませんか？";
+	mes "こちらの狭間も、そういった";
+	mes "通路のようなものだと";
+	mes "考えていただければいいと思います。";
 	next;
-	mes "[��������]";
-	mes "�����̋��Ԃ̒���ʂ邱�Ƃ�";
-	mes "���낢��ȏꏊ�Ɉړ�������@��";
-	mes "�������ꂽ��ł��B";
+	mes "[遠征隊員]";
+	mes "次元の狭間の中を通ることで";
+	mes "いろいろな場所に移動する方法が";
+	mes "発見されたんです。";
 	next;
-	mes "[��������]";
-	mes "����ŁA���萫�̊m�F���Ƃꂽ�ʘH��";
-	mes "���J���ꂽ�̂ł��B";
-	mes "����ŁA�r�t���X�g�ƃ����N�A";
-	mes "�G���f�B�J�X�e�B�X�ւ�";
-	mes "�ړ����y�ɂȂ�܂����B";
+	mes "[遠征隊員]";
+	mes "それで、安定性の確認がとれた通路が";
+	mes "公開されたのです。";
+	mes "これで、ビフロストとモロク、";
+	mes "エルディカスティスへの";
+	mes "移動が楽になりました。";
 	next;
-	mes "[��������]";
-	mes "�����̋��Ԃ͎��ԂƋ�Ԃ�";
-	mes "�c�񂾏ꏊ�ł��B";
-	mes "�������ɖ����Ă��܂�����";
-	mes "�ǂ��ɕ���o����邩�킩��܂���B";
-	mes "�����ς݂̒n��̂ݗ��p���Ă��������B";
+	mes "[遠征隊員]";
+	mes "次元の狭間は時間と空間が";
+	mes "歪んだ場所です。";
+	mes "もし道に迷ってしまったら";
+	mes "どこに放り出されるかわかりません。";
+	mes "調査済みの地域のみ利用してください。";
 	next;
-	mes "[��������]";
-	mes "���ꂮ����C��t���Ă��������B";
+	mes "[遠征隊員]";
+	mes "くれぐれも気を付けてください。";
 	close;
 }
 
-moc_fild22b.gat,223,203,3	script	�����̋��Ԃ̈ē���#gk04	707,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs����������";
-	mes "�����ړ��@�𗘗p���Ă��������B";
-	mes "�����̋��ԓ�����";
-	mes "�܂��T�����̒ʘH������܂��̂�";
-	mes "���ɖ���Ȃ��l�ɋC��t���ĉ������B";
+moc_fild22b.gat,223,203,3	script	次元の狭間の案内員#gk04	707,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたい方は";
+	mes "次元移動機を利用してください。";
+	mes "次元の狭間内部は";
+	mes "まだ探索中の通路もありますので";
+	mes "道に迷わない様に気を付けて下さい。";
 	close;
 }
 
-bif_fild01.gat,314,155,5	script	�����̋��Ԃ̈ē���#gk05	852,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs�������̂ł����H";
-	mes "����Ȃ�A�����ɂ��鎟���ړ��@��";
-	mes "�g���Ă��������B";
+bif_fild01.gat,314,155,5	script	次元の狭間の案内員#gk05	852,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたいのですか？";
+	mes "それなら、そこにある次元移動機を";
+	mes "使ってください。";
 	next;
-	switch(select("�����̋��Ԃɂ��ĕ���","�߂��ɉ������l������","��b�I��")) {
+	switch(select("次元の狭間について聞く","近くに怪しい人がいる","会話終了")) {
 	case 1:
-		mes "[��������]";
-		mes "�����O����A�������͎����̋��Ԃ�";
-		mes "���p���āA�����ƃ~�b�h�K���h��";
-		mes "�s�������Ă��邶�Ⴀ��܂��񂩁H";
-		mes "������̋��Ԃ��A����������";
-		mes "�ʘH�̂悤�Ȃ��̂���";
-		mes "�l���Ă���������΂����Ǝv���܂��B";
+		mes "[遠征隊員]";
+		mes "少し前から、私たちは次元の狭間を";
+		mes "利用して、こことミッドガルドを";
+		mes "行き来しているじゃありませんか？";
+		mes "こちらの狭間も、そういった";
+		mes "通路のようなものだと";
+		mes "考えていただければいいと思います。";
 		next;
-		mes "[��������]";
-		mes "�����̋��Ԃ̒���ʂ邱�Ƃ�";
-		mes "���낢��ȏꏊ�Ɉړ�������@��";
-		mes "�������ꂽ��ł��B";
+		mes "[遠征隊員]";
+		mes "次元の狭間の中を通ることで";
+		mes "いろいろな場所に移動する方法が";
+		mes "発見されたんです。";
 		next;
-		mes "[��������]";
-		mes "����ŁA���萫�̊m�F���Ƃꂽ�ʘH��";
-		mes "���J���ꂽ�̂ł��B";
-		mes "����ŁA�r�t���X�g�ƃ����N�A";
-		mes "�G���f�B�J�X�e�B�X�ւ�";
-		mes "�ړ����y�ɂȂ�܂����B";
+		mes "[遠征隊員]";
+		mes "それで、安定性の確認がとれた通路が";
+		mes "公開されたのです。";
+		mes "これで、ビフロストとモロク、";
+		mes "エルディカスティスへの";
+		mes "移動が楽になりました。";
 		next;
-		mes "[��������]";
-		mes "�����̋��Ԃ͎��ԂƋ�Ԃ�";
-		mes "�c�񂾏ꏊ�ł��B";
-		mes "�������ɖ����Ă��܂�����";
-		mes "�ǂ��ɕ���o����邩�킩��܂���B";
-		mes "�����ς݂̒n��̂ݗ��p���Ă��������B";
+		mes "[遠征隊員]";
+		mes "次元の狭間は時間と空間が";
+		mes "歪んだ場所です。";
+		mes "もし道に迷ってしまったら";
+		mes "どこに放り出されるかわかりません。";
+		mes "調査済みの地域のみ利用してください。";
 		next;
-		mes "[��������]";
-		mes "���Ŗ��q�ɂȂ�Ƌ~�o�͍���ł��̂�";
-		mes "���ꂮ����C��t���Ă��������B";
+		mes "[遠征隊員]";
+		mes "中で迷子になると救出は困難ですので";
+		mes "くれぐれも気を付けてください。";
 		close;
 	case 2:
-		mes "[��������]";
-		mes "�������l�H";
-		mes "���c�c�͂��A���̐l�ł��ˁB";
-		mes "�G���f�B�J�X�e�B�X�̈̂�����";
-		mes "���Ԃ̒����ɔh�������l�̂悤�ł��B";
+		mes "[遠征隊員]";
+		mes "怪しい人？";
+		mes "あ……はい、あの人ですね。";
+		mes "エルディカスティスの偉い方が";
+		mes "狭間の調査に派遣した人のようです。";
 		next;
-		mes "[��������]";
-		mes "�Ȃ�ׂ����C���N���Ȃ��l��";
-		mes "���t�B�l���B���w�͂����Ă��܂��B";
-		mes "����ȏ�̏ڂ������Ƃ�";
-		mes "�����悭������܂���B";
+		mes "[遠征隊員]";
+		mes "なるべく摩擦が起きない様に";
+		mes "ラフィネ族達が努力をしています。";
+		mes "それ以上の詳しいことは";
+		mes "私もよく分かりません。";
 		close;
 	case 3:
-		mes "�]���Ȃ��͂��̏ꂩ�痣�ꂽ�]";
+		mes "‐あなたはその場から離れた‐";
 		close;
 	}
 }
 
-bif_fild01.gat,320,154,3	script	�����̋��Ԃ̈ē���#gk06	852,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs����������";
-	mes "�����ړ��@�𗘗p���Ă��������B";
-	mes "�����̋��ԓ�����";
-	mes "�܂��T�����̒ʘH������܂��̂�";
-	mes "���ɖ���Ȃ��l�ɋC��t���ĉ������B";
+bif_fild01.gat,320,154,3	script	次元の狭間の案内員#gk06	852,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたい方は";
+	mes "次元移動機を利用してください。";
+	mes "次元の狭間内部は";
+	mes "まだ探索中の通路もありますので";
+	mes "道に迷わない様に気を付けて下さい。";
 	close;
 }
 
-dic_fild02.gat,236,33,5	script	�����̋��Ԃ̈ē���#gk07	852,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs�������̂ł����H";
-	mes "����Ȃ�A�����ɂ��鎟���ړ��@��";
-	mes "�g���Ă��������B";
+dic_fild02.gat,236,33,5	script	次元の狭間の案内員#gk07	852,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたいのですか？";
+	mes "それなら、そこにある次元移動機を";
+	mes "使ってください。";
 	next;
-	if(select("�����̋��Ԃɂ��ĕ���","��b�I��") == 2) {
-		mes "�]���Ȃ��͂��̏ꂩ�痣�ꂽ�]";
+	if(select("次元の狭間について聞く","会話終了") == 2) {
+		mes "‐あなたはその場から離れた‐";
 		close;
 	}
-	mes "[��������]";
-	mes "�����O����A�������͎����̋��Ԃ�";
-	mes "���p���āA�����ƃ~�b�h�K���h��";
-	mes "�s�������Ă��邶�Ⴀ��܂��񂩁H";
-	mes "������̋��Ԃ��A����������";
-	mes "�ʘH�̂悤�Ȃ��̂���";
-	mes "�l���Ă���������΂����Ǝv���܂��B";
+	mes "[遠征隊員]";
+	mes "少し前から、私たちは次元の狭間を";
+	mes "利用して、こことミッドガルドを";
+	mes "行き来しているじゃありませんか？";
+	mes "こちらの狭間も、そういった";
+	mes "通路のようなものだと";
+	mes "考えていただければいいと思います。";
 	next;
-	mes "[��������]";
-	mes "�����̋��Ԃ̒���ʂ邱�Ƃ�";
-	mes "���낢��ȏꏊ�Ɉړ�������@��";
-	mes "�������ꂽ��ł��B";
+	mes "[遠征隊員]";
+	mes "次元の狭間の中を通ることで";
+	mes "いろいろな場所に移動する方法が";
+	mes "発見されたんです。";
 	next;
-	mes "[��������]";
-	mes "����ŁA���萫�̊m�F���Ƃꂽ�ʘH��";
-	mes "���J���ꂽ�̂ł��B";
-	mes "����ŁA�r�t���X�g�ƃ����N�A";
-	mes "�G���f�B�J�X�e�B�X�ւ�";
-	mes "�ړ����y�ɂȂ�܂����B";
+	mes "[遠征隊員]";
+	mes "それで、安定性の確認がとれた通路が";
+	mes "公開されたのです。";
+	mes "これで、ビフロストとモロク、";
+	mes "エルディカスティスへの";
+	mes "移動が楽になりました。";
 	next;
-	mes "[��������]";
-	mes "�����̋��Ԃ͎��ԂƋ�Ԃ�";
-	mes "�c�񂾏ꏊ�ł��B";
-	mes "�������ɖ����Ă��܂�����";
-	mes "�ǂ��ɕ���o����邩�킩��܂���B";
-	mes "�����ς݂̒n��̂ݗ��p���Ă��������B";
+	mes "[遠征隊員]";
+	mes "次元の狭間は時間と空間が";
+	mes "歪んだ場所です。";
+	mes "もし道に迷ってしまったら";
+	mes "どこに放り出されるかわかりません。";
+	mes "調査済みの地域のみ利用してください。";
 	next;
-	mes "[��������]";
-	mes "���Ŗ��q�ɂȂ�Ƌ~�o�͍���ł��̂�";
-	mes "���ꂮ����C��t���Ă��������B";
+	mes "[遠征隊員]";
+	mes "中で迷子になると救出は困難ですので";
+	mes "くれぐれも気を付けてください。";
 	close;
 }
 
-dic_fild02.gat,239,36,3	script	�����̋��Ԃ̈ē���#gk08	852,{
-	mes "[��������]";
-	mes "�����̋��ԓ����ɍs����������";
-	mes "�����ړ��@�𗘗p���Ă��������B";
-	mes "�����̋��ԓ�����";
-	mes "�܂��T�����̒ʘH������܂��̂�";
-	mes "���ɖ���Ȃ��l�ɋC��t���ĉ������B";
+dic_fild02.gat,239,36,3	script	次元の狭間の案内員#gk08	852,{
+	mes "[遠征隊員]";
+	mes "次元の狭間内部に行きたい方は";
+	mes "次元移動機を利用してください。";
+	mes "次元の狭間内部は";
+	mes "まだ探索中の通路もありますので";
+	mes "道に迷わない様に気を付けて下さい。";
 	close;
 }
 
--	script	�����ړ��@#Hero1	10007,{
-	mes "�]�����ړ��@������B";
-	mes "�@�����̋��ԓ����ɍs���܂����H�]";
+-	script	次元移動機#Hero1	10007,{
+	mes "‐次元移動機がある。";
+	mes "　次元の狭間内部に行きますか？‐";
 	next;
-	if(select("�͂�","������") == 2) {
-		mes "�]���Ȃ��͎����ړ��@���痣�ꂽ�]";
+	if(select("はい","いいえ") == 2) {
+		mes "‐あなたは次元移動機から離れた‐";
 		close;
 	}
-	mes "�]�����̋��ԓ����Ɉړ����܂��]";
+	mes "‐次元の狭間内部に移動します‐";
 	close2;
 	set '@name$,strnpcinfo(2);
 	if('@name$ == "gate01")
@@ -253,293 +253,293 @@ dic_fild02.gat,239,36,3	script	�����̋��Ԃ̈ē���#gk08	852,{
 	end;
 }
 
-mid_camp.gat,210,292,0		duplicate(�����ړ��@#Hero1)	�����ړ��@#gate01	10007
-moc_fild22b.gat,222,200,3	duplicate(�����ړ��@#Hero1)	�����ړ��@#gate02	10007
-bif_fild01.gat,318,159,3	duplicate(�����ړ��@#Hero1)	�����ړ��@#gate03	10007
-dic_fild02.gat,241,31,3		duplicate(�����ړ��@#Hero1)	�����ړ��@#gate04	10007
+mid_camp.gat,210,292,0		duplicate(次元移動機#Hero1)	次元移動機#gate01	10007
+moc_fild22b.gat,222,200,3	duplicate(次元移動機#Hero1)	次元移動機#gate02	10007
+bif_fild01.gat,318,159,3	duplicate(次元移動機#Hero1)	次元移動機#gate03	10007
+dic_fild02.gat,241,31,3		duplicate(次元移動機#Hero1)	次元移動機#gate04	10007
 
 dali.gat,149,82,0	warp	#dari_to_midcamp		3,3,mid_camp.gat,210,289
 dali.gat,122,48,0	warp	#dari_to_moc_fild22b	3,3,moc_fild22b.gat,227,200
 dali.gat,39,87,0	warp	#dari_to_bif_fild01		3,3,bif_fild01.gat,318,155
 dali.gat,35,139,0	warp	#dari_to_dic_fild02		3,3,dic_fild02.gat,237,32
 
-dali.gat,109,94,5	shop	�L�̎�T�[�r�X�G�ݏ��l	496,611,1750,1065,579,602
+dali.gat,109,94,5	shop	猫の手サービス雑貨商人	496,611,1750,1065,579,602
 
-dali.gat,112,95,3	script	�L�̎�T�[�r�X�����Ǘ�	496,{
-	mes "[�����Ǘ��j����]";
-	mes "��������Ⴂ�ɂ��B";
-	mes "���̕s�v�c�ȏꏊ��";
-	mes "���Ȃ��B�̕i�����Ǘ����Ă���";
-	mes "�����Ǘ��j�������ɂ��B";
-	mes "�q�ɗ��p����̂ɂ��H";
+dali.gat,112,95,3	script	猫の手サービス物流管理	496,{
+	mes "[物流管理ニャン]";
+	mes "いらっしゃいにゃん。";
+	mes "この不思議な場所で";
+	mes "あなた達の品物を管理している";
+	mes "物流管理ニャンだにゃん。";
+	mes "倉庫利用するのにゃん？";
 	next;
-	if(select("�q�ɂ𗘗p����-200Zeny","��߂�") == 2) {
-		mes "[�����Ǘ��j����]";
-		mes "�܂����Ă���ɂ��B";
+	if(select("倉庫を利用する-200Zeny","やめる") == 2) {
+		mes "[物流管理ニャン]";
+		mes "また来てくれにゃん。";
 		close;
 	}
 	if(Zeny < 200) {
-		// ������
-		mes "[�����Ǘ��j����]";
-		mes "����������Ȃ��ɂ��I";
+		// 未調査
+		mes "[物流管理ニャン]";
+		mes "お金が足りないにゃん！";
 		close;
 	}
-	mes "[�����Ǘ��j����]";
-	mes "�q�ɂ��J���ɂ��B";
+	mes "[物流管理ニャン]";
+	mes "倉庫を開くにゃん。";
 	set Zeny,Zeny-200;
 	openstorage;
 	close;
 }
 
-dali.gat,56,126,3	script	�T�t�@���̔h����#dali01	449,{
-	mes "[�~��]";
-	mes "�����̎����̋��Ԃ�";
-	mes "�G���f�B�J�X�e�B�X�̓�ɂ���B";
-	mes "�J�~�_���R��암�ƌq�����Ă��܂��B";
-	mes "�����̂��߁A�����Ɋ��܂�������";
-	mes "�{���ɐM�����܂���B";
+dali.gat,56,126,3	script	サファ族の派遣員#dali01	449,{
+	mes "[ミヨ]";
+	mes "ここの次元の狭間は";
+	mes "エルディカスティスの南にある。";
+	mes "カミダル山麗南部と繋がっています。";
+	mes "調査のため、ここに寄りましたけど";
+	mes "本当に信じられません。";
 	next;
-	mes "[�~��]";
-	mes "�����ׂɂ̓��t�B�l�������邵�c�c";
-	mes "�c�c���ށc�c";
-	mes "���A�S�z���Ȃ��ł��������B";
-	mes "����ȏ��Ő킢��������܂��񂩂�B";
+	mes "[ミヨ]";
+	mes "すぐ隣にはラフィネ族がいるし……";
+	mes "……うむ……";
+	mes "あ、心配しないでください。";
+	mes "こんな所で戦いたくありませんから。";
 	close;
 OnInit:
-	waitingroom "�J�~�_���R�[�암����",0;
+	waitingroom "カミダル山麓南部方面",0;
 	end;
 }
 
-dali.gat,51,104,5	script	�X�v�����f�B�b�g���m#da	447,{
-	mes "[�X�v�����f�B�b�g���m]";
-	mes "���̋�ԓ����r�t���X�g�Ɠ�����";
-	mes "�s�v�c�ȗ͂������Ă���悤�ł��ˁB";
-	mes "���̎푰�Ƃ̈ӎu�a�ʂ��e�ՂȂ̂�";
-	mes "������܂��B";
+dali.gat,51,104,5	script	スプレンディット兵士#da	447,{
+	mes "[スプレンディット兵士]";
+	mes "この空間内もビフロストと同じで";
+	mes "不思議な力が働いているようですね。";
+	mes "他の種族との意志疎通が容易なので";
+	mes "助かります。";
 	next;
-	mes "[�X�v�����f�B�b�g���m]";
-	mes "�����̓r�t���X�g�암�ƌq�����Ă���";
-	mes "�����̋��Ԃł��B";
-	mes "�X�v�����f�B�b�g�O����n�܂�";
-	mes "�ړ��ł��܂��B";
+	mes "[スプレンディット兵士]";
+	mes "ここはビフロスト南部と繋がっている";
+	mes "次元の狭間です。";
+	mes "スプレンディット前線基地まで";
+	mes "移動できます。";
 	next;
-	mes "[�X�v�����f�B�b�g���m]";
-	mes "����ƁA��������܂����p�����";
-	mes "�T�t�@���̎�s�܂őf�����i����";
-	mes "�\��������܂���B";
-	mes "�ӂӁc�c��k�ł���B";
+	mes "[スプレンディット兵士]";
+	mes "それと、これをうまく利用すると";
+	mes "サファ族の首都まで素早い進撃が";
+	mes "可能かもしれません。";
+	mes "ふふ……冗談ですよ。";
 	next;
-	mes "[�X�v�����f�B�b�g���m]";
-	mes "�}��������Ȃ�ׂ����C�͔�����";
-	mes "���͂���悤�ɂƌ���ꂽ�̂ŁA";
-	mes "����Ȏ��͂��܂����B";
-	mes "�����_�ł̓G�̓T�t�@���ł͂Ȃ��A";
-	mes "�����ł�����B";
+	mes "[スプレンディット兵士]";
+	mes "マヨルからなるべく摩擦は避けて";
+	mes "協力するようにと言われたので、";
+	mes "そんな事はしませんよ。";
+	mes "現時点での敵はサファ族ではなく、";
+	mes "魔王ですから。";
 	close;
 OnInit:
-	waitingroom "�r�t���X�g�암����",0;
+	waitingroom "ビフロスト南部方面",0;
 	end;
 }
 
-dali.gat,137,87,3	script	�A�����Ԓn�h����#dali03	997,{
-	mes "[�A�����Ԓn�h����]";
-	mes "������̎����̋��Ԃ�";
-	mes "���g�D���w�C���̘A���L�����v��";
-	mes "�q�����Ă��܂��B";
+dali.gat,137,87,3	script	連合駐屯地派遣員#dali03	997,{
+	mes "[連合駐屯地派遣員]";
+	mes "こちらの次元の狭間は";
+	mes "ヨトゥンヘイムの連合キャンプと";
+	mes "繋がっています。";
 	next;
-	mes "[�A�����Ԓn�h����]";
-	mes "����I�Ȉړ����\�ɂȂ�悤��";
-	mes "���S��̎����̖���";
-	mes "�ݒu���ꂽ���̂Ȃ̂�";
-	mes "���S���Ă��������B";
+	mes "[連合駐屯地派遣員]";
+	mes "安定的な移動が可能になるように";
+	mes "数百回の実験の末に";
+	mes "設置されたものなので";
+	mes "安心してください。";
 	close;
 OnInit:
-	waitingroom "�~�b�h�K���h�A���R���Ԓn����",0;
+	waitingroom "ミッドガルド連合軍駐屯地方面",0;
 	end;
 }
 
-dali.gat,122,60,3	script	�����N���m#dali04	707,{
-	mes "[�����N���m]";
-	mes "�������̓����N�ɔ������Ă���";
-	mes "�����̋��Ԃƌq�����Ă��܂��B";
-	mes "�~�b�h�K���h�ɖ߂���Ԃ̋ߓ��ł��B";
-	mes "���Ԃ̎��ӂ͑��ς�炸�ł����c�c";
+dali.gat,122,60,3	script	モロク兵士#dali04	707,{
+	mes "[モロク兵士]";
+	mes "こっちはモロクに発生している";
+	mes "次元の狭間と繋がっています。";
+	mes "ミッドガルドに戻れる一番の近道です。";
+	mes "狭間の周辺は相変わらずですが……";
 	close;
 OnInit:
-	waitingroom "�����N��������",0;
+	waitingroom "モロク東部方面",0;
 	end;
 }
 
 
 //============================================================
-// �����̋��� ���̒ʘH02 NPC
+// 次元の狭間 時の通路02 NPC
 //------------------------------------------------------------
 
 dali.gat,64,129,0	warp	#dali_to_dali02	1,1,dali02.gat,66,101
 dali02.gat,66,97,0	warp	#dali02_to_dali	1,1,dali.gat,64,125
 
-dali.gat,68,129,3	script	�ē���	837,{
-	mes "[�C���t�H���[�V����]";
-	mes "���̐�";
-	mes "�����̋��� ���̒ʘH02(dali02)";
+dali.gat,68,129,3	script	案内板	837,{
+	mes "[インフォメーション]";
+	mes "この先";
+	mes "次元の狭間 時の通路02(dali02)";
 	close;
 }
 
-dali02.gat,70,98,3	script	�ē���	837,{
-	mes "[�C���t�H���[�V����]";
-	mes "���_�̓��̓������";
-	mes "�R���p�X�ɕ\�����܂����H";
-	mes "�@";
-	mes "�R���p�X�͉�ʉE��̃~�j�}�b�v���";
-	mes "�m�F�\�ł��B";
+dali02.gat,70,98,3	script	案内板	837,{
+	mes "[インフォメーション]";
+	mes "魔神の塔の入場口を";
+	mes "コンパスに表示しますか？";
+	mes "　";
+	mes "コンパスは画面右上のミニマップより";
+	mes "確認可能です。";
 	next;
-	switch(select("�R���p�X��\����������","�R���p�X����������")) {
+	switch(select("コンパスを表示させたい","コンパスを消したい")) {
 	case 1:
-		mes "[�C���t�H���[�V����]";
-		mes "�R���p�X�\�����o���܂����B";
+		mes "[インフォメーション]";
+		mes "コンパス表示を出しました。";
 		viewpoint 1, 141, 120, 1, 0x00FF00;
 		close;
 	case 2:
-		mes "[�C���t�H���[�V����]";
-		mes "�R���p�X�\���������܂����B";
+		mes "[インフォメーション]";
+		mes "コンパス表示を消しました。";
 		viewpoint 2, 1, 1, 1, 0xFFFFFF;
 		close;
 	}
 }
 
-dali02.gat,51,112,5	script	�����Ɋׂ����V�[�t	939,{
-	mes "[�����Ɋׂ����V�[�t]";
-	mes "���ɐ������z�炩����i��";
-	mes "����ł�����A���̊Ԃɂ�";
-	mes "����ȂƂ���ɏo���񂾁B";
-	mes "�����͕ςȂ��̂΂��肾�ȁB";
+dali02.gat,51,112,5	script	混乱に陥ったシーフ	939,{
+	mes "[混乱に陥ったシーフ]";
+	mes "酒に酔った奴らから金品を";
+	mes "盗んでいたら、いつの間にか";
+	mes "こんなところに出たんだ。";
+	mes "ここは変なものばかりだな。";
 	next;
-	mes "[�����Ɋׂ����V�[�t]";
-	mes "���Ԃ��ꏊ���S�Ă��ł����";
-	mes "�ӂ��c�c���̎��̂悤��";
-	mes "�d���ɏW�����Ă����";
-	mes "�܂��A�A���̂��낤���c�c�H";
+	mes "[混乱に陥ったシーフ]";
+	mes "時間も場所も全てがでたらめ";
+	mes "ふぅ……あの時のように";
+	mes "仕事に集中していれば";
+	mes "また、帰れるのだろうか……？";
 	close;
 }
 
-dali02.gat,68,117,5	script	�ē��l���V�A��	516,{
-	mes "[�ē��l���V�A��]";
-	mes "�܂��A�����ɏo�Ă��܂����B";
-	mes "�o���������Ȃ��Ȃ�āc�c";
-	mes "�܂������c�c";
-	mes "�Ђǂ����H�ɂ��܂��Ă��܂����B";
+dali02.gat,68,117,5	script	案内人レシア族	516,{
+	mes "[案内人レシア族]";
+	mes "また、ここに出てしまった。";
+	mes "出口も見えないなんて……";
+	mes "まったく……";
+	mes "ひどい迷路につかまってしまった。";
 	close;
 }
 
-dali02.gat,65,119,5	script	�ό��q���V�A��	516,{
-	mes "[�ό��q���V�A��]";
-	mes "���������̗L���ȃv�����e�����H";
-	mes "��͂��s�s�I�@���Â��ȁI";
+dali02.gat,65,119,5	script	観光客レシア族	516,{
+	mes "[観光客レシア族]";
+	mes "ここがあの有名なプロンテラか？";
+	mes "やはり大都市！　薄暗いな！";
 	close;
 }
 
-dali02.gat,69,122,5	script	���s�����V�A��	516,{
-	mes "[���s�����V�A��]";
-	mes "���v�̉�����������Â��ꏊ�I";
-	mes "�����͐�΃R���h����I";
+dali02.gat,69,122,5	script	旅行中レシア族	516,{
+	mes "[旅行中レシア族]";
+	mes "時計の音が聞こえる暗い場所！";
+	mes "ここは絶対コモドだよ！";
 	close;
 }
 
-dali02.gat,65,115,5	script	�`���D�����V�A��	516,{
-	mes "[�`���D�����V�A��]";
-	mes "�݂�ȁA��������I";
-	mes "�l�����̓^�i�g�X�^���[��";
-	mes "�^�������Ȃ񂾁I";
+dali02.gat,65,115,5	script	冒険好きレシア族	516,{
+	mes "[冒険好きレシア族]";
+	mes "みんな、武器を取れ！";
+	mes "僕たちはタナトスタワーの";
+	mes "真っ只中なんだ！";
 	close;
 }
 
-dali02.gat,45,96,6	script	�R���`�l���^���K�[�h	707,{
-	mes "[�R���`�l���^���K�[�h]";
-	mes "���������͈ړ�����������Ă��܂��B";
-	mes "�ƂĂ��댯�ȏꏊ�Ȃ̂ŁA";
-	mes "�s�p�ӂȏo����͍T���ĉ������B";
+dali02.gat,45,96,6	script	コンチネンタルガード	707,{
+	mes "[コンチネンタルガード]";
+	mes "ここから先は移動が統制されています。";
+	mes "とても危険な場所なので、";
+	mes "不用意な出入りは控えて下さい。";
 	next;
-	switch(select("�����̋��Ԃɓ���","�ǂ��Ɍq�����Ă���̂�����","�����N���Ă����̂�����","�Θb����߂�")) {
+	switch(select("次元の狭間に入る","どこに繋がっているのか聞く","何が起きていたのか聞く","対話をやめる")) {
 	case 1:
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�����̋��Ԃɓ���܂����H";
-		mes "���萫���`�F�b�N����̂ŁA";
-		mes "�������҂��������B";
+		mes "[コンチネンタルガード]";
+		mes "次元の狭間に入りますか？";
+		mes "安定性をチェックするので、";
+		mes "少しお待ち下さい。";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�`�F�b�N���������܂����B";
-		mes "���ꂮ����C��t���ĉ������ˁB";
+		mes "[コンチネンタルガード]";
+		mes "チェックが完了しました。";
+		mes "くれぐれも気を付けて下さいね。";
 		close2;
 		warp "moc_fild22.gat",36,196;
 		end;
 	case 2:
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�����͓|����܂������A�l�X�Ȏ��Ԃ�";
-		mes "�q�����Ă��邱������́A";
-		mes "�|�C���g�������܂��}���鎖���ł���΁A";
-		mes "�ߋ��𗷂��邱�Ƃ��\�ł��B";
+		mes "[コンチネンタルガード]";
+		mes "魔王は倒されましたが、様々な時間と";
+		mes "繋がっているここからは、";
+		mes "ポイントさえうまく抑える事ができれば、";
+		mes "過去を旅することも可能です。";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�w�҂����̌����ɂ��ƁA";
-		mes "���̎����̋��Ԃ̐�́A";
-		mes "�܂������N���������Ă��������";
-		mes "�q�����Ă���炵���ł��B";
+		mes "[コンチネンタルガード]";
+		mes "学者たちの研究によると、";
+		mes "この次元の狭間の先は、";
+		mes "まだモロクが活動していた時代に";
+		mes "繋がっているらしいです。";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�|���̂Ŏ��͓��������͂���܂���B";
-		mes "����ȏ�̂��Ƃ�m�肽����΁A";
-		mes "���ڒ��ɓ����Ċm���߂Ă��������B";
+		mes "[コンチネンタルガード]";
+		mes "怖いので私は入った事はありません。";
+		mes "これ以上のことを知りたければ、";
+		mes "直接中に入って確かめてください。";
 		close;
 	case 3:
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�����N�̎������������Ȃ��̂ł����H";
+		mes "[コンチネンタルガード]";
+		mes "モロクの事件をご存じないのですか？";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�ȑO�A�����̓s�s�����N�̒n����";
-		mes "���󂳂�Ă������������N��";
-		mes "�������鎖������������ł��B";
+		mes "[コンチネンタルガード]";
+		mes "以前、砂漠の都市モロクの地下に";
+		mes "封印されていた魔王モロクが";
+		mes "復活する事件があったんです。";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�������O���������A";
-		mes "���t�B�l���A�T�t�@���ɂ��";
-		mes "�A���R�̊���ɂ���āA";
-		mes "���������N�͑ގ�����܂����B";
+		mes "[コンチネンタルガード]";
+		mes "しかし三ヶ国同盟、";
+		mes "ラフィネ族、サファ族による";
+		mes "連合軍の活躍によって、";
+		mes "魔王モロクは退治されました。";
 		next;
-		mes "[�R���`�l���^���K�[�h]";
-		mes "�����A�����N�̊X���ӂɂ�";
-		mes "�܂������N�̕������c���Ă��܂��B";
-		mes "���̂��ߎ��ӂ��ړ�����ۂɂ́A";
-		mes "�\���ɒ��ӂ����Ă��������B";
+		mes "[コンチネンタルガード]";
+		mes "ただ、モロクの街周辺には";
+		mes "まだモロクの部下が残っています。";
+		mes "そのため周辺を移動する際には、";
+		mes "十分に注意をしてください。";
 		close;
 	case 4:
-		mes "[�R���`�l���^���K�[�h]";
-		mes "����ł͗ǂ�������B";
+		mes "[コンチネンタルガード]";
+		mes "それでは良い一日を。";
 		close;
 	}
 }
 
-dali.gat,100,82,5	script	�ē��l�K�h#01	516,{
-	mes "[�ē��l�K�h]";
-	mes "�������ĕ��i���ǂ������Ă���";
-	mes "�ӊO�ɖ����₷����ˁB";
-	mes "�s�������Ƃ��낪��������";
-	mes "�ē����Ă������B";
+dali.gat,100,82,5	script	案内人ガド#01	516,{
+	mes "[案内人ガド]";
+	mes "ここって風景がどこも似ていて";
+	mes "意外に迷いやすいよね。";
+	mes "行きたいところがあったら";
+	mes "案内してあげるよ。";
 	next;
 	switch(select(
-		"��߂�",
-		((strnpcinfo(2) == "01")? "���̒ʘH02": "���̒ʘH01"),
-		"�T���̋L��",
-		"�t�F�C�X���[���̑�",
-		"�Q�t�F�����@���",
-		"���_�̓�",
-		"�t�F�������ƃT��",
-		"��s�D�P��",
-		"�􂢂̌��m"
+		"やめる",
+		((strnpcinfo(2) == "01")? "時の通路02": "時の通路01"),
+		"サラの記憶",
+		"フェイスワームの巣",
+		"ゲフェン魔法大会",
+		"魔神の塔",
+		"フェンリルとサラ",
+		"飛行船襲撃",
+		"呪いの剣士"
 	)) {
 	case 1:
-		mes "[�ē��l�K�h]";
-		mes "�����B";
-		mes "����Ȃ��悤�ɋC��t���ĂˁB";
+		mes "[案内人ガド]";
+		mes "そう。";
+		mes "迷わないように気を付けてね。";
 		close;
 	case 2:
 		if(strnpcinfo(2) == "01")
@@ -585,12 +585,12 @@ dali.gat,100,82,5	script	�ē��l�K�h#01	516,{
 		set '@y,128;
 		break;
 	}
-	mes "[�ē��l�K�h]";
-	mes "��[���I";
-	mes "���ꂶ��{�N�ɂ��Ă��āI";
+	mes "[案内人ガド]";
+	mes "よーし！";
+	mes "それじゃボクについてきて！";
 	close2;
 	warp '@map$,'@x,'@y;
 	end;
 }
 
-dali02.gat,100,82,5		duplicate(�ē��l�K�h#01)	�ē��l�K�h#02	516
+dali02.gat,100,82,5		duplicate(案内人ガド#01)	案内人ガド#02	516

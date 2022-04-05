@@ -1,50 +1,50 @@
 //====================================================================
 //Ragnarok Online Archer jobchange script
 //
-//�@�� CHANGE_AC -> 0�`1
-//     OLD_CLASS -> �]���O�̐E��
+//　■ CHANGE_AC -> 0～1
+//     OLD_CLASS -> 転生前の職業
 //====================================================================
 
 //==========================================
-// �����\������ѓ]�E
+// 試験申請および転職
 //------------------------------------------
 
-payon_in02.gat,64,71,4	script	�M���h�֌W��#AC	85,{
+payon_in02.gat,64,71,4	script	ギルド関係者#AC	85,{
 	if(Upper == UPPER_HIGH && (OLD_CLASS == Job_Hunter || OLD_CLASS == Job_Bard || OLD_CLASS == Job_Dancer)) {
 		if(Job == Job_Novice) {
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "�����A�M���͂������c�c";
-			mes "������x�A�[�`���[�ɂȂ邽�߂�";
-			mes "���炵����ł��ˁI";
+			mes "[アーチャーギルド関係者]";
+			mes "ああ、貴方はたしか……";
+			mes "もう一度アーチャーになるために";
+			mes "いらしたんですね！";
 			next;
 			if(getskilllv(1) < 9 || SkillPoint) {
-				mes "[�A�[�`���[�M���h�֌W��]";
-				mes "������A�]�E�����͐�����";
-				mes "���Ȃ���΂Ȃ�܂���B";
-				mes "JobLv��10�ɂ܂Ő��������A";
-				mes "^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-				mes "���Ă��������B";
+				mes "[アーチャーギルド関係者]";
+				mes "今回も、転職条件は整って";
+				mes "いなければなりません。";
+				mes "JobLvを10にまで成長させ、";
+				mes "^0000FF「基本スキル」のレベルを9^000000 に";
+				mes "してください。";
 				next;
-				mes "[�A�[�`���[�M���h�֌W��]";
-				mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-				mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-				mes "�グ�邱�Ƃ��ł��܂�����ˁI";
-				mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-				mes "^0000FF�u��{���v^000000�E�B���h�E����";
-				mes "^0000FF�uSkill�v^000000�{�^���ŕ\������܂���I";
+				mes "[アーチャーギルド関係者]";
+				mes "^0000FF「基本スキル」^000000のレベルは";
+				mes "^0000FF「スキルリスト」^000000ウィンドウで";
+				mes "上げることができますからね！";
+				mes "^0000FF「スキルリスト」^000000ウィンドウは";
+				mes "^0000FF「基本情報」^000000ウィンドウ内の";
+				mes "^0000FF「Skill」^000000ボタンで表示されますよ！";
 				next;
-				mes "[�A�[�`���[�M���h�֌W��]";
-				mes "�X�L���̃��x�����グ��ɂ́A";
-				mes "�X�L���|�C���g������U������A";
-				mes "^FF0000�u�m��v^000000�{�^�����K�v�ł���B";
-				mes "���ӂ��Ă��������ˁI";
-				mes "����ł́A�撣���Ă��������I";
+				mes "[アーチャーギルド関係者]";
+				mes "スキルのレベルを上げるには、";
+				mes "スキルポイントを割り振った後、";
+				mes "^FF0000「確定」^000000ボタンが必要ですよ。";
+				mes "注意してくださいね！";
+				mes "それでは、頑張ってください！";
 				close;
 			}
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "���Ɏ����猾�����Ƃ͖����ł��ˁB";
-			mes "�ȑO�̊��o���撣���Ď��߂���";
-			mes "���������B";
+			mes "[アーチャーギルド関係者]";
+			mes "特に私から言うことは無いですね。";
+			mes "以前の感覚を頑張って取り戻して";
+			mes "ください。";
 			next;
 			unequip;
 			jobchange Job_Archer,UPPER_HIGH;
@@ -53,155 +53,155 @@ payon_in02.gat,64,71,4	script	�M���h�֌W��#AC	85,{
 			skill 147,1,0;
 			skill 148,1,0;
 			set CHANGE_AC,0;
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "���܂ɂ͂���������Ă��������ˁB";
-			mes "�����Ă�����Ⴂ�B";
+			mes "[アーチャーギルド関係者]";
+			mes "たまにはお顔を見せてくださいね。";
+			mes "いってらっしゃい。";
 			close;
 		}
 	}
 	if(Upper == UPPER_HIGH) {
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�A�[�`���[�ɉ�̂�";
-		mes "���߂Ăł����H";
-		mes "����r���ɂ����Ǝv���܂��B";
-		mes "�����A�[�`���[�ł����ǂˁB";
+		mes "[アーチャーギルド関係者]";
+		mes "アーチャーに会うのは";
+		mes "初めてですか？";
+		mes "来る途中にも会えると思います。";
+		mes "私もアーチャーですけどね。";
 		close;
 	}
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "����ɂ��́A";
-	mes "��������`�����܂��傤���H";
+	mes "[アーチャーギルド関係者]";
+	mes "こんにちは、";
+	mes "何をお手伝いしましょうか？";
 	next;
-	switch (select("�A�[�`���[�ɓ]�E","�A�[�`���[�̓]�E�����́H","�Ȃ�ł�����܂���B")) {
+	switch (select("アーチャーに転職","アーチャーの転職条件は？","なんでもありません。")) {
 	case 1:
 		if(Job == Job_Archer) {
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "�M���͂����A�[�`���[��";
-			mes "�]�E����Ă��܂��B";
+			mes "[アーチャーギルド関係者]";
+			mes "貴方はもうアーチャーに";
+			mes "転職されています。";
 			next;
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "�A�[�`���[�ɂȂ����̂Ȃ�A";
-			mes "�`���҃A�J�f�~�[��";
-			mes "�s���Ă݂�Ƃ����ł���B";
+			mes "[アーチャーギルド関係者]";
+			mes "アーチャーになったのなら、";
+			mes "冒険者アカデミーに";
+			mes "行ってみるといいですよ。";
 			next;
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "���̌������o��ƁA";
-			mes "�`���҃A�J�f�~�[�̃T�|�[�g��";
-			mes "�s���Ă���l�����܂�����A";
-			mes "�����Ă��炤�Ƃ����ł���B";
+			mes "[アーチャーギルド関係者]";
+			mes "この建物を出ると、";
+			mes "冒険者アカデミーのサポートを";
+			mes "行っている人がいますから、";
+			mes "送ってもらうといいですよ。";
 			close;
 		}
 		if(Job != Job_Novice) {
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "�Ӂc�c";
-			mes "���̐E�Ƃ�I�������ȏ�A";
-			mes "�A�[�`���[�ɂ͂Ȃ�܂���B";
+			mes "[アーチャーギルド関係者]";
+			mes "ふ……";
+			mes "他の職業を選択した以上、";
+			mes "アーチャーにはなれません。";
 			close;
 		}
 		break;
 	case 2:
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "���ꂶ��A�A�[�`���[�̓]�E������";
-		mes "���Đ������܂��B";
+		mes "[アーチャーギルド関係者]";
+		mes "それじゃ、アーチャーの転職条件に";
+		mes "ついて説明します。";
 		if(Job != Job_Novice) {
 			if(Job == Job_Archer)
-				mes "�ł��A�M���͊��ɃA�[�`���[�ł����c�c";
+				mes "でも、貴方は既にアーチャーですが……";
 			else {
-				mes "�ł��A�M�����Ă������̐E�Ƃ�";
-				mes "�Ȃ��Ă܂����c�c";
+				mes "でも、貴方ってもう他の職業に";
+				mes "なってますが……";
 			}
-			mes "�c�c�܂��A�����ł��傤�B";
+			mes "……まあ、いいでしょう。";
 		}
 		next;
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�܂��A^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-		mes "���ĉ������B";
-		mes "�A�[�`���[�͍��x�̏W���͂�";
-		mes "�K�v�Ƃ���E�Ƃł��邽�߁A";
-		mes "�}�k�P�ȓz�̓A�[�`���[�ɂ�";
-		mes "��΂Ȃ�܂���B";
+		mes "[アーチャーギルド関係者]";
+		mes "まず、^0000FF「基本スキル」のレベルを9^000000 に";
+		mes "して下さい。";
+		mes "アーチャーは高度の集中力を";
+		mes "必要とする職業であるため、";
+		mes "マヌケな奴はアーチャーには";
+		mes "絶対なれません。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 3:
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "���c�c���悤�Ȃ�B";
+		mes "[アーチャーギルド関係者]";
+		mes "あ……さようなら。";
 		close;
 	}
-	//case1�̑���
+	//case1の続き
 	if(CHANGE_AC==0) {
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�A�[�`���[�ւ̓]�E������]�ł����H";
-		mes "�����ł�����A�����ŃA�[�`���[�]�E��";
-		mes "�\�����݂����ĉ������B";
+		mes "[アーチャーギルド関係者]";
+		mes "アーチャーへの転職をご希望ですか？";
+		mes "そうでしたら、ここでアーチャー転職の";
+		mes "申し込みをして下さい。";
 		next;
-		if(select("�A�[�`���[�]�E�\�����݂�����","��߂�")==2) {
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "���c�c���悤�Ȃ�B";
+		if(select("アーチャー転職申し込みをする","やめる")==2) {
+			mes "[アーチャーギルド関係者]";
+			mes "あ……さようなら。";
 			close;
 		}
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�\�����ɃT�C�������āc�c";
-		mes "�͂��B�����OK�ł��B";
-		mes "���ꂩ��A�[�`���[�ɂȂ邽�߂̏�����";
-		mes "�S�Ė������Ă��邩�m�F���܂����c�c";
-		mes "��낵���ł����H";
+		mes "[アーチャーギルド関係者]";
+		mes "申請書にサインをして……";
+		mes "はい。これでOKです。";
+		mes "これからアーチャーになるための条件を";
+		mes "全て満たしているか確認しますが……";
+		mes "よろしいですか？";
 		next;
-		if(select("�͂��B","�������B")==2) {
-			mes "[�A�[�`���[�M���h�֌W��]";
-			mes "�킩��܂����B";
-			mes "�A�[�`���[�]�E�����ɂ���";
-			mes "�킩��Ȃ�����������΁A";
-			mes "���ɕ����Ă��������B";
+		if(select("はい。","いいえ。")==2) {
+			mes "[アーチャーギルド関係者]";
+			mes "わかりました。";
+			mes "アーチャー転職条件について";
+			mes "わからない部分があれば、";
+			mes "私に聞いてください。";
 			close;
 		}
 		set CHANGE_AC,1;
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�m�F���܂��B";
+		mes "[アーチャーギルド関係者]";
+		mes "確認します。";
 		next;
 	}
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "�����O���c�c";
-	mes " " +strcharinfo(0)+ "�B";
-	mes "�ł���ˁH";
+	mes "[アーチャーギルド関係者]";
+	mes "お名前が……";
+	mes " " +strcharinfo(0)+ "。";
+	mes "ですよね？";
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "����H";
-		mes "�M���̏������o���ĂȂ��悤�ł��ˁB";
-		mes "JobLv��10�ɂ܂Ő��������A";
-		mes "^0000FF�u��{�X�L���v�̃��x����9^000000 ��";
-		mes "���Ă��������B";
+		mes "[アーチャーギルド関係者]";
+		mes "おや？";
+		mes "貴方の準備が出来てないようですね。";
+		mes "JobLvを10にまで成長させ、";
+		mes "^0000FF「基本スキル」のレベルを9^000000 に";
+		mes "してください。";
 		next;
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "^0000FF�u��{�X�L���v^000000�̃��x����";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "�グ�邱�Ƃ��ł��܂��B";
-		mes "^0000FF�u�X�L�����X�g�v^000000�E�B���h�E��";
-		mes "^0000FF�u��{���v^000000�E�B���h�E����";
-		mes "^0000FF�uSkill�v^000000�{�^���ŕ\������܂��B";
+		mes "[アーチャーギルド関係者]";
+		mes "^0000FF「基本スキル」^000000のレベルは";
+		mes "^0000FF「スキルリスト」^000000ウィンドウで";
+		mes "上げることができます。";
+		mes "^0000FF「スキルリスト」^000000ウィンドウは";
+		mes "^0000FF「基本情報」^000000ウィンドウ内の";
+		mes "^0000FF「Skill」^000000ボタンで表示されます。";
 		next;
-		mes "[�A�[�`���[�M���h�֌W��]";
-		mes "�X�L���̃��x�����グ��ɂ́A";
-		mes "�X�L���|�C���g������U������A";
-		mes "^FF0000�u�m��v^000000�{�^�����K�v�ł���B";
-		mes "���ӂ��Ă��������B";
+		mes "[アーチャーギルド関係者]";
+		mes "スキルのレベルを上げるには、";
+		mes "スキルポイントを割り振った後、";
+		mes "^FF0000「確定」^000000ボタンが必要ですよ。";
+		mes "注意してください。";
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "��{�X�L���͏\���̂悤�ł��ˁc�c";
-	mes "�A�[�`���[�ɂ͕K�{�ł���W���͂�";
-	mes "�g�ɂ��Ă���悤�ł����A";
-	mes "�A�[�`���[�ւ̓]�E���i��";
-	mes "�\���ɂ���Ƃ�����ł��傤�B";
+	mes "[アーチャーギルド関係者]";
+	mes "基本スキルは十分のようですね……";
+	mes "アーチャーには必須である集中力も";
+	mes "身についているようですし、";
+	mes "アーチャーへの転職資格は";
+	mes "十分にあるといえるでしょう。";
 	next;
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "�c�c";
-	mes "�@";
-	mes "�͂��B���`��";
-	mes "����ŃA�[�`���[�]�E������";
-	mes "�����܂����B�����]�E�����Ē����܂��B";
+	mes "[アーチャーギルド関係者]";
+	mes "……";
+	mes "　";
+	mes "はい。え～と";
+	mes "これでアーチャー転職条件が";
+	mes "揃いました。すぐ転職させて頂きます。";
 	next;
 	unequip;
 	jobchange Job_Archer;
@@ -210,27 +210,27 @@ payon_in02.gat,64,71,4	script	�M���h�֌W��#AC	85,{
 	getitem 1702,1;
 	getitem 12004,5;
 	getitem 11031,1;
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "�A�[�`���[�ւ̓]�E�A";
-	mes "���߂łƂ��������܂��I";
-	mes "����W����v���[���g��";
-	mes "�͂��Ă܂���B";
+	mes "[アーチャーギルド関係者]";
+	mes "アーチャーへの転職、";
+	mes "おめでとうございます！";
+	mes "製作係からプレゼントが";
+	mes "届いてますよ。";
 	next;
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "�A�[�`���[�͂���ς�";
-	mes "�|�Ɩ�������Ȃ��ƁI";
+	mes "[アーチャーギルド関係者]";
+	mes "アーチャーはやっぱり";
+	mes "弓と矢を持たないと！";
 	next;
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "�����ĉ䂪�M���h�ō쐬����";
-	mes "���̃A�[�`���[�̏���ǂ߂�";
-	mes "�A�[�`���[�Ƃ��Ă̐S����";
-	mes "�킩��͂��ł��B";
+	mes "[アーチャーギルド関係者]";
+	mes "そして我がギルドで作成した";
+	mes "このアーチャーの書を読めば";
+	mes "アーチャーとしての心得が";
+	mes "わかるはずです。";
 	next;
-	mes "[�A�[�`���[�M���h�֌W��]";
-	mes "���ꂶ��A�撣���Ă��������B";
-	mes "���҂��Ă܂��I";
+	mes "[アーチャーギルド関係者]";
+	mes "それじゃ、頑張ってください。";
+	mes "期待してます！";
 	close;
 OnInit:
-	waitingroom "�]�E",0;
+	waitingroom "転職",0;
 	end;
 }

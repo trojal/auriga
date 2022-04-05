@@ -3,468 +3,468 @@
 //==============================================================================
 
 //==============================================================================
-// �^�i�g�X�^���[
+// タナトスタワー
 //==============================================================================
-//�^�i�g�X�^���[������Ǘ��l
-hu_fild01.gat,140,163,5	script	������Ǘ��l	852,3,3,{
-	mes "[�J�e]";
-	mes "����ɂ��́B";
-	mes "���́A���́u�^�i�g�X�^���[�v��";
-	mes "������Ǘ��l�J�e���k���Ɛ\���܂��B";
-	mes "�����������܂����H";
+//タナトスタワー入り口管理人
+hu_fild01.gat,140,163,5	script	入り口管理人	852,3,3,{
+	mes "[カテ]";
+	mes "こんにちは。";
+	mes "私は、この「タナトスタワー」の";
+	mes "入り口管理人カテ＝ヌムと申します。";
+	mes "何かございますか？";
 	next;
-	switch(select("�^�i�g�X�^���[�Ƃ́H","���̒��֓���܂����H","���̒��ցc�c","�������A���ł��Ȃ��ł�")) {
+	switch(select("タナトスタワーとは？","塔の中へ入れますか？","塔の中へ……","いいえ、何でもないです")) {
 	case 1:
-		mes "[�J�e]";
-		mes "�͂��B";
-		mes "������̓����u�^�i�g�X�^���[�v�ł��B";
-		mes "���͈ȑO�A���̓���";
-		mes "���u����Ă��܂����B";
+		mes "[カテ]";
+		mes "はい。";
+		mes "こちらの塔が「タナトスタワー」です。";
+		mes "実は以前、この塔は";
+		mes "放置されていました。";
 		next;
-		mes "[�J�e]";
-		mes "��������ǂ����b�P���x�����������A";
-		mes "��K�͂ȃ����X�^�[�ގ���";
-		mes "��C�H�����s���܂����B";
-		mes "����ɂ�茻�݂́A";
-		mes "���̒n��̊ό������ƂȂ��Ă���܂��B";
+		mes "[カテ]";
+		mes "それを私どもレッケンベルが発見し、";
+		mes "大規模なモンスター退治と";
+		mes "補修工事を行いました。";
+		mes "それにより現在は、";
+		mes "この地域の観光名所となっております。";
 		next;
-		mes "[�J�e]";
-		mes "���̓����������ꂽ�����A";
-		mes "�u�^�i�g�X�v�Ƃ������������܂ꂽ";
-		mes "�Δł��A���̋߂��ɂ���܂����B";
-		mes "�����œ��̖��́A���̖����Ƃ�";
-		mes "�u�^�i�g�X�^���[�v�Ƃ���܂����B";
+		mes "[カテ]";
+		mes "この塔が発見された当時、";
+		mes "「タナトス」という文字が刻まれた";
+		mes "石版が、この近くにありました。";
+		mes "そこで塔の名は、この名をとり";
+		mes "「タナトスタワー」とされました。";
 		next;
-		mes "[�J�e]";
-		mes "���͔�����A�p���I�ɊJ����Ƃ��s���A";
-		mes "���ɂ��������X�^�[�̂����A";
-		mes "1�A2�w�ɐ������Ă������̂�";
-		mes "�啔����ގ����܂����B";
+		mes "[カテ]";
+		mes "塔は発見後、継続的に開発作業を行い、";
+		mes "塔にいたモンスターのうち、";
+		mes "1、2層に生息していたものの";
+		mes "大部分を退治しました。";
 		next;
-		mes "[�J�e]";
-		mes "�����āA��ʂ̕������S��";
-		mes "�o����ł���悤�ɂ��āA";
-		mes "���݁A�J�����Ă���܂��B";
+		mes "[カテ]";
+		mes "そして、一般の方が安全に";
+		mes "出入りできるようにして、";
+		mes "現在、開放しております。";
 		next;
-		mes "[�J�e]";
-		mes "�����A3�w�ȏ�̋��́A";
-		mes "�܂��J�����ł��āc�c�B";
-		mes "�����̃����X�^�[�ގ���";
-		mes "���͂��Ă���������X��";
-		mes "���݁A��W���Ă���܂��B";
+		mes "[カテ]";
+		mes "ただ、3層以上の区域は、";
+		mes "まだ開発中でして……。";
+		mes "そこのモンスター退治に";
+		mes "協力してくださる方々を";
+		mes "現在、募集しております。";
 		next;
-		mes "[�J�e]";
-		mes "���̌��̏ڍׂɊւ��ẮA";
-		mes "���̒��ɂĂ��ē��������܂��B";
+		mes "[カテ]";
+		mes "この件の詳細に関しては、";
+		mes "塔の中にてご案内いたします。";
 		next;
-		mes "[�J�e]";
-		mes "�X�ɒm�肽�������������܂�����A";
-		mes "���̒��ɂ���K�C�h��";
-		mes "���q�˂��������B";
+		mes "[カテ]";
+		mes "更に知りたい事がございましたら、";
+		mes "塔の中にいるガイドに";
+		mes "お尋ねください。";
 		close;
 	case 2:
-		mes "[�J�e]";
-		mes "���������邱�Ƃ͂ł��܂��B";
-		mes "��ʂ̕��X�ɂ�";
-		mes "���J����Ă���܂��̂ŁB";
+		mes "[カテ]";
+		mes "もちろん入ることはできます。";
+		mes "一般の方々にも";
+		mes "公開されておりますので。";
 		next;
-		mes "[�J�e]";
-		mes "�A���A���J����Ă���̂́A";
-		mes "1�A2�w�݂̂ƂȂ�܂��B";
+		mes "[カテ]";
+		mes "但し、公開されているのは、";
+		mes "1、2層のみとなります。";
 		next;
-		mes "[�J�e]";
-		mes "�܂��A���ꗿ���K�v�ƂȂ�܂��B";
-		mes "���z�I�ɏ��X������";
-		mes "�������邩������܂��񂪁A";
-		mes "���̒��ɓ���΁A�t�Ɉ�����";
-		mes "�����Ă���������Ǝv���܂��B";
+		mes "[カテ]";
+		mes "また、入場料が必要となります。";
+		mes "金額的に少々高いと";
+		mes "感じられるかもしれませんが、";
+		mes "塔の中に入れば、逆に安いと";
+		mes "感じていただけると思います。";
 		next;
-		mes "[�J�e]";
-		mes "���ꗿ�͂���l�l5,000Zeny�ł��B";
-		mes "���x�������p�Ȃ���ƁA";
-		mes "�����̊��������邩������܂���B";
-		mes "���̑��A���ǂ���";
-		mes "���͂��Ă���������X�ɂ́A";
-		mes "�������������܂��B";
+		mes "[カテ]";
+		mes "入場料はお一人様5,000Zenyです。";
+		mes "何度もご利用なさると、";
+		mes "多少の割引があるかもしれません。";
+		mes "その他、私どもに";
+		mes "協力してくださる方々には、";
+		mes "割引がございます。";
 		close;
 	case 3:
-		mes "[�J�e]";
-		mes "�����܂����H";
-		mes "���ꗿ�́A^FF0000����l�l�A5,000Zeny^000000�ł��B";
+		mes "[カテ]";
+		mes "入られますか？";
+		mes "入場料は、^FF0000お一人様、5,000Zeny^000000です。";
 		next;
-		if(select("����܂�","�܂��̋@���")==2) {
-			mes "[�J�e]";
-			mes "����ł́A���̋@��̂����p��";
-			mes "���҂����Ă���܂��B";
+		if(select("入ります","またの機会に")==2) {
+			mes "[カテ]";
+			mes "それでは、次の機会のご利用を";
+			mes "お待ちしております。";
 			close;
 		}
 		if(THA_1QUE) {
-			mes "[�J�e]";
-			mes "���A" +strcharinfo(0)+ "�l�ł��ˁB";
-			mes "��������d���ł����H";
-			mes "���q�l�̓��ꗿ�́A";
-			mes "���ʉ��i��3,000Zeny�ƂȂ�܂��B";
+			mes "[カテ]";
+			mes "あ、" +strcharinfo(0)+ "様ですね。";
+			mes "今回もお仕事ですか？";
+			mes "お客様の入場料は、";
+			mes "特別価格の3,000Zenyとなります。";
 			next;
-			if(select("����܂�","�܂��̋@���")==2) {
-				mes "[�J�e]";
-				mes "���Z�����悤�ł��ˁB";
-				mes "����ł́A�܂��̋@���";
-				mes "��낵�����肢���܂��B";
+			if(select("入ります","またの機会に")==2) {
+				mes "[カテ]";
+				mes "お忙しいようですね。";
+				mes "それでは、またの機会に";
+				mes "よろしくお願いします。";
 				close;
 			}
 			if(Zeny < 3000) {
-				mes "[�J�e]";
-				mes "���q�l�A�������܂����A";
-				mes "���������X����Ȃ��悤�ł��B";
-				mes "�\���󂠂�܂���B";
+				mes "[カテ]";
+				mes "お客様、恐れ入りますが、";
+				mes "お金が少々足りないようです。";
+				mes "申し訳ありません。";
 				close;
 			}
-			mes "[�J�e]";
-			mes "���肪�Ƃ��������܂��B";
-			mes "����ł͂�����ւǂ����B";
+			mes "[カテ]";
+			mes "ありがとうございます。";
+			mes "それではこちらへどうぞ。";
 			close2;
 			set Zeny,Zeny-3000;
 			warp "tha_scene01.gat",131,220;
 			end;
 		}
 		if(Zeny < 5000) {
-			mes "[�J�e]";
-			mes "���q�l�A�������܂����A";
-			mes "���������X����Ȃ��悤�ł��B";
-			mes "�\���󂠂�܂���B";
+			mes "[カテ]";
+			mes "お客様、恐れ入りますが、";
+			mes "お金が少々足りないようです。";
+			mes "申し訳ありません。";
 			close;
 		}
-		mes "[�J�e]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "�����ƁA�f�G�Ȏv���o��";
-		mes "�Ȃ邱�Ƃł��傤�B";
-		mes "����ł́c�c�B";
+		mes "[カテ]";
+		mes "ありがとうございます。";
+		mes "きっと、素敵な思い出に";
+		mes "なることでしょう。";
+		mes "それでは……。";
 		close2;
 		set Zeny,Zeny-5000;
 		warp "tha_scene01.gat",131,220;
 		end;
 	case 4:
-		mes "[�J�e]";
-		mes "���A�����ł����c�c�B";
-		mes "������u�^�i�g�X�^���[�v�Ɋւ���";
-		mes "�����������܂�����A";
-		mes "�������K�˂��������B";
+		mes "[カテ]";
+		mes "あ、そうですか……。";
+		mes "こちら「タナトスタワー」に関して";
+		mes "何かございましたら、";
+		mes "私をお訪ねください。";
 		close;
 	}
 OnTouch:
-	mes "[�Ǘ���]";
-	mes "���c�c";
-	mes "������Ƃ��҂����������B";
-	mes "������́A���b�P���x����";
-	mes "�Ǘ����ł��āA";
-	mes "�o����𐧌����Ă���܂��B";
+	mes "[管理者]";
+	mes "あ……";
+	mes "ちょっとお待ちください。";
+	mes "こちらは、レッケンベルの";
+	mes "管理区域でして、";
+	mes "出入りを制限しております。";
 	close;
 }
 
-//�^�i�g�X�^���[�K�C�h
-tha_t01.gat,149,78,4	script	�K�C�h	90,{
+//タナトスタワーガイド
+tha_t01.gat,149,78,4	script	ガイド	90,{
 	if(THA_1QUE) {
-		mes "[�e�B�[�`�F]";
-		mes "�ڍׂɊւ��ẮA";
-		mes "2�w�Ǝ��̂��΂ɂ���K�C�h��";
-		mes "���ē��������܂��B";
-		mes "���肪�Ƃ��������܂����B";
+		mes "[ティーチェ]";
+		mes "詳細に関しては、";
+		mes "2層と私のそばにいるガイドが";
+		mes "ご案内いたします。";
+		mes "ありがとうございました。";
 		close;
 	}
-	mes "[�e�B�[�`�F]";
-	mes "����ɂ��́B";
-	mes "���b�P���x�����J�����A���J����";
-	mes "������u�^�i�g�X�^���[�v��";
-	mes "�悤�������z�����������܂����B";
-	mes "��������`�����܂��傤���H";
+	mes "[ティーチェ]";
+	mes "こんにちは。";
+	mes "レッケンベルが開発し、公開中の";
+	mes "こちら「タナトスタワー」に";
+	mes "ようこそお越しくださいました。";
+	mes "何をお手伝いしましょうか？";
 	next;
-	switch(select("�^�i�g�X�^���[�ɂ��ċ����Ă�������","�l���W�߂Ă���ƕ����܂������c�c","���ł�����܂���")) {
+	switch(select("タナトスタワーについて教えてください","人を集めていると聞きましたが……","何でもありません")) {
 	case 1:
-		mes "[�e�B�[�`�F]";
-		mes "���́u�^�i�g�X�^���[�v�́A";
-		mes "�N���A���A���̌��݂����̂��Ȃǁc�c";
-		mes "���̋N���ɂ��āA";
-		mes "���m�ɂ͔����Ă���܂���B";
-		mes "����Ɋւ��āA";
-		mes "�������̐�������܂��B";
+		mes "[ティーチェ]";
+		mes "この「タナトスタワー」は、";
+		mes "誰が、いつ、何故建設したのかなど……";
+		mes "その起源について、";
+		mes "正確には判っておりません。";
+		mes "これに関して、";
+		mes "いくつかの説があります。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "�u��N�O�̐푈���A";
-		mes "�������Ƃ��鎖��ɂ�茚�Ă��v";
-		mes "�u���閂���t�̌������������v";
-		mes "�u����p�Y��������|���A";
-		mes "���̋L�O�Ƃ��Č��Ă��v���X�B";
+		mes "[ティーチェ]";
+		mes "「千年前の戦争時、";
+		mes "魔族がとある事情により建てた」";
+		mes "「ある魔導師の研究所だった」";
+		mes "「ある英雄が魔王を倒し、";
+		mes "その記念として建てた」等々。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���ǂ����b�P���x���ł́A";
-		mes "���N�A���@�ƌ����𑱂��Ă���܂����A";
-		mes "�������m�ȋN���̉𖾂ɂ�";
-		mes "�����Ă���܂���B";
+		mes "[ティーチェ]";
+		mes "私どもレッケンベルでは、";
+		mes "長年、発掘と研究を続けておりますが、";
+		mes "未だ正確な起源の解明には";
+		mes "至っておりません。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "�܂��A���̓����́A�قڑS�n���";
-		mes "�����̃����X�^�[���������Ă��܂��B";
-		mes "���̂��߁A�]���҂�";
-		mes "���Ȃ�̐��ɏオ���Ă��܂����c�c�B";
+		mes "[ティーチェ]";
+		mes "また、塔の内部は、ほぼ全地域に";
+		mes "多数のモンスターが生息しています。";
+		mes "そのため、犠牲者も";
+		mes "かなりの数に上がっていますが……。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���ǂ����b�P���x���ł́A";
-		mes "���́u�^�i�g�X�^���[�v�ɂ́A";
-		mes "���X�̔閧�����݂��Ă����";
-		mes "�m�M���Ă��܂��B";
+		mes "[ティーチェ]";
+		mes "私どもレッケンベルでは、";
+		mes "この「タナトスタワー」には、";
+		mes "数々の秘密が存在していると";
+		mes "確信しています。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "�����āA���̔閧���A�l�ޔ��W��";
-		mes "�傢�ɖ𗧂ƍl���Ă���܂��B";
-		mes "���̔��f�Ɋ�Â��A�댯���Ȃ݂��A";
-		mes "���݂����@��Ƃ𑱂��Ă���܂��B";
+		mes "[ティーチェ]";
+		mes "そして、その秘密が、人類発展に";
+		mes "大いに役立つと考えております。";
+		mes "その判断に基づき、危険を省みず、";
+		mes "現在も発掘作業を続けております。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̌��ʁA�S12�w���A";
-		mes "1�w��2�w�̊J�����������܂����B";
-		mes "�܂��A3�w��4�w�́A�J����Ƃ�";
-		mes "�}�s�b�`�ōs���Ă���Œ��ł��B";
+		mes "[ティーチェ]";
+		mes "その結果、全12層中、";
+		mes "1層と2層の開発を完了しました。";
+		mes "また、3層と4層は、開発作業を";
+		mes "急ピッチで行っている最中です。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���͂ȃ����X�^�[�̂����ŁA";
-		mes "��Ƃ���q���Ă���܂����A";
-		mes "�����̕��X�������X�^�[�ގ���";
-		mes "���͂��Ă��������Ă��邨�����ŁA";
-		mes "���Ƃ��J���͐i��ł���܂��B";
+		mes "[ティーチェ]";
+		mes "強力なモンスターのせいで、";
+		mes "作業が難航しておりますが、";
+		mes "多くの方々がモンスター退治に";
+		mes "協力してくださっているおかげで、";
+		mes "何とか開発は進んでおります。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̂悤�ȏ󋵂ł��̂ŁA";
-		mes "������3�w��4�w�̊J����";
-		mes "��������Ǝv���܂��B";
+		mes "[ティーチェ]";
+		mes "このような状況ですので、";
+		mes "いずれ3層と4層の開発も";
+		mes "完了すると思われます。";
 		while(1) {
 			next;
-			switch(select("�����X�^�[���āH","�����X�^�[�ގ��H","�c�c�c�c")) {
+			switch(select("モンスターって？","モンスター退治？","…………")) {
 			case 1:
-				mes "[�e�B�[�`�F]";
-				mes "�͂��B";
-				mes "���ǂ���������̊J���ɒ��肵������A";
-				mes "�o�����n�߂܂����B";
+				mes "[ティーチェ]";
+				mes "はい。";
+				mes "私どもがこちらの開発に着手した直後、";
+				mes "出現し始めました。";
 				next;
-				mes "[�e�B�[�`�F]";
-				mes "���̒������_�ƌ����܂��Ɓc�c";
-				mes "�����̏o���ꏊ���s���Ȃ��ƂƁA";
-				mes "����炪�܂�œV�g�̂悤�Ȍ`��";
-				mes "���Ă���Ƃ������Ƃł��B";
+				mes "[ティーチェ]";
+				mes "その珍しい点と言いますと……";
+				mes "あれらの出現場所が不明なことと、";
+				mes "あれらがまるで天使のような形を";
+				mes "しているということです。";
 				next;
-				mes "[�e�B�[�`�F]";
-				mes "���̂������A�����������҂́A";
-				mes "�u�ނ�͐_�̎g�����v";
-				mes "�Ƃ������Ă��܂����c�c�B";
-				mes "�_�̎g�����������l�Ԃ�";
-				mes "�P�����R������Ǝv���܂��H";
+				mes "[ティーチェ]";
+				mes "そのせいか、あれらを見た者は、";
+				mes "「彼らは神の使いだ」";
+				mes "とか言っていますが……。";
+				mes "神の使いが私たち人間を";
+				mes "襲う理由があると思います？";
 				next;
-				mes "[�e�B�[�`�F]";
-				mes "�����Ŏ��ǂ��́A";
-				mes "�W���m�[�̃Z�[�W�w���";
-				mes "�������˗����܂����B";
+				mes "[ティーチェ]";
+				mes "そこで私どもは、";
+				mes "ジュノーのセージ学会に";
+				mes "調査を依頼しました。";
 				next;
-				mes "[�e�B�[�`�F]";
-				mes "���̌��ʁA�ނ�͒P��";
-				mes "�V�g�̂悤�Ȏp�����Ă���";
-				mes "�����X�^�[�ɉ߂��Ȃ��Ƃ�������";
-				mes "����܂����B";
+				mes "[ティーチェ]";
+				mes "その結果、彼らは単に";
+				mes "天使のような姿をしている";
+				mes "モンスターに過ぎないという事が";
+				mes "判りました。";
 				next;
-				mes "[�e�B�[�`�F]";
-				mes "����ŁA���ǂ��͂�萸�͓I��";
-				mes "�ނ��ނ���悤�ɂȂ�܂����B";
-				mes "�����āA�����܂Ŕނ�Ƃ̐킢��";
-				mes "�����Ă���̂ł��B";
+				mes "[ティーチェ]";
+				mes "それで、私どもはより精力的に";
+				mes "彼らを退けるようになりました。";
+				mes "そして、今日まで彼らとの戦いが";
+				mes "続いているのです。";
 				continue;
 			case 2:
 				break;
 			case 3:
-				mes "[�e�B�[�`�F]";
-				mes "��w���̊J���ɂ́A";
-				mes "���Ȃ�̐l����v���܂��̂ŁA";
-				mes "�O���̕��X�̎x����";
-				mes "�󂯕t���Ă���܂��B";
-				mes "������낵����΁A";
-				mes "�u��Ȃ����Ă͂������ł��傤�H";
+				mes "[ティーチェ]";
+				mes "上層部の開発には、";
+				mes "かなりの人員を要しますので、";
+				mes "外部の方々の支援も";
+				mes "受け付けております。";
+				mes "もしよろしければ、";
+				mes "志願なさってはいかがでしょう？";
 				close;
 			}
 			break;
 		}
 	case 2:
-		mes "[�e�B�[�`�F]";
-		mes "������Ǘ��l����";
-		mes "�������ɂȂ�����������܂��񂪁A";
-		mes "���ǂ����b�P���x���ł́A";
-		mes "3�w��4�w�A�����Ă��̏�̑w��";
-		mes "���@�y�ъJ���̂��߁A";
-		mes "�A���o�C�g���W���Ă���܂��B";
+		mes "[ティーチェ]";
+		mes "入り口管理人から";
+		mes "お聞きになったかもしれませんが、";
+		mes "私どもレッケンベルでは、";
+		mes "3層と4層、そしてその上の層の";
+		mes "発掘及び開発のため、";
+		mes "アルバイトを募集しております。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̗b���Ƃł�";
-		mes "�l���Ă�������΂悢�ł��B";
-		mes "���ǂ��ƌ_����Ȃ�����X�ɂ́A";
-		mes "��ʂ̕��X�ɂ͐������Ă���";
-		mes "3�w�ȏ�ւ̏o�����";
-		mes "�����Ă���܂��B";
+		mes "[ティーチェ]";
+		mes "一種の傭兵とでも";
+		mes "考えてくださればよいです。";
+		mes "私どもと契約をなさる方々には、";
+		mes "一般の方々には制限している";
+		mes "3層以上への出入りを";
+		mes "許可しております。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "�����āA�Y���̃����X�^�[������";
-		mes "�ގ������Ƃ����؋���";
-		mes "�����Ă��Ă�������΁A";
-		mes "�����̕�V�������グ�܂��B";
+		mes "[ティーチェ]";
+		mes "そして、該当のモンスターたちを";
+		mes "退治したという証拠を";
+		mes "持ってきてくだされば、";
+		mes "相応の報酬を差し上げます。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "�����A���傷��ӌ����������܂�����A";
-		mes "���ɂ��\���t�����������B";
+		mes "[ティーチェ]";
+		mes "もし、応募する意向がございましたら、";
+		mes "私にお申し付けください。";
 		next;
-		if(select("�܂��̋@���","�\�����݂܂�")==1) {
-			mes "[�e�B�[�`�F]";
-			mes "���ł��󂯕t���Ă���܂��̂ŁA";
-			mes "�l�����ς��܂�����";
-			mes "�܂����z�����������B";
+		if(select("またの機会に","申し込みます")==1) {
+			mes "[ティーチェ]";
+			mes "いつでも受け付けておりますので、";
+			mes "考えが変わりましたら";
+			mes "またお越しください。";
 			close;
 		}
-		mes "[�e�B�[�`�F]";
-		mes "������܂����B";
-		mes "���肪�Ƃ��������܂��B";
-		mes "�ł́A������̏��ނ�";
-		mes "�������������B";
-		mes "�ȒP�Ȑ��񏑂݂����Ȃ��̂ł��B";
+		mes "[ティーチェ]";
+		mes "分かりました。";
+		mes "ありがとうございます。";
+		mes "では、こちらの書類を";
+		mes "ご覧ください。";
+		mes "簡単な誓約書みたいなものです。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���ꂩ��c�c�����O�́c�c";
-		mes strcharinfo(0)+ "�l��";
-		mes "��낵���ł��傤���H";
+		mes "[ティーチェ]";
+		mes "それから……お名前は……";
+		mes strcharinfo(0)+ "様で";
+		mes "よろしいでしょうか？";
 		next;
-		menu "�͂�",-;
-		mes "[�e�B�[�`�F]";
-		mes "����ł́A������S�Ă�";
-		mes "�ڂ����ʂ��ɂȂ��Ă���A";
-		mes "�����Ȃ����Ă��������B";
+		menu "はい",-;
+		mes "[ティーチェ]";
+		mes "それでは、こちら全てに";
+		mes "目をお通しになってから、";
+		mes "署名なさってください。";
 		next;
-		mes "�]�����Ȏ����т������";
-		mes "�����ꂽ����n���ꂽ�]";
+		mes "‐小さな字がびっしりと";
+		mes "書かれた紙を渡された‐";
 		next;
-		mes "���_�񏑁�";
-		mes "1.���̌_�񏑂́A";
-		mes "���b�P���x���i�ȍ~�u�b�v)��";
-		mes strcharinfo(0)+ "�i�ȍ~�u���v�j�Ԃ�";
-		mes "�_��Ƃ��Č��͂𔭊�����B";
-		mes "1-1.���̌_��̖��̂́A";
-		mes "�u�b�v�Ɓu���v�Ԃ̗b���_��Ƃ���B";
-		mes "2.�_��̌��͂́A���҂��_�񏑂�";
-		mes "�������邱�ƂŔ�������B";
-		mes "3.�C���ɂ�鐬�ʂ́A�u���v�ɂ����";
-		mes "�񎦂����؋��ɂ���Ċm�F����B";
-		mes "3-1.�؋��́A���̒ʂ�Ƃ���B";
-		mes "�c�c�c�c";
-		mes "4.�e�؋������K�萔�ȏ�A";
-		mes "�W�߂ė����ꍇ�Ɍ���A";
-		mes "�u�b�v�́u���v�ɕ�V��^����Ƃ���B";
-		mes "4-1.��V�͎��̒ʂ�Ƃ���B";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "13.���̌_�񏑂́A";
-		mes "�^�i�g�X�^���[�ł̂݌��͂𔭊����A";
-		mes "���n��ł͂��̌��͂𔭊����Ȃ��B";
-		mes "�c�c�c�c�c�c�c�c";
-		mes "�c�c�ǉ���V�Ƃ��āA�u�b�v�́u���v��";
-		mes "�^�i�g�X�^���[�̏o����Ɋւ��āA";
-		mes "�����[�u��^����Ƃ���B";
-		mes "����ɂ����ꉿ�i�́A";
-		mes "5,000Zeny�̂��̂�";
-		mes "3,000Zeny�ɕύX����B";
-		mes "�c�c�c�c";
-		mes "�c�c�c�c�c�c";
-		mes "�@�@�@�@�@�@�@�@���b�P���x��";
-		mes "�@�@�@�@�@�@�@�@"+ strcharinfo(0);
+		mes "＜契約書＞";
+		mes "1.この契約書は、";
+		mes "レッケンベル（以降「甲」)と";
+		mes strcharinfo(0)+ "（以降「乙」）間の";
+		mes "契約として効力を発揮する。";
+		mes "1-1.この契約の名称は、";
+		mes "「甲」と「乙」間の傭兵契約とする。";
+		mes "2.契約の効力は、両者が契約書に";
+		mes "署名することで発生する。";
+		mes "3.任務による成果は、「乙」によって";
+		mes "提示される証拠によって確認する。";
+		mes "3-1.証拠は、次の通りとする。";
+		mes "…………";
+		mes "4.各証拠物を規定数以上、";
+		mes "集めて来た場合に限り、";
+		mes "「甲」は「乙」に報酬を与えるとする。";
+		mes "4-1.報酬は次の通りとする。";
+		mes "…………";
+		mes "………………";
+		mes "……………………";
+		mes "13.この契約書は、";
+		mes "タナトスタワーでのみ効力を発揮し、";
+		mes "他地域ではその効力を発揮しない。";
+		mes "……………………";
+		mes "……追加報酬として、「甲」は「乙」に";
+		mes "タナトスタワーの出入りに関して、";
+		mes "割引措置を与えるとする。";
+		mes "それによる入場価格は、";
+		mes "5,000Zenyのものを";
+		mes "3,000Zenyに変更する。";
+		mes "…………";
+		mes "………………";
+		mes "　　　　　　　　レッケンベル";
+		mes "　　　　　　　　"+ strcharinfo(0);
 		next;
-		if(select("��������","�������Ȃ�")==2) {
-			mes "[�e�B�[�`�F]";
-			mes "����c�c";
-			mes "�����Ȃ���Ȃ���ł����H";
-			mes "�����Ɓc�c";
-			mes "�����D�ɗ����Ȃ�������";
-			mes "����悤�ł��ˁB";
+		if(select("署名する","署名しない")==2) {
+			mes "[ティーチェ]";
+			mes "あら……";
+			mes "署名なさらないんですか？";
+			mes "えっと……";
+			mes "何か腑に落ちない部分が";
+			mes "あるようですね。";
 			next;
-			mes "[�e�B�[�`�F]";
-			mes "�ł́A�d������܂���ˁB";
-			mes "�������l�����ς��܂�����A";
-			mes "�܂����K�˂��������B";
+			mes "[ティーチェ]";
+			mes "では、仕方ありませんね。";
+			mes "もしお考えが変わりましたら、";
+			mes "またお訪ねください。";
 			close;
 		}
-		mes "�]�������e�������ꂽ";
-		mes "�񖇂̌_�񏑂ɏ��������]";
+		mes "‐同じ内容が書かれた";
+		mes "二枚の契約書に署名した‐";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���肪�Ƃ��������܂��B";
-		mes "����Ŏ��ǂ��Ɨb���_��";
-		mes "��������܂����B";
+		mes "[ティーチェ]";
+		mes "ありがとうございます。";
+		mes "これで私どもと傭兵契約が";
+		mes "締結されました。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̌_�񏑂́A";
-		mes "������^�i�g�X�^���[�ł̂݁A";
-		mes "���͂𔭊����܂��̂ŁA";
-		mes "���ɐS�z����K�v�͂������܂���B";
+		mes "[ティーチェ]";
+		mes "この契約書は、";
+		mes "こちらタナトスタワーでのみ、";
+		mes "効力を発揮しますので、";
+		mes "特に心配する必要はございません。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̑������Ɋւ��ẮA";
-		mes "�_�񏑂��������������B";
-		mes "�Ȃ��A3�w�ւ̏o����́A";
-		mes "2�w�ɂ���K�C�h���S�����Ă���܂��B";
-		mes "�܂��A��V�͎��̂��΂ɂ���";
-		mes "�K�C�h�u���G�v���S�����Ă���܂��B";
+		mes "[ティーチェ]";
+		mes "その他事項に関しては、";
+		mes "契約書をご覧ください。";
+		mes "なお、3層への出入りは、";
+		mes "2層にいるガイドが担当しております。";
+		mes "また、報酬は私のそばにいる";
+		mes "ガイド「リエ」が担当しております。";
 		next;
-		mes "[�e�B�[�`�F]";
-		mes "���̌��Ɋւ�����ڂ��������́A";
-		mes "2�w�ɂ���K�C�h�����ē����܂��B";
-		mes "����ł́A�ǂ����ʂ�";
-		mes "���҂��Ă���܂��B";
+		mes "[ティーチェ]";
+		mes "この件に関するより詳しい説明は、";
+		mes "2層にいるガイドがご案内します。";
+		mes "それでは、良い成果を";
+		mes "期待しております。";
 		set THA_1QUE,1;
 		close;
 	case 3:
-		mes "[�e�B�[�`�F]";
-		mes "�^�i�g�X�^���[�K�C�h";
-		mes "�e�B�[�`�F�����p�ł����B";
-		mes "�y�����ꎞ�ɂȂ�܂��悤�ɁB";
+		mes "[ティーチェ]";
+		mes "タナトスタワーガイド";
+		mes "ティーチェ＝ラパでした。";
+		mes "楽しい一時になりますように。";
 		close;
 	}
 }
 
-//��V�K�C�h
-tha_t01.gat,140,78,4	script	�K�C�h	831,{
+//報酬ガイド
+tha_t01.gat,140,78,4	script	ガイド	831,{
 	if(THA_1QUE) {
-		mes "[���G]";
-		mes "����ɂ��́`�B";
-		mes "��������`�����܂��傤���`�H";
+		mes "[リエ]";
+		mes "こんにちは～。";
+		mes "何をお手伝いしましょうか～？";
 		next;
-		if(select("��V����������","���ł��Ȃ��ł�")==2) {
-			mes "[���G]";
-			mes "���肪�Ƃ��������܂��`�B";
-			mes "���悤�Ȃ�`�B";
+		if(select("報酬をください","何でもないです")==2) {
+			mes "[リエ]";
+			mes "ありがとうございます～。";
+			mes "さようなら～。";
 			close;
 		}
-		mes "[���G]";
-		mes "�����I�@�_��̕��ł��ˁ`�H";
-		mes "���X���҂����������`�B";
+		mes "[リエ]";
+		mes "おお！　契約の方ですね～？";
+		mes "少々お待ちください～。";
 		next;
-		mes "[���G]";
-		mes strcharinfo(0)+ "�l�ł��ˁc�c";
-		mes "�ǂ̕i�̕�V������]�ł����`�H";
+		mes "[リエ]";
+		mes strcharinfo(0)+ "様ですね……";
+		mes "どの品の報酬をご希望ですか～？";
 		next;
-		switch(select("���̘r��","�Ԃ��H��","���H��","���ꂽ��")) {
+		switch(select("金の腕輪","赤い羽毛","青い羽毛","呪われた印")) {
 		case 1: set '@itemid,7435; break;
 		case 2: set '@itemid,7440; break;
 		case 3: set '@itemid,7441; break;
 		case 4: set '@itemid,7442; break;
 		}
 		if(countitem('@itemid) < 1) {
-			mes "[���G]";
-			mes "�c�c�c�c";
-			mes "���́`�A�u" +getitemname('@itemid)+ "�v��";
-			mes "�Ȃ��悤�ł����c�c�B";
-			mes "������x���ו���";
-			mes "�m�F���Ă��������`�B";
+			mes "[リエ]";
+			mes "…………";
+			mes "あの～、「" +getitemname('@itemid)+ "」が";
+			mes "ないようですが……。";
+			mes "もう一度お荷物を";
+			mes "確認してください～。";
 			close;
 		}
 		set '@num,countitem('@itemid);
@@ -473,148 +473,148 @@ tha_t01.gat,140,78,4	script	�K�C�h	831,{
 			set '@exp,200*'@num;
 		else
 			set '@exp,2000*'@num;
-		mes "[���G]";
-		mes "�u" +getitemname('@itemid)+ "�v�������̕�V�́A";
-		mes "�����F1,000Zeny";
+		mes "[リエ]";
+		mes "「" +getitemname('@itemid)+ "」一個当たりの報酬は、";
+		mes "お金：1,000Zeny";
 		if(checkre())
-			mes "�ǉ���V�F200exp";
+			mes "追加報酬：200exp";
 		else
-			mes "�ǉ���V�F2,000exp";
-		mes "�ɂȂ�܂��ˁ`�B";
+			mes "追加報酬：2,000exp";
+		mes "になりますね～。";
 		next;
-		mes "[���G]";
-		mes "���݁A�������́u" +getitemname('@itemid)+ "�v�́A";
-		mes '@num+ "�Ȃ̂Łc�c";
-		mes "�����F" +'@zeny+ "Zeny";
-		mes "�ǉ���V�F" +'@exp+ "exp";
-		mes "�ɂȂ�܂��ˁ`�B";
+		mes "[リエ]";
+		mes "現在、お持ちの「" +getitemname('@itemid)+ "」は、";
+		mes '@num+ "個なので……";
+		mes "お金：" +'@zeny+ "Zeny";
+		mes "追加報酬：" +'@exp+ "exp";
+		mes "になりますね～。";
 		next;
-		mes "[���G]";
-		mes "��V���󂯂Ƃ�܂��`�H";
+		mes "[リエ]";
+		mes "報酬を受けとります～？";
 		next;
-		if(select("�͂�","������")==2) {
-			mes "[���G]";
-			mes "��V���󂯎�肽���Ȃ�����A";
-			mes "���ł����Ă��������`�B";
+		if(select("はい","いいえ")==2) {
+			mes "[リエ]";
+			mes "報酬を受け取りたくなったら、";
+			mes "いつでも来てください～。";
 			close;
 		}
-		mes "[���G]";
-		mes "���肪�Ƃ��������܂��`�B";
-		mes "�ł́A���Z���܂��ˁ`�B";
+		mes "[リエ]";
+		mes "ありがとうございます～。";
+		mes "では、精算しますね～。";
 		next;
-		mes "[���G]";
-		mes "�����F" +'@zeny+ "Zeny";
-		mes "�ǉ���V�F" +'@exp+ "exp";
-		mes "�����n�����܂��`�B";
-		mes "�܂��A���肢���܂��ˁ`�B";
+		mes "[リエ]";
+		mes "お金：" +'@zeny+ "Zeny";
+		mes "追加報酬：" +'@exp+ "exp";
+		mes "をお渡しします～。";
+		mes "また、お願いしますね～。";
 		delitem '@itemid,'@num;
 		set Zeny,Zeny+'@zeny;
 		getexp '@exp,0;
 		close;
 	}
-	mes "[���G]";
-	mes "����ɂ��́`�B";
-	mes "�u�^�i�g�X�^���[�_��v��";
-	mes "�ւ����V�S����";
-	mes "���G���N�j�W�F�ł��`�B";
+	mes "[リエ]";
+	mes "こんにちは～。";
+	mes "「タナトスタワー契約」に";
+	mes "関する報酬担当の";
+	mes "リエ＝クニジェです～。";
 	next;
-	if(select("�_��H","�����l�ł�")==1) {
-		mes "[���G]";
-		mes "�_��Ƃ����̂́A";
-		mes "���ǂ��u���b�P���x���v�ЂƂ�";
-		mes "�b���_��̂��Ƃł��`�B";
-		mes "�ڍׂƌ_��Ɋւ���葱���́A";
-		mes "�����ɂ���u�e�B�[�`�F�v��";
-		mes "�����Ă��������`�B";
+	if(select("契約？","お疲れ様です")==1) {
+		mes "[リエ]";
+		mes "契約というのは、";
+		mes "私ども「レッケンベル」社との";
+		mes "傭兵契約のことです～。";
+		mes "詳細と契約に関する手続きは、";
+		mes "そこにいる「ティーチェ」に";
+		mes "聞いてください～。";
 		close;
 	}
-	mes "[���G]";
-	mes "���肪�Ƃ��������܂��`�B";
-	mes "�悢���ɂȂ�Ƃ����ł��ˁ`�B";
+	mes "[リエ]";
+	mes "ありがとうございます～。";
+	mes "よい日になるといいですね～。";
 	close;
 }
 
-//�Q�[�g�K�C�h
-tha_t02.gat,231,161,5	script	�Q�[�g�K�C�h	874,{
+//ゲートガイド
+tha_t02.gat,231,161,5	script	ゲートガイド	874,{
 	if(THA_1QUE) {
-		mes "-�j�́A�����l���������Ă���悤��-";
+		mes "-男は、何か考え事をしているようだ-";
 		next;
-		mes "[�v�����h]";
-		mes "�c�c�c�c�B";
+		mes "[プルレド]";
+		mes "…………。";
 		next;
-		if(select("���́c�c","�c�c�c�c")==2) {
+		if(select("あの……","…………")==2) {
 			mes "[" +strcharinfo(0)+ "]";
-			mes "�c�c�c�c�c�c�B";
+			mes "………………。";
 			close;
 		}
-		mes "[�v�����h]";
-		mes "���c�c";
-		mes "�\���󂠂�܂���B";
-		mes "�ǂ̂悤�Ȃ��p���ł��傤���H";
+		mes "[プルレド]";
+		mes "あ……";
+		mes "申し訳ありません。";
+		mes "どのようなご用件でしょうか？";
 		next;
-		if(select("3�w�ɍs�������̂ł���","�_��҂ւ̐������c�c")==2) {
-			mes "[�v�����h]";
-			mes "�������܂�܂����B";
-			mes "����̘b�͊���";
-			mes "�������ɂȂ����ł��傤����A";
-			mes "�����ł́A�K�v�ȕ��������ɂ��܂��B";
+		if(select("3層に行きたいのですが","契約者への説明を……")==2) {
+			mes "[プルレド]";
+			mes "かしこまりました。";
+			mes "大方の話は既に";
+			mes "お聞きになったでしょうから、";
+			mes "ここでは、必要な部分だけにします。";
 			next;
-			mes "[�v�����h]";
-			mes "��ɐ\���グ�Ă����܂����A";
-			mes "3�w�֒ʂ��铹�́A";
-			mes "�����������ƂȂ�܂��B";
-			mes "�܂��A5�w�ȏ�ւ̓��́A";
-			mes "����ʍs�ƂȂ��Ă���܂��B";
+			mes "[プルレド]";
+			mes "先に申し上げておきますが、";
+			mes "3層へ通じる道は、";
+			mes "こちら一つだけとなります。";
+			mes "また、5層以上への道は、";
+			mes "一方通行となっております。";
 			next;
-			mes "[�v�����h]";
-			mes "3�w��4�w�́A���ǂ���������x";
-			mes "�J����i�߂Ă���܂��̂ŁA";
-			mes "��r�I���R��";
-			mes "�s�������邱�Ƃ��ł��܂��B";
+			mes "[プルレド]";
+			mes "3層と4層は、私どもがある程度";
+			mes "開発を進めておりますので、";
+			mes "比較的自由に";
+			mes "行き来することができます。";
 			next;
-			mes "[�v�����h]";
-			mes "������5�w����́A";
-			mes "�����̗͂���p���Ă���炵���A";
-			mes "��֐i�ނ��Ƃ͂ł��Ă��A";
-			mes "�߂邱�Ƃ͂ł��܂���B";
+			mes "[プルレド]";
+			mes "しかし5層からは、";
+			mes "何かの力が作用しているらしく、";
+			mes "先へ進むことはできても、";
+			mes "戻ることはできません。";
 			next;
-			mes "[�v�����h]";
-			mes "���̓��̍ŏ�w�́A12�w�ł��B";
-			mes "��w�֏オ��قǁA";
-			mes "�o�ꂷ�郂���X�^�[���������͂ɂȂ�A";
-			mes "�n�`�����Ȃ�ω����Ă��܂��B";
+			mes "[プルレド]";
+			mes "この塔の最上層は、12層です。";
+			mes "上層へ上がるほど、";
+			mes "登場するモンスターたちも強力になり、";
+			mes "地形もかなり変化しています。";
 			next;
-			mes "[�v�����h]";
-			mes "�����A5�w�ȏ�ɍs���̂ł�����A";
-			mes "�K���A����@�����߂Ă���";
-			mes "�オ��悤�ɂ��Ă��������B";
+			mes "[プルレド]";
+			mes "もし、5層以上に行くのでしたら、";
+			mes "必ず帰る方法を決めてから";
+			mes "上がるようにしてください。";
 			close;
 		}
-		mes "[�v�����h]";
-		mes "�������܂�܂����B";
-		mes "���X�A�m�F�����܂��B";
-		mes "�����O�́c�c";
-		mes strcharinfo(0)+ "�l�ł��ˁB";
-		mes "3�w�֒ʂ���Q�[�g���J���܂��B";
+		mes "[プルレド]";
+		mes "かしこまりました。";
+		mes "少々、確認をします。";
+		mes "お名前は……";
+		mes strcharinfo(0)+ "様ですね。";
+		mes "3層へ通じるゲートを開きます。";
 		next;
-		mes "[�v�����h]";
-		mes "�Q�[�g�̊J�����Ԃ͒Z���̂ŁA";
-		mes "�����Ɉړ����Ă��������B";
-		mes "�ړ��Ɏ��Ԃ�������܂��ƁA";
-		mes "��̑w�̃����X�^�[�������A";
-		mes "������֓����Ă��܂��̂ŁB";
+		mes "[プルレド]";
+		mes "ゲートの開放時間は短いので、";
+		mes "即座に移動してください。";
+		mes "移動に時間がかかりますと、";
+		mes "上の層のモンスターたちが、";
+		mes "こちらへ入ってきますので。";
 		hideoffnpc "thawarp1";
 		initnpctimer;
 		close;
 	}
-	mes "[�v�����h]";
-	mes "������́A3�w�֒ʂ���Q�[�g�ł��B";
-	mes "���ǂ��ƌ_������΂ꂽ���X������";
-	mes "�o����\�ƂȂ��Ă���܂��B";
+	mes "[プルレド]";
+	mes "こちらは、3層へ通じるゲートです。";
+	mes "私どもと契約を結ばれた方々だけが";
+	mes "出入り可能となっております。";
 	next;
-	mes "[�v�����h]";
-	mes "�ڍׂ͉��̑w�̃K�C�h��";
-	mes "���q�˂��������B";
+	mes "[プルレド]";
+	mes "詳細は下の層のガイドに";
+	mes "お尋ねください。";
 	close;
 OnTimer30000:
 	hideonnpc "thawarp1";
@@ -634,39 +634,39 @@ OnInit:
 }
 
 //==============================================================================
-// �A�r�X���C�N
+// アビスレイク
 //==============================================================================
-hu_fild05.gat,168,304,0	script	��	111,{
-	mes "-���̕\�ʂɁA";
-	mes "�������ʂ蔲�������̂悤��";
-	mes "��������������-";
-	mes "-���̒��̖͗l�́A���Ɏ��Ă���-";
+hu_fild05.gat,168,304,0	script	柱	111,{
+	mes "-柱の表面に、";
+	mes "何かが通り抜けたかのような";
+	mes "小さい穴がある-";
+	mes "-その柱の模様は、竜に似ている-";
 	if(countitem(1035) < 1 || countitem(1036) < 1 || countitem(1037) < 1) {
-		mes "-�����āA�O�̏����Ȍ��ɂ́A";
-		mes "������������ꂻ����-";
+		mes "-そして、三つの小さな穴には、";
+		mes "何か物を入れられそうだ-";
 		close;
 	}
 	next;
-	if(select("���̌��ɃA�C�e��������","�����̌��ɃA�C�e��������")==1) {
-		mes "-�h���S���̉���A�T�d��";
-		mes "���̌��ɉ�������-";
-		mes "-����ƁA������";
-		mes "�E�H�[���Ƃ�����������-";
+	if(select("柱の穴にアイテムを入れる","自分の口にアイテムを入れる")==1) {
+		mes "-ドラゴンの牙を、慎重に";
+		mes "柱の穴に押し込んだ-";
+		mes "-すると、柱から";
+		mes "ウォーンという音がした-";
 		next;
-		mes "-�h���S���̗؂��A�T�d��";
-		mes "�ʂ̌��ɉ�������-";
-		mes "-�܂��A�����特�����āA";
-		mes "���΂炭�h�ꂽ-";
+		mes "-ドラゴンの鱗を、慎重に";
+		mes "別の穴に押し込んだ-";
+		mes "-また、柱から音がして、";
+		mes "しばらく揺れた-";
 		next;
 		misceffect 72;
-		mes "-�h���S���̐K�����A�T�d��";
-		mes "�c��̌��ɉ�������-";
-		mes "-����ƁA�E�H�[���Ƃ������Ƌ��ɁA";
-		mes "���̊���ڂ�������R��Ă��āc�c";
-		mes "�S�g����-";
+		mes "-ドラゴンの尻尾を、慎重に";
+		mes "残りの穴に押し込んだ-";
+		mes "-すると、ウォーンという音と共に、";
+		mes "柱の割れ目から光が漏れてきて……";
+		mes "全身を包んだ-";
 		next;
-		mes "-�ǂ��������������ꂽ���̂悤��";
-		mes "�������X�b�Ə���������������-";
+		mes "-どこかから引っ張られたかのように";
+		mes "足元がスッと消えた感じがした-";
 		misceffect 99;
 		misceffect 321,"";
 		close2;
@@ -678,10 +678,10 @@ hu_fild05.gat,168,304,0	script	��	111,{
 		initnpctimer;
 		end;
 	}
-	mes "-�����̌��̒���";
-	mes "�A�C�e����T�d�ɉ�������-";
-	mes "-����ƁA�E�H�[���Ƃ������Ƌ��ɁA";
-	mes "����������n�߂�-";
+	mes "-自分の口の中へ";
+	mes "アイテムを慎重に押し込んだ-";
+	mes "-すると、ウォーンという音と共に、";
+	mes "お腹が搖れ始めた-";
 	next;
 	delitem 1035,1;
 	delitem 1036,1;
@@ -703,24 +703,24 @@ OnInit:
 	end;
 }
 
-hu_fild05.gat,171,211,0	script	��	111,{
-	mes "-�΂Ō������Ǝ��Ă���-";
-	mes "-�������P���Ă���-";
+hu_fild05.gat,171,211,0	script	柱	111,{
+	mes "-湖で見た柱と似ている-";
+	mes "-穴が青く輝いている-";
 	next;
-	if(select("�P���Ă��錊�Ɏ�����Ă݂�","�P���Ă��錊����A�C�e������������")==1) {
-		mes "-�R�c���R�c���R�c���c�c-";
+	if(select("輝いている穴に手を入れてみる","輝いている穴からアイテムを引き抜く")==1) {
+		mes "-コツンコツンコツン……-";
 		next;
 		misceffect 72;
-		mes "-�����Ղ��A";
-		mes "���̓������牽����������-";
+		mes "-光が遮られ、";
+		mes "柱の内側から何か音がした-";
 		next;
-		mes "-�O�O�O�O�O�O�O�b-";
-		mes "-�O�[�[���b-";
+		mes "-グググググググッ-";
+		mes "-グーーンッ-";
 		next;
-		mes "-���̏����h��A";
-		mes "���̒���������L�тĂ���-";
-		mes "-�ǂ��������������ꂽ���̂悤��";
-		mes "�������X�b�Ə���������������-";
+		mes "-穴の所が揺れ、";
+		mes "柱の中から光が伸びてきた-";
+		mes "-どこかから引っ張られたかのように";
+		mes "足元がスッと消えた感じがした-";
 		next;
 		misceffect 99;
 		misceffect 321,"";
@@ -729,15 +729,15 @@ hu_fild05.gat,171,211,0	script	��	111,{
 		end;
 	}
 	misceffect 72;
-	mes "-�o����!!-";
-	mes "-�����������A�C�e������ꂽ-";
+	mes "-バリン!!-";
+	mes "-引き抜いたアイテムが壊れた-";
 	next;
-	mes "-�O�O�O�O�O�O�O�b�O�[�[�[�[��!!-";
+	mes "-グググググググッグーーーーン!!-";
 	next;
-	mes "-�����h��n�߁A";
-	mes "���͂ǂ����֋z�����܂�Ă�����-";
-	mes "-�����đ������h��c�c";
-	mes "�ǂ����֓�����΂��ꂽ-";
+	mes "-柱が揺れ始め、";
+	mes "光はどこかへ吸い込まれていった-";
+	mes "-そして足元が揺れ……";
+	mes "どこかへ投げ飛ばされた-";
 	next;
 	misceffect 99;
 	misceffect 321,"";

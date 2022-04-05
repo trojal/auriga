@@ -3,172 +3,172 @@
 //==============================================================================
 
 //============================================================
-// �s���~�b�h�i�C�g���A �]��NPC
+// ピラミッドナイトメア 転送NPC
 //------------------------------------------------------------
-moc_prydb1.gat,103,54,3	script	�������L#prydn1	547,{
+moc_prydb1.gat,103,54,3	script	怪しい猫#prydn1	547,{
 	if(BaseLevel < 100) {
-		mes "[�������L]";
-		mes "�܂����}�~�[��";
-		mes "����Ă��܂��Ƃ́c�c";
-		mes "�]^ff0000BaseLv100�ȏ�^000000�ɂȂ��";
-		mes "�@���̏ꏊ����";
-		mes "�@�s���~�b�h�_���W�����@�閧�̒n����";
-		mes "�@���ꂪ�\�ƂȂ�܂��]";
+		mes "[怪しい猫]";
+		mes "まさかマミーに";
+		mes "やられてしまうとは……";
+		mes "‐^ff0000BaseLv100以上^000000になると";
+		mes "　この場所から";
+		mes "　ピラミッドダンジョン　秘密の地下室";
+		mes "　入場が可能となります‐";
 		close;
 	}
-	mes "[�������L]";
-	mes "���̐�ɍs�������̂��H";
-	mes "���̐�͎��������������ʂȏꏊ���I";
-	mes "�ǂ����Ă��s�������ƌ����Ȃ�";
-	mes "�ʍs���Ƃ���^ff00005,000^000000Zeny�����������I";
+	mes "[怪しい猫]";
+	mes "この先に行きたいのか？";
+	mes "この先は私が発見した特別な場所だ！";
+	mes "どうしても行きたいと言うなら";
+	mes "通行料として^ff00005,000^000000Zenyいただこう！";
 	next;
-	switch(select("5,000Zeny�𕥂��ďo��","�b�𕷂�","���̏������")) {
+	switch(select("5,000Zenyを払って出発","話を聞く","その場を去る")) {
 	case 1:
 		if(Zeny < 5000) {
-			// ������
-			mes "[�������L]";
-			mes "�ɂ�ɂ�I";
-			mes "����������Ȃ��Ȃ�b�ɂȂ�Ȃ��I";
+			// 未調査
+			mes "[怪しい猫]";
+			mes "にゃにゃ！";
+			mes "お金が足りないなら話にならない！";
 			close;
 		}
-		mes "[�������L]";
-		mes "�悵�B���ꂶ�Ⴀ���ė��āI";
+		mes "[怪しい猫]";
+		mes "よし。それじゃあついて来て！";
 		close2;
 		set Zeny,Zeny-5000;
 		warp "moc_prydn1.gat",93,96;
 		end;
 	case 2:
-		mes "[�������L]";
-		mes "���܂Œ����ԁA�ςݏグ�Ă���������";
-		mes "�n�ɗ����Ă��܂���������Ƃ́c�c�B";
+		mes "[怪しい猫]";
+		mes "今まで長い間、積み上げてきた名声が";
+		mes "地に落ちてしまう日が来るとは……。";
 		next;
-		mes "[�������L]";
-		mes "������{���ɂ��������񂾁c�c�B";
-		mes "�}�~�[�̂����ɁB�@�}�~�[����!!";
-		mes "����Ȃɋ����Ȃ�āI";
+		mes "[怪しい猫]";
+		mes "あいつら本当におかしいんだ……。";
+		mes "マミーのくせに。　マミーだろ!!";
+		mes "あんなに強いなんて！";
 		next;
-		if(select("�����ĕ���","��b����߂�") == 2) {
-			mes "�]���Ȃ��͂��̏���������]";
+		if(select("続けて聞く","会話をやめる") == 2) {
+			mes "‐あなたはその場を去った‐";
 			close;
 		}
-		mes "[�������L]";
-		mes "�����B����͎������R";
-		mes "�B���ʘH�̐�ɂ���A���������";
-		mes "�̌@�����Ă������̎����B";
+		mes "[怪しい猫]";
+		mes "そう。それは私が偶然";
+		mes "隠し通路の先にある、宝を見つけて";
+		mes "採掘をしていた時の事だ。";
 		next;
-		mes "[�������L]";
-		mes "��������}�~�[���ߊ���ė����񂾂�B";
-		mes "��ڌ��ă}�~�[���Ƃ킩��������";
-		mes "�C�ɂ�����Ƃ����Ă����񂾁B";
-		mes "�}�~�[�Ȃ�Ď��̓G�ł͂Ȃ�����ˁB";
-		mes "���������炾�c�c�I";
+		mes "[怪しい猫]";
+		mes "遠くからマミーが近寄って来たんだよ。";
+		mes "一目見てマミーだとわかったから";
+		mes "気にせず作業をしていたんだ。";
+		mes "マミーなんて私の敵ではないからね。";
+		mes "そうしたらだ……！";
 		next;
-		mes "[�������L]";
-		mes "�̂����ōs�����炢��";
-		mes "����ȃr���^�������ꂽ��B";
-		mes "���̃J���C�C�L���c�c�B";
-		mes "�܂�������Ȃɋ����Ƃ́B";
-		mes "�o���Ƃ���A��і�Y��!!";
+		mes "[怪しい猫]";
+		mes "体が飛んで行くくらいの";
+		mes "強烈なビンタをうたれたよ。";
+		mes "このカワイイ猫を……。";
+		mes "まさかあんなに強いとは。";
+		mes "覚えとけよ、包帯野郎め!!";
 		next;
-		mes "[�������L]";
-		mes "���̒��ɂ��郂���X�^�[�B��";
-		mes "^ff0000�����ڂɘf�킳���Ȃ�^000000�B";
-		mes "���܂ő����������̂���z����";
-		mes "���f���Ă���ƒɂ��ڂɑ������I";
+		mes "[怪しい猫]";
+		mes "この中にいるモンスター達の";
+		mes "^ff0000見た目に惑わされるなよ^000000。";
+		mes "今まで遭遇した事のある奴だと";
+		mes "油断していると痛い目に遭うぞ！";
 		next;
-		mes "[�������L]";
-		mes "�Ƃ����킯�ō̌@���o���Ȃ������";
-		mes "������ʂ�`���҂���ʍs���������";
-		mes "���v�𗧂Ă鎖�ɂ����B";
-		mes "�L�ɂ�����������񂾂�I";
+		mes "[怪しい猫]";
+		mes "というわけで採掘が出来ない代わりに";
+		mes "ここを通る冒険者から通行料を取って";
+		mes "生計を立てる事にした。";
+		mes "猫にも生活があるんだよ！";
 		next;
-		mes "[�������L]";
-		mes "���������A���ɍs���΂�����";
-		mes "���Ԃ��̌@�����݂Ă邾�낤�B";
-		mes "��`���Ă�����";
-		mes "�ꝺ����̃`�����X��";
-		mes "������邩������Ȃ����B";
+		mes "[怪しい猫]";
+		mes "そうそう、中に行けばきっと";
+		mes "仲間が採掘を試みてるだろう。";
+		mes "手伝ってくれれば";
+		mes "一攫千金のチャンスに";
+		mes "ありつけるかもしれないぞ。";
 		close;
 	case 3:
-		mes "�]���Ȃ��͂��̏���������]";
+		mes "‐あなたはその場を去った‐";
 		close;
 	}
 OnInit:
-	waitingroom "�閧�̒n����",0;
+	waitingroom "秘密の地下室",0;
 	end;
 }
 
-moc_prydn1.gat,94,98,3	script	�������L#prydn2	547,{
-	mes "[�������L]";
-	mes "�����������X�^�[��";
-	mes "���悤�悵�Ă���ȁc�c�B";
-	mes "���������������̏ꏊ�ɋA�낤�B";
+moc_prydn1.gat,94,98,3	script	怪しい猫#prydn2	547,{
+	mes "[怪しい猫]";
+	mes "怪しいモンスターが";
+	mes "うようよしているな……。";
+	mes "物騒だし早く元の場所に帰ろう。";
 	next;
-	if(select("�߂�","�܂��c��") == 2) {
+	if(select("戻る","まだ残る") == 2) {
 		emotion 4;
-		mes "[�������L]";
-		mes "�܂��c��̂��H";
-		mes "�߂肽���Ȃ�����";
-		mes "���������Ă���B";
+		mes "[怪しい猫]";
+		mes "まだ残るのか？";
+		mes "戻りたくなったら";
+		mes "声をかけてくれ。";
 		close;
 	}
-	mes "[�������L]";
-	mes "���������A�����߂낤�B";
+	mes "[怪しい猫]";
+	mes "さぁさぁ、早く戻ろう。";
 	close2;
 	warp "moc_prydb1.gat",100,57;
 	end;
 }
 
 //============================================================
-// �s���~�b�h�i�C�g���A ����NPC
+// ピラミッドナイトメア 討伐NPC
 //------------------------------------------------------------
-moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
+moc_ruins.gat,75,170,3	script	採掘に向かう猫#prydn	561,{
 	if(!checkquest(118850)) {
-		mes "[�̌@�Ɍ������L]";
+		mes "[採掘に向かう猫]";
 		if(strnpcinfo(2) == "prydn_out") {
-			mes "���[�āA�s�����ȁB";
+			mes "さーて、行くかな。";
 		}
 		else {
-			mes "�������A��͂胂���X�^�[�������ȁB";
+			mes "くそっ、やはりモンスターが多いな。";
 		}
-		mes "�@";
+		mes "　";
 		if(BaseLevel < 100 || BaseLevel > 135) {
-			mes "�]^ff0000BaseLv100����135�̊Ԃ̂�^000000";
-			mes "�@������鎖���o����N�G�X�g�ł��]";
+			mes "‐^ff0000BaseLv100から135の間のみ^000000";
+			mes "　受諾する事が出来るクエストです‐";
 			close;
 		}
-		mes "�����A�Ȃ񂾂��O�B�`���҂��H";
-		mes "�������B�������ɂ����ȁB";
-		mes "������Ɖ��̎�`�������Ă���Ȃ����H";
+		mes "おっ、なんだお前。冒険者か？";
+		mes "くくっ。いい所にきたな。";
+		mes "ちょっと俺の手伝いをしてくれないか？";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "���͍����̕ӂɖ����Ă��邨���T����";
-		mes "�̌@�����Ă���񂾁B";
-		mes "�����A�̌@�ꏊ�ł̓����X�^�[��";
-		mes "�ז������Ă��ĂȁB";
+		mes "[採掘に向かう猫]";
+		mes "俺は今この辺に眠っているお宝を探して";
+		mes "採掘をしているんだ。";
+		mes "ただ、採掘場所ではモンスターが";
+		mes "邪魔をしてきてな。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�����퓬�͌�������Ȃ��񂾂�";
-		mes "���͍̌@�ɏW�����������A";
-		mes "������Ƃ������R�������ĂȁB";
-		mes "���O�Ƀ����X�^�[��";
-		mes "�|���ė��ė~�����񂾁B";
+		mes "[採掘に向かう猫]";
+		mes "俺も戦闘は嫌いじゃないんだが";
+		mes "今は採掘に集中したいし、";
+		mes "ちょっとした理由もあってな。";
+		mes "お前にモンスターを";
+		mes "倒して来て欲しいんだ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�������A����͂͂��ނ��B";
-		mes "�����X�^�[��|���ė������ɉ�����";
-		mes "��������܂����V��n���Ă��B";
-		mes "�ǂ����B����Ă���Ȃ����H";
+		mes "[採掘に向かう猫]";
+		mes "もちろん、お礼ははずむぞ。";
+		mes "モンスターを倒して来た数に応じて";
+		mes "おたから袋から報酬を渡してやる。";
+		mes "どうだ。やってくれないか？";
 		next;
-		if(select("��`��","�f��") == 2) {
-			mes "[�̌@�Ɍ������L]";
-			mes "�����B";
-			mes "�Ȃ񂾂��˂��ȁB";
+		if(select("手伝う","断る") == 2) {
+			mes "[採掘に向かう猫]";
+			mes "ちっ。";
+			mes "なんだよつれねえな。";
 			close;
 		}
-		mes "[�̌@�Ɍ������L]";
-		mes "���肪�Ă��B";
-		mes "���ꂶ�Ⴀ������x�b�������Ă���B";
+		mes "[採掘に向かう猫]";
+		mes "ありがてえ。";
+		mes "それじゃあもう一度話しかけてくれ。";
 		setquest 118850;
 		compquest 118850;
 		close;
@@ -177,24 +177,24 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 		delquest 118855;
 	if(checkquest(118860) & 0x2)
 		delquest 118860;
-	mes "[�̌@�Ɍ������L]";
-	mes "�����B�悭�����ȁB";
-	mes "�����͂ǂ�����H";
+	mes "[採掘に向かう猫]";
+	mes "おう。よく来たな。";
+	mes "今日はどうする？";
 	next;
-	set '@str$,"�������󂯂�/�񍐂���";
+	set '@str$,"討伐を受ける/報告する";
 	if(BaseLevel < 100 || BaseLevel > 135)
-		set '@str$,"�񍐂���";
-	switch(select('@str$,"������������߂�","�����𕷂�","��b����߂�")) {
+		set '@str$,"報告する";
+	switch(select('@str$,"討伐をあきらめる","説明を聞く","会話をやめる")) {
 	case 1:
 		if((checkquest(118855) && checkquest(118855) & 0x2 == 0) ||
 			(checkquest(118860) && checkquest(118860) & 0x2 == 0)) {
-			mes "[�̌@�Ɍ������L]";
-			mes "��B���O��";
-			mes "���͂܂����v���B";
-			mes "���܂荪�l�߂��ɂ���Ă���B";
-			mes "�@";
-			mes "�]���̃N�G�X�g��";
-			mes "�@1���Ԃ�1��A����o���܂��]";
+			mes "[採掘に向かう猫]";
+			mes "ん。お前か";
+			mes "今はまだ大丈夫だ。";
+			mes "あまり根詰めずにやってくれ。";
+			mes "　";
+			mes "‐このクエストは";
+			mes "　1時間に1回、挑戦出来ます‐";
 			close;
 		}
 		set '@d[0],checkquest(97000);
@@ -204,10 +204,10 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 		set '@d[4],checkquest(97008);
 		set '@d[5],checkquest(97010);
 		if('@d[0]+'@d[1]+'@d[2]+'@d[3]+'@d[4]+'@d[5] == 6) {
-			mes "[�̌@�Ɍ������L]";
-			mes "�ǂ����i�݋�́H";
-			mes "���\�����狭�����낤�B";
-			mes "���҂��Ă��邼�B";
+			mes "[採掘に向かう猫]";
+			mes "どうだ進み具合は？";
+			mes "結構あいつら強いだろう。";
+			mes "期待しているぞ。";
 			close;
 		}
 		if(('@d[0]+'@d[1]+'@d[2]) > 3 || ('@d[3]+'@d[4]+'@d[5]) > 3) {
@@ -217,27 +217,27 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 			set '@cnt,'@cnt + ('@d[3]&4)? 1: 0;
 			set '@cnt,'@cnt + ('@d[4]&4)? 3: 0;
 			set '@cnt,'@cnt + ('@d[5]&4)? 6: 0;
-			mes "[�̌@���̔L]";
-			mes "�ق��B�[���ȗʂ̃����X�^�[��";
-			mes "�|���ė��Ă��ꂽ�悤���ȁB";
-			mes "���ꂶ�Ⴀ���O�ɂ�";
-			mes "��������܂���^ff0000" +'@cnt+ "^000000�ق�";
-			mes "�A�C�e����n�����Ƃɂ��悤�B";
-			mes "��V���󂯎�邩�H";
+			mes "[採掘中の猫]";
+			mes "ほう。充分な量のモンスターを";
+			mes "倒して来てくれたようだな。";
+			mes "それじゃあお前には";
+			mes "おたから袋から^ff0000" +'@cnt+ "^000000個ほど";
+			mes "アイテムを渡すことにしよう。";
+			mes "報酬を受け取るか？";
 			next;
-			if(select("�͂�","������") == 2) {
-				mes "[�̌@���̔L]";
-				mes "�Ȃ񂾁B�ו��ł������̂��H";
-				mes "��V���󂯎�鏀�����o������";
-				mes "�܂�����񂾂ȁB";
+			if(select("はい","いいえ") == 2) {
+				mes "[採掘中の猫]";
+				mes "なんだ。荷物でも多いのか？";
+				mes "報酬を受け取る準備が出来たら";
+				mes "またくるんだな。";
 				close;
 			}
-			mes "[�̌@���̔L]";
-			mes "���ꂶ�Ⴀ�n�����B";
-			mes "����^ff0000���������^000000�ɂ�";
-			mes "�F�X�Ȃ��̂������Ă���B";
-			mes "�����o�邩�͂��O�̉^���������B";
-			mes "�K�^���F��񂾂ȁB";
+			mes "[採掘中の猫]";
+			mes "それじゃあ渡そう。";
+			mes "この^ff0000おたから袋^000000には";
+			mes "色々なものが入っている。";
+			mes "何が出るかはお前の運しだいだ。";
+			mes "幸運を祈るんだな。";
 			next;
 			if('@d[0]&4) {
 				delquest 97000;
@@ -249,8 +249,8 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 				delquest 97008;
 				delquest 97010;
 			}
-			//�_�C�������h�P�J���b�g,�_�C�������h�Q�J���b�g,�_�C�������h�R�J���b�g
-			//��̎w��,���̎w��,�_�C���̎w��,����,�󔠁@1��,�󔠁@2��,�󔠁@5��
+			//ダイヤモンド１カラット,ダイヤモンド２カラット,ダイヤモンド３カラット
+			//銀の指輪,金の指輪,ダイヤの指輪,黄金,宝箱　1個,宝箱　2個,宝箱　5個
 			setarray '@gain,731,732,2611,2610,2613,969,7444,7444,7444, 730;
 			setarray '@num,   1,  1,   1,   1,   1,  1,   1,   2,   5,   1;
 			setarray '@rate,300,100, 300, 200, 200,100, 100,  80,  50,1000;
@@ -262,21 +262,21 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 					}
 				}
 			}
-			mes "[�̌@���̔L]";
-			mes "�悵�B����Ȃ��񂾂ȁB";
-			mes "���肪�Ƃ��ȁB";
+			mes "[採掘中の猫]";
+			mes "よし。こんなもんだな。";
+			mes "ありがとうな。";
 			close;
 		}
 		if(BaseLevel < 100 || BaseLevel > 135) {
-			// ������
-			mes "�]^ff0000BaseLv100����135�̊Ԃ̂�^000000";
-			mes "�@������鎖���o����N�G�X�g�ł��]";
+			// 未調査
+			mes "‐^ff0000BaseLv100から135の間のみ^000000";
+			mes "　受諾する事が出来るクエストです‐";
 			close;
 		}
-		mes "[�̌@�Ɍ������L]";
-		mes "^ff0000�O���C���A�N���E�X^000000��";
-		mes "^ff0000�O���C���~�m�^�E���X^000000��";
-		mes "�|���Ă��Ă���B";
+		mes "[採掘に向かう猫]";
+		mes "^ff0000グレイヴアクラウス^000000と";
+		mes "^ff0000グレイヴミノタウロス^000000を";
+		mes "倒してきてくれ。";
 		if(!checkquest(118855))
 			setquest 118855;
 		if(!checkquest(97000)) {
@@ -293,51 +293,51 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 		}
 		if(checkquest(118855) && !checkquest(118860)) {
 			next;
-			mes "[�̌@���̔L]";
-			mes "�����ƁB";
-			mes "�O���C���~�m�^�E���X������";
-			mes "���肢�����΂���̂悤���ȁB";
-			mes "����͖����ɂ��悤�B";
+			mes "[採掘中の猫]";
+			mes "おっと。";
+			mes "グレイヴミノタウロス討伐は";
+			mes "お願いしたばかりのようだな。";
+			mes "これは無しにしよう。";
 			next;
-			mes "[�̌@���̔L]";
+			mes "[採掘中の猫]";
 		}
 		else if(!checkquest(118855) && checkquest(118860)) {
 			next;
-			mes "[�̌@���̔L]";
-			mes "�����ƁB";
-			mes "�O���C���A�N���E�X������";
-			mes "���肢�����΂���̂悤���ȁB";
-			mes "����͖����ɂ��悤�B";
+			mes "[採掘中の猫]";
+			mes "おっと。";
+			mes "グレイヴアクラウス討伐は";
+			mes "お願いしたばかりのようだな。";
+			mes "これは無しにしよう。";
 			next;
-			mes "[�̌@���̔L]";
+			mes "[採掘中の猫]";
 		}
-		mes "���񂾂��B";
+		mes "頼んだぞ。";
 		close;
 	case 2:
 		if(!checkquest(97000) && !checkquest(97006)) {
-			mes "[�̌@�Ɍ������L]";
-			mes "��H�@�˗�����߂����H";
-			mes "�����A���܂��ɂ��肢���Ă���";
-			mes "�˗��͖����悤�����B";
+			mes "[採掘に向かう猫]";
+			mes "ん？　依頼を諦めたい？";
+			mes "だが、おまえにお願いしている";
+			mes "依頼は無いようだぞ。";
 			close;
 		}
-		mes "[�̌@�Ɍ������L]";
-		mes "���O�ɂׂ͉��d���������H";
-		mes "�܂��d���Ȃ��B";
-		mes "����������߂�̂ł����";
-		mes "�r���܂Ői�s�������̂��܂߂�";
-		mes "�S�Ė����ɂȂ邪�{���ɗǂ����H";
+		mes "[採掘に向かう猫]";
+		mes "お前には荷が重かったか？";
+		mes "まぁ仕方ない。";
+		mes "もしあきらめるのであれば";
+		mes "途中まで進行したものも含めて";
+		mes "全て無しになるが本当に良いか？";
 		next;
-		if(select("���������撣��","^ff0000�˗���������߂�^000000") == 1) {
-			mes "[�̌@�Ɍ������L]";
-			mes "�������B";
-			mes "���ꂶ�ᗊ�񂾂��I";
+		if(select("もう少し頑張る","^ff0000依頼をあきらめる^000000") == 1) {
+			mes "[採掘に向かう猫]";
+			mes "そうか。";
+			mes "それじゃ頼んだぞ！";
 			close;
 		}
-		mes "[�̌@�Ɍ������L]";
-		mes "�������B�d���Ȃ��ȁB";
-		mes "�킩������B";
-		mes "���̋C�ɂȂ�����܂����Ă����ȁB";
+		mes "[採掘に向かう猫]";
+		mes "そうか。仕方ないな。";
+		mes "わかったよ。";
+		mes "その気になったらまた来てくれよな。";
 		if(checkquest(97000)) {
 			delquest 97000;
 			delquest 97002;
@@ -350,141 +350,141 @@ moc_ruins.gat,75,170,3	script	�̌@�Ɍ������L#prydn	561,{
 		}
 		close;
 	case 3:
-		mes "[�̌@�Ɍ������L]";
-		mes "�ȒP�Ȏ����B";
-		mes "���̕ӂɐ������郂���X�^�[�̂���";
-		mes "���ɍ̌@�̎ז��ƂȂ�";
-		mes "^ff0000�O���C���~�m�^�E���X^000000��";
-		mes "^ff0000�O���C���A�N���E�X^000000��";
-		mes "�|���ė��ė~�����񂾁B";
+		mes "[採掘に向かう猫]";
+		mes "簡単な事さ。";
+		mes "この辺に生息するモンスターのうち";
+		mes "特に採掘の邪魔となる";
+		mes "^ff0000グレイヴミノタウロス^000000と";
+		mes "^ff0000グレイヴアクラウス^000000を";
+		mes "倒して来て欲しいんだ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "��������|���ė�����";
-		mes "���������V����낤�B";
-		mes "�@";
-		mes "�������I";
-		mes "�r�̗��`���҂�";
-		mes "�������f�点�Ă�����Ă���B";
+		mes "[採掘に向かう猫]";
+		mes "たくさん倒して来たら";
+		mes "たくさん報酬をやろう。";
+		mes "　";
+		mes "ただし！";
+		mes "腕の立つ冒険者は";
+		mes "悪いが断らせてもらっている。";
 		next;
-		mes "�]�C���t�H���[�V�����]";
-		mes "�@^ff0000BaseLv100����135�܂ł̊�^000000";
-		mes "�@������鎖���o����N�G�X�g�ł��B";
-		mes "�@�񍐌�A^ff00001����^000000�͍Ď���o���܂���B";
-		mes "�@BaseLv136�ȏ�ɂȂ�ƁA";
-		mes "�@�i�s���̃N�G�X�g�̂�";
-		mes "�@�񍐂��\�ł��B";
+		mes "‐インフォメーション‐";
+		mes "　^ff0000BaseLv100から135までの間^000000";
+		mes "　受諾する事が出来るクエストです。";
+		mes "　報告後、^ff00001時間^000000は再受諾出来ません。";
+		mes "　BaseLv136以上になると、";
+		mes "　進行中のクエストのみ";
+		mes "　報告が可能です。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "���B�̂悤�ȔL�͖`���҂Ƃ̋�����";
-		mes "�K�v�s�����B";
-		mes "���͘r���Ղ��Ȃ炻�̕ӂ̖`���҂ɂ�";
-		mes "���������͖������ǂȁB";
-		mes "���Ԃ̔L�݂�Ȃ�";
-		mes "���������킯����˂��B";
+		mes "[採掘に向かう猫]";
+		mes "俺達のような猫は冒険者との共存は";
+		mes "必要不可欠だ。";
+		mes "俺は腕っぷしならその辺の冒険者には";
+		mes "負けるつもりは無いけどな。";
+		mes "仲間の猫みんなが";
+		mes "そういうわけじゃねえ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�����璇�ԓ��ŏW�܂����Ƃ���";
-		mes "�݂�ȂŏW�߂����̂�������̈ꕔ��";
-		mes "�������̖`���҂̕⏕�����Ă�������";
-		mes "�b�����Ă����̂��B";
+		mes "[採掘に向かう猫]";
+		mes "だから仲間内で集まったときに";
+		mes "みんなで集めたこのおたからの一部で";
+		mes "成長中の冒険者の補助をしていこうと";
+		mes "話をしていたのさ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "����Ȃ�΂Ɖ���̃��[�_�[��";
-		mes "���ݍ̌@���̂��̃s���~�b�h��";
-		mes "�̌@�̎ז������郂���X�^�[��";
-		mes "�|���Ă����`���҂�";
-		mes "��V�Ƃ����`�œn���Ă͂ǂ�����";
-		mes "��Ă������񂾂�B";
+		mes "[採掘に向かう猫]";
+		mes "それならばと俺らのリーダーが";
+		mes "現在採掘中のこのピラミッドで";
+		mes "採掘の邪魔をするモンスターを";
+		mes "倒してくれる冒険者に";
+		mes "報酬という形で渡してはどうだと";
+		mes "提案をしたんだよ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "����Ȃ牴��ɂƂ��Ă�";
-		mes "�肪���点�邵���b������B";
-		mes "�@";
-		mes "�ǂ����B�Ȃ��Ȃ����Ă���H";
+		mes "[採掘に向かう猫]";
+		mes "これなら俺らにとっても";
+		mes "手が減らせるし恩恵がある。";
+		mes "　";
+		mes "どうだ。なかなか名案だろ？";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�Ƃ������Ƃŕ�V��";
-		mes "���؂��Ǝv���Ă���Ă������B";
+		mes "[採掘に向かう猫]";
+		mes "ということで報酬は";
+		mes "豪華だと思ってくれていいぜ。";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�����A���ׂ͍����b�����łȁB";
-		mes "��V�ɂ��Ă͌v�Z�̓��ӂȒ��Ԃ�";
-		mes "�����ŏ����Ă�����Ă���B";
-		mes "�ڂ����͂�������Ă���B";
+		mes "[採掘に向かう猫]";
+		mes "ただ、俺は細かい話が苦手でな。";
+		mes "報酬については計算の得意な仲間に";
+		mes "メモで書いてもらってある。";
+		mes "詳しくはそれを見てくれ。";
 		next;
-		mes "�]���Ȃ��͂��ꂢ�ɂ����܂ꂽ";
-		mes "�@�莆���󂯎��A�ڂ�ʂ����]";
+		mes "‐あなたはきれいにたたまれた";
+		mes "　手紙を受け取り、目を通した‐";
 		next;
-		mes "[�莆]";
-		mes "�@���̂��莆��ǂ�ł��邠�Ȃ��ցB";
-		mes "�@��X�̍̌@�̎�`�������Ă����";
-		mes "�@���肪�Ƃ��ł��ɂ�B";
-		mes "�@�������`���Ă��ꂽ�ۂ�";
-		mes "�@��V�ɂ��Đ������܂��ɂ�B";
+		mes "[手紙]";
+		mes "　このお手紙を読んでいるあなたへ。";
+		mes "　我々の採掘の手伝いをしてくれて";
+		mes "　ありがとうですにゃ。";
+		mes "　今から手伝ってくれた際の";
+		mes "　報酬について説明しますにゃ。";
 		next;
-		mes "[�莆]";
-		mes "�@���n�������V�͎��̒ʂ�ł��ɂ�B";
-		mes "�@^ff0000�O���C���~�m�^�E���X^000000�A��";
-		mes "�@100�̓|���c�c��������܂̒��g^ff00001^000000��";
-		mes "�@200�̓|���c�c��������܂̒��g^ff00003^000000��";
-		mes "�@300�̓|���c�c��������܂̒��g^ff00006^000000��";
+		mes "[手紙]";
+		mes "　お渡しする報酬は次の通りですにゃ。";
+		mes "　^ff0000グレイヴミノタウロス^000000、を";
+		mes "　100体倒す……おたから袋の中身^ff00001^000000個";
+		mes "　200体倒す……おたから袋の中身^ff00003^000000個";
+		mes "　300体倒す……おたから袋の中身^ff00006^000000個";
 		next;
-		mes "[�莆]";
-		mes "�@^ff0000�O���C���A�N���E�X^000000�A��";
-		mes "�@20�̓|���c�c��������܂̒��g^ff00001^000000��";
-		mes "�@40�̓|���c�c��������܂̒��g^ff00003^000000��";
-		mes "�@60�̓|���c�c��������܂̒��g^ff00006^000000��";
+		mes "[手紙]";
+		mes "　^ff0000グレイヴアクラウス^000000、を";
+		mes "　20体倒す……おたから袋の中身^ff00001^000000個";
+		mes "　40体倒す……おたから袋の中身^ff00003^000000個";
+		mes "　60体倒す……おたから袋の中身^ff00006^000000個";
 		next;
-		mes "[�莆]";
-		mes "�@^ff0000���������^000000�Ƃ�";
-		mes "�@��X���̌@���ďW�߂��M�d�ȕi�X��";
-		mes "�@�ꎞ�I�ɕۊǂ��Ă���܂ł��ɂ�B";
-		mes "�@�_�C�������h����󔠂܂�";
-		mes "�@�F�X�Ȃ��̂������Ă��܂��ɂ�B";
-		mes "�@���g�͑S�ĉ��l�̂�����̂ł��ɂ�I";
+		mes "[手紙]";
+		mes "　^ff0000おたから袋^000000とは";
+		mes "　我々が採掘して集めた貴重な品々を";
+		mes "　一時的に保管している袋ですにゃ。";
+		mes "　ダイヤモンドから宝箱まで";
+		mes "　色々なものが入っていますにゃ。";
+		mes "　中身は全て価値のあるものですにゃ！";
 		next;
-		mes "[�莆]";
-		mes "�@���������B";
-		mes "�@��V��^ff0000�������킹��^000000�n���܂��ɂ�B";
-		mes "�@�Ⴆ��200�̓|���Ă����ꍇ��";
-		mes "�@100�̓|���Ă������̕�V��";
-		mes "�@200�̓|���Ă������̕�V��";
-		mes "�@�����n���܂��ɂ�B";
+		mes "[手紙]";
+		mes "　そうそう。";
+		mes "　報酬は^ff0000複数合わせて^000000渡しますにゃ。";
+		mes "　例えば200体倒してきた場合は";
+		mes "　100体倒してきた分の報酬と";
+		mes "　200体倒してきた分の報酬を";
+		mes "　両方渡しますにゃ。";
 		next;
-		mes "[�莆]";
-		mes "�@�󒍂�����A1���ԑ҂��Ă�����";
-		mes "�@���x�ł�^ff0000�J��Ԃ��o���܂�^000000�ɂ�B";
-		mes "�@�����ς���`���Ă��������ɂ�B";
-		mes "�@�̌@���͂��ǂ�܂��ɂ�B";
-		mes "�@�ɂ���͂��́B";
-		mes "�@�ȏ�ł��ɂ�I";
+		mes "[手紙]";
+		mes "　受注した後、1時間待ってくれれば";
+		mes "　何度でも^ff0000繰り返し出来ます^000000にゃ。";
+		mes "　いっぱい手伝ってくださいにゃ。";
+		mes "　採掘がはかどりますにゃ。";
+		mes "　にゃっはっは。";
+		mes "　以上ですにゃ！";
 		next;
-		mes "�]�莆�͂����܂ł̂悤���]";
+		mes "‐手紙はここまでのようだ‐";
 		next;
-		mes "[�̌@�Ɍ������L]";
-		mes "�ǂ�ł��ꂽ���H";
-		mes "�Ƃ����킯�ł�낵�����ނ��B";
-		mes "���҂��Ă��邼�B";
+		mes "[採掘に向かう猫]";
+		mes "読んでくれたか？";
+		mes "というわけでよろしく頼むぜ。";
+		mes "期待しているぞ。";
 		close;
 	case 4:
-		mes "[�̌@�Ɍ������L]";
-		mes "�Ȃ񂾁B";
-		mes "����������̂͗p�����鎞�ɂ��Ă���B";
+		mes "[採掘に向かう猫]";
+		mes "なんだ。";
+		mes "声をかけるのは用がある時にしてくれ。";
 		close;
 	}
 OnInit:
-	waitingroom "�����N�G�X�g", 0;
+	waitingroom "討伐クエスト", 0;
 	end;
 }
 
-moc_prydn1.gat,97,96,3	duplicate(�̌@�Ɍ������L#prydn)	�̌@���̔L#prydn_f1	561
-moc_prydn2.gat,97,59,3	duplicate(�̌@�Ɍ������L#prydn)	�̌@���̔L#prydn_f2	561
+moc_prydn1.gat,97,96,3	duplicate(採掘に向かう猫#prydn)	採掘中の猫#prydn_f1	561
+moc_prydn2.gat,97,59,3	duplicate(採掘に向かう猫#prydn)	採掘中の猫#prydn_f2	561
 
 moc_prydn2.gat,198,11,0	warp	pd_nightmare_2to1	1,1,moc_prydn1.gat,213,10
 moc_prydn1.gat,218,9,0	warp	pd_nightmare_1to2	1,1,moc_prydn2.gat,195,11
 
 //============================================================
-// �s���~�b�h�i�C�g���A1F �B�����[�v
+// ピラミッドナイトメア1F 隠しワープ
 //------------------------------------------------------------
 moc_prydn1.gat,17,186,0	script	#prydn_Secret_1-1	139,0,10,{
 	emotion 1,"";
@@ -578,7 +578,7 @@ moc_prydn1.gat,198,66,0	script	#prydn_Secret_8-2	139,1,2,{
 }
 
 //============================================================
-// �s���~�b�h�i�C�g���A2F �B�����[�v
+// ピラミッドナイトメア2F 隠しワープ
 //------------------------------------------------------------
 moc_prydn2.gat,179,99,0	script	#prydn_Secret_A	139,1,1,{
 	soundeffect "complete.wav", 0, 0;
@@ -878,9 +878,9 @@ OnInit:
 }
 
 //============================================================
-// �s���~�b�h�i�C�g���AMVP
+// ピラミッドナイトメアMVP
 //------------------------------------------------------------
-moc_prydn2.gat,102,182,4	script	�A�����z�e�v�̊�#prydn	801,{}
+moc_prydn2.gat,102,182,4	script	アメンホテプの棺#prydn	801,{}
 
 moc_prydn2.gat,0,0,0	script	#moc_prydn2MVP	-1,{
 	end;
@@ -899,13 +899,13 @@ OnTimer30600000:
 		end;
 OnTimer32400000:
 	stopnpctimer;
-	hideonnpc "�A�����z�e�v�̊�#prydn";
-	areamonster "moc_prydn2.gat",0,0,0,0,"��n�̎���",1098,15,"#moc_prydn2MVP::OnKilled2";
-	monster "moc_prydn2.gat",102,85,"�A�����z�e�v",2362,1,"#moc_prydn2MVP::OnKilled";
+	hideonnpc "アメンホテプの棺#prydn";
+	areamonster "moc_prydn2.gat",0,0,0,0,"墓地の守護者",1098,15,"#moc_prydn2MVP::OnKilled2";
+	monster "moc_prydn2.gat",102,85,"アメンホテプ",2362,1,"#moc_prydn2MVP::OnKilled";
 	end;
 OnKilled:
 	initnpctimer;
-	hideoffnpc "�A�����z�e�v�̊�#prydn";
+	hideoffnpc "アメンホテプの棺#prydn";
 	end;
 OnKilled2:
 	end;

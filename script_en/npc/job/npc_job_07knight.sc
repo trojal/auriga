@@ -1,593 +1,593 @@
 //= Athena Script ==============================================================
 // Ragnarok Online Knight Jobchange Script	by Blaze
 //= Registry ===================================================================
-// CHANGE_KN -> 0�`14
+// CHANGE_KN -> 0～14
 //==============================================================================
 
 //============================================================
-// �����\������ѓ]�E
+// 試験申請および転職
 //------------------------------------------------------------
-prt_in.gat,88,101,4	script	�v�����e���R�m�c��	56,{
+prt_in.gat,88,101,4	script	プロンテラ騎士団長	56,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�c���w���}��]";
-		mes "������̓v�����e���R�m�c�ł��B";
-		mes "���̗p�����ȁH";
+		mes "[騎士団長ヘルマン]";
+		mes "こちらはプロンテラ騎士団です。";
+		mes "何の用事かな？";
 		next;
-		switch (select("���m�ɓ]�E�������ł�","�i�C�g�ɓ]�E�������ł�","�����ɗ�����ł�")) {
+		switch (select("剣士に転職したいです","ナイトに転職したいです","見物に来たんです")) {
 		case 1:
-			mes "[�R�m�c���w���}��]";
-			mes "�n�n�n�I�Ȃ�قǁc";
-			mes "�K�˂鏊���ԈႦ���ȁ`";
+			mes "[騎士団長ヘルマン]";
+			mes "ハハハ！なるほど…";
+			mes "訪ねる所を間違えたな～";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "�����͌��m�M���h�ł͂Ȃ��A�R�m�c���B";
-			mes "���m�ɂȂ肽����΁A�C�Y���[�h��";
-			mes "���m�M���h�֍s���Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "ここは剣士ギルドではなく、騎士団だ。";
+			mes "剣士になりたければ、イズルードの";
+			mes "剣士ギルドへ行きなさい。";
 			break;
 		case 2:
-			mes "[�R�m�c���w���}��]";
-			mes "�ӂށA����傫�����̂͂������Ƃ��B";
-			mes "�����A�i�C�g�ɂȂ邽�߂ɂ͂܂�";
-			mes "���m�ɂȂ�Ȃ���΂Ȃ�Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "ふむ、夢を大きく持つのはいいことだ。";
+			mes "だが、ナイトになるためにはまず";
+			mes "剣士にならなければならないぞ。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "�C�Y���[�h�̌��m�M���h��";
-			mes "�s���Ă݂Ȃ����B";
-			mes "���m�Ƃ��Ă�����x�r�𖁂�����";
-			mes "�܂����Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "イズルードの剣士ギルドへ";
+			mes "行ってみなさい。";
+			mes "剣士としてある程度腕を磨いたら";
+			mes "また来なさい。";
 			break;
 		case 3:
-			mes "[�R�m�c���w���}��]";
-			mes "�������A�������ǂ����A";
-			mes "�ɂȂ烂���X�^�[����C�ł�����";
-			mes "�|���̂��B";
+			mes "[騎士団長ヘルマン]";
+			mes "そうか、見物も良いが、";
+			mes "暇ならモンスターを一匹でも多く";
+			mes "倒すのだ。";
 			break;
 		}
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "����ł́A�܂��K�v�ȂƂ���";
-		mes "�K�˂ė��Ȃ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは、また必要なときに";
+		mes "訪ねて来なさい。";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�c���w���}��]";
-		mes "�����A�R�m�c����c���̌��������t��";
-		mes "�o���Ă��邩�ȁH";
-		mes "�킪�R�m�c���́A���Ƃ����ɕm���Ă�";
-		mes "���X�Ƃ��Ă��邱�ƁB";
+		mes "[騎士団長ヘルマン]";
+		mes "おお、騎士団員よ…私の言った言葉を";
+		mes "覚えているかな？";
+		mes "わが騎士団員は、たとえ死に瀕しても";
+		mes "堂々としていること。";
 		close;
 	}
 	if(Job != Job_Swordman) {
-		mes "[�R�m�c���w���}��]";
-		mes "�v�����e���R�m�c�ɖK�˂Ă���";
-		mes "���Ƃ����}����B";
-		mes "������肵�Ă����Ȃ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "プロンテラ騎士団に訪ねてきた";
+		mes "ことを歓迎する。";
+		mes "ゆっくりしていきなさい。";
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[�R�m�c���w���}��]";
-		mes "������̓v�����e���R�m�c�ł��B";
-		mes "���̗p�����ȁH";
+		mes "[騎士団長ヘルマン]";
+		mes "こちらはプロンテラ騎士団です。";
+		mes "何の用事かな？";
 		next;
-		if(select("�i�C�g�ɓ]�E�������ł�","�����ɗ�����ł�")==2) {
-			mes "[�R�m�c���w���}��]";
-			mes "�ق��A�N�͌��m�ł͂Ȃ����B";
-			mes "�����Ƃ���N�͍��܂ł�";
-			mes "�����r�𖁂����悤�����c";
+		if(select("ナイトに転職したいです","見物に来たんです")==2) {
+			mes "[騎士団長ヘルマン]";
+			mes "ほう、君は剣士ではないか。";
+			mes "見たところ君は今までに";
+			mes "相当腕を磨いたようだが…";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "���m�Ȃ��x�A�i�C�g�ւ̓]�E��";
-			mes "�l���Ă݂Ă͂ǂ����H";
-			mes "�����i�C�g�ɓ]�E����ӎu�������";
-			mes "����K�˂Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "剣士なら一度、ナイトへの転職を";
+			mes "考えてみてはどうか？";
+			mes "もしナイトに転職する意志があれば";
+			mes "私を訪ねなさい。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "����ł͂�����茩�Ă����Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "それではゆっくり見ていきなさい。";
 			close;
 		}
 		if(Upper == UPPER_HIGH) {
-			mes "[�R�m�c���w���}��]";
-			mes "�Ȃ񂾁c�c�H";
-			mes "���������Ȃ�ʋC�z����������ȁB";
-			mes "�N�͒����ԋR�m�Ƃ��Ă���Ă���";
-			mes "���ɂ��������Ă������邱�Ƃ�";
-			mes "�����ȁB";
+			mes "[騎士団長ヘルマン]";
+			mes "なんだ……？";
+			mes "何かただならぬ気配が感じられるな。";
+			mes "君は長い間騎士としてやってきた";
+			mes "私にも助言してあげられることが";
+			mes "無いな。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "�ǂ�Ȏ����ɂ������Ȃ��S��";
-			mes "���̐l�X�ɂ��`����悤�ɁB";
-			mes "�N�ɉh������I";
+			mes "[騎士団長ヘルマン]";
+			mes "どんな試練にも屈しない心を";
+			mes "他の人々にも伝えるように。";
+			mes "君に栄光あれ！";
 			close;
 		}
-		mes "[�R�m�c���w���}��]";
-		mes "�����A�i�C�g��ڎw��" +(Sex? "�N": "���삳��")+ "���I";
-		mes "���B�v�����e���R�m���N��";
-		mes "�ʓ|�����邼�B";
+		mes "[騎士団長ヘルマン]";
+		mes "おお、ナイトを目指す" +(Sex? "青年": "お嬢さん")+ "か！";
+		mes "私達プロンテラ騎士が君の";
+		mes "面倒を見るぞ。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���͂����v�����e���R�m�c��";
-		mes "�R�m�c���ł���";
-		mes "�w���}��=�t�H��=�G�y�\�X";
-		mes "�Ƃ����B";
-		mes "�ӗ~���ӂ���ҒB������x��";
-		mes "���̋�������B";
+		mes "[騎士団長ヘルマン]";
+		mes "私はここプロンテラ騎士団の";
+		mes "騎士団長である";
+		mes "ヘルマン=フォン=エペソス";
+		mes "という。";
+		mes "意欲あふれる若者達を見る度に";
+		mes "私の胸も高鳴る。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���B�v�����e���R�m�c�́A";
-		mes "JobLv40�ȏ�̌��m�ɂ̂�";
-		mes "�������󂯂����Ă���B";
-		mes "�L���҂��i�C�g�ɂ����邱�Ƃ�";
-		mes "�ł��Ȃ�����ȁI";
+		mes "[騎士団長ヘルマン]";
+		mes "私達プロンテラ騎士団は、";
+		mes "JobLv40以上の剣士にのみ";
+		mes "試験を受けさせている。";
+		mes "青臭い者をナイトにさせることは";
+		mes "できないからな！";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "����ł͓]�E�̐\�����݂�";
-		mes "���邩�ˁH";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは転職の申し込みを";
+		mes "するかね？";
 		next;
-		if(select("�͂��A�\�����݂܂�","����������ƍl���Ă݂܂�")==2) {
-			mes "[�R�m�c���w���}��]";
-			mes "�͂́A�����b���}���������H";
-			mes "����Ȃ�΂������ƍl���Ă݂Ȃ����B";
+		if(select("はい、申し込みます","もうちょっと考えてみます")==2) {
+			mes "[騎士団長ヘルマン]";
+			mes "はは、少し話が急だったか？";
+			mes "それならばゆっくりと考えてみなさい。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "�]�E����p�ӂ��ł�����";
-			mes "�܂����Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "転職する用意ができたら";
+			mes "また来なさい。";
 			close;
 		}
 		if(JobLevel < 40) {
-			mes "[�R�m�c���w���}��]";
-			mes "�͂́A�N�͂܂��i�C�g�ɂȂ�ɂ�";
-			mes "�������B";
-			mes "JobLv��40�ȏ�K�v����";
-			mes "�������͂������I";
+			mes "[騎士団長ヘルマン]";
+			mes "はは、君はまだナイトになるには";
+			mes "早いぞ。";
+			mes "JobLvが40以上必要だと";
+			mes "言ったはずだが！";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "������񂻂̈ӗ~�͂�����";
-			mes "�܂����߂��B";
-			mes "�������������̃����X�^�[��";
-			mes "����Ă���܂����Ȃ����B";
-			mes "�҂��Ă��邩��ȁB";
+			mes "[騎士団長ヘルマン]";
+			mes "もちろんその意欲はかうが";
+			mes "まだだめだ。";
+			mes "もう少し多くのモンスターと";
+			mes "戦ってからまた来なさい。";
+			mes "待っているからな。";
 			close;
 		}
 		if(SkillPoint) {
-			mes "[�R�m�c���փ��}��]";
-			mes "�ނށA�X�L���|�C���g���c���Ă����";
-			mes "�]�E�������Ȃ����B";
-			mes "�K���ł���X�L�����擾���Ă���";
-			mes "�܂����Ȃ����B";
+			mes "[騎士団長へルマン]";
+			mes "むむ、スキルポイントが残っていると";
+			mes "転職させられないぞ。";
+			mes "習得できるスキルを取得してから";
+			mes "また来なさい。";
 			close;
 		}
-		mes "[�R�m�c���փ��}��]";
-		mes "�悵�A�N�̐\�����݂����}���悤�B";
-		mes "���O�� " +strcharinfo(0);
-		mes "�����ǂނ񂾂ȁB";
+		mes "[騎士団長へルマン]";
+		mes "よし、君の申し込みを歓迎しよう。";
+		mes "名前は " +strcharinfo(0);
+		mes "こう読むんだな。";
 		next;
-		mes "[�R�m�c���փ��}��]";
-		mes "����ł͓]�E�����ɂ���";
-		mes "�������悤�B";
-		mes "�䂪�R�m�c�̋R�m�B��";
-		mes "��l����A�ނ炪�o��";
-		mes "�����ɊF�p�X����Ηǂ��B";
+		mes "[騎士団長へルマン]";
+		mes "それでは転職試験について";
+		mes "説明しよう。";
+		mes "我が騎士団の騎士達に";
+		mes "一人ずつ会い、彼らが出す";
+		mes "試験に皆パスすれば良い。";
 		next;
-		mes "[�R�m�c���փ��}��]";
-		mes "���ׂĂ̎������I���A�䂪";
-		mes "�R�m�B�S�������i������o�������A";
-		mes "�i�C�g�ւ̓]�E���\�ƂȂ�B";
-		mes "���t�ʂ薞���v�I��l�ł�";
-		mes "���΂�����Ύ������܂��ŏ�����";
-		mes "�󂯂Ȃ���΂Ȃ�Ȃ��B";
+		mes "[騎士団長へルマン]";
+		mes "すべての試験が終わり、我が";
+		mes "騎士達全員が合格判定を出した時、";
+		mes "ナイトへの転職が可能となる。";
+		mes "言葉通り満場一致！一人でも";
+		mes "反対をすれば試験をまた最初から";
+		mes "受けなければならない。";
 		next;
-		mes "[�R�m�c���փ��}��]";
-		mes "�������^���Ȏp���ŗՂ߂�";
-		mes "�N�̈ӎu���F�ɓ`���͂��ł���B";
+		mes "[騎士団長へルマン]";
+		mes "しかし真摯な姿勢で臨めば";
+		mes "君の意志が皆に伝わるはずである。";
 		next;
-		if(JobLevel >= 50) {	//������
-			mes "[�R�m�c���w���}��]";
-			mes "���Ȃ���JobLv��50�ł��ˁB";
-			mes "���h�ł��B���܂ŔM�S�ɏC�s��";
-			mes "�ς�ł����悤�ł��ˁB";
+		if(JobLevel >= 50) {	//未調査
+			mes "[騎士団長ヘルマン]";
+			mes "あなたはJobLvが50ですね。";
+			mes "立派です。今まで熱心に修行を";
+			mes "積んできたようですね。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "���Ȃ���JobLv��50�ł��̂ŁB";
-			mes "�ŏ��̎����͕K�v�Ȃ��ł��ˁB";
-			mes "����ł͎��Ɉڂ�܂��傤���B";
+			mes "[騎士団長ヘルマン]";
+			mes "あなたはJobLvが50ですので。";
+			mes "最初の試練は必要ないですね。";
+			mes "それでは次に移りましょうか。";
 			next;
-			mes "[�R�m�c���w���}��]";
-			mes "�W�F�[���Y=�V���L���[�Y�̂Ƃ����";
-			mes "�s���Ȃ����B";
-			mes "�ނ����̎������s���Ă���܂��B";
-			mes "�����A�s���Ȃ����B";
+			mes "[騎士団長ヘルマン]";
+			mes "ジェームズ=シラキューズのところへ";
+			mes "行きなさい。";
+			mes "彼が次の試験を行ってくれます。";
+			mes "さぁ、行きなさい。";
 			set CHANGE_KN,5;
 		}
 		else {
-			mes "[�R�m�c���փ��}��]";
-			mes "�S���͈ꌩ�ɔ@�����I";
-			mes "�����ɋR�m�����ɉ�A";
-			mes "�������󂯂Ȃ����B";
-			mes "���ׂĂ̎������I�������";
-			mes "�����ɖ߂��Ă��Ȃ����B";
+			mes "[騎士団長へルマン]";
+			mes "百聞は一見に如かず！";
+			mes "すぐに騎士たちに会い、";
+			mes "試験を受けなさい。";
+			mes "すべての試験が終わったら";
+			mes "ここに戻ってきなさい。";
 			set CHANGE_KN,1;
 		}
 		close;
 	case 1:
-		mes "[�R�m�c���w���}��]";
-		mes "����H " +strcharinfo(0)+ " �A���̗p���B";
-		mes "�ӂށc�N�ɉ�Ηǂ��̂�";
-		mes "�킩��Ȃ��悤���ȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "うん？ " +strcharinfo(0)+ " 、何の用だ。";
+		mes "ふむ…誰に会えば良いのか";
+		mes "わからないようだな。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "��琫�i���C����āA";
-		mes "�����B���m�ŉ����菇�����߂�";
-		mes "�����悤���B";
+		mes "[騎士団長ヘルマン]";
+		mes "やつら性格も気難しくて、";
+		mes "自分達同士で何か手順を決めて";
+		mes "いたようだ。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�܂��A�R�m�A���h�����[=�V���C���b�N";
-		mes "�ɉ���Ă݂Ȃ����B";
-		mes "�����������ْ��������Ȃ��悤�ɂȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "まず、騎士アンドリュー=シャイロック";
+		mes "に会ってみなさい。";
+		mes "初試験だが緊張しすぎないようにな。";
 		close;
 	case 4:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "��H�N�̂Ƃ���ɍs���Ηǂ��̂�";
-		mes "�킩��Ȃ����āH";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "ん？誰のところに行けば良いのか";
+		mes "わからないって？";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�������P�I�����悤���ˁB";
-		mes "�Ƃ������Ƃ́c�V���C���b�N�I";
-		mes "���̒S���͒N���I";
+		mes "[騎士団長ヘルマン]";
+		mes "試験を１つ終えたようだね。";
+		mes "ということは…シャイロック！";
+		mes "次の担当は誰か！";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "�W�F�[���Y�ƌ����Ă���܂��I";
-		mes "�������L���ł��Ȃ��҂�";
-		mes "�i�C�g�ɂȂ��Ăǂ�����!!";
+		mes "[騎士アンドリュー]";
+		mes "ジェームズと言ってあります！";
+		mes "それ一つも記憶できない者が";
+		mes "ナイトになってどうする!!";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���������ȁH";
-		mes "�R�m�W�F�[���Y=�V���L���[�Y��";
-		mes "�������󂯂Ȃ����B";
-		mes "����Ԃ��ԈႦ�Ȃ��悤�ɂȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "聞いたかな？";
+		mes "騎士ジェームズ=シラキューズの";
+		mes "試験を受けなさい。";
+		mes "会う順番も間違えないようにな。";
 		close;
 	case 6:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "��H�N�̂Ƃ���ɍs���Ηǂ��̂�";
-		mes "�킩��Ȃ����āH";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "ん？誰のところに行けば良いのか";
+		mes "わからないって？";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�������Q�I�����悤���ˁB";
-		mes "�Ƃ������Ƃ́c�V���L���[�Y�I";
-		mes "���̒S���͒N���I";
+		mes "[騎士団長ヘルマン]";
+		mes "試験を２つ終えたようだね。";
+		mes "ということは…シラキューズ！";
+		mes "次の担当は誰か！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�́I�E�C���U�[�ɉ��";
-		mes "�\���グ�܂����I";
-		mes "�o���Ă��Ȃ���������̂ł��I";
+		mes "[騎士ジェームズ]";
+		mes "は！ウインザーに会えと";
+		mes "申し上げました！";
+		mes "覚えていないやつが悪いのです！";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���������ȁH";
-		mes "�R�m�E�C���U�[=�x�l�f�B�N�g��";
-		mes "�������󂯂Ȃ����B";
-		mes "����Ԃ��ԈႦ�Ȃ��悤�ɂȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "聞いたかな？";
+		mes "騎士ウインザー=ベネディクトの";
+		mes "試験を受けなさい。";
+		mes "会う順番も間違えないようにな。";
 		close;
 	case 8:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "��H�N�̂Ƃ���ɍs���Ηǂ��̂�";
-		mes "�킩��Ȃ����āH";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "ん？誰のところに行けば良いのか";
+		mes "わからないって？";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�������R�I�����悤���ˁB";
-		mes "�Ƃ������Ƃ́c�x�l�f�B�N�g�I";
-		mes "���̒S���͒N���I";
+		mes "[騎士団長ヘルマン]";
+		mes "試験を３つ終えたようだね。";
+		mes "ということは…ベネディクト！";
+		mes "次の担当は誰か！";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�G�C�~�[=�x�A�g���X�I";
-		mes "�c���o���̈������m���I";
+		mes "[騎士ウインザー]";
+		mes "…エイミー=ベアトリス！";
+		mes "…物覚えの悪い剣士が！";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���������ȁH";
-		mes "�R�m�G�C�~�[=�x�A�g���X��";
-		mes "�������󂯂Ȃ����B";
-		mes "����Ԃ��ԈႦ�Ȃ��悤�ɂȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "聞いたかな？";
+		mes "騎士エイミー=ベアトリスの";
+		mes "試験を受けなさい。";
+		mes "会う順番も間違えないようにな。";
 		close;
 	case 10:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "��H�N�̂Ƃ���ɍs���Ηǂ��̂�";
-		mes "�킩��Ȃ����āH";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "ん？誰のところに行けば良いのか";
+		mes "わからないって？";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�������S�I�����悤���ˁB";
-		mes "�Ƃ������Ƃ́c�x�A�g���X�I";
-		mes "���̒S���͒N���I";
+		mes "[騎士団長ヘルマン]";
+		mes "試験を４つ終えたようだね。";
+		mes "ということは…ベアトリス！";
+		mes "次の担当は誰か！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�܂������c�B�G�h�����h��";
-		mes "��Ȃ����ƌ������ł��傤�I";
-		mes "�K������Ȏq�����������X�^�[��";
-		mes "�ǂ��ƈ����A��ē����Ă����̂�B";
-		mes "�����Ă������Y��邵�c";
+		mes "[騎士エイミー]";
+		mes "まったく…。エドモンドに";
+		mes "会いなさいと言ったでしょう！";
+		mes "必ずあんな子たちがモンスターを";
+		mes "どっと引き連れて逃げていくのよ。";
+		mes "叱ってもすぐ忘れるし…";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���������ȁH";
-		mes "�R�m�G�h�����h=�O���X�g��";
-		mes "�������󂯂Ȃ����B";
-		mes "����Ԃ��ԈႦ�Ȃ��悤�ɂȁB";
+		mes "[騎士団長ヘルマン]";
+		mes "聞いたかな？";
+		mes "騎士エドモンド=グロストの";
+		mes "試験を受けなさい。";
+		mes "会う順番も間違えないようにな。";
 		close;
 	case 12:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "��H�N�̂Ƃ���ɍs���Ηǂ��̂�";
-		mes "�킩��Ȃ����āH";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "ん？誰のところに行けば良いのか";
+		mes "わからないって？";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�Ō�̋R�m�̂Ƃ��낾�낤�c�B";
-		mes "�R�m�O���[=�v���X�t�F����";
-		mes "�������󂯂ė��Ȃ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "最後の騎士のところだろう…。";
+		mes "騎士グレー=プロスフェロの";
+		mes "試験を受けて来なさい。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�c�c�c";
+		mes "[騎士エドモンド]";
+		mes "………";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�l������������c";
-		mes "����������ɂ������ƌ��ʂ�����B";
-		mes "����̎�������΂킩�邱�Ɓc";
+		mes "[騎士エドモンド]";
+		mes "人を見誤ったか…";
+		mes "しかしこれにも原因と結果がある。";
+		mes "決定の時が来ればわかること…";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�Ō�̎��������炵������ƂȁB";
-		mes "�܂��A���l�ɗ���̂͋R�m�̓���";
-		mes "�����邱�Ƃł���B";
+		mes "[騎士団長ヘルマン]";
+		mes "最後の試験だからしっかりとな。";
+		mes "また、他人に頼るのは騎士の道に";
+		mes "反することである。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "����ł͎������I��点�Ă��Ȃ����B";
-		mes "�����ĊF�̈ӌ��𕷂��Ă݂悤�B";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは試験を終わらせてきなさい。";
+		mes "そして皆の意見を聞いてみよう。";
 		close;
 	case 13:
-		mes "[�R�m�c���w���}��]";
-		mes "����ł͎������I��点�Ă��Ȃ����B";
-		mes "�܂������͏I����ĂȂ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは試験を終わらせてきなさい。";
+		mes "まだ試験は終わってないぞ。";
 		close;
 	default:
-		mes "[�R�m�c���w���}��]";
-		mes "���� " +strcharinfo(0)+ " ���ȁB";
-		mes "�����͓����������Ȃ����A";
-		mes "�撣���Ă��ꂽ�܂��B";
+		mes "[騎士団長ヘルマン]";
+		mes "うん " +strcharinfo(0)+ " だな。";
+		mes "試験は難しいかもしれないが、";
+		mes "頑張ってくれたまえ。";
 		close;
 	case 14:
 		if(SkillPoint) {
-			mes "[�R�m�c���փ��}��]";
-			mes "�ނށA�X�L���|�C���g���c���Ă����";
-			mes "�]�E�������Ȃ����B";
-			mes "�K���ł���X�L�����擾���Ă���";
-			mes "�܂����Ȃ����B";
+			mes "[騎士団長へルマン]";
+			mes "むむ、スキルポイントが残っていると";
+			mes "転職させられないぞ。";
+			mes "習得できるスキルを取得してから";
+			mes "また来なさい。";
 			close;
 		}
-		mes "[�R�m�c���w���}��]";
-		mes "���ށA�R�m�̎�����S�ďI���Ă����ȁB";
-		mes "�������������I�����S�Ă̌��m��";
-		mes "�R�m�ɂȂ��킯�ł͂Ȃ��B";
+		mes "[騎士団長ヘルマン]";
+		mes "うむ、騎士の試験を全て終えてきたな。";
+		mes "しかし試験を終えた全ての剣士が";
+		mes "騎士になれるわけではない。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�����̉ߒ��łǂꂭ�炢�^�ʖ�";
-		mes "�ł��������A�_�ꂠ�������A";
-		mes "���������������c";
-		mes "��V���d�񂶂����A�h�ӂ�\�������A";
-		mes "�������邱�Ƃ��ł������c";
+		mes "[騎士団長ヘルマン]";
+		mes "試験の過程でどれくらい真面目";
+		mes "であったか、誉れあったか、";
+		mes "強さを見せたか…";
+		mes "礼儀を重んじたか、敬意を表したか、";
+		mes "謙遜することができたか…";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�����̊Ԍ������Ă�������B";
-		mes "�����Ď��B��7�l�̕]���ɂ����";
-		mes "�R�m�]�E�ւ̌��肪����̂��B";
+		mes "[騎士団長ヘルマン]";
+		mes "試験の間見させてもらった。";
+		mes "そして私達の7人の評価によって";
+		mes "騎士転職への決定が下るのだ。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "����ł́A�F�̕]����";
-		mes "�����Ă݂悤���B";
-		mes "���̎҂��i�C�g�ɓ]�E�����邩�H";
-		mes "�V���C���b�N�A�M���̍l���͂ǂ����I ";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは、皆の評価を";
+		mes "聞いてみようか。";
+		mes "この者をナイトに転職させるか？";
+		mes "シャイロック、貴公の考えはどうか！ ";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���ȕi�𗊂�ł��A";
-		mes "��������Ǝ�ɓ���ė��܂����B";
-		mes "�^���ł��I";
-		mes (Sex? "��": "�ޏ�")+ "�̓i�C�g�ɂȂ������";
-		mes "�܂��߂ɕ�炷�ł��傤�B";
+		mes "[騎士アンドリュー]";
+		mes "厄介な品を頼んでも、";
+		mes "しっかりと手に入れて来ました。";
+		mes "賛成です！";
+		mes (Sex? "彼": "彼女")+ "はナイトになった後も";
+		mes "まじめに暮らすでしょう。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���ށA���ɗǂ��]�����ȁB";
-		mes "�V���L���[�Y�͂ǂ��v�����H";
+		mes "[騎士団長ヘルマン]";
+		mes "うむ、非常に良い評価だな。";
+		mes "シラキューズはどう思うか？";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�܂��ǂ��ł��傤�B";
-		mes "���͂��܂�C�ɓ���܂���";
-		mes "�i�C�g�ɂȂ�����ɖ�����";
-		mes "���߂Ă���邱�Ƃł��傤�B";
+		mes "[騎士ジェームズ]";
+		mes "まぁ良いでしょう。";
+		mes "今はあまり気に入りませんが";
+		mes "ナイトになった後に名声を";
+		mes "高めてくれることでしょう。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���ށB�x�l�f�B�N�g�A�M���́H";
+		mes "[騎士団長ヘルマン]";
+		mes "うむ。ベネディクト、貴公は？";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c";
+		mes "[騎士ウインザー]";
+		mes "…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�^���c";
+		mes "[騎士ウインザー]";
+		mes "賛成…";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�N�ɕs��������킯�ł͂Ȃ��������B";
-		mes "����ł̓x�A�g���X�̕]����";
-		mes "�����Č��悤���B";
+		mes "[騎士団長ヘルマン]";
+		mes "君に不満があるわけではなさそうだ。";
+		mes "それではベアトリスの評価を";
+		mes "聞いて見ようか。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "����A�ǂ��ł��ˁI";
+		mes "[騎士エイミー]";
+		mes "うん、良いですね！";
 		if(Sex) {
-			mes "�ނ͏\����V�������ł�����B";
-			mes "���͂܂��܂��ł����A";
-			mes "�i�C�g�ɂȂ�Αf�G�ɂȂ肻���ł��B";
-			mes "�ӂӁc";
+			mes "彼は十分礼儀正しいですから。";
+			mes "今はまだまだですが、";
+			mes "ナイトになれば素敵になりそうです。";
+			mes "ふふ…";
 		}
 		else {
-			mes "�ޏ��͏\����V�������ł�����B";
-			mes "��������������_���������Ɓc";
-			mes "�Ȃ�Č����Ă͂����܂���ˁH";
+			mes "彼女は十分礼儀正しいですから。";
+			mes "しかも可愛いから点数をもっと…";
+			mes "なんて言ってはいけませんね？";
 		}
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�����ςȕ]�������A�^���ł��邱�Ƃ�";
-		mes "�ԈႢ�Ȃ��������B";
-		mes "�O���X�g�A�M�����ꌾ�B";
+		mes "[騎士団長ヘルマン]";
+		mes "何か変な評価だが、賛成であることは";
+		mes "間違いなさそうだ。";
+		mes "グロスト、貴公も一言。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�܂��r��肾���A";
-		mes "�ǂ����m�������Ă���B";
-		mes (Sex? "��": "�ޏ�")+ "�̉B���ꂽ��΂�";
-		mes "���B�Ɍ����������������ł��傤�B";
+		mes "[騎士エドモンド]";
+		mes "まだ荒削りだが、";
+		mes "良いモノを持っている。";
+		mes (Sex? "彼": "彼女")+ "の隠された宝石が";
+		mes "私達に光を見せる日が来るでしょう。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�Ō�ɁA�v���X�t�F���B";
-		mes "�b�𕷂��Ă݂悤���B";
+		mes "[騎士団長ヘルマン]";
+		mes "最後に、プロスフェロ。";
+		mes "話を聞いてみようか。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "������͂����������Ƃ�����܂���ȁB";
-		mes "�Ⴂ" +(Sex? "���": "���삳��")+ "���A�E���ɂ�";
-		mes "�R�m�ɂȂ邱�Ƃ�]�񂾂�����";
-		mes "�\���ł��B";
+		mes "[騎士グレー]";
+		mes "私からはもう言うことがありませんな。";
+		mes "若い" +(Sex? "やつ": "お嬢さん")+ "が、勇敢にも";
+		mes "騎士になることを望んだだけで";
+		mes "十分です。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�F�^�����B���΂͋��Ȃ��̂��ȁB";
-		mes "����ł͍Ō�Ɏ�����̕]�����B";
+		mes "[騎士団長ヘルマン]";
+		mes "皆賛成か。反対は居ないのだな。";
+		mes "それでは最後に私からの評価だ。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�c";
+		mes "[騎士団長ヘルマン]";
+		mes "…";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "�^�����B";
+		mes "[騎士団長ヘルマン]";
+		mes "賛成だ。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "���ׂĂ̎����������ɃN���A������";
-		mes "�ǂ����͓�����A�R�m�Ƃ��Ă̓���";
-		mes "�\���ɋ�Ă���Ɣ��f�����B";
+		mes "[騎士団長ヘルマン]";
+		mes "すべての試験を完璧にクリアしたか";
+		mes "どうかは難しいが、騎士としての徳を";
+		mes "十分に具えていると判断した。";
 		next;
 		unequip;
 		jobchange Job_Knight;
 		set CHANGE_KN,0;
-		mes "[�R�m�c���w���}��]";
-		mes "����ŋM�������B�v�����e���R�m�c��";
-		mes "������B";
-		mes "�ア�҂����A�_�ꍂ���R�m��";
-		mes "�ڎw���Ȃ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "これで貴公も私達プロンテラ騎士団の";
+		mes "一員だ。";
+		mes "弱い者を護り、誉れ高き騎士を";
+		mes "目指しなさい。";
 		next;
 		getitem 656,7;
-		mes "[�R�m�c���w���}��]";
-		mes "�����Ď��B�F�A�M���̓]�E���j����";
-		mes "���蕨��p�ӂ����B";
+		mes "[騎士団長ヘルマン]";
+		mes "そして私達皆、貴公の転職を祝って";
+		mes "贈り物を用意した。";
 		next;
-		mes "[�R�m�c���w���}��]";
-		mes "����ł͍s���Ȃ����I";
-		mes "�M���̖����E�R�m�c�̖�����";
-		mes "������񂱂Ƃ��I";
+		mes "[騎士団長ヘルマン]";
+		mes "それでは行きなさい！";
+		mes "貴公の未来・騎士団の未来に";
+		mes "光あらんことを！";
 		close;
 	}
 }
 
 //============================================================
-// �ꎟ�����i�A�C�e�����W�j
+// 一次試験（アイテム収集）
 //------------------------------------------------------------
-prt_in.gat,75,107,4	script	�R�m�A���h�����[	65,{
+prt_in.gat,75,107,4	script	騎士アンドリュー	65,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�A���h�����[]";
-		mes "�m�[�r�X�ł��ˁB";
-		mes "�v�����e���R�m�c�ɂ悤�����B";
+		mes "[騎士アンドリュー]";
+		mes "ノービスですね。";
+		mes "プロンテラ騎士団にようこそ。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���͌���Ȃ��������キ�������邪�A";
-		mes "�w�͂�����΋����Ȃ�܂��B";
+		mes "[騎士アンドリュー]";
+		mes "今は限りなく自分が弱く感じられるが、";
+		mes "努力をすれば強くなれます。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���邢�����𖲌��āA�����̓���";
-		mes "�فX�ƕ����čs���Ȃ����B";
+		mes "[騎士アンドリュー]";
+		mes "明るい未来を夢見て、自分の道を";
+		mes "黙々と歩いて行きなさい。";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�A���h�����[]";
-		mes "�R�m�c���ł��ˁB�ŋ߂ǂ��ł����H";
+		mes "[騎士アンドリュー]";
+		mes "騎士団員ですね。最近どうですか？";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "�����𐮂��ĐH�ו�������ɂ�";
-		mes "�����ȏK�����d�v�ł��ˁB";
-		mes "�����̐퓬�œ�����[���s�[1��";
-		mes "�c�����W�߂܂��傤�B";
+		mes "[騎士アンドリュー]";
+		mes "装備を整えて食べ物も得るには";
+		mes "堅実な習慣が重要ですね。";
+		mes "毎日の戦闘で得られるゼロピー1つ";
+		mes "残さず集めましょう。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "������Ƃ����āA��������̕�����";
-		mes "�Â�̂��ǂ��Ȃ��ł��ˁB";
-		mes "���B�͋R�m�ł�����B";
+		mes "[騎士アンドリュー]";
+		mes "だからといって、たくさんの物資を";
+		mes "貪るのも良くないですね。";
+		mes "私達は騎士ですから。";
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[�R�m�A���h�����[]";
-		mes "���B�v�����e���R�m�c�́A";
-		mes "���̑嗤�̕��a�̂��߂�";
-		mes "�w�͂��Ă��܂��B";
+		mes "[騎士アンドリュー]";
+		mes "私達プロンテラ騎士団は、";
+		mes "この大陸の平和のために";
+		mes "努力しています。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "�����̐퓬�̒��ɂ��A";
-		mes "�������閾�邢������";
-		mes "�v���`���Ă��܂��B";
+		mes "[騎士アンドリュー]";
+		mes "幾多の戦闘の中にも、";
+		mes "いつか来る明るい未来を";
+		mes "思い描いています。";
 		close;
 	case 1:
-		mes "[�R�m�A���h�����[]";
-		mes "����ɂ��́B�������p�ł����H";
+		mes "[騎士アンドリュー]";
+		mes "こんにちは。何かご用ですか？";
 		next;
-		if(select("�i�C�g�]�E�������󂯂����ł�","���ł��Ȃ��ł�")==2) {
-			mes "[�R�m�A���h�����[]";
-			mes "�����ł����c�B";
+		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
+			mes "[騎士アンドリュー]";
+			mes "そうですか…。";
 			close;
 		}
-		mes "[�R�m�A���h�����[]";
-		mes "���A�i�C�g�ւ̓]�E��";
-		mes "��]�Ȃ�����ł��ˁB�����O�́c";
-		mes strcharinfo(0)+ " �Ő������ł����H";
+		mes "[騎士アンドリュー]";
+		mes "あ、ナイトへの転職を";
+		mes "希望なさる方ですね。お名前は…";
+		mes strcharinfo(0)+ " で正しいですか？";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���̓v�����e���R�m�c�̋R�m�A";
-		mes "�A���h�����[�V���C���b�N�ƌ����܂��B";
-		mes "���Ȃ��̍ŏ��̓]�E������S�����܂��B";
+		mes "[騎士アンドリュー]";
+		mes "私はプロンテラ騎士団の騎士、";
+		mes "アンドリューシャイロックと言います。";
+		mes "あなたの最初の転職試験を担当します。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "�����m�肽���̂͐������ł��B";
-		mes "�R�m�Ȃ�N���������Ă��Ȃ����";
-		mes "�Ȃ�Ȃ����̈�ł��B";
-		mes "������̎����́A�퓬�œ�����";
-		mes "�험�i�����W���Ă��邱�Ƃł��B";
+		mes "[騎士アンドリュー]";
+		mes "私が知りたいのは誠実さです。";
+		mes "騎士なら誰しも持っていなければ";
+		mes "ならない徳の一つです。";
+		mes "私からの試験は、戦闘で得られる";
+		mes "戦利品を収集してくることです。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���āA�����n�߂܂��傤���B";
+		mes "[騎士アンドリュー]";
+		mes "さて、早速始めましょうか。";
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "���̃A�C�e�����W�߂Ă��Ă��������B";
+		mes "[騎士アンドリュー]";
+		mes "次のアイテムを集めてきてください。";
 		next;
 		set CHANGE_KN,rand(2,3);
-		mes "[�R�m�A���h�����[]";
+		mes "[騎士アンドリュー]";
 		if(CHANGE_KN == 2) {
-			mes "�N���d���̂Ђ� 5��,";
-			mes "�Ԃ��R�E�����̗� 5��,";
-			mes "��̉H�� 5��,";
-			mes "�I�[�N��m�̏� 5��,";
-			mes "঒��ނ̐� 5��,";
-			mes "���̂����̂��Ă��� 5��,";
+			mes "年寄り妖精のひげ 5個,";
+			mes "赤いコウモリの翼 5個,";
+			mes "蛾の羽粉 5個,";
+			mes "オーク戦士の証 5個,";
+			mes "爬虫類の舌 5個,";
+			mes "いのししのたてがみ 5個,";
 		}
 		else {
-			mes "�Z���� 5��,";
-			mes "�l���̐S�� 5��,";
-			mes "�H�l�A���̉� 5��,";
-			mes "�L�̂ނ��� 5��,";
-			mes "�Â��t���C�p�� 5��,";
-			mes "�J�^�V�����̔� 5��,";
+			mes "短い足 5個,";
+			mes "人魚の心臓 5個,";
+			mes "食人植物の花 5個,";
+			mes "貝のむきみ 5個,";
+			mes "古いフライパン 5個,";
+			mes "カタシムリの皮 5個,";
 		}
 		next;
-		mes "[�R�m�A���h�����[]";
-		mes "�ȏ�ł��B";
-		mes "��������W�߂Ă��Ă��������B";
+		mes "[騎士アンドリュー]";
+		mes "以上です。";
+		mes "しっかり集めてきてください。";
 		close;
 	case 2:
 		setarray '@need,1040,7006,1057,931,903,1028;
@@ -596,66 +596,66 @@ prt_in.gat,75,107,4	script	�R�m�A���h�����[	65,{
 		setarray '@need,1042,950,1032,966,7031,946;
 		break;
 	case 4:
-		mes "[�R�m�A���h�����[]";
-		mes "�ق�A������̎����͏I���܂�����B";
-		mes "�R�m�W�F�[���Y���҂��Ă��܂��B";
-		mes "�����s���Č��Ă��������B";
+		mes "[騎士アンドリュー]";
+		mes "ほら、私からの試験は終わりましたよ。";
+		mes "騎士ジェームズが待っています。";
+		mes "早く行って見てください。";
 		close;
 	default:
-		mes "[�R�m�A���h�����[]";
-		mes "�������ɘb���������Ƃ�����̂ł����H";
-		mes "���̂悤�ȉɂ�����Ȃ�A���̎�����";
-		mes "�󂯂Ă��Ȃ����B";
-		mes "������x�\���グ�邪�A";
-		mes "�܂��߂Ɏ����ɗՂ�ł��������B";
+		mes "[騎士アンドリュー]";
+		mes "何か私に話したいことがあるのですか？";
+		mes "そのような暇があるなら、次の試験を";
+		mes "受けてきなさい。";
+		mes "もう一度申し上げるが、";
+		mes "まじめに試験に臨んでください。";
 		close;
 	case 14:
-		mes "[�R�m�A���h�����[]";
-		mes "�������F�I���܂����ˁB�����l�B";
-		mes "����ł͎������̋R�m�c���̏���";
-		mes "�F�̕]���𕷂��Ă�����Ă��������B";
+		mes "[騎士アンドリュー]";
+		mes "試験を皆終えましたね。お疲れ様。";
+		mes "それでは私たちの騎士団長の所で";
+		mes "皆の評価を聞いてもらってください。";
 		close;
 	}
-	//2-3�̑���
-	mes "[�R�m�A���h�����[]";
-	mes "���A��Ȃ����B";
-	mes "�A�C�e���͏W�߂Ă��܂������H";
-	mes "����ł͌��Ă݂܂��傤�B";
+	//2-3の続き
+	mes "[騎士アンドリュー]";
+	mes "お帰りなさい。";
+	mes "アイテムは集めてきましたか？";
+	mes "それでは見てみましょう。";
 	next;
 	for(set '@i,0; '@i<6; set '@i,'@i+1) {
 		if(countitem('@need['@i]) < 5) {
-			mes "[�R�m�A���h�����[]";
-			mes "������Ƒ҂��Ă��������B";
-			mes "�S�������ĂȂ����Ⴀ��܂��񂩁B";
+			mes "[騎士アンドリュー]";
+			mes "ちょっと待ってください。";
+			mes "全部揃ってないじゃありませんか。";
 			next;
-			mes "[�R�m�A���h�����[]";
-			mes "�܂Ƃ��ȏ��������Ȃ��Ńi�C�g��";
-			mes "�Ȃ��Ƃł��v�����̂ł����H";
-			mes "���񂾃A�C�e����Y��Ă��܂����Ȃ�";
-			mes "������x�����܂���B";
+			mes "[騎士アンドリュー]";
+			mes "まともな準備もしないでナイトに";
+			mes "なれるとでも思ったのですか？";
+			mes "頼んだアイテムを忘れてしまったなら";
+			mes "もう一度言いますよ。";
 			next;
-			mes "[�R�m�A���h�����[]";
+			mes "[騎士アンドリュー]";
 			for(set '@i,0; '@i<6; set '@i,'@i+1)
-				mes getitemname('@need['@i])+ " 5��,";
+				mes getitemname('@need['@i])+ " 5個,";
 			next;
-			mes "[�R�m�A���h�����[]";
-			mes "������x�\���グ�邪�A";
-			mes "�^�ʖڂɎ����ɗՂ�ł��������B";
-			mes "�ł͍s���Ȃ����B";
+			mes "[騎士アンドリュー]";
+			mes "もう一度申し上げるが、";
+			mes "真面目に試験に臨んでください。";
+			mes "では行きなさい。";
 			close;
 		}
 	}
-	mes "[�R�m�A���h�����[]";
-	mes "�����ł��ˁB�����l�ł����B";
-	mes "���̃A�C�e���́A�R�m�c��";
-	mes "�����ɑ傫���v������ł��傤�B";
+	mes "[騎士アンドリュー]";
+	mes "完璧ですね。お疲れ様でした。";
+	mes "このアイテムは、騎士団の";
+	mes "財政に大きく貢献するでしょう。";
 	next;
-	mes "[�R�m�A���h�����[]";
-	mes "����ł͎��̓����R�m�ł���";
-	mes "�W�F�[���Y=�V���L���[�Y�̂Ƃ����";
-	mes "�s���Ă݂Ă��������B";
-	mes "�c�����������A���܂ŕ�炵�Ă���";
-	mes "�悤�ɐ^�ʖڂɖ]�ނ悤���肢���܂��B";
+	mes "[騎士アンドリュー]";
+	mes "それでは私の同僚騎士である";
+	mes "ジェームズ=シラキューズのところへ";
+	mes "行ってみてください。";
+	mes "残った試験も、今まで暮らしてきた";
+	mes "ように真面目に望むようお願いします。";
 	for(set '@i,0; '@i<6; set '@i,'@i+1)
 		delitem '@need['@i],5;
 	set CHANGE_KN,4;
@@ -663,517 +663,517 @@ prt_in.gat,75,107,4	script	�R�m�A���h�����[	65,{
 }
 
 //============================================================
-// �񎟎����i��������j
+// 二次試験（口頭試問）
 //------------------------------------------------------------
-prt_in.gat,71,91,0	script	�R�m�W�F�[���Y	65,{
+prt_in.gat,71,91,0	script	騎士ジェームズ	65,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�����A�m�[�r�X������ȏ���";
-		mes "�ǂ�ȗp���ȁH";
+		mes "[騎士ジェームズ]";
+		mes "おう、ノービスがこんな所に";
+		mes "どんな用かな？";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�����i�C�g�Ɋ֐S�������Ă��A";
-		mes "�m�[�r�X����i�C�g�ɓ]�E���邱�Ƃ�";
-		mes "�ł��Ȃ��񂾁B";
+		mes "[騎士ジェームズ]";
+		mes "もしナイトに関心があっても、";
+		mes "ノービスからナイトに転職することは";
+		mes "できないんだ。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "���m�ŏC����ς�ł���";
-		mes "�܂���������Ⴂ";
+		mes "[騎士ジェームズ]";
+		mes "剣士で修練を積んでから";
+		mes "またいらっしゃい";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�悤���C���I�R�m�c���̂̂܂܂���B";
+		mes "[騎士ジェームズ]";
+		mes "よう元気か！騎士団も昔のままだよ。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�V�����R�m�c���B�������Ǝ󂯎�����";
-		mes "�������A�����z�΂��肾�B";
-		mes "�Ƃ���ŁA�ǂ����ŉ��R�m�c��";
-		mes "���_�������悤�Ȃ������������";
-		mes "���Ȃ��������H";
+		mes "[騎士ジェームズ]";
+		mes "新しい騎士団員達をずっと受け持って";
+		mes "きたが、ごつい奴ばかりだ。";
+		mes "ところで、どこかで我ら騎士団の";
+		mes "名誉を汚すようなやつを見かけたり";
+		mes "しなかったか？";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "��������Ȃ������������A";
-		mes "���̑���Ɏ����Ă���Ă���B";
+		mes "[騎士ジェームズ]";
+		mes "もしそんなやつを見かけたら、";
+		mes "俺の代わりに叱ってやってくれ。";
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�U���Ɩh��A�����𓯎���";
-		mes "�ł��Ȃ����߂��A���茕���g����";
-		mes "�����̂Ă鎖�ɂȂ�̂�";
-		mes "�h�䂪�キ�Ȃ�B���̌��_��";
-		mes "�����ł��镐��͂Ȃ��̂��ȁB";
+		mes "[騎士ジェームズ]";
+		mes "攻撃と防御、これらを同時に";
+		mes "できないためか、両手剣を使えば";
+		mes "盾を捨てる事になるので";
+		mes "防御が弱くなる。この欠点を";
+		mes "克服できる武器はないのかな。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "����ȃ��m����邱�Ƃ��ł�����";
-		mes "�R�m�B�̖��ɗ��͂������B";
+		mes "[騎士ジェームズ]";
+		mes "そんなモノを作ることができたら";
+		mes "騎士達の役に立つはずだが。";
 		close;
 	case 1:
 	case 2:
 	case 3:
 	case 4:
-		mes "[�R�m�W�F�[���Y]";
-		mes "��A���ɉ����p�����H";
+		mes "[騎士ジェームズ]";
+		mes "ん、俺に何か用かい？";
 		break;
 	case 5:
-		mes "[�R�m�W�F�[���Y]";
-		mes "��A�܂����O���B���̗p���H";
+		mes "[騎士ジェームズ]";
+		mes "ん、またお前か。何の用だ？";
 		break;
 	case 6:
-		mes "[�R�m�W�F�[���Y]";
-		mes "��A�܂����ɗp�����H";
+		mes "[騎士ジェームズ]";
+		mes "ん、まだ俺に用かい？";
 		break;
 	default:
-		mes "[�R�m�W�F�[���Y]";
-		mes "���A���܂񂪉��͖Z�����B";
-		mes "������S���I��点�ȁB";
+		mes "[騎士ジェームズ]";
+		mes "あ、すまんが俺は忙しい。";
+		mes "試験を全部終わらせな。";
 		close;
 	case 14:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�ӂށA���̓����̎�����S�ďI�������B";
+		mes "[騎士ジェームズ]";
+		mes "ふむ、他の同僚の試験を全て終えたか。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ȃ�A�R�m�c���̘b�𕷂��Ă����B";
-		mes "���B���Q�����邩��B";
+		mes "[騎士ジェームズ]";
+		mes "なら、騎士団長の話を聞いてこい。";
+		mes "俺達も参加するから。";
 		close;
 	}
 	next;
-	if(select("�i�C�g�]�E�������󂯂����ł�","���ł��Ȃ��ł�")==2) {
-		mes "[�R�m�W�F�[���Y]";
-		mes (CHANGE_KN == 5)? "�p�������Ȃ�A��I": "�Ȃ񂾁A���L���ȁB";
+	if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
+		mes "[騎士ジェームズ]";
+		mes (CHANGE_KN == 5)? "用が無いなら帰れ！": "なんだ、水臭いな。";
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 1:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�i�C�g�]�E�������c";
-		mes "���������΁A�\������ł����c���ȁB";
-		mes "���O�� " +strcharinfo(0)+ " ���������c";
+		mes "[騎士ジェームズ]";
+		mes "ナイト転職試験か…";
+		mes "そういえば、申し込んでたヤツだな。";
+		mes "名前は " +strcharinfo(0)+ " だったか…";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�ł��A���ɉ�O�ɑ��̓�����";
-		mes "����Ă��痈�Ă���B";
-		mes "�܂������Ƃ����߂̎�����";
-		mes "�󂯂Ă��Ȃ����낤�H";
+		mes "[騎士ジェームズ]";
+		mes "でも、俺に会う前に他の同僚に";
+		mes "会ってから来てくれ。";
+		mes "まだ見たところ一つめの試験を";
+		mes "受けていないだろう？";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "��ł��������󂯂Ă�����";
-		mes "���̎������󂯂����Ă��B";
+		mes "[騎士ジェームズ]";
+		mes "一つでも試験を受けてきたら";
+		mes "俺の試験を受けさせてやる。";
 		close;
-	default:	//2�`3�̂Ƃ�
-		mes "[�R�m�W�F�[���Y]";
-		mes "�͂́A���炱��c";
-		mes "���O�̓A���h�����[�̎�����";
-		mes "�󂯂Ă�Œ����낤�H";
-		mes "����𖳎����ĉ��̏��ɗ���Ȃ�āc�B";
+	default:	//2～3のとき
+		mes "[騎士ジェームズ]";
+		mes "はは、こらこら…";
+		mes "お前はアンドリューの試験を";
+		mes "受けてる最中だろう？";
+		mes "それを無視して俺の所に来るなんて…。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�ق�A�������ƍs���I";
+		mes "[騎士ジェームズ]";
+		mes "ほら、さっさと行け！";
 		close;
 	case 4:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�����A��߂̎������I��������B";
-		mes "�悵�A�������O�̂��߂ɂ������";
-		mes "���Ԃ�����Ă�낤�B";
+		mes "[騎士ジェームズ]";
+		mes "おう、一つめの試験が終わったか。";
+		mes "よし、俺がお前のためにちょっと";
+		mes "時間をくれてやろう。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "���̖��̓W�F�[���Y=�V���L���[�Y�B";
-		mes "���R�v�����e���R�m�c�����̋R�m���B";
+		mes "[騎士ジェームズ]";
+		mes "俺の名はジェームズ=シラキューズ。";
+		mes "当然プロンテラ騎士団所属の騎士だ。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "���O�����ꂩ��󂯂鎎���́A";
-		mes "���O���ǂꂾ���R�m�Ƃ������̂�";
-		mes "�������Ă��邩�A�܂��A�R�m�̖��_";
-		mes "�Ɋւ���N�̍l���𕷂������ˁB";
+		mes "[騎士ジェームズ]";
+		mes "お前がこれから受ける試験は、";
+		mes "お前がどれだけ騎士というものを";
+		mes "理解しているか、また、騎士の名誉";
+		mes "に関する君の考えを聞きたいね。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "�ْ����Ȃ��Ă������B";
-		mes "����ȂɎ��Ԃ͂�����Ȃ��B";
-		mes "�ȒP�Ȏ��₾�B";
+		mes "[騎士ジェームズ]";
+		mes "緊張しなくていいぞ。";
+		mes "そんなに時間はかからない。";
+		mes "簡単な質問だ。";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "����ł͎n�߂�B�����������B";
+		mes "[騎士ジェームズ]";
+		mes "それでは始める。すぐ答えろよ。";
 		set CHANGE_KN,5;
 		break;
 	case 5:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�������B���x�͂܂Ƃ��ȓ�����";
-		mes "���҂��Ă��邼�B";
-		mes "���ԈႦ����c�o�債���I";
+		mes "[騎士ジェームズ]";
+		mes "そうか。今度はまともな答えを";
+		mes "期待しているぞ。";
+		mes "次間違えたら…覚悟しろよ！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "����ł͎n�߂�B";
+		mes "[騎士ジェームズ]";
+		mes "それでは始める。";
 		break;
 	case 6:
-		mes "[�R�m�W�F�[���Y]";
-		mes "����A���O�͂������̎������󂯂�";
-		mes "���낤�I���̓����̏��ɍs���Ă���B";
-		mes "�R�m�E�C���U�[���҂��Ă����";
-		mes "�������͂������B";
+		mes "[騎士ジェームズ]";
+		mes "こら、お前はもう俺の試験を受けた";
+		mes "だろう！他の同僚の所に行ってくれ。";
+		mes "騎士ウインザーが待っていると";
+		mes "言ったはずだが。";
 		close;
 	}
-	//�������₱������
+	//口頭試問ここから
 	next;
-	mes "[�R�m�W�F�[���Y]";
-	mes "�i�C�g�͍��������U���͂Ɩh��́A";
-	mes "�U�����x�Ƌ��ɗ͋������茕�X�L����";
-	mes "���Ȃ����E�Ƃ��B";
-	mes "�����ŁA��\�I�ȗ��茕�X�L���ł���";
-	mes "�u�c�[�n���h�N�C�b�P���v���g�����Ƃ�";
-	mes "�ł��Ȃ�����𓚂���B";
+	mes "[騎士ジェームズ]";
+	mes "ナイトは高い物理攻撃力と防御力、";
+	mes "攻撃速度と共に力強い両手剣スキルを";
+	mes "そなえた職業だ。";
+	mes "そこで、代表的な両手剣スキルである";
+	mes "「ツーハンドクイッケン」を使うことが";
+	mes "できない武器を答えろ。";
 	next;
-	if(select("�J�^�i","�X���C���[","�u���[�h�\�[�h","�t�����x���W�F") != 4) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ⴄ�I����͗��茕������g����I";
-		mes "�i�C�g�ɂȂ낤�Ƃ�������i�C�g��";
-		mes "�X�L����m��Ȃ��Ăǂ�����I";
+	if(select("カタナ","スレイヤー","ブロードソード","フランベルジェ") != 4) {
+		mes "[騎士ジェームズ]";
+		mes "違う！それは両手剣だから使える！";
+		mes "ナイトになろうというやつがナイトの";
+		mes "スキルを知らなくてどうする！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "������Ȃ���΁A�X���o��";
-		mes "���̕ӂ̃i�C�g�����܂���";
-		mes "�����Ă݂ȁB";
-		mes "�i�C�g�ɂ��Ă����������";
-		mes "���ׂĂ���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "分からなければ、街を出て";
+		mes "その辺のナイトをつかまえて";
+		mes "聞いてみな。";
+		mes "ナイトについてもうちょっと";
+		mes "調べてくるように。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�悵�A���ꂶ��X�L���ɂ���";
-	mes "���������w��ł݂悤���B";
-	mes "�u�{�E�����O�o�b�V���v���K������̂�";
-	mes "�K�v�łȂ��X�L���́H";
+	mes "[騎士ジェームズ]";
+	mes "よし、それじゃスキルについて";
+	mes "もう少し学んでみようか。";
+	mes "「ボウリングバッシュ」を習得するのに";
+	mes "必要でないスキルは？";
 	next;
-	if(select("���茕�C�� Lv.5","�}�O�i���u���C�N Lv.3","�v���{�b�N Lv.10","�o�b�V�� Lv.10") != 3) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ⴄ�I������o���Ȃ����";
-		mes "�i���Ƀ{�E�����O�o�b�V����";
-		mes "�g���Ȃ����I";
-		mes "�i�C�g�ɂȂ낤�Ƃ�������i�C�g��";
-		mes "�X�L����m��Ȃ��Ăǂ�����I";
+	if(select("両手剣修練 Lv.5","マグナムブレイク Lv.3","プロボック Lv.10","バッシュ Lv.10") != 3) {
+		mes "[騎士ジェームズ]";
+		mes "違う！それを覚えなければ";
+		mes "永遠にボウリングバッシュを";
+		mes "使えないぞ！";
+		mes "ナイトになろうというやつがナイトの";
+		mes "スキルを知らなくてどうする！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "������Ȃ���΁A�X���o��";
-		mes "���̕ӂ̃i�C�g�����܂���";
-		mes "�����Ă݂ȁB";
-		mes "�i�C�g�ɂ��Ă����������";
-		mes "���ׂĂ���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "分からなければ、街を出て";
+		mes "その辺のナイトをつかまえて";
+		mes "聞いてみな。";
+		mes "ナイトについてもうちょっと";
+		mes "調べてくるように。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�i�C�g�͑����������Ƃ��ł���B";
-	mes "�����đ��𗘗p�����X�L����";
-	mes "�g�����Ƃ��ł���B���̒��̈�A";
-	mes "�u�u�����f�B�b�V���X�s�A�v�̂��߂�";
-	mes "�K�����K�v�łȂ����̂𓚂���B";
+	mes "[騎士ジェームズ]";
+	mes "ナイトは槍を扱うことができる。";
+	mes "そして槍を利用したスキルを";
+	mes "使うことができる。その中の一つ、";
+	mes "「ブランディッシュスピア」のために";
+	mes "習得が必要でないものを答えろ。";
 	next;
-	if(select("�s�A�[�X Lv.5","�X�s�A�X�^�u Lv.3","�X�s�A�u�[������ Lv.3","���C�f�B���O Lv.1") != 3) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ⴄ�I������o���Ȃ����";
-		mes "�i���Ƀu�����f�B�b�V���X�s�A��";
-		mes "�g���Ȃ����I";
-		mes "�i�C�g�ɂȂ낤�Ƃ�������i�C�g��";
-		mes "�X�L����m��Ȃ��Ăǂ�����I";
+	if(select("ピアース Lv.5","スピアスタブ Lv.3","スピアブーメラン Lv.3","ライディング Lv.1") != 3) {
+		mes "[騎士ジェームズ]";
+		mes "違う！それを覚えなければ";
+		mes "永遠にブランディッシュスピアを";
+		mes "使えないぞ！";
+		mes "ナイトになろうというやつがナイトの";
+		mes "スキルを知らなくてどうする！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "������Ȃ���΁A�X���o��";
-		mes "���̕ӂ̃i�C�g�����܂���";
-		mes "�����Ă݂ȁB";
-		mes "�i�C�g�ɂ��Ă����������";
-		mes "���ׂĂ���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "分からなければ、街を出て";
+		mes "その辺のナイトをつかまえて";
+		mes "聞いてみな。";
+		mes "ナイトについてもうちょっと";
+		mes "調べてくるように。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "���̒��ɂ��A���̕��퓯�l";
-	mes "���������������̂����݂���B";
-	mes "�ł͎��̒��ŁA�u�O�v�����ł���";
-	mes "�i�C�g���A�Ƀ_���[�W��^������";
-	mes "���͂ǂꂩ�B";
+	mes "[騎士ジェームズ]";
+	mes "槍の中にも、他の武器同様";
+	mes "属性を持ったものが存在する。";
+	mes "では次の中で、「念」属性である";
+	mes "ナイトメアにダメージを与えられる";
+	mes "槍はどれか。";
 	next;
-	if(select("�[�s�����X","�����X","�M�U����","�N���Z���g�T�C�_�[") != 1) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ⴄ�I����Ȃ��̂œ˂����Ƃ����";
-		mes "��U�肷�邾�����I";
-		mes "�i�C�g�ɂȂ낤�Ƃ�������i�C�g��";
-		mes "����ɂ��Ēm��Ȃ��Ăǂ�����I";
+	if(select("ゼピュロス","ランス","ギザルム","クレセントサイダー") != 1) {
+		mes "[騎士ジェームズ]";
+		mes "違う！そんなもので突いたところで";
+		mes "空振りするだけだ！";
+		mes "ナイトになろうというやつがナイトの";
+		mes "武器について知らなくてどうする！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "������Ȃ���΁A�X���o��";
-		mes "���̕ӂ̃i�C�g�����܂���";
-		mes "�����Ă݂ȁB";
-		mes "�i�C�g�ɂ��Ă����������";
-		mes "���ׂĂ���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "分からなければ、街を出て";
+		mes "その辺のナイトをつかまえて";
+		mes "聞いてみな。";
+		mes "ナイトについてもうちょっと";
+		mes "調べてくるように。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�i�C�g�ɂȂ�΃y�R�y�R�ɏ����";
-	mes "�ړ����邱�Ƃ��\�ɂȂ�B";
-	mes "���̑���U�����x��������B";
-	mes "�������A�R���C���X�L�����K������";
-	mes "���Ƃɂ��U�����x���グ�邱�Ƃ�";
-	mes "�ł���B";
+	mes "[騎士ジェームズ]";
+	mes "ナイトになればペコペコに乗って";
+	mes "移動することが可能になる。";
+	mes "その代わり攻撃速度が下がる。";
+	mes "しかし、騎兵修練スキルを習得する";
+	mes "ことにより攻撃速度を上げることが";
+	mes "できる。";
 	next;
-	mes "[�R�m�W�F�[���Y]";
-	mes "�ł́A�R���C���� Lv.3�܂�";
-	mes "�K���������̍U�����x��";
-	mes "�ǂ��Ȃ邩�H";
+	mes "[騎士ジェームズ]";
+	mes "では、騎兵修練を Lv.3まで";
+	mes "習得した時の攻撃速度は";
+	mes "どうなるか？";
 	next;
-	if(select("�ʏ�� 70%","�ʏ�� 80%","�ʏ�� 90%","�ʏ�� 100%") != 2) {
-		mes "[�R�m�W�F�[���Y]";
-		mes "�Ⴄ�I�R���C���ɂ��Ēm��Ȃ��Ȃ�";
-		mes "�y�R�y�R�ɂȂǏ��ȁI";
-		mes "�i�C�g�ɂȂ낤�Ƃ�������i�C�g��";
-		mes "����ɂ��Ēm��Ȃ��Ăǂ�����I";
+	if(select("通常の 70%","通常の 80%","通常の 90%","通常の 100%") != 2) {
+		mes "[騎士ジェームズ]";
+		mes "違う！騎兵修練について知らないなら";
+		mes "ペコペコになど乗るな！";
+		mes "ナイトになろうというやつがナイトの";
+		mes "武器について知らなくてどうする！";
 		next;
-		mes "[�R�m�W�F�[���Y]";
-		mes "������Ȃ���΁A�X���o��";
-		mes "���̕ӂ̃i�C�g�����܂���";
-		mes "�����Ă݂ȁB";
-		mes "�i�C�g�ɂ��Ă����������";
-		mes "���ׂĂ���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "分からなければ、街を出て";
+		mes "その辺のナイトをつかまえて";
+		mes "聞いてみな。";
+		mes "ナイトについてもうちょっと";
+		mes "調べてくるように。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�悵�A���̈ʓ�������Ȃ�";
-	mes "�i�C�g�̒m���͂ЂƂ܂��ǂ����낤�B";
-	mes "����ł̓i�C�g�ɂ��Ă̌l�I��";
-	mes "������������Ă݂悤���B";
+	mes "[騎士ジェームズ]";
+	mes "よし、この位答えられるなら";
+	mes "ナイトの知識はひとまず良いだろう。";
+	mes "それではナイトについての個人的な";
+	mes "質問を少ししてみようか。";
 	next;
-	mes "[�R�m�W�F�[���Y]";
-	mes "�X�ŃA�h�o�C�X�����߂鏉�S�҂�";
-	mes "�o��������ǂ�����ׂ����H";
+	mes "[騎士ジェームズ]";
+	mes "街でアドバイスを求める初心者に";
+	mes "出会った時どうするべきか？";
 	next;
-	switch(select("�K���Ȏ����E�߂Ă�����","�U�����󂯂Ă����ď�����","�����ƃA�C�e���������Ղ肠����")) {
+	switch(select("適当な狩り場を薦めてあげる","攻撃を受けてあげて助ける","お金とアイテムをたっぷりあげる")) {
 	case 1:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�������B���S�҂������͎���";
-		mes "���Ă����Ȃ���΂Ȃ�Ȃ��B";
-		mes "�����̗͂Ő������Ă����̂�";
-		mes "�K�����ꏊ�������Ă����邱�Ƃ�";
-		mes "���ɑ�؂Ȃ��Ƃ��B";
+		mes "[騎士ジェームズ]";
+		mes "そうだ。初心者もいつかは自立";
+		mes "していかなければならない。";
+		mes "自分の力で成長していくのに";
+		mes "適した場所を教えてあげることは";
+		mes "非常に大切なことだ。";
 		next;
 		break;
 	case 2:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�����v���Ⴂ�����Ă���ˁB";
-		mes "���ꂪ�{���ɂ��̐l�̂��߂�";
-		mes "�Ȃ邾�낤���H";
-		mes "���ʂڂꂪ�����B�o�����I";
+		mes "[騎士ジェームズ]";
+		mes "何か思い違いをしているね。";
+		mes "それが本当にその人のために";
+		mes "なるだろうか？";
+		mes "うぬぼれが強い。出直せ！";
 		close;
 	case 3:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�ӂށB����͊�Ԃ�������Ȃ����A";
-		mes "����͓ł�������悤�Ȃ��̂��B";
-		mes "������ǂ��납�A��������߂ɂ���";
-		mes "���܂��B�o�����I";
+		mes "[騎士ジェームズ]";
+		mes "ふむ。相手は喜ぶかもしれないが、";
+		mes "それは毒をあげるようなものだ。";
+		mes "助けるどころか、相手をだめにして";
+		mes "しまう。出直せ！";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "���Ⴀ�A�p�[�e�B���ł�";
-	mes "�ǂ̂悤�ɓ����ׂ����H";
+	mes "[騎士ジェームズ]";
+	mes "じゃあ、パーティ内では";
+	mes "どのように動くべきか？";
 	next;
-	switch(select("�擪�ɗ����ĊF�����","�����X�^�[���W�߂ĊF�E���ɂ�����","�퓬�Ɗ֌W�Ȃ��A�C�e�����E��")) {
+	switch(select("先頭に立って皆を守る","モンスターを集めて皆殺しにさせる","戦闘と関係なくアイテムを拾う")) {
 	case 1:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�܂��ɂ������I���B�R�m�̋��x��";
-		mes "�̗͂ƍU���͂̓p�[�e�B����";
-		mes "�{���ɏd�v�Ȗ���������B";
-		mes "��ɂ��̍l���ł���悤�ɁB";
+		mes "[騎士ジェームズ]";
+		mes "まさにそうだ！俺達騎士の強靭な";
+		mes "体力と攻撃力はパーティ内で";
+		mes "本当に重要な役割をする。";
+		mes "常にその考えでいるように。";
 		next;
 		break;
 	case 2:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�c���O�{�C���H";
-		mes "����łǂꂾ������ɔ�Q���o�邩";
-		mes "�킩�������̂���Ȃ����B";
-		mes "�����A��I";
+		mes "[騎士ジェームズ]";
+		mes "…お前本気か？";
+		mes "それでどれだけ周りに被害が出るか";
+		mes "わかったものじゃないぞ。";
+		mes "もう帰れ！";
 		close;
 	case 3:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�c";
-		mes "���C�������Ȃ�A���Ă������B";
+		mes "[騎士ジェームズ]";
+		mes "…";
+		mes "やる気が無いなら帰っていいぞ。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�Ō�ɁA�R�m�ɂƂ��Ĉ�ԑ厖��";
-	mes "���̂Ƃ͉����H";
+	mes "[騎士ジェームズ]";
+	mes "最後に、騎士にとって一番大事な";
+	mes "ものとは何か？";
 	next;
-	switch(select("���_","���K","�n��")) {
+	switch(select("名誉","金銭","地位")) {
 	case 1:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�����A�R�m�͖��_���I";
-		mes "���_�̂��߂ɐ����A���_�̂��߂Ɏ��ʁB";
-		mes "�����S�ɓ���Ă����˂΂Ȃ�Ȃ��B";
+		mes "[騎士ジェームズ]";
+		mes "そう、騎士は名誉だ！";
+		mes "名誉のために生き、名誉のために死ぬ。";
+		mes "いつも心に入れておかねばならない。";
 		next;
 		break;
 	case 2:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�������������I�ǂ��ւł��s���I";
-		mes "���B�̋R�m�c�ł́A���O�̂悤�ȓz��";
-		mes "�󂯓���邱�Ƃ͂ł��Ȃ��B";
+		mes "[騎士ジェームズ]";
+		mes "腐った根性だ！どこへでも行け！";
+		mes "俺達の騎士団では、お前のような奴を";
+		mes "受け入れることはできない。";
 		close;
 	case 3:
-		mes "[�R�m�W�F�[���Y]";
-		mes "�o���̂��߂ɐ키�悤�ȍ�����";
-		mes "�Ȃ������z�́A���B�̋R�m�c��";
-		mes "����邱�Ƃ͂ł��Ȃ��B";
+		mes "[騎士ジェームズ]";
+		mes "出世のために戦うような根性の";
+		mes "曲がった奴は、俺達の騎士団に";
+		mes "入れることはできない。";
 		close;
 	}
-	mes "[�R�m�W�F�[���Y]";
-	mes "�悵�A������̎����͏I��肾�B";
+	mes "[騎士ジェームズ]";
+	mes "よし、俺からの試験は終わりだ。";
 	next;
-	mes "[�R�m�W�F�[���Y]";
-	mes "�R�m�E�C���U�[�����O��҂��Ă���B";
-	mes "�����Ȃ�����猾�t�ɋC������B";
+	mes "[騎士ジェームズ]";
+	mes "騎士ウインザーがお前を待っている。";
+	mes "無口なやつだから言葉に気をつけろ。";
 	set CHANGE_KN,6;
 	close;
 }
 
 //============================================================
-// �O�������i�퓬�����j
+// 三次試験（戦闘試験）
 //------------------------------------------------------------
-prt_in.gat,79,94,4	script	�R�m�E�C���U�[	733,{
-	mes "[�R�m�E�C���U�[]";
-	mes "�c�c";
+prt_in.gat,79,94,4	script	騎士ウインザー	733,{
+	mes "[騎士ウインザー]";
+	mes "……";
 	next;
 	if(Job == Job_Novice) {
-		mes "[�R�m�E�C���U�[]";
-		mes "�O�ŗV�тȂ����c";
+		mes "[騎士ウインザー]";
+		mes "外で遊びなさい…";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�E�C���U�[]";
-		mes "�b��������ȁc";
+		mes "[騎士ウインザー]";
+		mes "話しかけるな…";
 		close;
 	}
 	if(Job != Job_Swordman) {
-		mes "[�R�m�E�C���U�[]";
-		mes "���̗p���c";
+		mes "[騎士ウインザー]";
+		mes "何の用だ…";
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[�R�m�E�C���U�[]";
-		mes "�b���|����ȁc";
+		mes "[騎士ウインザー]";
+		mes "話し掛けるな…";
 		close;
 	case 1:
 	case 2:
 	case 3:
 	case 4:
 	case 5:
-		mes "[�R�m�E�C���U�[]";
-		mes "���̗p���c";
+		mes "[騎士ウインザー]";
+		mes "何の用だ…";
 		next;
-		if(select("�i�C�g�]�E�������󂯂����ł�","���ł��Ȃ��ł�")==2) {
-			mes "[�R�m�E�C���U�[]";
-			mes "�c�c";
+		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
+			mes "[騎士ウインザー]";
+			mes "……";
 			close;
 		}
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "���̔Ԃł͂Ȃ��c";
+		mes "[騎士ウインザー]";
+		mes "私の番ではない…";
 		close;
 	case 6:
 	case 7:
-		mes "[�R�m�E�C���U�[]";
-		mes (CHANGE_KN == 7)? "�c�܂����c���̗p���B": "���̗p���c";
+		mes "[騎士ウインザー]";
+		mes (CHANGE_KN == 7)? "…またか…何の用だ。": "何の用だ…";
 		next;
-		if(select("�i�C�g�]�E�������󂯂����ł�","���ł��Ȃ��ł�")==2) {
-			mes "[�R�m�E�C���U�[]";
-			mes "�c�c";
+		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
+			mes "[騎士ウインザー]";
+			mes "……";
 			close;
 		}
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c���ė��Ȃ����B";
+		mes "[騎士ウインザー]";
+		mes "…ついて来なさい。";
 		if(CHANGE_KN == 6)
 			set CHANGE_KN,7;
 		close2;
 		warp "job_knt.gat",89,101;
 		end;
 	default:
-		mes "[�R�m�E�C���U�[]";
-		mes "�퓬���������̂��c";
+		mes "[騎士ウインザー]";
+		mes "戦闘がしたいのか…";
 		close;
 	case 14:
-		mes "[�R�m�E�C���U�[]";
-		mes "�c���̂Ƃ���ցc";
+		mes "[騎士ウインザー]";
+		mes "団長のところへ…";
 		close;
 	}
 }
 
-job_knt.gat,89,106,4	script	�R�m�E�C���U�[#Test	733,{
-	mes "[�R�m�E�C���U�[]";
-	mes "�c�c";
+job_knt.gat,89,106,4	script	騎士ウインザー#Test	733,{
+	mes "[騎士ウインザー]";
+	mes "……";
 	next;
-	mes "[�R�m�E�C���U�[]";
-	mes "���₪����̂��c�H";
+	mes "[騎士ウインザー]";
+	mes "質問があるのか…？";
 	next;
-	switch(select("�ǂ�Ȏ����Ȃ�ł��傤�H","�����͂ǂ̂悤�ɐi�ނ�ł����H","��������o�����ł�","������")) {
+	switch(select("どんな試験なんでしょう？","試験はどのように進むんですか？","ここから出たいです","いいえ")) {
 	case 1:
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�����X�^�[�Ƃ̐퓬���c";
+		mes "[騎士ウインザー]";
+		mes "モンスターとの戦闘だ…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�S�ē|���Ȃ����c";
+		mes "[騎士ウインザー]";
+		mes "全て倒しなさい…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�R�i�K�S�ďI��点�Ȃ����c";
+		mes "[騎士ウインザー]";
+		mes "３段階全て終わらせなさい…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�P�i�K�R���^����c";
+		mes "[騎士ウインザー]";
+		mes "１段階３分与える…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		close;
 	case 2:
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�T�����ɓ���Ȃ����c";
+		mes "[騎士ウインザー]";
+		mes "控え室に入りなさい…";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "����ł͂����Ɏn�߂�B";
+		mes "[騎士ウインザー]";
+		mes "それではすぐに始める。";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "���̎҂��������Ȃ�҂B";
+		mes "[騎士ウインザー]";
+		mes "他の者が試験中なら待つ。";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "��l�I������炷���ɓ���B";
+		mes "[騎士ウインザー]";
+		mes "一人終わったらすぐに入る。";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		close;
 	case 3:
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		next;
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�������c�c";
+		mes "[騎士ウインザー]";
+		mes "…そうか……";
 		close2;
 		warp "prt_in.gat",80,100;
 		end;
 	case 4:
-		mes "[�R�m�E�C���U�[]";
-		mes "�c�c";
+		mes "[騎士ウインザー]";
+		mes "……";
 		close;
 	}
 OnInit:
-	waitingroom "�T��",20,"�R�m�E�C���U�[#Test::OnWarp",1;
+	waitingroom "控室",20,"騎士ウインザー#Test::OnWarp",1;
 	end;
 OnWarp:
 	disablewaitingroomevent;
@@ -1201,14 +1201,14 @@ OnKilled1:
 	set 'count,'count-1;
 	if('count)
 		end;
-	initnpctimer "KN_Timer";	//���b�Z�[�W�I��҂��^�C����3��
-	mes "[�R�m�E�C���U�[]";
-	mes "�c�c";
+	initnpctimer "KN_Timer";	//メッセージ選択待ちタイムも3分
+	mes "[騎士ウインザー]";
+	mes "……";
 	next;
-	mes "[�R�m�E�C���U�[]";
-	mes "���̒i�K�ɐi�݂Ȃ����c";
+	mes "[騎士ウインザー]";
+	mes "次の段階に進みなさい…";
 	close2;
-	initnpctimer "KN_Timer";	//�I�������̂Ń^�C�}�[������
+	initnpctimer "KN_Timer";	//選択したのでタイマー初期化
 	set 'count,12;
 	monster "job_knt.gat",34,52,"--ja--",1119,1,"KN_Test3::OnKilled2";
 	monster "job_knt.gat",29,52,"--ja--",1111,2,"KN_Test3::OnKilled2";
@@ -1227,11 +1227,11 @@ OnKilled2:
 	if('count)
 		end;
 	initnpctimer "KN_Timer";
-	mes "[�R�m�E�C���U�[]";
-	mes "�c�c";
+	mes "[騎士ウインザー]";
+	mes "……";
 	next;
-	mes "[�R�m�E�C���U�[]";
-	mes "���ƈ�i�K�c";
+	mes "[騎士ウインザー]";
+	mes "あと一段階…";
 	close2;
 	initnpctimer "KN_Timer";
 	set 'count,7;
@@ -1249,16 +1249,16 @@ OnKilled3:
 	if('count)
 		end;
 	initnpctimer "KN_Timer";
-	mes "[�R�m�E�C���U�[]";
-	mes "�c�c";
+	mes "[騎士ウインザー]";
+	mes "……";
 	next;
-	mes "[�R�m�E�C���U�[]";
-	mes "�����I���c";
+	mes "[騎士ウインザー]";
+	mes "試験終了…";
 	next;
-	mes "[�R�m�E�C���U�[]";
-	mes "�������o��";
-	mes "�G�C�~�[=�x�A�g���X��";
-	mes "��Ȃ����B";
+	mes "[騎士ウインザー]";
+	mes "ここを出て";
+	mes "エイミー=ベアトリスに";
+	mes "会いなさい。";
 	close2;
 	stopnpctimer "KN_Timer";
 	set CHANGE_KN,8;
@@ -1266,11 +1266,11 @@ OnKilled3:
 	killmonster "job_knt.gat","KN_Test3::OnKilled1";
 	killmonster "job_knt.gat","KN_Test3::OnKilled2";
 	killmonster "job_knt.gat","KN_Test3::OnKilled3";
-	enablewaitingroomevent "�R�m�E�C���U�[#Test";
+	enablewaitingroomevent "騎士ウインザー#Test";
 	end;
 }
 
-job_knt.gat,0,0,0	script	KN_Timer	-1,{	//����������ъe�i�K�N���A���next�҂��^�C�}�[
+job_knt.gat,0,0,0	script	KN_Timer	-1,{	//試験中および各段階クリア後のnext待ちタイマー
 	end;
 OnTimer180000:
 	stopnpctimer;
@@ -1280,451 +1280,451 @@ OnTimer180000:
 	killmonster "job_knt.gat","KN_Test3::OnKilled1";
 	killmonster "job_knt.gat","KN_Test3::OnKilled2";
 	killmonster "job_knt.gat","KN_Test3::OnKilled3";
-	enablewaitingroomevent "�R�m�E�C���U�[#Test";
+	enablewaitingroomevent "騎士ウインザー#Test";
 	end;
 }
 
 //============================================================
-// �l�������i���i�����j
+// 四次試験（性格試験）
 //------------------------------------------------------------
-prt_in.gat,69,107,6	script	�R�m�G�C�~�[	728,{
+prt_in.gat,69,107,6	script	騎士エイミー	728,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�G�C�~�[]";
-		mes "����A���킢���m�[�r�X����B";
-		mes "�Ƃ��Ă����킢����`�B";
+		mes "[騎士エイミー]";
+		mes "あら、かわいいノービスさん。";
+		mes "とってもかわいいわ～。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�˂��A��Ńi�C�g�ɂȂ�Ȃ��H";
-		mes "�i�C�g�ɂȂ����炫����";
-		mes "�������悭�Ȃ��I";
+		mes "[騎士エイミー]";
+		mes "ねぇ、後でナイトにならない？";
+		mes "ナイトになったらきっと";
+		mes "かっこよくなるわ！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�������A�o���Ă�������c";
-		mes "���������i�C�g�ɂȂ��ĂˁI";
-		mes "�񑩂�I";
+		mes "[騎士エイミー]";
+		mes "あたし、覚えておくから…";
+		mes "ぜったいナイトになってね！";
+		mes "約束よ！";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�G�C�~�[]";
-		mes "����H����K�˂Ă���Ȃ��";
-		mes "���̗p������H";
+		mes "[騎士エイミー]";
+		mes "あら？私を訪ねてくるなんて";
+		mes "何の用かしら？";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�R�m�����ɖ�肪����킯����";
-		mes "�������ˁH";
-		mes "�G�C�~�[�͋R�m�l�����܂������";
-		mes "���邱�Ƃ�M���Ă��܂��B";
+		mes "[騎士エイミー]";
+		mes "騎士生活に問題があるわけじゃ";
+		mes "無いわよね？";
+		mes "エイミーは騎士様がうまくやって";
+		mes "いることを信じています。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "����ł́I";
-		mes "�䂪�v�����e���R�m�c���l�I";
+		mes "[騎士エイミー]";
+		mes "それでは！";
+		mes "我がプロンテラ騎士団員様！";
 		close;
 	}
 	if(Job != Job_Swordman) {
-		mes "[�R�m�G�C�~�[]";
-		mes "�v�����e���R�m�c�ւ悤�����I";
+		mes "[騎士エイミー]";
+		mes "プロンテラ騎士団へようこそ！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�����͋R�m�΂��肾����";
-		mes "������肵�Ă����Ȃ����`�B";
+		mes "[騎士エイミー]";
+		mes "うちは騎士ばかりだけど";
+		mes "ゆっくりしていきなさい～。";
 		close;
 	}
 	if(CHANGE_KN == 0) {
-		mes "[�R�m�G�C�~�[]";
-		mes "����A���m����B";
-		mes "�i�C�g�ɓ]�E���ɂ����́H";
+		mes "[騎士エイミー]";
+		mes "あら、剣士さん。";
+		mes "ナイトに転職しにきたの？";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�i�C�g�ւ̓]�E�́A�܂���������";
-		mes "����������R�m�c���l�̂��b��";
-		mes "�����Ă݂ĂˁB";
+		mes "[騎士エイミー]";
+		mes "ナイトへの転職は、まずあそこに";
+		mes "いらっしゃる騎士団長様のお話を";
+		mes "聞いてみてね。";
 		close;
 	}
-	mes "[�R�m�G�C�~�[]";
-	mes "����H�G�C�~�[�ɉ��̗p������H";
+	mes "[騎士エイミー]";
+	mes "うん？エイミーに何の用かしら？";
 	next;
 	if(CHANGE_KN < 10) {
-		if(select("�i�C�g�]�E�������󂯂����ł�","�Ȃ�ł��Ȃ��ł�")==2) {
-			mes "[�R�m�G�C�~�[]";
-			mes "�G�C�~�[�܂�Ȃ���c";
+		if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
+			mes "[騎士エイミー]";
+			mes "エイミーつまらないわ…";
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
 	default:
-		mes "[�R�m�G�C�~�[]";
-		mes "����I�]�E�\�����݂͍ς܂����̂ˁI";
-		mes "���ꂶ��A�������̑O�ɑ��̋R�m�l��";
-		mes "�������󂯂Ă��Ă��傤�����I";
+		mes "[騎士エイミー]";
+		mes "うん！転職申し込みは済ませたのね！";
+		mes "それじゃ、あたしの前に他の騎士様の";
+		mes "試験を受けてきてちょうだい！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "���߂��猩�Ă�����������";
-		mes "���ꂶ��[���߁I";
+		mes "[騎士エイミー]";
+		mes "初めから見てあげたいけど";
+		mes "それじゃーだめ！";
 		close;
 	case 8:
-		mes "[�R�m�G�C�~�[]";
-		mes "�ق�A�����Ƃ������ɗ��Ȃ����I";
-		mes "���x�̓G�C�~�[�̎�����B�ӂӁB";
+		mes "[騎士エイミー]";
+		mes "ほら、もっとこっちに来なさい！";
+		mes "今度はエイミーの試験よ。ふふ。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�������̖��O��";
-		mes "�G�C�~�[=�x�A�g���X�B";
-		mes "�v�����e���R�m�c�̍g��_�ł��B";
+		mes "[騎士エイミー]";
+		mes "あたしの名前は";
+		mes "エイミー=ベアトリス。";
+		mes "プロンテラ騎士団の紅一点です。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�G�C�~�[�̎����ł́A";
-		mes "�i�C�g�ɂȂ�̂ɏ\����";
-		mes "��߂����Ȃ���Ă��邩��";
-		mes "���܂��B";
+		mes "[騎士エイミー]";
+		mes "エイミーの試験では、";
+		mes "ナイトになるのに十分な";
+		mes "礼節がそなわっているかを";
+		mes "見ます。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "���������������Ƃ𕷂��Ȃ���";
-		mes "���܂Ɏ���ɓ����Ă����΁A";
-		mes "���̂Ǖ]�����Ă����܂��B";
+		mes "[騎士エイミー]";
+		mes "あたしが言うことを聞きながら";
+		mes "たまに質問に答えてくれれば、";
+		mes "そのつど評価してあげます。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�Ȃ̂ŁA�悭�����āA�i�C�g�Ƃ���";
-		mes "�������Ǝv���l���������Ă�����";
-		mes "�����́B�킩������ˁH";
+		mes "[騎士エイミー]";
+		mes "なので、よく聞いて、ナイトとして";
+		mes "正しいと思う考えを言ってくれれば";
+		mes "いいの。わかったわね？";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "���ꂶ��A�͂��߂܂��B";
+		mes "[騎士エイミー]";
+		mes "それじゃ、はじめます。";
 		break;
 	case 9:
-		mes "[�R�m�G�C�~�[]";
-		mes "����A���x�͗�V�ɂ���";
-		mes "�׋����Ă����̂��ȁH";
+		mes "[騎士エイミー]";
+		mes "うん、今度は礼儀について";
+		mes "勉強してきたのかな？";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "���x����������A�G�C�~�[��";
-		mes "�{�����Ⴄ���I";
+		mes "[騎士エイミー]";
+		mes "今度も落ちたら、エイミーが";
+		mes "怒っちゃうわよ！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�����āA�R�m�c���l�ɐ\���グ�āA";
-		mes "�i�C�g�ɂ����Ȃ��悤��";
-		mes "�����Ⴄ�񂾂���B";
+		mes "[騎士エイミー]";
+		mes "そして、騎士団長様に申し上げて、";
+		mes "ナイトにさせないように";
+		mes "しちゃうんだから。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�Ȃ̂ł悭�����āA�i�C�g�Ƃ���";
-		mes "�������������o����ł���I";
+		mes "[騎士エイミー]";
+		mes "なのでよく聞いて、ナイトとして";
+		mes "正しい答えを出すんですよ！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "����ł́A�����Ă݂܂��傤�I";
+		mes "[騎士エイミー]";
+		mes "それでは、いってみましょう！";
 		break;
 	case 10:
-		mes "[�R�m�G�C�~�[]";
-		mes "�G�h�����h�l�̂Ƃ���֍s���āB";
-		mes "�G�C�~�[�̎����͂����I������́B";
+		mes "[騎士エイミー]";
+		mes "エドモンド様のところへ行って。";
+		mes "エイミーの試験はもう終わったの。";
 		close;
 	case 11:
 	case 12:
 	case 13:
-		mes "[�R�m�G�C�~�[]";
-		mes "�܂��A���̋R�m�l�̎�����";
-		mes "�c���Ă�����I";
-		mes "�ق�ق瑁���s���āI";
+		mes "[騎士エイミー]";
+		mes "まだ、他の騎士様の試験が";
+		mes "残っているわよ！";
+		mes "ほらほら早く行って！";
 		close;
 	case 14:
-		mes "[�R�m�G�C�~�[]";
-		mes "���A�����F�Ō��ʂ��o�����ԁI";
+		mes "[騎士エイミー]";
+		mes "あ、もう皆で結果を出す時間！";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�R�m�c���l�̂��b�𕷂��āB";
-		mes "���܂�ْ����Ȃ��łˁB";
+		mes "[騎士エイミー]";
+		mes "騎士団長様のお話を聞いて。";
+		mes "あまり緊張しないでね。";
 		close;
 	}
-	//���i������������
+	//性格試験ここから
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "���Ȃ��̓i�C�g�B�����N�̒ʂ��";
-	mes "�p�[�e�B�[�����߂Ă��܂��B";
-	mes "�ǂ̂悤�ɕ�W����Ηǂ��ł��傤���H";
+	mes "[騎士エイミー]";
+	mes "あなたはナイト。モロクの通りで";
+	mes "パーティーを求めています。";
+	mes "どのように募集すれば良いでしょうか？";
 	next;
-	if(select("�p�[�e�B�[���W���Ă���Ƌ���","�`���b�g���[��������đ҂�","�i�C�g�����߂�l�X��T��") != 1)
+	if(select("パーティーを募集していると叫ぶ","チャットルームを作って待つ","ナイトを求める人々を探す") != 1)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "���x���̋߂��l�X�ƃp�[�e�B�[��";
-	mes "���т܂����B�v���[�X�g�E�E�B�U�[�h";
-	mes "�n���^�[�E�A�T�V���E�u���b�N�X�~�X";
-	mes "�Ƃł��B";
+	mes "[騎士エイミー]";
+	mes "レベルの近い人々とパーティーを";
+	mes "結びました。プリースト・ウィザード";
+	mes "ハンター・アサシン・ブラックスミス";
+	mes "とです。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "���̂܂܂U�l�Ńs���~�b�h�ɍs�����Ƃ�";
-	mes "�Ȃ�܂����B";
+	mes "[騎士エイミー]";
+	mes "そのまま６人でピラミッドに行くことに";
+	mes "なりました。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "�S�K�ɒ����܂����B";
-	mes "���āA�ǂ�ȍs�������܂����H";
+	mes "[騎士エイミー]";
+	mes "４階に着きました。";
+	mes "さて、どんな行動をしますか？";
 	next;
-	if(select("���͂����񂵂ė�Âɔ��f����","�p�[�e�B�[�̂��߂Ƀ����X�^�[���W�߂�","�擪���������i��") != 2)
+	if(select("周囲を見回して冷静に判断する","パーティーのためにモンスターを集める","先頭をゆっくり進む") != 2)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�����ցA����l�������X�^�[�𑽂�";
-	mes "�����A��A�ˑR�����܂����B";
-	mes "���̎����Ȃ��́H";
+	mes "[騎士エイミー]";
+	mes "そこへ、ある人がモンスターを多く";
+	mes "引き連れ、突然消えました。";
+	mes "その時あなたは？";
 	next;
-	if(select("�p�[�e�B�[������čU�����󂯂�","�P�ނ��Ȃ���키","�y�R�y�R�őf����������") != 3)
+	if(select("パーティーを護って攻撃を受ける","撤退しながら戦う","ペコペコで素早く逃げる") != 3)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�K���ɂ��p�[�e�B�[�̊F�͖�����";
-	mes "��@����E���܂����B";
-	mes "���āA�����ƕ����Ă�����";
-	mes "�p�[�e�B�[�����o�[�ł͂Ȃ��l��";
-	mes "�|��Ă��܂��B";
+	mes "[騎士エイミー]";
+	mes "幸いにもパーティーの皆は無事に";
+	mes "危機から脱しました。";
+	mes "さて、ずっと歩いていくと";
+	mes "パーティーメンバーではない人が";
+	mes "倒れています。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "���̐l�́A�蓖�Ă����Ăق�����";
-	mes "���J�ɂ��肢���Ă��܂����B";
+	mes "[騎士エイミー]";
+	mes "その人は、手当てをしてほしいと";
+	mes "丁寧にお願いしてきました。";
 	next;
-	if(select("�p�[�e�B�[�̃v���[�X�g�ɒm�点��","���������ꂽ��蓖�Ă���ƌ���","�������Ēʂ�߂���")==1)
+	if(select("パーティーのプリーストに知らせる","お金をくれたら手当てすると言う","無視して通り過ぎる")==1)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "���낻�둼�̏ꏊ�ɍs���p�����邽��";
-	mes "�p�[�e�B�[�����o�[�����Ƃ��ʂ��";
-	mes "���Ȃ���΂Ȃ�Ȃ��B";
+	mes "[騎士エイミー]";
+	mes "そろそろ他の場所に行く用があるため";
+	mes "パーティーメンバーたちとお別れを";
+	mes "しなければならない。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "���̎��A�퓬���Ɋl������";
-	mes "�험�i�̕��z�͂ǂ����܂����H";
+	mes "[騎士エイミー]";
+	mes "その時、戦闘中に獲得した";
+	mes "戦利品の分配はどうしますか？";
 	next;
-	if(select("���J�̑����l�ɓn��","�����Ղ�����Ď����Ŏ����A��","�F�Řb�������Č��߂�")==3)
+	if(select("功労の多い人に渡す","しらんぷりをして自分で持ち帰る","皆で話し合って決める")==3)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�p�[�e�B�[�����o�[�ƕʂꂽ��A";
-	mes "�M�d�ȃA�C�e���𔄂邽�߂�";
-	mes "�v�����e���ɗ����B";
-	mes "�L��ł͂�������̐l�X���I�X��";
-	mes "�J������E����`���b�g�𗧂Ă�";
-	mes "���܂��B";
+	mes "[騎士エイミー]";
+	mes "パーティーメンバーと別れた後、";
+	mes "貴重なアイテムを売るために";
+	mes "プロンテラに来た。";
+	mes "広場ではたくさんの人々が露店を";
+	mes "開いたり・取引チャットを立てて";
+	mes "います。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "�����ǂ̂悤�ɃA�C�e���� ";
-	mes "����ɏo���܂��傤���H";
+	mes "[騎士エイミー]";
+	mes "さあどのようにアイテムを ";
+	mes "売りに出しましょうか？";
 	next;
-	if(select("�l�X�ɌĂт����ĕ���","�`���b�g���[�����J���đ҂�","�A�C�e�������߂Ă���l��T��") != 1)
+	if(select("人々に呼びかけて歩く","チャットルームを開いて待つ","アイテムを求めている人を探す") != 1)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�����������Ă�����A";
-	mes "���������l�ɉ�����B";
-	mes "�ǂ�������ǂ��ł��傤���B";
+	mes "[騎士エイミー]";
+	mes "そうこうしていたら、";
+	mes "物乞いをする人に会った。";
+	mes "どうしたら良いでしょうか。";
 	next;
-	if(select("���̂����ƃA�C�e���𕪂���","�������ċ���","���̐l�ɓK��������������")==3)
+	if(select("私のお金とアイテムを分ける","無視して去る","その人に適した狩場を教える")==3)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "���x�͈�l�Ŗ��{�̐X�ɍs����";
-	mes "�݂邱�Ƃɂ��܂����B";
-	mes "�y�R�y�R�ɏ���ĕ@�̂܂����";
-	mes "�i��ł��܂��B";
+	mes "[騎士エイミー]";
+	mes "今度は一人で迷宮の森に行って";
+	mes "みることにしました。";
+	mes "ペコペコに乗って鼻歌まじりに";
+	mes "進んでいます。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "�����ŁA���ɖ����Ă��܂����l��";
-	mes "�o���킵�܂����B�ǂ����܂����H";
+	mes "[騎士エイミー]";
+	mes "そこで、道に迷ってしまった人に";
+	mes "出くわしました。どうしますか？";
 	next;
-	if(select("�A�蓹�������Ă�����","�o���܂ňē�����","���̉H���������") != 3)
+	if(select("帰り道を教えてあげる","出口まで案内する","蝶の羽を一つあげる") != 3)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�X�̒��ő����̃����X�^�[�Ɉ͂܂�A";
-	mes "�񕜖򂪐s���Ă��܂��܂����B";
-	mes "�̗͂͐ԐF�ɕ\������āA";
-	mes "��Ȃ��󋵂ł��B";
+	mes "[騎士エイミー]";
+	mes "森の中で多くのモンスターに囲まれ、";
+	mes "回復薬が尽きてしまいました。";
+	mes "体力は赤色に表示されて、";
+	mes "危ない状況です。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "���A���傤�ǃv���[�X�g���ʂ肩����";
-	mes "�܂����B�ǂ̂悤�ɗ��݂܂����H";
+	mes "[騎士エイミー]";
+	mes "あ、ちょうどプリーストが通りかかり";
+	mes "ました。どのように頼みますか？";
 	next;
-	if(select("��낵��������q�[����������������","�q�[����������","�q�[��") != 3)
+	if(select("よろしかったらヒールを少しください","ヒールください","ヒール") != 3)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "���������Ԕ��܂����B";
-	mes "�X�ɖ߂鎞�Ԃł��B";
+	mes "[騎士エイミー]";
+	mes "もうだいぶ疲れました。";
+	mes "街に戻る時間です。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "�A��r���A���ɍ����ȃA�C�e����";
-	mes "�����Ă���̂𔭌����܂����B";
+	mes "[騎士エイミー]";
+	mes "帰る途中、非常に高価なアイテムが";
+	mes "落ちているのを発見しました。";
 	next;
-	if(select("�E���Ď����������A��","�N�̕����{���Ă݂�","�����ʂ�߂���")==2)
+	if(select("拾って自分が持ち帰る","誰の物か捜してみる","ただ通り過ぎる")==2)
 		set '@point,'@point+10;
-	mes "[�R�m�G�C�~�[]";
-	mes "�͂��A����ł������̎����͏I���I";
+	mes "[騎士エイミー]";
+	mes "はい、これであたしの試験は終わり！";
 	next;
 	if(CHANGE_KN == 8 && '@point < 90) {
 		set CHANGE_KN,10;
-		mes "[�R�m�G�C�~�[]";
-		mes "���[��c�l���Ă݂����ǂ��߂ˁB";
-		mes "�{���ɂ���Ȃӂ��ɍs�����Ă�����";
-		mes "�����̋R�m�l�݂͂�Ȗ���Ȑl��";
-		mes "�������ƂɂȂ��B";
+		mes "[騎士エイミー]";
+		mes "うーん…考えてみたけどだめね。";
+		mes "本当にそんなふうに行動していたら";
+		mes "うちの騎士様はみんな無礼な人と";
+		mes "いうことになるわ。";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "������������ɂǂ���������";
-		mes "������x�l���Ă���A";
-		mes "�܂��������󂯂ɂ��Ă��������ˁB";
+		mes "[騎士エイミー]";
+		mes "私がした質問にどう答えたか";
+		mes "もう一度考えてから、";
+		mes "また試験を受けにきてくださいね。";
 		close;
 	}
 	if(CHANGE_KN == 9 && '@point < 80) {
-		mes "[�R�m�G�C�~�[]";
-		mes "���[��c����ς肾�߁I";
-		mes "���Ȃ����i�C�g�ɂ��Ă��܂�����";
-		mes "�����̋R�m�c�������������c";
+		mes "[騎士エイミー]";
+		mes "うーん…やっぱりだめ！";
+		mes "あなたをナイトにしてしまったら";
+		mes "うちの騎士団も悪く見られるわ…";
 		next;
-		mes "[�R�m�G�C�~�[]";
-		mes "�A���āA�ǂ��ŊԈ�����s����";
-		mes "�����̂��������l���Ă݂Ȃ����B";
-		mes "����������A�܂��������󂯂�����";
-		mes "������B������ˁH";
+		mes "[騎士エイミー]";
+		mes "帰って、どこで間違った行動を";
+		mes "したのかゆっくり考えてみなさい。";
+		mes "そうしたら、また試験を受けさせて";
+		mes "あげる。いいわね？";
 		close;
 	}
-	mes "[�R�m�G�C�~�[]";
-	mes "�������I���ꂾ���̐S���������";
-	mes "�R�m�Ƃ��ď\���ł��I";
-	mes "���̎����́c�G�h�����h�l�̂Ƃ���";
-	mes "�ł��ˁB";
+	mes "[騎士エイミー]";
+	mes "すごい！それだけの心得があれば";
+	mes "騎士として十分です！";
+	mes "次の試験は…エドモンド様のところ";
+	mes "ですね。";
 	next;
-	mes "[�R�m�G�C�~�[]";
-	mes "�R�m�l�̘b���悭�����āA";
-	mes "�c�����������撣���Ă��������ˁI";
+	mes "[騎士エイミー]";
+	mes "騎士様の話をよく聞いて、";
+	mes "残った試験も頑張ってくださいね！";
 	set CHANGE_KN,10;
 	close;
 }
 
 //============================================================
-// �܎������i�E�ϗ͎����j
+// 五次試験（忍耐力試験）
 //------------------------------------------------------------
-prt_in.gat,70,99,6	script	�R�m�G�h�����h	734,{
+prt_in.gat,70,99,6	script	騎士エドモンド	734,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�G�h�����h]";
-		mes "���[���؂͕��ɕ����Ȃ��c";
+		mes "[騎士エドモンド]";
+		mes "根深い木は風に負けない…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "��b����ł��z���グ��ꂽ�͂�";
-		mes "�����P���������ʂ������炷�B";
+		mes "[騎士エドモンド]";
+		mes "基礎から固く築き上げられた力は";
+		mes "いつか輝かしい結果をもたらす。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�N�̖����͍����猈�܂�ƌ�����c";
+		mes "[騎士エドモンド]";
+		mes "君の未来は今から決まると言える…";
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[�R�m�G�h�����h]";
-		mes "�S�𗬂�鐅�̔@���c";
+		mes "[騎士エドモンド]";
+		mes "心を流れる水の如く…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "����鐅�͊�������߂Ȃ���";
-		mes "�����̓���i�ށB";
+		mes "[騎士エドモンド]";
+		mes "流れる水は岩をかすめながら";
+		mes "自分の道を進む。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�R�m�͂ǂ�ȏ󋵂ł����̂悤��";
-		mes "�Â��ɗ���Ȃ���΂Ȃ�Ȃ��B";
+		mes "[騎士エドモンド]";
+		mes "騎士はどんな状況でも水のように";
+		mes "静かに流れなければならない。";
 		close;
 	}
 	if(Job != Job_Swordman) {
-		mes "[�R�m�G�h�����h]";
-		mes "���̑S�Ă̕��́c�F���a����";
-		mes "���藧���Ă���B";
+		mes "[騎士エドモンド]";
+		mes "世の全ての物は…皆調和して";
+		mes "成り立っている。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "���̗��ɋt��킸�ɕ�炷���Ƃ��B";
+		mes "[騎士エドモンド]";
+		mes "その理に逆らわずに暮らすことだ。";
 		close;
 	}
 	if(CHANGE_KN == 0) {
-		mes "[�R�m�G�h�����h]";
-		mes "�Â��l�������҂�";
-		mes "�Â����΂��茩�邾�낤�c";
+		mes "[騎士エドモンド]";
+		mes "暗い考えを持つ者は";
+		mes "暗い夢ばかり見るだろう…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�Â��������������";
-		mes "�����猩�Ȃ��Ȃ邾�낤�c";
+		mes "[騎士エドモンド]";
+		mes "暗い夢を見続ければ";
+		mes "夢すら見なくなるだろう…";
 		close;
 	}
 	if(CHANGE_KN <= 12) {
-		mes "[�R�m�G�h�����h]";
-		mes "�p���H���m��c";
+		mes "[騎士エドモンド]";
+		mes "用か？剣士よ…";
 		next;
-		if(select("�i�C�g�]�E�������󂯂����ł�","�Ȃ�ł��Ȃ��ł�")==2) {
-			mes "[�R�m�G�h�����h]";
-			mes "�N�̊肢�́A��O�ɊJ���邾�낤�B";
+		if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
+			mes "[騎士エドモンド]";
+			mes "君の願いは、眼前に開けるだろう。";
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
-	default:	//1�`9�̂Ƃ�
-		mes "[�R�m�G�h�����h]";
-		mes "�Ԃ́c��肪�炿�A�s���L�сA";
-		mes "�t�������A�����o���č炭�B";
+	default:	//1～9のとき
+		mes "[騎士エドモンド]";
+		mes "花は…若芽が育ち、茎が伸び、";
+		mes "葉が生え、実が出来て咲く。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�����Ȃ��΁A����͕s���S��";
-		mes "�ԂƂȂ邾�낤�c";
+		mes "[騎士エドモンド]";
+		mes "さもなくば、それは不完全な";
+		mes "花となるだろう…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "��ɌN��҂l������B";
-		mes "�N�̓����������邾�낤�B";
+		mes "[騎士エドモンド]";
+		mes "先に君を待つ人がいる。";
+		mes "君の道を見つけられるだろう。";
 		close;
 	case 10:
-		mes "[�R�m�G�h�����h]";
-		mes "���̎������󂯂�Ԃ��c";
-		mes "����܂ł̎����̂悤��";
-		mes "�����Ȕ��f������Ηǂ��B";
+		mes "[騎士エドモンド]";
+		mes "私の試験を受ける番か…";
+		mes "これまでの試験のように";
+		mes "賢明な判断をすれば良い。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "���̖��O�̓G�h�����h=�O���X�g";
-		mes "�v�����e���R�m�c�ɑ�����҂��B";
+		mes "[騎士エドモンド]";
+		mes "私の名前はエドモンド=グロスト";
+		mes "プロンテラ騎士団に属する者だ。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�R�m�͑��̐l�X�̖͔͂ƂȂ�悤��";
-		mes "�l�ԂłȂ���΂Ȃ�Ȃ��B";
-		mes "���������Čh�i������Ɏ����A";
-		mes "���E�̒��������̂�";
-		mes "�ӂ��킵���l�ԂłȂ���΂Ȃ�Ȃ��B";
+		mes "[騎士エドモンド]";
+		mes "騎士は他の人々の模範となるような";
+		mes "人間でなければならない。";
+		mes "したがって敬虔さを常に持ち、";
+		mes "世界の秩序を守るのに";
+		mes "ふさわしい人間でなければならない。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "�D������ɔ��f���A�y���ȍs����";
-		mes "���悤�ł͂����Ȃ��B";
-		mes "���ɂ͐��̂悤�ɏ_��ȐS���K�v�ŁA";
-		mes "���ɂ͊�̂悤�Ɍł����S���K�v���B";
+		mes "[騎士エドモンド]";
+		mes "好き勝手に判断し、軽率な行動を";
+		mes "取るようではいけない。";
+		mes "時には水のように柔軟な心が必要で、";
+		mes "時には岩のように固い決心が必要だ。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "���̗��R�������Ƀ����X�^�[��";
-		mes "�E���Ă͂Ȃ�Ȃ����A�E�C���y����";
-		mes "�Ȃǂ͂����Ă̂ق����B";
-		mes "�ґz�����A�S�𐮂��Ȃ����B";
+		mes "[騎士エドモンド]";
+		mes "何の理由も無しにモンスターを";
+		mes "殺してはならないし、殺戮を楽しむ";
+		mes "などはもってのほかだ。";
+		mes "瞑想をし、心を整えなさい。";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "����ł͎������n�߂�B";
-		mes "�h�i�Ȃ�S�������ėՂ݂Ȃ����B";
+		mes "[騎士エドモンド]";
+		mes "それでは試験を始める。";
+		mes "敬虔なる心を持って臨みなさい。";
 		set CHANGE_KN,11;
 		break;
 	case 11:
-		mes "[�R�m�G�h�����h]";
-		mes "�O��͌y���ȓ����������ȁB";
-		mes "�R�m�͎カ�҂����E�Ƃ��c";
-		mes "�カ�҂��s����E�Ƃł͂Ȃ��c";
+		mes "[騎士エドモンド]";
+		mes "前回は軽率な動きをしたな。";
+		mes "騎士は弱き者を護る職業だ…";
+		mes "弱き者を虐げる職業ではない…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "���̖������������a�𐬂�����";
-		mes "�l�Ԃ������j��𑱂�����ǂ��Ȃ邩�c";
-		mes "����͎��������Ɍ��������Ƃł͂Ȃ�";
-		mes "���ۂ̐��E�ł̘b�Ȃ̂��c";
+		mes "[騎士エドモンド]";
+		mes "世の万物たちが調和を成す所で";
+		mes "人間だけが破壊を続けたらどうなるか…";
+		mes "これは試験だけに限ったことではなく";
+		mes "実際の世界での話なのだ…";
 		next;
-		mes "[�R�m�G�h�����h]";
-		mes "����ł͂�����x���B";
-		mes "�Â��ɑ҂S�����Ɍ����Ă���B";
+		mes "[騎士エドモンド]";
+		mes "それではもう一度だ。";
+		mes "静かに待つ心を私に見せてくれ。";
 		break;
 	case 12:
 	case 13:
-		mes "[�R�m�G�h�����h]";
-		mes "�N�̐S�͌����Ă�������B";
-		mes "�R�m�O���[�̏��֍s���A";
-		mes "�Ō�̎������󂯂邪�����c";
+		mes "[騎士エドモンド]";
+		mes "君の心は見せてもらった。";
+		mes "騎士グレーの所へ行き、";
+		mes "最後の試験を受けるがいい…";
 		close;
 	case 14:
-		mes "[�R�m�G�h�����h]";
-		mes "�R�m�c���̘b�𕷂��Ȃ����c";
-		mes "�F�̈ӌ������̎������邾�낤�c";
+		mes "[騎士エドモンド]";
+		mes "騎士団長の話を聞きなさい…";
+		mes "皆の意見もその時聞けるだろう…";
 		close;
 	}
-	//�E�ϗ͎�����������
+	//忍耐力試験ここから
 	close2;
-	addtimer 270000,"KN_Test5::OnClear";		//270sec�����c��΃N���A
+	addtimer 270000,"KN_Test5::OnClear";		//270sec生き残ればクリア
 	killmonster "job_knt.gat","KN_Test5::OnKilled";
 	monster "job_knt.gat",167,57,"--ja--",1182,1,"KN_Test5::OnKilled";
 	monster "job_knt.gat",167,54,"--ja--",1182,1,"KN_Test5::OnKilled";
@@ -1738,7 +1738,7 @@ prt_in.gat,70,99,6	script	�R�m�G�h�����h	734,{
 	monster "job_knt.gat",141,59,"--ja--",1063,1,"KN_Test5::OnKilled";
 	monster "job_knt.gat",145,55,"--ja--",1063,1,"KN_Test5::OnKilled";
 	monster "job_knt.gat",145,59,"--ja--",1063,1,"KN_Test5::OnKilled";
-	//stack�Ƃ݂Ȃ���ʏ��ɕ����݂����Ȃ̂ŃR�����g�A�E�g
+	//stackとみなされ別所に沸くみたいなのでコメントアウト
 	//	monster "job_knt.gat",139,57,"--ja--",1011,1,"KN_Test5::OnKilled";
 	//	monster "job_knt.gat",147,57,"--ja--",1011,1,"KN_Test5::OnKilled";
 	//	monster "job_knt.gat",143,53,"--ja--",1011,1,"KN_Test5::OnKilled";
@@ -1747,10 +1747,10 @@ prt_in.gat,70,99,6	script	�R�m�G�h�����h	734,{
 	end;
 }
 
-//����MAP�ɋ���NPC����C�x���g�𔭓�����K�v����
+//同一MAPに居るNPCからイベントを発動する必要あり
 job_knt.gat,0,0,0	script	KN_Test5	-1,{
 	end;
-OnKilled:	//�G��|���Ă��܂������蒼��
+OnKilled:	//敵を倒してしまったらやり直し
 	deltimer "KN_Test5::OnClear";
 	warp "prt_fild05.gat",353,251;
 	end;
@@ -1761,471 +1761,471 @@ OnClear:
 }
 
 //============================================================
-// �ŏI���� �y�� �N���C���A�쐬
+// 最終試験 及び クレイモア作成
 //------------------------------------------------------------
-prt_in.gat,87,92,4	script	�R�m�O���[	119,{
+prt_in.gat,87,92,4	script	騎士グレー	119,{
 	if(Job == Job_Novice) {
-		mes "[�R�m�O���[]";
-		mes "���������Ă��A���ɂ�����";
-		mes "�m�[�r�X���オ�������񂾁B";
+		mes "[騎士グレー]";
+		mes "こう見えても、俺にだって";
+		mes "ノービス時代があったんだ。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "���ʂɋR�m�ɂȂ낤�Ƃ͎v��Ȃ�������";
-		mes "�����Ȃ肽���Ƃ����Ǝv���Ă����B";
+		mes "[騎士グレー]";
+		mes "特別に騎士になろうとは思わなかったが";
+		mes "強くなりたいとずっと思っていた。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "����������A���̊Ԃɂ�";
-		mes "�R�m�ɂȂ��Ă��Ƃ������Ƃ��B�͂͂́B";
+		mes "[騎士グレー]";
+		mes "そうしたら、いつの間にか";
+		mes "騎士になってたということさ。ははは。";
 		close;
 	}
-	if(Job == Job_Knight) {	//�N���C���A�̔�
-		mes "[�R�m�O���[]";
-		mes "���Ƃ��`�e���������������F�̐n�c";
-		mes "�R�m�����ׂ�����ƌ����΂��ꂾ�I";
-		mes "�����A ^3355FF�u�N���C���A�v^000000 !!";
-		mes "�R�m�Ȃ��{�͎����Ă��Ȃ���΂ȁB";
+	if(Job == Job_Knight) {	//クレイモア販売
+		mes "[騎士グレー]";
+		mes "何とも形容しがたい美しい色の刃…";
+		mes "騎士が持つべき武器と言えばこれだ！";
+		mes "そう、 ^3355FF「クレイモア」^000000 !!";
+		mes "騎士なら一本は持っていなければな。";
 		next;
-		switch (select("^3355FF�u�N���C���A�v^000000 �ɂ���","�N���C���A���w������","��b����߂�")) {
+		switch (select("^3355FF「クレイモア」^000000 について","クレイモアを購入する","会話をやめる")) {
 		case 1:
-			mes "[�R�m�O���[]";
-			mes "���[���~�b�h�K�b�c�����̃v�����e����";
-			mes "��ɓ���邱�Ƃ��ł���l�X�Ȗ�����";
-			mes "���ł���ۗD��Ă���ƌ����錕";
-			mes "�N���C���A!!";
-			mes "�R�m�Ƃ̑����͂܂��ɔ��Q���B";
+			mes "[騎士グレー]";
+			mes "ルーンミッドガッツ王国のプロンテラで";
+			mes "手に入れることができる様々な名剣の";
+			mes "中でも一際優れていると言われる剣";
+			mes "クレイモア!!";
+			mes "騎士との相性はまさに抜群だ。";
 			next;
-			mes "[�R�m�O���[]";
-			mes "���̕]���̃N���C���A��";
-			mes "�䂪�R�m�c�ł͋R�m�B�����̂��߂�";
-			mes "^3355FF74000^000000Zeny�Ő��삵�Ă���B";
+			mes "[騎士グレー]";
+			mes "その評判のクレイモアを";
+			mes "我が騎士団では騎士達だけのために";
+			mes "^3355FF74000^000000Zenyで製作している。";
 			next;
-			mes "[�R�m�O���[]";
-			mes "�������A�N���C���A�̓����ł���";
-			mes "���̊��ŉs���Ȑn�𑢂邽�߂�";
-			mes "�M�d�� ^3355FF�u�|�S�v^000000 ����K�v���B";
-			mes "�����ƍ|�S�������ė����炷����";
-			mes "�����Ă��B�R�m�c�̖��_�ɂ����ĂȁB";
+			mes "[騎士グレー]";
+			mes "しかし、クレイモアの特徴である";
+			mes "その頑丈で鋭利な刃を造るために";
+			mes "貴重な ^3355FF「鋼鉄」^000000 一つが必要だ。";
+			mes "制作費と鋼鉄を持って来たらすぐに";
+			mes "造ってやる。騎士団の名誉にかけてな。";
 			close;
 		case 2:
 			if(countitem(999) < 1 || Zeny < 74000) {
-				mes "[�R�m�O���[]";
-				mes "���O���N���C���A��~������C������";
-				mes "�킩�������A�p�ӂ�����Ȃ����";
-				mes "�����Ă�邱�Ƃ͂ł��Ȃ��ȁB";
-				mes "^3355FF74000Zeny�I�|�S��I^000000";
+				mes "[騎士グレー]";
+				mes "お前がクレイモアを欲しがる気持ちは";
+				mes "わかったが、用意が整わなければ";
+				mes "造ってやることはできないな。";
+				mes "^3355FF74000Zeny！鋼鉄一つ！^000000";
 				next;
-				mes "[�R�m�O���[]";
-				mes "�p�ӂ��ł�����܂����Ȃ����B";
-				mes "���ł��҂��Ă��邩��B";
+				mes "[騎士グレー]";
+				mes "用意ができたらまた来なさい。";
+				mes "いつでも待っているから。";
 				close;
 			}
 			if(checkweight(1163,1)==0) {
-				mes "[�R�m�O���[]";
-				mes "�ו�����t�̂悤��";
+				mes "[騎士グレー]";
+				mes "荷物が一杯のようだ";
 				close;
 			}
-			mes "[�R�m�O���[]";
-			mes "�����I�p�ӂ��Ă������B";
-			mes "�N���C���A�̉��l���킩��z�߁B";
-			mes "�悤���c����������Ă�邼�I";
+			mes "[騎士グレー]";
+			mes "おお！用意してきたか。";
+			mes "クレイモアの価値がわかる奴め。";
+			mes "ようし…今すぐ作ってやるぞ！";
 			next;
-			mes "[�R�m�O���[]";
-			mes "�N���C���A�̓��g��M����";
-			mes "�|�S��n�����č����āc";
+			mes "[騎士グレー]";
+			mes "クレイモアの刀身を熱して";
+			mes "鋼鉄を溶かして混ぜて…";
 			next;
-			mes "^3355FF- �J�L���J�L���J�L�� -^000000";
+			mes "^3355FF- カキンカキンカキン -^000000";
 			next;
-			mes "[�R�m�O���[]";
-			mes "�ق�A�R�m�c���ւ�N���C���A���I";
-			mes "���ꂩ��̗��ŗ����������_��";
-			mes "�Ȃ邾�낤�I";
+			mes "[騎士グレー]";
+			mes "ほら、騎士団が誇るクレイモアだ！";
+			mes "これからの旅で頼もしい相棒と";
+			mes "なるだろう！";
 			delitem 999,1;
 			set Zeny,Zeny-74000;
 			getitem 1163,1;
 			close;
 		case 3:
-			mes "[�R�m�O���[]";
-			mes "���h�ȋR�m�Ȃ�N���C���A�Ȃ�";
-			mes "�葫�̔@���g�����Ȃ��Ȃ���΂ˁB";
-			mes "�����܂����Ă���邱�Ƃ�";
-			mes "���҂��Ă����B";
+			mes "[騎士グレー]";
+			mes "立派な騎士ならクレイモアなど";
+			mes "手足の如く使いこなさなければね。";
+			mes "いつかまた来てくれることを";
+			mes "期待しているよ。";
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[�R�m�O���[]";
-		mes "��҂�A���Ԃ͑�؂ɂ����B";
+		mes "[騎士グレー]";
+		mes "若者よ、時間は大切にしろよ。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "���Ԃ��o���Ă���A�����̂��Ă���";
-		mes "���Ƃ��������悤�ɂȂ��Ă�";
-		mes "�x������ȁB";
+		mes "[騎士グレー]";
+		mes "時間が経ってから、自分のしてきた";
+		mes "ことを後悔するようになっても";
+		mes "遅いからな。";
 		close;
 	default:
-		mes "[�R�m�O���[]";
-		mes "�Ⴂ���m��A�����p���ȁH";
+		mes "[騎士グレー]";
+		mes "若い剣士よ、何か用かな？";
 		break;
 	case 13:
-		mes "[�R�m�O���[]";
-		mes "���A���O���B���̗p���H";
+		mes "[騎士グレー]";
+		mes "あ、お前か。何の用だ？";
 		break;
 	case 14:
-		mes "[�R�m�O���[]";
-		mes "�R�m�c���̘b�𕷂��Ă݂�B";
+		mes "[騎士グレー]";
+		mes "騎士団長の話を聞いてみろ。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "�A�����悭�l���Ă���邩��B";
-		mes "�����s���Ȃ����B";
+		mes "[騎士グレー]";
+		mes "連中もよく考えてくれるから。";
+		mes "早く行きなさい。";
 		close;
 	}
 	next;
-	if(select("�i�C�g�]�E�������󂯂����ł�","�Ȃ�ł��Ȃ��ł�")==2) {
-		mes "[�R�m�O���[]";
-		mes "�̂�厖�ɂ��Ȃ����B";
-		mes "���N����ꂾ�B";
+	if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
+		mes "[騎士グレー]";
+		mes "体を大事にしなさい。";
+		mes "健康が第一だ。";
 		close;
 	}
 	switch(CHANGE_KN) {
 	default:
-		mes "[�R�m�O���[]";
-		mes "�͂́A�����ɂ͉���肸���ƎႢ";
-		mes "�R�m������񂾂�B�������";
-		mes "�܂��͂Ȃ������Ă��痈�Ȃ����B";
+		mes "[騎士グレー]";
+		mes "はは、ここには俺よりずっと若い";
+		mes "騎士がいるんだよ。そいつらに";
+		mes "まずはなしかけてから来なさい。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "�A���̘b���ς񂾂�";
-		mes "�����ʓ|�����Ă��B";
+		mes "[騎士グレー]";
+		mes "連中の話が済んだら";
+		mes "俺が面倒を見てやる。";
 		close;
 	case 12:
-		mes "[�R�m�O���[]";
-		mes "�ق��A�������B���̘A���̎�����";
-		mes "���ׂĎ󂯂Ă����񂾂ȁB";
+		mes "[騎士グレー]";
+		mes "ほう、そうか。他の連中の試験を";
+		mes "すべて受けてきたんだな。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "����ł͉��̎������n�߂邩�B";
-		mes "�܁A�����ƌ������ł��Ȃ��񂾂��B";
+		mes "[騎士グレー]";
+		mes "それでは俺の試験を始めるか。";
+		mes "ま、試験と言う程でもないんだが。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "�C�y�ɘb�����悤���B";
+		mes "[騎士グレー]";
+		mes "気楽に話をしようか。";
 		break;
 	case 13:
-		mes "[�R�m�O���[]";
-		mes "�������c�F�X�ƍl���Ă����悤���ȁB";
+		mes "[騎士グレー]";
+		mes "そうか…色々と考えてきたようだな。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "����ł́A�܂��b�𕷂��Ă݂悤���B";
+		mes "[騎士グレー]";
+		mes "それでは、また話を聞いてみようか。";
 		break;
 	}
 	next;
-	mes "[�R�m�O���[]";
-	mes "�܂��c���O�͂Ȃ��i�C�g�ɂȂ낤��";
-	mes "���S�����񂾁H";
+	mes "[騎士グレー]";
+	mes "まず…お前はなぜナイトになろうと";
+	mes "決心したんだ？";
 	next;
-	switch(select("�����Ƌ����Ȃ邽�߂�","�M���h�̖��ɗ��Ƃ���","���݂ɖ����ł��Ȃ���")) {
+	switch(select("もっと強くなるために","ギルドの役に立とうと","現在に満足できなくて")) {
 	case 1:
-		mes "[�R�m�O���[]";
-		mes "�����Ƌ����Ȃ邽�߂��Ɓc�H";
-		mes "�m���Ƀi�C�g�͋����B";
+		mes "[騎士グレー]";
+		mes "もっと強くなるためだと…？";
+		mes "確かにナイトは強い。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "�������A���̋����Ƃ͉����낤���B";
-		mes "�l�ɗ͂��֎����邽�߂̂��̂Ȃ̂��A";
-		mes "�܂��͗L���ɂȂ邽�߂̂��̂Ȃ̂��A";
-		mes "���̑��̂��̂��c";
+		mes "[騎士グレー]";
+		mes "しかし、その強さとは何だろうか。";
+		mes "人に力を誇示するためのものなのか、";
+		mes "または有名になるためのものなのか、";
+		mes "その他のものか…";
 		next;
-		mes "[�R�m�O���[]";
-		mes "�R�m�Ƃ��Ắu�́v�Ƃ͉����낤���H";
+		mes "[騎士グレー]";
+		mes "騎士としての「力」とは何だろうか？";
 		next;
-		switch(select("���M�Ɩ����𓾂邽�߂̂���","��������邱�Ƃ��ł������","���̐l�X����邽�߂̂���")) {
+		switch(select("武勲と名声を得るためのもの","自分を護ることができるもの","他の人々を護るためのもの")) {
 		case 1:
 			set '@bad,'@bad+10;
-			mes "[�R�m�O���[]";
-			mes "�������A��������ɓ��ꂽ��";
-			mes "�L���ɂȂ邱�Ƃ͗ǂ����Ƃ��B";
-			mes "�������A�����ł͂Ȃ����l�𓾂�";
-			mes "���߂ɂ����̋R�m�B�͐����Ă���B";
+			mes "[騎士グレー]";
+			mes "もちろん、お金を手に入れたり";
+			mes "有名になることは良いことだ。";
+			mes "しかし、そうではない価値を得る";
+			mes "ためにうちの騎士達は生きている。";
 			break;
 		case 2:
-			mes "[�R�m�O���[]";
-			mes "�ǂ��������B����������z��";
-			mes "�l����邱�Ƃ��ł���B";
-			mes "���̂��߂ɕ��i����C����";
-			mes "�ӂ��Ă͂Ȃ�Ȃ��B";
+			mes "[騎士グレー]";
+			mes "良い答えだ。自分を護れる奴は";
+			mes "人を護ることもできる。";
+			mes "そのために普段から修練を";
+			mes "怠ってはならない。";
 			break;
 		case 3:
-			mes "[�R�m�O���[]";
-			mes "���h�ȍl�����B�R�m�̗͂Ƃ�";
-			mes "�カ�҂�����Ă������̐^����";
-			mes "���������B���܂ɂ��̐��_���̂�";
-			mes "�R�m�̖��ɓD��h��y�����邪�c";
+			mes "[騎士グレー]";
+			mes "立派な考えだ。騎士の力とは";
+			mes "弱き者を護ってこそその真価が";
+			mes "発揮される。たまにその精神を捨て";
+			mes "騎士の名に泥を塗る輩もいるが…";
 			break;
 		}
 		break;
 	case 2:
-		mes "[�R�m�O���[]";
-		mes "�M���h�c�܂��̓p�[�e�B�[��";
-		mes "���Ɋ���������c";
-		mes "���B�̍����ł���g���X�^���O����";
-		mes "���̂悤�ɂ�����������B";
+		mes "[騎士グレー]";
+		mes "ギルド…またはパーティーと";
+		mes "共に活動をする…";
+		mes "俺達の国王であるトリスタン三世も";
+		mes "次のようにおっしゃった。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "���a�ȓ���̗��ɂ́A��ɋ��Ђ�";
-		mes "���݂��Ă���B�ł��邩��A";
-		mes "���炩���ߑS�Ă̊�@�ɑ΂���";
-		mes "�������Ă����Ȃ���΂Ȃ�Ȃ��c�ƁB";
+		mes "[騎士グレー]";
+		mes "平和な日常の裏には、常に脅威が";
+		mes "存在している。であるから、";
+		mes "あらかじめ全ての危機に対して";
+		mes "準備しておかなければならない…と。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "����ł́A���O������͂�";
-		mes "�ǂ̂悤�ɃM���h�̖��ɗ��H";
+		mes "[騎士グレー]";
+		mes "それでは、お前が得る力は";
+		mes "どのようにギルドの役に立つ？";
 		next;
-		switch(select("�M���h�����̗͂�K�v�Ƃ��Ă��܂�","�M���h�̎����m�ۂɖ𗧂��܂�","�M���h���B����邱�Ƃ��ł��܂�")) {
+		switch(select("ギルドが私の力を必要としています","ギルドの資金確保に役立ちます","ギルド員達を護ることができます")) {
 		case 1:
-			mes "[�R�m�O���[]";
-			mes "���E�̂ǂ��ł��낤�ƁA";
-			mes "�������]�ޏꏊ�ɍ݂肽�����̂��B";
-			mes "�������A������K�v�Ƃ���҂�";
-			mes "���邩����A����ł͂Ȃ�Ȃ��B";
-			mes "�M���h�ɂ����炸�ȁc�B";
+			mes "[騎士グレー]";
+			mes "世界のどこであろうと、";
+			mes "自分が望む場所に在りたいものだ。";
+			mes "しかし、助けを必要とする者が";
+			mes "いるかぎり、拒んではならない。";
+			mes "ギルドにかぎらずな…。";
 			break;
 		case 2:
 			set '@bad,'@bad+10;
-			mes "[�R�m�O���[]";
-			mes "�������A��������ɓ��ꂽ��";
-			mes "�L���ɂȂ邱�Ƃ͗ǂ����Ƃ��B";
-			mes "�������A�����ł͂Ȃ����l�𓾂�";
-			mes "���߂ɂ����̋R�m�B�͐����Ă���B";
+			mes "[騎士グレー]";
+			mes "もちろん、お金を手に入れたり";
+			mes "有名になることは良いことだ。";
+			mes "しかし、そうではない価値を得る";
+			mes "ためにうちの騎士達は生きている。";
 			break;
 		case 3:
-			mes "[�R�m�O���[]";
-			mes "���h�ȍl�����B�R�m�̗͂Ƃ�";
-			mes "�カ�҂�����Ă������̐^����";
-			mes "���������B���܂ɂ��̐��_���̂�";
-			mes "�R�m�̖��ɓD��h��y�����邪�c";
+			mes "[騎士グレー]";
+			mes "立派な考えだ。騎士の力とは";
+			mes "弱き者を護ってこそその真価が";
+			mes "発揮される。たまにその精神を捨て";
+			mes "騎士の名に泥を塗る輩もいるが…";
 			break;
 		}
 		break;
 	case 3:
 		set '@bad,'@bad+5;
-		mes "[�R�m�O���[]";
-		mes "�ӂށc";
-		mes "���O�͂������h�Ȍ��m����";
-		mes "����ł��R�m��ڎw���̂͂Ȃ����H";
+		mes "[騎士グレー]";
+		mes "ふむ…";
+		mes "お前はもう立派な剣士だが";
+		mes "それでも騎士を目指すのはなぜか？";
 		next;
-		mes "[�R�m�O���[]";
-		mes "���m�Ȃ炢�����炸�A�R�m��";
-		mes "��������͐�΂ɋ�����Ȃ��B";
-		mes "���܂ɁA�͂�~���邠�܂�}����";
-		mes "�����Ȃ��Ȃ��Ă��܂���҂�����B";
+		mes "[騎士グレー]";
+		mes "剣士ならいざしらず、騎士は";
+		mes "自分勝手は絶対に許されない。";
+		mes "たまに、力を欲するあまり抑制が";
+		mes "効かなくなってしまう若者もいる。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "����ł́A���̉��ɖ��������Ȃ��̂��H";
+		mes "[騎士グレー]";
+		mes "それでは、今の何に満足いかないのか？";
 		next;
-		switch(select("�Z�p�ł�","�ڕW�ł�","�i�D�ł�")) {
+		switch(select("技術です","目標です","格好です")) {
 		case 1:
 			set '@bad,'@bad+5;
-			mes "[�R�m�O���[]";
-			mes "�Z�p�̓i�C�g�ɂȂ�Ύ�����";
-			mes "�t���Ă���B";
-			mes "�����炻�ꎩ�̂ɍ������l��";
-			mes "�������낤�B�����ƃi�C�g�ɂȂ��Ă�";
-			mes "�����ł��Ȃ��Ȃ�B";
+			mes "[騎士グレー]";
+			mes "技術はナイトになれば自ずと";
+			mes "付いてくる。";
+			mes "だからそれ自体に高い価値は";
+			mes "無いだろう。きっとナイトになっても";
+			mes "満足できなくなる。";
 			break;
 		case 2:
 			set '@bad,'@bad-5;
-			mes "[�R�m�O���[]";
-			mes "�������c�₦���V�����ڕW��";
-			mes "�������Ƃ͑厖���B";
-			mes "���̓i�C�g�ɂȂ邱�Ƃœ�����t";
-			mes "���낤���A�i�C�g�ɂȂ������";
-			mes "�܂��V�����ڕW���ł��邾�낤�B";
+			mes "[騎士グレー]";
+			mes "そうか…絶えず新しい目標を";
+			mes "抱くことは大事だ。";
+			mes "今はナイトになることで頭が一杯";
+			mes "だろうが、ナイトになった後は";
+			mes "また新しい目標ができるだろう。";
 			break;
 		case 3:
 			set '@bad,'@bad+5;
-			mes "[�R�m�O���[]";
-			mes "����ȁA�����ڂ����̉��l�Ȃ�";
-			mes "�債�����Ƃł͂Ȃ��B";
-			mes "�i�C�g��苭�����m�����邵�A";
-			mes "�܂�w�͂������Ƃ������Ƃ��B";
+			mes "[騎士グレー]";
+			mes "そんな、見た目だけの価値など";
+			mes "大したことではない。";
+			mes "ナイトより強い剣士もいるし、";
+			mes "つまり努力しだいということだ。";
 			break;
 		}
 		break;
 	}
 	next;
-	mes "[�R�m�O���[]";
-	mes "�ӂށA���O�͂悭�l���Ă���ˁB";
-	mes "���ɂ͉����l�����Ƀi�C�g��";
-	mes "�Ȃ낤�Ƃ���z������񂾂�c";
+	mes "[騎士グレー]";
+	mes "ふむ、お前はよく考えているね。";
+	mes "中には何も考えずにナイトに";
+	mes "なろうとする奴もいるんだよ…";
 	next;
-	mes "[�R�m�O���[]";
-	mes "����Ȏ�ҒB�������N�����A";
-	mes "�R�m�c�̖��_��������B";
+	mes "[騎士グレー]";
+	mes "そんな若者達が問題を起こし、";
+	mes "騎士団の名誉を傷つける。";
 	next;
-	mes "[�R�m�O���[]";
-	mes "����͂��O�ɂ������邱�Ƃ����A";
-	mes "��x�i�C�g�ɂȂ������x�ƌ��m��";
-	mes "�߂邱�Ƃ��ł��Ȃ��B";
-	mes "�i�C�g�Ƃ��Ă̎��o�ƐӔC��";
-	mes "��΂ɖY��Ă͂Ȃ�Ȃ��̂��B";
+	mes "[騎士グレー]";
+	mes "これはお前にも言えることだが、";
+	mes "一度ナイトになったら二度と剣士に";
+	mes "戻ることができない。";
+	mes "ナイトとしての自覚と責任は";
+	mes "絶対に忘れてはならないのだ。";
 	next;
-	mes "[�R�m�O���[]";
-	mes "�����A�������i�C�g�ɂȂꂽ��";
-	mes "��������H";
+	mes "[騎士グレー]";
+	mes "もし、今すぐナイトになれたら";
+	mes "何をする？";
 	next;
-	switch(select("�����ɐ킢�ɏo�܂�","����҂l�X�̌���","�R�m�ɂ��Ă����Ɗw�т܂�")) {
+	switch(select("直ちに戦いに出ます","私を待つ人々の元へ","騎士についてもっと学びます")) {
 	case 1:
-		mes "[�R�m�O���[]";
-		mes "�ӂށA�����āH";
+		mes "[騎士グレー]";
+		mes "ふむ、そして？";
 		next;
-		switch(select("������������ł��傤","�i�C�g�ɂȂ��������̋Z����������","���m�ł͍s����Ȃ��ꏊ�֍s��")) {
+		switch(select("早く成長するでしょう","ナイトになった自分の技を試したい","剣士では行かれない場所へ行く")) {
 		case 1:
 			set '@bad,'@bad+10;
-			mes "[�R�m�O���[]";
-			mes "���܂�}�����̂ł͂Ȃ��B";
-			mes "���O���g���}�ɐ�������Ƃ�";
-			mes "������Ȃ����낤�B";
-			mes "��b���ł��ł߂�̂��ǂ��B";
+			mes "[騎士グレー]";
+			mes "あまり急ぐものではない。";
+			mes "お前自身が急に成長するとは";
+			mes "かぎらないだろう。";
+			mes "基礎を固く固めるのが良い。";
 			break;
 		case 2:
-			mes "[�R�m�O���[]";
-			mes "�����������̂͗ǂ����Ƃ��B";
-			mes "�g�ɂ����Z�ɂ��Ċ�Ԃ̂�";
-			mes "�������A�R�m�̐S�\���͖Y���Ȃ�B";
+			mes "[騎士グレー]";
+			mes "自分を試すのは良いことだ。";
+			mes "身についた技について喜ぶのは";
+			mes "いいが、騎士の心構えは忘れるなよ。";
 			break;
 		case 3:
-			mes "[�R�m�O���[]";
-			mes "�i�C�g�ɂȂ��Ă��A�����̖{����";
-			mes "�ς��킯�ł͂Ȃ��B";
-			mes "���܂薳�����đ̂����g����Ȃ�B";
+			mes "[騎士グレー]";
+			mes "ナイトになっても、そいつの本質が";
+			mes "変わるわけではない。";
+			mes "あまり無理して体を酷使するなよ。";
 			break;
 		}
 		break;
 	case 2:
-		mes "[�R�m�O���[]";
-		mes "�N���҂��Ă���񂾁H";
+		mes "[騎士グレー]";
+		mes "誰が待っているんだ？";
 		next;
-		switch(select("�F�l�ł�","�M���h���B�ł�","���l�ł�")) {
+		switch(select("友人です","ギルド員達です","恋人です")) {
 		case 1:
-			mes "[�R�m�O���[]";
-			mes "���ށA�F�����O���i�C�g�ɂȂ���";
-			mes "���Ƃ������̂��Ƃ̂悤�Ɋ���";
-			mes "����邾�낤�B";
-			mes "�F��厖�ɂ��邻�̐S";
-			mes "�Y��Ȃ��悤�ɂ��Ȃ����B";
+			mes "[騎士グレー]";
+			mes "うむ、友もお前がナイトになった";
+			mes "ことを自分のことのように喜んで";
+			mes "くれるだろう。";
+			mes "友を大事にするその心";
+			mes "忘れないようにしなさい。";
 			break;
 		case 2:
-			mes "[�R�m�O���[]";
-			mes "���������ɂ��钇�ԒB���B";
-			mes "���Ԃ��؂ɂ��āA�ނ�������";
-			mes "�����Ȃ����B";
+			mes "[騎士グレー]";
+			mes "生死を共にする仲間達か。";
+			mes "仲間を大切にして、彼らを護って";
+			mes "いきなさい。";
 			break;
 		case 3:
-			mes "[�R�m�O���[]";
-			mes "�t���ˁI������l�̂��߂�";
-			mes "�i�C�g�ɂȂ�Ƃ́B";
-			mes "���O�̑S�Ă��Ȃ���";
-			mes (Sex? "�ޏ�": "�ގ�")+ "������Ă����Ȃ����B";
+			mes "[騎士グレー]";
+			mes "青春だね！愛する人のために";
+			mes "ナイトになるとは。";
+			mes "お前の全てを以って";
+			mes (Sex? "彼女": "彼氏")+ "を護ってあげなさい。";
 			break;
 		}
 		break;
 	case 3:
-		mes "[�R�m�O���[]";
-		mes "�ǂ��p�����B�����w�ԁH";
+		mes "[騎士グレー]";
+		mes "良い姿勢だ。何を学ぶ？";
 		next;
-		switch(select("�i�C�g���킢�₷���ꏊ","�i�C�g�Ƃ��Ă̐����̂�����","�i�C�g�Ŏ����𓾂���@")) {
+		switch(select("ナイトが戦いやすい場所","ナイトとしての成長のしかた","ナイトで収入を得る方法")) {
 		case 1:
 			set '@bad,'@bad+5;
-			mes "[�R�m�O���[]";
-			mes "���ɂ͊y�ȏꏊ�E�h���ꏊ�l�X����B";
-			mes "�i�C�g�͂ǂ�ȏꏊ�ł�";
-			mes "���������Ă����Ȃ���΂Ȃ�Ȃ��B";
+			mes "[騎士グレー]";
+			mes "世には楽な場所・辛い場所様々ある。";
+			mes "ナイトはどんな場所でも";
+			mes "強く生きていかなければならない。";
 			break;
 		case 2:
-			mes "[�R�m�O���[]";
-			mes "�O�ɏo��΁A�i�C�g���������邾�낤�B";
-			mes "��y�R�m�ɂ��F�X�ƕ����Ă݂Ȃ����B";
+			mes "[騎士グレー]";
+			mes "外に出れば、ナイトを見かけるだろう。";
+			mes "先輩騎士にも色々と聞いてみなさい。";
 			break;
 		case 3:
 			set '@bad,'@bad+15;
-			mes "[�R�m�O���[]";
-			mes "����I�R�m�������Ǝv���Ă���B";
-			mes "�R�m�͂����������݂ł͂Ȃ��I";
+			mes "[騎士グレー]";
+			mes "こら！騎士を何だと思っている。";
+			mes "騎士はそういう存在ではない！";
 			break;
 		}
 		break;
 	}
 	next;
-	mes "[�R�m�O���[]";
-	mes "���c�����Ԃ񒷘b�ɂȂ��Ă��܂����ȁB";
+	mes "[騎士グレー]";
+	mes "お…ずいぶん長話になってしまったな。";
 	next;
 	if('@bad > 10) {
 		set CHANGE_KN,13;
-		mes "[�R�m�O���[]";
-		mes "���O�Ƃ̘b�͑ދ��������B";
-		mes "�܂��i�C�g�ɂȂ�̂͑������낤�B";
+		mes "[騎士グレー]";
+		mes "お前との話は退屈だった。";
+		mes "まだナイトになるのは早いだろう。";
 		next;
-		mes "[�R�m�O���[]";
-		mes "���m�ł��������F�X�w�񂾂ق���";
-		mes "�ǂ����낤�B";
-		mes "�{���Ƀi�C�g��ڎw���Ȃ�A�������g��";
-		mes "�ς���K�v�����邾�낤�B";
+		mes "[騎士グレー]";
+		mes "剣士でもう少し色々学んだほうが";
+		mes "良いだろう。";
+		mes "本当にナイトを目指すなら、自分自身を";
+		mes "変える必要があるだろう。";
 		close;
 	}
 	set CHANGE_KN,14;
-	mes "[�R�m�O���[]";
-	mes "���O�Ƃ̘b�͊y���������B";
-	mes '@bad? "�����C�ɂȂ�_�����������B": "�Ⴂ���̎������v���o���悤���������B";
+	mes "[騎士グレー]";
+	mes "お前との話は楽しかった。";
+	mes '@bad? "少し気になる点もあったが。": "若い日の自分を思い出すようだったぞ。";
 	next;
-	mes "[�R�m�O���[]";
-	mes "����ł́A�R�m�c���̘b�𕷂��āA";
-	mes "�A���ɂ����f���Ă��炨�����B";
+	mes "[騎士グレー]";
+	mes "それでは、騎士団長の話を聞いて、";
+	mes "連中にも判断してもらおうか。";
 	next;
-	mes "[�R�m�O���[]";
-	mes "���܂�S�z����ȁB";
-	mes "�����悭�b���Ă��B";
+	mes "[騎士グレー]";
+	mes "あまり心配するな。";
+	mes "俺がよく話してやる。";
 	close;
 }
 
 //============================================================
-// �y�R�y�R�����^��
+// ペコペコレンタル
 //------------------------------------------------------------
-prontera.gat,55,350,5	script	�y�R�y�R�Ǘ���	105,{
+prontera.gat,55,350,5	script	ペコペコ管理兵	105,{
 	if(Job != Job_Knight) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "���̌�p�ł����H";
-		mes "�y�R�y�R�́A�i�C�g�l��";
-		mes "���[�h�i�C�g�l��p��";
-		mes "�Ȃ��Ă���܂��B";
+		mes "[ペコペコ管理兵]";
+		mes "何の御用ですか？";
+		mes "ペコペコは、ナイト様と";
+		mes "ロードナイト様専用と";
+		mes "なっております。";
 		close;
 	}
-	mes "[�y�R�y�R�Ǘ���]";
-	mes "��������Ⴂ�܂��B";
-	mes "�y�R�y�R��C�p�ӂ������܂��傤���H";
-	mes "��C 2500 zeny�ł������܂��B";
+	mes "[ペコペコ管理兵]";
+	mes "いらっしゃいませ。";
+	mes "ペコペコ一匹用意いたしましょうか？";
+	mes "一匹 2500 zenyでございます。";
 	next;
-	if(select("���p����","��߂�")==2) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "�����ł����B�ł́c�c";
+	if(select("利用する","やめる")==2) {
+		mes "[ペコペコ管理兵]";
+		mes "そうですか。では……";
 		close;
 	}
 	if(checkriding()) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "���łɃy�R�y�R�ɏ����";
-		mes "��������Ⴂ�܂��ˁB";
+		mes "[ペコペコ管理兵]";
+		mes "すでにペコペコに乗って";
+		mes "いらっしゃいますね。";
 		close;
 	}
 	if(Zeny < 2500) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "���́A����������Ȃ��悤�ł����c�c";
-		mes "�c�c�j�Y�ł����c�c�H";
+		mes "[ペコペコ管理兵]";
+		mes "あの、お金が足りないようですが……";
+		mes "……破産ですか……？";
 		close;
 	}
 	if(getskilllv(63) < 1) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "�c�c�܂��y�R�y�R�ɂ�";
-		mes "���Ȃ��悤�ł��ˁB";
-		mes "�X�L���u���C�f�B���O�v��";
-		mes "�o���Ă��炨�z�����������B";
+		mes "[ペコペコ管理兵]";
+		mes "……まだペコペコには";
+		mes "乗れないようですね。";
+		mes "スキル「ライディング」を";
+		mes "覚えてからお越しください。";
 		close;
 	}
 	set Zeny,Zeny-2500;

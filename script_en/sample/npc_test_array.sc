@@ -1,8 +1,8 @@
-// ”z—ñ‚ÌƒeƒXƒg
-prontera.gat,164,190,1	script	”z—ñƒeƒXƒg	112,{
+// é…åˆ—ã®ãƒ†ã‚¹ãƒˆ
+prontera.gat,164,190,1	script	é…åˆ—ãƒ†ã‚¹ãƒˆ	112,{
 	set @hoge[0],1;
 	set @hoge[1],5;
-	mes "hoge[2]‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢";
+	mes "hoge[2]ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„";
 	next;
 	input @hoge[2];
 	mes "hoge   => " + @hoge;
@@ -32,7 +32,7 @@ prontera.gat,164,190,1	script	”z—ñƒeƒXƒg	112,{
 	mes "hoge[3]=> " + @hoge[3];
 	next;
 
-	// —v‘f‚Ì¬‚³‚¢•û‚©‚çƒRƒs[
+	// è¦ç´ ã®å°ã•ã„æ–¹ã‹ã‚‰ã‚³ãƒ”ãƒ¼
 	setarray @hoge,0,1,2,3;
 	copyarray @hoge[0],@hoge[1],3;
 	mes "true: 1,2,3,3";
@@ -42,7 +42,7 @@ prontera.gat,164,190,1	script	”z—ñƒeƒXƒg	112,{
 	mes @hoge[3];
 	next;
 
-	// —v‘f‚Ì‘å‚«‚¢•û‚©‚çƒRƒs[
+	// è¦ç´ ã®å¤§ãã„æ–¹ã‹ã‚‰ã‚³ãƒ”ãƒ¼
 	setarray @hoge,1,2,3,0;
 	copyarray @hoge[1],@hoge[0],3;
 	mes "true: 1,1,2,3";

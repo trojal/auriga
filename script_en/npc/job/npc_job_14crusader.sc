@@ -1,195 +1,195 @@
 //====================================================================
 //Ragnarok Online Crusader jobchange script
 //
-//�@�� CHANGE_CRU -> 0�`10
+//　■ CHANGE_CRU -> 0～10
 //====================================================================
 
 //==========================================
-// �����\������ѓ]�E
+// 試験申請および転職
 //------------------------------------------
 
-prt_castle.gat,45,169,4	script	�}�X�^�[�N���Z�C�_�[	752,{
+prt_castle.gat,45,169,4	script	マスタークルセイダー	752,{
 	if(Job == Job_Crusader) {
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�M���͐���ɋ���ׂ��҂��B";
-		mes "�����ɗ��܂炸�Ȃ�b���邪�悢�B";
-		mes "�C���ςގ҂ɂ͏����̌����˂��B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "貴公は聖戦に拠り為す者か。";
+		mes "ここに留まらず己を鍛えるがよい。";
+		mes "修練積む者には勝利の光が射す。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���E�̊�@�́A���K��邩";
-		mes "�킩��Ȃ��B�I�[�f�B���̈ӎu��";
-		mes "�p��������ނ��A���l�Ԃ�";
-		mes "���z�������݂��邻�̓��܂�";
-		mes "�ӂ炸�Ȃ�b���Ȃ����B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "世界の危機は、いつ訪れるか";
+		mes "わからない。オーディンの意志を";
+		mes "継ぎ魔族を退け、我ら人間の";
+		mes "理想郷を建設するその日まで";
+		mes "怠らず己を鍛えなさい。";
 		close;
 	}
 	switch(CHANGE_CRU) {
 	case 0:
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�������̓N���Z�C�_�[�B";
-		mes "�I�[�f�B���̈ӎu�ɂ����";
-		mes "����ɔ�����҂��B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "私たちはクルセイダー。";
+		mes "オーディンの意志によって";
+		mes "聖戦に備える者だ。";
 		if(Upper == UPPER_HIGH) {
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "��N�O�̂悤�ɁA�܂�����";
-			mes "�����𓢔�����������邾�낤�c�c";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "千年前のように、またいつか";
+			mes "魔族を討伐する日が来るだろう……";
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�M���͂����ɂ���ׂ��҂ł͂Ȃ��B";
-			mes "�ӂ炸�Ȃ�b���Ȃ����B";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "貴公はここにいるべき者ではない。";
+			mes "怠らず己を鍛えなさい。";
 			close;
 		}
 		if(Job == Job_Novice) {
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�N�����Ɏ^���������΁A";
-			mes "���m�Ƃ��ď\���ȏC����";
-			mes "�ς�ŗ���悤�Ɂc�c";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "君も我らに賛同したくば、";
+			mes "剣士として十分な修練を";
+			mes "積んで来るように……";
 			close;
 		}
 		if(Job != Job_Swordman) {
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "��N�O�̂悤�ɁA�܂�����";
-			mes "�����𓢔�����������邾�낤�c�c";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "千年前のように、またいつか";
+			mes "魔族を討伐する日が来るだろう……";
 			close;
 		}
-		mes "���̎��ŖK�˂Ă����̂�";
+		mes "何の事で訪ねてきたのか";
 		next;
-		if(select("��������ɉ���肽��","�Ȃ�ł��Ȃ��ł�")==2) {
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�N�����������҂Ȃ��";
-			mes "�₦�ԂȂ��C����S�����Ȃ����B";
-			mes "����̎��͒N�ɂ��킩��Ȃ��B";
+		if(select("私も聖戦に加わりたい","なんでもないです")==2) {
+			mes "[ミケル=レカント=ニキータ]";
+			mes "君も剣を扱う者ならば";
+			mes "絶え間ない修練を心がけなさい。";
+			mes "聖戦の時は誰にもわからない。";
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "���͗����ł��Ȃ��Ƃ�";
-			mes "�N�ɂ��I�[�f�B���̐���";
-			mes "�͂��������邩������Ȃ��B";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "今は理解できなくとも";
+			mes "君にもオーディンの声が";
+			mes "届く時がくるかもしれない。";
 			close;
 		}
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�A�N���Z�C�_�[�ɂȂ肽����";
-		mes "�����̂��H";
-		mes "��X�ƕ��ނ��Ƃ͂���Ȃ�";
-		mes "���₷�����Ƃł͂Ȃ����B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君、クルセイダーになりたいと";
+		mes "言うのか？";
+		mes "我々と歩むことはそんなに";
+		mes "たやすいことではないぞ。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���̓~�P��=���J���g=�j�L�[�^�B";
-		mes "����ɔ�����҂̈�l���B";
-		mes "��X�͌����M���ƉʂĂ��Ȃ�";
-		mes "�����S�̌��Ő₦���Ȃ�";
-		mes "�b���Ă���B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "私はミケル=レカント=ニキータ。";
+		mes "聖戦に備える者の一人だ。";
+		mes "我々は厚い信頼と果てしなき";
+		mes "忠誠心の元で絶えず己を";
+		mes "鍛えている。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���m�̒��ł����������҂���";
-		mes "���������҂�I�����Ă��邪�A";
-		mes "�I�[�f�B���̈ӎu�ɂ���m��";
-		mes "���Đ��܂ꂽ�҂Ȃ�Ή�X��";
-		mes "�^�����邱�Ƃ����߂�B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "剣士の中でも頼もしい者から";
+		mes "頼もしい者を選抜しているが、";
+		mes "オーディンの意志により戦士と";
+		mes "して生まれた者ならば我々に";
+		mes "賛同することを勧める。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���ɁA^3152FF���߂̏�^000000��^3152FF����^000000������";
-		mes "���m�̓N���Z�C�_�[����f����";
-		mes "�V����^����ꂽ�̂ł���B";
-		mes "����Ȍ��m�́A���鎎����";
-		mes "���z����΃N���Z�C�_�[�ƂȂ�";
-		mes "���Ƃ��ł���B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "特に、^3152FF忠節の証^000000と^3152FF聖痕^000000を持つ";
+		mes "剣士はクルセイダーたる素質を";
+		mes "天から与えられたのである。";
+		mes "そんな剣士は、ある試練を";
+		mes "乗り越えればクルセイダーとなる";
+		mes "ことができる。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���ɂ͂܂��A�N���ǂ�ȑf����";
-		mes "�����Ă��邩�}�肩�˂�B";
-		mes "��x�����ɒ��킵�Ă݂Ȃ����H";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "私にはまだ、君がどんな素質を";
+		mes "持っているか図りかねる。";
+		mes "一度試練に挑戦してみないか？";
 		next;
-		if(select("�͂��A����Ă݂܂�","�l�������Ă�������")==2) {
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�������B";
-			mes "�ǂ������𐮂��Ă��痈�Ȃ����B";
+		if(select("はい、やってみます","考えさせてください")==2) {
+			mes "[ミケル=レカント=ニキータ]";
+			mes "そうか。";
+			mes "良く準備を整えてから来なさい。";
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�I�[�f�B���̐�������������";
-			mes "�����Ɏ������󂯂ɗ���悤�ɁB";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "オーディンの声が聞こえたら";
+			mes "すぐに試練を受けに来るように。";
 			close;
 		}
 		if(JobLevel < 40) {
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "�C�̓ł����c�c";
-			mes "�N���Z�C�_�[�ɂȂ�O��";
-			mes "JobLv��40�ȏ�ɂ��Ȃ����";
-			mes "�Ȃ�Ȃ��B";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "気の毒だが……";
+			mes "クルセイダーになる前に";
+			mes "JobLvを40以上にしなければ";
+			mes "ならない。";
 			next;
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "���m�Ƃ��Ă��������C����ς�";
-			mes "�I�[�f�B���̐���������̂�";
-			mes "�҂̂��B";
-			mes "���̋C�s�͔F�߂邪�ȁc�c";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "剣士としてもう少し修練を積み";
+			mes "オーディンの声がかかるのを";
+			mes "待つのだ。";
+			mes "その気鋭は認めるがな……";
 			close;
 		}
 		if(SkillPoint) {
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "���ށc�c�N�͂܂����m�Ƃ���";
-			mes "�擾�ł���X�L�����c����";
-			mes "����悤���B���̃X�L�����K��";
-			mes "���Ă���܂������B";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "うむ……君はまだ剣士として";
+			mes "取得できるスキルが残って";
+			mes "いるようだ。他のスキルを習得";
+			mes "してからまたこい。";
 			close;
 		}
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "����ł́A�N���N���Z�C�_�[��";
-		mes "�ӂ��킵���҂��ǂ�����";
-		mes "�������Ă��炨���B";
-		mes "���O��" +strcharinfo(0)+ "���B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "それでは、君がクルセイダーに";
+		mes "ふさわしい者かどうかを";
+		mes "見させてもらおう。";
+		mes "名前は" +strcharinfo(0)+ "か。";
 		next;
-		if(countitem(1004) && countitem(1009))	//���߂̏؂Ɛ���������
+		if(countitem(1004) && countitem(1009))	//忠節の証と聖痕所持時
 			break;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���ށc�c";
-		mes "�N�̃N���Z�C�_�[�Ƃ��Ă̑f����";
-		mes "���܂����}�肩�˂�c�c";
-		mes "���������̈ӎu�����͓`����Ă����B";
-		mes "�w�͂��邱�Ƃɂ�肻����ؖ�����";
-		mes "������B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "うむ……";
+		mes "君のクルセイダーとしての素質は";
+		mes "いまいち図りかねる……";
+		mes "しかしその意志だけは伝わってきた。";
+		mes "努力することによりそれを証明して";
+		mes "見せよ。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�ɂ͂����̕����W�߂Ă��炨���B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君にはこれらの物を集めてもらおう。";
 		set CHANGE_CRU,rand(1,3);
 		switch(CHANGE_CRU) {
 			case 1:
-				mes "^3152FF�S�҂̒�^000000 10��";
-				mes "^3152FF����������^000000 10��";
-				mes "^3152FF�{���{�����l��^000000 10��";
-				mes "^3152FF�s�b�O�e�[�����{��^000000 10��";
+				mes "^3152FF亡者の爪^000000 10個";
+				mes "^3152FFくさった鱗^000000 10個";
+				mes "^3152FFボロボロ囚人服^000000 10個";
+				mes "^3152FFピッグテールリボン^000000 10個";
 				break;
 			case 2:
-				mes "^3152FF�X�P���{�[��^000000 10��";
-				mes "^3152FF�I�[�N�̒�^000000 10��";
-				mes "^3152FF���^000000 10��";
-				mes "^3152FF�Z���s�b�O�e�[�����{��^000000 10��";
+				mes "^3152FFスケルボーン^000000 10個";
+				mes "^3152FFオークの爪^000000 10個";
+				mes "^3152FF手錠^000000 10個";
+				mes "^3152FF短いピッグテールリボン^000000 10個";
 				break;
 			case 3:
-				mes "^3152FF�S�҂̉�^000000 10��";
-				mes "^3152FF�����������^000000 10��";
-				mes "^3152FF�����^��^000000 10��";
-				mes "^3152FF�J�{�`���̓�^000000 10��";
+				mes "^3152FF亡者の牙^000000 10個";
+				mes "^3152FFくさった包帯^000000 10個";
+				mes "^3152FFランタン^000000 10個";
+				mes "^3152FFカボチャの頭^000000 10個";
 				break;
 		}
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�̓w�͂������ŁA�N���Z�C�_�[";
-		mes "�ւ̎������󂯂Ă��炤���ǂ�����";
-		mes "���߂�B";
-		mes "�ł͍s���Ă���悤�ɁB";
-		mes "�N�ɃI�[�f�B���̉��삪����񂱂Ƃ��B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君の努力しだいで、クルセイダー";
+		mes "への試練を受けてもらうかどうかを";
+		mes "決める。";
+		mes "では行ってくるように。";
+		mes "君にオーディンの加護があらんことを。";
 		close;
 	case 1:
 	case 2:
 	case 3:
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�̓I�[�f�B���̐��𕷂����҂��H";
-		mes "�܂��͌Ȃ̓w�͂��ؖ�����";
-		mes "�����҂��H";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君はオーディンの声を聞いた者か？";
+		mes "または己の努力を証明しに";
+		mes "来た者か？";
 		next;
-		if(countitem(1004) && countitem(1009))	//���߂̏؂Ɛ���������
+		if(countitem(1004) && countitem(1009))	//忠節の証と聖痕所持時
 			break;
 		switch(CHANGE_CRU) {
 			case 1:	setarray '@need,957,959,1099,901; 	break;
@@ -198,110 +198,110 @@ prt_castle.gat,45,169,4	script	�}�X�^�[�N���Z�C�_�[	752,{
 		}
 		for(set '@i,0; '@i<4; set '@i,'@i+1) {
 			if(countitem('@need['@i]) < 10) {
-				mes "[�~�P��=���J���g=�j�L�[�^]";
-				mes "�N������ɁA�܂��N���Z�C�_�[��";
-				mes "���Ă̎��������󂯂��Ȃ��B";
-				mes "�N�̈ӎu�����������΁A";
-				mes "�w�͂��Ȃ��Č����Ă݂�B";
+				mes "[ミケル=レカント=ニキータ]";
+				mes "君を見るに、まだクルセイダーと";
+				mes "しての資質が見受けられない。";
+				mes "君の意志を見せたくば、";
+				mes "努力を以って見せてみよ。";
 				next;
-				mes "[�~�P��=���J���g=�j�L�[�^]";
-				mes "�N�ɂ͂����̕����W�߂Ă��炨���B";
+				mes "[ミケル=レカント=ニキータ]";
+				mes "君にはこれらの物を集めてもらおう。";
 				for(set '@i,0; '@i<4; set '@i,'@i+1)
-					mes "^3152FF" +getitemname('@need['@i])+ "^000000 10��";
+					mes "^3152FF" +getitemname('@need['@i])+ "^000000 10個";
 				next;
-				mes "[�~�P��=���J���g=�j�L�[�^]";
-				mes "���������w�͂����p�������Ăق����B";
-				mes "�ł͍s���Ă���悤�ɁB";
-				mes "�N�ɃI�[�f�B���̉��삪����񂱂Ƃ��B";
+				mes "[ミケル=レカント=ニキータ]";
+				mes "もう少し努力した姿を見せてほしい。";
+				mes "では行ってくるように。";
+				mes "君にオーディンの加護があらんことを。";
 				close;
 			}
 		}
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�悵�I�w�͂����ȁI";
-		mes "�N�̓w�͂�F�߁A�N���Z�C�_�[�ւ�";
-		mes "�������󂯂邱�Ƃ�F�߂悤�B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "よし！努力したな！";
+		mes "君の努力を認め、クルセイダーへの";
+		mes "試練を受けることを認めよう。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�����i�N=�~���I�ɉ���Ă݂�B";
-		mes "���̃v�����e����n���č��ɋ���B";
-		mes "�܂��͔ނƉ���Ęb������̂��B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "ムルナク=ミヨオに会ってみよ。";
+		mes "このプロンテラ城地下監獄に居る。";
+		mes "まずは彼と会って話をするのだ。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�ނ��N�̂��ׂ����Ƃ�";
-		mes "�����Ă���邾�낤�B";
-		mes "���ׂĂ̎������I�������";
-		mes "�܂����̌��֖߂��Ă����B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "彼が君のすべきことを";
+		mes "教えてくれるだろう。";
+		mes "すべての試練が終わったら";
+		mes "また私の元へ戻ってこい。";
 		for(set '@i,0; '@i<4; set '@i,'@i+1)
 			delitem '@need['@i],10;
 		set CHANGE_CRU,4;
 		close;
-	default:	//4�`9�̂Ƃ�
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�͂܂����ׂĂ̎�����";
-		mes "�B�����Ă��Ȃ��B";
-		mes "���̌N�ɃN���Z�C�_�[�ɂȂ�";
-		mes "���������邩���킩��Ȃ��B";
+	default:	//4～9のとき
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君はまだすべての試練を";
+		mes "達成していない。";
+		mes "今の君にクルセイダーになる";
+		mes "資質があるかもわからない。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�S�Ă̎�����B�����Ă���";
-		mes "�܂�����悤�ɁB";
-		mes "���̎��]���������B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "全ての試練を達成してから";
+		mes "また来るように。";
+		mes "その時評価を下す。";
 		close;
 	case 10:
 		if(SkillPoint) {
-			mes "[�~�P��=���J���g=�j�L�[�^]";
-			mes "���ށc�c�N�͂܂����m�Ƃ���";
-			mes "�擾�ł���X�L�����c����";
-			mes "����悤���B���̃X�L�����K��";
-			mes "���Ă���܂������B";
+			mes "[ミケル=レカント=ニキータ]";
+			mes "うむ……君はまだ剣士として";
+			mes "取得できるスキルが残って";
+			mes "いるようだ。他のスキルを習得";
+			mes "してからまたこい。";
 			close;
 		}
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�N�͑S�Ă̎��������z�����I";
-		mes "���h���B";
-		mes "�����S�g���ɁA��X�Ɛ���ɔ�����";
-		mes "���Ƃ��ł���B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "君は全ての試練を乗り越えた！";
+		mes "立派だ。";
+		mes "もう心身共に、我々と聖戦に備える";
+		mes "ことができる。";
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���߂łƂ��B";
-		mes "���A�N�͉�X�̓��u�Ƃ���";
-		mes "���܂�ς�����̂��B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "おめでとう。";
+		mes "今、君は我々の同志として";
+		mes "生まれ変わったのだ。";
 		set '@amount,(JobLevel >= 50)? 12: 6;
 		unequip;
 		jobchange Job_Crusader;
 		set CHANGE_CRU,0;
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "�����Ă���ً͋}��v���ꍇ��";
-		mes "�g���Ɨǂ��c�c�B";
-		mes "�������N���Z�C�_�[�ɁA����x";
-		mes "�키�͂�^���Ă���邾�낤�B";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "そしてこれは緊急を要す場合に";
+		mes "使うと良い……。";
+		mes "私たちクルセイダーに、今一度";
+		mes "戦う力を与えてくれるだろう。";
 		getitem 504,'@amount;
 		next;
-		mes "[�~�P��=���J���g=�j�L�[�^]";
-		mes "���킪���Ƃ���邱�Ƃ����";
-		mes "���ɓ���A�C���𑱂��Ȃ����B";
-		mes "�N�ɃI�[�f�B���̉��삪����񂱂Ƃ��B";
-		mes "�ł͍s���Ȃ����I";
+		mes "[ミケル=レカント=ニキータ]";
+		mes "聖戦がおとずれることを常に";
+		mes "頭に入れ、修練を続けなさい。";
+		mes "君にオーディンの加護があらんことを。";
+		mes "では行きなさい！";
 		close;
 	}
-	mes "[�~�P��=���J���g=�j�L�[�^]";
-	mes "���ށc�c";
-	mes "�N�̒��ɃN���Z�C�_�[�Ƃ��Ă�";
-	mes "�f�����_�Ԍ����C������B";
-	mes "���������ꂾ���ł͂܂�";
-	mes "�킩��Ȃ��B�������󂯂Ă��炤�B";
+	mes "[ミケル=レカント=ニキータ]";
+	mes "うむ……";
+	mes "君の中にクルセイダーとしての";
+	mes "素質を垣間見た気がする。";
+	mes "しかしそれだけではまだ";
+	mes "わからない。試練を受けてもらう。";
 	next;
-	mes "[�~�P��=���J���g=�j�L�[�^]";
-	mes "�����i�N=�~���I�ɉ���Ă݂�B";
-	mes "���̃v�����e����n���č��ɋ���B";
-	mes "�܂��͔ނƉ���Ęb������̂��B";
+	mes "[ミケル=レカント=ニキータ]";
+	mes "ムルナク=ミヨオに会ってみよ。";
+	mes "このプロンテラ城地下監獄に居る。";
+	mes "まずは彼と会って話をするのだ。";
 	next;
-	mes "[�~�P��=���J���g=�j�L�[�^]";
-	mes "�ނ��N�̂��ׂ����Ƃ�";
-	mes "�����Ă���邾�낤�B";
-	mes "���ׂĂ̎������I�������";
-	mes "�܂����̌��֖߂��Ă����B";
+	mes "[ミケル=レカント=ニキータ]";
+	mes "彼が君のすべきことを";
+	mes "教えてくれるだろう。";
+	mes "すべての試練が終わったら";
+	mes "また私の元へ戻ってこい。";
 	delitem 1004,1;
 	delitem 1009,1;
 	set CHANGE_CRU,4;
@@ -310,202 +310,202 @@ prt_castle.gat,45,169,4	script	�}�X�^�[�N���Z�C�_�[	752,{
 
 
 //==========================================
-// �ꎟ�����i�E�ϗ͎����j
+// 一次試験（忍耐力試験）
 //------------------------------------------
 
-prt_castle.gat,164,32,0	script	�ꂵ�ގ�	733,{
+prt_castle.gat,164,32,0	script	苦しむ者	733,{
 	if(Job == Job_Novice) {
-		mes "[�����i�N=�~���I]";
-		mes "�m�[�r�X�ł����c�c";
-		mes "���͈��҂ł͂���܂���B";
+		mes "[ムルナク=ミヨオ]";
+		mes "ノービスですか……";
+		mes "私は悪者ではありません。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "������b���邽�߂������";
-		mes "�����Ă���̂ł��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "自分を鍛えるためこちらに";
+		mes "入っているのです。";
 		close;
 	}
 	if(Job == Job_Crusader) {
-		mes "[�����i�N=�~���I]";
-		mes "����ȏ��ŗ����~�܂炸";
-		mes "�O�ɐi�݂Ȃ����B";
-		mes "�������B�F���������";
-		mes "�키���̓��܂Łc�c";
+		mes "[ムルナク=ミヨオ]";
+		mes "こんな所で立ち止まらず";
+		mes "前に進みなさい。";
+		mes "いつか私達皆が剣を取り";
+		mes "戦うその日まで……";
 		close;
 	}
 	if(Job != Job_Swordman) {
-		mes "[�����i�N=�~���I]";
-		mes "�C���U��܂��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "気が散ります。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "���̏C���̎ז������Ȃ��ł��������B";
+		mes "[ムルナク=ミヨオ]";
+		mes "私の修練の邪魔をしないでください。";
 		close;
 	}
 	switch(CHANGE_CRU) {
-	default:	//0�`3�̂Ƃ�
-		mes "[�����i�N=�~���I]";
-		mes "�Ȃ�ł����H";
-		mes "���ɗp�������Ȃ�΁A�����炩��";
-		mes "�o�Ă����Ă��������c�c";
-		mes "�C�����̎��ɕK�v�Ȃ̂́A";
-		mes "�����u�Â����v�Ȃ̂�����B";
+	default:	//0～3のとき
+		mes "[ムルナク=ミヨオ]";
+		mes "なんですか？";
+		mes "特に用が無いならば、こちらから";
+		mes "出ていってください……";
+		mes "修練中の私に必要なのは、";
+		mes "何より「静けさ」なのだから。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "���������Ă��鐹��̂��߂�";
-		mes "��ɕ���S��ۂ��Ȃ���΂Ȃ�Ȃ��B";
-		mes "�ł�����A�Ȃ��͂����Ă��������B";
+		mes "[ムルナク=ミヨオ]";
+		mes "いつか迫ってくる聖戦のために";
+		mes "常に平常心を保たなければならない。";
+		mes "ですから、席をはずしてください。";
 		close;
 	case 4:
-		mes "[�����i�N=�~���I]";
-		mes "���̗p�ł����H";
-		mes "�C�����̎��ɉ����p�ł�������ł����H";
+		mes "[ムルナク=ミヨオ]";
+		mes "何の用ですか？";
+		mes "修練中の私に何か用でもおありですか？";
 		next;
-		if(select("�N���Z�C�_�[�ɂȂ肽����ł�","�Ȃ�ł��Ȃ��ł�")==2) {
-			mes "[�����i�N=�~���I]";
-			mes "�ɂȂ�ł����H";
-			mes "����ȂƂ���ŗV��ł��Ȃ���";
-			mes "�\�ɏo�ă[���s�[�ł��E����";
-			mes "���Ȃ����B";
+		if(select("クルセイダーになりたいんです","なんでもないです")==2) {
+			mes "[ムルナク=ミヨオ]";
+			mes "暇なんですか？";
+			mes "こんなところで遊んでいないで";
+			mes "表に出てゼロピーでも拾って";
+			mes "いなさい。";
 			close;
 		}
-		mes "[�����i�N=�~���I]";
-		mes "�N���Z�C�_�[�u�]�҂��c�c";
-		mes "�߂��炵���c�c";
-		mes "���̖��O�̓����i�N=�~���I";
-		mes "����ւ̏����������l���B";
+		mes "[ムルナク=ミヨオ]";
+		mes "クルセイダー志望者か……";
+		mes "めずらしい……";
+		mes "私の名前はムルナク=ミヨオ";
+		mes "聖戦への準備をする一人だ。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "���O�́c�c";
-		mes strcharinfo(0)+ "�ł����B";
-		mes "�悭�p�������Ă��������B";
+		mes "[ムルナク=ミヨオ]";
+		mes "名前は……";
+		mes strcharinfo(0)+ "ですか。";
+		mes "よく姿を見せてください。";
 		next;
-		if(equippeditem(2608) < 1) {	//���U���[������
-			mes "[�����i�N=�~���I]";
-			mes "�������I";
-			mes "�N���Z�C�_�[�ɂȂ낤�Ƃ����҂�";
-			mes "���U���[���g�ɂ��Ă��Ȃ��Ƃ�";
-			mes "�ǂ��������Ƃł����B";
-			mes "����ȐS�\���̕��Ɏ�����";
-			mes "�b�����Ƃ͂���܂���B";
+		if(equippeditem(2608) < 1) {	//ロザリー未装備
+			mes "[ムルナク=ミヨオ]";
+			mes "しかし！";
+			mes "クルセイダーになろうという者が";
+			mes "ロザリーも身につけていないとは";
+			mes "どういうことですか。";
+			mes "そんな心構えの方に私から";
+			mes "話すことはありません。";
 			next;
-			mes "[�����i�N=�~���I]";
-			mes "�O�ɏo�čs���Ȃ����B";
+			mes "[ムルナク=ミヨオ]";
+			mes "外に出て行きなさい。";
 			close;
 		}
-		mes "[�����i�N=�~���I]";
-		mes "�Ȃ�قǁc�c";
-		mes "�S�\���͗ǂ��ł��傤�B";
-		mes "���ꂾ���ŃN���Z�C�_�[��";
-		mes "�Ȃ��킯�ł͂���܂��񂪁B";
+		mes "[ムルナク=ミヨオ]";
+		mes "なるほど……";
+		mes "心構えは良いでしょう。";
+		mes "それだけでクルセイダーに";
+		mes "なれるわけではありませんが。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "�ł́A�܂����Ȃ��̔E�ϗ͂�";
-		mes "���邱�Ƃɂ��܂��傤�B";
-		mes "�N���Z�C�_�[�ɂ͕����ɑς���";
-		mes "�������_�͂��K�v�Ȃ̂ł��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "では、まずあなたの忍耐力を";
+		mes "見ることにしましょう。";
+		mes "クルセイダーには物事に耐える";
+		mes "強い精神力が必要なのです。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "�����Ɏn�߂܂��傤�B";
-		mes "�ȂɁA���قǓ��������܂���B";
-		mes "���������Ō�܂Ői�ނ�����";
-		mes "�ǂ��̂ł�����c�c";
+		mes "[ムルナク=ミヨオ]";
+		mes "すぐに始めましょう。";
+		mes "なに、さほど難しくもありません。";
+		mes "ただ道を最後まで進むだけで";
+		mes "良いのですから……";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "������̂ɖ����Ă�����";
-		mes "�ق������Ƃ�����܂��B";
-		mes "���������Ă������X�^�[��";
-		mes "�|���Ă͂����܂���B";
+		mes "[ムルナク=ミヨオ]";
+		mes "一つだけ肝に銘じておいて";
+		mes "ほしいことがあります。";
+		mes "何があってもモンスターを";
+		mes "倒してはいけません。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "����ł͍s���Ȃ����B";
+		mes "[ムルナク=ミヨオ]";
+		mes "それでは行きなさい。";
 		break;
 	case 5:
-		mes "[�����i�N=�~���I]";
-		mes "��قǂ̌��m��A���̗p���ł����H";
-		mes "�ӂށc�c���s���܂������c�c";
+		mes "[ムルナク=ミヨオ]";
+		mes "先ほどの剣士よ、何の用事ですか？";
+		mes "ふむ……失敗しましたか……";
 		next;
-		if(select("�܂����킳���Ă�������","����͂ǂ����������ł����H")==2) {
-			mes "[�����i�N=�~���I]";
-			mes "�c�c��H";
-			mes "�����ɂ�������̎������C�ɐH��Ȃ�";
-			mes "�Ƃ������ӂ��ł��ˁB";
-			mes "���Ȃ��̂悤�Ȑl�ɂ́A����ւ�";
-			mes "�����ɉ�����Ăق�������܂���B";
+		if(select("また挑戦させてください","これはどういう試練ですか？")==2) {
+			mes "[ムルナク=ミヨオ]";
+			mes "……ん？";
+			mes "いかにも私からの試練が気に食わない";
+			mes "といったふうですね。";
+			mes "あなたのような人には、聖戦への";
+			mes "備えに加わってほしくありません。";
 			next;
-			mes "[�����i�N=�~���I]";
-			mes "�S�����ւ��ė���܂�";
-			mes "���ɘb�������Ȃ��ł��������B";
+			mes "[ムルナク=ミヨオ]";
+			mes "心を入れ替えて来るまで";
+			mes "私に話しかけないでください。";
 			close;
 		}
-		mes "[�����i�N=�~���I]";
-		mes "���x�ł����킳���Ă����܂��B";
-		mes "�������A���s����Ƃ������Ƃ�";
-		mes "���Ȃ��̐S�ɖ�肪����Ƃ���";
-		mes "���Ƃł��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "何度でも挑戦させてあげます。";
+		mes "しかし、失敗するということは";
+		mes "あなたの心に問題があるという";
+		mes "ことです。";
 		next;
-		if(equippeditem(2608) < 1) {	//���U���[������
-			mes "[�����i�N=�~���I]";
-			mes "�܂����U���[���ǂ����ɒu����";
-			mes "���Ă��܂����̂ł����H";
-			mes "�I�[�f�B���̉�����󂯂Ă���";
-			mes "���B���A���U���[��e���Ɉ����Ă�";
-			mes "�Ȃ�܂���B";
+		if(equippeditem(2608) < 1) {	//ロザリー未装備
+			mes "[ムルナク=ミヨオ]";
+			mes "またロザリーをどこかに置いて";
+			mes "きてしまったのですか？";
+			mes "オーディンの加護を受けている";
+			mes "私達が、ロザリーを粗末に扱っては";
+			mes "なりません。";
 			next;
-			mes "[�����i�N=�~���I]";
-			mes "�����l��������U�肩���������ł�";
-			mes "�����X�^�[�Ƃ��قǈႢ�͂���܂���B";
-			mes "�����ɒ��킵�����΁A�܂��S�\���Ƃ���";
-			mes "���U���[��g�ɂ��Ă��Ȃ����B";
+			mes "[ムルナク=ミヨオ]";
+			mes "何も考えず剣を振りかざすだけでは";
+			mes "モンスターとさほど違いはありません。";
+			mes "試練に挑戦したくば、まず心構えとして";
+			mes "ロザリーを身につけてきなさい。";
 			close;
 		}
-		mes "[�����i�N=�~���I]";
-		mes "���i���烂���X�^�[�������";
-		mes "�������𔲂��c�c���̕Ȃ�";
-		mes "�����Ă��Ȃ��悤�ł��ˁB";
-		mes "��������̂͂��Ȃ��̔E�ϗ�";
-		mes "���Ƃ������Ƃ�Y��Ȃ��ł��������B";
+		mes "[ムルナク=ミヨオ]";
+		mes "普段からモンスターを見ると";
+		mes "すぐ剣を抜く……その癖が";
+		mes "抜けていないようですね。";
+		mes "私が見るのはあなたの忍耐力";
+		mes "だということを忘れないでください。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "����ł͂�����x�����܂����A";
-		mes "��������i�ݍŌ�܂ŒH�蒅����";
-		mes "�ǂ��̂ł��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "それではもう一度言いますが、";
+		mes "ただ道を進み最後まで辿り着けば";
+		mes "良いのです。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "���������Ă������X�^�[��";
-		mes "�|���Ă͂Ȃ�܂���B";
-		mes "�����̂Ƃ�����̂ɖ�����";
-		mes "�i�݂Ȃ����B";
+		mes "[ムルナク=ミヨオ]";
+		mes "何があってもモンスターを";
+		mes "倒してはなりません。";
+		mes "そこのところを肝に銘じて";
+		mes "進みなさい。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "����ł͎n�߂܂��B";
+		mes "[ムルナク=ミヨオ]";
+		mes "それでは始めます。";
 		break;
 	case 6:
-		mes "[�����i�N=�~���I]";
-		mes "�悵�A�ǂ��ł��ˁB";
-		mes "�ǂ��ł����H���قǓ����";
-		mes "�Ȃ������ł��傤�B";
-		mes "����������͘b�����Ƃ�";
-		mes "����܂���B";
+		mes "[ムルナク=ミヨオ]";
+		mes "よし、良いですね。";
+		mes "どうでした？さほど難しくは";
+		mes "なかったでしょう。";
+		mes "もう私からは話すことは";
+		mes "ありません。";
 		next;
-		mes "[�����i�N=�~���I]";
-		mes "�v�����e���吹���ɋ���";
-		mes "�P�C�i=�o�����^�C����";
-		mes "����Ă݂Ă��������B";
-		mes "���̎�����^���Ă����ł��傤�B";
-		mes "����ł́B";
+		mes "[ムルナク=ミヨオ]";
+		mes "プロンテラ大聖堂に居る";
+		mes "ケイナ=バレンタインに";
+		mes "会ってみてください。";
+		mes "次の試練を与えてくれるでしょう。";
+		mes "それでは。";
 		close;
 	case 7:
 	case 8:
 	case 9:
 	case 10:
-		mes "[�����i�N=�~���I]";
-		mes "����ȂƂ���Ŗ��𔄂��Ă��Ă�";
-		mes "�Ȃ�܂����B";
+		mes "[ムルナク=ミヨオ]";
+		mes "こんなところで油を売っていては";
+		mes "なりませんよ。";
 		close;
 	}
-	//5,6�̂Ƃ��̑���
+	//5,6のときの続き
 	close2;
 	warp "job_cru.gat",98,40;
-	if(getnpctimer(1,"#CRU_1stTest") == 0) {	//�^�C�}�[����~���Ă�Ȃ瓮����
+	if(getnpctimer(1,"#CRU_1stTest") == 0) {	//タイマーが停止してるなら動かす
 		donpcevent "#CRU_1stTest::OnStart";
 		for(set '@i,0; '@i<3 ; set '@i,'@i+1)
 			awake "#CRU_1stTest";
@@ -517,7 +517,7 @@ prt_castle.gat,164,32,0	script	�ꂵ�ގ�	733,{
 job_cru.gat,0,0,0	script	#CRU_1stTest	-1,{
 	end;
 OnTimer150000:
-	if(getareausers("job_cru.gat",90,34,105,105) == 0) {	//�N�����Ȃ��Ȃ�mob�𖕏�
+	if(getareausers("job_cru.gat",90,34,105,105) == 0) {	//誰も居ないならmobを抹消
 		for(set '@i,0; '@i<3 ; set '@i,'@i+1)
 			awake "#CRU_1stTest";
 		killmonster "job_cru.gat","All";
@@ -527,48 +527,48 @@ OnTimer150000:
 OnStart:
 	initnpctimer;
 	killmonster "job_cru.gat","#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,50,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,55,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,60,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,65,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,70,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,75,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,80,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,85,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
-	monster "job_cru.gat",98,90,"�t�@�~���A�[",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,50,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,55,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,60,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,65,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,70,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,75,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,80,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,85,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
+	monster "job_cru.gat",98,90,"ファミリアー",1005,1,"#CRU_1stTest::OnKilled1";
 	sleep 50000;
 	killmonster "job_cru.gat","#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,45,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,45,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,55,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,55,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,65,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,65,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,75,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,75,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,85,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,85,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",94,95,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
-	monster "job_cru.gat",101,95,"�}���h���S��",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,45,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,45,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,55,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,55,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,65,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,65,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,75,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,75,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,85,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,85,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",94,95,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
+	monster "job_cru.gat",101,95,"マンドラゴラ",1020,1,"#CRU_1stTest::OnKilled2";
 	sleep 50000;
 	killmonster "job_cru.gat","#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",98,50,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",92,60,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",104,60,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",98,70,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",92,80,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",104,80,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
-	monster "job_cru.gat",98,90,"�t���[��",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",98,50,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",92,60,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",104,60,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",98,70,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",92,80,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",104,80,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
+	monster "job_cru.gat",98,90,"フローラ",1118,1,"#CRU_1stTest::OnKilled3";
 	sleep 50000;
 	killmonster "job_cru.gat","#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",90,50,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",105,50,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",98,60,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",90,70,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",105,70,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",98,80,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",90,90,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
-	monster "job_cru.gat",105,90,"�V���叫�R",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",90,50,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",105,50,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",98,60,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",90,70,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",105,70,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",98,80,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",90,90,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
+	monster "job_cru.gat",105,90,"天下大将軍",1277,1,"#CRU_1stTest::OnKilled4";
 	end;
 OnKilled1:
 OnKilled2:
@@ -586,571 +586,571 @@ job_cru.gat,98,105,0	script	#CRU_1stWarp	45,1,1,{
 
 
 //==========================================
-// �񎟎����i�M�L�����j
+// 二次試験（筆記試験）
 //------------------------------------------
 
-prt_church.gat,95,127,4	script	�����R�m	745,{
+prt_church.gat,95,127,4	script	聖堂騎士	745,{
 	switch(CHANGE_CRU) {
 	case 0:
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "��������Ⴂ�܂��B";
-		mes "���̓N���Z�C�_�[�ł��B";
-		mes "�����K���Ƃ��������";
-		mes "������҂ł��B";
+		mes "[ケイナ=バレンタイン]";
+		mes "いらっしゃいませ。";
+		mes "私はクルセイダーです。";
+		mes "いつか訪れるという聖戦に";
+		mes "備える者です。";
 		next;
 		if(Job == Job_Novice) {
-			mes "[�P�C�i=�o�����^�C��]";
-			mes "�����N���Z�C�_�[�Ɋ֐S������΁A";
-			mes "���m�Ƃ��ďC����ς�ł��������B";
-			mes "�������ł�����x���m�Ƃ���";
-			mes "�C����ς񂾂Ɣ��f���ꂽ��";
-			mes "�܂�������ւ��炵�Ă��������B";
+			mes "[ケイナ=バレンタイン]";
+			mes "もしクルセイダーに関心があれば、";
+			mes "剣士として修練を積んでください。";
+			mes "ご自分である程度剣士として";
+			mes "修練を積んだと判断されたら";
+			mes "またこちらへいらしてください。";
 			next;
-			mes "[�P�C�i=�o�����^�C��]";
-			mes "���B�̓v�����e����ɏo�d����";
-			mes "���܂��B";
-			mes "��x��������Ă݂Ă�";
-			mes "�������ł��傤���B";
+			mes "[ケイナ=バレンタイン]";
+			mes "私達はプロンテラ城に出仕して";
+			mes "います。";
+			mes "一度立ち寄ってみては";
+			mes "いかがでしょうか。";
 			close;
 		}
 		if(Job == Job_Crusader) {
-			mes "[�P�C�i=�o�����^�C��]";
-			mes "��������Ⴂ�܂��A�N���Z�C�_�[�l�B";
-			mes "��������ƏC����ςݏd�˂�";
-			mes "���������邲�l�q�B";
+			mes "[ケイナ=バレンタイン]";
+			mes "いらっしゃいませ、クルセイダー様。";
+			mes "しっかりと修練を積み重ねて";
+			mes "いらっしゃるご様子。";
 			next;
-			mes "[�P�C�i=�o�����^�C��]";
-			mes "�����K��鐹��̂��߂�";
-			mes "�����͖��[�Ɂc�c";
+			mes "[ケイナ=バレンタイン]";
+			mes "いつか訪れる聖戦のために";
+			mes "備えは万端に……";
 			close;
 		}
 		if(Job != Job_Swordman) {
-			mes "[�P�C�i=�o�����^�C��]";
-			mes "���Ȃ�����Ɏ�����b��";
-			mes "�����ɔ����Ă��������ˁB";
+			mes "[ケイナ=バレンタイン]";
+			mes "あなたも常に自分を鍛え";
+			mes "未来に備えてくださいね。";
 			close;
 		}
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�����N���Z�C�_�[�ɓ]�E���������";
-		mes "�v�����e������ɋ��鎄�B��";
-		mes "�}�X�^�[��K�˂Ă݂Ă��������B";
+		mes "[ケイナ=バレンタイン]";
+		mes "もしクルセイダーに転職したければ";
+		mes "プロンテラ城内に居る私達の";
+		mes "マスターを訪ねてみてください。";
 		close;
-	default:	//1�`5�̂Ƃ�
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "���Ȃ��̓N���Z�C�_�[�ւ̓]�E";
-		mes "��]�҂ł��ˁH";
-		mes "�܂����ɉ�i�K�܂Ŏ�����";
-		mes "���Ȃ��Ă��܂���B";
+	default:	//1～5のとき
+		mes "[ケイナ=バレンタイン]";
+		mes "あなたはクルセイダーへの転職";
+		mes "希望者ですね？";
+		mes "まだ私に会う段階まで試練を";
+		mes "こなしていません。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "���̎������󂯂Ă���A";
-		mes "�ēx���炵�Ă��������B";
-		mes "���҂����Ă���܂��B";
-		mes "����ł́c�c";
+		mes "[ケイナ=バレンタイン]";
+		mes "他の試練を受けてから、";
+		mes "再度いらしてください。";
+		mes "お待ちしております。";
+		mes "それでは……";
 		close;
 	case 6:
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "��������Ⴂ�܂��B";
-		mes "�E�ς̎�����ʉ߂��܂����ˁB";
-		mes "���̎����͎����S�����܂��B";
+		mes "[ケイナ=バレンタイン]";
+		mes "いらっしゃいませ。";
+		mes "忍耐の試練を通過しましたね。";
+		mes "次の試練は私が担当します。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "���̖��O�̓P�C�i=�o�����^�C���B";
-		mes "����ɔ�����҂̈�l�ł��B";
-		mes "������̐����ł́A���E�Ҍ�q��";
-		mes "�C���ɂ��Ă���܂��B";
+		mes "[ケイナ=バレンタイン]";
+		mes "私の名前はケイナ=バレンタイン。";
+		mes "聖戦に備える者の一人です。";
+		mes "こちらの聖堂では、聖職者護衛の";
+		mes "任務についております。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "���́A���Ȃ����N���Z�C�_�[��";
-		mes "�Ȃ�邾���̒m������������";
-		mes "�ǂ������������Ă��������܂��B";
-		mes "��������U�邾���ł͐����";
-		mes "���������߂邱�Ƃ��ł��܂���B";
+		mes "[ケイナ=バレンタイン]";
+		mes "私は、あなたがクルセイダーに";
+		mes "なれるだけの知識をお持ちか";
+		mes "どうかを見させていただきます。";
+		mes "ただ剣を振るだけでは聖戦で";
+		mes "勝利を収めることができません。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�ł́A����10�o���܂��B";
-		mes "�ǂ������āA�������������o����";
-		mes "���������B";
+		mes "[ケイナ=バレンタイン]";
+		mes "では、問題を10個出します。";
+		mes "良く聞いて、正しい答えを出して";
+		mes "ください。";
 		set CHANGE_CRU,7;
 		break;
 	case 7:
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "��������Ⴂ�܂��B";
-		mes "�����͖��[�ł����H";
+		mes "[ケイナ=バレンタイン]";
+		mes "いらっしゃいませ。";
+		mes "準備は万端ですか？";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "���������10�o���܂��B";
-		mes "�悭�����āA������������";
-		mes "�o���Ă��������ˁB";
+		mes "[ケイナ=バレンタイン]";
+		mes "今回も問題を10個出します。";
+		mes "よく聞いて、正しい答えを";
+		mes "出してくださいね。";
 		break;
 	case 8:
 	case 9:
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�\���グ���悤�ɁA";
-		mes "���̎����֌������Ă��������B";
+		mes "[ケイナ=バレンタイン]";
+		mes "申し上げたように、";
+		mes "次の試練へ向かってください。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�v�����e����ɂ���������";
-		mes "�u���b�e��=�q���h�l�ɂ������";
-		mes "���������B";
+		mes "[ケイナ=バレンタイン]";
+		mes "プロンテラ城にいらっしゃる";
+		mes "ブリッテン=ヒルド様にお会いして";
+		mes "ください。";
 		close;
 	case 10:
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "������ŉ����Ȃ����Ă���̂ł����H";
-		mes "�����͑S�ăN���A�����͂��ł��B";
-		mes "�}�X�^�[�c���ɂ�����Ă݂ẮH";
+		mes "[ケイナ=バレンタイン]";
+		mes "こちらで何をなさっているのですか？";
+		mes "試練は全てクリアしたはずです。";
+		mes "マスター団長にお会いしてみては？";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�N���Z�C�_�[�ɂȂ�̂����������ł��B";
-		mes "�܂�A���B�̈���ƂȂ�킯�ł��B";
-		mes "�]�E����b�B��ӂ炸�ɁB";
+		mes "[ケイナ=バレンタイン]";
+		mes "クルセイダーになるのもすぐそこです。";
+		mes "つまり、私達の一員となるわけです。";
+		mes "転職後も鍛錬を怠らずに。";
 		close;
 	}
-	//�M�L������������
+	//筆記試験ここから
 	next;
 	switch(rand(3)) {
 	case 0:
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "1.";
-		mes "�A���f�b�g�Ɍ��ʓI�ȑ����U���́H";
+		mes "アンデットに効果的な属性攻撃は？";
 		next;
-		if(select("������","�n����","�s������","������")==4)
+		if(select("無属性","地属性","不死属性","聖属性")==4)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "2.";
-		mes "�����X�^�[���s������Lv2�̎��A";
-		mes "�������U���ɂ���ė^����";
-		mes "�_���[�W�͂ǂ��Ȃ邩�B";
+		mes "モンスターが不死属性Lv2の時、";
+		mes "聖属性攻撃によって与える";
+		mes "ダメージはどうなるか。";
 		next;
 		if(select("125%","150%","175%","200%")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "3.";
-		mes "�C�r���h���C�h���瓾�邱�Ƃ�";
-		mes "�ł��Ȃ��A�C�e���͂ǂꂩ�B";
+		mes "イビルドルイドから得ることが";
+		mes "できないアイテムはどれか。";
 		next;
-		if(select("���E�҂̖X�q","�C�O�h���V���̗t","���n�[�u","�ԍ��̂��D")==1)
+		if(select("聖職者の帽子","イグドラシルの葉","白ハーブ","返魂のお札")==1)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "4.";
-		mes "���̃A���f�b�h�����̒���";
-		mes "���HP�̍������̂́H";
+		mes "次のアンデッドたちの中で";
+		mes "一番HPの高いものは？";
 		next;
-		if(select("�O�[��","�X�P���v���Y�i�[","���C�X","�]���r�v���Y�i�[")==4)
+		if(select("グール","スケルプリズナー","レイス","ゾンビプリズナー")==4)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "5.";
-		mes "���̃A���f�b�h�̒���";
-		mes "�傫���̈Ⴄ���͂ǂꂩ�B";
+		mes "次のアンデッドの中で";
+		mes "大きさの違う物はどれか。";
 		next;
-		if(select("���C�X","�J�[���b�c�o�[�O","�h���C�N","�C�r���h���C�h")==3)
+		if(select("レイス","カーリッツバーグ","ドレイク","イビルドルイド")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "6.";
-		mes "�s�������U���ɑϐ������J�[�h�́H";
+		mes "不死属性攻撃に耐性を持つカードは？";
 		next;
-		if(select("�I�[�N�X�P���g���J�[�h","�I�[�N�]���r�J�[�h","�O�[���J�[�h","�X�P�����[�J�[�J�[�h")==2)
+		if(select("オークスケルトンカード","オークゾンビカード","グールカード","スケルワーカーカード")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "7.";
-		mes "���i�b�N�ƃ{���S���͐�";
-		mes "�ǂ�Ȋ֌W���������B";
+		mes "ムナックとボンゴンは昔";
+		mes "どんな関係だったか。";
 		next;
-		if(select("���̌Z��","�������̎o��݂����Ȓ�","�`���̌Z��","�s��")==2)
+		if(select("実の兄妹","同じ村の姉弟みたいな仲","義理の兄妹","不明")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "8.";
-		mes "���̒��ŁA�搧�U����";
-		mes "���Ă��Ȃ��A���f�b�h��I�ׁB";
+		mes "次の中で、先制攻撃を";
+		mes "してこないアンデッドを選べ。";
 		next;
-		if(select("�\���W���[�X�P���g��","�I�[�N�X�P���g��","�X�P���g��","�X�P�����[�J�[")==3)
+		if(select("ソルジャースケルトン","オークスケルトン","スケルトン","スケルワーカー")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "9.";
-		mes "���i�b�N�J�[�h������";
-		mes "�V�[���h�̖��O�́H";
+		mes "ムナックカードをつけた";
+		mes "シールドの名前は？";
 		next;
-		if(select("�A�g�~�b�N �V�[���h","�A�����b�g �V�[���h","�q�v�m�e�B�b�N �V�[���h","�z���[���X �V�[���h")==2)
+		if(select("アトミック シールド","アムレット シールド","ヒプノティック シールド","ホメーロス シールド")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "10.";
-		mes "���҂̈�i�𗎂Ƃ��Ȃ��A���f�b�h�́H";
+		mes "死者の遺品を落とさないアンデッドは？";
 		next;
-		if(select("���i�b�N","�O�[��","�}�~�[","�\���W���[�X�P���g��")==1)
+		if(select("ムナック","グール","マミー","ソルジャースケルトン")==1)
 			set '@point,'@point+10;
 		break;
 	case 1:
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "1.";
-		mes "���̒��ŁA�����̈Ⴄ�����푰";
-		mes "�����X�^�[�͂ǂꂩ�B";
+		mes "次の中で、属性の違う悪魔種族";
+		mes "モンスターはどれか。";
 		next;
-		if(select("�W�F�X�^�[","�E�B���h�S�[�X�g","�C�V�X","�f�r����")==3)
+		if(select("ジェスター","ウィンドゴースト","イシス","彷徨う者")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "2.";
-		mes "�����푰�����X�^�[�Ɍ��ʓI��";
-		mes "���͎��̒��łǂꂩ�B";
+		mes "悪魔種族モンスターに効果的な";
+		mes "剣は次の中でどれか。";
 		next;
-		//if(select("�f�N�X�g���[�X �c���M","�n���E�h �c���M","�n�C�u���b�h �c���M","�T�C�h���C�N �c���M")==2) //�{�I�d�l
-		if(select("�f�N�X�g���[�X �c���M","�f�B�J�[�Z�C�g �c���M","�n�C�u���b�h �c���M","�T�C�h���C�N �c���M")==2)
+		//if(select("デクストロース ツルギ","ハロウド ツルギ","ハイブリッド ツルギ","サイドライク ツルギ")==2) //本鯖仕様
+		if(select("デクストロース ツルギ","ディカーセイト ツルギ","ハイブリッド ツルギ","サイドライク ツルギ")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "3.";
-		mes "�h�P�r�����Ƃ��Ȃ��A�C�e����";
-		mes "���̂����ǂꂩ�B";
+		mes "ドケビが落とさないアイテムは";
+		mes "次のうちどれか。";
 		next;
-		if(select("�G���j�E������","�S�[���f�����C�X","�\�[�h���C�X","�}�C�g�X�^�b�t")==2)
+		if(select("エルニウム原石","ゴールデンメイス","ソードメイス","マイトスタッフ")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "4.";
-		mes "���̒���HP����ԍ��������X�^�[�́H";
+		mes "次の中でHPが一番高いモンスターは？";
 		next;
-		if(select("�K�C�A�X","���@��","�h�P�r","�}���I�l�b�g")==4)
+		if(select("ガイアス","白蓮玉","ドケビ","マリオネット")==4)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "5.";
-		mes "���̈����푰�����X�^�[�̒���";
-		mes "�傫���̈Ⴄ���̂́H";
+		mes "次の悪魔種族モンスターの中で";
+		mes "大きさの違うものは？";
 		next;
-		if(select("�S�[�X�g�����O","�E�B�X�p�[","�f�r���`","�o�t�H���b�g�W���j�A")==1)
+		if(select("ゴーストリング","ウィスパー","デビルチ","バフォメットジュニア")==1)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "6.";
-		mes "�ő����U���ɑϐ�������";
-		mes "�}�t���[�͎��̂����ǂꂩ�B";
+		mes "闇属性攻撃に耐性を持つ";
+		mes "マフラーは次のうちどれか。";
 		next;
-		if(select("�O�����A�X �}�t���[","�f�B�o�C�� �}�t���[","�G���W�F���b�N �}�t���[","���b�L���O �}�t���[")==2)
+		if(select("グロリアス マフラー","ディバイン マフラー","エンジェリック マフラー","モッキング マフラー")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "7.";
-		mes "�E�B���h�S�[�X�g�Ɍ��ʓI��";
-		mes "�����U���́H";
+		mes "ウィンドゴーストに効果的な";
+		mes "属性攻撃は？";
 		next;
-		if(select("������","�n����","�Α���","������")==2)
+		if(select("水属性","地属性","火属性","風属性")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "8.";
-		mes "���̈����푰�����X�^�[��";
-		mes "�搧�U�����Ă�����̂͂ǂꂩ�B";
+		mes "次の悪魔種族モンスターで";
+		mes "先制攻撃してくるものはどれか。";
 		next;
-		if(select("�\�q�[","�K�C�A�X","�h�P�r","�E�B�X�p�[")==4)
+		if(select("ソヒー","ガイアス","ドケビ","ウィスパー")==4)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "9.";
-		mes "�}���I�l�b�g�J�[�h�̔\�͂́H";
+		mes "マリオネットカードの能力は？";
 		next;
-		if(select("�ő����U���ɑ΂���ϐ� 30%","�ő����U���ɑ΂���ϐ� 30%","�O�����U���ɑ΂���ϐ� 30%","�������U���ɑ΂���ϐ� 30%")==3)
+		if(select("闇属性攻撃に対する耐性 30%","毒属性攻撃に対する耐性 30%","念属性攻撃に対する耐性 30%","無属性攻撃に対する耐性 30%")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "10.";
-		mes "�����푰�����X�^�[�ɑ�������";
-		mes "���̌��ʓI�ȑΏ��@�́H";
+		mes "悪魔種族モンスターに遭遇した";
+		mes "時の効果的な対処法は？";
 		next;
-		if(select("�u�����߁A�ނ��Ȃ����I�v�Ƌ���","��������Č_�񂷂�","����ɐ����������čU������","�q�����X�����Ԃ�")==3)
+		if(select("「悪魔め、退きなさい！」と叫ぶ","魂を捧げて契約する","武器に聖水をかけて攻撃する","子悪魔帽をかぶる")==3)
 			set '@point,'@point+10;
 		break;
 	case 2:
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "1.";
-		mes "�f�[�����x�C�����擾���邽�߂�";
-		mes "�f�B�o�C���v���e�N�V�����Œ�Lv�́H";
+		mes "デーモンベインを取得するための";
+		mes "ディバインプロテクション最低Lvは？";
 		next;
 		if(select("Lv1","Lv2","Lv3","Lv4")==3)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "2.";
-		mes "BaseLv55�ŁAJob���d�l��";
-		mes "�܂�INT��30�̏ꍇ�A";
-		mes "�q�[��Lv5�̉񕜗ʂ́H";
+		mes "BaseLv55で、Job加重値も";
+		mes "含んだINTが30の場合、";
+		mes "ヒールLv5の回復量は？";
 		next;
 		if(select("396","440","484","528")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "3.";
-		mes "�f�B�o�C���v���e�N�V����Lv7�̎�";
-		mes "�A���f�b�h����̖h��͂�";
-		mes "���������邩�B";
+		mes "ディバインプロテクションLv7の時";
+		mes "アンデッドからの防御力は";
+		mes "いくつ増えるか。";
 		next;
 		if(select("21","22","23","24")==1)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "4.";
-		mes "���̒��ŁA�O�����ł���i�C�g���A��";
-		mes "�U�����邱�Ƃ��ł��鑄�͂ǂꂩ�B";
+		mes "次の中で、念属性であるナイトメアを";
+		mes "攻撃することができる槍はどれか。";
 		next;
-		if(select("�����X","�p���`�U��","�N���Z���g�T�C�_�[","�[�s�����X")==4)
+		if(select("ランス","パルチザン","クレセントサイダー","ゼピュロス")==4)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "5.";
-		mes "�L���A�[���K�����邽�߂�";
-		mes "�q�[���Œ�Lv�͂������B";
+		mes "キュアーを習得するための";
+		mes "ヒール最低Lvはいくつか。";
 		next;
 		if(select("Lv1","Lv2","Lv3","Lv4")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "6.";
-		mes "�R���C����Lv3�܂ŏK�������";
-		mes "�R�掞�U�����x�͂ǂ��Ȃ邩�B";
+		mes "騎兵修練をLv3まで習得すると";
+		mes "騎乗時攻撃速度はどうなるか。";
 		next;
-		if(select("�ʏ�� 70%","�ʏ�� 80%","�ʏ�� 90%","�ʏ�� 100%")==2)
+		if(select("通常の 70%","通常の 80%","通常の 90%","通常の 100%")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "7.";
-		mes "���̒��ŁA�f�[�����x�C����";
-		mes "�����ƈႤ����I�ׁB";
+		mes "次の中で、デーモンベインの";
+		mes "説明と違う物を選べ。";
 		next;
-		if(select("�A���f�b�h�ɑ΂���U���͑���","�A�R���C�g�����̃X�L��","�}�X�^�[�̎� +30 ����","�p�b�V�u�X�L��")==2)
+		if(select("アンデッドに対する攻撃力増加","アコライトだけのスキル","マスターの時 +30 増加","パッシブスキル")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "8.";
-		mes "�q�[��Lv7��SP����ʂ́H";
+		mes "ヒールLv7のSP消費量は？";
 		next;
 		if(select("30","31","33","35")==2)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "9.";
-		mes "�L���A�[�Ŏ��Â��邱�Ƃ��ł��Ȃ�";
-		mes "��Ԉُ�́H";
+		mes "キュアーで治療することができない";
+		mes "状態異常は？";
 		next;
-		if(select("��","����","����","�Í�")==1)
+		if(select("呪い","沈黙","混乱","暗黒")==1)
 			set '@point,'@point+10;
-		mes "[�P�C�i=�o�����^�C��]";
+		mes "[ケイナ=バレンタイン]";
 		mes "10.";
-		mes "�N���Z�C�_�[�Ƃ͂ǂ�ȑ��݂�";
+		mes "クルセイダーとはどんな存在か";
 		next;
-		if(select("���َq��������","����ɔ������","����������","�|�[�V������������")==2)
+		if(select("お菓子を備える者","聖戦に備える者","酒を備える者","ポーションを備える者")==2)
 			set '@point,'@point+10;
 		break;
 	}
-	mes "[�P�C�i=�o�����^�C��]";
-	mes "����ꂳ�܂ł����B";
-	mes "����ł͌��ʂ����m�点���܂��B";
+	mes "[ケイナ=バレンタイン]";
+	mes "お疲れさまでした。";
+	mes "それでは結果をお知らせします。";
 	next;
-	mes "[�P�C�i=�o�����^�C��]";
-	mes strcharinfo(0)+ "�l�̓_����";
-	mes '@point+ "�_�ł��B";
+	mes "[ケイナ=バレンタイン]";
+	mes strcharinfo(0)+ "様の点数は";
+	mes '@point+ "点です。";
 	if( (CHANGE_CRU == 6 && '@point < 90) || (CHANGE_CRU == 7 && '@point < 80) ) {
-		mes "�ɂ��������ł��ˁc�c";
-		mes "���������׋������Ă���";
-		mes "���炵�Ă��������B";
+		mes "惜しかったですね……";
+		mes "もう少し勉強をしてから";
+		mes "いらしてください。";
 		next;
-		mes "[�P�C�i=�o�����^�C��]";
-		mes "�����̒m�����K�v�ł�����A";
-		mes "�������ł���܂ł��҂�����";
-		mes "����܂��B";
-		mes "���M��������܂����炵��";
-		mes "���������B";
+		mes "[ケイナ=バレンタイン]";
+		mes "多くの知識が必要ですから、";
+		mes "準備ができるまでお待ちして";
+		mes "おります。";
+		mes "自信がついたらまたいらして";
+		mes "ください。";
 		close;
 	}
-	mes ('@point < 100)? "�ǂ��ł��ˁB": "���h�ł��c�c";
-	mes "���̎����֌������Ă��������B";
+	mes ('@point < 100)? "良いですね。": "立派です……";
+	mes "次の試練へ向かってください。";
 	next;
-	mes "[�P�C�i=�o�����^�C��]";
-	mes "�v�����e����ɂ���������";
-	mes "�u���b�e��=�q���h�l�ɂ������";
-	mes "���������B";
-	mes "�ނɏ������Ă��������悤�`�B";
-	mes "���Ă����܂��B";
+	mes "[ケイナ=バレンタイン]";
+	mes "プロンテラ城にいらっしゃる";
+	mes "ブリッテン=ヒルド様にお会いして";
+	mes "ください。";
+	mes "彼に準備していただくよう伝達";
+	mes "しておきます。";
 	set CHANGE_CRU,8;
 	close;
 }
 
 
 //==========================================
-// �O�������i�򉻁j
+// 三次試験（浄化）
 //------------------------------------------
 
-prt_castle.gat,35,151,4	script	�����	751,{
+prt_castle.gat,35,151,4	script	守備兵	751,{
 	switch(CHANGE_CRU) {
 	case 0:
-		mes "[�u���b�e��=�q���h]";
-		mes "�悭���܂����B";
+		mes "[ブリッテン=ヒルド]";
+		mes "よく来ました。";
 		if(Job == Job_Crusader) {
 			next;
-			mes "[�u���b�e��=�q���h]";
-			mes "�����C����ςݏd�ˁA";
-			mes "���h�ȃN���Z�C�_�[��";
-			mes "�Ȃ��Ă��������B";
+			mes "[ブリッテン=ヒルド]";
+			mes "毎日修練を積み重ね、";
+			mes "立派なクルセイダーに";
+			mes "なってください。";
 			close;
 		}
-		mes "��X�̓N���Z�C�_�[�ł��B";
-		mes "�����ɖK��鐹��֔�����ҒB�ł��B";
+		mes "我々はクルセイダーです。";
+		mes "未来に訪れる聖戦へ備える者達です。";
 		next;
 		if(Job == Job_Novice) {
-			mes "[�u���b�e��=�q���h]";
-			mes "�����N���Z�C�_�[�Ɋ֐S��";
-			mes "������Ȃ�A���ł����c�����}";
-			mes "���܂��B";
+			mes "[ブリッテン=ヒルド]";
+			mes "もしクルセイダーに関心が";
+			mes "おありなら、いつでも入団を歓迎";
+			mes "します。";
 			next;
-			mes "[�u���b�e��=�q���h]";
-			mes "���m�Ƃ��Ă�����x�C����ς݁A";
-			mes "�I�[�f�B���̎v�������������";
-			mes "���Ȃ�΂�芽�}���܂��B";
+			mes "[ブリッテン=ヒルド]";
+			mes "剣士としてある程度修練を積み、";
+			mes "オーディンの思し召しを悟った";
+			mes "方ならばより歓迎します。";
 			close;
 		}
 		if(Job != Job_Swordman) {
-			mes "[�u���b�e��=�q���h]";
-			mes "���a�ȓ���̒��ɂ����Ă��A";
-			mes "�₦��������ӂ�܂���B";
-			mes "�������邻�̓��̂��߂Ɂc�c";
+			mes "[ブリッテン=ヒルド]";
+			mes "平和な日常の中にあっても、";
+			mes "絶えず備えを怠りません。";
+			mes "いつか来るその日のために……";
 			close;
 		}
-		mes "[�u���b�e��=�q���h]";
-		mes "�����N���Z�C�_�[�Ɋ֐S��";
-		mes "������Ȃ�A���ł����c�����}";
-		mes "���܂��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "もしクルセイダーに関心が";
+		mes "おありなら、いつでも入団を歓迎";
+		mes "します。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�N���Z�C�_�[�ɂȂ邽�߂ɂ́A";
-		mes "���m��JobLv��40�܂Œb����";
-		mes "����΂Ȃ�܂���B";
-		mes "�ڂ����́A���ɂ���������}�X�^�[";
-		mes "�Ɏf���Ă��������B";
+		mes "[ブリッテン=ヒルド]";
+		mes "クルセイダーになるためには、";
+		mes "剣士のJobLvを40まで鍛えな";
+		mes "ければなりません。";
+		mes "詳しくは、中にいらっしゃるマスター";
+		mes "に伺ってください。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "����ł́A";
-		mes "�M���ɃI�[�f�B���̉��삠��񂱂Ƃ��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "それでは、";
+		mes "貴公にオーディンの加護あらんことを。";
 		close;
-	default:	//1�`7�̂Ƃ�
-		mes "[�u���b�e��=�q���h]";
-		mes "�悭���܂����B";
-		mes "�M���̓N���Z�C�_�[�ւ�";
-		mes "�����ɒ��풆�ł��ˁB";
+	default:	//1～7のとき
+		mes "[ブリッテン=ヒルド]";
+		mes "よく来ました。";
+		mes "貴公はクルセイダーへの";
+		mes "試練に挑戦中ですね。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�������A�܂�������̎�����";
-		mes "�󂯂�ɂ͑������܂��B";
-		mes "���̕��X����̎��������ׂ�";
-		mes "�z���Ă���܂����Ă��������B";
+		mes "[ブリッテン=ヒルド]";
+		mes "しかし、まだ私からの試練を";
+		mes "受けるには早すぎます。";
+		mes "他の方々からの試練をすべて";
+		mes "越えてからまた来てください。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�ł͂��҂����Ă��܂��B";
-		mes "�M���ɃI�[�f�B���̉��삠��񂱂Ƃ��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "ではお待ちしています。";
+		mes "貴公にオーディンの加護あらんことを。";
 		close;
 	case 8:
-		mes "[�u���b�e��=�q���h]";
-		mes "�悭���܂����B";
-		mes "���}���܂��B";
-		mes "���Ȃ鎎�����Ō�̎����ł��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "よく来ました。";
+		mes "歓迎します。";
+		mes "次なる試練が最後の試練です。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "���̖��O�̓u���b�e��=�q���h�B";
-		mes "����֔�����҂̈�l�ł��B";
-		mes "�����܂ł悭�撣��܂����B";
+		mes "[ブリッテン=ヒルド]";
+		mes "私の名前はブリッテン=ヒルド。";
+		mes "聖戦へ備える者の一人です。";
+		mes "ここまでよく頑張りました。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�Ō�Ɏ�����o�������́A";
-		mes "����P���ł��B";
-		mes "�N���Z�C�_�[����ҁA�퓬�͂�";
-		mes "�G�łĂ��Ȃ���΂Ȃ�܂���B";
+		mes "[ブリッテン=ヒルド]";
+		mes "最後に私から出す試練は、";
+		mes "実戦訓練です。";
+		mes "クルセイダーたる者、戦闘力も";
+		mes "秀でていなければなりません。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�������󂯂�O�ɁA^3152FF����^000000��";
-		mes "��������Ă��������B";
-		mes "�������󂯂�҂��򉻂��邽�߂ł��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "試練を受ける前に、^3152FF聖水^000000を";
+		mes "一つ準備してください。";
+		mes "試練を受ける者を浄化するためです。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�ł́A�n�߂܂��傤���B";
-		mes "����Ƃ����������܂����H";
+		mes "[ブリッテン=ヒルド]";
+		mes "では、始めましょうか。";
+		mes "それとも準備をしますか？";
 		set CHANGE_CRU,9;
 		break;
 	case 9:
-		mes "[�u���b�e��=�q���h]";
-		mes "�悭���܂����B";
-		mes "�����͂��Ă��܂����ˁH";
+		mes "[ブリッテン=ヒルド]";
+		mes "よく来ました。";
+		mes "準備はしてきましたね？";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "����ł͎������󂯂܂����H";
-		mes "����Ƃ����������܂����H";
+		mes "[ブリッテン=ヒルド]";
+		mes "それでは試練を受けますか？";
+		mes "それとも準備をしますか？";
 		break;
 	case 10:
-		mes "[�u���b�e��=�q���h]";
-		mes "���߂łƂ��������܂��B";
-		mes "����ŃN���Z�C�_�[�ւ̎�����";
-		mes "�������܂����B";
+		mes "[ブリッテン=ヒルド]";
+		mes "おめでとうございます。";
+		mes "これでクルセイダーへの試練を";
+		mes "完遂しました。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "���ɂ���������}�X�^�[�̂��Ƃ�";
-		mes "�s���΁A���̎�����M���������";
-		mes "��������ƂȂ�ł��傤�B";
+		mes "[ブリッテン=ヒルド]";
+		mes "中にいらっしゃるマスターのもとへ";
+		mes "行けば、その時から貴公も聖戦に";
+		mes "加わる一員となるでしょう。";
 		close;
 	}
-	//�򉻎�����������
+	//浄化試練ここから
 	next;
-	if(select("�n�߂܂�","���������Ă��܂�")==2) {
-		mes "[�u���b�e��=�q���h]";
-		mes "�킩��܂����B";
-		mes "�������ł�����܂����ĉ������B";
-		mes "���҂����Ă��܂��B";
+	if(select("始めます","準備をしてきます")==2) {
+		mes "[ブリッテン=ヒルド]";
+		mes "わかりました。";
+		mes "準備ができたらまた来て下さい。";
+		mes "お待ちしています。";
 		close;
 	}
-	if(equippeditem(2608)==0) {	//���U���[������
-		mes "[�u���b�e��=�q���h]";
-		mes "�c�c��H";
-		mes "�M���̓��U���[��g�ɂ���";
-		mes "���܂���ˁB";
-		mes "�������󂯂�ۂ͏�Ƀ��U���[��";
-		mes "�g�ɂ��Ă��Ȃ���΂Ȃ�܂���B";
+	if(equippeditem(2608)==0) {	//ロザリー未装備
+		mes "[ブリッテン=ヒルド]";
+		mes "……ん？";
+		mes "貴公はロザリーを身につけて";
+		mes "いませんね。";
+		mes "試練を受ける際は常にロザリーを";
+		mes "身につけていなければなりません。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "���U���[��g�ɂ��Ă���";
-		mes "�܂����ĉ������B";
+		mes "[ブリッテン=ヒルド]";
+		mes "ロザリーを身につけてから";
+		mes "また来て下さい。";
 		close;
 	}
 	if(countitem(523) < 1) {
-		mes "[�u���b�e��=�q���h]";
-		mes "�������󂯂邽�߂ɂ�^3152FF����^000000��";
-		mes "��������Ă��������B";
-		mes "�����قǐ\���グ���悤�ɁA";
-		mes "�������󂯂�҂��򉻂��邽�߂ł��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "試練を受けるためには^3152FF聖水^000000を";
+		mes "一つ準備してください。";
+		mes "さきほど申し上げたように、";
+		mes "試練を受ける者を浄化するためです。";
 		next;
-		mes "[�u���b�e��=�q���h]";
-		mes "�������Ă܂����ĉ������B";
-		mes "�҂��Ă��܂��B";
+		mes "[ブリッテン=ヒルド]";
+		mes "準備してまた来て下さい。";
+		mes "待っています。";
 		close;
 	}
-	mes "[�u���b�e��=�q���h]";
-	mes "����ł͎n�߂܂��傤�B";
-	mes "�܂��͂��Ȃ��̐g�𐴂߂܂��B";
+	mes "[ブリッテン=ヒルド]";
+	mes "それでは始めましょう。";
+	mes "まずはあなたの身を清めます。";
 	delitem 523,1;
 	next;
-	mes "[�u���b�e��=�q���h]";
-	mes "�c�c";
+	mes "[ブリッテン=ヒルド]";
+	mes "……";
 	next;
-	mes "[�u���b�e��=�q���h]";
-	mes "�ł͓����čT���őҋ@����";
-	mes "���������B";
-	mes "���ꂽ�����X�^�[�����ׂ�";
-	mes "���ނ���Ηǂ��ł��B";
+	mes "[ブリッテン=ヒルド]";
+	mes "では入って控室で待機して";
+	mes "ください。";
+	mes "現れたモンスターをすべて";
+	mes "撃退すれば良いです。";
 	close2;
 	warp "job_cru.gat",24,169;
 	end;
 }
 
 //==============================================================
-job_cru.gat,24,187,4	script	����R�m::CRU_ChatRoom	751,{
-	mes "[�u���b�e��=�q���h]";
-	mes "�悤�����B";
-	mes "�����ł͍Ō�̎������󂯂�";
-	mes "���炢�܂��B";
-	mes "�n�߂�Ȃ�΍T���ɓ�������";
-	mes "���������B";
+job_cru.gat,24,187,4	script	守備騎士::CRU_ChatRoom	751,{
+	mes "[ブリッテン=ヒルド]";
+	mes "ようこそ。";
+	mes "ここでは最後の試練を受けて";
+	mes "もらいます。";
+	mes "始めるならば控室に入室して";
+	mes "ください。";
 	next;
-	mes "[�u���b�e��=�q���h]";
-	mes "������֓����͈̂�x��";
-	mes "��l�����B";
-	mes "���̕����󂯂Ă���ꍇ��";
-	mes "�T���ɂđҋ@���Ă��������B";
+	mes "[ブリッテン=ヒルド]";
+	mes "試練場へ入れるのは一度に";
+	mes "一人だけ。";
+	mes "他の方が受けている場合は";
+	mes "控室にて待機してください。";
 	next;
-	mes "[�u���b�e��=�q���h]";
-	mes "��l������4���̎��Ԑ�����";
-	mes "����܂����A�r���ł�߂���";
-	mes "�ꍇ�͈�x�ڑ����Ȃ�����";
-	mes "���������B";
+	mes "[ブリッテン=ヒルド]";
+	mes "一人あたり4分の時間制限が";
+	mes "ありますが、途中でやめたい";
+	mes "場合は一度接続しなおして";
+	mes "ください。";
 	close;
 OnInit:
-	waitingroom "�T��",20,"CRU_ChatRoom::OnStart",1;
+	waitingroom "控室",20,"CRU_ChatRoom::OnStart",1;
 	end;
 OnStart:
 	disablewaitingroomevent;
@@ -1175,33 +1175,33 @@ OnTimer240000:
 
 //==============================================================
 job_cru.gat,168,17,0	script	#CRU_Messanger	139,2,2,{
-	mes "[�u���b�e��=�q���h]";
-	mes "�i�݂Ȃ���A���ꂽ�G��";
-	mes "�S�Č��ނ��Ă��������B";
-	mes "��ł��c���Εs���i�ł��B";
+	mes "[ブリッテン=ヒルド]";
+	mes "進みながら、現れた敵を";
+	mes "全て撃退してください。";
+	mes "一つでも残せば不合格です。";
 	next;
-	mes "[�u���b�e��=�q���h]";
-	mes "4���ԗ^���܂��B";
-	mes "�ł͍s���Ă��������B";
+	mes "[ブリッテン=ヒルド]";
+	mes "4分間与えます。";
+	mes "では行ってください。";
 	close;
 }
 
 //==============================================================
 job_cru.gat,168,45,0	script	#CRU_3rdTest1	139,8,1,{
-	monster "job_cru.gat",168,45,"�]���r",1015,6;
+	monster "job_cru.gat",168,45,"ゾンビ",1015,6;
 	hideonnpc;
 	end;
 }
 
 job_cru.gat,168,80,0	script	#CRU_3rdTest2	139,8,1,{
-	monster "job_cru.gat",168,80,"�\���W���[�X�P���g��",1028,3;
+	monster "job_cru.gat",168,80,"ソルジャースケルトン",1028,3;
 	hideonnpc;
 	end;
 }
 
 job_cru.gat,168,110,0	script	#CRU_3rdTest3	139,8,1,{
-	monster "job_cru.gat",168,105,"�A�[�`���[�X�P���g��",1016,1;
-	monster "job_cru.gat",168,110,"�}�~�[",1041,1;
+	monster "job_cru.gat",168,105,"アーチャースケルトン",1016,1;
+	monster "job_cru.gat",168,110,"マミー",1041,1;
 	hideonnpc;
 	end;
 }
@@ -1223,44 +1223,44 @@ job_cru.gat,168,180,0	script	#CRU_3rdWarp	45,1,1,{
 
 
 //==========================================
-// �y�R�y�R�����^��
+// ペコペコレンタル
 //------------------------------------------
 
-prontera.gat,232,318,3	script	�y�R�y�R�Ǘ���	105,{
+prontera.gat,232,318,3	script	ペコペコ管理兵	105,{
 	if(Job != Job_Crusader) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "���̗p���ł�������������ł���";
-		mes "���ǂ��̃y�R�y�R�́A";
-		mes "�N���Z�C�_�[��p�ƂȂ��Ă��܂��B";
+		mes "[ペコペコ管理兵]";
+		mes "何の用事でいらっしゃったんですか";
+		mes "私どものペコペコは、";
+		mes "クルセイダー専用となっています。";
 		close;
 	}
-	mes "[�y�R�y�R�Ǘ���]";
-	mes "��������Ⴂ�܂��A";
-	mes (Upper == UPPER_HIGH)? "�p���f�B���l�B": "�N���Z�C�_�[�l�B";
-	mes "���ʂȃy�R�y�R�����p�ӂ���";
-	mes "����܂��B";
-	mes "��C3500Zeny�őݗ^���܂��B";
+	mes "[ペコペコ管理兵]";
+	mes "いらっしゃいませ、";
+	mes (Upper == UPPER_HIGH)? "パラディン様。": "クルセイダー様。";
+	mes "特別なペコペコをご用意して";
+	mes "おります。";
+	mes "一匹3500Zenyで貸与します。";
 	next;
-	if(select("���p����","��߂�")==2) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "����";
+	if(select("利用する","やめる")==2) {
+		mes "[ペコペコ管理兵]";
+		mes "了解";
 		close;
 	}
 	if(checkriding()) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "���łɃy�R�y�R�ɏ���Ă����܂��B";
+		mes "[ペコペコ管理兵]";
+		mes "すでにペコペコに乗っておられます。";
 		close;
 	}
 	if(Zeny < 3500) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "�������s�����Ă���܂��B";
-		mes "3500Zeny���p�ӂ��Ă��������B";
+		mes "[ペコペコ管理兵]";
+		mes "お金が不足しております。";
+		mes "3500Zenyご用意してください。";
 		close;
 	}
 	if(getskilllv(63) < 1) {
-		mes "[�y�R�y�R�Ǘ���]";
-		mes "�܂��y�R�y�R�ɏ��P����";
-		mes "���Ă��Ă��������B";
+		mes "[ペコペコ管理兵]";
+		mes "まずペコペコに乗る訓練を";
+		mes "してきてください。";
 		close;
 	}
 	set Zeny,Zeny-3500;

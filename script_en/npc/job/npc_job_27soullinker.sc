@@ -1,247 +1,247 @@
 //====================================================================
 //Ragnarok Online SoulLinker Jobchange Script
-//�@�� CHANGE_SL -> 0�`4
+//　■ CHANGE_SL -> 0～4
 //====================================================================
 
 //==========================================
-// �����\��
+// 試験申請
 //------------------------------------------
 
-morocc_in.gat,174,30,6	script	�q��	716,{
+morocc_in.gat,174,30,6	script	子供	716,{
 	if(Job == Job_Linker) {
-		mes "[�q��]";
-		mes "���ꂩ��i�ޓ��ɂ����āA";
-		mes "�N�ɁA�����ċ��ɕ��ލ�������";
-		mes "���炬������܂��悤�ɁI";
-		mes "�c�c���ււ��I";
+		mes "[子供]";
+		mes "これから進む道において、";
+		mes "君に、そして共に歩む魂たちに";
+		mes "安らぎがありますように！";
+		mes "……えへへっ！";
 		close;
 	}
 	if(Job != Job_Taekwon) {
-		mes "[�q��]";
-		mes "�c�c";
-		mes "���O�ɗp�͂Ȃ��I";
+		mes "[子供]";
+		mes "……";
+		mes "お前に用はない！";
 		close;
 	}
 	if(JobLevel < 40) {
-		mes "[�q��]";
-		mes "�c�c�c�c�B";
+		mes "[子供]";
+		mes "…………。";
 		close;
 	}
 	switch(CHANGE_SL) {
 	case 0:
-		mes "[�q��]";
-		mes "�c�c�c�c";
-		mes "���O�B";
+		mes "[子供]";
+		mes "…………";
+		mes "お前。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "��H";
+		mes "ん？";
 		next;
-		mes "[�q��]";
-		mes "����A�����B";
-		mes "�����̂��O�B";
-		mes "���O����B";
+		mes "[子供]";
+		mes "うん、そう。";
+		mes "そこのお前。";
+		mes "お前だよ。";
 		next;
-		if(select("�l�A���ł���Ȃɗ��\�Ȍ�����������́H","��������")==2) {
-			mes "[�q��]";
-			mes "���H�@���A�����I";
-			mes "������Ƒ҂��āI";
-			mes "�ǂ��֍s���񂾁I";
-			mes "���̘b��������ƕ������āI";
+		if(select("僕、何でそんなに乱暴な言い方をするの？","無視する")==2) {
+			mes "[子供]";
+			mes "え？　あ、おい！";
+			mes "ちょっと待って！";
+			mes "どこへ行くんだ！";
+			mes "私の話をちょっと聞けって！";
 			close;
 		}
 		emotion 32;
-		mes "[�q��]";
-		mes "�q���Ǝv���Ė�������Ȃ�B";
-		mes "����ł����́c�c305�΂��B";
+		mes "[子供]";
+		mes "子供と思って無視するなよ。";
+		mes "これでも私は……305歳だ。";
 		next;
-		mes "[�q��]";
-		mes "���O�̕��p�c�c���ꂪ�{���ɁA";
-		mes "���O���i�ނׂ������Ǝv���H";
-		mes "�����������A���O�ɂ͕ʂ̓�������B";
+		mes "[子供]";
+		mes "お前の武術……それが本当に、";
+		mes "お前が進むべき道だと思う？";
+		mes "私が見る限り、お前には別の道もある。";
 		next;
-		mes "[�q��]";
-		mes "�悭�l���Ă݂āB";
-		mes "���O�����܂ŏo������l�X�A";
-		mes "�����E�B�U�[�h�A�A���P�~�X�g�Ȃǁc�c";
-		mes "���̒��ŉ����ςȐl�����Ȃ��������H";
+		mes "[子供]";
+		mes "よく考えてみて。";
+		mes "お前が今まで出会った人々、";
+		mes "強いウィザード、アルケミストなど……";
+		mes "その中で何か変な人がいなかったか？";
 		next;
-		mes "[�q��]";
-		mes "�����A�ςȐl�c�c�Ⴆ�΁c�c";
-		mes "�H��Ƃ��B";
+		mes "[子供]";
+		mes "そう、変な人……例えば……";
+		mes "幽霊とか。";
 		next;
 		emotion 18;
-		mes "[�q��]";
-		mes "���A�|���邱�Ƃ͂Ȃ���B";
-		mes "���̐l�B�́A���O�̋C�ɂЂ���āA";
-		mes "���ꂽ�������B���O�ɂ͂܂�";
-		mes "������Ȃ���������Ȃ����ǁB";
+		mes "[子供]";
+		mes "あ、怖がることはないよ。";
+		mes "その人達は、お前の気にひかれて、";
+		mes "現れただけだ。お前にはまだ";
+		mes "分からないかもしれないけど。";
 		next;
-		mes "[�q��]";
-		mes "�ނ�͐킢�����񂾁B";
-		mes "�ł��A���̂��Ȃ�����A";
-		mes "���Ă��邱�Ƃ����ł��Ȃ��B";
-		mes "����Ȕނ�ɁA���O���ł��鎖������B";
-		mes "����́c�c�ނ�̗͂��؂�邱�Ƃ���B";
+		mes "[子供]";
+		mes "彼らは戦いたいんだ。";
+		mes "でも、肉体がないから、";
+		mes "見ていることしかできない。";
+		mes "そんな彼らに、お前ができる事がある。";
+		mes "それは……彼らの力を借りることだよ。";
 		next;
-		mes "[�q��]";
-		mes "���O���g�́A�ނ�̗͂�";
-		mes "�g�����Ƃ͂ł��Ȃ��B";
-		mes "�ł��A���̍��̐��O��";
-		mes "�E�ƂɏA���҂ɑ΂��āA";
-		mes "�͂�݂����Ƃ͂ł���B";
+		mes "[子供]";
+		mes "お前自身は、彼らの力を";
+		mes "使うことはできない。";
+		mes "でも、その魂の生前の";
+		mes "職業に就く者に対して、";
+		mes "力を貸すことはできる。";
 		next;
-		mes "[�q��]";
-		mes "���������̍��́A������Ȃ��A";
-		mes "���̐��ɗ��܂��Ă���킯������A";
-		mes "���O�͂��Ȃ苭�������͂��B";
+		mes "[子供]";
+		mes "しかもその魂は、死後もなお、";
+		mes "この世に留まっているわけだから、";
+		mes "生前はかなり強かったはず。";
 		next;
-		mes "[�q��]";
-		mes "���_���������B";
-		mes "�u�\�E�������J�[�v��";
-		mes "�Ȃ����͂Ȃ����H";
+		mes "[子供]";
+		mes "結論を言おう。";
+		mes "「ソウルリンカー」に";
+		mes "なるつもりはないか？";
 		next;
-		if(select("�l�A�}�}�͂ǂ��ɂ���́H","�\�E�������J�[�H")==1) {
-			mes "[�q��]";
-			mes "���`���`��`�A�q������Ȃ����āI";
-			mes "�ǂ����Đl�̘b�𕷂��Ȃ��񂾁I";
-			mes "�S���c�c�B";
+		if(select("僕、ママはどこにいるの？","ソウルリンカー？")==1) {
+			mes "[子供]";
+			mes "だ～か～ら～、子供じゃないって！";
+			mes "どうして人の話を聞かないんだ！";
+			mes "全く……。";
 			close;
 		}
-		mes "[�q��]";
-		mes "�����A�\�E�������J�[���B";
-		mes "�����͂������ҒB�̗͂��؂�āA";
-		mes "���Ԃ������ł���ҁB";
-		mes "���O�ɂ͏[���A���̑f��������B";
-		mes "���O�͂܂�����ɋC�Â��Ă��Ȃ������B";
-		mes "�ǂ��H�@����Ă݂邩�H";
+		mes "[子供]";
+		mes "そう、ソウルリンカーだ。";
+		mes "強い力を持つ死者達の力を借りて、";
+		mes "仲間を強くできる者。";
+		mes "お前には充分、その素質がある。";
+		mes "お前はまだそれに気づいていないだけ。";
+		mes "どう？　やってみるか？";
 		next;
-		if(select("����c�c","�͂��I")==1) {
-			mes "[�q��]";
-			mes "�c�c����͎c�O���B";
-			mes "�����A��Ō��̓����̂Ă�";
-			mes "���S��������A����K�˂�B";
+		if(select("いや……","はい！")==1) {
+			mes "[子供]";
+			mes "……それは残念だ。";
+			mes "もし、後で拳の道を捨てる";
+			mes "決心がついたら、私を訪ねろ。";
 			close;
 		}
-		mes "[�q��]";
-		mes "���������c�c����ł́A";
-		mes "�V���ɕK�v�ȕ��������Ă��B";
-		mes "^0000FF������Ȃ��o��^000000";
-		mes "^0000FF�_�C�������h�R�J���b�g�A^000000";
-		mes "^0000FF�~�܂�Ȃ��S��^000000��������B";
-		mes "�S�ėp�ӂł�����A�߂��Ă����B";
+		mes "[子供]";
+		mes "分かった……それでは、";
+		mes "儀式に必要な物を教えてやる。";
+		mes "^0000FFしおれないバラ^000000";
+		mes "^0000FFダイヤモンド３カラット、^000000";
+		mes "^0000FF止まらない心臓^000000を一個ずつだ。";
+		mes "全て用意できたら、戻ってこい。";
 		set CHANGE_SL,1;
 		close;
 	case 1:
-		mes "[�q��]";
-		mes "�悭�����B";
-		mes "�����Ɓc�c^0000FF������Ȃ��o��^000000��";
-		mes "^0000FF�_�C�������h�R�J���b�g^000000�A";
-		mes "^0000FF�~�܂�Ȃ��S��^000000�͎����ė����H";
+		mes "[子供]";
+		mes "よく来た。";
+		mes "えっと……^0000FFしおれないバラ^000000と";
+		mes "^0000FFダイヤモンド３カラット^000000、";
+		mes "^0000FF止まらない心臓^000000は持って来た？";
 		next;
-		if(select("������ł�","����A�܂��c�c")==2) {
-			mes "[�q��]";
-			mes "�܂������B";
-			mes "�ǂ������ɂ͎��Ԃ��������񂠂�B";
-			mes "���O�̓s�����������ł�������A";
-			mes "�����Ǝ����Ă����B";
+		if(select("こちらです","いや、まだ……")==2) {
+			mes "[子供]";
+			mes "まあいい。";
+			mes "どうせ私には時間がたくさんある。";
+			mes "お前の都合がいい時でいいから、";
+			mes "ちゃんと持ってこい。";
 			close;
 		}
 		if(countitem(748) < 1 || countitem(732) < 1 || countitem(929) < 1) {
 			emotion 32;
-			mes "[�q��]";
-			mes "�����A����Ȃ���B";
-			mes "�R�����Ȃ�āc�c�B";
-			mes "�����ڂ��q����������āA";
-			mes "�R���ʗp����Ǝv���Ȃ�I";
+			mes "[子供]";
+			mes "おい、足りないよ。";
+			mes "嘘をつくなんて……。";
+			mes "見た目が子供だからって、";
+			mes "嘘が通用すると思うなよ！";
 			next;
-			mes "[�q��]";
-			mes "���x�͂����Ƒ����Ă����I";
-			mes "�c�c���ɂ͎��Ԃ��������񂠂邩��A";
-			mes "���O�̓s�����������ō\��Ȃ��B";
-			mes "�����Ǝ����Ă����I";
+			mes "[子供]";
+			mes "今度はちゃんと揃えてこい！";
+			mes "……私には時間がたくさんあるから、";
+			mes "お前の都合がいい時で構わない。";
+			mes "ちゃんと持ってこい！";
 			close;
 		}
 		delitem 748,1;
 		delitem 732,1;
 		delitem 929,1;
-		mes "[�q��]";
-		mes "�悵�A�m���Ɏ󂯎�����B";
-		mes "���ĂƁc�c";
-		mes "�������W�߂Ă����ƌ��������R�́A";
-		mes "��Ő�������Ƃ��āc�c�B";
+		mes "[子供]";
+		mes "よし、確かに受け取った。";
+		mes "さてと……";
+		mes "これらを集めてこいと言った理由は、";
+		mes "後で説明するとして……。";
 		next;
-		mes "[�}�C�A]";
-		mes "���̖��O�̓}�C�A�B";
-		mes "�����āc�c";
-		mes "���Ɏ@���Ă��邩������Ȃ����A";
-		mes "���͂��̐��̎҂ł͂Ȃ��B";
+		mes "[マイア]";
+		mes "私の名前はマイア。";
+		mes "そして……";
+		mes "既に察しているかもしれないが、";
+		mes "私はこの世の者ではない。";
 		next;
-		mes "[�}�C�A]";
-		mes "�ʂɂ��̐��֍s���Ȃ��킯�ł͂Ȃ��B";
-		mes "�ł��A���ɂ͂��ׂ����Ƃ�";
-		mes "�c���Ă��邩��B";
-		mes "��C������΁c�c";
-		mes "���C������z������΁A";
-		mes "����C�͂���̂ɂȁB";
+		mes "[マイア]";
+		mes "別にあの世へ行けないわけではない。";
+		mes "でも、私にはすべきことが";
+		mes "残っているから。";
+		mes "後任がくれば……";
+		mes "やる気がある奴がいれば、";
+		mes "譲る気はあるのにな。";
 		next;
-		mes "[�}�C�A]";
-		mes "�����A���������ɂ���̂́A";
-		mes "�f��������҂����ɂ߁A";
-		mes "�\�E�������J�[�ɂ��邽�߂��B";
+		mes "[マイア]";
+		mes "そう、私がここにいるのは、";
+		mes "素質がある者を見極め、";
+		mes "ソウルリンカーにするためだ。";
 		next;
-		mes "[�}�C�A]";
-		mes "�S�̏������ł�����A";
-		mes "���������Ă���B";
+		mes "[マイア]";
+		mes "心の準備ができたら、";
+		mes "声をかけてくれ。";
 		set CHANGE_SL,2;
 		close;
 	case 2:
 		if(SkillPoint) {
-			mes "[�}�C�A]";
-			mes "�X�L���|�C���g���c���Ă����I";
-			mes "���������҂Ƃ��Ă��ׂ����Ƃ�";
-			mes "�S�Ă𐬂������Ȃ�����A";
-			mes "���͂��O���\�E�������J�[��";
-			mes "���邱�Ƃ͂ł��Ȃ��B";
-			mes "�������Ɗo���Ă��āI";
+			mes "[マイア]";
+			mes "スキルポイントが残っているよ！";
+			mes "拳を扱う者としてすべきことの";
+			mes "全てを成し遂げない限り、";
+			mes "私はお前をソウルリンカーに";
+			mes "することはできない。";
+			mes "さっさと覚えてきて！";
 			close;
 		}
 		if(getmapusers("job_soul.gat")) {
-			mes "[�}�C�A]";
-			mes "���A������Ƃ����҂��āB";
-			mes "���A���̒N����";
-			mes "�\�E�������J�[�ɂȂ邽�߂�";
-			mes "�V�����s���Ă���B";
+			mes "[マイア]";
+			mes "あ、ちょっとだけ待って。";
+			mes "今、他の誰かが";
+			mes "ソウルリンカーになるための";
+			mes "儀式を行っている。";
 			close;
 		}
-		mes "[�}�C�A]";
-		mes "�悵�A����ł�";
-		mes "���ɂ��Ă��āI";
+		mes "[マイア]";
+		mes "よし、それでは";
+		mes "私についてきて！";
 		close2;
 		warp "job_soul.gat",30,30;
 		end;
 	case 3:
 	case 4:
-		mes "[�}�C�A]";
-		mes "�c�c�ł́A�V�����s���Ă��������H";
+		mes "[マイア]";
+		mes "……では、儀式を行っていいかい？";
 		next;
-		if(select("����A������Ɓc�c","�͂��I")==1) {
-			mes "[�}�C�A]";
-			mes "�������c�c�c�O�B";
-			mes "�܂��C���ς������A";
-			mes "�b�����Ă���B";
+		if(select("いや、ちょっと……","はい！")==1) {
+			mes "[マイア]";
+			mes "そうか……残念。";
+			mes "また気が変わったら、";
+			mes "話かけてくれ。";
 			close;
 		}
 		if(getmapusers("job_soul.gat")) {
-			mes "[�}�C�A]";
-			mes "���A������Ƃ����҂��āB";
-			mes "���A���̒N����";
-			mes "�\�E�������J�[�ɂȂ邽�߂�";
-			mes "�V�����s���Ă���B";
+			mes "[マイア]";
+			mes "あ、ちょっとだけ待って。";
+			mes "今、他の誰かが";
+			mes "ソウルリンカーになるための";
+			mes "儀式を行っている。";
 			close;
 		}
-		mes "[�}�C�A]";
-		mes "�悵�A���ꂶ�Ⴀ�A";
-		mes "���O�̐S�̒��ɓ����Ă݂悤�c�c�B";
+		mes "[マイア]";
+		mes "よし、それじゃあ、";
+		mes "お前の心の中に入ってみよう……。";
 		close2;
 		warp "job_soul.gat",30,30;
 		end;
@@ -249,91 +249,91 @@ morocc_in.gat,174,30,6	script	�q��	716,{
 }
 
 //==========================================
-// ��������ѓ]�E
+// 試験および転職
 //------------------------------------------
 
-job_soul.gat,37,30,5	script	�}�C�A#SL_Test	716,7,1,{
+job_soul.gat,37,30,5	script	マイア#SL_Test	716,7,1,{
 OnTouch:
-	if(getnpctimer(1) == 0) //�^�C�}�[���쓮���Ă��Ȃ�������
+	if(getnpctimer(1) == 0) //タイマーが作動していなかったら
 		initnpctimer;
 	switch(CHANGE_SL) {
 	case 2:
-		mes "[�}�C�A]";
-		mes "�����͂��O�̐S�̒����B";
-		mes "�����āc�c���O�̐S�ɓ������";
-		mes "�W�܂���������������B";
+		mes "[マイア]";
+		mes "ここはお前の心の中だ。";
+		mes "そして……お前の心に導かれて";
+		mes "集まった魂たちもいる。";
 		next;
-		mes "[�}�C�A]";
-		mes "���O���\�E�������J�[�ɂȂ�΁A";
-		mes "�ނ�͂������O����`���A";
-		mes "���O�̒��ԒB���������Ă���邾�낤�B";
+		mes "[マイア]";
+		mes "お前がソウルリンカーになれば、";
+		mes "彼らはいつもお前を手伝い、";
+		mes "お前の仲間達を強くしてくれるだろう。";
 		next;
-		mes "[�}�C�A]";
-		mes "���A�W�܂��Ă��鍰�͏��Ȃ��c�c�B";
-		mes "�N���\�E�������J�[�Ƃ��āA";
-		mes "�ǂꂾ���M�S�ɏC�����邩�ɂ���āA";
-		mes "�W�܂鍰�͈قȂ�B";
-		mes "������́A��苭����������";
-		mes "��������邱�Ƃ��ł���͂����B";
+		mes "[マイア]";
+		mes "今、集まっている魂は少ない……。";
+		mes "君がソウルリンカーとして、";
+		mes "どれだけ熱心に修練するかによって、";
+		mes "集まる魂は異なる。";
+		mes "いずれは、より強い魂たちを";
+		mes "引き入れることができるはずだ。";
 		next;
-		mes "[�}�C�A]";
-		mes "�����ł��O�����g�̐S��";
-		mes "�����������Ƃ��ł��鎞�Ԃ́A";
-		mes "������3�����B";
-		mes "���ɃJ�E���g�͂���Ă���B";
-		mes "�����A�ނ�ɐ��������Ă݂āB";
+		mes "[マイア]";
+		mes "ここでお前が自身の心と";
+		mes "向き合うことができる時間は、";
+		mes "たった3分だ。";
+		mes "既にカウントはされている。";
+		mes "さあ、彼らに声をかけてみて。";
 		set CHANGE_SL,3;
 		close;
 	case 3:
-		mes "[�}�C�A]";
-		mes "�������̌��t�𕷂��A";
-		mes "�S�ɗ��߂Ă����āB";
+		mes "[マイア]";
+		mes "魂たちの言葉を聞き、";
+		mes "心に留めてあげて。";
 		close;
 	case 4:
-		mes "[�}�C�A]";
-		mes "�ނ�Ə[���ɘb��������A";
-		mes "���O�̓\�E�������J�[��";
-		mes "�Ȃ邱�Ƃ��ł���B";
-		mes "�ǂ����H";
+		mes "[マイア]";
+		mes "彼らと充分に話をしたら、";
+		mes "お前はソウルリンカーに";
+		mes "なることができる。";
+		mes "どうだ？";
 		next;
-		if(select("���������b������","�\�E�������J�[�ɓ]�E����")==1) {
-			mes "[�}�C�A]";
-			mes "���������B";
-			mes "�ł��A���Ԃ͌����Ă��邩��A";
-			mes "������������������B";
+		if(select("もう少し話し合う","ソウルリンカーに転職する")==1) {
+			mes "[マイア]";
+			mes "分かった。";
+			mes "でも、時間は限られているから、";
+			mes "早くした方がいいよ。";
 			close;
 		}
-		mes "[�}�C�A]";
-		mes "���������B";
-		mes "����ł́A�V�����͂��߂�B";
+		mes "[マイア]";
+		mes "分かった。";
+		mes "それでは、儀式をはじめる。";
 		next;
 		misceffect 247,"";
-		mes "[�}�C�A]";
-		mes "������Ȃ��o���́A";
-		mes "���O�̑���Ɍ͂�A";
+		mes "[マイア]";
+		mes "しおれないバラは、";
+		mes "お前の代わりに枯れ、";
 		next;
-		mes "[�}�C�A]";
-		mes "�~�܂�Ȃ��S���́A";
-		mes "���O�̑���Ɋ������~���A";
+		mes "[マイア]";
+		mes "止まらない心臓は、";
+		mes "お前の代わりに活動を停止し、";
 		next;
-		mes "[�}�C�A]";
-		mes "�����Ċ���Ȃ��_�C�������h�́A";
-		mes "���O�̑���ɉ��邾�낤�B";
+		mes "[マイア]";
+		mes "決して割れないダイヤモンドは、";
+		mes "お前の代わりに壊れるだろう。";
 		next;
-		mes "[�}�C�A]";
-		mes "�����āc�c";
-		mes "�킢��]�ގ҂������A";
-		mes "���O�̑���ɐ���Ă���邾�낤�B";
+		mes "[マイア]";
+		mes "そして……";
+		mes "戦いを望む者たちが、";
+		mes "お前の代わりに戦ってくれるだろう。";
 		next;
 		unequip;
 		jobchange Job_Linker;
 		set CHANGE_SL,0;
-		mes "[�}�C�A]";
-		mes "��l�̗��h�ȃ\�E�������J�[�Ƃ��āA";
-		mes "���ꂩ�炨�O�c�c";
-		mes "����A�N���i�ޓ��ɂ����āA";
-		mes "�N�ɁA�����ċ��ɕ��ލ�������";
-		mes "���炬������܂��悤�ɁI";
+		mes "[マイア]";
+		mes "一人の立派なソウルリンカーとして、";
+		mes "これからお前……";
+		mes "いや、君が進む道において、";
+		mes "君に、そして共に歩む魂たちに";
+		mes "安らぎがありますように！";
 		close2;
 		warp "morocc.gat",156,46;
 		end;
@@ -344,88 +344,88 @@ OnTimer180000:
 	end;
 }
 
-job_soul.gat,23,30,6	script	�A���P�~�X�g�̍�	744,{
-	mes "[�A���P�~�X�g�̍�]";
-	mes "�����D�ꂽ�Z�p�����҂͂��Ȃ��B";
-	mes "���̒N�����A���͎葁��";
-	mes "�������邱�Ƃ��ł���B";
+job_soul.gat,23,30,6	script	アルケミストの魂	744,{
+	mes "[アルケミストの魂]";
+	mes "私より優れた技術を持つ者はいない。";
+	mes "他の誰よりも、私は手早く";
+	mes "製造することができる。";
 	next;
-	mes "[�A���P�~�X�g�̍�]";
-	mes "���ǁA���͂���ȉߐM��";
-	mes "���Ă�������������c�c";
-	mes "���̂Ŏ���ł��܂��܂����B";
+	mes "[アルケミストの魂]";
+	mes "結局、私はそんな過信を";
+	mes "していたせいもあり……";
+	mes "事故で死んでしまいました。";
 	next;
-	mes "[�A���P�~�X�g�̍�]";
-	mes "�ł��A�ނ��낻�̎��ɂ���āA";
-	mes "�͂𓾂��̂ł��B";
-	mes "�X�ɑ����������ł���悤�ɂȂ����c�c";
-	mes "�Ȃ�΁A����������Ă݂����I";
-	mes "����Ȉӎu�����܂�܂����B";
+	mes "[アルケミストの魂]";
+	mes "でも、むしろその死によって、";
+	mes "力を得たのです。";
+	mes "更に速く製造ができるようになった……";
+	mes "ならば、製造をやってみたい！";
+	mes "そんな意志が生まれました。";
 	next;
-	mes "[�A���P�~�X�g�̍�]";
-	mes "��y�����������Ɗ撣���悤�ɁA";
-	mes "�c�c���̗͂�^��";
-	mes "�����Ĕނ�ɂ����Ƌ����ӎu��";
-	mes "�������Ă��������̂ł��I";
+	mes "[アルケミストの魂]";
+	mes "後輩たちがもっと頑張れるように、";
+	mes "……私の力を与え";
+	mes "そして彼らにもっと強い意志を";
+	mes "持たせてあげたいのです！";
 	next;
-	mes "[�A���P�~�X�g�̍�]";
-	mes "�����͂����肢���܂��B";
+	mes "[アルケミストの魂]";
+	mes "ご協力をお願いします。";
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;
 }
 
-job_soul.gat,30,23,7	script	�Z�[�W�̍�	754,{
-	mes "[�Z�[�W�̍�]";
-	mes "�j��I";
-	mes "�j�󂾂������̐i�ޓ��I";
-	mes "���͐��O�A�j����v�������s���O�ɁA";
-	mes "�N�V���Ă��܂����B";
+job_soul.gat,30,23,7	script	セージの魂	754,{
+	mes "[セージの魂]";
+	mes "破壊！";
+	mes "破壊だけが私の進む道！";
+	mes "私は生前、破壊を思う存分行う前に、";
+	mes "年老いてしまった。";
 	next;
-	mes "[�Z�[�W�̍�]";
-	mes "�e�n��`������N����";
-	mes "���̗͂��؂�āA���̂��̂�";
-	mes "����󂵂����ƌ����̂Ȃ�A";
-	mes "���Ŏ��̗͂�݂��Ă����悤�I";
+	mes "[セージの魂]";
+	mes "各地を冒険する誰かが";
+	mes "私の力を借りて、世のものを";
+	mes "殴り壊したいと言うのなら、";
+	mes "喜んで私の力を貸してあげよう！";
 	next;
-	mes "[�Z�[�W�̍�]";
-	mes "���ɂ́A���ɂ́A";
-	mes "���̎��ɂ́A���̐��̑S�Ă̂��̂�";
-	mes "�j�󂷂�͂�����񂾁I";
-	mes "�����A�N����`���Ă���Ȃ���΁A";
-	mes "����́A�����ɓ������I";
+	mes "[セージの魂]";
+	mes "私には、私には、";
+	mes "この私には、この世の全てのものを";
+	mes "破壊する力があるんだ！";
+	mes "だが、君が手伝ってくれなければ、";
+	mes "それは、無いに等しい！";
 	next;
-	mes "[�Z�[�W�̍�]";
-	mes "�N�ɔC�������I";
+	mes "[セージの魂]";
+	mes "君に任せたい！";
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;
 }
 
-job_soul.gat,30,37,5	script	�����N�̍�	827,{
-	mes "[�����N�̍�]";
-	mes "���͐����Ă������A";
-	mes "�����N�Ƃ��Ă��ׂ����Ƃ�";
-	mes "�S�ďI�����Ǝv���Ă����B";
-	mes "�����A����ł���";
-	mes "���߂čl���Ă݂�ƁA";
-	mes "�����ł��Ȃ������B";
+job_soul.gat,30,37,5	script	モンクの魂	827,{
+	mes "[モンクの魂]";
+	mes "俺は生きていた頃、";
+	mes "モンクとしてすべきことを";
+	mes "全て終えたと思っていた。";
+	mes "だが、死んでから";
+	mes "改めて考えてみると、";
+	mes "そうでもなかった。";
 	next;
-	mes "[�����N�̍�]";
-	mes "���͂��̋Z�p����y�Ɉ����p�������B";
-	mes "�ł��A���ڋ����邱�Ƃ͂ł��Ȃ��B";
-	mes "�������y�́A���̗͂��؂�Ȃ���";
-	mes "���̋Z�p���������Ƃ͂ł��Ȃ����c�c�B";
+	mes "[モンクの魂]";
+	mes "俺はこの技術を後輩に引き継ぎたい。";
+	mes "でも、直接教えることはできない。";
+	mes "だから後輩は、俺の力を借りないと";
+	mes "その技術を扱うことはできないが……。";
 	next;
-	mes "[�����N�̍�]";
-	mes "����ł��A�����p�����߂ɂ́A";
-	mes "���O�̗͂��K�v�Ȃ񂾁B";
-	mes "���͂Ƃ�����A������`���āA";
-	mes "���̌�y�����ɁA��荂�݂̐��E��";
-	mes "�����Ă����Ă���Ȃ����H";
+	mes "[モンクの魂]";
+	mes "それでも、引き継ぐためには、";
+	mes "お前の力が必要なんだ。";
+	mes "何はともあれ、俺を手伝って、";
+	mes "世の後輩たちに、より高みの世界を";
+	mes "教えてあげてくれないか？";
 	next;
-	mes "[�����N�̍�]";
-	mes "���ށI";
+	mes "[モンクの魂]";
+	mes "頼む！";
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;

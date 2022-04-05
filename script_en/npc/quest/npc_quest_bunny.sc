@@ -1,106 +1,106 @@
 //==============================================================================
 //Ragnarok Online - Kafra bunny hairband Script
 //
-//  ¡ BUNNY_EVE -> 0or1
+//  â–  BUNNY_EVE -> 0or1
 //==============================================================================
 
 -	script	UsamimiEvt	-1,{
-	mes "[ƒJƒvƒ‰Eˆõ]";
-	mes "- ‚¢‚Â‚à‚¨‹q—l‚Ì‚»‚Î‚É -";
-	mes "^529DFFƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒh^FF0000»ìƒCƒxƒ“ƒg";
-	mes "ŠJÃ’†I";
+	mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+	mes "- ã„ã¤ã‚‚ãŠå®¢æ§˜ã®ãã°ã« -";
+	mes "^529DFFã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰^FF0000è£½ä½œã‚¤ãƒ™ãƒ³ãƒˆ";
+	mes "é–‹å‚¬ä¸­ï¼";
 	next;
-	switch (select("ƒCƒxƒ“ƒgŽQ‰Á","ƒCƒxƒ“ƒgˆÄ“à","‚â‚ß‚é")) {
+	switch (select("ã‚¤ãƒ™ãƒ³ãƒˆå‚åŠ ","ã‚¤ãƒ™ãƒ³ãƒˆæ¡ˆå†…","ã‚„ã‚ã‚‹")) {
 	case 1:
 		if(BUNNY_EVE == 0) {
 			set BUNNY_EVE,1;
-			mes "[ƒJƒvƒ‰Eˆõ]";
-			mes "‚²ŽQ‰Á‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B";
-			mes "ƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒh‚É•K—v‚È";
-			mes "ƒAƒCƒeƒ€‚ð—pˆÓ‚µ‚Ä‚©‚ç‚Ü‚½";
-			mes "‚±‚¿‚ç‚Ö‚¢‚ç‚µ‚Ä‚­‚¾‚³‚¢B";
+			mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+			mes "ã”å‚åŠ ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚";
+			mes "ã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ã«å¿…è¦ãª";
+			mes "ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç”¨æ„ã—ã¦ã‹ã‚‰ã¾ãŸ";
+			mes "ã“ã¡ã‚‰ã¸ã„ã‚‰ã—ã¦ãã ã•ã„ã€‚";
 			close;
 		}
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "‚¨‹q—l‚ÌƒCƒxƒ“ƒgƒAƒCƒeƒ€‚ð";
-		mes "Šm”F‚³‚¹‚Ä‚¢‚½‚¾‚«‚Ü‚·B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ãŠå®¢æ§˜ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚¢ã‚¤ãƒ†ãƒ ã‚’";
+		mes "ç¢ºèªã•ã›ã¦ã„ãŸã ãã¾ã™ã€‚";
 		next;
 		if(countitem(949)<100) {
-			mes "[ƒJƒvƒ‰Eˆõ]";
-			mes "‚¨‹q—lA‚â‚í‚ç‚©‚È–Ñ100ŒÂ‚ª";
-			mes "•K—v‚Å‚·B";
+			mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+			mes "ãŠå®¢æ§˜ã€ã‚„ã‚ã‚‰ã‹ãªæ¯›100å€‹ãŒ";
+			mes "å¿…è¦ã§ã™ã€‚";
 			close;
 		}
 		if(countitem(706)<1) {
-			mes "[ƒJƒvƒ‰Eˆõ]";
-			mes "‚¨‹q—lAŽl—tƒNƒ[ƒo‚PŒÂˆÈã‚ª•K—v‚Å‚·B";
+			mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+			mes "ãŠå®¢æ§˜ã€å››è‘‰ã‚¯ãƒ­ãƒ¼ãƒï¼‘å€‹ä»¥ä¸ŠãŒå¿…è¦ã§ã™ã€‚";
 			close;
 		}
 		if(countitem(722)<1) {
-			mes "[ƒJƒvƒ‰Eˆõ]";
-			mes "‚¨‹q—lA^Žì‚ªˆêŒÂˆÈã•K—v‚Å‚ ‚è‚Ü‚·B";
+			mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+			mes "ãŠå®¢æ§˜ã€çœŸç ãŒä¸€å€‹ä»¥ä¸Šå¿…è¦ã§ã‚ã‚Šã¾ã™ã€‚";
 			close;
 		}
 		if(countitem(2213)<1) {
-			mes "[ƒJƒvƒ‰Eˆõ]";
-			mes "‚¨‹q—lA”LŽ¨‚ÌƒwƒAƒoƒ“ƒh‚ª‚PŒÂˆÈã•K—v‚Å‚·B";
+			mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+			mes "ãŠå®¢æ§˜ã€çŒ«è€³ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ãŒï¼‘å€‹ä»¥ä¸Šå¿…è¦ã§ã™ã€‚";
 			close;
 		}
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "‚¨‚¨‚ÁI‚¨‹q—lA‘S‚Ä‚ÌƒAƒCƒeƒ€‚ð‚»‚ë‚Á‚Ä—ˆ‚Ü‚µ‚½‚ËII";
-		mes "‚·‚®ƒJƒvƒ‰Eˆõ‚ÌŽèì‚èƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒh‚ð‚³‚µ‚ ‚°‚Ü‚·B";
-		mes "‚µ‚Î‚ç‚­‚¨‘Ò‚¿‚­‚¾‚³‚¢‚Ü‚¹B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ãŠãŠã£ï¼ãŠå®¢æ§˜ã€å…¨ã¦ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ãã‚ã£ã¦æ¥ã¾ã—ãŸã­ï¼ï¼";
+		mes "ã™ãã‚«ãƒ—ãƒ©è·å“¡ã®æ‰‹ä½œã‚Šã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ã‚’ã•ã—ã‚ã’ã¾ã™ã€‚";
+		mes "ã—ã°ã‚‰ããŠå¾…ã¡ãã ã•ã„ã¾ã›ã€‚";
 		next;
 		delitem 949,100;
 		delitem 706,1;
 		delitem 722,1;
 		delitem 2213,1;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "^FF0000ƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒh^000000‚³‚ AŽó‚¯Žæ‚Á‚Ä‚­‚¾‚³‚¢B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "^FF0000ã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰^000000ã•ã‚ã€å—ã‘å–ã£ã¦ãã ã•ã„ã€‚";
 		getitem 2214,1;
 		set BUNNY_EVE,0;
 		next;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "¡“x‚ÌƒCƒxƒ“ƒg‚ÉŽQ‰Á‚µ‚½‚Ì‚ðŠ´ŽÓ‚µ‚Ü‚·BŒã‚É‚àƒJƒvƒ‰ƒCƒxƒ“ƒg‚ÍŒÚ‹q–ž‘«‚Ì‚½‚ß‚É‚à‚Á‚Æ‚à‚Á‚Æ‚ª‚ñ‚Î‚è‚Ü‚·`";
-		mes "‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ä»Šåº¦ã®ã‚¤ãƒ™ãƒ³ãƒˆã«å‚åŠ ã—ãŸã®ã‚’æ„Ÿè¬ã—ã¾ã™ã€‚å¾Œã«ã‚‚ã‚«ãƒ—ãƒ©ã‚¤ãƒ™ãƒ³ãƒˆã¯é¡§å®¢æº€è¶³ã®ãŸã‚ã«ã‚‚ã£ã¨ã‚‚ã£ã¨ãŒã‚“ã°ã‚Šã¾ã™ï½ž";
+		mes "ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚";
 		close;
 	case 2:
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "‰äXƒJƒvƒ‰ƒT[ƒrƒX‚ª’ñ‹Ÿ‚·‚é";
-		mes "ƒ{[ƒiƒXƒCƒxƒ“ƒg‚Å‚·I";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "æˆ‘ã€…ã‚«ãƒ—ãƒ©ã‚µãƒ¼ãƒ“ã‚¹ãŒæä¾›ã™ã‚‹";
+		mes "ãƒœãƒ¼ãƒŠã‚¹ã‚¤ãƒ™ãƒ³ãƒˆã§ã™ï¼";
 		next;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "^529DFF‚¨‹q—l‚Æ‹¤‚É^FF0000”ñí‚ÉƒŒƒA‚ÈƒAƒCƒeƒ€";
-		mes "^529DFFuƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒhv^FF0000‚ð»ì‚µ‚æ‚¤‚Æ";
-		mes "‚¢‚¤ƒCƒxƒ“ƒg‚Å‚·B";
-		mes "(ƒXƒ|ƒ“ƒT[ : ƒAƒ‹ƒxƒ‹ƒ^¤l‘g‡)";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "^529DFFãŠå®¢æ§˜ã¨å…±ã«^FF0000éžå¸¸ã«ãƒ¬ã‚¢ãªã‚¢ã‚¤ãƒ†ãƒ ";
+		mes "^529DFFã€Œã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ã€^FF0000ã‚’è£½ä½œã—ã‚ˆã†ã¨";
+		mes "ã„ã†ã‚¤ãƒ™ãƒ³ãƒˆã§ã™ã€‚";
+		mes "(ã‚¹ãƒãƒ³ã‚µãƒ¼ : ã‚¢ãƒ«ãƒ™ãƒ«ã‚¿å•†äººçµ„åˆ)";
 		next;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "‚±‚ÌƒCƒxƒ“ƒg‚ÍA";
-		mes "‚¨‹q—l‚ÉƒEƒTƒM‚ÌƒwƒAƒoƒ“ƒh‚ð";
-		mes "ì‚é‚½‚ß‚É•K—v‚ÈƒAƒCƒeƒ€‚ð—pˆÓ‚µ‚Ä";
-		mes "‚¢‚½‚¾‚«A“–•û‚ÅŽdã‚°‚é‚Æ‚¢‚¤";
-		mes "‚à‚Ì‚Å‚·B";
-		mes "•K—v‚ÈƒAƒCƒeƒ€‚ÍˆÈ‰º‚Ì’Ê‚è‚Å‚·B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã¯ã€";
+		mes "ãŠå®¢æ§˜ã«ã‚¦ã‚µã‚®ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ã‚’";
+		mes "ä½œã‚‹ãŸã‚ã«å¿…è¦ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’ç”¨æ„ã—ã¦";
+		mes "ã„ãŸã ãã€å½“æ–¹ã§ä»•ä¸Šã’ã‚‹ã¨ã„ã†";
+		mes "ã‚‚ã®ã§ã™ã€‚";
+		mes "å¿…è¦ãªã‚¢ã‚¤ãƒ†ãƒ ã¯ä»¥ä¸‹ã®é€šã‚Šã§ã™ã€‚";
 		next;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "‚â‚í‚ç‚©‚È–Ñ- 100ŒÂ";
-		mes "Žl—t‚ÌƒNƒ[ƒo[- 1ŒÂ";
-		mes "^Žì- 1ŒÂ";
-		mes "”LŽ¨‚ÌƒwƒAƒoƒ“ƒh - 1ŒÂ";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ã‚„ã‚ã‚‰ã‹ãªæ¯›- 100å€‹";
+		mes "å››è‘‰ã®ã‚¯ãƒ­ãƒ¼ãƒãƒ¼- 1å€‹";
+		mes "çœŸç - 1å€‹";
+		mes "çŒ«è€³ã®ãƒ˜ã‚¢ãƒãƒ³ãƒ‰ - 1å€‹";
 		next;
-		mes "[ƒJƒvƒ‰Eˆõ]";
-		mes "ˆÈã‚ÌƒAƒCƒeƒ€‚ð‚¨Ž‚¿‚É‚È‚Á‚Ä";
-		mes "‚Ü‚½‚±‚¿‚ç‚Ü‚Å‚¨‰z‚µ‚­‚¾‚³‚¢B";
-		mes "ŠF—l‚ÌK‰^‚ð‚¨‹F‚è‚µ‚Ü‚·B";
+		mes "[ã‚«ãƒ—ãƒ©è·å“¡]";
+		mes "ä»¥ä¸Šã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ãŠæŒã¡ã«ãªã£ã¦";
+		mes "ã¾ãŸã“ã¡ã‚‰ã¾ã§ãŠè¶Šã—ãã ã•ã„ã€‚";
+		mes "çš†æ§˜ã®å¹¸é‹ã‚’ãŠç¥ˆã‚Šã—ã¾ã™ã€‚";
 		close;
 	case 3:
 		close;
 	}
 }
 
-//prontera.gat,146,87,6	duplicate(UsamimiEvt)	ƒJƒvƒ‰Eˆõ	83
-//geffen.gat,116,62,0	duplicate(UsamimiEvt)	ƒJƒvƒ‰Eˆõ	83
-//morocc.gat,154,97,4	duplicate(UsamimiEvt)	ƒJƒvƒ‰Eˆõ	83
-alberta.gat,26,229,0	duplicate(UsamimiEvt)	ƒJƒvƒ‰Eˆõ	83
-//payon.gat,97,116,4	duplicate(UsamimiEvt)	ƒJƒvƒ‰Eˆõ	83
+//prontera.gat,146,87,6	duplicate(UsamimiEvt)	ã‚«ãƒ—ãƒ©è·å“¡	83
+//geffen.gat,116,62,0	duplicate(UsamimiEvt)	ã‚«ãƒ—ãƒ©è·å“¡	83
+//morocc.gat,154,97,4	duplicate(UsamimiEvt)	ã‚«ãƒ—ãƒ©è·å“¡	83
+alberta.gat,26,229,0	duplicate(UsamimiEvt)	ã‚«ãƒ—ãƒ©è·å“¡	83
+//payon.gat,97,116,4	duplicate(UsamimiEvt)	ã‚«ãƒ—ãƒ©è·å“¡	83

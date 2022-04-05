@@ -1,63 +1,63 @@
-// ƒJƒvƒ‰‹âsƒT[ƒrƒX	ƒeƒXƒgƒXƒNƒŠƒvƒg
-prontera.gat,162,188,4	script	‹âsˆõƒJƒvƒ‰	112,{
+// ã‚«ãƒ—ãƒ©éŠ€è¡Œã‚µãƒ¼ãƒ“ã‚¹	ãƒ†ã‚¹ãƒˆã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+prontera.gat,162,188,4	script	éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©	112,{
 	cutin "kafra_06",2;
-	mes "[‹âsˆõƒJƒvƒ‰]";
-	mes "ƒJƒvƒ‰‹âsƒT[ƒrƒX‚Å‚·B";
-	mes "–ˆ“x‚²—˜—p‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·ô";
-	mes "1000z‚©‚ç‚Å‚Ì‚²—˜—p‚É‚È‚è‚Ü‚·B";
+	mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
+	mes "ã‚«ãƒ—ãƒ©éŠ€è¡Œã‚µãƒ¼ãƒ“ã‚¹ã§ã™ã€‚";
+	mes "æ¯Žåº¦ã”åˆ©ç”¨ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™â™ª";
+	mes "1000zã‹ã‚‰ã§ã®ã”åˆ©ç”¨ã«ãªã‚Šã¾ã™ã€‚";
 	next;
-	switch(select("—a‚¯‚é","ˆø‚«o‚·","‚â‚Á‚Ï‚â‚ß‚é")) {
+	switch(select("é ã‘ã‚‹","å¼•ãå‡ºã™","ã‚„ã£ã±ã‚„ã‚ã‚‹")) {
 	case 1:
-		mes "[‹âsˆõƒJƒvƒ‰]";
-		mes "—a‚¯‚é‹àŠz‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ô";
-		mes "‚¿‚È‚Ý‚ÉAŽè”—¿‚Æ‚µ‚Ä";
-		mes "—a‚©‚è‹à‚Ì1%’¸‚«‚Ü‚·B";
+		mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
+		mes "é ã‘ã‚‹é‡‘é¡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„â™ª";
+		mes "ã¡ãªã¿ã«ã€æ‰‹æ•°æ–™ã¨ã—ã¦";
+		mes "é ã‹ã‚Šé‡‘ã®1%é ‚ãã¾ã™ã€‚";
 		next;
 		input '@val;
-		mes "[‹âsˆõƒJƒvƒ‰]";
+		mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
 		if('@val < 1000) {
 			break;
 		}
 		set '@commission,'@val/100;
 		if(Zeny < '@val + '@commission) {
-			mes "Ž‚¿‹à‚ª‘«‚è‚È‚¢‚æ‚¤‚Å‚·‚ËB";
+			mes "æŒã¡é‡‘ãŒè¶³ã‚Šãªã„ã‚ˆã†ã§ã™ã­ã€‚";
 			break;
 		}
 		set Zeny,Zeny - ('@val + '@commission);
 		set #kafrabank,#kafrabank + '@val;
-		mes "Žè”—¿^135445" + '@commission + "^000000Zeny";
-		mes "’¸‚«‚Ü‚·‚ËB";
-		mes "–³Ž–‚ÉŽæ‚èˆø‚«‚Å‚«‚Ü‚µ‚½B";
+		mes "æ‰‹æ•°æ–™^135445" + '@commission + "^000000Zeny";
+		mes "é ‚ãã¾ã™ã­ã€‚";
+		mes "ç„¡äº‹ã«å–ã‚Šå¼•ãã§ãã¾ã—ãŸã€‚";
 		break;
 	case 2:
 		if(#kafrabank == 0) {
-			mes "[‹âsˆõƒJƒvƒ‰]";
-			mes "‚ ‚È‚½‚©‚ç‚ÍA1z‚à";
-			mes "‚¨—a‚©‚è‚µ‚Ä‚¢‚È‚¢‚Å‚·‚æH";
+			mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
+			mes "ã‚ãªãŸã‹ã‚‰ã¯ã€1zã‚‚";
+			mes "ãŠé ã‹ã‚Šã—ã¦ã„ãªã„ã§ã™ã‚ˆï¼Ÿ";
 			break;
 		}
-		mes "[‹âsˆõƒJƒvƒ‰]";
-		mes "Œ»Ý‚ ‚È‚½‚©‚ç‚¨—a‚©‚è‚µ‚Ä‚¢‚é‚Ì‚Í";
-		mes "^135445" + #kafrabank + "^000000Zeny‚Å‚·B";
-		mes "ˆø‚«o‚·‹àŠz‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ô";
+		mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
+		mes "ç¾åœ¨ã‚ãªãŸã‹ã‚‰ãŠé ã‹ã‚Šã—ã¦ã„ã‚‹ã®ã¯";
+		mes "^135445" + #kafrabank + "^000000Zenyã§ã™ã€‚";
+		mes "å¼•ãå‡ºã™é‡‘é¡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„â™ª";
 		next;
 		input '@val;
-		mes "[‹âsˆõƒJƒvƒ‰]";
+		mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
 		if('@val < 1)
 			break;
 		if(#kafrabank < '@val) {
-			mes "‚»‚ñ‚È‚É—a‹à‚Í‚ ‚è‚Ü‚¹‚ñ‚æH";
+			mes "ãã‚“ãªã«é é‡‘ã¯ã‚ã‚Šã¾ã›ã‚“ã‚ˆï¼Ÿ";
 			break;
 		}
 		set #kafrabank,#kafrabank - '@val;
 		set Zeny,Zeny + '@val;
-		mes "–³Ž–‚ÉŽæ‚èˆø‚«‚Å‚«‚Ü‚µ‚½B";
+		mes "ç„¡äº‹ã«å–ã‚Šå¼•ãã§ãã¾ã—ãŸã€‚";
 		break;
 	case 3:
-		mes "[‹âsˆõƒJƒvƒ‰]";
+		mes "[éŠ€è¡Œå“¡ã‚«ãƒ—ãƒ©]";
 		break;
 	}
-	mes "‚Ü‚½‚Ì‚²—˜—p‚ð‚¨‘Ò‚¿‚µ‚Ä‚¢‚Ü‚·ô";
+	mes "ã¾ãŸã®ã”åˆ©ç”¨ã‚’ãŠå¾…ã¡ã—ã¦ã„ã¾ã™â™ª";
 	close2;
 	cutin "kafra_06",255;
 	end;
