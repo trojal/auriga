@@ -1,21 +1,21 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  Training Room      by Pneuma
+// Ragnarok Online -- 冒険者アカデミー  実習室      by Pneuma
 //------------------------------------------------------------
 
 //----------------------------
-// 旧Training Room
+// 旧実習室
 //
 
-//ac_cl_hall.gat,149,64,0	script	Training RoomA_WP	45,1,1,{
+//ac_cl_hall.gat,149,64,0	script	実習室A_WP	45,1,1,{
 //	set '@novice, (BaseLevel<=25 && Upper!=1 && (Job<=6 || Job==Job_TaeKwon || Job==Job_Gunslinger || Job==Job_Ninja));
 //	if(!'@novice) {
 //		mes "‐ミッドの注意書き‐";
 //		mes "この先は^FF0000Lv1～Lv25^000000の";
-//		mes "冒険者専用のTraining Roomになるよ！";
+//		mes "冒険者専用の実習室になるよ！";
 //		mes "^FF0000転生、2次職以上^000000の冒険者も";
-//		mes "Training Roomには入れません。";
+//		mes "実習室には入れません。";
 //		mes "駆け出しの冒険者を";
 //		mes "サポートしてあげてね！";
 //		close;
@@ -24,14 +24,14 @@
 //	end;
 //}
 
-//ac_cl_hall.gat,151,42,0	script	Training RoomB_WP	45,1,1,{
+//ac_cl_hall.gat,151,42,0	script	実習室B_WP	45,1,1,{
 //	set '@novice, (BaseLevel>=20 && BaseLevel<=35 && Upper!=1 && (Job<=6 || Job==Job_TaeKwon || Job==Job_Gunslinger || Job==Job_Ninja));
 //	if(!'@novice) {
 //		mes "‐ミッドの注意書き‐";
 //		mes "この先は^FF0000Lv20～Lv35^000000の";
-//		mes "冒険者専用のTraining Roomになるよ！";
+//		mes "冒険者専用の実習室になるよ！";
 //		mes "^FF0000転生、2次職以上^000000の冒険者も";
-//		mes "Training Roomには入れません。";
+//		mes "実習室には入れません。";
 //		mes "駆け出しの冒険者を";
 //		mes "サポートしてあげてね！";
 //		close;
@@ -40,14 +40,14 @@
 //	end;
 //}
 
-//ac_cl_hall.gat,182,21,0	script	Training RoomC_WP	45,1,1,{
+//ac_cl_hall.gat,182,21,0	script	実習室C_WP	45,1,1,{
 //	set '@novice, (BaseLevel>=30 && BaseLevel<=45 && Upper!=1 && (Job<=6 || Job==Job_TaeKwon || Job==Job_Gunslinger || Job==Job_Ninja));
 //	if(!'@novice) {
 //		mes "‐ミッドの注意書き‐";
 //		mes "この先は^FF0000Lv30～Lv45^000000の";
-//		mes "冒険者専用のTraining Roomになるよ！";
+//		mes "冒険者専用の実習室になるよ！";
 //		mes "^FF0000転生、2次職以上^000000の冒険者も";
-//		mes "Training Roomには入れません。";
+//		mes "実習室には入れません。";
 //		mes "駆け出しの冒険者を";
 //		mes "サポートしてあげてね！";
 //		close;
@@ -57,12 +57,12 @@
 //}
 
 ac_cl_hall.gat,167,53,0	script	磨り減った跡	111,{
-	mes "‐The status has a sticker on it‐";
+	mes "‐銅像に張り紙が貼ってある‐";
 	next;
-	mes "[Mid's Note]";
-	mes "「こちらのTraining Roomは封鎖されました」";
+	mes "[ミッドの注意書き]";
+	mes "「こちらの実習室は封鎖されました」";
 	next;
-	mes "‐ここにTraining Roomがあったようだ‐";
+	mes "‐ここに実習室があったようだ‐";
 	close;
 //2010/04/13削除
 //	mes "‐磨り減ったレールのような";
@@ -89,33 +89,33 @@ ac_cl_hall.gat,167,53,0	script	磨り減った跡	111,{
 }
 
 //----------------------------------
-//Training Room・特別室 Warper
-ac_cl_area.gat,57,185,4		script	Warper#AC_PRACBD01	857,{
+//実習室・特別室 転送装置
+ac_cl_area.gat,57,185,4		script	転送装置#AC_PRACBD01	857,{
 	set '@novice, callfunc("AC_GetNovice");
-	mes "[Warper]";
-	mes "こちらはTraining Room・特別室の";
+	mes "[転送装置]";
+	mes "こちらは実習室・特別室の";
 	mes "入り口です。";
 	mes "モンスターとの戦闘を";
 	mes "練習したい生徒は";
 	mes "行ってみましょう。";
 	next;
 	if(!'@novice) {
-		mes "[Mid's Note]";
+		mes "[ミッドの注意書き]";
 		mes "この先は^FF0000Lv1～Lv55^000000の";
-		mes "冒険者専用のTraining Roomになるよ！";
+		mes "冒険者専用の実習室になるよ！";
 		mes "^FF0000転生、2次職以上^000000の冒険者や";
-		mes "ドラム族はTraining Roomには入れません。";
+		mes "ドラム族は実習室には入れません。";
 		mes "駆け出しの冒険者を";
 		mes "サポートしてあげてね！";
 		close;
 	}
 	switch(Job){
 	case Job_Novice:
-		mes "‐Warperにミッドの";
+		mes "‐転送装置にミッドの";
 		mes "　注意書きが書いてある‐";
 		next;
-		mes "[Mid's Note]";
-		mes "このTraining Roomは1次職に";
+		mes "[ミッドの注意書き]";
+		mes "この実習室は1次職に";
 		mes "転職しても入れるよ！";
 		mes "^0000FFノービス^000000の生徒は";
 		mes "^0000FF1次職へ転職してこよう！^000000";
@@ -124,15 +124,15 @@ ac_cl_area.gat,57,185,4		script	Warper#AC_PRACBD01	857,{
 		next;
 		break;
 	case Job_Gunslinger:
-		mes "[Mid's Note]";
-		mes "Gunslingerの生徒は";
+		mes "[ミッドの注意書き]";
+		mes "ガンスリンガーの生徒は";
 		mes "^0000FF銃弾^000000の装備を";
 		mes "忘れないでね！";
 		mes "銃を装備していても";
 		mes "^0000FF銃弾^000000を装備していないと";
 		mes "モンスターに攻撃できないよ！";
 		next;
-		mes "[Mid's Note]";
+		mes "[ミッドの注意書き]";
 		mes "銃弾を装備していない生徒は";
 		mes "^0000FF「所持アイテム」^000000ウィンドウ内の";
 		mes "^0000FF「etc」^000000タブをクリックして、";
@@ -140,7 +140,7 @@ ac_cl_area.gat,57,185,4		script	Warper#AC_PRACBD01	857,{
 		mes "ドラッグアンドドロップして";
 		mes "装備しようね！";
 		next;
-		mes "[Mid's Note]";
+		mes "[ミッドの注意書き]";
 		mes "もし、^0000FF「etc」^000000タブに";
 		mes "銃弾がなかったら、転職時に貰った";
 		mes "バレットケースが^0000FF「item」^000000タブに";
@@ -151,12 +151,12 @@ ac_cl_area.gat,57,185,4		script	Warper#AC_PRACBD01	857,{
 		set '@hint,1;
 		break;
 	}
-	menu "Training Room・特別室に行く",L_PRAC,"ミッドの注意書きを読む",L_ABOUT,"何もしない",L_CANCEL;
+	menu "実習室・特別室に行く",L_PRAC,"ミッドの注意書きを読む",L_ABOUT,"何もしない",L_CANCEL;
 L_PRAC:
-	mes "[Warper]";
+	mes "[転送装置]";
 	mes "どちらへ行きますか？";
 	mes " ";
-	mes "‐行くことができるTraining Room・特別室は";
+	mes "‐行くことができる実習室・特別室は";
 	mes "^FF0000赤^000000、又は^0000FF青^000000で表示されます‐";
 	next;
 	set '@list$,"";
@@ -175,18 +175,18 @@ L_PRAC:
 		close;
 	}
 	if(BaseLevel < 'LVREQUIRE['@num]){
-		mes "[Warper]";
-		mes "このTraining Roomを利用するためには";
+		mes "[転送装置]";
+		mes "この実習室を利用するためには";
 		mes "^0000FFBaseLvが後 " + ('LVREQUIRE['@num] - BaseLevel) + "^000000 必要です。";
 		next;
 		goto L_PRAC;
 	}
 	savepoint "ac_cl_area.gat",53,180;
-	mes "[Warper]";
+	mes "[転送装置]";
 	mes "^FF0000" + 'MAPNAME$['@num] + "^000000へ転送します。";
 	mes " ";
 	mes "‐^0000FFセーブ位置が教室棟1F";
-	mes "Training Roomの入り口前に^000000";
+	mes "実習室の入り口前に^000000";
 	mes "設定されました‐";
 	close2;
 	switch('@num){
@@ -200,8 +200,8 @@ L_PRAC:
 	case 7: warp "ac_spec_03.gat",98,78; end;
 	}
 L_ABOUT:
-	mes "[Mid's Note]";
-	mes "Training Room・特別室では";
+	mes "[ミッドの注意書き]";
+	mes "実習室・特別室では";
 	mes "^0000FFリカバリープレート^000000を利用しよう！";
 	mes "^0000FFHPとSPが回復^000000できるぞ！";
 	mes " ";
@@ -218,23 +218,23 @@ L_CANCEL:
 	}
 	end;
 OnInit:
-	waitingroom "Training Roomの入り口",0;
-	setarray 'MAPNAME$, "Training Room（海岸）","Training Room（島）","Training Room（高原）","Training Room（炭鉱）","Training Room（砂漠）","特別室（湖）","特別室（廃墟）","特別室（地下道）";
+	waitingroom "実習室の入り口",0;
+	setarray 'MAPNAME$, "実習室（海岸）","実習室（島）","実習室（高原）","実習室（炭鉱）","実習室（砂漠）","特別室（湖）","特別室（廃墟）","特別室（地下道）";
 	setarray 'MAPLVSTR$,"Lv1以上　","Lv15以上 ","Lv25以上 ","Lv35以上 ","Lv45以上 ","Lv10以上 ","Lv10以上 ","Lv10以上 ";
 	setarray 'LVREQUIRE,1,15,25,35,45,10,10,10;
 	setarray 'MAPNAMECL,0,0,0,0,0,1,1,1;
 	setarray 'COLORSTR$,"^FF0000","^0000FF";
 }
-ac_cl_hall.gat,152,66,4		duplicate(Warper#AC_PRACBD01)		Warper#AC_PRACBD02	857
-ac_cl_hall.gat,154,44,4		duplicate(Warper#AC_PRACBD01)		Warper#AC_PRACBD03	857
-ac_cl_hall.gat,174,22,4		duplicate(Warper#AC_PRACBD01)		Warper#AC_PRACBD04	857
-ac_cl_area.gat,57,187,0		duplicate(Warper#AC_PRACBD01)		WP#AC_PRACBD01	45,1,1
-ac_cl_hall.gat,149,64,0		duplicate(Warper#AC_PRACBD01)		WP#AC_PRACBD02	45,1,1
-ac_cl_hall.gat,151,42,0		duplicate(Warper#AC_PRACBD01)		WP#AC_PRACBD03	45,1,1
-ac_cl_hall.gat,182,21,0		duplicate(Warper#AC_PRACBD01)		WP#AC_PRACBD04	45,1,1
+ac_cl_hall.gat,152,66,4		duplicate(転送装置#AC_PRACBD01)		転送装置#AC_PRACBD02	857
+ac_cl_hall.gat,154,44,4		duplicate(転送装置#AC_PRACBD01)		転送装置#AC_PRACBD03	857
+ac_cl_hall.gat,174,22,4		duplicate(転送装置#AC_PRACBD01)		転送装置#AC_PRACBD04	857
+ac_cl_area.gat,57,187,0		duplicate(転送装置#AC_PRACBD01)		WP#AC_PRACBD01	45,1,1
+ac_cl_hall.gat,149,64,0		duplicate(転送装置#AC_PRACBD01)		WP#AC_PRACBD02	45,1,1
+ac_cl_hall.gat,151,42,0		duplicate(転送装置#AC_PRACBD01)		WP#AC_PRACBD03	45,1,1
+ac_cl_hall.gat,182,21,0		duplicate(転送装置#AC_PRACBD01)		WP#AC_PRACBD04	45,1,1
 
 //----------------------------------
-// Training Room 立ち入り禁止看板
+// 実習室 立ち入り禁止看板
 function	script	stopboard_func	{
 	viewpoint 1,getarg(0),getarg(1),1,0xFF0000;
 	mes "‐この先立ち入り禁止‐";
@@ -244,18 +244,18 @@ function	script	stopboard_func	{
 	mes "戻ってくること‐";
 	close;
 }
-//Training Room（海岸）
+//実習室（海岸）
 ac_prac_01.gat,299,57,4		script	#ac_exerboard_P11	837,{ callfunc "stopboard_func",225,31; }
 ac_prac_01.gat,370,93,4		script	#ac_exerboard_P12	837,{ callfunc "stopboard_func",225,31; }
 ac_prac_01.gat,22,59,4		script	#ac_exerboard_P13	837,{ callfunc "stopboard_func",225,31; }
-//Training Room（島）
+//実習室（島）
 ac_prac_02.gat,111,91,4		script	#ac_exerboard_P21	837,{ callfunc "stopboard_func",108,27; }
-//Training Room（高原）
+//実習室（高原）
 ac_prac_03.gat,27,241,4		script	#ac_exerboard_P31	837,{ callfunc "stopboard_func",29,343; }
 ac_prac_03.gat,191,236,4	script	#ac_exerboard_P32	837,{ callfunc "stopboard_func",29,343; }
-//Training Room（炭鉱）
+//実習室（炭鉱）
 ac_prac_04.gat,19,15,0		script	#ac_exerboard_P41	837,{ callfunc "stopboard_func",261,261; }
-//Training Room（砂漠）
+//実習室（砂漠）
 ac_prac_05.gat,160,378,4	script	#ac_exerboard_P51	837,{ callfunc "stopboard_func",51,170; }
 ac_prac_05.gat,380,308,4	script	#ac_exerboard_P52	837,{ callfunc "stopboard_func",51,170; }
 //特別室（湖）
@@ -271,10 +271,10 @@ ac_spec_03.gat,67,278,4		script	#ac_exerboard_S31	837,{ callfunc "stopboard_func
 -	script	リカバリープレート#func	-1,{
 	setarray 'RECOVER_TIME,0,1,2,4,8;
 	set '@time,(BaseLevel>20) * 'RECOVER_TIME[(BaseLevel-11)/10];
-	mes "[Recovery Plate]";
+	mes "[リカバリープレート]";
 	if(BaseLevel>60){
 		set @AC_RECOVERTIME,0;
-		mes "[Mid's Note]";
+		mes "[ミッドの注意書き]";
 		mes "‐このリカバリープレートは";
 		mes "実習中の^FF0000冒険者見習い^000000の為に";
 		mes "用意された実習用の機械さ！‐";
@@ -302,14 +302,14 @@ ac_spec_03.gat,67,278,4		script	#ac_exerboard_S31	837,{ callfunc "stopboard_func
 		next;
 		menu "リカバリーを行う",-,"注意書きを読む",L_ABOUT,"何もしない",L_CANCEL;
 	}
-	mes "[Recovery Plate]";
+	mes "[リカバリープレート]";
 	mes "何の属性を付与しますか？^FF0000";
 	mes "‐属性付与は武器を装備した状態で";
 	mes "行うことができます-^000000";
 	next;
-	set '@num,select("Give fire attribute","Give earth attribute","Give wind attribute","Give water attribute","Give holy attribute","Give poison attribute","Do not give attributes","Cancel");
+	set '@num,select("火属性を付与","地属性を付与","風属性を付与","水属性を付与","聖属性を付与","毒属性を付与","属性を付与しない","何もしない");
 	if('@num==8) goto L_CANCEL;
-	mes "[Recovery Plate]";
+	mes "[リカバリープレート]";
 	switch('@num) {
 		case 1: npcskillsupport 280,4,"","";  sc_start 90,1800000,5; mes "‐^FF0000火^000000属性の付与を行いました‐";break;
 		case 2: npcskillsupport 283,4,"","";  sc_start 93,1800000,5; mes "‐^FF0000土^000000属性の付与を行いました‐";break;
@@ -325,12 +325,12 @@ ac_spec_03.gat,67,278,4		script	#ac_exerboard_S31	837,{ callfunc "stopboard_func
 	percentheal 100,100;
 	close;
 L_ABOUT:
-	mes "[Mid's Note]";
+	mes "[ミッドの注意書き]";
 	mes "‐このリカバリープレートは";
 	mes "実習中の冒険者のために";
 	mes "用意された実習用の機械さ！‐";
 	next;
-	mes "[Mid's Note]";
+	mes "[ミッドの注意書き]";
 	if('@time>0) mes "‐今の君は^FF0000約" + '@time + "^000000分おきに";
 	else         mes "‐今の君は^FF0000いつでも^000000";
 	mes "リカバリーを行えるよ！‐";
@@ -339,7 +339,7 @@ L_ABOUT:
 	mes "‐HP、SPの回復、属性付与を";
 	mes "行うことさ！‐";
 	next;
-	mes "[Mid's Note]";
+	mes "[ミッドの注意書き]";
 	mes "‐上級者になればなるほど";
 	mes "リカバリーを実行する時の";
 	mes "^FF0000パワーが必要^000000なんだ！‐";
@@ -347,40 +347,40 @@ L_ABOUT:
 	mes "‐上級者は、パワーの充電に";
 	mes "時間がかかるので注意してね！‐";
 	next;
-	mes "[Mid's Note]";
+	mes "[ミッドの注意書き]";
 	mes "‐属性付与は";
 	mes "火属性、地属性、風属性、水属性、";
 	mes "毒属性、聖属性、を付与できる！‐";
 	next;
-	mes "[Mid's Note]";
+	mes "[ミッドの注意書き]";
 	mes "‐いろんな属性を試してみよう！-^FF0000";
 	mes "‐属性付与は武器を装備した状態で";
 	mes "行うことができるよ！-^000000";
 	close;
 L_CANCEL:
-	mes "[Recovery Plate]";
+	mes "[リカバリープレート]";
 	mes "‐操作を取り消しました‐";
 	close;
 }
-//Training Room（海岸）
+//実習室（海岸）
 ac_prac_01.gat,236,51,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_01.gat,52,30,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_01.gat,322,179,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_01.gat,141,130,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_01.gat,354,34,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 
-//Training Room（島）
+//実習室（島）
 ac_prac_02.gat,116,58,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_02.gat,171,131,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_02.gat,58,150,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 
-//Training Room（高原）
+//実習室（高原）
 ac_prac_03.gat,46,310,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_03.gat,132,35,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_03.gat,26,90,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_03.gat,119,174,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 
-//Training Room（炭鉱）
+//実習室（炭鉱）
 ac_prac_04.gat,287,271,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_04.gat,228,78,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_04.gat,141,178,4	duplicate(リカバリープレート#func)	リカバリープレート	857
@@ -388,7 +388,7 @@ ac_prac_04.gat,12,119,4		duplicate(リカバリープレート#func)	リカバリープレート	8
 ac_prac_04.gat,44,273,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_04.gat,119,32,4		duplicate(リカバリープレート#func)	リカバリープレート	857
 
-//Training Room（砂漠）
+//実習室（砂漠）
 ac_prac_05.gat,150,323,4	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_05.gat,229,288,3	duplicate(リカバリープレート#func)	リカバリープレート	857
 ac_prac_05.gat,357,252,4	duplicate(リカバリープレート#func)	リカバリープレート	857
@@ -425,27 +425,27 @@ ac_spec_03.gat,194,179,4	duplicate(リカバリープレート#func)	リカバリープレート	8
 
 //----------------------------------
 -	script	アカデミーボックス#func		-1,{
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes "ウィーン…　ピピピッ…";
 	mes " ";
 	mes "アカデミー生徒　確認完了";
 	mes "各種機能　ヲ　選択シテクダサイ";
 	next;
-	menu "ポーション交換サービス",L_POTION,"入り口転送サービス",L_TENSOU,"アカデミーボックスの手引き",L_HOWTO,"Cancel",L_CANCEL;
+	menu "ポーション交換サービス",L_POTION,"入り口転送サービス",L_TENSOU,"アカデミーボックスの手引き",L_HOWTO,"やっぱり止める",L_CANCEL;
 L_POTION:
-	setarray '@potname$,"Novice Potion","Novice Blue Potion","Concentration Potion","Awakening Potion";
+	setarray '@potname$,"初心者用ポーション","初心者用青ポーション","スピードアップポーション","ハイスピードポーション";
 	setarray '@potid,569,11518,645,656;
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes "交換シタイ";
 	mes "ポーション ヲ";
 	mes "選択シテクダサイ";
 	next;
-	set '@num,select("Novice Potion","Novice Blue Potion","Concentration Potion","Awakening Potion","Cancel")-1;
+	set '@num,select("初心者用ポーション","初心者用青ポーション","スピードアップポーション","ハイスピードポーション","やっぱり止める")-1;
 	if('@num==4) goto L_CANCEL;
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	switch('@num){
 	case 0:
-		mes "Novice Potion";
+		mes "初心者用ポーション";
 		mes "効果:HP回復";
 		next;
 		setarray '@item,914,507,945;
@@ -454,7 +454,7 @@ L_POTION:
 		setarray '@name$,"綿毛","赤ハーブ","タヌキの葉"; //タヌキの葉で本鯖通り
 		break;
 	case 1:
-		mes "Novice Blue Potion";
+		mes "初心者用青ポーション";
 		mes "効果:SP回復^FF0000";
 		mes "※コノアイテムハ 倉庫ヲ含メ、";
 		mes "　一切ノ移動ガ出来マセン^000000";
@@ -465,7 +465,7 @@ L_POTION:
 		setarray '@name$,"どんぐり","鉄","おいしい焼きいも";
 		break;
 	case 2:
-		mes "Concentration Potion";
+		mes "スピードアップポーション";
 		mes "Lv制限:1以上";
 		mes "効果:攻撃速度上昇（小）";
 		mes "利用可能ナ1次職業:スベテノ1次職";
@@ -476,11 +476,11 @@ L_POTION:
 		setarray '@name$,"バッタの足";
 		break;
 	case 3:
-		mes "Awakening Potion";
+		mes "ハイスピードポーション";
 		mes "Lv制限:40以上";
 		mes "効果:攻撃速度上昇（中）";
 		mes "利用可能な1次職:";
-		mes "Acolyte ヲ除ク スベテノ1次職";
+		mes "アコライト ヲ除ク スベテノ1次職";
 		next;
 		setarray '@item,1018;
 		setarray '@amount,15;
@@ -488,7 +488,7 @@ L_POTION:
 		setarray '@name$,"土竜の爪";
 		break;
 	}
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes '@potname$['@num] + "交換リスト";
 	set '@select$,"";
 	for(set '@i,0; '@i<getarraysize('@name$); set '@i,'@i+1){
@@ -502,16 +502,16 @@ L_POTION:
 	next;
 	set '@trade,select('@select$)-1;
 	if('@trade==getarraysize('@name$)) goto L_CANCEL;
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes '@name$['@trade] + ('@amount['@trade]) + "個 ヲ";
 	mes '@potname$['@num] + ('@amount2['@trade]) + "個ニ";
 	mes "交換シマス";
 	mes " ";
 	mes "ヨロシイデスカ？";
 	next;
-	menu "Yes",-,"Cancel",L_CANCEL;
+	menu "はい",-,"やっぱり止める",L_CANCEL;
 	if(countitem('@item['@trade])<'@amount['@trade]){
-		mes "[Academy Box]";
+		mes "[アカデミーボックス]";
 		mes "ガガピー……　ガガッ…";
 		mes " ";
 		mes "交換 ニ 必要 ナ";
@@ -521,7 +521,7 @@ L_POTION:
 		close;
 	}
 	if(!checkweight('@potid['@num],'@amount2['@trade])){
-		mes "[Academy Box]";
+		mes "[アカデミーボックス]";
 		mes "ガガピー……　ガガッ…";
 		mes " ";
 		mes "重量 ガ 超過シテイルヨウデス";
@@ -532,7 +532,7 @@ L_POTION:
 	}
 	delitem '@item['@trade],'@amount['@trade];
 	getitem '@potid['@num],'@amount2['@trade];
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes "ピピピッ…ピーッ！";
 	mes " ";
 	mes "（コロン、コロン）";
@@ -541,7 +541,7 @@ L_POTION:
 	mes "又 ノ 御利用オ待チシテオリマス";
 	close;
 L_TENSOU:
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes "転送エネルギー ニ";
 	mes "ゼロピー 2 個 ガ 必要デス";
 	mes "エネルギー ヲ 充電スル事 デ";
@@ -549,9 +549,9 @@ L_TENSOU:
 	mes " ";
 	mes "利用シマスカ？";
 	next;
-	menu "Yes",-,"Cancel",L_CANCEL;
+	menu "はい",-,"やっぱり止める",L_CANCEL;
 	if(countitem(909)<2){
-		mes "[Academy Box]";
+		mes "[アカデミーボックス]";
 		mes "ガガピー……　ガガッ…";
 		mes " ";
 		mes "ゼロピー ガ 不足シテイル カ";
@@ -560,7 +560,7 @@ L_TENSOU:
 		mes "アカデミー転送 ヲ 中止シマシタ";
 		close;
 	}
-	mes "[Academy Box]";
+	mes "[アカデミーボックス]";
 	mes "ソレデハ 転送シマス";
 	close2;
 	delitem 909,2;
@@ -580,25 +580,25 @@ L_CANCEL:
 	mes "操作を中止した‐";
 	close;
 }
-//Training Room（海岸）
+//実習室（海岸）
 ac_prac_01.gat,236,56,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_01.gat,52,35,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_01.gat,141,125,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_01.gat,317,174,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_01.gat,354,40,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 
-//Training Room（島）
+//実習室（島）
 ac_prac_02.gat,111,58,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_02.gat,171,126,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_02.gat,56,145,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 
-//Training Room（高原）
+//実習室（高原）
 ac_prac_03.gat,42,306,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_03.gat,137,41,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_03.gat,26,85,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_03.gat,114,174,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 
-//Training Room（炭鉱）
+//実習室（炭鉱）
 ac_prac_04.gat,279,279,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_04.gat,223,88,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_04.gat,145,177,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
@@ -606,7 +606,7 @@ ac_prac_04.gat,19,119,4		duplicate(アカデミーボックス#func)	アカデミーボックス	8
 ac_prac_04.gat,49,269,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_04.gat,116,27,4		duplicate(アカデミーボックス#func)	アカデミーボックス	888
 
-//Training Room（砂漠）
+//実習室（砂漠）
 ac_prac_05.gat,154,323,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_05.gat,223,288,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
 ac_prac_05.gat,357,247,4	duplicate(アカデミーボックス#func)	アカデミーボックス	888
