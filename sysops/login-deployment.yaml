@@ -18,7 +18,7 @@ spec:
     metadata:
       labels:
         name: login-server
-        service: char
+        service: login
     spec:
       containers:
       - args:

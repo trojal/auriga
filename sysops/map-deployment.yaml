@@ -18,7 +18,7 @@ spec:
     metadata:
       labels:
         name: map-server
-        service: char
+        service: map
     spec:
       containers:
       - args:
