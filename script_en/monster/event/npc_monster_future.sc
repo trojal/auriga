@@ -23,10 +23,10 @@ ice_dun03.gat,0,0,0,0	monster	クトルラナックス	1779,1,7200000,3600000,0
 
 //アウドムラ草原(ra_fild01.gat)
 ra_fild01.gat,0,0,0,0	monster	ムスキプラー	1780,50,0,0,0
-ra_fild01.gat,0,0,0,0	monster	ジオグラファー	1368,30,0,0,0
+ra_fild01.gat,0,0,0,0	monster	Geographer	1368,30,0,0,0
 ra_fild01.gat,0,0,0,0	monster	ガリオン	1783,2,0,0,0
 ra_fild01.gat,0,0,0,0	monster	ロウィーン	1782,10,0,0,0
-ra_fild01.gat,0,0,0,0	monster	グリフォン	1259,3,3600000,1800000,0
+ra_fild01.gat,0,0,0,0	monster	Gryphon	1259,3,3600000,1800000,0
 ra_fild01.gat,0,0,0,0	monster	ドロセラ	1781,20,0,0,0
 
 //オッズ峡谷(ra_fild02.gat)
@@ -46,18 +46,18 @@ ra_fild03.gat,0,0,0,0	monster	ドロセラ	1781,10,0,0,0
 ra_fild04.gat,0,0,0,0	monster	スタポ	1784,20,0,0,0
 ra_fild04.gat,0,0,0,0	monster	ロウィーン	1782,60,0,0,0
 ra_fild04.gat,0,0,0,0	monster	アトロス	1785,1,18000000,9000000,0
-ra_fild04.gat,0,0,0,0	monster	ワイルドローズ	1261,10,0,0,0
+ra_fild04.gat,0,0,0,0	monster	Wild Rose	1261,10,0,0,0
 ra_fild04.gat,0,0,0,0	monster	ガリオン	1783,3,0,0,0
 
 //アウドムラ草原(ra_fild05.gat)
 ra_fild05.gat,0,0,0,0	monster	ヒルウィンド	1680,50,0,0,0
 ra_fild05.gat,0,0,0,0	monster	ドロセラ	1781,25,0,0,0
-ra_fild05.gat,0,0,0,0	monster	ジオグラファー	1368,15,0,0,0
+ra_fild05.gat,0,0,0,0	monster	Geographer	1368,15,0,0,0
 
 //ポルトルナ(ra_fild06.gat)
 ra_fild06.gat,0,0,0,0	monster	ヒルウィンド	1680,30,0,0,0
 ra_fild06.gat,0,0,0,0	monster	ドロセラ	1781,10,0,0,0
-ra_fild06.gat,0,0,0,0	monster	ウィレス	1627,20,0,0,0
+ra_fild06.gat,0,0,0,0	monster	Anopheles	1627,20,0,0,0
 
 //オッズ峡谷(ra_fild07.gat)
 ra_fild07.gat,0,0,0,0	monster	ガリオン	1783,20,0,0,0
@@ -66,14 +66,14 @@ ra_fild07.gat,0,0,0,0	monster	スタポ	1784,30,0,0,0
 
 //ラッセル平原(ra_fild08.gat)
 ra_fild08.gat,0,0,0,0	monster	スタポ	1784,60,0,0,0
-ra_fild08.gat,0,0,0,0	monster	ドロップス	1113,30,0,0,0
+ra_fild08.gat,0,0,0,0	monster	Drops	1113,30,0,0,0
 ra_fild08.gat,0,0,0,0	monster	ドロセラ	1781,15,0,0,0
 
 //アウドムラ草原(ra_fild09.gat)
 ra_fild09.gat,0,0,0,0	monster	ドロセラ	1781,60,0,0,0
-ra_fild09.gat,0,0,0,0	monster	メタリン	1613,20,0,0,0
+ra_fild09.gat,0,0,0,0	monster	Metaling	1613,20,0,0,0
 ra_fild09.gat,0,0,0,0	monster	ヒルウィンド	1680,10,0,0,0
-ra_fild09.gat,0,0,0,0	monster	ハーピー	1376,1,0,0,0
+ra_fild09.gat,0,0,0,0	monster	Harpy	1376,1,0,0,0
 
 //オッズ峡谷(ra_fild10.gat)
 ra_fild10.gat,0,0,0,0	monster	ガリオン	1783,15,0,0,0
@@ -82,21 +82,21 @@ ra_fild10.gat,0,0,0,0	monster	スタポ	1784,35,0,0,0
 
 //ラッセル平原(ra_fild11.gat)
 ra_fild11.gat,0,0,0,0	monster	スタポ	1784,25,0,0,0
-ra_fild11.gat,0,0,0,0	monster	ドロップス	1113,35,0,0,0
+ra_fild11.gat,0,0,0,0	monster	Drops	1113,35,0,0,0
 ra_fild11.gat,0,0,0,0	monster	ロウィーン	1782,10,0,0,0
-ra_fild11.gat,0,0,0,0	monster	赤い草	1078,10,180000,90000,0
-ra_fild11.gat,0,0,0,0	monster	黄色草	1081,10,180000,90000,0
+ra_fild11.gat,0,0,0,0	monster	Red Plant	1078,10,180000,90000,0
+ra_fild11.gat,0,0,0,0	monster	Yellow Plant	1081,10,180000,90000,0
 
 //ラッセル平原(ra_fild12.gat)
 ra_fild12.gat,0,0,0,0	monster	スタポ	1784,40,0,0,0
-ra_fild12.gat,0,0,0,0	monster	ドロップス	1113,65,0,0,0
-ra_fild12.gat,0,0,0,0	monster	ポポリン	1031,5,0,0,0
-ra_fild12.gat,0,0,0,0	monster	黄色草	1081,15,180000,90000,0
-ra_fild12.gat,0,0,0,0	monster	赤い草	1078,5,180000,90000,0
+ra_fild12.gat,0,0,0,0	monster	Drops	1113,65,0,0,0
+ra_fild12.gat,0,0,0,0	monster	Poporing	1031,5,0,0,0
+ra_fild12.gat,0,0,0,0	monster	Yellow Plant	1081,15,180000,90000,0
+ra_fild12.gat,0,0,0,0	monster	Red Plant	1078,5,180000,90000,0
 
 //涙の海岸(ra_fild13.gat)
 ra_fild13.gat,0,0,0,0	monster	スタポ	1784,60,0,0,0
-ra_fild13.gat,0,0,0,0	monster	ドロップス	1113,40,0,0,0
+ra_fild13.gat,0,0,0,0	monster	Drops	1113,40,0,0,0
 ra_fild13.gat,0,0,0,0	monster	ロウィーン	1782,5,0,0,0
 
 //神殿聖域(ra_san05.gat)
@@ -133,22 +133,22 @@ ra_san04.gat,0,0,0,0	monster	シーカー	1774,20,0,0,0
 
 //ベインスフィールド(ve_fild01.gat)
 ve_fild01.gat,0,0,0,0	monster	ムカー	1055,40,0,0,0
-ve_fild01.gat,0,0,0,0	monster	ドロップス	1113,20,0,0,0
+ve_fild01.gat,0,0,0,0	monster	Drops	1113,20,0,0,0
 ve_fild01.gat,0,0,0,0	monster	スタポ	1784,20,0,0,0
 ve_fild01.gat,0,0,0,0	monster	サイドワインダー	1037,1,0,0,0
-ve_fild01.gat,0,0,0,0	monster	赤い草	1078,10,180000,90000,0
-ve_fild01.gat,0,0,0,0	monster	青い草	1079,3,1800000,900000,0
-ve_fild01.gat,0,0,0,0	monster	黄色草	1081,10,180000,90000,0
-ve_fild01.gat,0,0,0,0	monster	輝く草	1083,1,1800000,900000,0
+ve_fild01.gat,0,0,0,0	monster	Red Plant	1078,10,180000,90000,0
+ve_fild01.gat,0,0,0,0	monster	Blue Plant	1079,3,1800000,900000,0
+ve_fild01.gat,0,0,0,0	monster	Yellow Plant	1081,10,180000,90000,0
+ve_fild01.gat,0,0,0,0	monster	Shining Plant	1083,1,1800000,900000,0
 
 //ベインスフィールド(ve_fild02.gat)
-ve_fild02.gat,0,0,0,0	monster	サベージ	1166,60,0,0,0
+ve_fild02.gat,0,0,0,0	monster	Savage	1166,60,0,0,0
 ve_fild02.gat,0,0,0,0	monster	ロウィーン	1782,30,0,0,0
 ve_fild02.gat,0,0,0,0	monster	アトロス	1785,1,7200000,3600000,0
 
 //ベインスフィールド(ve_fild03.gat)
-ve_fild03.gat,0,0,0,0	monster	マグマリン	1836,40,0,0,0
-ve_fild03.gat,0,0,0,0	monster	スリーパー	1386,30,0,0,0
+ve_fild03.gat,0,0,0,0	monster	Magmaring	1836,40,0,0,0
+ve_fild03.gat,0,0,0,0	monster	Sleeper	1386,30,0,0,0
 
 //ベインスフィールド(ve_fild04.gat)
 ve_fild04.gat,0,0,0,0	monster	デザートウルフ	1106,30,0,0,0
@@ -160,30 +160,30 @@ ve_fild04.gat,0,0,0,0	monster	ムスキプラー	1780,10,0,0,0
 ve_fild05.gat,0,0,0,0	monster	ロウィーン	1782,20,0,0,0
 ve_fild05.gat,0,0,0,0	monster	ガリオン	1783,5,0,0,0
 ve_fild05.gat,0,0,0,0	monster	ドロセラ	1781,10,0,0,0
-ve_fild05.gat,0,0,0,0	monster	スリーパー	1386,10,0,0,0
-ve_fild05.gat,0,0,0,0	monster	赤い草	1078,10,180000,90000,0
+ve_fild05.gat,0,0,0,0	monster	Sleeper	1386,10,0,0,0
+ve_fild05.gat,0,0,0,0	monster	Red Plant	1078,10,180000,90000,0
 
 //ベインスフィールド(ve_fild06.gat)
 ve_fild06.gat,0,0,0,0	monster	スタポ	1784,5,120000,60000,0
-ve_fild06.gat,0,0,0,0	monster	赤い草	1078,3,180000,90000,0
-ve_fild06.gat,0,0,0,0	monster	輝く草	1083,1,1800000,900000,0
+ve_fild06.gat,0,0,0,0	monster	Red Plant	1078,3,180000,90000,0
+ve_fild06.gat,0,0,0,0	monster	Shining Plant	1083,1,1800000,900000,0
 
 //ベインスフィールド(ve_fild07.gat)
-ve_fild07.gat,0,0,0,0	monster	お化け貝	1074,40,0,0,0
-ve_fild07.gat,0,0,0,0	monster	ヒトデ	1266,30,0,0,0
-ve_fild07.gat,0,0,0,0	monster	レグルロ	1254,20,0,0,0
+ve_fild07.gat,0,0,0,0	monster	Shellfish	1074,40,0,0,0
+ve_fild07.gat,0,0,0,0	monster	Aster	1266,30,0,0,0
+ve_fild07.gat,0,0,0,0	monster	Raggler	1254,20,0,0,0
 ve_fild07.gat,0,0,0,0	monster	スタポ	1784,20,0,0,0
 ve_fild07.gat,0,0,0,0	monster	サイドワインダー	1037,1,0,0,0
 ve_fild07.gat,0,0,0,0	monster	白い草	1082,5,180000,90000,0
 
 //トール火山ダンジョン(thor_v01.gat)
-thor_v01.gat,0,0,0,0	monster	マグマリン	1836,30,0,0,0
+thor_v01.gat,0,0,0,0	monster	Magmaring	1836,30,0,0,0
 thor_v01.gat,0,0,0,0	monster	ノッカー	1838,50,0,0,0
 thor_v01.gat,0,0,0,0	monster	カホ	1072,20,0,0,0
-thor_v01.gat,0,0,0,0	monster	オブシディアン	1615,10,0,0,0
+thor_v01.gat,0,0,0,0	monster	Obsidian	1615,10,0,0,0
 
 //トール火山ダンジョン(thor_v02.gat)
-thor_v02.gat,0,0,0,0	monster	マグマリン	1836,20,0,0,0
+thor_v02.gat,0,0,0,0	monster	Magmaring	1836,20,0,0,0
 thor_v02.gat,0,0,0,0	monster	ノッカー	1838,10,0,0,0
 thor_v02.gat,0,0,0,0	monster	インプ	1837,15,0,0,0
 thor_v02.gat,0,0,0,0	monster	カーサ	1833,10,0,0,0

@@ -45,9 +45,9 @@ harboro2.gat,58,265,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro2.gat,53,262,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro2.gat,53,261,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro2.gat,58,262,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
-harboro2.gat,0,0,0,0	monster	カニバラウス			3787,80,5000,0,0
+harboro2.gat,0,0,0,0	monster	Swamp Arclouze			3787,80,5000,0,0
 harboro2.gat,0,0,0,0	monster	プラズマラット			3788,80,5000,0,0
-harboro2.gat,0,0,0,0	monster	クランプ				1209,40,5000,0,0
+harboro2.gat,0,0,0,0	monster	Cramp				1209,40,5000,0,0
 harboro2.gat,0,0,0,0	monster	三葉蟲					1279,30,5000,0,0
 
 //============================================================
@@ -93,7 +93,7 @@ harboro3.gat,58,265,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro3.gat,53,262,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro3.gat,53,261,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
 harboro3.gat,58,262,0,0	monster	デビルズフィンガーズ	3743,1,60000,0,0
-harboro3.gat,0,0,0,0	monster	カニバラウス			3787,80,5000,0,0
+harboro3.gat,0,0,0,0	monster	Swamp Arclouze			3787,80,5000,0,0
 harboro3.gat,0,0,0,0	monster	プラズマラット			3788,80,5000,0,0
-harboro3.gat,0,0,0,0	monster	クランプ				1209,40,5000,0,0
+harboro3.gat,0,0,0,0	monster	Cramp				1209,40,5000,0,0
 harboro3.gat,0,0,0,0	monster	三葉蟲					1279,30,5000,0,0

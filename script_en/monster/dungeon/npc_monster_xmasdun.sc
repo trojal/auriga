@@ -6,9 +6,9 @@
 // おもちゃ工場ダンジョン 01（倉庫） - xmas_dun01.gat
 //------------------------------------------------------------
 xmas_dun01.gat,0,0,0,0	monster	マーリン	1242,20,5000,0,0
-xmas_dun01.gat,0,0,0,0	monster	ポリン		1002,10,5000,0,0
-xmas_dun01.gat,0,0,0,0	monster	ドロップス	1113,10,5000,0,0
-xmas_dun01.gat,0,0,0,0	monster	ポポリン	1031,20,5000,0,0
+xmas_dun01.gat,0,0,0,0	monster	Poring		1002,10,5000,0,0
+xmas_dun01.gat,0,0,0,0	monster	Drops	1113,10,5000,0,0
+xmas_dun01.gat,0,0,0,0	monster	Poporing	1031,20,5000,0,0
 xmas_dun01.gat,0,0,0,0	monster	クリスマスクッキー	1246,80,5000,0,0
 xmas_dun01.gat,0,0,0,0	monster	クッキー	1265,80,5000,0,0
 xmas_dun01.gat,0,0,0,0	monster	ミストケース	1249,20,5000,0,0

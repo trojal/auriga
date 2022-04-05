@@ -11,7 +11,7 @@ moro_vol.gat,0,0,0,0	monster	モロクの現身(人間型)	1920,15,5000,0,0
 moro_vol.gat,0,0,0,0	monster	モロクの現身(精霊型)	1921,15,5000,0,0
 moro_vol.gat,0,0,0,0	monster	フレイムコンドル	3020,30,5000,0,0
 moro_vol.gat,0,0,0,0	monster	フレイムサンドマン	3021,30,5000,0,0
-moro_vol.gat,0,0,0,0	monster	フレイムフリルドラ	3022,30,5000,0,0
+moro_vol.gat,0,0,0,0	monster	Fire Frilldora	3022,30,5000,0,0
 moro_vol.gat,0,0,0,0	monster	フレイムゴーレム	3023,30,5000,0,0
 moro_vol.gat,0,0,0,0	monster	フレイムバグ	3027,10,5000,0,0
 moro_vol.gat,0,0,0,0	monster	ソニア			3028,30,5000,0,0

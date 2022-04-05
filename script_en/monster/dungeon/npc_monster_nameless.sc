@@ -7,20 +7,20 @@
 //------------------------------------------------------------
 nameless_n.gat,93,211,51,62	monster	ヘルプードル		1866,15,5000,0,1
 nameless_n.gat,93,211,51,62	monster	バンシー		1867,15,5000,0,1
-nameless_n.gat,93,211,51,62	monster	フレームスカル		1869,10,5000,0,1
-nameless_n.gat,93,211,51,62	monster	グール			1036,2,5000,0,1
+nameless_n.gat,93,211,51,62	monster	Flame Skull		1869,10,5000,0,1
+nameless_n.gat,93,211,51,62	monster	Ghoul			1036,2,5000,0,1
 nameless_n.gat,204,225,57,70	monster	ヘルプードル		1866,10,5000,0,1
 nameless_n.gat,204,225,57,70	monster	バンシー		1867,15,5000,0,1
-nameless_n.gat,204,225,57,70	monster	フレームスカル		1869,5,5000,0,1
-nameless_n.gat,204,225,57,70	monster	グール			1036,3,5000,0,1
+nameless_n.gat,204,225,57,70	monster	Flame Skull		1869,5,5000,0,1
+nameless_n.gat,204,225,57,70	monster	Ghoul			1036,3,5000,0,1
 nameless_n.gat,127,103,59,46	monster	ヘルプードル		1866,10,5000,0,1
 nameless_n.gat,127,103,59,46	monster	バンシー		1867,15,5000,0,1
-nameless_n.gat,127,103,59,46	monster	フレームスカル		1869,5,5000,0,1
-nameless_n.gat,127,103,59,46	monster	グール			1036,2,5000,0,1
+nameless_n.gat,127,103,59,46	monster	Flame Skull		1869,5,5000,0,1
+nameless_n.gat,127,103,59,46	monster	Ghoul			1036,2,5000,0,1
 nameless_n.gat,234,95,40,58	monster	ヘルプードル		1866,15,5000,0,1
 nameless_n.gat,234,95,40,58	monster	バンシー		1867,15,5000,0,1
-nameless_n.gat,234,95,40,58	monster	フレームスカル		1869,10,5000,0,1
-nameless_n.gat,234,95,40,58	monster	グール			1036,3,5000,0,1
+nameless_n.gat,234,95,40,58	monster	Flame Skull		1869,10,5000,0,1
+nameless_n.gat,234,95,40,58	monster	Ghoul			1036,3,5000,0,1
 
 //============================================================
 // 修道院 01 - abbey01.gat
@@ -64,58 +64,58 @@ abbey01.gat,260,100,35,30	monster	ラギッドゾンビ		1865,6,5000,0,1
 abbey02.gat,0,0,0,0			monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,150,66,36,64	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,150,66,36,64	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,150,66,36,64	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,150,66,36,64	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,150,66,36,64	monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,67,75,46,54		monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,67,75,46,54		monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,67,75,46,54		monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,67,75,46,54		monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,67,75,46,54		monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,232,76,46,54	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,232,76,46,54	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,232,76,46,54	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,232,76,46,54	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,232,76,46,54	monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,236,78,21,18	monster	堕ちた大神官ヒバム	1871,1,7200000,3600000,1
 abbey02.gat,150,153,142,23	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,150,153,142,23	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,150,153,142,23	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,150,153,142,23	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,150,153,142,23	monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,68,220,46,58	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,68,220,46,58	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,68,220,46,58	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,68,220,46,58	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,68,220,46,58	monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,150,240,35,44	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,150,240,35,44	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,150,240,35,44	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,150,240,35,44	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,150,240,35,44	monster	ネクロマンサー		1870,30,5000,0,1
 abbey02.gat,232,220,46,58	monster	ゾンビスローター	1864,10,5000,0,1
 abbey02.gat,232,220,46,58	monster	ラギッドゾンビ		1865,5,5000,0,1
-abbey02.gat,232,220,46,58	monster	フレームスカル		1869,3,5000,0,1
+abbey02.gat,232,220,46,58	monster	Flame Skull		1869,3,5000,0,1
 abbey02.gat,232,220,46,58	monster	ネクロマンサー		1870,30,5000,0,1
 
 //============================================================
 // 修道院 03 - abbey03.gat
 //------------------------------------------------------------
 abbey03.gat,0,0,0,0		monster	ヴェルゼブブ			1873,1,21600000,10800000,1
-abbey03.gat,0,0,0,0		monster	強化ネクロマンサー		3082,3,5000,0,1
+abbey03.gat,0,0,0,0		monster	Enhanced ネクロマンサー		3082,3,5000,0,1
 abbey03.gat,0,0,0,0		monster	ヘルフライ				3174,6,600000,0,1
-abbey03.gat,120,212,116,24	monster	強化ヘルプードル		3076,5,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化フレームスカル		3077,5,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化バンシー			3078,5,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化バンシーマスター	3079,10,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化ラギッドゾンビ		3080,5,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化ゾンビスローター	3081,10,5000,0,1
-abbey03.gat,120,212,116,24	monster	強化ネクロマンサー		3082,29,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化ヘルプードル		3076,5,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化フレームスカル		3077,5,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化バンシー			3078,5,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化バンシーマスター	3079,10,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化ラギッドゾンビ		3080,5,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化ゾンビスローター	3081,10,5000,0,1
-abbey03.gat,122,152,111,36	monster	強化ネクロマンサー		3082,39,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化ヘルプードル		3076,5,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化フレームスカル		3077,5,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化バンシー			3078,5,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化バンシーマスター	3079,10,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化ラギッドゾンビ		3080,5,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化ゾンビスローター	3081,10,5000,0,1
-abbey03.gat,120,64,117,53	monster	強化ネクロマンサー		3082,39,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced ヘルプードル		3076,5,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced Flame Skull		3077,5,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced バンシー			3078,5,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced バンシーマスター	3079,10,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced ラギッドゾンビ		3080,5,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced ゾンビスローター	3081,10,5000,0,1
+abbey03.gat,120,212,116,24	monster	Enhanced ネクロマンサー		3082,29,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced ヘルプードル		3076,5,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced Flame Skull		3077,5,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced バンシー			3078,5,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced バンシーマスター	3079,10,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced ラギッドゾンビ		3080,5,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced ゾンビスローター	3081,10,5000,0,1
+abbey03.gat,122,152,111,36	monster	Enhanced ネクロマンサー		3082,39,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced ヘルプードル		3076,5,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced Flame Skull		3077,5,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced バンシー			3078,5,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced バンシーマスター	3079,10,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced ラギッドゾンビ		3080,5,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced ゾンビスローター	3081,10,5000,0,1
+abbey03.gat,120,64,117,53	monster	Enhanced ネクロマンサー		3082,39,5000,0,1

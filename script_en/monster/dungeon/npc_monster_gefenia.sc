@@ -9,10 +9,10 @@ gefenia01.gat,0,0,0,0	monster	サキュバス		1370,15,5000,0,0
 gefenia01.gat,0,0,0,0	monster	インキュバス	1374,15,5000,0,0
 gefenia01.gat,0,0,0,0	monster	ミニデモ		1292,10,5000,0,0
 gefenia01.gat,0,0,0,0	monster	ブラッディナイト	1268,35,5000,0,0
-gefenia01.gat,0,0,0,0	monster	ミステルテイン		1203,1,10800000,0,1
-gefenia01.gat,0,0,0,0	monster	エクスキューショナー	1205,1,18000000,0,1
-gefenia01.gat,0,0,0,0	monster	オーガトゥース		1204,1,18000000,0,1
-gefenia01.gat,0,0,0,0	monster	デビルチ			1109,10,5000,0,0
+gefenia01.gat,0,0,0,0	monster	Mysteltainn		1203,1,10800000,0,1
+gefenia01.gat,0,0,0,0	monster	Executioner	1205,1,18000000,0,1
+gefenia01.gat,0,0,0,0	monster	Tirfing		1204,1,18000000,0,1
+gefenia01.gat,0,0,0,0	monster	Deviruchi			1109,10,5000,0,0
 
 //============================================================
 // ゲフェニア 02 - gefenia02.gat
