@@ -16,7 +16,7 @@ function	script	ac_map_info	{
 		close;
 	case 1:// Izlude
 		cutin "area_map_006",3;
-		mes "This city is a satellite city of the capital Prontera.
+		mes "This city is a satellite city of the capital Prontera.";
 		mes "^0000FFIzlude^000000";
 		close;
 	case 2:// Morroc
@@ -322,7 +322,7 @@ function	script	ac_map_info	{
 			next;
 			mes "[Academy Official]";
 			mes "You can get various benefits by learning what you need for your adventure." ;
-			mes " " ";
+			mes " ";
 			mes "The Adventurer Academy is a school that fully supports adventurers." ;
 			close;
 		}
@@ -476,7 +476,7 @@ payon.gat,159,205,4		duplicate(Academy Official#func)	Academy Official::AC_PAY	7
 alberta.gat,107,132,4	duplicate(Academy Official#func)	Academy Official::AC_ALB	750,8,8
 
 //-----------------------------------------
-// ルーンのクエスト補助員
+// Luneのクエスト補助員
 
 -	script	Academy Official#func2	-1,{
 	set '@novice, callfunc("AC_GetNovice");
@@ -710,7 +710,7 @@ OnTouch:
 			mes "Huh?" ;
 			mes "I guess you didn't get your new job." ;
 			mes " ";
-			mes "You need to change your ^0000FF "Basic Skill" level to 9 ^000000 if you want to change to the first job." ;
+			mes "You need to change your ^0000FF\"Basic Skill\" level to 9^000000 if you want to change to the first job." ;
 			emotion 0;
 			next;
 			mes "[Academy Official]";

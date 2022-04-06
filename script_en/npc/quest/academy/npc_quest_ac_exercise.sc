@@ -118,10 +118,10 @@ ac_cl_area.gat,57,185,4		script	Transfer Device#AC_PRACBD01	857,{
 		mes "You can't attack monsters unless you have ^0000FFbullets^000000 equipped with a gun!" ;
 		next;
 		mes "[Mido's note]";
-		mes "Students who are not equipped with bullets should click on the ^0000FF"Etc"^000000 tab in the ^0000FF"Items in Possession"^000000 window and drag and drop bullets to the ^0000FF"Equipment Window"^000000 to equip them!" ;
+		mes "Students who are not equipped with bullets should click on the ^0000FF\"Etc\"^000000 tab in the ^0000FF\"Items in Possession\"^000000 window and drag and drop bullets to the ^0000FF\"Equipment Window\"^000000 to equip them!" ;
 		next;
 		mes "[Mido's note]";
-		mes "If you don't find bullets in the ^0000FF"etc"^000000 tab, you can find the bullet case you got when you changed jobs in the ^0000FF"item"^000000 tab, double click on the bullet case and take out the bullets!" ;
+		mes "If you don't find bullets in the ^0000FF\"etc\"^000000 tab, you can find the bullet case you got when you changed jobs in the ^0000FF\"item\"^000000 tab, double click on the bullet case and take out the bullets!" ;
 		next;
 		set '@hint,1;
 		break;
@@ -208,7 +208,7 @@ function	script	stopboard_func	{
 	viewpoint 1,getarg(0),getarg(1),1,0xFF0000;
 	mes "-No entry after this point-";
 	mes " ";
-	mes "-Students who get lost should rely on the "^FF0000+^000000" on the mini-map to come back.";
+	mes "-Students who get lost should rely on the \"^FF0000+^000000\" on the mini-map to come back.";
 	close;
 }
 //実習室（海岸）
@@ -327,7 +327,7 @@ L_ABOUT:
 	next;
 	mes "[Mido's note]";
 	mes "-The more advanced you are, the more ^FF0000 power you need^000000 when performing recovery! -";
-	mes " " ";
+	mes " ";
 	mes "-Advanced users, beware that it takes time to recharge your power! -";
 	next;
 	mes "[Mido's note]";
@@ -508,7 +508,7 @@ L_POTION:
 	mes " ";
 	mes "(clunk, clunk)";
 	mes " ";
-	mes "Thank you for using our service;
+	mes "Thank you for using our service.";
 	close;
 L_TENSOU:
 	mes "[Academy Box]";

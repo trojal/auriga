@@ -1,7 +1,7 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  ルーンの依頼
+// Ragnarok Online -- 冒険者アカデミー  Luneの依頼
 //
 //                                                 by Pneuma
 //------------------------------------------------------------
@@ -14,17 +14,17 @@
 //  緑：実験のお手伝い
 //  水：冒険者になりたい
 // ----------------------------------------------------------------------------------------
-// ルーン
-ac_cl_area.gat,48,145,4	script	ルーン#ac	430,{
+// Lune
+ac_cl_area.gat,48,145,4	script	Lune#ac	430,{
 	function GetQueLv;
 	function GetQuestSelectList;
 	function GetQuestName;
 	function GiveExp;
 	set '@novice, callfunc("AC_GetNovice");
 	cutin "jpn_run01",2;
-	if('@novice && AC_NOVICE_QUE==30){ //フェイの講習後
+	if('@novice && AC_NOVICE_QUE==30){ //Fayの講習後
 		set AC_NOVICE_QUE,31;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "冒険者アカデミーへようこそ！";
 		mes "新入生さんね。";
 		mes "さっそくなんだけど、";
@@ -34,22 +34,22 @@ ac_cl_area.gat,48,145,4	script	ルーン#ac	430,{
 		goto L_GETQUE;
 	}
 	if(!'@novice && !AC_NOVICE_QUE){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "冒険者アカデミーへようこそ！";
 		mes "新入生さん……というには";
 		mes "あなた只者ではない雰囲気を";
 		mes "持っているわね。";
 		mes "何か用かしら？";
 	} else {
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "あら、こんにちは。";
 		mes "何か用かしら？";
 	}
 	next;
 L_MENU:
-	menu "依頼について話す",L_QUEST,"試験について話す",L_TEST,"ルーンさんは何をしているの？",L_ABOUT,"なんでもない",L_NOTHX;
+	menu "依頼について話す",L_QUEST,"試験について話す",L_TEST,"Luneさんは何をしているの？",L_ABOUT,"なんでもない",L_NOTHX;
 L_QUEST:
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "依頼についてね。";
 	mes "えーと、";
 	mes "依頼の何の話なのかしら？";
@@ -58,7 +58,7 @@ L_QUEST:
 L_GETQUE:
 	if(AC_QUEST_LV_0+AC_QUEST_LV_1+AC_QUEST_LV_2+AC_QUEST_LV_3+AC_QUEST_LV_4==45){
 		emotion 2;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "今、貴方が受けられる依頼は無いわ。";
 		mes "あんなに沢山あったけど、";
 		mes "貴方が手伝ってくれたおかげで、";
@@ -70,18 +70,18 @@ L_GETQUE:
 	}
 	GetQuestSelectList 0,'@quecount,'@quelist$,'@queidlist,'@queidcount;
 	if('@quecount==0 && (AC_QUEST_ST_0 || AC_QUEST_ST_1 || AC_QUEST_ST_2 || AC_QUEST_ST_3 || AC_QUEST_ST_4)){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は今請け負ってる依頼が";
 		mes "あるじゃない。";
 		mes "まずは今の依頼主さんを助けてあげて。";
 		next;
 		goto L_OTHER;
 	}
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "今、貴方が請け負うことの出来る";
 	mes "依頼は^FF0000"+ '@quecount +"^000000つね。";
 	next;
-	mes "[ルーンのワンポイントアドバイス]";
+	mes "[Luneのワンポイントアドバイス]";
 	mes "^008800緑色^000000の依頼はモンスターとの";
 	mes "戦闘は無いと思うわ。";
 	mes "^FF0000赤色^000000の依頼はモンスターとの戦闘が";
@@ -94,7 +94,7 @@ L_GETQUE:
 	set '@quelv,GetQueLv('@que_id);
 	set '@idx,'@que_id*9+'@quelv;
 	if(BaseLevel < 'QUE_REQUIRE['@idx]){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "この依頼には";
 		mes "レベルが^006600" + ('QUE_REQUIRE['@idx]-BaseLevel) + "^000000足りないわね。";
 		mes "もうちょっと成長したら、";
@@ -103,14 +103,14 @@ L_GETQUE:
 		goto L_OTHER;
 	}
 	set '@client_id, 'QUE_CLIENT['@idx];
-	mes "[ルーン]";
+	mes "[Lune]";
 	switch ('@client_id) {
 	case 0:
 		mes "それね？";
 		mes "依頼主は、Prontera在住の男性";
 		mes "ハルバートさんからの依頼よ。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "ハルバートさんがいる場所は";
 		mes "Prontera中央付近";
 		mes "座標でいうと(146,232)付近";
@@ -122,7 +122,7 @@ L_GETQUE:
 		mes "ジェラルドさんからね。";
 		mes "指輪職人さんらしいわ。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "ジェラルドさんがいる場所は";
 		mes "Payon中央から4時方向に進んだ";
 		mes "建物の中。";
@@ -134,7 +134,7 @@ L_GETQUE:
 		mes "Izlude在住の女性";
 		mes "スザンヌさんからのものね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "スザンヌさんがいる場所は";
 		mes "Izludeの中央付近";
 		mes "座標で言うと(138,156)付近";
@@ -143,10 +143,10 @@ L_GETQUE:
 	case 3:
 		mes "それね？";
 		mes "それは、Alberta在住の女性";
-		mes "ルイーゼさんからのものね。";
+		mes "Louiseさんからのものね。";
 		next;
-		mes "[ルーン]";
-		mes "ルイーゼさんのいる場所は";
+		mes "[Lune]";
+		mes "Louiseさんのいる場所は";
 		mes "Albertaの8時の方向";
 		mes "座標で言うと(39,46)付近";
 		mes "になるようね。";
@@ -156,7 +156,7 @@ L_GETQUE:
 		mes "それは、Aldebaran在住の女性";
 		mes "ミザリーさんからのものね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "ミザリーさんがいる場所は";
 		mes "Aldebaran4時方向にある";
 		mes "建物の中。";
@@ -169,7 +169,7 @@ L_GETQUE:
 		mes "マッズイさんからのものね。";
 		mes "お菓子職人さんみたい。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "マッズイさんがいる場所は";
 		mes "Yuno9時方向にある";
 		mes "建物の中。";
@@ -181,7 +181,7 @@ L_GETQUE:
 		mes "それは、Hugel在住の男性";
 		mes "タラシー博士さんからのものね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "タラシー博士さんがいる場所は";
 		mes "Hugel6時方向にある";
 		mes "建物の中。";
@@ -193,7 +193,7 @@ L_GETQUE:
 		mes "それは、Hugel在住の男性";
 		mes "アムロンさんからのものね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "アムロンさんが居る場所は";
 		mes "Hugel9時方向にある";
 		mes "建物の中。";
@@ -205,7 +205,7 @@ L_GETQUE:
 		mes "それは、Geffen在住の少女";
 		mes "オネストさんからのものね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "オネストさんが居る場所は";
 		mes "Geffen2時方向にある";
 		mes "建物の中。";
@@ -214,14 +214,14 @@ L_GETQUE:
 		break;
 	}
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "依頼内容に関しては";
 	mes "依頼主から";
 	mes "聞いてもらうことになるわ。";
 	mes "この依頼は^FF0000"+ 'QUE_CREDITS['@quelv] +"^000000単位取得よ。";
 	next;
 	if(!'@novice){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方には^0000FFボランティア^000000に";
 		mes "なってしまうかもしれないけど、";
 		mes "いいかしら？";
@@ -230,20 +230,20 @@ L_GETQUE:
 	next;
 	menu "はい",-,"いいえ",L_QUECANCEL;
 	if('@novice){
-		mes "[ルーン]";
-		mes "依頼は^0000FFヘイム^000000が";
+		mes "[Lune]";
+		mes "依頼は^0000FFHaim^000000が";
 		mes "手伝ってくれるって";
 		mes "言ってたわ。";
 		//2011/??/??変更
-		//mes "^0000FFヘイム^000000は教室棟の";
+		//mes "^0000FFHaim^000000は教室棟の";
 		//mes "2Fにいると思うから、";
 		//mes "探してちょうだい。";
-		mes "^0000FFヘイム^000000は^FF0000この場所から上の方へ";
+		mes "^0000FFHaim^000000は^FF0000この場所から上の方へ";
 		mes "行った所^000000にいると思うから、";
 		mes "探してみてちょうだい。";
 		next;
 		if('QUE_BATTLE['@que_id]){
-			mes "[ルーン]";
+			mes "[Lune]";
 			mes "街の外に出るときは";
 			mes "アイテムの準備を";
 			mes "整えていくといいわ。";
@@ -251,20 +251,20 @@ L_GETQUE:
 			mes "私のところに戻ってきてね。";
 			next;
 		}
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "アカデミーの関係者が";
 		mes "街の中央付近にいると思うから、";
 		mes "迷ったら街の中央に";
 		mes "行ってみるといいわ。";
 		mes "それじゃ、いってらっしゃい！";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "依頼を無事終えたら";
 		mes "私のところに戻ってきてね。";
 		next;
 	}
 	else {
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "依頼を無事終えたら";
 		mes "私のところに戻ってきてね。";
 		mes "それじゃ、いってらっしゃい！";
@@ -296,7 +296,7 @@ L_GETQUE:
 	}
 	goto L_CLOSE;
 L_QUECANCEL:
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "わかったわ、受けたくなったら";
 	mes "また私に話しかけてちょうだい。";
 	goto L_CLOSE;
@@ -307,7 +307,7 @@ L_QUECHECK:
 		mes "(今確認できる依頼は無いか……)";
 		goto L_CLOSE;
 	}
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "あら、依頼主の居る場所を";
 	mes "もう一度聞きたいのね？";
 	if('@quecount==1){
@@ -321,7 +321,7 @@ L_QUECHECK:
 	set '@quelv,GetQueLv('@que_id);
 	set '@idx,'@que_id*9+'@quelv;
 	set '@client_id, 'QUE_CLIENT['@idx];
-	mes "[ルーン]";
+	mes "[Lune]";
 	switch ('@client_id) {
 	case 0:
 		mes "依頼主の男性";
@@ -347,7 +347,7 @@ L_QUECHECK:
 		break;
 	case 3:
 		mes "依頼主の女性";
-		mes "ルイーゼさんのいる場所は";
+		mes "Louiseさんのいる場所は";
 		mes "Albertaの8時の方向";
 		mes "座標で言うと(39,46)付近";
 		mes "になるようね。";
@@ -401,7 +401,7 @@ L_QUECHECK:
 	mes "^FF0000次の行き先がミニマップ上に";
 	mes "『＋』で表示されます^000000‐";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "依頼内容に関しては";
 	mes "依頼主から直接聞いてちょうだいね。";
 	goto L_CLOSE;
@@ -424,12 +424,12 @@ L_QUEREPORT:
 		goto L_CLOSE;
 	}
 	set '@quelv,GetQueLv('@que_id);
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes '@que_name$ + "の報告ね。";
 	mes "えーと、";
 	mes "今確認するから少し待ってね……";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "確認できたわ。";
 	mes "無事に依頼人から依頼解決の";
 	mes "連絡も来ているみたい。";
@@ -442,7 +442,7 @@ L_QUEREPORT:
 			mes "お疲れ様！";
 		}
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "後これ、私からのご褒美ね。";
 		set '@pot_count, 150 + '@quelv*30;
 		if(!checkweight(569,'@pot_count)){
@@ -457,35 +457,35 @@ L_QUEREPORT:
 		mes "回復量は少ないけど、";
 		mes "凄く軽いから冒険で役立つと思うわ。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "それと単位ね";
 		mes "この依頼で取得できる単位は";
 		mes "[" + 'QUE_CREDITS['@quelv] + "]単位になるわ。";
 		mes "今までの単位と合計すると";
 		mes "[" + AC_CREDIT + "]単位ね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "これで手続きも完了！";
 		mes "また、用があったら";
 		mes "私に話しかけてちょうだいね。";
 		goto L_CLOSE;
 	} else {
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方のような熟練の冒険者に";
 		mes "手伝ってもらえて";
 		mes "本当にうれしいわ！";
 		mes "ありがとう！";
 		next;
 		GiveExp '@que_id;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方には^0000FFボランティア^000000に";
 		mes "なってしまったけど、";
 		mes "この依頼で[" + 'QUE_CREDITS['@quelv] + "]単位取得よ。";
 		mes "今までの単位と合計すると";
 		mes "[" + AC_CREDIT + "]単位。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "また、貴方に手伝ってもらえたら、";
 		mes "大助かり！";
 		mes "これで手続きも完了！";
@@ -495,7 +495,7 @@ L_QUEREPORT:
 	}
 L_QUEINFO:
 	emotion 20;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "依頼の内容についてね。";
 	mes "んー、私から生徒に依頼内容の";
 	mes "詳細を教えることはしていないのよ。";
@@ -503,13 +503,13 @@ L_QUEINFO:
 	mes "一人一人説明してたら時間が";
 	mes "いくらあっても足りないじゃない？";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "教えられることといえば、";
 	mes "貴方達のレベルを確認して";
 	mes "解決できるかどうか私が";
 	mes "判断しているってこと。";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "だから、もし受けられる依頼が";
 	mes "一つも無いとしたら";
 	mes "貴方のレベルで解決できそうな";
@@ -517,13 +517,13 @@ L_QUEINFO:
 	mes "頑張ってレベルをあげてもらう";
 	mes "必要があるわ。";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "ああ！";
 	mes "もう一つあったわ！";
 	mes "色よ色！";
 	mes "依頼に三つの色をつけてるの。";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "一つは^008800緑色^000000ね。";
 	mes "^008800緑色^000000は、私が見た感じモンスターと";
 	mes "戦闘する可能性が少ない";
@@ -531,19 +531,19 @@ L_QUEINFO:
 	mes "だからちょーっと刺激が足りないかも";
 	mes "しれないわ！";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "二つ目は^FF0000赤色^000000ね。";
 	mes "^FF0000赤色^000000ってさ、";
 	mes "凄く危険なイメージがない？";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "全くその通り！";
 	mes "モンスターと戦闘する可能性が";
 	mes "高いと思われるものに赤色を";
 	mes "つけてあるの！";
 	next;
 	emotion 29;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "ふふふ、モンスターを";
 	mes "なぎ倒し、ギリギリの";
 	mes "ところで生還するスリル……";
@@ -552,13 +552,13 @@ L_QUEINFO:
 	next;
 	menu "えっと……",-;
 	emotion 0;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "はっ！";
 	mes "あ、ごめんごめん。";
 	mes "えと、何を話してたっけ？";
 	next;
 	menu "依頼の色について",-;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "あ！";
 	mes "そうだったわね！";
 	mes "えと、後一つは";
@@ -566,7 +566,7 @@ L_QUEINFO:
 	mes "足りない依頼内容なんだけど";
 	mes "これは^777777灰色^000000にしてあるわ。";
 	next;
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "説明はこんなとこかな？";
 	goto L_CLOSE;
 L_TEST:
@@ -580,7 +580,7 @@ L_TEST:
 	//}
 	set '@chklv,(BaseLevel < 'TST_REQUIR_LV[AC_RANK]);
 	set '@chkct,(AC_CREDIT < 'TST_REQUIR[AC_RANK]);
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "試験についてね。";
 	mes "えーと、";
 	mes "試験の何の話なのかしら？";
@@ -589,7 +589,7 @@ L_TEST:
 L_GETTEST:
 	if(AC_RANK>=7){
 		emotion 2;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は一次課程を修了しているのね。";
 		mes "今は試験を行ってないわ。";
 		mes "貴方は勉強熱心なのね。";
@@ -597,7 +597,7 @@ L_GETTEST:
 		mes "伝えてほしいわ。";
 	}
 	if(AC_RANKTEST){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は今試験を受けているわ。";
 		mes "次の試験を受けるためには、";
 		mes "今の試験をやり遂げる必要があるわ。";
@@ -606,7 +606,7 @@ L_GETTEST:
 		goto L_CLOSE;
 	}
 	if('@chklv || '@chkct){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方が今受けられる試験は無いわ。";
 		if('@chklv && '@chkct){
 			mes "Baseレベルが^FF0000" + ('TST_REQUIR_LV[AC_RANK]-BaseLevel) + "^000000";
@@ -633,21 +633,21 @@ L_GETTEST:
 
 	switch(AC_RANK){
 	case 0:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第一試験を受けるのね。";
 		mes "試験に関しては";
 		mes "ガルドが一括でおこなっているわ。";
 		next;
 		break;
 	case 1: 
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第二試験ね？";
 		mes "試験に関してはガルドが";
 		mes "おこなっているわ。";
 		next;
 		break;
 	case 2:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "ちょっと確認するわね。";
 		mes "えと次は、第三試験のようね？";
 		mes "試験に関しては今までどおり";
@@ -656,7 +656,7 @@ L_GETTEST:
 		next;
 		break;
 	case 3:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第四試験！";
 		mes "貴方凄いじゃない";
 		mes "この試験に合格すれば";
@@ -665,7 +665,7 @@ L_GETTEST:
 		next;
 		break;
 	case 4:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第五試験ね。";
 		mes "この段階まで来ると、";
 		mes "だいぶ試験の難易度も";
@@ -675,7 +675,7 @@ L_GETTEST:
 		next;
 		break;
 	case 5: emotion 0;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は……第六試験!?";
 		mes "貴方がんばったじゃない！";
 		mes "残りの試験は二つよ！ 二つ！";
@@ -684,14 +684,14 @@ L_GETTEST:
 		break;
 	case 6: 
 		emotion 29;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第七試験。";
 		mes "第一過程最後の試験になるわけだから";
 		mes "難易度も相当高いはずよ。";
 		mes "ふふふっ";
 		mes "生きて帰ってこれるのかしら？";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "さぁ、";
 		mes "ガルドのところにGO！よ";
 		mes "GO！";
@@ -699,22 +699,22 @@ L_GETTEST:
 		mes "いってらっしゃい！";
 		goto L_CLOSE;
 	}
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "ガルドは学園内2F";
 	mes "試験室にいるから";
 	mes "行ってみてちょうだいね。";
 	goto L_CLOSE;
 L_CHKTEST:
 	if(AC_LANC>=7){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "今、貴方が受けられる試験は無いわ。";
 		mes "一次過程修了なんて凄いじゃない。";
 		mes "私も頑張らなくちゃね。";
-		emotion 2, "ルーン#ac"; //54752
+		emotion 2, "Lune#ac"; //54752
 		goto L_CLOSE;
 	}
 	if(AC_RANKTEST==1){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "試験のことはガルドに任せているわ。";
 		mes "ガルドは学園内2F";
 		mes "試験室にいるから";
@@ -722,7 +722,7 @@ L_CHKTEST:
 		goto L_CLOSE;
 	}
 	if(AC_RANKTEST){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は試験中のようね。";
 		mes "試験の詳しいことは";
 		mes "ガルドに任せているの。";
@@ -730,7 +730,7 @@ L_CHKTEST:
 		mes "いるはずだから、確認してみてね。";
 		goto L_CLOSE;
 	}
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "えーっと……ちょっとまってね。";
 	mes "あら？";
 	mes "貴方は試験を受けてないみたいね。";
@@ -744,14 +744,14 @@ L_REPOTEST:
 	emotion 46;
 	switch(AC_RANK){
 	case 0:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第一試験突破おめでとう！";
 		mes "初めての試験は緊張したでしょ？";
 		mes "また単位を取得して";
 		mes "次の段階に挑戦してね。";
 		next;
 		emotion 5;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "そうだ！";
 		mes "貴方この試験を合格できたんだし";
 		mes "そろそろ、アカデミー外の";
@@ -759,19 +759,19 @@ L_REPOTEST:
 		mes "みたいんじゃない？";
 		mes "ん～そうねぇ";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "そうだわ、教室棟の2Fに";
-		mes "ヨンというおじいさんがいるから";
+		mes "Yongというおじいさんがいるから";
 		mes "話しかけてみるといいわよ。";
 		next;
-		mes "[ルーン]";
-		mes "それと、タールさんって言う";
+		mes "[Lune]";
+		mes "それと、Taroさんって言う";
 		mes "転送サービスを行ってくれる人";
 		mes "しってる？";
 		mes "彼はね、アカデミーに来て";
 		mes "商売をしている方なのよ。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "この前、彼と食事した時に";
 		mes "アカデミーのことを詳しく聞かれたから";
 		mes "駆け出しの冒険者が";
@@ -779,7 +779,7 @@ L_REPOTEST:
 		mes "そうしたら、彼も協力したいって";
 		mes "言ってくれたの。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "なんと！ 駆け出しの冒険者が";
 		mes "試験に合格したら";
 		mes "転送サービスを割引してくれるって！";
@@ -790,20 +790,20 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 415,225;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "はい、割引証ね。";
 		mes "無くさないように気をつけて！";
 		break;
 	case 1:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第二試験突破おめでとう！";
 		mes "ガルドから聞いたら、";
 		mes "試験は第七試験まで";
 		mes "あるらしいから、";
 		mes "次の試験もがんばって！";
 		next;
-		mes "[ルーン]";
-		mes "そうそう、ヨンおじいさんが";
+		mes "[Lune]";
+		mes "そうそう、Yongおじいさんが";
 		mes "新しい場所に転送してくれるって";
 		mes "言ってたから";
 		mes "聞きに言ってみたら？";
@@ -811,26 +811,26 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 810,798;
-		mes "[ルーン]";
-		mes "あと、タールさんの転送サービス";
+		mes "[Lune]";
+		mes "あと、Taroさんの転送サービス";
 		mes "割引率を更新しておくわね。";
 		mes "これで、もっと割引率が";
 		mes "増えるはずよ。";
 		break;
 	case 2:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第三試験突破おめでとう！";
 		mes "そういえば、ウルフ先生は元気だった？";
 		mes "あの先生、かわいらしくって";
 		mes "困るのよね～。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "しかも、一人になるとうるさくって。";
 		mes "ワンワン言ってたでしょ？";
 		mes "次の試験も貴方なら頑張れそうね。";
 		next;
-		mes "[ルーン]";
-		mes "そうそう、ヨンおじいさんが";
+		mes "[Lune]";
+		mes "そうそう、Yongおじいさんが";
 		mes "新しい場所に転送してくれるって";
 		mes "言ってたから";
 		mes "聞きに言ってみたら？";
@@ -838,14 +838,14 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 1475,2295;
-		mes "[ルーン]";
-		mes "あと、タールさんの転送サービス";
+		mes "[Lune]";
+		mes "あと、Taroさんの転送サービス";
 		mes "割引率を更新しておくわね。";
 		mes "これで、もっと割引率が";
 		mes "増えるはずよ。";
 		break;
 	case 3:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第四試験突破おめでとう！";
 		mes "ガルドから聞いたけど、";
 		mes "長旅だったんだって？";
@@ -855,21 +855,21 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 3998,5672;
-		mes "[ルーン]";
-		mes "あと、タールさんの転送サービス";
+		mes "[Lune]";
+		mes "あと、Taroさんの転送サービス";
 		mes "割引率を更新しておくわね。";
 		mes "これで、もっと割引率が";
 		mes "増えるはずよ。";
 		break;
 	case 4:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第五試験突破おめでとう！";
 		mes "報告書をガルドに届けることが";
 		mes "できたようね。";
 		mes "無事で何よりだわ。";
 		next;
-		mes "[ルーン]";
-		mes "そうそう、ヨンおじいさんが";
+		mes "[Lune]";
+		mes "そうそう、Yongおじいさんが";
 		mes "新しい場所に転送してくれるって";
 		mes "言ってたから";
 		mes "聞きに言ってみたら？";
@@ -877,14 +877,14 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 5213,7943;
-		mes "[ルーン]";
-		mes "あと、タールさんの転送サービス";
+		mes "[Lune]";
+		mes "あと、Taroさんの転送サービス";
 		mes "割引率を更新しておくわね。";
 		mes "これで、もっと割引率が";
 		mes "増えるはずよ。";
 		break;
 	case 5:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第六試験突破おめでとう！";
 		mes "ホルン先生を見つけるなんて、";
 		mes strcharinfo(0) + "さん、すごいわ！";
@@ -892,8 +892,8 @@ L_REPOTEST:
 		mes "世界中を旅してみるのも";
 		mes "いいかもしれないわ。";
 		next;
-		mes "[ルーン]";
-		mes "そうそう、ヨンおじいさんが";
+		mes "[Lune]";
+		mes "そうそう、Yongおじいさんが";
 		mes "新しい場所に転送してくれるって";
 		mes "言ってたから";
 		mes "聞きに言ってみたら？";
@@ -901,20 +901,20 @@ L_REPOTEST:
 		set AC_RANK,AC_RANK+1;
 		set AC_RANKTEST,0;
 		getexp 7888,12499;
-		mes "[ルーン]";
-		mes "あと、タールさんの転送サービス";
+		mes "[Lune]";
+		mes "あと、Taroさんの転送サービス";
 		mes "割引率を更新しておくわね。";
 		mes "これで、もっと割引率が";
 		mes "増えるはずよ。";
 		break;
 	case 6:
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第七試験突破おめでとう！";
 		mes "すごい！";
 		mes "ついに第一過程全ての";
 		mes "試験に合格したわね！";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "これで貴方も一人前の冒険者に";
 		mes "一歩近づいたわね。";
 		mes "ここまで色々大変だったと思うけど、";
@@ -922,13 +922,13 @@ L_REPOTEST:
 		mes "きっとこれからの冒険で";
 		mes "役に立つはずよ。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "がんばってきた" + strcharinfo(0) + "さんに";
 		mes "私から、渡したいものがあるわ。";
 		mes strcharinfo(0) + "さんはここまで";
 		mes "よく頑張ってきたわね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "これはアカデミーの";
 		mes "一次課程修了の証。";
 		mes "アカデミー第一修了帽子よ！";
@@ -945,7 +945,7 @@ L_REPOTEST:
 		mes "これからもいろいろな人を";
 		mes "助けてあげてちょうだいね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "あ、そうだ！";
 		mes "Midoからも渡したいものが";
 		mes "あるみたいだから";
@@ -955,29 +955,29 @@ L_REPOTEST:
 	goto L_CLOSE;
 L_ABOUTTEST:
 	if(AC_RANK>=7){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "第一過程は修了してるわね。";
 		mes "試験は暫く無いわ。";
 		mes "ガルドもちょっと疲れたのかしら。";
 		mes "試験をまた受けたいなんて、";
 		mes "貴方は勉強熱心なのね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "他の冒険者の皆を見てあげて";
 		mes "貰ってもいいかしら。";
 		mes "貴方ならいろんなことを";
 		mes "教えられると思うわ。";
-		emotion 2, "ルーン#ac"; //54752
+		emotion 2, "Lune#ac"; //54752
 		goto L_CLOSE;
 	}
 	if('@chklv || '@chkct){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "試験を受けるには単位と";
 		mes "Baseレベルが一定以上必要よ。";
 		mes "単位は依頼を受けていくことで";
 		mes "修得できるわ。";
 	} else {
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "試験を受けるには単位が必要よ。";
 		mes "単位は依頼を受けていくことで";
 		mes "修得できるわ。";
@@ -985,7 +985,7 @@ L_ABOUTTEST:
 	next;
 	//ポリン団実装により追加
 	if(AC_QUEST_LV_6 != 16){
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "でも最近、";
 		mes "実習室の方へ向かった生徒の単位が";
 		mes "増えてるような気がするのよね。";
@@ -994,14 +994,14 @@ L_ABOUTTEST:
 		mes "まあ、気のせいよね。";
 	} else {
 		//クリアするとセリフが変化
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "もちろん、ポリン団から";
 		mes "もらった単位も有効よ。";
 	}
 	if('@chklv || '@chkct){
 		if('@chklv && '@chkct){
 			next;
-			mes "[ルーン]";
+			mes "[Lune]";
 			mes "あと^FF0000" + ('TST_REQUIR[AC_RANK]-AC_CREDIT) + "^000000の単位を修得して、";
 			mes "レベルが^FF0000" + ('TST_REQUIR_LV[AC_RANK]-BaseLevel) + "^000000になれば、";
 		} else
@@ -1014,7 +1014,7 @@ L_ABOUTTEST:
 		}
 		mes "次の試験を受けることができるわよ。";
 	} else {
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "貴方は次の試験に十分な単位を";
 		mes "修得しているわ。";
 		mes "いつでも試験を受けることが";
@@ -1023,7 +1023,7 @@ L_ABOUTTEST:
 	goto L_CLOSE;
 L_ABOUT:
 	if(AC_QUEST_LV_0+AC_QUEST_LV_1+AC_QUEST_LV_2+AC_QUEST_LV_3+AC_QUEST_LV_4<=15) {
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "ここでは、各地から集められた";
 		mes "依頼を請け負うことが出来るわ。";
 		mes "そして依頼を解決することで";
@@ -1031,15 +1031,15 @@ L_ABOUT:
 		mes "要するにこの依頼が授業ってことね。";
 		next;
 		emotion 5;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "そうだった、自己紹介が";
 		mes "まだだったわね。";
-		mes "私の名前はルーン";
+		mes "私の名前はLune";
 		mes "依頼の管理をおこなっているわ。";
 		mes "もし、依頼を受けたかったら";
 		mes "私に声をかけてね。";
 		next;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "そうそう、いい忘れていたけど";
 		mes "単位を付与するのも私だから";
 		mes "言動には注意するように。";
@@ -1047,7 +1047,7 @@ L_ABOUT:
 	} else
 	if(AC_QUEST_LV_0+AC_QUEST_LV_1+AC_QUEST_LV_2+AC_QUEST_LV_3+AC_QUEST_LV_4<=30) {
 		emotion 9;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "……";
 		mes "見てわからない？";
 		mes "仕事をしてるのよ！";
@@ -1056,7 +1056,7 @@ L_ABOUT:
 		next;
 		menu "何かあったんですか？",-;
 		emotion 36;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "聞いてよ！";
 		mes "昨日MidoとPronteraのお店に";
 		mes "食事に行く約束をしていたのに";
@@ -1066,7 +1066,7 @@ L_ABOUT:
 		next;
 		if(select("酷い","酷くない")==1){
 			emotion 29;
-			mes "[ルーン]";
+			mes "[Lune]";
 			mes "ひどいわよねぇ……";
 			mes "すっごい楽しみにしてたのに。";
 			mes "今度行くときは絶対";
@@ -1076,7 +1076,7 @@ L_ABOUT:
 			goto L_CLOSE;
 		} else {
 			emotion 6;
-			mes "[ルーン]";
+			mes "[Lune]";
 			mes "?!";
 			mes "確かに仕事は大切だけど";
 			mes "約束を破るのはどうかと思うわ！";
@@ -1085,7 +1085,7 @@ L_ABOUT:
 		}
 	} else {
 		emotion 18;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "見てわかるとは思うけど";
 		mes "依頼の管理をしているのよー";
 		mes "貴方が受けられる";
@@ -1094,23 +1094,23 @@ L_ABOUT:
 		next;
 		menu "機嫌がよさそうですね",-;
 		emotion 43;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "うふふふっ、わかる？";
 		mes "今度、Midoのおごりで";
 		mes "有名な高級料理店に行くことに";
 		mes "なったのよー";
 		mes "きっと凄いおいしいのよ……";
 		next;
-		menu "ルーンさんよだれ！",-;
+		menu "Luneさんよだれ！",-;
 		emotion 40;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "あっ!?";
 		mes "私としたことが……";
 		mes "恥ずかしい……";
 		mes "変な姿みられちゃったわね。";
 		next;
 		emotion 52;
-		mes "[ルーン]";
+		mes "[Lune]";
 		mes "このことは他の人には";
 		mes "内緒にしてね。";
 		mes "もし話したら……";
@@ -1118,12 +1118,12 @@ L_ABOUT:
 		goto L_CLOSE;
 	}
 L_OTHER:
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "他に何か話したいことはある？";
 	next;
 	menu "はい",L_MENU,"いいえ",L_NOTHX;
 L_NOTHX:
-	mes "[ルーン]";
+	mes "[Lune]";
 	mes "話すことがあったら、";
 	mes "すぐ言ってちょうだいね。";
 	goto L_CLOSE;
@@ -1145,7 +1145,7 @@ OnInit:
 	setarray 'QUE_JOB,104,160,334,608,1252,2294,3711,7295,10471, 121,190,387,798,1403,3058,4639,7936,12488, 140,225,445,1114,1823,3375,5663,8599,15614, 140,225,445,1114,1823,3375,5663,8599,15614, 104,160,334,608,1252,2294,3711,7295,10471;
 	setarray 'TST_REQUIR,5,10,15,20,30,40,45;
 	setarray 'TST_REQUIR_LV,14,19,24,29,31,34,39;
-	waitingroom "ルーンの依頼", 0;
+	waitingroom "Luneの依頼", 0;
 end;
 
 	// function クエストLv取得  -----------------------------

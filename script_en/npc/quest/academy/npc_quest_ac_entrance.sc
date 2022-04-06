@@ -118,7 +118,7 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		cutin "jp_quest_help01.bmp", 2;
 		next;
 		mes "[Ella]";
-		mes "Each quest can be viewed in detail in the ^0000FF quest list^000000 window by selecting the quest name and pressing the "^FF000000view^000000" button or by ^0000FF double-clicking^000000 on the quest name." ;
+		mes "Each quest can be viewed in detail in the ^0000FFquest list^000000 window by selecting the quest name and pressing the \"^FF000000view^000000\" button or by ^0000FFdouble-clicking^000000 on the quest name." ;
 		next;
 		mes "[Ella]";
 		mes "[Admission to Adventurer Academy] Quest is written that you have been admitted." ;
@@ -156,12 +156,12 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 			next;
 			cutin "jp_quest_help01.bmp", 255;
 			mes "[Ella]";
-			mes "Oh?　I see that you have not yet learned the skill "^0000FF First Aid^000000"." ;
-			mes "Since you're here, I'll teach you the skill "^000000FF First Aid^000000" as well." ;
+			mes "Oh?　I see that you have not yet learned the skill \"^0000FF First Aid^000000\"." ;
+			mes "Since you're here, I'll teach you the skill \"^000000FFFirst Aid^000000\" as well." ;
 			mes "This is a pretty useful skill when you are injured." ;
 			next;
 			skill 142,1,0;
-			mes "^4d4dff- Acquired the skill "First Aid". - ^000000";
+			mes "^4d4dff- Acquired the skill \"First Aid\". - ^000000";
 		}
 	}
 	if(!checkquest(100056) && !checkquest(201036) && !checkquest(201815)){
@@ -191,7 +191,7 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		cutin "jp_quest_help01.bmp", 255;
 		mes "[Ella]";
 		mes "Well, that's it from me." ;
-		mes " " ";
+		mes " ";
 		mes "For more useful basic adventure stories, ^0000FFPuron^000000, ^0000FFAldi^000000, and ^0000FFFaye^000000 in this room will tell you." ;
 		next;
 		mes "[Ella]";
@@ -245,17 +245,17 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		mes "You can get various items from the box, but the first box you get contains an item called 'Armor Exchange Ticket'." ;
 		next;
 		mes "[Ella]";
-		mes "Tickets can be exchanged for various items depending on your level, and ^FF0000"Master Sunus"^000000 is right there to help you exchange those items!" ;
+		mes "Tickets can be exchanged for various items depending on your level, and ^FF0000Master Sunus^000000 is right there to help you exchange those items!" ;
 		next;
 		mes "[Ella]";
-		mes "Be sure to come to "Master Sunus" when you get your ticket from the box!" ;
+		mes "Be sure to come to Master Sunus when you get your ticket from the box!" ;
 		next;
 		mes "-Information-";
-		mes " ^FF0000 "Level Up Boxes" will automatically disappear approximately two weeks after receipt." ;
-		mes " Please open the "Level Up Box" before the expiration date as we do not redistribute "Level Up Boxes"." ;
+		mes " ^FF0000\"Level Up Boxes\" will automatically disappear approximately two weeks after receipt." ;
+		mes " Please open the \"Level Up Box\" before the expiration date as we do not redistribute \"Level Up Boxes\"." ;
 		next;
 		mes "-Information-";
-		mes " ^FF0000 Also, if you change your job to Ninja, Gunslinger, Supernovice, or Taekwon Kid, we will collect your "Level Up Box", "Weapon Exchange Ticket", and "Armor Exchange Ticket" when you change jobs." ;
+		mes " ^FF0000 Also, if you change your job to Ninja, Gunslinger, Supernovice, or Taekwon Kid, we will collect your \"Level Up Box\", \"Weapon Exchange Ticket\", and \"Armor Exchange Ticket\" when you change jobs." ;
 		return;
 	}
 }
@@ -471,7 +471,7 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			mes "Well, that's the end of my training course!" ;
 			next;
 			mes "[Puron]";
-			mes "You can check the items I just gave you by pressing the ^0000FF "item"^000000 button in the ^0000FF "Basic Information"^000000 window to display the ^0000FF "Items in possession"^000000 window." ;
+			mes "You can check the items I just gave you by pressing the ^0000FF\"item\"^000000 button in the ^0000FF\"Basic Information\"^000000 window to display the ^0000FF\"Items in possession\"^000000 window." ;
 		} else {
 			mes "　";
 			mes "Well, that's the end of my course!" ;
@@ -492,7 +492,7 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 		while(1){
 			mes "[Puron]";
 			mes "The quest window can be displayed by pressing ^FF0000Alt + U^000000." ;
-			mes "To see the details of a quest, double-click on the quest name or use the "view" button.";
+			mes "To see the details of a quest, double-click on the quest name or use the \"view\" button.";
 			cutin "jp_quest_help02.bmp", 2;
 			next;
 			mes "[Puron]";
@@ -806,48 +806,37 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 	}
 
 	function	ABOUT_JOB_SELECT	{
-		switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF特殊1次職^000000","職業についてはわかった")){
+		switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FFSpecial 1st job^000000", "I know about the profession")){
 		case 1:
 			mes "[Puron]";
-			mes "^0000FFSwordsman^000000だね。";
-			mes "短剣、片手剣、両手剣、斧、槍、";
-			mes "鈍器といった多くの種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職のSwordsmanからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFSwordsman^000000, right?" ;
+			mes "It's a profession that allows you to equip yourself with many types of weapons: daggers, one-handed swords, two-handed swords, axes, spears, and blunt weapons." ;
+			mes "From the first Swordsman, you will be able to change jobs in two different lines." ;
 			cutin "swordman_1.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFSwordsman^000000。";
-			mes "Swordsmanは剣士と";
-			mes "呼ばれることも多い職業だね。";
+			mes "The one shown in the top row is the first job ^0000FFSwordsman^000000";
+			mes "A sword user is often called a swordsman, right?" ;
 			cutin "swordman_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Swordsmanになった後に";
-			mes "転職してなれる2次職のナイト。";
+			mes "Shown to the left of the bottom row is the second occupation, knight, which you can change jobs to after becoming a Swordsman." ;
 			cutin "swordman_3.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Swordsmanになった後に転職してなれる";
-			mes "2次職の^0000FFクルセイダー^000000。";
+			mes "Shown to the right of the bottom row is the ^0000FF Crusader^0000000000, the second job you can change to after becoming a Swordsman.";
 			cutin "swordman_4.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "Swordsmanは剣技に優れた職業だよ。";
-			mes "近接戦闘では非常に強力な力を";
-			mes "発揮するんだ。";
-			mes "HPが他の職業よりも";
-			mes "基本 的に高いのも特徴だね。";
+			mes "Swordsman is a profession that excels in swordsmanship." ;
+			mes "They are very powerful in melee combat." ;
+			mes "HP is basically higher than other professions." ;
 			cutin "swordman_2.bmp", 2;
 			next;
 			cutin "swordman_2.bmp", 255;
 			mes "[Information]";
 			mes "‐Swordsman‐";
-			mes "‐育成難易度：初心者向き^FF0000(推奨)^000000‐";
+			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
 			break;
 		case 2:
 			mes "[Puron]";
@@ -2289,15 +2278,15 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 	}
 }
 
-//アルディ
-ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
+//Aldi
+ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 	function HOWTO_BATTLE;
 	function HOWTO_MAKEMONEY;
 	function ABOUT_CARD;
 	function ABOUT_WORLDMAP;
 
 	if(AC_PASSPORT<2){
-		mes "[アルディ]";
+		mes "[Aldi]";
 		mes "お、キミは新顔だな。";
 		mes "冒険者アカデミーへようこそ！";
 		mes "まずは受付を済ませてくれ。";
@@ -2307,28 +2296,28 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 	if(AC_NOVICE_QUE >= 20 || Job!=Job_Novice){
 		if(Job!=Job_Novice){
 			if(AC_NOVICE_QUE) {
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "元気そうで何よりだ。";
 				mes "聞きたいことがあったら、";
 				mes "なんでも聞いてくれていいぞ。";
 				mes "何を聞きたいんだ？";
 			} else {
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "見かけない顔だが、";
 				mes "キミはなかなか筋がいい";
 				mes "冒険者のようだな。";
 				mes "何か聞いてみたいことはあるかい？";
 			}
 		} else if(AC_NOVICE_QUE == 20){
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "講習もいよいよ最後だ。";
-			mes "部屋の奥にいる^FF0000フェイ^000000に";
+			mes "部屋の奥にいる^FF0000Fay^000000に";
 			mes "話しかけて見てくれ。";
 			mes "ん？";
 			mes "まだ、私に聞きたいことが";
 			mes "あるのかな？";
 		} else if(AC_NOVICE_QUE >= 30){
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "全て学んできたようだな。";
 			mes "聞きたいことがあったら、";
 			mes "もう一度説明するぞ。";
@@ -2350,7 +2339,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				ABOUT_WORLDMAP;
 				break;
 			default:
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "そうか。";
 				mes "それでは、良い冒険者になることを";
 				mes "期待しているぞ。";
@@ -2360,21 +2349,21 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				cutin "world_map_001.bmp", 255;
 				end;
 			}
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "他に聞きたいことはあるかな？";
 		}
 	}
 
 	if(!AC_NOVICE_QUE){
-		mes "[アルディ]";
+		mes "[Aldi]";
 		mes "お！";
 		mes "キミは新顔のようだな。";
-		mes "私はアルディ。";
+		mes "私はAldi。";
 		mes "講習を担当している。";
 		mes "まずはプロンに話しかけてみてくれ。";
 		close;
 	} else if(AC_NOVICE_QUE < 10){
-		mes "[アルディ]";
+		mes "[Aldi]";
 		mes "まずはプロンの講習を";
 		mes "終わらせないとな。";
 		mes "反対側のプロンに話しかけて、";
@@ -2384,28 +2373,28 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 	} else if(AC_NOVICE_QUE>=10 && AC_NOVICE_QUE<20){
 		switch(AC_NOVICE_QUE){
 		case 10:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "プロンの話が終わったようだな。";
-			mes "私はアルディだ。";
+			mes "私はAldiだ。";
 			mes "よろしく。";
 			mes "　";
 			mes "さて、今後の成長について";
 			mes "簡単に私が話そう。";
 			next;
 			while(1){
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "冒険者として、一人前に成長するには";
 				mes "様々な経験が必要だが、";
 				mes "幸い冒険者アカデミーには";
 				mes "戦闘や仕事を手伝うクエストなどが";
 				mes "揃っている。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "講習後、1次職に転職できたら、";
 				mes "しばらく冒険者アカデミーで";
 				mes "経験を積むといいだろう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "特に戦闘や、お金に困ったときなど、";
 				mes "わからないことがあったら、";
 				mes "私が教えられるかもしれない。";
@@ -2413,11 +2402,11 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "また戻ってくるといい。";
 				next;
 				if(select("わかった","わからなかった")==1){
-					mes "[アルディ]";
+					mes "[Aldi]";
 					mes "ではキミの成長を期待しているぞ。";
 					break;
 				}
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "それじゃあ、もう一度話そう。";
 				next;
 			}
@@ -2432,7 +2421,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			}
 			set AC_NOVICE_QUE, 11;
 		case 11:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "最後に、この大陸について";
 			mes "少し話しておこう。";
 			next;
@@ -2447,7 +2436,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			}
 			set AC_NOVICE_QUE, 12;
 		case 12:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "よし、この大陸については";
 			mes "わかったようだな。";
 			mes "立派な冒険者になることを";
@@ -2464,16 +2453,16 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			set AC_NOVICE_QUE, 13;
 		case 13:
 		case 14:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			if(AC_NOVICE_QUE==13){
 				mes "そうだ、これを渡しておこう！";
 				next;
 			} else {
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "荷物は減らしてきたかな？";
 				next;
 				if(select("減らしてきた","減らしてない")==2){
-					mes "[アルディ]";
+					mes "[Aldi]";
 					mes "荷物を減らしてくれないと";
 					mes "渡せないぞ。";
 					close;
@@ -2502,7 +2491,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			getitem 611, 5;
 			emotion 46,"";
 			set AC_NOVICE_QUE, 15;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "冒険者の必需品、鑑定アイテムだ！";
 			mes "この^0000FF拡大鏡^000000は^0000FF未鑑定^000000のアイテムを";
 			mes "鑑定することができる。";
@@ -2515,60 +2504,60 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			setquest 100120;
 			set AC_NOVICE_QUE, 20;
 			cutin "world_map_001.bmp", 255;
-			mes "[アルディ]";
-			mes "さあ、最後に^FF0000フェイ^000000の話を";
+			mes "[Aldi]";
+			mes "さあ、最後に^FF0000Fay^000000の話を";
 			mes "聞いてみてくれ。";
 			close;
 		}
 	}
 
 	function	HOWTO_BATTLE	{
-		mes "[アルディ]";
+		mes "[Aldi]";
 		mes "戦闘の何について";
 		mes "聞きたいんだい？";
 		next;
 		switch(select("戦闘の準備について","モンスターについて","パーティーについて","他のことを聞く")){
 		case 1:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "戦闘に欠かせないのは";
 			mes "装備と回復アイテムだ。";
 			mes "今もっている装備品で";
 			mes "装備していないアイテムがあったら、";
 			mes "一度装備をしてみることを勧めるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "装備アイテムは^0000FFAlt＋ Q^000000キーか、";
 			mes "^0000FF「基本 情報」^000000ウィンドウ内の";
 			mes "^0000FF「equip」^000000ボ タンを押して、";
 			mes "^0000FF「装備アイテム」^000000ウィンドウを";
 			mes "表示して確認できる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "また、所持アイテムは^0000FFAlt＋ E^000000キーか、";
 			mes "^0000FF「基本 情報」^000000ウィンドウ内の";
 			mes "^0000FF「item」^000000ボ タンを押して、";
 			mes "^0000FF「所持アイテム」^000000ウィンドウを";
 			mes "表示して確認できる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "アイテムを装備するには";
 			mes "^0000FF「所持アイテム」^000000ウィンドウ内の";
 			mes "^0000FF「equip」^000000タブをクリックし、";
 			mes "装備したいアイテムを";
 			mes "ダブルクリックすることで装備できる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "あと、忘れちゃならないのが、";
 			mes "^0000FF「etc」^000000タブの装備アイテムだ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "Archerや、Gunslinger等の";
 			mes "職業では^0000FF矢^000000や^0000FF銃弾^000000といった";
 			mes "遠距離攻撃用のアイテムを一緒に";
 			mes "装備しないと攻撃ができない";
 			mes "装備アイテムがある。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "これらのアイテムを使用する";
 			mes "装備アイテムは^0000FF「装備アイテム";
 			mes "ウィンドウ」^000000へ遠距離攻撃用の";
@@ -2576,7 +2565,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "ドラッグアンドドロップし、";
 			mes "一緒に装備する必要がある。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "もちろん、装備できるアイテムで";
 			mes "あれば、通常の装備アイテムも";
 			mes "装備ウィンドウの上まで";
@@ -2585,13 +2574,13 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			next;
 			break;
 		case 2:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "まずはフィールドに戦いに行く前に";
 			mes "^0000FFモンスター^000000について話そう。";
 			mes "^0000FFモンスター^000000にはいろいろな^0000FF種族、";
 			mes "大きさ、属性^000000があるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "モンスターの^FF0000大きさ^000000は";
 			mes "^0000FF小型、中型、大型^000000に分かれている。";
 			mes "^FF0000属性^000000は^0000FF無属性、地属性、風属性、";
@@ -2599,12 +2588,12 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "不死属性、闇属性、聖属性^000000という";
 			mes "種類に分かれている。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "通常の直接攻撃で";
 			mes "何の属性もなければ、";
 			mes "無属性での攻撃となるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FF地、風、水、火^000000の属性同士の";
 			mes "関係性を示すとこうなる。";
 			mes "地は風に強く、";
@@ -2613,20 +2602,20 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "火は地に強い。";
 			cutin "attribute_main4.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "また、基本 的には";
 			mes "^0000FF無属性、念属性^000000を除いて、";
 			mes "同じ属性では効果が";
 			mes "弱まる傾向があるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "また、^0000FF毒、不死、闇、聖^000000では";
 			mes "毒は無属性以外の属性よりも弱く、";
 			mes "不死と聖、闇と聖は";
 			mes "互いに強みと弱みを持っている。";
 			cutin "attribute_stdk.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "また、^0000FF念属性^000000は^0000FF無属性^000000で攻撃が";
 			mes "難しいという特性がある。";
 			mes "念に一番効果があるのは念なのだ。";
@@ -2635,7 +2624,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "ん？　意味が違うか……？";
 			cutin "attribute_nonen.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "まぁ、モンスターに合わせて、";
 			mes "武器や防具、スキルなどを";
 			mes "特性に合わせて変更すれば、";
@@ -2643,18 +2632,18 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			next;
 			break;
 		case 3:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FFパーティー^000000について話そう。";
 			mes "一人で戦うよりも大勢で力を";
 			mes "合わせて戦うほうが";
 			mes "より多くの敵を倒しやすくなる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "冒険者同士で^0000FFパーティー^000000を組んで";
 			mes "戦うことは戦闘不能になるリスクを";
 			mes "回避することにもなるぞ！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FFパーティー^000000はチャット入力欄に";
 			mes "「^FF0000/organize パーティーの名前^000000」と";
 			mes "入力すれば作ることができる。";
@@ -2662,14 +2651,14 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "つけることができるぞ！";
 			cutin "tra_pary_command.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "入力後に発言を行うと、";
 			mes "^0000FFパーティー設定ウィンドウ^000000が出現する。";
 			mes "アイテムの収集方式と";
 			mes "アイテム分配方式が選択できる。";
 			cutin "tra_pary_item.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "アイテムの収集方式に関しては";
 			mes "『^0000FFパーティー全体で共有^000000』を";
 			mes "選択したほうがいいだろう。";
@@ -2677,7 +2666,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "入っている人全員が敵が落とした";
 			mes "アイテムをすぐに拾うことができる！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "アイテムの分配方式は";
 			mes "一定確率で分配を選ぶことで";
 			mes "拾った人がアイテムを貰うのではなく、";
@@ -2685,7 +2674,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "公平にアイテムを貰うことが";
 			mes "できるようになる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FFパーティー^000000設定では経験値の";
 			mes "分配方式も決めることができる。";
 			mes "一度アイテムについての設定を";
@@ -2694,14 +2683,14 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "パーティーの設定が可能だ。";
 			cutin "tra_pary_exp.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "パーティー設定は";
 			mes "パーティーウィンドウの";
 			mes "下の方にあるゴミ箱の";
 			mes "ようなマークの左に記載されている！";
 			cutin "tra_pary_window.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "経験値の分配方式設定での";
 			mes "公平に分配には注意が必要だ。";
 			mes "^FF0000レベル差が±15の範囲でのみ";
@@ -2710,7 +2699,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "できないので注意が必要だぞ！";
 			cutin "tra_pary_exp.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "設定がすんだら、";
 			mes "作成したパーティーに";
 			mes "加入してもらおう！";
@@ -2718,7 +2707,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "カーソルをもっていき、";
 			mes "右クリックを押す。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "すると、選択メニューに";
 			mes "『^0000FF○○さんにパーティー加入要請^000000』";
 			mes "とでてくる。";
@@ -2727,40 +2716,40 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "承諾すれば、パーティーが組める！";
 			cutin "tra_pary_exp.bmp", 255;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "パーティーの加入要請を出しても";
 			mes "相手の反応がなかった場合は、";
 			mes "すでに相手がパーティーに";
 			mes "加入していないか、";
 			mes "会話ウィンドウで確認しよう。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "すでにパーティーに";
 			mes "加入している場合は、";
 			mes "会話ウィンドウに";
 			mes "「他のパーティーに加入しています。」";
 			mes "とメッセージが表示されるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "パーティーに加入していたら、";
 			mes "^FF0000Alt＋ Z^000000で表示される";
 			mes "パーティーウィンドウを";
 			mes "確認してもらう必要がある！";
 			cutin "tra_pary_window.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "すでにパーティーに入っている";
 			mes "場合はパーティーウィンドウ内に";
 			mes "表示されている名前を右クリックして";
 			mes "『^FF0000脱退する^000000』を選んでもらおう！";
 			cutin "tra_pary_window.bmp", 255;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "そうすれば、キミが作った";
 			mes "新しいパーティーに";
 			mes "加入させることができる！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "パーティーは^FF0000最大で12人^000000まで";
 			mes "加入できる。";
 			mes "多人数でモンスターに";
@@ -2773,25 +2762,25 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 	}
 
 	function	HOWTO_MAKEMONEY	{
-		mes "[アルディ]";
+		mes "[Aldi]";
 		mes "お金の稼ぎ方の何について";
 		mes "聞きたいんだい？";
 		next;
 		switch(select("収集アイテムについて","お金を手に入れる方法について","冒険者へのアイテムの売り方について","他のことを聞く")){
 		case 1:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "モンスターが落とすアイテムは";
 			mes "消耗品や武器や防具などの装備品、";
 			mes "収集品など、様々なものが存在する。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "モンスターの収集品の中には";
 			mes "駆け出しの冒険者でも集めやすく、";
 			mes "高く売れるものがあるぞ。";
 			mes "ポリンやドロップスから収集できる";
 			mes "『^FF0000空きビン^000000』だ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "ただ、この『^FF0000空きビン^000000』は道具屋に";
 			mes "売ってもたいしたお金^0000FF（Zeny）^000000には";
 			mes "ならない。";
@@ -2801,13 +2790,13 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			next;
 			break;
 		case 2:
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "お金^0000FF（Zeny）^000000を手に入れる方法は";
 			mes "幾つもあるが、";
 			mes "多くの冒険者の収入源は";
 			mes "手に入れたアイテムを売ることだ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "冒険者アカデミー内では";
 			mes "^0000FF教室棟ホール^000000に武器や防具、";
 			mes "消耗品といったアイテムを";
@@ -2815,19 +2804,19 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "人達がいるので、そこで手に";
 			mes "入れたアイテムを売るといい。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "アイテムはモンスターを倒すことや、";
 			mes "クエストを行うことでも";
 			mes "手に入れることができる。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "ただ、カードなどのアイテムは";
 			mes "戦闘が有利になる様々な効果が";
 			mes "ついていて、非常に貴重な";
 			mes "アイテムだから、道具屋等では";
 			mes "売らない方がいい。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "自分が利用しないカードであれば、";
 			mes "^0000FF他の冒険者に売る^000000ことで";
 			mes "多くのお金^0000FF（Zeny）^000000を手に入れることが";
@@ -2836,19 +2825,19 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			break;
 		case 3:
 			while(1){
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "それじゃ、手に入れたアイテムの";
 				mes "売り方について話をしよう。";
 				mes "冒険者同士で売り買いしたほうが";
 				mes "お店よりも得をすることが多いぞ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "収集した^FF0000アイテムを";
 				mes "他の冒険者に売る^000000には";
 				mes "主に2つの手段がある。";
 				mes "^0000FF露店^000000と^0000FFチャットルーム^000000だ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "^0000FF露店^000000を開くにはある程度JobLvが";
 				mes "必要だ。また、露店が使用できる";
 				mes "職業も限定されている。";
@@ -2856,27 +2845,27 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "チャットルームでの取引の仕方を";
 				mes "今から教えよう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "^0000FFチャットルーム^000000は^0000FF露店^000000と違い、";
 				mes "看板を出して冒険者を待つ事が";
 				mes "できる機能だ。";
 				mes "これを利用して他の冒険者と";
 				mes "会話で取引時の交渉が行える。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "まずは、自分が売ろうとしている";
 				mes "アイテムがどれぐらいの値段で";
 				mes "取引されているのか";
 				mes "情報収集をする必要がある。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "なぁに、そう構えなくていい。";
 				mes "情報収集といってもやり方は簡単だ。";
 				mes "^0000FF露店^000000を開いている冒険者の";
 				mes "お店で大体の予想を";
 				mes "つければいいんだ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "^0000FF露店中の冒険者^000000はこのように";
 				mes "Zのマークの袋の看板を出している。";
 				mes "その^FF0000看板をダブルクリック^000000すると、";
@@ -2884,47 +2873,47 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "見ることができるぞ。";
 				cutin "tra_stall.bmp", 2;
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "こうして^0000FF露店^000000を見て回れば、";
 				mes "自分の売りたいアイテムの";
 				mes "相場が大体つかめてくるはずだ。";
 				cutin "tra_stall_price.bmp", 2;
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "もしどうしても見つからない、";
 				mes "価格がどうしてもわからない場合は、";
 				mes "ちょっと勇気が必要だが";
 				mes "近くの冒険者に聞いてみるのも";
 				mes "いいかもしれないな。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "ただ、安易に聞くのはいただけない。";
 				mes "まずは自分で調べる努力をしてから。";
 				mes "人に聞くのは最後の手段";
 				mes "だということを忘れるなよ。";
 				next;
 				cutin "tra_choom_create.bmp", 2;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "売りたいアイテムの相場が";
 				mes "大体わかったら";
 				mes "チャットルームの出番だ。";
 				mes "^FF0000Alt＋ C^000000を押せばチャットルームを";
 				mes "作成することができる。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "^FF0000Title欄に売りたい商品名と";
 				mes "値段を書いてOKボ タンを押そう。^000000";
 				mes "例えば空きビン10個売りたい場合は";
 				mes "こうやって書こう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "Title欄の内容を話をしよう。";
 				mes "『^0000FF売り^000000』とは売りますという意味だ。";
 				mes "次に^0000FF売りたいアイテム名^000000、";
 				mes "このとき^0000FF値段を書いておけば親切^000000だ。";
 				mes "『^FF0000z^000000』はZeny、つまりお金のこと。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "最後に個数を入れれば、";
 				mes "わかりやすくなるぞ。";
 				mes "多くの冒険者は売りたいアイテムの";
@@ -2932,46 +2921,46 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "『^0000FF＠^000000』を個数の前につけておけば、";
 				mes "わかりやすくなるだろう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "^0000FFLimit^000000はチャットルームに";
 				mes "入れる人数だ。";
 				mes "自分を含めての数になる為、";
 				mes "^FF00002^000000名にしておけば、より良いだろう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "チャットルーム作成の";
 				mes "ウィンドウが出ない場合は";
 				mes "^0000FF基本 情報ウィンドウ^000000の";
 				mes "^000000comm^000000ボ タンでも出すことができるぞ。";
 				next;
 				cutin "tra_chatroom_enter.bmp", 2;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "しばらく、待ってみて冒険者が";
 				mes "入ってきたら、挨拶をしてみよう。";
 				mes "まずは取り引き数について";
 				mes "確認して交渉をまとめるといいぞ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "チャットルーム内での会話は";
 				mes "周りには聞こえないから、";
 				mes "沢山話しても迷惑にはならない。";
 				mes "交渉がまとまったら、";
 				mes "チャットルームを閉じよう。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "チャットルームはウィンドウの右上に";
 				mes "表示されている『^0000FF×^000000』を";
 				mes "左クリックするか、";
 				mes "『^0000FF/q^000000』と発言して閉じることができる。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "ウィンドウを閉じたら、";
 				mes "取り引きを行おう。";
 				mes "アイテムとZenyを交換するには";
 				mes "トレードウィンドウを使用する。";
 				cutin "tra_tradewindow.bmp", 2;
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "トレードウィンドウは相手を";
 				mes "右クリックしたときにでてくる";
 				mes "メニューから、";
@@ -2979,7 +2968,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "選択する。";
 				mes "○○は^FF0000相手の名前^000000だ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "相手が取り引きを承諾すれば、";
 				mes "トレードウィンドウが表示される。";
 				mes "^0000FFTrade ： の右に相手の名前が";
@@ -2987,13 +2976,13 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "間違った人に渡すわけには";
 				mes "いかないからな。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "このウィンドウにアイテムを";
 				mes "持ってくれば、トレードウィンドウに";
 				mes "入れることができる。";
 				mes "アイテムウィンドウは^FF0000Alt＋ E^000000だ。";
 				next;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "取り引き内容に間違いがなければ";
 				mes "『^0000FFOK^000000』を押す。";
 				mes "取り引き相手が『^0000FFOK^000000』を押せば、";
@@ -3002,14 +2991,14 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 				mes "取り引き完了だ！";
 				next;
 				cutin "tra_tradewindow.bmp", 255;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "冒険者同士でのアイテムの";
 				mes "売り買いはわかったかな。";
 				mes "わからなかったら、もう一度話すが";
 				mes "どうする？";
 				next;
 				if(select("わかったので大丈夫","わからなかった")==1) break;
-				mes "[アルディ]";
+				mes "[Aldi]";
 				mes "それじゃあ、もう一度話そう。";
 				next;
 			}
@@ -3020,12 +3009,12 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 
 	function	ABOUT_CARD	{
 		while(1){
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "希少価値の高いアイテム、";
 			mes "カードについて";
 			mes "話そう！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "収集品の中には希少価値が";
 			mes "高いものがある。";
 			mes "それが、^FF0000モンスターが落とすカード^000000だ。";
@@ -3033,20 +3022,20 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "カードによってはとてつもなく";
 			mes "高い値段がついているものもあるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FFカード^000000は^0000FFスロット^000000つきの装備品に";
 			mes "装着して使用する。";
 			mes "^FF0000一度装着するとカードは";
 			mes "取り外せなくなるので、";
 			mes "注意が必要だ。^000000";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^FF0000カード^000000には特殊効果があり、";
 			mes "装備品にその効果を";
 			mes "つけることができるため、";
 			mes "非常に強力だぞ！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FFスロットがついている装備品^000000は";
 			mes "装備品を右クリックすると、";
 			mes "説明の下に四角い枠が出てくる。";
@@ -3054,27 +3043,27 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "つけることができる。";
 			cutin "tra_slot_weapon.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "また、お店で売っている";
 			mes "装備アイテムより、";
 			mes "モンスターから収集できる装備品は";
 			mes "同じ名前の装備品でもスロット数が";
 			mes "多いことがあるぞ！";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "そういったスロット数が多い装備品は";
 			mes "冒険者の間で高値で";
 			mes "取り引きされることが多い。";
 			mes "お店に売る前に装備品の価値を";
 			mes "調べて取り引きしたほうがいいぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "カードについては";
 			mes "わかったかい？";
 			cutin "tra_slot_weapon.bmp", 255;
 			next;
 			if(select("わかったので大丈夫","わからなかった")==1) break;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "それじゃあ、もう一度話そう。";
 			next;
 		}
@@ -3083,40 +3072,40 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 
 	function	ABOUT_WORLDMAP	{
 		while(1){
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "Midoガルド大陸がある世界地図を";
 			mes "見てみよう。";
-			mes "これがルーンMidoガッツ王国を";
+			mes "これがLuneMidoガッツ王国を";
 			mes "始め、主要な諸国が隣接している";
 			mes "^0000FFMidoガルド大陸^000000だ。";
 			cutin "world_map_001.bmp", 3;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "世界地図に関して便利な機能を";
 			mes "教えておこう。";
 			mes "^0000FFAlt+.(ドット)^000000を押すと、";
 			mes "ワールドマップが表示できる。";
 			cutin "jp_quest_help06.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "ワールドマップでは";
 			mes "^0000FF自分の位置^000000や、";
 			cutin "jp_quest_help07.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "ワールドマップでは";
 			mes "^0000FF自分の位置^000000や、";
 			mes "^0000FFパーティーメンバー^000000の位置が";
 			mes "確認できる。";
 			cutin "jp_quest_help08.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "この画面では^0000FFマウスのカーソルを";
 			mes "移動する^000000ことで、どんな場所か";
 			mes "確認できるんだ。";
 			cutin "jp_quest_help09.bmp", 2;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "エー、コホンッ。";
 			mes "この^0000FFワールドマップ^000000には";
 			mes "^0000FF冒険者アカデミー^000000は";
@@ -3125,14 +3114,14 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			mes "秘密の場所にあるんだ。";
 			cutin "jp_quest_help09.bmp", 255;
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "^0000FF冒険者アカデミー^000000には";
-			mes "ルーンMidoガッツ王国の";
+			mes "LuneMidoガッツ王国の";
 			mes "^0000FFProntera、Izlude、Alberta、";
 			mes "Payon、Morroc^000000から";
 			mes "転送してもらうことができるぞ。";
 			next;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "さあ、覚えたかな？";
 			mes "ワールドマップの表示は";
 			mes "^0000FFAlt+.(ドット)^000000だ。";
@@ -3141,7 +3130,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			cutin "jp_quest_help06.bmp", 2;
 			next;
 			if(select("わかった","わからなかった")==1) break;
-			mes "[アルディ]";
+			mes "[Aldi]";
 			mes "それじゃあ、もう一度話そう。";
 			next;
 		}
@@ -3150,10 +3139,10 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 	}
 }
 
-//フェイ
-ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
+//Fay
+ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 	if(AC_PASSPORT<2){
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "ん？";
 		mes "入学希望者みたいだな。";
 		mes "そこで受付をすれば、";
@@ -3169,29 +3158,29 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		if(AC_NOVICE_QUE){
 			if('@novice) {
 				if(AC_NOVICE_QUE>30){
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "よう！";
-					mes "最近^0000FFルーンの仕事^000000は";
+					mes "最近^0000FFLuneの仕事^000000は";
 					mes "手伝ってるかい？";
 					mes "まあ、2次職について";
 					mes "聞きたいことがあったら、";
 					mes "俺に聞いてくれ。";
 				} else {
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "よう！";
 					mes "調子よさそうだな。";
 					mes "2次職について";
 					mes "また聞きたくなったのかい？";
 				}
 			} else {
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "2次職について";
 				mes "もう一度聞きたいなら、";
 				mes "説明するぜ。";
 				mes "2次職について聞くかい？";
 			}
 		} else {
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "あまり見ない顔だけど、";
 			mes "キミにはただならぬものを";
 			mes "感じるな。";
@@ -3199,7 +3188,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		}
 		next;
 		if(AC_NOVICE_QUE>30){
-			set '@sel, select("2次職について聞く","ルーンの仕事について聞く","聞くことはない");
+			set '@sel, select("2次職について聞く","Luneの仕事について聞く","聞くことはない");
 		} else {
 			set '@sel, select("2次職について聞く","聞くことはない");
 			if('@sel==2) set '@sel,3;
@@ -3208,21 +3197,21 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		case 1:
 			ABOUT_JOB;
 		case 3:
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "そうか、また知りたくなったら、";
 			mes "いつでも聞きにきてくれ。";
 			mes "喜んで話すぜ。";
 			close;
 		case 2:
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "よし！";
-			mes "^FF0000ルーン^000000のことだな。";
-			mes "ルーンは仕事を手伝ってくれる人を";
+			mes "^FF0000Lune^000000のことだな。";
+			mes "Luneは仕事を手伝ってくれる人を";
 			mes "探してるぞ。";
 			mes "キミのようにしっかりしている";
 			mes "冒険者なら、助けになるはずだ。";
 			next;
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "この部屋を出たら、";
 			mes "^0000FFピンク色の髪をした女性^000000に";
 			mes "話しかけてみるといい。";
@@ -3231,40 +3220,40 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		}
 	}
 	if(AC_NOVICE_QUE<10){
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "入学を済ませたみたいだな。";
 		mes "まずはそこにいる^0000FFプロン^000000から、";
 		mes "話を聞いてみてくれ。";
 		close;
 	}
 	if(AC_NOVICE_QUE<20){
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "プロンの講習を終えたみたいだな。";
-		mes "次は^0000FFアルディ^000000が役立つ情報を";
+		mes "次は^0000FFAldi^000000が役立つ情報を";
 		mes "教えてくれるぞ。";
 		close;
 	}
 	if(AC_NOVICE_QUE<30){
-		mes "[フェイ]";
-		mes "アルディの講習が終わったようだな！";
+		mes "[Fay]";
+		mes "Aldiの講習が終わったようだな！";
 		mes "もうすこしで、転職の準備が";
 		mes "整うところまできたな。";
 		mes "あとは覚悟さえあれば、";
 		mes "転職することが出来るだろうな。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "何の職業に転職するか、";
 		mes "決めたかい？";
 		next;
 		switch(select("転職する職業は決めた","上位職について聞いておく")){
 		case 1:
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "すでに転職する職業を";
 			mes "決めていたようだな。";
 			break;
 		case 2:
 			ABOUT_JOB;
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "よし、これで講習も最後だ。";
 		}
 		if(AC_NOVICE_QUE<21){
@@ -3287,15 +3276,15 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		}
 		next;
 		if(AC_NOVICE_QUE==21){
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "最後にこれを渡しておくぜ！";
 			next;
 		} else {
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "荷物は減らしたかい？";
 			next;
 			if(select("減らしてきた","減らしてない")==2){
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "荷物を減らさないと";
 				mes "渡せないぜ。";
 				close;
@@ -3324,7 +3313,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		getitem 569, 150;
 		getitem 602, 3;
 		emotion 46,"";
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "冒険者の必需品、ワープアイテムだ！";
 		mes "この^0000FF蝶の羽^000000は^0000FF位置をセーブ^000000した所へ";
 		mes "瞬時にワープすることができる。";
@@ -3332,7 +3321,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "迷い込んでも安心だ。";
 		mes "回復アイテムも渡しておくぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "今は冒険者アカデミーに";
 		mes "^0000FF位置をセーブ^000000しているから、";
 		mes "迷っちまったら、^FF0000蝶の羽^000000を";
@@ -3343,7 +3332,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		if(Job==Job_Novice){
 			if(CHANGE_TK || CHANGE_SNV){
 				emotion 21;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "おっ！";
 				mes "転職がんばってる";
 				mes "みたいだな。";
@@ -3355,7 +3344,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 			} else
 			if(CHANGE_GS || CHANGE_NJ){
 				emotion 21;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "おっ！";
 				mes "転職がんばってる";
 				mes "みたいだな。";
@@ -3365,7 +3354,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				set '@sel, select("転送サービスについて聞く","1次転職したい","2次職について聞く","基礎ブックがほしい","聞くことはない");
 			} else {
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "1次転職したいなら、";
 				mes "もう一度説明するぜ、";
 				mes "聞くかい？";
@@ -3373,7 +3362,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				set '@sel, select("1次転職したい","2次職について聞く","基礎ブックがほしい","聞くことはない")+1;
 			}
 		} else {
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "2次職について";
 			mes "もう一度聞きたいなら、";
 			mes "説明するぜ。";
@@ -3384,35 +3373,35 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		switch('@sel){
 		case 1:
 			if(CHANGE_TK || CHANGE_SNV){
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "よし！";
 				mes "BaseLvを上げたいんだな。";
 				mes "成長したいなら、実戦を";
 				mes "積むことが大切だ。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "冒険者アカデミー内の";
 				mes "実習室か特別室へ";
 				mes "行って見るといいぞ。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "実習室はこの講習室を";
 				mes "出てから、左上の方へ";
 				mes "行くとあるからな。";
 				close;
 			} else {
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "よし！";
 				mes "転送サービスのことだな。";
 				mes "それはタールがやってるぞ。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "他の街へ行くなら、";
 				mes "^0000FF「転送サービス」^000000をしている";
 				mes "赤い髪の^0000FFタール^000000を探して";
 				mes "みるといい。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "タールはこの講習室を";
 				mes "出てから、左上の方へ行くと";
 				mes "いるはずだ。";
@@ -3422,16 +3411,16 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 			break;
 		case 4:
 			if(!checkweight(11055,1)){
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "あれ？";
 				mes "荷物が多いみたいだな。";
 				mes "もう少し、荷物の種類数を";
 				mes "減らしてきてくれ。";
 				//setquest 100097; //本鯖でも未実装メッセージ
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "この部屋をでたところの、";
-				mes "カプラサービスで倉庫が";
+				mes "Kafra Serviceで倉庫が";
 				mes "利用できる。";
 				mes "そこで荷物を預けるといい。";
 				close;
@@ -3441,21 +3430,21 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		case 3:
 			ABOUT_JOB;
 		case 5:
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "そうか、また知りたくなったら、";
 			mes "いつでも聞きにきてくれ。";
 			mes "喜んで話すぜ。";
 			close;
 		}
 	}
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "まず、転職前に準備が必要だ。";
 	mes "^0000FF「基本スキル」をレベル9　^000000に";
 	mes "成長させていれば1次職の";
 	mes "転職ができる。";
 	mes "俺が言う通りにやってみてくれ。";
 	next;
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "^0000FF「基本スキル」^000000のレベルは";
 	mes "^0000FF「基本情報」^000000ウィンドウ内の";
 	mes "^0000FF「Skill」^000000ボタンから、";
@@ -3463,7 +3452,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 	mes "^0000FF「スキルポイント」^000000を割り";
 	mes "振ることで、上げることができる。";
 	next;
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "忘れちゃならないのは、";
 	mes "スキルのレベルを上げるには、";
 	mes "スキルポイントを割り振った後、";
@@ -3471,32 +3460,32 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 	mes "^FF0000「確定」^000000ボタンを押して、";
 	mes "確定させる必要があるってことだ。";
 	next;
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "いいかい。";
 	mes "1次職に転職するには";
 	mes "^0000FF「基本スキル」をレベル9　^000000に";
 	mes "するんだ。";
 	next;
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "職業が決まってるなら、";
 	mes "転職場所を教えとくぜ。";
 	mes "どうする？";
 	next;
 	set '@sel,select("転職場所を聞く","転職の準備をする","まだ、決まってない");
 	if(AC_NOVICE_QUE<30){
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "あ、そうそう。";
 		mes "これを渡しておかなくっちゃな。";
 		next;
 		GIVE_BOOK;
 		set AC_NOVICE_QUE, 30;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "本の話はこのくらいだな。";
 		next;
 	}
 	switch('@sel){
 	case 2:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FF「基本スキル」をレベル9　^000000に";
 		mes "成長させれば、";
 		mes "Swordsman、Magician、";
@@ -3504,7 +3493,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "Archer、Merchantは";
 		mes "転職がすぐに出来るからな。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "1次職への転職がしたくなったら、";
 		mes "俺が送ってあげるから";
 		mes "また来てくれ。";
@@ -3516,15 +3505,15 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "まだ転職する職業が決まって";
 		mes "ないなら、冒険者アカデミーで";
 		mes "手伝いをやってみないか？";
-		mes "ルーンが仕事をしてくれる人を";
+		mes "Luneが仕事をしてくれる人を";
 		mes "探してるみたいなんだ。";
 		next;
-		mes "[フェイ]";
-		mes "ルーンなら、この部屋を出た";
+		mes "[Fay]";
+		mes "Luneなら、この部屋を出た";
 		mes "^0000FF教室棟1F^000000にいるから、";
 		mes "話しかけてみるといい。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "1次職への転職がしたくなったら、";
 		mes "俺が送ってあげるから、";
 		mes "また来てくれ。";
@@ -3533,94 +3522,94 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		setquest 100128;
 		end;
 	}
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "どの職業になるんだい？";
 	next;
 	set '@sel,select("Swordsman^FF0000（初心者向き）^000000","Magician^0000FF（中級者向き）^000000","Acolyte^0000FF（中級者向き）^000000","Thief^FF0000（初心者向き）^000000","Archer^FF0000（初心者向き）^000000","Merchant^000000（上級者向き）^000000","Taekwon Kid^0000FF（中級者向き）^000000","Gunslinger^000000（上級者向き）^000000","Ninja^000000（上級者向き）^000000","Supernovice^000000（上級者向き）^000000");
 	switch('@sel){
 	case 1:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFSwordsman^000000の場合はIzludeだな。";
 		mes "^FF0000Izludeの西^000000に";
 		mes "^FF0000剣士ギルド^000000がある。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000剣士ギルド^000000まで送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 2:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFMagician^000000の場合はGeffenだな。";
 		mes "^FF0000Geffenの北西^000000に";
 		mes "^FF0000魔法学校^000000がある。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000魔法学校^000000まで送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 3:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFAcolyte^000000の場合はPronteraだな。";
 		mes "^FF0000Pronteraの北東^000000に";
 		mes "^FF0000大聖堂^000000がある。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000大聖堂^000000まで送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 4:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFThief^000000の場合はMorrocだな。";
 		mes "^FF0000Morrocに行ってから、";
 		mes "北西のピラMido^000000に行くといい。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000北西のピラMido^000000まで";
 		mes "送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 5:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFArcher^000000の場合はPayonだな。";
 		mes "^FF0000Payonの北東^000000に";
 		mes "^FF0000Archerギルド^000000がある。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000Archerギルド^000000まで";
 		mes "送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 6:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFMerchant^000000の場合はAlbertaだな。";
 		mes "^FF0000Albertaの南西^000000に";
 		mes "^FF0000商人組合^000000がある。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000商人組合^000000まで";
 		mes "送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
 	case 7:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFTaekwon Kid^000000の場合はPayonだな。";
 		mes "^FF0000Payonの中央から";
 		mes "少し南西あたりに、";
 		mes "鳳凰っていう修行者^000000が";
 		mes "いるはずだ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000Payonの南西あたり^000000へ";
 		mes "送ってやるぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "まあ、そうはいっても、";
 		mes "Taekwon Kidになるためには";
 		mes "^FF0000試練がある^000000ようだけどな。";
@@ -3629,18 +3618,18 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "転職してくるかい？";
 		break;
 	case 8:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFGunslinger^000000の場合は";
 		mes "^FF0000Einbroch^000000だな。";
 		mes "^FF0000都市の中央にある研究所^000000に";
 		mes "行くといい。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000都市の中央にある研究所^000000へ";
 		mes "送ってやるぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "まあ、そうはいっても、";
 		mes "Gunslingerになるためには";
 		mes "^FF0000試練がある^000000ようだけどな。";
@@ -3649,7 +3638,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "転職してくるかい？";
 		break;
 	case 9:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFNinja^000000の場合はAmatsuだな。";
 		mes "行きかたは^FF0000Albertaに行ってから、";
 		mes "船で行く^000000ことになるな。";
@@ -3657,12 +3646,12 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "冒険者のキミには";
 		mes "大変かもしれないぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000Amatsuの屋敷^000000へ";
 		mes "送ってやるぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "まあ、そうはいっても、";
 		mes "Ninjaになるためには";
 		mes "^FF0000試練がある^000000ようだけどな。";
@@ -3671,7 +3660,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "転職してくるかい？";
 		break;
 	case 10:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^0000FFSupernovice^000000の場合は";
 		mes "^FF0000BaseLvを45^000000にする必要があるぞ。";
 		mes "場所はAldebaranだな。";
@@ -3680,23 +3669,23 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "いるはずだ。";
 		next;
 		if(BaseLevel<45) {
-			mes "[フェイ]";
-			mes "ルーンなら、この部屋を出た";
+			mes "[Fay]";
+			mes "Luneなら、この部屋を出た";
 			mes "^0000FF教室棟1F^000000にいるから、";
 			mes "話しかけてみるといい。";
 			next;
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "1次職への転職がしたくなったら、";
 			mes "俺が送ってあげるから、";
 			mes "また来てくれ。";
 			close;
 		}
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうだな、すぐに転職するなら、";
 		mes "俺が^FF0000Aldebaranの南の家屋^000000へ";
 		mes "送ってやるぜ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "まあ、そうはいっても、";
 		mes "Supernoviceになるためには";
 		mes "^FF0000試練がある^000000ようだけどな。";
@@ -3708,12 +3697,12 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 	next;
 	cutin "jp_quest_help10.bmp", 255;
 	if(select("転職しに行く","まだ、転職しない")==2){
-		mes "[フェイ]";
-		mes "ルーンなら、この部屋を出た";
+		mes "[Fay]";
+		mes "Luneなら、この部屋を出た";
 		mes "^0000FF教室棟1F^000000にいるから、";
 		mes "話しかけてみるといい。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "1次職への転職がしたくなったら、";
 		mes "俺が送ってあげるから、";
 		mes "また来てくれ。";
@@ -3724,21 +3713,21 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 	case 8:
 	case 9:
 	case 10:
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "あとは、そうだな……";
 		mes "転職するために、どこかへ";
 		mes "行くことがあったら、";
 		mes "一度冒険者アカデミーに戻って";
 		mes "くるといい。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^FF0000冒険者アカデミーには";
 		mes "転送のサービスをしてくれる人が";
 		mes "いるからな。^000000";
 		next;
 		break;
 	}
-	mes "[フェイ]";
+	mes "[Fay]";
 	mes "それじゃ、転送するぜ。";
 	close2;
 	set AC_JOBCHANGE,1;
@@ -3758,13 +3747,13 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 
 	function	ABOUT_JOB	{
 		while(1){
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "どの職業の系統について";
 			mes "聞きたい？";
 			next;
 			switch(select("Swordsman系","Magician系","Acolyte系","Thief系","Archer系","Merchant系","Taekwon Kid系","特殊1次職","聞くことをやめる")){
 			case 1:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Swordsman系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Swordsmanは";
@@ -3775,14 +3764,14 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("ナイト","クルセイダー","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ナイトは高い物理攻撃と防御力を";
 					mes "兼ね備えた王国騎士だ。";
 					mes "ペコペコに騎乗することができるため、";
 					mes "高い機動力を持つことが可能になる。";
 					cutin "swordman_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ナイトの戦い方は主に";
 					mes "剣を使用するか槍を使用するかで";
 					mes "異なってくる。";
@@ -3790,7 +3779,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "両手剣ならボ ウリングバッシュ";
 					mes "といった強力な範囲攻撃を習得できる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ナイトはロードナイト（左）へ";
@@ -3800,14 +3789,14 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "クルセイダーはナイトよりも防御力に";
 					mes "特化した職業だ。";
 					mes "ナイトと同様にペコペコに";
 					mes "騎乗でき、高い機動性を持てる。";
 					cutin "swordman_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "クルセイダーは高い防御力を";
 					mes "活かした戦いが可能だ。";
 					mes "槍や盾のスキルを使いこなし、";
@@ -3815,7 +3804,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "仲間を守るディボ ーションといった";
 					mes "スキルを習得することができる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ナイトはロードナイト（左）へ";
@@ -3828,7 +3817,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "swordman_5.bmp", 255;
 				break;
 			case 2:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Magician系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Magicianは";
@@ -3839,7 +3828,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("ウィザード","セージ","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ウィザードは最大級の火力を用いた";
 					mes "広範囲の大魔法が魅力の職業だ。";
 					mes "接近戦は苦手だが、";
@@ -3847,7 +3836,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "活躍しやすい職業だ。";
 					cutin "magician_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ウィザードの戦い方は";
 					mes "高い魔法攻撃力を";
 					mes "活かしたものとなる。";
@@ -3855,7 +3844,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "ストームガストといった強力な";
 					mes "範囲魔法を駆使して戦うことが可能だ。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ウィザードはハイウィザード（左）へ";
@@ -3865,7 +3854,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "セージは魔法に対する知識を";
 					mes "深めることで、魔法に対抗する";
 					mes "能力を身につけた、物理攻撃を";
@@ -3874,7 +3863,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "魔法攻撃の両方を駆使して戦える。";
 					cutin "magician_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "敵を攻撃中に自動でスキルを";
 					mes "使用することができる";
 					mes "オートスペルや";
@@ -3882,7 +3871,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "フリーキャストといったスキルが";
 					mes "習得できる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ウィザードはハイウィザード（左）へ";
@@ -3895,7 +3884,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "magician_5.bmp", 255;
 				break;
 			case 3:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Acolyte系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Acolyteは";
@@ -3906,7 +3895,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("プリースト","モンク","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "プリーストは多彩な回復や";
 					mes "補助魔法を覚えることが";
 					mes "できる職業だ。";
@@ -3915,7 +3904,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "助けて戦うことができる。";
 					cutin "acolyte_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "プリーストの戦い方は支援スキルを";
 					mes "生かした戦いとなる。";
 					mes "物理攻撃を防ぐキリエエレイソンや";
@@ -3923,7 +3912,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "サンクチュアリの継続的な";
 					mes "回復魔法も習得できるようになる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "プリーストはハイプリースト（左）へ";
@@ -3933,7 +3922,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "モンクは肉体を鍛えて、";
 					mes "ひたすら実戦を重視した";
 					mes "修行僧の職業だ。";
@@ -3942,7 +3931,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "使用することができる。";
 					cutin "acolyte_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "モンクの戦い方は接近戦を";
 					mes "主とした戦いとなる。";
 					mes "高い防御力の相手に有効な発勁、";
@@ -3950,7 +3939,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "一撃必殺の阿修羅覇凰拳などが";
 					mes "習得できる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "プリーストはハイプリースト（左）へ";
@@ -3963,7 +3952,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "acolyte_5.bmp", 255;
 				break;
 			case 4:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Thief系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Thiefは";
@@ -3974,7 +3963,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("アサシン","ローグ","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "アサシンは全職中で最速の";
 					mes "素早さで敵を翻弄しながら、";
 					mes "戦える職業だ。";
@@ -3982,14 +3971,14 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "使用しての攻撃ができる。";
 					cutin "thief_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "アサシンの戦い方は高い回避率を";
 					mes "生かした攻撃となる。";
 					mes "毒攻撃を行えるエンチャントポイズン、";
 					mes "高確率で毒状態にするベナムナイフ";
 					mes "といったスキルが習得できる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "アサシンはアサシンクロス（左）へ";
@@ -3999,7 +3988,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ローグは短剣を使用した戦闘ができ、";
 					mes "アイテムなどを敵から奪うことが";
 					mes "容易な職業だ。";
@@ -4007,14 +3996,14 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "遊び心がある職業になるな。";
 					cutin "thief_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "攻撃中に敵のアイテムを奪う";
 					mes "スティールを発動できる";
 					mes "スナッチャーや、";
 					mes "背後を取ることで使用可能となる";
 					mes "バックスタブの攻撃スキルは強力だ。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "アサシンはアサシンクロス（左）へ";
@@ -4037,7 +4026,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("ハンター","バードとダンサー","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ハンターは遠距離攻撃と多彩な";
 					mes "罠で敵を倒すことができる職業だ。";
 					mes "ファルコンが繰り出すスキルと";
@@ -4046,7 +4035,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "できるだろう。";
 					cutin "archer_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ハンターの戦い方はファルコンと";
 					mes "トラップの取得方法にある。";
 					mes "敵の動きを封じるアンクルスネアや";
@@ -4054,7 +4043,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "ブリッツビートは連続してダメージを";
 					mes "加えることもできるスキルだ。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ハンターはスナイパー（左）へ";
@@ -4065,14 +4054,14 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "バード（男）は歌と演奏によって、";
 					mes "ダンサー（女）は華麗な舞いで";
 					mes "様々な支援を行うことを";
 					mes "得意とする職業だ。";
 					cutin "archer_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "バードとダンサーはスキルの";
 					mes "効果範囲内のプレイヤーに";
 					mes "支援を行えるのが特徴だ。";
@@ -4080,21 +4069,21 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "スキルの発動時間と硬直時間を";
 					mes "短くする強力なスキル。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ダンサーのサービスフォーユーは";
 					mes "効果範囲内のプレイヤーの";
 					mes "最大SPを増加させ、";
 					mes "スキル使用時のSP消費量を";
 					mes "減少させることができるスキルだ。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "また、バードとダンサーが";
 					mes "2人揃うことで合奏スキルという";
 					mes "強力な支援スキルを";
 					mes "使用することもできる。";
 					next;
 					cutin "archer_5.bmp", 2;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ハンターはスナイパー（左）へ";
@@ -4107,7 +4096,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "archer_5.bmp", 255;
 				break;
 			case 6:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Merchant系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Merchantは";
@@ -4118,7 +4107,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("ブラックスミス","アルケミスト","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ブラックスミスは力強い腕力と";
 					mes "装備品で武器の精錬や効果属性の";
 					mes "付与を行うことができる職業だ。";
@@ -4126,7 +4115,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "武器の製作を行うこともできる。";
 					cutin "merchant_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ブラックスミスの戦い方は";
 					mes "腕力に頼るものが多い。";
 					mes "敵に囲まれたときに範囲で";
@@ -4134,7 +4123,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "武器の破損と引き換えに攻撃力を";
 					mes "上げるオーバートラストがある。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ブラックスミスは";
@@ -4145,7 +4134,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "アルケミストは回復用ポーションなどの";
 					mes "薬品を作り出す錬金術の職業だ。";
 					mes "各種ポーション系のアイテムを";
@@ -4154,20 +4143,20 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "召喚して戦うこともできる。";
 					cutin "merchant_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "アルケミストは";
 					mes "ポーションピッチャーでの支援や";
 					mes "バイオプラントを駆使した戦いを";
 					mes "行うこともできるようになる。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "アルケミストが召喚できる";
 					mes "ホムンクルスは一緒に";
 					mes "戦うことができる人工生命でもあり、";
 					mes "育てていけば、強力な味方に";
 					mes "なってくれるだろう。";
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "さらに成長して、";
 					mes "転生という行為を行えば、";
 					mes "ブラックスミスは";
@@ -4181,7 +4170,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "merchant_5.bmp", 255;
 				break;
 			case 7:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "Taekwon Kid系についてだな。";
 				mes "プロンがちょっと話してる";
 				mes "だろうけど、Taekwon Kidは";
@@ -4192,7 +4181,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				switch(select("拳聖","ソウルリンカー","その他の職業について聞く")){
 				case 1:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "拳聖は太陽、月、星の恩恵を";
 					mes "授かった職業だ。";
 					mes "本 に秘められたエネルギーを";
@@ -4201,7 +4190,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "スキルが変化する職業でもある。";
 					cutin "taekwonkid_3.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "拳聖の戦い方はスキルで";
 					mes "登録するモンスターと";
 					mes "場所によるところが大きい。";
@@ -4211,7 +4200,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					next;
 					break;
 				case 2:
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ソウルリンカーはテコンドーの";
 					mes "道を断ち、霊魂の力を";
 					mes "自在に操る職業だ。";
@@ -4219,7 +4208,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 					mes "魔法による攻撃を行うこともできる。";
 					cutin "taekwonkid_4.bmp", 2;
 					next;
-					mes "[フェイ]";
+					mes "[Fay]";
 					mes "ソウルリンカーの戦い方は";
 					mes "単体魔法として強力なエスマや";
 					mes "職業ごとの特性を発揮する魂のスキル";
@@ -4232,7 +4221,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				cutin "taekwonkid_4.bmp", 255;
 				break;
 			case 8:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "特殊1次職のGunslinger、Ninja";
 				mes "Supernoviceには";
 				mes "上位職はないんだ。";
@@ -4242,13 +4231,13 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 				next;
 				break;
 			case 9:
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "そうか、また知りたくなったら、";
 				mes "いつでも聞きにきてくれ。";
 				mes "喜んで話すぜ。";
 				close;
 			}
-			mes "[フェイ]";
+			mes "[Fay]";
 			mes "他の上位職について聞くかい？";
 			next;
 			if(select("わかったから大丈夫","他の職も聞きたい")==1) break;
@@ -4276,7 +4265,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 			close;
 		}
 		getitem 11055,1;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "冒険の基礎ブックだ。";
 		mes "大事なことが書いてある。";
 		mes " ";
@@ -4284,7 +4273,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "教えておこう。";
 		next;
 		cutin "jp_quest_help10.bmp",2;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "^FF0000Alt+Eキー^000000で所持アイテムが";
 		mes "表示されるから、冒険の基礎ブックに";
 		mes "^FF0000カーソルを合わせて、";
@@ -4292,7 +4281,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "すると、アイテムの詳細ウィンドウが";
 		mes "表示される。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "冒険の基礎ブックのような";
 		mes "本のアイテムは読むことができる。";
 		mes "^0000FFウィンドウ左上の開いた本のマークを";
@@ -4300,7 +4289,7 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "カーソルを合わせたときに「読む」と";
 		mes "表示されるほうだ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "すると、本の中を読むことができる。";
 		mes "冒険の大切なことが書かれている";
 		mes "ので、読んでみるといい。";
@@ -4312,11 +4301,11 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 OnTouch:
 	set AC_JOBCHANGE,0;
 	if(AC_NOVICE_QUE==30 && Job!=Job_Novice && !checkquest(100128)){
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "無事転職できたようだな。";
 		mes "おめでとう！";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "それじゃ、冒険者アカデミー内を";
 		mes "見て回るといい。";
 		mes "冒険者アカデミーには、";
@@ -4324,13 +4313,13 @@ OnTouch:
 		mes "いろんな依頼に応える";
 		mes "仕事があるからな。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "そうそう、";
-		mes "^FF0000ルーン^000000が";
+		mes "^FF0000Lune^000000が";
 		mes "仕事を手伝ってくれる人を";
 		mes "探してるんだ。";
 		next;
-		mes "[フェイ]";
+		mes "[Fay]";
 		mes "この部屋を出たら、";
 		mes "^0000FFピンク色の髪をした女性^000000に";
 		mes "話しかけてみるといい。";
@@ -4340,32 +4329,32 @@ OnTouch:
 	} else
 	if(AC_NOVICE_QUE==30 && Job==Job_Novice){
 		if(CHANGE_SNV || CHANGE_TK || CHANGE_GS || CHANGE_NJ){
-			emotion 21, "フェイ#ac_room"; //52725
-			mes "[フェイ]";
+			emotion 21, "Fay#ac_room"; //52725
+			mes "[Fay]";
 			mes "おっ！";
 			mes "転職に向けてがんばってる";
 			mes "みたいだな！";
 			next;
 			if(CHANGE_TK||CHANGE_SNV){
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "BaseLvを上げたいなら、";
 				mes "冒険者アカデミー内の";
 				mes "実習室か特別室へ";
 				mes "行って見るといい。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "実習室はこの講習室を";
 				mes "出てから、左上の方へ";
 				mes "行くとあるぞ。";
 				close;
 			} else {
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "他の街へ行くなら、";
 				mes "^0000FF「転送サービス」^000000をしている";
 				mes "赤い髪の^0000FFタール^000000を探して";
 				mes "みるといい。";
 				next;
-				mes "[フェイ]";
+				mes "[Fay]";
 				mes "タールはこの講習室を";
 				mes "出てから、左上の方へ行くと";
 				mes "いるはずだ。";
@@ -5225,7 +5214,7 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		if(countitem(25019) == 0) close;
 
 		mes "[マスター・スヌス]";
-		mes "ルイーゼの赤い靴[1]";
+		mes "Louiseの赤い靴[1]";
 		mes "を君にあげよう。";
 		next;
 		set AC_BEGINNER_EQUIP,10;

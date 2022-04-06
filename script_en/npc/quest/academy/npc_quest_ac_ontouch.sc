@@ -54,7 +54,7 @@ pay_fild04.gat,20,165,0		script	AC_TSTVP2_04	139,1,1,{ //ポリン島でタッ�
 		viewpoint 1,267,193,14,0x00FFFF; //撮影ポイント２
 	}
 }
-pay_fild01.gat,333,356,0				script	AC_TSTVP3_02	139,1,1,{ //フェイ南でタッチ
+pay_fild01.gat,333,356,0				script	AC_TSTVP3_02	139,1,1,{ //Fay南でタッチ
 	if(AC_QUEST_LV_3==6 && AC_QUEST_ST_3==3){//	実験のお手伝い４
 		viewpoint 1,353,14,13,0x00FF00;	// ウルフマップ入り口(右下)
 	}
@@ -133,7 +133,7 @@ prt_fild05.gat,357,205,0				script	AC_TSTVP5_02	139,7,7,{ //プロ西（ワー�
 		end;
 	}
 }
-pay_fild08.gat,20,74,0					script	AC_TSTVP6_02	139,1,1,{ //フェイ東
+pay_fild08.gat,20,74,0					script	AC_TSTVP6_02	139,1,1,{ //Fay東
 	if(AC_RANK==5 && AC_RANKTEST>=2 && AC_RANKTEST!=99){ //第６課程
 		viewpoint 1,167,332,20,0xFFFF00;
 	}

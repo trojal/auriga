@@ -27,7 +27,7 @@ ac_library.gat,30,65,6	script	Board	837,{
 ac_library.gat,108,63,6	script	Board	837,{
 	cutin "ad_ac_guide14.bmp",2;
 	mes "[Library]";
-	mes "◆Operation rooms";
+	mes "•Operation rooms";
 	close2;
 	cutin "ad_ac_guide14.bmp",255;
 	end;
@@ -36,7 +36,7 @@ ac_library.gat,108,63,6	script	Board	837,{
 ac_library.gat,109,52,6	script	Board	837,{
 	cutin "ad_ac_guide13.bmp",2;
 	mes "[Library]";
-	mes "◆Knowledge and Combat rooms";
+	mes "•Knowledge and Combat rooms";
 	close2;
 	cutin "ad_ac_guide13.bmp",255;
 	end;
@@ -45,7 +45,7 @@ ac_library.gat,109,52,6	script	Board	837,{
 ac_library.gat,120,61,6	script	Board	837,{
 	cutin "ad_ac_guide15.bmp",2;
 	mes "[Library]";
-	mes "◆Community and Lifestyle rooms";
+	mes "•Community and Lifestyle rooms";
 	close2;
 	cutin "ad_ac_guide15.bmp",255;
 	end;
@@ -72,7 +72,7 @@ ac_cl_hall.gat,172,71,6	script	Board	837,{
 ac_cl_hall.gat,163,63,6	script	Board	837,{
 	cutin "ad_ac_guide08.bmp",2;
 	mes "[Classroom Hall]";
-	mes "◆Entrance to Practice Rooms and Special Rooms";
+	mes "•Entrance to Practice Rooms and Special Rooms";
 	mes " ";
 	mes "Practice Rooms and Special Rooms for Novice, Primary, and Extended jobs for Adventurers of Lvl 1-55";
 	close2;
@@ -82,7 +82,7 @@ ac_cl_hall.gat,163,63,6	script	Board	837,{
 ac_cl_hall.gat,160,45,6	script	Board	837,{
 	cutin "ad_ac_guide10.bmp",2;
 	mes "[Classroom Hall]";
-	mes "◆Entrance to Practice Rooms and Special Rooms";
+	mes "•Entrance to Practice Rooms and Special Rooms";
 	mes " ";
 	mes "Practice Rooms and Special Rooms for Novice, Primary, and Extended jobs for Adventurers of Lvl 1-55";
 	close2;
@@ -92,7 +92,7 @@ ac_cl_hall.gat,160,45,6	script	Board	837,{
 ac_cl_hall.gat,174,25,6	script	Board	837,{
 	cutin "ad_ac_guide09.bmp",2;
 	mes "[Classroom Hall]";
-	mes "◆Entrance to Practice Rooms and Special Rooms";
+	mes "•Entrance to Practice Rooms and Special Rooms";
 	mes " ";
 	mes "Practice Rooms and Special Rooms for Novice, Primary, and Extended jobs for Adventurers of Lvl 1-55";
 	close2;
@@ -103,8 +103,8 @@ ac_cl_hall.gat,174,25,6	script	Board	837,{
 ac_cl_room.gat,46,29,6	script	受付、講習室	837,{
 	cutin "ad_ac_guide17.bmp",2;
 	mes "[1st floor of classroom building]";
-	mes "◆Reception";
-	mes "◆Course Room";
+	mes "•Reception";
+	mes "•Course Room";
 	close2;
 	cutin "ad_ac_guide17.bmp",255;
 	end;
@@ -113,7 +113,7 @@ ac_cl_room.gat,46,29,6	script	受付、講習室	837,{
 ac_cl_room.gat,156,25,4	script	自習室	837,{
 	cutin "ad_ac_guide18.bmp",2;
 	mes "[1st floor of classroom building]";
-	mes "◆Study Room";
+	mes "•Study Room";
 	close2;
 	cutin "ad_ac_guide18.bmp",255;
 	end;
@@ -123,7 +123,7 @@ ac_cl_room.gat,156,25,4	script	自習室	837,{
 ac_cl_area.gat,39,172,4	script	Board	837,{
 	cutin "ad_ac_guide05.bmp",2;
 	mes "[1st floor of classroom building]";
-	mes "◆Study Room";
+	mes "•Study Room";
 	close2;
 	cutin "ad_ac_guide05.bmp",255;
 	end;
@@ -131,7 +131,7 @@ ac_cl_area.gat,39,172,4	script	Board	837,{
 ac_cl_area.gat,39,136,4	script	Board	837,1,4,{
 	cutin "ad_ac_guide06.bmp",2;
 	mes "[1st floor of classroom building]";
-	mes "◆Course Room";
+	mes "•Course Room";
 	close2;
 	cutin "ad_ac_guide06.bmp",255;
 	end;
@@ -145,10 +145,10 @@ OnTouch:
 ac_cl_area.gat,65,12,4	script	Board	837,{
 	cutin "ad_ac_guide04.bmp",2;
 	mes "[Classroom Bldg. 2F]";
-	mes "◆Resource Room";
-	mes "◆Laboratory";
-	mes "◆Examination room";
-	mes "◆Lecture Room";
+	mes "•Resource Room";
+	mes "•Laboratory";
+	mes "•Examination room";
+	mes "•Lecture Room";
 	close2;
 	cutin "ad_ac_guide04.bmp",255;
 	end;
