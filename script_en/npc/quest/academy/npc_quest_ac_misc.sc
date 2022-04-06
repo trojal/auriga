@@ -426,29 +426,29 @@ ac_cl_area.gat,41,145,4	script	カプラサービス	888,{
 	end;
 }
 
-//ミッド
-ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
+//Mido
+ac_cl_area.gat,45,146,4	script	Mido#ac_area	429,{
 	set '@novice, callfunc("AC_GetNovice");
 	cutin "jpn_mid01",2;
 	if(AC_PASSPORT==2){
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "こんにちは！";
 		mes "冒険者アカデミーへ";
 		mes "入学おめでとう！";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "冒険者アカデミーは";
 		mes "世界中の冒険者のために";
 		mes "設立された学校なんだ。";
 		mes "わからない事があったら、";
 		mes "先輩や先生達に聞いてみてね。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "入学祝にキミにプレゼントがあるよ。";
 		next;
 		set AC_PASSPORT,5;
 		if(!checkweight(5406,1)){
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "あれ？";
 			mes "荷物がいっぱいみたいだね。";
 			mes "沢山の種類を持ちすぎている";
@@ -458,13 +458,13 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 		}
 		getitem 5406,1;
 		set AC_PASSPORT,3; // 新入生祝い完了
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes ('@novice ?"これを装備して、頑張ってね！":"キミには必要ないかもしれないけど");
 		mes "これで冒険者アカデミーの一員だ！";
 		goto L_END;
 	}
 	if(AC_PASSPORT==5){
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "荷物は軽くしてきたかい？";
 		mes "さあ、入学祝だよ！";
 		next;
@@ -486,7 +486,7 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 			close;
 		}
 		if(!checkweight(5406,1)){
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "あれ？";
 			mes "荷物がいっぱいみたいだね。";
 			mes "沢山の種類を持ちすぎている";
@@ -496,19 +496,19 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 		}
 		getitem 5406,1;
 		set AC_PASSPORT,3; // 新入生祝い完了
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes ('@novice ?"これを装備して、頑張ってね！":"キミには必要ないかもしれないけど");
 		mes "これで冒険者アカデミーの一員だ！";
 		goto L_END;
 	}
 	if(AC_RANK==7){ // 初心者以外未調査なのでとりあえず共通です。
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "一次課程修了試験合格おめでとう！";
 		mes "一次課程修了のお祝いに";
 		mes "君にはこれをあげよう！";
 		next;
 		if(!checkweight(2751,10)){
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "あれ？";
 			mes "荷物がいっぱいみたいだね。";
 			mes "沢山の種類を持ちすぎている";
@@ -518,12 +518,12 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 		}
 		getitem 2751,1;
 		set AC_RANK,8;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "このバッジは";
 		mes "一次過程修了の証だよ！";
 		mes "胸を張って、胸につけてね！";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "一次過程は終了したけど、";
 		mes "君の冒険はまだこれからだ！";
 		mes "次は君が初心者の皆に";
@@ -533,12 +533,12 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 	if('@novice && AC_RANK<7){
 		switch(AC_RANK){
 		case 0:
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "こんにちは！";
 			mes "冒険者アカデミーにようこそ！";
 			next;
 			if(AC_CREDIT>0){
-				mes "[ミッド]";
+				mes "[Mido]";
 				mes "君はまだ入って間もないようだね。";
 				mes "まだわからないことばかりだろうけど、";
 				mes "少しずつ覚えていこう！";
@@ -547,7 +547,7 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 				break;
 			}
 			// 2010/05/25 アカデミー改革 ポリン団参上！で追加。
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "君はまだ入って間もないようだね。";
 			mes "まだ何も決めて無いなら、";
 			mes "^FF0000ルーンの仕事^000000を";
@@ -555,45 +555,45 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 			mes "いろんな依頼が来るから、";
 			mes "世界中を巡れると思うよ。";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "^FF0000ルーン^000000は僕のすぐ隣にいる";
 			mes "ピンク色の髪をした女性だよ。";
 			mes "詳しい話はルーンから";
 			mes "聞いてみてね。";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "すぐにモンスターと戦闘して、";
 			mes "腕だめしをしたいなら、";
 			mes "^FF0000実習室や特別室^000000に";
 			mes "行くのがいいかな。";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "戦いに行くときは";
 			mes "受付や講習の時に渡された";
 			mes "装備品や回復アイテムの";
 			mes "準備を忘れずにね。";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "^FF0000実習室や特別室^000000の入り口は";
 			mes "ここから左上に行った所にあるよ。";
 			mes "近くにポリン団と名乗っている";
 			mes "^0000FFミスティ^000000がいるはずだ。";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "まだわからないことばかりだろうけど、";
 			mes "少しずつ覚えていこう！";
 			mes "アカデミーのことについてなら、";
 			mes "僕に何でも聞いてくれていいよ。";
 			break;
 		case 1:
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "やぁ、君かい。";
 			mes "もうアカデミーには慣れたかな？";
 			mes "何か僕に聞きたいことでも";
 			mes "あるのかな？";
 			break;
 		case 2:case 3:case 4: //未調査かもしれない
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "やぁ、君かい。";
 			mes "君もだいぶ、";
 			mes "アカデミーに馴染んできたね。";
@@ -601,7 +601,7 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 			mes "あるのかな？";
 			break;
 		case 5:
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "やぁ、君かい。";
 			mes "君、先生の中では成績優秀だって";
 			mes "噂だよ。";
@@ -610,11 +610,11 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 			mes "今日は何か僕にようかい？";
 			break;
 		case 6:
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "こんにちは！";
 			mes "冒険者アカデミーにようこそ！";
 			next;
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "このアカデミーのことなら、なんでも";
 			mes "僕に聞いてくれ！";
 			mes "……といっても、もう君に";
@@ -624,7 +624,7 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 			break;
 		}
 	} else {
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "やぁ、こんにちは！";
 		mes "今日は僕に何のようだい？";
 	}
@@ -634,25 +634,25 @@ ac_cl_area.gat,45,146,4	script	ミッド#ac_area	429,{
 L_TODO:
 	// 2010/05/25 アカデミー改革 ポリン団参上！で追加。
 	//どうしたらいいのか聞く
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "えーと、そうだな。";
 	L_REP_01:
 	mes "まずは、試験を受けるために、";
 	mes "単位を取得することが必要だね。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "単位を取得するには";
 	mes "^0000FFルーン^000000の手伝いをするか、";
 	mes "^000000ポリン団のミスティー^000000達の";
 	mes "手助けをするといいね。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "単位が取得できたら、ルーンから";
 	mes "^FF0000第一過程の試験^000000を受けるといい。";
 	mes "試験はいくつもあるから、";
 	mes "順番にクリアしていこう。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "そして、第一過程をすべて修了したら、";
 	mes "記念に^FF0000アカデミーバッジ[0]^000000を";
 	mes "君にプレゼントするよ！";
@@ -689,47 +689,47 @@ L_TODO:
 		mes "装備 : ^777777全ての職業^000000";
 		mes "@next";
 		mes "[Information]";
-		mes "‐もう一度ミッドの話を";
+		mes "‐もう一度Midoの話を";
 		mes "聞きますか？‐";
 		next;
 		if(select("はい、もう一度聞く","いいえ、必要ない")==1){
-			mes "[ミッド]";
+			mes "[Mido]";
 			mes "よし、もう一度説明しよう。";
 			goto L_REP_01;
 		}
 	}
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "それじゃ、がんばってね。";
 	mes "わからないことがあったら、";
 	mes "僕に何でも聞いてくれよ。";
 	goto L_END;
 L_IMPORTANT:
 	//大事な話を聞きなおす(未調査)
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "あれ？";
 	mes "今、君に説明してあげられる";
 	mes "ことは無いみたいだよ。";
 	next;
 	menu "やめる";
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "他に聞きたいことがあったら、";
 	mes "僕に聞いてね。";
 	goto L_END;
 L_ABOUT:
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "冒険者アカデミーは冒険者のために";
 	mes "設立された学校だよ。";
 	mes "わからない事があったら、";
 	mes "先輩や先生に聞いて、";
 	mes "いろいろと教わってみてね。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "冒険者アカデミーでは";
 	mes "一人前の冒険者になるまで";
 	mes "いろいろなサポートを";
 	mes "行っているよ。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "冒険者アカデミーで";
 	mes "一人前として認められるには";
 	mes "条件があるんだ。";
@@ -738,14 +738,14 @@ L_ABOUT:
 	mes "3つ、生まれ変わり！";
 	next;
 	if(!'@novice){
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "キミはもう一人前の冒険者だね！";
 		mes "冒険者の先輩として、";
 		mes "駆け出しの冒険者を";
 		mes "助けてほしいな！";
 		goto L_END;
 	}
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "どれか一つでも条件に";
 	mes "当てはまれば、一人前さ！";
 	mes "一人前になるまでは、";
@@ -754,69 +754,69 @@ L_ABOUT:
 	mes "いろいろ巡ってみるといいよ！";
 	goto L_END;
 L_SCHOOL:
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "どの場所について聞きたいんだい？";
 	next;
 	switch(select("1F 講習室","1F 自習室","1F 実習室","1F 販売","1F 図書室","2F 試験室","2F 資料室","もう聞くことは無い")) {
 	case 1:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "講習室だね。";
 		mes "講習室では駆け出しの";
 		mes "冒険者のための講義を";
 		mes "行っているよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "プロン、アルディ、フェンから";
 		mes "冒険に必要な基礎知識を";
 		mes "学ぶことが出来るんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "講習室はこの";
 		mes "[教室棟1F]の隣にあるよ。";
 		mes "この部屋にある看板を探してみてね。";
 		next;
 		goto L_SCHOOL;
 	case 2:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "自習室だね。";
 		mes "自習室ではいろんなアドバイスを";
 		mes "行っているんだ。";
 		mes "困ったことがあったら、";
 		mes "行ってみるといいよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "ルティーからは職業について、";
 		mes "フィーからはクエストスキルに";
 		mes "ついて、そして、ユタからは";
 		mes "転職クエストについてのアドバイスが";
 		mes "聞けるはずだよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "自習室はこの[教室棟1F]の";
 		mes "隣にあるよ。";
 		mes "この部屋にある看板を探してみてね。";
 		next;
 		goto L_SCHOOL;
 	case 3:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "実習室・特別室だね。";
 		mes "実習室では様々なモンスターが";
 		mes "棲息していて、調査や、";
 		mes "モンスターとの戦闘実習を";
 		mes "行うことが出来るんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "実習室は、君たちの強さによって";
 		mes "開放される場所が違うから、";
 		mes "いける場所を覚えておいてね。";
 		next;
-		mes "[ミッド]";
-		mes "リカバリープレートは";
+		mes "[Mido]";
+		mes "Recovery Plateは";
 		mes "冒険者アカデミー生全てが";
 		mes "利用できる、多人数での調査を";
 		mes "行う為の施設になるよ。";
 		next;
-		//mes "[ミッド]";
+		//mes "[Mido]";
 		//mes "大人数パーティで利用すると、";
 		//mes "調査やモンスターとの戦闘実習が";
 		//mes "楽になるから、利用してみてね。";
@@ -824,19 +824,19 @@ L_SCHOOL:
 		//mes "利用できるけど、人数が少ないほど";
 		//mes "効果が低くなるから気をつけてね。";
 		//next;
-		//mes "[ミッド]";
+		//mes "[Mido]";
 		//mes "lv1～lv25、lv20～lv35、lv30～lv45";
 		//mes "用の実習室は";
 		//mes "この[教室棟1F]の隣にあるよ。";
 		//mes "この部屋にある看板を探してみてね。";
 		//next;
-		//mes "[ミッド]";
+		//mes "[Mido]";
 		//mes "他にも隠された実習室が";
 		//mes "あるらしいけどね。";
 		//next;
 		//goto L_SCHOOL;
 		//2010/04/13修正
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "上級者になればなるほど";
 		mes "リカバリーを実行する時の";
 		mes "^FF0000パワーが必要^000000になる。";
@@ -846,25 +846,25 @@ L_SCHOOL:
 		next;
 		goto L_SCHOOL;
 	case 4:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "この[教室棟1F]の";
 		mes "隣にある教室棟ホールには";
 		mes "いろいろな装備を取り揃えている";
 		mes "販売員がたっているよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "基本的なものは";
 		mes "大体そろっているから、";
 		mes "利用してみてね。";
 		next;
 		goto L_SCHOOL;
 	case 5:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "エントランスホールの隣にある";
 		mes "図書室では、様々なことを";
 		mes "調べることが出来るよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "基本的な操作方法だけじゃなくて、";
 		mes "街中でよく見かける会話や";
 		mes "スキルについての詳細など、";
@@ -873,11 +873,11 @@ L_SCHOOL:
 		next;
 		goto L_SCHOOL;
 	case 6:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "[教室棟2F]には";
 		mes "試験室があるよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "ルーンから試験を受けるように";
 		mes "言われたら、試験室にいる";
 		mes "ガルドに話しかけて";
@@ -885,18 +885,18 @@ L_SCHOOL:
 		next;
 		goto L_SCHOOL;
 	case 7:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "[教室棟2F]には";
 		mes "資料室があるよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "資料室にいるヨン爺さんは";
 		mes "とっても物知りだから、";
 		mes "いろいろな場所を知っているんだ。";
 		next;
 		goto L_SCHOOL;
 	case 8:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "また聞きたくなったら、おいでよ。";
 		goto L_END;
 	}
@@ -905,17 +905,17 @@ L_SCHOOL:
 L_VIEWWORLD:
 	cutin "jpn_mid01",255;
 	cutin "world_map_001",3;
-	mes "[ミッド]";
-	mes "これがミッドガルド大陸がある";
+	mes "[Mido]";
+	mes "これがMidoガルド大陸がある";
 	mes "世界地図だよ。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "世界中には多くの冒険者が";
 	mes "旅をしている。";
 	mes "多くの都市が存在し、";
 	mes "様々な人々が暮らしているんだ。";
 	next;
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "この地図に書かれているもの";
 	mes "以外にも町はあるよ。";
 	mes "新しい町を見つけたら、";
@@ -924,11 +924,11 @@ L_VIEWWORLD:
 	close;
 L_GIVEBOOK:
 	//2010/04/13追加
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "職業の書がほしいのかい？";
 	next;
 	if(select("はい","いいえ")==2){
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "あれ？";
 		mes "いらないのかい。";
 		mes "失くしたりしたのだったら、";
@@ -950,15 +950,15 @@ L_GIVEBOOK:
 			case Job_SuperNovice: getitem 11052,1; break; //Supernoviceの書
 			default: getitem 11055,1;
 		}
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "はい。";
 		mes "それじゃ、がんばって。";
 		mes " ";
-		mes "‐ミッドが本を渡してくれた‐";
+		mes "‐Midoが本を渡してくれた‐";
 		goto L_END;
 	}
 	//未調査
-	mes "[ミッド]";
+	mes "[Mido]";
 	mes "君は持ち物を少し整理した";
 	mes "ほうがいいね。";
 	mes "大事な物はカプラサービスを";
@@ -968,151 +968,151 @@ L_GIVEBOOK:
 L_TALK:
 	switch(rand(12)){
 	case 0:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "冒険者アカデミーのマークは";
 		mes "真の知恵、賢者の石を表す、";
 		mes "六芒星からきているんだよ。";
 		goto L_END;
 	case 1:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "この学校には今の図書室とは";
 		mes "違う図書室があるらしいよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "僕も詳しいことは";
 		mes "全くわからないんだけどね。";
 		goto L_END;
 	case 2:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "することが無くて困っているのかい？";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "それなら、ルーンに話を聞いてみてよ。";
 		mes "冒険者アカデミーに";
 		mes "よせられる依頼を";
 		mes "詳しく説明してくれるよ。";
 		goto L_END;
 	case 3:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "隠された実習室に";
 		mes "ついて知っているかい？";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "なんでも、教室棟ホールのどこかに";
 		mes "昔は開放されていた実習室が";
 		mes "あるらしいんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "その実習室は、あぶないから";
 		mes "何かで封印されたって噂だよ。";
 		goto L_END;
 	case 4:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "今はこうやって先生をしているけど";
 		mes "僕も昔は冒険者だったんだ。";
 		mes "ルティエっていう街についた時は";
 		mes "興奮したなぁ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "生まれて初めて";
 		mes "雪というものを見たんだ。";
 		mes "ちょっと寒かったけど、";
 		mes "楽しかったよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "僕の場合は";
 		mes "Aldebaranにいたサンタさんが";
 		mes "転送してくれたんだけど。";
 		mes "今もいるのかな？";
 		goto L_END;
 	case 5:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "このアカデミーは";
 		mes "皆の寄付によって成り立っているんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "皆、君のようなすばらしい冒険者を";
 		mes "心から待ちわびているんだよ。";
 		goto L_END;
 	case 6:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "君は死者の世界を信じるかい？";
 		mes "皆には信じてもらえないけど、";
 		mes "僕は死者の世界に";
 		mes "いったことがあるんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "死者の世界は本当にあるんだよ。";
 		mes "あれは確か、Umbalaで";
 		mes "バンジージャンプに挑戦した時";
 		mes "だったかな……";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "詳しいことは";
 		mes "もう覚えてないんだけど、";
 		mes "あの体験は夢じゃなかったと";
 		mes "信じているんだ。";
 		goto L_END;
 	case 7:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "ルーンはとてもしっかりしている";
 		mes "ように見えるだろう？";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "でも、実はとっても";
 		mes "甘い物に目が無いんだよ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "昔はよく、アイスクリームを";
 		mes "おごらされたなぁ……";
 		goto L_END;
 	case 8:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "冒険者アカデミーでは";
 		mes "沢山の冒険者を募っているんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "君の知り合いで、まだ";
 		mes "アカデミーに入っていない人がいたら、";
 		mes "ぜひ、声をかけてみてよね。";
 		goto L_END;
 	case 9:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "この学校にはとても有名な";
 		mes "先生がいるんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "モンスターの研究を";
 		mes "している先生なんだけど、";
 		mes "凄く……";
 		mes "いやちょっとかわっててね！";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "どう変わっているのかは、";
 		mes "実際に会ってみれば";
 		mes "すぐにわかるよ！";
 		goto L_END;
 	case 10:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "そういえばこの前、校長が";
 		mes "この施設を拡張したいって";
 		mes "言ってたなぁ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "しばらくは無理そうだけど、";
 		mes "いつか、校舎が大きくなるかも";
 		mes "しれないね。";
 		goto L_END;
 	case 11:
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "2階にいるヨン爺さんには";
 		mes "もうあったかい？";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "彼は、本が好きすぎて、";
 		mes "ずっと資料室に入り浸っているんだ。";
 		next;
-		mes "[ミッド]";
+		mes "[Mido]";
 		mes "……彼の仕事は一体なんなんだろう？";
 		goto L_END;
 	}
@@ -2007,7 +2007,7 @@ L_NOMONEY:
 	close;
 L_WHAT:
 	mes "[アイン]";
-	mes "ミッドとルーンからキミの話を";
+	mes "Midoとルーンからキミの話を";
 	mes "聞いている。";
 	mes "キミが手を借りずに戦えるように";
 	mes "なるまで、しばらくここで";

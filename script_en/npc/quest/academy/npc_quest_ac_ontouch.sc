@@ -425,7 +425,7 @@ gef_fild07.gat,336,187,0	script	AC_QUEVP03_01	139,1,1,{ //Geffen西
 		viewpoint 1,185,249,13,0x00FF00;
 	}
 }
-moc_pryd01.gat,192,9,0	script	AC_QUEVP03_03	139,1,1,{ //ピラミッド地上1F
+moc_pryd01.gat,192,9,0	script	AC_QUEVP03_03	139,1,1,{ //ピラMido地上1F
 	if(AC_QUEST_LV_3==2 && AC_QUEST_ST_3==3){ //実験のお手伝い２
 		viewpoint 1,193,193,13,0x00FF00; //ライライ草
 	}

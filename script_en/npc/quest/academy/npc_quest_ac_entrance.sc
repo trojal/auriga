@@ -3084,11 +3084,11 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 	function	ABOUT_WORLDMAP	{
 		while(1){
 			mes "[アルディ]";
-			mes "ミッドガルド大陸がある世界地図を";
+			mes "Midoガルド大陸がある世界地図を";
 			mes "見てみよう。";
-			mes "これがルーンミッドガッツ王国を";
+			mes "これがルーンMidoガッツ王国を";
 			mes "始め、主要な諸国が隣接している";
-			mes "^0000FFミッドガルド大陸^000000だ。";
+			mes "^0000FFMidoガルド大陸^000000だ。";
 			cutin "world_map_001.bmp", 3;
 			next;
 			mes "[アルディ]";
@@ -3127,7 +3127,7 @@ ac_cl_room.gat,57,46,2	script	アルディ#ac_room	751,{
 			next;
 			mes "[アルディ]";
 			mes "^0000FF冒険者アカデミー^000000には";
-			mes "ルーンミッドガッツ王国の";
+			mes "ルーンMidoガッツ王国の";
 			mes "^0000FFProntera、Izlude、Alberta、";
 			mes "Payon、Morroc^000000から";
 			mes "転送してもらうことができるぞ。";
@@ -3575,11 +3575,11 @@ ac_cl_room.gat,44,65,4	script	フェイ#ac_room	828,6,6,{
 		mes "[フェイ]";
 		mes "^0000FFThief^000000の場合はMorrocだな。";
 		mes "^FF0000Morrocに行ってから、";
-		mes "北西のピラミッド^000000に行くといい。";
+		mes "北西のピラMido^000000に行くといい。";
 		next;
 		mes "[フェイ]";
 		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000北西のピラミッド^000000まで";
+		mes "俺が^FF0000北西のピラMido^000000まで";
 		mes "送ってやるぜ。";
 		mes "転職してくるかい？";
 		break;
