@@ -1,11 +1,11 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  Luneの依頼
+// Ragnarok Online -- Adventurer Academy Lune's Request
 //
-//                                                 by Pneuma
-//お世話になったあの人に   -----------------------------------
-aldeba_in.gat,171,171,4	script	ミザリー#aldeba_in	68,{
+// by Pneuma
+// To that person who helped me -----------------------------------
+aldeba_in.gat,171,171,4	script	Misery#aldeba_in	68,{
 	set '@novice, callfunc("AC_GetNovice");
 	if(!AC_QUEST_ST_2)goto L_OTHER;
 	switch(AC_QUEST_LV_2){
@@ -26,207 +26,166 @@ aldeba_in.gat,171,171,4	script	ミザリー#aldeba_in	68,{
 L_QUEST01:
 	switch(AC_QUEST_ST_2) {
 	case 1:
-		mes "[ミザリー]";
-		mes "こんにちは～。";
+		mes "[Misery]";
+		mes "Hello~";
 		next;
-		menu "こんにちは",-;
+		menu "Hello",-;
 		emotion 5;
-		mes "[ミザリー]";
-		mes "あ、";
-		mes "貴方が依頼を受けてくれる人なのね！";
-		mes "助かるわー。";
-		mes "えっと、これを";
-		mes "^0000FFルティエ^000000にいる^FF0000トイーヒ^000000さんに";
-		mes "届けてほしいのよ。";
+		mes "[Misery]";
+		mes "Oh, you're the one who takes requests!";
+		mes "Thank you so much for your help!";
+		mes "Well, I need you to deliver this to ^FF0000Touhi^000000 who is in ^0000FFLutie^000000.";
 		next;
 		emotion 21,"";
-		mes "[ミザリー]";
-		mes "以前、^FF0000ルティエ^000000に行った時にね、";
-		mes "モンスターにやられちゃって……";
-		mes "それを助けてもらったんです。";
-		mes "だから、お礼にこれを届けたいんです。";
-		mes "でも、忙しくて届けることが";
-		mes "できなかったの。";
+		mes "[Misery]";
+		mes "When I went to ^FF0000Lutie^000000 before, a monster got me. ......";
+		mes "I was rescued from that.";
+		mes "So I want to deliver this to you as a thank you.";
+		mes "But I was too busy to deliver it.";
 		next;
-		menu "しっかりと届けてきます",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^FF0000ルティエ^000000にいる^0000FFトイーヒ^000000さんに、";
-		mes "お礼の品を届けたあと、";
-		mes "ミザリーに報告する。";
+		menu "I'll make sure to deliver it.",-;
+		mes "^FF0000 [Mission] ^000000^0000FFTouhi^000000 in ^FF0000Lutie^000000, and report back to Misery after delivering the thank-you gift.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[ミザリー]";
-		mes "あ、依頼の品を";
-		mes "届けていただけましたか？";
+		mes "[Misery]";
+		mes "Oh, did you deliver the requested item?";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "これから、行くところなんです。";
+		mes "I'm on my way now.";
 		next;
 		emotion 21;
-		mes "[ミザリー]";
-		mes "そっかー、";
-		mes "念のためもう一度届け先を";
-		mes "教えておくね。";
-		mes "^0000FFルティエ^000000にいる、^FF0000トイーヒ^000000さんに";
-		mes "お礼の品を届けてね。";
-		mes "よろしくね！";
+		mes "[Misery]";
+		mes "I see - I'll give you the delivery address again for GOST.";
+		mes "Please deliver the thank-you gift to ^FF0000Touhi^000000 in ^0000FFLutie^000000.";
+		mes "Thanks for your help!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFルティエ^000000にいる^FF0000トイーヒ^000000さんに、";
-		mes "お礼の品を届けたあと、";
-		mes "ミザリーに報告する。";
+		mes "^FF0000 [Mission] ^FF0000Touhi^000000 in ^0000FFLutie^000000, report to Misery after delivering the thank-you gift.";
 		close;
 	case 3:
-		mes "[ミザリー]";
-		mes "あ、依頼の品を";
-		mes "届けていただけましたか？";
+		mes "[Misery]";
+		mes "Oh, did you deliver the requested item?";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "ええ、とても喜んでいましたよ。";
-		mes "それで、手紙を預かってきたんです。";
+		mes "Yes, they were very pleased.";
+		mes "So I kept the letter.";
 		next;
-		emotion 21;
-		mes "‐ミザリーに手紙を渡した‐";
+		EMOTION 21;
+		mes "-I gave the letter to Misery-";
 		next;
-		mes "[ミザリー]";
-		mes "手紙をいただけるなんて、感激です。";
-		mes strcharinfo(0)+"に";
-		mes "請け負ってもらってよかったわ。";
-		mes "また何かあったらよろしくね！";
+		mes "[Misery]";
+		mes "I am thrilled to receive your letter.";
+		mes ""+strcharinfo(0)+ " I'm glad you undertook this.";
+		mes "I'll be in touch if I need anything else!";
 		next;
 		if('@novice){
-			mes "[ミザリー]";
-			mes "これ、大した物じゃないけど";
-			mes "お礼にどうぞ！";
+			mes "[Misery]";
+			mes "Here, it's not much, but here's a little something for you!";
 			next;
-			// 602 蝶の羽 10個
+			// 602 10 butterfly wings
 			if(!checkweight(602,10)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem 602,10;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[ミザリー]";
-		mes "ありがとうね。";
-		mes "また何かあったらよろしく！";
+		mes "[Misery]";
+		mes "Thank you.";
+		mes "Thanks again if you need anything else!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	}
 L_QUEST02:
 	switch(AC_QUEST_ST_2) {
 	case 1:
 		emotion 0;
-		mes "[ミザリー]";
-		mes "！";
-		mes "もしかして、また";
-		mes strcharinfo(0) + "さんが";
-		mes "依頼を受けてくれるの!?";
+		mes "[Misery]";
+		mes "!";
+		mes "Maybe again";
+		mes strcharinfo(0) + "but";
+		mes "You're taking my request!";
 		next;
-		menu "はい",-;
-		mes "[ミザリー]";
-		mes "うわー、凄い助かるわー！";
-		mes "一度お願いしてるし";
-		mes "貴方なら信用できるわ。";
+		menu "Yes",-;
+		mes "[Misery]";
+		mes "Wow, that's an awesome help!";
+		mes "I've asked you once and I trust you.";
 		next;
 		emotion 5;
-		mes "[ミザリー]";
-		mes "早速依頼内容をお話するね。";
-		mes "えっと、Yunoに珍しいお菓子を作る";
-		mes "職人さんがいるらしいの。";
-		mes "その人に一つお菓子を";
-		mes "作ってもらいたくて……";
-		mes "代わりに頼んできてほしいのよ。";
+		mes "[Misery]";
+		mes "I'll tell you what I'm asking for right away.";
+		mes "Well, I heard that there is an Artisan who makes rare sweets in Yuno.";
+		mes "I wanted to ask that person to make one pastry for me. ......";
+		mes "I'd like you to go ask him on my behalf.";
 		next;
-		mes "[ミザリー]";
-		mes "相変わらず忙しくって、";
-		mes "私はここから動くことができないから";
-		mes "お願いするわ。";
-		mes "これ、注文書だからこれを渡して";
-		mes "ちょうだい。";
+		mes "[Misery]";
+		mes "I'm busy as usual and I can't move from here, so I'm asking you to do it for me.";
+		mes "Here, this is the order form, so please give me this.";
 		next;
-		menu "まかせてください！",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000にいる、お菓子職人に";
-		mes "お菓子作成の依頼を行い、";
-		mes "ミザリーに報告する。";
+		menu "Leave it to me!" ,-;
+		mes "^FF0000 [Mission] ^000000^000000^0000FFYuno^000000, make a request to the sweets Artisan to create sweets and report to Misery.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[ミザリー]";
-		mes "あ、お菓子作成の依頼を";
-		mes "していただけましたか？";
+		mes "[Misery]";
+		mes "Oh, did you request to create a pastry?";
 		next;
-		menu "これから行くところです",-;
-		emotion 11;
-		mes "[ミザリー]";
-		mes "そうだったのねー。";
-		mes "念のためもう一度教えとくわね。";
-		mes "^0000FFYuno^000000にいる、お菓子職人に";
-		mes "お菓子作成の依頼を行ってきてくれる？";
+		menu "I'm just on my way.",-;
+		EMOTION 11;
+		mes "[Misery]";
+		mes "I didn't know that!";
+		mes "I'll tell you again for GHOST.";
+		mes "Can you go to the confectionery Artisan at ^0000FFYuno^000000 and ask him to create a confectionery?";
 		next;
-		mes "[ミザリー]";
-		mes "依頼が終わったら";
-		mes "私のところに戻ってきてね。";
-		mes "それじゃよろしくー。";
+		mes "[Misery]";
+		mes "Come back to me when you are done with your request.";
+		mes "Nice to meet you then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000にいる、お菓子職人に";
-		mes "お菓子作成の依頼を行い、";
-		mes "ミザリーに報告する。";
+		mes "Make a request to the sweets Artisan in ^FF0000 [Mission] ^000000^0000FFYuno^000000 to create sweets and report back to Misery.";
 		close;
 	case 3:
-		mes "[ミザリー]";
-		mes "あ、お菓子作成の依頼、";
-		mes "どうですか？";
+		mes "[Misery]";
+		mes "Oh, how about a request to create sweets?";
 		next;
-		menu "依頼できました！",-;
-		emotion 33;
-		mes "‐依頼したことと、";
-		mes "　お菓子つくりに時間がかかること" /*「を」が抜けてるのは本鯖どおり*/;
-		mes "　ミザリーに伝えた‐";
+		menu "Your request is ready!" ,-;
+		EMOTION 33;
+		mes "- that I requested and that it takes time to make sweets" /*"wo" is missing as in the main mackerel*/;
+		mes " I told Misery -";
 		next;
-		mes "[ミザリー]";
-		mes "ありがとうー、さすが";
-		mes strcharinfo(0) + "ね！";
-		mes "またお世話になっちゃった。";
+		mes "[Misery]";
+		mes "Thanks - as expected";
+		mes strcharinfo(0) + "Hey!";
+		mes "Thanks again for your help.";
 		if('@novoce){
-			mes "これ、お礼に受け取って！";
+			mes "Here, take this as a thank you!";
 		}
 		next;
 		if('@novoce){
 			if(!checkweight(2305,1)){
-				mes "‐重量オーバー！‐";
+				mes "-overweight! -";
 				close;
 			}
 			getitem 2305,1;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[ミザリー]";
-		mes strcharinfo(0);
-		mes "ありがとうね。";
-		mes "また何かあったらよろしく！";
+		mes "[Misery]";
+		mes ""+strcharinfo(0);
+		mes "Thank you.";
+		mes "Thanks again if you need anything else!";
 		close;
 	}
 L_QUEST08:
@@ -234,450 +193,378 @@ L_QUEST08:
 	case 1:
 		goto L_OTHER;
 	case 2:
-		mes "[ミザリー]";
-		mes "あ！";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちはー。";
+		mes "[Misery]";
+		mes "Ah!";
+		mes ""+strcharinfo(0) + "Hello!";
 		next;
-		menu "お菓子を持ってきました！",-;
-		emotion 0;
-		mes "[ミザリー]";
-		mes "!?";
-		mes "ついに完成したのね！";
-		mes "ありがとうー。";
+		menu "I brought you some candy!" ,-;
+		EMOTION 0;
+		mes "[Misery]";
+		mes "!!! You finally finished it!";
+		mes "Thank you!";
 		next;
-		menu "あと、お代を……",-;
+		menu "Also, I'd like to pay you ......",-;
 		emotion 17;
-		mes "[ミザリー]";
-		mes "あ、お代だったわねー。";
-		mes "すっかり忘れてたわ。";
-		mes "ごめんなさいね！";
-		mes "はい、これ！";
+		mes "[Misery]";
+		mes "Oh, that was your bill!";
+		mes "I totally forgot.";
+		mes "I'm so sorry!";
+		mes "Yes, here!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000にいる、^FF0000マッズイ^000000さんに";
-		mes "お代を渡す。";
+		mes "I will give the money to ^FF0000Mazzi^000000, who is in ^FF0000 [Mission] ^0000FFYuno^000000.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
-		mes "[ミザリー]";
-		mes "うふふ、お菓子♪　お菓子♪";
+		mes "[Misery]";
+		mes "Ufufu, Misery ♪ Misery ♪";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000にいる、^FF0000マッズイ^000000さんに";
-		mes "お代を渡す。";
+		mes "^FF0000[Mission] ^000000^0000FFYuno^000000, give the money to ^FF0000Mazzi^000000, who is in ^0000FFYuno^000000.";
 		close;
 	}
 L_QUEST09:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[ミザリー]";
-		mes "あ、やっぱり";
-		mes strcharinfo(0) + "さん！";
-		mes "きっと貴方が来てくると"/*来てくるで本鯖通り*/;
-		mes "思ったわ！";
+		mes "[Misery]";
+		mes "Oh, I knew it";
+		mes strcharinfo(0) + "!";
+		mes "I'm sure you'll come"/*come to the main mackerel street*/;
+		mes "I thought so!";
 		next;
-		menu "それでどんな依頼を？",-;
-		mes "[ミザリー]";
-		mes "えっとね、";
-		mes "この前届けてもらったお菓子と手紙を、";
-		mes "^FF0000ロックス^000000さんに届けてほしいの。";
+		menu "So what kind of request?" ,-;
+		mes "[Misery]";
+		mes "Well, I want you to deliver the candy and letter you delivered to me the other day to ^FF0000Roxxo^000000.";
 		next;
-		menu "何処にいるんですか？",-;
-		mes "[ミザリー]";
-		mes "あ、うん。";
-		mes "えとね……";
-		mes "実は彼、冒険者をしていてね";
-		mes "世界中を旅しているから";
-		mes "今何処にいるのかわからないのよね……";
+		menu "Where are you?" ,-;
+		mes "[Misery]";
+		mes "Oh, yeah.";
+		mes "Uh, yeah. ......";
+		mes "Actually, he's an adventurer, and he's traveling around the world, so I don't know where he is right now. ......";
 		next;
-		menu "何か少しでも情報はありませんか？",-;
-		mes "[ミザリー]";
-		mes "そうねぇ……";
-		mes "仕事仲間の^FF0000ライアス^000000にも見つけたら";
-		mes "教えてほしいと伝えてあるんだけど";
-		mes "連絡こないし……";
-		mes "うーん……";
+		menu "Do you have any information at all?" ,-;
+		mes "[Misery]";
+		mes "Yeah, hey ......";
+		mes "I've also told my work colleague ^FF0000Ilias^000000 to let me know if he finds it, but he hasn't contacted me. ......";
+		mes "Hmmm ......";
 		next;
 		emotion 33;
-		mes "[ミザリー]";
-		mes "やみくもに探してもわからない";
-		mes "だろうし、まずは^FF0000Payon^000000にいる";
-		mes "仕事仲間の^FF0000ライアス^000000に";
-		mes "情報が無いか聞いてみてくれる？";
+		mes "[Misery]";
+		mes "I don't think we'll find it by blindly looking for it, so can you first ask ^FF0000Ilias^000000, my work colleague at ^FF0000Payon^000000, if he has any information?";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFPayon^000000にいる、";
-		mes "仕事仲間の^FF0000ライアス^000000さんに";
-		mes "情報が無いか確認する。";
+		mes "^FF0000 [Mission] ^000000^0000FFPayon^000000, check with my workmate ^FF0000Ilias^000000 to see if he has any information.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[ミザリー]";
-		mes "あら、もう一度説明したほうが";
-		mes "よいかしら？";
+		mes "[Misery]";
+		mes "Oh, should I explain again?";
 		next;
-		mes "[ミザリー]";
-		mes "やみくもに探してもわからない";
-		mes "だろうし、まずは^FF0000Payon^000000にいる";
-		mes "仕事仲間の^FF0000ライアス^000000に";
-		mes "情報が無いか聞いてみてくれる？";
+		mes "[Misery]";
+		mes "You won't know if you look for it blindly, so can you first ask your business partner ^FF0000Ilias^000000 at ^FF0000Payon^000000 if he has any information?";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFPayon^000000にいる、";
-		mes "仕事仲間の^FF0000ライアス^000000さんに";
-		mes "情報が無いか確認する。";
+		mes "^FF0000 [Mission] ^000000^0000FFPayon^000000, check with my workmate ^FF0000Ilias^000000 to see if he has any information.";
 		close;
 	case 3:
-		//未調査
-		mes "[ミザリー]";
-		mes strcharinfo(0) + "さん！";
-		mes "すぐに^FF0000Hugel^000000へ";
-		mes "行ってみてくれる？";
-		mes "^FF0000ロックス^000000がいるらしいって";
-		mes "ライアスから連絡が来たの！";
+		//not investigated
+		mes "[Misery]";
+		mes ""+strcharinfo(0) + "!";
+		mes "Can you try going to ^FF0000Hugel^000000 immediately?";
+		mes "I got a call from Ilias saying they have ^FF0000Roxxo^000000!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFHugel^000000へ行き";
-		mes "^FF000000ロックス^000000さんを探す。";
+		mes "^FF0000 [Mission] ^000000^0000FFHugel^000000 to find ^FF0000Roxxo^000000.";
 		close;
 	case 4:
-		mes "[ミザリー]";
-		mes strcharinfo(0) + "さん！";
-		mes "^FF0000ロックス^000000は見つかりました？";
+		mes "[Misery]";
+		mes ""+strcharinfo(0) + "!";
+		mes "^FF0000Roxxo^000000 found?";
 		next;
-		menu "ええ",-;
-		mes "[ミザリー]";
-		mes "本当にありがとうございます！";
-		mes "それで彼は元気でしたか？";
+		menu "Yes",-;
+		mes "[Misery]";
+		mes "Thank you so much!";
+		mes "So how has he been?";
 		next;
-		menu "元気でした",-;
-		mes "[ミザリー]";
-		mes "良かったわ。";
-		mes "手紙が後で来るのね。";
-		mes "本当にありがとうー。";
-		mes "色々お世話になっちゃった。";
+		menu "I was fine",-;
+		mes "[Misery]";
+		mes "I'm glad.";
+		mes "I guess the letter will come later.";
+		mes "Thank you so much!";
+		mes "Thanks for all your help.";
 		next;
-		menu "冒険者だったことについて",-;
-		mes "[ミザリー]";
-		mes "あら、ロックスのやつ";
-		mes "おしゃべりね……";
-		mes "そうなのよ、";
-		mes "私も冒険者だったの。";
-		mes "でも商売のほうが楽しくなっちゃって。";
+		menu "About being an adventurer",-;
+		mes "[Misery]";
+		mes "Oh, that Roxxo guy is chatty. ......";
+		mes "Yes, I was an adventurer too.";
+		mes "But I'm having more fun with business.";
 		next;
-		mes "[ミザリー]";
-		mes "以前は、";
-		mes "彼とコンビを組んで色々な";
-		mes "ダンジョンに行ったのよ？";
-		mes "あの時は充実した毎日だったわ。";
-		mes "でも、なんかさびしいのよね。";
+		mes "[Misery]";
+		mes "I used to team up with him to go to different dungeons, you know?";
+		mes "Those were full days.";
+		mes "But I'm kind of lonely.";
 		next;
-		mes "[ミザリー]";
-		mes "今度は商売で";
-		mes "彼とコンビを組みたいんだけども……";
-		mes "彼は冒険者を続けたいみたい。";
+		mes "[Misery]";
+		mes "Now I want to team up with him in business, but ......";
+		mes "He wants to continue being an adventurer.";
 		next;
 		emotion 23,"";
 		emotion 29;
-		mes "[ミザリー]";
-		mes "貴方も気づいていると思うけど";
-		mes "あのお菓子を食べたら";
-		mes "冒険を続けられない体に";
-		mes "なると思うから、";
-		mes "結果的に私の目的は";
-		mes "達成されると思うけどね。";
+		mes "[Misery]";
+		mes "I'm sure you've noticed that eating that candy would make your body incapable of continuing the adventure, so I'm sure you'll achieve my goal as a result.";
 		next;
-		mes "[ミザリー]";
-		mes "あ、口が滑っちゃったわね……";
-		mes "今の話は忘れて。";
+		mes "[Misery]";
+		mes "Oh, that slipped my mind. ......";
+		mes "Forget what you just said.";
 		next;
-		mes "[ミザリー]";
+		mes "[Misery]";
 		if('@novice){
-			mes "あと、これ私のお古だけど";
-			mes "良かったら使って。";
+			mes "Also, this is my secondhand one, but you can use it if you want.";
 		}
-		mes "本当にありがとう。";
+		mes "Thank you so much.";
 		next;
 		if('@novoce){
 			if(!checkweight(2340,1)){
-				mes "‐重量オーバー！‐";
+				mes "-overweight! -";
 				close;
 			}
 			getitem 2340,1;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[ミザリー]";
-		mes strcharinfo(0) + "さん！";
-		mes "ありがとう。";
+		mes "[Misery]";
+		mes ""+strcharinfo(0) + "!";
+		mes "Thank you.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled] ^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_CLEAR:
 	switch(AC_QUEST_LV_2){
 	case 1:
 	case 2:
-		mes "[ミザリー]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうね。";
-		mes "また何かあったらよろしく！";
+		mes "[Misery]";
+		mes ""+strcharinfo(0)+"Thank you.";
+		mes "Thanks again if you need anything else!";
 		close;
-	//未調査
+	//not investigated
 	case 3:
 	case 4:
 	case 5:
 	case 6:
-		mes "[ミザリー]";
-		mes strcharinfo(0)+"さん";
-		mes "お菓子のほうは順調にいってる？";
+		mes "[Misery]";
+		mes ""+strcharinfo(0)+"How are things going with the sweets?";
 		close;
-	//未調査
+	//not investigated
 	case 7:
-		mes "[ミザリー]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうね。";
-		mes "また何かあったらよろしく！";
+		mes "[Misery]";
+		mes ""+strcharinfo(0)+"Thank you.";
+		mes "Thanks again if you need anything else!";
 		close;
-	//未調査
+	//not yet investigated
 	case 8:
 	case 9:
-		mes "[ミザリー]";
-		mes "あ、";
-		mes strcharinfo(0)+"じゃない！";
-		mes "色々お世話になっちゃったわね。";
-		mes "本当にありがとう！";
+		mes "[Misery]";
+		mes "Oh,";
+		mes strcharinfo(0)+"Not!";
+		mes "Thanks for all your help.";
+		mes "Thank you so much!";
 		close;
 	}
 L_OTHER:
-	mes "[ミザリー]";
-	mes "こんにちは～。";
+	mes "[Misery]";
+	mes "Hello~";
 	close;
 }
 //-------------------------------------------------------
-xmas_in.gat,173,171,4	script	トイーヒ#xmas_in	908,{
+xmas_in.gat,173,171,4	script	Touhi#xmas_in	908,{
 	if(AC_QUEST_LV_2==0) goto L_QUEST01;
 	goto L_OTHER;
 L_QUEST01:
 	switch(AC_QUEST_ST_2) {
 	case 2:
-		mes "[トイーヒ]";
-		mes "こんにちは。";
+		mes "[Touhi]";
+		mes "Hello.";
 		next;
-		menu "トイーヒさん？",-;
-		mes "[トイーヒ]";
-		mes "僕は確かにトイーヒだよ？";
-		mes "何か用かな？";
+		menu "Mr. Touhi?" ,-;
+		mes "[Touhi]";
+		mes "I am indeed Touhi, okay?";
+		mes "What can I do for you?";
 		next;
-		menu "経緯を説明する",-;
+		menu "Explain the background",-;
 		emotion 33;
-		mes "‐トイーヒに経緯を説明し、";
-		mes "お礼の品を手渡した‐";
+		mes "-Explained the circumstances to Touhi and handed him a thank-you gift-";
 		next;
 		emotion 19;
-		mes "[トイーヒ]";
-		mes "なんか、";
-		mes "彼女には気を遣わせて";
-		mes "しまったなー……";
-		mes "でも、凄くうれしいよ。";
+		mes "[Touhi]";
+		mes "I kind of made her feel bad about it... ......";
+		mes "But I'm soooo happy.";
 		next;
 		emotion 5;
-		mes "[トイーヒ]";
-		mes "そうだ！";
-		mes "ついでに一つ手紙を";
-		mes "届けてくれないかな？";
+		mes "[Touhi]";
+		mes "Yes!";
+		mes "And while you're at it, could you deliver one letter?";
 		next;
-		menu "いいですよ",-;
+		menu "OK",-;
 		emotion 0;
-		mes "[トイーヒ]";
-		mes "おお！";
-		mes "ありがとう！";
-		mes "それじゃ、";
-		mes "手紙を書くからちょっと待ってね。";
+		mes "[Touhi]";
+		mes "Oh!";
+		mes "Thank you!";
+		mes "Well, I'll write you a letter in a minute.";
 		next;
 		emotion 5;
-		mes "[トイーヒ]";
-		mes "……";
-		mes "…………";
-		mes "………………";
+		mes "[Touhi]";
+		mes "......";
+		mes "............";
+		mes "..................";
 		next;
-		mes "[トイーヒ]";
-		mes "できたできた！";
-		mes "それじゃ、これをよろしく頼むよー。";
+		mes "[Touhi]";
+		mes "It's done, it's done!";
+		mes "Well then, please take care of this!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる、";
-		mes "^FF0000ミザリー^000000に報告しよう！";
+		mes "Report to ^FF0000Misery^000000, who is in ^FF0000 [Mission] ^000000^0000FFAldebaran^000000!";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
-		mes "[トイーヒ]";
-		mes "こんにちは。";
-		mes strcharinfo(0)+"さん。";
-		mes "手紙を届けてくれましたか？";
+		mes "[Touhi]";
+		mes "Hello.";
+		mes ""+strcharinfo(0)+".";
+		mes "Did you deliver the letter?";
 		next;
-		menu "まだなんです。",-;
-		mes "[トイーヒ]";
-		mes "手紙、よろしく頼むよ！";
+		menu "Not yet." ,-;
+		mes "[Touhi]";
+		mes "Letter, please take care of it!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる、";
-		mes "^FF0000ミザリー^000000に報告しよう！";
+		mes "Report to ^FF0000Misery^000000 in ^FF0000 [Mission] ^0000FFAldebaran^000000!";
 		close;
 	}
 L_OTHER:
 	if(AC_QUEST_LV_2 || AC_QUEST_ST_2>3){
-		mes "[トイーヒ]";
-		mes "こんにちは。";
-		mes strcharinfo(0)+"さん。";
+		mes "[Touhi]";
+		mes "Hello.";
+		mes ""+strcharinfo(0)+".";
 		close;
 	}
 	else {
-		mes "[トイーヒ]";
-		mes "やあ、今日も寒いねー。";
+		mes "[Touhi]";
+		mes "Hey, it's cold again today!";
 		close;
 	}
 }
 //------------------------------------------------------
-payon.gat,165,99,4	script	ライアス	807,{
+payon.gat,165,99,4	script	Ilias	807,{
 	if(AC_QUEST_LV_2!=8) goto L_OTHER;
 	switch(AC_QUEST_ST_2) {
 	case 2:
-		mes "[ライアス]";
-		mes "ん？";
-		mes "冒険者か……";
+		mes "[Ilias]";
+		mes "Hmm?";
+		mes "Adventurer or ......";
 		next;
-		menu "ミザリーさんから言われてきました",-;
-		mes "[ライアス]";
-		mes "おお、ミザリーからか。";
-		mes "んで、なんだろうか？";
+		menu "Misery has told me",-;
+		mes "[Ilias]";
+		mes "Oh, from Misery.";
+		mes "So, what is it?";
 		next;
-		menu "事情を説明する",-;
+		menu "Explain the situation",-;
 		emotion 0;
-		mes "[ライアス]";
-		mes "！";
-		mes "ああ、例の人の件か！";
-		mes "ちょうどさっき情報がはいった";
-		mes "所だったんだ。";
-		mes "今、^FF0000Hugel^000000にいるらしいぜ？";
+		mes "[Ilias]";
+		mes "!";
+		mes "Oh, the you-know-who thing!";
+		mes "I just got the information earlier.";
+		mes "I hear he's at ^FF0000Hugel^000000 right now?";
 		next;
-		menu "本当ですか!?",-;
-		mes "[ライアス]";
-		mes "ああ、仕事仲間の情報だから";
-		mes "間違いじゃないと思うぜ？";
-		mes "一応この件について、";
-		mes "ミザリーにも伝えておくよ。";
-		next;
-		menu "ありがとうございます",-;
+		menu "Really?",-;
+		mes "[Ilias]";
+		mes "Yeah, it's from a business associate, so I don't think it's a mistake, okay?";
+		mes "I'll let Misery know about this, just in case.";
+		NEXT;
+		menu "Thank you very much.",-;
 		mes "["+strcharinfo(0)+"]";
-		mes "早速、Hugelに向かってみよう。";
+		mes "Let's head to Hugel as soon as possible.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFHugel^000000へ行き";
-		mes "^FF0000ロックス^000000さんを探す。";
+		mes "Go to ^FF0000 [Mission] ^000000^0000FFHugel^000000 and look for ^FF0000Roxxo^000000.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
-		mes "[ライアス]";
-		mes "あ、君か。";
-		mes "すぐに^FF0000Hugel^000000へ";
-		mes "向かったほうが良いぞ？";
+		mes "[Ilias]";
+		mes "Oh, it's you.";
+		mes "You better head to ^FF0000Hugel^000000 right away, okay?";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFHugel^000000へ行き";
-		mes "^FF0000ロックス^000000さんを探す。";
+		mes "Go to ^FF0000 [Mission] ^000000^0000FFHugel^000000 and look for ^FF0000Roxxo^000000.";
 		close;
 	}
 L_OTHER:
-	mes "[ライアス]";
-	mes "ん？";
-	mes "冒険者か……";
+	mes "[Ilias]";
+	mes "hmm?";
+	mes "Adventurer or ......";
 	close;
 }
-hugel.gat,72,90,4	script	ロックス	884,{
+hugel.gat,72,90,4	script	Roxxo	884,{
 	if(AC_QUEST_LV_2!=8 || AC_QUEST_ST_2<3 || AC_QUEST_ST_2>4) goto L_OTHER;
 	switch(AC_QUEST_ST_2) {
 	case 3:
-		emotion 9;
-		mes "[ロックス]";
-		mes "……";
+		EMOTION 9;
+		mes "[Roxxo]";
+		mes "......";
 		next;
-		menu "こんにちは",-;
+		menu "Hello",-;
 		emotion 9;
-		mes "[ロックス]";
-		mes "……";
+		mes "[Roxxo]";
+		mes "......";
 		next;
-		menu "あの……ミザリーさんから頼まれて",-;
+		menu "That ......Misery asked me to do",-;
 		emotion 0;
-		mes "[ロックス]";
-		mes "！";
-		mes "ミザリー……";
-		mes "懐かしい名前だな……";
+		mes "[Roxxo]";
+		mes "!";
+		mes "Misery......";
+		mes "That's a name I've missed. ......";
 		next;
-		menu "手紙とお菓子を渡す",-;
-		mes "‐ロックスは手紙を読んでいるようだ‐";
+		menu "Pass the letter and candy",-;
+		mes "-Roxxo seems to be reading the letter-";
 		next;
 		emotion 4;
-		mes "[ロックス]";
-		mes "自分の誕生日なんて";
-		mes "手紙を見るまですっかり忘れていた。";
-		mes "それはそうと……";
-		mes "冒険者なんて辞めろって";
-		mes "よく言うよな……";
+		mes "[Roxxo]";
+		mes "I had completely forgotten about my birthday until I saw the letter.";
+		mes "That's so ......";
+		mes "How often do you tell people to quit being adventurers ......";
 		next;
-		mes "[ロックス]";
-		mes "あいつも、つい最近まで";
-		mes "冒険者だったんだぜ？";
-		mes "ふー、勝手な奴だよ。";
-		mes "まったく……";
+		mes "[Roxxo]";
+		mes "That guy was an adventurer too, until recently, you know?";
+		mes "Whew, he's selfish.";
+		mes "Totally ......";
 		next;
-		mes "[ロックス]";
-		mes "そういえば君の名前を";
-		mes "聞いていなかったな。";
+		mes "[Roxxo]";
+		mes "Come to think of it, I never heard your name.";
 		next;
-		menu "名乗る",-;
-		mes "[ロックス]";
-		mes strcharinfo(0) + "か。";
-		mes "色々迷惑をかけてしまったみたいで";
-		mes "すまなかった。";
-		mes "^FF0000ミザリー^000000には、後で手紙を送ると";
-		mes "言っておいてくれ。";
-		mes "ありがとう。";
+		menu "Identify yourself.",-;
+		mes "[Roxxo]";
+		mes ""+strcharinfo(0) + "or.";
+		mes "I'm sorry I seem to have caused you a lot of trouble.";
+		mes "Tell ^FF0000Misery^000000 that I'll send a letter later.";
+		mes "Thanks.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000に居る";
-		mes "^FF0000ミザリー^000000に報告する。";
+		mes "Report to ^FF0000Misery^000000 who is in ^FF0000 [Mission] ^000000^0000FFAldebaran^000000.";
 		close2;
 		set AC_QUEST_ST_2,4;
 		end;
 	case 4:
 	case 99:
-		mes "[ロックス]";
-		mes strcharinfo(0) + "か。";
-		mes "ありがとうな。";
+		mes "[Roxxo]";
+		mes ""+strcharinfo(0) + "or.";
+		mes "Thanks, man.";
 		close;
 	}
 L_OTHER:
-	mes "[ロックス]";
-	mes "……";
+	mes "[Roxxo]";
+	mes "......";
 	close;
 }
 //------------------------------------------------------
-yuno_in04.gat,39,126,4	script	マッズイ	886,{
+yuno_in04.gat,39,126,4	script	Mazzi	886,{
 	set '@novice, callfunc("AC_GetNovice");
 	switch(AC_QUEST_LV_2){
 	case 0:
@@ -706,951 +593,757 @@ L_QUEST02:
 	case 99:
 		goto L_OTHER;
 	case 2:
-		mes "[マッズイ]";
-		mes "ふんふんふふふん。";
-		mes "おいしいお菓子を作る～";
-		mes "おいしいおいしいおいしい。";
-		mes "おいしいーーーーーーーーー！";
+		mes "[Mazzi]";
+		mes "hmmm hmmm hmmm.";
+		mes "Making delicious sweets - yummy yummy yummy.";
+		mes "Yummy yummy yummy yummy!";
 		next;
-		menu "あの",-;
-		mes "[マッズイ]";
-		mes "おや、お客さんかな？";
-		mes "いらっしゃい！";
+		menu "Um",-;
+		mes "[Mazzi]";
+		mes "Oh, are you a customer?";
+		mes "Welcome!";
 		next;
-		mes "‐ミザリーから預かった";
-		mes "　注文書をマッズイに渡した‐";
+		mes "-I gave Mazzi the order form I received from Misery-";
 		next;
 		emotion 11;
-		mes "[マッズイ]";
-		mes "ふむふむ、誰かのお祝いに渡す";
-		mes "食べ物を作ってほしいのか。";
-		mes "しかも奇抜なお菓子とは、";
-		mes "やりがいがありますね！";
+		mes "[Mazzi]";
+		mes "Hmmm...you want me to make food to give to someone for a celebration?";
+		mes "And it's challenging to make a bizarre pastry!";
+		NEXT;
+		mes "[Mazzi]";
+		mes "But then again, eccentric pastries require special ingredients, so the first step is to gather the ingredients!";
+		mes "I'm getting into it!";
 		next;
-		mes "[マッズイ]";
-		mes "それにしても奇抜なお菓子というと";
-		mes "特別な材料が必要になるから、";
-		mes "まず材料集めですね！";
-		mes "気合が入ってきましたよー。";
+		mes "[Mazzi]";
+		mes "Oops, my apologies, we have received your order and please inform the person who requested it that it will take some time to create it.";
+		mes "Well then, I'll take care of it.";
 		next;
-		mes "[マッズイ]";
-		mes "おっと、失礼しました、";
-		mes "ご注文は承りましたから";
-		mes "依頼された方に";
-		mes "作成に時間がかかることを";
-		mes "お伝えください。";
-		mes "それじゃ、よろしくお願いしますね。";
-		next;
-		menu "わかりました！",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる、";
-		mes "^FF0000ミザリー^000000に報告しよう！";
+		menu "Understood!" ,-;
+		mes "Report to ^FF0000Misery^000000 in ^FF0000 [Mission] ^000000^0000FFAldebaran^000000!";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
-		mes "[マッズイ]";
-		mes "やあ、";
-		mes strcharinfo(0) + "さん。";
-		mes "^FF0000ミザリー^000000さんには伝えてくれたかな？";
+		mes "[Mazzi]";
+		mes "Hi,";
+		mes strcharinfo(0) + ".";
+		mes "Did you tell ^FF0000Misery^000000?";
 		next;
-		menu "まだなんです。",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "I'm not there yet." ,-;
+		mes "[Mazzi]";
+		mes "I see.";
+		mes "Well, I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる、";
-		mes "^FF0000ミザリー^000000に報告しよう！";
+		mes "Let's report to ^FF0000Misery^000000, who is in ^FF0000 [Mission] ^0000FFAldebaran^000000!";
 		close;
 	}
 L_QUEST03:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes "ふんふんふふふん。";
-		mes "おいしいお菓子を作る～";
-		mes "おいしいおいしいおいしい。";
-		mes "おいしいーーーーーーーーー！";
+		mes "[Mazzi]";
+		mes "Mmmmmmmmmm.";
+		mes "Making delicious sweets - yummy yummy yummy.";
+		mes "Yummy yummy yummy yummy!";
 		next;
-		menu "あの",-;
-		mes "[マッズイ]";
-		mes "おや、この前の方じゃないですか。";
+		menu "Um",-;
+		mes "[Mazzi]";
+		mes "Oh, you're the one from the other day, aren't you?";
 		next;
-		menu "依頼の件できたのですが",-;
-		mes "[マッズイ]";
-		mes "おお！";
-		mes "貴方が請け負ってくれるとは、";
-		mes "世の中狭いですねー。";
-		mes "依頼内容なのですが、";
-		mes "この前ミザリーさんから依頼された";
-		mes "お菓子の材料集めなんですよ。";
+		menu "I was able to do the request.",-;
+		mes "[Mazzi]";
+		mes "Oh!";
+		mes "It's a small world that you are undertaking this project!";
+		mes "As for the request, it's to gather ingredients for the sweets that Misery asked me to make last time.";
 		next;
 		emotion 11;
-		mes "[マッズイ]";
-		mes "沢山の注文が入っていて、";
-		mes "どうしても自分では、";
-		mes "取りに行くことができなくてねー。";
-		mes "本当は自分でとりに";
-		mes "行きたかったんだけど……";
-		mes "でも、君なら安心だ！";
+		mes "[Mazzi]";
+		mes "I have a lot of orders and I just couldn't go and get them myself, you know?";
+		mes "I really wanted to go get it myself. ......";
+		mes "But you're in good hands!";
 		next;
-		mes "[マッズイ]";
-		mes "えと、^0000FFLighthalzen^000000に生えている木の葉";
-		mes "これが必要なんだよね。";
-		mes "これをお願いしたい。";
-		mes "おっと、街のどの辺りかは、";
-		mes "紙に記載しておくね。";
-		mes "それじゃよろしくお願いします。";
+		mes "[Mazzi]";
+		mes "Uh, I need this leaf from the tree that grows in ^0000FFLighthalzen^000000.";
+		mes "I would like to ask for this.";
+		mes "Oops, I'll put down on paper which part of town.";
+		mes "Thank you very much then.";
 		next;
-		menu "まかせてください！",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFLighthalzen^000000に生えている木から";
-		mes "葉っぱを取ってくる。";
+		menu "Leave it to me!" ,-;
+		mes "^FF0000 [Mission] ^000000^0000FFLighthalzen^000000 get leaves from a tree that grows in ^000000.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[マッズイ]";
-		mes "お、早いですね。";
-		mes "もうとってきてくれたんですか!?";
+		mes "[Mazzi]";
+		mes "Oh, you're early.";
+		mes "You've already taken it!";
 		next;
-		menu "まだです",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "Not yet.",-;
+		mes "[Mazzi]";
+		mes "I didn't think so.";
+		mes "I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFLighthalzen^000000に生えている木から";
-		mes "葉っぱを取ってくる。";
+		mes "^FF0000 [Mission] ^000000^0000FFLighthalzen^000000 get some leaves from a tree that grows in ^000000.";
 		close;
 	case 3:
-		mes "[マッズイ]";
-		mes "ふんふんふんー。";
+		mes "[Mazzi]";
+		mes "Mmmmmmmmmm.";
 		next;
-		menu "マッズイさん？",-;
-		mes "[マッズイ]";
-		mes "おいしいお菓子を作る～";
+		menu "Mr. Mazzi?" ,-;
+		mes "[Mazzi]";
+		mes "Make delicious pastries~";
 		next;
-		menu "葉っぱを取ってきましたよ!!!",-;
+		menu "I got the leaves!!!!" ,-;
 		emotion 23;
-		mes "[マッズイ]";
-		mes "!?!?!?!";
-		mes "…………";
+		mes "[Mazzi]";
+		mes "!!!?!!!!! ............";
 		next;
-		mes "[マッズイ]";
-		mes "あーびっくりした……";
-		mes "まだ心臓がバクバクしてますよ。";
+		mes "[Mazzi]";
+		mes "Oh my god, I'm so surprised ......";
+		mes "My heart is still racing.";
 		next;
-		mes "[マッズイ]";
-		mes "っと、";
-		mes "葉っぱを持って来てくれたんですね。";
-		mes "ありがとうございます！";
-		mes "確かに受け取りました。";
+		mes "[Mazzi]";
+		mes "Woah, you brought me some weed!";
+		mes "Thank you!";
+		mes "I certainly received it.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request fulfilled] ^000000 request fulfilled!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	}
 L_QUEST04:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes "口に入れると、とろける";
-		mes "うまさ～。";
-		mes "ちょっと口がしびれるかも～。";
-		mes "ふんふふん。";
+		mes "[Mazzi]";
+		mes "Melt-in-your-mouth goodness!";
+		mes "Your mouth might be a little numb...";
+		mes "Mmmmmmmm.";
 		next;
-		menu "こんにちは",-;
-		mes "[マッズイ]";
-		mes "おお！";
-		mes strcharinfo(0) + "さん";
-		mes "やはり" + strcharinfo(0) + "さんが";
-		mes "来てくれましたか！";
+		menu "Hello",-;
+		mes "[Mazzi]";
+		mes "Oh!";
+		mes ""+strcharinfo(0) + "After all" + strcharinfo(0) + "has come!";
 		next;
-		mes "[マッズイ]";
-		mes "今回の依頼内容も";
-		mes "材料集めなんですけども。";
-		mes "いやー、この前の葉っぱだけではね";
-		mes "完全なものは作れないことが";
-		mes "わかりまして。";
+		mes "[Mazzi]";
+		mes "This request is also about gathering materials, though.";
+		mes "Well, the last time I did this, I found out that I couldn't make something complete with just leaves.";
 		next;
 		emotion 11;
-		mes "[マッズイ]";
-		mes "えと、次の材料は……";
-		mes "^0000FFEinbroch^000000のドブの泥を";
-		mes "とってきてほしいんだ！";
+		mes "[Mazzi]";
+		mes "Uh, the next ingredient is ......";
+		mes "I need you to get me ^0000FFEinbroch^000000 Mud Pit!";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "え!?";
-		mes "ドブの泥ですか……？";
+		mes "What! ?Mud Pit? ......?";
 		next;
-		mes "[マッズイ]";
-		mes "そうそう、ドブの泥ね。";
-		mes "よろしくおねがいしますね！";
-		mes "あ、これ入れ物です。";
+		mes "[Mazzi]";
+		mes "Oh yeah, Mud Pit.";
+		mes "Nice to meet you!";
+		mes "Oh, here's the container.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "まかせてください！";
-		mes " ";
-		mes "（でも、ドブの泥なんて何に";
-		mes " 使うんだろう……）";
+		mes "Leave it to me!";
+		mes " (But what is Mud Pit used for? ......)";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFEinbroch^000000のドブにある";
-		mes "泥を取ってくる。";
+		mes "^FF0000 [Mission] ^000000^0000FFEinbroch^000000 get the mud from the ditch.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[マッズイ]";
-		mes "お、早いですね。";
-		mes "もうとってきてくれたんですか!?";
+		mes "[Mazzi]";
+		mes "Oh, you're early.";
+		mes "You've already taken it!";
 		next;
-		menu "まだです",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "Not yet.",-;
+		mes "[Mazzi]";
+		mes "I didn't think so.";
+		mes "I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFEinbroch^000000のドブにある";
-		mes "泥を取ってくる。";
+		mes "^FF0000 [Mission] ^000000^0000FFEinbroch^000000 to get the mud in the ditch.";
 		close;
 	case 3:
-		mes "[マッズイ]";
-		mes "食べる人によっては";
-		mes "毒になるーかもしれないよ～";
-		mes "うまうまうまうまい！";
-		mes "おいしいよ～。";
+		mes "[Mazzi]";
+		mes "It may be poisonous to some people who eat it - ummmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm!";
+		mes "It's delicious!";
 		next;
-		menu "ドブの泥を取ってきました。",-;
-		mes "[マッズイ]";
-		mes "お、ご苦労さま！";
-		mes "これこれ、この色だよ。";
+		menu "I took the Mud Pit." ,-;
+		mes "[Mazzi]";
+		mes "Oh, thanks for your help!";
+		mes "This, this, this is the color.";
 		next;
-		menu "この泥は何に使うのですか？",-;
-		mes "[マッズイ]";
-		mes "ん？";
-		mes "何って、お菓子の材料に";
-		mes "きまってるじゃないですかー。";
-		mes "使い方は秘密ですけどね。";
+		menu "What is this mud used for?" ,-;
+		mes "[Mazzi]";
+		mes "hmm?";
+		mes "What do you mean, of course it's an ingredient for sweets!";
+		mes "How to use it is a secret, though.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "そ、そうですよね。";
-		mes "失礼しました。";
-		mes " ";
-		mes "（このお菓子を食べた人はきっと";
-		mes "　大変なことになるんだろうな……）";
+		mes "Yes, that's right.";
+		mes "Pardon me.";
+		mes " (I bet the person who ate this candy is in trouble ......)";
 		next;
-		mes "[マッズイ]";
-		mes "いやいや、";
-		mes "今回もたすかりましたよ。";
-		mes "また、何かあったらよろしく";
-		mes "お願いしますね。";
+		mes "[Mazzi]";
+		mes "No, no, thank you again for your help.";
+		mes "I'll be happy to help you again if you need anything else.";
 		if('@novoce){
-			mes "あと、これもっていって。";
-			mes "お店では買えない品だから大切にね！";
+			mes "Also, take this with you.";
+			mes "Take good care of it, it's an item you can't buy in the store!";
 		}
 		next;
 		if('@novoce){
 			if(!checkweight(568,20)){
-				mes "‐重量オーバー！‐";
+				mes "-overweight! -";
 				close;
 			}
 			getitem 568,20;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";//ハイフンあり
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";//hyphenated
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";//ハイフンなし
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy."; //without hyphen
 		close;
 	}
 L_QUEST05:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes "へいー！";
-		mes "お菓子作りはたのしいなー。";
-		mes "たのしいー。";
+		mes "[Mazzi]";
+		mes "Hey!";
+		mes "Making pastries is fun.";
+		mes "It's fun!";
 		next;
-		menu "こんにちは",-;
-		mes "[マッズイ]";
-		mes strcharinfo(0) + "さん";
-		mes "いつもありがとうございます！";
-		mes "今回も材料集めなんです。";
+		menu "Hello",-;
+		mes "[Mazzi]";
+		mes ""+strcharinfo(0) + "Thank you for everything!";
+		mes "I'm gathering materials again this time.";
 		next;
 		emotion 11;
-		mes "[マッズイ]";
-		mes "今回依頼したい材料は、";
-		mes "^0000FFEinbech^000000で取れる鉱石なんです。";
-		mes "それをとってきていただきたいんです。";
+		mes "[Mazzi]";
+		mes "The material I want to request this time is the ore that can be obtained at ^0000FFEinbech^000000.";
+		mes "I would like you to get it for me.";
 		next;
 		emotion 4,"";
 		mes "[" + strcharinfo(0) + "]";
-		mes "鉱石……";
-		mes "（また変な材料だ……）";
+		mes "ore ......";
+		mes "(another weird material ......)";
 		next;
-		mes "[マッズイ]";
-		mes "^0000FFEinbech^000000に私の知り合いの";
-		mes "^FF0000ドルドイ^000000という人がいるので、";
-		mes "その人から鉱石を一つ";
-		mes "もらってきてください。";
+		mes "[Mazzi]";
+		mes "I have a friend of mine in ^0000FFEinbech^000000 named ^FF0000Dordoi^000000, please get me one ore from him.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "（オーブンに使ったり";
-		mes "　するんだろうか……）";
+		mes "(I wonder if they use it for ovens or something ......)";
 		next;
-		menu "わ、わかりました",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFEinbech^000000にいる";
-		mes "^FF0000ドルドイ^000000から鉱石をもらってくる。";
+		menu "Wow, okay",-;
+		mes "^FF0000 [Mission] ^000000^000000DFEinbech^000000 get ore from ^FF0000Dordoi^000000 who is in ^FF0000DFEinbech^000000.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[マッズイ]";
-		mes "お、早いですね。";
-		mes "もうとってきてくれたんですか!?";
+		mes "[Mazzi]";
+		mes "Oh, you're early.";
+		mes "You've already taken it!";
 		next;
-		menu "まだです",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "Not yet.",-;
+		mes "[Mazzi]";
+		mes "I didn't think so.";
+		mes "I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFEinbech^000000にいる";
-		mes "^FF0000ドルドイ^000000から鉱石をもらってくる。";
+		mes "I'm going to get some ore from ^FF0000Dordoi^000000 in ^FF0000 [Mission] ^000000^0000FFEinbech^000000.";
 		close;
 	case 3:
-		mes "[マッズイ]";
-		mes "ズンチャッチャー";
-		mes "ズンズンチャッチャー";
-		mes "生クリームを～泥と混ぜて～。";
+		mes "[Mazzi]";
+		mes "Zunchatcher Zunchatcher Zunchatcher fresh cream mixed with ~mud~.";
 		next;
-		menu "鉱石をもってきました",-;
-		mes "[マッズイ]";
-		mes "さすが、";
-		mes strcharinfo(0) + "さん";
-		mes "仕事が本当に速いですね。";
+		menu "I have brought the ore",-;
+		mes "[Mazzi]";
+		mes "As expected,";
+		mes strcharinfo(0) + "";
+		mes "You work really fast.";
 		next;
-		mes "[マッズイ]";
-		mes "うーん、良い鉱石だよ。";
-		mes "これでより一層おいしいお菓子が";
-		mes "作れるはずです。";
-		mes "ありがとう！また何かあったら";
-		mes "よろしくお願いします！";
+		mes "[Mazzi]";
+		mes "Hmmm, good ore.";
+		mes "This should make for even better pastries.";
+		mes "Thanks! Please let me know if you need anything else!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	}
 L_QUEST06:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes "お・か・し！";
-		mes "お菓子ーーーー!!!";
+		mes "[Mazzi]";
+		mes "O-kaa-shii!";
+		mes "Sweetsooooo!!!!";
 		next;
-		menu "あ、あの……",-;
-		mes "[マッズイ]";
-		mes "！";
-		mes "おお、まってましたよー！";
-		mes "今回はバイラン島まで";
-		mes "海草をもらいに行ってほしいんだ。";
+		menu "Oh, that ......",-;
+		mes "[Mazzi]";
+		mes "!";
+		mes "Oh, I've been waiting for you!";
+		mes "This time I want you to go to Bylan Island to get seaweed.";
 		next;
-		emotion 11;
-		mes "[マッズイ]";
-		mes "バイラン島に";
-		mes "ンライバって人がいるので";
-		mes "その人から海草を";
-		mes "分けてきてもらってほしい。";
+		EMOTION 11;
+		mes "[Mazzi]";
+		mes "There is a person named Noriba on the island of Bylan, and I want you to go and get some seaweed from him.";
 		next;
 		emotion 4,"";
 		mes "[" + strcharinfo(0) + "]";
-		mes "海草ですね。";
-		mes "わかりました！";
-		mes "（今度は少しまともな材料だ）";
+		mes "That's seaweed.";
+		mes "I understand!";
+		mes "(A little more decent material this time)";
 		next;
-		mes "[マッズイ]";
-		mes "それじゃよろしく頼むよ！";
+		mes "[Mazzi]";
+		mes "Take care of it then!";
 		next;
-		menu "わ、わかりました",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFバイラン島^000000にいる";
-		mes "^FF0000ンライバ^000000さんから海草をもらってくる。";
-		mes " ";
-		mes "‐バイラン島には^0000FFIzlude^000000";
-		mes "から行ける‐";
+		menu "Wow, okay",-;
+		mes "^FF0000 [Mission] ^000000^000000^0000FF I'll get some seaweed from Mr. ^FF0000Noriba^000000 on Byran Island^000000.";
+		mes " -You can get to Bylan Island from ^0000FFIzlude^000000-";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
 	case 3:
-	//ンライバのクエ終わらせずに戻った時のセリフは未調査。
+	//The line when returning without finishing Noriba's query has not been investigated yet.
 	case 4:
-		mes "[マッズイ]";
-		mes "お、早いですね。";
-		mes "もうとってきてくれたんですか!?";
+		mes "[Mazzi]";
+		mes "Oh, you're early.";
+		mes "You already took it!";
 		next;
-		menu "まだです",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "Not yet.",-;
+		mes "[Mazzi]";
+		mes "I didn't think so.";
+		mes "I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFバイラン島^000000にいる";
-		mes "^FF0000ンライバ^000000さんから海草をもらってくる。";
-		mes " ";
-		mes "‐バイラン島には^0000FFIzlude^000000";
-		mes "から行ける‐";
+		mes "^FF0000 [Mission] ^000000^000000^0000FF I'll get some seaweed from Mr. ^FF0000Noriba^000000 on Byran Island^000000.";
+		mes " -You can get to Bylan Island from ^0000FFIzlude^000000-";
 		close;
 	case 5:
-		mes "[マッズイ]";
-		mes "泥混ぜ生クリームと";
-		mes "鉱石の相性は抜群だ～！";
-		mes "まっぜまぜっ！";
-		mes "おかし作りはたのしいな～";
-		mes "ヘイ！";
-		mes "そして海草を～～。";
+		mes "[Mazzi]";
+		mes "Mud mixed cream and ore are a perfect match~!";
+		mes "Maze maze!";
+		mes "Making cakes is fun~Hey!";
+		mes "And seaweed ~~.";
 		next;
-		menu "海草をもってきましたよ",-;
-		mes "[マッズイ]";
-		mes "おお！";
-		mes "海草！";
-		mes "それを今丁度使いたいところ";
-		mes "だったんですよー。";
-		mes "まさにグッドタイミングですねー。";
+		menu "I've got some seaweed for you.",-;
+		mes "[Mazzi]";
+		mes "Oh!";
+		mes "Seaweed!";
+		mes "I was just about to use that!";
+		mes "Good timing indeed!";
 		next;
-		mes "[マッズイ]";
-		mes "いい感じすよ。";
-		mes "究極のお菓子が完成に";
-		mes "近づいています！";
-		mes strcharinfo(0) + "さん！";
-		mes "今回もありがとうございました。";
+		mes "[Mazzi]";
+		mes "It's looking good.";
+		mes "The ultimate pastry is nearing completion!";
+		mes ""+strcharinfo(0) + "!";
+		mes "Thank you again for your help.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	}
 L_QUEST07:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes "イヤッハー！";
-		mes "お菓子を混ぜ混ぜ混ぜ";
-		mes "海草とー。";
+		mes "[Mazzi]";
+		mes "Yeaaah!";
+		mes "Mix the sweets with the mixed seaweed.";
 		next;
-		menu "こんにちは！",-;
-		mes "[マッズイ]";
-		mes "おっと、";
-		mes "今回も依頼を";
-		mes "引き受けてくださるんですよね？";
+		menu "Hello!" ,-;
+		mes "[Mazzi]";
+		mes "Oops, you're going to accept my request again, aren't you?";
 		next;
-		menu "そうなんですよ",-;
-		emotion 11;
-		mes "[マッズイ]";
-		mes "今回は水です水！";
-		mes "でも、ただの水じゃないんですよ。";
-		mes "海洋深層水これがほしいんです。";
-		mes "^0000FF沈没船付近の島^000000に^0000FFアイリン^000000という";
-		mes "女の子がいますから";
-		mes "その子からもらってきてください。";
+		menu "Yes, it is.",-;
+		EMOTION 11;
+		mes "[Mazzi]";
+		mes "This time it's water, water!";
+		mes "But it's not just water.";
+		mes "Deep sea water I want this.";
+		mes "There is a girl named ^0000FFAirin^000000 on the island ^0000FF near the wreck ^0000FF, so please get it from her.";
 		next;
-		mes "[マッズイ]";
-		mes "それじゃよろしく頼むよ！";
+		mes "[Mazzi]";
+		mes "Then please take care of her!";
 		next;
-		menu "まかせてください！",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF沈没船付近の島^000000にいる";
-		mes "^FF0000アイリン^000000さんから";
-		mes "海洋深層水をもらってくる。";
-		mes " ";
-		mes "‐沈没船付近の島には、";
-		mes "^0000FFAlberta^000000から行ける‐";
+		menu "Leave it to me!" ,-;
+		mes "^FF0000 [Mission] ^000000 I will get deep ocean water from ^0000FFAirin^000000 who is on the island ^FF0000 near the sunken ship^000000.";
+		mes " -The island near the wreck can be reached from ^0000FFAlberta^000000-";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
 	case 3:
-		mes "[マッズイ]";
-		mes "お、早いですね。";
-		mes "もうとってきてくれたんですか!?";
+		mes "[Mazzi]";
+		mes "Oh, you're early.";
+		mes "You've already taken it!";
 		next;
-		menu "まだです",-;
-		mes "[マッズイ]";
-		mes "そうでしたか。";
-		mes "それじゃ、よろしくお願いしますね。";
+		menu "Not yet.",-;
+		mes "[Mazzi]";
+		mes "I didn't think so.";
+		mes "I'll take care of it, then.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF沈没船付近の島^000000にいる";
-		mes "^FF0000アイリン^000000さんから";
-		mes "海洋深層水をもらってくる。";
-		mes " ";
-		mes "‐沈没船付近の島には、";
-		mes "^0000FFAlberta^000000から行ける‐";
+		mes "^FF0000 [Mission] ^000000^000000^0000FF I'll get some deep ocean water from Mr. ^FF0000Airin^000000 on the island ^000000 near the sunken ship.";
+		mes " -The island near the wreck can be reached from ^0000FFAlberta^000000-";
 		close;
 	case 4:
-		mes "[マッズイ]";
-		mes "海洋深層水";
-		mes "持って来てくれたみたいですね！";
-		mes "いやー本当にたすかります。";
+		mes "[Mazzi]";
+		mes "I see you brought deep sea water!";
+		mes "Oh no, I'm really grateful.";
 		next;
-		mes "[マッズイ]";
-		mes "早速、これを作って";
-		mes "お菓子作りを続けますね。";
+		mes "[Mazzi]";
+		mes "I'll make this as soon as possible and continue baking.";
 		if('@novoce){
-			mes "あ、これ余り物ですがどうぞ";
+			mes "Oh, here's a leftover, but here you go";
 		}
 		next;
 		if('@novoce){
 			if(!checkweight(579,50)){
-				mes "‐重量オーバー！‐";
+				mes "-overweight! -";
 				close;
 			}
 			getitem 579,50;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled] ^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST08:
 	switch(AC_QUEST_ST_2){
 	case 1:
-		mes "[マッズイ]";
-		mes strcharinfo(0) + "さん";
-		mes "世紀の一瞬ですよ！";
-		mes "まさにいま究極のお菓子が";
-		mes "完成しようとしています！";
+		mes "[Mazzi]";
+		mes ""+strcharinfo(0) + "It's the moment of the century!";
+		mes "The ultimate confection is about to be completed!";
 		next;
-		set '@dummy,("おお！");
+		set '@dummy,("Oh!");
 		misceffect 12;
-		mes "[マッズイ]";
-		mes "さあ、最後の仕上げです！";
+		mes "[Mazzi]";
+		mes "Now for the final touches!";
 		next;
 		emotion 28;
-		mes "[マッズイ]";
-		mes "完成です！";
-		mes "すばらしいお菓子が完成しました。";
-		mes "さあ、これを^FF0000ミザリー^000000さんに";
-		mes "届けてください！";
-		mes "後、お代も忘れずに受け取ってきて";
-		mes "くださいね。";
+		mes "[Mazzi]";
+		mes "It's finished!";
+		mes "A wonderful pastry has been completed.";
+		mes "Now, please deliver this to ^FF0000Misery^000000!";
+		mes "And please don't forget to pick up the bill for the rest of the day.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる";
-		mes "^FF0000ミザリー^000000さんにお菓子を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFAldebaran^000000 to deliver sweets to ^FF0000Misery^000000 who is in ^0000FFAldebaran^000000.";
 		close2;
 		set AC_QUEST_ST_2,2;
 		end;
 	case 2:
-		mes "[マッズイ]";
-		mes strcharinfo(0) + "さん";
-		mes "早く届けてください！";
+		mes "[Mazzi]";
+		mes ""+strcharinfo(0) + "Please deliver quickly!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFAldebaran^000000にいる";
-		mes "^FF0000ミザリー^000000さんにお菓子を届ける。";
+		mes "^FF0000[Mission] ^000000^0000FFAldebaran^000000 deliver sweets to Mr. ^FF0000Misery^000000 in ^FF0000.";
 		close;
 	case 3:
-		mes "[マッズイ]";
-		mes strcharinfo(0) + "さん";
-		mes "お帰りなさい。";
+		mes "[Mazzi]";
+		mes ""+strcharinfo(0) + "Welcome back.";
 		next;
-		menu "お代を渡す",-;
-		mes "[マッズイ]";
-		mes "ありがとうございます。";
-		mes strcharinfo(0) + "さん";
-		mes "には色々とお世話になって";
-		mes "しまいました。";
-		mes "本当にありがとうございました！";
+		menu "Give you a bill",-;
+		mes "[Mazzi]";
+		mes "Thank you.";
+		mes ""+strcharinfo(0) + "Thank you for all your help.";
+		mes "Thank you so much!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled] ^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_2,99;
 		end;
 	case 99:
-		mes "[マッズイ]";
-		mes "また、";
-		mes "依頼する事があるかもしれないけど";
-		mes "そのときはよろしくお願いしますね。";
+		mes "[Mazzi]";
+		mes "I may have to ask you again, but I'd appreciate it then.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled] ^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_OTHER:
-	mes "[マッズイ]";
-	mes "ふんふんふふふん。";
-	mes "おいしいお菓子を作る～";
-	mes "おいしいおいしいおいしい。";
-	mes "おいしいーーーーーーーーー！";
+	mes "[Mazzi]";
+	mes "Mmmmmmmmmm.";
+	mes "Making delicious sweets - yummy yummy yummy.";
+	mes "Yummy yummy yummy yummy!";
 	close;
 }
 //---------------------------------------------------------------
-lighthalzen.gat,51,161,0	script		木#AC_QUE02	111,{
-	mes "‐木に沢山の葉っぱが生えている‐";
+lighthalzen.gat,51,161,0	script	tree#AC_QUE02	111,{
+	mes "-There are many leaves on the tree-";
 	if(AC_QUEST_LV_2==2 && (AC_QUEST_ST_2==2 || AC_QUEST_ST_2==3)) next;
 	else close;
 	switch(AC_QUEST_ST_2){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "この葉っぱで良いのかな？";
-		mes "とりあえず一枚とっていこう。";
+		mes "Is this leaf enough?";
+		mes "Let's take one for now.";
 		next;
-		mes "‐木から一枚葉をとった‐";
+		mes "-I took one leaf from the tree-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "葉っぱを届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers a leaf.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "葉っぱは入手してるし、";
-		mes "早く^FF0000マッズイ^000000さんに届けよう。";
+		mes "We've got the leaves, let's get them to ^FF0000Mazzi^000000 as soon as possible.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "葉っぱを届ける。";
+		mes "Deliver the leaves to ^FF0000Mazzi^000000 of ^FF0000 [Mission] ^0000FFYuno^000000.";
 		close;
 	}
 }
-einbroch.gat,111,261,0	script	ドブの泥#AC_QUE02	111,{
-	mes "‐ドブの中にぎっしりと";
-	mes "泥が詰まっている‐";
+einbroch.gat,111,261,0	script	Mud Pit#AC_QUE02	111,{
+	mes "-The mud is packed tightly in the ditch-";
 	if(AC_QUEST_LV_2==3 && (AC_QUEST_ST_2==2 || AC_QUEST_ST_2==3)) next;
 	else close;
 	switch(AC_QUEST_ST_2){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "これ、本当にお菓子の材料に";
-		mes "なるんだろうか……";
-		mes "それにしても凄い臭いだ……";
+		mes "I wonder if this is really an ingredient for sweets ......";
+		mes "It smells awesome by the way ......";
 		next;
-		mes "‐ドブの泥を容器に詰めた‐";
+		mes "-Mud Pit in a container-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "泥を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers the mud.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "泥は手に入れたし、";
-		mes "早く^FF0000マッズイ^000000さんに届けよう、";
+		mes "We've got the mud, let's get it to Mr. ^FF0000Mazzi^000000 as soon as possible,";
 		next;
-		//読点で本鯖通り
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "葉っぱを届ける。";
+		//reading as per the main mackerel
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000's ^FF0000Mazzi^000000 delivers leaves.";
 		close;
 	}
 }
-einbech.gat,130,247,3	script	ドルドイ#AC_QUE02	848,{
-	mes "[ドルドイ]";
-	mes "悪いが仕事中なので、";
-	mes "話しかけないでもらえるかい？";
+einbech.gat,130,247,3	script	Dordoi#AC_QUE02	848,{
+	mes "[Dordoi]";
+	mes "Sorry, I'm at work, could you not talk to me?";
 	if(AC_QUEST_LV_2==4 && (AC_QUEST_ST_2==2 || AC_QUEST_ST_2==3)) next;
 	else close;
 	switch(AC_QUEST_ST_2){
 	case 2:
-		menu "マッズイさんからの依頼で……",-;
-		mes "[ドルドイ]";
-		mes "ああ、あいつの知り合いかー。";
-		mes "それで、あいつは何だって？";
+		menu "Mazzi requested ......",-;
+		mes "[Dordoi]";
+		mes "Oh, you know that guy...";
+		mes "And that guy is what?";
 		next;
-		menu "経緯を説明する",-;
-		mes "[ドルドイ]";
-		mes "なるほどな、鉱石が必要と……";
-		mes "ホラよ、";
-		mes "一つぐらいならやるさ。";
+		menu "Explain how it happened.",-;
+		mes "[Dordoi]";
+		mes "I see, you need ore ......";
+		mes "Hola, I'll give you one.";
 		next;
-		mes "[ドルドイ]";
-		mes "そういえば、前から気になってたんだけど";
-		mes "あいつは、鉱石をお菓子作りの";
-		mes "何につかっているんだろうか？";
-		mes "あんたは知ってるかい？";
-		mes "聞いてもおしえてくれなくってよ！";
+		mes "[Dordoi]";
+		mes "Speaking of which, I've always wondered what that guy uses the ore for in his baking.";
+		mes "Do you know?";
+		mes "I asked him and he wouldn't tell me!";
 		next;
-		menu "いや……",-;
-		mes "[ドルドイ]";
-		mes "ふむー、やはりか……";
-		mes "聞いても教えてくれないんだよな。";
-		mes "まあ、いいや。";
-		mes "それじゃ、俺は仕事に戻るわ。";
+		menu "No. ......",-;
+		mes "[Dordoi]";
+		mes "Hmmm, still ......";
+		mes "I asked, but they won't tell me.";
+		mes "Well, okay.";
+		mes "Well, I'm going back to work.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "鉱石を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers ore to Mr. Mazzi^000000.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		end;
 	case 3:
-		mes "[ドルドイ]";
-		mes "ん、あんたまだいたのか。";
-		mes "早く届けなくていいのか？";
+		mes "[Dordoi]";
+		mes "Hmm, you're still here.";
+		mes "Don't you have to deliver it quickly?";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "鉱石を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers ore to Mr. Mazzi^000000.";
 		close;
 	}
 }
-izlu2dun.gat,136,50,4	script	ンライバ#AC_QUE02	88,{
+izlu2dun.gat,136,50,4	script	Noriba#AC_QUE02	88,{
 	if(AC_QUEST_LV_2!=5 || AC_QUEST_ST_2<2 || AC_QUEST_ST_2>5) goto L_OTHER;
 	switch(AC_QUEST_ST_2){
 	case 2:
-		mes "[ンライバ]";
-		mes "うーん、困った困った。";
+		mes "[Noriba]";
+		mes "Hmm, I'm in trouble, trouble.";
 		next;
-		menu "海草ください！",-;
-		mes "[ンライバ]";
-		mes "ん？";
-		mes "すまないが";
-		mes "それどころじゃないんだ……";
-		mes "財布を落としてしまってね。";
+		menu "Seaweed please!" ,-;
+		mes "[Noriba]";
+		mes "hmm?";
+		mes "Sorry, but that's not what I'm here for. ......";
+		mes "I dropped my wallet.";
 		next;
-		menu "経緯を説明する",-;
-		mes "[ンライバ]";
-		mes "そういうことなのか……";
-		mes "よし！";
-		mes "じゃあ、俺が海草を取っている間に";
-		mes "君は僕の財布を捜してくれないか？";
-		mes "財布が見つかる頃には";
-		mes "海草が取れていると思うよ。";
+		menu "I'll explain how it happened.",-;
+		mes "[Noriba]";
+		mes "So that's what happened. ......";
+		mes "Okay!";
+		mes "Well, why don't you go look for my wallet while I get the seaweed?";
+		mes "I think by the time you find your wallet, the seaweed will be removed.";
 		next;
-		menu "わかりました！",-;
-		mes "[ンライバ]";
-		mes "サンキュー！";
-		mes "えっと、多分北の方で落とした";
-		mes "と思うんだよね……";
-		mes "よろしく頼んだよ。";
+		menu "Okay!" ,-;
+		mes "[Noriba]";
+		mes "Thank you!";
+		mes "Well, I think I probably dropped it up north. ......";
+		mes "I'm asking you to take care of it for me.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		viewpoint 1,58,165,32,0xFF9900;
-		//ID別だったので適当に
+		///It was a separate ID, so I'll just go ahead and make it appropriate.
 		end;
 	case 3:
-		mes "[ンライバ]";
-		mes "財布頼むぜ！";
-		mes "俺は海草とってるからさ。";
+		mes "[Noriba]";
+		mes "Wallet, please!";
+		mes "I'm picking seaweed.";
 		close2;
 		viewpoint 1,58,165,32,0xFF9900;
 		end;
 	case 4:
-		mes "[ンライバ]";
-		mes "おお、それは！";
-		mes "俺の財布じゃないか！";
-		mes "見つけてくれたんだなー！";
-		mes "サンキュー！";
+		mes "[Noriba]";
+		mes "Oh, that's it!";
+		mes "Isn't that my wallet!";
+		mes "I'm so glad you found it!";
+		mes "Thank you!";
 		next;
-		mes "[ンライバ]";
-		mes "おっと、これが約束の";
-		mes "海草だ！";
-		mes "取れたばかりだから新鮮だぜ！";
-		mes "すぐに届けてくれ！";
+		mes "[Noriba]";
+		mes "Oops, here's the promised seaweed!";
+		mes "It's fresh off the rack, so it's fresh!";
+		mes "Get it to me right away!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "海草を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers seaweed.";
 		close2;
 		set AC_QUEST_ST_2,5;
 		end;
 	case 5:
-		mes "[ンライバ]";
-		mes "財布を見つけてくれて";
-		mes "ありがとうな。";
+		mes "[Noriba]";
+		mes "Thanks for finding my wallet.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "海草を届ける。";
+		mes "Deliver seaweed to ^FF0000Mazzi^000000 of ^FF0000 [Mission] ^0000FFYuno^000000.";
 		close;
 	}
 L_OTHER:
 	mes "[" + strcharinfo(0) + "]";
-	mes "忙しそうだ。";
-	mes "話しかけるのは止めよう。";
+	mes "Looks busy.";
+	mes "Let's not talk to him.";
 	close;
 }
-izlu2dun.gat,58,165,0	script	落し物#AC_QUE02	111,{
-	mes "‐財布らしきものが落ちている‐";
+izlu2dun.gat,58,165,0	script	Lost Property#AC_QUE02	111,{
+	mes "-something that looks like a wallet is down-";
 	if(AC_QUEST_LV_2==5 && (AC_QUEST_ST_2==3 || AC_QUEST_ST_2==4)) next;
 	else close;
 	switch(AC_QUEST_ST_2){
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "^FF0000ンライバ^000000さんが探していたのは";
-		mes "これかな？";
-		mes "とりあえず届けてみよう。";
+		mes "Is this what ^FF0000Noriba^000000 was looking for?";
+		mes "Let's deliver it anyway.";
 		next;
 	case 4:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF南東^000000にいる";
-		mes "^FF0000ンライバ^000000さんに財布を届ける。";
+		mes "Deliver the wallet to ^FF0000Noriba^000000 who is in ^FF0000 [Mission] ^0000FF Southeast^000000.";
 		close2;
 		set AC_QUEST_ST_2,4;
 		viewpoint 1,136,50,12,0xFF9900;
 		end;
 	}
 }
-alb2trea.gat,105,95,4	script	アイリン#AC_QUE02	96,{
+alb2trea.gat,105,95,4	script	Airin#AC_QUE02	96,{
 	if(AC_QUEST_LV_2!=6 || AC_QUEST_ST_2<2 || AC_QUEST_ST_2>4) goto L_OTHER;
 	switch(AC_QUEST_ST_2){
 	case 2:
-		mes "[アイリン]";
-		mes "こんにちはー。";
-		mes "何かご用かしら？";
+		mes "[Airin]";
+		mes "Hello!";
+		mes "Can I help you?";
 		next;
-		menu "事情を説明する",-;
-		mes "[アイリン]";
-		mes "^FF0000マッズイ^000000さんからの依頼なんですね。";
-		mes "差し上げても良いですよ。";
-		mes "でも、一つ条件があるわ！";
+		menu "Explain the situation",-;
+		mes "[Airin]";
+		mes "I see that ^FF0000Mazzi^000000 asked you to do this.";
+		mes "You can give it to him.";
+		mes "But on one condition!";
+		NEXT;
+		menu "What are the conditions?" ,-;
+		mes "[Airin]";
+		mes "My throat is so dry.";
+		mes "So I need you to buy one ^FF0000 red potion^000000 from ^0000FF the tool merchant^000000 on this island and bring it to me.";
 		next;
-		menu "条件とは？",-;
-		mes "[アイリン]";
-		mes "喉がからからなのよね。";
-		mes "だから、^0000FFこの島にいる道具商人^000000から";
-		mes "^FF0000赤ポーション^000000を1つ買って";
-		mes "持って来てほしいの。";
+		menu "Okay!" ,-;
+		mes "[Airin]";
+		mes "You're so sensible!";
+		mes "I'll be waiting here as soon as I can.";
 		next;
-		menu "わかりました！",-;
-		mes "[アイリン]";
-		mes "物分りがいいわね！";
-		mes "私はここで待っているから";
-		mes "なるべく早くねー、";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "道具商人から^FF0000赤ポーション^000000を";
-		mes "1つ買ってきてアイリンに渡す。";
+		mes "^FF0000 [Mission] ^000000 buy one ^FF0000 red potion ^000000 from the tool merchant and give it to Airin.";
 		close2;
 		set AC_QUEST_ST_2,3;
 		viewpoint 1,87,65,32,0xFF9900;
 		end;
 	case 3:
-		if(countitem(501)==0){//未調査
-			mes "[アイリン]";
-			mes "喉がからからなのよね。";
-			mes "私はここで待っているから";
-			mes "なるべく早くねー、";
+		if(countitem(501)==0){///not examined
+			mes "[Airin]";
+			mes "My throat is so dry.";
+			mes "I'll be here waiting for you as soon as I can -";
 			next;
-			mes "^FF0000【ミッション】^000000";
-			mes "道具商人から^FF0000赤ポーション^000000を";
-			mes "1つ買ってきてアイリンに渡す。";
+			mes "^FF0000 [Mission] ^000000 buy one ^FF0000 red potion ^000000 from the tool merchant and give it to Airin.";
 			close2;
 			viewpoint 1,87,65,32,0xFF9900;
 			end;
 		}
 		set AC_QUEST_ST_2,4;
 		delitem 501,1;
-		mes "[アイリン]";
-		mes "ありがとう。";
-		mes "持って来てくれたみたいね！";
-		mes "早速いただくわ！";
+		mes "[Airin]";
+		mes "Thank you.";
+		mes "Looks like you brought it!";
+		mes "I'll take it right away!";
 		next;
-		mes "‐ゴクッゴクッ";
-		mes "　アイリンが赤ポーションを";
-		mes "　飲み干した‐";
+		mes "-gulp gulp Airin gulped down the red potion-";
 		next;
-		mes "これ、約束の品ね！";
-		mes "貴重なんだから、気をつけて";
-		mes "持って帰ってよね。";
+		mes "This is what you promised!";
+		mes "It's precious, so be careful bringing it back.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "海洋深層水を届ける。";
+		mes "^FF0000 [Mission] ^000000^0000FFYuno^000000's ^FF0000Mazzi^000000 delivers deep sea water.";
 		close;
 	case 4:
-		mes "[アイリン]";
-		mes "早く届けてあげてね。";
+		mes "[Airin]";
+		mes "Deliver it to him as soon as possible.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFYuno^000000の^FF0000マッズイ^000000さんに";
-		mes "海洋深層水を届ける。";
+		mes "Deliver deep ocean water to ^FF0000Mazzi^000000 of ^FF0000 [Mission] ^0000FFYuno^000000.";
 		close;
 	}
 L_OTHER:
-	mes "[アイリン]";
-	mes "……";
+	mes "[Airin]";
+	mes "......";
 	close;
 }

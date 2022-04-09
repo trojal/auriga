@@ -1,23 +1,23 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  Luneの依頼
+// Ragnarok Online -- Adventurer Academy Lune's Request
 //
-//                                                 by Pneuma
-//実験のお手伝い / ダンジョン救出  ---------------------------
+// by Pneuma
+// Help with experiments / dungeon rescue ---------------------------
 //
-//	AC_QUEST_LV_3
-//	0 実験のお手伝い１
-//	1 ダンジョン救出１
-//	2 実験のお手伝い２
-//	3 ダンジョン救出２
-//	4 実験のお手伝い３
-//	5 ダンジョン救出３
-//	6 実験のお手伝い４
-//	7 ダンジョン救出４
-//	8 実験のお手伝い５
+// AC_QUEST_LV_3
+// 0 Experimental help 1
+// 1 Dungeon Rescue 1
+// 2 Experimental help 2
+// 3 Dungeon Rescue 2
+// 4 Experimental help 3
+// 5 Dungeon Rescue 3
+// 6 Experimental help 4
+// 7 Dungeon Rescue 4
+// 8 Experimental help 5
 
-hu_in01.gat,309,27,4	script	タラシー博士	923,{
+hu_in01.gat,309,27,4	script	Dr. Tracy	923,{
 	set '@novice, callfunc("AC_GetNovice");
 	if(!AC_QUEST_ST_3)goto L_OTHER;
 	switch(AC_QUEST_LV_3){
@@ -39,272 +39,226 @@ hu_in01.gat,309,27,4	script	タラシー博士	923,{
 L_QUEST01:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[タラシー博士]";
-		mes "今度はうまくいきそうじゃ。";
-		mes "これをまぜて……";
+		mes "[Dr. Tracy]";
+		mes "It's going to work this time.";
+		mes "Mix this ......";
 		next;
-		menu "こんにちは",-;
-		mes "[タラシー博士]";
-		mes "研究が急がしいので後に";
-		mes "してくれいー。";
+		menu "Hello",-;
+		mes "[Dr. Tracy]";
+		mes "I'm in a research rush, so you'll have to wait until later.";
 		next;
-		menu "依頼を受けてきたのですが。",-;
+		menu "I have received a request." ,-;
 		emotion 0;
-		mes "[タラシー博士]";
-		mes "なんじゃと！";
-		mes "おぬしが引き受けてくれるというのか！";
-		mes "いやー、感心な若者じゃな！";
+		mes "[Dr. Tracy]";
+		mes "What the hell!";
+		mes "You mean you'll take care of it!";
+		mes "Well, what an impressive young man!";
 		next;
-		mes "[タラシー博士]";
-		mes "おぬしには研究に利用する材料を";
-		mes "集めてきてもらいたい！";
-		mes "詳しくは、超美人な助手のライラから";
-		mes "聞くのじゃ！";
+		mes "[Dr. Tracy]";
+		mes "I need you to gather materials for my research!";
+		mes "For more information, ask my very pretty assistant Laila!";
 		next;
-		menu "わかりました",-;
-		mes "[タラシー博士]";
-		mes "おぬし！";
-		mes "ちょっと待つのじゃ！";
+		menu "Okay",-;
+		mes "[Dr. Tracy]";
+		mes "You!";
+		mes "Wait a minute!";
 		next;
 		if(Sex){
-			menu "どうしましたか？",-;
-			emotion 36;
-			mes "[タラシー博士]";
-			mes "いくら、助手のライラが";
-			mes "美人だからって";
-			mes "ハレンチなことをしたら";
-			mes "ゆるさんぞい！";
-			mes "わかったな？";
+			menu "What's wrong?" ,-;
+			EMOTION 36;
+			mes "[Dr. Tracy]";
+			mes "I don't care how beautiful your assistant Laila is, if you do anything indecent to her, I'm not going to let you get away with it!";
+			mes "You understand?";
 			next;
 		}
 		else {
-			menu "どうかしましたか？",-;
-			mes "[タラシー博士]";
-			mes "おぬしも中々の美人だが";
-			mes "ライラには敵わんな。";
+			menu "What's wrong?" ,-;
+			mes "[Dr. Tracy]";
+			mes "You're a pretty girl, but you're no match for Laila.";
 			next;
 		}
-		menu "は、はぁ……",-;
-		mes "[タラシー博士]";
-		mes "それじゃ";
-		mes "よろしく頼んだぞい！";
+		menu "ha, ha ......",-;
+		mes "[Dr. Tracy]";
+		mes "Well, good luck with that!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000 [Mission] ^000000^0000FF Ask assistant Laila^000000 the details of your request.";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[タラシー博士]";
-		mes "ワシは急いでおるからな？";
-		mes "早く助手のライラから";
-		mes "詳細を聞くのじゃ！";
+		mes "[Dr. Tracy]";
+		mes "I'm in a hurry, okay?";
+		mes "Quickly get the details from my assistant Laila!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000 [Mission] ^000000^0000FF Ask assistant Laila^000000 the details of your request.";
 		close;
 	case 3:
-		mes "[タラシー博士]";
-		mes "若者よ！";
-		mes "よろしく頼んだぞ！";
+		mes "[Dr. Tracy]";
+		mes "Young man!";
+		mes "Best regards!";
 		close;
 	case 4:
-		emotion 0;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "それはまさしく、^FF0000ポムポム草^000000!!";
-		mes "さあ、早くこちらへ。";
+		EMOTION 0;
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "That's exactly what ^FF0000Pom Pom Grass^000000!!!! Come on, come this way quickly.";
 		next;
-		menu "ポムポム草を渡す",-;
-		mes "[タラシー博士]";
-		mes "早速、実験じゃ！";
-		mes "これで上手くいくと良いのじゃが……";
+		menu "Pass the Pom Pom Grass",-;
+		mes "[Dr. Tracy]";
+		mes "Quickly, experiment!";
+		mes "Hope this works ......";
 		next;
-		misceffect 32,"#AC_BOM";
-		mes "‐博士が液体に^0000FFポムポム草^000000を";
-		mes "　入れた瞬間、";
-		mes "　液体が泡立ち始めた";
-		mes "　ボコボコボコ‐";
+		misceffect 32, "#AC_BOM";
+		mes "-The moment the doctor put ^0000FFPom Pom Grass^000000 into the liquid, the liquid started to bubble bob bob bob -";
 		next;
-		misceffect 106,"#AC_BOM";
+		misceffect 106, "#AC_BOM";
 		percentheal -90,0;
-		mes "[タラシー博士]";
-		mes "い、イカン！";
-		mes "爆発するぞーーー!!";
+		mes "[Dr. Tracy]";
+		mes "I can't!";
+		mes "It's going to explode!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		next;
-		mes "[タラシー博士]";
-		mes "……";
-		mes "君、生きておるか……？";
+		mes "[Dr. Tracy]";
+		mes "......";
+		mes "Are you alive ......?";
 		next;
-		menu "な、何とか……",-;
-		mes "[タラシー博士]";
-		mes "ふー……";
-		mes "やってしまったわい……";
-		mes "^FF0000ポムポム草^000000の成分なら";
-		mes "いけると思ったんじゃがな。";
-		mes "失敗じゃわい。";
+		menu "Hey, something ......",-;
+		mes "[Dr. Tracy]";
+		mes "Whew ......";
+		mes "I did it. ......";
+		mes "I thought the ^FF0000Pom Pom Grass^000000 component would work.";
+		mes "Failed.";
 		next;
-		mes "[タラシー博士]";
-		mes "とりあえず、依頼内容はこれで";
-		mes "終わりじゃ……";
+		mes "[Dr. Tracy]";
+		mes "That's the end of the request for now. ......";
 		if('@novice){
-			mes "そういえば、おぬしは冒険者じゃったな";
-			mes "これをやろう。";
-			mes "昔ワシが使っていたやつなんだが";
-			mes "役に立つかもしれん。";
+			mes "Oh, by the way, you're an adventurer, so let's do this.";
+			mes "I used to use one of these in the past, it might be useful.";
 			next;
-			// 2220 ハット 1個
+			// 2220 hats 1
 			if(!checkweight(2220,1)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem 2220,1;
 		}
 		else next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[タラシー博士]";
-		mes "とりあえず、依頼内容はこれで";
-		mes "終わりじゃ……";
+		mes "[Dr. Tracy]";
+		mes "That's the end of the request for now. ......";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished]^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	}
 L_QUEST03:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[タラシー博士]";
-		mes "こうするとこうなって……";
-		mes "いやはや、難しい……";
+		mes "[Dr. Tracy]";
+		mes "This is what happens when you do this: ......";
+		mes "Oh no, it's difficult ......";
 		next;
-		menu "こんにちは",-;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "おぬしは、この前手伝ってくれた！";
-		mes "……";
-		mes "なんじゃったけ？";
+		menu "Hello",-;
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "You helped me the other day!";
+		mes "......";
+		mes "What was that?";
 		next;
-		menu "名乗る",-;
+		menu "Identify yourself",-;
 		emotion 0;
-		mes "[タラシー博士]";
-		mes "！";
-		mes "そうじゃった";
-		mes "そうじゃった！";
-		mes "今回もおぬしが研究を";
-		mes "手伝ってくれるということじゃな？";
+		mes "[Dr. Tracy]";
+		mes "!";
+		mes "Yes, yes, yes!";
+		mes "I take it you will be assisting me with my research again?";
 		next;
-		menu "ええ",-;
-		mes "[タラシー博士]";
-		mes "すばらしい！";
-		mes "最近の若者にしては珍しい！";
-		mes "早速依頼内容なんじゃが";
-		mes "例によって^FF0000ライラ^000000から";
-		mes "聞いてくれたまえ！";
+		menu "Yes",-;
+		mes "[Dr. Tracy]";
+		mes "Excellent!";
+		mes "Unusual for a young man these days!";
+		mes "As for the details of your request, as usual, ^FF0000Laila^000000, you'll hear from me!";
 		next;
-		menu "わかりました",-;
-		mes "[タラシー博士]";
-		mes "それじゃ";
-		mes "よろしく頼んだぞい！";
+		menu "Okay",-;
+		mes "[Dr. Tracy]";
+		mes "Then, please take care of it!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "助手ライラさんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000 [Mission] ^000000 Ask assistant Laila for details of the request.";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[タラシー博士]";
-		mes strcharinfo(0)+"！";
-		mes "すまないがワシは急いでおるのじゃ。";
-		mes "ライラに内容をきいてくれい。";
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0)+"!";
+		mes "I'm sorry, but I'm in a hurry.";
+		mes "Ask Laila what's going on.";
 		next;
-		mes "^FF0000【ミッション】";
-		mes "助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000 [Mission] Ask my assistant Laila^000000 the details of your request.";
 		close;
 	case 3:
-		mes "‐研究に集中しているのか";
-		mes "　こちらに気づかないようだ‐";
+		mes "-She seems to be concentrating on her research and doesn't seem to notice us-";
 		close;
 	case 4:
-		mes "[タラシー博士]";
-		mes strcharinfo(0);
-		mes "じゃないか。";
-		mes "ライラは本当に美人じゃ。";
-		mes "おぬしもそうおもうじゃろ？";
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0);
+		mes "I guess not.";
+		mes "Laila is really beautiful.";
+		mes "You think so too, don't you?";
 		next;
-		menu "そうですね",-;
+		menu "Yes, it is.",-;
 		emotion 33;
-		mes "[タラシー博士]";
-		mes "そうじゃろ、そうじゃろ？";
-		mes "私の自慢の助手なんじゃよ！";
-		mes "それにしても、おぬしに何か";
-		mes "頼んだ気がしたんじゃが……";
-		mes "なんじゃったかな？";
+		mes "[Dr. Tracy]";
+		mes "Isn't that right, isn't that right?";
+		mes "I'm so proud of you, you're my assistant!";
+		mes "And by the way, I thought I asked you to do something for me: ......";
+		mes "What was it?";
 		next;
-		menu "ライライ草を……",-;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "そうじゃった!!!";
-		mes "この液体に^FF0000ライライ草^000000を入れるのじゃ！";
-		mes "さあ、おぬしが入れてよいぞ！";
+		menu "Laila rushes at ......",-;
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "That's right!!! Put ^FF0000Laila rushes^000000 in this liquid!";
+		mes "Now you may put it in!";
 		next;
-		menu "え!? 私がですか……",-;
-		misceffect 99,"#AC_BOM";
+		menu "What? I am? ......",-;
+		misceffect 99, "#AC_BOM";
 		sc_start3 SC_Blind,1,0,0,0,15000,0x8;
-		mes "‐ライライ草を液体に投げ入れると";
-		mes "　液体から凄まじい光が発せされた‐";
+		mes "-Laila rushes were thrown into the liquid and a tremendous light was emitted from the liquid-";
 		next;
-		mes "[タラシー博士]";
-		mes "……";
-		mes "…………";
-		mes "まあ、こんなこともある！";
-		mes "やはりポムポム草のほうが";
-		mes "よかったのかの……";
+		mes "[Dr. Tracy]";
+		mes "......";
+		mes "............";
+		mes "Well, this happens!";
+		mes "I still wonder if Pom Pom Grass was better ......";
 		next;
-		mes "[タラシー博士]";
-		mes "仕方ない、";
-		mes "また他の材料を探すとしよう。";
-		mes "何かあったらまた頼むわい。";
+		mes "[Dr. Tracy]";
+		mes "It's no use, we'll have to look for other materials again.";
+		mes "I'll ask again if you need anything else.";
 		if('@novice){
-			mes "あと、これをうけとれい。";
+			mes "Also, take this.";
 			next;
-			// 1247 キンドリングダガー 1個
+			// 1247 Kindling dagger, 1 piece
 			if(!checkweight(1247,1)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem 1247,1;
 		}
 		else next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[タラシー博士]";
-		mes "仕方ない、";
-		mes "また他の材料を探すとしよう。";
-		mes "何かあったらまた頼むわい。";
+		mes "[Dr. Tracy]";
+		mes "It's no use, let's look for other material again.";
+		mes "I'll ask again if you need anything else.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -312,152 +266,127 @@ L_QUEST03:
 L_QUEST05:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		emotion 7;
-		mes "[タラシー博士]";
-		mes "ライラへのプレゼントは";
-		mes "どうしたらよいのじゃろうか。";
-		mes "女心は本当にわからんからのぉ……";
+		EMOTION 7;
+		mes "[Dr. Tracy]";
+		mes "What should we do about the pre-Zent to Laila?";
+		mes "I really don't understand the female mind. ......";
 		next;
-		menu "なにがあったんですか？",-;
-		emotion 0;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes strcharinfo(0);
-		mes "じゃないか！";
-		mes "おぬしは気にしなくても良いのじゃ。";
-		mes "それより、今回も研究の手伝いを";
-		mes "してくれるんじゃろ？";
+		menu "What happened?" ,-;
+		EMOTION 0;
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes ""+strcharinfo(0);
+		mes "Isn't it!";
+		mes "You don't have to worry about it.";
+		mes "Besides, you're going to help me with my research again, aren't you?";
 		next;
-		menu "ええ",-;
-		mes "[タラシー博士]";
-		mes "この前の実験で";
-		mes "わかったことが一つある！";
-		mes "草は所詮草じゃった。";
-		mes "時代はキノコなんじゃよ。";
-		mes "キノコを混ぜれば研究は成功する";
-		mes "ワシはこう考えておる！";
+		menu "Yes",-;
+		mes "[Dr. Tracy]";
+		mes "One thing I learned from the last experiment!";
+		mes "Grass is just grass.";
+		mes "The time is now for mushrooms.";
+		mes "Mix mushrooms with grass and your research will succeed, I think!";
 		next;
-		menu "時代とか関係ないような……",-;
-		mes "[タラシー博士]";
-		mes "時代なんじゃよ時代。";
-		mes "これは重要じゃよ？";
-		mes "流行に乗り遅れてはイカン！";
+		menu "It's like it doesn't matter what time period you're in. ......",-;
+		mes "[Dr. Tracy]";
+		mes "It's the times, the times.";
+		mes "This is important, right?";
+		mes "You can't afford to be out of fashion!";
 		next;
-		menu "は、はぁ",-;
-		mes "[タラシー博士]";
-		mes "それじゃ";
-		mes "詳細をライラに聞いてくれ！";
+		menu "ha, ha",-;
+		mes "[Dr. Tracy]";
+		mes "Then ask Laila for the details!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000 [Mission] ^000000^0000FF Ask assistant Laila^000000 the details of your request.";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[タラシー博士]";
-		mes strcharinfo(0)+"！";
-		mes "すまないがワシは急いでおるのじゃ。";
-		mes "ライラに内容をきいてくれい。";
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0)+"!";
+		mes "I'm sorry, but I'm in a hurry.";
+		mes "Ask Laila what's going on.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "^FF0000[Mission] ^000000^0000FF Ask assistant Laila^000000 the details of your request.";
 		close;
 	case 3:
-		mes "‐研究に集中しているのか";
-		mes "　こちらに気づかないようだ‐";
+		mes "-She seems to be concentrating on her research and doesn't seem to notice us-";
 		close;
 	case 4:
 		emotion 7;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "まっていたぞ！";
-		mes "キノコならば成功するはずじゃ！";
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "I've been waiting for you!";
+		mes "If it's mushrooms, it should work!";
 		next;
-		mes "[タラシー博士]";
-		mes "もう少しで、薬を完成させられる！";
-		mes "そうすれば、ワシも……";
-		mes "ムフフフ";
+		mes "[Dr. Tracy]";
+		mes "I'm almost done, I can finish the potion!";
+		mes "And so will the eagle ......";
+		mes "mwahhhh";
 		next;
-		menu "どんな薬を作っているんですか？",-;
-		mes "[タラシー博士]";
-		mes "それは、企業秘密というやつじゃな！";
-		mes "教えるわけにはいかん！";
-		mes "それより早速、キノコを";
-		mes "この液体に入れてみるぞい！";
+		menu "What kind of medicine are you making?" ,-;
+		mes "[Dr. Tracy]";
+		mes "That's what you call a trade secret!";
+		mes "I can't tell you!";
+		mes "But first, let's try putting the mushrooms in this liquid!";
 		next;
-		misceffect 109,"#AC_BOM";
-		mes "‐黒い変なキノコを液体に";
-		mes "　投げ入れた。";
-		mes "　しかし何もおこらなかった‐";
+		misceffect 109, "#AC_BOM";
+		mes "-Black Funny Mushroom thrown into liquid.";
+		mes " But nothing happened -";
 		next;
-		mes "[タラシー博士]";
-		mes "……";
-		mes "…………";
-		mes "んー、どうやら失敗のようじゃ……";
-		mes "しかし、成分が調和して";
-		mes "違う効果の薬になっていることも";
-		mes "十分に考えられる。";
+		mes "[Dr. Tracy]";
+		mes "......";
+		mes "............";
+		mes "Hmm, looks like a failure. ......";
+		mes "However, it is quite possible that the ingredients have harmonized into a drug with a different effect.";
 		next;
-		mes "[タラシー博士]";
-		mes "というわけでじゃ！";
-		mes "おぬし、ためしにのんでみい！";
+		mes "[Dr. Tracy]";
+		mes "And so it is!";
+		mes "You, try it for yourself!";
 		next;
-		menu "遠慮しておきます……",-;
-		mes "[タラシー博士]";
-		mes "つべこべ言わんで";
-		mes "早く飲まんかい！";
-		next;
+		menu "No thanks. ......",-;
+		mes "[Dr. Tracy]";
+		mes "Stop talking and drink it!";
+		NEXT;
 		misceffect 7,"";
 		percentheal 100,100;
-		mes "[タラシー博士]";
-		mes "どうじゃ？";
-		mes "何か起こったか？";
+		mes "[Dr. Tracy]";
+		mes "How's it going?";
+		mes "What happened?";
 		next;
-		menu "元気になったきがします",-;
-		mes "[タラシー博士]";
-		mes "そうじゃろ？";
-		mes "ワシも薄々気づいとったんじゃよ。";
-		mes "しかし、肝心の研究はまたも";
-		mes "失敗とは……";
-		mes "キノコの種類がわるかったんかも";
-		mes "しれないが……";
+		menu "I feel better.",-;
+		mes "[Dr. Tracy]";
+		mes "Aren't you?";
+		mes "I've been aware of it for some time.";
+		mes "But the key research has failed again. ......";
+		mes "Maybe it was the wrong kind of mushrooms. ......";
 		next;
-		mes "[タラシー博士]";
-		mes "とりあえずは、";
-		mes "これで依頼はおわりじゃ。";
-		mes "また何かあったらよろしく";
-		mes "たのむぞい。";
+		mes "[Dr. Tracy]";
+		mes "For now, this is the end of the request.";
+		mes "Please let me know if you need anything else.";
 		if('@novice){
-			mes "あと、これをうけとれい。";
+			mes "Also, take this.";
 			next;
-			// イグドラシルの葉 3個
+			// 3 leaves of Yggdrasil
 			if(!checkweight(610,3)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem 610,3;
 		}
 		else next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[タラシー博士]";
-		mes "とりあえずは、";
-		mes "これで依頼はおわりじゃ。";
-		mes "また何かあったらよろしく";
-		mes "たのむぞい。";
+		mes "[Dr. Tracy]";
+		mes "This is the end of the request for now.";
+		mes "Please let me know if you need anything else.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000[request completed]^000000You have completed your request!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -465,161 +394,132 @@ L_QUEST05:
 L_QUEST07:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		emotion 0;
-		mes "[タラシー博士]";
-		mes strcharinfo(0)+"！";
-		mes "まっておったぞ！";
-		mes "そいうじゃ、ワシの話を聞いてくれ！";
-		mes "先日ワシの誕生日だったんじゃが、";
-		mes "なんと、ライラがプレゼントを";
-		mes "くれたんじゃよ！";
+		Emotion 0;
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0)+"!";
+		mes "We've been waiting for you!";
+		mes "Well, then, listen to me!";
+		mes "It was my birthday the other day, and lo and behold, Laila gave me a pre-Zento!";
 		next;
-		menu "良かったですね",-;
-		mes "[タラシー博士]";
-		mes "じゃろ？";
-		mes "きっとライラはワシのことが";
-		mes "好きなんじゃよ。";
-		mes "だからプレゼントをしてくれたに";
-		mes "違いない。";
-		mes "そう思わんか？";
-		next;
-		menu "どうでしょうか？",-;
-		mes "[タラシー博士]";
-		mes "いや、そうに決まっておる！";
-		mes "しかしワシ、恥ずかしながら";
-		mes "女性とお付き合いを";
-		mes "したことがないからな。";
-		mes "そのために研究を完成させる";
-		mes "必要があるんじゃ！";
-		next;
-		mes "[タラシー博士]";
-		mes "ということでじゃ！";
-		mes "今回も、研究材料の収集を";
-		mes "依頼したいのじゃ！";
-		mes "詳しくはライラから聞くのじゃよ？";
-		next;
-		menu "わかりました",-;
-		mes "[タラシー博士]";
-		mes "それじゃ";
-		mes "よろしく頼んだぞい！";
-		mes "そうそう、さっき話したことを";
-		mes "ライラに聞いたりしては";
-		mes "いかんぞ？";
-		mes "恥ずかしがらせてしまうからな。";
+		menu "Good for you",-;
+		mes "[Dr. Tracy]";
+		mes "Right?";
+		mes "I bet Laila likes me.";
+		mes "That must be why she did the pre-Zento.";
+		mes "Don't you think so?";
+		NEXT;
+		menu "What do you think?" ,-;
+		mes "[Dr. Tracy]";
+		mes "No, of course it is!";
+		mes "But I am ashamed to say that I have never been in a relationship with a Woman.";
+		mes "That's why I need to complete my research!";
+		NEXT;
+		mes "[Dr. Tracy]";
+		mes "So it is!";
+		mes "Again, I would like to request the collection of research materials!";
+		mes "Ask Laila for more details, will you?";
+		NEXT;
+		menu "Okay",-;
+		mes "[Dr. Tracy]";
+		mes "Well then, take care of it!";
+		mes "Oh yeah, and don't ask Laila about what we just talked about, okay?";
+		mes "You're going to embarrass me.";
 		next;
 	L_REP4_1:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FF助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "Ask ^FF0000 [Mission] ^000000^0000FF assistant Laila^000000 the details of your request.";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[タラシー博士]";
-		mes strcharinfo(0)+"！";
-		mes "すまないがワシは急いでおるのじゃ。";
-		mes "ライラに内容をきいてくれい。";
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0)+"!";
+		mes "I'm sorry, but I'm in a hurry.";
+		mes "Ask Laila what's going on.";
 		next;
 		goto L_REP4_1;
 	case 3:
-		mes "‐研究に集中しているのか";
-		mes "　こちらに気づかないようだ‐";
+		mes "-She seems to be concentrating on her research and doesn't seem to notice us...";
 		close;
 	case 4:
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "ついについに完成じゃな。";
-		mes "これで完成するに違いない。";
-		mes "ささ、それをこっちによこすのじゃ。";
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "At last, at long last, it's done.";
+		mes "It must be finished now.";
+		mes "Now, give it to me.";
 		next;
-		menu "あやしいキノコを渡す",-;
-		mes "[タラシー博士]";
-		mes "さあ、世紀の一瞬じゃ！";
+		menu "Pass the Suspicious Mushroom",-;
+		mes "[Dr. Tracy]";
+		mes "Now, the moment of the century!";
 		next;
-		misceffect 70,"#AC_BOM";
-		mes "‐博士が液体にあやしいキノコを";
-		mes "　放り込んだ。";
-		mes "　すると液体があやしい色になり";
-		mes "　泡立ち始めた‐";
+		misceffect 70, "#AC_BOM";
+		mes "-Dr. Drew threw Suspicious Mushroom into the liquid.";
+		mes " Then the liquid turned a funny color and started to bubble -";
 		next;
-		misceffect 106,"#AC_BOM";
-		mes "[タラシー博士]";
-		mes "爆発しおった!!!!!!!";
-		mes "火事じゃーーーーー！";
-		mes "早く消すのじゃ!!!!!";
-		mes "アチチチチ";
+		misceffect 106, "#AC_BOM";
+		mes "[Dr. Tracy]";
+		mes "It exploded. !!!!!!! Fire!!!!";
+		mes "Put it out quickly. !!!!! Atchiti";
 		next;
-		menu "どうやって……",-;
-		mes "[ライラ]";
-		mes "あら、大変！";
-		mes "すぐに消さなくてはだめですね。";
-		mes "2人ともちょっと下がっていて";
-		mes "くださいね。";
+		menu "How do you ......",-;
+		mes "[Laila]";
+		mes "Oh, my God!";
+		mes "I'll have to turn it off right away.";
+		mes "I'm going to have to ask you both to step back for a minute.";
 		next;
-		misceffect 89,"#AC_BOM";
+		misceffect 89, "#AC_BOM";
 		sc_start2 SC_Freeze,5000,1,10000;
 		percentheal -99,0;
-		mes "[ライラ]";
-		mes "ストームガスト！";
+		mes "[Laila]";
+		mes "Stormgast!";
 		next;
-		mes "[ライラ]";
-		mes "……";
-		mes "あら……ごめんなさい。";
-		mes "少しやりすぎてしまったわ……";
-		mes "博士、";
-		mes strcharinfo(0) + "さん";
-		mes "平気ですか？";
+		mes "[Laila]";
+		mes "......";
+		mes "Oh my ...... sorry.";
+		mes "I went a little overboard. ......";
+		mes "Doctor,";
+		mes strcharinfo(0) + "";
+		mes "Are you okay?";
 		next;
-		menu "な、なんとか……",-;
-		mes "[タラシー博士]";
-		mes "平気じゃ平気じゃ！";
-		mes "ライラの愛を感じたぞい！";
-		mes strcharinfo(0) + "も";
-		mes "心配ない。";
-		mes "なんら問題ないぞい！";
-		mes "若いんじゃからな！";
+		menu "na, something ......",-;
+		mes "[Dr. Tracy]";
+		mes "I'm fine, I'm fine!";
+		mes "I felt Laila's love!";
+		mes ""+strcharinfo(0) + "also don't worry.";
+		mes "No problem!";
+		mes "You're young!";
 		next;
-		mes "[タラシー博士]";
-		mes "むむ、それにしても";
-		mes "あのキノコでもダメというと";
-		mes "他に何を試せばよいのか……";
-		mes "やはり草のほうが良いのじゃろうが？";
-		mes "ふむ……";
+		mes "[Dr. Tracy]";
+		mes "Hmmm, and if even those mushrooms don't work, what else should I try ......";
+		mes "Grass would be better, though, wouldn't it?";
+		mes "Hmmm ......";
 		next;
-		menu "あの……",-;
+		menu "that ......",-;
 		if('@novice){
-			mes "[タラシー博士]";
-			mes "すまん、すまん。";
-			mes "忘れておったわい。";
-			mes "今回の報酬はこれじゃ";
-			mes "うけとれい。";
+			mes "[Dr. Tracy]";
+			mes "Sorry, sorry.";
+			mes "I forgot.";
+			mes "I'll take this as my reward.";
 			next;
-			// 579 おいしい魚 50個
+			// 579 50 delicious fish
 			if(!checkweight(579,50)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem 579,50;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[タラシー博士]";
-		mes "むむ、それにしても";
-		mes "あのキノコでもダメというと";
-		mes "他に何を試せばよいのか……";
-		mes "やはり草のほうが良いのじゃろうか？";
-		mes "ふむ……";
+		mes "[Dr. Tracy]";
+		mes "Hmmm, and if those mushrooms don't work, what else should I try ......";
+		mes "Would grass still be better?";
+		mes "Hmmm ......";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -627,246 +527,214 @@ L_QUEST07:
 L_QUEST09:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		emotion 19;
-		mes "[タラシー博士]";
-		mes "ノーーーーッ";
-		mes "色々とやばいぞい。";
-		mes "どうすればよいんじゃ！";
-		mes "よいんじゃーーーーーっ！";
+		EMOTION 19;
+		mes "[Dr. Tracy]";
+		 ;
+		mes "What am I supposed to do!";
+		mes "It's good!";
 		next;
-		menu "どうしたんですか？",-;
-		mes strcharinfo(0) + "!!!";
-		mes "……";
-		mes "おぬしになら話してもよいじゃろう……";
-		mes "小さな声で言うから";
-		mes "心して聞くんじゃぞ。";
+		menu "What's wrong?" ,-;
+		mes ""+strcharinfo(0) + "!!! ......";
+		mes "You may speak to me at ......";
+		mes "I'm going to say it in a low voice, so listen carefully.";
 		next;
 		emotion 19;
-		mes "[タラシー博士]";
-		mes "なんと……";
-		mes "昨日ライラと見知らぬ男が";
-		mes "歩いているのを";
-		mes "目撃してしまったのじゃ……";
-		mes "どんな関係なんじゃろうか……";
+		mes "[Dr. Tracy]";
+		mes "What a ......";
+		mes "I saw Laila and a stranger walking yesterday. ......";
+		mes "I wonder what kind of relationship they have ......";
 		next;
-		menu "本人に聞いてみればよいのでは？",-;
-		emotion 36;
-		mes "[タラシー博士]";
-		mes "バカモン！";
-		mes "そんなことを聞けるわけ無いじゃろ。";
-		mes "うむー、しかしこのままでは……";
-		mes "得体の知れない男に";
-		mes "たぶらかされてしまう可能性もある。";
-		mes "一刻も早く薬を完成させなくては。";
+		menu "Why don't you ask him?" ,-;
+		EMOTION 36;
+		mes "[Dr. Tracy]";
+		mes "Stupid!";
+		mes "You can't ask me that.";
+		mes "Mmmm, but if I don't do this, I'm going to have to go to ......";
+		mes "There's a chance you'll be beguiled by a man you don't know.";
+		mes "I must finish the medicine as soon as possible.";
 		next;
-		mes "[タラシー博士]";
-		mes "というわけで、急いで研究材料を";
-		mes "採ってきてほしいのじゃ！";
-		mes "今度はまちがいないぞい。";
-		mes "絶対じゃ！";
-		mes "色々調べた結果何が必要だか";
-		mes "わかったんじゃよ！";
+		mes "[Dr. Tracy]";
+		mes "So, I want you to hurry up and get the research materials!";
+		mes "This time you can be sure.";
+		mes "Absolutely!";
+		mes "I did a lot of research and I know what you need!";
 		next;
-		mes "[タラシー博士]";
-		mes "詳しくは^FF0000ライラ^000000から聞くのじゃ。";
+		mes "[Dr. Tracy]";
+		mes "Ask ^FF0000Laila^000000 for more information.";
 		next;
 		L_REP9_1:
-		mes "^FF0000【ミッション】^000000";
-		mes "^FF0000助手ライラ^000000さんに依頼の";
-		mes "詳細内容を聞く。";
+		mes "Ask ^FF0000 [Mission] ^FF0000^FF0000Laila^000000 assistant Laila^000000 for details of the request.";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[タラシー博士]";
-		mes strcharinfo(0) + " ！";
-		mes "すまないがワシが急いでおるのじゃ。";
-		mes "ライラに内容をきいてくれい。";
+		mes "[Dr. Tracy]";
+		mes ""+strcharinfo(0) + "!";
+		mes "I'm sorry, but I'm in a hurry.";
+		mes "Ask Laila what's going on.";
 		next;
 		goto L_REP9_1;
 	case 3:
-		mes "‐研究に集中しているのか";
-		mes "　こちらに気づかないようだ‐";
+		mes "-She seems to be concentrating on her research and doesn't seem to notice us...";
 		close;
 	case 4:
 		emotion 0;
-		mes "[タラシー博士]";
-		mes "おお！";
-		mes "ついにじゃ！";
-		mes "ついにこの時がきた。";
-		mes "さあ、早くよこすのじゃ！";
+		mes "[Dr. Tracy]";
+		mes "Oh!";
+		mes "At last!";
+		mes "The time has finally come.";
+		mes "Now, give it to me quickly!";
 		next;
-		menu "ミンミン草を渡す",-;
-		mes "[タラシー博士]";
-		mes "よし、まずはミンミン草を入れるぞい。";
+		menu "Pass Minmin Grass",-;
+		mes "[Dr. Tracy]";
+		mes "Okay, I'll put Minmin Grass in first.";
 		next;
-		misceffect 94,"#AC_BOM";
-		mes "‐博士が液体に";
-		mes "　ミンミン草を入れた瞬間、";
-		mes "　液体が光はじめた‐";
+		misceffect 94, "#AC_BOM";
+		mes "-The moment Dr. Tracy put Minmin Grass in the liquid, the liquid started to glow";
 		next;
-		mes "[タラシー博士]";
-		mes "よしっ！";
-		mes "成功じゃ！";
-		mes "成功じゃよ!!!!";
+		mes "[Dr. Tracy]";
+		mes "Okay!";
+		mes "Success!";
+		mes "Success. !!!!";
 		next;
-		mes "[ライラ]";
-		mes "博士おめでとうございます！";
+		mes "[Laila]";
+		mes "Congratulations to Dr. Laila!";
 		next;
-		mes "[タラシー博士]";
-		mes "ライラありがとう。";
-		mes "ここまで長かった……";
+		mes "[Dr. Tracy]";
+		mes "Thank you Laila.";
+		mes "It's been a long day so far ......";
 		next;
-		mes "[ライラ]";
-		mes "ところで、博士……";
-		mes "この薬は、何の薬なのですか？";
+		mes "[Laila]";
+		mes "By the way, Dr. ......";
+		mes "What is this medicine?";
 		next;
-		menu "私も気になっていました。",-;
-		emotion 29;
-		mes "[タラシー博士]";
-		mes "フフフッ";
-		mes "教えてやるワイ。";
-		mes "これはのぉ……";
-		mes "なんと、なぁぁぁんと！";
-		mes "女性の心が読める薬なんじゃ！";
+		menu "I was wondering about that too." ,-;
+		EMOTION 29;
+		mes "[Dr. Tracy]";
+		mes "Hmph, I'll tell you wai.";
+		mes "This is oh ......";
+		mes "Oh my god, what a surprise!";
+		mes "It's a drug that can read Woman's mind!";
 		next;
-		menu "ええッ!?",-;
-		emotion 23,"ライラ#AC";
+		menu "What?",-;
+		emotion 23, "Laila#AC";
 		emotion 23,"";
-		mes "[タラシー博士]";
-		mes "そう、そしてこの髪をいれて";
-		mes "飲めば！";
-		mes "ライラの心が手に取るようにわかる";
-		mes "はずなのじゃ！";
+		mes "[Dr. Tracy]";
+		mes "Yes, and if you put this hair in it and drink it!";
+		mes "Laila's heart should be in your hand!";
 		next;
-		mes "‐博士はすばやい動きで、";
-		mes "　液体にライラの髪の毛をいれ";
-		mes "　それを飲み干した‐";
+		mes "-With a swift movement, the doctor placed a lock of Laila's hair in the liquid and drank it down -";
 		next;
-		mes "[タラシー博士]";
-		mes "フハハハハ。";
-		mes "さあ、ライラ心をさらけ出すのじゃ！";
-		mes "さらけ出すのじゃーーーー！";
+		mes "[Dr. Tracy]";
+		mes "Huahahahaha.";
+		mes "Now, Laila, bare your heart!";
+		mes "Expose yourself!";
+		NEXT;
+		mes "[Dr. Tracy]";
+		mes "......";
+		mes "............";
 		next;
-		mes "[タラシー博士]";
-		mes "……";
-		mes "…………";
+		mes "[Dr. Tracy]";
+		mes "What the hell? I can't read your mind! What the hell is going on?";
+		mes "My research must be perfect ......";
 		next;
-		mes "[タラシー博士]";
-		mes "なっ、なんじゃと!?";
-		mes "心が読めない!?";
-		mes "どういうことなんじゃ。";
-		mes "ワシの研究は完璧なはず……";
+		mes "[Dr. Tracy]";
+		mes "......";
+		mes "............";
+		mes "Actually, yes. ......";
+		mes "I, actually. ............";
 		next;
-		mes "[タラシー博士]";
-		mes "……";
-		mes "…………";
-		mes "実はですね……";
-		mes "私、実は…………";
-		next;
-		mes "‐ライラは自分のカバンから";
-		mes "　カプセルのようなものを取り出し";
-		mes "　飲み込んだ‐";
+		mes "-Laila took what looked like a capsule out of her bag and swallowed it-";
 		next;
 		emotion 23;
 		emotion 23,"";
 		donpcevent "#AC_BOM::OnEvent";
-		mes "[ライラ]";
-		mes "男なんです……";
-		mes "実は変身の薬というのを";
-		mes "以前作りまして……";
+		mes "[Laila]";
+		mes "I'm a man. ......";
+		mes "Actually, I made something called a makeover potion before ......";
 		next;
-		mes "[タラシー博士]";
-		mes "ギャーーーーッ";
-		mes "…………";
+		mes "[Dr. Tracy]";
+		mes "Gahhhh ............";
 		next;
-		mes "‐タラシー博士は";
-		mes "　叫びながら叫んだ後";
-		mes "　気絶してしまったようだ……‐";
+		mes "-Dr. Tracy seems to have passed out after screaming and yelling ......-";
 		next;
-		mes "[ライラ]";
-		mes "あらら……";
-		mes "気絶してしまいましたね……";
+		mes "[Laila]";
+		mes "Oh dear ......";
+		mes "I think I fainted. ......";
 		next;
-		mes "[ライラ]";
-		mes "後は私が何とかしておきます。";
-		mes "本当に色々ありがとうございました。";
+		mes "[Laila]";
+		mes "I'll take care of the rest.";
+		mes "Thank you so much for everything.";
 		if('@novice){
-			mes "これが今回の報酬になりますので";
-			mes "うけとってくださいね。";
+			mes "This will be your reward this time, so please accept it.";
 			next;
 			switch(Job){
-			//剣士    ：ヘルム[0] 1個
+			// Swordsman : 1 helm[0].
 			case Job_Swordman:
 				set '@item,2228;
 				break;
-			//Thief  ：キャップ[0] 1個
+			//Thief : cap[0] 1pc
 			case Job_Thief:
-			//商人    ：キャップ[0] 1個
+			// Merchant : cap[0] 1
 			case Job_Merchant:
-			//アチャ  ：キャップ[0] 1個
+			//Acha : cap[0] 1
 			case Job_Archer:
 				set '@item,2226;
 				break;
-			//アコ    ：ビレタ[0] 1個
+			//ACO : Villeta[0] 1 piece
 			case Job_Acolyte:
 				set '@item,2216;
 				break;
-			//マジ    ：丸いぼうし[0] 1個
+			//Maj: 1 round hat[0].
 			case Job_Magician:
-			//テコン  ：丸いぼうし[0] 1個
+			//Telecon: round hat[0] 1 piece
 			case Job_TaeKwon:
-			//Ninja    ：丸いぼうし[0] 1個
+			//Ninja : round hat [0] 1
 			case Job_Ninja:
-			//ガンスリ：丸いぼうし[0] 1個
+			//Gunslinger: round hat [0] 1 piece
 			case Job_Gunslinger:
 				set '@item,2222;
 				break;
-			//ノビ    ：Supernovice帽[0] 1個
-			//スパノビ：Supernovice帽[0] 1個
+			//Novi : Supernovice hat [0] 1 piece
+			//Supernovice: 1 Supernovice hat [0].
 			default:
 				set '@item,5112;
 				break;
 			}
 			if(!checkweight('@item,1)){
-				mes "重量オーバー！";
+				mes "Overweight!";
 				close;
 			}
 			getitem '@item,1;
 		}
 		else next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "‐タラシー博士は気を失っている‐";
+		mes "-Dr. Tracy is out cold-";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished]^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
 	}
 L_CLEAR:
-	mes "[タラシー博士]";
-	mes strcharinfo(0) + "じゃないか！";
-	mes "色々手伝ってもらって";
-	mes "凄くたすかったぞい。";
-	mes "また何かあったらお願いしたい！";
+	mes "[Dr. Tracy]";
+	mes ""+strcharinfo(0) + "No!";
+	mes "Thank you so much for all your help.";
+	mes "I'd like to ask you again if I need anything else!";
 	close;
 L_OTHER:
-	mes "[タラシー博士]";
-	mes "こうするとこうなって……";
-	mes "いやはや、難しい……";
+	mes "[Dr. Tracy]";
+	mes "This is what happens when you do this: ......";
+	mes "Oh no, it's difficult ......";
 	close;
 }
-hu_in01.gat,305,27,4	script	ライラ#AC	69,{
+hu_in01.gat,305,27,4	script	Laila#AC	69,{
 	set '@novice, callfunc("AC_GetNovice");
 	switch(AC_QUEST_LV_3){
 	case 0:
@@ -887,80 +755,57 @@ hu_in01.gat,305,27,4	script	ライラ#AC	69,{
 L_QUEST01:
 	switch(AC_QUEST_ST_3) {
 	case 2:
-		mes "[ライラ]";
-		mes "博士から話を伺っております。";
-		mes "依頼の詳細内容ですね？";
+		mes "[Laila]";
+		mes "We have heard from Dr.";
+		mes "The details of your request?";
 		next;
-		menu "よろしくお願いします",-;
-		mes "[ライラ]";
-		mes "いえ、こちらこそ";
-		mes "お忙しいところ依頼を引き受けて";
-		mes "下さってたすかりますわ。";
+		menu "Best regards",-;
+		mes "[Laila]";
+		mes "No, thank you for taking the time out of your busy schedule to accept my request.";
 		next;
-		mes "[ライラ]";
-		mes "依頼内容なのですが、";
-		mes "^0000FFGeffenフィールド07(185 249)^000000";
-		mes "に生えている";
-		mes "^FF0000ポムポム草^000000を採ってきて";
-		mes "いただきますか？";
+		mes "[Laila]";
+		mes "As for your request, would you please pick ^FF0000Pom Pom Grass^000000 that grows in ^0000FFGeffen field 07 (185 249)^000000?";
 		next;
-		//本鯖どおり（いただき）
-		menu "どんな草なんですか？",-;
-		mes "[ライラ]";
-		mes "あ、ごめんなさい。";
-		mes "ポムポム草はですね……";
+		// as per the main mackerel (Itadakimasu)
+		menu "What kind of grass is it?" ,-;
+		mes "[Laila]";
+		mes "Oh, I'm sorry.";
+		mes "Pom Pom Grass is. ......";
 		next;
-		mes "‐ライラからポムポム草の";
-		mes "　説明を受けた‐";
+		mes "-Laila explained Pom Pom Grass to me-";
 		next;
-		mes "[ライラ]";
-		mes "それじゃあ";
-		mes "よろしくお願いしますね。";
+		mes "[Laila]";
+		mes "Well, I'm looking forward to working with you.";
 		next;
-		menu "わかりました",-;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFGeffenフィールド07(185 249)^000000";
-		mes "に生えている";
-		mes "^FF0000ポムポム草^000000を採ってきくる。";
-		mes " ";
-		mes "‐^0000FFGeffenフィールド07^000000へは";
-		mes "　Geffenから行くと近い‐";
+		menu "Okay.",-;
+		mes "^FF0000[Mission] ^000000^0000FFFGeffen field 07 (185 249)^000000 I'm going to pick ^FF0000Pom Pom Grass^000000 that grows in the field.";
+		mes " -^0000FFGeffen field 07^000000 is close to Geffen -";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ライラ]";
-		mes "依頼内容を忘れてしまいましたか？";
-		mes "念のためもう一度お話しますね。";
+		mes "[Laila]";
+		mes "Did you forget what you requested?";
+		mes "I will tell you again for GOST.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFGeffenフィールド07(185 249)^000000";
-		mes "に生えている";
-		mes "^FF0000ポムポム草^000000を採ってくる。";
-		mes " ";
-		mes "‐^0000FFGeffenフィールド07^000000へは";
-		mes "　Geffenから行くと近い‐";
+		mes "^FF0000 [Mission] ^000000^0000FFFGeffen field 07 (185 249)^000000 to pick ^FF0000Pom Pom Grass^000000 that grows in the field.";
+		mes " -^0000FFGeffen field 07^000000 is closer to Geffen if you go from Geffen-";
 		close;
 	case 4:
-		mes "[ライラ]";
-		mes "あ！";
-		mes "お帰りなさい。";
-		mes "無事に^FF0000ポムポム草^000000を";
-		mes "手に入れられたようですねー。";
-		mes "^FF0000ポムポム草^000000は博士に渡して";
-		mes "くださいね。";
+		mes "[Laila]";
+		mes "Ah!";
+		mes "Welcome back.";
+		mes "It looks like you got ^FF0000Pom Pom Grass^000000 safely!";
+		mes "Please give ^FF0000Pom Pom Grass^000000 to the doctor.";
 		close;
 	case 99:
-		mes "[ライラ]";
-		mes "どうやら研究は失敗のようですね。";
-		mes "次は成功すると良いのですけど……";
-		mes "依頼を受けていただいて";
-		mes "ありがとうございました。";
+		mes "[Laila]";
+		mes "It appears that your research is a failure.";
+		mes "Hopefully the next one will be successful. ......";
+		mes "Thank you for accepting my request.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -968,76 +813,59 @@ L_QUEST01:
 L_QUEST03:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[ライラ]";
-		mes "あら、";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちは。";
+		mes "[Laila]";
+		mes "Oh my,";
+		mes strcharinfo(0) + "";
+		mes "Hello.";
 		close;
 	case 2:
-		mes "[ライラ]";
-		mes "今回も";
-		mes strcharinfo(0) + "さんが";
-		mes "手伝ってくれるのですね。";
+		mes "[Laila]";
+		mes "Again this time";
+		mes strcharinfo(0) + "is";
+		mes "You are going to help us.";
 		next;
-		mes "[ライラ]";
-		mes "依頼内容なのですが、";
-		mes "^0000FFピラMidoダンジョン1F^000000に生えている";
-		mes "^FF0000ライライ草^000000を採ってきて";
-		mes "いただけますか？";
-		mes "ライライ草は……";
+		mes "[Laila]";
+		mes "The request is, could you please pick up ^FF0000Laila rushes^000000 that grow in ^0000FF Pila Mido dungeon 1F^000000?";
+		mes "Laila rushes are available at ......";
 		next;
-		menu "わかりました",-;
-		mes "‐ライラからライライ草の";
-		mes "　説明を受けた‐";
+		menu "Okay",-;
+		mes "-Laila explained Laila rushes to me-";
 		next;
-		mes "[ライラ]";
-		mes "ピラMidoダンジョンは";
-		mes "Morrocの近くにありますので";
-		mes "街に行けばわかると思います。";
-		mes "一応メモ書いておきますね。";
-		mes "それでは、よろしくお願いします。";
+		mes "[Laila]";
+		mes "The Pila Mido dungeon is near Morroc and you can find it in town.";
+		mes "I'll write you a note just in case.";
+		mes "Well then, thank you very much.";
 		next;
 	L_REP3_3:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFピラMidoダンジョン1F(193,193)^000000";
-		mes "に生えている";
-		mes "^FF0000ライライ草^000000を採ってくる。";
-		mes " ";
-		mes "‐^0000FFピラMidoダンジョン1F^000000へは";
-		mes "　^0000FFMorroc^000000から行くと近い‐";
+		mes "^FF0000 [Mission] ^000000^0000FF Pila Mido dungeon 1F (193,193)^000000 to pick ^FF0000Laila rushes^000000 that grow in the dungeon.";
+		mes " -^0000FF Pila Mido dungeon 1F^000000 to get there from ^0000FFMorroc^000000 is close -";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ライラ]";
-		mes "依頼内容を忘れてしまいましたか？";
-		mes "念のためもう一度お話しますね。";
+		mes "[Laila]";
+		mes "Did you forget what you requested?";
+		mes "I will tell you again for GOST.";
 		next;
-		mes "[ライラ]";
-		mes "依頼内容なのですが、";
-		mes "^0000FFピラMidoダンジョン1F^000000に生えている";
-		mes "^FF0000ライライ草^000000を採ってきて";
-		mes "いただけますか？";
+		mes "[Laila]";
+		mes "As for your request, could you please pick up the ^FF0000Laila rush^000000 that grows on the ^0000FF Pila Mido dungeon 1F^000000?";
 		next;
 		goto L_REP3_3;
 	case 4:
-		mes "[ライラ]";
-		mes "さすが、";
-		mes strcharinfo(0) + "さんですね。";
-		mes "無事に^FF0000ライライ草^000000を手に入れましたか。";
-		mes "それでは、博士に渡してくださいね。";
+		mes "[Laila]";
+		mes "As expected,";
+		mes strcharinfo(0) + "As expected.";
+		mes "Did you successfully get ^FF0000Laila rushes ^000000?";
+		mes "Then please give it to the doctor.";
 		close;
 	case 99:
-		mes "[ライラ]";
-		mes "どうやら研究は失敗のようですね。";
-		mes "次は成功すると良いのですけど……";
-		mes "依頼を受けていただいて";
-		mes "ありがとうございました。";
+		mes "[Laila]";
+		mes "It appears that your research is a failure.";
+		mes "Hopefully the next one will be successful. ......";
+		mes "Thank you for accepting my request.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -1045,87 +873,62 @@ L_QUEST03:
 L_QUEST05:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[ライラ]";
-		mes "あら、";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちは。";
+		mes "[Laila]";
+		mes "Oh my,";
+		mes strcharinfo(0) + "";
+		mes "Hello.";
 		close;
 	case 2:
-		mes "[ライラ]";
-		mes strcharinfo(0)+"さん";
-		mes "に手伝っていただいた研究で";
-		mes "博士は何か新しい調合を";
-		mes "思いついたみたいです。";
-		mes "今度は成功するかもしれませんね！";
+		mes "[Laila]";
+		mes ""+strcharinfo(0)+"The research you helped Dr. Laila with has come up with some new concoction.";
+		mes "Maybe this time it will work!";
 		next;
-		mes "[ライラ]";
-		mes "さっそく、";
-		mes "依頼内容なのですが、";
-		mes "^0000FFPayonダンジョン1F^000000に生えている";
-		mes "^FF0000黒い変なキノコ^000000を採ってきて";
-		mes "いただけますか？";
-		mes "^FF0000黒い変なキノコ^000000は……";
+		mes "[Laila]";
+		mes "Quickly, as to your request, could you please pick the ^FF0000Black Funny Mushroom^000000 that grows in the ^0000FFPayon dungeon 1F^000000?";
+		mes "^FF0000Black Funny Mushroom^000000 is ......";
 		next;
-		menu "わかりました",-;
-		mes "‐ライラから黒い変なキノコの";
-		mes "説明を受けた‐";
+		menu "Okay",-;
+		mes "-Laila explained Black Funny Mushroom to me-";
 		next;
-		mes "[ライラ]";
-		mes "Payonダンジョンは";
-		mes "Payonの近くにありますので";
-		mes "街に行けばわかると思います。";
-		mes "一応メモを書いておきますね。";
-		mes "それでは、よろしくお願いします。";
+		mes "[Laila]";
+		mes "Payon dungeon is near Payon and you can find it in town.";
+		mes "I'll write you a note just in case.";
+		mes "Well, thank you very much for your time.";
 		next;
 	L_REP4_2:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFPayonダンジョン1F^000000";
-		mes "に生えている";
-		mes "^FF0000黒い変なキノコ^000000を採ってくる。";
-		mes " ";
-		mes "‐^0000FFPayonダンジョン1F^000000へは";
-		mes "^0000FFPayon^000000から行くと近い‐";
+		mes "^FF0000 [Mission] ^000000^0000FFPayon dungeon 1F^000000 I'm going to pick ^FF0000Black Funny Mushroom^000000 that grows in the dungeon.";
+		mes " -^0000FFPayon dungeon 1F^000000 is close to ^0000FFPayon^000000 if you go from ^0000FFPayon^000000-";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ライラ]";
-		mes "依頼内容を忘れてしまいましたか？";
-		mes "念のためもう一度お話しますね。";
+		mes "[Laila]";
+		mes "Did you forget what you requested?";
+		mes "I will tell you again for GOST.";
 		next;
-		mes "[ライラ]";
-		mes "依頼内容なのですが、";
-		mes "^0000FFPayonダンジョン1F^000000に生えている";
-		mes "^FF0000黒い変なキノコ^000000を採ってきて";
-		mes "いただけますか？";
+		mes "[Laila]";
+		mes "As for your request, could you please pick the ^FF0000Black Funny Mushroom^000000 that grows in the ^0000FFPayon dungeon 1F^000000?";
 		next;
 		goto L_REP4_2;
 	case 4:
-		mes "[ライラ]";
-		mes strcharinfo(0)+"さん";
-		mes "おかえりなさい。";
-		mes "無事に^FF0000黒い変なキノコ^000000を手に";
-		mes "入れたようですね。";
-		mes "それでは、博士に渡してくださいね。";
+		mes "[Laila]";
+		mes ""+strcharinfo(0)+"Welcome back.";
+		mes "It looks like you got ^FF0000Black Funny Mushroom^000000 safely.";
+		mes "Then, please give it to the doctor.";
 		close;
 	case 99:
-		mes "[ライラ]";
-		mes "また、失敗してしまったようで……";
-		mes "そういえば、助手の私にも";
-		mes "今回の研究内容を";
-		mes "教えてくれないのですが。";
-		mes "何かご存知ですか？";
+		mes "[Laila]";
+		mes "I think I screwed up again. ......";
+		mes "Oh, by the way, I'm an assistant, and they won't even tell me what they are working on this time.";
+		mes "Do you know anything about it?";
+		NEXT;
+		menu "Yes, no, ......",-;
+		mes "[Laila]";
+		mes "Yes, indeed. ......";
+		mes "I'm very curious what you are researching ......";
 		next;
-		menu "い、いえ……",-;
-		mes "[ライラ]";
-		mes "やはりですか……";
-		mes "何を研究しているのか";
-		mes "凄い気になります……";
-		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -1133,92 +936,68 @@ L_QUEST05:
 L_QUEST07:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[ライラ]";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちは。";
-		mes "いつもありがとうございます。";
+		mes "[Laila]";
+		mes ""+strcharinfo(0) + "Hello.";
+		mes "Thank you for everything.";
 		close;
 	case 2:
-		mes "[ライラ]";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちは。";
-		mes "もう、お得意様ですね。";
-		mes "本当にいつもお世話になっています。";
+		mes "[Laila]";
+		mes ""+strcharinfo(0) + "Hello.";
+		mes "You are already a customer.";
+		mes "I'm really always happy to help you.";
 		next;
-		mes "[ライラ]";
-		mes "早速今回お願いする";
-		mes "収集品について説明いたしますね。";
-		mes "えと……";
-		mes "今回は、^0000FFPayon迷いの森 02^000000に";
-		mes "生えている、^FF0000あやしいキノコ^000000を";
-		mes "採ってきてください。";
+		mes "[Laila]";
+		mes "I will explain the collection we are requesting this time as soon as possible.";
+		mes "uh ......";
+		mes "This time, please collect ^FF0000Suspicious Mushroom^000000, which grows in the ^0000FFPayon Lost Forest 02^000000.";
 		next;
-		mes "‐ライラからあやしいキノコの";
-		mes "　説明を受けた‐";
+		mes "-Laila explained to me about Suspicious Mushroom-";
 		next;
-		mes "[ライラ]";
-		mes "それでは、";
-		mes "今回もよろしくお願いしますね。";
+		mes "[Laila]";
+		mes "So, thank you again for your time.";
 		next;
 	L_REP5_2:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFPayon迷いの森 02(49,126)^000000";
-		mes "に生えている、";
-		mes "^FF0000あやしいキノコ^000000を採ってくる。";
-		mes "‐^0000FFPayon迷いの森 02^000000へは";
-		mes "　Payonから行くと近い‐";
+		mes "^FF0000[Mission] ^000000^0000FFPayon the lost forest 02(49,126)^000000 and pick ^FF0000Suspicious Mushroom^000000 that grows there.";
+		mes "-^0000FFPayon Lost Forest 02^000000 is closer if you go from Payon-";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ライラ]";
-		mes "依頼内容を忘れてしまいましたか？";
-		mes "念のためもう一度お話しますね。";
+		mes "[Laila]";
+		mes "Did you forget what you requested?";
+		mes "I will tell you again for GOST.";
 		next;
-		mes "[ライラ]";
-		mes "今回は、^0000FFPayon迷いの森 02^000000に";
-		mes "生えている、^FF0000あやしいキノコ^000000を";
-		mes "採ってきてくださいね。";
-		mes "^0000FFPayon迷いの森 02^000000には";
-		mes "^0000FFPayon^000000から行くとよいですよ。";
-		mes "それではよろしくお願いします。";
+		mes "[Laila]";
+		mes "This time, please pick the ^FF0000Suspicious Mushroom^000000 that grows in the ^0000FFPayon Lost Forest 02^000000.";
+		mes "You should go to ^0000FFPayon Lost Forest 02^000000 from ^0000FFPayon^000000.";
+		mes "Then, please take care of it.";
 		next;
 		goto L_REP5_2;
 	case 4:
-		mes "[ライラ]";
-		mes "さすが、";
-		mes strcharinfo(0) + "さんですね。";
-		mes "無事に^FF0000あやしいキノコ^000000を";
-		mes "手に入れましたか。";
-		mes "それでは、博士に渡してくださいね。";
+		mes "[Laila]";
+		mes "As expected,";
+		mes strcharinfo(0) + "As expected.";
+		mes "Did you get ^FF0000Suspicious Mushroom^000000 successfully?";
+		mes "Then please give it to the doctor.";
 		close;
 	case 99:
-		mes "[ライラ]";
-		mes strcharinfo(0) + "さん";
-		mes "先ほどは本当に申し訳";
-		mes "ありませんでした……";
+		mes "[Laila]";
+		mes ""+strcharinfo(0) + "I'm really sorry about earlier ......";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "気にしないでください。";
-		mes "それよりも博士にプレゼントを";
-		mes "あげたとか？";
+		mes "Don't worry about it.";
+		mes "More importantly, did you give the Dr. a pre-Zento or something?";
 		next;
-		mes "[ライラ]";
-		mes "ええ、";
-		mes "普段お世話になっていますから";
-		mes "お誕生日プレゼントぐらいは";
-		mes "差し上げないといけませんしね。";
+		mes "[Laila]";
+		mes "Yes, I have to at least give you a birthday pre-Zento since you usually take care of me.";
 		next;
-		menu "なるほど！",-;
-		mes "[ライラ]";
-		mes "ふふふっ。";
-		mes "それじゃ、また何かありましたら";
-		mes "よろしくお願いしますね。";
+		menu "I see!" ,-;
+		mes "[Laila]";
+		mes "Hmmm.";
+		mes "Well then, please let me know if you need anything else.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -1226,245 +1005,198 @@ L_QUEST07:
 L_QUEST09:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[ライラ]";
-		mes strcharinfo(0) + "さん";
-		mes "こんにちは。";
-		mes "何か博士が荒れているんです";
-		mes "どうしたんでしょうか……";
+		mes "[Laila]";
+		mes ""+strcharinfo(0) + "Hello.";
+		mes "Something's going on with Dr. Laila, what's going on ......";
 		close;
 	case 2:
-		mes "[ライラ]";
-		mes "相変わらず博士は荒れていますね……";
-		mes "一体どうしたんでしょうか……";
+		mes "[Laila]";
+		mes "Dr. Laila is still having a rough time ......";
+		mes "What the hell is going on ......";
 		next;
-		mes "[ライラ]";
-		mes "でも、今回の材料は博士";
-		mes "かなり自信があるみたいなんですよ。";
-		mes "でも、成功するかもしれないというのに";
-		mes "ちょっとおかしいんです。";
-		mes "焦っているというか";
-		mes "そんな感じですね……";
+		mes "[Laila]";
+		mes "But Dr. Laila seems pretty confident about the material this time.";
+		mes "But it's a little strange that it might be successful.";
+		mes "He's in a hurry, or something like that. ......";
 		next;
-		mes "[ライラ]";
-		mes "えと、収集していただく材料なのですが";
-		mes "一つ目は、^0000FFProntera地下水路3F^000000に";
-		mes "生えている^FF0000ミンミン草^000000で、";
-		mes "もう一つは……";
-		mes "^FF0000私の髪の毛^000000!?";
+		mes "[Laila]";
+		mes "Well, the first material that I need you to collect is ^FF0000Minmin Grass^000000 that grows in the ^0000FFProntera underground canal 3F^000000, and the other is ......";
+		mes "^FF0000My Hair^000000!";
 		next;
-		mes "[ライラ]";
-		mes "んー、私の髪の毛が";
-		mes "入っているのは何ででしょうか……";
+		mes "[Laila]";
+		mes "Hmm, what's with my hair in it ......";
 		next;
-		mes "[ライラ]";
-		mes "とりあえず髪の毛は私が直接博士に";
-		mes "渡しておきますので、";
-		mes strcharinfo(0) + "さんは、";
-		mes "もう一つの材料を採って来て";
-		mes "くださいますか？";
+		mes "[Laila]";
+		mes "For now, I'll give the hair directly to the doctor, so";
+		mes strcharinfo(0) + "is";
+		mes "Could you please pick up the other material?";
 		next;
-		mes "[ライラ]";
-		mes "えと、^0000FFProntera地下水路3F^000000に";
-		mes "生えている^FF0000ミンミン草^000000ですね。";
-		mes "それではよろしくお願いします。";
+		mes "[Laila]";
+		mes "Uh, ^FF0000Minmin Grass^000000 that grows in the ^0000FFProntera underground canal 3F^000000.";
+		mes "Well then, thank you very much.";
 		next;
 	L_REP9_2:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFProntera地下水路3F（184,17）";
-		mes "に生えている^FF0000ミンミン草^000000を採ってくる。";
-		mes " ";
-		mes "‐^0000FFProntera地下水路3F^000000へは";
-		mes "　^0000FFProntera^000000から行くと近い‐";
+		mes "^FF0000[Mission] ^000000^000000^0000FFProntera underground canal 3F (184,17), where I will pick ^FF0000Minmin Grass^000000 that grows there.";
+		mes " -^0000FFProntera Underground Canal 3F^000000 is close to ^0000FFProntera^000000 if you go from ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ライラ]";
-		mes "依頼内容を忘れてしまいましたか？";
-		mes "念のためにもう一度お話しますね。";
+		mes "[Laila]";
+		mes "Did you forget what you requested?";
+		mes "I will tell you the story again for GHOST.";
 		next;
-		mes "[ライラ]";
-		mes "依頼内容なのですが、";
-		mes "^0000FFProntera地下水路3F^000000に";
-		mes "生えている^FF0000ミンミン草^000000を";
-		mes "採ってきてください。";
+		mes "[Laila]";
+		mes "As for your request, please pick up the ^FF0000Minmin Grass^000000 that grows in the ^0000FFProntera underground canal 3F^000000.";
 		next;
 		goto L_REP9_2;
 	case 4:
-		mes "[ライラ]";
-		mes strcharinfo(0) + "さん。";
-		mes "お帰りなさい。";
-		mes "髪の毛は私が先ほど渡しておきました。";
-		mes "^FF0000ミンミン草^000000を博士に渡してくださいね。";
+		mes "[Laila]";
+		mes ""+strcharinfo(0) + ".";
+		mes "Welcome back.";
+		mes "I gave you the hair earlier.";
+		mes "Please give ^FF0000Minmin Grass^000000 to the doctor.";
 		close;
 	case 99:
-		mes "[ライラ]";
-		mes "色々お手伝いいただいて";
-		mes "本当にありがとうございました。";
-		mes "博士が起きたら、";
-		mes "事情を説明しておきますから";
-		mes "安心してくださいね。";
+		mes "[Laila]";
+		mes "Thank you so much for all your help.";
+		mes "When the doctor wakes up, I'll explain the situation to him, don't worry.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurer's Academy.";
 		close;
 	default:
 		goto L_OTHER;
 	}
 L_CLEAR:
-	mes "[ライラ]";
-	mes strcharinfo(0) + "さん";
-	mes "色々とありがとうございました！";
+	mes "[Laila]";
+	mes ""+strcharinfo(0) + "Thanks for everything!";
 	next;
-	mes "[ライラ]";
-	mes "博士、私が変身していること";
-	mes "覚えていないみたいです。";
-	mes "ですので、このまま秘密にしておく";
-	mes "ことにしますね。";
+	mes "[Laila]";
+	mes "Doctor, I don't think he remembers that I'm transforming.";
+	mes "So I guess I will keep it a secret.";
 	close;
 L_OTHER:
-	mes "[ライラ]";
-	mes "あら、こんにちは。";
+	mes "[Laila]";
+	mes "Oh, hello.";
 	close;
 }
 hu_in01.gat,308,27,4	script	#AC_BOM	139,{
 OnEvent:
-	disablenpc "ライラ#AC";
-	enablenpc "ライラ#AC2";
-	misceffect 744,"ライラ#AC2";
-	misceffect 30,"ライラ#AC2";
-	misceffect 72,"ライラ#AC2";
+	disablenpc "Laila#AC";
+	enablenpc "Laila#AC2";
+	misceffect 744, "Laila#AC2";
+	misceffect 30, "Laila#AC2";
+	misceffect 72, "Laila#AC2";
 	sleep 5000;
-	disablenpc "ライラ#AC2";
-	enablenpc "ライラ#AC";
+	disablenpc "Laila#AC2";
+	enablenpc "Laila#AC";
 }
-hu_in01.gat,305,27,4	script	ライラ#AC2	740,{
+hu_in01.gat,305,27,4	script	Laila#AC2	740,{
 OnInit:
 	disablenpc;
 }
 gef_fild07.gat,179,242,4	script	#AC_POMPOM	1083,{
 }
-gef_fild07.gat,179,241,4	script	ポムポム草#AC	111,{
+gef_fild07.gat,179,241,4	script	Pom Pom Grass#AC	111,{
 	if(AC_QUEST_LV_3!=0 || AC_QUEST_ST_3!=3) goto L_OTHER;
 	mes "[" + strcharinfo(0) + "]";
-	mes "この草で間違いなさそうだ。";
+	mes "This grass seems to be the right grass.";
 	next;
-	mes "‐ポムポム草を一つ手に入れた‐";
+	mes "-I got one Pom Pom Grass-";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ポムポム草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Pom Pom Grass^000000 to Dr. Tracy^000000.";
 	close2;
 	set AC_QUEST_ST_3,4;
 	end;
 L_OTHER:
-	mes "‐草が生えている‐";
+	mes "-The grass is growing-";
 	if(AC_QUEST_LV_3!=0 || AC_QUEST_ST_3!=4)close;
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ポムポム草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Pom Pom Grass^000000 to ^FF0000Dr. Tracy^000000.";
 	close;
 }
 moc_pryd01.gat,193,193,0	script	#AC_RAIRAI	1081,{
 }
-moc_pryd01.gat,193,192,0	script	ライライ草#AC	111,{
+moc_pryd01.gat,193,192,0	script	Laila rushes#AC	111,{
 	if(AC_QUEST_LV_3!=2 || AC_QUEST_ST_3!=3) goto L_OTHER;
 	mes "[" + strcharinfo(0) + "]";
-	mes "この草で間違いなさそうだ。";
+	mes "This grass seems to be the right grass.";
 	next;
-	mes "‐^FF0000ライライ草^000000を一つ手に入れた‐";
+	mes "-^FF0000Laila I got one grass ^000000 -";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ライライ草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Laila rushes^000000 to Dr. Tracy^000000.";
 	close2;
 	set AC_QUEST_ST_3,4;
 	end;
 L_OTHER:
-	mes "‐草が生えている‐";
+	mes "-The grass is growing-";
 	if(AC_QUEST_LV_3!=2 || AC_QUEST_ST_3!=4)close;
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ライライ草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Laila rushes^000000 to ^FF0000Dr. Tracy^000000.";
 	close;
 }
 pay_dun00.gat,154,172,0	script	#AC_KINOKO1	1084,{
 }
-pay_dun00.gat,154,171,0	script	黒い変なキノコ#AC	111,{
+pay_dun00.gat,154,171,0	script	Black Funny Mushroom#AC	111,{
 	if(AC_QUEST_LV_3!=4 || AC_QUEST_ST_3!=3) goto L_OTHER;
 	mes "[" + strcharinfo(0) + "]";
-	mes "このキノコで間違いなさそうだ。";
+	mes "It looks like this mushroom is the right one.";
 	next;
-	mes "‐^FF0000黒い変なキノコ^000000を一つ手に入れた‐";
+	mes "-^FF0000Black Funny Mushroom^000000 got one -";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000黒い変なキノコ^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Black Funny Mushroom^000000 to ^FF0000Dr. Tracy^000000.";
 	close2;
 	set AC_QUEST_ST_3,4;
 	end;
 L_OTHER:
-	mes "‐キノコが生えている‐";
+	mes "-mushrooms are growing-";
 	if(AC_QUEST_LV_3!=4 || AC_QUEST_ST_3!=4)close;
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000黒い変なキノコ^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Black Funny Mushroom^000000 to ^FF0000Dr. Tracy^000000.";
 	close;
 }
 pay_fild02.gat,52,125,0	script	#AC_KINOKO2	1085,{
 }
-pay_fild02.gat,52,124,0	script	あやしいキノコ#AC	111,{
+pay_fild02.gat,52,124,0	script	Suspicious Mushroom#AC	111,{
 	if(AC_QUEST_LV_3!=6 || AC_QUEST_ST_3!=3) goto L_OTHER;
 	mes "[" + strcharinfo(0) + "]";
-	mes "この草で間違いなさそうだ。";
+	mes "This grass seems to be the right grass.";
 	next;
-	mes "‐^FF0000あやしいキノコ^000000を一つ手に入れた‐";
+	mes "-^FF0000Suspicious Mushroom^000000 got one -";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000あやしいキノコ^000000を";
-	mes "届ける。";
+	mes "^FF0000[Mission] ^000000^FF0000Deliver ^FF0000Suspicious Mushroom^000000 to Dr. Tracy^000000.";
 	close2;
 	set AC_QUEST_ST_3,4;
 	end;
 L_OTHER:
-	mes "‐キノコが生えている‐";
+	mes "-mushrooms are growing-";
 	if(AC_QUEST_LV_3!=6 || AC_QUEST_ST_3!=4)close;
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000あやしいキノコ^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Suspicious Mushroom^000000 to ^FF0000Dr. Tracy^000000.";
 	close;
 }
 prt_sewb3.gat,184,17,0	script	#AC_MINMIN	1080,{
 }
-prt_sewb3.gat,184,16,0	script	ミンミン草#AC	111,{
+prt_sewb3.gat,184,16,0	script	Minmin Grass#AC	111,{
 	if(AC_QUEST_LV_3!=8 || AC_QUEST_ST_3!=3) goto L_OTHER;
 	mes "[" + strcharinfo(0) + "]";
-	mes "この草で間違いなさそうだ。";
+	mes "This grass seems to be the right grass.";
 	next;
-	mes "‐^FF0000ミンミン草^000000を一つ手に入れた‐";
+	mes "-^FF0000Minmin Grass^000000 got one -";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ミンミン草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Minmin Grass^000000 to Dr. Tracy^000000.";
 	close2;
 	set AC_QUEST_ST_3,4;
 	end;
 L_OTHER:
-	mes "‐草が生えている‐";
+	mes "-The grass is growing-";
 	if(AC_QUEST_LV_3!=8 || AC_QUEST_ST_3!=4)close;
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "^FF0000タラシー博士^000000に^FF0000ミンミン草^000000を";
-	mes "届ける。";
+	mes "^FF0000 [Mission] ^000000^FF0000Deliver ^FF0000Minmin Grass^000000 to ^FF0000Dr. Tracy^000000.";
 	close;
 }
-hu_in01.gat,113,313,4	script	アムロン	47,{
+hu_in01.gat,113,313,4	script	Amuron	47,{
 	set '@novice, callfunc("AC_GetNovice");
 	if(!AC_QUEST_ST_3) goto L_OTHER;
 	switch(AC_QUEST_LV_3){
@@ -1485,115 +1217,82 @@ L_QUEST02:
 	switch(AC_QUEST_ST_3) {
 	case 1:
 		emotion 0;
-		mes "[アムロン]";
-		mes "お！";
-		mes "君ですか？";
-		mes "依頼を引き受けてくれる冒険者は。";
+		mes "[Amuron]";
+		mes "Oh!";
+		mes "Is that you?";
+		mes "The adventurer who will accept the request.";
 		next;
-		menu "えと、冒険者協会の？",-;
-		mes "[アムロン]";
-		mes "すまない。";
-		mes "挨拶が遅れてしまいましたね。";
-		mes "私は冒険者協会を統括している";
-		mes "アムロンといいます。";
-		mes "よろしくお願いしますね。";
+		menu "Uh, of the Adventurers Association?" ,-;
+		mes "[Amuron]";
+		mes "Sorry.";
+		mes "I'm sorry I'm late in saying hello.";
+		mes "My name is Amuron, and I oversee the Adventurers Association.";
+		mes "It's nice to meet you.";
 		next;
-		mes "[アムロン]";
-		mes "まず、冒険者協会がどんなことを";
-		mes "するところなのかを説明させて";
-		mes "いただくね。";
+		mes "[Amuron]";
+		mes "First, let me explain what the Adventurers' Association does.";
 		next;
-		mes "[アムロン]";
-		mes "冒険者協会は簡単に言うと";
-		mes "何でも請け負うボランティアだよ。";
-		mes "ただし、普通の人で解決するのが";
-		mes "難しい案件のみ扱っている。";
+		mes "[Amuron]";
+		mes "The Adventurers Association is simply a volunteer organization that takes care of everything.";
+		mes "However, we only handle cases that are difficult for ordinary people to solve.";
 		next;
-		mes "[アムロン]";
-		mes "ダンジョンの中に人が取り残されて";
-		mes "しまったとか、";
-		mes "冒険者じゃないと助けるのが";
-		mes "困難な状態とか、そういうのを";
-		mes "助けたりするんです。";
+		mes "[Amuron]";
+		mes "We help people who are stranded in dungeons, or in situations where it is difficult to help them unless they are adventurers, and so on.";
 		next;
-		mes "[アムロン]";
-		mes "今回、冒険者アカデミーが全面的に";
-		mes "バックアップしてくれるということで";
-		mes "本当に助かっているよ。";
-		mes "普通に雇ったらすごいお金が";
-		mes "かかってしまうからね……";
+		mes "[Amuron]";
+		mes "I'm really glad that the Adventurer Academy is backing us fully this time.";
+		mes "It would have cost us an awful lot of money to hire them normally. ......";
 		next;
-		mes "[アムロン]";
-		mes "ということでだ。";
-		mes "早速、依頼内容を";
-		mes "説明するね。";
+		mes "[Amuron]";
+		mes "So that's that.";
+		mes "I'll explain the request as soon as possible.";
 		next;
-		mes "[アムロン]";
-		mes "むむっ";
-		mes "これは、";
-		mes "急がないとまずいかもしれないな。";
-		mes "どうやら、子供がダンジョンに";
-		mes "取り残されているらしい。";
+		mes "[Amuron]";
+		mes "Mmmm, this might be a bad idea if we don't hurry.";
+		mes "Apparently, a child is stranded in the dungeon.";
 		next;
-		mes "[アムロン]";
-		mes "名前は、^FF0000チスロー^000000。";
-		mes "年齢10歳の男の子だそうです。";
-		mes "^0000FFProntera地下水路1F^000000に行ってくる";
-		mes "とのメモを残して";
-		mes "門限になっても帰ってこないそうだ。";
+		mes "[Amuron]";
+		mes "The name is ^FF0000Chislow^000000.";
+		mes "He is a boy of age 10.";
+		mes "He has left a note that he is going to ^0000FFProntera Underground Canal 1F^000000 and has not returned at curfew.";
 		next;
-		mes "[アムロン]";
-		mes "ことは一刻を争うとおもう。";
-		mes "モンスターもいるからね。";
-		mes "もし、^FF0000チスロー^000000を見つけたら";
-		mes "この、^0000FF蝶の羽^000000を渡してほしい。";
-		mes " ";
-		mes "‐蝶の羽が入った袋を受け取った‐";
+		mes "[Amuron]";
+		mes "I think the matter is time sensitive.";
+		mes "There are monsters out there.";
+		mes "If you find ^FF0000Chislow^000000, please give me this ^0000FF butterfly feather^000000.";
+		mes " -I received a bag of butterfly wings-";
 		next;
 	L_REP2_1:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFProntera地下水路1F（301,206）^000000に";
-		mes "にいる^FF0000チスロー^000000に蝶の羽を渡す。";
-		mes " ";
-		mes "‐^0000FFProntera地下水路1F^000000へは";
-		mes "　^0000FFProntera^000000から行くと近い‐";
+		mes "Give the butterfly wings to ^FF0000Chislow^000000 who is in ^FF0000 [Mission] ^000000^0000FFProntera underground canal 1F (301,206)^000000.";
+		mes " -^0000FFProntera Underground Canal 1F^000000 is closer to ^0000FFProntera^000000 -";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[アムロン]";
-		mes "急いでいってください。";
-		mes "ことは一刻を争うからね。";
+		mes "[Amuron]";
+		mes "Please hurry up.";
+		mes "Things are time-sensitive.";
 		next;
 		goto L_REP2_1;
 	case 3:
-		mes "[アムロン]";
-		mes "今さっき、依頼主から";
-		mes "お礼の連絡があったよ。";
-		mes strcharinfo(0)+"さん";
-		mes "ご苦労様。";
-		mes "本当に子供も、貴方も無事で";
-		mes "良かった。";
+		mes "[Amuron]";
+		mes "I just got a call from the client thanking me for my help.";
+		mes ""+strcharinfo(0)+"Thanks for your help.";
+		mes "I'm really glad the child and you are safe.";
 		next;
-		mes "[アムロン]";
-		mes "それでは、また何かありましたら";
-		mes "アカデミーの方に連絡しますので";
-		mes "もし、手が開いていたら";
-		mes "そのときはよろしくお願いします。";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes "Well, I will be in touch with the academy if I need anything else, and if my hands are open, please let me know then.";
+		mes "Thank you very much.";
 		next;
 	L_REP2_3:
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Thank you.";
 		next;
 		goto L_REP2_3;
 	default:
@@ -1602,87 +1301,57 @@ L_QUEST02:
 L_QUEST04:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "今回も貴方が引き受けて";
-		mes "くれるのですか？";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Are you taking care of it this time too?";
 		next;
-		menu "ええ",-;
-		mes "[アムロン]";
-		mes "いやー、助かりますよ。";
-		mes "それでは早速、";
-		mes "今回の依頼内容について";
-		mes "説明させてもらうよ。";
+		menu "Yes",-;
+		mes "[Amuron]";
+		mes "No, that's very helpful.";
+		mes "Well, let me get right to it and explain the details of this request.";
 		next;
-		mes "[アムロン]";
-		mes "^0000FFIzlude海底洞窟1F^000000で";
-		mes "かくれんぼをして遊んでいた";
-		mes "女の子1人が5時間たっても、";
-		mes "見つからないらしい。";
+		mes "[Amuron]";
+		mes "I heard that one girl who was playing hide-and-seek in ^0000FFIzlude undersea cave 1F^000000 has not been found after 5 hours.";
 		next;
-		mes "[アムロン]";
-		mes "名前は、^FF0000ツイーフラ。^000000";
-		mes "年齢11歳の女の子だそうだ。";
+		mes "[Amuron]";
+		mes "Her name is ^FF0000Swiffler, ^000000age 11 years old.";
 		next;
-		mes "[アムロン]";
-		mes "^FF0000ツイーフラ^000000を見つけたら";
-		mes "前回同様に";
-		mes "この、^0000FF蝶の羽^000000を渡してほしい。";
-		mes " ";
-		mes "‐蝶の羽が入った袋を受け取った‐";
+		mes "[Amuron]";
+		mes "If you find ^FF0000Swiffler^000000, I want you to give her this, ^0000FF butterfly wings^000000 like last time.";
+		mes " -I received a bag of butterfly wings-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFIzlude海底洞窟1F(351,45)^000000に";
-		mes "いる^FF0000ツイーフラ^000000に蝶の羽を渡す。";
-		mes " ";
-		mes "^0000FF‐Izlude海底洞窟^000000には";
-		mes "Izludeから船でいける";
-		mes "バイラン島にある‐";
+		mes "^FF0000 [Mission] ^000000^0000FFIzlude the butterfly feather to ^FF0000Swiffler^000000 in the undersea cave 1F(351,45)^000000.";
+		mes " ^0000FF-Izlude Undersea Caves^000000 are located on Byran Island, which can be reached by boat from Izlude-";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[アムロン]";
-		mes "それにしても、普通ダンジョンで";
-		mes "遊んだりしませんよね……";
-		mes "親はどういう教育をしているん";
-		mes "だろうか……";
-		mes "とりあえず急いでいってください。";
+		mes "[Amuron]";
+		mes "Then again, you don't usually play in dungeons. ......";
+		mes "I wonder what kind of education the parents are giving ......";
+		mes "Please hurry up for now.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFIzlude海底洞窟1F(351,45)^000000に";
-		mes "いる^FF0000ツイーフラ^000000に蝶の羽を渡す。";
-		mes "‐^0000FFIzlude海底洞窟^000000には";
-		mes "Izludeから船でいける";
-		mes "バイラン島にある‐";
+		mes "^FF0000[Mission] ^000000^0000FFIzlude Undersea Cave 1F (351,45)^000000 give butterfly wings to ^FF0000Swiffler^000000 who is in ^000000.";
+		mes "-^0000FFIzlude Undersea Cave^000000 is located on Bylan Island, which can be reached by boat from Izlude-";
 		close;
 	case 3:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "お疲れ様でした。";
-		mes "無事、ミッション達成ですね。";
-		mes "丁度今、";
-		mes "依頼主から連絡がありましたよ。";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Good work.";
+		mes "You have successfully completed your mission.";
+		mes "Just now, you've heard from the client.";
 		next;
-		mes "[アムロン]";
-		mes "それでは、また何かありましたら";
-		mes "アカデミーの方に連絡しますので";
-		mes "もし、手が開いていたら";
-		mes "そのときはよろしくお願いします。";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes "Well, I'll be in touch with the academy if I hear anything else, and if your hands are open, I'll be happy to help you then.";
+		mes "Thank you very much.";
 		next;
 	L_REP4_3:
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Thank you.";
 		next;
 		goto L_REP4_3;
 	default:
@@ -1691,95 +1360,62 @@ L_QUEST04:
 L_QUEST06:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[アムロン]";
-		mes "お待ちしておりましたよ。";
-		mes strcharinfo(0)+"さん";
-		mes "今回の依頼内容は";
-		mes "猫探しです！";
+		mes "[Amuron]";
+		mes "We've been waiting for you.";
+		mes ""+strcharinfo(0)+"This request is to find a cat!";
 		next;
-		menu "猫ですか!?",-;
-		mes "[アムロン]";
-		mes "ええ、どうやら数日前から";
-		mes "依頼主の猫が見当たらない";
-		mes "らしい。";
-		mes "それで、猫の居場所を";
-		mes "突き止めてほしいそうなんです。";
+		menu "Is it a cat!" ,-;
+		mes "[Amuron]";
+		mes "Yes, apparently the client's cat has been missing for a few days.";
+		mes "So, he wants us to locate the cat.";
 		next;
-		mes "[アムロン]";
-		mes "他の冒険者から、";
-		mes "Prontera地下水路2Fに";
-		mes "猫らしき姿を見たという情報を";
-		mes "得ていますので、";
-		mes "^FF0000Prontera地下水路2F^000000の";
-		mes "捜索をお願いできますか？";
+		mes "[Amuron]";
+		mes "I have received information from other adventurers that they have seen a cat-like figure in the Prontera underground canal 2F, so could you please search ^FF0000Prontera underground canal 2F^000000?";
 		next;
-		mes "[アムロン]";
-		mes "猫の名前は、^FF0000メルシー^000000ちゃん";
-		mes "今年で2歳だそうです。";
-		mes "凄く頭の良い猫らしく、";
-		mes "^008800蝶の羽^000000を渡してあげれば";
-		mes "自分で帰って来れるそうだ。";
+		mes "[Amuron]";
+		mes "The cat's name is ^FF0000 Merci^000000 and she is two years old this year.";
+		mes "She seems to be a very smart cat and can come back by herself if you give her ^008800 butterfly wings^000000.";
 		next;
-		mes "[アムロン]";
-		mes "なのでメルシーちゃんを";
-		mes "見つけたら";
-		mes "前回同様に蝶の羽を";
-		mes "渡してくださいな。";
-		mes " ";
-		mes "‐蝶の羽が入った袋を受け取った‐";
+		mes "[Amuron]";
+		mes "So if you find Mercy-chan, please give her the butterfly feather like you did last time.";
+		mes " -I received a bag with butterfly wings in it-";
 		next;
 	L_REP6_1:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFProntera地下水路2F(159,182)^000000";
-		mes "にいる^FF0000メルシー^000000ちゃんに";
-		mes "蝶の羽を渡す。";
-		mes " ";
-		mes "^0000FF‐Prontera地下水路2F^000000へは";
-		mes "　^0000FFProntera^000000からいける‐";
+		mes "^FF0000 [Mission] ^000000^0000FFProntera underground canal 2F (159,182)^000000 give the butterfly wings to ^FF0000 Mercy-chan at ^000000.";
+		mes " ^0000FF-Prontera Underground Canal 2F^000000 can be reached from ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[アムロン]";
-		mes "それじゃお願いしますね。";
+		mes "[Amuron]";
+		mes "I'll ask for it then.";
 		next;
 		goto L_REP6_1;
 	case 3:
 		emotion 4;
 		emotion 23,"";
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "^FF0000メルシーちゃん^000000無事に";
-		mes "戻ってきたそうですよ。";
-		mes "でも……またすぐに行方不明に";
-		mes "なったとか……";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"^FF0000Mercy-chan^000000They came back safely.";
+		mes "But ......I heard he went missing again soon after. ......";
 		next;
-		menu "そうですか……",-;
-		mes "[アムロン]";
-		mes "とりあえず依頼は終了です。";
-		mes "それでは、また何かありましたら";
-		mes "アカデミーの方に連絡しますので";
-		mes "もし、手が空いていたら";
-		mes "そのときはよろしくお願いします。";
-		mes "ありがとうございました。";
+		menu "I see. ......",-;
+		mes "[Amuron]";
+		mes "The request is closed for now.";
+		mes "Then I will contact the academy if I have any more questions, and if you are available, I would appreciate it then.";
+		mes "Thank you very much.";
 		next;
 	L_REP6_3:
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Thank you.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
@@ -1787,290 +1423,238 @@ L_QUEST06:
 L_QUEST08:
 	switch(AC_QUEST_ST_3) {
 	case 1:
-		mes "[アムロン]";
-		mes "こんにちは、";
-		mes strcharinfo(0) + "さん";
-		mes "早速依頼内容を説明させて";
-		mes "いただきますね。";
+		mes "[Amuron]";
+		mes "Hello,";
+		mes strcharinfo(0) + "";
+		mes "I will explain the request as soon as possible.";
 		next;
-		mes "[アムロン]";
-		mes "新米の冒険者がペアで";
-		mes "冒険をしていたらしいのですが";
-		mes "モンスターに囲まれてしまい";
-		mes "一人が動けない状況に";
-		mes "なってしまっているようです。";
+		mes "[Amuron]";
+		mes "It seems that the new adventurers were adventuring in pairs, but they were surrounded by monsters and one of them is stuck.";
 		next;
-		mes "[アムロン]";
-		mes "ペアを組んでいた相方さんも";
-		mes "怪我をしているらしく、";
-		mes "すぐに助けに行くことができまい";
-		mes "とのこと。";
-		mes "ということで今回の依頼は";
-		mes "この新米冒険者の救出となります。";
+		mes "[Amuron]";
+		mes "It seems that the partner who was paired with him is also injured, and he is unable to go help him immediately.";
+		mes "So this request will be to rescue this new adventurer.";
 		next;
-		mes "[アムロン]";
-		mes "名前は^FF0000ザーパフ^000000。";
-		mes "年齢は20歳の男性です。";
-		mes "今回も同じく^008800蝶の羽^000000と";
-		mes "この^008800傷薬^000000を渡してあげてください。";
-		mes "‐蝶の羽と傷薬が";
-		mes "　入った袋を受け取った‐";
+		mes "[Amuron]";
+		mes "His name is ^FF0000Zapapo^000000.";
+		mes "His age is 20 years old male.";
+		mes "This time, give him ^008800Butterfly Wings^000000 and this ^008800Wound Medicine^000000 as well.";
+		mes "-I received the bag with the butterfly wings and the wound medicine-";
 		next;
 	L_REP8_1:
-		mes "^FF0000【ミッション】^000000";
-		mes "^0000FFIzlude海底洞窟2F(129,79)^000000";
-		mes "にいる^FF0000ザーパフ^000000に";
-		mes "^008800蝶の羽^000000と^008800傷薬^000000を渡す。";
-		mes " ";
-		mes "‐^0000FFIzlude海底洞窟2F^000000へは";
-		mes "　^0000FFIzlude^000000から船で行く‐";
+		mes "^FF0000[mission] ^000000^0000FFIzlude the ^FF0000Zapapo^000000 in the undersea cave 2F(129,79)^000000 and give him ^008800 butterfly wings^000000 and ^008800 wound medicine^000000.";
+		mes " -^0000FFIzlude Undersea Cave 2F^0000FFIzlude^000000 to ^0000FFIzlude^000000 by boat-";
 		close2;
 		set AC_QUEST_ST_3,2;
 		end;
 	case 2:
-		mes "[アムロン]";
-		mes "それじゃお願いしますね。";
+		mes "[Amuron]";
+		mes "I'll ask for it then.";
 		next;
 		goto L_REP8_1;
 	case 3:
-		mes "[アムロン]";
-		mes strcharinfo(0) + "さん";
-		mes "いかがでしたか？";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0) + "How was it?";
 		next;
-		menu "事情を説明する",-;
+		menu "Explain the situation",-;
 		emotion 4;
-		mes "[アムロン]";
-		mes "なんと……";
-		mes "ま、まあ、無事でよかったですよね！";
-		mes "しかし、あんな場所で寝てるとは";
-		mes "どれだけ、";
-		mes "肝のすわっている人";
-		mes "なんでしょうか……";
+		mes "[Amuron]";
+		mes "What a ......";
+		mes "Well, well, I'm glad you're okay!";
+		mes "But how much of a heartless person would you have to be to sleep in a place like that ......";
 		next;
-		mes "[アムロン]";
-		mes "とりあえず、";
-		mes "ミッション完了ということで……";
-		mes strcharinfo(0) + "さん";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes "At any rate, the mission is complete. ......";
+		mes ""+strcharinfo(0) + "Thank you very much.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close2;
 		set AC_QUEST_ST_3,99;
 		end;
 	case 99:
-		mes "[アムロン]";
-		mes strcharinfo(0)+"さん";
-		mes "ありがとうございました。";
+		mes "[Amuron]";
+		mes ""+strcharinfo(0)+"Thank you.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう。";
+		mes "^FF0000 [request accomplished] ^000000 request accomplished!";
+		mes "Let's go report to the Adventurers Academy.";
 		close;
 	default:
 		goto L_OTHER;
 	}
 L_OTHER:
-	mes "[アムロン]";
-	mes "こんにちは。";
+	mes "[Amuron]";
+	mes "Hello.";
 	close;
 L_CLEAR:
-	mes "[アムロン]";
-	mes strcharinfo(0)+"さん";
-	mes "貴方はほんとにすばらしい";
-	mes "冒険者です。";
-	mes "また、何かありましたら";
-	mes "よろしくお願いしますね。";
+	mes "[Amuron]";
+	mes ""+strcharinfo(0)+"You are really a great adventurer.";
+	mes "I'll look forward to working with you again.";
 	close;
 }
-prt_sewb1.gat,301,206,4	script	チスロー#AC	896,{
+prt_sewb1.gat,301,206,4	script	Chislow#AC	896,{
 	if(AC_QUEST_LV_3!=1) goto L_OTHER;
 	switch(AC_QUEST_ST_3) {
 	case 2:
-		mes "[チスロー]";
-		mes "うわーん、うわーん。";
-		mes "蝶の羽わすれて、";
-		mes "帰れなくなっちゃったよー";
+		mes "[Chislow]";
+		mes "Woah, woah.";
+		mes "I forgot my butterfly wings, I can't go home!";
 		next;
 		mes "["+strcharinfo(0)+"]";
-		mes "チスロー君";
-		mes "助けに来たよ。";
+		mes "Chislow-kun, I'm here to help you.";
 		next;
 		emotion 0;
-		mes "[チスロー]";
-		mes "!?";
-		mes "グスッ、グスッ";
-		mes "ありがとう……";
-		mes "これで家に帰れる。";
+		mes "[Chislow]";
+		mes "! Gussh, gussh thank you ......";
+		mes "Now I can go home.";
 		next;
 		emotion 15;
-		mes "[チスロー]";
-		mes "よーーし！";
-		mes "蝶の羽があれば平気だし";
-		mes "もうちょっと探検していこっと！";
-		mes "ありがとうね！";
+		mes "[Chislow]";
+		mes "Yay!";
+		mes "I'm fine with butterfly wings, so let's explore some more!";
+		mes "Thank you!";
 		next;
 	L_REP01:
-		mes "^FF0000【ミッション】^000000";
-		mes "無事に蝶の羽を渡したことを";
-		mes "^FF0000アムロン^000000に報告する。";
+		mes "^FF0000 [Mission] ^000000Report to ^FF0000Amuron^000000 that you have safely given the butterfly wings.";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[チスロー]";
-		mes "わざわざ来てくれてありがとうね。";
-		mes "僕は少し探検したら";
-		mes "帰るから安心して！";
+		mes "[Chislow]";
+		mes "Thanks for coming all the way out here.";
+		mes "I'll be back after a little exploring, don't worry!";
 		next;
 		goto L_REP01;
 	default:
 		goto L_OTHER;
 	}
 L_OTHER:
-	mes "[チスロー]";
-	mes "探検探検たのしいなー。";
+	mes "[Chislow]";
+	mes "I'm looking forward to exploring.";
 	close;
 }
-iz_dun00.gat,351,45,4	script	ツイーフラ#AC	96,{
+iz_dun00.gat,351,45,4	script	Swiffler#AC	96,{
 	if(AC_QUEST_LV_3!=3) goto L_OTHER;
 	switch(AC_QUEST_ST_3) {
 	case 2:
-		mes "[ツイーフラ]";
-		mes "……";
+		mes "[Swiffler]";
+		mes "......";
 		next;
-		menu "ツイーフラちゃん？",-;
-		mes "[ツイーフラ]";
-		mes "シーッ";
-		mes "いまかくれんぼしているんだから";
-		mes "話しかけないでよね！";
-		mes "鬼にばれちゃう！";
+		menu "Swiffler-chan?" ,-;
+		mes "[Swiffler]";
+		mes "Shh, we're playing hide-and-seek right now, so don't talk to me!";
+		mes "The ogres will find out!";
+		NEXT;
+		menu "Explain the situation",-;
+		mes "[Swiffler]";
+		mes "I'm awesome!";
+		mes "I didn't know enough to do that!";
+		mes "Are you a hide-and-seek master?";
+		mes "hmmm";
 		next;
-		menu "事情を説明する",-;
-		mes "[ツイーフラ]";
-		mes "私って凄い！";
-		mes "そんなことになるほど";
-		mes "わからなかったのねー。";
-		mes "かくれんぼ名人？";
-		mes "フフフッ";
-		next;
-		mes "[ツイーフラ]";
-		mes "でも、わざわざきてくれてありがと。";
-		mes "ちゃんと家に帰るようにする！";
-		mes "それじゃあねー。";
+		mes "[Swiffler]";
+		mes "But thanks for coming all the way out here.";
+		mes "I'll make sure you get home right!";
+		mes "So long.";
 		next;
 	L_REP01:
-		mes "^FF0000【ミッション】^000000";
-		mes "無事に蝶の羽を渡したことを";
-		mes "^FF0000アムロン^000000に報告する。";
+		mes "^FF0000 [Mission] ^000000Report to ^FF0000Amuron^000000 that you have safely given the butterfly wings.";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ツイーフラ]";
-		mes "ちゃんと後で帰るから";
-		mes "心配しないで！";
+		mes "[Swiffler]";
+		mes "I'll be back later, don't worry!";
 		next;
 		goto L_REP01;
 	default:
 		goto L_OTHER;
 	}
 L_OTHER:
-	mes "[ツイーフラ]";
-	mes "……";
+	mes "[Swiffler]";
+	mes "......";
 	close;
 }
-prt_sewb2.gat,159,182,4	script	メルシーちゃん#AC	876,{
+prt_sewb2.gat,159,182,4	script	Mercy-chan#AC	876,{
 	if(AC_QUEST_LV_3!=5) goto L_OTHER;
 	switch(AC_QUEST_ST_3) {
 	case 2:
-		mes "[メルシーちゃん]";
-		mes "ニャーニャー";
+		mes "[Mercy-chan]";
+		mes "Meow-meow";
 		next;
-		menu "メルシーちゃん？",-;
-		mes "[メルシーちゃん]";
-		mes "ニャーニャーニャー";
+		menu "Mercy-chan?",-;
+		mes "[Mercy-chan]";
+		mes "Meow-meow-meow";
 		next;
-		menu "事情を説明する",-;
+		menu "Explain the situation",-;
 		mes "[" + strcharinfo(0) + "]";
-		mes "（どうやらメルシーちゃんのようだ。";
-		mes "　蝶の羽を渡そう。";
-		mes "　本当にこれで平気なんだろうか";
-		mes "　……）";
+		mes "(It appears to be Mercy-chan.";
+		mes " Give him the wings of a butterfly.";
+		mes " I wonder if this is really okay ......)";
 		next;
 	L_REP01:
-		mes "^FF0000【ミッション】^000000";
-		mes "無事に蝶の羽を渡したことを";
-		mes "^FF0000アムロン^000000に報告する。";
+		mes "^FF0000 [Mission] ^000000Report to ^FF0000Amuron^000000 that you have safely given the butterfly wings.";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[メルシーちゃん]";
-		mes "ニャー！";
+		mes "[Mercy-chan]";
+		mes "Meow!";
 		next;
 		goto L_REP01;
 	default:
 		goto L_OTHER;
 	}
 L_OTHER:
-	mes "[メルシーちゃん]";
-	mes "ニャーニャー";
+	mes "[Mercy-chan]";
+	mes "Meow-meow";
 	close;
 }
-iz_dun01.gat,129,79,4	script	ザーパフ#AC	887,{
+iz_dun01.gat,129,79,4	script	Zapapo#AC	887,{
 	if(AC_QUEST_LV_3!=7) goto L_OTHER;
 	switch(AC_QUEST_ST_3) {
 	case 2:
-		mes "[ザーパフ]";
-		mes "Zzzzz……";
+		mes "[Zapapo]";
+		mes "Zzzzz ......";
 		next;
-		menu "ザーパフさん？",-;
-		mes "[ザーパフ]";
-		mes "んんっ？";
-		mes "ムニャムニャ……";
-		mes "もう食べられないよ……";
+		menu "Mr. Zapapo?" ,-;
+		mes "[Zapapo]";
+		mes "Hmm?";
+		mes "mnya mnya ......";
+		mes "I can't eat anymore ......";
 		next;
-		menu "ザーパフさん！",-;
-		emotion 23;
-		mes "[ザーパフ]";
-		mes "どわぁぁぁっ！";
-		mes "なんだなんだ？";
+		menu "Mr. Zapapo!" ,-;
+		EMOTION 23;
+		mes "[Zapapo]";
+		mes "D'oh!";
+		mes "What the hell is that?";
 		next;
-		menu "事情を説明する",-;
-		mes "[ザーパフ]";
-		mes "なるほど、そういうことだったのか、";
-		mes "でも平気だよ！";
-		mes "俺寝てるだけだから。";
-		mes "いやー、凄く眠くてさ";
-		mes "ここ、冷たくて気持ちいいんだよね。";
+		menu "Explain the situation",-;
+		mes "[Zapapo]";
+		mes "I see, that's what happened, but I'm fine!";
+		mes "I'm just sleeping.";
+		mes "No, I'm awfully sleepy, and it's nice and cold here.";
 		next;
-		menu "……",-;
-		mes "[ザーパフ]";
-		mes "でも、ありがたく";
-		mes "^008800傷薬^000000と^008800蝶の羽^000000はもらっておくよ。";
-		mes "それじゃ！";
+		menu "......",-;
+		mes "[Zapapo]";
+		mes "But thankfully I'll take ^008800wound medicine^000000 and ^008800butterfly wings^000000.";
+		mes "Well then!";
 		next;
 	L_REP01:
-		mes "^FF0000【ミッション】^000000";
-		mes "無事に蝶の羽を渡したことを";
-		mes "^FF0000アムロン^000000に報告する。";
+		mes "^FF0000 [Mission] ^000000Report to ^FF0000Amuron^000000 that you have safely given the butterfly wings.";
 		close2;
 		set AC_QUEST_ST_3,3;
 		end;
 	case 3:
-		mes "[ザーパフ]";
-		mes "Zzzzz……";
+		mes "[Zapapo]";
+		mes "Zzzzz......";
 		next;
 		goto L_REP01;
 	default:
 		goto L_OTHER;
 	}
 L_OTHER:
-	mes "[ザーパフ]";
-	mes "Zzzzz……";
+	mes "[Zapapo]";
+	mes "Zzzzz ......";
 	close;
 }

@@ -1,17 +1,17 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  昇級試験
-//                                                  by Pneuma
+// Ragnarok Online -- Adventurer Academy Promotional Exams
+// by Pneuma
 //------------------------------------------------------------
 
 // -----------------------------------------------------------
-// 昇級試験関連
+// Related to promotion examinations
 // -----------------------------------------------------------
 
-ac_cl_area.gat,85,37,4	script	ガルド	122,{
+ac_cl_area.gat,85,37,4	script	Gordo	122,{
 
-	function	show_mission;
+	function show_mission;
 
 	if(!AC_RANKTEST) goto L_OTHER;
 	switch(AC_RANK){
@@ -26,61 +26,42 @@ ac_cl_area.gat,85,37,4	script	ガルド	122,{
 L_TEST01:
 	switch(AC_RANKTEST){
 	case 1:
-		mes "[ガルド]";
-		mes "よお！";
-		mes "よく来たな！";
-		mes "俺の名前はガルド";
-		mes "君達の試験を担当させてもらっている。";
-		mes "まずは君の名前を教えてくれ。";
+		mes "[Gordo]";
+		mes "Yo!";
+		mes "Welcome to the site!";
+		mes "My name is Gordo and I am in charge of your examinations.";
+		mes "First of all, tell me your name.";
 		next;
-		emotion 9;
-		mes "[ガルド]";
-		mes strcharinfo(0) + "……";
-		mes "……" + strcharinfo(0) + "。";
-		mes "どうやら第一試験を受ける資格が";
-		mes "あるようだな。";
+		EMOTION 9;
+		mes "[Gordo]";
+		mes ""+strcharinfo(0) + "......";
+		mes "......" + strcharinfo(0) + ".";
+		mes "Looks like you qualify for the first test.";
 		next;
-		mes "[ガルド]";
-		mes "そうだ、一つ説明しておくが、試験";
-		mes "という言葉で身構えなくてもいいぞ。";
-		mes "今まで、君が請け負ってきた";
-		mes "Luneからの依頼と大差ないからな。";
+		mes "[Gordo]";
+		mes "Yes, I'll explain one thing, you don't have to get defensive at the word exam.";
+		mes "Because it's not much different from the requests from Lune that you've been taking on until now.";
 		next;
-		mes "[ガルド]";
-		mes "早速試験の内容を説明させてもらおう。";
-		mes "冒険者アカデミーには、";
-		mes "当たり前だが";
-		mes "俺以外にも教師がいる。";
+		mes "[Gordo]";
+		mes "Let me explain the exam as soon as possible.";
+		mes "The Adventurer's Academy has other teachers besides me, as a matter of course.";
 		next;
-		mes "[ガルド]";
-		mes "だが、ほとんどの教師は";
-		mes "学園外で、モンスターの生態研究";
-		mes "などおこなっているんだ。";
+		mes "[Gordo]";
+		mes "But most of the teachers are outside the academy, doing research on monster ecology and so on.";
 		next;
-		mes "[ガルド]";
-		mes "そして、定期的に研究資料を";
-		mes "提出してもらい、それを授業に";
-		mes "役立てている感じなんだ。";
+		mes "[Gordo]";
+		mes "And they submit their research materials to us on a regular basis, and we use them in our classes.";
 		next;
-		mes "[ガルド]";
-		mes "ということでだ、";
-		mes "今回の試験の内容は、";
-		mes "Payon迷いの森03に設置されている";
-		mes "ホルンの研究ボックスから";
-		mes "研究報告書をとって来ることだ。";
+		mes "[Gordo]";
+		mes "So, the content of this exam is to get a research report from the Horn Study Box located in Payon Lost Forest 03.";
 		next;
-		mes "[ガルド]";
-		mes "あー、そういえば";
-		mes "研究ボックスには鍵がかかっていて";
-		mes "いくつかアイテムが";
-		mes "必要だった気がするな。";
+		mes "[Gordo]";
+		mes "Oh, by the way, I think the study box is locked and some items are needed.";
 		next;
 		emotion 21;
-		mes "[ガルド]";
-		mes "でも、全部Payon迷いの森03に";
-		mes "生息するモンスターから";
-		mes "取得できるものだったはずだ。";
-		mes "それじゃ、よろしくな！";
+		mes "[Gordo]";
+		mes "But I'm sure they were all obtainable from the monsters that inhabit Payon Lost Forest 03.";
+		mes "Well then, good luck!";
 		next;
 		show_mission;
 		close2;
@@ -90,26 +71,22 @@ L_TEST01:
 		goto L_REPEAT;
 	case 98:
 		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "どうやら無事に研究報告書を";
-		mes "持ってきたようだな。";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Looks like you got your lab report in one piece.";
 		next;
-		mes "[ガルド]";
-		mes "-ガルドに";
-		mes "　ホルン先生の研究報告書を";
-		mes "　渡した-";
+		mes "[Gordo]";
+		mes "-Gordo with Professor Horn's research report -";
 		next;
 	case 99:
 		emotion 46;
-		mes "[ガルド]";
-		mes "第一試験突破おめでとう！";
-		mes "後は、Luneに報告するだけだ。";
-		mes "お疲れ様！";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐依頼を達成した！";
-		mes "Luneさんに報告しに行こう‐";
+		mes "[Gordo]";
+		mes "Congratulations on passing the first exam!";
+		mes "All that's left is to report back to Lune.";
+		mes "Good job!";
+		NEXT;
+		mes "^FF0000 [Mission] ^000000 - request accomplished!";
+		mes "Let's go report to Mr. Lune-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
@@ -117,46 +94,31 @@ L_TEST01:
 L_TEST02:
 	switch(AC_RANKTEST){
 	case 1:
-		mes "[ガルド]";
-		mes "よお！";
-		mes strcharinfo(0);
-		mes "そろそろ来る頃だと思っていたぜ。";
-		mes "君なら、第二試験もラクラク";
-		mes "クリアできるんじゃないかな？";
+		mes "[Gordo]";
+		mes "Yo!";
+		mes ""+strcharinfo(0);
+		mes "I knew you'd be here by now, man.";
+		mes "I'm sure you'll have an easy time clearing the second test.";
 		next;
-		mes "[ガルド]";
-		mes "それじゃ、";
-		mes "早速第二試験の内容について";
-		mes "説明するぞ！";
+		mes "[Gordo]";
+		mes "Well then, let's get right to the second test!";
 		next;
-		mes "[ガルド]";
-		mes "今回も、前回同様に";
-		mes "研究報告書を取ってきて";
-		mes "ほしいんだ。";
+		mes "[Gordo]";
+		mes "I want you to get your research reports again, just like last time.";
 		next;
-		mes "[ガルド]";
-		mes "本当は、他の内容にしようと";
-		mes "思ったんだが、ポリン先生から";
-		mes "いつまでたっても報告書が";
-		mes "送られてこなくてな……";
+		mes "[Gordo]";
+		mes "Actually, I was going to go with something else, but Professor Poring hasn't sent me the report anytime soon. ......";
 		next;
-		mes "[ガルド]";
-		mes "ポリン先生は";
-		mes "Payon迷いの森04で";
-		mes "研究をおこなっているはずなのだが";
-		mes "何かあったんだろうか……";
+		mes "[Gordo]";
+		mes "Professor Poring is supposed to be conducting research at Payon Lost Forest 04, but I wonder what happened to him. ......";
 		next;
-		mes "[ガルド]";
-		mes "というわけで、";
-		mes "ポリン先生から研究報告書を";
-		mes "とってきてくれ。";
+		mes "[Gordo]";
+		mes "So, please get me the research report from Professor Poring.";
 		next;
-		mes "[ガルド]";
-		mes "あ！";
-		mes "確か定期的に強いモンスターが";
-		mes "現れる場所だった気がするから";
-		mes "十分注意していけよ？";
-		mes "それじゃ、頼んだぜ。";
+		mes "[Gordo]";
+		mes "Ah!";
+		mes "I think it's a place where strong monsters appear regularly, so be very careful, okay?";
+		mes "Well then, I'm asking you.";
 		next;
 		show_mission;
 		close2;
@@ -164,31 +126,26 @@ L_TEST02:
 		end;
 	case 2:
 		goto L_REPEAT;
-	case 3: //ポリン先生にゼロピとべと液を要求される
-	case 4: //空きビンを要求される
-		goto L_MICHOUSA; //未調査
+	case 3: //Professor Poring requests zero pi and sticky liquid
+	case 4: //Requested empty bottle
+		goto L_MICHOUSA; //not investigated
 	case 98:
-		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "どうやら無事に研究報告書を";
-		mes "持ってきたようだな。";
+		EMOTION 0;
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Looks like you brought the lab report without incident.";
 		next;
-		mes "‐ガルドに";
-		mes "　ポリン先生の研究報告書を";
-		mes "　渡した‐";
+		mes "-Gordo with Professor Poring's research report-";
 		next;
 	case 99:
 		emotion 46;
-		mes "[ガルド]";
-		mes "第二試験突破おめでとう！";
-		mes "後は、Luneに報告するだけだ。";
-		mes "お疲れ様！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the second exam!";
+		mes "All that's left is to report back to Lune.";
+		mes "Good job!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "^FF0000Lune^000000さんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to ^FF0000Lune^000000-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
@@ -197,26 +154,22 @@ L_TEST03:
 	switch(AC_RANKTEST){
 	case 1:
 		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "じゃないか！";
-		mes "第三試験を受けに来たんだな。";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Isn't it!";
+		mes "You're here for the third test.";
 		next;
 		emotion 5;
-		mes "[ガルド]";
-		mes "三回目の試験はっと……";
-		mes "お、今回のも研究報告書を";
-		mes "とってくるものだな。";
+		mes "[Gordo]";
+		mes "The third exam is more ......";
+		mes "Oh, this one is also the one where you get the research report.";
 		next;
-		mes "[ガルド]";
-		mes "場所はPayon迷いの森02だな。";
-		mes "この場所は、ウルフ先生か！";
+		mes "[Gordo]";
+		mes "The location is Payon Lost Forest 02.";
+		mes "Is this place Professor Wolf!";
 		next;
-		mes "[ガルド]";
-		mes "というわけで、";
-		mes "Payon迷いの森02にいる";
-		mes "ウルフ先生から研究報告書を";
-		mes "とってきてくれ。";
+		mes "[Gordo]";
+		mes "So, get the research report from Professor Wolf in Payon Lost Forest 02.";
 		next;
 		show_mission;
 		close2;
@@ -224,31 +177,26 @@ L_TEST03:
 		end;
 	case 2:
 		goto L_REPEAT;
-	case 3: //ウルフ先生に噛まれた
-	case 4: //つぼを見つけた
-		goto L_MICHOUSA; //未調査
+	case 3: //Professor Wolf bit me
+	case 4: //found a jar
+		goto L_MICHOUSA; //not investigated
 	case 98:
 		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "どうやら無事に研究報告書を";
-		mes "持ってきたようだな。";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Looks like you brought the lab report without incident.";
 		next;
-		mes "‐ガルドに";
-		mes "　ウルフ先生の研究報告書を";
-		mes "　渡した‐";
+		mes "-Gordo with Professor Wolf's research report -";
 		next;
 	case 99:
 		emotion 46;
-		mes "[ガルド]";
-		mes "第三試験突破おめでとう！";
-		mes "後は、Luneに報告するだけだ。";
-		mes "お疲れ様！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the third exam!";
+		mes "All that's left is to report back to Lune.";
+		mes "Good job!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "^FF0000Lune^000000さんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to ^FF0000Lune^000000-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
@@ -257,94 +205,80 @@ L_TEST04:
 	switch(AC_RANKTEST){
 	case 1:
 		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "じゃないか！";
-		mes "第三試験を受けに来たんだな。";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Isn't it!";
+		mes "You're here for the third test.";
 		next;
-		mes "[ガルド]";
-		mes "四回目の試験は、";
-		mes "^0000FFProntera^000000から、";
-		mes "^0000FFGeffen^000000まで歩いてもらう！";
+		mes "[Gordo]";
+		mes "For the fourth exam, you will walk from ^0000FFProntera^000000 to ^0000FFGeffen^000000!";
 		next;
 		show_mission;
 		close2;
 		set AC_RANKTEST,2;
 		end;
 	case 2:
-		mes "[ガルド]";
-		mes "ん、内容をもう一度聞きたいのか？";
+		mes "[Gordo]";
+		mes "Hmm, do you want to hear the content again?";
 		next;
-		if(select("はい","いいえ")==2){
-			mes "[ガルド]";
-			mes "そうか、頑張れよ！";
+		if(select("yes", "no")==2){
+			mes "[Gordo]";
+			mes "Well, good luck!";
 			close;
 		}
-		mes "[ガルド]";
-		mes "わかった。";
-		mes "覚え切れなかったら";
-		mes "メモをするんだ。";
+		mes "[Gordo]";
+		mes "Okay.";
+		mes "If you can't remember it, make a note of it.";
 		next;
-		mes "[ガルド]";
-		mes "四回目の試験は、";
-		mes "^0000FFProntera^000000から、";
-		mes "^0000FFGeffen^000000まで歩いてもらう！";
+		mes "[Gordo]";
+		mes "For the fourth test, you will walk from ^0000FFProntera^000000 to ^0000FFGeffen^000000!";
 		next;
 		show_mission;
 		close;
-	case 3: // プロ西口
-	case 4: // プロ西左上WP手前
+	case 3: // pro west entrance
+	case 4: // pro-west upper left before WP
 	case 5: // mjolnir_09 WP
-	case 6: // ドラッブ先生にお弁当を渡す
+	case 6: // Give Professor Dragg his lunch
 	case 7: // prt_fild00 WP
-		emotion 0;
-		mes "[ガルド]";
-		mes "!?";
-		mes "試験途中で戻ってきてしまうとは……";
-		mes "まあ、戻ってきてしまったものは";
-		mes "仕方ない。";
-		mes "もう一度はじめから試験を";
-		mes "受けなおしてもらうぞ。";
+		EMOTION 0;
+		mes "[Gordo]";
+		mes "! I didn't expect you to come back in the middle of the exam ......";
+		mes "Well, what you've come back to is what you're going to get.";
+		mes "You'll have to take the exam again from the beginning.";
 		next;
 		cutin "quest_route001.bmp",3;
-		mes "[ガルド]";
-		mes "いいか？";
-		mes "試験は^0000FFProntera^000000から、";
-		mes "^0000FFGeffen^000000まで歩くんだ。";
+		mes "[Gordo]";
+		mes "Are you ready?";
+		mes "The test is to walk from ^0000FFProntera^000000 to ^0000FFGeffen^000000.";
 		next;
 		show_mission;
 		next;
-		mes "[ガルド]";
-		mes "ということだ。";
-		mes "頑張れよ！";
+		mes "[Gordo]";
+		mes "That means.";
+		mes "Good luck!";
 		close2;
 		set AC_RANKTEST,2;
 		end;
 	case 98:
 		emotion 0;
-		mes "[ガルド]";
-		mes "おお！";
-		mes strcharinfo(0);
-		mes "無事に戻ったな。";
+		mes "[Gordo]";
+		mes "Oh!";
+		mes ""+strcharinfo(0);
+		mes "You're back in one piece.";
 		next;
-		mes "[ガルド]";
-		mes "ドラップ先生にも";
-		mes "しっかりと";
-		mes "お弁当を渡せたようだな。";
+		mes "[Gordo]";
+		mes "Looks like you made sure to give Dr. Drapp his lunch.";
 		next;
 	case 99:
-		emotion 46;
-		mes "[ガルド]";
-		mes "ということでだ、";
+		EMOTION 46;
+		mes "[Gordo]";
+		mes "So it is,";
 		mes strcharinfo(0);
-		mes "第四試験合格おめでとう！";
-		mes "後はLuneに報告すれば";
-		mes "完了だ！";
+		mes "Congratulations on passing the fourth test!";
+		mes "Now all we have to do is report it to Lune and we're done!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "^FF0000Lune^000000さんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to ^FF0000Lune^000000-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
@@ -352,37 +286,26 @@ L_TEST04:
 L_TEST05:
 	switch(AC_RANKTEST){
 	case 1:
-		mes "[ガルド]";
-		mes "よお！";
-		mes strcharinfo(0) + "！";
-		mes "早いものでもう、第五試験だな。";
-		mes "今回の試験の内容はっと……";
-		mes "ふむ、今回も研究報告書を";
-		mes "とってきてもらう試験のようだ。";
+		mes "[Gordo]";
+		mes "Yo!";
+		mes ""+strcharinfo(0) + "!";
+		mes "Well, it's early days, and it's already the fifth exam.";
+		mes "This exam is more ......";
+		mes "Hmm, it looks like another exam where you have to get a research report.";
 		next;
-		mes "[ガルド]";
-		mes "さて、詳細内容だが、";
-		mes "ミョルニール山脈09に設置されている";
-		mes "ホルンの研究ボックスから";
-		mes "研究報告書をとってきてもらいたい。";
+		mes "[Gordo]";
+		mes "Now, as for the details, I would like you to get the research report from the Horn Study Box located at Mjolnir 09.";
 		next;
-		mes "[ガルド]";
-		mes "ホルン先生研究報告書が";/*のが抜けてるが本鯖どおり*/
-		mes "入っているボックスにはいつも鍵がかかっている。";
-		mes "確かこの場所のを空けるには";
-		mes "暗号が必要だったはずだ……";
+		mes "[Gordo]";
+		mes "The box containing the Professor Horn research reports is always locked.";
+		mes "As I recall, you needed a cipher to open the one in this place: ......";
 		next;
-		mes "[ガルド]";
-		mes "暗号は、ポストについているボタンを";
-		mes "押すことでヒントを";
-		mes "得られた気がするんだが、";
-		mes "詳しくは忘れてしまった。";
+		mes "[Gordo]";
+		mes "I think the cipher was hinted at by pressing the button on the post, but I forget the details.";
 		next;
-		mes "[ガルド]";
-		mes "まあ、とりあえず現地に";
-		mes "向かってみてほしい。";
-		mes "現地を調べれば";
-		mes "わかるかもしれないしな。";
+		mes "[Gordo]";
+		mes "Well, I'd like you to head there anyway.";
+		mes "I might be able to find out more if I check the area.";
 		next;
 		show_mission;
 		close2;
@@ -394,29 +317,25 @@ L_TEST05:
 	case 4:
 	case 5:
 	case 6:
-		goto L_MICHOUSA; //未調査
+		goto L_MICHOUSA; //not investigated
 	case 98:
 		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "どうやら無事に研究報告書を";
-		mes "持ってきたようだな。";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Looks like you brought the lab report without incident.";
 		next;
-		mes "[ガルド]";
-		mes "-ガルドに";
-		mes "　ホルン先生の研究報告書を";
-		mes "　渡した-";
+		mes "[Gordo]";
+		mes "-Gordo with Professor Horn's research report -";
 		next;
 	case 99:
 		emotion 46;
-		mes "[ガルド]";
-		mes "第五試験突破おめでとう！";
-		mes "後は、Luneに報告するだけだ。";
-		mes "お疲れ様！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the fifth exam!";
+		mes "All that's left is to report back to Lune.";
+		mes "Good job!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "Luneさんに報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to Mr. Lune-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
@@ -424,81 +343,53 @@ L_TEST05:
 L_TEST06:
 	switch(AC_RANKTEST){
 	case 1:
-		mes "[ガルド]";
-		mes "来たな！";
-		mes strcharinfo(0);
-		mes "第六試験はなかなか難しい";
-		mes "試験だぞ！";
+		mes "[Gordo]";
+		mes "You're here!";
+		mes ""+strcharinfo(0);
+		mes "The sixth exam is quite a difficult one!";
 		next;
-		mes "[ガルド]";
-		mes "今まで、何回か名前の出てきた";
-		mes "ホルン先生を覚えているだろうか？";
-		mes "彼は、好奇心と研究に対する";
-		mes "真剣さが尋常ではないんだ。";
+		mes "[Gordo]";
+		mes "Remember Professor Horn, whose name has come up a few times now?";
+		mes "He has an unusual curiosity and seriousness about his research.";
 		next;
-		mes "[ガルド]";
-		mes "だから、";
-		mes "自分の知らない土地であっても、";
-		mes "危険だとわかっている場所であっても";
-		mes "後先のことを考えずに";
-		mes "何処にでも行ってしまう。";
+		mes "[Gordo]";
+		mes "So he goes everywhere without thinking about the consequences, even in places he doesn't know, even in places he knows are dangerous.";
 		next;
-		mes "[ガルド]";
-		mes "そういうことで、彼は定期的に";
-		mes "迷子になってしまうのだ！";
-		mes "しかもだ、彼は無理して続けていることが";
-		mes "多い為、発見した時には";
-		mes "瀕死になっている事が多いのだ……";
+		mes "[Gordo]";
+		mes "That's how he gets lost on a regular basis!";
+		mes "And maybe, because he often pushes himself to keep going, he is often dying when we find him. ......";
 		next;
-		mes "[ガルド]";
-		mes "正直なところ、";
-		mes "一人前の冒険者でなければ";
-		mes "彼を見つけるのは難しいだろう。";
-		mes "しかし！";
-		mes "逆に言えばだ！";
+		mes "[Gordo]";
+		mes "Frankly, unless you're a full-fledged adventurer, you'll have a hard time finding him.";
+		mes "But!";
+		mes "On the contrary!";
 		next;
-		mes "[ガルド]";
-		mes "彼を見つけることができれば、";
-		mes "一人前の冒険者といっても";
-		mes "過言ではない。";
+		mes "[Gordo]";
+		mes "If you can find him, it is no exaggeration to say that you are a full-fledged adventurer.";
 		next;
-		mes "[ガルド]";
-		mes "そういうことでだ！";
-		mes "今回の試験はホルン先生を";
-		mes "見つけ、ミルクを渡すことだ！";
+		mes "[Gordo]";
+		mes "That's how it is!";
+		mes "This time the test is to find Professor Horn and give him the milk!";
 		next;
-		mes "[ガルド]";
-		mes "ちなみに、ミルクを届けることも";
-		mes "重要な任務になるからな？";
-		mes "ミルクは学校の販売員から";
-		mes "手に入れてくれ。";
-		mes "頼まれたものを手に入れて、しっかりと";
-		mes "届けるのも冒険者の基本だ。";
+		mes "[Gordo]";
+		mes "By the way, delivering the milk will be an important mission too, okay?";
+		mes "Get the milk from the school salesman.";
+		mes "It's also basic for adventurers to get what they ask for and deliver it well.";
 		next;
-		mes "[ガルド]";
-		mes "ということで、早速行ってくるんだ！";
-		mes "と言いたい所だが、";
-		mes "情報が少なすぎて、";
-		mes "これでは探す場所の絞込みが";
-		mes "できないだろう。";
+		mes "[Gordo]";
+		mes "So, you'd better get going!";
+		mes "I would say that there is too little information, but this would not narrow down the places to look for.";
 		next;
-		mes "[ガルド]";
-		mes "一つヒントをあげよう。";
-		mes "Payon迷いの森08 で";
-		mes "ホルン先生を見かけたという";
-		mes "情報が入っている。";
-		mes "もし、これで発見しミルクを渡せば";
-		mes "第六試験合格になるわけだが";
+		mes "[Gordo]";
+		mes "I'll give you one hint.";
+		mes "We have received information that Professor Horn has been seen in Payon Lost Forest 08.";
+		mes "If we find him and give him the milk, he will pass the sixth test.";
 		next;
-		mes "[ガルド]";
-		mes "この情報は若干古い情報でな";
-		mes "今その場所にいるかどうかは";
-		mes "実際に見に行って見ないと";
-		mes "わからない。";
+		mes "[Gordo]";
+		mes "This information is a little out of date, and I'll have to go and see if he is there now.";
 		next;
-		mes "[ガルド]";
-		mes "それじゃあ、気をつけて";
-		mes "言って来るんだぞ。";
+		mes "[Gordo]";
+		mes "Well, take care and go tell them.";
 		next;
 		show_mission;
 		close2;
@@ -507,491 +398,367 @@ L_TEST06:
 	case 2:
 		goto L_REPEAT;
 	case 3:
-		mes "[ガルド]";
-		mes "なるほどな。";
-		mes "ホロン先生に会ったのか。";
-		mes "頑張ってホルン先生を";
-		mes "見つけてミルクを渡すんだぞ？";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^FF0000ホルン先生^000000を見つけ、ミルクを渡す‐";
-		mes "‐^0000FFミョルニール山脈06^000000付近で";
-		mes "　ホルン先生の後姿を見かけたとの";
-		mes "　情報あり。";
-		mes "　^0000FFミョルニール山脈06^000000へは";
-		mes "　^0000FFGeffen^000000から向かうと近い‐";
+		mes "[Gordo]";
+		mes "I see.";
+		mes "You met Professor Horong.";
+		mes "Good luck finding Professor Horn and giving him the milk, okay?";
+		NEXT;
+		mes "^FF0000 [Mission] ^000000-^FF0000Find Professor Horn^000000 and give him milk-";
+		mes "-^0000FFMjolnir Mountains 06^000000According to reports, Professor Horn has been seen in the rear of the mountain range near ^0000FFMjolnir Mountains 06^000000.";
+		mes " ^0000FFMjolnir Mountains 06^000000 is closer if you head from ^0000FFGeffen^000000-";
 		close;
 	case 4:
-		mes "[ガルド]";
-		mes "ビートル先生に会ったのか。";
-		mes "後姿はホルン先生と";
-		mes "そっくりだからな。";
-		mes "間違えても仕方ないだろう。";
+		mes "[Gordo]";
+		mes "You met Professor Beetle.";
+		mes "The back of your head looks just like Professor Horn's, you know.";
+		mes "You can't blame me for making a mistake.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^FF0000ホルン先生^000000を見つけ、ミルクを渡す‐";
-		mes "‐^FF0000ホルン先生^000000は";
-		mes "　^0000FFソグラト砂漠 18^000000に向かった";
-		mes "　との情報あり。";
-		mes "　^0000FFソグラト砂漠 18^000000へは";
-		mes "　^0000FFMorroc^000000から向かうと近い‐";
+		mes "^FF0000[mission]^000000-^FF0000Find Professor Horn^000000 and give him milk-";
+		mes "-^FF0000Professor Horn^000000 is reportedly headed to ^0000FFSograt Desert 18^000000.";
+		mes "^0000FFSograt Desert 18^000000 is closer if you head from ^0000FFMorroc^000000-";
 		close;
 	case 98:
-		emotion 0;
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "お帰り！";
-		mes "無事にホルン先生には";
-		mes "会えたのかい？";
+		EMOTION 0;
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Welcome back!";
+		mes "Did you meet Professor Horn safely?";
 		next;
-		mes "‐ガルドにホルン先生のメモを渡した‐";
+		mes "-Gordo with a note from Professor Horn-";
 		next;
-		mes "[ガルド]";
-		mes "なるほど、";
-		mes strcharinfo(0) + "が";
-		mes "ホルン先生の命を救ったのか。";
-		mes "今回君が試験を受けていなかったら";
-		mes "彼の命はなかったということだな……";
+		mes "[Gordo]";
+		mes "I see.";
+		mes strcharinfo(0) + "is";
+		mes "You saved Professor Horn's life.";
+		mes "So if you hadn't taken the test this time, his life would not have been ......";
 		next;
-		mes "[ガルド]";
-		mes "俺からもお礼を言わせてもらおう";
-		mes "ありがとうな！";
-		mes "勿論試験も文句なしの合格だ！";
-		mes "次の試験もがんばってくれよ？";
-		mes "それじゃあ、Luneに報告";
-		mes "しに行ってくれ！";
+		mes "[Gordo]";
+		mes "Let me thank you too, thank you!";
+		mes "Of course you passed the exam without question!";
+		mes "Good luck on the next exam, okay?";
+		mes "Then go report to Lune!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐依頼を達成した！";
-		mes "Luneさんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [Mission] ^000000 - request accomplished!";
+		mes "Let's go report to Mr. Lune-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
-	case 99: //【ミッション】と【依頼達成】の違いは？？？
-		mes "[ガルド]";
-		mes "俺からもお礼を言わせてもらおう";
-		mes "ありがとうな！";
-		mes "勿論試験も文句なしの合格だ！";
-		mes "次の試験もがんばってくれよ？";
-		mes "それじゃあ、Luneに報告";
-		mes "しに行ってくれ！";
+	case 99: //What's the difference between [mission] and [request accomplished]?
+		mes "[Gordo]";
+		mes "Let me thank you for that one, thank you!";
+		mes "Of course you passed the exam without question!";
+		mes "Good luck on the next exam, okay?";
+		mes "Then go report to Lune!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "Luneさんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to Mr. Lune-";
 		close;
 	}
 L_TEST07:
 	switch(AC_RANKTEST){
 	case 1:
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "ついに第七試験だな。";
-		mes "これに合格すれば";
-		mes "君は晴れて、冒険者アカデミー";
-		mes "第一過程修了ということになる！";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "Finally, the seventh test.";
+		mes "If you pass this, you will have completed the first stage of the Adventurer Academy!";
 		next;
-		mes "[ガルド]";
-		mes "最終試験にふさわしく";
-		mes "今までの試験よりも";
-		mes "大変だからな。";
-		mes "心してかかるように。";
+		mes "[Gordo]";
+		mes "As befits a final exam, it's harder than anything you've ever done before.";
+		mes "Take it with care.";
 		next;
-		mes "[ガルド]";
-		mes "それでは、";
-		mes "試験の内容について";
-		mes "説明させてもらうぞ。";
+		mes "[Gordo]";
+		mes "Now then, let me explain to you what the exam is all about.";
 		next;
 		L_REP07:
 		cutin "quest_route002.bmp",3;
-		//Morroc崩壊前はMorrocからProntera6マップ移動
-		mes "[ガルド]";
-		mes "今回の内容は、";
-		mes "PayonからPronteraまで";
-		mes "歩いて到達することだ。";
+		//Prontera6 map move from Morroc before Morroc collapsed
+		mes "[Gordo]";
+		mes "This time the content is to reach Prontera from Payon on foot.";
 		next;
-		mes "[ガルド]";
-		mes "ただ、これだけでは簡単な試験に";
-		mes "なってしまう。";
-		mes "そこで、私が指定する場所を通り、";
-		mes "写真やアイテムなども";
-		mes "ついでにとってきてほしい。";
+		mes "[Gordo]";
+		mes "But this is just a simple test.";
+		mes "So, I want you to go through the places I specify and get pictures, items, etc. along the way.";
 		next;
-		mes "[ガルド]";
-		mes "一つ目は、チュンリム湖の水を";
-		mes "とって来ることだ。";
-		mes "そして二つ目は、指定の場所を";
-		mes "撮影してくること。";
-		mes "三つ目は、草を採ってくることだ。";
+		mes "[Gordo]";
+		mes "The first is to come and get water from Lake Chunlim.";
+		mes "And the second is to go and take pictures of the designated places.";
+		mes "The third is to go and get some grass.";
 		next;
-		mes "[ガルド]";
-		mes "ちなみに今頼んだものは";
-		mes "全て、PayonからPronteraへ";
-		mes "向かっている途中で";
-		mes "手に入れることができる。";
+		mes "[Gordo]";
+		mes "By the way, you can get everything you just asked for on your way from Payon to Prontera.";
 		next;
-		mes "[ガルド]";
-		mes "一つずつ詳しく説明するぞ。";
+		mes "[Gordo]";
+		mes "I'm going to detail them one by one.";
 		show_mission;
 		close2;
 		set AC_RANKTEST,2;
 		end;
 	case 2:
-		mes "[ガルド]";
-		mes "ん、内容をもう一度聞きたいのか？";
+		mes "[Gordo]";
+		mes "Hmm, do you want to hear the content again?";
 		next;
-		if(select("はい","いいえ")==2){
-			mes "[ガルド]";
-			mes "そうか、頑張れよ！";
+		if(select("yes", "no")==2){
+			mes "[Gordo]";
+			mes "Well, good luck!";
 			close;
 		}
-		mes "[ガルド]";
-		mes "わかった。";
-		mes "覚え切れなかったら";
-		mes "メモをするんだ。";
+		mes "[Gordo]";
+		mes "Okay.";
+		mes "If you can't remember it, make a note of it.";
 		next;
 		goto L_REP07;
-	case 3:  // ヤニクから水をもらう
-	case 4:  // 盗賊に捕まる
-	case 5:  // 荷物の場所を聞き出す
-	case 6:  // 荷物を取り戻した
-	case 7:  // WP前自動会話
-	case 8:  // 廃墟の写真を撮る
-	case 9:  // WP前自動会話
-	case 10: // ミシュラン先生に話しかける
-	case 11: // 草を採る
-	case 12: // 茂みからポリンが出る(省略可能)
-	case 13: // ミシュラン先生に魔法をかけてもらう
-	case 14: // WP前自動会話
-	case 15: // WP前自動会話
-	case 16: // プロ西入り口自動会話
-		emotion 18;
-		mes "[ガルド]";
-		mes "試験途中で戻ってきてしまうとは……";
-		mes "まあ、戻ってきてしまったものは";
-		mes "仕方ない。";
-		mes "もう一度はじめから試験を";
-		mes "受けなおしてもらうぞ。";
+	case 3: // get water from Janik
+	case 4: // caught by bandits
+	case 5: // ask the location of the package
+	case 6: // luggage is recovered
+	case 7: // Automatic conversation before WP
+	case 8: // Take pictures of the ruins
+	case 9: // automatic conversation before WP
+	case 10: // Talk to Dr. Michelin
+	case 11: // Picking weeds
+	case 12: // Pollin comes out of the bushes (optional)
+	case 13: // Ask Dr. Michelin to cast a spell
+	case 14: // automatic conversation before WP
+	case 15: // automatic conversation before WP
+	case 16: // automatic conversation at pro-west entrance
+		EMOTION 18;
+		mes "[Gordo]";
+		mes "I can't believe I'm back in the middle of an exam. ......";
+		mes "Well, what you've come back for is what you're going to get.";
+		mes "You'll have to take the exam again from the beginning.";
 		next;
-		mes "[ガルド]";
-		mes "再度詳しく説明するぞ";
+		mes "[Gordo]";
+		mes "We're going to go over it again in more detail.";
 		show_mission;
 		close2;
 		set AC_RANKTEST,2;
 		end;
 	case 98:
 		emotion 0;
-		mes "[ガルド]";
-		mes "おお！";
-		mes strcharinfo(0) + "じゃないか！";
-		mes "だいぶ時間がたっていたから";
-		mes "心配していたんだが";
-		mes "こうして無事に戻ってきてくれて";
-		mes "うれしいよ。";
+		mes "[Gordo]";
+		mes "Oh!";
+		mes ""+strcharinfo(0) + "Not!";
+		mes "It's been a long time and I was worried about you, but I'm glad you're back safe and sound like this.";
 		next;
-		mes "[ガルド]";
-		mes "指定されたものは";
-		mes "もってきてくれたのか？";
+		mes "[Gordo]";
+		mes "Did you bring the specified items?";
 		next;
-		mes "‐ガルドに";
-		mes "　^006600浄水したチュンリム湖の水^000000と";
-		mes "　^006600魔法のかかった草^000000を";
-		mes "　渡した‐";
+		mes "-Gordo was given ^006600 purified water from Lake Chunlim^000000 and ^006600 enchanted grass^000000-";
 		next;
-		mes "[ガルド]";
-		mes "おお！確かに確認したぞ。";
+		mes "[Gordo]";
+		mes "Oh! I've certainly checked it out.";
 		next;
 	case 99:
-		mes "[ガルド]";
-		mes strcharinfo(0);
-		mes "本当に成長したな。";
-		mes "この試験を合格できた時点で";
-		mes "君は一人前の冒険者だ！";
+		mes "[Gordo]";
+		mes ""+strcharinfo(0);
+		mes "You've really grown up.";
+		mes "You are a full-fledged adventurer when you pass this exam!";
 		next;
-		mes "[ガルド]";
-		mes "それじゃ、いつもどおり";
-		mes "Luneに報告してくれ。";
-		mes "これからもがんばれよ！";
+		mes "[Gordo]";
+		mes "Then report to Lune as usual.";
+		mes "Keep up the good work!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "Luneさんに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to Mr. Lune-";
 		close2;
 		set AC_RANKTEST,99;
 		end;
 	}
-L_MICHOUSA: //未調査はここへ
+L_MICHOUSA: //To go here for unsurveyed
 L_REPEAT:
-	mes "[ガルド]";
-	mes "ん、内容をもう一度聞きたいのか？";
+	mes "[Gordo]";
+	mes "Hmm, do you want to hear the content again?";
 	next;
-	if(select("はい","いいえ")==2){
-		mes "[ガルド]";
-		mes "そうか、頑張れよ！";
+	if(select("yes", "no")==2){
+		mes "[Gordo]";
+		mes "Well, good luck!";
 		close;
 	}
-	mes "[ガルド]";
-	mes "わかった。";
-	mes "覚え切れなかったら";
-	mes "メモをするんだ。";
+	mes "[Gordo]";
+	mes "Okay.";
+	mes "If you can't remember it, make a note of it.";
 	next;
 	show_mission;
 	next;
-	mes "[ガルド]";
-	mes "ということだ。";
-	mes "頑張れよ！";
+	mes "[Gordo]";
+	mes "That means.";
+	mes "Good luck!";
 	close;
 L_OTHER:
 	switch(AC_RANK){
 	case 0:
-		mes "[ガルド]";
-		mes "俺の名前はガルド";
-		mes "君達の試験を担当させてもらっている。";
+		mes "[Gordo]";
+		mes "My name is Gordo and I'm in charge of your exams.";
 		next;
-		mes "[ガルド]";
-		mes "試験を受けるためには、";
-		mes "Luneの依頼をいくつかこなして";
-		mes "単位を稼ぐ必要があるからな。";
-		mes "単位を稼ぎ、Luneにて試験の";
-		mes "手続きをしたら、";
-		mes "もう一度俺のところに来てくれ！";
+		mes "[Gordo]";
+		mes "In order to take the exam, I need to earn credits by doing some of Lune's requests.";
+		mes "Once you have earned your credits and completed the exam procedures at Lune, come see me again!";
 		next;
-		mes "[ガルド]";
-		mes "まってるぞ！";
+		mes "[Gordo]";
+		mes "I'll be waiting for you!";
 		close;
 	case 1:
-		mes "[ガルド]";
-		mes "第一試験合格おめでとう！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the first test!";
 		close;
-	case 2: mes "[ガルド]";
-		mes "第二試験合格おめでとう！";
+	case 2: mes "[Gordo]";
+		mes "Congratulations on passing the second exam!";
 		close;
-	case 3: mes "[ガルド]";
-		mes "第三試験合格おめでとう！";
+	case 3: mes "[Gordo]";
+		mes "Congratulations on passing the third exam!";
 		close;
 	case 4:
-		mes "[ガルド]";
-		mes "第四試験合格おめでとう！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the fourth test!";
 		close;
 	case 5:
-		mes "[ガルド]";
-		mes "第五試験合格おめでとう！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the fifth exam!";
 		close;
 	case 6:
-		mes "[ガルド]";
-		mes "第六試験合格おめでとう！";
+		mes "[Gordo]";
+		mes "Congratulations on passing the sixth exam!";
 		close;
 	case 7: case 8:
 		emotion 18;
-		mes "[ガルド]";
-		mes "よお！";
-		mes strcharinfo(0);
-		mes "君がひよっ子だった頃が";
-		mes "懐かしいな。";
+		mes "[Gordo]";
+		mes "Yo!";
+		mes ""+strcharinfo(0);
+		mes "I miss the days when you were a chick.";
 		close;
 	}
 	end;
 
 OnInit:
-	waitingroom "試験", 0;
+	waitingroom "exam", 0;
 	end;
 
-	function	show_mission	{
+	function show_mission {
 		switch(AC_RANK){
 		case 0:
-			mes "^FF0000【ミッション】^000000";
-			mes "^0000FFPayon迷いの森03^000000にある";
-			mes "^FF0000ホルンの研究ボックス^000000から";
-			mes "^006600研究報告書^000000を取ってくる。";
-			mes " ";
-			mes "‐^0000FFPayon迷いの森03^000000へは、";
-			mes "　^0000FFAlberta^000000からいける‐";
+			mes "^FF0000 [Mission] ^000000^0000FFPayon the ^FF0000Horn Study Box^000000 in the Lost Forest 03^000000 to get the ^006600 research report^000000.";
+			mes " -^0000FFPayon You can get to the Lost Forest 03^000000 from ^0000FFAlberta^000000-";
 			break;
-		case 1: mes "^FF0000【ミッション】^000000";
-			mes "‐^0000FFPayon迷いの森04^000000にいる";
-			mes "^FF0000ポリン先生^000000から";
-			mes "^006600研究報告書^000000を預かってくる‐";
-			mes " ";
-			mes "‐^0000FFPayon迷いの森04^000000へは、";
-			mes "^0000FFProntera^000000からいける‐";
+		case 1: mes "^FF0000 [Mission] ^000000";
+			mes "-^0000FFPayon I will get the ^006600 research report^000000 from ^FF0000Professor Poring^000000 in the Lost Forest 04^000000-";
+			mes " -^0000FFPayon I can get to the Lost Forest 04^000000 from ^0000FFProntera^000000-";
 			break;
-		case 2: mes "^FF0000【ミッション】^000000";
-			mes "‐^0000FFPayon迷いの森02^000000にいる";
-			mes "^FF0000ウルフ先生^000000から";
-			mes "^006600研究報告書^000000を預かってくる‐";
-			mes " ";
-			mes "‐^0000FFPayon迷いの森02^000000へは、";
-			mes "^0000FFPayon^000000からいける‐";
+		case 2: mes "^FF0000[mission]^000000";
+			mes "-^0000FFPayon I will get the ^006600 research report^000000 from ^FF0000Professor Wolf^000000 in the lost forest 02^000000-";
+			mes " -^0000FFPayon I can get to the Lost Forest 02^000000 from ^0000FFPayon^000000-";
 			break;
 		case 3:
-			mes "[ガルド]";
-			mes "冒険者として足で世界を歩くのは";
-			mes "すごく重要なことだ。";
-			mes "だからここでそれを";
-			mes "学んでもらうということだな。";
+			mes "[Gordo]";
+			mes "As an adventurer, it is very important to walk the world with your feet.";
+			mes "So that's what you're going to learn here.";
 			next;
 			cutin "quest_route001.bmp",3;
-			mes "[ガルド]";
-			mes "後、途中";
-			mes "^0000FFPronteraフィールド00 (163,244)^000000";
-			mes "付近にいる^FF0000ドラップ先生^000000に、";
-			mes "この、お弁当を渡して";
-			mes "サインをもらってきてきてくれ。";
+			mes "[Gordo]";
+			mes "Later, go give this, lunchbox to Mr. Drapp^000000, who is near ^0000FFProntera field 00 (163,244)^000000 on the way ^0000FFProntera field 00 (163,244)^000000 and get him to sign for it.";
 			next;
-			mes "[ガルド]";
-			mes "今説明したことを行い、";
-			mes "Geffenに到達した時点で";
-			mes "試験は合格となる！";
-			mes "しかし、指定したアイテムを";
-			mes "所持していなかったり、";
-			mes "指定したルートを通ってこないと";
+			mes "[Gordo]";
+			mes "The exam will be passed when you have done what I have just described and reached Geffen!";
+			mes "But if you don't have the specified item or if you don't come through the specified route";
 			next;
-			mes "[ガルド]";
-			mes "試験は失敗、全てやり直しとなる。";
-			mes "後、全てを終わらせる前に";
-			mes "私に話しかけた場合も同様に";
-			mes "やり直しとなるからな。";
-			mes "それじゃ頑張ってな！";
+			mes "[Gordo]";
+			mes "The exam will fail, and everything will have to be redone.";
+			mes "And later, if you talk to me before you finish everything, you'll have to start over as well, because you'll have to start over.";
+			mes "Good luck then!";
 			next;
-			mes "^FF0000【ミッション】^000000";
-			mes "‐指定された内容をクリアしながら";
-			mes "指定されたルートを通り";
-			mes "‐^0000FFProntera^000000から^0000FFGeffen^000000を目指す‐";
+			mes "^FF0000 [Mission] ^000000 - through the specified route while completing the specified content - from ^0000FFProntera^000000 to ^0000FFGeffen^000000 -";
 			break; 
 		case 4:
-			mes "^FF0000【ミッション】^000000";
-			mes "‐^0000FFミョルニール山脈09^000000にある";
-			mes "^006600ホルンの研究ボックス^000000から";
-			mes "^FF0000研究報告書^000000を取ってくる。";
-			mes " ";
-			mes "‐^0000FFミョルニール山脈09^000000へは、";
-			mes "^0000FFProntera^000000からいける‐";
+			mes "^FF0000 [Mission] ^000000-^0000FFMjolnir Mountains 09^000000-^FF0000 research report ^000000 from the ^006600Horn Study Box^000000 located at ^000000.";
+			mes " -^0000FFMjolnir Mountains 09^000000 can be reached from ^0000FFProntera^000000-";
 			break;
 		case 5:
-			mes "^FF0000【ミッション】^000000";
-			mes "‐^FF0000ホルン先生^000000を見つけ、ミルクを渡す‐";
-			mes "‐^0000FFPayon迷いの森08^000000で";
-			mes "　目撃したという情報があるらしい";
-			mes "　まずは、この場所を調べてみよう";
-			mes "　^0000FFPayon迷いの森08^000000へは";
-			mes "　^0000FFPayon^000000から行くと近い‐";
+			mes "^FF0000[Mission] ^000000-^FF0000Find Professor Horn^000000 and give him the milk-";
+			mes "-^0000FFPayonLost Forest 08^000000, there is a report that he was seen in the lost forest 08^000000, let's check this place first^0000FFPayonLost Forest 08^000000, you can go from ^0000FFPayon^000000, it's close to there. -";
 			break;
 		case 6: 
-			mes "^0000FFチュンリム湖^000000の北東あたりに";
-			mes "^FF0000行商人のヤニク^000000という男がいる。";
-			mes "そいつに、俺から頼まれたといえば";
-			mes "^006600浄水したチュンリム湖の水^000000を";
-			mes "もらうことが出来るはずだ。";
+			mes "Around the northeast of ^0000FF Chunlim Lake^000000 there is a man named Janik^000000, a ^FF0000 peddler.";
+			mes "If you tell him that I asked you for ^006600 purified water from Lake Chunlim^000000, he will give it to you.";
 			next;
-			mes "[ガルド]";
-			mes "二つ目の詳しい説明だが。";
-			mes "^006600ソグラト砂漠01^000000の南側の";
-			mes "丘にある石造りの廃墟を";
-			mes "撮影してきてくれ。";
+			mes "[Gordo]";
+			mes "The second detailed explanation.";
+			mes "Go photograph the stone ruins on the hill south of ^006600Sograt Desert01^000000.";
 			next;
-			mes "[ガルド]";
-			mes "続いて三つ目の詳しい説明だ。";
-			mes "^0000FFPronteraフィールド09^000000の";
-			mes "オアシス付近にいる";
-			mes "^FF0000ミシュラン先生^000000に話しかけ";
-			mes "^006600魔法のかかった草^000000をもらって来てほしい。";
+			mes "[Gordo]";
+			mes "Then a third, more detailed description.";
+			mes "I want you to talk to ^FF0000 Dr. Michelin^000000 near the oasis in ^0000FFProntera Field 09^000000 and get ^006600 enchanted grass^000000.";
 			next;
-			mes "[ガルド]";
-			mes "今説明した全ての内容を行い";
-			mes "Pronteraに^FF0000西側から^000000到達した時点で試験は合格となる！";
-			mes "しかし、指定したアイテムを";
-			mes "所持していなかったり、";
-			mes "指定したルートを通ってこないと";
+			mes "[Gordo]";
+			mes "The exam will be passed when you have done everything I have just explained and reached Prontera ^FF0000 from the west ^000000!";
+			mes "However, if you do not have the specified item or if you do not come through the specified route";
 			next;
-			mes "[ガルド]";
-			mes "試験は失敗、全てやり直しとなる。";
-			mes "後、全てを終わらせる前に";
-			mes "私に話しかけた場合も同様に";
-			mes "やり直しとなるからな。";
-			mes "それじゃ頑張ってな！";
+			mes "[Gordo]";
+			mes "The exam will fail, and everything will have to be redone.";
+			mes "And later, if you talk to me before you finish everything, you'll have to start over as well, because you'll have to start over.";
+			mes "Good luck then!";
 			next;
-			mes "^FF0000【ミッション】^000000";
-			mes "‐指定された内容をクリアしながら";
-			mes "指定されたルートを通り";
-			mes "‐^0000FFPayon^000000から^0000FFProntera^000000を目指す‐";
+			mes "^FF0000 [Mission] ^000000 - through the specified route while completing the specified content - ^0000FFPayon^000000 to ^0000FFProntera^000000 -";
 			break;
 		}
 		return;
 	}
 }
 
-//第１課程   --------------------------------------------------------
+// Course 1 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
-pay_fild03.gat,209,141,4	script	看板	835,{
-	mes "‐北西= Prontera方面";
-	mes "‐北= Payon方面";
-	mes "‐東= Alberta";
-	mes "‐西= Morroc方面";
+pay_fild03.gat,209,141,4	script	Signboard	835,{
+	mes "-Northwest= toward Prontera -North= toward Payon -East= toward Alberta -West= toward Morroc";
 	close;
 }
-pay_fild03.gat,209,143,4	script	ホルンの研究ボックス	888,{
+pay_fild03.gat,209,143,4	script	Horn Study Box	888,{
 	if(AC_RANK || AC_RANKTEST!=2){
-		mes "‐冒険者アカデミー";
-		mes "　ホルンの研究ボックス";
-		mes "　「ゴミは入れないでね！";
-		mes "　みんなのホルン先生より」";
-		mes "　と書かれている‐";
+		mes "-Adventurer Academy Horn Study Box \"Don't put garbage in it!";
+		mes " From everyone's Professor Horn\" written -";
 		close;
 	}
 	if(AC_RANKTEST==98) goto L_FIN;
-	mes "[ホルンの研究ボックス]";
-	mes " ";
-	mes "‐このボックスを開けるためには";
-	mes "　クローバー1個 木の根1個が";
-	mes "　必要です‐";
+	mes "[Horn Study Box]";
+	mes " -To open this box, you need 1 clover and 1 tree root-";
 	next;
 	if(countitem(705)>0 && countitem(902)>0){
 		mes "[" + strcharinfo(0) + "]";
-		mes "アイテムは、揃っているけど";
-		mes "どうしよう。";
+		mes "The items are all here, but what should we do?";
 		next;
-		if(select("ポストに放り込む","止めておく")==2) {
+		if(select("throw in the post", "stop")==2) {
 			mes "[" + strcharinfo(0) + "]";
-			mes "止めておこう……";
+			mes "Let's stop ......";
 			close;
 		} else {
-			mes "‐ガラガラ……";
-			mes "　ドンドンドン……";
-			mes "　中から分厚いノートらしきものが";
-			mes "　出てきた‐";
+			mes "-rattle ......";
+			mes "-don't-don't-don't-don't ......";
+			mes " Something that looks like a thick notebook came out from inside-";
 			next;
 			L_FIN:
 			mes "[" + strcharinfo(0) + "]";
-			mes "無事に手に入れることができたな。";
-			mes "冒険者アカデミーに戻ろう。";
+			mes "You've got it in one piece.";
+			mes "Let's go back to the Adventurer Academy.";
 			next;
-			mes "^FF0000【ミッション】^000000";
-			mes "‐冒険者アカデミーにいる";
-			mes "ガルドに、ホルンの研究書類を渡す‐";
+			mes "^FF0000 [Mission] ^000000-Give Gordo at the Adventurers' Academy the Horn's research papers.";
 			close2;
 			set AC_RANKTEST,98;
 			end;
 		}
 	} else {
 		mes "[" + strcharinfo(0) + "]";
-		mes "アイテムが足りないようだ。";
+		mes "Looks like you are missing an item.";
 		close;
 	}
 }
-//第２課程   --------------------------------------------------------
+// 2nd course --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
 pay_fild04.gat,350,330,4	script	#AC_PORING	1002,{}
-pay_fild04.gat,350,329,4	script	ポリン先生	111,{
+pay_fild04.gat,350,329,4	script	Professor Poring	111,{
 	if(AC_RANK!=1 || AC_RANKTEST<2){
-		mes "[ポリン先生]";
-		mes "お腹がすいたなぁ……";
+		mes "[Professor Poring]";
+		mes "I'm so hungry. ......";
 		close;
 	}
 	switch(AC_RANKTEST){
@@ -1001,1589 +768,1366 @@ pay_fild04.gat,350,329,4	script	ポリン先生	111,{
 	case 98:goto L_TEST04;
 	}
 L_TEST01:
-	emotion 28,"#AC_PORING";
-	mes "[ポリン先生]";
-	mes "お腹がすいた……";
-	mes "すいた！";
-	mes "すいた～～～～～～～～～!!";
+	emotion 28, "#AC_PORING";
+	mes "[Professor Poring]";
+	mes "I'm hungry......";
+	mes "I'm hungry!";
+	mes "I'm hungry ～～～～～～～～～!!!";
 	next;
-	set '@dummy,select("ポリン先生ですか？");
-	emotion 1,"#AC_PORING";
-	mes "[ポリン先生]";
-	mes "ん？";
-	mes "僕はいかにもポリン先生だけど？";
-	mes "何か用？";
-	mes "それにしてもお腹がすいて";
-	mes "大変だよ。";
+	set '@dummy,select("Are you Professor Poring?") ;
+	emotion 1, "#AC_PORING";
+	mes "[Professor Poring]";
+	mes "Hmm?";
+	mes "How am I Professor Poring?";
+	mes "What can I do for you?";
+	mes "And I'm very hungry, by the way.";
 	next;
-	set '@dummy,select("事情を説明する");
-	mes "[ポリン先生]";
-	mes "研究報告書だって!?";
-	mes "僕はお腹がすいて";
-	mes "生命の危機に直面しているんだ！";
-	mes "報告書がほしければ";
-	mes "食べ物を持ってきてくれ！";
+	set '@dummy,select("explain the situation");
+	mes "[Professor Poring]";
+	mes "A research report! I'm hungry and facing a life-threatening situation!";
+	mes "If you want the report, bring me food!";
 	next;
-	mes "[ポリン先生]";
-	mes "話はそれからだよ！";
-	mes "そうだなー。";
-	mes "ゼロピー10個と";
-	mes "べとべとする液体 5個ほど";
-	mes "これでお腹いっぱいになるはず！";
+	mes "[Professor Poring]";
+	mes "[Professor Poring]";
+	mes "I guess so.";
+	mes "About 10 Xerpees and 5 sticky liquids, that should fill you up!";
+	NEXT;
+	mes "[Professor Poring]";
+	mes "I can get these two from Poring and Drops, who are all over the place.";
 	next;
-	mes "[ポリン先生]";
-	mes "この2つのは、そこら辺にいる";
-	mes "ポリンやドロップスから";
-	mes "手に入るからね。";
-	next;
-	set '@dummy,select("それって共食いじゃ……");
-	mes "[ポリン先生]";
-	mes "共食いだって!?";
-	mes "ああ、共食いさ！";
-	mes "でも僕は自分の命を優先するねっ！";
-	mes "というわけでよろしく頼むよ。";
+	set '@dummy,select("That's cannibalism. ......");
+	mes "[Professor Poring]";
+	mes "That's cannibalism! Yeah, cannibalism!";
+	mes "But I'm putting my life first!";
+	mes "So please take care of me.";
 	next;
 	L_TEST01_REP:
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^006600ゼロピー^00000010個と";
-	mes "^006600べとべとする液体^000000を5個集めて";
-	mes "^FF0000ポリン先生に渡す^000000‐";
-	mes " ";
-	mes "‐この2つのアイテムは";
-	mes "　ドロップスやポリンから得られる‐";
+	mes "^FF0000[Mission] ^000000-^006600 zero-pee^00000010 pieces and ^006600 sticky liquid^000000 5 pieces and give them to ^FF0000Professor Poring^000000 -";
+	mes " -These two items can be obtained from Drops and Pollin-";
 	close2;
 	set AC_RANKTEST,3;
 	end;
 L_TEST02:
-	emotion 0,"#AC_PORING";
-	mes "[ポリン先生]";
-	mes "あ！君！";
-	mes "ゼロピー10個と";
-	mes "べとべとする液体を5個集めて";
-	mes "持って来てくれたの？";
+	emotion 0, "#AC_PORING";
+	mes "[Professor Poring]";
+	mes "Ah! You!";
+	mes "Did you bring me a collection of 10 Xerpies and 5 sticky liquids?";
 	next;
 	if(countitem(909)<10 || countitem(938)<5){
-		mes "[ポリン先生]";
-		mes "なんだ、もってないじゃないか！";
-		mes "早く持ってきてよ！";
+		mes "[Professor Poring]";
+		mes "What, you don't have it!";
+		mes "Bring it to me as soon as you can!";
 		next;
 		goto L_TEST01_REP;
 	}
-	mes "[ポリン先生]";
-	mes "あ、もってるじゃないか！";
-	mes "早く頂戴！";
+	mes "[Professor Poring]";
+	mes "Oh, you have it!";
+	mes "Give it to me quickly!";
 	next;
-	if(select("はい","いいえ")==2){
-		emotion 7,"#AC_PORING";
-		mes "[ポリン先生]";
-		mes "ケチケチケチケチケチ!!!";
+	if(select("yes", "no")==2){
+		emotion 7, "#AC_PORING";
+		mes "[Professor Poring]";
+		mes "Sticky Sticky Sticky Sticky!!!";
 		close;
 	}
-	emotion 15,"#AC_PORING";
-	mes "[ポリン先生]";
-	mes "わぁ！ ありがとう!!";
-	mes "……";
-	mes "…………";
-	mes "ちょっと、君！";
-	mes "足りないものがあるじゃないか！";
+	emotion 15, "#AC_PORING";
+	mes "[Professor Poring]";
+	mes "Wow! Thank you!!! ......";
+	mes "............";
+	mes "Hey, you!";
+	mes "You're missing something!";
 	next;
-	mes "[ポリン先生]";
-	mes "べとべとする液体";
-	mes "このままでどうやって飲むんだよ！";
-	mes "ちゃんと空きビンぐらい";
-	mes "気を利かせてもってきて";
-	mes "くれないと困るよ！";
-	mes "まったく。";
+	mes "[Professor Poring]";
+	mes "How am I supposed to drink the sticky liquid like this!";
+	mes "You should at least be smart enough to bring an empty bottle!";
+	mes "Totally.";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^006600空きビン^000000を1個手に入れて";
-	mes "^FF0000ポリン先生に渡す^000000‐";
-	mes " ";
-	mes "‐このアイテムは";
-	mes "　ドロップスやポリンから得られる‐";
+	mes "^FF0000 [Mission] ^000000-^006600 Get one empty bottle^000000 and give it to ^FF0000Professor Poring^000000-";
+	mes " -This item can be obtained from Drops or Poring-";
 	close2;
 	set AC_RANKTEST,4;
 	end;
 L_TEST03:
-	mes "[ポリン先生]";
-	mes "空きビンは持って来て";
-	mes "くれたんだろうね？";
+	mes "[Professor Poring]";
+	mes "I hope you brought the empty bottle with you?";
 	next;
 	if(countitem(713)<1){
-		mes "[ポリン先生]";
-		mes "なんだ、もってないじゃないか！";
-		mes "早く持ってきてよ！";
+		mes "[Professor Poring]";
+		mes "What, you don't have it!";
+		mes "Bring it to me as soon as you can!";
 		close;
 	}
-	mes "[ポリン先生]";
-	mes "あ、持ってるじゃないか！";
-	mes "早く頂戴！";
+	mes "[Professor Poring]";
+	mes "Oh, you have it!";
+	mes "Give it to me quickly!";
 	next;
-	if(select("はい","いいえ")==2){
-		emotion 7,"#AC_PORING";
-		mes "[ポリン先生]";
-		mes "ムッカーーッ！";
-		mes "見せびらかすだけなんて";
-		mes "なんて酷い人だーーっ！";
+	if(select("yes", "no")==2){
+		emotion 7, "#AC_PORING";
+		mes "[Professor Poring]";
+		mes "Mukkah!";
+		mes "What a horrible person to just show off!";
 		close;
 	}
-	mes "[ポリン先生]";
-	mes "君、実は結構良い奴じゃない？";
-	mes "ありがとうね。";
+	mes "[Professor Poring]";
+	mes "You're actually a pretty nice guy, aren't you?";
+	mes "Thank you.";
 	next;
-	mes "‐パクパク、ムシャムシャ";
-	mes "　モキュモキュ";
-	mes "　ゴクゴク‐";
+	mes "-punch, crunch, munch munch munch munch munch munch munch munch munch munch gobble-";
 	next;
-	mes "[ポリン先生]";
-	mes "ふーっ。";
-	mes "おいしかったー！";
-	mes "君の事は忘れないよー。";
-	mes "汚れちゃったけど空きビンは返すね。";
-	mes "それじゃあね！";
+	mes "[Professor Poring]";
+	mes "Whew.";
+	mes "That was delicious!";
+	mes "I'll never forget you!";
+	mes "I'll return the empty bottle even though it got dirty.";
+	mes "Bye!";
 	next;
-	set '@dummy,select("あの、研究報告書を…");
-	emotion 17,"#AC_PORING";
-	mes "[ポリン先生]";
-	mes "！";
-	mes "ああ、ごめんごめん。";
-	mes "すっかり忘れてた！";
-	mes "しっかり届けてね。";
+	set '@dummy,select("Um, the research report...");
+	emotion 17, "#AC_PORING";
+	mes "[Professor Poring]";
+	mes "!";
+	mes "Oh, sorry, sorry.";
+	mes "I totally forgot!";
+	mes "Make sure you deliver.";
 	next;
 	L_TEST03_REP:
-	mes "^FF0000【ミッション】^000000";
-	mes "‐冒険者アカデミーにいる";
-	mes "^FF0000ガルド^000000に、^006600研究報告書^000000を渡す‐";
+	mes "^FF0000 [Mission] ^000000-Give ^FF0000Gordo^000000 at the Adventurers Academy ^000000 the ^006600 research report ^000000-";
 	close2;
 	set AC_RANKTEST,98;
 	end;
 L_TEST04:
-	mes "[ポリン先生]";
-	mes "おお！";
-	mes "食べ物をありがとう！";
-	mes "研究報告書を早く持ち帰った方が";
-	mes "いいんじゃないかな？";
+	mes "[Professor Poring]";
+	mes "Oh!";
+	mes "Thanks for the food!";
+	mes "I think you should bring back the research report as soon as possible.";
 	next;
 	goto L_TEST03_REP;
 }
-//第３課程   --------------------------------------------------------
+// Course 3 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) Yellow 0xFFFFFF00
 
 pay_fild02.gat,105,242,4	script	#AC_WOLF	1107,{}
-pay_fild02.gat,105,241,4	script	ウルフ先生	111,{
+pay_fild02.gat,105,241,4	script	Professor Wolf	111,{
 	if(AC_RANK!=2 || AC_RANKTEST<2){
-		mes "[ウルフ先生]";
-		mes "Zzzzz……";
+		mes "[Professor Wolf]";
+		mes "Zzzzz ......";
 		close;
 	}
 	switch(AC_RANKTEST){
 	case 2:
-		emotion 36,"#AC_WOLF";
-		mes "[ウルフ先生]";
-		mes "ウーーーーッ";
-		mes "ワンワン！";
-		mes "ガブッ";
+		emotion 36, "#AC_WOLF";
+		mes "[Professor Wolf]";
+		mes "Woooooooowwww!";
+		mes "gulp";
 		next;
-		set '@dummy,select("いたっ");
-		mes "‐ウルフ先生に噛まれてしまった‐";
+		set '@dummy,select("It was");
+		mes "-Professor Wolf bit me-";
 		next;
-		set '@dummy,select("何をするんですか！");
-		emotion 0,"#AC_WOLF";
-		mes "[ウルフ先生]";
-		mes "!?";
-		mes "あれ？";
-		mes "ご、ごめんよ。";
-		mes "てっきり奴らだと思って。";
+		set '@dummy,select("What are you doing!") ;
+		emotion 0, "#AC_WOLF";
+		mes "[Professor Wolf]";
+		mes "! Huh?";
+		mes "Oh, I'm sorry.";
+		mes "I thought it was them.";
 		next;
-		set '@dummy,select("奴らって？");
-		mes "[ウルフ先生]";
-		mes "ああ、この辺に住んでる";
-		mes "ウルフ達さ。";
-		mes "さっき喧嘩してしまってさ。";
-		mes "あいつらがまた来たんじゃないかと";
-		mes "思ったんだよ。";
-		mes "ところで君は？";
+		set '@dummy,select("They?") ;
+		mes "[Professor Wolf]";
+		mes "Yeah, the Wolves that live around here.";
+		mes "We had a fight earlier.";
+		mes "I thought those guys might have come back.";
+		mes "What about you, by the way?";
 		next;
-		set '@dummy,select("事情を説明する");
-		mes "[ウルフ先生]";
-		mes "研究報告書か……";
-		mes "すっかり忘れていたよ。";
-		mes "この箱の中にしまったはず。";
-		mes "取り出すからちょっとまってね。";
+		set '@dummy,select("explain the situation");
+		mes "[Professor Wolf]";
+		mes "Research report or ......";
+		mes "I totally forgot about that.";
+		mes "I must have put it away in this box.";
+		mes "Hold on a second while I get it out.";
 		next;
-		mes "‐ウルフ先生が箱の上に手を当てて";
-		mes "　何かを唱えている。";
-		mes "　しかし何もおこらなかった‐";
+		mes "-Professor Wolf puts his hand on the box and chants something.";
+		mes " But nothing happened-";
 		next;
-		mes "[ウルフ先生]";
-		mes "あれ？";
-		mes "おっかしいなー。";
-		mes "これで箱が空くはずなんだけど……";
-		mes "……";
-		mes "あ！";
-		mes "わかった……";
+		mes "[Professor Wolf]";
+		mes "Huh?";
+		mes "Oops...";
+		mes "This should empty the box. ......";
+		mes "......";
+		mes "Ah!";
+		mes "Okay. ......";
 		next;
-		mes "[ウルフ先生]";
-		mes "さっきの喧嘩で手を";
-		mes "怪我してしまったからだ……";
-		mes "傷が癒えるまでは";
-		mes "悪いけどあけることができない。";
+		mes "[Professor Wolf]";
+		mes "Because I hurt my hand in a fight earlier. ......";
+		mes "I'm sorry, but I can't open it until the wound heals.";
 		next;
-		set '@dummy,select("何とかなりませんか？");
-		emotion 0,"#AC_WOLF";
-		mes "[ウルフ先生]";
-		mes "うーん……";
-		mes "あ！ そうだ!!";
-		mes "あの肉を食べればすぐ";
-		mes "傷なんて治っちゃうはずだ！";
-		mes "えと、こんなこともあろうかと";
-		mes "特別なタレに漬けた肉があるんだ。";
+		set '@dummy,select("Can you manage?") ;
+		emotion 0, "#AC_WOLF";
+		mes "[Professor Wolf]";
+		mes "umm ......";
+		mes "Ah! Yes!!! That meat should heal that wound in no time!";
+		mes "Uh, I have some meat marinated in a special sauce for this kind of thing.";
 		next;
-		mes "[ウルフ先生]";
-		mes "それさえ食べれば";
-		mes "あけることが出来るはず。";
-		mes "僕が今出歩くと、きっとまた";
-		mes "喧嘩になっちゃうから。";
-		mes "悪いんだけど君が";
-		mes "とってきてくれないかな？";
+		mes "[Professor Wolf]";
+		mes "As long as you eat that, you should be able to open it.";
+		mes "If I walk out now, I'm sure we'll get into another fight.";
+		mes "I'm sorry, but could you go get it for me?";
 		next;
-		set '@dummy,select("わかりました");
-		mes "[ウルフ先生]";
-		mes "おお、助かるよー。";
-		mes "確か、このマップの";
-		mes "^0000FF（129,186）^000000付近だったと思う。";
-		mes "念のため印を付けておくね。";
+		set '@dummy,select("Okay");
+		mes "[Professor Wolf]";
+		mes "Oh, that's a big help!";
+		mes "I think it was around ^0000FF (129,186)^000000 on this map.";
+		mes "I'll mark it for GHOST.";
 		next;
 		L_REP:
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^006600特製のタレに漬けた肉^000000を";
-		mes "手に入れて、";
-		mes "ウルフ先生に届ける‐";
+		mes "^FF0000 [Mission] ^000000-^006600Get meat ^000000 marinated in special sauce and deliver it to Professor Wolf-";
 		close2;
-		viewpoint 1,129,186,20,0xFFFF00;
+		viewpoint 1,129,186,20,0xFFFFFF00;
 		set AC_RANKTEST,3;
 		end;
 	case 3:
 	case 4:
-		mes "[ウルフ先生]";
-		mes "あ、おかえり";
-		mes "肉は持って来てくれたかな？";
+		mes "[Professor Wolf]";
+		mes "Oh, did you bring the welcome home meat?";
 		next;
 		if(AC_RANKTEST!=4){
-			mes "[ウルフ先生]";
-			mes "まだ、もってきてくれてないんだね。";
-			mes "僕はここで待っているから";
-			mes "頼むねー。";
+			mes "[Professor Wolf]";
+			mes "You haven't brought it yet.";
+			mes "I'll be waiting here, please.";
 			next;
 			goto L_REP;
 		}
-		mes "[ウルフ先生]";
-		mes "クンクン";
-		mes "この匂いは！";
-		mes "持って来てくれたんだねー。";
-		mes "ありがとう！";
+		mes "[Professor Wolf]";
+		mes "Kung Kung This Smell!";
+		mes "I'm so glad you brought it!";
+		mes "Thank you!";
 		next;
-		set '@dummy,select("肉を渡す");
-		mes "[ウルフ先生]";
-		mes "‐バクバクバク、バクバクバク";
-		mes "　ゲブッ‐";
+		set '@dummy,select("pass meat");
+		mes "[Professor Wolf]";
+		mes "-bakbakbakbak, bakbakbakbakbakgebut-";
 		next;
-		misceffect 77,"#AC_WOLF";
-		emotion 54,"#AC_WOLF";
-		mes "[ウルフ先生]";
-		mes "おいしかったーーーー！";
-		mes "おかげで力がわいてきたよ！";
-		mes "これで箱が空くはず。";
+		misceffect 77, "#AC_WOLF";
+		emotion 54, "#AC_WOLF";
+		mes "[Professor Wolf]";
+		mes "That was delicious!!!";
+		mes "You've given me a lot of strength!";
+		mes "This should empty the box.";
 		next;
-		mes "‐ウルフ先生が箱の上に手を当てて";
-		mes "　何かを唱えている。";
-		mes "　パカッ‐";
+		mes "-Professor Wolf puts his hand on the box and chants something.";
+		mes "Pucker-";
 		next;
-		mes "[ウルフ先生]";
-		mes "よしっ。";
-		mes "今度は空いたよー";
-		mes "これが研究報告書だ。";
+		mes "[Professor Wolf]";
+		mes "Alright.";
+		mes "Now I'm free - here's the research report.";
 		next;
-		mes "[ウルフ先生]";
-		mes "それじゃ、気をつけて帰ってね";
+		mes "[Professor Wolf]";
+		mes "Well, have a safe trip home.";
 		L_REP2:
-		mes "肉を持ってきてくれて";
-		mes "ありがとう！";
+		mes "Thanks for bringing the meat!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐冒険者アカデミーにいる";
-		mes "^FF0000ガルド^000000に、^006600研究報告書^000000を渡す‐";
+		mes "^FF0000 [Mission] ^000000-Give ^FF0000Gordo^000000 at the Adventurer's Academy the ^006600 Research Report^000000-";
 		close2;
 		set AC_RANKTEST,98;
 		end;
 	case 98:
-		mes "[ウルフ先生]";
+		mes "[Professor Wolf]";
 		goto L_REP2;
 	}
 }
-pay_fild02.gat,129,186,0	script	掘り返したような跡#ACTEST03		111,{
-	mes "‐掘り返したような後がある‐"; //後で本鯖どおり
+pay_fild02.gat,129,186,0	script	Digging Marks#ACTEST03	111,{
+	mes "-there is an after like digging-"; //Afterwards as in the main mackerel
 	if(AC_RANK!=2 || (AC_RANKTEST!=3 && AC_RANKTEST!=4)) close;
 	next;
 	if(AC_RANKTEST==4){
 		mes "[" + strcharinfo(0) + "]";
-		mes "肉はこれ以上必要ないな。";
+		mes "I don't think we need any more meat.";
 		next;
 		goto L_REP;
 	}
-	set '@dummy,select("掘ってみよう");
-	mes "‐掘ってみると中からつぼがでてきた";
-	mes "　つぼの中には肉が漬けてある‐";
+	set '@dummy,select("Let's dig");
+	mes "-When you dig, a jar will come out from inside, and inside the jar is pickled meat-";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "ウルフ先生の漬けた肉に";
-	mes "間違いないな。";
-	mes "一つ持っていこう。";
+	mes "I'm pretty sure this is Professor Wolf's pickled meat.";
+	mes "Let's take one.";
 	next;
-	mes "‐肉を一つ取り、";
-	mes "　つぼを埋めなおした‐";
+	mes "-I took one of the meats and re-filled the jar-";
 	next;
 L_REP:
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^FF0000ウルフ先生^000000に肉を届ける‐";
+	mes "^FF0000 [Mission] ^000000-^FF0000Deliver meat to Professor Wolf^000000-";
 	close2;
-	viewpoint 1,105,242,20,0xFFFF00;
+	viewpoint 1,105,242,20,0xFFFFFF00;
 	set AC_RANKTEST,4;
 	end;
 }
-//第４課程   --------------------------------------------------------
+// Course 4 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
 
-// 徒歩クエストのルートタッチ
+// Walking quest route touch
 
-//prt_fild05.gat,367,205,0				script	AC_TEST04#ROUTE01	139,1,1,{ //プロ西でタッチ
-//	if(AC_RANK!=3 || AC_RANKTEST!=2) end;
-//	viewpoint 1,105,381,20,0xFFFF00;
-//	mes "[" + strcharinfo(0) + "]";
-//	mes "ガルドは^0000FFProntera^000000から^0000FFGeffen^000000へ";
-//	mes "歩くことって言ってたっけ。";
-//	mes "途中で^FF0000ドラップ先生^000000にお弁当を";
-//	mes "渡さなくちゃ。";
-//	mes "まずは^FF0000北西の方角へ^000000歩いていこう。";
-//	close2;
-//	set AC_RANKTEST,3; //フラグ更新
-//	end;
+//prt_fild05.gat,367,205,0	script	AC_TEST04#ROUTE01	139,1,1,{ //touch in pro west
+// if(AC_RANK!=3 || AC_RANKTEST!=2) end;
+// viewpoint 1,105,381,20,0xFFFFFF00;
+// mes "[" + strcharinfo(0) + "]";
+// mes "Gordo goes from ^0000FFProntera^000000 to ^0000FFGeffen^000000";
+// mes "Did I mention walking?";
+// mes "On the way ^FF0000 Dr. Drapp^000000 your lunch"; // mes "I'll take your lunch to ^FF0000 Dr. Drapp^000000.
+// mes "I have to give it to him.";
+// mes "Let's walk ^FF0000northwest^000000 first.";
+// close2;
+// set AC_RANKTEST,3; // flag update
+// end;
 //}
-prt_fild05.gat,105,372,0				script	AC_TEST04#ROUTE02	139,5,4,{ //プロ西左上WP手前でタッチ
+prt_fild05.gat,105,372,0	script	AC_TEST04#ROUTE02	139,5,4,{ //Touch before pro west upper left WP
 	if(AC_RANK!=3 || AC_RANKTEST!=3) end;
 	mes "[" + strcharinfo(0) + "]";
-	mes "まだまだ先は長い。";
-	mes "がんばろう……";
+	mes "We still have a long way to go.";
+	mes "Good luck ......";
 	close2;
-	set AC_RANKTEST,4; //フラグ更新
+	set AC_RANKTEST,4; //flag update
 	end;
 }
-prt_fild05.gat,292,377,0				script	AC_TEST04#ROUTE03	139,5,5,{ //プロ西右上WP手前でタッチ
+prt_fild05.gat,292,377,0	script	AC_TEST04#ROUTE03	139,5,5,{ //Touch before pro west upper right WP
 	if(AC_RANK!=3 || AC_RANKTEST!=3) end;
-	viewpoint 1,105,381,20,0xFFFF00;
+	viewpoint 1,105,381,20,0xFFFFFF00;
 	mes "[" + strcharinfo(0) + "]";
-	mes "あれ？";
-	mes "行き先を間違ったかな？";
-	mes " ";
-	mes "‐ガルドから言われたルートだと、";
-	mes "もっと^0000FF西の方から北に向かう^000000";
-	mes "必要があるようだ‐";
+	mes "Huh?";
+	mes "Did I go to the wrong destination?";
+	mes " -It seems that with the route Gordo told me to take, I need to head ^0000FF west more ^0000FF north-";
 	close2;
 	end;
 }
-mjolnir_09.gat,37,244,0					script	AC_TEST04#ROUTE04	139,5,5,{ //プロ←↑の←ワープ手前でタッチ
+mjolnir_09.gat,37,244,0	script	AC_TEST04#ROUTE04	139,5,5,{ //Touch before pro ←↑ ← warp
 	if(AC_RANK!=3 || AC_RANKTEST!=4) end;
 	mes "[" + strcharinfo(0) + "]";
-	mes "確か次の場所が";
-	mes "ドラッブ先生がいる所";
-	mes "のはずだ。";
-	mes "先を急ごう。";
+	mes "I believe the next place is where Professor Dragg is.";
+	mes "Let's move on.";
 	close2;
-	set AC_RANKTEST,5; //フラグ更新
+	set AC_RANKTEST,5; //flag update
 	end;
 }
-prt_fild00.gat,152,250,0				script	ドラッブ先生	139,4,4,{
-// ガルドがドラップというが、
-// ドラッブが正しいらしい。（シークレットストーリーに出てきます）
-// 修正されないため、ガルドが間違ってるだけだろう……
+prt_fild00.gat,152,250,0	script	Professor Dragg	139,4,4,{
+// Gordo says drupe, but
+// Drabb seems to be correct. (It's in the Secret Story)
+// Gordo must just be wrong because it won't be corrected: ......
 
 	if(AC_RANK!=3 || (AC_RANKTEST!=5 && AC_RANKTEST!=6)) end;
 	if(AC_RANKTEST==5){
-		mes "[ドラッブ先生]";
-		mes "調査～、調査～。";
-		mes "俺は今日も、穴の中で調査する～。";
-		mes "そんな、俺に生徒達はうっとり～♪";
-		mes "そして微笑む俺～、";
-		mes "生徒達は失神～♪";
+		mes "[Professor Dragg]";
+		mes "Survey -, survey -";
+		mes "I'm going to investigate in the hole today.";
+		mes "Such, the students are enraptured by me ~ and me smiling ~ and the students faint ~";
 		next;
-		set '@dummy,select("ガルド先生からこれを……");
-		mes "[ドラッブ先生]";
-		mes "お！ ガルドからかい！";
-		mes "腹が減って死にそうだったんで";
-		mes "グッドタイミングというやつだね。";
-		mes "穴の中に弁当を放り投げてよ！";
-		mes " ";
-		mes "‐弁当を穴の中に放り投げた‐";
+		set '@dummy,select("Dr. Gordo gave me this ......");
+		mes "[Professor Dragg]";
+		mes "Oh! Gordo's got it!";
+		mes "I was dying of hunger, so I guess it's called good timing.";
+		mes "Throw my lunch in the hole!";
+		mes " -threw the lunch box down the hole-";
 		next;
-		set '@dummy,select("あの、サインを……");
-		mes "[ドラッブ先生]";
-		mes "サイン！おいおい、";
-		mes "俺はそこまで有名人じゃないよ！？";
-		mes "（へへっ、いつのまにか俺も人気者";
-		mes "になってたのか）";
+		set '@dummy,select("Um, sign ......");
+		mes "[Professor Dragg]";
+		mes "Sign! Oh, come on, I'm not that famous!";
+		mes "(Heh, when did I become popular too?)";
 		next;
-		mes "[ドラッブ先生]";
-		mes "ま、まぁ、そこまで言うなら";
-		mes "サインをあげよう。";
-		mes "大事にしてくれよ。";
-		mes " ";
-		mes "‐ガルドからもらった紙に";
-		mes "　サインを書いてもらった‐";
+		mes "[Professor Dragg]";
+		mes "Well, well, if you insist that much, I'll give you my autograph.";
+		mes "Take good care of it.";
+		mes " -Gordo gave me a piece of paper to sign-";
 		next;
-		mes "[ドラッブ先生]";
-		mes "それでは、";
-		mes "弁当を食べるとするかなあ。";
+		mes "[Professor Dragg]";
+		mes "I guess I'll have my lunch then.";
 		next;
 		L_REP:
 		mes "[" + strcharinfo(0) + "]";
-		mes "（ドラッブ先生からサインをもらった。";
-		mes "^FF0000Geffen^000000へ向かおう！）";
+		mes "(I got a signature from Professor Dragg.";
+		mes "Let's head to ^FF0000Geffen^000000!";
 		close2;
-		viewpoint 1,18,129,20,0xFFFF00;
-		set AC_RANKTEST,6; //フラグ更新
+		viewpoint 1,18,129,20,0xFFFFFF00;
+		set AC_RANKTEST,6; //flag update
 		end;
 	} else {
-		mes "[ドラッブ先生]";
-		mes "弁当をありがとう！";
-		mes "じゃあね!!";
+		mes "[Professor Dragg]";
+		mes "Thanks for the lunch!";
+		mes "Bye!";
 		next;
 		goto L_REP;
 	}
 }
-prt_fild00.gat,28,124,0					script	AC_TEST04#ROUTE05	139,5,5,{
+prt_fild00.gat,28,124,0	script	AC_TEST04#ROUTE05	139,5,5,{
 	if(AC_RANK!=3 || AC_RANKTEST<5 || AC_RANKTEST>6) end;
-	//お弁当わたしたか確認
+	//Confirm that you gave me my lunch
 	if(AC_RANKTEST==5){
-		//未調査 撮り忘れ。でもこんな感じだった
+		//not researched Forgot to take a picture. But it looked like this
 		mes "[" + strcharinfo(0) + "]";
-		mes "ドラッブ先生にお弁当を渡さなきゃ。";
+		mes "I have to give Professor Dragg his lunch.";
 		close2;
-		viewpoint 1,152,250,20,0xFFFF00;
+		viewpoint 1,152,250,20,0xFFFFFF00;
 		end;
 	}
 	mes "[" + strcharinfo(0) + "]";
-	mes "あと少しでGeffenだ！";
+	mes "We're almost there Geffen!";
 	close2;
-	set AC_RANKTEST,7; //フラグ更新
+	set AC_RANKTEST,7; //flag update
 	end;
 }
-geffen.gat,213,119,0					script	AC_TEST04#ROUTE06	139,1,1,{
+geffen.gat,213,119,0	script	AC_TEST04#ROUTE06	139,1,1,{
 	if(AC_RANK!=3 || AC_RANKTEST!=7) end;
-	mes "無事にGeffenに着いたぞ！";
-	mes "ガルドさんに報告しよう！";
+	mes "We're safely in Geffen!";
+	mes "Let's report to Mr. Gordo!";
 	close2;
-	set AC_RANKTEST,98; //フラグ更新
+	set AC_RANKTEST,98; //flag update
 	end;
 }
 
-//第５課程   --------------------------------------------------------
+// Course 5 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
-mjolnir_09.gat,100,365,4	script	ホルンの研究ボックス	888,{
+mjolnir_09.gat,100,365,4	script	Horn Study Box	888,{
 	if(AC_RANK!=4 || AC_RANKTEST<2){
-		mes "‐謎の言葉が書かれている‐";
+		mes "-a mysterious word is written-";
 		close;
 	}
 	switch(AC_RANKTEST){
 	case 2:
-		mes "[ホルンの研究ボックス]";
-		mes " ";
-		mes "‐一つ目の暗号を入力してください‐";
+		mes "[Horn Study Box]";
+		mes " -Please enter the first cipher-";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "ボタンを押すとヒントが表示される";
-		mes "と書いてあったが。";
-		mes "何処にボタンがあるのだろうか……";
+		mes "It said that the hint would appear when you press the button.";
+		mes "Where is the button ......";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "……";
-		mes "おっ!?";
-		mes "これが、ボタンのようだな。";
-		mes "押してみよう……";
+		mes "......";
+		mes "Whoa! Looks like this is the button.";
+		mes "Let's press ......";
 		next;
-		mes "‐ガラガラガチャン";
-		mes "　パサッ";
-		mes "　一枚の紙がでてきたようだ‐";
+		mes "-rattle rattle rattle rattle, looks like a sheet of paper came out-";
 		next;
-		mes "‐アンゴウハゼンブデミッツ";
-		mes " スベテニュウリョクスルコトデ、";
-		mes " ケンキュウホウコクショヲ";
-		mes " テニイレルコトガデキマス‐";
+		mes "-Angoha zenbu demitsubetenuurikusuku kotode, kenkyuho kokusho wo niiirukottegadekimasu-";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		L_REP: //繰り返し場所おかしいが本鯖どおり。
-		mes "どうやら三つの暗号があるらしい。";
-		mes "暗号の場所も書かれているな。";
-		mes "とりあえず一つ目から暗号を";
-		mes "見に行ってみよう。";
+		L_REP: //This is a strange place to repeat, but it is as in the main mackerel.
+		mes "Apparently there are three ciphers.";
+		mes "I see that the location of the ciphers is also written.";
+		mes "Let's go to the cipher from the first one for now.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "一つ目の暗号のありかは……";
-		mes "このマップの座標";
-		mes "（ 284,354）だな。";
+		mes "The location of the first cipher is ......";
+		mes "That's the coordinates (284,354) on this map.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐一つ目の暗号を調べる‐";
-		mes " ";
-		mes "‐^0000FFミュルニール山脈09（284,345）^000000‐";
+		mes "^FF0000 [Mission] ^000000- look up the first cipher-";
+		mes " -^0000FF Mulnir Mountains 09 (284,345)^000000-";
 		close2;
-		viewpoint 1,284,345,20,0xFFFF00;
+		viewpoint 1,284,345,20,0xFFFFFF00;
 		set AC_RANKTEST,3;
 		end;
 	case 3:
-		mes " ";goto L_REP;
-	case 4://未調査
+		mes " ";
+		goto L_REP;
+	case 4://not yet surveyed
 		mes "[" + strcharinfo(0) + "]";
-		mes "どうやら三つの暗号があるらしい。";
-		mes "暗号の場所も書かれているな。";
-		mes "一つ目の暗号は";
-		mes "^006600ホルン先生は男前^000000";
-		mes "だったな。";
-		mes "二つ目を調べに行こう。";
+		mes "Apparently there are three ciphers.";
+		mes "You've also written the location of the ciphers.";
+		mes "The first cipher was ^006600Professor Horn was a manly ^000000.";
+		mes "Let's go check the second one.";
 		next;
 	case 5:
 		mes "[" + strcharinfo(0) + "]";
-		mes "どうやら三つの暗号があるらしい。";
-		mes "暗号の場所も書かれているな。";
-		mes "二つ目の暗号は";
-		mes "^006600ホルン先生はお金持ち^000000";
-		mes "だったな。";
-		mes "三つ目を調べに行こう。";
+		mes "Apparently there are three ciphers.";
+		mes "You've also written the location of the ciphers.";
+		mes "The second cipher was ^006600Professor Horn was rich ^000000.";
+		mes "Let's go check the third one.";
 		next;
 	case 6:
-		mes "[ホルンの研究ボックス]";
-		mes " ";
-		mes "‐一つ目の暗号を入力してください‐";
+		mes "[Horn Study Box]";
+		mes " -Enter the first cipher-";
 		next;
 		input '@dummy$;
-		if('@dummy$!="ホルン先生は男前") goto L_INPERR;
-		mes "[ホルンの研究ボックス]";
-		mes " ";
-		mes "‐ニつ目の暗号を入力してください‐";
+		if('@dummy$!="Professor Horn is a manly man") goto L_INPERR;
+		mes "[Horn Study Box]";
+		mes " -Enter the second cipher-";
 		next;
 		input '@dummy$;
-		if('@dummy$!="ホルン先生はお金持ち") goto L_INPERR;
-		mes "[ホルンの研究ボックス]";
-		mes " ";
-		mes "‐三つ目の暗号を入力してください‐";
+		if('@dummy$!="Professor Horn is rich") goto L_INPERR;
+		mes "[Horn Study Box]";
+		mes " -Enter the third cipher-";
 		next;
 		input '@dummy$;
-		if('@dummy$!="ホルン先生は大天才") goto L_INPERR;
-		mes "‐ガラガラ……";
-		mes "　ドンドンドン……";
-		mes "　中から分厚いノートらしきものが";
-		mes "　出てきた‐";
+		if('@dummy$!="Professor Horn is a great genius") goto L_INPERR;
+		mes "-rattle ......";
+		mes "-don-don-don ......";
+		mes " Something that looks like a thick notebook came out from inside-";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "研究報告書だ。";
-		mes "無事に手に入れることができたな。";
-		mes "冒険者アカデミーに戻ろう。";
+		mes "It's a research report.";
+		mes "You've got it all in one piece.";
+		mes "Let's go back to the Adventurer Academy.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐冒険者アカデミーにいる";
-		mes "ガルドに、ホルンの研究書類を渡す‐";
+		mes "^FF0000 [Mission] ^000000-Give Gordo at the Adventurers' Academy the Horn's research papers.";
 		close2;
 		set AC_RANKTEST,98;
 		end;
 	}
 L_INPERR:
-	mes "[ホルンの研究ボックス]";
-	mes " ";
-	mes "‐暗号が違います‐";
+	mes "[Horn Study Box]";
+	mes "[Wrong cipher]";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "暗号入力を";
-	mes "間違えてしまったようだ。";
-	mes "再度確認して入力しよう。";
+	mes "I think I made a mistake in entering the cipher.";
+	mes "Let's check and enter it again.";
 	close;
 }
-mjolnir_09.gat,284,345,4	script	看板#ACTEST501	858,{
+mjolnir_09.gat,284,345,4	script	Signboard#ACTEST501	858,{
 	if(AC_RANK!=4 || (AC_RANKTEST!=3 && AC_RANKTEST!=4)){
-		mes "‐看板には";
-		mes "　謎の言葉が書かれている‐";
+		mes "-Signboard has a mysterious word written on it-";
 		close;
 	}
 	if(AC_RANKTEST==4) goto L_REP;
-	mes "‐看板には";
-	mes "　^006600ホルン先生は男前^000000";
-	mes "　と書かれている‐";
+	mes "-Signboard says ^006600Professor Horn is a manly man ^000000-";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "それ以外なにも書かれていない。";
-	mes "どうやらこれが暗号のようだ……";
+	mes "Nothing else is written.";
+	mes "Apparently this is the cipher ......";
 	next;
 	L_REP:
 	mes "[" + strcharinfo(0) + "]";
-	mes "^006600ホルン先生は男前^000000か……";
-	mes "とりあえず、他の場所も見てみよう。";
-	mes "次の座標は……";
-	mes "（309.282）だな。";
-	next; //ピリオドであってます・・・
-	mes "^FF0000【ミッション】^000000";
-	mes "‐二つ目の暗号を調べる‐";
+	mes "^006600Professor Horn is manly ^000000 or ......";
+	mes "In the meantime, let's look at other places.";
+	mes "Next coordinates are ......";
+	mes "(309.282).";
+	next; // period is right...
+	mes "^FF0000 [Mission] ^000000 - Examine the second cipher -";
 	close2;
-	viewpoint 1,309,282,20,0xFFFF00;
+	viewpoint 1,309,282,20,0xFFFFFF00;
 	set AC_RANKTEST,4;
 	end;
 }
-mjolnir_09.gat,309,282,4	script	看板#ACTEST502	858,{
+mjolnir_09.gat,309,282,4	script	Signboard#ACTEST502	858,{
 	if(AC_RANK!=4 || (AC_RANKTEST!=4 && AC_RANKTEST!=5)){
-		mes "‐看板には";
-		mes "　謎の言葉が書かれている‐";
+		mes "-Signboard has a mysterious word written on it-";
 		close;
 	}
 	if(AC_RANKTEST==5) goto L_REP;
-	mes "‐看板には";
-	mes "　^006600ホルン先生はお金持ち^000000";
-	mes "　と書かれている‐";
+	mes "-Signboard says ^006600Professor Horn is rich ^000000-";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "……";
-	mes "どうやらこれが暗号のようだな。";
+	mes "......";
+	mes "Looks like this is the cipher.";
 	next;
 	L_REP:
 	mes "[" + strcharinfo(0) + "]";
-	mes "^006600ホルン先生はお金持ち^000000……";
-	mes "後一箇所見てみよう。";
-	mes "次の座標は……";
-	mes "（100,310）だな。";
+	mes "^006600Professor Horn is rich ^000000......";
+	mes "Let's look at one more place.";
+	mes "The next coordinate is ......";
+	mes "(100,310).";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "‐三つ目の暗号を調べる‐";
+	mes "^FF0000 [Mission] ^000000 - look up the third cipher -";
 	close2;
-	viewpoint 1,100,310,20,0xFFFF00;
+	viewpoint 1,100,310,20,0xFFFFFF00;
 	set AC_RANKTEST,5;
 	end;
 }
-mjolnir_09.gat,100,310,4	script	看板#ACTEST503	858,{
+mjolnir_09.gat,100,310,4	script	Signboard#ACTEST503	858,{
 	if(AC_RANK!=4 || (AC_RANKTEST!=5 && AC_RANKTEST!=6)){
-		mes "‐看板には";
-		mes "　謎の言葉が書かれている‐";
+		mes "-Signboard has a mysterious word written on it-";
 		close;
 	}
 	if(AC_RANKTEST==6) goto L_REP;
-	mes "‐看板には";
-	mes "　^006600ホルン先生は大天才^000000";
-	mes "　と書かれている‐";
+	mes "-Signboard says ^006600Professor Horn is a great genius ^000000-";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "……";
-	mes "どうやらこれが暗号のようだな。";
+	mes "......";
+	mes "Looks like this is the cipher.";
 	next;
 	L_REP:
-	//未調査 ここ以下の記録が消失・・・とりあえず想像でごまかしときます。
+	//not researched The record below this point is lost... I'll just use my imagination for now.
 	mes "[" + strcharinfo(0) + "]";
-	mes "一つ目が、^006600ホルン先生は男前^000000、";
-	mes "二つ目が、^006600ホルン先生はお金持ち^000000、";
-	mes "三つ目は、^006600ホルン先生は大天才^000000か。";
-	mes "どうやら暗号は揃ったようだ。";
-	mes "研究ボックスに入力しに行こう。";
+	mes "First, ^006600Professor Horn is handsome^000000, second, ^006600Professor Horn is rich^000000, third, ^006600Professor Horn is a great genius^000000?";
+	mes "It seems that the ciphers are all here.";
+	mes "Let's go type it in the research box.";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^FF0000ホルンの研究ボックス^000000に戻り、";
-	mes "三つの暗号を入力する。‐";
+	mes "Go back to ^FF0000 [Mission] ^000000-^FF0000Horn Study Box^000000 and enter the three ciphers. -";
 	close2;
-	viewpoint 1,100,365,20,0xFFFF00;
+	viewpoint 1,100,365,20,0xFFFFFF00;
 	set AC_RANKTEST,6;
 	end;
 }
-//第６課程   --------------------------------------------------------
+// Course 6 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
 
-pay_fild08.gat,167,332,4		script	#AC_HORONG	1129,{}
-pay_fild08.gat,167,331,4		script	ホロン先生	111,{
-	if(AC_RANK==5 && AC_RANKTEST==3){ mes "[ホロン先生]";goto L_REP; }
-	emotion 2,"#AC_HORONG";
-	mes "[ホロン先生]";
-	mes "ふんふん～♪";
-	mes "う～ん研究は難しいわね。";
-	mes "でも、上手くいかないところが";
-	mes "いいのよねぇ。";
+pay_fild08.gat,167,332,4	script	#AC_HORONG	1129,{}
+pay_fild08.gat,167,331,4	script	Professor Horong	111,{
+	if(AC_RANK==5 && AC_RANKTEST==3){ mes "[Professor Horong]";goto L_REP; }
+	emotion 2, "#AC_HORONG";
+	mes "[Professor Horong]";
+	mes "hmmmmmmm..................................ummm research is hard.";
+	mes "But I like the fact that it doesn't work.";
 	if(AC_RANK!=5 || AC_RANKTEST!=2)close;
 	next;
-	set '@dummy,select("ホルン先生!!");
-	emotion 0,"#AC_HORONG";
-	mes "[ホロン先生]";
-	mes "!!!!?";
-	mes "びっくりしたわ～。";
-	mes "私に何かしら？";
+	set '@dummy,select("Professor Horn!") ;
+	emotion 0, "#AC_HORONG";
+	mes "[Professor Horong]";
+	mes "!!!!? I'm so surprised!";
+	mes "What is it to me?";
 	next;
-	set '@dummy,select("ミルクを渡しに来ました。");
-	emotion 1,"#AC_HORONG";
-	mes "[ホロン先生]";
-	mes "????";
-	mes "え？";
-	mes "ミルクをくれるの？";
-	mes "でも、わたしミルクは苦手なのよね";
-	mes "だから気持ちだけいただいておくわ。";
-	mes "ありがとうね。";
+	set '@dummy,select("I'm here to give you some milk.") ;
+	emotion 1, "#AC_HORONG";
+	mes "[Professor Horong]";
+	mes "???? Eh?";
+	mes "They give you milk?";
+	mes "But I don't like milk, so I'll just take it.";
+	mes "Thank you.";
 	next;
-	set '@dummy,select("試験中で受け取ってもらう必要が");
-	emotion 0,"#AC_HORONG";
-	mes "[ホロン先生]";
-	mes "試験……？";
-	mes "……";
-	mes "もしかして第六試験かしら？";
+	set '@dummy,select("Need to accept it during the exam");
+	emotion 0, "#AC_HORONG";
+	mes "[Professor Horong]";
+	mes "Examination ......?";
+	mes "......";
+	mes "Perhaps a sixth exam?";
 	next;
-	set '@dummy,select("そうです！");
+	set '@dummy,select("Yes!") ;
 	emotion 23,"";
-	mes "[ホロン先生]";
-	mes "それ、私じゃないわよ？";
-	mes "貴方が探してるのは";
-	mes "ホルン先生よね？";
-	mes "私は^FF0000ホロン先生^000000よ？";
-	mes "よく間違えられるのよね…";
+	mes "[Professor Horong]";
+	mes "That's not me, is it?";
+	mes "You're looking for Professor Horn, right?";
+	mes "I am ^FF0000Professor Horong^000000?";
+	mes "I'm often mistaken for someone else...";
 	next;
-	set '@dummy,select("ああーっ！ ごめんなさい……");
-	mes "[ホロン先生]";
-	mes "いえいえ、気にしないでくださいね。";
-	mes "それよりも、^FF0000ホルン先生^000000っぽい姿を";
-	mes "ついこの前見かけたのよね。";
-	mes "何処だったかしら……";
-	mes "Geffenから";
-	mes "近い場所だったんだけど……";
+	set '@dummy,select("Ahhh! Sorry ......");
+	mes "[Professor Horong]";
+	mes "No, no, don't worry about it.";
+	mes "It's more like ^FF0000Professor Horn^000000-like figure I saw just the other day.";
+	mes "I wonder where it was: ......";
+	mes "It was somewhere close to Geffen. ......";
 	next;
-	emotion 0,"#AC_HORONG";
-	mes "[ホロン先生]";
-	mes "あ！ そうだわ！";
-	mes "確か、^0000FFミョルニール山脈06^000000！";
-	mes "間違いないわ。";
+	emotion 0, "#AC_HORONG";
+	mes "[Professor Horong]";
+	mes "Ah! Oh yes!";
+	mes "As I recall, ^0000FFMjolnir Mountains 06^000000!";
+	mes "I'm sure.";
 	next;
-	set '@dummy,select("ありがとうございます！");
-	mes "[ホロン先生]";
-	mes "いえ～。";
+	set '@dummy,select("Thank you!") ;
+	mes "[Professor Horong]";
+	mes "No~";
 	L_REP:
-	mes "ホルン先生って確証はないからね。";
-	mes "でも、あの後ろ姿はホルン先生";
-	mes "だったと思うわ。";
-	mes "それじゃあ、試験頑張ってね。";
+	mes "I'm not certain that it's Professor Horn, you know.";
+	mes "But I think that was Professor Horn in the back.";
+	mes "Well, good luck with your exam.";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^FF0000ホルン先生^000000を見つけ、ミルクを渡す‐";
-	mes "‐^0000FFミョルニール山脈06^000000付近で";
-	mes "　ホルン先生の後姿を見かけたとの";
-	mes "　情報あり。";
-	mes "　^0000FFミョルニール山脈06^000000へは";
-	mes "　^0000FFGeffen^000000から向かうと近い‐";
+	mes "^FF0000 [Mission] ^000000-^FF0000Find Professor Horn^000000 and give him the milk-";
+	mes "-^0000FFMjolnir Mountains 06^000000According to reports, we have seen Professor Horn's rear in the vicinity of ^0000FFMjolnir Mountains 06^000000.";
+	mes " ^0000FFMjolnir Mountains 06^000000 is closer if you head from ^0000FFGeffen^000000-";
 	close2;
 	set AC_RANKTEST,3;
 }
-mjolnir_06.gat,226,183,4		script	#AC_BEETLE	1494,{}
-mjolnir_06.gat,226,182,4		script	ビートル先生	111,{
+mjolnir_06.gat,226,183,4	script	#AC_BEETLE	1494,{}
+mjolnir_06.gat,226,182,4	script	Professor Beetle	111,{
 	if(AC_RANK==5 && AC_RANKTEST==4) goto L_REP;
-	emotion 39,"#AC_BEETLE";
-	mes "[ビートル先生]";
-	mes "樹液は最高ですなぁ……";
-	mes "この絶妙な甘みがなんとも……";
+	emotion 39, "#AC_BEETLE";
+	mes "[Professor Beetle]";
+	mes "Sap is the best. ......";
+	mes "This exquisite sweetness is something ......";
 	if(AC_RANK!=5 || AC_RANKTEST!=3) close;
 	next;
-	set '@dummy,select("ホルン先生？");
+	set '@dummy,select("Professor Horn?");
 	emotion 57,"";
-	mes "[ビートル先生]";
-	mes "ん？";
-	mes "私のことを呼んでいるのかね？";
-	mes "僕はビートル先生なんだけども？";
-	mes "彼とは後姿が似ているから";
-	mes "よく間違われるのだよ。";
+	mes "[Professor Beetle]";
+	mes "Hmm?";
+	mes "Are you calling for me?";
+	mes "I'm Professor Beetle, though?";
+	mes "He and I are often mistaken for each other because we have a similar back view.";
 	next;
-	set '@dummy,select("はぁ……、またか……");
-	emotion 2,"#AC_BEETLE";
-	mes "[ビートル先生]";
-	mes "おやおや、";
-	mes "相当落ち込んでいるようだが……";
-	mes "どうしたんだい？";
+	set '@dummy,select("huh ......, again ......");
+	emotion 2, "#AC_BEETLE";
+	mes "[Professor Beetle]";
+	mes "Oh dear, you seem quite depressed. ......";
+	mes "What's wrong?";
 	next;
-	set '@dummy,select("事情を説明する");
-	mes "[ビートル先生]";
-	mes "なるほどなぁ……";
-	mes "それは気の毒に。";
-	mes "しかし、色々な困難に";
-	mes "立ち向かえないと";
-	mes "冒険者として生きていくのは";
-	mes "むずかしい。";
+	set '@dummy,select("explain the situation");
+	mes "[Professor Beetle]";
+	mes "I see... ......";
+	mes "Sorry to hear that.";
+	mes "But it's hard to live as an adventurer if you can't face many difficulties.";
 	next;
-	mes "[ビートル先生]";
-	mes "だから、最後まで";
-	mes "諦めてはいけないよ？";
+	mes "[Professor Beetle]";
+	mes "So, don't give up until the end, okay?";
 	next;
-	set '@dummy,select("ありがとうございます。");
-	emotion 11,"#AC_BEETLE";
-	mes "[ビートル先生]";
-	mes "少し、元気が出てきたみたいだね！";
-	mes "よし、君にとっておきの情報だ！";
-	mes "実はホルン先生とついこの前";
-	mes "実際にあったんだよ。";
+	set '@dummy,select("Thank you.") ;
+	emotion 11, "#AC_BEETLE";
+	mes "[Professor Beetle]";
+	mes "Looks like you're feeling a little better!";
+	mes "Okay, here's something good for you!";
+	mes "Actually, I actually had an actual encounter with Professor Horn just the other day.";
 	next;
-	set '@dummy,select("何ですって!?");
-	mes "[ビートル先生]";
-	mes "彼は、Morrocの潮風が自分の";
-	mes "体にどういう影響を与えるのか";
-	mes "っていうのを調べるとかで";
-	mes "Morroc付近の海岸に";
-	mes "行くって言ってたな。";
+	set '@dummy,select("What?!") ;
+	mes "[Professor Beetle]";
+	mes "He said he was going to the coast near Morroc to find out what the Morroc sea breeze does to his body or something.";
 	next;
-	mes "[ビートル先生]";
-	mes "Morroc付近の海岸といえば";
-	mes "いくつかの場所があるが……";
-	mes "危険なモンスターが";
-	mes "生息している場所がほとんど……";
-	mes "彼の実力を考えると……";
+	mes "[Professor Beetle]";
+	mes "Speaking of the coast near Morroc, there are several places ......";
+	mes "Most of the places are inhabited by dangerous monsters ......";
+	mes "Considering his ability, ......";
 	next;
 	L_REP:
-	mes "[ビートル先生]";
-	mes "ホルン先生はおそらく";
-	mes "^0000FFソグラト砂漠18^000000辺りに";
-	mes "いるのではないかと思う。";
-	mes "行ってみるといいよ。";
+	mes "[Professor Beetle]";
+	mes "Professor Horn is probably around ^0000FFSograt Desert18^000000.";
+	mes "You should go there.";
 	next;
-	mes "^FF0000【ミッション】^000000";
-	mes "‐^FF0000ホルン先生^000000を見つけ、ミルクを渡す‐";
-	mes "‐^FF0000ホルン先生^000000は";
-	mes "　^0000FFソグラト砂漠 18^000000に向かった";
-	mes "　との情報あり。";
-	mes "　^0000FFソグラト砂漠 18^000000へは";
-	mes "　^0000FFMorroc^000000から向かうと近い‐";
+	mes "^FF0000[Mission] ^000000-^FF0000Find Professor Horn^000000 and give him some milk-";
+	mes "-^FF0000Professor Horn^000000 is reportedly headed to ^0000FFSograt Desert 18^000000.";
+	mes "^0000FFSograt Desert 18^000000 is closer if you head from ^0000FFMorroc^000000-";
 	close2;
 	set AC_RANKTEST,4;
 }
-moc_fild18.gat,211,95,4		script	#AC_HORN	1128,{}
-moc_fild18.gat,211,94,4		script	？？？	111,{
+moc_fild18.gat,211,95,4	script	#AC_HORN	1128,{}
+moc_fild18.gat,211,94,4	script	Professor Horn	111,{
 	if(AC_RANK==5 && AC_RANKTEST==98) {
-		mes "[ホルン先生]";
-		mes "それじゃ、ホルンは";
-		mes "研究を続けるから";
-		mes "君は気をつけて帰ってくれ。";
-		next; //なぜか大先生がつかない
-		mes "^FF0000【ミッション】^000000";
-		mes "‐冒険者アカデミーにいる";
-		mes "ガルドに、報告する‐";
-		close; //こっちは「ガルド」が黒になってるが本鯖どおり。
+		mes "[Professor Horn]";
+		mes "Well then, Horn will continue his research and you can go home safe and sound.";
+		next; //for some reason, the big professor doesn't get it.
+		mes "^FF0000 [Mission] ^000000-Report to Gordo, who is at the Adventurers Academy-";
+		close; //"Gordo" is black over here, but as per the main mackerel.
 	}
 	if(AC_RANK!=5 || AC_RANKTEST!=4){
-		mes "[？？？]";
-		mes "潮風が厳しいな……";
+		mes "[??]";
+		mes "The sea breeze is harsh. ......";
 		close;
 	}
-	mes "[ホルン先生]";
-	mes "ウググググ……";
-	mes "く、くるしぃ";
-	mes "潮風は体に悪いようだ……";
-	mes "も、う、だめ、だ……";
-	mes "ミルク……";
+	mes "[Professor Horn]";
+	mes "Uggggg ......";
+	mes "Kuk, kuru kuru kuru sea breeze seems to be bad for you ......";
+	
+	mes "Milk......";
 	next;
 	if(countitem(519)==0){
-		//未調査 すっかり忘れてた＞＜
+		//not researched I totally forgot about it ><
 		mes "[" + strcharinfo(0) + "]";
-		mes "しまった。ミルクを忘れてしまった。";
-		mes "早くしないとホルン先生が危ない。";
-		mes "急いでミルクを持ってこよう！";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^FF0000ホルン先生^000000に、ミルクを渡す‐";
+		mes "Shit. I forgot the milk.";
+		mes "Hurry up or Professor Horn will be in danger.";
+		mes "Let's hurry and get some milk!";
+		NEXT;
+		mes "^FF0000[Mission] ^000000-^FF0000Give Professor Horn^000000 the milk-";
 		close;
 	}
-	set '@dummy,select("ホルン先生！ミルクを！");
-	emotion 0,"#AC_HORN";
-	mes "[ホルン先生]";
-	mes "ミルク！";
-	mes "このにおいは、ミルク！";
-	mes "き、き、君！";
-	mes "早く私にそのミルクをくれ……";
-	mes " ";
-	mes "‐ホルン先生にミルクを手渡した‐";
+	set '@dummy,select("Professor Horn! Milk!") ;
+	emotion 0, "#AC_HORN";
+	mes "[Professor Horn]";
+	mes "Milk!";
+	mes "This smell is milk!";
+	mes "Ki, ki, kun!";
+	mes "Quick give me that milk ......";
+	mes " - handed the milk to Professor Horn -";
 	next;
-	misceffect 77,"#AC_HORN";
-	mes "[ホルン先生]";
-	mes "ゴキュッ、ゴキュッ、ゴキュッ";
-	mes "プハーーーーッ";
-	mes "生き返ったーーーー!!";
-	mes "いやー、砂漠、そして潮風";
-	mes "この劣悪な環境で飲む";
-	mes "一杯のミルクすばらしい！";
+	misceffect 77, "#AC_HORN";
+	mes "[Professor Horn]";
+	mes "Oh, the desert and the sea breeze, it's wonderful to drink a glass of milk in this poor environment!";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "……";
+	mes "......";
 	next;
-	mes "[ホルン先生]";
-	mes "君！";
-	mes "名前は？";
+	mes "[Professor Horn]";
+	mes "You!";
+	mes "What is your name?";
 	next;
-	set '@dummy,select("名乗る");
-	mes "[ホルン先生]";
-	mes strcharinfo(0) + "君！";
-	mes "君は今凄い瞬間に立ちあったんだよ？";
-	mes "もうちょっと感動しても";
-	mes "いいんじゃないかな？";
-	mes "むしろ感動するべきだよ！";
+	set '@dummy,select("Identify yourself");
+	mes "[Professor Horn]";
+	mes ""+strcharinfo(0) + "You!";
+	mes "You just witnessed an awesome moment, didn't you?";
+	mes "I think you could be a little more impressed.";
+	mes "You should be rather impressed!";
 	next;
-	set '@dummy,select("は、はあ……");
+	set '@dummy,select("ha, ha ......");
 	emotion 54,"";
-	mes "[ホルン先生]";
-	mes "ふむ……";
-	mes "君は、研究しているわけじゃないから";
-	mes "わからなくても当然か……";
-	mes "まあ、いつかこの感動が";
-	mes "わかるようになるさ。";
+	mes "[Professor Horn]";
+	mes "Hmm ......";
+	mes "You're not a researcher, so it's no surprise you don't understand ......";
+	mes "Well, someday you will understand this emotion.";
 	next;
-	mes "[ホルン先生]";
-	mes "すまない、まず先に言うことを";
-	mes "忘れていたね。";
-	mes "助けてくれてありがとう。";
-	mes "君が通りかからなかったら";
-	mes "本当に危なかった……";
+	mes "[Professor Horn]";
+	mes "Sorry, you forgot to tell me first.";
+	mes "Thanks for your help.";
+	mes "It would have been really close if you hadn't walked by: ......";
 	next;
-	set '@dummy,select("実は……");
-	mes "[ホルン先生]";
-	mes "そういうことだったのか、";
-	mes "君はアカデミーの生徒だったのか。";
-	mes "……";
-	mes "もしかして、研究報告書を";
-	mes "届けてくれた人かな？";
-	mes "名前が似ている気がするんだけど。";
+	set '@dummy,select("Actually ......");
+	mes "[Professor Horn]";
+	mes "So that's what happened, you were a student at the academy.";
+	mes "......";
+	mes "Perhaps you are the one who delivered the research report?";
+	mes "I think we have similar names.";
 	next;
-	set '@dummy,select("はい");
-	mes "[ホルン先生]";
-	mes "おお！ やっぱりそうか！";
-	mes "君には色々とお世話になってしまってるね。";
-	mes "本当にありがとう。";
-	mes "きっと君はすばらしい冒険者に";
-	mes "なるに違いない。";
+	set '@dummy,select("yes");
+	mes "[Professor Horn]";
+	mes "Oh! I knew it!";
+	mes "You've done a lot for me.";
+	mes "Thank you so much.";
+	mes "I'm sure you'll be a great adventurer.";
 	next;
-	mes "[ホルン先生]";
-	mes "あ、これをガルドに渡せば";
-	mes "ホルン大先生と会った";
-	mes "証拠になるからね。";
-	mes "それじゃ、ホルン大先生は";
-	mes "研究を続けるから";
-	mes "君は気をつけて帰ってくれ。";
+	mes "[Professor Horn]";
+	mes "Oh, and if you give this to Gordo, it will be proof that you met Professor Horn.";
+	mes "Well then, Professor Horn will continue his research, and you take care of yourself and go home.";
 	next;
 	L_REP:
-	mes "^FF0000【ミッション】^000000";
-	mes "‐冒険者アカデミーにいる";
-	mes "^FF0000ガルド^000000に、報告する‐";
+	mes "^FF0000 [Mission] ^000000-Report to ^FF0000Gordo^000000, who is at the Adventurers Academy-";
 	close2;
 	delitem 519,1;
 	set AC_RANKTEST,98;
 	end;
 }
-//第７課程   --------------------------------------------------------
+// Course 7 --------------------------------------------------------
 
-// ミニマップに地点表示(ID:20～) 黄色 0xFFFF00
+// Display the location on the minimap (ID:20~) yellow 0xFFFFFF00
 
-// 2:ガルドから請け負った
-// 3:ヤニクから水をもらう
-// 4:盗賊に捕まる
-// 5:荷物の場所を聞き出す
-// 6:荷物を取り戻した
-// 7:WP前自動会話
-// 8:廃墟の写真を撮る
-// 9:WP前自動会話
-//10:ミシュラン先生に話しかける
-//11:草を採る
-//12:茂みからポリンが出る(省略可能)
-//13:ミシュラン先生に魔法をかけてもらう
-//14:WP前自動会話
-//15:WP前自動会話
-//16:プロ西入り口自動会話
-//98:プロ内西口自動会話
-//99:ガルドに報告完了
-pay_gld.gat,273,307,4		script	行商人ヤニク	89,{
+// 2: contracted by Gordo
+// 3: Get water from Janik
+// 4: Caught by bandits
+// 5: Ask for the location of the luggage
+// 6: Package retrieved
+// 7: Automatic conversation before WP
+// 8: Take pictures of the ruins
+// 9: Automatic conversation before WP
+//10:Talk to Dr. Michelin
+//11:Picking weeds
+//12:Pollin comes out from the bush (can be omitted)
+//13: Ask Dr. Michelin to cast a spell
+//14:Automatic conversation before WP
+//15:Automatic conversation before WP
+//16:Pro West entrance automatic conversation
+//98: Automatic conversation at the west exit in the pro
+//99: Report to Gordo completed
+pay_gld.gat,273,307,4	script	Peddler Janik	89,{
 	if(AC_RANK!=6 || (AC_RANKTEST!=2 && AC_RANKTEST!=3)) {
 		mes "[" + strcharinfo(0) + "]";
-		mes "(忙しそうだ、";
-		mes "話しかけるのはやめておこう。)";
+		mes "(Looks busy, let's not talk to him.)";
 		close;
 	}
 	if(AC_RANKTEST==3){
-		mes "[行商人ヤニク]";
-		mes "よお、君か。";
-		mes "早く行ったほうがいいぜ？";
+		mes "[Peddler Janik]";
+		mes "Yo, it's you.";
+		mes "You'd better get going, huh?";
 		close2;
-		viewpoint 1,16,276,20,0xFFFF00;
+		viewpoint 1,16,276,20,0xFFFFFF00;
 		end;
 	}
-	mes "[行商人ヤニク]";
-	mes "こんにちは。";
+	mes "[Peddler Janik]";
+	mes "Hello.";
 	next;
-	set '@dummy,select("ガルドさんから言われてきました");
-	mes "[行商人ヤニク]";
-	mes "おうおう、ガルドとは懐かしい。";
-	mes "奴は元気かい？";
+	set '@dummy,select("Gordo told me");
+	mes "[Peddler Janik]";
+	mes "Oh wow, I missed Gordo.";
+	mes "How is he?";
 	next;
-	set '@dummy,select("元気ですよ");
-	mes "[行商人ヤニク]";
-	mes "それは、良かった。";
-	mes "ところで、";
-	mes "奴に言われてきたということは";
-	mes "俺に何か用事があるんじゃないのか？";
-	mes "何のようだろうか？";
+	set '@dummy,select("I'm fine");
+	mes "[Peddler Janik]";
+	mes "That's good to hear.";
+	mes "By the way, if he told you to come here, doesn't that mean you have something for me?";
+	mes "What does it look like?";
 	next;
-	set '@dummy,select("水をいただきたい");
-	mes "[行商人ヤニク]";
-	mes "おうおう、ちょうど蒸留した水が";
-	mes "一つあったんだよ。";
-	mes "これをもっていくといい。";
+	set '@dummy,select("I would like to have water");
+	mes "[Peddler Janik]";
+	mes "Ooooh, I just found one distilled water.";
+	mes "You can take this with you.";
 	next;
-	mes "[行商人ヤニク]";
-	mes "そうだ、ここから西に行けば";
-	mes "砂漠になるが、砂漠での水は";
-	mes "凄く貴重なものになるからな。";
-	mes "盗賊などが襲ってくるかも";
-	mes "しれない。";
-	mes "十分気をつけてな。";
+	mes "[Peddler Janik]";
+	mes "Yes, because if you go west of here, you will be in the desert, and water in the desert can be very precious.";
+	mes "Bandits and such may attack you.";
+	mes "Be very careful.";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "水を手に入れることができたな。";
-	mes "先を急ごう。";
+	mes "You got your water.";
+	mes "Let's move on.";
 	close2;
-	viewpoint 1,16,276,20,0xFFFF00;
+	viewpoint 1,16,276,20,0xFFFFFF00;
 	set AC_RANKTEST,3;
 }
-// 盗賊 話しかけた場合基本
-function	script	盗賊FUNC#AC_TST07	{
+// Thief, basic when spoken to
+function	script	thiefFUNC#AC_TST07	{
 	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6){
-		mes "[盗賊男]";
-		mes "なんだお前？";
-		mes " ";
-		mes "‐男はじろじろとこちらを見ている‐";
+		mes "[Thief man]";
+		mes "What the hell are you?";
+		mes " -The man is staring at us-";
 		close;
 	}
-	mes "[盗賊男]";
-	mes "この野郎！";
-	mes "逃げ出しやがったな！";
+	mes "[bandit man]";
+	mes "You son of a bitch!";
+	mes "You got away with it!";
 	close2;
 	if(AC_RANKTEST>5) set AC_RANKTEST,5;
 	warp "moc_fild02.gat",153,312;
 	end;
 }
-// 盗賊 OnTouch専用
-function	script	盗賊FUNC2#AC_TST07	{
+// Thief OnTouch only
+function	script	thiefFUNC2#AC_TST07	{
 	if(AC_RANK!=6 || (AC_RANKTEST<4 && AC_RANKTEST>6)) end;
-	mes "[盗賊男]";
-	mes "貴様っ！";
-	mes "逃げ出しやがったな！";
+	mes "[Thief man]";
+	mes "You!";
+	mes "You got away with it!";
 	close2;
 	if(AC_RANKTEST>5) set AC_RANKTEST,5;
 	warp "moc_fild02.gat",153,312;
 	end;
 }
 
-//東WP前とおせんぼ3人組
-moc_fild02.gat,370,272,4	script	盗賊男#AC_TST07_03	930,10,10,{
-	callfunc "盗賊FUNC#AC_TST07";
+//Three men in front of East WP and Osenbo
+moc_fild02.gat,370,272,4	script	bandit man#AC_TST07_03	930,10,10,{
+	callfunc "thiefFUNC#ac_tst07";
 OnTouch:
 	if(AC_RANK!=6 || AC_RANKTEST<3 || AC_RANKTEST>6) end;
 	if(AC_RANKTEST==3){
-		mes "[盗賊男]";
-		mes "ヘッヘッヘ。";
-		mes "一人で俺らの縄張りを";
-		mes "うろつくとは馬鹿な奴だ。";
+		mes "[bandit man]";
+		mes "Heh heh heh.";
+		mes "He's a fool to wander around our territory alone.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "な、何をするんだ……";
-		mes "‐後ろから何かで殴られたようだ";
-		mes "　意識が遠のいていく‐";
+		mes "Hey, what are you doing ......";
+		mes "-I think I've been hit from behind with something, my consciousness is fading away-";
 		close2;
 		warp "moc_fild02.gat",153,312;
 		end;
 	}
-	mes "[盗賊男]";
-	mes "てめぇっ！";
-	mes "どこから逃げ出しやがった！";
+	mes "[Thief man]";
+	mes "Damn you!";
+	mes "Where the hell did you run off from!";
 	close2;
 	if(AC_RANKTEST>5) set AC_RANKTEST,5;
 	warp "moc_fild02.gat",153,312;
 	end;
 }
-moc_fild02.gat,373,278,4	script	盗賊男#AC_TST07_01	931,{
-	callfunc "盗賊FUNC#AC_TST07";
+moc_fild02.gat,373,278,4	script	Thieves man#AC_TST07_01	931,{
+	callfunc "thiefFUNC#AC_TST07";
 }
-moc_fild02.gat,370,279,4	script	盗賊女#AC_TST07_02	919,{
+moc_fild02.gat,370,279,4	script	Thief woman#AC_TST07_02	919,{
 	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6){
-		mes "[盗賊女]";
-		mes "なによアンタ。";
-		mes " ";
-		mes "‐女はじろじろとこちらを見ている‐";
+		mes "[Thief woman]";
+		mes "What's that, Anta?";
+		mes " -The woman is staring at us-";
 		close;
 	}
-	mes "[盗賊女]";
-	mes "この野郎！";
-	mes "逃がさないよ！";
+	mes "[Thief woman]";
+	mes "You son of a bitch!";
+	mes "I won't let you get away!";
 	close2;
 	if(AC_RANKTEST>5) set AC_RANKTEST,5;
 	warp "moc_fild02.gat",153,312;
 	end;
 }
-//中州とおせんぼ
-moc_fild02.gat,270,268,4	script	盗賊男#AC_TST07_04	930,3,5,{
-	callfunc "盗賊FUNC#AC_TST07";
+//Nakashu and Osenbo
+moc_fild02.gat,270,268,4	script	bandit man#AC_TST07_04	930,3,5,{
+	callfunc "thiefFUNC#AC_TST07";
 OnTouch:
-	callfunc "盗賊FUNC2#AC_TST07";
+	callfunc "thiefFUNC2#AC_TST07";
 }
-//南西ルートとおせんぼ
-moc_fild02.gat,91,98,4	duplicate(盗賊男#AC_TST07_04)	盗賊男#AC_TST07_05	930,5,10
-//荷物ルートとおせんぼ
-moc_fild02.gat,203,290,4	duplicate(盗賊男#AC_TST07_04)	盗賊男#AC_TST07_06	934,10,5
+// Southwest Root and Osebo
+moc_fild02.gat,91,98,4	duplicate(bandit man#AC_TST07_04)	bandit man#AC_TST07_05	930,5,10
+//Luggage Routes and Osebo
+moc_fild02.gat,203,290,4	duplicate(bandit man#AC_TST07_04)	bandit man#AC_TST07_06	934,10,5
 
-//北西ルートとおせんぼ
-moc_fild02.gat,78,210,4		script	盗賊男#AC_TST07_07	930,10,5,{
+//northwest route and osenbo
+moc_fild02.gat,78,210,4	script	Thief man#AC_TST07_07	930,10,5,{
 	if(AC_RANK==6 && AC_RANKTEST==6){
-		mes "[盗賊男]";
-		mes "むにゃむにゃ……";
+		mes "[Thief man]";
+		mes "mnya mnya_......";
 		close;
 	}
-	callfunc "盗賊FUNC#AC_TST07";
+	callfunc "thiefFUNC#AC_TST07";
 OnTouch:
 	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>5) end;
-	callfunc "盗賊FUNC2#AC_TST07";
+	callfunc "thiefFUNC2#AC_TST07";
 }
 
-//捕まったときの場所（自動会話用）
+// Location when caught (for automatic conversation)
 moc_fild02.gat,153,312,0	script	#AC_TST07_08	139,3,3,{
 OnTouch:
 	if(AC_RANK!=6) end;
 	switch(AC_RANKTEST){
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "……";
-		mes "…………";
-		mes "(ここは何処だ……？)";
+		mes "......";
+		mes "............";
+		mes "(Where am I ......?)";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "(盗賊の姿が見えるな……";
-		mes "気を失って、この場所に";
-		mes "つれてこられたらしい。)";
+		mes "(You see the bandit. ......";
+		mes "I think he passed out and was dragged to this place.\")";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "(……どうやら水と荷物を";
-		mes "盗られてしまったようだ。)";
+		mes "(......It appears that they have stolen water and luggage.\")";
 		next;
 		set AC_RANKTEST,4;
 	case 4:
-		viewpoint 1,160,302,20,0xFFFF00;
+		viewpoint 1,160,302,20,0xFFFFFF00;
 		mes "[" + strcharinfo(0) + "]";
-		mes "（^FF0000盗賊に見つからないように";
-		mes "移動して、荷物のありかを探そう！^000000）";
+		mes "(^FF0000 Let's move around so the bandits don't find us and find where our stuff is! ^000000)";
 		close;
 	case 5:
-		viewpoint 1,234,314,20,0xFFFF00;
+		viewpoint 1,234,314,20,0xFFFFFF00;
 		mes "[" + strcharinfo(0) + "]";
-		mes "（捕まってしまった……";
-		mes "盗賊に見つからないように、";
-		mes "^0000FFソグラト砂漠02(234,314)付近^000000";
-		mes "に移動し、荷物をとりかえそう！）";
+		mes "(caught ......";
+		mes "Let's move to ^0000FFSograt Desert02(234,314) near ^000000 and get our stuff back so the bandits don't find us!";
 		close;
 	}
 	end;
 }
-//盗み聞き自動会話
+// Eavesdropping automatic conversation
 moc_fild02.gat,147,302,0	script	#AC_TST07_09	139,5,5,{
 OnTouch:
 	if(AC_RANK!=6 || AC_RANKTEST!=4) end;
-	viewpoint 1,160,302,20,0xFFFF00;
+	viewpoint 1,160,302,20,0xFFFFFF00;
 	mes "[" + strcharinfo(0) + "]";
-	mes "（すぐ南東の方から声がする……";
-	mes "南東の方にいってみよう。）";
+	mes "(A voice is heard immediately to the southeast: ......";
+	mes "Let's go to the southeast.)";
 	close;
 }
 
-//おかしらに話しかけてる人
-moc_fild02.gat,163,294,7	script	盗賊男#AC_TST07_11	943,9,9,{
+//the person who is talking to the scarecrow
+moc_fild02.gat,163,294,7	script	bandit man#AC_TST07_11	943,9,9,{
 	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6){
 		mes "[" + strnpcinfo(1) + "]";
-		mes "なんだお前？";
-		mes " ";
-		mes "‐男はじろじろとこちらを見ている‐";
+		mes "What the hell are you?";
+		mes " -The man is staring at us-";
 		close;
 	}
-	mes "‐" + strnpcinfo(1) + "はよだれを垂らして、";
-	mes "ぼけーっとしている‐";
+	mes "-" + strnpcinfo(1) + "is slobbering and blubbering -";
 	close;
 OnTouch:
 	if(AC_RANK!=6 || (AC_RANKTEST!=4 && AC_RANKTEST!=5)) end;
 	switch(AC_RANKTEST){
 	case 4:
 		mes "[" + strcharinfo(0) + "]";
-		mes "(盗賊の話し声がする、";
-		mes "ここに隠れよう……)";
-		mes " ";
-		mes "‐" + strcharinfo(0) + "は";
-		mes "木の裏に隠れた‐";
+		mes "-(bandits talking, let's hide here ......)" + strcharinfo(0) + " hid behind the tree-";
 		next;
-		mes "[盗賊男]";
-		mes "おかしらぁー、馬鹿な冒険者が";
-		mes "水をもっていやがりやして";
-		mes "うばってやりやした。";
+		mes "[bandit man]";
+		mes "Oh karaaaa, the stupid adventurer was carrying water, and I gave it to him.";
 		next;
-		mes "[おかしら]";
-		mes "おうおう！";
-		mes "水とはまた高価なものを";
-		mes "もっていたじゃねーか。";
-		mes "そんで、その水は何処にあるんだ？";
+		mes "[Okamoto]";
+		mes "Oh, oh, oh!";
+		mes "You've had another expensive one with water, haven't you?";
+		mes "And where is that water?";
 		next;
-		mes "[盗賊男]";
-		mes "へっへっへ。";
-		mes "水なら^0000FFソグラト砂漠02(234,314)^000000";
-		mes "付近に隠してありやす。";
-		mes "もちろん見張りもつけて";
-		mes "ありやすから安心ですぜ。";
+		mes "[Thief man]";
+		mes "Heh heh heh.";
+		mes "If it's water, I have it hidden around ^0000FFSograt Desert02(234,314)^000000.";
+		mes "Of course, I have a guard on duty, so you don't have to worry.";
 		next;
-		mes "[おかしら]";
-		mes "そいつぁでかした！";
-		mes "よし、今夜は皆で";
-		mes "騒ごうじゃないか！";
-		mes "へっへっへ……";
-		mes " ";
-		mes "‐おかしらはよだれを垂らしている‐";
+		mes "[head]";
+		mes "That's great!";
+		mes "All right, let's all make some noise tonight!";
+		mes "hehehe ......";
+		mes " -The pigtails are drooling-";
 		next;
-		mes "[盗賊男]";
-		mes "そうでやすね！";
-		mes "へっへっへ……";
-		mes " ";
-		mes "‐盗賊男はよだれを垂らしている‐";
+		mes "[bandit man]";
+		mes "Yes, it is!";
+		mes "hehehe ......";
+		mes " -The bandit man is drooling-";
 		close2;
-		viewpoint 1,234,314,20,0xFFFF00;
+		viewpoint 1,234,314,20,0xFFFFFF00;
 		set AC_RANKTEST,5;
 		end;
 	case 5:
-		mes "[おかしら]";
-		mes "おっと、そういえば……";
-		mes "えーっと……";
-		mes "あれ？";
-		mes "水は何処に隠してあるんだ？";
+		mes "[I wonder]";
+		mes "Oops, that reminds me, ......";
+		mes "Um, ......";
+		mes "Huh?";
+		mes "Where is the water hidden?";
 		next;
-		mes "[盗賊男]";
-		mes "やだなぁ、おかしら！";
-		mes "隠し場所は、";
-		mes "^0000FFソグラト砂漠02(234,314)^000000";
-		mes "付近でありやす。";
+		mes "[bandit man]";
+		mes "Oh no, I don't like it!";
+		mes "The hiding place is around ^0000FFSograt Desert02(234,314)^000000.";
 		next;
-		mes "[おかしら]";
-		mes "そうか！";
-		mes "早くうっぱらって金に";
-		mes "しないとなぁ。";
-		mes "へっへっへ……";
-		mes " ";
-		mes "‐おかしらはよだれを垂らしている‐";
+		mes "[okama]";
+		mes "I see!";
+		mes "I can't wait to get rid of it and make some money.";
+		mes "hehehe ......";
+		mes " -Kasara is drooling-";
 		next;
-		mes "[盗賊男]";
-		mes "そうでやすね！";
-		mes "へっへっへ……";
-		mes " ";
-		mes "‐盗賊男はよだれを垂らしている‐";
+		mes "[bandit man]";
+		mes "Yes, it is!";
+		mes "hehehe ......";
+		mes " -The bandit man is drooling-";
 		close2;
-		viewpoint 1,234,314,20,0xFFFF00;
+		viewpoint 1,234,314,20,0xFFFFFF00;
 		end;
 	}
 }
-moc_fild02.gat,165,294,4	duplicate(盗賊男#AC_TST07_11)	おかしら#AC_TST07_12	939
+moc_fild02.gat,165,294,4	duplicate(bandit man#AC_TST07_11)	okara#AC_TST07_12	939
 
-function	script	盗賊FUNC3#AC_TST07	{
-	mes "[盗賊男]";
-	mes "何をしとるんじゃ！";
-	mes "あの警備網をかいくぐるとは……";
-	mes "なかなかやりおるわい。";
-	mes "しかぁしっ！ わしの目が黒いうちは、";
-	mes "荷物には指一本ふれさせん！";
+function	script	thiefFUNC3#ac_tst07	{
+	mes "[Thief man]";
+	mes "What are you doing!";
+	mes "I can't believe you got through that security net. ......";
+	mes "You've done well.";
+	mes "But! As long as my eyes are black, I won't lift a finger on my cargo!";
 	close2;
 	if(AC_RANKTEST>5) set AC_RANKTEST,5;
 	warp "moc_fild02.gat",153,312;
 	end;
 }
 
-moc_fild02.gat,234,314,4	script	盗賊男#荷物番	945,5,5,{
-	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6) end; //メッセージなしで本鯖どおり
-	if(getvariableofnpc('flag,"荷物#AC_TST07")<3){
-		mes "[盗賊男]";
-		mes "ムニャムニャ……";
+moc_fild02.gat,234,314,4	script	thief man#luggage number	945,5,5,{
+	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6) end; //as main mackerel without mezzage
+	if(getvariableofnpc('flag, "luggage#AC_TST07")<3){
+		mes "[bandit man]";
+		mes "mnya mnya ......";
 		mes "Zzzzz";
 		next;
 		if(AC_RANKTEST==6){
 			mes "[" + strcharinfo(0) + "]";
-			mes "荷物は取り戻したな……";
-			mes "盗賊に見つからないように、";
-			mes "次の場所に向かおう……";
+			mes "You got your stuff back. ......";
+			mes "Let's head to the next location so the bandits don't find us: ......";
 			close2;
-			viewpoint 1,80,342,20,0xFFFF00;
+			viewpoint 1,80,342,20,0xFFFFFF00;
 			end;
 		}
 		mes "[" + strcharinfo(0) + "]";
-		mes "眠っている";
-		mes "今ならばれずに";
-		mes "水と荷物を取り返せそうだ。";
+		mes "Now that I'm asleep, I can get my water and luggage back without being detected.";
 		close;
 	}
 OnTouch:
-	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6 || getvariableofnpc('flag,"荷物#AC_TST07")<3) end;
-	callfunc "盗賊FUNC3#AC_TST07";
+	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6 || getvariableofnpc('flag, "luggage#AC_TST07")<3) end;
+	callfunc "thiefFUNC3#AC_TST07";
 }
-moc_fild02.gat,234,313,4	script	荷物#AC_TST07	111,{
+moc_fild02.gat,234,313,4	script	Luggage#AC_TST07	111,{
 	if(AC_RANK!=6 || (AC_RANKTEST!=5 && AC_RANKTEST!=6)){
-		mes "‐たくさんの荷物が置いてある……‐";
+		mes "-Lots of baggage on the floor: ......-";
 		close;
 	}
 	if(AC_RANKTEST==6){
 		mes "[" + strcharinfo(0) + "]";
-		mes "荷物は取り戻したな……";
-		mes "盗賊に見つからないように、";
-		mes "次の場所に向かおう……";
+		mes "You got your stuff back. ......";
+		mes "Let's head to the next location so the bandits don't find us: ......";
 		close2;
-		viewpoint 1,80,342,20,0xFFFF00;
+		viewpoint 1,80,342,20,0xFFFFFF00;
 		end;
 	}
 	if('flag<3){
-		mes "‐奪われた荷物と水を発見した‐";
+		mes "-Found the stolen luggage and water-";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "よし、盗賊に見つからないよう";
-		mes "次の場所に向かおう……";
+		mes "Okay, let's head to the next location so the bandits don't find us: ......";
 		close2;
-		viewpoint 1,80,342,20,0xFFFF00;
+		viewpoint 1,80,342,20,0xFFFFFF00;
 		set AC_RANKTEST,6;
 		end;
 	}
-	callfunc "盗賊FUNC3#AC_TST07";
+	callfunc "thiefFUNC3#AC_TST07";
 	end;
 OnInit:
 OnTimer3000:
 	switch('flag){
-		case 0: misceffect 197,"盗賊男#荷物番"; break;
-		case 1: misceffect 197,"盗賊男#荷物番"; break;
-		case 2: misceffect 197,"盗賊男#荷物番"; break;
-		case 3: emotion 23,"盗賊男#荷物番"; break;
-		case 4: emotion 20,"盗賊男#荷物番"; break;
-		case 5: emotion  9,"盗賊男#荷物番"; break;
-		case 6: emotion 45,"盗賊男#荷物番"; break;
+		case 0: misceffect 197, "bandit man#luggage guard"; break;
+		case 1: misceffect 197, "bandit man#luggage guard"; break;
+		case 2: misceffect 197, "bandit-man#luggage guard"; break;
+		case 3: emotion 23, "bandit man#luggage guard"; break;
+		case 4: emotion 20, "bandit man#luggage guard"; break;
+		case 5: emotion 9, "bandit-man#luggage guard"; break;
+		case 6: emotion 45, "bandit man#luggage guard"; break;
 	}
 	set 'flag,('flag<6)*('flag+1);
 	initnpctimer;
 }
-moc_fild02.gat,67,337,0		script	#AC_TST07_13	139,11,5,{
+moc_fild02.gat,67,337,0	script	#AC_TST07_13	139,11,5,{
 OnTouch:
 	if(AC_RANK!=6 || AC_RANKTEST<4 || AC_RANKTEST>6) end;
 	if(AC_RANKTEST==6){
 		mes "[" + strcharinfo(0) + "]";
-		mes "いろいろあったけど、";
-		mes "ここまで来ることができた……";
-		mes "先を急がなくては……";
+		mes "A lot has happened, but we've made it this far ......";
+		mes "We have to move on ......";
 		close2;
 		set AC_RANKTEST,7;
 		end;
 	}
 	mes "[" + strcharinfo(0) + "]";
-	mes "戻って、荷物を取り返さないと……";
+	mes "We need to go back and get our stuff back ......";
 	close2;
 	if(AC_RANKTEST==3 || AC_RANKTEST==4)
-		viewpoint 1,163,294,20,0xFFFF00;
+		viewpoint 1,163,294,20,0xFFFFFF00;
 	else
-		viewpoint 1,234,314,20,0xFFFF00;
+		viewpoint 1,234,314,20,0xFFFFFF00;
 	end;
 }
-moc_fild02.gat,92,337,0		duplicate(#AC_TST07_13)	#AC_TST07_14	139,11,5
+moc_fild02.gat,92,337,0	duplicate(#AC_TST07_13)	#AC_TST07_14	139,11,5
 
-moc_fild01.gat,190,38,0		script	#AC_TSTVP7_15	139,8,8,{
+moc_fild01.gat,190,38,0	script	#AC_TSTVP7_15	139,8,8,{
 	if(AC_RANK!=6 || (AC_RANKTEST!=7 && AC_RANKTEST!=8)) end;
 	if(AC_RANKTEST==8){
 		mes "[" + strcharinfo(0) + "]";
-		mes "既に撮影は終了したな。";
-		mes "先を急ごう。";
+		mes "You've already finished shooting.";
+		mes "Let's move on.";
 		close2;
-		viewpoint 1,22,242,20,0xFFFF00;
+		viewpoint 1,22,242,20,0xFFFFFF00;
 		end;
 	}
 	mes "[" + strcharinfo(0) + "]";
-	mes "撮影するのはここで間違いなさそうだ。";
+	mes "It looks like this is definitely the place to shoot.";
 	next;
-	mes "‐風景を撮影した‐";
+	mes "- landscape photographed-";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "上手く撮れたようだな。";
-	mes "先を急ごう。";
+	mes "Looks like you got a good shot.";
+	mes "Let's move on.";
 	close2;
 	set AC_RANKTEST,8;
-	viewpoint 1,22,242,20,0xFFFF00;
+	viewpoint 1,22,242,20,0xFFFFFF00;
 	end;
 }
-moc_fild01.gat,28,242,0		script	#AC_TSTVP7_16	139,5,2,{
+moc_fild01.gat,28,242,0	script	#AC_TSTVP7_16	139,5,2,{
 	if(AC_RANK!=6 || (AC_RANKTEST!=7 && AC_RANKTEST!=8)) end;
 	if(AC_RANKTEST==7){
 		mes "[" + strcharinfo(0) + "]";
-		mes "撮影をしなくちゃ。";
+		mes "I have to take a picture.";
 		close2;
-		viewpoint 1,190,38,20,0xFFFF00;
+		viewpoint 1,190,38,20,0xFFFFFF00;
 		end;
 	}
 	mes "[" + strcharinfo(0) + "]";
-	mes "また緑が見えてきた。";
-	mes "ようやく砂漠を越えられるのだろうか？";
+	mes "I see green again.";
+	mes "Can we finally cross the desert?";
 	close2;
 	set AC_RANKTEST,9;
 	end;
 }
-prt_fild09.gat,304,193,4	script	ミシュラン先生	101,{
+prt_fild09.gat,304,193,4	script	Dr. Michelin	101,{
 	if(AC_RANK!=6 || AC_RANKTEST<9 || AC_RANKTEST>13) {
-		mes "[ミシュラン先生]";
-		mes "こんにちは。";
+		mes "[Dr. Michelin]";
+		mes "Hello.";
 		close;
 	}
 	switch(AC_RANKTEST){
 	case 9:
-		emotion 1;
-		mes "[ミシュラン先生]";
-		mes "こんにちは。";
-		mes "何か私に用かしら？";
+		EMOTION 1;
+		mes "[Dr. Michelin]";
+		mes "Hello.";
+		mes "What can I do for you?";
 		next;
-		set '@dummy,select("事情を説明する");
+		set '@dummy,select("explain the situation");
 	case 10:
 		emotion 33;
-		mes "[ミシュラン先生]";
-		mes "魔法のかかった草が必要なのね。";
-		mes "だったらこのマップに生えている";
-		mes "^FF0000草^000000をとってきてくれる？";
-		mes "そうしたらそれに魔法を";
-		mes "かけてあげるから。";
+		mes "[Dr. Michelin]";
+		mes "You need some enchanted grass.";
+		mes "Then can you get me the ^FF0000 grass ^000000 that grows on this map?";
+		mes "Do that and I'll put a spell on it for you.";
 		next;
-		viewpoint 1,39,255,21,0xFFFF00;
-		mes "[ミシュラン先生]";
-		mes "詳しい場所なんだけどね、";
-		mes "（39,255）付近だったかな？";
-		mes "うん、このあたりに生えているはず。";
-		mes "それじゃ行ってらっしゃいね。";
+		viewpoint 1,39,255,21,0xFFFFFF00;
+		mes "[Dr. Michelin]";
+		mes "It's a detailed location...was it around (39,255)?";
+		mes "Yes, it should be growing around here.";
+		mes "Have a good day then.";
 		close2;
 		set AC_RANKTEST,10;
 		end;
 	case 11:
 	case 12:
 		misceffect 17;
-		mes "[ミシュラン先生]";
-		mes "お帰りなさい！";
-		mes "無事に草をとってきたようね。";
-		mes "それじゃ、早速魔法をかけるわ。";
+		mes "[Dr. Michelin]";
+		mes "Welcome back!";
+		mes "Looks like you weeded safely.";
+		mes "Well, I'll do some quick magic.";
 		next;
-		mes "[ミシュラン先生]";
-		mes "うまくいったわ。";
-		mes "それじゃ";
-		mes "試験の続きがんばってねー。";
+		mes "[Dr. Michelin]";
+		mes "It worked.";
+		mes "Well then, good luck with the rest of the exam!";
 		next;
-		mes "‐ミシュランから";
-		mes "　魔法のかかった草を受け取った‐";
+		mes "-I received the enchanted grass from Michelin-";
 		next;
-		mes "[ミシュラン先生]";
-		mes "ゴールまでもう少しだけど、";
-		mes "気をゆるめちゃだめだよ。";
+		mes "[Dr. Michelin]";
+		mes "We're almost to the finish line, but don't let up.";
 		close2;
 		set AC_RANKTEST,13;
-		viewpoint 1,224,380,20,0xFFFF00;
+		viewpoint 1,224,380,20,0xFFFFFF00;
 		end;
 	case 13:
-		mes "[ミシュラン先生]";
-		mes "試験の続きがんばってねー。";
+		mes "[Dr. Michelin]";
+		mes "Good luck with the rest of the exam!";
 		close2;
-		viewpoint 1,224,380,20,0xFFFF00;
+		viewpoint 1,224,380,20,0xFFFFFF00;
 		end;
 	}
 }
-prt_fild09.gat,39,255,0		script	#AC_TSTVP7_17	1080,{}
-prt_fild09.gat,39,254,0		script	草#AC_TSTVP7_18	111,{
-	mes "‐草が生えている‐";
+prt_fild09.gat,39,255,0	script	#AC_TSTVP7_17	1080,{}
+prt_fild09.gat,39,254,0	script	grass#AC_TSTVP7_18	111,{
+	mes "-The grass is growing-";
 	if(AC_RANK!=6 || AC_RANKTEST!=10) close;
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "この草で問題ないようだ。";
-	mes "もっていこう。";
+	mes "This grass seems to be fine.";
+	mes "Let's put it back in.";
 	next;
-	mes "‐草を手に入れた‐";
+	mes "-I've got the grass-";
 	close2;
-	viewpoint 1,304,193,20,0xFFFF00;
+	viewpoint 1,304,193,20,0xFFFFFF00;
 	set AC_RANKTEST,11;
 	end;
 }
-prt_fild09.gat,227,368,0		script	#AC_TSTVP7_19	139,7,7,{
+prt_fild09.gat,227,368,0	script	#AC_TSTVP7_19	139,7,7,{
 	if(AC_RANK!=6 || AC_RANKTEST<9 || AC_RANKTEST>13) end;
 	if(AC_RANKTEST!=13){
 		mes "[" + strcharinfo(0) + "]";
-		mes "魔法のかかった草を";
-		mes "手に入れないとな。";
+		mes "I've got to get some magic grass.";
 		close2;
 		if(AC_RANKTEST==9 || AC_RANKTEST>=11)
-			viewpoint 1,304,193,20,0xFFFF00; //ミシュラン先生
+			viewpoint 1,304,193,20,0xFFFFFF00; //Dr. Michelin
 		else
-			viewpoint 1,39,255,21,0xFFFF00; //草
+			viewpoint 1,39,255,21,0xFFFFFF00; //grass
 		end;
 	}
 	mes "[" + strcharinfo(0) + "]";
-	mes "Pronteraまであと少しだ。";
-	mes "がんばろう！";
+	mes "We're almost to Prontera.";
+	mes "Good luck!";
 	close2;
 	set AC_RANKTEST,14;
 	end;
 }
-prt_fild09.gat,50,260,0		script	#AC_TSTVP7_20	139,10,10,{
+prt_fild09.gat,50,260,0	script	#AC_TSTVP7_20	139,10,10,{
 	if(AC_RANK!=6 || AC_RANKTEST!=11) end;
-	mes "‐茂みから音が聞こえる……‐";
+	mes "-sound coming from the bushes ......-";
 	next;
-	mes "‐茂みからモンスターが現れた！‐";
+	mes "-a monster appears out of the bushes! -";
 	close2;
 	set '@dummy, getmapxy('@dummy$,'@x,'@y,0);
-	areamonster "prt_fild09.gat",'@x-3,'@y-3,'@x +3,'@y+3,"--ja--",1002,3;
+	areamonster "prt_fild09.gat",'@x-3,'@y-3,'@x +3,'@y+3,"--en--",1002,3;
 	set AC_RANKTEST,12;
 	end;
 }
 prt_fild07.gat,248,370,0	script	#AC_TSTVP7_21	139,5,5,{
 	if(AC_RANK!=6 || AC_RANKTEST!=14) end;
 	mes "[" + strcharinfo(0) + "]";
-	mes "確かこの先がPronteraの西側だった";
-	mes "気がする。";
-	mes "あと少しだ！";
+	mes "I think this end was the west side of Prontera.";
+	mes "We're almost there!";
 	close2;
 	set AC_RANKTEST,15;
 	end;
 }
 
-// ミニマップ表示処理のところに移動。
-//prt_fild05.gat,367,205,0	script	#AC_TSTVP7_22	139,5,5,{ //プロ西入り口手前
-//	if(AC_RANK!=6 || AC_RANKTEST!=15) end;
-//	mes "[" + strcharinfo(0) + "]";
-//	mes "Pronteraが見える。";
-//	mes "あと少しだ！";
-//	close2;
-//	set AC_RANKTEST,16;
-//	end;
+// Move to the minimap display process.
+//prt_fild05.gat,367,205,0	script	#AC_TSTVP7_22	139,5,5,{ // before pro west entrance
+// if(AC_RANK!=6 || AC_RANKTEST!=15) end;
+// mes "[" + strcharinfo(0) + "]";
+// mes "Prontera is visible.";
+// mes "We're almost there!";
+// close2;
+// set AC_RANKTEST,16;
+// end;
 //}
 
-// 未調査。 通ろうとすると追い返すらしい。
-prt_fild05.gat,371,123,4	script	ガラの悪そうな男	943,{
-	mes "[ガラの悪そうな男]";
-	mes "ぐおー。";
-	mes "ぐおー。";
+// Not investigated. I heard that if you try to go through, it will turn you away.
+prt_fild05.gat,371,123,4	script	A man who looks like a rascal	943,{
+	mes "[man who looks like a rattler]";
+	mes "Gooo.";
+	mes "Guo.";
 	next;
 	mes "[" + strcharinfo(0) + "]";
-	mes "（男が寝ているようだ。）";
+	mes "(Looks like the guy is sleeping.)";
 	close;
 }
 
-prontera.gat,26,203,0	script	#AC_TSTVP7_22	139,5,5,{ //プロ到着
+prontera.gat,26,203,0	script	#AC_TSTVP7_22	139,5,5,{ //pro arrival
 	if(AC_RANK!=6 || AC_RANKTEST!=16) end;
 	mes "[" + strcharinfo(0) + "]";
-	mes "Pronteraに到着した！";
-	mes "後は、ガルドさんに報告";
-	mes "すれば試験完了だ！";
+	mes "You have arrived at Prontera!";
+	mes "Now all we have to do is report back to Mr. Gordo and the test is complete!";
 	close2;
 	set AC_RANKTEST,98;
 	end;

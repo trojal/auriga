@@ -1,55 +1,54 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  受付・講習室
-//                                                  by Pneuma
-// 1.1 since 2019 Updata, Add マスター・スヌス by refis
+// Ragnarok Online -- Adventurer Academy Reception and Training Room
+// by Pneuma
+// 1.1 since 2019 Updata, Add Master Sunus by refis
 //------------------------------------------------------------
 
-// 受付員
-ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
+// Receptionist
+ac_cl_room.gat,43,41,4	script	Receptionist Ella#Ella	90,{
 	function getcombathan;
 	set '@novice, callfunc("AC_GetNovice");
 
 	if(Job==Job_Summoner) {
 		mes "[Ella]";
-		mes "You are Mr. Doram, aren't you?" ;
-		mes "Welcome to the Adventurers Academy!" ;
-		mes "Please take your time to visit." ;
+		mes "You must be Doram.";
+		mes "Welcome to the Adventurer Academy!";
+		mes "Please take your time to visit.";
 		close;
 	}
 	if(AC_PASSPORT>=2){
 		if(Job!=Job_Novice) {
 			mes "[Ella]";
-			mes "Hello." ;
-			mes strcharinfo(0)+ ", you are always very studious." ;
-			mes "Please tell me about your travels sometime." ;
+			mes "Hello " +strcharinfo(0)+ ", you are always eager to learn.";
+			mes "Please tell me about your travels sometime.";
 			close;
 		} else {
 			if(AC_NOVICE_QUE<10){
 				mes "[Ella]";
-				mes "I know there are still many things you don't understand, but you are just beginning your journey as an adventurer." ;
+				mes "I know there are still many things you don't understand, but you are just beginning your journey as an adventurer.";
 				next;
 				mes "[Ella]";
-				mes "First, you should talk to ^0000FFPuron^000000 in this room." ;
+				mes "First, you should talk to ^0000FFPuron^000000 in this room.";
 			}
 			else if(AC_NOVICE_QUE<20){
 				mes "[Ella]";
-				mes "Are you being taught a lot of things?" ;
-				mes "We have new students coming in, so everyone is very excited." ;
-				mes "You should hear from ^0000FFAldi^000000 there, too." ;
+				mes "Are you being taught a lot of things?";
+				mes "We have new students coming in, so everyone is very excited.";
+				mes "You should hear from ^0000FFAldi^000000 there, too.";
 			}
 			else if(AC_NOVICE_QUE<30) {
 				mes "[Ella]";
-				mes "It looks like you are making good progress." ;
-				mes "I'm sure ^0000FFFaye^000000 will tell you about the future." ;
-				mes "Please talk to ^0000FFFaye^000000 at the back of the room." ;
+				mes "It looks like you are making good progress.";
+				mes "I'm sure ^0000FFFaye^000000 will tell you about the future.";
+				mes "Please talk to ^0000FFFaye^000000 at the back of the room.";
 			}
 			else {
 				mes "[Ella]";
-				mes "It looks like the course went well." ;
-				mes "You can now go for the ^FF00001 next job ^000000." ;
-				mes "You can ask Mr. ^0000FFFaye^000000 at the back of this training room." ;
+				mes "It looks like the training course went well.";
+				mes "You can now go for ^FF00001 next job ^000000.";
+				mes "You can ask ^0000FFFaye^000000 at the back of this training room.";
 				emotion 2,"";
 			}
 		}
@@ -57,94 +56,90 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 
 	if(AC_PASSPORT<2 && !checkquest(201040)){
 		mes "[Ella]";
-		mes "You are new here, aren't you?" ;
-		mes "Welcome to the Adventurer Academy!" ;
-		mes "First, let's complete the enrollment process." ;
+		mes "You are new here.";
+		mes "Welcome to the Adventurer Academy!";
+		mes "First, let's complete the enrollment process.";
 		mes "Let's see, ......";
-		mes "You must be " + strcharinfo(0)  + ".";
+		mes "Yes, "+strcharinfo(0)+ ".";
 		next;
 		mes "[Ella]";
-		mes "First, we need the name ......";
-		mes "The date is ......";
+		mes "First, the name is ......";
+		mes "...... date is ";
 		next;
 		mes "[Ella]";
-		mes "First, we need the name ......";
-		mes "The date is ......";
-		mes "............";
+		mes "First, the name is ......";
+		mes "...... date is ............";
 		mes "The appearance is ......";
 		next;
 		mes "[Ella]";
-		mes "First, we need the name ......";
-		mes "The date is ......";
-		mes "............";
+		mes "First, the name is ......";
+		mes "...... date is ............";
 		mes "The appearance is ......";
-		mes "Woah " + (Sex ? "cool": "cute") + "!";
+		mes "Whoa "+(Sex ? "cool": "cute")+ "!";
 		mes "......";
 		next;
 		setquest 201040;
 		emotion 46,"";
 		mes "[Ella]";
-		mes "Here you go!" ;
-		mes "Your enrollment is complete!" ;
-		mes "You are now a student of the Adventurer Academy!" ;
+		mes "Here you go!";
+		mes "Your enrollment is complete!";
+		mes "You are now a student at the Adventurer Academy!";
 		next;
 		mes "[Ella]";
-		mes "The Adventurer Academy is a school established for adventurers from all over the world." ;
-		mes "It's a school that is funded by donations from adventurers." ;
+		mes "The Adventurer Academy is a school for adventurers from all over the world.";
+		mes "It's a school that is funded by donations from adventurers.";
 		next;
 		mes "[Ella]";
-		mes "It's a school where people from all walks of life come to learn, from fledgling adventurers just starting out to old strong adventurers." ;
+		mes "It's a school where people from all walks of life come to learn, from fledgling adventurers just starting out to old and strong adventurers.";
 		next;
 		mes "[Ella]";
-		mes "If you are not used to adventures, it would be a good idea to learn at the Adventurer Academy here." ;
+		mes "If you are not used to adventuring, it would be a good idea to learn at the Adventurer Academy here.";
 		next;
 		mes "[Ella]";
-		mes "So, let's get right to it, and I'll tell you the most important thing you need to know as you begin your adventure." ;
+		mes "Well then, let me quickly tell you the important things you need to know as you begin your adventure.";
 		next;
 		mes "[Ella]";
-		mes "It is about ^FF000000quests^000000." ;
-		mes " ";
-		mes "A ^0000FFquest^000000 is simply an adventure that begins in a variety of places." ;
+		mes "It's about the ^FF0000 quest ^000000.";
+		mes " ^0000FFQuest^000000 is, simply put, an adventure that begins in various places.";
 		next;
 		mes "[Ella]";
-		mes "By accomplishing quests, you get experience, rewards, and various services." ;
+		mes "By accomplishing the quests, you get experience, rewards, and various services.";
 		next;
 		mes "[Ella]";
-		mes "There are many different quests, such as taking requests from people in need, solving their problems, exploring something, solving a mystery, or defeating a monster." ;
+		mes "Quests can be anything from taking requests from people in need and solving their problems, to exploring something, solving a mystery, defeating a monster, and so on.";
 		next;
-		mes "［Ella］";
-		mes "Try pressing ^FF0000Alt+U key ^000000." ;
-		mes "Now you see [Enroll in Adventurer Academy] and the quest in the window labeled Quest List." ;
+		mes "[Ella] ^FF0000Alt+U key ^000000.";
+		mes "Now you see [Enroll in Adventurer Academy] and a quest in the window labeled Quest List.";
 		cutin "jp_quest_help01.bmp", 2;
 		next;
 		mes "[Ella]";
-		mes "Each quest can be viewed in detail in the ^0000FFquest list^000000 window by selecting the quest name and pressing the \"^FF000000view^000000\" button or by ^0000FFdouble-clicking^000000 on the quest name." ;
+		mes "Each quest can be viewed in the ^0000FF quest list^000000 window by selecting the quest name and pressing the \"^FF0000view^000000\" button or by ^0000FF double-clicking^000000 on the quest name to see the detailed contents.";
 		next;
 		mes "[Ella]";
-		mes "[Admission to Adventurer Academy] Quest is written that you have been admitted." ;
-		mes "The contents of the quests vary, so if you lose track of the contents, try pressing ^FF0000Alt+U key ^000000." ;
+		mes "[Admission to the Adventurer's Academy] quest says that you have enrolled.";
+		mes "The quests vary, so if you lose track of the content, try pressing ^FF0000Alt+U key ^000000.";
 		next;
 		mes "[Ella]";
-		mes "Yes, ^0000FFcompleted quests^000000FF will be displayed in the quest list as ^000000FFcrescent moon symbol^000000FF." ;
+		mes "Yes, ^0000FF completed quests ^000000 will be displayed in the quest list with the ^0000FF crescent moon symbol ^000000.";
 		if(!'@novice){
 			next;
 			cutin "jp_quest_help01.bmp", 255;
 			mes "[Ella]";
-			mes "I feel lucky today to have someone as experienced as you to enroll." ;
+			mes "It seems like I'm lucky today to have someone as experienced as you enroll.";
 			next;
 			mes "[Ella]";
-			mes "If you want to know about the inside of the school, I think ^0000FFMido^000000 is just outside this room, so please ask him." ;
-			set AC_PASSPORT,2; //入学完了
-			set AC_AFLIER,0; //ちらしフラグ破棄
+			mes "If you want to know about the inside of the school, I think ^0000FFMido^000000 is just outside this room, so please ask him.";
+			set AC_PASSPORT,2; //enrollment complete
+			set AC_AFLIER,0; //destroy flicker flag
 			close;
 		}
 		if(!countitem(1243) && !countitem(2414) && !countitem(2510) && !countitem(2352) && !countitem(2112) && !countitem(5055)){
 			next;
 			cutin "jp_quest_help01.bmp", 255;
 			mes "[Ella]";
-			mes "This is my gift to you for your enrollment." ;
-			mes "Please accept it." ;
-			//本家ではチェックが入っていない。
+			mes "This is my entrance gift to you.";
+			mes "Please accept it.";
+			// The check is not checked in the main house.
 			if(checkitemblank()) getitem 1243, 1;
 			if(checkitemblank()) getitem 2414, 1;
 			if(checkitemblank()) getitem 2510, 1;
@@ -152,37 +147,36 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 			if(checkitemblank()) getitem 2112, 1;
 			if(checkitemblank()) getitem 5055, 1;
 		}
-		if(!getskilllv(142)){	// 初回会話時のみに変更？
+		if(!getskilllv(142)){ // change only on first conversation?
 			next;
 			cutin "jp_quest_help01.bmp", 255;
 			mes "[Ella]";
-			mes "Oh?　I see that you have not yet learned the skill \"^0000FF First Aid^000000\"." ;
-			mes "Since you're here, I'll teach you the skill \"^000000FFFirst Aid^000000\" as well." ;
-			mes "This is a pretty useful skill when you are injured." ;
+			mes "Oh?  I see that you have not yet learned the skill \"^0000FF First Aid^000000\".";
+			mes "Since you're here, I'll teach you the skill \"^0000FF First Aid^000000\" as well.";
+			mes "This is a pretty useful skill when you are injured.";
 			next;
 			skill 142,1,0;
-			mes "^4d4dff- Acquired the skill \"First Aid\". - ^000000";
+			mes "^4d4dff- You have mastered the skill 'First Aid'. - ^000000";
 		}
 	}
 	if(!checkquest(100056) && !checkquest(201036) && !checkquest(201815)){
 		next;
 		cutin "jp_quest_help01.bmp", 255;
 		mes "[Ella]";
-		mes "Ah!　It was." ;
-		mes " ";
-		mes "Right now, we're giving away free helpful items to support fledgling adventurers." ;
+		mes "Ah!  It was.";
+		mes " Right now, we're giving away free helpful items to support fledgling adventurers.";
 		next;
 		mes "[Ella]";
-		mes "The first item is called ^4d4dffThick Battle Manual^000000, and when used, it increases the experience gained by 50% for one hour!" ;
+		mes "The first item is called ^4d4dff Thick Combat Instruction^000000, and when used, it increases the experience gained by 50% for one hour!";
 		next;
 		mes "[Ella]";
-		mes "The second item is called ^4d4dffLevel Up Box^000000, which is a box that can be opened when you reach a certain level and when opened you get various items!" ;
+		mes "The second item is a ^4d4dff level up box^000000, which is a box that can be opened when you reach a certain level and when opened you get various items!";
 		next;
 		getcombathan;
 	}
 	if(checkquest(100056) && !checkquest(201036) && !checkquest(201815)){
 		mes "[Ella]";
-		mes "Then I will give you ^4d4dffThick Battle Manual^000000 and ^4d4dffLevel Up Box^000000." ;
+		mes "Then I'll give you ^4d4dff thick combat instruction^000000 and ^4d4dff level up box^000000.";
 		next;
 		getcombathan;
 	}
@@ -190,28 +184,26 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		next;
 		cutin "jp_quest_help01.bmp", 255;
 		mes "[Ella]";
-		mes "Well, that's it from me." ;
-		mes " ";
-		mes "For more useful basic adventure stories, ^0000FFPuron^000000, ^0000FFAldi^000000, and ^0000FFFaye^000000 in this room will tell you." ;
+		mes "Well, that's it from me.";
+		mes " For more useful basic adventure stories, ^0000FFPuron^000000, ^0000FFAldi^000000, and ^0000FFFaye^000000 in this room will tell you.";
 		next;
 		mes "[Ella]";
-		mes "If you learn here, as you grow, you'll have all the necessities that will help you." ;
-		mes " ";
-		mes "First, please talk to ^0000FFPuron^000000 in this room." ;
+		mes "If you learn here, as you grow, you'll have all the necessities that will help you.";
+		mes " First, please talk to ^0000FFPuron^000000 in this room.";
 		setquest 100112;
-		set AC_PASSPORT,2; //入学完了
-		set AC_AFLIER,0; //ちらしフラグ破棄
+		set AC_PASSPORT,2; //enrollment complete
+		set AC_AFLIER,0; //destroy flicker flag
 	}
 	close;
 
-	function	getcombathan	{
+	function getcombathan {
 		if(MaxWeight - Weight < 2000){
 			mes "[Ella]";
-			mes "Oh?" ;
-			mes "I was going to give it to you, but your luggage is too heavy." ;
-			mes "Please reduce your luggage." ;
+			mes "Oh?";
+			mes "I was going to give it to you, but it looks like your luggage is too heavy to carry.";
+			mes "Please reduce your luggage.";
 			next;
-			mes "-You cannot receive the item due to the weight of the items you are carrying-";
+			mes "-You cannot receive the item due to the weight of the item you are carrying-";
 			mes "-Please reduce the number of items in your possession and then speak to us again-";
 			close2;
 			if(!checkquest(100056)) setquest 100056;
@@ -220,9 +212,9 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		}
 		if(checkitemblank() < 3){
 			mes "[Ella]";
-			mes "Oh?" ;
-			mes "I was going to give it to you, but it looks like you have too much luggage." ;
-			mes "Please reduce your luggage." ;
+			mes "Oh my?";
+			mes "I was going to give it to you, but it looks like you have too much stuff.";
+			mes "Please reduce your luggage.";
 			next;
 			mes "-You cannot receive the item because you have too many different items in your possession.";
 			mes "-Please reduce the number of items in your possession and then talk to us again-";
@@ -233,40 +225,39 @@ ac_cl_room.gat,43,41,4	script	Receptionist#Ella	90,{
 		}
 		cutin "jp_quest_help01.bmp", 255;
 		mes "[Ella]";
-		mes "Use this to become a great adventurer!" ;
+		mes "Use this to become a great adventurer!";
 		getitem 25023, 1;
 		getitem 12312, 10;
-		getitem2 22954,1,1,0,0,0,0,0,0,1209600;
+		getitem2 22954,1,1,0,0,0,0,0,0,0,1209600;
 		delquest 100056;
-		//setquest 201036;	// 古いクエスト
+		//setquest 201036; // old quest
 		setquest 201815;
 		next;
 		mes "[Ella]";
-		mes "You can get various items from the box, but the first box you get contains an item called 'Armor Exchange Ticket'." ;
+		mes "You can get various items from the box, but the first box you get contains an item called 'armor exchange ticket'.";
 		next;
 		mes "[Ella]";
-		mes "Tickets can be exchanged for various items depending on your level, and ^FF0000Master Sunus^000000 is right there to help you exchange those items!" ;
+		mes "The ticket can be exchanged for various items depending on your level, and ^FF0000 \"Master Sunus-san\" ^000000 is right there to help you exchange those items!";
 		next;
 		mes "[Ella]";
-		mes "Be sure to come to Master Sunus when you get your ticket from the box!" ;
+		mes "Be sure to come to \"Master Sunus\" when you get your ticket from the box!";
 		next;
 		mes "-Information-";
-		mes " ^FF0000\"Level Up Boxes\" will automatically disappear approximately two weeks after receipt." ;
-		mes " Please open the \"Level Up Box\" before the expiration date as we do not redistribute \"Level Up Boxes\"." ;
+		mes " ^FF0000 \"Level Up Boxes\" will automatically disappear approximately two weeks after receipt.";
+		mes " Please open the \"Level Up Box\" before the expiration date as we do not redistribute \"Level Up Boxes\".";
 		next;
 		mes "-Information-";
-		mes " ^FF0000 Also, if you change your job to Ninja, Gunslinger, Supernovice, or Taekwon Kid, we will collect your \"Level Up Box\", \"Weapon Exchange Ticket\", and \"Armor Exchange Ticket\" when you change jobs." ;
+		mes " ^FF0000 Also, if you change your job to Ninja, Gunslinger, Supernovice, or Taekwon Kid, we will collect your \"Level Up Box\", \"Weapon Exchange Ticket\", and \"Armor Exchange Ticket\" when you change your job.";
 		return;
 	}
 }
 
-ac_cl_room.gat,44,16,0	script	#講習1_warp1	45,1,1,{
+ac_cl_room.gat,44,16,0	script	# course1_warp1	45,1,1,{
 	if(AC_PASSPORT<2) {
 		mes "[Ella]";
-		mes "You are a prospective student!" ;
-		mes "Please complete the enrollment process here first." ;
-		mes " ";
-		mes "-hearing voices from the room-";
+		mes "You are a prospective student!";
+		mes "Please complete the enrollment process here first.";
+		mes " -hearing voices from the room-";
 		close;
 	}
 	warp "ac_cl_area.gat",40,133;
@@ -284,9 +275,9 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 
 	if(AC_PASSPORT<2) {
 		mes "[Puron]";
-		mes "Welcome to the Adventurer Academy!" ;
-		mes "It looks like you haven't completed the registration process yet." ;
-		mes "Please complete the registration first." ;
+		mes "Welcome to the Adventurer Academy!";
+		mes "It looks like you haven't completed the registration process yet.";
+		mes "Please complete the registration first.";
 		close;
 	}
 	set '@novice, callfunc("AC_GetNovice");
@@ -294,42 +285,39 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 		if(Job!=Job_Novice){
 			if(AC_NOVICE_QUE) {
 				mes "[Puron]";
-				mes "You seem to be doing well." ;
-				mes "If you have any questions, I can explain." ;
-				mes " ";
-				mes "What do you want to ask me about?" ;
+				mes "Looks like you're doing well.";
+				mes "If you have any questions, I can explain.";
+				mes "What do you want to ask me about?";
 			} else {
 				mes "[Puron]";
-				mes "Hello." ;
-				mes "I don't know if this is something you need to do, but.. ";
-				mes " ";
-				mes "What do you want to ask me about?" ;
+				mes "Hello.";
+				mes "This may not be necessary for you, but what do you want to ask me about?";
 			}
 		} else if(AC_NOVICE_QUE==10){
 			mes "[Puron]";
-			mes "Next, ^FF0000Aldi^000000 on the other side of the room will teach you." ;
+			mes "Next, ^FF0000Aldi^000000 on the other side of the room will tell you.";
 			next;
 			mes "[Puron]";
-			mes "If you have any questions about the primary profession, come back and ask me again, even when you are in the primary profession." ;
-			mes "Or is there something else you want to ask?" ;
+			mes "If you have any questions about the first profession, come back and ask me again when you get to the first profession.";
+			mes "Or is there something else you want to ask?";
 		} else if(AC_NOVICE_QUE > 10 && AC_NOVICE_QUE < 20){
 			mes "[Puron]";
-			mes "My course is finished." ;
-			mes "Next, ^0000FFAldi^000000 on the other side of the room will teach you." ;
-			mes "Or is there something else you want to ask?" ;
+			mes "My course is finished.";
+			mes "Next, ^0000FFAldi^000000 on the other side of the room will teach you.";
+			mes "Or is there something else you want to ask?";
 		} else if(AC_NOVICE_QUE >= 20 && AC_NOVICE_QUE < 30){
 			mes "[Puron]";
-			mes "I see my training is finished." ;
-			mes "^0000FFFaye^000000 at the back of the room will teach you the last part." ;
-			mes "Or is there something else you want to ask?" ;
+			mes "You've completed my course.";
+			mes "The ^0000FFFaye^000000 at the back of the room will teach you the last part.";
+			mes "Or is there something else you want to ask?";
 		} else if(AC_NOVICE_QUE>=30){
 			mes "[Puron]";
-			mes "It looks like you got everything done safely." ;
-			mes "Do you have any more questions about your profession?" ;
+			mes "Looks like you got everything done without a hitch.";
+			mes "Do you have any more questions about your profession?";
 		}
 		while(1){
 			next;
-			switch(select("About quests", "About changing jobs", "About first job", "About first job skills", "About first job status", "About weapons", "Nothing to ask")){
+			switch(select("about quests", "about changing jobs", "about first job", "about first job skills", "about first job status", "about weapons", "nothing to ask")){
 			case 1:
 				ABOUT_QUESTWINDOW;
 				break;
@@ -350,33 +338,33 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 				break;
 			default:
 				mes "[Puron]";
-				mes "If you have any more questions, I'll explain it to you and you can come back anytime." ;
+				mes "If you have any more questions, come back anytime and I'll explain it to you.";
 				close2;
 				cutin "ninja_throwshurike.bmp", 255;
 				end;
 			}
 			mes "[Puron]";
-			mes "Is there anything else you would like to ask?" ;
+			mes "Is there anything else you want to ask?";
 		}
 	}
 	
 	switch(AC_NOVICE_QUE){
 	case 0:
 		mes "[Puron]";
-		mes "You're a new student." ;
-		mes "I'm ^0000FFPuron^000000 in charge of the course." ;
-		mes "Have you heard about ^FF000000quests^000000 from Ella?" ;
+		mes "You are a new student.";
+		mes "It's ^0000FFPuron^000000 who's in charge of the course.";
+		mes "Have you heard from Ella about the ^FF0000quest^000000?";
 		next;
 		mes "[Puron]";
-		mes "Let's get started with a detailed discussion of the ^FF000000quest window^000000." ;
+		mes "Let's get started with a detailed discussion of the ^FF0000 quest window ^000000.";
 		next;
 		ABOUT_QUESTWINDOW;
 	case 1:
 		mes "[Puron]";
-		mes "I see you have figured out about the quest window." ;
+		mes "I see you figured out about the quest window.";
 		if(AC_NOVICE_QUE < 1){
 			if(BaseLevel<2 || JobLevel<2){
-				mes "Let's celebrate!" ;
+				mes "Let's celebrate!";
 				if(checkre()) {
 					if (BaseLevel<2) getexp 2,0;
 					if (JobLevel<2) getexp 0,8;
@@ -388,14 +376,14 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			}
 			set AC_NOVICE_QUE,1;
 		}
-		mes "Next, I'll teach you about the basics of being an adventurer and changing jobs!" ;
+		mes "Next, I'll teach you about the basics of being an adventurer and changing jobs!";
 		ABOUT_JOBCHANGE;
 	case 2:
 		mes "[Puron]";
-		mes "I guess you've figured out about the job change." ;
+		mes "I see you've figured out about changing jobs.";
 		if (AC_NOVICE_QUE < 2){
 			if(BaseLevel<3 || JobLevel<3){
-				mes "Let's celebrate!" ;
+				mes "Let's celebrate!";
 				if(checkre()) {
 					if (BaseLevel<3) getexp 4,0;
 					if (JobLevel<3) getexp 0,10;
@@ -407,17 +395,17 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			}
 			set AC_NOVICE_QUE,2;
 		}
-		mes "Okay, now let's talk about the professions that you can change from Novice to!" ;
+		mes "Okay, now let's talk about the professions you can change from Novice to!";
 		next;
 		ABOUT_JOB;
 	case 3:
-	case 4:
+	CASE 4:
 	case 5:
 		mes "[Puron]";
-		mes "I see you have found out about the first job." ;
+		mes "I see you have found out about your primary occupation.";
 		if(AC_NOVICE_QUE < 3){
 			if(BaseLevel<5 || JobLevel<5){
-				mes "Let's celebrate!" ;
+				mes "Let's celebrate!";
 				if(checkre()) {
 					if (BaseLevel<4) getexp 5,0;
 					if (JobLevel<4) getexp 0,12;
@@ -437,366 +425,348 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			next;
 			mes "[Puron]";
 			if(AC_NOVICE_QUE==3){
-				mes "Oh yeah, I'll give you this!" ;
+				mes "Oh yeah, let's pass this along!";
 				next;
 			} else {
-				mes "Have you reduced your baggage?" ;
+				mes "Have you reduced your luggage?";
 				next;
 				if(select("I have reduced", "I have not reduced")==2){
 					mes "[Puron]";
-					mes "I guess I'll have to reduce my luggage first." ;
+					mes "I guess I'll have to reduce my luggage first.";
 					close;
 				}
 			}
-			set AC_NOVICE_QUE,4;
+			set ac_novice_que,4;
 			if(checkitemblank() == 0){
-				mes "^FF0000<Warning>^000000";
-				mes "-Unable to receive items due to the number of different items in your possession-";
-				mes "-Please reduce the number of items in your possession and talk to me again-";
+				mes "^FF0000<WARNING>^000000-You cannot receive items due to the number of different items in your possession-";
+				mes "-Please reduce the number of items in your possession and talk to us again-";
 				close;
 			} else
 			if(Weight>(MaxWeight/100)*90){
-				mes "^FF0000<Warning>^000000";
-				mes "-The item cannot be received due to the high weight of the items in your possession-";
-				mes "-Please reduce the number of items in your possession and then talk to me again-";
+				mes "^FF0000<WARNING>^000000-You will not be able to receive the item due to the high weight of the item you are carrying-";
+				mes "-Please reduce the number of items in your possession and then speak to me again-";
 				close;
 			}
 			getitem 569, 50;
 			emotion 46,"";
 			set AC_NOVICE_QUE,5;
 			mes "[Puron]";
-			mes "A must-have for adventurers, a recovery item!" ;
-			mes "You can use it when you are wounded in a battle with a monster." ;
-			mes " ";
-			mes "Well, that's the end of my training course!" ;
+			mes "A must-have for adventurers, a recovery item!";
+			mes "I think I'll use it when I'm wounded in a battle with a monster.";
+			mes " Well then, that's the end of my training!";
 			next;
 			mes "[Puron]";
-			mes "You can check the items I just gave you by pressing the ^0000FF\"item\"^000000 button in the ^0000FF\"Basic Information\"^000000 window to display the ^0000FF\"Items in possession\"^000000 window." ;
+			mes "You can check the items I just gave you by pressing the ^0000FF \"item\"^000000 button in the ^0000FF \"Basic Information\"^000000 window to display the ^0000FF \"Items in your possession\"^000000 window.";
 		} else {
-			mes "　";
-			mes "Well, that's the end of my course!" ;
+			mes " Well, that's the end of my training course!";
 		}
 		delquest 100112;
 		setquest 100116;
-		set AC_NOVICE_QUE, 10; //Puronの講習完了
+		set AC_NOVICE_QUE, 10; //Puron's training completed
 	default:
 		mes "[Puron]";
-		mes "Next, ^FF0000Aldi^000000 on the other side of the room will teach you." ;
+		mes "Next, ^FF0000Aldi^000000 on the other side of the room will teach you.";
 		next;
 		mes "[Puron]";
-		mes "If you have any questions about the first job, come back and ask me again, even when you are in the first job." ;
+		mes "If you have any questions about the first profession, come back and ask me again when you get to the first profession.";
 		close;
 	}
 
-	function	ABOUT_QUESTWINDOW	{
+	function ABOUT_QUESTWINDOW {
 		while(1){
 			mes "[Puron]";
-			mes "The quest window can be displayed by pressing ^FF0000Alt + U^000000." ;
-			mes "To see the details of a quest, double-click on the quest name or use the \"view\" button.";
-			cutin "jp_quest_help02.bmp", 2;
-			next;
+			mes "You can use ^FF0000Alt+ U^000000 to display the quest window.";
+			mes "For details of a quest, double-click on the quest name or use the \"view\" button.";
 			mes "[Puron]";
-			mes "And the ^0000FF quest details^000000 contains the request and the objectives to accomplish." ;
-			mes " ";
-			mes "If you don't know what to do, check the detailed information!" ;
-			cutin "jp_quest_help03.bmp", 2;
-			next;
+			mes "And the ^0000FF quest details^000000 include the details of the request and the objective to accomplish it.";
+			mes " If you don't know what to do, check the detailed information!";
 			mes "[Puron]";
-			mes "Some of the quests involve defeating monsters." ;
-			mes "In that case, you can look at the monster's location at the bottom of the window." ;
-			mes "You can see which and how many monsters you have killed." ;
-			cutin "jp_quest_help04.bmp", 2;
-			next;
+			mes "Some quests involve killing monsters.";
+			mes "In that case, you can look at the monster's location at the bottom of the window.";
+			mes "You can see which and how many monsters you have killed.";
 			mes "[Puron]";
-			mes "Yes, the quests that involve time have the time in the lower right corner." ;
-			mes "The ones that require a certain amount of time to complete or are restricted to a specified time have the time there, so I guess you'd better check." ;
+			mes "Oh yeah, quests that involve time have the time in the lower right corner.";
+			mes "The ones that need to be completed in a certain amount of time or are restricted to a specified time have the time in here, so I guess I'll check that.";
 			cutin "jp_quest_help05.bmp", 2;
 			next;
 			cutin "jp_quest_help05.bmp", 255;
 			mes "[Puron]";
-			mes "Did you understand about the quest window?" ;
-			mes " ";
-			mes "You can display the quest window with ^FF0000Alt+U^000000." ;
+			mes "Did you understand about the quest window?";
+			mes " You can display the quest window with ^FF0000Alt+U^000000.";
 			next;
-			if(select("OK", "Tell me again")==1) break;
+			if(select("Okay", "I don't know")==1) break;
 			mes "[Puron]";
-			mes "Okay, I'll explain it again." ;
+			mes "Okay, I'll explain again.";
 			next;
 		}
 		return;
 	}
 
-	function	ABOUT_JOBCHANGE	{
+	function ABOUT_JOBCHANGE {
 		while(1) {
 			mes "[Puron]";
-			mes "Adventurers in this world come in a variety of occupations." ;
-			mes "Your profession now is Novice." ;
-			mes "Every adventurer starts as a Novice." ;
+			mes "Adventurers in this world have various occupations.";
+			mes "Your occupation right now is Novice.";
+			mes "Every adventurer starts as a Novice.";
+			mes "[Puron]";
+			mes "From ^0000FF Novice^000000 you can change to ^0000FF 1st job ^000000 or 1st job expanded [Puron]";
+			mes "However, once you change jobs, you cannot return to your original profession.";
+			mes "Choose carefully which profession you change jobs to.";
+			mes "Also, the profession you change jobs to will determine the higher level of your profession.";
+			mes "[Puron]";
+			mes "Once you become a first-level profession, you will be able to use skills and items that are not available when you are a Novice.";
+			mes "You can progress through the stages of Novice → 1st job → 2nd job.";
+			mes "[Puron]";
+			mes "By the time the three of us are done with the training, you should be able to change jobs."; 
 			next;
 			mes "[Puron]";
-			mes "From ^0000FFNovice^0000000000FF you can change to a ^0000FF1st job^000000FF or a special 1st job.";
+			mes "Did you understand about changing jobs?";
 			next;
+			if (select("Okay", "Don't know")==1) break;
 			mes "[Puron]";
-			mes "However, once you change jobs, you cannot return to your original occupation." ;
-			mes "Choose carefully the profession you change jobs to." ;
-			mes "Also, the profession you change jobs to will determine the second job of your profession." ;
-			next;
-			mes "[Puron]";
-			mes "When you become a first degree, you will be able to use skills and items that are not available when you are a Novice." ;
-			mes "You can grow through the stages of Novice → 1st job → 2nd job." ;
-			next;
-			mes "[Puron]";
-			mes "By the time the three of us are done with the training, you should be able to change jobs." ; 
-			next;
-			mes "[Puron]";
-			mes "Did you find out about the job change?" ;
-			next;
-			if (select("OK", "Not sure")==1) break;
-			mes "[Puron]";
-			mes "Okay, I'll explain it again." ;
+			mes "Okay, I'll explain again.";
 			next;
 		}
 		return;
 	}
 
-	function	ABOUT_JOB_CLASS1	{
+	function ABOUT_JOB_CLASS1 {
 		cutin "weapon_list.bmp", 255;
 		next;
 		mes "[Puron]";
-		mes "There are seven basic primary professions in the world and three other special primary professions." ;
+		mes "There are 7 basic 1st jobs and 3 other 1st job expansions in the world.";
 		next;
 		mes "[Puron]";
-		mes "The basic primary occupations are ^000000FFSwordsman^000000, ^000000FFMagician^000000, ^000000FFAcolyte^000000, ^000000FFThief^000000, ^000000FFMArcher^000000, ^000000 FFMerchant^000000, and ^0000FFTaekwon Kid^000000.";
-		mes "The three special first occupations are ^0000FFGunslinger^000000, ^0000FFNinja^000000, and ^0000FFSupernovice^000000." ;
+		mes "The basic 1st jobs are ^0000FFSwordsman^000000, ^0000FFMagician^000000, ^0000FFAcolyte^000000, ^0000FFThief^000000, ^0000FF Archer^000000, ^0000FFArcher^000000, and ^0000FFAcolyte^000000. FFMerchant^000000, ^0000FFTaekwon Kid^000000, and seven professions.";
+		mes "1st job expanded is ^0000FFGunslinger^000000, ^0000FFNinja^000000, and ^0000FFSupernovice^000000.";
 		next;
 		return;
 	}
 
-	function	ABOUT_JOB_FEATURE	{
-	switch(select("Good at close combat", "Good at long range combat", "Good at magic", "Good at helping friends", "Good at carrying items and making money", "Good at fighting", "About special jobs",(AC_NOVICE_QUE2 & 0x2 ? "I know about occupations" : ""))) {
+	function ABOUT_JOB_FEATURE {
+	switch(select("good at close combat", "good at long distance combat", "good at magic combat", "good at supporting friends", "good at carrying goods and making money", "good at fighting", "good at special characteristics",(AC_NOVICE_QUE2 & 0x2 ? "I know about occupations" :
+		""))) {
 		case 1:
 			cutin "swordman_1.bmp", 2;
 			mes "[Puron]";
-			mes "If I were to say a profession that is good at close combat, it would be the first job ^000000FFSwordsman^000000 or its higher professions, Knight and Crusader." ;
+			mes "The professions that are good at close combat would be the primary ^0000FFSwordsman^000000 and its higher level professions, Knight and Crusader.";
 			next;
 			mes "[Puron]";
-			mes "I'll probably leave it to the knights for front line attacks and the crusaders for defense." ;
-			mes "In the bottom row, the occupation on the left will be the Knight and the occupation on the right will be the Crusader." ;
+			mes "I would probably leave it to Knight for front line attacks and Crusader for defense.";
+			mes "In the bottom row, the occupation on the left will be Knight and the occupation on the right will be Crusader.";
 			next;
 			cutin "thief_1.bmp", 2;
 			mes "[Puron]";
-			mes "Also, the primary profession ^0000FFThief^000000, which can fight by evading enemy attacks with its quick attacks and lightness, and its higher professions, assassin and rogue, are also professions that can fight on the front lines." ;
+			mes "Also, the first occupation ^0000FFThief^000000, which can fight by evading enemy attacks with quick attacks and lightness, and its higher occupations, Assassin and Rogue, can also fight on the front line.";
 			next;
 			mes "[Puron]";
-			mes "Assassins and rogues can use their skills to take enemy items, and they can also save money by selling the items they get." ;
+			mes "Assassin and Rogue can also use their skills to take enemy items, and they can also save money by selling the items they get.";
 			next;
 			mes "[Puron]";
-			mes "The Rogue's Snatcher skill in particular is very powerful, as it allows you to take enemy items during a normal attack." ;
+			mes "Especially Rogue's skill called Snatcher is very powerful because it allows her to take enemy items during normal attacks.";
 			next;
 			mes "[Puron]";
-			mes "The occupation on the left in the bottom row will be Assassin, and the occupation on the right will be Rogue." ;
+			mes "In the bottom row, the left profession is Assassin and the right profession is Rogue.";
 			next;
 			cutin "thief_1.bmp", 255;
 			mes "[Information]";
-			mes "-1st job Swordsman-";
-			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
-			mes "-1st job Thief-";
-			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
+			mes "-Swordsman of the 1st occupation-";
+			mes "-Difficulty of training: suitable for beginners^FF0000(recommended)^000000-";
+			mes "-Thief of the 1st job-";
+			mes "-Training difficulty: suitable for beginners^FF0000(recommended)^000000-";
 			break;
 		case 2:
 			cutin "archer_1.bmp", 2;
 			mes "[Puron]";
-			mes "The professions that are good at long-distance fighting would be the primary ^0000FFArcher^000000 and its higher professions, hunters, dancers and bards." ;
+			mes "The professions that are good at long-distance fighting would be ^0000FFArcher^000000, which is the first level profession, and Hunter, Dancer and Bard, which are its higher level professions.";
 			next;
 			cutin "archer_3.bmp", 2;
 			mes "[Puron]";
-			mes "Especially when you are a hunter, you can use your skills to set traps instead of direct attacks to lure the enemy into a fight." ;
+			mes "Especially when you become a Hunter, you will be able to use your skills to set traps and lure the enemy to fight, instead of attacking directly.";
 			next;
 			cutin "archer_4.bmp", 2;
 			mes "[Puron]";
-			mes "Dancers and bards can use effective support skills, such as when fighting with their friends." ;
+			mes "Dancers and Bards can use effective support skills, such as when fighting with their friends.";
 			next;
 			cutin "archer_4.bmp", 255;
 			mes "[Information]";
-			mes "-1st job Archer‐";
-			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
+			mes "-1st Archer-";
+			mes "-Training difficulty: suitable for beginners^FF0000(recommended)^000000-";
 			break;
 		case 3:
 			cutin "magician_1.bmp", 2;
 			mes "[Puron]";
-			mes "The professions that are good at magical warfare would be the primary profession ^0000FFMagician^000000 and its higher professions, such as wizard and sage." ;
+			mes "If we talk about professions that are good at magical warfare, it would be ^0000FFMagician^000000, which is the first level profession, and Wizard and Sage, which are its higher level professions.";
 			next;
 			cutin "taekwonkid_4.bmp", 2;
 			mes "[Puron]";
-			mes "Also, although it may be thorny, I see that the Soul Linker, which will be a higher level occupation for the Taekwon Kid, can also use a powerful magic attack called Esma." ;
+			mes "Also, although it may be thorny, Soul Linker, which is a higher level profession of Taekwon Kid, can also use a powerful magic attack called Esma.";
 			next;
 			cutin "magician_3.bmp", 2;
 			mes "[Puron]";
-			mes "Wizards are able to strike down their enemies with powerful magical attacks." ;
-			mes "While you can make powerful attacks, I wouldn't expect you to be able to defend yourself." ;
+			mes "The Wizard is able to strike down his enemies with powerful magical attacks.";
+			mes "While it can make powerful attacks, I wouldn't expect it to defend itself half as well.";
 			next;
 			cutin "magician_4.bmp", 2;
 			mes "[Puron]";
-			mes "Sage will be a profession that can fight against the weaknesses of various attributes and strengthen the resistance of the attributes." ;
+			mes "Sage will be a profession that can fight against various types of attributes by strengthening their weaknesses and resistance to attributes.";
 			next;
 			cutin "magician_4.bmp", 255;
 			mes "[Information]";
-			mes "-1st job Magician‐";
-			mes "-Difficulty: intermediate level-";
+			mes "-Magician of the 1st profession-";
+			mes "-Difficulty of training: suitable for intermediate level -";
 			break;
 		case 4:
 			cutin "acolyte_1.bmp", 2;
 			mes "[Puron]";
-			mes "The professions that are good at helping their friends would be ^000000FFAcolyte^000000, which is the first level profession, and Priest, which is the higher level profession, and the professions shown on the left of the bottom row." ;
+			mes "The professions that are good at helping their friends would be ^0000FFAcolyte^000000, the first profession, and Priest, which is a higher level profession, and the profession shown on the left of the bottom row.";
 			next;
 			cutin "taekwonkid_4.bmp", 2;
 			mes "[Puron]";
-			mes "Soul Linker, which will also be the upper profession of the primary ^0000FFTaekwon Kid^000000,";
+			mes "Also, Soul Linker, which will be the higher profession of the first profession, ^0000FFTaekwon Kid^000000";
 			next;
 			cutin "archer_4.bmp", 2;
 			mes "[Puron]";
-			mes "The professions of Bard and Dancer, which are higher level professions from the first job of ^0000FFArcher^000000, can also be said to be good at support." ;
+			mes "Bard and Dancer, which are the higher level occupations of ^0000FFArcher^000000, are also good at supporting.";
 			next;
 			mes "[Puron]";
 			cutin "acolyte_3.bmp", 2;
-			mes "Priests have powerful support skills, such as Kyrie Eleison, a skill that puts a barrier on the target and protects it for a certain number of times, and Magnificat, which doubles the natural recovery of SP." ;
+			mes "Priests have powerful support skills such as Kyrie Eleison, which protects the target for a certain number of times by putting up a barrier, and Magnificat, which doubles the natural recovery of SP.";
 			next;
 			cutin "taekwonkid_4.bmp", 2;
 			mes "[Puron]";
-			mes "The skills handled by soul linkers have different effects for each profession, but there are powerful soul-based skills as support." ;
+			mes "The skills handled by Soul Linker have different effects for each profession, but there are powerful soul-based skills as support.";
 			next;
 			cutin "archer_4.bmp", 2;
 			mes "[Puron]";
-			mes "Bard has a powerful skill called Poem of Bragi that reduces the cast time of players within range and reduces the aftercast delay after using the skill." ;
+			mes "Bard has a powerful skill called Bragi's Poem that reduces the chanting time of players within range and reduces the stiffness after skill use.";
 			next;
 			mes "[Puron]";
-			mes "I see that Dancer has a support skill called Service for You that increases the maximum SP of targets within range and reduces SP drain." ;
+			mes "I see that Dancer has a support skill called Service for You that increases the maximum SP of targets within range and reduces SP drain.";
 			next;
 			cutin "archer_4.bmp", 255;
 			mes "[Information]";
-			mes "‐1st job Acolyte‐";
-			mes "-Difficulty: suitable for intermediate level";
-			mes "‐1st job Taekwon Kid‐";
-			mes "-Difficulty: suitable for intermediate level";
-			mes "‐1st job Archer‐";
-			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
+			mes "-1st Acolyte-";
+			mes "-Difficulty of training: suitable for intermediate level -";
+			mes "-Taekwon Kid- of the 1st degree-";
+			mes "-Training difficulty: intermediate";
+			mes "-1st Profession Archer-";
+			mes "-Training difficulty: for beginners^FF0000(recommended)^000000-";
 			break;
 		case 5:
 			cutin "merchant_1.bmp", 2;
 			mes "[Puron]";
-			mes "If I were to say a profession that is good at carrying baggage and making money, it would be the primary profession ^0000FFMerchant^000000 or its higher professions, Blacksmith and Alchemist." ;
+			mes "If I were to say a profession that is good at carrying luggage and making money, it would be the first level profession ^0000FFMerchant^000000 or its higher level professions Blacksmith and Alchemist.";
 			next;
 			mes "[Puron]";
-			mes "Merchant occupations have a skill that other occupations do not have, which is opening a stall, which is a feature that makes it easy to sell items." ;
+			mes "Merchant occupations have the skill of opening stalls, which is not found in other occupations, so it is easy to sell items.";
 			next;
 			mes "[Puron]";
-			mes "You can set any price you want for the items you acquire and sell them on the spot." ;
-			mes "You can set your own price, so you can even sell them for a higher price than you would at a tool shop." ;
+			mes "I can set any price I want for the items I acquire and sell them on the spot.";
+			mes "You can set your own price, so you can even sell them for a higher price than you would at a tool shop.";
 			next;
 			cutin "merchant_1.bmp", 255;
 			mes "[Information]";
-			mes "‐1st job Merchant‐";
-			mes "-Difficulty: for advanced users-";
+			mes "-1st Merchant-";
+			mes "-Difficulty of training: for advanced users-";
 			break;
 		case 6:
 			cutin "taekwonkid_2.bmp", 2;
 			mes "[Puron]";
-			mes "The professions that are good at fighting are the first-order ^0000FFTaekwon Kid^000000 and the ";
+			mes "Professions that are good at fighting are the primary ^0000FFTaekwon Kid^000000 and ";
 			next;
 			cutin "taekwonkid_3.bmp", 2;
 			mes "[Puron]";
-			mes "Star Gladiator, which is the higher profession of Taekwon Kid.";
+			mes "Star Gladiator, which is the higher profession of Taekwon Kid,";
 			next;
 			cutin "acolyte_4.bmp", 2;
 			mes "[Puron]";
-			mes "Now I'll mention Monk, which is a higher level profession from the first job ^0000FFAcolyte^000000." ;
+			mes "And then there's Monk, which is a higher level occupation for the first level occupation ^0000FFAcolyte^000000.";
 			next;
 			cutin "taekwonkid_2.bmp", 2;
 			mes "[Puron]";
-			mes "Taekwon Kid is a profession where you don't carry any weapons and fight only with your body." ;
-			mes "The skill of Warm Wind allows you to fight with various attributes on yourself, so you can take advantage of your opponent's weakness." ;
+			mes "Taekwon Kid is an occupation that does not carry any weapons and fights only with his body.";
+			mes "The skill Warm Wind allows you to fight with various attributes on yourself, so you can take advantage of your opponent's weaknesses.";
 			next;
 			cutin "acolyte_4.bmp", 2;
 			mes "[Puron]";
-			mes "Monks have skills such as the three-step palm, which can be linked from skill to skill to inflict powerful damage." ;
-			mes "There is also a one-hit kill skill called Asura Strike, so there is a wide variety of ways to fight." ;
+			mes "Monk has a three-stage palm and other techniques that can be linked from skill to skill to inflict powerful damage.";
+			mes "There is also a one-hit kill skill called Asura Haoho Fist, so there is a wide variety of ways to fight.";
 			next;
 			cutin "acolyte_4.bmp", 255;
 			mes "[Information]";
-			mes "‐1st job Taekwon Kid‐";
-			mes "-Difficulty: suitable for intermediate level -";
-			mes "‐1st job Acolyte‐";
-			mes "-Difficulty: suitable for intermediate level -";
+			mes "-Taekwon Kid of the 1st level-";
+			mes "-Difficulty of training: suitable for intermediate level -";
+			mes "-Acolyte- of the 1st job-";
+			mes "-Difficulty of training: for intermediate level-";
 			break;
 		case 7:
 			mes "[Puron]";
-			mes "Special professions are not really recommended for new adventurers, but I'll explain." ;
-			mes " ";
-			mes "What would you like to hear?" ;
+			mes "Special professions are not really recommended for new adventurers, but I will explain them.";
+			mes "What would you like to hear?";
 			next;
-			switch(select("Good at ninjutsu", "Good at using guns", "Want to live as Novice")){
+			switch(select("good at ninjutsu", "good at using guns", "want to live in Novice")){
 			case 1:
 				cutin "ninja.bmp", 2;
 				mes "[Puron]";
-				mes "A profession that is good at ninjutsu would be ^0000FFNinja^000000, which is a special primary profession." ;
+				mes "When I say that I'm good at ninjutsu, that would be ^0000FFNinja^000000 in 1st job expanded.";
 				next;
 				mes "[Puron]";
-				mes "It's hard if you go for this profession half-heartedly, because there are no higher-level professions and there are difficulties in growing up that you won't find in other professions." ;
+				mes "This profession has no higher level profession, and there are difficulties in growing up that other professions don't have, so it's hard if you aim for it half-heartedly.";
 				next;
 				mes "[Puron]";
-				mes "Ninja can fight with magical attack skills or attack from a distance using weapons that can be thrown." ;
+				mes "Ninjas can fight using their magical attack skills or attack from a distance using weapons that can be thrown.";
 				next;
 				mes "[Puron]";
-				mes "Of course, you can also fight in close quarters and learn a skill called Final Strike, which is a powerful blow in exchange for your HP." ;
-				mes "Depending on how you raise them, it's a profession that changes the way you fight a lot." ;
+				mes "Of course, they can also fight in close quarters and learn a skill called Isshin, which allows them to deliver a powerful blow in exchange for their own HP.";
+				mes "It's a profession that can change the way you fight a lot, depending on how you raise it.";
 				next;
 				cutin "ninja.bmp", 255;
 				mes "[Information]";
-				mes "‐Special 1st job Ninja‐";
-				mes "-Difficulty: for advanced users-";
+				mes "-1st job expanded Ninja-";
+				mes "-Difficulty of training: for advanced users-";
 				break;
 			case 2:
 				cutin "gunslinger.bmp", 2;
 				mes "[Puron]";
-				mes "When I say good at using guns, I'm talking about a special primary ^0000FFGunslinger^000000." ;
+				mes "When I say I'm good with guns, that would be ^0000FFGunslinger^000000 in 1st job expanded.";
 				next;
 				mes "[Puron]";
-				mes "It's hard if you go for this profession half-heartedly, because there are no higher-level professions and there are difficulties in growing up that you won't find in other professions." ;
+				mes "This profession has no higher level profession and there are difficulties in growing up that other professions don't have, so it's tough if you aim for it half-heartedly.";
 				next;
 				mes "[Puron]";
-				mes "Gunslinger is a profession that can handle a wide variety of guns, and depending on the lineage of the gun, it becomes a profession that changes the way you fight." ;
+				mes "Gunslinger is a profession that can handle a wide variety of guns, and depending on the lineage of the gun, it will be a profession that changes the way you fight.";
 				next;
 				mes "[Puron]";
-				mes "The basic handgun, the shotgun for ranged attacks, the rifle for long-range attacks, the gatling for quick attacks, the..";
+				mes "There is the basic handgun, the shotgun for ranged attacks, the rifle for long-range attacks, the gatling for quick attacks, and the";
 				next;
 				mes "[Puron]";
-				mes "..you're going to have to learn to use the grenades in your own way, because they do a lot of damage per hit." ;
+				mes "You will need to master in your own way the grenades, which do a lot of damage per hit.";
 				next;
 				cutin "gunslinger.bmp", 255;
 				mes "[Information]";
-				mes "‐Special 1st job Gunslinger‐";
-				mes "-Difficulty: for advanced users-";
+				mes "-1st job expanded gunslinger-";
+				mes "-Difficulty of training: for advanced users-";
 				break;
 			case 3:
 				cutin "super_novice.bmp", 2;
 				mes "[Puron]";
-				mes "What?" ;
-				mes "Do you want to live as a Novice?" ;
-				mes "I guess the only thing I can recommend for such a precious idea is a special 1st ^0000FFSupernovice^000000." ;
+				mes "Ehh! You want to live as a Novice?";
+				mes "I guess the only thing I can recommend to such a precious Kimi is 1st job expanded ^0000FFSupernovice^000000.";
 				next;
 				mes "[Puron]";
-				mes "Supernovice has a lot of hardships that other professions don't have, such as the fact that Supernovice doesn't have a higher level profession and you have to have a BaseLv of 45 or higher to become a Supernovice." ;
+				mes "Supernovice has a lot of hardships that other professions don't have, such as the fact that Supernovice doesn't have a higher profession and you have to have a BaseLv of 45 or higher to become a Supernovice.";
 				next;
 				mes "[Puron]";
-				mes "Supernovice can learn most of the basic skills of the other primary professions, with the exception of a few, so depending on how they grow, they may be able to fight in a variety of ways." ;
+				mes "Supernovice can learn most of the basic skills except some of the other primary professions, so depending on how you grow, you may be able to fight in a variety of ways.";
 				next;
 				mes "[Puron]";
-				mes "It's a dream job, but I can say that people who pursue this profession are quite valuable in the Adventurer Academy." ;
+				mes "It is a dream job, but those who aim for this job are quite valuable in the adventurer academy.";
 				next;
 				cutin "super_novice.bmp", 255;
 				mes "[Information]";
-				mes "‐Special 1st job Supernovice‐";
-				mes "-Difficulty: for advanced users-";
+				mes "-1st job expanded Supernovice-";
+				mes "-Difficulty of training: advanced-";
 				break;
 			}
 		}
@@ -805,408 +775,304 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 		return;
 	}
 
-	function	ABOUT_JOB_SELECT	{
-		switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FFSpecial 1st job^000000", "I know about the profession")){
+	function ABOUT_JOB_SELECT {
+		 switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF1st job expanded^000000", "I know about the occupation")){
 		case 1:
 			mes "[Puron]";
-			mes "^0000FFSwordsman^000000, right?" ;
-			mes "It's a profession that allows you to equip yourself with many types of weapons: daggers, one-handed swords, two-handed swords, axes, spears, and blunt weapons." ;
-			mes "From the first Swordsman, you will be able to change jobs in two different lines." ;
+			mes "^0000FFSwordsman^000000, right?";
+			mes "It's a profession that allows you to equip yourself with many types of weapons: daggers, one-handed swords, two-handed swords, axes, spears, and blunt weapons.";
+			mes "From the first Swordsman profession, you will be able to change jobs in two different lines.";
 			cutin "swordman_1.bmp", 2;
 			next;
 			mes "[Puron]";
 			mes "The one shown in the top row is the first job ^0000FFSwordsman^000000";
-			mes "A sword user is often called a swordsman, right?" ;
+			mes "Swordsman is often called a swordsman, right?";
 			cutin "swordman_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "Shown to the left of the bottom row is the second occupation, knight, which you can change jobs to after becoming a Swordsman." ;
+			mes "Shown on the left of the bottom row is Knight, the second profession that you can change jobs to after becoming a Swordsman.";
 			cutin "swordman_3.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "Shown to the right of the bottom row is the ^0000FF Crusader^0000000000, the second job you can change to after becoming a Swordsman.";
+			mes "Shown to the right of the bottom row is ^0000FFCrusader^000000, the second job you can change jobs to after becoming Swordsman.";
 			cutin "swordman_4.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "Swordsman is a profession that excels in swordsmanship." ;
-			mes "They are very powerful in melee combat." ;
-			mes "HP is basically higher than other professions." ;
+			mes "Swordsman is a profession that excels in swordsmanship.";
+			mes "They are very powerful in melee combat.";
+			mes "HP is basically higher than other professions.";
 			cutin "swordman_2.bmp", 2;
 			next;
 			cutin "swordman_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Swordsman‐";
-			mes "-Difficulty: suitable for beginners^FF000000(recommended)^000000-";
+			mes "-Swordsman-";
+			mes "-Difficulty of training: suitable for beginners^FF0000(recommended)^000000-";
 			break;
 		case 2:
 			mes "[Puron]";
-			mes "^0000FFMagician^000000だね。";
-			mes "短剣、杖といった種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職のMagicianからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFMagician^000000.";
+			mes "It is a profession that allows you to equip yourself with weapons of various kinds, such as daggers and staffs.";
+			mes "From the first Magician profession, you will be able to change jobs in two lines.";
 			cutin "magician_1.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFMagician^000000。";
+			mes "The first job ^0000FFMagician^000000 is shown in the top row.";
 			cutin "magician_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Magicianになった後に";
-			mes "転職してなれる2次職の^0000FFウィザード^000000。";
+			mes "Displayed on the left of the bottom row is the second job ^0000FFWizard^000000, which you can change jobs to become after becoming a Magician.";
 			cutin "magician_3.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Magicianになった後に転職してなれる";
-			mes "2次職の^0000FFセージ^000000。";
+			mes "Shown to the right of the bottom row is the ^0000FFSage^000000 of the second job that you can change jobs and become after becoming a Magician.";
 			cutin "magician_4.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "^0000FFMagician^000000は魔法の攻撃力に";
-			mes "優れた職業だよ。";
+			mes "^0000FFMagician^000000 is a profession with excellent magic attack power.";
 			cutin "magician_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "体力が乏しいことを除けば、";
-			mes "他の職業と違って、魔法に属性が";
-			mes "あるため、弱点をついた攻撃を";
-			mes "行いやすく、強力な魔法で敵を";
-			mes "一掃できることが特徴だね。";
+			mes "Except for its lack of physical strength, unlike other professions, it has attributes in its magic, which makes it easy to attack at weak points and wipe out enemies with powerful magic.";
 			next;
 			cutin "magician_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Magician‐";
-			mes "‐育成難易度：中級者向き‐";
+			mes "-Magician-";
+			mes "-Difficulty of training: for intermediate level-";
 			break;
 		case 3:
 			mes "[Puron]";
-			mes "^0000FFAcolyte^000000だね。";
-			mes "鈍器、杖といった種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職のAcolyteからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFAcolyte^000000.";
+			mes "It's a profession that allows you to equip yourself with weapons of the kind: blunt weapons, staffs, etc.";
+			mes "From the first Acolyte, you'll be able to change jobs in two different lines.";
 			cutin "acolyte_1.bmp", 2;
 			next;
 			cutin "acolyte_2.bmp", 2;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFAcolyte^000000。";
+			mes "The first acolyte ^0000FFAcolyte^000000 is shown in the top row.";
 			next;
 			cutin "acolyte_3.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Acolyteになった後に";
-			mes "転職してなれる2次職の^0000FFプリースト^000000。";
+			mes "Shown on the left of the bottom row is the ^0000FFPriest^000000 of the second job that you can change jobs after becoming an Acolyte.";
 			next;
 			cutin "acolyte_4.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Acolyteになった後に転職してなれる";
-			mes "2次職の^0000FFモンク^000000。";
+			mes "Shown to the right of the bottom row is the ^0000FFMonk^000000 of the second job that you can change jobs and become after becoming an Acolyte.";
 			next;
 			cutin "acolyte_2.bmp", 2;
 			mes "[Puron]";
-			mes "^0000FFAcolyte^000000は聖職者の奇跡によって、";
-			mes "仲間の能力を引き出したり、";
-			mes "負傷した仲間を癒すことに";
-			mes "優れた職業だよ。";
-			mes "パーティーでは欠かせない存在と";
-			mes "なることが特徴だね。";
+			mes "^0000FFAcolyte^000000 is a profession that excels at drawing out the abilities of your companions and healing wounded companions through the miracles of the clergy.";
+			mes "It's characterized by being an indispensable part of the party.";
 			next;
 			cutin "acolyte_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Acolyte‐";
-			mes "‐育成難易度：中級者向き‐";
+			mes "-Acolyte-";
+			mes "-Difficulty of training: for intermediate level-";
 			break;
 		case 4:
 			mes "[Puron]";
-			mes "^0000FFThief^000000だね。";
-			mes "短剣、片手剣、斧、弓";
-			mes "といった種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職の^0000FFThief^000000からは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFThief^000000.";
+			mes "It's a profession that allows you to equip yourself with different types of weapons, such as daggers, one-handed swords, axes, and bows.";
+			mes "From the ^0000FFThief^000000 of the first profession, you'll be able to change jobs in two different lines.";
 			cutin "thief_1.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFThief^000000。";
+			mes "The first job ^0000FFThief^000000 is shown in the upper row.";
 			cutin "thief_2.bmp", 2;
 			next;
 			cutin "thief_3.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Thiefになった後に";
-			mes "転職してなれる2次職の^0000FFアサシン^000000。";
+			mes "Shown to the left of the bottom row is the ^0000FFAssassin^000000 of the second job you can change jobs after becoming Thief.";
 			next;
 			cutin "thief_4.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Thiefになった後に転職してなれる";
-			mes "2次職の^0000FFローグ^000000。";
+			mes "Displayed on the right of the bottom row is the ^0000FFRogue^000000, the second job that you can change jobs and become after becoming a Thief.";
 			next;
 			cutin "thief_2.bmp", 2;
 			mes "[Puron]";
-			mes "^0000FFThief^000000は身軽さを生かし、";
-			mes "攻撃を避けて戦闘を行うことが";
-			mes "得意な職業だ。";
-			mes "敵からアイテムを盗んだり、";
-			mes "姿を消すことができる。";
+			mes "^0000FFThief^000000 is a profession that takes advantage of its lightness and is good at avoiding attacks and engaging in combat.";
+			mes "It can steal items from enemies and disappear.";
 			next;
 			mes "[Puron]";
-			mes "毒を使用した攻撃など、";
-			mes "変わった戦い方が特徴だね。";
+			mes "You have an unusual fighting style, such as using poison to attack.";
 			next;
 			cutin "thief_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Thief‐";
-			mes "‐育成難易度：初心者向き^FF0000(推奨)^000000‐";
+			mes "-Thief-";
+			mes "-Training difficulty: suitable for beginners^FF0000(recommended)^000000-";
 			break;
 		case 5:
 			cutin "archer_1.bmp", 2;
 			mes "[Puron]";
-			mes "^0000FFArcher^000000だね。";
-			mes "短剣、弓といった種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職のArcherからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFArcher^000000, right?";
+			mes "It's a profession that allows you to equip yourself with weapons of different types, such as daggers and bows.";
+			mes "You can change jobs in two lines from Archer, the first line of work.";
 			next;
 			cutin "archer_2.bmp", 2;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFArcher^000000。";
+			mes "The one shown in the top row is the first job ^0000FFArcher^000000.";
 			next;
 			cutin "archer_3.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Archerになった後に";
-			mes "転職してなれる2次職の^0000FFハンター^000000。";
+			mes "Shown on the left of the bottom row is ^0000FFHunter^000000, the second job that you can change jobs after becoming an Archer.";
 			next;
 			cutin "archer_4.bmp", 2;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Archerになった後に転職してなれる";
-			mes "2次職の^0000FFバード^000000と^0000FFダンサー^000000。";
-			mes "^0000FFバード^000000は男性がなる職業。";
-			mes "^0000FFダンサー^000000は女性がなる職業なんだ。";
+			mes "Shown to the right of the bottom row are the ^0000FFBard^000000 and ^0000FFDancer^000000 secondary jobs that you can change jobs to after becoming an Archer.";
+			mes "^0000FFBard^000000 is the profession that men become.";
+			mes "^0000FFDancer^000000 is the profession that Woman becomes.";
 			next;
 			cutin "archer_2.bmp", 2;
 			mes "[Puron]";
-			mes "^0000FFArcher^000000は弓を扱うことに";
-			mes "優れた職業だよ。";
-			mes "属性つきの矢を使用した射撃に";
-			mes "よって、強力な攻撃を繰り出せる。";
-			mes "でも、矢を大量に所持するから、";
-			mes "回復剤の量には注意が必要かな。";
+			mes "^0000FFArcher^000000 is a profession that excels at handling bows.";
+			mes "It is capable of powerful attacks by shooting with attributed arrows.";
+			mes "But he carries a lot of arrows, so I guess he needs to be careful about the amount of restoratives he carries.";
 			next;
 			cutin "archer_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Archer‐";
-			mes "‐育成難易度：初心者向き^FF0000(推奨)^000000‐";
+			mes "-Archer-";
+			mes "-Training difficulty: suitable for beginners^FF0000(recommended)^000000-";
 			break;
 		case 6:
 			mes "[Puron]";
-			mes "^0000FFMerchant^000000だね。";
-			mes "短剣、片手剣、斧、鈍器";
-			mes "といった種類の武器を";
-			mes "装備することができる職業だ。";
-			mes "1次職のMerchantからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFMerchant^000000.";
+			mes "It's a profession that allows you to equip yourself with different types of weapons, such as daggers, one-handed swords, axes, and blunt weapons.";
+			mes "From the first Merchant profession, you will be able to change jobs in two different lines.";
 			cutin "merchant_1.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFMerchant^000000。";
-			mes "Merchantは^0000FF商人^000000と";
-			mes "呼ばれることも多い職業だね。";
+			mes "The first job, ^0000FFMerchant^000000, is shown in the top row.";
+			mes "Merchant is a profession that is often called ^0000FFMerchant^000000.";
 			cutin "merchant_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "Merchantになった後に";
-			mes "転職してなれる2次職の";
-			mes "^0000FFブラックスミス^000000。";
+			mes "Shown to the left of the bottom row is the ^0000FFBlacksmith^000000, the second profession you can change jobs to after becoming a Merchant.";
 			cutin "merchant_3.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Merchantになった後に";
-			mes "転職してなれる";
-			mes "2次職の^0000FFアルケミスト^000000。";
+			mes "Shown to the right of the bottom row is ^0000FFAlchemist^000000, the second job that you can change jobs to after becoming a Merchant.";
 			cutin "merchant_4.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "^0000FFMerchant^000000は品物の扱いに";
-			mes "優れた職業だよ。";
-			mes "戦闘は得意ではないけれど、";
-			mes "アイテムを大量に持ち運ぶことで、";
-			mes "長時間の戦闘や、戦闘以外の";
-			mes "売買が気軽にできることが特徴だね。";
+			mes "^0000FFMerchant^000000 is an excellent occupation for handling goods.";
+			mes "Although not a good fighter, it is characterized by the fact that it can carry a large number of items and can easily fight for long periods of time or buy and sell outside of combat.";
 			cutin "merchant_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "ブラックスミスやアルケミストに";
-			mes "なることで、後々製造なども";
-			mes "できるようになる職業だね。";
+			mes "By becoming a Blacksmith or Alchemist, you will be able to do things like manufacturing later on.";
 			next;
 			cutin "merchant_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Merchant‐";
-			mes "‐育成難易度：上級者向き‐";
+			mes "-Merchant-";
+			mes "-Difficulty of training: for advanced users-";
 			break;
 		case 7:
 			mes "[Puron]";
-			mes "^0000FFTaekwon Kid^000000だね。";
-			mes "武器を装備せず、";
-			mes "己の体で戦う職業だ。";
-			mes "1次職のTaekwon Kidからは2系統の";
-			mes "転職が可能になるよ。";
+			mes "^0000FFTaekwon Kid^000000.";
+			mes "It is a profession in which you fight with your own body, unarmed.";
+			mes "From the first job of Taekwon Kid, you will be able to change jobs in two different lines.";
 			cutin "taekwonkid_1.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "上の段に表示されているのが";
-			mes "1次職の^0000FFTaekwon Kid^000000。";
+			mes "The first job ^0000FFTaekwon Kid^000000 is shown in the top row.";
 			cutin "taekwonkid_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の左に表示されているのが、";
-			mes "^0000FFTaekwon Kid^000000になった後に";
-			mes "転職してなれる2次職の^0000FF拳聖^000000。";
+			mes "Shown to the left of the bottom row is ^0000FFStar Gladiator^000000, the second job you can change jobs to after becoming ^0000FFTaekwon Kid^000000.";
 			cutin "taekwonkid_3.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "下の段の右に表示されているのが、";
-			mes "Taekwon Kidになった後に";
-			mes "転職してなれる";
-			mes "2次職の^0000FFソウルリンカー^000000。";
+			mes "Shown to the right of the bottom row is ^0000FFSoul Linker^000000, the second job that you can change jobs to after becoming Taekwon Kid.";
 			cutin "taekwonkid_4.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "^0000FFTaekwon Kid^000000は蹴り技を駆使して";
-			mes "戦うことに優れた職業だよ。";
-			mes "武器を一切装備できないけれど、";
-			mes "多彩な蹴りと素早い動きで";
-			mes "戦うことが可能なことが特徴だね。";
+			mes "^0000FFTaekwon Kid^000000 is an excellent profession for fighting with kicking techniques.";
+			mes "Although it cannot equip any weapons, it is characterized by its ability to fight with a variety of kicks and quick movements.";
 			cutin "taekwonkid_2.bmp", 2;
 			next;
 			mes "[Puron]";
-			mes "また、^0000FFソウルリンカー^000000になった場合は";
-			mes "^0000FFTaekwon Kid^000000のときに習得したスキルの";
-			mes "多くが使えなくなる。";
-			mes "習得する際に、後々のことを考えて";
-			mes "スキルを習得していく必要があるね。";
+			mes "Also, if you become a ^0000FFSoul Linker^000000, you will not be able to use many of the skills you learned when you were a ^0000FFTaekwon Kid^000000.";
+			mes "I need to think about the skills I'm going to learn later when I learn them.";
 			next;
 			mes "[Puron]";
-			mes "ただ、^0000FFTaekwon Kid^000000は他の基本 的な";
-			mes "職業6つと異なっていて、";
-			mes "^0000FF拳聖^000000、^0000FFソウルリンカー^000000の";
-			mes "上位の職業はないんだ。";
-			mes "1つを極めることを考えると、";
-			mes "茨の道かもしれない。";
+			mes "However, ^0000FFTaekwon Kid^000000 is different from the other six basic professions, and there is no higher level of ^0000FFT Star Gladiator^000000, ^0000FFSoul Linker^000000.";
+			mes "It may be a thorny issue to consider mastering one.";
 			next;
 			cutin "taekwonkid_2.bmp", 255;
 			mes "[Information]";
-			mes "‐Taekwon Kid‐";
-			mes "‐育成難易度：中級者向き‐";
+			mes "-Taekwon Kid-";
+			mes "-Taekwon Kid difficulty level: intermediate-";
 			break;
 		case 8:
 			mes "[Puron]";
-			mes "特殊1次職についてだね。";
-			mes "他の職業と違って特殊1次職は";
-			mes "1次職以上の上位職がない";
-			mes "職業なんだ。";
-			mes "聞きたい職業は何かな？";
+			mes "It's about 1st job expanded.";
+			mes "Unlike other professions, 1st job expanded is a profession that doesn't have a higher job than 1st job.";
+			mes "What is the occupation you want to ask about?";
 			next;
-			switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000","他の職業について聞く")){
+			switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000", "Ask about other professions")){
 			case 1:
 				cutin "gunslinger.bmp", 2;
 				mes "[Puron]";
-				mes "^0000FFGunslinger^000000だね。";
-				mes "銃を装備する唯一の職業だ。";
-				mes "銃は5種類ある。";
-				mes "ハンドガン、ライフル、ショットガン、";
-				mes "ガトリングガン、グレネードガンだ。";
+				mes "^0000FFGunslinger^000000.";
+				mes "It's the only profession that equips guns.";
+				mes "There are five types of guns.";
+				mes "They are handguns, rifles, shotguns, gatling guns, and grenade guns.";
 				next;
 				mes "[Puron]";
-				mes "上の段に表示されているのは";
-				mes "キミの今のノービスの職業。";
-				mes "下の段に表示されているのが、";
-				mes "特殊1次職の^0000FFGunslinger^000000になるよ。";
+				mes "Shown in the top row is your current Novice occupation.";
+				mes "The one shown in the bottom row will be your 1st job expanded ^0000FFGunslinger^000000.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFGunslinger^000000は銃を駆使して";
-				mes "戦う職業だよ。";
-				mes "戦闘は遠距離からの攻撃になるね。";
+				mes "^0000FFGunslinger^000000 is a profession that fights with guns.";
+				mes "Combat will be from a distance.";
 				next;
 				mes "[Puron]";
-				mes "5種類の武器を扱うことができるから、";
-				mes "状況に合わせた様々な攻撃技が";
-				mes "あるのが特徴だね。";
+				mes "I can handle five different weapons, so I have a variety of attack techniques to suit the situation.";
 				next;
 				cutin "gunslinger.bmp", 255;
 				mes "[Information]";
-				mes "‐Gunslinger‐";
-				mes "‐育成難易度：上級者向き‐";
+				mes "-Gunslinger-";
+				mes "-Difficulty of training: for advanced users-";
 				break;
 			case 2:
 				cutin "ninja.bmp", 2;
 				mes "[Puron]";
-				mes "^0000FFNinja^000000だね。";
-				mes "短剣、Ninja刀、手裏剣といった";
-				mes "種類の武器を装備することが";
-				mes "できる職業だ。";
+				mes "^0000FFNinja^000000.";
+				mes "This occupation allows you to equip yourself with different types of weapons, such as daggers, Ninja swords, and shurikens.";
 				next;
 				mes "[Puron]";
-				mes "上の段に表示されているのは";
-				mes "キミの今のノービスの職業。";
-				mes "下の段に表示されているのが、";
-				mes "特殊1次職の^0000FFNinja^000000になるよ。";
+				mes "Shown in the top row is your current Novice occupation.";
+				mes "The one shown in the bottom row will be your 1st job expanded ^0000FFNinja^000000.";
 				next;
 				mes "[Puron]";
-				mes "Ninjaは隠密性の高い素早い動きを";
-				mes "得意とする職業だよ。";
-				mes "Ninja刀や手裏剣などの投擲武器、";
-				mes "忍術といった魔法に似ている攻撃を";
-				mes "駆使した戦いができることが特徴だね。";
+				mes "Ninja is a profession that specializes in covert and quick movements.";
+				mes "Ninja swords, shuriken and other throwing weapons, and ninjutsu, which are attacks that resemble magic, are the hallmarks of Ninja fighting.";
 				next;
 				cutin "ninja.bmp", 255;
 				mes "[Information]";
-				mes "‐Ninja‐";
-				mes "‐育成難易度：上級者向き‐";
+				mes "-Ninja-";
+				mes "-Difficulty of training: for advanced users-";
 				break;
 			case 3:
 				cutin "super_novice.bmp", 2;
 				mes "[Puron]";
-				mes "^0000FFSupernovice^000000だね。";
-				mes "短剣、片手剣、斧、";
-				mes "鈍器、杖といった種類の武器を";
-				mes "装備することができる職業だ。";
+				mes "^0000FFSupernovice^000000.";
+				mes "This occupation allows you to equip yourself with different types of weapons: dagger, one-handed sword, axe, blunt weapon, and staff.";
 				next;
 				mes "[Puron]";
-				mes "上の段に表示されているのは";
-				mes "キミの今のノービスの職業。";
-				mes "下の段に表示されているのが、";
-				mes "特殊1次職の^0000FFSupernovice^000000";
-				mes "になるよ。";
+				mes "Shown in the top row is your current Novice occupation.";
+				mes "The one shown in the bottom row will be your 1st job expanded ^0000FFSupernovice^000000.";
 				next;
 				mes "[Puron]";
-				mes "Supernoviceは他の1次職の";
-				mes "スキルの多くを習得できる職業だよ。";
-				mes "ノービスとしての心を";
-				mes "いつまでも持ち続けることが";
-				mes "できる人がたどり着く職業だね。";
+				mes "Supernovice is a profession that allows you to learn many of the skills of other 1st jobs.";
+				mes "It's a profession that can be reached by those who can keep their mind as a Novice forever.";
 				next;
 				mes "[Puron]";
-				mes "個性あふれる成長が望めることが";
-				mes "特徴になるかな。";
+				mes "I think it will be characterized by a growth full of individuality.";
 				next;
 				cutin "super_novice.bmp", 255;
 				mes "[Information]";
-				mes "‐Supernovice‐";
-				mes "‐育成難易度：上級者向き‐";
+				mes "-Supernovice-";
+				mes "-Supernovice Difficulty: Advanced-";
 				break;
 			}
 		}
@@ -1215,7 +1081,7 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 		return;
 	}
 
-	function	ABOUT_JOB	{
+	function ABOUT_JOB {
 		set '@sel,1;
 		set '@last,0;
 		while(1){
@@ -1223,52 +1089,50 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			case 1:
 				if('@last!=1 && AC_NOVICE_QUE<3){
 					mes "[Puron]";
-					mes "それでは多くの冒険者が転職する";
-					mes "1次職について説明しよう。";
+					mes "So let's talk about the first job that many adventurers change to.";
 				}
 				ABOUT_JOB_CLASS1;
 				mes "[Puron]";
-				mes "職業の特徴か、職業名";
-				mes "どちらで聞きたいかな？";
+				mes "Would you like to hear about the characteristics of the profession or the name of the profession?";
 				next;
 				setarray '@select, 2,3,1,4;
 				if('@last==1 || AC_NOVICE_QUE>=3){
 					set '@last, '@sel;
-					set '@sel, '@select[select("特徴で聞く","職業名で聞く","1次職について再度聞く","職業についてはわかった")-1];
+					set '@sel, '@select[select("Ask by characteristics", "Ask by occupation name", "Ask again about the primary occupation", "I know about the occupation")-1];
 				} else {
 					set '@last, '@sel;
-					set '@sel, '@select[select("特徴で聞く","職業名で聞く","1次職について再度聞く")-1];
+					set '@sel, '@select[select("Ask by characteristics", "Ask by occupation name", "Ask again about the first job")-1];
 				}
 				continue;
 			case 2:
 				mes "[Puron]";
 				if('@last!=2)
-					mes "それじゃ、特徴で説明をしよう。";
-				mes "どんな特徴が気になる？";
+					mes "Then let's use the feature to explain it.";
+				mes "What features are you interested in?";
 				next;
 				ABOUT_JOB_FEATURE;
 				mes "[Puron]";
-				mes "他の特徴でも聞くかい？";
-				mes "それとも職業で聞くかい？";
+				mes "Would you like to hear about any other features?";
+				mes "Or do you want to ask by occupation?";
 				next;
 				setarray '@select, 4,2,3,1;
 				set '@last, '@sel;
-				set '@sel, '@select[select("職業についてはわかった","特徴で聞く","職業で聞く","1次職について再度聞く")-1];
+				set '@sel, '@select[select("I know about the occupation", "Ask by characteristics", "Ask by occupation", "Ask again about the primary occupation")-1];
 				continue;
 			case 3:
 				mes "[Puron]";
 				if('@last!=3)
-					mes "それじゃ、職業で説明をしよう。";
-				mes "どれか興味のある^FF0000職業^000000はあるかな？";
+					mes "Well then, let's explain it in terms of occupation.";
+				mes "Are any of these ^FF0000 occupations ^000000 of interest to you?";
 				next;
 				setarray '@select, 4,3,2,1;
 				ABOUT_JOB_SELECT;
 				mes "[Puron]";
-				mes "他の職業も聞くかい？";
-				mes "それとも、特徴で聞くかい？";
+				mes "Would you like to hear about other jobs?";
+				mes "Or do you want to ask by characteristics?";
 				next;
 				set '@last, '@sel;
-				set '@sel, '@select[select("職業についてはわかった","職業で聞く","特徴で聞く","1次職について再度聞く")-1];
+				set '@sel, '@select[select("I know about the occupation", "Ask by occupation", "Ask by characteristics", "Ask again about the primary occupation")-1];
 				continue;
 			}
 			break;
@@ -1276,506 +1140,329 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 		return;
 	}
 
-	function	ABOUT_SKILL	{
+	function ABOUT_SKILL {
 		mes "[Puron]";
-		mes "^FF0000各職業はスキルという特殊技能を";
-		mes "身につけることができる。^000000";
-		mes "攻撃、回復、能力の向上、サポートな";
-		mes "ど、その他にもいろいろな効果を";
-		mes "持ったスキルが存在するんだ。";
+		mes "^FF0000Each profession can acquire special skills called skills. ^000000Skills exist to attack, heal, improve abilities, support, and many other effects.";
 		next;
 		mes "[Puron]";
-		mes "また、スキルによってはLvを";
-		mes "上げることができるものもある。";
-		mes "どのスキルを覚えて、成長させるか";
-		mes "慎重に選んだほうがいいね。";
+		mes "Also, some skills can increase lvl.";
+		mes "You should choose carefully which skills to learn and grow.";
 		next;
 		mes "[Puron]";
-		mes "^FF0000スキルはスキルポイントを消費して";
-		mes "覚えることができるよ。^000000";
-		mes "JobLvを1つ上げるごとに1ポイントの";
-		mes "スキルポイントが得られるんだ。";
+		mes "You can learn ^FF0000 skills by spending skill points. You get one skill point for every ^000000JobLv you raise.";
 		next;
 		mes "[Puron]";
-		mes "各職業にはJobLvの上限が";
-		mes "決まっていて、全てのスキルを";
-		mes "覚えられるわけではないから、";
-		mes "気をつけてね。";
+		mes "Each profession has a fixed JobLv limit, and not all skills can be learned, so be careful.";
 		next;
 		while(1){
 			mes "[Puron]";
-			mes "どの職業の^FF0000スキル^000000について聞きたい？";
+			mes "Which profession ^FF0000 skill ^000000 do you want to hear about?";
 			next;
-			switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF特殊1次職^000000","スキルについてはわかった")){
+			 switch(select("^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF1st job expanded^000000", "I know about skills")){
 			case 1:
 				cutin "swordman_2",2;
 				mes "[Puron]";
-				mes "^0000FFSwordsman^000000だね。";
-				mes "1次職であるSwordsmanは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFSwordsman^000000.";
+				mes "You can raise the JobLv of Swordsman, the first job, to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFSwordsman^000000のスキルでオススメなのは";
-				mes "^FF0000HP回復力向上^000000と^FF0000バッシュ^000000、";
-				mes "それと^0000FFプロボ ック^000000だろうね。";
+				mes "The ^0000FFSwordsman^000000 skills I would recommend would be ^FF0000HP Resiliency Improvement^000000, ^FF0000Bash^000000, and ^0000FFProboc^000000.";
 				next;
 				cutin "swordman_provork",2;
 				mes "[Puron]";
-				mes "^0000FFHP回復力向上^000000は近接戦闘が主となる";
-				mes "Swordsmanにとっては大事なスキルだ。";
-				mes "^0000FFプロボ ック^000000は指定した敵を";
-				mes "興奮させて、防御力を下げるスキル。";
-				mes "興奮した敵の攻撃力が上がってしまう";
-				mes "けど、強力なスキルだね。";
+				mes "^0000FFHP resilience improvement^000000 is an important skill for Swordsman, who is primarily a melee fighter.";
+				mes "^0000FFProvork^000000 is a skill that excites the specified enemy and lowers his defense.";
+				mes "It is a powerful skill, though it increases the attack power of excited enemies.";
 				next;
 				cutin "swordman_bash",2;
 				mes "[Puron]";
-				mes "^0000FFバッシュ^000000は強力な一撃を";
-				mes "モンスターに与えるスキルだ。";
-				mes "早くモンスターを倒すことで";
-				mes "自分が受けるダメージも抑えられる。";
-				mes "このスキルをLv10にしているSwordsman";
-				mes "は数知れないよ。";
+				mes "^0000FF bash ^000000 is a skill that deals a powerful blow to monsters.";
+				mes "By defeating the monster quickly, you can also reduce the damage you take.";
+				mes "I can't count the number of Swordsman who have this skill at lvl 10.";
 				next;
 				mes "[Puron]";
-				mes "後は少々使い勝手は難しいけれど、";
-				mes "^0000FFインデュア^000000といった";
-				mes "攻撃を受けても移動と攻撃が";
-				mes "可能な補助スキルもあるね。";
-				mes "主にパーティを組んで";
-				mes "戦う場合に活躍するスキルだよ。";
+				mes "There are also some auxiliary skills that are a little more difficult to use, but allow you to move and attack even if you are attacked, such as ^0000FF Inured ^000000.";
+				mes "These skills are mainly useful when fighting in a party.";
 				next;
 				cutin "swordman_bash",255;
 				break;
 			case 2:
 				cutin "magician_2",2;
 				mes "[Puron]";
-				mes "^0000FFMagician^000000だね。";
-				mes "1次職であるMagicianは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFMagician^000000, right?";
+				mes "The first job, magician, can raise JobLv to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFMagician^000000のスキルでオススメなのは";
-				mes "^FF0000ファイアーウォール^000000と";
-				mes "^FF0000ファイアーボ ルト^000000、^FF0000コールドボ ルト^000000、";
-				mes "^FF0000ライトニングボ ルト^000000の各種ボ ルト系に";
-				mes "なるだろうね。";
+				mes "The recommended skills for ^0000FFMagician^000000 are ^FF0000 Firewall^000000, ^FF0000 Firebolt^000000, ^FF0000 Coldbolt^000000, and ^FF0000 Lightningbolt^000000. It's going to be the various bolting systems of 00000000.";
 				next;
 				cutin "magician_firewall",2;
 				mes "[Puron]";
-				mes "^FF0000ファイアーウォール^000000はMagicianに";
-				mes "とって非常に大事なスキルだね。";
-				mes "多くのMagicianが愛用する魔法だよ。";
-				mes "HPや防御力の劣るMagicianでは敵に";
-				mes "近寄られてはひとたまりもないからね。";
+				mes "^FF0000 firewall^000000 is a very important skill for Magician.";
+				mes "It is a favorite of many Magicians.";
+				mes "Magicians with poor HP and defenses can't afford to let enemies get close to them.";
 				next;
 				cutin "magician_coldbolt",2;
 				mes "[Puron]";
-				mes "^FF0000ファイアーボ ルト^000000、^FF0000コールドボ ルト^000000、";
-				mes "^FF0000ライトニングボ ルト^000000の各種ボ ルト系は";
-				mes "Magicianの基本 ともいえる魔法だ。";
+				mes "The ^FF0000 Firebolt^000000, ^FF0000 Coldbolt^000000, and ^FF0000 Lightningbolt^000000 are the basic magic of Magician.";
 				next;
 				mes "[Puron]";
-				mes "レベルの低いうちはこの^0000FF3種類のうち、";
-				mes "どれか1つをLv4以上^000000にして、";
-				mes "相手の弱点（属性）をついた戦い方";
-				mes "をするといいよ。";
+				mes "At a low level, you should set one of these ^0000FF3 types to lvl 4 or higher^000000, and try to fight by targeting your opponent's weak points (attributes).";
 				next;
 				mes "[Puron]";
-				mes "詠唱が早いソウルストライクといった";
-				mes "攻撃魔法もあるね。";
-				mes "威力は低めだけど、";
-				mes "瞬時にダメージを";
-				mes "与えたいときには便利だよ。";
+				mes "There are also attack magic such as Soul Strike, which has a fast chant.";
+				mes "It's less powerful, but it's useful when you want to do instant damage.";
 				next;
 				mes "[Puron]";
-				mes "ステータスのDexを";
-				mes "上げていない場合は";
-				mes "詠唱速度が遅い為、";
-				mes "このスキルが補ってくれる。";
+				mes "If the Dex of the status is not raised, this skill will compensate for the slow chanting speed.";
 				next;
 				cutin "swordman_bash",255;
 				break;
 			case 3:
 				cutin "acolyte_2",2;
 				mes "[Puron]";
-				mes "^0000FFAcolyte^000000だね。";
-				mes "1次職であるAcolyteは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFAcolyte^000000.";
+				mes "You can raise the JobLv of Acolyte, the first job, to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFAcolyte^000000のスキルでオススメなのは";
-				mes "^FF0000ヒール^000000と^FF0000ブレッシング^000000になるかな。";
-				mes "Acolyteは他の職業と比べても";
-				mes "非常にスキル数が多い職業だよ。";
-				mes "スキルの習得は慎重に";
-				mes "行う必要があるね。";
+				mes "I would recommend ^0000FFAcolyte^000000 skills for ^0000FFAcolyte^000000 would be ^FF0000 Healing^000000 and ^FF0000 Blessing^000000.";
+				mes "Acolyte is a profession with a very large number of skills compared to other professions.";
+				mes "You have to be very careful when learning skills.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000ヒール^000000はAcolyteの基本  ともいえる";
-				mes "回復スキルだね。";
-				mes "他の冒険者に対しても";
-				mes "使用できることから、";
-				mes "多くの冒険者を助けることが";
-				mes "できるはずさ。";
+				mes "^FF0000 heal^000000 is Acolyte's basic recovery skill.";
+				mes "It can also be used against other adventurers, so it should be able to help a lot of adventurers.";
 				next;
 				cutin "acolyte_blessing",2;
 				mes "[Puron]";
-				mes "^FF0000ブレッシング^000000は攻撃の基本  となる";
-				mes "DEX、INT、STRといったステータスを";
-				mes "一時的に増加させるスキル。";
-				mes "呪いや石化状態といった状態異常も";
-				mes "回復することができる。";
+				mes "^FF0000 Blessing^000000 is a skill that temporarily increases stats such as DEX, INT, and STR, which are the basis of attacks.";
+				mes "It can also heal abnormalities such as curses and petrification.";
 				next;
 				mes "[Puron]";
-				mes "また不死系、悪魔系といった";
-				mes "モンスターの属性に対しても";
-				mes "呪いの効果を付与できるなど、";
-				mes "まさに至れり尽くせりのスキルだね。";
-				mes "ブレッシングをLv10にしている";
-				mes "Acolyteの冒険者は数知れないよ。";
+				mes "It's also a very complete skill, such as being able to inflict curse effects on monster attributes such as undead and demon types.";
+				mes "I can't count the number of adventurers in Acolyte who have Blessing at lvl 10.";
 				next;
 				cutin "acolyte_holylight",2;
 				mes "[Puron]";
-				mes "補助系の魔法だけではなくて、";
-				mes "ホーリーライトといった";
-				mes "クエストで取得できる";
-				mes "攻撃魔法スキルもある。";
+				mes "There are not only auxiliary magic skills, but also offensive magic skills that can be acquired through quests, such as Holy Light.";
 				next;
 				mes "[Puron]";
-				mes "ホーリーライトは";
-				mes "攻撃の主体ということではなくて、";
-				mes "敵の気をそらすことにも使える為、";
-				mes "是非覚えておきたいスキルだね。";
+				mes "Holy Light is not only the main attack skill, but it can also be used to distract the enemy, so it is a skill that you should definitely learn.";
 				next;
 				cutin "acolyte_holylight",255;
 				break;
 			case 4:
 				cutin "thief_2",2;
 				mes "[Puron]";
-				mes "^0000FFThief^000000だね。";
-				mes "1次職であるThiefは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFThief^000000, right?";
+				mes "The first job, Thief, can raise JobLv to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFThief^000000のスキルでオススメなのは";
-				mes "^FF0000インベナム^000000、^FF0000回避率増加^000000だね。";
+				mes "The recommended skills for ^0000FFThief^000000 are ^FF0000 Invenum^000000 and ^FF0000 Evasion Rate Increase^000000.";
 				next;
 				cutin "thief_envenom",2;
 				mes "[Puron]";
-				mes "^FF0000インベナム^000000は敵を毒状態ににして、";
-				mes "HPを徐々に減らしていくスキル。";
-				mes "毒にかかりやすい敵と、";
-				mes "かかりにくい敵がいるけれど、";
-				mes "非常に有効なスキルだよ。";
+				mes "^FF0000 Invenom^000000 is a skill that puts the enemy in a poisoned state and gradually reduces their HP.";
+				mes "It's a very effective skill, although some enemies are easy to poison and some are hard to poison.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000回避率増加^000000はThiefの素早さを";
-				mes "補って、敵からの攻撃を回避する";
-				mes "確率を高めることができるスキルだ。";
+				mes "^FF0000Increased Evasion^000000 is a skill that compensates for Thief's quickness and can increase the probability of evading attacks from enemies.";
 				next;
 				cutin "thief_steal",2;
 				mes "[Puron]";
-				mes "また、スティールといった";
-				mes "Thiefらしい敵からアイテムを";
-				mes "奪い取るスキルもあるね。";
-				mes "スキルレベルとDexが高くなると";
-				mes "成功率も高まっていくよ。";
+				mes "You also have a skill that allows you to steal items from Thief-like enemies, such as steal.";
+				mes "The higher the skill level and Dex, the higher the success rate.";
 				next;
 				cutin "thief_steal",255;
 				break;
 			case 5:
 				cutin "archer_2",2;
 				mes "[Puron]";
-				mes "^0000FFArcher^000000だね。";
-				mes "1次職であるArcherは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFArcher^000000, right?";
+				mes "You can raise the JobLv of Archer, the first job, to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFArcher^000000のスキルでオススメなのは";
-				mes "^FF0000ダブルストレイフィング^000000、";
-				mes "^FF0000チャージアロー^000000だね。";
+				mes "I recommend ^0000FFArcher^000000 skills for ^FF0000 Double Strafing^000000 and ^FF0000 Charge Arrow^000000.";
 				next;
 				cutin "archer_doublestraf",2;
 				mes "[Puron]";
-				mes "^FF0000ダブルストレイフィング^000000は同時に";
-				mes "2本 の矢を打ち出し、";
-				mes "大きなダメージを与えることが";
-				mes "できるスキルだね。";
-				mes "多くのArcherの冒険者が";
-				mes "Lv10にする主力のスキルになるね。";
+				mes "^FF0000Double Strafing^000000 is a skill that lets you launch two arrows at the same time and do a lot of damage.";
+				mes "It will be a mainstay skill for many Archer adventurers at lvl 10.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000チャージアロー^000000は敵を吹き飛ばす";
-				mes "攻撃ができるスキルだ。";
-				mes "このスキルはクエストで取得する";
-				mes "ことができる。";
+				mes "^FF0000 Charge Arrow ^000000 is a skill that allows you to attack your enemies with an attack that blows them away.";
+				mes "This skill can be acquired through quests.";
 				next;
 				mes "[Puron]";
-				mes "チャージアローは";
-				mes "仲間に攻撃している敵を";
-				mes "大きく吹き飛ばすことができる、";
-				mes "^0000FFパーティ^000000を組んだ場合に有効に";
-				mes "働く場合が多いスキルになるよ。";
+				mes "Charge Arrow will be a skill that often works well when you have a ^0000FF party^000000, which can blow away enemies attacking your friends in a big way.";
 				next;
 				cutin "archer_arrowshower",2;
 				mes "[Puron]";
-				mes "あとは扱いが難しいけれど、";
-				mes "アローシャワーという範囲攻撃がある。";
-				mes "このスキルは指定した範囲に";
-				mes "大量に矢を打ち込み攻撃する";
-				mes "必殺技だね。";
-				mes "Lv1～Lv5で覚える人が多いスキルだ。";
+				mes "Then there is a ranged attack called Arrowshower, although it is difficult to handle.";
+				mes "This skill is a special move that attacks by launching a large number of arrows at a specified range.";
+				mes "This is a skill that many people learn from lvl 1 to lvl 5.";
 				next;
 				cutin "archer_arrowshower",255;
 				break;
 			case 6:
 				cutin "merchant_2",2;
 				mes "[Puron]";
-				mes "^0000FFMerchant^000000だね。";
-				mes "1次職であるMerchantは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "^0000FFMerchant^000000, right?";
+				mes "The first job, Merchant, can raise JobLv to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFMerchant^000000のスキルで";
-				mes "オススメなのは";
-				mes "^FF0000プッシュカート^000000、^FF0000露店開設^000000だね。";
+				mes "The recommended skills for ^0000FFMerchant^000000 are ^FF0000 Pushcart^000000 and ^FF0000 Opening a stall^000000.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000プッシュカート^000000は^0000FFMerchant^000000に";
-				mes "とって非常に大事なスキル。";
-				mes "荷物を大量に持つためのカートを";
-				mes "持つことができるようになるのが";
-				mes "このスキルなんだ。";
+				mes "^FF0000Pushcart^000000 is a very important skill for ^FF00FFMerchant^000000.";
+				mes "This skill is what allows you to have a cart to hold a large amount of luggage.";
 				next;
 				mes "[Puron]";
-				mes "ただこのスキルのLvが少ないうちは、";
-				mes "カートを持っていると移動速度が";
-				mes "減少してしまうんだ。";
-				mes "プッシュカートスキルを高めることで、";
-				mes "カートを持っていても移動速度を";
-				mes "普段の状態に戻すことができる。";
+				mes "But while the lvl of this skill is low, you will decrease your movement speed when you have a cart.";
+				mes "By increasing the pushcart skill, you can restore your movement speed to normal, even if you have a cart.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000露店開設^000000は手に入れたアイテムを";
-				mes "自分の好きな値段で売ることが";
-				mes "できるスキル。";
-				mes "大量のアイテムをお金に買えたり、";
-				mes "取り引きできる冒険者を気長に";
-				mes "待つときなどに重宝するね。";
+				mes "^FF0000 Opening a stall ^000000 is a skill that allows you to sell items you acquire at a price of your choice.";
+				mes "This is useful when you can buy a large amount of items for money, or when you are patiently waiting for adventurers to trade with you.";
 				next;
 				mes "[Puron]";
-				mes "また^0000FFMerchant^000000は^FF0000メマーナイト^000000や";
-				mes "^FF0000カートレボ リューション^000000といった";
-				mes "強力なスキルを覚えることができる。";
+				mes "Also ^0000FFMerchant^000000 can learn powerful skills such as ^FF0000 Memer Knight^000000 and ^FF0000 Cart Revolution^000000.";
 				next;
 				cutin "merchant_mammonite",2;
 				mes "[Puron]";
-				mes "^FF0000メマーナイト^000000はZenyを消費して、";
-				mes "大きなダメージを与えることができる。";
-				mes "Merchantにとって大事なスキル。";
-				mes "Zenyを消費するから、戦闘ごとに";
-				mes "お金がなくなっていくけど、敵を";
-				mes "一気に倒すときに活躍するスキルだ。";
+				mes "^FF0000 Memmer Knight^000000 can spend Zeny and do a lot of damage.";
+				mes "An important skill for Merchant.";
+				mes "It consumes Zeny, so you lose money every battle, but it is a skill that is useful for taking down enemies all at once.";
 				next;
 				cutin "merchant_cartrevol",2;
 				mes "[Puron]";
-				mes "^FF0000カートレボ リューション^000000はカートを";
-				mes "利用して攻撃する範囲攻撃スキル。";
-				mes "カートの重量を高めるほど、";
-				mes "攻撃力が増していくMerchantの";
-				mes "戦闘を支えるスキルになるよ。";
+				mes "^FF0000 Cart Revolution^000000 is a ranged attack skill that uses carts to attack.";
+				mes "It's going to be the skill that supports Merchant's combat, as the more you increase the weight of your cart, the more powerful your attacks will be.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000カートレボ リューション^000000は";
-				mes "クエストで取得することができる";
-				mes "スキルだ。";
+				mes "^FF0000 Cart Revolution^000000 is a skill that can be acquired through quests.";
 				next;
 				cutin "merchant_cartrevol",255;
 				break;
 			case 7:
 				cutin "taekwonkid_2",2;
 				mes "[Puron]";
-				mes "Taekwon Kidだね。";
-				mes "1次職であるTaekwon Kidは";
-				mes "JobLvを50まで上げることができるよ。";
-				mes "スキルポイントは49ポイント使用できる";
-				mes "ことになるね。";
+				mes "You must be Taekwon Kid.";
+				mes "As a primary job, Taekwon Kid can raise JobLv to 50.";
+				mes "That means I can use 49 skill points.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFTaekwon Kid^000000のスキルでオススメなのは";
-				mes "^FF0000タイリギ^000000と^FF0000ティオアプチャギ^000000だね。";
-				next;
+				mes "I recommend ^0000FFTaekwon Kid^000000 skills for ^FF0000 Tairigi^000000 and ^FF0000Tioapchagi^000000.";
+				NEXT;
 				cutin "taekwon_sprint",2;
 				mes "[Puron]";
-				mes "^FF0000タイリギ^000000は素早くまっすぐ走るスキル。";
-				mes "このスキルがLv7以上になると、";
-				mes "使用後に直ぐ止まれば、";
-				mes "一定時間Strが上昇する";
-				mes "スパート状態となる。";
-				mes "このスキルはTaekwon Kidの基本 だね。";
+				mes "^FF0000 Tailigi^000000 is the skill of running quickly and straight.";
+				mes "When this skill reaches lvl 7 or higher, if you stop immediately after using it, you will be in a spurt state where your Str will increase for a certain amount of time.";
+				mes "This skill is the basis of Taekwon Kid.";
 				next;
 				cutin "taekwon_flyingkick",2;
 				mes "[Puron]";
-				mes "^FF0000ティオアプチャギ^000000は遠距離の敵に";
-				mes "一気に接近して攻撃を行う";
-				mes "とび蹴りスキルだ。";
-				mes "連続して攻撃を行うことで、";
-				mes "大ダメージにすることもできるね。";
+				mes "^FF0000Tioapchagi^000000 is a flying kick skill that attacks distant enemies by approaching them at once.";
+				mes "I can also make it do a lot of damage by attacking in succession.";
 				next;
 				mes "[Puron]";
-				mes "あと、敵を逃すことなく捕らえる";
-				mes "アプチャオルリギも忘れては";
-				mes "ならないだろうね。";
-				mes "単体の敵相手なら非常に";
-				mes "優秀な力を発揮できるはずさ。";
+				mes "Also, I guess we shouldn't forget the aptchaorrigi, which catches the enemy without letting them get away.";
+				mes "It should be very good against a single enemy.";
 				next;
 				cutin "taekwon_flyingkick",255;
 				break;
 			default:
 				mes "[Puron]";
-				mes "特殊1次職についてだね。";
-				mes "スキルについて聞きたい職業は";
-				mes "何かな？";
+				mes "It's about 1st job expanded.";
+				mes "What is the occupation you want to ask about skills?";
 				next;
-				switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000","他の職業について聞く")){
+				switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000", "Ask about other professions")){
 				case 1:
 					cutin "gunslinger",2;
 					mes "[Puron]";
-					mes "^0000FFGunslinger^000000だね。";
-					mes "特殊1次職である^0000FFGunslinger^000000は";
-					mes "JobLvを70まで上げることができるよ。";
-					mes "スキルポイントは69ポイント使用できる";
-					mes "ことになるね。";
+					mes "^0000FFGunslinger^000000, right?";
+					mes "The ^0000FFGunslinger^000000, which is 1st job expanded, can raise JobLv to 70.";
+					mes "That means I can use 69 skill points.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFGunslinger^000000は5種類の銃のうち";
-					mes "どれを主力に戦っていくかで、";
-					mes "習得するするスキルを慎重に";
-					mes "選択していく必要がある。";
+					mes "^0000FFGunslinger^000000 will have to carefully choose which of the five different guns he will use to fight as his mainstay and which skills he will learn.";
 					next;
 					mes "[Puron]";
-					mes "講習では基本 となる^FF0000ハンドガン^000000と";
-					mes "一発の威力が高い^FF0000ショットガン^000000の";
-					mes "スキルについて説明しよう。";
+					mes "In the course, I will explain the basic ^FF0000handgun^000000 and the ^FF0000shotgun^000000 skills, which have high one-shot power.";
 					next;
 					cutin "gunslinger_despera.bmp",2;
 					mes "[Puron]";
-					mes "^0000FFハンドガン^000000で必要となるのは";
-					mes "^FF0000デスペラード^000000だね。";
-					mes "自分の周囲に弾丸を乱射する";
-					mes "スキルだ。";
+					mes "You'll need ^FF0000 despera^000000 for the ^0000FF handgun^000000.";
+					mes "It's a skill that shoots a barrage of bullets around you.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFハンドガン^000000を主力と選んだ場合は";
-					mes "命中力を上げることができる";
-					mes "^FF0000シングルアクション^000000と";
-					mes "^FF0000スネークアイ^000000が重要になるよ。";
-					next;
+					mes "If you choose ^0000FF Handgun^000000 as your mainstay, ^FF0000 Single Action^000000 and ^FF0000 Snake Eye^000000 that can increase your hit power will be important.";
+					NEXT;
 					cutin "gunslinger_fullbus",2;
 					mes "[Puron]";
-					mes "^0000FFショットガン^000000の魅力はやっぱり";
-					mes "^FF0000フルバスター^000000になるね。";
-					mes "弾丸を一挙に発射して強烈な";
-					mes "ダメージを与えることができるんだ。";
-					mes "ただ、SPの消耗が激しいので、";
-					mes "回復系の対策が必要になるかな。";
+					mes "The charm of the ^0000FF shotgun^000000 will still be the ^FF0000 full buster^000000.";
+					mes "It can fire bullets all at once and do intense damage.";
+					mes "However, it drains a lot of SP, so I think you'll need a recovery-type measure.";
 					next;
 					cutin "gunslinger_fullbus",255;
 					break;
 				case 2:
 					cutin "ninja",2;
 					mes "[Puron]";
-					mes "^0000FFNinja^000000だね。";
-					mes "特殊1次職である^0000FFNinja^000000は";
-					mes "JobLvを70まで上げることができるよ。";
-					mes "スキルポイントは69ポイント使用できる";
-					mes "ことになるね。";
+					mes "^0000FFNinja^000000.";
+					mes "The 1st job expanded, ^0000FFNinja^000000, can raise JobLv to 70.";
+					mes "That means I can use 69 skill points.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFNinja^000000のスキルは大きく、^FF0000投擲系^000000、";
-					mes "^FF0000体術系^000000と^FF0000忍術系^000000の3種類が存在し、";
-					mes "成長の仕方によってどのスキルを";
-					mes "取るかが変わってくる。";
+					mes "There are three major types of skills for ^0000FFNinja^000000: ^FF0000 throwing ^000000, ^FF0000 body art ^000000 and ^FF0000 ninjutsu ^000000, and which skill you take will depend on how you grow.";
 					next;
 					cutin "ninja_throwshurike",2;
 					mes "[Puron]";
-					mes "^0000FF投擲系^000000を選択していく場合は";
-					mes "^FF0000手裏剣投げ^000000のスキルが主な";
-					mes "攻撃手段となるだろう。";
+					mes "If you are going to choose the ^0000FF throwing system^000000, the ^FF0000 shuriken throwing^000000 skill will be your main means of attack.";
 					next;
 					mes "[Puron]";
-					mes "^0000FF体術系^000000を選択していく場合は^FF0000空蝉^000000、";
-					mes "^FF0000影分身^000000という有用な回避スキルが";
-					mes "使用できるようになる。";
-					mes "体術系には一閃という強力な攻撃";
-					mes "スキルがあるが、弱点も多い。";
-					mes "極めるには忍耐が必要だろう。";
+					mes "If you are going to choose the ^0000FF body art system^000000, you will be able to use the useful evasion skills ^FF0000 Kuusemi^000000 and ^FF0000 Shadow Disposition^000000.";
+					mes "The body art system has a powerful attack skill called Issen, but it also has many weaknesses.";
+					mes "You will need patience to master it.";
 					next;
 					cutin "ninja_dragonfirefo",2;
 					mes "[Puron]";
-					mes "^0000FF忍術^000000を選択していく場合は";
-					mes "^FF0000氷閃槍、龍炎陣^000000が扱いやすい。";
-					mes "^0000FF氷閃槍^000000は地面から氷の槍を";
-					mes "出現させて、敵を攻撃する";
-					mes "水属性の攻撃スキルだ。";
+					mes "If you are going to select ^0000FF ninjutsu^000000, ^FF0000 ice flash spear and dragonfirefo^000000 are easy to handle.";
+					mes "^0000FF Ice Flash Spear^000000 is a water-based attack skill that causes ice spears to appear from the ground and attack the enemy.";
 					next;
 					mes "[Puron]";
-					mes "^0000FF龍炎陣^000000は目標を指定して攻撃する";
-					mes "範囲攻撃だ。";
-					mes "先制攻撃を加えるのであれば、";
-					mes "非常に使い勝手がよい忍術といえる。";
+					mes "^0000FF Dragon Flame Formation^000000 is a ranged attack that specifies a target and attacks it.";
+					mes "It is a very useful ninjutsu if you want to make a preemptive attack.";
 					next;
 					cutin "ninja_dragonfirefo",255;
 					break;
 				case 3:
 					cutin "super_novice",2;
 					mes "[Puron]";
-					mes "^0000FFSupernovice^000000だね。";
-					mes "特殊1次職である^0000FFSupernovice^000000は";
-					mes "JobLvを99まで上げることができるよ。";
-					mes "スキルポイントは98ポイント使用できる";
-					mes "ことになるね。";
+					mes "^0000FFSupernovice^000000.";
+					mes "The 1st job expanded, ^0000FFSupernovice^000000, can raise JobLv to 99.";
+					mes "That means you can use 98 skill points.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFSupernovice^000000は他の1次職の";
-					mes "スキルを覚えていける職業だよ。";
-					mes "^0000FFヒール^000000、^0000FFバッシュ^000000、^0000FFメマーナイト^000000などを";
-					mes "使う冒険者は多いみたいだね。";
+					mes "^0000FFSupernovice^000000 is a profession that can learn other primary skills.";
+					mes "It seems that many adventurers use ^0000FFHeal^000000, ^0000FFBash^000000, ^0000FFMemerKnight^000000, etc.";
 					next;
 					cutin "supernovice_firebo",2;
 					mes "[Puron]";
-					mes "また、魔法を主体に戦う";
-					mes "Supernoviceを目指すなら、";
-					mes "^0000FFファイアーウォール^000000や、";
-					mes "^0000FFファイアーボ ルト^000000などを";
-					mes "使用していくほうがいいね。";
+					mes "Also, if you want to become a Supernovice who fights mainly with magic, it is better to use ^0000FF Firewall^000000, ^0000FF Firebolt^000000, and so on.";
 					next;
 					cutin "supernovice_heal",2;
 					mes "[Puron]";
-					mes "^0000FFヒール^000000はSupernoviceでも";
-					mes "使える回復魔法だ。";
-					mes "魔法以外で戦う場合はバッシュ、";
-					mes "メマーナイトのどちらかを";
-					mes "選択することになるだろうね。";
+					mes "^0000FF heal^000000 is a restorative magic that can also be used in Supernovice.";
+					mes "If you're fighting non-magic, you'll probably have to choose between Bash and Memar Knight.";
 					next;
 					mes "[Puron]";
-					mes "また、Supernoviceは";
-					mes "非常に多くのパッシブスキルを";
-					mes "習得することができる";
-					mes "職業でもあるね。";
+					mes "Supernovice is also a profession where you can learn so many passive skills.";
 					next;
 					cutin "supernovice_heal",255;
 					break;
@@ -1784,455 +1471,270 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 				}
 			}
 			mes "[Puron]";
-			mes "他の職業のスキルについて聞くかい？";
+			mes "Would you like to hear about my other occupational skills?";
 			next;
-			if(select("他の職業のスキルについて聞く","スキルについてはわかった")==2) break;
+			if(select("Ask about the skills of other professions", "I know about the skills")==2) break;
 		}
 		return;
 	}
 
-	function	ABOUT_STATUS	{
+	function ABOUT_STATUS {
 		while(1){
 			mes "[Puron]";
-			mes "何のステータスの説明を";
-			mes "聞きたいのかな？";
+			mes "What status description do you want to hear?";
 			next;
-			switch(select("ステータス内の情報について聞く","^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF特殊1次職^000000","ステータスについてはわかった")){
+			switch(select("Ask about information in status","^0000FFSwordsman^000000","^0000FFMagician^000000","^0000FFAcolyte^000000","^0000FFThief^000000 ","^0000FFArcher^000000","^0000FFMerchant^000000","^0000FFTaekwon Kid^000000","^0000FF1st job expanded^000000", "I know about the status")){
 			case 1:
 				mes "[Puron]";
-				mes "^0000FFステータス^000000についてだね。";
-				mes "まずは画面左上の基本 情報から";
-				mes "ステータス（Status）ウィンドウを";
-				mes "表示してみよう。";
-				mes " ";
-				mes "‐ショートカットは「Alt+A」‐";
+				mes "It's about ^0000FF status^000000.";
+				mes "First, let's display the Status window from the basic information in the upper left corner of the screen.";
+				mes " -The shortcut is \"Alt+A\" -";
 				next;
 				mes "[Puron]";
-				mes "^0000FFステータス^000000は";
-				mes "力（Str）、速さ（Agi）";
-				mes "体力（Vit）、知力（Int）";
-				mes "技（Dex）、運（Luk）";
-				mes "から成り立っているんだ。";
+				mes "The ^0000FF Status^000000 consists of Strength (Str), Speed (Agi), Strength (Vit), Intelligence (Int), Skill (Dex), and Luck (Luk).";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Str^000000は直接的は攻撃力のAtkと";
-				mes "アイテムをもてる最大重量に";
-				mes "関係しているんだ。";
-				mes "ただし、弓や銃を使う職業の";
-				mes "場合Dexの値が攻撃力になるよ。";
+				mes "^FF0000Str^000000 is directly related to the Atk of attack power and the maximum weight an item can carry.";
+				mes "However, for professions that use bows and guns, the Dex value is the attack power.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Agi^000000は攻撃を回避するFleeと";
-				mes "攻撃のスピードAspdに";
-				mes "関係しているよ。";
+				mes "^FF0000Agi^000000 is related to the Flee of avoiding attacks and the speed Aspd of attacks.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Vit^000000は最大HPと";
-				mes "一定時間ごとのHPの回復量、";
-				mes "受けたダメージの軽減に";
-				mes "関係しているよ。";
+				mes "^FF0000Vit^000000 is related to the maximum HP, the amount of HP recovered at regular intervals, and the reduction of damage received.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Int^000000は最大SPとSP回復量、";
-				mes "Matk,Mdefに関係しているね。";
-				mes "Matkは魔法攻撃力";
-				mes "Mdefは魔法防御力になるよ。";
-				mes "スキルを多用したり、魔法を駆使する";
-				mes "場合は重要になるかな。";
+				mes "^FF0000Int^000000 is related to your max SP, SP recovery, Matk, and Mdef.";
+				mes "Matk is magic attack power and Mdef is magic defense power.";
+				mes "It is important if you use a lot of skills and magic.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Dex^000000は命中率のHitとAspdに";
-				mes "大きく影響を与えるよ。";
-				mes "攻撃力にも多少の影響を与えるね。";
-				mes "攻撃力に関しては最小ダメージの";
-				mes "底上げができるよ。";
+				mes "^FF0000Dex^000000 will greatly affect your Hit and Aspd to hit.";
+				mes "It also has some effect on attack power.";
+				mes "As for attack power, you can raise the minimum damage.";
 				next;
 				mes "[Puron]";
-				mes "また、^FF0000弓や銃といった武器では";
-				mes "Dexによって、攻撃力を高めるんだ。^000000";
-				mes "弓と銃はStrでは攻撃力が";
-				mes "変化しないから注意してね。";
+				mes "Also, with weapons like ^FF0000 bows and guns, you increase their attack power by Dex. Note that ^000000 bows and guns do not change their attack power with Str.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Luk^000000はクリティカル率のCriticalと";
-				mes "回避率のFlee、";
-				mes "攻撃力に多少の影響があるね。";
+				mes "^FF0000Luk^000000 has some effect on Critical Rate, Evasion Rate, Flee, and Attack Power.";
 				next;
 				mes "[Puron]";
-				mes "各ステータスはBaseLvが";
-				mes "上がったときにもらえる";
-				mes "^0000FFStatusPoint^000000を消費して";
-				mes "上げていくことができるんだ。";
-				mes "^FF0000自分の職業や成長したい部分を";
-				mes "延ばしていくことが重要だよ。";
+				mes "Each status can be raised by spending ^0000FFStatusPoint^000000 that you get when your BaseLv is raised.";
+				mes "^FF0000It's important to extend your profession and the areas you want to grow.";
 				next;
 				break;
 			case 2:
 				cutin "swordman_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFSwordsman^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFSwordsman^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't even know.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "Swordsmanは高い攻撃力を";
-				mes "生かすため、^FF0000Str^000000を高めるのが";
-				mes "オススメだよ。";
-				mes "また、^FF0000HP^000000が高いので^FF0000Vit^000000を高めて";
-				mes "耐える事に特化すれば、パーティの";
-				mes "前衛、盾として大活躍できるよ。";
+				mes "I recommend Swordsman to increase ^FF0000Str^000000 to take advantage of his high attack power.";
+				mes "Also, since ^FF0000HP^000000 is high, if you increase ^FF0000Vit^000000 and specialize in withstanding, you can be very active as a vanguard and shield in a party.";
 				next;
 				mes "[Puron]";
-				mes "パーティより一人を好むなら、";
-				mes "^FF0000Vit^000000より^FF0000Agi^000000を高めるのもいいね。";
-				mes "敵の攻撃を避けるのに特化し、";
-				mes "高い攻撃速度で敵をすぐに倒せる。";
+				mes "If you prefer to be alone rather than in a party, you can increase ^FF0000Agi^000000 rather than ^FF0000Vit^000000.";
+				mes "Specializes in avoiding enemy attacks and can take down enemies quickly with its high attack speed.";
 				next;
 				mes "[Puron]";
-				mes "また、スキルを多用するには^FF0000Int^000000、";
-				mes "攻撃を命中させるためには";
-				mes "^FF0000Dex^000000も必要だよ。";
-				mes "Swordsmanは色んなステータスに";
-				mes "割り振るため、バランスには";
-				mes "注意してね。";
+				mes "You also need ^FF0000Int^000000 to use your skills a lot and ^FF0000Dex^000000 to make your attacks hit.";
+				mes "Swordsman allocates to various stats, so be careful to balance them.";
 				next;
 				cutin "swordman_2",255;
 				break;
 			case 3:
 				cutin "magician_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFMagician^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFMagician^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't even know.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFMagician^000000は魔法攻撃を主軸として";
-				mes "戦うため、^FF0000Int^000000を高めるのがいいね。";
-				mes "また、詠唱速度を速めるために";
-				mes "^FF0000Dex^000000を高めるのも有利だよ。";
+				mes "Since ^0000FFMagician^000000 fights mainly with magic attacks, it is good to increase ^FF0000Int^000000.";
+				mes "It is also advantageous to increase ^FF0000Dex^000000 to speed up the chanting speed.";
 				next;
 				mes "[Puron]";
-				mes "また、^0000FFMagician^000000は打たれ弱いから、";
-				mes "^FF0000Vit^000000に少し振って^FF0000HP^000000を";
-				mes "高めるのもいいね、";
-				mes "ただし、その分攻撃に直結する";
-				mes "^FF0000Int^000000や^FF0000Dex^000000にステータスポイントが";
-				mes "振れなくなるのを忘れないでね。";
+				mes "Also, since ^0000FFMagician^000000 is vulnerable to being hit, it's good to boost ^FF0000HP^000000 with a slight swing to ^FF0000Vit^000000, however, that directly affects attack ^FF0000Int^000000 and ^FF0000Dex^. Remember, you won't be able to swing status points to 00000000.";
 				next;
 				cutin "magician_2",255;
 				break;
 			case 4:
 				cutin "acolyte_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFAcolyte^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFAcolyte^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't even know.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFAcolyte^000000はやはり仲間を支援する";
-				mes "スキルを使うことが多いね。";
-				mes "そのため、^FF0000SP^000000が無くならないよう、";
-				mes "^FF0000Int^000000を高めるのがオススメだよ。";
+				mes "^0000FFAcolyte^000000 still often use skills to support their friends.";
+				mes "Therefore, I recommend that you increase ^FF0000Int^000000 so that you don't lose ^FF0000SP^000000.";
 				next;
 				mes "[Puron]";
-				mes "また、スキルの詠唱速度を";
-				mes "速めるために^FF0000Dex^000000を高めるのもいいよ。";
-				mes "前衛の代わりとして率先して前に出て、";
-				mes "パーティの盾となるなら";
-				mes "^FF0000Vit^000000も有効だね。";
+				mes "You can also increase ^FF0000Dex^000000 to speed up the speed of skill chanting.";
+				mes "If you want to take the initiative to step forward as a replacement for the vanguard and be a shield for the party, ^FF0000Vit^000000 is also useful.";
 				next;
 				cutin "acolyte_2",255;
 				break;
 			case 5:
 				cutin "thief_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFThief^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFThief^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't even know.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFThief^000000といえば、高い回避能力を";
-				mes "さらに強くしていくため、";
-				mes "^FF0000Agi^000000を高めるのがオススメだよ。";
+				mes "Speaking of ^0000FFThief^000000, I recommend you to increase ^FF0000Agi^000000 to make your high evasion ability even stronger.";
 				next;
 				mes "[Puron]";
-				mes "^FF0000Agi^000000を高めれば自然と";
-				mes "攻撃速度も上がるから、";
-				mes "^FF0000Str^000000で攻撃力を高め、";
-				mes "^FF0000Dex^000000で攻撃を命中させるように";
-				mes "していくとサクサク敵を";
-				mes "倒せるようになるよ。";
+				mes "If you increase ^FF0000Agi^000000, your attack speed will naturally increase, so if you increase your attack power with ^FF0000Str^000000 and make your attacks hit with ^FF0000Dex^000000, you will be able to defeat enemies quickly.";
 				next;
 				mes "[Puron]";
-				mes "あと、将来カタールという武器が";
-				mes "装備できるアサシンを目指すなら、";
-				mes "^FF0000Luk^000000を高めてクリティカル攻撃を";
-				mes "頻繁に出せるようにするのも";
-				mes "いいかもしれないね。";
+				mes "Also, if you want to become an Assassin who can equip the Ka Taro weapon in the future, you might want to increase ^FF0000Luk^000000 so that you can make critical attacks more often.";
 				next;
 				cutin "thief_2",255;
 				break;
 			case 6:
 				cutin "archer_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFArcher^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFArcher^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't even know.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "Archerの特徴、弓での攻撃は";
-				mes "^FF0000Dex^000000をあげるほど強力になるよ。";
-				mes "攻撃力がある程度高まったと";
-				mes "感じたら、^FF0000Agi^000000で攻撃速度を";
-				mes "高めるのがいいね。";
+				mes "Archer's trait, bow attack will become more powerful as you increase ^FF0000Dex^000000.";
+				mes "When you feel that your attack power has increased to some extent, you should increase your attack speed with ^FF0000Agi^000000.";
 				next;
 				mes "[Puron]";
-				mes "また、^FF0000Int^000000を高めることで、";
-				mes "強力なスキル";
-				mes "「ダブルストレイフィング」を";
-				mes "次々と連射するのも有効だよ。";
+				mes "It's also useful to increase ^FF0000Int^000000 to fire the powerful skill \"Double Strafing\" one after another.";
 				next;
 				mes "[Puron]";
-				mes "そうそう、Archerの上位職である";
-				mes "バードやダンサーになって";
-				mes "対人戦で活躍する気があるなら、";
-				mes "^FF0000Vit^000000を高めておくのもいいね。";
+				mes "Oh yeah, if you are willing to become a Bard or Dancer, which are the higher level jobs of Archer, and play an active role in the battle against others, it is also good to raise ^FF0000Vit^000000.";
 				next;
 				cutin "archer_2",255;
 				break;
 			case 7:
 				cutin "merchant_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFMerchant^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFMerchant^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't know either.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "Merchantは^FF0000Str^000000で攻撃力を高め、";
-				mes "^FF0000Agi^000000で敵の攻撃を避けたり、";
-				mes "^FF0000Vit^000000で敵の攻撃を耐えるのが有効だよ。";
-				mes "また、攻撃を命中させるためには";
-				mes "^FF0000Dex^000000もある程度必要になってくるね。";
+				mes "Merchants can use ^FF0000Str^000000 to increase their attack power, ^FF0000Agi^000000 to avoid enemy attacks, and ^FF0000Vit^000000 to withstand enemy attacks.";
+				mes "I also need some ^FF0000Dex^000000 to make my attacks hit.";
 				next;
 				mes "[Puron]";
-				mes "もし、^0000FFMerchant^000000の上位職である";
-				mes "^0000FFブラックスミス^000000になって製造を";
-				mes "していくなら、^FF0000Dex^000000と^FF0000Luk^000000が重要に";
-				mes "なってくるよ。";
+				mes "If you want to become a ^FF00FFBlacksmith^000000, which is a higher level job than ^0000FFMerchant^000000 and do manufacturing, then ^FF0000Dex^000000 and ^FF0000Luk^000000 will be important.";
 				next;
 				mes "[Puron]";
-				mes "でも、^FF0000Dex^000000と^FF0000Luk^000000にステータスポイントを";
-				mes "使いすぎると、攻撃に繋がる";
-				mes "ステータスが低くなり、通常の戦闘が";
-				mes "その分辛くなってしまうよ。";
-				mes "バランスには十分注意してね。";
+				mes "But if you spend too many status points on ^FF0000Dex^000000 and ^FF0000Luk^000000, your stats that lead to attacks will be lower and normal combat will be harder because of it.";
+				mes "Be very careful with your balance.";
 				next;
 				cutin "merchant_2",255;
 				break;
 			case 8:
 				cutin "taekwonkid_2",2;
 				mes "[Puron]";
-				mes "それじゃあ、^0000FFTaekwon Kid^000000の";
-				mes "代表的なステータスについて";
-				mes "教えるけど、ステータスポイントは";
-				mes "一度割り振ると、取り戻す事が";
-				mes "できないから注意してね。";
+				mes "Okay, I'll tell you about the typical status of ^0000FFTaekwon Kid^000000, but be careful, because once you assign status points, you can't get them back.";
 				next;
 				mes "[Puron]";
-				mes "それに、この世界にはまだまだ";
-				mes "僕も知らない個性的な人たちが";
-				mes "沢山いるんだ。";
-				mes "自分の将来をしっかりイメージして";
-				mes "ステータスポイントを使おうね。";
+				mes "Besides, there are still many unique people in this world that I don't know either.";
+				mes "Let's use status points with a clear image of your future.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFTaekwon Kid^000000は^FF0000Str^000000で攻撃力を高める、";
-				mes "^FF0000Agi^000000で攻撃速度を高めるのが有効だよ。";
-				mes "また、攻撃を命中させるには";
-				mes "^FF0000Dex^000000もある程度必要になってくるね。";
+				mes "^0000FFTaekwon Kid^000000 can use ^FF0000Str^000000 to increase attack power and ^FF0000Agi^000000 to increase attack speed.";
+				mes "I also need some ^FF0000Dex^000000 to make the attack hit.";
 				next;
 				mes "[Puron]";
-				mes "ただ、一つ気をつけて。";
-				mes "^0000FFTaekwon Kid^000000の上位職である";
-				mes "^0000FFソウルリンカー^000000になると、";
-				mes "^0000FFTaekwon Kid^000000の時の常識が";
-				mes "通用しなくなってしまうんだ。";
+				mes "Just one thing to keep in mind.";
+				mes "When you become a ^0000FFSoul Linker^000000, which is a higher position than ^0000FFTaekwon Kid^000000, the common sense you had when you were a ^0000FFTaekwon Kid^000000 doesn't apply anymore.";
 				next;
 				mes "[Puron]";
-				mes "^0000FFソウルリンカー^000000になる場合は";
-				mes "使用するスキルも魔法、";
-				mes "支援スキルが中心となっていくため、";
-				mes "^0000FFTaekwon Kid^000000の頃から^FF0000Int^000000に振って";
-				mes "おかないと、^FF0000SP^000000が足りないという事も";
-				mes "あるかもしれないから注意してね。";
-				next;
+				mes "When you become a ^0000FFSoul Linker^000000, the skills you use will be mainly magic and support skills, so if you don't swing to ^FF0000Int^000000 from when you were a ^0000FFTaekwon Kid^000000, you will have to swing to ^FF0000SP^000000. Be careful, because it might happen that you don't have enough 00000000.";
+				NEXT;
 				cutin "taekwonkid_2",255;
 				break;
 			default:
 				mes "[Puron]";
-				mes "^0000FF特殊1次職^000000についてだね。";
-				mes "ステータスについて";
-				mes "聞きたい職業は何かな？";
+				mes "^0000FF1st job expanded^000000 about.";
+				mes "What is the occupation you want to ask about status?";
 				next;
-				switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000","他の職業")){
+				switch(select("^0000FFGunslinger^000000","^0000FFNinja^000000","^0000FFSupernovice^000000", "other occupations")){
 				case 1:
 					cutin "gunslinger",2;
 					mes "[Puron]";
-					mes "それじゃあ、^0000FFGunslinger^000000の";
-					mes "代表的なステータスについて";
-					mes "教えるけど、ステータスポイントは";
-					mes "一度割り振ると、取り戻す事が";
-					mes "できないから注意してね。";
+					mes "Okay, I'll tell you about the typical status of ^0000FFGunslinger^000000, but be careful, because once you assign status points, you can't get them back.";
 					next;
 					mes "[Puron]";
-					mes "それに、この世界にはまだまだ";
-					mes "僕も知らない個性的な人たちが";
-					mes "沢山いるんだ。";
-					mes "自分の将来をしっかりイメージして";
-					mes "ステータスポイントを使おうね。";
+					mes "Besides, there are still many unique people in this world that I don't even know.";
+					mes "Let's use status points with a clear image of your future.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFGunslinger^000000の特徴、銃での攻撃は";
-					mes "^FF0000Dex^000000をあげるほど強力になるよ。";
-					mes "攻撃力がある程度高まったと";
-					mes "感じたら、^FF0000Agi^000000で攻撃速度を";
-					mes "高めるのもいいね。";
+					mes "^0000FFGunslinger^000000 trait, gun attacks will become more powerful the more ^FF0000Dex^000000 you raise.";
+					mes "If you feel that your attack power has increased to some extent, you can also increase your attack speed with ^FF0000Agi^000000.";
 					next;
 					mes "[Puron]";
-					mes "また、^FF0000HP^000000、^FF0000SP^000000共に少ないので、";
-					mes "^FF0000Vit^000000や^FF0000Int^000000をある程度高めておく";
-					mes "のもいいよ。";
+					mes "Also, since ^FF0000HP^000000 and ^FF0000SP^000000 are both low, it's good to increase ^FF0000Vit^000000 and ^FF0000Int^000000 to some extent.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFGunslinger^000000は銃の種類が色々あり、";
-					mes "どれを主力として使っていくかで、";
-					mes "戦闘スタイルも変化してくるんだ。";
-					mes "急いでステータスポイントを使わず、";
-					mes "まずは色んな銃を使ってみるといいよ。";
+					mes "^0000FFGunslinger^000000 has many different types of guns, and your fighting style will change depending on which one you use as your main weapon.";
+					mes "Don't rush to spend status points, try using various guns first.";
 					next;
 					cutin "gunslinger",255;
 					break;
 				case 2:
 					cutin "ninja",2;
 					mes "[Puron]";
-					mes "それじゃあ、^0000FFNinja^000000の";
-					mes "代表的なステータスについて";
-					mes "教えるけど、ステータスポイントは";
-					mes "一度割り振ると、取り戻す事が";
-					mes "できないから注意してね。";
+					mes "Okay, I'll tell you about the typical status of ^0000FFNinja^000000, but be careful, because once you assign status points, you can't get them back.";
 					next;
 					mes "[Puron]";
-					mes "それに、この世界にはまだまだ";
-					mes "僕も知らない個性的な人たちが";
-					mes "沢山いるんだ。";
-					mes "自分の将来をしっかりイメージして";
-					mes "ステータスポイントを使おうね。";
+					mes "Besides, there are still many unique people in this world that I don't know either.";
+					mes "Let's use status points with a clear image of your future.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFNinja^000000はどんなスキルの系統を";
-					mes "取っていくかを決めることが重要だよ。";
-					mes "これを決めたらほぼステータスも";
-					mes "どれを振るのがいいか見えてくる。";
+					mes "^0000FFNinja^000000 is important to decide what lineage of skills you are going to take.";
+					mes "Once you've decided this, you can almost see which statuses to shake as well.";
 					next;
 					mes "[Puron]";
-					mes "投擲系・体術系スキルなら、";
-					mes "攻撃力を重視した";
-					mes "^FF0000Str^000000、^FF0000Dex^000000、^FF0000Agi^000000が有効だよ。";
-					mes "忍術系スキルなら魔法攻撃力と";
-					mes "詠唱速度を重視した^FF0000Int^000000、^FF0000Dex^000000が";
-					mes "有効なんだ。";
+					mes "For throwing and body skills, ^FF0000Str^000000, ^FF0000Dex^000000, and ^FF0000Agi^000000 are effective for attack power.";
+					mes "For ninjutsu skills, ^FF0000Int^000000 and ^FF0000Dex^000000, which emphasize magic attack power and chanting speed, are effective.";
 					next;
 					mes "[Puron]";
-					mes "ただし、どちらかのスタイルを";
-					mes "選んだらステータスポイントを";
-					mes "使っている以上、";
-					mes "両立して割り振っていくことは";
-					mes "難しいから、注意してね。";
+					mes "Be careful, however, because once you choose either style, it's difficult to assign them both as long as you're using status points.";
 					next;
 					cutin "ninja",255;
 					break;
 				case 3:
 					cutin "super_novice",2;
 					mes "[Puron]";
-					mes "それじゃあ、^0000FFSupernovice^000000の";
-					mes "代表的なステータスについて";
-					mes "教えるけど、ステータスポイントは";
-					mes "一度割り振ると、取り戻す事が";
-					mes "できないから注意してね。";
+					mes "Okay, I'll tell you about the typical status of ^0000FFSupernovice^000000, but be careful, because once you assign status points, you can't get them back.";
 					next;
 					mes "[Puron]";
-					mes "それに、この世界にはまだまだ";
-					mes "僕も知らない個性的な人たちが";
-					mes "沢山いるんだ。";
-					mes "自分の将来をしっかりイメージして";
-					mes "ステータスポイントを使おうね。";
+					mes "Besides, there are still many unique people in this world that I don't even know.";
+					mes "Let's use status points with a clear image of your future.";
 					next;
 					mes "[Puron]";
-					mes "^0000FFSupernovice^000000は";
-					mes "どういったスキルを取っていくか。";
-					mes "これを決めたらほぼステータスも";
-					mes "どれを振るのがいいか見えてくるよ。";
+					mes "What skills will ^0000FFSupernovice^000000 take?";
+					mes "Once you've decided on this, you can almost see which statuses you'd like to shake.";
 					next;
 					mes "[Puron]";
-					mes "近接攻撃系なら、攻撃力を";
-					mes "重視した^FF0000Str^000000、^FF0000Dex^000000、^FF0000Agi^000000が有効だよ。";
-					mes "魔法系スキルなら魔法攻撃力と";
-					mes "詠唱速度を重視した^FF0000Int^000000、^FF0000Dex^000000が";
-					mes "有効だね。";
+					mes "If you are a melee attacker, ^FF0000Str^000000, ^FF0000Dex^000000, and ^FF0000Agi^000000 are effective for attack power.";
+					mes "For magic skills, ^FF0000Int^000000 and ^FF0000Dex^000000, which emphasize magic attack power and chanting speed, are effective.";
 					next;
 					cutin "super_novice",255;
 					break;
@@ -2242,35 +1744,28 @@ ac_cl_room.gat,30,46,6	script	Puron#ac_room	750,{
 			}
 			cutin "swordman_2.bmp", 255;
 			mes "[Puron]";
-			mes "他の職業のステータスについて";
-			mes "聞くかい？";
+			mes "Do you want to ask about the status of other professions?";
 			next;
-			if(select("他の職業のステータスについて聞く","ステータスついてはわかった")==2) break;
+			if(select("Ask about the status of other professions", "I know about the status")==2) break;
 		}
 		return;
 	}
 
-	function	ABOUT_WEAPON	{
+	function ABOUT_WEAPON {
 		while(1){
 			mes "[Puron]";
-			mes "各職業にはそれぞれ特徴があり、";
-			mes "職業によって扱える武器が";
-			mes "異なるんだ。";
+			mes "Each profession has its own characteristics, and different professions can handle different weapons.";
 			cutin "weapon_list.bmp", 3;
 			next;
 			mes "[Puron]";
-			mes "武器の種類は短剣、片手剣、両手剣、";
-			mes "斧、槍、鈍器、杖、弓、爪、楽器、";
-			mes "鞭、本、カタール、銃、手裏剣など、";
-			mes "多くの種類があるよ。";
+			mes "There are many types of weapons: daggers, one-handed swords, two-handed swords, axes, spears, blunt weapons, staffs, bows, claws, instruments, whips, books, kataro, guns, shurikens, etc.";
 			next;
 			mes "[Puron]";
-			mes "武器については";
-			mes "わかったかな？";
+			mes "Did you understand about weapons?";
 			next;
-			if(select("わかった","わからない")==1) break;
+			if(select("got it", "don't know")==1) break;
 			mes "[Puron]";
-			mes "じゃあ、もう一度説明するね。";
+			mes "Okay, I'll explain again.";
 			next;
 		}
 		cutin "swordman_2.bmp", 255;
@@ -2287,9 +1782,9 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 
 	if(AC_PASSPORT<2){
 		mes "[Aldi]";
-		mes "お、キミは新顔だな。";
-		mes "冒険者アカデミーへようこそ！";
-		mes "まずは受付を済ませてくれ。";
+		mes "Oh, you're new here.";
+		mes "Welcome to the Adventurer Academy!";
+		mes "First, you'll have to go through the reception desk.";
 		close;
 	}
 	set '@novice, callfunc("AC_GetNovice");
@@ -2297,35 +1792,29 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 		if(Job!=Job_Novice){
 			if(AC_NOVICE_QUE) {
 				mes "[Aldi]";
-				mes "元気そうで何よりだ。";
-				mes "聞きたいことがあったら、";
-				mes "なんでも聞いてくれていいぞ。";
-				mes "何を聞きたいんだ？";
+				mes "Glad to see you're doing well.";
+				mes "You can ask me anything you want.";
+				mes "What do you want to ask me?";
 			} else {
 				mes "[Aldi]";
-				mes "見かけない顔だが、";
-				mes "キミはなかなか筋がいい";
-				mes "冒険者のようだな。";
-				mes "何か聞いてみたいことはあるかい？";
+				mes "You don't look familiar, but you seem like a pretty reasonable adventurer.";
+				mes "Is there anything you'd like to ask me?";
 			}
 		} else if(AC_NOVICE_QUE == 20){
 			mes "[Aldi]";
-			mes "講習もいよいよ最後だ。";
-			mes "部屋の奥にいる^FF0000Fay^000000に";
-			mes "話しかけて見てくれ。";
-			mes "ん？";
-			mes "まだ、私に聞きたいことが";
-			mes "あるのかな？";
+			mes "The course is finally at its end.";
+			mes "Talk to ^FF0000Faye^000000Faye^000000 at the back of the room and see.";
+			mes "Hmm?";
+			mes "Do you still have questions for me?";
 		} else if(AC_NOVICE_QUE >= 30){
 			mes "[Aldi]";
-			mes "全て学んできたようだな。";
-			mes "聞きたいことがあったら、";
-			mes "もう一度説明するぞ。";
-			mes "何か聞きたいことはあるか？";
+			mes "Looks like you've learned everything you need to know.";
+			mes "If you have any questions, I'll explain it to you again.";
+			mes "Do you have any questions?";
 		}
 		while(1){
 			next;
-			switch(select("戦闘について","お金の稼ぎ方について","カードについて","世界地図について","聞きたいことはない")){
+			switch(select("about battle", "about earning money", "about cards", "about world map", "nothing to ask")){
 			case 1:
 				HOWTO_BATTLE;
 				break;
@@ -2340,74 +1829,58 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 				break;
 			default:
 				mes "[Aldi]";
-				mes "そうか。";
-				mes "それでは、良い冒険者になることを";
-				mes "期待しているぞ。";
-				mes "聞きたいことがあったら、";
-				mes "いつでも来るといい。";
+				mes "I see.";
+				mes "Well then, I hope you'll be a good adventurer!";
+				mes "If you have any questions, you can always come to me.";
 				close2;
 				cutin "world_map_001.bmp", 255;
 				end;
 			}
 			mes "[Aldi]";
-			mes "他に聞きたいことはあるかな？";
+			mes "Is there anything else you want to ask?";
 		}
 	}
 
 	if(!AC_NOVICE_QUE){
 		mes "[Aldi]";
-		mes "お！";
-		mes "キミは新顔のようだな。";
-		mes "私はAldi。";
-		mes "講習を担当している。";
-		mes "まずはプロンに話しかけてみてくれ。";
+		mes "Oh!";
+		mes "Looks like you're new here.";
+		mes "I'm Aldi.";
+		mes "I'm in charge of the course.";
+		mes "Talk to Puron first.";
 		close;
 	} else if(AC_NOVICE_QUE < 10){
 		mes "[Aldi]";
-		mes "まずはプロンの講習を";
-		mes "終わらせないとな。";
-		mes "反対側のプロンに話しかけて、";
-		mes "プロンの講習を終わらせて";
-		mes "きてくれ。		";
+		mes "I need to finish Puron's training first.";
+		mes "Go talk to Puron on the other side and finish Puron's training.		";
 		close;
 	} else if(AC_NOVICE_QUE>=10 && AC_NOVICE_QUE<20){
 		switch(AC_NOVICE_QUE){
 		case 10:
 			mes "[Aldi]";
-			mes "プロンの話が終わったようだな。";
-			mes "私はAldiだ。";
-			mes "よろしく。";
-			mes "　";
-			mes "さて、今後の成長について";
-			mes "簡単に私が話そう。";
+			mes "Looks like we're done talking about Puron.";
+			mes "I'm Aldi.";
+			mes "Nice to meet you.";
+			mes " Now, let's talk briefly about my future growth.";
 			next;
 			while(1){
 				mes "[Aldi]";
-				mes "冒険者として、一人前に成長するには";
-				mes "様々な経験が必要だが、";
-				mes "幸い冒険者アカデミーには";
-				mes "戦闘や仕事を手伝うクエストなどが";
-				mes "揃っている。";
+				mes "As an adventurer, you need a variety of experiences to grow into a full-fledged adventurer, but fortunately, the Adventurer Academy has a full range of quests to help you in combat and in your work.";
 				next;
 				mes "[Aldi]";
-				mes "講習後、1次職に転職できたら、";
-				mes "しばらく冒険者アカデミーで";
-				mes "経験を積むといいだろう。";
+				mes "After the course, if you are able to change to the first job, it would be a good idea to gain experience at the Adventurer Academy for a while.";
 				next;
 				mes "[Aldi]";
-				mes "特に戦闘や、お金に困ったときなど、";
-				mes "わからないことがあったら、";
-				mes "私が教えられるかもしれない。";
-				mes "わからなくなったら、";
-				mes "また戻ってくるといい。";
+				mes "I may be able to teach you if you have any questions, especially in combat or if you have trouble with money.";
+				mes "If you don't understand, you can come back to me.";
 				next;
-				if(select("わかった","わからなかった")==1){
+				if(select("I understand", "I didn't understand")==1){
 					mes "[Aldi]";
-					mes "ではキミの成長を期待しているぞ。";
+					mes "Then I'm looking forward to your growth.";
 					break;
 				}
 				mes "[Aldi]";
-				mes "それじゃあ、もう一度話そう。";
+				mes "Then let's talk again.";
 				next;
 			}
 			next;
@@ -2422,8 +1895,7 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 			set AC_NOVICE_QUE, 11;
 		case 11:
 			mes "[Aldi]";
-			mes "最後に、この大陸について";
-			mes "少し話しておこう。";
+			mes "Finally, let's talk a little bit about this continent.";
 			next;
 			ABOUT_WORLDMAP;
 			if(checkre()) {
@@ -2437,10 +1909,8 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 			set AC_NOVICE_QUE, 12;
 		case 12:
 			mes "[Aldi]";
-			mes "よし、この大陸については";
-			mes "わかったようだな。";
-			mes "立派な冒険者になることを";
-			mes "期待しているぞ！";
+			mes "Okay, I think we've got it about this continent.";
+			mes "I hope you'll be a fine adventurer!";
 			next;
 			if(checkre()) {
 				if (BaseLevel<8) getexp 18,0;
@@ -2455,36 +1925,27 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 		case 14:
 			mes "[Aldi]";
 			if(AC_NOVICE_QUE==13){
-				mes "そうだ、これを渡しておこう！";
+				mes "Yes, let's pass this along!";
 				next;
 			} else {
 				mes "[Aldi]";
-				mes "荷物は減らしてきたかな？";
+				mes "Have you reduced your luggage?";
 				next;
-				if(select("減らしてきた","減らしてない")==2){
+				if(select("I have reduced", "I have not reduced")==2){
 					mes "[Aldi]";
-					mes "荷物を減らしてくれないと";
-					mes "渡せないぞ。";
+					mes "You're going to have to reduce your luggage or I can't give it to you.";
 					close;
 				}
 			}
 			set AC_NOVICE_QUE, 14;
 			if(checkitemblank() < 2){
-				mes "^FF0000＜警告＞^000000";
-				mes "‐所持アイテムの種類数が多い為";
-				mes "　アイテムを受けとることが";
-				mes "　できません‐";
-				mes "‐所持アイテムを減らしてから、";
-				mes "　再度話しかけてください‐";
+				mes "^FF0000<WARNING>^000000-You cannot receive items due to the number of different items in your possession-";
+				mes "-Please reduce the number of items in your possession and talk to us again-";
 				close;
 			} else
 			if(Weight>(MaxWeight/100)*90){
-				mes "^FF0000＜警告＞^000000";
-				mes "‐所持アイテムの重量が多い為";
-				mes "　アイテムを受けとることが";
-				mes "　できません‐";
-				mes "‐所持アイテムを減らしてから、";
-				mes "　再度話しかけてください‐";
+				mes "^FF0000<WARNING>^000000-You will not be able to receive the item due to the high weight of the item you are carrying-";
+				mes "-Please reduce the number of items in your possession and then speak to me again-";
 				close;
 			}
 			getitem 569, 100;
@@ -2492,12 +1953,10 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 			emotion 46,"";
 			set AC_NOVICE_QUE, 15;
 			mes "[Aldi]";
-			mes "冒険者の必需品、鑑定アイテムだ！";
-			mes "この^0000FF拡大鏡^000000は^0000FF未鑑定^000000のアイテムを";
-			mes "鑑定することができる。";
-			mes "未鑑定になっているアイテムを";
-			mes "手に入れたら使うといい。";
-			mes "それと、回復アイテムも渡しておくぞ。";
+			mes "It's a must-have item for adventurers, an appraised item!";
+			mes "This ^0000FF magnifier^000000 can appraise ^0000FF unappraised^000000 items.";
+			mes "You can use it when you get an item that is unappraised.";
+			mes "And I'll give you some recovery items, too.";
 			next;
 		case 15:
 			delquest 100116;
@@ -2505,501 +1964,298 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 			set AC_NOVICE_QUE, 20;
 			cutin "world_map_001.bmp", 255;
 			mes "[Aldi]";
-			mes "さあ、最後に^FF0000Fay^000000の話を";
-			mes "聞いてみてくれ。";
+			mes "Now, listen to the last ^FF0000Faye^000000.";
 			close;
 		}
 	}
 
-	function	HOWTO_BATTLE	{
+	function HOWTO_BATTLE {
 		mes "[Aldi]";
-		mes "戦闘の何について";
-		mes "聞きたいんだい？";
+		mes "What do you want to ask me about combat?";
 		next;
-		switch(select("戦闘の準備について","モンスターについて","パーティーについて","他のことを聞く")){
+		switch(select("About preparing for battle", "About monsters", "About party", "Ask other things")){
 		case 1:
 			mes "[Aldi]";
-			mes "戦闘に欠かせないのは";
-			mes "装備と回復アイテムだ。";
-			mes "今もっている装備品で";
-			mes "装備していないアイテムがあったら、";
-			mes "一度装備をしてみることを勧めるぞ。";
+			mes "The essentials for combat are equipment and recovery items.";
+			mes "If you have any items of equipment that you are not currently equipped with, I suggest you try equipping them.";
 			next;
 			mes "[Aldi]";
-			mes "装備アイテムは^0000FFAlt＋ Q^000000キーか、";
-			mes "^0000FF「基本 情報」^000000ウィンドウ内の";
-			mes "^0000FF「equip」^000000ボ タンを押して、";
-			mes "^0000FF「装備アイテム」^000000ウィンドウを";
-			mes "表示して確認できる。";
+			mes "You can check your equipped items by pressing the ^0000FFAlt+Q^000000 keys or the ^0000FF \"equip\"^000000 button in the ^0000FF \"Basic Info\"^000000 window to display the ^0000FF \"Equipped Items\"^000000 window.";
 			next;
 			mes "[Aldi]";
-			mes "また、所持アイテムは^0000FFAlt＋ E^000000キーか、";
-			mes "^0000FF「基本 情報」^000000ウィンドウ内の";
-			mes "^0000FF「item」^000000ボ タンを押して、";
-			mes "^0000FF「所持アイテム」^000000ウィンドウを";
-			mes "表示して確認できる。";
+			mes "You can also check the items you have by pressing the ^0000FFAlt+E^000000 keys or the ^0000FF \"item\"^000000 button in the ^0000FF \"Basic Info\"^000000 window to display the ^0000FF \"Items You Have\"^000000 window. ";
 			next;
 			mes "[Aldi]";
-			mes "アイテムを装備するには";
-			mes "^0000FF「所持アイテム」^000000ウィンドウ内の";
-			mes "^0000FF「equip」^000000タブをクリックし、";
-			mes "装備したいアイテムを";
-			mes "ダブルクリックすることで装備できる。";
+			mes "Items can be equipped by clicking on the ^0000FF \"equip\"^000000 tab in the ^0000FF \"items in your possession\"^000000 window and double-clicking on the item you wish to equip.";
 			next;
 			mes "[Aldi]";
-			mes "あと、忘れちゃならないのが、";
-			mes "^0000FF「etc」^000000タブの装備アイテムだ。";
+			mes "Also, don't forget to equip items in the ^0000FF \"etc\"^000000 tab.";
 			next;
 			mes "[Aldi]";
-			mes "Archerや、Gunslinger等の";
-			mes "職業では^0000FF矢^000000や^0000FF銃弾^000000といった";
-			mes "遠距離攻撃用のアイテムを一緒に";
-			mes "装備しないと攻撃ができない";
-			mes "装備アイテムがある。";
+			mes "For professions such as Archer and Gunslinger, there are some equipment items that cannot be attacked unless equipped with long-range attack items such as ^0000FF arrows ^000000 and ^0000FF bullets ^000000.";
 			next;
 			mes "[Aldi]";
-			mes "これらのアイテムを使用する";
-			mes "装備アイテムは^0000FF「装備アイテム";
-			mes "ウィンドウ」^000000へ遠距離攻撃用の";
-			mes "アイテム（矢や銃弾）を";
-			mes "ドラッグアンドドロップし、";
-			mes "一緒に装備する必要がある。";
+			mes "Equipped items that use these items need to drag and drop items for long-range attacks (arrows and bullets) to the ^0000FF \"Equipped Item Window\"^000000 and equip them together.";
 			next;
 			mes "[Aldi]";
-			mes "もちろん、装備できるアイテムで";
-			mes "あれば、通常の装備アイテムも";
-			mes "装備ウィンドウの上まで";
-			mes "ドラッグアンドドロップすれば、";
-			mes "装備することができるぞ。";
+			mes "Of course, you can also equip normal equipment items by dragging and dropping them to the top of the equipment window, as long as they are items that can be equipped.";
 			next;
 			break;
 		case 2:
 			mes "[Aldi]";
-			mes "まずはフィールドに戦いに行く前に";
-			mes "^0000FFモンスター^000000について話そう。";
-			mes "^0000FFモンスター^000000にはいろいろな^0000FF種族、";
-			mes "大きさ、属性^000000があるぞ。";
+			mes "First let's talk about the ^0000FF monster ^000000 before we go fight in the field.";
+			mes "There are various ^0000FF races, sizes and attributes^0000FF of ^0000FF monsters^000000.";
 			next;
 			mes "[Aldi]";
-			mes "モンスターの^FF0000大きさ^000000は";
-			mes "^0000FF小型、中型、大型^000000に分かれている。";
-			mes "^FF0000属性^000000は^0000FF無属性、地属性、風属性、";
-			mes "水属性、火属性、毒属性、念属性、";
-			mes "不死属性、闇属性、聖属性^000000という";
-			mes "種類に分かれている。";
+			mes "The ^FF0000 size^000000 of monsters are divided into ^0000FF small, medium and large^000000.";
+			mes "The ^FF0000 attributes^000000 are divided into the following types: ^0000FF nonattribute, earth attribute, wind attribute, water attribute, fire attribute, poison attribute, ghost attribute, undead attribute, dark attribute, and holy attribute^000000.";
 			next;
 			mes "[Aldi]";
-			mes "通常の直接攻撃で";
-			mes "何の属性もなければ、";
-			mes "無属性での攻撃となるぞ。";
+			mes "If you don't have any attributes in a normal direct attack, you'll be attacked with no attributes.";
 			next;
 			mes "[Aldi]";
-			mes "^0000FF地、風、水、火^000000の属性同士の";
-			mes "関係性を示すとこうなる。";
-			mes "地は風に強く、";
-			mes "風は水に強く、";
-			mes "水は火に強く、";
-			mes "火は地に強い。";
+			mes "This is how the ^0000FF earth, wind, water, and fire ^000000 attributes relate to each other.";
+			mes "Earth is strong in wind, wind is strong in water, water is strong in fire, and fire is strong in earth.";
 			cutin "attribute_main4.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "また、基本 的には";
-			mes "^0000FF無属性、念属性^000000を除いて、";
-			mes "同じ属性では効果が";
-			mes "弱まる傾向があるぞ。";
+			mes "Also, basically, except for ^0000FF no attribute and ghost attribute ^000000, the same attribute tends to weaken the effect.";
 			next;
 			mes "[Aldi]";
-			mes "また、^0000FF毒、不死、闇、聖^000000では";
-			mes "毒は無属性以外の属性よりも弱く、";
-			mes "不死と聖、闇と聖は";
-			mes "互いに強みと弱みを持っている。";
+			mes "Also, with ^0000FF poison, undead, dark, and holy^000000, poison is weaker than all other attributes, and undead and holy, dark and holy have strengths and weaknesses against each other.";
 			cutin "attribute_stdk.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "また、^0000FF念属性^000000は^0000FF無属性^000000で攻撃が";
-			mes "難しいという特性がある。";
-			mes "念に一番効果があるのは念なのだ。";
-			mes "「念には念を！」という言葉が";
-			mes "あるだろう……。";
-			mes "ん？　意味が違うか……？";
+			mes "Also, the ^0000FFghost attribute ^000000 has the characteristic of being difficult to attack with the ^0000FFnon-attribute ^000000.";
+			mes "It is GHOST that is most effective against GHOST.";
+			mes "Ghost against GHOST!\" You know the saying: .......";
+			mes "Hmm?  Do you mean something different ......?";
 			cutin "attribute_nonen.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "まぁ、モンスターに合わせて、";
-			mes "武器や防具、スキルなどを";
-			mes "特性に合わせて変更すれば、";
-			mes "効果的な戦闘が行えるはずだ。";
+			mes "Well, if you change your weapons, armor, and skills to match the characteristics of the monster, you should be able to fight effectively.";
 			next;
 			break;
 		case 3:
 			mes "[Aldi]";
-			mes "^0000FFパーティー^000000について話そう。";
-			mes "一人で戦うよりも大勢で力を";
-			mes "合わせて戦うほうが";
-			mes "より多くの敵を倒しやすくなる。";
+			mes "Let's talk about ^0000FF party ^000000.";
+			mes "It is easier to defeat more enemies when many people fight together than when one fights alone.";
 			next;
 			mes "[Aldi]";
-			mes "冒険者同士で^0000FFパーティー^000000を組んで";
-			mes "戦うことは戦闘不能になるリスクを";
-			mes "回避することにもなるぞ！";
+			mes "Fighting in a ^0000FF party^000000 with other adventurers also avoids the risk of losing the battle!";
 			next;
 			mes "[Aldi]";
-			mes "^0000FFパーティー^000000はチャット入力欄に";
-			mes "「^FF0000/organize パーティーの名前^000000」と";
-			mes "入力すれば作ることができる。";
-			mes "パーティー名は自分の好きな名前を";
-			mes "つけることができるぞ！";
+			mes "A ^0000FF party^000000 can be created by typing \"^FF0000/organize party name^000000\" in the chat input field.";
+			mes "You can name the party anything you want!";
 			cutin "tra_pary_command.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "入力後に発言を行うと、";
-			mes "^0000FFパーティー設定ウィンドウ^000000が出現する。";
-			mes "アイテムの収集方式と";
-			mes "アイテム分配方式が選択できる。";
+			mes "When you make a statement after typing, the ^0000FF party setting window ^0000FF appears.";
+			mes "The item collection method and item distribution method can be selected.";
 			cutin "tra_pary_item.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "アイテムの収集方式に関しては";
-			mes "『^0000FFパーティー全体で共有^000000』を";
-			mes "選択したほうがいいだろう。";
-			mes "この設定を行うことでパーティーに";
-			mes "入っている人全員が敵が落とした";
-			mes "アイテムをすぐに拾うことができる！";
+			mes "As for the item collection method, it would be better to choose '^0000FF party-wide sharing^000000'.";
+			mes "This setting will allow everyone in the party to immediately pick up items dropped by enemies!";
 			next;
 			mes "[Aldi]";
-			mes "アイテムの分配方式は";
-			mes "一定確率で分配を選ぶことで";
-			mes "拾った人がアイテムを貰うのではなく、";
-			mes "パーティーを組んでいる全員が";
-			mes "公平にアイテムを貰うことが";
-			mes "できるようになる。";
+			mes "The method of distributing the items will be chosen with a certain probability of distribution, so that everyone in the party will get the items fairly, instead of the person who picked them up getting them.";
 			next;
 			mes "[Aldi]";
-			mes "^0000FFパーティー^000000設定では経験値の";
-			mes "分配方式も決めることができる。";
-			mes "一度アイテムについての設定を";
-			mes "終えたら、^FF0000Alt＋ Z^000000で表示される";
-			mes "パーティーウィンドウによって";
-			mes "パーティーの設定が可能だ。";
+			mes "The ^0000FF party ^000000 setting also determines the experience distribution method.";
+			mes "Once you have finished setting up your items, you can set up your party by means of the party window that appears with ^FF0000Alt + Z^000000.";
 			cutin "tra_pary_exp.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "パーティー設定は";
-			mes "パーティーウィンドウの";
-			mes "下の方にあるゴミ箱の";
-			mes "ようなマークの左に記載されている！";
+			mes "The party settings are listed to the left of the trashcan-like symbol at the bottom of the party window!";
 			cutin "tra_pary_window.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "経験値の分配方式設定での";
-			mes "公平に分配には注意が必要だ。";
-			mes "^FF0000レベル差が±15の範囲でのみ";
-			mes "公平設定ができる。^000000";
-			mes "レベル差が離れているときには";
-			mes "できないので注意が必要だぞ！";
+			mes "Be careful to distribute the experience fairly in the distribution method setting.";
+			mes "^FF0000 level difference can only be set to fair within a range of +/- 15. You need to be careful because you can't do it when ^000000 level difference is far apart!";
 			cutin "tra_pary_exp.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "設定がすんだら、";
-			mes "作成したパーティーに";
-			mes "加入してもらおう！";
-			mes "まず、相手のキャラクターに";
-			mes "カーソルをもっていき、";
-			mes "右クリックを押す。";
+			mes "When you're done setting up, let's get them to join the party we've created!";
+			mes "First, bring the cursor to the other character and press right click.";
 			next;
 			mes "[Aldi]";
-			mes "すると、選択メニューに";
-			mes "『^0000FF○○さんにパーティー加入要請^000000』";
-			mes "とでてくる。";
-			mes "それを選択して、";
-			mes "相手がパーティーの加入に";
-			mes "承諾すれば、パーティーが組める！";
+			mes "Then, in the selection menu, you will see '^0000FFXX requesting ^000000 to join the party^000000'.";
+			mes "If you select it and the other party agrees to join your party, you can form a party!";
 			cutin "tra_pary_exp.bmp", 255;
 			next;
 			mes "[Aldi]";
-			mes "パーティーの加入要請を出しても";
-			mes "相手の反応がなかった場合は、";
-			mes "すでに相手がパーティーに";
-			mes "加入していないか、";
-			mes "会話ウィンドウで確認しよう。";
+			mes "If you submit a request to join a party and the other party does not respond, check the conversation window to see if the other party has already joined the party.";
 			next;
 			mes "[Aldi]";
-			mes "すでにパーティーに";
-			mes "加入している場合は、";
-			mes "会話ウィンドウに";
-			mes "「他のパーティーに加入しています。」";
-			mes "とメッセージが表示されるぞ。";
+			mes "If they have already joined a party, the conversation window will say \"They have joined another party.\" and message will appear in the conversation window.";
 			next;
 			mes "[Aldi]";
-			mes "パーティーに加入していたら、";
-			mes "^FF0000Alt＋ Z^000000で表示される";
-			mes "パーティーウィンドウを";
-			mes "確認してもらう必要がある！";
+			mes "If you've joined a party, you need to have ^FF0000Alt + Z^000000 check the party window that appears!";
 			cutin "tra_pary_window.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "すでにパーティーに入っている";
-			mes "場合はパーティーウィンドウ内に";
-			mes "表示されている名前を右クリックして";
-			mes "『^FF0000脱退する^000000』を選んでもらおう！";
+			mes "If you are already in the party, right-click on the name displayed in the party window and have them select '^FF0000 leave ^000000'!";
 			cutin "tra_pary_window.bmp", 255;
 			next;
 			mes "[Aldi]";
-			mes "そうすれば、キミが作った";
-			mes "新しいパーティーに";
-			mes "加入させることができる！";
+			mes "Then you can let them join the new party you've created!";
 			next;
 			mes "[Aldi]";
-			mes "パーティーは^FF0000最大で12人^000000まで";
-			mes "加入できる。";
-			mes "多人数でモンスターに";
-			mes "立ち向かえば、いろいろな場所へ";
-			mes "行くことができるぞ！";
+			mes "A party can have ^FF0000 maximum of 12 ^000000 members.";
+			mes "You can go to many places if you have a large number of people to face the monsters!";
 			next;
 			break;
 		}
 		return;
 	}
 
-	function	HOWTO_MAKEMONEY	{
+	function HOWTO_MAKEMONEY {
 		mes "[Aldi]";
-		mes "お金の稼ぎ方の何について";
-		mes "聞きたいんだい？";
+		mes "What do you want to ask me about how to make money?";
 		next;
-		switch(select("収集アイテムについて","お金を手に入れる方法について","冒険者へのアイテムの売り方について","他のことを聞く")){
+		switch(select("about collectibles", "about how to get money", "about how to sell items to adventurers", "about other things")){
 		case 1:
 			mes "[Aldi]";
-			mes "モンスターが落とすアイテムは";
-			mes "消耗品や武器や防具などの装備品、";
-			mes "収集品など、様々なものが存在する。";
+			mes "There are a variety of items that monsters drop, including consumables, equipment such as weapons and armor, and collectibles.";
 			next;
 			mes "[Aldi]";
-			mes "モンスターの収集品の中には";
-			mes "駆け出しの冒険者でも集めやすく、";
-			mes "高く売れるものがあるぞ。";
-			mes "ポリンやドロップスから収集できる";
-			mes "『^FF0000空きビン^000000』だ。";
+			mes "Some monster collectibles are easy for even a novice adventurer to collect and can be sold for a high price.";
+			mes "It's the '^FF0000 empty bottles^000000' that can be collected from Poring and Drops.";
 			next;
 			mes "[Aldi]";
-			mes "ただ、この『^FF0000空きビン^000000』は道具屋に";
-			mes "売ってもたいしたお金^0000FF（Zeny）^000000には";
-			mes "ならない。";
-			mes "^0000FF同じ冒険者に売ることで";
-			mes "多くのお金^0000FF（Zeny）^000000を手に入れることが";
-			mes "できるぞ。^000000";
+			mes "However, this '^FF0000 empty bottles^000000' will not make much money^0000FF (Zeny)^000000 when sold to a tool shop.";
+			mes "You can get a lot of money ^0000FF (Zeny)^000000 by selling it to the same adventurer. ^000000";
 			next;
 			break;
 		case 2:
 			mes "[Aldi]";
-			mes "お金^0000FF（Zeny）^000000を手に入れる方法は";
-			mes "幾つもあるが、";
-			mes "多くの冒険者の収入源は";
-			mes "手に入れたアイテムを売ることだ。";
+			mes "There are several ways to get money ^0000FF (Zeny) ^000000, but the source of income for many adventurers is selling the items they acquire.";
 			next;
 			mes "[Aldi]";
-			mes "冒険者アカデミー内では";
-			mes "^0000FF教室棟ホール^000000に武器や防具、";
-			mes "消耗品といったアイテムを";
-			mes "買い取ってくれる道具屋の";
-			mes "人達がいるので、そこで手に";
-			mes "入れたアイテムを売るといい。";
+			mes "In the Adventurer Academy, in the ^0000FFClassroom Hall^000000, there are toolmakers who will buy items such as weapons, armor, and supplies, and you can sell the items you acquire there.";
 			next;
 			mes "[Aldi]";
-			mes "アイテムはモンスターを倒すことや、";
-			mes "クエストを行うことでも";
-			mes "手に入れることができる。";
+			mes "Items can also be obtained by defeating monsters or by doing quests.";
 			next;
 			mes "[Aldi]";
-			mes "ただ、カードなどのアイテムは";
-			mes "戦闘が有利になる様々な効果が";
-			mes "ついていて、非常に貴重な";
-			mes "アイテムだから、道具屋等では";
-			mes "売らない方がいい。";
+			mes "However, items such as cards should not be sold at tool shops, etc., because they have various effects that can give you an advantage in battle and are very valuable items.";
 			next;
 			mes "[Aldi]";
-			mes "自分が利用しないカードであれば、";
-			mes "^0000FF他の冒険者に売る^000000ことで";
-			mes "多くのお金^0000FF（Zeny）^000000を手に入れることが";
-			mes "できるはずだ。";
+			mes "If the card is not used by you, you should be able to get a lot of money ^0000FF (Zeny)^000000 by selling it ^0000FF to other adventurers.";
 			next;
 			break;
 		case 3:
 			while(1){
 				mes "[Aldi]";
-				mes "それじゃ、手に入れたアイテムの";
-				mes "売り方について話をしよう。";
-				mes "冒険者同士で売り買いしたほうが";
-				mes "お店よりも得をすることが多いぞ。";
+				mes "Then let's talk about how to sell the items we got.";
+				mes "You'll often get more for your money if you sell and buy from other adventurers than you would from a store.";
 				next;
 				mes "[Aldi]";
-				mes "収集した^FF0000アイテムを";
-				mes "他の冒険者に売る^000000には";
-				mes "主に2つの手段がある。";
-				mes "^0000FF露店^000000と^0000FFチャットルーム^000000だ。";
+				mes "There are two main ways to sell ^FF0000 items you collect to other adventurers.";
+				mes "The ^0000FF stall^000000 and the ^0000FF chat room^000000.";
 				next;
 				mes "[Aldi]";
-				mes "^0000FF露店^000000を開くにはある程度JobLvが";
-				mes "必要だ。また、露店が使用できる";
-				mes "職業も限定されている。";
-				mes "なので、今の君でもできる";
-				mes "チャットルームでの取引の仕方を";
-				mes "今から教えよう。";
+				mes "You need some JobLv to open ^0000FF stall^000000. Also, the professions that can use the stall are limited.";
+				mes "So I'll teach you now how to trade in the chat room, which even you can do now.";
 				next;
 				mes "[Aldi]";
-				mes "^0000FFチャットルーム^000000は^0000FF露店^000000と違い、";
-				mes "看板を出して冒険者を待つ事が";
-				mes "できる機能だ。";
-				mes "これを利用して他の冒険者と";
-				mes "会話で取引時の交渉が行える。";
+				mes "The ^0000FF chat room ^0000FF chat room ^0000FF stall ^0000FF is a feature that, unlike the ^0000FF stall ^0000FF, allows you to put up a Signboard and wait for adventurers.";
+				mes "This can be used to negotiate with other adventurers in conversation when trading.";
 				next;
 				mes "[Aldi]";
-				mes "まずは、自分が売ろうとしている";
-				mes "アイテムがどれぐらいの値段で";
-				mes "取引されているのか";
-				mes "情報収集をする必要がある。";
+				mes "First, you need to gather information about the price at which the item you are trying to sell is being traded.";
 				next;
 				mes "[Aldi]";
-				mes "なぁに、そう構えなくていい。";
-				mes "情報収集といってもやり方は簡単だ。";
-				mes "^0000FF露店^000000を開いている冒険者の";
-				mes "お店で大体の予想を";
-				mes "つければいいんだ。";
+				mes "Hey, you don't have to be so uptight.";
+				mes "It's easy to gather information.";
+				mes "You can get a general idea of what to expect at the stores of adventurers who have ^0000FF stalls^000000.";
 				next;
 				mes "[Aldi]";
-				mes "^0000FF露店中の冒険者^000000はこのように";
-				mes "Zのマークの袋の看板を出している。";
-				mes "その^FF0000看板をダブルクリック^000000すると、";
-				mes "冒険者が売っているアイテムを";
-				mes "見ることができるぞ。";
+				mes "^0000FF Adventurers ^000000 during the stall ^000000 are putting out a Signboard of bags marked with a Z like this.";
+				mes "Double-click^000000 on that ^FF0000Signboard^000000 to see what items the adventurer is selling!";
 				cutin "tra_stall.bmp", 2;
 				next;
 				mes "[Aldi]";
-				mes "こうして^0000FF露店^000000を見て回れば、";
-				mes "自分の売りたいアイテムの";
-				mes "相場が大体つかめてくるはずだ。";
+				mes "If you look around ^0000FF stalls^000000 in this way, you should be able to get a rough idea of the market price for the items you want to sell.";
 				cutin "tra_stall_price.bmp", 2;
 				next;
 				mes "[Aldi]";
-				mes "もしどうしても見つからない、";
-				mes "価格がどうしてもわからない場合は、";
-				mes "ちょっと勇気が必要だが";
-				mes "近くの冒険者に聞いてみるのも";
-				mes "いいかもしれないな。";
+				mes "If you just can't find it, or you just can't figure out the price, you might want to ask a nearby adventurer, although it takes a bit of courage.";
 				next;
 				mes "[Aldi]";
-				mes "ただ、安易に聞くのはいただけない。";
-				mes "まずは自分で調べる努力をしてから。";
-				mes "人に聞くのは最後の手段";
-				mes "だということを忘れるなよ。";
+				mes "Just don't ask too easily.";
+				mes "Make the effort to find out for yourself first.";
+				mes "Remember that asking people is a last resort.";
 				next;
 				cutin "tra_choom_create.bmp", 2;
 				mes "[Aldi]";
-				mes "売りたいアイテムの相場が";
-				mes "大体わかったら";
-				mes "チャットルームの出番だ。";
-				mes "^FF0000Alt＋ C^000000を押せばチャットルームを";
-				mes "作成することができる。";
+				mes "Once you have a general idea of the market price of the item you want to sell, the chat room comes into play.";
+				mes "You can create a chat room by pressing ^FF0000Alt+ C^000000.";
 				next;
 				mes "[Aldi]";
-				mes "^FF0000Title欄に売りたい商品名と";
-				mes "値段を書いてOKボ タンを押そう。^000000";
-				mes "例えば空きビン10個売りたい場合は";
-				mes "こうやって書こう。";
+				mes "^FF0000Write the name and price of the item you want to sell in the Title field and press the OK button. ^000000For example, if you want to sell 10 empty bottles, you can write like this.";
 				next;
 				mes "[Aldi]";
-				mes "Title欄の内容を話をしよう。";
-				mes "『^0000FF売り^000000』とは売りますという意味だ。";
-				mes "次に^0000FF売りたいアイテム名^000000、";
-				mes "このとき^0000FF値段を書いておけば親切^000000だ。";
-				mes "『^FF0000z^000000』はZeny、つまりお金のこと。";
+				mes "Let's talk about the contents of the Title field.";
+				mes "'^0000FF sale^000000' means sell.";
+				mes "Next ^0000FF the name of the item you want to sell^000000, and at this time it would be kind if you wrote the price.";
+				mes "'^FF0000z^000000' means Zeny, or money.";
 				next;
 				mes "[Aldi]";
-				mes "最後に個数を入れれば、";
-				mes "わかりやすくなるぞ。";
-				mes "多くの冒険者は売りたいアイテムの";
-				mes "個数を示す為に『^0000FF＠^000000』をつける。";
-				mes "『^0000FF＠^000000』を個数の前につけておけば、";
-				mes "わかりやすくなるだろう。";
+				mes "Put the number of pieces at the end for clarity.";
+				mes "Many adventurers add '^0000FF@^000000' to indicate the number of items they want to sell.";
+				mes "Putting '^0000FF@^000000' before the number of pieces will make it easier to understand.";
 				next;
 				mes "[Aldi]";
-				mes "^0000FFLimit^000000はチャットルームに";
-				mes "入れる人数だ。";
-				mes "自分を含めての数になる為、";
-				mes "^FF00002^000000名にしておけば、より良いだろう。";
+				mes "^0000FFLimit^000000 is the number of people that can be in the chat room.";
+				mes "It would be better if you set ^FF00002^000000 names, since the number includes yourself.";
 				next;
 				mes "[Aldi]";
-				mes "チャットルーム作成の";
-				mes "ウィンドウが出ない場合は";
-				mes "^0000FF基本 情報ウィンドウ^000000の";
-				mes "^000000comm^000000ボ タンでも出すことができるぞ。";
+				mes "If you don't get the chat room creation window, you can also use the ^000000comm^000000 button in the ^0000FF Basic Info Window^000000.";
 				next;
 				cutin "tra_chatroom_enter.bmp", 2;
 				mes "[Aldi]";
-				mes "しばらく、待ってみて冒険者が";
-				mes "入ってきたら、挨拶をしてみよう。";
-				mes "まずは取り引き数について";
-				mes "確認して交渉をまとめるといいぞ。";
+				mes "Let's wait a while and see if any adventurers come in and say hello.";
+				mes "You might want to check with them first about the number of deals and wrap up negotiations.";
 				next;
 				mes "[Aldi]";
-				mes "チャットルーム内での会話は";
-				mes "周りには聞こえないから、";
-				mes "沢山話しても迷惑にはならない。";
-				mes "交渉がまとまったら、";
-				mes "チャットルームを閉じよう。";
+				mes "People can't hear you talking in the chat room, so it won't bother you if you talk a lot.";
+				mes "Once the negotiations are settled, we'll close the chat room.";
 				next;
 				mes "[Aldi]";
-				mes "チャットルームはウィンドウの右上に";
-				mes "表示されている『^0000FF×^000000』を";
-				mes "左クリックするか、";
-				mes "『^0000FF/q^000000』と発言して閉じることができる。";
+				mes "The chat room can be closed by left-clicking on '^0000FF x ^000000' in the upper right corner of the window or by saying '^0000FF/q^000000'.";
 				next;
 				mes "[Aldi]";
-				mes "ウィンドウを閉じたら、";
-				mes "取り引きを行おう。";
-				mes "アイテムとZenyを交換するには";
-				mes "トレードウィンドウを使用する。";
+				mes "Once the window is closed, let's do the deal.";
+				mes "Use the trade window to exchange Zeny for items.";
 				cutin "tra_tradewindow.bmp", 2;
 				next;
 				mes "[Aldi]";
-				mes "トレードウィンドウは相手を";
-				mes "右クリックしたときにでてくる";
-				mes "メニューから、";
-				mes "『^0000FF○○さんに取り引き要請^000000』を";
-				mes "選択する。";
-				mes "○○は^FF0000相手の名前^000000だ。";
+				mes "The trade window is the menu that comes up when you right-click on the other person and select '^0000FFXXX request a deal^000000'.";
+				mes "XXX is ^FF0000 the name of the other party^000000.";
 				next;
 				mes "[Aldi]";
-				mes "相手が取り引きを承諾すれば、";
-				mes "トレードウィンドウが表示される。";
-				mes "^0000FFTrade ： の右に相手の名前が";
-				mes "表示されていることを確認しよう。^000000";
-				mes "間違った人に渡すわけには";
-				mes "いかないからな。";
+				mes "If the other party accepts the deal, the trade window will appear.";
+				mes "Make sure the other party's name appears to the right of ^0000FFTrade:. We can't give ^000000 to the wrong person.";
 				next;
 				mes "[Aldi]";
-				mes "このウィンドウにアイテムを";
-				mes "持ってくれば、トレードウィンドウに";
-				mes "入れることができる。";
-				mes "アイテムウィンドウは^FF0000Alt＋ E^000000だ。";
+				mes "If you bring the item to this window, you can put it in the trade window.";
+				mes "The item window is ^FF0000Alt+ E^000000.";
 				next;
 				mes "[Aldi]";
-				mes "取り引き内容に間違いがなければ";
-				mes "『^0000FFOK^000000』を押す。";
-				mes "取り引き相手が『^0000FFOK^000000』を押せば、";
-				mes "中央の『^0000FFTrade^000000』が押せるようになる。";
-				mes "最後に『^0000FFTrade^000000』を押せば、";
-				mes "取り引き完了だ！";
+				mes "If the transaction is correct, press '^0000FFOK^000000'.";
+				mes "If the deal partner presses '^0000FFOK^000000', the center '^0000FFTrade^000000' can be pressed.";
+				mes "Finally, press '^0000FFTrade^000000' and the deal is done!";
 				next;
 				cutin "tra_tradewindow.bmp", 255;
 				mes "[Aldi]";
-				mes "冒険者同士でのアイテムの";
-				mes "売り買いはわかったかな。";
-				mes "わからなかったら、もう一度話すが";
-				mes "どうする？";
+				mes "Have you figured out how to buy and sell items between adventurers?";
+				mes "If you don't understand, I'll tell you again, what do you want to do?";
 				next;
-				if(select("わかったので大丈夫","わからなかった")==1) break;
+				if(select("I understood, so it's ok", "I didn't understand")==1) break;
 				mes "[Aldi]";
-				mes "それじゃあ、もう一度話そう。";
+				mes "Then let's talk again.";
 				next;
 			}
 			break;
@@ -3007,131 +2263,89 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 		return;
 	}
 
-	function	ABOUT_CARD	{
+	function ABOUT_CARD {
 		while(1){
 			mes "[Aldi]";
-			mes "希少価値の高いアイテム、";
-			mes "カードについて";
-			mes "話そう！";
+			mes "Let's talk about rare and valuable items and cards!";
 			next;
 			mes "[Aldi]";
-			mes "収集品の中には希少価値が";
-			mes "高いものがある。";
-			mes "それが、^FF0000モンスターが落とすカード^000000だ。";
-			mes "モンスターの種類によるが、";
-			mes "カードによってはとてつもなく";
-			mes "高い値段がついているものもあるぞ。";
+			mes "Some collectibles are rare and valuable.";
+			mes "That's the ^FF0000 card^000000 that monsters drop.";
+			mes "Depending on the type of monster, some cards have tremendously high prices!";
 			next;
 			mes "[Aldi]";
-			mes "^0000FFカード^000000は^0000FFスロット^000000つきの装備品に";
-			mes "装着して使用する。";
-			mes "^FF0000一度装着するとカードは";
-			mes "取り外せなくなるので、";
-			mes "注意が必要だ。^000000";
+			mes "The ^0000FF card^000000 is used by attaching it to equipment with a ^0000FF slot^000000.";
+			mes "^FF0000Once attached, the card cannot be removed. ^000000";
 			next;
 			mes "[Aldi]";
-			mes "^FF0000カード^000000には特殊効果があり、";
-			mes "装備品にその効果を";
-			mes "つけることができるため、";
-			mes "非常に強力だぞ！";
+			mes "^FF0000The card ^000000 has special effects and you can attach its effects to your equipment, making it very powerful!";
 			next;
 			mes "[Aldi]";
-			mes "^0000FFスロットがついている装備品^000000は";
-			mes "装備品を右クリックすると、";
-			mes "説明の下に四角い枠が出てくる。";
-			mes "この四角い枠一つ一つにカードを";
-			mes "つけることができる。";
+			mes "For equipment ^0000FF slotted ^000000, right click on the equipment and a square frame will appear below the description.";
+			mes "You can attach a card to each of these square frames.";
 			cutin "tra_slot_weapon.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "また、お店で売っている";
-			mes "装備アイテムより、";
-			mes "モンスターから収集できる装備品は";
-			mes "同じ名前の装備品でもスロット数が";
-			mes "多いことがあるぞ！";
+			mes "Also, equipment items that can be collected from monsters may have more slots than equipment items sold in stores, even if they have the same name!";
 			next;
 			mes "[Aldi]";
-			mes "そういったスロット数が多い装備品は";
-			mes "冒険者の間で高値で";
-			mes "取り引きされることが多い。";
-			mes "お店に売る前に装備品の価値を";
-			mes "調べて取り引きしたほうがいいぞ。";
+			mes "Equipment with a large number of slots like that is often traded for a high price among adventurers.";
+			mes "You should check the value of your equipment before selling it to a store to make a deal.";
 			next;
 			mes "[Aldi]";
-			mes "カードについては";
-			mes "わかったかい？";
+			mes "Did you figure out about the cards?";
 			cutin "tra_slot_weapon.bmp", 255;
 			next;
-			if(select("わかったので大丈夫","わからなかった")==1) break;
+			if(select("I got it, so it's ok", "I didn't get it")==1) break;
 			mes "[Aldi]";
-			mes "それじゃあ、もう一度話そう。";
+			mes "Then let's talk again.";
 			next;
 		}
 		return;
 	}
 
-	function	ABOUT_WORLDMAP	{
+	function ABOUT_WORLDMAP {
 		while(1){
 			mes "[Aldi]";
-			mes "Midoガルド大陸がある世界地図を";
-			mes "見てみよう。";
-			mes "これがLuneMidoガッツ王国を";
-			mes "始め、主要な諸国が隣接している";
-			mes "^0000FFMidoガルド大陸^000000だ。";
+			mes "Let's look at a world map with the MidoGordo continent.";
+			mes "This is the ^0000FFMidoGordo continent^000000 where the Kingdom of Rune-Midgarts and other major countries are adjacent.";
 			cutin "world_map_001.bmp", 3;
 			next;
 			mes "[Aldi]";
-			mes "世界地図に関して便利な機能を";
-			mes "教えておこう。";
-			mes "^0000FFAlt+.(ドット)^000000を押すと、";
-			mes "ワールドマップが表示できる。";
+			mes "I'll tell you a useful feature regarding the world map.";
+			mes "^0000FFAlt+. (dot)^000000 to display the world map.";
 			cutin "jp_quest_help06.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "ワールドマップでは";
-			mes "^0000FF自分の位置^000000や、";
+			mes "In the world map, you can see ^0000FF your position ^000000 and ";
 			cutin "jp_quest_help07.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "ワールドマップでは";
-			mes "^0000FF自分の位置^000000や、";
-			mes "^0000FFパーティーメンバー^000000の位置が";
-			mes "確認できる。";
+			mes "On the world map, you can see ^0000FF your position ^0000FF and the positions of ^0000FF party members ^0000FF.";
 			cutin "jp_quest_help08.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "この画面では^0000FFマウスのカーソルを";
-			mes "移動する^000000ことで、どんな場所か";
-			mes "確認できるんだ。";
+			mes "In this screen, you can check what kind of location by moving the ^0000FF mouse cursor ^000000.";
 			cutin "jp_quest_help09.bmp", 2;
 			next;
 			mes "[Aldi]";
-			mes "エー、コホンッ。";
-			mes "この^0000FFワールドマップ^000000には";
-			mes "^0000FF冒険者アカデミー^000000は";
-			mes "表示はされないぞ。";
-			mes "冒険者アカデミーは";
-			mes "秘密の場所にあるんだ。";
+			mes "Ehh, cohonk.";
+			mes "You won't see ^0000FF Adventurer Academy^0000FF on this ^0000FF world map^0000FF.";
+			mes "The Adventurer Academy is in a secret location.";
 			cutin "jp_quest_help09.bmp", 255;
 			next;
 			mes "[Aldi]";
-			mes "^0000FF冒険者アカデミー^000000には";
-			mes "LuneMidoガッツ王国の";
-			mes "^0000FFProntera、Izlude、Alberta、";
-			mes "Payon、Morroc^000000から";
-			mes "転送してもらうことができるぞ。";
+			mes "You can get transferred to the ^0000FF Adventurers Academy ^000000 from ^0000FFProntera, Izlude, Alberta, Payon, Morroc^000000 in the Kingdom of Rune-Midgarts.";
 			next;
 			mes "[Aldi]";
-			mes "さあ、覚えたかな？";
-			mes "ワールドマップの表示は";
-			mes "^0000FFAlt+.(ドット)^000000だ。";
-			mes "わからなかったら、もう一度話すが";
-			mes "どうする？";
+			mes "Now, do you remember?";
+			mes "The world map displays ^0000FFAlt+. (dot)^000000.";
+			mes "If you don't understand, I'll tell you again, what do you want?";
 			cutin "jp_quest_help06.bmp", 2;
 			next;
-			if(select("わかった","わからなかった")==1) break;
+			if(select("got it", "didn't get it")==1) break;
 			mes "[Aldi]";
-			mes "それじゃあ、もう一度話そう。";
+			mes "Then let's talk again.";
 			next;
 		}
 		cutin "jp_quest_help06.bmp", 255;
@@ -3139,15 +2353,14 @@ ac_cl_room.gat,57,46,2	script	Aldi#ac_room	751,{
 	}
 }
 
-//Fay
-ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
+//Faye
+ac_cl_room.gat,44,65,4	script	Faye#ac_room	828,6,6,{
 	if(AC_PASSPORT<2){
-		mes "[Fay]";
-		mes "ん？";
-		mes "入学希望者みたいだな。";
-		mes "そこで受付をすれば、";
-		mes "入学できるぜ。";
-		mes "冒険者アカデミーへようこそ。";
+		mes "[Faye]";
+		mes "Hmm?";
+		mes "Looks like a prospective student.";
+		mes "You can enroll if you register there, you know.";
+		mes "Welcome to the Adventurer Academy.";
 		close;
 	}
 	function ABOUT_JOB;
@@ -3158,107 +2371,88 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 		if(AC_NOVICE_QUE){
 			if('@novice) {
 				if(AC_NOVICE_QUE>30){
-					mes "[Fay]";
-					mes "よう！";
-					mes "最近^0000FFLuneの仕事^000000は";
-					mes "手伝ってるかい？";
-					mes "まあ、2次職について";
-					mes "聞きたいことがあったら、";
-					mes "俺に聞いてくれ。";
+					mes "[Faye]";
+					mes "Yo!";
+					mes "Have you been helping ^0000FFLune work ^000000 lately?";
+					mes "Well, if you have any questions about the second job, just ask me.";
 				} else {
-					mes "[Fay]";
-					mes "よう！";
-					mes "調子よさそうだな。";
-					mes "2次職について";
-					mes "また聞きたくなったのかい？";
+					mes "[Faye]";
+					mes "Yo!";
+					mes "You're looking good.";
+					mes "Did you want to ask me again about the second job?";
 				}
 			} else {
-				mes "[Fay]";
-				mes "2次職について";
-				mes "もう一度聞きたいなら、";
-				mes "説明するぜ。";
-				mes "2次職について聞くかい？";
+				mes "[Faye]";
+				mes "If you want to hear about the second job again, I'll explain it to you.";
+				mes "Do you want to hear about the second job?";
 			}
 		} else {
-			mes "[Fay]";
-			mes "あまり見ない顔だけど、";
-			mes "キミにはただならぬものを";
-			mes "感じるな。";
-			mes "何か聞くことがあるかい？";
+			mes "[Faye]";
+			mes "You don't look like much, but I sense something special about you.";
+			mes "What can I ask you?";
 		}
 		next;
 		if(AC_NOVICE_QUE>30){
-			set '@sel, select("2次職について聞く","Luneの仕事について聞く","聞くことはない");
+			set '@sel, select("Ask about 2nd job", "Ask about Lune job", "Nothing to ask");
 		} else {
-			set '@sel, select("2次職について聞く","聞くことはない");
+			set '@sel, select("Ask about the second job", "Nothing to ask");
 			if('@sel==2) set '@sel,3;
 		}
 		switch('@sel){
 		case 1:
 			ABOUT_JOB;
 		case 3:
-			mes "[Fay]";
-			mes "そうか、また知りたくなったら、";
-			mes "いつでも聞きにきてくれ。";
-			mes "喜んで話すぜ。";
+			mes "[Faye]";
+			mes "Well, if you want to know more, you can always come back and ask me.";
+			mes "I'll be happy to talk to you.";
 			close;
 		case 2:
-			mes "[Fay]";
-			mes "よし！";
-			mes "^FF0000Lune^000000のことだな。";
-			mes "Luneは仕事を手伝ってくれる人を";
-			mes "探してるぞ。";
-			mes "キミのようにしっかりしている";
-			mes "冒険者なら、助けになるはずだ。";
+			mes "[Faye]";
+			mes "Okay!";
+			mes "You mean ^FF0000Lune^000000.";
+			mes "Lune is looking for someone to help him with his work.";
+			mes "A solid adventurer like you should be able to help.";
 			next;
-			mes "[Fay]";
-			mes "この部屋を出たら、";
-			mes "^0000FFピンク色の髪をした女性^000000に";
-			mes "話しかけてみるといい。";
-			mes "キミの成長の手助けになるはずだ。";
+			mes "[Faye]";
+			mes "When you leave this room, talk to the ^0000FF pink-haired Woman^000000.";
+			mes "She should be able to help you grow.";
 			close;
 		}
 	}
 	if(AC_NOVICE_QUE<10){
-		mes "[Fay]";
-		mes "入学を済ませたみたいだな。";
-		mes "まずはそこにいる^0000FFプロン^000000から、";
-		mes "話を聞いてみてくれ。";
+		mes "[Faye]";
+		mes "Looks like you've completed enrollment.";
+		mes "First, you need to talk to ^0000FFPuron^000000 there.";
 		close;
 	}
 	if(AC_NOVICE_QUE<20){
-		mes "[Fay]";
-		mes "プロンの講習を終えたみたいだな。";
-		mes "次は^0000FFAldi^000000が役立つ情報を";
-		mes "教えてくれるぞ。";
+		mes "[Faye]";
+		mes "Looks like you've finished your Puron training.";
+		mes "Next, ^0000FFAldi^000000 is going to give you some useful information.";
 		close;
 	}
 	if(AC_NOVICE_QUE<30){
-		mes "[Fay]";
-		mes "Aldiの講習が終わったようだな！";
-		mes "もうすこしで、転職の準備が";
-		mes "整うところまできたな。";
-		mes "あとは覚悟さえあれば、";
-		mes "転職することが出来るだろうな。";
+		mes "[Faye]";
+		mes "Looks like Aldi's training is over!";
+		mes "You're almost ready for your new job.";
+		mes "Now all you need to do is to be ready and you'll be able to change jobs.";
 		next;
-		mes "[Fay]";
-		mes "何の職業に転職するか、";
-		mes "決めたかい？";
+		mes "[Faye]";
+		mes "Have you decided what profession you want to change to?";
 		next;
-		switch(select("転職する職業は決めた","上位職について聞いておく")){
+		switch(select("I've decided which occupation to change", "I'll ask about higher level jobs")){
 		case 1:
-			mes "[Fay]";
-			mes "すでに転職する職業を";
-			mes "決めていたようだな。";
+			mes "[Faye]";
+			mes "Looks like you've already decided what profession you're going to change to.";
 			break;
 		case 2:
 			ABOUT_JOB;
-			mes "[Fay]";
-			mes "よし、これで講習も最後だ。";
+			mes "[Faye]";
+			mes "Okay, that's the last of the training.";
 		}
 		if(AC_NOVICE_QUE<21){
 			if (JobLevel<10 || BaseLevel<10) {
-				mes "お祝いをしよう！";
+				mes "Let's celebrate!";
 				if(checkre()) {
 					if (BaseLevel<9) getexp 21,0;
 					if (JobLevel<9) getexp 0,56;
@@ -3276,153 +2470,116 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 		}
 		next;
 		if(AC_NOVICE_QUE==21){
-			mes "[Fay]";
-			mes "最後にこれを渡しておくぜ！";
+			mes "[Faye]";
+			mes "I'll give you this last one!";
 			next;
 		} else {
-			mes "[Fay]";
-			mes "荷物は減らしたかい？";
+			mes "[Faye]";
+			mes "Have you reduced your luggage?";
 			next;
-			if(select("減らしてきた","減らしてない")==2){
-				mes "[Fay]";
-				mes "荷物を減らさないと";
-				mes "渡せないぜ。";
+			if(select("I have reduced", "I have not reduced")==2){
+				mes "[Faye]";
+				mes "I can't give it to you if you don't reduce your luggage, man.";
 				close;
 			}
 		}
 		set AC_NOVICE_QUE, 22;
 		if(checkitemblank() < 2){
-			mes "^FF0000＜警告＞^000000";
-			mes "‐所持アイテムの種類数が多い為";
-			mes "　アイテムを受けとることが";
-			mes "　できません‐";
-			mes "‐所持アイテムを減らしてから、";
-			mes "　再度話しかけてください‐";
+			mes "^FF0000<WARNING>^000000-You cannot receive items due to the number of different items in your possession-";
+			mes "-Please reduce the number of items in your possession and talk to us again-";
 			close;
 		} else
 		if(Weight>(MaxWeight/100)*90){
-			mes "^FF0000＜警告＞^000000";
-			mes "‐所持アイテムの重量が多い為";
-			mes "　アイテムを受けとることが";
-			mes "　できません‐";
-			mes "‐所持アイテムを減らしてから、";
-			mes "　再度話しかけてください‐";
+			mes "^FF0000<WARNING>^000000-You will not be able to receive the item due to the high weight of the item you are carrying-";
+			mes "-Please reduce the number of items in your possession and then speak to me again-";
 			close;
 		}
 		set AC_NOVICE_QUE, 23;
 		getitem 569, 150;
 		getitem 602, 3;
 		emotion 46,"";
-		mes "[Fay]";
-		mes "冒険者の必需品、ワープアイテムだ！";
-		mes "この^0000FF蝶の羽^000000は^0000FF位置をセーブ^000000した所へ";
-		mes "瞬時にワープすることができる。";
-		mes "これがあれば、危険な場所に";
-		mes "迷い込んでも安心だ。";
-		mes "回復アイテムも渡しておくぜ。";
+		mes "[Faye]";
+		mes "It's a warp item, a necessity for adventurers!";
+		mes "This ^0000FF butterfly wing ^0000FF can instantly warp to the ^0000FF location where you saved ^0000FF.";
+		mes "With this, you can rest easy even if you wander into dangerous places.";
+		mes "I'll give you some recovery items too.";
 		next;
-		mes "[Fay]";
-		mes "今は冒険者アカデミーに";
-		mes "^0000FF位置をセーブ^000000しているから、";
-		mes "迷っちまったら、^FF0000蝶の羽^000000を";
-		mes "使って戻ってくるといいぜ。";
+		mes "[Faye]";
+		mes "I've saved ^0000FF location ^000000 in the Adventurer's Academy now, so if you get lost, use ^FF0000 butterfly wings ^000000 to come back.";
 		next;
 		chgquest 100120,201045;
 	} else {
 		if(Job==Job_Novice){
 			if(CHANGE_TK || CHANGE_SNV){
-				emotion 21;
-				mes "[Fay]";
-				mes "おっ！";
-				mes "転職がんばってる";
-				mes "みたいだな。";
-				mes "BaseLvを上げるなら、";
-				mes "もう一度話すぜ、";
-				mes "聞くかい？";
+				EMOTION 21;
+				mes "[Faye]";
+				mes "Whoa!";
+				mes "Looks like you're doing a great job changing jobs.";
+				mes "If you want to raise your BaseLv, I'll talk to you again, hear?";
 				next;
-				set '@sel, select("BaseLvを上げたい","1次転職したい","2次職について聞く","基礎ブックがほしい","聞くことはない");
+				set '@sel, select("I want to raise my BaseLv", "I want to change my 1st job", "Ask about my 2nd job", "I want a basic book", "Nothing to ask");
 			} else
 			if(CHANGE_GS || CHANGE_NJ){
-				emotion 21;
-				mes "[Fay]";
-				mes "おっ！";
-				mes "転職がんばってる";
-				mes "みたいだな。";
-				mes "他の街に行くなら、";
-				mes "もう一度話すぜ、";
-				mes "聞くかい？";
+				EMOTION 21;
+				mes "[Faye]";
+				mes "Whoa!";
+				mes "Looks like you're doing a great job changing jobs.";
+				mes "If you go to another city, I'll talk to you again, hear?";
 				next;
-				set '@sel, select("転送サービスについて聞く","1次転職したい","2次職について聞く","基礎ブックがほしい","聞くことはない");
+				set '@sel, select("Ask about transfer service", "I want to change my 1st job", "Ask about 2nd job", "I want a basic book", "Nothing to ask");
 			} else {
-				mes "[Fay]";
-				mes "1次転職したいなら、";
-				mes "もう一度説明するぜ、";
-				mes "聞くかい？";
+				mes "[Faye]";
+				mes "If you want to change to the first job, I'll explain it to you again, do you want to hear it?";
 				next;
-				set '@sel, select("1次転職したい","2次職について聞く","基礎ブックがほしい","聞くことはない")+1;
+				set '@sel, select("I want to change to the first job", "Ask about the second job", "I want the basic book", "Nothing to ask")+1;
 			}
 		} else {
-			mes "[Fay]";
-			mes "2次職について";
-			mes "もう一度聞きたいなら、";
-			mes "説明するぜ。";
-			mes "2次職について聞くかい？";
+			mes "[Faye]";
+			mes "If you want to ask me again about the second job, I'll explain it to you.";
+			mes "Do you want to hear about the second job?";
 			next;
-			set '@sel, select("2次職について聞く","基礎ブックがほしい","聞くことはない")+2;
+			set '@sel, select("Ask about the second job", "I want the basic book", "Don't ask")+2;
 		}
 		switch('@sel){
 		case 1:
 			if(CHANGE_TK || CHANGE_SNV){
-				mes "[Fay]";
-				mes "よし！";
-				mes "BaseLvを上げたいんだな。";
-				mes "成長したいなら、実戦を";
-				mes "積むことが大切だ。";
+				mes "[Faye]";
+				mes "Okay!";
+				mes "You want to raise your BaseLv.";
+				mes "If you want to grow, you need to get some real competition.";
 				next;
-				mes "[Fay]";
-				mes "冒険者アカデミー内の";
-				mes "実習室か特別室へ";
-				mes "行って見るといいぞ。";
+				mes "[Faye]";
+				mes "You should go to the Practice Room or a special room in the Adventurer's Academy and take a look.";
 				next;
-				mes "[Fay]";
-				mes "実習室はこの講習室を";
-				mes "出てから、左上の方へ";
-				mes "行くとあるからな。";
+				mes "[Faye]";
+				mes "The Practice Room is in the upper left after you leave this training room.";
 				close;
 			} else {
-				mes "[Fay]";
-				mes "よし！";
-				mes "転送サービスのことだな。";
-				mes "それはタールがやってるぞ。";
+				mes "[Faye]";
+				mes "Okay!";
+				mes "You mean the transfer service.";
+				mes "That's what Taro does.";
 				next;
-				mes "[Fay]";
-				mes "他の街へ行くなら、";
-				mes "^0000FF「転送サービス」^000000をしている";
-				mes "赤い髪の^0000FFタール^000000を探して";
-				mes "みるといい。";
+				mes "[Faye]";
+				mes "If you're going to another city, look for the red-haired ^0000FFTaro^000000 who is ^0000FF \"forwarding service\" ^000000.";
 				next;
-				mes "[Fay]";
-				mes "タールはこの講習室を";
-				mes "出てから、左上の方へ行くと";
-				mes "いるはずだ。";
+				mes "[Faye]";
+				mes "Taro should be found after you leave this training room and go to the upper left.";
 				close;
 			}
 		case 2:
 			break;
 		case 4:
 			if(!checkweight(11055,1)){
-				mes "[Fay]";
-				mes "あれ？";
-				mes "荷物が多いみたいだな。";
-				mes "もう少し、荷物の種類数を";
-				mes "減らしてきてくれ。";
-				//setquest 100097; //本鯖でも未実装メッセージ
+				mes "[Faye]";
+				mes "Huh?";
+				mes "Looks like you have a lot of baggage.";
+				mes "Go ahead and reduce the number of types of luggage a little more.";
+				//setquest 100097; //not yet implemented in this mackerel mes Sage
 				next;
-				mes "[Fay]";
-				mes "この部屋をでたところの、";
-				mes "Kafra Serviceで倉庫が";
-				mes "利用できる。";
-				mes "そこで荷物を預けるといい。";
+				mes "[Faye]";
+				mes "Warehouses are available at Kafra Service, just outside this room.";
+				mes "You can leave your belongings there.";
 				close;
 			}
 			GIVE_BOOK;
@@ -3430,282 +2587,198 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 		case 3:
 			ABOUT_JOB;
 		case 5:
-			mes "[Fay]";
-			mes "そうか、また知りたくなったら、";
-			mes "いつでも聞きにきてくれ。";
-			mes "喜んで話すぜ。";
+			mes "[Faye]";
+			mes "Well, if you want to know more, you can always come back and ask me.";
+			mes "I'll be happy to talk to you.";
 			close;
 		}
 	}
-	mes "[Fay]";
-	mes "まず、転職前に準備が必要だ。";
-	mes "^0000FF「基本スキル」をレベル9　^000000に";
-	mes "成長させていれば1次職の";
-	mes "転職ができる。";
-	mes "俺が言う通りにやってみてくれ。";
+	mes "[Faye]";
+	mes "First, you need to prepare before you change jobs.";
+	mes "If you have grown ^0000FF \"Basic Skills\" to level 9 ^000000, you can change your first job.";
+	mes "Do exactly what I tell you to do.";
 	next;
-	mes "[Fay]";
-	mes "^0000FF「基本スキル」^000000のレベルは";
-	mes "^0000FF「基本情報」^000000ウィンドウ内の";
-	mes "^0000FF「Skill」^000000ボタンから、";
-	mes "^0000FF「スキルリスト」^000000を表示して、";
-	mes "^0000FF「スキルポイント」^000000を割り";
-	mes "振ることで、上げることができる。";
+	mes "[Faye]";
+	mes "The level of ^0000FF \"Basic Skills\"^000000 is determined by clicking the ^0000FF \"Skill\"^000000 button in the ^0000FF \"Basic Information\"^000000 window, displaying the ^0000FF \"Skill List\"^000000, and then clicking the ^0000FF \"Skill Points\"^000000. It can be raised by assigning 00000000.";
 	next;
-	mes "[Fay]";
-	mes "忘れちゃならないのは、";
-	mes "スキルのレベルを上げるには、";
-	mes "スキルポイントを割り振った後、";
-	mes "^0000FFスキルリストウィンドウの右下にある^000000";
-	mes "^FF0000「確定」^000000ボタンを押して、";
-	mes "確定させる必要があるってことだ。";
+	mes "[Faye]";
+	mes "Don't forget, to raise the level of a skill, you need to press the ^000000^FF0000 \"confirm\" ^000000 button at the bottom right of the ^0000FF skill list window to confirm it after assigning the skill points.";
 	next;
-	mes "[Fay]";
-	mes "いいかい。";
-	mes "1次職に転職するには";
-	mes "^0000FF「基本スキル」をレベル9　^000000に";
-	mes "するんだ。";
+	mes "[Faye]";
+	mes "Okay.";
+	mes "To change to the first job, you need to ^0000FF \"Basic Skills\" to level 9 ^000000.";
 	next;
-	mes "[Fay]";
-	mes "職業が決まってるなら、";
-	mes "転職場所を教えとくぜ。";
-	mes "どうする？";
+	mes "[Faye]";
+	mes "If you have an occupation in mind, I'll tell you where to change jobs.";
+	mes "What do you want to do?";
 	next;
-	set '@sel,select("転職場所を聞く","転職の準備をする","まだ、決まってない");
+	set '@sel,select("Ask where I'm going to change jobs", "Prepare for a new job", "Not decided yet");
 	if(AC_NOVICE_QUE<30){
-		mes "[Fay]";
-		mes "あ、そうそう。";
-		mes "これを渡しておかなくっちゃな。";
+		mes "[Faye]";
+		mes "Oh, yeah.";
+		mes "I'll have to pass this along.";
 		next;
 		GIVE_BOOK;
 		set AC_NOVICE_QUE, 30;
-		mes "[Fay]";
-		mes "本の話はこのくらいだな。";
+		mes "[Faye]";
+		mes "So much for the book.";
 		next;
 	}
 	switch('@sel){
 	case 2:
-		mes "[Fay]";
-		mes "^0000FF「基本スキル」をレベル9　^000000に";
-		mes "成長させれば、";
-		mes "Swordsman、Magician、";
-		mes "Acolyte、Thief、";
-		mes "Archer、Merchantは";
-		mes "転職がすぐに出来るからな。";
+		mes "[Faye]";
+		mes "If you grow ^0000FF \"Basic Skills\" to level 9 ^000000, Swordsman, Magician, Acolyte, Thief, Archer, and Merchant can change jobs quickly.";
 		next;
-		mes "[Fay]";
-		mes "1次職への転職がしたくなったら、";
-		mes "俺が送ってあげるから";
-		mes "また来てくれ。";
+		mes "[Faye]";
+		mes "If you want to change jobs to the first level, I'll send you back to me and you can come back.";
 		close2;
 		cutin "start_020_jp.bmp", 4;
 		setquest 100124; //state=1
 		end;
 	case 3:
-		mes "まだ転職する職業が決まって";
-		mes "ないなら、冒険者アカデミーで";
-		mes "手伝いをやってみないか？";
-		mes "Luneが仕事をしてくれる人を";
-		mes "探してるみたいなんだ。";
+		mes "If you haven't decided on a career change yet, why don't you try helping out at the Adventurer Academy?";
+		mes "I think Lune is looking for someone to do the job.";
 		next;
-		mes "[Fay]";
-		mes "Luneなら、この部屋を出た";
-		mes "^0000FF教室棟1F^000000にいるから、";
-		mes "話しかけてみるといい。";
+		mes "[Faye]";
+		mes "Lune would be in the ^0000FF classroom building, 1F^000000, just outside this room, so you can talk to him.";
 		next;
-		mes "[Fay]";
-		mes "1次職への転職がしたくなったら、";
-		mes "俺が送ってあげるから、";
-		mes "また来てくれ。";
+		mes "[Faye]";
+		mes "If you want to change your job to the first level, I'll send you there and you can come back.";
 		close2;
 		setquest 100124;
 		setquest 100128;
 		end;
 	}
-	mes "[Fay]";
-	mes "どの職業になるんだい？";
+	mes "[Faye]";
+	mes "Which profession are you going to be?";
 	next;
-	set '@sel,select("Swordsman^FF0000（初心者向き）^000000","Magician^0000FF（中級者向き）^000000","Acolyte^0000FF（中級者向き）^000000","Thief^FF0000（初心者向き）^000000","Archer^FF0000（初心者向き）^000000","Merchant^000000（上級者向き）^000000","Taekwon Kid^0000FF（中級者向き）^000000","Gunslinger^000000（上級者向き）^000000","Ninja^000000（上級者向き）^000000","Supernovice^000000（上級者向き）^000000");
+	set '@sel,select("Swordsman^FF0000 (for beginners)^000000", "Magician^0000FF (for intermediate)^000000", "Acolyte^0000FF (for intermediate)^000000", "Thief^FF0000 (for beginners) (for beginners)^000000", "Archer^FF0000 (for beginners)^000000", "Merchant^000000 (for experts)^000000", "Taekwon Kid^0000FF (for intermediate)^000000", "Gunslinger^000000 (for experts) (Suitable for advanced users)^000000", "Ninja^000000 (Suitable for advanced users)^000000", "Supernovice^000000 (Suitable for advanced users)^000000");
 	switch('@sel){
 	case 1:
-		mes "[Fay]";
-		mes "^0000FFSwordsman^000000の場合はIzludeだな。";
-		mes "^FF0000Izludeの西^000000に";
-		mes "^FF0000剣士ギルド^000000がある。";
+		mes "[Faye]";
+		mes "If ^0000FFSwordsman^000000, it's Izlude.";
+		mes "There is a ^FF0000swordsman's guild^000000 to the west^000000 of ^FF0000Izlude.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000剣士ギルド^000000まで送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to the ^FF0000 Swordsman's Guild^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 2:
-		mes "[Fay]";
-		mes "^0000FFMagician^000000の場合はGeffenだな。";
-		mes "^FF0000Geffenの北西^000000に";
-		mes "^FF0000魔法学校^000000がある。";
+		mes "[Faye]";
+		mes "If ^0000FFMagician^000000, it's Geffen.";
+		mes "There is a ^FF0000 magic school ^000000 to the northwest ^000000 of ^FF0000 Geffen.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000魔法学校^000000まで送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to ^FF0000Magic School^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 3:
-		mes "[Fay]";
-		mes "^0000FFAcolyte^000000の場合はPronteraだな。";
-		mes "^FF0000Pronteraの北東^000000に";
-		mes "^FF0000大聖堂^000000がある。";
+		mes "[Faye]";
+		mes "If ^0000FFAcolyte^000000, it's Prontera.";
+		mes "Northeast of ^FF0000Prontera^000000 is ^FF0000Cathedral^000000.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000大聖堂^000000まで送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to the ^FF0000Cathedral^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 4:
-		mes "[Fay]";
-		mes "^0000FFThief^000000の場合はMorrocだな。";
-		mes "^FF0000Morrocに行ってから、";
-		mes "北西のピラMido^000000に行くといい。";
+		mes "[Faye]";
+		mes "If ^0000FFThief^000000, it's Morroc.";
+		mes "You can go to ^FF0000Morroc and then to Pira Mido^000000 in the northwest.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000北西のピラMido^000000まで";
-		mes "送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to ^FF0000Northwest Pila Mido^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 5:
-		mes "[Fay]";
-		mes "^0000FFArcher^000000の場合はPayonだな。";
-		mes "^FF0000Payonの北東^000000に";
-		mes "^FF0000Archerギルド^000000がある。";
+		mes "[Faye]";
+		mes "Payon if ^0000FFArcher^000000.";
+		mes "There is a ^FF0000Archer guild ^000000 in the northeast ^000000 of ^FF0000Payon.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000Archerギルド^000000まで";
-		mes "送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to the ^FF0000Archer guild^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 6:
-		mes "[Fay]";
-		mes "^0000FFMerchant^000000の場合はAlbertaだな。";
-		mes "^FF0000Albertaの南西^000000に";
-		mes "^FF0000商人組合^000000がある。";
+		mes "[Faye]";
+		mes "If ^0000FFMerchant^000000, it's Alberta.";
+		mes "There is a ^FF0000merchant association^000000 to the southwest^000000 of ^FF0000Alberta.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000商人組合^000000まで";
-		mes "送ってやるぜ。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll give you a ride to the ^FF0000 Merchants' Union^000000.";
+		mes "Would you like to go change jobs?";
 		break;
 	case 7:
-		mes "[Fay]";
-		mes "^0000FFTaekwon Kid^000000の場合はPayonだな。";
-		mes "^FF0000Payonの中央から";
-		mes "少し南西あたりに、";
-		mes "鳳凰っていう修行者^000000が";
-		mes "いるはずだ。";
+		mes "[Faye]";
+		mes "^0000FFTaekwon Kid^000000 if it's Payon.";
+		mes "A little southwest of the center of ^FF0000Payon, there should be a practitioner^000000 named Phoenix.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000Payonの南西あたり^000000へ";
-		mes "送ってやるぜ。";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll send you to ^000000 around the southwest of ^FF0000Payon.";
 		next;
-		mes "[Fay]";
-		mes "まあ、そうはいっても、";
-		mes "Taekwon Kidになるためには";
-		mes "^FF0000試練がある^000000ようだけどな。";
-		mes "キミが本当になりたいと言うなら、";
-		mes "止めはしない。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, even so, it seems ^FF0000there are ^000000tests to become a Taekwon Kid.";
+		mes "If you really want to be one, I won't stop you.";
+		mes "You want to go get a new job?";
 		break;
 	case 8:
-		mes "[Fay]";
-		mes "^0000FFGunslinger^000000の場合は";
-		mes "^FF0000Einbroch^000000だな。";
-		mes "^FF0000都市の中央にある研究所^000000に";
-		mes "行くといい。";
+		mes "[Faye]";
+		mes "^0000FFGunslinger^000000 in case ^FF0000Einbroch^000000.";
+		mes "^FF0000You can go to the laboratory^000000 in the center of the city.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000都市の中央にある研究所^000000へ";
-		mes "送ってやるぜ。";
+		mes "[Faye]";
+		mes "Well, if you change jobs right away, I'll send you to the laboratory ^000000 in the center of ^FF0000 city.";
 		next;
-		mes "[Fay]";
-		mes "まあ、そうはいっても、";
-		mes "Gunslingerになるためには";
-		mes "^FF0000試練がある^000000ようだけどな。";
-		mes "キミが本当になりたいと言うなら、";
-		mes "止めはしない。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, even so, it looks like ^FF0000 trials^000000 to become a Gunslinger.";
+		mes "If you really want to be one, I won't stop you.";
+		mes "You want to go get a new job?";
 		break;
 	case 9:
-		mes "[Fay]";
-		mes "^0000FFNinja^000000の場合はAmatsuだな。";
-		mes "行きかたは^FF0000Albertaに行ってから、";
-		mes "船で行く^000000ことになるな。";
-		mes "船代が高いから、駆け出しの";
-		mes "冒険者のキミには";
-		mes "大変かもしれないぜ。";
+		mes "[Faye]";
+		mes "^0000FFNinja^000000 case Amatsu.";
+		mes "The way to get there is to go to ^FF0000Alberta and then take a boat ^000000.";
+		mes "The cost of the boat is high, so it might be difficult for you as a new adventurer.";
 		next;
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000Amatsuの屋敷^000000へ";
-		mes "送ってやるぜ。";
+		mes "[Faye]";
+		mes "Well, if you change jobs soon, I'll send you to ^FF0000Amatsu's mansion^000000.";
 		next;
-		mes "[Fay]";
-		mes "まあ、そうはいっても、";
-		mes "Ninjaになるためには";
-		mes "^FF0000試練がある^000000ようだけどな。";
-		mes "キミが本当になりたいと言うなら、";
-		mes "止めはしない。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, even so, it seems ^FF0000there are ^000000tests^000000 to become a Ninja.";
+		mes "If you really want to be one, I won't stop you.";
+		mes "You want to go get a new job?";
 		break;
 	case 10:
-		mes "[Fay]";
-		mes "^0000FFSupernovice^000000の場合は";
-		mes "^FF0000BaseLvを45^000000にする必要があるぞ。";
-		mes "場所はAldebaranだな。";
-		mes "^FF0000Aldebaranの南の家屋^000000に";
-		mes "トゼーレっていう変わりものが";
-		mes "いるはずだ。";
+		mes "[Faye]";
+		mes "If you're ^0000FFSupernovice^000000, you need to get your ^FF0000BaseLv to 45^000000.";
+		mes "The place is Aldebaran, right?";
+		mes "There should be an oddball named Tozele in a house ^000000 south of ^FF0000Aldebaran.";
 		next;
 		if(BaseLevel<45) {
-			mes "[Fay]";
-			mes "Luneなら、この部屋を出た";
-			mes "^0000FF教室棟1F^000000にいるから、";
-			mes "話しかけてみるといい。";
+			mes "[Faye]";
+			mes "If you're Lune, you can talk to him on the first floor of the ^0000FF classroom building^000000 outside this room.";
 			next;
-			mes "[Fay]";
-			mes "1次職への転職がしたくなったら、";
-			mes "俺が送ってあげるから、";
-			mes "また来てくれ。";
+			mes "[Faye]";
+			mes "If you want to change your job to the first level, I'll send you there and you can come back.";
 			close;
 		}
-		mes "[Fay]";
-		mes "そうだな、すぐに転職するなら、";
-		mes "俺が^FF0000Aldebaranの南の家屋^000000へ";
-		mes "送ってやるぜ。";
+		mes "[Faye]";
+		mes "Well, if you change jobs soon, I'll send you to ^FF0000Aldebaran's southern house ^000000.";
 		next;
-		mes "[Fay]";
-		mes "まあ、そうはいっても、";
-		mes "Supernoviceになるためには";
-		mes "^FF0000試練がある^000000ようだけどな。";
-		mes "キミが本当になりたいと言うなら、";
-		mes "止めはしない。";
-		mes "転職してくるかい？";
+		mes "[Faye]";
+		mes "Well, even so, it seems ^FF0000there are ^000000tests^000000 to become a Supernovice.";
+		mes "If you really want to be one, I won't stop you.";
+		mes "You want to go get a new job?";
 		break;
 	}
 	next;
 	cutin "jp_quest_help10.bmp", 255;
-	if(select("転職しに行く","まだ、転職しない")==2){
-		mes "[Fay]";
-		mes "Luneなら、この部屋を出た";
-		mes "^0000FF教室棟1F^000000にいるから、";
-		mes "話しかけてみるといい。";
+	if(select("going to change jobs", "not yet")==2){
+		mes "[Faye]";
+		mes "If you're Lune, you can talk to him on the ^0000FF classroom building, 1F^000000, just outside this room.";
 		next;
-		mes "[Fay]";
-		mes "1次職への転職がしたくなったら、";
-		mes "俺が送ってあげるから、";
-		mes "また来てくれ。";
+		mes "[Faye]";
+		mes "If you want to change your job to the first level, I'll send you there and you can come back.";
 		close;
 	}
 	switch('@sel){
@@ -3713,22 +2786,17 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 	case 8:
 	case 9:
 	case 10:
-		mes "[Fay]";
-		mes "あとは、そうだな……";
-		mes "転職するために、どこかへ";
-		mes "行くことがあったら、";
-		mes "一度冒険者アカデミーに戻って";
-		mes "くるといい。";
+		mes "[Faye]";
+		mes "And yes, ......";
+		mes "If you ever go somewhere to change jobs, you can come back to the Adventurer's Academy once.";
 		next;
-		mes "[Fay]";
-		mes "^FF0000冒険者アカデミーには";
-		mes "転送のサービスをしてくれる人が";
-		mes "いるからな。^000000";
+		mes "[Faye]";
+		mes "^FF0000The Adventurer's Academy has a guy who will do the transfer service for you. ^000000";
 		next;
 		break;
 	}
-	mes "[Fay]";
-	mes "それじゃ、転送するぜ。";
+	mes "[Faye]";
+	mes "Then I'm gonna transfer you.";
 	close2;
 	set AC_JOBCHANGE,1;
 	switch('@sel){
@@ -3741,75 +2809,51 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 	case 7: warp "payon.gat",157,145; break;
 	case 8: warp "que_ng.gat",150,167; break;
 	case 9: warp "que_ng.gat",30,62; break;
-	case 10:warp "aldebaran.gat",112,64; break;
+	case 10: warp "aldebaran.gat",112,64; break;
 	}
 	end;
 
-	function	ABOUT_JOB	{
+	function ABOUT_JOB {
 		while(1){
-			mes "[Fay]";
-			mes "どの職業の系統について";
-			mes "聞きたい？";
+			mes "[Faye]";
+			mes "Which line of work would you like to hear about?";
 			next;
-			switch(select("Swordsman系","Magician系","Acolyte系","Thief系","Archer系","Merchant系","Taekwon Kid系","特殊1次職","聞くことをやめる")){
+			switch(select("Swordsman", "Magician", "Acolyte", "Thief", "Archer", "Merchant", "Taekwon Kid", "1st job expanded", "stop asking")){
 			case 1:
-				mes "[Fay]";
-				mes "Swordsman系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Swordsmanは";
-				mes "ナイトとクルセイダーに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about the Swordsman system.";
+				mes "Puron is probably talking a little bit about it, but Swordsman will be able to change jobs to Knight and Crusader.";
+				mes "Which one do you want to ask about?";
 				cutin "swordman_1.bmp", 2;
 				next;
-				switch(select("ナイト","クルセイダー","その他の職業について聞く")){
+				switch(select("Knight", "Crusader", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "ナイトは高い物理攻撃と防御力を";
-					mes "兼ね備えた王国騎士だ。";
-					mes "ペコペコに騎乗することができるため、";
-					mes "高い機動力を持つことが可能になる。";
+					mes "[Faye]";
+					mes "Knight is a knight of the kingdom with high physical attack and defense.";
+					mes "The ability to ride Peko Peko allows him to be highly mobile.";
 					cutin "swordman_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "ナイトの戦い方は主に";
-					mes "剣を使用するか槍を使用するかで";
-					mes "異なってくる。";
-					mes "槍ならブランディッシュスピア";
-					mes "両手剣ならボ ウリングバッシュ";
-					mes "といった強力な範囲攻撃を習得できる。";
+					mes "[Faye]";
+					mes "The Knight's fighting style differs depending on whether he primarily uses a sword or a spear.";
+					mes "The Knight can learn powerful ranged attacks, such as the Brandish Spear for spears and the Bowling Bash for two-handed swords.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ナイトはロードナイト（左）へ";
-					mes "クルセイダーはパラディン（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "As you grow up and perform the act of reincarnation, your Knight can become a Lord Knight (left) and your Crusader can become a Paladin (right)!";
 					cutin "swordman_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "クルセイダーはナイトよりも防御力に";
-					mes "特化した職業だ。";
-					mes "ナイトと同様にペコペコに";
-					mes "騎乗でき、高い機動性を持てる。";
+					mes "[Faye]";
+					mes "Crusader is a more defensive profession than Knight.";
+					mes "Like the Knight, it can be ridden by Peko Peko and can have high mobility.";
 					cutin "swordman_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "クルセイダーは高い防御力を";
-					mes "活かした戦いが可能だ。";
-					mes "槍や盾のスキルを使いこなし、";
-					mes "範囲攻撃のグランドクロスや";
-					mes "仲間を守るディボ ーションといった";
-					mes "スキルを習得することができる。";
+					mes "[Faye]";
+					mes "Crusader can take advantage of his high defense.";
+					mes "He is proficient with spear and shield skills and can master skills such as the ranged attack ground cross and devotion to protect his comrades.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ナイトはロードナイト（左）へ";
-					mes "クルセイダーはパラディン（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "Further growth and the act of reincarnation will allow the Knight to become a Lord Knight (left) and the Crusader to become a Paladin (right)!";
 					cutin "swordman_5.bmp", 2;
 					next;
 					break;
@@ -3817,66 +2861,39 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 				cutin "swordman_5.bmp", 255;
 				break;
 			case 2:
-				mes "[Fay]";
-				mes "Magician系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Magicianは";
-				mes "ウィザードとセージに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about the Magician system.";
+				mes "Puron is probably talking a little bit about it, but Magician will be able to change jobs to Wizard and Sage.";
+				mes "Which one do you want to ask about?";
 				cutin "magician_1.bmp", 2;
 				next;
-				switch(select("ウィザード","セージ","その他の職業について聞く")){
+				switch(select("Wizard", "Sage", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "ウィザードは最大級の火力を用いた";
-					mes "広範囲の大魔法が魅力の職業だ。";
-					mes "接近戦は苦手だが、";
-					mes "パーティー戦などで";
-					mes "活躍しやすい職業だ。";
+					mes "[Faye]";
+					mes "The Wizard is an attractive profession for its broad range of great magic using the greatest firepower.";
+					mes "Although not good at close combat, it is a profession that is easily used in party fights.";
 					cutin "magician_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "ウィザードの戦い方は";
-					mes "高い魔法攻撃力を";
-					mes "活かしたものとなる。";
-					mes "メテオストーム";
-					mes "ストームガストといった強力な";
-					mes "範囲魔法を駆使して戦うことが可能だ。";
+					mes "[Faye]";
+					mes "The wizard's fighting style takes advantage of his high magical attack power.";
+					mes "It can fight with powerful ranged magic such as Meteor Storm Storm Gust.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ウィザードはハイウィザード（左）へ";
-					mes "セージはプロフェッサー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "As you grow and perform the act of reincarnation, the Wizard can become a High Wizard (left) and the Sage can become a Professor (right)!";
 					cutin "magician_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "セージは魔法に対する知識を";
-					mes "深めることで、魔法に対抗する";
-					mes "能力を身につけた、物理攻撃を";
-					mes "行う職業だ。";
-					mes "近接能力が高く、直接攻撃と";
-					mes "魔法攻撃の両方を駆使して戦える。";
+					mes "[Faye]";
+					mes "Sage is a profession of physical attackers who, by deepening their knowledge of magic, have acquired the ability to counter magic.";
+					mes "They have a high proximity ability and can fight with both direct and magical attacks.";
 					cutin "magician_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "敵を攻撃中に自動でスキルを";
-					mes "使用することができる";
-					mes "オートスペルや";
-					mes "魔法詠唱中の移動が可能な";
-					mes "フリーキャストといったスキルが";
-					mes "習得できる。";
+					mes "[Faye]";
+					mes "He can learn skills such as autospell, which allows him to use skills automatically while attacking enemies, and freecast, which allows him to move while chanting magic.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ウィザードはハイウィザード（左）へ";
-					mes "セージはプロフェッサー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "If you grow further and perform the act of reincarnation, the Wizard can become a High Wizard (left) and the Sage can become a Professor (right)!";
 					cutin "magician_5.bmp", 2;
 					next;
 					break;
@@ -3884,67 +2901,40 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 				cutin "magician_5.bmp", 255;
 				break;
 			case 3:
-				mes "[Fay]";
-				mes "Acolyte系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Acolyteは";
-				mes "プリーストとモンクに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about the Acolyte system.";
+				mes "Puron is probably talking a little bit about it, but Acolyte will be able to change jobs to Priest and Monk.";
+				mes "Which one do you want to ask about?";
 				cutin "acolyte_1.bmp", 2;
 				next;
-				switch(select("プリースト","モンク","その他の職業について聞く")){
+				switch(select("Priest", "Monk", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "プリーストは多彩な回復や";
-					mes "補助魔法を覚えることが";
-					mes "できる職業だ。";
-					mes "パーティーの要といってよい";
-					mes "存在となり、多くの仲間を";
-					mes "助けて戦うことができる。";
+					mes "[Faye]";
+					mes "Priest is a profession that can learn a variety of recovery and auxiliary magic.";
+					mes "The Priest is a key member of the party and can help many of his friends to fight.";
 					cutin "acolyte_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "プリーストの戦い方は支援スキルを";
-					mes "生かした戦いとなる。";
-					mes "物理攻撃を防ぐキリエエレイソンや";
-					mes "SPの回復力を上げるマグニフィカート、";
-					mes "サンクチュアリの継続的な";
-					mes "回復魔法も習得できるようになる。";
+					mes "[Faye]";
+					mes "Priest's fighting style is to utilize his support skills.";
+					mes "He will also be able to learn Kyrie Eleison to prevent physical attacks, Magnificat to increase SP recovery, and Sanctuary's continuous recovery magic.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "プリーストはハイプリースト（左）へ";
-					mes "モンクはチャンピオン（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "If you grow further and perform the act of reincarnation, Priests can become High Priests (left) and Monks can become Champions (right)!";
 					cutin "acolyte_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "モンクは肉体を鍛えて、";
-					mes "ひたすら実戦を重視した";
-					mes "修行僧の職業だ。";
-					mes "直接攻撃を得意とし、気功によって";
-					mes "具現化した気を攻撃に";
-					mes "使用することができる。";
+					mes "[Faye]";
+					mes "Monk is a profession of ascetic monks who train their bodies and focus solely on actual combat.";
+					mes "He specializes in direct attacks and can use the chi embodied by qigong in his attacks.";
 					cutin "acolyte_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "モンクの戦い方は接近戦を";
-					mes "主とした戦いとなる。";
-					mes "高い防御力の相手に有効な発勁、";
-					mes "完全に防御に徹する金剛、";
-					mes "一撃必殺の阿修羅覇凰拳などが";
-					mes "習得できる。";
+					mes "[Faye]";
+					mes "Monk's fighting style is primarily close combat.";
+					mes "He can learn Hajin, which is effective against high defensive opponents, Kongo, which is completely defensive, and Asura Haoho Fist, which is a one-hit kill.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "プリーストはハイプリースト（左）へ";
-					mes "モンクはチャンピオン（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "If you grow further and perform the act of reincarnation, Priests can become High Priests (left) and Monks can become Champions (right)!";
 					cutin "acolyte_5.bmp", 2;
 					next;
 					break;
@@ -3952,63 +2942,39 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 				cutin "acolyte_5.bmp", 255;
 				break;
 			case 4:
-				mes "[Fay]";
-				mes "Thief系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Thiefは";
-				mes "アサシンとローグに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about the Thief system.";
+				mes "Puron is probably talking a little bit about it, but Thief will be able to change jobs to Assassin and Rogue.";
+				mes "Which one do you want to ask about?";
 				cutin "thief_1.bmp", 2;
 				next;
-				switch(select("アサシン","ローグ","その他の職業について聞く")){
+				switch(select("Assassin", "Rogue", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "アサシンは全職中で最速の";
-					mes "素早さで敵を翻弄しながら、";
-					mes "戦える職業だ。";
-					mes "二刀流か専用武器のカタールを";
-					mes "使用しての攻撃ができる。";
+					mes "[Faye]";
+					mes "The Assassin is the fastest of all professions and can fight with the fastest speed, keeping the enemy at bay.";
+					mes "They can attack with either two swords or with their special weapon, the Ka Taro.";
 					cutin "thief_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "アサシンの戦い方は高い回避率を";
-					mes "生かした攻撃となる。";
-					mes "毒攻撃を行えるエンチャントポイズン、";
-					mes "高確率で毒状態にするベナムナイフ";
-					mes "といったスキルが習得できる。";
+					mes "[Faye]";
+					mes "Assassin's fighting style is to take advantage of his high evasion rate.";
+					mes "Skills such as Enchanted Poison, which can perform poison attacks, and Venom Knife, which has a high probability of poisoning.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "アサシンはアサシンクロス（左）へ";
-					mes "ローグはチェイサー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "Further growth and the act of reincarnation will allow the Assassin to become the Assassin Cross (left) and the Rogue to become the Stalker (right)!";
 					cutin "thief_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "ローグは短剣を使用した戦闘ができ、";
-					mes "アイテムなどを敵から奪うことが";
-					mes "容易な職業だ。";
-					mes "地面に落書きを残せるなど、";
-					mes "遊び心がある職業になるな。";
+					mes "[Faye]";
+					mes "Rogue is a profession that can use daggers in combat and can easily take items and other items from enemies.";
+					mes "It would be a profession that is playful, such as being able to leave graffiti on the ground.";
 					cutin "thief_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "攻撃中に敵のアイテムを奪う";
-					mes "スティールを発動できる";
-					mes "スナッチャーや、";
-					mes "背後を取ることで使用可能となる";
-					mes "バックスタブの攻撃スキルは強力だ。";
+					mes "[Faye]";
+					mes "The Snatcher, which can trigger a steal to take an enemy's item while attacking, and the Backstab attack skill, which can be used by getting behind them, are powerful.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "アサシンはアサシンクロス（左）へ";
-					mes "ローグはチェイサー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "Further growth and the act of reincarnation will allow the Assassin to become the Assassin Cross (left) and the Rogue to become the Stalker (right)!";
 					cutin "thief_5.bmp", 2;
 					next;
 					break;
@@ -4016,153 +2982,88 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 				cutin "thief_5.bmp", 255;
 				break;
 			case 5:
-				mes "Archer系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Archerはハンターと";
-				mes "バード（男）もしくはダンサー（女）";
-				mes "に転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "It's about the Archer system.";
+				mes "Puron is probably talking a little bit about it, but Archer will be able to change jobs to Hunter and Bard (male) or Dancer (female).";
+				mes "Which one do you want to ask about?";
 				cutin "archer_1.bmp", 2;
 				next;
-				switch(select("ハンター","バードとダンサー","その他の職業について聞く")){
+				switch(select("Hunter", "Bard and Dancer", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "ハンターは遠距離攻撃と多彩な";
-					mes "罠で敵を倒すことができる職業だ。";
-					mes "ファルコンが繰り出すスキルと";
-					mes "多くの種類の罠を効果的に";
-					mes "使用してテクニカルに戦うことが";
-					mes "できるだろう。";
+					mes "[Faye]";
+					mes "Hunter is a profession that can defeat enemies with long-range attacks and a variety of traps.";
+					mes "The Falcon will be able to fight technically by effectively using the skills and many types of traps that the Falcon can unleash.";
 					cutin "archer_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "ハンターの戦い方はファルコンと";
-					mes "トラップの取得方法にある。";
-					mes "敵の動きを封じるアンクルスネアや";
-					mes "ファルコンを利用した範囲攻撃の";
-					mes "ブリッツビートは連続してダメージを";
-					mes "加えることもできるスキルだ。";
+					mes "[Faye]";
+					mes "The way Hunter fights is in how he acquires the Falcon and traps.";
+					mes "The Ankle Snare, which blocks enemy movement, and the Blitz Beat, a ranged attack that utilizes the Falcon, are skills that can also add damage in succession.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ハンターはスナイパー（左）へ";
-					mes "バードとダンサーは";
-					mes "クラウンとジプシー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "Further growth and the act of reincarnation will allow the Hunter to become a Sniper (left) and the Bard and Dancer to become a Clown and Gypsy (right)!";
 					cutin "archer_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "バード（男）は歌と演奏によって、";
-					mes "ダンサー（女）は華麗な舞いで";
-					mes "様々な支援を行うことを";
-					mes "得意とする職業だ。";
+					mes "[Faye]";
+					mes "Bard (male) is a profession that specializes in providing various types of assistance by singing and playing, and Dancer (female) by dancing in a spectacular manner.";
 					cutin "archer_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "バードとダンサーはスキルの";
-					mes "効果範囲内のプレイヤーに";
-					mes "支援を行えるのが特徴だ。";
-					mes "バードが使用するブラギの詩は";
-					mes "スキルの発動時間と硬直時間を";
-					mes "短くする強力なスキル。";
+					mes "[Faye]";
+					mes "Bard and Dancer are characterized by their ability to provide assistance to players within the area of effect of their skills.";
+					mes "The Bragi Poem used by Bard is a powerful skill that reduces the activation time and hardness time of skills.";
 					next;
-					mes "[Fay]";
-					mes "ダンサーのサービスフォーユーは";
-					mes "効果範囲内のプレイヤーの";
-					mes "最大SPを増加させ、";
-					mes "スキル使用時のSP消費量を";
-					mes "減少させることができるスキルだ。";
+					mes "[Faye]";
+					mes "Dancer's Service for You is a skill that can increase the maximum SP of players within its area of effect and decrease SP consumption when using skills.";
 					next;
-					mes "[Fay]";
-					mes "また、バードとダンサーが";
-					mes "2人揃うことで合奏スキルという";
-					mes "強力な支援スキルを";
-					mes "使用することもできる。";
+					mes "[Faye]";
+					mes "Also, when two Bard and Dancer are together, they can use a powerful support skill called Ensemble Skill.";
 					next;
 					cutin "archer_5.bmp", 2;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ハンターはスナイパー（左）へ";
-					mes "バードとダンサーは";
-					mes "クラウンとジプシー（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "Further growth and the act of reincarnation will allow the Hunter to become a Sniper (left) and the Bard and Dancer to become a Clown and Gypsy (right)!";
 					next;
 					break;
 				}
 				cutin "archer_5.bmp", 255;
 				break;
 			case 6:
-				mes "[Fay]";
-				mes "Merchant系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Merchantは";
-				mes "ブラックスミスとアルケミストに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about the Merchant system.";
+				mes "I know Puron is talking a bit about this, but Merchants will be able to change jobs to Blacksmith and Alchemist.";
+				mes "Which one do you want to ask about?";
 				cutin "merchant_1.bmp", 2;
 				next;
-				switch(select("ブラックスミス","アルケミスト","その他の職業について聞く")){
+				switch(select("Blacksmith", "Alchemist", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "ブラックスミスは力強い腕力と";
-					mes "装備品で武器の精錬や効果属性の";
-					mes "付与を行うことができる職業だ。";
-					mes "戦闘を補助するスキルが増え、";
-					mes "武器の製作を行うこともできる。";
+					mes "[Faye]";
+					mes "The Blacksmith is a profession that allows the refining of weapons and the granting of effect attributes with powerful arms and equipment.";
+					mes "They have more skills to aid in combat and can also craft weapons.";
 					cutin "merchant_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "ブラックスミスの戦い方は";
-					mes "腕力に頼るものが多い。";
-					mes "敵に囲まれたときに範囲で";
-					mes "スタンさせるハンマーフォールや";
-					mes "武器の破損と引き換えに攻撃力を";
-					mes "上げるオーバートラストがある。";
+					mes "[Faye]";
+					mes "The Blacksmith's fighting style relies heavily on brawn.";
+					mes "There are hammerfalls that stun at range when surrounded by enemies and overthrusts that increase attack power in exchange for weapon damage.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ブラックスミスは";
-					mes "ホワイトスミス（左）へ";
-					mes "アルケミストはクリエイター（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "If you grow further and perform the act of reincarnation, the Blacksmith can become a Whitesmith (left) and the Alchemist can become a Creator (right)!";
 					cutin "merchant_5.bmp", 2;
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "アルケミストは回復用ポーションなどの";
-					mes "薬品を作り出す錬金術の職業だ。";
-					mes "各種ポーション系のアイテムを";
-					mes "作成することができる。";
-					mes "ホムンクルスやモンスターを";
-					mes "召喚して戦うこともできる。";
+					mes "[Faye]";
+					mes "Alchemist is an alchemical profession that produces restorative potions and other medicines.";
+					mes "It can create various potion-based items.";
+					mes "They can also summon homunculi and monsters to fight.";
 					cutin "merchant_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "アルケミストは";
-					mes "ポーションピッチャーでの支援や";
-					mes "バイオプラントを駆使した戦いを";
-					mes "行うこともできるようになる。";
+					mes "[Faye]";
+					mes "The Alchemist will also be able to assist with potion pitchers and fight with bio-plants.";
 					next;
-					mes "[Fay]";
-					mes "アルケミストが召喚できる";
-					mes "ホムンクルスは一緒に";
-					mes "戦うことができる人工生命でもあり、";
-					mes "育てていけば、強力な味方に";
-					mes "なってくれるだろう。";
+					mes "[Faye]";
+					mes "The homunculus that the Alchemist can summon is also an artificial life that can fight alongside him and, if raised, will become a powerful ally.";
 					next;
-					mes "[Fay]";
-					mes "さらに成長して、";
-					mes "転生という行為を行えば、";
-					mes "ブラックスミスは";
-					mes "ホワイトスミス（左）へ";
-					mes "アルケミストはクリエイター（右）";
-					mes "という職業になれるぞ！";
+					mes "[Faye]";
+					mes "If you grow further and perform the act of reincarnation, the Blacksmith can become a Whitesmith (left) and the Alchemist can become a Creator (right)!";
 					cutin "merchant_5.bmp", 2;
 					next;
 					break;
@@ -4170,129 +3071,90 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 				cutin "merchant_5.bmp", 255;
 				break;
 			case 7:
-				mes "[Fay]";
-				mes "Taekwon Kid系についてだな。";
-				mes "プロンがちょっと話してる";
-				mes "だろうけど、Taekwon Kidは";
-				mes "拳聖とソウルリンカーに";
-				mes "転職できるようになる。";
-				mes "どっちについて聞きたいんだい？";
+				mes "[Faye]";
+				mes "It's about Taekwon Kid system.";
+				mes "Puron is probably talking a little bit about it, but Taekwon Kid will be able to change jobs to Star Gladiator and Soul Linker.";
+				mes "Which one do you want to hear about?";
 				cutin "taekwonkid_1.bmp", 2;
 				next;
-				switch(select("拳聖","ソウルリンカー","その他の職業について聞く")){
+				switch(select("Star Gladiator", "Soul Linker", "Ask about other professions")){
 				case 1:
-					mes "[Fay]";
-					mes "拳聖は太陽、月、星の恩恵を";
-					mes "授かった職業だ。";
-					mes "本 に秘められたエネルギーを";
-					mes "足にため、攻撃力にする能力がある。";
-					mes "また、場所や日によって使用可能な";
-					mes "スキルが変化する職業でもある。";
+					mes "[Faye]";
+					mes "Star Gladiator is a profession endowed by the sun, moon, and stars.";
+					mes "The Star Gladiator has the ability to store the energy contained in books in his legs and turn it into offensive power.";
+					mes "It is also a profession whose available skills change depending on location and day.";
 					cutin "taekwonkid_3.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "拳聖の戦い方はスキルで";
-					mes "登録するモンスターと";
-					mes "場所によるところが大きい。";
-					mes "太陽、月、星の怒 りスキルは";
-					mes "攻撃力が大きく上昇する";
-					mes "強力なスキルだ。";
+					mes "[Faye]";
+					mes "Star Gladiator's fighting style depends largely on the monster and location that registers with his skills.";
+					mes "The sun, moon, and star rage skills are powerful skills that greatly increase attack power.";
 					next;
 					break;
 				case 2:
-					mes "[Fay]";
-					mes "ソウルリンカーはテコンドーの";
-					mes "道を断ち、霊魂の力を";
-					mes "自在に操る職業だ。";
-					mes "様々な職業をサポートできると共に、";
-					mes "魔法による攻撃を行うこともできる。";
+					mes "[Faye]";
+					mes "Soul Linker is a profession that breaks the path of Taekwondo and manipulates the power of the spirit at will.";
+					mes "It can support various professions and can also attack with magic.";
 					cutin "taekwonkid_4.bmp", 2;
 					next;
-					mes "[Fay]";
-					mes "ソウルリンカーの戦い方は";
-					mes "単体魔法として強力なエスマや";
-					mes "職業ごとの特性を発揮する魂のスキル";
-					mes "を使用したものとなる。";
-					mes "HPダメージを受けてSPを消費し、";
-					mes "回復を行うカアヒは強力なスキルだ。";
+					mes "[Faye]";
+					mes "The Soul Linker's fighting style is based on the use of powerful esma as a single magic and soul skills that exhibit the characteristics of each profession.";
+					mes "Kaahi, which takes HP damage, consumes SP, and heals, is a powerful skill.";
 					next;
 					break;
 				}
 				cutin "taekwonkid_4.bmp", 255;
 				break;
 			case 8:
-				mes "[Fay]";
-				mes "特殊1次職のGunslinger、Ninja";
-				mes "Supernoviceには";
-				mes "上位職はないんだ。";
-				mes "この職業は冒険者でも稀な";
-				mes "職業と言えるかもしれないな。";
-				mes "個性豊かな職業さ。";
+				mes "[Faye]";
+				mes "Gunslinger in 1st job expanded, NinjaSupernovice doesn't have a higher job.";
+				mes "I guess you could say this profession is rare among adventurers.";
+				mes "It's a very unique profession.";
 				next;
 				break;
 			case 9:
-				mes "[Fay]";
-				mes "そうか、また知りたくなったら、";
-				mes "いつでも聞きにきてくれ。";
-				mes "喜んで話すぜ。";
+				mes "[Faye]";
+				mes "Well, if you want to know more, you can always come back and ask.";
+				mes "I'll be happy to talk to you.";
 				close;
 			}
-			mes "[Fay]";
-			mes "他の上位職について聞くかい？";
+			mes "[Faye]";
+			mes "Would you like to hear about other higher positions?";
 			next;
-			if(select("わかったから大丈夫","他の職も聞きたい")==1) break;
+			if(select("OK, I'm fine.", "I want to ask about other jobs too.")==1) break;
 		}
 		return;
 	}
 
-	function	GIVE_BOOK {
+	function GIVE_BOOK {
 		if(checkitemblank() < 2){
-			mes "^FF0000＜警告＞^000000";
-			mes "‐所持アイテムの種類数が多い為";
-			mes "　アイテムを受けとることが";
-			mes "　できません‐";
-			mes "‐所持アイテムを減らしてから、";
-			mes "　再度話しかけてください‐";
+			mes "^FF0000<WARNING>^000000-You cannot receive items due to the number of different items in your possession-";
+			mes "-Please reduce the number of items in your possession and talk to us again-";
 			close;
 		} else
 		if(Weight>(MaxWeight/100)*90){
-			mes "^FF0000＜警告＞^000000";
-			mes "‐所持アイテムの重量が多い為";
-			mes "　アイテムを受けとることが";
-			mes "　できません‐";
-			mes "‐所持アイテムを減らしてから、";
-			mes "　再度話しかけてください‐";
+			mes "^FF0000<WARNING>^000000-You will not be able to receive the item due to the high weight of the item you are carrying-";
+			mes "-Please reduce the number of items in your possession and then speak to me again-";
 			close;
 		}
 		getitem 11055,1;
-		mes "[Fay]";
-		mes "冒険の基礎ブックだ。";
-		mes "大事なことが書いてある。";
-		mes " ";
-		mes "せっかくだから、この本の使い方も";
-		mes "教えておこう。";
+		mes "[Faye]";
+		mes "It's a basic adventure book.";
+		mes "It contains important information.";
+		mes "Since we're here, let me tell you how to use this book.";
 		next;
 		cutin "jp_quest_help10.bmp",2;
-		mes "[Fay]";
-		mes "^FF0000Alt+Eキー^000000で所持アイテムが";
-		mes "表示されるから、冒険の基礎ブックに";
-		mes "^FF0000カーソルを合わせて、";
-		mes "右クリック^000000してみてくれ。";
-		mes "すると、アイテムの詳細ウィンドウが";
-		mes "表示される。";
+		mes "[Faye]";
+		mes "^FF0000Alt+E key ^000000 will show you the items you have, so just hover ^FF0000 cursor over the Basic Adventure Book and right click ^000000.";
+		mes "Then the item details window will appear.";
 		next;
-		mes "[Fay]";
-		mes "冒険の基礎ブックのような";
-		mes "本のアイテムは読むことができる。";
-		mes "^0000FFウィンドウ左上の開いた本のマークを";
-		mes "左クリック^000000してみてくれ。";
-		mes "カーソルを合わせたときに「読む」と";
-		mes "表示されるほうだ。";
+		mes "[Faye]";
+		mes "Items from books like the Basic Adventure Book can be read.";
+		mes "Try left-clicking^0000FF the open book symbol in the upper left corner of the ^0000FF window.";
+		mes "It's the one that says 'read' when you hover over it.";
 		next;
-		mes "[Fay]";
-		mes "すると、本の中を読むことができる。";
-		mes "冒険の大切なことが書かれている";
-		mes "ので、読んでみるといい。";
+		mes "[Faye]";
+		mes "Then you can read in the book.";
+		mes "You can read it because it contains important information about the adventure.";
 		next;
 		cutin "jp_quest_help10.bmp", 255;
 		return;
@@ -4301,63 +3163,43 @@ ac_cl_room.gat,44,65,4	script	Fay#ac_room	828,6,6,{
 OnTouch:
 	set AC_JOBCHANGE,0;
 	if(AC_NOVICE_QUE==30 && Job!=Job_Novice && !checkquest(100128)){
-		mes "[Fay]";
-		mes "無事転職できたようだな。";
-		mes "おめでとう！";
+		mes "[Faye]";
+		mes "Looks like you've successfully changed jobs.";
+		mes "Congratulations!";
 		next;
-		mes "[Fay]";
-		mes "それじゃ、冒険者アカデミー内を";
-		mes "見て回るといい。";
-		mes "冒険者アカデミーには、";
-		mes "戦闘が出来る実習室や";
-		mes "いろんな依頼に応える";
-		mes "仕事があるからな。";
+		mes "[Faye]";
+		mes "Then you may look around the Adventurer's Academy.";
+		mes "The Adventurer's Academy has a Practice Room where you can do battle and various jobs to respond to requests.";
 		next;
-		mes "[Fay]";
-		mes "そうそう、";
-		mes "^FF0000Lune^000000が";
-		mes "仕事を手伝ってくれる人を";
-		mes "探してるんだ。";
+		mes "[Faye]";
+		mes "Oh yeah, ^FF0000Lune^000000 is looking for someone to help him with his work.";
 		next;
-		mes "[Fay]";
-		mes "この部屋を出たら、";
-		mes "^0000FFピンク色の髪をした女性^000000に";
-		mes "話しかけてみるといい。";
-		mes "キミの成長の手助けになるはずだ。";
+		mes "[Faye]";
+		mes "When you leave this room, you can talk to the ^0000FF pink-haired Woman^000000.";
+		mes "She should be able to help you grow.";
 		setquest 100128;
 		close;
 	} else
 	if(AC_NOVICE_QUE==30 && Job==Job_Novice){
 		if(CHANGE_SNV || CHANGE_TK || CHANGE_GS || CHANGE_NJ){
-			emotion 21, "Fay#ac_room"; //52725
-			mes "[Fay]";
-			mes "おっ！";
-			mes "転職に向けてがんばってる";
-			mes "みたいだな！";
+			emotion 21, "Faye#ac_room"; //52725
+			mes "[Faye]";
+			mes "Whoa!";
+			mes "Looks like you're working hard on your new job!";
 			next;
 			if(CHANGE_TK||CHANGE_SNV){
-				mes "[Fay]";
-				mes "BaseLvを上げたいなら、";
-				mes "冒険者アカデミー内の";
-				mes "実習室か特別室へ";
-				mes "行って見るといい。";
+				mes "[Faye]";
+				mes "If you want to raise your BaseLv, go to the Practice Room or Special Room in the Adventurer's Academy and see.";
 				next;
-				mes "[Fay]";
-				mes "実習室はこの講習室を";
-				mes "出てから、左上の方へ";
-				mes "行くとあるぞ。";
+				mes "[Faye]";
+				mes "The Practice Room is located in the upper left after you leave this training room.";
 				close;
 			} else {
-				mes "[Fay]";
-				mes "他の街へ行くなら、";
-				mes "^0000FF「転送サービス」^000000をしている";
-				mes "赤い髪の^0000FFタール^000000を探して";
-				mes "みるといい。";
+				mes "[Faye]";
+				mes "If you want to go to another city, look for the red-haired ^0000FFTaro^000000 who is ^0000FF \"forwarding service\" ^000000.";
 				next;
-				mes "[Fay]";
-				mes "タールはこの講習室を";
-				mes "出てから、左上の方へ行くと";
-				mes "いるはずだ。";
+				mes "[Faye]";
+				mes "Taro should be found after you leave this training room and go to the upper left.";
 				close;
 			}
 		}
@@ -4366,206 +3208,115 @@ OnTouch:
 }
 
 
-//操作ノート
--	script	操作ノート#func	-1,{
-	mes "[操作ノート]";
-	mes "‐冒険に役立つことがかかれた本だ‐";
-	mes "‐本を開くと、ページの項目が";
-	mes "のっている‐";
-	mes "‐どのページを読んでみようか‐";
+//Operation Notes
+-	script	Operation Notes#func	-1,{
+	mes "[Operation Notes]";
+	mes "-It's a book with things that will help you in your adventures-";
+	mes "-When you open the book, you will see the items on the pages-";
+	mes "-Which page shall I read?-";
 	next;
-	switch(select("会話の仕方","戦闘の仕方","場所の調べ方","座り方","視点変更の仕方","ショートカットの使い方","読むのをやめる")){
-	case 1:
-		mes "[会話の仕方のページ]";
-		mes "‐左下に会話と書かれた半透明の";
-		mes "ウィンドウが会話ウィンドウです。";
-		mes "会話ウィンドウには会話をはじめ、";
-		mes "ステータスの変化やアイテムの";
-		mes "入手時にもメッセージが表示されます‐";
+	switch(select("How to talk", "How to fight", "How to find out where you are", "How to sit", "How to change viewpoint", "How to use shortcuts", "Stop reading")){
+	CASE 1:
+		mes "[Conversation instructions page]";
+		mes "-The translucent window with the word conversation in the lower left corner is the conversation window.";
+		mes "The conversation window displays the conversation, as well as the status changes and the mesage when items are obtained-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐下段右側の空欄にメッセージを";
-		mes "入れ、^0000FFEnterキー^000000を押すと、";
-		mes "同一画面の全プレイヤーに";
-		mes "会話が表示されます。";
+		mes "[How to Conversation page]";
+		mes "-Put your MessSage in the blank space on the right side of the bottom row and press ^0000FFEnter key ^000000, and the conversation will be displayed to all players on the same screen.";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐下段左側の空欄にキャラクター名を";
-		mes "入力することで、その相手と1対1で";
-		mes "会話を行うことができます‐";
-		mes "‐この機能を使うことで、";
-		mes "画面内に相手がいない状態でも";
-		mes "ログイン中の相手と会話ができます‐";
+		mes "[How to Conversation page]";
+		mes "-Enter a character name in the blank space on the left side of the bottom row to have a one-on-one conversation with that person-";
+		mes "-Using this feature, you can have a conversation with the person you are logged in with, even if he/she is not in the screen.-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐会話ウィンドウ右下の";
-		mes "2つの○の内、";
-		mes "右の○をクリックすると、";
-		mes "ウィンドウの大きさが変更され、";
-		mes "表示行数を変更できます‐";
+		mes "[How to Conversation page]";
+		mes "-Click on the right circle of the two circles in the lower right corner of the conversation window to resize the window and change the number of lines displayed.-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐左側の○をクリックすると、";
-		mes "会話モードの切り替えが行われます‐";
+		mes "[How to Conversation Page]";
+		mes "-Clicking the left circle will toggle the conversation mode-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐会話モードの切り替えは、全体、";
-		mes "パーティ、ギルドの3種類と";
-		mes "なります‐";
-		mes "‐全体は同一画面内の";
-		mes "キャラクターに会話が表示されます‐";
+		mes "[Conversation method page]";
+		mes "-There are three types of conversation mode switching: whole, party and guild-";
+		
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐パーティはログイン中の";
-		mes "パーティメンバー全員に";
-		mes "発言した会話が表示されます。";
-		mes "パーティメンバー以外には";
-		mes "この会話は見えません‐";
+		mes "[Conversation way page]";
+		mes "-Party will show the conversations said to all party members who are logged in.-";
+		mes "-Non-party members will not see this conversation-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐ギルドもログイン中の";
-		mes "ギルドメンバー全員に";
-		mes "発言した会話が表示されます。";
-		mes "ギルドメンバー以外には";
-		mes "この会話は見えません‐";
+		mes "[How to Conversation Page]";
+		mes "-The guild will also see the conversation that was said to all guild members who are logged in.";
+		mes "Only guild members can see this conversation-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐また、発言の際に";
-		mes "^0000FFCtrlキーを押した状態で";
-		mes "Enterキーを押す^000000と";
-		mes "パーティメンバーへの";
-		mes "会話になります‐";
+		mes "[How to Conversation Page]";
+		mes "-Also, if you hold down the ^0000FFCtrl key when you speak and press the Enter key ^000000, the conversation will be to the party members-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐同様に、発言の際に";
-		mes "^0000FFAltキーを押した状態で";
-		mes "Enterキーを押す^000000と";
-		mes "ギルドメンバーへの";
-		mes "会話となります‐";
+		mes "[How to Conversation Page]";
+		mes "-Similarly, pressing the Enter key while holding down the ^0000FFAlt key when speaking ^000000 and pressing the Enter key ^000000 will be a conversation to guild members-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐キーを押す以外にも";
-		mes "発言内容の前に";
-		mes "「^0000FF%^000000」を入れることで";
-		mes "パーティメンバーへの";
-		mes "会話として発言することができます‐";
-		mes "‐「^0000FF%^000000」は半角での入力となります‐";
+		mes "[How to Conversation Page]";
+		mes "-In addition to pressing the key, you can also put \"^0000FF%^000000\" in front of your statement to make it a conversation to your party members-";
 		next;
-		mes "[会話の仕方のページ]";
-		mes "‐同様に発言の前に";
-		mes "「^0000FF$^000000」を入れることで、";
-		mes "ギルドメンバーへの";
-		mes "会話として発言することができます‐";
-		mes " ";
-		mes "‐「^0000FF$^000000」は半角での入力となります‐";
+		mes "[Conversation instructions page]";
+		mes "-Similarly, you can speak as a conversation to guild members by putting \"^0000FF$^000000\" in front of your statement-";
 		close;
 	case 2:
-		mes "[戦闘の仕方ページ]";
-		mes "‐モンスターへの攻撃は";
-		mes "攻撃するモンスターを";
-		mes "左クリックすることで、";
-		mes "行うことができます‐";
-		mes "‐また、^0000FFCtrlキー^000000を同時に押すことで、";
-		mes "オートモードになります‐";
+		mes "[How to Combat page]";
+		mes "-Attacking a monster can be done by left-clicking on the monster to be attacked-";
+		mes "-Also, by pressing ^0000FFCtrl key ^000000 at the same time, you will be in auto mode-";
 		next;
-		mes "[戦闘の仕方ページ]";
-		mes "‐会話ウィンドウ内に^0000FF『/nc』^000000または『/noctr』と";
-		mes "入力して発言すると、";
-		mes "Ctrlキーを押さずに";
-		mes "常にオートモードへ";
-		mes "切り替えておくことができます‐";
+		mes "[How to combat page]";
+		mes "-You can always switch to auto mode without pressing the Ctrl key by typing ^0000FF '/nc'^000000 or '/noctr' in the conversation window and saying -";
 		close;
 	case 3:
-		mes "[座り方のページ]";
-		mes "‐基本スキルレベルが";
-		mes "Lv3となることで、座ることが";
-		mes "できるようになります‐";
-		mes "‐^0000FFInsertキー^000000を押すことで";
-		mes "座る、立つの動作を";
-		mes "行うことができます。";
+		mes "[Sitting page]";
+		mes "-Basic skill level of Lv 3 allows you to sit down-";
+		mes "-^0000FFPressing the Insert key ^000000 allows you to perform sitting and standing actions.";
 		next;
-		mes "[座り方のページ]";
-		mes "‐座った状態の時には";
-		mes "HPとSPの自然回復速度が増加します‐";
+		mes "[Sitting page]";
+		mes "-The natural recovery rate of HP and SP is increased when you are in a sitting position-";
 		close;
 	case 4:
-		mes "[視点変更の仕方のページ]";
-		mes "‐マウスの右クリックを押し続け、";
-		mes "左右にマウスを動かすと、";
-		mes "視点の変更ができます‐";
+		mes "[How to change viewpoint page]";
+		mes "-Hold down the right mouse button and move the mouse left or right to change the viewpoint-";
 		next;
-		mes "[視点変更の仕方のページ]";
-		mes "‐また、視点を変更した状態で、";
-		mes "マウスの^0000FF右ボタンを";
-		mes "ダブルクリック^000000すると、";
-		mes "視点を元の状態へ戻すことが";
-		mes "できます‐";
+		mes "[How to change viewpoint page]";
+		mes "-And if you double click^0000FF the right mouse button^000000 with the viewpoint changed, you can change the viewpoint back to the original state-";
 		next;
-		mes "[視点変更の仕方のページ]";
-		mes "‐しかし、室内などの";
-		mes "特定の場所では";
-		mes "右のダブルクリックで";
-		mes "視点が変更されない場所も";
-		mes "あります‐";
+		mes "[How to change viewpoint page]";
+		mes "-But in certain places, such as indoors, the right double-click will not change the viewpoint-";
 		next;
-		mes "[マウス操作]";
-		mes "‐右ボタンを押し続けることで、";
-		mes "カーソルが左右の矢印の形に";
-		mes "変化します。";
-		mes "この状態でマウスを移動させると";
-		mes "視点を変更することが出来ます‐";
+		mes "[Mouse actions]";
+		mes "-Holding down the right button changes the cursor into the shape of left and right arrows.";
+		mes "You can change the viewpoint by moving the mouse in this state -";
 		next;
-		mes "[視点変更の仕方のページ]";
-		mes "‐^0000FF『Ctrl+右ボタン』^000000で";
-		mes "キャラクターに";
-		mes "ズームインすることが出来ます‐";
+		mes "[How to change viewpoint page]";
+		mes "-^0000FF 'Ctrl+right button' ^000000 you can zoom in on the character-";
 		next;
-		mes "[視点変更の仕方のページ]";
-		mes "‐^0000FF『Shift+右ボタン』^000000で";
-		mes "視点の角度を";
-		mes "変更することが出来ます。";
-		mes "この際^0000FF『Ctrlキー』^000000を";
-		mes "同時に押すことで、より大きく";
-		mes "角度を変更することが出来ます‐";
+		mes "[How to change viewpoint page]";
+		mes "-^0000FF 'Shift+right button'^000000 you can change the angle of the viewpoint.";
+		mes "You can also press ^0000FF 'Ctrl key'^000000 at the same time to change the angle more significantly-";
 		next;
-		mes "[視点変更の仕方のページ]";
-		mes "‐視点の拡大縮小は";
-		mes "^0000FFマウスのホイールを上下に";
-		mes "動かす^000000ことでも行うことができます‐";
+		mes "[How to change the viewpoint page]";
+		mes "-The zooming in and out of the viewpoint can also be done by moving the ^0000FF mouse wheel up and down ^000000-";
 		close;
 	case 5:
-		mes "[ショートカットの使い方]";
-		mes "‐ショートカットウィンドウは";
-		mes "^0000FFF12キー^000000を押すことで";
-		mes "表示させることができます‐";
-		mes "‐ウィンドウの表示中は";
-		mes "3つのショートカットウィンドウが";
-		mes "切り替わります‐";
+		mes "[How to use shortcuts]";
+		mes "-The shortcut window can be displayed by pressing the ^0000FFF12 key ^000000-";
+		mes "-Three shortcut windows are toggled while the window is displayed-";
 		next;
-		mes "[ショートカットの使い方]";
-		mes "‐ショートカットウィンドウには";
-		mes "消費アイテムやスキル、";
-		mes "装備品を登録することができます‐";
-		mes "‐登録後、^000000F1～F9キー^000000までの";
-		mes "キーを押すことで、登録したものを";
-		mes "使用することができます‐";
+		mes "[How to use shortcuts]";
+		mes "-The shortcut windows allow you to register consumable items, skills and equipment-";
+		mes "-After registering, you can use the registered items by pressing ^000000F1 to F9 keys ^000000-";
 		next;
-		mes "[ショートカットの使い方]";
-		mes "‐ショートカットしたいアイテム、";
-		mes "スキル、装備品のアイコンを";
-		mes "^0000FFショートカットウィンドウに";
-		mes "ドラッグ^000000することで、";
-		mes "登録することができます‐";
+		mes "[How to use shortcuts]";
+		mes "-You can register the icon of the item, skill or equipment you want to shortcut by dragging^0000FF the icon to the shortcut window^000000-";
+		mes "-After registering the item, skill or equipment, you can use it by pressing the keys from ^0000FFF1 to F9^000000.-";
 		next;
-		mes "[ショートカットの使い方]";
-		mes "‐消耗品となる回復アイテムなどを";
-		mes "ショートカットウィンドウに";
-		mes "登録し、ボタンを連打しながら";
-		mes "回復すると大変便利です‐";
+		mes "[How to use shortcuts]";
+		mes "-It is very convenient to register consumable recovery items and other items in the shortcut window and recover them by repeatedly pressing the buttons.";
 		close;
 	default:
 		mes "["+ strcharinfo(0) +"]";
-		mes "（もう調べることはないかな。）";
+		mes "(I guess I don't have to look it up anymore.)";
 		close;
 	}
 OnInit:
@@ -4574,88 +3325,71 @@ OnTimer3000:
 	misceffect 543;
 	initnpctimer;
 }
-ac_library.gat,110,108,0	duplicate(操作ノート#func)	操作ノート#_1	111
-ac_library.gat,107,108,0	duplicate(操作ノート#func)	操作ノート#_2	111
-ac_cl_room.gat,45,62,4	duplicate(操作ノート#func)	操作ノート#3	111
-ac_cl_room.gat,33,47,4	duplicate(操作ノート#func)	操作ノート#4	111
-ac_cl_room.gat,55,44,4	duplicate(操作ノート#func)	操作ノート#4_1	111
+ac_library.gat,110,108,0	duplicate(Operation Notes#func)	Operation Notes#_1	111
+ac_library.gat,107,108,0	duplicate(Operation Notes#func)	Operation Notes#_2	111
+ac_cl_room.gat,45,62,4	duplicate(Operation Notes#func)	Operation Notes#3	111
+ac_cl_room.gat,33,47,4	duplicate(Operation Notes#func)	Operation Notes#4	111
+ac_cl_room.gat,55,44,4	duplicate(Operation Notes#func)	Operation Notes#4_1	111
 
-ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
+ac_cl_room.gat,37,32,4	script	Master Sunus	51,{
 	function GetBeginnerEquip;
 	if(AC_PASSPORT<2){
-		mes "[マスター・スヌス]";
-		mes "ん？君はまだアカデミーでの";
-		mes "入学手続きが";
-		mes "完了していないようだね。";
+		mes "[Master Sunus]";
+		mes "Hmm? I see you have not yet completed the enrollment process at the Academy.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "まずは、^FF0000「エーラさん」^000000の";
-		mes "ところで入学手続きを";
-		mes "すませるんだ。";
+		mes "[Master Sunus]";
+		mes "First, you need to complete the enrollment process at ^FF0000 \"Ella-san\" ^000000.";
 		close;
 	}
 	if(checkquest(201036)) {
-		mes "‐男はなにやら忙しそうである‐";
+		mes "-The man is busy with something-";
 		next;
-		mes "‐インフォメーション‐";
-		//mes "　^FF00002015年5月26日";
-		//mes "　定期メンテナンス以前に";
-		//mes "　「分厚い戦闘教範」を";
-		//mes "　受け取っている場合、";
-		mes "　こちらのNPCを";
-		mes "　利用することができません‐";
+		mes "-Information-";
+		//mes " ^FF0000May 26, 2015";
+		//mes " before scheduled maintenance ";
+		//mes " "Thick Combat Instruction";
+		//mes " If you have received ";
+		mes " This NPC is not available -";
 		close;
 	}
-	mes "[マスター・スヌス]";
-	// 挨拶分岐未調査
+	mes "[Master Sunus]";
+	// greeting branch unexamined
 	if(gettime(3) >= 5 && gettime(3) <= 10)
-		mes "やぁ、おはよう。";
+		mes "Hey, good morning.";
 	else if(gettime(3) >= 11 && gettime(3) <= 17)
-		mes "やぁ、こんにちは。";
+		mes "Hi there.";
 	else
-		mes "やぁ、こんばんは。";
+		mes "Hi, good evening.";
 	next;
 	if(Upper == UPPER_HIGH || getbaseclass(Class) > CLASS_DC || Job >= Job_RuneKnight) {
-		mes "[マスター・スヌス]";
-		mes "冒険者として十分に";
-		mes "成長している君には";
-		mes "僕の導きは必要ないだろう。";
-		mes "人生とは孤独なものさ……";
-		mes "孤独だからこそ、仲間と共に歩む事が";
-		mes "なにより素晴らしいのさ！";
+		mes "[Master Sunus]";
+		mes "You are mature enough to be an adventurer and will not need my guidance.";
+		mes "Life is a lonely thing. ......";
+		mes "It is solitary, and that is why it is most wonderful to walk with friends!";
+		NEXT;
+		mes "[Master Sunus]";
+		mes "You could join a guild.";
+		mes "It would be nice to walk with a stranger for a moment ......";
 		next;
-		mes "[マスター・スヌス]";
-		mes "ギルドに入るのもいいだろう。";
-		mes "見ず知らずの相手とひと時";
-		mes "共に歩むのもいいだろう……";
-		next;
-		mes "[マスター・スヌス]";
-		mes "これからの君の道が";
-		mes "素晴らしい物になる事を";
-		mes "願っているよ。";
+		mes "[Master Sunus]";
+		mes "I hope your path ahead is a great one.";
 		close;
 	}
 	if(AC_PASSPORT == 2) {
-		mes "[マスター・スヌス]";
-		mes "初めまして。";
-		mes "僕の名はスヌス………";
-		mes "マスター・スヌスと呼んでくれ。";
+		mes "[Master Sunus]";
+		mes "Nice to meet you.";
+		mes "My name is Sunus. .........";
+		mes "Call me Master Sunus.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "まずは……君の為に";
-		mes "^0000FF初心者用ポーション^000000を用意したんだ。";
-		mes "量は少ないが、君の助けになれば";
-		mes "と思ってね。";
+		mes "[Master Sunus]";
+		mes "First of all, I have prepared ^0000FF beginner's potion ^000000 for you .......";
+		mes "It's not much, but I hope it will help you.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "HPが減って危なくなったら";
-		mes "これを使って回復するんだ。";
+		mes "[Master Sunus]";
+		mes "If your HP gets low and you are in danger, use this to recover.";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　^FF0000マスター・スヌスから";
-		mes "　提供される初心者用ポーション";
-		mes "　の提供期間は";
-		mes "　2週間となります‐";
+		mes "-Information-";
+		mes " ^FF0000Master Sunus will provide beginner potions for a period of 2 weeks-";
 		//setquest 117475;
 		//compquest 117475;
 		setquest 117480;
@@ -4664,11 +3398,8 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 	}
 	if(checkquest(117480)) {
 		if(checkquest(117480)&2) {
-			mes "‐インフォメーション‐";
-			mes "　初心者用ポーション提供開始から";
-			mes "　2週間経過したので、";
-			mes "　初心者用ポーションの配布は";
-			mes "　終了となります‐";
+			mes "-Information-";
+			mes " The distribution of potions for beginners will end as two weeks have passed since the start of providing potions for beginners-";
 			delquest 117480;
 			delquest 117470;
 			next;
@@ -4676,26 +3407,20 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		else {
 			if(!checkquest(117470) || checkquest(117470)&2) {
 				if(MaxWeight - Weight < 1000) {
-					mes "[マスター・スヌス]";
-					mes "……ちょっと荷物が";
-					mes "重すぎるみたいだね。";
-					mes "荷物を整理して、^FF0000所持重量を";
-					mes "^FF0000減らして^000000おいで。";
-					mes "改めて初心者用ポーションを";
-					mes "渡してあげるよ。";
+					mes "[Master Sunus]";
+					mes "...... Looks like your luggage is a little too heavy.";
+					mes "Sort out your luggage and reduce ^FF0000 your weight ^000000 in your possession and come.";
+					mes "I'll give you a beginner's potion again.";
 				}
 				else if(checkitemblank() < 3) {
-					mes "[マスター・スヌス]";
-					mes "……ちょっと荷物が";
-					mes "多すぎるみたいだね。";
-					mes "荷物を整理して、^FF0000所持種類数を";
-					mes "^FF0000減らして^000000おいで。";
-					mes "改めて初心者用ポーションを";
-					mes "渡してあげるよ。";
+					mes "[Master Sunus]";
+					mes "...... Looks like you have a little too much baggage.";
+					mes "Sort out your stuff and reduce the number of ^FF0000 types you have ^000000 and come.";
+					mes "I'll give you the beginner's potion again.";
 				}
 				else {
 					setquest 117470;
-					// 個数分岐未調査
+					// piece count branch not yet investigated
 					if(BaseLevel < 30)
 						getitem 569, 100;
 					else if(BaseLevel < 50)
@@ -4706,224 +3431,149 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 						getitem 569, 500;
 					else
 						getitem 569, 1000;
-					mes "[マスター・スヌス]";
-					mes "少し時間はかかるけど";
-					mes "また用意しておくよ。";
-					mes "いつ頃渡せるかは、";
-					mes "クエストウィンドウを確認";
-					mes "しておくれ。";
+					mes "[Master Sunus]";
+					mes "It's going to take a little while, but I'll have it ready again.";
+					mes "Check the quest window to see when I can give it to you.";
 				}
 			}
 			else {
-				mes "[マスター・スヌス]";
-				mes "初心者用ポーションはまだ";
-				mes "準備中なんだ。";
-				mes "いつ頃渡せるかは、";
-				mes "クエストウィンドウを確認";
-				mes "しておくれ。";
+				mes "[Master Sunus]";
+				mes "I'm still preparing the potions for beginners.";
+				mes "Check your quest window to see when you can give it to me.";
 			}
 			next;
 		}
 	}
 	else {
-		mes "[マスター・スヌス]";
-		mes "冒険は順調かい？";
+		mes "[Master Sunus]";
+		mes "How is your adventure going?";
 		next;
 	}
-	mes "[マスター・スヌス]";
-	mes "さて、それじゃあ……";
+	mes "[Master Sunus]";
+	mes "Okay, so ......";
 	next;
-	if(select("アイテム交換","立ち去る") == 2) {
-		mes "[マスター・スヌス]";
-		mes "そうかい？";
-		mes "また来るといい。";
+	if(select("item exchange", "walk away") == 2) {
+		mes "[Master Sunus]";
+		mes "Really?";
+		mes "You can come back.";
 		close;
 	}
-	mes "[マスター・スヌス]";
-	mes "アイテム交換だね。";
-	mes "君が交換できるのは……";
+	mes "[Master Sunus]";
+	mes "I guess we're exchanging items.";
+	mes "You can exchange ......";
 	next;
 	if(AC_BEGINNER_EQUIP == 12) {
-		mes "[マスター・スヌス]";
-		mes "チケットがないようだから、";
-		mes "君にあげられるものは";
-		mes "なさそうだね……";
+		mes "[Master Sunus]";
+		mes "Since you don't seem to have any tickets, it looks like I don't have anything to give you. ......";
 		next;
-		mes "[マスター・スヌス]";
-		mes "それだけの実力があって";
-		mes "JobLvが50に達しているのなら";
-		mes "君は次のステージに進む";
-		mes "時が来たんだろうね。";
+		mes "[Master Sunus]";
+		mes "If you're that good and your JobLv has reached 50, I guess it's time for you to move on.";
 		next;
 		if(countitem(25020) == 0) {
-			mes "[マスター・スヌス]";
-			mes "そういえば、君は";
-			mes "「卒業証書」は";
-			mes "持っていないようだね。";
-			mes "未開封のレベルアップ";
-			mes "ボックスがあるなら";
-			mes "開けておくといいよ。";
+			mes "[Master Sunus]";
+			mes "Come to think of it, I don't think you have a 'diploma'.";
+			mes "If you have an unopened level-up box, you should open it.";
 			next;
-			mes "[マスター・スヌス]";
-			mes "さて、君さえよければ";
-			mes "「メテウスシルプ」という";
-			mes "人物のところへ案内しよう。";
-			mes "そこで「転生」の手続きに";
-			mes "進むことが可能となる。";
+			mes "[Master Sunus]";
+			mes "Now, if it's all right with you, I'll take you to someone named 'Metheus Silp'.";
+			mes "There you will be able to proceed to the \"reincarnation\" procedure.";
 			next;
-			mes "[マスター・スヌス]";
-			mes "手続きを行うには";
-			mes "^FF00001,285,000Zeny^000000が必要と";
-			mes "なるので、注意しておくれ。";
+			mes "[Master Sunus]";
+			mes "Please note that ^FF00001,285,000Zeny^000000 is required to complete the procedure.";
 		}
 		else {
-			mes "[マスター・スヌス]";
-			mes "君さえよければ";
-			mes "「メテウスシルプ」という";
-			mes "人物のところへ案内しよう。";
+			mes "[Master Sunus]";
+			mes "If you are willing, I can take you to someone named 'Metheus Silp'.";
 			next;
-			mes "[マスター・スヌス]";
-			mes "そこで「卒業証書」を";
-			mes "渡せば無料で「転生」の";
-			mes "手続きに進むことが";
-			mes "可能となる。";
+			mes "[Master Sunus]";
+			mes "There, if you hand over your 'diploma', you will be able to proceed to the 'reincarnation' procedure for free.";
 			next;
-			mes "[マスター・スヌス]";
-			mes "「卒業証書」をなくして";
-			mes "しまうと「転生」の手続きに";
-			mes "^FF00001,285,000Zeny^000000が必要と";
-			mes "なるので、注意しておくれ。";
+			mes "[Master Sunus]";
+			mes "If you lose the 'diploma', you will need ^FF00001,285,000Zeny^000000 to proceed to 'reincarnation', so be careful.";
 		}
 		next;
-		mes "[マスター・スヌス]";
-		mes "それじゃ、";
-		mes "「メテウスシルプ」へいくかい？";
+		mes "[Master Sunus]";
+		mes "So, shall we go to [Metheus Shilp] then?";
 		next;
-		if(select("はい","また今度にする") == 2) {
-			mes "[マスター・スヌス]";
-			mes "そうかい？";
-			mes "また来るといい。";
+		if(select("yes", "another time") == 2) {
+			mes "[Master Sunus]";
+			mes "Really?";
+			mes "You can come back.";
 			close;
 		}
-		mes "[マスター・スヌス]";
-		mes "いままで教えたことを";
-		mes "忘れずにこれからも";
-		mes "冒険を頑張ってほしい！";
+		mes "[Master Sunus]";
+		mes "I hope you remember what I've taught you so far and keep up the good work on your adventures!";
 		close2;
 		warp "yuno_in02.gat",90,162;
 		end;
 	}
 	if(countitem(25018) < 1 && countitem(25019) < 1) {
-		mes "[マスター・スヌス]";
-		mes "チケットを持っていない";
-		mes "みたいだね。";
+		mes "[Master Sunus]";
+		mes "It looks like you don't have a ticket.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "レベルを上げて";
-		mes "レベルアップボックスを";
-		mes "開けたら、チケットが";
-		mes "手に入るんだ。";
+		mes "[Master Sunus]";
+		mes "If you level up and open the level up box, you'll get the ticket.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "頑張ってね！";
+		mes "[Master Sunus]";
+		mes "Good luck!";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　^FF0000アイテム交換は";
-		mes "　Ninja、Taekwon Kid、";
-		mes "　ソウルリンカー、拳聖、";
-		mes "　Gunslinger、";
-		mes "　Supernoviceを除く";
-		mes "　未転生職業のみの権利です。";
+		mes "-Information-";
+		mes " ^FF0000Item exchange is only entitled to unincarnated professions except Ninja, Taekwon Kid, Soul Linker, Star Gladiator, Gunslinger, and Supernovice.";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　また、転生後の職業での";
-		mes "　交換は受け付けていませんので";
-		mes "　ご注意ください。";
+		mes "-Information-";
+		mes " Also, please note that we do not accept exchanges with post-transfiguration professions.";
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[マスター・スヌス]";
-		mes "チケットは持っているけれど……";
-		mes "まずはTaekwon Kidを除く";
-		mes "いずれかの一次職に";
-		mes "転職してから……だね。";
+		mes "[Master Sunus]";
+		mes "I have a ticket but ......";
+		mes "I'll have to change to one of the primary jobs first, except Taekwon Kid, and then I'll go to .......";
 		next;
-		mes "[マスター・スヌス]";
-		mes "転職したら、またおいで。";
-		mes "その時改めて、チケットとアイテムを";
-		mes "交換してあげよう。";
+		mes "[Master Sunus]";
+		mes "When you change jobs, come back.";
+		mes "At that time, I will exchange your ticket for the item again.";
 		close;
 	}
 	switch(AC_BEGINNER_EQUIP) {
 	case 0:
 		if(countitem(25019) == 0) close;
 
-		mes "[マスター・スヌス]";
-		mes "[衣装] ビギナー帽";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes "[Costume] I give you the beginner's hat.";
 		next;
 		set AC_BEGINNER_EQUIP,1;
 		delitem 25019, 1;
 		getitem 20307, 1;
-		mes "[マスター・スヌス]";
-		mes "[衣装] ビギナー帽は";
-		mes "冒険をはじめてまもない";
-		mes "冒険者に贈っている";
-		mes "装備アイテムであり";
-		mes "冒険者ビギナーの証でもある。";
+		mes "[Master Sunus]";
+		mes "[Costume] The beginner's hat is an item of equipment given to adventurers who have just started adventuring and is a sign of an adventurer beginner.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "この帽子は、";
-		mes "装備しているだけで";
-		mes "様々なステータスを";
-		mes "強化してくれる。";
+		mes "[Master Sunus]";
+		mes "This hat enhances various stats just by equipping it.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "また、これを装備していれば";
-		mes "他の熟練した冒険者が";
-		mes "手を貸してくれることも";
-		mes "あるだろうから、きちんと";
-		mes "身に着けておいてくれ。";
+		mes "[Master Sunus]";
+		mes "Also, other skilled adventurers may lend a hand if you have this equipped, so make sure you wear it properly.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "それと…";
-		mes "[衣装] ビギナー帽を";
-		mes "装備した状態で";
-		mes "スキル「応急手当」を";
-		mes "使えば、僕の所に";
-		mes "戻ってくることが出来るんだ。";
+		mes "[Master Sunus]";
+		mes "And...";
+		mes "[Costume] If you use the skill \"First Aid\" with your beginner's hat equipped, you can come back to me.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "何かあれば使うといい。";
-		mes "僕はいつでも此処に";
-		mes "居るからね。";
+		mes "[Master Sunus]";
+		mes "You can use it if you need anything.";
+		mes "I'm always here for you.";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　^FF0000習得しているスキルを確認、";
-		mes "　使用する場合は";
-		mes "　基本情報画面の「Skill」を押すか";
-		mes "　「Alt + S」でスキルウィンドウを";
-		mes "　呼び出すことができます。";
+		mes "-Information-";
+		mes " ^FF0000To check and use the skills you have learned, you can press \"Skill\" on the basic information screen or use \"Alt + S\" to call up the skill window.";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　[[衣装] ビギナー帽]は、";
-		mes "　次の職業への転職の際に";
-		mes "　回収をさせて頂きます。";
-		mes "　Ninja、Gunslinger";
-		mes "　Taekwon Kid";
-		mes "　Supernovice。";
+		mes "-Information-";
+		mes "[[Costume] Beginner Hat] will be collected when you change to the next profession.";
+		mes " Ninja, GunslingerTaekwon KidSupernovice.";
 		next;
-		mes "‐インフォメーション‐";
-		mes "　それ以外の職業は";
-		mes "　「転生」又は";
-		mes "　「3次職転職」の際に";
-		mes "　回収させて頂きます。";
+		mes "-Information-";
+		mes " Other occupations will be collected at the time of \"transferring\" or \"changing to the third occupation\".";
 		next;
-		mes "[マスター・スヌス]";
-		mes "ところで、この部屋にいる人達から";
-		mes "講習は全部受けたかい？";
-		mes "もし受けてないようであれば";
-		mes "きちんと受けておくんだよ。";
+		mes "[Master Sunus]";
+		mes "By the way, have you taken all the courses from the people in this room?";
+		mes "If you haven't taken it, make sure you do.";
 		next;
 		break;
 	case 1:
@@ -4932,107 +3582,88 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		GetBeginnerEquip;
 		break;
 	case 2:
-		if(countitem(25019) == 0) close;
+		
 
-		mes "[マスター・スヌス]";
-		mes "フード[0]";
-		mes "サンダル[0]";
-		mes "ガード[0]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes "Hood[0]";
+		mes "Sandals[0]";
+		mes "Guard[0]";
+		mes "I give to you the [Master Sunus]";
 		next;
 		set AC_BEGINNER_EQUIP,3;
 		delitem 25019, 1;
 		getitem 2501, 1;
 		getitem 2401, 1;
 		getitem 2101, 1;
-		mes "[マスター・スヌス]";
-		mes "いま渡した防具は";
-		mes "装備することで少しなりとも";
-		mes "モンスターからの";
-		mes "ダメージを軽減して";
-		mes "くれるものだから、";
+		mes "[Master Sunus]";
+		mes "The armor I just gave you will reduce the damage from monsters in any way by equipping it.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "忘れずに装備する";
-		mes "ようにしてくれ。";
+		mes "[Master Sunus]";
+		mes "Don't forget to equip it.";
 		if(checkre()) {
-			mes "ただし、盾である";
-			mes "「ガード」は攻撃速度が";
-			mes "遅くなるデメリットも";
-			mes "あるから注意してくれ。";
+			mes "Be aware, however, that the shield, \"Guard,\" has the disadvantage of slowing down the attack speed.";
 		}
 		next;
-		mes "[マスター・スヌス]";
-		mes "まずは試しに装備してみて";
-		mes "使い勝手が悪いようであれば";
-		mes "無理に装備する必要はないぞ。";
+		mes "[Master Sunus]";
+		mes "Try it out first, and if it doesn't seem useful, don't force yourself to equip it.";
 		next;
 		break;
 	case 3:
 		if(countitem(25018) == 0) close;
 
 		GetBeginnerEquip;
-		mes "[マスター・スヌス]";
-		mes "今回渡した武器は";
-		mes "以前渡したものよりは";
-		mes "攻撃力が強化された武器だ。";
+		mes "[Master Sunus]";
+		mes "The weapon I gave you this time is a weapon with enhanced attack power than the one I gave you before.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "いま所持している武器より";
-		mes "攻撃力が高いようであれば";
-		mes "是非使ってみてほしい。";
+		mes "[Master Sunus]";
+		mes "If you find that the attack power is higher than the weapon you have now, please try to use it.";
 		next;
 		break;
 	case 4:
 		if(countitem(25019) == 0) close;
 
 		while(1) {
-			mes "[マスター・スヌス]";
-			mes "そうだね……";
-			mes "どれが欲しいか、選んでご覧。";
+			mes "[Master Sunus]";
+			mes "Yes, ......";
+			mes "See which one you want, pick one.";
 			next;
-			switch(select("モルフェウスセット","ヘルモードセット①","ヘルモードセット②")) {
-			case 1:
-				mes "[マスター・スヌス]";
-				mes "Acolyte、Magician系の";
-				mes "後衛にお勧めの防具だね。";
+			switch(select("Morpheus Set", "Hell Mode Set 1", "Hell Mode Set 2")) {
+			CASE 1:
+				mes "[Master Sunus]";
+				mes "Acolyte, I would recommend this armor for the rear guard of the Magician family.";
 				setarray '@itemid,5126,2518,2648,2649;
 				break;
 			case 2:
-				mes "[マスター・スヌス]";
-				mes "前衛にお勧めの防具だね。";
-				mes "HPやSPが増加したり";
-				mes "モンスターから受けるダメージを";
-				mes "軽減する効果をもっているぞ。";
+				mes "[Master Sunus]";
+				mes "That's the recommended armor for the vanguard.";
+				mes "It increases HP and SP and reduces damage from monsters.";
 				setarray '@itemid,5123,2353,2517,2418;
 				break;
 			case 3:
-				mes "[マスター・スヌス]";
-				mes "前衛にお勧めの防具だね。";
-				mes "装備することで回避力や";
-				mes "回復アイテムの回復効果を";
-				mes "強化する効果をもっているぞ。";
+				mes "[Master Sunus]";
+				mes "That's the recommended armor for the vanguard.";
+				mes "Equipping this armor enhances the evasion and recovery effects of recovery items.";
 				setarray '@itemid,5123,2353,2516,2417;
 				break;
 			}
 			next;
-			mes "[マスター・スヌス]";
-			mes getitemname('@itemid[0])+ "[" +getiteminfo('@itemid[0],10)+ "]";
-			mes getitemname('@itemid[1])+ "[" +getiteminfo('@itemid[1],10)+ "]";
-			mes getitemname('@itemid[2])+ "[" +getiteminfo('@itemid[2],10)+ "]";
-			mes getitemname('@itemid[3])+ "[" +getiteminfo('@itemid[3],10)+ "]";
-			mes "これにするかい？";
+			mes "[Master Sunus]";
+			mes ""+getitemname('@itemid[0])+ "[" +getiteminfo('@itemid[0],10)+ "]";
+			mes ""+getitemname('@itemid[1])+ "[" +getiteminfo('@itemid[1],10)+ "]";
+			mes ""+getitemname('@itemid[2])+ "[" +getiteminfo('@itemid[2],10)+ "]";
+			mes ""+getitemname('@itemid[3])+ "[" +getiteminfo('@itemid[3],10)+ "]";
+			mes "Would you like this?";
 			next;
-			if(select("いいえ","はい") == 2) {
+			if(select("No", "Yes") == 2) {
 				break;
 			}
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid[0])+ "[" +getiteminfo('@itemid[0],10)+ "]";
-		mes getitemname('@itemid[1])+ "[" +getiteminfo('@itemid[1],10)+ "]";
-		mes getitemname('@itemid[2])+ "[" +getiteminfo('@itemid[2],10)+ "]";
-		mes getitemname('@itemid[3])+ "[" +getiteminfo('@itemid[3],10)+ "]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid[0])+ "[" +getiteminfo('@itemid[0],10)+ "]";
+		mes ""+getitemname('@itemid[1])+ "[" +getiteminfo('@itemid[1],10)+ "]";
+		mes ""+getitemname('@itemid[2])+ "[" +getiteminfo('@itemid[2],10)+ "]";
+		mes ""+getitemname('@itemid[3])+ "[" +getiteminfo('@itemid[3],10)+ "]";
+		mes " for you.";
 		next;
 		set AC_BEGINNER_EQUIP,5;
 		delitem 25019, 1;
@@ -5040,40 +3671,25 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		getitem '@itemid[1], 1;
 		getitem '@itemid[2], 1;
 		getitem '@itemid[3], 1;
-		mes "[マスター・スヌス]";
-		mes "今回渡した防具は";
-		mes "全て装備することで";
-		mes "特殊な効果が発揮される";
-		mes "すごい防具なんだ！";
+		mes "[Master Sunus]";
+		mes "All the armor I gave you this time is amazing armor that will give you special effects when you equip it!";
 		next;
-		mes "[マスター・スヌス]";
-		mes "^FF0000セット装備は、";
-		mes "全てそろった状態で";
-		mes "装備しないと";
-		mes "効果を発揮しない^000000ので";
-		mes "装備するときは";
-		mes "そのことを忘れないようにね。";
+		mes "[Master Sunus]";
+		mes "^FF0000The set equipment will not be effective ^000000 unless you equip it all together, so don't forget that when you equip it.";
 		next;
 		break;
 	case 5:
 		if(countitem(25018) == 0) close;
 
 		GetBeginnerEquip;
-		mes "[マスター・スヌス]";
-		mes "今回渡した武器は";
-		mes "以前渡したものより";
-		mes "更に強化された武器だ。";
+		mes "[Master Sunus]";
+		mes "The weapon I gave you this time is a more enhanced weapon than the one I gave you before.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "武器によっては";
-		mes "ステータスやスキルを";
-		mes "強化してくれる";
-		mes "物もあるので";
+		mes "[Master Sunus]";
+		mes "Some weapons will enhance your status and skills.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "いま所持している武器より";
-		mes "攻撃力が高いようであれば";
-		mes "是非使ってみてほしい。";
+		mes "[Master Sunus]";
+		mes "If the attack power of the weapon is higher than your current weapon, please use it.";
 		next;
 		break;
 	case 6:
@@ -5094,51 +3710,39 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		case CLASS_AS: set '@itemid,5955; break;
 		case CLASS_RG: set '@itemid,5961; break;
 		}
-		if('@itemid == 0) {	// 未調査
-			mes "[マスター・スヌス]";
-			mes "まだ2次職に転職していない";
-			mes "君にあげられるものは";
-			mes "なさそうだね……";
+		if('@itemid == 0) { // not investigated
+			mes "[Master Sunus]";
+			mes "I guess I don't have anything to give you that you haven't already changed to the second job. ......";
 			close;
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid);
-		mes "を君に貸してあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid);
+		mes " to you.";
 		next;
 		set AC_BEGINNER_EQUIP,7;
 		delitem 25019, 1;
 		getitem2 '@itemid,1,1,0,0,0,0,0,0,1209600;
-		mes "[マスター・スヌス]";
-		mes "今回渡した防具は";
-		mes "装備することで";
-		mes "特殊な効果を発揮する";
-		mes "特別な防具だ。";
+		mes "[Master Sunus]";
+		mes "The armor I gave you this time is a special armor that has special effects when equipped.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "ただ効果がかなり";
-		mes "すぐれているので";
-		mes "今回はレンタルという";
-		mes "かたちで防具を渡している。";
+		mes "[Master Sunus]";
+		mes "The effect is so superior that I am giving it to you as a rental.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "今回渡した防具は";
-		mes "いまから約2週間で";
-		mes "自動的に消滅するので";
-		mes "まずは装備して";
-		mes "その効果を試してみてほしい。";
+		mes "[Master Sunus]";
+		mes "The armor I gave you this time will disappear automatically in about two weeks from now, so please equip it first and try its effect.";
 		next;
 		break;
 	case 7:
 		if(countitem(25019) == 0) close;
 
-		mes "[マスター・スヌス]";
-		mes "イヤリング[1]";
-		mes "ネックレス[1]";
-		mes "ロザリオ[1]";
-		mes "グローブ[1]";
-		mes "ブローチ[1]";
-		mes "リング[1]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes "Earrings[1]";
+		mes "Necklace[1]";
+		mes "Rosary[1]";
+		mes "Globe[1]";
+		mes "Brooch[1]";
+		mes "Ring[1]";
+		mes "is for you.";
 		next;
 		set AC_BEGINNER_EQUIP,8;
 		delitem 25019, 1;
@@ -5148,63 +3752,54 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		getitem 2624, 1;
 		getitem 2625, 1;
 		getitem 2621, 1;
-		mes "[マスター・スヌス]";
-		mes "今回渡した防具は";
-		mes "アクセサリーという";
-		mes "場所に装備できる";
-		mes "防具だ。";
+		mes "[Master Sunus]";
+		mes "The armor I gave you this time is armor that can be equipped in a place called accessories.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "装備することで";
-		mes "ステータスを上昇させる";
-		mes "効果があるので";
-		mes "君の好みで使ってみてほしい。";
+		mes "[Master Sunus]";
+		mes "Equipping this armor will increase your status, so you can use it as you like.";
 		next;
 		break;
 	case 8:
 		if(countitem(25019) == 0) close;
 
 		while(1) {
-			mes "[マスター・スヌス]";
-			mes "そうだね……";
-			mes "どれが欲しいか、選んでご覧。";
+			mes "[Master Sunus]";
+			mes "Yes, ......";
+			mes "See which one you want, pick one.";
 			next;
-			switch(select("エベシ嵐のうねり[1]","クレイトス大地の裂け目[1]","ルシウス火山の激しさ[1]","シャピニハ海の叫び[1]")) {
+			switch(select("Ebesi Storm Swell [1]", "Kratos Earth Rift [1]", "Lucius Volcanic Fury [1]", "Shapinha Sea Cry [1]")) {
 			case 1:
-				set '@elem$,"風";
+				set '@elem$, "wind";
 				set '@itemid,2349;
 				break;
 			case 2:
-				set '@elem$,"地";
+				set '@elem$, "earth";
 				set '@itemid,2351;
 				break;
 			case 3:
-				set '@elem$,"火";
+				set '@elem$, "fire";
 				set '@itemid,2345;
 				break;
 			case 4:
-				set '@elem$,"水";
+				set '@elem$, "water";
 				set '@itemid,2347;
 				break;
 			}
-			mes "[マスター・スヌス]";
-			mes "鎧に" +'@elem$+ "属性が付与されている";
-			mes "防具だね。";
-			mes '@elem$+ "属性攻撃をしてくる";
-			mes "ダンジョンやフィールドで";
-			mes "有効だよ。";
+			mes "[Master Sunus]";
+			mes "That's armor with the " +'@elem$+ "attribute on the armor.";
+			mes ""+'@elem$+ "It's useful in dungeons and fields with attribute attacks.";
 			next;
-			mes "[マスター・スヌス]";
-			mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-			mes "これにするかい？";
+			mes "[Master Sunus]";
+			mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+			mes "Would you like this?";
 			next;
-			if(select("いいえ","はい") == 2) {
+			if(select("No", "Yes") == 2) {
 				break;
 			}
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+		mes "is for you.";
 		next;
 		set AC_BEGINNER_EQUIP,9;
 		delitem 25019, 1;
@@ -5213,72 +3808,58 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 	case 9:
 		if(countitem(25019) == 0) close;
 
-		mes "[マスター・スヌス]";
-		mes "Louiseの赤い靴[1]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes "Louise's red shoes [1]";
+		mes "is for you.";
 		next;
 		set AC_BEGINNER_EQUIP,10;
 		delitem 25019, 1;
 		getitem 22068, 1;
-		mes "[マスター・スヌス]";
-		mes "今回渡した防具は";
-		mes "装備することで";
-		mes "[初心者用ポーション]の";
-		mes "回復効果を高めることが";
-		mes "できる防具だ。";
+		mes "[Master Sunus]";
+		mes "The armor I gave you this time can increase the recovery effect of [beginner's potion] by equipping it.";
 		next;
-		mes "[マスター・スヌス]";
-		mes "またこの防具を";
-		mes "精錬していくことで";
-		mes "[初心者用ポーション]の";
-		mes "回復効果を更に";
-		mes "高めることができるぞ。";
+		mes "[Master Sunus]";
+		mes "Also, by refining this armor, you can further increase the restorative effect of [Beginner's Potion].";
 		next;
-		mes "[マスター・スヌス]";
-		mes "ただし、精錬を重ねていくと";
-		mes "精錬に失敗することがあって";
-		mes "防具そのものを失って";
-		mes "しまうこともあるから";
-		mes "注意するようにしてほしい。";
+		mes "[Master Sunus]";
+		mes "However, please be aware that as you continue to refine this armor, you may fail to refine it, and you may lose the armor itself.";
 		next;
 		break;
 	case 10:
 		if(countitem(25019) == 0) close;
 
 		while(1) {
-			mes "[マスター・スヌス]";
-			mes "そうだね……";
-			mes "どれが欲しいか、選んでご覧。";
+			mes "[Master Sunus]";
+			mes "Yes, ......";
+			mes "See which one you want, pick one.";
 			next;
-			switch(select("シャレールシールド[1]","フロワシールド[1]","ソルシールド[1]","ルヴァンシールド[1]","ソンブルシールド[1]","ラモールシールド[1]","エスプリシールド[1]","リュミエールシールド[1]","プワゾンシールド[1]")) {
-			case 1: set '@elem$,"火";   set '@race$,"悪魔"; set '@itemid,2159; break;
-			case 2: set '@elem$,"水";   set '@race$,"動物"; set '@itemid,2163; break;
-			case 3: set '@elem$,"地";   set '@race$,"魚貝"; set '@itemid,2165; break;
-			case 4: set '@elem$,"風";   set '@race$,"昆虫"; set '@itemid,2194; break;
-			case 5: set '@elem$,"闇";   set '@race$,"不死"; set '@itemid,2164; break;
-			case 6: set '@elem$,"不死"; set '@race$,"人間"; set '@itemid,2158; break;
-			case 7: set '@elem$,"念";   set '@race$,"天使"; set '@itemid,2175; break;
-			case 8: set '@elem$,"聖";   set '@race$,"竜";   set '@itemid,2174; break;
-			case 9: set '@elem$,"毒";   set '@race$,"植物"; set '@itemid,2167; break;
+			switch(select("Charailleur shield[1]", "Flois shield[1]", "Sol shield[1]", "Levain shield[1]", "Sombre shield[1]", "Lamor shield[1]", "Esprit shield[1]", "Lumière shield[1]"," Puisson Shield[1]")) {
+			case 1: set '@elem$, "fire"; set '@race$, "devil"; set '@itemid,2159; break;
+			case 2: set '@elem$, "water"; set '@race$, "animal"; set '@itemid,2163; break;
+			case 3: set '@elem$, "land"; set '@race$, "fish and shellfish"; set '@itemid,2165; break;
+			case 4: set '@elem$, "wind"; set '@race$, "insects"; set '@itemid,2194; break;
+			case 5: set '@elem$, "dark"; set '@race$, "undead"; set '@itemid,2164; break;
+			case 6: set '@elem$, "undead"; set '@race$, "human"; set '@itemid,2158; break;
+			case 7: set '@elem$, "ghost"; set '@race$, "angel"; set '@itemid,2175; break;
+			case 8: set '@elem$, "holy"; set '@race$, "dragon"; set '@itemid,2174; break;
+			case 9: set '@elem$, "poison"; set '@race$, "plant"; set '@itemid,2167; break;
 			}
-			mes "[マスター・スヌス]";
-			mes '@elem$+ "属性モンスターから受ける";
-			mes "ダメージを少し軽減し、";
-			mes '@race$+ "型モンスターから受ける";
-			mes "ダメージが少し増える";
-			mes "盾だね。";
+			mes "[Master Sunus]";
+			mes ""+'@elem$+ "Reduces damage taken from attribute monsters slightly and ";
+			mes '@race$+ "Received from type monsters";
+			mes "It's a shield that does a little more damage.";
 			next;
-			mes "[マスター・スヌス]";
-			mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-			mes "これにするかい？";
+			mes "[Master Sunus]";
+			mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+			mes "Would you like this?";
 			next;
-			if(select("いいえ","はい") == 2) {
+			if(select("No", "Yes") == 2) {
 				break;
 			}
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+		mes "is for you.";
 		next;
 		set AC_BEGINNER_EQUIP,11;
 		delitem 25019, 1;
@@ -5288,57 +3869,52 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 		if(countitem(25019) == 0) close;
 
 		while(1) {
-			mes "[マスター・スヌス]";
-			mes "そうだね……";
-			mes "どれが欲しいか、選んでご覧。";
+			mes "[Master Sunus]";
+			mes "Yes, ......";
+			mes "See which one you want, pick one.";
 			next;
-			switch(select("シャレールマント[1]","フロワマント[1]","ソルマント[1]","ルヴァンマント[1]","ソンブルマント[1]","ラモールマント[1]","エスプリマント[1]","リュミエールマント[1]","プワゾンマント[1]")) {
-			case 1: set '@elem$,"火";   set '@race$,"悪魔"; set '@itemid,2596; break;
-			case 2: set '@elem$,"水";   set '@race$,"動物"; set '@itemid,2593; break;
-			case 3: set '@elem$,"地";   set '@race$,"魚貝"; set '@itemid,20701; break;
-			case 4: set '@elem$,"風";   set '@race$,"昆虫"; set '@itemid,20750; break;
-			case 5: set '@elem$,"闇";   set '@race$,"不死"; set '@itemid,2595; break;
-			case 6: set '@elem$,"不死"; set '@race$,"人間"; set '@itemid,2598; break;
-			case 7: set '@elem$,"念";   set '@race$,"天使"; set '@itemid,20716; break;
-			case 8: set '@elem$,"聖";   set '@race$,"竜";   set '@itemid,20705; break;
-			case 9: set '@elem$,"毒";   set '@race$,"植物"; set '@itemid,20708; break;
+			switch(select("Chaleur cloak[1]", "Frois cloak[1]", "Sol cloak[1]", "Levant cloak[1]", "Sombre cloak[1]", "Lamor cloak[1]", "Esprit cloak[1]", "Lumière cloak[1]", "Puison cloak[1 ]")) {
+			case 1: set '@elem$, "fire"; set '@race$, "devil"; set '@itemid,2596; break;
+			case 2: set '@elem$, "water"; set '@race$, "animal"; set '@itemid,2593; break;
+			case 3: set '@elem$, "land"; set '@race$, "fish and shellfish"; set '@itemid,20701; break;
+			case 4: set '@elem$, "wind"; set '@race$, "insects"; set '@itemid,20750; break;
+			case 5: set '@elem$, "dark"; set '@race$, "undead"; set '@itemid,2595; break;
+			case 6: set '@elem$, "undead"; set '@race$, "human"; set '@itemid,2598; break;
+			case 7: set '@elem$, "ghost"; set '@race$, "angel"; set '@itemid,20716; break;
+			case 8: set '@elem$, "holy"; set '@race$, "dragon"; set '@itemid,20705; break;
+			case 9: set '@elem$, "poison"; set '@race$, "plant"; set '@itemid,20708; break;
 			}
-			mes "[マスター・スヌス]";
-			mes '@elem$+ "属性モンスターから受ける";
-			mes "ダメージを少し軽減し、";
-			mes '@race$+ "型モンスターから受ける";
-			mes "ダメージが少し増える";
-			mes "マントだね。";
+			mes "[Master Sunus]";
+			mes ""+'@elem$+ "Reduces damage taken from attribute monsters slightly and ";
+			mes '@race$+ "Received from type monsters";
+			mes "It's a cape that increases the damage a little.";
 			next;
-			mes "[マスター・スヌス]";
-			mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-			mes "これにするかい？";
+			mes "[Master Sunus]";
+			mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+			mes "Would you like this?";
 			next;
-			if(select("いいえ","はい") == 2) {
+			if(select("No", "Yes") == 2) {
 				break;
 			}
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+		mes "is for you.";
 		next;
 		set AC_BEGINNER_EQUIP,12;
 		delitem 25019, 1;
 		getitem '@itemid, 1;
 		break;
 	}
-	mes "[マスター・スヌス]";
-	mes "まだチケットを持っているなら";
-	mes "もう一度話しかけておくれ。";
+	mes "[Master Sunus]";
+	mes "If you still have the ticket, please speak to me again.";
 	next;
-	mes "‐インフォメーション‐";
-	mes "　^FF0000アイテム交換は";
-	mes "　未転生時のみの権利です。";
-	mes "　転生後は受け付けていませんので";
-	mes "　交換し忘れにご注意ください‐";
+	mes "-Information-";
+	mes " ^FF0000Item exchange is only right when you are unincarnated.";
+	mes " Please be careful not to forget to exchange it as it is not accepted after reincarnation-";
 	close;
 
-	function	GetBeginnerEquip	{
+	function GetBeginnerEquip {
 		switch(AC_BEGINNER_EQUIP) {
 		case 1:
 			switch(getbaseclass(Class)) {
@@ -5364,42 +3940,40 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 			switch(getbaseclass(Class)) {
 			case CLASS_SM:
 				if(getbaseclass(Class,2) == CLASS_KN) { set '@itemid,1163; }
-				else if(getbaseclass(Class,2) == CLASS_CR) { set '@itemid,1410; }	// 未確認
+				else if(getbaseclass(Class,2) == CLASS_CR) { set '@itemid,1410; } // unconfirmed
 				break;
 			case CLASS_MG:
 				if(getbaseclass(Class,2) == CLASS_WZ) { set '@itemid,1619; }
-				else if(getbaseclass(Class,2) == CLASS_SA) { set '@itemid,1551; }	// 未確認
+				else if(getbaseclass(Class,2) == CLASS_SA) { set '@itemid,1551; } // unconfirmed
 				break;
 			case CLASS_AC:
 				if(getbaseclass(Class,2) == CLASS_HT) { set '@itemid,1718; }
 				else if(getbaseclass(Class,2) == CLASS_BA) { set '@itemid,1907; }
-				else if(getbaseclass(Class,2) == CLASS_DC) { set '@itemid,1956; }	// 未確認
+				else if(getbaseclass(Class,2) == CLASS_DC) { set '@itemid,1956; } // unconfirmed
 				break;
 			case CLASS_AL:
 				if(getbaseclass(Class,2) == CLASS_PR) { set '@itemid,1625; }
-				else if(getbaseclass(Class,2) == CLASS_MO) { set '@itemid,1807; }	// 未確認
+				else if(getbaseclass(Class,2) == CLASS_MO) { set '@itemid,1807; } // unconfirmed
 				break;
 			case CLASS_MC:
 				if(getbaseclass(Class,2) == CLASS_BS) { set '@itemid,1360; }
 				else if(getbaseclass(Class,2) == CLASS_AM) { set '@itemid,1119; }
 				break;
 			case CLASS_TF:
-				if(getbaseclass(Class,2) == CLASS_AS) { set '@itemid,1360; }	// 未確認
-				else if(getbaseclass(Class,2) == CLASS_RG) { set '@itemid,1360; }	// 未確認
+				if(getbaseclass(Class,2) == CLASS_AS) { set '@itemid,1360; } // unconfirmed
+				else if(getbaseclass(Class,2) == CLASS_RG) { set '@itemid,1360; } // unconfirmed
 				break;
 			}
 			break;
 		}
-		if('@itemid == 0) {	// 未調査
-			mes "[マスター・スヌス]";
-			mes "まだ2次職に転職していない";
-			mes "君にあげられるものは";
-			mes "なさそうだね……";
+		if('@itemid == 0) { // not investigated
+			mes "[Master Sunus]";
+			mes "I guess I don't have anything to give you that you haven't already changed to the second job. ......";
 			close;
 		}
-		mes "[マスター・スヌス]";
-		mes getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
-		mes "を君にあげよう。";
+		mes "[Master Sunus]";
+		mes ""+getitemname('@itemid)+ "[" +getiteminfo('@itemid,10)+ "]";
+		mes "is for you.";
 		set AC_BEGINNER_EQUIP,AC_BEGINNER_EQUIP + 1;
 		delitem 25018, 1;
 		getitem '@itemid, 1;
@@ -5408,6 +3982,6 @@ ac_cl_room.gat,37,32,4	script	マスター・スヌス	51,{
 	}
 
 OnInit:
-	waitingroom "マスター・スヌス",0;
+	waitingroom "Master Sunus",0;
 	end;
 }

@@ -1,12 +1,12 @@
 //============================================================
 // Auriga Script
 //------------------------------------------------------------
-// Ragnarok Online -- 冒険者アカデミー  Luneの依頼
+// Ragnarok Online -- Adventurer Academy Lune's Request
 //
-//                                                 by Pneuma
-//冒険者になりたい   -----------------------------------------
+// by Pneuma
+// I want to be an adventurer -----------------------------------------
 
-geffen_in.gat,110,28,4	script		オネスト	62,{
+geffen_in.gat,110,28,4	script	Honest	62,{
 	set '@novice, callfunc("AC_GetNovice");
 	function show_mission;
 	if(AC_QUEST_ST_4==0) goto L_OTHER;
@@ -33,209 +33,146 @@ geffen_in.gat,110,28,4	script		オネスト	62,{
 L_QUEST01:
 	switch(AC_QUEST_ST_4){
 	case 1:
-		mes "[オネスト]";
-		mes "やあ、君が僕の依頼を";
-		mes "受けてくれる冒険者かい？";
+		mes "[Honest]";
+		mes "Hi, are you the adventurer who will accept my request?";
 		next;
-		menu "そうです",-;
+		menu "Yes.",-;
 		emotion 5;
-		mes "[オネスト]";
-		mes "やっぱりね！";
-		mes "そうだと思ったんだよ。";
-		mes "僕は将来冒険者になりたいと";
-		mes "思っているから。";
-		mes "君の服装をみてピンと来たわけさ。";
+		mes "[Honest]";
+		mes "I knew it!";
+		mes "That's what I thought.";
+		mes "Because I want to be an adventurer in the future.";
+		mes "I saw what you were wearing and it just clicked.";
 		next;
-		mes "[オネスト]";
-		mes "でもさ、親がうるさくってさ。";
-		mes "僕の歳でも色々冒険している人";
-		mes "沢山いるのに、";
-		mes "勉強しろ勉強しろってね。";
+		mes "[Honest]";
+		mes "But, you know, my parents are being a little picky.";
+		mes "There are a lot of people my age who are doing a lot of adventurous things, and they want me to study, study, study.";
 		next;
-		mes "[オネスト]";
-		mes "それで、冒険者になる為の";
-		mes "勉強をしても怒られるし";
-		mes "集めた資料だって一度";
-		mes "全部捨てられちゃったんだ。";
+		mes "[Honest]";
+		mes "So, when I studied to become an adventurer, I was scolded and all the materials I collected were thrown away once.";
 		next;
-		mes "[オネスト]";
-		mes "だから、今資料を集めなおしている";
-		mes "最中なんだよー。";
-		mes "その資料集めの手伝いを";
-		mes "君にお願いしたくてね。";
+		mes "[Honest]";
+		mes "So I'm in the process of re-gathering all my materials.";
+		mes "I wanted to ask you to help me gather that material.";
 		next;
-		mes "[オネスト]";
-		mes "というわけでよろしく頼むよー。";
-		mes "今回は、";
-		mes "ボスモンスターの^FF0000エクリプス^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFPronteraフィールド02^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "So I'm looking forward to working with you!";
+		mes "This time, I need you to take pictures of the map ^0000FFProntera Field 02^000000, where the boss monster ^FF0000 Eclipse ^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "^0000FFPronteraフィールド02^000000へは";
-		mes "Pronteraから向かうと近かったかな？";
-		mes "後、撮影ポイントはメモしといたから";
-		mes "その場所で頼むよ。";
-		mes "あ、カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Was it closer to ^0000FFProntera Field 02^000000 if I headed from Prontera?";
+		mes "Also, I made a note of the shooting point, so please take me there.";
+		mes "Oh, and use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-I received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFPronteraフィールド02(305,157)^000000";
-		mes "　へ行き写真を撮ってくる‐";
-		mes " ";
-		mes "^0000FFPronteraフィールド02^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFProntera go to field 02(305,157)^000000 and take a picture-";
+		mes " ^0000FFProntera field 02^000000-^0000FFProntera^000000-^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
 		next;
-		mes "[オネスト]";
-		mes "^0000FFPronteraフィールド02^000000へは";
-		mes "Pronteraから向かうと近かったかな？";
-		mes "後、撮影ポイントはメモしといたから";
-		mes "その場所で頼むよ。";
+		mes "[Honest]";
+		mes "Was it closer to ^0000FFProntera field 02^000000 if I headed from Prontera?";
+		mes "Also, I made a note of the shooting point, so please take me there.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFPronteraフィールド02(305,157)^000000";
-		mes "　へ行き写真を撮ってくる‐";
-		mes " ";
-		mes "^0000FFPronteraフィールド02^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [mission] ^000000-^0000FFProntera go to field 02(305,157)^000000 and take pictures-";
+		mes " ^0000FFProntera field 02^000000-^0000FFProntera^000000 to go from ^0000FFProntera^000000-";
 		close;
 	case 3:
 		emotion 0;
-		mes "[オネスト]";
-		mes "おお、結構早かったね。";
-		mes "ちゃんと写ってるか";
-		mes "まだわからないけど、";
-		mes "君を見る限りちゃんと";
-		mes "撮影してきてくれてるっぽいから";
-		mes "これで依頼は終了で良いや。";
+		mes "[Honest]";
+		mes "Oh, that was pretty quick.";
+		mes "I'm still not sure if I got it right, but looking at you, it looks like you got it right, so I'm happy to end the request now.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Returned the camera to Honest-";
 		next;
-		mes "[オネスト]";
+		mes "[Honest]";
 		if('@novice){
-			mes "そうだ、たいした物じゃないけど";
-			mes "これをあげるよ。";
-			mes "マップを移動するのに楽な";
-			mes "アイテムなんだ。";
+			mes "Yes, it's not much, but I'll give you this.";
+			mes "It's an easy item to move around the map.";
 		}
-		mes "それじゃ、また何かあったら";
-		mes "よろしくねー。";
+		mes "Well, if you need anything else, I'll be happy to help!";
 		next;
 		if('@novice){
 			if(!checkweight(601,30)){
-				mes "‐重量オーバー‐";
+				mes "-overweight-";
 				close;
 			}
 			getitem 601,30;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "ありがとう！";
-		mes "助かったわ。";
+		mes "[Honest]";
+		mes "Thank you!";
+		mes "Thank you for your help.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST02:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 15;
-		mes "[オネスト]";
-		mes "やあやあ、この前はありがとう。";
-		mes "今回もよろしく頼むよ！";
-		mes "そういえば名前を";
-		mes "聞いてなかったよね？";
-		mes "なんていうの君？";
+		mes "[Honest]";
+		mes "Hey, hey, thanks for the other day.";
+		mes "Thanks again for your help this time!";
+		mes "Oh, I didn't get your name, did I?";
+		mes "What's your name?";
 		next;
-		menu "名乗る",-;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "か！";
-		mes "僕は、オネストよろしくね！";
-		mes "それじゃ、早速内容なんだけど。";
+		menu "Identify yourself",-;
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "ka!";
+		mes "I'm Honest, nice to meet you!";
+		mes "Well, then, here's the contents as soon as possible.";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000マスターリング^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFPayon迷いの森04^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time, I want you to take pictures of the map ^0000FFPayon Lost Forest 04^000000, where the boss monster ^FF0000 Master Ring^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "後、撮影ポイントはこの前と同じく";
-		mes "メモしといたから";
-		mes "その場所で頼むよ。";
-		mes "あ、カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Also, I made a note of the shooting point as I did the last time, so please use that location.";
+		mes "Oh, and use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFPayon迷いの森04(267.193)^000000";
-		/*「.」で本鯖通り*/mes "に行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFPayon迷いの森04^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFPayon lost forest 04 (267.193)^000000";
+		/* "." to go to the main mackerel street*/mes ".";
+		mes " ^0000FFPayon lost forest 04^000000 is better to go from ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000マスターリング^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFPayon迷いの森04^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time I want you to take pictures of the map ^0000FFPayon Lost Forest 04^000000 where the boss monster ^FF0000 Master Ring^000000 lives.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFPayon迷いの森04(267.193)^000000";
-		/*「.」で本鯖通り*/mes "に行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFPayon迷いの森04^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000[Mission] ^000000-^0000FFPayon Lost Forest 04 (267.193)^000000";
+		mes " and take pictures-";
+		mes " ^0000FFPayon lost forest 04^000000 is better to go from ^0000FFProntera^000000-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes "さすが";
-		mes strcharinfo(0) + "だね。";
-		mes "この前の写真もしっかり取れていたし";
-		mes "今回のも期待できそうだ。";
-		mes "また何かあったらよろしくね。";
+		mes "[Honest]";
+		mes "As expected";
+		mes strcharinfo(0) + "Yes, as expected.";
+		mes "I got a good picture of the last one, and this one looks promising.";
+		mes "Thanks again if you need anything else.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Returned the camera to Honest-";
 		next;
 		if('@novice){
-			mes "[オネスト]";
-			mes "あ！";
-			mes "あと、これもし良かったら";
-			mes "もって行ってよ！";
+			mes "[Honest]";
+			mes "Ah!";
+			mes "Also, you can take this with you if you want!";
 			next;
 			switch(Job){
 			case Job_Swordman:
@@ -246,1161 +183,831 @@ L_QUEST02:
 			case Job_Gunslinger:
 				set '@item,2405;
 				break;
-			// ブーツ[0]
+			// boots[0].
 				case Job_Magician:
 			case Job_Acolyte:
 			case Job_Ninja:
 				set '@item,2403;
 				break;
-			// シューズ[0]
+			// fuse[0].
 				case Job_SuperNovice:
 			default:
 				set '@item,2416;
 				break;
-				// ノービスシューズ[1]
+				// Novice shoes[1].
 			}
 			if(!checkweight('@item,1)){
-				mes "‐重量オーバー‐";
+				mes "-overweight-";
 				close;
 			}
 			getitem '@item,1;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "ありがとう！";
-		mes "助かったわ。";
+		mes "[Honest]";
+		mes "Thank you!";
+		mes "Thank you for your help.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST03:
 	switch(AC_QUEST_ST_4){
 	case 1:
-		mes "[オネスト]";
-		mes "やあ" + strcharinfo(0);
-		mes "今回もよろしく頼むよ！";
+		mes "[Honest]";
+		mes "Hi" + strcharinfo(0);
+		mes "Thanks again for your help this time!";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000ドラゴンフライ^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠18^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time I want you to take pictures of the map ^0000FFFSograt Desert18^000000 where the boss monster ^FF0000 Dragonfly^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "後、撮影ポイントはこの前と同じく";
-		mes "メモしといたから";
-		mes "その場所で頼むよ。";
-		mes "あ、カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Also, I wrote down the photo points as I did the last time, so please use those locations.";
+		mes "Oh, and use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠18(232,217)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠18^000000へは";
-		mes "　^0000FFMorroc^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Go to Desert18(232,217)^000000 and take pictures-";
+		mes " ^0000FFSograt Desert18^000000-^0000FFMorroc^000000-^000000-^000000-^0000FFMorroc^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000ドラゴンフライ^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠18^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time I want you to take pictures of the map ^0000FFFSograt Desert18^000000 where the boss monster ^FF0000 Dragonfly^000000 lives.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠18(232,217)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠18^000000へは";
-		mes "　^0000FFMorroc^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Desert18(232,217)^000000 go there and take pictures-";
+		mes " ^0000FFSograt Desert18^000000-^0000FFMorroc^000000-^000000-^000000-^0000FFMorroc^000000-";
 		close;
 	case 3:
 		emotion 5;
-		mes "[オネスト]";
-		mes "ご苦労さまー。";
-		mes "これでボスモンスター関連資料が";
-		mes "3つになったよ。";
-		mes "まだまだ必要になると思うから";
-		mes "またよろしくね。";
+		mes "[Honest]";
+		mes "Thanks for your help!";
+		mes "Now we have three boss monster related documents.";
+		mes "I'm sure I'll need more, so thanks again.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Returned camera to Honest-";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-You fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
 		emotion 5;
-		mes "[オネスト]";
-		mes "ご苦労さまー。";
-		mes "これでボスモンスター関連資料が";
-		mes "3つになったよ。";
-		mes "まだまだ必要になると思うから";
-		mes "またよろしくね。";
+		mes "[Honest]";
+		mes "Thanks for your hard work.";
+		mes "Now we have three boss monster related documents.";
+		mes "I'm sure I'll need more, so thanks again.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST04:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 0;
-		mes "[オネスト]";
-		mes strcharinfo(0);
-		mes "今回も君が引き受けてくれるんだね。";
-		mes "いやー、助かるよ。";
-		mes "本当に。";
-		mes "それじゃ、早速今回の依頼について";
-		mes "説明するね。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0);
+		mes "You're taking care of it this time too.";
+		mes "No, thank you for your help.";
+		mes "Really.";
+		mes "Well, let me quickly explain about this request.";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000トード^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFGeffenフィールド01^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time, I want you to take pictures of the map ^00FFFFGeffen Field 01^000000 where the boss monster ^FF0000 Toad^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "後、撮影ポイントはこの前と同じく";
-		mes "メモしといたから";
-		mes "その場所で頼むよ。";
-		mes "あ、カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Also, I wrote down the photo points as I did the last time, so please use those locations.";
+		mes "Oh, and use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFGeffenフィールド01(208,242)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFGeffenフィールド01^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFFGeffen go to field 01(208,242)^000000 and take a picture-";
+		mes " ^0000FFFGeffen field 01^000000-^0000FFProntera^000000 to get there-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
 		next;
-		mes "[オネスト]";
-		mes "今回の撮影場所は、";
-		mes "ボスモンスターの";
-		mes "^FF0000トード^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFGeffenフィールド01^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "This time I want you to take pictures of the map ^00FFFFGeffen Field 01^000000 where the boss monster ^FF0000 Toad^000000 lives.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFGeffenフィールド01(208,242)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFGeffenフィールド01^000000へは";
-		mes "　^0000FFProntera^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [mission] ^000000-^0000FFGeffen field 01(208,242)^000000 and go there and take pictures-";
+		mes " ^0000FFFGeffen field 01^000000-^0000FFProntera^000000 to get there-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes "お疲れ様！";
-		mes "いやー、すごいなー。";
-		mes "僕も早く冒険者になって";
-		mes "色々な場所へ冒険しに行きたい。";
+		mes "[Honest]";
+		mes "Good job!";
+		mes "No, that's great.";
+		mes "I can't wait to become an adventurer too and go adventuring to different places.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Honest returned the camera to me-";
 		next;
 		if('@novice){
-			emotion 0;
-			mes "[オネスト]";
-			mes "そうだ！これ！";
-			mes "未鑑定のアイテムを鑑定できる";
-			mes "拡大鏡なんだけど";
-			mes "沢山あるからあげる！";
-			mes "僕が持ってても使わないし。";
+			EMOTION 0;
+			mes "[Honest]";
+			mes "Yes! This!";
+			mes "It's a magnifying glass that can appraise unappraised items, and I have a lot of them, so I'll give them away!";
+			mes "Even if I had it, I wouldn't use it.";
 			next;
 			if(!checkweight(611,20)){
-				mes "‐重量オーバー‐";
+				mes "-overweight-";
 				close;
 			}
 			getitem 611,20;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "ありがとう！";
-		mes "助かったわ。";
+		mes "[Honest]";
+		mes "Thank you!";
+		mes "Thank you for your help.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST05:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 0;
-		mes "[オネスト]";
-		mes "あ、" + strcharinfo(0);
-		mes "君が来てくれるのを";
-		mes "心待ちにしていたよ。";
+		mes "[Honest]";
+		mes "Oh," + strcharinfo(0);
+		mes "I've been really looking forward to having you here.";
 		next;
 		emotion 9;
-		mes "[オネスト]";
-		mes "実は次の撮影場所は";
-		mes "凄い危ない場所なんだよね……";
-		mes "だから、気をつけて行ってきて";
-		mes "ほしいんだ。";
-		mes "なんせ、MVPボスモンスターがいる";
-		mes "場所だからね。";
+		mes "[Honest]";
+		mes "Actually, the next location is an awesome and dangerous place ......";
+		mes "So I want you to go there and be careful.";
+		mes "After all, it's where the MVP boss monster is.";
 		next;
-		mes "[オネスト]";
-		mes "ということで撮影場所なんだけど、";
-		mes "MVPボスモンスターの";
-		mes "^FF0000フリオニ^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠17^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "So that's where we're going to shoot, and I want you to take pictures of the map ^0000FFSograt Desert17^000000 where the MVP boss monster ^FF0000 Frioni^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "後、撮影ポイントはいつもと同じく";
-		mes "メモしといたから";
-		mes "その場所で頼むよ。";
-		mes "カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Also, I wrote down the photo points as usual, so please use those locations.";
+		mes "Use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠17(146,145)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠17^000000へは";
-		mes "　^0000FFMorroc^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Go to Desert17(146,145)^000000 and take pictures-";
+		mes " ^0000FFSograt Desert17^000000-^0000FFMorroc^000000-^000000-^0000FFMorroc^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
-		mes "今回の場所は";
-		mes "危険だから気をつけてね。";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
+		mes "This time the place is dangerous, so be careful.";
 		next;
-		mes "[オネスト]";
-		mes "撮影場所なんだけど、";
-		mes "MVPボスモンスターの";
-		mes "^FF0000フリオニ^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠17^000000の";
-		mes "写真を撮ってきてほしいんだ。";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠17(146,145)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠17^000000へは";
-		mes "　^0000FFMorroc^000000から行くのが";
-		mes "　良いらしい‐";
+		mes "[Honest]";
+		mes "It's a photo location, but I need you to take pictures of the map ^0000FFSograt Desert17^000000 where the MVP boss monster ^FF0000 Frioni^000000 lives.";
+		NEXT;
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Desert17(146,145)^000000 go there and take pictures-";
+		mes " ^0000FFSograt Desert17^000000-^0000FFMorroc^000000-^000000-^000000-^0000FFMorroc^000000-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes strcharinfo(0) + "！";
-		mes "よかった、無事だったんだね。";
-		mes "^FF0000フリオニ^000000にやられちゃったん";
-		mes "じゃないかと心配していたんだよ。";
-		mes "本当によかった。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "!";
+		mes "Thank goodness you're all right.";
+		mes "I was worried that the ^FF0000 frii^000000 frii^000000 might have gotten you.";
+		mes "I'm so glad.";
 		next;
 		emotion 20;
-		mes "[オネスト]";
-		mes "本当にすごいなぁ……";
-		mes "僕も" + strcharinfo(0);
-		mes "のような冒険者になれるように";
-		mes "頑張って勉強しなきゃ。";
-		mes "それじゃ、またよろしくね。";
+		mes "[Honest]";
+		mes "That's really great. ......";
+		mes "Me too" + strcharinfo(0);
+		mes "I have to study hard so that I can be an adventurer like";
+		mes "Well, I'll see you soon.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Honest returned the camera to me-";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-You fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
 		emotion 20;
-		mes "[オネスト]";
-		mes "本当にすごいなぁ……";
-		mes "僕も" + strcharinfo(0);
-		mes "のような冒険者になれるように";
-		mes "頑張って勉強しなきゃ。";
-		mes "それじゃ、またよろしくね。";
+		mes "[Honest]";
+		mes "That's really great. ......";
+		mes "Me too" + strcharinfo(0);
+		mes "I have to study hard to be an adventurer like";
+		mes "Well, I'll see you soon.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000-you accomplished your request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST06:
 	switch(AC_QUEST_ST_4){
 	case 1:
-		mes "[オネスト]";
-		mes "こんにちは！";
-		mes "今回も来てくれると思ったよ。";
-		mes "君のおかげで僕も色々";
-		mes "勉強できて、知識だけなら";
-		mes "だいぶ付いてきたんじゃないかなと";
-		mes "おもっているんだ。";
+		mes "[Honest]";
+		mes "Hello!";
+		mes "I knew you would come again this time.";
+		mes "Thanks to you, I've learned a lot, and I think I've gained a lot, if only in knowledge.";
 		next;
-		mes "[オネスト]";
-		mes "早速撮影場所なんだけど、";
-		mes "今回は通常のボスモンスター";
-		mes "^FF0000さすらい狼^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠03^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "Now for the location, this time I want you to take pictures of the map ^0000FFSograt Desert03^000000 where the normal boss monster ^FF0000 wandering wolf^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "撮影してほしいのは";
-		mes "^0000FFProntera^000000側から入った場所";
-		mes "付近かな？";
-		mes "だから、ちょっと遠くなっちゃうけど";
-		mes "撮影には^0000FFProntera^000000から";
-		mes "行ってほしい。";
+		mes "[Honest]";
+		mes "I want you to take a picture of ^0000FFProntera^000000 near where you enter from the ^0000FFProntera^000000 side?";
+		mes "So I want you to go from ^0000FFProntera^000000 to shoot, even though it will be a bit far.";
 		next;
-		mes "[オネスト]";
-		mes "後、撮影ポイントはいつもと同じく";
-		mes "メモしといたから";
-		mes "その場所で頼むよ。";
-		mes "カメラはこれを使ってね。";
+		mes "[Honest]";
+		mes "Also, I made a note of the shooting point as usual, so please go there.";
+		mes "Use this camera.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠03(70,336)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠03^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Go to Desert03(70,336)^000000 and take pictures-";
+		mes " ^0000FFSograt Desert03^000000-go to ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
 		next;
-		mes "[オネスト]";
-		mes "早速撮影場所なんだけど、";
-		mes "今回は通常のボスモンスター";
-		mes "^FF0000さすらい狼^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFソグラト砂漠03^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "Quick photo location, this time I want you to take a picture of the map ^0000FFSograt Desert03^000000, which is inhabited by the regular boss monster ^FF0000 Wandering Wolf^000000.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFソグラト砂漠03(70,336)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFソグラト砂漠03^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFSograt Desert03(70,336)^000000 go there and take pictures-";
+		mes " ^0000FFSograt Desert03^000000-^0000FFProntera^000000-^000000-^000000-^0000FFProntera^000000-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes strcharinfo(0);
-		mes "遠くまでご苦労様。";
-		mes "無事に撮影できてるみたいだね。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0);
+		mes "Thanks for the long way.";
+		mes "It looks like you are taking pictures safely.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Returned the camera to Honest-";
 		next;
 		if('@novice){
-			emotion 21;
-			mes "[オネスト]";
-			mes "あと、これスピードアップポーション";
-			mes "っていうやつ。";
-			mes "攻撃速度が上がるらしいよ。";
-			mes strcharinfo(0) + "に";
-			mes "あげるよ。";
+			EMOTION 21;
+			mes "[Honest]";
+			mes "Also, this is called a speed-up potion.";
+			mes "I heard it increases attack speed.";
+			mes ""+strcharinfo(0) + "I'll give it to you.";
 			next;
 			if(!checkweight(645,10)){
-				mes "‐重量オーバー‐";
+				mes "-overweight-";
 				close;
 			}
 			getitem 645,10;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "いつもありがとう！";
-		mes "本当に助かるわ。";
+		mes "[Honest]";
+		mes "Thanks again!";
+		mes "That's really helpful.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST07:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 0;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "！";
-		mes "いつもありがとう。";
-		mes "おかげで沢山の資料を";
-		mes "集めることができたよ。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "!";
+		mes "Thanks for everything.";
+		mes "Thanks to you I was able to collect a lot of material.";
 		next;
-		mes "[オネスト]";
-		mes "今回もよろしく頼むね！";
+		mes "[Honest]";
+		mes "Thanks again!";
 		next;
-		mes "[オネスト]";
-		mes "さて、撮影場所なんだけど、";
-		mes "MVPボスモンスター";
-		mes "^FF0000オークロード^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFGeffenフィールド10^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "Now, the location for the photo shoot, I need you to take a picture of the map ^0000FFGeffen Field 10^000000 where the MVP boss monster ^FF0000 Orc Lord ^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "凄く危険な場所だから";
-		mes "気をつけてね。";
+		mes "[Honest]";
+		mes "It's a very dangerous place, so be careful.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-Received camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFGeffenフィールド10(251,368)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFGeffenフィールド10^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFFGeffen go to field 10(251,368)^000000 and take pictures-";
+		mes " ^0000FFFGeffen field 10^000000-go to ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
-		mes "今回の場所は";
-		mes "危険だから気をつけてね。";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
+		mes "This time the place is dangerous, so be careful.";
 		next;
-		mes "[オネスト]";
-		mes "撮影場所は";
-		mes "MVPボスモンスター";
-		mes "^FF0000オークロード^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFGeffenフィールド10^000000の";
-		mes "写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "I need you to take pictures of the map ^0000FFGeffen Field 10^000000 where the MVP boss monster ^FF0000 Orc Lord ^000000 lives.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFGeffenフィールド10(251,368)^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFGeffenフィールド10^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGeffen field 10(251,368)^000000 and go there and take pictures-";
+		mes " ^0000FFFGeffen field 10^000000-go to ^0000FFProntera^000000-";
 		close;
 	case 3:
-		emotion 21;
-		mes "[オネスト]";
-		mes strcharinfo(0);
-		mes "おかえり。";
-		mes "思ったより早く帰ってきたねー。";
-		mes "さすが" + strcharinfo(0);
-		mes "だよ。";
+		EMOTION 21;
+		mes "[Honest]";
+		mes ""+strcharinfo(0);
+		mes "Welcome back.";
+		mes "You're back sooner than I thought!";
+		mes "As expected" + strcharinfo(0);
+		mes "It's...";
 		next;
-		mes "[オネスト]";
-		mes "えっとさ……";
-		mes "親に一度、真剣に話してみようと";
-		mes "思うんだ。";
-		mes "コソコソ資料を集めてても";
-		mes "多分そのうちばれてしまうだろうし。";
+		mes "[Honest]";
+		mes "Let's see... ......";
+		mes "I think I'm going to have a serious talk with my parents once.";
+		mes "If I'm sneaking around and gathering material, they'll probably find out eventually.";
 		next;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "が";
-		mes "撮ってきた写真を見せて";
-		mes "真剣に話してみるよ。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "I'll show you the pictures I've taken and have a serious talk with you.";
 		next;
-		menu "がんばってね",-;
-		mes "‐オネストにカメラを返した‐";
+		menu "Good luck!",-;
+		mes "-Honest returned the camera to me-";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-You fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "えっとさ……";
-		mes "親に一度、真剣に話してみようと";
-		mes "思うんだ。";
-		mes "コソコソ資料を集めてても";
-		mes "多分そのうちばれてしまうだろうし。";
+		mes "[Honest]";
+		mes "Let's see, ......";
+		mes "I think I'm going to have a serious talk with my parents once.";
+		mes "If I'm sneaking around and gathering material, they'll probably find out eventually.";
 		next;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "が";
-		mes "撮ってきた写真を見せて";
-		mes "真剣に話してみるよ。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "I'll show you the pictures I've taken and have a serious talk with you.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request accomplished] ^000000- request accomplished!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST08:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 0;
-		mes "[オネスト]";
-		mes "やあ、" + strcharinfo(0);
-		mes "君のおかげでかなり";
-		mes "資料が揃ってきて";
-		mes "僕の知識もかなり付いてきた。";
-		mes "最近、";
-		mes "魔法の勉強もしだしたんだよ？";
+		mes "[Honest]";
+		mes "Hey," + strcharinfo(0);
+		mes "You've given me quite a bit of material to work with, and I'm getting a lot of my knowledge.";
+		mes "I've also recently started studying magic, you know?";
 		next;
-		mes "[オネスト]";
-		mes "やっぱり、魔法がいいよね！";
-		mes "僕、Magicianになって";
-		mes "こう、ドカーンとモンスターを";
-		mes "一掃してみたんだ。";//みたんだ？でいいのか……？本鯖通り
+		mes "[Honest]";
+		mes "After all, magic is good!";
+		mes "I became a Magician and wiped out the monsters with a bang.";//You tried that? Is that correct at ......? as per the main mackerel
+		NEXT;
+		mes "[Honest]";
+		mes "Okay, this is where I want you to take pictures of the map ^0000FF Toy Factory Dungeon 02^000000 where the MVP boss monster ^FF0000 Storm Knight^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "さて、撮影場所なんだけど、";
-		mes "MVPボスモンスター";
-		mes "^FF0000ストームナイト^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFおもちゃ工場ダンジョン02^000000";
-		mes "の写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "I'd like you to take pictures inside the dungeon for the first time.";
+		mes "I think there are a lot of powerful monsters, so be careful.";
 		next;
-		mes "[オネスト]";
-		mes "初めてダンジョン内の";
-		mes "撮影をお願いするね。";
-		mes "モンスターも強力なのが";
-		mes "沢山いると思うから";
-		mes "気をつけてね。";
+		mes "-I received the camera from Honest-";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "[Honest]";
+		mes "To get to the ^0000FF toy factory dungeon^000000, you'll first need to talk to the ^FF0000 Link Santa^000000 in the ^0000FFAldebaran^000000 and move to the ^0000FFLutie field^000000.";
 		next;
-		mes "[オネスト]";
-		mes "^0000FFおもちゃ工場ダンジョン^000000へ行くには";
-		mes "まず、^0000FFAldebaran^000000にいる、";
-		mes "^FF0000リンクサンタ^000000に話しかけて";
-		mes "^0000FFルティエフィールド^000000に移動する";
-		mes "必要があるよ。";
+		mes "[Honest]";
+		mes "And if you go north on ^0000FFLutie field^000000, there's a town, but it should be in there.";
+		mes "Well then, nice to meet you!";
 		next;
-		mes "[オネスト]";
-		mes "そして、^0000FFルティエフィールド^000000を";
-		mes "北に行くと街があるんだけども";
-		mes "その中にあるはず。";
-		mes "それじゃよろしくね！";
-		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFおもちゃ工場ダンジョン02^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFおもちゃ工場ダンジョン02^000000へは";
-		mes "　^0000FFAldebaran^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FF Go to the Toy Factory Dungeon 02^000000 and take a picture-";
+		mes " ^0000FFToy Factory Dungeon 02^000000-^0000FFAldebaran^000000 to go to ^0000FFAldebaran^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
-		mes "今回の場所は";
-		mes "危険だから気をつけてね。";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
+		mes "This time the place is dangerous, so be careful.";
 		next;
-		mes "[オネスト]";
-		mes "^0000FFおもちゃ工場ダンジョン^000000へ行くには";
-		mes "まず、^0000FFAldebaran^000000にいる、";
-		mes "^FF0000リンクサンタ^000000に話しかけて";
-		mes "^0000FFルティエフィールド^000000に移動する";
-		mes "必要があるよ。";
+		mes "[Honest]";
+		mes "To get to the ^0000FF Toy Factory Dungeon^000000, you must first talk to the ^FF0000 Link Santa^000000 in the ^0000FFAldebaran^000000 and move to the ^0000FFLutie Field^000000.";
 		next;
-		mes "[オネスト]";
-		mes "そして、^0000FFルティエフィールド^000000を";
-		mes "北に行くと街があるんだけども";
-		mes "その中にあるはず。";
-		mes "それじゃよろしくね！";
+		mes "[Honest]";
+		mes "And if you go north on ^0000FFLutie field^000000, there's a town, but it should be in there.";
+		mes "Well then, nice to meet you!";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFおもちゃ工場ダンジョン02^000000";
-		mes "へ行き、写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFおもちゃ工場ダンジョン02^000000へは";
-		mes "　^0000FFAldebaran^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FF Go to the Toy Factory Dungeon 02^000000 and take a picture-";
+		mes " ^0000FFToy Factory Dungeon 02^000000-^0000FFAldebaran^000000 to go to ^0000FFAldebaran^000000-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes strcharinfo(0);
-		mes "お疲れ様！";
-		mes "おもちゃ工場ダンジョンって";
-		mes "聞いただけでワクワクするよね";
-		mes "早く現像して写真が見たいよ。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0);
+		mes "Good work!";
+		mes "Just hearing about the toy factory dungeon is so exciting I can't wait to see the pictures developed.";
 		next;
 		emotion 21;
-		mes "[オネスト]";
-		mes "後一箇所でとりあえずは、";
-		mes "資料が一通り揃うことになるよ。";
-		mes "これも、" + strcharinfo(0) + "が";
-		mes "頑張ってくれたおかげだよ。";
-		mes "少ししたらまた依頼出しておくから";
-		mes "よろしくね。";
+		mes "[Honest]";
+		mes "One more place to go and we'll have a full set of materials for now.";
+		mes "This is thanks to the hard work of " + strcharinfo(0) + ".";
+		mes "I'll send out another request in a little while, thank you.";
 		next;
-		mes "‐オネストにカメラを返した‐";
+		mes "-Returned the camera to Honest-";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-You fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
 		emotion 21;
-		mes "[オネスト]";
-		mes "後一箇所でとりあえずは、";
-		mes "資料が一通り揃うことになるよ。";
-		mes "これも、" + strcharinfo(0) + "が";
-		mes "頑張ってくれたおかげだよ。";
-		mes "少ししたらまた依頼出しておくから";
-		mes "よろしくね。";
+		mes "[Honest]";
+		mes "One more place to go and you'll have a full set of materials for now.";
+		mes "This is thanks to the hard work of " + strcharinfo(0) + ".";
+		mes "I'll send out another request in a little while, thank you.";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled] ^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_QUEST09:
 	switch(AC_QUEST_ST_4){
 	case 1:
 		emotion 0;
-		mes "[オネスト]";
-		mes "やあ、" + strcharinfo(0);
-		mes "来てくれたね。";
-		mes "それにしても、時がたつのは";
-		mes "早いね。";
-		mes "君と出会ってからだいぶ";
-		mes "たつんじゃないかな？";
+		mes "[Honest]";
+		mes "Hey," + strcharinfo(0);
+		mes "You're here.";
+		mes "Time flies by, by the way.";
+		mes "I guess it's been a long time since I met you.";
 		next;
-		mes "[オネスト]";
-		mes "それじゃ、早速撮影場所なんだけど";
-		mes "今回もダンジョンなんだよね。";
-		mes "しかも奥深くまで行ってもらわないと";
-		mes "いけない。";
-		mes "凄く危険な撮影になると思う。";
+		mes "[Honest]";
+		mes "So, that's where we're going to shoot as soon as possible, but this time it's a dungeon again.";
+		mes "And you'll have to go deep into it.";
+		mes "I think it will be a very dangerous shoot.";
 		next;
-		mes "[オネスト]";
-		mes "撮影場所は、";
-		mes "MVPボスモンスター";
-		mes "^FF0000黄金蟲^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFProntera地下水路4F^000000";
-		mes "の写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "I need you to take pictures of the map ^0000FFProntera underground canal 4F^000000 where the MVP boss monster ^FF0000 golden bugs^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "アクティブなモンスターも";
-		mes "沢山いるし";
-		mes "本当に危険だから";
-		mes "準備を整えてから向かってね。";
-		mes "後、ハエの羽をもっていったほうが";
-		mes "いいと思う。";
+		mes "[Honest]";
+		mes "There are a lot of active monsters and it's really dangerous, so be prepared before you head out.";
+		mes "Also, I think you should take some fly wings with you.";
 		next;
-		mes "-オネストからカメラを受け取った-";
+		mes "-I received the camera from Honest-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFProntera地下水路4F^000000へ行き、";
-		mes "写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFProntera地下水路4F^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000[Mission] ^000000-^0000FFProntera underground canal 4F^000000, go to ^000000-^0000FFProntera underground canal 4F^000000 and take pictures-";
+		mes " ^0000FFPronteraUnderground canal 4F^000000-go to ^0000FFProntera^000000-";
 		close2;
 		set AC_QUEST_ST_4,2;
 		end;
 	case 2:
-		mes "[オネスト]";
-		mes "ん、もう一度";
-		mes "説明したほうがいいのかな？";
-		mes "今回の場所は";
-		mes "危険だから気をつけてね。";
+		mes "[Honest]";
+		mes "Hmm, should I explain again?";
+		mes "This time the place is dangerous, so be careful.";
 		next;
-		mes "[オネスト]";
-		mes "撮影場所は、";
-		mes "MVPボスモンスター";
-		mes "^FF0000黄金蟲^000000が";
-		mes "生息しているマップ";
-		mes "^0000FFProntera地下水路4F^000000";
-		mes "の写真を撮ってきてほしいんだ。";
+		mes "[Honest]";
+		mes "I want you to take pictures of the map ^0000FFProntera underground canal 4F^000000 where the MVP boss monster ^FF0000 golden bugs^000000 lives.";
 		next;
-		mes "[オネスト]";
-		mes "アクティブなモンスターも";
-		mes "沢山いるし";
-		mes "本当に危険だから";
-		mes "準備を整えてから向かってね。";
-		mes "後、ハエの羽をもっていったほうが";
-		mes "いいと思う。";
+		mes "[Honest]";
+		mes "There are a lot of active monsters and it's really dangerous, so be prepared before you head out.";
+		mes "Also, I think you should take some fly wings with you.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "-^0000FFProntera地下水路4F^000000へ行き、";
-		mes "写真を撮影してくる‐";
-		mes " ";
-		mes "^0000FFProntera地下水路4F^000000へは";
-		mes "　^0000FFProntera^000000から向かう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFProntera Go to the underground canal 4F^000000 and take pictures-";
+		mes " ^0000FFPronteraUnderground canal 4F^000000-go to ^0000FFProntera^000000-";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes strcharinfo(0);
-		mes "無事で戻ってきてくれて";
-		mes "本当によかった。";
-		mes "今回はさすがに";
-		mes "大変だったんじゃない？";
+		mes "[Honest]";
+		mes ""+strcharinfo(0);
+		mes "I'm so glad you made it back safe and sound.";
+		mes "You must have had a hard time indeed this time.";
 		next;
-		if(select("楽だったよ","大変だった")==1){
-			emotion 23;
-			mes "[オネスト]";
-			mes "ええーーっ！";
-			mes "実は" + strcharinfo(0) + "は";
-			mes "凄い冒険者だったんだね！";
-			mes "すごいなぁー。";
-			mes "僕も絶対冒険者になって";
-			mes "色々冒険するんだ。";
+		if(select("It was easy.", "It was hard.")==1){
+			EMOTION 23;
+			mes "[Honest]";
+			mes "Yeah!";
+			mes "Actually" + strcharinfo(0) + "was an awesome adventurer!";
+			mes "That's awesome!";
+			mes "I'm definitely going to become an adventurer and have many adventures.";
 			next;
 		}
 		else {
-			emotion 33;
-			mes "[オネスト]";
-			mes "そうだよねー。";
-			mes "モンスターが沢山いる場所";
-			mes "なんだもん。";
-			mes "あー、早く僕も冒険者になりたい！";
+			EMOTION 33;
+			mes "[Honest]";
+			mes "That's right...";
+			mes "It's a place with lots of monsters.";
+			mes "Oh, I can't wait to be an adventurer too!";
 			next;
 		}
-		emotion 0;
-		mes "[オネスト]";
-		mes "あ、そうだ！";
-		mes "親が君の撮影してきた写真をみて";
-		mes "僕が冒険者になることを";
-		mes "認めてくれたんだ！";
-		mes "親は僕が撮ってきたと勘違い";
-		mes "していたけどもね。";
+		EMOTION 0;
+		mes "[Honest]";
+		mes "Oh, yes!";
+		mes "My parents saw the pictures you've been taking and approved me to be an adventurer!";
+		mes "My parents thought I took the pictures, though.";
 		next;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "には";
-		mes "凄く悪いんだけど、";
-		mes "親には僕が撮影してきたってことに";
-		mes "なっているから、";
-		mes "それはごめんよ。";
+		mes "[Honest]";
+		mes "I feel terribly bad for "+strcharinfo(0) + " but my parents think I took the picture, so I'm sorry about that.";
 		next;
-		menu "気にしないで",-;
-		mes "[オネスト]";
-		mes "ありがとう……";
-		mes "僕が冒険者になったら";
-		mes "君とも一緒に冒険してみたいなー。";
+		menu "Don't worry about it.",-;
+		mes "[Honest]";
+		mes "Thanks ......";
+		mes "When I become an adventurer, I'd love to have an adventure with you too.";
 		next;
 		if('@novice){
-			mes "‐オネストにカメラを返し、";
-			mes "　アイテムを受け取った‐";
+			mes "-Returned camera to Honest and received items-";
 			next;
 		}
 		else {
-			mes "‐オネストにカメラを返した‐";
+			mes "-Returned camera to Honest-";
 			next;
 		}
-		emotion 21;
-		mes "[オネスト]";
-		mes "何度も手伝ってくれて";
-		mes "本当にありがとうね。";
-		mes "また、何かあったら";
-		mes "冒険者アカデミーの方に";
-		mes "依頼をかけさせてもらうから";
-		mes "そのときは絶対よろしくね！";
+		EMOTION 21;
+		mes "[Honest]";
+		mes "Thank you so much for helping me so many times.";
+		mes "If I ever need anything else, I'll make a request to the Adventurers Academy, so I'll definitely be in touch then!";
 		next;
 		if('@novice){
-			mes "[オネスト]";
-			mes "あ！そうだこれ！";
-			mes "イグドラシルの葉っていう";
-			mes "アイテムなんだけど";
-			mes "倒れている人を助けることが";
-			mes "出来るものなんだ。";
-			mes "冒険に役立ててよ。";
+			mes "[Honest]";
+			mes "Ah! That's it!";
+			mes "It's an item called an Yggdrasil leaf, and it can help people who have fallen.";
+			mes "Use it for your adventures.";
 			next;
 			if(!checkweight(610,10)){
-				mes "‐重量オーバー‐";
+				mes "-overweight-";
 				close;
 			}
 			getitem 610,10;
 		}
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000-you fulfilled the request!";
+		mes "Let's go report to the Adventurers Academy-";
 		close2;
 		set AC_QUEST_ST_4,99;
 		end;
 	case 99:
-		mes "[オネスト]";
-		mes "何度も手伝ってくれて";
-		mes "本当にありがとうね。";
-		mes "また、何かあったら";
-		mes "冒険者アカデミーの方に";
-		mes "依頼をかけさせてもらうから";
-		mes "そのときは絶対よろしくね！";
+		mes "[Honest]";
+		mes "Thank you so much for helping me so many times.";
+		mes "If I need any more help, I'll make a request to the Adventurer's Academy, so I'll definitely be in touch then!";
 		next;
-		mes "^FF0000【依頼達成】^000000";
-		mes "‐依頼を達成した！";
-		mes "冒険者アカデミーに";
-		mes "報告しに行こう‐";
+		mes "^FF0000 [request fulfilled]^000000- request fulfilled!";
+		mes "Let's go report to the Adventurers Academy-";
 		close;
 	}
 L_OTHER:
 	switch(AC_QUEST_LV_4){
 	case 0:
-		mes "[オネスト]";
-		mes "後は、この資料とこの資料が";
-		mes "必要かなぁ？";
+		mes "[Honest]";
+		mes "I wonder if we need this and this material after that?";
 		close;
 	case 1:
 	case 2:
-		mes "[オネスト]";
-		mes "ありがとう！";
-		mes "助かったわ。";
+		mes "[Honest]";
+		mes "Thank you!";
+		mes "Thank you for your help.";
 		close;
 	case 3:
-		mes "[オネスト]";
-		mes "これでボスモンスター関連資料が";
-		mes "3つになったよ。";
-		mes "まだまだ必要になると思うから";
-		mes "またよろしくね。";
+		mes "[Honest]";
+		mes "Now I have three boss monster related documents.";
+		mes "I'm sure I'll need more, so thanks again.";
 		close;
 	case 4:
-		mes "[オネスト]";
-		mes "ありがとう！";
-		mes "助かったわ。";
+		mes "[Honest]";
+		mes "Thank you!";
+		mes "Thank you for your help.";
 		close;
 	case 5:
-		mes "[オネスト]";
-		mes "本当にすごいなぁ……";
-		mes "僕も" + strcharinfo(0);
-		mes "のような冒険者になれるように";
-		mes "頑張って勉強しなきゃ。";
-		mes "それじゃ、またよろしくね。";
+		mes "[Honest]";
+		mes "That's really great. ......";
+		mes "Me too" + strcharinfo(0);
+		mes "I have to study hard so I can be an adventurer like [Honest].";
+		mes "Well, I'll see you soon.";
 		close;
 	case 6:
-		mes "[オネスト]";
-		mes "いつもありがとう！";
-		mes "本当に助かるわ。";
+		mes "[Honest]";
+		mes "Thanks again!";
+		mes "That's really helpful.";
 		close;
 	case 7:
-		mes "[オネスト]";
-		mes "えっとさ……";
-		mes "親に一度、真剣に話してみようと";
-		mes "思うんだ。";
-		mes "コソコソ資料を集めてても";
-		mes "多分そのうちばれてしまうだろうし。";
+		mes "[Honest]";
+		mes "Let's see, ......";
+		mes "I think I'm going to have a serious talk with my parents once.";
+		mes "If I'm sneaking around and gathering material, they'll probably find out sooner or later.";
 		next;
-		mes "[オネスト]";
-		mes strcharinfo(0) + "が";
-		mes "撮ってきた写真を見せて";
-		mes "真剣に話してみるよ。";
+		mes "[Honest]";
+		mes ""+strcharinfo(0) + "I'll show you the pictures I've taken and have a serious talk with you.";
 		close;
 	case 8:
-		mes "[オネスト]";
-		mes "後一箇所でとりあえずは、";
-		mes "資料が一通り揃うことになるよ。";
-		mes "これも、" + strcharinfo(0) + "が";
-		mes "頑張ってくれたおかげだよ。";
-		mes "少ししたらまた依頼出しておくから";
-		mes "よろしくね。";
+		mes "[Honest]";
+		mes "One more place to go and we'll have a full set of materials for now.";
+		mes "This is thanks to the hard work of " + strcharinfo(0) + ".";
+		mes "I'll send out another request in a little while, thank you.";
 		close;
 	case 9:
-		mes "[オネスト]";
-		mes "何度も手伝ってくれて";
-		mes "本当にありがとうね。";
-		mes "また、何かあったら";
-		mes "冒険者アカデミーの方に";
-		mes "依頼をかけさせてもらうから";
-		mes "そのときは絶対よろしくね！";
+		mes "[Honest]";
+		mes "Thanks again and again for your help.";
+		mes "If I need any more help, I'll make a request to the Adventurer's Academy, so I'll definitely be in touch then!";
 		close;
 	}
 }
-prt_fild02.gat,305,157,0		script	#撮影ポイントPRT02	139,5,5,{
+prt_fild02.gat,305,157,0	script	# shooting point prt02	139,5,5,{
 	if(AC_QUEST_LV_4!=0) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-pay_fild04.gat,267,193,0		script	#撮影ポイントPAY04	139,5,5,{
+pay_fild04.gat,267,193,0	script	# shooting point PAY04	139,5,5,{
 	if(AC_QUEST_LV_4!=1) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-moc_fild18.gat,232,217,0		script	#撮影ポイントMOC18	139,5,5,{
+moc_fild18.gat,232,217,0	script	# shooting point MOC18	139,5,5,{
 	if(AC_QUEST_LV_4!=2) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいのかな。";
+		mes "I guess I should just shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-gef_fild01.gat,208,242,0		script	#撮影ポイントGEF01	139,5,5,{
+gef_fild01.gat,208,242,0	script	# shooting point GEF01	139,5,5,{
 	if(AC_QUEST_LV_4!=3) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-moc_fild17.gat,146,145,0		script	#撮影ポイントMOC17	139,5,5,{
+moc_fild17.gat,146,145,0	script	# shooting point MOC17	139,5,5,{
 	if(AC_QUEST_LV_4!=4) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-moc_fild03.gat,70,336,0		script	#撮影ポイントMOC03	139,5,5,{
+moc_fild03.gat,70,336,0	script	# shooting point MOC03	139,5,5,{
 	if(AC_QUEST_LV_4!=5) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-gef_fild09.gat,227,29,4		script	Board	835,{
-	mes "[オークの村]";
-	mes "注意！";
-	mes "この先はオークが出現します。";
-	mes "オークウォリアーやオークレディ、";
-	mes "ハイオークなどにご注意ください。";
-	mes "また、オークヒーローやオークロード";
-	mes "には特にご注意ください。";
+gef_fild09.gat,227,29,4	script	Info Board	835,{
+	mes "[Orc Village]";
+	mes "Attention!";
+	mes "Orcs will appear ahead.";
+	mes "Please beware of Orc Warriors, Orc Ladies and High Orcs.";
+	mes "Also, please be especially careful of Orc Heroes and Orc Lords.";
 	close;
 }
-gef_fild10.gat,251,368,0		script	#撮影ポイントGEF10	139,5,5,{
+gef_fild10.gat,251,368,0	script	# shooting point GEF10	139,5,5,{
 	if(AC_QUEST_LV_4!=6) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-xmas_dun02.gat,131,130,0		script	#撮影ポイントXMS02	139,5,5,{
+xmas_dun02.gat,131,130,0	script	# shooting point XMS02	139,5,5,{
 	if(AC_QUEST_LV_4!=7) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
-prt_sewb4.gat,100,92,0		script	#撮影ポイントSEW04	139,5,5,{
+prt_sewb4.gat,100,92,0	script	# shooting point SEW04	139,5,5,{
 	if(AC_QUEST_LV_4!=8) end;
 	switch(AC_QUEST_ST_4){
 	case 2:
 		mes "[" + strcharinfo(0) + "]";
-		mes "ここで撮影すればいいかな。";
+		mes "I guess I should shoot here.";
 		next;
-		mes "‐写真撮影完了‐";
+		mes "-Photography completed-";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFF Return to Geffen and report to ^FF0000Honest^000000-";
 		close2;
 		set AC_QUEST_ST_4,3;
 		end;
 	case 3:
 		mes "[" + strcharinfo(0) + "]";
-		mes "写真を撮影する必要は無いな。";
+		mes "I don't see the need to take a picture.";
 		next;
-		mes "^FF0000【ミッション】^000000";
-		mes "‐^0000FFGeffenに戻って";
-		mes "^FF0000オネスト^000000に報告しよう‐";
+		mes "^FF0000 [Mission] ^000000-^0000FFGo back to Geffen and report to ^FF0000Honest^000000-";
 		close;
 	}
 }
