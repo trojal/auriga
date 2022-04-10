@@ -57,7 +57,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_B4a	{
 	callfunc "AgitEmblemFlag",0,"gefg_cas04.gat",168,43;
@@ -67,9 +67,9 @@ OnFlagEmb_B4:
 	flagemblem getcastledata("gefg_cas04.gat",1);
 	end;
 }
-gef_fild07.gat,330,171,2	duplicate(#GldFlag_B4a)	ギルドフラッグ#B4a01	722
-gef_fild13.gat,190,283,3	duplicate(#GldFlag_B4a)	ギルドフラッグ#B4a02	722
-gef_fild13.gat,199,274,3	duplicate(#GldFlag_B4a)	ギルドフラッグ#B4a03	722
+gef_fild07.gat,330,171,2	duplicate(#GldFlag_B4a)	Guild Flag#B4a01	722
+gef_fild13.gat,190,283,3	duplicate(#GldFlag_B4a)	Guild Flag#B4a02	722
+gef_fild13.gat,199,274,3	duplicate(#GldFlag_B4a)	Guild Flag#B4a03	722
 
 -	script	#GldFlag_B4b	{
 	end;
@@ -78,20 +78,20 @@ OnFlagEmb_B4:
 	flagemblem getcastledata("gefg_cas04.gat",1);
 	end;
 }
-//geffen.gat,127,130,7		duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b01	722
-//gefg_cas04.gat,24,157,4	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b02	722
-//gefg_cas04.gat,35,158,4	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b03	722
-//gefg_cas04.gat,44,184,4	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b04	722
-//gefg_cas04.gat,51,184,4	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b05	722
-//gefg_cas04.gat,39,212,7	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b06	722
-//gefg_cas04.gat,29,212,1	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b07	722
-//gefg_cas04.gat,24,73,1	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b08	722
-//gefg_cas04.gat,35,73,4	duplicate(#GldFlag_B4b)	ギルドフラッグ#B4b09	722
+//geffen.gat,127,130,7		duplicate(#GldFlag_B4b)	Guild Flag#B4b01	722
+//gefg_cas04.gat,24,157,4	duplicate(#GldFlag_B4b)	Guild Flag#B4b02	722
+//gefg_cas04.gat,35,158,4	duplicate(#GldFlag_B4b)	Guild Flag#B4b03	722
+//gefg_cas04.gat,44,184,4	duplicate(#GldFlag_B4b)	Guild Flag#B4b04	722
+//gefg_cas04.gat,51,184,4	duplicate(#GldFlag_B4b)	Guild Flag#B4b05	722
+//gefg_cas04.gat,39,212,7	duplicate(#GldFlag_B4b)	Guild Flag#B4b06	722
+//gefg_cas04.gat,29,212,1	duplicate(#GldFlag_B4b)	Guild Flag#B4b07	722
+//gefg_cas04.gat,24,73,1	duplicate(#GldFlag_B4b)	Guild Flag#B4b08	722
+//gefg_cas04.gat,35,73,4	duplicate(#GldFlag_B4b)	Guild Flag#B4b09	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-gefg_cas04.gat,59,70,3	script	カプラ職員::AgitKafra_B4	117,{
+gefg_cas04.gat,59,70,3	script	Kafra Staff::AgitKafra_B4	117,{
 	callfunc "AgitKafra",15;
 	close;
 OnAgitInit:
@@ -103,7 +103,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-gefg_cas04.gat,73,46,3	script	ケルバーリ	55,{
+gefg_cas04.gat,73,46,3	script	Kellvahni	55,{
 	callfunc "AgitSteward","B4",'guardian_id,'guardian_x,'guardian_y,116,123;
 	close;
 OnAgitInit:

@@ -63,7 +63,7 @@ OnKilled:
 //============================================================
 // 守備担当
 //------------------------------------------------------------
-schg_cas01.gat,123,306,3	script	イプ#N1	868,{
+schg_cas01.gat,123,306,3	script	Ef#N1	868,{
 	if('guardian1_x[0] == 0) {
 		setarray 'guardian1_x,111,109,109, 65,109, 65,110,109, 65,110, 88,108;
 		setarray 'guardian1_y, 18, 44, 44, 22, 44, 22, 40, 44, 22, 40, 20, 32;
@@ -139,8 +139,8 @@ OnKilled:
 	end;
 OnSet:
 OnTimer300000:
-	hideoffnpc "第1守護石#N1";
-	misceffect 247,"第1守護石#N1";
+	hideoffnpc "1st Guardian Stone#N1";
+	misceffect 247,"1st Guardian Stone#N1";
 	set 'status,2;
 	stopnpctimer;
 	end;
@@ -151,7 +151,7 @@ OnAgitEnd:
 	end;
 }
 
-schg_cas01.gat,27,36,0	script	第1守護石#N1	844,{
+schg_cas01.gat,27,36,0	script	1st Guardian Stone#N1	844,{
 	callfunc "AgitStone",1;
 	close;
 OnInit:
@@ -171,8 +171,8 @@ OnKilled:
 	end;
 OnSet:
 OnTimer300000:
-	hideoffnpc "第2守護石#N1";
-	misceffect 247,"第2守護石#N1";
+	hideoffnpc "Second Guardian Stone#N1";
+	misceffect 247,"Second Guardian Stone#N1";
 	set 'status,2;
 	stopnpctimer;
 	end;
@@ -183,7 +183,7 @@ OnAgitEnd:
 	end;
 }
 
-schg_cas01.gat,208,75,0	script	第2守護石#N1	844,{
+schg_cas01.gat,208,75,0	script	Second Guardian Stone#N1	844,{
 	callfunc "AgitStone",2;
 	close;
 OnInit:
@@ -215,19 +215,19 @@ OnKilled:
 	end;
 }
 
-schg_cas01.gat,124,52,0	script	制御装置01#N1	111,{
+schg_cas01.gat,124,52,0	script	Control Unit01#N1	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "schg_cas01.gat",114,51,126,51,5;
-	callguardian "schg_cas01.gat",115,50," ",1905,1,"制御装置01#N1::OnKilled";
-	callguardian "schg_cas01.gat",117,50," ",1905,1,"制御装置01#N1::OnKilled";
-	callguardian "schg_cas01.gat",119,50," ",1905,1,"制御装置01#N1::OnKilled";
-	callguardian "schg_cas01.gat",121,50," ",1905,1,"制御装置01#N1::OnKilled";
-	callguardian "schg_cas01.gat",123,50," ",1905,1,"制御装置01#N1::OnKilled";
-	callguardian "schg_cas01.gat",125,50," ",1905,1,"制御装置01#N1::OnKilled";
+	callguardian "schg_cas01.gat",115,50," ",1905,1,"Control Unit01#N1::OnKilled";
+	callguardian "schg_cas01.gat",117,50," ",1905,1,"Control Unit01#N1::OnKilled";
+	callguardian "schg_cas01.gat",119,50," ",1905,1,"Control Unit01#N1::OnKilled";
+	callguardian "schg_cas01.gat",121,50," ",1905,1,"Control Unit01#N1::OnKilled";
+	callguardian "schg_cas01.gat",123,50," ",1905,1,"Control Unit01#N1::OnKilled";
+	callguardian "schg_cas01.gat",125,50," ",1905,1,"Control Unit01#N1::OnKilled";
 	set 'count,6;
 	end;
 OnKilled:
@@ -235,31 +235,31 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第1バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The first barricade has been breached!",0x9,0xFF0000;
 	areasetcell "schg_cas01.gat",114,51,126,51,0;
-	killmonster "schg_cas01.gat","制御装置01#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit01#N1::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "schg_cas01.gat",114,51,126,51,0;
-	killmonster "schg_cas01.gat","制御装置01#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit01#N1::OnKilled";
 	set 'status,0;
 	end;
 }
 
-schg_cas01.gat,128,157,0	script	制御装置02#N1	111,{
+schg_cas01.gat,128,157,0	script	Control Unit02#N1	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "schg_cas01.gat",114,154,126,154,5;
-	callguardian "schg_cas01.gat",115,153," ",1905,1,"制御装置02#N1::OnKilled";
-	callguardian "schg_cas01.gat",117,153," ",1905,1,"制御装置02#N1::OnKilled";
-	callguardian "schg_cas01.gat",119,153," ",1905,1,"制御装置02#N1::OnKilled";
-	callguardian "schg_cas01.gat",121,153," ",1905,1,"制御装置02#N1::OnKilled";
-	callguardian "schg_cas01.gat",123,153," ",1905,1,"制御装置02#N1::OnKilled";
-	callguardian "schg_cas01.gat",125,153," ",1905,1,"制御装置02#N1::OnKilled";
+	callguardian "schg_cas01.gat",115,153," ",1905,1,"Control Unit02#N1::OnKilled";
+	callguardian "schg_cas01.gat",117,153," ",1905,1,"Control Unit02#N1::OnKilled";
+	callguardian "schg_cas01.gat",119,153," ",1905,1,"Control Unit02#N1::OnKilled";
+	callguardian "schg_cas01.gat",121,153," ",1905,1,"Control Unit02#N1::OnKilled";
+	callguardian "schg_cas01.gat",123,153," ",1905,1,"Control Unit02#N1::OnKilled";
+	callguardian "schg_cas01.gat",125,153," ",1905,1,"Control Unit02#N1::OnKilled";
 	set 'count,6;
 	end;
 OnKilled:
@@ -267,29 +267,29 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第2バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The second barricade has been breached!",0x9,0xFF0000;
 	areasetcell "schg_cas01.gat",114,154,126,154,0;
-	killmonster "schg_cas01.gat","制御装置02#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit02#N1::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "schg_cas01.gat",114,154,126,154,0;
-	killmonster "schg_cas01.gat","制御装置02#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit02#N1::OnKilled";
 	set 'status,0;
 	end;
 }
 
-schg_cas01.gat,109,247,0	script	制御装置03#N1	111,{
+schg_cas01.gat,109,247,0	script	Control Unit03#N1	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "schg_cas01.gat",116,241,126,241,5;
-	callguardian "schg_cas01.gat",116,240," ",1905,1,"制御装置03#N1::OnKilled";
-	callguardian "schg_cas01.gat",118,240," ",1905,1,"制御装置03#N1::OnKilled";
-	callguardian "schg_cas01.gat",120,240," ",1905,1,"制御装置03#N1::OnKilled";
-	callguardian "schg_cas01.gat",122,240," ",1905,1,"制御装置03#N1::OnKilled";
+	callguardian "schg_cas01.gat",116,240," ",1905,1,"Control Unit03#N1::OnKilled";
+	callguardian "schg_cas01.gat",118,240," ",1905,1,"Control Unit03#N1::OnKilled";
+	callguardian "schg_cas01.gat",120,240," ",1905,1,"Control Unit03#N1::OnKilled";
+	callguardian "schg_cas01.gat",122,240," ",1905,1,"Control Unit03#N1::OnKilled";
 	set 'count,4;
 	end;
 OnKilled:
@@ -297,20 +297,20 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第3バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The third barricade has been breached!",0x9,0xFF0000;
 	areasetcell "schg_cas01.gat",116,241,126,241,0;
-	killmonster "schg_cas01.gat","制御装置03#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit03#N1::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "schg_cas01.gat",116,241,126,241,0;
-	killmonster "schg_cas01.gat","制御装置03#N1::OnKilled";
+	killmonster "schg_cas01.gat","Control Unit03#N1::OnKilled";
 	set 'status,0;
 	end;
 }
 
 //============================================================
-// リンクフラッグ(A)
+// Link Flag(A)
 //------------------------------------------------------------
 schg_cas01.gat,106,302,0	script	LF-01#N1	111,{
 	setarray '@code,1,2;	//"第1拠点","第2拠点"
@@ -321,7 +321,7 @@ schg_cas01.gat,106,302,0	script	LF-01#N1	111,{
 }
 
 schg_cas01.gat,109,302,0	script	LF-02#N1	111,{
-	setarray '@code,11,12;	//"防衛地域1-1","防衛地域1-2"
+	setarray '@code,11,12;	//"Defense Area 1-1","Defense Area 1-2"
 	setarray '@x, 89,141;
 	setarray '@y, 43, 45;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -329,7 +329,7 @@ schg_cas01.gat,109,302,0	script	LF-02#N1	111,{
 }
 
 schg_cas01.gat,112,302,0	script	LF-03#N1	111,{
-	setarray '@code,13,14;	//"防衛地域1-3","防衛地域1-4"
+	setarray '@code,13,14;	//"Defense Area 1-3","Defense Area 1-4"
 	setarray '@x,137,102;
 	setarray '@y, 54, 54;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -337,7 +337,7 @@ schg_cas01.gat,112,302,0	script	LF-03#N1	111,{
 }
 
 schg_cas01.gat,115,302,0	script	LF-04#N1	111,{
-	setarray '@code,21,22;	//"防衛地域2-1","防衛地域2-2"
+	setarray '@code,21,22;	//"Defense Area 2-1","Defense Area 2-2"
 	setarray '@x, 94,163;
 	setarray '@y,147,140;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -345,7 +345,7 @@ schg_cas01.gat,115,302,0	script	LF-04#N1	111,{
 }
 
 schg_cas01.gat,118,302,0	script	LF-05#N1	111,{
-	setarray '@code,23,24;	//"防衛地域2-3","防衛地域2-4"
+	setarray '@code,23,24;	//"Defense Area 2-3","Defense Area 2-4"
 	setarray '@x, 87,151;
 	setarray '@y,220,220;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -353,7 +353,7 @@ schg_cas01.gat,118,302,0	script	LF-05#N1	111,{
 }
 
 schg_cas01.gat,121,302,0	script	LF-06#N1	111,{
-	setarray '@code,31,32;	//"防衛地域3-1","防衛地域3-2"
+	setarray '@code,31,32;	//"Defense Area 3-1","Defense Area 3-2"
 	setarray '@x,100,136;
 	setarray '@y,242,242;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -369,7 +369,7 @@ schg_cas01.gat,124,302,0	script	LF-07#N1	111,{
 }
 
 schg_cas01.gat,127,302,0	script	LF-08#N1	111,{
-	setarray '@code,111,121,131;	//"区域1-1","区域2-1","区域3-1"
+	setarray '@code,111,121,131;	//"Area 1-1","Area 2-1","Area 3-1"
 	setarray '@x, 89, 94,100;
 	setarray '@y, 43,147,242;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -377,7 +377,7 @@ schg_cas01.gat,127,302,0	script	LF-08#N1	111,{
 }
 
 schg_cas01.gat,130,302,0	script	LF-09#N1	111,{
-	setarray '@code,112,122,132;	//"区域1-2","区域2-2","区域3-2"
+	setarray '@code,112,122,132;	//"Area 1-2","Area 2-2","Area 3-2"
 	setarray '@x,141,163,136;
 	setarray '@y, 45,140,243;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -390,36 +390,36 @@ schg_cas01.gat,133,302,0	script	LF-10#N1	111,{
 }
 
 //============================================================
-// リンクフラッグ(B)
+// Link Flag(B)
 //------------------------------------------------------------
 -	script	#LinkFlag_N1	{
 	callfunc "AgitLinkFlagB",0,120,290;
 	close;
 OnAgitInit:
 OnFlagEmb_N1:
-	if(substr(strnpcinfo(2),0,1) == "B")	//ギルドフラッグ型ならエンブレム更新
+	if(substr(strnpcinfo(2),0,1) == "B")	//Guild Flag型ならエンブレム更新
 		flagemblem getcastledata("schg_cas01.gat",1);
 	end;
 }
-schg_cas01.gat,17,45,0		duplicate(#LinkFlag_N1)	ヒミン#A01	111
-schg_cas01.gat,207,95,0		duplicate(#LinkFlag_N1)	ヒミン#A02	111
-schg_cas01.gat,111,46,4		duplicate(#LinkFlag_N1)	ヒミン#B03	722
-schg_cas01.gat,129,46,4		duplicate(#LinkFlag_N1)	ヒミン#B04	722
-schg_cas01.gat,99,77,0		duplicate(#LinkFlag_N1)	ヒミン#A05	111
-schg_cas01.gat,140,77,0		duplicate(#LinkFlag_N1)	ヒミン#A06	111
-schg_cas01.gat,109,150,4	duplicate(#LinkFlag_N1)	ヒミン#B07	722
-schg_cas01.gat,130,150,4	duplicate(#LinkFlag_N1)	ヒミン#B08	722
-schg_cas01.gat,112,212,0	duplicate(#LinkFlag_N1)	ヒミン#A09	111
-schg_cas01.gat,127,212,0	duplicate(#LinkFlag_N1)	ヒミン#A10	111
-schg_cas01.gat,113,238,0	duplicate(#LinkFlag_N1)	ヒミン#A11	111
-schg_cas01.gat,126,238,0	duplicate(#LinkFlag_N1)	ヒミン#A12	111
-schg_cas01.gat,95,247,0		duplicate(#LinkFlag_N1)	ヒミン#A13	111
-schg_cas01.gat,144,247,0	duplicate(#LinkFlag_N1)	ヒミン#A14	111
+schg_cas01.gat,17,45,0		duplicate(#LinkFlag_N1)	Himinn#A01	111
+schg_cas01.gat,207,95,0		duplicate(#LinkFlag_N1)	Himinn#A02	111
+schg_cas01.gat,111,46,4		duplicate(#LinkFlag_N1)	Himinn#B03	722
+schg_cas01.gat,129,46,4		duplicate(#LinkFlag_N1)	Himinn#B04	722
+schg_cas01.gat,99,77,0		duplicate(#LinkFlag_N1)	Himinn#A05	111
+schg_cas01.gat,140,77,0		duplicate(#LinkFlag_N1)	Himinn#A06	111
+schg_cas01.gat,109,150,4	duplicate(#LinkFlag_N1)	Himinn#B07	722
+schg_cas01.gat,130,150,4	duplicate(#LinkFlag_N1)	Himinn#B08	722
+schg_cas01.gat,112,212,0	duplicate(#LinkFlag_N1)	Himinn#A09	111
+schg_cas01.gat,127,212,0	duplicate(#LinkFlag_N1)	Himinn#A10	111
+schg_cas01.gat,113,238,0	duplicate(#LinkFlag_N1)	Himinn#A11	111
+schg_cas01.gat,126,238,0	duplicate(#LinkFlag_N1)	Himinn#A12	111
+schg_cas01.gat,95,247,0		duplicate(#LinkFlag_N1)	Himinn#A13	111
+schg_cas01.gat,144,247,0	duplicate(#LinkFlag_N1)	Himinn#A14	111
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-schg_cas01.gat,300,287,5	script	カプラ職員::AgitKafra_N1	117,{
+schg_cas01.gat,300,287,5	script	Kafra Staff::AgitKafra_N1	117,{
 	callfunc "AgitKafra",13;
 	close;
 OnAgitInit:
@@ -431,7 +431,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-schg_cas01.gat,247,305,3	script	執事	55,{
+schg_cas01.gat,247,305,3	script	Butler	55,{
 	callfunc "AgitSteward","N1",0,0,0,381,381;
 	close;
 }
@@ -445,7 +445,7 @@ schg_cas01.gat,391,391,0	script	#AgitMaster_N1	111,{
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_N1a	{
 	callfunc "AgitEmblemFlag",2,"schg_cas01.gat",120,290;
@@ -455,8 +455,8 @@ OnFlagEmb_N1:
 	flagemblem getcastledata("schg_cas01.gat",1);
 	end;
 }
-sch_gld.gat,290,90,0	duplicate(#GldFlag_N1a)	ヒミン#a01	722
-sch_gld.gat,297,90,0	duplicate(#GldFlag_N1a)	ヒミン#a02	722
+sch_gld.gat,290,90,0	duplicate(#GldFlag_N1a)	Himinn#a01	722
+sch_gld.gat,297,90,0	duplicate(#GldFlag_N1a)	Himinn#a02	722
 
 -	script	#GldFlag_N1b	{
 	end;
@@ -465,12 +465,12 @@ OnFlagEmb_N1:
 	flagemblem getcastledata("schg_cas01.gat",1);
 	end;
 }
-//yuno.gat,109,167,5	duplicate(#GldFlag_N1b)	ヒミン#b01	722
+//yuno.gat,109,167,5	duplicate(#GldFlag_N1b)	Himinn#b01	722
 
 //============================================================
-// 不思議なヒマワリ（アジトダンジョン）
+// Mysterious Sunflower（アジトダンジョン）
 //------------------------------------------------------------
-schg_cas01.gat,280,391,3	script	不思議なヒマワリ#N1	976,{
+schg_cas01.gat,280,391,3	script	Mysterious Sunflower#N1	976,{
 	callfunc "AgitDungeonSE","schg_dun01.gat",255,313;
 	close;
 }

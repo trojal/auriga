@@ -4,10 +4,10 @@
 //-------------------------------------------------------------------------
 
 function	script	RoomSwitch	{
-	mes "小さなレバーがあります。";
-	mes "引きますか？";
+	mes "There is a small lever." ;
+	mes "Do you want to pull it?" ;
 	next;
-	if(select("引く","引かない")==1) {
+	if(select("pull", "do not pull")==1) {
 		set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 		warp '@map$,getarg(0),getarg(1);
 		end;

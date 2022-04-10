@@ -3,7 +3,7 @@
 //	const.txtより設定時間を取得
 //	（GvGWeekDay, GvGTimeST, GvGTimeST, GvGTime*ST, GvGTime*ED）
 //
-//　■MAPサーバを起動してから60秒後に開始するかどうかを判断
+//  •MAPサーバを起動してから60秒後に開始するかどうかを判断
 //-------------------------------------------------------------------------
 
 -	script	#AgitConfig	-1,{
@@ -88,7 +88,7 @@ OnTimer60000:
 //			mes '@chr$['@i]+ "曜日 ： " +(getelementofarray( getvariableofnpc('open,"#AgitConfig"),'@i ))? "○": "×";
 //		next;
 //		if(GvGTimeST != GvGTimeED) {
-//			mes "毎回　" +GvGTimeST+ " ～ " +GvGTimeED;
+//			mes "毎回  " +GvGTimeST+ " ～ " +GvGTimeED;
 //			break;
 //		}
 //		for(set '@i,0; '@i<7; set '@i,'@i+1) {

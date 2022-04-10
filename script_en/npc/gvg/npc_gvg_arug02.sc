@@ -63,7 +63,7 @@ OnKilled:
 //============================================================
 // 守備担当
 //------------------------------------------------------------
-arug_cas02.gat,38,259,5	script	ユネメス#F2	868,{
+arug_cas02.gat,38,259,5	script	Yumenes#F2	868,{
 	if('guardian1_x[0] == 0) {
 		setarray 'guardian1_x,104, 67, 67, 67, 67, 67,113, 67, 67,113,122, 20;
 		setarray 'guardian1_y, 32, 36, 36, 85, 36, 85, 87, 36, 85, 87,112,169;
@@ -139,8 +139,8 @@ OnKilled:
 	end;
 OnSet:
 OnTimer300000:
-	hideoffnpc "第1守護石#F2";
-	misceffect 247,"第1守護石#F2";
+	hideoffnpc "1st Guardian Stone#F2";
+	misceffect 247,"1st Guardian Stone#F2";
 	set 'status,2;
 	stopnpctimer;
 	end;
@@ -151,7 +151,7 @@ OnAgitEnd:
 	end;
 }
 
-arug_cas02.gat,33,168,0	script	第1守護石#F2	844,{
+arug_cas02.gat,33,168,0	script	1st Guardian Stone#F2	844,{
 	callfunc "AgitStone",1;
 	close;
 OnInit:
@@ -171,8 +171,8 @@ OnKilled:
 	end;
 OnSet:
 OnTimer300000:
-	hideoffnpc "第2守護石#F2";
-	misceffect 247,"第2守護石#F2";
+	hideoffnpc "Second Guardian Stone#F2";
+	misceffect 247,"Second Guardian Stone#F2";
 	set 'status,2;
 	stopnpctimer;
 	end;
@@ -183,7 +183,7 @@ OnAgitEnd:
 	end;
 }
 
-arug_cas02.gat,245,168,0	script	第2守護石#F2	844,{
+arug_cas02.gat,245,168,0	script	Second Guardian Stone#F2	844,{
 	callfunc "AgitStone",2;
 	close;
 OnInit:
@@ -213,19 +213,19 @@ OnKilled:
 	end;
 }
 
-arug_cas02.gat,143,228,0	script	制御装置01#F2	111,{
+arug_cas02.gat,143,228,0	script	Control Unit01#F2	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "arug_cas02.gat",150,223,161,223,5;
-	callguardian "arug_cas02.gat",151,222," ",1905,1,"制御装置01#F2::OnKilled";
-	callguardian "arug_cas02.gat",153,222," ",1905,1,"制御装置01#F2::OnKilled";
-	callguardian "arug_cas02.gat",155,222," ",1905,1,"制御装置01#F2::OnKilled";
-	callguardian "arug_cas02.gat",157,222," ",1905,1,"制御装置01#F2::OnKilled";
-	callguardian "arug_cas02.gat",159,222," ",1905,1,"制御装置01#F2::OnKilled";
-	callguardian "arug_cas02.gat",161,222," ",1905,1,"制御装置01#F2::OnKilled";
+	callguardian "arug_cas02.gat",151,222," ",1905,1,"Control Unit01#F2::OnKilled";
+	callguardian "arug_cas02.gat",153,222," ",1905,1,"Control Unit01#F2::OnKilled";
+	callguardian "arug_cas02.gat",155,222," ",1905,1,"Control Unit01#F2::OnKilled";
+	callguardian "arug_cas02.gat",157,222," ",1905,1,"Control Unit01#F2::OnKilled";
+	callguardian "arug_cas02.gat",159,222," ",1905,1,"Control Unit01#F2::OnKilled";
+	callguardian "arug_cas02.gat",161,222," ",1905,1,"Control Unit01#F2::OnKilled";
 	set 'count,6;
 	end;
 OnKilled:
@@ -233,31 +233,31 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第1バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The first barricade has been breached!",0x9,0xFF0000;
 	areasetcell "arug_cas02.gat",150,223,161,223,0;
-	killmonster "arug_cas02.gat","制御装置01#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit01#F2::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "arug_cas02.gat",150,223,161,223,0;
-	killmonster "arug_cas02.gat","制御装置01#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit01#F2::OnKilled";
 	set 'status,0;
 	end;
 }
 
-arug_cas02.gat,118,356,0	script	制御装置02#F2	111,{
+arug_cas02.gat,118,356,0	script	Control Unit02#F2	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "arug_cas02.gat",125,342,125,349,5;
-	callguardian "arug_cas02.gat",126,343," ",1905,1,"制御装置02#F2::OnKilled";
-	callguardian "arug_cas02.gat",126,345," ",1905,1,"制御装置02#F2::OnKilled";
-	callguardian "arug_cas02.gat",126,347," ",1905,1,"制御装置02#F2::OnKilled";
-	callguardian "arug_cas02.gat",127,344," ",1905,1,"制御装置02#F2::OnKilled";
-	callguardian "arug_cas02.gat",127,346," ",1905,1,"制御装置02#F2::OnKilled";
-	callguardian "arug_cas02.gat",127,348," ",1905,1,"制御装置02#F2::OnKilled";
+	callguardian "arug_cas02.gat",126,343," ",1905,1,"Control Unit02#F2::OnKilled";
+	callguardian "arug_cas02.gat",126,345," ",1905,1,"Control Unit02#F2::OnKilled";
+	callguardian "arug_cas02.gat",126,347," ",1905,1,"Control Unit02#F2::OnKilled";
+	callguardian "arug_cas02.gat",127,344," ",1905,1,"Control Unit02#F2::OnKilled";
+	callguardian "arug_cas02.gat",127,346," ",1905,1,"Control Unit02#F2::OnKilled";
+	callguardian "arug_cas02.gat",127,348," ",1905,1,"Control Unit02#F2::OnKilled";
 	set 'count,6;
 	end;
 OnKilled:
@@ -265,29 +265,29 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第2バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The second barricade has been breached!",0x9,0xFF0000;
 	areasetcell "arug_cas02.gat",125,342,125,349,0;
-	killmonster "arug_cas02.gat","制御装置02#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit02#F2::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "arug_cas02.gat",125,342,125,349,0;
-	killmonster "arug_cas02.gat","制御装置02#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit02#F2::OnKilled";
 	set 'status,0;
 	end;
 }
 
-arug_cas02.gat,56,308,0	script	制御装置03#F2	111,{
+arug_cas02.gat,56,308,0	script	Control Unit03#F2	111,{
 	callfunc "AgitBarricade";
 	close;
 OnSet:
 OnAgitStart:
 	set 'status,0;
 	areasetcell "arug_cas02.gat",38,314,49,314,5;
-	callguardian "arug_cas02.gat",40,315," ",1905,1,"制御装置03#F2::OnKilled";
-	callguardian "arug_cas02.gat",42,315," ",1905,1,"制御装置03#F2::OnKilled";
-	callguardian "arug_cas02.gat",44,315," ",1905,1,"制御装置03#F2::OnKilled";
-	callguardian "arug_cas02.gat",46,315," ",1905,1,"制御装置03#F2::OnKilled";
+	callguardian "arug_cas02.gat",40,315," ",1905,1,"Control Unit03#F2::OnKilled";
+	callguardian "arug_cas02.gat",42,315," ",1905,1,"Control Unit03#F2::OnKilled";
+	callguardian "arug_cas02.gat",44,315," ",1905,1,"Control Unit03#F2::OnKilled";
+	callguardian "arug_cas02.gat",46,315," ",1905,1,"Control Unit03#F2::OnKilled";
 	set 'count,4;
 	end;
 OnKilled:
@@ -295,20 +295,20 @@ OnKilled:
 	if('count > 0)
 		end;
 	set 'status,1;
-	announce "第3バリケードが突破されました!!",0x9,0xFF0000;
+	announce "The third barricade has been breached!",0x9,0xFF0000;
 	areasetcell "arug_cas02.gat",38,314,49,314,0;
-	killmonster "arug_cas02.gat","制御装置03#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit03#F2::OnKilled";
 	end;
 OnReset:
 OnAgitEnd:
 	areasetcell "arug_cas02.gat",38,314,49,314,0;
-	killmonster "arug_cas02.gat","制御装置03#F2::OnKilled";
+	killmonster "arug_cas02.gat","Control Unit03#F2::OnKilled";
 	set 'status,0;
 	end;
 }
 
 //============================================================
-// リンクフラッグ(A)
+// Link Flag(A)
 //------------------------------------------------------------
 arug_cas02.gat,98,270,0	script	LF-01#F2	111,{
 	setarray '@code,1,2;	//"第1拠点","第2拠点"
@@ -319,7 +319,7 @@ arug_cas02.gat,98,270,0	script	LF-01#F2	111,{
 }
 
 arug_cas02.gat,98,266,0	script	LF-02#F2	111,{
-	setarray '@code,11,12;	//"防衛地域1-1","防衛地域1-2"
+	setarray '@code,11,12;	//"Defense Area 1-1","Defense Area 1-2"
 	setarray '@x, 66,212;
 	setarray '@y, 31, 31;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -327,7 +327,7 @@ arug_cas02.gat,98,266,0	script	LF-02#F2	111,{
 }
 
 arug_cas02.gat,98,262,0	script	LF-03#F2	111,{
-	setarray '@code,13,14;	//"防衛地域1-3","防衛地域1-4"
+	setarray '@code,13,14;	//"Defense Area 1-3","Defense Area 1-4"
 	setarray '@x, 90,188;
 	setarray '@y,120,119;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -335,7 +335,7 @@ arug_cas02.gat,98,262,0	script	LF-03#F2	111,{
 }
 
 arug_cas02.gat,98,258,0	script	LF-04#F2	111,{
-	setarray '@code,21,22;	//"防衛地域2-1","防衛地域2-2"
+	setarray '@code,21,22;	//"Defense Area 2-1","Defense Area 2-2"
 	setarray '@x,119,159;
 	setarray '@y,183,183;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -343,7 +343,7 @@ arug_cas02.gat,98,258,0	script	LF-04#F2	111,{
 }
 
 arug_cas02.gat,98,253,0	script	LF-05#F2	111,{
-	setarray '@code,23,24;	//"防衛地域2-3","防衛地域2-4"
+	setarray '@code,23,24;	//"Defense Area 2-3","Defense Area 2-4"
 	setarray '@x,156,174;
 	setarray '@y,324,372;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -351,7 +351,7 @@ arug_cas02.gat,98,253,0	script	LF-05#F2	111,{
 }
 
 arug_cas02.gat,98,249,0	script	LF-06#F2	111,{
-	setarray '@code,31,32;	//"防衛地域3-1","防衛地域3-2"
+	setarray '@code,31,32;	//"Defense Area 3-1","Defense Area 3-2"
 	setarray '@x, 28, 57;
 	setarray '@y,325,325;
 	callfunc "AgitLinkFlagA",'@code,'@x,'@y;
@@ -372,38 +372,38 @@ arug_cas02.gat,98,241,0	script	LF-08#F2	111,{
 }
 
 //============================================================
-// リンクフラッグ(B)
+// Link Flag(B)
 //------------------------------------------------------------
 -	script	#LinkFlag_F2	{
 	callfunc "AgitLinkFlagB",0,43,256;
 	close;
 OnAgitInit:
 OnFlagEmb_F2:
-	if(substr(strnpcinfo(2),0,1) == "B")	//ギルドフラッグ型ならエンブレム更新
+	if(substr(strnpcinfo(2),0,1) == "B")	//Guild Flag型ならエンブレム更新
 		flagemblem getcastledata("arug_cas02.gat",1);
 	end;
 }
-arug_cas02.gat,216,92,0		duplicate(#LinkFlag_F2)	スュール#A01	111
-arug_cas02.gat,63,92,0		duplicate(#LinkFlag_F2)	スュール#A02	111
-arug_cas02.gat,127,133,0	duplicate(#LinkFlag_F2)	スュール#A03	111
-arug_cas02.gat,152,133,0	duplicate(#LinkFlag_F2)	スュール#A04	111
-arug_cas02.gat,149,218,0	duplicate(#LinkFlag_F2)	スュール#A05	111
-arug_cas02.gat,162,218,0	duplicate(#LinkFlag_F2)	スュール#A06	111
-arug_cas02.gat,128,350,0	duplicate(#LinkFlag_F2)	スュール#A07	111
-arug_cas02.gat,128,341,0	duplicate(#LinkFlag_F2)	スュール#A08	111
-arug_cas02.gat,49,317,0		duplicate(#LinkFlag_F2)	スュール#A09	111
-arug_cas02.gat,38,317,0		duplicate(#LinkFlag_F2)	スュール#A10	111
-arug_cas02.gat,9,190,0		duplicate(#LinkFlag_F2)	スュール#A11	111
-arug_cas02.gat,271,190,0	duplicate(#LinkFlag_F2)	スュール#A12	111
-arug_cas02.gat,129,178,4	duplicate(#LinkFlag_F2)	スュール#B13	722
-arug_cas02.gat,149,178,4	duplicate(#LinkFlag_F2)	スュール#B14	722
-arug_cas02.gat,132,38,4		duplicate(#LinkFlag_F2)	スュール#B15	722
-arug_cas02.gat,147,38,4		duplicate(#LinkFlag_F2)	スュール#B16	722
+arug_cas02.gat,216,92,0		duplicate(#LinkFlag_F2)	Cyr#A01	111
+arug_cas02.gat,63,92,0		duplicate(#LinkFlag_F2)	Cyr#A02	111
+arug_cas02.gat,127,133,0	duplicate(#LinkFlag_F2)	Cyr#A03	111
+arug_cas02.gat,152,133,0	duplicate(#LinkFlag_F2)	Cyr#A04	111
+arug_cas02.gat,149,218,0	duplicate(#LinkFlag_F2)	Cyr#A05	111
+arug_cas02.gat,162,218,0	duplicate(#LinkFlag_F2)	Cyr#A06	111
+arug_cas02.gat,128,350,0	duplicate(#LinkFlag_F2)	Cyr#A07	111
+arug_cas02.gat,128,341,0	duplicate(#LinkFlag_F2)	Cyr#A08	111
+arug_cas02.gat,49,317,0		duplicate(#LinkFlag_F2)	Cyr#A09	111
+arug_cas02.gat,38,317,0		duplicate(#LinkFlag_F2)	Cyr#A10	111
+arug_cas02.gat,9,190,0		duplicate(#LinkFlag_F2)	Cyr#A11	111
+arug_cas02.gat,271,190,0	duplicate(#LinkFlag_F2)	Cyr#A12	111
+arug_cas02.gat,129,178,4	duplicate(#LinkFlag_F2)	Cyr#B13	722
+arug_cas02.gat,149,178,4	duplicate(#LinkFlag_F2)	Cyr#B14	722
+arug_cas02.gat,132,38,4		duplicate(#LinkFlag_F2)	Cyr#B15	722
+arug_cas02.gat,147,38,4		duplicate(#LinkFlag_F2)	Cyr#B16	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-arug_cas02.gat,354,326,3	script	カプラ職員::AgitKafra_F2	117,{
+arug_cas02.gat,354,326,3	script	Kafra Staff::AgitKafra_F2	117,{
 	callfunc "AgitKafra",18;
 	close;
 OnAgitInit:
@@ -415,7 +415,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-arug_cas02.gat,303,341,3	script	執事	55,{
+arug_cas02.gat,303,341,3	script	Butler	55,{
 	callfunc "AgitSteward","F2",0,0,0,382,227;
 	close;
 }
@@ -429,7 +429,7 @@ arug_cas02.gat,386,227,0	script	#AgitMaster_F2	111,{
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_F2a	{
 	callfunc "AgitEmblemFlag",3,"arug_cas02.gat",43,256;
@@ -439,9 +439,9 @@ OnFlagEmb_F2:
 	flagemblem getcastledata("arug_cas02.gat",1);
 	end;
 }
-aru_gld.gat,80,41,6	duplicate(#GldFlag_F2a)	スュール#a01	722
-aru_gld.gat,80,52,6	duplicate(#GldFlag_F2a)	スュール#a02	722
-aru_gld.gat,120,83,5	duplicate(#GldFlag_F2a)	スュール#a03	722
+aru_gld.gat,80,41,6	duplicate(#GldFlag_F2a)	Cyr#a01	722
+aru_gld.gat,80,52,6	duplicate(#GldFlag_F2a)	Cyr#a02	722
+aru_gld.gat,120,83,5	duplicate(#GldFlag_F2a)	Cyr#a03	722
 
 -	script	#GldFlag_F2b	{
 	end;
@@ -450,12 +450,12 @@ OnFlagEmb_F2:
 	flagemblem getcastledata("arug_cas02.gat",1);
 	end;
 }
-//rachel.gat,136,120,5	duplicate(#GldFlag_F2b)	スュール#b01	722
+//rachel.gat,136,120,5	duplicate(#GldFlag_F2b)	Cyr#b01	722
 
 //============================================================
-// 不思議なヒマワリ（アジトダンジョン）
+// Mysterious Sunflower（アジトダンジョン）
 //------------------------------------------------------------
-arug_cas02.gat,350,294,3	script	不思議なヒマワリ#F2	977,{
+arug_cas02.gat,350,294,3	script	Mysterious Sunflower#F2	977,{
 	callfunc "AgitDungeonSE","arug_dun01.gat",350,50;
 	close;
 }

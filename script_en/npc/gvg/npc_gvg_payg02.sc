@@ -57,7 +57,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_C2a	{
 	callfunc "AgitEmblemFlag",0,"payg_cas02.gat",278,251;
@@ -67,11 +67,11 @@ OnFlagEmb_C2:
 	flagemblem getcastledata("payg_cas02.gat",1);
 	end;
 }
-pay_gld.gat,347,116,2	duplicate(#GldFlag_C2a)	ギルドフラッグ#C2a01	722
-pay_gld.gat,292,112,6	duplicate(#GldFlag_C2a)	ギルドフラッグ#C2a02	722
-pay_gld.gat,292,120,6	duplicate(#GldFlag_C2a)	ギルドフラッグ#C2a03	722
-pay_gld.gat,291,135,6	duplicate(#GldFlag_C2a)	ギルドフラッグ#C2a04	722
-pay_gld.gat,271,163,0	duplicate(#GldFlag_C2a)	ギルドフラッグ#C2a05	722
+pay_gld.gat,347,116,2	duplicate(#GldFlag_C2a)	Guild Flag#C2a01	722
+pay_gld.gat,292,112,6	duplicate(#GldFlag_C2a)	Guild Flag#C2a02	722
+pay_gld.gat,292,120,6	duplicate(#GldFlag_C2a)	Guild Flag#C2a03	722
+pay_gld.gat,291,135,6	duplicate(#GldFlag_C2a)	Guild Flag#C2a04	722
+pay_gld.gat,271,163,0	duplicate(#GldFlag_C2a)	Guild Flag#C2a05	722
 
 -	script	#GldFlag_C2b	{
 	end;
@@ -80,19 +80,19 @@ OnFlagEmb_C2:
 	flagemblem getcastledata("payg_cas02.gat",1);
 	end;
 }
-//payon.gat,97,322,4		duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b01	722
-//payon.gat,166,173,3		duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b02	722
-//payg_cas02.gat,254,40,6	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b03	722
-//payg_cas02.gat,254,48,6	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b04	722
-//payg_cas02.gat,202,49,0	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b05	722
-//payg_cas02.gat,209,49,0	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b06	722
-//payg_cas02.gat,59,282,4	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b07	722
-//payg_cas02.gat,70,282,4	duplicate(#GldFlag_C2b)	ギルドフラッグ#C2b08	722
+//payon.gat,97,322,4		duplicate(#GldFlag_C2b)	Guild Flag#C2b01	722
+//payon.gat,166,173,3		duplicate(#GldFlag_C2b)	Guild Flag#C2b02	722
+//payg_cas02.gat,254,40,6	duplicate(#GldFlag_C2b)	Guild Flag#C2b03	722
+//payg_cas02.gat,254,48,6	duplicate(#GldFlag_C2b)	Guild Flag#C2b04	722
+//payg_cas02.gat,202,49,0	duplicate(#GldFlag_C2b)	Guild Flag#C2b05	722
+//payg_cas02.gat,209,49,0	duplicate(#GldFlag_C2b)	Guild Flag#C2b06	722
+//payg_cas02.gat,59,282,4	duplicate(#GldFlag_C2b)	Guild Flag#C2b07	722
+//payg_cas02.gat,70,282,4	duplicate(#GldFlag_C2b)	Guild Flag#C2b08	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-payg_cas02.gat,22,275,5	script	カプラ職員::AgitKafra_C2	117,{
+payg_cas02.gat,22,275,5	script	Kafra Staff::AgitKafra_C2	117,{
 	callfunc "AgitKafra",16;
 	close;
 OnAgitInit:
@@ -104,7 +104,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-payg_cas02.gat,22,260,7	script	チェリオス	55,{
+payg_cas02.gat,22,260,7	script	Cherieos	55,{
 	callfunc "AgitSteward","C2",'guardian_id,'guardian_x,'guardian_y,141,149;
 	close;
 OnAgitInit:

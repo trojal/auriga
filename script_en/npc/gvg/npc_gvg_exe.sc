@@ -2,10 +2,10 @@
 // アジト放棄・ギルド解体共通ファンクション
 //	callfunc "AgitGiveUp","AgitCode";
 //
-// ■ キャスト
+// • キャスト
 //	"::OnFlagEmb_XY" はnpc_gvg_flag.txtを参照
 //
-// ■ function
+// • function
 //	攻城戦中ならfunction "AgitSummon" を呼び出す（npc_gvg_monster）
 //-------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ function	script	AgitGiveUp	{
 // 攻城戦実行部
 //	全ての処理はここで行う！
 //
-// 　※ strnpcinfo(2) によりアジトコードを取得する
+//   ※ strnpcinfo(2) によりアジトコードを取得する
 //      duplicateするので毎回NPCの居るMAP名を関数依存変数に取得する
 //-------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ OnAgitBreak:
 		else
 			setcastledata '@map$,'@i,0;
 	}
-	announce "エンペリウムが破壊されました",9,0x00ff00;
+	announce "Emperiumが破壊されました",9,0x00ff00;
 	sleep 800;
 	announce "砦 [" +getcastlename('@map$)+ "]を [" +getguildname('@gid)+ "] ギルドが占領しました",0x20;
 	donpcevent "::OnFlagEmb_"+strnpcinfo(2);	//フラッグエンブレムの変更(npc_gvg_flag.txt)

@@ -60,7 +60,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_L1a	{
 	callfunc "AgitEmblemFlag",1,"aldeg_cas01.gat",218,170;
@@ -70,11 +70,11 @@ OnFlagEmb_L1:
 	flagemblem getcastledata("aldeg_cas01.gat",1);
 	end;
 }
-alde_gld.gat,257,153,7	duplicate(#GldFlag_L1a)	ギルドフラッグ#L1a01	722
-alde_gld.gat,61,87,6	duplicate(#GldFlag_L1a)	ギルドフラッグ#L1a02	722
-alde_gld.gat,61,79,6	duplicate(#GldFlag_L1a)	ギルドフラッグ#L1a03	722
-alde_gld.gat,45,87,8	duplicate(#GldFlag_L1a)	ギルドフラッグ#L1a04	722
-alde_gld.gat,51,87,8	duplicate(#GldFlag_L1a)	ギルドフラッグ#L1a05	722
+alde_gld.gat,257,153,7	duplicate(#GldFlag_L1a)	Guild Flag#L1a01	722
+alde_gld.gat,61,87,6	duplicate(#GldFlag_L1a)	Guild Flag#L1a02	722
+alde_gld.gat,61,79,6	duplicate(#GldFlag_L1a)	Guild Flag#L1a03	722
+alde_gld.gat,45,87,8	duplicate(#GldFlag_L1a)	Guild Flag#L1a04	722
+alde_gld.gat,51,87,8	duplicate(#GldFlag_L1a)	Guild Flag#L1a05	722
 
 -	script	#GldFlag_L1b	{
 	end;
@@ -83,28 +83,28 @@ OnFlagEmb_L1:
 	flagemblem getcastledata("aldeg_cas01.gat",1);
 	end;
 }
-//aldebaran.gat,152,97,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b01	722
-//aldeg_cas01.gat,30,248,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b02	722
-//aldeg_cas01.gat,30,246,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b03	722
-//aldeg_cas01.gat,37,248,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b04	722
-//aldeg_cas01.gat,37,246,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b05	722
-//aldeg_cas01.gat,95,80,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b06	722
-//aldeg_cas01.gat,95,59,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b07	722
-//aldeg_cas01.gat,62,75,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b08	722
-//aldeg_cas01.gat,66,75,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b09	722
-//aldeg_cas01.gat,70,75,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b10	722
-//aldeg_cas01.gat,74,75,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b11	722
-//aldeg_cas01.gat,62,64,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b12	722
-//aldeg_cas01.gat,66,64,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b13	722
-//aldeg_cas01.gat,70,64,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b14	722
-//aldeg_cas01.gat,74,64,2	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b15	722
-//aldeg_cas01.gat,203,150,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b16	722
-//aldeg_cas01.gat,210,150,4	duplicate(#GldFlag_L1b)	ギルドフラッグ#L1b17	722
+//aldebaran.gat,152,97,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b01	722
+//aldeg_cas01.gat,30,248,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b02	722
+//aldeg_cas01.gat,30,246,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b03	722
+//aldeg_cas01.gat,37,248,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b04	722
+//aldeg_cas01.gat,37,246,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b05	722
+//aldeg_cas01.gat,95,80,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b06	722
+//aldeg_cas01.gat,95,59,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b07	722
+//aldeg_cas01.gat,62,75,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b08	722
+//aldeg_cas01.gat,66,75,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b09	722
+//aldeg_cas01.gat,70,75,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b10	722
+//aldeg_cas01.gat,74,75,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b11	722
+//aldeg_cas01.gat,62,64,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b12	722
+//aldeg_cas01.gat,66,64,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b13	722
+//aldeg_cas01.gat,70,64,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b14	722
+//aldeg_cas01.gat,74,64,2	duplicate(#GldFlag_L1b)	Guild Flag#L1b15	722
+//aldeg_cas01.gat,203,150,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b16	722
+//aldeg_cas01.gat,210,150,4	duplicate(#GldFlag_L1b)	Guild Flag#L1b17	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-aldeg_cas01.gat,218,170,0	script	カプラ職員::AgitKafra_L1	117,{
+aldeg_cas01.gat,218,170,0	script	Kafra Staff::AgitKafra_L1	117,{
 	callfunc "AgitKafra",17;
 	close;
 OnAgitInit:
@@ -116,7 +116,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-aldeg_cas01.gat,218,175,0	script	アルプレド	55,{
+aldeg_cas01.gat,218,175,0	script	Alfredo	55,{
 	callfunc "AgitSteward","L1",'guardian_id,'guardian_x,'guardian_y,113,223;
 	close;
 OnAgitInit:

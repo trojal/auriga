@@ -57,7 +57,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_B2a	{
 	callfunc "AgitEmblemFlag",0,"gefg_cas02.gat",178,43;
@@ -67,11 +67,11 @@ OnFlagEmb_B2:
 	flagemblem getcastledata("gefg_cas02.gat",1);
 	end;
 }
-gef_fild07.gat,330,204,2	duplicate(#GldFlag_B2a)	ギルドフラッグ#B2a01	722
-gef_fild13.gat,303,243,4	duplicate(#GldFlag_B2a)	ギルドフラッグ#B2a02	722
-gef_fild13.gat,312,243,4	duplicate(#GldFlag_B2a)	ギルドフラッグ#B2a03	722
-gef_fild13.gat,290,243,4	duplicate(#GldFlag_B2a)	ギルドフラッグ#B2a04	722
-gef_fild13.gat,324,243,4	duplicate(#GldFlag_B2a)	ギルドフラッグ#B2a05	722
+gef_fild07.gat,330,204,2	duplicate(#GldFlag_B2a)	Guild Flag#B2a01	722
+gef_fild13.gat,303,243,4	duplicate(#GldFlag_B2a)	Guild Flag#B2a02	722
+gef_fild13.gat,312,243,4	duplicate(#GldFlag_B2a)	Guild Flag#B2a03	722
+gef_fild13.gat,290,243,4	duplicate(#GldFlag_B2a)	Guild Flag#B2a04	722
+gef_fild13.gat,324,243,4	duplicate(#GldFlag_B2a)	Guild Flag#B2a05	722
 
 -	script	#GldFlag_B2b	{
 	end;
@@ -80,19 +80,19 @@ OnFlagEmb_B2:
 	flagemblem getcastledata("gefg_cas02.gat",1);
 	end;
 }
-//geffen.gat,112,129,1		duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b01	722
-//gefg_cas02.gat,65,130,5	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b02	722
-//gefg_cas02.gat,30,123,5	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b03	722
-//gefg_cas02.gat,65,139,6	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b04	722
-//gefg_cas02.gat,37,177,6	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b05	722
-//gefg_cas02.gat,37,168,6	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b06	722
-//gefg_cas02.gat,68,47,2	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b07	722
-//gefg_cas02.gat,68,36,2	duplicate(#GldFlag_B2b)	ギルドフラッグ#B2b08	722
+//geffen.gat,112,129,1		duplicate(#GldFlag_B2b)	Guild Flag#B2b01	722
+//gefg_cas02.gat,65,130,5	duplicate(#GldFlag_B2b)	Guild Flag#B2b02	722
+//gefg_cas02.gat,30,123,5	duplicate(#GldFlag_B2b)	Guild Flag#B2b03	722
+//gefg_cas02.gat,65,139,6	duplicate(#GldFlag_B2b)	Guild Flag#B2b04	722
+//gefg_cas02.gat,37,177,6	duplicate(#GldFlag_B2b)	Guild Flag#B2b05	722
+//gefg_cas02.gat,37,168,6	duplicate(#GldFlag_B2b)	Guild Flag#B2b06	722
+//gefg_cas02.gat,68,47,2	duplicate(#GldFlag_B2b)	Guild Flag#B2b07	722
+//gefg_cas02.gat,68,36,2	duplicate(#GldFlag_B2b)	Guild Flag#B2b08	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-gefg_cas02.gat,23,66,3	script	カプラ職員::AgitKafra_B2	117,{
+gefg_cas02.gat,23,66,3	script	Kafra Staff::AgitKafra_B2	117,{
 	callfunc "AgitKafra",15;
 	close;
 OnAgitInit:
@@ -104,7 +104,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-gefg_cas02.gat,12,66,5	script	エスマーク	55,{
+gefg_cas02.gat,12,66,5	script	Esmarehk	55,{
 	callfunc "AgitSteward","B2",'guardian_id,'guardian_x,'guardian_y,145,115;
 	close;
 OnAgitInit:

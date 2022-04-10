@@ -4,14 +4,13 @@
 //-------------------------------------------------------------------------
 
 function	script	DungeonSwitch	{
-	mes "[声]";
-	mes "試練に挑むならば先へ進むがよい";
+	mes "[Voice]";
+	mes "If you are up to the challenge, go ahead.";
 	next;
-	mes " ";
-	mes "小さなレバーがあります。";
-	mes "引きますか？";
+	mes "There is a small lever.";
+	mes "Do you want to pull it?";
 	next;
-	if(select("引く","引かない")==2)
+	if(select("Pull", "Don't pull")==2)
 		return;
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	set '@gid,getcastledata('@map$,1);
@@ -19,8 +18,7 @@ function	script	DungeonSwitch	{
 		warp getarg(0),getarg(1),getarg(2);
 		end;
 	}
-	mes " ";
-	mes "しかし何も起こらなかった。";
+	mes "But nothing happened.";
 	return;
 }
 

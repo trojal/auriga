@@ -60,7 +60,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_L4a	{
 	callfunc "AgitEmblemFlag",1,"aldeg_cas04.gat",116,217;
@@ -70,9 +70,9 @@ OnFlagEmb_L4:
 	flagemblem getcastledata("aldeg_cas04.gat",1);
 	end;
 }
-alde_gld.gat,262,166,5	duplicate(#GldFlag_L4a)	ギルドフラッグ#L4a01	722
-alde_gld.gat,239,246,2	duplicate(#GldFlag_L4a)	ギルドフラッグ#L4a02	722
-alde_gld.gat,239,239,2	duplicate(#GldFlag_L4a)	ギルドフラッグ#L4a03	722
+alde_gld.gat,262,166,5	duplicate(#GldFlag_L4a)	Guild Flag#L4a01	722
+alde_gld.gat,239,246,2	duplicate(#GldFlag_L4a)	Guild Flag#L4a02	722
+alde_gld.gat,239,239,2	duplicate(#GldFlag_L4a)	Guild Flag#L4a03	722
 
 -	script	#GldFlag_L4b	{
 	end;
@@ -81,29 +81,29 @@ OnFlagEmb_L4:
 	flagemblem getcastledata("aldeg_cas04.gat",1);
 	end;
 }
-//aldebaran.gat,131,97,4	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b01	722
-//aldeg_cas04.gat,167,61,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b02	722
-//aldeg_cas04.gat,164,90,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b03	722
-//aldeg_cas04.gat,129,193,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b04	722
-//aldeg_cas04.gat,112,206,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b05	722
-//aldeg_cas04.gat,113,212,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b06	722
-//aldeg_cas04.gat,77,117,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b07	722
-//aldeg_cas04.gat,186,42,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b08	722
-//aldeg_cas04.gat,30,69,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b09	722
-//aldeg_cas04.gat,55,97,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b10	722
-//aldeg_cas04.gat,45,98,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b11	722
-//aldeg_cas04.gat,33,116,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b12	722
-//aldeg_cas04.gat,130,180,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b13	722
-//aldeg_cas04.gat,129,193,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b14	722
-//aldeg_cas04.gat,33,107,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b15	722
-//aldeg_cas04.gat,133,220,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b16	722
-//aldeg_cas04.gat,169,22,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b17	722
-//aldeg_cas04.gat,169,15,2	duplicate(#GldFlag_L4b)	ギルドフラッグ#L4b18	722
+//aldebaran.gat,131,97,4	duplicate(#GldFlag_L4b)	Guild Flag#L4b01	722
+//aldeg_cas04.gat,167,61,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b02	722
+//aldeg_cas04.gat,164,90,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b03	722
+//aldeg_cas04.gat,129,193,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b04	722
+//aldeg_cas04.gat,112,206,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b05	722
+//aldeg_cas04.gat,113,212,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b06	722
+//aldeg_cas04.gat,77,117,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b07	722
+//aldeg_cas04.gat,186,42,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b08	722
+//aldeg_cas04.gat,30,69,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b09	722
+//aldeg_cas04.gat,55,97,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b10	722
+//aldeg_cas04.gat,45,98,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b11	722
+//aldeg_cas04.gat,33,116,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b12	722
+//aldeg_cas04.gat,130,180,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b13	722
+//aldeg_cas04.gat,129,193,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b14	722
+//aldeg_cas04.gat,33,107,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b15	722
+//aldeg_cas04.gat,133,220,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b16	722
+//aldeg_cas04.gat,169,22,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b17	722
+//aldeg_cas04.gat,169,15,2	duplicate(#GldFlag_L4b)	Guild Flag#L4b18	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-aldeg_cas04.gat,45,88,0	script	カプラ職員::AgitKafra_L4	117,{
+aldeg_cas04.gat,45,88,0	script	Kafra Staff::AgitKafra_L4	117,{
 	callfunc "AgitKafra",17;
 	close;
 OnAgitInit:
@@ -115,7 +115,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-aldeg_cas04.gat,67,116,0	script	ウィリオット	55,{
+aldeg_cas04.gat,67,116,0	script	Williott	55,{
 	callfunc "AgitSteward","L4",'guardian_id,'guardian_x,'guardian_y,83,17;
 	close;
 OnAgitInit:

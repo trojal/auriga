@@ -73,24 +73,24 @@ OnMinute00:
 		}
 		if('@st_time == '@ed_time || ('@hour >= '@st_time  && '@hour < '@ed_time)) {
 			if(!agitcheck()) {
-				debugmes "攻城戦開始 [ " +gettimestr("%H:%M",6)+ " ]";
+				debugmes "Siege started [ " +gettimestr("%H:%M",6)+ " ]";
 				agitstart;
 			}
 		}
 		else if(agitcheck()) {
-			debugmes "攻城戦終了 [ " +gettimestr("%H:%M",6)+ " ]";
+			debugmes "End of siege [ " +gettimestr("%H:%M",6)+ " ]";
 			agitend;
 		}
 	}
 	else if(agitcheck()) {
-		debugmes "攻城戦終了 [ " +gettimestr("%H:%M",6)+ " ]";
+		debugmes "End of siege [ " +gettimestr("%H:%M",6)+ " ]";
 		agitend;
 	}
 	end;
 }
 
 //============================================================
-// エンペリウム召喚
+// Emperium召喚
 //	callfunc "AgitEmperium",EmperiumX,EmperiumY,StartFlag;
 //------------------------------------------------------------
 function	script	AgitEmperium	{
@@ -100,7 +100,7 @@ function	script	AgitEmperium	{
 	if(getarg(2)) {		// 攻城戦開始処理か？
 		gvgon '@map$;
 		if(getcastledata('@map$,1))
-			announce "砦 [" +getcastlename('@map$,0)+ "] の " +getcastlename('@map$,1)+ " を [" +getguildname(getcastledata('@map$,1))+ "] ギルドが占領しました",0x20;
+			announce "Fort [" +getcastlename('@map$,0)+ "] of " +getcastlename('@map$,1)+ "] is occupied by [" +getguildname(getcastledata('@map$,1))+ "] guild",0x20;
 		else
 			donpcevent strnpcinfo(0)+"::OnAgitSummon";	//モンスター召喚
 	}
@@ -114,7 +114,7 @@ function	script	AgitEmperium	{
 function	script	AgitBreak	{
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);
 	killmonsterall '@map$;
-	set '@gid,getcharid(2);		//エンペリウム破壊者のGIDを取得
+	set '@gid,getcharid(2);		//Emperium破壊者のGIDを取得
 	if('@gid <= 0)
 		return;
 
@@ -128,9 +128,9 @@ function	script	AgitBreak	{
 		else
 			setcastledata '@map$,'@i,0;
 	}
-	announce "エンペリウムが破壊されました",0x9,0x00ff00,0x2bc,10,0,40;
+	announce "The emperium has been destroyed.",0x9,0x00ff00,0x2bc,10,0,40;
 	sleep 7000;
-	announce "砦 [" +getcastlename('@map$,0)+ "] の " +getcastlename('@map$,1)+ " を [" +getguildname(getcastledata('@map$,1))+ "] ギルドが占領しました",0x20;
+	announce "Fort [" +getcastlename('@map$,0)+ "] of " +getcastlename('@map$,1)+ "] is occupied by [" +getguildname(getcastledata('@map$,1))+ "] guild",0x20;
 	donpcevent "::OnFlagEmb_"+getarg(0);	//フラッグエンブレムの変更
 	return;
 }
@@ -145,7 +145,7 @@ function	script	AgitEnd	{
 	killmonster '@map$,strnpcinfo(0)+"::OnAgitBreak";	//エンペのみ抹殺
 	gvgoff '@map$;
 	if(getcastledata('@map$,1))
-		announce "砦 [" +getcastlename('@map$,0)+ "] の " +getcastlename('@map$,1)+ " を [" +getguildname(getcastledata('@map$,1))+ "] ギルドが占領しました",0x20;
+		announce "Fort [" +getcastlename('@map$,0)+ "] of " +getcastlename('@map$,1)+ "] is occupied by [" +getguildname(getcastledata('@map$,1))+ "] guild",0x20;
 	return;
 }
 
@@ -164,7 +164,7 @@ function	script	AgitGiveUp	{
 	donpcevent "::OnFlagEmb_"+getarg(0);		//フラッグエンブレムの変更
 	maprespawnguildid '@map$,0,7;
 	if(agitcheck()) {
-		donpcevent strnpcinfo(0)+"::OnAgitEliminate";	//エンペリウム召喚
+		donpcevent strnpcinfo(0)+"::OnAgitEliminate";	//Emperium召喚
 		donpcevent strnpcinfo(0)+"::OnAgitSummon";	//モンスター召喚
 	}
 	return;
@@ -210,17 +210,17 @@ function	script	AgitTreasure	{
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //	callfunc "AgitEmblemFlag",Type,"WarpMap",WarpX,WarpY;
 //------------------------------------------------------------
 function	script	AgitEmblemFlag	{
 	set '@gid,getcastledata(getarg(1),1);
 	if(getcharid(2) > 0 && getcharid(2) == '@gid) {
-		mes "[ 声 ]";
-		mes "勇者よ…";
-		mes "君の地に帰るか？";
+		mes "[ Voice ]";
+		mes "O brave man..." ;
+		mes "Return to your land?" ;
 		next;
-		if(select("砦に帰る","やめる") == 1) {
+		if(select("Return to the fort.", "Quit.") == 1) {
 			// 移動前に再チェック
 			set '@gid,getcastledata(getarg(1),1);
 			if(getcharid(2) > 0 && getcharid(2) == '@gid)
@@ -229,58 +229,36 @@ function	script	AgitEmblemFlag	{
 		return;
 	}
 	if(getarg(0) == 1) {
-		mes "[ ルーンミッドガッツ王国領 ]";
-		mes " ";
-		mes "1.";
-		mes "こちらはルーンミッドガッツ王国と";
-		mes "シュバルツバルド共和国の協定により、";
+		mes "[ Rune-Midgarts Kingdom territory ]";
+		mes " 1. This is by agreement between the Kingdom of Rune-Midgarts and the Republic of Schwartzvald";
 	}
 	else if(getarg(0) == 2) {
-		mes "[シュバルツバルド共和国布告]";
-		mes " ";
-		mes "1.";
-		mes "こちらは";
-		mes "シュバルツバルド共和国令により、";
+		mes "[Decree of the Republic of Schwartzvald]";
+		mes " 1. This is the Schwartzvald Republic Decree.";
 	}
 	else if(getarg(0) == 3) {
-		mes "[アルナベルツ教国布告]";
-		mes " ";
-		mes "1.";
-		mes "こちらはアルナベルツ教国令により、";
+		mes "[Arunafeltz doctrinal proclamation]";
+		mes " 1. This is the Arunafeltz Order of the Church.";
 	}
 	else {
-		mes "[ ルーンミッドガッツ王国領 ]";
-		mes " ";
-		mes "1.";
-		mes "こちらはルーンミッドガッツ王国に";
-		mes "よって";
+		mes "[ Rune-Midgarts Kingdom territory ]";
+		mes " 1. This is by the Kingdom of Rune-Midgarts";
 	}
 	if('@gid <= 0) {
-		mes "正式所有者がないアジトであることを";
-		mes "公表する。";
+		mes "Publicize the fact that it is a hideout with no official owner." ;
 		next;
-		mes " ";
-		mes "2.";
-		mes "こちらを守っている凄じい";
-		mes "試練に勝って、エンペリウムを";
-		mes "破壊する勇者には国王が";
-		mes "認定するアジト所有権が附与される";
+		mes " 2. The brave man who wins the terrible ordeal that protects this place and destroys the Emperium will be granted the right to own the hideout, which will be recognized by the king.";
 		return;
 	}
-	mes "ギルド ^ff0000 " +getguildname('@gid)+ " ^000000の";
-	mes "所有であることを認められている。";
+	mes "Guild ^ff0000 " +getguildname('@gid)+ " ^000000 is acknowledged to be owned by ^000000." ;
 	next;
-	mes " ";
-	mes "2.";
-	mes "^ff0000 " +getguildname('@gid)+ " ^000000 のマスターは";
-	mes "^ff0000 " +getguildmaster('@gid)+ " ^000000である。";
-	mes "これに異議のある者は、剣を取り";
-	mes "力を以って名誉を勝ち取りなさい。";
+	mes " 2.^ff0000 " +getguildname('@gid)+ " The master of ^000000 is ^ff0000 " +getguildmaster('@gid)+ " ^000000." ;
+	mes "If anyone disputes this, take up your sword and win honor by force." ;
 	return;
 }
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //	callfunc "AgitKafra",MapCode;
 //------------------------------------------------------------
 function	script	AgitKafra	{
@@ -288,21 +266,15 @@ function	script	AgitKafra	{
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	set '@gid,getcastledata('@map$,1);
 	if('@gid <= 0 || getcharid(2) != '@gid) {
-		mes "[カプラ職員]";
-		mes "私は、ギルド";
-		mes "^ff0000" + getguildname('@gid) + "^000000";
-		mes "の皆様にだけお仕えするように";
-		mes "契約されております。";
-		mes "他のカプラサービスを";
-		mes "ご利用くださいませ。";
+		mes "[Kafra Staff]";
+		mes "I am contracted to serve only the guild ^FF0000" + getguildname('@gid) + "^000000 people." ;
+		mes "Please use another Kafra Service." ;
 		close2;
 		cutin "kafra_01",255;
 		return;
 	}
-	mes "[カプラ職員]";
-	mes "いらっしゃいませ^ff0000" +getguildname('@gid)+ "^000000の皆さん";
-	mes "カプラサービスは";
-	mes "いつも皆様のそばにいます。";
+	mes "[Kafra Staff]";
+	mes "Welcome ^ff0000" +getguildname('@gid)+ "^000000 everyone Kafra Service is always with you." ;
 	next;
 	set '@code,getarg(0);
 	set '@price,200;
@@ -317,72 +289,55 @@ function	script	AgitKafra	{
 function	script	AgitSteward	{
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	set '@gid,getcastledata('@map$,1);
-	set '@name$,"執事" +(getarg(1)? strnpcinfo(0): "");	//SEでないなら固有名
+	set '@name$,"Butler " +(getarg(1)? strnpcinfo(0): "");	//SEでないなら固有名
 	if('@gid <= 0) {
 		mes "[" +'@name$+ "]";
-		mes "私は運命に導かれるまま、";
-		mes "私の主人になる方を待っております。";
-		mes "勇気ある方は、一度ご自分の運命を";
-		mes "お試しになってはいかがでしょう。";
+		mes "I am waiting for the One who will be my Master, as fate leads me." ;
+		mes "If you are brave, why not try your fate once?" ;
 		return;
 	}
 	if(getcharid(0) != getguildmasterid('@gid)) {
 		mes "[" +'@name$+ "]";
-		mes "あなた方がいくら脅そうとも、";
-		mes "私は私のマスターである";
-		mes "^ff0000" +getguildmaster('@gid)+ "^000000様にのみ";
-		mes "お仕えする身である。";
-		mes "ガーディアンたちはどこか！";
-		mes "早くこの無礼な者等を追放しなさい！";
+		mes "No matter how much you threaten me, I am my master ^ff0000" +getguildmaster('@gid)+ "I am a servant only to Master ^000000." ;
+		mes "Where are the Guardians!" ;
+		mes "Quickly banish these insolent people and others!" ;
 		return;
 	}
 	mes "[" +'@name$+ "]";
-	mes "お帰りなさいませ、^ff0000" +strcharinfo(0)+ "^000000 様。";
-	mes "何なりとお申し付けくださいませ。";
+	mes "Welcome back, ^FF0000" +strcharinfo(0)+ "Dear ^000000." ;
+	mes "Please let us know if there is anything we can do for you." ;
 	next;
-	set '@tmp$,getarg(1)? "ガーディアン設置": "";	//SEはガーディアン設置メニューを表示しない
-	switch(select("砦の状態を表示","商業発展に投資","砦の防衛に投資",'@tmp$,"カプラとの契約 / 解雇","マスターの部屋に入る")) {
+	set '@tmp$,getarg(1)? "Guardian installation": "";	//SEはガーディアン設置メニューを表示しない
+	switch(select("Show fort status", "Invest in commercial development", "Invest in fort defense",'@tmp$, "Contract with / dismiss Kafra", "Enter master's room")) {
 	case 1:		// 砦の状態を表示
 		mes "[" +'@name$+ "]";
-		mes "砦の状態をご報告します。";
-		mes " ";
-		mes "^0000ff現在の商業発展値は" +getcastledata('@map$,2)+ " です。";
+		mes "We are pleased to report the status of the fort." ;
+		mes " ^0000ffThe current commercial development value is " +getcastledata('@map$,2);
 		if(getcastledata('@map$,4) != 0)
-			mes "- 1日以内に " +getcastledata('@map$,4)+ "の投資をしました。";
-		mes "現在の防御値は" +getcastledata('@map$,3)+ " です。^000000";
+			mes "- within 1 day " +getcastledata('@map$,4)+ "invested." ;
+		mes "The current defense value is " +getcastledata('@map$,3)+ ". ^000000";
 		if(getcastledata('@map$,5) != 0)
-			mes "^0000ff- 1日以内に " +getcastledata('@map$,5)+ "の投資をしました。^000000";
-		mes " ";
-		mes "以上です。";
+			mes "^0000ff- Within 1 day " +getcastledata('@map$,5)+ "investment. ^000000 or more." ;
 		break;
 	case 2:		// 商業発展に投資
 		mes "[" +'@name$+ "]";
-		mes "商業発展値を高めれば、";
-		mes "ギルドで生産される物流品の数が";
-		mes "増えますので、先々のために";
-		mes "投資をされるのもよろしいでしょう。";
+		mes "Increasing the commercial development value will increase the number of logistical goods produced by the guild, so you may want to invest for the future." ;
 		next;
 		mes "[" +'@name$+ "]";
-		mes "通常一日に一回のみ投資可能ですが、";
-		mes "追加金額を払うことにより";
-		mes "2回目の投資も可能となります。";
+		mes "Normally you can invest only once a day, but you can also invest a second time by paying an additional amount." ;
 		next;
 		set '@count,getcastledata('@map$,4);
 		if('@count == 2) {
 			mes "[" +'@name$+ "]";
-			mes "^ff0000しかし、今日はすでに2回の";
-			mes "投資をしたので、これ以上の投資は";
-			mes "できません。";
-			mes "^000000ますますのご発展を";
-			mes "期待しております。";
+			mes "^ff0000But I have already made two investments today, so I can't make any more." ;
+			mes "^000000We look forward to your continued growth." ;
 			break;
 		}
 		set '@val,getcastledata('@map$,2);
 		if('@val >= 100) {	//未調査
 			mes "[" +'@name$+ "]";
-			mes "^ff0000商業発展値は";
-			mes "現在最大値となっております。";
-			mes "今は投資する必要がありません。^000000";
+			mes "^ff0000The commercial development value is currently the maximum value." ;
+			mes "There is no need to invest now. ^000000";
 		 	break;
 		}
 		set '@tmp,('@val-'@count)/5;
@@ -390,116 +345,100 @@ function	script	AgitSteward	{
 		switch('@count) {
 		case 0:
 			mes "[" +'@name$+ "]";
-			mes "現在必要な投資金は";
-			mes "^ff0000" +'@price+ "^000000 Zenyです。";
-			mes "投資致しますか？";
+			mes "The current investment required is ^ff0000" +'@price+ "^000000 Zeny." ;
+			mes "Would you like to invest?" ;
 			break;
 		case 1:
 			mes "[" +'@name$+ "]";
-			mes "現在1回投資なさってますが、";
-			mes "追加投資なさいますか？";
-			mes "その場合は ^ff0000" +'@price+ "^000000 Zenyが";
-			mes "必要となります。";
+			mes "You have made one investment now, would you like to make an additional investment?" ;
+			mes "In that case ^ff0000" +'@price+ "^000000 Zeny is required." ;
 			break;
 		}
 		next;
-		if(select("商業発展に投資する","取り消す") == 2) {
+		if(select("Invest in commercial development", "Cancel") == 2) {
 			mes "[" +'@name$+ "]";
-			mes "かしこまりました。";
-			mes "焦る必要はございません。";
-			mes "またいつでもお声をかけてください。";
+			mes "Yes, sir." ;
+			mes "There is no need to rush." ;
+			mes "Please feel free to contact me again anytime." ;
 			break;
 		}
 		if(Zeny < '@price) {	//未調査
 			mes "[" +'@name$+ "]";
-			mes "マスター！";
-			mes "投資に必要なお金がありません。";
-			mes "投資を取り消しました。";
+			mes "Master!" ;
+			mes "I do not have enough money to invest." ;
+			mes "The investment has been canceled." ;
 			break;
 		}
 		set Zeny,Zeny-'@price;
 		setcastledata '@map$,4,'@count+1;
 		mes "[" +'@name$+ "]";
-		mes "無事に投資できました！";
-		mes "今後がますます楽しみですね。";
-		mes "明日から発展値が上がるでしょう。";
+		mes "I was able to invest successfully!" ;
+		mes "I am looking forward to seeing more and more of your work in the future." ;
+		mes "The development value will increase tomorrow." ;
 		break;
 	case 3:		// 砦の防衛に投資
 		mes "[" +'@name$+ "]";
-		mes "防衛値を高めれば、";
-		mes "ガーディアンとエンペリウムの";
-		mes "耐久度が向上します。";
-		mes "先々の戦闘に備え、";
-		mes "強化しておくのが賢明かと思われます。";
+		mes "Increasing the defense value improves the durability of the Guardian and Emperium." ;
+		mes "It would be wise to strengthen them for the battle ahead." ;
 		next;
 		mes "[" +'@name$+ "]";
-		mes "通常一日に一回のみ投資可能ですが、";
-		mes "追加金額を払うことにより";
-		mes "2回目の投資も可能となります。";
+		mes "Normally you can invest only once a day, but you can also invest a second time by paying an additional amount." ;
 		next;
 		set '@count,getcastledata('@map$,5);
 		if('@count == 2) {
 			mes "[" +'@name$+ "]";
-			mes "^ff0000しかし、今日はすでに2回の";
-			mes "投資をしたので、これ以上の投資は";
-			mes "できません。";
-			mes "^000000ますますのご発展を";
-			mes "期待しております。";
+			mes "^ff0000But I have already made two investments today, so I can't make any more." ;
+			mes "^000000We look forward to your continued growth." ;
 			break;
 		}
 		set '@val,getcastledata('@map$,3);
 		if('@val >= 100) {	//未調査
 			mes "[" +'@name$+ "]";
-			mes "^ff0000防衛投資値は現在100%です。";
-			mes "今は投資する必要がありません。^000000";
+			mes "^ff0000Defense investment value is currently 100%." ;
+			mes "No need to invest now. ^000000";
 			break;
 		}
 		set '@tmp,('@val-'@count)/5;
 		set '@price,10000*(1+(1+'@tmp)*'@tmp/2)*(1+3*'@count);
 		if('@count) {
 			mes "[" +'@name$+ "]";
-			mes "現在1回投資なさってますが、";
-			mes "追加投資なさいますか？";
-			mes "その場合は ^ff0000" +'@price+ "^000000 Zenyが";
-			mes "必要となります。";
+			mes "You have made one investment now, would you like to make an additional investment?" ;
+			mes "In that case ^ff0000" +'@price+ "^000000 Zeny is required." ;
 		}
 		else {
 			mes "[" +'@name$+ "]";
-			mes "現在必要な投資金は";
-			mes "^ff0000" +'@price+ "^000000 Zenyです。";
-			mes "投資致しますか？";
+			mes "The current investment required is ^ff0000" +'@price+ "^000000 Zeny." ;
+			mes "Would you like to invest?" ;
 		}
 		next;
-		if(select("防衛に投資する","取り消し") == 2) {
+		if(select("Invest in Defense", "Cancel") == 2) {
 			mes "[" +'@name$+ "]";
-			mes "かしこまりました。";
-			mes "焦る必要はございません。";
-			mes "またいつでもお声をかけてください。";
+			mes "Yes, sir." ;
+			mes "There is no need to rush." ;
+			mes "Please feel free to contact me again anytime." ;
 			break;
 		}
 		if(Zeny < '@price) {	//未調査
 			mes "[" +'@name$+ "]";
-			mes "マスター！";
-			mes "投資に必要なお金がありません。";
-			mes "投資を取り消しました。";
+			mes "Master!" ;
+			mes "I do not have enough money to invest." ;
+			mes "The investment has been canceled." ;
 			break;
 		}
 		set Zeny,Zeny-'@price;
 		setcastledata '@map$,5,'@count+1;
 		mes "[" +'@name$+ "]";
-		mes "無事に投資できました！";
-		mes "今後がますます楽しみですね。";
-		mes "明日から防衛値が上がるでしょう。";
+		mes "I was able to invest successfully!" ;
+		mes "I am looking forward to seeing more and more of your work in the future." ;
+		mes "The defense value will go up tomorrow." ;
 		break;
 	case 4:		// ガーディアン設置
 		set '@max,getarraysize(getarg(1));
 		copyarray '@id,getarg(1),'@max;
 		mes "[" +'@name$+ "]";
-		mes "ガーディアンを設置しますか？";
-		mes "ガーディアンは私たちの砦を護る";
-		mes "守護者となります。";
-		mes "設置するガーディアンを";
-		mes "選択してください。";
+		mes "Do you want to install a Guardian?" ;
+		mes "The Guardian will be the protector of our fort." ;
+		mes "Please select the Guardian you wish to install." ;
 		next;
 		for(set '@i,0; '@i < '@max; set '@i,'@i+1) {
 			set '@name$,getmobname('@id['@i]);
@@ -513,41 +452,32 @@ function	script	AgitSteward	{
 		}
 		set '@ret,select(printarray('@tmp$))+9;
 		mes "[" +'@name$+ "]";
-		mes "選択したガーディアンを";
-		mes "本当に設置しますか？設置には";
-		mes "^ff000010000^000000Zenyが必要です。";
+		mes "Do you really want to install the selected Guardian? Installation requires ^ff00001000000^000000Zeny." ;
 		next;
-		if(select("設置する","やめる") == 2) {
+		if(select("Install", "Quit") == 2) {
 			mes "[" +'@name$+ "]";
-			mes "かしこまりました。";
-			mes "資金に余裕ができた時は、";
-			mes "ぜひ設置されることを";
-			mes "お勧め致します。";
+			mes "Yes, sir." ;
+			mes "We encourage you to install this system when you have the funds to do so." ;
 			break;
 		}
 		if(getgdskilllv(getcharid(2),10002) == 0) {
 			mes "[" +'@name$+ "]";
-			mes "マスター…ガーディアン設置に";
-			mes "必要な研究知識が不足しています。";
-			mes "ガーディアン設置に関する知識を";
-			mes "得るためには、ギルドスキルの";
-			mes "^ff0000ガーディアン製作研究^000000を";
-			mes "習得しなければなりません。";
+			mes "Master... Lack of research knowledge required for Guardian installation." ;
+			mes "You must acquire the guild skill ^FF0000 Guardian Fabrication Research^000000 in order to gain knowledge about Guardian installation." ;
 			break;
 		}
 		if(getcastledata('@map$,'@ret)) {
 			mes "[" +'@name$+ "]";	//未調査
-			mes "マスター！";
-			mes "既にガーディアンが設置されています。";
-			mes " ";
-			mes "ガーディアン設置が取り消されました。";
+			mes "Master!" ;
+			mes "Guardian already in place." ;
+			mes " Guardian installation has been canceled." ;
 			break;
 		}
 		if(Zeny < 10000) {	//未調査
 			mes "[" +'@name$+ "]";
-			mes "マスター！";
-			mes "投資に必要なお金がありません。";
-			mes "投資を取り消しました。";
+			mes "Master!" ;
+			mes "I do not have enough money to invest." ;
+			mes "The investment has been canceled." ;
 			break;
 		}
 		set Zeny,Zeny-10000;
@@ -556,117 +486,99 @@ function	script	AgitSteward	{
 		set '@ret,'@ret-10;
 		callguardian '@map$,'@x['@ret],'@y['@ret],"--ja--",'@id['@ret],1,"",'@ret+1;
 		mes "[" +'@name$+ "]";
-		mes "ガーディアンが設置されました。";
-		mes "ガーディアンは私達の城を";
-		mes "敵から守ってくれるでしょう。";
+		mes "Guardian has been installed." ;
+		mes "The Guardian will protect our castle from our enemies." ;
 		break;
-	case 5:		// カプラとの契約 / 解雇
+	case 5:		// Kafraとの契約 / 解雇
 		if(getcastledata('@map$,9) == 0) {
 			mes "[" +'@name$+ "]";
-			mes "カプラ本社との契約をして、";
-			mes "砦内にカプラ職員を雇いますか？";
-			mes "雇用には^ff000010000^000000Zenyが必要ですが…";
+			mes "Do you have a contract with Kafra headquarters to hire Kafra Staff in the fort?" ;
+			mes "I need ^ff000010000^000000Zeny to hire..." ;
 			next;
-			if(select("雇う","取り消す") == 2) {
+			if(select("hire", "cancel") == 2) {
 				mes "[" +'@name$+ "]";
-				mes "かしこまりました。";
-				mes "しかし、ギルド員のためにも";
-				mes "利便性の向上を忘れては";
-				mes "なりません。";
+				mes "Yes, sir." ;
+				mes "However, we must not forget to improve convenience for our guild members." ;
 				break;
 			}
 			if(getgdskilllv(getcharid(2),10001) == 0) {
 				mes "[" +'@name$+ "]";
-				mes "マスター…まだカプラ本社との";
-				mes "契約が結ばれていません。";
-				mes "契約を締結しなければ、";
-				mes "カプラ職員を雇うことができません。";
+				mes "Master... The contract has not yet been signed with Kafra headquarters." ;
+				mes "Without signing a contract, you will not be able to hire Kafra Staff." ;
 				next;
 				mes "[" +'@name$+ "]";
-				mes "カプラ本社との契約をお望みなら、";
-				mes "ギルドスキルの";
-				mes " ^ff0000カプラ契約^000000 スキルを";
-				mes "習得しなければなりません。";
+				mes "If you want a contract with Kafra headquarters, you must learn the ^FF0000Kafra Contract^000000 skill in the Guild Skills." ;
 				break;
 			}
 			if(Zeny < 10000) {	//未調査
 				mes "[" +'@name$+ "]";
-				mes "マスター！お金が足りませんよ！";
+				mes "Master! You don't have enough money!" ;
 				break;
 			}
 			set Zeny,Zeny-10000;
 			hideoffnpc "AgitKafra_"+getarg(0);	//"AgitCode"を使って呼び出すNPC名を合成
 			setcastledata '@map$,9,1;
 			mes "[" +'@name$+ "]";
-			mes "カプラとの契約が完了しました";
+			mes "Contract with Kafra has been completed";
 			next;
 			cutin "kafra_01",2;
-			mes "[カプラ職員]";
-			mes "初めまして、";
-			mes "カプラディフォルテと申します。";
-			mes "最善を尽くしますので宜しくおねがいします！";
+			mes "[Kafra Staff]";
+			mes "Nice to meet you, my name is Kafra di Forte." ;
+			mes "I will do my best and I look forward to working with you!" ;
 			close2;
 			cutin "kafra_01",255;
 			//mes "[" +'@name$+ "]";
-			//mes "ギルドベースでカプラとの契約を維持するために";
+			//mes "ギルドベースでKafraとの契約を維持するために";
 			//mes "毎月Zenyを払わなければなりません。";
 			//mes "(未実装)";
 			break;
 		}
 		mes "[" +'@name$+ "]";
-		mes "カプラ職員との契約を破棄しますか？";
+		mes "Are you breaking your contract with Kafra Staff?" ;
 		next;
 		if(select("解雇する","キャンセル") == 2) {
 			mes "[" +'@name$+ "]";
-			mes "わかりました。";
+			mes "I understand." ;
 			break;
 		}
 		cutin "kafra_01",2;
-		mes "[カプラ職員]";
-		mes "私…何か間違っていましたか？";
-		mes "これからは気をつけますから…";
-		mes "許してはもらえませんか…";
+		mes "[Kafra Staff]";
+		mes "I... Did I do something wrong?" ;
+		mes "I'll be careful from now on..." ;
+		mes "Can you forgive me..." ;
 		next;
-		if(select("解雇する","キャンセル")==2) {
-			mes "[カプラ職員]";
-			mes "ありがとうございます。";
-			mes "全力を尽くして執務につきます！";
+		if(select("Dismissed", "Cancel")==2) {
+			mes "[Kafra Staff]";
+			mes "Thank you very much." ;
+			mes "I will do my best to get to the office!" ;
 			close2;
 			cutin "kafra_01",255;
 			break;
 		}
-		mes "[カプラ職員]";
-		mes "ああ、解雇なさるんですね…";
+		mes "[Kafra Staff]";
+		mes "Oh, you're firing me..." ;
 		next;
 		hideonnpc "AgitKafra_"+getarg(0);
 		setcastledata '@map$,9,0;
 		cutin "kafra_01",255;
 		mes "[" +'@name$+ "]";
-		mes "…";
-		mes "カプラとの契約が破棄されました。";
+		mes "...";
+		mes "The contract with Kafra has been terminated." ;
 		break;
 	case 6:		// マスターの部屋に入る
 		mes "[" +'@name$+ "]";
-		mes "私たちの貴重な生産品の数々が";
-		mes "蓄えられている部屋に";
-		mes "入られるのですね？";
-		mes "そこは、マスターにのみ";
-		mes "入室が許された部屋でございます。";
+		mes "You are entering a room where many of our precious productions are stored?" ;
+		mes "That is a room that only the master is allowed to enter." ;
 		next;
-		if(select("マスターの部屋に入る","取り消す") == 2) {
+		if(select("enter master's room", "cancel") == 2) {
 			mes "[" +'@name$+ "]";
-			mes "生産品は一日に一回生産可能ですが、";
-			mes "ある程度まで貯蓄されるとそれ以上";
-			mes "生産されなくなります。ですから、";
-			mes "私達のギルドの発展のためにも";
-			mes "適度に取り出さなければなりません。";
+			mes "Produced goods can be produced once a day, but once they are saved to a certain degree, they are not produced any more. Therefore, it must be taken out in moderation for the development of our guild." ;
 			break;
 		}
 		mes "[" +'@name$+ "]";
-		mes "それではご案内致します。";
-		mes "私についていらしてください。";
-		mes "帰って来る時は隠しスイッチを";
-		mes "操作すれば帰れます。";
+		mes "Then we will show you the way." ;
+		mes "Please follow me." ;
+		mes "When you come back, you can leave by operating the hidden switch." ;
 		close2;
 		warp '@map$,getarg(4),getarg(5);
 		break;
@@ -679,10 +591,10 @@ function	script	AgitSteward	{
 //	callfunc "AgitMaster",WarpX,WarpY;
 //------------------------------------------------------------
 function	script	AgitMaster	{
-	mes "小さなレバーがあります。";
-	mes "引きますか？";
+	mes "There is a small lever." ;
+	mes "Do you want to pull it?" ;
 	next;
-	if(select("引く","引かない") == 1) {
+	if(select("Pull","Don't pull") == 1) {
 		set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 		warp '@map$,getarg(0),getarg(1);
 	}
@@ -697,20 +609,17 @@ function	script	AgitDungeon	{
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	set '@gid,getcastledata('@map$,1);
 	if('@gid <= 0) {
-		mes "[声]";	//未調査
-		mes "多くの困難を乗り越え";
-		mes "試練に打ち勝った者、";
-		mes "その者に更なる試練を与えん";
+		mes "[Voice]";	//未調査
+		mes "He who has overcome many hardships and trials, let him have further trials";
 		return;
 	}
-	mes "[声]";
-	mes "試練に挑むならば先へ進むがよい";
+	mes "[Voice]";
+	mes "If you are up to the challenge, go ahead.";
 	next;
-	mes " ";
-	mes "小さなレバーがあります。";
-	mes "引きますか？";
+	mes " There is a small lever." ;
+	mes "Do you want to pull it?" ;
 	next;
-	if(select("引く","引かない") == 2)
+	if(select("Pull","Don't pull") == 2)
 		return;
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	set '@gid,getcastledata('@map$,1);
@@ -718,8 +627,7 @@ function	script	AgitDungeon	{
 		warp getarg(0),getarg(1),getarg(2);
 		return;
 	}
-	mes " ";
-	mes "しかし何も起こらなかった。";
+	mes " But nothing happened." ;
 	return;
 }
 
@@ -741,18 +649,18 @@ function	script	AgitBanWarp	{
 //------------------------------------------------------------
 function	script	AgitBreakSE	{
 	donpcevent "Barricade#"+getarg(0)+"::OnReset";
-	donpcevent "制御装置01#"+getarg(0)+"::OnReset";
-	donpcevent "制御装置02#"+getarg(0)+"::OnReset";
-	donpcevent "制御装置03#"+getarg(0)+"::OnReset";
+	donpcevent "Control Unit01#"+getarg(0)+"::OnReset";
+	donpcevent "Control Unit02#"+getarg(0)+"::OnReset";
+	donpcevent "Control Unit03#"+getarg(0)+"::OnReset";
 	sleep 10000;
 	set getvariableofnpc('guardian1,"Guardian#"+getarg(0)),0;
 	set getvariableofnpc('guardian2,"Guardian#"+getarg(0)),0;
-	set getvariableofnpc('status,"制御装置01#"+getarg(0)),1;
-	set getvariableofnpc('status,"制御装置02#"+getarg(0)),1;
-	set getvariableofnpc('status,"制御装置03#"+getarg(0)),2;
+	set getvariableofnpc('status,"Control Unit01#"+getarg(0)),1;
+	set getvariableofnpc('status,"Control Unit02#"+getarg(0)),1;
+	set getvariableofnpc('status,"Control Unit03#"+getarg(0)),2;
 	donpcevent "GuardianStone1#"+getarg(0)+"::OnSet";
 	donpcevent "GuardianStone2#"+getarg(0)+"::OnSet";
-	announce "各守護石の修理ポイントと第3バリケードの制御装置が作動しました",0x9,0x00FF00;
+	announce "Control Unit of each guardian stone repair point and the third barricade has been activated",0x9,0x00FF00;
 	return;
 }
 
@@ -765,41 +673,34 @@ function	script	AgitGuard	{
 	set '@gid,getcastledata('@map$,1);
 	if('@gid <= 0 || getcharid(2) != '@gid) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "誰ですか？";
-		mes "今すぐこの砦から出ていってください！";
+		mes "Who are you?" ;
+		mes "Please leave this fort now!" ;
 		return;
 	}
 	if(getcharid(0) != getguildmasterid('@gid)) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "私は砦の守備を担当している者です。";
-		mes "詳しい話はマスターとします。";
+		mes "I am the one in charge of defending the fort." ;
+		mes "I will discuss the details with the master." ;
 		return;
 	}
 	if(agitcheck()) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "マスター！";
-		mes "なんなりとご命令ください！";
+		mes "Master!" ;
+		mes "Please order me to do whatever you want!" ;
 		next;
-		switch(select("砦の守備強化","現在状況報告","取り消し")) {
+		switch(select("Fortification of fortifications", "Current status report", "Cancel")) {
 		case 1:
 			if(getgdskilllv(getcharid(2),10002) == 0) {
 				// 未調査
 				mes "[" +strnpcinfo(1)+ "]";
-				mes "ガーディアン設置に";
-				mes "必要な研究知識が不足しています。";
-				mes "ガーディアン設置に関する知識を";
-				mes "得るためには、ギルドスキルの";
-				mes "^FF0000ガーディアン製作研究^000000を";
-				mes "習得しなければなりません。";
+				mes "Lack of research knowledge required for Guardian installation." ;
+				mes "You must acquire the guild skill ^FF0000 Guardian Production Research^000000 in order to gain knowledge about Guardian installation." ;
 				return;
 			}
 			mes "[" +strnpcinfo(1)+ "]";
-			mes "外の^FF0000守護石^000000を通じて^4D4DFFガーディアン^000000を";
-			mes "召喚するように命令します。";
-			mes "しかし、^FF0000守護石^000000が破壊されていたら";
-			mes "^4D4DFFガーディアン^000000の召喚はできません。";
-			mes "その際は^FF0000守護石^000000を再構築すれば";
-			mes "^4D4DFFガーディアン^000000が召喚されます。";
+			mes "I command you to summon the ^4DF4DFF Guardian ^000000 through the ^FF0000 guardian stone ^000000 outside." ;
+			mes "However, if the ^FF0000 guardian stone ^000000 is destroyed, the ^4DF4DFF Guardian ^000000 cannot be summoned." ;
+			mes "In that case, if the ^FF0000 guardian stone ^000000 is rebuilt, the ^4DFF Guardian ^000000 will be summoned." ;
 			set '@def,getcastledata('@map$,3);
 			set '@count,getvariableofnpc('guardian1,"Guardian#"+strnpcinfo(2));
 			if(getvariableofnpc('status,"GuardianStone1#"+strnpcinfo(2)) == 0 && '@count == 0) {
@@ -872,163 +773,105 @@ function	script	AgitGuard	{
 			return;
 		case 2:
 			mes "[" +strnpcinfo(1)+ "]";
-			mes "現在の状況をご報告します。";
+			mes "We would like to inform you of our current situation." ;
 			set '@status,getvariableofnpc('status,"GuardianStone1#"+strnpcinfo(2));
-			mes "第1守護石 : " +('@status == 1? "^FF0000破壊^000000": '@status == 2? "^008000復旧可能^000000": "^4D4DFF正常^000000");
+			mes "1st guardian stone : " +('@status == 1? "^FF0000Destroyed^000000": '@status == 2? "^008000Recoverable^000000": "^4D4DFFNormal^000000");
 			set '@status,getvariableofnpc('status,"GuardianStone2#"+strnpcinfo(2));
-			mes "第2守護石 : " +('@status == 1? "^FF0000破壊^000000": '@status == 2? "^008000復旧可能^000000": "^4D4DFF正常^000000");
-			set '@status,getvariableofnpc('status,"制御装置01#"+strnpcinfo(2));
-			mes "第1バリケード : " +('@status == 1? "^FF0000破壊^000000": '@status == 2? "^008000復旧可能^000000": "^4D4DFF正常^000000");
-			set '@status,getvariableofnpc('status,"制御装置02#"+strnpcinfo(2));
-			mes "第2バリケード : " +('@status == 1? "^FF0000破壊^000000": '@status == 2? "^008000復旧可能^000000": "^4D4DFF正常^000000");
-			set '@status,getvariableofnpc('status,"制御装置03#"+strnpcinfo(2));
-			mes "第3バリケード : " +('@status == 1? "^FF0000破壊^000000": '@status == 2? "^008000復旧可能^000000": "^4D4DFF正常^000000");
+			mes "Second guardian stone : " +('@status == 1? "^FF0000Destroyed^000000": '@status == 2? "^008000Recoverable^000000": "^4D4DFFNormal^000000");
+			set '@status,getvariableofnpc('status,"Control Unit01#"+strnpcinfo(2));
+			mes "Barricade 1 : " +('@status == 1? "^FF0000Destroyed^000000": '@status == 2? "^008000Recoverable^000000": "^4D4DFFNormal^000000");
+			set '@status,getvariableofnpc('status,"Control Unit02#"+strnpcinfo(2));
+			mes "Barricade 2 : " +('@status == 1? "^FF0000Destroyed^000000": '@status == 2? "^008000Recoverable^000000": "^4D4DFFNormal^000000");
+			set '@status,getvariableofnpc('status,"Control Unit03#"+strnpcinfo(2));
+			mes "Barricade 3 : " +('@status == 1? "^FF0000Destroyed^000000": '@status == 2? "^008000Recoverable^000000": "^4D4DFFNormal^000000");
 			return;
 		case 3:
 			mes "[" +strnpcinfo(1)+ "]";
-			mes "私はいつでもここに居ますから、";
-			mes "必要な時はいつでもご用命ください。";
+			mes "I am always here for you, so whenever you need me, I am at your service.";
 			return;
 		}
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "私は砦の守備を担当している";
-	mes strnpcinfo(1)+ "と申します。";
-	mes "只今、異常はありません。";
+	mes "I am in charge of defending the fort";
+	mes strnpcinfo(1)+ "My name is." ;
+	mes "There is nothing unusual at the moment." ;
 	next;
-	if(select("会話を続ける","やめる") == 2) {
+	if(select("Continue conversation", "Stop") == 2) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "私はいつでもここに居ますから、";
-		mes "必要な時はいつでもご用命ください。";
+		mes "I am always here for you, so whenever you need me, I am at your service." ;
 		return;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "砦について";
-	mes "何か質問はございますか？";
+	mes "Do you have any questions about the fort?" ;
 	next;
-	switch(select("^FF0000守護石^000000とは？","^4D4DFFバリケード^000000とは？","^008000フラッグ^000000の用途とは？","どんな戦略が良い？","ない")) {
+	switch(select("What is ^FF0000 guardian stone^000000?" ,"^4D4DFF What is a barricade^000000?" ,"^008000What is the use of flags^000000?" , "What strategy do you prefer?" , "No.")) {
 	case 1:
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "砦には^9C009C一つのエンペリウム^000000と";
-		mes "^FF0000二つの守護石^000000が存在します。";
-		mes "この^FF0000守護石^000000は砦を守るための";
-		mes "最初の防御手段であり、";
-		mes "^FF0000守護石が全て破壊されない限り";
-		mes "敵は砦に侵入する事ができません^000000。";
+		mes "There is ^9C009C one emperium ^000000 and ^FF0000 two guardian stones ^000000 in the fort." ;
+		mes "This ^FF0000 guardian stone^000000 is the first defensive measure to protect the fort, and the enemy cannot enter the fort unless all ^FF0000 guardian stones are destroyed^000000.";
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "砦の入口には^4D4DFF城門バリケード^000000があり";
-		mes "^FF0000二つの守護石^000000は";
-		mes "^4D4DFF城門バリケード^000000と連動しています。";
-		mes "城門バリケードは守護石が全て";
-		mes "破壊されない限り、一切攻撃出来ず";
-		mes "通過することもできません。";
+		mes "At the entrance to the fort there is a ^4DF4DFF castle gate barricade^000000 and the ^FF0000 two guardian stones^000000 are linked to the ^4DFF castle gate barricade^000000." ;
+		mes "The castle gate barricade cannot be attacked or passed through at all unless all the guardian stones are destroyed." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "この^FF0000守護石^000000がある場所を";
-		mes "『^FF0000拠点^000000』と呼びます。";
-		mes "『^FF0000拠点^000000』と^FF0000守護石^000000を";
-		mes "完璧に防御する事ができれば、";
-		mes "敵はエンペリウムに近づけないのです。";
+		mes "The place where this ^FF0000 guardian stone^000000 is located is called '^FF0000 base^000000'." ;
+		mes "If we can perfectly defend the \"^FF0000base^000000\" and the ^FF0000 guardian stone^000000, the enemy cannot approach the Emperium.";
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "また、この^FF0000守護石^000000は";
-		mes "砦を守護する^9C009Cガーディアンを";
-		mes "召喚する役目^000000もありますので、";
-		mes "色々と重要な部分です。";
+		mes "This ^FF0000 guardian stone ^000000 is also responsible for summoning ^9C009C guardians to protect the fort, so it is an important part in many ways." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "そして^FF0000守護石^000000が召喚する";
-		mes "^9C009Cガーディアン^000000の固体数は";
-		mes "^4D4DFF砦の防衛値^000000と関係があります。";
-		mes "^4D4DFF防衛値^000000が高いほど^FF0000守護石^000000が召喚する";
-		mes "ガーディアンの数も多くなりますので、";
-		mes "防御も投資も頑張ってください。";
+		mes "And the solid number of ^9C009C Guardians^000000 summoned by ^FF0000 guardian stones^000000 is related to the defense value^000000 of the ^4D4DFF fort." ;
+		mes "The higher the ^4DF4DFF defense value^000000, the more Guardians ^FF0000 Guardian Stones^000000 will summon, so do your best to defend and invest." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "破壊された^FF0000守護石^000000は一定時間が経つと";
-		mes "再構築できますが、それは";
-		mes "ギルドメンバーの皆様の役目です。";
-		mes "^FF0000守護石^000000の状態は私を通じて";
-		mes "確認できますので、";
-		mes "いつでもご命令ください。";
+		mes "Destroyed ^FF0000 guardian stones ^000000 can be rebuilt after a certain amount of time, but that is the role of all guild members." ;
+		mes "The status of the ^FF0000 guardian stone ^000000 can be checked through me, and you can order me to do so at any time." ;
 		return;
 	case 2:
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "^4D4DFFバリケード^000000は^FF0000守護石^000000の次の";
-		mes "防衛手段として、砦で構築している";
-		mes "二次防御機能です。";
-		mes "^FF0000守護石^000000が全て破壊されると";
-		mes "^4D4DFF城門バリケード^000000が消滅し";
-		mes "砦への進入が可能になってしまいます。";
+		mes "The ^4D4DFF barricade^000000 is a secondary defensive feature we are building at the fort as the next line of defense after the ^FF0000 guardian stone^000000." ;
+		mes "If all ^FF0000 guardian stones^000000 are destroyed, the ^4DF4DFF castle gate barricade^000000 will disappear and allow entry into the fort." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "敵を内部で防ぐのが城内の";
-		mes "^4D4DFF第1～第3バリケード^000000です。";
-		mes "この^4D4DFF3つのバリケード^000000が、";
-		mes "砦の要所要所で敵の侵入を";
-		mes "防いでいます。";
+		mes "The enemy is prevented inside the castle ^4D4DFF 1st to 3rd barricades ^000000." ;
+		mes "These ^4D4DFF three barricades^000000 prevent the enemy from entering at key points in the fort." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "^4D4DFFバリケード^000000が耐えているうちは";
-		mes "ある程度時間を稼げるでしょう。ただし";
-		mes "^FF0000一度破壊されたバリケードは";
-		mes "修理不可能^000000ですので、ご注意ください。";
+		mes "^4D4DFF As long as the barricade ^000000 is holding up, you can buy some time. However, please note that ^FF0000 once a barricade is destroyed, it cannot be repaired ^000000." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "^4D4DFFバリケード^000000は、攻城戦開始時に";
-		mes "自動的に構築されますが、";
-		mes "戦闘が始まり破壊されると";
-		mes "もう修復することは出来ません。";
-		mes "構築できるタイミングは、砦の持ち主が";
-		mes "変わったときだけです。";
+		mes "The ^4D4DFF barricade^000000 is automatically built at the start of the siege, but once the battle begins and it is destroyed, it can no longer be repaired." ;
+		mes "The only time it can be built is when the owner of the fort changes." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "なお、^4D4DFFバリケード^000000の構築作業は";
-		mes "^FF0000ギルドマスターのみ可能^000000と";
-		mes "なっております。";
-		mes "また、第3バリケードから順に";
-		mes "構築が可能となります。";
-		mes "この点もお忘れなきようお願いします。";
+		mes "Please note that the ^4D4DFF barricade^000000 construction process is only available to ^FF0000 guild masters." ;
+		mes "In addition, it will be possible to build from the third barricade in sequence." ;
+		mes "Please do not forget this point as well." ;
 		return;
 	case 3:
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "砦の中には^008000フラッグ^000000が多数あります。";
-		mes "^4D4DFFバリケード^000000によって移動の制限が";
-		mes "発生しますので、これを越えるためにと";
-		mes "設置したのがこの^008000フラッグ^000000です。";
-		mes "通称『^008000リンクフラッグ^000000』と";
-		mes "呼んでいます。";
+		mes "There are many ^008000 flags ^000000 in the fort." ;
+		mes "The ^4D4DFF barricade^000000 creates restrictions on movement, so we set up these ^008000 flags^000000 to get past them." ;
+		mes "We call it the '^008000 link flag^000000'." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "どの^008000フラッグ^000000がどの場所に";
-		mes "繋がっているのか……";
-		mes "それは……全部覚える事が";
-		mes "できていませんが、";
-		mes "大体^FF0000一番のフラッグ^000000が";
-		mes "各^FF0000拠点^000000へ繋がっていました。";
+		mes "Which ^008000 flag ^000000 is connected to which location ......" ;
+		mes "It is ...... I haven't been able to remember them all, but roughly the ^FF0000 first flag ^000000 was connected to each ^FF0000 base ^000000." ;
 		next;
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "砦の^008000フラッグ^000000は基本的に";
-		mes "『^9C009Cエンペリウム^000000』がある所へ";
-		mes "繋がっていますし、";
-		mes "ギルドメンバーの皆さんのための";
-		mes "便利機能としての^008000フラッグ^000000は、";
-		mes "だいたい最後の番号のものでしょう。";
+		mes "The ^008000 flag^000000 of the fort is basically connected to where the '^9C009C Emperium^000000' is, and the ^008000 flag^000000 as a convenience feature for all guild members would usually be the last number." ;
 		return;
 	case 4:
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "戦略ですか……";
-		mes "それは、私ではなくマスターが直接";
-		mes "考えるべきだと思いますが……";
-		mes "まあ、^FF0000拠点^000000と^4D4DFFバリケード^000000を最大限";
-		mes "活用して、復旧のタイミングに";
-		mes "気をつけること、でしょうね。";
+		mes "Is it a strategy? ......" ;
+		mes "I think that should be considered directly by the master, not me. ......" ;
+		mes "Well, I guess it would be to make the best use of ^FF0000 bases ^000000 and ^4D4DFF barricades ^000000 and be careful about the timing of the recovery." ;
 		return;
 	case 5:
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "私はいつでもここに居ますから、";
-		mes "必要な時はいつでもご用命ください。";
+		mes "I am always here for you, so whenever you need me, I am at your service." ;
 		return;
 	}
 }
@@ -1041,11 +884,11 @@ function	script	AgitCallGuardian	{
 	if(getvariableofnpc('status,"GuardianStone"+getarg(0)+"#"+strnpcinfo(2)) != 0)
 		return;
 	switch(getarg(1)) {
-		case 1: announce "拠点にガーディアンを一次追加召喚します。",0x9,0xFF4500; break;
-		case 2: announce "拠点にガーディアンを二次追加召喚します。",0x9,0xFF4500; break;
-		case 3: announce "拠点にガーディアンを三次追加召喚します。",0x9,0xFF4500; break;
-		case 4: announce "拠点にガーディアンを四次追加召喚します。",0x9,0xFF4500; break;
-		case 5: announce "拠点にガーディアンを五次追加召喚します。",0x9,0xFF4500; break;
+		case 1: announce "Summons a primary additional Guardian to the base.",0x9,0xFF4500; break;
+		case 2: announce "Summons a secondary additional Guardian to the base.",0x9,0xFF4500; break;
+		case 3: announce "Summons a third additional Guardian to the base.",0x9,0xFF4500; break;
+		case 4: announce "Summon a fourth additional Guardian to the base.",0x9,0xFF4500; break;
+		case 5: announce "Summons a fifth additional Guardian to the base.",0x9,0xFF4500; break;
 		default: break;
 	}
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);
@@ -1067,68 +910,53 @@ function	script	AgitStone	{
 	if('@gid <= 0 || getcharid(2) != '@gid)
 		return;
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "破壊された守護石を再構築します。";
-	mes "再構築には次の鉱石が必要です。";
+	mes "Rebuild destroyed guardian stones." ;
+	mes "The following ores are required to rebuild." ;
 	next;
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "オリデオコン　^4D4DFF1個^000000";
-	mes "エルニウム　^4D4DFF1個^000000";
-	mes "石　^4D4DFF30個^000000";
-	mes "ブルージェムストーン　^4D4DFF5個^000000";
-	mes "イエロージェムストーン　^4D4DFF5個^000000";
-	mes "レッドジェムストーン　^4D4DFF5個^000000";
+	mes "Oridecon ^4DF4DFF1 piece ^000000Elunium ^4DF4DFF1 piece ^000000Stone ^4DF4DFF30 piece ^000000Blue Gemstone ^4DF4DFF5 piece ^000000Yellow Gemstone ^4DF4DFF5 piece ^000000 Red Gemstone ^4D4DFF5 pieces^000000";
 	next;
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "作業を続けますか？";
+	mes "Would you like to continue working?" ;
 	next;
-	if(select("やめる","続ける") == 1) {
+	if(select("stop", "continue") == 1) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "全ての作業が取り消されました。";
+		mes "All work has been canceled.";
 		return;
 	}
 	if(countitem(984) < 1 || countitem(985) < 1 || countitem(7049) < 30 || countitem(715) < 5 || countitem(716) < 5 || countitem(717) < 5) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "材料が足りません。";
+		mes "Insufficient material." ;
 		return;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "■Phase：1";
-	mes "以下の順で鉱石を配置してください。";
-	mes " ";
-	mes "^008000石^000000⇒^FF0000エルニウム^000000⇒^4D4DFFオリデオコン^000000";
+	mes "•Phase: 1Place the ores in the following order." ;
+	mes " ^008000Stones^000000⇒^FF0000Elunium^000000⇒^4D4DFFOridecon^000000";
 	next;
 	set '@point,0;
-	setarray '@tmp$,"^4D4DFFオリデオコン^000000","^FF0000エルニウム^000000","^008000石^000000";
+	setarray '@tmp$,"^4D4DFFOridecon^000000","^FF0000Elunium^000000","^008000Stones^000000";
 	for(set '@i,1; '@i <= 3; set '@i,'@i+1) {
 		set @menu,select(printarray('@tmp$));
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "■Phase：1-" +'@i;
-		mes '@tmp$[@menu-1]+ "を配置。";
+		mes "•Phase：1-" +'@i;
+		mes ""+'@tmp$[@menu-1]+ "を配置。";
 		mes " ";
 		if('@i < 3)
-			mes "次に配置する鉱石を選択してください。";
+			mes "Please select the next ore to place." ;
 		else
-			mes "次のフェーズに移行します。";
+			mes "Moving to the next phase." ;
 		if('@i == 1 && @menu == 3 || '@i == 2 && @menu == 2 || '@i == 3 && @menu == 1)
 			set '@point,'@point+10;
 		next;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "■Phase：2";
-	mes "発動する魔力と一致する魔力が";
-	mes "込められたジェムストーンを";
-	mes "配置してください。";
-	mes "魔力の性質は発動時の効果で";
-	mes "判断できます。";
+	mes "-Phase: 2 Place a gemstone with a magical power that matches the magical power to be activated." ;
+	mes "The nature of the magical power can be determined by the effect of the activation." ;
 	next;
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "■Phase：2";
-	mes "また、";
-	mes "情愛は燃えるように赤く、";
-	mes "閃きは光のように黄色く、";
-	mes "水滴は青く冷涼な様を表します。";
+	mes "-Phase: 2 Also, the affection is fiery red, the flash is yellow like light, and the drop of water is blue and cool." ;
 	next;
-	setarray '@tmp$,"レッドジェムストーン","イエロージェムストーン","ブルージェムストーン";
+	setarray '@tmp$,"Red Gemstone", "Yellow Gemstone", "Blue Gemstone";
 	for(set '@i,1; '@i <= 8; set '@i,'@i+1) {
 		set '@pattern,rand(1,3);
 		switch('@pattern) {
@@ -1146,21 +974,17 @@ function	script	AgitStone	{
 			break;
 		}
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "■Phase：2-" +'@i;
-		mes "発動した魔力と一致する魔力が";
-		mes "込められたジェムストーンを";
-		mes "配置してください。";
+		mes "•Phase：2-" +'@i;
+		mes "Place a gemstone with a magical power that matches the activated magical power.";
 		next;
 		set @menu,select(printarray('@tmp$));
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "■Phase：2-" +'@i;
-		mes '@tmp$[@menu-1]+ "を配置します。";
+		mes "•Phase：2-" +'@i;
+		mes ""+'@tmp$[@menu-1]+ "を配置します。";
 		if(@menu != '@pattern) {
 			next;
 			mes "[" +strnpcinfo(1)+ "]";
-			mes "■^FF0000MISS^000000";
-			mes "お互いの魔力が衝突して";
-			mes "^FF0000守護石^000000の再構築に失敗しました。";
+			mes "-^FF0000MISS^000000Mutual magical forces collided and failed to rebuild the ^FF0000 guardian stone^000000." ;
 			return;
 		}
 		set '@point,'@point+10;
@@ -1170,10 +994,9 @@ function	script	AgitStone	{
 	if('@point < 100) {
 		// 未調査
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "………………";
-		mes "-状況に適切な対処ができず、";
-		mes "　修復に失敗した。";
-		mes "　資源の一部を失った-";
+		mes "..................";
+		mes "-The situation was not properly addressed and the repair failed." ;
+		mes " lost some of its resources-";
 		delitem 7049,10;
 		delitem 715,2;
 		delitem 716,2;
@@ -1183,19 +1006,18 @@ function	script	AgitStone	{
 	if(getvariableofnpc('status,"GuardianStone"+getarg(0)+"#"+strnpcinfo(2)) == 0) {
 		// 未調査
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "ジェムストーンの配置が終わりました。";
+		mes "Gemstone placement is finished." ;
 		return;
 	}
 	if(agitcheck() == 0) {
 		// 未調査
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "エンペリウムが消滅し、";
-		mes "守護石の再構築に失敗しました。";
+		mes "The emperium disappeared and failed to rebuild the guardian stone." ;
 		return;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "ジェムストーンの配置が終わりました。";
-	mes "^FF0000守護石^000000の再構築に^4D4DFF成功^000000しました!!";
+	mes "Gemstone placement is finished." ;
+	mes "^FF0000 guardian stones ^000000 have been successfully ^4DF4DFF^000000 reconstructed!!!" ;
 	delitem 984,1;
 	delitem 985,1;
 	delitem 7049,30;
@@ -1206,11 +1028,11 @@ function	script	AgitStone	{
 	hideonnpc;
 	donpcevent "GuardianStone"+getarg(0)+"#"+strnpcinfo(2)+"::OnRepair";
 	if(getvariableofnpc('status,"GuardianStone1#"+strnpcinfo(2))+getvariableofnpc('status,"GuardianStone2#"+strnpcinfo(2)) == 0) {
-		announce "守護石が完全復旧し、城門バリケードが復活しました。",0x9,0x00FF00;
+		announce "The guardian stone has been fully restored and the castle gate barricade has been reinstated.",0x9,0x00FF00;
 		donpcevent "Barricade#"+strnpcinfo(2)+"::OnSet";
 	}
 	else
-		announce "第"+getarg(0)+"守護石の再構築に成功しました！",0x9,0x00FF00;
+		announce "The guardian stone number " + getarg(0) + " has been successfully rebuilt!",0x9,0x00FF00;
 	return;
 }
 
@@ -1223,12 +1045,12 @@ function	script	AgitStoneBreak	{
 	set '@status1,getvariableofnpc('status,"GuardianStone1#"+strnpcinfo(2));
 	set '@status2,getvariableofnpc('status,"GuardianStone2#"+strnpcinfo(2));
 	if(('@status1 == 1 || '@status1 == 2) && ('@status2 == 1 || '@status2 == 2)) {
-		announce "全ての守護石が破壊され、城門バリケードが消滅しました！",0x9,0xFF0000;
+		announce "All the guardian stones have been destroyed and the barricades at the gates have been obliterated!",0x9,0xFF0000;
 		donpcevent "Barricade#"+strnpcinfo(2)+"::OnReset";
 		stopnpctimer "Guardian#"+strnpcinfo(2);
 	}
 	else {
-		announce "第"+getarg(0)+"守護石が破壊されました！",0x9,0xFF4500;
+		announce "The guardian stone number " + getarg(0) + " has been destroyed！",0x9,0xFF4500;
 	}
 	killmonster "this","Guardian#"+strnpcinfo(2)+"::OnKilled"+getarg(0);
 	initnpctimer;
@@ -1236,7 +1058,7 @@ function	script	AgitStoneBreak	{
 }
 
 //============================================================
-// SEバリケード制御装置
+// SEバリケードControl Unit
 //	callfunc "AgitBarricade";
 //------------------------------------------------------------
 function	script	AgitBarricade	{
@@ -1245,109 +1067,92 @@ function	script	AgitBarricade	{
 	if(getcharid(0) != getguildmasterid('@gid) || getvariableofnpc('status,strnpcinfo(0)) != 2)
 		return;
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "破損したバリケードの修復が可能です。";
-	mes "次の資材が必要です。";
-	mes "木屑　^4D4DFF30個^000000";
-	mes "鋼鉄　^4D4DFF10個^000000";
-	mes "エンベルタコン　^4D4DFF10個^000000";
-	mes "オリデオコン　^4D4DFF5個^000000";
+	mes "Damaged barricades can be repaired." ;
+	mes "The following materials are needed:" ;
+	mes "Wood shavings ^4D4DFF 30 pieces ^000000 Steel ^4D4DFF 10 pieces ^000000Emveretarcon ^4D4DFF 10 pieces ^000000Oridecon ^4D4DFF 5 pieces ^000000";
 	next;
-	if(select("やめる","続ける") == 1) {
+	if(select("stop", "continue") == 1) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "全ての作業が取り消されました。";
+		mes "All work has been canceled." ;
 		return;
 	}
 	if(countitem(1019) < 30 || countitem(999) < 10 || countitem(1011) < 10 || countitem(984) < 5) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "材料が足りません。";
+		mes "Insufficient material." ;
 		return;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "^4D4DFF支柱の補強^000000が必要な場合は";
-	mes "^4D4DFF木屑^000000を使います。";
-	mes "^FF0000耐久力の強化^000000には^FF0000オリデオコン^000000、";
-	mes "^008000強化接着^000000には^008000鋼鉄^000000を使います。";
-	mes "^9C009C全般的な補修^000000には";
-	mes "^9C009Cエンベルタコン^000000をお使いください。";
+	mes "If ^4D4DFF strut reinforcement^000000 is needed, use ^4D4DFF wood shavings^000000." ;
+	mes "Use ^FF0000Oridecon^000000 for ^FF0000 durability reinforcement^000000 and ^008000 steel^000000 for ^008000 reinforced gluing^000000." ;
+	mes "Use ^9C009CEmveretarcon^000000 for ^9C009C general repair^000000." ;
 	next;
 	set '@success,rand(5,10);
 	set '@fail,0;
 	set '@point,0;
-	setarray '@tmp$,"木屑","鋼鉄","エンベルタコン","オリデオコン";
+	setarray '@tmp$,"Wood chips","Steel","Emveretarcon","Oridecon";
 	while('@point < '@success) {
 		set '@pattern,rand(1,4);
 		switch('@pattern) {
 		case 1:
-			mes "-破壊された地点が深く掘られている。";
-			mes "　支柱の補強が必要だ-";
+			mes "-The destroyed point is dug deep." ;
+			mes "-Reinforcement of the support columns is needed-";
 			break;
 		case 2:
-			mes "-あちこち割れているのが気になる。";
-			mes "　強い接着や溶接を";
-			mes "　しなければならないようだ-";
+			mes "-I'm worried about cracks here and there." ;
+			mes " Looks like it needs to be strongly glued or welded -";
 			break;
 		case 3:
-			mes "-全般的な補修作業が必要そうだ-";
+			mes "-general repair work seems to be needed-";
 			break;
 		case 4:
-			mes "-簡単に破壊されないように";
-			mes "　耐久力の強化が必要そうだ-";
+			mes "-It looks like we need to strengthen the durability so it won't be destroyed easily-";
 			break;
 		}
 		next;
 		set @menu,select(printarray('@tmp$));
 		if('@pattern == 2 && @menu == 1) {
-			mes "（木屑を使ってウドゥンアーマーを";
-			mes "　作ってみた。";
-			mes "　これを着せれば……）";
+			mes "(I made a wooden armor using wood shavings." ;
+			mes " (If you put this on ......)" ;
 			set '@fail,1;
 			next;
 			continue;
 		}
 		if(@menu != '@pattern) {
-			mes "（" +'@tmp$[@menu-1]+ "を利用してみようと";
-			mes "　したが、うまくできない。";
-			mes "　最初からやり直した方が";
-			mes "　良さそうだ。）";
+			mes "(I tried to use " +'@tmp$[@menu-1]+ " but it doesn't work." ;
+			mes " (I guess I'd better start over.)" ;
 			return;
 		}
 		switch('@pattern) {
 		case 1:
-			mes "（木屑を使って支柱を補強した。）";
+			mes "(The posts were reinforced with wood shavings.)" ;
 			break;
 		case 2:
-			mes "（鋼鉄を利用して溶接を試みた。";
-			mes "　立派なスチールアーマーを";
-			mes "　着せたような気がする。）";
+			mes "(Attempted to weld using steel." ;
+			mes "(I feel like I've put on a fine steel armor.)" ;
 			break;
 		case 3:
-			mes "（エンベルタコンを利用して";
-			mes "　全般的な補修作業をした。）";
+			mes "(General repair work was done using Emveretarcon.)" ;
 			break;
 		case 4:
-			mes "（ホルグレンが武器精錬を";
-			mes "　する時のようにオリデオコンで";
-			mes "　打ってみた。いい感じだ。）";
+			mes "(I hit it with Oridecon like Holgren does with weapon refining. Looks good.)" ;
 			break;
 		}
 		set '@point,'@point+1;
 		misceffect 101,"";
 		next;
 	}
-	mes "-大体終わったようだ-";
+	mes "-looks like it's mostly done-";
 	next;
 	if(agitcheck() == 0) {
 		// 未調査
-		mes "-しかし、エンペリウムが消滅し、";
-		mes "　バリケードの構築ができなかった-";
+		mes "-but the emperium disappeared and the barricades could not be built-";
 		return;
 	}
 	if('@fail) {
 		mes "[" +strnpcinfo(1)+ "]";
-		mes "………………";
-		mes "-状況に適切な対処ができず、";
-		mes "　修復に失敗した。";
-		mes "　資源の一部を失った-";
+		mes "..................";
+		mes "-The situation was not properly addressed and the repair failed." ;
+		mes " lost some of its resources-";
 		delitem 984,2;
 		delitem 999,4;
 		delitem 1019,14;
@@ -1355,33 +1160,33 @@ function	script	AgitBarricade	{
 		return;
 	}
 	mes "[" +strnpcinfo(1)+ "]";
-	mes "^4D4DFFバリケード^000000を修復しました！";
+	mes "^4D4DFF barricade ^000000 repaired!" ;
 	delitem 1019,30;
 	delitem 999,10;
 	delitem 1011,10;
 	delitem 984,5;
 	set getvariableofnpc('status,strnpcinfo(0)),0;
-	if(strnpcinfo(1) == "制御装置03") {
-		mes "-^FF0000制御装置02が作動^000000しました。";
-		mes "　第2バリケードの修復が可能です-";
-		set getvariableofnpc('status,"制御装置02#"+strnpcinfo(2)),2;
-		announce "第3バリケードの修復に成功しました！",0x9,0x00FF00;
+	if(strnpcinfo(1) == "Control Unit03") {
+		mes "-^FF0000Control Unit02 has been activated^000000." ;
+		mes " 2nd barricade can be repaired-";
+		set getvariableofnpc('status,"Control Unit02#"+strnpcinfo(2)),2;
+		announce "Third barricade successfully repaired!",0x9,0x00FF00;
 	}
-	else if(strnpcinfo(1) == "制御装置02") {
-		mes "-^FF0000制御装置01が作動^000000しました。";
-		mes "　第1バリケードの修復が可能です-";
-		set getvariableofnpc('status,"制御装置01#"+strnpcinfo(2)),2;
-		announce "第2バリケードの修復に成功しました！",0x9,0x00FF00;
+	else if(strnpcinfo(1) == "Control Unit02") {
+		mes "-^FF0000Control Unit01 has been activated^000000." ;
+		mes " 1st barricade can be repaired-";
+		set getvariableofnpc('status,"Control Unit01#"+strnpcinfo(2)),2;
+		announce "The second barricade has been successfully repaired!",0x9,0x00FF00;
 
 	}
 	else
-		announce "第1バリケードの修復に成功しました！",0x9,0x00FF00;
+		announce "Barricade 1 has been successfully repaired!",0x9,0x00FF00;
 	donpcevent strnpcinfo(0)+"::OnSet";
 	return;
 }
 
 //============================================================
-// SEリンクフラッグA（各地域へのワープ）
+// SELink FlagA（各地域へのワープ）
 //	callfunc "AgitLinkFlagA",SelectMenuArray,WarpXArray,WarpYArray;
 //------------------------------------------------------------
 function	script	AgitLinkFlagA	{
@@ -1389,43 +1194,43 @@ function	script	AgitLinkFlagA	{
 	set '@gid,getcastledata('@map$,1);
 	if('@gid <= 0 || getcharid(2) != '@gid)
 		return;
-	mes "[リンクフラッグ]";
-	mes "移動する場所を選んでください。";
+	mes "[Link Flag]";
+	mes "Select a location to move to.";
 	set '@max,getarraysize(getarg(0));
 	copyarray '@code,getarg(0),'@max;
 	for(set '@i,0; '@i < '@max; set '@i,'@i+1) {
 		switch('@code['@i]) {
-			case 1: set '@disp$['@i],"第1拠点"; break;
-			case 2: set '@disp$['@i],"第2拠点"; break;
-			case 11: set '@disp$['@i],"防衛地域1-1"; break;
-			case 12: set '@disp$['@i],"防衛地域1-2"; break;
-			case 13: set '@disp$['@i],"防衛地域1-3"; break;
-			case 14: set '@disp$['@i],"防衛地域1-4"; break;
-			case 21: set '@disp$['@i],"防衛地域2-1"; break;
-			case 22: set '@disp$['@i],"防衛地域2-2"; break;
-			case 23: set '@disp$['@i],"防衛地域2-3"; break;
-			case 24: set '@disp$['@i],"防衛地域2-4"; break;
-			case 31: set '@disp$['@i],"防衛地域3-1"; break;
-			case 32: set '@disp$['@i],"防衛地域3-2"; break;
-			case 33: set '@disp$['@i],"防衛地域3-3"; break;
-			case 34: set '@disp$['@i],"防衛地域3-4"; break;
-			case 111: set '@disp$['@i],"区域1-1"; break;
-			case 112: set '@disp$['@i],"区域1-2"; break;
-			case 113: set '@disp$['@i],"区域1-3"; break;
-			case 114: set '@disp$['@i],"区域1-4"; break;
-			case 121: set '@disp$['@i],"区域2-1"; break;
-			case 122: set '@disp$['@i],"区域2-2"; break;
-			case 123: set '@disp$['@i],"区域2-3"; break;
-			case 124: set '@disp$['@i],"区域2-4"; break;
-			case 131: set '@disp$['@i],"区域3-1"; break;
-			case 132: set '@disp$['@i],"区域3-2"; break;
-			case 133: set '@disp$['@i],"区域3-3"; break;
-			case 134: set '@disp$['@i],"区域3-4"; break;
-			case 100: set '@disp$['@i],"拠点への道"; break;
-			case 101: set '@disp$['@i],"中央1区画"; break;
-			case 102: set '@disp$['@i],"中央2区画"; break;
-			case 103: set '@disp$['@i],"中央3区画"; break;
-			default: set '@disp$['@i],"わからない所"; break;
+			case 1: set '@disp$['@i],"1st base"; break;
+			case 2: set '@disp$['@i],"Second base"; break;
+			case 11: set '@disp$['@i],"Defense Area 1-1"; break;
+			case 12: set '@disp$['@i],"Defense Area 1-2"; break;
+			case 13: set '@disp$['@i],"Defense Area 1-3"; break;
+			case 14: set '@disp$['@i],"Defense Area 1-4"; break;
+			case 21: set '@disp$['@i],"Defense Area 2-1"; break;
+			case 22: set '@disp$['@i],"Defense Area 2-2"; break;
+			case 23: set '@disp$['@i],"Defense Area 2-3"; break;
+			case 24: set '@disp$['@i],"Defense Area 2-4"; break;
+			case 31: set '@disp$['@i],"Defense Area 3-1"; break;
+			case 32: set '@disp$['@i],"Defense Area 3-2"; break;
+			case 33: set '@disp$['@i],"Defense Area 3-3"; break;
+			case 34: set '@disp$['@i],"Defense Area 3-4"; break;
+			case 111: set '@disp$['@i],"Area 1-1"; break;
+			case 112: set '@disp$['@i],"Area 1-2"; break;
+			case 113: set '@disp$['@i],"Area 1-3"; break;
+			case 114: set '@disp$['@i],"Area 1-4"; break;
+			case 121: set '@disp$['@i],"Area 2-1"; break;
+			case 122: set '@disp$['@i],"Area 2-2"; break;
+			case 123: set '@disp$['@i],"Area 2-3"; break;
+			case 124: set '@disp$['@i],"Area 2-4"; break;
+			case 131: set '@disp$['@i],"Area 3-1"; break;
+			case 132: set '@disp$['@i],"Area 3-2"; break;
+			case 133: set '@disp$['@i],"Area 3-3"; break;
+			case 134: set '@disp$['@i],"Area 3-4"; break;
+			case 100: set '@disp$['@i],"Road to the base"; break;
+			case 101: set '@disp$['@i],"Central area 1"; break;
+			case 102: set '@disp$['@i],"Central area 2"; break;
+			case 103: set '@disp$['@i],"Central area 3"; break;
+			default: set '@disp$['@i],"part that one does not understand"; break;
 		}
 	}
 	set '@disp$['@max],"取り消し";
@@ -1440,7 +1245,7 @@ function	script	AgitLinkFlagA	{
 }
 
 //============================================================
-// SEリンクフラッグB（ギルドルームへのワープ）
+// SELink FlagB（ギルドルームへのワープ）
 //	callfunc "AgitLinkFlagB",Type,WarpX,WarpY;
 //------------------------------------------------------------
 function	script	AgitLinkFlagB	{
@@ -1448,17 +1253,15 @@ function	script	AgitLinkFlagB	{
 	set '@gid,getcastledata('@map$,1);
 	if('@gid <= 0 || getcharid(2) != '@gid)
 		return;
-	mes "[リンクフラッグ]";
-	if(getarg(0)) {		//Typeが0以外のときはギルドルームのメッセージ
-		mes "ギルドメンバーの利便性向上のために";
-		mes "造られた地域への移動が可能です。";
+	mes "[Link Flag]";
+	if(getarg(0)) {		//Typeが0以外のときはギルドルームのメッSage
+		mes "Allows movement to areas built for the convenience of guild members." ;
 	}
-	else {		//Typeが0のときは中央作戦地域のメッセージ
-		mes "^9C009Cエンペリウム^000000がある";
-		mes "中央作戦地域に移動します。";
+	else {		//Typeが0のときは中央作戦地域のメッSage
+		mes "Move to the Central Operations Area where ^9C009CEmperium^000000 is located." ;
 	}
-	mes "移動しますか？";
-	if(select("移動","取り消し") == 2)
+	mes "Would you like to move?" ;
+	if(select("move", "cancel") == 2)
 		return;
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	warp '@map$,getarg(1),getarg(2);
@@ -1472,16 +1275,12 @@ function	script	AgitLinkFlagB	{
 function	script	AgitDungeonSE	{
 	if(!getcharid(2))
 		return;
-	mes "‐随分大きな、";
-	mes "　不思議なヒマワリだ……";
-	mes "　ほんの僅かではあるが";
-	mes "　魔力が感じられる‐";
+	mes "-It's quite a big, strange sunflower. ......" ;
+	mes " I can feel the magic, if only slightly...";
 	next;
-	if(select("^0000FF触れてみる^000000","やめる") == 2) {
-		mes "‐未知の世界に";
-		mes "　吸い込まれてしまいそうな";
-		mes "　気がする……";
-		mes "　やめておこう‐";
+	if(select("^0000FFTouch^000000", "Stop") == 2) {
+		mes "-I feel like I'm being sucked into the unknown: ......" ;
+		mes " Let's not -";
 		return;
 	}
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
@@ -1490,6 +1289,6 @@ function	script	AgitDungeonSE	{
 		warp getarg(0),getarg(1),getarg(2);
 		return;
 	}
-	mes "‐しかし何も起こらなかった‐";
+	mes "-but nothing happened-";
 	return;
 }

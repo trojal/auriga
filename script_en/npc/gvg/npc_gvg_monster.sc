@@ -1,5 +1,5 @@
 //=========================================================================
-// エンペリウムおよびモンスター召喚ファンクション
+// Emperiumおよびモンスター召喚ファンクション
 // （攻城戦開始時・アジト放棄時・エンペ破壊時に呼び出される）
 //	callfunc "AgitSummon","AgitCode";
 //-------------------------------------------------------------------------
@@ -30,28 +30,28 @@ function	script	AgitSummon	{
 		return 0;
 	}
 
-	//エンペリウムの召喚
+	//Emperiumの召喚
 	switch (enum(getarg(0))) {
-		case 11: monster "aldeg_cas01.gat",216,24,"エンペリウム",1288,1,"AgitExe#L1::OnAgitBreak"; 	break;
-		case 12: monster "aldeg_cas02.gat",214,24,"エンペリウム",1288,1,"AgitExe#L2::OnAgitBreak"; 	break;
-		case 13: monster "aldeg_cas03.gat",206,32,"エンペリウム",1288,1,"AgitExe#L3::OnAgitBreak"; 	break;
-		case 14: monster "aldeg_cas04.gat",36,218,"エンペリウム",1288,1,"AgitExe#L4::OnAgitBreak"; 	break;
-		case 15: monster "aldeg_cas05.gat",28,102,"エンペリウム",1288,1,"AgitExe#L5::OnAgitBreak"; 	break;
-		case 21: monster "gefg_cas01.gat",198,182,"エンペリウム",1288,1,"AgitExe#B1::OnAgitBreak"; 	break;
-		case 22: monster "gefg_cas02.gat",176,178,"エンペリウム",1288,1,"AgitExe#B2::OnAgitBreak"; 	break;
-		case 23: monster "gefg_cas03.gat",245,167,"エンペリウム",1288,1,"AgitExe#B3::OnAgitBreak"; 	break;
-		case 24: monster "gefg_cas04.gat",174,178,"エンペリウム",1288,1,"AgitExe#B4::OnAgitBreak"; 	break;
-		case 25: monster "gefg_cas05.gat",194,184,"エンペリウム",1288,1,"AgitExe#B5::OnAgitBreak"; 	break;
-		case 31: monster "payg_cas01.gat",139,139,"エンペリウム",1288,1,"AgitExe#C1::OnAgitBreak"; 	break;
-		case 32: monster "payg_cas02.gat",39,25,"エンペリウム",1288,1,"AgitExe#C2::OnAgitBreak"; 	break;
-		case 33: monster "payg_cas03.gat",269,265,"エンペリウム",1288,1,"AgitExe#C3::OnAgitBreak"; 	break;
-		case 34: monster "payg_cas04.gat",271,29,"エンペリウム",1288,1,"AgitExe#C4::OnAgitBreak"; 	break;
-		case 35: monster "payg_cas05.gat",30,30,"エンペリウム",1288,1,"AgitExe#C5::OnAgitBreak"; 	break;
-		case 41: monster "prtg_cas01.gat",197,197,"エンペリウム",1288,1,"AgitExe#V1::OnAgitBreak"; 	break;
-		case 42: monster "prtg_cas02.gat",158,174,"エンペリウム",1288,1,"AgitExe#V2::OnAgitBreak"; 	break;
-		case 43: monster "prtg_cas03.gat",17,221,"エンペリウム",1288,1,"AgitExe#V3::OnAgitBreak"; 	break;
-		case 44: monster "prtg_cas04.gat",292,14,"エンペリウム",1288,1,"AgitExe#V4::OnAgitBreak"; 	break;
-		case 45: monster "prtg_cas05.gat",266,266,"エンペリウム",1288,1,"AgitExe#V5::OnAgitBreak"; 	break;
+		case 11: monster "aldeg_cas01.gat",216,24,"Emperium",1288,1,"AgitExe#L1::OnAgitBreak"; 	break;
+		case 12: monster "aldeg_cas02.gat",214,24,"Emperium",1288,1,"AgitExe#L2::OnAgitBreak"; 	break;
+		case 13: monster "aldeg_cas03.gat",206,32,"Emperium",1288,1,"AgitExe#L3::OnAgitBreak"; 	break;
+		case 14: monster "aldeg_cas04.gat",36,218,"Emperium",1288,1,"AgitExe#L4::OnAgitBreak"; 	break;
+		case 15: monster "aldeg_cas05.gat",28,102,"Emperium",1288,1,"AgitExe#L5::OnAgitBreak"; 	break;
+		case 21: monster "gefg_cas01.gat",198,182,"Emperium",1288,1,"AgitExe#B1::OnAgitBreak"; 	break;
+		case 22: monster "gefg_cas02.gat",176,178,"Emperium",1288,1,"AgitExe#B2::OnAgitBreak"; 	break;
+		case 23: monster "gefg_cas03.gat",245,167,"Emperium",1288,1,"AgitExe#B3::OnAgitBreak"; 	break;
+		case 24: monster "gefg_cas04.gat",174,178,"Emperium",1288,1,"AgitExe#B4::OnAgitBreak"; 	break;
+		case 25: monster "gefg_cas05.gat",194,184,"Emperium",1288,1,"AgitExe#B5::OnAgitBreak"; 	break;
+		case 31: monster "payg_cas01.gat",139,139,"Emperium",1288,1,"AgitExe#C1::OnAgitBreak"; 	break;
+		case 32: monster "payg_cas02.gat",39,25,"Emperium",1288,1,"AgitExe#C2::OnAgitBreak"; 	break;
+		case 33: monster "payg_cas03.gat",269,265,"Emperium",1288,1,"AgitExe#C3::OnAgitBreak"; 	break;
+		case 34: monster "payg_cas04.gat",271,29,"Emperium",1288,1,"AgitExe#C4::OnAgitBreak"; 	break;
+		case 35: monster "payg_cas05.gat",30,30,"Emperium",1288,1,"AgitExe#C5::OnAgitBreak"; 	break;
+		case 41: monster "prtg_cas01.gat",197,197,"Emperium",1288,1,"AgitExe#V1::OnAgitBreak"; 	break;
+		case 42: monster "prtg_cas02.gat",158,174,"Emperium",1288,1,"AgitExe#V2::OnAgitBreak"; 	break;
+		case 43: monster "prtg_cas03.gat",17,221,"Emperium",1288,1,"AgitExe#V3::OnAgitBreak"; 	break;
+		case 44: monster "prtg_cas04.gat",292,14,"Emperium",1288,1,"AgitExe#V4::OnAgitBreak"; 	break;
+		case 45: monster "prtg_cas05.gat",266,266,"Emperium",1288,1,"AgitExe#V5::OnAgitBreak"; 	break;
 	}
 	set '@dummy,getmapxy('@map$,'@dummy,'@dummy,1);		//'@map$以外はダミー
 	if(getcastledata('@map$,1))
@@ -90,16 +90,16 @@ function	script	AgitSummon	{
 		areamonster '@map$,0,0,0,0,"ペノメナ",1216,10;
 		areamonster '@map$,0,0,0,0,"アラーム",1193,17;
 		areamonster '@map$,0,0,0,0,"クロック",1269,9;
-		areamonster '@map$,0,0,0,0,"レイドリックアーチャー",1276,7;
+		areamonster '@map$,0,0,0,0,"レイドリックArcher",1276,7;
 		areamonster '@map$,0,0,0,0,"彷徨う者",1208,3;
 		areamonster '@map$,0,0,0,0,"アリス",1275,1;
-		areamonster '@map$,0,0,0,0,"ブラッディナイト",1268,1;
+		areamonster '@map$,0,0,0,0,"ブラッディKnight",1268,1;
 		areamonster '@map$,0,0,0,0,"ダークロード",1272,1;
 		monster '@map$,'@pos[0],'@pos[1],"ダークロード",1272,1;
 		monster '@map$,'@pos[0],'@pos[1],"時計塔管理者",1270,4;
-		monster '@map$,'@pos[0],'@pos[1],"ブラッディナイト",1268,1;
+		monster '@map$,'@pos[0],'@pos[1],"ブラッディKnight",1268,1;
 		monster '@map$,'@pos[0],'@pos[1],"深淵の騎士",1219,1;
-		monster '@map$,'@pos[0],'@pos[1],"レイドリックアーチャー",1276,5;
+		monster '@map$,'@pos[0],'@pos[1],"レイドリックArcher",1276,5;
 		break;
 	case 2:	//ブリトニア
 		areamonster '@map$,0,0,0,0,"イビルドルイド",1117,10;
@@ -115,7 +115,7 @@ function	script	AgitSummon	{
 		monster '@map$,'@pos[0],'@pos[1],"ミステルテイン",1203,1;
 		monster '@map$,'@pos[0],'@pos[1],"オークヒーロー",1087,1;
 		monster '@map$,'@pos[0],'@pos[1],"ハイオーク",1213,10;
-		monster '@map$,'@pos[0],'@pos[1],"オークアーチャー",1189,10;
+		monster '@map$,'@pos[0],'@pos[1],"オークArcher",1189,10;
 		break;
 	case 3:	//チュンリム
 		areamonster '@map$,0,0,0,0,"天下大将軍",1277,10;
@@ -124,32 +124,32 @@ function	script	AgitSummon	{
 		areamonster '@map$,0,0,0,0,"バースリー",1102,5;
 		areamonster '@map$,0,0,0,0,"月夜花",1150,1;
 		areamonster '@map$,0,0,0,0,"エドガ",1115,1;
-		areamonster '@map$,0,0,0,0,"ホロン",1129,11;
-		areamonster '@map$,0,0,0,0,"レイドリックアーチャー",1276,5;
-		areamonster '@map$,0,0,0,0,"コボルドアーチャー",1282,4;
+		areamonster '@map$,0,0,0,0,"Horong",1129,11;
+		areamonster '@map$,0,0,0,0,"レイドリックArcher",1276,5;
+		areamonster '@map$,0,0,0,0,"コボルドArcher",1282,4;
 		areamonster '@map$,0,0,0,0,"ガーゴイル",1253,5;
 		monster '@map$,'@pos[0],'@pos[1],"月夜花",1150,1;
 		monster '@map$,'@pos[0],'@pos[1],"エドガ",1115,1;
 		monster '@map$,'@pos[0],'@pos[1],"彷徨う者",1208,6;
-		monster '@map$,'@pos[0],'@pos[1],"レイドリックアーチャー",1276,5;
+		monster '@map$,'@pos[0],'@pos[1],"レイドリックArcher",1276,5;
 		break;
 	case 4:	//ヴァルキリーレルム
 		areamonster '@map$,0,0,0,0,"レイドリック",1163,15;
 		areamonster '@map$,0,0,0,0,"カーリッツバーグ",1132,10;
 		areamonster '@map$,0,0,0,0,"深淵の騎士",1219,5;
-		areamonster '@map$,0,0,0,0,"ブラッディナイト",1268,5;
-		areamonster '@map$,0,0,0,0,"ストームナイト",1251,1;
+		areamonster '@map$,0,0,0,0,"ブラッディKnight",1268,5;
+		areamonster '@map$,0,0,0,0,"ストームKnight",1251,1;
 		areamonster '@map$,0,0,0,0,"ハティー",1252,1;
-		areamonster '@map$,0,0,0,0,"レイドリックアーチャー",1276,5;
+		areamonster '@map$,0,0,0,0,"レイドリックArcher",1276,5;
 		areamonster '@map$,0,0,0,0,"グリフォン",1259,2;
 		areamonster '@map$,0,0,0,0,"キメラ",1283,2;
 		areamonster '@map$,0,0,0,0,"アリス",1275,1;
 		areamonster '@map$,0,0,0,0,"ジルタス",1200,1;
-		monster '@map$,'@pos[0],'@pos[1],"ブラッディナイト",1268,1;
-		monster '@map$,'@pos[0],'@pos[1],"ストームナイト",1251,1;
+		monster '@map$,'@pos[0],'@pos[1],"ブラッディKnight",1268,1;
+		monster '@map$,'@pos[0],'@pos[1],"ストームKnight",1251,1;
 		monster '@map$,'@pos[0],'@pos[1],"ハティー",1252,1;
 		monster '@map$,'@pos[0],'@pos[1],"深淵の騎士",1219,2;
-		monster '@map$,'@pos[0],'@pos[1],"レイドリックアーチャー",1276,5;
+		monster '@map$,'@pos[0],'@pos[1],"レイドリックArcher",1276,5;
 		break;
 	}
 	return;
@@ -161,10 +161,10 @@ function	script	AgitSummon	{
 // （Interサーバ接続時もしくは執事による召喚で呼び出される）
 //	callfunc "GuardianCall","AgitCode",Num,Mes;
 //
-// ■ 引数の詳細
+// • 引数の詳細
 //	"AgitCode" -> アジトを示すコード（例：L1,B2,C3,V4）
 //	    Num    -> 召喚するガーディアンの番号、10～17
-//	    Mes    -> 0:メッセージなし、1:メッセージあり（執事のとき）
+//	    Mes    -> 0:メッSageなし、1:メッSageあり（執事のとき）
 //-------------------------------------------------------------------------
 
 function	script	GuardianCall	{
@@ -409,10 +409,9 @@ function	script	GuardianCall	{
 		}
 	}
 	if(getarg(2)) {		//呼び出し元が執事のとき
-		mes "[執事"+strnpcinfo(0)+"]";
+		mes "[Butler "+strnpcinfo(0)+"]";
 		mes "ガーディアンが設置されました。";
-		mes "ガーディアンは私達の城を";
-		mes "敵から守ってくれるでしょう。";
+		mes "ガーディアンは私達の城を敵から守ってくれるでしょう。";
 		close;
 	}
 	return;

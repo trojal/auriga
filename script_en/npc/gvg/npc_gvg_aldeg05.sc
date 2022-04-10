@@ -60,7 +60,7 @@ OnKilled:
 }
 
 //============================================================
-// ギルドフラッグ
+// Guild Flag
 //------------------------------------------------------------
 -	script	#GldFlag_L5a	{
 	callfunc "AgitEmblemFlag",1,"aldeg_cas05.gat",167,225;
@@ -70,9 +70,9 @@ OnFlagEmb_L5:
 	flagemblem getcastledata("aldeg_cas05.gat",1);
 	end;
 }
-alde_gld.gat,267,153,7	duplicate(#GldFlag_L5a)	ギルドフラッグ#L5a01	722
-alde_gld.gat,265,93,6	duplicate(#GldFlag_L5a)	ギルドフラッグ#L5a02	722
-alde_gld.gat,265,87,6	duplicate(#GldFlag_L5a)	ギルドフラッグ#L5a03	722
+alde_gld.gat,267,153,7	duplicate(#GldFlag_L5a)	Guild Flag#L5a01	722
+alde_gld.gat,265,93,6	duplicate(#GldFlag_L5a)	Guild Flag#L5a02	722
+alde_gld.gat,265,87,6	duplicate(#GldFlag_L5a)	Guild Flag#L5a03	722
 
 -	script	#GldFlag_L5b	{
 	end;
@@ -81,27 +81,27 @@ OnFlagEmb_L5:
 	flagemblem getcastledata("aldeg_cas05.gat",1);
 	end;
 }
-//aldebaran.gat,128,97,4	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b01	722
-//aldeg_cas05.gat,170,85,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b02	722
-//aldeg_cas05.gat,142,212,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b03	722
-//aldeg_cas05.gat,149,196,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b04	722
-//aldeg_cas05.gat,41,180,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b05	722
-//aldeg_cas05.gat,38,201,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b06	722
-//aldeg_cas05.gat,65,182,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b07	722
-//aldeg_cas05.gat,65,205,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b08	722
-//aldeg_cas05.gat,10,218,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b09	722
-//aldeg_cas05.gat,164,201,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b10	722
-//aldeg_cas05.gat,14,117,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b11	722
-//aldeg_cas05.gat,10,225,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b12	722
-//aldeg_cas05.gat,187,59,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b13	722
-//aldeg_cas05.gat,154,51,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b14	722
-//aldeg_cas05.gat,22,211,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b15	722
-//aldeg_cas05.gat,150,202,2	duplicate(#GldFlag_L5b)	ギルドフラッグ#L5b16	722
+//aldebaran.gat,128,97,4	duplicate(#GldFlag_L5b)	Guild Flag#L5b01	722
+//aldeg_cas05.gat,170,85,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b02	722
+//aldeg_cas05.gat,142,212,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b03	722
+//aldeg_cas05.gat,149,196,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b04	722
+//aldeg_cas05.gat,41,180,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b05	722
+//aldeg_cas05.gat,38,201,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b06	722
+//aldeg_cas05.gat,65,182,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b07	722
+//aldeg_cas05.gat,65,205,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b08	722
+//aldeg_cas05.gat,10,218,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b09	722
+//aldeg_cas05.gat,164,201,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b10	722
+//aldeg_cas05.gat,14,117,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b11	722
+//aldeg_cas05.gat,10,225,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b12	722
+//aldeg_cas05.gat,187,59,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b13	722
+//aldeg_cas05.gat,154,51,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b14	722
+//aldeg_cas05.gat,22,211,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b15	722
+//aldeg_cas05.gat,150,202,2	duplicate(#GldFlag_L5b)	Guild Flag#L5b16	722
 
 //============================================================
-// カプラ職員
+// Kafra Staff
 //------------------------------------------------------------
-aldeg_cas05.gat,31,190,0	script	カプラ職員::AgitKafra_L5	117,{
+aldeg_cas05.gat,31,190,0	script	Kafra Staff::AgitKafra_L5	117,{
 	callfunc "AgitKafra",17;
 	close;
 OnAgitInit:
@@ -113,7 +113,7 @@ OnAgitInit:
 //============================================================
 // 執事
 //------------------------------------------------------------
-aldeg_cas05.gat,51,179,0	script	ブリムヘンセン	55,{
+aldeg_cas05.gat,51,179,0	script	Brymhensen	55,{
 	callfunc "AgitSteward","L5",'guardian_id,'guardian_x,'guardian_y,64,8;
 	close;
 OnAgitInit:
