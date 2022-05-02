@@ -39,7 +39,7 @@
 	// "postCreateCommand": "tools/ci/travis.sh importdb ragnarok ragnarok ragnarok 127.0.0.1",
 
 	// Use 'postStartCommand' to run commands when the container is started.
-	"postStartCommand": "doctl auth init --access-token $DO_TOKEN && doctl kubernetes cluster kubeconfig save e15266d8-76a6-4aa1-9529-5df961097936",
+	"postStartCommand": "doctl auth init --access-token $DO_TOKEN && doctl kubernetes cluster kubeconfig save e15266d8-76a6-4aa1-9529-5df961097936 && doctl registry login",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "devuser",
