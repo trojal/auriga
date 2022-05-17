@@ -1,247 +1,207 @@
 //====================================================================
 //Ragnarok Online SoulLinker Jobchange Script
-//　■ CHANGE_SL -> 0～4
+// - CHANGE_SL -> 0-4
 //====================================================================
 
 //==========================================
-// 試験申請
+// Application for Test
 //------------------------------------------
 
-morocc_in.gat,174,30,6	script	子供	716,{
+morocc_in.gat,174,30,6 script children 716,{
 	if(Job == Job_Linker) {
-		mes "[子供]";
-		mes "これから進む道において、";
-		mes "君に、そして共に歩む魂たちに";
-		mes "安らぎがありますように！";
-		mes "……えへへっ！";
+		mes "[Child]";
+		mes "May peace be with you and the souls who walk with you on the path ahead!" ;
+		mes "...... Ehehe!" ;
 		close;
 	}
-	if(Job != Job_Taekwon) {
-		mes "[子供]";
-		mes "……";
-		mes "お前に用はない！";
+	if(Job ! = Job_Taekwon) {
+		mes "[child]";
+		mes "......" ;
+		mes "I have no use for you!" ;
 		close;
 	}
 	if(JobLevel < 40) {
-		mes "[子供]";
-		mes "…………。";
+		mes "[child]";
+		mes "............." ;
 		close;
 	}
 	switch(CHANGE_SL) {
 	case 0:
-		mes "[子供]";
-		mes "…………";
-		mes "お前。";
+		mes "[child]";
+		mes "............" ;
+		mes "You." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "ん？";
+		mes "Hmm?" ;
 		next;
-		mes "[子供]";
-		mes "うん、そう。";
-		mes "そこのお前。";
-		mes "お前だよ。";
+		mes "[child]";
+		mes "Yeah, yeah." ;
+		mes "You there." ;
+		mes "That's you." ;
 		next;
-		if(select("僕、何でそんなに乱暴な言い方をするの？","無視する")==2) {
-			mes "[子供]";
-			mes "え？　あ、おい！";
-			mes "ちょっと待って！";
-			mes "どこへ行くんだ！";
-			mes "私の話をちょっと聞けって！";
+		if(select("Me, why are you being so violent?" , "ignore")==2) {
+			mes "[child]";
+			mes "What?  Oh, hey!" ;
+			mes "Wait a minute!" ;
+			mes "Where are you going!" ;
+			mes "Listen to me for a second!" ;
 			close;
 		}
-		emotion 32;
-		mes "[子供]";
-		mes "子供と思って無視するなよ。";
-		mes "これでも私は……305歳だ。";
+		EMOTION 32;
+		mes "[child]";
+		mes "Don't think of them as children and ignore them." ;
+		mes "This still makes me ..... .305 years old." ;
 		next;
-		mes "[子供]";
-		mes "お前の武術……それが本当に、";
-		mes "お前が進むべき道だと思う？";
-		mes "私が見る限り、お前には別の道もある。";
+		mes "[child]";
+		mes "Your martial arts ....... Do you really think that's the path you should be on?" ;
+		mes "As I see it, there is another path for you." ;
 		next;
-		mes "[子供]";
-		mes "よく考えてみて。";
-		mes "お前が今まで出会った人々、";
-		mes "強いウィザード、アルケミストなど……";
-		mes "その中で何か変な人がいなかったか？";
+		mes "[child]";
+		mes "Think about it." ;
+		mes "The people you've met, strong Wizards, Alchemists, etc. ......." ;
+		mes "Did any of those people seem strange to you?" ;
 		next;
-		mes "[子供]";
-		mes "そう、変な人……例えば……";
-		mes "幽霊とか。";
+		mes "[child]";
+		mes "Yes, weird people ...... For example, ......." ;
+		mes "Ghosts, for example." ;
 		next;
 		emotion 18;
-		mes "[子供]";
-		mes "あ、怖がることはないよ。";
-		mes "その人達は、お前の気にひかれて、";
-		mes "現れただけだ。お前にはまだ";
-		mes "分からないかもしれないけど。";
+		mes "[child]";
+		mes "Oh, don't be afraid." ;
+		mes "Those people just showed up because they were on your mind. You just might not know it yet." ;
 		next;
-		mes "[子供]";
-		mes "彼らは戦いたいんだ。";
-		mes "でも、肉体がないから、";
-		mes "見ていることしかできない。";
-		mes "そんな彼らに、お前ができる事がある。";
-		mes "それは……彼らの力を借りることだよ。";
+		mes "[Kids]";
+		mes "They want to fight." ;
+		mes "But they don't have a body, so all they can do is watch." ;
+		mes "There is something you can do for them." ;
+		mes "That's ...... It's what they can do for you." ;
 		next;
-		mes "[子供]";
-		mes "お前自身は、彼らの力を";
-		mes "使うことはできない。";
-		mes "でも、その魂の生前の";
-		mes "職業に就く者に対して、";
-		mes "力を貸すことはできる。";
+		mes "[child]";
+		mes "You can't use their power yourself." ;
+		mes "But you can lend your power to those who are in the occupation of their soul's life." ;
 		next;
-		mes "[子供]";
-		mes "しかもその魂は、死後もなお、";
-		mes "この世に留まっているわけだから、";
-		mes "生前はかなり強かったはず。";
+		mes "[child]";
+		mes "And since that soul still remains in the world after death, it must have been very strong in life." ;
 		next;
-		mes "[子供]";
-		mes "結論を言おう。";
-		mes "「ソウルリンカー」に";
-		mes "なるつもりはないか？";
+		mes "[child]";
+		mes "Let's conclude." ;
+		mes "Are you going to be a 'Soul Linker'?" ;
 		next;
-		if(select("僕、ママはどこにいるの？","ソウルリンカー？")==1) {
-			mes "[子供]";
-			mes "だ～か～ら～、子供じゃないって！";
-			mes "どうして人の話を聞かないんだ！";
-			mes "全く……。";
+		if(select("Where am I, Mom?" , "Soul Linker?")==1) {
+			mes "[child]";
+			mes "d~k~ra~, she's not a child!" ;
+			mes "Why don't you listen to people!" ;
+			mes "Totally ......." ;
 			close;
 		}
-		mes "[子供]";
-		mes "そう、ソウルリンカーだ。";
-		mes "強い力を持つ死者達の力を借りて、";
-		mes "仲間を強くできる者。";
-		mes "お前には充分、その素質がある。";
-		mes "お前はまだそれに気づいていないだけ。";
-		mes "どう？　やってみるか？";
+		mes "[child]";
+		mes "Yes, it's Soul Linker." ;
+		mes "One who can strengthen his friends with the help of the dead who have strong powers." ;
+		mes "You have the qualities to do so." ;
+		mes "You just don't know it yet." ;
+		mes "How about it?  Want to give it a try?" ;
 		next;
-		if(select("いや……","はい！")==1) {
-			mes "[子供]";
-			mes "……それは残念だ。";
-			mes "もし、後で拳の道を捨てる";
-			mes "決心がついたら、私を訪ねろ。";
+		if(select("No. ......" yes!") ==1) {
+			mes "[child]";
+			mes "...... It's a residual ghost." ;
+			mes "If you later decide to abandon the path of the fist, visit me." ;
 			close;
 		}
-		mes "[子供]";
-		mes "分かった……それでは、";
-		mes "儀式に必要な物を教えてやる。";
-		mes "^0000FFしおれないバラ^000000";
-		mes "^0000FFダイヤモンド３カラット、^000000";
-		mes "^0000FF止まらない心臓^000000を一個ずつだ。";
-		mes "全て用意できたら、戻ってこい。";
+		mes "[child]";
+		mes "Ok. ...... Then I'll tell you what you need for the ritual." ;
+		mes "A ^000000FF wilting rose^000000FF three carats of diamonds, and a ^000000FF unstoppable heart^000000FF." ;
+		mes "Come back when you have everything ready." ;
 		set CHANGE_SL,1;
 		close;
 	case 1:
-		mes "[子供]";
-		mes "よく来た。";
-		mes "えっと……^0000FFしおれないバラ^000000と";
-		mes "^0000FFダイヤモンド３カラット^000000、";
-		mes "^0000FF止まらない心臓^000000は持って来た？";
+		mes "[child]";
+		mes "Wellcome." ;
+		mes "Let's see, ...... Did you bring ^000000FF wilting roses ^000000FF wilting roses ^000000FF diamonds 3 carats ^000000FF and ^000000FF unstoppable hearts ^000000FF?" ;
 		next;
-		if(select("こちらです","いや、まだ……")==2) {
-			mes "[子供]";
-			mes "まあいい。";
-			mes "どうせ私には時間がたくさんある。";
-			mes "お前の都合がいい時でいいから、";
-			mes "ちゃんと持ってこい。";
+		if(select("Here it is", "No, still ......") ==2) {
+			mes "[child]";
+			mes "Well, okay." ;
+			mes "I have plenty of time anyway." ;
+			mes "Just bring it in when it's convenient for you, and you'll get it right." ;
 			close;
 		}
 		if(countitem(748) < 1 || countitem(732) < 1 || countitem(929) < 1) {
 			emotion 32;
-			mes "[子供]";
-			mes "おい、足りないよ。";
-			mes "嘘をつくなんて……。";
-			mes "見た目が子供だからって、";
-			mes "嘘が通用すると思うなよ！";
+			mes "[child]";
+			mes "Hey, you're missing." ;
+			mes "I can't believe you lied to me. ......." ;
+			mes "Just because you look like a kid, don't think you can lie!" ;
 			next;
-			mes "[子供]";
-			mes "今度はちゃんと揃えてこい！";
-			mes "……私には時間がたくさんあるから、";
-			mes "お前の都合がいい時で構わない。";
-			mes "ちゃんと持ってこい！";
+			mes "[child]";
+			mes "Get it right this time!" ;
+			mes "...... I have plenty of time, so when it's convenient for you is fine." ;
+			mes "Make sure you get it right!" ;
 			close;
 		}
 		delitem 748,1;
 		delitem 732,1;
 		delitem 929,1;
-		mes "[子供]";
-		mes "よし、確かに受け取った。";
-		mes "さてと……";
-		mes "これらを集めてこいと言った理由は、";
-		mes "後で説明するとして……。";
+		mes "[child]";
+		mes "Okay, I've certainly received it." ;
+		mes "Well, let's see: ......." ;
+		mes "I'll explain later why I told you to go collect these ......." ;
 		next;
-		mes "[マイア]";
-		mes "私の名前はマイア。";
-		mes "そして……";
-		mes "既に察しているかもしれないが、";
-		mes "私はこの世の者ではない。";
+		mes "[Maia]";
+		mes "My name is Maia." ;
+		mes "and ......." ;
+		mes "As you may have already guessed, I am not of this world." ;
 		next;
-		mes "[マイア]";
-		mes "別にあの世へ行けないわけではない。";
-		mes "でも、私にはすべきことが";
-		mes "残っているから。";
-		mes "後任がくれば……";
-		mes "やる気がある奴がいれば、";
-		mes "譲る気はあるのにな。";
+		mes "[Maia]";
+		mes "It's not that I can't go to the other side." ;
+		mes "But because there are things left for me to do." ;
+		mes "When my successor comes along, I'll be able to ......." ;
+		mes "I'd be willing to give it up if someone was willing to do it." ;
 		next;
-		mes "[マイア]";
-		mes "そう、私がここにいるのは、";
-		mes "素質がある者を見極め、";
-		mes "ソウルリンカーにするためだ。";
+		mes "[Maia]";
+		mes "Yes, I am here to identify those who have the qualities and make them Soul Linker." ;
 		next;
-		mes "[マイア]";
-		mes "心の準備ができたら、";
-		mes "声をかけてくれ。";
+		mes "[Maia]";
+		mes "When you're ready, give me a shout." ;
 		set CHANGE_SL,2;
 		close;
 	case 2:
 		if(SkillPoint) {
-			mes "[マイア]";
-			mes "スキルポイントが残っているよ！";
-			mes "拳を扱う者としてすべきことの";
-			mes "全てを成し遂げない限り、";
-			mes "私はお前をソウルリンカーに";
-			mes "することはできない。";
-			mes "さっさと覚えてきて！";
+			mes "[Maia]";
+			mes "You have some SkillPoints left!" ;
+			mes "I can't make you a Soul Linker unless you accomplish everything you should as a fist wielder." ;
+			mes "Go ahead and learn it quickly!" ;
 			close;
 		}
 		if(getmapusers("job_soul.gat")) {
-			mes "[マイア]";
-			mes "あ、ちょっとだけ待って。";
-			mes "今、他の誰かが";
-			mes "ソウルリンカーになるための";
-			mes "儀式を行っている。";
+			mes "[Maia]";
+			mes "Oh, just a minute." ;
+			mes "Now someone else is performing the ritual to become a Soul Linker." ;
 			close;
 		}
-		mes "[マイア]";
-		mes "よし、それでは";
-		mes "私についてきて！";
+		mes "[Maia]";
+		mes "Okay, then follow me!" ;
 		close2;
 		warp "job_soul.gat",30,30;
 		end;
 	case 3:
 	case 4:
-		mes "[マイア]";
-		mes "……では、儀式を行っていいかい？";
+		mes "[maia]";
+		mes "...... Now may we perform the ritual?" ;
 		next;
-		if(select("いや、ちょっと……","はい！")==1) {
-			mes "[マイア]";
-			mes "そうか……残念。";
-			mes "また気が変わったら、";
-			mes "話かけてくれ。";
+		if(select("No, hey ......" , "yes!") ==1) {
+			mes "[Maia]";
+			mes "Well, ...... Remaining GHOST.";
+			mes "If you change your mind again, talk to me." ;
 			close;
 		}
 		if(getmapusers("job_soul.gat")) {
-			mes "[マイア]";
-			mes "あ、ちょっとだけ待って。";
-			mes "今、他の誰かが";
-			mes "ソウルリンカーになるための";
-			mes "儀式を行っている。";
+			mes "[Maia]";
+			mes "Oh, just a minute." ;
+			mes "Now someone else is performing the ritual to become a Soul Linker." ;
 			close;
 		}
-		mes "[マイア]";
-		mes "よし、それじゃあ、";
-		mes "お前の心の中に入ってみよう……。";
+		mes "[Maia]";
+		mes "Okay, then, let's get inside your mind: ......." ;
 		close2;
 		warp "job_soul.gat",30,30;
 		end;
@@ -249,183 +209,143 @@ morocc_in.gat,174,30,6	script	子供	716,{
 }
 
 //==========================================
-// 試験および転職
+// exam and job change
 //------------------------------------------
 
-job_soul.gat,37,30,5	script	マイア#SL_Test	716,7,1,{
+job_soul.gat,37,30,5 script mya#SL_Test 716,7,1,{
 OnTouch:
-	if(getnpctimer(1) == 0) //タイマーが作動していなかったら
+	if(getnpctimer(1) == 0) //if timer was not running
 		initnpctimer;
 	switch(CHANGE_SL) {
 	case 2:
-		mes "[マイア]";
-		mes "ここはお前の心の中だ。";
-		mes "そして……お前の心に導かれて";
-		mes "集まった魂たちもいる。";
+		mes "[Maia]";
+		mes "This is your mind." ;
+		mes "And ...... There are souls gathered here, guided by your heart." ;
 		next;
-		mes "[マイア]";
-		mes "お前がソウルリンカーになれば、";
-		mes "彼らはいつもお前を手伝い、";
-		mes "お前の仲間達を強くしてくれるだろう。";
+		mes "[Maia]";
+		mes "When you become a Soul Linker, they will always help you and strengthen your people." ;
 		next;
-		mes "[マイア]";
-		mes "今、集まっている魂は少ない……。";
-		mes "君がソウルリンカーとして、";
-		mes "どれだけ熱心に修練するかによって、";
-		mes "集まる魂は異なる。";
-		mes "いずれは、より強い魂たちを";
-		mes "引き入れることができるはずだ。";
+		mes "[Maia]";
+		mes "There are few souls gathered now ......." ;
+		mes "The souls you gather depend on how diligently you practice as a Soul Linker." ;
+		mes "Eventually, you should be able to bring in stronger souls." ;
 		next;
-		mes "[マイア]";
-		mes "ここでお前が自身の心と";
-		mes "向き合うことができる時間は、";
-		mes "たった3分だ。";
-		mes "既にカウントはされている。";
-		mes "さあ、彼らに声をかけてみて。";
+		mes "[Maia]";
+		mes "You have only three minutes here to face your own mind." ;
+		mes "It's already been counted." ;
+		mes "[Maia]"; mes "Come on, give them a shout." ;
 		set CHANGE_SL,3;
 		close;
 	case 3:
-		mes "[マイア]";
-		mes "魂たちの言葉を聞き、";
-		mes "心に留めてあげて。";
+		mes "[Maia]";
+		mes "Listen to the words of the souls and take them to heart." ;
 		close;
 	case 4:
-		mes "[マイア]";
-		mes "彼らと充分に話をしたら、";
-		mes "お前はソウルリンカーに";
-		mes "なることができる。";
-		mes "どうだ？";
+		mes "[Maia]";
+		mes "If you talk to them enough, you can become a Soul Linker." ;
+		mes "What do you think?" ;
 		next;
-		if(select("もう少し話し合う","ソウルリンカーに転職する")==1) {
-			mes "[マイア]";
-			mes "分かった。";
-			mes "でも、時間は限られているから、";
-			mes "早くした方がいいよ。";
+		if(select("talk to them some more", "change your job to Soul Linker")==1) {
+			mes "[Maia]";
+			mes "Ok." ;
+			mes "But time is limited, so you'd better do it quickly." ;
 			close;
 		}
-		mes "[マイア]";
-		mes "分かった。";
-		mes "それでは、儀式をはじめる。";
+		mes "[Maia]";
+		mes "Ok." ;
+		mes "Then we will begin the ritual." ;
 		next;
 		misceffect 247,"";
-		mes "[マイア]";
-		mes "しおれないバラは、";
-		mes "お前の代わりに枯れ、";
+		mes "[Maia]";
+		mes "The rose that does not wilt, withers in your stead,";
 		next;
-		mes "[マイア]";
-		mes "止まらない心臓は、";
-		mes "お前の代わりに活動を停止し、";
+		mes "[Maia]";
+		mes "The heart that never stops, ceases its activity in your stead,"; next; mes "[Maia]"; mes "The heart that never stops, ceases its activity in your stead,
 		next;
-		mes "[マイア]";
-		mes "決して割れないダイヤモンドは、";
-		mes "お前の代わりに壊れるだろう。";
+		mes "[Maia]";
+		mes "The diamond that never breaks will break in your stead." ;
 		next;
-		mes "[マイア]";
-		mes "そして……";
-		mes "戦いを望む者たちが、";
-		mes "お前の代わりに戦ってくれるだろう。";
+		mes "[Maia]";
+		mes "and ......" ;
+		mes "Those who want to fight will fight for you." ;
 		next;
 		unequip;
 		jobchange Job_Linker;
 		set CHANGE_SL,0;
-		mes "[マイア]";
-		mes "一人の立派なソウルリンカーとして、";
-		mes "これからお前……";
-		mes "いや、君が進む道において、";
-		mes "君に、そして共に歩む魂たちに";
-		mes "安らぎがありますように！";
+		mes "[Maia]";
+		mes "As one fine Soul Linker, you ...... from now on." ;
+		mes "No, may peace be with you and the souls that walk with you on your path!" ;
 		close2;
 		warp "morocc.gat",156,46;
 		end;
 	}
 OnTimer180000:
 	stopnpctimer;
-	areawarp "job_soul.gat",30,30,30,30,"morocc.gat",157,47;
+	areawarp "job_soul.gat",30,30,30, "morocc.gat",157,47;
 	end;
 }
 
-job_soul.gat,23,30,6	script	アルケミストの魂	744,{
-	mes "[アルケミストの魂]";
-	mes "私より優れた技術を持つ者はいない。";
-	mes "他の誰よりも、私は手早く";
-	mes "製造することができる。";
+job_soul.gat,23,30,6 script Alchemist's soul 744,{
+	mes "[Alchemist's soul]";
+	mes "No one has better skills than me." ;
+	mes "I can manufacture more quickly than anyone else." ;
 	next;
-	mes "[アルケミストの魂]";
-	mes "結局、私はそんな過信を";
-	mes "していたせいもあり……";
-	mes "事故で死んでしまいました。";
+	mes "[Alchemist soul]";
+	mes "After all, I was partly to blame for such overconfidence ......." ;
+	mes "I died in an accident." ;
 	next;
-	mes "[アルケミストの魂]";
-	mes "でも、むしろその死によって、";
-	mes "力を得たのです。";
-	mes "更に速く製造ができるようになった……";
-	mes "ならば、製造をやってみたい！";
-	mes "そんな意志が生まれました。";
+	mes "[Alchemist's soul]";
+	mes "But rather by his death, he gained strength." ;
+	mes "Even faster manufacturing is now possible: ......." ;
+	mes "Then I want to try manufacturing!" ;
+	mes "Such a will was born." ;
 	next;
-	mes "[アルケミストの魂]";
-	mes "後輩たちがもっと頑張れるように、";
-	mes "……私の力を与え";
-	mes "そして彼らにもっと強い意志を";
-	mes "持たせてあげたいのです！";
+	mes "[The Soul of an Alchemist]";
+	mes "I want to help my juniors to do more ...... I want to give them my strength and to give them more will!" ;
 	next;
-	mes "[アルケミストの魂]";
-	mes "ご協力をお願いします。";
+	mes "[Soul of an Alchemist]";
+	mes "I would appreciate your cooperation." ;
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;
 }
 
-job_soul.gat,30,23,7	script	セージの魂	754,{
-	mes "[セージの魂]";
-	mes "破壊！";
-	mes "破壊だけが私の進む道！";
-	mes "私は生前、破壊を思う存分行う前に、";
-	mes "年老いてしまった。";
+job_soul.gat,30,23,7 script Sage's soul 754,{
+	mes "[Sage's soul]";
+	mes "Destruction!" ;
+	mes "Destruction is the only way I will go!" ;
+	mes "I grew old before I was alive, before I had done as much destruction as I wanted." ;
 	next;
-	mes "[セージの魂]";
-	mes "各地を冒険する誰かが";
-	mes "私の力を借りて、世のものを";
-	mes "殴り壊したいと言うのなら、";
-	mes "喜んで私の力を貸してあげよう！";
+	mes "[Sage's soul]";
+	mes "If someone adventuring around the world wants to use my power to beat and destroy the things of the world, I will gladly lend my help!" ;
 	next;
-	mes "[セージの魂]";
-	mes "私には、私には、";
-	mes "この私には、この世の全てのものを";
-	mes "破壊する力があるんだ！";
-	mes "だが、君が手伝ってくれなければ、";
-	mes "それは、無いに等しい！";
+	mes "[Sage's soul]";
+	mes "I, I, I have the power to destroy everything in the world!" ;
+	mes "But without your help, it is as good as nothing!" ;
 	next;
-	mes "[セージの魂]";
-	mes "君に任せたい！";
+	mes "[Sage's soul]";
+	mes "I want to leave it to you!" ;
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;
 }
 
-job_soul.gat,30,37,5	script	モンクの魂	827,{
-	mes "[モンクの魂]";
-	mes "俺は生きていた頃、";
-	mes "モンクとしてすべきことを";
-	mes "全て終えたと思っていた。";
-	mes "だが、死んでから";
-	mes "改めて考えてみると、";
-	mes "そうでもなかった。";
+job_soul.gat,30,37,5 script Monk's soul 827,{
+	mes "[Monk's soul]";
+	mes "When I was alive, I thought I had done all I had to do as Monk." ;
+	mes "But when I died and thought about it again, I wasn't so sure." ;
 	next;
-	mes "[モンクの魂]";
-	mes "俺はこの技術を後輩に引き継ぎたい。";
-	mes "でも、直接教えることはできない。";
-	mes "だから後輩は、俺の力を借りないと";
-	mes "その技術を扱うことはできないが……。";
+	mes "[Monk's soul]";
+	mes "I want to pass on these skills to my juniors." ;
+	mes "But I can't teach them directly." ;
+	mes "So the juniors can't handle that technology without my help, but ......." ;
 	next;
-	mes "[モンクの魂]";
-	mes "それでも、引き継ぐためには、";
-	mes "お前の力が必要なんだ。";
-	mes "何はともあれ、俺を手伝って、";
-	mes "世の後輩たちに、より高みの世界を";
-	mes "教えてあげてくれないか？";
+	mes "[Monk's soul]";
+	mes "Still, I need your help to take over." ;
+	mes "At any rate, why don't you help me and teach the juniors of the world about the higher world?" ;
 	next;
-	mes "[モンクの魂]";
-	mes "頼む！";
+	mes "[Monk's soul]";
+	mes "Please!" ;
 	if(CHANGE_SL == 3)
 		set CHANGE_SL,4;
 	close;

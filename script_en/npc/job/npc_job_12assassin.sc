@@ -1,1200 +1,992 @@
 //====================================================================
 //Ragnarok Online Assassin jobchange script
-//
-//　■ CHANGE_AS
-//	1	筆記試験
-//	2	筆記試験クリア
-//	3	実技試験１
-//	4	実技試験２
-//	5	最終試験クリア
-//
-//　■ $@as_tester$ -> 実技挑戦者のキャラ名
-//     @as_step     -> ギルドマスター部屋用
+// - CHANGE_AS
+// - CHANGE_AS
+// 1 Written exam
+// 2 Written test passed
+// 3 Practical test 1
+// 4 Practical exam 2
+// 5 Final exam cleared
+// - $@as_tester$ -> character name of the person who attempted the practical test
+// - $@as_tester$ -> character name of practical test taker
+// @as_step -> for Guildmaster room
 //====================================================================
 
 //==========================================
-// 試験受付および転職
+// test reception and job change
 //------------------------------------------
 
-in_moc_16.gat,19,33,4	script	ギルド員	55,{
+in_moc_16.gat,19,33,4 script Guild Member 55,{
 	if(Upper == UPPER_HIGH) {
-		mes "[殺気を放つ者]";
-		mes "ほう……貴様は……";
-		mes "ただならぬ気配を持っているな。";
+		mes "[Ferocious-looking guy]";
+		mes "How ...... You are ......." ;
+		mes "You've got an unusual look." ;
 		next;
-		mes "[殺気を放つ者]";
-		mes "しかし私を圧するその気配……";
-		mes "気に食わんな。";
-		mes "帰れ！";
+		mes "[Ferocious-looking guy]";
+		mes "But that sign of pressure on me: ......" ;
+		mes "I don't like it." ;
+		mes "Go home!" ;
 		close;
 	}
 	if(Job == Job_Thief && SkillPoint) {
-		mes "[殺気を放つ者]";
-		mes "スキルポイントが残っていては";
-		mes "転職はできない。";
-		mes "皆消費して来るように。";
+		mes "[Ferocious-looking guy]";
+		mes "You can't change jobs if you have any SkillPoints left." ;
+		mes "Everyone should consume and come." ;
 		close;
 	}
-	mes "[殺気を放つ者]";
-	mes "ん…";
-	mes "何をしに来た？";
-	mes "……";
+	mes "[Ferocious-looking guy]";
+	mes "Hmm..." ;
+	mes "What are you doing here?" ;
+	mes "......" ;
 	next;
 	if(Job == Job_Novice) {
-		mes "[殺気を放つ者]";
-		mes "おい…ノービス。";
-		mes "ここは貴様のような者が来て良い";
-		mes "場所ではない。立ち去れ…";
+		mes "[Ferocious-looking guy]";
+		mes "Hey... Novice." ;
+		mes "This is no place for a man like you. Walk away..." ;
 		close;
 	}
 	if(getbaseclass(Class) == CLASS_AL) {
-		mes "[殺気を放つ者]";
-		mes "神に仕える者が何をしに来た？";
-		mes "ここには貴様らが求める神はいない。";
-		mes "帰るがいい…";
+		mes "[Ferocious-looking guy]";
+		mes "What's a servant of God doing here?" ;
+		mes "There is no God here that you seek." ;
+		mes "[Ferocious-looking guy]"; mes "Go home..." ;
 		close;
 	}
 	if(Job == Job_Assassin) {
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "うん…";
-		mes "たしか " +strcharinfo(0)+ " だったか…";
+		mes "[Veteran Assassin Huey]";
+		mes "Yeah..." ;
+		mes "I think it was " +strcharinfo(0)+ "..." ;
 		next;
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "せっかくだが、今はギルドからの";
-		mes "仕事の要請は無い。";
-		mes "修練を積んでいてくれ。さらばだ。";
+		mes "[Veteran Assassin Huey]";
+		mes "Sorry to bother you, but I don't have a job offer from the guild right now." ;
+		mes "[Veteran Assassin Huey]"; mes "[Veteran Assassin Huey]"; mes "Stay in training. Farewell." ;
 		close;
 	}
-	if(Job != Job_Thief) {
-		mes "[殺気を放つ者]";
-		mes "何か仕事でも持ってきたのか？";
-		mes "そうでなければ早々に立ち去れ…";
+	if(Job ! = Job_Thief) {
+		mes "[Ferocious-looking guy]";
+		mes "You got a job for me?" ;
+		mes "Otherwise, leave early..." ;
 		close;
 	}
 	if(JobLevel < 40) {
-		mes "[殺気を放つ者]";
-		mes "うん…貴様はまだ修練不足だな。";
-		mes "アサシンになりたいのなら、少なくとも";
-		mes "シーフとしての修練をある程度積ま";
-		mes "なければならない。";
+		mes "[Ferocious-looking guy]";
+		mes "Yeah... You're still a little out of practice." ;
+		mes "If you want to be an Assassin, you must at least have some training as a Thief." ;
 		next;
-		mes "[殺気を放つ者]";
-		mes "それではさらなる修練を積んで";
-		mes "から戻ってくるのだ…";
-		mes "正確な転職条件は、JobLv40以上";
-		mes "であること。";
+		mes "[Ferocious-looking guy]";
+		mes "Then you will come back after further training..." ;
+		mes "The exact requirements for changing jobs are JobLv 40 or higher." ;
 		close;
 	}
 	switch(CHANGE_AS) {
 	default:
-		mes "[殺気を放つ者]";
-		mes "うん…シーフか…";
-		mes "シーフとして相当の修練を積んだな。";
-		mes "どうだ？アサシンに転職するつもりは";
-		mes "ないか？";
+		mes "[Ferocious-looking guy]";
+		mes "Yeah... Thief..." ;
+		mes "You've got quite the training as a Thief." ;
+		mes "What do you think, are you going to switch to Assassin?" ;
 		next;
-		switch (select("そのために来た","転職条件は？","遠慮する")) {
+		switch (select("That's why I'm here", "What are the conditions for changing jobs?" , "No thanks")) {
 			case 1:
-				mes "[殺気を放つ者]";
-				mes "うむ…久しぶりの客だ。";
-				mes "よし、受付に送ってやろう。";
-				hideoffnpc "ギルド関係者#assassin1";
-				hideonnpc "ギルド関係者#assassin2";
+				mes "[Ferocious-looking guy]";
+				mes "Mm... It's been a while since I've had a visitor." ;
+				mes "Okay, let's send him to reception." ;
+				hideoffnpc "Guild Member#assassin1";
+				hideonnpc "Guild Member#assassin2";
 				close2;
 				savepoint "in_moc_16.gat",15,12;
 				warp "in_moc_16.gat",19,76;
 				end;
 			case 2:
-				mes "[殺気を放つ者]";
-				mes "転職条件は…";
-				mes "一．シーフであること";
-				mes "二．JobLvが40以上であること";
-				mes "三．ギルドからのテストにパスすること";
-				mes "の三つだ。";
+				mes "[Ferocious-looking guy]";
+				mes "The terms of my new job..." ;
+				mes "The three conditions are: 1. to be a Thief, 2. to have a JobLv of 40 or higher, and 3. to pass a test from the guild. Passing a test from the guild." ;
 				next;
-				mes "[殺気を放つ者]";
-				mes "シーフである水準以上の修練を";
-				mes "積んだ者なら、テストを簡単に";
-				mes "クリアすることも可能だ。";
+				mes "[Ferocious-looking guy]";
+				mes "If you are a Thief and have trained above a certain level, you can also pass the test easily." ;
 				close;
 			case 3:
-				mes "[殺気を放つ者]";
-				mes "そうか…仕方ない…";
+				mes "[Ferocious-looking guy]";
+				mes "Well... No choice..." ;
 				close;
 		}
 	case 4:
-		mes "[殺気を放つ者]";
-		mes "気を失ったか…";
-		mes "HPとSPを回復してやる。";
-		mes "力を出してもう一度挑戦しろ。";
+		mes "[Ferocious-looking guy]";
+		mes "[Ferocious-looking guy]" ;
+		mes "I'll restore your HP and SP." ;
+		mes "[Ferocious-looking guy]"; mes "Try again with your strength." ;
 		percentheal 100,100;
 		next;
-		mes "[殺気を放つ者]";
-		mes "ところで…気絶するほどのものか？";
-		mes "次の挑戦でもどうか…";
-		mes "まだ無理ではないか？";
+		mes "[Ferocious-looking guy]";
+		mes "By the way... Is it enough to make you pass out?" ;
+		mes "How about the next challenge..." ;
+		mes "Still not possible?" ;
 		next;
-		if(select("大丈夫だ","無理だ…次の機会にする")==1) {
-			mes "[殺気を放つ者]";
-			mes "ふむ…そうか…";
-			mes "頑張ってみろ。";
+		if(select("It's okay", "Impossible... I'll do it next time.")==1) {
+			mes "[Ferocious-looking guy]";
+			mes "Hmm... I see..." ;
+			mes "Good luck with that." ;
 			close2;
 			warp "in_moc_16.gat",19,76;
 		}
 		else {
-			mes "[殺気を放つ者]";
-			mes "そうか…いつでも待っている。";
+			mes "[Ferocious-looking guy]";
+			mes "Well... I'm always waiting." ;
 			next;
-			mes "[殺気を放つ者]";
-			mes "ああ…街に戻ったらセーブを";
-			mes "忘れないように。";
-			mes "じゃ……";
+			mes "[Ferocious-looking guy]";
+			mes "Oh... Don't forget to save when you get back to town." ;
+			mes "Then ......." ;
 			close2;
 		}
 		set CHANGE_AS,2;
 		end;
 	case 5:
 		if(countitem(1008) < 1) {
-			mes "[ベテランアサシン・ヒュイ]";
-			mes "む……何を聞き間違ったか";
-			mes "「非情な心」を持っていないな。";
+			mes "[Veteran Assassin Huey]";
+			mes "mu...... I don't know what I heard wrong, you don't have a "ruthless heart"." ;
 			next;
-			mes "[ベテランアサシン・ヒュイ]";
-			mes "どこかで落としでもしたか…？";
+			mes "[Veteran Assassin Huey]";
+			mes "Did you drop it somewhere...?" ;
 			next;
-			mes "[ベテランアサシン・ヒュイ]";
-			mes "ギルドマスターが気づかないうちに";
-			mes "早く見つけてこい！";
+			mes "[Veteran Assassin Huey]";
+			mes "Go find it quickly before the Guildmaster notices!" ;
 			next;
-			mes "[ベテランアサシン・ヒュイ]";
-			mes "見つかったらすぐに戻ってこいよ！";
+			mes "[Veteran Assassin Huey]";
+			mes "Come back as soon as you find him!" ;
 			close;
 		}
 		if(SkillPoint) {
-			mes "[殺気を放つ者]";
-			mes "スキルポイントが残っていては";
-			mes "転職はできない。";
-			mes "皆消費して来るように。";
+			mes "[Ferocious-looking guy]";
+			mes "You can't change jobs if you have any SkillPoints left." ;
+			mes "Everyone should consume and come." ;
 			close;
 		}
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "…おめでとう。いよいよ転職だ。";
-		mes "その前に…ギルドマスターが";
-		mes "求めたものを見てみようか…";
+		mes "[Veteran Assassin Huey]";
+		mes "... Congratulations. You're finally moving on." ;
+		mes "But first... Let's see what the Guildmaster asked for..." ;
 		next;
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "………";
-		mes "……";
-		mes "…";
+		mes "[Veteran Assassin Huey]";
+		mes "........." ;
+		mes "......" ;
+		mes "..." ;
 		next;
 		delitem 1008,1;
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "うむ、良いな。";
+		mes "[Veteran Assassin Huey]";
+		mes "Mm, good." ;
 		next;
 		unequip;
 		jobchange Job_Assassin;
 		set CHANGE_AS,0;
-		mes "[ベテランアサシン・ヒュイ]";
-		mes "よし！アサシンとしての道を歩んで";
-		mes "いけ！常に自分の信念を貫き";
-		mes "生くのだぞ。";
-		mes "たまには遊びにこい。転職を祝おう。";
+		mes "[Veteran Assassin Huey]";
+		mes "Good, go on your way as an Assassin! Always live up to your GHOST beliefs!" ;
+		mes "Come visit me sometime. Celebrate your new job." ;
 		close;
 	}
 }
 
 
 //==========================================
-// 一次試験（筆記試験）
+// First round (written test)
 //------------------------------------------
 
-in_moc_16.gat,21,91,2	script	ギルド関係者#assassin1	730,1,1,{
+in_moc_16.gat,21,91,2 script Guild Member#assassassin1 730,1,1,{
 	end;
 OnTouch:
-	mes "[アサシン・カイ]";
-	mes "うん…？";
+	mes "[Assassin Kai]";
+	mes "Yeah...?" ;
 	close2;
 	misceffect 16;
 	hideonnpc;
-	hideoffnpc "ギルド関係者#assassin2";
+	hideoffnpc "Guild Member#assassassin2";
 	end;
 }
 
-in_moc_16.gat,25,90,2	script	ギルド関係者#assassin2	730,2,2,{
-	mes "[アサシン・カイ]";
-	mes "まあ近くに来い。俺は人の顔を見て";
-	mes "話すようにしている。";
-	mes "俺は顔の見えないところで話を";
-	mes "されるのが苦手でね…";
-	mes "特に後ろから話しかけられるのは";
-	mes "嫌いだ…";
+in_moc_16.gat,25,90,2 script Guild Member#assassin2 730,2,2,{
+	mes "[Assassin Kai]";
+	mes "Well come closer. I try to talk to people face to face." ;
+	mes "I'm not a big fan of people talking to me faceto-face..." ;
+	mes "I especially don't like it when people talk to me from behind..." ;
 	close;
 OnTouch:
-	if(CHANGE_AS != 1) {
-		mes "[アサシン・カイ]";
-		mes "何だ…転職しに来た奴か…";
-		mes "誰かが近づくと避けるのが習慣に";
-		mes "なっていてね…";
-		mes "ふむ…ここまでご苦労だったな。";
+	if(CHANGE_AS ! = 1) {
+		mes "[Assassin Kai]";
+		mes "What the... He's here to change jobs..." ;
+		mes "I have a habit of avoiding anyone who approaches me..." ;
+		mes "Hmm... I'm glad you've made it this far." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "アサシンへの転職について";
-		mes "聞きたいのか？";
+		mes "[Assassin Kai]";
+		mes "You want to ask me about my new job at Assassin?" ;
 		next;
-		if(select("そうだ","いや")==1) {
-			mes "[アサシン・カイ]";
-			mes "よし、すぐに転職申込書を作ろうか。";
-			mes "そこの用紙に名前とJobLvを";
-			mes "書くように。";
+		if(select("Yes", "No")==1) {
+			mes "[Assassin Kai]";
+			mes "Okay, let's make a job application right away." ;
+			mes "Write your name and JobLv on the form there." ;
 		}
 		else {
-			mes "[アサシン・カイ]";
-			mes "ふむ…";
-			mes "……";
+			mes "[Assassin Kai]";
+			mes "Hmm..." ;
+			mes "......" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "本当に？";
-			mes "……";
+			mes "[Assassin Kai]";
+			mes "Really?" ;
+			mes "......" ;
 			next;
-			if(select("はい","いや、転職したい")==1) {
-				mes "[アサシン・カイ]";
-				mes "なら出て行くんだ。";
+			if(select("Yes", "No, I want to change jobs")==1) {
+				mes "[Assassin Kai]";
+				mes "Then leave." ;
 				close2;
 				warp "moc_fild16.gat",206,229;
 				end;
 			}
-			mes "[アサシン・カイ]";
-			mes "……";
-			mes "……冷やかしか!?";
-			mes "とにかく…転職するんだな？";
+			mes "[Assassin-Kai]";
+			mes "......" ;
+			mes "...... Chillin' or what! Anyway... You're changing jobs, aren't you?" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "そこの転職申込書に";
-			mes "名前とJobLvを書いてくれ。";
+			mes "[Assassin Kai]";
+			mes "Write your name and JobLv on the job change application there." ;
 		}
 		next;
-		mes "[アサシン・カイ]";
-		mes "どれ… " +strcharinfo(0)+ " と…";
-		mes "JobLvは " +JobLevel+ " …";
+		mes "[Assassin Kai]";
+		mes "Which... " +strcharinfo(0)+ " and..." ;
+		mes "JobLv is " +JobLevel+ " ..." ;
 		next;
 		if(JobLevel >= 50) {
-			mes "[アサシン・カイ]";
-			mes "なに！ 50 だと！";
-			mes "お前…相当な修練を積んだな！";
-			mes "久々に使える奴が入って来たと";
-			mes "上層部が喜ぶだろう…";
-			mes "あ、独り言だ。早く書くように。";
+			mes "[Assassin Kai]";
+			mes "What! 50!" ;
+			mes "You... You've got a lot of experience!"; mes "[Assassin Kai]" ;
+			mes "I'm sure the top brass will be pleased to have someone of use after all these years..." ;
+			mes "Oh, I'm talking to myself. Write quickly." ;
 		}
 		else {
-			mes "[アサシン・カイ]";
-			mes "ふむ…賢明だな。";
-			mes "最近皆根性が無くてね…";
-			mes "あ、独り言だ。忘れてくれ。";
+			mes "[Assassin Kai]";
+			mes "Hmm... That's wise." ;
+			mes "Everyone's been so gutless lately..." ;
+			mes "Oh, I'm talking to myself. Forget it." ;
 		}
 		next;
-		mes "[アサシン・カイ]";
-		mes "……";
+		mes "[Assassin Kai]";
+		mes "......" ;
+		} next;
+		mes "[Assassin Kai]";
+		mes "Have you finished making to the application form?" ;
+		mes "Then give it to me." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "申込書への作成が終わったか。";
-		mes "ではそれを私に。";
-		next;
-		mes "[アサシン・カイ]";
-		mes "よし、行け。幸運を祈る。";
+		mes "[Assassin Kai]";
+		mes "Alright, go. Good luck." ;
 		close2;
 		warp "in_moc_16.gat",19,144;
 		misceffect 16;
 		hideonnpc;
-		hideoffnpc "ギルド関係者#assassin1";
+		hideoffnpc "Guild Member#assassassin1";
 		end;
 	}
-	mes "[アサシン・カイ]";
-	mes "おう…試験は終わったか？";
+	mes "[Assassin Kai]";
+	mes "Oh... Did you finish your exam?" ;
 	next;
-	mes "[アサシン・カイ]";
-	mes "ん…筆記で落ちたって？";
-	mes "ぷっ…くくく…はははは！";
+	mes "[Assassin Kai]";
+	mes "Hmm... You failed the written exam?" ;
+	mes "Pfft... Kkkkkkkkkkkkkkkkkkkkkkkkkkkkk... Ha-ha-ha-ha!" ;
 	next;
-	mes "[アサシン・カイ]";
-	mes "いや…久しぶりに面白い" +(Sex? "奴": "姉さん");
-	mes "だと思ってさ…";
-	mes "アサシンになりたいなら、あれくらい";
-	mes "知ってて当然だろう？くくく…";
+	mes "[Assassin Kai]";
+	mes "No... It's the funniest thing I've seen in a long time" +(Sex? "he": "sis");
+	mes "I thought..." ;
+	mes "If you want to be an Assassin, you should know that much, right? Damn..." ;
 	next;
-	mes "[アサシン・カイ]";
-	mes "…ははは腹が痛い…";
+	mes "[Assassin Kai]";
+	mes "... Haha my stomach hurts..." ;
 	next;
-	mes "[アサシン・カイ]";
-	mes "くく…笑ってる場合じゃないな。";
-	mes "ふふ…ヒントでもあげようか？";
+	mes "[Assassin Kai]";
+	mes "Kukku... I don't have time to laugh..." ;
+	mes "Hmmm... I'll give you a hint?" ;
 	next;
-	switch (select("はい","笑ってないでヒントをくれ","ヒントなどいらない")) {
+	switch (select("Yes", "Don't laugh, give me a hint", "I don't need a hint")) {
 	case 1:
-		mes "[アサシン・カイ]";
-		mes "ぷ…ははははは！";
-		mes "これはお笑いだ…";
-		mes "腹が痛い…あまり笑わせないでくれ！";
+		mes "[Assassin Kai]";
+		mes "Puh... Ha ha ha ha!" ;
+		mes "This is hilarious..." ;
+		mes "My stomach hurts... Don't make me laugh too much!" ;
 		next;
-		mes "[名も無き者]";
-		mes "…くくく";
+		mes "[The Anonymous One]";
+		mes "... . kukku";
 		next;
-		mes "[アサシン・カイ]";
-		mes "ははは…名も知らない者が";
-		mes "ずいぶんと図々しいね…";
+		mes "[Assassin Kai]";
+		mes "Ha ha ha... You are very brazen for someone whose name I don't even know..." ;
 		next;
-		mes "[名も無き者]";
-		mes "……";
+		mes "[The Anonymous One]";
+		mes "......" ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "ヒントか…";
+		mes "[Assassin Kai]";
+		mes "A hint..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "…";
+		mes "[Assassin Kai]";
+		mes "..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "……";
+		mes "[Assassin Kai]";
+		mes "......" ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "…………";
+		mes "[Assassin Kai]";
+		mes "............" ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "………………";
+		mes "[Assassin Kai]";
+		mes ".................." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "……………………";
+		mes "[Assassin Kai]";
+		mes "........................" ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "やだね。";
+		mes "[Assassin Kai]";
+		mes "Oh no." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "くくく…「はい」だって…";
+		mes "[Assassin Kai]";
+		mes "Kukku... He said yes..." ;
 		close;
 	case 2:
-		mes "[アサシン・カイ]";
-		mes "ふむ…なりふり構っていられないか…";
-		mes "まあ…たしかに誰でも過ちはおかす。";
-		mes "笑ってすまん。";
-		mes "だがプライドは捨てるなよ。";
+		mes "[Assassin Kai]";
+		mes "Hmm... I guess we'll just have to wait and see..." ;
+		mes "Well... Yes, everyone makes mistakes."; mes "Well... ;
+		mes "Sorry for laughing." ;
+		mes "But don't give up your pride." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "ヒントは少しだ。";
-		mes "アサシンについて、一言二言話す。";
+		mes "[Assassin Kai]";
+		mes "A few tips." ;
+		mes "I'll say a word or two about Assassin." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "何より俺達は、プライドを守らな";
-		mes "ければならない。";
-		mes "「砂漠の牙」アサシンだというな。";
-		mes "いつかは俺達の出番が来る…";
-		mes "今はその時を待つだけだ。";
+		mes "[Assassin Kai]";
+		mes "Above all, we must protect our pride." ;
+		mes "[Desert Fang]"; mes "Don't say Assassin." ;
+		mes "Someday it will be our turn..." ;
+		mes "Now we just have to wait for that time..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "そして…中には近くに親しい人間を";
-		mes "持つ者もいるが、俺達は仕事柄たいてい";
-		mes "孤独で生きる。";
-		mes "もし、君の恋人や友達がひどい目に";
-		mes "遭い、血を見ることになったら…";
+		mes "[Assassin Kai]";
+		mes "And... Some of us have someone close by, but we usually live in solitude because of our work." ;
+		mes "If your loved one or friend gets hurt badly and you have to see blood..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "決して忘れることはできないだろう。";
-		mes "その重みを一生負い生きなければ";
-		mes "ならない…";
+		mes "[Assassin Kai]";
+		mes "You will never forget it." ;
+		mes "You will have to live with the weight of it for the rest of your life..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "少し寂しいが、己の道を歩むのだから";
-		mes "これもしかたないだろう…";
-		mes "文字通り「己の道」なんだ。";
+		mes "[Assassin Kai]";
+		mes "It's a little sad, but since I'm going my own way, I guess that's what I have to do..." ;
+		mes "It's literally 'my way'." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "俺が言えることはこれくらいか…";
+		mes "[Assassin Kai]";
+		mes "So much for what I can say..." ;
 		close;
 	case 3:
-		mes "[アサシン・カイ]";
-		mes "うむ…";
+		mes "[Assassin Kai]";
+		mes "Mm..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "その精神だ。プライドを捨てるような";
-		mes "ことをしてはならない。";
-		mes "俺達は誰がなんと言おうと、";
-		mes "「砂漠の牙」としてのプライドがある。";
-		mes "笑ってすまない…正式に詫びよう…";
+		mes "[Assassin Kai]";
+		mes "That's the spirit. Don't do anything that will throw away your pride." ;
+		mes "We have pride as 'Desert Fangs' no matter what anyone says." ;
+		mes "Sorry for laughing... I formally apologize..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "最近はあまりにも腐った輩が";
-		mes "多くてね…自分の仕事に関する知識は";
-		mes "置いておくとしても、アサシンとしての";
-		mes "プライドや、今まで辛い時に努力した";
-		mes "記憶はどこへいってしまったのか…";
+		mes "[Assassin Kai]";
+		mes "There are too many corrupt people around these days... Even if I put aside my knowledge of my job, where is my pride as Assassin and my memory of the efforts I have made in the past when times were hard..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "まったく…";
+		mes "[Assassin Kai]";
+		mes "Totally..." ;
 		next;
-		mes "[アサシン・カイ]";
-		mes "是非たのむ。アサシンになっても";
-		mes "プライドは絶対に捨てるなよ！";
+		mes "[Assassin Kai]";
+		mes "By all means, don't ever give up your pride when you become Assassin!" ;
 		next;
-		if(select("…分かった","…嫌だ")==2) {
-			mes "[アサシン・カイ]";
-			mes "…これだけ言ってもわからないか？";
+		if(select("... Ok","... I don't want to")==2) {
+			mes "[Assassin Kai]";
+			mes "... Don't you get it after all this?" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "プライドを守ることがそんなに";
-			mes "難しいことなのか？";
+			mes "[Assassin Kai]";
+			mes "Is it so hard to keep your pride?" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "他人の靴をなめる犬になるというのか！";
+			mes "[Assassin Kai]";
+			mes "You mean to be a [Dog] who licks other people's shoes!" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "出て行け！今すぐにだ！";
-			mes "お前のような奴はアサシンになる";
-			mes "資格などない！";
+			mes "[Assassin Kai]";
+			mes "Get out! Now!" ;
+			mes "People like you don't deserve to be Assassin!" ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "くわっ!!!!!";
+			mes "[Assassin Kai]";
+			mes "Kwak !!!!!" ;
 			close2;
 			warp "c_tower4.gat",64,76;
 			end;
 		}
-		mes "[アサシン・カイ]";
-		mes "うむ。その静かな返事に、決意が";
-		mes "込められているな。";
-		mes "それではいくつかのヒントを与える。";
+		mes "[Assassin Kai]";
+		mes "Mm. You've got a lot of determination in that quiet reply." ;
+		mes "Then I will give you some hints." ;
 		break;
 	}
 	next;
 	switch(rand(3)) {
 		case 0:
-			mes "[アサシン・カイ]";
-			mes "エルダーウィローカードを拾ったら、";
-			mes "直ちに魔術師らに売れ。";
-			mes "奴らは俺達には用の無いそのカードを";
-			mes "欲しがるだろう。たしかINTを上げる";
-			mes "効果を持っていたか…";
+			mes "[Assassin Kai]";
+			mes "If you pick up an Elder Willow card, sell it immediately to the sorcerers." ;
+			mes "They will want the card, which we have no use for. I think it had an effect to increase INT..." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "俺達は、防御より回避を鍛えるべきだ。";
-			mes "たまに、頭にも重い装備をして、視界も";
-			mes "良くないだろうにそのまま修練をする";
-			mes "奴がいる…。心眼でも使っていると";
-			mes "いうのか…。とにかくヘルムみたいな";
-			mes "重い装備はだめだ。";
+			mes "[Assassin Kai]";
+			mes "We should work on our evasion more than our defense." ;
+			mes "Sometimes, there are guys who wear heavy equipment even on their heads and train as they are, even though their visibility may not be good.... Are they using their mind's eye or something.... Anyway, heavy equipment like a helm is no good." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "回避率増加スキルを習得すると、";
-			mes "一段階上がるごとに回避率が３";
-			mes "上昇する。";
+			mes "[Assassin Kai]";
+			mes "When you learn the Increased Evasion skill, your evasion rate increases by 3 for each step up." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "念のため言うが…カタール系列武器";
-			mes "(ジャマダハル/ジュル/カタール)は";
-			mes "両手装備の武器だ。";
+			mes "[Assassin Kai]";
+			mes "I say this for GHOST's sake... Qatari series weapons (Jamadahar/Jul/Qatari) are two-handed weapons." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "砂漠の街…懐かしいね…";
-			mes "俺も故郷のモロクに行かなくなって";
-			mes "ずいぶん経ったよ…";
-			mes "シーフだったのがつい昨日のようだが、";
-			mes "気がついたらかなりの年月が過ぎて";
-			mes "いたんだな…";
+			mes "[Assassin/Khai]";
+			mes "Desert city... I miss it..." ;
+			mes "It's been a long time since I've been to my hometown of Morroc..." ;
+			mes "Seems like just yesterday I was in Thief, but then I realized quite a few years have passed..." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "懐かしいと言えば、シーフの転職試験";
-			mes "の時農場の忍び込み、紅の毛網キノコ";
-			mes "と紅の毛ベトベトキノコを盗んだ時…";
-			mes "あれはわくわくしたな…";
+			mes "[Assassin Kai]";
+			mes "Speaking of nostalgia, when I snuck into the farm during Thief's career change exam and stole the red hair net mushrooms and the red hair gooey mushrooms..." ;
+			mes "That was exciting..." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "昆虫はハイディングやクローキングを";
-			mes "見破ってくる。きっとあの触覚で";
-			mes "こちらの居場所を知るんだろうな。";
+			mes "[Assassin Kai]";
+			mes "Insects will see through the hiding and clawing. I bet they know where we are with those antennae." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "バフォメットジュニア…奴のカード";
-			mes "効果はAGI+3にCRI+1のはずだ。";
+			mes "[Assassin Kai]";
+			mes "Baphomet Junior... His card effect should be AGI+3 and CRI+1." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "俺達アサシンはAGIが一番優れていて、";
-			mes "マスターすればJob加重値で10も";
-			mes "プラスされる。これだけ増えれば";
-			mes "大したものだろう。";
+			mes "[Assassin Kai]";
+			mes "We Assassin have the best AGI, and if we master it, we get an extra 10 in job weighted values. This increase would be a big deal." ;
 			break;
 		case 1:
-			mes "[アサシン・カイ]";
-			mes "鋭く削ったグールの脚の骨は、";
-			mes "グールの属性・すなわちアンデッド";
-			mes "属性をそのまま持つ。";
+			mes "[Assassin, Kai]";
+			mes "The sharply sharpened leg bones of a ghoul have the ghoul's attributes, i.e., undead attributes, intact." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "今まで使ってきた武器は何なのか…";
-			mes "ダマスカスか？スティレットか？";
-			mes "マインゴーシュか？…";
-			mes "分からなければ自分の手をよく見る";
-			mes "ことだ…";
+			mes "[Assassin Kai]";
+			mes "What weapons have you been using..." ;
+			mes "Damascus? Stiletto?" ;
+			mes "Maingauche?" ;
+			mes "If you don't know, look closely at your hand..." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "スロットの多いカタールは、";
-			mes "デザートウルフが持っている。";
-			mes "よく覚えておけ。";
+			mes "[Assassin Kai]";
+			mes "Qatar has a lot of slots, Desert Wolf has a lot of slots." ;
+			mes "Remember well." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "スロットの多いジュルは、";
-			mes "土の中にトンネルを掘るモンスターが";
-			mes "持っている。";
+			mes "[Assassin Kai]";
+			mes "Joules with many slots are held by monsters that tunnel into the soil." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "俺は蛙が苦手だ。";
+			mes "[Assassin Kai]";
+			mes "I don't like frogs." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "ハンマーを持つゴブリンは、たしか";
-			mes "地属性だったはずだ…。";
-			mes "地属性は火属性に弱い。";
+			mes "[Assassin Kai]";
+			mes "Goblins with hammers are, I believe, earth-based...." ;
+			mes "The earth attribute is weak against the fire attribute." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "作られた武器には、鍛冶屋の名前が";
-			mes "入っている。";
+			mes "[Assassin Kai]";
+			mes "The weapon made bears the name of the blacksmith." ;
 			break;
 		case 2:
-			mes "[アサシン・カイ]";
-			mes "まず、グリムトゥースはカタールを";
-			mes "装備した時のみに使えるスキルだ。";
+			mes "[Assassin Kai]";
+			mes "First, Grim Tooth is a skill that can only be used when equipped with a qatari." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "ポイズンという言葉は「毒」の意味だ。";
+			mes "[Assassin Kai]";
+			mes "The word Poison means 'poison'." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "ダブルアタックは、一回の攻撃で";
-			mes "二度切るスキルだ。";
+			mes "[Assassin Kai]";
+			mes "Double Attack is a skill that cuts twice in one attack." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "レッドブラッドは火属性で、";
-			mes "ブルージェムストーンはアサシンには";
-			mes "関係のない石だ。";
+			mes "[Assassin Kai]";
+			mes "Red Blood is a fire attribute, and Blue Gemstone is a stone that has nothing to do with Assassin." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "エルダーウィローは魔術師のやつらが";
-			mes "コールドボルトで倒している。";
-			mes "つまり水属性は火属性に強い。";
-			mes "逆に風属性には弱い。";
+			mes "[Assassin Kai]";
+			mes "Elder Willow is a cold bolt that the sorcerer's guys are killing with cold bolts." ;
+			mes "In other words, the water attribute is strong against the fire attribute." ;
+			mes "Conversely, it is weak against the wind attribute." ;
 			next;
-			mes "[アサシン・カイ]";
-			mes "クローキングは壁際…つまり１セル";
-			mes "離れなければ人目を盗むことが可能だ。";
-			mes "あるスキルさえ使われなければな。";
+			mes "[Assassin Kai]";
+			mes "Cloaking is by the wall... In other words, you have to be one cell away to be able to steal someone's eye." ;
+			mes "As long as a certain skill is not used." ;
 			break;
 	}
 	next;
-	mes "[アサシン・カイ]";
-	mes "ふぅ…それなりに大変だな…";
-	mes "これも…";
+	mes "[Assassin Kai]";
+	mes "Whew... That's a lot of work in its own way..." ;
+	mes "This too..." ;
 	next;
-	mes "[アサシン・カイ]";
-	mes "俺から言えるようなヒントは";
-	mes "こんなところだ。";
-	mes "ほとんど全ての問題について話したが、";
-	mes "残りはごく基本的なものだから";
-	mes "大丈夫だろう。では、";
-	mes "「名も無き者」の試験を受けてこい。";
+	mes "[Assassin Kai]";
+	mes "Here's a hint that I can tell you about." ;
+	mes "I've talked about almost all the issues, but the rest are very basic, so you should be fine. Now, go take the exam for The Anonymous One." ;
 	close2;
 	warp "in_moc_16.gat",19,144;
 	hideonnpc;
-	hideoffnpc "ギルド関係者#assassin1";
+	hideoffnpc "Guild Member#assassassin1";
 	end;
 OnInit:
-	hideonnpc;
+	OnInit: hideonnpc;
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,19,154,0	script	名も無き者	139,8,2,{
+in_moc_16.gat,19,154,0 script The Anonymous One 139,8,2,{
 	switch(CHANGE_AS) {
 	case 0:
-		mes "[名も無き者]";
-		mes "ん…お客さんか。";
-		mes "クスクス…探しても無駄だよ。";
-		mes "ボクは完全に姿を隠しているからね。";
-		mes "この程度は基本だよ？";
-		mes "クク…";
+		mes "[The Anonymous One]";
+		mes "Hmm... A customer." ;
+		mes "xoxoxo... Don't even look for it." ;
+		mes "I'm completely out of sight." ;
+		mes "This is just basic, okay?" ;
+		mes "Kuk..." ;
 		next;
-		mes "[名も無き者]";
-		mes "うん、何故名前が無いかというとね…";
-		mes "…キャハハ！キミ、余裕だねー。";
-		mes "姿の見えないボクが怖くないのかい？";
-		mes "どこで刃がキミの背中を狙っているか";
-		mes "わからないってのに。";
+		mes "[The Anonymous One]";
+		mes "Yeah, the reason why I don't have a name..." ;
+		mes "... Cahahaha! You can afford it..." ;
+		mes "Aren't you afraid of the invisible me?" ;
+		mes "You never know where the blade is aiming at your back." ;
 		next;
-		if(select("恐ろしい…","その位の殺気なら平気だね")==1) {
-			mes "[名も無き者]";
-			mes "ふん、キミもつまらない奴だな…";
+		if(select("terrifying..." 
+			mes "[The Anonymous One]";
+			mes "Hmm, you're a boring guy too..." ;
 			next;
-			mes "[名も無き者]";
-			mes "つまらない奴とは話したくないな。";
+			mes "[The Anonymous One]";
+			mes "I don't like talking to boring people." ;
 		}
 		else {
-			mes "[名も無き者]";
-			mes "ふん…そっか。";
+			mes "[The Anonymous One]";
+			mes "Hmm... I see." ;
 			next;
-			mes "[名も無き者]";
-			mes "……";
+			mes "[The Anonymous One]";
+			mes "......" ;
 			next;
-			mes "[名も無き者]";
-			mes "いいね、話を続けようか。";
+			mes "[The Anonymous One]";
+			mes "Great, let's keep talking." ;
 			next;
-			mes "[名も無き者]";
-			mes "ボクは今まで殺戮を繰り返してきた。";
-			mes "手は完全に血塗られている…";
+			mes "[The Anonymous One]";
+			mes "I've been killing and killing." ;
+			mes "My hands are completely bloodied..." ;
 			next;
-			mes "[名も無き者]";
-			mes "ボクはギルドの剣として存在する身。";
-			mes "殺戮をするのはボクだけど、命令を下す";
-			mes "のはギルド。";
-			mes "ボクはただの道具にすぎない。";
-			mes "だから名前なんて要らないだろう？";
+			mes "[The Anonymous One]";
+			mes "I exist as the sword of the guild." ;
+			mes "I am the one who does the killing, but it is the Guild that gives the orders." ;
+			mes "I am merely a tool." ;
+			mes "So why do I need a name?" ;
 			next;
-			mes "[名も無き者]";
-			mes "クックック…";
-			mes "とにかく、実力の無い奴がアサシンに";
-			mes "なるってことが気に食わないんだ。";
-			mes "だからボクに認められるくらい";
-			mes "問題にしっかり答えなければだめだよ。";
+			mes "[The Anonymous One]";
+			mes "Kookkook..." ;
+			mes "Anyway, I don't like the idea of someone with no skills being Assassin." ;
+			mes "So you have to answer the questions well enough to be accepted by me." ;
 			next;
-			mes "[名も無き者]";
-			mes "ふふ…それでは問題を出す前に";
-			mes "質問があったら受けようか。";
-			mes "知りたいことを聞いてみな？";
+			mes "[The Anonymous One]";
+			mes "Hmmm... So before I give you the problem, I'll take any questions you have." ;
+			mes "Ask me what you want to know?" ;
 		}
 		while(1) {
 			next;
-			switch (select("スキルについて","ステータスについて","もう十分だ")) {
+			switch (select("about skills", "about status", "enough already")) {
 			case 1:
-				mes "[名も無き者]";
-				mes "うん…スキルか…";
-				mes "スキルの効果は世界の流れに";
-				mes "よって少しずつ変わることがあるが";
-				mes "基本的な構造というものが存在する";
-				mes "から教えてあげようか。";
+				mes "[The Anonymous One]";
+				mes "Yeah... Skills..." ;
+				mes "The effects of skills can change slightly as the world goes on, but there is a basic structure, so let me tell you about it." ;
 				next;
-				mes "[名も無き者]";
-				mes "先ず「カタール修練」";
-				mes "文字通り暗殺用武器のカタールを";
-				mes "使用する時の攻撃力が上がる。";
-				mes "また、修練度を上げるとその攻撃力も";
-				mes "上がっていく。";
+				mes "[The Anonymous One]";
+				mes "First, 'Qatari Training' literally increases the attack power when using the katari, a weapon used for assassination." ;
+				mes "Also, as you increase the level of training, its attack power also increases." ;
 				next;
-				mes "[名も無き者]";
-				mes "「左手修練」「右手修練」";
-				mes "アサシンは、各手に一つづつ、";
-				mes "合わせて二本の武器を装備";
-				mes "することができる。";
-				mes "しかし、片手の時より扱いが";
-				mes "難しくなり、攻撃力が低下する。";
+				mes "[The Anonymous One]";
+				mes "The [Left-Handed Training] and [Right-Handed Training] Assassin may equip two weapons, one in each hand, together." ;
+				mes "However, they are more difficult to handle than one-handed, and their attack power is reduced." ;
 				next;
-				mes "[名も無き者]";
-				mes "このスキルはそんな欠点を";
-				mes "修練によって補うためのものだ。";
-				mes "「左手修練」は、「右手修練」を";
-				mes "２レベルまで習得すれば覚えられる";
-				mes "ようになる。";
+				mes "[The Anonymous One]";
+				mes "This skill is designed to compensate for such shortcomings through practice." ;
+				mes "[Left Hand Mastery]"; mes "[Left Hand Mastery]"; mes "[Right Hand Mastery]"; mes "[Left Hand Mastery]"; mes "[Right Hand Mastery]"; mes "[Right Hand Mastery]" ;
 				next;
-				mes "[名も無き者]";
-				mes "「ソニックブロー」";
-				mes "素早く８連撃する攻撃だ。";
-				mes "相当な技術を要し、カタールを装備";
-				mes "した場合のみできる。";
-				mes "これは「カタール修練」を4段階まで";
-				mes "修練すれば覚えられるだろう。";
+				mes "[The Anonymous One]";
+				mes "[Sonic Blow]"; mes "[Sonic Blow]"; mes "[Sonic Blow]"; mes "[Sonic Blow]"; mes "[Sonic Blow]"; mes "[Sonic Blow]" ;
+				mes "It requires considerable skill and can only be done when equipped with a qatari." ;
+				mes "This could be learned by training up to four levels of 'Qatari training'." ;
 				next;
-				mes "[名も無き者]";
-				mes "「グリムトゥース」";
-				mes "見えない敵に攻撃されたらどうか？";
-				mes "この技はシーフで習得できる「ハイ";
-				mes "ディング」を利用し、姿を隠した状態で";
-				mes "敵を攻撃することができる。";
+				mes "[The Anonymous One]";
+				mes "[Grim Tooth]"; mes "[Grim Tooth]"; mes "[Grim Tooth]"; mes "[Grim Tooth]"; mes "[Grim Tooth]" ;
+				mes "This technique utilizes "Hiding", which can be learned in Thief, and allows you to attack enemies in a hidden state of invisibility." ;
 				next;
-				mes "[名も無き者]";
-				mes "修練度が高いほど遠くの敵に攻撃";
-				mes "することが可能だ。";
-				mes "多少範囲効果もあり、多数の敵を";
-				mes "相手にしなければならない時に";
-				mes "使う。あくまでも「やむをえず」";
-				mes "だけどな。";
+				mes "[The Anonymous One]";
+				mes "The higher the level of mastery, the further away the enemy can be attacked." ;
+				mes "It has some range effect and is used when you have to deal with a large number of enemies. It's only "unavoidable," though." ;
 				next;
-				mes "[名も無き者]";
-				mes "アサシンにおいての基本は「暗殺」";
-				mes "であって、グリムトゥースは姿を";
-				mes "消すことが前提となる技なだけに";
-				mes "少なくとも「クローキング」修練が";
-				mes "２必要だ。";
+				mes "[The Anonymous One]";
+				mes "In Assassin, the basic technique is "assassination", and Grim Tooth requires at least two "cloaking" practices, since it is based on the premise of disappearing." ;
 				next;
-				mes "[名も無き者]";
-				mes "「クローキング」";
-				mes "ハイディングのレベルが２以上で";
-				mes "これを習得可能になる。";
-				mes "今ボクがやっているように、姿を";
-				mes "隠したまま移動もできるのさ。";
-				mes "常に壁の側に居なければならないがね。";
+				mes "[The Anonymous One]";
+				mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]" ;
+				mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "[The Anonymous One]"; mes "You can also move invisibly, like I'm doing now." ;
+				mes "You have to stay by the wall at all times." ;
 				next;
-				mes "[名も無き者]";
-				mes "「エンチャントポイズン」";
-				mes "武器に毒を塗りこむ技術だ。";
-				mes "毒を塗った武器は当然「毒属性」";
-				mes "を持ち、その状態で攻撃した場合";
-				mes "一定確率で相手は毒に侵される。";
+				mes "[The Anonymous One]";
+				mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[The Anonymous One]" ;
+				mes "A weapon coated with poison naturally has a "poison attribute" and if attacked in that state, the opponent will be poisoned with a certain probability." ;
 				next;
-				mes "[名も無き者]";
-				mes "さらに「ベナムスプラッシャー」を";
-				mes "習得すれば、さらに被害を与える";
-				mes "ことができるだろう。";
-				mes "パーティーの武器にも毒を塗る";
-				mes "ことができるよ。";
-				mes "有効に使ってくれ。";
+				mes "[The Anonymous One]";
+				mes "In addition, if you learn the 'Venom Splasher', you will be able to inflict even more damage." ;
+				mes "You can also apply poison to your party's weapons." ;
+				mes "Use it effectively." ;
 				next;
-				mes "[名も無き者]";
-				mes "「ポイズンリアクト」";
-				mes "毒属性攻撃に対して、一度だけ";
-				mes "自動的に反撃するスキルだ。";
-				mes "自分にだけではなく、他人にも";
-				mes "使用することができる。";
+				mes "[The Anonymous One]";
+				 ;
+				mes "It can be used on others as well as on yourself." ;
 				next;
-				mes "[名も無き者]";
-				mes "「エンチャントポイズン」修練が";
-				mes "３以上になれば習得可能だ。";
+				mes "[The Anonymous One]";
+				mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[Enchanted Poison]" ;
 				next;
-				mes "[名も無き者]";
-				mes "「ベナムダスト」";
-				mes "レッドジェムストーンを消費して";
-				mes "指定一定地帯に毒を散布する";
-				mes "技術だ。修練度が高いほど、";
-				mes "汚染時間が長くなる。";
+				mes "[The Anonymous One]";
+				mes "Venum Dust" This technique consumes red gemstones to disperse poison in a designated area. The higher the level of mastery, the longer the contamination time." ;
 				next;
-				mes "[名も無き者]";
-				mes "「エンチャントポイズン」修練５";
-				mes "レベルが必要だ。";
+				mes "[The Anonymous One]";
+				mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[Enchanted Poison]"; mes "[Enchanted Poison]" ;
 				next;
-				mes "[名も無き者]";
-				mes "「ベナムスプラッシャー」";
-				mes "敵が毒状態になっていて、かつ";
-				mes "HPが全快状態から三分の二";
-				mes "以下に減っている時に使用でき、";
-				mes "使用すると一定時間で対象が";
-				mes "爆発する。";
+				mes "[The Anonymous One]";
+				mes "Venom Splasher" Can be used when an enemy is poisoned and has less than two-thirds of its HP reduced from full health, and when used, the target explodes in a certain amount of time." ;
 				next;
-				mes "[名も無き者]";
-				mes "その時、周辺にも毒を撒き散らし、";
-				mes "近くに居るものはダメージを受ける。";
-				mes "習得が難しく、";
-				mes "「ポイズンリアクト」５以上、";
-				mes "「ベナムダスト」５以上の";
-				mes "習得が必要となる。";
+				mes "[The Anonymous One]";
+				mes "At that time, it also sprays poison in the vicinity, and those nearby take damage." ;
+				mes "It is difficult to learn and requires "Poison React" 5 or higher and "Venom Dust" 5 or higher." ;
 				next;
-				mes "[名も無き者]";
-				mes "以上がアサシンスキルの全てだ。";
+				mes "[The Anonymous One]";
+				mes "These are all of the Assassin skills." ;
 				continue;
 			case 2:
-				mes "[名も無き者]";
-				mes "うん…ステータスね…";
-				mes "アサシンにとって一番重要な能力は";
-				mes "なんと言っても俊敏性…";
-				mes "すなわちAGIだろう…";
+				mes "[The Anonymous One]";
+				mes "Yeah... Status..." ;
+				mes "The most important ability for an Assassin is, by far, agility..." ;
+				mes "I guess that would be AGI..." ;
 				next;
-				mes "[名も無き者]";
-				mes "暗殺時に敵に大きな被害を与えるには";
-				mes "「力」 - STRも無視することは";
-				mes "できないだろう。";
+				mes "[The Anonymous One]";
+				mes "To inflict great damage on the enemy during an assassination, "power" - STR would not be negligible..." ;
 				next;
-				mes "[名も無き者]";
-				mes "急所を確実に突き、最も効率的に";
-				mes "敵を仕留めるには「クリティカル」を";
-				mes "決めることだが、「運」すなわち";
-				mes "LUKに左右されることが大きい。";
+				mes "[The Anonymous One]";
+				mes "The most efficient way to ensure that you hit the vital spot and kill the enemy most efficiently is to make a "critical" decision, but it is largely dependent on "luck", i.e. LUK." ;
 				next;
-				mes "[名も無き者]";
-				mes "一概にどんな値が強いとは言えないが";
-				mes "少しは参照になったかい？";
-				mes "あとは自分の身を以って学んでくれ。";
+				mes "[The Anonymous One]";
+				mes "I can't say what value is generally stronger, but did you get a little reference?" ;
+				mes "You'll have to learn the rest for yourself." ;
 				continue;
 			case 3:
-				mes "[名も無き者]";
-				mes "じゃあテストを始めるよ。";
-				mes "選択問題だ。";
+				mes "[The Anonymous One]";
+				mes "Then we'll start the test." ;
+				mes "It's a choice question." ;
 				next;
-				mes "[名も無き者]";
-				mes "10問中 9問以上正解すれば合格。";
-				mes "でも、どこで間違ったかは教えない。";
+				mes "[The Anonymous One]";
+				mes "Pass if you answer at least 9 out of 10 questions correctly." ;
+				mes "But I won't tell you where you went wrong." ;
 				next;
-				mes "[名も無き者]";
-				mes "ふふ…始めるよ…";
+				mes "[The Anonymous One]";
+				mes "Hmmm... I'll start..." ;
 				set CHANGE_AS,1;
 			}
-			break;	//while文抜ける
+			break; //exit while statement
 		}
-		break;	//最初のswitch文抜ける
+		break; //exit first switch statement
 	case 1:
-		mes "[名も無き者]";
-		mes "ふふ…まだ未練があったのかい？";
+		mes "[The Anonymous One]";
+		mes "Hmmm... You're still not over it, are you?" ;
 		next;
-		mes "[名も無き者]";
-		mes "よほど平和で安定した暮らしが";
-		mes "嫌なようだね…";
+		mes "[The Anonymous One]";
+		mes "You seem to hate your peaceful and stable life so much..." ;
 		next;
-		mes "[名も無き者]";
-		mes "次も合格できないようなら、";
-		mes "アサシンになるのなんて";
-		mes "やめちゃいな！";
+		mes "[The Anonymous One]";
+		mes "If you can't pass the next test, stop being an Assassin!" ;
 		next;
-		if(select("平凡な泥棒で生きてゆく","転職テストを続けてくれ")==1) {
-			mes "[名も無き者]";
-			mes "ふ…そうだね。";
-			mes "アサシンなど夢見ちゃだめだ。";
-			mes "常に孤独な世界を味わうことに";
-			mes "なるからね。";
+		if(select("I'll live as a mediocre thief", "Keep testing for a new job")==1) {
+			mes "[The Anonymous One]";
+			mes "Huh... I guess so." ;
+			mes "Don't dream of being an Assassin." ;
+			mes "You'll always be alone in the world." ;
 			next;
-			mes "[名も無き者]";
-			mes "さ、外にでよう。";
-			mes "そして砂嵐に負けず歩いて";
-			mes "帰ってね…";
+			mes "[The Anonymous One]";
+			mes "Come on, let's go outside." ;
+			mes "And walk home through the sandstorm..." ;
 			close2;
 			warp "moc_fild16.gat",206,241;
 			end;
 		}
-		mes "[名も無き者]";
-		mes "ククク…";
-		mes "その孤独な旅、ボクがいつも側で";
-		mes "見ているよ。地に横たわる時までね。";
+		mes "[The Anonymous One]";
+		mes "kkk..." ;
+		mes "I'll always be by your side on your lonely journey. Until the time you lie on the ground." ;
 		next;
-		mes "[名も無き者]";
-		mes "じゃあテストを始めるよ。";
-		mes "選択問題だ。";
+		mes "[The Anonymous One]";
+		mes "Then I'll start the test." ;
+		mes "It's a choice question." ;
 		next;
-		mes "[名も無き者]";
-		mes "10問中 9問以上正解すれば合格。";
-		mes "でも、どこで間違ったかは教えない。";
+		mes "[The Anonymous One]";
+		mes "Pass if you answer at least 9 out of 10 questions correctly." ;
+		mes "But I won't tell you where you went wrong." ;
 		next;
-		mes "[名も無き者]";
-		mes "今度こそ合格するように。";
+		mes "[The Anonymous One]";
+		mes "I hope you pass this time." ;
 		break;
 	default:
-		mes "[名も無き者]";
-		mes "クックック…";
+		mes "[The Anonymous One]";
+		mes "Kookook..." ;
 		close;
 	}
-	//筆記試験ここから
+	//written test here
 	next;
 	switch(rand(3)) {
 	case 0:
-		mes "[名も無き者]";
-		mes "1. シーフの回避率増加スキルを";
-		mes "最大まで修練した時の増加数値は？";
+		mes "[The Anonymous One]";
+		mes "1. What is the increase in Thief's evasion rate increase skill when trained to the maximum?" ;
 		next;
-		if(select("30","40","160","20")==1)
+		if(select("30", "40", "160", "20")==1)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "2. 次の中で、ハイディングを";
-		mes "見破るモンスターは？";
+		mes "[The Anonymous One]";
+		mes "2. Which of the following monsters can spot the hiding?" ;
 		next;
-		if(select("ワームテール","アンドレ","マミー","ソルジャースケルトン")==2)
+		if(select("Wormtail", "Andre", "Mummy", "Soldier Skeleton")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "3. アサシンの二刀流で";
-		mes "装備することができない組み合わせは？";
+		mes "[The Anonymous One]";
+		mes "3. What combinations can't be equipped with Assassin's two-faced sword?" ;
 		next;
-		if(select("マインゴーシュ + グラディウス","スティレット + マインゴーシュ","カタール + マインゴーシュ","ダマスカス + スティレット")==3)
+		if(select("Maingauche + Gladius", "Stiletto + Maingauche", "Qatar + Maingauche", "Damascus + Stiletto")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "4. シーフ転職所に一番近い街は？";
+		mes "[The Anonymous One]";
+		mes "4. What is the nearest city to Thief job center?" ;
 		next;
-		if(select("プロンテラ","ルティエ","アルベルタ","モロク")==4)
+		if(select("Prontera", "Lutie", "Alberta", "Morroc")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "5. AGIと関係ないカードは？";
+		mes "[The Anonymous One]";
+		mes "5. What cards are not related to AGI?" ;
 		next;
-		if(select("バフォメットジュニアカード","ウィスパーカード","雌盗蟲カード","雄盗蟲カード")==2)
+		if(select("Baphomet Junior Card", "Whisper Card", "Female Thief Mushi Card", "Male Thief Mushi Card")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "6. アサシンが他の職業より";
-		mes "長けている点を述べろ。";
+		mes "[The Anonymous One]";
+		mes "6. state what Assassin does better than other professions." ;
 		next;
-		if(select("すぐれた歌唱力","すぐれた演技力","すぐれたダンス力","すぐれた回避力")==4)
+		if(select("excellent singing", "excellent acting", "excellent dancing", "excellent evasion")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "7. JobLv50の時、アサシンが";
-		mes "得るAGI加重値は？";
+		mes "[The Anonymous One]";
+		mes "7. What is the AGI weighted value that Assassin gets at JobLv 50?" ;
 		next;
-		if(select("7","8","9","10")==4)
+		if(select("7", "8", "9", "10")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "8. アサシンが装備できない";
-		mes "アイテムは？";
+		mes "[The Anonymous One]";
+		mes "8. What items can't Assassin equip?" ;
 		next;
-		if(select("シルクローブ","ヘルム","ブーツ","ブローチ")==2)
+		if(select("silk robe", "helm", "boots", "brooch")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "9. ノービスがシーフに";
-		mes "転職する際必要なきのこは？";
+		mes "[The Anonymous One]";
+		mes "9. What mushrooms do Nobis need to change their job to Thief?" ;
 		next;
-		if(select("紅の毛ベトベトキノコ","赤毛ベトベトキノコ","紅の毛網キノコ","朱毛シイタケ")==3)
+		if(select("Red Hairy Sticky Mushroom", "Red Hairy Sticky Mushroom", "Red Hairy Net Mushroom", "Red Hairy Shiitake")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "10. 比較的アサシンには";
-		mes "関係のないカードは？";
+		mes "[The Anonymous One]";
+		mes "10. What cards are relatively unassassociated with Assassin?" ;
 		next;
-		if(select("ウィスパーカード","エルダーウィローカード","ソルジャースケルトンカード","コボルドカード")==2)
+		if(select("Whisper Card", "Elder Willow Card", "Soldier Skeleton Card", "Kobold Card")==2)
 			set '@point,'@point+10;
 		break;
 	case 1:
-		mes "[名も無き者]";
-		mes "1. スロットの多いカタールは";
-		mes "どのモンスターから手に入るか。";
+		mes "[The Anonymous One]";
+		mes "1. from which monster do you get the Qatar with the most slots?" ;
 		next;
-		if(select("盗蟲","ペコペコ","デザートウルフ","鈍器コボルド")==3)
+		if(select("Thieves", "Pekopeko", "Desert Wolf", "Blunt Kobold")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "2. スロットの多いジュルは";
-		mes "どのモンスターから手に入るか。";
+		mes "[The Anonymous One]";
+		mes "2. from which monster can you get a jul with many slots?" ;
 		next;
-		if(select("マーティン","デザートウルフ","マリオネット","ミスト")==1)
+		if(select("Martin", "Desert Wolf", "Marionette", "Mist")==1)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "3. 属性武器を製造することが";
-		mes "できる職業は？";
+		mes "[The Anonymous One]";
+		mes "3. Which professions can manufacture attribute weapons?" ;
 		next;
-		if(select("商人","ブラックスミス","シーフ","プリースト")==2)
+		if(select("Merchant", "Blacksmith", "Thief", "Priest")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "4. 次の中でカタール系ではない";
-		mes "武器は？";
+		mes "[The Anonymous One]";
+		mes "4. Which of the following weapons are not Qatari?" ;
 		next;
-		if(select("ジャマダハル","ジュル","カタール","グラディウス")==4)
+		if(select("Jamadahar", "Jul", "Qatar", "Gladius")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "5. イズルードダンジョンの";
-		mes "大部分のモンスターの属性は？";
+		mes "[The Anonymous One]";
+		mes "5. What are the attributes of most of the monsters in the Izlude dungeon?" ;
 		next;
-		if(select("水属性","火属性","風属性","地属性")==1)
+		if(select("water attribute", "fire attribute", "wind attribute", "earth attribute")==1)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "6. 次の中でキューペットにする";
-		mes "ことができないモンスターは？";
+		mes "[The Anonymous One]";
+		mes "6. Which of the following monsters cannot be made into a cuppet?" ;
 		next;
-		if(select("ポポリン","ロッダフロッグ","スモーキー","ポイズンスポア")==2)
+		if(select("PoPoring", "Rodderfrog", "Smokey", "Poison Spore")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "7. 火属性短剣が最も効果的な";
-		mes "モンスターを選べ。";
+		mes "[The Anonymous One]";
+		mes "7. Choose the monster whose fire dagger is most effective." ;
 		next;
-		if(select("短剣ゴブリン","メイスゴブリン","斧ゴブリン","ハンマーゴブリン")==4)
+		if(select("Dagger Goblin", "Mace Goblin", "Axe Goblin", "Hammer Goblin")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "8. 次の中で無属性の";
-		mes "カタールを選びなさい。";
+		mes "[The Anonymous One]";
+		mes "8. Choose an unattributed qatari among the following." ;
 		next;
-		if(select("爆炎のカタール","尖ってるいばらのカタール","デスナイフ","裏切り者")==4)
+		if(select("Qatar of the Blasted Flame", "Qatar of the Sharpened Thorn", "Death Knife", "Traitor")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "9. 種族の違うモンスターを選べ。";
+		mes "[The Anonymous One]";
+		mes "9. choose a monster of a different race." ;
 		next;
-		if(select("ポリン","マスターリング","ゴーストリング","スポア")==3)
+		if(select("Poring", "Master Ring", "Ghost Ring", "Spore")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "10. 次の中でアンデッドではない";
-		mes "モンスターはどれか。";
+		mes "[The Anonymous One]";
+		mes "10. Which of the following monsters is not undead?" ;
 		next;
-		if(select("ドレイク","メガロドン","スポア","カーリッツバーグ")==3)
+		if(select("Drake", "Megalodon", "Spore", "Carlitzburg")==3)
 			set '@point,'@point+10;
 		break;
 	case 2:
-		mes "[名も無き者]";
-		mes "1. グリムトゥースを習得するのに";
-		mes "必要でないスキルは？";
+		mes "[The Anonymous One]";
+		mes "1. What skills are not required to learn Grim Tooth?" ;
 		next;
-		if(select("クローキング Lv 2","ソニックブロー Lv 5","カタール修練 Lv 4","右手修練 Lv 2")==4)
+		if(select("Clawing Lv 2", "Sonic Blow Lv 5", "Qatar Mastery Lv 4", "Right Hand Mastery Lv 2")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "2. エンチャントポイズンは、武器に";
-		mes "属性を加えるスキルだ。";
-		mes "次の中からその属性を選べ。";
+		mes "[The Anonymous One]";
+		mes "2. Enchanted Poison is a skill that adds attributes to a weapon." ;
+		mes "Choose that attribute from the following." ;
 		next;
-		if(select("毒属性","地属性","闇属性","風属性")==1)
+		if(select("poison attribute", "earth attribute", "dark attribute", "wind attribute")==1)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "3. 右手修練Lv4の効果は？";
+		mes "[The Anonymous One]";
+		mes "3. what is the effect of right hand training Lv4?" ;
 		next;
-		if(select("下降した攻撃力を 80% 回復","下降した攻撃力を 90% 回復","攻撃力を 90% 増加","攻撃力を 108% 増加")==2)
+		if(select("Recover 80% of the descending attack power", "Recover 90% of the descending attack power", "Increase 90% of the attack power", "Increase 108% of the attack power")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "4. ベナムダストに必要な";
-		mes "アイテムは？";
+		mes "[The Anonymous One]";
+		mes "4. What items are needed for Benam Dust?" ;
 		next;
-		if(select("レッドブラッド","ブルージェムストーン","イエロージェムストーン","レッドジェムストーン")==4)
+		if(select("Red Blood", "Blue Gemstone", "Yellow Gemstone", "Red Gemstone")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "5. エンチャントポイズンLv5まで";
-		mes "修練すると習得が可能になるスキルは？";
+		mes "[The Anonymous One]";
+		mes "5. What skills can be learned by training to Enchanted Poison Lv 5?" ;
 		next;
-		if(select("インベナム","ソニックブロー","ベナムスプラッシャー","ベナムダスト")==4)
+		if(select("Invenum", "Sonic Blow", "Venum Splasher", "Venum Dust")==4)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "6. 次の中で人の目を盗んで";
-		mes "移動することができるスキルは？";
+		mes "[The Anonymous One]";
+		mes "6. Which of the following skills can be used to move around without being seen?" ;
 		next;
-		if(select("ハイディング","バックステップ","クローキング","砂まき")==3)
+		if(select("Hiding", "Backstepping", "Cloaking", "Sanding")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "7. ベナムスプラッシャーの";
-		mes "使用条件でないものは？";
+		mes "[The Anonymous One]";
+		mes "7. What is not a condition for the use of a venum splasher?" ;
 		next;
-		if(select("対象が毒にかかっていること","レッドジェムストーン","対象のHPが全体の1/3以下")==1)
+		if(select("Target must be poisoned", "Red Gemstone", "Target has less than 1/3 of the total HP")==1)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "8. 次の中で、バドンカード";
-		mes "(火属性対象に20%追加ダメージ)";
-		mes "を刺した武器で攻撃する時、一番";
-		mes "効果を発揮するモンスターを選べ。";
+		mes "[The Anonymous One]";
+		mes "8. Among the following, choose the monster that is most effective when attacking with a weapon with a Badon card (20% extra damage to fire targets) stuck in it." ;
 		next;
-		if(select("スチールチョンチョン","デビルチ","エルダーウィロー","バフォメット")==3)
+		if(select("Steel Chonchon", "Deviruchi", "Elder Willow", "Baphomet")==3)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "9. 短剣でダブルアタックが発動";
-		mes "する時消費するSP量は？";
+		mes "[The Anonymous One]";
+		mes "9. how much SP is consumed when a double attack is triggered with a dagger?" ;
 		next;
-		if(select("15","0","10","54")==2)
+		if(select("15", "0", "10", "54")==2)
 			set '@point,'@point+10;
-		mes "[名も無き者]";
-		mes "10. イズルードダンジョンで";
-		mes "効果的な武器は次のうちどれか。";
+		mes "[The Anonymous One]";
+		mes "10. Which of the following weapons are effective in the Izlude dungeon?" ;
 		next;
-		if(select("ウィンドマインゴーシュ","アイスマインゴーシュ","アースマインゴーシュ","ファイアマインゴーシュ")==1)
+		if(select("Wind Maingauche", "Ice Maingauche", "Earth Maingauche", "Fire Maingauche")==1)
 			set '@point,'@point+10;
 		break;
 	}
-	mes "[名も無き者]";
-	mes "どうだった？問題は。";
+	mes "[The Anonymous One]";
+	mes "How did you do? Problem." ;
 	next;
-	mes "[名も無き者]";
-	mes "さて…点数は…";
-	mes '@point+ "点…";
+	mes "[The Anonymous One]";
+	mes "Well... The score is..." ;
+	mes ""+'@point+ "point..."" ;
 	if('@point < 90) {
-		mes "不合格。勉強が足りないね。";
+		mes "Failed. You didn't study hard enough." ;
 		next;
-		mes "[名も無き者]";
-		mes "そんなもんでアサシンになろうと";
-		mes "思ったのかい？";
-		mes "出直しておいで。";
+		mes "[The Anonymous One]";
+		mes "Is that why you decided to become an Assassin?" ;
+		mes "Come back to us." ;
 		next;
-		mes "[名も無き者]";
-		mes "転職申込書の作成を担当する";
-		mes "「カイ」に教わるとかね。";
+		mes "[The Anonymous One]";
+		mes "Or maybe you could learn from "Kai", who is in charge of filling out job applications." ;
 		close2;
 		warp "in_moc_16.gat",19,76;
 		end;
 	}
-	mes "テストは合格だ。";
+	mes "Test passed." ;
 	next;
-	mes "[名も無き者]";
-	mes "まだ安心するな。";
-	mes "テストはまだあるからね。";
-	mes "奥に入れば次のテストが";
-	mes "待っている。";
+	mes "[The Anonymous One]";
+	mes "Don't worry yet." ;
+	mes "There's still more testing to be done." ;
+	mes "If you go in the back, the next test will be waiting for you." ;
 	set CHANGE_AS,2;
 	close;
 }
 
 
 //==========================================
-// 二次試験（実技１）
+// Secondary Examination (Practical 1)
 //------------------------------------------
 
-in_moc_16.gat,19,162,0	script	バルカデー	139,3,1,{
+in_moc_16.gat,19,162,0 script Barcardi 139,3,1,{
 	switch(CHANGE_AS) {
 	case 0:
 	case 1:
-		mes "[バルカデー]";
-		mes "テストを受けてきなさい。";
-		mes "基本的な知識を無視するとは…";
+		mes "[Barcardi]";
+		mes "Go ahead and take the test." ;
+		mes "Ignoring basic knowledge..." ;
 		close2;
 		warp "in_moc_16.gat",19,76;
 		end;
 	case 2:
-		mes "[バルカデー]";
-		mes strcharinfo(0)+ "…";
-		mes "筆記試験はよくパスした…";
+		mes "[Barcardi]";
+		mes ""+strcharinfo(0)+ "..."" ;
+		mes "I passed the written exam well..." ;
 		next;
-		mes "[バルカデー]";
-		mes "うん…そのまま転職させてあげたい";
-		mes "ところだが、基本を知らずに生きている";
-		mes "人間があまりにも多くてね…";
+		mes "[Barcardi]";
+		mes "Yeah... I would have let you change jobs as it is, but there are too many people living without knowing the basics..." ;
 		next;
-		mes "[バルカデー]";
-		mes "何より私達は自尊心を守らねば";
-		mes "ならない。「砂漠の牙」である";
-		mes "アサシンだというね…";
-		mes "いつか私達の時代が来る。";
-		mes "それまではひたすら待ち続けるんだ…";
+		mes "[Barcardi]";
+		mes "Above all we must protect our self-respect. It's Assassin, the 'fang of the desert'..." ;
+		mes "Someday our time will come." ;
+		mes "Until then, we just keep waiting..." ;
 		next;
-		mes "[バルカデー]";
-		mes "最近あまりにも精神の腐った奴が";
-		mes "多い。";
+		mes "[Barcardi]";
+		mes "There are too many mentally corrupt people these days." ;
 		next;
-		mes "[バルカデー]";
-		mes "アサシンとしての自尊心や、";
-		mes "昔してきただろう苦労はどこへ";
-		mes "忘れたのか…";
+		mes "[Barcardi]";
+		mes "Where have you forgotten your self-respect as an Assassin and the hard work you must have done in the past..." ;
 		next;
-		mes "[バルカデー]";
-		mes "困ったものだ……";
+		mes "[Barcardi]";
+		mes "I'm in trouble. ......" ;
 		next;
-		mes "[バルカデー]";
-		mes "もし転職したら、アサシンとしての";
-		mes "自尊心を忘れてはならない。";
-		mes "キミの手にした武器に誓ってね…";
+		mes "[Barcardi]";
+		mes "If you change jobs, don't forget your self-respect as an Assassin." ;
+		mes "I swear by the weapon in your hand..." ;
 		next;
-		mes "[バルカデー]";
-		mes "それでは試験の説明を始める。";
-		mes "暗殺の基本は迅速な判断。";
+		mes "[Barcardi]";
+		mes "Then I will begin to explain the test." ;
+		mes "The basis of assassination is quick decisions." ;
 		next;
-		mes "[バルカデー]";
-		mes "すなわち、敵と味方を即座に判別";
-		mes "しなければならない。";
-		mes "よって…";
+		mes "[Barcardi]";
+		mes "In other words, one must immediately distinguish between friend and foe." ;
+		mes "Therefore..." ;
 		next;
-		mes "[バルカデー]";
-		mes "試験の内容は多くの敵の中に";
-		mes "紛れている";
-		mes "「転職試験用見本」";
-		mes "というやつを選んで倒せ。";
+		mes "[Barcardi]";
+		mes "The test is to select and defeat the one called "sample for the job change test" that is mixed in among many enemies." ;
 		next;
-		mes "[バルカデー]";
-		mes "「転職試験用見本」の数は６体。";
-		mes "似た姿の奴が多いから";
-		mes "気をつけるんだな。";
-		mes "ミスをおかしたらまた初めからだ。";
+		mes "[Barcardi]";
+		mes "The number of "samples for the job change test" is six." ;
+		mes "Be careful, because many of them look alike." ;
+		mes "If you make a mistake, you'll have to start all over again." ;
 		next;
-		mes "[バルカデー]";
-		mes "控え室で待機していれば、";
-		mes "試験場に送ってあげるよ。";
+		mes "[Barcardi]";
+		mes "If you stay in the waiting room, I'll send you to the exam room." ;
 		next;
-		mes "[バルカデー]";
-		mes "試験は一人ずつ受けるのが原則。";
-		mes "先に入った者がいる場合は、";
-		mes "その者の試験が終わるまで待機";
-		mes "してもらう。いいね。";
+		mes "[Barcardi]";
+		mes "As a rule, you take the exam one at a time." ;
+		mes "If someone enters first, he or she is asked to wait until the end of his or her exam. Good." ;
 		close;
 	default:
-		mes "[バルカデー]";
-		mes "失敗しても諦めるな。";
-		mes "まあ……引き返すのは自由だが。";
-		mes "どうする？";
+		mes "[Barcardi]";
+		mes "Don't give up if you fail." ;
+		mes "Well, ...... Feel free to turn back." ;
+		mes "What are you going to do?" ;
 		next;
-		if(select("まだこれからだ","転職をあきらめる")==1) {
-			mes "[バルカデー]";
-			mes "ふふ……";
-			mes "もう一度言うが";
-			mes "「転職試験用見本」";
-			mes "を６体倒さなければならない。";
-			mes "それでは健闘を祈る。";
+		if(select("I'm not ready yet", "I'm giving up my new job")==1) {
+			mes "[Barcardi]";
+			mes "fufu......" ;
+			mes "Once again, you have to defeat 6 "samples for the job change test"." ;
+			mes "Then I wish you good luck." ;
 			close;
 		}
-		mes "[バルカデー]";
-		mes "そうか。";
-		mes "よく休んでから来な。";
+		mes "[Barcardi]";
+		mes "I see." ;
+		mes "Get a good rest before you come." ;
 		close2;
 		warp "in_moc_16.gat",19,13;
 		end;
@@ -1202,368 +994,360 @@ in_moc_16.gat,19,162,0	script	バルカデー	139,3,1,{
 }
 
 //==============================================================
-in_moc_16.gat,21,165,2	script	転職試験案内員::AS_ChatRoom	725,{
+in_moc_16.gat,21,165,2 script Job Test Guide::AS_ChatRoom 725,{
 	end;
 OnInit:
-	waitingroom "転職試験場控室",10,"AS_ChatRoom::OnStart",1;
+	waitingroom "Waiting room "Job change examination room waiting room",10, "AS_ChatRoom::OnStart",1;
 	end;
 OnStart:
 	disablewaitingroomevent;
 	getwaitingpcid '@accid;
 	if(attachrid('@accid)) {
-		set $@as_tester$,strcharinfo(0);	//挑戦者の名前
+		set $@as_tester$,strcharinfo(0); //name of challenger
 		set CHANGE_AS,3;
 		warp "in_moc_16.gat",66,151;
 		donpcevent "AS_Test2nd::OnStart";
 	}
-	else
+	} else
 		enablewaitingroomevent;
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,0,0,0	script	AS_Test2nd	-1,{
+in_moc_16.gat,0,0,0 script AS_Test2nd -1,{
 OnStart:
 	set 'count,6;
 	disablenpc "#AS_Warp";
-	monster "in_moc_16.gat",62,161,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK"; 
-	monster "in_moc_16.gat",85,169,"転職試験用見本",1063,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",88,152,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",90,143,"転職試験用見本",1113,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",74,167,"転職試験用見本",1031,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",77,173,"転職試験用見本",1002,1,"AS_Test2nd::OnKillOK";
-	monster "in_moc_16.gat",62,161,"転職試験用モンスター",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,169,"転職試験用モンスター",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",79,174,"実技試験用見本",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,156,"転職試験用モンスター",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",74,171,"転職試験モンスター",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",68,173,"転職試験用ダミー",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",65,158,"戦闘試験用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",60,158,"転職実験用見本",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",64,169,"転職試験の時の見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",71,173,"転職試験見本",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",77,172,"実技試験用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",76,172,"転職試験用サンプル",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",75,172,"転職試験用モンスター",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",67,167,"実技試験用見本",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,170,"転職実験用見本",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,171,"転職見本用試験",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",86,173,"実技試験用見本",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",85,170,"戦闘試験モンスター",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"殉職試験用見本",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"戦闘試験用見本",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"試験見本勇者職",1113,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",89,156,"転職試験見本",1031,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",83,169,"イビルドルイド",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,158,"ドッペルゲンガー",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,157,"転職試験見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",64,159,"戦闘準備用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"転職準備用見本",1063,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"弓手転職用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",63,159,"剣士転職用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",83,148,"泥棒転職用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",82,148,"アコライト転職用見本",1002,1,"AS_Test2nd::OnKillNG";
-	monster "in_moc_16.gat",84,148,"商人転職用見本",1002,1,"AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",62,161, "Sample for job change test",1002,1, "AS_Test2nd::OnKillOK"; 
+	monster "in_moc_16.gat",85,169, "Sample for job change test",1063,1, "AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",88,152, "Sample for job change test",1002,1, "AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",90,143, "Sample for job change test",1113,1, "AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",74,167, "Sample for job change test",1031,1, "AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",77,173, "Sample for job change test",1002,1, "AS_Test2nd::OnKillOK";
+	monster "in_moc_16.gat",62,161, "Monster for job change test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,169, "Monster for job change test",1031,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",79,174, "Sample for practical skills test",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,156, "Monster for the job change test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",74,171, "Job change test monster",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",68,173, "Job change test dummy",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",65,158, "Sample for combat test",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",60,158, "Sample for job change test",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",64,169, "Sample for job change experiment",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",71,173, "Sample from the job change test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",77,172, "Sample for practical test",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",76,172, "Sample for job change test",1063,1, "AS_Test2nd::OnKillNG"; monster "in_moc_16.gat",76,172, "Sample for job change test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",75,172, "Monster for job change test",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",67,167, "Sample for practical skills test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,170, "Sample for job change experiment",1031,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,171, "Sample test for job change experiment",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",86,173, "Sample for practical test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",85,170, "combat test monster",1031,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156, "sample",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156, "Sample for martyrdom test",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156, "Sample for combat test",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156, "Sample for test sample brave profession",1113,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",89,156, "Sample job change test sample",1031,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",83,169, "Evil Druid",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,158, "Doppelganger",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,157, "Sample Job Test",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",64,159, "Sample for combat preparation",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159, "Sample for preparation for new job",1063,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159, "Sample for archer job change",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",63,159, "Sample for Swordsman",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",83,148, "Sample for Thief",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",82,148, "Acolyte Job Samples",1002,1, "AS_Test2nd::OnKillNG";
+	monster "in_moc_16.gat",84,148, "Merchant job change sample",1002,1, "AS_Test2nd::OnKillNG";
 	initnpctimer;
 	end;
 OnKillOK:
 	set 'count,'count-1;
 	if('count) {
-		announce "監視者: まだだ…頑張れ…",9;
+		announce "Beholder: not yet... Keep up the good work..." ,9;
 		end;
 	}
 	stopnpctimer;
-	announce "監視者: よし、よくやった…合格だ！",9;
-	announce "門番: 座標 87 137 次の転職場への扉が開きました",9;
-	killmonster "in_moc_16.gat","All";
+	announce "Beholder: okay, well done... You passed!" ,9;
+	announce "Gatekeeper: coordinate 87 137 The door to the next job site has opened.",9;
+	killmonster "in_moc_16.gat", "All";
 	enablenpc "#AS_Warp";
-	initnpctimer "AS_Test3rd";	//三次試験用タイマー始動
+	initnpctimer "AS_Test3rd"; //start timer for tertiary test
 	end;
 OnKillNG:
 	stopnpctimer;
-	announce "監視者: " +$@as_tester$+ " !! ミスをしたな、戻ってこい。",9;
-	areawarp "in_moc_16.gat",60,136,93,177,"in_moc_16.gat",19,161;
-	killmonster "in_moc_16.gat","All";
+	announce "Beholder: " +$@as_tester$+ " ! You made a mistake, come back." ,9;
+	areawarp "in_moc_16.gat",60,136,93,177, "in_moc_16.gat",19,161;
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 OnTimer1000:
-	announce "監視者: 試験開始だ",9;
+	announce "Beholder: the test is starting",9;
 	end;
 OnTimer2000:
-	announce "監視者: 言ったとおり、モンスターの名前が「転職試験用見本」という奴だけを倒せ！",9;
+	announce "Beholder: as I said, defeat only the monster whose name is "sample for the job change test"!" ,9;
 	end;
 OnTimer3000:
-	announce "監視者: 試験の目的は、より迅速正確に対象を判別することだ。",9;
+	announce "Beholder: the purpose of the test is to identify the subject more quickly and accurately." ,9;
 	end;
 OnTimer4000:
-	announce "監視者: それでは、持ち時間を３分与える。時間の経過は１分ごとに伝える。",9;
+	announce "Beholder: Now you will have 3 minutes. I will tell you every minute the time has elapsed." ,9;
 	end;
 OnTimer5000:
-	announce "監視者: よし…スタートだ。残り３分！",9;
+	announce "Beholder: Okay... Start. 3 minutes left!" ,9;
 	end;
 OnTimer65000:
-	announce "監視者: ２分だ。「転職試験用見本」を倒せ！",9;
+	announce "Beholder: 2 minutes. Defeat "Job Test Sample"!" ,9;
 	end;
 OnTimer125000:
-	announce "監視者: 残り１分！",9;
-	end;
+	announce "Beholder: 1 minute left!" ,9;
+	,9; end; OnTimer125000: announce "Beholder: 1 minute left!
 OnTimer180000:
-	announce "監視者: 試験終了 5 秒前",9;
+	OnTimer180000: announce "Beholder: 5 seconds before end of test",9;
 	end;
 OnTimer181000:
-	announce "監視者: 試験終了 4 秒前",9;
+	announce "Beholder: 4 seconds before end of test",9;
 	end;
 OnTimer182000:
-	announce "監視者: - 3 -",9;
+	announce "Beholder: - 3 -",9;
 	end;
 OnTimer183000:
-	announce "監視者: - 2 -",9;
+	announce "Beholder: - 2 -",9;
 	end;
 OnTimer184000:
-	announce "監視者: - 1 -",9;
+	announce "Beholder: - 1 -",9;
 	end;
 OnTimer185000:
-	announce "監視者: 終了",9;
+	announce "Beholder: finished",9;
 	end;
 OnTimer186000:
-	announce "監視者: 時間になったがクリアできなかったか…。また次頑張れ。",9;
-	areawarp "in_moc_16.gat",60,136,93,177,"in_moc_16.gat",19,161;
+	announce "Beholder: time is up, but you didn't clear.... Try again next time." ,9;
+	areawarp "in_moc_16.gat",60,136,93,177, "in_moc_16.gat",19,161;
 	end;
 OnTimer189000:
 	stopnpctimer;
-	killmonster "in_moc_16.gat","All";
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,87,137,0	script	#AS_Warp	45,2,1,{
+in_moc_16.gat,87,137,0 script #AS_Warp 45,2,1,{
 	stopnpctimer "AS_Test2nd";
 	warp "in_moc_16.gat",87,102;
-	killmonster "in_moc_16.gat","All";
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,68,158,0	script	#AS_Abyss	139,0,0,{
-	announce "監視者: " +$@as_tester$+ "様、落とし穴に落ちました。",9;
+in_moc_16.gat,68,158,0 script #AS_Abyss 139,0,0,{
+	announce "Beholder: " +$@as_tester$+ "Sir, you have fallen into a pit." ,9;
 	warp "in_moc_16.gat",19,161;
 	stopnpctimer "AS_Test2nd";
-	killmonster "in_moc_16.gat","All";
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 }
 
-in_moc_16.gat,68,159,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,69,158,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,69,159,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,68,159,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,69,158,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,69,159,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,64,162,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,64,163,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,65,162,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,65,163,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,64,162,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,64,163,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,65,162,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,65,163,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,62,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,62,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,63,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,63,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,62,168,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,62,169,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,63,168,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,63,169,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,66,170,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,66,171,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,67,170,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,67,171,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,66,170,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,66,171,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,67,170,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,67,171,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,64,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,64,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,65,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,65,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,64,174,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,64,175,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,65,174,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,65,175,0 duplicate(#AS_Abyss) pit 139,0,0
 
-in_moc_16.gat,72,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,72,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,73,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,73,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,72,174,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,72,175,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,73,174,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,73,175,0 duplicate(#AS_Abyss) pit 139,0,0
 
-in_moc_16.gat,72,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,1
-in_moc_16.gat,73,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,1
-in_moc_16.gat,72,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,73,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,72,167,0 duplicate(#AS_Abyss) Pit 139,0,1
+in_moc_16.gat,73,167,0 duplicate(#AS_Abyss) Pit 139,0,1
+in_moc_16.gat,72,169,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,73,169,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,78,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,78,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,79,168,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,79,169,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,78,168,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,78,169,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,79,168,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,79,169,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,81,172,0		duplicate(#AS_Abyss)	落とし穴	139,1,0
-in_moc_16.gat,81,173,0		duplicate(#AS_Abyss)	落とし穴	139,1,0
-in_moc_16.gat,83,172,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,83,173,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,81,172,0 duplicate(#AS_Abyss) Pit 139,1,0
+in_moc_16.gat,81,173,0 duplicate(#AS_Abyss) pit 139,1,0
+in_moc_16.gat,83,172,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,83,173,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,88,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,88,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,89,174,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,89,175,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,88,174,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,88,175,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,89,174,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,89,175,0 duplicate(#AS_Abyss) pit 139,0,0
 
-in_moc_16.gat,86,166,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,86,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,166,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,167,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,166,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,86,167,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,166,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,167,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,90,164,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,90,165,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,91,164,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,91,165,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,90,164,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,90,165,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,91,164,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,91,165,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,86,160,0		duplicate(#AS_Abyss)	落とし穴	139,2,0
-in_moc_16.gat,86,161,0		duplicate(#AS_Abyss)	落とし穴	139,2,0
-in_moc_16.gat,89,160,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,89,161,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,160,0 duplicate(#AS_Abyss) Pit 139,2,0
+in_moc_16.gat,86,161,0 duplicate(#AS_Abyss) Pit 139,2,0
+in_moc_16.gat,89,160,0 duplicate(#AS_Abyss) pit 139,0,0
+in_moc_16.gat,89,161,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,86,154,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,86,155,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,154,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,155,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,154,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,86,155,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,154,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,155,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,84,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,84,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,85,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,85,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,84,150,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,84,151,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,85,150,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,85,151,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,90,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,90,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,91,150,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,91,151,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,90,150,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,90,151,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,91,150,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,91,151,0 duplicate(#AS_Abyss) Pit 139,0,0
 
-in_moc_16.gat,86,146,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,86,147,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,146,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
-in_moc_16.gat,87,147,0		duplicate(#AS_Abyss)	落とし穴	139,0,0
+in_moc_16.gat,86,146,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,86,147,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,146,0 duplicate(#AS_Abyss) Pit 139,0,0
+in_moc_16.gat,87,147,0 duplicate(#AS_Abyss) Pit 139,0,0
 
 
 //==========================================
-// 三次試験（実技２）
+// Tertiary exam (practical 2)
 //------------------------------------------
 
-in_moc_16.gat,89,98,2	script	ダンテ	118,5,1,{
+in_moc_16.gat,89,98,2 script Dante 118,5,1,{
 	end;
 OnTouch:
-	if(CHANGE_AS != 4) {
-		mes "[ダンテ]";
-		mes "私はこの試験を見ている";
-		mes "「ダンテ」という。";
-		mes "この試験で見るのは、お前の";
-		mes "回避能力だ。";
+	if(CHANGE_AS ! = 4) {
+		mes "[Dante]";
+		mes "I am looking at this test "Dante"." ;
+		mes "What I see in this exam is your evasiveness." ;
 		next;
-		mes "[ダンテ]";
-		mes "ハイディングを適度に使う";
-		mes "ことも許されている。";
+		mes "[Dante]";
+		mes "Moderate use of hidings is also allowed." ;
 		next;
-		mes "[ダンテ]";
-		mes "目的は反対側の入口の「バルカデー」";
-		mes "のところに行くこと。";
-		mes "多くのモンスターの間を抜けて、";
-		mes "向こう側まで行くんだ。";
-		mes "倒さずにな。";
+		mes "[Dante]";
+		mes "The objective is to get to the "Barcardi" entrance on the other side." ;
+		mes "You have to go through many monsters to get to the other side." ;
+		mes "Don't knock them down." ;
 		next;
-		mes "[ダンテ]";
-		mes "途中で気を失ったり、逃げ出した場合は";
-		mes "ここへ戻ってくることになる。";
-		mes "それでは開始だ。健闘を祈る。";
+		mes "[Dante]";
+		mes "If you faint or run away on the way, you'll have to come back here." ;
+		mes "Then let's begin. I wish you good luck." ;
 		set CHANGE_AS,4;
 		donpcevent "AS_Test3rd::OnStart";
 		close;
 	}
-	mes "[ダンテ]";
-	mes "うん…気を失ったみたいだな。";
-	mes "よし、回復してやる。";
+	mes "[Dante]";
+	mes "Yeah... I think I've passed out." ;
+	mes "Okay, I'll recover." ;
 	percentheal 100,100;
 	next;
-	mes "[ダンテ]";
-	mes "しかし、気を失うほどのものか？";
-	mes "また転職を試みるのはいいが、";
-	mes "無理なようなら今のうちに言ってくれ。";
+	mes "[Dante]";
+	mes "But is it enough to make you faint?" ;
+	mes "You can try to change jobs again, but if you can't, tell me now." ;
 	next;
-	if(select("再挑戦だ","まだ無理なようだ…")==1) {
-		mes "[ダンテ]";
-		mes "そうか頑張ってくれ。";
-		mes "バルカデーは近くにいるはずだ。";
+	if(select("I'm trying again.", "Still doesn't seem possible...") ==1) {
+		mes "[Dante]";
+		mes "Well, good luck with that." ;
+		mes "Barcardi should be nearby." ;
 		close;
 	}
-	mes "[ダンテ]";
-	mes "そうか…それではまた次の機会に。";
+	mes "[Dante]";
+	mes "Well... I'll see you next time." ;
 	next;
-	mes "[ダンテ]";
-	mes "街に帰ったら記録するのを";
-	mes "忘れないように。";
+	mes "[Dante]";
+	mes "Don't forget to record it when you get back to town." ;
 	close2;
 	stopnpctimer "AS_Test3rd";
 	set CHANGE_AS,2;
-	announce "ダンテ: " +$@as_tester$+ "が転職をあきらめた。次の者入りなさい。",9;
+	announce "Dante: " +$@as_tester$+ " has given up his new job. Enter the next person." ,9;
 	warp "in_moc_16.gat",18,14;
-	killmonster "in_moc_16.gat","All";
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,0,0,0	script	AS_Test3rd	-1,{
+in_moc_16.gat,0,0,0 script AS_Test3rd -1,{
 OnStart:
-	monster "in_moc_16.gat",81,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",82,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",83,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",84,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",85,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",86,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",87,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",88,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",89,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",90,77,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",75,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",77,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",81,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",83,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",85,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",90,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",92,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",94,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",98,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",100,56,"マミー",1041,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",76,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",76,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",79,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",96,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",99,62,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
-	monster "in_moc_16.gat",99,65,"ヒドラ",1068,1,"AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",81,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",82,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",83,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",84,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",85,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",86,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",87,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",88,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",89,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",90,77, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",75,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",77,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",81,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",83,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",85,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",90,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",92,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",94,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",98,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",100,56, "Mummy",1041,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",76,62, "Hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",76,65, "hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,62, "hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",79,65, "hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,62, "Hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",96,65, "hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",99,62, "Hydra",1068,1, "AS_Test3rd::OnKilled";
+	monster "in_moc_16.gat",99,65, "hydra",1068,1, "AS_Test3rd::OnKilled";
 	end;
 OnKilled:
-	announce "ダンテ: モンスターを倒してしまったら",9;
-	announce "ダンテ: 最初からやり直しだ。",9;
-	areawarp "in_moc_16.gat",64,46,111,105,"in_moc_16.gat",87,102;
-	killmonster "in_moc_16.gat","All";
+	announce "Dante: If you beat the monster",9;
+	announce "Dante: Start over from the beginning." ,9;
+	areawarp "in_moc_16.gat",64,46,111,105, "in_moc_16.gat",87,102;
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 OnTimer240000:
 	stopnpctimer;
-	areawarp "in_moc_16.gat",60,136,93,177,"in_moc_16.gat",19,161;
-	areawarp "in_moc_16.gat",64,46,111,105,"in_moc_16.gat",19,161;
-	killmonster "in_moc_16.gat","All";
+	areawarp "in_moc_16.gat",60,136,93,177, "in_moc_16.gat",19,161;
+	areawarp "in_moc_16.gat",64,46,111,105, "in_moc_16.gat",19,161;
+	killmonster "in_moc_16.gat", "All";
 	enablewaitingroomevent "AS_ChatRoom";
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,87,48,1	script	バルカデー	725,2,2,{
+in_moc_16.gat,87,48,1 script Barcardi 725,2,2,{
 	end;
 OnTouch:
-	killmonster "in_moc_16.gat","All";
-	mes "[バルカデー]";
-	mes "よし、来たな！";
-	mes "いよいよ最終試験だ。";
+	killmonster "in_moc_16.gat", "All";
+	mes "[Barcardi]";
+	mes "Okay, here it comes!" ;
+	mes "Now it's time for the final exam." ;
 	close2;
 	stopnpctimer "AS_Test3rd";
 	set @as_step,0;
@@ -1574,504 +1358,415 @@ OnTouch:
 
 
 //==========================================
-// 最終試験
+// final exam
 //------------------------------------------
 
-in_moc_16.gat,182,169,0	script	#門番	45,1,1,{
+in_moc_16.gat,182,169,0 script # gatekeeper 45,1,1,{
 	if(@as_step < 2) {
 		set @as_step,@as_step+1;
 		warp "in_moc_16.gat",181,183;
 		end;
 	}
-	announce "門番: " +strcharinfo(0)+ "様がギルドマスターの部屋に入りました",9;
-	hideonnpc "ヒュイ#AS";
-	hideonnpc "カイ#AS";
-	hideonnpc "名も無き者#AS";
-	hideonnpc "バルカデー#AS";
-	hideonnpc "監視者#AS";
-	hideonnpc "ダンテ#AS";
-	hideonnpc "補佐官マロビッツ#AS";
+	announce "Gatekeeper: " +strcharinfo(0)+ "Lady has entered the Guildmaster's room",9;
+	hideonnpc "Huey#AS";
+	hideonnpc "Kai#AS";
+	hideonnpc "The Anonymous One#AS";
+	hideonnpc "Barcardi#AS";
+	hideonnpc "Beholder#AS";
+	hideonnpc "Dante#AS";
+	hideonnpc "Gayle Maroubitz#AS";
 	savepoint "in_moc_16.gat",167,110;
 	warp "SavePoint",0,0;
 	end;
 }
 
 //==============================================================
-in_moc_16.gat,167,110,0	script	アサシン迷宮案内	139,3,1,{
-	mes "[ギルドマスター]";
-	mes "ふむ…よく来たな。";
-	mes "ここは「ギルドマスターの部屋」";
-	mes "アサシンギルドの最深部だ。";
+in_moc_16.gat,167,110,0 script Assassin's Guide to the Maze 139,3,1,{
+	mes "[Guildmaster]";
+	mes "Hmm... You've come a long way." ;
+	mes "This is the 'Guildmaster's Room', the deepest part of the Assassin guild." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "私の居場所がわからないように迷宮に";
-	mes "なっている。";
-	mes "そして試験についてだが…";
-	mes "私の所まで来てほしい。";
-	mes "たまに侵入者があるためこのような";
-	mes "造りにした。";
+	mes "[Guildmaster]";
+	mes "It is a labyrinth so that you can't find me." ;
+	mes "And about the exam..." ;
+	mes "I want you to come to me." ;
+	mes "I built it this way because of occasional break-ins." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "それではまた後で会おう…";
+	mes "[Guildmaster]";
+	mes "So I'll see you later..." ;
 	close;
 }
 
-in_moc_16.gat,170,90,0	script	アサシン迷宮案内#AS	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "そこは入り組んだ道だ…";
-	mes "他を進むように。";
+in_moc_16.gat,170,90,0 script Assassin Labyrinth Guide#AS 139,1,1,{
+	mes "[Guildmaster]";
+	mes "It's a convoluted path there..." ;
+	mes "Continue on the other." ;
 	close;
 }
 
-in_moc_16.gat,160,85,0	duplicate(アサシン迷宮案内#AS)	アサシン迷宮案内	139,1,1
+in_moc_16.gat,160,85,0 duplicate(Assassin's Maze Guide#AS) Assassin's Maze Guide 139,1,1
 
-in_moc_16.gat,180,101,0	script	アサシン迷宮案内	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "そっちではないと思うが…";
+in_moc_16.gat,180,101,0 script Assassin's Guide to the Labyrinth 139,1,1,{
+	mes "[Guildmaster]";
+	mes "I don't think it's that way..." ;
 	close;
 }
 
-in_moc_16.gat,186,107,0	script	アサシン迷宮案内	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "そっちではないと思うが…";
+in_moc_16.gat,186,107,0 script Assassin's Guide to the Maze 139,1,1,{
+	mes "[Guildmaster]";
+	mes "I don't think it's that way..." ;
 	close;
 }
 
-in_moc_16.gat,149,95,0	script	アサシン迷宮案内	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "うむ、だいたいの道筋を";
-	mes "理解したようだな。";
+in_moc_16.gat,149,95,0 script Assassin Labyrinth Guide 139,1,1,{
+	mes "[Guildmaster]";
+	mes "Hmm, I see you've got the general idea of how to get there." ;
 	close;
 }
 
-in_moc_16.gat,149,95,0	script	アサシン迷宮案内	139,0,0,{
-	mes "[ギルドマスター]";
-	mes "だいぶ近づいたな。";
-	mes "お前の気配が感じられるぞ。";
+in_moc_16.gat,149,95,0 script Assassin Labyrinth Guide 139,0,0,{
+	mes "[Guildmaster]";
+	mes "You're getting pretty close." ;
+	mes "I can feel your presence." ;
 	close;
 }
 
-in_moc_16.gat,175,89,0	script	アサシン迷宮案内	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "そこは補佐官の所に通じる。";
-	mes "何か補佐官に用でもあるのか？";
+in_moc_16.gat,175,89,0 script Assassin Labyrinth Guide 139,1,1,{
+	mes "[Guildmaster]";
+	mes "It leads to the aide's place." ;
+	mes "What can I do for you aide?" ;
 	close;
 }
 
-in_moc_16.gat,153,85,0	script	アサシン迷宮案内	139,1,1,{
-	mes "[ギルドマスター]";
-	mes "そこは入り組んだ道だ…";
-	mes "少し戻れば良い。";
-	mes "柱で邪魔された道だから、";
-	mes "回りこんで進むように。";
+in_moc_16.gat,153,85,0 script Assassin's Guide to the Maze 139,1,1,{
+	mes "[Guildmaster]";
+	mes "It's a convoluted path there..." ;
+	mes "Just go back a bit." ;
+	mes "The path is blocked by pillars, so go around and continue." ;
 	close;
 }
 
 //==============================================================
-in_moc_16.gat,186,81,0	script	ギルドマスター補佐官	55,{
-	mes "[補佐官マロビッツ]";
-	mes "私は転職試験には関わりが";
-	mes "ありません。";
-	mes "転職についてはあちらにいらっしゃる";
-	mes "ギルドマスター様にご依頼ください。";
+in_moc_16.gat,186,81,0 script Assistant Guildmaster 55,{
+	mes "[Gayle Maroubitz]";
+	mes "I am not involved in the career change exam." ;
+	mes "Please ask the Guildmaster over there about changing jobs." ;
 	close;
 }
 
 //==============================================================
-in_moc_16.gat,149,80,4	script	ギルドマスター	106,1,1,{
+in_moc_16.gat,149,80,4 script Guildmaster 106,1,1,{
 	end;
 OnTouch:
-	mes "[ギルドマスター]";
-	mes "良く来た。道が複雑で苦労をかけたな。";
-	mes "先ほど報告書が上がってきたが、";
-	mes "なかなか見所があるシーフだそうだな。";
-	mes "お前のように鍛え抜かれた奴は";
-	mes "将来が楽しみだ。";
+	mes "[Guildmaster]";
+	mes "Good to see you. I'm sorry you had a hard time because of the complexity of the road." ;
+	mes "The report came up just now, and I hear it's quite a thief to see." ;
+	mes "I'm looking forward to seeing a well-trained guy like you in the future." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "さて、これからいくつか質問をするが";
-	mes "お前が普段考えているように答えて";
-	mes "くれれば良いから、楽にしてくれ。";
+	mes "[Guildmaster]";
+	mes "Now, I'm going to ask you a few questions and you can answer them the way you normally think, so make yourself comfortable." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "まず…アサシンに重要なことは何か？";
+	mes "[Guildmaster]";
+	mes "First . . what is important to Assassin?" ;
 	next;
-	switch (select("より強い力","プライド(自尊心)","絶え間無い修練")) {
+	switch (select("stronger power", "pride (self-esteem)", "constant practice")) {
 	case 1:
-		mes "[ギルドマスター]";
-		mes "より強い力といえば…確かに";
-		mes "シーフに比べアサシンは強いと言える。";
+		mes "[Guildmaster]";
+		mes "Speaking of more power... I can certainly say that Assassin is stronger than Thief." ;
 		next;
-		mes "[ギルドマスター]";
-		mes "しかし、その強さは何のために";
-		mes "必要なのだ？例えば復讐のためか…";
-		mes "それとも他の何かのためか？";
+		mes "[Guildmaster]";
+		mes "But what do we need that strength for? Is it for revenge, for example..." ;
+		mes "Or for something else?" ;
 		next;
-		mes "[ギルドマスター]";
-		mes "アサシンの力を手に入れたら";
-		mes "どんな利があるだろうか？";
+		mes "[Guildmaster]";
+		mes "What would be the benefit of having Assassin's power?" ;
 		next;
-		switch (select("復讐を果たせる","金儲けがしやすくなる","より多くの場所に行ける")) {
+		switch (select("I can get revenge", "I can make more money", "I can go to more places")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "復讐か…";
-				mes "そう…我々のたいていは恨み";
-				mes "というものを持っている。";
+				mes "[Guildmaster]";
+				mes "Revenge..." ;
+				mes "So... Most of us have something called a grudge." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "しかし我々は感情に左右されることなく";
-				mes "自分に課せられた任務を忠実に遂行";
-				mes "しなければならない。";
+				mes "[Guildmaster]";
+				mes "But we must be faithful to the task assigned to us without being influenced by our emotions." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "アサシンになりたくば感情を消すことだ。";
+				mes "[Guildmaster]";
+				mes "If you want to be an Assassin, you must turn off your emotions." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "…たしかに生きていくには金が必要";
-				mes "だが…それはアサシンとしての";
-				mes "生き方に望むべきものではない。";
+				mes "[Guildmaster]";
+				mes "... Yes, you need money to survive... That's not what you should want in life as an Assassin." ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "良い考えだ。色々な場所を覚え、";
-				mes "観察することは任務の成功をより";
-				mes "高めることになる。";
+				mes "[Guildmaster]";
+				mes "Good idea. Learning and observing different places will make the mission more successful." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "しかし、いくら仲間達ととはいえ、";
-				mes "大勢で旅をするようなことは控えて";
-				mes "ほしい。目立つことは避けなければ";
-				mes "ならないからだ…";
+				mes "[Guildmaster]";
+				mes "But please refrain from traveling in large numbers, no matter how many friends you have with you. For you must avoid being conspicuous..." ;
 				break;
 		}
 		break;
 	case 2:
-		mes "[ギルドマスター]";
-		mes "プライドか…";
-		mes "うちの者がそう言っていたか？";
+		mes "[Guildmaster]";
+		mes "Pride..." ;
+		mes "Did our people say so?" ;
 		next;
-		mes "[ギルドマスター]";
-		mes "ふん…それはどういう根拠があってか？";
-		mes "お前がアサシンの何に惹かれたかは";
-		mes "知らないが…";
+		mes "[Guildmaster]";
+		mes "Hmm... On what grounds?" ;
+		mes "I don't know what attracted you to Assassin..." ;
 		next;
-		mes "[ギルドマスター]";
-		mes "奴らの大部分は、ある時期に";
-		mes "大きな苦労を共にしてきた。";
-		mes "だからよくわかる。";
-		mes "では、お前にはなぜプライドが";
-		mes "必要なのだ？";
+		mes "[Guildmaster]";
+		mes "Most of these guys have been through some major hardships together at one point or another." ;
+		mes "So I understand it well." ;
+		mes "So why do you need pride?" ;
 		next;
-		switch (select("一人で生きるには必要","金儲けのために必要","見た目が良いから")) {
+		switch (select("I need it to live alone", "I need it to make money", "Because it looks good")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "そう…我々は孤独な存在…";
-				mes "どこに在っても常に一人だ。";
+				mes "[Guildmaster]";
+				mes "So... We are lonely beings..." ;
+				mes "Wherever we are, we are always alone." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "しかし、我々にも仲間というものが";
-				mes "ある。あまり深く入れ込み過ぎると";
-				mes "危険もまとわりつくが、良きパートナー";
-				mes "が居れば目的の達成もよりたやすく";
-				mes "なるだろう…";
+				mes "[Guildmaster]";
+				mes "But we also have companions. If we get too deep into it, it can be dangerous, but if we have a good partner, it will be easier to achieve our goals..." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "…たしかに生きていくには金が必要";
-				mes "だが…それはアサシンとしての";
-				mes "生き方に望むべきものではない。";
+				mes "[Guildmaster]";
+				mes "... Yes, you need money to survive... That's not what you should want in life as an Assassin." ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "見かけにこだわるあまりものの";
-				mes "本質を見逃すか…";
-				mes "そんな精神の弱い者はアサシン";
-				mes "としてふさわしくない。";
+				mes "[Guildmaster]";
+				mes "Either we are so concerned with appearances that we miss the essence of things..." ;
+				mes "Such a weak spirit is not fit to be an Assassin." ;
 				break;
 		}
 		break;
 	case 3:
-		mes "[ギルドマスター]";
-		mes "修練か…";
-		mes "お前はすでに立派なシーフに";
-		mes "見えるが、尚もって修練を積む理由は";
-		mes "何か？";
+		mes "[Guildmaster]";
+		mes "Ordeal..." ;
+		mes "You already look like a great Thief, what's the reason for you to continue your training?" ;
 		next;
-		mes "[ギルドマスター]";
-		mes "シーフならいざしらず、アサシンは";
-		mes "己を律して時に慎んだ行動を取らねば";
-		mes "ならない。たまに、力に対する欲望に";
-		mes "負け、自分を制御できなくなる若者も";
-		mes "いるのだ…";
+		mes "[Guildmaster]";
+		mes "An Assassin must be self-disciplined and sometimes moderate in his behavior, even though he is a Thief. Sometimes, the desire for power overtakes some young people and they lose control of themselves..." ;
 		next;
-		mes "[ギルドマスター]";
-		mes "それでは今の何に満足できずに";
-		mes "修練を積むというのだ？";
+		mes "[Guildmaster]";
+		mes "What, then, is it that you are not satisfied with what you have now, and you want to train yourself?" ;
 		next;
-		switch (select("技術","目標","精神")) {
+		switch (select("technique", "goal", "spirit")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "技術はアサシンになればある程度";
-				mes "身につくものだ。それ自体に";
-				mes "最高の価値があるわけではない。";
-				mes "アサシンになっても満足できるか";
-				mes "わからぬぞ。";
+				mes "[Guildmaster]";
+				mes "Technology is something you can learn to a certain extent if you become an Assassin. It is not in itself of the highest value." ;
+				mes "I don't know if you'll be satisfied if you become an Assassin." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "そうか…絶えず新たな目標を掲げる";
-				mes "のは良いことだ…しかし…";
-				mes "今はアサシンになることで一杯だが、";
-				mes "いつかは変わるかもしれないぞ。";
+				mes "[Guildmaster]";
+				mes "Well... It's good to constantly set new goals... But..." ;
+				mes "I'm full of being an Assassin right now, but that may change someday!" ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "そうだな。常に強固な精神を持つのは";
-				mes "重要なことだ。身体と共に精神面も鍛え";
-				mes "ながら、なかなか精神面を強めるのは";
-				mes "難しいのだ。";
+				mes "[Guildmaster]";
+				mes "I agree. It is important to always have a strong spirit. It's not easy to strengthen the mental side of the body while training the mental side along with the physical." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "アサシンという職業は、技だけではなく";
-				mes "精神も一定に保たねばならない。";
-				mes "それでこそ体得した技術を余すことなく";
-				mes "発揮できるからな。";
+				mes "[Guildmaster]";
+				mes "The profession of Assassin is not only about skill, but also about a constant mental attitude." ;
+				mes "Only then can you fully demonstrate the skills you have acquired." ;
 				break;
 		}
 		break;
 	}
+	} next;
+	mes "[Guildmaster]";
+	mes "You've thought this through." ;
+	mes "Some people try to be Assassin without thinking..." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "お前はよく考えているな。";
-	mes "中には何も考えずにアサシンに";
-	mes "なろうという奴も居るんでな…";
+	mes "[Guildmaster]";
+	mes "Those people cause problems and bring mud to our guild's face." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "そういった奴らが問題を起こし";
-	mes "我々ギルドの顔に泥を塗る。";
+	mes "[Guildmaster]";
+	mes "This is something you can say too, but once you become an Assassin, you can never go back to being a Thief." ;
+	mes "As an Assassin, you will have duties and responsibilities for the rest of your life." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "これはお前も言えることだが、";
-	mes "一度アサシンになったら二度と";
-	mes "シーフに戻ることはできない。";
-	mes "アサシンとしての義務と責任は";
-	mes "この後ずっと負ってもらうことになる。";
+	mes "[Guildmaster]";
+	mes "What is the first thing you will do when you become Assassin from now on?" ;
 	next;
-	mes "[ギルドマスター]";
-	mes "これからアサシンになったら";
-	mes "まず何をするか？";
-	next;
-	switch (select("すぐに戦闘をする","私を待つ人々のところへ","アサシンについて調べる")) {
+	switch (select("I will do battle immediately", "I will go to the people waiting for me", "I will find out about Assassin")) {
 	case 1:
-		mes "[ギルドマスター]";
-		mes "戦闘だと？それで？";
+		mes "[Guildmaster]";
+		mes "Combat? So?" ;
 		next;
-		switch (select("早く成長したい","アサシンとしての自分の技を試す","シーフでは行きにくい場所に行く")) {
+		switch (select("I want to grow up fast", "Test my skills as an Assassin", "Go to places that are hard to get to in Thief")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "あまり成長を焦ると基礎が緩み、";
-				mes "特に精神面の修練が疎かになる";
-				mes "だろう。基礎ができていないと咄嗟の";
-				mes "事態に反応が遅れることがある。";
-				mes "一瞬の判断が命取りになるアサシン";
-				mes "こそ基礎を固めるべきだ。";
+				mes "[Guildmaster]";
+				mes "If you are in too much of a hurry to grow, you will loose your fundamentals, especially your mental discipline. Without a good foundation, you may be slow to react on the spur of the moment." ;
+				mes: "Assassin is the one who should solidify the fundamentals, because a split-second decision can be fatal." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "自分を試すのは良いことだ。";
-				mes "進化した自分の能力を試すのは";
-				mes "良いことだが、アサシンとしての";
-				mes "心構えは忘れるなよ。";
+				mes "[Guildmaster]";
+				mes "It is good to test yourself." ;
+				mes "It's good to test your evolved abilities, but don't forget to be an Assassin." ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "良いことだ。新たな地へ赴けば";
-				mes "また新たな発見があるだろう。";
-				mes "しかし、アサシンになってもその";
-				mes "人間の本質が変わるとは限らない。";
+				mes "[Guildmaster]";
+				mes "Good for you. You go to a new place and you'll discover something new." ;
+				mes "However, becoming an Assassin does not necessarily change a person's nature." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "初めはあまり無理をせず、少しずつ";
-				mes "行動範囲を広げるのが良いだろう。";
+				mes "[Guildmaster]";
+				mes "It is better not to take it too far at first, but to expand the scope of your activities little by little." ;
 				break;
 		}
 		break;
 	case 2:
-		mes "[ギルドマスター]";
-		mes "誰が待っているのだ？";
+		mes "[Guildmaster]";
+		mes "Who is waiting for you?" ;
 		next;
-		switch (select("仲間達だ","ギルド員達だ","恋人だ")) {
+		switch (select("It's my friends", "It's the Guild Members", "It's my lover")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "そうか。彼らもお前のことを";
-				mes "我が事のように喜ぶだろう。";
-				mes "孤独の中でも仲間を思う心は";
-				mes "忘れるなよ。";
+				mes "[Guildmaster]";
+				mes "I see. They'll be glad to have you as one of their own." ;
+				mes "Don't forget to think of your friends in your loneliness." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "生死を共にする仲間か…良いな。";
-				mes "アサシンとして、仲間の影となり";
-				mes "よく助けてやることだ。";
+				mes "[Guildmaster]";
+				mes "Friends in life and death... Good." ;
+				mes "As an Assassin, you are to shadow and help your fellow man well." ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "愛する人のためだと？";
-				mes (Sex? "彼": "彼女")+ "の影となり、常に見守るというのか…";
+				mes "[Guildmaster]";
+				mes "For the sake of your loved ones?" ;
+				mes ""+(Sex? "He": "She")+ ""You mean to shadow and always watch over..."" ;
 				next;
-				mes "[ギルドマスター]";
-				mes "大事にすることだ…";
-				mes "だがしかし、その甘さが我々の";
-				mes "ような職には命取りとなる。";
-				mes "お前の人生だ。悔いの無いようにな…";
+				mes "[Guildmaster]";
+				mes "Cherish it..." ;
+				mes "But that naivety is fatal to a profession like ours." ;
+				mes "It's your life. Don't have any regrets..." ;
 				break;
 		}
 		break;
 	case 3:
-		mes "[ギルドマスター]";
-		mes "良い姿勢だ。";
-		mes "どんなことを調べる？";
+		mes "[Guildmaster]";
+		mes "Good attitude." ;
+		mes "What do you want to look into?" ;
 		next;
-		switch (select("アサシンに向いている場所を","ギルドの成長について","アサシンで収入を上げる方法を")) {
+		switch (select("where is a good place for Assassin", "about guild growth", "how to increase income in Assassin")) {
 			case 1:
-				mes "[ギルドマスター]";
-				mes "この世で楽な場所・辛い場所は";
-				mes "たしかに存在する。";
-				mes "しかしアサシンというのはどんな";
-				mes "環境下でも任務を遂行するために";
-				mes "柔軟に対応できなければならない。";
+				mes "[Guildmaster]";
+				mes "There are indeed easy and hard places in this world." ;
+				mes "But an Assassin has to be flexible enough to perform his mission in any environment." ;
 				break;
 			case 2:
-				mes "[ギルドマスター]";
-				mes "外には多くの我々の仲間がいる。";
-				mes "奴らから学ぶことがあるはずだ。";
+				mes "[Guildmaster]";
+				mes "There are many of us out there." ;
+				mes "There must be something to learn from them." ;
 				next;
-				mes "[ギルドマスター]";
-				mes "そしてそこで得る知識と経験を";
-				mes "元に土台を創り上げ、ギルドの";
-				mes "発展に寄付してほしい。";
-				mes "そしてお前もある程度の域に";
-				mes "達すれば、逆に下の者の面倒を";
-				mes "見る機会が来るはずだ。";
+				mes "[Guildmaster]";
+				mes "And I hope you will use the knowledge and experience you gain there to create a foundation and donate it to the development of the guild." ;
+				mes "[Guildmaster]"; mes "And when you reach a certain level, you will have the opportunity to take care of those below you." ;
 				break;
 			case 3:
-				mes "[ギルドマスター]";
-				mes "…アサシンは金のために";
-				mes "存在するのではない…";
-				mes "もう少しアサシンの責務という";
-				mes "ものを良く考えるべきだ。";
+				mes "[Guildmaster]";
+				mes "... Assassin is not there for the money..." ;
+				mes "...Assassin is not there for money..."; mes "...Assassin should think a little more carefully about its responsibilities..." ;
 				break;
 		}
 		break;
 	}
+	} next;
+	mes "[Guildmaster]";
+	mes "It was quite a conversation I had with you." ;
+	mes "I remember the old days too..." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "お前との会話はなかなか楽しかった。";
-	mes "私も昔を思い出したよ…";
+	mes "[Guildmaster]";
+	mes "Hmm... Let's collect them then." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "ふむ…それでは奴らを収集するか。";
+	announce "Guildmaster: " +strcharinfo(0)+ "Those who were involved in the Assassin job test for "Guildmaster: " +strcharinfo(0)+ "must gather with me",9;
+	mes "[Guildmaster]";
+	mes ""+strcharinfo(0)+ "Those who were involved in the Assassin's job examination must gather under me";
 	next;
-	announce "ギルドマスター: " +strcharinfo(0)+ "のアサシン転職試験に関わった者は私の元集結せよ",9;
-	mes "[ギルドマスター]";
-	mes strcharinfo(0)+ "の";
-	mes "アサシン転職試験に関わった者は";
-	mes "私の元集結せよ";
+	mes "[Guildmaster]";
+	mes "Come at once!" ;
 	next;
-	mes "[ギルドマスター]";
-	mes "すぐに来い！";
+	hideoffnpc "Huey#AS";
+	hideoffnpc "Kai#AS";
+	hideoffnpc "The Anonymous One#AS";
+	hideoffnpc "Barcardi#AS";
+	hideoffnpc "Beholder#AS";
+	hideoffnpc "Dante#AS";
+	hideoffnpc "Gayle Maroubitz#AS";
+	mes "[The Anonymous One]";
+	mes "You wanted to see me?" ;
 	next;
-	hideoffnpc "ヒュイ#AS";
-	hideoffnpc "カイ#AS";
-	hideoffnpc "名も無き者#AS";
-	hideoffnpc "バルカデー#AS";
-	hideoffnpc "監視者#AS";
-	hideoffnpc "ダンテ#AS";
-	hideoffnpc "補佐官マロビッツ#AS";
-	mes "[名も無き者]";
-	mes "お呼びですか？";
+	mes "[Guildmaster]";
+	mes ""+strcharinfo(0)+ "I wanted to get the opinion of the person who was in charge of the job test for ......"" ;
+	mes "What do you think?" ;
 	next;
-	mes "[ギルドマスター]";
-	mes strcharinfo(0)+ "の転職試験を";
-	mes "担当した者の意見を聞きたくてな……";
-	mes "どうか？";
+	mes "[The Anonymous One]";
+	mes "That guy would be good. Kkkk..." ;
 	next;
-	mes "[名も無き者]";
-	mes "あいつなら良いね。ククク…";
-	next;
-	mes "[ギルドマスター]";
-	mes "「名も無き者」お前は賛成だな。";
-	mes "ヒュイは？";
+	mes "[Guildmaster]";
+	mes "[The Anonymous One]" You're up for it." ;
+	mes "Huey?" ;
 	next;
 	if(JobLevel >= 50) {
-		mes "[ヒュイ]";
-		mes "最近見た中で一番根性がある";
-		mes "シーフでした。";
+		mes "[Huey]";
+		mes "That was the gutsiest Thief I've seen recently." ;
 		next;
-		mes "[ヒュイ]";
-		mes "賛成です。";
-		mes "それでは私はお先に失礼します。";
-		mes "席に戻らなければなりませんので…";
-		mes "あ、マスター…私の代わりに何か";
-		mes "プレゼントでも与えてやってください。";
+		mes "[Huey]";
+		mes "I agree." ;
+		mes "Then I'll leave you to it." ;
+		mes "I must return to my seat..." ;
+		mes "Oh, Master... Please give him something as a gift instead of me." ;
 		next;
-		mes "[ギルドマスター]";
-		mes "うむ。約束しよう。";
+		mes "[Guildmaster]";
+		mes "Mm. I promise." ;
 	}
 	else {
-		mes "[ヒュイ]";
-		mes "まぁ基本はできてますよ。";
-		mes "賛成です。";
-		mes "それではお先に失礼します。";
-		mes "席に戻らなければなりませんので…";
+		mes "[Huey]";
+		mes "Well, the basics are done." ;
+		mes "I agree." ;
+		mes "Well, I'll leave you to it." ;
+		mes "I must return to my seat..." ;
 		next;
-		mes "[ギルドマスター]";
-		mes "うむ、そうしてくれ。";
+		mes "[Guildmaster]";
+		mes "Mm, do that." ;
 	}
 	next;
-	mes "[ギルドマスター]";
-	mes "では「監視者」お前はどうか？";
+	mes "[Guildmaster]";
+	mes "So, 'Beholder', how about you?" ;
 	next;
-	hideonnpc "ヒュイ#AS";
-	mes "[監視者]";
-	mes "一応通過したので合格扱いです。";
+	hideonnpc "Huey#AS";
+	mes "[Beholder]";
+	mes "It passed for the time being, so it's treated as a pass." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "うむ、皆賛成のようだな。";
-	mes "私もこの者については気に入った。";
+	mes "[Guildmaster]";
+	mes "Mm, looks like everyone agrees." ;
+	mes "I like it about this one too." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "そう…アサシンには孤独という";
-	mes "訓練が一生課せられる。";
-	mes "強い己を持ち、生きてゆけ。";
+	mes "[Guildmaster]";
+	mes "So... Assassin is subjected to the discipline of solitude for the rest of his life." ;
+	mes "Be strong and live." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "ん…話が長くなったな。";
+	mes "[Guildmaster]";
+	mes "Hmm... It's a long story." ;
 	if(JobLevel >= 50) {
-		mes "ここに以下の武器がある。";
-		mes "ジュル カタール";
-		mes "マインゴーシュ グラディウス";
-		mes "以上全て私が愛用した武器だ。";
+		mes "Here are the following weapons." ;
+		mes "Jul, Qatar, Maingauche, Gladius, and above are all weapons that I used to love." ;
 		next;
-		switch(select("ジュル","カタール","マインゴーシュ","グラディウス")) {
+		switch(select("jul", "Qatar", "Maingauche", "Gradius")) {
 			case 0: getitem 1251,1; break;
-			case 1: getitem 1253,1; break;
-			case 2: getitem 1208,1; break;
+			case 1: getitem 1253,1; break
+			case 2: getitem 1208,1; break
 			case 3: getitem 1220,1; break;
 		}
-		mes "[ギルドマスター]";
-		mes "これ一つあれば十分という";
-		mes "時代もあったな…";
+		mes "[Guildmaster]";
+		mes "There was a time when one of these was enough..." ;
 
 	}
-	else {
-		mes "まずはこれを受け取れ。";
+	} else {
+		mes "Take this first." ;
 		next;
 		switch(rand(4)) {
-			case 0: getitem 1207,1; break;
-			case 1: getitem 1219,1; break;
-			case 2: getitem 1250,1; break;
+			case 0: getitem 1207,1; break
+			case 1: getitem 1219,1; break
+			case 2: getitem 1250,1; break
 			case 3: getitem 1252,1; break;
 		}
 	}
@@ -2079,37 +1774,33 @@ OnTouch:
 	next;
 	savepoint "morocc.gat",100,101;
 	getitem 1008,1;
-	mes "[ギルドマスター]";
-	mes "では、合格の印を与えるから";
-	mes "入口のベテランアサシン・ヒュイの";
-	mes "所まで戻れ。";
-	mes "ヒュイが実際に転職をさせてくれる";
-	mes "だろう。";
+	mes "[Guildmaster]";
+	mes "Then return to the veteran Assassin Huey at the entrance as I will give you a mark of acceptance." ;
+	mes "Huey will actually give you a new job." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "ここに " +strcharinfo(0)+ " …";
-	mes "暗殺者としての道を歩まんとす…";
-	mes "その先寂しく孤独な道になろうとも";
-	mes "己の意志だけは忘れぬよう…";
+	mes "[Guildmaster]";
+	mes "Here " +strcharinfo(0)+ " ..." ;
+	mes "I'm going to be an assassin..." ;
+	mes "And though the road ahead may be a lonely and solitary one, do not forget your will..." ;
 	next;
-	mes "[ギルドマスター]";
-	mes "よし、皆戻ってよし！";
-	mes "お前も入り口まで戻してやる。";
-	hideonnpc "カイ#AS";
-	hideonnpc "名も無き者#AS";
-	hideonnpc "バルカデー#AS";
-	hideonnpc "監視者#AS";
-	hideonnpc "ダンテ#AS";
-	hideonnpc "補佐官マロビッツ#AS";
+	mes "[Guildmaster]";
+	mes "All right, everybody back!" ;
+	mes "I'll take you back to the entrance too." ;
+	hideonnpc "Kai#AS";
+	hideonnpc "The Anonymous One#AS";
+	hideonnpc "Barcardi#AS";
+	hideonnpc "Beholder#AS";
+	hideonnpc "Dante#AS";
+	hideonnpc "Gayle Maroubitz#AS";
 	close2;
 	warp "in_moc_16.gat",17,19;
 	end;
 }
 
-in_moc_16.gat,156,87,2	script	ヒュイ#AS		55,{}
-in_moc_16.gat,156,85,2	script	カイ#AS			730,{}
-in_moc_16.gat,156,83,2	script	名も無き者#AS		106,{}
-in_moc_16.gat,156,81,2	script	バルカデー#AS		725,{}
-in_moc_16.gat,156,79,2	script	監視者#AS		118,{}
-in_moc_16.gat,156,77,2	script	ダンテ#AS		118,{}
-in_moc_16.gat,156,75,2	script	補佐官マロビッツ#AS	55,{}
+in_moc_16.gat,156,87,2 script Huey#AS 55,{}
+in_moc_16.gat,156,85,2 script Huey#AS 730,{}
+in_moc_16.gat,156,83,2 script The Anonymous One#AS 106,{}
+in_moc_16.gat,156,81,2 script Barcardi#AS 725,{}
+in_moc_16.gat,156,79,2 script Beholder#AS 118,{}
+in_moc_16.gat,156,77,2 script Dante#AS 118,{}
+in_moc_16.gat,156,75,2 script Gayle Maroubitz#AS 55,{}

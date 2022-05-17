@@ -1,54 +1,45 @@
 //====================================================================
 //Ragnarok Online Thief jobchange script
-//
-//　■ CHANGE_TF  -> 0～1, 0～3(Old)
-//     OLD_CLASS  -> 転生前の職業
-//     @doubt_npc -> 0～4
+// - CHANGE_TF -> 0 to 1, 0 to 3(Old)
+// - CHANGE_TF -> 0 to 1, 0 to 3(Old)
+// OLD_CLASS -> occupation before reincarnation
+// @doubt_npc -> 0-4
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and job change
 //------------------------------------------
 
-moc_prydb1.gat,39,129,2	script	ギルド関係者#TF	69,{
+moc_prydb1.gat,39,129,2 script Guild Member#TF 69,{
 	if(Upper == UPPER_HIGH && (OLD_CLASS == Job_Assassin || OLD_CLASS == Job_Rogue)) {
 		if(Job == Job_Novice) {
-			mes "[シーフギルド関係者]";
-			mes "あれ、どこかで見た気がするね。";
-			mes "兄弟でもいるのかい？";
+			mes "[ThiefGuild Member]";
+			mes "Hey, I think I saw that somewhere." ;
+			mes "Do you have a brother?" ;
 			next;
 			if(getskilllv(1) < 9) {
-				mes "[シーフギルド関係者]";
-				mes "なんだ、シーフになりたいのか。";
-				mes "でも、それにしちゃ簡単なことを";
-				mes "忘れていないか？";
+				mes "[ThiefGuild Member]";
+				mes "What, you want to be a Thief?" ;
+				mes "But aren't you forgetting something simple for that?" ;
 				next;
-				mes "[シーフギルド関係者]";
-				mes "JobLvを10にまで成長させ、";
-				mes "^0000FF「基本スキル」のレベルを9　^000000に";
-				mes "してくるんだ。";
+				mes "[ThiefGuild Member]";
+				mes "Go grow your JobLv to 10 and get your ^0000FF "Basic Skills" level to 9 ^000000." ;
 				next;
-				mes "[シーフギルド関係者]";
-				mes "^0000FF「基本スキル」^000000のレベルは";
-				mes "^0000FF「スキルリスト」^000000ウィンドウで";
-				mes "上げることができるからね！";
-				mes "^0000FF「スキルリスト」^000000ウィンドウは";
-				mes "^0000FF「基本情報」^000000ウィンドウ内の";
-				mes "^0000FF「Skill」^000000ボタンで表示されるよ。";
+				mes "[ThiefGuild Member]";
+				mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window!" ;
+				mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 				next;
-				mes "[シーフギルド関係者]";
-				mes "スキルのレベルを上げるには、";
-				mes "スキルポイントを割り振った後、";
-				mes "^FF0000「確定」^000000ボタンが必要となるからね。";
-				mes "注意してくれよ。";
+				mes "[ThiefGuild Member]";
+				mes "To increase the level of a skill, you'll need to press the ^FF000000 "Confirm"^000000 button after assigning the skill points." ;
+				mes "Attention, please." ;
 				next;
-				mes "[シーフギルド関係者]";
-				mes "まあ、もう少し鍛えてから出直しな！";
+				mes "[ThiefGuild Member]";
+				mes "Well, you'll have to work out a little more before you can come back!" ;
 				close;
 			}
-			mes "[シーフギルド関係者]";
-			mes "それとも昔に転職させた奴か？";
-			mes "よし、また転職させてやるよ！";
+			mes "[ThiefGuild Member]";
+			mes "Or is that the guy you made me change jobs with a long time ago?" ;
+			mes "Okay, I'll let you change jobs again!" ;
 			next;
 			unequip;
 			jobchange Job_Thief,UPPER_HIGH;
@@ -60,268 +51,229 @@ moc_prydb1.gat,39,129,2	script	ギルド関係者#TF	69,{
 			skill 150,1,0;
 			skill 151,1,0;
 			skill 152,1,0;
-			mes "[シーフギルド関係者]";
-			mes "シーフはシーフらしく暮らしな！";
-			mes "あとは忙しいから省略だ。";
+			mes "[ThiefGuild Member]";
+			mes "Thiefs live like Thiefs!" ;
+			mes "The rest is omitted because I'm busy." ;
 			close;
 		}
 	}
 	if(Upper == UPPER_HIGH) {
-		mes "[シーフギルド関係者]";
-		mes (Sex)? "おい、兄ちゃん。": "ほら、姉ちゃん。";
-		mes "何しに来た？　帰れ、帰れ！";
+		mes "[ThiefGuild Member]";
+		mes ""+(Sex)? "Hey, bro." : "Hey, Sis." ;
+		mes "What are you doing here?  Go home, go home!" ;
 		close;
 	}
 	if(Job == Job_Thief) {
-		mes "[シーフギルド関係者]";
-		mes "よー";
-		mes "悩みがあったらいつでも";
-		mes "このおねーさんに相談してよ！";
-		mes "うん？";
+		mes "[ThiefGuild Member]";
+		mes "Yo, if you have any problems, you can always talk to this onee-san!" ;
+		mes "Yeah?" ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes (Sex)? "兄ちゃん、": "姉ちゃん、";
-		mes "シーフになったんだから、";
-		mes "冒険者アカデミーに";
-		mes "行ってみるといいよ。";
+		mes "[ThiefGuild Member]";
+		mes ""+(Sex)? "Brother,": "Sis, now that you're a Thief, you should try the Adventurer Academy." ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "この部屋の隅っこに";
-		mes "冒険者アカデミーのサポートを";
-		mes "行っている人が見えるだろ。";
-		mes "送ってくれるよ。";
+		mes "[ThiefGuild Member]";
+		mes "You see the person in the corner of this room who is supporting the Adventurer Academy?" ;
+		mes "They'll send it to you." ;
 		close;
 	}
-	if(Job != Job_Novice) {
-		mes "[シーフギルド関係者]";
-		mes "お前はなんだ……？";
+	if(Job ! = Job_Novice) {
+		mes "[ThiefGuild Member]";
+		mes "What are you ......?" ;
 		switch(Job) {
-			case Job_Swordman: mes "馬鹿なソードマンか！"; 		break;
-			case Job_Magician: mes "サーカス団のマジシャンか！"; 	break;
-			case Job_Archer:   mes "アホウのアーチャーだな！"; 	break;
-			case Job_Acolyte:  mes "世界最強芸能人崇拝者アコライトか！"; 	break;
-			case Job_Merchant: mes "悪質な商人か！"; 		break;
+			case Job_Swordman: mes "You stupid Swordsman!" ; break;
+			case Job_Magician: mes "You're a circus magician!" ; break;
+			case Job_Archer: mes "You're an idiot Archer!" ; break;
+			case Job_Acolyte: mes "Acolyte, the world's most powerful entertainer worshipper! ; break;
+			case Job_Merchant: mes "You're a vicious merchant!" ; break;
 		}
 		if(Job < Job_Thief) {
 			next;
-			mes "[シーフギルド関係者]";
+			mes "[ThiefGuild Member]";
 		}
-		mes (Sex)? "おい、兄ちゃん。": "ほら、姉ちゃん。";
-		mes "何しに来た？　帰れ、帰れ！";
+		mes ""+(Sex)? "Hey, bro." : "Hey, sis." ;
+		mes "What are you doing here?  Go home, go home!" ;
 		close;
 	}
 	switch(CHANGE_TF) {
 	case 0:
-		mes "[シーフギルド関係者]";
-		mes "へえ……" +((Sex == 0)?"お嬢様":"坊ちゃま")+ "が何の用で";
-		mes "こんな汚い所までわざわざ";
-		mes "来たのかな？";
+		mes "[ThiefGuild Member]";
+		mes "Heh ......" +((Sex == 0)?" Miss": "little boy")+ "has come all the way to this filthy place for what?" ;
 		break;
 	case 1:
-		mes "[シーフギルド関係者]";
-		mes "おーまた来たか。";
-		mes "今度は間違いないだろう？";
+		mes "[ThiefGuild Member]";
+		mes "Oh, here we go again." ;
+		mes "You're sure this time, right?" ;
 		break;
 	}
-	//case0,1の続き
+	//continuation of case0,1
 	next;
-	if(select("シーフになりたい。","なんでもない。")==2) {
-		mes "[シーフギルド関係者]";
-		mes "なんだよ。転職もしないのに……";
-		mes "本当に何しに来た？";
-		mes "何を考えているんだよ……？";
+	if(select("I want to be Thief." }, "Nothing.") ==2) {
+		mes "[ThiefGuild Member]";
+		mes "What the heck. I'm not even changing jobs. ......" ;
+		mes "What are you really doing here?" ;
+		mes "What are you thinking ......?" ;
 		close;
 	}
 	if(CHANGE_TF==0) {
-		mes "[シーフギルド関係者]";
-		mes "……自慢する事はないだろう？";
-		mes "シーフになりたいって、そんな";
-		mes "恥ずかしい事がよく言えるな。";
-		mes "馬鹿か？　道歩いてる人に私は";
-		mes "シーフになりますって、広告でもする";
-		mes "気か？　ちょっと、頭に何がある？";
+		mes "[ThiefGuild Member]";
+		mes "...... Nothing to brag about, right?" ;
+		mes "How can you say such an embarrassing thing about wanting to be a Thief?" ;
+		mes "Are you an idiot?  Are you going to advertise to people walking down the street that I'm going to be a Thief?　Hey, what's in your head?" ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "本当にシーフになりたいのか？";
+		mes "[ThiefGuild Member]";
+		mes "Do you really want to be a Thief?" ;
 		next;
-		switch (select("うん。","ううん。","そんなこと言ってる君は？")) {
+		switch (select("Yeah." , "No." , "You who says that?")) {
 		case 1:
-			mes "[シーフギルド関係者]";
-			mes "ふん……";
-			mes "まあ、そーだったら仕方ないか。";
+			mes "[ThiefGuild Member]";
+			mes "Hmmm ......" ;
+			mes "Well, if that's the case..." ;
 			break;
 		case 2:
-			mes "[シーフギルド関係者]";
-			mes "だったら、なんだよ？";
-			mes "ここに恋人でもいるのか？";
-			mes "じゃなかったら";
-			mes "シーフギルドまで何しに来た？";
+			mes "[ThiefGuild Member]";
+			mes "Then what?" ;
+			mes "Do you have a girlfriend here?" ;
+			mes "If not, what are you doing here in the Thief Guild?" ;
 			break;
 		case 3:
-			mes "[シーフギルド関係者]";
-			mes "え……？　あたし……？";
-			mes "まあ、あたしは……ただ……うう、";
-			mes "細かい事は聞くな！";
+			mes "[ThiefGuild Member]";
+			mes "What ......?  I'm ......?" ;
+			mes "Well, I'm ...... Just ...... Ugh, don't ask me the details!" ;
 			break;
 		}
-		mes "とりあえず、現実世界でシーフに";
-		mes "なりたいとか言ったら駄目だよ！";
+		mes "Anyway, don't say you want to be Thief in the real world!" ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "本当に、";
-		mes "本当にシーフになりたいのか？";
+		mes "[ThiefGuild Member]";
+		mes "Do you really, really want to be a Thief?" ;
 		next;
-		if(select("うん。","やっぱりやめる。")==2) {
-			mes "[シーフギルド関係者]";
-			mes "なんだよ。転職もしないのに……";
-			mes "本当に何しに来た？";
-			mes "何を考えているんだよ……？";
+		if(select("Yes." }, "I'm still going to quit.") ==2) {
+			mes "[ThiefGuild Member]";
+			mes "What the heck. I'm not even changing jobs. ......" ;
+			mes "What are you really doing here?" ;
+			mes "What are you thinking ......?" ;
 			close;
 		}
 		set CHANGE_TF,1;
-		mes "[シーフギルド関係者]";
-		mes "だったら君の名前を言って。";
-		mes "うん？　なに？";
-		mes " " +strcharinfo(0)+ " ……";
-		mes " " +strcharinfo(0)+ " だね。";
+		mes "[ThiefGuild Member]";
+		mes "Then say your name." ;
+		mes "Yeah?  What?" ;
+		mes " " +strcharinfo(0)+ " ......" ;
+		 ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "申請書はOK。";
-		mes "転職条件をもう知ってるんだったら、";
-		mes "このまま面接に入るよ。";
-		mes "やってみるか？";
+		mes "[ThiefGuild Member]";
+		mes "The application is OK."
+		mes "If you already know the job requirements, I'll go ahead and start the interview process." ;
+		mes "Do you want to give it a try?" ;
 		next;
-		if(select("うん、いいよ","いや、後で")==2) {
-			mes "[シーフギルド関係者]";
-			mes "まあ、好きにしな。ばいばい～";
+		if(select("Yeah, sure", "No, later")==2) {
+			mes "[ThiefGuild Member]";
+			mes "Well, suit yourself. Bye-bye~";
 			close;
 		}
 	}
-	mes "[シーフギルド関係者]";
-	mes "さあ、それでは、確認しようか？";
+	mes "[ThiefGuild Member]";
+	mes "Now then, shall we check?" ;
 	next;
-	mes "[シーフギルド関係者]";
-	mes "名前が " +strcharinfo(0)+ "。";
-	mes "えっと……あ、これだな。";
-	mes "姓名 " +strcharinfo(0)+ "。";
-	mes "ちょっと～待って～";
+	mes "[ThiefGuild Member]";
+	mes "The name is " +strcharinfo(0)+ "." ;
+	mes "Let's see, ...... Ah, here it is." ;
+	mes "Last name " +strcharinfo(0)+ "." ;
+	mes "Hey - wait a minute";
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[シーフギルド関係者]";
-		mes "シーフになりたいという";
-		mes "君の意志はわかるが……";
-		mes "意志だけで世の中生きて";
-		mes "行けないんだよ！";
-		mes "最低でも^0000FF「基本スキル」の";
-		mes "レベルが9^000000 にならないと駄目だ！";
+		mes "[ThiefGuild Member]";
+		mes "I understand your desire to become a Thief, but ......" ;
+		mes "You can't live in the world by will alone!" ;
+		mes "You have to have at least ^0000FF "Basic Skills" level 9^000000!" ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "JobLvを10にまで成長させ、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してくるんだ。";
+		mes "[ThiefGuild Member]";
+		mes "You have to grow your JobLv to 10 and go to a level of ^0000FF "Basic Skills" of 9^000000!" ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができるからね！";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されるよ。";
+		mes "[ThiefGuild Member]";
+		mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window!" ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[シーフギルド関係者]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要となるからね。";
-		mes "注意してね。";
+		mes "[ThiefGuild Member]";
+		mes "To increase the level of a skill, you'll need to press the ^FF000000 "Confirm"^000000 button after assigning the skill points." ;
+		mes "Attention, please." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[シーフギルド関係者]";
-	mes "うん……資料を見たらある程度";
-	mes "興味深い部分もあるし……";
-	mes "基本も出来てるし……いいよ。";
-	mes "これで";
-	mes "シーフギルドの面接は終わり！";
+	mes "[ThiefGuild Member]";
+	mes "Yeah ...... If you look at the documents, there are some interesting parts to some extent: ......" ;
+	mes "And the basics are done, too. ...... It's good." ;
+	mes "That concludes the Thief Guild interview!" ;
 	next;
 	getitem 11028,1;
 	unequip;
 	jobchange Job_Thief;
 	set CHANGE_TF,0;
 	setquest 50115;
-	mes "[シーフギルド関係者]";
-	mes "君のシーフ転職をお祝いする。";
-	mes "以後、シーフギルドの一員として、";
-	mes "ギルドの秩序と規範を守れ。万が一、";
-	mes "はぐれた行動やルール違反などで、";
-	mes "シーフギルドに被害があった場合、";
+	mes "[ThiefGuild Member]";
+	mes "Congratulations on your Thief job change." ;
+	mes "Thereafter, as a member of the Thief Guild, you will observe the order and norms of the guild. In the unlikely event that the Thief Guild is harmed by stray behavior or rule violations, ";
 	next;
-	mes "[シーフギルド関係者]";
-	mes "君の存在はギルドによって";
-	mes "抹消される事をくれぐれも忘れずに。";
-	mes "まあ、素晴らしい活動を期待する。";
-	mes "以上。";
+	mes "[ThiefGuild Member]";
+	mes "Remember that your presence will be erased by the guild." ;
+	mes "Well, I expect great activity." ;
+	mes "That's all." ;
 	next;
-	mes "[シーフギルド関係者]";
-	mes "堅苦しい話はこれで終わりよ。";
+	mes "[ThiefGuild Member]";
+	mes "That's it for the hard talk." ;
 	next;
-	mes "[シーフギルド関係者]";
-	mes "このシーフの書には";
-	mes "シーフとして何をした方が";
-	mes "いいか書いてある。";
-	mes "目を通しておくといいよ。";
+	mes "[ThiefGuild Member]";
+	mes "This Book of Thief tells you what you should do as Thief." ;
+	mes "You should read through it." ;
 	next;
-	mes "[シーフギルド関係者]";
-	mes "これにて、シーフへの転職は完了！";
-	mes "シーフはシーフらしく暮らしな！";
-	mes "君の活躍を期待してるよ！";
+	mes "[ThiefGuild Member]";
+	mes "Now your job change to Thief is complete!" ;
+	mes "Thiefs live like Thiefs!" ;
+	mes "We look forward to your success!" ;
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "Job change",0;
 	end;
 }
 
 
 //==========================================
-// キノコ採集
+// mushroom collecting
 //------------------------------------------
 
-moc_ruins.gat,141,125,3	script	怪しい奴	83,{
+moc_ruins.gat,141,125,3 script Suspicious Fellow 83,{
 	if(Job == Job_Thief) {
-		mes "[シーフギルド関係者]";
-		mes "へえ、立派なシーフになったな。";
-		mes "でも、ここにはもう入れないよ。";
-		mes "君も知ってると思うけど、ここは";
-		mes "転職希望の奴しか入れない";
-		mes "試験場だから。もっと面白い所へ、";
-		mes "美味しい物を拾いに行ってくれ。";
+		mes "[ThiefGuild Member]";
+		mes "Heh, you've become a fine Thief." ;
+		mes "But you can't get in here anymore." ;
+		mes "As you probably know, this is a testing ground only for guys who want to change jobs. Go pick up something more interesting and tasty." ;
 		close;
 	}
-	if(Job != Job_Novice) {
+	if(Job ! = Job_Novice) {
 		switch(@doubt_npc) {
 		case 0:
-			mes "[怪しい奴]";
-			mes "こんにちはーいい天気ですね！";
-			mes "今日みたいに暖かい陽射の気持ちいい午後はピラミッド付近でピクニックするのが一番だよね。";
+			mes "[Suspicious Fellow]";
+			mes "Hello - it's a beautiful day!" ;
+			mes "On a warm sunny afternoon like today, it's best to have a picnic near the pyramid." ;
 			break;
 		case 1:
-			mes "[怪しい奴]";
-			mes "'帰る家があるということは幸せの第一歩である。";
-			mes "私が一番好きなことわざです。帰る家か…";
+			mes "[Suspicious Fellow]";
+			mes "'Having a home to return to is the first step to happiness." ;
+			mes "This is my favorite proverb. A home to go back to..." ;
 			break;
 		case 2:
-			mes "[怪しい奴]";
+			mes "[Suspicious Fellow]";
 			mes "............... ";
 			break;
 		case 3:
-			mes "[怪しい奴]";
-			mes "おー私はあ、や、し、い、人ではありません。";
-			mes "そんな目で見ないでく、だ、さ、い。";
+			mes "[Suspicious Fellow]";
+			mes "Oh I am not an a, a, a, a, a, a, a person." ;
+			mes "Don't look at me like that, please." ;
 			break;
 		case 4:
-			mes "[怪しい奴]";
-			mes "……しつこいな。";
-			mes "もう話すこともないからあっち行けよ。";
+			mes "[Suspicious Fellow]";
+			mes "...... You're persistent." ;
+			mes "I have nothing more to say to you, so go away." ;
 			close;
 		}
 		set @doubt_npc,@doubt_npc+1;
@@ -329,48 +281,43 @@ moc_ruins.gat,141,125,3	script	怪しい奴	83,{
 	}
 	switch(CHANGE_TF) {
 	case 0:
-		mes "[怪しい奴]";
-		mes "そこの初心者！";
-		mes "素晴らしい人生を送りたいか？";
-		mes "もっと楽な生活をしたいか？";
-		mes "ならばシーフになれ！";
-		mes "そしてシーフギルドに入団するのだ！";
+		mes "[Suspicious Fellow]";
+		mes "You beginner!" ;
+		mes "Do you want to live a wonderful life?" ;
+		mes "Want an easier life?" ;
+		mes "Then be a Thief!" ;
+		mes "Then join the Thief Guild!" ;
 		next;
-		mes "[怪しい奴]";
-		mes "シーフギルドは君たちを歓迎する！";
-		mes "今すぐ加入したら";
-		mes "ポイントカード付！（冗談）";
-		mes "場所はピラミッドダンジョン1階中央の";
-		mes "階段をおりて左だ！　右かもしれない！";
-		mes "まっすぐ行ったら駄目だ！";
+		mes "[Suspicious Fellow]";
+		mes "The Thief Guild welcomes you!" ;
+		mes "Join now and get a points card! (Just kidding) Located in the Pyramid Dungeon, 1st floor, down the center stairs, to the left!　Or right!" ;
+		mes "Don't go straight!" ;
 		close;
 	case 1:
-		mes "[怪しい奴]";
-		mes "妙なシーフの匂いがする……";
-		mes "お前は……将来、シーフになる……";
+		mes "[Suspicious Fellow]";
+		mes "I smell a strange Thief ......" ;
+		mes "You are ...... You'll be a Thief in the future ......" ;
 		close;
 	}
 }
 
-moc_prydb1.gat,42,133,2	script	ギルド関係者	118,{
+moc_prydb1.gat,42,133,2 script Guild Member 118,{
 	if(Job == Job_Thief) {
-		mes "[ブレード]";
-		mes "今は特にイベントがないんだ。";
-		mes "連絡したら集合することだ。";
+		mes "[Brade]";
+		mes "I don't have any special events right now." ;
+		mes "Meet up when we call you." ;
 		close;
 	}
-	if(Job != Job_Novice || Upper == UPPER_HIGH) {
-		mes "[シーフギルド関係者]";
-		mes "おーい、おーい、そこの奴！";
-		mes "ここで何してる？";
-		mes "ここにはお前の居場所はないから";
-		mes "早く出てもらおう。";
+	if(Job ! = Job_Novice || Upper == UPPER_HIGH) {
+		mes "[ThiefGuild Member]";
+		mes "Hey, hey, hey there!" ;
+		mes "What are you doing here?" ;
+		mes "There's no place for you here, so let's get you out of here." ;
 		close;
 	}
-	mes "[シーフギルド関係者]";
-	mes "うん？";
-	mes "初心者のくせにここに何の用かな？";
-	mes "もし、シーフに転職したいのなら、";
-	mes "俺の隣の姉ちゃんに聞けよ。";
+	mes "[ThiefGuild Member]";
+	mes "Yeah?" ;
+	mes "You're a newbie, what do you want here?" ;
+	mes "If you want to change jobs to Thief, ask my sister next to me." ;
 	close;
 }

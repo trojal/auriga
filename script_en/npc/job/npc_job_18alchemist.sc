@@ -1,228 +1,189 @@
 //====================================================================
-//Ragnarok Online Alchemist jobchange script  by Kalen
-//
-//　■ CHANGE_AM
-//	1	第一試験(携帯溶鉱炉)
-//	2	第一試験(バーサークポーション)
-//	3	第一試験合格、グレゴリーに話す前
-//	4	第二試験失格経験あり、グレゴリー合格値に影響。
-//	5	第二試験合格、ダルシアに話す前。
-//	6	第三試験中、材料を聞いた後
-//	7	第三試験合格、ヴァン＝ヘルモントに話す前。
-//	8	ヴァン＝ヘルモントに話した。溶液イベントをやってくる。
-//	9	第四試験合格、溶液の材料を答えられた。ニコラスに話す前。
-//	10	第五試験失敗、再挑戦中
-//	11	第五試験合格、再びニコラスに話す前。
-//	12	ジュノーで実験の手伝いを頼まれる。材料をもらう。
-//	13	ジュノーの手伝い完了。（npc_town_yunoで発行）
-//	14	第六試験合格、実験お手伝い終了。転職可能
-//	15	幻想の花による短縮転職
+//Ragnarok Online Alchemist jobchange script by Kalen
+// - CHANGE_AM
+// - CHANGE_AM
+// 1 First test (portable blast furnace)
+// 2 First exam (berserk potion)
+// 3 Passed 1st exam, before talking to Gregory
+// 4 Experienced second exam failure, affecting Gregory's pass value.
+// 5 Second exam passed, before talking to Darcia.
+// 6 During third exam, after hearing the material.
+// 7 Passed third exam, before speaking to Van Helmont.
+// 8 Talked to Van-Helmont. He comes the solution event.
+// 9 Passed the fourth exam, answered the material for the solution. Before talking to Nicholas.
+// 10 Failed 5th exam, trying again.
+// 11 Passed 5th exam, before talking to Nicholas again.
+// 12 Asked to help with an experiment at Yuno. He gives me some materials.
+// 13 Completed helping out at Yuno. (Published in npc_town_yuno)
+// 14 Pass the 6th exam, experiment help completed. Possible to change jobs.
+// 15 Shorten job change by illusory flower
 //====================================================================
 
 //==========================================
-// 試験申請および一次試験
+// Exam application and first exam
 //------------------------------------------
 
-alde_alche.gat,27,185,5	script	錬金術師ギルド員	744,{
+alde_alche.gat,27,185,5 script Alchemist Guild Member 744,{
 	if(Upper == UPPER_HIGH) {
-		mes "[パルミジァニーノ]";
-		mes "いらっしゃいませ。";
-		mes "こちらは錬金術師ギルドです。";
-		mes "今日もとっても忙しいんですよ。";
+		mes "[Palmigianino]";
+		mes "Welcome." ;
+		mes "This is the Alchemists Guild." ;
+		mes "We are very busy today." ;
 		next;
-		mes "[パルミジァニーノ]";
-		mes "あれ、前にこの街でお会いしました？";
-		mes "う～む前に見かけたような……";
-		mes "気のせいでしょうか……";
+		mes "[Palmisianino]";
+		mes "Hey, have we met before in this city?" ;
+		mes "Hmmm, I think I've seen you before: ......" ;
+		mes "Is it my imagination? ......" ;
 		close;
 	}
 	if(Job == Job_Alchemist) {
-		mes "[パルミジァニーノ]";
-		mes "いらっしゃいませ";
-		mes strcharinfo(0)+ "様。";
-		mes "今日も錬金術師ギルドは";
-		mes "とっても忙しいです。";
+		mes "[Palmigianino]";
+		mes "Welcome";
+		mes strcharinfo(0)+ "Dear." ;
+		mes "The Alchemist Guild is very busy today." ;
 		next;
-		mes "[パルミジァニーノ]";
-		mes "ここでは、人形に生命を入れる研究とか";
-		mes "生命工学に対する研究が盛んなんです。";
+		mes "[Palmisianino]";
+		mes "There is a lot of research here on putting life into dolls and on bioengineering." ;
 		next;
-		mes "[パルミジァニーノ]";
-		mes "誰もが研究の成功を待っているんです。";
-		mes "複雑な研究ですから、";
-		mes "皆さん忙しいのですよ。";
+		mes "[Palmisianino]";
+		mes "Everyone is waiting for the success of the research." ;
+		mes "It's a complex study, so everyone is busy." ;
 		close;
 	}
-	if(Job != Job_Merchant) {
-		mes "[バルミジャニーノ]";
-		mes "ようこそ。ここは錬金術師ギルドです。";
-		mes "私達はいつでも、才能溢れる";
-		mes "フレッシュな人材を求めています。";
+	if(Job ! = Job_Merchant) {
+		mes "[Balmigianino]";
+		mes "Welcome. This is the Alchemists Guild." ;
+		mes "We are always looking for fresh talent." ;
 		next;
-		mes "[バルミジャニーノ]";
-		mes "もし優れた商人をご存知でしたら、";
-		mes "是非我がギルドにお知らせ下さいませ。";
-		mes "錬金術師の才能がある方を";
-		mes "我々は常に求めております。";
+		mes "[Balmigianino]";
+		mes "If you know of any outstanding merchants, please let our guild know." ;
+		mes "We are always looking for talented alchemists." ;
 		close;
 	}
 	switch(CHANGE_AM) {
 	case 0:
-		mes "[パルミジァニーノ]";
-		mes "ようこそ。ここは錬金術師ギルドです。";
-		mes "何か御用ですか？";
+		mes "[Palmigianino]";
+		mes "Welcome. This is the Alchemists Guild." ;
+		mes "Can I help you?" ;
 		next;
-		switch (select("錬金術師ってなんですか？","錬金術師になりたいです。","特に用はないです。")) {
+		switch (select("What is an alchemist?" , "I want to be an alchemist." , "I don't have any special business.")) {
 			case 1:
-				mes "[パルミジァニーノ]";
-				mes "錬金術師と言うのは様々な物質を用いて";
-				mes "新しい物質を作りあげる研究をする";
-				mes "人達です。";
-				mes "化学的な物質を利用し、元素を探求して";
-				mes "その性質を変えることから始めます。";
+				mes "[Palmisianino]";
+				mes "Alchemists are people who study the creation of new substances using various materials." ;
+				mes "They begin by using chemical substances to explore the elements and change their properties." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "究極の目的は金を作り上げる事だと";
-				mes "言われていますが、それだけでは";
-				mes "ありません。簡単な薬品製造や、";
-				mes "他の物質を作ったりもします。";
+				mes "[Palmigianino]";
+				mes "It is said that the ultimate goal is to create gold, but it is not the only goal. It also involves the manufacture of simple chemicals and the creation of other substances." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "時には神の領域とも言える";
-				mes "生命創造を研究したりもしますが……";
-				mes "あまりにも難しい分野ですから";
-				mes "まだ皆さん研究中です。";
+				mes "[Palmisianino]";
+				mes "Sometimes we study the creation of life, which is the realm of the gods. ......" ;
+				mes "It's too difficult a field, so everyone is still researching." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "錬金術師は商売より、実験と研究に";
-				mes "取り組まなければならないので";
-				mes "とても大変です。";
+				mes "[Palmisianino]";
+				mes "Alchemists have to work more on experimentation and research than on business, so it is very difficult." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "もし錬金術師に興味があるのなら";
-				mes "商人となって経験を積む事を";
-				mes "お勧めいたします。";
-				mes "多くの品物を扱ってみることで";
-				mes "多くの知識を得ることが出来ますから。";
+				mes "[Palmizzanino]";
+				mes "If you are interested in becoming an alchemist, I suggest you become a merchant and gain experience." ;
+				mes "[Palmisianino]"; mes "You can gain a lot of knowledge by handling a lot of goods." ;
 				close;
 			case 2:
-				mes "[パルミジァニーノ]";
-				mes "そうですか、嬉しいですわ。";
-				mes "私は錬金術師ギルドの";
-				mes "パルミジァニーノと申します。";
+				mes "[Palmisianino]";
+				mes "Well, I'm glad to hear that." ;
+				mes "My name is Palmisianino of the Alchemists' Guild." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "うちのギルドに加入して所定の教育を";
-				mes "受ければ、錬金術師として認知され";
-				mes "正式に研究活動に参加することが";
-				mes "できます。";
+				mes "[Palmisianino]";
+				mes "If you join our guild and receive the prescribed education, you will be recognized as an alchemist and can officially participate in research activities." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "しかし、誰でも認知するわけでは";
-				mes "ありません。努力と好奇心、そして";
-				mes "研究に夢中になれる方でなければ";
-				mes "なりません。";
+				mes "[Palmisianino]";
+				mes "However, not everyone will be recognized. You must be hardworking, curious, and enthusiastic about research." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "ギルドに加入するためには";
-				mes "いくつかの条件がございます。";
-				mes "それは申し込み後にご説明いたします。";
+				mes "[Palmigianino]";
+				mes "There are some requirements to join the guild." ;
+				mes "We will explain them to you after you apply." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "それでは、加入申し込みを";
-				mes "なさいますか？";
+				mes "[Palmisianino]";
+				mes "So, would you like to apply for a subscription?" ;
 				next;
-				if(select("申し込みます。","後で申し込みます。")==2) {
-					mes "[パルミジァニーノ]";
-					mes "才能ある商人を";
-					mes "我がギルドではいつでも歓迎いたします。";
-					mes "是非、またいらしてくださいませ。";
+				if(select("I'm applying." , "I will subscribe later.") ==2) {
+					mes "[Palmisianino]";
+					mes "Talented merchants are always welcome in our guild." ;
+					mes "Please come again." ;
 					close;
 				}
 				if(JobLevel < 40) {
-					mes "[パルミジァニーノ]";
-					mes "少々お待ちください……";
-					mes "レベルが足りないようですね。";
-					mes "錬金術師になりたいのでしたら";
-					mes "ジョブレベルが40以上必要です。";
+					mes "[Palmigianino]";
+					mes "Please wait a moment ......" ;
+					mes "It looks like you don't have enough level." ;
+					mes "If you want to become an alchemist, you need to have a job level of 40 or higher." ;
 					close;
 				}
-				if(JobLevel >= 50) {	//台詞適当、未調査
-					mes "[パルミジァニーノ]";
-					mes "申し込み、ありがとうございました。";
-					mes "あなたは、ジョブマスターされて";
-					mes "いますので、試験免除です。";
+				if(JobLevel >= 50) { // dialogue appropriate, unexamined
+					mes "[Palmisianino]";
+					mes "Thank you for your application." ;
+					mes "You are exempt from the exam because you have been job mastered." ;
 					next;
 					set CHANGE_AM,3;
-					mes "[パルミジァニーノ]";
-					mes "それでは錬金術の基本を学びましょう。";
-					mes "まず、薬品を組み合わせる過程を";
-					mes "お教えします。";
+					mes "[Palmisianino]";
+					mes "Then let's learn the basics of alchemy." ;
+					mes "First, I will show you the process of combining chemicals." ;
 					next;
-					mes "[パルミジァニーノ]";
-					mes "あ、その前に……";
-					mes "グレゴリーがお呼びのようです。";
-					mes "一体、何の用事でしょうか……";
-					mes "行ってみてくださいませんか？";
+					mes "[Palmigianino]";
+					mes "Oh, but first, ......." ;
+					mes "Gregory would like to see you." ;
+					mes "What in the world can I do for you? ......" ;
+					mes "Would you like to go there?" ;
 					close;
 				}
-				mes "[パルミジァニーノ]";
-				mes "申し込み、ありがとうございました。";
-				mes "ギルドに加入するためには";
-				mes "^3355FF50,000Zeny^000000 払っていただきます。";
-				mes "それと、いくつかの品物を";
-				mes "持参していただく必要がございます。";
+				mes "[Palmigianino]";
+				mes "Thank you for your application." ;
+				mes "You will have to pay ^3355FF50,000Zeny^000000 to join the guild." ;
+				mes "Also, you will need to bring some items with you." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "ただし、^3355FF古い魔法書^000000と^3355FF鍛冶屋の金槌^000000を";
-				mes "準備していただければ";
-				mes "必要物品を兔除いたします。";
+				mes "[Palmigianino]";
+				mes "However, if you prepare ^3355FF old magic books^000000 and ^3355FF blacksmith's hammer^000000, we will exempt you from the necessary items." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "では加入申込書に署名してください。";
+				mes "[Palmisianino]";
+				mes "Then please sign the subscription form." ;
 				next;
 				menu strcharinfo(0),-;
-				mes "[パルミジァニーノ]";
-				mes "それでは加入費をお願いいたします。";
-				mes "必要物品は正確に揃えていただく";
-				mes "必要がありますので、ご注意を。";
+				mes "[Palmisianino]";
+				mes "Then please pay the subscription fee." ;
+				mes "You must have the exact items you need, so please Attention." ;
 				next;
-				if(Zeny < 50000) {	//台詞未調査
-					mes "[パルミジァニーノ]";
-					mes "お金が足りないようです。";
+				if(Zeny < 50000) { //no dialogue yet
+					mes "[Palmigianino]";
+					mes "There does not seem to be enough money." ;
 					close;
 				}
 				set Zeny,Zeny-50000;
-				mes "[パルミジァニーノ]";
-				mes "どれどれ…… " +strcharinfo(0)+ "様は……";
+				mes "[Palmigianino]";
+				mes "Which is ...... " +strcharinfo(0)+ "which is ......" ;
 				if(rand(2)) {
 					set CHANGE_AM,1;
-					mes "^3355FF携帯用溶鉱炉^000000 100個を";
+					mes "^3355FF portable blast furnace ^000000 100 pieces";
 				}
 				else {
 					set CHANGE_AM,2;
-					mes "^3355FFバーサークポーション^000000 7個を";
+					mes "^3355FF berserk potions^000000 7 of them."
 				}
-				mes "準備して来て下さい。";
+				mes "Please come prepared." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "では、申し込み書は受け取りました。";
-				mes "ではでは、いってらっしゃいませ。";
+				mes "[Palmisianino]";
+				mes "So, the application form has been received." ;
+				mes "Then, have a good day." ;
 				close;
 			case 3:
-				mes "[パルミジァニーノ]";
-				mes "では、用件がありましたら";
-				mes "またお越しくださいませ。";
+				mes "[Palmigianino]";
+				mes "Well, please come again if you have any business." ;
 				close;
 		}
 	case 1:
 	case 2:
 		if(countitem(1005) && countitem(1006)) {
-			mes "[バルミジァニーノ]";
-			mes "おかえりなさいませ。";
-			mes "古い魔法書と鍛冶屋の金槌を";
-			mes "お持ちになったようですね。";
-			mes "では一次試験は免除いたします";
+			mes "[Balmigianino]";
+			mes "Welcome back." ;
+			mes "I see you have brought an old magic book and a blacksmith's hammer." ;
+			mes "Then you are exempt from the first examination."
 			delitem 1005,1;
 			delitem 1006,1;
 		}
@@ -236,193 +197,174 @@ alde_alche.gat,27,185,5	script	錬金術師ギルド員	744,{
 				set '@amount,7;
 			}
 			if(countitem('@itemid) < '@amount) {
-				mes "[パルミジァニーノ]";
-				mes "まだ準備が整っておりませんか？";
-				mes "ギルドに加入するには";
-				mes "^3355FF" +getitemname('@itemid)+ "^000000 " +'@amount+ "個を";
-				mes "持って来ていただく必要がございます。";
+				mes "[Palmigianino]";
+				mes "Not ready yet?" ;
+				mes "To join the guild ^3355FF" +getitemname('@itemid)+ "^000000 " +'@amount+ "You need to bring the pieces." ;
 				next;
-				mes "[パルミジァニーノ]";
-				mes "準備が終わりましたら";
-				mes "またいらしてくださいませ。";
+				mes "[Palmigianino]";
+				mes "Please come back when you are done preparing." ;
 				close;
 			}
-			mes "[パルミジァニーノ]";
-			mes "おかえりなさいませ。";
-			mes "準備が整ったようですね。";
-			mes "持って来た物品はギルドで有効に";
-			mes "使わせていただきますね。";
+			mes "[Palmigianino]";
+			mes "Welcome back." ;
+			mes "I see you are ready to go." ;
+			mes "I'm sure the items you brought will be put to good use by the guild." ;
 			delitem '@itemid,'@amount;
 		}
 		next;
 		set CHANGE_AM,3;
-		mes "[パルミジァニーノ]";
-		mes "それでは錬金術の基本を学びましょう。";
-		mes "まず、薬品を組み合わせる過程を";
-		mes "お教えします。";
+		mes "[Palmisianino]";
+		mes "So let's learn the basics of alchemy." ;
+		mes "First, I will show you the process of combining chemicals." ;
 		next;
-		mes "[パルミジァニーノ]";
-		mes "あ、その前に……";
-		mes "グレゴリーがお呼びのようです。";
-		mes "一体、何の用事でしょうか……";
-		mes "行ってみてくださいませんか？";
+		mes "[Palmigianino]";
+		mes "Oh, but first, ......." ;
+		mes "Gregory would like to see you." ;
+		mes "What in the world can I do for you? ......" ;
+		mes "Would you like to go there?" ;
 		close;
 	case 3:
-		mes "[パルミジァニーノ]";
-		mes "グレゴリーがお待ちです。";
-		mes "行って話を聞いてみてください。";
+		mes "[Palmisianino]";
+		mes "Gregory is waiting for you." ;
+		mes "Go and talk to him." ;
 		close;
 	default:
-		mes "[パルミジァニーノ]";
-		mes "あ、申し訳ありません。";
-		mes "今、少々立て込んでおります。";
+		mes "[Palmisianino]";
+		mes "Oh, I'm sorry." ;
+		mes "We are a little busy right now." ;
 		next;
-		mes "[パルミジァニーノ]";
-		mes "他の方にお伺いしてくださいませ。";
-		mes "それでは。";
+		mes "[Palmisianino]";
+		mes "Please ask someone else." ;
+		mes "Then." ;
 		close;
 	}
 }
 
 
 //==========================================
-// 二次試験（筆記試験）
+// Secondary Examination (written test)
 //------------------------------------------
 
-alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
+alde_alche.gat,175,107,2 script The dour alchemist 749,{
 	if(Job == Job_Alchemist) {
-		mes "[グレゴリー]";
-		mes "キキキ　ケケケケ";
-		mes "ん、なんじゃ貴様は?!";
+		mes "[Gregory]";
+		mes "Kikki, kekeke, what are you?!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "私の研究成果を盗もうと言うのか！";
-		mes "どこで聞きつけてきた!!";
+		mes "[Gregory]";
+		mes "You're trying to steal my research!" ;
+		mes "Where did you hear about this!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "こいつ、浅知恵を使いおるか……";
-		mes "しかし、貴様の思い通りにはさせんぞ。";
-		mes "キキキキ　ケケケケケ……";
+		mes "[Gregory]";
+		mes "This guy is using his shallow wits: ......." ;
+		mes "But I won't let you have your way." ;
+		mes "kiki kiki ke ke ke ke ke ......" ;
 		close;
 	}
-	if(Job != Job_Merchant) {
-		mes "[グレゴリー]";
-		mes "キキキキ、何か用か？";
-		mes "私の仕事が知りたいか……";
-		mes "特別にお前にだけ教えてやろう。";
-		mes "私は言葉だ……そう、ケケケケ……";
+	if(Job ! = Job_Merchant) {
+		mes "[Gregory]";
+		mes "Kiki Kiki, what can I do for you?" ;
+		mes "You want to know what I do? ......" ;
+		mes "I'll tell you something special, just for you." ;
+		mes "I am the word ......  ;
 		next;
-		mes "[グレゴリー]";
-		mes "このポーションが完成されたら……";
-		mes "一国を操ることも可能じゃ！";
+		mes "[Gregory]";
+		mes "When this potion is completed ......" ;
+		mes "You could control a whole country!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "キキキ　ケケケケ……";
-		mes "プロンテラの奴等には秘密じゃぞ……";
+		mes "[Gregory]";
+		mes "kiki kekekeke......" ;
+		mes "Don't tell the guys at Prontera about this. ......" ;
 		close;
 	}
 	switch(CHANGE_AM) {
 	case 0:
-		mes "[グレゴリー]";
-		mes "キキキ　ケケケケ";
-		mes "ん、なんじゃ貴様は?!";
+		mes "[Gregory]";
+		mes "Kiki, kekeke, what are you?!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "商人は露店を開くもんじゃろう……";
-		mes "このような場所に何用じゃ？";
+		mes "[Gregory]";
+		mes "A merchant should have a stall. ......" ;
+		mes "What brings you to a place like this?" ;
 		next;
-		mes "[グレゴリー]";
-		mes "キキキキ……出て行きなさい。";
-		mes "貴様に与えるようなものは";
-		mes "何もないわい……ケケケケケ";
+		mes "[Gregory]";
+		mes "Kiki Kiki ...... Get out." ;
+		mes "I have nothing to give you ...... kekekekekekekekekekekekekekekekekekekekekekekekekekekekekekeke";
 		close;
 	case 1:
 	case 2:
-		mes "[グレゴリー]";
-		mes "キキキ　ケケケケ";
-		mes "ん、なんじゃ貴様は?!";
+		mes "[Gregory]";
+		mes "Kiki, kekekekeke, what are you?!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "錬金術を学びたいじゃと?!";
-		mes "寝言は寝ている時だけに";
-		mes "したらどうじゃ!!";
+		mes "[Gregory]";
+		mes "You want to learn alchemy? Why don't you only talk in your sleep!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "ケケケケ!! 千年万年して来るがいい！";
-		mes "さぁ、とっとと出て行け！";
+		mes "[Gregory]";
+		mes "Kekekekeke! Come back in a thousand years!" ;
+		mes "Now get the hell out of here!" ;
 		close;
 	case 3:
 		if(JobLevel >= 50) {
-			mes "[グレゴリー]";
-			mes "お、お前はジョブマスターだな。";
-			mes "ならば用はねぇ。";
+			mes "[Gregory]";
+			mes "Oh, you're a job master." ;
+			mes "Then I ain't got no use for you." ;
 			next;
-			mes "[グレゴリー]";
-			mes "それでは行け！ダルシアに会いなさい。";
-			mes "彼奴が貴様に実験実習を教えよう。";
-			mes "私が送ったと言ってやりなさい。";
+			mes "[Gregory]";
+			mes "Then go! See Darcia." ;
+			mes "He will teach you the lab exercises." ;
+			mes "Tell him I sent you." ;
 			set CHANGE_AM,5;
 			close;
 		}
-		mes "[グレゴリー]";
-		mes "キキキ……またどこぞの馬の骨が";
-		mes "ギルドに転がり込んで来おったな！";
+		mes "[Gregory]";
+		mes "Kiki Kiki ...... Some horse's ass has rolled into the guild again!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "気に入らん……まったく気に入らん……";
-		mes "どういつもこいつも、金を払えば";
-		mes "錬金術師になれると思いおって!!";
+		mes "[Gregory]";
+		mes "I don't like it ...... I don't like it at all ......." ;
+		mes "How dare this guy think he can be an alchemist if he pays for it!!!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "キキキキ……私がちょいと";
-		mes "面接をしてやろうではないか！";
-		mes "根性のないやつは";
-		mes "追い仏ってくれるわ!!";
+		mes "[Gregory]";
+		mes "Kiki Kiki ...... Let me do a little interview for you!" ;
+		mes "If you don't have the guts, they'll drive you away Buddha!!!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "呆然としておるな…よきかなよきかな。";
-		mes "大人しく座って説明を受ければよいと";
-		mes "思っておったのなら、甘い考えじゃ！";
-		mes "キキキキキ……";
+		mes "[Gregory]";
+		mes "You are stunned... Good, good, good..." ;
+		mes "If you thought you could just sit quietly and be briefed, you were naive!" ;
+		mes "kiki kiki kiki ......" ;
 		next;
-		mes "[グレゴリー]";
-		mes "それでは私が出す問題に答えるがいい！";
-		mes "どれだけ貴様が出来るか見てやろう！";
+		mes "[Gregory]";
+		mes "Then answer the questions I give you!" ;
+		mes "Let's see how well you can do!" ;
 		break;
 	case 4:
-		mes "[グレゴリー]";
-		mes "何、またやって来たか。";
-		mes "出て行けと言ったじゃろうが！";
+		mes "[Gregory]";
+		mes "What, here we go again." ;
+		mes "I told you to get out!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "気に入らん……気に入らんな……!";
-		mes "こそこそ入り込んで来て……";
-		mes "何をするつもりじゃったか!?";
+		mes "[Gregory]";
+		mes "I don't like it ...... I don't like it ......! Come sneak in here and ......." ;
+		mes "What the hell do you think you're doing!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "ふん、まぁ良かろう。";
-		mes "このグレゴリーが";
-		mes "今一度貴様を試してやろう……";
+		mes "[Gregory]";
+		mes "Hmm, well, good." ;
+		mes "This Gregory will test you once more ......." ;
 		next;
-		mes "[グレゴリー]";
-		mes "それでは私が出す問題に答えるがいい！";
-		mes "どれだけ貴様が出来るか見てやろう！";
+		mes "[Gregory]";
+		mes "Then answer the questions I give you!" ;
+		mes "Let's see how well you can do!" ;
 		break;
 	case 5:
-		mes "[グレゴリー]";
-		mes "何をしている。ちっとは勉強せんか！";
+		mes "[Gregory]";
+		mes "What are you doing? Why don't you study up a little!" ;
 		next;
 		//fall through?
 	default:
-		mes "[グレゴリー]";
-		mes "キキキ　ケケケケ";
-		mes "これで終わったと思うでないぞ！";
+		mes "[Gregory]";
+		mes "Kikki, kekeke, don't think this is over!" ;
 		close;
 	}
-	//筆記試験ここから
+	//written test starts here
 	next;
-	for(set '@i,0; '@i<6; set '@i,'@i+1) {	//6問目までは処理共通化
-		mes "[グレゴリー]";
+	for(set '@i,0; '@i<6; set '@i,'@i+1) { //process common until question 6
+		mes "[Gregory]";
 		if(rand(2)) {
 			switch('@i) {
 			case 0:
@@ -434,7 +376,7 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 				set '@ans,389;
 				break;
 			case 2:
-				mes "14 ｘ 17 ｘ 3 =";
+				mes "14 x 17 x 3 =";
 				set '@ans,714;
 				break;
 			case 3:
@@ -442,16 +384,16 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 				set '@ans,93;
 				break;
 			case 4:
-				mes "(47 ｘ 28) - (1376 / 4) =";
+				mes "(47 x 28) - (1376 / 4) =";
 				set '@ans,972;
 				break;
 			case 5:
-				mes "(2646 / 7) + (13 ｘ 28) =";
+				mes "(2646 / 7) + (13 x 28) =";
 				set '@ans,742;
 				break;
 			}
 		}
-		else {
+		} else {
 			switch('@i) {
 			case 0:
 				mes "13 + 25 + 37 + 48 =";
@@ -462,15 +404,15 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 				set '@ans,312;
 				break;
 			case 2:
-				mes "12 ｘ 24 ｘ 3 =";
+				mes "12 x 24 x 3 =";
 				set '@ans,864;
 				break;
 			case 4:
-				mes "(35 ｘ 19) - (1792 / 7) =";
+				mes "(35 x 19) - (1792 / 7) =";
 				set '@ans,409;
 				break;
 			case 5:
-				mes "(2368 / 8) + (24 ｘ 17) =";
+				mes "(2368 / 8) + (24 x 17) =";
 				set '@ans,704;
 				break;
 			}
@@ -480,40 +422,25 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 		if('@val == '@ans)
 			set '@point,'@point+10;
 	}
-	switch(rand(4)) {	//7問目からは個別処理
+	switch(rand(4)) { //separate processing from the 7th question
 		case 0:
-			mes "[グレゴリー]";
-			mes "ディスカウント24％で";
-			mes "赤ポーション 12個";
-			mes "ハエの羽 5個";
-			mes "蝶の羽 1個";
-			mes "買った時の総額は？";
+			mes "[Gregory]";
+			mes "What is the total cost of 12 red potions, 5 fly wings, and 1 butterfly wing at a discount of 24%?" ;
 			set '@ans,909;
 			break;
 		case 1:
-			mes "[グレゴリー]";
-			mes "ディスカウント24％で";
-			mes "赤ポーション 6個";
-			mes "緑ポーション 7個";
-			mes "ハエの羽 8個";
-			mes "買った時の総額は？";
+			mes "[Gregory]";
+			mes "What is the total price when you buy 6 red potions 6 green potions 7 fly wings 8 fly wings at a discount of 24%?" ;
 			set '@ans,798;
 			break;
 		case 2:
-			mes "[グレゴリー]";
-			mes "ディスカウント24％で";
-			mes "緑ポーション 15個";
-			mes "拡大鏡 6個";
-			mes "設置用トラップ 4個";
-			mes "買った時の総額は？";
+			mes "[Gregory]";
+			mes "What is the total cost of 15 green potions at 24% discount, 6 magnifiers, 4 traps for installation?" ;
 			set '@ans,934;
 			break;
 		case 3:
-			mes "[グレゴリー]";
-			mes "ディスカウント24％の場合";
-			mes "赤ポーション 6個";
-			mes "緑ポーション 7個";
-			mes "買った時の総額は？";
+			mes "[Gregory]";
+			mes "At a discount of 24%, what is the total price when you buy 6 red potions 6 green potions 7 green potions?" ;
 			set '@ans,438;
 			break;
 	}
@@ -523,27 +450,18 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 		set '@point,'@point+10;
 	switch(rand(3)) {
 		case 0:
-			mes "[グレゴリー]";
-			mes "環頭太刀 2個";
-			mes "キャップ 3個";
-			mes "ブーツ 3個";
-			mes "重さの合計は？";
+			mes "[Gregory]";
+			mes "What is the total weight of 2 ring-headed swords, 2 caps, 3 boots, 3 weights?" ;
 			set '@ans,480;
 			break;
 		case 1:
-			mes "[グレゴリー]";
-			mes "環頭太刀 3個";
-			mes "キャップ 4個";
-			mes "ブーツ 2個";
-			mes "重さの合計は？";
+			mes "[Gregory]";
+			mes "What is the total weight of 3 ring-headed swords, 3 caps, 4 boots, 2 boots?" ;
 			set '@ans,550;
 			break;
 		case 2:
-			mes "[グレゴリー]";
-			mes "シミター 3個";
-			mes "ヘルム 2個";
-			mes "ロングコート 1個";
-			mes "重さの合計は？";
+			mes "[Gregory]";
+			mes "3 scimitars, 2 helms, 1 long coat, total weight?" ;
 			set '@ans,450;
 			break;
 	}
@@ -553,26 +471,18 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 		set '@point,'@point+10;
 	switch(rand(3)) {
 		case 0:
-			mes "[グレゴリー]";
-			mes "ミラーシールド、レザージャケット";
-			mes "スマイル、シルクローブ、ヴェール";
-			mes "マフラー、眼帯";
-			mes "防御値の合計は？";
+			mes "[Gregory]";
+			mes "What is the sum of Mirror Shield, Leather Jacket Smile, Silk Clove, Veil Scarf, and Eyepiece Defense values?" ;
 			set '@ans,12;
 			break;
 		case 1:
-			mes "[グレゴリー]";
-			mes "ビレタ、メントル、オペラ仮面";
-			mes "リボン、マフラー、ブーツ、耳当て";
-			mes "防御値の合計は？";
+			mes "[Gregory]";
+			mes "What is the sum of the viretas, mantle, opera mask ribbon, scarf, boots, and earpiece defense values?" ;
 			set '@ans,20;
 			break;
 		case 2:
-			mes "[グレゴリー]";
-			mes "バックラー、ロングコート、マスク";
-			mes "大きなリボン、リボンのヘアバンド";
-			mes "笠、グラス";
-			mes "防御値の合計は？";
+			mes "[Gregory]";
+			mes "Buckler, long coat, mask big ribbon, ribbon hair band shade, total glass defense value?" ;
 			set '@ans,15;
 			break;
 	}
@@ -582,27 +492,18 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 		set '@point,'@point+10;
 	switch(rand(3)) {
 		case 0:
-			mes "[グレゴリー]";
-			mes "ヘルム 5個を";
-			mes "ディスカウント24％で買った場合と";
-			mes "ディスカウント20％で買った場合の";
-			mes "差はいくらか？";
+			mes "[Gregory]";
+			mes "What is the difference between buying 5 helms at discount 24% and at discount 20%?" ;
 			set '@ans,8800;
 			break;
 		case 1:
-			mes "[グレゴリー]";
-			mes "アーマーを 4個";
-			mes "ディスカウント24％で買った場合と";
-			mes "ディスカウント20％で買った場合の";
-			mes "差はいくらか？";
+			mes "[Gregory]";
+			mes "What is the difference between buying 4 pieces of armor at 24% discount versus 20% discount?" ;
 			set '@ans,7680;
 			break;
 		case 2:
-			mes "[グレゴリー]";
-			mes "タイツを 3個";
-			mes "ディスカウント24％で買った場合と";
-			mes "ディスカウント20％で買った場合の";
-			mes "差はいくらか？";
+			mes "[Gregory]";
+			mes "What is the difference between buying 3 tights at 24% discount and 20% discount?" ;
 			set '@ans,8520;
 			break;
 	}
@@ -610,773 +511,668 @@ alde_alche.gat,175,107,2	script	気むずかしい錬金術師	749,{
 	input '@val;
 	if('@val == '@ans)
 		set '@point,'@point+10;
-	if( (CHANGE_AM == 3 && '@point < 90) || (CHANGE_AM == 4 && '@point < 80) ) {
+	if( (CHANGE_AM == 3 && '@point < 90) || (CHANGE_AM == 4 && '@point < 80)) {
 		set CHANGE_AM,4;
-		mes "[グレゴリー]";
-		mes "……あほらしい！";
-		mes "最後まで付き合った私が馬鹿じゃった！";
-		mes "貴様など不合格じゃ!!!";
+		mes "[Gregory]";
+		mes "...... This is stupid!" ;
+		mes "I was stupid to go along to the end!" ;
+		mes "You are a failure!!!!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "こんな計算さえ出来ない奴が";
-		mes "錬金術師になろうとは片腹痛いわ！";
+		mes "[Gregory]";
+		mes "It pains me to think that someone who can't even do this kind of math wants to be an alchemist!" ;
 		next;
-		mes "[グレゴリー]";
-		mes "お門違いもいいところじゃわい！";
-		mes "出て行け！出て行け！";
-		mes "さっさと出て行かんかい!!!!";
+		mes "[Gregory]";
+		mes "You're way out of line!" ;
+		mes "Get out! Get out!" ;
+		mes "Get the fuck out of here !!!!" ;
 		close;
 	}
-	mes "[グレゴリー]";
+	mes "[Gregory]";
 	switch('@point) {
-		case 100: mes "ふむふむ…"; 				break;
-		case 90:  mes "ケケケ……途中、一問間違えおったな。"; 	break;
-		case 80:  mes "ケケケ……途中、二問間違えおったな。"; 	break;
+		case 100: mes "Hmmm..." ; break;
+		case 90: mes "Kekeke ...... You got one question wrong on the way." ; break;
+		case 80: mes "kekeke...... You made two mistakes on the way." ; break;
 	}
-	mes "まぁ良い。このグレゴリーが";
-	mes "特別に貴様を認めてくれよう……";
+	mes "Oh well. Gregory here is going to give you special recognition ......." ;
 	next;
-	mes "[グレゴリー]";
-	mes "キキキ…… それでは行くが良い。";
-	mes "熱心に研究史、我輩の役に立てるように";
-	mes "なるがよい。キキキ……";
+	mes "[Gregory]";
+	mes "Kiki kiki ...... Then go." ;
+	mes "Study diligently your history, and be of service to me. KikiKiki......" ;
 	next;
-	mes "[グレゴリー]";
-	mes "それでは行け！ダルシアに会いなさい。";
-	mes "彼奴が貴様に実験実習を教えよう。";
-	mes "私が送ったと言ってやりなさい。";
+	mes "[Gregory]";
+	mes "Then go! See Darcia." ;
+	mes "He will teach you the lab exercises." ;
+	mes "Tell him I sent you." ;
 	set CHANGE_AM,5;
 	close;
 }
 
 
 //==========================================
-// 三次試験（実験実習）
+// Tertiary examination (laboratory practice)
 //------------------------------------------
 
-alde_alche.gat,13,15,7	script	研究者	750,{
+alde_alche.gat,13,15,7 script Researcher 750,{
 	if(Job == Job_Alchemist) {
-		mes "[ダルシア]";
-		mes "あ……君か。来たのか……そうだね。";
-		mes "立派な錬金術師になりに来たんだね……";
+		mes "[Dulcia]";
+		mes "Ah ...... It's you. You're here. ...... Yes, that's right." ;
+		mes "You've come to be a fine alchemist. ......." ;
 		next;
-		mes "[ダルシア]";
-		mes "しかし、幻想の花はまだか……";
-		mes "美しい月明りの花……ああ……";
+		mes "[Dulcia]";
+		mes "But have you had your fantasy flower yet ......?" ;
+		mes "Beautiful moonlit flowers ...... Oh ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "その光を見ることさえできたら";
-		mes "愛しいハンナ……";
-		mes "アハハハハ……";
+		mes "[dulcia]";
+		mes "If only I could see that light, my dear Hannah ......" ;
+		mes "Ahahahaha ......" ;
 		close;
 	}
 	switch(CHANGE_AM) {
 	default:
-		mes "[ダルシア]";
-		mes "これ以上失うことも得ることも";
-		mes "得るものもない……";
-		mes "すべてない……";
+		mes "[darcia]";
+		mes "Nothing more to lose, nothing more to gain ......" ;
+		mes "Nothing at all......" ;
 		next;
-		mes "[ダルシア]";
-		mes "私の呪われた瞳に映るのは";
-		mes "ずいぶん前に忘れてしまった幻だけ";
-		mes "アハハハハ……";
+		mes "[Dulcia]";
+		mes "All I see in my cursed eyes is a vision I forgot long ago ahahahahaha ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "楽園なんかない……そう……";
-		mes "愛しいハンナ……ああ……";
+		mes "[dulcia]";
+		mes "There is no paradise ...... Yes......" ;
+		mes "My dear Hannah ...... Oh ......" ;
 		close;
 	case 5:
-		mes "[ダルシア]";
-		mes "…………………………";
-		mes "…………………………";
-		mes "………………あぁ……";
+		mes "[Darcia]";
+		mes ".............................." ;
+		mes ".............................." ;
+		mes ".................. Oh ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "オオカミかな？いや人間か……";
-		mes "君も何かを捜しているのだね。";
+		mes "[Darcia]";
+		mes "Is it a wolf? No, a human. ......" ;
+		mes "You're looking for something too." ;
 		next;
-		mes "[ダルシア]";
-		mes "大切な物があるなら、気を付けなさい。";
-		mes "何かを得る為に、自分の全てを";
-		mes "失うこともあるから……";
+		mes "[Darcia]";
+		mes "If you have something important, be careful." ;
+		mes "Because you can lose everything you have to gain something. ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "…………………………";
+		mes "[Darcia]";
+		mes ".............................." ;
 		next;
-		mes "[ダルシア]";
-		mes "……ところで何事かな。";
-		mes "こんな所まで来るなんて。";
+		mes "[Darcia]";
+		mes "...... What's going on, by the way?" ;
+		mes "I can't believe you came all this way." ;
 		next;
-		switch (select("実験実習をお願いします。","花の話を聞かせてください。","何でもないです。")) {
+		switch (select("Please give me a lab exercise." , "Please tell me about the flowers." , "It's nothing.")) {
 			case 1:
-				mes "[ダルシア]";
-				mes "錬金術を学びに来たのか……";
-				mes "私の持った知識は、すべて";
-				mes "私の希望を成し遂げるために";
-				mes "編み出したもの……";
+				mes "[Darcia]";
+				mes "Have you come to learn alchemy? ......" ;
+				mes "All the knowledge I have, I have woven to accomplish my hopes ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "基本的なことは教えられるが……";
-				mes "何をしたいかは、最終的に自分で";
-				mes "判断しなければならない事だから……";
+				mes "[Darcia]";
+				mes "I can teach you the basics, but ......" ;
+				mes "What you want to do is something you ultimately have to decide for yourself. ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "基礎は教えてあげよう……";
-				mes "簡単な薬を作る方法だ……";
-				mes "いくつか準備をして来るように……";
+				mes "[Darcia]";
+				mes "I'll give you the basics: ......" ;
+				mes "It's a simple way to make medicine: ......" ;
+				mes "Come prepared with some ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "^3355FF乳鉢^000000 3個";
-				mes "^3355FF空きビン^000000 3個";
-				mes "^3355FF赤ハーブ^000000 1個";
-				mes "^3355FF黄ハーブ^000000 1個";
-				mes "^3355FF白ハーブ^000000 1個";
+				mes "[darcia]";
+				mes "^3355FF mortar^000000 3 ^3355FF empty bottles^000000 3 ^3355FF red herbs^000000 1 ^3355FF yellow herbs^000000 1 ^3355FF white herbs^000000 1";
 				next;
-				mes "[ダルシア]";
-				mes "準備が出来たら……また来なさい。";
+				mes "[dulcia]";
+				mes "When you are ready, ...... Come back." ;
 				set CHANGE_AM,6;
 				close;
 			case 2:
-				mes "[ダルシア]";
-				mes "花……記憶の中から…";
-				mes "微かに消えかかっている……";
-				mes "そんな花がある……";
+				mes "[Darcia]";
+				mes "Flowers ...... From memory..." ;
+				mes "Faintly fading ......" ;
+				mes "There is such a flower ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "私は、愛する人のため";
-				mes "たった一つの研究のみ";
-				mes "成し遂げようとした……";
+				mes "[dulcia]";
+				mes "I have tried to accomplish only one study for the sake of my loved ones ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "それはオオカミと花に関係する";
-				mes "話だとだけ、言っておくよ……";
-				mes "詳しくは、教えられないけれど、ね……";
+				mes "[dulcia]";
+				mes "Let's just say it has to do with wolves and flowers. ......" ;
+				mes "I can't give you the details, though. ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "そう…… それは一輪の花だ。";
-				mes "楽園を垣間見るような、そんな……";
-				mes "そんな気分にしてくれる^3355FF幻想の花^000000……";
+				mes "[Darcia]";
+				mes "So ...... It's a single flower." ;
+				mes "It's like a glimpse of paradise. ......" ;
+				mes "It's such a mood^3355FF fantasy flower^000000......" ;
 				next;
-				mes "[ダルシア]";
-				mes "私はホムンクルスを作った。";
-				mes "花から新しい生命を誕生させたんだ！";
-				mes "誰も、私の研究を信じなかったけれどね。";
+				mes "[Dulcia]";
+				mes "I made a homunculus." ;
+				mes "I gave birth to a new life from a flower!" ;
+				mes "No one believed my research, though." ;
 				next;
-				mes "[ダルシア]";
-				mes "しかし、私には何も残されなかった……";
-				mes "その後、私の時間は止まってしまった…";
-				mes "何も残らなかったんだ……";
-				mes "止まってしまったんだ……";
+				mes "[Dulcia]";
+				mes "But I was left with nothing: ......." ;
+				mes "After that, my time stopped..." ;
+				mes "Nothing was left to me. ......" ;
+				mes "Then my time stopped... ......" ;
 				next;
-				mes "[ダルシア]";
-				mes "ああ……ハンナ……";
-				mes "果てしなく広がった";
-				mes "あの美しい花畑でのあなたは";
-				mes "どこに行ってしまったんです……";
+				mes "[Darcia]";
+				mes "Oh ...... Hannah ......" ;
+				mes "Where have you gone in those endless fields of beautiful flowers ......" ;
 				close;
 			case 3:
-				mes "[ダルシア]";
-				mes "…………………………";
-				mes "…………………………";
-				mes "大切なものは何か……";
-				mes "忘れてはいけませんよ……";
+				mes "[dulcia]";
+				mes ".............................." ;
+				mes ".............................." ;
+				mes "What is important ......" ;
+				mes "Don't forget: ......" ;
 				close;
 		}
 	case 6:
-		mes "[ダルシア]";
-		mes "…………………………";
-		mes "…………………………";
-		mes "………………あぁ……";
+		mes "[Darcia]";
+		mes ".............................." ;
+		mes ".............................." ;
+		mes ".................. Oh ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "錬金術を学びたいと言ってた人だね……";
-		mes "そう、準備して来たのか……";
+		mes "[Darcia]";
+		mes "You're the one who said you wanted to learn alchemy. ......" ;
+		mes "Yes, you came prepared ......." ;
 		next;
-		if(countitem(710)) {	//幻想の花があれば最後まで免除
-			mes "[ダルシア]";
-			mes "……あぁ、それは……! ";
-			mes "ど、どうやって幻想の花を……!!";
+		if(countitem(710)) { //exempt to the end if there is an illusion flower
+			mes "[dulcia]";
+			mes "...... Ah, that's ......! How did you get the flower of illusion to ......!!!" ;
 			next;
-			mes "[ダルシア]";
-			mes "どこで……その一輪を……";
-			mes "美しい……光は少し消えているが……";
-			mes "だが、それは確かに月夜に静かに";
-			mes "咲くという……幻想の花!!";
+			mes "[dulcia]";
+			mes "Where did you ...... That one flower ......!" ;
+			mes "Beautiful ...... Although the light is a little fading ......" ;
+			mes "But it is true that it blooms silently in the moonlit night...... A flower of illusion!!!" ;
 			next;
-			mes "[ダルシア]";
-			mes "あぁ、その花を……見せてくれ！";
-			mes "あぁ、幻想の花……幻想の花!!";
-			mes "ウワァアアアア!!";
+			mes "[dulcia]";
+			mes "Oh, that flower ...... Show me!!!" ;
+			mes "Ah, the flower of illusion ...... Flower of Illusion!!! Uwaaaaaaah!!!" ;
 			next;
-			mes "[ダルシア]";
-			mes "その花を……私にくれないか？";
-			mes "これは、私が研究していた、あの……";
-			mes "月の光の!!";
+			mes "[dulcia]";
+			mes "I'd like to ...... that flower. Can you give it to me?" ;
+			mes "This is that ...... that I was studying." ;
+			mes "Of the moonlight!!!" ;
 			next;
-			if(select("差し上げることはできません。","差し上げようと持って来ました。")==1) {
-				mes "[ダルシア]";
-				mes "そうか…";
+			if(select("I can't give it to you." , "I brought it to give it to you.") ==1) {
+				mes "[Darcia]";
+				mes "Well..." ;
 				close;
 			}
-			mes "[ダルシア]";
-			mes "あぁ、本当か!! ありがとう！";
-			mes "こんな大事な花をくれるなんて……";
-			mes "ああ、ハンナ……愛しいハンナ……";
+			mes "[Darcia]";
+			mes "Oh, really!!! Thank you!!!" ;
+			mes "I can't believe you gave me these precious flowers: ......" ;
+			mes "Oh, Hannah ...... My dear Hannah ......." ;
 			next;
-			mes "[ダルシア]";
-			mes "そうだ……礼を受け取ってくれ……";
-			mes "私の錬金術に関するすべての知識を";
-			mes "君に授けよう!!";
+			mes "[Darcia]";
+			mes "Yes, ...... Please accept my thanks ......" ;
+			mes "I will give you all my knowledge of alchemy!!!" ;
 			next;
-			mes "[ダルシア]";
-			mes "目を大きく見開き、私の目を見なさい!!";
-			mes "最後まで目を逸らしてはいけません!!";
+			mes "[Dulcia]";
+			mes "Open your eyes wide and look into my eyes! Do not look away until the end!!!" ;
 			next;
-			mes "- あなたはダルシアから -";
-			mes "- 錬金術に関する様々な -";
-			mes "- 知識を叩き込まれた -";
+			mes "- You have been tapped by Darcia into various -- knowledge about alchemy --"; mes "[Darcia]"; mes "[Darcia]"; mes "[Darcia]"; mes "Darcia]
 			next;
 			delitem 710,1;
 			set CHANGE_AM,15;
-			mes "[ダルシア]";
-			mes "……はっ、はっ、はっ";
-			mes "君はもう錬金術師だ!!";
-			mes "ギルド長に会って、商人だった自分を";
-			mes "断ち切ってしまいなさい!!";
+			mes "[Darcia]";
+			mes "...... Ha, ha, ha you are an alchemist now! Go see your guild leader and cut yourself off from being a merchant!!!" ;
 			close;
 		}
 		if(countitem(7134) < 3 || countitem(713) < 3 || countitem(507) < 1 || countitem(508) < 1 || countitem(509) < 1) {
-			mes "[ダルシア]";
-			mes "……準備してくる物を";
-			mes "忘れてしまったのか……";
-			mes "もう一度、ゆっくり言うから";
-			mes "今度は忘れせずに揃えてくるように……";
+			mes "[Darcia]";
+			mes "...... You forgot to prepare something to come ......" ;
+			mes "I'll tell you again, slowly, so this time don't forget to come prepared. ......" ;
 			next;
-			mes "[ダルシア]";
-			mes "^3355FF乳鉢^000000 3個";
-			mes "^3355FF空きビン^000000 3個";
-			mes "^3355FF赤ハーブ^000000 1個";
-			mes "^3355FF黄ハーブ^000000 1個";
-			mes "^3355FF白ハーブ^000000 1個";
+			mes "[darcia]";
+			mes "^3355FF mortar^000000 3 ^3355FF empty bottles^000000 3 ^3355FF red herbs^000000 1 ^3355FF yellow herbs^000000 1 ^3355FF white herbs^000000 1";
 			next;
-			mes "[ダルシア]";
-			mes "準備が出来たら……また来なさい。";
+			mes "[dulcia]";
+			mes "When you are ready, ...... Come back." ;
 			close;
 		}
-		mes "[ダルシア]";
-		mes "材料を揃えてきたようだね……";
-		mes "約束どおり薬を作る方法を";
-		mes "教えてあげよう……";
+		mes "[darcia]";
+		mes "Looks like you've got all the ingredients: ......." ;
+		mes "As promised, I'll show you how to make medicine: ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "まず、乳鉢を準備して……";
-		mes "その中にハーブを入れる……";
-		mes "そしてゆっくりとハーブをつぶす……";
+		mes "[Darcia]";
+		mes "First, prepare the mortar ......" ;
+		mes "Put the herbs in it ......" ;
+		mes "Then slowly crush the herbs ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "きれいな水を少しずつ入れながら……";
-		mes "そっと掻きまぜて、どろどろにさせる……";
-		mes "少しずつハーブを足して、またつぶす……";
+		mes "[dulcia]";
+		mes "while adding a little bit of clean water ......" ;
+		mes "Gently stir and let it sludge ......" ;
+		mes "Add the herbs little by little and mash again......" ;
 		next;
-		mes "[ダルシア]";
-		mes "このようにして……";
-		mes "適量になったら……";
-		mes "空きビンにそっと入れなさい……";
+		mes "[dulcia]";
+		mes "Thus ......" ;
+		mes "When the right amount is reached, ......" ;
+		mes "Gently put it in an empty bottle. ......" ;
 		next;
 		delitem 7134,3;
 		delitem 713,3;
 		delitem 507,1;
 		delitem 508,1;
 		delitem 509,1;
-		mes "[ダルシア]";
-		mes "そう、完成だ。今度は";
-		mes "私がやったそのまま、真似してみなさい。";
-		mes "簡単だから……できる。";
+		mes "[Dulcia]";
+		mes "Yes, it's done. Now do exactly as I did it, and try to imitate it." ;
+		mes "It's easy. ...... You can do it." ;
 		break;
 	case 7:
-		mes "[ダルシア]";
-		mes "ヴァン=ヘルモントに……";
-		mes "会いに行きなさい……";
+		mes "[Darcia]";
+		mes "To Van-Helmont: ......." ;
+		mes "Go see him ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "ああ、ハンナ……愛しい人。";
-		mes "これからは、その花すら見られずに……";
-		mes "私の魂は静かに時を待つだけだね……";
+		mes "[Darcia]";
+		mes "Oh, Hannah ...... My darling." ;
+		mes "From now on, you won't even see that flower. ......" ;
+		mes "I guess my soul is just quietly waiting for the time to come. ......" ;
 		close;
 	case 15:
-		mes "[ダルシア]";
-		mes "君に教えることは、もう何もない……";
-		mes "もっと教えてあげたいが…";
-		mes "もう……全てを教えたから……";
-		mes "うん……";
+		mes "[Darcia]";
+		mes "I have nothing more to teach you. ......" ;
+		mes "I wish I could tell you more, but..." ;
+		mes "I've already ...... I've taught you everything. ......" ;
+		mes "Yeah ......" ;
 		next;
-		mes "[ダルシア]";
-		mes "2階のギルド長に会ってくるがいい……";
-		mes "錬金術師としての悲しい人生が";
-		mes "君を待っているから……";
+		mes "[Darcia]";
+		mes "You can go see the guild leader upstairs. ......" ;
+		mes "Because a sad life as an alchemist awaits you ......" ;
 		close;
 	}
-	//実験実習ここから
+	//experimental practice here
 	next;
-	if(select("乳鉢を準備する。","乳鉢を頭に使う。","乳鉢を足で蹴る。")==1)
+	if(select("Prepare mortar." , "Use the mortar for the head." }, "Kick the mortar with your foot." ==1)
 		set '@point,'@point+1;
 	else {
-		mes "[ダルシア]";
-		mes "……うーん";
+		mes "[darcia]";
+		mes "...... umm";
 		next;
 	}
-	if(select("乳鉢に土を入れる。","乳鉢にハーブを入れる。","乳鉢にハープを入れる。")==2)
+	if(select("Put soil in mortar." , "Put the herbs in the mortar." , "Put the harp in the mortar.") ==2)
 		set '@point,'@point+1;
 	else {
-		mes "[ダルシア]";
-		mes "……あぁ！";
+		mes "[dulcia]";
+		mes "...... Ah!" ;
 		next;
 	}
-	switch (select("ハーブをつぶす。","乳鉢をつぶす。","ダルシアの足をつぶす。")) {
+	switch (select("crush herbs." , "Crush mortar." , "Crush dulcinea legs.")) {
 		case 1:
 			set '@point,'@point+1;
 			break;
 		case 2:
-			mes "[ダルシア]";
-			mes "……何を！";
+			mes "[Darcia]";
+			mes "...... what!" ;
 			next;
 			break;
 		case 3:
-			mes "[ダルシア]";
-			mes "……痛っ！何の真似だい?!";
+			mes "[Darcia]";
+			mes "...... Ouch! What are you doing? ;
 			next;
 			break;
 	}
-	switch (select("きれいな水を振り撤く。","きれいな水を飲む。","きれいな水を入れる。")) {
+	switch (select("Shake off the clean water." , "Drink clean water." , "Fill with clean water.")) {
 		case 1:
-			mes "[ダルシア]";
-			mes "……何をしている?!";
+			mes "[Darcia]";
+			mes "...... What are you doing?!" ;
 			next;
 			break;
 		case 2:
-			mes "[ダルシア]";
-			mes "……喉が渇いたのかい？";
+			mes "[Darcia]";
+			mes "...... Are you thirsty?" ;
 			next;
 			break;
 		case 3:
 			set '@point,'@point+1;
 			break;
 	}
-	switch (select("ハーブをつぶす。","ハーブを食べる。","踊りながら歌う。")) {
+	switch (select("Crush herbs." , "Eat the herb." })) {
 		case 1:
 			set '@point,'@point+1;
 			break;
 		case 2:
-			mes "[ダルシア]";
-			mes "……お腹が空いたのかい？";
+			mes "[Darcia]";
+			mes "...... Are you hungry?" ;
 			next;
 			break;
 		case 3:
-			mes "[ダルシア]";
-			mes "……狂ってしまったのかい？";
+			mes "[Darcia]";
+			mes "...... Have you lost your mind?" ;
 			next;
 			break;
 	}
-	switch (select("麺を入れて炒める。","空きビンに入れる。","乳鉢を持って飲む。")) {
+	switch (select("Put the noodles in the stir fry." , "Put them in an empty bottle." , "Hold the mortar and drink.")) {
 		case 1:
-			mes "[ダルシア]";
-			mes "……お腹が空いたのかい？";
+			mes "[dulcia]";
+			mes "...... Are you hungry?" ;
 			next;
 			break;
 		case 2:
 			set '@point,'@point+1;
 			break;
 		case 3:
-			mes "[ダルシア]";
-			mes "……回復できたかい？";
+			mes "[Darcia]";
+			mes "...... Have you recovered?" ;
 			next;
 			break;
 	}
 	if('@point < 6) {
-		mes "[ダルシア]";
-		mes "………………";
+		mes "[Darcia]";
+		mes ".................." ;
 		next;
-		mes "[ダルシア]";
-		mes "……材料が全部なくなってしまったね。";
-		mes "……また準備して来なさい。";
+		mes "[Darcia]";
+		mes "...... You've lost all your ingredients." ;
+		mes "...... Come back and prepare again." ;
 		close;
 	}
 	getitem 501,1;
 	getitem 503,1;
 	getitem 504,1;
 	set CHANGE_AM,7;
-	mes "[ダルシア]";
-	mes "……よくやった。初めてのわりには";
-	mes "よく出来たね……記念にこれは";
-	mes "持っていきなさい。";
+	mes "[dulcia]";
+	mes "...... Well done. You did well for a first time. ...... Take this one to the journal GHOST." ;
 	next;
-	mes "[ダルシア]";
-	mes "隣の部屋のヴァン=ヘルモントに";
-	mes "会いに行きなさい……";
-	mes "もう少し……教えてくれるでしょう。";
-	mes "彼に更なる教えを請いなさい……";
+	mes "[Dulcia]";
+	mes "Go see Van-Helmont in the next room ......." ;
+	mes "A little more ...... He will tell you." ;
+	mes "Ask him for further instruction. ......" ;
 	next;
-	mes "[ダルシア]";
-	mes "忘れないように……";
-	mes "自分にとって一番……";
-	mes "大切なものは何か……";
-	mes "守らなければいけないものは何か……";
+	mes "[Darcia]";
+	mes "Do not forget ......" ;
+	mes "The best for me ......" ;
+	mes "What is important to you ......" ;
+	mes "What are the things you have to protect......" ;
 	close;
 }
 
 
 //==========================================
-// 四次試験（クエスト依頼）
+// Fourth test (quest request)
 //------------------------------------------
 
-alde_alche.gat,79,19,5	script	実験専門家	748,{
+alde_alche.gat,79,19,5 script Experimental Expert 748,{
 	if(Job == Job_Alchemist) {
-		mes "[ヴァン=ヘルモント]";
-		mes "なんだっ、私は今忙しいんだ!!";
-		mes "とっとと用件を言ったらどうだ。";
+		mes "[Van=Helmont]";
+		mes "What the heck, I'm busy right now! Why don't you hurry up and tell me what you need?" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "あっそう、錬金術師になれて嬉しいのは";
-		mes "分かるが……はしゃいでばかりだと";
-		mes "発展も向上もありえないぞ。";
+		mes "[Van-Helmont]";
+		mes "Ah yes, I know you're happy to be an alchemist, but ...... You can't develop and improve if you keep getting excited." ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "そう、だから熱心に励み、";
-		mes "生命工学を研究したまえ。";
-		mes "良いか、驕るんじゃないぞ。";
+		mes "[Van=Helmont]";
+		mes "Yes, so work hard and study biotechnology." ;
+		mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "[Van-Helmont]" ;
 		close;
 	}
 	switch(CHANGE_AM) {
 	default:
-		mes "[ヴァン=ヘルモント]";
-		mes "あと少し…あと少しで……";
-		mes "あぁ、あと少しで完成するのに！";
+		mes "[Van=Helmont]";
+		mes "Almost there... Almost there. ......" ;
+		mes "Oh, I'm so close to getting it done!" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "どうして、どうして失敗したんだ!!";
-		mes "間違ったことは何一つもしていないのに！";
-		mes "いったい！なぜ!!";
+		mes "[Van=Helmont]";
+		mes "Why, why did I fail!!!! I didn't do a single thing wrong!" ;
+		mes "Why on earth! Why!!!" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "また材料を揃えなければならないか……";
-		mes "しかし、いつかは完成するだろう";
-		mes "フフフ……";
+		mes "[Van=Helmont]";
+		mes "Do I have to get the materials again ......" ;
+		mes "But one day it will be finished huff ......" ;
 		close;
 	case 7:
-		mes "[ヴァン=ヘルモント]";
-		mes "ウウウ……一体何がいけないのだ……";
-		mes "どうすれば…ここがこうで、ああで……";
-		mes "理論上では確かに合っているのに……";
-		mes "何故止まってしまうんだ。";
-		mes "何が間違っているというのだ……";
+		mes "[Van=Helmont]";
+		mes "ugh ...... What the hell is wrong with ......." ;
+		mes "How do I... Here this and there that ......" ;
+		mes "It's certainly right in theory, but ......" ;
+		mes "Why does it stop?" ;
+		mes "What's wrong with ......?" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "そうだ、ここで溶液を注いだら";
-		mes "止まらなくてはならないのに……";
-		mes "止まらない…………";
-		mes "こんな初心者的な間違いを……あぁ";
-		mes "たまには方法を変えてみるか……";
+		mes "[Van=Helmont]";
+		mes "Yes, even though you have to stop when you pour the solution here ......" ;
+		mes "It won't stop ............" ;
+		mes "Such a beginner's mistake ...... Yeah, sometimes you have to change your method ......" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "そう、この部分を直せば良い。";
-		mes "始めからやり直す必要はなどないんだ！";
-		mes "うん、結果良ければ……";
-		mes "……ちょっと、ちょっと、あぁ!!!!";
+		mes "[Van=Helmont]";
+		mes "Yes, just fix this part." ;
+		mes "You don't have to start over!" ;
+		mes "Yes, if the result is good: ......." ;
+		mes "...... Hey, hey, hey, ah !!!!." ;
 		set CHANGE_AM,8;
 		break;
 	case 8:
-		mes "[ヴァン=ヘルモント]";
-		mes "そう、ここで触手を切り捨てて";
-		mes "べとべとする液体を少し交ぜて";
-		mes "試験管に準備したゼロピー溶液に";
-		mes "……あれ？";
-		mes "乳鉢がどこに行ったか……";
+		mes "[Van=Helmont]";
+		mes "So, cut off the tentacles here and mix a little of the sticky liquid with a little of the sticky liquid and put it in the Xeropy solution prepared in the test tube ...... Huh?" ;
+		mes "Where did the mortar go ......?" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "あぁ最後の一個を使ってしまったか。";
-		mes "ニコラスのやつ、持っているかな……";
-		mes "借りに行くのも面倒だが……";
+		mes "[Van=Helmont]";
+		mes "Oh, I must have used the last one." ;
+		mes "Nicholas's, I wonder if he has it: ......." ;
+		mes "I can't be bothered to go borrow it. ......" ;
 		break;
 	case 9:
-		mes "[ヴァン=ヘルモント]";
-		mes "何をしている、さっさと行け。";
-		mes "私から教えることはもう何もない。";
+		mes "[Van=Helmont]";
+		mes "What are you doing, get the hell out of here." ;
+		mes "There is nothing more to teach you from me." ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "隣の部屋のニコラスに会いなさい。";
-		mes "私は研究を続けなくちゃいけないんだ。";
+		mes "[Van-Helmont]";
+		mes "See Nicholas in the next room." ;
+		mes "I have to continue my research." ;
 		close;
 	}
-	//クエスト依頼ここから
+	//quest request here
 	next;
-	mes "[ヴァン=ヘルモント]";
-	mes "…………………………";
+	mes "[Van=Helmont]";
+	mes ".............................." ;
 	next;
-	mes "[ヴァン=ヘルモント]";
-	mes "…………何だお前は？";
+	mes "[Van-Helmont]";
+	mes "............ What the hell are you?" ;
 	next;
-	if(select("錬金術師志望生です。","…………")==2) {
-		mes "[ヴァン=ヘルモント]";
-		mes "見物でもしに来たのか……";
-		mes "見物するつもりならそこで";
-		mes "じっとしてておくれ。";
+	if(select("I am an aspiring alchemist student." ,"............") ==2) {
+		mes "[Van=Helmont]";
+		mes "You're here to see the sights. ......" ;
+		mes "If you're here to watch, stay where you are." ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "訳もなくあれこれ触られては困るから。";
-		mes "邪魔だけはしないでくれよ。";
+		mes "[Van Helmont]";
+		mes "I don't want you touching this and that for no reason." ;
+		mes "Just don't get in my way." ;
 		next;
-		if(select("何かちょっと教えてください。","…………")==1) {
-			mes "[ヴァン=ヘルモント]";
-			mes "私はたった今邪魔をするなと";
-			mes "言ったのではなかったかな。";
-			mes "まったく、話を聞くだけでも";
-			mes "時間を取られるというのに…ブツブツ。";
+		if(select("Tell me a little something." ,"............") ==1) {
+			mes "[Van=Helmont]";
+			mes "Didn't I just now tell you not to interrupt me?" ;
+			mes "Not at all, you're taking up a lot of my time just to listen to you... Mumm." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "よし、課題だ。";
-			mes "外でちょっと勉強して来なさい。";
-			mes "そうだね……う～ん……";
+			mes "[Van-Helmont]";
+			mes "Okay, here's the assignment." ;
+			mes "Go outside and do a little studying." ;
+			mes "Right. ...... Ummm ......." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "そうだ、モルゲンシュタインに会って";
-			mes "中和剤と混合剤を作る方法を";
-			mes "学んできなさい。";
+			mes "[Van-Helmont]";
+			mes "Yes, go see Morgenstein and learn how to make neutralizers and mixtures." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "品物は持って来なくていいから。";
-			mes "やつがその薬品を扱うところを";
-			mes "良く見てきなさい。分かったね。";
+			mes "[Van-Helmont]";
+			mes "You don't have to bring the goods." ;
+			mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "Go take a good look at him handling the chemicals. You got it." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "それでは、行って来なさい。";
+			mes "[Van Helmont]";
+			mes "Go on, then." ;
 		}
 		else {
-			mes "[ヴァン=ヘルモント]";
-			mes "…………………………";
+			mes "[Van-Helmont]";
+			mes ".............................." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "…………………………";
+			mes "[Van-Helmont]";
+			mes ".............................." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "…………………………";
+			mes "[Van Helmont]";
+			mes ".............................." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "……何だお前は？";
+			mes "[Van-Helmont]";
+			mes "...... What the hell are you?" ;
 			next;
-			mes "[ヴァン=ヘルモント]";
-			mes "誰だか知らないが、こんな所にいないで";
-			mes "さっさと出て行きなさい！";
-			mes "ここは私の部屋なんだから。";
+			mes "[Van-Helmont]";
+			mes "I don't know who you are, but get the hell out of here!" ;
+			mes "This is my room, you know." ;
 			next;
-			mes "[ヴァン=ヘルモント]";
+			mes "[Van=Helmont]"
 		}
-		mes "ほら、さっさと行った！";
-		mes "フォイ!!!";
+		mes "Look, he went quickly!" ;
+		mes "Foy!!!" ;
 		close;
 	}
-	mes "[ヴァン=ヘルモント]";
-	mes "あぁ、この間来た商人か。";
-	mes "ちゃんと学んできたかな？";
-	mes "遊んで来たのではないだろうね……";
+	mes "[Van-Helmont]";
+	mes "Ah, the merchant who came in the other day." ;
+	mes "I hope you've learned your lesson." ;
+	mes "I hope you didn't come here just for fun. ......" ;
 	next;
-	mes "[ヴァン=ヘルモント]";
-	mes "それならいくつか聞いて見るとするか。";
-	mes "見てきた通り、答えてみるがいい。";
+	mes "[Van=Helmont]";
+	mes "Then let's hear and see some of them." ;
+	mes "As you have seen, you may answer." ;
 	next;
-	if(DYE_EVE < 3) {	//npc_event_dye.txtにて発行
-		mes "[ヴァン=ヘルモント]";
-		mes "中和剤を作る時必要なアイテムは ";
+	if(DYE_EVE < 3) { //issued in npc_event_dye.txt
+		mes "[Van=Helmont]";
+		mes "The item needed when making the neutralizer is ";
 		next;
-		menu "やわらかな毛",-,"べとべとする液体",-,"家畜の血",-;
-		mes "[ヴァン=ヘルモント]";
-		mes "混合剤を作る時必要なアイテムは ";
+		menu "soft hair",-, "sticky liquid",-, "livestock blood",-;
+		mes "[Van=Helmont]";
+		mes "When making the mixture, the items needed are ";
 		next;
-		menu "化け物のエサ",-,"古代魚の唇",-,"くさった包帯",-;
+		menu "monster bait",-, "ancient fish lips",-, "wedged bandages",-;
 	}
 	else {
-		mes "[ヴァン=ヘルモント]";
-		mes "中和剤を作る時必要ないアイテムは";
+		mes "[Van=Helmont]";
+		mes "Items not needed when making neutralizers are";
 		next;
-		if(select("カルボーディル","ディトリミン","アルコール")==1)
+		if(select("carbodil", "ditrimin", "alcohol")==1)
 			set '@point,'@point+1;
-		mes "[ヴァン=ヘルモント]";
-		mes "混合剤を作る時必要ないアイテムは";
+		mes "[Van=Helmont]";
+		mes "Items not needed when making mixtures are";
 		next;
-		if(select("カルボーディル","ディトリミン","アルコール")==2)
+		if(select("carbodil", "ditrimin", "alcohol")==2)
 			set '@point,'@point+1;
 	}
 	if('@point < 2) {
-		mes "[ヴァン=ヘルモント]";
-		mes "……率直に言って不愉快だ。";
-		mes "モルゲンシュタインに学んで来なさいと";
-		mes "確かに言ったのに……";
+		mes "[Van=Helmont]";
+		mes "...... Frankly, it's offensive." ;
+		mes "I certainly told you to go learn from Morgenstein. ......" ;
 		next;
-		mes "[ヴァン=ヘルモント]";
-		mes "まったく、言葉もないね！";
-		mes "なに一つ覚えず、考えもなしに";
-		mes "帰ってくるなんて！";
-		mes "邪魔だ、さっさと立ち去れ！";
+		mes "[Van Helmont]";
+		mes "I have no words for you at all!" ;
+		mes "I can't believe you came back without learning anything or thinking!" ;
+		mes "You're in my way, get the hell out of my way!" ;
 		close;
 	}
-	mes "[ヴァン=ヘルモント]";
-	mes "うん、よく分かったな。";
-	mes "そう、薬品を理解するのは大切な事だ。";
-	mes "そういった事が、ずっと研究を";
-	mes "続けていく上で、身を守って";
-	mes "くれるものなのさ。";
+	mes "[Van=Helmont]";
+	mes "Yeah, you're well aware of that." ;
+	mes "Yes, it's important to understand the chemicals." ;
+	mes "Those are the things that will protect you in your research for a long time." ;
 	next;
-	mes "[ヴァン=ヘルモント]";
-	mes "このままの外に出て、隣の部屋の";
-	mes "ニコラスに会いにいきなさい。";
-	mes "もっと色々と教えてくれるだろう。";
+	mes "[Van-Helmont]";
+	mes "Go outside as it is and see Nicholas in the next room." ;
+	mes "[Van-Helmont]"; mes "[Van-Helmont]"; mes "He'll tell you more things." ;
 	next;
-	mes "[ヴァン=ヘルモント]";
-	mes "何をしている、さっさと行け。";
-	mes "私から教えることはもう何もない。";
+	mes "[Van-Helmont]";
+	mes "What are you doing, get going." ;
+	mes "There is nothing more to teach you from me." ;
 	set CHANGE_AM,9;
 	close;
 }
 
 
 //==========================================
-// 五次試験（魔法陣テスト）
+// Fifth test (magic circle test)
 //------------------------------------------
 
-alde_alche.gat,145,19,1	script	首席研究員	57,{
+alde_alche.gat,145,19,1 script Chief researcher 57,{
 	switch(CHANGE_AM) {
 	default:
-		mes "[ニコラス=プラメール]";
-		mes "ここがこうなるとこうなって……";
-		mes "あれをここに代入するとこうだから";
-		mes "こっちにこれを入れると……";
-		mes "ということはここは……";
-		mes "……ブツブツ……";
+		mes "[Nicholas-Plamer]";
+		mes "This is what happens here: ......" ;
+		mes "If we assign that here, this is what happens, so if we put this over here, we get ......" ;
+		mes "So here is ......" ;
+		mes "...... butb ......" ;
 		close;
 	case 9:
-		mes "[ニコラス=プラメール]";
-		mes "君が錬金術師になりたいという商人か。";
-		mes "しかしね……誰でも錬金術師に";
-		mes "なれるわけじゃないんだ。";
+		mes "[Nicholas-Plamer]";
+		mes "You are the merchant who wants to become an alchemist?" ;
+		mes "But you know, ...... Not everyone can be an alchemist." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "中途半端な気持ちで錬金術に";
-		mes "手を出すことは許されない。";
-		mes "そんな訳で、ギルドでは君の頭脳を";
-		mes "試しているのだよ。";
+		mes "[Nicholas-Plamer]";
+		mes "It is not permissible to dabble in alchemy half-heartedly." ;
+		mes "That's why we're testing your brains in the guild." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "今までの過程で分かったと思うが";
-		mes "錬金術に必要とされる公式や化学式の";
-		mes "知識は並大抵のものじゃない。";
+		mes "[Nicholas-Plamer]";
+		mes "As I'm sure you've figured out in the process so far, the knowledge of formulas and chemical formulas required for alchemy is extraordinary." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "実験の失敗を繰り返えすばかりで";
-		mes "ギルドの利益にもならない錬金術師を";
-		mes "育てる訳にもいかないしな。";
-		mes "はっはっはっー！";
+		mes "[Nicholas-Plamere]";
+		mes "We can't afford to train alchemists who will just keep repeating failed experiments and not benefit the guild." ;
+		mes "Ha ha ha!" ;
 		set CHANGE_AM,10;
 		next;
 		//fall through
 	case 10:
-		mes "[ニコラス=プラメール]";
-		mes "さて、錬金術師には色々な";
-		mes "能力が必要となる。";
-		mes "記憶力・集中力・計算力……";
-		mes "そして発想力だ。";
+		mes "[Nicholas-Plamer]";
+		mes "Now, the alchemist will need many abilities." ;
+		mes "Memory, concentration and calculation: ......" ;
+		mes "And the ability to conceive." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "これから、君にどれだけ";
-		mes "錬金術師としての素質が";
-		mes "あるかを試させてもらう。";
-		mes "まずは次の表を見てもらおう。";
+		mes "[Nicholas-Plamer]";
+		mes "From now on, I'm going to test how much of an alchemist you are." ;
+		mes "First, let's have a look at the following table." ;
 		next;
 		mes "";
-		mes "15.15.15.15";
-		mes "15.□.□.□";
-		mes "15.□.□.□";
-		mes "15.□.□.□";
-		mes "15";
+		mes "15.15.15.1515.□. □. □15.□. □. □15.□. □. □.15";
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "15の数字が縦横一列、";
-		mes "□が縦横3マスずつ";
-		mes "並んでいたな。";
-		mes "このマスに、1から9までの";
-		mes "数字を一つづつあてはめ、";
-		mes "表を完成させてもらう。";
+		mes "[Nicholas-Plamer]";
+		mes "You had a row of 15 numbers, one vertical and one horizontal, and three squares of □, one vertical and one horizontal." ;
+		mes "You have to fit these squares one by one with the numbers from 1 to 9 to complete the table." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "ただしルールがあって、";
-		mes "あてはめた数字を縦・横・斜め";
-		mes "の列でそれぞれ足し算し、";
-		mes "全て合計が15になるように";
-		mes "しなければならない。";
-		mes "回答のしかたは次の通りだ。";
+		mes "[Nicholas-Plamer]";
+		mes "There is a rule, however: the numbers you fit must be added together in the vertical, horizontal, and diagonal columns, all adding up to a total of 15." ;
+		mes "The way to answer is as follows." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "１. ２. ３";
-		mes "４. ５. ６";
-		mes "７. ８. ９";
-		mes "もし君がこのようにあてはめた場合、";
-		mes "回答欄には123456789";
-		mes "という順番で数字を記入しろ。";
+		mes "[Nicholas-Plamer]";
+		mes "1. 2. 34. 5. 67. 8. 9If If you fit it this way, enter the numbers in the answer column in the order 123456789." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "あまり時間をかけると";
-		mes "中止にするから注意してくれ。";
-		mes "では、やってもらおう。";
-		mes "もう一度表を見せる。";
+		mes "[Nicholas-Plamer]";
+		mes "If you take too long, I'll have to abort, so Attention." ;
+		mes "Then let's have it done." ;
+		mes "I'll show you the table again." ;
 		next;
 		mes "";
-		mes "15.15.15.15";
-		mes "15.□.□.□";
-		mes "15.□.□.□";
-		mes "15.□.□.□";
+		mes "15.15.15.1515.□. □. □15.□. □. □15.□. □. □";
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "では答えてもらおう。";
+		mes "[Nicholas-Plamer]";
+		mes "Then let's have him answer." ;
 		next;
 		input '@num;
 		if('@num <= 0) {
-			mes "[ニコラス=プラメール]";
-			mes "それでは回答になっていない。";
+			mes "[Nicholas-Plamer]";
+			mes "That is not an answer." ;
 			close;
 		}
 		if('@num==618753294 || '@num==816357492 || '@num==276951438 || '@num==672159834 || '@num==492357816
 							|| '@num==294753618 || '@num==834159672 || '@num==438951276) {
-			mes "[ニコラス=プラメール]";
-			mes "正解だ。";
-			mes "次の試験に移ってもらうが、";
-			mes "準備があるから";
-			mes "少ししたらまた話しかけてくれ。";
+			mes "[Nicholas-Plamer]";
+			mes "Correct." ;
+			mes "I'll let you move on to the next test, but talk to me again in a little while because I have some preparations to do." ;
 			set CHANGE_AM,11;
 		}
 		else {
-			mes "[ニコラス=プラメール]";
-			mes "ん～ん……";
-			mes "不正解。";
-			mes "ゆっくり考えてみるといい。";
+			mes "[Nicholas-Plamer]";
+			mes "hmmm ......" ;
+			mes "Incorrect." ;
+			mes "Take your time and think about it." ;
 		}
 		close;
 	case 11:
-		mes "[ニコラス=プラメール]";
-		mes "次に、行ってもらわねば";
-		mes "ならない場所がある。";
-		mes "「賢者の都市ジュノー」にセージ達と";
-		mes "共に錬金術を研究中の「バーン」か";
-		mes "「バジン」の兄弟を訪ねなさい。";
-		mes "行って、研究を手伝ってくるように。";
+		mes "[Nicholas-Plamer]";
+		mes "Next, there is a place you must go." ;
+		mes "Visit the brothers 'Baan' or 'Bazin', who are studying alchemy with Sage and the others in the 'Wise City of Yuno'." ;
+		mes "Go and help him with his research." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "さあ、これを持って行きなさい。";
-		mes "彼らと親しくなるのに役に立つだろう。";
+		mes "[Nicholas-Plamer]";
+		mes "Now, take this with you." ;
+		mes "It will help you to get to know them." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "混合剤 1個";
-		mes "燃えた木 5個";
-		mes "きれいな砂 5個";
-		mes "オリデオコン、エルニウム 各3個ずつ";
+		mes "[Nicholas-Plamer]";
+		mes "1 mixing agent, 5 pieces of burned wood, 5 pieces of clean sand, 3 each of Oridecon and Elunium";
 		getitem 974,1;
 		getitem 7068,5;
 		getitem 7043,5;
@@ -1384,165 +1180,143 @@ alde_alche.gat,145,19,1	script	首席研究員	57,{
 		getitem 757,3;
 		set CHANGE_AM,12;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "無事ジュノーに着けるよう祈って";
-		mes "いるよ。では、いってらっしゃい。";
+		mes "[Nicholas-Plamer]";
+		mes "I wish you a safe journey to Juno. Have a good day." ;
 		close;
 	case 12:
-		mes "[ニコラス=プラメール]";
-		mes "「賢者の都市ジュノー」にセージ達と";
-		mes "共に錬金術を研究中の「バーン」か";
-		mes "「バジン」の兄弟を訪ねなさい。";
-		mes "行って、研究を手伝ってくるように。";
+		mes "[Nicholas Plamere]";
+		mes "Visit the brothers 'Baan' or 'Bazin', who are studying alchemy with Sage and the others in the 'Wise City of Yuno'." ;
+		mes "Go and help him with his research." ;
 		close;
 	case 13:
-		mes "[ニコラス=プラメール]";
-		mes "長旅、ご苦労だったね。";
-		mes "「バーン」「バジン」兄弟から";
-		mes "とても助かったとの書簡が届いているよ。";
+		mes "[Nicholas-Plamer]";
+		mes "I'm sorry you had a long trip." ;
+		mes "I have received a letter from brothers "Baan" and "Bazin" saying you were very helpful." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "研究を成功させてきたようだね。";
-		mes "彼ら兄弟の研究を手伝える程なら……";
-		mes "うむ、充分に資格があると思って";
-		mes "間違いないだろう。";
+		mes "[Nicholas-Plamer]";
+		mes "I see that you have been successful in your research." ;
+		mes "If you're good enough to help them and their brothers with their research, ......." ;
+		mes "Mm, I have no doubt that you are well qualified." ;
 		next;
-		mes "[ニコラス=プラメール]";
-		mes "2階のギルド長に会いに行くと良い。";
-		mes "喜べ！転職まで後残りわずかだよ！";
+		mes "[Nicholas-Plamer]";
+		mes "You can go upstairs and see the guild leader." ;
+		mes "Rejoice! You're only a few days away from your new job!" ;
 		set CHANGE_AM,14;
 		close;
 	case 14:
-		mes "[ニコラス=プラメール]";
-		mes "2階のギルド長に会いに行くと良い。";
-		mes "喜べ！転職まで後残りわずかだよ！";
+		mes "[Nicholas-Plamer]";
+		mes "You can go upstairs to see the head of the guild." ;
+		mes "Rejoice! You only have a few days left until your new job!" ;
 		close;
 	}
 }
 
 
 //==========================================
-// 六次試験（実験手伝い）
+// Sixth test (experimental help)
 //------------------------------------------
 
-// npc_town_yuno.txt参照
+// see npc_town_yuno.txt
 
 
 //==========================================
-// 転職
+// Job transfer
 //------------------------------------------
 
-alde_alche.gat,101,184,4	script	マスターアルケミスト	122,{
+alde_alche.gat,101,184,4 script Master Alchemist 122,{
 	cutin "job_alche_vincent",2;
 	if(Job == Job_Novice) {
-		mes "[ビンセント=カーシャル]";
-		mes "子供はあっちへ行きなさい。";
-		mes "こんな所で遊んでいたら怪我をするよ。";
+		mes "[Vincent-Kershal]";
+		mes "Go that way, child." ;
+		mes "You'll get hurt if you play here." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "ここは危ないものがたくさんある。";
-		mes "ほらほら、外で遊びなさい。";
+		mes "[Vincent-Kershal]";
+		mes "There are a lot of dangerous things here." ;
+		mes "Come on, come on, go outside and play." ;
 		close2;
 		cutin "job_alche_vincent",255;
 		end;
 	}
 	if(Job == Job_Alchemist) {
-		mes "[ビンセント=カーシャル]";
-		mes "研究は進んでいるかね？";
-		mes "薬品を扱う時は十分";
-		mes "注意するようにな。";
+		mes "[Vincent-Kershal]";
+		mes "How is your research going?" ;
+		mes "Be sure to be Attentive enough when handling the chemicals." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "時には予想出来なかった結果が";
-		mes "実験からもたらされる場合もある！";
-		mes "多くの実験をこなすことも必要なのだ。";
+		mes "[Vincent-Kershal]";
+		mes "Sometimes experiments yield results that could not be predicted!" ;
+		mes "It is also necessary to perform many experiments." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "新しい生命を作り上げることが";
-		mes "出来たなら、必ずギルドに知らせてくれ。";
-		mes "他の皆も熱心に研究中なのだ。";
-		mes "君も頑張ってくれたまえ！";
+		mes "[Vincent-Kershal]";
+		mes "If you are able to create new life, be sure to let the guild know." ;
+		mes "[Vincent-Kershal]"; mes "Everyone else is working diligently on it." ;
+		mes "Good luck to you too!" ;
 		close2;
 		cutin "job_alche_vincent",255;
 		end;
 	}
-	if(Job != Job_Merchant) {
-		mes "[ビンセント=カーシャル]";
-		mes "民間人がこんな所に";
-		mes "何の用事で来たのかね。";
+	if(Job ! = Job_Merchant) {
+		mes "[Vincent-Kershal]";
+		mes "What business does a civilian have in a place like this?" ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "ここは見世物小屋じゃないよ。";
-		mes "うろうろしてないで、";
-		mes "どっかに行きなさい。";
+		mes "[Vincent-Khashal]";
+		mes "This is not a freak show." ;
+		mes "Don't hang around, go somewhere else." ;
 		close2;
 		cutin "job_alche_vincent",255;
 		end;
 	}
 	switch(CHANGE_AM) {
 	case 0:
-		mes "[ビンセント=カーシャル]";
-		mes "うん商人だな。";
-		mes "錬金術に関心があるのか。";
+		mes "[Vincent-Kershal]";
+		mes "Yeah merchant." ;
+		mes "You're interested in alchemy." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "私達、錬金術師ギルドでは";
-		mes "さまざまな物質の研究を行っている。";
-		mes "魔法とは違う方法で新しい";
-		mes "結果を得るのが目的だ。";
+		mes "[Vincent-Kershal]";
+		mes "We, the Alchemists' Guild, study various substances." ;
+		mes "The goal is to obtain new results in a different way than magic." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "新しい生命を創造し、老いや不死を";
-		mes "研究し、平凡な物質から新しい物質を";
-		mes "作ったりする研究をしているのさ。";
+		mes "[Vincent-Kershal]";
+		mes "I'm working on creating new life, studying old age and undead, making new matter out of mundane matter, etc." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "商人として長い間暮してみると";
-		mes "万物に対しての関心が高くなる。";
-		mes "もし錬金術を学びたければ";
-		mes "私達のギルドに加入してみなさい。";
+		mes "[Vincent-Kershal]";
+		mes "When you live long enough as a merchant, your interest in all things increases." ;
+		mes "If you want to learn alchemy, join our guild." ;
 		break;
-	default:	//1～13のとき
-		mes "[ビンセント=カーシャル]";
-		mes "加入申し込みをしたようだな……";
-		mes "研究に励み、常に高い志を持つように。";
+	default: //when 1-13
+		mes "[Vincent-Kershal]";
+		mes "I see you've applied to join ......." ;
+		mes "Keep up your research and always have high aspirations." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "先の錬金術師たちに助言を求める事も";
-		mes "忘れなきよう。他人の知識からも";
-		mes "得るものは多々あることだろう。";
+		mes "[Vincent-Kershal]";
+		mes "Remember to seek advice from the alchemists who have gone before you. There is much to be gained from the knowledge of others." ;
 		break;
 	case 14:
 	case 15:
-		if(Upper == UPPER_HIGH)	//未調査？
+		if(Upper == UPPER_HIGH) //not investigated?
 			break;
 		if(SkillPoint) {
-			mes "[ビンセント=カーシャル]";
-			mes "まだ使っていない";
-			mes "スキルポイントがあるようだ。";
-			mes "全部使ってから、また来るがいい。";
+			mes "[Vincent=Kershal]";
+			mes "Looks like there are some SkillPoints you haven't used yet." ;
+			mes "Use them all, then come back." ;
 			break;
 		}
-		mes "[ビンセント=カーシャル]";
-		mes "ほうほう。 加入して必要な基礎知識も";
-		mes "学んで来たかね。ご苦労。";
+		mes "[Vincent-Kershal]";
+		mes "Well, well. I see you have joined and learned the necessary basic knowledge. Thank you." ;
 		next;
 		unequip;
 		jobchange Job_Alchemist;
 		set CHANGE_AM,0;
-		mes "[ビンセント=カーシャル]";
-		mes "これからお前も錬金術師として";
-		mes "私たちギルドの一員だ。";
-		mes "研究に励み、常に高い志を持つように。";
+		mes "[Vincent-Kershal]";
+		mes "From now on you are an alchemist and a member of our guild." ;
+		mes "Study hard and always have high aspirations." ;
 		next;
 		getitem 7127,1;
-		mes "[ビンセント=カーシャル]";
-		mes "お前には特別にこれを授けよう。";
+		mes "[Vincent-Kershal]";
+		mes "I give you this specially for you." ;
 		next;
-		mes "[ビンセント=カーシャル]";
-		mes "それでは、また会おうじゃないか。";
-		mes "錬金術師として、腕を磨くことを";
-		mes "忘れるでないぞ！";
+		mes "[Vincent-Kershal]";
+		mes "Then we shall meet again, shall we not?" ;
+		mes "As an alchemist, don't forget to hone your skills!" ;
 		break;
 	}
 	close2;
@@ -1552,63 +1326,58 @@ alde_alche.gat,101,184,4	script	マスターアルケミスト	122,{
 
 
 //==========================================
-// ファーマシー用アイテム販売
+// item sales for pharmacy
 //------------------------------------------
 
-alde_alche.gat,24,188,2	script	ギルド商人	740,{
-	mes "[アルシャープ]";
-	mes "いらっしゃいませ！";
+alde_alche.gat,24,188,2 script guild merchant 740,{
+	mes "[alsharp]";
+	mes "Welcome!" ;
 	next;
-	switch (select("乳鉢を購入する。","製造の書を購入する。","やめる")) {
+	switch (select("Buy a mortar." mes "[Alsharpe]"; mes "[Alsharpe]"; mes "[Alsharpe]"; mes "Welcome! , "Quit")) {
 	case 1:
-		mes "[アルシャープ]";
-		mes "何をお求めですか？";
+		mes "[alsharp]";
+		mes "What would you like to purchase?" ;
 		next;
-		if(select("乳鉢 - 8z","取り引きを中断する。")==2)
+		if(select("mortar - 8z", "abort transaction.") ==2)
 			break;
-		mes "[アルシャープ]";
-		mes "いくつ要りようですか？";
-		mes "取り引きを中止する場合は";
-		mes "「0」と書いてください。";
+		mes "[alsharp]";
+		mes "How many do you need?" ;
+		mes "If you want to abort the transaction, write "0"." ;
 		while(1) {
 			next;
 			input '@num;
 			if('@num <= 0) {
-				mes "[アルシャープ]";
-				mes "取り引きが中止されました。";
-				mes "要りようの時は、また是非";
-				mes "いらしてください。";
+				mes "[alsharp]";
+				mes "The transaction has been aborted." ;
+				mes "Please come back when you need us." ;
 				close;
 			}
 			if('@num > 1000) {
-				mes "[アルシャープ]";
-				mes "1000 個以下でお願いします。";
+				mes "[alsharp]";
+				mes "Less than 1000 pieces, please." ;
 				continue;
 			}
 			break;
 		}
 		if(Zeny < '@num*8) {
-			mes "[アルシャープ]";
-			mes "お金が足りません";
+			mes "[alsharp]";
+			mes "Not enough money";
 			close;
 		}
 		if(checkweight(7134,'@num)==0) {
-			//重量チェックある？不明、未調査
+			// is there a weight check? Unknown, not investigated
 			close;
 		}
 		set Zeny,Zeny-'@num*8;
 		getitem 7134,'@num;
 		break;
 	case 2:
-		mes "[アルシャープ]";
-		mes "どの品をご希望ですか？";
-		mes "製造の書は、";
-		mes "スリムポーション製造の書が";
-		mes "240,000 Zeny。他の書は";
-		mes "100,000 Zeny となります。";
+		mes "[alsharp]";
+		mes "Which item would you like?" ;
+		mes "The book of manufacture is 240,000 Zeny for the book of slim potion manufacture; the other books are 100,000 Zeny." ;
 		next;
-		switch (select("ポーション製造の書","アルコール製造の書","ファイアーボトル製造の書","アシッドボトル製造の書",
-				"プラントボトル製造の書","マインボトル製造の書","コーティング薬製造の書","スリムポーション製造の書","取り引きを中断する")) {
+		switch (select("Book of Potion Manufacturing", "Book of Alcohol Manufacturing", "Book of Fire Bottle Manufacturing", "Book of Acid Bottle Manufacturing",
+				"Book of Plant Bottle Making", "Book of Mine Bottle Making", "Book of Coating Potion Making", "Book of Slim Potion Making", "Suspend Transaction")) {
 			default:
 				set '@price,100000;
 				break;
@@ -1616,27 +1385,26 @@ alde_alche.gat,24,188,2	script	ギルド商人	740,{
 				set '@price,240000;
 				break;
 			case 9:
-				mes "[アルシャープ]";
-				mes "また後程よろしくお願いします。";
+				mes "[alsharp]";
+				mes "Please come back later." ;
 				close;
 		}
 		if(Zeny < '@price) {
-			mes "[アルシャープ]";
-			mes "取り引きが中止されました。";
-			mes "要りようの時は、また是非";
-			mes "いらしてください。";
+			mes "[alsharp]";
+			mes "The transaction has been aborted." ;
+			mes "Please come back when you need it." ;
 			close;
 		}
 		set Zeny,Zeny-'@price;
 		setarray '@itemid,7144,7127,7128,7129,7130,7131,7132,7133;
 		getitem '@itemid[@menu-1],1;
-		mes "[アルシャープ]";
-		mes "ご利用、ありがとうございました。";
+		mes "[alsharp]";
+		mes "Thank you for using our service." ;
 		close;
 	case 3:
 		break;
 	}
-	mes "[アルシャープ]";
-	mes "また後程よろしくお願いします。";
+	mes "[alsharp]";
+	mes "Please come back later." ;
 	close;
 }

@@ -1,74 +1,58 @@
 //= Athena Script ==============================================================
-// Ragnarok Online Sage Jobchange Script	by Blaze
+//= Ragnarok Online Sage Jobchange Script by Blaze
 //= Registry ===================================================================
-// CHANGE_SA -> 0～15
+// CHANGE_SA -> 0-15
 //==============================================================================
 
 //============================================================
-// 転職
+// Job change
 //------------------------------------------------------------
-yuno_in02.gat,38,61,5	script	魔法アカデミー学長	743,{
+yuno_in02.gat,38,61,5 script President of the Academy of Magic 743,{
 	cutin "job_sage_kayron",2;
 	if(Upper == UPPER_HIGH) {
-		mes "[ケイロン=グリック]";
-		mes "ふむ……";
-		mes "長く人を見てきたが、あなたは";
-		mes "特別な「能力」を持っているね。";
+		mes "[Kayron-Gulick]";
+		mes "hmm ......" ;
+		mes "I've been watching people for a long time, and you have a special 'gift', don't you?" ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "あなたはこんな場所にいないで";
-		mes "もっと世に出て能力を使ってあげ";
-		mes "なさい。";
-		mes "初心を忘れてはならないよ。";
+		mes "[Chiron-Glick]";
+		mes "You should get out in the world more and use your abilities instead of being in a place like this." ;
+		mes "Don't forget your first love, you know." ;
 		close2;
 		cutin "job_sage_kayron",255;
 		end;
 	}
 	if(Job == Job_Sage) {
-		mes "[ケイロン=グリック]";
-		mes "ふむ、何の用かね？";
-		mes "セージになったからといって";
-		mes "勉強を怠ってはならないよ。";
+		mes "[Kayron-Gulick]";
+		mes "Hmm, what can I do for you?" ;
+		mes "Don't neglect your studies just because you're a Sage." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "私達の知識は、この大陸の発展に";
-		mes "大きく寄与している。";
-		mes "すべての人の役にたつように";
-		mes "常に研究と記録を欠かさないように。";
+		mes "[Chiron-Glick]";
+		mes "Our knowledge has contributed greatly to the development of this continent." ;
+		mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]" ;
 		close2;
 		cutin "job_sage_kayron",255;
 		end;
 	}
 	if(Job == Job_Novice) {
-		mes "[ケイロン=グリック]";
-		mes "ん？ここへは何の用で来たのかな？";
-		mes "ここまで来るのは大変だったろうに";
-		mes "よほどセージへの関心が強いのかな？";
+		mes "[Kayron-Glick]";
+		mes "Hmm? What brings you here?" ;
+		mes "You must have had a hard time getting here, are you so interested in Sage?" ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "もしセージが学ぶ学問に興味があるなら";
-		mes "まず「マジシャン」になり勉強をし、";
-		mes "見識を深めてきなさい。";
-		mes "いつかまた会える日を";
-		mes "楽しみにしているよ。";
+		mes "[Chiron-Gulick]";
+		mes "If you are interested in the studies Sage is learning, go become a 'Magician' first, study and gain insight." ;
+		mes "I look forward to seeing you again someday." ;
 		close2;
 		cutin "job_sage_kayron",255;
 		end;
 	}
-	if(Job != Job_Magician) {
-		mes "[ケイロン=グリック]";
-		mes "ふむう……私達はこの世界について";
-		mes "日々研究をしているが、足りないものが";
-		mes "ある。";
-		mes "それは、他の職業の人々が得る";
-		mes "経験に基づいた知識です……";
+	if(Job ! = Job_Magician) {
+		mes "[Kayron=Glick]";
+		mes "Hmmm ...... We study this world every day, but there is something missing." ;
+		mes "It is knowledge based on experience that people in other professions gain ......." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "もし、近くにセージがいたら";
-		mes "あなた方が得た経験についてよく";
-		mes "語ってあげてもらいたい。";
-		mes "彼らもあなたの助けになってくれる";
-		mes "はずです。";
+		mes "[Chiron-Gulick]";
+		mes "If there is a Sage nearby, I would like you guys to talk to him often about the experience you have gained." ;
+		mes "They should be able to help you too." ;
 		close2;
 		cutin "job_sage_kayron",255;
 		end;
@@ -77,144 +61,116 @@ yuno_in02.gat,38,61,5	script	魔法アカデミー学長	743,{
 	case 0:
 	case 1:
 	case 2:
-		mes "[ケイロン=グリック]";
-		mes "魔法に対する情熱を持つ君を";
-		mes "歓迎する。";
-		mes "ここへは何の用で来たのかな？";
+		mes "[Chiron-Glick]";
+		mes "Welcome to your passion for magic." ;
+		mes "What brings you here?" ;
 		next;
-		switch(select("セージに転職したいです","セージ転職について教えてください","なんでもないです")) {
+		switch(select("I want to change jobs to Sage", "Tell me about changing jobs to Sage", "Nothing")) {
 		case 1:
-			mes "[ケイロン=グリック]";
-			mes "うん……セージに転職したいと？";
-			mes "転職と……";
-			mes "まずその考え方から変えなくては";
-			mes "ならないな。";
+			mes "[Chiron-Glick]";
+			mes "Yeah ..... .you want to change jobs at Sage?" ;
+			mes "changing jobs and ......." ;
+			mes "I'd have to change that mindset first." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "セージというのは世の中の事物に";
-			mes "対する果てしない研究と記録によって";
-			mes "大陸の発展に寄与する人のことを指す。";
-			mes "であるから、ただ服を着替え";
-			mes "見た目だけ変わったとしても、";
-			mes "それは意味無きことなのです。";
+			mes "[Chiron-Glick]";
+			mes "A Sage is a person who contributes to the development of a continent through endless study and documentation of the things of the world." ;
+			mes "Therefore, if you just change your clothes and look different, it is meaningless." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "まず、シュバイチェル魔法アカデミーに";
-			mes "入学願書を提出しなさい。";
-			mes "そちらでよく説明してくれるはずです。";
+			mes "[Chiron-Glick]";
+			mes "First, submit an application for admission to the Schweichel Academy of Magic." ;
+			mes "They should be able to explain it to you well there." ;
 			break;
 		case 2:
-			mes "[ケイロン=グリック]";
-			mes "セージ転職……";
-			mes "誰もセージになることを「転職」とは";
-			mes "言いません。";
+			mes "[Chiron-Glick]";
+			mes "Sage job change ......" ;
+			mes "No one calls becoming a Sage a "career change"." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "セージになるためには、";
-			mes "まずシュバイチェル魔法アカデミーに";
-			mes "入学願書を提出しなさい。";
-			mes "そして入学試験を受けてみなさい。";
+			mes "[Chiron-Glick]";
+			mes "To become a Sage, you must first submit an application for admission to the Schweichel Academy of Magic." ;
+			mes "Then take the entrance exam." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "試験を受けた後、専攻科目について";
-			mes "研究を重ね、最後に論文を";
-			mes "提出してもらいます。";
+			mes "[Chiron-Glick]";
+			mes "After taking the exam, you will be required to do further research on your major subject and submit a thesis at the end." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "論文は私が見、評価します。";
-			mes "そこで合格すれば、セージとして";
-			mes "生きていく資格を与えましょう。";
+			mes "[Chiron-Gulick]";
+			mes "I will review and evaluate your paper." ;
+			mes "If you pass there, I will qualify you to live as a Sage." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "まずはシュバイチェル魔法アカデミーに";
-			mes "行って見なさい。";
-			mes "メテウス=シルプという若いセージに";
-			mes "申し込みをするように。";
+			mes "[Chiron-Glick]";
+			mes "First, go to the Schweichel Magic Academy and see." ;
+			mes "Make sure you apply to a young Sage named Metheus-Silp." ;
 			break;
 		case 3:
-			mes "[ケイロン=グリック]";
-			mes "ふむ……暇があるなら本の一冊でも";
-			mes "読むことをお勧めします。";
-			mes "世の中のたいていのことは";
-			mes "本から学ぶ事ができます。";
+			mes "[Chiron-Glick]";
+			mes "Hmmm ...... If you have the time, I suggest you read one of the books." ;
+			mes "You can learn most things in the world from books." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "勿論、本だけであらゆることが";
-			mes "わかるわけではない。";
-			mes "それでも私達セージは本を";
-			mes "知識の宝庫として重宝しています。";
+			mes "[Chiron-Glick]";
+			mes "Of course, not everything can be learned from books alone." ;
+			mes "Still, we at Sage value books as a treasure trove of knowledge." ;
 			break;
 		}
 		close2;
 		cutin "job_sage_kayron",255;
 		end;
-	default:	//3～10のとき
-		mes "[ケイロン=グリック]";
-		mes "はは、セージになる道は決して";
-		mes "易しいものではない。";
-		mes "ただ魔法を良く使いこなせるだけでは";
-		mes "何にもならないからね。";
+	default: //when 3 to 10
+		mes "[Kayron-Gulick]";
+		mes "Ha, the road to becoming a Sage is never easy." ;
+		mes "Just being able to use magic well doesn't get you anywhere, you know." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "がんばって論文まで仕上げて";
-		mes "きなさい。待っていますよ。";
+		mes "[Chiron-Gulick]";
+		mes "Good luck finishing your paper. I'll be waiting for you." ;
 		break;
 	case 15:
 		if(countitem(1550) < 1) {
-			mes "[ケイロン=グリック]";
-			mes "うん？論文はどうしました？";
-			mes "見せたくば早く持ってきなさい。";
+			mes "[Chiron-Glick]";
+			mes "Yeah? What happened to your paper?" ;
+			mes "Bring it in quickly if you want to show it to me." ;
 			next;
-			mes "[ケイロン=グリック]";
-			mes "まさか忘れたわけではないでしょう？";
-			mes "とにかく持ってくるのを待ちましょう。";
+			mes "[Chiron-Gulick]";
+			mes "You didn't forget, did you?" ;
+			mes "Let's wait for them to bring it anyway." ;
 			break;
 		}
 		if(SkillPoint) {
-			mes "[ケイロン=グリック]";
-			mes "君にはまだ割り振れる";
-			mes "スキルが残っていますよ。";
-			mes "論文を提出する前に";
-			mes "取得できるスキルを習得してきなさい。";
+			mes "[Chiron-Glick]";
+			mes "You still have some skills left to assign." ;
+			mes "Go learn the skills you can acquire before submitting your paper." ;
 			break;
 		}
-		mes "[ケイロン=グリック]";
-		mes "うん、頑張って論文を書いたようだね。";
-		mes "それでは見せてもらいましょう。";
+		mes "[Chiron-Glick]";
+		mes "Yeah, looks like you worked hard on your paper." ;
+		mes "Let's have a look at it then." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "うん……";
+		mes "[Chiron-Gulick]";
+		mes "Yeah ......." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "ふむ……";
+		mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]
+		mes "hmm......" ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "むむ……";
+		mes "[Chiron-Gulick]"; mes "[Chiron-Gulick]
+		mes "Mmm......" ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "まだ文体が整っていないが……";
-		mes "君の論文からは研究に対する";
-		mes "熱心さが見て取れる。";
-		mes "よし、良いでしょう。";
+		mes "[Chiron-Gulick]";
+		mes "Not quite stylized yet, but ......" ;
+		mes "Your paper shows your enthusiasm for research." ;
+		mes "Okay, good." ;
 		next;
 		set CHANGE_SA,0;
 		unequip;
 		jobchange Job_Sage;
-		mes "[ケイロン=グリック]";
-		mes "卒業だ！";
-		mes "これからはセージとして生きて";
-		mes "ゆきなさい。";
-		mes "今後も学ぶことへの熱心さを";
-		mes "忘れないように。";
+		mes "[Chiron-Gulick]";
+		mes "Graduation!" ;
+		mes "From now on, you will live as a Sage." ;
+		mes "Remember your eagerness to learn in the future." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "論文は大切に保管しておきなさい。";
-		mes "君が書いた唯一の書物なのだから。";
-		mes "それが役立つこともあるでしょう。";
+		mes "[Chiron-Gulick]";
+		mes "Keep your papers in a safe place." ;
+		mes "It is the only book you have written." ;
+		mes "It may be useful to you." ;
 		next;
-		mes "[ケイロン=グリック]";
-		mes "さぁ、君自身が知識の宝庫と";
-		mes "なるよう、熱心に学びなさい！";
+		mes "[Chiron-Glick]";
+		mes "Now, learn diligently so that you yourself may be a storehouse of knowledge!" ;
 		break;
 	}
 	close2;
@@ -223,404 +179,306 @@ yuno_in02.gat,38,61,5	script	魔法アカデミー学長	743,{
 }
 
 //============================================================
-// 試験申請
+// test application
 //------------------------------------------------------------
-yuno_in03.gat,154,35,4	script	アカデミー関係者	742,{
+yuno_in03.gat,154,35,4 script Academy Official 742,{
 	if(Job == Job_Sage) {
-		mes "[メテウス=シルプ]";
-		mes "いらっしゃいませ。";
-		mes "ひさしぶりですね。";
-		mes "研究の方は";
-		mes "はかどっていますか？";
+		mes "[Metheus=Silp]";
+		mes "Welcome." ;
+		mes "It's been a while." ;
+		mes "How is your research going?" ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "一人で本や資料をもとに勉強を";
-		mes "するのも良いですが、";
-		mes "たまには外でモンスターと直接";
-		mes "対峙することも重要です。";
+		mes "[Metheus-Silp]";
+		mes "It is good to study alone based on books and materials, but sometimes it is important to go outside and confront the monsters directly." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "セージ希望者がいらっしゃったら";
-		mes "よく教えてあげてください。";
-		mes "他の同僚の方々にも";
-		mes "よろしくお伝えください。";
+		mes "[Metheus=Silp]";
+		mes "If there are any Sage applicants, please teach them well." ;
+		mes "Please give my best wishes to the other colleagues." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[メテウス=シルプ]";
-		mes "ようこそ。";
-		mes "こちらは";
-		mes "シュバイチェル魔法アカデミー";
-		mes "です。";
+		mes "[Metheus-Silp]";
+		mes "Welcome." ;
+		mes "This is the Schweichel Academy of Magic." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "私どもはセージを育成する機関で、";
-		mes "モンスターと魔法に関する研究を";
-		mes "行っています。";
-		mes "また、いつでも入学を歓迎しています。";
+		mes "[Metheus-Silp]";
+		mes "We are an institution that trains Sage and conducts research on monsters and magic." ;
+		mes "We also welcome enrollment at any time." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "マジシャンでJobLv 40 以上";
-		mes "の方なら入学することができます。";
-		mes "決められた過程を経て、";
-		mes "セージになることができます。";
+		mes "[Metheus-Silp]";
+		mes "If you are a Magician and have JobLv 40 or higher, you are welcome to enroll." ;
+		mes "You can become a Sage through a defined process." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "もしセージに関心があれば";
-		mes "また訪ねてください。";
-		mes "それでは、良い一日を。";
+		mes "[Metheus-Silp]";
+		mes "If you are interested in Sage, please visit again." ;
+		mes "Have a nice day then." ;
 		close;
 	}
-	if(Job != Job_Magician || Upper == UPPER_HIGH) {
-		mes "[メテウス=シルプ]";
-		mes "ようこそ。";
-		mes "こちらは";
-		mes "シュバイチェル魔法アカデミー";
-		mes "です。";
+	if(Job ! = Job_Magician || Upper == UPPER_HIGH) {
+		mes "[Metheus=Silp]";
+		mes "Welcome." ;
+		mes "This is the Schweichel Magic Academy." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "私どもはセージを育成する機関で、";
-		mes "モンスターと魔法に関する研究を";
-		mes "行っています。";
+		mes "[Metheus-Silp]";
+		mes "We are an institution that trains Sage and conducts research on monsters and magic." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "マジシャンでJobLv 40 以上";
-		mes "の方なら入学することができます。";
-		mes "決められた過程を経て、";
-		mes "セージになることができます。";
-		mes "近くにマジシャンのお知り合いが";
-		mes "いたら教えてあげてください。";
+		mes "[Metheus-Silp]";
+		mes "If you are a Magician and have JobLv 40 or higher, you can enroll." ;
+		mes "You can become a Sage through a defined process." ;
+		mes "If you know someone nearby who is a Magician, please let them know." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "それでは、良い一日を。";
+		mes "[Metheus-Silp]";
+		mes "Have a nice day then." ;
 		close;
 	}
 	switch(CHANGE_SA) {
 	case 0:
-		mes "[メテウス=シルプ]";
-		mes "ようこそ。";
-		mes "こちらは";
-		mes "シュバイチェル魔法アカデミー";
-		mes "です。";
-		mes "マジシャンの方ですね。";
-		mes "こちらへはどのようなご用で？";
+		mes "[Metheus=silp]";
+		mes "Welcome." ;
+		mes "This is the Schweichel Academy of Magic." ;
+		mes "You must be the Magician." ;
+		mes "How may I help you here?" ;
 		next;
-		switch(select("セージ転職について教えてください","入学の申し込みをしたいです","なんでもないです")) {
+		switch(select("Tell me about your new job at Sage", "I would like to apply for admission", "Nothing")) {
 		case 1:
-			mes "[メテウス=シルプ]";
-			mes "セージに転職をご希望ですか。";
-			mes "しかし、私どもは転職をさせて";
-			mes "あげているわけではありません。";
+			mes "[Metheus=silp]";
+			mes "Would you like to apply for a new job at Sage?" ;
+			mes "However, we are not giving you a job change." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "当アカデミーに入学して";
-			mes "規定の過程を終えた方のみ、";
-			mes "正式な研究活動について認定を";
-			mes "さしあげているのです。";
+			mes "[Metheus-Silp]";
+			mes "Only those who have enrolled in our academy and completed the prescribed process will be certified for formal research work." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "ですから、私どもは転職ではなく";
-			mes "卒業と呼んでいます。";
-			mes "入学の申し込みと共に入学金を";
-			mes "納めていただければ、試験を";
-			mes "受けることができます。";
+			mes "[Metheus-Silp]";
+			mes "Therefore, we call it graduation, not a career change." ;
+			mes "If you pay the enrollment fee along with your application for admission, you can take the exam." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "ただ、特別に";
-			mes "^3355FF古い魔法書^000000と^3355FF慧眼^000000";
-			mes "を持った方々に限っては";
-			mes "入学金を免除してさしあげています。";
+			mes "[Metheus-Silp]";
+			mes "However, only those with the special ^3355FF old magic book ^000000 and ^3355FF keen eye ^000000 will be exempted from paying the entrance fee." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "登録が完了ししだい、試験を受ける";
-			mes "ことができます。";
-			mes "入学試験にパスしたら、テーマに沿って";
-			mes "研究をしていただきます。";
-			mes "最後に、研究したことの論文を";
-			mes "書いていただきます。";
+			mes "[Metheus=silp]";
+			mes "As soon as your registration is complete, you may take the exam." ;
+			mes "Once you pass the entrance exam, you will be asked to do research on your theme." ;
+			mes "Finally, you will be asked to write a paper on what you have researched." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "論文は学長が見ますので、";
-			mes "学長の判断で合否が決定されます。";
-			mes "合格すればセージとして研究活動に";
-			mes "従事することが認められます。";
+			mes "[Metheus-Silp]";
+			mes "The thesis will be reviewed by the Rector, who will decide whether to accept or reject it." ;
+			mes "If you pass, you will be allowed to engage in research activities as a Sage." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "ご希望があればいつでも";
-			mes "申し込みをお待ちしております。";
-			mes "それでは、良い一日を。";
+			mes "[Metheus-Silp]";
+			mes "We welcome your application at any time if you wish to apply." ;
+			mes "Then have a nice day." ;
 			close;
 		case 2:
 			break;
 		case 3:
-			mes "[メテウス=シルプ]";
-			mes "そうですか。";
-			mes "ゆっくり見物していってください。";
-			mes "それでは、良い一日を。";
+			mes "[Metheus=silp]";
+			mes "I see." ;
+			mes "Please take your time to look around." ;
+			mes "Have a nice day, then." ;
 			close;
 		}
-		mes "[メテウス=シルプ]";
-		mes "入学の申し込みですね。";
-		mes "シュバイチェル魔法アカデミーに";
-		mes "ようこそ。";
+		mes "[Metheus-Silp]";
+		mes "You are applying for admission." ;
+		mes "Welcome to the Schweichel Academy of Magic." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "入学するための基本条件は、";
-		mes "JobLv 40 以上、マジシャンとして";
-		mes "過ごしてきたことです。";
-		mes "そして、学習過程に必要である";
-		mes "諸経費も入学金として納めなければ";
-		mes "なりません。";
+		mes "[Metheus-Silp]";
+		mes "The basic requirements for admission are JobLv 40 or higher and that you have spent time as a Magician." ;
+		mes "And you must also pay an enrollment fee for various expenses that are necessary for the learning process." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "入学金は 70,000Zenyです。";
-		mes "または";
-		mes "^3355FF古い魔法書^000000と^3355FF慧眼^000000を";
-		mes "提出されれば入学金は免除となります。";
+		mes "[Metheus-Silp]";
+		mes "The enrollment fee is 70,000 Zeny." ;
+		mes "Or the entrance fee will be waived if you submit ^3355FF old magic book ^000000 and ^3355FF Huiyan ^000000." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "それでは、すぐに入学の申し込みを";
-		mes "されますか？";
+		mes "[Metheus-Silp]";
+		mes "So, would you like to apply for admission immediately?" ;
 		next;
-		switch(select("入学の申し込みをします","入学金が高すぎます","後でまた来ます")) {
+		switch(select("I will apply for admission", "The admission fee is too high", "I will come back later")) {
 		case 1:
 			if(JobLevel < 40) {
-				mes "[メテウス=シルプ]";
-				mes "まだJobLvが足りないようです。";
-				mes "もう少し勉強をしてから";
-				mes "いらしてください。";
+				mes "[Metheus=silp]";
+				mes "It looks like you don't have enough JobLevel yet." ;
+				mes "Please study a little more before coming back." ;
 				close;
 			}
 			if(SkillPoint) {
-				mes "[メテウス=シルプ]";
-				mes "取得できるスキルを習得してから";
-				mes "いらしてください。";
-				mes "中途半端な心構えでは";
-				mes "入学を認めることができません。";
+				mes "[Metheus=Silp]";
+				mes "Please come back after you have mastered the skills you can acquire." ;
+				mes "We cannot admit you if you are half-heartedly prepared." ;
 				close;
 			}
-			mes "[メテウス=シルプ]";
-			mes "それでは、入学申込書を作成します。";
-			mes "こちらにサインしてください。";
+			mes "[Metheus-Silp]";
+			mes "Then we will prepare an application for admission." ;
+			mes "Please sign here." ;
 			next;
 			menu strcharinfo(0),-;
-			mes "[メテウス=シルプ]";
-			mes "お名前は……";
-			mes strcharinfo(0);
-			mes "さんですね。良い名前です。";
+			mes "[Metheus=silp]";
+			mes "Your name is ......." ;
+			mes ""+strcharinfo(0);
+			mes "Yes. It's a good name." ;
 			next;
 			if(JobLevel >= 50) {
-				mes "[メテウス=シルプ]";
-				mes "ほう、マジシャンをマスターレベルまで";
-				mes "鍛えられましたか！";
-				mes "特別に入学金を";
-				mes "免除してさしあげましょう！";
+				mes "[Metheus=Silp]";
+				mes "Wow, you have trained Magician to Master level!" ;
+				mes "We'll give you a special entrance fee waiver!" ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "はい、手続きは完了です。";
-				mes "それでは入学試験を受けて";
-				mes "きてください。";
+				mes "[Metheus-Silp]";
+				mes "Yes, the procedure is complete." ;
+				mes "Then please go and take the entrance exam." ;
 				set CHANGE_SA,4;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "クレイトス教授のところに行って";
-				mes "ください。奥の左側の部屋に";
-				mes "いらっしゃいます。";
+				mes "[Metheus-Silp]";
+				mes "Please go to Professor Kratos. He is in the back room on the left." ;
 				close;
 			}
-			mes "[メテウス=シルプ]";
-			mes "では、入学金 70,000 Zenyを";
-			mes "納めますか？";
-			mes "それとも";
-			mes "^3355FF古い魔法書^000000と^3355FF慧眼^000000を";
-			mes "提出しますか？";
+			mes "[Metheus-Silp]";
+			mes "So, do you want to pay the entrance fee of 70,000 Zeny?" ;
+			mes "Or do you submit the ^3355FF old magic book ^000000 and the ^3355FF Huiyan ^000000?" ;
 			next;
-			if(select("入学金 70,000 Zenyを払う","古い魔法書と慧眼を提出する")==1) {
+			if(select("Pay the entrance fee of 70,000 Zeny", "Submit the old magic book and the Huiyan")==1) {
 				if(Zeny < 70000) {
-					mes "[メテウス=シルプ]";
-					mes "ん……あ、所持金が足りない";
-					mes "ようです。確認してからまた";
-					mes "いらしてください。";
+					mes "[Metheus=silp]";
+					mes "n...... Oh, it looks like you don't have enough money in your possession. Please check and come back again." ;
 					close;
 				}
 				set Zeny,Zeny-70000;
 			}
 			else {
 				if(countitem(1006) < 1 || countitem(1007) < 1) {
-					mes "[メテウス=シルプ]";
-					mes "ん……？";
-					mes "揃っていないようですよ？";
-					mes "どこかに忘れてきてしまったのかも";
-					mes "しれませんね。";
-					mes "見つけしだいお戻りください。";
+					mes "[Metheus=silp]";
+					mes "n......?" ;
+					mes "It doesn't seem to be aligned?" ;
+					mes "I think I may have forgotten it somewhere." ;
+					mes "Please return as soon as you find them." ;
 					close;
 				}
 				delitem 1006,1;
 				delitem 1007,1;
 			}
-			mes "[メテウス=シルプ]";
-			mes "はい、入学手続きが完了しました。";
-			mes "それでは入学試験を受けて";
-			mes "きてください。";
+			mes "[Metheus=silp]";
+			mes "Yes, the enrollment process has been completed." ;
+			mes "Then please go ahead and take the entrance exam." ;
 			set CHANGE_SA,4;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "クレイトス教授のところに行って";
-			mes "ください。奥の左側の部屋に";
-			mes "いらっしゃいます。";
+			mes "[Metheus-Silp]";
+			mes "Please go to Professor Kratos. He is in the back room on the left." ;
 			close;
 		case 2:
 			if(JobLevel < 40) {
-				mes "[メテウス=シルプ]";
-				mes "入学金以前に、まだJobLvが";
-				mes "足りていないようです。";
-				mes "もうちょっと勉強をなさってから";
-				mes "おこしください。";
+				mes "[Metheus=silp]";
+				mes "It seems that you don't have enough JobLevel yet before the entrance fee." ;
+				mes "Please study a little more before coming." ;
 				close;
 			}
 			if(JobLevel >= 50) {
-				mes "[メテウス=シルプ]";
-				mes "ふむ……しかしながら";
-				mes "入学金を納めていただかないと";
-				mes "入学を認められません……。";
-				mes "高いとお感じになられても、";
-				mes "セージとなる過程に必要なお金";
-				mes "なのです。";
+				mes "[Metheus=silp]";
+				mes "Hmmm ...... However, you must pay the enrollment fee to be admitted: ......." ;
+				mes "Even if you feel it is expensive, it is necessary for the process of becoming a Sage." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "ん……？";
-				mes "ひょっとしてあなたは……";
-				mes "マジシャンをマスターされていますね？";
-				mes "これは驚きました。特別に入学金を";
-				mes "免除してさしあげましょう！";
+				mes "[Metheus=silp]";
+				mes "n......?" ;
+				mes "Perhaps you are ......?" ;
+				mes "You have mastered Magician, have you not?" ;
+				mes "This is a surprise. Let us give you a special waiver of the enrollment fee!" ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "それでは、入学申込書を作成します。";
-				mes "こちらにサインしてください。";
+				mes "[Metheus-Silp]";
+				mes "Then we will prepare an application for admission." ;
+				mes "Please sign here." ;
 				next;
 				menu strcharinfo(0),-;
-				mes "[メテウス=シルプ]";
-				mes "お名前は……";
-				mes strcharinfo(0);
-				mes "さんですね。良い名前です。";
+				mes "[Metheus=silp]";
+				mes "Your name is ......." ;
+				mes ""+strcharinfo(0);
+				mes "Yes. It's a good name." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "はい、入学手続きが完了しました。";
-				mes "それでは入学試験を受けて";
-				mes "きてください。";
+				mes "[Metheus=silp]";
+				mes "Yes, the enrollment process is complete." ;
+				mes "Then please go ahead and take the entrance exam." ;
 				set CHANGE_SA,4;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "クレイトス教授のところに行って";
-				mes "ください。奥の左側の部屋に";
-				mes "いらっしゃいます。";
+				mes "[Metheus-Silp]";
+				mes "Please go to Professor Kratos. He is in the back room on the left." ;
 				close;
 			}
 			if(Zeny > 43210) {
-				mes "[メテウス=シルプ]";
-				mes "うーん……。";
-				mes "入学金を納めなければ入学を";
-				mes "認めることはできません。";
-				mes "高いとお感じになられても、";
-				mes "セージとなる過程に必要なお金";
-				mes "なのです。";
+				mes "[Metheus=silp]";
+				mes "umm ......." ;
+				mes "We will not be able to admit you unless you pay the admission fee." ;
+				mes "Even if you feel it is expensive, it is necessary money for the process of becoming a Sage." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "それとも";
-				mes "^3355FF古い魔法書^000000と^3355FF慧眼^000000を";
-				mes "提出なさいますか？";
-				mes "それが難しいのであれば、やはり";
-				mes "入学金をご用意してください。";
+				mes "[Metheus=silp]";
+				mes "Or would you like to submit ^3355FF old magic books^000000 and ^3355FF Huiyan^000000?" ;
+				mes "If that is difficult, please still provide the entrance fee." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "それでは、良い一日を。";
+				mes "[Metheus-Silp]";
+				mes "Then have a nice day." ;
 				close;
 			}
-			mes "[メテウス=シルプ]";
-			mes "ふむ……お金が足りませんか……";
-			mes "規定上 70,000 Zenyを";
-			mes "納めていただかなければ";
-			mes "ならないのですが……";
+			mes "[Metheus-Silp]";
+			mes "Hmmm ...... Do you need more money ......?" ;
+			mes "According to the regulations, you have to pay 70,000 Zeny. ......" ;
 			next;
-			if(select("他の方法はないでしょうか","後でまた来ます")==1) {
-				mes "[メテウス=シルプ]";
-				mes "それでは特別に少し譲歩しましょう。";
-				mes "入学金を 30,000 Zenyに";
-				mes "下げてあげます。が、";
-				mes "いくつかの品物を提出してください。";
+			if(select("Is there any other way?", "I'll come back later")==1) {
+				mes "[Metheus=silp]";
+				mes "Then let's make a few special concessions." ;
+				mes "I will lower the entrance fee to 30,000 Zeny. but you will have to submit some items." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "次の品物を提出してください。";
+				mes "[Metheus-Silp]";
+				mes "Please submit the following items." ;
 				set CHANGE_SA,rand(1,3);
 				switch(CHANGE_SA) {
 				case 1:
-					mes "^3355FF鳥の羽毛^000000 50個";
-					mes "^3355FF綿毛^000000 50個";
-					mes "^3355FF鉄鉱石^000000 25個";
+					mes "^3355FF bird feathers^000000 50 ^3355FF cotton wool^000000 50 ^3355FF iron ore^000000 25";
 					break;
 				case 2:
-					mes "^3355FFクローバー^000000 50個";
-					mes "^3355FFやわらかな毛^000000 50個";
-					mes "^3355FF墨汁^000000 25個";
+					mes "^3355FF clover^000000 50 pieces^3355FF soft hair^000000 50 pieces^3355FF inkstone^000000 25 pieces";
 					break;
 				case 3:
-					mes "^3355FF鳥の羽毛^000000 50個";
-					mes "^3355FF綿毛^000000 50個";
-					mes "^3355FFクローバー^000000 50個";
-					mes "^3355FFやわらかな毛^000000 50個";
+					mes "^3355FF bird feathers^000000 50 pieces^3355FF cotton wool^000000 50 pieces^3355FF clover^000000 50 pieces^3355FF soft hair^000000 50 pieces";
 					break;
 				}
 				next;
-				mes "[メテウス=シルプ]";
-				mes "申し上げたものを提出されたら";
-				mes "入学金を 30,000 Zenyにします。";
-				mes "これなら可能でしょう。";
-				mes "頑張って集めてみてください。";
+				mes "[Metheus=silp]";
+				mes "If you submit what I have said, I will reduce the entrance fee to 30,000 Zeny." ;
+				mes "This would be possible." ;
+				mes "Good luck in collecting it." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "もちろんその前に";
-				mes "70,000 Zenyを用意できたら";
-				mes "入学金を納めていただきます。";
-				mes "規定は規定ですからね。";
+				mes "[Metheus=silp]";
+				mes "Of course, if you can come up with 70,000 Zeny before that, you will have to pay the entrance fee." ;
+				mes "Regulations are regulations, you know." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "もしくは";
-				mes "^3355FF古い魔法書^000000と^3355FF慧眼^000000を";
-				mes "提出なさっても結構です。";
-				mes "それでは、良い一日を。";
+				mes "[Metheus=silp]";
+				mes "Or you may submit ^3355FF old magic book^000000 and ^3355FF Huijin^000000." ;
+				mes "Then have a nice day." ;
 				close;
 			}
-			//elseならfall through
+			//fall through if else
 		case 3:
-			mes "[メテウス=シルプ]";
-			mes "はい、あわてず準備を整えて";
-			mes "くださいね。";
-			mes "それでは、良い一日を。";
+			mes "[Metheus-Silp]";
+			mes "Yes, please don't panic and get ready." ;
+			mes "Then have a nice day." ;
 			close;
 		}
 	case 1:
 	case 2:
 	case 3:
-		mes "[メテウス=シルプ]";
-		mes "いらっしゃいませ。";
-		mes "入学のお申し込みですね？";
+		mes "[Metheus=silp]";
+		mes "Welcome." ;
+		mes "Are you applying for admission?" ;
 		next;
-		if(countitem(1006) && countitem(1007)) {	//未調査
+		if(countitem(1006) && countitem(1007)) { //not yet investigated
 			delitem 1006,1;
 			delitem 1007,1;
-			mes "[メテウス=シルプ]";
-			mes "古い魔法書と慧眼を提出して";
-			mes "いただきました。";
-			mes "入学を認めます。";
+			mes "[Metheus=silp]";
+			mes "You have submitted an old magic book and a huija." ;
+			mes "Admission is granted." ;
 			set CHANGE_SA,4;
 			break;
 		}
 		if(Zeny >= 70000) {
 			set Zeny,Zeny-70000;
-			mes "[メテウス=シルプ]";
-			mes "70,000 Zenyを納めて";
-			mes "いただきました。";
-			mes "入学を認めます。";
+			mes "[Metheus=silp]";
+			mes "70,000 Zeny has been paid." ;
+			mes "Admission is granted." ;
 			set CHANGE_SA,4;
 			break;
 		}
@@ -641,745 +499,554 @@ yuno_in03.gat,154,35,4	script	アカデミー関係者	742,{
 		set '@max,getarraysize('@need);
 		for(set '@i,0; '@i < '@max; set '@i,'@i+1) {
 			if(countitem('@need['@i]) < '@amount['@i]) {
-				mes "[メテウス=シルプ]";
-				mes "しかしまだ準備が整っていませんね。";
-				mes "必要なアイテムをもう一度確認します。";
+				mes "[Metheus=silp]";
+				mes "But you're not ready yet." ;
+				mes "Check again for the items you need." ;
 				next;
-				mes "[メテウス=シルプ]";
-				mes "次の品物を提出してください。";
+				mes "[Metheus-Silp]";
+				mes "Please submit the following items." ;
 				for(set '@j,0; '@j < '@max; set '@j,'@j+1)
-					mes "^3355FF" +getitemname('@need['@j])+ "^000000 " +'@amount['@j]+ "個";
+					mes "^3355FF" +getitemname('@need['@j])+ "^000000 " +'@amount['@j]+ "piece";
 				next;
-				mes "[メテウス=シルプ]";
-				mes "申し上げたものを提出されたら";
-				mes "入学金を 30,000 Zenyにします。";
-				mes "頑張って集めてみてください。";
-				mes "それでは、良い一日を。";
+				mes "[Metheus-Silp]";
+				mes "If you submit what I said, I will reduce the entrance fee to 30,000 Zeny." ;
+				mes "Good luck collecting them." ;
+				mes "Have a nice day, then." ;
 				close;
 			}
 		}
 		if(Zeny < 30000) {
-			mes "[メテウス=シルプ]";
-			mes "しかしまだ準備が整っていませんね。";
-			mes "品物はあるものの入学金が";
-			mes "足りません。";
+			mes "[Metheus=silp]";
+			mes "But you're not ready yet." ;
+			mes "You have the goods but not enough money for admission." ;
 			next;
-			mes "[メテウス=シルプ]";
-			mes "申し上げたように、";
-			mes "品物を提出すれば";
-			mes "30,000 Zenyにします。";
-			mes "品物は入学金と共に納めてください。";
+			mes "[Metheus-Silp]";
+			mes "As I said, I will make it 30,000 Zeny if you submit the goods." ;
+			mes "The goods must be paid with the entrance fee." ;
 			close;
 		}
 		for(set '@i,0; '@i < '@max; set '@i,'@i+1)
 			delitem '@need['@i],'@amount['@i];
 		set Zeny,Zeny-30000;
-		mes "[メテウス=シルプ]";
-		mes "申し上げた品物を提出されましたね。";
-		mes "30,000 Zenyと共に";
-		mes "納めていただきました。";
-		mes "入学を認めます。";
+		mes "[Metheus=silp]";
+		mes "You have submitted the item I mentioned." ;
+		mes "You have submitted the item along with 30,000 Zeny." ;
+		mes "Admission is granted." ;
 		set CHANGE_SA,4;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "それでは、入学申込書を作成します。";
-		mes "こちらにサインしてください。";
+		mes "[Metheus=silp]";
+		mes "Then we will make an application for admission." ;
+		mes "Please sign here." ;
 		next;
 		menu strcharinfo(0),-;
-		mes "[メテウス=シルプ]";
-		mes "お名前は……";
-		mes strcharinfo(0);
-		mes "さんですね。良い名前です。";
+		mes "[Metheus=silp]";
+		mes "Your name is ......." ;
+		mes ""+strcharinfo(0);
+		mes "Yes. It's a good name." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "はい、入学手続きが完了しました。";
-		mes "それでは入学試験を受けて";
-		mes "きてください。";
+		mes "[Metheus=silp]";
+		mes "Yes, the enrollment process is complete." ;
+		mes "Then please go ahead and take the entrance exam." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "クレイトス教授のところに行って";
-		mes "ください。奥の左側の部屋に";
-		mes "いらっしゃいます。";
+		mes "[Metheus-Silp]";
+		mes "Please go to Professor Kratos. He is in the back room on the left." ;
 		close;
 	case 4:
-		mes "[メテウス=シルプ]";
-		mes "うん？何をしているのですか？";
-		mes "試験が始まります。";
-		mes "奥の左側の部屋にいらっしゃる";
-		mes "クレイトス教授のところに";
-		mes "行ってください。";
+		mes "[Metheus-Silp]";
+		mes "Yes? What are you doing?" ;
+		mes "The exam is about to start." ;
+		mes "Please go to Professor Kratos, who is in the back room to the left." ;
 		close;
 	case 15:
-		mes "[メテウス=シルプ]";
-		mes "あ、論文ができましたか。";
-		mes "そうしたら、ケイロン学長のところに";
-		mes "行ってください。";
+		mes "[Metheus-Silp]";
+		mes "Oh, is your paper ready?" ;
+		mes "If so, please go to President Chiron." ;
 		next;
-		mes "[メテウス=シルプ]";
-		mes "努力が良い結果につながると";
-		mes "良いですね。";
-		mes "それでは、良い一日を。";
+		mes "[Metheus-Silp]";
+		mes "I hope your efforts will lead to good results." ;
+		mes "Have a good day then." ;
 		close;
 	default:
-		mes "[メテウス=シルプ]";
-		mes "あ、申し訳ございません。";
-		mes "今、少々立て込んでまして……";
-		mes "後ほどまたいらしてください。";
-		mes "本当に申し訳ございません……";
+		mes "[Metheus-Silp]";
+		mes "Oh, I'm sorry." ;
+		mes "I'm a little busy right now. ......" ;
+		mes "Please come back later." ;
+		mes "I am so sorry ......" ;
 		close;
 	}
-	//30Kルートの申込書サイン
-	mes "[メテウス=シルプ]";
-	mes "それでは、入学申込書を作成します。";
-	mes "こちらにサインしてください。";
+	//30K route application form signed
+	mes "[Metheus-Silp]";
+	mes "Then I will make an application form for enrollment." ;
+	mes "Please sign here." ;
 	next;
 	menu strcharinfo(0),-;
-	mes "[メテウス=シルプ]";
-	mes "お名前は……";
-	mes strcharinfo(0);
-	mes "さんですね。良い名前です。";
+	mes "[Metheus=silp]";
+	mes "Your name is ......." ;
+	mes ""+strcharinfo(0);
+	mes "Yes. It's a good name." ;
 	next;
-	mes "[メテウス=シルプ]";
-	mes "では、まずクレイトス教授の";
-	mes "筆記試験を受けてもらいます。";
+	mes "[Metheus-Silp]";
+	mes "So, first you will take a written exam with Professor Kratos." ;
 	next;
-	mes "[メテウス=シルプ]";
-	mes "クレイトス教授は";
-	mes "アカデミー内の図書室にいます。";
-	mes "ここから奥の左上の部屋になるので、";
-	mes "そちらまで向かってください。";
+	mes "[Metheus-Silp]";
+	mes "Professor Kratos is in the Library Room in the Academy." ;
+	mes "It will be the upper left room in the back from here, so please head that way." ;
 	next;
-	mes "[メテウス=シルプ]";
-	mes "それでは、幸運を祈ります。";
+	mes "[Metheus-Silp]";
+	mes "Well then, good luck." ;
 	close;
 }
 
 //==========================================
-// 一次試験（筆記）
+// First round (written)
 //------------------------------------------
-yuno_in03.gat,105,177,5	script	筆記試験教授	754,{
+yuno_in03.gat,105,177,5 script Written exam Prof. 754,{
 	if(Job == Job_Sage) {
-		mes "[クレイトス=ベルモ]";
-		mes "うん？卒業した者が何の用かな？";
-		mes "またまた入学をご希望かね？";
+		mes "[Kratos=Belmo]";
+		mes "Yeah? What can a graduate do for you?" ;
+		mes "You wish to enroll again?" ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "気持ちはわかるが、私達が卒業を";
-		mes "認めたのだから、自身を持ちなさい。";
-		mes "学び舎をなつかしむのは良いが";
-		mes "いつまでもここでゆっくりしていては";
-		mes "いけない。たまには危険な旅も";
-		mes "しなさい。";
+		mes "[Kratos-Belmo]";
+		mes "I know how you feel, but you should hold your own, since we have granted you graduation." ;
+		mes "It's good to reminisce about your place of learning, but don't stay here forever. Take a dangerous trip once in a while." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "経験したものは全て記録をとることを";
-		mes "忘れないように。";
-		mes "役立つ知識は他の人へも教えて";
-		mes "あげるように。";
+		mes "[Kratos-Belmo]";
+		mes "Remember to keep a record of everything you experience." ;
+		mes "Be sure to share your useful knowledge with others." ;
 		close;
 	}
 	if(Job == Job_Wizard) {
-		mes "[クレイトス=ベルモ]";
-		mes "ん……すっかり魔力に";
-		mes "魅入ってしまった者だな。";
-		mes "それもまた悪くはないだろう……";
+		mes "[Kratos=Belmo]";
+		mes "Nm...... You're the one who's completely enchanted by the magic." ;
+		mes "That wouldn't be too bad ......." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "ただこれだけは肝に銘じておくように。";
-		mes "人は一人では生きていけない。";
-		mes "自分が学んだことは、人に教えてこそ";
-		mes "真価を発揮するのだ。";
+		mes "[Kratos-Belmo]";
+		mes "Just keep this in mind." ;
+		mes "One cannot live alone." ;
+		mes "What you have learned will only be of real value if you teach it to others." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[クレイトス=ベルモ]";
-		mes "何の用かね？";
-		mes "ここは遊び場ではない。";
+		mes "[Kratos=Belmo]";
+		mes "What can I do for you?" ;
+		mes "This is not a playground." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "外でポリンとでも遊びなさい。";
-		mes "ほら、出ていきなさい。";
+		mes "[Kratos-Belmo]";
+		mes "Go outside and play with Poring." ;
+		mes "Come on, get out." ;
 		close;
 	}
-	if(Job != Job_Magician) {
-		mes "[クレイトス=ベルモ]";
-		mes "ん……入学を希望しても、";
-		mes "君の今の職業からセージになることは";
-		mes "かなわない。";
-		mes "君には他の才能がある。";
+	if(Job ! = Job_Magician) {
+		mes "[Kratos=Belmo]";
+		mes "NON_...... Your request to enroll will not result in you becoming a Sage from your current profession." ;
+		mes "You have other talents." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "ここで油を売らず他のところへ";
-		mes "行ってみなさい。";
+		mes "[Kratos-Belmo]";
+		mes "Don't sell your oil here, go somewhere else." ;
 		close;
 	}
 	switch(CHANGE_SA) {
 	case 0:
-		mes "[クレイトス=ベルモ]";
-		mes "うむ……セージになりたいのだな。";
-		mes "そんな表情をしている。";
+		mes "[Kratos=Belmo]";
+		mes "umm ..... You want to be a .Sage." ;
+		mes "You have that look on your face." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "それには我がアカデミーに入学";
-		mes "しなくてはならない。";
-		mes "手続きを済ませたらまた来なさい。";
+		mes "[Kratos-Belmo]";
+		mes "To do that, you have to enroll in our academy." ;
+		mes "Come back when you have completed the formalities." ;
 		close;
 	case 1:
 	case 2:
 	case 3:
-		close;
+		case 3: close;
 	case 4:
-		mes "[クレイトス=ベルモ]";
-		mes "うむ、シュバイチェルアカデミーへ";
-		mes "入学したことを歓迎する。";
-		mes "手続きは済ませて来たな？";
+		mes "[Kratos-Belmo]";
+		mes "Mm, welcome to the Schweichel Academy." ;
+		mes "You've come through the formalities, haven't you?" ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "ちょっと見よう。名前は……";
-		mes strcharinfo(0);
-		mes "に間違いないな？";
-		mes "よし、それではすぐ試験を始めよう。";
+		mes "[Kratos-Belmo]";
+		mes "Let's take a look. The name is ......." ;
+		mes ""+strcharinfo(0);
+		mes "I'm pretty sure it's [Kratos-Belmo], right?" ;
+		mes "Okay, then let's start the test right away." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "私が出す試験は、この世界の全てに";
-		mes "関わるものだ。";
-		mes "問題は20問。";
-		mes "それぞれ5点の配点で、80点以上";
-		mes "取れば合格となる。";
+		mes "[Kratos-Belmo]";
+		mes "The exam I'm going to give you is all about this world." ;
+		mes "There are 20 questions." ;
+		mes "Each will be worth 5 points, and you will pass if you get 80 points or more." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "すぐに答えられなければ";
-		mes "試験は中止となる。";
-		mes "では始める。";
+		mes "[Kratos=Belmo]";
+		mes "If you do not answer the question immediately, the test will be canceled." ;
+		mes "Then begin." ;
 		set CHANGE_SA,5;
 		break;
 	case 5:
-		mes "[クレイトス=ベルモ]";
-		mes "それでは再試験を行う。";
-		mes "今度はしっかりと勉強してきたかな？";
+		mes "[Kratos=Belmo]";
+		mes "Then we will retest." ;
+		mes "Have you studied hard this time?" ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "さて、今回も合格点は同じだ。";
-		mes "20問各5点配点で、80点以上で";
-		mes "合格となる。";
+		mes "[Kratos=Belmo]";
+		mes "Well, the passing grade is the same this time." ;
+		mes "Each of the 20 questions will be allotted 5 points, and a score of 80 or higher will be considered passing." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "それでは早速始めよう。";
-		mes "すぐに答えなければ";
-		mes "試験は中止になるので";
-		mes "がんばってくれたまえ。";
+		mes "[Kratos=Belmo]";
+		mes "Then let's get started." ;
+		mes "If you don't answer right away, the test will be canceled, so good luck." ;
 		break;
 	case 6:
-		mes "[クレイトス=ベルモ]";
-		mes "ん？また試験を受けたいのか？";
-		mes "君は筆記試験には合格している。";
+		mes "[Kratos=Belmo]";
+		mes "Hmm? You want to take the test again?" ;
+		mes "You have passed the written exam." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "ヘルメス教授のところへ行って";
-		mes "実技試験を受けなさい。";
-		mes "のんびりしていてはいけないぞ。";
+		mes "[Kratos-Belmo]";
+		mes "Go to Professor Hermes and take the practical exam." ;
+		mes "Don't take it easy." ;
 		close;
 	default:
-		mes "[クレイトス=ベルモ]";
-		mes "今、他の入学生の試験を採点して";
-		mes "いるから忙しいんだ……";
-		mes "すまんが後でまた来てくれ。";
+		mes "[Kratos-Belmo]";
+		mes "I'm busy grading exams for other incoming students right now: ......." ;
+		mes "Sorry, come back later." ;
 		close;
 	case 15:
-		mes "[クレイトス=ベルモ]";
-		mes "お、頑張って論文を仕上げたな。";
-		mes "しかし私は論文の採点はしていない。";
+		mes "[Kratos-Belmo]";
+		mes "Oh, good job finishing your paper." ;
+		mes "But I didn't grade the paper." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "ケイロン学長にお見せしなさい。";
-		mes "君の卒業可否は学長が判断";
-		mes "される。";
+		mes "[Kratos-Belmo]";
+		mes "Please show this to President Chiron." ;
+		mes "The President will decide whether you can graduate or not." ;
 		close;
 	}
-	//筆記試験ここから
+	//written exam here
 	next;
 	switch(rand(3)) {
 	case 0:
-		mes "1.";
-		mes "プロンテラのプレゼント商人が";
-		mes "売っていない品物はどれか。";
+		mes "1. Which of the following goods are not sold by the gift merchants in Prontera?" ;
 		next;
-		if(select("白い皿","赤い額縁","花たば","ガラス玉")==3)
+		if(select("white plate", "red picture frame", "flower tabbies", "glass balls")==3)
 			set '@point,'@point+5;
-		mes "2.";
-		mes "スティレットが売っていない街は";
-		mes "どこか。";
+		mes "2. Which city does not sell stilettos?" ;
 		next;
-		if(select("プロンテラ","モロク","ゲフェン","ルティエ")==1)
+		if(select("Prontera", "Morroc", "Geffen", "Lutie")==1)
 			set '@point,'@point+5;
-		mes "3.";
-		mes "タートルアイランドから一番近い";
-		mes "街はどこか。";
+		mes "3. Which city is closest to Turtle Island?" ;
 		next;
-		if(select("アルデバラン","アルベルタ","コモド","イズルード")==2)
+		if(select("Aldebaran", "Alberta", "Comodo", "Izlude")==2)
 			set '@point,'@point+5;
-		mes "4.";
-		mes "次の中で、一つだけ種族の違うものが";
-		mes "いる。どれか。";
+		mes "4. Only one of the following is of a different species. Which one?" ;
 		next;
-		if(select("レグルロ","ペスト","フリルドラ","ヒトデ")==4)
+		if(select("regulo", "plague", "frilledora", "starfish")==4)
 			set '@point,'@point+5;
-		mes "5.";
-		mes "次の中で、一つだけ属性の違うものが";
-		mes "いる。どれか。";
+		mes "5. One of the following has different attributes. Which one?" ;
 		next;
-		if(select("マンティス","メタルラ","ロッカー","ホルン")==2)
+		if(select("Mantis", "Metalla", "Rocker", "Horn")==2)
 			set '@point,'@point+5;
-		mes "6.";
-		mes "次の中で、一つだけ大きさの違う";
-		mes "ものがいる。どれか。";
+		mes "6. One of the following is of a different size. Which one?" ;
 		next;
-		if(select("レイドリック","レイドリックアーチャー","彷徨う者","ダークフレーム")==1)
+		if(select("Raidric", "Raidric Archer", "Wandering", "Dark Flame")==1)
 			set '@point,'@point+5;
-		mes "7.";
-		mes "次の中で、アルコールを落とさない";
-		mes "モンスターはどれか。";
+		mes "7. Which of the following monsters does not drop alcohol?" ;
 		next;
-		if(select("ホロン","プランクトン","ポイズンスポア","トード")==3)
+		if(select("Horong", "Plankton", "Poison Spore", "Toad")==3)
 			set '@point,'@point+5;
-		mes "8.";
-		mes "次の中で、ナイト転職と関係のない";
-		mes "者は誰か。";
+		mes "8. Who among the following is not related to Knight job change?" ;
 		next;
-		if(select("ジェームズ=シラキューズ","トーマス=セルバンテス","エイミー=ベアトリス","エドモンド=グロスト")==2)
+		if(select("James-Syracuse", "Thomas-Cervantes", "Amy-Beatrice", "Edmond-Grost")==2)
 			set '@point,'@point+5;
-		mes "9.";
-		mes "次の中で、プロンテラに居ない";
-		mes "者は誰か。";
+		mes "9. Who among the following is not in Prontera?" ;
 		next;
-		if(select("ナミ","アウルディフォン","トーマス","ホルグレン")==2)
+		if(select("Nami", "Aldifon", "Thomas", "Holgren")==2)
 			set '@point,'@point+5;
-		mes "10.";
-		mes "眼鏡をかけたカプラ職員の";
-		mes "名前を答えよ。";
+		mes "10. Answer the name of the Kafra Staff wearing glasses." ;
 		next;
-		if(select("ディフォルテー","テーリング","グラリス","Ｗ")==3)
+		if(select("Deforte", "Telling", "Glaris", "W")==3)
 			set '@point,'@point+5;
-		mes "11.";
-		mes "スキル「サンダーストーム」Lv7";
-		mes "使用時の消費SPはいくつか。";
+		mes "11. How many SP are consumed when using the skill "Thunder Storm" Lv 7?" ;
 		next;
-		if(select("49","59","69","74")==2)
+		if(select("49", "59", "69", "74")==2)
 			set '@point,'@point+5;
-		mes "12.";
-		mes "SPが 50% 残っている場合、";
-		mes "スキル「エナジーコート」での";
-		mes "ダメージ削減率とSP消費量は";
-		mes "いくつか。";
+		mes "12. If 50% SP is left, what is the damage reduction rate and how much SP is consumed by the skill "Energy Coat"?" ;
 		next;
-		if(select("24%削減 SP1.5%消費","24%削減 SP2%消費","18%削減 SP1.5%消費","18%削減 SP2%消費")==4)
+		if(select("24% reduction SP1.5% consumption", "24% reduction SP2% consumption", "18% reduction SP1.5% consumption", "18% reduction SP2% consumption")==4)
 			set '@point,'@point+5;
-		mes "13.";
-		mes "マジシャンの「ボルト系魔法」に";
-		mes "無い属性を答えよ。";
+		mes "13. Answer the attribute that is not found in Magician's "bolt-based magic"." ;
 		next;
-		if(select("水属性","地属性","火属性","風属性")==2)
+		if(select("water attribute", "earth attribute", "fire attribute", "wind attribute")==2)
 			set '@point,'@point+5;
-		mes "14.";
-		mes "シーフのスキル";
-		mes "「ダブルアタック」Lv7習得時、";
-		mes "発動確率と攻撃力は";
-		mes "どうなるか答えよ。";
+		mes "14. Answer what will happen to the activation probability and attack power when Thief's skill "Double Attack" Lv7 is learned." ;
 		next;
-		if(select("35% / 120%","35% / 140%","40% / 120%","40% / 140%")==2)
+		if(select("35% / 120%", "35% / 140%", "40% / 120%", "40% / 140%")==2)
 			set '@point,'@point+5;
-		mes "15.";
-		mes "プリーストのスキル";
-		mes "「マグヌスエクソシズム」を習得";
-		mes "するための過程に無いものは";
-		mes "次のうちどれか。";
+		mes "15. Which of the following is not in the process of learning Priest's skill "Magnus Exorcism"?" ;
 		next;
-		if(select("ディバインプロテクション","ヒール","ルアフ","アクアベネティクタ")==1)
+		if(select("Divine Protection", "Heal", "Ruaf", "Aqua Venetica")==1)
 			set '@point,'@point+5;
-		mes "16.";
-		mes "「ウサギのヘアバンド」の";
-		mes "防御値と追加能力値を答えよ。";
+		mes "16. Answer the protection value and additional ability value of "Rabbit Hairband"." ;
 		next;
-		if(select("1 / LUK +2","1 / LUK +5","2 / LUK +2","2 / LUK +5")==3)
+		if(select("1 / LUK +2", "1 / LUK +5", "2 / LUK +2", "2 / LUK +5")==3)
 			set '@point,'@point+5;
-		mes "17.";
-		mes "アーマーを装備できない職業は";
-		mes "次のうちどれか。";
+		mes "17. Which of the following professions cannot equip armor?" ;
 		next;
-		if(select("剣士","商人","シーフ","アーチャー")==4)
+		if(select("Swordsman", "Merchant", "Thief", "Archer")==4)
 			set '@point,'@point+5;
-		mes "18.";
-		mes "全てのHP・SPを回復してくれる";
-		mes "アイテムは次のうちどれか。";
+		mes "18. Which of the following items will restore all HP and SP?" ;
 		next;
-		if(select("ローヤルゼリー","イグドラシルの種","イグドラシルの実","マステラの実")==3)
+		if(select("Royal Jelly", "Seeds of Igdrasil", "Fruits of Igdrasil", "Fruits of Mastella")==3)
 			set '@point,'@point+5;
-		mes "19.";
-		mes "ルーンミッドガッツ王国の";
-		mes "国王の名前を答えよ。";
+		mes "19. Answer the name of the king of the kingdom of Rune-Midgarts." ;
 		next;
-		if(select("トリストン 3世","トリスタン 3世","トライスター 3世","トラスト 3世")==2)
+		if(select("Triston III", "Tristan III", "Tristar III", "Trust III")==2)
 			set '@point,'@point+5;
-		mes "20.";
-		mes "クルセイダー達が仕える神は？";
+		mes "20. What god do the Crusaders serve?" ;
 		next;
-		if(select("オーディン","ロキ","トール","アラガムサレー")==1)
+		if(select("Odin", "Loki", "Thor", "Aragamsaree")==1)
 			set '@point,'@point+5;
 		break;
 	case 1:
-		mes "1.";
-		mes "モロクの宝石商人が売っている宝石";
-		mes "にはないものを次から選べ。";
+		mes "1. Choose from the following items that are not found in the gems sold by the Jeweler people of Morroc." ;
 		next;
-		if(select("トパーズ","ガーネット","ダイアモンド","サファイア")==2)
+		if(select("topaz", "garnet", "diamond", "sapphire")==2)
 			set '@point,'@point+5;
-		mes "2.";
-		mes "化け物のエサが売っていない街は";
-		mes "どこか。";
+		mes "2. Which city does not sell monster bait?" ;
 		next;
-		if(select("プロンテラ","モロク","アルデバラン","アルベルタ")==3)
+		if(select("Prontera", "Morroc", "Aldebaran", "Alberta")==3)
 			set '@point,'@point+5;
-		mes "3.";
-		mes "迷宮の森から一番近い街は";
-		mes "どこか。";
+		mes "3. Which is the nearest city from the labyrinth forest?" ;
 		next;
-		if(select("プロンテラ","モロク","ゲフェン","フェイヨン")==1)
+		if(select("Prontera", "Morroc", "Geffen", "Payon")==1)
 			set '@point,'@point+5;
-		mes "4.";
-		mes "次の中で、一つだけ種族の違うものが";
-		mes "いる。どれか。";
+		mes "4. Only one of the following is of a different species. Which one?" ;
 		next;
-		if(select("ムカー","ドロップス","プランクトン","ペノメナ")==4)
+		if(select("Mukar", "Drops", "Plankton", "Penomena")==4)
 			set '@point,'@point+5;
-		mes "5.";
-		mes "次の中で、一つだけ属性の違うものが";
-		mes "いる。どれか。";
+		mes "5. One of the following has different attributes. Which one?" ;
 		next;
-		if(select("ドケビ","イシス","ガイアス","デビルチ")==3)
+		if(select("Dokebi", "Isis", "Gaius", "Deviruchi")==3)
 			set '@point,'@point+5;
-		mes "6.";
-		mes "次の中で、一つだけ大きさの";
-		mes "違うものがいる。どれか。";
+		mes "6. One of the following is different in size from the others. Which one?" ;
 		next;
-		if(select("雄盗蟲","ホルン","メタルラ","アルゴス")==4)
+		if(select("Male Thief Bug", "Horn", "Metalla", "Argos")==4)
 			set '@point,'@point+5;
-		mes "7.";
-		mes "次の中で、「イグドラシルの葉」";
-		mes "を落とさないモンスターはどれか。";
+		mes "7. Which of the following monsters does not drop "Leaves of Igdrasil"?" ;
 		next;
-		if(select("マルドゥーク","バフォメット.Jr","エンジェリング","彷徨う者")==1)
+		if(select("Marduk", "Baphomet.Jr", "Angeling", "Wanderer")==1)
 			set '@point,'@point+5;
-		mes "8.";
-		mes "プリースト転職と関係の無い人は";
-		mes "次のうち誰か。";
+		mes "8. Who among the following is not related to Priest's job change?" ;
 		next;
-		if(select("トーマス=セルバンテス","ウインザー=ベネディクト","ピーター S. アルベルト","セシル=マルガリータ")==2)
+		if(select("Thomas=Cervantes", "Windsor=Benedict", "Peter S. Alberto", "Cecil=Margarita")==2)
 			set '@point,'@point+5;
-		mes "9.";
-		mes "モロクにはいない者は";
-		mes "次のうち誰か。";
+		mes "9. Who among the following is not in Morroc?" ;
 		next;
-		if(select("アブドゥル","アラガム","アントニオ","サド")==3)
+		if(select("Abdul", "Aragam", "Antonio", "Sad")==3)
 			set '@point,'@point+5;
-		mes "10.";
-		mes "青い髪が魅力的な";
-		mes "カプラ職員の名前は？";
+		mes "10. What is the name of Kafra Staff with attractive blue hair?" ;
 		next;
-		if(select("ディフォルテー","テーリング","グラリス","Ｗ")==1)
+		if(select("Deforte", "Telling", "Glaris", "W")==1)
 			set '@point,'@point+5;
-		mes "11.";
-		mes "スキル「ファイアーウォール」を";
-		mes "修得する過程で必要の無いものを";
-		mes "次の中から選べ。";
+		mes "11. Choose one of the following that is not necessary in the process of mastering the skill "Firewall"." ;
 		next;
-		if(select("ファイアーボルト Lv 4","ナパームビート Lv 4","ファイアーボール Lv 5","サイト Lv 1")==2)
+		if(select("Firebolt Lv 4", "Napalm Beat Lv 4", "Fireball Lv 5", "Sight Lv 1")==2)
 			set '@point,'@point+5;
-		mes "12.";
-		mes "スキル「SP回復力向上」を";
-		mes "Lv6まで習得した場合、純粋な";
-		mes "スキル効果によって10秒間で";
-		mes "回復するSP値はいくつか。";
+		mes "12. If the skill "Improved SP Recovery" is learned up to Lv 6, how many SP values are recovered in 10 seconds by the pure skill effect?" ;
 		next;
-		if(select("14","16","18","21")==3)
+		if(select("14", "16", "18", "21")==3)
 			set '@point,'@point+5;
-		mes "13.";
-		mes "マジシャンがJobLv33で";
-		mes "得られるINT加重値はいくつか。";
+		mes "13. How many INT-weighted values does a magician get at JobLv 33?" ;
 		next;
-		if(select("7","6","5","4")==4)
+		if(select("7", "6", "5", "4")==4)
 			set '@point,'@point+5;
-		mes "14.";
-		mes "アーチャーのスキル「集中力向上」";
-		mes "Lv5のSP消費量と持続時間は";
-		mes "いくつか。";
+		mes "14. What is the SP consumption and duration of Archer's skill "Improved Concentration" Lv 5?" ;
 		next;
-		if(select("45 / 140秒","50 / 140秒","45 / 150秒","50 / 150秒")==1)
+		if(select("45 / 140 sec", "50 / 140 sec", "45 / 150 sec", "50 / 150 sec")==1)
 			set '@point,'@point+5;
-		mes "15.";
-		mes "ブラックスミスのスキル";
-		mes "「マキシマイズパワー」を習得する";
-		mes "過程に必要の無いものはどれか。";
+		mes "15. Which of the following is not necessary for the process of learning the Blacksmith skill "Maximize Power"?" ;
 		next;
-		if(select("ヒルトバインディング","スキンテンパリング","ハンマーフォール","ウェポンパーフェクション")==2)
+		if(select("Hilt Binding", "Skin Tempering", "Hammerfall", "Weapon Perfection")==2)
 			set '@point,'@point+5;
-		mes "16.";
-		mes "リボンのヘアバンドの";
-		mes "防御力と追加能力を答えよ。";
+		mes "16. Answer the defense and additional abilities of the ribbon hairband." ;
 		next;
-		if(select("0 / SP +20","0 / SP +30","1 / SP +20","1 / SP +30")==3)
+		if(select("0 / SP +20", "0 / SP +30", "1 / SP +20", "1 / SP +30")==3)
 			set '@point,'@point+5;
-		mes "17.";
-		mes "セイントローブを装備することが";
-		mes "できない職業は次のうちどれか。";
+		mes "17. Which of the following occupations cannot be equipped with saints' robes?" ;
 		next;
-		if(select("剣士","商人","シーフ","アコライト")==3)	//現在は剣士も装備不可能
+		if(select("Swordsman", "Merchant", "Thief", "Acolyte")==3) //The swordsman cannot be equipped at present
 			set '@point,'@point+5;
-		mes "18.";
-		mes "「緑ポーション」で回復することが";
-		mes "できない状態異常は次のうちどれか。";
+		mes "18. Which of the following conditions cannot be recovered by "green potion"?" ;
 		next;
-		if(select("沈黙","毒","暗黒","呪い")==4)
+		if(select("silence", "poison", "darkness", "curse")==4)
 			set '@point,'@point+5;
-		mes "19.";
-		mes "ゲフェンのどこかから入れるという";
-		mes "消えた古代王国の名前を答えよ。";
+		mes "Answer the name of the vanished ancient kingdom that can be entered from somewhere in 19.Geffen." ;
 		next;
-		if(select("ゲフェイヨン","ゲフェニア","ゲフェドリア","ゲフェリア")==2)
+		if(select("Geppayon", "Geffenia", "Geffedria", "Gefferia")==2)
 			set '@point,'@point+5;
-		mes "20.";
-		mes "世界の根源と言われる木の名前を";
-		mes "答えよ。";
+		mes "20. Answer the name of the tree that is said to be the root of the world." ;
 		next;
-		if(select("イグドラシル","イドグラシル","マステラ","古木の枝")==1)
+		if(select("Igdrasil", "Idogracil", "Mastella", "Old tree branch")==1)
 			set '@point,'@point+5;
 		break;
 	case 2:
-		mes "1.";
-		mes "次の中で、ゲフェンの魔法商人が";
-		mes "売っていないものを答えよ。";
+		mes "1. Answer the following that are not sold by Geffen's magic merchants." ;
 		next;
-		if(select("メントル","ワンド","サークレット","シルバーローブ")==1)
+		if(select("Mentor", "Wand", "Circlet", "Silver Robe")==1)
 			set '@point,'@point+5;
-		mes "2.";
-		mes "次の中で、「ブレイド」が売っていない";
-		mes "街を選べ。";
+		mes "2. Choose one of the following cities where "blades" are not sold." ;
 		next;
-		if(select("プロンテラ","イズルード","アルデバラン","フェイヨン")==3)
+		if(select("Prontera", "Izlude", "Aldebaran", "Payon")==3)
 			set '@point,'@point+5;
-		mes "3.";
-		mes "グラストヘイムから一番近くに";
-		mes "位置する街はどれか。";
+		mes "3. Which city is located closest to Glastheim?" ;
 		next;
-		if(select("プロンテラ","ゲフェン","モロク","フェイヨン")==2)
+		if(select("Prontera", "Geffen", "Morroc", "Payon")==2)
 			set '@point,'@point+5;
-		mes "4.";
-		mes "次の中で、一つだけ種族の違うものが";
-		mes "いる。どれか。";
+		mes "4. Only one of the following is of a different species. Which one?" ;
 		next;
-		if(select("ヒトデ","マルク","マルス","マーリン")==4)
+		if(select("starfish", "marc", "mars", "merlin")==4)
 			set '@point,'@point+5;
-		mes "5.";
-		mes "次の中で、一つだけ属性の違うものが";
-		mes "いる。どれか。";
+		mes "5. One of the following has different attributes. Which one?" ;
 		next;
-		if(select("子デザートウルフ","スモーキー","ピッキ","チョコ")==2)
+		if(select("Child Desert Wolf", "Smokey", "Picky", "Chocolate")==2)
 			set '@point,'@point+5;
-		mes "6.";
-		mes "次の中で、一つだけ大きさの";
-		mes "違うものがいる。どれか。";
+		mes "6. One of the following is of a different size. Which one?" ;
 		next;
-		if(select("ドレイク","レイス","イビルドルイド","カーリッツバーグ")==1)
+		if(select("Drake", "Wraith", "Evil Druid", "Carlitzburg")==1)
 			set '@point,'@point+5;
-		mes "7.";
-		mes "次の中で、「プラコン」を";
-		mes "落とさないモンスターはどれか。";
+		mes "7. Which of the following monsters does not drop "Phracon"?" ;
 		next;
-		if(select("プパ","コンドル","サベージベベ","子デザートウルフ")==2)
+		if(select("Pupa", "Condor", "Savage Bebe", "Child Desert Wolf")==2)
 			set '@point,'@point+5;
-		mes "8.";
-		mes "次の中で、ブラックスミス転職と";
-		mes "関係の無い者は誰か。";
+		mes "8. Who among the following is not related to the Blacksmith job change?" ;
 		next;
-		if(select("バイス","ヒュッケ","バルカデー","ミットマイヤ")==3)
+		if(select("Baisu", "Hyugge", "Barcardi", "Mittmeier")==3)
 			set '@point,'@point+5;
-		mes "9.";
-		mes "次の中で、アルデバランに";
-		mes "居ない者は誰か。";
+		mes "9. Who among the following is not in Aldebaran?" ;
 		next;
-		if(select("RS125","マーセル","マンスタ","アイゼンバーグ")==2)
+		if(select("RS125", "Marcell", "Manstad", "Eisenberg")==2)
 			set '@point,'@point+5;
-		mes "10.";
-		mes "カプラ職員の中で、一番年下の";
-		mes "者の名前を答えよ。";
+		mes "10. Give the name of the youngest member of the Kafra Staff." ;
 		next;
-		if(select("ディフォルテー","テーリング","グラリス","Ｗ")==4)
+		if(select("Diforte", "Telling", "Glaris", "W")==4)
 			set '@point,'@point+5;
-		mes "11.";
-		mes "スキル「セイフティウォール」";
-		mes "Lv6使用時の、消費SPと回避数を";
-		mes "答えよ。";
+		mes "11. Answer the SP consumption and the number of evasion when using the skill "Safety Wall" Lv6." ;
 		next;
-		if(select("SP 40, 6回","SP 35, 6回","SP 35, 7回","SP 40, 7回")==4)
+		if(select("SP 40, 6 times", "SP 35, 6 times", "SP 35, 7 times", "SP 40, 7 times")==4)
 			set '@point,'@point+5;
-		mes "12.";
-		mes "スキル「ナパームビート」Lv6";
-		mes "使用時、攻撃力はMATKの何倍か。";
+		mes "12. When the skill "Napalm Beat" Lv 6 is used, what is the attack power times MATK?" ;
 		next;
-		if(select("1.2倍","1.3倍","1.4倍","1.5倍")==2)
+		if(select("1.2x", "1.3x", "1.4x", "1.5x")==2)
 			set '@point,'@point+5;
-		mes "13.";
-		mes "マジシャン転職試験で、";
-		mes "混合液4の触媒になる鉱石はどれか。";
+		mes "13. Which ore is the catalyst for mixture 4 in the Magician job change test?" ;
 		next;
-		if(select("ブルージェムストーン","レッドジェムストーン","イエロージェムストーン","透明宝玉")==4)
+		if(select("blue gemstone", "red gemstone", "yellow gemstone", "transparent jewel")==4)
 			set '@point,'@point+5;
-		mes "14.";
-		mes "剣士のスキル「バッシュLv6」";
-		mes "の攻撃力とSP消費量を答えよ。";
+		mes "14. Answer the attack power and SP consumption of the Swordsman's skill "Bash Lv6"." ;
 		next;
-		if(select("250% / 8","280% / 8","280% / 15","310% / 15")==3)
+		if(select("250% / 8", "280% / 8", "280% / 15", "310% / 15")==3)
 			set '@point,'@point+5;
-		mes "15.";
-		mes "ハンターのスキル";
-		mes "「クレイモアトラップ」を";
-		mes "習得する過程で必要のないものは";
-		mes "次のうちどれか。";
+		mes "15. Which of the following is not necessary in the process of learning Hunter's skill "Claymore Trap"?" ;
 		next;
-		if(select("リムーブトラップ","ランドマイン","アンクルスネア","フラッシャー")==1)
+		if(select("Remove Trap", "Land Mine", "Ankle Snare", "Flasher")==1)
 			set '@point,'@point+5;
-		mes "16.";
-		mes "「ヴェール」の防御力と";
-		mes "追加能力値を答えよ。";
+		mes "16. Answer the defense and additional ability values of "Veil"." ;
 		next;
-		if(select("0 / MDEF +3","0 / MDEF +5","1 / MDEF +3","1 / MDEF +5")==2)
+		if(select("0 / MDEF +3", "0 / MDEF +5", "1 / MDEF +3", "1 / MDEF +5")==2)
 			set '@point,'@point+5;
-		mes "17.";
-		mes "「ロングコート」を装備することが";
-		mes "できない職業は次のうちどれか。";
+		mes "17. Which of the following occupations cannot be equipped with a "long coat"?" ;
 		next;
-		if(select("剣士","商人","シーフ","ノービス")==4)
+		if(select("Swordsman", "Merchant", "Thief", "Novice")==4)
 			set '@point,'@point+5;
-		mes "18.";
-		mes "青色の染料の材料でないアイテムは";
-		mes "次のうちどれか。";
+		mes "18. Which of the following items is not a material for blue dye?" ;
 		next;
-		if(select("アルコール","ディトリミン","カルボーディル","青ハーブ")==3)
+		if(select("alcohol", "ditrimin", "carbodil", "blue herb")==3)
 			set '@point,'@point+5;
-		mes "19.";
-		mes "世界が創造されるとき、神オーディンが";
-		mes "使ったといわれるアイテムは";
-		mes "次のうちどれか。";
+		mes "19. Which of the following items is said to have been used by the god Odin when the world was created?" ;
 		next;
-		if(select("ユミルの心臓","ユミルの爪","ユミルの歯","ユミルの遺品")==2)
+		if(select("Ymir's heart", "Ymir's claw", "Ymir's tooth", "Ymir's relic")==2)
 			set '@point,'@point+5;
-		mes "20.";
-		mes "この世界の運命を変えられる";
-		mes "者の前に出て、運命を共にする";
-		mes "という金属は次のうちどれか。";
+		mes "20. Which of the following metals is the metal that says, "I go before the one who can change the fate of this world and share its destiny?" ;
 		next;
-		if(select("エンベルタコン","エンペリウム","エンペラ","プラコン")==2)
+		if(select("Emveretarcon", "Emperium", "Emperor", "Phracon")==2)
 			set '@point,'@point+5;
 		break;
 	}
-	mes "[クレイトス=ベルモ]";
-	mes "よし、そこまで。";
-	mes "では採点しようか。";
+	mes "[Kratos=Belmo]";
+	mes "Okay, that's it." ;
+	mes "So let's grade it." ;
 	next;
-	mes "[クレイトス=ベルモ]";
-	mes "どれ……";
-	mes "うん……";
+	mes "[Kratos=Belmo]";
+	mes "Which ......." ;
+	mes "un......" ;
 	next;
-	mes "[クレイトス=ベルモ]";
-	mes "採点が終わった。";
-	mes "君の点数は " +'@point+ "点だ。";
+	mes "[Kratos=Belmo]";
+	mes "Grading is done." ;
+	mes "Your score is " +'@point+"." ;
 	if('@point < 80) {
-		mes "……";
-		mes "残念だが不合格だ。";
+		mes "......" ;
+		mes "Remaining GOST but you failed." ;
 		next;
-		mes "[クレイトス=ベルモ]";
-		mes "また試験を受けさせてあげるから";
-		mes "もう少し世界について勉強して";
-		mes "きなさい。";
+		mes "[Kratos-Belmo]";
+		mes "I'll let you take the exam again, go study a little more about the world." ;
 		close;
 	}
 	else if('@point == 100) {
-		mes "さすがに驚いたな。";
-		mes "ここまでできるなら、";
-		mes "セージになる素質は十分だ。";
+		mes "You are indeed surprised." ;
+		mes "If you can make it this far, you have the makings to be a Sage." ;
 	}
 	else {
-		mes "ふむ。";
-		mes "これだけできれば良いな。";
+		mes "Hm." ;
+		mes "I wish I could do this much." ;
 	}
 	set CHANGE_SA,6;
 	next;
-	mes "[クレイトス=ベルモ]";
-	mes "よし、筆記試験は通過だ。";
-	mes "ヘルメス教授のところへ行き、";
-	mes "実技試験も受けてきなさい。";
+	mes "[Kratos=Belmo]";
+	mes "Okay, the written test passed." ;
+	mes "Go to Professor Hermes and take the practical exam as well." ;
 	close;
 }
 
 //==========================================
-// 二次試験（実技）
+// Secondary exam (practical)
 //------------------------------------------
-yuno_in03.gat,169,180,3	script	実技試験教授	755,{
+yuno_in03.gat,169,180,3 script Practical test professor 755,{
 	if(Job == Job_Sage) {
-		mes "[ヘルメス=トリス]";
-		mes "やぁ、元気かい？";
-		mes "顔を見たところ、それなりに";
-		mes "苦労を重ねたようじゃないか。";
+		mes "[Hermes=Tris]";
+		mes "Hey, how are you?" ;
+		mes "From the look on your face, you've been through a lot of hard work, haven't you?" ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "やはり、経験を重ねることは大事だね。";
-		mes "知識で知っているだけと、自分の体";
-		mes "で体験するのとでは大きな違いが";
-		mes "生まれるからね。";
+		mes "[Hermes=Tris]";
+		mes "After all, it's important to have a lot of experience, isn't it?" ;
+		mes "It makes a big difference between just knowing about it with knowledge and experiencing it with your own body, you know?" ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "でも、危険なダンジョンなんかは";
-		mes "頼れる仲間と一緒に行ってみると";
-		mes "いい。";
+		mes "[Hermes=Tris]";
+		mes "But you should try to go to dangerous dungeons with a companion you can rely on." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[ヘルメス=トリス]";
-		mes "はは、かわいいノービス";
-		mes "じゃないか。";
+		mes "[Hermes=Tris]";
+		mes "Haha, isn't she a cute Novice?" ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "ミッドガルド大陸には、まだ私達すら";
-		mes "知らないものがたくさんある。";
-		mes "アイテムの数々、英雄と伝説……";
+		mes "[Hermes-Tris]";
+		mes "There are still many things in the Midgard continent that even we don't know about." ;
+		mes "A lot of items, heroes and legends: ......." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "君もセージを目指して夢を";
-		mes "膨らませてみないかい？";
-		mes "ま、もうちょっと世界について";
-		mes "勉強してからだがね。";
+		mes "[Hermes-Tris]";
+		mes "Wouldn't you like to dream of becoming a Sage too?" ;
+		mes "Well, after I learn a little more about the world." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "もし縁があればまた会うことも";
-		mes "あるだろう。";
-		mes "それでは気をつけて帰ってくれ。";
+		mes "[Hermes=Tris]";
+		mes "If we have a chance, we may meet again." ;
+		mes "[Hermes-Triss]"; mes "[Hermes-Triss]"; mes "Then have a safe trip home." ;
 		close;
 	}
-	if(Job != Job_Magician) {
-		mes "[ヘルメス=トリス]";
-		mes "ここは";
-		mes "シュバイチェル魔法アカデミーだ。";
+	if(Job ! = Job_Magician) {
+		mes "[Hermes=Tris]";
+		mes "This is the Schweichel Magic Academy." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "私たちセージは魔術師と言うよりは";
-		mes "学者に近い存在だろうな。";
-		mes "パーティーでも何かと役に立つと";
-		mes "思うよ。";
+		mes "[Hermes-Tris]";
+		mes "I guess we Sage are more like scholars than sorcerers." ;
+		mes "I'm sure you'll be of some use to the party." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "試しに次の旅にはぜひセージを";
-		mes "連れて行きなさい。";
-		mes "立派に自分の役目を果たしてくれる";
-		mes "だろう。";
+		mes "[Hermes-Tris]";
+		mes "By all means take Sage with you on your next trip to try it out." ;
+		mes "I'm sure you will do your part admirably." ;
 		close;
 	}
 	switch(CHANGE_SA) {
@@ -1387,224 +1054,178 @@ yuno_in03.gat,169,180,3	script	実技試験教授	755,{
 	case 1:
 	case 2:
 	case 3:
-		mes "[ヘルメス=トリス]";
-		mes "私は実技試験を担当する";
-		mes "ヘルメスという。";
-		mes "セージ志望の学生か？";
+		mes "[Hermes=Tris]";
+		mes "My name is Hermes and I am in charge of the practical exam." ;
+		mes "Are you an aspiring Sage student?" ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "まず、入学手続きを終わらせて";
-		mes "筆記試験を受けてきなさい。";
+		mes "[Hermes=Tris]";
+		mes "First, you need to finish the admission process and take the written exam." ;
 		close;
 	case 4:
 	case 5:
-		mes "[ヘルメス=トリス]";
-		mes "私は実技試験を担当する";
-		mes "ヘルメスという。";
-		mes "セージ志望の学生か？";
+		mes "[Hermes=Tris]";
+		mes "My name is Hermes and I am in charge of the practical exam." ;
+		mes "Are you an aspiring Sage student?" ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "クレイトス教授の筆記試験を";
-		mes "パスして来るように。";
-		mes "その後私の試験を受けてもらう。";
+		mes "[Hermes=Tris]";
+		mes "Come and pass Professor Kratos' written exam." ;
+		mes "Then you will take my exam." ;
 		close;
 	case 6:
-		mes "[ヘルメス=トリス]";
-		mes "お、筆記試験をパスした学生かな？";
-		mes "それならこれから実技試験を受けて";
-		mes "もらう。";
+		mes "[Hermes=Tris]";
+		mes "Oh, a student who passed the written exam?" ;
+		mes "Then you will now take the practical exam." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "実技試験は……なに、ルールは単純だ。";
-		mes "現れたモンスターを、時間制限以内に";
-		mes "全て倒せば良い。";
+		mes "[Hermes=Tris]";
+		mes "The practical test is at ...... The rules are simple." ;
+		mes "You have to kill all the monsters that appear within a time limit." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "百回聞くより一回体験してみたほうが";
-		mes "早い。ことわざにもあるだろう？";
-		mes "さぁ、今すぐ試験を受けるかな？";
+		mes "[Hermes=Tris]";
+		mes "It is quicker to experience it once than to hear it a hundred times. You know the saying." ;
+		mes "Well, shall we take the test now?" ;
 		next;
-		if(select("実技試験を受けます","準備させてください")==2) {
+		if(select("I'm taking the practical exam", "Let me prepare")==2) {
 			set CHANGE_SA,7;
-			mes "[ヘルメス=トリス]";
-			mes "うん、いいよ。";
-			mes "しっかり準備をしてきなさい。";
+			mes "[Hermes=Tris]";
+			mes "Yes, okay." ;
+			mes "Go prepare well." ;
 			close;
 		}
 		set CHANGE_SA,7;
-		mes "[ヘルメス=トリス]";
-		mes "よし、ではすぐ始めよう。";
-		mes "頑張ってくれたまえ。";
+		mes "[Hermes=Tris]";
+		mes "Okay, then we'll start right away." ;
+		mes "Good luck with that." ;
 		close2;
 		warp "job_sage.gat",50,154;
 		end;
 	case 7:
-		mes "[ヘルメス=トリス]";
-		mes "やぁ、今度はしっかり準備して";
-		mes "きたかな？";
-		mes "実技試験はそこまで難しいものでは";
-		mes "ないから頑張ってほしい。";
+		mes "[Hermes=Tris]";
+		mes "Hey, have we prepared well this time?" ;
+		mes "The practical exam is not that difficult, so I wish you good luck." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "さぁ、試験を受けるかな？";
+		mes "[Hermes=Tris]";
+		mes "Now, shall we take the exam?" ;
 		next;
-		if(select("実技試験を受けます","準備する時間をください")==2) {
-			mes "[ヘルメス=トリス]";
-			mes "うん、いいよ。";
-			mes "しっかり準備をしてきなさい。";
+		if(select("I will take the practical exam", "Please give me time to prepare")==2) {
+			mes "[Hermes=Tris]";
+			mes "Yes, okay." ;
+			mes "Go prepare well." ;
 			close;
 		}
-		mes "[ヘルメス=トリス]";
-		mes "よし、ではすぐ始めよう。";
-		mes "頑張ってくれたまえ。";
+		mes "[Hermes=Tris]";
+		mes "All right, then, let's get started right away." ;
+		mes "Good luck with that." ;
 		close2;
 		warp "job_sage.gat",50,154;
 		end;
 	case 8:
-		mes "[ヘルメス=トリス]";
-		mes "よし、頑張った。";
-		mes "実技試験もパスだ。";
-		mes "君の入学を歓迎しよう。";
+		mes "[Hermes=Tris]";
+		mes "Okay, I did my best." ;
+		mes "And you passed the practical exam." ;
+		mes "Let's welcome you to the school." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "それでは、君に研究してもらう";
-		mes "分野を決めようか……";
-		mes "ちょっと待ってくれ。";
-		mes "筆記試験の点数と戦闘試験で";
-		mes "費やした時間を見ようか。";
+		mes "[Hermes=Tris]";
+		mes "Then let's decide on the area of study you'll be working on: ......." ;
+		mes "Wait a minute." ;
+		mes "Let's see how many points you got on the written exam and how much time you spent on the combat exam." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "ふむ……";
-		mes "よし、これなら大丈夫だろう。";
+		mes "[Hermes=Tris]";
+		mes "Hmmm ......." ;
+		mes "Okay, this should work." ;
 		next;
 		switch(rand(3)) {
 		case 0:
 			set CHANGE_SA,9;
-			mes "[ヘルメス=トリス]";
-			mes "君にはイグドラシルに関する研究を";
-			mes "してもらう。";
-			mes "私たちが住むこの世界の根源になった";
-			mes "木に関する研究だ。";
+			mes "[Hermes=Tris]";
+			mes "You will be doing research on Yggdrasil." ;
+			mes "A study on the tree that was the root of this world we live in." ;
 			next;
-			mes "[ヘルメス=トリス]";
-			mes "今のこの大陸の変化や発展を";
-			mes "見極めるために重要な分野だ。";
-			mes "アカデミー講義室に居る";
-			mes "シピエン=ライルリース教授の話を";
-			mes "聞きなさい。";
+			mes "[Hermes-Triss]";
+			mes "It is an important field to determine the changes and development of this continent today." ;
+			mes "Listen to Professor Sipien-Leiries, who is in the Academy's Lecture Room." ;
 			break;
 		case 1:
 			set CHANGE_SA,11;
-			mes "[ヘルメス=トリス]";
-			mes "君にはモンスターに関する研究を";
-			mes "してもらう。";
-			mes "大陸のあちらこちらにいる";
-			mes "モンスターの研究だ。";
+			mes "[Hermes-Triss]";
+			mes "You are to do research on monsters." ;
+			mes "This is a study of monsters from all over the continent." ;
 			next;
-			mes "[ヘルメス=トリス]";
-			mes "これから生きていくために";
-			mes "必要になる知識を得る事が";
-			mes "できるだろう。";
-			mes "モンスター博物館に居る";
-			mes "ルシウス=ケルソス教授の話を";
-			mes "聞きなさい。";
+			mes "[Hermes-Tris]";
+			mes "You will gain the knowledge you will need to live from now on." ;
+			mes "Listen to Professor Lucius-Kelsos at the Monster Museum." ;
 			break;
 		case 2:
 			set CHANGE_SA,13;
-			mes "[ヘルメス=トリス]";
-			mes "君には属性魔法に関する研究を";
-			mes "してもらう。";
-			mes "私達が使う基本的な魔法について";
-			mes "理解を深めてもらう。";
+			mes "[Hermes-Triss]";
+			mes "You are to do research on attribute magic." ;
+			mes "You will gain a better understanding of the basic magic we use." ;
 			next;
-			mes "[ヘルメス=トリス]";
-			mes "魔法というものの本質がわかる";
-			mes "良い分野だ。";
-			mes "バイオテクノロジー研究所に居る";
-			mes "エベシ=ジョルダ教授の話を";
-			mes "聞きなさい。";
+			mes "[Hermes-Tris]";
+			mes "This is a good area to understand the nature of magic." ;
+			mes "Listen to Professor Ebesi-Jorda at the Biotechnology Institute." ;
 			break;
 		}
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "それでは良い結果が出るよう";
-		mes "健闘を祈る。";
+		mes "[Hermes-Triss]";
+		mes "Then I wish you good luck and good results." ;
 		close;
 	case 9:
-		mes "[ヘルメス=トリス]";
-		mes "うん？良く聞いていなかったのか？";
-		mes "イグドラシルに関する研究を";
-		mes "してもらうと言ったはずだ。";
+		mes "[Hermes-Tris]";
+		mes "Hm? Didn't you listen carefully?" ;
+		mes "I told you I was going to have you do some research on Yggdrasil." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "アカデミー講義室に居る";
-		mes "シピエン=ライルリース教授の";
-		mes "ところへ行きなさい。";
+		mes "[Hermes-Triss]";
+		mes "Go to Professor Sipien-Lyerse in the Academy's Lecture Room." ;
 		close;
 	case 11:
-		mes "[ヘルメス=トリス]";
-		mes "うん？良く聞いていなかったのか？";
-		mes "モンスターに関する研究を";
-		mes "してもらうと言ったはずだ。";
+		mes "[Hermes-Triss]";
+		mes "Hm? Didn't you listen carefully?" ;
+		mes "I told you I'd have you do some research on monsters." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "モンスター博物館に居る";
-		mes "ルシウス=ケルソス教授の";
-		mes "ところへ行きなさい。";
+		mes "[Hermes-Triss]";
+		mes "Go to Professor Lucius-Kelsos at the Monster Museum." ;
 		close;
 	case 13:
-		mes "[ヘルメス=トリス]";
-		mes "うん？良く聞いていなかったのか？";
-		mes "属性魔法に関する研究を";
-		mes "してもらうと言ったはずだ。";
+		mes "[Hermes-Triss]";
+		mes "Hm? Didn't you listen carefully?" ;
+		mes "I told you I was going to have you do some research on attribute magic." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "バイオテクノロジー研究所に居る";
-		mes "エベシ=ジョルダ教授の";
-		mes "ところへ行きなさい。";
+		mes "[Hermes-Triss]";
+		mes "Go to Professor Ebesi-Jorda at the Biotechnology Institute." ;
 		close;
 	case 15:
-		mes "[ヘルメス=トリス]";
-		mes "ここで何を油売っている？";
-		mes "論文が出来たなら早く学長に";
-		mes "お見せしなさい。";
-		mes "私に見せてくれるのは良いが";
-		mes "卒業は学長が判断するからね。";
+		mes "[Hermes-Torris]";
+		mes "What are you selling oil for here?" ;
+		mes "If you've finished your paper, show it to the rector as soon as possible." ;
+		mes "You can show it to me, but the Rector will judge your graduation." ;
 		next;
-		mes "[ヘルメス=トリス]";
-		mes "ほらほら、早く行きなさい。";
+		mes "[Hermes-Tris]";
+		mes "Come on, come on, get going." ;
 		close;
 	default:
-		mes "[ヘルメス=トリス]";
-		mes "んー……";
-		mes "あ、ごめんよ、今ちょっと";
-		mes "忙しいんだ。";
-		mes "分からないことがあったら";
-		mes "君の担当教授に聞いてみなさい。";
+		mes "[Hermes-Triss]";
+		mes "hmmm ......" ;
+		mes "Oh, sorry, I'm a little busy right now." ;
+		mes "If you have any questions, ask your professor." ;
 		close;
 	}
 }
 
-job_sage.gat,50,165,4	script	実技試験担当#sage	700,{
-	mes "[実技試験担当]";
-	mes "セージ実技試験へようこそ。";
-	mes "試験を受けたければ";
-	mes "試験待機室へ入室してください。";
+job_sage.gat,50,165,4 script practical examiner#sage 700,{
+	mes "[Practical skills examiner]";
+	mes "Welcome to the Sage Practical Examination." ;
+	mes "If you wish to take the exam, please enter the exam waiting room." ;
 	next;
-	mes "[実技試験担当]";
-	mes "他の方が試験中の場合は";
-	mes "しばらくお待ちください。";
-	mes "進行状況がアナウンスされますので";
-	mes "終わったらお呼びします。";
+	mes "[Practical Exam Administrator]";
+	mes "Please wait a moment if someone else is taking the exam." ;
+	mes "The progress will be announced and you will be called when it is over." ;
 	next;
-	mes "[実技試験担当]";
-	mes "一人あたりの試験時間は";
-	mes "5～10分となります。";
-	mes "戦闘場から出たい場合は";
-	mes "一度接続し直してください。";
+	mes "[Practical examiner]";
+	mes "Each person will be given 5-10 minutes to complete the exam." ;
+	mes "If you want to leave the battlefield, please reconnect once." ;
 	close;
 OnInit:
-	waitingroom "試験待機室",20,"実技試験担当#sage::OnStart",1;
+	waitingroom "Waiting room for exam",20, "Practical examiner#sage::OnStart",1;
 	end;
 OnStart:
 	disablewaitingroomevent;
@@ -1614,71 +1235,71 @@ OnStart:
 	end;
 }
 
-job_sage.gat,0,0,0	script	SageTest	-1,{
+job_sage.gat,0,0,0 script SageTest -1,{
 	end;
 OnStart1:
 	set 'count,16;
-	set 'flag,1;	//1回目フラグ
-	monster "job_sage.gat",111,102,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,93,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,98,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,98,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",115,106,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",115,90,"単位",1183,1,"SageTest::OnKilled";
-	monster "job_sage.gat",103,110,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",128,110,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",103,85,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",128,85,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,106,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,106,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,89,"単位",1184,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,89,"単位",1184,1,"SageTest::OnKilled";
+	set 'flag,1; //first flag
+	monster "job_sage.gat",111,102, "units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,93, "units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,98, "Units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,98, "units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",115,106, "Units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",115,90, "units",1183,1, "SageTest::OnKilled";
+	monster "job_sage.gat",103,110, "Units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",128,110, "units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",103,85, "units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",128,85, "units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,106, "Units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,106, "units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,89, "units",1184,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,89, "units",1184,1, "SageTest::OnKilled";
 	initnpctimer;
 	end;
 OnStart2:
 	set 'count,24;
-	set 'flag,2;	//2回目フラグ
-	monster "job_sage.gat",111,102,"数学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,102,"物理学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,102,"史学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"地理学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"天文学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"気象学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"建築学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"制御学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"計測学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"統計学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"都市学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,102,"言語学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"食品学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"栄養学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",111,93,"造形学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,93,"人類学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,93,"生物学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",120,93,"倫理学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,98,"経済学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,98,"政治学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",107,98,"魔法学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,98,"山林学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,98,"保健学",1063,1,"SageTest::OnKilled";
-	monster "job_sage.gat",124,98,"心理学",1063,1,"SageTest::OnKilled";
+	set 'flag,2; //second flag
+	monster "job_sage.gat",111,102, "math",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,102, "Physics",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,102, "History",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "Geography",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "Astronomy",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "meteorology",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Architecture",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Control Science",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Metrology",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "Statistics",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "urban studies",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,102, "linguistics",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Food Science",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Nutrition",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",111,93, "Plastic Science",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,93, "Anthropology",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,93, "biology",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",120,93, "Ethics",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,98, "Economics",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,98, "Political Science",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",107,98, "Magical Science",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,98, "forestry",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,98, "Health Sciences",1063,1, "SageTest::OnKilled";
+	monster "job_sage.gat",124,98, "Psychology",1063,1, "SageTest::OnKilled";
 	setnpctimer 1001;
 	end;
 OnStart3:
-	set 'flag,3;	//3回目フラグ
-	monster "job_sage.gat",116,97,"学士称号",1179,1,"SageTest::OnPass";
-	monster "job_sage.gat",107,106,"欠席",1185,1;
-	monster "job_sage.gat",124,106,"遅刻",1185,1;
-	monster "job_sage.gat",107,89,"カンニング",1185,1;
-	monster "job_sage.gat",124,89,"貸し出し",1185,1;
+	set 'flag,3; //3rd flag
+	monster "job_sage.gat",116,97, "Bachelor title",1179,1, "SageTest::OnPass";
+	monster "job_sage.gat",107,106, "Absent",1185,1;
+	monster "job_sage.gat",124,106, "tardy",1185,1;
+	monster "job_sage.gat",107,89, "cheating",1185,1;
+	monster "job_sage.gat",124,89, "lending",1185,1;
 	setnpctimer 123001;
 	end;
 OnKilled:
 	set 'count,'count-1;
 	if('count < 1) {
-		announce "試験場: " +strcharinfo(0)+ "様、モンスター撃退成功",9;
+		announce "Test site: " +strcharinfo(0)+ "Sama, monster repelled successfully",9;
 		if('flag == 1)
 			donpcevent "SageTest::OnStart2";
 		else if('flag == 2)
@@ -1687,369 +1308,295 @@ OnKilled:
 	end;
 OnPass:
 	stopnpctimer;
-	killmonster "job_sage.gat","All";
+	killmonster "job_sage.gat", "All";
 	set CHANGE_SA,8;
-	announce "試験場: おめでとうございます、" +strcharinfo(0)+ "様 実技試験に合格しました",9;
+	announce "Examination center: congratulations," +strcharinfo(0)+ "you have passed your practical exam",9;
 	sleep 2000;
-	announce "試験官: それでは残りの過程も頑張ってください",9;
+	announce "Examiner: Good luck with the rest of the process;
 	sleep 2000;
-	announce "試験官: これで試験終了です。次の受験者、準備してください",9;
+	announce "Examiner: You have passed the practical examination. Next examinees, please prepare",9. sleep 1000; announce "Examiner: You have passed the exam;
 	sleep 1000;
-	areawarp "job_sage.gat",100,82,131,113,"yuno_in03.gat",163,180;
+	areawarp "job_sage.gat",100,82,131,113, "yuno_in03.gat",163,180;
 	hideoffnpc "SageTestFail";
 	sleep 2000;
-	announce "試験官: 次の受験者、入場してください",9;
+	announce "Examiner: Next examinee, please enter",9;
 	sleep 2000;
-	enablewaitingroomevent "実技試験担当#sage";
+	enablewaitingroomevent "Practical examiner #sage";
 	end;
 OnTimer1000:
 	if('flag == 1)
-		announce "試験場: 入学実技試験を始めます。",9;
+		announce "Testing room: begin entrance practical exam." ,9;
 	end;
 OnTimer2000:
-	announce "試験場: " +(('flag==1)? "一": "二")+ "番目の試験 - 時間制限 3分",9;
+	announce "Examination center: " +(('flag==1)? "1": "2")+ "Th exam - time limit 3 minutes",9;
 	end;
 OnTimer3000:
-	announce "試験場: 時間以内にすべてのモンスターを撃退してください。",9;
+	announce "Exam site: fight off all monsters in time." ,9;
 	end;
 OnTimer33000:
-	announce "試験場: 残り2分 30秒",9;
+	announce "test site: 2 minutes 30 seconds left",9;
 	end;
 OnTimer63000:
-	announce "試験場: 残り2分",9;
+	OnTimer63000: announce "Testing station: 2 minutes left",9;
 	end;
 OnTimer93000:
-	announce "試験場: 残り1分 30秒",9;
+	OnTimer93000: announce "Testing station: 1 minute 30 seconds left",9;
 	end;
 OnTimer123000:
-	announce "試験場: 残り1分",9;
+	OnTimer123000: announce "Testing station: 1 minute left",9;
 	end;
 OnTimer124000:
 	if('flag == 3)
-		announce "試験場: 三番目の試験 - 時間制限 1分",9;
+		OnTimer123000: announce "Exam site: third exam - time limit 1 minute",9; end; OnTimer124000: if('flag == 3)
 	end;
 OnTimer153000:
-	announce "試験場: 残り30秒",9;
+	announce "Exam site: 30 seconds left",9;
 	end;
 OnTimer173000:
-	announce "試験場: 残り10秒",9;
+	OnTimer173000: announce "Testing site: 10 seconds left",9;
 	end;
 OnTimer183000:
-	killmonster "job_sage.gat","All";
-	announce "試験場: 制限時間終了",9;
+	killmonster "job_sage.gat", "All";
+	announce "test_place: time_limit_end",9;
 	end;
 OnTimer184000:
 	hideoffnpc "SageTestFail";
 	end;
 OnTimer185000:
-	announce "次の受験者、入場してください",9;
+	announce "Next examinee, please enter",9;
 	end;
 OnTimer186000:
 	stopnpctimer;
 	set 'flag,0;
-	enablewaitingroomevent "実技試験担当#sage";
+	enablewaitingroomevent "Practical examiner #sage";
 	end;
 }
 
-job_sage.gat,116,97,0	script	SageTestFail	139,16,16,{
+job_sage.gat,116,97,0 script SageTestFail 139,16,16,{
 OnTouch:
-	announce "試験場: " +strcharinfo(0)+ "様が試験に失敗しました",9;
+	announce "Test site: " +strcharinfo(0)+ "Sage failed the test",9;
 	warp "yuno.gat",324,258;
 	end;
 }
 
 //==========================================
-// 三次試験（イグドラシル研究）
+// Tertiary exam (Yggdrasil study)
 //------------------------------------------
-yuno_in03.gat,62,176,2	script	史学教授	109,{
+yuno_in03.gat,62,176,2 script History Professor 109,{
 	if(Job == Job_Sage) {
-		mes "[シピエン=ライルリース]";
-		mes "誰かな……？";
-		mes "ああ、私が教えた学生ですね。";
-		mes "たしかアカデミーを卒業していたね。";
+		mes "[Sipien-Leiries]";
+		mes "Who is it ......?" ;
+		mes "Oh, you're the student I taught." ;
+		mes "You graduated from the academy, I believe." ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "過去を知れば現在を理解し、";
-		mes "未来を想像することが出来る。";
-		mes "そこに全ての真理がある。";
+		mes "[Sipien-Leiries]";
+		mes "If we know the past, we can understand the present and imagine the future." ;
+		mes "Therein lies all truth." ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "今の君も過去を知ろうとしている。";
-		mes "いつか「今」を回想し、懐かしみ、";
-		mes "変わった自分を発見する時が";
-		mes "来るでしょう。";
+		mes "[Sipien-Leiries]";
+		mes "Now you too are trying to know the past." ;
+		mes "Someday you will recall the 'now', you will miss it, and you will discover a changed you." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[シピエン=ライルリース]";
-		mes "ノービスさんが何の用かな？";
+		mes "[Sipien-Lyerse]";
+		mes "What can Mr. Novice do for you?" ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "幾多の可能性を秘めた君は";
-		mes "これからどんな道を歩んで";
-		mes "行くのかな？";
+		mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+		mes "What path will you take now that you have so many possibilities?" ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "それは君自身が決めることです。";
-		mes "間違った道を進まないように。";
+		mes "[Sipien-Leiries]"; mes "[Sipien-Leiries]"; mes "[Sipien-Leiries]
+		mes "That is for you to decide for yourself." ;
+		mes "Don't go down the wrong path." ;
 		close;
 	}
-	if(Job != Job_Magician) {
-		mes "[シピエン=ライルリース]";
-		mes "はい、私は史学を教えています。";
+	if(Job ! = Job_Magician) {
+		mes "[Sipien-Leiries]";
+		mes "Yes, I teach history." ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "今の世界は、幾多の記憶と歳月を";
-		mes "もとに形作られたものなのです。";
-		mes "過去を知ることは現在と未来を";
-		mes "つなげる橋となるでしょう。";
+		mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+		mes "The world we live in today is shaped by many memories and years." ;
+		mes "Knowing the past can be a bridge between the present and the future." ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "君も、自分の過去を振り返って";
-		mes "みなさい。きっと未来への道が";
-		mes "見えてくるはずです。";
+		mes "[Sipien-Leiries]";
+		mes "You, too, should reflect on your past. You will surely find a way to the future." ;
 		close;
 	}
 	switch(CHANGE_SA) {
 	case 9:
 		switch(RESEARCH_SA) {
 		case 0:
-			mes "[シピエン=ライルリース]";
-			mes "はい、" +strcharinfo(0)+ "君だね。";
-			mes "よく来ました。私は講義担当の";
-			mes "シピエン=ライルリースといいます。";
+			mes "[Sipien=Lyleece]";
+			mes "Yes," +strcharinfo(0)+ "It's you." ;
+			mes "Welcome. My name is Sipien-Leiries, and I am in charge of lectures." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "ここでのテーマは、イグドラシル";
-			mes "に関する研究です。";
-			mes "イグドラシルというものがどういう";
-			mes "ものか、君は知っているかな？";
+			mes "[Sipien-Leiries]";
+			mes "The topic here is a study on Ygdrasil." ;
+			mes "Do you know what Igdrasil is?" ;
 			next;
-			if(select("はい、知っています","いいえ、よく知りません……")==1) {
-				mes "[シピエン=ライルリース]";
-				mes "それではイグドラシルについて";
-				mes "知っていることを話してみなさい。";
+			if(select("Yes, I know", "No, I am not familiar with it. ......") ==1) {
+				mes "[Sipien-Lyerse]";
+				mes "Then tell us what you know about Ygdrasil." ;
 				next;
-				switch(select("回復アイテムの名前です","世界の根源と言われる木です","実はよく知りません……")) {
+				switch(select("It is the name of a recovery item.", "It is a tree said to be the root of the world.", "Actually, I don't know much about it. ......")) {
 				case 1:
-					mes "[シピエン=ライルリース]";
-					mes "違います。";
-					mes strcharinfo(0)+ "君、";
-					mes "減点10点です。";
-					mes "それはその木から出た成分を";
-					mes "利用して使っているだけの話です。";
+					mes "[Sipien-Lyrlees]";
+					mes "No, it's not." ;
+					mes ""+strcharinfo(0)+ "You, you have 10 points deducted." ;
+					mes "That's just using the ingredients from that tree." ;
 					next;
-					mes "[シピエン=ライルリース]";
-					mes "イグドラシルというのは、";
-					mes "世界の根源となった木の";
-					mes "名前です。";
+					mes "[Sipien-Lyrlees]";
+					mes "Igdrasil is the name of the tree that was the root of the world." ;
 					break;
 				case 2:
-					mes "[シピエン=ライルリース]";
-					mes "そうですね、イグドラシルは";
-					mes "私たちが住むこの世界の";
-					mes "根源となった木の名前です。";
+					mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]";
+					mes "Yes, Igdrasil is the name of the tree that became the root of this world we live in." ;
 					break;
 				case 3:
-					mes "[シピエン=ライルリース]";
-					mes "知らないならば知らないと言いなさい。";
-					mes strcharinfo(0)+ "君、";
-					mes "減点10点です。";
+					mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+					mes "If you don't know, say you don't know." ;
+					mes ""+strcharinfo(0)+ "You, you have 10 points deducted." ;
 					next;
-					mes "[シピエン=ライルリース]";
-					mes "イグドラシルというのは、";
-					mes "世界の根源となった木の";
-					mes "名前です。";
+					mes "[Sipien-Lyrlees]";
+					mes "Yggdrasil is the name of the tree from which the world is rooted." ;
 					break;
 				}
 			}
-			else {
-				mes "[シピエン=ライルリース]";
-				mes "うん、少しは聞いたことがあるかも";
-				mes "しれませんが、イグドラシルという";
-				mes "のは、ミッドガルド大陸の根源にも";
-				mes "なった木の名前です。";
+			} else {
+				mes "[Sipien-Lyrleth]";
+				mes "Yes, you may have heard a little bit about it, but Ygdrasil is the name of the tree that was also the root of the Midgard continent." ;
 			}
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "それでは講義に先立って";
-			mes "いくつか準備してもらいたいものが";
-			mes "あります。";
-			mes "イグドラシルを理解するためには";
-			mes "必要なことです。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "Then there are a few things I would like you to prepare prior to the lecture." ;
+			mes "This is necessary in order to understand Ygdrasil." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "何でも良いから、イグドラシルに";
-			mes "関わる物を集めてきなさい。";
-			mes "種や実が一番望ましいですね。";
-			mes "大変ですが頑張って見つけて";
-			mes "きてください。";
+			mes "[Sipien-Leiries]";
+			mes "Gather whatever you can, anything that has to do with Ygdrasil." ;
+			mes "Seeds and berries are most desirable." ;
+			mes "It's a lot of work, but do your best to find them." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "それでは、準備が出来次第";
-			mes "講義に入ります。";
-			mes "いってらっしゃい。";
+			mes "[Sipien-Leiries]";
+			mes "Then we will start the lecture as soon as it is ready." ;
+			mes "Have a good day." ;
 			set RESEARCH_SA,1;
 			close;
 		case 1:
 			if(countitem(607) < 1 && countitem(608) < 1 && countitem(610) < 1) {
-				mes "[シピエン=ライルリース]";
-				mes "ん？まだ講義を受ける準備が";
-				mes "できていないようですよ？";
-				mes "何でも良いから、イグドラシルに";
-				mes "関わる物を集めてきなさい。";
+				mes "[Sipien=Lyleece]";
+				mes "Hmm? I don't think you're ready for a lecture yet, are you?" ;
+				mes "Whatever it is, go gather up anything related to Yggdrasil." ;
 				next;
-				mes "[シピエン=ライルリース]";
-				mes "準備ができたら始めます。";
-				mes "さぁ、行ってきなさい。";
+				mes "[Sipien-Lyrlees]";
+				mes "We will begin when you are ready." ;
+				mes "Now go." ;
 				close;
 			}
-			mes "[シピエン=ライルリース]";
-			mes "うむ、準備をしてきたかな？";
+			mes "[Sipien-Lyerse]";
+			mes "Mm, have you made your preparations?" ;
 			if(countitem(607)) {
-				mes "……！";
-				mes "イグドラシルの実を持ってきましたか！";
-				mes "感心感心。";
+				mes "......!" ;
+				mes "Did you bring the fruit of Yggdrasil!" ;
+				mes "I'm impressed." ;
 			}
 			else if(countitem(608)) {
-				mes "……";
-				mes "ほぉ、イグドラシルの種ですか。";
-				mes "苦労したでしょう。";
+				mes "......" ;
+				mes "Oh, is that an Yggdrasil seed?" ;
+				mes "You must have had a hard time." ;
 			}
 			else if(countitem(610)) {
-				mes "……";
-				mes "イグドラシルの葉ですか。";
+				mes "......" ;
+				mes "Is it an igdrasil leaf?" ;
 				next;
-				mes "[シピエン=ライルリース]";
-				mes "これは街によっては売っているね。";
-				mes "横着はいけません。";
-				mes strcharinfo(0)+ "君、減点10点です。";
+				mes "[Sipien-Lyrlees]";
+				mes "You sell these in some towns." ;
+				mes "Don't be sidetracked." ;
+				mes ""+strcharinfo(0)+ "You, you have 10 points deducted." ;
 			}
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "それでは講義を始めます。";
-			mes "居眠りなどせずに聞きなさい。";
+			mes "[Sipien-Leiries]";
+			mes "Then we will begin the lecture." ;
+			mes "Don't doze off and listen." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "世界の根源である";
-			mes "イグドラシルの木は";
-			mes "全大陸に根付き、その高さは";
-			mes "空にまで達すると言われています。";
+			mes "[Sipien-Lyrlees]";
+			mes "It is said that the tree of Ygdrasil, the root of the world, takes root on all continents and reaches its height to the sky." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "大陸の外には大洋があり、";
-			mes "世界を巨大な蛇である";
-			mes "ヨルムンガンドが囲んでいます。";
-			mes "大陸はアスガルド・ミッドガルド・";
-			mes "ウトガルドに分けられます。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "Outside the continent is an ocean, and the world is surrounded by Jormungand, a giant serpent." ;
+			mes "The continent is divided into Asgard, Midgard, and Utgard." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "巨人族が住むウトガルド……";
+			mes "[Sipien-Lyrleth]";
+			mes "Utgard, where the giants live: ......." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "私達人間が住むミッドガルド……";
+			mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+			mes "Midgard, where we humans live......" ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "そして神々が住むアスガルド……";
-			mes "この大陸の中心にそびえたつ";
-			mes "巨樹がイグドラシルなのです。";
+			mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+			mes "And Asgard, where the gods dwell......" ;
+			mes "The giant tree that rises in the center of this continent is Igdrasil." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "太古にユミルの死をもって生まれた";
-			mes "この大陸に深く根をはり、巨樹を";
-			mes "支えるその根は三つのところに";
-			mes "伸びています。";
+			mes "[Sipien-Lyrleth]";
+			mes "Deeply rooted in this continent, which was born with the death of Ymir in prehistoric times, its roots, which support the giant tree, extend to three places." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "一つ目の根は、神々が住む";
-			mes "アスガルドへ。";
-			mes "未だ我ら人間の見知らぬ";
-			mes "地へと……";
+			mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+			mes "The first root goes to Asgard, where the gods dwell." ;
+			mes "To a land still unknown to us mortals. ......" ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "二つ目は巨人達が住む";
-			mes "ヨトゥンヘイムだと言われています。";
-			mes "伝説や神話の節々でその名を";
-			mes "聞くことがあります。";
+			mes "[Sipien-Lyrleth]";
+			mes "The second is said to be Jotunheim, where the giants live." ;
+			mes "The name is heard in legends and mythological passages." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "三つ目はニブルヘイムに";
-			mes "伸びています。";
-			mes "大地は深い霧と闇と氷に";
-			mes "覆われています。";
+			mes "[Sipien-Lyrleth]";
+			mes "The third eye extends to Nibbleheim." ;
+			mes "The earth is covered with deep mist, dark and ice." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "私達が偶然手に入れた";
-			mes "イグドラシルの実・種・葉";
-			mes "のような物は、まさにその巨樹の";
-			mes "産物であると考えられます。";
+			mes "[Sipien-Lyrleth]";
+			mes "The fruit, seeds, and leafy things of Ygdrasil that we happen to have are thought to be the product of that very giant tree." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "幻想的で太古の歴史を感じられる";
-			mes "生命力あふれるイグドラシルの実は";
-			mes "HPとSPを完全に回復してくれます。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "The fantastic, prehistoric, and life-giving Ygdrasil berries will completely restore your HP and SP." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "香ばしくて苦味のある香に";
-			mes "元気が湧くというイグドラシルの種は";
-			mes "HPとSPを半分程回復してくれます。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "The seeds of Ygdrasil, which are said to be energized by its fragrant and bitter aroma, will restore about half of your HP and SP." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "強い生命力を持っている";
-			mes "イグドラシルの葉は死者を";
-			mes "蘇生させることができます。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "Possessing a strong life force, igdrasil leaves can revive the dead." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "最後に……もし君が遠い未来に";
-			mes "アスガルドへ行く方法を見つけたら、";
-			mes "必ずイグドラシルを探してみなさい。";
+			mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+			mes "Finally, ...... If you find your way to Asgard in the distant future, be sure to look for Igdrasil." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "もちろん、神話と伝説に基づいた";
-			mes "話だが、だからこそ、イグドラシルの";
-			mes "存在を究明しなければならないのです。";
+			mes "[Sipien-Lyrleth]"; mes "[Sipien-Lyrleth]
+			mes "Of course, the story is based on myth and legend, but that is why we must investigate the existence of Ygdrasil." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "では、講義はここまでにしましょう。";
-			mes "聞いた内容をよく整理して覚えて";
-			mes "おくんですよ。";
+			mes "[Sipien-Lyrlees]"; mes "[Sipien-Lyrlees]
+			mes "So, that's it for the lecture." ;
+			mes "You need to organize and remember what you've heard very well." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "次は論文を書いてもらいます。";
-			mes "論文を書く準備をしてきてください。";
+			mes "[Sipien-Leiries]";
+			mes "Next, you will write a paper." ;
+			mes "Please come prepared to write your paper." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Sipien-Leiries]";
+			mes "^3355FF bird's feathers^000000 1 for writing instruments ^3355FF beast's hide^000000 1 needed for bookbinding ^3355FF wood shavings^000000 1 for ink ^3355FF black ink^000000 1 for ink ^3355FF empty bottle^000000 1 for ink. ";
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "準備ができしだい論文制作に";
-			mes "入ってもらいます。";
+			mes "[Sipien=Lyleys]";
+			mes "You will be asked to start working on your paper as soon as it is ready." ;
 			set RESEARCH_SA,0;
 			set CHANGE_SA,10;
 			close;
 		}
 	case 10:
 		if(countitem(916) < 1 || countitem(919) < 1 || countitem(1019) < 1 || countitem(1024) < 1 || countitem(713) < 1) {
-			mes "[シピエン=ライルリース]";
-			mes "まだ論文を書く準備ができて";
-			mes "いないようですよ。";
-			mes "準備してきなさいと言ったはずです。";
+			mes "[Sipien-Leiries]";
+			mes "I don't think you're ready to write your paper yet." ;
+			mes "I told you to come prepared." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Sipien-Leiries]";
+			mes "^3355FF bird feathers^000000 1 for writing instruments ^3355FF beast skins^000000 1 needed for binding ^3355FF wood shavings^000000 1 for ink ^3355FF India ink^000000 1 for ink ^3355FF empty bottle^000000 1 for ink. ";
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "準備ができしだい論文制作を";
-			mes "手伝ってあげましょう。";
-			mes "では、いってらっしゃい。";
+			mes "[Sipien=Lyleys]";
+			mes "As soon as you are ready, I will help you produce your thesis." ;
+			mes "Well, have a good day." ;
 			close;
 		}
 		delitem 916,1;
@@ -2057,475 +1604,392 @@ yuno_in03.gat,62,176,2	script	史学教授	109,{
 		delitem 1019,1;
 		delitem 1024,1;
 		delitem 713,1;
-		mes "[シピエン=ライルリース]";
-		mes "では、論文を書き始めなさい。";
-		mes "横で見ててあげます。";
+		mes "[Sipien-Leiries]";
+		mes "Then start writing your paper." ;
+		mes "I'll watch you on the side." ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		mes "大陸の外には大洋があり、";
-		mes "その広い大洋を包んでいるのは";
-		setarray '@word$,"巨大な水瓶だという","巨大な蛇ヨルムンガンドだという","巨大な亀と象たちだという","巨大なお皿だという";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=2)
+		mes "Outside the continent is an ocean, and encompassing that wide ocean is";
+		setarray '@word$, "They say it is a huge water bottle", "They say it is a huge snake Jormungand", "They say it is a huge turtle and elephants", "They say it is a huge dish";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =2)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		mes "大陸は三つに分かれていて";
-		setarray '@word$,"蜘蛛族が住むミョルニール山脈","巨人が住むウラノス","巨人が住むウトガルド","冬の国ルティエ";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=3)
+		mes ""+'@word$[@menu-1];
+		mes "The continent is divided into three parts";
+		setarray '@word$, "Mount Mjolnir where the spider people live", "Uranos where the giants live", "Utgard where the giants live", "Lutie the land of winter";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =3)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		setarray '@word$,"人間達が住むミッドガルド","人間達が住むルーンミッドガッツ","人魚が生息するトリトニア","砂漠の都市モロク";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=1)
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "Midgard where humans live", "Rune-Midgarts where humans live", "Tritonia where mermaids live", "Morroc the desert city";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =1)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		setarray '@word$,"神々の住むアドガルス","神々の住むアスガルド","市民が住むシュバルツバルド","ルーンミッドガッツの首都プロンテラ";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=2)
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "Adgalus where the gods live", "Asgard where the gods live", "Schwartzvald where the citizens live", "Prontera the capital of the Rune-Midgarts";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =2)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		mes "このように分かれる。";
+		mes ""+'@word$[@menu-1];
+		mes "Thus divided." ;
 		next;
 		if('@failed) {
-			mes "[シピエン=ライルリース]";
-			mes "……";
-			mes strcharinfo(0)+ "君、";
-			mes "間違っている点があるね。";
-			mes "これでは論文になりません。";
+			mes "[Sipien-Lyles]"; mes "[Sipien-Lyles]";
+			mes "......" ;
+			mes ""+strcharinfo(0)+ "You, you have a point wrong." ;
+			mes "This is not a paper." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "学長には見せられませんから";
-			mes "書き直しです。";
+			mes "[Sipien-Leiries]";
+			mes "I can't show it to the president of the university, so I have to rewrite it." ;
 			close;
 		}
-		mes "イグドラシルは世の中の根源である";
-		setarray '@word$,"巨大な樹木であり","素敵なマステラの木であり","大きな柳であり","古い木の枝であり";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=1)
+		mes "Yggdrasil is the root of the world";
+		setarray '@word$, "is a huge tree", "is a nice mastella tree", "is a big willow", "is a branch of an old tree";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =1)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		mes "その根は三箇所に向かって伸びる。";
-		setarray '@word$,"シュバルツバルド、ヨトゥンヘイム、ニブルヘイムで","ミッドガルド、ヨトゥンヘイム、ナブルヘイムで","アスガルド、ヨトゥンヘイム、ナブルヘイムで","アスガルド、ヨトゥンヘイム、ニブルヘイムで";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=4)
+		mes ""+'@word$[@menu-1];
+		mes "Its roots extend toward three places." ;
+		setarray '@word$, "In Schwartzvald, Jotunheim, and Nibbleheim", "In Midgard, Jotunheim, and Nibbleheim", "In Asgard, Jotunheim, and Nibbleheim", "In Asgard, Jotunheim, and Nibbleheim";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =4)
 			set '@failed,1;
-		mes '@word$[@menu-1];
-		mes "大地に固く根を張り巡らしている。";
-		mes "イグドラシルの実を食べた者は";
-		setarray '@word$,"すべての状態異常が回復する","HP・SPが全て回復する","HP・SPが半分回復する","沈黙・呪い・混乱から復帰する";
-		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])!=2)
+		mes ""+'@word$[@menu-1];
+		mes "Firmly rooted in the earth." ;
+		mes "He who eats the fruit of Ygdrasil";
+		setarray '@word$, "all status abnormalities are healed", "all HP and SP are healed", "half HP and SP are healed", "return from silence, curse, and confusion";
+		if(select('@word$[0],'@word$[1],'@word$[2],'@word$[3])! =2)
 			set '@failed,1;
-		mes '@word$[@menu-1];
+		mes ""+'@word$[@menu-1];
 		next;
 		if('@failed) {
-			mes "[シピエン=ライルリース]";
-			mes "……";
-			mes strcharinfo(0)+ "君、";
-			mes "間違っている点があるね。";
-			mes "これでは論文になりません。";
+			mes "[Sipien-Lyles]";
+			mes "......" ;
+			mes ""+strcharinfo(0)+ "You, you have a point wrong." ;
+			mes "This is not a paper." ;
 			next;
-			mes "[シピエン=ライルリース]";
-			mes "学長には見せられませんから";
-			mes "書き直しです。";
+			mes "[Sipien-Leiries]";
+			mes "I can't show it to the president of the university, so I have to rewrite it." ;
 			close;
 		}
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "うん、頑張りましたね。";
-		mes "これは大切に扱ってください。";
-		mes "絶対に失くしてはいけませんよ。";
+		mes "[Sipien-Leiries]";
+		mes "Yes, you did your best." ;
+		mes "Please take good care of this." ;
+		mes "Don't ever lose it." ;
 		set CHANGE_SA,15;
 		getitem 1550,1;
 		next;
-		mes "[シピエン=ライルリース]";
-		mes "それでは論文を学長に見せて";
-		mes "きなさい。";
-		mes "卒業合否は彼が判定します。";
+		mes "[Sipien-Leiries]";
+		mes "Then go and show your paper to the Rector." ;
+		mes "He will decide whether you pass or fail graduation." ;
 		close;
 	case 15:
-		mes "[シピエン=ライルリース]";
-		mes "何をしているのですか？";
-		mes "論文はできたのだから";
-		mes "早く学長に見せてきなさい。";
-		mes "その論文を無くさないうちに！";
+		mes "[Sipien-Leiries]";
+		mes "What are you doing?" ;
+		mes "The paper is done, so go show it to the president of the university as soon as possible." ;
+		mes "Before you lose that paper!" ;
 		close;
 	default:
-		mes "[シピエン=ライルリース]";
-		mes "何をしに来たのか知らないが";
-		mes "今は考え事に専念したい。";
-		mes "また後で訊ねてきなさい……";
+		mes "[Sipien-Leiries]";
+		mes "I don't know what you're doing here, but right now I want to GOST exclusively for thinking." ;
+		mes "Ask me again later ......." ;
 		close;
 	}
 }
 
 //==========================================
-// 三次試験（モンスター研究）
+// Tertiary (Monster Research)
 //------------------------------------------
-yuno_in03.gat,32,102,1	script	生物学教授	755,{
+yuno_in03.gat,32,102,1 script biology professor 755,{
 	if(Job == Job_Sage) {
-		mes "[ルシウス=ケルソス]";
-		mes "何か、不明な点でもあるのかね？";
-		mes "質問があったら一週間前に";
-		mes "予約してくれ。こっちも忙しくてね。";
+		mes "[Lucius=Kelsos]";
+		mes "Is there something you're unclear on?" ;
+		mes "If you have any questions, make an appointment a week in advance. We're busy here, too." ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "私がどれだけ忙しいか知ってるだろう？";
-		mes "セージになったやつなら";
-		mes "わかってると思ったが……";
+		mes "[Lucius-Kelsos]";
+		mes "You know how busy I am." ;
+		mes "I thought the guy who became Sage would know what I'm talking about. ......" ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "暇があったらダンジョンにでも";
-		mes "行ってみてくれ。";
-		mes "床に寝転がって天井を眺めるだけでも";
-		mes "何か勉強になることがあるぞ。";
+		mes "[Lucius-Kelsos]";
+		mes "If you have time, go to the dungeon." ;
+		mes "You'll learn something just by lying on the floor and looking at the ceiling." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[ルシウス=ケルソス]";
-		mes "なんだ？";
+		mes "[Lucius-Kelsos]";
+		mes "What?" ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "こんなところで遊んでいないで";
-		mes "友達と外で遊んできなさい。";
+		mes "[Lucius=Kelsos]";
+		mes "Don't play here, go outside with your friends." ;
 		close;
 	}
-	if(Job != Job_Magician) {
-		mes "[ルシウス=ケルソス]";
-		mes "ん？モンスター見物でも";
-		mes "しに来たのかな？";
+	if(Job ! = Job_Magician) {
+		mes "[Lucius=Kelsos]";
+		mes "Hmm? Are you here to see the monsters?" ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "見るのは良いが、あちこち";
-		mes "触るなよ。";
-		mes "触ると危険な物があるからな。";
+		mes "[Lucius=Kelsos]";
+		mes "It's okay to look, but don't touch me everywhere." ;
+		mes "Some things are dangerous to touch." ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "そして、もし珍しいモンスターを";
-		mes "捕まえたらぜひ教えてくれ。";
-		mes "高い値段で情報を買い取ろう。";
+		mes "[Lucius-Kelsos]";
+		mes "And if you catch any unusual monsters, please let me know." ;
+		mes "I'll buy your information for a high price." ;
 		close;
 	}
 	switch(CHANGE_SA) {
 	case 11:
 		switch(RESEARCH_SA) {
 		case 0:
-			mes "[ルシウス=ケルソス]";
-			mes "よし、実技試験は通ったか。";
-			mes "私が生物学の最先端を研究する";
-			mes "ルシウス=ケルソスだ。";
+			mes "[Lucius=Kelsos]";
+			mes "Okay, did you pass the practical exam?" ;
+			mes "I'm Lucius-Kelsos, a researcher on the cutting edge of biology." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "人が名前を述べたら自分の名も";
-			mes "言うのが礼儀ってもんだ。";
-			mes "名前は？";
+			mes "[Lucius-Kelsos]";
+			mes "When a person mentions your name, it is polite to say your name as well." ;
+			mes "What is your name?" ;
 			next;
-			menu strcharinfo(0)+ "です。",-;
-			mes "[ルシウス=ケルソス]";
-			mes "良い名前だ。会えて嬉しい。";
-			mes "それでは、君が研究に入る分野に";
-			mes "ついて説明しよう。";
+			menu strcharinfo(0)+ "Is." ,-;
+			mes "[Lucius-Kelsos]";
+			mes "Good name. Good to see you." ;
+			mes "So let's talk about the field you're going into for your research." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "知っているように君の研究テーマは";
-			mes "モンスターについてだ。";
-			mes "今までに、多くのモンスターに遭い、";
-			mes "戦ってみたかな？";
+			mes "[Lucius-Kelsos]";
+			mes "As you know, your research topic is about monsters." ;
+			mes "Have you ever encountered and fought many monsters?" ;
 			next;
-			if(select("はい、たくさん努力しました","いいえ、あまり……")==1) {
-				mes "[ルシウス=ケルソス]";
-				mes "努力した？";
-				mes "だいたい楽な所ばかり行ってた";
-				mes "んじゃないか？";
-				mes "まあいい。私の授業は楽じゃないぞ。";
+			if(select("Yes, I tried a lot", "No, not much ......") ==1) {
+				mes "[Lucius=Kelsos]";
+				mes "Did you put in a lot of effort?" ;
+				mes "You generally went to the easy places, didn't you?" ;
+				mes "[Lucius-Kelsos]"; mes "Well, that's okay. My classes aren't easy." ;
 			}
 			else {
-				mes "[ルシウス=ケルソス]";
-				mes "そうか。別に構わんよ。";
-				mes "私の研究室に入ったらそうも";
-				mes "いかなくなるだろう。ハハハ。";
+				mes "[Lucius-Kelsos]";
+				mes "Okay. I don't mind." ;
+				mes "That won't be the case once you're in my Research Office. Hahaha." ;
 			}
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "それでは始めようか。";
-			mes "私の授業は、現場で学ぶことが";
-			mes "多いということだけ肝に銘じておけ。";
+			mes "[Lucius-Kelsos]";
+			mes "Shall we begin then?" ;
+			mes "Just keep in mind that my class is a lot to learn in the field." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "よし、これらを集めてこい。";
+			mes "[Lucius-Kelsos]";
+			mes "All right, go gather these things up." ;
 			set RESEARCH_SA,rand(1,3);
 			switch(RESEARCH_SA) {
 			case 1:
-				mes "^3355FF触手^000000 5個";
-				mes "^3355FF単細胞^000000 5個";
-				mes "^3355FF魚の尻尾^000000 5個";
+				mes "^3355FF tentacles^000000 5 ^3355FF single cells^000000 5 ^3355FF fish tails^000000 5";
 			case 2:
-				mes "^3355FFかにニッパ^000000 5個";
-				mes "^3355FF貝のむきみ^000000 5個";
-				mes "^3355FF人魚の心臓^000000 5個";
+				mes "^3355FF crab nippers^000000 5^3355FF shellfish peel^000000 5^3355FF mermaid heart^000000 5";
 				break;
 			case 3:
-				mes "^3355FF血管^000000 5個";
-				mes "^3355FFかにニッパ^000000 5個";
-				mes "^3355FF鋭い鱗^000000 5個";
+				mes "^3355FF blood vessels^000000 5^3355FF crab nippers^000000 5^3355FF sharp scales^000000 5";
 				break;
 			}
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "全て揃ったら話を続ける。";
-			mes "じゃ、行ってこい。";
+			mes "[Lucius=Kelsos]";
+			mes "When we have everything, we'll continue the story." ;
+			mes "Well, go on then." ;
 			close;
 		case 1:
 		case 2:
 		case 3:
 			switch(RESEARCH_SA) {
-				case 1: setarray '@need,962,1052,1023;  break;
-				case 2: setarray '@need,960,966,950;   break;
-				case 3: setarray '@need,1050,960,963; break;
+				case 1: setarray '@need,962,1052,1023; break
+				case 2: setarray '@need,960,966,950; break
+				case 3: setarray '@need,1050,960,963; break
 			}
 			for(set '@i,0; '@i<3; set '@i,'@i+1) {
 				if(countitem('@need['@i]) < 5) {
-					mes "[ルシウス=ケルソス]";
-					mes "おいおい、しっかりしてくれ。";
-					mes "もう一度言うからよく聞いてくれ。";
+					mes "[Lucius=Kelsos]";
+					mes "Hey, come on, get a grip." ;
+					mes "I'm going to say it again, so listen carefully." ;
 					next;
-					mes "[ルシウス=ケルソス]";
+					mes "[Lucius=Kelsos]";
 					for(set '@i,0; '@i<3; set '@i,'@i+1) {
-						mes "^3355FF" +getitemname('@need['@i])+ "^000000 5個";
+						mes "^3355FF" +getitemname('@need['@i])+ "^000000 5 pieces";
 					}
 					close;
 				}
 			}
-			mes "[ルシウス=ケルソス]";
-			mes "やぁ、おつかれさん。";
-			mes "直接拾ってきたのか買ったのかは";
-			mes "わからんが。";
+			mes "[Lucius=Kelsos]";
+			mes "Hey there." ;
+			mes "I don't know if you picked it up directly or bought it." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "とにかく、このアイテムを落とす";
-			mes "やつらには共通点がある。";
-			mes "それが何かわかるか？";
+			mes "[Lucius-Kelsos]";
+			mes "Anyway, the guys who drop these items have one thing in common." ;
+			mes "Do you know what that is?" ;
 			next;
-			switch(select("水属性です","魚貝類です","アクティブです","モンスターです")) {
+			switch(select("It's water", "It's fish and shellfish", "It's active", "It's monster")) {
 			case 1:
 			case 2:
-				mes "[ルシウス=ケルソス]";
-				mes "そう、水属性であり、魚貝類でもある。";
-				mes "大部分の魚貝類は水場に生息する";
-				mes "から水属性なんだ。";
+				mes "[Lucius=Kelsos]";
+				mes "Yes, it is water-based and a fish and shellfish." ;
+				mes "Most fish and shellfish are water-attributes because they live in watery places." ;
 				break;
 			case 3:
 				if(RESEARCH_SA == 3) {
-					mes "[ルシウス=ケルソス]";
-					mes "おい……マリンスフィアーに";
-					mes "足でも生えていたのか？";
-					mes "本当に血管は自力で取ってきた";
-					mes "んだろうな……？";
+					mes "[Lucius=Kelsos]";
+					mes "Hey ...... Did you grow a leg on the Marine Sphere?" ;
+					mes "You really got the veins on your own, didn't you ......?" ;
 				}
 				else {
-					mes "[ルシウス=ケルソス]";
-					mes "最近はお化け貝も襲ってくるのか。";
-					mes "それともバドンやカニがアイテムでも";
-					mes "欲しがったのか……";
+					mes "[Lucius=Kelsos]";
+					mes "Do ghost shells attack you these days?" ;
+					mes "Or did the badons and crabs want an item or two? ......" ;
 				}
 				next;
-				mes "[ルシウス=ケルソス]";
-				//mes "全部先行ではないと..."; //怪奇文章なので統一
-				//mes "精神ちょっと調えなさい.";
-				//mes "魚貝類ながら水属性なことが共通点だ。";
-				mes "全部アクティブではない！";
-				mes "まったく……";
-				mes "魚貝類で、水属性を持つのが";
-				mes "共通点だ。";
+				mes "[Lucius-Kelsos]"
+				//mes "I guess it's not all prior..." ; //unified because it's a bizarre sentence
+				//mes "[Lucius=Kelsos]" ;
+				//mes "The commonality is that they're watery despite being fish and shellfish." ;
+				mes "Not all of them are active!" ;
+				mes "Not at all ......." ;
+				mes "They are fish and shellfish and have the water attribute in common." ;
 				break;
 			case 4:
-				mes "[ルシウス=ケルソス]";
-				mes "……";
-				mes "そういうことを聞いているのではない。";
-				mes "まったく……";
-				mes "魚貝類で、水属性を持つのが";
-				mes "共通点だ。";
+				mes "[Lucius=Kelsos]";
+				mes "......" ;
+				mes "That's not what I'm asking." ;
+				mes "Not at all. ......" ;
+				mes "They are fish and shellfish and have the water attribute in common." ;
 				break;
 			}
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "すべての魚貝類が水属性という";
-			mes "わけではないが、だいたいがそうだ。";
-			mes "それでは、これら魚貝類に効く";
-			mes "魔法はどれかな？";
+			mes "[Lucius=Kelsos]";
+			mes "Not all fish and shellfish are water-based, but most are." ;
+			mes "So which magic works for these fish and shellfish?" ;
 			next;
-			switch(select("ライトニングボルトです","ファイアーボルトです","サンダーストームです","フロストダイバーです")) {
+			switch(select("It is Lightning Bolt", "It is Firebolt", "It is Thunderstorm", "It is Frost Diver")) {
 			case 1:
-				mes "[ルシウス=ケルソス]";
-				mes "正解。水属性には風属性の";
-				mes "魔法であるライトニングボルトが効く。";
-				mes "詠唱に反応するモンスター達には";
-				mes "注意しなければならないが。";
+				mes "[Lucius=Kelsos]";
+				mes "Correct. Lightning Bolt, which is a wind magic, works against the water attribute." ;
+				mes "You have to Attention the monsters that respond to the chanting, though." ;
 				break;
 			case 2:
-				mes "[ルシウス=ケルソス]";
-				mes "川の中で焚き火でもするのか。";
-				mes "効くわけないだろうが！";
-				mes "魚貝類は大部分が水属性だから";
-				mes "風属性の魔法がよく効くんだよ。";
+				mes "[Lucius-Kelsos]";
+				mes "You're going to have a bonfire in the river." ;
+				mes "It won't work!" ;
+				mes "Fish and shellfish are mostly water-based, so wind-based magic works well." ;
 				break;
 			case 3:
-				mes "[ルシウス=ケルソス]";
-				mes "サンダーストームでも大丈夫だ。";
-				mes "風属性魔法だからな。";
-				mes "ただ、攻撃地点には気を";
-				mes "つけなければならない。";
+				mes "[Lucius-Kelsos]";
+				mes "Thunderstorm will work fine." ;
+				mes "It's a wind magic." ;
+				mes "But you have to be careful about the point of attack." ;
 				break;
 			case 4:
-				mes "[ルシウス=ケルソス]";
-				mes "……";
-				mes "水が好きなやつらに水を与えて";
-				mes "どうする!!!!";
-				mes "水属性に水属性攻撃をしても";
-				mes "ほとんど意味無し。";
+				mes "[Lucius-Kelsos]";
+				mes "......" ;
+				mes "What's the point of giving water to those who like water !!!! A water attack on a water-loving person is almost meaningless." ;
 				break;
 			}
-			mes "[ルシウス=ケルソス]";
-			mes "ところがペノメナやヒトデのような";
-			mes "モンスターは魚貝類だが属性が";
-			mes "違うので気をつけなければならない。";
+			mes "[Lucius-Kelsos]";
+			mes "By the way, monsters like penomena and starfish are fish and shellfish, but they have different attributes, so you have to be careful." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "それでは、次は昆虫について";
-			mes "勉強してみようか。";
-			mes "では……";
+			mes "[Lucius=Kelsos]";
+			mes "So, let's study insects next." ;
+			mes "Then ......." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "次はこれらを集めてこい。";
+			mes "[Lucius-Kelsos]";
+			mes "Go collect these next." ;
 			set RESEARCH_SA,rand(4,7);
 			switch(RESEARCH_SA) {
 			case 4:
-				mes "^3355FFくもの糸^000000 5個";
-				mes "^3355FFかたい皮^000000 5個";
-				mes "^3355FF虫の觸角^000000 5個";
+				mes "^3355FF spider thread^000000 5 ^3355FF hard skin^000000 5 ^3355FF insect catalyst angle^000000 5";
 				break;
 			case 5:
-				mes "^3355FF硬い角^000000 5個";
-				mes "^3355FFカタシムリの皮^000000 5個";
-				mes "^3355FF蛾の羽粉^000000 5個";
+				mes "^3355FF hard horn^000000 5 pieces^3355FF catatheli skin^000000 5 pieces^3355FF moth wing powder^000000 5 pieces";
 				break;
 			case 6:
-				mes "^3355FFかまきりの手^000000 5個";
-				mes "^3355FF蟲の皮^000000 5個";
-				mes "^3355FF華麗な蟲の皮^000000 5個";
+				mes "^3355FF kamakiri hands^000000 5 ^3355FF mushimuri skins^000000 5 ^3355FF brilliant mushimuri skins^000000 5";
 				break;
 			case 7:
-				mes "^3355FFくもの糸^000000 5個";
-				mes "^3355FFかまきりの手^000000 5個";
-				mes "^3355FFけっこうかたい皮^000000 5個";
+				mes "^3355FF spider thread^000000 5 pieces^3355FF kamakiri hands^000000 5 pieces^3355FF very tough skin^000000 5 pieces";
 				break;
 			}
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "全て揃ったら話を続ける。";
-			mes "じゃ、行ってこい。";
+			mes "[Lucius=Kelsos]";
+			mes "When we have everything, we will continue the story." ;
+			mes "Well, go on then." ;
 			close;
 		case 4:
 		case 5:
 		case 6:
 		case 7:
 			switch(RESEARCH_SA) {
-				case 4: setarray '@need,1025,935,928;  break;
-				case 5: setarray '@need,947,946,1057;  break;
-				case 6: setarray '@need,1031,955,1013; break;
-				case 7: setarray '@need,1025,1031,943; break;
+				case 4: setarray '@need,1025,935,928; break
+				case 5: setarray '@need,947,946,1057; break
+				case 6: setarray '@need,1031,955,1013; break
+				case 7: setarray '@need,1025,1031,943; break
 			}
 			for(set '@i,0; '@i<3; set '@i,'@i+1) {
 				if(countitem('@need['@i]) < 5) {
-					mes "[ルシウス=ケルソス]";
-					mes "何だ、聞いた品を忘れただと？";
-					mes "まあいい、もう一度言うぞ。";
+					mes "[Lucius=Kelsos]";
+					mes "What, you forgot the item you asked for?" ;
+					mes "Well, okay, I'll say it again." ;
 					next;
 					for(set '@i,0; '@i<3; set '@i,'@i+1) {
-						mes "^3355FFFD" +getitemname('@need['@i])+ "^000000 5個";
+						mes "^3355FFFD" +getitemname('@need['@i])+ "^000000 5 pieces";
 					}
 					close;
 				}
 			}
-			mes "[ルシウス=ケルソス]";
-			mes "よし、よく集めてきた。";
-			mes "観察も怠らなかっただろうな。";
-			mes "まぁこれくらいならそんなに";
-			mes "大変でもなかっただろう。";
+			mes "[Lucius=Kelsos]";
+			mes "Okay, I've collected well." ;
+			mes "I'm sure you didn't neglect to observe." ;
+			mes "Well, this wouldn't have been so hard." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "昆虫は案外色々な属性を";
-			mes "持っているから魔法を使う前に";
-			mes "もう一度考えておかなければ";
-			mes "ならないだろう。";
+			mes "[Lucius-Kelsos]";
+			mes "Insects have a lot more attributes than you might think, so you'll have to think again before using magic." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "特に、シーフのハイディングや";
-			mes "アサシンのクローキングも";
-			mes "やつらには効かないという点も";
-			mes "注目すべき点だ。";
+			mes "[Lucius-Kelsos]";
+			mes "It's also worth noting, among other things, that Thief's Hiding and Assassin's Cloaking don't work on them either." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "中には集団行動する昆虫もいる。";
-			mes "ボスクラスの昆虫が、さながら";
-			mes "兵隊を従えるかのごとくな。";
+			mes "[Lucius-Kelsos]";
+			mes "Some insects act in groups." ;
+			mes "As if the boss-class insects were following the soldiers, as it were." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "女王蟻のマヤーとか……";
-			mes "女王蜂のミストレス、";
-			mes "盗蟲の親分－黄金蟲……";
+			mes "[Lucius-Kelsos]";
+			mes "Like the queen ant Maya or ......." ;
+			mes "Mistress of the queen bees, master of the thieving bugs - the golden bugs ......" ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "こうしたボスクラスのやつは";
-			mes "一人で対峙した場合死を覚悟";
-			mes "しなければならない。";
-			mes "こいつらの棲み処を探索する";
-			mes "場合は、仲間を連れて行くのが";
-			mes "ベストだろう。";
+			mes "[Lucius-Kelsos]";
+			mes "These boss-class ones must be prepared to die if confronted alone." ;
+			mes "If you want to explore the habitat of these guys, it would be best to take a companion with you." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "さて、話はこれくらいにして";
-			mes "そろそろ論文を書かないとな。";
-			mes "形式的にも必要だからさっさと";
-			mes "やってしまおう。";
-			mes "その前に、以下のものを用意して";
-			mes "きてくれ。";
+			mes "[Lucius-Kelsos]";
+			mes "Well, that's enough talk, it's time for me to write my paper." ;
+			mes "It needs to be done formally, so let's get on with it." ;
+			mes "Before we do that, go ahead and prepare the following." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Lucius-Kelsos]";
+			mes "^3355FF bird feathers^000000 1 for writing instruments ^3355FF beast skins^000000 1 needed for binding ^3355FF wood shavings^000000 1 for ink ^3355FF India ink^000000 1 for ink ^3355FF empty bottles^000000 1 ";
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "集まったらまたここに来てくれ。";
-			mes "もう少しだ、頑張ってな。";
+			mes "[Lucius=Kelsos]";
+			mes "Come back here when you have collected." ;
+			mes "You're almost there, keep up the good work." ;
 			set RESEARCH_SA,0;
 			set CHANGE_SA,12;
 			close;
 		}
 	case 12:
 		if(countitem(916) < 1 || countitem(919) < 1 || countitem(1019) < 1 || countitem(1024) < 1 || countitem(713) < 1) {
-			mes "[ルシウス=ケルソス]";
-			mes "なんだ、用意できていないじゃないか。";
-			mes "もう一度言う……";
+			mes "[Lucius=Kelsos]";
+			mes "What, you're not ready!" ;
+			mes "I'll say it again: ......." ;
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Lucius-Kelsos]";
+			mes "used for writing ^3355FF bird feathers^000000 1 for writing ^3355FF beast skins^000000 1 needed for binding ^3355FF wood shavings^000000 1 for ink ^3355FF black ink^000000 1 for ink ^3355FF empty bottle^000000 1 for ink ";
 			next;
-			mes "[ルシウス=ケルソス]";
-			mes "これまで頑張ってきたんだから";
-			mes "それくらい何でもないだろう？";
-			mes "ほら、早く用意してきなさい。";
+			mes "[Lucius=Kelsos]";
+			mes "You've worked so hard for this, that's nothing, right?" ;
+			mes "Come on, go get ready." ;
 			close;
 		}
 		delitem 916,1;
@@ -2533,355 +1997,308 @@ yuno_in03.gat,32,102,1	script	生物学教授	755,{
 		delitem 1019,1;
 		delitem 1024,1;
 		delitem 713,1;
-		mes "[ルシウス=ケルソス]";
-		mes "よし、よく集めたな。";
+		mes "[Lucius-Kelsos]";
+		mes "Okay, well collected." ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "あえて君が自分で書いても良いが";
-		mes "ここに例を置くから参考にしなさい。";
+		mes "[Lucius=Kelsos]";
+		mes "I dare you to write it yourself, but I'll put an example here for your reference." ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "いいだろう？";
-		mes "自分の体で体験してきたことが";
-		mes "もう十分に意味のあることなんだ。";
-		mes "じゃ、できたら見せてもらおう。";
+		mes "[Lucius=Kelsos]";
+		mes "All right?" ;
+		mes "What I've experienced in my own body is already meaningful enough." ;
+		mes "Then let's see it when it's done." ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		menu "モンスター達は種族によって",-;
-		mes "モンスター達は種族によって";
-		menu "様々な属性を持っている",-;
-		mes "様々な属性を持っている。";
-		menu "モンスター達の属性をあらかじめ把握し",-;
-		mes "モンスター達の属性をあらかじめ把握し";
-		menu "的確に魔法を使わなければならない",-;
-		mes "的確に魔法を使わなければならない。";
-		menu "特に注意すべきモンスターは",-;
-		mes "特に注意すべきモンスターは";
-		menu "聖属性と闇属性のモンスターである",-;
-		mes "聖属性と闇属性のモンスターである。";
+		menu "Monsters by race",-;
+		mes "Monsters are species-specific";
+		menu "They have various attributes.",-;
+		mes "They have various attributes." ;
+		menu "Know the attributes of monsters in advance.",-; mes "The attributes of monsters are known in advance.",-; mes "The attributes of monsters are known in advance.
+		mes "Knowing the attributes of monsters in advance"; menu "Knowing the attributes of monsters in advance"; menu "Knowing the attributes of monsters in advance
+		menu "You must use magic precisely.",-; mes "You must use magic precisely."; mes "You must use magic precisely."; mes "You must use magic precisely;
+		mes "You must use magic precisely." ;
+		menu "The monsters you should especially Attention",-; mes "The monsters you should especially Attention",-;
+		mes "The monsters that should be especially Attention";
+		menu "The monsters of the holy and dark attributes are",-; mes "The monsters of the holy and dark attributes are",-;
+		mes "The monsters that should be Attended to are monsters with the holy and dark attributes." ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "うむ、おつかれさん！";
-		mes "これは絶対失くすなよ！";
+		mes "[Lucius-Kelsos]";
+		mes "Mm, good night!" ;
+		mes "Don't lose this one!" ;
 		set CHANGE_SA,15;
 		getitem 1550,1;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "これを学長に読んでもらって";
-		mes "卒業が決まる。";
-		mes "よくここまで頑張ったな。";
+		mes "[Lucius-Kelsos]";
+		mes "This will be read by the president of the university to determine graduation." ;
+		mes "You've done well so far." ;
 		close;
 	case 15:
-		mes "[ルシウス=ケルソス]";
-		mes "何してるんだ？論文を学長に";
-		mes "見せるよう言ったはずだ。";
-		mes "ほら、こんなところで油売ってないで。";
+		mes "[Lucius-Kelsos]";
+		mes "What are you doing? I told you to show your paper to the Rector." ;
+		mes "Look, don't sell your oil here." ;
 		close;
 	default:
-		mes "[ルシウス=ケルソス]";
-		mes "う～頭が痛い……";
-		mes "準備する物が多すぎるんだよ……";
-		mes "何だ！こっちは忙しくてたまらん！";
+		mes "[Lucius-Kelsos]";
+		mes "Ugh, my head hurts ......." ;
+		mes "There's too much stuff to prepare ......" ;
+		mes "What! I'm too busy over here!" ;
 		next;
-		mes "[ルシウス=ケルソス]";
-		mes "見学なら勝手に見ていきなさい！";
-		mes "ただでさえ頭が痛いというのに……";
-		mes "まったく……（ブツブツ）";
+		mes "[Lucius Kelsos]";
+		mes "If you want to visit, go ahead!" ;
+		mes "I've got a headache for nothing. ......" ;
+		mes "I've got a headache. ...... (mumble)";
 		close;
 	}
 }
 
 //==========================================
-// 三次試験（魔法研究）
+// Tertiary (magical research)
 //------------------------------------------
-yuno_in03.gat,244,31,3	script	物理学教授	120,{
+yuno_in03.gat,244,31,3 script Physics Professor 120,{
 	if(Job == Job_Sage) {
-		mes "[エベシ=ジョルダ]";
-		mes "ヒョホホ、こんにちは。";
-		mes "何の用かな？";
-		mes "……おう、セージじゃないの～！";
-		mes "会えて嬉しいねぇ～";
+		mes "[Ebesi=Jorda]";
+		mes "Hyohoho, hello." ;
+		mes "What can I do for you?" ;
+		mes "...... Oh, I'm not Sage~!" ;
+		mes "Nice to see you~!";
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "それにしても、こんなところで";
-		mes "暇つぶしかい～？";
-		mes "ま、魔力に溺れた連中よりゃ";
-		mes "マシだけどね～ヒョホホ。";
+		mes "[Ebesi=Jorda]";
+		mes "And yet, you're killing time here~?" ;
+		mes "Well, it's better than those who are drowned in magic power~"; mes "[Ebeshi-Jorda]"; mes "[Ebeshi-Jorda]" ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "ナニナニ、たまには学び舎に";
-		mes "帰りたくなる？";
-		mes "そんなこと言わないで、";
-		mes "ほらほら外に出ようよ、ヒョホホ……";
+		mes "[Ebesi=Jorda]";
+		mes "Nah nah nah, don't you want to go back to the study house sometimes?" ;
+		mes "Don't say that, come on, come on, let's go outside, hyohoho ......." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[エベシ=ジョルダ]";
-		mes "ナニナニ、かわいいノービスくん";
-		mes "じゃないの～";
+		mes "[Ebesi = Jorda]";
+		mes "Nah nah nah nah nah, not you cute Novice-kun~";
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "ここには遊びに来たの？";
-		mes "キャンディでも欲しいの？";
-		mes "ん～っと……";
+		mes "[Ebesi=Jorda]";
+		mes "Did you come here to play?" ;
+		mes "Do you want some candy?" ;
+		mes "Hmmm... ......." ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "ヒョホホ、キャンディ無いや……";
-		mes "サンタポリンでも探してごらん、";
-		mes "ヒョホホ……";
+		mes "[Ebesi=Jorda]";
+		mes "Hyohoho, I don't have any candy. ......" ;
+		mes "Look for me at Santa Poring, hyo ho ......" ;
 		close;
 	}
-	if(Job != Job_Magician) {
-		mes "[エベシ=ジョルダ]";
-		mes "ん？ん？ナニナニ？";
+	if(Job ! = Job_Magician) {
+		mes "[Ebesi = Jorda]";
+		mes "hmm? Hmm? Nanny nanny?" ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "ここに見物かな？";
-		mes "ここにはあんまり見るものが";
-		mes "無いと思うよ。";
+		mes "[Ebesi=Jorda]";
+		mes "Are you here to watch?" ;
+		mes "I don't think there's much to see here." ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "めずらしいって？";
-		mes "あらそ～ヒョホホホホ";
+		mes "[Ebesi=Jorda]";
+		mes "Rare?" ;
+		mes "Oh my goodness - hyohohohoho";
 		close;
 	}
 	switch(CHANGE_SA) {
 	case 13:
 		switch(RESEARCH_SA) {
 		case 0:
-			mes "[エベシ=ジョルダ]";
-			mes "こんにちは、会えて嬉しいよ。";
-			mes "久しぶりに来た学生だし～";
+			mes "[Ebesi=Jorda]";
+			mes "Hello, nice to see you." ;
+			mes "I'm a student who hasn't been here in a while -";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "ヒョホホ、私がキミを教える教授。";
-			mes "どう？嬉しいでしょう？ヒョホホホ！";
+			mes "[Ebesh-Jorda]";
+			mes "Hyohoho, I'm the professor who teaches you." ;
+			mes "How do you like it? Aren't you happy? Hyohoho!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "で、講義の前にちょっと";
-			mes "頼まれてくれない～？";
-			mes "いやいや、難しいことじゃないから。";
+			mes "[Ebesi=Jorda]";
+			mes "So, can you do me a favor before the lecture~?" ;
+			mes "No, no, it's not hard." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "^3355FF石^000000 30個だけ持って来て。";
-			mes "それだけ。あまり難しくないでしょ？";
+			mes "[Ebesi=Jorda]";
+			mes "Bring me only ^3355FF stones^000000 30." ;
+			mes "That's it. Not too hard, right?" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "石を拾うのが大変だったら";
-			mes "友達のシーフにでも頼んでごらん。";
-			mes "じゃ、30個待ってるよ～";
+			mes "[Ebesi=Jorda]";
+			mes "If it's too hard to pick up the stones, ask your friend Thief to do it for you." ;
+			mes "Then I'll wait for 30 of them!";
 			set RESEARCH_SA,1;
 			close;
 		case 1:
 			if(countitem(7049) < 30) {
-				mes "[エベシ=ジョルダ]";
-				mes "なにするの？";
-				mes "私に悪戯しに来たの？";
-				mes "ほらほら遊んでないで行きなさい～！";
+				mes "[Ebesi=Jorda]";
+				mes "What are you doing?" ;
+				mes "Are you here to play a prank on me?" ;
+				mes "Come on, come on, stop playing with me and go!" ;
 				next;
-				mes "[エベシ=ジョルダ]";
-				mes "^3355FF石^000000 30個集めてきてって";
-				mes "言ったじゃないの！";
-				mes "道に転がってる石なんか簡単に";
-				mes "拾えるでしょ～？";
+				mes "[Ebesi=Jorda]";
+				mes "I told you to collect ^3355FF stones^000000 30!" ;
+				mes "You can easily pick up stones lying on the road, can't you~?" ;
 				close;
 			}
-			mes "[エベシ=ジョルダ]";
-			mes "やぁ、よく集めてきてくれた！";
-			mes "ちょっとまってねん～";
+			mes "[Ebesi=Jorda]";
+			mes "Hey, you did a good job collecting them!" ;
+			mes "Wait a minute~";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "アブラカタブラ!!";
+			mes "[Ebeshi-Jorda]"; mes "[Ebeshi-Jorda]
+			mes "Abracadabra!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "ア～ブラカタブラ!!";
+			mes "[Ebesi=Jorda]"; mes "[Ebesi=Jorda]
+			mes "Abracadabra!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "アブラカ～タブラ!!";
+			mes "[Ebesi=Jorda]"; mes "[Ebesi=Jorda]
+			mes "Abraca~tabla!" ;
 			next;
 			delitem 7049,30;
-			mes "[エベシ=ジョルダ]";
-			mes "ほら、こんなただの石から";
-			mes "3個の良い石ができちゃった！";
+			mes "[Ebesh-Jorda]";
+			mes "See, I made three good stones out of these mere stones!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "満足満足。";
-			mes "ね？嬉しいでしょ？ヒョホホ！";
+			mes "[Ebeshi-Jorda]";
+			mes "Satisfied and satisfied." ;
+			mes "Right? You're happy, aren't you? Hyohoho!" ;
 			next;
 			set RESEARCH_SA,2;
 			getitem 991,1;
 			getitem 993,1;
 			getitem 992,1;
-			mes "[エベシ=ジョルダ]";
-			mes "ほら、属性原石あげる。";
-			mes "それでね、それでね";
-			mes "まだまだ最後まで話を聞いて。";
+			mes "[Ebesi=Jorda]";
+			mes "Here, I give you the attribute gem." ;
+			mes "And so, and so, still hear me out." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "以下の矢を作ってきて。";
-			mes "^3355FF水晶の矢^000000 50個";
-			mes "^3355FF岩石の矢^000000 50個";
-			mes "^3355FF風の矢^000000 50個";
+			mes "[Ebesi=Jorda]";
+			mes "Go make the following arrows." ;
+			mes "^3355FF crystal arrows^000000 50 ^3355FF rock arrows^000000 50 ^3355FF wind arrows^000000 50";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "アーチャーの友達でも居れば";
-			mes "作ってくれるでしょ。";
-			mes "それじゃよろしく！ヒョホホ～";
+			mes "[Ebesi=Jorda]";
+			mes "If you're a friend of Archer's, he'll make it for you." ;
+			mes "Nice to meet you then! Hyohoho~";
 			close;
 		case 2:
 			if(countitem(1754) < 50 || countitem(1756) < 50 || countitem(1755) < 50) {
-				mes "[エベシ=ジョルダ]";
-				mes "ナニナニ？";
-				mes "さっき渡した属性原石はどうしたの？";
-				mes "まさか売ったんじゃ……";
+				mes "[Ebesi=Jorda]";
+				mes "Nani nani?" ;
+				mes "What happened to the attribute gem I just gave you?" ;
+				mes "I didn't think you sold it. ......" ;
 				next;
-				mes "[エベシ=ジョルダ]";
-				mes "^3355FF水晶の矢^000000 50個";
-				mes "^3355FF岩石の矢^000000 50個";
-				mes "^3355FF風の矢^000000 50個";
-				mes "アーチャーの友達に頼んで";
-				mes "作ってもらいな～ヒョホホ";
+				mes "[Ebesi=Jorda]";
+				mes "^3355FF crystal arrows^000000 50 ^3355FF rock arrows^000000 50 ^3355FF wind arrows^000000 50 Ask Archer's friend to make them for you ~hyohoho";
 				close;
 			}
-			mes "[エベシ=ジョルダ]";
-			mes "やぁ、よく持ってきたね。";
-			mes "それじゃ、講義を始めよっか。";
+			mes "[Ebesi=Jorda]";
+			mes "Hey, you brought it well." ;
+			mes "Well, let's get on with the lecture." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "読んであげるから良く聞いて";
-			mes "大事なところに線をひくように。";
+			mes "[Ebesi=Jorda]";
+			mes "I'm going to read to you, so listen carefully and cross out the important parts." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "水属性魔法は火属性に強い。";
-			mes "ちょうど火に水をかけると思えば良い。";
-			mes "簡単でしょ？";
+			mes "[Ebesh-Jorda]";
+			mes "Water magic is strong against fire magic." ;
+			mes "Just think of it as water on fire." ;
+			mes "It's easy, right?" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "風属性魔法は水属性に強い。";
-			mes "湖に雷が落ちたらどうなるかな？";
-			mes "ヒョホホ！";
+			mes "[Ebesi=Jorda]";
+			mes "Wind magic is strong against water magic." ;
+			mes "What happens when lightning strikes a lake?" ;
+			mes "Hyohoho!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "地属性魔法は風属性に強い。";
-			mes "風を防ごうとしたら土で家を";
-			mes "建てるでしょ？ソレソレ。";
+			mes "[Ebesi=Jorda]";
+			mes "Earth magic is strong against wind magic." ;
+			mes "If you wanted to block the wind, you'd build a house out of dirt, right? That's it." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "火属性魔法は地属性に強い。";
-			mes "火事が起こったら木が燃えちゃう";
-			mes "でしょ？それと同じ……";
+			mes "[Ebesi=Jorda]";
+			mes "Fire magic is strong against earth magic." ;
+			mes "If a fire breaks out, the trees will burn, right? It's the same ......." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "おろ、もうこんな時間か。";
-			mes "それじゃ～続きは次の時間にしよう。";
+			mes "[Ebesi=Jorda]";
+			mes "Oro, is it that late already?" ;
+			mes "Well then - let's continue next time." ;
 			next;
 			delitem 1754,50;
 			delitem 1756,50;
 			delitem 1755,50;
-			mes "[エベシ=ジョルダ]";
-			mes "次の時間までに";
-			mes "^3355FF聖水^000000 を1個だけ用意して";
-			mes "おいてほしい。";
-			mes "友達に聖職者がいなかったら";
-			mes "一人で作るしかないね。";
+			mes "[Ebesi=Jorda]";
+			mes "I want only one ^3355FF holy water^000000 to be ready by next time." ;
+			mes "If my friend doesn't have a clergyman, I'll have to make it on my own." ;
 			set RESEARCH_SA,3;
 			close;
 		case 3:
 			if(countitem(523) < 1) {
-				mes "[エベシ=ジョルダ]";
-				mes "ナニしてるの！";
-				mes "ど忘れしちゃだめじゃない～";
+				mes "[Ebesi=Jorda]";
+				mes "What are you doing!" ;
+				mes "Don't forget!"; mes "Don't forget!"; mes "Don't forget!"; mes "Don't forget!
 				next;
-				mes "[エベシ=ジョルダ]";
-				mes "^3355FF聖水^000000 1個";
-				mes "アコライトやプリーストの友達に";
-				mes "頼んでみなさい。ヒョホホ";
+				mes "[Ebesh-Jorda]";
+				mes "^3355FF holy water ^000000 Ask your friends at Acolyte and Priest for one. Hyohoho";
 				close;
 			}
-			mes "[エベシ=ジョルダ]";
-			mes "よーしよっし！";
-			mes "よく持ってきた！";
-			mes "さてさて、講義を続けないとね。";
+			mes "[Ebeshi=Jorda]";
+			mes "Yo shiyo shi!" ;
+			mes "Well brought!" ;
+			mes "Well, well, well, I must continue my lecture." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "今度も読んであげるからよく聴いて";
-			mes "メモするんだよ。";
+			mes "[Ebesi=Jorda]";
+			mes "I'll read to you again this time, so listen carefully and take notes." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "水属性は風属性魔法に弱い！";
-			mes "凍った時、雷が落ちたら痛かった";
-			mes "だろう？ヒョホホ！";
+			mes "[Ebeshi-Jorda]"; mes "[Ebeshi-Jorda]
+			mes "Water attribute is weak against wind magic!" ;
+			mes "Wouldn't it have hurt if lightning struck you when you were frozen? Hyohoho!" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "風属性は地属性魔法に弱い！";
-			mes "飛び回ってる子が転んだら";
-			mes "大きなケガをするだろう？";
-			mes "ヒョ……";
+			mes "[Ebesi=Jorda]";
+			mes "Wind attribute is weak against earth magic!" ;
+			mes "If a little girl who is flying around falls down, she will get a big injury, right?" ;
+			mes "hyo_......" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "地属性は火属性魔法に弱い！";
-			mes "地から生える木に火がついたら";
-			mes "燃えて無くなるだろう？";
+			mes "[Ebesi=Jorda]";
+			mes "Earth attributes are weak against fire magic!" ;
+			mes "If a tree that grows out of the earth were to catch fire, it would burn and disappear, wouldn't it?" ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "火属性は水属性魔法に弱い！";
-			mes "熱いものを冷やすのはやっぱり";
-			mes "水だからね。";
+			mes "[Ebesi=Jorda]";
+			mes "The fire attribute is weak against water magic!" ;
+			mes "It's still water that cools down hot things." ;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "よしよし、講義はこれにて";
-			mes "終了～～～～～！";
-			mes "よくわかったでしょ？";
+			mes "[Ebesi=Jorda]";
+			mes "Alright, that's it for the lecture: ～～～～～!" ;
+			mes "Did you understand it well?" ;
 			next;
 			delitem 523,1;
-			mes "[エベシ=ジョルダ]";
-			mes "うん、あとは論文ができれば完璧。";
-			mes "やっぱり私の講義は最高ね。";
-			mes "ヒョホホホホホ！";
+			mes "[Ebesi=Jorda]";
+			mes "Yes, now we just need to get the paper done and it will be perfect." ;
+			mes "I knew my lectures were the best." ;
+			mes "Hyo hoo hoo hoo!" ;
 			set RESEARCH_SA,0;
 			set CHANGE_SA,14;
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "じゃ、早速論文を書く準備をしよう。";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Ebesi=Jorda]";
+			mes "Then let's get ready to write the paper as soon as possible." ;
+			mes "^3355FF bird feathers^000000 1 for writing instruments ^3355FF beast skins^000000 1 needed for binding ^3355FF wood shavings^000000 1 for ink ^3355FF India ink^000000 1 for ink ^3355FF empty bottle^000000 1 ";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "これだけ準備するように。";
-			mes "待ってるよ。";
+			mes "[Ebesi=Jorda]";
+			mes "Prepare this much." ;
+			mes "I'll be waiting." ;
 			close;
 		}
 	case 14:
 		if(countitem(916) < 1 || countitem(919) < 1 || countitem(1019) < 1 || countitem(1024) < 1 || countitem(713) < 1) {
-			mes "[エベシ=ジョルダ]";
-			mes "ナニナニ？";
-			mes "ど忘れはいけないな～～";
+			mes "[Ebesi=Jorda]";
+			mes "Nani nani?" ;
+			mes "Don't forget~"; mes "Don't forget~";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "筆記具に使う ^3355FF鳥の羽毛^000000 1個";
-			mes "文字を入れる ^3355FF獣の皮^000000 1個";
-			mes "製本に必要な ^3355FF木屑^000000 1個";
-			mes "インクに使う ^3355FF墨汁^000000 1個";
-			mes "墨汁を入れる ^3355FF空きビン^000000 1個";
+			mes "[Ebesi=Jorda]"; mes "[Ebesi=Jorda]
+			mes "^3355FF bird feathers^000000 1 for writing ^3355FF beast skins^000000 1 needed for bookbinding ^3355FF wood shavings^000000 1 for ink ^3355FF black ink^000000 1 for ink ^3355FF empty bottle^000000 ";
 			next;
-			mes "[エベシ=ジョルダ]";
-			mes "準備くらい、一人でできちゃうでしょ？";
-			mes "手伝ってもらってもいいけどね～";
-			mes "じゃ、待ってるから！";
+			mes "[Ebesi=Jorda]";
+			mes "You can at least do the preparation by yourself, right?" ;
+			mes "I don't mind if you help me - I'll be waiting for you then!" ;
 			close;
 		}
 		delitem 916,1;
@@ -2889,93 +2306,88 @@ yuno_in03.gat,244,31,3	script	物理学教授	120,{
 		delitem 1019,1;
 		delitem 1024,1;
 		delitem 713,1;
-		mes "[エベシ=ジョルダ]";
-		mes "うむ。";
-		mes "じゃぁ書いてみよう。";
-		mes "私が教えてあげたんだから";
-		mes "大丈夫だって～～ヒョホホ！";
+		mes "[Ebesi=Jorda]";
+		mes "Mm." ;
+		mes "Then let's write it." ;
+		mes "I taught it to you, so you'll be fine~~hyohoho!" ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		mes "属性魔法は4元素からなり、";
-		setarray '@word$,"水, 地, 火, 風に分けられる","地, 水, 火, 風で分けられる","水, 風, 地, 火に分けられる";
+		mes "Attribute magic consists of four elements,";
+		setarray '@word$, "Divided into water, earth, fire, and wind", "Divided by earth, water, fire, and wind", "Divided by water, wind, earth, and fire";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1]+ "。";
-		mes "それぞれの属性には特性があり、";
-		setarray '@word$,"風属性魔法は水属性に強く","水属性魔法は火属性に強く","火属性魔法は地属性に強く";
+		mes ""+'@word$[@menu-1]+ "."" ;
+		mes "Each attribute has a characteristic, ";
+		setarray '@word$, "Wind magic is strong against water", "Water magic is strong against fire", "Fire magic is strong against earth";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1];
-		setarray '@word$,"地属性魔法は風属性に強い。","風属性魔法は水属性に強い。","水属性魔法は火属性に強い。";
-		mes '@word$[@menu-1];
-		setarray '@word$,"しかし弱点も存在するから","属性武器も同様で","種族によって属性も様々であるから";
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "Earth attribute magic is strong against wind attribute." mes ""+'@word$[@menu-1]; setarray '@word$, "Wind magic is strong against water magic."" , "Water magic is strong against fire magic." ;
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "But because weaknesses also exist", "the same applies to attribute weapons", "because different races have different attributes";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1];
-		setarray '@word$,"自分の能力を把握する必要がある","場所によって属性を変えたほうが良い","赤ポーションは苺味という噂だ";
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "You need to figure out your abilities", "You should change your attributes depending on your location", "Rumor has it that red potions taste like strawberries";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1]+ "。";
+		mes ""+'@word$[@menu-1]+ "."" ;
 		next;
-		setarray '@word$,"一番可愛い娘はプロンテラのエイミーで","赤ポーションはポリンから作ると言うが","魔法の深みは人智を超え";
+		setarray '@word$, "The prettiest girl is Amy of Prontera", "They say red potions are made from Poring", "The depths of magic are beyond human knowledge";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1];
-		setarray '@word$,"モロクの商人のお嬢さんもかわいい","どうして苺味がするのかわからない","むやみに魔力に頼ると危険だ";
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "The merchant lady in Morroc is cute too.", "I don't know why it tastes like strawberry.", "It's dangerous to rely on magic unnecessarily."
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1]+ "。";
-		setarray '@word$,"私にウサギのヘアバンドを与えたら","それでは白ポーションの味は","適切な魔法の使用と休憩は";
+		mes ""+'@word$[@menu-1]+ "."" ;
+		setarray '@word$, "If you give me a rabbit hairband", "Then the white potion tastes", "The proper magic use and rest";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1];
-		setarray '@word$,"喜びを与えてくれる","想像しにくい","安全な戦闘を保障してくれる";
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "gives me pleasure", "hard to imagine", "ensures safe combat";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1]+ "。";
-		setarray '@word$,"ウサギのヘアバンドはアコライトに合い","ハラハラする感じが好きで","他の職業とパーティを結び";
+		mes ""+'@word$[@menu-1]+ "."" ;
+		setarray '@word$, "Rabbit hairbands fit Acolyte", "I like the harried feeling", "Tie the party together with other professions";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1];
-		setarray '@word$,"ナイトにも合うのか本当に知りたい","体力が底を尽きかけても飲めない","それで戦闘に望むことが望ましい";
+		mes ""+'@word$[@menu-1];
+		setarray '@word$, "I really want to know if it's good for Knight", "I can't drink it if I'm running out of energy", "I prefer to hope for a battle with it";
 		set @menu,select('@word$[0],'@word$[1],'@word$[2]);
-		mes '@word$[@menu-1]+ "。";
+		mes ""+'@word$[@menu-1]+ "."" ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "………………";
+		mes ".................." ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "ほほう～";
-		mes "なかなかセンスあるじゃない～";
-		mes "ほら、できたね。ヒョホホ";
+		mes "[Ebesi=Jorda]";
+		mes "Hohoho - that's pretty tasteful - there, you've done it. Hyohoho";
 		set CHANGE_SA,15;
 		getitem 1550,1;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "それを学長に見せようよ。";
-		mes "そうしたらキミも卒業だ！";
-		mes "ヒョホ～";
+		mes "[Ebesi=Jorda]";
+		mes "Let's show that to the rector." ;
+		mes "Then you'll graduate too!" ;
+		mes "Hyoho~";
 		close;
 	case 15:
-		mes "[エベシ=ジョルダ]";
-		mes "なにしてるの？";
-		mes "早く行かなきゃだめじゃな～い！";
+		mes "[Ebesi=Jorda]";
+		mes "What are you doing?" ;
+		mes "You have to go quickly!" ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "忘れ物しちゃうよ？";
-		mes "手遅れになるまえにササっと";
-		mes "卒業しちゃっておいで！";
+		mes "[Ebesi=Jorda]";
+		mes "You'll forget something, won't you?" ;
+		mes "Go ahead and graduate quickly before it's too late!" ;
 		close;
 	default:
-		mes "[エベシ=ジョルダ]";
-		mes "ナニナニ？";
+		mes "[Ebesi=Jorda]";
+		mes "What is it?" ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "見学に来たの？";
-		mes "ここはあまり見るもの無いよ？";
+		mes "[Ebesi=Jorda]";
+		mes "Did you come to visit?" ;
+		mes "Not much to see here, huh?" ;
 		next;
-		mes "[エベシ=ジョルダ]";
-		mes "まあ自由に見てらっしゃい～";
-		mes "ヒョホホホホ";
+		mes "[Ebesi=Jorda]";
+		mes "Well, feel free to look around - hyo hoo hoo hoo";
 		close;
 	}
 }

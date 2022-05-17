@@ -1,13 +1,13 @@
 //====================================================================
-// Ragnarok Online	New Novice Script	by refis
-//
-//　■ CHANGE_NV
-//	+0x1		ログイン
-//	+0x2		南行き止まり
-//	+0x4		北行き止まり
+// Ragnarok Online New Novice Script by refis
+// - CHANGE_NV
+// - CHANGE_NV
+// +0x1 Login
+// +0x2 South dead end
+// +0x4 North dead end
 //====================================================================
 
-new_1-1.gat,53,111,0	script	#start_jp	139,1,1,{
+new_1-1.gat,53,111,0 script #start_jp 139,1,1,{
 OnTouch:
 	if(CHANGE_NV & 0x1 == 0) {
 		cutin "start_jp.bmp",3;
@@ -16,444 +16,342 @@ OnTouch:
 	end;
 }
 
-new_1-1.gat,53,114,4	script	ファラ	727,{
-	mes "[ファラ]";
-	mes "ミッドガルド大陸へようこそ！";
-	mes "…あなたは別の世界から来た";
-	mes "冒険の使命を受けた方ね。";
-	mes "お名前は……";
-	mes strcharinfo(0);
-	mes "……いいお名前ね。";
+new_1-1.gat,53,114,4 script Farah 727,{
+	mes "[Farah]";
+	mes "Welcome to the continent of Midgard!" ;
+	mes "... I see you are from another world on a mission of adventure." ;
+	mes "Your name is ......." ;
+	mes ""+strcharinfo(0);
+	mes "...... Nice name." ;
 	next;
-	mes "[ファラ]";
-	mes "私はファラ。";
-	mes "こちらの世界にいらした方たちに";
-	mes "冒険の基礎を教える所を案内してるの。";
-	mes "うん。ふむふむ…";
-	mes "あなた、いい素質をもってるわ。";
+	mes "[Farah]";
+	mes "I'm Farah."
+	mes "I show people who come to our world around where we teach them the basics of adventure." ;
+	mes "Yeah. Mm-hmm..." ;
+	mes "You have good qualities." ;
 	next;
-	mes "[ファラ]";
-	mes "あなたほどの素質ある人であれば、";
-	mes "「冒険者アカデミー」で冒険の基礎を";
-	mes "勉強することで、すぐに立派な冒険者に";
-	mes "成長できると思うわ。";
+	mes "[Farah]";
+	mes "If you are as good a person as you are, I think you can quickly grow into a fine adventurer by studying the basics of adventure at the "Adventurer Academy"." ;
 	next;
-	mes "[ファラ]";
-	mes "それじゃ、早速「冒険者アカデミー」へ";
-	mes "あなたを案内しようと思うけど、";
-	mes "なにか聞きたいことはあるかしら？";
-	mes "簡単なことなら答えることができるわ。";
+	mes "[Farah]";
+	mes "Well then, I'll take you to the "Adventurer Academy" as soon as possible...is there anything you want to ask me?" ;
+	mes "I can answer some simple questions." ;
 	while(1) {
 		next;
-		switch(select("ここはどこ？","冒険者アカデミーって？","基本操作について教えて","すぐ冒険者アカデミーに移動する")) {
+		switch(select("Where am I?" , "What is the Adventurer Academy?" , "Tell me about the basic operations", "Go to the Adventurer Academy right away")) {
 		case 1:
-			mes "[ファラ]";
-			mes "ここはミッドガルド大陸。";
-			mes "ずっと平和な日々が続いていたけれど";
-			mes "このところ魔物が現れたり";
-			mes "各地で不可思議なことが起きていたり";
-			mes "なにか大きなことがおこりそうなの。";
+			mes "[Farah]";
+			mes "This is the continent of Midgard." ;
+			mes "It has been peaceful for a long time, but recently demons have appeared and strange things have been happening in many places, and something big is about to happen." ;
 			next;
-			mes "[ファラ]";
-			mes "そのことが広く知れ渡ったことで";
-			mes "たくさんの世界から冒険者がやってきて";
-			mes "この大陸で起こっていることを";
-			mes "いろいろと解明しているの。";
+			mes "[Farah]";
+			mes "The news has become widely known, and adventurers from many worlds have come to this continent to find out what is going on."; next; mes "[Farah]" ;
 			next;
-			mes "[ファラ]";
-			mes "あなたにも冒険者として";
-			mes "このミッドガルドで起こっている謎を";
-			mes "すこしずつ解明しながら、";
-			mes "冒険者として成長していってほしいわ。";
+			mes "[Farah]";
+			mes "I want you to grow as an adventurer, unraveling the mysteries of Midgard, little by little." ;
 			continue;
 		case 2:
-			mes "[ファラ]";
-			mes "この大陸を訪れた冒険者に";
-			mes "操作法や強くなる方法を教えてくれる所";
-			mes "それが「冒険者アカデミー」なの。";
+			mes "[Farah]";
+			mes "The Adventurer Academy is a place where adventurers who visit this continent are taught how to operate and become stronger." ;
 			next;
-			mes "[ファラ]";
-			mes "まずはアカデミーで、";
-			mes "冒険に必要な知識やテクニック";
-			mes "強くなる第一歩である「職業」について";
-			mes "教えてもらうといいわよ。";
+			mes "[Farah]";
+			mes "First, you should go to the Academy to learn about the knowledge and techniques necessary for adventuring, as well as the first step to becoming a strong adventurer: your profession." ;
 			continue;
 		case 3:
-			mes "[ファラ]";
-			mes "基本操作ね……。";
-			mes "まずは移動方法についてだけど、";
-			mes "移動する時は、カーソルで";
-			mes "移動したい場所を選び";
-			mes "クリックすれば、そこに移動するわ。";
+			mes "[Farah]";
+			mes "Basic operations. ......." ;
+			mes "First, let's talk about how to move. When you want to move, just select the place you want to move to with the cursor, click on it, and it will move you there." ;
 			next;
-			mes "[ファラ]";
-			mes "それから、お話したい人がいたら";
-			mes "その人にカーソルを当てて";
-			mes "フキダシが出てからクリックするの。";
-			mes "これはもうマスターしているわね。";
+			mes "[Farah]";
+			mes "Then, if you see someone you want to talk to, just hover over that person and click after the butterflies appear." ;
+			mes "You've mastered this already." ;
 			next;
-			mes "[ファラ]";
-			mes "他にも、アイテムを拾ったり、";
-			mes "モンスターを武器で攻撃する時などの";
-			mes "基本的な移動・アクションは";
-			mes "主にマウスを使って操作するの。";
-			mes "そこはしっかり覚えておいてね。";
+			mes "[Farah]";
+			mes "Other basic movements and actions, such as picking up items or attacking monsters with weapons, are mainly controlled with the mouse." ;
+			mes "Make sure you remember that part." ;
 			next;
-			mes "[ファラ]";
-			mes "私が教えられることはそのくらいかな。";
-			mes "もっと詳しい操作方法は";
-			mes "冒険者アカデミーで教えてくれるわ。";
+			mes "[Farah]";
+			mes "That's about all I can teach you." ;
+			mes "You can learn more about how to operate it at the Adventurer's Academy." ;
 			continue;
 		case 4:
 			break;
 		}
 		break;
 	}
-	mes "[ファラ]";
-	mes "冒険者アカデミーに着いたら";
-	mes "受付員のエーラさんを探してね。";
-	mes "彼女と話して入学手続きをすれば";
-	mes "色々な講習を受けられるわ。";
+	mes "[Farah]";
+	mes "When you get to the Adventurer's Academy, look for the receptionist, Ella." ;
+	mes "Talk to her and complete the enrollment process and you'll be able to take various courses." ;
 	next;
-	mes "[ファラ]";
-	mes "それじゃ、アカデミーへ送るわね。";
-	mes "あなたの活躍、期待してるわよ！";
+	mes "[Farah]";
+	mes "Then I'll send you to the academy." ;
+	mes "I'm excited to see what you can do!" ;
 	set CHANGE_NV,0;
 	savepoint "ac_cl_room.gat",44,32;
 	warp "ac_cl_room.gat",44,32;
 	end;
 }
 
-new_1-1.gat,51,105,0	script	#nv_s1	139,11,0,{
+new_1-1.gat,51,105,0 script #nv_s1 139,11,0,{
 OnTouch:
 	if(CHANGE_NV & 0x2 == 0) {
-		mes "-こっちは行き止まりのようだ-";
+		mes "-this one seems to be a dead end-";
 		emotion 0,"";
 		set CHANGE_NV,CHANGE_NV|0x2;
 		close;
 	}
 	end;
 }
-new_1-1.gat,48,77,0	script	#nv_s2	139,6,1,{
+new_1-1.gat,48,77,0 script #nv_s2 139,6,1,{
 OnTouch:
-	mes "-果てしなく広がる海が見える-";
-	mes "-潮の香りがする-";
+	mes "-I can see the endless sea--I can smell the tide--";
 	emotion 2,"";
 	close;
 }
-new_1-1.gat,57,124,0	script	#nv_n1	139,10,0,{
+new_1-1.gat,57,124,0 script #nv_n1 139,10,0,{
 OnTouch:
 	if(CHANGE_NV & 0x4 == 0) {
-		mes "-こっちは行き止まりのようだ-";
+		mes "-this one seems to be a dead end-";
 		emotion 0,"";
 		set CHANGE_NV,CHANGE_NV|0x4;
 		close;
 	}
 	end;
 }
-new_1-1.gat,67,154,0	script	#nv_n2	139,10,1,{
+new_1-1.gat,67,154,0 script #nv_n2 139,10,1,{
 OnTouch:
-	mes "-果てしなく広がる海が見える-";
-	mes "-穏やかな風が吹き抜けている-";
+	mes "-I can see the endless ocean--a gentle breeze is blowing through.";
 	emotion 2,"";
 	close;
 }
-new_1-1.gat,67,112,0	script	#nv_e	139,0,2,{
+new_1-1.gat,67,112,0 script #nv_e 139,0,2,{
 OnTouch:
 	warp "new_1-1.gat",53,111;
 	end;
 }
 
-new_1-2.gat,38,182,3	script	冒険者アカデミー案内係#	47,{
-	mes "[冒険者アカデミー案内係]";
-	mes "おや？";
-	mes "　";
-	mes "まだ修練場に残っている方が";
-	mes "いらっしゃったのですね。";
+new_1-2.gat,38,182,3 script Adventurer Academy Info Desk# 47,{
+	mes "[Adventurer Academy Info Desk]";
+	mes "Oh?" ;
+	mes " I see that some of you are still in the training center." ;
 	next;
-	mes "[冒険者アカデミー案内係]";
-	mes "私は、冒険者アカデミーに";
-	mes "案内を行っているものです。";
+	mes "[Adventurer Academy Info Desk]";
+	mes "I am the one who provides information to the Adventurer Academy." ;
 	next;
-	mes "[冒険者アカデミー案内係]";
-	mes "さっそくですが、";
-	mes "これから冒険していく上で";
-	mes "必要な知識を学ぶことができる場所";
-	mes "『冒険者アカデミー』へ";
-	mes "貴方をご案内させて頂きます。";
+	mes "[Adventurer Academy Info Desk]";
+	mes "I am here to guide you to the Adventurer Academy, a place where you can learn the knowledge you will need for your adventures." ;
 	next;
-	mes "[冒険者アカデミー案内係]";
-	mes "アカデミーに着いたら";
-	mes "まず、受付員のエーラさんを";
-	mes "探して下さい。";
-	mes "　";
-	mes "彼女に会えば、入学手続きを";
-	mes "行うことができます。";
+	mes "[Adventurer Academy Info Desk]";
+	mes "When you arrive at the academy, first look for the receptionist, Ms. Ella." ;
+	mes " Once you see her, you will be able to complete the enrollment process." ;
 	next;
-	mes "[冒険者アカデミー案内係]";
-	mes "お話は以上です。";
-	mes "それでは、アカデミーへ";
-	mes "案内させて頂きます。";
+	mes "[Adventurer Academy Info Desk]";
+	mes "That's all I have to say." ;
+	mes "Then I will take you to the Academy." ;
 	warp "ac_cl_room.gat",44,32;
 	end;
 }
 
-// 以下廃止
+// obsolete below.
 //====================================================================
-// Ragnarok Online	Novice Script	by yukito
-//
-//　■ CHANGE_NV
-//	+0x1		ファラのパターン１
-//	+0x2		ファラのパターン２
-//	+0x4		ファラ終了
-//	+0x8		受付要員終了
-//	+0x10		インターフェース教官終了
-//	+0x20		スキル教官終了
-//	+0x40		アイテム教官終了
-//	+0x80		カプラBaseLvUp終了
-//	+0x100		カプラJobLvUp終了
-//	+0x200		エルミン終了
-//	+0x400		戦闘実習受付初回終了
-//	+0x800		戦闘実習受付２回目終了
-//	+0x1000		職業教官終了
-//	+0x2000		適正検査終了
+// Ragnarok Online Novice Script by yukito
+// - CHANGE_NV
+// - CHANGE_NV
+// +0x1 Farah pattern 1
+// +0x2 Farah pattern 2
+// +0x4 Farah end
+// +0x8 Receptionist end
+// +0x10 End of Interface Instructor
+// +0x20 Skill Instructor ends
+// +0x40 Item Instructor ends
+// +0x80 Capra BaseLvUp ends
+// +0x100 End of Kapla Job LvUp
+// +0x200 End of Armine
+// +0x400 End of first combat training reception
+// +0x800 End of second combat training reception
+// +0x1000 End of Job Instructor
+// +0x2000 End of aptitude test
 //====================================================================
 
 //==========================================
-// 修練場外
+// out of training area
 //------------------------------------------
 
 /*
-new_1-1.gat,53,114,4	script	ファラ	727,{
+new_1-1.gat,53,114,4 script Farah 727,{
 	switch(CHANGE_NV &0x7) {
 	case 0:
-		mes "[ファラ]";
-		mes "あら、初めて見る顔かしら？";
-		mes "こちらの世界へいらしたことを";
-		mes "歓迎します。";
-		mes "えっと、お名前は……";
-		mes strcharinfo(0);
-		mes "……いいお名前ね。";
+		mes "[Farah]";
+		mes "Oh my, have I never seen your face before?" ;
+		mes "Welcome to our world." ;
+		mes "Well, your name is ......." ;
+		mes ""+strcharinfo(0);
+		mes "...... That's a nice name." ;
 		next;
-		mes "[ファラ]";
-		mes "ここで会ったのも何かの縁でしょう。";
-		mes "お手伝いしますわ。";
-		mes "移動はどうすればいいの？とか";
-		mes "どこへ行けばいいの？とか";
-		mes "何か、私に聞きたいことはない？";
+		mes "[Farah]";
+		mes "I guess it's a good thing we met here." ;
+		mes "I'm here to help." ;
+		mes "How do I get around? or where should I go? or anything else you want to ask me?" ;
 		next;
-		switch(select("どこへ行けばいいの？","基本操作について教えて","あなたは誰？")) {
+		switch(select("Where do I go?" , "Tell me about basic operations", "Who are you?")) {
 			case 1:
-				mes "[ファラ]";
-				mes "あそこの川にかかっている橋がわかる？";
-				mes "木製でキイキイ音がするけど……";
-				mes "それを渡るとお城があるの。";
-				mes "そのお城へ入っていけばいいのよ。";
+				mes "[Farah]";
+				mes "Can you see the bridge over the river over there?" ;
+				mes "It's wooden and makes a squeaky sound, but ......" ;
+				mes "When you cross it, there's a castle." ;
+				mes "You can go into that castle." ;
 				next;
-				mes "[ファラ]";
-				mes "建物の小さな入口の所に";
-				mes "^4A4AFFうずまいている光^000000があるの。";
-				mes "それは空間と空間をつなぐもの。";
-				mes "どこかへ移動する時は";
-				mes "必ず通らなければならないものよ。";
+				mes "[Farah]";
+				mes "There is a ^4A4AFF swirling light^000000 at the small entrance to the building." ;
+				mes "It connects space to space." ;
+				mes "It's something you have to go through whenever you move somewhere." ;
 				next;
-				mes "[ファラ]";
-				mes "そう、移動はできる？";
-				mes "移動したい場所に三角の印を";
-				mes "あわせてクリック。";
-				mes "私に話しかけたようにすればいいわ。";
-				mes "大丈夫よね？";
+				mes "[Farah]";
+				mes "Yes, can you move?" ;
+				mes "Align the triangle with the place you want to move and click." ;
+				mes "You can do it like you talked to me." ;
+				mes "It's okay, right?" ;
 				next;
-				mes "[ファラ]";
-				mes "じゃあ、そこの橋の先に";
-				mes "ある、初心者修練場へ行きなさい。";
-				mes "入り口の近くに案内をしてくれる";
-				mes "兵士がいるから、大丈夫よね？";
-				mes "うふふっ。";
+				mes "[Farah]";
+				mes "Well, go to the Novice Training Ground at the end of the bridge there." ;
+				mes "There's a soldier near the entrance who can give you directions, okay?" ;
+				mes "Uh-huh." ;
 				set CHANGE_NV,CHANGE_NV|0x1;
 				close;
 			case 2:
-				mes "[ファラ]";
-				mes "基本操作ね……";
-				mes "クリック、ダブルクリック、ドラッグ";
-				mes "という言葉は分かる？";
-				mes "マウスのボタンを一度押せば";
-				mes "クリックよね？";
-				mes "連続で二度押すのがダブルクリック。";
+				mes "[Farah]";
+				mes "Basic operation: ......" ;
+				mes "Do you know the words click, double-click, and drag?" ;
+				mes "If you press the mouse button once, it's a click, right?" ;
+				mes "Pressing twice in a row is a double click." ;
 				next;
-				mes "[ファラ]";
-				mes "ドラッグはマウスをクリックしたまま";
-				mes "上下左右に動かすことよ。";
-				mes "文章の選択をする時や";
-				mes "ファイルを移動する時とかに";
-				mes "よく使うわよね。";
+				mes "[Farah]";
+				mes "Dragging is moving the mouse up, down, left, or right with the mouse clicked." ;
+				mes "You often use it to select text or move files around." ;
 				next;
-				mes "[ファラ]";
-				mes "こういう基本的なことは";
-				mes "まず理解しておいた方がいいわよ。";
-				mes "使う機会が多いからね。";
-				mes "そして……";
+				mes "[Farah]";
+				mes "You should understand these basic things first." ;
+				mes "You'll have a lot of opportunities to use them." ;
+				mes "And ......." ;
 				next;
-				mes "[ファラ]";
-				mes "冒険に必要なことは";
-				mes "その橋を渡った先にある";
-				mes "城の中で学ぶことができるよ。";
-				mes "君のような冒険の初心者のための";
-				mes "場所だからね。じゃあ、";
-				mes "初心者修練場へ行ってみなさい。";
+				mes "[Farah]";
+				mes "You'll learn everything you need to know about adventure in the castle just beyond that bridge." ;
+				mes "It's a place for adventure beginners like you. Then go to the Novice Training Ground." ;
 				next;
-				mes "[ファラ]";
-				mes "建物入口に行くと";
-				mes "^4A4AFFうずまいている光^000000があるの。";
-				mes "そこをクリックして飛び込めばいいわ。";
-				mes "中には係の人がいるから";
-				mes "安心して。ふふっ。";
+				mes "[Farah]";
+				mes "Go to the entrance of the building and there is a ^4A4AFF swirling light^000000." ;
+				mes "Just click there and jump in." ;
+				mes "Don't worry, there are attendants inside. Hmmm." ;
 				set CHANGE_NV,CHANGE_NV|0x1;
 				close;
 			case 3:
-				mes "[ファラ]";
-				mes "え、私？私はファラよ。";
-				mes "もしかして、お姉さんに";
-				mes "興味があるのかな？";
-				mes "え、違う？";
-				mes "む～！";
-				mes "さっさと修練場へ行きなさい！";
+				mes "[Farah]";
+				mes "What, me? I'm Farah." ;
+				mes "Perhaps you are interested in your sister?" ;
+				mes "What, no?" ;
+				mes "Mmm~!" ;
+				mes "Get your ass to the training ground!" ;
 				set CHANGE_NV,CHANGE_NV|0x2;
 				close;
 		}
 	case 1:
-		mes "[ファラ]";
-		mes "あら、どうしたの？";
-		mes "もしかして、行くのをためらってるの？";
-		mes "初心者修練場では様々なことを";
-		mes "学べるわよ。しかも、それだけじゃなく";
-		mes "武器や回復アイテムなども";
-		mes "支給してくれるの。";
+		mes "[Farah]";
+		mes "Oh, what's wrong?" ;
+		mes "Are you hesitating to go?" ;
+		mes "You can learn a lot of things at Novice Training Ground. And not only that, they also provide you with weapons and recovery items." ;
 		next;
-		mes "[ファラ]";
-		mes "例えば……ほら";
-		mes "こんな風に経験も積めるのよ。";
+		mes "[Farah]";
+		mes "For example, ...... See, you can also gain experience like this." ;
 		set CHANGE_NV,CHANGE_NV|0x4;
 		getexp 9,0;
 		next;
-		mes "[ファラ]";
-		mes "君にとってはちょっと";
-		mes "大変なことかもしれないけど";
-		mes "行く価値は十分にあるわ。";
-		mes "そこで学んだことが";
-		mes "いつかきっと役に立つ。";
-		mes "……初心は忘れないでね。";
+		mes "[Farah]";
+		mes "It might be a little daunting for you, but it's well worth the trip." ;
+		mes "What you learn there will come in handy someday." ;
+		mes "...... Don't forget your first love." ;
 		close;
 	case 2:
-		mes "[ファラ]";
-		mes "あら、元気そうな子ね。";
-		mes "まだ何か聞きたいことでもあるの？";
-		mes "ふふ、それとも私と";
-		mes "お話がしたいのかな？";
-		mes "じゃあ、何を手伝って";
-		mes "あげましょうか……";
+		mes "[Farah]";
+		mes "Oh my, you're looking good." ;
+		mes "Do you have any more questions for me?" ;
+		mes "Hmm, or do you want to talk to me?" ;
+		mes "Well, what can I help you with ......?" ;
 		next;
-		mes "[ファラ]";
-		mes "そうね、初心者修練場へ";
-		mes "行って見るのはどうかな？";
-		mes "そこに見える橋を渡って";
-		mes "大きいお城の中へ入って行けば";
-		mes "いいのよ。中へ行けば、";
-		mes "係の人が案内してくれるからね。";
+		mes "[Farah]";
+		mes "Well, how about we go to the Novice Training Ground and see?" ;
+		mes "Just cross the bridge you see there and go inside the big castle. Once you're inside, there's an attendant who will show you around." ;
 		next;
-		mes "[ファラ]";
-		mes "もし、入口が見えなかったら";
-		mes "マウスをクリックしたまま";
-		mes "左右へドラッグしてみるといいわ。";
-		mes "そうすると画面が回転して、";
-		mes "見えるはずよ。";
+		mes "[Farah]";
+		mes "If you don't see the entrance, try clicking and holding your mouse and dragging it left or right." ;
+		mes "Then the screen will rotate and you should be able to see it." ;
 		next;
-		mes "[ファラ]";
-		mes "それじゃ、いってらっしゃい。";
-		mes "そして私のようなレディーへの";
-		mes "礼儀も身につけてきなさいな。";
-		mes "これは、私からの贈り物よ。";
+		mes "[Farah]";
+		mes "Well, have a good day." ;
+		mes "And go learn some manners for a lady like me." ;
+		mes "This is a gift from me." ;
 		set CHANGE_NV,CHANGE_NV|0x4;
 		getexp 9,0;
 		close;
-	default:	//5,6のとき
-		mes "[ファラ]";
-		mes "初心者修練場は、そこにある橋を";
-		mes "渡った先にあるわよ。";
-		mes "講義や戦闘など大変かもしれないけど";
-		mes "きっと役に立つと思うわ。";
-		mes "ぜひ、行ってみなさい。";
+	default: //when 5,6
+		mes "[Farah]";
+		mes "Novice Training Ground is just across the bridge there." ;
+		mes "It may be hard work, with lectures and fighting, but I'm sure it will help." ;
+		mes "You should definitely go there." ;
 		close;
 	}
 }
 
 //==============================================================
-new_1-1.gat,66,114,0	script	看板	111,{
-	mes "^FF0000=================================^000000";
-	mes "^FF0000= ^E708AD[歓迎]　^CE0000初^FF9400心^7BFF00者 ^00FF00修^00FFFF練^0000FF場 ^E708AD[歓迎] ^FF0000=^000000";
-	mes "^FF0000=================================^000000";
+new_1-1.gat,66,114,0 script Signboard 111,{
+	mes "^FF0000=================================^000000^FF0000= ^E708AD[welcome] ^CE0000 first^FF9400 heart^7BFF00 person ^00FF00 shu^00FFFFFFF knead^0000FFF place ^E708AD[welcome] ^FF0000=^000000^FF0000=================================^000000";
 	close;
 }
 
 //==============================================================
-new_1-1.gat,144,116,2	script	警備員	105,{
-	mes "[初心者修練場警備員]";
-	mes "ようこそ！初心者修練場へ！";
-	mes "城の中に入りますと";
-	mes "初心者修練場があります。";
+new_1-1.gat,144,116,2 script Police Officer 105,{
+	mes "[Novice Training GroundPolice Officer]";
+	mes "Welcome to Novice Training Ground!" ;
+	mes "Once inside the castle, you will find the Novice Training Ground." ;
 	close;
 }
 
-new_1-1.gat,144,107,2	script	警備員	105,{
+new_1-1.gat,144,107,2 script Police Officer 105,{
 	if(rand(2)) {
-		mes "[初心者修練場警備員]";
-		mes "よく来たな！";
-		mes "初心者修練場への来場を歓迎する！";
-		mes "新たな人生を歩み出す君ら初心者達が";
-		mes "自分を磨いて希望に満ちた未来を";
-		mes "築くことができるように";
-		mes "初心者修練場は全力でサポートする！";
+		mes "[Novice Training GroundPolice Officer]";
+		mes "Nice to see you here!" ;
+		mes "Welcome to Novice Training Ground!" ;
+		mes "Novice Training Ground will do its best to help you beginners who are starting a new life to improve yourselves and build a future full of hope!"; mes "[Novice Training GroundPolice Officer]"; mes "Welcome to Novice Training Ground! ;
 	}
 	else {
-		mes "[初心者修練場警備員]";
-		mes "さあ！　いけ！　初心者達よ！";
-		mes "君らが走って行くこの道には";
-		mes "明日の陽が昇る！";
+		mes "[Novice Training GroundPolice Officer]";
+		mes "Come on!  Let's go!  Novices!" ;
+		mes "On this road you run, the sun of tomorrow will rise!" ;
 	}
 	close;
 }
 
 
 //==========================================
-// 受付
+// Reception
 //------------------------------------------
 
-new_1-2.gat,100,29,4	script	初心者修練場受付要員	86,{
-	mes "[初心者修練場受付要員]";
-	mes "いらっしゃいませ。";
-	mes "^FF0000初心者修練場^000000です。";
-	mes "ラグナロクオンラインを";
-	mes "初めてプレイする方は";
-	mes "まず^019CFF初心者修練場紹介^000000メニューを選んで";
-	mes "詳しい内容をご覧ください。";
+new_1-2.gat,100,29,4 script Novice Training GroundReceptionist 86,{
+	mes "[Novice Training GroundReceptionist]";
+	mes "Welcome." ;
+	mes "^FF0000Novice Training Ground^000000." ;
+	mes "If you are new to Ragnarok Online, please first select the ^019CFFNovice Training Ground Introduction^000000 menu for more information." ;
 	while(1) {
 		next;
-		switch(select("初心者修練場申込書を作成する","すぐラグナロクオンラインを始める","^019CFF初心者修練場紹介^000000","やめる")) {
+		switch(select("Create Novice Training Ground application form", "Start Ragnarok Online immediately","^019CFFNovice Training Ground Introduction^000000", "Stop")) {
 		case 1:
-			mes "[初心者修練場受付要員]";
-			mes "あなたの申込書が受理されました。";
-			mes "修練場の各コースに関する";
-			mes "詳しい案内は、各コースの案内員に";
-			mes "お問い合わせください。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "Your application has been accepted." ;
+			mes "For more information about each course at the training ground, please contact the Guide for each course." ;
 			next;
 			if(CHANGE_NV &0x8 == 0) {
-				mes "[初心者修練場受付要員]";
-				mes "修練補助費、50Zenyを";
-				mes "支給します。コース進行中に";
-				mes "何かわからない事がありましたら";
-				mes "中央ホールの案内要員に";
-				mes "聞いてください。";
-				mes "では、初心者修練場に移動します。";
+				mes "[Novice Training GroundReceptionist]";
+				mes "You will receive a training assistance fee, 50 Zeny. If you have any questions during the course progression, please ask Info Staff in the central hall." ;
+				mes "Then we will move you to the Novice Training Ground." ;
 				set CHANGE_NV,CHANGE_NV|0x8;
 				set Zeny,Zeny+50;
 				close2;
@@ -461,78 +359,49 @@ new_1-2.gat,100,29,4	script	初心者修練場受付要員	86,{
 			warp "new_1-2.gat",100,70;
 			end;
 		case 2:
-			mes "[初心者修練場受付要員]";
-			mes "はい、わかりました。";
-			mes "あなたの成功と健闘を祈ります。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "Yes, I understand." ;
+			mes "I wish you success and good luck." ;
 			close2;
 			set CHANGE_NV,0;
 			switch(rand(6)) {
-				case 0: savepoint "prontera.gat",273,354; 	break;
-				case 1: savepoint "morocc.gat",160,94; 		break;
-				case 2: savepoint "geffen.gat",120,100; 	break;
-				case 3: savepoint "payon.gat",70,100; 		break;
-				case 4: savepoint "alberta.gat",116,57; 	break;
-				case 5: savepoint "izlude.gat",94,103; 		break;
+				case 0: savepoint "prontera.gat",273,354; break
+				case 1: savepoint "morocc.gat",160,94; break
+				case 2: savepoint "geffen.gat",120,100; break
+				case 3: savepoint "payon.gat",70,100; break
+				case 4: savepoint "alberta.gat",116,57; break
+				case 5: savepoint "izlude.gat",94,103; break
 			}
 			warp "SavePoint",0,0;
 			end;
 		case 3:
-			mes "[初心者修練場受付要員]";
-			mes "この初心者修練場では";
-			mes "ゲーム「ラグナロクオンライン」を";
-			mes "初めて遊ぶプレイヤーが";
-			mes "楽しくプレイ出来るように";
-			mes "ラグナロクオンラインの基本的な";
-			mes "説明を行っています。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "This Novice Training Ground provides a basic explanation of Ragnarok Online so that players who are new to the game Ragnarok Online can enjoy playing it." ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "また、実際ゲームで経験する状況を";
-			mes "体験する戦闘訓練、及び";
-			mes "教官や担当要員との会話を通じて";
-			mes "プレイヤーに最適だと思われる";
-			mes "職業を判断し勧めておりますので";
-			mes "参考にしてください。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "We also recommend the most suitable job for players through combat training to experience real game situations and through conversations with instructors and personnel."; next; mes "[Novice Training GroundReceptionist]" ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "本修練場は";
-			mes "初心者に上記教育を行う為";
-			mes "ルーンミッドガッツ王国";
-			mes "教育人的資源部の支援で";
-			mes "設立されました。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "This training ground was established with the support of the Ministry of Education and Human Resources of the Kingdom of Rune-Midgarts to provide the above education to beginners." ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "本修練場は2つのコースに";
-			mes "分かれていて";
-			mes "各コースで様々な修練を積みます。";
-			mes "第1コースではラグナロク";
-			mes "オンラインのプレイに必要な";
-			mes "基本的な事について案内します。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "[Novice Training Ground Receptionist]"; mes "[Novice Training Ground Receptionist]"; mes "[Novice Training Ground Receptionist]"; mes "[Novice Training Ground Receptionist]" ;
+			mes "The first course will guide you through the basic things you need to know to play Ragnarok Online." ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "第2コースでは";
-			mes "第1コースで習った理論を元に";
-			mes "モンスターが出る場所で戦闘実習を";
-			mes "行うことになります。";
-			mes "全コース終了後、各職業について";
-			mes "説明をさせていただきます。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "In the second course, you will practice combat in places where monsters appear based on the theory you learned in the first course." ;
+			mes "After all courses are completed, we will explain each profession." ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "また、アンケートに答えていただき";
-			mes "性格判断、深層心理解析によって";
-			mes "各プレイヤーに最適な職業を見つける";
-			mes "職業適性検査を行います。";
-			mes "その後、どの職業を選択するか";
-			mes "伺います。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "We will also conduct a vocational aptitude test where you will be asked to fill out a questionnaire to find the most suitable occupation for each player through personality assessment and depth psychological analysis." ;
+			mes "We will then ask you which profession you would like to choose." ;
 			next;
-			mes "[初心者修練場受付要員]";
-			mes "紹介した初心者修練場に入る方は";
-			mes "次のメニューで";
-			mes "「初心者修練場申込書を作成する」を";
-			mes "選んでください。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "If you would like to enter the Novice Training Ground you were introduced to, please select "Create Novice Training Ground Application Form" in the next menu." ;
 			continue;
 		case 4:
-			mes "[初心者修練場受付要員]";
-			mes "ごゆっくりお考えください。";
+			mes "[Novice Training GroundReceptionist]";
+			mes "Please take your time and think about it." ;
 			close;
 		}
 	}
@@ -540,154 +409,111 @@ new_1-2.gat,100,29,4	script	初心者修練場受付要員	86,{
 
 
 //==========================================
-// 中央の部屋
+// center room
 //------------------------------------------
 
-new_1-2.gat,99,105,3	script	インターフェース教官	751,{
+new_1-2.gat,99,105,3 script interface instructor 751,{
 	if(CHANGE_NV &0x10 == 0) {
-		mes "[教官クリス]";
-		mes "初めてお目にかかりますね。";
-		mes "受講証を見せていただけますか？";
+		mes "[Instructor Chris]";
+		mes "I see you are new here." ;
+		mes "May I see your course certificate?" ;
 		next;
-		mes "[教官クリス]";
-		mes "はい、これで問題ありません。";
-		mes "では" +strcharinfo(0)+ "様に";
-		mes "基本的なインターフェースについて";
-		mes "教えましょう。";
+		mes "[Instructor Chris]";
+		mes "Yes, this is no problem." ;
+		mes "So let's teach you about the basic interface to " +strcharinfo(0)+ "Mr." ;
 		next;
-		mes "[教官クリス]";
-		mes "これは強制というわけではないので";
-		mes "もし、遠慮なさりたいのなら、その旨を";
-		mes "おっしゃってください。";
+		mes "[Instructor Chris]";
+		mes "This is not mandatory, so if you would prefer not to do this, please let me know." ;
 		next;
-		switch(select("インターフェースの講義を受けたい","話よりも、実戦を！","やめる")) {
+		switch(select("I want to take a lecture on interfaces", "More than talk, actual practice!"); mes "[Instructor Chris]"; mes "[Instructor Chris]"; mes "[Instructor Chris]"; mes "This is not mandatory. , "stop")) {
 		case 1:
-			mes "[教官クリス]";
-			mes "わかりました。";
-			mes "では、講義を行います。";
-			mes "よろしいですか？";
+			mes "[Instructor Chris]";
+			mes "I understand." ;
+			mes "Then we will give the lecture." ;
+			mes "May I?" ;
 			next;
-			mes "[教官クリス]";
-			mes "全てのウィンドウは、ドラッグで";
-			mes "位置を移動することができますが、";
-			mes "初期段階の位置を基準にして";
-			mes "各ウィンドウについて説明しましょう。";
+			mes "[Instructor Chris]";
+			mes "All windows can be positioned by dragging, but let's discuss each window based on its position in the initial stage." ;
 			next;
-			mes "[教官クリス]";
-			mes "まず画面の左上をご覧ください。";
-			mes "ご自分の名前やレベル等が表示された";
-			mes "ウィンドウがありますね。これで";
-			mes "どれくらい経験値を得たのかも";
-			mes "わかるでしょう。これがキャラクターの";
-			mes "^4A4AFF基本情報^000000になります。";
+			mes "[Instructor Chris]";
+			mes "First look at the upper left corner of the screen." ;
+			mes "You see a window with your name, level, etc. This will also tell you how much experience you have gained. This will be your character's ^4A4AFF basic information ^000000." ;
 			next;
 			if(BaseLevel < 8) {
-				mes "[教官クリス]";
-				mes "では、Base経験値をあげますので";
-				mes "基本情報ウィンドウの経験値部分が";
-				mes "どのように変化するか見てください。";
-				mes "どうです？";
-				if(BaseLevel == 7)	getexp 155,0;
-				else if(BaseLevel == 6)	getexp 115,0;
-				else if(BaseLevel == 5)	getexp 78,0;
-				else if(BaseLevel == 4)	getexp 37,0;
-				else if(BaseLevel == 3)	getexp 26,0;
-				else if(BaseLevel == 2)	getexp 17,0;
-				else if(BaseLevel == 1)	getexp 10,0;
+				mes "[Instructor Chris]";
+				mes "Now, we're going to increase the Base experience level, so watch how the experience level portion of the Basic Info window changes." ;
+				mes "How is it?" ;
+				if(BaseLevel == 7) getexp 155,0;
+				else if(BaseLevel == 6) getexp 115,0;
+				else if(BaseLevel == 5) getexp 78,0;
+				else if(BaseLevel == 4) getexp 37,0;
+				else if(BaseLevel == 3) getexp 26,0;
+				else if(BaseLevel == 2) getexp 17,0;
+				else if(BaseLevel == 1) getexp 10,0;
 			}
 			else {
-				mes "[教官クリス]";
-				mes "……あ、けっこうレベルが";
-				mes "高いようですね。";
-				mes "それでしたら経験値は";
-				mes "もういらないですよね。";
-				mes "それでは……";
+				mes "[Instructor Chris]";
+				mes "...... Ah, it looks like the level is quite high." ;
+				mes "Then you don't need any more experience." ;
+				mes "Then ......." ;
 			}
 			set CHANGE_NV,CHANGE_NV|0x10;
 			next;
-			mes "[教官クリス]";
-			mes "基本情報ウィンドウに表示";
-			mes "されているメニューから";
-			mes "アイテムや友達リストを見ることも";
-			mes "できます。";
+			mes "[Instructor Chris]";
+			mes "You can also view the items and friends list from the menu displayed in the Basic Info window." ;
 			next;
-			mes "[教官クリス]";
-			mes "それから経験値ですが、";
-			mes "先ほど紹介したBase経験値とは別に";
-			mes "Job経験値というものもあります。";
-			mes "^4A4AFFスキルを使うためには、この";
-			mes "Job経験値を獲得し、それにより取得";
-			mes "するスキルポイントが必要^000000になります。";
+			mes "[Instructor Chris]";
+			mes "And then there is experience, apart from the Base experience I mentioned earlier, there is also Job experience." ;
+			mes "In order to use ^4A4AFF skills, you need to gain this Job experience and the skill points you get from it ^000000." ;
 			next;
-			mes "[教官クリス]";
-			mes "画面左下のウィンドウは、";
-			mes "チャットウィンドウと言います。";
-			mes "過去の会話は右側のバーを";
-			mes "スクロールすれば見ることができます。";
+			mes "[Instructor Chris]";
+			mes "The window at the bottom left of the screen is called the chat window." ;
+			mes "You can see past conversations by scrolling the bar on the right." ;
 			next;
-			mes "[教官クリス]";
-			mes "また、右のボタンで全体、パーティー、";
-			mes "ギルド向けという風に会話先を変更する";
-			mes "こともできます。";
-			mes "チャットウィンドウは常に会話できる";
-			mes "状態ですので、知り合いに声を";
-			mes "かけやすいと思います。";
+			mes "[Instructor Chris]";
+			mes "You can also use the buttons on the right to change the conversation to the whole group, party, or guild." ;
+			mes "The chat window is always open for conversation, so you can easily talk to people you know." ;
 			next;
-			mes "[教官クリス]";
-			mes "画面の右上にはミニマップがあります。";
-			mes "自分、パーティーメンバー、";
-			mes "ギルドメンバーの現在位置が";
-			mes "表示されます。";
+			mes "[Instructor Chris]";
+			mes "There is a mini-map in the upper right corner of the screen." ;
+			mes "It shows the current position of you, your party members, and guild members." ;
 			next;
-			mes "[教官クリス]";
-			mes "街やフィールドでは、";
-			mes "^4A4AFF赤い点がマップの出口^000000となりますので";
-			mes "参考にしてください。";
+			mes "[Instructor Chris]";
+			mes "In the city and field, the ^4A4AFF red dot is the exit ^000000 on the map for reference." ;
 			next;
-			mes "[教官クリス]";
-			mes "では、基本情報ウィンドウにある";
-			mes "各メニューを押して";
-			mes "一度全てを開いてみてください。";
-			mes "アイテムや装備、能力値などを";
-			mes "見ることができますよ。";
+			mes "[Instructor Chris]";
+			mes "Now press each menu in the Basic Info window to open everything once." ;
+			mes "You can see your items, equipment, ability values, etc." ;
 			next;
-			mes "[教官クリス]";
-			mes "退屈だったかもしれませんね。";
+			mes "[Instructor Chris]";
+			mes "That might have been boring." ;
 			if(JobLevel < 7) {
-				mes "少し経験値をあげましょう。";
-				mes "今度はJob経験値です。";
-				mes "スキルウィンドウを";
-				mes "開いて、基本スキルを";
-				mes "あげてみてください。";
-				if(JobLevel == 6)	getexp 0,151;
-				else if(JobLevel == 5)	getexp 0,91;
-				else if(JobLevel == 4)	getexp 0,40;
-				else if(JobLevel == 3)	getexp 0,28;
-				else if(JobLevel == 2)	getexp 0,18;
-				else if(JobLevel == 1)	getexp 0,10;
+				mes "Let's give you a little experience." ;
+				mes "Now for Job experience." ;
+				mes "Open the skills window and try to raise your basic skills." ;
+				if(JobLevel == 6) getexp 0,151;
+				else if(JobLevel == 5) getexp 0,91;
+				else if(JobLevel == 4) getexp 0,40;
+				else if(JobLevel == 3) getexp 0,28;
+				else if(JobLevel == 2) getexp 0,18;
+				else if(JobLevel == 1) getexp 0,10;
 			}
 			else {
-				mes "……あ、けっこうレベルが";
-				mes "高いようですね。";
-				mes "それでしたら経験値は";
-				mes "もういらないですよね。";
-				mes "それでは……";
+				mes "...... Ah, it looks like the level is quite high." ;
+				mes "Then you don't need any more experience." ;
+				mes "Then ......." ;
 			}
 			next;
-			mes "[教官クリス]";
-			mes "より詳しい内容については";
-			mes "講師エドウィンに聴いてください。";
-			mes "彼なら喜んで教えてくれますよ。";
-			mes "これは、私からのささやかな";
-			mes "贈り物です。";
+			mes "[Instructor Chris]";
+			mes "Please ask your instructor Edwin for more details." ;
+			mes "He will be happy to teach you." ;
+			mes "This is a small gift from me." ;
 			getitem 2352,1;
 			close;
 		case 2:
-			mes "[教官クリス]";
-			mes "では、実際に戦闘を経験して";
-			mes "いただきましょう。";
-			mes "それで知識が足りないと思ったら";
-			mes "いつでも戻ってきてください。";
+			mes "[Instructor Chris]";
+			mes "Now, let's give you a real combat experience." ;
+			mes "And if you feel you don't have enough knowledge, you can always come back." ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
@@ -697,49 +523,41 @@ new_1-2.gat,99,105,3	script	インターフェース教官	751,{
 		}
 	}
 	if(CHANGE_NV &0x20 == 0 || CHANGE_NV &0x40 == 0) {
-		set '@word$,(CHANGE_NV &0x20 == 0)? "スキル": "アイテム";
-		mes "[教官クリス]";
-		mes "どうされました？";
-		mes "受講証を見せていただけます？";
-		mes "おや、" +'@word$+ "関連の講義が";
-		mes "まだのようですね。";
-		mes '@word$+ "教官なら私の" +((CHANGE_NV &0x20)? "右": "左")+ "にいます。";
+		set '@word$,(CHANGE_NV &0x20 == 0)? "skill": "item";
+		mes "[Instructor Chris]";
+		mes "How can I help you?" ;
+		mes "May I see your course certificate?" ;
+		mes "Oh, it looks like you haven't had your " +'@word$+ "related lecture yet." ;
+		mes ""+'@word$+ "If you are an instructor, my " +((CHANGE_NV &0x20)? "right": "left")+ "I am in"." ;
 		next;
-		switch(select("じゃあ、"+'@word$+"の講義を受けたい","話ばかりだと退屈で……","あ、そう……")) {
+		switch(select("Well, I'd like to take a lecture on "+'@word$+"", "I'm bored if all I do is talk ......" , "oh, so ......")) {
 		case 1:
-			if('@word$ == "スキル") {
-				mes "[教官クリス]";
-				mes "スキルの使い方がわかると";
-				mes "戦闘がかなり楽になりますよ。";
-				mes "では、スキル教官の下へ";
-				mes "送ってあげましょう。";
+			if('@word$ == "skills") {
+				mes "[Instructor Chris]";
+				mes "If you know how to use your skills, you'll have a much easier time in battle." ;
+				mes "So let's send you down to Skill Instructor." ;
 				close2;
 				warp "new_1-2.gat",84,107;
 				end;
 			}
-			mes "[教官クリス]";
-			mes "アイテムの使い方や";
-			mes "ショートカットの活用法など";
-			mes "いろんなことを教えてくれますよ。";
-			mes "では、アイテム教官の下へ";
-			mes "送ってあげましょう。";
+			mes "[Instructor Chris]";
+			mes "He'll teach you how to use items, utilize shortcuts, and many other things." ;
+			mes "So let's send them down to the Item Instructor." ;
 			close2;
 			warp "new_1-2.gat",115,107;
 			end;
 		case 2:
-			mes "[教官クリス]";
-			mes "では、第2コース戦闘実習マップへ";
-			mes "送ってあげましょう。";
+			mes "[Instructor Chris]";
+			mes "So let's send him to the second course combat training map." ;
 			next;
-			if(select("あ、まだいい","送ってちょうだい")== 1) {
-				mes "[教官クリス]";
-				mes "そうですか……";
-				mes "また何かありましたら、";
-				mes "声をかけてください。";
+			if(select("Oh, no, not yet.", "Send me")== 1) {
+				mes "[Instructor Chris]";
+				mes "I see. ......" ;
+				mes "Please give me a shout if you need anything else." ;
 				close;
 			}
-			mes "[教官クリス]";
-			mes "では、健闘を祈ります！";
+			mes "[Instructor Chris]";
+			mes "Well, I wish you the best of luck!" ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
@@ -748,192 +566,158 @@ new_1-2.gat,99,105,3	script	インターフェース教官	751,{
 			close;
 		}
 	}
-	mes "[教官クリス]";
-	mes "必修講義を全て終えたようですね。";
-	mes "講師たちの話も聴きましたか？";
-	mes "次は戦闘実習ですが……";
-	mes "第2コースへ進みますか？";
+	mes "[Instructor Chris]";
+	mes "I see you have completed all of your required lectures." ;
+	mes "Have you also listened to the lecturers?" ;
+	mes "Next up is the combat training: ......." ;
+	mes "Would you like to proceed to the second course?" ;
 	next;
-	switch(select("はい、次のコースへ進みたい","いや、もう少し勉強したい","すぐ街へ行きたい")) {
+	switch(select("Yes, I want to go on to the next course", "No, I want to study some more", "I want to go to the city immediately")) {
 	case 1:
-		mes "[教官クリス]";
-		mes "わかりました。";
-		mes "次のコースは戦闘の実践です。";
-		mes "担当教官の話をよく聴き";
-		mes "試験に臨んでください。";
-		mes "君にオーディンの加護あらんことを。";
+		mes "[Instructor Chris]";
+		mes "Okay, I understand." ;
+		mes "The next course is Combat Practice." ;
+		mes "Please listen carefully to your instructor and be ready for the exam." ;
+		mes "May Odin bless you." ;
 		close2;
 		warp "new_1-2.gat",28,178;
 		end;
 	case 2:
-		mes "[教官クリス]";
-		mes "わかりました。";
-		mes "必修講義は基本的なことが中心ですので";
-		mes "足りない部分は、講師たちの話を";
-		mes "聴くとよいと思います。";
-		mes "そうすればより深く学べるでしょう。";
+		mes "[Instructor Chris]";
+		mes "I understand." ;
+		mes "The required lectures are mainly basic, so you should listen to the lecturers for the parts that are missing." ;
+		mes "That way you will learn more in depth." ;
 		next;
-		mes "[教官クリス]";
-		mes "もし何かわからないことがありましたら";
-		mes "いつでも尋ねてください。";
+		mes "[Instructor Chris]";
+		mes "If you have any questions, you can always ask." ;
 		close;
 	case 3:
-		mes "[教官クリス]";
-		mes "街へ行きたいのですか。";
-		mes "修練場で十分学ばれたら";
-		mes "私の左にいる^4A4AFFカプラ職員^000000に";
-		mes "話しかけてください。";
+		mes "[Instructor Chris]";
+		mes "Do you want to go to town?" ;
+		mes "When you have learned enough in the training hall, please talk to ^4A4AFFKafra Staff^000000 on my left." ;
 		next;
-		mes "[教官クリス]";
-		mes "カプラサービスは、各地域で";
-		mes "都市間の移動やアイテムの保管";
-		mes "サービスを行っています。";
-		mes "彼女たちのサービスを実際に";
-		mes "利用してみるとよいでしょう。";
+		mes "[Instructor Chris]";
+		mes "Kafra Service provides city-to-city transportation and item storage services in the various regions." ;
+		mes "You can actually use their services." ;
 		next;
-		mes "[教官クリス]";
-		mes "……いずれ、共に戦う日が";
-		mes "来るかもしれません。";
-		mes "己を磨くことを常にお忘れなきよう。";
-		mes "君にオーディンの加護あらんことを。";
+		mes "[Instructor Chris]";
+		mes "...... Maybe one day we will fight together." ;
+		mes "Always remember to improve yourself." ;
+		mes "May Odin bless you." ;
 		close;
 	}
 }
 
 //==============================================================
-new_1-2.gat,83,111,3	script	スキル教官	753,{
+new_1-2.gat,83,111,3 script Skill Instructor 753,{
 	if(CHANGE_NV &0x20 == 0) {
-		mes "[教官サイ]";
-		mes strcharinfo(0)+ "！";
-		mes "いい名だ！";
-		mes "それじゃ、講義を始めようか。";
+		mes "[Instructor Rhino]";
+		mes ""+strcharinfo(0)+ "!"" ;
+		mes "Good name!" ;
+		mes "Let's start the lecture then." ;
 		next;
-		switch(select("何を教えてくれるの？","実際に戦いたい！","やめておく")) {
+		switch(select("What are you going to teach me?" , "I actually want to fight!" , "I'm not going to")) {
 		case 1:
-			mes "[教官サイ]";
-			mes "俺は拳に全てをかける男！";
-			mes "そこでお前にとても重要な";
-			mes "必殺技を……";
-			mes "じゃなくて、スキルの使い方を";
-			mes "教えてあげよう。";
-			mes "まず、スキルをあげてやろう。";
+			mes "[Instructor Rhino]";
+			mes "I'm a man who puts everything in his fists!" ;
+			mes "So here's a very important special move for you: ......" ;
+			mes "No, I'm going to teach you how to use your skills." ;
+			mes "First, let's give you some skills." ;
 			next;
-			mes "[教官サイ]";
-			mes "スキルウィンドウは";
-			mes "基本情報ウィンドウで";
-			mes "^4A4AFFskill^000000ボタンを";
-			mes "押せば開く。";
+			mes "[Instructor Rhino]";
+			mes "The skill window can be opened by pressing the ^4A4AFFskill^000000 button in the Basic Info window." ;
 			next;
-			mes "[教官サイ]";
-			mes "逆に閉じる時は";
-			mes "^4A4AFFaltキーを押したままsキー^000000";
-			mes "を押せばいい。";
-			mes "これからこういう表現は";
-			mes "「alt+s」と言うから覚えておけ。";
+			mes "[Instructor Rhino]";
+			mes "Conversely, to close it, hold down the ^4A4AFFalt key and press the s key ^000000." ;
+			mes "From now on, this kind of expression is called 'alt+s', so remember that." ;
 			next;
-			mes "[教官サイ]";
-			mes "ウィンドウを開いたか？";
-			mes "基本機能というアイコンが見えるか？";
+			mes "[Instructor Rhino]";
+			mes "Did you open the window?" ;
+			mes "Do you see the icon named Basic Functions?" ;
 			if(JobLevel < 7) {
-				mes "下側にはスキルポイント: 1 とか";
-				mes "数字が書かれている。";
-				mes "基本スキルのアイコンの横にある";
-				mes "「LvUp」という表示を押してみろ！";
-				if(JobLevel == 6)	getexp 0,151;
-				else if(JobLevel == 5)	getexp 0,91;
-				else if(JobLevel == 4)	getexp 0,40;
-				else if(JobLevel == 3)	getexp 0,28;
-				else if(JobLevel == 2)	getexp 0,18;
-				else if(JobLevel == 1)	getexp 0,10;
+				mes "On the bottom side, you see skill points: 1 and a number." ;
+				mes "Press the "LvUp" sign next to the basic skill icon!" ;
+				if(JobLevel == 6) getexp 0,151;
+				else if(JobLevel == 5) getexp 0,91;
+				else if(JobLevel == 4) getexp 0,40;
+				else if(JobLevel == 3) getexp 0,28;
+				else if(JobLevel == 2) getexp 0,18;
+				else if(JobLevel == 1) getexp 0,10;
 			}
 			else {
-				mes "お、レベルが高かったのか……";
-				mes "それじゃ、「LvUp」という表示が";
-				mes "出ないな。まあ、お前なら";
-				mes "わかってるだろうからいいよな。";
+				mes "Oh, you were high level ......" ;
+				mes "Then I don't see the "LvUp" indicator. Well, you know what I'm talking about, so that's good." ;
 			}
 			set CHANGE_NV,CHANGE_NV|0x20;
 			next;
-			mes "[教官サイ]";
-			mes "どうだ？";
-			mes "もっと知りたかったら講師の";
-			mes "ピッチジュダスという奴に聞け。";
-			mes "……う～む、";
-			mes "何か教えようと思ったスキルが";
-			mes "あったはずだが……";
+			mes "[Instructor Rhino]";
+			mes "How's it going?" ;
+			mes "If you want to know more, ask the instructor, a guy named Priest Judas." ;
+			mes "...... Hmmm, I'm sure he had some skills he wanted to teach you. ......" ;
 			next;
-			mes "[教官サイ]";
-			mes "おお、そうだ！";
-			mes "スキル「応急手当」を教えてやろう。";
-			mes "これは怪我をしている時に";
-			mes "かなり役立つスキルだ。";
+			mes "[Instructor Rhino]";
+			mes "Oh, yes!" ;
+			mes "Let me teach you the skill 'First Aid'." ;
+			mes "This is a pretty useful skill when you are injured." ;
 			next;
-			mes "^4A4AFF- スキル「応急手当」を修得した。-^000000";
+			mes "^4A4AFF- I have mastered the skill "First Aid". -^000000";
 			skill 142,1,0;
 			next;
 			if(JobLevel < 7) {
-				mes "^4A4AFF- Job経験値を獲得した。-^000000";
-				if(JobLevel == 6)	getexp 0,151;
-				else if(JobLevel == 5)	getexp 0,91;
-				else if(JobLevel == 4)	getexp 0,40;
-				else if(JobLevel == 3)	getexp 0,28;
-				else if(JobLevel == 2)	getexp 0,18;
-				else if(JobLevel == 1)	getexp 0,10;
+				mes "^4A4AFF- Job experience gained. -^000000";
+				if(JobLevel == 6) getexp 0,151;
+				else if(JobLevel == 5) getexp 0,91;
+				else if(JobLevel == 4) getexp 0,40;
+				else if(JobLevel == 3) getexp 0,28;
+				else if(JobLevel == 2) getexp 0,18;
+				else if(JobLevel == 1) getexp 0,10;
 			}
 			else {
-				mes "^4A4AFF- Jobレベルが高いので -";
-				mes "- すぐにはレベルが -";
-				mes "- 上がらないようだ。-^000000";
+				mes "^4A4AFF- JobLevel is so high that it -- level -- doesn't seem to go up right away. -^000000";
 			}
-			next;
+			} next;
 			percentheal -50,0;
-			mes "[教官サイ]";
-			mes "さあ、スキルウィンドウを開いてみろ！";
-			mes "^4A4AFF応急手当^000000が表示されているだろ？";
-			mes "ダブルクリックで使用できるぞ。";
-			mes "さあ、使ってみろ！";
+			mes "[Instructor Rhino]";
+			mes "Now open the skill window!" ;
+			mes "You see ^4A4AFF First Aid^000000?" ;
+			mes "You can double click on it to use it." ;
+			mes "Come on, use it!" ;
 			next;
-			mes "[教官サイ]";
-			mes "どうだ？";
-			mes "ちなみにスキルを使うと、";
-			mes "一定量のSPを消費するぞ。";
-			mes "応急手当は使用すると多少だが";
-			mes "体力が回復する。";
-			mes "最初のうちは重宝するスキルだ。";
+			mes "[Instructor Rhino]";
+			mes "How's that working out for you?" ;
+			mes "By the way, using the skill will consume a certain amount of SP." ;
+			mes "First aid will restore some but not all of your strength when you use it." ;
+			mes "It's a useful skill in the beginning." ;
 			next;
-			mes "[教官サイ]";
-			mes "話を聞くばかりでは疲れただろう。";
+			mes "[Instructor Rhino]";
+			mes "You must be tired of listening to me all the time." ;
 			if(BaseLevel < 8) {
-				mes "ほら、ご褒美だ。";
-				mes "俺は太っ腹な男だからな。";
-				if(BaseLevel == 7)	getexp 155,0;
-				else if(BaseLevel == 6)	getexp 115,0;
-				else if(BaseLevel == 5)	getexp 78,0;
-				else if(BaseLevel == 4)	getexp 37,0;
-				else if(BaseLevel == 3)	getexp 26,0;
-				else if(BaseLevel == 2)	getexp 17,0;
-				else if(BaseLevel == 1)	getexp 10,0;
+				mes "Here's your reward." ;
+				mes "I'm a fat man, you know." ;
+				if(BaseLevel == 7) getexp 155,0;
+				else if(BaseLevel == 6) getexp 115,0;
+				else if(BaseLevel == 5) getexp 78,0;
+				else if(BaseLevel == 4) getexp 37,0;
+				else if(BaseLevel == 3) getexp 26,0;
+				else if(BaseLevel == 2) getexp 17,0;
+				else if(BaseLevel == 1) getexp 10,0;
 			}
 			else {
-				mes "大分頑張ってるようだな。";
-				mes "まじめだね！　ハッハッハッ";
+				mes "Looks like you're doing pretty well." ;
+				mes "You're serious!  Ha ha ha!"
 			}
 			next;
-			mes "[教官サイ]";
-			mes "俺の講義はここまでだ。";
-			mes "ん？話が短くて安心したか？";
-			mes "それじゃ、他の人の話も聴いてこい。";
-			mes "例えば講師のピッチジュダスなんかは";
-			mes "スキルについてもっと詳しく";
-			mes "教えてくれるぞ。";
+			mes "[Instructor Rhino]";
+			mes "So much for my lecture." ;
+			mes "Hmm? You're relieved that my talk was so short?" ;
+			mes "Then go listen to the others." ;
+			mes "For example, Priest Judas, the instructor, can tell you more about the skills." ;
 			next;
-			switch(select("もうちょっと見て回りたい","いざ、実戦へ！","もういいや")) {
+			switch(select("I want to look around a little more", "Now for the real work!" , "Enough already.")) {
 				case 1:
-					mes "[教官サイ]";
-					mes "よし、他の教官や講師と";
-					mes "話してきな、みんな快く";
-					mes "手伝ってくれるはずだ。";
-					mes "ほら、頑張れ！";
+					mes "[Instructor Rhino]";
+					mes "Okay, go talk to the other instructors and lecturers, they should all be willing to help you." ;
+					mes "Here, go for it!" ;
 					close;
 				case 2:
 					break;
@@ -943,13 +727,11 @@ new_1-2.gat,83,111,3	script	スキル教官	753,{
 			}
 			//fall through
 		case 2:
-			mes "[教官サイ]";
-			mes "おお、威勢がいいな。";
-			mes "確かに実際に戦闘を";
-			mes "経験するのはいいことだ。";
-			mes "じゃあ、戦闘実習のマップへ";
-			mes "送ってやろう。";
-			mes "思う存分、戦ってこい！";
+			mes "[Instructor Rhino]";
+			mes "Oh, that's a lot of bluster." ;
+			mes "It sure is nice to actually experience combat." ;
+			mes "Well, let's send you to the combat training map." ;
+			mes "Go ahead and fight as much as you want!" ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
@@ -959,41 +741,39 @@ new_1-2.gat,83,111,3	script	スキル教官	753,{
 		}
 	}
 	if(CHANGE_NV &0x10 ==0 || CHANGE_NV &0x40 == 0) {
-		set '@word$,(CHANGE_NV &0x10 == 0)? "インターフェース": "アイテム";
-		mes "[教官サイ]";
-		mes "何か聞きたいことでもあるか？";
-		mes "おや？お前、";
-		mes '@word$+ "講義が";
-		mes "まだのようだな。";
-		mes "ならばまずそれを受けてこい！";
-		mes "はははははっ！";
+		set '@word$,(CHANGE_NV &0x10 == 0)? "interface": "item";
+		mes "[Instructor Rhino]";
+		mes "Is there anything you want to ask me?" ;
+		mes "Hmm? You";
+		mes '@word$+ "The lecture is";
+		mes "Looks like you haven't yet." ;
+		mes "Then go get it first!" ;
+		mes "Ha ha ha ha!" ;
 		next;
-		switch(select('@word$+"講義を受けてくる！","話より、実戦がいい","いや、遠慮しておく")) {
+		switch(select('@word$+"Go get a lecture!" , "I'd rather have a real game than a talk", "No, thanks, I'll pass.")) {
 		case 1:
-			if('@word$ == "インターフェース") {
-				mes "[教官サイ]";
-				mes "おお、そうしてこい！";
-				mes "何事も、基礎が大事だからな。";
-				mes "インターフェース教官は中央にいるぞ。";
-				mes "はははははっ。";
+			if('@word$ == "interface") {
+				mes "[Instructor Rhino]";
+				mes "Oh, go ahead and do that!" ;
+				mes "Everything, it's all about the basics." ;
+				mes "The interface instructor is in the middle." ;
+				mes "Ha ha ha ha." ;
 				close;
 			}
-			mes "[教官サイ]";
-			mes "おお、そうしてこい！";
-			mes "何事も、基礎が大事だからな。";
-			mes "アイテム教官は俺の左側の方にいるぞ。";
-			mes "よし、サービスだ。送ってやる。";
+			mes "[Instructor Rhino]";
+			mes "Oh, go do that!" ;
+			mes "As with anything, the basics are important." ;
+			mes "Item Instructor is over there to my left." ;
+			mes "Okay, service. I'll send it to you." ;
 			close2;
 			warp "new_1-2.gat",115,107;
 			end;
 		case 2:
-			mes "[教官サイ]";
-			mes "おお、威勢がいいな。";
-			mes "確かに実際に戦闘を";
-			mes "経験するのはいいことだ。";
-			mes "じゃあ、戦闘実習のマップへ";
-			mes "送ってやろう。";
-			mes "思う存分、戦ってこい！";
+			mes "[Instructor Rhino]";
+			mes "Oh, that's a lot of bluster." ;
+			mes "It sure is nice to actually experience combat." ;
+			mes "Well, let's send you to the combat training map." ;
+			mes "Go ahead and fight as much as you want!" ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
@@ -1002,546 +782,444 @@ new_1-2.gat,83,111,3	script	スキル教官	753,{
 			close;
 		}
 	}
-	mes "[教官サイ]";
-	mes "どうしたんだ？";
-	mes "もう全部の講義を終えただろう？";
-	mes "はは～ん、さてはこの俺に惚れたな。";
-	mes "……は？　違うって？";
-	mes "そう遠慮するなって。";
+	mes "[Instructor Rhino]";
+	mes "What's going on?" ;
+	mes "You've already finished all your lectures, haven't you?" ;
+	mes "Haha~ Well, now you're in love with me here." ;
+	mes "...... Huh?  No?" ;
+	mes "Don't be so modest." ;
 	next;
-	mes "[教官サイ]";
-	mes "ところで、スキル講師の話は";
-	mes "きちんと聴いたよな？";
+	mes "[Instructor Rhino]";
+	mes "By the way, did you listen to Skill Tutor properly?" ;
 	next;
-	switch(select("次のコースへ進みたい","こ、講師？","街へ行きたい")) {
+	switch(select("I want to go to the next course", "This instructor?" , "I want to go to the city")) {
 	case 1:
-		mes "[教官サイ]";
-		mes "おう！　戦闘実習をやるんだな。";
-		mes "ああ～、お前をあの危険なマップの";
-		mes "入り口へ送らなければ";
-		mes "ならないなんて……";
-		mes "俺の拳は涙に濡れている。";
+		mes "[Instructor Rhino]";
+		mes "Oh!  You're going to do combat training." ;
+		mes "Ohhh, I can't believe I have to send you to the entrance of that dangerous map ......." ;
+		mes "My fists are wet with tears." ;
 		next;
-		mes "[教官サイ]";
-		mes "だが何よりもお前自身のためだ。";
-		mes "泣く泣く送ってやろう。";
-		mes "では、この拳を受け取れ！";
+		mes "[Instructor Rhino]";
+		mes "But most of all for your own good." ;
+		mes "Let's send you on your way, for crying out loud." ;
+		mes "Then take this fist!" ;
 		close2;
 		warp "new_1-2.gat",28,178;
 		end;
 	case 2:
-		mes "[教官サイ]";
-		mes "お？その様子だと";
-		mes "知らなかったようだな。";
-		mes "俺たち教官は本当に大事な";
-		mes "基礎を中心に教えている。";
+		mes "[Instructor Rhino]";
+		mes "Oh? By the looks of it, you didn't know." ;
+		mes "We instructors focus on the really important basics." ;
 		next;
-		mes "[教官サイ]";
-		mes "だが、それだけだとちょっと";
-		mes "物足りないよな？";
-		mes "まあ、だいたいわかれば";
-		mes "いいって人もいるだろうが、";
-		mes "中には幅広く知りたいって";
-		mes "人もいるだろ？";
+		mes "[Instructor Rhino]";
+		mes "But that's not quite enough, is it?" ;
+		mes "Well, some people just need a general idea, but some people want to know a wide range of things, don't they?" ;
 		next;
-		mes "[教官サイ]";
-		mes "そこでだ、そんな頑張り屋さんの";
-		mes "ために講師たちがいるってわけだ。";
-		mes "さあ、会いに行ってこい！";
+		mes "[Instructor Rhino]";
+		mes "So, that's where the instructors come in for those hard-working people." ;
+		mes "Now, go see them!" ;
 		next;
-		mes "[教官サイ]";
-		mes "特に「ピッチジュダス」という奴が";
-		mes "スキルに関して詳しく";
-		mes "教えてくれるはずだ。まあ、";
-		mes "ちょっと危なっかしく見えるがな……";
-		mes "ぜひ、参考にしてくれ！";
-		mes "ははははっ！";
+		mes "[Instructor Rhino]";
+		mes "I'm sure that guy in particular, 'Priest Judas', can tell you more about his skills. Well, he looks a little dangerous. ......" ;
+		mes "By all means, take a look!" ;
+		mes "Ha ha ha!" ;
 		close;
 	case 3:
-		mes "[教官サイ]";
-		mes "街なら……俺から左の方向へ";
-		mes "ずっといった先に";
-		mes "カプラ職員がいるだろ？";
-		mes "彼女に頼めば送ってくれるよ。";
-		mes "ハッハッハッ!";
-		mes "話しかけてみるんだな。";
+		mes "[Instructor Rhino]";
+		mes "If you're in town, you can go to ...... Kafra Staff is just down the street to the left from me, right?" ;
+		mes "She'll give you a ride if you ask her." ;
+		mes "Ha ha ha! You'll have to talk to her." ;
 		close;
 	}
 }
 
 //==============================================================
-new_1-2.gat,115,111,3	script	アイテム教官	726,{
+new_1-2.gat,115,111,3 script Item Instructor 726,{
 	if(CHANGE_NV &0x40 == 0) {
-		mes "[教官アリス]";
-		mes "こんにちはー！";
-		mes "初めまして、かな？";
-		mes "アイテムの講義をしてあげようか？";
+		mes "[Instructor Alice]";
+		mes "Hello!" ;
+		mes "Nice to meet you, I guess?" ;
+		mes "Shall I give you a lecture on items?" ;
 		next;
-		switch(select("うん、うん！アイテム！","えー、それはちょっと……","いや、街に行きたい！")) {
+		switch(select("Yeah, yeah! Item!" , "Uh, that's a little ......" , "No, I want to go to the city!")) {
 		case 1:
-			mes "[教官アリス]";
-			mes "りょーかい！";
-			mes "じゃ、講義を始めましょう！";
-			mes "アイテムウィンドウを開いてみて。";
+			mes "[Instructor Alice]";
+			mes "Ryokai!" ;
+			mes "Let's start the lecture!" ;
+			mes "Open the item window." ;
 			next;
-			mes "[教官アリス]";
-			mes "基本情報ウィンドウの";
-			mes "itemというボタンを押せば";
-			mes "表示されるよ。";
-			mes "ちなみにアイテムは";
-			mes "消耗品、装備品、収集品に";
-			mes "分類されるの。";
+			mes "[Instructor Alice]";
+			mes "Press the button named item in the basic information window and you'll see it." ;
+			mes "By the way, items are categorized into consumables, equipment, and collectibles." ;
 			next;
-			mes "[教官アリス]";
-			mes "どう？　わかったかな？";
-			mes "初心者用ポーションをあげるから、";
-			mes "ダブルクリックで使ってみて。";
+			mes "[Instructor Alice]";
+			mes "How's that?  Do you understand?" ;
+			mes "I'm going to give you a beginner's potion, double click on it and use it." ;
 			set CHANGE_NV,CHANGE_NV|0x40;
 			getitem 569,1;
 			allowuseitem;
 			percentheal -50,0;
 			next;
 			if(countitem(569) < 1) {
-				mes "[教官アリス]";
-				mes "よくできたわねー。";
+				mes "[Instructor Alice]";
+				mes "Well done!" ;
 				if(BaseLevel < 8) {
-					mes "はい、ご褒美よ。";
-					if(BaseLevel == 7)	getexp 155,0;
-					else if(BaseLevel == 6)	getexp 115,0;
-					else if(BaseLevel == 5)	getexp 78,0;
-					else if(BaseLevel == 4)	getexp 37,0;
-					else if(BaseLevel == 3)	getexp 26,0;
-					else if(BaseLevel == 2)	getexp 17,0;
-					else if(BaseLevel == 1)	getexp 10,0;
+					mes "Yes, you're rewarded." ;
+					if(BaseLevel == 7) getexp 155,0;
+					else if(BaseLevel == 6) getexp 115,0;
+					else if(BaseLevel == 5) getexp 78,0;
+					else if(BaseLevel == 4) getexp 37,0;
+					else if(BaseLevel == 3) getexp 26,0;
+					else if(BaseLevel == 2) getexp 17,0;
+					else if(BaseLevel == 1) getexp 10,0;
 				}
 				else {
-					mes "さすがあなた";
-					mes "レベルが高いだけのことはあるわね。";
+					mes "That's just as well you have a high level." ;
 				}
 			}
 			else {
-				mes "[教官アリス]";
-				mes "ほら、ダブルクリックで使用してみて。";
+				mes "[Instructor Alice]";
+				mes "See, double click to use." ;
 			}
-			mes "……次は装備ね。";
+			mes "...... Next, you're equipped." ;
 			allowuseitem -1;
 			next;
-			mes "[教官アリス]";
-			mes "アイテムウィンドウの左側の";
-			mes "equipを押してみて。";
-			mes "そこは装備可能なアイテムが";
-			mes "表示される所なの。";
+			mes "[Instructor Alice]";
+			mes "Press equip on the left side of the item window." ;
+			mes "That's where the items you can equip are displayed." ;
 			next;
-			mes "[教官アリス]";
-			mes "装備できるアイテムをあげるから";
-			mes "試しに装備をしてみましょ！";
-			mes "まず^4A4AFFサンダルをダブルクリック！^000000";
+			mes "[Instructor Alice]";
+			mes "I'll give you the items you can equip, so you can try them out!" ;
+			mes "First, double click ^4A4AFF sandals! ^000000";
 			getitem 2510,1;
 			getitem 2414,1;
 			getitem 5055,1;
 			allowuseitem;
 			next;
 			if(getequipid(6) == 2414) {
-				mes "[教官アリス]";
-				mes "よくできたわねー。";
+				mes "[Instructor Alice]";
+				mes "Well done!" ;
 				if(BaseLevel < 8) {
-					mes "はい、ご褒美よ。";
-					if(BaseLevel == 7)	getexp 155,0;
-					else if(BaseLevel == 6)	getexp 115,0;
-					else if(BaseLevel == 5)	getexp 78,0;
-					else if(BaseLevel == 4)	getexp 37,0;
-					else if(BaseLevel == 3)	getexp 26,0;
-					else if(BaseLevel == 2)	getexp 17,0;
-					else if(BaseLevel == 1)	getexp 10,0;
+					mes "Yes, you're rewarded." ;
+					if(BaseLevel == 7) getexp 155,0;
+					else if(BaseLevel == 6) getexp 115,0;
+					else if(BaseLevel == 5) getexp 78,0;
+					else if(BaseLevel == 4) getexp 37,0;
+					else if(BaseLevel == 3) getexp 26,0;
+					else if(BaseLevel == 2) getexp 17,0;
+					else if(BaseLevel == 1) getexp 10,0;
 				}
 				else {
-					mes "さすがあなたレベルが高いだけの";
-					mes "ことはあるわね。";
+					mes "That's just as well you have a high level." ;
 				}
 			}
 			else {
-				mes "[教官アリス]";
-				mes "ほら、ダブルクリックで装備してみて。";
+				mes "[Instructor Alice]";
+				mes "Here, double click to equip it." ;
 			}
-			mes "他のアイテムも同じように装備してね。";
+			mes "Equip the other items in the same way." ;
 			allowuseitem -1;
 			next;
-			mes "[教官アリス]";
-			mes "じゃ、次に^4A4AFFF12^000000を押してみて。";
-			mes "小さな四角い欄が";
-			mes "9個表示されたでしょ。";
+			mes "[Instructor Alice]";
+			mes "Then press ^4A4AFFF12^000000 next." ;
+			mes "You should see 9 little square columns appear." ;
 			next;
-			mes "[教官アリス]";
-			mes "これはショートカットウィンドウと";
-			mes "言って回復アイテムや";
-			mes "スキル、装備アイテムをマウスで";
-			mes "引っ張ってくると登録できるの。";
+			mes "[Instructor Alice]";
+			mes "This is a shortcut window where you can register recovery items, skills, and equipment items by pulling them in with the mouse." ;
 			next;
-			mes "[教官アリス]";
-			mes "そして各欄に対応する";
-			mes "^4A4AFFF1からF9^000000までのキーを";
-			mes "押せば、使用できるよ。";
+			mes "[Instructor Alice]";
+			mes "And you can use it by pressing the keys from ^4A4AFFF1 to F9^000000 corresponding to each column." ;
 			next;
-			mes "[教官アリス]";
-			mes "スキルの講義を受けると";
-			mes "応急手当を教えてもらえるでしょ。";
-			mes "そのアイコンを、";
-			mes "試しにショートカットウィンドウに";
-			mes "登録してみよう！";
+			mes "[Instructor Alice]";
+			mes "If you take a lecture on skills, you'll be taught first aid." ;
+			mes "Let's register that icon in the shortcut window to try it out!" ;
 			next;
-			mes "[教官アリス]";
-			mes "どう？わかったかな。";
-			mes "そうそう、スキルを使うには";
-			mes "スキルポイントが必要よ。";
-			mes "では基本スキルはパッシブだから";
-			mes "ショートカットウィンドウには";
-			mes "登録できないけどね。";
+			mes "[Instructor Alice]";
+			mes "How's that? Did you get it?" ;
+			mes "Oh yeah, you need skill points to use skills." ;
+			mes "So, basic skills are passive, so you can't register them in the shortcut window, though." ;
 			if(JobLevel < 7) {
-				if(JobLevel == 6)	getexp 0,151;
-				else if(JobLevel == 5)	getexp 0,91;
-				else if(JobLevel == 4)	getexp 0,40;
-				else if(JobLevel == 3)	getexp 0,28;
-				else if(JobLevel == 2)	getexp 0,18;
-				else if(JobLevel == 1)	getexp 0,10;
+				if(JobLevel == 6) getexp 0,151;
+				else if(JobLevel == 5) getexp 0,91;
+				else if(JobLevel == 4) getexp 0,40;
+				else if(JobLevel == 3) getexp 0,28;
+				else if(JobLevel == 2) getexp 0,18;
+				else if(JobLevel == 1) getexp 0,10;
 			}
 			next;
-			mes "[教官アリス]";
-			mes "簡単でサポート万全なアリスの";
-			mes "講義はここまで！　最後に、ちょっと";
-			mes "役立つアイテムをあげる。ただし……";
-			mes "^FF0000ハエの羽、蝶の羽は";
-			mes "ここで使っちゃだめよ。^000000";
-			mes "迷子になっちゃうといけないからね。";
+			mes "[Instructor Alice]";
+			mes "So much for the easy and well-supported Alice lecture!　Finally, I'll give you a few useful items. However, ......." ;
+			mes "^FF0000Don't use fly wings or butterfly wings here. You don't want ^000000 to get lost." ;
 			getitem 601,10;
 			getitem 602,2;
 			getitem 569,50;
 			next;
-			mes "[教官アリス]";
-			mes "そしてこれが……";
+			mes "[Instructor Alice]";
+			mes "And this is ......" ;
 			if(JobLevel < 7) {
-				mes "転職応援としてのJob経験値！";
-				if(JobLevel == 6)	getexp 0,151;
-				else if(JobLevel == 5)	getexp 0,91;
-				else if(JobLevel == 4)	getexp 0,40;
-				else if(JobLevel == 3)	getexp 0,28;
-				else if(JobLevel == 2)	getexp 0,18;
-				else if(JobLevel == 1)	getexp 0,10;
+				mes "Job experience as job change support!" ;
+				if(JobLevel == 6) getexp 0,151;
+				else if(JobLevel == 5) getexp 0,91;
+				else if(JobLevel == 4) getexp 0,40;
+				else if(JobLevel == 3) getexp 0,28;
+				else if(JobLevel == 2) getexp 0,18;
+				else if(JobLevel == 1) getexp 0,10;
 			}
 			else {
-				mes "っと、経験値をあげようと思ったけど";
-				mes "あなた、レベルが高いねー。";
-				mes "なら、ご褒美はもういいかな。";
+				mes "Woah, I was going to give you experience, but you're so high level!" ;
+				mes "Then I guess I'm done with the reward." ;
 			}
-			mes "お疲れさま！";
+			mes "Good job!" ;
 			next;
-			switch(select("これからどうする？","いざ実戦へ！","じゃあね！")) {
+			switch(select("What now?" } mes "Good job!" ; next; switch(select("What are you going to do now?", "Let's go to the battle!" )) {
 				case 1:
-					mes "[教官アリス]";
-					mes "まだ会ってない教官がいたら、講義を";
-					mes "受けてきた方がいいよ。";
-					mes "私みたいに色々と助けてくれるからさ。";
-					mes "それか、あちこち見て回るといいよ。";
+					mes "[Instructor Alice]";
+					mes "If you haven't met any instructors yet, you should go to their lectures." ;
+					mes "Because they can help you with a lot of things, just like me." ;
+					mes "[Instructor Alice]"; mes "Or you could just look around." ;
 					next;
-					mes "[教官アリス]";
-					mes "講師たちの話も十分参考になるはず。";
-					mes "誰に話しかければいいのか";
-					mes "わからなくなったら、";
-					mes "近くにいる人に聞いてみて。";
+					mes "[Instructor Alice]";
+					mes "The instructors should be helpful enough." ;
+					mes "If you're not sure who to talk to, ask someone nearby." ;
 					close;
 				case 2:
 					break;
 				case 3:
-					mes "[教官アリス]";
-					mes "……じゃ、またね！";
+					mes "[Instructor Alice]";
+					mes "...... See you later!" ;
 					close;
 			}
 			break;
 		case 2:
-			mes "[教官アリス]";
-			mes "実戦がいいのね。";
-			mes "すぐに行きたいのかな？";
-			mes "えっと……教官たちには";
-			mes "全員会ったよね？";
-			mes "教官の講義は全部受けた方が";
-			mes "絶対お得だよ。";
+			mes "[Instructor Alice]";
+			mes "You want the real game." ;
+			mes "Do you want to go right away?" ;
+			mes "Well, ...... You've met all the instructors, right?" ;
+			mes "It's definitely worth it to take all the lectures from the instructors." ;
 			next;
-			if(select("うん、実戦！","ちょっと待って！")==1)
+			if(select("Yeah, the real battle!" , "Wait a minute!") ==1)
 				break;
-			mes "[教官アリス]";
-			mes "わかったわ。";
-			mes "じゃあ、もっと他の人の話も";
-			mes "聞いてきなさい。講師たちの話も";
-			mes "参考になるはずよ。";
+			mes "[Instructor Alice]";
+			mes "Okay, I've got it." ;
+			mes "Well, go listen to more of the others. The instructors' stories should be helpful too." ;
 			close;
 		case 3:
-			mes "[教官アリス]";
-			mes "街へ行きたいなら、あそこにいる";
-			mes "カプラ職員にお願いしなさい。";
-			mes "プロンテラ、モロク、フェイヨン……";
-			mes "あなたが行きたい街へ送ってくれるよ。";
+			mes "[Instructor Alice]";
+			mes "If you want to go to the city, ask Kafra Staff over there." ;
+			mes "Prontera, Morroc, Payon......." ;
+			mes "They will take you to the city you want to go to." ;
 			close;
 		}
-		mes "[教官アリス]";
-		mes "おお、やる気ね！";
-		mes "じゃあ、送ってあげよう。";
-		mes "送った先にいる担当の人の";
-		mes "話はちゃんと聞くのよ。";
-		mes "戦闘は命がけ！　だからね。";
-		mes "では、いってらっしゃーい！";
+		mes "[Instructor Alice]";
+		mes "Oh, you're going to do it!" ;
+		mes "Well, I'll send you on your way." ;
+		mes "Make sure you listen to the person in charge of the place you send them to." ;
+		mes "Combat is deadly!  So." ;
+		mes "Well, have a good day!" ;
 		close2;
 		warp "new_1-2.gat",28,178;
 		end;
 	}
 	if(CHANGE_NV &0x10 == 0 || CHANGE_NV &0x20 == 0) {
-		set '@word$,(CHANGE_NV &0x10 == 0)? "インターフェース": "スキル";
-		mes "[教官アリス]";
-		mes "何かお手伝いしようか？";
-		if('@word$ == "インターフェース") {
-			mes "あら、インターフェースの講義を";
-			mes "受けていないみたいね。";
-			mes "クリスさんの話を聞いてきた方が";
+		set '@word$,(CHANGE_NV &0x10 == 0)? "interface": "skill";
+		mes "[Instructor Alice]";
+		mes "Can I help you?" ;
+		if('@word$ == "interface") {
+			mes "Oh, I see you didn't get the interface lecture." ;
+			mes "I think you should go talk to Chris."
 		}
 		else {
-			mes "あら、^4A4AFFスキルの講義^000000を受けて";
-			mes "いないみたいね。";
-			mes "サイさんの話を聞いてきた方が";
+			mes "Oh, I guess you didn't get the ^000000 lecture on ^4A4AFF skills." ;
+			mes "You'd better go and listen to what Mr. Cy has to say."
 		}
-		mes "いいわよ。";
+		mes "Okay." ;
 		next;
-		switch(select('@word$+"の講義を受けたい","話より、実戦がいい！","街へはどうやって行くの？")) {
+		switch(select('@word$+"I'd rather have a lecture on "@word$+"", "I'd rather have a real battle than a talk!" , "How do I get to the city?")) {
 		case 1:
-			if('@word$ == "インターフェース") {
-				mes "[教官アリス]";
-				mes "教官のクリスさんは";
-				mes "この部屋の中央にいるよ。";
-				mes "そこへ行ってクリスさんに";
-				mes "話しかけてみなさい。";
-				mes "きっと役に立つはずよ。";
+			if('@word$ == "interface") {
+				mes "[Instructor Alice]";
+				mes "Instructor Chris is in the center of this room." ;
+				mes "Go there and talk to Chris-san." ;
+				mes "[Instructor Alice]"; mes "I'm sure she can help you." ;
 				close;
 			}
-			mes "[教官アリス]";
-			mes "教官のサイさんは";
-			mes "私の右側にいるよ。";
-			mes "そこへ行ってサイさんに";
-			mes "話しかけてみなさい。";
-			mes "じゃあ、サイさんの下へ送ってあげる。";
+			mes "[Instructor Alice]";
+			mes "Instructor Sai is on my right." ;
+			mes "Go there and talk to Mr. Rhino." ;
+			mes "Then I will take you to Mr. Sai." ;
 			close2;
 			warp "new_1-2.gat",84,107;
 			end;
 		case 2:
-			mes "[教官アリス]";
-			mes "実戦がいいのね。";
-			mes "すぐに行きたいのかな？";
-			mes "えっと……教官たちには";
-			mes "全員会ったよね？";
-			mes "教官の講義は全部受けた方が";
-			mes "絶対お得だよ。";
+			mes "[Instructor Alice]";
+			mes "You want the real game." ;
+			mes "Do you want to go right away?" ;
+			mes "Well, ...... You've met all the instructors, right?" ;
+			mes "It's definitely worth it to take all the lectures from the instructors." ;
 			next;
-			if(select("うん、実戦！","ちょっと待って！")==1) {
-				mes "[教官アリス]";
-				mes "おお、やる気ね！";
-				mes "じゃあ、送ってあげよう。";
-				mes "送った先にいる担当の人の";
-				mes "話はちゃんと聞くのよ。";
-				mes "戦闘は命がけ！　だからね。";
-				mes "では、いってらっしゃーい！";
+			if(select("Yeah, the real battle!" , "Wait a minute!") ==1) {
+				mes "[Instructor Alice]";
+				mes "Oh, you're gonna do it!" ;
+				mes "Well, I'll send you on your way." ;
+				mes "Make sure you listen to the person in charge of the place you send them to." ;
+				mes "Combat is deadly!  So." ;
+				mes "Well, have a good day!" ;
 				close2;
 				warp "new_1-2.gat",28,178;
 				end;
 			}
-			mes "[教官アリス]";
-			mes "わかったわ。";
-			mes "じゃあ、もっと他の人の話も";
-			mes "聞いてきなさい。講師たちの話も";
-			mes "参考になるはずよ。";
+			mes "[Instructor Alice]";
+			mes "Okay, I've got it." ;
+			mes "Well, go listen to more of the others. The instructors' stories should be helpful, too." ;
 			close;
 		case 3:
-			mes "[教官アリス]";
-			mes "街へ行きたいなら、あそこにいる";
-			mes "カプラ職員にお願いしなさい。";
-			mes "プロンテラ、モロク、フェイヨン……";
-			mes "あなたが行きたい街へ送ってくれるよ。";
+			mes "[Instructor Alice]";
+			mes "If you want to go to the city, ask Kafra Staff over there." ;
+			mes "Prontera, Morroc, Payon......." ;
+			mes "They will take you to the city you want to go to." ;
 			close;
 		}
 	}
-	mes "[教官アリス]";
-	mes "どうしたの？";
-	mes "何か困ってるのかな？";
-	mes "講義は……全て受けたみたいね。";
-	mes "どこか行きたいの？";
+	mes "[Instructor Alice]";
+	mes "What's wrong?" ;
+	mes "Are you in some kind of trouble?" ;
+	mes "The lectures are at ...... Looks like you got all of them." ;
+	mes "Do you want to go somewhere?" ;
 	next;
-	switch(select("どこに行けばいいの？","街へ行きたい","何でもない")) {
+	switch(select("Where do you want to go?" , "I want to go to the city", "Nothing")) {
 	case 1:
-		mes "[教官アリス]";
-		mes "そうね……";
-		mes "アイテムの使い方も分かってるし";
-		mes "スキルも学んだし……じゃあ、";
-		mes "残ってるのは戦闘実習だね。";
-		mes "それなら実習マップの入り口へ";
-		mes "送ってあげようか？";
+		mes "[Instructor Alice]";
+		mes "Right. ......" ;
+		mes "I know how to use items and I've learned skills. ...... Then all that's left is the combat training." ;
+		mes "Then I can send you to the entrance of the training map, if you want." ;
 		next;
-		if(select("送って！送って！","ちょっと待って！")==1) {
-			mes "[教官アリス]";
-			mes "私があげたアイテムは";
-			mes "きちんと持っているわよね？";
-			mes "武器や防具は装備した？";
-			mes "それじゃ、送ってあげる！";
+		if(select("Send! Send!" , "Wait a minute!") ==1) {
+			mes "[Instructor Alice]";
+			mes "You have the items I gave you, right?" ;
+			mes "Did you equip your weapons and armor?" ;
+			mes "Then I'll send them to you!" ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
 		}
-		mes "[教官アリス]";
-		mes "わかったわ。";
-		mes "また何かあったら";
-		mes "いつでも呼んでちょうだい。";
+		mes "[Instructor Alice]";
+		mes "Okay, I've got it." ;
+		mes "If you need anything else, just call me anytime." ;
 		close;
 	case 2:
-		mes "[教官アリス]";
-		mes "街へ行きたいなら、あそこにいる";
-		mes "カプラ職員にお願いしなさい。";
-		mes "プロンテラ、モロク、フェイヨン……";
-		mes "あなたが行きたい街へ送ってくれるよ。";
+		mes "[Instructor Alice]";
+		mes "If you want to go to the city, ask Kafra Staff over there." ;
+		mes "Prontera, Morroc, Payon......." ;
+		mes "They will take you to the city you want to go to." ;
 		close;
 	case 3:
-		mes "[教官アリス]";
-		mes "……じゃ、またね！";
+		mes "[Instructor Alice]";
+		mes "...... See you later!" ;
 		close;
 	}
 }
 
 //==============================================================
-new_1-2.gat,118,108,3	script	カプラ職員	117,{
-	mes "[カプラ職員]";
-	mes "いらっしゃいませ。";
-	mes "私は初心者の方へ";
-	mes "ご案内するために";
-	mes "カプラ本社から派遣されました。";
-	mes "よろしくお願いいたします。";
+new_1-2.gat,118,108,3 script Kafra Staff 117,{
+	mes "[Kafra Staff]";
+	mes "Welcome." ;
+	mes "I have been dispatched from the Kafra headquarters to guide you through the process for beginners." ;
+	mes "Please give me your best regards." ;
 	next;
-	mes "[カプラ職員]";
-	mes "我がカプラサービスは";
-	mes "ミッドガルド大陸内全ての";
-	mes "物流を管理していると言われるように";
-	mes "ほぼ全ての街で、冒険者の皆様への";
-	mes "サービスを提供させていただいて";
-	mes "おります。";
+	mes "[Kafra Staff]";
+	mes "Our Kafra Service provides services to adventurers in almost every city, as we are said to manage all logistics within the Midgard continent." ;
 	next;
-	mes "[カプラ職員]";
-	mes "いらっしゃいませ。";
-	mes "カプラサービスは";
-	mes "いつも皆様のそばにいます。";
-	mes "何をお手伝いいたしましょう？";
+	mes "[Kafra Staff]";
+	mes "Welcome." ;
+	mes "Kafra Service is always with you." ;
+	mes "How can we help you?" ;
 	next;
-	mes "[カプラ職員]";
-	mes "空間移動サービスについて";
-	mes "先にご案内させていただきます。";
-	mes "今、街へ移動されますと、";
-	mes "^4A4AFF二度と初心者修練場へは";
-	mes "戻れなくなります。^000000";
-	mes "あらかじめご了承ください。";
+	mes "[Kafra Staff]";
+	mes "We will let you know about our space transfer services first." ;
+	mes "If you move to the city now, ^4A4AFF you will not be able to return to the Novice Training Ground again. ^000000Please understand this in advance." ;
 	next;
-	if(select("空間移動サービス","カプラサービスには何があるの？")==1) {
+	if(select("Spatial Transfer Service", "What's in Kafra Service?") ==1) {
 		if(CHANGE_NV &0x70 == 0) {
-			mes "[カプラ職員]";
-			mes "街へ行かれるのですね。";
-			mes "では、簡単に主要都市をご紹介";
-			mes "しましょう。";
-			mes "まず、ルーンミッドガッツ王国の";
-			mes "首都プロンテラ、そしてその衛星都市";
-			mes "イズルードがあります。";
+			mes "[Kafra Staff]";
+			mes "You are going to the city." ;
+			mes "So, let me briefly introduce you to the major cities." ;
+			mes "First, there is Prontera, the capital of the Kingdom of Rune-Midgarts, and its satellite city Izlude." ;
 			next;
-			mes "[カプラ職員]";
-			mes "^4A4AFFモロクは砂漠の都市で、シーフや";
-			mes "アサシン^000000が多く集まっている街です。";
-			mes "^4A4AFFフェイヨンは山岳に位置しており、";
-			mes "そのすぐ近くに弓手村^000000があります。";
+			mes "[Kafra Staff]";
+			mes "^4A4AFFMorroc is a desert city with a large concentration of Thief and Assassin^000000." ;
+			mes "^4A4AFFPayon is located in the mountains, with Archer Village^000000 in its immediate vicinity." ;
 			next;
-			mes "[カプラ職員]";
-			mes "^4A4AFFゲフェンは魔法都市と言われています。";
-			mes "もしマジシャンになりたいのでしたら、";
-			mes "ゲフェン^000000へ行かれると良いでしょう。";
+			mes "[Kafra Staff]";
+			mes "^4A4AFFGeffen is said to be a magical city." ;
+			mes "If you want to become a Magician, you should go to Geffen^000000." ;
 			next;
-			mes "[カプラ職員]";
-			mes "^4A4AFFアルベルタは港街でして、";
-			mes "商人組合^000000があります。";
-			mes "また、船で移動したいのでしたら、";
-			mes "アルベルタかイズルードへ行く";
-			mes "必要があります。";
-			mes "では、目的地をお選びください。";
+			mes "[Kafra Staff]";
+			mes "^4A4AFFAlberta is a port town and has a merchants' association^000000." ;
+			mes "Also, if you want to travel by boat, you need to go to Alberta or Izlude." ;
+			mes "Then please choose your destination." ;
 			next;
 		}
-		switch (select((CHANGE_NV&0x70==0)? "": "第2コース（戦闘実習）","プロンテラ","モロク","フェイヨン","アルベルタ","ゲフェン")) {
+		switch (select((CHANGE_NV&0x70=0)? "": "Course 2 (Combat Training)", "Prontera", "Morroc", "Payon", "Alberta", "Geffen")) {
 		case 1:
-			mes "[カプラ職員]";
-			mes "第2コースへ送りましょう。";
+			mes "[Kafra Staff]";
+			mes "Send them to the second course." ;
 			close2;
 			warp "new_1-2.gat",28,178;
 			end;
 		case 2:
-			mes "[カプラ職員]";
-			mes "ルーンミッドガッツ王国の首都";
-			mes "プロンテラですね。";
-			mes "では、プロンテラへ送りましょう。";
-			mes "ありがとうございました。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "Prontera, the capital of the Kingdom of Rune-Midgarts, isn't it?" ;
+			mes "Then let's send it to Prontera." ;
+			mes "Thank you very much." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close2;
 			savepoint "prontera.gat",118,72;
 			warp "prontera.gat",150,50;
 			break;
 		case 3:
-			mes "[カプラ職員]";
-			mes "砂漠の都市モロクですね。";
-			mes "中央のオアシスが素敵な所です。";
-			mes "では、モロクへ送りましょう。";
-			mes "ありがとうございました。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "It's the desert city of Morroc." ;
+			mes "The central oasis is a lovely place." ;
+			mes "So, let's send you to Morroc." ;
+			mes "Thank you very much." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close2;
 			savepoint "morocc.gat",151,98;
 			warp "morocc.gat",155,110;
 			break;
 		case 4:
-			mes "[カプラ職員]";
-			mes "あら？　アーチャーになりたいの";
-			mes "ですか？";
-			mes "では、フェイヨンへ送りましょう。";
-			mes "ありがとうございました。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "Oh?  Do you want to be an Archer?" ;
+			mes "Then let's send you to Payon." ;
+			mes "Thank you very much." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close2;
 			savepoint "payon.gat",160,58;
 			warp "payon.gat",166,67;
 			break;
 		case 5:
-			mes "[カプラ職員]";
-			mes "港街アルベルタですね。";
-			mes "ルーンミッドガッツ王国の";
-			mes "貿易拠点ですね。";
-			mes "また、他地域へ船便も";
-			mes "アルベルタから出ています。";
-			mes "商人組合にでもおこしでしょうか？";
+			mes "[Kafra Staff]";
+			mes "It's the port city Alberta." ;
+			mes "It is a trading center of the Kingdom of Rune-Midgarts." ;
+			mes "There are also shipping services to other areas from Alberta." ;
+			mes "Are you part of a merchants' association?" ;
 			next;
-			mes "[カプラ職員]";
-			mes "では、アルベルタへ送りましょう。";
-			mes "ありがとうございました。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "Then let's send them to Alberta." ;
+			mes "Thank you very much." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close2;
 			savepoint "alberta.gat",31,233;
 			warp "alberta.gat",114,58;
 			break;
 		case 6:
-			mes "[カプラ職員]";
-			mes "魔法都市ゲフェンですね。";
-			mes "ゲフェンは中央のゲフェンタワーが";
-			mes "立派です。では、ゲフェンの噴水の";
-			mes "近くへ送りましょう。";
+			mes "[Kafra Staff]";
+			mes "It's the magical city of Geffen." ;
+			mes "Geffen has a magnificent Geffen Tower in the center. Now, let's send you near the fountain of Geffen." ;
 			next;
-			mes "[カプラ職員]";
-			mes "ありがとうございました。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "Thank you very much." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close2;
 			savepoint "geffen.gat",118,37;
 			warp "geffen.gat",121,65;
@@ -1560,977 +1238,598 @@ new_1-2.gat,118,108,3	script	カプラ職員	117,{
 		set CHANGE_NV,0;
 		end;
 	}
-	mes "[カプラ職員]";
-	mes "カプラサービスの説明をしましょう。";
-	mes "知りたいサービスをご選択ください。";
+	mes "[Kafra Staff]";
+	mes "Let's explain Kafra Service." ;
+	mes "Please select the service you want to know about." ;
 	while(1) {
 		next;
-		switch(select("位置セーブサービス","倉庫サービス","空間移動サービス","カートサービス","話をやめる")) {
+		switch(select("location saving service", "warehouse service", "spatial movement service", "cart service", "stop talking")) {
 		case 1:
-			mes "[カプラ職員]";
-			mes "戦闘不能時の復活地点を保存する";
-			mes "サービスです。各街のカプラ職員で";
-			mes "セーブしますと、該当のカプラ職員が";
-			mes "担当しているセーブ位置からの";
-			mes "復活が可能です。";
+			mes "[Kafra Staff]";
+			mes "This service saves the resurrection point in case of combat failure. If you save at Kafra Staff in each town, you can revive from the save position that the corresponding Kafra Staff is in charge of." ;
 			next;
-			mes "[カプラ職員]";
-			mes "また、セーブ位置は一番最後に";
-			mes "保存した場所が有効になります。";
-			mes "それから「蝶の羽」というアイテムを";
-			mes "利用するとセーブ位置へ戻ることが";
-			mes "できます。";
+			mes "[Kafra Staff]";
+			mes "Also, the save position will be effective from the last saved location." ;
+			mes "Then you can return to the save position by using the item "Butterfly Wings"." ;
 			next;
-			mes "[カプラ職員]";
-			mes "この位置セーブサービスは無料ですので";
-			mes "ぜひ、ご利用ください。";
+			mes "[Kafra Staff]";
+			mes "This location saving service is free of charge, so please take advantage of it." ;
 			if(CHANGE_NV &0x80 == 0) {
 				if(BaseLevel < 8) {
-					if(BaseLevel == 7)	getexp 155,0;
-					else if(BaseLevel == 6)	getexp 115,0;
-					else if(BaseLevel == 5)	getexp 78,0;
-					else if(BaseLevel == 4)	getexp 37,0;
-					else if(BaseLevel == 3)	getexp 26,0;
-					else if(BaseLevel == 2)	getexp 17,0;
-					else if(BaseLevel == 1)	getexp 10,0;
+					if(BaseLevel == 7) getexp 155,0;
+					else if(BaseLevel == 6) getexp 115,0;
+					else if(BaseLevel == 5) getexp 78,0;
+					else if(BaseLevel == 4) getexp 37,0;
+					else if(BaseLevel == 3) getexp 26,0;
+					else if(BaseLevel == 2) getexp 17,0;
+					else if(BaseLevel == 1) getexp 10,0;
 				}
 				set CHANGE_NV,CHANGE_NV|0x80;
 			}
 			continue;
 		case 2:
-			mes "[カプラ職員]";
-			mes "我がカプラサービスは長年の歴史と";
-			mes "伝統を誇る、大陸最大の";
-			mes "物流センターです。";
+			mes "[Kafra Staff]";
+			mes "Our Kafra Service is the largest logistics center on the continent with a long history and tradition." ;
 			next;
-			mes "[カプラ職員]";
-			mes "冒険者の皆様の品物を";
-			mes "保管させていただく";
-			mes "倉庫も、我がカプラサービスにて";
-			mes "提供しております。";
+			mes "[Kafra Staff]";
+			mes "Kafra Service also provides a warehouse to store the goods of our adventurers." ;
 			next;
-			mes "[カプラ職員]";
-			mes "カプラサービスは、ほぼ全ての";
-			mes "街で営業しておりますので";
-			mes "ぜひ、ご利用ください。";
+			mes "[Kafra Staff]";
+			mes "Kafra Service is open in almost every city." ;
 			next;
-			mes "[カプラ職員]";
-			mes "荷物が多いと移動や戦闘中、思うように";
-			mes "動けないこともおありでしょう。";
-			mes "そんな時、我がカプラサービスの倉庫に";
-			mes "あまり使用しないアイテムを預けると";
-			mes "よいと思います。";
+			mes "[Kafra Staff]";
+			mes "If you have a lot of luggage, you may not be able to move as much as you would like during transportation or in battle." ;
+			mes "In such a case, it would be a good idea to deposit items that you don't use very often in the warehouse of our Kafra Service." ;
 			next;
-			mes "[カプラ職員]";
-			mes "倉庫のご利用はある程度経験を";
-			mes "積まれた方を対象にさせて";
-			mes "いただいております。";
-			mes "そしてご利用の際には、";
-			mes "一定額の倉庫利用料を";
-			mes "いただいております。";
+			mes "[Kafra Staff]";
+			mes "The use of our warehouse is only for those who have gained some experience." ;
+			mes "And we charge a certain amount for the use of the warehouse." ;
 			next;
-			mes "[カプラ職員]";
-			mes "倉庫のご利用には";
-			mes "^4A4AFF基本スキルのレベルが6";
-			mes "以上^000000必要です。";
+			mes "[Kafra Staff]";
+			mes "To use the warehouse, you must have ^4A4AFF basic skill level 6 or higher^000000." ;
 			next;
-			mes "[カプラ職員]";
-			mes "倉庫はアイテムと同じく消耗品、装備品";
-			mes "その他アイテムという風に";
-			mes "分類されております。";
+			mes "[Kafra Staff]";
+			mes "Warehouses are categorized like items: consumables, equipment and other items." ;
 			next;
-			mes "[カプラ職員]";
-			mes "また、最高300種類のアイテムを";
-			mes "預けることができます。";
-			mes "同じアイテムの最大保管可能個数は";
-			mes "3万個となります。";
+			mes "[Kafra Staff]";
+			mes "You can also deposit up to 300 different items." ;
+			mes "The maximum number of the same item that can be stored is 30,000." ;
 			next;
-			mes "[カプラ職員]";
-			mes "同一アカウント内のキャラクターは";
-			mes "共通の倉庫を利用することになります。";
-			mes "各街ごとに倉庫利用料は異なりますので";
-			mes "ご利用の際にはご注意ください。";
+			mes "[Kafra Staff]";
+			mes "Characters in the same account will use a common warehouse." ;
+			mes "Each city has different warehouse usage fees, so please Attention when using this service." ;
 			if(CHANGE_NV &0x100 == 0) {
 				if(JobLevel < 7) {
-					if(JobLevel == 6)	getexp 0,151;
-					else if(JobLevel == 5)	getexp 0,91;
-					else if(JobLevel == 4)	getexp 0,40;
-					else if(JobLevel == 3)	getexp 0,28;
-					else if(JobLevel == 2)	getexp 0,18;
-					else if(JobLevel == 1)	getexp 0,10;
+					if(JobLevel == 6) getexp 0,151;
+					else if(JobLevel == 5) getexp 0,91;
+					else if(JobLevel == 4) getexp 0,40;
+					else if(JobLevel == 3) getexp 0,28;
+					else if(JobLevel == 2) getexp 0,18;
+					else if(JobLevel == 1) getexp 0,10;
 				}
 				set CHANGE_NV,CHANGE_NV|0x100;
 			}
 			continue;
 		case 3:
-			mes "[カプラ職員]";
-			mes "我がカプラサービスでは";
-			mes "長年のノウハウを生かし、皆様の旅が";
-			mes "より快適になるようにと、";
-			mes "空間移動サービスをご提供して";
-			mes "います。";
+			mes "[Kafra Staff]";
+			mes "At Kafra Service, we have been providing space transfer services with our long-standing know-how to make your travel more comfortable." ;
 			next;
-			mes "[カプラ職員]";
-			mes "これはとある空間術師の能力を";
-			mes "利用したもので、皆様をご希望の地域へ";
-			mes "転送するというものです。";
-			mes "転送可能な地域は各街ごとに";
-			mes "決められていますので、ご利用の際には";
-			mes "行き先もあわせてご確認ください。";
+			mes "[Kafra Staff]";
+			mes "This is the ability of a certain spatial surgeon to transfer you to the area of your choice." ;
+			mes "The areas that can be transferred are determined for each city, so please check the destination as well when using this service." ;
 			next;
-			mes "[カプラ職員]";
-			mes "お客様のご要望に真心をもって";
-			mes "お応えするのが";
-			mes "我がカプラサービスの方針です。";
-			mes "今後もカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "It is our policy at Kafra Service to respond to our customers' requests with sincerity." ;
+			mes "We look forward to working with Kafra Service in the future." ;
 			continue;
 		case 4:
-			mes "[カプラ職員]";
-			mes "我がカプラサービスでは、商人系職業の";
-			mes "方のために運送手段の一つである";
-			mes "「カート」を貸し出しております。";
-			mes "元々はアルベルタ商人組合で";
-			mes "行われていたのですが、カプラにて";
-			mes "業務を代行することになりました。";
+			mes "[Kafra Staff]";
+			mes "Our Kafra Service rents "carts", one of the means of transportation, for those in the merchant profession." ;
+			mes "Originally done by the Alberta Merchant's Association, we have decided to take over the business at Kafra." ;
 			next;
-			mes "[カプラ職員]";
-			mes "それにより便利に手軽に利用できる";
-			mes "ようになりました。";
-			mes "カートのご利用は商人系職業である";
-			mes "商人、ブラックスミス、アルケミストと";
-			mes "その上位職業の方のみとさせて";
-			mes "いただいております。";
+			mes "[Kafra Staff]";
+			mes "This makes it convenient and easy to use." ;
+			mes "The cart is only available to merchants, Blacksmiths, Alchemists and their higher professions." ;
 			next;
-			mes "[カプラ職員]";
-			mes "あ、それから聞いた話なので";
-			mes "正確ではありませんが……";
-			mes "スーパーノービスの方もカートを";
-			mes "ご利用になれる場合があるそうです。";
+			mes "[Kafra Staff]";
+			mes "Oh, and that's not exactly what I heard, but ......." ;
+			mes "Supernovice may also be able to use the cart." ;
 			next;
-			mes "[カプラ職員]";
-			mes "ご利用にはスキル「プッシュカート」が";
-			mes "必要です。";
-			mes "また、カートの貸し出し料金は";
-			mes "街ごとに異なりますので、ご利用の際は";
-			mes "ご注意ください。";
+			mes "[Kafra Staff]";
+			mes "The skill "Pushcart" is required to use this service." ;
+			mes "Also, the rental fee for the cart varies from town to town, so please Attention when using the cart." ;
 			continue;
 		case 5:
-			mes "[カプラ職員]";
-			mes "我がカプラサービスについて";
-			mes "ご理解いただけましたでしょうか？";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願いします。";
+			mes "[Kafra Staff]";
+			mes "Did you understand about our Kafra Service?" ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			close;
 		}
 	}
 }
 
 //==============================================================
-new_1-2.gat,121,101,2	script	案内要員	105,{
-	mes "[案内要員]";
-	mes "私たち案内要員は街の入口で";
-	mes "建物などの位置情報について";
-	mes "ご案内しています。";
-	mes "初めて訪れた街では、";
-	mes "私のような案内要員をお訪ね";
-	mes "ください。";
+new_1-2.gat,121,101,2 script Info Staff 105,{
+	mes "[Info Staff]";
+	mes "We, Info Staff, are at the entrance of the city to guide you about the location of buildings and other information." ;
+	mes "When you visit a city for the first time, please visit an Info Staff like me." ;
 	next;
-	mes "[案内要員]";
-	mes "各街の案内要員は、街の特色";
-	mes "によって服装が異なっていたり";
-	mes "しますので、その点には気を";
-	mes "つけてくださいね。";
+	mes "[Info Staff]";
+	mes "The Info Staff in each city may dress differently depending on the characteristics of the city, so please keep that in mind." ;
 	next;
-	mes "[案内要員]";
-	mes "街に行きたい場合は、";
-	mes "カプラ職員の空間移動";
-	mes "サービスを利用してください。";
+	mes "[Info Staff]";
+	mes "If you want to go to a city, please use Kafra Staff's spatial transfer service." ;
 	close;
 }
 
 
 //==========================================
-// 右の部屋
+// right room.
 //------------------------------------------
 
-new_1-2.gat,161,182,6	script	インターフェース講師	92,{
-	mes "[エドウィン]";
-	mes "私はインターフェースについて";
-	mes "詳しく教えている講師よ。";
-	mes "さ、知りたい項目を選んでね。";
+new_1-2.gat,161,182,6 script Interface Instructor 92,{
+	mes "[Edwin]";
+	mes "I'm an instructor teaching more about interfaces." ;
+	mes "Now, choose what you want to know." ;
 	while(1) {
 		next;
-		switch(select("基本情報ウィンドウについて","パーティーウィンドウについて","アイテムウィンドウについて","オプションウィンドウについて","装備ウィンドウについて","やめる")) {
+		switch(select("About Basic Info Window", "About Party Window", "About Item Window", "About Option Window", "About Equipment Window", "Quit")) {
 		case 1:
-			mes "[エドウィン]";
-			mes "それでは基本情報ウィンドウを";
-			mes "見てみよう。";
-			mes "あなたの名前が書かれていて";
-			mes "ベースレベルと職業のレベルが";
-			mes "書かれているよね。";
+			mes "[Edwin]";
+			mes "Then let's look at the basic information window." ;
+			mes "It's got your name on it and your base level and your profession level, right?" ;
 			next;
-			mes "[エドウィン]";
-			mes "ベースレベル^8408FF(Base Lv)^000000は、";
-			mes "キミの基本的なレベルのことを";
-			mes "言うの。";
+			mes "[Edwin]";
+			mes "Base Level^8408FF(Base Lv)^000000 says your base level." ;
 			next;
-			mes "[エドウィン]";
-			mes "後ろの^8408FFJob Lv^000000は職業レベルね。";
-			mes "ちゃんと教官の講義を受けて";
-			mes "来たのなら、もう二つの違いは";
-			mes "わかっていると思うわ。";
+			mes "[Edwin]";
+			mes "The ^8408FFJob Lv^000000 behind it is your occupation level." ;
+			mes "If you've been to the instructor's lecture, you already know the difference between the two." ;
 			next;
-			mes "[エドウィン]";
-			mes "基本情報ウィンドウを見ると、";
-			mes "現在の自分の経験値がわかるわ。";
-			mes "経験値は % で表されて、やはり";
-			mes "Base Lvと Job Lvに分かれてる";
-			mes "でしょ。経験値が100%になると、";
-			mes "それぞれがレベルアップするわ。";
+			mes "[Edwin]";
+			mes "The Basic Info window will tell you your current experience level." ;
+			mes "Experience is expressed as a % and is still divided into Base Lv and Job Lv. When your experience reaches 100%, each of them will level up." ;
 			next;
-			mes "[エドウィン]";
-			mes "HPはキミの体力を表している。";
-			mes "HPが0になると気絶して、戦闘不能";
-			mes "になるわ。その時、街に戻るか、";
-			mes "誰かが復活させてくれるのを";
-			mes "待たなければならないわ。";
+			mes "[Edwin]";
+			mes "HP represents your strength." ;
+			mes "When your HP reaches 0, you will faint and lose the ability to fight. At that point, you must return to town or wait for someone to revive you." ;
 			next;
-			mes "[エドウィン]";
-			mes "フィールドやダンジョンで戦闘不能に";
-			mes "なってしまうと、^4A4AFF経験値 -1% の";
-			mes "ペナルティ^000000を受けるから";
-			mes "気をつけてね。";
+			mes "[Edwin]";
+			mes "If you lose combat in a field or dungeon, you will receive a ^4A4AFF experience -1% penalty^000000, so be careful." ;
 			next;
-			mes "[エドウィン]";
-			mes "SPはスキルを使う時に消費する";
-			mes "数値ね。後で職業に就くようになると";
-			mes "使えるスキルを覚えられるから、";
-			mes "そのときに試してみてね。";
-			mes "スキルの説明はスキル教官が";
-			mes "してくれるわ。";
+			mes "[Edwin]";
+			mes "SP is the number you spend when you use a skill. You can learn the skills you can use later when you start working in a profession, so try it then." ;
+			mes "The Skill Instructor will explain the skills to you." ;
 			next;
-			mes "[エドウィン]";
-			mes "現在の自分の所持限界量を";
-			mes "知りたければ、基本情報ウィンドウの";
-			mes "下の方のweightの値を見ると";
-			mes "いいわ。";
+			mes "[Edwin]";
+			mes "If you want to know what your current possession limit is, look at the weight value at the bottom of the Basic Info window." ;
 			next;
-			mes "[エドウィン]";
-			mes "/ の後ろの部分が所持限界量で、";
-			mes "所持重量が50%を超えると";
-			mes "自動的にHP/SPが回復しない";
-			mes "ようになるから気をつけてね。";
+			mes "[Edwin]";
+			mes "The part after the "/" is your possession limit, and be aware that if your possession weight exceeds 50%, your HP/SP will not automatically recover." ;
 			next;
-			mes "[エドウィン]";
-			mes "所持限界量の後の数値は、";
-			mes "現在キミが持っているお金を";
-			mes "表しているの。";
-			mes "ミッドガルドの貨幣単位は";
-			mes "Zeny(ゼニー)よ。";
+			mes "[Edwin]";
+			mes "The number after the possession limit represents the money you currently have." ;
+			mes "The monetary unit in Midgard is the Zenny." ;
 			next;
-			mes "[エドウィン]";
-			mes "基本情報ウィンドウの右側にある";
-			mes "ボタンは、別のインターフェース";
-			mes "メニューなので、1つずつ押して";
-			mes "何が表示されるか確認してみてね。";
+			mes "[Edwin]";
+			mes "The buttons on the right side of the Basic Info window are a separate interface menu, so press them one at a time to see what appears." ;
 			next;
-			mes "[エドウィン]";
-			mes "あと、基本情報ウィンドウは、";
-			mes "「alt+v」で最小/最大化が";
-			mes "できるから参考にしてね。";
+			mes "[Edwin]";
+			mes "Also, you can minimize/maximize the Basic Info window with 'alt+v', so please refer to that." ;
 			continue;
 		case 2:
-			mes "[エドウィン]";
-			mes "パーティーウィンドウは、";
-			mes "基本情報ウィンドウの";
-			mes "friendボタンで表示でき、";
-			mes "「alt+z」でも開くことが";
-			mes "できるわ。";
+			mes "[Edwin]";
+			mes "The party window can be displayed with the friend button in the basic info window, and can also be opened with 'alt+z'." ;
 			next;
-			mes "[エドウィン]";
-			mes "現在パーティーに属している";
-			mes "パーティーメンバーたちの";
-			mes "リストを見ることができるの。";
+			mes "[Edwin]";
+			mes "You can see a list of the party members who are currently in the party." ;
 			next;
-			mes "[エドウィン]";
-			mes "パーティーを結成した";
-			mes "パーティーリーダーは、";
-			mes "経験値の分配方式を";
-			mes "変更することができるわ。";
+			mes "[Edwin]";
+			mes "The party leader who formed the party can change the experience distribution scheme." ;
 			next;
-			mes "[エドウィン]";
-			mes "また、パーティーメンバーの位置は";
-			mes "画面右上のミニマップに";
-			mes "表示されるから覚えておいてね。";
+			mes "[Edwin]";
+			mes "Also, remember that the location of your party members will be shown on the mini-map in the upper right corner of the screen." ;
 			next;
-			mes "[エドウィン]";
-			mes "パーティーウィンドウとは別に、";
-			mes "友達リストも用意されていて、";
-			mes "友達に登録した人たちも";
-			mes "確認できるわ。";
-			mes "登録した人にメッセージを";
-			mes "送ることもできるのよ。";
+			mes "[Edwin]";
+			mes "In addition to the party window, there is also a friends list where you can see who you have added as friends." ;
+			mes "You can also send a message to your friends." ;
 			next;
-			mes "[エドウィン]";
-			mes "パーティーの結成方法は、";
-			mes "スキル説明を担当している人が";
-			mes "教えてくれるわ。";
-			mes "こういうのは直接やってみるのが";
-			mes "一番よね。";
+			mes "[Edwin]";
+			mes "The person in charge of explaining your skills will tell you how to form a party." ;
+			mes "It's best to try these things in person." ;
 			continue;
 		case 3:
-			mes "[エドウィン]";
-			mes "アイテムウィンドウは、3つの";
-			mes "タブに分かれていて、";
-			mes "「item」には消耗品が入るの。";
-			mes "「equip」には装備アイテム、";
-			mes "「etc」にはそれ以外のアイテムが";
-			mes "入るわ。";
+			mes "[Edwin]";
+			mes "The item window is divided into three tabs, and 'item' is for supplies." ;
+			mes "equip" will contain equipment items and "etc" will contain everything else." ;
 			next;
-			mes "[エドウィン]";
-			mes "所持限界量を超えたり、";
-			mes "100種類より多くのアイテムは";
-			mes "持つことができないから、";
-			mes "カプラサービスの倉庫を利用すると";
-			mes "良いわね。";
+			mes "[Edwin]";
+			mes "You can't have more than your possession limit or more than 100 different items, so you should use the Kafra Service's warehouse." ;
 			next;
-			mes "[エドウィン]";
-			mes "消耗品と装備アイテムは、";
-			mes "ショートカットウィンドウに登録して";
-			mes "使うこともできるわよ。";
-			mes "とても便利だから、覚えていってね。";
+			mes "[Edwin]";
+			mes "You can also register consumables and equipment items in the shortcut window." ;
+			mes "It's very useful, so learn to use it." ;
 			next;
-			mes "[エドウィン]";
-			mes "^4A4AFFショートカットウィンドウは F12^000000";
-			mes "で開くことができるわ。";
-			mes "登録されたアイテムの使用は、";
-			mes "F1からF9までのキーに割り当て";
-			mes "られるからね。";
+			mes "[Edwin]";
+			mes "You can open the ^4A4AFF shortcut window with F12^000000." ;
+			mes "I can assign the use of registered items to the keys F1 through F9." ;
 			next;
-			mes "[エドウィン]";
-			mes "最後に、アイテムウィンドウは";
-			mes "「alt+e」でも開閉することができる";
-			mes "からこれも覚えておいてね。";
+			mes "[Edwin]";
+			mes "Finally, remember that the item window can also be opened and closed with 'alt+e'." ;
 			continue;
 		case 4:
-			mes "[エドウィン]";
-			mes "オプションウィンドウは";
-			mes "基本情報ウィンドウのoption";
-			mes "ボタンでも開くことができるけど、";
-			mes "「alt+o」でも同じ。";
-			mes "オプションでは、音の調節とか";
-			mes "スキンの変更などができるわ。";
+			mes "[Edwin]";
+			mes "The options window can also be opened with the option button in the basic information window, but so can "alt+o"." ;
+			mes "In options, you can adjust the sound, change the skin, etc." ;
 			next;
-			mes "[エドウィン]";
-			mes "音の調節はBGMを on/off";
-			mes "したり、大きさを変えられて、";
-			mes "Effectは効果音の音量を";
-			mes "調節できるわ。";
+			mes "[Edwin]";
+			mes "Sound controls allow you to turn background music on and off and change the volume of the sound."; mes "Effect controls the volume of the sound effects." ;
 			next;
-			mes "[エドウィン]";
-			mes "スキンの部分はインターフェースの";
-			mes "スキンを変更することができるの。";
-			mes "適用したいスキンをリストから";
-			mes "選択すればいいわ。";
+			mes "[Edwin]";
+			mes "The Skin section allows you to change the skin of the interface." ;
+			mes "Just select the skin you want to apply from the list." ;
 			next;
-			mes "[エドウィン]";
-			mes "スナップの部分は、";
-			mes "自動的に近くの目標にカーソルを";
-			mes "合わせてくれる機能のことね。";
-			mes "attackは攻撃目標、";
-			mes "skillはスキルを使う対象、";
-			mes "itemは説明しなくても分かるわね。";
+			mes "[Edwin]";
+			mes "The snap part is a feature that will automatically align the cursor to a nearby target." ;
+			mes "Attack is the target of the attack, skill is the target of the skill, and item is the target of the skill... I don't have to explain it to you." ;
 			next;
-			mes "[エドウィン]";
-			mes "使い方によっては便利になったり";
-			mes "邪魔になったりするけど……";
-			mes "自分に使いやすく設定するといいわ。";
+			mes "[Edwin]";
+			mes "It can be useful or a hindrance, depending on how you use it. ......" ;
+			mes "You can set it up so it's easy for you to use." ;
 			next;
-			mes "[エドウィン]";
-			mes "実際やってみながら覚えるのが";
-			mes "一番ね。オプションについては";
-			mes "これくらいで終わりにしましょ。";
+			mes "[Edwin]";
+			mes "It's best to learn by doing. That's enough about options." ;
 			continue;
 		case 5:
-			mes "[エドウィン]";
-			mes "基本情報ウィンドウで";
-			mes "equipボタンを押したり、";
-			mes "「alt+q」を押してみて。";
-			mes "現在、キミのキャラクターが";
-			mes "装備しているアイテムを";
-			mes "見ることができるでしょ。";
+			mes "[Edwin]";
+			mes "Press the equip button in the basic info window, or press 'alt+q'." ;
+			mes "You can see what items your character currently has equipped." ;
 			next;
-			mes "[エドウィン]";
-			mes "初期状態ではナイフと";
-			mes "コットンシャツを装備しているの。";
-			mes "アイテムの装備はアイテムウィンドウで";
-			mes "装備したいアイテムをダブルクリック";
-			mes "したり、クリックしたまま";
-			mes "装備箇所にドラッグしてもいいわ。";
+			mes "[Edwin]";
+			mes "By default, he is equipped with a knife and a cotton shirt." ;
+			mes "To equip an item, double-click the item you want to equip in the item window, or you can click and hold and drag it to the equip point." ;
 			next;
-			mes "[エドウィン]";
-			mes "F12を利用してショートカット";
-			mes "ウィンドウに登録しておくと、";
-			mes "装備の持ち替えがスムーズに";
-			mes "できて、敵に合わせて装備を";
-			mes "変える時なんかにすごく便利よ。";
+			mes "[Edwin]";
+			mes "You can use F12 to register shortcuts in the shortcut window, which is very useful when you want to smoothly change your equipment to match the enemy." ;
 			continue;
 		case 6:
-			mes "[エドウィン]";
-			mes "わからないことがあったら";
-			mes "いつでも聞いてね。";
+			mes "[Edwin]";
+			mes "If you have any questions, you can always ask me." ;
 			close;
 		}
 	}
 }
 
 //==============================================================
-new_1-2.gat,182,182,3	script	ステータス講師	754,{
-	mes "[ゼルリオット]";
-	mes "世に初めの一歩を踏み出す";
-	mes "冒険者ですね。";
-	mes "私ゼルリオットはあなたの";
-	mes "ステータス……つまり能力";
-	mes "について、どのような原則の";
-	mes "上に成り立っているのかを教えます。";
+new_1-2.gat,182,182,3 script Status Instructor 754,{
+	mes "[Zeriot]";
+	mes "You are an adventurer taking your first steps in the world." ;
+	mes "I Zeriot am your status ...... In other words, I will teach you about your abilities and what principles they are based on." ;
 	next;
-	mes "[ゼルリオット]";
-	mes "まずは知りたい能力値について";
-	mes "質問してみなさい。";
+	mes "[Zeriot]";
+	mes "First ask me about the ability value you want to know." ;
 	next;
-	mes "[ゼルリオット]";
-	mes "あ、言い忘れましたね。";
-	mes "ステータスは、";
-	mes "力(Str)、速さ(Agi)、";
-	mes "体力(Vit)、知力(Int)";
-	mes "技(Dex)、そして";
-	mes "運(Luk)で成り立っています。";
+	mes "[Zeriot]";
+	mes "Oh, you forgot to tell me." ;
+	mes "The stats consist of Strength (Str), Speed (Agi), Strength (Vit), Intellect (Int) Skill (Dex), and Luck (Luk)." ;
 	while(1) {
 		next;
-		switch(select("StrとAgi","VitとInt","DexとLuk","やめる")) {
+		switch(select("Str and Agi", "Vit and Int", "Dex and Luk", "quit")) {
 		case 1:
-			mes "[ゼルリオット]";
-			mes "Strは、直接的な攻撃で";
-			mes "相手に与えるダメージに関係する";
-			mes "Atkと、アイテムを持つことができる";
-			mes "最大所持量に関係しています。";
+			mes "[Zeriot]";
+			mes "Str is related to Atk, which is related to the damage you can do to your opponent with direct attacks, and the maximum amount of items you can have." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "Strが1増加すると、直接攻撃の";
-			mes "ダメージが1増加します。";
-			mes "さらに、10単位で攻撃力にボーナス";
-			mes "が追加されます。";
+			mes "[Zeriot]";
+			mes "An increase of 1 in Str increases the damage of a direct attack by 1." ;
+			mes "In addition, a bonus is added to the attack power in increments of 10." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "例えば具体的に説明すると、";
-			mes "あなたのStrが 48+1 と仮定して";
-			mes "みましょう。";
-			mes "あなたの純粋なStrが48で、";
-			mes "+1はJobLvや装備アイテムなどに";
-			mes "よる加重値です。";
+			mes "[Zeriot]";
+			mes "For example, to be specific, let's assume your Str is 48+1." ;
+			mes "Your pure Str is 48 and the +1 is a weighted value due to JobLv, equipped items, etc." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "そして、49の^4A4AFF十の位";
-			mes "4を二乗すると、(4x4)で16";
-			mes "となり、その16が攻撃力への";
-			mes "ボーナス^000000となります。";
+			mes "[Zeriot]";
+			mes "And if you square 49 ^4A4AFF tens place 4, you get (4x4) which is 16, and that 16 is the ^000000 bonus to attack power." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "その後、レベルが上がりStrが";
-			mes "49+1になった場合、合計50";
-			mes "ですから、5x5で25になりますね。";
-			mes "Strが100なら、10x10で";
-			mes "100のボーナスが与えられるのです。";
-			mes "わかりますか？";
+			mes "[Zeriot]";
+			mes "Then, if you level up and your Str is 49+1, you have a total of 50, so 5x5 is 25." ;
+			mes "If your Str is 100, then 10x10 gives you a bonus of 100." ;
+			mes "Do you understand?" ;
 			next;
-			mes "[ゼルリオット]";
-			mes "では、Agiについて説明しましょう。";
-			mes "^4A4AFFAgiは^000000 相手の攻撃を";
-			mes "回避することができる数値である";
-			mes "^4A4AFF回避率(Flee)と";
-			mes "攻撃スピード(Aspd)^000000に影響を与えます。";
+			mes "[Zeriot]";
+			mes "So let's talk about Agi." ;
+			mes "^4A4AFFAgi affects ^000000 the number of attacks that can be avoided by the opponent, ^4A4AFFAff evasion rate (Flee) and attack speed (Aspd) ^000000." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "Agiが1増加すると、回避率も";
-			mes "1上がり、レベルが1増加しても";
-			mes "回避率が1上がります。";
-			mes "つまり、^4A4AFFFlee^000000は";
-			mes "^4A4AFFAgi + BaseLv^000000です。";
+			mes "[Zeriot]";
+			mes "If Agi increases by 1, the evasion rate also increases by 1. If level increases by 1, the evasion rate also increases by 1." ;
+			mes "So ^4A4AFFFlee^000000 is ^4A4AFFAgi + BaseLv^000000." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "具体的な例を挙げましょう。";
-			mes "あなたのレベルが40で、";
-			mes "Agiが40なら、Fleeは80";
-			mes "ということになりますね。";
+			mes "[Zeriot]";
+			mes "Let's take a concrete example." ;
+			mes "If your level is 40 and your Agi is 40, that means your Flee is 80." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "また、Fleeは、";
-			mes "通常回避率+完全回避率";
-			mes "というふうに表示されます。";
-			mes "^4A4AFFAgiは通常回避率だけに関係^000000";
-			mes "します。";
+			mes "[Zeriot]";
+			mes "Also, Flee is shown as normal evasion rate + full evasion rate." ;
+			mes "^4A4AFFAgi is ^000000 related to the normal evasion rate only." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "完全回避率は、Lukの値と";
-			mes "関係するので、Lukのところで";
-			mes "説明しましょう。";
+			mes "[Zeriot]";
+			mes "The full avoidance rate is related to the Luk value, so let's explain it at Luk." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "あと、攻撃スピード(Aspd)が";
-			mes "上がるほど、攻撃するまでの時間と、";
-			mes "攻撃後の硬直(ディレィ)時間が";
-			mes "減ります。";
-			mes "Aspdは職業ごとでも違いが";
-			mes "生じるので、参考にしてください。";
+			mes "[Zeriot]";
+			mes "Also, the higher the attack speed (Aspd), the less time it takes to attack and the less time of hardness (Delay) after the attack." ;
+			mes "Aspd will also vary from profession to profession, so please refer to it." ;
 			continue;
 		case 2:
-			mes "[ゼルリオット]";
-			mes "VitとIntですね。";
-			mes "^4A4AFFVitはキャラクターの最大HPと";
-			mes "HP回復量、それから受ける";
-			mes "ダメージの減少に関連する";
-			mes "ステータスです。^000000";
+			mes "[Zeriot]";
+			mes "Vit and Int." ;
+			mes "^4A4AFFVit is a status related to the character's maximum HP and HP recovery and the reduction in damage taken from it. ^000000";
 			next;
-			mes "[ゼルリオット]";
-			mes "Vitが1増加した時に上昇する";
-			mes "HPの値は職業ごとに違いますが";
-			mes "剣士系職業が一番高くなります。";
+			mes "[Zeriot]";
+			mes "The HP value that increases when Vit is increased by 1 is different for each profession, but is highest for the Swordsman profession." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "ダメージの減少については、";
-			mes "Defの値に関連し、";
-			mes "前の値 + 後ろの値と表示されて";
-			mes "いますが、この後ろの値が";
-			mes "Vitの値になります。";
+			mes "[Zeriot]";
+			mes "As for the decrease in damage, it is related to the value of Def and is shown as the previous value + the back value, this back value is the value of Vit." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "では前の値は何でしょうか？";
-			mes "これは装備した防具による";
-			mes "値なのです。";
+			mes "[Zeriot]";
+			mes "So what is the previous value?" ;
+			mes "This is the value due to the equipped armor." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "防具の防御力で、相手の攻撃を";
-			mes "%計算で減少させ、減少した";
-			mes "ダメージから後ろの値を";
-			mes "引いたダメージが、あなたが";
-			mes "受けるダメージになります。";
+			mes "[Zeriot]";
+			mes "The armor's defense reduces your opponent's attack by a % calculation, and the damage reduced minus the back value is the damage you take." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "ただし、これはあくまで基本的な";
-			mes "計算しかしていませんので、";
-			mes "他の要素が絡めば、また";
-			mes "受けるダメージも変化するでしょう。";
+			mes "[Zeriot]";
+			mes "However, this is only a basic calculation, so if other factors are involved, the damage you receive will also change." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "そして、あなたはマジシャンに";
-			mes "なるつもりはありませんか？";
-			mes "まぁ……冗談ですが、";
-			mes "Intについてお話しましょうか。";
+			mes "[Zeriot]";
+			mes "And you are not going to be a Magician?" ;
+			mes "Well, ...... I'm kidding, but let's talk about Int." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "Intは最大SPとSP回復量、";
-			mes "Matk、Mdefに関係しています。";
+			mes "[Zeriot]";
+			mes "Int is related to max SP and SP recovery, Matk and Mdef." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "Matkは魔法攻撃力、";
-			mes "Mdefは魔法防御力を";
-			mes "表しています。";
-			mes "……ちょっと余談ですが";
-			mes "Int1あたりで上昇するSPの値は";
-			mes "職業ごとに差があります。";
+			mes "[Zeriot]";
+			mes "Matk represents magic attack power, Mdef represents magic defense power." ;
+			mes "...... As a bit of a side note, the value of SP that increases per Int1 varies from profession to profession." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "MdefもDefと同じように、";
-			mes "前の値 + 後ろの値という";
-			mes "表示になっていると思います。";
-			mes "やはり後ろの値が、Intによる";
-			mes "ものですね。";
+			mes "[Zeriot]";
+			mes "I believe the Mdef is also displayed as the previous value + the back value, just like the Def." ;
+			mes "I still think the back value is due to Int." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "世のあらゆる物を構成する元素について";
-			mes "理解したければ、Intすなわち知力を";
-			mes "磨くことが必要です。";
-			mes "私のような学者や魔法師たちは";
-			mes "Intに重きを置いています。";
+			mes "[Zeriot]";
+			mes "If you want to understand the elements that make up everything in the world, you need to improve your Int, i.e. your intellect." ;
+			mes "Scholars and magicians like myself place great emphasis on Int." ;
 			continue;
 		case 3:
-			mes "[ゼルリオット]";
-			mes "DexとLukですね。";
-			mes "運で成功を収める人もいるが";
-			mes "努力によって勝ち取ることも";
-			mes "重要だ……ふむ。";
-			mes "あ、独り言です。";
-			mes "それでは始めましょうか。";
+			mes "[Zeriot]";
+			mes "Dex and Luk, right?" ;
+			mes "Some people achieve success through luck, but it's also important to earn it through hard work. ...... Hmm." ;
+			mes "Oh, I'm talking to myself." ;
+			mes "Shall we begin then?" ;
 			next;
-			mes "[ゼルリオット]";
-			mes "DexはHit(命中率)とAspdに";
-			mes "大きく影響を与え、";
-			mes "攻撃力にも多少の影響を";
-			mes "与えます。";
-			mes "特に、最小ダメージの底上げです。";
+			mes "[Zeriot]";
+			mes "Dex greatly affects Hit (hit rate) and Aspd, and has some effect on attack power." ;
+			mes "In particular, it raises the minimum damage." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "最小ダメージが向上すれば、";
-			mes "相手に与えるダメージが";
-			mes "結果的に向上しますから、";
-			mes "Dexの存在も重要ですね。";
+			mes "[Zeriot]";
+			mes "The presence of Dex is also important, because if the minimum damage improves, the damage to the opponent will improve as a result." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "^4A4AFF弓を使う場合^000000は、";
-			mes "^4A4AFF攻撃力がDexの値で^000000決まりますので";
-			mes "あなたが後日アーチャーやハンター";
-			mes "になろうと思ったらDexを";
-			mes "おろそかにしてはなりません。";
+			mes "[Zeriot]";
+			mes "If you use a ^4A4AFF bow ^000000, you should not neglect Dex if you intend to become an Archer or Hunter at a later date because ^4A4AFF attack power is ^000000 determined by the Dex value." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "また、HitはBaseLv + Dex";
-			mes "で成り立っています。";
+			mes "[Zeriot]";
+			mes "Also, Hit is based on BaseLv + Dex." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "あなたのレベルが40で、";
-			mes "Dexが20だとしたら、";
-			mes "Hitは40 + 20で";
-			mes "60になります。わかりますか？";
+			mes "[Zeriot]";
+			mes "If your level is 40 and your Dex is 20, then Hit is 40 + 20, which is 60. Do you understand?" ;
 			next;
-			mes "[ゼルリオット]";
-			mes "また、魔法などの詠唱を必要とする";
-			mes "スキルを使用する時、";
-			mes "^4A4AFFキャスティング(詠唱)時間を";
-			mes "減少させる^000000こともできます。";
+			mes "[Zeriot]";
+			mes "You can also ^000000 to decrease ^4A4AFF casting (chanting) time when using skills that require chanting, such as magic." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "さて、Lukは言葉の通りですが、";
-			mes "Critical(クリティカル率)と";
-			mes "Flee(回避率)、そして";
-			mes "攻撃力にも多少影響があります。";
+			mes "[Zeriot]";
+			mes "Now, Luk is a word, but it also has some effect on Critical (Critical Rate), Flee (Evasion Rate), and Attack Power." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "Criticalは";
-			mes "^4A4AFFLuk3で1ずつ^000000上がり、";
-			mes "クリティカル攻撃は、相手の防御力";
-			mes "を無視したダメージを与えることが";
-			mes "できます。";
+			mes "[Zeriot]";
+			mes "Critical goes up by ^000000 for each ^4A4AFFLuk3, and critical attacks can do damage that ignores your opponent's defenses." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "また、Lukが10単位で";
-			mes "完全回避率が1ずつ上昇します。";
-			mes "完全回避が発動すると、";
-			mes "キャラクターの頭上にLucky";
-			mes "という表示が出ます。";
-			mes "この時、相手の攻撃を一回避けます。";
+			mes "[Zeriot]";
+			mes "Also, for every 10 units of Luk, the complete evasion rate increases by 1." ;
+			mes "When complete evasion is triggered, the indicator Lucky appears above the character's head." ;
+			mes "At this time, you will avoid the opponent's attack once." ;
 			next;
-			mes "[ゼルリオット]";
-			mes "幸運という言葉は良い言葉ですが、";
-			mes "それに頼ってばかりはいけません。";
-			mes "さて、他は大丈夫でしょうか？";
+			mes "[Zeriot]";
+			mes "Fortune is a good word, but don't rely on it all the time." ;
+			mes "Now, is everything else okay?" ;
 			continue;
 		case 4:
-			mes "[ゼルリオット]";
-			mes "大丈夫なようですね。";
-			mes "本から得る知識も良いですが、";
-			mes "経験から学ぶことも重要です。";
-			mes "がんばってくださいね。";
+			mes "[Zeriot]";
+			mes "It seems to be okay." ;
+			mes "Knowledge gained from books is good, but it is also important to learn from experience." ;
+			mes "Good luck!" ;
 			close;
 		}
 	}
 }
 
 //==============================================================
-new_1-2.gat,184,172,2	script	スキル講師	47,{
+new_1-2.gat,184,172,2 script Skill Tutor 47,{
 	emotion 30;
-	mes "[ピッチジュダス]";
-	mes "ようこそ！";
-	mes "首が抜けそうになるほど";
-	mes "お待ちしてましたよ～";
-	mes "ニューフェイスはかわいい！";
-	mes "このピッチ先生がスキルについて";
-	mes "真心をもって教えますよ！";
+	mes "[Priest Judas]";
+	mes "Welcome!" ;
+	mes "We've been waiting for you so long we almost lost our heads - New Face is cute!" ;
+	mes "This Mr. Pitch is here to teach you about your skills with all his heart!" ;
 	while(1) {
 		next;
-		switch(select("パッシブスキルとアクティブスキル","パッシブ！ 基本スキルを学ぼう","エモーションで感情表現","やめる")) {
+		switch(select("Passive and Active Skills", "Passive! Let's learn basic skills", "Emotionally express emotions", "Quit")) {
 		case 1:
-			mes "[ピッチジュダス]";
-			mes "パッシブとアクティブスキル！";
-			mes "パッシブから説明するから";
-			mes "良く聞いてください～";
-			mes "先に「alt+s」でスキルウィンドウを";
-			mes "開いてくださいー。";
+			mes "[Priest Judas]";
+			mes "Passive and active skills!" ;
+			mes "I'll start with passive, so listen carefully - please open the skill window with "alt+s" first!" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "使用可能なスキルが見えますか？";
-			mes "基本スキルを見ると、右側に";
-			mes "パッシブと書いてあるでしょう～";
-			mes "それでは基本スキルのアイコンを";
-			mes "右クリックしてみましょうか。";
+			mes "[Priest Judas]";
+			mes "Do you see the available skills?" ;
+			mes "If you look at the basic skills, it will say passive on the right - so let's right click on the basic skill icon?" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "基本的なインターフェースについての";
-			mes "スキルを使うことができる。";
-			mes "と書いてありますね～。";
-			mes "皆さんの生活に必要なスキルです。";
-			mes "そして、これらのスキルを使うのに";
-			mes "SPは必要ありません。";
+			mes "[Priest Judas]";
+			mes "You can use the skills about the basic interface." ;
+			mes "It says 'I'm not sure I'm going to be able to do that!'" ;
+			mes "These are skills that you all need in your lives." ;
+			mes "And you don't need SP to use these skills." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "パッシブスキルは、";
-			mes "SPを消費せずに効果が";
-			mes "適用されるスキルのことを";
-			mes "言います。";
+			mes "[Priest Judas]";
+			mes "Passive skills are skills whose effects are applied without consuming SP." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "逆に、アクティブスキルは";
-			mes "SPを消費する活動的なスキルの";
-			mes "ことを指し、スキルを使用した";
-			mes "時に発動します。剣士のバッシュや";
-			mes "アコライトのヒールなどが";
-			mes "そうですね。";
+			mes "[Priest Judas]";
+			mes "Conversely, an active skill is an active skill that consumes SP and is activated when the skill is used. This is the case with Swordsman's Bash, Acolyte's Heal, etc." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "教官の授業をしっかり受けていたら";
-			mes "応急手当のスキルを習得して";
-			mes "いるはずです。どうでしょう～？";
-			mes "もし習得していたら、ダブルクリック";
-			mes "で一度使ってみてください。";
-			mes "SPを消費して、発動しますよね？";
+			mes "[Priest Judas]";
+			mes "If you have been taking the instructor's classes well, you should have learned the skill of first aid. What do you think~?" ;
+			mes "If you have mastered it, try using it once with a double click." ;
+			mes "It consumes SP and activates, right?" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "そんなスキルがアクティブスキル";
-			mes "なのです。";
+			mes "[Priest Judas]";
+			mes "Such a skill is an active skill." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "自分の技術を体力的に、もしくは";
-			mes "精神的に修練したものは大体";
-			mes "パッシブスキルとなり、";
-			mes "魔法のように使用する時に";
-			mes "発動するものはアクティブスキル";
-			mes "となります。いいですね？";
+			mes "[Priest Judas]";
+			mes "Anything that you train your skills in physically or mentally is generally a passive skill, and anything that you activate when you use it, like magic, is an active skill. Is that clear?" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "う～ん……説明は難しくない";
-			mes "ですか？　難しかったらもう一度";
-			mes "説明しますよ～";
+			mes "[Priest Judas]";
+			mes "Ummm ...... Isn't it difficult to explain?　If it's difficult, I'll explain it again~";
 			continue;
 		case 2:
-			mes "[ピッチジュダス]";
-			mes "パッシブスキルの真髄！";
-			mes "かわいいノービスが覚える";
-			mes "はじめてのスキル！";
-			mes "生活に必要な基本スキルを";
-			mes "勉強する時間です！";
+			mes "[Priest Judas]";
+			mes "The essence of passive skills!" ;
+			mes "Cute Novice learns his first skill!" ;
+			mes "Time to study the basic skills you need for life!" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "スキルウィンドウでアイコンの";
-			mes "上を右クリックすると説明文が";
-			mes "読めますが、基本スキルを";
-			mes "分類して項目に分けてみました。";
+			mes "[Priest Judas]";
+			mes "You can read the description by right-clicking on the icon in the skill window, but I've categorized the basic skills and divided them into items." ;
 			while(1) {
 				next;
-				switch(select("取引と交換","パーティーの結成と参加","チャットルーム開設","倉庫の利用","全て分かっています")) {
+				switch(select("trade and exchange", "form and join a party", "open a chat room", "use a warehouse", "know all")) {
 				case 1:
-					mes "[ピッチジュダス]";
-					mes "他の人と取引をするためには";
-					mes "基本スキルが1以上なければ";
-					mes "いけません。";
+					mes "[Priest Judas]";
+					mes "You must have at least 1 basic skill to trade with others." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "取引を要請する時には、";
-					mes "距離が重要です！";
-					mes "相手のすぐ側まで近づいて";
-					mes "取引を持ちかけたい相手を";
-					mes "右クリックします。1回だけですよ。";
+					mes "[Priest Judas]";
+					mes "Distance is important when requesting a deal!" ;
+					mes "You have to get right up close to the person you want to offer a deal to, and right-click on the person you want to offer a deal to... just once." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "その後、^4808FF取引要請^000000を";
-					mes "選択すれば相手に取引要請";
-					mes "メッセージが表示されますので、";
-					mes "相手がOKすれば、交換ウィンドウが";
-					mes "開かれます。相手との距離が";
-					mes "開くと中断されますので気をつけて。";
+					mes "[Priest Judas]";
+					mes "Then, select ^4808FF trade request^000000 and the other party will see the trade request message, and if they accept, the exchange window will open. Be careful, it will be interrupted if the distance between you and the other party opens." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "そして、交換ウィンドウの左側に";
-					mes "アイテムウィンドウから渡したい";
-					mes "アイテムをドラッグして置きます。";
-					mes "Zenyを渡す時は金額を";
-					mes "入力すれば良いです。";
+					mes "[Priest Judas]";
+					mes "Then drag and place the item you want to pass from the item window to the left side of the exchange window." ;
+					mes "When you want to give Zeny, just enter the amount." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "渡すアイテムを確認する時は";
-					mes "該当のアイテムを右クリックして";
-					mes "詳しい内容を見ましょう。";
+					mes "[Priest Judas]";
+					mes "When you want to check the item to give, right click on the item to see the details." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "OKを押して確認をした後に、";
-					mes "「trade」ボタンを押せば";
-					mes "自分側の交換アイテムが";
-					mes "確定されます。";
-					mes "相手側にも同じようにtrade";
-					mes "を押したら、取引が成立します。";
+					mes "[Priest Judas]";
+					mes "After pressing OK to confirm, press the "trade" button to confirm the item to be exchanged on your side." ;
+					mes "If you press trade for the other side in the same way, the transaction is completed." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "tradeを押す前なら、";
-					mes "取引をキャンセルすることが";
-					mes "できますので、覚えておいてください。";
+					mes "[Priest Judas]";
+					mes "Remember, you can cancel the transaction before you press trade." ;
 					continue;
 				case 2:
-					mes "[ピッチジュダス]";
-					mes "これから勉強するのは～";
-					mes "パーティーについてです！";
-					mes "パーティーと言えば、やっぱり";
-					mes "きれいな照明にきらめくドレス！";
+					mes "[Priest Judas]";
+					mes "What we are going to study is about ~party!" ;
+					mes "A party is all about beautiful lights and sparkling dresses!" ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "ではなく……仲間との冒険を";
-					mes "助けてくれるパーティーシステム";
-					mes "のことです……";
+					mes "[Priest Judas]";
+					mes "Not the ...... It's about a party system that helps you explore with your friends ......" ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "パーティーは";
-					mes "^4A4AFF/organize [パーティー名]^000000";
-					mes "のコマンドで結成することができます。";
-					mes "もちろん、^4A4AFF基本スキルが7以上^000000";
-					mes "なければいけません。";
+					mes "[Priest Judas]";
+					mes "Parties can be formed with the command ^4A4AFF/organize [party name]^000000." ;
+					mes "Of course, the ^4A4AFF basic skill must be at least 7^000000." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "また、基本情報ウィンドウの";
-					mes "「friend」を押すと";
-					mes "パーティー情報を表示できます。";
+					mes "[Priest Judas]";
+					mes "You can also press "friend" in the Basic Info window to view party information." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "パーティーを結成して経験値の分配";
-					mes "形式を変更したりもできますが、";
-					mes "それは後で実際にやってみて";
-					mes "ください。";
-					mes "本当は私がすぐに駆けつけて";
-					mes "お手伝いしたいんですが……";
+					mes "[Priest Judas]";
+					mes "You can also form a party and change the experience distribution format, but you can actually do that later." ;
+					mes "I'd really like to come over and help you right away. ......" ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "一方、パーティーに参加するためには";
-					mes "パーティーリーダーからの";
-					mes "要請を受けて、承諾すれば良いのです。";
-					mes "これにはレベルの制限はありません。";
+					mes "[Priest Judas]";
+					mes "On the other hand, to join the party, all you have to do is accept the party leader's request and agree to it." ;
+					mes "There are no level restrictions for this." ;
 					next;
 					emotion 30;
-					mes "[ピッチジュダス]";
-					mes "パーティーに関する私からの説明は";
-					mes "以上です。";
-					mes "ふふふ";
+					mes "[Priest Judas]";
+					mes "That's all from me regarding the party." ;
+					mes "Hmmm";
 					continue;
 				case 3:
-					mes "[ピッチジュダス]";
-					mes "チャットルームの開設は、";
-					mes "基本スキルレベルが";
-					mes "4以上あると可能になります。";
-					mes "基本情報ウィンドウの「comm」";
-					mes "ボタンを押すか、「Alt+c」";
-					mes "で開設することができます。";
+					mes "[Priest Judas]";
+					mes "Opening a chat room is possible when you have a basic skill level of 4 or higher." ;
+					mes "It can be opened by pressing the "comm" button in the Basic Info window or by pressing "Alt+c"." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "チャットルームを開設した後で、";
-					mes "部屋の名前や人数などの";
-					mes "設定を変更することもできます。";
+					mes "[Priest Judas]";
+					mes "After opening a chat room, you can also change the room's name, number of people, and other settings." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "チャットに参加している時は";
-					mes "チャットルームの外の声は";
-					mes "聞こえません。";
-					mes "参考にしてください。";
+					mes "[Priest Judas]";
+					mes "You cannot hear voices outside the chat room when you are participating in a chat." ;
+					mes "Please use this as a reference." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "……";
-					mes "…………";
-					mes "私もチャットルームを開きたい……";
-					mes "私の身分ではそれもかないません。";
-					mes "トホホホホ……";
+					mes "[Priest Judas]";
+					mes "......" ;
+					mes "............" ;
+					mes "I also want to open a chat room ......" ;
+					mes "My status doesn't allow that either." ;
+					mes "thohohohoho ......" ;
 					continue;
 				case 4:
-					mes "[ピッチジュダス]";
-					mes "ミッドガルド全域には";
-					mes "カプラという巨大な物流サービス";
-					mes "が存在していて、旅人たちの";
-					mes "持ち物を保管してくれるなどの";
-					mes "便利なサービスをやっています。";
-					mes "もう会いましたか？";
+					mes "[Priest Judas]";
+					mes "There is a huge logistics service called Capra throughout Midgard that does useful things like storing travelers' belongings." ;
+					mes "Have you met them yet?" ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "倉庫の使用は基本スキルが";
-					mes "6以上になると可能です。";
-					mes "カプラサービスの利用に関する";
-					mes "説明は、カプラ職員が別に";
-					mes "行っているでしょう。";
+					mes "[Priest Judas]";
+					mes "Use of the warehouse is possible once you have a basic skill of 6 or higher." ;
+					mes "Instructions on the use of the Kafra Service will be given separately by the Kafra Staff." ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "一度にたくさんのアイテムを持つと";
-					mes "重すぎて攻撃ができなくなったり、";
-					mes "回復ができなくなることがあります。";
-					mes "普段使わないアイテムなどは";
-					mes "倉庫に保管しておくと良いでしょう。";
+					mes "[Priest Judas]";
+					mes "Holding too many items at once may make you too heavy to attack or recover." ;
+					mes "It is a good idea to store items and other items that you do not use on a regular basis in a warehouse." ;
 					continue;
 				case 5:
-					mes "[ピッチジュダス]";
-					mes "すべて分かっていらっしゃる";
-					mes "なんて！";
-					mes "このピッチ感動しました！";
+					mes "[Priest Judas]";
+					mes "I can't believe you know everything!" ;
+					mes "I'm so impressed with this pitch!" ;
 					next;
-					mes "[ピッチジュダス]";
-					mes "今度は他のことを";
-					mes "勉強してみましょうか。";
+					mes "[Priest Judas]";
+					mes "Now let's study something else." ;
 				}
 				break;
 			}
-			continue;
+			} continue;
 		case 3:
-			mes "[ピッチジュダス]";
-			mes "感情を表すための手段の";
-			mes "1つとしてよく使われる";
-			mes "エモーションは、皆さんの";
-			mes "コミュニケーションに幅広く";
-			mes "対応してくれるでしょう。";
+			mes "[Priest Judas]";
+			mes "Emotions, one of the most commonly used means of expressing emotions, can be used in a wide range of your communications." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "スキルレベルが2以上に";
-			mes "なると使えるようになります。";
+			mes "[Priest Judas]";
+			mes "You will be able to use it when your skill level reaches 2 or higher." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "「Alt+L」「Alt+M」で";
-			mes "エモーションリストが表示";
-			mes "されますので、設定して使う";
-			mes "ことができます。";
+			mes "[Priest Judas]";
+			mes "You can use "Alt+L" and "Alt+M" to display the emotion list so you can set it up and use it." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "ああ、豊かな感情表現こそ";
-			mes "人の関係において必ず必要な";
-			mes "ものではないでしょうか！";
-			mes "言葉で伝えづらい時、是非";
-			mes "使ってみてくださいね！";
+			mes "[Priest Judas]";
+			mes "Oh, isn't rich emotional expression what people always need in their relationships!" ;
+			mes "If you have difficulty communicating in words, please try to use it!" ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "あ、それで使い方なんですが、";
-			mes "「Alt+M」で登録したものを";
-			mes "使ったり、チャットウィンドウに";
-			mes "直接「/e1」のように";
-			mes "入力すると使うことができます。";
+			mes "[Priest Judas]";
+			mes "Oh, so how to use it, you can use it by using "Alt+M" to register it, or by typing directly in the chat window like "/e1"." ;
 			next;
-			mes "[ピッチジュダス]";
-			mes "Ctrl +「;」「-」「\」";
-			mes "で、「グー」「チョキ」「パー」";
-			mes "も出すことができますよ！";
+			mes "[Priest Judas]";
+			mes "You can also use Ctrl + ";", "-", and "⌘" to produce "Goo", "Choki", and "Par"!" ;
 			next;
 			emotion 3;
-			mes "[ピッチジュダス]";
-			mes "「/help」や「/emotion」";
-			mes "コマンドで、それぞれの";
-			mes "エモーションのコマンドも";
-			mes "確認することができるので";
-			mes "ご参考に。";
-			mes "ふふ……";
+			mes "[Priest Judas]";
+			mes "You can also check the commands for each emotion with the "/help" and "/emotion" commands for your reference." ;
+			mes "fufu ......" ;
 			continue;
 		case 4:
-			mes "[ピッチジュダス]";
-			mes "これ以上教えることも";
-			mes "無いようですね……";
-			mes "それではお元気で！";
+			mes "[Priest Judas]";
+			mes "I guess I have nothing more to teach you. ......" ;
+			mes "Then take care!" ;
 			close;
 		}
 	}
@@ -2538,302 +1837,190 @@ new_1-2.gat,184,172,2	script	スキル講師	47,{
 
 
 //==========================================
-// 左の部屋
+// left room
 //------------------------------------------
 
-new_1-2.gat,17,182,5	script	進行要員	84,{
+new_1-2.gat,17,182,5 script Combat Staff 84,{
 
 	function Battle {
-		mes "[エルミン]";
-		mes "まず、戦闘をするためには";
-		mes "モンスターにカーソルを合わせます";
-		mes "そして左クリックをすれば";
-		mes "モンスターを攻撃します。";
+		mes "[Armine]";
+		mes "First, to do battle, hover the cursor over the monster, then left click to attack the monster." ;
 		next;
-		mes "[エルミン]";
-		mes "ずっとクリックしているのが面倒な場合";
-		mes "「Ctrl」を押した状態で攻撃すれば";
-		mes "モンスターを倒すまで攻撃を";
-		mes "続けます。";
+		mes "[Armine]";
+		mes "If you don't want to keep clicking all the time, you can hold down "Ctrl" to attack the monster and it will keep attacking until you kill it." ;
 		next;
-		mes "[エルミン]";
-		mes "さらにCtrlも押したくないという方は";
-		mes "^E79C29/nc^000000 とチャットウィンドウに";
-		mes "入力してみてください。";
-		mes "これでCtrlを押さずに";
-		mes "左クリックだけで";
-		mes "攻撃を続けるようになります。";
+		mes "[Armine]";
+		mes "And if you don't want to press Ctrl as well, try typing ^E79C29/nc^000000 in the chat window." ;
+		mes "Now you don't have to press Ctrl, just left click to continue the attack." ;
 		next;
-		mes "[エルミン]";
-		mes "モンスターの属性が";
-		mes "不死(アンデッド)の場合、";
-		mes "ヒールのスキルを利用しても";
-		mes "攻撃が可能です。";
-		mes "この時は、「Shift」を";
-		mes "押しながらヒールを使えば良いです。";
+		mes "[Armine]";
+		mes "If the monster's attribute is undead (undead), you can still use the heal skill to attack." ;
+		mes "In this case, you can hold down "Shift" and use heal." ;
 		next;
-		mes "[エルミン]";
-		mes "これも毎回Shiftを";
-		mes "押したくない方は^E79C29/ns^000000 という";
-		mes "便利なコマンドがあります。これで";
-		mes "Shiftを押さなくてもモンスターに";
-		mes "ヒールを使うことができます。";
+		mes "[Armine]";
+		mes "If you don't want to press Shift every time for this too, there is a useful command ^E79C29/ns^000000. This allows you to use heal on a monster without having to press Shift." ;
 		return;
 	}
 
 	if(CHANGE_NV &0x200 == 0) {
-		mes "[エルミン]";
-		mes "第一コースはどうでした？";
-		mes "もうラグナロクオンラインの世界を";
-		mes "だいぶ理解していただけましたか？";
+		mes "[Armine]";
+		mes "How was the first course?" ;
+		mes "Have you gotten a lot more familiar with the world of Ragnarok Online?" ;
 		next;
-		mes "[エルミン]";
-		mes "ここでは、戦闘の基本について";
-		mes "覚えていただきたいと思います。";
-		mes "理論の講義をしっかり受けて";
-		mes "いれば、ある程度の装備を支給";
-		mes "されたはずです。";
+		mes "[Armine]";
+		mes "Here, we would like you to learn about the basics of combat." ;
+		mes "If you have had a good lecture on theory, you should have been provided with some equipment." ;
 		next;
-		mes "[エルミン]";
-		mes "一応、戦闘をする前に自分の";
-		mes "装備を確認して見てください。";
-		mes "装備は整いましたか？";
+		mes "[Armine]";
+		mes "In the meantime, check and see what your equipment is before you do battle." ;
+		mes "Are you equipped?" ;
 		next;
-		if(select("バッチリです","まだです")==2) {
-			mes "[エルミン]";
-			mes "支給された装備は大事に";
-			mes "使ってくださいね。";
-			mes "もし間違ってなくしてしまっても";
-			mes "もう一度支給することはできません。";
+		if(select("It's perfect", "Not yet")==2) {
+			mes "[Armine]";
+			mes "Please take good care of the equipment you were provided." ;
+			mes "If you lose it by mistake, it cannot be supplied again." ;
 			close;
 		}
 		Battle;
 		next;
-		mes "[エルミン]";
-		mes "大まかですが戦闘の基本知識";
-		mes "については理解できましたか？";
-		mes "それでは、モンスターの性質と属性、";
-		mes "戦闘後の経験値やアイテムなどに";
-		mes "ついて説明いたします。";
+		mes "[Armine]";
+		mes "Roughly, did you understand the basics of combat?" ;
+		mes "Then I will explain the nature and attributes of monsters, experience and items after the battle." ;
 		next;
-		mes "[エルミン]";
-		mes "一応、戦闘には危険が伴いますので、";
-		mes "ある程度戦えるように力をお分け";
-		mes "しましょうか。";
+		mes "[Armine]";
+		mes "In the meantime, there are dangers involved in combat, so shall I share my strength with you so that you can fight to some extent?" ;
 		next;
-		mes "[エルミン]";
-		mes "えい！　やーっ!!";
-		if(BaseLevel == 7)	getexp 153,0;
-		else if(BaseLevel == 6)	getexp 112,0;
-		else if(BaseLevel == 5)	getexp 77,0;
-		else if(BaseLevel == 4)	getexp 36,0;
-		else if(BaseLevel == 3)	getexp 25,0;
-		else if(BaseLevel == 2)	getexp 16,0;
-		else if(BaseLevel == 1)	getexp 9,0;
+		mes "[Armine]";
+		mes "Ei!  Ya!!!" ;
+		if(BaseLevel == 7) getexp 153,0;
+		else if(BaseLevel == 6) getexp 112,0;
+		else if(BaseLevel == 5) getexp 77,0;
+		else if(BaseLevel == 4) getexp 36,0;
+		else if(BaseLevel == 3) getexp 25,0;
+		else if(BaseLevel == 2) getexp 16,0;
+		else if(BaseLevel == 1) getexp 9,0;
 		set CHANGE_NV,CHANGE_NV|0x200;
 		next;
-		mes "[エルミン]";
-		mes "ふぅ……";
-		mes "お役に立てれば良いですね。";
-		mes "それでは、何について";
-		mes "知りたいですか？";
+		mes "[Armine]";
+		mes "Huh......" ;
+		mes "I hope I can be of help." ;
+		mes "So what would you like to know about?" ;
 	}
 	else {
-		mes "[エルミン]";
-		mes "まだ他にも知りたいことが";
-		mes "あるようですね。";
-		mes "何を聞きたいですか？";
-		set '@word$,"戦闘に関する基本操作";
+		mes "[Armine]";
+		mes "I see there is still something else you want to know about." ;
+		mes "What would you like to ask?" ;
+		set '@word$, "Basic operations about combat";
 	}
 	while(1) {
 		next;
-		switch (select("モンスターの性質と属性","戦闘時の経験値の獲得","アイテムの獲得",'@word$,('@word$ == "")? "何もない": "話をやめる")) {
+		switch (select("monster properties and attributes", "gaining experience in combat", "gaining items",'@word$,('@word$ == "")? "Nothing": "Stop talking")) {
 		case 1:
-			mes "[エルミン]";
-			mes "モンスターたちの中には";
-			mes "攻撃される前に先に攻撃をしかけて";
-			mes "くるタイプのモンスターもいます。";
-			mes "また、自分の仲間を攻撃した場合";
-			mes "集まってきて攻撃してくるモンスターも";
-			mes "いるので気をつけてください。";
+			mes "[Armine]";
+			mes "Some of these monsters are the type that attack first before they attack you." ;
+			mes "Also, be aware that some monsters will gather and attack you if you attack their own people." ;
 			next;
-			mes "[エルミン]";
-			mes "そしてモンスターたちはいろんな形態と";
-			mes "大きさ、属性を持っています。";
-			mes "形態には人間、動物、不死、悪魔";
-			mes "などがあり、これをよく把握すれば";
-			mes "ある程度戦闘が楽になるでしょう。";
+			mes "[Armine]";
+			mes "And the monsters have various forms, sizes and attributes." ;
+			mes "The forms include human, animal, undead, demon, etc., and a good grasp of these will make combat somewhat easier." ;
 			next;
-			mes "[エルミン]";
-			mes "例えば、特定の形態へのダメージを";
-			mes "増加させるカードを挿した武器や";
-			mes "特定の形態からのダメージを減少";
-			mes "させるカードを挿した防具を";
-			mes "利用すれば、戦闘を有利に進める";
-			mes "ことができるでしょう。";
+			mes "[Armine]";
+			mes "For example, weapons with cards that increase damage to certain forms and armor with cards that decrease damage from certain forms will give you an advantage in battle." ;
 			next;
-			mes "[エルミン]";
-			mes "モンスターの大きさは小型、中型、大型";
-			mes "と分けられます。";
-			mes "これも大きさによってダメージを増加";
-			mes "させるカードを挿した武器を利用";
-			mes "すれば、戦闘が楽になるでしょう。";
+			mes "[Armine]";
+			mes "Monsters are divided into small, medium and large sizes." ;
+			mes "This will also make combat easier if you use weapons with cards inserted that increase damage based on size." ;
 			next;
-			mes "[エルミン]";
-			mes "武器ごとに特性があり、それぞれの";
-			mes "大きさによってダメージが";
-			mes "変わる場合もあります。";
-			mes "例えば、短剣は小型の対象に100%の";
-			mes "威力を発揮しますが、大型には50%";
-			mes "の威力しか発揮しません。";
+			mes "[Armine]";
+			mes "Each weapon has its own characteristics, and the damage may vary depending on the size of each." ;
+			mes "For example, a dagger is 100% effective against small targets, but only 50% effective against large ones." ;
 			next;
-			mes "[エルミン]";
-			mes "属性は、";
-			mes "火,水,地,風,毒,不死,闇,念,聖";
-			mes "があります。";
-			mes "基本的に、モンスターの属性に反する";
-			mes "属性で攻撃するとより大きな";
-			mes "ダメージを与えられます。";
+			mes "[Armine]";
+			mes "Attributes include fire, water, earth, wind, poison, undead, dark, ghost, and holy." ;
+			mes "Basically, attacking with an attribute that goes against the monster's attribute will cause more damage." ;
 			next;
-			mes "[エルミン]";
-			mes "また、属性武器でダメージが与え";
-			mes "られない場合があったり、逆に";
-			mes "属性武器で攻撃しなければ";
-			mes "ダメージを与えられない場合も";
-			mes "あります。";
+			mes "[Armine]";
+			mes "Also, there are cases where damage cannot be inflicted with an attribute weapon, or conversely, where damage cannot be inflicted without attacking with an attribute weapon." ;
 			next;
-			mes "[エルミン]";
-			mes "例えば、念属性の場合、";
-			mes "無属性の攻撃をしてもダメージが";
-			mes "ほとんど与えられず、属性武器で";
-			mes "攻撃するとダメージを";
-			mes "与えることができます。";
+			mes "[Armine]";
+			mes "For example, if the GHOST attribute is used, attacking with a non-attribute will do little or no damage, while attacking with an attribute weapon will do damage." ;
 			continue;
 		case 2:
-			mes "[エルミン]";
-			mes "経験値は、一般的にモンスターに";
-			mes "たくさんダメージを与えた人が";
-			mes "より多くの経験値をもらえます。";
-			mes "モンスターのHPとダメージに比例した";
-			mes "経験値が与えられるのです。";
+			mes "[Armine]";
+			mes "Experience is generally given to those who deal more damage to the monster." ;
+			mes "Experience is given in proportion to the monster's HP and damage." ;
 			next;
-			mes "[エルミン]";
-			mes "例えばAさんが、";
-			mes "経験値「1000」を持ち";
-			mes "HPが「100」のモンスターを";
-			mes "攻撃して「65」のダメージを";
-			mes "与えていたら、Aさんは";
-			mes "経験値「650」を獲得します。";
+			mes "[Armine]";
+			mes "For example, if Mr. A attacks a monster with "1000" experience and "100" HP, causing "65" damage, Mr. A will gain "650" experience." ;
 			next;
-			mes "[エルミン]";
-			mes "また同じ「65」のダメージを";
-			mes "与えてもモンスターのHPに";
-			mes "よって獲得できる経験値は";
-			mes "変わります。";
+			mes "[Armine]";
+			mes "Also, even if the same "65" damage is inflicted, the experience gained will vary depending on the monster's HP." ;
 			next;
-			mes "[エルミン]";
-			mes "もし、他の人が同じダメージを";
-			mes "与えた場合は、先に攻撃した";
-			mes "人に2/3の経験値が入り、";
-			mes "後から攻撃した人には";
-			mes "1/3の経験値しか入りません。";
+			mes "[Armine]";
+			mes "If others do the same damage, the person who attacked first will get 2/3 of the experience and the person who attacked later will only get 1/3 of the experience." ;
 			next;
-			mes "[エルミン]";
-			mes "パーティープレイ時の経験値は、";
-			mes "公平に分配している場合は";
-			mes "パーティー全体が獲得した経験値を";
-			mes "パーティーメンバーで均等に";
-			mes "分けられます。";
+			mes "[Armine]";
+			mes "The experience gained during party play will be divided equally among the party members, as long as the experience gained by the entire party is distributed fairly." ;
 			next;
-			mes "[エルミン]";
-			mes "他の人と一緒にモンスターを";
-			mes "倒す場合は、ある程度慣れたら";
-			mes "パーティープレイを活用すると";
-			mes "良いでしょう。";
+			mes "[Armine]";
+			mes "If you are defeating monsters with others, you may want to take advantage of party play after you have some familiarity with it." ;
 			continue;
 		case 3:
-			mes "[エルミン]";
-			mes "モンスターを倒した場合、ある確率で";
-			mes "アイテムを落とすことがあります。";
-			mes "その他、「スティール」スキルで";
-			mes "アイテムを盗むこともできます。";
+			mes "[Armine]";
+			mes "If you defeat a monster, there is a certain probability that it will drop an item." ;
+			mes "Otherwise, you can steal items with the 'steal' skill." ;
 			next;
-			mes "[エルミン]";
-			mes "スティールによってモンスターから";
-			mes "アイテムを盗んでも、そのモンスター";
-			mes "を倒した時にはアイテムを落とさなく";
-			mes "なるわけではありません。";
+			mes "[Armine]";
+			mes "Stealing an item from a monster by means of Steal does not mean that the item will no longer be dropped when the monster is defeated." ;
 			next;
-			mes "[エルミン]";
-			mes "他の人と一緒にモンスターを倒した";
-			mes "場合、基本的にはモンスターに一番";
-			mes "多くのダメージを与えた人に";
-			mes "アイテムを拾う優先権が発生します。";
+			mes "[Armine]";
+			mes "If you defeat a monster with others, priority to pick up the item basically goes to the person who did the most damage to the monster." ;
 			continue;
 		case 4:
-			Battle;	//CHANGE_NV &0x200 == 0なら出ない
+			Battle; //if CHANGE_NV &0x200 == 0, then no answer
 			continue;
 		case 5:
-			mes "[エルミン]";
-			mes "また何かありましたら、";
-			mes "声をかけてください。";
+			mes "[Armine]";
+			mes "If you have any more questions, please give us a call." ;
 			close;
 		}
 	}
 }
 
 //==============================================================
-new_1-2.gat,38,182,3	script	受付要員	92,{
+new_1-2.gat,38,182,3 script Receptionist 92,{
 	if(CHANGE_NV &0x200 == 0) {
-		mes "[ケーン]";
-		mes "戦闘の基本すら知らない状態で";
-		mes "実習をなさるおつもりですか？";
-		mes "申し訳ありませんが、私の右にいる";
-		mes "進行要員に、戦闘の基礎について";
-		mes "教えてもらってからおこしください。";
+		mes "[Kang]";
+		mes "Are you planning to practice without even knowing the basics of combat?" ;
+		mes "I'm sorry, but please have the Combat Staff to my right teach you about the basics of combat before you come." ;
 		close;
 	}
 	if(CHANGE_NV &0x400 == 0) {
-		mes "[ケーン]";
-		mes "第2コースは、今まで学んだ知識が";
-		mes "身についているかを実際の戦闘で";
-		mes "確認します。どれだけ実戦で活用";
-		mes "できるか、それが戦闘実習の課題と";
-		mes "なります。";
+		mes "[Kang]";
+		mes "In the second course, you will check in actual combat to see if you have acquired the knowledge you have learned so far. How well you can apply it in real combat is the task of the combat practice." ;
 		next;
-		mes "[ケーン]";
-		mes "実習用のマップには、様々な";
-		mes "モンスターがいます。今まで培った";
-		mes "知識を基に戦い抜いてください。";
+		mes "[Kang]";
+		mes "The map for the practical training has a variety of monsters. Please fight through them based on the knowledge you have cultivated so far." ;
 		next;
-		mes "[ケーン]";
-		mes "こちらでは特に、目標の強制や行動の";
-		mes "制限は行いません。戦闘を実際に";
-		mes "体験できる場所へ行く、その程度に";
-		mes "考えていただいて構いません。";
+		mes "[Kang]";
+		mes "We will not enforce any particular targets or restrict your actions here. You can think of it as going to a place where you can actually experience combat, and that's about it." ;
 		next;
-		mes "[ケーン]";
-		mes "第2コースの実習マップを進むと、";
-		mes "その北側の入口に進行要員がいます。";
-		mes "彼がその次の場所へ送りますので";
-		mes "声をおかけください。それでは、";
-		mes "実習を始めますか？";
+		mes "[Kang]";
+		mes "If you proceed to the second course training map, you will find Combat Staff at its northern entrance." ;
+		mes "He will send you to that next location, please speak to him. So, would you like to start the practical training?" ;
 		next;
-		if(select("はい、お願いします！","ちょっと準備してきます")==2) {
-			mes "[ケーン]";
-			mes "了解しました。";
-			mes "なら、私の右側にいる進行要員の";
-			mes "話を聞いてみるとよいでしょう。";
-			mes "準備ができたら、おこしください。";
+		if(select("Yes, please!" }, "I'm going to go get ready for a minute.")==2) {
+			mes "[Kang]";
+			mes "Roger that." ;
+			mes "Then you may want to talk to the Combat Staff on my right." ;
+			mes "Please come when you are ready." ;
 			close;
 		}
-		mes "[ケーン]";
-		mes "了解しました。";
-		mes "決して無理はしないでくださいね。";
-		mes "では、アイテムを支給しますので";
-		mes "危険に陥ったときにご利用ください。";
-		mes "それから……一緒に武器と盾も";
-		mes "支給しましょう。";
+		mes "[Kang]";
+		mes "Roger that." ;
+		mes "Please never take it easy." ;
+		mes "Then, we will supply you with items, please use them when you fall into danger." ;
+		mes "Then ...... We will also supply you with weapons and shields together." ;
 		set CHANGE_NV,CHANGE_NV|0x400;
 		getitem 602,1;
 		getitem 601,9;
@@ -2843,431 +2030,307 @@ new_1-2.gat,38,182,3	script	受付要員	92,{
 		getitem 569,30;
 	}
 	else {
-		mes "[ケーン]";
-		mes "無理はしないように";
-		mes "と注意しておきましたよね？";
-		mes "まあ「失敗は成功の元」という言葉も";
-		mes "ありますしね。あなたのために";
-		mes "なっていることを望みます。";
+		mes "[Kang]";
+		mes "I Attentioned you not to overdo it, didn't I?" ;
+		mes "Well, as they say, 'Failure is the source of success'. I hope it's working for you." ;
 		next;
-		mes "[ケーン]";
-		mes "また挑戦しますか？";
+		mes "[Kang]";
+		mes "Would you like to try again?" ;
 		next;
-		if(select("はい、ぜひ！","ちょっと準備をしてきます")==2) {
-			mes "[ケーン]";
-			mes "了解しました。";
-			mes "なら、私の右側にいる進行要員の";
-			mes "話を聞いてみるとよいでしょう。";
-			mes "準備ができたら、おこしください。";
+		if(select("Yes, by all means!" }, "I'm going to go get ready for a bit")==2) {
+			mes "[Kang]";
+			mes "Roger that." ;
+			mes "Then you may want to talk to the Combat Staff on my right." ;
+			mes "Please come when you are ready." ;
 			close;
 		}
-		mes "[ケーン]";
-		mes "了解しました。";
-		mes "ささやかではありますが";
+		mes "[Kang]";
+		mes "Roger that." ;
+		mes "It is modest."; mes "It is modest."; mes "It is modest.
 		if(CHANGE_NV &0x800 == 0) {
-			mes "私からの応援の品です。";
-			if(BaseLevel >= 8)	getexp 200,0;
-			else if(BaseLevel == 7)	getexp 153,0;
-			else if(BaseLevel == 6)	getexp 112,0;
-			else if(BaseLevel == 5)	getexp 77,0;
-			else if(BaseLevel == 4)	getexp 36,0;
-			else if(BaseLevel == 3)	getexp 25,0;
-			else if(BaseLevel == 2)	getexp 16,0;
+			mes "This is a gift of support from me." ;
+			if(BaseLevel >= 8) getexp 200,0;
+			else if(BaseLevel == 7) getexp 153,0;
+			else if(BaseLevel == 6) getexp 112,0;
+			else if(BaseLevel == 5) getexp 77,0;
+			else if(BaseLevel == 4) getexp 36,0;
+			else if(BaseLevel == 3) getexp 25,0;
+			else if(BaseLevel == 2) getexp 16,0;
 			getitem 569,50;
 			set CHANGE_NV,CHANGE_NV|0x800;
 		}
 		else {
-			mes "私からの応援の気持ちです。";
+			mes "This is a show of support from me." ;
 		}
 		percentheal 100,100;
-		mes "では、気をつけて行ってください。";
+		mes "Well, have a safe trip." ;
 	}
 	close2;
 	savepoint "new_1-2.gat",24,189;
 	switch(rand(5)) {
-		case 0:	warp "new_1-3.gat",96,21; break;
-		case 1:	warp "new_2-3.gat",96,21; break;
-		case 2:	warp "new_3-3.gat",96,21; break;
-		case 3:	warp "new_4-3.gat",96,21; break;
-		case 4:	warp "new_5-3.gat",96,21; break;
+		case 0: warp "new_1-3.gat",96,21; break
+		case 1: warp "new_2-3.gat",96,21; break
+		case 2: warp "new_3-3.gat",96,21; break
+		case 3: warp "new_4-3.gat",96,21; break
+		case 4: warp "new_5-3.gat",96,21; break
 	}
 	end;
 }
 
-new_1-2.gat,28,185,3	shop	いも売り娘	90,516
+new_1-2.gat,28,185,3 shop imo-sell-girl 90,516
 
 
 //==========================================
-// 戦闘実習
+// combat practice
 //------------------------------------------
 
--	script	NoviceTraining		-1,{
-	mes "[フーマン]";
-	mes "低レベルモンスターといえど";
-	mes "甘く見ると痛い目にあいますよ。";
-	mes "下手をすると大怪我をするので";
-	mes "気をつけてくださいね。";
+- script NoviceTraining -1,{
+	mes "[Fuhrman]";
+	mes "Even low-level monsters can hurt you if you underestimate them." ;
+	mes "Be careful, because if you're not careful, you can get seriously hurt." ;
 	next;
-	mes "[フーマン]";
-	mes "そうそう、たまに先制攻撃を";
-	mes "しかけてくるモンスターが";
-	mes "いますので、ご注意を！";
-	mes "それでは、頑張って実習を";
-	mes "やり遂げてください!!";
+	mes "[Fuhrman]";
+	mes "Yes, there are monsters that sometimes attack first, so please Attention!" ;
+	mes "Well then, good luck completing your training!!!" ;
 	next;
-	mes "[フーマン]";
-	mes "……もしかして本当は、";
-	mes "ここのモンスターたちは弱い！";
-	mes "と思っています？";
-	mes "実はそんな方のためにサービス!!";
-	mes "もうちょっと強いモンスターが";
-	mes "出る所へ送ってあげましょう。";
+	mes "[Fuhrman]";
+	mes "...... Maybe the truth is that the monsters here are weak!" ;
+	mes "You think?" ;
+	mes "Actually, a service for those who do! We'll send you to a place where the monsters are a bit stronger." ;
 	next;
-	mes "[フーマン]";
-	mes "ちょっと、挑戦してみます？";
+	mes "[Fuhrman]";
+	mes "Hey, would you like to give it a try?" ;
 	next;
-	//NPC名から表示しない番号を取り出してそのメニューを空文字で埋める
+	// take the number not to be displayed from the NPC name and fill that menu with an empty letter
 	set '@num,strnpcinfo(2);
-	setarray '@serv$,"弱めのモンスターと戦いたい","ちょっと強いモンスターと戦いたい","強いモンスターに挑戦したい！";
-	set '@serv$['@num],"";
-	switch (select('@serv$[0],'@serv$[1],'@serv$[2],"いや、やめておく……")) {
+	setarray '@serv$, "I want to fight a weaker monster", "I want to fight a little stronger monster", "I want to challenge a stronger monster!" ;
+	set '@serv$['@num],""";
+	switch (select('@serv$[0],'@serv$[1],'@serv$[2], "No, I don't want to ......")) {
 	case 1:
-		mes "[フーマン]";
-		mes "わっかりましたー！";
-		mes "それでは、弱めのモンスターが";
-		mes "いる所へ送ってあげましょう。";
-		mes "ご武運を祈ります！";
+		mes "[Fuhrman]";
+		mes "I got it!" ;
+		mes "Then let's send him to where the weaker monsters are." ;
+		mes "I wish you good luck!" ;
 		next;
 		warp "new_1-3.gat",96,21;
 		end;
 	case 2:
-		mes "[フーマン]";
-		mes "わっかりましたー！";
-		mes "それでは、ちょっと強いモンスターが";
-		mes "いる所へ送ってあげましょう。";
-		mes "ご武運を祈ります！";
+		mes "[Fuhrman]";
+		mes "I got it!" ;
+		mes "Then let's send you to a place with a little stronger monster." ;
+		mes "I wish you good luck!" ;
 		next;
 		warp "new_"+rand(2,3)+"-3.gat",96,21;
 		end;
 	case 3:
-		mes "[フーマン]";
-		mes "勇気がある方ですね……";
-		mes "では、そのご希望に応えましょう！";
-		mes "いってらっしゃーい！";
+		mes "[Fuhrman]";
+		mes "You are a brave man. ......" ;
+		mes "Then let's meet that request!" ;
+		mes "Have a nice day!" ;
 		next;
 		warp "new_"+rand(4,5)+"-3.gat",96,21;
 		end;
 	case 4:
-		mes "[フーマン]";
-		mes "用心深い方ですね……";
-		mes "確かに、実習を確実にこなすことの方が";
-		mes "大事ですよね。ご武運を祈ります！";
+		mes "[Fuhrman]";
+		mes "You are a cautious man. ......" ;
+		mes "Surely, it's more important to make sure you get the practice done. I wish you good luck!" ;
 		close;
 	}
 }
 
-new_1-3.gat,95,30,4	duplicate(NoviceTraining)	訓練所要員#0	84
-new_2-3.gat,95,30,4	duplicate(NoviceTraining)	訓練所要員#1	84
-new_3-3.gat,95,30,4	duplicate(NoviceTraining)	訓練所要員#1	84
-new_4-3.gat,95,30,4	duplicate(NoviceTraining)	訓練所要員#2	84
-new_5-3.gat,95,30,4	duplicate(NoviceTraining)	訓練所要員#2	84
+new_1-3.gat,95,30,4 duplicate(NoviceTraining) Training Requester #0 84
+new_2-3.gat,95,30,4 duplicate(NoviceTraining) Training Requester #1 84
+new_3-3.gat,95,30,4 duplicate(NoviceTraining) Trainee #1 84
+new_4-3.gat,95,30,4 duplicate(NoviceTraining) Trainee #2 84
+new_5-3.gat,95,30,4 duplicate(NoviceTraining) Training Requester #2 84
 
 //==============================================================
--	script	NoviceManager	85,{
-	mes "[シーマン]";
-	mes "……なんだ？";
-	mes "戦闘実習はきちんとやったのか。";
-	mes "じゃあ、次のマップへ送ってやろうか？";
+- script NoviceManager 85,{
+	mes "[Ciman]";
+	mes "...... What is it?" ;
+	mes "Did you do your combat training properly?" ;
+	mes "Well, how about I send you to the next map?" ;
 	next;
-	if(select("はい、お願いします！","まだいいです")==1) {
-		mes "[シーマン]";
-		mes "よし、これから先、色々なことが";
-		mes "あるだろうが、今、学んだことを";
-		mes "決して忘れるな！それでは";
-		mes "よい冒険になることを祈る！";
+	if(select("Yes, please!" , "Still good")==1) {
+		mes "[Ciman]";
+		mes "Okay, there will be a lot more to come, but never forget what you have just learned! Then I wish you a good adventure!" ;
 		close2;
 		warp "new_1-4.gat",99,10;
 		end;
 	}
-	mes "[シーマン]";
-	mes "ふむ。自ら己の未熟さを認めるのは";
-	mes "いいことだ！お前の気が済むまで";
-	mes "実習にはげんでこい！";
+	mes "[Ciman]";
+	mes "Hm. Good for you to admit your own immaturity! Go ahead and practice until you feel better!" ;
 	close;
 }
 
-new_1-3.gat,96,174,3	duplicate(NoviceManager)	試験監督	85
-new_2-3.gat,96,174,3	duplicate(NoviceManager)	試験監督	85
-new_3-3.gat,96,174,3	duplicate(NoviceManager)	試験監督	85
-new_4-3.gat,96,174,3	duplicate(NoviceManager)	試験監督	85
-new_5-3.gat,96,174,3	duplicate(NoviceManager)	試験監督	85
+new_1-3.gat,96,174,3 duplicate(NoviceManager) Examination Director 85
+new_2-3.gat,96,174,3 duplicate(NoviceManager) Examination Supervisor 85
+new_3-3.gat,96,174,3 duplicate(NoviceManager) Exam Supervisor 85
+new_4-3.gat,96,174,3 duplicate(NoviceManager) Exam Supervisor 85
+new_5-3.gat,96,174,3 duplicate(NoviceManager) Exam Supervisor 85
 
 
 //==========================================
-// 職業適性検査
+// Vocational Aptitude Test
 //------------------------------------------
 
-new_1-4.gat,91,22,3	script	職業教官	57,{
-	mes "[ブルース]";
-	mes "ここまで来るのは本当に大変";
-	mes "だったでしょう。ご苦労様でした。";
-	mes "^8C2121" +strcharinfo(0)+ "^000000様";
-	mes "お会いできて嬉しいです。";
-	mes "私は、ルーンミッドガッツ王国から";
-	mes "派遣されたブルースと申します。";
+new_1-4.gat,91,22,3 script vocational instructor 57,{
+	mes "[Baroso]";
+	mes "It must have been really hard to get here. Thank you for your hard work." ;
+	mes "^8C2121" +strcharinfo(0)+ "^000000 sir, it is a pleasure to see you." ;
+	mes "My name is Baroso, sent from the Kingdom of Rune-Midgarts." ;
 	next;
-	mes "[ブルース]";
-	mes "初心者の方への職業選択の";
-	mes "手助けとして、各職業の概要を";
-	mes "ご説明することが、私の任務です。";
+	mes "[Baroso]";
+	mes "It is my duty to give an overview of each profession to help beginners in their choice of profession." ;
 	next;
-	mes "[ブルース]";
-	mes "私がご紹介する職業は、";
-	mes "^0000FF剣士、マジシャン、アーチャー、";
-	mes "商人、シーフ、アコライト、";
-	mes "特殊一次職^000000です。";
+	mes "[Baroso]";
+	mes "The professions I will introduce are ^0000FF Swordsman, Magician, Archer, Merchant, Thief, Acolyte, and Special Primary ^000000." ;
 	next;
-	mes "[ブルース]";
-	mes "どの職業について知りたいですか？";
+	mes "[Baroso]";
+	mes "Which profession would you like to know about?" ;
 	while(1) {
 		next;
-		switch (select("剣士","マジシャン","アーチャー","商人","シーフ","アコライト","特殊一次職","話をやめる")) {
+		switch (select("Swordsman", "Magician", "Archer", "Merchant", "Thief", "Acolyte", "Special primary occupation", "Stop talking")) {
 		case 1:
-			mes "[ブルース]";
-			mes "剣士とは文字通り、剣を扱う者のことを";
-			mes "言います。ソードマンと呼ばれることも";
-			mes "あります。たまに剣の代わりに";
-			mes "槍をお使いになる方もいます。";
+			mes "[Baroso]";
+			mes "A swordsman is literally one who wields a sword, sometimes called a Swordsman. Sometimes some people use spears instead of swords." ;
 			next;
-			mes "[ブルース]";
-			mes "剣士は体力がありますので、";
-			mes "重い鎧や武器を装備することが";
-			mes "できます。";
-			mes "また弓、杖、カタール、ナックル等を";
-			mes "除くほとんどの武器を扱うことが";
-			mes "できます。";
+			mes "[Baroso]";
+			mes "Swordsmen are able to equip themselves with heavy armor and weapons because of their physical strength." ;
+			mes "They can also handle most weapons except bows, staffs, katars, knuckles, etc." ;
 			next;
-			mes "[ブルース]";
-			mes "しかし、基本的に魔法を使えないので";
-			mes "その点が短所ではありますが、";
-			mes "これは属性が付与された武器を";
-			mes "装備することで補えます。";
+			mes "[Baroso]";
+			mes "However, they basically cannot use magic, so that is a disadvantage, but this can be compensated for by equipping them with weapons that have attributes attached to them." ;
 			next;
-			mes "[ブルース]";
-			mes "剣士はその強靭な体力により、";
-			mes "敵の攻撃をものともしません。";
-			mes "また、自分の身の安全を";
-			mes "図る術も身につけています。";
+			mes "[Baroso]";
+			mes "Swordsmen are impervious to the attacks of their enemies due to their strong physical strength." ;
+			mes "He also knows how to take care of himself." ;
 			next;
-			mes "[ブルース]";
-			mes "更に強力なスキルを駆使するようになる";
-			mes "と前衛としては、最大の威力を";
-			mes "発揮します。";
-			mes "鉄壁といっても過言ではないでしょう。";
+			mes "[Baroso]";
+			mes "As a vanguard, you will be at your greatest strength when you start using even more powerful skills." ;
+			mes "It is no exaggeration to say that he is ironclad." ;
 			next;
-			mes "[ブルース]";
-			mes "剣士はその肉体を生かし、体力が弱い";
-			mes "他職業を保護する役割を担っています。";
-			mes "パーティープレイ時のリーダーを務める";
-			mes "機会も多いでしょう。";
+			mes "[Baroso]";
+			mes "Swordsmen use their physical strength to protect other professions that are physically weaker." ;
+			mes "They will often have the opportunity to be the leader during party play." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121剣士からはナイトや";
-			mes "クルセイダーに転職することが";
-			mes "できます。^000000";
+			mes "[Baroso]";
+			mes "From ^8C2121 Swordsman, you can change to Knight or Crusader. ^000000";
 			break;
 		case 2:
-			mes "[ブルース]";
-			mes "マジシャンは自らの魔力を基に";
-			mes "火、水、地、風等の属性を利用";
-			mes "して、魔法攻撃ができる職業です。";
+			mes "[Baroso]";
+			mes "Magician is a profession that can perform magical attacks based on its own magical power and using the attributes of fire, water, earth, wind, etc." ;
 			next;
-			mes "[ブルース]";
-			mes "武器は杖と本が主で、その他にも";
-			mes "装備できるものはありますが、";
-			mes "体力が乏しいので、軽い物しか";
-			mes "装備できないという短所はあります。";
+			mes "[Baroso]";
+			mes "Weapons are mainly staffs and books, and there are other items that can be equipped, but they have the disadvantage that they can only equip light objects because of their lack of physical strength." ;
 			next;
-			mes "[ブルース]";
-			mes "しかしそれを補って余りある程の";
-			mes "強力な攻撃は、マジシャンが人々に";
-			mes "好まれる理由の一つでもあります。";
+			mes "[Baroso]";
+			mes "However, the powerful attacks more than make up for it, which is one of the reasons why the Magician is favored by the people." ;
 			next;
-			mes "[ブルース]";
-			mes "マジシャンは、パーティープレイ時";
-			mes "強力な魔法で、敵に大ダメージを";
-			mes "与える心強い仲間として活躍する";
-			mes "ことでしょう。";
+			mes "[Baroso]";
+			mes "The Magician will serve as a reassuring companion during party play, using powerful magic to inflict heavy damage on the enemy." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121マジシャンからはウィザード";
-			mes "またはセージに転職することが";
-			mes "できます。^000000";
+			mes "[Baroso]";
+			mes "^8C2121Magician can change to Wizard or Sage. ^000000";
 			break;
 		case 3:
-			mes "[ブルース]";
-			mes "アーチャーは弓を利用した攻撃を";
-			mes "得意とし、遠距離攻撃ができるので";
-			mes "敵に狙われずに仲間をもサポート";
-			mes "できるという長所を持っています。";
+			mes "[Baroso]";
+			mes "The Archer has the advantage of being able to support his friends as well without being targeted by the enemy because he is good at attacking using a bow and can attack at long range." ;
 			next;
-			mes "[ブルース]";
-			mes "短所として体力は弱いが、敵から";
-			mes "遠く離れた位置から攻撃ができるので";
-			mes "身の安全を保ちながら戦うことが";
-			mes "できます。";
+			mes "[Baroso]";
+			mes "As a disadvantage, his physical strength is weak, but he can attack from far away from the enemy, so he can fight while keeping himself safe." ;
 			next;
-			mes "[ブルース]";
-			mes "アーチャーは高い命中率と攻撃力で";
-			mes "敵が近づく前の早い段階で、素早く";
-			mes "狙い撃ちにすることができます。";
+			mes "[Baroso]";
+			mes "The Archer's high hit rate and attack power allow it to take early and quick aim before the enemy gets close." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121アーチャーからはハンターに";
-			mes "転職することができます。";
-			mes "またその他にも、男性の場合は";
-			mes "バード、女性の場合はダンサー";
-			mes "に転職することができます。^000000";
+			mes "[Baroso]";
+			mes "From ^8C2121Archer can change jobs to Hunter." ;
+			mes "In addition, you can also change to Bard for Male and Dancer for Woman."; mes "[Baroso]"; mes "[Baroso]"; mes "^8C2121Archer can change to Hunter. ^000000";
 			break;
 		case 4:
-			mes "[ブルース]";
-			mes "商人は文字通り品物を売買して";
-			mes "利益を上げることがウリの職業です。";
-			mes "長い間、商売をしてきたノウハウを";
-			mes "生かし、他職業よりもっと安い価格で";
-			mes "品物を購入したり、より高い価格で";
-			mes "品物を売却することができます。";
+			mes "[Baroso]";
+			mes "A Merchant is literally a profession that is all about buying and selling goods and making a profit." ;
+			mes "With their long years of expertise in the trade, they can buy goods at a much lower price than other professions or sell goods at a higher price." ;
 			next;
-			mes "[ブルース]";
-			mes "また、より多くのアイテムをカートに";
-			mes "積んで運ぶことができる上、自ら";
-			mes "お店を開くこともできます。";
+			mes "[Baroso]";
+			mes "You can also cart more items and open your own store." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121商人からはブラックスミスや";
-			mes "アルケミストに転職することが";
-			mes "できます。^000000";
+			mes "[Baroso]";
+			mes "From ^8C2121 merchants can change jobs to Blacksmith or Alchemist. ^000000";
 			break;
 		case 5:
-			mes "[ブルース]";
-			mes "シーフは短剣を使った素早い攻撃と";
-			mes "身の軽さを生かした高い回避率が";
-			mes "長所です。";
+			mes "[Baroso]";
+			mes "The Thief has the advantage of quick attacks with his dagger and a high evasion rate due to his lightness of body." ;
 			next;
-			mes "[ブルース]";
-			mes "それ以外にも毒を使ったり";
-			mes "身を隠す技術も身につけることが";
-			mes "できます。万が一その毒におかされた";
-			mes "場合、その人は少しずつ体力を";
-			mes "奪われていきます。";
+			mes "[Baroso]";
+			mes "Besides that, they can also learn to use poison and hide themselves. In the unlikely event that the person is poisoned by that poison, he or she will gradually lose his or her strength." ;
 			next;
-			mes "[ブルース]";
-			mes "危機的状況に陥った際、";
-			mes "素早く身を隠し、背後から攻撃を";
-			mes "仕掛けて形勢を逆転することも";
-			mes "できます。";
+			mes "[Baroso]";
+			mes "In a critical situation, a person can quickly hide himself or herself and attack from behind to reverse the situation." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121シーフからはアサシンや";
-			mes "ローグに転職することができます。^000000";
+			mes "[Baroso]";
+			mes "^8C2121Thiefs can change jobs to Assassin or Rogue. ^000000";
 			break;
 		case 6:
-			mes "[ブルース]";
-			mes "アコライトは神様に仕え、その";
-			mes "信仰を人々に教えるだけでなく、";
-			mes "他人のためには自らをも進んで";
-			mes "犠牲にする奉仕の職業です。";
+			mes "[Baroso]";
+			mes "Acolyte is a profession of service, not only serving God and teaching people about his faith, but also willingly sacrificing himself for the sake of others." ;
 			next;
-			mes "[ブルース]";
-			mes "アコライトは戦闘には直接的に";
-			mes "関わるのではなく、奇跡により";
-			mes "仲間の能力を引き出したり、負傷";
-			mes "した仲間を癒す役目を担います。";
+			mes "[Baroso]";
+			mes "The Acolyte is not directly involved in combat, but is responsible for bringing out the abilities of his companions through miracles and for healing wounded companions." ;
 			next;
-			mes "[ブルース]";
-			mes "パーティープレイ時に欠かせない";
-			mes "職業の一つと言われています。";
+			mes "[Baroso]";
+			mes "It is said to be one of the most indispensable professions during party play." ;
 			next;
-			mes "[ブルース]";
-			mes "^8C2121アコライトからはプリースト";
-			mes "またはモンクに転職することが";
-			mes "できます。^000000";
+			mes "[Baroso]";
+			mes "From ^8C2121Acolyte can change jobs to Priest or Monk. ^000000";
 			break;
 		case 7:
-			mes "[ブルース]";
-			mes "特殊一次職には";
-			mes "テコンキッド、";
-			mes "忍者、";
-			mes "スーパーノービス、";
-			mes "ガンスリンガーがあります。";
-			mes "どの説明を聞きますか？";
+			mes "[Baroso]";
+			mes "Special primary occupations include Taekwon Kid, Ninja, Supernovice, and Gunslinger." ;
+			mes "Which description would you like to hear?" ;
 			while(1) {
 				next;
-				switch(select("テコンキッド","忍者","スーパーノービス","ガンスリンガー","話をやめる")) {
+				switch(select("Taekwon Kid", "Ninja", "Supernovice", "Gunslinger", "Stop talking")) {
 				case 1:
-					mes "[ブルース]";
-					mes "遠い東方の国から伝わってきた、";
-					mes "主に蹴りで構成された格闘技術を";
-					mes "使いこなす職業です。";
+					mes "[Baroso]";
+					mes "This profession was introduced from a far eastern country and uses fighting techniques consisting mainly of kicking." ;
 					next;
-					mes "[ブルース]";
-					mes "この職業を通し、";
-					mes "より強い攻撃術を持つ拳聖や、";
-					mes "様々な魂を操り、他の人を助ける";
-					mes "ソウルリンカーへの転職が";
-					mes "可能になります。";
+					mes "[Baroso]";
+					mes "Through this profession, it is possible to change jobs to become a Star Gladiator with stronger attack techniques or a Soul Linker who manipulates various souls to help others." ;
 					break;
 				case 2:
-					mes "[ブルース]";
-					mes "素早い動きを得意とする忍者は、";
-					mes "一般武器だけではなく、";
-					mes "投擲武器や忍術を使いこなします。";
-					mes "また、様々な回避スキルと共に、";
-					mes "物理、魔法攻撃を使いこなす";
-					mes "多面性のある職業です。";
+					mes "[Baroso]";
+					mes "Ninja, who excel in quick movements, can use throwing weapons and ninjutsu as well as common weapons." ;
+					mes "It is also a multifaceted profession that uses physical and magical attacks along with a variety of evasion skills." ;
 					next;
-					mes "[ブルース]";
-					mes "忍者は短剣及び、風魔手裏剣、";
-					mes "投擲する武器や、魔法に似ている";
-					mes "「忍術」を使って敵と戦います。";
+					mes "[Baroso]";
+					mes "Ninjas fight their enemies with daggers, windmagic shurikens, throwing weapons, and "ninjutsu," which is similar to magic." ;
 					break;
 				case 3:
-					mes "[ブルース]";
-					mes "ノービスの心得を忘れずに、";
-					mes "さらにノービスとしての";
-					mes "自己を磨いた職業です。";
-					mes "この職業の一番の魅力は、";
-					mes "他の1次職のスキルの殆どを";
-					mes "習得する事が可能な事です。";
+					mes "[Baroso]";
+					mes "It is a profession that has further refined its self as a Novice, without forgetting the Novice's mindset." ;
+					mes "The best thing about this profession is that it is possible to learn most of the skills of other primary professions." ;
 					next;
-					mes "[ブルース]";
-					mes "スーパーノービスになると、";
-					mes "他の職業への転職は不可能に";
-					mes "なりますが、個性溢れる";
-					mes "キャラクターとなる事が可能です。";
+					mes "[Baroso]";
+					mes "Once you become a Supernovice, it is no longer possible to change to another profession, but it is possible to become a character full of personality." ;
 					break;
 				case 4:
-					mes "[ブルース]";
-					mes "鋼鉄の都市「アインブロック」で";
-					mes "製作された銃器を扱う職業で、";
-					mes "遠距離攻撃に優れた能力を持つ";
-					mes "職業です。強力な火力を";
-					mes "目指す方にお勧めします。";
+					mes "[Baroso]";
+					mes "This profession handles firearms made in the city of Steel "Einbroch" and has excellent long-range attack capabilities. It is recommended for those who aim for powerful firepower." ;
 					break;
 				case 5:
-					mes "[ブルース]";
-					mes "……大丈夫みたいですね。";
-					mes "では、ヘイスンに話しかけて";
-					mes "ください。";
+					mes "[Baroso]";
+					mes "...... It seems to be ok." ;
+					mes "Then please talk to Hasan." ;
 					close;
 				}
 				if(CHANGE_NV &0x1000 == 0)
 					set CHANGE_NV,CHANGE_NV|0x1000;
 			}
 		case 8:
-			mes "[ブルース]";
-			mes "……大丈夫みたいですね。";
-			mes "では、ヘイスンに話しかけてください。";
+			mes "[Baroso]";
+			mes "...... It seems to be ok." ;
+			mes "Then please talk to Hasan." ;
 			close;
 		}
 		if(CHANGE_NV &0x1000 == 0)
@@ -3276,7 +2339,7 @@ new_1-4.gat,91,22,3	script	職業教官	57,{
 }
 
 //==============================================================
-new_1-4.gat,100,29,4	script	適性検査官	46,{
+new_1-4.gat,100,29,4 script aptitude tester 46,{
 
 	function Transport {
 		set CHANGE_NV,0;
@@ -3312,135 +2375,108 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 	function Place {
 		switch(getarg(0)) {
 			case 1:
-				mes "送り先は衛星都市イズルードです。";
-				mes "街の西側に剣士ギルドがありますので";
+				mes "The destination is the satellite city Izlude." ;
+				mes "There is a swordsmen's guild on the west side of the city.";
 				break;
 			case 2:
-				mes "送り先は魔法都市ゲフェンです。";
-				mes "街の北西に魔法学校がありますので";
+				mes "The destination is the magic city Geffen." ;
+				mes "There is a magic school in the northwest of the city."; break; case 3: mes "The destination is the magic school in the northwest of the city.
 				break;
 			case 3:
-				mes "送り先は港の都市アルベルタです。";
-				mes "街の南西に商人組合がありますので";
+				mes "The destination is the port city Alberta." ;
+				mes "There is a merchants' association southwest of the city."; break; case 4: mes "The destination is the port city of Alberta.
 				break;
 			case 4:
-				mes "送り先は砂漠の都市モロクです。";
-				mes "街の北西にあるピラミッドの地下1階に";
-				mes "シーフギルドがありますので";
+				mes "The destination is the desert city of Morroc." ;
+				mes "The Thief guild is on the first basement floor of the pyramid northwest of the city."; break; case 5: mes "The destination is the desert city of Morroc.
 				break;
 			case 5:
-				mes "送り先は山岳の都市フェイヨンです。";
-				mes "街の北東にある弓手村に";
-				mes "アーチャーギルドがありますので";
+				mes "The destination is the mountain city Payon." ;
+				mes "The Archer guild is located in Archer Village, northeast of the city."; break; case 6: mes "The destination is the mountain city of Payon.
 				break;
 			case 6:
-				mes "送り先は首都プロンテラです。";
-				mes "街の北東にプロンテラ大聖堂が";
-				mes "ありますので";
+				mes "The destination is the capital city Prontera." ;
+				mes "The Prontera Cathedral is located in the northeast of the city."; break; case 7: mes "The destination is the capital, Prontera.
 				break;
 		}
 		return;
 	}
 
 	if(CHANGE_NV &0x1000 == 0) {
-		mes "[ヘイスン]";
-		mes "こんにちは。";
-		mes "私は職業適性検査を担当している";
-		mes "「ヘイスン」と申します。お名前は……";
-		mes "^8C2121" +strcharinfo(0)+ "^000000様ですね。";
+		mes "[Hasan]";
+		mes "Hello." ;
+		mes "My name is "Hasan" and I am in charge of vocational aptitude testing. Your name is ......." ;
+		mes "^8C2121" +strcharinfo(0)+ "You must be ^000000." ;
 		next;
-		mes "[ヘイスン]";
-		mes "まず検査の前に私の前にいる";
-		mes "ブルースから職業の説明を";
-		mes "受けてください。";
+		mes "[Hasan]";
+		mes "First you will receive a description of your occupation from Baroso, who is in front of me before the inspection." ;
 		close;
 	}
 	if(CHANGE_NV &0x2000) {
-		mes "[ヘイスン]";
-		mes "おや、どうなさいました？";
-		mes "既に職業適性検査は終えてますし";
-		mes "支給品もお渡ししてますよね。";
-		mes "では、近くの街にお送りしましょう。";
+		mes "[Hasan]";
+		mes "Oh, how can I help you?" ;
+		mes "You've already completed the vocational aptitude test and we've given you the supplies." ;
+		mes "Then let me send you to the nearest town." ;
 		next;
 		Transport;
 		end;
 	}
-	mes "[ヘイスン]";
-	mes "こんにちは、^8C2121" +strcharinfo(0)+ "^000000様。";
-	mes "ここまで来るのによくぞ頑張りました。";
-	mes "お疲れ様です。……ふむふむ";
-	mes "職業説明は既に受けたようですね。";
-	mes "では最後に、職業適性検査を行います。";
-	mes "ですが、これは強制いたしません。";
+	mes "[Hasan]";
+	mes "Hello, ^8C2121" +strcharinfo(0)+ "Dear ^000000." ;
+	mes "Good job on getting here." ;
+	mes "Good job. ...... Hmmm... I see that you have already received the job description." ;
+	mes "Then, at the end, we will give you a vocational aptitude test." ;
+	mes "But this will not be mandatory." ;
 	next;
-	mes "[ヘイスン]";
-	mes "もし受けたくなければパスをする";
-	mes "ことも可能ということです。";
-	mes "それに対し、検査を受ければ";
-	mes "その分の報酬はあります。";
+	mes "[Hasan]";
+	mes "It means that if you don't want to accept it, you can pass it." ;
+	mes "On the other hand, if you take the inspection, you will be paid for it." ;
 	next;
-	mes "[ヘイスン]";
-	mes "まず、検査の過程で支給する";
-	mes "回復アイテムがあります。";
-	mes "それは冒険の序盤でかなり役に";
-	mes "立つことでしょう。";
+	mes "[Hasan]";
+	mes "First, there are recovery items that will be provided during the inspection process." ;
+	mes "That will be quite useful in the early stages of your adventure." ;
 	next;
-	mes "[ヘイスン]";
-	mes "次に検査後、^882420" +strcharinfo(0)+ "^000000様に";
-	mes "ふさわしい職業をお勧めします。";
-	mes "その後、ご希望された職業に関係のある";
-	mes "街へお送りします。その他にいくつか";
-	mes "支給品もあります。";
+	mes "[Hasan]";
+	mes "Next, after inspection, ^882420" +strcharinfo(0)+ "^000000 we recommend a suitable occupation for you." ;
+	mes "We will then send you to the city related to the occupation you have requested. There are also several other supplies." ;
 	next;
-	mes "[ヘイスン]";
-	mes "それでは、どうされますか？";
-	mes "すぐに冒険を始めるか、";
-	mes "職業適性検査を受けるか。";
-	mes "いかがでしょう？";
+	mes "[Hasan]";
+	mes "What will you do then?" ;
+	mes "Do you want to start your adventure right away or take a vocational aptitude test?" ;
+	mes "How about it?" ;
 	next;
-	if(select("職業適性検査を受けます","遠慮します")==2) {
-		mes "[ヘイスン]";
-		mes "わかりました。それではすぐに";
-		mes "街へ送ってあげましょう。";
+	if(select("I will take the vocational aptitude test", "No thanks")==2) {
+		mes "[Hasan]";
+		mes "Okay. Then I will send you to the city immediately." ;
 		next;
-		mes "[ヘイスン]";
-		mes "更なる知識や技術は、実際の冒険で";
-		mes "経験を積みながら身につけてください。";
+		mes "[Hasan]";
+		mes "Further knowledge and skills will be acquired as you gain experience in actual adventures." ;
 		next;
-		mes "[ヘイスン]";
-		mes strcharinfo(0)+ " 様の";
-		mes "これからの成功と健闘をお祈りします。";
-		mes "では、さようなら。";
+		mes "[Hasan]";
+		mes ""+strcharinfo(0)+ " We wish you success and good luck in the future." ;
+		mes "Well, goodbye." ;
 		next;
 		Transport;
 		end;
 	}
-	mes "[ヘイスン]";
-	mes "わかりました。";
-	mes "真の冒険者を目指すなら、この検査に";
-	mes "参加するのは正しい選択です。";
-	mes "もし遠慮なさっていたら、あなたは";
-	mes "とても損をしていたことでしょう。";
+	mes "[Hasan]";
+	mes "I understand." ;
+	mes "If you want to be a true adventurer, participating in this inspection is the right choice." ;
+	mes "If you had refrained, you would have lost a lot." ;
 	next;
-	mes "[ヘイスン]";
-	mes "では、職業適性検査を始めます。";
-	mes "落ち着いて、普段と同じように";
-	mes "答えてください。質問に対して";
-	mes "自分の行動傾向と一番近いと";
-	mes "思われるものを選んでください。";
+	mes "[Hasan]";
+	mes "Now we will begin the vocational aptitude test." ;
+	mes "Please remain calm and answer the questions as you normally would. Choose the one that seems closest to your behavioral tendencies for the question." ;
 	next;
-	mes "[ヘイスン]";
-	mes "この検査は、ただ単にあなたの性格を";
-	mes "分析するためのもので、良し悪しは";
-	mes "ありません。では、始めます。";
+	mes "[Hasan]";
+	mes "This test is simply to analyze your personality, good or bad. Now, let's begin." ;
 	next;
-	//適正試験ここから
-	//'@point配列に加算していく、要素番号は1-剣士,2-マジ,3-商人,4-シーフ,5-アチャ,6-アコ
-	mes "[ヘイスン]";
-	mes "次の中で自分と一番近いと思われる";
-	mes "単語を選んでください。";
+	// Appropriateness test from here.
+	//'@point array and add to it, element numbers are 1- Swordsman, 2-Maj, 3-Merchant, 4-Thief, 5-Acha, 6-Aco
+	mes "[Hasan]";
+	mes "Choose the word that seems closest to you in the following." ;
 	next;
-	switch( select("勤勉","活発","奉仕","乱暴") ) {
+	switch( select("diligent", "active", "service", "violent")) {
 		case 1:
 			set '@point[2],'@point[2]+1;
 			break;
@@ -3455,11 +2491,11 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 			set '@point[4],'@point[4]+1;
 			break;
 	}
-	switch( select("変化","永久") ) {
-		case 1: set '@point[2],'@point[2]+1; break;
-		case 2: set '@point[6],'@point[6]+1; break;
+	switch( select("change", "permanent")) {
+		case 1: set '@point[2],'@point[2]+1; break
+		case 2: set '@point[6],'@point[6]+1; break
 	}
-	switch( select("消費者","販売者","生産者") ) {
+	switch( select("consumer", "seller", "producer") ) {
 		case 1:
 			set '@point[1],'@point[1]+1;
 			set '@point[4],'@point[4]+1;
@@ -3472,145 +2508,132 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 			set '@point[2],'@point[2]+1;
 			break;
 	}
-	switch( select("迅速","慎重") ) {
-		case 1: set '@point[4],'@point[4]+1; break;
-		case 2: set '@point[5],'@point[5]+1; break;
+	switch( select("prompt", "prudent")) {
+		case 1: set '@point[4],'@point[4]+1; break
+		case 2: set '@point[5],'@point[5]+1; break
 	}
-	switch( select("理論","経験") ) {
-		case 1: set '@point[2],'@point[2]+1; break;
-		case 2: set '@point[1],'@point[1]+1; break;
+	switch( select("theory", "experience")) {
+		case 1: set '@point[2],'@point[2]+1; break
+		case 2: set '@point[1],'@point[1]+1; break
 	}
-	switch( select("過去","現在","未来") ) {
+	switch( select("past", "present", "future") ) {
 		case 1:
 			set '@point[5],'@point[5]+1;
 			break;
 		case 2:
-			set '@point[3],'@point[3]+1;
+			set '@point[3],'@point[3]+1; break; case 2: set '@point[4],'@point[4]+1; break
 			set '@point[4],'@point[4]+1;
 			break;
 		case 3:
 			set '@point[2],'@point[2]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "次の質問に「はい」と「いいえ」で";
-	mes "答えてください。";
+	mes "[Hasan]";
+	mes "Answer the following questions with 'yes' and 'no'." ;
 	next;
-	mes "[ヘイスン]";
-	mes "卑屈に生きるより";
-	mes "潔く死ぬ方がマシだ。";
+	mes "[Hasan]";
+	mes "It is better to die gracefully than to live despicably." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1:
 			set '@point[1],'@point[1]+1;
 			break;
 		case 2:
-			set '@point[3],'@point[3]+1;
+			set '@point[3],'@point[3]+1; break; case 2: set '@point[4],'@point[4]+1; break
 			set '@point[4],'@point[4]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "人の不幸は密の味がする。";
+	mes "[Hasan]";
+	mes "Human misery tastes dense." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("yes", "no")) {
 		case 1: set '@point[3],'@point[3]+1; break;
-		case 2: set '@point[6],'@point[6]+1; break;
+		case 2: set '@point[6],'@point[6]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "危険な場所でも平気で進む。";
+	mes "[Hasan]";
+	mes "I'm not afraid to go on in dangerous places." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1: set '@point[1],'@point[1]+1; break;
-		case 2: set '@point[2],'@point[2]+1; break;
+		case 2: set '@point[2],'@point[2]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "どんなことでも前に出るタイプだ。";
+	mes "[Hasan]";
+	mes "I'm the type to come forward in any matter." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1: set '@point[1],'@point[1]+1; break;
 		case 2: set '@point[5],'@point[5]+1; break;
 	}
-	mes "[ヘイスン]";
-	mes "ダンジョンを探検中、突き当たりに";
-	mes "ぶつかった。壁をよく調べてみると";
-	mes "「押す」という文字が書かれていた";
-	mes "ような跡がある。その跡のそばには";
-	mes "ボタンのような突き出た石がある。";
-	mes "そういう時……";
+	mes "[Hasan]";
+	mes "While exploring the dungeon, I hit the end of the road. Upon closer examination of the wall, I found a mark that looked like the word "push" had been written on it. Near the mark is a protruding stone that looks like a button." ;
+	mes "At such a time ......." ;
 	next;
-	mes "[ヘイスン]";
-	mes "「押す」と書いてはあるが、";
-	mes "逆に引きたくなる。";
+	mes "[Hasan]";
+	mes "It says "push" but you want to pull the opposite." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1: set '@point[4],'@point[4]+1; break;
 		case 2: set '@point[1],'@point[1]+1; break;
 	}
-	mes "[ヘイスン]";
-	mes "たまに現実にはあるはずがない";
-	mes "非現実的な現象が見える。";
+	mes "[Hasan]";
+	mes "Sometimes I see unrealistic phenomena that should not exist in reality." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1: set '@point[6],'@point[6]+1; break;
 		case 2: set '@point[2],'@point[2]+1; break;
 	}
-	mes "[ヘイスン]";
-	mes "屋上から飛び降りると、";
-	mes "空を飛べるかもしれない。";
+	mes "[Hasan]";
+	mes "If you jump off the rooftop, you might be able to fly." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("Yes", "No")) {
 		case 1: set '@point[6],'@point[6]+1; break;
 		case 2: set '@point[2],'@point[2]+1; break;
 	}
-	mes "[ヘイスン]";
-	mes "世の中はお金が全て。";
-	mes "お金さえあれば何でもできる。";
-	mes "お金さえあれば、生命体すら";
-	mes "売り買いできると思う。";
+	mes "[Hasan]";
+	mes "Money is everything in the world." ;
+	mes "As long as you have money, you can do anything." ;
+	mes "As long as you have money, I think you can even buy and sell life forms." ;
 	next;
-	switch( select("はい","いいえ") ) {
+	switch( select("yes", "no")) {
 		case 1: set '@point[5],'@point[5]+1; break;
-		case 2: set '@point[3],'@point[3]+1; break;
+		case 2: set '@point[3],'@point[3]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "今度は問題形式をちょっと変えます。";
-	mes "落ち着いて検査に臨んでください。";
-	mes "では、質問に対して自分の行動傾向に";
-	mes "一番近いと思われるものを選んで";
-	mes "ください。";
+	mes "[Hasan]";
+	mes "Now we'll change the question format a bit." ;
+	mes "Please be calm and go through the inspection." ;
+	mes "Now, choose the one that seems closest to your behavioral tendencies in response to the questions." ;
 	next;
-	mes "[ヘイスン]";
-	mes "時間通りに動くことは……";
+	mes "[Hasan]";
+	mes "Being on time is ......." ;
 	next;
-	switch( select("機械のように感じて息苦しい","良い事だと思う","関係ない、私は何事にも縛られない") ) {
+	switch( select("I feel like a machine and suffocate", "It's a good thing", "No matter, I'm not bound by anything")) {
 		case 1:
 			set '@point[1],'@point[1]+1;
 			set '@point[4],'@point[4]+1;
 			break;
 		case 2:
-			set '@point[2],'@point[2]+1;
+			set '@point[2],'@point[2]+1; break; case 3: set '@point[6],'@point[6]+1; break
 			set '@point[6],'@point[6]+1;
 			break;
 		case 3:
-			set '@point[3],'@point[3]+1;
+			set '@point[3],'@point[3]+1; break; case 3: set '@point[5],'@point[5]+1; break
 			set '@point[5],'@point[5]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "お店でとても欲しいものを見つけた。";
-	mes "衝動買いの誘惑を感じる。";
-	mes "そこであなたはそれを買う前に……";
+	mes "[Hasan]";
+	mes "I found something I wanted very much at the store." ;
+	mes "I feel tempted to impulse buy." ;
+	mes "So before you buy it ......." ;
 	next;
-	switch( select("必要な物か確認する","今、お金がいくらあるか確認する","買った後に考える") ) {
+	switch( select("Make sure you need it", "Make sure you have enough money now", "Think about it after you buy it")) {
 		case 1: set '@point[5],'@point[5]+1; break;
-		case 2: set '@point[3],'@point[3]+1; break;
-		case 3: set '@point[4],'@point[4]+1; break;
+		case 2: set '@point[3],'@point[3]+1; break
+		case 3: set '@point[4],'@point[4]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "あなたは多くの人達と";
-	mes "競争することが……";
+	mes "[Hasan]";
+	mes "You have a lot of people to compete with ......." ;
 	next;
-	switch( select("好きだ","嫌いだ","どちらともいえない") ) {
+	switch( select("I like", "I dislike", "I can't say either")) {
 		case 1:
 			set '@point[3],'@point[3]+1;
 			break;
@@ -3618,25 +2641,22 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 			set '@point[4],'@point[4]+1;
 			break;
 		case 3:
-			set '@point[1],'@point[1]+1;
+			set '@point[1],'@point[1]+1; break; case 4: set '@point[4],'@point[4]+1; break
 			set '@point[6],'@point[6]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "一人では重い仕事をしなければ";
-	mes "ならない。自分だけでは途方もなく";
-	mes "時間がかかるが、大勢でやればかなり";
-	mes "早くやり終えることができる。";
-	mes "そんな時あなたなら……";
+	mes "[Hasan]";
+	mes "One person has to do the heavy lifting. It would take a tremendous amount of time by myself, but if I do it with a lot of people, I can get it done fairly quickly." ;
+	mes "If that's the case, you can ......." ;
 	next;
-	switch( select("大変だとしても自分だけでやる","知り合いに助けを求める") ) {
+	switch( select("Even if it's hard, I'll do it by myself.", "I'll ask someone I know for help.")) {
 		case 1: set '@point[2],'@point[2]+1; break;
-		case 2: set '@point[3],'@point[3]+1; break;
+		case 2: set '@point[3],'@point[3]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "あなたに助けを求める人がいたら……";
+	mes "[Hasan]";
+	mes "If anyone needs help from you: ......" ;
 	next;
-	switch( select("すぐに助ける","状況を見てから判断する","自分と関係なければ無視する") ) {
+	switch( select("help immediately", "wait and see the situation", "ignore if it has nothing to do with me")) {
 		case 1:
 			set '@point[6],'@point[6]+1;
 			break;
@@ -3645,16 +2665,16 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 			set '@point[5],'@point[5]+1;
 			break;
 		case 3:
-			set '@point[2],'@point[2]+1;
-			set '@point[3],'@point[3]+1;
+			set '@point[2],'@point[2]+1; break; case 4: set '@point[2],'@point[2]+1; break
+			set '@point[3],'@point[3]+1; break; case 4: set '@point[4],'@point[4]+1; break
 			set '@point[4],'@point[4]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "道を歩いてると偶然「服」を見つけた。";
-	mes "あなたならどう思う？";
+	mes "[Hasan]";
+	mes "I was walking down the street and happened to find some 'clothes'." ;
+	mes "What would you think?" ;
 	next;
-	switch( select("「有名ブランド社製だ」","「この服の持ち主は誰だ？」","「持って帰ろう」","「そのままにしておこう」") ) {
+	switch( select("It's made by a famous brand company.", "Who is the owner of these clothes?" , "Let's take it home", "Let's leave it as it is")) {
 		case 1:
 			set '@point[3],'@point[3]+1;
 			break;
@@ -3662,291 +2682,230 @@ new_1-4.gat,100,29,4	script	適性検査官	46,{
 			set '@point[6],'@point[6]+1;
 			break;
 		case 3:
-			set '@point[3],'@point[3]+1;
+			set '@point[3],'@point[3]+1; break; case 4: set '@point[4],'@point[4]+1; break
 			set '@point[4],'@point[4]+1;
 			break;
 		case 4:
 			set '@point[2],'@point[2]+1;
 			break;
 	}
-	mes "[ヘイスン]";
-	mes "会話の途中で立場が苦しくなった時……";
+	mes "[Hasan]";
+	mes "When your position becomes difficult in the middle of a conversation: ......" ;
 	next;
-	switch( select("冗談にしてごまかす","話題を変える","徹底的に原因を追究","何はともあれ謝る") ) {
-		case 1: set '@point[4],'@point[4]+1; break;
-		case 2: set '@point[1],'@point[1]+1; break;
-		case 3: set '@point[2],'@point[2]+1; break;
-		case 4: set '@point[6],'@point[6]+1; break;
+	switch( select("make a joke and cover it up", "change the subject", "thoroughly investigate the cause", "apologize at any rate")) {
+		case 1: set '@point[4],'@point[4]+1; break
+		case 2: set '@point[1],'@point[1]+1; break
+		case 3: set '@point[2],'@point[2]+1; break
+		case 4: set '@point[6],'@point[6]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "あなたの恋人が、必要もない";
-	mes "くだらない記念品を買ってくれと";
-	mes "言ってきたらあなたは……";
+	mes "[Hasan]";
+	mes "If your girlfriend asks you to buy her a crappy insignia ghost product that she doesn't need, you're ......." ;
 	next;
-	switch( select("どんな物でも恋人が望むなら買う","断る","今度買ってあげると言ってごまかす") ) {
+	switch( select("I'll buy whatever your girlfriend wants", "I refuse", "I'll buy it for you next time")) {
 		case 1: set '@point[1],'@point[1]+1; break;
-		case 2: set '@point[3],'@point[3]+1; break;
-		case 3: set '@point[4],'@point[4]+1; break;
+		case 2: set '@point[3],'@point[3]+1; break
+		case 3: set '@point[4],'@point[4]+1; break
 	}
-	mes "[ヘイスン]";
-	mes "検査はこれで終了です。";
-	mes "そして初心者修練場の過程も";
-	mes "全て終了しました。";
-	mes "お疲れさまでした。";
+	mes "[Hasan]";
+	mes "Inspection is now complete." ;
+	mes "And the whole process of Novice Training Ground is also finished." ;
+	mes "Thank you for your hard work." ;
 	next;
-	mes "[ヘイスン]";
-	mes "これは職業適性検査の報酬になります。";
-	mes "受け取ってください。";
+	mes "[Hasan]";
+	mes "This is the reward for the vocational aptitude test." ;
+	mes "Please accept it." ;
 	next;
 	set CHANGE_NV,CHANGE_NV|0x2000;
 	getitem 501,4;
 	getitem 503,2;
 	getitem 506,2;
 	next;
-	mes "[ヘイスン]";
-	mes "総合評価の発表後";
-	mes "^882420" +strcharinfo(0)+ "^000000様に";
-	mes "適した職業をお教えしましょう。";
-	mes "少々お待ち下さい。";
+	mes "[Hasan]";
+	mes "After the announcement of the overall evaluation ^882420" +strcharinfo(0)+ "Let me tell you the suitable occupation for Mr. ^000000." ;
+	mes "Please wait a moment." ;
 	next;
-	mes "[ヘイスン]";
-	mes "……………………";
-	mes "すぐに終わりますので。";
-	mes "…………………………………………";
+	mes "[Hasan]";
+	mes "........................" ;
+	mes "I'll be done soon." ;
+	mes "................................................" ;
 	next;
-	mes "[ヘイスン]";
-	mes "……………………!!";
+	mes "[Hasan]";
+	mes "........................!!!" ;
 	next;
-	mes "[ヘイスン]";
-	mes "結果が出ました。";
-	mes "^882420" +strcharinfo(0)+ "^000000様の";
-	mes "総合評価を発表します。";
+	mes "[Hasan]";
+	mes "The result is available." ;
+	mes "^882420" +strcharinfo(0)+ "We present the overall evaluation of ^000000-sama." ;
 	next;
-	//ポイントが最大の添え字を'@iに格納する
+	//Store the subscript with the largest points in '@i
 	set '@i,1;
 	for(set '@j,1; '@j<=5; set '@j,'@j+1) {
 		if('@point['@i] < '@point['@j+1])
 			set '@i,'@j+1;
 	}
-	setarray '@name$[1],"剣士","マジシャン","商人","シーフ","アーチャー","アコライト";
+	setarray '@name$[1], "Swordsman", "Magician", "Merchant", "Thief", "Archer", "Acolyte";
 	switch('@i) {
 		case 1:
-			mes "[ヘイスン]";
-			mes "単純で直線的な性格だけど";
-			mes "信念が強くて、世界に大きな影響を";
-			mes "与える人になることを望んでいる。";
-			mes "弱い人を護ろうとする義理厚いタイプ。";
+			mes "[Hasan]";
+			mes "He is simple and linear but has a strong faith GHOST and wants to be a person who will have a great impact on the world." ;
+			mes "A righteous type who tries to protect the weak." ;
 			next;
-			mes "[ヘイスン]";
-			mes "自己主張が強いあなたは";
-			mes "^696969剣士^000000が一番似合います。";
+			mes "[Hasan]";
+			mes "You are assertive, and ^696969 swordsman^000000 fits you best." ;
 			break;
 		case 2:
-			mes "[ヘイスン]";
-			mes "人に愚かに見られないよう、";
-			mes "すべてを理解しようとする、一人で";
-			mes "仕事をする独立的なタイプ。";
-			mes "理知的で判断力が高い。";
-			mes "内向的、分析的で洞察力を";
-			mes "持っているタイプ。";
+			mes "[Hasan]";
+			mes "An independent type who works alone, trying to understand everything so that people don't see you as foolish." ;
+			mes "Intelligent and judgmental." ;
+			mes "Introverted, analytical and insightful type." ;
 			next;
-			mes "[ヘイスン]";
-			mes "観察が好きなあなたには";
-			mes "^696969マジシャン^000000が一番似合います。";
+			mes "[Hasan]";
+			mes "You like to observe, and ^696969Magician^000000 is the best fit for you." ;
 			break;
 		case 3:
-			mes "[ヘイスン]";
-			mes "人々の心理をよく把握する";
-			mes "大衆的な感覚が優れている。";
-			mes "組織的で決断力がある。";
-			mes "目標指向的で、責任感が強いが";
-			mes "基本的に楽観的。";
+			mes "[Hasan]";
+			mes "You have an excellent popular sense of people's psychology." ;
+			mes "Organized and decisive." ;
+			mes "Goal oriented, responsible but basically optimistic." ;
 			next;
-			mes "[ヘイスン]";
-			mes "成就欲が高いあなたには";
-			mes "^696969商人^000000が一番似合います。";
+			mes "[Hasan]";
+			mes "You have a high desire for fulfillment, and ^696969 merchant^000000 is the best fit for you." ;
 			break;
 		case 4:
-			mes "[ヘイスン]";
-			mes "人生を愉快に過ごそうとする";
-			mes "欲求が強い。いつも新しい仕事を";
-			mes "探しながら、世界に寄与することを";
-			mes "望むタイプ。";
+			mes "[Hasan]";
+			mes "You have a strong desire to make life pleasant. The type of person who is always looking for a new job and wants to contribute to the world." ;
 			next;
-			mes "[ヘイスン]";
-			mes "冒険心豊かなあなたには";
-			mes "^696969シーフ^000000の職業が一番似合います。";
+			mes "[Hasan]";
+			mes "You have an adventurous spirit and a ^696969Thief^000000 profession suits you best." ;
 			break;
 		case 5:
-			mes "[ヘイスン]";
-			mes "普段自分でも分からないない";
-			mes "色んな感情を理解しようと努力し、";
-			mes "なお他の人にも理解して貰えるよう";
-			mes "努力するタイプ。";
-			mes "また、平凡な日常に満足せず、";
-			mes "自分だけの人生を見出そうとする。";
+			mes "[Hasan]";
+			mes "You are the type of person who tries hard to understand various emotions that you normally don't understand, and still try to help others understand them." ;
+			mes "Also, not content with an ordinary life, he tries to find his own life." ;
 			next;
-			mes "[ヘイスン]";
-			mes "感受性が豊かでロマン派のあなたには";
-			mes "^696969アーチャー^000000が一番似合います。";
+			mes "[Hasan]";
+			mes "You are a sensitive and romantic person, and ^696969Archer^000000 is the best fit for you." ;
 			break;
 		case 6:
-			mes "[ヘイスン]";
-			mes "心が温かく、優しく、人に配慮する。";
-			mes "誰にでも分け隔てなく接し、";
-			mes "助けようとする。人の世話をする";
-			mes "ことが好きなタイプ。自分は人の";
-			mes "助けが必要ないように気をつけ、他の";
-			mes "人に利他主義者と呼ばれるタイプ。";
+			mes "[Hasan]";
+			mes "You are warm-hearted, kind, and considerate of others." ;
+			mes "He does not separate himself from anyone and tries to help. The type of person who likes to take care of others. The type who takes care that he does not need help from others and is called an altruist by others." ;
 			next;
-			mes "[ヘイスン]";
-			mes "人を助けることが好きなあなたには";
-			mes "^696969アコライト^000000が一番似合います。";
-			//mes "*自己の犠牲により他の幸福を願う者*";
+			mes "[Hasan]";
+			mes "You like to help people, and ^696969Acolyte^000000 is the best fit for you." ;
+			//mes "*He who desires the happiness of others at the expense of self*";
 			break;
 	}
-	mes "……と書いてあります。";
+	mes "...... and it says." ;
 	next;
-	mes "[ヘイスン]";
-	mes "あなたの総合評価の結果はどうであれ";
-	mes "これは一つの参考材料に過ぎません。";
-	mes "それでは、どの職業を希望されますか？";
-	mes "検査結果の" +'@name$['@i]+ "、もしくは他の";
-	mes "職業でしょうか？";
+	mes "[Hasan]";
+	mes "Whatever the result of your overall evaluation, this is just one reference." ;
+	mes "So, which profession would you prefer?" ;
+	mes "Is it the " +'@name$['@i]+ "or other profession in the test results?" ;
 	next;
-	mes "[ヘイスン]";
-	mes "参考材料として言っておきますが、";
-	mes "検査結果と同じ職業を選ばれると";
-	mes "より多くの支給を受けることが";
-	mes "できます。では、お選びください。";
+	mes "[Hasan]";
+	mes "Just for your information, you will receive more payment if you choose the same occupation as your inspection result. So, please choose one." ;
 	next;
-	if(select('@name$['@i]+"で！","私が望む職業で！")==1) {
-		mes "[ヘイスン]";
-		mes "了解しました。";
-		mes "検査結果を信じるのですね。";
-		mes "それでは物品の支給後に、職業に";
-		mes "関係する街へお送りしましょう。";
+	if(select('@name$['@i]+"in!" , "In the occupation I want!") ==1) {
+		mes "[Hasan]";
+		mes "Roger." ;
+		mes "You believe the test results." ;
+		mes "Then we will send you to the city related to your profession after the provision of goods." ;
 		next;
-		mes "^882420[支給内訳]^000099";
+		mes "^882420[breakdown of provision]^000099";
 		switch('@i) {
 		case 1:
-			mes "ファルシオン 1個";
+			mes "1 falchion";
 			getitem 1104,1;
 			break;
 		case 2:
-			mes "ロッド 1個";
-			mes "カッター 1個";
+			mes "1 rod 1 cutter 1";
 			getitem 1601,1;
 			getitem 1204,1;
 			break;
 		case 3:
-			mes "バトルアックス 1個";
+			mes "1 battle axe"; getitem 1601,1; getitem 1204,1; break; case 3: mes "1 battle axe";
 			getitem 1351,1;
 			break;
 		case 4:
-			mes "マインゴーシュ 1個";
+			mes "Maingauche 1 piece"; getitem 1207,1; break; case 4: mes "Maingauche 1 piece";
 			getitem 1207,1;
 			break;
 		case 5:
-			mes "コンポジットボウ 1個";
+			mes "1 composite bow";
 			getitem 1704,1;
 			break;
 		case 6:
-			mes "メイス 1個";
+			mes "1 mace"; getitem 1504,1; break; case 6: mes "1 mace";
 			getitem 1504,1;
 			break;
 		}
-		mes "プラコン 7個";
-		mes "初心者用ポーション 10個^000000";
+		mes "Phracon 7 potions for beginners 10^000000";
 		getitem 1010,7;
 		getitem 569,10;
 		next;
-		mes "[ヘイスン]";
-		mes "支給品が全てそろっているか";
-		mes "ご確認ください。それでは";
-		mes "支給されたアイテムについて";
-		mes "簡単にご説明しましょう。";
+		mes "[Hasan]";
+		mes "Please make sure you have all the supplied items. Now let's have a brief description of the supplied items." ;
 		next;
-		mes "[ヘイスン]";
+		mes "[Hasan]";
 		switch('@i) {
 		case 1:
-			mes "「ファルシオン」は剣士に転職した際、";
+			mes "[Falchion]" when he changed his job to a swordsman."; next; switch('@i'); next; mes "[Hasan]"; switch('@i')
 			break;
 		case 2:
-			mes "「ロッド」や「カッター」は";
-			mes "マジシャンに転職した際、";
+			mes "Rod" and "Cutter" are used when you change your job to Magician.";
 			break;
 		case 3:
-			mes "「バトルアックス」は";
-			mes "商人に転職した際、";
+			mes "Battle Axe" is used when you change your job to Merchant."; break; case 3: mes "Battle Axe" is used when you change your job to Magician."; break
 			break;
 		case 4:
-			mes "「マインゴーシュ」は";
-			mes "シーフに転職した際、";
+			mes "Maingauche" is used when the player changes his job to Thief;
 			break;
 		case 5:
-			mes "「コンポジットボウ」は";
-			mes "アーチャーに転職した際、";
+			mes "Composite Bow" is changed to Archer."; break; case 6: mes "Composite Bow" is changed to Thief;
 			break;
 		case 6:
-			mes "「メイス」はアコライトに転職した際、";
+			mes "Mace" is used when changing jobs to Acolyte;
 			break;
 		}
-		mes "初心者用マインゴーシュの代わりに";
-		mes "よく使うようになる武器です。";
+		mes "It is a weapon that will often be used in place of the beginner's Maingauche." ;
 		next;
-		mes "[ヘイスン]";
-		mes "「プラコン」は、鍛冶屋で";
-		mes "武器レベル1のアイテムを一段階";
-		mes "アップグレードさせる時に使用する";
-		mes "アイテムです。いくつかの街には";
-		mes "鍛冶職人が営業している精錬所が";
-		mes "あります。";
+		mes "[Hasan]";
+		mes "Phracon" is an item used by blacksmiths to upgrade a weapon level 1 item by one level. Some cities have refineries where Blacksmith Artisan operates." ;
 		next;
-		mes "[ヘイスン]";
-		mes "転職後にでもプラコンを持って";
-		mes "行ってみてはいかがでしょう。";
+		mes "[Hasan]";
+		mes "You can take the Phracon with you even after you change jobs." ;
 		Place '@i;
-		mes "一度行ってみると良いでしょう。";
+		mes "You should go there once." ;
 	}
 	else {
-		mes "[ヘイスン]";
-		mes "了解しました。";
-		mes "では、ご希望の職業を";
-		mes "お選びください。";
+		mes "[Hasan]";
+		mes "Understood." ;
+		mes "Then please select your preferred occupation." ;
 		next;
-		set '@name$['@i],"";	//検査結果と同じ職業は空文字で埋める
+		set '@name$['@i],"""; //fill in the same occupation as the test result with an empty letter
 		set '@i,select('@name$[1],'@name$[2],'@name$[3],'@name$[4],'@name$[5],'@name$[6]);
-		mes "[ヘイスン]";
-		mes '@name$['@i]+ "ですね。";
+		mes "[Hasan]";
+		mes ""+'@name$['@i]+ "Yes."" ;
 		Place '@i;
 		next;
-		mes "[ヘイスン]";
-		mes "それでは物品の支給後に、職業に";
-		mes "関係する街へお送りしましょう。";
+		mes "[Hasan]";
+		mes "Then, after the provision of goods, we will send you to the city related to your profession." ;
 		next;
-		mes "^882420[支給内訳]";
-		mes "^000030アドベンチャースーツ 1個";
-		mes "^000099初心者用ポーション 10個^000000";
+		mes "^882420[breakdown of supplies]";
+		mes "^000030 1 adventure suit ^000099 10 beginner's potions ^000000";
 		getitem 2305,1;
 		getitem 569,10;
 		next;
-		mes "[ヘイスン]";
-		mes "支給品が全てそろっているか";
-		mes "ご確認ください。それでは";
-		mes "支給されたアイテムについて";
-		mes "簡単にご説明しましょう。";
+		mes "[Hasan]";
+		mes "Please make sure you have all the supplied items. Now let's have a brief description of the supplied items." ;
 		next;
-		mes "[ヘイスン]";
-		mes "アドベンチャースーツは、既に";
-		mes "支給されている初心者用忍者スーツ";
-		mes "の次に着ることになる服です。";
+		mes "[Hasan]";
+		mes "The Adventure Suit is the next outfit you will wear after the Ninja Suit for beginners that you have already been provided." ;
 	}
 	next;
-	mes "[ヘイスン]";
-	mes "では、送ります。";
-	mes "^882420" +strcharinfo(0)+ "^000000様の";
-	mes "ご武運を祈ります。さようなら。";
+	mes "[Hasan]";
+	mes "Then we will send it to you." ;
+	mes "^882420" +strcharinfo(0)+ "^000000Sama wishes you good luck. Good bye." ;
 	close2;
 	set CHANGE_NV,0;
 	switch('@i) {

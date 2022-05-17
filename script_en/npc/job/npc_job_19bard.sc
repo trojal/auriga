@@ -1,491 +1,433 @@
 //===============================================================================================
 //Ragnarok Online Bard jobchange script
-//
-//　■ CHANGE_BA -> 0～4
-//　　 LUTIE_1QUE -> スノウノウクエストフラグ
+// - CHANGE_BA -> 0-4
+// - CHANGE_BA -> 0-4
+// LUTIE_1QUE -> Snow Snow Snow quest flag
 //===============================================================================================
 
-comodo.gat,211,155,5 script さすらいの吟遊詩人 741,{
+comodo.gat,211,155,5 script wandering bard 741,{
 	cutin "job_bard_aiolo01",2;
 	if(Upper == UPPER_HIGH) {
-		mes "[アイオルデ]";
-		mes "英雄たる素質を持つ人間は";
-		mes "その時代に数えきれず生まれ";
-		mes "しかし可能性や運命を忘れ";
-		mes "平凡な暮らしをしてしまう……";
+		mes "[aiolde]";
+		mes "Men with the qualities of heroes are born countless times in that era, but they forget their potential and their destiny and live a life of mediocrity. ......" ;
 		next;
-		mes "[アイオルデ]";
-		mes "風よ、雲よ、皆に伝えてごらん";
-		mes "食べて飲んで歌う日々を送る皆に";
-		mes "あなたの人生はそうではないのだと";
-		mes "大事なことを忘れているよと……";
+		mes "[Aiolde]";
+		mes "O winds, O clouds, tell everyone who eats and drinks and sings all their days that your life is not like that, that you have forgotten what is important. ......" ;
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	}
 	if(Job == Job_Novice) {
-		mes "[アイオルデ]";
-		mes "胸の中に一つ一つ刻まれる痛みを";
-		mes "全て数える事はできないさ。";
-		mes "アイテムは簡単に出るけれど";
-		mes "それが旅の足しになるかって言うとね…";
-		mes "私もまだレアなんて見たことないさ。";
+		mes "[aiolde]";
+		mes "You can't count all the pain that's carved in your chest one by one, you know." ;
+		mes "Items are easy to find, but I'm not sure if they'll add up to the journey..." ;
+		mes "I haven't seen anything rare yet either." ;
 		next;
-		mes "[アイオルデ]";
-		mes "私の歌が聞きたいかい？";
-		mes "ごめんよ。";
-		mes "新しい歌を作っているところなんだ。";
+		mes "[iolde]";
+		mes "Would you like to hear me sing?" ;
+		mes "I'm sorry." ;
+		mes "I'm working on a new song." ;
 		next;
-		mes "[アイオルデ]";
-		mes "ハハ……他の人に歌ってくれるよう";
-		mes "頼んでくれないかい？";
-		mes "私は今ちょっと手が離せなくてね。";
+		mes "[iolde]";
+		mes "haha ...... Could you ask someone else to sing it for me?" ;
+		mes "I'm a little out of my depth right now." ;
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	}
 	if(Job == Job_Bard) {
-		mes "[アイオルデ]";
-		mes "やぁ、今日も元気に歌ってるかい？";
-		mes "たくさん歌えるようになったかい？";
+		mes "[aiolde]";
+		mes "Hey, how are you singing today?" ;
+		mes "Have you learned to sing a lot?" ;
 		next;
-		mes "[アイオルデ]";
-		mes "歌は人々に楽しさと感動を";
-		mes "伝えるのだから、常に新しい歌を";
-		mes "覚えることを忘れてはいけないよ。";
+		mes "[iolde]";
+		mes "Singing conveys fun and excitement to people, so don't forget to learn new songs all the time." ;
 		next;
-		mes "[アイオルデ]";
-		mes "楽しい心も忘れないように。";
-		mes "訪れる先々で歌ってあげることもね。";
+		mes "[Aiolde]";
+		mes "Don't forget to have a happy heart, too." ;
+		mes "And sing to you everywhere you visit." ;
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	}
-	if(Job != Job_Archer) {
-		mes "[アイオルデ]";
-		mes "ラララ～、ラララ～、美しいコモド～";
-		mes "いつも楽しいことで一杯なの～";
+	if(Job ! = Job_Archer) {
+		mes "[aiolde]";
+		mes "La la la la la la la la la la la la la beautiful Comodo - always full of fun";
 		next;
-		mes "[アイオルデ]";
-		mes "君も今日はあらゆることを忘れて～";
-		mes "思いっきり楽しんでおくれ～";
-		mes "今日と言う日は二度は来ないから～";
+		mes "[Aiolde]";
+		mes "You, too, forget everything today ~ enjoy it to the fullest ~ because this day will not come twice!"; next; mes "[aiolde]
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	}
 	switch(CHANGE_BA) {
 	case 0:
-		mes "[アイオルデ]";
+		mes "[aiolde]";
 		if(Sex)
-			mes "こんにちは！愉快なアーチャーの友よ";
+			mes "Hello! My delightful Archer friend";
 		else {
-			mes "こんにちは！";
-			mes "素敵なアーチャーのお嬢さん";
+			mes "Hello!" ;
+			mes "Lovely Archer's lady"; else { mes "Hello!
 		}
-		mes "私のような流れ者に何の用だい？";
+		mes "What do you want with a drifter like me?" ;
 		next;
-		switch(select("良い声をしていますね。","歌を一曲聞かせてください。","特に用はない。")) {
+		switch(select("You have a nice voice." } mes "Please play me a song." , "I have no special use for you.")) {
 			case 1:
-				mes "[アイオルデ]";
-				mes "ハハハ! 勿論だとも！";
-				mes "いつも楽しい気持ちで歌えば";
-				mes "自然とそうなるものさ！";
+				mes "[iolde]";
+				mes "Hahaha! Of course I do!" ;
+				mes "If you always sing with a happy heart, it will come naturally!" ;
 				next;
-				mes "[アイオルデ]";
-				mes "しかし、バードという職業は声が命だ。";
-				mes "たまには声がかれる時もあるから";
-				mes "気を付けなければならないよ。";
+				mes "[iolde]";
+				mes "But in the profession of Bard, the voice is vital." ;
+				mes "You have to be careful because sometimes your voice gets broken." ;
 				break;
 			case 2:
-				mes "[アイオルデ]";
-				mes "歌かい? いいよ。";
-				mes "それでは、一曲歌ってみようか……";
+				mes "[iolde]";
+				mes "You want to sing? No, thanks." ;
+				mes "Then let's sing a song: ......." ;
 				next;
-				mes "[アイオルデ]";
-				mes "戦場の歌を歌ってみようかな。";
-				mes "フムフム、ホッホッ";
-				mes "1、2、3、4～";
+				mes "[iolde]";
+				mes "Let's sing a song about the battlefield." ;
+				mes "Hm-hm, ho-ho-ho one, two, three, four~";
 				next;
-				mes "地平線から鳴り響く蹄の音";
-				mes "夕陽を覆うフェイヨンの土埃";
-				mes "夜空に幾千の目が開かれる瞬間";
-				mes "城郭の松明をしっかと燃やせ";
+				mes "The sound of hoofbeats ringing from the horizon, the dust of Payon covering the setting sun, the moment when thousands of eyes are opened in the night sky, burn the torches of the citadel to a crisp.";
 				next;
-				mes "聞こえる、心臓の鼓動";
-				mes "押し寄せる、血の脈動";
-				mes "伝わる、鎧の重さ";
-				mes "現わる、敵方の姿";
+				mes "I hear it, the beating of my heart, the pulse of my blood, the weight of my armor, the enemy's figure";
 				next;
-				mes "もっと大きく、もっと大きく、";
-				mes "もっと大きく鳴らすがいい！";
-				mes "進む兵等よ、力を込めよ！";
-				mes "もっと高く、もっと高く、";
-				mes "もっと高く叫ぶがいい！";
-				mes "今日と言う日は二度と来なかろう！";
+				mes "Louder and louder, louder and louder, let it ring!" ;
+				mes "Onward soldiers, put your strength into it!" ;
+				mes "Shout louder, louder, louder!" ;
+				mes "This day shall never come again!" ;
 				next;
-				mes "空を仰ぎ、大地を踏み締めろ！";
-				mes "裂けそうな心が駆け出すように！";
-				mes "ほら笛を城壁に轟かせよ！";
-				mes "今日と言う日は二度と来なかろう！";
+				mes "Look up to the sky and tread the earth!" ;
+				mes "Let your ripped hearts run!" ;
+				mes "Let the whistle roar on the ramparts!" ;
+				mes "This day shall never come again!" ;
 				next;
-				mes "[アイオルデ]";
-				mes "フムフム……いつ歌っても良い歌だ";
-				mes "君もそう思わないかい？";
+				mes "[iolde]";
+				mes "Hummmmmm ...... It's always a good song to sing, don't you agree?" ;
 				next;
-				if(select("えぇ、良い歌ですね。","いいえ、別に……")==2) {
+				if(select("Yes, it's a good song." , "No, not really. ......") ==2) {
 					cutin "job_bard_aiolo02",2;
-					mes "[アイオルデ]";
-					mes "おや……私の腕が落ちたか。";
-					mes "もっと努力しなくてはね。";
-					mes "とにかく、聞いてくれてありがとう。";
+					mes "[aiolde]";
+					mes "Oh ...... Did my arm fall off?" ;
+					mes "I'll have to work harder." ;
+					mes "Anyway, thanks for asking." ;
 					break;
 				}
-				mes "[アイオルデ]";
-				mes "ありがとう! 私の歌を";
-				mes "気に入ってくれるとは嬉しいよ。";
+				mes "[iolde]";
+				mes "Thanks! I'm glad you like my song." ;
 				next;
 				if(Sex == 1 && JobLevel >=40) {
-					mes "[アイオルデ]";
-					mes "もっとたくさんの人が";
-					mes "歌ってくれたら良いのに……";
-					mes "今のままでも、まぁ";
-					mes "いいんだがね……ハッハー。";
+					mes "[iolde]";
+					mes "I wish more people sang this song: ......" ;
+					mes "It's okay as it is, though. ...... Haha." ;
 					set CHANGE_BA,1;
 				}
 				else {
-					mes "[アイオルデ]";
-					mes "聞きたくなったら、またおいで。";
+					mes "[iolde]";
+					mes "If you want to listen, come back." ;
 				}
 				break;
 			case 3:
 				cutin "job_bard_aiolo02",2;
-				mes "[アイオルデ]";
-				mes "バードに歌を頼まないと言うかい？";
-				mes "……うーん、忙しいのかい？";
+				mes "[aiolde]";
+				mes "Would you tell Bard not to ask me to sing?" ;
+				mes "...... Hmmm, are you busy?" ;
 				next;
-				mes "[アイオルデ]";
-				mes "狩りも良いが……";
-				mes "少しは心に余裕を持ってはどうだい。";
-				mes "今日という日は帰ってはこないものさ。";
+				mes "[iolde]";
+				mes "Hunting is good, but ......." ;
+				mes "Why don't you have a little bit of heart." ;
+				mes "This day is not coming back." ;
 				break;
 		}
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	case 1:
-		mes "[アイオルデ]";
-		mes "こんにちは！愉快なアーチャーの友よ";
-		mes "私のような流れ者に何の用だい？";
+		mes "[aiolde]";
+		mes "Hello! My merry Archer friends, what do you want with a drifter like me?" ;
 		next;
-		switch(select("良い声をしていますね。","歌を一曲聞かせてください。","特に用はない。")) {
+		switch(select("You have a nice voice." , "Please play me a song." , "I have no special business.")) {
 			case 1:
-				mes "[アイオルデ]";
-				mes "ハッハー、君も";
-				mes "良い声をしてるじゃないか。";
-				mes "君も歌って見るつもりはないかい？";
+				mes "[iolde]";
+				mes "Ha ha, you have a nice voice too." ;
+				mes "Aren't you going to sing and see?" ;
 				next;
-				if(select("勿論です！","私が歌うなんて……")==1) {
-					mes "[アイオルデ]";
-					mes "ハッハー、いいね。うんうん。";
-					mes "それでは、私がバードになる";
-					mes "手伝いをしてあげよう。";
+				if(select("Of course!" , "I can't believe I'm singing ......") ==1) {
+					mes "[iolde]";
+					mes "Ha ha, good one. Mm-hmm." ;
+					mes "Then let me help you become a Bard." ;
 					next;
-					mes "[アイオルデ]";
-					mes "でもその前に……";
-					mes "花を一輪持って来てくれないかい？";
-					mes "花の香りを嗅げれば、";
-					mes "良い歌が教えられそうだ。";
+					mes "[iolde]";
+					mes "But first, ......." ;
+					mes "Could you bring me a flower?" ;
+					mes "If I could smell the flower, I could teach it a good song." ;
 					next;
-					mes "[アイオルデ]";
-					mes "何の花でもいいんだが、";
-					mes "私が好きな花を持って来てくれないかい";
-					mes "出来れば売ってないような花がいいな。";
+					mes "[iolde]";
+					mes "I don't care what kind of flowers you have, but could you bring me some flowers that I like, preferably ones that aren't sold." ;
 					set CHANGE_BA,2;
 				}
 				else {
-					mes "[アイオルデ]";
-					mes "ハッハー、怖がることはないよ。";
-					mes "自分を過小評価しちゃいけないな。";
+					mes "[iolde]";
+					mes "Haha, don't be afraid." ;
+					mes "Don't underestimate yourself." ;
 					next;
-					mes "[アイオルデ]";
-					mes "君には十分才能があるんだから";
-					mes "気が変わったら、また尋ねておいで。";
+					mes "[iolde]";
+					mes "You're talented enough, so if you change your mind, come back and ask." ;
 				}
 				break;
 			case 2:
-				mes "[アイオルデ]";
-				mes "歌の素質がありそうなのに残念だ。";
-				mes "歌は聞いてばかりじゃなくて、";
-				mes "他の人に聞かせることも楽しいよ。";
+				mes "[iolde]";
+				mes "It's a residual GHOST, even though it looks like it has the potential to be a good singer." ;
+				mes "Singing is not only fun to listen to, it's also fun to let other people hear you sing." ;
 				next;
-				mes "[アイオルデ]";
-				mes "村から村へ、歌って回るのも格別さ。";
-				mes "君もバードとして生きてみないかい？";
+				mes "[iolde]";
+				mes "It's also exceptional to go from village to village singing." ;
+				mes "Would you like to live as a Bard too?" ;
 				break;
 			case 3:
-				mes "[アイオルデ]";
-				mes "うん……そうか。";
-				mes "それはちょっと残念だ。";
+				mes "[iolde]";
+				mes "Yeah ...... I see." ;
+				mes "That's a bit of a residual GOST." ;
 				next;
-				mes "[アイオルデ]";
-				mes "それでは、またどこかで～。";
+				mes "[iolde]";
+				mes "So, I'll see you somewhere~." ;
 				break;
 		}
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	case 2:
-		mes "[アイオルデ]";
-		mes "早かったね、友よ！";
-		mes "花を持って来たかい？";
-		mes "見せてくれないかい？";
+		mes "[aiolde]";
+		mes "That was quick, my friend!" ;
+		mes "Did you bring flowers?" ;
+		mes "Can I see them?" ;
 		next;
-		if(countitem(629)) { //歌う花
-			mes "[アイオルデ]";
-			mes "あ～、これは歌う花じゃないか！";
-			mes "私の思い出の花だ……";
+		if(countitem(629)) { //singing flowers
+			mes "[iolde]";
+			mes "Oh, isn't this a singing flower!" ;
+			mes "It's my memory flower. ......." ;
 			next;
-			mes "[アイオルデ]";
-			mes "私の友達だったジャイコフスキが";
-			mes "好きだった花さ。";
-			mes "今はどこで何をしているのだろう……";
+			mes "[Aiolde]";
+			mes "It's the flower that my friend, Gyorkowski, loved." ;
+			mes "I wonder where he is now ......." ;
 			delitem 629,1;
 		}
-		else if(countitem(703)) { //ヒナレ
-			mes "[アイオルデ]";
-			mes "ああ……可愛いヒナレ…";
-			mes "香りはないが素朴で可愛い花だね。";
+		else if(countitem(703)) { //hinares
+			mes "[iolde]";
+			mes "Oh ...... Cute hinare..." ;
+			mes "It doesn't have a scent, but it's a pretty, simple flower." ;
 			next;
-			mes "[アイオルデ]";
-			mes "ヒナレの葉は私が倒れた時に力をくれた";
-			mes "本当に役立つ花だ。ありがとう。";
+			mes "[aiolde]";
+			mes "The daisy leaves are really helpful flowers that gave me strength when I fell. Thank you." ;
 			delitem 703,1;
 		}
-		else if(countitem(704)) { //アロエ
-			mes "[アイオルデ]";
-			mes "アロエか……これは珍しいね。";
-			mes "よく手に入れられたね！";
+		else if(countitem(704)) { //aloe
+			mes "[iolde]";
+			mes "Aloe or ...... This is rare." ;
+			mes "I'm surprised you got it!" ;
 			next;
-			mes "[アイオルデ]";
-			mes "アロエの葉もおいしいが……";
-			mes "やはり花が一番いいね。";
+			mes "[iolde]";
+			mes "Aloe leaves are delicious, but ......" ;
+			mes "The flowers are still the best." ;
 			delitem 704,1;
 		}
-		else if(countitem(708)) { //メント
-			mes "[アイオルデ]";
-			mes "メント……";
-			mes "何か大切な事を思い出せる気がするよ…";
-			mes "久しぶりに見れて、本当によかった。";
+		else if(countitem(708)) { //ment
+			mes "[iolde]";
+			mes "ment ......" ;
+			mes "I think I can remember something important..." ;
+			mes "It's been a long time since I've seen it, and I'm so glad I did." ;
 			next;
-			mes "[アイオルデ]";
-			mes "アンティペイメントを作れるらしいが…";
-			mes "そうするには惜しいよね。ありがとう。";
+			mes "[iolde]";
+			mes "I hear you can make antipayments..." ;
+			mes "It's a shame to do so. Thanks." ;
 			delitem 708,1;
 		}
-		else if(countitem(709)) { //イジドル
-			mes "[アイオルデ]";
-			mes "あー、これはイジドルだね。";
-			mes "危ないけれど、とても美しい花だ……";
+		else if(countitem(709)) { //idjdle
+			mes "[iolde]";
+			mes "Ah, this is Ijidol." ;
+			mes "It's a dangerous but very beautiful flower. ......" ;
 			next;
-			mes "[アイオルデ]";
-			mes "濃い紫色に、人を恍惚とさせる香り……";
-			mes "気に入ったよ。ありがとう。";
+			mes "[iolde]";
+			mes "Dark purple with a scent that makes one ecstatic. ......" ;
+			mes "I like it. Thank you." ;
 			delitem 709,1;
 		}
-		else if(countitem(710)) { //幻想の花
-			mes "[アイオルデ]";
-			mes "やや、これは幻想の花！";
-			mes "こんな貴重なものを持ってくるなんて！";
+		else if(countitem(710)) { //flowers of illusion
+			mes "[iolde]";
+			mes "Ya, this is the flower of illusion!" ;
+			mes "I can't believe you brought such a precious thing!" ;
 			next;
-			mes "[アイオルデ]";
-			mes "ああ……天国が目の前に見えるようだ。";
-			mes "素晴らしい！本当に嬉しいよ！";
+			mes "[iolde]";
+			mes "Oh ...... I can see heaven right in front of me." ;
+			mes "Great! I'm really happy!" ;
 			delitem 710,1;
 		}
-		else if(countitem(748)) { //しおれないバラ
-			mes "[アイオルデ]";
-			mes "しおれないバラ…萎むことのないバラ。";
-			mes "私ではなく恋人にあげればいいのに。";
+		else if(countitem(748)) { //Wilting rose
+			mes "[iolde]";
+			mes "A rose that never wilts... A rose that never wilts." ;
+			mes "You should have given it to your girlfriend instead of me." ;
 			next;
-			mes "[アイオルデ]";
-			mes "私のような者が受け取っていいのかな。";
-			mes "ハッハー、ありがとう。";
+			mes "[Iolde]";
+			mes "I wonder if someone like me is allowed to receive it." ;
+			mes "Haha, thank you." ;
 			delitem 748,1;
 		}
-		else if(countitem(749)) { //氷バラ
-			mes "[アイオルデ]";
-			mes "氷バラ……透明なバラよ。";
-			mes "花とは言えないかもしれないけど、";
-			mes "それでも美しいね……";
+		else if(countitem(749)) { //ice rose
+			mes "[iolde]";
+			mes "Ice roses: ...... It's a transparent rose." ;
+			mes "It may not be a flower, but it's still beautiful. ......" ;
 			next;
-			mes "[アイオルデ]";
-			mes "そうだね、香りが漂わなくても";
-			mes "花なのかもしれないね。";
-			mes "それでは受けとらせて頂くよ。";
+			mes "[iolde]";
+			mes "Yes, maybe it's a flower even if it doesn't have a scent wafting through the air." ;
+			mes "I'll take it then." ;
 			delitem 749,1;
 		}
-		else if(countitem(712)) { //花
+		else if(countitem(712)) { //flower
 			cutin "job_bard_aiolo02",2;
-			mes "[アイオルデ]";
-			mes "何だい、この平凡な花は。";
-			mes "花は花だが…これでは駄目だね。";
+			mes "[aiolde]";
+			mes "What is it, you mediocre flower?" ;
+			mes "A flower is a flower, but... This is not good enough." ;
 			next;
-			mes "[アイオルデ]";
-			mes "プロンテラで少女が売ってるよね。";
-			mes "他の花を持ってきてくれないかい。";
+			mes "[iolde]";
+			mes "You have a girl for sale at Prontera." ;
+			mes "Can you bring me some other flowers?" ;
 			close2;
 			cutin "job_bard_aiolo02",255;
 			end;
 		}
-		else if(countitem(744)) { //花たば
-			mes "[アイオルデ]";
-			mes "ほうほう、花束を持って来たね。";
-			mes "これは私に持ってくる物ではないだろう";
+		else if(countitem(744)) { //hana taba
+			mes "[aiolde]";
+			mes "Houhou, you brought a bouquet of flowers." ;
+			mes "This would not be something you would bring me.";
 			next;
-			mes "[アイオルデ]";
-			mes "お祝い物だからね、";
-			mes "転職するノービス君にでも";
-			mes "あげたらどうだい？";
-			mes "僕には他の花を頼むよ。";
+			mes "[Aiolde]";
+			mes "It's a celebratory thing, why don't you give it to Mr. Novice who is changing jobs?" ;
+			mes "For me, I'll take other flowers, please." ;
 			close2;
 			cutin "job_bard_aiolo01",255;
 			end;
 		}
-		else if(countitem(745)) { //ブーケ
+		else if(countitem(745)) { //bouquet
 			cutin "job_bard_aiolo02",2;
-			mes "[アイオルデ]";
-			mes "おいおい……";
-			mes "結婚式でもあげるつもりかい？";
-			mes "男にブーケをあげてどうする。";
+			mes "[aiolde]";
+			mes "Hey hey ......" ;
+			mes "Are you going to give me a wedding?" ;
+			mes "What are you going to do, give the guy a bouquet?" ;
 			next;
-			mes "[アイオルデ]";
-			mes "お似合いのお嬢さんにでも";
-			mes "プレゼントしなよ。";
-			mes "僕には他の花を頼むよ。";
+			mes "[iolde]";
+			mes "You should give it to the right girl." ;
+			mes "[iolde]"; mes "[iolde]"; mes "[iolde]"; mes "[iolde]"; mes "[iolde]"; mes "[iolde]" ;
 			close2;
 			cutin "job_bard_aiolo02",255;
 			end;
 		}
-		else if(countitem(1032)) { //食人植物の花
+		else if(countitem(1032)) { //cannibalistic flower
 			cutin "job_bard_aiolo02",2;
-			mes "[アイオルデ]";
-			mes "……どうしてこんな醜いものを";
-			mes "持って来たんだい？";
-			mes "もう少し考えてくれなくちゃ……";
+			mes "[aiolde]";
+			mes "...... Why did you bring this ugly thing?" ;
+			mes "You have to think a little more about it. ......" ;
 			next;
-			mes "[アイオルデ]";
-			mes "笑わせようとでもしたのかい？";
-			mes "もう少しまともな花を準備してくれよ。";
+			mes "[iolde]";
+			mes "Were you trying to make me laugh?" ;
+			mes "You need to prepare some more decent flowers." ;
 			close2;
 			cutin "job_bard_aiolo02",255;
 			end;
 		}
-		else if(countitem(2207)) { //装飾用花
-			mes "[アイオルデ]";
-			mes "うーん……これは装飾用花だね。";
-			mes "花は花だが…これでは駄目だね。";
+		else if(countitem(2207)) { //decorative flowers
+			mes "[aiolde]";
+			mes "umm ...... This is a decorative flower, isn't it?" ;
+			mes "A flower is a flower, but... I guess this is not good enough." ;
 			next;
-			mes "[アイオルデ]";
-			mes "私は美しくて香しい花が好きなんだ。";
-			mes "飾るためだけの花は嫌いだよ。";
+			mes "[iolde]";
+			mes "I like beautiful, fragrant flowers." ;
+			mes "I don't like flowers just for decoration." ;
 			close2;
 			cutin "job_bard_aiolo01",255;
 			end;
 		}
 		else {
 			cutin "job_bard_aiolo02",2;
-			mes "[アイオルデ]";
-			mes "うん？何も持ってないじゃないか。";
-			mes "花を持って来てと言わなかったかな。";
+			mes "[aiolde]";
+			mes "Yeah? You don't have anything." ;
+			mes "Didn't I tell you to bring me flowers?" ;
 			next;
-			mes "[アイオルデ]";
-			mes "一人で学びたいなら、それでもいいさ。";
-			mes "歌うことは自由なんだから。";
+			mes "[iolde]";
+			mes "If you want to learn on your own, that's fine." ;
+			mes "You're free to sing." ;
 			close2;
 			cutin "job_bard_aiolo02",255;
 			end;
 		}
 		next;
-		mes "[アイオルデ]";
-		mes "それじゃあ約束どおり、";
-		mes "バードになる手伝いをしなくてはね。";
-		mes "しかし簡単ではないぞ。ハッハー！";
+		mes "[aiolde]";
+		mes "Then I'll have to help you become a Bard, as promised." ;
+		mes "But it's not going to be easy, my friend. Ha ha!" ;
 		next;
-		mes "[アイオルデ]";
-		mes "歌を学ぶためには";
-		mes "多くの人と触れ合うことが大切だ。";
-		mes "あちこちの村のさまざまな事件も";
-		mes "見聞きしなければならないし……";
+		mes "[iolde]";
+		mes "It's important to be in contact with many people in order to learn to sing." ;
+		mes "You also have to see and hear about the various incidents in the villages here and there. ......" ;
 		next;
-		mes "[アイオルデ]";
-		mes "そうだ、ルティエという村に";
-		mes "喋る雪だるまがいるんだ。";
-		mes "その村へ行って、";
-		mes "贈り物をもらって来るように。いいね。";
+		mes "[Aiolde]";
+		mes "Yes, there is a talking snowman in a village called Lutie." ;
+		mes "Go to that village and get him a gift. Good." ;
 		next;
-		mes "[アイオルデ]";
-		mes "スノウノウと友達になれば、";
-		mes "何か貰うことができるだろう。";
-		mes "村の人達とも、たくさん言葉を";
-		mes "交わしてきてみてくれないかい？";
+		mes "[Aiolde]";
+		mes "If you make friends with Snownow, you will get something from him." ;
+		mes "Why don't you go and have a lot of words with the people in the village?" ;
 		set CHANGE_BA,3;
 		set LUTIE_1QUE,1;
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
 	case 3:
-		if(LUTIE_1QUE < 11) { //npc_town_lutie.txtにて発行
-			mes "[アイオルデ]";
-			mes "そうか、彼と友達になることは";
-			mes "出来なかったか。";
-			mes "言葉だけでは駄目なこともあるんだよ。";
+		if(LUTIE_1QUE < 11) { //issued in npc_town_lutie.txt
+			mes "[aiolde]";
+			mes "Well, you couldn't be friends with him." ;
+			mes "Sometimes words are not enough." ;
 			next;
-			mes "[アイオルデ]";
-			mes "スノウノウと友達になれば、";
-			mes "何か貰うことができるだろう。";
-			mes "村の人達とも、たくさん言葉を";
-			mes "交わしてきてみてくれないかい？";
+			mes "[iolde]";
+			mes "If you make friends with Snow Noo, you'll get something from him." ;
+			mes "Why don't you go and have a lot of words with the people in the village?" ;
 			close2;
 			cutin "job_bard_aiolo01",255;
 			end;
 		}
-		mes "[アイオルデ]";
-		mes "おかえり。";
-		mes "たくさん人に会って来たかい？";
-		mes "贈り物よりもっと大切なことが";
-		mes "あるってわかったね。";
+		mes "[aiolde]";
+		mes "Welcome back." ;
+		mes "Have you met a lot of people?" ;
+		mes "You know there are more important things than gifts." ;
 		next;
-		mes "[アイオルデ]";
-		mes "それでは、歌を歌って見るか……";
-		mes "私がお手本を歌ってみるから……";
-		mes "習って歌ってみてくれたまえ。";
+		mes "[iolde]";
+		mes "So, let's sing a song and see: ......." ;
+		mes "I'll sing a model for you and you'll see ......" ;
+		mes "You can learn and sing it for me." ;
 		next;
-		mes "[アイオルデ]";
-		mes "始めようか";
-		mes "フムフム、ホッホッ";
-		mes "1、2、3、4～";
+		mes "[iolde]";
+		mes "Let's begin, hmmm hmmm, hmmm hmmm, hmmm 1, 2, 3, 4~";
 		next;
 		switch(rand(5)) {
-		case 0: //ニヨルドの歌
-			setarray '@list$,"お金がなかった商人さん","装備もなかった商人さん","なんとか元手を作ったよ","服と刀を売ったのさ","最初は赤ポーションを","プロンテラで芋も売ったと言うよ";
+		case 0: //Njord's song
+			setarray '@list$, "Merchant who had no money", "Merchant who had no equipment", "I managed to make some money", "I sold clothes and swords", "At first I sold red potions", "I say I also sold potatoes at Prontera";
 			break;
-		case 1: //戦場の歌
-			setarray '@list$,"もっと大きく鳴らすがいい！","進む兵等よ、力を込めよ！","空を仰ぎ、大地を踏み締めろ！","裂けそうな心が駆け出すように！","ほら笛を城壁に轟かせよ！","今日と言う日は二度と来なかろう！";
+		case 1: //song of the battlefield
+			setarray '@list$, "Play it louder!" @list$, "Onward soldiers, put your strength into it!" @list$, "Look up to the sky, tread on the earth!", "Tear yourselves apart! "Let the hearts that are breaking run out!" Let the whistles roar on the ramparts! "This day will never come again!" ;
 			break;
-		case 2: //ジークフリードの歌
-			setarray '@list$,"不死身と呼ばれた","男がいた","その名を「ジークフリード」","英雄「ジークムント」の息子","邪悪な巨人「ファフニール」","竜に変わって彼を阻んだ";
+		case 2: //Siegfried's song
+			setarray '@list$, "called undead", "there was a man", "his name was 'Siegfried'", "son of the hero 'Siegmund'", "the evil giant 'Fafnir'", "turned into a dragon and blocked him";
 			break;
-		case 3: //ブラギの歌
-			setarray '@list$,"ブラギ、ブラギ","永遠の詩人の名を呼びなさい","我が歌は彼の息づかい","我が心は彼の意志","吟遊詩人は彼の化身","すべての歌は彼に帰るでしょう";
+		case 3: //Bragi's song
+			setarray '@list$, "Bragi, Bragi", "Call the name of the Eternal Poet", "My song is his breath", "My heart is his will", "The bard is his incarnation", "All songs will return to him";
 			break;
-		case 4: //イドゥンの歌
-			setarray '@list$,"美しき女神イドゥン","美しくて白い豊穣の女神よ","オーディンの息子ブラギの妻","彼女の籠いっぱい盛られた林檎","彼女の甘～い林檎のおかげだろう","神々は永遠に老いることがない";
+		case 4: //Idun's Song
+			setarray '@list$, "The beautiful goddess Idun", "O beautiful and white goddess of fertility", "Wife of Bragi, son of Odin", "Her basket full of apples", "It will be because of her sweet apples", "The gods will never grow old forever";
 			break;
 		}
 		for(set '@i,0; '@i<6; set '@i,'@i+1) {
 			for(set '@j,0; '@j<6; set '@j,'@j+1)
-				mes (('@count<'@j)? "^000000": "^3173FF") +'@list$['@j]+ "^000000";
+				mes ""+(('@count<'@j)? "^000000": "^3173FF") +'@list$['@j]+ "^000000";
 			next;
 			input '@word$;
 			if('@word$=='@list$['@i])
@@ -493,43 +435,41 @@ comodo.gat,211,155,5 script さすらいの吟遊詩人 741,{
 		}
 		if('@point<6) {
 			cutin "job_bard_aiolo02",2;
-			mes "[アイオルデ]";
-			mes "おやおや……歌詞が違うじゃないか。";
-			mes "きちんと歌ってくれなくてはね……";
+			mes "[aiolde]";
+			mes "Oh, hey, ...... You've got the wrong lyrics." ;
+			mes "You have to sing it properly. ......" ;
 			next;
-			mes "[アイオルデ]";
-			mes "発音がまだまだのようだね。";
-			mes "次は、もっときちんと声を出すように。";
+			mes "[iolde]";
+			mes "Your pronunciation seems to be a work in progress." ;
+			mes "Next time, try to speak more properly." ;
 			close2;
 			cutin "job_bard_aiolo02",255;
 			end;
 		}
-		mes "……";
+		mes "......" ;
 		next;
-		mes "[アイオルデ]";
-		mes "立派だ！凄いじゃないか！";
-		mes "これなら、良いバードになれるだろう！";
+		mes "[iolde]";
+		mes "Splendid! That's great!" ;
+		mes "This would make a good Bard!" ;
 		next;
-		mes "[アイオルデ]";
-		mes "それでは…";
-		mes "これからバードになるといい。";
-		mes "その前に記念になるものを上げたいな。";
+		mes "[iolde]";
+		mes "Then..." ;
+		mes "You can be Bard from now on." ;
+		mes "Before that, I'd like to raise what will be KiGhost." ;
 		next;
-		mes "[アイオルデ]";
-		mes "このまま転職するかい？";
-		mes "それとも何か欲しいかい？";
+		mes "[iolde]";
+		mes "Do you want to change jobs at this point?" ;
+		mes "Or do you want something else?" ;
 		next;
-		if(select("このまま転職します。","贈り物が欲しいです。")==2) {
-			mes "[アイオルデ]";
-			mes "うん…そうだね。";
-			mes "^3173FF木屑^000000を手に入れて来てくれないかい。";
-			mes "なんでも構わないから、";
-			mes "同じ種類で60個頼むよ。";
+		if(select("I will change jobs as is." , "I would like a gift.") ==2) {
+			mes "[iolde]";
+			mes "Yeah... Yes." ;
+			mes "Can you go get me some ^3173FF wood shavings^000000?" ;
+			mes "I don't care what it is, just get me 60 of the same kind." ;
 			next;
-			mes "[アイオルデ]";
-			mes "持って来てくれたら、";
-			mes "記念品を一つあげるよ。";
-			mes "じゃ、いってらっしゃい。";
+			mes "[iolde]";
+			mes "If you bring them to me, I'll give you one of the KiGhost items." ;
+			mes "Well, have a good day." ;
 			set CHANGE_BA,4;
 			close2;
 			cutin "job_bard_aiolo01",255;
@@ -537,16 +477,14 @@ comodo.gat,211,155,5 script さすらいの吟遊詩人 741,{
 		}
 	case 4:
 		if(SkillPoint) {
-			mes "[アイオルデ]";
-			mes "おや…まだスキルポイントが";
-			mes "残っているようだね。";
-			mes "全部使いきってから来てくれたまえ。";
+			mes "[aiolde]";
+			mes "Oh... Looks like you still have some SkillPoints left." ;
+			mes "You'll have to come back after you've used them all." ;
 			next;
-			mes "[アイオルデ]";
-			mes "では記念品を作りたいから、そうだね…";
-			mes "^3173FF木屑^000000を集めてきて貰えないかな。";
-			mes "なんでも構わないから、";
-			mes "同じ種類で60個頼むよ。";
+			mes "[iolde]";
+			mes "So, I want to make a KiGhost product, so..." ;
+			mes "Could you please collect ^3173FF wood shavings^000000?" ;
+			mes "I don't care what it is, just give me 60 of the same kind." ;
 			set CHANGE_BA,4;
 			close2;
 			cutin "job_bard_aiolo01",255;
@@ -570,45 +508,41 @@ comodo.gat,211,155,5 script さすらいの吟遊詩人 741,{
 			set '@itemid,1901;
 		}
 		else {
-			mes "[アイオルデ]";
-			mes "うーん、^3173FF木屑^000000を集めるつもりだったのに";
-			mes "このまま転職することにしたのかい？";
+			mes "[iolde]";
+			mes "Hmm, you were going to collect ^3173FF wood shavings^000000 and you decided to change jobs like this?" ;
 			next;
-			if(select("このまま転職します。","いいえ、集めてきます。")==2) {
-				mes "[アイオルデ]";
-				mes "うん…そうだね。";
-				mes "^3173FF木屑^000000を手に入れて来てくれないかい。";
-				mes "なんでも構わないから、";
-				mes "同じ種類で60個頼むよ。";
+			if(select("I'm going to change jobs as is." , "No, I'm going to go collect it.") ==2) {
+				mes "[iolde]";
+				mes "Yeah... Yes." ;
+				mes "Can you go get me some ^3173FF wood shavings^000000?" ;
+				mes "I don't care what it is, just get me 60 of the same kind." ;
 				next;
-				mes "[アイオルデ]";
-				mes "持って来てくれたら、";
-				mes "記念品を一つあげるよ。";
-				mes "じゃ、いってらっしゃい。";
+				mes "[iolde]";
+				mes "If you bring them to me, I'll give you one of the KiGhost items." ;
+				mes "Well, have a good day." ;
 				close2;
 				cutin "job_bard_aiolo01",255;
 				end;
 			}
 			break;
 		}
-		mes "[アイオルデ]";
-		mes "やぁ、お疲れ様。";
-		mes "早速、転職記念品を作ってあげるよ。";
-		mes "少しの間だけ待っててくれないかい。";
+		mes "[aiolde]";
+		mes "Hey there." ;
+		mes "I'll make you a job change journal GOST product as soon as I can." ;
+		mes "Can you wait just a little while?" ;
 		next;
-		mes "^3173FFギーギー、トンタン、トンタン";
-		mes "カンカン、キーコキーコ^000000";
+		mes "^3173FF gee gee, tontan, tontan kankan, squeak squeak ^000000";
 		next;
 		delitem '@trunkid,60;
 		getitem '@itemid,1;
 		unequip;
 		jobchange Job_Bard;
 		set CHANGE_BA,0;
-		mes "[アイオルデ]";
-		mes "さあ、記念品だ。";
-		mes "歌う時に使ってくれないかい。";
-		mes "これで楽しく歌って欲しい。";
-		mes "じゃあ、また会おう！";
+		mes "[iolde]";
+		mes "Come on, it's a KiGhost item." ;
+		mes "Can you use it when you sing?" ;
+		mes "I want you to have fun singing with this." ;
+		mes "Well, I'll see you soon!" ;
 		close2;
 		cutin "job_bard_aiolo01",255;
 		end;
@@ -616,12 +550,12 @@ comodo.gat,211,155,5 script さすらいの吟遊詩人 741,{
 	unequip;
 	jobchange Job_Bard;
 	set CHANGE_BA,0;
-	mes "[アイオルデ]";
-	mes "そう！楽しく歌っていこうか。";
-	mes "風のように雲のようにね！";
+	mes "[iolde]";
+	mes "Yes! Let's have fun singing." ;
+	mes "Like the wind, like the clouds!" ;
 	next;
-	mes "[アイオルデ]";
-	mes "じゃあ、また会おう！";
+	mes "[iolde]";
+	mes "Well, I'll see you soon!" ;
 	close2;
 	cutin "job_bard_aiolo01",255;
 	end;

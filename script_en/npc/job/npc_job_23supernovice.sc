@@ -1,231 +1,161 @@
 //====================================================================
 //Ragnarok Online EP4.0(J) Super Novice Jobchange Script
-//
-//　■ CHANGE_SNV -> 0～1
+// - CHANGE_SNV -> 0 to 1
+// - CHANGE_SNV -> 0 to 1
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and job change
 //------------------------------------------
 
-aldeba_in.gat,223,167,3	script	トゼーレ	709,{
+aldeba_in.gat,223,167,3 script tosere 709,{
 	if(Upper == UPPER_HIGH) {
-		mes "[トゼーレ]";
-		mes "君はもう立派なノービスクラブの";
-		mes "一員で……";
+		mes "[Tzele]";
+		mes "You are now a member of the fine Novice Club ......" ;
 		next;
-		mes "[トゼーレ]";
-		mes "ええええ!!";
-		mes "あ、あなたは!?　あなたは～!!";
-		mes "- ジリリリ～ン!! -";
+		mes "[Tosere]";
+		mes "Yeah yeah!!! Oh, you are!　You~! - Jiriri~! -";
 		next;
-		mes "- ガチャ!! -";
+		mes "- clang! -";
 		next;
-		mes "[トゼーレ]";
-		mes "え？　はい、はい、はい。";
-		mes "分かりました。はい……";
-		mes "あっ！　い、いえ！";
-		mes "まだ何も言ってないです。";
-		mes "はい、了解しました。";
-		mes "- 受話器を置いた。 -";
+		mes "[Tzele]";
+		mes "What?  Yes, yes, yes." ;
+		mes "I understand. Yes. ......." ;
+		mes "Ah!  No, no!" ;
+		mes "I haven't said anything yet." ;
+		mes "Yes, I understand." ;
+		mes "- I put down the receiver. -";
 		next;
-		mes "[トゼーレ]";
-		mes "…………";
-		mes "では御機嫌よう～。";
+		mes "[Tosere]";
+		mes "............" ;
+		mes "Well, good day to you~" ;
 		close;
 	}
 	if(Job == Job_SuperNovice || Job == Job_ExpandedSuperNovice) {
-		mes "[トゼーレ]";
-		mes "君はもう立派なノービスクラブの一員";
-		mes "です。特に秀でた何かがある訳じゃなし";
-		mes "でも、特に悪いって面も無し。";
-		mes "そんな普通で立派なノービスなのです。";
+		mes "[Tosere]";
+		mes "You are now a member of the fine Novice Club. You don't have anything special to excel at, but there's nothing particularly wrong with you." ;
+		mes "You are such a normal and respectable Novice." ;
 		next;
-		mes "[トゼーレ]";
-		mes "今後もずっと、普通で平凡な人生を歩み";
-		mes "楽しみ、勤しみ、ノービスの存在を";
-		mes "広々と広めてください。";
+		mes "[Tosere]";
+		mes "Please continue to live a normal and ordinary life, enjoy it, work hard, and spread the Novice presence far and wide." ;
 		close;
 	}
-	if(Job != Job_Novice) {
-		mes "[トゼーレ]";
-		mes "むむむ！あなたは普通で平凡な人では";
-		mes "ありませんね！私はノービスクラブの";
-		mes "非公式ボス、トゼーレと申します。";
+	if(Job ! = Job_Novice) {
+		mes "[Tzele]";
+		mes "Mmmm! You are not a normal and ordinary person! My name is Tozele, the unofficial boss of the Novice Club." ;
 		next;
-		mes "[トゼーレ]";
-		mes "ここは、普通で平凡じゃないあなたの";
-		mes "様な人には一生縁がない場所です。";
-		mes "いいんです、あなたに我等の信念を";
-		mes "理解してもらおうなんて思ってませんし";
-		mes "我等も、あなた達を理解しようと思って";
-		mes "いませんから。";
+		mes "[Tozele]";
+		mes "This is a place where people like you, who are not normal and ordinary, will never have a chance in life." ;
+		mes "It's okay, we don't expect you to understand our belief in Ghost, and we don't expect you to understand us either." ;
 		next;
-		mes "[トゼーレ]";
-		mes "……世の中はあんな人もいれば、こんな";
-		mes "人もいる。ただそれだけの話ですよ。";
+		mes "[Tzele]";
+		mes "...... The world has such and such people. That's just the way it is." ;
 		close;
 	}
 	if(CHANGE_SNV == 0) {
-		mes "[トゼーレ]";
-		mes "そこのあなた！あなたです!!";
-		mes "全身で普通で平凡だと言ってます！";
-		mes "我等のために生まれたようなお方だ！";
+		mes "[Tosere]";
+		mes "You there! It's you!!! Your whole body is telling you that you are normal and ordinary!" ;
+		mes "You are like a man born for us!" ;
 		next;
-		mes "[トゼーレ]";
-		mes "どうです？";
-		mes "我等がノービスクラブに加入し";
-		mes "我等と共に普通で平凡に考え行動し";
-		mes "普通で平凡な道を歩み、普通で";
-		mes "平凡な生を思いっきり堪能して";
-		mes "みませんか？";
+		mes "[Tosere]";
+		mes "What do you think?" ;
+		mes "Why don't you join our Novice Club, think and act in a normal and ordinary way with us, follow a normal and ordinary path, and enjoy a normal and ordinary life to the fullest?" ;
 		next;
-		mes "[トゼーレ]";
-		mes "その代わりと言っては何ですが";
-		mes "会員になったら、ノービスの中でも";
-		mes "最高位のスーパーノービスに";
-		mes "転職させてあげます。";
+		mes "[Tosere]";
+		mes "In return, if you become a member, I'll give you a new job in Supernovice, the highest rank in Novice." ;
 		next;
-		switch (select("加入します","加入しません","もうちょっと説明を聞く")) {
+		switch (select("I'll join", "I won't join", "I'll listen to some more explanation")) {
 		case 1:
 			if(getskilllv(1) < 9 || SkillPoint) {
-				mes "[トゼーレ]";
-				mes "おやおや……残念ですが、まだ転職に";
-				mes "耐えられる実力が、備わっていないよう";
-				mes "です。";
-				mes "JobLvを10にまで成長させ、";
-				mes "^0000FF「基本スキル」のレベルを9　^000000に";
-				mes "してください。";
+				mes "[Tzele]";
+				mes "Oh well, ...... I am a remaining GOST, but I don't think I have the ability to withstand a job change yet." ;
+				mes "Please grow your JobLv to 10 and ^0000FF "Basic Skill" level to 9 ^000000." ;
 				next;
-				mes "[トゼーレ]";
-				mes "^0000FF「基本スキル」^000000のレベルは";
-				mes "^0000FF「スキルリスト」^000000ウィンドウで";
-				mes "上げることができます。";
-				mes "^0000FF「スキルリスト」^000000ウィンドウは";
-				mes "^0000FF「基本情報」^000000ウィンドウ内の";
-				mes "^0000FF「Skill」^000000ボタンで表示されます。";
+				mes "[Tzele]";
+				mes "The level of ^0000FF "Basic Skills" ^000000 can be raised in the ^0000FF "Skill List" ^000000 window." ;
+				mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 				next;
-				mes "[トゼーレ]";
-				mes "スキルのレベルを上げるには、";
-				mes "スキルポイントを割り振った後、";
-				mes "^FF0000「確定」^000000ボタンが必要となります。";
-				mes "ご注意ください。";
+				mes "[Tzele]";
+				mes "To increase the level of a skill, the ^FF000000 'Confirm' ^000000 button is required after assigning the skill points." ;
+				mes "Please Attention." ;
 				close2;
 				cutin "start_020_jp.bmp",4;
 				end;
 			}
 			if(BaseLevel < 45) {
-				mes "[トゼーレ]";
-				mes "おやおや……残念ですが、まだ転職に";
-				mes "耐えられる実力が、備わっていないよう";
-				mes "です。ベースレベルが^0000FF45以上^000000になって";
-				mes "から、またお越しください。";
+				mes "[tozele]";
+				mes "Oh well, ...... It seems that the remaining ghosts are not yet strong enough to withstand the change of jobs. Please come back after your base level reaches ^0000FF45 or higher ^000000." ;
 				close;
 			}
-			mes "[トゼーレ]";
-			mes "おおーっ。このご時世、普通に平凡に";
-			mes "生きるのは荊の道！その道をあえて";
-			mes "選んでくれるとは……";
-			mes "よく決心してくれました！";
+			mes "[Tzele]";
+			mes "Oooh. In this day and age, living a normal, ordinary life is the path of the briars! I'm surprised that you dare to choose that path. ......" ;
+			mes "Well done for making up your mind!" ;
 			next;
-			mes "[トゼーレ]";
-			mes "普通……平凡……良い言葉だ。";
-			mes "そう思いませんか。";
+			mes "[Tosere]";
+			mes "Ordinary...... Ordinary ...... Good word." ;
+			mes "Don't you think so?" ;
 			next;
-			mes "[トゼーレ]";
-			mes "しかし、ただ単に申し込みをすれば";
-			mes "全員ノービスクラブの会員になれる";
-			mes "わけではありません。普通で平凡な";
-			mes "資格テストがあるのです。";
+			mes "[Tosere]";
+			mes "But not everyone can become a Novice Club member simply by applying. There is a normal and mundane eligibility test." ;
 			next;
-			mes "[トゼーレ]";
-			mes "普通で平凡な生活にふさわしく";
-			mes "普通なマップに行って、平凡な";
-			mes "アイテムを持って来てください。";
-			mes "うーん……やっぱりここは、";
-			mes "^FF0000べとべとした液体^000000と^FF0000古木の露^000000が";
-			mes "いいでしょう。";
+			mes "[Tzele]";
+			mes "Go to a map that is normal and ordinary, befitting a normal and ordinary life, and bring an ordinary item with you." ;
+			mes "Hmmm ...... I still think ^FF0000 sticky liquid^000000 and ^FF000000 old tree dew^000000 would be good here." ;
 			next;
-			mes "[トゼーレ]";
-			mes "二つのアイテムを^FF000030個^000000ずつ集めて来て";
-			mes "ください。ね、ね、この数字も実に";
-			mes "普通で平凡でしょ～。";
+			mes "[Tosere]";
+			mes "Come and collect the two items ^FF00000030 ^000000 each. Hey, hey, this number is also really normal and ordinary~." ;
 			next;
-			mes "[トゼーレ]";
-			mes "では、お帰りをお待ちしておりま～す。";
+			mes "[Tzele]";
+			mes "Then, we are waiting for your return~." ;
 			set CHANGE_SNV,1;
 			setquest 6010;
 			close;
 		case 2:
-			mes "[トゼーレ]";
-			mes "おやおや……";
-			mes "あなたは、普通で平凡な道の楽しさが";
-			mes "まるで分かっていないようですね。";
-			mes "……まぁいいでしょう。人生いろいろ。";
-			mes "自分の道は自分で決めるものですから。";
+			mes "[tozele]";
+			mes "oh oh ......" ;
+			mes "You seem to have no idea of the joys of the ordinary and mundane path." ;
+			mes "...... Oh well. Life is full of things." ;
+			mes "You have to decide your own path." ;
 			next;
-			mes "[トゼーレ]";
-			mes "考えが変わることがあれば";
-			mes "いつでもいらっしゃい。";
+			mes "[Tosere]";
+			mes "If you ever change your mind, you are always welcome." ;
 			close;
 		case 3:
-			mes "[トゼーレ]";
-			mes "えっへん。我等がクラブについて";
-			mes "もっと知りたいと言うのですね。";
-			mes "よろしい！私が全部包み隠さず";
-			mes "教えて差し上げましょう!!";
+			mes "[Tosere]";
+			mes "Eh, Hen. You say you want to know more about our club." ;
+			mes "Good! I will tell you all about it!" ;
 			next;
-			mes "[トゼーレ]";
-			mes "まずは、ノービスクラブ創始者である";
-			mes "キム=ションニムの話から、始めなけ";
-			mes "ればなりますまい。キム=ションニムは";
-			mes "人々が、普通で平凡な日常の大切さを";
-			mes "忘れ去ろうとしているのを、それはそれ";
-			mes "は切なく思い……";
+			mes "[Tzele]";
+			mes "First of all, I must start with the story of Kim Jong-Nim, the founder of the Novice Club. Kim is saddened to see that people are forgetting the importance of normal, ordinary life. ......"; next; mes "[tozele]"; mes "[tozele]" ;
 			next;
-			mes "- あなたはトゼーレの -";
-			mes "- 演説を10分間、聞き続けなければ -";
-			mes "- ならなかった…… -";
+			mes "- You had to listen to Tozere's speech for 10 minutes ...... -";
 			next;
-			mes "[トゼーレ]";
-			mes "……そして、ノービスクラブは今日に";
-			mes "至り、我等は普通で平凡をモットーに";
-			mes "普通で平凡であることを誇りに、ノー";
-			mes "ビスクラブの活動を続けているのです！";
-			mes "えっへんっ!!";
+			mes "[Tozele]";
+			mes "...... And so the Novice Club continues to this day, with our motto of normal and ordinary, and we are proud to be normal and ordinary, and we are proud to be a Novice Club!" ;
+			mes "Ehhhhh!!!" ;
 			close;
 		}
 	}
 	if(countitem(938) < 30 || countitem(907) < 30) {
-		mes "[トゼーレ]";
-		mes "おや、必要な品物を忘れてしまいました";
-		mes "か。また説明します。いいですか？";
+		mes "[Tzele]";
+		mes "Oh, did you forget the item you need? I will explain it to you again. May I?" ;
 		next;
-		mes "[トゼーレ]";
-		mes "^FF0000べとべとする液体^000000と ^FF0000古木の露^000000";
-		mes "です。今度は忘れないでくださいねー。";
+		mes "[Tosere]";
+		mes "^FF0000 sticky liquid ^000000 and ^FF000000 old tree dew^000000. Please don't forget it this time!" ;
 		close;
 	}
-	mes "[トゼーレ]";
-	mes "うん、やはり私の予想通り、あなたは";
-	mes "普通で平凡な人生を歩むために生まれて";
-	mes "きた方のようです！我等がノービスクラ";
-	mes "ブに加入する資格充分と見ました。";
+	mes "[Tosere]";
+	mes "Yes, as I expected, you seem to be the one who was born to lead a normal and ordinary life! I saw that you are qualified enough to join our Novice Club." ;
 	next;
-	mes "[トゼーレ]";
-	mes "それでは約束どおりスーパーノービス";
-	mes "に……おやや？";
-	mes "ああーーー、あなたの背中に!!!!!!";
+	mes "[Tosere]";
+	mes "Then, as promised, we will send you to Supernovice: ...... Hmmm?" ;
+	mes "Ahhhhh, on your back !!!!!!" ;
 	next;
-	if(select("えっ!?","な、何っ?!")==1) {
-		mes "- あなたは振り返った -";
-		mes "- しかし何もない…… -";
-		mes "- おや？っと思った刹那！ -";
+	if(select("What!?" , "what?!") ==1) {
+		mes "- you turned around -- but nothing ...... -- Oh? A moment later, you thought "Oh? -";
 	}
 	else {
-		mes "- あなたはトゼーレの言葉に -";
-		mes "- びっくりし、声を出してしまった -";
-		mes "- その瞬間！ -";
+		mes "- - You were so startled by Tosere's words that you let out a cry -- at that moment! -";
 	}
 	next;
 	delitem 938,30;
@@ -235,139 +165,111 @@ aldeba_in.gat,223,167,3	script	トゼーレ	709,{
 	jobchange Job_SuperNovice;
 	set CHANGE_SNV,0;
 	chgquest 6010,50275;
-	mes "[トゼーレ]";
-	mes "あはははは！驚きました？";
-	mes "普通で平凡な日常に、ちょっとした";
-	mes "悪戯で一味違った日常を産み出す……";
-	mes "それが、このトゼーレの信条です。";
+	mes "[tozele]";
+	mes "Ha ha ha! Are you surprised?" ;
+	mes "A little prank to spawn a different kind of normal and mundane routine: ......." ;
+	mes "That is the creed of this Tosere." ;
 	next;
-	mes "[トゼーレ]";
-	mes "ま、その話は置いておいて。";
-	mes "結果、あなたもこれで立派な";
-	mes "スーパーノービスです。";
+	mes "[Tosere]";
+	mes "Well, let's not talk about that." ;
+	mes "As a result, you are now a fine Supernovice." ;
 	next;
-	mes "[トゼーレ]";
-	mes "差し上げたものは、伝説のキム=ション";
-	mes "ニムも着ていた伝説の防具です！";
-	mes "是非使ってください。";
+	mes "[Tzele]";
+	mes "What I gave you is the legendary armor that the legendary Kim-Jeong-Nim also wore!" ;
+	mes "Please use it!" ;
 	next;
-	mes "[トゼーレ]";
-	mes "では御機嫌よう～。今後も普通に平凡に";
-	mes "暮し、私たちノービスクラブの存在を";
-	mes "非平凡な人達に知らしめてください～。";
+	mes "[Tzele]";
+	mes "Well then, good day~. Please continue to live a normal, ordinary life and let the non-ordinary people know about our Novice Club." ;
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "job change",0;
 	end;
 }
 
 //==============================================================
-aldeba_in.gat,216,169,5	script	セレイ	86,{
+aldeba_in.gat,216,169,5 script seray 86,{
 	if(Job == Job_SuperNovice || Job == Job_ExpandedSuperNovice) {
-		mes "[セレイ]";
-		mes "おおおおおおおおおおおおお!!!!";
-		mes "あなたは我等がノービスクラブの";
-		mes "一員ではないですか！";
+		mes "[Seray]";
+		mes "Oh, oh, oh, oh, oh, oh, oh, oh, oh, oh, oh, oh, !!!! Aren't you a member of our Novice Club!" ;
 		next;
-		mes "[セレイ]";
-		mes "今後ともよろしく！";
-		mes "これからも普通に平凡に暮らして";
-		mes "みようじゃありませんか！";
+		mes "[Seray]";
+		mes "Keep up the good work!" ;
+		mes "Let's continue to live a normal and ordinary life!" ;
 		next;
-		mes "[セレイ]";
-		mes "あ、ちなみに私はトゼーレ様直属の";
-		mes "ナンバーワン会員です！えっへん！";
+		mes "[Seray]";
+		mes "Oh, by the way, I am the number one member directly under Toserei-sama! Ehmen!" ;
 		close;
 	}
-	if(Job != Job_Novice) {
-		mes "[セレイ]";
-		mes "ツン！プイッ!!";
-		mes "普通で平凡な道を脱した奴なんて";
-		mes "知らないもんね！";
-		mes "せいぜい、思いっきり危険で非平凡に";
-		mes "生きてるといいさ！";
-		mes "プイプイッ!!";
+	if(Job ! = Job_Novice) {
+		mes "[Seray]";
+		mes "Tsk! Pui!!! I don't know anyone who's escaped the normal and mundane path!" ;
+		mes "At best, live dangerously and unordinary to the fullest!" ;
+		mes "Pui pui!!!" ;
 		close;
 	}
-	mes "[セレイ]";
-	mes "あなたはまだ本当に普通で平凡な道の";
-	mes "楽しさが分かっていなーーーーーい！";
-	mes "あなたもノービスクラブの一員に";
-	mes "なりましょうよ、ねっねっ。";
+	mes "[Seray]";
+	mes "You still really don't understand the joys of the ordinary and mundane road!!!" ;
+	mes "You should be part of the Novice Club, hey?" ;
 	next;
-	mes "[セレイ]";
-	mes "やはりノービスは最高だ！";
-	mes "ワッハッハッハッハッハッ!!";
+	mes "[Seray]";
+	mes "Novice is still the best!" ;
+	mes "Wahhhh!!!" ;
 	close;
 }
 
 
 //==========================================
-// 専用カートサービス
+// dedicated cart service
 //------------------------------------------
 
-aldebaran.gat,54,238,5	script	カプラ職員	117,{
-	if(Job != Job_SuperNovice && Job != Job_ExpandedSuperNovice) {
-		mes "[カプラ職員]";
-		mes "こんにちは～。申し訳ございませんが";
-		mes "私がお客様にして差し上げられることは";
-		mes "何もありません。他のカプラ職員を";
-		mes "あたってみてください。";
+aldebaran.gat,54,238,5 script Kafra Staff 117,{
+	if(Job ! = Job_SuperNovice && Job ! = Job_ExpandedSuperNovice) {
+		mes "[Kafra Staff]";
+		mes "Hello~. I am sorry, but there is nothing I can do for you. Please try another Kafra Staff." ;
 		close;
 	}
-	mes "[カプラ職員]";
-	mes "おや、スーパーノービスですね。";
-	mes "え、他のカプラ職員が、カートを";
-	mes "貸してくれないのですか？";
-	mes "ご安心を！";
+	mes "[Kafra Staff]";
+	mes "Oh, it's Supernovice." ;
+	mes "What, the other Kafra Staff, can't you lend me a cart?" ;
+	mes "Don't worry!" ;
 	next;
-	mes "[カプラ職員]";
-	mes "この私が、スーパーノービスの皆さんに";
-	mes "専用カートをお貸しして差し上げます。";
-	mes "カプラ本社の命令と相反するので、";
-	mes "こっそり内緒に貸しているのですけど。";
-	mes "テヘ。";
+	mes "[Kafra Staff]";
+	mes "I, here at Supernovice, will be happy to lend you a private cart." ;
+	mes "I'm secretly lending it to you in secret, though, because it conflicts with the orders of the Kafra headquarters." ;
+	mes "Tehe." ;
 	next;
-	mes "[カプラ職員]";
-	mes "前書きはこれくらいにして！";
-	mes "カート利用料金は^FF00001900zeny^000000です。";
+	mes "[Kafra Staff]";
+	mes "So much for the preface!" ;
+	mes "The cart usage fee is ^FF00001900zeny^000000." ;
 	next;
-	mes "[カプラ職員]";
-	mes "カートを利用するには";
-	mes "「プッシュカート」スキルが必要です。";
-	mes "そのスキルがないとカートを利用";
-	mes "できずにお金だけ消えてしまいます。";
-	mes "準備はよろしいですか？";
+	mes "[Kafra Staff]";
+	mes "You must have the "pushcart" skill to use the cart." ;
+	mes "Without that skill, you will not be able to use the cart and only the money will disappear." ;
+	mes "Are you ready?" ;
 	next;
-	if(select("カートを借りる","カートを借りない")==1) {
-		mes "[カプラ職員]";
-		mes "ここのサービスは内緒のサービスなので";
-		mes "私は皆さんが「プッシュカート」を";
-		mes "取得しているか、確認できないのです。";
-		mes "大丈夫ですか？「プッシュカート」が";
-		mes "ないと、カートを利用できずに";
-		mes "お金だけ消えてしまいますよ。";
+	if(select("borrow cart", "don't borrow cart")==1) {
+		mes "[Kafra Staff]";
+		mes "The service here is a private service so I am not able to check if you guys are getting the "push cart"." ;
+		mes "Are you okay? If you don't have a 'push cart' you won't be able to use your cart and your money will just disappear." ;
 		next;
-		if(select("大丈夫！","ちょっと待って")==1) {
+		if(select("It's ok!" , "wait a minute")==1) {
 			if(Zeny < 1900) {
-				mes "[カプラ職員]";
-				mes "申し訳ありません。";
-				mes "お金が足りないようです。";
+				mes "[Kafra Staff]";
+				mes "Sorry about that." ;
+				mes "It looks like you don't have enough money." ;
 				close;
 			}
 			set Zeny,Zeny-1900;
 			set KAFRA_PIT,KAFRA_PIT+190;
 			setcart;
-			mes "[カプラ職員]";
-			mes "ご利用ありがとうございます。";
-			mes "合法的サービスではないですが";
-			mes "(株)カプラサービスをご利用いただき";
-			mes "ありがとうございました。";
+			mes "[Kafra Staff]";
+			mes "Thank you for your interest." ;
+			mes "Thank you for using Kafra Service Inc. even though it is not a legitimate service." ;
 			close;
 		}
 	}
-	mes "[カプラ職員]";
-	mes "またのお越しをお待ちしております。";
-	mes "ありがとうございました。";
+	mes "[Kafra Staff]";
+	mes "We look forward to seeing you again." ;
+	mes "Thank you very much." ;
 	close;
 }

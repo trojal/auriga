@@ -1,50 +1,40 @@
 //====================================================================
 //Ragnarok Online Merchant jobchange script
-//
-//　■ CHANGE_MC -> 0～1
+// - CHANGE_MC -> 0 to 1
+// - CHANGE_MC -> 0 to 1
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and job change
 //------------------------------------------
 
-alberta_in.gat,53,43,6	script	商人組合員#MC	86,{
+alberta_in.gat,53,43,6 script Wealthy-looking Merchant#MC 86,{
 	if(Upper == UPPER_HIGH && (OLD_CLASS == Job_Blacksmith || OLD_CLASS == Job_Alchemist)) {
 		if(Job == Job_Novice) {
-			mes "[組合員マンス]";
-			mes "やあ、何か用かい？";
-			mes "今は商人じゃないみたいだな。";
+			mes "[Guildmember Mahnsoo]";
+			mes "Hey, what can I do for you?" ;
+			mes "I guess you're not a merchant now." ;
 			next;
 			if(getskilllv(1) < 9) {
-				mes "[組合員マンス]";
-				mes "人には天職があるとはいえ";
-				mes "基本的なことは共通している。";
-				mes "まずは、JobLvを10にまで成長させ、";
-				mes "^0000FF「基本スキル」のレベルを9　^000000に";
-				mes "してから来てくれ。";
+				mes "[Guildmember Mahnsoo]";
+				mes "Even though we all have a vocation, we all have the same basic things in common." ;
+				mes "First, grow your JobLv to 10, and come back when you have ^0000FF "basic skill" level of 9 ^000000." ;
 				next;
-				mes "[組合員マンス]";
-				mes "^0000FF「基本スキル」^000000のレベルは";
-				mes "^0000FF「スキルリスト」^000000ウィンドウで";
-				mes "上げることができる。";
-				mes "^0000FF「スキルリスト」^000000ウィンドウは";
-				mes "^0000FF「基本情報」^000000ウィンドウ内の";
-				mes "^0000FF「Skill」^000000ボタンで表示されるぞ。";
+				mes "[Guildmember Mahnsoo]";
+				mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window." ;
+				mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 				next;
-				mes "[組合員マンス]";
-				mes "スキルのレベルを上げるには、";
-				mes "スキルポイントを割り振った後、";
-				mes "^FF0000「確定」^000000ボタンが必要となる。";
-				mes "注意するんだぞ。";
+				mes "[Guildmember Mahnsoo]";
+				mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm" ^000000 button after allocating the skill points." ;
+				mes "You have to Attention." ;
 				next;
-				mes "[組合員マンス]";
-				mes "俺はいつでも組合に居るから";
-				mes "準備ができたらまた来い。";
+				mes "[Guildmember Mahnsoo]";
+				mes "I'm always in the union, come back when you're ready." ;
 				close;
 			}
-			mes "[組合員マンス]";
-			mes "しかし、君の天職は商人だ。";
-			mes "これからも頑張って活動してくれ！";
+			mes "[Guildmember Mahnsoo]";
+			mes "But your calling is to be a merchant." ;
+			mes "Keep up the good work and keep working!" ;
 			next;
 			unequip;
 			jobchange Job_Merchant,UPPER_HIGH;
@@ -54,348 +44,277 @@ alberta_in.gat,53,43,6	script	商人組合員#MC	86,{
 			skill 153,1,0;
 			skill 154,1,0;
 			skill 155,1,0;
-			mes "[組合員マンス]";
-			mes "よし、やっぱりその格好が似合うな。";
+			mes "[Guildmember Mahnsoo]";
+			mes "Okay, you still look good in that outfit." ;
 			close;
 		}
 	}
 	if(Upper == UPPER_HIGH) {
-		mes "[組合員マンス]";
-		mes "ああ～暇だ。";
-		mes "暇すぎてぼけそう……";
-		mes "カプラのおねえさんからの";
-		mes "返事もまだ来ないし……";
+		mes "[Guildmember Mahnsoo]";
+		mes "Ahhhh, I'm bored." ;
+		mes "I'm so bored I'm going to blur ......." ;
+		mes "I still haven't heard back from the Capra lady. ......" ;
 		close;
 	}
-	mes "[組合員マンス]";
-	mes "俺に何か用でも？";
+	mes "[Guildmember Mahnsoo]";
+	mes "What do you want from me?" ;
 	next;
-	switch (select("商人になりたいんです","商人って何？","商人転職条件は？","何でもない")) {
+	switch (select("I want to become a merchant", "What is a merchant?" , "What are the requirements for becoming a merchant?" , "nothing")) {
 	case 1:
 		if(Job == Job_Merchant) {
-			mes "[組合員マンス]";
-			mes "うん？　何を言ってる？";
-			mes "君はもう商人じゃないか、まったく。";
-			mes "ここって笑う所だったの？";
+			mes "[Guildmember Mahnsoo]";
+			mes "Hm?  What are you saying?" ;
+			mes "You're not a merchant anymore, not at all." ;
+			mes "Was this place supposed to be funny?" ;
 			next;
-			mes "[組合員マンス]";
-			mes "まぁ、君のような人が";
-			mes "商人になったんなら、";
-			mes "冒険者アカデミーに";
-			mes "行ってみるといいかもね。";
+			mes "[Guildmember Mahnsoo]";
+			mes "Well, if someone like you became a merchant, maybe you should try the Adventurer's Academy." ;
 			next;
-			mes "[組合員マンス]";
-			mes "この建物を出ると";
-			mes "冒険者アカデミーのサポートを";
-			mes "行っている人がいるから、";
-			mes "送ってもらうといいよ。";
+			mes "[Guildmember Mahnsoo]";
+			mes "When you leave this building, there is a guy who supports the Adventurer Academy, so you can ask him to send you there." ;
 			close;
 		}
-		if(Job != Job_Novice) {
-			mes "[組合員マンス]";
-			mes "我ら商人ギルドの人間は、";
-			mes "コウモリみたいな奴が一番嫌いだ。";
-			mes "昼は商売して、夜はエッチな服を着て";
-			mes "怪しい酒場に通ってるそういう奴。";
-			mes "うう……ムカムカ！";
+		if(Job ! = Job_Novice) {
+			mes "[Guildmember Mahnsoo]";
+			mes "We merchant guild members hate people like bats the most." ;
+			mes "That kind of guy who does business during the day and wears naughty clothes at night and hangs out in shady bars." ;
+			mes "Ugh ...... Disgusting!!!" ;
 			next;
-			mes "[組合員マンス]";
-			mes "まあ、話が長くなったけど、";
-			mes "他の職業に就いてる君みたいな奴は";
-			mes "商人ギルドには要らない。";
+			mes "[Guildmember Mahnsoo]";
+			mes "Well, it's a long story, but we don't need guys like you in other professions in the merchant guild." ;
 		   	close;
 		}
 		break;
 	case 2:
-		mes "[組合員マンス]";
-		mes "商人？簡単に言うと、物を売って";
-		mes "お金を稼ぐ。それが商人だ。";
-		mes "戦闘が得意なわけでないし、";
-		mes "大した攻撃・回復スキルもない。";
-		mes "でも、安い値段でアイテムが手に入る。";
+		mes "[Guildmember Mahnsoo]";
+		mes "A merchant? Simply put, they sell things and make money. That's what a merchant is." ;
+		mes "I'm not a good fighter, and I don't have any great offensive or recovery skills." ;
+		mes "But you can get items for cheap." ;
 		next;
-		mes "[組合員マンス]";
-		mes "「メマーナイト」という究極の技が";
-		mes "あるけど、まあ、それは別として……";
-		mes "弓、杖、両手剣以外の武器も";
-		mes "大体使えるし……";
-		mes "と、とにかく、商人はお金稼ぎの";
-		mes "ための職業だ。それで充分だろう？";
+		mes "[Guildmember Mahnsoo]";
+		mes "There is an ultimate technique called "Memer Knight", but, well, apart from that ......." ;
+		mes "I can use most weapons other than bows, staffs, and two-handed swords. ......" ;
+		mes "And anyway, a merchant is a money-making profession. That should be enough, right?" ;
 		close;
 	case 3:
-		mes "[組合員マンス]";
-		mes "商人になるためには";
-		mes "条件が必要だが、";
-		mes "そんなに難しい話じゃない。";
-		mes "まずは、JobLvを10にまで成長させ、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してから来てくれ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "There are some requirements to become a merchant, but it's not that hard." ;
+		mes "First, you need to grow your JobLv to 10, and come to a level of ^0000FF "basic skills" of 9^000000." ;
 		next;
-		mes "[組合員マンス]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができる。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されるぞ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "The level of ^0000FF "Basic Skills" ^000000 can be raised in the ^0000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[組合員マンス]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要となる。";
-		mes "注意するんだぞ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm" ^000000 button after allocating the skill points." ;
+		mes "You have to Attention." ;
 		next;
-		mes "[組合員マンス]";
-		mes "いくら商売主体の商人でも、";
-		mes "^0000FF「基本スキル」がレベル9^000000 に達して";
-		mes "いないと駄目だ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "No matter how much of a merchant you are, you need to have ^0000FF "Basic Skills" to reach level 9^000000." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 4:
-		mes "[組合員マンス]";
-		mes "そうか～";
-		mes "まぁ、気が変わったら";
-		mes "またここに来ればいいさ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "Oh yeah - well, if you change your mind, you can come back here again." ;
 		close;
 	}
 	if(CHANGE_MC == 0) {
-		mes "[組合員マンス]";
-		mes "商人になりたいって？";
-		mes "ふ……";
+		mes "[Guildmember Mahnsoo]";
+		mes "You want to be a merchant?" ;
+		mes "Fu ......" ;
 		next;
-		mes "[組合員マンス]";
-		mes "よしそれじゃこの申請書に";
-		mes "サインしてくれ！";
+		mes "[Guildmember Mahnsoo]";
+		mes "Okay then, sign this application!" ;
 		next;
-		if(select("申請書にサインする","やめる")==2) {
-			mes "[組合員マンス]";
-			mes "そうか～";
-			mes "まぁ、気が変わったら";
-			mes "またここに来ればいいさ。";
+		if(select("sign the application", "quit")==2) {
+			mes "[Guildmember Mahnsoo]";
+			mes "Oh yeah - well, if you change your mind, you can come back here again." ;
 			close;
 		}
-		mes "[組合員マンス]";
-		mes "申請書にサインをして……";
-		mes "そうそう、サインは";
-		mes "綺麗に書いてくれよ。";
-		mes "字が汚いあまりに商談が";
-		mes "失敗することだってあるんだからな。";
+		mes "[Guildmember Mahnsoo]";
+		mes "Sign the application and go to ......." ;
+		mes "Oh yeah, and make sure your signature is neatly written." ;
+		mes "You know, sometimes business meetings can fail because your handwriting is so dirty." ;
 		next;
-		mes "[組合員マンス]";
-		mes "さってと、これからマーチャントに";
-		mes "なるための条件を全て満たしているか";
-		mes "確認するが、問題ないか？";
+		mes "[Guildmember Mahnsoo]";
+		mes "Alright, now I'm going to check if you meet all the requirements to become a Merchant, is that OK?" ;
 		next;
-		if(select("はい","いいえ")==2) {
-			mes "[組合員マンス]";
-			mes "そうか～";
-			mes "まぁ、気が変わったら";
-			mes "またここに来ればいいさ。";
+		if(select("Yes", "No")==2) {
+			mes "[Guildmember Mahnsoo]";
+			mes "Right - well, if you change your mind, you can come back here again." ;
 			close;
 		}
 		set CHANGE_MC,1;
-		mes "[組合員マンス]";
-		mes "それじゃ、さっそく確認するぜ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "Well, let's get on with it and check it out." ;
 		next;
 	}
-	mes "[組合員マンス]";
-	mes "名前は……";
-	mes " "+ strcharinfo(0) +" だな？";
-	mes " "+ strcharinfo(0) +" の";
-	mes "資料はっと……";
+	mes "[Guildmember Mahnsoo]";
+	mes "The name is ......." ;
+	mes " "+ strcharinfo(0) + " "right?" ;
+	mes " "+ strcharinfo(0) +" material is more ......" ;
 	next;
-	mes "[組合員マンス]";
-	mes "…";
+	mes "[Guildmember Mahnsoo]";
+	mes "..." ;
 	next;
-	mes "[組合員マンス]";
-	mes "……";
+	mes "[Guildmember Mahnsoo]";
+	mes "......" ;
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[組合員マンス]";
-		mes "おいおい！商人になるんだったら、";
-		mes "^0000FF「基本スキル」のレベルが9^000000 に";
-		mes "なってないと！";
-		mes "まずは、JobLvを10にまで成長させ、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してから来てくれ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "Hey! If you're going to be a merchant, your ^0000FF "Basic Skill" level has to be 9^000000!" ;
+		mes "First, you need to grow your JobLv to 10, and then come back when your ^0000FF "Basic Skills" level is 9^000000." ;
 		next;
-		mes "[組合員マンス]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができる。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されるぞ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "The level of ^0000FF "Basic Skills" ^000000 can be raised in the ^0000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[組合員マンス]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要となる。";
-		mes "注意するんだぞ。";
+		mes "[Guildmember Mahnsoo]";
+		mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm" ^000000 button after allocating the skill points." ;
+		mes "You have to Attention." ;
 		next;
-		mes "[組合員マンス]";
-		mes "いくら金稼ぎの商人でも、";
-		mes "最低限、基本がなってないとね。";
+		mes "[Guildmember Mahnsoo]";
+		mes "No matter how much money a merchant makes, at the very least, he has to have the basics." ;
 		close2;
 		cutin "start_020_jp.bmp",1;
 		end;
 	}
-	mes "[組合員マンス]";
-	mes "^0000FF「基本スキル」^000000も問題ないみたいだな。";
-	mes "よし、合格だ！";
-	mes "すぐにマーチャントへの手続きを";
-	mes "はじめるぞ！";
+	mes "[Guildmember Mahnsoo]";
+	mes "^0000FF "Basic Skills" ^000000 doesn't seem to be a problem." ;
+	mes "Okay, you pass!" ;
+	mes "Let's start the process to Merchant right away!" ;
 	next;
 	getitem 11040,1;
 	unequip;
 	jobchange Job_Merchant;
 	set CHANGE_MC,0;
 	setquest 50465;
-	mes "[組合員マンス]";
-	mes "おめでとう！";
-	mes "組合一同、君が商人ギルドの一員に";
-	mes "なった事を心からお祝いする。";
-	mes "これからも頑張って活動してくれ。";
+	mes "[Guildmember Mahnsoo]";
+	mes "Congratulations!" ;
+	mes "The entire union congratulates you on becoming a member of the Merchant Guild." ;
+	mes "Keep up the good work." ;
 	next;
-	mes "[組合員マンス]";
-	mes "全世界通貨量の20％確保という";
-	mes "我らの壮大な目標を達成するため、";
-	mes "情熱溢れる青年の力が必要不可欠だ！";
-	mes "判ったか？　俺の言う事が!?";
-	mes "まあ、今のは話のたとえだ。";
-	mes "結論的にはお金を稼ごうって話。";
+	mes "[Guildmember Mahnsoo]";
+	mes "To achieve our grand goal of securing 20% of the global monetary volume, the power of passionate youth is essential!" ;
+	mes "Do you understand?  What I'm saying? Well, that was just a metaphor." ;
+	mes "The bottom line is that we're talking about making money." ;
 	next;
-	mes "[組合員マンス]";
-	mes "あと、今、君に渡したのは";
-	mes "商人ギルド作成の";
-	mes "マーチャントの書だよ。";
-	mes "役に立つはずだから";
-	mes "一度読んでおくといい";
+	mes "[Guildmember Mahnsoo]";
+	mes "Also, I just gave you the Merchant's Guild-created Book of Merchant." ;
+	mes "You should read it once because it should be useful.";
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "Job change",0;
 	end;
 }
 
 
 //==========================================
-// 荷物配達倉庫
+// package delivery warehouse
 //------------------------------------------
 
-alberta_in.gat,28,29,2	script	商人組合員	83,{
-	mes "[組合員ケイ]";
-	mes "やあー何の用？";
+alberta_in.gat,28,29,2 script Wealthy-looking Merchant 83,{
+	mes "[Union Member Kay]";
+	mes "Hi, what can I do for you?" ;
 	next;
-	switch (select("転職試験のことです","アルバイトの事です","何でもありません")) {
+	switch (select("It's about a career change exam", "It's about a part-time job", "Nothing")) {
 	case 1:
 		if(Job == Job_Merchant) {
-			mes "[組合員ケイ]";
-			mes "何を言ってる？君はもう商人だろう？";
+			mes "[Union Member Kay]";
+			mes "What are you talking about? You're already a merchant, aren't you?" ;
 			close;
 		}
-		mes "[組合員ケイ]";
-		mes "実は、マーチャントへの転職試験は";
-		mes "撤廃されているんだ。";
-		mes "よって、試験を受けてなくても";
-		mes "マーチャントへの転職は可能だから";
-		mes "中央の<組合員マンス>に話してみて。";
+		mes "[Union Member Kay]";
+		mes "Actually, the exam to become a Merchant has been eliminated." ;
+		mes "Therefore, it is possible to become a Merchant without taking the exam, so talk to <Guildmember Mahnsoo> in the center." ;
 		close;
 	case 2:
-		mes "[組合員ケイ]";
-		mes "アルバイト？まだ準備中だ。";
-		mes "総会が予算をくれないんだ。";
-		mes "まったく……";
+		mes "[Union Member Kay]";
+		mes "Part-time job? I'm still getting ready." ;
+		mes "The General Assembly won't give me a budget." ;
+		mes "Totally ......." ;
 		close;
 	case 3:
-		mes "[組合員ケイ]";
-		mes "？　……うん、うん？";
-		mes "何か？";
+		mes "[Union Member Kay]";
+		mes "?  ...... Yeah, yeah?" ;
+		mes "Yes?" ;
 		close;
 	}
 }
 
 
 //==========================================
-// 配達
+// delivery
 //------------------------------------------
 
-prontera.gat,248,42,0	script	カプラ職員::MC_DeliverPro	116,{
+prontera.gat,248,42,0 script Kafra Staff::MC_DeliverPro 116,{
 	cutin "kafra_02",2;
-	mes "[カプラ職員]";
-	mes "いらっしゃいませ、（株）カプラです。";
-	mes "ご覧のとおり剣士ギルドは";
-	mes "首都プロンテラから";
-	mes "衛星都市「イズルード」に";
-	mes "移転しました。";
+	mes "[Kafra Staff]";
+	mes "Welcome, this is Kafra Corporation." ;
+	mes "As you can see, the Swordsmen's Guild has moved from the capital city of Prontera to the satellite city of Izlude." ;
 	next;
-	mes "[カプラ職員]";
-	mes "我々（株）カプラでは";
-	mes "ここプロンテラからイズルードまで";
-	mes "利用料 600 Zenyで移動サービスを";
-	mes "行っています。";
+	mes "[Kafra Staff]";
+	mes "We at Kafra Ltd. offer a mobile service from here in Prontera to Izlude for a usage fee of 600 Zeny." ;
 	next;
-	switch (select("利用する","カプラポイント確認","終了")) {
+	switch (select("Use", "Confirm Kapra Point", "End")) {
 		case 1:
 			if(Zeny<600) {
-				mes "[カプラ職員]";
-				mes "お客様、お金が足りないようですが。";
+				mes "[Kafra Staff]";
+				mes "Sir, it looks like you don't have enough money." ;
 				break;
 			}
 			set Zeny,Zeny-600;
 			set KAFRA_PIT,KAFRA_PIT+60;
 			warp "izlude.gat",94,103;
 			end;
-		case 2:	//function内からコピー
-			mes "[カプラ職員]";
-			mes strcharinfo(0)+ "様の獲得ポイントは、";
-			mes KAFRA_PIT+ "点です。";
+		case 2: //copy from within function
+			mes "[Kafra Staff]";
+			mes ""+strcharinfo(0)+ "Your points earned are ";
+			mes KAFRA_PIT+ "The points are." ;
 			next;
-			mes "[カプラ職員]";
-			mes "カプラポイントは当カプラサービスの";
-			mes "本社で賞品と引き換えが可能です。";
-			mes "今後ともカプラサービスをよろしく";
-			mes "お願い致します。";
+			mes "[Kafra Staff]";
+			mes "Kafra points can be redeemed for prizes at our Kafra Service headquarters." ;
+			mes "Thank you for your continued support of Kafra Service." ;
 			break;
 		case 3:
-			mes "[カプラ職員]";
-			mes "ありがとうございました。";
+			mes "[Kafra Staff]";
+			mes "Thank you very much." ;
 			break;
 	}
 	close2;
 	cutin "kafra_02",255;
 	end;
 OnInit:
-	//これが読み込まれるときはnpc_town_kafra.txtの方を無効にする
-	disablenpc "カプラ職員#ProSword";
+	// disable npc_town_kafra.txt when this is read
+	disablenpc "Kafra Staff#ProSword";
 	end;
 }
 
 //==============================================================
-geffen_in.gat,155,122,4	script	ギルド関係者	47,{
-	mes "[魔法ギルド関係者]";
-	mes "荷物が届く頃なのに……";
-	mes "遅いな……ふん……";
+geffen_in.gat,155,122,4 script Guild Member 47,{
+	mes "[Magic Guild Official]";
+	mes "It's about time you got your package. ......" ;
+	mes "You're late ...... Hmmm ......" ;
 	close;
 }
 
 //==============================================================
-morocc_in.gat,140,102,4	script	見習生	86,{
-	mes "[染料製作の見習い]";
-	mes "ザバドリハン先生の染色の腕は、";
-	mes "ミッドガルド大陸の誰も真似できない！";
-	mes "素晴らしい腕の持ち主ですよ。";
-	mes "僕はあの方の弟子です！";
+morocc_in.gat,140,102,4 script Apprentice 86,{
+	mes "[Apprentice Dyemaker]";
+	mes "Dr. Zabadrihan's dyeing skills cannot be imitated by anyone on the Midgard continent!" ;
+	mes "He has a wonderful skill." ;
+	mes "I am his disciple!" ;
 	close;
 }
 
 //==============================================================
-izlu2dun.gat,106,58,4	script	カプラ職員::MC_DeliverBya	116,{
+izlu2dun.gat,106,58,4 script Kafra Staff::MC_DeliverBya 116,{
 	cutin "kafra_02",2;
-	callfunc "KafraMain",0,0x1da,0,0,0,0,0,0,40,800;
+	callfunc "KafraMain",0,0x1da,0,0,0,0,0,40,800;
 	end;
 OnInit:
-	//これが読み込まれるときはnpc_town_kafra.txtの方を無効にする
-	disablenpc "カプラ職員#Byalan";
+	// disable the npc_town_kafra.txt one when this is read
+	disablenpc "Kafra Staff#Byalan";
 	end;
 }

@@ -1,593 +1,481 @@
 //= Athena Script ==============================================================
-// Ragnarok Online Knight Jobchange Script	by Blaze
+// Ragnarok Online Knight Jobchange Script by Blaze
 //= Registry ===================================================================
-// CHANGE_KN -> 0～14
+// CHANGE_KN -> 0-14
 //==============================================================================
 
 //============================================================
-// 試験申請および転職
+// Test Application and Job Change
 //------------------------------------------------------------
-prt_in.gat,88,101,4	script	プロンテラ騎士団長	56,{
+prt_in.gat,88,101,4 script Knight Commander of Prontera 56,{
 	if(Job == Job_Novice) {
-		mes "[騎士団長ヘルマン]";
-		mes "こちらはプロンテラ騎士団です。";
-		mes "何の用事かな？";
+		mes "[Knight Commander Hermann]";
+		mes "This is Knight Commander Prontera." ;
+		mes "What can we do for you?" ;
 		next;
-		switch (select("剣士に転職したいです","ナイトに転職したいです","見物に来たんです")) {
+		switch (select("I want to change my job to Swordsman", "I want to change my job to Knight", "I'm here to watch")) {
 		case 1:
-			mes "[騎士団長ヘルマン]";
-			mes "ハハハ！なるほど…";
-			mes "訪ねる所を間違えたな～";
+			mes "[Knight Commander Hermann]";
+			mes "Ha ha ha! I see..." ;
+			mes "You visited the wrong place!";
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "ここは剣士ギルドではなく、騎士団だ。";
-			mes "剣士になりたければ、イズルードの";
-			mes "剣士ギルドへ行きなさい。";
+			mes "[Knight Commander Hermann]";
+			mes "This is not a swordsmen's guild, but a knighthood." ;
+			mes "If you want to be a swordsman, go to the Swordsmen's Guild in Izlude." ;
 			break;
 		case 2:
-			mes "[騎士団長ヘルマン]";
-			mes "ふむ、夢を大きく持つのはいいことだ。";
-			mes "だが、ナイトになるためにはまず";
-			mes "剣士にならなければならないぞ。";
+			mes "[Knight Commander Hermann]";
+			mes "Hmm, it's good to dream big." ;
+			mes "But to become a Knight, you must first become a swordsman." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "イズルードの剣士ギルドへ";
-			mes "行ってみなさい。";
-			mes "剣士としてある程度腕を磨いたら";
-			mes "また来なさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Go to the Swordsmen's Guild in Izlude." ;
+			mes "[Knight Commander Hermann]"; mes "Come back when you have honed your skills to some degree as a swordsman." ;
 			break;
 		case 3:
-			mes "[騎士団長ヘルマン]";
-			mes "そうか、見物も良いが、";
-			mes "暇ならモンスターを一匹でも多く";
-			mes "倒すのだ。";
+			mes "[Knight Commander Hermann]";
+			mes "Well, you can watch, but if you're not busy, kill as many monsters as you can." ;
 			break;
 		}
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "それでは、また必要なときに";
-		mes "訪ねて来なさい。";
+		mes "[Knight Commander Hermann]";
+		mes "Then come back and visit me when you need me." ;
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士団長ヘルマン]";
-		mes "おお、騎士団員よ…私の言った言葉を";
-		mes "覚えているかな？";
-		mes "わが騎士団員は、たとえ死に瀕しても";
-		mes "堂々としていること。";
+		mes "[Knight Commander Hermann]";
+		mes "Oh, Knight Commander... Do you remember what I said?" ;
+		mes "My Knight Commanders shall stand tall even in death." ;
 		close;
 	}
-	if(Job != Job_Swordman) {
-		mes "[騎士団長ヘルマン]";
-		mes "プロンテラ騎士団に訪ねてきた";
-		mes "ことを歓迎する。";
-		mes "ゆっくりしていきなさい。";
+	if(Job ! = Job_Swordman) {
+		mes "[Knight Commander Hermann]";
+		mes "Welcome to your visit to the Knights of Prontera." ;
+		mes "Take your time." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[騎士団長ヘルマン]";
-		mes "こちらはプロンテラ騎士団です。";
-		mes "何の用事かな？";
+		mes "[Knight Commander Hermann]";
+		mes "This is Knight Commander Prontera." ;
+		mes "What can we do for you?" ;
 		next;
-		if(select("ナイトに転職したいです","見物に来たんです")==2) {
-			mes "[騎士団長ヘルマン]";
-			mes "ほう、君は剣士ではないか。";
-			mes "見たところ君は今までに";
-			mes "相当腕を磨いたようだが…";
+		if(select("I want to change my job to Knight.", "I'm here to watch.")==2) {
+			mes "[Knight Commander Hermann]";
+			mes "How, you are not a swordsman?" ;
+			mes "From the looks of it, you've honed your skills quite a bit by now..." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "剣士なら一度、ナイトへの転職を";
-			mes "考えてみてはどうか？";
-			mes "もしナイトに転職する意志があれば";
-			mes "私を訪ねなさい。";
+			mes "[Knight Commander Hermann]";
+			mes "If you are a swordsman, why don't you consider a career change to Knight?" ;
+			mes "[Knight Commander Hermann]"; mes "If you are willing to change your job to Knight, visit me." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "それではゆっくり見ていきなさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Then take your time and look around." ;
 			close;
 		}
 		if(Upper == UPPER_HIGH) {
-			mes "[騎士団長ヘルマン]";
-			mes "なんだ……？";
-			mes "何かただならぬ気配が感じられるな。";
-			mes "君は長い間騎士としてやってきた";
-			mes "私にも助言してあげられることが";
-			mes "無いな。";
+			mes "[Knight Commander Hermann]";
+			mes "What is ......?" ;
+			mes "I sense something is amiss." ;
+			mes "You've been a knight for a long time, and I don't have much advice for you." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "どんな試練にも屈しない心を";
-			mes "他の人々にも伝えるように。";
-			mes "君に栄光あれ！";
+			mes "[Knight Commander Hermann]";
+			mes "[Knight Commander Hermann]"; mes "Tell others to have a heart that will not yield to any trial." ;
+			mes "Glory to you!" ;
 			close;
 		}
-		mes "[騎士団長ヘルマン]";
-		mes "おお、ナイトを目指す" +(Sex? "青年": "お嬢さん")+ "か！";
-		mes "私達プロンテラ騎士が君の";
-		mes "面倒を見るぞ。";
+		mes "[Knight Commander Hermann]";
+		mes "Oh, go Knight" +(Sex? "young man": "young lady") + "Oh!" ;
+		mes "We Knights of Prontera will take care of you." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "私はここプロンテラ騎士団の";
-		mes "騎士団長である";
-		mes "ヘルマン=フォン=エペソス";
-		mes "という。";
-		mes "意欲あふれる若者達を見る度に";
-		mes "私の胸も高鳴る。";
+		mes "[Knight Commander Hermann]";
+		mes "I am Hermann von Ephesus, Knight Commander of the Knights of Prontera here." ;
+		mes "My heart beats faster every time I see these motivated young people." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "私達プロンテラ騎士団は、";
-		mes "JobLv40以上の剣士にのみ";
-		mes "試験を受けさせている。";
-		mes "青臭い者をナイトにさせることは";
-		mes "できないからな！";
+		mes "[Knight Commander Hermann]";
+		mes "We, the Knight Order of Prontera, only allow swordsmen with JobLv 40 or higher to take the exam." ;
+		mes "Because we can't let a greenhorn become a Knight!" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "それでは転職の申し込みを";
-		mes "するかね？";
+		mes "[Knight Commander Hermann]";
+		mes "So do you want to apply for a new job?" ;
 		next;
-		if(select("はい、申し込みます","もうちょっと考えてみます")==2) {
-			mes "[騎士団長ヘルマン]";
-			mes "はは、少し話が急だったか？";
-			mes "それならばゆっくりと考えてみなさい。";
+		if(select("Yes, I'm applying", "I'll think about it some more")==2) {
+			mes "[Knight Commander Hermann]";
+			mes "Haha, that was a bit sudden, wasn't it?" ;
+			mes "Then take your time and think about it." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "転職する用意ができたら";
-			mes "また来なさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Come back when you are ready to change jobs." ;
 			close;
 		}
 		if(JobLevel < 40) {
-			mes "[騎士団長ヘルマン]";
-			mes "はは、君はまだナイトになるには";
-			mes "早いぞ。";
-			mes "JobLvが40以上必要だと";
-			mes "言ったはずだが！";
+			mes "[Knight Commander Hermann]";
+			mes "Haha, you're not ready to be a Knight yet." ;
+			mes "I told you that you need a JobLevel of 40 or higher!" ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "もちろんその意欲はかうが";
-			mes "まだだめだ。";
-			mes "もう少し多くのモンスターと";
-			mes "戦ってからまた来なさい。";
-			mes "待っているからな。";
+			mes "[Knight Commander Hermann]";
+			mes "Of course I'm willing to do that, but not yet." ;
+			mes "[Knight Commander Hermann]"; mes "Of course I would love to do that, but not yet."; mes "Fight a few more monsters, and then come back." ;
+			mes "I'll be waiting for you." ;
 			close;
 		}
 		if(SkillPoint) {
-			mes "[騎士団長へルマン]";
-			mes "むむ、スキルポイントが残っていると";
-			mes "転職させられないぞ。";
-			mes "習得できるスキルを取得してから";
-			mes "また来なさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Hmmm, you can't change jobs if you have any SkillPoints left." ;
+			mes "Get the skills you can learn, then come back." ;
 			close;
 		}
-		mes "[騎士団長へルマン]";
-		mes "よし、君の申し込みを歓迎しよう。";
-		mes "名前は " +strcharinfo(0);
-		mes "こう読むんだな。";
+		mes "[Knight Commander Hermann]";
+		mes "Alright, I welcome your application." ;
+		mes "The name is " +strcharinfo(0);
+		mes "You read it like this." ;
 		next;
-		mes "[騎士団長へルマン]";
-		mes "それでは転職試験について";
-		mes "説明しよう。";
-		mes "我が騎士団の騎士達に";
-		mes "一人ずつ会い、彼らが出す";
-		mes "試験に皆パスすれば良い。";
+		mes "[Knight Commander Hermann]";
+		mes "Then let me explain about the job change test." ;
+		mes "You will meet the knights of my Order one by one, and you will all have to pass the test they will give you." ;
 		next;
-		mes "[騎士団長へルマン]";
-		mes "すべての試験が終わり、我が";
-		mes "騎士達全員が合格判定を出した時、";
-		mes "ナイトへの転職が可能となる。";
-		mes "言葉通り満場一致！一人でも";
-		mes "反対をすれば試験をまた最初から";
-		mes "受けなければならない。";
+		mes "[Knight Commander Hermann]";
+		mes "When all the examinations are completed and all of my knights have passed them, you can change your job to Knight." ;
+		mes "Unanimous as the word is! If even one of you objects, you will have to take the exam again from the beginning." ;
 		next;
-		mes "[騎士団長へルマン]";
-		mes "しかし真摯な姿勢で臨めば";
-		mes "君の意志が皆に伝わるはずである。";
+		mes "[Knight Commander Hermann]";
+		mes "But if you are sincere, your will will be conveyed to all." ;
 		next;
-		if(JobLevel >= 50) {	//未調査
-			mes "[騎士団長ヘルマン]";
-			mes "あなたはJobLvが50ですね。";
-			mes "立派です。今まで熱心に修行を";
-			mes "積んできたようですね。";
+		if(JobLevel >= 50) { //not researched
+			mes "[Knight Commander Hermann]";
+			mes "You have a JobLevel of 50." ;
+			mes "That's admirable. It seems that you have trained diligently until now." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "あなたはJobLvが50ですので。";
-			mes "最初の試練は必要ないですね。";
-			mes "それでは次に移りましょうか。";
+			mes "[Knight Commander Hermann]";
+			mes "You have a JobLv of 50." ;
+			mes "You don't need the first ordeal." ;
+			mes "[Knight Commander Hermann]"; mes "Then let's move on." ;
 			next;
-			mes "[騎士団長ヘルマン]";
-			mes "ジェームズ=シラキューズのところへ";
-			mes "行きなさい。";
-			mes "彼が次の試験を行ってくれます。";
-			mes "さぁ、行きなさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Go to James-Syracuse." ;
+			mes "He will conduct the next examination." ;
+			mes "[Knight Commander Hermann]"; mes "Now go." ;
 			set CHANGE_KN,5;
 		}
 		else {
-			mes "[騎士団長へルマン]";
-			mes "百聞は一見に如かず！";
-			mes "すぐに騎士たちに会い、";
-			mes "試験を受けなさい。";
-			mes "すべての試験が終わったら";
-			mes "ここに戻ってきなさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Seeing is believing!" ;
+			mes "See the knights immediately and take the test." ;
+			mes "Come back here when all the examinations are over." ;
 			set CHANGE_KN,1;
 		}
 		close;
 	case 1:
-		mes "[騎士団長ヘルマン]";
-		mes "うん？ " +strcharinfo(0)+ " 、何の用だ。";
-		mes "ふむ…誰に会えば良いのか";
-		mes "わからないようだな。";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah? " +strcharinfo(0)+ ", what do you want?" ;
+		mes "Hmm... You don't seem to know who to see." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "やつら性格も気難しくて、";
-		mes "自分達同士で何か手順を決めて";
-		mes "いたようだ。";
+		mes "[Knight Commander Hermann]";
+		mes "They have difficult personalities and seem to have set up some sort of procedure among themselves." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "まず、騎士アンドリュー=シャイロック";
-		mes "に会ってみなさい。";
-		mes "初試験だが緊張しすぎないようにな。";
+		mes "[Knight Commander Hermann]";
+		mes "First, you should meet Knight Andrew Shylock." ;
+		mes "This is your first exam, but don't be too nervous." ;
 		close;
 	case 4:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "ん？誰のところに行けば良いのか";
-		mes "わからないって？";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "Hmm? You don't know who to go to?" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験を１つ終えたようだね。";
-		mes "ということは…シャイロック！";
-		mes "次の担当は誰か！";
+		mes "[Knight Commander Hermann]";
+		mes "I see you've completed one of your exams." ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "So that means... Shylock!" ;
+		mes "Who's next in charge!" ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "ジェームズと言ってあります！";
-		mes "それ一つも記憶できない者が";
-		mes "ナイトになってどうする!!";
+		mes "[Knight Andrew]";
+		mes "I said James!" ;
+		mes "How can someone who can't remember one of those be a Knight!!!!" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "聞いたかな？";
-		mes "騎士ジェームズ=シラキューズの";
-		mes "試験を受けなさい。";
-		mes "会う順番も間違えないようにな。";
+		mes "[Knight Commander Hermann]";
+		mes "Did you hear that?" ;
+		mes "Take the Knight James=Syracuse exam." ;
+		mes "And don't make the mistake of meeting them in the wrong order." ;
 		close;
 	case 6:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "ん？誰のところに行けば良いのか";
-		mes "わからないって？";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "Hmm? You don't know who to go to?" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験を２つ終えたようだね。";
-		mes "ということは…シラキューズ！";
-		mes "次の担当は誰か！";
+		mes "[Knight Commander Hermann]";
+		mes "I see you've completed two exams." ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "So that means... Syracuse!" ;
+		mes "Who's next in charge!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "は！ウインザーに会えと";
-		mes "申し上げました！";
-		mes "覚えていないやつが悪いのです！";
+		mes "[Knight James]";
+		mes "Ha! I told you to meet Windsor!" ;
+		mes "It's his fault for not remembering!" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "聞いたかな？";
-		mes "騎士ウインザー=ベネディクトの";
-		mes "試験を受けなさい。";
-		mes "会う順番も間違えないようにな。";
+		mes "[Knight Commander Hermann]";
+		mes "Did you hear that?" ;
+		mes "Take Knight Windsor=Benedict's test." ;
+		mes "And don't make the mistake of meeting them in the wrong order." ;
 		close;
 	case 8:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "ん？誰のところに行けば良いのか";
-		mes "わからないって？";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "Hmm? You don't know who to go to?" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験を３つ終えたようだね。";
-		mes "ということは…ベネディクト！";
-		mes "次の担当は誰か！";
+		mes "[Knight Commander Hermann]";
+		mes "I see you have completed three exams." ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "That means... Benedict!" ;
+		mes "Who's next in charge!" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "…エイミー=ベアトリス！";
-		mes "…物覚えの悪い剣士が！";
+		mes "[Knight Windsor]";
+		mes "... Amy Beatrice!" ;
+		mes "... The bad swordsman!" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "聞いたかな？";
-		mes "騎士エイミー=ベアトリスの";
-		mes "試験を受けなさい。";
-		mes "会う順番も間違えないようにな。";
+		mes "[Knight Commander Hermann]";
+		mes "Did you hear that?" ;
+		mes "Take Knight Amy=Beatrice's test." ;
+		mes "And don't make the mistake of meeting them in the wrong order." ;
 		close;
 	case 10:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "ん？誰のところに行けば良いのか";
-		mes "わからないって？";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "Hmm? You don't know who to go to?" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験を４つ終えたようだね。";
-		mes "ということは…ベアトリス！";
-		mes "次の担当は誰か！";
+		mes "[Knight Commander Hermann]";
+		mes "I see you've completed four exams." ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "That means... Beatrice!" ;
+		mes "Who's next in charge!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "まったく…。エドモンドに";
-		mes "会いなさいと言ったでしょう！";
-		mes "必ずあんな子たちがモンスターを";
-		mes "どっと引き連れて逃げていくのよ。";
-		mes "叱ってもすぐ忘れるし…";
+		mes "[Knight Amy]";
+		mes "Totally.... I told you to see Edmond!" ;
+		mes "I'm sure those kids will run away with a bunch of monsters." ;
+		mes "I scold him, but he forgets right away..." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "聞いたかな？";
-		mes "騎士エドモンド=グロストの";
-		mes "試験を受けなさい。";
-		mes "会う順番も間違えないようにな。";
+		mes "[Knight Commander Hermann]";
+		mes "Did you hear that?" ;
+		mes "Take Knight Edmund-Grost's test." ;
+		mes "And don't make the mistake of meeting him in the wrong order." ;
 		close;
 	case 12:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "ん？誰のところに行けば良いのか";
-		mes "わからないって？";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "Hmm? You don't know who to go to?" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "最後の騎士のところだろう…。";
-		mes "騎士グレー=プロスフェロの";
-		mes "試験を受けて来なさい。";
+		mes "[Knight Commander Hermann]";
+		mes "It's probably the last knight..." ;
+		mes "Go take the Knight Gray=Prosfero test..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "………";
+		mes "[Knight Edmund]";
+		mes "........." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "人を見誤ったか…";
-		mes "しかしこれにも原因と結果がある。";
-		mes "決定の時が来ればわかること…";
+		mes "[Knight Edmund]";
+		mes "You've misjudged people..." ;
+		mes "But even this has cause and effect." ;
+		mes "You will know when the time comes to make a decision..." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "最後の試験だからしっかりとな。";
-		mes "また、他人に頼るのは騎士の道に";
-		mes "反することである。";
+		mes "[Knight Commander Hermann]";
+		mes "It's the last exam, so make sure you're on top of it." ;
+		mes "Also, it is against the ways of knighthood to rely on others." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "それでは試験を終わらせてきなさい。";
-		mes "そして皆の意見を聞いてみよう。";
+		mes "[Knight Commander Hermann]";
+		mes "Then go and finish your examinations." ;
+		mes "And let's hear what everyone has to say." ;
 		close;
 	case 13:
-		mes "[騎士団長ヘルマン]";
-		mes "それでは試験を終わらせてきなさい。";
-		mes "まだ試験は終わってないぞ。";
+		mes "[Knight Commander Hermann]";
+		mes "Then go finish your exam." ;
+		mes "I haven't finished the exam yet." ;
 		close;
 	default:
-		mes "[騎士団長ヘルマン]";
-		mes "うん " +strcharinfo(0)+ " だな。";
-		mes "試験は難しいかもしれないが、";
-		mes "頑張ってくれたまえ。";
+		mes "[Knight Commander Hermann]";
+		mes "Yeah " +strcharinfo(0)+ "." ;
+		mes "The exam may be difficult, but good luck." ;
 		close;
 	case 14:
 		if(SkillPoint) {
-			mes "[騎士団長へルマン]";
-			mes "むむ、スキルポイントが残っていると";
-			mes "転職させられないぞ。";
-			mes "習得できるスキルを取得してから";
-			mes "また来なさい。";
+			mes "[Knight Commander Hermann]";
+			mes "Hmmm, you can't change jobs if you still have SkillPoints left." ;
+			mes "Get the skills you can learn, then come back." ;
 			close;
 		}
-		mes "[騎士団長ヘルマン]";
-		mes "うむ、騎士の試験を全て終えてきたな。";
-		mes "しかし試験を終えた全ての剣士が";
-		mes "騎士になれるわけではない。";
+		mes "[Knight Commander Hermann]";
+		mes "Mm, you have completed all of the knight's exams." ;
+		mes "But not every swordsman who has completed his exams can become a knight." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験の過程でどれくらい真面目";
-		mes "であったか、誉れあったか、";
-		mes "強さを見せたか…";
-		mes "礼儀を重んじたか、敬意を表したか、";
-		mes "謙遜することができたか…";
+		mes "[Knight Commander Hermann]";
+		mes "How serious, honorable, or strong did you show in the course of the examination..." ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "試験の間見させてもらった。";
-		mes "そして私達の7人の評価によって";
-		mes "騎士転職への決定が下るのだ。";
+		mes "[Knight Commander Hermann]";
+		mes "I was allowed to watch during the examination." ;
+		mes "And according to our seven evaluations, the decision to change knights will be made." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "それでは、皆の評価を";
-		mes "聞いてみようか。";
-		mes "この者をナイトに転職させるか？";
-		mes "シャイロック、貴公の考えはどうか！ ";
+		mes "[Knight Commander Hermann]";
+		mes "So let's hear everyone's evaluations, shall we?" ;
+		mes "Shall this person be transferred to Knight?" ;
+		mes "Shylock, what are your thoughts! ";
 		next;
-		mes "[騎士アンドリュー]";
-		mes "厄介な品を頼んでも、";
-		mes "しっかりと手に入れて来ました。";
-		mes "賛成です！";
-		mes (Sex? "彼": "彼女")+ "はナイトになった後も";
-		mes "まじめに暮らすでしょう。";
+		mes "[Knight Andrew]";
+		mes "I asked for a nasty item and I came away with it." ;
+		mes "I agree!" ;
+		mes ""+(Sex? "He": "She")+ "will live a serious life after Knight." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "うむ、非常に良い評価だな。";
-		mes "シラキューズはどう思うか？";
+		mes "[Knight Commander Hermann]";
+		mes "Mm, very good assessment." ;
+		mes "What do you think of Syracuse?" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "まぁ良いでしょう。";
-		mes "今はあまり気に入りませんが";
-		mes "ナイトになった後に名声を";
-		mes "高めてくれることでしょう。";
+		mes "[Knight James]";
+		mes "Well, it's fine." ;
+		mes "I don't like it much right now, but I'm sure it will bring me more fame after I become Knight." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "うむ。ベネディクト、貴公は？";
+		mes "[Knight Commander Hermann]";
+		mes "Mm. Benedict, what about you?" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "…";
+		mes "[Knight Windsor]";
+		mes "..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "賛成…";
+		mes "[Knight Windsor]";
+		mes "For..." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "君に不満があるわけではなさそうだ。";
-		mes "それではベアトリスの評価を";
-		mes "聞いて見ようか。";
+		mes "[Knight Commander Hermann]";
+		mes "It doesn't sound like he's unhappy with you." ;
+		mes "Then let's hear Beatrice's assessment." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "うん、良いですね！";
+		mes "[Knight Amy]";
+		mes "Yes, it's good!" ;
 		if(Sex) {
-			mes "彼は十分礼儀正しいですから。";
-			mes "今はまだまだですが、";
-			mes "ナイトになれば素敵になりそうです。";
-			mes "ふふ…";
+			mes "He's polite enough." ;
+			mes "He's not quite ready now, but he's going to be wonderful when he becomes a Knight." ;
+			mes "Hmmm..." ;
 		}
 		else {
-			mes "彼女は十分礼儀正しいですから。";
-			mes "しかも可愛いから点数をもっと…";
-			mes "なんて言ってはいけませんね？";
+			mes "She's polite enough, you know." ;
+			mes "And she's cute, so more points..." ;
+			mes "I shouldn't say that, should I?" ;
 		}
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "何か変な評価だが、賛成であることは";
-		mes "間違いなさそうだ。";
-		mes "グロスト、貴公も一言。";
+		mes "[Knight Commander Hermann]";
+		mes "What a strange assessment, but it seems to be in favor of it." ;
+		mes "Gross, you also have a word." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "まだ荒削りだが、";
-		mes "良いモノを持っている。";
-		mes (Sex? "彼": "彼女")+ "の隠された宝石が";
-		mes "私達に光を見せる日が来るでしょう。";
+		mes "[Knight Edmund]";
+		mes "Still rough around the edges, but he's got some good stuff." ;
+		mes ""+(Sex? "he": "she")+ "The day will come when the hidden gems of the "he" will show us the light." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "最後に、プロスフェロ。";
-		mes "話を聞いてみようか。";
+		mes "[Knight Commander Hermann]";
+		mes "Finally, Prosfero." ;
+		mes "Let's hear what he has to say." ;
 		next;
-		mes "[騎士グレー]";
-		mes "私からはもう言うことがありませんな。";
-		mes "若い" +(Sex? "やつ": "お嬢さん")+ "が、勇敢にも";
-		mes "騎士になることを望んだだけで";
-		mes "十分です。";
+		mes "[Knight Gray]";
+		mes "I guess there's nothing more to say from me." ;
+		mes "It is enough that the "young" +(Sex? "guy": "lady")+ "wished to be knighted so bravely." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "皆賛成か。反対は居ないのだな。";
-		mes "それでは最後に私からの評価だ。";
+		mes "[Knight Commander Hermann]";
+		mes "All in favor? No opposition?" ;
+		mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]"; mes "[Knight Commander Hermann]" ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "…";
+		mes "[Knight Commander Hermann]";
+		mes "..." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "賛成だ。";
+		mes "[Knight Commander Hermann]";
+		mes "I agree." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "すべての試験を完璧にクリアしたか";
-		mes "どうかは難しいが、騎士としての徳を";
-		mes "十分に具えていると判断した。";
+		mes "[Knight Commander Hermann]";
+		mes "It is difficult to say whether he has passed all the tests perfectly, but I have determined that he is fully equipped with the virtues of a knight." ;
 		next;
 		unequip;
 		jobchange Job_Knight;
 		set CHANGE_KN,0;
-		mes "[騎士団長ヘルマン]";
-		mes "これで貴公も私達プロンテラ騎士団の";
-		mes "一員だ。";
-		mes "弱い者を護り、誉れ高き騎士を";
-		mes "目指しなさい。";
+		mes "[Knight Commander Hermann]";
+		mes "You are now a member of our Knight Order of Prontera." ;
+		mes "Protect the weak and become a knight of honor." ;
 		next;
 		getitem 656,7;
-		mes "[騎士団長ヘルマン]";
-		mes "そして私達皆、貴公の転職を祝って";
-		mes "贈り物を用意した。";
+		mes "[Knight Commander Hermann]";
+		mes "And all of us have prepared a gift to congratulate you on your new job." ;
 		next;
-		mes "[騎士団長ヘルマン]";
-		mes "それでは行きなさい！";
-		mes "貴公の未来・騎士団の未来に";
-		mes "光あらんことを！";
+		mes "[Knight Commander Hermann]";
+		mes "Then go!" ;
+		mes "May your future and the future of the Order be bright!" ;
 		close;
 	}
 }
 
 //============================================================
-// 一次試験（アイテム収集）
+// First test (item collection)
 //------------------------------------------------------------
-prt_in.gat,75,107,4	script	騎士アンドリュー	65,{
+prt_in.gat,75,107,4 script Knight Andrew 65,{
 	if(Job == Job_Novice) {
-		mes "[騎士アンドリュー]";
-		mes "ノービスですね。";
-		mes "プロンテラ騎士団にようこそ。";
+		mes "[Knight Andrew]";
+		mes "Novice." ;
+		mes "Welcome to the Knight Order of Prontera." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "今は限りなく自分が弱く感じられるが、";
-		mes "努力をすれば強くなれます。";
+		mes "[Knight Andrew]";
+		mes "You may feel as weak as you can be right now, but you can be strong if you work hard." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "明るい未来を夢見て、自分の道を";
-		mes "黙々と歩いて行きなさい。";
+		mes "[Knight Andrew]";
+		mes "Dream of a bright future and walk your path in silence." ;
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士アンドリュー]";
-		mes "騎士団員ですね。最近どうですか？";
+		mes "[Knight Andrew]";
+		mes "You are a Knight Andrew. How are you doing these days?" ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "装備を整えて食べ物も得るには";
-		mes "堅実な習慣が重要ですね。";
-		mes "毎日の戦闘で得られるゼロピー1つ";
-		mes "残さず集めましょう。";
+		mes "[Knight Andrew]";
+		mes "It's important to have solid habits in order to be equipped and get food as well." ;
+		mes "Collect every single zeropy you can get from daily combat." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "だからといって、たくさんの物資を";
-		mes "貪るのも良くないですね。";
-		mes "私達は騎士ですから。";
+		mes "[Knight Andrew]";
+		mes "That said, it's not a good idea to gobble up a lot of supplies." ;
+		mes "Because we are knights." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[騎士アンドリュー]";
-		mes "私達プロンテラ騎士団は、";
-		mes "この大陸の平和のために";
-		mes "努力しています。";
+		mes "[Knight Andrew]";
+		mes "We, the Knights of Prontera, are striving for peace on this continent." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "幾多の戦闘の中にも、";
-		mes "いつか来る明るい未来を";
-		mes "思い描いています。";
+		mes "[Knight Andrew]";
+		mes "In the midst of many battles, we envision a bright future that will one day come." ;
 		close;
 	case 1:
-		mes "[騎士アンドリュー]";
-		mes "こんにちは。何かご用ですか？";
+		mes "[Knight Andrew]";
+		mes "Hello. How can I help you?" ;
 		next;
-		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
-			mes "[騎士アンドリュー]";
-			mes "そうですか…。";
+		if(select("I would like to take the Knight job change test", "Nothing")==2) {
+			mes "[Knight Andrew]";
+			mes "I see..." ;
 			close;
 		}
-		mes "[騎士アンドリュー]";
-		mes "あ、ナイトへの転職を";
-		mes "希望なさる方ですね。お名前は…";
-		mes strcharinfo(0)+ " で正しいですか？";
+		mes "[Knight Andrew]";
+		mes "Oh, you are the one who wants to move to Knight. What is your name..." ;
+		mes ""+strcharinfo(0)+ " is that correct?"" ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "私はプロンテラ騎士団の騎士、";
-		mes "アンドリューシャイロックと言います。";
-		mes "あなたの最初の転職試験を担当します。";
+		mes "[Knight Andrew]";
+		mes "My name is Andrew Shylock, Knight of the Order of Prontera." ;
+		mes "I am in charge of your first career change exam." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "私が知りたいのは誠実さです。";
-		mes "騎士なら誰しも持っていなければ";
-		mes "ならない徳の一つです。";
-		mes "私からの試験は、戦闘で得られる";
-		mes "戦利品を収集してくることです。";
+		mes "[Knight Andrew]";
+		mes "What I want to know is your integrity." ;
+		mes "It is one of the virtues that every knight must have." ;
+		mes "[Knight Andrew]"; mes "My test for you is to go and collect the spoils of the battle." ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "さて、早速始めましょうか。";
+		mes "[Knight Andrew]";
+		mes "Well, let's get started, shall we?" ;
 		next;
-		mes "[騎士アンドリュー]";
-		mes "次のアイテムを集めてきてください。";
+		mes "[Knight Andrew]";
+		mes "Go collect the next item." ;
 		next;
 		set CHANGE_KN,rand(2,3);
-		mes "[騎士アンドリュー]";
+		mes "[Knight Andrew]";
 		if(CHANGE_KN == 2) {
-			mes "年寄り妖精のひげ 5個,";
-			mes "赤いコウモリの翼 5個,";
-			mes "蛾の羽粉 5個,";
-			mes "オーク戦士の証 5個,";
-			mes "爬虫類の舌 5個,";
-			mes "いのししのたてがみ 5個,";
+			mes "5 old fairy whiskers, 5 red bat wings, 5 moth feather powder, 5 orc warrior's marks, 5 reptile tongues, 5 boar's mane,";
 		}
 		else {
-			mes "短い足 5個,";
-			mes "人魚の心臓 5個,";
-			mes "食人植物の花 5個,";
-			mes "貝のむきみ 5個,";
-			mes "古いフライパン 5個,";
-			mes "カタシムリの皮 5個,";
+			mes "5 short legs, 5 mermaid hearts, 5 cannibal plant flowers, 5 shellfish nips, 5 old frying pans, 5 catasimuli skins,";
 		}
 		next;
-		mes "[騎士アンドリュー]";
-		mes "以上です。";
-		mes "しっかり集めてきてください。";
+		mes "[Knight Andrew]";
+		mes "That's all." ;
+		mes "Please go and collect them well." ;
 		close;
 	case 2:
 		setarray '@need,1040,7006,1057,931,903,1028;
@@ -596,66 +484,56 @@ prt_in.gat,75,107,4	script	騎士アンドリュー	65,{
 		setarray '@need,1042,950,1032,966,7031,946;
 		break;
 	case 4:
-		mes "[騎士アンドリュー]";
-		mes "ほら、私からの試験は終わりましたよ。";
-		mes "騎士ジェームズが待っています。";
-		mes "早く行って見てください。";
+		mes "[Knight Andrew]";
+		mes "See, the test is over from me." ;
+		mes "Knight James is waiting for you." ;
+		mes "Please go and see him quickly." ;
 		close;
 	default:
-		mes "[騎士アンドリュー]";
-		mes "何か私に話したいことがあるのですか？";
-		mes "そのような暇があるなら、次の試験を";
-		mes "受けてきなさい。";
-		mes "もう一度申し上げるが、";
-		mes "まじめに試験に臨んでください。";
+		mes "[Knight Andrew]";
+		mes "Is there something you want to tell me?" ;
+		mes "If you have time for that, go take your next exam." ;
+		mes "Once again, I must reiterate that you must take the exam seriously." ;
 		close;
 	case 14:
-		mes "[騎士アンドリュー]";
-		mes "試験を皆終えましたね。お疲れ様。";
-		mes "それでは私たちの騎士団長の所で";
-		mes "皆の評価を聞いてもらってください。";
+		mes "[Knight Andrew]";
+		mes "You have all completed your exams. Good job." ;
+		mes "[Knight Andrew]"; mes "Then please go to our Knight Commander's office and have him listen to everyone's evaluations." ;
 		close;
 	}
-	//2-3の続き
-	mes "[騎士アンドリュー]";
-	mes "お帰りなさい。";
-	mes "アイテムは集めてきましたか？";
-	mes "それでは見てみましょう。";
+	//continued from 2-3
+	mes "[Knight Andrew]";
+	mes "Welcome back." ;
+	mes "Have you collected your items?" ;
+	mes "[Knight Andrew]"; mes "Then let's take a look." ;
 	next;
 	for(set '@i,0; '@i<6; set '@i,'@i+1) {
 		if(countitem('@need['@i]) < 5) {
-			mes "[騎士アンドリュー]";
-			mes "ちょっと待ってください。";
-			mes "全部揃ってないじゃありませんか。";
+			mes "[Knight Andrew]";
+			mes "Wait a minute." ;
+			mes "You don't have all of them." ;
 			next;
-			mes "[騎士アンドリュー]";
-			mes "まともな準備もしないでナイトに";
-			mes "なれるとでも思ったのですか？";
-			mes "頼んだアイテムを忘れてしまったなら";
-			mes "もう一度言いますよ。";
+			mes "[Knight Andrew]";
+			mes "Did you think you could be Knight without proper preparation?" ;
+			mes "If you forgot the item you asked for, I'll say it again." ;
 			next;
-			mes "[騎士アンドリュー]";
+			mes "[Knight Andrew]";
 			for(set '@i,0; '@i<6; set '@i,'@i+1)
-				mes getitemname('@need['@i])+ " 5個,";
+				mes ""+getitemname('@need['@i])+ " 5 items,";
 			next;
-			mes "[騎士アンドリュー]";
-			mes "もう一度申し上げるが、";
-			mes "真面目に試験に臨んでください。";
-			mes "では行きなさい。";
+			mes "[Knight Andrew]";
+			mes "Once again, please take the exam seriously." ;
+			mes "Then go." ;
 			close;
 		}
 	}
-	mes "[騎士アンドリュー]";
-	mes "完璧ですね。お疲れ様でした。";
-	mes "このアイテムは、騎士団の";
-	mes "財政に大きく貢献するでしょう。";
+	mes "[Knight Andrew]";
+	mes "Perfect. Thanks for your hard work." ;
+	mes "This item will be a great addition to the finances of the Order." ;
 	next;
-	mes "[騎士アンドリュー]";
-	mes "それでは私の同僚騎士である";
-	mes "ジェームズ=シラキューズのところへ";
-	mes "行ってみてください。";
-	mes "残った試験も、今まで暮らしてきた";
-	mes "ように真面目に望むようお願いします。";
+	mes "[Knight Andrew]";
+	mes "Then please go to my fellow Knight James-Syracuse." ;
+	mes "I ask that you hope that the remaining examinations will be as serious as you have lived." ;
 	for(set '@i,0; '@i<6; set '@i,'@i+1)
 		delitem '@need['@i],5;
 	set CHANGE_KN,4;
@@ -663,563 +541,479 @@ prt_in.gat,75,107,4	script	騎士アンドリュー	65,{
 }
 
 //============================================================
-// 二次試験（口頭試問）
+// Secondary Examination (Oral Examination)
 //------------------------------------------------------------
-prt_in.gat,71,91,0	script	騎士ジェームズ	65,{
+prt_in.gat,71,91,0 script Knight James 65,{
 	if(Job == Job_Novice) {
-		mes "[騎士ジェームズ]";
-		mes "おう、ノービスがこんな所に";
-		mes "どんな用かな？";
+		mes "[Knight James]";
+		mes "Oh, what's Novice doing here?" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "もしナイトに関心があっても、";
-		mes "ノービスからナイトに転職することは";
-		mes "できないんだ。";
+		mes "[Knight James]";
+		mes "If you are interested in Knight, you can't move from Novice to Knight." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "剣士で修練を積んでから";
-		mes "またいらっしゃい";
+		mes "[Knight James]";
+		mes "[Knight James]"; mes "Come back after you have trained as a Swordsman.
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士ジェームズ]";
-		mes "よう元気か！騎士団も昔のままだよ。";
+		mes "[Knight James]";
+		mes "How are you! The Knights are just as they used to be." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "新しい騎士団員達をずっと受け持って";
-		mes "きたが、ごつい奴ばかりだ。";
-		mes "ところで、どこかで我ら騎士団の";
-		mes "名誉を汚すようなやつを見かけたり";
-		mes "しなかったか？";
+		mes "[Knight James]";
+		mes "I've been taking on new Knights for a while now, and they're all burly guys." ;
+		mes "By the way, have you seen anyone anywhere who would dishonor our Order?" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "もしそんなやつを見かけたら、";
-		mes "俺の代わりに叱ってやってくれ。";
+		mes "[Knight James]";
+		mes "If you see such a man, scold him for me." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[騎士ジェームズ]";
-		mes "攻撃と防御、これらを同時に";
-		mes "できないためか、両手剣を使えば";
-		mes "盾を捨てる事になるので";
-		mes "防御が弱くなる。この欠点を";
-		mes "克服できる武器はないのかな。";
+		mes "[Knight James]";
+		mes "Perhaps because we cannot attack and defend, both at the same time, or because if we use a two-handed sword, we will have to discard our shield, which weakens our defense. Is there any weapon that can overcome this drawback?" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "そんなモノを作ることができたら";
-		mes "騎士達の役に立つはずだが。";
+		mes "[Knight James]";
+		mes "If we could make such a thing, it would be useful for the knights." ;
 		close;
 	case 1:
 	case 2:
 	case 3:
 	case 4:
-		mes "[騎士ジェームズ]";
-		mes "ん、俺に何か用かい？";
+		mes "[Knight James]";
+		mes "Hmm, you wanted to see me?" ;
 		break;
 	case 5:
-		mes "[騎士ジェームズ]";
-		mes "ん、またお前か。何の用だ？";
+		mes "[Knight James]";
+		mes "Hmm, you again. What do you want?" ;
 		break;
 	case 6:
-		mes "[騎士ジェームズ]";
-		mes "ん、まだ俺に用かい？";
+		mes "[Knight James]";
+		mes "Hmm, you still want to see me?" ;
 		break;
 	default:
-		mes "[騎士ジェームズ]";
-		mes "あ、すまんが俺は忙しい。";
-		mes "試験を全部終わらせな。";
+		mes "[Knight James]";
+		mes "Oh, sorry, I'm busy." ;
+		mes "Finish all your exams." ;
 		close;
 	case 14:
-		mes "[騎士ジェームズ]";
-		mes "ふむ、他の同僚の試験を全て終えたか。";
+		mes "[Knight James]";
+		mes "Hmm, you've finished all your other colleagues' exams." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "なら、騎士団長の話を聞いてこい。";
-		mes "俺達も参加するから。";
+		mes "[Knight James]";
+		mes "Then go and hear what the Knight Commander has to say." ;
+		mes "We'll be there." ;
 		close;
 	}
 	next;
-	if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
-		mes "[騎士ジェームズ]";
-		mes (CHANGE_KN == 5)? "用が無いなら帰れ！": "なんだ、水臭いな。";
+	if(select("I would like to take the Knight job change test", "Nothing")==2) {
+		mes "[Knight James]";
+		mes ""+(CHANGE_KN == 5)? "If you have nothing to do, go home!" : "What a watery mess." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 1:
-		mes "[騎士ジェームズ]";
-		mes "ナイト転職試験か…";
-		mes "そういえば、申し込んでたヤツだな。";
-		mes "名前は " +strcharinfo(0)+ " だったか…";
+		mes "[Knight James]";
+		mes "Knight job change exam..." ;
+		mes "Oh, by the way, that's the guy I applied for..." ;
+		mes "The name was " +strcharinfo(0)+ "..." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "でも、俺に会う前に他の同僚に";
-		mes "会ってから来てくれ。";
-		mes "まだ見たところ一つめの試験を";
-		mes "受けていないだろう？";
+		mes "[Knight James]";
+		mes "But you'll have to come and see my other colleagues before you see me." ;
+		mes "You haven't taken the first test I've seen yet, have you?" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "一つでも試験を受けてきたら";
-		mes "俺の試験を受けさせてやる。";
+		mes "[Knight James]";
+		mes "If you've taken even one exam, I'll let you take mine." ;
 		close;
-	default:	//2～3のとき
-		mes "[騎士ジェームズ]";
-		mes "はは、こらこら…";
-		mes "お前はアンドリューの試験を";
-		mes "受けてる最中だろう？";
-		mes "それを無視して俺の所に来るなんて…。";
+	default: //when 2 or 3
+		mes "[Knight James]";
+		mes "Ha ha, c'mon..." ;
+		mes "You're in the middle of Andrew's exam, aren't you?" ;
+		mes "How dare you ignore that and come to me...." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "ほら、さっさと行け！";
+		mes "[Knight James]";
+		mes "Come on, get the hell out of here!" ;
 		close;
 	case 4:
-		mes "[騎士ジェームズ]";
-		mes "おう、一つめの試験が終わったか。";
-		mes "よし、俺がお前のためにちょっと";
-		mes "時間をくれてやろう。";
+		mes "[Knight James]";
+		mes "Oh, the first test is over." ;
+		mes "[Knight James]"; mes "Okay, I'll give you a moment to yourself." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "俺の名はジェームズ=シラキューズ。";
-		mes "当然プロンテラ騎士団所属の騎士だ。";
+		mes "[Knight James]";
+		mes "My name is James-Syracuse." ;
+		mes "I'm a Knight of the Order of Prontera, of course." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "お前がこれから受ける試験は、";
-		mes "お前がどれだけ騎士というものを";
-		mes "理解しているか、また、騎士の名誉";
-		mes "に関する君の考えを聞きたいね。";
+		mes "[Knight James]";
+		mes "The test you are about to take is how well you understand knighthood, and I would like to hear your thoughts on the honor of knighthood." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "緊張しなくていいぞ。";
-		mes "そんなに時間はかからない。";
-		mes "簡単な質問だ。";
+		mes "[Knight James]";
+		mes "[Knight James]"; mes "Don't be nervous." ;
+		mes "It won't take that long." ;
+		mes "It's a simple question." ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "それでは始める。すぐ答えろよ。";
+		mes "[Knight James]";
+		mes "I'll begin then. Answer me right away." ;
 		set CHANGE_KN,5;
 		break;
 	case 5:
-		mes "[騎士ジェームズ]";
-		mes "そうか。今度はまともな答えを";
-		mes "期待しているぞ。";
-		mes "次間違えたら…覚悟しろよ！";
+		mes "[Knight James]";
+		mes "Right. I'm hoping for a decent answer this time." ;
+		mes "If you make a mistake next time... Brace yourself!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "それでは始める。";
+		mes "[Knight James]";
+		mes "Then we'll begin." ;
 		break;
 	case 6:
-		mes "[騎士ジェームズ]";
-		mes "こら、お前はもう俺の試験を受けた";
-		mes "だろう！他の同僚の所に行ってくれ。";
-		mes "騎士ウインザーが待っていると";
-		mes "言ったはずだが。";
+		mes "[Knight James]";
+		mes "Hey, you already took my test! Go to one of my other colleagues." ;
+		mes "I told you Knight Windsor would be waiting for you." ;
 		close;
 	}
-	//口頭試問ここから
+	// oral exam here
 	next;
-	mes "[騎士ジェームズ]";
-	mes "ナイトは高い物理攻撃力と防御力、";
-	mes "攻撃速度と共に力強い両手剣スキルを";
-	mes "そなえた職業だ。";
-	mes "そこで、代表的な両手剣スキルである";
-	mes "「ツーハンドクイッケン」を使うことが";
-	mes "できない武器を答えろ。";
+	mes "[Knight James]";
+	mes "Knight is a profession that combines high physical attack and defense, attack speed, and powerful two-handed sword skills." ;
+	mes "Then, answer the weapon that does not allow the use of the typical two-handed sword skill, Two Handed Quicken." ;
 	next;
-	if(select("カタナ","スレイヤー","ブロードソード","フランベルジェ") != 4) {
-		mes "[騎士ジェームズ]";
-		mes "違う！それは両手剣だから使える！";
-		mes "ナイトになろうというやつがナイトの";
-		mes "スキルを知らなくてどうする！";
+	if(select("katana", "slayer", "broadsword", "flamberge") ! = 4) {
+		mes "[Knight James]";
+		mes "No! That's a two-handed sword, so it works!" ;
+		mes "What would a would-be Knight do if he didn't know the Knight's skills!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "分からなければ、街を出て";
-		mes "その辺のナイトをつかまえて";
-		mes "聞いてみな。";
-		mes "ナイトについてもうちょっと";
-		mes "調べてくるように。";
+		mes "[Knight James]";
+		mes "If you don't know, go out of town and grab a Knight around the corner and ask him." ;
+		mes "Do a little more research on Knight." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "よし、それじゃスキルについて";
-	mes "もう少し学んでみようか。";
-	mes "「ボウリングバッシュ」を習得するのに";
-	mes "必要でないスキルは？";
+	mes "[Knight James]";
+	mes "Okay, so let's learn a little more about the skill." ;
+	mes "What skills are not required to learn the 'bowling bash'?" ;
 	next;
-	if(select("両手剣修練 Lv.5","マグナムブレイク Lv.3","プロボック Lv.10","バッシュ Lv.10") != 3) {
-		mes "[騎士ジェームズ]";
-		mes "違う！それを覚えなければ";
-		mes "永遠にボウリングバッシュを";
-		mes "使えないぞ！";
-		mes "ナイトになろうというやつがナイトの";
-		mes "スキルを知らなくてどうする！";
+	if(select("Two Handed Sword Training Lv.5", "Magnum Break Lv.3", "Provoc Lv.10", "Bash Lv.10") ! = 3) {
+		mes "[Knight James]";
+		mes "No! If you don't learn that, you won't be able to use the bowling bash forever!" ;
+		mes "What would a would-be Knight do if he didn't know Knight skills!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "分からなければ、街を出て";
-		mes "その辺のナイトをつかまえて";
-		mes "聞いてみな。";
-		mes "ナイトについてもうちょっと";
-		mes "調べてくるように。";
+		mes "[Knight James]";
+		mes "If you don't know, go out of town and grab a Knight around the corner and ask him." ;
+		mes "Do a little more research on Knight." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "ナイトは槍を扱うことができる。";
-	mes "そして槍を利用したスキルを";
-	mes "使うことができる。その中の一つ、";
-	mes "「ブランディッシュスピア」のために";
-	mes "習得が必要でないものを答えろ。";
+	mes "[Knight James]";
+	mes "Knight can handle a spear." ;
+	mes "And he can use skills that utilize the spear. Answer one of these that does not require mastery for the Brandish Spear." ;
 	next;
-	if(select("ピアース Lv.5","スピアスタブ Lv.3","スピアブーメラン Lv.3","ライディング Lv.1") != 3) {
-		mes "[騎士ジェームズ]";
-		mes "違う！それを覚えなければ";
-		mes "永遠にブランディッシュスピアを";
-		mes "使えないぞ！";
-		mes "ナイトになろうというやつがナイトの";
-		mes "スキルを知らなくてどうする！";
+	if(select("Pierce Lv.5", "Spear Stab Lv.3", "Spear Boomerang Lv.3", "Riding Lv.1") ! = 3) {
+		mes "[Knight James]";
+		mes "No! If you don't learn that, you won't be able to use Brandish Spear forever!" ;
+		mes "What would a would-be Knight do if he didn't know Knight skills!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "分からなければ、街を出て";
-		mes "その辺のナイトをつかまえて";
-		mes "聞いてみな。";
-		mes "ナイトについてもうちょっと";
-		mes "調べてくるように。";
+		mes "[Knight James]";
+		mes "If you don't know, go out of town and grab a Knight around the corner and ask him." ;
+		mes "Do a little more research on Knight." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "槍の中にも、他の武器同様";
-	mes "属性を持ったものが存在する。";
-	mes "では次の中で、「念」属性である";
-	mes "ナイトメアにダメージを与えられる";
-	mes "槍はどれか。";
+	mes "[Knight James]";
+	mes "Some spears, like other weapons, have attributes." ;
+	mes "So which of the following spears can damage a Knight mare with the 'ghost' attribute?" ;
 	next;
-	if(select("ゼピュロス","ランス","ギザルム","クレセントサイダー") != 1) {
-		mes "[騎士ジェームズ]";
-		mes "違う！そんなもので突いたところで";
-		mes "空振りするだけだ！";
-		mes "ナイトになろうというやつがナイトの";
-		mes "武器について知らなくてどうする！";
+	if(select("Zephyrus", "Lance", "Gizarmes", "Crescent Cider") ! = 1) {
+		mes "[Knight James]";
+		mes "No! You'll only strike out if you poke with that thing!" ;
+		mes "What would a would-be Knight do if he didn't know about Knight weapons!" ;
+		next. mes "[Knight James]"; mes "[Knight James]
+		mes "[Knight James]";
+		mes "If you don't know, go out of town and grab a Knight around the corner and ask him." ;
+		mes "Do a little more research on Knight." ;
+		close;
+	}
+	mes "[Knight James]";
+	mes "Once you become a Knight, you will be able to travel on Peko Peko." ;
+	mes "Instead, your attack speed will be reduced." ;
+	mes "However, the attack speed can be increased by learning the cavalry training skill." ;
+	next;
+	mes "[Knight James]";
+	mes "So what is the attack speed when the cavalry discipline is mastered to Lv.3?" ;
+	next;
+	if(select("70% of normal", "80% of normal", "90% of normal", "100% of normal") ! = 2) {
+		mes "[Knight James]";
+		mes "No! If you don't know anything about cavalry training, don't ride Pecopeko!" ;
+		mes "How can a would-be Knight not know about Knight weapons!" ;
 		next;
-		mes "[騎士ジェームズ]";
-		mes "分からなければ、街を出て";
-		mes "その辺のナイトをつかまえて";
-		mes "聞いてみな。";
-		mes "ナイトについてもうちょっと";
-		mes "調べてくるように。";
+		mes "[Knight James]";
+		mes "If you don't know, go out of town and grab a Knight around the corner and ask him." ;
+		mes "Do a little more research on Knight." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "ナイトになればペコペコに乗って";
-	mes "移動することが可能になる。";
-	mes "その代わり攻撃速度が下がる。";
-	mes "しかし、騎兵修練スキルを習得する";
-	mes "ことにより攻撃速度を上げることが";
-	mes "できる。";
+	mes "[Knight James]";
+	mes "Okay, if you can answer this well, your knowledge of Knight is good for now." ;
+	mes "So let me ask you a few personal questions about Knight." ;
 	next;
-	mes "[騎士ジェームズ]";
-	mes "では、騎兵修練を Lv.3まで";
-	mes "習得した時の攻撃速度は";
-	mes "どうなるか？";
+	mes "[Knight James]";
+	mes "What should we do when we meet a newbie in town asking for ad baisu?" ;
 	next;
-	if(select("通常の 70%","通常の 80%","通常の 90%","通常の 100%") != 2) {
-		mes "[騎士ジェームズ]";
-		mes "違う！騎兵修練について知らないなら";
-		mes "ペコペコになど乗るな！";
-		mes "ナイトになろうというやつがナイトの";
-		mes "武器について知らなくてどうする！";
-		next;
-		mes "[騎士ジェームズ]";
-		mes "分からなければ、街を出て";
-		mes "その辺のナイトをつかまえて";
-		mes "聞いてみな。";
-		mes "ナイトについてもうちょっと";
-		mes "調べてくるように。";
-		close;
-	}
-	mes "[騎士ジェームズ]";
-	mes "よし、この位答えられるなら";
-	mes "ナイトの知識はひとまず良いだろう。";
-	mes "それではナイトについての個人的な";
-	mes "質問を少ししてみようか。";
-	next;
-	mes "[騎士ジェームズ]";
-	mes "街でアドバイスを求める初心者に";
-	mes "出会った時どうするべきか？";
-	next;
-	switch(select("適当な狩り場を薦めてあげる","攻撃を受けてあげて助ける","お金とアイテムをたっぷりあげる")) {
+	switch(select("I'll recommend a suitable hunting ground", "I'll take the attack and help him", "I'll give him plenty of money and items")) {
 	case 1:
-		mes "[騎士ジェームズ]";
-		mes "そうだ。初心者もいつかは自立";
-		mes "していかなければならない。";
-		mes "自分の力で成長していくのに";
-		mes "適した場所を教えてあげることは";
-		mes "非常に大切なことだ。";
+		mes "[Knight James]";
+		mes "Yes. Beginners will have to become independent at some point." ;
+		mes "It is very important to show them the right place to grow on their own." ;
 		next;
 		break;
 	case 2:
-		mes "[騎士ジェームズ]";
-		mes "何か思い違いをしているね。";
-		mes "それが本当にその人のために";
-		mes "なるだろうか？";
-		mes "うぬぼれが強い。出直せ！";
+		mes "[Knight James]";
+		mes "You're making a mistake." ;
+		mes "Would that really help the person?" ;
+		mes "[Knight James]"; mes "You are so vain. Come back out!" ;
 		close;
 	case 3:
-		mes "[騎士ジェームズ]";
-		mes "ふむ。相手は喜ぶかもしれないが、";
-		mes "それは毒をあげるようなものだ。";
-		mes "助けるどころか、相手をだめにして";
-		mes "しまう。出直せ！";
+		mes "[Knight James]";
+		mes "Hmm. The other person might be pleased, but that's like giving them poison." ;
+		mes "Instead of helping them, you're ruining them. Come back out!" ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "じゃあ、パーティ内では";
-	mes "どのように動くべきか？";
+	mes "[Knight James]";
+	mes "So how should we work within the party?" ;
 	next;
-	switch(select("先頭に立って皆を守る","モンスターを集めて皆殺しにさせる","戦闘と関係なくアイテムを拾う")) {
+	switch(select("lead the way and protect everyone", "gather monsters and let them kill everyone", "pick up items regardless of combat")) {
 	case 1:
-		mes "[騎士ジェームズ]";
-		mes "まさにそうだ！俺達騎士の強靭な";
-		mes "体力と攻撃力はパーティ内で";
-		mes "本当に重要な役割をする。";
-		mes "常にその考えでいるように。";
+		mes "[Knight James]";
+		mes "That's exactly right! Our knights' strong physical strength and offensive power really play an important role in the party." ;
+		mes "Always keep that in mind." ;
 		next;
 		break;
 	case 2:
-		mes "[騎士ジェームズ]";
-		mes "…お前本気か？";
-		mes "それでどれだけ周りに被害が出るか";
-		mes "わかったものじゃないぞ。";
-		mes "もう帰れ！";
+		mes "[Knight James]";
+		mes "... Are you serious?" ;
+		mes "[Knight James]"; mes "... you don't know how much damage that could do to the surrounding area." ;
+		mes "Go home already!" ;
 		close;
 	case 3:
-		mes "[騎士ジェームズ]";
-		mes "…";
-		mes "やる気が無いなら帰っていいぞ。";
+		mes "[Knight James]";
+		mes "..." ;
+		mes "If you're not up to it, you can leave." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "最後に、騎士にとって一番大事な";
-	mes "ものとは何か？";
+	mes "[Knight James]";
+	mes "Finally, what is the most important thing to a knight?" ;
 	next;
-	switch(select("名誉","金銭","地位")) {
+	switch(select("honor", "money", "status")) {
 	case 1:
-		mes "[騎士ジェームズ]";
-		mes "そう、騎士は名誉だ！";
-		mes "名誉のために生き、名誉のために死ぬ。";
-		mes "いつも心に入れておかねばならない。";
+		mes "[Knight James]";
+		mes "Yes, knight is honor!" ;
+		mes "Live for honor, die for honor." ;
+		mes "We must always keep it in mind." ;
 		next;
 		break;
 	case 2:
-		mes "[騎士ジェームズ]";
-		mes "腐った根性だ！どこへでも行け！";
-		mes "俺達の騎士団では、お前のような奴を";
-		mes "受け入れることはできない。";
+		mes "[Knight James]";
+		mes "Rotten guts! Go wherever you want!" ;
+		mes "[Knight James]"; mes "Our Order can't take in guys like you." ;
 		close;
 	case 3:
-		mes "[騎士ジェームズ]";
-		mes "出世のために戦うような根性の";
-		mes "曲がった奴は、俺達の騎士団に";
-		mes "入れることはできない。";
+		mes "[Knight James]";
+		mes "We can't accept a guy with a crooked gut who fights to get ahead in our Order." ;
 		close;
 	}
-	mes "[騎士ジェームズ]";
-	mes "よし、俺からの試験は終わりだ。";
+	mes "[Knight James]";
+	mes "Okay, the test is over from me." ;
 	next;
-	mes "[騎士ジェームズ]";
-	mes "騎士ウインザーがお前を待っている。";
-	mes "無口なやつだから言葉に気をつけろ。";
+	mes "[Knight James]";
+	mes "Knight Windsor is waiting for you." ;
+	mes "[Knight James]"; mes "He's a mute fellow, so watch your words." ;
 	set CHANGE_KN,6;
 	close;
 }
 
 //============================================================
-// 三次試験（戦闘試験）
+// Tertiary test (combat test)
 //------------------------------------------------------------
-prt_in.gat,79,94,4	script	騎士ウインザー	733,{
-	mes "[騎士ウインザー]";
-	mes "……";
+prt_in.gat,79,94,4 script Knight Windsor 733,{
+	mes "[Knight Windsor]";
+	mes "......" ;
 	next;
 	if(Job == Job_Novice) {
-		mes "[騎士ウインザー]";
-		mes "外で遊びなさい…";
+		mes "[Knight Windsor]";
+		mes "Go outside and play..." ;
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士ウインザー]";
-		mes "話しかけるな…";
+		mes "[Knight Windsor]";
+		mes "Don't talk to him..." ;
 		close;
 	}
-	if(Job != Job_Swordman) {
-		mes "[騎士ウインザー]";
-		mes "何の用だ…";
+	if(Job ! = Job_Swordman) {
+		mes "[Knight Windsor]";
+		mes "What do you want..." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[騎士ウインザー]";
-		mes "話し掛けるな…";
+		mes "[Knight Windsor]";
+		mes "Don't talk to him..." ;
 		close;
 	case 1:
 	case 2:
 	case 3:
-	case 4:
+	
 	case 5:
-		mes "[騎士ウインザー]";
-		mes "何の用だ…";
+		mes "[Knight Windsor]";
+		mes "What do you want..." ;
 		next;
-		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
-			mes "[騎士ウインザー]";
-			mes "……";
+		if(select("I would like to take the Knight job change exam", "Nothing")==2) {
+			mes "[Knight Windsor]";
+			mes "......" ;
 			close;
 		}
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "私の番ではない…";
+		mes "[Knight Windsor]";
+		mes "Not my turn..." ;
 		close;
 	case 6:
 	case 7:
-		mes "[騎士ウインザー]";
-		mes (CHANGE_KN == 7)? "…またか…何の用だ。": "何の用だ…";
+		mes "[Knight Windsor]";
+		mes ""+(CHANGE_KN == 7)? "... Again... What do you want?" : "What do you want..." ;
 		next;
-		if(select("ナイト転職試験を受けたいです","何でもないです")==2) {
-			mes "[騎士ウインザー]";
-			mes "……";
+		if(select("I would like to take the Knight job change exam", "Nothing")==2) {
+			mes "[Knight Windsor]";
+			mes "......" ;
 			close;
 		}
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "…ついて来なさい。";
+		mes "[Knight Windsor]";
+		mes "... Follow me." ;
 		if(CHANGE_KN == 6)
 			set CHANGE_KN,7;
 		close2;
 		warp "job_knt.gat",89,101;
 		end;
 	default:
-		mes "[騎士ウインザー]";
-		mes "戦闘がしたいのか…";
+		mes "[Knight Windsor]";
+		mes "You want a battle..." ;
 		close;
 	case 14:
-		mes "[騎士ウインザー]";
-		mes "団長のところへ…";
+		mes "[Knight Windsor]";
+		mes "Go to the Lord Commander..." ;
 		close;
 	}
 }
 
-job_knt.gat,89,106,4	script	騎士ウインザー#Test	733,{
-	mes "[騎士ウインザー]";
-	mes "……";
+job_knt.gat,89,106,4 script Knight Windsor#Test 733,{
+	mes "[Knight Windsor]";
+	mes "......" ;
 	next;
-	mes "[騎士ウインザー]";
-	mes "質問があるのか…？";
+	mes "[Knight Windsor]";
+	mes "You have a question...?" ;
 	next;
-	switch(select("どんな試験なんでしょう？","試験はどのように進むんですか？","ここから出たいです","いいえ")) {
+	switch(select("What kind of exam is it?" , "How is the exam going to go?" , "I want to get out of here", "No")) {
 	case 1:
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "モンスターとの戦闘だ…";
+		mes "[Knight Windsor]";
+		mes "It's a battle with monsters..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "全て倒しなさい…";
+		mes "[Knight Windsor]";
+		mes "Kill them all..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "３段階全て終わらせなさい…";
+		mes "[Knight Windsor]";
+		mes "Finish all three steps..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "１段階３分与える…";
+		mes "[Knight Windsor]";
+		mes "Give 3 minutes per phase..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		close;
 	case 2:
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "控え室に入りなさい…";
+		mes "[Knight Windsor]";
+		mes "Enter the waiting room..." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "それではすぐに始める。";
+		mes "[Knight Windsor]";
+		mes "Then we will begin immediately." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "他の者が試験中なら待つ。";
+		mes "[Knight Windsor]";
+		mes "Wait if others are testing." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "一人終わったらすぐに入る。";
+		mes "[Knight Windsor]";
+		mes "Enter as soon as one finishes." ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		close;
 	case 3:
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		next;
-		mes "[騎士ウインザー]";
-		mes "…そうか……";
+		mes "[Knight Windsor]";
+		mes "... I see. ......" ;
 		close2;
 		warp "prt_in.gat",80,100;
 		end;
 	case 4:
-		mes "[騎士ウインザー]";
-		mes "……";
+		mes "[Knight Windsor]";
+		mes "......" ;
 		close;
 	}
 OnInit:
-	waitingroom "控室",20,"騎士ウインザー#Test::OnWarp",1;
+	waitingroom "waiting room",20, "Knight Windsor#Test::OnWarp",1;
 	end;
 OnWarp:
 	disablewaitingroomevent;
 	initnpctimer "KN_Timer";
-	set getvariableofnpc('count,"KN_Test3"),12;
-	monster "job_knt.gat",39,150,"--ja--",1114,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",39,142,"--ja--",1114,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",35,146,"--ja--",1100,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",47,150,"--ja--",1114,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",47,142,"--ja--",1114,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,137,"--ja--",1160,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,137,"--ja--",1095,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,137,"--ja--",1105,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,155,"--ja--",1160,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,155,"--ja--",1095,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",43,155,"--ja--",1105,1,"KN_Test3::OnKilled1";
-	monster "job_knt.gat",52,146,"--ja--",1100,1,"KN_Test3::OnKilled1";
+	set getvariableofnpc('count, "KN_Test3"),12;
+	monster "job_knt.gat",39,150,"--en--",1114,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",39,142,"--ja--",1114,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",35,146,"--ja--",1100,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",47,150,"--ja--",1114,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",47,142,"--ja--",1114,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,137,"--ja--",1160,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,137,"--ja--",1095,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,137,"--ja--",1105,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,155,"--ja--",1160,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,155,"--ja--",1095,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",43,155,"--ja--",1105,1, "KN_Test3::OnKilled1";
+	monster "job_knt.gat",52,146,"--ja--",1100,1, "KN_Test3::OnKilled1";
 	warpwaitingpc "job_knt.gat",43,147,1;
 	end;
 }
 
-job_knt.gat,0,0,0	script	KN_Test3	-1,{
+job_knt.gat,0,0,0 script KN_Test3 -1,{
 	end;
 OnKilled1:
 	set 'count,'count-1;
 	if('count)
 		end;
-	initnpctimer "KN_Timer";	//メッセージ選択待ちタイムも3分
-	mes "[騎士ウインザー]";
-	mes "……";
+	initnpctimer "KN_Timer"; //Message selection wait time is also 3 minutes
+	mes "[Knight Windsor]";
+	mes "......" ;
 	next;
-	mes "[騎士ウインザー]";
-	mes "次の段階に進みなさい…";
+	mes "[Knight Windsor]";
+	mes "Proceed to the next step..." ;
 	close2;
-	initnpctimer "KN_Timer";	//選択したのでタイマー初期化
+	initnpctimer "KN_Timer"; //initialize timer since we selected it
 	set 'count,12;
-	monster "job_knt.gat",34,52,"--ja--",1119,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",29,52,"--ja--",1111,2,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",53,52,"--ja--",1119,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",58,52,"--ja--",1111,2,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",43,42,"--ja--",1106,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",43,62,"--ja--",1106,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",57,64,"--ja--",1030,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",57,39,"--ja--",1030,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",31,64,"--ja--",1030,1,"KN_Test3::OnKilled2";
-	monster "job_knt.gat",31,39,"--ja--",1030,1,"KN_Test3::OnKilled2";
+	monster "job_knt.gat",34,52,"--en--",1119,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",29,52,"--ja--",1111,2, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",53,52,"--ja--",1119,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",58,52,"--ja--",1111,2, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",43,42,"--ja--",1106,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",43,62,"--ja--",1106,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",57,64,"--ja--",1030,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",57,39,"--ja--",1030,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",31,64,"--ja--",1030,1, "KN_Test3::OnKilled2";
+	monster "job_knt.gat",31,39,"--ja--",1030,1, "KN_Test3::OnKilled2";
 	warp "job_knt.gat",43,52;
 	end;
 OnKilled2:
@@ -1227,21 +1021,21 @@ OnKilled2:
 	if('count)
 		end;
 	initnpctimer "KN_Timer";
-	mes "[騎士ウインザー]";
-	mes "……";
+	mes "[Knight Windsor]";
+	mes "......" ;
 	next;
-	mes "[騎士ウインザー]";
-	mes "あと一段階…";
+	mes "[Knight Windsor]";
+	mes "One more step..." ;
 	close2;
 	initnpctimer "KN_Timer";
 	set 'count,7;
-	monster "job_knt.gat",136,152,"--ja--",1122,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",150,152,"--ja--",1123,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",143,145,"--ja--",1124,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",136,158,"--ja--",1280,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",130,165,"--ja--",1125,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",156,165,"--ja--",1126,1,"KN_Test3::OnKilled3";
-	monster "job_knt.gat",143,167,"--ja--",1258,1,"KN_Test3::OnKilled3";
+	monster "job_knt.gat",136,152,"--en--",1122,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",150,152,"--ja--",1123,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",143,145,"--ja--",1124,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",136,158,"--ja--",1280,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",130,165,"--ja--",1125,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",156,165,"--ja--",1126,1, "KN_Test3::OnKilled3";
+	monster "job_knt.gat",143,167,"--ja--",1258,1, "KN_Test3::OnKilled3";
 	warp "job_knt.gat",143,152;
 	end;
 OnKilled3:
@@ -1249,508 +1043,427 @@ OnKilled3:
 	if('count)
 		end;
 	initnpctimer "KN_Timer";
-	mes "[騎士ウインザー]";
-	mes "……";
+	mes "[Knight Windsor]";
+	mes "......" ;
 	next;
-	mes "[騎士ウインザー]";
-	mes "試験終了…";
+	mes "[Knight Windsor]";
+	mes "Examination completed..." ;
 	next;
-	mes "[騎士ウインザー]";
-	mes "ここを出て";
-	mes "エイミー=ベアトリスに";
-	mes "会いなさい。";
+	mes "[Knight Windsor]";
+	mes "Leave here and meet Amy-Beatrice." ;
 	close2;
 	stopnpctimer "KN_Timer";
 	set CHANGE_KN,8;
 	warp "prt_in.gat",80,100;
-	killmonster "job_knt.gat","KN_Test3::OnKilled1";
-	killmonster "job_knt.gat","KN_Test3::OnKilled2";
-	killmonster "job_knt.gat","KN_Test3::OnKilled3";
-	enablewaitingroomevent "騎士ウインザー#Test";
+	killmonster "job_knt.gat", "KN_Test3::OnKilled1";
+	killmonster "job_knt.gat", "KN_Test3::OnKilled2";
+	killmonster "job_knt.gat", "KN_Test3::OnKilled3";
+	enablewaitingroomevent "Knight Windsor#Test";
 	end;
 }
 
-job_knt.gat,0,0,0	script	KN_Timer	-1,{	//試験中および各段階クリア後のnext待ちタイマー
+job_knt.gat,0,0,0 script KN_Timer -1,{ //waiting for next timer during test and after each stage is cleared
 	end;
 OnTimer180000:
 	stopnpctimer;
-	areawarp "job_knt.gat",22,126,65,165,"prt_in.gat",80,100;
-	areawarp "job_knt.gat",22,32,65,71,"prt_in.gat",80,100;
-	areawarp "job_knt.gat",122,132,165,171,"prt_in.gat",80,100;
-	killmonster "job_knt.gat","KN_Test3::OnKilled1";
-	killmonster "job_knt.gat","KN_Test3::OnKilled2";
-	killmonster "job_knt.gat","KN_Test3::OnKilled3";
-	enablewaitingroomevent "騎士ウインザー#Test";
+	areawarp "job_knt.gat",22,126,65,165, "prt_in.gat",80,100;
+	areawarp "job_knt.gat",22,32,65,71, "prt_in.gat",80,100;
+	areawarp "job_knt.gat",122,132,165,171, "prt_in.gat",80,100;
+	killmonster "job_knt.gat", "KN_Test3::OnKilled1";
+	killmonster "job_knt.gat", "KN_Test3::OnKilled2";
+	killmonster "job_knt.gat", "KN_Test3::OnKilled3";
+	enablewaitingroomevent "Knight Windsor#Test";
 	end;
 }
 
 //============================================================
-// 四次試験（性格試験）
+// Fourth test (personality test)
 //------------------------------------------------------------
-prt_in.gat,69,107,6	script	騎士エイミー	728,{
+prt_in.gat,69,107,6 script Knight Amy 728,{
 	if(Job == Job_Novice) {
-		mes "[騎士エイミー]";
-		mes "あら、かわいいノービスさん。";
-		mes "とってもかわいいわ～。";
+		mes "[Knight Amy]";
+		mes "Oh my, cute little Novice." ;
+		mes "Very cute!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "ねぇ、後でナイトにならない？";
-		mes "ナイトになったらきっと";
-		mes "かっこよくなるわ！";
+		mes "[Knight Amy]";
+		mes "Hey, can we be Knight later?" ;
+		mes "I bet it would be cool to be a Knight!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "あたし、覚えておくから…";
-		mes "ぜったいナイトになってね！";
-		mes "約束よ！";
+		mes "[Knight Amy]";
+		mes "I'll remember that..." ;
+		mes "Be a Knight for sure!" ;
+		mes "I promise!" ;
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士エイミー]";
-		mes "あら？私を訪ねてくるなんて";
-		mes "何の用かしら？";
+		mes "[Knight Amy]";
+		mes "Oh? What brings you to visit me?" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "騎士生活に問題があるわけじゃ";
-		mes "無いわよね？";
-		mes "エイミーは騎士様がうまくやって";
-		mes "いることを信じています。";
+		mes "[Knight Amy]";
+		mes "You don't have a problem with knighthood, do you?" ;
+		mes "Amy trusts that the knight is doing well." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "それでは！";
-		mes "我がプロンテラ騎士団員様！";
+		mes "[Knight Amy]";
+		mes "So long!" ;
+		mes "My fellow Knights of Prontera!" ;
 		close;
 	}
-	if(Job != Job_Swordman) {
-		mes "[騎士エイミー]";
-		mes "プロンテラ騎士団へようこそ！";
+	if(Job ! = Job_Swordman) {
+		mes "[Knight Amy]";
+		mes "Welcome to the Knights of Prontera!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "うちは騎士ばかりだけど";
-		mes "ゆっくりしていきなさい～。";
+		mes "[Knight Amy]";
+		mes "We're all knights, but take your time~" ;
 		close;
 	}
 	if(CHANGE_KN == 0) {
-		mes "[騎士エイミー]";
-		mes "あら、剣士さん。";
-		mes "ナイトに転職しにきたの？";
+		mes "[Knight Amy]";
+		mes "Oh my, Swordsman." ;
+		mes "Are you here to change jobs to Knight?" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "ナイトへの転職は、まずあそこに";
-		mes "いらっしゃる騎士団長様のお話を";
-		mes "聞いてみてね。";
+		mes "[Knight Amy]";
+		mes "To change your job to Knight, you should first listen to the Knight Commander over there." ;
 		close;
 	}
-	mes "[騎士エイミー]";
-	mes "うん？エイミーに何の用かしら？";
+	mes "[Knight Amy]";
+	mes "Yeah? What do you want with Amy?" ;
 	next;
 	if(CHANGE_KN < 10) {
-		if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
-			mes "[騎士エイミー]";
-			mes "エイミーつまらないわ…";
+		if(select("I would like to take the Knight job test", "Nothing")==2) {
+			mes "[Knight Amy]";
+			mes "Amy, you're boring..." ;
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
 	default:
-		mes "[騎士エイミー]";
-		mes "うん！転職申し込みは済ませたのね！";
-		mes "それじゃ、あたしの前に他の騎士様の";
-		mes "試験を受けてきてちょうだい！";
+		mes "[Knight Amy]";
+		mes "Yeah! You've already applied for a new job!" ;
+		mes "Then go take the other knight's test before me!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "初めから見てあげたいけど";
-		mes "それじゃーだめ！";
+		mes "[Knight Amy]";
+		mes "I'd like to see you from the beginning, but that's not good enough!" ;
 		close;
 	case 8:
-		mes "[騎士エイミー]";
-		mes "ほら、もっとこっちに来なさい！";
-		mes "今度はエイミーの試験よ。ふふ。";
+		mes "[Knight Amy]";
+		mes "Come on, come over here more!" ;
+		mes "Now for Amy's exam. Hmmm." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "あたしの名前は";
-		mes "エイミー=ベアトリス。";
-		mes "プロンテラ騎士団の紅一点です。";
+		mes "[Knight Amy]";
+		mes "My name is Amy Beatrice." ;
+		mes "I am one of the red stars of the Knight Order of Prontera." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "エイミーの試験では、";
-		mes "ナイトになるのに十分な";
-		mes "礼節がそなわっているかを";
-		mes "見ます。";
+		mes "[Knight Amy]";
+		mes "Amy's test is to see if she has enough civility to be a Knight." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "あたしが言うことを聞きながら";
-		mes "たまに質問に答えてくれれば、";
-		mes "そのつど評価してあげます。";
+		mes "[Knight Amy]";
+		mes "If you listen to what I say and answer the occasional question, I will evaluate you accordingly." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "なので、よく聞いて、ナイトとして";
-		mes "正しいと思う考えを言ってくれれば";
-		mes "いいの。わかったわね？";
+		mes "[Knight Amy]";
+		mes "So just listen carefully and say what you think is right as Knight. Do you understand?" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "それじゃ、はじめます。";
+		mes "[Knight Amy]";
+		mes "Then I will begin." ;
 		break;
 	case 9:
-		mes "[騎士エイミー]";
-		mes "うん、今度は礼儀について";
-		mes "勉強してきたのかな？";
+		mes "[Knight Amy]";
+		mes "Yes, now have you studied about courtesy?" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "今度も落ちたら、エイミーが";
-		mes "怒っちゃうわよ！";
+		mes "[Knight Amy]";
+		mes "If you fail again this time, Amy will be very angry!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "そして、騎士団長様に申し上げて、";
-		mes "ナイトにさせないように";
-		mes "しちゃうんだから。";
+		mes "[Knight Amy]";
+		mes "And I'm going to tell the Knight Commander that I'm not going to let you become Knight." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "なのでよく聞いて、ナイトとして";
-		mes "正しい答えを出すんですよ！";
+		mes "[Knight Amy]";
+		mes "So listen carefully and give the right answer as a Knight!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "それでは、いってみましょう！";
+		mes "[Knight Amy]";
+		mes "Then, let's go!" ;
 		break;
 	case 10:
-		mes "[騎士エイミー]";
-		mes "エドモンド様のところへ行って。";
-		mes "エイミーの試験はもう終わったの。";
+		mes "[Knight Amy]";
+		mes "Go to Master Edmond's." ;
+		mes "Amy's exams are over." ;
 		close;
 	case 11:
 	case 12:
 	case 13:
-		mes "[騎士エイミー]";
-		mes "まだ、他の騎士様の試験が";
-		mes "残っているわよ！";
-		mes "ほらほら早く行って！";
+		mes "[Knight Amy]";
+		mes "There are still other knight exams left!" ;
+		mes "Come on, come on, go!" ;
 		close;
 	case 14:
-		mes "[騎士エイミー]";
-		mes "あ、もう皆で結果を出す時間！";
+		mes "[Knight Amy]";
+		mes "Oh, it's time for everyone to get results!" ;
 		next;
-		mes "[騎士エイミー]";
-		mes "騎士団長様のお話を聞いて。";
-		mes "あまり緊張しないでね。";
+		mes "[Knight Amy]";
+		mes "Listen to what the Knight Commander has to say." ;
+		mes "Don't be too nervous." ;
 		close;
 	}
-	//性格試験ここから
+	// personality test here
 	next;
-	mes "[騎士エイミー]";
-	mes "あなたはナイト。モロクの通りで";
-	mes "パーティーを求めています。";
-	mes "どのように募集すれば良いでしょうか？";
+	mes "[Knight Amy]";
+	mes "You are Knight, seeking a party on the streets of Morroc." ;
+	mes "How should I recruit?" ;
 	next;
-	if(select("パーティーを募集していると叫ぶ","チャットルームを作って待つ","ナイトを求める人々を探す") != 1)
+	if(select("shout that you are looking for a party", "create a chat room and wait", "find people looking for Knight") ! = 1)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "レベルの近い人々とパーティーを";
-	mes "結びました。プリースト・ウィザード";
-	mes "ハンター・アサシン・ブラックスミス";
-	mes "とです。";
+	mes "[Knight Amy]";
+	mes "I've hooked up a party with people close to my level: Priest, WizardHunter, Assassin, and Blacksmith." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "そのまま６人でピラミッドに行くことに";
-	mes "なりました。";
+	mes "[Knight Amy]";
+	mes "The six of us are going straight to the pyramid." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "４階に着きました。";
-	mes "さて、どんな行動をしますか？";
+	mes "[Knight Amy]";
+	mes "We arrived at the fourth floor." ;
+	mes "Now, what do you want to do?" ;
 	next;
-	if(select("周囲を見回して冷静に判断する","パーティーのためにモンスターを集める","先頭をゆっくり進む") != 2)
+	if(select("Look around and make calm decisions", "Collect monsters for the party", "Go slowly to the front") ! = 2)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "そこへ、ある人がモンスターを多く";
-	mes "引き連れ、突然消えました。";
-	mes "その時あなたは？";
+	mes "[Knight Amy]";
+	mes "Then someone suddenly disappeared with many monsters in tow." ;
+	mes "And then you?" ;
 	next;
-	if(select("パーティーを護って攻撃を受ける","撤退しながら戦う","ペコペコで素早く逃げる") != 3)
+	if(select("protect the party and get attacked", "fight while retreating", "flee quickly with pecks") ! = 3)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "幸いにもパーティーの皆は無事に";
-	mes "危機から脱しました。";
-	mes "さて、ずっと歩いていくと";
-	mes "パーティーメンバーではない人が";
-	mes "倒れています。";
+	mes "[Knight Amy]";
+	mes "Fortunately, everyone in the party is safely out of danger." ;
+	mes "Now, if you walk all the way down, you will see someone who is not a member of the party is down." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "その人は、手当てをしてほしいと";
-	mes "丁寧にお願いしてきました。";
+	mes "[Knight Amy]";
+	mes "The person politely asked to be patched up." ;
 	next;
-	if(select("パーティーのプリーストに知らせる","お金をくれたら手当てすると言う","無視して通り過ぎる")==1)
+	if(select("inform the Priest of the party", "say I'll patch you up if you give me money", "ignore and pass by")==1)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "そろそろ他の場所に行く用があるため";
-	mes "パーティーメンバーたちとお別れを";
-	mes "しなければならない。";
+	mes "[Knight Amy]";
+	mes "I have to say goodbye to the party members because I have to go somewhere else soon." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "その時、戦闘中に獲得した";
-	mes "戦利品の分配はどうしますか？";
+	mes "[Knight Amy]";
+	mes "At that time, how would you like to distribute the loot you have won during the battle?" ;
 	next;
-	if(select("功労の多い人に渡す","しらんぷりをして自分で持ち帰る","皆で話し合って決める")==3)
+	if(select("Give it to the person with the most merit", "Pretend not to care and take it yourself", "Everyone discusses and decides")==3)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "パーティーメンバーと別れた後、";
-	mes "貴重なアイテムを売るために";
-	mes "プロンテラに来た。";
-	mes "広場ではたくさんの人々が露店を";
-	mes "開いたり・取引チャットを立てて";
-	mes "います。";
+	mes "[Knight Amy]";
+	mes "After leaving the party members, I came to Prontera to sell some valuable items." ;
+	mes "Lots of people are setting up stalls/trading chats in the square." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "さあどのようにアイテムを ";
-	mes "売りに出しましょうか？";
+	mes "[Knight Amy]";
+	mes "Now how do I put my items up for sale?" ;
 	next;
-	if(select("人々に呼びかけて歩く","チャットルームを開いて待つ","アイテムを求めている人を探す") != 1)
+	if(select("walk around calling out to people", "open a chat room and wait", "look for people asking for items") ! = 1)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "そうこうしていたら、";
-	mes "物乞いをする人に会った。";
-	mes "どうしたら良いでしょうか。";
+	mes "[Knight Amy]";
+	mes "While doing so, I met someone begging." ;
+	mes "What should I do?" ;
 	next;
-	if(select("私のお金とアイテムを分ける","無視して去る","その人に適した狩場を教える")==3)
+	if(select("divide my money and items", "ignore and leave", "tell the person where to hunt")==3)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "今度は一人で迷宮の森に行って";
-	mes "みることにしました。";
-	mes "ペコペコに乗って鼻歌まじりに";
-	mes "進んでいます。";
+	mes "[Knight Amy]";
+	mes "Now I decided to go to the labyrinth forest alone." ;
+	mes "I'm humming along on the pecking order." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "そこで、道に迷ってしまった人に";
-	mes "出くわしました。どうしますか？";
+	mes "[Knight Amy]";
+	mes "So, I came across someone who has lost their way. What do you do?" ;
 	next;
-	if(select("帰り道を教えてあげる","出口まで案内する","蝶の羽を一つあげる") != 3)
+	if(select("I'll show you the way home", "I'll show you the way to the exit", "I'll give you one of my butterfly wings") ! = 3)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "森の中で多くのモンスターに囲まれ、";
-	mes "回復薬が尽きてしまいました。";
-	mes "体力は赤色に表示されて、";
-	mes "危ない状況です。";
+	mes "[Knight Amy]";
+	mes "I was surrounded by many monsters in the forest and ran out of recovery medicine." ;
+	mes "Your strength is shown in red and you are in a dangerous situation." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "あ、ちょうどプリーストが通りかかり";
-	mes "ました。どのように頼みますか？";
+	mes "[Knight Amy]";
+	mes "Oh, Priest just passed by. How would you like to ask?" ;
 	next;
-	if(select("よろしかったらヒールを少しください","ヒールください","ヒール") != 3)
+	if(select("A few heels if you don't mind", "Heels please", "Heels") ! = 3)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "もうだいぶ疲れました。";
-	mes "街に戻る時間です。";
+	mes "[Knight Amy]";
+	mes "I'm already very tired." ;
+	mes "Time to go back to town." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "帰る途中、非常に高価なアイテムが";
-	mes "落ちているのを発見しました。";
+	mes "[Knight Amy]";
+	mes "On my way back, I found a very expensive item down." ;
 	next;
-	if(select("拾って自分が持ち帰る","誰の物か捜してみる","ただ通り過ぎる")==2)
+	if(select("pick it up and take it back myself", "look for who it belongs to", "just pass by")==2)
 		set '@point,'@point+10;
-	mes "[騎士エイミー]";
-	mes "はい、これであたしの試験は終わり！";
+	mes "[Knight Amy]";
+	mes "Yes, this is the end of my test!" ;
 	next;
 	if(CHANGE_KN == 8 && '@point < 90) {
 		set CHANGE_KN,10;
-		mes "[騎士エイミー]";
-		mes "うーん…考えてみたけどだめね。";
-		mes "本当にそんなふうに行動していたら";
-		mes "うちの騎士様はみんな無礼な人と";
-		mes "いうことになるわ。";
+		mes "[Knight Amy]";
+		mes "Hmmm... I thought about it, but no." ;
+		mes "If you really acted like that, it would mean that all our knights are rude." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "私がした質問にどう答えたか";
-		mes "もう一度考えてから、";
-		mes "また試験を受けにきてくださいね。";
+		mes "[Knight Amy]";
+		mes "Please think again about how you answered the question I asked you, and then come back and take the test." ;
 		close;
 	}
 	if(CHANGE_KN == 9 && '@point < 80) {
-		mes "[騎士エイミー]";
-		mes "うーん…やっぱりだめ！";
-		mes "あなたをナイトにしてしまったら";
-		mes "うちの騎士団も悪く見られるわ…";
+		mes "[Knight Amy]";
+		mes "Hmmm... No!" ;
+		mes "If I make you a Knight, my knighthood will look bad..." ;
 		next;
-		mes "[騎士エイミー]";
-		mes "帰って、どこで間違った行動を";
-		mes "したのかゆっくり考えてみなさい。";
-		mes "そうしたら、また試験を受けさせて";
-		mes "あげる。いいわね？";
+		mes "[Knight Amy]";
+		mes "Go home and think slowly about where you went wrong." ;
+		mes "Then I'll let you take the test again. Okay?" ;
 		close;
 	}
-	mes "[騎士エイミー]";
-	mes "すごい！それだけの心得があれば";
-	mes "騎士として十分です！";
-	mes "次の試験は…エドモンド様のところ";
-	mes "ですね。";
+	mes "[Knight Amy]";
+	mes "Wow! That's enough to be a knight if you know how to do it!" ;
+	mes "Next test... I guess it's at Master Edmond's place." ;
 	next;
-	mes "[騎士エイミー]";
-	mes "騎士様の話をよく聞いて、";
-	mes "残った試験も頑張ってくださいね！";
+	mes "[Knight Amy]";
+	mes "Please listen carefully to your knight and do your best for the remaining exams!" ;
 	set CHANGE_KN,10;
 	close;
 }
 
 //============================================================
-// 五次試験（忍耐力試験）
+// Fifth test (patience test)
 //------------------------------------------------------------
-prt_in.gat,70,99,6	script	騎士エドモンド	734,{
+prt_in.gat,70,99,6 script Knight Edmund 734,{
 	if(Job == Job_Novice) {
-		mes "[騎士エドモンド]";
-		mes "根深い木は風に負けない…";
+		mes "[Knight Edmund]";
+		mes "The deep-rooted tree is not beaten by the wind..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "基礎から固く築き上げられた力は";
-		mes "いつか輝かしい結果をもたらす。";
+		mes "[Knight Edmund]";
+		mes "Strength built solidly from the foundation will one day yield glorious results..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "君の未来は今から決まると言える…";
+		mes "[Knight Edmund]";
+		mes "I can tell you that your future will be determined now..." ;
 		close;
 	}
 	if(Job == Job_Knight) {
-		mes "[騎士エドモンド]";
-		mes "心を流れる水の如く…";
+		mes "[Knight Edmund]";
+		mes "Like water flowing through the heart..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "流れる水は岩をかすめながら";
-		mes "自分の道を進む。";
+		mes "[Knight Edmund]";
+		mes "Flowing water grazes the rocks and goes its own way..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "騎士はどんな状況でも水のように";
-		mes "静かに流れなければならない。";
+		mes "[Knight Edmund]";
+		mes "A knight must flow as quietly as water in all circumstances." ;
 		close;
 	}
-	if(Job != Job_Swordman) {
-		mes "[騎士エドモンド]";
-		mes "世の全ての物は…皆調和して";
-		mes "成り立っている。";
+	if(Job ! = Job_Swordman) {
+		mes "[Knight Edmund]";
+		mes "Everything in the world... They all exist in harmony." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "その理に逆らわずに暮らすことだ。";
+		mes "[Knight Edmund]";
+		mes "Live in harmony with that reason." ;
 		close;
 	}
 	if(CHANGE_KN == 0) {
-		mes "[騎士エドモンド]";
-		mes "暗い考えを持つ者は";
-		mes "暗い夢ばかり見るだろう…";
+		mes "[Knight Edmund]";
+		mes "He who has dark thoughts will have only dark dreams..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "暗い夢を見続ければ";
-		mes "夢すら見なくなるだろう…";
+		mes "[Knight Edmund]";
+		mes "If you keep dreaming dark dreams, you won't even dream..." ;
 		close;
 	}
 	if(CHANGE_KN <= 12) {
-		mes "[騎士エドモンド]";
-		mes "用か？剣士よ…";
+		mes "[Knight Edmund]";
+		mes "What do you want? Swordsman..." ;
 		next;
-		if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
-			mes "[騎士エドモンド]";
-			mes "君の願いは、眼前に開けるだろう。";
+		if(select("I would like to take the Knight job change test.", "Nothing")==2) {
+			mes "[Knight Edmund]";
+			mes "Your wish will open before your eyes." ;
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
-	default:	//1～9のとき
-		mes "[騎士エドモンド]";
-		mes "花は…若芽が育ち、茎が伸び、";
-		mes "葉が生え、実が出来て咲く。";
+	default: //when 1 to 9
+		mes "[Knight Edmund]";
+		mes "A flower... Young shoots grow, stems grow, leaves grow, fruits form and bloom." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "さもなくば、それは不完全な";
-		mes "花となるだろう…";
+		mes "[Knight Edmund]";
+		mes "Or it will be an imperfect flower..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "先に君を待つ人がいる。";
-		mes "君の道を見つけられるだろう。";
+		mes "[Knight Edmund]";
+		mes "There's someone waiting for you ahead." ;
+		mes "[Knight Edmund]"; mes "You will find your way." ;
 		close;
 	case 10:
-		mes "[騎士エドモンド]";
-		mes "私の試験を受ける番か…";
-		mes "これまでの試験のように";
-		mes "賢明な判断をすれば良い。";
+		mes "[Knight Edmund]";
+		mes "Your turn to take my test..." ;
+		mes "[Knight Edmund]"; mes "[Knight Edmund]"; mes "[Knight Edmund]"; mes "[Knight Edmund]" ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "私の名前はエドモンド=グロスト";
-		mes "プロンテラ騎士団に属する者だ。";
+		mes "[Knight Edmund]";
+		mes "My name is Edmund-Grost, a member of the Order of Prontera." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "騎士は他の人々の模範となるような";
-		mes "人間でなければならない。";
-		mes "したがって敬虔さを常に持ち、";
-		mes "世界の秩序を守るのに";
-		mes "ふさわしい人間でなければならない。";
+		mes "[Knight Edmund]";
+		mes "A knight should be a role model for others." ;
+		mes "Therefore, he must be a man of constant piety and worthy to maintain the order of the world." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "好き勝手に判断し、軽率な行動を";
-		mes "取るようではいけない。";
-		mes "時には水のように柔軟な心が必要で、";
-		mes "時には岩のように固い決心が必要だ。";
+		mes "[Knight Edmund]";
+		mes "Do not judge as you please, and do not be rash in your actions." ;
+		mes "Sometimes we need a mind as flexible as water, and sometimes we need a determination as firm as a rock." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "何の理由も無しにモンスターを";
-		mes "殺してはならないし、殺戮を楽しむ";
-		mes "などはもってのほかだ。";
-		mes "瞑想をし、心を整えなさい。";
+		mes "[Knight Edmund]";
+		mes "Do not kill monsters for no reason, and do not enjoy the carnage." ;
+		mes "[Knight Edmund]"; mes "Meditate and prepare your mind." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "それでは試験を始める。";
-		mes "敬虔なる心を持って臨みなさい。";
+		mes "[Knight Edmund]";
+		mes "Then begin the examination." ;
+		mes "[Knight Edmund]"; mes "[Knight Edmund]"; mes "[Knight Edmund]"; mes "Come with reverence." ;
 		set CHANGE_KN,11;
 		break;
 	case 11:
-		mes "[騎士エドモンド]";
-		mes "前回は軽率な動きをしたな。";
-		mes "騎士は弱き者を護る職業だ…";
-		mes "弱き者を虐げる職業ではない…";
+		mes "[Knight Edmund]";
+		mes "You made a rash move last time." ;
+		mes "A knight is in the profession of protecting the weak..." ;
+		mes "It is not a profession that oppresses the weak..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "世の万物たちが調和を成す所で";
-		mes "人間だけが破壊を続けたらどうなるか…";
-		mes "これは試験だけに限ったことではなく";
-		mes "実際の世界での話なのだ…";
+		mes "[Knight Edmund]";
+		mes "Where all things in the world are in harmony, what happens when man alone continues to destroy..." ;
+		mes "[Knight Edmund]"; mes "This is not just about the test, it's about the real world..." ;
 		next;
-		mes "[騎士エドモンド]";
-		mes "それではもう一度だ。";
-		mes "静かに待つ心を私に見せてくれ。";
+		mes "[Knight Edmund]";
+		mes "So let's do it again." ;
+		mes "[Knight Edmund]"; mes "Let me see your quiet, waiting heart." ;
 		break;
 	case 12:
 	case 13:
-		mes "[騎士エドモンド]";
-		mes "君の心は見せてもらった。";
-		mes "騎士グレーの所へ行き、";
-		mes "最後の試験を受けるがいい…";
+		mes "[Knight Edmund]";
+		mes "Your heart has been shown." ;
+		mes "Go to Knight Gray and take the final test..." ;
 		close;
 	case 14:
-		mes "[騎士エドモンド]";
-		mes "騎士団長の話を聞きなさい…";
-		mes "皆の意見もその時聞けるだろう…";
+		mes "[Knight Edmund]";
+		mes "Listen to the Knight Commander..." ;
+		mes "[Knight Edmund]"; mes "You will hear what everyone has to say then..." ;
 		close;
 	}
-	//忍耐力試験ここから
+	// patience test here
 	close2;
-	addtimer 270000,"KN_Test5::OnClear";		//270sec生き残ればクリア
-	killmonster "job_knt.gat","KN_Test5::OnKilled";
-	monster "job_knt.gat",167,57,"--ja--",1182,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",167,54,"--ja--",1182,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",120,57,"--ja--",1182,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",120,54,"--ja--",1182,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",141,57,"--ja--",1002,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",145,57,"--ja--",1002,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",143,55,"--ja--",1002,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",143,59,"--ja--",1002,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",141,55,"--ja--",1063,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",141,59,"--ja--",1063,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",145,55,"--ja--",1063,1,"KN_Test5::OnKilled";
-	monster "job_knt.gat",145,59,"--ja--",1063,1,"KN_Test5::OnKilled";
-	//stackとみなされ別所に沸くみたいなのでコメントアウト
-	//	monster "job_knt.gat",139,57,"--ja--",1011,1,"KN_Test5::OnKilled";
-	//	monster "job_knt.gat",147,57,"--ja--",1011,1,"KN_Test5::OnKilled";
-	//	monster "job_knt.gat",143,53,"--ja--",1011,1,"KN_Test5::OnKilled";
-	//	monster "job_knt.gat",143,61,"--ja--",1011,1,"KN_Test5::OnKilled";
+	addtimer 270000, "KN_Test5::OnClear"; //Clear if survived 270sec
+	killmonster "job_knt.gat", "KN_Test5::OnKilled";
+	monster "job_knt.gat",167,57,"--en--",1182,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",167,54,"--ja--",1182,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",120,57,"--ja--",1182,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",120,54,"--ja--",1182,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",141,57,"--ja--",1002,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",145,57,"--ja--",1002,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",143,55,"--ja--",1002,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",143,59,"--ja--",1002,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",141,55,"--ja--",1063,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",141,59,"--ja--",1063,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",145,55,"--ja--",1063,1, "KN_Test5::OnKilled";
+	monster "job_knt.gat",145,59,"--ja--",1063,1, "KN_Test5::OnKilled";
+	// comment out because it is considered a stack and seems to boil elsewhere
+	// monster "job_knt.gat",139,57,"--en--",1011,1, "KN_Test5::OnKilled";
+	// monster "job_knt.gat",147,57,"--ja--",1011,1, "KN_Test5::OnKilled";
+	// monster "job_knt.gat",143,53,"--ja--",1011,1, "KN_Test5::OnKilled";
+	// monster "job_knt.gat",143,61,"--ja--",1011,1, "KN_Test5::OnKilled";
 	warp "job_knt.gat",143,57;
 	end;
 }
 
-//同一MAPに居るNPCからイベントを発動する必要あり
-job_knt.gat,0,0,0	script	KN_Test5	-1,{
+//Need to trigger events from NPCs in the same MAP
+job_knt.gat,0,0,0 script KN_Test5 -1,{
 	end;
-OnKilled:	//敵を倒してしまったらやり直し
+OnKilled: //Redo if the enemy is killed
 	deltimer "KN_Test5::OnClear";
 	warp "prt_fild05.gat",353,251;
 	end;
@@ -1761,471 +1474,389 @@ OnClear:
 }
 
 //============================================================
-// 最終試験 及び クレイモア作成
+// final exam and claymore creation
 //------------------------------------------------------------
-prt_in.gat,87,92,4	script	騎士グレー	119,{
+prt_in.gat,87,92,4 script Knight Gray 119,{
 	if(Job == Job_Novice) {
-		mes "[騎士グレー]";
-		mes "こう見えても、俺にだって";
-		mes "ノービス時代があったんだ。";
+		mes "[Knight Gray]";
+		mes "It may look this way, but even I had my Novice days." ;
 		next;
-		mes "[騎士グレー]";
-		mes "特別に騎士になろうとは思わなかったが";
-		mes "強くなりたいとずっと思っていた。";
+		mes "[Knight Gray]";
+		mes "I never thought of becoming a knight in particular, but I always wanted to be strong." ;
 		next;
-		mes "[騎士グレー]";
-		mes "そうしたら、いつの間にか";
-		mes "騎士になってたということさ。ははは。";
+		mes "[Knight Gray]";
+		mes "So I did, and before I knew it, I was a knight. Ha ha." ;
 		close;
 	}
-	if(Job == Job_Knight) {	//クレイモア販売
-		mes "[騎士グレー]";
-		mes "何とも形容しがたい美しい色の刃…";
-		mes "騎士が持つべき武器と言えばこれだ！";
-		mes "そう、 ^3355FF「クレイモア」^000000 !!";
-		mes "騎士なら一本は持っていなければな。";
+	if(Job == Job_Knight) { //claimer sold
+		mes "[Knight Gray]";
+		mes "A blade of indescribably beautiful color..." ;
+		mes "If there is a weapon that a knight should have, this is it!" ;
+		mes "Yes, the ^3355FF "Claymore"^000000 !!! A knight should have one of these." ;
 		next;
-		switch (select("^3355FF「クレイモア」^000000 について","クレイモアを購入する","会話をやめる")) {
+		switch (select("^3355FF "Claymore" ^000000 about", "Buy Claymore", "Stop Conversation")) {
 		case 1:
-			mes "[騎士グレー]";
-			mes "ルーンミッドガッツ王国のプロンテラで";
-			mes "手に入れることができる様々な名剣の";
-			mes "中でも一際優れていると言われる剣";
-			mes "クレイモア!!";
-			mes "騎士との相性はまさに抜群だ。";
+			mes "[Knight Gray]";
+			mes "The sword Claymore is said to be one of the best among the various great swords that can be obtained in Prontera in the Kingdom of Rune-Midgarts! It is truly a perfect match for the knight." ;
 			next;
-			mes "[騎士グレー]";
-			mes "その評判のクレイモアを";
-			mes "我が騎士団では騎士達だけのために";
-			mes "^3355FF74000^000000Zenyで製作している。";
+			mes "[Knight Gray]";
+			mes "That reputed Claymore is made for ^3355FF74000^000000Zeny only for the knights in my knighthood." ;
 			next;
-			mes "[騎士グレー]";
-			mes "しかし、クレイモアの特徴である";
-			mes "その頑丈で鋭利な刃を造るために";
-			mes "貴重な ^3355FF「鋼鉄」^000000 一つが必要だ。";
-			mes "制作費と鋼鉄を持って来たらすぐに";
-			mes "造ってやる。騎士団の名誉にかけてな。";
+			mes "[Knight Gray]";
+			mes "But we need one precious ^3355FF "Steel"^000000 to build that sturdy and sharp blade that is the Claymore's signature." ;
+			mes "As soon as you bring me the production cost and the Steel, I will build it. On the honor of the Order." ;
 			close;
 		case 2:
 			if(countitem(999) < 1 || Zeny < 74000) {
-				mes "[騎士グレー]";
-				mes "お前がクレイモアを欲しがる気持ちは";
-				mes "わかったが、用意が整わなければ";
-				mes "造ってやることはできないな。";
-				mes "^3355FF74000Zeny！鋼鉄一つ！^000000";
+				mes "[Knight Gray]";
+				mes "I understand your desire for the claymore, but I can't build it for you if you're not ready." ;
+				mes "^3355FF74000Zeny!Steel one! ^000000";
 				next;
-				mes "[騎士グレー]";
-				mes "用意ができたらまた来なさい。";
-				mes "いつでも待っているから。";
+				mes "[Knight Gray]";
+				mes "Come back when you're ready." ;
+				mes "I'll always be waiting for you." ;
 				close;
 			}
 			if(checkweight(1163,1)==0) {
-				mes "[騎士グレー]";
-				mes "荷物が一杯のようだ";
+				mes "[Knight Gray]";
+				mes "Looks like we have a full load";
 				close;
 			}
-			mes "[騎士グレー]";
-			mes "おお！用意してきたか。";
-			mes "クレイモアの価値がわかる奴め。";
-			mes "ようし…今すぐ作ってやるぞ！";
+			mes "[Knight Gray]";
+			mes "Oh! You've got it all ready." ;
+			mes "Who knows the value of a claymore." ;
+			mes "Yo... I'll make you one right now!" ;
 			next;
-			mes "[騎士グレー]";
-			mes "クレイモアの刀身を熱して";
-			mes "鋼鉄を溶かして混ぜて…";
+			mes "[Knight Gray]";
+			mes "Heat the claymore blade, melt the Steel and mix it..." ;
 			next;
-			mes "^3355FF- カキンカキンカキン -^000000";
+			mes "^3355FF- kakin kakin kakin -^000000";
 			next;
-			mes "[騎士グレー]";
-			mes "ほら、騎士団が誇るクレイモアだ！";
-			mes "これからの旅で頼もしい相棒と";
-			mes "なるだろう！";
+			mes "[Knight Gray]";
+			mes "Look, the pride of the Order, the Claymore!" ;
+			mes "It will be a reliable partner in your future travels!" ;
 			delitem 999,1;
 			set Zeny,Zeny-74000;
 			getitem 1163,1;
 			close;
 		case 3:
-			mes "[騎士グレー]";
-			mes "立派な騎士ならクレイモアなど";
-			mes "手足の如く使いこなさなければね。";
-			mes "いつかまた来てくれることを";
-			mes "期待しているよ。";
+			mes "[Knight Gray]";
+			mes "A good knight should be able to use a claymore like a limb." ;
+			mes "I hope you'll come back again someday." ;
 			close;
 		}
 	}
 	switch(CHANGE_KN) {
 	case 0:
-		mes "[騎士グレー]";
-		mes "若者よ、時間は大切にしろよ。";
+		mes "[Knight Gray]";
+		mes "Young man, time is of the essence." ;
 		next;
-		mes "[騎士グレー]";
-		mes "時間が経ってから、自分のしてきた";
-		mes "ことを後悔するようになっても";
-		mes "遅いからな。";
+		mes "[Knight Gray]";
+		mes "Because after time, it's too late to start regretting what you've done." ;
 		close;
 	default:
-		mes "[騎士グレー]";
-		mes "若い剣士よ、何か用かな？";
+		mes "[Knight Gray]";
+		mes "What can I do for you, young swordsman?" ;
 		break;
 	case 13:
-		mes "[騎士グレー]";
-		mes "あ、お前か。何の用だ？";
+		mes "[Knight Gray]";
+		mes "Ah, it's you. What do you want?" ;
 		break;
 	case 14:
-		mes "[騎士グレー]";
-		mes "騎士団長の話を聞いてみろ。";
+		mes "[Knight Gray]";
+		mes "Listen to the Knight Commander." ;
 		next;
-		mes "[騎士グレー]";
-		mes "連中もよく考えてくれるから。";
-		mes "早く行きなさい。";
+		mes "[Knight Gray]";
+		mes "They'll think it over too." ;
+		mes "[Knight Gray]"; mes "[Knight Gray]"; mes "[Knight Gray]"; mes "[Knight Gray]" ;
 		close;
 	}
 	next;
-	if(select("ナイト転職試験を受けたいです","なんでもないです")==2) {
-		mes "[騎士グレー]";
-		mes "体を大事にしなさい。";
-		mes "健康が第一だ。";
+	if(select("I would like to take the Knight job change exam", "Nothing")==2) {
+		mes "[Knight Gray]";
+		mes "Take care of yourself." ;
+		mes "Health comes first." ;
 		close;
 	}
 	switch(CHANGE_KN) {
 	default:
-		mes "[騎士グレー]";
-		mes "はは、ここには俺よりずっと若い";
-		mes "騎士がいるんだよ。そいつらに";
-		mes "まずはなしかけてから来なさい。";
+		mes "[Knight Gray]";
+		mes "Haha, there are much younger knights here than me. Talk to them first before you come." ;
 		next;
-		mes "[騎士グレー]";
-		mes "連中の話が済んだら";
-		mes "俺が面倒を見てやる。";
+		mes "[Knight Gray]";
+		mes "I'll take care of them when you're done talking to them." ;
 		close;
 	case 12:
-		mes "[騎士グレー]";
-		mes "ほう、そうか。他の連中の試験を";
-		mes "すべて受けてきたんだな。";
+		mes "[Knight Gray]";
+		mes "Oh, yeah. You've taken all the other guys' exams." ;
 		next;
-		mes "[騎士グレー]";
-		mes "それでは俺の試験を始めるか。";
-		mes "ま、試験と言う程でもないんだが。";
+		mes "[Knight Gray]";
+		mes "Then let's start my exam." ;
+		mes "Well, it's not really an exam." ;
 		next;
-		mes "[騎士グレー]";
-		mes "気楽に話をしようか。";
+		mes "[Knight Gray]";
+		mes "Let's take it easy and talk." ;
 		break;
 	case 13:
-		mes "[騎士グレー]";
-		mes "そうか…色々と考えてきたようだな。";
+		mes "[Knight Gray]";
+		mes "Well... You've been doing a lot of thinking." ;
 		next;
-		mes "[騎士グレー]";
-		mes "それでは、また話を聞いてみようか。";
+		mes "[Knight Gray]";
+		mes "So let's hear more of what you have to say." ;
 		break;
 	}
 	next;
-	mes "[騎士グレー]";
-	mes "まず…お前はなぜナイトになろうと";
-	mes "決心したんだ？";
+	mes "[Knight Gray]";
+	mes "First... Why did you decide to become a Knight?" ;
 	next;
-	switch(select("もっと強くなるために","ギルドの役に立とうと","現在に満足できなくて")) {
+	switch(select("to become stronger", "to be useful to the guild", "I'm not satisfied with my current situation")) {
 	case 1:
-		mes "[騎士グレー]";
-		mes "もっと強くなるためだと…？";
-		mes "確かにナイトは強い。";
+		mes "[Knight Gray]";
+		mes "To be stronger...?" ;
+		mes "Indeed Knight is strong." ;
 		next;
-		mes "[騎士グレー]";
-		mes "しかし、その強さとは何だろうか。";
-		mes "人に力を誇示するためのものなのか、";
-		mes "または有名になるためのものなのか、";
-		mes "その他のものか…";
+		mes "[Knight Gray]";
+		mes "But what is that strength?" ;
+		mes "Is it to show off your strength to others, or to be famous, or something else..." ;
 		next;
-		mes "[騎士グレー]";
-		mes "騎士としての「力」とは何だろうか？";
+		mes "[Knight Gray]";
+		mes "What is 'power' as a knight?" ;
 		next;
-		switch(select("武勲と名声を得るためのもの","自分を護ることができるもの","他の人々を護るためのもの")) {
+		switch(select("for arms and prestige", "to be able to protect myself", "to protect others")) {
 		case 1:
 			set '@bad,'@bad+10;
-			mes "[騎士グレー]";
-			mes "もちろん、お金を手に入れたり";
-			mes "有名になることは良いことだ。";
-			mes "しかし、そうではない価値を得る";
-			mes "ためにうちの騎士達は生きている。";
+			mes "[Knight Gray]";
+			mes "Of course, getting money and being famous is a good thing." ;
+			mes "But our knights live to get value that is not so." ;
 			break;
 		case 2:
-			mes "[騎士グレー]";
-			mes "良い答えだ。自分を護れる奴は";
-			mes "人を護ることもできる。";
-			mes "そのために普段から修練を";
-			mes "怠ってはならない。";
+			mes "[Knight Gray]";
+			mes "Good answer. Anyone who can protect himself can also protect others." ;
+			mes "To do so, you must not neglect your training on a regular basis." ;
 			break;
 		case 3:
-			mes "[騎士グレー]";
-			mes "立派な考えだ。騎士の力とは";
-			mes "弱き者を護ってこそその真価が";
-			mes "発揮される。たまにその精神を捨て";
-			mes "騎士の名に泥を塗る輩もいるが…";
+			mes "[Knight Gray]";
+			mes "It is a noble idea. A knight's power is only effective when he protects the weak. Sometimes there are those who abandon that spirit and bring dishonor to the name of knight..." ;
 			break;
 		}
-		break;
+		break; }
 	case 2:
-		mes "[騎士グレー]";
-		mes "ギルド…またはパーティーと";
-		mes "共に活動をする…";
-		mes "俺達の国王であるトリスタン三世も";
-		mes "次のようにおっしゃった。";
+		mes "[Knight Gray]";
+		mes "Guild... or working with a party..." ;
+		mes "Our king, Tristan III, also said the following..." ;
 		next;
-		mes "[騎士グレー]";
-		mes "平和な日常の裏には、常に脅威が";
-		mes "存在している。であるから、";
-		mes "あらかじめ全ての危機に対して";
-		mes "準備しておかなければならない…と。";
+		mes "[Knight Gray]";
+		mes "Behind every peaceful day, there is always a threat. Therefore, we must be prepared in advance for every crisis..."; next; mes "[Knight Gray]"; mes And." ;
 		next;
-		mes "[騎士グレー]";
-		mes "それでは、お前が得る力は";
-		mes "どのようにギルドの役に立つ？";
+		mes "[Knight Gray]";
+		mes "So how does the power you gain help the guild?" ;
 		next;
-		switch(select("ギルドが私の力を必要としています","ギルドの資金確保に役立ちます","ギルド員達を護ることができます")) {
+		switch(select("The Guild needs my power", "I can help the Guild secure funding", "I can protect the Guild Members")) {
 		case 1:
-			mes "[騎士グレー]";
-			mes "世界のどこであろうと、";
-			mes "自分が望む場所に在りたいものだ。";
-			mes "しかし、助けを必要とする者が";
-			mes "いるかぎり、拒んではならない。";
-			mes "ギルドにかぎらずな…。";
+			mes "[Knight Gray]";
+			mes "Wherever you are in the world, you want to be where you want to be." ;
+			mes "But as long as there are those who need our help, we must not refuse." ;
+			mes "[Knight Gray]; mes "Not only in guilds..." ;
 			break;
 		case 2:
 			set '@bad,'@bad+10;
-			mes "[騎士グレー]";
-			mes "もちろん、お金を手に入れたり";
-			mes "有名になることは良いことだ。";
-			mes "しかし、そうではない価値を得る";
-			mes "ためにうちの騎士達は生きている。";
+			mes "[Knight Gray]";
+			mes "Of course, getting money and being famous is a good thing." ;
+			mes "But our knights live to get value that is not so." ;
 			break;
 		case 3:
-			mes "[騎士グレー]";
-			mes "立派な考えだ。騎士の力とは";
-			mes "弱き者を護ってこそその真価が";
-			mes "発揮される。たまにその精神を捨て";
-			mes "騎士の名に泥を塗る輩もいるが…";
+			mes "[Knight Gray]";
+			mes "It is a noble idea. A knight's power is only effective when he protects the weak. Sometimes there are those who abandon that spirit and bring dishonor to the name of knight..." ;
 			break;
 		}
-		break;
+		break; }
 	case 3:
 		set '@bad,'@bad+5;
-		mes "[騎士グレー]";
-		mes "ふむ…";
-		mes "お前はもう立派な剣士だが";
-		mes "それでも騎士を目指すのはなぜか？";
+		mes "[Knight Gray]";
+		mes "Hmmm..." ;
+		mes "You're already a fine swordsman, but why do you still want to be a knight?" ;
 		next;
-		mes "[騎士グレー]";
-		mes "剣士ならいざしらず、騎士は";
-		mes "自分勝手は絶対に許されない。";
-		mes "たまに、力を欲するあまり抑制が";
-		mes "効かなくなってしまう若者もいる。";
+		mes "[Knight Gray]";
+		mes "A swordsman may be a swordsman, but a knight is never allowed to be selfish." ;
+		mes "Sometimes, some young men lose their inhibitions because of their desire for power." ;
 		next;
-		mes "[騎士グレー]";
-		mes "それでは、今の何に満足いかないのか？";
+		mes "[Knight Gray]";
+		mes "So what are you not satisfied with now?" ;
 		next;
-		switch(select("技術です","目標です","格好です")) {
+		switch(select("It's the technology", "It's the goal", "It's the outfit")) {
 		case 1:
 			set '@bad,'@bad+5;
-			mes "[騎士グレー]";
-			mes "技術はナイトになれば自ずと";
-			mes "付いてくる。";
-			mes "だからそれ自体に高い価値は";
-			mes "無いだろう。きっとナイトになっても";
-			mes "満足できなくなる。";
+			mes "[Knight Gray]";
+			mes "Technology will follow itself when you become a Knight." ;
+			mes "So it will not be of high value in itself. You will probably not be satisfied with becoming a Knight." ;
 			break;
 		case 2:
 			set '@bad,'@bad-5;
-			mes "[騎士グレー]";
-			mes "そうか…絶えず新しい目標を";
-			mes "抱くことは大事だ。";
-			mes "今はナイトになることで頭が一杯";
-			mes "だろうが、ナイトになった後は";
-			mes "また新しい目標ができるだろう。";
+			mes "[Knight Gray]";
+			mes "Well... It's important to constantly embrace new goals." ;
+			mes "You're probably preoccupied with becoming a Knight right now, but after you become a Knight, you'll have new goals again." ;
 			break;
 		case 3:
 			set '@bad,'@bad+5;
-			mes "[騎士グレー]";
-			mes "そんな、見た目だけの価値など";
-			mes "大したことではない。";
-			mes "ナイトより強い剣士もいるし、";
-			mes "つまり努力しだいということだ。";
+			mes "[Knight Gray]";
+			mes "Oh no, it's not worth much, just for looks." ;
+			mes "Some swordsmen are stronger than Knight, which means it depends on your effort." ;
 			break;
 		}
 		break;
 	}
+	} next;
+	mes "[Knight Gray]";
+	mes "Hmm, you've thought this through." ;
+	mes "Some people try to be Knight without thinking..." ;
 	next;
-	mes "[騎士グレー]";
-	mes "ふむ、お前はよく考えているね。";
-	mes "中には何も考えずにナイトに";
-	mes "なろうとする奴もいるんだよ…";
+	mes "[Knight Gray]";
+	mes "Such young people cause problems and bring dishonor to the Knight Order..." ;
 	next;
-	mes "[騎士グレー]";
-	mes "そんな若者達が問題を起こし、";
-	mes "騎士団の名誉を傷つける。";
+	mes "[Knight Gray]";
+	mes "This goes for you too, but once you become a Knight, you can never go back to being a swordsman again." ;
+	mes "You must never forget your awareness and responsibility as a Knight." ;
 	next;
-	mes "[騎士グレー]";
-	mes "これはお前にも言えることだが、";
-	mes "一度ナイトになったら二度と剣士に";
-	mes "戻ることができない。";
-	mes "ナイトとしての自覚と責任は";
-	mes "絶対に忘れてはならないのだ。";
+	mes "[Knight Gray]";
+	mes "If you could be a Knight right now, what would you do?" ;
 	next;
-	mes "[騎士グレー]";
-	mes "もし、今すぐナイトになれたら";
-	mes "何をする？";
-	next;
-	switch(select("直ちに戦いに出ます","私を待つ人々の元へ","騎士についてもっと学びます")) {
+	switch(select("I would go to battle immediately", "I would go to those who wait for me", "I would learn more about knighthood")) {
 	case 1:
-		mes "[騎士グレー]";
-		mes "ふむ、そして？";
+		mes "[Knight Gray]";
+		mes "Hm, and?" ;
 		next;
-		switch(select("早く成長するでしょう","ナイトになった自分の技を試したい","剣士では行かれない場所へ行く")) {
+		switch(select("I will grow up fast", "I want to test my skills as a Knight", "I will go where I cannot go as a swordsman")) {
 		case 1:
 			set '@bad,'@bad+10;
-			mes "[騎士グレー]";
-			mes "あまり急ぐものではない。";
-			mes "お前自身が急に成長するとは";
-			mes "かぎらないだろう。";
-			mes "基礎を固く固めるのが良い。";
+			mes "[Knight Gray]";
+			mes "Not in too much of a hurry." ;
+			mes "You yourself won't necessarily grow up too fast." ;
+			mes "[Knight Gray]"; mes "It is better to lay a solid foundation." ;
 			break;
 		case 2:
-			mes "[騎士グレー]";
-			mes "自分を試すのは良いことだ。";
-			mes "身についた技について喜ぶのは";
-			mes "いいが、騎士の心構えは忘れるなよ。";
+			mes "[Knight Gray]";
+			mes "It's good to test yourself." ;
+			mes "It's good to rejoice about the skills you've acquired, but don't forget to be a knight." ;
 			break;
 		case 3:
-			mes "[騎士グレー]";
-			mes "ナイトになっても、そいつの本質が";
-			mes "変わるわけではない。";
-			mes "あまり無理して体を酷使するなよ。";
+			mes "[Knight Gray]";
+			mes "Becoming a Knight does not change the essence of the guy." ;
+			mes "Don't overwork your body too much." ;
 			break;
 		}
 		break;
 	case 2:
-		mes "[騎士グレー]";
-		mes "誰が待っているんだ？";
+		mes "[Knight Gray]";
+		mes "Who's waiting for me?" ;
 		next;
-		switch(select("友人です","ギルド員達です","恋人です")) {
+		switch(select("It's a friend", "It's the Guild Members", "It's a lover")) {
 		case 1:
-			mes "[騎士グレー]";
-			mes "うむ、友もお前がナイトになった";
-			mes "ことを自分のことのように喜んで";
-			mes "くれるだろう。";
-			mes "友を大事にするその心";
-			mes "忘れないようにしなさい。";
+			mes "[Knight Gray]";
+			mes "Mm, your friends will be as happy to see you become Knight as you are." ;
+			mes "Don't forget to take care of your friends." ;
 			break;
 		case 2:
-			mes "[騎士グレー]";
-			mes "生死を共にする仲間達か。";
-			mes "仲間を大切にして、彼らを護って";
-			mes "いきなさい。";
+			mes "[Knight Gray]";
+			mes "Fellowship of life and death." ;
+			mes "Take care of your friends and protect them." ;
 			break;
 		case 3:
-			mes "[騎士グレー]";
-			mes "青春だね！愛する人のために";
-			mes "ナイトになるとは。";
-			mes "お前の全てを以って";
-			mes (Sex? "彼女": "彼氏")+ "を護ってあげなさい。";
+			mes "[Knight Gray]";
+			mes "You are a youth! What a way to become a Knight for the one you love." ;
+			mes "With everything you have";
+			mes (Sex? "She": "Boyfriend")+ "Protect her." ;
 			break;
 		}
-		break;
+		break; }
 	case 3:
-		mes "[騎士グレー]";
-		mes "良い姿勢だ。何を学ぶ？";
+		mes "[Knight Gray]";
+		mes "Good attitude. What do you learn?" ;
 		next;
-		switch(select("ナイトが戦いやすい場所","ナイトとしての成長のしかた","ナイトで収入を得る方法")) {
+		switch(select("Places where Knight is easy to fight", "How to grow as a Knight", "How to earn income as a Knight")) {
 		case 1:
 			set '@bad,'@bad+5;
-			mes "[騎士グレー]";
-			mes "世には楽な場所・辛い場所様々ある。";
-			mes "ナイトはどんな場所でも";
-			mes "強く生きていかなければならない。";
+			mes "[Knight Gray]";
+			mes "There are various easy and hard places in the world." ;
+			mes "Knight must stay strong in any place." ;
 			break;
 		case 2:
-			mes "[騎士グレー]";
-			mes "外に出れば、ナイトを見かけるだろう。";
-			mes "先輩騎士にも色々と聞いてみなさい。";
+			mes "[Knight Gray]";
+			mes "If you go outside, you will see Knight." ;
+			mes "Ask the senior knights for more information." ;
 			break;
 		case 3:
 			set '@bad,'@bad+15;
-			mes "[騎士グレー]";
-			mes "こら！騎士を何だと思っている。";
-			mes "騎士はそういう存在ではない！";
+			mes "[Knight Gray]";
+			mes "Hey! What do you think you are, a knight?" ;
+			mes "That's not what knights are!" ;
 			break;
 		}
 		break;
 	}
-	next;
-	mes "[騎士グレー]";
-	mes "お…ずいぶん長話になってしまったな。";
+	} next;
+	mes "[Knight Gray]";
+	mes "Oh... That was a very long story." ;
 	next;
 	if('@bad > 10) {
 		set CHANGE_KN,13;
-		mes "[騎士グレー]";
-		mes "お前との話は退屈だった。";
-		mes "まだナイトになるのは早いだろう。";
+		mes "[Knight Gray]";
+		mes "I was bored talking to you." ;
+		mes "You're not ready to be Knight yet." ;
 		next;
-		mes "[騎士グレー]";
-		mes "剣士でもう少し色々学んだほうが";
-		mes "良いだろう。";
-		mes "本当にナイトを目指すなら、自分自身を";
-		mes "変える必要があるだろう。";
+		mes "[Knight Gray]";
+		mes "You should learn a few more things at Swordsman." ;
+		mes "If you really want to be a Knight, you will need to change yourself." ;
 		close;
 	}
 	set CHANGE_KN,14;
-	mes "[騎士グレー]";
-	mes "お前との話は楽しかった。";
-	mes '@bad? "少し気になる点もあったが。": "若い日の自分を思い出すようだったぞ。";
+	mes "[Knight Gray]";
+	mes "I enjoyed talking with you." ;
+	mes ""+'@bad?""; mes "There were a few things that bothered me." : "You reminded me of my younger days, man." ;
 	next;
-	mes "[騎士グレー]";
-	mes "それでは、騎士団長の話を聞いて、";
-	mes "連中にも判断してもらおうか。";
+	mes "[Knight Gray]";
+	mes "So let's hear what the Knight Commander has to say and let the guys decide." ;
 	next;
-	mes "[騎士グレー]";
-	mes "あまり心配するな。";
-	mes "俺がよく話してやる。";
+	mes "[Knight Gray]";
+	mes "Don't worry too much." ;
+	mes "[Knight Gray]"; mes "I'll talk to him a lot." ;
 	close;
 }
 
 //============================================================
-// ペコペコレンタル
+// Peko Peko Rentals.
 //------------------------------------------------------------
-prontera.gat,55,350,5	script	ペコペコ管理兵	105,{
-	if(Job != Job_Knight) {
-		mes "[ペコペコ管理兵]";
-		mes "何の御用ですか？";
-		mes "ペコペコは、ナイト様と";
-		mes "ロードナイト様専用と";
-		mes "なっております。";
+prontera.gat,55,350,5 script PecoPeco Manager 105,{
+	if(Job ! = Job_Knight) {
+		mes "[PecoPeco Manager]";
+		mes "What can I do for you?" ;
+		mes "PecoPeco is for Knight and Lord Knight only." ;
 		close;
 	}
-	mes "[ペコペコ管理兵]";
-	mes "いらっしゃいませ。";
-	mes "ペコペコ一匹用意いたしましょうか？";
-	mes "一匹 2500 zenyでございます。";
+	mes "[PecoPeco Manager]";
+	mes "Welcome." ;
+	mes "Shall I prepare one PecoPeco for you?" ;
+	mes "2500 zeny per animal." ;
 	next;
-	if(select("利用する","やめる")==2) {
-		mes "[ペコペコ管理兵]";
-		mes "そうですか。では……";
+	if(select("use", "quit")==2) {
+		mes "[PecoPeco Manager]";
+		mes "I see. Then ......." ;
 		close;
 	}
 	if(checkriding()) {
-		mes "[ペコペコ管理兵]";
-		mes "すでにペコペコに乗って";
-		mes "いらっしゃいますね。";
+		mes "[PecoPeco Manager]";
+		mes "You are already on PecoPeco." ;
 		close;
 	}
 	if(Zeny < 2500) {
-		mes "[ペコペコ管理兵]";
-		mes "あの、お金が足りないようですが……";
-		mes "……破産ですか……？";
+		mes "[PecoPeco Manager]";
+		mes "Um, I'm afraid you don't have enough money. ......" ;
+		mes "...... Are you bankrupt ......?" ;
 		close;
 	}
 	if(getskilllv(63) < 1) {
-		mes "[ペコペコ管理兵]";
-		mes "……まだペコペコには";
-		mes "乗れないようですね。";
-		mes "スキル「ライディング」を";
-		mes "覚えてからお越しください。";
+		mes "[PecoPeco Manager]";
+		mes "...... It looks like you can't get on PecoPeco yet." ;
+		mes "Please learn the skill 'Riding' before coming." ;
 		close;
 	}
 	set Zeny,Zeny-2500;

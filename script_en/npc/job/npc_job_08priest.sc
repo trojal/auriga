@@ -1,615 +1,468 @@
 //====================================================================
 //Ragnarok Online Priest Jobchange Script
-//
-//　■ CHANGE_PR     -> 0～9
-//     @priest_check -> 0～8、退魔修練の三段階目用フラグ
+// - CHANGE_PR -> 0-9
+// - CHANGE_PR -> 0-9
+// @priest_check -> 0-8, the flag for the third stage of the retreat training
 //====================================================================
 
 //==========================================
-// 試験受付および転職
+// test acceptance and job change
 //------------------------------------------
 
-prt_church.gat,16,41,4	script	司教	60,{
+prt_church.gat,16,41,4 script bishop 60,{
 	if(Upper == UPPER_HIGH) {
-		mes "[トーマス司教]";
-		mes "生まれ変わり、新たな人生を";
-		mes "歩む方ですね？";
-		mes "プロンテラ大聖堂も";
-		mes "貴方の活躍を見守っています。";
+		mes "[Bishop Thomas]";
+		mes "You are the one who is born again and has a new life, aren't you?" ;
+		mes "The Cathedral of Prontera is also watching over you." ;
 		next;
-		mes "[トーマス司教]";
-		mes "世に満ち溢れる試練を恐れずに。";
-		mes "貴方にはそれに打ち克つ勇気と";
-		mes "力があります。";
-		mes "貴方に神のご加護あらんことを……";
+		mes "[Bishop Thomas]";
+		mes "Do not be afraid of the trials that abound in the world." ;
+		mes "You have the courage and strength to overcome them." ;
+		mes "God bless you. ......" ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[トーマス司教]";
-		mes "あなたに神のご加護があらんことを…";
-		mes "こちらはプロンテラ大聖堂です。";
-		mes "何のご用で訪ねなさった？";
+		mes "[Bishop Thomas]";
+		mes "God bless you..." ;
+		mes "This is Prontera Cathedral." ;
+		mes "What brings you here?" ;
 		next;
-		switch (select("アコライトに転職したいんです","プリーストに転職したいんです","見物に来たんです")) {
+		switch (select("I want to move to Acolyte", "I want to move to Priest", "I came to see the sights")) {
 		case 1:
-			mes "[トーマス司教]";
-			mes "ほほ…アコライトへの転職をしに";
-			mes "来なすったか。";
-			mes "アコライトへの転職は反対側の部屋に";
-			mes "お行きなさい…。";
+			mes "[Bishop Thomas]";
+			mes "Hoho. You've come to make a career change to Acolyte." ;
+			mes "For your new job at Acolyte, please go to the other side of the room...." ;
 			break;
 		case 2:
-			mes "[トーマス司教]";
-			mes "ほほ…プリーストになる前に";
-			mes "まずアコライトになりなさい。";
-			mes "アコライトへの転職は反対側の部屋に";
-			mes "お行きなさい…。";
+			mes "[Bishop Thomas]";
+			mes "Hoho... . before you become Priest, you must first become Acolyte." ;
+			mes "To change to Acolyte, please go to the other side of the room..." ;
 			break;
 		case 3:
-			mes "[トーマス司教]";
-			mes "家のように思って楽にしなさい。";
-			mes "聖堂はこの世のどこよりも";
-			mes "安全ですからな。";
+			mes "[Bishop Thomas]";
+			mes "Think of it as home and make yourself comfortable." ;
+			mes "The cathedral is safer than anywhere else in the world." ;
 			break;
 		}
 		next;
-		mes "[トーマス司教]";
-		mes "あなたに神のご加護があらんことを。";
+		mes "[Bishop Thomas]";
+		mes "God bless you." ;
 		close;
 	}
 	if(Job == Job_Priest) {
-		mes "[トーマス司教]";
-		mes "信仰厚き兄弟に";
-		mes "神のご加護あらんことを…";
+		mes "[Bishop Thomas]";
+		mes "God bless our faithful brother..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "神の教えを守り行いを正して";
-		mes "いるようですね。";
-		mes "今日はどんな御用でこちらへ";
-		mes "赴いたのです？";
+		mes "[Bishop Thomas]";
+		mes "I see that you are following God's teachings and correcting your conduct." ;
+		mes "[Bishop Thomas]"; mes "What business brings you here today?" ;
 		next;
-		switch (select("近くに来たついでに様子を伺いに","私が連れるアコライトを助けようと","最近生きていくのが大変で")) {
+		switch (select("I came by to check on you while I was in the neighborhood", "I was trying to help the Acolyte I'm bringing with me", "I'm having a hard time surviving these days")) {
 		case 1:
-			mes "[トーマス司教]";
-			mes "ほほ、そうでしたか。";
-			mes "私は相変わらず元気です。";
-			mes "他の兄弟達にも伝えてやってください。";
+			mes "[Bishop Thomas]";
+			mes "Hoho, I see." ;
+			mes "I am as healthy as ever." ;
+			mes "[Bishop Thomas]"; mes "Please tell the other brothers." ;
 			next;
-			mes "[トーマス司教]";
-			mes "私達プリーストは、神の代弁者として";
-			mes "この地に在るのです。";
-			mes "困った人には救いの手をさしのべて";
-			mes "あげるように…。";
+			mes "[Bishop Thomas]";
+			mes "We Priests are here on this earth to speak for God." ;
+			mes "Let those in need be given a helping hand...." ;
 			close;
 		case 2:
-			mes "[トーマス司教]";
-			mes "そうですか、良い考えです。";
-			mes "他のアコライトを良き道に導くことも";
-			mes "プリーストの大切な役目ですからね。";
+			mes "[Bishop Thomas]";
+			mes "Well, that's a good idea." ;
+			mes "It is also an important role of Priest to guide other Acolytes to good paths." ;
 			next;
-			mes "[トーマス司教]";
-			mes "ただ、全てを手伝うことはできません。";
-			mes "アコライトとしてどうしても受けな";
-			mes "ければならない試練もありますからね。";
+			mes "[Bishop Thomas]";
+			mes "I just can't help with everything." ;
+			mes "There are some trials that I really have to undergo as an Acolyte." ;
 			next;
-			mes "[トーマス司教]";
-			mes "二つ目の試練である「退魔修練」";
-			mes "は手伝ってあげられるでしょう。";
-			mes "あなたも一緒に行くためには";
-			mes "^3051FDロザリー^000000が必要です。";
+			mes "[Bishop Thomas]";
+			mes "I'm sure I can help you with the second ordeal, the "Retribution Ordeal"." ;
+			mes "You will need ^3051FD Rosalie ^000000 to go with you." ;
 			next;
-			mes "[トーマス司教]";
-			mes "アコライトの退魔修練を手伝いますか？";
+			mes "[Bishop Thomas]";
+			mes "Would you like to help Acolyte with his degenerate training?" ;
 			next;
-			if(select("はい、手伝います","また後で来ます")==2) {
-				mes "[トーマス司教]";
-				mes "はい、ゆっくり準備を整えてください。";
-				mes "^3051FDロザリー^000000を必ず身につけて";
-				mes "来てくださいね。";
+			if(select("Yes, I will help", "I will come back later")==2) {
+				mes "[Bishop Thomas]";
+				mes "Yes, please take your time getting ready." ;
+				mes "Be sure to come wearing your ^3051FD Rosalie^000000." ;
 				close;
 			}
 			if(countitem(2608)<1) {
-				mes "[トーマス司教]";
-				mes "うん…^3051FDロザリー^000000をお持ちでないか。";
+				mes "[Bishop Thomas]";
+				mes "Yeah... Do you have ^3051FD Rosalie^000000?" ;
 				next;
-				mes "[トーマス司教]";
-				mes "修練場に入りたかったら";
-				mes "^3051FDロザリー^000000を身につけてから";
-				mes "いらしてください。";
+				mes "[Bishop Thomas]";
+				mes "If you want to enter the training hall, please wear ^3051FD Rosalie^000000 before you come." ;
 				close;
 			}
-			mes "[トーマス司教]";
-			mes "それでは、アコライトの修練地へ";
-			mes "送ってあげます。";
-			mes "ピーター修道士によろしく";
-			mes "お伝えください。";
+			mes "[Bishop Thomas]";
+			mes "Then I will send you to the training ground in Acolyte." ;
+			mes "Please give my regards to Friar Peter." ;
 			next;
-			mes "[トーマス司教]";
-			mes "良いプリーストになれるように";
-			mes "よく導いてあげてくださいね。";
+			mes "[Bishop Thomas]";
+			mes "Please guide him well so that he can be a good Priest." ;
 			close2;
 			warp "job_prist.gat",24,180;
 			end;
 		case 3:
-			mes "[トーマス司教]";
-			mes "力を出すのです。あなたは神の";
-			mes "ご加護を受ける子なのですから…";
-			mes "私があなたの傷ついた身と心を";
-			mes "癒しましょう。";
+			mes "[Bishop Thomas]";
+			mes "You must exert yourself. You are a child of God's blessing..." ;
+			mes "Let me heal your wounded body and heart..." ;
 			next;
-			mes "[トーマス司教]";
-			mes "神よ…我らを見守り、助けたまえ…";
-			mes "苦難と逆境に対した時、我らの祈り";
-			mes "が届かんことを…";
+			mes "[Bishop Thomas]";
+			mes "O God... Watch over us and help us..." ;
+			mes "May our prayers be heard in times of hardship and adversity..." ;
 			next;
-			mes "[トーマス司教]";
-			mes "ここにあなたの子が苦しんでおります…";
-			mes "どうかこの子の疲弊した心をあなたの";
-			mes "温かい心で包んであげてください…";
+			mes "[Bishop Thomas]";
+			mes "Here is your child suffering..." ;
+			mes "Please surround this child's weary heart with your warmth..." ;
 			next;
-			mes "[トーマス司教]";
-			mes "少し良くなったはずです。";
-			mes "これからも祈ることを忘れずに…";
-			mes "あなたに神のご加護あらんことを…";
+			mes "[Bishop Thomas]";
+			mes "It should be a little better." ;
+			mes "Remember to keep praying..." ;
+			mes "God bless you..." ;
 			close;
 		}
 	}
-	if(Job != Job_Acolyte) {
-		mes "[トーマス司教]";
-		mes "あなたに神のご加護があらんことを。";
-		mes "こちらはプロンテラ大聖堂です。";
-		mes "何のご用で訪ねなさった？";
+	if(Job ! = Job_Acolyte) {
+		mes "[Bishop Thomas]";
+		mes "God bless you." ;
+		mes "This is Prontera Cathedral." ;
+		mes "What brings you here?" ;
 		next;
-		if(select("プリーストについて教えてください","見物に来たんです")==2) {
-			mes "[トーマス司教]";
-			mes "家のように思って楽にしなさい。";
-			mes "聖堂はこの世のどこよりも";
-			mes "安全ですからな。";
+		if(select("Tell me about Priest", "I'm here to see the sights")==2) {
+			mes "[Bishop Thomas]";
+			mes "Think of it as home and make yourself comfortable." ;
+			mes "The cathedral is safer than anywhere else in the world, you know." ;
 			next;
-			mes "[トーマス司教]";
-			mes "それでは、あなたに神のご加護";
-			mes "あらんことを…";
+			mes "[Bishop Thomas]";
+			mes "Then God bless you..." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "プリーストは、神の代理として";
-		mes "神の意思を現世に伝える者です。";
-		mes "アコライトになり、多くの修行を";
-		mes "積んだ者にのみその資格が";
-		mes "与えられるのです…";
+		mes "[Bishop Thomas]";
+		mes "Priests are those who carry God's will to this world on his behalf." ;
+		mes "Only those who have become Acolytes and have undergone much training are qualified to do so..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "アコライトのJobLvが40以上なら、";
-		mes "いくつかの試練を受け、プリーストに";
-		mes "なることができるでしょう。";
-		mes "悪魔とアンデッドに対する力が強まり、";
-		mes "補助スキルも増えるでしょう…。";
+		mes "[Bishop Thomas]";
+		mes "If an Acolyte's JobLv is 40 or higher, he will be able to take some trials and become a Priest..." ;
+		mes "He will have more power against demons and undead and more auxiliary skills..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "そして、街・フィールド・ダンジョン";
-		mes "如何なる場所においても、重要な";
-		mes "役割をこなさなくてはなりません。";
-		mes "私達プリーストは、人に尽くし、";
-		mes "人を助けるのが与えられた";
-		mes "使命だからです。";
+		mes "[Bishop Thomas]";
+		mes "And you will have to play an important role in any city, field, or dungeon..." ;
+		mes "[Bishop Thomas]"; mes "[Bishop Thomas]"; mes "[Bishop Thomas]"; mes "We Priests have been given the mission to serve and help others." ;
 		next;
-		mes "[トーマス司教]";
-		mes "しかし、他のプリーストに会った時、";
-		mes "それを強要してはなりません。";
-		mes "あくまでそれは自発的な行動によって";
-		mes "意味を成すものなのですから…。";
+		mes "[Bishop Thomas]";
+		mes "But when you meet other Priests, you must not force them to do so." ;
+		mes "It is only by voluntary action that it makes sense..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "助けになる時は報酬を望んでは";
-		mes "なりませんし、助けを受ける側も";
-		mes "いつも礼儀を正し感謝の気持ちを";
-		mes "忘れてはいけません。";
+		mes "[Bishop Thomas]";
+		mes "When you help, you must not hope for a reward, and the recipient of your help must always be courteous and grateful." ;
 		next;
-		mes "[トーマス司教]";
-		mes "これで説明になったかはわかりません。";
-		mes "直接プリーストたちに会って話しを";
-		mes "聞いてみるのも良いでしょう。ほほほ…";
+		mes "[Bishop Thomas]";
+		mes "I don't know if this explains it." ;
+		mes "It would be good to meet the Priests in person and talk to them. Ho ho ho..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは、あなたに神のご加護";
-		mes "あらんことを…";
+		mes "[Bishop Thomas]";
+		mes "Then God bless you..." ;
 		close;
 	}
 	switch(CHANGE_PR) {
 	case 0:
-		mes "[トーマス司教]";
-		mes "何の用で訪ねて来たのですか？";
+		mes "[Bishop Thomas]";
+		mes "What brings you here?" ;
 		next;
-		if(select("プリーストに転職しに来ました","ご挨拶に伺いました")==2) {
-			mes "[トーマス司教]";
-			mes "そうですか…私はこの通り元気です。";
-			mes "あなたもアコライトとしての使命を";
-			mes "忘れずに、正しく生きてください。";
+		if(select("I'm here to change jobs at Priest", "I came to say hello")==2) {
+			mes "[Bishop Thomas]";
+			mes "Well... I am fine as you can see." ;
+			mes "Please remember your mission as an Acolyte and live right." ;
 			next;
-			mes "[トーマス司教]";
-			mes "それでは、また来る時は他の";
-			mes "アコライト達の様子も教えてください。";
-			mes "あなたに神のご加護あらんことを…";
+			mes "[Bishop Thomas]";
+			mes "So, when you come back, please let me know how the other Acolytes are doing." ;
+			mes "God bless you..." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "そうですか…プリーストへの転職を";
-		mes "お望みですか…";
-		mes "神もあなたの決心を心からお喜びに";
-		mes "なるでしょう。";
+		mes "[Bishop Thomas]";
+		mes "I see... . would you like to move to Priest..." ;
+		mes "God will be very pleased with your decision." ;
 		next;
-		mes "[トーマス司教]";
-		mes "私はプロンテラ大聖堂の司教を";
-		mes "仰せつかっている";
-		mes "トーマス=セルバンテスといいます。";
-		mes "固くならず、楽にしてください。";
+		mes "[Bishop Thomas]";
+		mes "My name is Thomas Cervantes, Bishop of the Cathedral of Prontera." ;
+		mes "Please do not be hard and easy." ;
 		next;
-		mes "[トーマス司教]";
-		mes "プリーストへの転職を決心したのなら、";
-		mes "いくつかの試練を乗り越えていただ";
-		mes "かなくてはなりません。";
-		mes "まずその前に、JobLvが40以上";
-		mes "であることが前提となります。";
+		mes "[Bishop Thomas]";
+		mes "If you have decided to move to Priest, you will have to go through some trials and tribulations." ;
+		mes "First of all, you must have a JobLv of 40 or higher before you can do so." ;
 		next;
-		mes "[トーマス司教]";
-		mes "さて、あなたの転職のお手伝いをする";
-		mes "ために、こちらの申込書を作らなければ";
-		mes "なりません。";
-		mes "今、申し込みをされますか？";
+		mes "[Bishop Thomas]";
+		mes "Now, in order to help you with your job change, you must complete this application form." ;
+		mes "Would you like to apply now?" ;
 		next;
-		if(select("はい、申し込みます","もう少し考えてみます")==2) {
-			mes "[トーマス司教]";
-			mes "そうですか。それではゆっくり";
-			mes "考えて来て下さい。";
-			mes "プリーストに転職する決心がついたら";
-			mes "また訪ねていらっしゃい。";
+		if(select("Yes, I'm applying", "I'll think about it some more")==2) {
+			mes "[Bishop Thomas]";
+			mes "I see. Then please go ahead and think about it slowly." ;
+			mes "Come back and visit me when you have made up your mind to move to Priest." ;
 			next;
-			mes "[トーマス司教]";
-			mes "あなたに神のご加護あらんことを。";
+			mes "[Bishop Thomas]";
+			mes "God bless you." ;
 			close;
 		}
 		if(JobLevel < 40) {
-			mes "[トーマス司教]";
-			mes "あなたはまだプリーストになるには";
-			mes "早いですね…";
-			mes "世の中で、もっとたくさんの経験を";
-			mes "積んできてください。";
+			mes "[Bishop Thomas]";
+			mes "You're not ready to be Priest yet..." ;
+			mes "Go out in the world and get a lot more experience." ;
 			next;
-			mes "[トーマス司教]";
-			mes "プリーストにはプリーストの…";
-			mes "アコライトにはアコライトの使命が";
-			mes "あるのです…。";
-			mes "時が来たら、また訪ねていらっしゃい。";
+			mes "[Bishop Thomas]";
+			mes "Priest has Priest's..." ;
+			mes "Acolyte has Acolyte's mission..." ;
+			mes "Come back and visit us when the time comes." ;
 			close;
 		}
 		if(SkillPoint) {
-			mes "[トーマス司教]";
-			mes "む…あなたにはまだスキルポイントが";
-			mes "残っていますね…";
-			mes "取得できるスキルを習得してから";
-			mes "来なさい…。";
+			mes "[Bishop Thomas]";
+			mes "Mm... You still have some SkillPoints left..." ;
+			mes "Come back when you have mastered the skills you can acquire..." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes strcharinfo(0)+ " よ…";
-		mes "プリースト転職への試練を言い渡し";
-		mes "ます…。大変な試練で苦痛を伴う";
-		mes "と思いますが、乗り越えてください。";
+		mes "[Bishop Thomas]";
+		mes ""+strcharinfo(0)+ " Yo..." ;
+		mes "I am handing down the ordeal to Priest job change.... I know it will be a difficult and painful ordeal, but please get through it." ;
 		next;
-		mes "[トーマス司教]";
-		mes "プリーストへの転職には、まず巡礼を";
-		mes "行わなければなりません。";
-		mes "フィールドで修行中の三名の修道士";
-		mes "に順に会って来てください。";
+		mes "[Bishop Thomas]";
+		mes "To change your job to Priest, you must first make a pilgrimage." ;
+		mes "Come and meet in order the three monks who are in training in the field." ;
 		next;
-		mes "[トーマス司教]";
-		mes "次に退魔修練です。";
-		mes "退魔とは、悪魔とアンデッドを退け、";
-		mes "全ての誘惑や煩悩・悪しき力を";
-		mes "滅することです。";
+		mes "[Bishop Thomas]";
+		mes "Next is the retreat training." ;
+		mes "Retarding is to repel demons and undead and to destroy all temptations, afflictions, and evil forces." ;
 		next;
-		mes "[トーマス司教]";
-		mes "そして奉仕の誓約。";
-		mes "プリーストとして弱き者を助け、";
-		mes "信仰を広めるための誓約を";
-		mes "していただきます。";
+		mes "[Bishop Thomas]";
+		mes "And the pledge of service." ;
+		mes "As Priest, you will make a pledge to help the weak and spread the faith." ;
 		next;
-		mes "[トーマス司教]";
-		mes "また、JobLv50まで修行をした";
-		mes "アコライトについては、巡礼を";
-		mes "行わなくてもよろしいでしょう。";
-		mes "これまでに多くの巡礼をしてきた";
-		mes "でしょうから…。";
+		mes "[Bishop Thomas]";
+		mes "Also, for Acolytes who have trained to JobLv 50, you may not make the pilgrimage." ;
+		mes "You have probably made many pilgrimages so far..." ;
 		next;
 		if(JobLevel < 50) {
 			set CHANGE_PR,1;
-			mes "[トーマス司教]";
-			mes "それでは巡礼の手順を説明しましょう。";
-			mes "初めはプロンテラ北東方面の遺跡で";
-			mes "修行中のルバルカバラ神父に";
-			mes "会ってきてください。";
+			mes "[Bishop Thomas]";
+			mes "So let's go through the steps of the pilgrimage." ;
+			mes "At the beginning, you should go to meet Father Rubalcabara, who is training at the ruins northeast of Prontera." ;
 			next;
-			mes "[トーマス司教]";
-			mes "次にマチルダシスターに会ってください";
-			mes "。";
-			mes "彼女はプロンテラ南西位置したモロク";
-			mes "フィールドのどこかにいるはずです。";
+			mes "[Bishop Thomas]";
+			mes "Next, please meet Sister Matilda." ;
+			mes "She should be somewhere in the Morroc field located southwest of Prontera." ;
 			next;
-			mes "[トーマス司教]";
-			mes "最後に洋介神父に会ってください。";
-			mes "洋介神父はプロンテラ北西の";
-			mes "フィールドで修行中でしょう。";
+			mes "[Bishop Thomas]";
+			mes "Please meet Father Yosuke at the end." ;
+			mes "Father Yosuke is probably training in the fields northwest of Prontera." ;
 			next;
-			mes "[トーマス司教]";
-			mes "それでは気をつけて。";
-			mes "もし場所がよくわからなかったら";
-			mes "セシル修道女に聞いてみてください。";
-			mes "巡礼が終わったら次の試練を与えます。";
+			mes "[Bishop Thomas]";
+			mes "Take care then." ;
+			mes "If you are not sure of the location, ask Nun Cecile." ;
+			mes "[Bishop Thomas]"; mes "When you have finished your pilgrimage, I will give you the next ordeal." ;
 			next;
-			mes "[トーマス司教]";
-			mes "あなたに神のご加護あらんことを…";
+			mes "[Bishop Thomas]";
+			mes "God bless you..." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "あなたはJobLvが50ですね。";
-		mes "立派です。今まで熱心に修行を";
-		mes "積んできたことが窺えます。";
+		mes "[Bishop Thomas]";
+		mes "You have a JobLv of 50." ;
+		mes "That's admirable. I can see that you have been training diligently." ;
 		next;
-		mes "[トーマス司教]";
-		mes "では、退魔修練へ進んでください。";
-		mes "退魔修練には、他のプリーストを";
-		mes "お供に連れることができます。";
+		mes "[Bishop Thomas]";
+		mes "Then, please proceed to the retreat training." ;
+		mes "You can bring other Priests with you to the Exorcism." ;
 		next;
-		mes "[トーマス司教]";
-		mes "あなたの力ならこれをこなすのは";
-		mes "たやすいと思いますが、";
-		mes "プリースト達と一緒ならばもっと";
-		mes "簡単になるでしょう。";
+		mes "[Bishop Thomas]";
+		mes "I think it will be easy for you to do this, but it will be easier if you are accompanied by Priests." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは退魔修練を始めましょうか。";
+		mes "[Bishop Thomas]";
+		mes "[Bishop Thomas]"; mes "[Bishop Thomas]"; mes "[Bishop Thomas]"; mes "[Bishop Thomas]" ;
 		break;
 	case 1:
-		mes "[トーマス司教]";
-		mes "お？あなたはなぜこちらに居るの";
-		mes "でしょうか？";
-		mes "まさか巡礼を忘れてしまったわけでは";
-		mes "ありませんよね？";
+		mes "[Bishop Thomas]";
+		mes "Oh? Why are you here?" ;
+		mes "You didn't forget your pilgrimage, did you?" ;
 		next;
-		if(select("申し訳ないですが順番を教えてください","いいえ！まさかそのようなことは！")==2) {
-			mes "[トーマス司教]";
-			mes "そうですか。詳しい場所をお知りに";
-			mes "なりたかったら、入り口におります";
-			mes "セシル修道女に聞いてみるのも";
-			mes "よろしいでしょう。";
+		if(select("I'm sorry, can you tell me the order?", "No! No way!") ==2) {
+			mes "[Bishop Thomas]";
+			mes "I see. If you want to know more about the place, you can ask Nun Cecile at the entrance." ;
 			next;
-			mes "[トーマス司教]";
-			mes "それでは気をつけて行ってらっしゃい。";
-			mes "あなたに神のご加護があらんことを。";
+			mes "[Bishop Thomas]";
+			mes "Then have a safe trip." ;
+			mes "God bless you." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "さてさて…初めからこの調子だと、";
-		mes "少し先が心配ですぞ…";
-		mes "また伝えますから、今度はよく聞いて";
-		mes "しっかり覚えてください。";
+		mes "[Bishop Thomas]";
+		mes "Well, well, well... I'm a little worried about the future if this is the way it's going to go from the start..." ;
+		mes "I'll tell you again, so this time, listen carefully and remember." ;
 		next;
-		mes "[トーマス司教]";
-		mes "ルバルカバラ神父にお会いなさい。";
-		mes "プロンテラ北東方面の遺跡で";
-		mes "修行中です。";
+		mes "[Bishop Thomas]";
+		mes "See Father Rubalcabara." ;
+		mes "He is training at the ruins northeast of Prontera." ;
 		next;
-		mes "[トーマス司教]";
-		mes "次にマチルダシスターに会ってください";
-		mes "。";
-		mes "彼女はプロンテラ南西位置したモロク";
-		mes "フィールドのどこかにいるはずです。";
+		mes "[Bishop Thomas]";
+		mes "See Sister Matilda next." ;
+		mes "She should be somewhere in the Morroc field located southwest of Prontera." ;
 		next;
-		mes "[トーマス司教]";
-		mes "最後に洋介神父にお会いなさい。";
-		mes "洋介神父はプロンテラ北西の";
-		mes "フィールドで修行中でしょう。";
+		mes "[Bishop Thomas]";
+		mes "Please see Father Yosuke at the end." ;
+		mes "Father Yosuke is probably training in the fields northwest of Prontera." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは気をつけて。";
-		mes "もし場所がよくわからなかったら、";
-		mes "セシル修道女に聞いてみてください。";
-		mes "巡礼が終わったら次の試練を与えます。";
+		mes "[Bishop Thomas]";
+		mes "Take care then." ;
+		mes "If you are not sure of the location, ask Nun Cecile." ;
+		mes "[Bishop Thomas]"; mes "When you have finished your pilgrimage, I will give you the next ordeal." ;
 		next;
-		mes "[トーマス司教]";
-		mes "あなたに神のご加護あらんことを…";
+		mes "[Bishop Thomas]";
+		mes "God bless you..." ;
 		close;
 	case 2:
-		mes "[トーマス司教]";
-		mes "ルバルカバラ神父にお会いして";
-		mes "きましたね。";
-		mes "遠いところご苦労様でした。";
+		mes "[Bishop Thomas]";
+		mes "You have met Father Rubalcabara..." ;
+		mes "Thank you for your hard work from a long way away." ;
 		next;
-		mes "[トーマス司教]";
-		mes "では次はマチルダシスターのところへ。";
-		mes "モロク方面まで長い旅になりますが、";
-		mes "頑張ってください。";
+		mes "[Bishop Thomas]";
+		mes "Now let's go next to Sister Matilda." ;
+		mes "It will be a long journey to the Morroc area, but good luck." ;
 		close;
 	case 3:
-		mes "[トーマス司教]";
-		mes "マチルダシスターに会ってきましたね";
-		mes "砂漠の暑い中でも変わらず修行中";
-		mes "でしたか…";
+		mes "[Bishop Thomas]";
+		mes "I see you have met Sister Matilda, and she is still training as usual in the heat of the desert..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは最期、洋介神父にお会い";
-		mes "してきなさい。";
-		mes "険しい北西のフィールドのどこかに";
-		mes "いらっしゃるはずですから、";
-		mes "気をつけて行ってきなさい。";
+		mes "[Bishop Thomas]";
+		mes "Then go and see Father Yosuke for the last time." ;
+		mes "He should be somewhere in the rugged northwest field, so take care of yourself." ;
 		close;
 	case 4:
-		mes "[トーマス司教]";
-		mes "洋介神父にお会いしてきましたね。";
-		mes "一つ目の試練「巡礼」を無事終えた";
-		mes "ことをお祝いします。";
+		mes "[Bishop Thomas]";
+		mes "You have met Father Yosuke." ;
+		mes "Congratulations on successfully completing the first ordeal, the Pilgrimage." ;
 		next;
-		mes "[トーマス司教]";
-		mes "次の試練である退魔修練に入ります。";
-		mes "初めに申し上げたように、退魔修練には";
-		mes "供のプリーストを連れて行くことが";
-		mes "できます。";
+		mes "[Bishop Thomas]";
+		mes "We will now begin the next ordeal, the retreat ordeal." ;
+		mes "As I said at the beginning, you can take your Priest with you to the Exorcism Ordeal." ;
 		next;
-		mes "[トーマス司教]";
-		mes "すべての試練を助けてもらうことは";
-		mes "できませんが、プリーストによく導いて";
-		mes "もらってください。";
-		mes "それでは、すぐに退魔修練を始めま";
-		mes "しょうか。";
+		mes "[Bishop Thomas]";
+		mes "You will not be able to get help with all the ordeals, but you can ask Priest to guide you well." ;
+		mes "Shall we begin the retreat training immediately, then?" ;
 		break;
 	case 5:
-		mes "[トーマス司教]";
-		mes "退魔修練への準備が整ったようですね。";
-		mes "それではすぐ始めましょうか。";
+		mes "[Bishop Thomas]";
+		mes "It seems that you are ready to begin your training." ;
+		mes "Shall we begin immediately then?" ;
 		next;
-		if(select("はい、おねがいします","まだ準備ができてないです")==2) {
-			mes "[トーマス司教]";
-			mes "わかりました。ゆっくり準備を整えて";
-			mes "きなさい。あなたが試練を無事";
-			mes "乗り越えられますように。";
+		if(select("Yes, please", "I'm not ready yet")==2) {
+			mes "[Bishop Thomas]";
+			mes "Okay. Go slowly and get ready. May you get through the ordeal in one piece." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "それでは、修練の地へ送って";
-		mes "さしあげます。";
+		mes "[Bishop Thomas]";
+		mes "Then I will send you to the place of your training." ;
 		next;
-		mes "[トーマス司教]";
-		mes "あちらに着いたら、修練を担当";
-		mes "しているピーター神父にお話を";
-		mes "聞いてみてください。";
+		mes "[Bishop Thomas]";
+		mes "When you get there, please talk to Father Peter, who is in charge of the training." ;
 		next;
 		warp "job_prist.gat",24,180;
 		end;
 	case 6:
-		mes "[トーマス司教]";
-		mes "よほど大変だった様子ですね…。";
-		mes "しかし、プリーストになった後には";
-		mes "もっと大きな試練が待ち受けて";
-		mes "いるかもしれません。";
-		mes "この程度の試練に負けてはなりません。";
-		mes "もう一度挑戦してみますか？";
+		mes "[Bishop Thomas]";
+		mes "It looks like you had a very hard time..." ;
+		mes "But there may be greater challenges ahead after you become Priest." ;
+		mes "You must not be defeated by this level of ordeal." ;
+		mes "Would you like to try again?" ;
 		next;
-		if(select("挑戦します","もう少し準備を整えます")==2) {
-			mes "[トーマス司教]";
-			mes "わかりました。ゆっくり準備を整えて";
-			mes "きなさい。あなたが試練を無事";
-			mes "乗り越えられますように。";
+		if(select("I'll try", "I'll be a little more prepared")==2) {
+			mes "[Bishop Thomas]";
+			mes "Okay. Go ahead and take your time getting ready. May you make it through the ordeal in one piece." ;
 			close;
 		}
-		mes "[トーマス司教]";
-		mes "それではお送りします。";
-		mes "無事完遂されることを祈ります。";
+		mes "[Bishop Thomas]";
+		mes "We will send you on your way then." ;
+		mes "I wish you a safe completion." ;
 		next;
-		mes "[トーマス司教]";
-		mes "ピーター神父にも助言をいただくと";
-		mes "良いでしょう。";
+		mes "[Bishop Thomas]";
+		mes "You may also want to ask Father Peter for advice." ;
 		next;
 		warp "job_prist.gat",24,180;
 		end;
 	case 7:
-		mes "[トーマス司教]";
-		mes "退魔修練を無事に終えましたね。";
-		mes "良く頑張りました。";
-		mes "すべての誘惑や煩悩に打ち勝つ";
-		mes "力を備えたあなたは、すでに";
-		mes "プリーストの素質を持つでしょう。";
+		mes "[Bishop Thomas]";
+		mes "You have successfully completed your retreat training." ;
+		mes "You did a great job." ;
+		mes "With the power to overcome all temptations and troubles, you will already have the qualities of a Priest." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは、セシル修道女のところへ";
-		mes "行き、奉仕の誓約を済ませてください。";
-		mes "頭の奥に響く声に対して、自分の";
-		mes "思うままに答えるだけで良いですから。";
+		mes "[Bishop Thomas]";
+		mes "Then go to Nun Cecile and complete your pledge of service." ;
+		mes "All you have to do is answer the voice in the back of your head as you see fit." ;
 		next;
-		mes "[トーマス司教]";
-		mes "それでは、あなたの転職の時を";
-		mes "楽しみにお待ちしております…。";
+		mes "[Bishop Thomas]";
+		mes "Then I look forward to the time of your career change..." ;
 		close;
 	case 8:
-		mes "[トーマス司教]";
-		mes "なぜでしょうか…あなたは奉仕の誓約を";
-		mes "最後まで遂げられませんでした。";
-		mes "プリーストとして基本的な心構えが";
-		mes "できていなければ、いつ悪の誘惑に";
-		mes "飲み込まれてしまうかわかりません…。";
+		mes "[Bishop Thomas]";
+		mes "I wonder why... You have not fulfilled your pledge of service to the end." ;
+		mes "If you don't have the basic mindset as a Priest, you never know when you will be swallowed up by the temptation of evil..." ;
 		next;
-		mes "[トーマス司教]";
-		mes "もう一度セシル修道女のところへ";
-		mes "行き、誓約を最後まで遂げてください。";
-		mes "さもなくば、あなたの心を最初から鍛え";
-		mes "直すために、再度巡礼をしていただく";
-		mes "ことになるでしょう。";
+		mes "[Bishop Thomas]";
+		mes "Go to Nun Cecile again and fulfill your pledge to the end." ;
+		mes "Or else we will ask you to make another pilgrimage in order to re-train your mind from the beginning." ;
 		next;
-		mes "[トーマス司教]";
-		mes "行ってらっしゃい。";
-		mes "耳で聞くのではなく心で聞くのですよ…";
+		mes "[Bishop Thomas]";
+		mes "Go ahead." ;
+		mes "Don't listen with your ears, listen with your heart..." ;
 		close;
 	case 9:
 		if(SkillPoint) {
-			mes "[トーマス司教]";
-			mes "む…あなたにはまだスキルポイントが";
-			mes "残っていますね…";
-			mes "取得できるスキルを習得してから";
-			mes "来なさい…。";
+			mes "[Bishop Thomas]";
+			mes "Mm... You still have some SkillPoints left..." ;
+			mes "Come back when you have mastered the skills you can acquire..." ;
 			close;
 		}
 		set '@itemid,(JobLevel >= 50)? 1551: 1550;
-		mes "[トーマス司教]";
-		mes "おめでとうございます。";
-		mes "あなたは全ての試練を乗り越えました。";
-		mes "プリーストになる資格を与えます。";
+		mes "[Bishop Thomas]";
+		mes "Congratulations!" ;
+		mes "You have overcome all your trials." ;
+		mes "You are now eligible to become a Priest." ;
 		next;
-		mes "[トーマス司教]";
-		mes "神よ…あなたの瑞光をこの者に照らし、";
-		mes "その力を授けよ…";
-		mes "この世にあなたの意思を伝える者";
-		mes "今ここに生まれる…";
+		mes "[Bishop Thomas]";
+		mes "O God... Shine your auspicious light on this man and give him your power..." ;
+		mes "He who bears your will to the world, is born here and now..."; mes "[Bishop Thomas]"; mes "[Bishop Thomas]" ;
 		next;
 		unequip;
 		jobchange Job_Priest;
 		set CHANGE_PR,0;
-		mes "[トーマス司教]";
-		mes "これであなたも一人のプリースト";
-		mes "として生まれ変わりました。";
-		mes "お祝いを申し上げると同時に、";
-		mes "新たな心構えとともに困窮する";
-		mes "人々を良く導き救ってあげてください。";
+		mes "[Bishop Thomas]";
+		mes "You are now a Priest in your own right." ;
+		mes "I congratulate you and ask that you guide and help those in need with your new attitude." ;
 		next;
 		getitem '@itemid,1;
-		mes "[トーマス司教]";
-		mes "そして転職記念にこれをさしあげます。";
-		mes "信義について記されており、これからの";
-		mes "道を進むあなたには必要なものとなる";
-		mes "でしょう。";
+		mes "[Bishop Thomas]";
+		mes "And I give this to the new job change ghost." ;
+		mes "It is about faith and will be necessary for you as you continue on your path." ;
 		next;
-		mes "[トーマス司教]";
-		mes "これにてすべての転職の儀を";
-		mes "終わります。お疲れ様でした…。";
-		mes "新しき道を歩んでいきなさい…。";
+		mes "[Bishop Thomas]";
+		mes "This concludes all the rituals of the change of employment. Thank you for your hard work..." ;
+		mes "Continue on your new path...." ;
 		close;
 	}
-	//退魔修練行き
+	// go to retreat training
 	next;
 	set CHANGE_PR,5;
-	if(select("はい、お願いします","少し準備をして来ます")==2) {
-		mes "[トーマス司教]";
-		mes "わかりました。ゆっくり準備を整えて";
-		mes "きなさい。あなたが試練を無事";
-		mes "乗り越えられますように。";
+	if(select("Yes, please", "I'll go do some preparation")==2) {
+		mes "[Bishop Thomas]";
+		mes "Okay. Go slowly and get ready. May you get through the ordeal safely." ;
 		close;
 	}
-	mes "[トーマス司教]";
-	mes "それでは、修練の地へ送って";
-	mes "さしあげます。";
+	mes "[Bishop Thomas]";
+	mes "Then I will send you to the place of your training." ;
 	next;
-	mes "[トーマス司教]";
-	mes "あちらに着いたら、修練を担当";
-	mes "しているピーター神父にお話を";
-	mes "聞いてみてください。";
+	mes "[Bishop Thomas]";
+	mes "When you get there, please talk to Father Peter, who is in charge of the training." ;
 	next;
 	warp "job_prist.gat",24,180;
 	end;
@@ -617,203 +470,172 @@ prt_church.gat,16,41,4	script	司教	60,{
 
 
 //==========================================
-// 一次試験（聖地巡礼）
+// First test (holy pilgrimage)
 //------------------------------------------
 
-// npc_job_04acolyte.txt参照
+// see npc_job_04acolyte.txt
 
 
 //==========================================
-// 二次試験（退魔修練）
+// Secondary examination (retreat training)
 //------------------------------------------
 
-job_prist.gat,24,187,4	script	タフな神父::PR_Timer	110,{
-	if('flag) {	//挑戦中のロック
-		mes "[ピーター神父]";
-		mes "あ…ちょっと待ってくれ。";
-		mes "今他のアコライトが修練中だ。";
+job_prist.gat,24,187,4 script tough priest::PR_Timer 110,{
+	if('flag) { //lock during challenge
+		mes "[Father Peter]";
+		mes "Ah... Wait a minute." ;
+		mes "There's another Acolyte in training right now." ;
 		next;
-		mes "[ピーター神父]";
-		mes "しばらくしてまた声をかけてくれ。";
-		mes "終わっていたら送ってあげるから。";
+		mes "[Father Peter]";
+		mes "Call on me again in a while." ;
+		mes "I'll send you home if it's over." ;
 		close;
 	}
-	if(Job != Job_Acolyte) {
-		mes "[ピーター神父]";
-		mes "君に神のご加護あらんことを。";
+	if(Job ! = Job_Acolyte) {
+		mes "[Father Peter]";
+		mes "God bless you." ;
 		next;
-		mes "[ピーター神父]";
-		mes "プリーストだな…手伝ってあげる";
-		mes "アコライトでもいるのかな？";
-		mes "まったく優しいね。どれ、君なら";
-		mes "それもたやすいだろう。";
+		mes "[Father Peter]";
+		mes "Priest... Do you have an Acolyte to help you?" ;
+		mes "That's very kind of you. Which, I'm sure, would be easy for you to do." ;
 		next;
-		mes "[ピーター神父]";
-		mes "しかしこれだけは覚えておいて";
-		mes "ほしい。あくまで君の受ける試練";
-		mes "ではないということを。";
-		mes "手伝ってあげるというだけで、";
-		mes "全てを解決するわけじゃないぞ。";
+		mes "[Father Peter]";
+		mes "But remember this. It is not an ordeal for you to undergo." ;
+		mes "Just because I'm going to help you doesn't mean I'm going to solve everything." ;
 		next;
-		mes "[ピーター神父]";
-		mes "それでは先に進むかな？";
+		mes "[Father Peter]";
+		mes "Shall we move on then?" ;
 		next;
-		switch (select("はい、行きます","少しお待ちください","やはり街に帰ります")) {
+		switch (select("Yes, I'm going", "Please wait a moment", "Yes, I'm going back to town")) {
 		case 1:
-			mes "[ピーター神父]";
-			mes "よし、アコライトが入れば始まる！";
-			mes "君もきっと、アコライトだった頃を";
-			mes "思い出すだろう。";
+			mes "[Father Peter]";
+			mes "Okay, if Acolyte is in, we'll start!" ;
+			mes "I'm sure you'll remember when you were Acolyte, too." ;
 			close2;
 			warp "job_prist.gat",24,44;
 			end;
 		case 2:
-			mes "[ピーター神父]";
-			mes "ふむ…たしかに準備は整えないとな。";
-			mes "よし、良い時にまた声をかけなさい。";
+			mes "[Father Peter]";
+			mes "Hmmm... You're right, we should be ready." ;
+			mes "Okay, call on me again in good time." ;
 			close;
 		case 3:
-			mes "[ピーター神父]";
-			mes "ふむ…それでは帰りなさい。";
-			mes "縁があればまた会うだろう。";
-			mes "君に神のご加護あらんことを。";
+			mes "[Father Peter]";
+			mes "Hmm... Then go home." ;
+			mes "We will meet again if we have a chance." ;
+			mes "God bless you." ;
 			close2;
 			warp "prontera.gat",234,318;
 			end;
 		}
 	}
 	if(CHANGE_PR < 6) {
-		mes "[ピーター神父]";
-		mes "君に神のご加護あらんことを。";
-		mes "まず、一つ目の試練を無事乗り越えた";
-		mes "ことを祝おう。よく頑張った。";
+		mes "[Father Peter]";
+		mes "God bless you." ;
+		mes "First, let me congratulate you on successfully completing the first ordeal. You did a great job." ;
 		next;
-		mes "[ピーター神父]";
-		mes "私の名前はピーター・S・アルベルト";
-		mes "という。トーマスは元気だったかい？";
+		mes "[Father Peter]";
+		mes "My name is Peter S. Alberto. How has Thomas been?" ;
 		next;
-		mes "[ピーター神父]";
-		mes "一応奴は司教だから、本当はトーマス";
-		mes "司教様と呼ばなければならないんだ";
-		mes "ろうが…";
-		mes "一生神父で過ごす私とは違うんだよ";
-		mes "ハハハ！";
+		mes "[Father Peter]";
+		mes "In case you're wondering, he's a bishop, so you really have to call him Bishop Thomas-sama..." ;
+		mes "It's not like I'm a priest for the rest of my life, hahaha!" ;
 		next;
-		mes "[ピーター神父]";
-		mes "さて、退魔修練について簡単に説明";
-		mes "しようか。君はこの修練について";
-		mes "どんなものかわかっているかね？";
+		mes "[Father Peter]";
+		mes "Now, let me briefly explain to you about the retreat ordeal. Do you know what this ordeal is all about?" ;
 		next;
-		if(select("はい、わかっています","よく分からないです…")==1) {
-			mes "[ピーター神父]";
-			mes "利口だね。ま、一応簡単に説明して";
-			mes "おこうか。";
-			mes "よくわかっているのと、できるのとでは";
-			mes "違うからね。";
+		if(select("Yes, I know", "I'm not sure...") ==1) {
+			mes "[Father Peter]";
+			mes "Clever. Well, let me explain it to you in a nutshell." ;
+			mes "There is a difference between knowing well and being able to do it." ;
 		}
 		else {
-			mes "[ピーター神父]";
-			mes "そうか、それじゃあ詳しい説明が";
-			mes "必要だね。";
-			mes "しっかり聞いていけば、君もいつの";
-			mes "間にか退魔修練をこなせているだろう。";
+			mes "[Father Peter]";
+			mes "Well, then you'll need to elaborate." ;
+			mes "If you listen to me carefully, you will be able to master the retreat before you know it." ;
 		}
 		next;
-		mes "[ピーター神父]";
-		mes "退魔修練というのは、文字通り魔物を";
-		mes "退治することをいう。";
-		mes "魔物とは、アンデットと悪魔の総称だ。";
+		mes "[Father Peter]";
+		mes "The practice of exorcism literally means to slay demons." ;
+		mes "Demon is the general term for undes and demons." ;
 		next;
-		mes "[ピーター神父]";
-		mes "世の中には、信義に反したモノが";
-		mes "あまりにも多い。そういう魔物らは";
-		mes "善良な神の民…つまり私達に害を為す。";
+		mes "[Father Peter]";
+		mes "There are so many things in the world that are against the faith. These demons are good people of God..."; next; mes "[Father Peter]"; mes "There are too many things in the world that are against the faith. They harm us." ;
 		next;
-		mes "[ピーター神父]";
-		mes "私達プリーストにはそういった魔物達を";
-		mes "全て退治するまで安息の日は訪れない。";
+		mes "[Father Peter]";
+		mes "We Priests will not have a day of rest until we have destroyed all such demons." ;
 		next;
-		mes "[ピーター神父]";
-		mes "退魔修練がどんなことをするのかが";
-		mes "だいたいこれでわかったかな？";
-		mes "プリーストになったつもりで自分の";
-		mes "力を試すんだ。";
-		mes "そこで、この試練はかなり難しいものと";
-		mes "なるから、助けをつけることができる。";
+		mes "[Father Peter]";
+		mes "Now do you have a rough idea of what the training of the demon exterminators is all about?" ;
+		mes "Pretend you are Priest and test yourself." ;
+		mes "There, you can put on help, because this ordeal will be quite difficult." ;
 		next;
-		mes "[ピーター神父]";
-		mes "よく知る先輩プリーストがいるなら、";
-		mes "お願いするのも良いだろう。";
-		mes "それでは、そろそろ始めようか。";
+		mes "[Father Peter]";
+		mes "If you have a senior Priest you know well, you can ask him or her." ;
+		mes "[Father Peter]"; mes "Then it's time to get started." ;
 		next;
 		set CHANGE_PR,6;
-		set '@word$,"少しお待ちください";
+		set '@word$, "Please wait a moment";
 	}
 	else {
-		mes "[ピーター神父]";
-		mes "今度はしっかり準備してきたかな？";
-		mes "さあさあ、早く終わらせてプリーストに";
-		mes "なろう。";
+		mes "[Father Peter]";
+		mes "Have we prepared well this time?" ;
+		mes "Come on, come on, let's get this over with and be Priest." ;
 		next;
-		mes "[ピーター神父]";
-		mes "それではすぐに始めよう。";
+		mes "[Father Peter]";
+		mes "Then let's get started right away." ;
 		next;
-		//セリフが微妙に違う
-		set '@word$,"もう少し待ってください";
+		// lines are slightly different
+		set '@word$, "Wait a little longer";
 	}
-	switch (select("おねがいします",'@word$,"街に帰ります")) {
+	switch (select("please",'@word$, "I'm going back to town")) {
 	case 1:
-		mes "[ピーター神父]";
-		mes "それでは、退魔修練を始める。";
-		mes "内容はいたって単純…出てくる";
-		mes "モンスターを全て倒せば良い。";
+		mes "[Father Peter]";
+		mes "Then we will begin the retreat training." ;
+		mes "The content is quite simple... All you have to do is defeat all the monsters that appear." ;
 		next;
-		mes "[ピーター神父]";
-		mes "何段階かあるから、気をつけなさい。";
-		mes "頑張ってな！";
+		mes "[Father Peter]";
+		mes "There are several levels, so be careful." ;
+		mes "Good luck!" ;
 		next;
-		if('flag) {	//ここでもロックチェック
-			mes "[ピーター神父]";
-			mes "あ…ちょっと待ってくれ。";
-			mes "今他のアコライトが修練中だ。";
+		if('flag) { //lock check here too
+			mes "[Father Peter]";
+			mes "Oh... Wait a minute." ;
+			mes "There's another Acolyte in training right now." ;
 			next;
-			mes "[ピーター神父]";
-			mes "しばらくしてまた声をかけてくれ。";
-			mes "終わっていたら送ってあげるから。";
+			mes "[Father Peter]";
+			mes "Call on me again in a while." ;
+			mes "I'll send you home if it's over." ;
 			close;
 		}
 		set @priest_check,0;
-		set getvariableofnpc('count,"PR_Summon"),0;	//mobカウンタを初期化
-		set 'flag,getcharid(3);				//アカウントIDを使ってロックする
+		set getvariableofnpc('count, "PR_Summon"),0; //initialize mob counter
+		set 'flag,getcharid(3); //lock using account ID
 		initnpctimer;
 		warp "job_prist.gat",24,44;
 		end;
 	case 2:
-		mes "[ピーター神父]";
-		mes "ふむ…たしかに準備は必要だ。";
-		mes "よし、よかったらまた声をかけてくれ。";
+		mes "[Father Peter]";
+		mes "Hmmm... Yes, we need to be prepared." ;
+		mes "Okay, give me another shout if you want." ;
 		close;
 	case 3:
 		if(CHANGE_PR < 6) {
-			mes "[ピーター神父]";
-			mes "何、ここまで来て帰るのか。";
-			mes "私は構わないが…";
+			mes "[Father Peter]";
+			mes "What, you've come this far and you're leaving?" ;
+			mes "I don't mind, but..." ;
 			next;
-			mes "[ピーター神父]";
-			mes "まあ始めての経験だから、怖がるのも";
-			mes "無理はないな。勇気が出たらまだ";
-			mes "来なさい。";
+			mes "[Father Peter]";
+			mes "Well, it's your first time, so no wonder you're scared. You can still come when you get the courage." ;
 		}
 		else {
-			mes "[ピーター神父]";
-			mes "また街に帰ると…";
-			mes "そんなことではいつまで経っても";
-			mes "プリーストになることはできないぞ。";
+			mes "[Father Peter]";
+			mes "When you return to the city again..." ;
+			mes "You can't be Priest forever if you do that." ;
 			next;
-			mes "[ピーター神父]";
-			mes "君にはまだここは早いな。";
-			mes "世の中をもう少し見てからまた";
-			mes "来なさい。";
+			mes "[Father Peter]";
+			mes "You're not ready for this place yet." ;
+			mes "[Father Peter]"; mes "Come back when you've seen a little more of the world." ;
 		}
 		close2;
 		warp "prontera.gat",234,318;
@@ -821,364 +643,320 @@ job_prist.gat,24,187,4	script	タフな神父::PR_Timer	110,{
 	}
 OnTimer350000:
 	stopnpctimer;
-	if(attachrid('flag)) {	//対象はアコのみ
+	if(attachrid('flag)) { //target only aco
 		set '@d,distance('flag);
-		if('@d < 0 || '@d > 23)		//待機エリア以外ならワープ
+		if('@d < 0 || '@d > 23) //warp if not in waiting area
 			warp "prontera.gat",234,318;
 	}
 	set 'flag,0;
-	killmonster "job_prist.gat","All";
+	killmonster "job_prist.gat", "All";
 	end;
 }
 
 //==============================================================
-job_prist.gat,24,109,4	script	#PR_Warp1	45,2,2,{
-	if(Job != Job_Acolyte || getvariableofnpc('count,"PR_Summon") >= 13)
+job_prist.gat,24,109,4 script #PR_Warp1 45,2,2,{
+	if(Job ! = Job_Acolyte || getvariableofnpc('count, "PR_Summon") >= 13)
 		warp "job_prist.gat",168,17;
 	end;
 }
 
-job_prist.gat,168,180,4	script	#PR_Warp2	45,2,2,{
+job_prist.gat,168,180,4 script #PR_Warp2 45,2,2,{
 	warp "job_prist.gat",98,40;
 	end;
 }
 
-job_prist.gat,98,105,0	script	#PR_Warp3	45,2,2,{
+job_prist.gat,98,105,0 script #PR_Warp3 45,2,2,{
 	if(Job == Job_Acolyte) {
-		if(@priest_check < 8)	//念のためチェックする
+		if(@priest_check < 8) //check for ghost
 			end;
 		set CHANGE_PR,7;
 		set @priest_check,0;
 		stopnpctimer "PR_Timer";
-		set getvariableofnpc('flag,"PR_Timer"),0;
-		killmonster "job_prist.gat","All";
+		set getvariableofnpc('flag, "PR_Timer"),0;
+		killmonster "job_prist.gat", "All";
 	}
 	warp "prt_church.gat",15,36;
 	end;
 }
 
 //==============================================================
-job_prist.gat,168,45,4	script	デビルチ	1109,5,0,{
+job_prist.gat,168,45,4 script Deviruchi 1109,5,0,{
 	end;
 OnTouch:
-	if(Job != Job_Acolyte) {
-		mes "[デビルチ]";
-		mes "ふん…プリーストがこんなところに";
-		mes "なぜ来た？街で祈祷でもしている";
-		mes "はずだろう？キキキキキ…";
-		mes "時間を無駄にするのが好きなようだな。";
+	if(Job ! = Job_Acolyte) {
+		mes "[Deviruchi]";
+		mes "Hmm... What is Priest doing here? Shouldn't he be in town praying? Kiki-kiki-kiki..." ;
+		mes "You seem to like wasting time." ;
 		next;
-		mes "[デビルチ]";
-		mes "今日は多めに見てやるから";
-		mes "さっさと立ち去れ。";
-		mes "二度は無いぞ…キキャキャ！";
+		mes "[Deviruchi]";
+		mes "I'll give you more today, so get the hell out of my way." ;
+		mes "Not twice... Kikacha!" ;
 		close;
 	}
-	mes "[デビルチ]";
-	mes "ほう、アコライトは久しぶりに見るぞ。";
-	mes "見るからにプリーストへの転職でも";
-	mes "考えてそうだな…キャキャキャ！";
+	mes "[Deviruchi]";
+	mes "Wow, haven't seen Acolyte in a while." ;
+	mes "From the looks of it, he's thinking about a career change to Priest... Caca!" ;
 	next;
-	mes "[デビルチ]";
-	mes "しかし、わしにはおまえがここまで";
-	mes "来れたことが不思議でならん。";
+	mes "[Deviruchi]";
+	mes "But I can't help wondering how you've made it this far." ;
 	next;
-	mes "[デビルチ]";
-	mes "あえてこんな大変な道を進むのか？";
-	mes "もっと他の楽な職業もあっただろう！";
+	mes "[Deviruchi]";
+	mes "You dare to go through such a difficult path?" ;
+	mes "There were other easier occupations for you!" ;
 	next;
-	mes "[デビルチ]";
-	mes "街でもダンジョンでもおまえに助けを";
-	mes "求めるやつらばかりだろう？";
-	mes "一つもおまえのためにしてくれることが";
-	mes "無いというのにな！";
+	mes "[Deviruchi]";
+	mes "They're all asking for your help in the city and in the dungeon, aren't they?" ;
+	mes "Not a single thing they do for you!"; mes "[Deviruchi]"; mes "[Deviruchi]"; mes "Not a single thing they do for you!" ;
 	next;
-	mes "[デビルチ]";
-	mes "これはわしが善意で忠告してやっている";
-	mes "のだぞ。試練も大変だが、このまま";
-	mes "生きていくのはもっと辛いぞ？";
-	mes "別の生き方を探そうではないか。";
+	mes "[Deviruchi]";
+	mes "I am giving you this advice out of the goodness of my heart. The trials are hard, but it's even harder to live like this, okay?" ;
+	mes "Let us find another way to live." ;
 	next;
-	if(select("はい…そうします","悪魔め！退きなさい！")==1) {
-		mes "[デビルチ]";
-		mes "キキキッ、よく選んだ。";
-		mes "二度とここに来るなよ！";
-		mes "転職を諦めたおまえに、わしから";
-		mes "良いプレゼントをやろう！";
+	if(select("Yes... I will", "You devil! Retreat!") ==1) {
+		mes "[Deviruchi]";
+		mes "Kikki, well chosen." ;
+		mes "Don't come here again!" ;
+		mes "I have a good present for you, since you gave up your new job!" ;
 		next;
-		mes "[デビルチ]";
-		mes "タダでわしの友達に会える機会を";
-		mes "やるぞ！キャキャキャキャキャ！";
+		mes "[Deviruchi]";
+		mes "I'll give you a chance to meet my friends for free! Cackle cackle cackle!" ;
 		next;
 		warp "c_tower2.gat",168,33;
 		end;
 	}
-	mes "[デビルチ]";
-	mes "キキキキキ…";
-	mes "そう言わずにわしの話をもっと聞け。";
+	mes "[Deviruchi]";
+	mes "kiki kiki kiki..." ;
+	mes "Don't say that, listen to me more." ;
 	next;
-	mes "[デビルチ]";
-	mes "今転職を諦めれば、わしが良いものを";
-	mes "プレゼントしよう。";
-	mes "おまえが一生に一度お目にかかれるか";
-	mes "どうかという代物だぞ。キャキャキャ";
+	mes "[Deviruchi]";
+	mes "If you give up your job now, I will give you something good." ;
+	mes "It's something you may or may not see in your lifetime. Cackle";
 	next;
 	cutincard 4132;
-	mes "[デビルチ]";
-	mes "おまえが自力でこんなカードを手に";
-	mes "入れられるかな？よく考えてみろ。";
+	mes "[Deviruchi]";
+	mes "Do you think you could get a card like this on your own? Think about it." ;
 	next;
-	if(select("カードを受け取る","悪魔め！退きなさい！")==1) {
-		mes "[デビルチ]";
-		mes "キキキッ やはり人間よのう！";
-		mes "おまえにこの貴重なカードを";
-		mes "やるわ！";
+	if(select("receive card", "Devil! Retreat!") ==1) {
+		mes "[Deviruchi]";
+		mes "Kikiki-kikikki, I am human after all!" ;
+		mes "I'll give you this precious card!" ;
 		next;
-		mes "[デビルチ]";
-		mes "でもわしがやるわけではない。";
-		mes "頑張って手に入れてこい！";
+		mes "[Deviruchi]";
+		mes "But not by me." ;
+		mes "Good luck getting it!" ;
 		next;
 		warp "mjolnir_05.gat",200,200;
 		end;
 	}
 	cutin "dummy",255;
-	mes "[デビルチ]";
-	mes "きき…なかなか強い精神を持つな。";
-	mes "おまえが己が力で手に入れられるか";
-	mes "見ていてやる…";
+	mes "[Deviruchi]";
+	mes "Kiki... That's quite a strong spirit." ;
+	mes "I'll see if you can get it by yourself..." ;
 	next;
-	mes "[デビルチ]";
-	mes "いつか後悔しながらわしの元に";
-	mes "戻ってくるだろうがな！キャキャ！";
+	mes "[Deviruchi]";
+	mes "One day you'll come back to me with regrets, though! C'mon!" ;
 	close;
 }
 
 //==============================================================
-job_prist.gat,168,75,4	script	ドッペルゲンガー	1046,5,0,{
+job_prist.gat,168,75,4 script Doppelganger 1046,5,0,{
 	end;
 OnTouch:
-	if(Job != Job_Acolyte) {
-		mes "[ドッペルゲンガー]";
-		mes "愚かな人間よ…我は貴様に用はない。";
-		mes "面倒ではないか？己の試練でここに";
-		mes "居るわけではなかろう…";
+	if(Job ! = Job_Acolyte) {
+		mes "[Doppelganger]";
+		mes "Foolish man... I have no use for you." ;
+		mes "Isn't this too much trouble? You are not here to test yourself..." ;
 		next;
-		mes "[ドッペルゲンガー]";
-		mes "見込みの無いアコライト一人のために";
-		mes "苦労をすることはない。";
-		mes "くだらぬことに付き合わず速やかに";
-		mes "帰ることだ…";
+		mes "[Doppelganger]";
+		mes "I'm not here to go through the trouble for a single Acolyte who has no chance..." ;
+		mes "[Doppelganger]"; mes "[Doppelganger]"; mes "[Doppelganger]"; mes "[Doppelganger]" ;
 		close;
 	}
-	mes "[ドッペルゲンガー]";
-	mes "アコライトよ…少し我の話に耳を傾ける";
-	mes "がよい…";
+	mes "[Doppelganger]";
+	mes "Acolyte... Listen to me for a moment..." ;
 	next;
-	mes "[ドッペルゲンガー]";
-	mes "何故プリーストになろうというのだ？";
-	mes "我が見るに貴様にはそのような職は";
-	mes "合わない。";
+	mes "[Doppelganger]";
+	mes "Why do you want to be Priest?" ;
+	mes "[Doppelganger]"; mes "I see that you are not fit for such a position." ;
 	next;
-	mes "[ドッペルゲンガー]";
-	mes "願うならば我が能力を以って新たな";
-	mes "人生を始めさせてやるぞ？";
-	mes "今の強さを持ったままノービスにし、";
-	mes "また、望んだ職に就かせてやる。";
+	mes "[Doppelganger]";
+	mes "If you wish, I will let you start a new life with my abilities?" ;
+	mes "I will make you a Novice with the strength you have now, and I will also let you get the job you want." ;
 	next;
-	mes "[ドッペルゲンガー]";
-	mes "無論今貴様が持つレベル程度の能力を";
-	mes "持ったままだ。";
-	mes "良い条件だと思うが…どうだ？";
+	mes "[Doppelganger]";
+	mes "Of course, you'll still have about the level of ability you have now." ;
+	mes "I think that's a good deal... What do you think?" ;
 	next;
-	if(select("おねがいします！","悪魔め！退きなさい")==2) {
-		mes "[ドッペルゲンガー]";
-		mes "我の話をよく理解できぬようだな…";
-		mes "人生を巻き戻せる良い機会だった";
-		mes "というのにな…";
+	if(select("Please!" , "Devil! Retreat!")==2) {
+		mes "[Doppelganger]";
+		mes "You don't seem to understand me very well..." ;
+		mes "This would have been a great opportunity to rewind your life..." ;
 		next;
-		mes "[ドッペルゲンガー]";
-		mes "ただプリーストにならないと言うだけで";
-		mes "良いのだ。例えば、我のような剣士に";
-		mes "転職することも可能だぞ？";
+		mes "[Doppelganger]";
+		mes "Just say you won't become Priest. For example, you could change your career to become a swordsman like me?" ;
 		next;
-		if(select("プリーストには転職しません","悪魔め！退きなさい！")==2) {
-			mes "[ドッペルゲンガー]";
-			mes "…ならば今は見逃してやる…";
+		if(select("I will not change my job to Priest", "You devil! Retreat!") ==2) {
+			mes "[Doppelganger]";
+			mes "... Then I'll let you off the hook for now..." ;
 			next;
-			mes "[ドッペルゲンガー]";
-			mes "次に会う時、苦痛の死を与えるぞ。";
+			mes "[Doppelganger]";
+			mes "Next time I see you, I'll give you a painful death." ;
 			close;
 		}
 	}
-	mes "[ドッペルゲンガー]";
-	mes "よく選んだ。";
-	mes "望み通りノービスに戻してやる。";
+	mes "[Doppelganger]";
+	mes "Well chosen." ;
+	mes "I'll put you back in Novice as you wish." ;
 	next;
-	mes "[ドッペルゲンガー]";
-	mes "死に生まれ変わってな！";
+	mes "[Doppelganger]";
+	mes "Reborn to death!" ;
 	next;
 	warp "gef_dun02.gat",210,177;
 	end;
 }
 
 //==============================================================
-job_prist.gat,168,115,4	script	ダークロード	1272,5,0,{
+job_prist.gat,168,115,4 script Dark Lord 1272,5,0,{
 	end;
 OnTouch:
-	if(Job != Job_Acolyte) {
-		mes "[ダークロード]";
-		mes "感じよ！苦痛と絶望を！";
-		mes "一番大切な者から裏切られる";
-		mes "悲しみと怒りを！";
+	if(Job ! = Job_Acolyte) {
+		mes "[Dark Lord]";
+		mes "Feel! Pain and despair!" ;
+		mes "Feel the sorrow and anger of being betrayed by the one you love the most!" ;
 		next;
-		mes "[ダークロード]";
-		mes "その心、いつか鋭い刃となり";
-		mes "心の臓に深く刺さるだろう！";
+		mes "[Dark Lord]";
+		mes "Your heart will one day become a sharp blade that will pierce deep into your heart!" ;
 		close;
 	}
-	mes "[ダークロード]";
-	mes "止まれ…人間よ…";
-	mes "誰の許しを得てここを通り過ぎ";
-	mes "ようと思うか？";
+	mes "[Dark Lord]";
+	mes "Halt... Human..." ;
+	mes "[Dark Lord]"; mes "With whose permission do you wish to pass through here?" ;
 	next;
-	mes "[ダークロード]";
-	mes "プリーストになろうとする";
-	mes "アコライトか…";
-	mes "お前はここを通り過ぎることは";
-	mes "できない。";
-	mes "帰るがよい…でなければ私がお前を";
-	mes "殺すであろう。";
+	mes "[Dark Lord]";
+	mes "Acolyte trying to be Priest..." ;
+	mes "[Dark Lord]"; mes "[You] can't pass this place..." ;
+	mes "Go home... Or I will kill you." ;
 	next;
-	mes "[ダークロード]";
-	mes "蟻のような人間よ…私の休息の時を";
-	mes "汚すでない…";
+	mes "[Dark Lord]";
+	mes "O ant-like man... Do not pollute my hour of rest..." ;
 	next;
-	if(select("ごめんなさい…","悪魔め！退きなさい！")==2) {
-		mes "[ダークロード]";
-		mes "ふん…一喝したところでお前など";
-		mes "枯葉を揉むがごとく粉々にできて";
-		mes "しまうぞ…";
+	if(select("I'm sorry..." I'm sorry...", "Devil! Move away!") ==2) {
+		mes "[Dark Lord]";
+		mes "Hmm... I could smash you to pieces like a dead leaf..." ;
 		next;
-		mes "[ダークロード]";
-		mes "私が具える無限の魔力によって";
-		mes "木端微塵にしてくれよう！";
+		mes "[Dark Lord]";
+		mes "Let the infinite magic I possess tear you to pieces!" ;
 		next;
-		if(select("命だけは助けてください！","悪魔め！退きなさい！")==2) {
-			mes "[ダークロード]";
-			mes "見かけによらず芯が強いようだな…";
+		if(select("Please spare my life!" If(select("Save my life!", "You demon! Move away!") ==2) {
+			mes "[Dark Lord]";
+			mes "You have a strong core, despite appearances..." ;
 			next;
-			mes "[ダークロード]";
-			mes "次に私の前に立った時は、";
-			mes "必ず地獄を見せてやろうぞ…";
+			mes "[Dark Lord]";
+			mes "[Dark Lord]"; mes "Next time you stand before me, I will make sure to show you hell..." ;
 			close;
 		}
 	}
-	mes "[ダークロード]";
-	mes "二度と現れるな！";
+	mes "[Dark Lord]";
+	mes "Don't show up again!" ;
 	next;
 	warp "gl_church.gat",145,170;
 	end;
 }
 
 //==============================================================
-job_prist.gat,168,150,4	script	バフォメット	736,5,0,{
+job_prist.gat,168,150,4 script Baphomet 736,5,0,{
 	end;
 OnTouch:
-	if(Job != Job_Acolyte) {
-		mes "[バフォメット]";
-		mes "人間か…そしてプリースト…";
+	if(Job ! = Job_Acolyte) {
+		mes "[Baphomet]";
+		mes "Human... And Priest..." ;
 		next;
-		mes "[バフォメット]";
-		mes "用は無い…";
+		mes "[Baphomet]";
+		mes "No use..." ;
 		close;
 	}
-	mes "[バフォメット]";
-	mes "人間よ…";
+	mes "[Baphomet]";
+	mes "Human..." ;
 	next;
-	mes "[バフォメット]";
-	mes "取引をしないか…？";
+	mes "[Baphomet]";
+	mes "Shall we make a deal...?" ;
 	next;
-	mes "[バフォメット]";
-	mes "我はお前に富と権力を授ける。";
-	mes "一生の間に使い尽くすことのできぬ金…";
-	mes "人間には作れぬ武器…";
+	mes "[Baphomet]";
+	mes "I give you wealth and power." ;
+	mes "Gold that you will not be able to spend in your lifetime..." ;
+	mes "Weapons that no man can make..." ;
 	next;
-	mes "[バフォメット]";
-	mes "そしてお前が望めば、いつでも我を";
-	mes "召喚することができる。";
-	mes "皆はお前と敵対することを恐れ、";
-	mes "やがてひれ伏すだろう…";
+	mes "[Baphomet]";
+	mes "And if you wish, you may summon me at any time." ;
+	mes "[Baphomet]"; mes "[Baphomet]"; mes "[Baphomet]"; mes "[Baphomet]"; mes "[Baphomet]"; mes "[Baphomet]" ;
 	next;
-	mes "[バフォメット]";
-	mes "プリーストへの転職を諦め、我と契約を";
-	mes "結ぼうぞ。";
-	mes "さすればこの世はお前の物となる。";
+	mes "[Baphomet]";
+	mes "Give up your new job at Priest and make a covenant with me..." ;
+	mes "[Baphomet]"; mes "Give up your job at Priest and make a covenant with me." ;
 	next;
-	if(select("プリーストへ転職しません","悪魔め！退きなさい！")==1) {
-		mes "[バフォメット]";
-		mes "それでは契約を結ぼうか…";
-		mes "悔いの無い選択になるだろう…";
+	if(select("I will not change to Priest", "You devil! Retreat!") ==1) {
+		mes "[Baphomet]";
+		mes "Then let's make a deal..." ;
+		mes "It will be a choice without regret..." ;
 		next;
-		mes "[バフォメット]";
-		mes "私のところまで来なさい…";
-		mes "そこで契約を結ぶ事にする。";
+		mes "[Baphomet]";
+		mes "Come to me..." ;
+		mes "I will make a contract with you there." ;
 		next;
 		warp "glast_01.gat",200,203;
 		end;
 	}
-	mes "[バフォメット]";
-	mes "よし…望みどおり消えてやる…";
-	mes "しかし、お前も出るのは難しかろう。";
+	mes "[Baphomet]";
+	mes "Okay... I'll disappear as you wish..." ;
+	mes "But you'll have a hard time getting out too..." ;
 	next;
-	mes "[バフォメット]";
-	mes "特別にお前のためにモンスター達を用意";
-	mes "している。どれほどのものか";
-	mes "見せてもらうぞ。";
+	mes "[Baphomet]";
+	mes "I've got some monsters especially for you. Let's see how good they are." ;
 	next;
-	mes "[バフォメット]";
-	mes "では帰れ…";
+	mes "[Baphomet]";
+	mes "Then go home..." ;
 	close;
 }
 
 //==============================================================
-job_prist.gat,0,0,0	script	PR_Summon	-1,{
+job_prist.gat,0,0,0 script PR_Summon -1,{
 	end;
-//第一段階
+//First step
 OnEvent0:
-	monster "job_prist.gat",24,52,"不徳",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,52,"不忠",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,51,"妬み",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,52, "immorality",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",18,52, "disloyal",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",30,51, "Envy",1015,1, "PR_Summon::OnKilled";
 	end;
 OnEvent1:
-	monster "job_prist.gat",21,62,"怒り",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",27,62,"怨根",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",21,62, "anger",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",27,62, "grudge",1015,1, "PR_Summon::OnKilled";
 	end;
 OnEvent2:
-	monster "job_prist.gat",24,72,"傲慢",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,72,"情欲",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,72,"怠情",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,72, "arrogance",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",18,72, "lust",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",30,72, "Laziness",1015,1, "PR_Summon::OnKilled";
 	end;
 OnEvent3:
-	monster "job_prist.gat",21,82,"貪食",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",27,82,"貧欲",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",21,82, "devour",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",27,82, "greed",1015,1, "PR_Summon::OnKilled";
 	end;
 OnEvent4:
-	monster "job_prist.gat",24,92,"絶望",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",18,92,"不信",1015,1,"PR_Summon::OnKilled";
-	monster "job_prist.gat",30,92,"恐怖",1015,1,"PR_Summon::OnKilled";
+	monster "job_prist.gat",24,92, "desperation",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",18,92, "distrust",1015,1, "PR_Summon::OnKilled";
+	monster "job_prist.gat",30,92, "fear",1015,1, "PR_Summon::OnKilled";
 	end;
-//第三段階
+// Third step
 OnEvent5:
-	monster "job_prist.gat",90,55,"アモーズ",1041,1;
-	monster "job_prist.gat",105,54,"アマシス",1041,1;
+	monster "job_prist.gat",90,55, "amoz",1041,1;
+	monster "job_prist.gat",105,54, "Amasis",1041,1;
 	end;
 OnEvent6:
-	monster "job_prist.gat",90,70,"メネト",1041,1;
-	monster "job_prist.gat",105,70,"アハマド",1041,1;
+	monster "job_prist.gat",90,70, "Menetho",1041,1;
+	monster "job_prist.gat",105,70, "Ahmad",1041,1;
 	end;
 OnEvent7:
-	monster "job_prist.gat",90,85,"メネス",1041,1;
-	monster "job_prist.gat",105,85,"ネペス",1041,1;
+	monster "job_prist.gat",90,85, "Meneses",1041,1;
+	monster "job_prist.gat",105,85, "Nepeth",1041,1;
 	end;
 OnKilled:
 	set 'count,'count+1;
@@ -1186,498 +964,378 @@ OnKilled:
 }
 
 //==============================================================
-job_prist.gat,24,51,0	script	PR_Test#0	139,16,0,{
+job_prist.gat,24,51,0 script PR_Test#0 139,16,0,{
 	set '@num,strnpcinfo(2);
 	if(Job == Job_Acolyte && @priest_check == '@num) {
-		donpcevent "PR_Summon::OnEvent"+'@num;
+		donpcevent "PR_Summon::OnEvent "+'@num;
 		set @priest_check,'@num+1;
 	}
 	end;
 }
 
-job_prist.gat,24,61,0	duplicate(PR_Test#0)	PR_Test#1	139,16,0
-job_prist.gat,24,71,0	duplicate(PR_Test#0)	PR_Test#2	139,16,0
-job_prist.gat,24,81,0	duplicate(PR_Test#0)	PR_Test#3	139,16,0
-job_prist.gat,24,91,0	duplicate(PR_Test#0)	PR_Test#4	139,16,0
-job_prist.gat,98,54,0	duplicate(PR_Test#0)	PR_Test#5	139,8,0
-job_prist.gat,98,69,0	duplicate(PR_Test#0)	PR_Test#6	139,8,0
-job_prist.gat,98,84,0	duplicate(PR_Test#0)	PR_Test#7	139,8,0
+job_prist.gat,24,61,0 duplicate(PR_Test#0) PR_Test#1 139,16,0
+job_prist.gat,24,71,0 duplicate(PR_Test#0) PR_Test#2 139,16,0
+job_prist.gat,24,81,0 duplicate(PR_Test#0) PR_Test#3 139,16,0
+job_prist.gat,24,91,0 duplicate(PR_Test#0) PR_Test#4 139,16,0
+job_prist.gat,98,54,0 duplicate(PR_Test#0) PR_Test#5 139,8,0
+job_prist.gat,98,69,0 duplicate(PR_Test#0) PR_Test#6 139,8,0
+job_prist.gat,98,84,0 duplicate(PR_Test#0) PR_Test#7 139,8,0
 
 
 //==========================================
-// 三次試験（奉仕誓約）
+// Tertiary Test (Pledge of Service)
 //------------------------------------------
 
-prt_church.gat,27,24,4	script	修道女	79,{
+prt_church.gat,27,24,4 script nun 79,{
 	if(Upper == UPPER_HIGH) {
-		mes "[セシル修道女]";
-		mes "あなたは転生されていますので";
-		mes "ここでは転職案内できません。";
+		mes "[Nun Cecile]";
+		mes "You have been reincarnated, so we cannot guide you to a new job here." ;
 		close;
 	}
 	if(Job == Job_Novice) {
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
-		mes "プロンテラ大聖堂はあなたを歓迎します。";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
+		mes "Prontera Cathedral welcomes you..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "まだ職業を決めていませんか？";
-		mes "聖職者になるのはいかがでしょう。";
-		mes "アコライトになって他の人々を助け";
-		mes "ながら生きて行くことは、本当に";
-		mes "素晴らしいことですよ。";
+		mes "[Nun Cecile]";
+		mes "Have you decided on a profession yet?" ;
+		mes "How about becoming a clergyman?" ;
+		mes "It would be really great to become an Acolyte and live your life helping others." ;
 		next;
-		mes "[セシル修道女]";
-		mes "アコライトへの転職については、";
-		mes "反対側の部屋にいる神父さんに";
-		mes "お話をしてみてください。";
+		mes "[Nun Cecile]";
+		mes "Please talk to the priest on the other side of the room about changing to Acolyte." ;
 		next;
-		mes "[セシル修道女]";
-		mes "アコライトで熱心に修行を積み、";
-		mes "JobLv40以上になられましたら";
-		mes "こちらでプリースト転職の儀を";
-		mes "受けることができます。";
+		mes "[Nun Cecile]";
+		mes "If you have trained diligently in Acolyte and have reached JobLvl 40 or above, you can receive the Priest Job Change ceremony here." ;
 		next;
-		mes "[セシル修道女]";
-		mes "まだノービスですから、ゆっくりと";
-		mes "考えるのが良いでしょう。";
-		mes "あなたに神のご加護がありますように…";
+		mes "[Nun Cecile]";
+		mes "Since you are still a Novice, you should take your time to think about it." ;
+		mes "May God bless you..." ;
 		close;
 	}
 	if(Job == Job_Priest) {
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
-		mes "今日も良い一日になってほしいですね。";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
+		mes "I hope you have a good day..." ;
 		close;
 	}
-	if(Job != Job_Acolyte) {
-		mes "[セシル修道女]";
-		mes "こちらはプロンテラ大聖堂です。";
-		mes "どのような用でお訪ねになりましたか？";
+	if(Job ! = Job_Acolyte) {
+		mes "[Nun Cecile]";
+		mes "This is Prontera Cathedral." ;
+		mes "How may I help you?" ;
 		next;
-		if(select("プリーストについて教えてください","少し寄ってみました")==2) {
-			mes "[セシル修道女]";
-			mes "ゆっくり休んでいかれてください。";
-			mes "神への感謝はどうか忘れずに。";
+		if(select("Tell me about Priest", "I stopped by briefly")==2) {
+			mes "[Nun Cecile]";
+			mes "Please have a good rest." ;
+			mes "Please remember to thank God." ;
 			next;
-			mes "[セシル修道女]";
-			mes "あなたに神のご加護がありますように…";
+			mes "[Nun Cecile]";
+			mes "May God bless you..." ;
 			close;
 		}
-		mes "[セシル修道女]";
-		mes "プリーストととは、信義を説く";
-		mes "神の代弁者なのです。";
-		mes "ノービスからまずアコライトになり、";
-		mes "修行を積んだ者だけがプリーストに";
-		mes "なることができます。";
+		mes "[Nun Cecile]";
+		mes "Priest is the voice of God who preaches faithfulness." ;
+		mes "Only those who have first become Acolytes from Novices and have been trained can become Priests." ;
 		next;
-		mes "[セシル修道女]";
-		mes "聖職者達には、鋭い刃を持った武器を";
-		mes "使用することが禁じられています。";
-		mes "何故なら、モンスターを攻撃する目的は";
-		mes "殺生ではなく、教化だからです。";
+		mes "[Nun Cecile]";
+		mes "The Priests are forbidden to use weapons with sharp edges." ;
+		mes "Because the purpose of attacking monsters is not to kill, but to indoctrinate." ;
 		next;
-		mes "[セシル修道女]";
-		mes "もちろん、プリースト達に会って直接";
-		mes "お話を聞くのも良いでしょうけど、";
-		mes "奥にいらっしゃいますトーマス司教様に";
-		mes "伺ってみてはいかがでしょう。";
+		mes "[Nun Cecile]";
+		mes "Of course, you could meet Priest and the others and ask them directly, but why don't you ask Bishop Thomas, who is in the back?" ;
 		next;
-		mes "[セシル修道女]";
-		mes "私より詳しくお話が聞けると思います。";
+		mes "[Nun Cecile]";
+		mes "I'm sure he can tell you more about it than I can." ;
 		next;
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
 		close;
 	}
 	switch(CHANGE_PR) {
 	case 0:
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
-		mes "どのような用でお訪ねになりましたか？";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
+		mes "How can I help you?" ;
 		next;
-		if(select("プリーストに転職したいのです","特にご用はありません")==2) {
-			mes "[セシル修道女]";
-			mes "ゆっくり休んでいかれてください。";
-			mes "聖堂はあなた方には家のような";
-			mes "ものです。気兼ねなくいつでも";
-			mes "いらしてください。";
+		if(select("I would like to change my job to Priest.", "No special business")==2) {
+			mes "[Nun Cecile]";
+			mes "Please have a good rest." ;
+			mes "The cathedral is like a home to you. Please feel free to visit us anytime." ;
 			next;
-			mes "[セシル修道女]";
-			mes "そして今度いらっしゃる時は、";
-			mes "是非他のアコライト達のご様子も";
-			mes "聞かせてくださいね。";
-			mes "あなたに神のご加護がありますように。";
+			mes "[Nun Cecile]";
+			mes "And next time you come, please let us know how the other Acolytes are doing." ;
+			mes "God bless you." ;
 			close;
 		}
-		mes "[セシル修道女]";
-		mes "あ、プリーストへの転職ですか！";
-		mes "たくさんのアコライト様がプリーストに";
-		mes "なられるのを日々夢見ております。";
+		mes "[Nun Cecile]";
+		mes "Oh, you're moving to Priest!" ;
+		mes "I dream everyday that many Acolytes will become Priest." ;
 		next;
-		mes "[セシル修道女]";
-		mes "私の名前はセシル=マルガリータ。";
-		mes "アコライト様達の転職をお手伝い";
-		mes "している修道女です。";
-		mes "あなたのお役に立てればと思います。";
+		mes "[Nun Cecile]";
+		mes "My name is Cecile-Margarita." ;
+		mes "I am a nun who helps the Acolytes to change jobs." ;
+		mes "I would be happy to help you." ;
 		next;
-		mes "[セシル修道女]";
-		mes "私はこちらで育ったせいか多くの方々が";
-		mes "プリーストに転職するのを見てきました";
-		mes "。";
-		mes "そして今はプリーストになろうとする";
-		mes "方々をお手伝いしています…";
+		mes "[Nun Cecile]";
+		mes "I have seen many people move to Priest because I grew up here." ;
+		mes "And now I help people who want to become Priests..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "プリースト転職のためには数々の試練を";
-		mes "乗り越えなければなりません。";
-		mes "聖地巡礼・退魔修練・奉仕の誓約…";
-		mes "それらをすべてこなしてはじめて";
-		mes "プリーストになることが認められます。";
+		mes "[Nun Cecile]";
+		mes "You have to overcome many challenges to change your Priest job..." ;
+		mes "Pilgrimage to the Holy Land, retreat training, pledge of service..." ;
+		mes "Only after completing all of them will you be allowed to become a Priest." ;
 		next;
-		mes "[セシル修道女]";
-		mes "転職をご希望でしたら奥にいらっしゃる";
-		mes "トーマス司教様のところへ行って、";
-		mes "転職するための試練を受けてらして";
-		mes "ください。";
+		mes "[Nun Cecile]";
+		mes "If you wish to change jobs, please go to Bishop Thomas in the back and take the test to change jobs." ;
 		next;
-		mes "[セシル修道女]";
-		mes "何か難しい点がございましたら、";
-		mes "私に尋ねてくださいね。";
-		mes "私にできることなら何でもお手伝い";
-		mes "致します。";
+		mes "[Nun Cecile]";
+		mes "If you have any difficulties, please ask me." ;
+		mes "[Nun Cecile]"; mes "I will help you in any way I can." ;
 		close;
 	case 1:
-		mes "[セシル修道女]";
-		mes "巡礼の旅が始まりましたね。";
-		mes "大変ですが、最後まで頑張って";
-		mes "ください。";
-		mes "初めに向かうところは";
-		mes "ルバルカバラ神父様のところです。";
+		mes "[Nun Cecile]";
+		mes "You have begun your pilgrimage." ;
+		mes "It's hard work, but please hang in there until the end." ;
+		mes "The first place we are going to is Father Rubalcabara's place." ;
 		next;
-		mes "[セシル修道女]";
-		mes "その方のいらっしゃるところは、";
-		mes "プロンテラから北東の方角にある";
-		mes "遺跡の入り口です。";
-		mes "そこが巡礼地となります。";
+		mes "[Nun Cecile]";
+		mes "The place where he is is the entrance to the ruins, northeast of Prontera." ;
+		mes "That will be the place of pilgrimage." ;
 		next;
-		mes "[セシル修道女]";
-		mes "その方のいらっしゃる地域には、";
-		mes "猿たちがたくさん住んでいます。";
-		mes "たまに凶暴な猿であるチョコという";
-		mes "人間を襲うモンスターがいますから";
-		mes "それだけは気をつけてください。";
+		mes "[Nun Cecile]";
+		mes "There are many monkeys living in the area where he is." ;
+		mes "Sometimes there is a monster that attacks humans called Choco, which is a ferocious monkey, so be careful with that." ;
 		next;
-		mes "[セシル修道女]";
-		mes "ルバルカバラ神父様にお会いに";
-		mes "なってから、マチルダシスター様と";
-		mes "洋介神父様に会ってくだされば";
-		mes "良いです。もちろん、途中でこちらに";
-		mes "お寄りになって確認されてもよろしい";
-		mes "ですよ。";
+		mes "[Nun Cecile]";
+		mes "After you meet Father Rubalcabara-sama, you should meet Sister Matilda-sama and Father Yosuke-sama. Of course, you may stop by here on your way to check on them." ;
 		next;
-		mes "[セシル修道女]";
-		mes "それでは、いってらっしゃいませ。";
-		mes "諦めず、最後までやり遂げて";
-		mes "ください。旅の安全をお祈りします。";
+		mes "[Nun Cecile]";
+		mes "Well then, have a good day." ;
+		mes "Don't give up and finish. I wish you a safe journey." ;
 		close;
 	case 2:
-		mes "[セシル修道女]";
-		mes "ルバルカバラ神父様にお会いに";
-		mes "なりましたね。そうしましたら今度は";
-		mes "マチルダシスター様にお会いください。";
-		mes "彼女はモロクという街の近くに";
-		mes "いらっしゃいます。";
+		mes "[Nun Cecile]";
+		mes "You have met Father Rubalcabara. Then you will meet Sister Matilda." ;
+		mes "She is near the city of Morroc." ;
 		next;
-		mes "[セシル修道女]";
-		mes "モロク北の砂漠で修行中だと伺って";
-		mes "ます。おそらく…北西の方をよくお探し";
-		mes "になれば見つかると思います。";
+		mes "[Nun Cecile]";
+		mes "I understand that she is training in the desert north of Morroc. Perhaps... If you look carefully to the northwest, you will find him." ;
 		next;
-		mes "[セシル修道女]";
-		mes "私も他の方々のように修行に出たい";
-		mes "のですが、ここで皆様のお手伝いを";
-		mes "することも大事な役目ですから、";
-		mes "これも信義の一環でしょう。";
+		mes "[Nun Cecile]";
+		mes "I would like to go to training like the rest of you, but it is also an important part of my role to help you here, so I guess this is part of my faith." ;
 		next;
-		mes "[セシル修道女]";
-		mes "それでは、いってらっしゃいませ。";
-		mes "諦めず、最後までやり遂げて";
-		mes "ください。旅の安全をお祈りします。";
+		mes "[Nun Cecile]";
+		mes "Then, have a good day." ;
+		mes "Don't give up and finish. I wish you a safe journey." ;
 		close;
 	case 3:
-		mes "[セシル修道女]";
-		mes "はい、あとは洋介神父様にお会いに";
-		mes "なれば巡礼の旅は終わりとなります。";
-		mes "プロンテラから北西方面の湖の近くに";
-		mes "いらっしゃると聞きました。";
+		mes "[Nun Cecile]";
+		mes "Yes, now we just need to meet Father Yosuke-sama and our pilgrimage will be over." ;
+		mes "I heard that he is near the lake northwest of Prontera." ;
 		next;
-		mes "[セシル修道女]";
-		mes "先に西の方に抜けたほうが、道のりは";
-		mes "易しいと思いますわ。";
+		mes "[Nun Cecile]";
+		mes "I think it will be easier if you go out to the west first." ;
 		next;
-		mes "[セシル修道女]";
-		mes "巡礼が終わっても試練はまだ続きますが";
-		mes "最期まで必ずやり遂げることを";
-		mes "願っております…。";
+		mes "[Nun Cecile]";
+		mes "Even though the pilgrimage is over, the ordeal will still continue, but I hope that you will always make it to the end..." ;
 		close;
 	case 4:
-		mes "[セシル修道女]";
-		mes "お帰りなさい。";
-		mes "長い旅、お疲れ様でした。";
-		mes "それでは司教様のところへ。";
-		mes "試練は次の段階へと進みます。";
+		mes "[Nun Cecile]";
+		mes "Welcome back." ;
+		mes "Thank you for your long trip." ;
+		mes "Then go to the bishop's place." ;
+		mes "The ordeal moves on to the next stage." ;
 		next;
-		mes "[セシル修道女]";
-		mes "退魔修練は大変ですが、";
-		mes "あなたならきっと大丈夫です！";
-		mes "私もお手伝いしたいんですが、";
-		mes "ここへ来るアコライト様の助け";
-		mes "になってあげなくてはなりません。";
+		mes "[Nun Cecile]";
+		mes "The retreat ordeal is tough, but I know you'll be fine!" ;
+		mes "I would like to help you, but I have to help Master Acolyte who is coming here." ;
 		next;
-		mes "[セシル修道女]";
-		mes "修練を助けてくれる方を見つけるのも";
-		mes "良いでしょう。";
-		mes "それでは、引き続き頑張ってください。";
+		mes "[Nun Cecile]";
+		mes "It would be good to find someone to help you with your training." ;
+		mes "So, keep up the good work." ;
 		close;
 	case 5:
-		mes "[セシル修道女]";
-		mes "退魔修練はどうしましたか？";
-		mes "どんな試練になるかは私でも";
-		mes "詳しく言えません…。";
+		mes "[Nun Cecile]";
+		mes "How did you do your retreat training?" ;
+		mes "Even I can't tell you in detail what kind of ordeal it will be..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "ただ、準備をしっかりして臨むことと、";
-		mes "煩悩や欲望に身を投じない精神力が";
-		mes "必要となるでしょう。";
-		mes "自分自身をしっかりと保つことが";
-		mes "できれば大丈夫でしょう。";
+		mes "[Nun Cecile]";
+		mes "However, you will need to be well prepared and have the mental strength not to give yourself to vexations and desires." ;
+		mes "[Nun Cecile]"; mes "If you can keep yourself strong, you will be fine." ;
 		next;
-		mes "[セシル修道女]";
-		mes "詳しいことは、修練場にいらっしゃる";
-		mes "ピーター神父様に伺ってください。";
-		mes "トーマス司教様とも親しい間柄ですから";
-		mes "よく教えてくれると思います。";
+		mes "[Nun Cecile]";
+		mes "For more information, please ask Father Peter who is in the training hall." ;
+		mes "He is also very close to Bishop Thomas, so I am sure he will be able to tell you well." ;
 		close;
 	case 6:
-		mes "[セシル修道女]";
-		mes "大変ですが、諦めてはなりません。";
-		mes "どんな煩悩や誘惑にも負けない";
-		mes "強い心があれば、プリーストに";
-		mes "なれるでしょう。";
+		mes "[Nun Cecile]";
+		mes "It is hard, but you must not give up." ;
+		mes "If you have a strong heart to resist all troubles and temptations, you will become Priest." ;
 		next;
-		mes "[セシル修道女]";
-		mes "他の先輩プリースト様が通られたら";
-		mes "お願いして助けていただくのも良い";
-		mes "でしょう。";
-		mes "退魔修練の初段階までは手伝って";
-		mes "いただくことができますし。";
+		mes "[Nun Cecile]";
+		mes "If other senior Priests pass by, you may ask them to help you." ;
+		mes "You can help us up to the first stage of the retreat training." ;
 		next;
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
-		mes "退魔修練が終わりましたら、また";
-		mes "私のところに帰ってきてくださいね。";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
+		mes "Please come back to me when you finish your retreat training." ;
 		close;
 	case 7:
-		mes "[セシル修道女]";
-		mes "苦労なさいましたね！";
-		mes "でも、転職試練の最終段階まで来る";
-		mes "ことができました。";
+		mes "[Nun Cecile]";
+		mes "You have had a hard time!" ;
+		mes "But I was able to come to the final stage of my career change ordeal." ;
 		next;
-		mes "[セシル修道女]";
-		mes "それでは、あなたをプリーストに";
-		mes "転職させるための誓約式を";
-		mes "始めたいと思います。";
-		mes "私の質問に対して、真剣に答えて";
-		mes "くださいね。";
+		mes "[Nun Cecile]";
+		mes "Then I would like to begin the pledge ceremony to transfer you to Priest." ;
+		mes "Please answer my questions seriously." ;
 		break;
 	case 8:
-		mes "[セシル修道女]";
-		mes "……";
+		mes "[Nun Cecile]";
+		mes "......" ;
 		next;
-		mes "[セシル修道女]";
-		mes "お帰りになられましたね。";
-		mes "今度は誓約をしっかりと結んで";
-		mes "いただきたいです…";
+		mes "[Nun Cecile]";
+		mes "You have returned." ;
+		mes "This time, I hope you will make good on your pledge..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "あなたの信義が伝わるように…";
-		mes "真剣に受け答えをしてください。";
+		mes "[Nun Cecile]";
+		mes "May your faithfulness be conveyed..." ;
+		mes "Please take the reception seriously." ;
 		break;
 	case 9:
-		mes "[セシル修道女]";
-		mes "すべての試練が終わりました…";
-		mes "トーマス司教様の元へ行かれ、";
-		mes "プリーストととして生まれ変わって";
-		mes "ください。";
+		mes "[Nun Cecile]";
+		mes "All trials are over..." ;
+		mes "Go to Bishop Thomas and be reborn as Priest." ;
 		next;
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように。";
+		mes "[Nun Cecile]";
+		mes "May God bless you." ;
 		close;
 	}
-	//7,8のとき続き
+	//continued when 7,8
 	next;
 	set CHANGE_PR,8;
-	mes "[セシル修道女]";
-	mes "それでは始めます。";
+	mes "[Nun Cecile]";
+	mes "Then we will begin." ;
 	next;
-	mes "[セシル修道女]";
-	mes "あなたは、残りの人生を神のために";
-	mes "捧げることができますか？";
+	mes "[Nun Cecile]";
+	mes "Are you willing to dedicate the rest of your life to God?" ;
 	next;
-	if(select("はい","いいえ")==2) {
-		mes "[セシル修道女]";
-		mes "なぜそんな返事を…";
-		mes "まだプリーストになるための";
-		mes "心構えが足りないようです…";
+	if(select("Yes", "No")==2) {
+		mes "[Nun Cecile]";
+		mes "Why such a reply..." ;
+		mes "I guess you are not ready to be a Priest yet..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "もう少し自分自身を見つめなおして";
-		mes "いらっしゃってください。";
-		mes "そういった心構えでは、きっと悪に";
-		mes "心を奪われてしまうでしょう。";
+		mes "[Nun Cecile]";
+		mes "Please take a little more time to look at yourself." ;
+		mes "With that kind of attitude, you will surely lose your mind to evil." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは、能力を自分自身のために";
-	mes "使って、利を得ようとしますか？";
+	mes "[Nun Cecile]";
+	mes "Do you seek to use your abilities for your own benefit and gain?" ;
 	next;
-	if(select("はい","いいえ")==1) {
-		mes "[セシル修道女]";
-		mes "なりません。";
-		mes "私達が得た能力は、利のために";
-		mes "あるのではありません。";
-		mes "そんな考えであなたはプリーストに";
-		mes "なろうと思ったのですか。";
+	if(select("Yes", "No")==1) {
+		mes "[Nun Cecile]";
+		mes "No, I do not." ;
+		mes "The ability we have gained is not for gain." ;
+		mes "Is that the kind of thinking that made you decide to become a Priest?" ;
 		next;
-		mes "[セシル修道女]";
-		mes "プリーストについて、もっとよく";
-		mes "考えていらしてください。";
-		mes "そんな心構えでは、ただ世欲に";
-		mes "染まってしまうだけです。";
+		mes "[Nun Cecile]";
+		mes "Please think more carefully about Priest." ;
+		mes "With such a mindset, you will only be tainted by worldly greed." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは、戦闘で苦しんでいる他人を";
-	mes "自分の能力で助けようとしますか？";
+	mes "[Nun Cecile]";
+	mes "Do you try to help others who are suffering in combat with your abilities?" ;
 	next;
-	if(select("はい","いいえ")==2) {
-		mes "[セシル修道女]";
-		mes "それではなりません。";
-		mes "プリーストの能力は、人を助けるもの";
-		mes "としてあるのです…";
-		mes "どんな人であろうと、助けを求める者が";
-		mes "いたら助けるのが務めなのです…";
+	if(select("Yes", "No")==2) {
+		mes "[Nun Cecile]";
+		mes "That will not do." ;
+		mes "Priest's ability is there as something that helps people..." ;
+		mes "It is our duty to help anyone who asks for help, no matter who they are..." ;
 		next;
-		mes "[セシル修道女]";
-		mes "周りの人々をよく見てごらんなさい…";
-		mes "人々に苦しみが見えるはずです…";
+		mes "[Nun Cecile]";
+		mes "Take a good look at the people around you..." ;
+		mes "You should see the suffering in people..." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは他人を助け、自分を犠牲に";
-	mes "することができますか？";
+	mes "[Nun Cecile]";
+	mes "Can you help others and sacrifice yourself?" ;
 	next;
-	if(select("はい","いいえ")==2) {
-		mes "[セシル修道女]";
-		mes "…いいえ。";
-		mes "自分自身を犠牲にしても、";
-		mes "他人を助けることは立派なことです。";
+	if(select("Yes", "No")==2) {
+		mes "[Nun Cecile]";
+		mes "... No." ;
+		mes "It is admirable to help others at the expense of yourself." ;
 		next;
-		mes "[セシル修道女]";
-		mes "犠牲という言葉をよく考えてください。";
-		mes "他人に尽くすという意味ではこれ以上の";
-		mes "行為はありません…";
+		mes "[Nun Cecile]";
+		mes "Think carefully about the word sacrifice." ;
+		mes "There is no greater act of service to others..." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは街や外で「同じ言葉」を";
-	mes "繰り返ししゃべりながら歩きますか？";
+	mes "[Nun Cecile]";
+	mes "Do you walk around town or outside, speaking the "same words" over and over again?" ;
 	next;
-	if(select("はい","いいえ")==1) {
-		mes "[セシル修道女]";
-		mes "なりません。これはプリーストに";
-		mes "対してだけではなく、他の方々にも";
-		mes "言えることです。";
-		mes "うるさく叫んで歩いても、誰も振り";
-		mes "返って聞いてくれません。";
+	if(select("yes", "no")==1) {
+		mes "[Nun Cecile]";
+		mes "No, it will not. This is not only for Priest, but also for the others." ;
+		mes "No one will turn around and listen to you if you walk around screaming loudly." ;
 		next;
-		mes "[セシル修道女]";
-		mes "道を説くと言ってもそのような";
-		mes "やりかたは間違っています。";
-		mes "自分自身の行動をもう一度よく";
-		mes "振り返ってみてください…";
+		mes "[Nun Cecile]";
+		mes "It is wrong to preach the way, but not in that way." ;
+		mes "Please take another good look at your own behavior..." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは多くのモンスターを引き連れる";
-	mes "ことによって他人を助けますか？";
+	mes "[Nun Cecile]";
+	mes "Do you help others by bringing in more monsters?" ;
 	next;
-	if(select("はい","いいえ")==1) {
-		mes "[セシル修道女]";
-		mes "それは大変危険な行為です。";
-		mes "自分だけではなく、他人も巻き込む";
-		mes "事態になりかねません。";
-		mes "良いモンスター・悪いモンスターに";
-		mes "限らずです。";
+	if(select("yes", "no")==1) {
+		mes "[Nun Cecile]";
+		mes "That is a very dangerous practice." ;
+		mes "It could lead to a situation involving not only you, but others as well." ;
+		mes "It is not limited to good monsters and bad monsters." ;
 		next;
-		mes "[セシル修道女]";
-		mes "自分は他人を助けたつもりでも、";
-		mes "その方、もしくはその周囲の方が";
-		mes "必ずしも救われるわけではありません。";
-		mes "本当に他人を助けるという行為が";
-		mes "どういうことなのかをもう一度";
-		mes "お考えください。";
+		mes "[Nun Cecile]";
+		mes "Even if you think you are helping others, you will not necessarily save them or those around you." ;
+		mes "Please rethink what it really means to help others." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたは信義の道をつらぬき、";
-	mes "信義のために死ぬことができますか？";
+	mes "[Nun Cecile]";
+	mes "Are you willing to follow the path of faith and die for faith?" ;
 	next;
-	if(select("はい","いいえ")==2) {
-		mes "[セシル修道女]";
-		mes "そういう心構えでは、プリーストに";
-		mes "なることはできません。";
+	if(select("Yes", "No")==2) {
+		mes "[Nun Cecile]";
+		mes "You cannot be a Priest with that kind of mindset." ;
 		next;
-		mes "[セシル修道女]";
-		mes "私達には、蘇生の能力もあります。";
-		mes "生と死があなたにとってどういう";
-		mes "意味をなすかよく考えてください。";
+		mes "[Nun Cecile]";
+		mes "We also have the ability to resuscitate." ;
+		mes "Think carefully about what life and death mean to you." ;
 		close;
 	}
-	mes "[セシル修道女]";
-	mes "あなたの誓約を受けました。";
-	mes "最後に、これまで述べたことを";
-	mes "全て誓いますか？";
+	mes "[Nun Cecile]";
+	mes "I have received your pledge." ;
+	mes "Finally, do you pledge all that you have said so far?" ;
 	next;
-	if(select("誓います","いいえ")==2) {
-		mes "[セシル修道女]";
-		mes "……";
+	if(select("I swear", "No")==2) {
+		mes "[Nun Cecile]";
+		mes "......" ;
 		next;
-		mes "[セシル修道女]";
-		mes "まだ、心構えが不十分のようですね。";
-		mes "プリーストになるのはまだ早いです。";
+		mes "[Nun Cecile]";
+		mes "It seems that you are still not fully prepared." ;
+		mes "You are not ready to be Priest yet." ;
 		next;
-		mes "[セシル修道女]";
-		mes "再び巡礼からお願いしたいところですが";
-		mes "よく自分自身を省み、決意を固めてから";
-		mes "私のところにお越しください。";
+		mes "[Nun Cecile]";
+		mes "I would ask you again from the Pilgrimage, but you must often reflect on yourself and make up your mind before coming to me." ;
 		next;
-		mes "[セシル修道女]";
-		mes "あなたに神のご加護がありますように…";
+		mes "[Nun Cecile]";
+		mes "May God bless you..." ;
 		close;
 	}
 	set CHANGE_PR,9;
-	mes "[セシル修道女]";
-	mes "これにおきまして誓約式を";
-	mes "終わります。";
-	mes "トーマス司教様のもとへ行かれて";
-	mes "最後の儀を受けてください。";
+	mes "[Nun Cecile]";
+	mes "This concludes the pledge ceremony." ;
+	mes "Please go to Bishop Thomas to receive the last rites." ;
 	next;
-	mes "[セシル修道女]";
-	mes "いつも忘れないでください…";
-	mes "私達は兄弟姉妹として共にある";
-	mes "ことを…";
-	mes "あなたに神のご加護がありますように…";
+	mes "[Nun Cecile]";
+	mes "Always remember..." ;
+	mes "That we are together as brothers and sisters..." ;
+	mes "May God bless you..." ;
 	close;
 }

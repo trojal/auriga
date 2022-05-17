@@ -1,58 +1,53 @@
 //====================================================================
-//Ragnarok Online - Summoner Script	by refis
+//Ragnarok Online - Summoner Script by refis
 //====================================================================
 
 //------------------------------------------------------------
 // Monstar Spawn
 //------------------------------------------------------------
 // do_tu01a.gat
-do_tu01a.gat,100,320,75,55	monster	エッグリン	3495,30,5000,0,0
-do_tu01a.gat,100,320,75,55	monster	グラスファブル	3497,30,5000,0,0
+do_tu01a.gat,100,320,75,55 monster Egglyn 3495,30,5000,0,0
+do_tu01a.gat,100,320,75,55 monster Grassfable 3497,30,5000,0,0,0
 //------------------------------------------------------------
 // do_tu04a.gat
-do_tu04a.gat,0,0,0,0	monster	スウィートフロッグ	3499,40,5000,0,0
-do_tu04a.gat,0,0,0,0	monster	ハンターウルフ	3500,30,5000,0,0
-do_tu04a.gat,0,0,0,0	monster	ワイルドホーネット	3498,30,5000,0,0
-do_tu04a.gat,0,0,0,0	monster	リーフルナティック	3496,40,5000,0,0
-do_tu04a.gat,0,0,0,0	monster	偵察バジルリスク	3502,10,5000,0,0
+do_tu04a.gat,0,0,0,0 monster Sweet Frog 3499,40,5000,0,0
+do_tu04a.gat,0,0,0,0 monster HunterWolf 3500,30,5000,0,0
+do_tu04a.gat,0,0,0,0 monster WildHornet 3498,30,5000,0,0
+do_tu04a.gat,0,0,0,0,0 monster Leaf Runatic 3496,40,5000,0,0
+do_tu04a.gat,0,0,0,0,0 monster Reconnaissance Basilisk 3502,10,5000,0,0
 //------------------------------------------------------------
 // do_tu06a.gat
-do_tu06a.gat,0,0,0,0	monster	偵察バジルリスク	3502,40,5000,0,0
-do_tu06a.gat,0,0,0,0	monster	トランススポア	3501,30,5000,0,0
+do_tu06a.gat,0,0,0,0 monster Reconnaissance basilisk 3502,40,5000,0,0
+do_tu06a.gat,0,0,0,0 monster Transpore 3501,30,5000,0,0
 //------------------------------------------------------------
 // do_tu07a.gat
-do_tu07a.gat,0,0,0,0	monster	偵察バジルリスク	3502,80,5000,0,0
+do_tu07a.gat,0,0,0,0 monster Reconnaissance Basilisk 3502,80,5000,0,0
 //------------------------------------------------------------
 
 //------------------------------------------------------------
-// チュートリアルNPC
+// tutorial npc
 //------------------------------------------------------------
-new_do1.gat,90,247,0	script	object01#new_do1	139,30,3,{
-	mes "[シェレ]";
-	mes "そっちじゃないわ。";
-	mes "こっちに来てちょうだい。";
+new_do1.gat,90,247,0 script object01#new_do1 139,30,3,{
+	mes "[Shere]";
+	mes "Not that way." ;
+	mes "Come over here, please." ;
 	set '@dummy,sleep2(1000);
 	warp "new_do1.gat",95,260;
 	end;
 }
 
-new_do1.gat,95,264,4	script	シェレ#new_do1	10165,{
+new_do1.gat,95,264,4 script chele#new_do1 10165,{
 	if(DORAM_1QUE == 100) {
-		mes "^ff0000【インフォメーション】";
-		mes "スキップ処理を実行中です。";
-		mes "クライアントを終了しないでください。";
-		mes "実行中に終了した場合、";
-		mes "一部のアイテムや経験値を";
-		mes "受け取れない場合があります。^000000";
+		mes "^ff0000[Information] Skipping process is running." ;
+		mes "Do not terminate the client." ;
+		mes "If you exit during execution, you may not receive some items or experience. ^000000";
 		next;
-		mes "^ff0000【インフォメーション】^000000";
-		mes "^0000ff[next] をクリックしてください。^000000";
+		mes "Please click ^ff000000[Information] ^000000^000000^000000ff[next]. ^000000";
 		next;
-		mes "[シェレ]";
-		mes "わかったわ。";
-		mes "それじゃそのように";
-		mes "手配しておくわ。";
-		mes "あなたの活躍、期待してるわ！";
+		mes "[Shere]";
+		mes "Okay." ;
+		mes "Then I'll arrange it that way." ;
+		mes "I'm looking forward to your success!" ;
 		set DORAM_1QUE,100;
 		savepoint "lasagna.gat",299,239;
 		warp "lasagna.gat",298,238;
@@ -60,93 +55,62 @@ new_do1.gat,95,264,4	script	シェレ#new_do1	10165,{
 	}
 	//setquest 102845;
 	//compquest 102845;
-	mes "[シェレ]";
-	mes "パースタ大陸へようこそ！";
-	mes "新しい冒険者かしら？";
+	mes "[Shere]";
+	mes "Welcome to the continent of Persta!" ;
+	mes "Are you a new adventurer?" ;
 	next;
-	mes "[シェレ]";
-	mes "私はシェレ。";
-	mes "外から来る冒険者に";
-	mes "案内してるの。";
+	mes "[Shele]";
+	mes "I am Shele." ;
+	mes "I guide adventurers who come from outside." ;
 	next;
-	mes "[シェレ]";
-	mes "クンクン……";
-	mes "ふむふむ……";
-	mes "あなた、^ff0000サモナー^000000としての素質は";
-	mes "なかなかのものを持ってるわ。";
-	mes "良い冒険者になれそうよ。";
+	mes "[Shele]";
+	mes "Kun Kun ......." ;
+	mes "hmmmmm ......" ;
+	mes "You've got some pretty good qualities as a ^ff000000summoner^000000." ;
+	mes "You'd make a good adventurer." ;
 	next;
-	mes "[シェレ]";
-	mes "よかったらここで";
-	mes "チュートリアルを受けて、";
-	mes "冒険の基礎を学んでいかない？";
-	mes "きっとこれからの旅の";
-	mes "役に立つと思うわ。";
+	mes "[Shere]";
+	mes "If you want, why don't we take a tutorial here and learn the basics of adventure?" ;
+	mes "I'm sure it will help you in your future travels." ;
 	next;
-	mes "[シェレ]";
-	mes "もし冒険に自信があるなら";
-	mes "チュートリアルをスキップしても";
-	mes "かまわないわ。";
+	mes "[Shere]";
+	mes "If you are confident about your adventure, you can skip the tutorial." ;
 	next;
-	mes "[シェレ]";
-	mes "でも^0000ff初めて冒険に出るような";
-	mes "初心者だったら、";
-	mes "チュートリアルは絶対に";
-	mes "受けておいた方が良いわよ。^000000";
+	mes "[Shele]";
+	mes "But if you are a beginner who is ^000000ff going on an adventure for the first time, you should definitely take the tutorial."; next; mes "[Shele]"; mes "[Shele]"; mes "[Shele] ^000000";
 	while(1) {
 		next;
-		switch(select("ここはどこ？","^009eff冒険の基礎を学ぶ(チュートリアルを開始)^000000","^ff0000すぐに冒険を始める(チュートリアルを省略)^000000")) {
+		switch(select("Where am I?" ^000000","^009effLearn the basics of adventure (start tutorial)^000000","^ff000000Start adventure immediately (skip tutorial)^000000")) {
 		case 1:
-			mes "[シェレ]";
-			mes "ここは^ff0000パースタ大陸^000000にある";
-			mes "^ff0000港町ラザーニャ。^000000";
-			mes "最近ではミッドガルドという";
-			mes "新大陸が発見されたせいで、";
-			mes "大陸の各地からたくさんのドラムが";
-			mes "集まってきているわ。";
+			mes "[Shere]";
+			mes "This is the ^ff000000port town of Lasagna on the ^ff000000continent of Persta^000000. Because of the ^000000recent discovery of a new continent called Midgard, a lot of Doram are coming from all over the continent." ;
 			next;
-			mes "[シェレ]";
-			mes "ただ……興味本位だけで";
-			mes "冒険の基礎もできていない";
-			mes "ドラムが多過ぎるのよ。";
-			mes "だから私がここで";
-			mes "外から来たドラムを案内しているの。";
+			mes "[Shere]";
+			mes "Just ...... There are too many Doram who are just curious and don't have the basics of adventure." ;
+			mes "That's why I'm here to guide Doram who come from outside." ;
 			continue;
 		case 2:
-			mes "[シェレ]";
-			mes "それじゃ、";
-			mes "チュートリアル会場に送るわね。";
-			mes "あなたの活躍、期待してるわよ！";
+			mes "[Shere]";
+			mes "So I'll send you to the tutorial hall." ;
+			mes "I'm looking forward to seeing you in action!" ;
 			close2;
 			warp "do_tu01a.gat",29,283;
 			end;
 		case 3:
-			mes "^ff0000【インフォメーション】";
-			mes "<すべてのチュートリアルを";
-			mes "スキップする>を選択すると、";
-			mes "チュートリアルで獲得できる";
-			mes "全ての経験値やアイテムを";
-			mes "受け取った状態で、";
-			mes "ラザーニャから冒険を開始できます。^000000";
+			mes "^ff000000[Information] If you select <Skip all tutorials>, you can start your adventure from Lasagna with all the experience and items you can gain in the tutorials received. ^000000";
 			next;
-			mes "^ff0000【インフォメーション】";
-			mes "ただし、一度選んでしてしまうと";
-			mes "チュートリアルの内容を";
-			mes "再度確認することはできません。";
-			mes "チュートリアルをスキップしますか？^000000";
+			mes "^ff000000[Information] However, you will not be able to review the tutorials again once you have selected it." ;
+			mes "Do you want to skip the tutorial? ^000000";
 			next;
-			if(select("少し考える","^ff0000すべてのチュートリアルをスキップする^000000") == 1) {
-				mes "[シェレ]";
-				mes "わかったわ。";
-				mes "では、どうするのかしら？";
+			if(select("Think a little","^ff000000Skip all tutorials ^000000") == 1) {
+				mes "[Shere]";
+				mes "Okay." ;
+				mes "So what are we going to do?" ;
 				continue;
 			}
-			mes "^ff0000【インフォメーション】";
-			mes "スキップ処理を実行中です。";
-			mes "クライアントを終了しないでください。";
-			mes "実行中に終了した場合、";
-			mes "一部のアイテムや経験値を";
-			mes "受け取れない場合があります。^000000";
+			mes "^ff0000[Information] Skipping process is running." ;
+			mes "Do not terminate the client." ;
+			mes "If you exit during execution, you may not receive some items or experience. ^000000";
 			next;
 			if(DORAM_1QUE <= 4){
 				getitem 26135, 1;
@@ -219,7 +183,7 @@ new_do1.gat,95,264,4	script	シェレ#new_do1	10165,{
 				getexp 27,0;
 				getexp 0,600;
 				delitem 26135, 1;
-				getitem2 26135, 1, 1, 4, 0, 0, 0, 0, 0;
+				getitem2 26135, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0;
 			}
 			if(DORAM_1QUE <= 16) {
 				setquest 98409;
@@ -338,14 +302,12 @@ new_do1.gat,95,264,4	script	シェレ#new_do1	10165,{
 				getexp 0,25000;
 			}
 			set DORAM_1QUE,100;
-			mes "^ff0000【インフォメーション】^000000";
-			mes "^0000ff[next] をクリックしてください。^000000";
+			mes "^ff000000[Information] ^000000^000000^000000ff[next]. ^000000";
 			next;
-			mes "[シェレ]";
-			mes "わかったわ。";
-			mes "それじゃそのように";
-			mes "手配しておくわ。";
-			mes "あなたの活躍、期待してるわ！";
+			mes "[Shere]";
+			mes "Okay." ;
+			mes "Then I'll arrange it that way." ;
+			mes "I'm looking forward to your success!" ;
 			savepoint "lasagna.gat",299,239;
 			warp "lasagna.gat",298,238;
 			end;
@@ -353,23 +315,21 @@ new_do1.gat,95,264,4	script	シェレ#new_do1	10165,{
 	}
 }
 
-do_tu05a.gat,137,98,4	script	シェレ#do_tu01a	10165,{
-	mes "[シェレ]";
-	mes "あら、チュートリアルの";
-	mes "終了をご希望かしら？";
+do_tu05a.gat,137,98,4 script Shele#do_tu01a 10165,{
+	mes "[Shele]";
+	mes "Oh, would you like to finish the tutorial?" ;
 	while(1) {
 		next;
-		switch(select("少し考える","^009effチュートリアルに戻る^000000","^ff0000すべてのチュートリアルをスキップする^000000")) {
+		switch(select("Think a little","^009effBack to tutorials^000000","^ff000000Skip all tutorials^000000")) {
 		case 1:
-			mes "[シェレ]";
-			mes "わかったわ。";
-			mes "決まったらもう一度声かけてね。";
+			mes "[Shere]";
+			mes "Okay, I've got it." ;
+			mes "Call me again when you decide." ;
 			close;
 		case 2:
-			mes "[シェレ]";
-			mes "それじゃ、";
-			mes "チュートリアル会場に送るわね。";
-			mes "あなたの活躍、期待してるわよ！";
+			mes "[Shere]";
+			mes "Okay then, I'll send you to the tutorial venue." ;
+			mes "I'm looking forward to seeing you in action!" ;
 			close2;
 			if(DORAM_1QUE <= 1)
 				warp "do_tu01a.gat",29,281;
@@ -389,32 +349,20 @@ do_tu05a.gat,137,98,4	script	シェレ#do_tu01a	10165,{
 		case 3:
 			break;
 		}
-		mes "^ff0000【インフォメーション】";
-		mes "<すべてのチュートリアルを";
-		mes "スキップする>を選択すると、";
-		mes "チュートリアルで獲得できる";
-		mes "全ての経験値やアイテムを";
-		mes "受け取った状態で、";
-		mes "ラザーニャから冒険を開始できます。^000000";
+		mes "^ff000000[Information] If you select <Skip all tutorials>, you can start your adventure from Lasagna with all the experience and items you can gain in the tutorials received. ^000000";
 		next;
-		mes "^ff0000【インフォメーション】";
-		mes "ただし、一度選んでしてしまうと";
-		mes "チュートリアルの内容を";
-		mes "再度確認することはできません。";
-		mes "チュートリアルをスキップしますか？^000000";
+		mes "^ff000000[Information] However, you will not be able to review the tutorials again once you have selected it." ;
+		mes "Do you want to skip the tutorial? ^000000";
 		next;
-		if(select("少し考える","^ff0000すべてのチュートリアルをスキップする^000000") == 1) {
-			mes "[シェレ]";
-			mes "わかったわ。";
-			mes "では、どうするのかしら？";
+		if(select("Think a little","^ff000000Skip all tutorials ^000000") == 1) {
+			mes "[Shere]";
+			mes "Okay." ;
+			mes "So what are we going to do?" ;
 			continue;
 		}
-		mes "^ff0000【インフォメーション】";
-		mes "スキップ処理を実行中です。";
-		mes "クライアントを終了しないでください。";
-		mes "実行中に終了した場合、";
-		mes "一部のアイテムや経験値を";
-		mes "受け取れない場合があります。^000000";
+		mes "^ff0000[Information] Skipping process is running." ;
+		mes "Do not terminate the client." ;
+		mes "If you exit during execution, you may not receive some items or experience. ^000000";
 		next;
 		if(DORAM_1QUE <= 4){
 			getitem 26135, 1;
@@ -487,7 +435,7 @@ do_tu05a.gat,137,98,4	script	シェレ#do_tu01a	10165,{
 			getexp 27,0;
 			getexp 0,600;
 			delitem 26135, 1;
-			getitem2 26135, 1, 1, 4, 0, 0, 0, 0, 0;
+			getitem2 26135, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0;
 		}
 		if(DORAM_1QUE <= 16) {
 			setquest 98409;
@@ -605,12 +553,10 @@ do_tu05a.gat,137,98,4	script	シェレ#do_tu01a	10165,{
 			delquest 98429;
 			getexp 0,25000;
 		}
-		mes "^ff0000【インフォメーション】^000000";
-		mes "[シェレ]";
-		mes "わかったわ。";
-		mes "それじゃそのように";
-		mes "手配しておくわ。";
-		mes "あなたの活躍、期待してるわ！";
+		mes "^ff000000[Information]^000000[Shere]";
+		mes "Okay, I got it." ;
+		mes "Then I'll arrange it that way." ;
+		mes "I'm looking forward to your success!" ;
 		set DORAM_1QUE,100;
 		savepoint "lasagna.gat",299,239;
 		warp "lasagna.gat",298,238;
@@ -618,32 +564,24 @@ do_tu05a.gat,137,98,4	script	シェレ#do_tu01a	10165,{
 	}
 }
 
-do_tu01a.gat,134,381,0	script	warp01#do_tu01a	45,2,2,{
-	mes "^ff0000【インフォメーション】";
-	mes "進行中のチュートリアルから";
-	mes "離れてしまいました。";
-	mes "進行中のチュートリアルの";
-	mes "場所に戻りますか？^000000";
+do_tu01a.gat,134,381,0 script warp01#do_tu01a 45,2,2,{
+	mes "^ff0000[Information] I left the tutorial in progress." ;
+	mes "Would you like to return to the tutorial in progress? ^000000";
 	next;
-	if(select("はい","いいえ") == 2) {
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルの場所が";
-		mes "わからなくなった場合、";
-		mes "再度話しかけることで";
-		mes "チュートリアル進行中のNPCの場所に";
-		mes "戻ることができます。^000000";
+	if(select("Yes", "No") == 2) {
+		mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 		close;
 	}
 	if(DORAM_1QUE <= 1)
 		warp "do_tu01a.gat",29,281;
 	else if(DORAM_1QUE <= 22)
 		warp "do_tu01a.gat",60,320;
-	else
+	else if(DORAM_1QUE <= 22)
 		warp "do_tu02a.gat",153,58;
 	end;
 }
 
-do_tu01a.gat,29,283,0	script	object01#do_tu01a	139,1,1,{
+do_tu01a.gat,29,283,0 script object01#do_tu01a 139,1,1,{
 	if(DORAM_1QUE == 0) {
 		initnpctimer;
 		cutin "do_su_001.bmp", 3;
@@ -652,17 +590,17 @@ do_tu01a.gat,29,283,0	script	object01#do_tu01a	139,1,1,{
 	}
 	end;
 OnTimer1000:
-	donpcevent "自警団員アジェニャー#do::OnTalk1";
+	donpcevent "Vigilante Ajenya#do::OnTalk1";
 	end;
 OnTimer3000:
 	stopnpctimer;
-	donpcevent "自警団員アジェニャー#do::OnTalk2";
+	donpcevent "Neighborhood watchman Ajenya#do::OnTalk2"; end; OnTimer3000: stopnpctimer; stopnpctimer3000: stopnpctimer3000: stopnpctimer3000
 	end;
 }
 
-do_tu01a.gat,35,288,3	script	自警団員アジェニャー#do	10162,{
+do_tu01a.gat,35,288,3 script vigilante ajenya#do 10162,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -672,39 +610,25 @@ do_tu01a.gat,35,288,3	script	自警団員アジェニャー#do	10162,{
 			delquest 98400;
 			getexp 2,10;
 		}
-		mes "[自警団員アジェニャー]";
-		mes "おお、そうだ！　しっかりクリック出来たな。";
+		mes "[Vigilante Ajenya]";
+		mes "Oh, yes!  You got a solid click." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "NPCとの会話中におよそ1分以上";
-		mes "会話を進行しなかった場合、";
-		mes "会話が中断してしまいます。";
-		mes "その場合、再度話しかける";
-		mes "必要があるのでご注意ください。^000000";
+		mes "^009eff [Information] If you do not progress in a conversation with an NPC for approximately one minute or more, the conversation will be interrupted." ;
+		mes "In that case, you will need to speak to them again, so please Attention. ^000000";
 		next;
-		mes "　チュートリアル<講習編>　1/12";
-		mes "************************";
-		mes "　・NPCの利用";
-		mes "　・クエストウィンドウの開閉";
-		mes "　・基本的な移動";
-		mes "　・現在位置の確認";
-		mes "************************";
+		mes " Tutorial <Instruction> 1/12************************; Using NPCs, opening and closing quest windows, basic movement, and checking your current location. ************************";
 		next;
-		switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+		switch(select("Begin", "Skip this tutorial", "Skip all tutorials")) {
 		case 1:
 			break;
 		case 2:
 			getexp 4,20;
 			setquest 98402;
 			set DORAM_1QUE,2;
-			mes "^ff0000【インフォメーション】";
-			mes "現在会話中のNPCでの";
-			mes "チュートリアルは";
-			mes "全て終了しました。";
-			mes "次のチュートリアルの場所へ";
-			mes "向かいますか？^000000";
+			mes "^ff0000[Information] All tutorials have been completed with the NPC you are currently speaking with." ;
+			mes "Would you like to head to the next tutorial location? ^000000";
 			next;
-			switch(select("次の場所へワープする","ワープせずに歩いて向かう","すべてのチュートリアルをスキップする")) {
+			switch(select("Warp to the next location", "Walk to the next location without warping", "Skip all tutorials")) {
 			case 1:
 				warp "do_tu01a.gat",60,319;
 				end;
@@ -715,166 +639,98 @@ do_tu01a.gat,35,288,3	script	自警団員アジェニャー#do	10162,{
 			warp "do_tu05a.gat",136,95;
 			end;
 		}
-		mes "[自警団員アジェニャー]";
-		mes "今お前が私に話しかけてくれたように";
-		mes "他の人に会った時にも";
-		mes "まずは話しかけると良いぞ。";
+		mes "[Vigilante Ajenya]";
+		mes "You can talk to me first when you meet other people, just like you just talked to me." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "マウスのクリックでゲーム内の";
-		mes "各種インターフェースを操作出来ます。^000000";
+		mes "^009eff[Information] You can control various interfaces in the game by clicking your mouse. ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "NPCとの会話や移動、モンスターへの攻撃は";
-		mes "マウスの左クリックを使用します。^000000";
+		mes "^009eff[Information] Use the left mouse click to talk to NPCs, move around, and attack monsters. ^000000";
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "^009eff新大陸^000000への渡航を";
-		mes "希望する冒険者だな？";
-		mes "最近は本当に多いな。";
+		mes "[Vigilante Agenya]";
+		mes "^009effYou are an adventurer who wishes to travel to the new continent ^000000?" ;
+		mes "There really are a lot of them these days." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "しかし、";
-		mes "話を聞いたときは驚いたよ。";
-		mes "^009effミッドガルド^000000といったかな？";
-		mes "行方不明になっていた^009effナビ号^000000と一緒に";
-		mes "我々とは異なる種族が住む新大陸が";
-		mes "発見されただなんて。";
+		mes "[Vigilante Agenya]";
+		mes "But I was surprised when I heard the story." ;
+		mes "Did I say ^009eff Midgard^000000?" ;
+		mes "I can't believe that a new continent inhabited by a different species than ours was discovered with the missing ^009eff Navi ^000000." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "おかげで辺境の漁村に過ぎなかった";
-		mes "この^009effラザーニャ^000000は";
-		mes "今では外からきたドラム達でいっぱいさ。";
+		mes "[Vigilante Agenya]";
+		mes "Thanks to that, this ^009eff Lasagna^000000, which was just a remote fishing village, is now full of Doram from the outside." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "ただ、外から来たドラムたちが";
-		mes "かなり問題を起こしていてな……";
-		mes "相当困らされているのだ。";
+		mes "[Vigilante Ajenya]";
+		mes "But the Doram who came from the outside are causing quite a few problems. ......" ;
+		mes "They are causing us a lot of trouble." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "だから新大陸への渡航者には";
-		mes "^009effファルファーレ自警団^000000への";
-		mes "入団を義務付けることにした。";
+		mes "[Vigilante Agenya]";
+		mes "That's why we've decided to make it mandatory for anyone traveling to the New World to join the ^009eff Farfalle Vigilante ^000000." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "お前も新大陸へ渡りたいなら";
-		mes "入団テストをクリアして";
-		mes "自警団に入ってくれ。";
+		mes "[Vigilante Agenya]"; mes "[Vigilante Agenya]"; mes "[Vigilante Agenya]
+		mes "If you too want to cross to the new continent, you must pass the entrance test and join the vigilante group." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "とはいえ、";
-		mes "冒険のいろはも知らないやつに";
-		mes "いきなり試験を課したりはしない。";
-		mes "まずは冒険の基礎を教えてやる。";
+		mes "[Vigilante Ajenya]"; mes "[Vigilante Ajenya]
+		mes "However, I won't suddenly impose a test on someone who doesn't even know the ropes of adventure." ;
+		mes "First, I'll teach you the basics of adventure." ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "北東に仲間のアリオが待っている。";
-		mes "彼に詳しい話は聞いてくれ。";
+		mes "[Vigilante Agenya]";
+		mes "Your companion Ario is waiting for you in the northeast." ;
+		mes "Ask him for more information." ;
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "^009eff[Information] The quest window can be opened by left-clicking on the icon or ^ff000000<Alt>key+<U>key^009eff. ^000000";
 		next;
 		cutin "do_su_003.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウには";
-		mes "行き先や目標が書いてあります。";
-		mes "今回のクエストにも";
-		mes "行き先が書いてあるので、";
-		mes "まずはそこを目指しましょう！^000000";
+		mes "^009eff[Information] The quest window contains destinations and goals." ;
+		mes "This quest also has a destination written on it, so let's get there first! ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "画面右上のマップに";
-		mes "自分の現在地が表示されます。";
-		mes "クエストウィンドウの情報を元に";
-		mes "アリオを探しましょう！^000000";
+		mes "^009eff [Information] The map in the upper right corner of the screen shows your current location." ;
+		mes "Find Ario based on the information in the quest window! ^000000";
 		next;
 		cutin "do_su_003.bmp", 255;
 		viewpoint 1, 60, 322, 1, 0xFF0000;
-		mes "[自警団員アジェニャー]";
-		mes "^009effアリオ^000000のところにまで";
-		mes "無事に辿り着けるように、";
-		mes "^ff0000画面右上の地図に印をつけておいた。^000000";
-		mes "慣れない土地だろうから";
-		mes "気を付けて進むように！";
+		mes "[Vigilante Ajenya]";
+		mes "I marked the map in the upper right corner of the ^ff0000 screen so that you can get to ^009eff Ario ^000000 safely. ^000000It must be unfamiliar territory, so proceed with care!" ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "^009effアリオ^000000が";
-		mes "この先の冒険に必要なことを";
-		mes "色々と教えてくれるから";
-		mes "尋ねてみると良い。";
-		mes "私からは以上だ。";
+		mes "[Vigilante Agenya]";
+		mes "^009eff Ario ^000000 will tell you a lot of things you need to know for the adventure ahead, so ask him." ;
+		mes "That's all from me." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "クエスト「自警団員のレクチャー」を";
-		mes "受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff[Information] You have received the quest "Vigilante Lecture"." ;
+		mes "Open the quest window to confirm! ^000000";
 		setquest 98402;
 		set DORAM_1QUE,2;
 		getexp 4,20;
 		close;
 	case 2:
-		mes "[自警団員アジェニャー]";
-		mes "私はお前のように新大陸を目指して";
-		mes "やってくる好奇心旺盛なドラム達を";
-		mes "出迎えなければならない。";
-		mes "この先どうするかはあそこにいる";
-		mes "^009effアリオ^000000から聞いてくれ。";
+		mes "[Vigilante Agenya]";
+		mes "I must greet the curious Dorams like you who come for the new continent." ;
+		mes "Ask me what to do next from ^009eff Ario^000000 over there." ;
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "The ^009eff [Information] quest window can be opened by left-clicking on the icon or ^ff000000<Alt>key+<U>key^009eff. ^000000";
 		next;
 		cutin "do_su_003.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウには";
-		mes "行き先や目標が書いてあります。";
-		mes "今回のクエストにも";
-		mes "行き先が書いてあるので、";
-		mes "まずはそこを目指しましょう！^000000";
+		mes "^009eff[Information] The quest window contains destinations and goals." ;
+		mes "This quest also has a destination written on it, so let's get there first! ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "画面右上のマップに";
-		mes "自分の現在地が表示されます。";
-		mes "クエストウィンドウの情報を元に";
-		mes "アリオを探しましょう！^000000";
+		mes "^009eff [Information] The map in the upper right corner of the screen shows your current location." ;
+		mes "Find Ario based on the information in the quest window! ^000000";
 		next;
 		cutin "do_su_003.bmp", 255;
 		viewpoint 1, 60, 322, 1, 0xFF0000;
-		mes "[自警団員アジェニャー]";
-		mes "アリオのところにまで";
-		mes "無事に辿り着けるように、";
-		mes "^ff0000画面右上の地図に印をつけておいた。^000000";
-		mes "慣れない土地だろうから";
-		mes "気を付けて進むように！";
+		mes "[Vigilante Ajenya]";
+		mes "I marked the map in the upper right corner of the ^ff0000 screen so that we could get to Ario's place safely. It must be ^000000unfamiliar territory, so proceed with care!" ;
 		next;
-		mes "[自警団員アジェニャー]";
-		mes "アリオは私達";
-		mes "^009effファルファーレ自警団^000000の中でも";
-		mes "優秀な奴だ。";
-		mes "色々と教えてくれるだろう。";
+		mes "[Vigilante Agenya]";
+		mes "Ario is one of the best guys in our ^009eff Farfalle vigilante ^000000." ;
+		mes "He will teach you a lot." ;
 		close;
 	default:
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] You have left an ongoing tutorial." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -892,16 +748,16 @@ do_tu01a.gat,35,288,3	script	自警団員アジェニャー#do	10162,{
 		end;
 	}
 OnTalk1:
-	unittalk "自警団員アジェニャー : おい、そこの新入り！　こっちだ！";
+	unittalk "Vigilante Ajenya : Hey, there new guy!  Over here!" ;
 	end;
 OnTalk2:
-	unittalk "自警団員アジェニャー : こっちに来て！　私をクリックするんだ！";
+	unittalk "Vigilante Ajenya : come here!  Click me!" ;
 	end;
 }
 
-do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
+do_tu01a.gat,60,322,3 script vigilante ario#do_tu01a 10154,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	while(1) {
@@ -911,12 +767,9 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				delquest 98402;
 				getexp 6,40;
 			}
-			mes "　チュートリアル<講習編>　2/12";
-			mes "************************";
-			mes "　・モンスターへの攻撃";
-			mes "************************";
+			mes " tutorial<training> 2/12************************ and attacking monsters************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -926,62 +779,48 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 9,60;
 				continue;
 			}
-			emotion 12;
-			mes "[自警団員アリオ]";
-			mes "やあ、元気かい？";
-			mes "これから君の案内を担当する";
-			mes "アリオと言うものだ。";
-			mes "君は幸運だよ。";
-			mes "私はファルファーレ自警団の中でも";
-			mes "相当に優秀な団員だからな！";
+			EMOTION 12;
+			mes "[Vigilante Ario]";
+			mes "Hey, how are you?" ;
+			mes "My name is Ario, and I'll be your guide from now on." ;
+			mes "You're lucky." ;
+			mes "I'm a pretty good member of the Farfalle Neighborhood Watch!" ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "大体の事は私が力になれると思うよ。";
-			mes "まずは君がどの程度出来るか";
-			mes "見せてもらおうかな？";
+			mes "[Vigilante Ario]";
+			mes "I think I can help you with most things." ;
+			mes "Let's see how much you can do first, shall we?" ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "私の所に来るまでに";
-			mes "めだまやきのような生き物を";
-			mes "見かけなかったか？";
-			mes "奴らは^009effエッグリン^000000という";
-			mes "モンスターなんだ。";
+			mes "[Vigilante Ario]";
+			mes "Did you see any creatures like the Medamayaki before you came to me?" ;
+			mes "They're monsters called ^009eff Egglyn^000000." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "腕試しに^009effエッグリン^000000を";
-			mes "3体倒してこい！";
-			mes "君の実力を私に見せてくれ！";
+			mes "[Vigilante Ario]";
+			mes "Go kill three ^009eff Egglyn^000000 to test your skill!" ;
+			mes "Show me what you're made of!" ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "左クリックでモンスターへ攻撃できます。";
-			mes "来た道を戻り、エッグリンを";
-			mes "左クリックしてみましょう！^000000";
+			mes "^009eff[Information] Left click to attack the monsters." ;
+			mes "Go back the way you came and left click on Egglyn! ^000000";
 			close2;
 			set DORAM_1QUE,3;
 			setquest 98403;
 			end;
 		case 3:
-			if(!(checkquest(98403)&0x4)) {
-				mes "[自警団員アリオ]";
-				mes "腕試しにエッグリンを";
-				mes "3体倒してこい！";
-				mes "君の実力を私に見せてくれ！";
+			if(! (checkquest(98403)&0x4)) {
+				mes "[Vigilante Ario]";
+				mes "Go kill 3 Eglin to test your skills!" ;
+				mes "Show me what you're made of!" ;
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "左クリックでモンスターへ攻撃できます。";
-				mes "来た道を戻り、エッグリンを";
-				mes "左クリックしてみましょう！^000000";
+				mes "^009eff[Information] Left click to attack the monster." ;
+				mes "Go back the way you came and left click on Egglyn! ^000000";
 				close;
 			}
-			mes "[自警団員アリオ]";
-			mes "おお、中々の実力じゃないか。";
-			mes "新大陸を目指しているだけの";
-			mes "ことはあるな。";
+			mes "[Vigilante Ario]";
+			mes "Oh, isn't he a medium good one?" ;
+			mes "You're just trying to make it to a new continent." ;
 			emotion 21;
 			next;
-			mes "[自警団員アリオ]";
-			mes "君ならこの先の厳しい環境でも";
-			mes "やっていけるだろうね。";
+			mes "[Vigilante Ario]";
+			mes "I'm sure you'll do well in the tough environment ahead." ;
 			next;
 			if(checkquest(98403)) {
 				delquest 98403;
@@ -990,169 +829,95 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			}
 		case 4:
 		case 5:
-			mes "　チュートリアル<講習編>　3/12";
-			mes "************************";
-			mes "　・所持アイテム欄の開き方";
-			mes "　・アイテムの装備方法";
-			mes "************************";
+			mes " tutorial<training> 3/12************************, how to open the possession item column, how to equip items************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
-				getitem 26135, 1;
+				getitem 26135, 1. setquest 98404; 2. setquest 98405; 3. setquest 98404; 4;
 				setquest 98404;
 				delquest 98404;
 				set DORAM_1QUE,7;
 				getexp 12,80;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "よし、これからの冒険に備えて";
-			mes "これをやろう。";
+			mes "[Vigilante Ario]";
+			mes "Okay, let's do this to prepare for the adventure ahead." ;
 			next;
 			if(DORAM_1QUE == 4){
 				set DORAM_1QUE,5;
 				getitem 26135,1;
 			}
-			mes "[自警団員アリオ]";
-			mes "今渡した「初心者用猫じゃらし」を";
-			mes "装備したら";
-			mes "もう一度私に話しかけてくれ。";
-			mes "そうしたら次の訓練内容を伝えよう。";
+			mes "[Vigilante Ario]";
+			mes "Talk to me again when you have equipped the 'beginner's catnip' I just gave you." ;
+			mes "Then I will tell you the next part of the training." ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "アリオからもらったアイテムを";
-			mes "確認するために、";
-			mes "アイテムウィンドウを";
-			mes "開いてみましょう！";
+			mes "^009eff[Information] Open the item window to see what items Ario gave you!" ;
 			next;
 			cutin "do_su_004.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "アイテムウィンドウは";
-			mes "アイコンを左クリックするか";
-			mes "^ff0000<Alt>キー+<E>キー^009effで";
-			mes "開くことができます。^000000";
+			mes "^009eff[Information] The item window can be opened by left-clicking on the icon or ^ff000000<Alt>key+<E>key^009eff. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "アイテムウィンドウの装備タブから";
-			mes "「初心者用猫じゃらし」を";
-			mes "ダブルクリックしてみましょう。";
-			mes "装備することができます。";
+			mes "^009eff[Information] Double-click on 'Catnip for Beginners' from the Equipment tab of the Item Window." ;
+			mes "You can equip it." ;
 			next;
 			cutin "do_su_005.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "装備しているアイテムは";
-			mes "装備ウィンドウで確認できます。";
-			mes "アイコンを左クリックするか";
-			mes "^ff0000<Alt>キー+<Q>キー^009effで";
-			mes "開くことができます。^000000";
+			mes "^009eff[Information] You can see the items you are equipping in the equip window." ;
+			mes "You can open it by left-clicking the icon or ^ff000000<Alt>key+<Q>key^009eff. ^000000";
 			next;
 			cutin "do_su_006.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ダブルクリック以外にも、";
-			mes "アイテムウィンドウから";
-			mes "装備したいアイテムを";
-			mes "装備ウィンドウに";
-			mes "ドラッグ＆ドロップする事で、";
-			mes "装備を変更することができます。^000000";
+			mes "^009eff[Information] Besides double-clicking, you can also drag and drop the item you want to equip from the item window to the equipment window. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "ただし、装備欄を開いていない時に";
-			mes "ドラッグ＆ドロップで";
-			mes "地面を指定すると";
-			mes "アイテムを落としてしまうので";
-			mes "注意してください。^000000";
+			mes "^009eff[Information] However, if you specify the ground by drag and drop when the equipment column is not open, the item will be dropped, so please Attention. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "ドロップロックボタンを押して";
-			mes "ロック状態にすれば地面に";
-			mes "アイテムが捨てられることはなくなります。";
-			mes "心配な人はロック状態に";
-			mes "しておきましょう。^000000";
+			mes "^009eff[Information] If you press the drop lock button to lock the item, the item will not be dumped on the ground." ;
+			mes "If you are worried about it, keep it locked. ^000000";
 			setquest 98404;
 			set DORAM_1QUE,6;
 			close2;
 			cutin "do_su_002.bmp", 255;
 			end;
 		case 6:
-			if(getequipid(4) != 26135) {
-				mes "[自警団員アリオ]";
-				mes "違うものを身につけてるな。";
-				mes "私が渡した「初心者用猫じゃらし」を";
-				mes "身に付けているかもう一度";
-				mes "確認してくれよな。";
+			if(getequipid(4) ! = 26135) {
+				mes "[Vigilante Ario]";
+				mes "You're wearing something different." ;
+				mes "You'd better check again if you're wearing the 'beginner's catnip' I gave you." ;
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "アリオからもらったアイテムを";
-				mes "確認するために、";
-				mes "アイテムウィンドウを";
-				mes "開いてみましょう！";
+				mes "^009eff[Information] Let's open the item window to see what items Ario gave you!" ;
 				next;
 				cutin "do_su_004.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "アイテムウィンドウは";
-				mes "アイコンを左クリックするか";
-				mes "^ff0000<Alt>キー+<E>キー^009effで";
-				mes "開くことができます。^000000";
+				mes "^009eff[Information] The item window can be opened by left-clicking on the icon or ^ff000000<Alt>key+<E>key^009eff. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "アイテムウィンドウの装備タブから";
-				mes "「初心者用猫じゃらし」を";
-				mes "ダブルクリックしてみましょう。";
-				mes "装備することができます。";
+				mes "^009eff[Information] Double-click on 'Catnip for Beginners' from the Equipment tab of the Item Window." ;
+				mes "You can equip it." ;
 				next;
 				cutin "do_su_005.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "装備しているアイテムは";
-				mes "装備ウィンドウで確認できます。";
-				mes "アイコンを左クリックするか";
-				mes "^ff0000<Alt>キー+<Q>キー^009effで";
-				mes "開くことができます。^000000";
+				mes "^009eff[Information] You can see the items you are equipping in the equip window." ;
+				mes "You can open it by left-clicking the icon or ^ff000000<Alt>key+<Q>key^009eff. ^000000";
 				next;
 				cutin "do_su_006.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "ダブルクリック以外にも、";
-				mes "アイテムウィンドウから";
-				mes "装備したいアイテムを";
-				mes "装備ウィンドウに";
-				mes "ドラッグ＆ドロップする事で、";
-				mes "装備を変更することができます。^000000";
+				mes "^009eff[Information] Besides double-clicking, you can also drag and drop the item you want to equip from the item window to the equipment window. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "ただし、装備欄を開いていない時に";
-				mes "ドラッグ＆ドロップで";
-				mes "地面を指定すると";
-				mes "アイテムを落としてしまうので";
-				mes "注意してください。^000000";
+				mes "^009eff[Information] However, if you specify the ground by drag and drop when the equipment column is not open, the item will be dropped, so please Attention. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "ドロップロックボタンを押して";
-				mes "ロック状態にすれば地面に";
-				mes "アイテムが捨てられることはなくなります。";
-				mes "心配な人はロック状態に";
-				mes "しておきましょう。^000000";
+				mes "^009eff[Information] If you press the drop lock button to lock the item, the item will not be dumped on the ground." ;
+				mes "If you are worried about it, keep it locked. ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "なかなか飲みこみが早いな。";
-			mes "新大陸を目指しているだけの";
-			mes "ことはあるな。";
+			mes "[Vigilante Ario]";
+			mes "That's quite a quick swallow." ;
+			mes "You're just trying to make it to a new continent." ;
 			next;
 			delquest 98404;
 			set DORAM_1QUE,7;
 			getexp 12,80;
 		case 7:
-			mes "　チュートリアル<講習編>　4/12";
-			mes "************************";
-			mes "　・ステータスの説明";
-			mes "　・ステータスの振り方";
-			mes "************************";
+			mes " tutorial<training> 4/12************************, status description, how to assign status ************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1162,84 +927,44 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 15,100;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "これからの冒険で";
-			mes "君は様々な経験を積み";
-			mes "成長していくだろう。";
+			mes "[Vigilante Ario]";
+			mes "In the coming adventures you will gain many experiences and grow." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "君の進む道を決めるために";
-			mes "まずはステータスについて";
-			mes "理解を深める必要がある。";
+			mes "[Vigilante Ario]"; mes "[Vigilante Ario]
+			mes "In order to determine your path, you must first gain an understanding of your status." ;
 			next;
 			cutin "do_su_007.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ステータスは6種類あります。";
-			mes "それぞれの特性を";
-			mes "しっかりと把握しておきましょう！^000000";
+			mes "^009eff[Information] There are six types of status." ;
+			mes "Make sure you know the characteristics of each one! ^000000";
 			next;
 			cutin "do_su_008.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ステータスウィンドウは";
-			mes "アイコンを左クリックするか";
-			mes "^ff0000<Alt>キー+<A>キー^009effで";
-			mes "で開くことができます。";
-			mes "まずはウィンドウを開いてみましょう！^000000";
+			mes "^009eff[Information] status window can be opened by left-clicking on the icon or by ^ff000000<Alt>key+<A>key^009eff." ;
+			mes "Let's open the window first! ^000000";
 			next;
 			cutin "do_su_009.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "矢印をクリックすると";
-			mes "Status Pointを消費し、";
-			mes "ステータスが上昇します。";
-			mes "Status PointはBaseLvが";
-			mes "上がるごとに増えます。^000000";
+			mes "^009eff[Information] Clicking the arrow will consume a Status Point and increase your status." ;
+			mes "Status Points increase with each increase in BaseLv. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "序盤は";
-			mes "^ff0000Str20";
-			mes "Dex20^009eff";
-			mes "を目指してステータスを";
-			mes "上げていきましょう。^000000";
+			mes "^009eff[Information] In the beginning, aim for ^ff000000Str20Dex20^009eff to increase your Status. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "一度消費したStatus Pointは";
-			mes "戻すことができません。";
-			mes "間違えて別のステータスに";
-			mes "ポイントを使用しないように";
-			mes "気を付けましょう。^000000";
+			mes "^009eff[Information] Once consumed, Status Points cannot be regained." ;
+			mes "Be careful not to use a point for another status by mistake. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "なおドラムはチュートリアル終了後、";
-			mes "自警団員オリオに話しかけてから";
-			mes "7日間、BaseLv70になるまで";
-			mes "何度でもステータスが";
-			mes "リセットできます。^000000";
+			mes "^00009eff[Information] In addition, Doram can reset his status as many times as he wants until he reaches BaseLv 70, 7 days after he talks to Orio the Vigilante after the tutorial is over. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "ステータスの上げ方次第で";
-			mes "モンスターとの戦い方は";
-			mes "大きく変わります。";
-			mes "自分に合ったステータスを";
-			mes "探してみましょう。^000000";
+			mes "^009eff[Information] The way you fight monsters depends on how you raise your status." ;
+			mes "Find the right status for you. ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "ステータスについては理解したか？";
-			mes "では、試しに^0000ffDexを";
-			mes "「10」になるまで上げてくれ。^000000";
+			mes "[Vigilante Ario]";
+			mes "Do you understand the status?" ;
+			mes "Then try and raise ^000000ffDex until it reaches "10". ^000000";
 			next;
-			mes "[自警団員アリオ]";
-			mes "ちなみにステータスの";
-			mes "「+○」という部分は";
-			mes "装備やJobLvによる";
-			mes "ステータスボーナスだ。";
-			mes "今回は^0000ffステータスボーナスを含めず、";
-			mes "Dexを10にしてくれ。^000000";
+			mes "[Vigilante Ario]";
+			mes "By the way, the "+○" part of the status is the status bonus from equipment and JobLv." ;
+			mes "This time, don't include the ^000000ff status bonus and set Dex to 10. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "装備アイテムがすべて外され、";
-			mes "ステータス取得状況が";
-			mes "リセットされました。^000000";
+			mes "^00009eff[Information] All equipment items have been removed and the status acquisition status has been reset. ^000000";
 			setquest 98405;
 			resetstatus;
 			unequip -1;
@@ -1249,56 +974,38 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			end;
 		case 8:
 			if(readparam(bDex) < 10) {
-				mes "[自警団員アリオ]";
-				mes "Dexがまだ足りないぞ。";
-				mes "「10」になるまで上げるんだ。";
-				mes "君の実力を私に見せてくれ！";
+				mes "[Vigilante Ario]";
+				mes "You're still missing Dex." ;
+				mes "Raise it until you get to '10'." ;
+				mes "Show me what you can do!" ;
 				next;
-				mes "[自警団員アリオ]";
-				mes "ちなみにステータスの";
-				mes "「+○」という部分は";
-				mes "装備やJobLvによる";
-				mes "ステータスボーナスだ。";
-				mes "今回は^0000ffステータスボーナスを含めず、";
-				mes "Dexを10にしてくれ。^000000";
+				mes "[Vigilante Ario]";
+				mes "By the way, the "+○" part of the status is the status bonus from equipment and JobLv." ;
+				mes "This time, don't include the ^000000ff status bonus, and set Dex to 10. ^000000";
 				next;
 				cutin "do_su_008.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "ステータスウィンドウは";
-				mes "アイコンを左クリックするか";
-				mes "^ff0000<Alt>キー+<A>キー^009effで";
-				mes "で開くことができます。";
-				mes "まずはウィンドウを開いてみましょう！^000000";
+				mes "^009eff[Information] The status window can be opened by left-clicking on the icon or by ^ff000000<Alt>key+<A>key^009eff." ;
+				mes "Let's open the window first! ^000000";
 				next;
 				cutin "do_su_009.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "矢印をクリックすると";
-				mes "Status Pointを消費し、";
-				mes "ステータスが上昇します。";
-				mes "Status PointはBaseLvが";
-				mes "上がるごとに増えます。^000000";
+				mes "^009eff[Information] Clicking the arrow will consume a Status Point and increase your status." ;
+				mes "Status Points increase with each increase in BaseLv. ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "よし、ちゃんとDexを上げてきたな。";
-			mes "これでモンスターに攻撃が";
-			mes "命中しやすくなったぞ。";
+			mes "[Vigilante Ario]";
+			mes "Okay, you've raised your Dex properly." ;
+			mes "Now it's easier to hit the monster with your attacks." ;
 			next;
 			delquest 98405;
 			set DORAM_1QUE,9;
 			getexp 15,100;
 		case 9:
-			mes "　チュートリアル<講習編>　5/12";
-			mes "************************";
-			mes "　・スキルについて";
-			mes "　・スキルウィンドウの開き方";
-			mes "　・スキルの振り方";
-			mes "************************";
+			mes " tutorial<training> 5/12************************; about skills; how to open the skills window; how to assign skills************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1308,164 +1015,88 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 18,200;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "よし、次はスキルについて";
-			mes "学ぼうではないか。";
+			mes "[Vigilante Ario]";
+			mes "Okay, now let's learn about skills, shall we?" ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "スキルは職業毎に異なり";
-			mes "職業がサモナーの貴方は";
-			mes "攻撃や回復、補助のスキルを";
-			mes "覚えることができます。^000000";
+			mes "^009eff[Information] Skills differ for each profession, and you, who are a Summoner by profession, can learn offensive, recovery, and auxiliary skills. ^000000";
 			next;
 			cutin "do_su_010.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "スキルウィンドウは";
-			mes "アイコンを左クリックするか";
-			mes "^ff0000<Alt>キー+<S>キー^009effで";
-			mes "開くことができます。";
-			mes "まずはウィンドウを開いてみましょう！^000000";
+			mes "^009eff[Information] The skill window can be opened by left-clicking on the icon or by pressing ^ff000000<Alt>key+<S>key^009eff." ;
+			mes "Let's open the window first! ^000000";
 			next;
 			cutin "do_su_011.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "習得したいスキルを左クリックし";
-			mes "確定ボタンを押して、";
-			mes "確認に同意するとスキルポイントを";
-			mes "消費してスキルを習得します。";
-			mes "スキルポイントはJobLvが";
-			mes "1上がるごとに1ポイント増えます。^000000";
+			mes "^009eff[Information] Left-click the skill you want to learn, press the confirm button, and if you agree to confirm, you will spend skill points to learn the skill." ;
+			mes "Skill points are increased by 1 point for every 1 JobLv. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "一度消費したスキルポイントは";
-			mes "戻すことができません。";
-			mes "間違えて別のスキルに";
-			mes "ポイントを使用しないように";
-			mes "気を付けましょう。^000000";
+			mes "^009eff[Information] Once consumed, skill points cannot be restored." ;
+			mes "Be careful not to use points for another skill by mistake. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "なおドラムはチュートリアル終了後、";
-			mes "自警団員オリオに話しかけてから";
-			mes "7日間、BaseLv70になるまで";
-			mes "何度でもスキルが";
-			mes "リセットできます。^000000";
+			mes "^009eff[Information] In addition, Doram can reset his skills as many times as he wants until he reaches BaseLv 70, 7 days after the tutorial ends and he talks to Orio the Vigilante. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "習得するスキル次第で";
-			mes "モンスターとの戦い方は";
-			mes "大きく変わります。";
-			mes "自分に合ったスキルを";
-			mes "探してみましょう。^000000";
+			mes "^009eff[Information] Depending on the skills you learn, the way you fight monsters will vary greatly." ;
+			mes "Find the right skill for you. ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "スキルについては理解したか？";
-			mes "では、試しに";
-			mes "^0000ff「ドラム基本スキル」^000000と";
-			mes "^0000ff「かみつく」^000000を";
-			mes "を習得してみてくれ。";
+			mes "[Vigilante Ario]";
+			mes "Do you understand the skills?" ;
+			mes "Then try and learn ^000000ff "Doram Basic Skills" ^000000ff and ^000000ff "Bite" ^000000ff." ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "スキルの中には覚えるための";
-			mes "条件があるものもあります。";
-			mes "「かみつく」を習得するには";
-			mes "「ドラム基本スキル」Lv1を";
-			mes "習得している必要があります。^000000";
+			mes "Some of the ^009eff [Information] skills have requirements to learn." ;
+			mes "You must have learned "Doram Basic Skills" Lv 1 to learn "Bite". ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "まずは「ドラム基本スキル」を";
-			mes "習得してから";
-			mes "「かみつく」を習得しましょう。^000000";
+			mes "^009eff [Information] You must first learn "Doram Basic Skills" before learning "Biting". ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "装備アイテムがすべて外され、";
-			mes "スキル取得状況が";
-			mes "リセットされました。^000000";
+			mes "^009eff[Information] All equipped items have been removed and skill acquisition status reset. ^000000";
 			setquest 98406;
 			resetskill;
 			unequip -1;
 			set DORAM_1QUE,10;
 			close;
 		case 10:
-			if(getskilllv(5019) == 0) {		// かみつくスキル
-				mes "[自警団員アリオ]";
-				if(getskilllv(5018) == 0) {		// ドラム基本スキル
-					mes "どちらのスキルもまだ";
-					mes "取得できていないぞ？";
+			if(getskilllv(5019) == 0) { // bite skill
+				mes "[Vigilante Ario]";
+				if(getskilllv(5018) == 0) { // Doram basic skill
+					mes "You haven't gotten either of those skills yet, okay?" ;
 				}
 				else {
-					mes "かみつくのスキルが";
-					mes "まだ取得できていないぞ。";
+					mes "You haven't gotten the biting skill yet." ;
 				}
-				mes "もう一度確認してくれ。";
+				mes "Check again." ;
 				next;
 				cutin "do_su_010.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "スキルウィンドウは";
-				mes "アイコンを左クリックするか";
-				mes "^ff0000<Alt>キー+<S>キー^009effで";
-				mes "開くことができます。";
-				mes "まずはウィンドウを開いてみましょう！^000000";
+				mes "^009eff[Information] The skills window can be opened by left-clicking on the icon or ^ff0000<Alt> key + <S> key ^009eff." ;
+				mes "Let's open the window first! ^000000";
 				next;
 				cutin "do_su_011.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "習得したいスキルを左クリックし";
-				mes "確定ボタンを押して、";
-				mes "確認に同意するとスキルポイントを";
-				mes "消費してスキルを習得します。^000000";
+				mes "^009eff[Information] Left-click the skill you want to learn, press the confirm button, and if you agree to confirm, you will spend skill points to learn the skill. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "一度消費したスキルポイントは";
-				mes "戻すことができません。";
-				mes "間違えて別のスキルに";
-				mes "ポイントを使用しないように";
-				mes "気を付けましょう。^000000";
+				mes "^009eff[Information] Once consumed, skill points cannot be restored." ;
+				mes "Be careful not to use points for another skill by mistake. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "なおドラムはチュートリアル終了後、";
-				mes "自警団員オリオに話しかけてから";
-				mes "7日間、BaseLv70になるまで";
-				mes "何度でもスキルが";
-				mes "リセットできます。^000000";
+				mes "^009eff[Information] In addition, Doram can reset his skills as many times as he wants until he reaches BaseLv 70, 7 days after the tutorial ends and he talks to Orio the Vigilante. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "習得するスキル次第で";
-				mes "モンスターとの戦い方は";
-				mes "大きく変わります。";
-				mes "自分に合ったスキルを";
-				mes "探してみましょう。^000000";
+				mes "^009eff[Information] Depending on the skills you learn, the way you fight monsters will vary greatly." ;
+				mes "Find the right skill for you. ^000000";
 				next;
 				cutin "do_su_002.bmp", 255;
-				mes "^009eff【インフォメーション】";
-				mes "スキルの中には覚えるための";
-				mes "条件があるものもあります。";
-				mes "「かみつく」を習得するには";
-				mes "「ドラム基本スキル」Lv1を";
-				mes "習得している必要があります。^000000";
+				mes "^009eff[Information] Some skills have requirements to learn." ;
+				mes "To learn "Bite" you must have learned "Doram Basic Skills" Lv 1. ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "まずは「ドラム基本スキル」を";
-				mes "習得してから";
-				mes "「かみつく」を習得しましょう。^000000";
+				mes "^009eff [Information] You must first learn "Doram Basic Skills" before learning "Biting". ^000000";
 				close;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "ちゃんとスキルを";
-			mes "覚えてきたな。";
-			mes "さっそく使いたくなってきたか？";
+			mes "[Vigilante Ario]";
+			mes "You've learned your skills properly." ;
+			mes "You want to use it right away?" ;
 			next;
 			delquest 98406;
 			set DORAM_1QUE,11;
 			getexp 18,200;
 		case 11:
-			mes "　チュートリアル<講習編>　6/12";
-			mes "************************";
-			mes "　・ショートカットウィンドウ";
-			mes "　・スキルの使い方";
-			mes "　・スキルの試し打ち";
-			mes "************************";
+			mes " tutorial<training> 6/12************************; shortcut window; how to use skills; try out skills************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1475,178 +1106,110 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 21,400;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "よし、では今覚えたスキルを";
-			mes "さっそく使ってみようか。";
+			mes "[Vigilante Ario]";
+			mes "Okay, so let's get right to using the skills we just learned." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "っと、その前に、";
-			mes "スキルやアイテムを登録できる";
-			mes "ショートカットウィンドウを";
-			mes "説明しよう。";
+			mes "[Vigilante Ario]";
+			mes "Hey, before we do that, let me explain the shortcut window where you can register skills and items." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "スキルやアイテムを";
-			mes "ショートカットウィンドウに";
-			mes "登録しておくと、";
-			mes "素早く使用することができるぞ。";
+			mes "[Vigilante Ario]";
+			mes "You can register skills and items in the shortcut window so you can use them quickly." ;
 			next;
 			cutin "do_su_027.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ショートカットウィンドウは";
-			mes "^ff0000<Ctrl>キー+<F12>キー^009effで";
-			mes "開くことができます。";
-			mes "ショートカットウィンドウは<F12>キーで";
-			mes "切り替えることができ、";
-			mes "最大で4つまで登録できます。";
+			mes "^009eff[Information] Shortcut windows can be opened by pressing ^ff0000<Ctrl>key+<F12>key^009eff." ;
+			mes "Shortcut windows can be toggled with the <F12> key and up to four can be registered." ;
 			next;
 			cutin "do_su_012.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "ショートカットウィンドウを";
-			mes "開いたか？";
-			mes "それじゃ次はスキルを";
-			mes "ショートカットウィンドウに登録だ。";
+			mes "[Vigilante Ario]";
+			mes "Did you open the shortcut window?" ;
+			mes "Then the next step is to register your skills in the shortcut window." ;
 			next;
 			cutin "do_su_012.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "スキルをショートカットウィンドウに";
-			mes "登録します。";
-			mes "スキルウィンドウを開き、";
-			mes "習得した「かみつく」を";
-			mes "ショートカットウィンドウに";
-			mes "ドラッグ＆ドロップしてみましょう！^000000";
+			mes "^009eff[Information] Register the skill in the shortcut window." ;
+			mes "Open the skill window and drag and drop the learned "bite" into the shortcut window! ^000000";
 			next;
 			cutin "do_su_013.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ショートカットに対応した";
-			mes "ファンクションキーを押すと";
-			mes "スキルのカーソルが出るので、";
-			mes "敵に合わせて左クリックしてみましょう。^000000";
+			mes "^009eff[Information] Press the function key corresponding to the shortcut and the cursor for the skill will appear, so let's left-click on the enemy. ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "使い方はわかったか？";
-			mes "では^009effグラスファブル^000000を";
-			mes "3体倒したら私に報告してくれ！";
-			mes "^0000ff緑色の芋虫のようなモンスターで";
-			mes "ここから東に行ったところにいる。^000000";
-			mes "スキルを使いこなせばできるはずだ！";
+			mes "[Vigilante Ario]";
+			mes "Did you figure out how to use it?" ;
+			mes "Then report back to me when you kill three ^009eff glass fables^000000!" ;
+			mes "^000000ffThey are green caterpillar-like monsters and are located east of here. You should be able to do it if you use your ^000000 skills!" ;
 			close2;
 			setquest 98407;
 			set DORAM_1QUE,12;
 			end;
 		case 12:
-			if(!(checkquest(98407)&0x4)) {
-				mes "[自警団員アリオ]";
-				mes "では^009effグラスファブル^000000を";
-				mes "3体倒したら私に報告してくれ！";
-				mes "^0000ff緑色の芋虫のようなモンスターで";
-				mes "ここから東に行ったところにいる。^000000";
-				mes "スキルを使いこなせばできるはずだ！";
+			if(! (checkquest(98407)&0x4)) {
+				mes "[Vigilante Ario]";
+				mes "Then report back to me when you kill three ^009eff glass fables^000000!" ;
+				mes "^000000ffThey are green caterpillar-like monsters and are located east of here. You should be able to do it if you use your ^000000 skills!" ;
 				next;
 				cutin "do_su_027.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "ショートカットウィンドウは";
-				mes "^ff0000<Ctrl>キー+<F12>キー^009effで";
-				mes "開くことができます。";
-				mes "ショートカットウィンドウは<F12>キーで";
-				mes "切り替えることができ、";
-				mes "最大で4つまで登録できます。";
+				mes "^009eff[Information] Shortcut window can be opened by pressing ^ff0000<Ctrl>key+<F12>key^009eff." ;
+				mes "Shortcut windows can be toggled with the <F12> key and up to four can be registered." ;
 				next;
 				cutin "do_su_012.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "スキルをショートカットウィンドウに";
-				mes "登録します。";
-				mes "スキルウィンドウを開き、";
-				mes "習得した「かみつく」を";
-				mes "ショートカットウィンドウに";
-				mes "ドラッグ＆ドロップしてみましょう！^000000";
+				mes "Register ^009eff[Information] skills in the shortcut window." ;
+				mes "Open the skill window and drag and drop the learned "bite" into the shortcut window! ^000000";
 				next;
 				cutin "do_su_013.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "ショートカットに対応した";
-				mes "ファンクションキーを押すと";
-				mes "スキルのカーソルが出るので、";
-				mes "敵に合わせて左クリックしてみましょう。^000000";
+				mes "^009eff[Information] Press the function key corresponding to the shortcut and the cursor for the skill will appear, so let's left-click on the enemy. ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "やるじゃないか。";
-			mes "まあ新大陸に行きたいなら";
-			mes "このくらいはやってもらわないとな。";
+			mes "[Vigilante Ario]";
+			mes "You're gonna do it." ;
+			mes "Well, if you want to get to the new continent, you're going to have to do this." ;
 			next;
 			delquest 98407;
 			set DORAM_1QUE,13;
 			getexp 21,400;
 		case 13:
-			mes "　チュートリアル<講習編>　7/12";
-			mes "************************";
-			mes "　・アイテムの精錬";
-			mes "************************";
+			mes " tutorial<training> 7/12************************ and refining items************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
 				delitem 26135, 1;
-				getitem2 26135, 1, 1, 4, 0, 0, 0, 0, 0;
+				getitem2 26135, 1, 1, 4, 0, 0, 0, 0, 0, 0;
 				setquest 98408;
 				delquest 98408;
 				set DORAM_1QUE,15;
 				getexp 27,600;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "よし、それでは次の講習だ。";
-			mes "これまでエッグリンと";
-			mes "グラスファブルと戦ってもらったが、";
-			mes "これから先、もっと強力な";
-			mes "モンスターと戦うことになるだろう。";
+			mes "[Vigilante Ario]";
+			mes "Okay, that's the next course." ;
+			mes "So far we've had you fight Egglyn and Grassfable, but you'll be fighting more powerful monsters in the future." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "強力なモンスターを倒すには";
-			mes "強力な装備が必要になってくる。";
-			mes "そこで自分の装備を強化し、";
-			mes "性能を上げるのが^ff0000精錬^000000だ。";
+			mes "[Vigilante Ario]";
+			mes "To defeat powerful monsters, you will need powerful equipment." ;
+			mes "That's where ^ff000000 refining^000000 enhances your equipment and improves its performance." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "そこにいる鍛冶屋に話しかけて、";
-			mes "持っている武器を";
-			mes "精錬してもらってこい。";
+			mes "[Vigilante Ario]";
+			mes "Go talk to the blacksmith there and ask him to refine the weapons you have." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "本来なら費用や素材が必要なんだが、";
-			mes "今回は特別にそれらは一切不要で";
-			mes "やってくれるように言ってある。";
-			mes "「初心者用猫じゃらし」を";
-			mes "精錬値が^ff0000+4^000000になるまで";
-			mes "精錬してくるんだ！";
+			mes "[Vigilante Ario]";
+			mes "Normally, you would need to pay for the cost and materials, but this time I've told him to do it for you without any of those things specially." ;
+			mes "Go refine the "Beginner's Catnip" until the refining value is ^ff000000+4^000000!" ;
 			next;
 			cutin "do_su_023.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "装備を精錬することで";
-			mes "武器や防具の性能を";
-			mes "上昇させることができます。";
-			mes "精錬に必要な費用や素材は";
-			mes "アイテムによって異なります。^000000";
+			mes "^009eff[Information] You can increase the performance of your weapons and armor by refining your equipment." ;
+			mes "The cost and materials required for refining vary depending on the item. ^000000";
 			next;
 			cutin "do_su_024.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "特定の精錬値を超えて精錬すると、";
-			mes "精錬に失敗することがあります。";
-			mes "安全な精錬値は装備によって異なり、";
-			mes "精錬に失敗したアイテムは";
-			mes "消失してしまうので";
-			mes "気をつけてください！^000000";
+			mes "^009eff[Information] Refining beyond a certain refining value may cause refining to fail." ;
+			mes "Be aware that the safe refining value depends on the equipment and items that fail to refine will be lost! ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "精錬値+4までなら";
-			mes "精錬に失敗することはない。";
-			mes "安心して行ってこい！";
+			mes "[Vigilante Ario]";
+			mes "Up to +4 refining value, refining will never fail." ;
+			mes "Go ahead and rest assured!" ;
 			close2;
 			setquest 98408;
 			set DORAM_1QUE,14;
@@ -1656,60 +1219,45 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			case 26135:
 				break;
 			case 0:
-				mes "[自警団員アリオ]";
-				mes "おいおい、";
-				mes "武器を装備してないじゃないか。";
-				mes "ちゃんと装備してから";
-				mes "声をかけてくれ。";
+				mes "[Vigilante Ario]";
+				mes "Hey, hey, you're not equipped with a weapon." ;
+				mes "Make sure you're properly equipped before you call out to me." ;
 				close;
 			default:
-				mes "[自警団員アリオ]";
-				mes "おいおい、";
-				mes "「初心者用猫じゃらし」じゃ";
-				mes "ないじゃないか。";
-				mes "ちゃんと装備してから";
-				mes "声をかけてくれ。";
+				mes "[Vigilante Ario]";
+				mes "Hey, that's not 'catnip for beginners'." ;
+				mes "Make sure you're properly equipped before you call on me." ;
 				close;
 			}
 			if(getequiprefinerycnt(4) < 4) {
-				mes "[自警団員アリオ]";
-				mes "おいおい、";
+				mes "[Vigilante Ario]";
+				mes "Hey, hey, hey";
 				if(getequiprefinerycnt(4) == 0) {
-					mes "精錬してもらってないじゃないか。";
-					mes "ちゃんと精錬してもらってから";
-					mes "声をかけてくれ。";
+					mes "You didn't get it refined." ;
+					mes "You need to get it refined properly before you can talk to me." ;
 				}
 				else {
-					mes "精錬が足りないじゃないか。";
-					mes "ちゃんと^ff0000+4^000000になるまで";
-					mes "精錬してから声をかけてくれ。";
+					mes "You're not refining it enough." ;
+					mes "Refine it until it's properly ^ff000000+4^000000 and then call me." ;
 				}
 				next;
-				mes "[自警団員アリオ]";
-				mes "そこにいる鍛冶屋に話しかけて、";
-				mes "持っている武器を";
-				mes "精錬してもらってこい。";
-				mes "「初心者用猫じゃらし」を";
-				mes "精錬値が^ff0000+4^000000になるまで";
-				mes "精錬してくるんだ！";
+				mes "[Vigilante Ario]";
+				mes "Go talk to the blacksmith there and have him refine the weapon you have." ;
+				mes "Go refine the "Beginner's Catnip" until the refining value is ^ff000000+4^000000!" ;
 				close;
 			}
-			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "見事な猫じゃらしだ！";
-			mes "さすが新大陸を目指すドラムだな。";
+			EMOTION 21;
+			mes "[Vigilante Ario]";
+			mes "Brilliant catnip!" ;
+			mes "As expected of Doram, who is aiming for a new continent." ;
 			next;
 			delquest 98408;
 			set DORAM_1QUE,15;
 			getexp 27,600;
 		case 15:
-			mes "　チュートリアル<講習編>　8/12";
-			mes "************************";
-			mes "　・自然回復について";
-			mes "　・重量50%と90%について";
-			mes "************************";
+			mes " tutorial<training> 8/12************************, about natural recovery, about 50% and 90% of weight************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1719,101 +1267,63 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 40,800;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "何度か戦ってみて";
-			mes "わかってきたと思うが、";
-			mes "モンスターから攻撃を受けると";
-			mes "HPが減り、スキルで攻撃すると";
-			mes "SPが減る。";
+			mes "[Vigilante Ario]";
+			mes "As you've probably figured out after a few fights, your HP decreases when you get attacked by monsters, and your SP decreases when you attack with skills." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "では、それらを回復するには";
-			mes "どうするか？";
-			mes "これからはそれを教える。";
+			mes "[Vigilante Ario]";
+			mes "So how do we recover them?" ;
+			mes "That's what I'm going to teach you." ;
 			next;
 			cutin "do_su_014.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "HPとSPは時間が経てば";
-			mes "自然に回復しますが、";
-			mes "座ることで回復する速度を";
-			mes "早めることができます。^000000";
+			mes "^009eff[Information] HP and SP will recover naturally over time, but you can speed up the rate at which they recover by sitting. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "「立つ」と「座る」は^ff0000<Insert>キー^009effで";
-			mes "切り替えることができます。^000000";
+			mes "^009eff[Information] You can switch between "standing" and "sitting" with the ^ff000000<Insert> key ^009eff. ^000000";
 			next;
 			cutin "do_su_015.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "なお所持アイテムの重量が";
-			mes "総重量の50%以上になると";
-			mes "自然回復が発生しなくなります。";
+			mes "^009eff[Information] In addition, natural recovery will not occur when the weight of items in your possession exceeds 50% of the total weight." ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "さらに90%以上になると、";
-			mes "通常攻撃やスキル攻撃が";
-			mes "できなくなります。";
-			mes "もしそうなってしまったら";
-			mes "アイテムを捨てて";
-			mes "重量を減らしましょう！^000000";
+			mes "^009eff[Information] Furthermore, when the weight of items in your possession reaches 90% or more of the total weight, normal and skill attacks will no longer occur." ;
+			mes "If this happens, throw away your items to reduce the weight! ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "よし、それじゃ座った状態で";
-			mes "話しかけてみろ！";
+			mes "[Vigilante Ario]";
+			mes "Okay, then sit down and talk to him!" ;
 			close2;
 			setquest 98409;
 			set DORAM_1QUE,16;
 			end;
 		case 16:
 			if(checksit() == 0) {
-				mes "[自警団員アリオ]";
-				mes "おいおい、座ってないじゃないか。";
-				mes "もっとリラックスしていいんだぞ。";
+				mes "[Vigilante Ario]";
+				mes "Hey, hey, you're not sitting down." ;
+				mes "You can relax more." ;
 				next;
 				cutin "do_su_014.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "座って回復してみましょう。";
-				mes "HPとSPが回復する速度が";
-				mes "立っている時より素早く回復するのを";
-				mes "実感できるはずです！";
+				mes "^009eff[Information] Sit back and recover." ;
+				mes "You will notice that your HP and SP recover faster than when you are standing!" ;
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "「立つ」と「座る」は^ff0000<Insert>キー^009effで";
-				mes "切り替えることができます。^000000";
+				mes "^009eff[Information] You can switch between "standing" and "sitting" with the ^ff000000<Insert> key ^009eff. ^000000";
 				next;
 				cutin "do_su_015.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "なお所持アイテムの重量が";
-				mes "総重量の50%以上になると";
-				mes "自然回復が発生しなくなります。";
+				mes "^009eff[Information] In addition, natural recovery will not occur when the weight of items in your possession exceeds 50% of the total weight." ;
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "さらに90%以上になると、";
-				mes "通常攻撃やスキル攻撃が";
-				mes "できなくなります。";
-				mes "もしそうなってしまったら";
-				mes "アイテムを捨てて";
-				mes "重量を減らしましょう！^000000";
+				mes "^009eff[Information] Furthermore, when the weight of items in your possession reaches 90% or more of the total weight, normal and skill attacks will no longer occur." ;
+				mes "If this happens, throw away your items to reduce the weight! ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "そうだ、時には進むだけじゃなく、";
-			mes "立ち止まって休むことも重要だぞ。";
+			mes "[Vigilante Ario]";
+			mes "Yes, sometimes it's important to stop and rest, not just keep going." ;
 			next;
 			delquest 98409;
 			set DORAM_1QUE,17;
 			getexp 40,800;
 		case 17:
-			mes "　チュートリアル<講習編>　9/12";
-			mes "************************";
-			mes "　・アイテムの購入方法";
-			mes "　・アイテムの売却方法";
-			mes "************************";
+			mes " tutorial<training> 9/12************************, how to buy items, how to sell items************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1823,37 +1333,23 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 48,1000;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "大分冒険の基本は抑えてきたな。";
-			mes "それでは次の講習だが、";
-			mes "これから多くのモンスターと";
-			mes "戦っていくためには";
-			mes "自然回復だけでは切り抜けられない";
-			mes "場面も多くでてくるだろう。";
+			mes "[Vigilante Ario]";
+			mes "You've got the basics of adventure down pretty well." ;
+			mes "Now for the next lesson, there will be many situations where you will not be able to get through with only natural recovery in order to fight many more monsters." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "では、どうするか？";
-			mes "これからはそれを教える。";
+			mes "[Vigilante Ario]";
+			mes "So what do we do?" ;
+			mes "That's what I'm going to teach you now." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "そこにいる商人から";
-			mes "初心者用ポーション 5個";
-			mes "初心者用青ポーション 5個";
-			mes "を購入してこい。";
-			mes "それでは、待っているぞ。";
+			mes "[Vigilante Ario]";
+			mes "Go buy 5 beginner's potions, 5 blue potions for beginners from the merchant there." ;
+			mes "Then I'll be waiting for you." ;
 			next;
 			cutin "do_su_016.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "今までの戦闘で拾ってきた";
-			mes "ゼロピーや綿毛などの収集品を";
-			mes "商人に売却してZenyにしましょう。";
+			mes "^009eff [Information] Sell the zero peas, cotton wool, and other collectibles you've picked up in the battle so far to the merchant for Zeny." ;
 			next;
 			cutin "do_su_017.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "Zenyを獲得したら、";
-			mes "^ff0000初心者用ポーション 5個";
-			mes "初心者用青ポーション 5個^009eff";
-			mes "を購入しましょう！^000000";
+			mes "^009eff[Information] Once you have earned Zeny, buy ^ff000000 5 blue potions for beginners 5 blue potions for beginners ^009eff! ^000000";
 			close2;
 			setquest 98410;
 			set DORAM_1QUE,18;
@@ -1861,45 +1357,31 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			end;
 		case 18:
 			if(countitem(569) < 5 || countitem(11518) < 5) {
-				mes "[自警団員アリオ]";
-				mes "そこにいる商人から";
-				mes "初心者用ポーション 5個";
-				mes "初心者用青ポーション 5個";
-				mes "を購入してこい。";
-				mes "それでは、待っているぞ。";
+				mes "[Vigilante Ario]";
+				mes "Go buy 5 beginner's potions and 5 blue potions for beginners from the merchant there." ;
+				mes "Then I'll be waiting for you." ;
 				next;
 				cutin "do_su_016.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "今までの戦闘で拾ってきた";
-				mes "ゼロピーや綿毛などの収集品を";
-				mes "商人に売却してZenyにしましょう。";
+				mes "^009eff [Information] Sell the zero peas, cotton wool, and other collectibles you've picked up in the battle so far to the merchant for Zeny." ;
 				next;
 				cutin "do_su_017.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "Zenyを獲得したら、";
-				mes "^ff0000初心者用ポーション 5個";
-				mes "初心者用青ポーション 5個^009eff";
-				mes "を購入しましょう！^000000";
+				mes "^009eff[Information] Once you have earned Zeny, buy ^ff000000 5 blue potions for beginners 5 blue potions for beginners ^009eff! ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
 			emotion 21;
-			mes "[自警団員アリオ]";
-			mes "ちゃんと買って来れたようだな。";
-			mes "おつかいくらいなら";
-			mes "お手の物ってところか。";
+			mes "[Vigilante Ario]";
+			mes "Looks like you got it right." ;
+			mes "I guess you're good enough to do some errands for me." ;
 			next;
 			delquest 98410;
 			set DORAM_1QUE,19;
 			getexp 48,1000;
 		case 19:
-			mes "　チュートリアル<講習編>　10/12";
-			mes "************************";
-			mes "　・消耗アイテムの使い方";
-			mes "************************";
+			mes " tutorial<training> 10/12************************ and how to use consumable items************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1909,33 +1391,19 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 61,1200;
 				continue;
 			}
-			mes "[自警団員アリオ]";
-			mes "では、次はそのポーションの";
-			mes "使い方を説明するので";
-			mes "よく聞いておくように。";
+			mes "[Vigilante Ario]";
+			mes "Now, listen carefully as I explain how to use that potion next." ;
 			next;
 			cutin "do_su_018.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "アイテムウィンドウを開いて";
-			mes "購入したポーションを";
-			mes "ダブルクリックしましょう。";
-			mes "なお、NPCと会話中はアイテムが";
-			mes "使用できない場合があるので";
-			mes "注意してください！^000000";
+			mes "^009eff[Information] Open the item window and double-click the potion you purchased." ;
+			mes "In addition, items may not be available while you are talking to NPCs, so please Attention! ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "またスキルの時のように、";
-			mes "ショートカットウィンドウに登録し、";
-			mes "対応したファンクションキーを";
-			mes "押しても使用することができます。^000000";
+			mes "^009eff[Information] Also, as with skills, you can register them in the shortcut window and use them by pressing the corresponding function key. ^000000";
 			next;
 			cutin "do_su_002.bmp", 255;
-			mes "[自警団員アリオ]";
-			mes "回復を実感できるように";
-			mes "HPとSPを減らしておいたぞ。";
-			mes "それでは、^0000ff持っている";
-			mes "ポーションを全て使い切ったら^000000";
-			mes "声をかけてくれ。";
+			mes "[Vigilante Ario]";
+			mes "I've reduced your HP and SP so you can feel the recovery." ;
+			mes "Then, when you've used up all the ^000000ff potions you have, give me a ^000000 call." ;
 			percentheal -50,-50;
 			close2;
 			setquest 98411;
@@ -1943,46 +1411,31 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			end;
 		case 20:
 			if(countitem(569) > 0 || countitem(11518) > 0) {
-				mes "[自警団員アリオ]";
-				mes "^0000ff持っているポーションを";
-				mes "全て使い切ったら^000000";
-				mes "声をかけてくれ。";
-				mes "それでは、待っているぞ。";
+				mes "[Vigilante Ario]";
+				mes "^000000ffWhen you've used up all the potions you have, ^000000 call out to me." ;
+				mes "Then I'll be waiting for you." ;
 				next;
 				cutin "do_su_018.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "所持欄を開いてポーションを";
-				mes "ダブルクリックしましょう。";
-				mes "なお、NPCと会話中はアイテムが";
-				mes "使用できない場合があるので";
-				mes "注意してください！^000000";
+				mes "^009eff[Information] Open the possession field and double-click on the potion." ;
+				mes "In addition, items may not be available while you are talking to NPCs, so please Attention! ^000000";
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "またスキルの時のように、";
-				mes "ショートカットウィンドウに登録し、";
-				mes "対応したファンクションキーを";
-				mes "押しても使用することができます。^000000";
+				mes "^009eff[Information] Also, as with skills, you can register them in the shortcut window and use them by pressing the corresponding function key. ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
-			emotion 21, "自警団員アリオ#do_tu01a";
-			mes "[自警団員アリオ]";
-			mes "アイテムの使い方も覚えたな。";
-			mes "緊急時に備えて";
-			mes "いつでも使えるようにしておくんだ。";
+			emotion 21, "Vigilante Ario#do_tu01a";
+			mes "[Vigilante Ario]";
+			mes "You've learned how to use items." ;
+			mes "You have it ready to use at any time in case of an emergency." ;
 			next;
 			delquest 98411;
 			set DORAM_1QUE,21;
 			getexp 61,1200;
 		case 21:
-			mes "　チュートリアル<講習編>　11/12";
-			mes "************************";
-			mes "　・クエストウィンドウに";
-			mes "　　直接入るアイテム";
-			mes "************************";
+			mes " tutorial<training> 11/12************************ and items that go directly into the quest window ************************";
 			next;
-			switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+			switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 			case 1:
 				break;
 			case 2:
@@ -1992,14 +1445,10 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 				getexp 73,1400;
 				setquest 98413;
 				set DORAM_1QUE,23;
-				mes "^ff0000【インフォメーション】";
-				mes "現在会話中のNPCでの";
-				mes "チュートリアルは";
-				mes "全て終了しました。";
-				mes "次のチュートリアルの場所へ";
-				mes "向かいますか？^000000";
+				mes "^ff0000[Information] All tutorials have been completed with the NPC you are currently speaking with." ;
+				mes "Would you like to head to the next tutorial location? ^000000";
 				next;
-				switch(select("次の場所へワープする","ワープせずに歩いて向かう","すべてのチュートリアルをスキップする")) {
+				switch(select("Warp to the next location", "Walk to the next location without warping", "Skip all tutorials")) {
 				case 1:
 					warp "do_tu02a.gat",224,124;
 					close;
@@ -2007,85 +1456,65 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 					close;
 				}
 			}
-			mes "[自警団員アリオ]";
-			mes "ふむ、それでは次は……";
+			mes "[Vigilante Ario]";
+			mes "Hmmm, so next up: ......" ;
 			next;
-			cloakoffnpc "道具屋の末っ子#do_tu01a";
-			donpcevent "道具屋の末っ子#do_tu01a::OnTalk1";
+			cloakoffnpc "The youngest son of the toolmaker#do_tu01a";
+			donpcevent "youngest son of toolmaker#do_tu01a::OnTalk1";
 			next;
-			mes "[自警団員アリオ]";
-			mes "驚かせやがって、何の用だ？";
-			mes "お前、道具屋の末っ子じゃないか。";
-			mes "こんな危険な場所までどうして来たんだ？";
+			mes "[Vigilante Ario]";
+			mes "You startled me, what do you want?" ;
+			mes "You're the youngest of the toolmakers, aren't you?" ;
+			mes "What brings you to this dangerous place?" ;
 			next;
-			mes "[道具屋の末っ子]";
-			mes "転んだら無くしちゃったんだ……。";
-			mes "荷物なんだけど、";
-			mes "ハル兄さんに渡すように";
-			mes "頼まれてたんだけど";
-			mes "遊んでいたらいつのまにか…。";
+			mes "[Toolmaker's youngest son]";
+			mes "I lost it when I fell. ......." ;
+			mes "It's a package, and I was asked to give it to my brother Hal, but I was playing with it and before I knew it..." ;
 			next;
-			mes "[道具屋の末っ子]";
-			mes "助けてよー、アリオ兄さん！";
-			mes "怒られちゃう！";
+			mes "[Toolmaker's youngest son]";
+			mes "Help me, Brother Ario!" ;
+			mes "I'm going to get angry!" ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "治療師ハルに箱を届けるお使いを";
-			mes "頼まれたが、ちょっと遊んでいたら";
-			mes "転んだ隙に箱を見失ってしまった、";
-			mes "ってことで良いか？";
+			mes "[Neighborhood Watchman Ario]";
+			mes "I was asked to run an errand to deliver a box to Hal the Healer, but I was playing around a bit and lost the box when I fell, is that right?" ;
 			next;
-			mes "[道具屋の末っ子]";
-			mes "そう！　その通りです！";
-			mes "さすが兄さん！";
-			mes "よくわかりましたね。";
+			mes "[Toolmaker's youngest son]";
+			mes "Yes!  That's right!" ;
+			mes "That's my brother!" ;
+			mes "You understood it very well." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "まず、お前はもう街に帰れ。";
-			mes "箱の件は私がなんとかする。";
-			mes "それと初対面の人がいる前で";
-			mes "そんな恥ずかしい喋り方は";
-			mes "もうやめろ。";
+			mes "[Vigilante Ario]";
+			mes "First of all, you should go back to the city now." ;
+			mes "I'll take care of the box." ;
+			mes "And don't talk that embarrassing way anymore in front of people you don't know." ;
 			next;
-			mes "[道具屋の末っ子]";
-			mes "兄さんそんな厳しいこと言わないで～。";
-			mes "私はラザーニャの可愛い末っ子ですよ！";
-			mes "とにかく、箱の件は頼みましたよ。";
+			mes "[Toolmaker's youngest son]";
+			mes "Don't be so harsh, brother~." ;
+			mes "I am Lasagna's lovely youngest son!" ;
+			mes "Anyway, I asked you for the box." ;
 			next;
-			cloakonnpc "道具屋の末っ子#do_tu01a";
-			mes "[自警団員アリオ]";
-			mes "……";
-			mes "はぁ……。";
+			cloakonnpc "youngest son of the toolmaker#do_tu01a";
+			mes "[Vigilante Ario]";
+			mes "......" ;
+			mes "haha ......." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "こうなった以上仕方ない。";
-			mes strcharinfo(0)+ "、";
-			mes "箱の捜索をお願いできないか？";
+			mes "[Vigilante Ario]";
+			mes "Now that it's come to this, we have no choice." ;
+			mes ""+strcharinfo(0)+ ", can you please search the box?" ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "いやあ、優秀なドラムが隣にいて";
-			mes "本当に良かった！";
-			mes "肝心の箱だが、恐らくは";
-			mes "^009effエッグリン^000000が";
-			mes "食べたのだろう。";
+			mes "[Vigilante Ario]";
+			mes "Well, I'm so glad to have the excellent Doram next door!" ;
+			mes "The important thing is the box, probably ^009eff Egglyn^000000 ate it." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "^009effエッグリン^000000を";
-			mes "何匹か倒せば箱も見つかるだろう。";
-			mes "さぁ、頼んだぞ！";
+			mes "[Vigilante Ario]";
+			mes "If we kill a few ^009eff Egglyn^000000s, we'll find the box." ;
+			mes "Come on, I'm asking you!" ;
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "エッグリンが配達用の木箱を";
-			mes "飲み込んだようです。";
-			mes "探して来てアリオに見せましょう。";
+			mes "^009eff[Information] It looks like Egglyn swallowed a delivery crate." ;
+			mes "Let's go find it and show it to Ario." ;
 			next;
 			cutin "do_su_019.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "通常、アイテムはモンスターを";
-			mes "倒した際に地面にドロップしますが、";
-			mes "クエストによっては対象のアイテムが";
-			mes "直接アイテムウィンドウに";
-			mes "入る場合があります。^000000";
+			mes "^009eff[Information] Normally, items are dropped on the ground when a monster is defeated, but in some quests the target item may go directly into the item window. ^000000";
 			close2;
 			setquest 98412;
 			set DORAM_1QUE,22;
@@ -2093,53 +1522,35 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			end;
 		case 22:
 			if(countitem(1081) < 1) {
-				mes "[自警団員アリオ]";
-				mes "^009effエッグリン^000000はさっき倒したし";
-				mes "見た目は覚えているな？";
-				mes "どの個体が呑み込んだかは";
-				mes "わからないが、";
-				mes "片っ端から倒せば見つかるはずだ。";
+				mes "[Vigilante Ario]";
+				mes "^009eff Egglyn^000000 defeated him earlier and you remember what he looks like, don't you?" ;
+				mes "I don't know which one swallowed it, but if we take it down from one end to the other, we should be able to find it." ;
 				next;
-				mes "^009eff【インフォメーション】";
-				mes "エッグリンが配達用の木箱を";
-				mes "飲み込んだようです。";
-				mes "探して来てアリオに見せましょう。";
+				mes "^009eff[Information] It looks like Egglyn swallowed a delivery crate." ;
+				mes "Let's go find it and show it to Ario." ;
 				next;
 				cutin "do_su_019.bmp", 3;
-				mes "^009eff【インフォメーション】";
-				mes "通常、アイテムはモンスターを";
-				mes "倒した際に地面にドロップしますが、";
-				mes "クエストによっては対象のアイテムが";
-				mes "直接アイテムウィンドウに";
-				mes "入る場合があります。^000000";
+				mes "^009eff[Information] Normally, items are dropped on the ground when a monster is defeated, but in some quests the target item may go directly into the item window. ^000000";
 				close2;
 				cutin "do_su_002.bmp", 255;
 				end;
 			}
-			mes "[自警団員アリオ]";
-			mes "おお、それだよ、その箱だ！";
-			mes "それじゃあ次はその箱を";
-			mes "ハルのところまで届けてもらえるか？";
+			mes "[Vigilante Ario]";
+			mes "Oh, that's it, that's the box!" ;
+			mes "So can you deliver that box to Hal's next?" ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "街についたら治療師ハルを";
-			mes "探して渡してくれ。";
+			mes "[Vigilante Ario]";
+			mes "When you get to town, find Hal the healer and give it to him." ;
 			next;
 			emotion 27;
-			mes "[自警団員アリオ]";
-			mes "町には道なりに北東に歩いて";
-			mes "いけばいい。";
-			mes "ずっと歩いていけばいい。";
-			mes "簡単な道だが、気を付けろよ。";
+			mes "[Vigilante Ario]";
+			mes "To get to the town, just walk northeast along the road." ;
+			mes "Just walk all the way." ;
+			mes "It's an easy road, but be careful." ;
 			next;
 			cutin "do_su_020.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ワープリンクに触れると";
-			mes "別のマップに移動できます。";
-			mes "このマップの北にある";
-			mes "ワープリンクに触れれば、";
-			mes "ラザーニャの町に";
-			mes "移動することができます。^000000";
+			mes "^009eff[Information] Touch the warp link to go to another map." ;
+			mes "You can move to the town of Lasagna by touching the warp link to the north of this map. ^000000";
 			close2;
 			viewpoint 1, 134, 381, 1, 0xFF0000;
 			cutin "do_su_002.bmp", 255;
@@ -2149,53 +1560,35 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 			set DORAM_1QUE,23;
 			end;
 		case 23:
-			mes "[自警団員アリオ]";
-			mes "治療師のハルが荷物を";
-			mes "待っているだろうから";
-			mes "急いで持っていってやってくれ。";
+			mes "[Vigilante Ario]";
+			mes "Hal the healer will be waiting for the package, so hurry up and take it to him." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "町には道なりに北東に歩いて";
-			mes "いけばいい。";
-			mes "ずっと歩いていけばいい。";
-			mes "簡単な道だが、気を付けろよ。";
+			mes "[Neighborhood Watchman Ario]";
+			mes "Just walk northeast along the road to the town." ;
+			mes "Just walk all the way." ;
+			mes "It's an easy road, but be careful." ;
 			next;
-			mes "[自警団員アリオ]";
-			mes "私も後でいくから";
-			mes "心配しないで真っ直ぐ行けよ。";
+			mes "[Vigilante Ario]";
+			mes "I'll be there later, don't worry, just go straight." ;
 			next;
 			cutin "do_su_020.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "ワープリンクに触れると";
-			mes "別のマップに移動できます。";
-			mes "このマップの北にある";
-			mes "ワープリンクに触れれば、";
-			mes "ラザーニャの町に";
-			mes "移動することができます。^000000";
+			mes "^009eff[Information] Touch the warp link to go to another map." ;
+			mes "You can move to the town of Lasagna by touching the warp link to the north of this map. ^000000";
 			close2;
 			viewpoint 1, 134, 381, 1, 0xFF0000;
 			cutin "do_su_002.bmp", 255;
 			end;
 		case 24:
-			mes "[自警団員アリオ]";
-			mes "ミッドガルドには行けたか？";
-			mes "港で何か問題が起きているようだが";
-			mes "大丈夫、君なら解決できるさ。";
+			mes "[Vigilante Ario]";
+			mes "Did you make it to Midgard?" ;
+			mes "There seems to be some problems at the port, but don't worry, you'll figure it out." ;
 			close;
 		default:
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルから";
-			mes "離れてしまいました。";
-			mes "進行中のチュートリアルの";
-			mes "場所に戻りますか？^000000";
+			mes "^ff0000[Information] You have left the tutorial in progress." ;
+			mes "Would you like to return to the tutorial in progress? ^000000";
 			next;
-			if(select("はい","いいえ") == 2) {
-				mes "^ff0000【インフォメーション】";
-				mes "進行中のチュートリアルの場所が";
-				mes "わからなくなった場合、";
-				mes "再度話しかけることで";
-				mes "チュートリアル進行中のNPCの場所に";
-				mes "戻ることができます。^000000";
+			if(select("Yes", "No") == 2) {
+				mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 				close;
 			}
 			if(DORAM_1QUE <= 1)
@@ -2214,54 +1607,44 @@ do_tu01a.gat,60,322,3	script	自警団員アリオ#do_tu01a	10154,{
 		}
 	}
 }
--	shop	lasagna_callshop	-1,569:1,11518:1
-do_tu01a.gat,52,323,4	script	旅の行商人#do_tu01a	10163,{
+- shop lasagna_callshop -1,569:1,11518:1
+do_tu01a.gat,52,323,4 script traveling peddler#do_tu01a 10163,{
 	if(DORAM_1QUE < 18) {
-		mes "[旅の行商人]";
-		mes "オイラは旅の行商人さ。";
-		mes "でも、キミには何も売れないよ。";
-		mes "自警団のアリオさんに";
-		mes "許可を貰った人とだけ取引が";
-		mes "許されているんだ。";
-		mes "すまないね。";
+		mes "[traveling peddler]";
+		mes "I am a traveling peddler." ;
+		mes "But I can't sell anything to you." ;
+		mes "I'm only allowed to do business with people who have been given permission by the vigilante, Ario." ;
+		mes "I'm sorry." ;
 		close;
 	}
 	if(DORAM_1QUE >= 19) {
-		mes "[旅の行商人]";
-		mes "新大陸かぁ……。";
-		mes "オイラも自警団に入って";
-		mes "海を渡ろうか悩むよ。";
+		mes "[Traveling peddler]";
+		mes "A new continent. ......." ;
+		mes "I wonder if I should join the vigilantes and cross the ocean too." ;
 		next;
-		mes "[旅の行商人]";
-		mes "あいにくポーションは今";
-		mes "きらしちゃってね。";
-		mes "売れる物は何もないんだ。";
+		mes "[Traveling peddler]";
+		mes "Unfortunately, I'm out of potions right now." ;
+		mes "I have nothing to sell." ;
 		close;
 	}
 	if(countitem(569) >= 5 && countitem(11518) >= 5) {
-		mes "[旅の行商人]";
-		mes "ポーションはもう";
-		mes "それぞれ5個以上";
-		mes "持っているようだよ？";
-		mes "アリオさんに早く見せておいで。";
+		mes "[Traveling peddler]";
+		mes "Looks like we already have more than 5 potions each, right?" ;
+		mes "Go show them to Mr. Ario quickly." ;
 		close;
 	}
-	mes "[旅の行商人]";
-	mes "ポーションを買いに";
-	mes "来たんだろう？";
-	mes "アリオさんから話は";
-	mes "聞いているよ。";
+	mes "[Traveling peddler]";
+	mes "You came here to buy potions, didn't you?" ;
+	mes "Ario-san told me about you." ;
 	next;
 	if(Zeny == 0) {
-		mes "[旅の行商人]";
-		mes "キミは……";
-		mes "お金を持っていないじゃないか。";
-		mes "そういう時はまず";
-		mes "不要なものを売って";
-		mes "お金にしてから買うんだよ。";
+		mes "[Traveling peddler]";
+		mes "Kimi is ......." ;
+		mes "You don't have any money." ;
+		mes "In that case, sell the things you don't need first to make money and then buy them." ;
 		next;
 	}
-	switch(select("買う","売る")) {
+	switch(select("buy", "sell")) {
 	case 1:
 		callshop "lasagna_callshop",1;
 		close;
@@ -2271,108 +1654,88 @@ do_tu01a.gat,52,323,4	script	旅の行商人#do_tu01a	10163,{
 	}
 }
 
-do_tu01a.gat,62,320,3	script	道具屋の末っ子#do_tu01a	10167,{
+do_tu01a.gat,62,320,3 script youngest son of toolshop#do_tu01a 10167,{
 	end;
 OnTalk1:
-	unittalk "道具屋の末っ子 : ア……アリオオオ！！！";
+	unittalk "The youngest son of a toolmaker : a...... Ariooooo!!!" ;
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-do_tu01a.gat,66,323,4	script	旅の鍛冶屋#do_tu01a	10163,{
+do_tu01a.gat,66,323,4 script traveling blacksmith#do_tu01a 10163,{
 	if(DORAM_1QUE < 14) {
-		mes "[旅の鍛冶屋]";
-		mes "オレは旅の鍛冶屋だ。";
-		mes "残念だがアリオの兄ちゃんの";
-		mes "許可が無いと精錬はしてやれねえ。";
-		mes "わりぃな。";
+		mes "[Traveling blacksmith]";
+		mes "I am a traveling blacksmith." ;
+		mes "I'm a traveling blacksmith."; mes "I'm the remaining ghost, but I can't do any refining without Ario's permission." ;
+		mes "Sorry." ;
 		close;
 	}
 	if(DORAM_1QUE >= 15) {
-		mes "[旅の鍛冶屋]";
-		mes "生まれ変わった武器の具合は";
-		mes "どうだい？";
+		mes "[Traveling blacksmith]";
+		mes "How are your reborn weapons?" ;
 		close;
 	}
-	mes "[旅の鍛冶屋]";
-	mes "アリオの兄ちゃんから";
-	mes "話は聞いている。精錬だな？";
-	mes "任せておけ。";
-	mes "どれを精錬するんだ？";
+	mes "[Traveling Blacksmith]";
+	mes "I've heard from Ario's brother. Refining, right?" ;
+	mes "Leave it to me." ;
+	mes "Which ones are you going to refine?" ;
 	next;
 	switch(getequipid(4)) {
 	case 26135:
 		break;
 	case 0:
-		mes "[旅の鍛冶屋]";
-		mes "だがその前に、";
-		mes "精錬したい武器を装備してくれ。";
-		mes "そうじゃないと";
-		mes "精錬のしようがないぜ。";
+		mes "[Traveling blacksmith]";
+		mes "But first, equip the weapon you want to refine." ;
+		mes "Otherwise, there's no way to refine it, man." ;
 		close;
 	default:
-		mes "[旅の鍛冶屋]";
-		mes "おっと、";
-		mes "そのアイテムは精錬できないな。";
-		mes "「初心者用猫じゃらし」を";
-		mes "装備してくれ。";
+		mes "[Traveling blacksmith]";
+		mes "Oops, that item can't be refined." ;
+		mes "Equip yourself with the 'beginner's catnip'." ;
 		close;
 	}
 	if(getequiprefinerycnt(4) >= 4) {
-		mes "[旅の鍛冶屋]";
-		mes "おっと、";
-		mes "その武器はもう精錬済みだな。";
-		mes "今回オレが精錬してやれるのは";
-		mes "^ff0000+4^000000までだ。";
+		mes "[Traveling blacksmith]";
+		mes "Oops, that weapon is already refined." ;
+		mes "I can only refine up to ^ff000000+4^000000 this time." ;
 		next;
-		mes "[旅の鍛冶屋]";
-		mes "そこから先は他のやつに";
-		mes "頼んでくれ。";
-		mes "サービスで精錬してやってるんだ、";
-		mes "文句言わないでくれよ？";
+		mes "[Traveling blacksmith]";
+		mes "From there, ask someone else to do it for you." ;
+		mes "I'm refining it for you as a service, don't complain, okay?" ;
 		close;
 	}
-	if(select("^nItemID^"+ getequipid(4),"やめる") == 2) {
-		mes "[旅の鍛冶屋]";
-		mes "ん？　精錬しないのか？";
+	if(select("^nItemID^"+ getequipid(4), "quit") == 2) {
+		mes "[Traveling blacksmith]";
+		mes "Hmm?  Don't you want to refine?" ;
 		close;
 	}
 	successrefitem 4;
-	mes "[旅の鍛冶屋]";
-	mes "そらよっと！";
-	mes "どうだい？";
-	mes "良い仕事してるだろ？";
+	mes "[Traveling blacksmith]";
+	mes "Sora yotto!" ;
+	mes "How's it going?" ;
+	mes "Good job, huh?" ;
 	close;
 }
 
-do_tu02a.gat,150,54,0	warp	warp01#do_tu02a	2,2,do_tu01a.gat,131,378
-do_tu02a.gat,358,91,0	warp	warp02#do_tu02a	2,2,do_tu04a.gat,20,98
-do_tu02a.gat,205,327,0	script	warp03#do_tu02a	45,2,2,{
+do_tu02a.gat,150,54,0 warp warp warp01#do_tu02a 2,2,do_tu01a.gat,131,378
+do_tu02a.gat,358,91,0 warp warp02#do_tu02a 2,2,do_tu04a.gat,20,98
+do_tu02a.gat,205,327,0 script warp03#do_tu02a 45,2,2,{
 	switch(DORAM_1QUE) {
 	case 33:
-		mes "‐近くに座っている";
-		mes "　船員のドラムに話しかけよう‐";
+		mes "-Talk to Doram, the sailor sitting nearby-";
 		close;
 	default:
 		if(DORAM_1QUE > 34) {
 			warp "do_tu05a.gat",55,61;
 			end;
 		}
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] You have left the tutorial in progress." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -2387,29 +1750,17 @@ do_tu02a.gat,205,327,0	script	warp03#do_tu02a	45,2,2,{
 	}
 }
 
-do_tu02a.gat,153,58,0	script	object01#do_tu02a	139,3,3,{
+do_tu02a.gat,153,58,0 script object01#do_tu02a 139,3,3,{
 	if(DORAM_1QUE == 23) {
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウには";
-		mes "行き先や目標が書いてあります。";
-		mes "^ff0000治療師ハル^009effの場所も";
-		mes "クエストウィンドウに書いてあるので";
-		mes "そこを目指しましょう！^000000";
+		mes "^009eff[Information] The quest window contains destinations and goals." ;
+		mes "^ff0000The location of the healer Hal ^009eff is also written in the quest window, so go there! ^000000";
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "^009eff[Information] The quest window can be opened by left-clicking on the icon or by pressing ^ff000000<Alt>key+<U>key^009eff. ^000000";
 		next;
 		cutin "do_su_002.bmp", 255;
-		mes "^009eff【インフォメーション】";
-		mes "また、画面右上のマップの";
-		mes "下部にある「+」「-」で";
-		mes "マップの拡大縮小ができます。";
-		mes "状況に応じてマップのサイズを";
-		mes "変えてみましょう！^000000";
+		mes "^009eff[Information] You can also zoom in and out of the map by using the "+" and "-" keys at the bottom of the map in the upper right corner of the screen." ;
+		mes "Resize the map depending on the situation! ^000000";
 		close2;
 		viewpoint 1, 224, 126, 1, 0xFF0000;
 		end;
@@ -2417,9 +1768,9 @@ do_tu02a.gat,153,58,0	script	object01#do_tu02a	139,3,3,{
 	end;
 }
 
-do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
+do_tu02a.gat,224,126,5 script healer hull#do_tu02a 10164,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him...","";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -2428,18 +1779,13 @@ do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
 		getexp 87,1600;
 		savepoint "do_tu02a.gat",224,123;
 		set DORAM_1QUE,24;
-		mes "^009eff【インフォメーション】";
-		mes "セーブポイントを更新しました。";
-		mes "戦闘不能になった場合、";
-		mes "この場所で復活します。^000000";
+		mes "^009eff[Information] Savepoint updated." ;
+		mes "If you lose the battle, you will be revived at this location. ^000000";
 		next;
 	case 24:
-		mes "　チュートリアル<講習編>　12/12";
-		mes "************************";
-		mes "　・クエストスキル";
-		mes "************************";
+		mes " tutorial<training> 12/12************************ and quest skills************************";
 		next;
-		switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+		switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 		case 1:
 			break;
 		case 2:
@@ -2448,14 +1794,10 @@ do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
 			skill 142,1,0;
 			setquest 98415;
 			set DORAM_1QUE,25;
-			mes "^ff0000【インフォメーション】";
-			mes "現在会話中のNPCでの";
-			mes "チュートリアルは";
-			mes "全て終了しました。";
-			mes "次のチュートリアルの場所へ";
-			mes "向かいますか？^000000";
+			mes "^ff0000[Information] All tutorials have been completed with the NPC you are currently speaking with." ;
+			mes "Would you like to head to the next tutorial location? ^000000";
 			next;
-			switch(select("次の場所へワープする","ワープせずに歩いて向かう","すべてのチュートリアルをスキップする")) {
+			switch(select("Warp to the next location", "Walk to the next location without warping", "Skip all tutorials")) {
 			case 1:
 				warp "do_tu02a.gat",235,196;
 				close;
@@ -2463,147 +1805,111 @@ do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
 				close;
 			}
 		}
-		emotion 20, "治療師ハル#do_tu02a";
-		mes "[治療師ハル]";
-		mes "そろそろ荷物が届く頃なんですが……";
-		mes "遅いな……。";
+		emotion 20, "Healer Hal#do_tu02a";
+		mes "[Healer Hal]";
+		mes "It's about time you got your package: ......" ;
+		mes "You're late. ......." ;
 		next;
-		mes "[治療師ハル]";
-		mes "あれ？";
-		mes "その箱は？";
-		cloakoffnpc "道具屋の末っ子#do_tu02a";
-		donpcevent "道具屋の末っ子#do_tu02a::OnTalk1";
+		mes "[Healer Hal]";
+		mes "Huh?" ;
+		mes "What's in that box?" ;
+		cloakoffnpc "The youngest son of the toolmaker#do_tu02a";
+		donpcevent "youngest son of toolmaker#do_tu02a::OnTalk1";
 		next;
-		mes "[治療師ハル]";
-		mes "おお、待っていたよ。";
-		mes "今日はずいぶんと遅かったじゃないか。";
-		mes "まさか、どこかに寄り道して";
-		mes "遊んでたんじゃないだろうな。";
+		mes "[Healer Hal]";
+		mes "Oh, I've been waiting for you." ;
+		mes "You've been awfully late today." ;
+		mes "I hope you didn't stop off somewhere to play." ;
 		next;
-		mes "[道具屋の末っ子]";
-		mes "い……いや？　ぜんぜん？";
-		mes "そんなことないですよ？";
-		mes "この人は荷物が重そうだからって";
-		mes "親切にもこの荷物を";
-		mes "持ってくれたんです。";
+		mes "[Toolmaker's youngest son]";
+		mes "I ...... No?  Not at all?" ;
+		mes "No, not at all?" ;
+		mes "This person was kind enough to carry this luggage for me because it looked heavy." ;
 		next;
-		mes "[治療師ハル]";
-		mes "そうでしたか。";
-		mes "わざわざありがとうございます。";
+		mes "[Healer Hal]";
+		mes "Was that so?" ;
+		mes "Thank you for taking the trouble." ;
 		next;
-		mes "[道具屋の末っ子]";
-		mes "そ、それじゃ私はこれで！";
+		mes "[Toolmaker's youngest son]";
+		mes "Well, that's it for me then!" ;
 		next;
-		donpcevent "道具屋の末っ子#do_tu02a::OnTalk2";
-		cloakonnpc "道具屋の末っ子#do_tu02a";
-		mes "[治療師ハル]";
-		mes "おや、もう行ってしまった。";
-		mes "せっかちな子だね。";
+		donpcevent "The youngest son of the toolmaker#do_tu02a::OnTalk2";
+		cloakonnpc "youngest son of a toolmaker#do_tu02a";
+		mes "[Healer Hal]";
+		mes "Oh, he's already gone." ;
+		mes "You're an impatient little boy, aren't you?" ;
 		next;
-		mes "[治療師ハル]";
-		mes "まあ、大方どこかで無くした";
-		mes "荷物をあなたが見つけて";
-		mes "持って来てくれたんでしょう？";
-		mes "よくあることなんで";
-		mes "もう慣れましたよ。";
+		mes "[Healer Hal]";
+		mes "Well, for the most part, I'm sure he lost his luggage somewhere and you found it and brought it back to him." ;
+		mes "It happens all the time, so I'm used to it." ;
 		next;
-		mes "[治療師ハル]";
-		mes "ふむ……。";
-		mes "失礼ですが、見たところ";
-		mes "まだ旅には不慣れなようですね。";
+		mes "[Healer Hal]";
+		mes "Hmmm ......." ;
+		mes "Excuse me, but from the looks of it, you're still new to traveling." ;
 		next;
-		mes "[治療師ハル]";
-		mes "荷物を持って来てくれたお礼に、";
-		mes "旅の役に立つスキル";
-		mes "「応急手当」を";
-		mes "教えてあげましょう。";
+		mes "[Healer Hal]";
+		mes "As a thank you for bringing your luggage, let me teach you a useful skill for traveling: first aid." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "レベルを上げて習得するのではなく、";
-		mes "クエストを達成することで";
-		mes "習得できるスキルを";
-		mes "クエストスキルと呼びます。^000000";
+		mes "^009eff[Information] Skills that can be learned by completing quests, rather than by gaining levels, are called quest skills. ^000000";
 		next;
-		mes "[治療師ハル]";
-		mes "応急手当はSPを消費して";
-		mes "自分のHPを回復するスキルです。";
+		mes "[Healer Hal]";
+		mes "First Aid is a skill that consumes SP to recover your HP." ;
 		next;
-		mes "[治療師ハル]";
-		mes "回復する量はわずかですが、";
-		mes "いざという時には役にたつでしょう。";
-		mes "覚えておいて損はないですよ。";
+		mes "[Healer Hal]";
+		mes "The amount you recover is small, but it will help you in times of need." ;
+		mes "It's a good thing to remember." ;
 		next;
-		mes "[治療師ハル]";
-		mes "さあ、いいですか？";
-		mes "よく見ていてください。";
+		mes "[Healer Hal]";
+		mes "Now, are you ready?" ;
+		mes "Watch closely." ;
 		next;
-		mes "[治療師ハル]";
-		mes "まずここを上に……";
+		mes "[Healer Hal]";
+		mes "First up here ......." ;
 		next;
-		mes "[治療師ハル]";
-		mes "次は下に……";
+		mes "[Healer Hal]"; mes "[Healer Hal]
+		mes "Next down here ......" ;
 		next;
-		mes "[治療師ハル]";
-		mes "左右に2回動かして……";
+		mes "[Healer Hal]";
+		mes "Move it left and right twice ......" ;
 		next;
-		mes "[治療師ハル]";
-		mes "はい！";
-		mes "できました！";
+		mes "[Therapist Hal]"; mes "[Therapist Hal]
+		mes "Yes!" ;
+		mes "Done!" ;
 		misceffect 58,"";
 		misceffect 234,"";
 		skill 142,1,0;
 		next;
 		cutin "do_su_010.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "スキル「応急手当」を習得しました。";
-		mes "スキルウィンドウを開いて";
-		mes "確認しましょう。";
-		mes "クエストスキルはスキルポイントを";
-		mes "消費せずに覚えることができます。^000000";
+		mes "^009eff[Information] I learned the skill "First Aid"." ;
+		mes "Open the skill window to confirm." ;
+		mes "Quest skills can be learned without spending skill points. ^000000";
 		next;
 		cutin "do_su_010.bmp", 255;
-		mes "[治療師ハル]";
-		mes "あくまで応急手当ですので、";
-		mes "危ない時はポーションなどで";
-		mes "回復するようにしてくださいね。";
+		mes "[Healer Hal]";
+		mes "This is only first aid, so if you are in danger, please use potions to recover." ;
 		next;
-		cloakoffnpc "自警団員アリオ#do_tu02a";
-		donpcevent "自警団員アリオ#do_tu02a::OnTalk1";
-		mes "[自警団員アリオ]";
-		mes "お、ちゃんと荷物を";
-		mes "届けられたようだな。";
+		cloakoffnpc "Vigilante Ario#do_tu02a";
+		donpcevent "Neighborhood Watchman Ario#do_tu02a::OnTalk1";
+		mes "[Neighborhood watchman Ario]";
+		mes "Oh, looks like you got your package delivered properly." ;
 		next;
-		mes "[自警団員アリオ]";
-		mes "冒険に必要なことは";
-		mes "一通り教えたし、";
-		mes "こうしてちゃんと配達の依頼も";
-		mes "こなすことができた。";
+		mes "[Neighborhood Watchman Ario]"; mes "[Neighborhood Watchman Ario]"; mes "[Neighborhood Watchman Ario]
+		mes "I've taught you everything you need to know about the adventure, and in this way, I was able to properly fulfill your delivery request." ;
 		next;
-		mes "[自警団員アリオ]";
-		mes "これならもう入団テストに";
-		mes "挑んでも大丈夫そうだな。";
-		mes "それじゃ、団長のところに向かうぞ。";
+		mes "[Neighborhood Watchman Ario]";
+		mes "I guess this means I'm ready to take the initiation test now." ;
+		mes "Well then, let's head over to the Commander." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "お疲れ様でした。";
-		mes "チュートリアル<講習編>は";
-		mes "以上で終了となります。^000000";
+		mes "^009eff [Information] Thanks for your help." ;
+		mes "This is the end of the tutorial <Courses>. ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "次からは実際のクエストに近い内容の";
-		mes "^ff0000チュートリアル<実践編>^009effが";
-		mes "始まります。";
-		mes "これまでのチュートリアルで";
-		mes "学んだことを活かし、";
-		mes "クエストをクリアしてください！^000000";
+		mes "^009eff[Information] Next, we will begin the ^ff000000 tutorial <Practical Edition> ^009eff, which is similar to the actual quest." ;
+		mes "Please use what you have learned in the previous tutorials to complete the quest! ^000000";
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエスト「入団テスト」を";
-		mes "受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
-		cloakonnpc "自警団員アリオ#do_tu02a";
+		mes "^009eff[Information] You have received the quest "Entrance Test"." ;
+		mes "Open the quest window to check it out! ^000000";
+		cloakonnpc "Vigilante Ario#do_tu02a";
 		viewpoint 1, 235, 198, 1, 0xFF0000;
 		getexp 103,1800;
 		delitem 1081,1;
@@ -2612,44 +1918,28 @@ do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
 		cutin "do_su_002.bmp", 255;
 		close;
 	case 25:
-		mes "[治療師ハル]";
-		mes "団長に会うなら";
-		mes "よろしく言っておいてください。";
+		mes "[Healer Hal]";
+		mes "If you see the Commander, please give him my regards." ;
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエスト「入団テスト」を";
-		mes "受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff[Information] You have received the quest "Test for joining the group"." ;
+		mes "Open the quest window to check it out! ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "^009eff[Information] The quest window can be opened by left-clicking on the icon or by pressing ^ff000000<Alt> key + <U> key ^009eff. ^000000";
 		close2;
 		cutin "do_su_002.bmp", 255;
 		viewpoint 1, 235, 198, 1, 0xFF0000;
 		end;
 	case 26:
-		mes "[治療師ハル]";
-		mes "団長には会えたようだね。";
+		mes "[Healer Hal]";
+		mes "I see you've met the Commander." ;
 		close;
 	default:
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] You have left the tutorial in progress." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -2668,32 +1958,32 @@ do_tu02a.gat,224,126,5	script	治療師ハル#do_tu02a	10164,{
 	}
 }
 
-do_tu02a.gat,226,124,3	script	道具屋の末っ子#do_tu02a	10167,{
+do_tu02a.gat,226,124,3 script youngest son of toolmaker#do_tu02a 10167,{
 	end;
 OnTalk1:
-	unittalk "道具屋の末っ子 : お、おまたせしましたー！";
+	unittalk "The youngest son of a toolmaker : Oh, here we go!" ;
 	end;
 OnTalk2:
-	unittalk "道具屋の末っ子 : ご利用ありがとうございましたー！";
+	OnTalk2: unittalk "The youngest son of the tool shop : Thank you for your service! ;
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-do_tu02a.gat,230,127,3	script	自警団員アリオ#do_tu02a	10154,{
+do_tu02a.gat,230,127,3 script Vigilante Ario#do_tu02a 10154,{
 	end;
 OnTalk1:
-	unittalk "自警団員アリオ : ちょうど用事が済んだようだな。";
+	unittalk "Neighborhood Watchman Ario : Looks like you just finished your business." ;
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
+do_tu02a.gat,235,198,3 script Commander Peron#do_tu02a 10152,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-",""";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -2702,18 +1992,13 @@ do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
 		getexp 121,2000;
 		savepoint "do_tu02a.gat",235,196;
 		set DORAM_1QUE,26;
-		mes "^009eff【インフォメーション】";
-		mes "セーブポイントを更新しました。";
-		mes "戦闘不能になった場合、";
-		mes "この場所で復活します。^000000";
+		mes "^009eff[Information] Savepoint updated." ;
+		mes "If you lose the battle, you will be revived at this location. ^000000";
 		next;
 	case 26:
-		mes "　チュートリアル<実践編>　1/3";
-		mes "************************";
-		mes "　・入団テスト";
-		mes "************************";
+		mes " Tutorial <Practical> 1/3 ************************ and entrance test ************************";
 		next;
-		switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+		switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 		case 1:
 			break;
 		case 2:
@@ -2733,17 +2018,13 @@ do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
 			viewpoint 1, 203, 324, 1, 0xFF0000;
 			setquest 98421;
 			set DORAM_1QUE,33;
-			getitem 25046,1;	// 乗船許可書
-			getitem 15273,1;	// 白いTシャツ
-			getitem 22183,1;	// 木のスリッパ
-			mes "^ff0000【インフォメーション】";
-			mes "現在会話中のNPCでの";
-			mes "チュートリアルは";
-			mes "全て終了しました。";
-			mes "次のチュートリアルの場所へ";
-			mes "向かいますか？^000000";
+			getitem 25046,1; // boarding permit
+			getitem 15273,1; // white t-shirt
+			getitem 22183,1; // wooden slippers
+			mes "^ff0000[Information] You have completed all tutorials with the NPCs you are currently speaking with." ;
+			mes "Would you like to head to the next tutorial location? ^000000";
 			next;
-			switch(select("次の場所へワープする","ワープせずに歩いて向かう","すべてのチュートリアルをスキップする")) {
+			switch(select("Warp to the next location", "Walk to the next location without warping", "Skip all tutorials")) {
 			case 1:
 				warp "do_tu02a.gat",205,323;
 				close;
@@ -2752,93 +2033,62 @@ do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
 			}
 		}
 	case 27:
-		mes "[ペロン団長]";
-		mes "^ff0000町の南東の出口から出た先にある";
-		mes "ラビオル森^000000に行ってください。";
+		mes "[Commander Peron]";
+		mes "Go to the Rabiolu Forest ^000000 at the southeast exit of the town ^ff000000." ;
 		next;
-		mes "[ペロン団長]";
-		mes "そして森の東北東にある";
-		mes "^ff0000大きなトゲの生えた枝^000000を探し、";
-		mes "その枝を1個取ってきてください。";
-		mes "そうすれば合格です。";
+		mes "[Commander Peron]";
+		mes "Then look for a ^ff000000 large spiked branch^000000 east-northeast of the forest and get one of those branches." ;
+		mes "If you do so, you will pass the test." ;
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストを受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff [Information] Quest received." ;
+		mes "Open the quest window to confirm! ^000000";
 		next;
 		cutin "do_su_003.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "大きなトゲの生えた枝の場所は";
-		mes "クエストウィンドウに";
-		mes "書いてあります。";
-		mes "まずは町の南東側から外に出て、";
-		mes "ラビオル森に行きましょう。^000000";
+		mes "^009eff[Information] The location of the big spiky branch is written in the quest window." ;
+		mes "First, go outside from the southeast side of town to Rabiolu Forest. ^000000";
 		next;
 		cutin "do_su_028.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "ラビオル森はラザーニャの町の";
-		mes "^ff0000隣のMAP^009effにあります。";
-		mes "チャットウィンドウに";
-		mes "^ff0000「/where」^009effと入力すると";
-		mes "自分のいるマップ名を";
-		mes "調べることができます。^000000";
+		mes "^009eff[Information] Rabiolu Forest is located in MAP^009eff next to ^ff000000 the town of Lasagna." ;
+		mes "You can find out the name of the map you are in by typing ^ff0000 "/where"^009eff in the chat window. ^000000";
 		next;
 		cutin "do_su_002.bmp", 255;
-		mes "[ペロン団長]";
-		mes "ラビオル森には";
-		mes "攻撃的なモンスターがいます。";
-		mes "十分気をつけてください。";
+		mes "[Commander Peron]";
+		mes "There are aggressive monsters in Rabiolu Forest." ;
+		mes "Please be careful enough." ;
 		next;
-		mes "[ペロン団長]";
-		mes "もし一人で行くのが難しい場合は、";
-		mes "他の仲間と一緒に^ff0000パーティー^000000を";
-		mes "組むのも良いでしょう。";
+		mes "[Commander Peron]";
+		mes "If you have difficulty going alone, you may want to form a ^ff000000 party^000000 with other friends." ;
 		next;
-		mes "[ペロン団長]";
-		mes "ずるいことではありません。";
-		mes "仲間を集めるのも実力のうちです。";
+		mes "[Commander Peron]";
+		mes "It is not a cunning thing." ;
+		mes "It is part of your ability to gather friends." ;
 		next;
 		cutin "do_su_021.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "パーティーウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<Z>キー^009effで";
-		mes "で開くことができます。";
-		mes "開いたら「パーティー作成」で";
-		mes "パーティーを作ってみましょう！^000000";
+		mes "The ^009eff [Information] party window can be opened by left-clicking on the icon or by ^ff0000<Alt>key+<Z>key^009eff." ;
+		mes "Once opened, you can create a party by clicking on "Create Party"! ^000000";
 		next;
 		cutin "do_su_022.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "パーティー名を決めて";
-		mes "パーティーを作ったら、";
-		mes "他のプレイヤーを右クリックすると";
-		mes "「パーティー加入要請」を";
-		mes "することができます。^000000";
+		mes "^009eff[Information] Once you have named your party and created a party, you can right-click on another player to "Request to Join Party". ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "相手がパーティー要請を承認すると、";
-		mes "パーティーに入れることができます。";
-		mes "お友達を誘ってパーティーを";
-		mes "組んでみましょう！^000000";
+		mes "^009eff[Information] If the other player approves your party request, you can join the party." ;
+		mes "Invite your friends to join your party! ^000000";
 		close2;
 		viewpoint 1, 358, 91, 1, 0xFF0000;
 		cutin "do_su_002.bmp", 255;
 		end;
 	case 28:
 		emotion 21;
-		mes "[ペロン団長]";
-		mes "無事に枝を持ち帰りましたね。";
-		mes "お見事です。";
+		mes "[Commander Peron]";
+		mes "You brought the branch back safely." ;
+		mes "Well done." ;
 		next;
 		delquest 98416;
 		getexp 140,2200;
 		set DORAM_1QUE,29;
-		mes "[ペロン団長]";
-		mes "それではその枝を持って";
-		mes "私についてきてください。";
-		mes "次のテストを行います。";
+		mes "[Commander Peron]";
+		mes "Then take that branch and follow me." ;
+		mes "The following test will be performed." ;
 		close2;
 		setquest 98417;
 		warp "do_tu03a.gat",61,94;
@@ -2852,91 +2102,66 @@ do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
 			delquest 98419;
 			getexp 214,2800;
 		}
-		mes "[ペロン団長]";
-		mes "お疲れ様でした。";
-		mes "テストはこれで終わりです。";
+		mes "[Commander Peron]";
+		mes "Thank you for your hard work." ;
+		mes "This is the end of the test." ;
 		next;
-		mes "[ペロン団長]";
-		mes "ラビオル森の奥まで行き";
-		mes "枝を取って来る実力。";
+		mes "[Commander Peron]";
+		mes "The ability to go deep into the Rabbior Forest and get a branch." ;
 		next;
-		mes "[ペロン団長]";
-		mes "口を閉ざしたバジルリスクから";
-		mes "情報を引き出す方法に";
-		mes "辿り着いた頭脳と洞察力。";
+		mes "[Commander Peron]";
+		mes "The brains and insight that led him to find a way to extract information from the Basilisk, who had kept his mouth shut." ;
 		next;
-		mes "[ペロン団長]";
-		mes "どちらも優れたものを";
-		mes "持っていることがわかりました。";
-		mes "あなたはファルファーレ自警団に";
-		mes "ふさわしい人物です。";
+		mes "[Commander Peron]";
+		mes "I have found that both of them are excellent." ;
+		mes "You are the right person for the Farfalle Vigilante." ;
 		next;
 		emotion 46,"";
-		mes "[ペロン団長]";
-		mes "あなたの入団を認めましょう。";
-		mes "おめでとうございます。";
+		mes "[Commander Peron]";
+		mes "Let us admit you into our ranks." ;
+		mes "Congratulations." ;
 		next;
-		mes "[ペロン団長]";
-		mes "さて、あなたは新大陸への渡航を";
-		mes "希望していましたね。";
+		mes "[Commander Peron]";
+		mes "Now, you wanted to go to the new continent." ;
 		next;
-		mes "[ペロン団長]";
-		mes "この乗船許可書を持って";
-		mes "北の港に停泊している船に行けば、";
-		mes "あなたを乗せてくれるでしょう。";
-		mes "さっそく行ってみてください。";
+		mes "[Commander Peron]";
+		mes "If you take this boarding pass to a ship docked in a northern port, they will take you." ;
+		mes "Please go there as soon as possible." ;
 		next;
-		mes "[ペロン団長]";
-		mes "ふふふ……";
-		mes "私も若い頃は冒険に出て";
-		mes "何かでかいことを成し遂げてやろうと";
-		mes "息巻いていたものです。";
+		mes "[Commander Peron]";
+		mes "fufu ......" ;
+		mes "When I was young, I used to go on adventures and breath that I was going to accomplish something big." ;
 		next;
-		mes "[ペロン団長]";
-		mes "ですが……";
-		mes "私には守らなければならないものが";
-		mes "多過ぎました。";
+		mes "[Commander Peron]";
+		mes "But ......" ;
+		mes "I had too many things to protect." ;
 		next;
-		mes "[ペロン団長]";
-		mes "まあ、あまりにも";
-		mes "船酔いが酷かったので";
-		mes "冒険に出るのが";
-		mes "難しかったというのも";
-		mes "あるんですけどね。";
-		mes "ハハハハ。";
+		mes "[Commander Peron]";
+		mes "Well, I was too seasick to go on an adventure." ;
+		mes "Hahahaha." ;
 		close2;
 		set DORAM_1QUE,33;
-		getitem 25046,1;	// 乗船許可書
-		getitem 15273,1;	// 白いTシャツ
-		getitem 22183,1;	// 木のスリッパ
+		getitem 25046,1; // boarding pass
+		getitem 15273,1; // white t-shirt
+		getitem 22183,1; // wooden slippers
 		cutin "do_su_002.bmp", 255;
 		getexp 239,3000;
 		viewpoint 1, 203, 324, 1, 0xFF0000;
 		setquest 98421;
 		end;
 	case 33:
-		mes "[ペロン団長]";
-		mes "この乗船許可書を持って";
-		mes "北の港に停泊している船に行けば、";
-		mes "あなたを乗せてくれるでしょう。";
-		mes "さっそく行ってみてください。";
+		mes "[Commander Peron]";
+		mes "Take this boarding pass to a ship docked in the northern harbor and they will take you aboard." ;
+		mes "Please go there as soon as possible." ;
 		close2;
 		viewpoint 1, 203, 324, 1, 0xFF0000;
 		end;
 	default:
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] You have left the tutorial in progress." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -2955,9 +2180,9 @@ do_tu02a.gat,235,198,3	script	ペロン団長#do_tu02a	10152,{
 	}
 }
 
-do_tu02a.gat,203,324,5	script	エッグリン#do_tu02a	10157,{
+do_tu02a.gat,203,324,5 script eglin#do_tu02a 10157,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -2966,18 +2191,13 @@ do_tu02a.gat,203,324,5	script	エッグリン#do_tu02a	10157,{
 		getexp 267,3200;
 		savepoint "do_tu02a.gat",235,196;
 		set DORAM_1QUE,34;
-		mes "^009eff【インフォメーション】";
-		mes "セーブポイントを更新しました。";
-		mes "戦闘不能になった場合、";
-		mes "この場所で復活します。^000000";
+		mes "^009eff[Information] Savepoint updated." ;
+		mes "If you lose the battle, you will be revived at this location. ^000000";
 		next;
 	case 34:
-		mes "　チュートリアル<実践編>　2/3";
-		mes "************************";
-		mes "　・船員のお願い";
-		mes "************************";
+		mes " Tutorial <Practical> 2/3 ************************ and request for sailors ************************";
 		next;
-		switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+		switch(select("begin", "skip this tutorial", "skip all tutorials")) {
 		case 1:
 			break;
 		case 2:
@@ -2987,14 +2207,10 @@ do_tu02a.gat,203,324,5	script	エッグリン#do_tu02a	10157,{
 			getexp 332,3600;
 			setquest 98424;
 			set DORAM_1QUE,36;
-			mes "^ff0000【インフォメーション】";
-			mes "現在会話中のNPCでの";
-			mes "チュートリアルは";
-			mes "全て終了しました。";
-			mes "次のチュートリアルの場所へ";
-			mes "向かいますか？^000000";
+			mes "^ff0000[Information] All tutorials have been completed with the NPC you are currently speaking with." ;
+			mes "Would you like to head to the next tutorial location? ^000000";
 			next;
-			switch(select("次の場所へワープする","ワープせずに歩いて向かう","すべてのチュートリアルをスキップする")) {
+			switch(select("Warp to the next location", "Walk to the next location without warping", "Skip all tutorials")) {
 			case 1:
 				warp "do_tu05a.gat",26,62;
 				close;
@@ -3002,114 +2218,85 @@ do_tu02a.gat,203,324,5	script	エッグリン#do_tu02a	10157,{
 				close;
 			}
 		}
-		emotion 45;
-		mes "[エッグリン]";
-		mes "乗船希望かな？";
-		mes "チケットを見せて。";
+		EMOTION 45;
+		mes "[Egglin]";
+		mes "Would you like to come aboard?" ;
+		mes "Show me your ticket." ;
 		next;
-		mes "[エッグリン]";
-		mes "冒険者？　船は初めてかい？";
-		mes "新大陸ではドラム族の名に恥じない";
-		mes "活躍を期待してるよ。";
-		mes "頑張ってね。";
+		mes "[Egglin]";
+		mes "Adventurer?  First time on a ship?" ;
+		mes "I expect you to live up to the name of the Doram tribe in the new continent." ;
+		mes "Good luck." ;
 		next;
-		mes "[エッグリン]";
-		mes "あ、そうだ。";
-		mes "中に入るついでに、";
-		mes "奥の食堂にいる料理長に";
-		mes "渡して欲しい料理素材が";
-		mes "あるんだ。いいかな？";
+		mes "[Egglin]";
+		mes "Oh, yeah." ;
+		mes "While we're going in, I have some cooking ingredients I'd like you to give to the head chef in the back dining room. Do you mind?" ;
 		next;
-		menu "はい",-;
-		mes "[エッグリン]";
-		mes "ありがと。";
-		mes "ただ渡す際に、";
-		mes "ちょっと注意があるんだ。";
+		menu "Yes.",-;
+		mes "[Egglyn]";
+		mes "Thanks." ;
+		mes "I just have a little Attention when I give it to you." ;
 		next;
-		menu "注意？",-;
-		mes "[エッグリン]";
-		mes "うん。";
-		mes "料理長は変わり者だから、";
-		mes "普通に渡したんじゃ";
-		mes "受け取ってくれないんだ。";
-		mes "だから今から言う通りに";
-		mes "やるんだ。いいね？";
+		menu "Attention?",-;
+		mes "[Egglin]";
+		mes "Yeah." ;
+		mes "The head chef is an eccentric, so if I gave it to him normally, he wouldn't accept it." ;
+		mes "So now you're going to do exactly what I say. Okay?" ;
 		next;
-		mes "[エッグリン]";
-		mes "僕が渡す料理素材を";
-		mes "料理長の胸元に投げつけて、";
-		mes "^0000cd「超大型新人が来てやったぞ！」^000000";
-		mes "と言うんだ。";
+		mes "[Egglyn]";
+		mes "Throw the cooking ingredients I give you at the chef's chest and say ^0000cd "We got a super big new guy here!" I say ^000000." ;
 		next;
-		mes "[エッグリン]";
-		mes "初めて船に乗るドラムがそれを";
-		mes "やると航海が上手く行くらしい。";
-		mes "そういう^0000ffおまじない^000000なんだ。";
-		mes "料理長もそれが勇敢な行為だと";
-		mes "信じてる。";
+		mes "[Egglin]";
+		mes "They say that if Doram, who is getting on a boat for the first time, does that, the voyage will go well." ;
+		mes "It's that kind of ^000000ff spell^000000." ;
+		mes "The chef also believes it is a brave act." ;
 		next;
-		getitem 25047,1;		// カルニャック
+		getitem 25047,1; // Carniac
 		set DORAM_1QUE,35;
-		emotion 12, "エッグリン#do_tu02a";
-		mes "[エッグリン]";
-		mes "わかったかな？";
-		mes "それじゃよろしく頼むよ！";
+		emotion 12, "Egglyn#do_tu02a";
+		mes "[Egglyn]";
+		mes "Did you get it?" ;
+		mes "Take care of it then!" ;
 		setquest 98422;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "クエスト「船員のお願い」を";
-		mes "受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff [Information] I have received the quest "Sailor's Request"." ;
+		mes "Open the quest window to confirm! ^000000";
 		close;
 	case 35:
-		mes "[エッグリン]";
-		mes "僕が渡した料理素材を";
-		mes "料理長の胸元に投げつけて、";
-		mes "^0000cd「超大型新人が来てやったぞ！」^000000";
-		mes "と言うんだ。";
+		mes "[Egglyn]";
+		mes "Throw the cooking ingredients I gave you at the chef's chest and say ^000000cd "We got a very big new guy here!" I say ^000000." ;
 		next;
-		mes "[エッグリン]";
-		mes "初めて船に乗るドラムがそれを";
-		mes "やると航海が上手く行くらしい。";
-		mes "そういうおまじないなんだ。";
-		mes "料理長もそれが勇敢な行為だと";
-		mes "信じてる。";
+		mes "[Egglin]";
+		mes "They say that if Doram, who is getting on a boat for the first time, does that, the voyage will go well." ;
+		mes "It's a spell like that." ;
+		mes "The chef also believes it is a brave act." ;
 		next;
 		emotion 12;
-		mes "[エッグリン]";
-		mes "わかったかな？";
-		mes "それじゃよろしく頼むよ！";
+		mes "[Egglin]";
+		mes "Do you understand?" ;
+		mes "Then take care of it!" ;
 		close;
 	case 36:
-		mes "[エッグリン]";
-		mes "ええ！　本当にやっちゃったの！";
-		mes "冗談だったのに！";
-		mes "アハハハハ！";
-		mes "で？　どうだったの？";
-		mes "よく無事だったね？";
+		mes "[Egglyn]";
+		mes "What!  I really did it!" ;
+		mes "I was just kidding!" ;
+		mes "Hahahahaha!" ;
+		mes "So?  How did it go?" ;
+		mes "How did you survive?" ;
 		next;
-		mes "[エッグリン]";
-		mes "え？";
-		mes "料理長がカンカン？";
+		mes "[Egglyn]";
+		mes "What?" ;
+		mes "The head chef can-can?" ;
 		next;
-		mes "[エッグリン]";
-		mes "……どうしよ。";
+		mes "[Egglyn]";
+		mes "...... What should we do?" ;
 		close;
 	default:
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] I left the tutorial in progress." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -3128,198 +2315,170 @@ do_tu02a.gat,203,324,5	script	エッグリン#do_tu02a	10157,{
 	}
 }
 
-do_tu03a.gat,59,90,5	script	ペロン団長#do_tu03e	10152,{
+do_tu03a.gat,59,90,5 script Commander Peron#do_tu03e 10152,{
 	switch(DORAM_1QUE) {
 	case 29:
 		if(checkquest(98417)) {
 			delquest 98417;
 			getexp 157,2400;
 		}
-		mes "[????]";
-		mes "……。";
+		mes "[????]" ;
+		mes "......." ;
 		next;
-		mes "‐壺の中から何かが顔を出している‐";
+		mes "-Something is peeking out of the jar-";
 		next;
-		mes "[ペロン団長]";
-		mes "ラビオル森で見たかもしれませんが、";
-		mes "こいつはバジルリスクといって";
-		mes "ラザーニャの街から";
-		mes "少し離れたところに住んでいます。";
+		mes "[Commander Peron]";
+		mes "You may have seen this guy in the Rabbior Forest, but he is a basilisk and lives a little ways from the city of Lasagna." ;
 		next;
-		mes "[ペロン団長]";
-		mes "これまで何もなかったのですが、";
-		mes "このところ急にラザーニャ周辺で";
-		mes "問題を起こすようになって、";
-		mes "悩みの種になっています。";
+		mes "[Commander Peron]";
+		mes "Nothing has ever happened to him before, but recently he has suddenly started causing problems around Lasagna, and it has become a source of trouble." ;
 		next;
-		mes "[ペロン団長]";
-		mes "こいつは昨日、街の中に入って";
-		mes "暴れようとしていたので、";
-		mes "我々で捕まえたんですが……";
-		mes "ご覧の通り、何も喋らないんです。";
+		mes "[Commander Peron]";
+		mes "This guy was trying to get into the city yesterday and was about to go on a rampage, so we caught him ourselves. ......" ;
+		mes "As you can see, he doesn't speak." ;
 		next;
-		mes "[ペロン団長]";
-		mes "そこで、あなたに取ってきてもらった";
-		mes "トゲの生えた枝を使います。";
-		mes "まずはその枝を";
-		mes "ジンドウに渡してください。";
+		mes "[Commander Peron]";
+		mes "So, I will use the spiked branch that you fetched for me." ;
+		mes "First, please give that branch to Jindo." ;
 		close2;
 		setquest 98418;
 		set DORAM_1QUE,30;
 		end;
 	case 30:
-		mes "[ペロン団長]";
-		mes "まずはその枝を";
-		mes "ジンドウに渡してください。";
+		mes "[Commander Peron]";
+		mes "First, give that branch to Jindo." ;
 		close;
 	case 31:
-		mes "[ペロン団長]";
-		mes "さあ、その笛を使って";
-		mes "バジルリスクの口を";
-		mes "割ってください。";
+		mes "[Commander Peron]";
+		mes "Now, use that whistle to break the Basilisk's mouth." ;
 		next;
-		mes "‐トゲの笛を使って……‐";
+		mes "-Use the whistle of the spike: ...... -";
 		next;
-		if(select("吹く","殴る") == 2) {
-			mes "‐ボコ！‐";
-			misceffect 1, "バジルリスク捕虜#do_tu0";
+		if(select("blow", "hit") == 2) {
+			mes "-Boko! -";
+			misceffect 1, "Basilisk captive#do_tu0";
 			next;
-			mes "[捕虜のバジルリスク]";
-			mes "グハッ！";
+			mes "[Basilisk captive]";
+			mes "Guhah!" ;
 			next;
 			emotion 23;
-			mes "[ペロン団長]";
-			mes "ちょ、ちょっと！";
-			mes "何してるんですか！";
-			mes "手荒な真似はやめてください！";
+			mes "[Commander Peron]";
+			mes "Hey, hey!" ;
+			mes "What are you doing!" ;
+			mes "Don't be so rough!" ;
 			close;
 		}
-		mes "‐ピーピーピー‐";
+		mes "-peep-peep-";
 		next;
-		mes "[捕虜のバジルリスク]";
-		mes "シャッ!!";
+		mes "[captive basilisk]";
+		mes "Shhhh!" ;
 		next;
-		mes "‐バジルリスクは笛の音に";
-		mes "　反応して威嚇し始めた‐";
+		mes "-Basilisk began to threaten in response to the sound of the whistle-"; mes "[Basilisk in captivity]"; mes "[Basilisk in captivity]
 		next;
-		mes "‐トゲの笛を使って……‐";
+		mes "-with the whistle of the spike: ...... -";
 		next;
-		switch(select("演奏する","吹く","刺す")) {
+		switch(select("play", "blow", "sting")) {
 		case 1:
 			break;
 		case 2:
-			mes "‐ピーピーピー‐";
+			mes "-peep-peep-";
 			next;
-			mes "[捕虜のバジルリスク]";
-			mes "シャッ!!";
+			mes "[captive basilisk]";
+			mes "Shhhh!" ;
 			next;
-			mes "‐バジルリスクは威嚇したままだ‐";
+			mes "-Basilisk remains menacing-";
 			close;
 		case 3:
-			mes "‐グサ！‐";
-			misceffect 4, "バジルリスク捕虜#do_tu0";
+			mes "-Gusa! -";
+			misceffect 4, "Basilisk captive#do_tu0";
 			next;
-			mes "[捕虜のバジルリスク]";
-			mes "イテッ！";
-			next;
-			emotion 23;
-			mes "[ペロン団長]";
-			mes "ちょ、ちょっと！";
-			mes "何してるんですか！";
-			mes "手荒な真似はやめてください！";
-			close;
-		}
-		mes "‐プープーピピーポー♪‐";
-		next;
-		mes "[捕虜のバジルリスク]";
-		mes "シャー!!";
-		mes "シャッシャッ!!";
-		next;
-		mes "‐バジルリスクの頭が";
-		mes "　少しずつ壺から出てきた‐";
-		next;
-		mes "‐トゲの笛を使って……‐";
-		next;
-		if(select("さらに演奏する","叩く") == 2) {
-			mes "‐バン！‐";
-			misceffect 3, "バジルリスク捕虜#do_tu0";
-			next;
-			mes "[捕虜のバジルリスク]";
-			mes "アウチッ！";
+			mes "[Basilisk captive]";
+			mes "-it!" ;
 			next;
 			emotion 23;
-			mes "[ペロン団長]";
-			mes "ちょ、ちょっと！";
-			mes "何してるんですか！";
-			mes "手荒な真似はやめてください！";
+			mes "[Commander Peron]";
+			mes "Hey, hey!" ;
+			mes "What are you doing!" ;
+			mes "Don't be so rough!" ;
 			close;
 		}
-		mes "‐ピーポーピーポー♪‐";
+		mes "-poo-poo-pee-pee-pee♪-"; mes "-poo-poo-pee-pee-pee♪-";
 		next;
-		mes "‐バジルリスクが";
-		mes "　演奏にあわせて";
-		mes "　左右に体をくねらせ始めた‐";
+		mes "[captive basilisk]";
+		mes "Shah!!! Sha-sha-sha!!!" ;
 		next;
-		mes "[捕虜のバジルリスク]";
-		mes "か、体が勝手に……！";
+		mes "-The basilisk's head came out of the jar little by little-"; mes "-The basilisk's head came out of the jar little by little-";
 		next;
-		mes "[捕虜のバジルリスク]";
-		mes "わ、わたしは何も知らない！";
-		mes "王様に命令されたとか";
-		mes "そんなことは絶対ない！";
+		mes "-with the whistle of a spike: ...... -";
 		next;
-		mes "‐トゲの笛を使って……‐";
-		next;
-		if(select("演奏し続ける","斬る") == 2) {
-			mes "‐ザク！‐";
-			misceffect 565, "バジルリスク捕虜#do_tu0";
+		if(select("play more", "tap") == 2) {
+			mes "-Bang! -";
+			misceffect 3, "Basilisk captive#do_tu0";
 			next;
-			mes "[捕虜のバジルリスク]";
-			mes "グフッ！";
+			mes "[captive basilisk]";
+			mes "Auch!" ;
 			next;
 			emotion 23;
-			mes "[ペロン団長]";
-			mes "ちょ、ちょっと！";
-			mes "何してるんですか！";
-			mes "手荒な真似はやめてください！";
+			mes "[Commander Peron]";
+			mes "Hey, hey!" ;
+			mes "What are you doing!" ;
+			mes "Don't be so rough!" ;
 			close;
 		}
-		mes "‐ペーペーポーペーペポポー♪‐";
+		mes "-peep-peep-peep♪-"; mes "-peep-peep-peep♪-";
 		next;
-		mes "‐バジルリスクが";
-		mes "　演奏にあわせて";
-		mes "　激しく頭を振ったり";
-		mes "　体をくねらせ始めた‐";
+		mes "-Basilisk began to wiggle his body from side to side as he played-";
 		next;
-		mes "[捕虜のバジルリスク]";
-		mes "絶対に言わないぞ！";
-		mes "あの洞窟に住んでいる";
-		mes "あいつが目的だなんて";
-		mes "絶対に言うもんか！";
+		mes "[captive basilisk]";
+		mes "Or, my body is going to ...... on its own!" ;
+		next;
+		mes "[POW's Basilisk]"; mes "[POW's Basilisk]"; mes "[POW's Basilisk]
+		mes "I don't know anything!" ;
+		mes "I was never ordered by the king or anything like that!" ;
+		next;
+		mes "-with the spike whistle: ...... -";
+		next;
+		if(select("keep playing", "slash") == 2) {
+			mes "-Zak! -";
+			misceffect 565, "Basilisk captive#do_tu0";
+			next;
+			mes "[Basilisk captive]";
+			mes "Guff!" ;
+			next;
+			emotion 23;
+			mes "[Commander Peron]";
+			mes "Hey, hey!" ;
+			mes "What are you doing!" ;
+			mes "Don't be so rough!" ;
+			close;
+		}
+		
+		next;
+		mes "-Basilisk began shaking his head and twisting his body violently as he played-";
+		next;
+		mes "[captive basilisk]";
+		mes "I'll never tell!" ;
+		mes "I'll never tell you that that guy who lives in that cave is what I'm after!" ;
 		next;
 		emotion 21;
-		mes "[ペロン団長]";
-		mes "そこまで！";
-		mes "もう十分でしょう。";
-		mes "お見事です！";
+		mes "[Commander Peron]";
+		mes "That's enough!" ;
+		mes "That's enough." ;
+		mes "Well done!" ;
 		next;
-		mes "[ペロン団長]";
-		mes "バジルリスクは";
-		mes "その笛の演奏を聴くと";
-		mes "体が勝手に踊り出して";
-		mes "なんでも喋ってしまうんです。";
+		mes "[Commander Peron]";
+		mes "When Basilisk hears that flute playing, his body starts dancing on its own and talking about everything." ;
 		next;
-		mes "[ペロン団長]";
-		mes "それではジンドウ、";
-		mes "あとはお願いします。";
+		mes "[Commander Peron]";
+		mes "Then, Jindo, please do the rest." ;
 		next;
-		mes "[ジンドウ]";
-		mes "わかりました。";
-		mes "笛はお預かりします。";
+		mes "[Jindo]";
+		mes "I understand." ;
+		mes "We will take care of the whistle." ;
 		next;
-		mes "[ペロン団長]";
-		mes "入団テストは合格です。";
-		mes "では戻りましょう。";
+		mes "[Commander Peron]";
+		mes "You have passed the entrance test." ;
+		mes "Then let's go back." ;
 		close2;
 		delitem 25043, 1;
 		delquest 98418;
@@ -3329,19 +2488,11 @@ do_tu03a.gat,59,90,5	script	ペロン団長#do_tu03e	10152,{
 		warp "do_tu02a.gat",235,196;
 		end;
 	default:
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルから";
-		mes "離れてしまいました。";
-		mes "進行中のチュートリアルの";
-		mes "場所に戻りますか？^000000";
+		mes "^ff0000[Information] You have left the tutorial in progress." ;
+		mes "Would you like to return to the tutorial in progress? ^000000";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "^ff0000【インフォメーション】";
-			mes "進行中のチュートリアルの場所が";
-			mes "わからなくなった場合、";
-			mes "再度話しかけることで";
-			mes "チュートリアル進行中のNPCの場所に";
-			mes "戻ることができます。^000000";
+		if(select("Yes", "No") == 2) {
+			mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 			close;
 		}
 		if(DORAM_1QUE <= 1)
@@ -3360,67 +2511,55 @@ do_tu03a.gat,59,90,5	script	ペロン団長#do_tu03e	10152,{
 	}
 }
 
-do_tu03a.gat,64,92,3	script	ジンドウ#do_tu03e	10159,{
+do_tu03a.gat,64,92,3 script gindow#do_tu03e 10159,{
 	if(DORAM_1QUE == 30) {
 		delitem 25044, 1;
 		getitem 25043, 1;
 		set DORAM_1QUE,31;
-		mes "[ジンドウ]";
-		mes "素晴らしいトゲですね。";
-		mes "このトゲをこうやって……";
-		mes "さあ、出来ました。";
+		mes "[Jindo]";
+		mes "That's a great spike." ;
+		mes "This spike like this: ......" ;
+		mes "Now, it's done." ;
 		next;
-		mes "[ジンドウ]";
-		mes "この笛を使えば、";
-		mes "バジルリスクも喋らずには";
-		mes "いられなくなるでしょう。";
+		mes "[Jindo]";
+		mes "With this whistle, Basilisk will not be able to stop talking." ;
 		close;
 	}
 	else if(DORAM_1QUE == 31) {
-		mes "[ジンドウ]";
-		mes "この笛を使えば、";
-		mes "バジルリスクも喋らずには";
-		mes "いられなくなるでしょう。";
+		mes "[Jindo]";
+		mes "With this whistle, Basilisk will not be able to stop talking." ;
 		close;
 	}
-	mes "[ジンドウ]";
-	mes "ふむ……。";
+	mes "[Jindo]";
+	mes "Hmmm ......." ;
 	close;
 }
 
-do_tu03a.gat,61,91,5	script	バジルリスク捕虜#do_tu0	10158,{
+do_tu03a.gat,61,91,5 script basilisk captive#do_tu0 10158,{
 	emotion 9;
-	mes "[バジルリスク捕虜]";
-	mes "……。";
+	mes "[Basilisk POW]";
+	mes "......." ;
 	close;
 }
 
-do_tu04a.gat,16,98,0	warp	warp01#do_tu04a	2,2,do_tu02a.gat,355,92
-do_tu04a.gat,348,244,0	script	warp02#do_tu04a	45,2,2,{
+do_tu04a.gat,16,98,0 warp warp01#do_tu04a 2,2,do_tu02a.gat,355,92
+do_tu04a.gat,348,244,0 script warp02#do_tu04a 45,2,2,{
 	if(DORAM_1QUE < 38) {
-		mes "‐なにやら危なそうな気がする。";
-		mes "　今はまだ先に進むのはやめよう‐";
+		mes "-something seems dangerous." ;
+		mes " Let's not go ahead just yet-";
 		close;
 	}
 	warp "do_tu06a.gat",24,143;
 	end;
 }
 
-do_tu04a.gat,20,98,0	script	object01#do_tu04a	139,3,3,{
+do_tu04a.gat,20,98,0 script object01#do_tu04a 139,3,3,{
 	if(DORAM_1QUE == 27) {
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウには";
-		mes "行き先や目標が書いてあります。";
-		mes "^ff0000大きなトゲの生えた枝^009effの場所も";
-		mes "クエストウィンドウに書いてあるので";
-		mes "そこを目指しましょう！^000000";
+		mes "^009eff[Information] The quest window contains destinations and goals." ;
+		mes "^ff0000Location of the big spiky branch ^009eff is also written in the quest window, so go there! ^000000";
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "^009eff[Information] The quest window can be opened by left-clicking on the icon or by pressing ^ff000000<Alt>key+<U>key^009eff. ^000000";
 		close2;
 		viewpoint 1, 340, 251, 1, 0xFF0000;
 		cutin "do_su_001.bmp", 255;
@@ -3429,34 +2568,33 @@ do_tu04a.gat,20,98,0	script	object01#do_tu04a	139,3,3,{
 	end;
 }
 
-do_tu04a.gat,340,251,3	script	大きなトゲの生えた枝#do	111,{
+do_tu04a.gat,340,251,3 script big spiky branch#do 111,{
 	if(DORAM_1QUE == 27) {
 		getitem 25044,1;
 		set DORAM_1QUE,28;
 		misceffect 5;
-		mes "‐大きなトゲの生えた枝を";
-		mes "　手に入れた。";
-		mes "　ペロン団長のところへ戻ろう‐";
+		mes "-I got a branch with big spikes on it." ;
+		mes "Let's go back to Commander Peron-";
 		next;
-		if(select("戻る","戻らない") == 2) {
-			mes "‐もう少しここに居よう‐";
+		if(select("return", "not return") == 2) {
+			mes "-Let's stay here a little longer-";
 			close;
 		}
 		warp "do_tu02a.gat",235,196;
 		end;
 	}
 	else if(DORAM_1QUE == 28) {
-		mes "‐ペロン団長のところへ戻ろう‐";
+		mes "-Let's go back to Commander Peron-";
 		next;
-		if(select("戻る","戻らない") == 2) {
-			mes "‐もう少しここに居よう‐";
+		if(select("return", "not return") == 2) {
+			mes "-Let's stay here a little longer-";
 			close;
 		}
 		warp "do_tu02a.gat",235,196;
 		end;
 	}
-	mes "‐大きなトゲが生えている枝だ。";
-	mes "　怪我をしないように気をつけよう‐";
+	mes "-It's a branch with big spikes." ;
+	mes "Be careful not to hurt yourself-";
 	close;
 OnInit:
 	initnpctimer;
@@ -3467,23 +2605,23 @@ OnTimer2000:
 	end;
 }
 
-do_tu05a.gat,59,62,0	warp	warp01#do_tu05a	2,2,do_tu02a.gat,205,324
-do_tu05a.gat,50,60,0	script	warp02#do_tu05a	45,2,2,{
+do_tu05a.gat,59,62,0 warp warp01#do_tu05a 2,2,do_tu02a.gat,205,324
+do_tu05a.gat,50,60,0 script warp02#do_tu05a 45,2,2,{
 	if(DORAM_1QUE <= 35) {
-		mes "‐「船長室」と書いてある。";
-		mes "　まずは食堂に行こう‐";
+		mes "-"Captain's office"." ;
+		mes " Let's go to the mess hall first-";
 		close;
 	}
 	warp "do_tu05a.gat",30,60;
 	end;
 }
 
-do_tu05a.gat,36,60,0	warp	warp03#do_tu05a	2,2,do_tu05a.gat,54,60
-do_tu05a.gat,143,60,0	warp	warp04#do_tu05a	2,2,do_tu05a.gat,165,60
-do_tu05a.gat,159,60,0	warp	warp05#do_tu05a	2,2,do_tu05a.gat,138,60
-do_tu05a.gat,186,57,3	script	料理長#do_tu05a	548,{
+do_tu05a.gat,36,60,0 warp warp warp03#do_tu05a 2,2,do_tu05a.gat,54,60
+do_tu05a.gat,143,60,0 warp warp04#do_tu05a 2,2,do_tu05a.gat,165,60
+do_tu05a.gat,159,60,0 warp warp05#do_tu05a 2,2,do_tu05a.gat,138,60
+do_tu05a.gat,186,57,3 script cook length#do_tu05a 548,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -3492,98 +2630,86 @@ do_tu05a.gat,186,57,3	script	料理長#do_tu05a	548,{
 			delquest 98422;
 			getexp 298,3400;
 		}
-		mes "[料理長]";
-		mes "なんだ？";
-		mes "今は忙しいから後にしてくれ。";
+		mes "[chef]";
+		mes "What?" ;
+		mes "I'm busy right now, you can do that later." ;
 		next;
-		menu "超大型新人が来てやったぞ！",-;
-		misceffect 1, "料理長#do_tu05a";
-		emotion 9, "料理長#do_tu05a";
-		emotion 23, "甲板長#do_tu05a";
-		emotion 23, "操舵手#do_tu05a";
-		mes "[料理長]";
-		mes "……。";
+		menu "We got a very big new guy here!" ,-;
+		misceffect 1, "chef#do_tu05a";
+		emotion 9, "Chef de Cuisine#do_tu05a";
+		emotion 23, "Deck Chief#do_tu05a";
+		emotion 23, "Quartermaster#do_tu05a";
+		mes "[Head cook]";
+		mes "......." ;
 		next;
-		mes "[料理長]";
-		mes "ほう……貴様……";
-		mes "よっぽど腕に自信があるようだな。";
-		mes "良いだろう！";
-		mes "俺は売られた喧嘩は買う主義だ！";
-		mes "武器を取りな！";
+		mes "[head chef]";
+		mes "Hou ...... You ......." ;
+		mes "You seem to be very confident in your skills." ;
+		mes "Good!" ;
+		mes "I'm a fighter who buys the fights I'm sold on!" ;
+		mes "Take up arms!" ;
 		next;
-		emotion 4, "甲板長#do_tu05a";
-		mes "[甲板長]";
-		mes "おいおいおいマジかよ。";
+		emotion 4, "Deck Commander#do_tu05a";
+		mes "[deck captain]";
+		mes "Hey, hey, hey, hey, seriously?" ;
 		next;
-		emotion 16, "操舵手#do_tu05a";
-		mes "[操舵手]";
-		mes "死ぬわアイツ。";
+		emotion 16, "Quartermaster#do_tu05a";
+		mes "[Helmsman]";
+		mes "He's going to die, that guy." ;
 		next;
-		emotion 29, "料理長#do_tu05a";
-		mes "[料理長]";
-		mes "若造が料理長の座を奪おうとは";
-		mes "いい度胸だ！";
-		mes "この包丁の錆にしてくれるわ！";
+		emotion 29, "chef#do_tu05a";
+		mes "[head chef]";
+		mes "Nice nerve for a young guy to try to take the head chef's place!" ;
+		mes "He's going to make me rust this knife!" ;
 		next;
-		menu "そんなつもりは……",-;
-		mes "[料理長]";
-		mes "この期に及んで怖気づいたか！";
-		mes "さっきまでの威勢はどうした！";
+		menu "I didn't mean it ......" ,-;
+		mes "[Chef]";
+		mes "You're scared to death at this stage!" ;
+		mes "Where's your bravado from a few minutes ago!" ;
 		next;
-		emotion 0, "甲板長#do_tu05a";
-		mes "[甲板長]";
-		mes "……あれ？";
+		emotion 0, "Deck Commander#do_tu05a";
+		mes "[deck captain]";
+		mes "...... Huh?" ;
 		next;
-		mes "[甲板長]";
-		mes "あいつが投げたのは";
-		mes "もしかして……？";
+		mes "[Deck Captain]";
+		mes "Could that guy have thrown ......?" ;
 		next;
-		mes "[甲板長]";
-		mes "やっぱり。";
-		mes "これ、料理長が注文した";
-		mes "カルニャックじゃ？";
+		mes "[Deck Captain]";
+		mes "I knew it." ;
+		mes "Isn't this the Carniac the chef ordered?" ;
 		next;
-		emotion 0, "料理長#do_tu05a";
-		mes "[料理長]";
-		mes "何……？";
+		emotion 0, "chef#do_tu05a";
+		mes "[Chef]";
+		mes "What ......?" ;
 		next;
-		mes "[料理長]";
-		mes "……確かにそうだ。";
-		mes "どうしてこれを新人のお前が";
-		mes "持っている？";
+		mes "[Head chef]";
+		mes "...... Indeed it is." ;
+		mes "Why do you, the new guy, have this?" ;
 		next;
-		mes "‐あなたは船の外で会った";
-		mes "　ドラムのことを話した‐";
+		mes "-you told me about the Doram you met outside the ship-";
 		next;
-		emotion 36, "料理長#do_tu05a";
-		mes "[料理長]";
-		mes "またあいつか！";
-		mes "新人を使い走りにするだけじゃなく";
-		mes "こんな悪戯までしやがって！";
-		mes "そんなだからいつまで経っても";
-		mes "エッグリンと呼ばれ続けるんだ！";
+		emotion 36, "Chef#do_tu05a";
+		mes "[The head chef]";
+		mes "That guy again!" ;
+		mes "Not only does he use the new guy as an errand boy, he also pulls pranks like this!" ;
+		mes "That's why they'll always call you Egglyn!" ;
 		next;
-		mes "[料理長]";
-		mes "驚かせてすまなかったな。";
-		mes "どうやらうちの船員の";
-		mes "悪戯だったようだ。";
+		mes "[Chef]";
+		mes "I'm sorry I startled you." ;
+		mes "It seems it was a prank by one of our sailors." ;
 		next;
-		mes "[料理長]";
-		mes "あんたには悪いことをしたな。";
-		mes "やつに代わって謝罪させてもらう。";
+		mes "[Chef]";
+		mes "I feel bad for you." ;
+		mes "I apologize on his behalf." ;
 		next;
-		mes "[料理長]";
-		mes "後でやつにも謝罪させにいく。";
-		mes "トラブルばかり起こして";
-		mes "いつまで経っても半人前の";
-		mes "問題児なんだ。";
+		mes "[Chef]";
+		mes "I'm going to make him apologize on my behalf later." ;
+		mes "He's always causing trouble, and he'll always be half a problem child." ;
 		next;
-		emotion 15, "料理長#do_tu05a";
-		mes "[料理長]";
-		mes "食材を届けてくれてありがとうな。";
-		mes "船長なら船内に入ってすぐの";
-		mes "船長室にいるから、";
-		mes "早く挨拶してきな。";
+		emotion 15, "chef#do_tu05a";
+		mes "[Chef]";
+		mes "Thanks for delivering the ingredients, man." ;
+		mes "If you're the captain, he's in the captain's office just inside the ship, so go say hi to him quickly." ;
 		close2;
 		delitem 25047, 1;
 		set DORAM_1QUE,36;
@@ -3591,11 +2717,9 @@ do_tu05a.gat,186,57,3	script	料理長#do_tu05a	548,{
 		setquest 98424;
 		end;
 	case 36:
-		mes "[料理長]";
-		mes "食材を届けてくれてありがとうな。";
-		mes "船長なら船内に入ってすぐの";
-		mes "船長室にいるから、";
-		mes "早く挨拶してきな。";
+		mes "[Chef]";
+		mes "Thanks for delivering the ingredients, man." ;
+		mes "If you're the captain, he's in the captain's office just inside the ship, so go say hello to him quickly." ;
 		close;
 	default:
 		if(DORAM_1QUE <= 1)
@@ -3614,61 +2738,52 @@ do_tu05a.gat,186,57,3	script	料理長#do_tu05a	548,{
 	}
 }
 
-do_tu05a.gat,122,61,5	script	船員#do_tu05a_01	559,{
-	mes "[船員]";
-	mes "新大陸は初めてですか？";
-	mes "一度も行って見たことない場所に";
-	mes "行く気分はどうですか？";
+do_tu05a.gat,122,61,5 script sailor#do_tu05a_01 559,{
+	mes "[Sailor]";
+	mes "Is this your first time on a new continent?" ;
+	mes "How does it feel to go somewhere you've never been and never seen?" ;
 	next;
-	mes "[船員]";
-	mes "どきどきしませんか？";
-	mes "私も初めての時は眠れませんでした。";
-	mes "いまだに新大陸に行くときには";
-	mes "そう感じます。";
+	mes "[Sailor]";
+	mes "Doesn't it thrill you?" ;
+	mes "I couldn't sleep the first time either." ;
+	mes "I still feel that way when I go to a new continent." ;
 	close;
 }
 
-do_tu05a.gat,169,70,3	script	船員#do_tu05a_02	545,{
-	mes "[船員]";
-	mes "ミッドガルドも発見されたけど、";
-	mes "他にもあるかな？";
-	mes "地図にもない場所。";
-	mes "まだ私たちが行ったこともない場所。";
+do_tu05a.gat,169,70,3 script sailor#do_tu05a_02 545,{
+	mes "[Sailor]";
+	mes "Midgard has been found, but are there others?" ;
+	mes "Places not even on the map." ;
+	mes "Places we haven't even been to yet." ;
 	mes "";
 	close;
 }
 
-do_tu05a.gat,166,68,6	script	船員#do_tu05a_03	544,{
-	mes "[船員]";
-	mes "ステルロー一等航海士なら";
-	mes "地図にもない新大陸への航路を";
-	mes "また見つけ出しそうな気がする。";
+do_tu05a.gat,166,68,6 script sailor#do_tu05a_03 544,{
+	mes "[Sailor]";
+	mes "I have a feeling that first mate Stelroe will find another route to a new continent that's not even on the map." ;
 	next;
-	mes "[船員]";
-	mes "発見の瞬間を自分の目で";
-	mes "見るためにも、";
-	mes "一日でも長く";
-	mes "この船に乗っていなきゃ。";
+	mes "[Sailor]";
+	mes "I have to stay on this ship as long as possible to see the moment of discovery with my own eyes." ;
 	close;
 }
 
-do_tu05a.gat,181,61,5	script	甲板長#do_tu05a	421,{
-	mes "[甲板長]";
-	mes "ここの料理長、顔はこええが";
-	mes "料理の腕は確かなんだぜ。";
+do_tu05a.gat,181,61,5 script deck captain#do_tu05a 421,{
+	mes "[deck chief]";
+	mes "The head chef here, he's got a scary face, but he's a good cook." ;
 	close;
 }
 
-do_tu05a.gat,181,58,3	script	操舵手#do_tu05a	561,{
-	mes "[操舵手]";
-	mes "エッグリンのやろう。";
-	mes "まーたサボってやがるな。";
+do_tu05a.gat,181,58,3 script Quartermaster#do_tu05a 561,{
+	mes "[helmsman]";
+	mes "Eglin's do." ;
+	mes "You're slacking off again." ;
 	close;
 }
 
-do_tu05a.gat,26,64,5	script	ガムベリー船長#do_tu05a	10153,{
+do_tu05a.gat,26,64,5 script Captain Gumberry#do_tu05a 10153,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	switch(DORAM_1QUE) {
@@ -3677,18 +2792,13 @@ do_tu05a.gat,26,64,5	script	ガムベリー船長#do_tu05a	10153,{
 		getexp 389,3800;
 		savepoint "do_tu05a.gat",26,62;
 		set DORAM_1QUE,37;
-		mes "^009eff【インフォメーション】";
-		mes "セーブポイントを更新しました。";
-		mes "戦闘不能になった場合、";
-		mes "この場所で復活します。^000000";
+		mes "^009eff[Information] Savepoint updated." ;
+		mes "If you lose the battle, you will be revived at this location. ^000000";
 		next;
 	case 37:
-		mes "　チュートリアル<実践編>　3/3";
-		mes "************************";
-		mes "　・新米自警団員の初仕事";
-		mes "************************";
+		mes " Tutorial <Practical> 3/3************************ and the first job of a new vigilante ************************";
 		next;
-		switch(select("はじめる","このチュートリアルをスキップ","すべてのチュートリアルをスキップする")) {
+		switch(select("Begin", "Skip this tutorial", "Skip all tutorials")) {
 		case 1:
 			break;
 		case 2:
@@ -3716,337 +2826,260 @@ do_tu05a.gat,26,64,5	script	ガムベリー船長#do_tu05a	10153,{
 			getexp 0,25000;
 			set DORAM_1QUE,100;
 			savepoint "lasagna.gat",299,239;
-			mes "^009eff【インフォメーション】";
-			mes "お疲れ様でした。";
-			mes "すべてのチュートリアルが";
-			mes "終了しました。";
-			mes "この後、港町ラザーニャに";
-			mes "移動します。^000000";
+			mes "^009eff[Information] Thanks for your help." ;
+			mes "All tutorials have been completed." ;
+			mes "After this, we will move on to the port town of Lasagna. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "序盤は港町ラザーニャにいる";
-			mes "自警団員オリオ(座標：323,229)から";
-			mes "受けられるクエストを";
-			mes "プレイするのがおすすめです。^000000";
+			mes "^009eff[Information] In the beginning, it is recommended to play the quests that can be received from the vigilante Orio (coordinates: 323,229) in the port town Lasagna. ^000000";
 			next;
-			mes "^009eff【インフォメーション】";
-			mes "それではラグナロクオンラインの";
-			mes "世界をお楽しみください！^000000";
+			mes "^009eff[Information] Then enjoy the world of Ragnarok Online! ^000000";
 			close2;
 			warp "lasagna.gat",298,238;
 			end;
 		}
-		mes "[ガムベリー船長]";
-		mes "誰だね。";
-		mes "ここは関係者以外立ち入り禁止だ。";
-		mes "早く出ていきなさい。";
+		mes "[Captain Gumberry]";
+		mes "Who is it?" ;
+		mes "This place is off limits to all concerned." ;
+		mes "Get the hell out of here." ;
 		next;
-		menu "乗船許可書を渡す",-;
+		menu "I'll give you a boarding pass.",-;
 		emotion 33;
-		mes "[ガムベリー船長]";
-		mes "新しい冒険者か。";
-		mes "私はこの船の船長^0000cdガムベリー^000000、";
-		mes "隣の彼は一等航海士のステルローだ。";
-		mes "君を歓迎しよう。";
+		mes "[Captain Gumberry]";
+		mes "You're a new adventurer." ;
+		mes "I am the captain^0000cd Gumberry^000000 of this ship, and he next to me is first mate Stelroe." ;
+		mes "Let me welcome you." ;
 		next;
-		menu "出航はいつですか？",-;
-		mes "[ガムベリー船長]";
-		mes "出航か……それなんだが、";
-		mes "少し困ったことになっていてね。";
-		mes "外を見てくれ。";
+		menu "When does the ship sail?" ,-;
+		mes "[Captain Gumberry]";
+		mes "Is the ship sailing or ...... That's the thing, but I'm having a little trouble with it." ;
+		mes "Look out there." ;
 		next;
-		mes "‐窓から沖の方を見ると、";
-		mes "　濃い煙が発生していた‐";
+		mes "-I looked out the window toward the offshore area and saw a thick plume of smoke -";
 		next;
-		mes "[ステルロー]";
-		mes "この煙ではまともな航海はできない。";
-		mes "視界が晴れるまで船は出せないよ。";
-		mes "しかもこれはおそらく……。";
+		mes "[Stelroe]";
+		mes "With this smoke, it is impossible to make a proper voyage." ;
+		mes "We can't launch the ship until the visibility clears." ;
+		mes "And this is probably ......." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "ああ、たぶんあいつだ。";
+		mes "[Captain Gumberry]";
+		mes "Yeah, that's probably him." ;
 		next;
-		menu "あいつ？",-;
-		mes "[ガムベリー船長]";
-		mes "^0000ffラビオル森の奥にある洞窟に";
-		mes "住んでいる龍^000000だ。";
-		mes "そいつが吐く炎が周りを燃やして";
-		mes "あの煙になっているんだ。";
+		menu "That guy?" ,-;
+		mes "[Captain Gumberry]";
+		mes "It's a ^000000ff dragon ^000000 who lives in a cave deep in the Ravior Forest." ;
+		mes "The fire that that guy breathes out burns around him and makes that smoke." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "普段はおとなしいから";
-		mes "なんともないんだが、";
-		mes "きっと今は何か問題が";
-		mes "起きているんだろう。";
+		mes "[Captain Gumberry]";
+		mes "He's usually quiet, so it's nothing to worry about, but I'm sure there's some kind of problem going on right now." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "その問題が収まるまで、";
-		mes "この煙は晴れないだろうな。";
+		mes "[Captain Gumberry]";
+		mes "I don't think this smoke will clear until that problem is resolved." ;
 		next;
-		mes "[ステルロー]";
-		mes "そして今は手が空いている";
-		mes "乗組員がいないんだ。";
-		mes "龍の様子を見に行くことも";
-		mes "できないし、このまま";
-		mes "煙が晴れるのを";
-		mes "じっと待つしかないんだ。";
+		mes "[Stelroe]";
+		mes "And I don't have a crew available right now." ;
+		mes "We can't go check on the dragon, we're just going to have to sit and wait for the smoke to clear." ;
 		next;
-		menu "自分が行きましょうか？",-;
-		mes "[ガムベリー船長]";
-		mes "本当かね！";
-		mes "それは助かる。";
+		menu "Shall I go myself?" ,-;
+		mes "[Captain Gumberry]";
+		mes "Really?!" ;
+		mes "That would be helpful." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "龍がいるのは^ff0000ラビオル森の";
-		mes "北東にある「龍の巣」と呼ばれる";
-		mes "洞窟の奥^000000だ。";
+		mes "[Captain Gumberry]";
+		mes "The dragons are located ^ff000000northeast of Rabiolu Forest, deep in a cave called "Dragon's Nest" ^000000." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "あの辺りは最近バジルリスクが";
-		mes "暴れているから注意してくれ。";
-		mes "ある程度の実力が無いと";
-		mes "痛い目に会うぞ。";
+		mes "[Captain Gumberry]";
+		mes "Basilisk has been running rampant in that area lately, so Attention." ;
+		mes "You're going to get hurt if you don't have some competence." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "ステータスを伸ばしたり、";
-		mes "スキルを習得しているか？";
-		mes "スキル「かみつく」や「ひっかく」は";
-		mes "バジルリスク相手にも有効だ。";
+		mes "[Captain Gumberry]";
+		mes "Are you growing your stats or learning skills?" ;
+		mes "The skills 'bite' and 'scratch' are also useful against basilisks." ;
 		next;
 		cutin "do_su_009.bmp", 3;
-		mes "[ガムベリー船長]";
-		mes "「かみつく」や「ひっかく」の";
-		mes "威力を上げたいなら";
-		mes "ステータスの「Str」を上げるんだ。";
-		mes "攻撃力が上がって";
-		mes "戦いを有利に進められるぞ。";
+		mes "[Captain Gumberry]";
+		mes "If you want to increase the power of 'Bite' and 'Scratch', increase the status 'Str'." ;
+		mes "You'll get a boost in attack power, which will give you an edge in the fight." ;
 		next;
 		cutin "do_su_002.bmp", 255;
-		mes "[ガムベリー船長]";
-		mes "もしステータスの割り振りを";
-		mes "やり直したいなら、";
-		mes "^ff0000ステルロー^000000に言ってくれ。";
-		mes "今回に限り、特別にステータスを";
-		mes "リセットしてくれるだろう。";
+		mes "[Captain Gumberry]";
+		mes "If you want to redo your status assignments, tell ^ff000000 Stelroe ^000000." ;
+		mes "Only this time, he will reset your status specially." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "^0000ff洞窟に入ってすぐのところに";
-		mes "自警団員がいるはずだ。^000000";
-		mes "まずは彼から龍の状態が";
-		mes "どうなっているのか確認するんだ。";
+		mes "[Captain Gumberry]";
+		mes "^0000ffThere should be a vigilante just inside the cave. ^000000 First check with him to see what the status of the dragon is." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "そして必要なら彼に協力して、";
-		mes "龍が吐く炎を止めてくれ。";
+		mes "[Captain Gumberry]";
+		mes "And if necessary, work with him to stop the flames that the dragon spits out." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "龍の巣の入り口までは……";
-		mes "^ff0000ステルロー^000000、君が案内してくれるか。";
+		mes "[Captain Gumberry]";
+		mes "The entrance to the dragon's lair can be reached at ......." ;
+		mes "^ff000000 Stelroe ^000000, can you lead the way?" ;
 		next;
-		emotion 33, "ステルロー#do_tu05a";
-		mes "[ステルロー]";
-		mes "了解です、船長。";
+		emotion 33, "Stelroe#do_tu05a";
+		mes "[Stelroe]";
+		mes "Roger that, Captain." ;
 		next;
-		mes "[ステルロー]";
-		mes "ということだ。";
-		mes "準備ができたら俺に声をかけてくれ。";
+		mes "[Stelroe]";
+		mes "That's what I mean." ;
+		mes "Give me a shout when you're ready." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "訓練を終えた新米冒険者の";
-		mes "初の実戦だ。";
-		mes "気を引き締めて行ってくれ。";
+		mes "[Captain Gumberry]";
+		mes "This is the first real battle for a new adventurer who has completed his training." ;
+		mes "Keep your heads up and go." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "これを渡しておく。";
-		mes "危なくなったら使ってくれ。";
-		mes "それでは頼んだぞ。";
+		mes "[Captain Gumberry]";
+		mes "I'll give you this." ;
+		mes "Use it if you're in danger." ;
+		mes "[Captain Gumberry]"; mes "Then I'm counting on you." ;
 		next;
 		set DORAM_1QUE,38;
 		getitem 569, 50;
 		delitem 25046, 1;
 		setquest 98425;
-		mes "^009eff‐ガムベリー船長から";
-		mes "　初心者用ポーションを受け取った‐^000000";
+		mes "^009eff-received beginner's potion from Captain Gumberry-^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "クエスト「新米冒険者の初仕事」を";
-		mes "受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff[Information] You have received the quest "New Adventurer's First Job"." ;
+		mes "Open the quest window to check it out! ^000000";
 		close;
 	case 38:
 	case 39:
 	case 40:
 	case 41:
-		mes "[ガムベリー船長]";
-		mes "龍がいるのは^ff0000ラビオル森の";
-		mes "北東にある洞窟の奥^000000だ。";
-		mes "あの辺りは最近バジルリスクが";
-		mes "暴れているから注意してくれ。";
+		mes "[Captain Gumberry]";
+		mes "The dragon is at ^ff000000 the back of the cave ^000000 northeast of Rabiolu Forest." ;
+		mes "Basilisk has been running rampant in that area recently, so Attention." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "^0000ff洞窟に入ってすぐのところに";
-		mes "自警団員がいるはずだ。^000000";
-		mes "まずは彼から龍の状態が";
-		mes "どうなっているのか確認するんだ。";
+		mes "[Captain Gumberry]";
+		mes "^0000ffThere should be a vigilante just inside the cave. ^000000 First check with him to see what the status of the dragon is." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "洞窟の入り口までは";
-		mes "ステルローに案内させよう。";
-		mes "準備が整ったら出発してくれ。";
+		mes "[Captain Gumberry]";
+		mes "I'll have Stelroe take you to the entrance of the cave." ;
+		mes "You can leave when you're ready." ;
 		next;
-		mes "[ステルロー]";
-		mes "ということだ。";
-		mes "準備ができたら俺に声をかけてくれ。";
+		mes "[Stelroe]";
+		mes "That's what I mean." ;
+		mes "Give me a shout when you're ready." ;
 		close;
 	case 42:
-		cloakoffnpc "甲板長#do_tu05a_2";
-		cloakoffnpc "操舵手#do_tu05a_2";
-		cloakoffnpc "ステルロー#do_tu05a";
-		mes "[ガムベリー船長]";
-		mes "おお、無事だったか。";
-		mes "なかなか帰って来ないから";
-		mes "誰かを様子見に行かせようと";
-		mes "していたところだ。";
+		cloakoffnpc "Deck Officer#do_tu05a_2";
+		cloakoffnpc "helmsman#do_tu05a_2";
+		cloakoffnpc "Stelroe#do_tu05a";
+		mes "[Captain Gumberry]";
+		mes "Oh, you're safe." ;
+		mes "I was just about to send someone out to check on you because you didn't come back very well." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "で、どうだった？";
-		mes "問題は解決したのか？";
+		mes "[Captain Gumberry]";
+		mes "So, how did it go?" ;
+		mes "Did you solve the problem?" ;
 		next;
-		menu "タルトゥーフィは落ち着きを取り戻した",-;
-		mes "[ガムベリー船長]";
-		mes "そうか、バジルリスクのせいで";
-		mes "タルトゥーフィが暴れていたのか……。";
+		menu "Tartuffe has regained his composure.",-;
+		mes "[Captain Gumberry]";
+		mes "Well, Tartuffe was on a rampage because of Basilisk. ......." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "だが、君が言った通りなら";
-		mes "もうしばらくすれば";
-		mes "煙も晴れてくるはずだが……。";
+		mes "[Captain Gumberry]";
+		mes "But if you're right, the smoke should clear in a little while. ......." ;
 		next;
-		emotion 0, "ステルロー#do_tu05a";
-		mes "[ステルロー]";
-		mes "船長！";
-		mes "外を見てください！";
+		emotion 0, "Stelroe#do_tu05a";
+		mes "[Stelroe]";
+		mes "Captain!" ;
+		mes "Look out!" ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "おおお……";
-		mes "煙が……。";
+		mes "[Captain Gumberry]";
+		mes "Oh Oh ......" ;
+		mes "The smoke is ......." ;
 		next;
-		mes "‐沖に充満していた濃い煙が";
-		mes "　薄れていき……";
+		mes "-The thick smoke that had filled the offshore area faded away. ......" ;
 		musiceffect "149";
-		mes "　真っ青な海と水平線が";
-		mes "　姿を現した‐";
+		mes " -the bright blue sea and the horizon came into view-"; next; mes "-the blue sea and the horizon came into view-";
 		next;
-		mes "[ガムベリー船長]";
-		mes "……";
-		mes "……こうしちゃいられん。";
+		mes "[Captain Gumberry]";
+		mes "......" ;
+		mes "...... I can't do this." ;
 		next;
-		emotion 27, "ガムベリー船長#do_tu05a";
-		mes "[ガムベリー船長]";
-		mes "ステルロー！　各員に伝達！";
-		mes "出航の準備だ！";
+		emotion 27, "Captain Gumberry#do_tu05a";
+		mes "[Captain Gumberry]";
+		mes "Stelroe!  Communicate to all personnel!" ;
+		mes "Prepare to set sail!" ;
 		next;
-		emotion 21, "ステルロー#do_tu05a";
-		mes "[ステルロー]";
-		mes "了解！";
+		emotion 21, "Stelroe#do_tu05a";
+		mes "[Stelroe]";
+		mes "Roger!" ;
 		next;
-		mes "[ステルロー]";
-		mes "各員に伝達！";
-		mes "沖の煙は晴れた！";
-		mes "ただちに出航の準備に移れ！";
+		mes "[Stelroe]";
+		mes "Communicate to all personnel!" ;
+		mes "The smoke has cleared offshore!" ;
+		mes "Prepare to launch immediately!" ;
 		next;
-		emotion 27, "ステルロー#do_tu05a";
-		mes "[ステルロー]";
-		mes "操舵手と甲板長！";
-		mes "いつまでも油を売ってないで、";
-		mes "さっさと持ち場へ戻れ！";
+		emotion 27, "Stelroe#do_tu05a";
+		mes "[Stelroe]";
+		mes "Quartermaster and Deck Officer!" ;
+		mes "Don't keep selling oil, get back to your stations!" ;
 		next;
-		emotion 29, "甲板長#do_tu05a_2";
-		mes "[甲板長]";
-		mes "へいへーいっと！";
+		emotion 29, "Deck Officer#do_tu05a_2";
+		mes "[Deck Captain]";
+		mes "Hey hey hey!" ;
 		next;
-		emotion 32, "操舵手#do_tu05a_2";
-		mes "[操舵手]";
-		mes "ったく、待ちわびたぜ！";
+		emotion 32, "Quartermaster#do_tu05a_2";
+		mes "[helmsman]";
+		mes "Damn, I've been waiting for this!" ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "さあ、忙しくなるぞ。";
-		mes "これまでの遅れを取り戻すんだ！";
+		mes "[Captain Gumberry]";
+		mes "Now we're going to get busy." ;
+		mes "We're going to make up for all the delays we've had!" ;
 		next;
-		misceffect 119, "ガムベリー船長#do_tu05a";
-		mes "[ガムベリー船長]";
-		mes "てめえら！";
-		mes "気合入れて取り掛かれ！";
-		donpcevent "ステルロー#do_tu05a::OnTalk1";
-		donpcevent "甲板長#do_tu05a::OnTalk1";
-		donpcevent "操舵手#do_tu05a::OnTalk1";
-		cloakonnpc "ステルロー#do_tu05a";
-		cloakonnpc "甲板長#do_tu05a_2";
-		cloakonnpc "操舵手#do_tu05a_2";
+		misceffect 119, "Captain Gumberry#do_tu05a";
+		mes "[Captain Gumberry]";
+		mes "You guys!" ;
+		mes "Get fired up and get to it!" ;
+		donpcevent "Stelroe#do_tu05a::OnTalk1";
+		donpcevent "Deck Chief#do_tu05a::OnTalk1";
+		donpcevent "helmsman#do_tu05a::OnTalk1";
+		cloakonnpc "Stelroe#do_tu05a";
+		cloakonnpc "Deck Chief#do_tu05a_2"; cloakonnpc "Deck Chief#do_tu05a_2";
+		cloakonnpc "helmsman#do_tu05a_2";
 		next;
-		menu "いよいよ出航ですか？",-;
-		mes "[ガムベリー船長]";
-		mes "ああ、だが出航までは";
-		mes "もう少し時間がかかるだろう。";
-		mes "君は今のうちに一度町に戻って";
-		mes "準備を整えて来ると良い。";
+		menu "Are we finally sailing?" ,-;
+		mes "[Captain Gumberry]";
+		mes "Yes, but it will be a little while before we sail." ;
+		mes "You may come back to town once while you still can and get yourself ready." ;
 		next;
-		emotion 29, "ガムベリー船長#do_tu05a";
-		mes "[ガムベリー船長]";
-		mes "フフフ……";
-		mes "久しぶりの船出に";
-		mes "少し熱くなってしまったよ。";
+		emotion 29, "Captain Gumberry#do_tu05a";
+		mes "[Captain Gumberry]";
+		mes "ffff......" ;
+		mes "I'm a little hot off the boat after all these years." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "こうやって無事に出航できるのも";
-		mes "君がタルトゥーフィを";
-		mes "鎮めてくれたおかげだ。";
-		mes "ありがとう。";
+		mes "[Captain Gumberry]";
+		mes "It's thanks to you calming Tartuffe that we are able to sail safely like this." ;
+		mes "Thank you." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "君のその勇気と実力、";
-		mes "とても新米の冒険者とは";
-		mes "思えないな。";
-		mes "超大型新人というのも";
-		mes "あながち嘘ではなさそうだ。";
+		mes "[Captain Gumberry]";
+		mes "That courage and ability of yours, very hard to believe you are a new adventurer." ;
+		mes "It seems that it is not a lie to say that you are a very big newcomer." ;
 		next;
-		menu "それはエッグリンが……",-;
-		emotion 18, "ガムベリー船長#do_tu05a";
-		mes "[ガムベリー船長]";
-		mes "ハッハッハ！";
-		mes "まあそう謙遜するな。";
-		mes "実際君はそれだけのことをしたんだ。";
+		menu "That's what Egglin is ......" ,-;
+		emotion 18, "Captain Gumberry#do_tu05a";
+		mes "[Captain Gumberry]";
+		mes "Ha ha ha!" ;
+		mes "Well, don't be so modest." ;
+		mes "In fact, you've done just that." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "おっとそうだった、";
-		mes "ペロンのやつから";
-		mes "預かっているものがあったんだ。";
+		mes "[Captain Gumberry]";
+		mes "Oops, that's right, I had something I was keeping from that Peron guy." ;
 		next;
-		mes "‐ゴソゴソ‐";
+		mes "-gosso-"; mes "-gosso-"; mes "-gosso-"; mes "-gosso-
 		next;
-		mes "[ガムベリー船長]";
-		mes "これは一人前の";
-		mes "ファルファーレ自警団員に";
-		mes "贈られる帽子だ。";
-		mes "これを被れるようになって";
-		mes "初めて真の自警団員に";
-		mes "なったと言えるんだ。";
+		mes "[Captain Gumberry]";
+		mes "This is the hat given to a full-fledged Farfalle vigilante." ;
+		mes "Only when you can wear this can you say you've become a true vigilante." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "この船に来る新米自警団員に、";
-		mes "頃合いを見て渡して欲しいと";
-		mes "頼まれているものなんだが……";
-		mes "こんなに早くその時が来るとは";
-		mes "思いも寄らなかったよ。";
+		mes "[Captain Gumberry]";
+		mes "It's something I've been asked to give to the new vigilante coming on board this ship when the time is right. ......" ;
+		mes "I never thought the time would come so soon." ;
 		next;
-		mes "[ガムベリー船長]";
-		mes "さあ、これを受け取ったら";
-		mes "町へ戻って準備をしてきてくれ。";
-		mes "その帽子を自慢し過ぎて";
-		mes "遅刻しないように。";
-		mes "あまり遅いと置いて行って";
-		mes "しまうかもしれんぞ。ハッハッハ！";
+		mes "[Captain Gumberry]";
+		mes "Now, when you get this, go back to town and get ready." ;
+		mes "Don't be too proud of that hat and don't be late." ;
+		mes "If you're too late, I might leave you behind. Hahaha!" ;
 		close2;
 		misceffect 42,"";
 		misceffect 91,"";
@@ -4061,124 +3094,108 @@ do_tu05a.gat,26,64,5	script	ガムベリー船長#do_tu05a	10153,{
 		getexp 0,25000;
 		savepoint "lasagna.gat",299,239;
 	case 100:
-		mes "^009eff【インフォメーション】";
-		mes "お疲れ様でした。";
-		mes "すべてのチュートリアルが";
-		mes "終了しました。";
-		mes "この後、港町ラザーニャに";
-		mes "移動します。^000000";
+		mes "^009eff[Information] Thanks for your help." ;
+		mes "All tutorials have been completed." ;
+		mes "After this, we will move to the port town Lasagna. ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "序盤は港町ラザーニャにいる";
-		mes "自警団員オリオ(座標：323,229)から";
-		mes "受けられるクエストを";
-		mes "プレイするのがおすすめです。^000000";
+		mes "^009eff[Information] In the beginning, it is recommended to play the quests that can be received from the vigilante Orio (coordinates: 323,229) in the port town Lasagna. ^000000";
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "それではラグナロクオンラインの";
-		mes "世界をお楽しみください！^000000";
+		mes "^009eff[Information] Then enjoy the world of Ragnarok Online! ^000000";
 		close2;
 		warp "lasagna.gat",298,238;
 		end;
 	}
 }
 
-do_tu05a.gat,24,62,5	script	ステルロー#do_tu05a	10156,{
+do_tu05a.gat,24,62,5 script stelllow#do_tu05a 10156,{
 	if(DORAM_1QUE < 38) {
-		mes "[ステルロー]";
-		mes "俺はステルロー。";
-		mes "この船の航海士をやっている。";
+		mes "[Stelroe]";
+		mes "I'm Stelroe." ;
+		mes "I am the navigator of this ship." ;
 		close;
 	}
 	if(DORAM_1QUE >= 42) {
-		mes "[ステルロー]";
-		mes "無事だったようだな。";
+		mes "[Stelroe]";
+		mes "Looks like you're safe." ;
 		close;
 	}
-	mes "[ステルロー]";
-	mes "準備ができたら出発するぞ。";
+	mes "[Stelroe]";
+	mes "We'll leave when you're ready." ;
 	next;
-	switch(select("出発する","ステータスを振り直したい","ちょっと待って")) {
+	switch(select("We're leaving", "I want to reassign status", "Wait a minute")) {
 	case 1:
-		mes "[ステルロー]";
-		mes "洞窟の入り口まで";
-		mes "案内してやる。";
-		mes "準備はいいな？";
+		mes "[Stelroe]";
+		mes "I'll lead you to the cave entrance." ;
+		mes "Are you ready?" ;
 		next;
-		if(select("出発する","ちょっと待って") == 2) {
-			mes "[ステルロー]";
-			mes "俺もあまり暇じゃないんだ。";
-			mes "さっさと準備してくれよ。";
+		if(select("We're leaving", "wait a minute") == 2) {
+			mes "[Stelroe]";
+			mes "I don't have much free time either." ;
+			mes "Just get ready to go." ;
 			close;
 		}
-		mes "[ステルロー]";
-		mes "よし、行くぞ。";
+		mes "[Stelroe]";
+		mes "Okay, here we go." ;
 		close2;
 		warp "do_tu04a.gat",343, 244;
 		end;
 	case 2:
-		mes "[ステルロー]";
-		mes "ほらよ。";
-		mes "ステータスを";
-		mes "リセットしておいたぜ。";
+		mes "[Stelroe]";
+		mes "See?" ;
+		mes "I reset your status, man." ;
 		resetstatus;
 		unequip -1;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "装備アイテムがすべて外され、";
-		mes "ステータス取得状況が";
-		mes "リセットされました。^000000";
+		mes "^009eff[Information] All equipment items have been removed and status acquisition status has been reset. ^000000";
 		close;
 	case 3:
-		mes "[ステルロー]";
-		mes "俺もあまり暇じゃないんだ。";
-		mes "さっさと準備してくれよ。";
+		mes "[Sterlow]";
+		mes "I don't have much free time either." ;
+		mes "Just get ready to go." ;
 		close;
 	}
 OnTalk1:
-	unittalk "ステルロー : アイアイサー！";
+	unittalk "Sterlow : iIcer!" ;
 	end;
 }
 
-do_tu05a.gat,30,57,0	script	object01#do_tu05a	139,11,11,{
+do_tu05a.gat,30,57,0 script object01#do_tu05a 139,11,11,{
 	if(DORAM_1QUE == 42) {
-		cloakoffnpc "甲板長#do_tu05a_2";
-		cloakoffnpc "操舵手#do_tu05a_2";
+		cloakoffnpc "decklength#do_tu05a_2";
+		cloakoffnpc "helmsman#do_tu05a_2";
 	}
 	end;
 }
 
-do_tu05a.gat,22,60,5	script	甲板長#do_tu05a_2	421,{
-	mes "[甲板長]";
-	mes "時間が経ち過ぎると";
-	mes "積み荷が駄目になっちまうからな。";
-	mes "早く何とかしてほしいもんだぜ。";
+do_tu05a.gat,22,60,5 script deckmaster#do_tu05a_2 421,{
+	mes "[deck length]";
+	mes "If too much time passes, the cargo will be ruined." ;
+	mes "I hope they do something about it soon." ;
 	close;
 OnTalk1:
-	unittalk "甲板長 : アイアイサー！";
+	unittalk "Deck Chief : Iaiisar!" ;
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-do_tu05a.gat,21,56,3	script	操舵手#do_tu05a_2	561,{
-	mes "[操舵手]";
-	mes "いつになったら";
-	mes "出航できるのかねえ。";
+do_tu05a.gat,21,56,3 script helmsman#do_tu05a_2 561,{
+	mes "[helmsman]";
+	mes "I wonder when we'll be able to sail." ;
 	close;
 OnTalk1:
-	unittalk "操舵手 : アイアイサー！";
+	unittalk "Quartermaster : aiisser!" ;
 	end;
 OnInit:
 	cloakonnpc;
 	end;
 }
 
-do_tu06a.gat,18,143,0	warp	warp01#do_tu06a	2,2,do_tu04a.gat,344,243
-do_tu06a.gat,29,146,5	script	自警団員#do_tu06a	10162,5,5,{
+do_tu06a.gat,18,143,0 warp warp01#do_tu06a 2,2,do_tu04a.gat,344,243
+do_tu06a.gat,29,146,5 script vigilante#do_tu06a 10162,5,5,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	if(DORAM_1QUE == 38) {
@@ -4186,39 +3203,33 @@ do_tu06a.gat,29,146,5	script	自警団員#do_tu06a	10162,5,5,{
 			delquest 98425;
 			getexp 430,4000;
 		}
-		mes "[自警団員]";
-		mes "おや、新米の冒険者さんが";
-		mes "こんなところに何の用ですか？";
+		mes "[Vigilante]";
+		mes "Oh, what's a new adventurer doing here?" ;
 		next;
-		mes "‐あなたはラザーニャの海で";
-		mes "　起こっていることを伝えた‐";
+		mes "-You told us what is happening in the sea of Lasagna-"; mes "[Vigilante]
 		next;
 		emotion 5;
-		mes "[自警団員]";
-		mes "へ～なるほど。";
-		mes "そんなことが起きてたんですね。";
-		mes "やけにさっきから煙たいと";
-		mes "思っていたらそういうことでしたか。";
+		mes "[Vigilante]";
+		mes "Heh - I see." ;
+		mes "I didn't know that was happening." ;
+		mes "I was wondering why it was so smoky earlier...is that what happened?" ;
 		next;
-		mes "[自警団員]";
-		mes "それでは、一緒に様子を";
-		mes "見に行きましょうか。";
+		mes "[Neighborhood Watch]";
+		mes "Well, why don't you come with me to see what's going on?" ;
 		next;
-		if(select("はい","ラザーニャに戻りたい") == 2) {
-			mes "[自警団員]";
-			mes "あれ？";
-			mes "忘れ物ですか？";
-			mes "私はここにいるので";
-			mes "早く取って来てくださいね。";
+		if(select("Yes", "I want to go back to Lasagna") == 2) {
+			mes "[Neighborhood Watch]";
+			mes "Huh?" ;
+			mes "Did you forget something?" ;
+			mes "I'm here, so please go get it quickly." ;
 			close2;
 			warp "do_tu05a.gat",26, 62;
 			end;
 		}
-		mes "[自警団員]";
-		mes "目指す場所はここです。";
-		mes "迷っても大丈夫なように、";
-		mes "地図に印をつけておきました。";
-		mes "さあ、行きましょう。";
+		mes "[Neighborhood Watch]";
+		mes "Here's where we're going." ;
+		mes "I've marked the map so you can get lost." ;
+		mes "Come on, let's go." ;
 		viewpoint 1, 157, 98, 1, 0xFF0000;
 		close2;
 		setquest 98426;
@@ -4226,43 +3237,31 @@ do_tu06a.gat,29,146,5	script	自警団員#do_tu06a	10162,5,5,{
 		end;
 	}
 	if(DORAM_1QUE == 39) {
-		mes "[自警団員]";
-		mes "やけにさっきから煙たいと";
-		mes "思っていたらそういうことでしたか。";
-		mes "それでは、一緒に様子を";
-		mes "見に行きましょうか。";
+		mes "[Neighborhood Watch]";
+		mes "If you were wondering why you were smokin' earlier, that's what you meant." ;
+		mes "Well, let's go check it out together, shall we?" ;
 		next;
-		if(select("はい","ラザーニャに戻りたい") == 2) {
-			mes "[自警団員]";
-			mes "あれ？";
-			mes "忘れ物ですか？";
-			mes "私はここにいるので";
-			mes "早く取って来てくださいね。";
+		if(select("yes", "I want to go back to Lasagna") == 2) {
+			mes "[Neighborhood Watch]";
+			mes "Huh?" ;
+			mes "Did you forget something?" ;
+			mes "I'm here, so please go get it quickly." ;
 			close2;
 			warp "do_tu05a.gat",26, 62;
 			end;
 		}
-		mes "[自警団員]";
-		mes "目指す場所はここです。";
-		mes "迷っても大丈夫なように、";
-		mes "地図に印をつけておきました。";
-		mes "さあ、行きましょう。";
+		mes "[Neighborhood Watch]";
+		mes "Here's where we're going." ;
+		mes "I've marked the map so you can get lost." ;
+		mes "Come on, let's go." ;
 		viewpoint 1, 157, 98, 1, 0xFF0000;
 		close;
 	}
-	mes "^ff0000【インフォメーション】";
-	mes "進行中のチュートリアルから";
-	mes "離れてしまいました。";
-	mes "進行中のチュートリアルの";
-	mes "場所に戻りますか？^000000";
+	mes "^ff0000[Information] You have left the tutorial in progress." ;
+	mes "Would you like to return to the tutorial in progress? ^000000";
 	next;
-	if(select("はい","いいえ") == 2) {
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルの場所が";
-		mes "わからなくなった場合、";
-		mes "再度話しかけることで";
-		mes "チュートリアル進行中のNPCの場所に";
-		mes "戻ることができます。^000000";
+	if(select("Yes", "No") == 2) {
+		mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 		close;
 	}
 	if(DORAM_1QUE <= 1)
@@ -4286,9 +3285,9 @@ OnTouchNPC:
 	end;
 }
 
-do_tu06a.gat,153,103,3	script	自警団員#do_tu06a_2	10162,5,5,{
+do_tu06a.gat,153,103,3 script vigilante#do_tu06a_2 10162,5,5,{
 	if(distance(getcharid(3)) > 5) {
-		showmessage "‐もっと近づいてから話しかけよう‐","";
+		showmessage "-Let's get closer and then talk to him-","";
 		end;
 	}
 	if(DORAM_1QUE == 39) {
@@ -4296,24 +3295,19 @@ do_tu06a.gat,153,103,3	script	自警団員#do_tu06a_2	10162,5,5,{
 			delquest 98426;
 			getexp 475,6000;
 		}
-		mes "[自警団員]";
-		mes "迷わず来れましたね。";
-		mes "この先にこの洞窟の龍、";
-		mes "^ff0000タルトゥーフィ^000000がいます。";
+		mes "[Vigilante]";
+		mes "You made it here without getting lost." ;
+		mes "Just ahead is the dragon of this cave, ^ff000000 Tartufi^000000." ;
 		next;
-		mes "[自警団員]";
-		mes "おとなしいやつなので";
-		mes "襲ってくるようなことは";
-		mes "無いと思いますが、";
-		mes "一応気を付けておいてください。";
-		mes "それでは進みましょう。";
+		mes "[Vigilante]";
+		mes "He's a quiet one, so I don't think he's going to attack you, but just be careful." ;
+		mes "Let's proceed then." ;
 		next;
-		if(select("はい","ラザーニャに戻りたい") == 2) {
-			mes "[自警団員]";
-			mes "あれ？";
-			mes "忘れ物ですか？";
-			mes "私はここにいるので";
-			mes "早く取って来てくださいね。";
+		if(select("yes", "I want to go back to Lasagna") == 2) {
+			mes "[Neighborhood Watch]";
+			mes "Huh?" ;
+			mes "Did you forget something?" ;
+			mes "I'm here, so please go get it quickly." ;
 			close2;
 			warp "do_tu05a.gat",26, 62;
 			end;
@@ -4323,19 +3317,11 @@ do_tu06a.gat,153,103,3	script	自警団員#do_tu06a_2	10162,5,5,{
 		warp "do_tu07a.gat",190,20;
 		end;
 	}
-	mes "^ff0000【インフォメーション】";
-	mes "進行中のチュートリアルから";
-	mes "離れてしまいました。";
-	mes "進行中のチュートリアルの";
-	mes "場所に戻りますか？^000000";
+	mes "^ff0000[Information] You have left the tutorial in progress." ;
+	mes "Would you like to return to the tutorial in progress? ^000000";
 	next;
-	if(select("はい","いいえ") == 2) {
-		mes "^ff0000【インフォメーション】";
-		mes "進行中のチュートリアルの場所が";
-		mes "わからなくなった場合、";
-		mes "再度話しかけることで";
-		mes "チュートリアル進行中のNPCの場所に";
-		mes "戻ることができます。^000000";
+	if(select("Yes", "No") == 2) {
+		mes "^ff000000[Information] If you lose the location of the tutorial in progress, you can return to the location of the NPC in progress of the tutorial by talking to them again. ^000000";
 		close;
 	}
 	if(DORAM_1QUE <= 1)
@@ -4359,22 +3345,14 @@ OnTouchNPC:
 	end;
 }
 
-do_tu07a.gat,190,15,0	warp	warp01#do_tu07a	2,2,do_tu06a.gat,153,98
-do_tu07a.gat,190,20,0	script	object01#do_tu07a	139,4,4,{
+do_tu07a.gat,190,15,0 warp warp warp01#do_tu07a 2,2,do_tu06a.gat,153,98
+do_tu07a.gat,190,20,0 script object01#do_tu07a 139,4,4,{
 	if(DORAM_1QUE == 39) {
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウには";
-		mes "行き先や目標が書いてあります。";
-		mes "^ff0000タルトゥーフィ^009effの場所も";
-		mes "クエストウィンドウに書いてあるので";
-		mes "そこを目指しましょう！^000000";
+		mes "^009eff[Information] The quest window contains destinations and goals." ;
+		mes "^ff0000Tartufi^009eff location is also written in the quest window, so go there! ^000000";
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストウィンドウは";
-		mes "アイコンを左クリックするか";
-		mes "^ff0000<Alt>キー+<U>キー^009effで";
-		mes "開くことができます。^000000";
+		mes "^009eff[Information] The quest window can be opened by left-clicking on the icon ^ff000000<Alt>key+<U>key ^009eff. ^000000";
 		close2;
 		viewpoint 1, 162, 158, 1, 0xFF0000;
 		cutin "do_su_001.bmp", 255;
@@ -4383,34 +3361,30 @@ do_tu07a.gat,190,20,0	script	object01#do_tu07a	139,4,4,{
 	end;
 }
 
-do_tu07a.gat,159,156,5	script	自警団員#do_tu07a	10162,5,5,{
+do_tu07a.gat,159,156,5 script vigilante#do_tu07a 10162,5,5,{
 	if(DORAM_1QUE < 42) {
-		mes "[自警団員]";
-		mes "だいぶバジルリスクが増えたな……。";
+		mes "[Neighborhood Watch]";
+		mes "That's a lot more basilisk. ......." ;
 		next;
-		if(select("はい","ラザーニャに戻りたい") == 2) {
-			mes "[自警団員]";
-			mes "あれ？";
-			mes "忘れ物ですか？";
-			mes "私はここにいるので";
-			mes "早く取って来てくださいね。";
+		if(select("Yes", "I want to go back to Lasagna") == 2) {
+			mes "[Neighborhood Watch]";
+			mes "Huh?" ;
+			mes "Did you forget something?" ;
+			mes "I'm here, so please go get it quickly." ;
 			close2;
 			warp "do_tu05a.gat",26, 62;
 			end;
 		}
-		mes "[自警団員]";
-		mes "何かにつけて";
-		mes "問題を起こすやつらなので、";
-		mes "自警団でも頭を悩ませています。";
+		mes "[Neighborhood Watch]";
+		mes "They're the ones who get into trouble for something, so even the neighborhood watch is having a hard time keeping their heads above water." ;
 		close;
 	}
-	mes "[自警団員]";
-	mes "お疲れ様。";
-	mes "私は入口に戻るよ。";
+	mes "[Neighborhood Watch]";
+	mes "Thanks for your help." ;
+	mes "I'm going back to the entrance." ;
 	next;
-	mes "[自警団員]";
-	mes "その^ff0000初心者用蝶の羽^000000を";
-	mes "使えば君も町に戻れるだろう。";
+	mes "[Neighborhood Watch]";
+	mes "With that ^ff000000 beginner's butterfly wings^000000, you too can get back into town." ;
 	close;
 OnTouch:
 	// dummy
@@ -4420,95 +3394,74 @@ OnTouchNPC:
 	end;
 }
 
-do_tu07a.gat,162,158,3	script	タルトゥーフィ#do_tu07a	10161,5,5,{
+do_tu07a.gat,162,158,3 script Tartufi#do_tu07a 10161,5,5,{
 	if(DORAM_1QUE == 39) {
 		if(checkquest(98427)) {
 			delquest 98427;
 			getexp 524,8000;
 		}
-		emotion 6, "タルトゥーフィ#do_tu07a";
-		mes "[タルトゥーフィ]";
-		mes "ええい、";
-		mes "騒がしいやつらだな。";
-		mes "僕になんの恨みがあるんだ。";
+		emotion 6, "Tartufi#do_tu07a";
+		mes "[Tartufi]";
+		mes "Yeah, they're noisy ones." ;
+		mes "What do you have against me?" ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "お父さん、";
-		mes "お母さん、";
-		mes "会いたいよ……。";
+		mes "[Tartuffe]";
+		mes "Dad, Mom, I miss you. ......." ;
 		next;
-		mes "‐大きな龍が何が呟いている‐";
+		mes "-What the big dragon is muttering-";
 		next;
-		emotion 0, "タルトゥーフィ#do_tu07a";
-		mes "[タルトゥーフィ]";
-		mes "ん？　誰？";
-		mes "初めて見る顔だね。";
+		emotion 0, "Tartuffe#do_tu07a";
+		mes "[Tartuffe]";
+		mes "Hmm?  Who?" ;
+		mes "I've never seen your face before." ;
 		next;
-		mes "[自警団員]";
-		mes "やあタルトゥーフィ。";
-		mes "彼は新米の冒険者だ。";
-		mes "船でミッドガルド大陸に";
-		mes "行こうとしたら、";
-		mes "君が吐く炎の煙のせいで";
-		mes "船が出港できないらしい。";
+		mes "[Neighborhood Watch]";
+		mes "Hey Tartuffe." ;
+		mes "He's a new adventurer." ;
+		mes "I tried to get to the Midgard continent by ship, but apparently the smoke from the flames you exhale prevents the ship from leaving." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "あ、それはごめんね。";
-		mes "だけどそれは^ff0000バジルリスクの";
-		mes "せい^000000なんだ。";
+		mes "[Tartuffe]";
+		mes "Oh, sorry about that." ;
+		mes "But that's ^ff000000 basilisk's fault ^000000." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "これまではたまにちょっかいを";
-		mes "出してくるだけだったのに、";
-		mes "この前から突然";
-		mes "それが激しくなったんだ。";
+		mes "[Tartuffe]";
+		mes "He used to just mess with me once in a while, but the other day it suddenly became more intense." ;
 		next;
-		mes "[自警団員]";
-		mes "そういえば最近、";
-		mes "バジルリスクが荒れてるね。";
-		mes "何かしたのかい？";
+		mes "[Neighborhood Watch]";
+		mes "Speaking of which, Basilisk has been having a rough time lately." ;
+		mes "What have you done?" ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "僕は何もしてないよ。";
-		mes "「仲間の恨み！」とか言ってたから、";
-		mes "あいつらの仲間が";
-		mes "何かされたんじゃないかな。";
-		mes "捕まって酷い目にあったとか。";
+		mes "[Tartuffe]";
+		mes "I didn't do anything." ;
+		mes "[fellowship grudge!" I'm sure they did something to those guys." ;
+		mes "I heard they got caught and had a bad time." ;
 		next;
-		mes "[自警団員]";
-		mes "なるほど……。";
-		mes "君は何か知っているかい？";
+		mes "[Vigilante]";
+		mes "I see. ......." ;
+		mes "Do you know anything about it?" ;
 		next;
-		menu "いいえ",-,"知りません",-,"心当たりはありません",-;
-		mes "[自警団員]";
-		mes "そうだよな。";
-		mes "冒険者になりたての君が";
-		mes "知っているわけないよな。";
+		menu "No",-, "I don't know",-, "I have no idea",-;
+		mes "[Neighborhood Watch]";
+		mes "Yes, I do." ;
+		mes "You're a new adventurer, you wouldn't know, would you?" ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "まあ、そんなわけで、";
-		mes "僕だってやりたくて";
-		mes "やってるわけじゃないんだ。";
+		mes "[Tartuffe]";
+		mes "Well, that's why I don't want to do it either." ;
 		next;
-		emotion 0, "タルトゥーフィ#do_tu07a";
-		mes "[タルトゥーフィ]";
-		mes "そうだ！";
-		mes "君たちでこの周りにいる";
-		mes "バジルリスクを懲らしめてよ。";
-		mes "あいつらが大人しくなれば";
-		mes "僕も炎を吐かずに済むからさ。";
+		emotion 0, "Tartuffe#do_tu07a";
+		mes "[Tartuffe]";
+		mes "Yes!" ;
+		mes "You guys can punish the basilisks around here." ;
+		mes "If those guys would just grow up, I wouldn't have to breathe fire too." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "うーん、そうだな。";
-		mes "^ff0000偵察バジルリスクを5体^000000も";
-		mes "退治してくれば十分かな。";
-		mes "お願いね。";
+		mes "[Tartuffe]";
+		mes "Hmmm, yeah." ;
+		mes "I guess it would be enough to kill ^ff000000 five ^000000 recon basilisks." ;
+		mes "Please." ;
 		next;
 		cutin "do_su_002.bmp", 3;
-		mes "^009eff【インフォメーション】";
-		mes "クエストを受注しました。";
-		mes "クエストウィンドウを開いて";
-		mes "確認してみましょう！^000000";
+		mes "^009eff [Information] Quest received." ;
+		mes "Open the quest window to confirm! ^000000";
 		setquest 98428;
 		set DORAM_1QUE,40;
 		close2;
@@ -4516,79 +3469,61 @@ do_tu07a.gat,162,158,3	script	タルトゥーフィ#do_tu07a	10161,5,5,{
 		end;
 	}
 	if(DORAM_1QUE == 40 || DORAM_1QUE == 41) {
-		if(!(checkquest(98428) & 0x4)) {
-			mes "[タルトゥーフィ]";
-			mes "君たちでこの周りにいる";
-			mes "バジルリスクを懲らしめてよ。";
-			mes "あいつらが大人しくなれば";
-			mes "僕も炎を吐かずに済むからさ。";
+		if(! (checkquest(98428) & 0x4)) {
+			mes "[Tartufi]";
+			mes "You guys punish the basilisks around here." ;
+			mes "If those guys would just grow up, I wouldn't have to breathe fire too." ;
 			next;
-			mes "[タルトゥーフィ]";
-			mes "うーん、そうだな。";
-			mes "^ff0000偵察バジルリスクを5体^000000も";
-			mes "退治してくれば十分かな。";
-			mes "お願いね。";
+			mes "[Tartuffe]";
+			mes "Hmmm, yeah." ;
+			mes "I guess it would be enough to kill ^ff000000 five ^000000 recon basilisks." ;
+			mes "Please." ;
 			next;
 			cutin "do_su_002.bmp", 3;
-			mes "^009eff【インフォメーション】";
-			mes "クエストを受注しました。";
-			mes "クエストウィンドウを開いて";
-			mes "確認してみましょう！^000000";
+			mes "^009eff [Information] Quest received." ;
+			mes "Open the quest window to confirm! ^000000";
 			close2;
 			cutin "do_su_002.bmp", 255;
 			end;
 		}
-		mes "[タルトゥーフィ]";
-		mes "ようやく静かになったみたい。";
-		mes "ありがとう。";
-		mes "これであいつらもしばらくは";
-		mes "おとなしくしてるかな。";
+		mes "[Tartufi]";
+		mes "Looks like it's finally quiet." ;
+		mes "Thanks." ;
+		mes "I guess now those guys will be quiet for a while." ;
 		next;
-		mes "[自警団員]";
-		mes "新米冒険者と聞いていたけど";
-		mes "なかなかの腕だね。";
-		mes "もう一人前の冒険者だよ。";
+		mes "[Vigilante]";
+		mes "I heard you're a new adventurer, but you're pretty good." ;
+		mes "I'm already a full-fledged adventurer." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "君はミッドガルド大陸に";
-		mes "行くんだよね？";
-		mes "たまには帰って来て、";
-		mes "向こうの話を聞かせてほしいな。";
+		mes "[Tartuffe]";
+		mes "You're going to the continent of Midgard, aren't you?" ;
+		mes "I wish you'd come back once in a while and tell me about the other side." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "僕はもう少し大きくなるまで";
-		mes "ここにいないといけないんだ。";
-		mes "自由な君がうらやましいよ。";
+		mes "[Tartuffe]";
+		mes "I have to stay here until I'm a little older." ;
+		mes "I envy your freedom." ;
 		next;
-		mes "[タルトゥーフィ]";
-		mes "短い間だったけどありがとう。";
-		mes "帰るならこれを使いなよ。";
+		mes "[Tartuffe]";
+		mes "Thank you for the short time you were here." ;
+		mes "If you're leaving, use this." ;
 		next;
-		mes "‐タルトゥーフィから";
-		mes "　何かを渡された‐";
+		mes "-Tartufi gave me something -";
 		next;
 		if(DORAM_1QUE == 40) {
 			getitem 12324, 1;
 			set DORAM_1QUE,41;
 		}
-		mes "[タルトゥーフィ]";
-		mes "これは^ff0000初心者用蝶の羽^000000だ。";
-		mes "使うと位置セーブされたところまで";
-		mes "移動することができるんだ。";
+		mes "[Tartufi]";
+		mes "This is ^ff000000 beginner butterfly wings ^000000." ;
+		mes "When I use it, I can move to the location saved." ;
 		next;
-		mes "^009eff【インフォメーション】";
-		mes "位置セーブポイントは";
-		mes "特定のNPCから設定することが";
-		mes "できます。";
-		mes "現在の位置セーブポイントは";
-		mes "ガムベリー船長の前になっています。^000000";
+		mes "^009eff[Information] Location save points can be set by certain NPCs." ;
+		mes "The current location save point is in front of Captain Gumberry. ^000000";
 		next;
-		mes "[タルトゥーフィ]";
-		mes "ほんとうは僕が送ってあげたいけど、";
-		mes "いつバジルリスクがやってくるか";
-		mes "わからないから……。";
-		mes "代わりにそれを使ってよ。";
-		mes "それじゃあまたね。";
+		mes "[Tartuffe]";
+		mes "I'd really like to send you there myself, but you never know when the basilisk will arrive. ......." ;
+		mes "Use that instead." ;
+		mes "I'll see you then." ;
 		close2;
 		delquest 98428;
 		set DORAM_1QUE,42;
@@ -4596,11 +3531,9 @@ do_tu07a.gat,162,158,3	script	タルトゥーフィ#do_tu07a	10161,5,5,{
 		setquest 98429;
 		end;
 	}
-	mes "[タルトゥーフィ]";
-	mes "君はミッドガルド大陸に";
-	mes "行くんだよね？";
-	mes "たまには帰って来て、";
-	mes "向こうの話を聞かせてほしいな。";
+	mes "[Tartuffe]";
+	mes "You're going to the continent of Midgard, right?" ;
+	mes "I wish you'd come back once in a while and tell me about the other side." ;
 	close;
 OnTouch:
 	// dummy
@@ -4610,342 +3543,266 @@ OnTouchNPC:
 	end;
 }
 
-do_tu07a.gat,247,194,0	script	object02#do_tu07a	139,{}
+do_tu07a.gat,247,194,0 script object02#do_tu07a 139,{}
 
-do_tu02a.gat,226,181,3	script	カルルー#do_tu02a	548,{
-	mes "[カルルー]";
-	mes "カルーニャミルクの";
-	mes "主な材料を知っているか？";
-	mes "カルーニャという特別な貝を";
-	mes "発酵させて作ったエッセンスと";
-	mes "新鮮な牛乳で作られている。";
+do_tu02a.gat,226,181,3 script carlou#do_tu02a 548,{
+	mes "[Carlu]";
+	mes "Do you know what the main ingredients of caluña milk are?" ;
+	mes "It is made from the essence of a special shellfish called caluña, which is fermented, and fresh milk." ;
 	next;
-	mes "[カルルー]";
-	mes "それを適切な量で混ぜる。";
-	mes "そこにニャンダレの実を一緒に";
-	mes "添えるとみんなが愛する";
-	mes "カルーニャミルクになるんだ。";
+	mes "[Karlou]";
+	mes "Mix it with the right amount." ;
+	mes "Then add the nyandare nuts together and it becomes the kaluña milk that everyone loves." ;
 	close;
 }
 
-do_tu02a.gat,225,290,5	script	作業班長#do_tu02a	421,{
-	mes "[作業班長]";
-	mes "この仕事をやったことある？";
-	mes "すぐに覚えられる簡単な事だ。";
-	mes "コンキリナ号のガムベリー船長は";
-	mes "特に上手かったな。";
+do_tu02a.gat,225,290,5 script work group leader#do_tu02a 421,{
+	mes "[work group leader]";
+	mes "Have you done this job before?" ;
+	mes "It's an easy thing to learn quickly." ;
+	mes "Captain Gumberry on the Conchirina was especially good at it." ;
 	close;
 }
 
-do_tu02a.gat,139,299,3	script	イワシ漁船船長#do_tu02a	561,{
-	mes "[イワシ漁船船長]";
-	mes "イワシ産業が";
-	mes "以前より落ち込んでいても";
-	mes "人手は常に不足している。";
+do_tu02a.gat,139,299,3 script sardine fishing boat captain#do_tu02a 561,{
+	mes "[sardine fishing boat captain]";
+	mes "Even though the sardine industry is down from previous years, there is always a shortage of manpower." ;
 	close;
 }
 
-do_tu02a.gat,263,156,5	script	おばあちゃん#do_tu02a	554,{
-	mes "[おばあちゃん]";
-	mes "昔のラザーニャは凄かった。";
-	mes "道も住民もボロボロ。";
-	mes "当時は暗黒期と呼ばれているよ。";
+do_tu02a.gat,263,156,5 script grandma#do_tu02a 554,{
+	mes "[grandma]";
+	mes "The old lasagna was awesome." ;
+	mes "The roads and residents are falling apart." ;
+	mes "They call those days the Dark Ages, you know." ;
 	next;
-	mes "[おばあちゃん]";
-	mes "ある時、何の遊びなのかしらないが、";
-	mes "悪がきどもが";
-	mes "他のチンピラたちを更生させる、と";
-	mes "無理やり自分たちが作った自警団や";
-	mes "猫の手サービスに入れ始めたんだ。";
+	mes "[Grandma]";
+	mes "At some point, I don't know what the play was, but the bad boys started rehabilitating the other thugs and forcing them into the vigilante and cat hand services that they had created." ;
 	next;
-	mes "[おばあちゃん]";
-	mes "更生したくない奴らは";
-	mes "みんなラザーニャを去り、";
-	mes "新しい人生を歩んでみたい";
-	mes "やつだけが残った。";
-	mes "今のラザーニャは";
-	mes "全部あの子たちが作ったんだ。";
+	mes "[Grandma]";
+	mes "All those who didn't want to be rehabilitated left Lasagna, and only those who wanted a new life were left." ;
+	mes "All the Lasagna we have today was created by those kids." ;
 	close;
 }
 
-do_tu02a.gat,244,231,3	script	イワシ漁船員#do_tu02a	544,{
-	mes "[イワシ漁船員]";
-	mes "この黄色いチーズ道に沿って";
-	mes "歩いて行けば、";
-	mes "私たちの故郷が現れる。";
-	mes "いつかは戻りたい。";
+do_tu02a.gat,244,231,3 script sardine fisherman#do_tu02a 544,{
+	mes "[sardine fisherman]";
+	mes "Walk along this yellow cheese road and our home will appear." ;
+	mes "I want to go back someday." ;
 	close;
 }
 
-do_tu02a.gat,260,134,3	script	ラスムス#do_tu02a	546,{
-	mes "[ラスムス]";
-	mes "赤い毛糸は君が行きたい場所に";
-	mes "連れていってくれるし、";
-	mes "黄色い道は君を家に";
-	mes "連れていってくれる。";
-	mes "道に迷ったら赤い毛糸に";
-	mes "ついて行けばいい。";
+do_tu02a.gat,260,134,3 script Rasmus#do_tu02a 546,{
+	mes "[Rasmus]";
+	mes "The red yarn will take you where you want to go, and the yellow road will take you home." ;
+	mes "If you get lost, just follow the red yarn." ;
 	close;
 }
 
-do_tu02a.gat,141,166,5	script	クルメ#do_tu02a	555,{
-	mes "[クルメ]";
-	mes "道を歩いていると悟ることがある。";
-	mes "この世界のどこからでも";
-	mes "ミートソースの匂いが";
-	mes "するということを。";
+do_tu02a.gat,141,166,5 script Kurume#do_tu02a 555,{
+	mes "[Kurume]";
+	mes "There are things you realize when you walk down the street." ;
+	mes "That you can smell meat sauce from anywhere in this world." ;
 	close;
 }
 
-do_tu02a.gat,233,174,5	script	酔っ払い#do_tu02a_01	561,{
-	mes "[飲み手]";
-	mes "カルーニャミルクは";
-	mes "ゆっくり混ぜてから飲まなきゃ。";
-	mes "最近ここに来た流れ者たちは";
-	mes "振って飲んでいるみたいだけど、";
-	mes "それはお子ちゃまのやることさ。";
+do_tu02a.gat,233,174,5 script drunk#do_tu02a_01 561,{
+	mes "[drinker]";
+	mes "You have to mix the caruña milk slowly before you drink it." ;
+	mes "The drifters who came here recently seem to be shaking it and drinking it, but that's what little kids do." ;
 	close;
 }
 
-do_tu02a.gat,236,173,3	script	酔っ払い#do_tu02a_02	561,{
-	mes "[飲み手]";
-	mes "カルーニャミルクは";
-	mes "よく振ってから飲むのが一番だ。";
-	mes "発酵されたカルーニャが";
-	mes "牛乳と混ざることで作り出される";
-	mes "繊細な味を感じることができる。";
+do_tu02a.gat,236,173,3 script drunk#do_tu02a_02 561,{
+	mes "[drinker]";
+	mes "Caruña milk is best shaken well before drinking." ;
+	mes "You can taste the delicate flavor created by the fermented caruña mixing with the milk." ;
 	close;
 }
 
-do_tu02a.gat,200,278,5	script	心配そうなドラム#do_tu0	559,{
+do_tu02a.gat,200,278,5 script worried Doram#do_tu0 559,{
 	emotion 54;
-	mes "[心配そうなドラム]";
-	mes "最近、不法にイワシを獲る漁船に";
-	mes "騙されて乗せられるドラムが";
-	mes "多いらしい。怖い世の中になったね。";
-	mes "自警団が本気になって";
-	mes "探しまわっているらしいですよ。";
+	mes "[Worried Doram]";
+	mes "I hear that many Doram are being tricked and taken on board fishing boats that illegally catch sardines these days. It's a scary world we live in." ;
+	mes "I hear that the vigilantes are really looking around for them." ;
 	close;
 }
 
-do_tu02a.gat,202,276,5	script	浮かれたドラム#do_tu02a	560,{
+do_tu02a.gat,202,276,5 script Floating Doram#do_tu02a 560,{
 	emotion 18;
-	mes "[浮かれたドラム]";
-	mes "やった！";
-	mes "豪華クルーズ旅行が当たったぞ！";
-	mes "なんて運が良いんだ！";
-	mes "早く集合場所の";
-	mes "イワシ漁船前に行かなきゃ！";
+	mes "[Floaty Doram]";
+	mes "Yes!" ;
+	mes "I won a luxury cruise vacation!" ;
+	mes "What luck!" . mes "I have to get to the meeting place in front of the sardine fishing boat!
+	mes "I have to get to the meeting place in front of the sardine fishing boat!" ;
 	close;
 }
 
-do_tu02a.gat,209,301,3	script	ムスタチ#do_tu02a	10167,{
-	mes "[ムスタチ]";
-	mes "新大陸に旅立つ前に";
-	mes "身だしなみを整えてみては？";
+do_tu02a.gat,209,301,3 script Mustachi#do_tu02a 10167,{
+	mes "[Mustachi]";
+	mes "Why don't you try to look presentable before you leave for the new continent?" ;
 	close;
 }
 
-do_tu02a.gat,236,179,5	script	ニャンクン#do_tu02a	10163,{
-	mes "[ニャンクン]";
-	mes "困った事があるなら";
-	mes "自警団に頼んでみたら？";
+do_tu02a.gat,236,179,5 script Nyankun#do_tu02a 10163,{
+	mes "[Nyankun]";
+	mes "If you have a problem, why don't you ask the neighborhood watch?" ;
 	close;
 }
 
-do_tu02a.gat,229,197,5	script	トス#do_tu02a	10164,{
+do_tu02a.gat,229,197,5 script toss#do_tu02a 10164,{
 	emotion 22;
-	mes "[トス]";
-	mes "やはり有名な場所だから人が多いな。";
+	mes "[toss]";
+	mes "It's still a famous place, so there are a lot of people." ;
 	close;
 }
 
-do_tu02a.gat,228,193,5	script	ポルト#do_tu02a	10163,{
+do_tu02a.gat,228,193,5 script Porto#do_tu02a 10163,{
 	emotion 32;
-	mes "[ポルト]";
-	mes "ここに来たなら";
-	mes "カルーニャミルクは";
-	mes "飲んでおかないとな！";
+	mes "[Porto]";
+	mes "If you're here, you've got to drink the caruña milk!" ;
 	close;
 }
 
-do_tu02a.gat,226,196,5	script	アラム#do_tu02a	10166,{
+do_tu02a.gat,226,196,5 script Aram#do_tu02a 10166,{
 	emotion 7;
-	mes "[アラム]";
-	mes "きょろきょろしないの！";
-	mes "田舎者丸出しじゃない！";
+	mes "[Aram]";
+	mes "Don't scurry!" ;
+	mes "Don't be a total redneck!" ;
 	close;
 }
 
-do_tu02a.gat,227,187,1	script	ヴォンゴロ#do_tu02a	544,{
-	mes "[ヴォンゴロ]";
-	mes "こんにちは。";
-	mes "パブ「オーブン」へようこそ。";
-	mes "注文は決まりましたか？";
+do_tu02a.gat,227,187,1 script Vongolo#do_tu02a 544,{
+	mes "[Vongolo]";
+	mes "Hello." ;
+	mes "Welcome to the pub "Oven"." ;
+	mes "Have you decided what to order?" ;
 	next;
-	mes "[ヴォンゴロ]";
-	mes "ペロン団長、ガムベリー船長、";
-	mes "トーマス船長による";
-	mes "「オーブンの誓い」の影響で、";
-	mes "みんなカルーニャミルクを";
-	mes "注文しますが、一番味に";
-	mes "自信のあるのはボスの料理です。";
+	mes "[Vongolo]";
+	mes "Due to the 'Oath of the Oven' by Commander Peron, Captain Gumberry, and Captain Thomas, everyone will be ordering carunya milk, but it is the boss's dish that I am most confident will taste the best." ;
 	next;
-	mes "[ヴォンゴロ]";
-	mes "白身魚に心を込めて手入れした後、";
-	mes "ゆでた豆とイモを";
-	mes "混ぜてつぶして形作って";
-	mes "揚げたものです。";
-	mes "本当に美味しいのに";
-	mes "誰も注文しません。";
+	mes "[Vongolo]";
+	mes "After the white fish has been heartily cleaned, it is mixed with boiled beans and potatoes, mashed, shaped and fried." ;
+	mes "It's really good, but no one orders it." ;
 	next;
-	mes "[ヴォンゴロ]";
-	mes "だから最近は材料も";
-	mes "準備しておかないので、";
-	mes "急な注文が入ると、";
-	mes "魚屋さんまで走って";
-	mes "買いに行くんです。";
+	mes "[Vongolo]";
+	mes "That's why I don't even prepare the ingredients these days, so when I get a rush order, I have to run to the fishmonger to buy it." ;
 	next;
 	emotion 54;
-	mes "[ヴォンゴロ]";
-	mes "あーあ、本当に美味しいのに……。";
+	mes "[Vongolo]";
+	mes "Oh my God, it's really good, but it's ......." ;
 	close;
 }
 
-do_tu02a.gat,232,187,6	script	フェットゥチーニャ#do_t	545,{
-	mes "[フェットゥチーニャ]";
-	mes "ここで働いてそれなりに経つけど、";
-	mes "未だに下っ端なので皿洗いは";
-	mes "すべて私の担当です。";
+do_tu02a.gat,232,187,6 script Fettuccinha#do_t 545,{
+	mes "[Fettuccinha]";
+	mes "I've been working here for a good amount of time, but I'm still the lowly one, so I'm still in charge of all the dishwashing." ;
 	next;
-	mes "[フェットゥチーニャ]";
-	mes "船に乗りに行く前に一杯、";
-	mes "長い航海を終えて一杯、";
-	mes "各地から訪ねて来た冒険者が一杯、";
-	mes "元から飲んでいる人が一杯、";
-	mes "周りにつられて飲みだす人が一杯……";
+	mes "[Fettuccinha]";
+	mes "A drink before going to the ship, a drink after a long voyage, a drink for adventurers who came to visit from all over the place, a drink for those who have been drinking since the beginning, a drink for those who start drinking when they get caught around ......." ;
 	next;
-	mes "[フェットゥチーニャ]";
-	mes "とにかく洗わないといけない";
-	mes "食器の数が想像を超えます。";
-	mes "それだけではありませんよ、";
-	mes "自警団と猫の手職員たちの泣き言、";
-	mes "新米冒険者たちからの相談等々……";
+	mes "[Fettuccinia]";
+	mes "Anyway, the number of dishes that have to be washed is beyond imagination." ;
+	mes "And that's not all, the whining of vigilantes and cat's paw staffers, consultations from new adventurers, etc. ......." ;
 	next;
 	emotion 28;
-	mes "[フェットゥチーニャ]";
-	mes "24時間じゃ足りないです。";
-	mes "従業員を増やせばいいのに！";
+	mes "[Fettuccinia]";
+	mes "24 hours is not enough." ;
+	mes "You should have more employees!" ;
 	close;
 }
 
-do_tu02a.gat,232,181,5	script	リンギュイーネ#do_tu02a	559,{
-	mes "[リンギュイーネ]";
-	mes "ここは自警団本部ですが、";
-	mes "冒険者が立ち寄っていく";
-	mes "パブでもあります。";
-	mes "各地から押し寄せて来た冒険者が";
-	mes "経験談を交わしたり、";
-	mes "冒険の仲間を探したりもします。";
+do_tu02a.gat,232,181,5 script Linguine#do_tu02a 559,{
+	mes "[Linguine]";
+	mes "This is the headquarters of the Neighborhood Watch, but it's also a pub where adventurers stop by." ;
+	mes "Adventurers who come pouring in from all over also exchange experiences and look for fellow adventurers." ;
 	next;
-	mes "[リンギュイーネ]";
-	mes "最近では新大陸に旅立つ前に";
-	mes "情報を仕入れに来る人が増えました。";
+	mes "[Linguine]";
+	mes "These days, more and more people come here to get information before setting off for a new continent." ;
 	next;
-	mes "[リンギュイーネ]";
-	mes "十数年前には不良ドラムたちを";
-	mes "更生させて自警団に入団させるための";
-	mes "場所としても使われました。";
-	mes "それ以前は荒くれ者の船乗りたちが";
-	mes "一日の疲れを癒す場所だったんです。";
+	mes "[Linguine]";
+	mes "More than a decade ago, it was also used as a place to rehabilitate delinquent Doram and others to join the vigilante group." ;
+	mes "Before that, it was a place for rough sailors to relax after a hard day's work." ;
 	next;
-	mes "[リンギュイーネ]";
-	mes "ペロン団長、ガムベリー船長、";
-	mes "トーマス船長もここで出会いました。";
-	mes "三匹はここで義兄弟の絆を結び、";
-	mes "その後の功労でここラザーニャの";
-	mes "生きる伝説になりました。";
+	mes "[Linguine]";
+	mes "Commander Peron, Captain Gumberry, and Captain Thomas also met here." ;
+	mes "The three of them formed a bond of brotherhood here and became living legends here in Lasagna for their subsequent merits." ;
 	next;
-	mes "[リンギュイーネ]";
-	mes "彼らに憧れてやってくる";
-	mes "冒険者も多いんですよ。";
+	mes "[Linguine]";
+	mes "Many adventurers come here because of their admiration." ;
 	close;
 }
 
-do_tu02a.gat,190,239,5	script	幼いニャンコ#do_tu02a_0	559,{
-	unittalk "幼いニャンコ : 私はこの遊び場の隊長だにゃ～。";
+do_tu02a.gat,190,239,5 script young Nyanko#do_tu02a_0 559,{
+	unittalk "Young Nyanko : I am the captain of this playground~!" ;
 	end;
 }
 
-do_tu02a.gat,180,230,7	script	幼いニャンコ#do_tu02a_0	560,{
-	unittalk "幼いニャンコ : ハァ……こんな幼稚なやつらとは一緒に遊べないにゃ～。";
+do_tu02a.gat,180,230,7 script juvenile_nyanko#do_tu02a_0 560,{
+	unittalk "Childish Nyanko : huh ...... I can't play with these childish guys~!" ;
 	end;
 }
 
-do_tu02a.gat,192,245,7	script	幼いニャンコ#do_tu02a_0	554,{
-	unittalk "幼いニャンコ : 毛玉の塊がひとつ、ななつ、ふたつ、むっつ……多いにゃ!!";
+do_tu02a.gat,192,245,7 script juvenile_nyanko#do_tu02a_0 554,{
+	unittalk "Young Nyanko : One, Natsu, Futtsu, Muttsu ...... Many!!!" ;
 	end;
 }
 
-do_tu02a.gat,184,234,5	script	幼いニャンコ#do_tu02a_0	422,{
-	unittalk "幼いニャンコ : シーソーに乗りながら一緒に遊びたいやつは集まれ～。";
+do_tu02a.gat,184,234,5 script juvenile_nyanko#do_tu02a_0 422,{
+	unittalk "Young Nyanko : Gather all who want to play together while riding the seesaw~!" ;
 	end;
 }
 
-do_tu02a.gat,186,231,3	script	幼いニャンコ#do_tu02a_0	10167,{
+do_tu02a.gat,186,231,3 script young nyanko#do_tu02a_0 10167,{
 	emotion 28;
-	unittalk "幼いニャンコ : これどうして転がらないにゃ～？転がるようにしてにゃ～。";
+	unittalk "Young Nyan Cat : Why doesn't this roll? Make it roll!" ;
 	end;
 }
 
-do_tu02a.gat,211,186,5	script	乗船案内員#do_tu02a	559,{
-	mes "[乗船案内員]";
-	mes "こんにちは！";
-	mes "新大陸に旅立つ船はここから北の";
-	mes "船着き場に停泊していますよ。";
+do_tu02a.gat,211,186,5 script Boarding Guide#do_tu02a 559,{
+	mes "[Boarding Guide]";
+	mes "Hello!" ;
+	mes "Ships leaving for the new continent are docked at the pier north of here!" ;
 	close;
 }
 
-do_tu02a.gat,222,187,3	script	ボス#do_tu02a	548,{
-	mes "[ボス]";
-	mes "なんだ？";
-	mes "あんたもカルーニャミルクかい？";
+do_tu02a.gat,222,187,3 script boss#do_tu02a 548,{
+	mes "[Boss]";
+	mes "What?" ;
+	mes "Are you a carunya milk too?" ;
 	close;
 }
 
-do_tu02a.gat,202,291,3	script	自警団案内員#do_tu02a01	10162,{
-	mes "[自警団案内員]";
-	mes "港町ラザーニャへようこそ！";
-	mes "助けが必要な時は";
-	mes "いつでもファルファーレ自警団を";
-	mes "訪ねて下さい。";
+do_tu02a.gat,202,291,3 script Neighborhood Watch Guide#do_tu02a01 10162,{
+	mes "[Neighborhood Watch Guide]";
+	mes "Welcome to the port city of Lasagna!" ;
+	mes "Visit the Farfalle Neighborhood Watch whenever you need help." ;
 	close;
 }
 
-do_tu02a.gat,174,160,3	script	自警団案内員#do_tu02a02	10162,{
-	mes "[自警団案内員]";
-	mes "こんにちは。";
-	mes "良い天気ですにゃ。";
+do_tu02a.gat,174,160,3 script Neighborhood Watch Guide#do_tu02a02 10162,{
+	mes "[Neighborhood Watch Guide]";
+	mes "Hello." ;
+	mes "It's a beautiful day." ;
 	close;
 }
 
-do_tu02a.gat,233,197,5	script	自警団員オリオ#do_tu02a	10155,{
-	mes "[自警団員オリオ]";
-	mes "この方はファルファーレ自警団の";
-	mes "団長であるペロン様だ！";
+do_tu02a.gat,233,197,5 script Neighborhood Watchman Orio#do_tu02a 10155,{
+	mes "[Vigilante Orio]";
+	mes "This is Master Peron, the leader of the Farfalle Neighborhood Watch!" ;
 	close;
 }
 
-do_tu02a.gat,77,263,5	script	タルリー#do_tu02a	10166,{
-	mes "[タルリー]";
-	mes "早く仕事を仕上げないと……";
-	mes "待ち合わせに間に合わないわ。";
+do_tu02a.gat,77,263,5 script Tarly#do_tu02a 10166,{
+	mes "[Tarly]";
+	mes "I need to finish my work soon ......" ;
+	mes "I'm going to be late for my meeting." ;
 	close;
 }
 
-do_tu02a.gat,191,174,3	script	ゴルリ#do_tu02a	547,{
+do_tu02a.gat,191,174,3 script Golli#do_tu02a 547,{
 	emotion 45;
-	mes "[ゴルリ]";
-	mes "良い天気だにゃあ。";
+	mes "[Golli]";
+	mes "It's a beautiful day." ;
 	close;
 }

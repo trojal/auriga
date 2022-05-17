@@ -1,61 +1,50 @@
 //====================================================================
-//Ragnarok Online - Kagerou Oboro Jobchange Script	by refis
-//
-//　■ CHANGE_KO -> 0～11
+//Ragnarok Online - Kagerou Oboro Jobchange Script by refis
+// - CHANGE_KO -> 0-11
+// - CHANGE_KO -> 0-11
 //====================================================================
 
-que_ng.gat,28,156,0	script	はじめ#ko	139,1,1,{
+que_ng.gat,28,156,0 script first #ko 139,1,1,{
 	if(Job == Job_Ninja && BaseLevel >= 99 && JobLevel >= 70 && CHANGE_KO == 0) {
-		mes "‐どこかで聞いたことのある";
-		mes "　声が聞こえてくる‐";
+		mes "-I hear a voice I've heard somewhere before-";
 		next;
-		mes "[謎の声A]";
-		mes "やあ、久しぶりですね。";
-		mes "私がここを離れてから";
-		mes "一族に加わった若者達の様子は";
-		mes "どうですか？";
+		mes "[Mysterious Voice A]";
+		mes "Hey, it's been a while." ;
+		mes "How are the young people who have joined the clan since I left here?" ;
 		next;
-		mes "[謎の声B]";
-		mes "うむ。なかなか根性のある奴らが";
-		mes "多く入ってくれた。";
-		mes "お前の人を見る目も";
-		mes "まだまだ捨てたものじゃないな……。";
+		mes "[Mysterious Voice B]";
+		mes "Mm. A lot of them have joined us who have quite a lot of guts." ;
+		mes "Your eye for people hasn't been abandoned yet, ......." ;
 		next;
-		mes "[謎の声A]";
-		mes "君にそう言ってもらえるとは";
-		mes "光栄ですね。";
-		mes "ただでさえ空気の悪い場所に飛ばされ";
-		mes "ここが恋しくなっていましたが……";
+		mes "[Mysterious Voice A]";
+		mes "I'm honored to hear you say so." ;
+		mes "I was just sent to a place with bad air quality and missed this place, but ......." ;
 		next;
-		mes "[謎の声A]";
-		mes "どうです、そろそろ交代しませんか？";
+		mes "[Mysterious Voice A]";
+		mes "How about it, isn't it time for a change?" ;
 		next;
-		mes "[謎の声B]";
-		mes "未練を捨てきれていないようだな。";
-		mes "あの方がお許しになると";
-		mes "思っているのか？";
+		mes "[Mystery Voice B]";
+		mes "I see you haven't let up on your unfinished business." ;
+		mes "Do you think that He will forgive you?" ;
 		next;
-		mes "[謎の声A]";
-		mes "冗談ですよ。";
-		mes "ところで、新人達の中で";
-		mes "^BD0408あの場所^000000を";
-		mes "見つけた子はいるのですか？";
+		mes "[Mysterious Voice A]";
+		mes "I'm just kidding." ;
+		mes "By the way, have any of you newbies found ^BD0408 that place ^000000?" ;
 		next;
-		mes "[謎の声B]";
-		mes "いや、隠された場所を探すのもまた";
-		mes "試練のひとつ……";
+		mes "[Mysterious voice B]";
+		mes "No, finding the hidden place is another trial ......." ;
 		next;
-		mes "[謎の声A]";
-		mes "相変わらず融通が効きませんね。";
-		mes "あんな場所、ただの壁……";
+		mes "[Mystery Voice A]";
+		mes "You are still as inflexible as ever." ;
+		mes "That place, just a wall ......." ;
 		next;
-		mes "[謎の声B]";
-		mes "……まて、誰かに聞かれている！";
-		mes "お前は今すぐ任地に復帰しろ！";
+		mes "[Mysterious Voice B]";
+		mes "...... Wait, someone is listening!" ;
+		mes "You're back in charge now!" ;
 		next;
-		mes "‐話し声が聞こえなくなった。";
-		mes "　隠された場所、壁、試練……";
-		mes "　いったい何の事だろうか？‐";
+		mes "-I can't hear you talking." ;
+		mes " hidden places, walls, trials ......" ;
+		mes " What on earth are they talking about? -";
 		setquest 5131;
 		set CHANGE_KO,1;
 		close;
@@ -63,505 +52,414 @@ que_ng.gat,28,156,0	script	はじめ#ko	139,1,1,{
 	end;
 }
 
-que_ng.gat,21,76,0	script	絵がかざってある壁#ko	844,{
+que_ng.gat,21,76,0 script Wall with a picture on it#ko 844,{
 	if(Job == Job_Kagerou || Job == Job_Oboro) {
-		mes "‐もうここには用はない‐";
+		mes "-I have no more use for this place-";
 		close;
 	}
 	if(CHANGE_KO == 1) {
-		mes "‐隠された場所と";
-		mes "　思われるところを見つけた‐";
+		mes "-I found what I think is a hidden place-";
 		next;
-		mes "‐以前この部屋に来た時に";
-		mes "　気づかなかったのは何故だろう‐";
+		mes "-I wonder why I didn't notice it when I came to this room before-";
 		next;
-		mes "‐ともかく、中に入るためには……‐";
+		mes "-Anyways, to get inside, you need to go to ...... -";
 		next;
-		if(select("絵を引きちぎる","絵に手をかざす") == 1) {
-			mes "‐他人のものを勝手に";
-			mes "　傷つけるわけにはいかない‐";
+		if(select("tear off the picture", "hold your hand over the picture") == 1) {
+			mes "-I can't hurt someone else's stuff without permission-";
 			close;
 		}
-		mes "‐絵の前に手をかざすと";
-		mes "　何かに強くひっぱられる感じがした‐";
+		mes "-When I put my hand in front of the painting, I felt something pull hard on it-";
 		close2;
 		warp "job_ko.gat",26,111;
 		end;
 	}
 	if(CHANGE_KO >= 2) {
-		mes "‐^25C18D忍者屋敷^000000の隠し部屋への入り口だ‐";
+		mes "-^25C18DNinja mansion^000000 entrance to a hidden room-";
 		next;
-		if(select("入る","入らない") == 2) {
-			mes "‐あなたは壁から離れた‐";
+		if(select("enter", "don't enter") == 2) {
+			mes "-You have left the wall-";
 			close;
 		}
-		mes "‐絵の前に手をかざすと";
-		mes "　何かに強くひっぱられる感じがした‐";
+		mes "-When you put your hand in front of the painting, you felt something pull hard on it-";
 		close2;
 		warp "job_ko.gat",26,111;
 		end;
 	}
-	mes "‐きれいな絵がかざってある壁だ‐";
+	mes "-It's a wall with a beautiful picture on it-";
 	close;
 }
 
-job_ko.gat,25,115,4	script	謎の老人#ko	588,{
+job_ko.gat,25,115,4 script Mysterious Old Man#ko 588,{
 	switch(CHANGE_KO) {
 	case 1:
 		cutin "job_ko03",2;
-		mes "‐^1A95E6老人が静かに瞑想をしている^000000‐";
+		mes "-^1A95E6Old Man is quietly meditating^000000-";
 		next;
-		if(select("無視する","話しかける") == 1) {
+		if(select("ignore", "talk to") == 1) {
 			cutin "job_ko03",255;
-			mes "‐あなたは、そっとその場を離れた‐";
+			mes "-you have gently left the place-";
 			close;
 		}
-		mes "‐^1A95E6老人に話しかけたが反応がない……";
-		mes "　あなたは立ち去ろうとした^000000‐";
+		mes "-^1A95E6You spoke to Old Man but he didn't respond ......" ;
+		mes " You tried to walk away^000000-";
 		next;
-		mes "[謎の老人]";
-		mes "ついに辿りついた者が現れたか。";
-		mes "ふむ……生きた人間は";
-		mes "ひさかたぶりじゃ。";
+		mes "[Mysterious Old Man]";
+		mes "Someone finally got there." ;
+		mes "Hmmm ...... It's been a while since I've seen a living person." ;
 		next;
-		menu "ここはいったい……？",-;
-		mes "‐^1A95E6老人はあなたのことを無視して";
-		mes "　話を続けた^000000‐";
+		menu "What the hell is this place ......?" ,-;
+		mes "-^1A95E6Old Man ignored you and kept talking ^000000-";
 		next;
-		mes "[謎の老人]";
-		mes "昔、アマツには密かに";
-		mes "歴史の影に生きる一族がいた……";
+		mes "[Mysterious Old Man]";
+		mes "Long ago, there was a family in Amatsu that secretly lived in the shadows of history ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "影の中に潜みながらも";
-		mes "ヒマワリのように……";
-		mes "そう、陽の光差す場所を望んだ一族……";
+		mes "[Old Man of Mystery]";
+		mes "Lurking in the shadows like a sunflower ......" ;
+		mes "Yes, a family who wished for a place where the sun shines ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "ただ一人の主に忠誠を誓った一族……";
+		mes "[Mysterious Old Man]";
+		mes "A clan that swore allegiance to only one Lord: ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "頼もしく……";
+		mes "[Old Man of Mystery]";
+		mes "dependably ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "忠義にあふれ……";
+		mes "[Mystery Old Man]";
+		mes "Loyal ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "そして強い……";
+		mes "[Mystery Old Man]";
+		mes "and strong......" ;
 		next;
-		menu "その一族はどうなりましたか？ ",-;
-		mes "‐^1A95E6老人は寂しそうな目を";
-		mes "　あなたに向けた^000000‐";
+		menu "What happened to that family? ",-;
+		mes "-^1A95E6Old Man turned his lonely eyes to you ^000000-";
 		next;
-		mes "[謎の老人]";
-		mes "主に捨てられ、";
-		mes "歴史からも捨てられた一族を ";
-		mes "何故、知りたがる？ ";
+		mes "[Mysterious Old Man]";
+		mes "Why would you want to know about a family abandoned by the Lord and by history? ";
 		next;
-		if(select("……忍者だからです","ただの好奇心") == 2) {
-			mes "[謎の老人]";
-			mes "……そうか。";
-			mes "すまんが、帰ってくれ。";
+		if(select("..... .because it's Ninja", "just curious") == 2) {
+			mes "[Mysterious Old Man]";
+			mes "...... I see." ;
+			mes "Sorry, you'll have to leave." ;
 			close2;
 			warp "amatsu.gat",147,136;
 			end;
 		}
 		cutin "job_ko02",2;
-		mes "[謎の老人]";
-		mes "忍者！";
-		mes "たしかに、一族が忍者と";
-		mes "呼ばれた時期もあった……。";
+		mes "[Mysterious Old Man]";
+		mes "Ninja!";
+		mes "Indeed, there was a time when the family was called Ninja. ......." ;
 		next;
 		set CHANGE_KO,2;
 		chgquest 5131,5132;
-		mes "[謎の老人]";
-		mes "そなたに昔から伝わる話を話そう。";
-		mes "忘れられた一族の話を……。";
+		mes "[Mysterious Old Man]";
+		mes "I will tell you an old story that has been handed down to you." ;
+		mes "Tell the story of a forgotten family ......." ;
 		close2;
 		cutin "job_ko03",255;
 		end;
 	case 2:
 		cutin "job_ko01",2;
-		mes "‐^1A95E6謎の老人は孫に昔話を聞かせるような";
-		mes "　静かな声で語り始めた^000000‐";
+		mes "-^1A95E6The mysterious Old Man began to speak in a quiet voice, as if he were telling his grandchildren an old story^000000-";
 		next;
-		mes "[謎の老人]";
-		mes "あまりにも長い間語られなかったため";
-		mes "今のアマツに住まうものは";
-		mes "誰も覚えていないじゃろう。";
+		mes "[Mysterious Old Man]";
+		mes "It was not told for so long that no one living in Amatsu today will remember it." ;
 		next;
-		mes "[謎の老人]";
-		mes "城主の影となって働き";
-		mes "城主のために生きることを選んだ";
-		mes "一族があったのじゃ。";
+		mes "[Mysterious Old Man]";
+		mes "There was a family that chose to work in the shadow of the lord of the castle and live for him." ;
 		next;
-		mes "[謎の老人]";
-		mes "主のためならば";
-		mes "どんな困難なことでもなしとげる";
-		mes "忠実なる一族……。";
+		mes "[Old Man of Mystery]";
+		mes "A loyal clan that would do anything difficult for the Lord. ......." ;
 		next;
-		mes "[謎の老人]";
-		mes "忍者や闇の一族とも呼ばれていたが";
-		mes "決して一族が望んで";
-		mes "呼ばれていたわけではなかった。";
+		mes "[Old Man of Mystery]";
+		mes "They were also called the Ninja or dark clan, but never because the clan wanted to be called that." ;
 		next;
-		mes "[謎の老人]";
-		mes "彼らは城主の手足とも";
-		mes "いうべき存在だったが";
-		mes "その能力の高さ故に";
-		mes "問題が発生してしまった。";
+		mes "[Mysterious Old Man]";
+		mes "They were the limbs of the lord of the castle, but because of their abilities, they caused problems." ;
 		next;
-		menu "問題とは？",-;
-		mes "[謎の老人]";
-		mes "主たる城主でさえ全体像を掴めない";
-		mes "徹底した秘密組織。";
+		menu "What is the problem?" ,-;
+		mes "[Mysterious Old Man]";
+		mes "A thoroughly secretive organization in which even the principal castle owner cannot get the whole picture." ;
 		next;
-		mes "[謎の老人]";
-		mes "一族の存在に気づいた者たちが";
-		mes "執拗に調べたが、";
-		mes "情報を得ることはできなかった。";
+		mes "[Mysterious Old Man]";
+		mes "Those who became aware of the clan's existence investigated relentlessly, but were unable to obtain any information." ;
 		next;
-		mes "[謎の老人]";
-		mes "やがて、主である城主にも";
-		mes "恐れられるようになり";
-		mes "しだいに遠ざけられてしまった……。";
+		mes "[Mysterious Old Man]";
+		mes "Eventually, even the lord of the castle became afraid of him and gradually kept him away. ......" ;
 		next;
-		mes "[謎の老人]";
-		mes "城主の側を離れることになっても";
-		mes "一族は主を裏切ることはなかった……。";
+		mes "[Old Man of Mystery]";
+		mes "Even though he had to leave the castle lord's side, the family never betrayed the lord. ......." ;
 		next;
-		menu "忠義に厚い一族だったのですね",-;
+		menu "You were a loyal family.",-;
 		cutin "job_ko03",2;
-		mes "[謎の老人]";
-		mes "そう、忠義が厚過ぎる";
-		mes "くらいじゃった……。";
+		mes "[Mysterious Old Man]";
+		mes "Yes, they were too loyal. ......." ;
 		next;
 		set CHANGE_KO,3;
 		chgquest 5132,5133;
-		mes "‐^1A95E6老人はいっそうさびしそうな";
-		mes "　表情になってしまった。^000000";
-		mes "　引き続き、話しかけよう‐";
+		mes "-^1A95E6Old Man looked even more desolate. ^000000Continue talking to him-";
 		close2;
 		cutin "job_ko02",255;
 		end;
 	case 3:
 		cutin "job_ko03",2;
-		mes "[謎の老人]";
-		mes "一族はあまりにも長い時間";
-		mes "影に隠れてしまっていた。";
-		mes "今の城主は一族のことを";
-		mes "知りもしないじゃろう。";
+		mes "[Mysterious Old Man]";
+		mes "The family has been hiding in the shadows for far too long." ;
+		mes "The current lord of the castle probably doesn't even know about the clan." ;
 		next;
-		menu "…………",-;
+		menu "............" ,-;
 		cutin "job_ko01",2;
-		mes "[謎の老人]";
-		mes "わしは忍者、";
-		mes "または闇の一族と呼ばれた一族の";
-		mes "最後の導き手、ギオンというものじゃ。";
+		mes "[Mysterious Old Man]";
+		mes "I am Ninja, or Gion, the last guide of the clan called the dark clan." ;
 		next;
-		if(select("もう休みなさい","さらなる極みに達したいです") == 1) {
+		if(select("Rest now", "I want to reach further extremes") == 1) {
 			cutin "job_ko04",2;
-			mes "[導き手 ギオン]";
-			mes "……この老いぼれの命を欲する";
-			mes "暗殺者だったのか？";
+			mes "[Guiding hand, Guion]";
+			mes "...... Were you an assassin who wanted this old man's life?" ;
 			next;
-			mes "[導き手 ギオン]";
-			mes "それで一族に関心を持ったのか……";
-			mes "じゃが、簡単にくれてやる訳には";
-			mes "いかぬな。";
+			mes "[Guiding Hand, Guion]"; mes "[Guiding Hand, Guion]
+			mes "Is that why you took an interest in the family ......?" ;
+			mes "But I'm not going to give it to you so easily." ;
 			next;
-			mes "[導き手 ギオン]";
-			mes "命まで取るつもりはないが……";
+			mes "[Guide Guion]";
+			mes "I'm not going to take your life, but ......." ;
 			next;
-			mes "‐^1A95E6大きな衝撃を受け";
-			mes "　意識が遠のいてゆく……^000000‐";
+			mes "-^1A95E6I get a big shock and my consciousness fades away. ...... ^000000-";
 			close2;
 			percentheal -99,0;
 			warp "amatsu.gat",147,136;
 			end;
 		}
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "極み……か。";
-		mes "久しぶりに耳にした言葉じゃ。";
+		mes "[guiding hand gion]";
+		mes "Polarity ...... ka." ;
+		mes "I haven't heard that word in a long time." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "そなたがここに現れたのも";
-		mes "何かの導きかもしれぬ……。";
+		mes "[Guiding hand, Guion]";
+		mes "It may be some kind of guidance that brought you here. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "じゃが、すまないことに";
-		mes "わしが教えられることは何もない。";
+		mes "[Guiding Hand Guion]"; mes "[Guiding Hand Guion]"; mes "[Guiding Hand Guion]
+		mes "But I am sorry, there is nothing I can teach you." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "しかしそなたが歩むべき";
-		mes "^33CC71" +(Sex? "影狼": "朧")+ "への道^000000に導くだけじゃ。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "But I can only guide you to the ^33CC71" +(Sex? "Shadow Wolf": "Oboro")+ "path^000000." ;
 		next;
-		mes "‐^1A95E6意識が遠のき";
-		mes "　ギオンの声が遠くから聞こえてくる^000000‐";
+		mes "-^1A95E6Consciousness fades away and Gion's voice is heard from afar^000000-";
 		next;
 		set CHANGE_KO,4;
 		chgquest 5133,5134;
-		mes "[導き手 ギオン]";
-		mes "導き手であるわしと共に";
-		mes (Sex? "影狼": "朧")+ "への道を歩む準備ができたなら";
-		mes "また会いに来るがよい。";
+		mes "[Guiding hand Gion]";
+		mes "With me, the guiding hand";
+		mes (Sex? "Shadow Wolf": "Oboro")+ "If you are ready to walk the path to";
+		mes "Come again to see me." ;
 		close2;
 		warp "amatsu.gat",147,136;
 		end;
 	case 4:
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "ふむ……少しじゃが";
-		mes "^33CC71" +(Sex? "影狼": "朧")+ "への道^000000に恐れをなし";
-		mes "来ないのではないかと思ったが……";
-		mes "いらぬ心配だったようじゃ。";
+		mes "[guiding hand guion]";
+		mes "hmm ...... I thought you might not be afraid to come ^000000 to ^33CC71" +(Sex? "Shadow Wolf": "Oboro")+ "the way to ......" ;
+		mes "It seems that it was an unnecessary worry." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "さらなる極みに歩みだすためには";
-		mes "誘惑に負けない正しき心と";
-		mes "未知の世界にもうろたえない";
-		mes "強い精神が必要じゃ。";
+		mes "[Guiding hand, Gion]";
+		mes "In order to step into the next level, you must have a right mind to resist temptation, and a strong spirit that will not falter in the face of the unknown." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "一族の先祖は4種の試練によって";
-		mes "その精神を手に入れた。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]";
+		mes "The ancestors of the family acquired their spirit through four kinds of trials." ;
 		next;
-		menu "4種の試練？",-;
+		menu "Four kinds of trials?" ,-;
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "そうじゃ、";
-		mes "先祖は^087FF8知識、生存、武器、戦闘^000000と";
-		mes "4種の試練に挑み";
-		mes "正しい心と精神を養った。";
+		mes "[Guiding hand, Gion]";
+		mes "Yes, the ancestors cultivated the right mind and spirit by challenging the four kinds of trials: ^087FF8Knowledge, Survival, Weaponry, and Combat^000000." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "試練がどんなものか";
-		mes "知りたいようじゃな。";
-		mes "説明してやってもよいぞ。";
+		mes "[Guiding hand, Gion]";
+		mes "You seem to want to know what the ordeals are like." ;
+		mes "I can explain it to you." ;
 		while(1) {
 			next;
-			switch(select("知識の試練","生存の試練","武器の試練","戦闘の試練")) {
+			switch(select("Test of Knowledge", "Test of Survival", "Test of Weapons", "Test of Combat")) {
 			case 1:
-				mes "[導き手 ギオン]";
-				mes "城主の補佐をつとめるためには";
-				mes "数多くの知識が必要じゃ。";
-				mes "そのための試練じゃ。";
+				mes "[Guiding hand, Guion]";
+				mes "To serve as an assistant to the lord of the castle, you must have a great deal of knowledge." ;
+				mes "The trials are for that purpose." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "10問の問題に答え";
-				mes "9問以上正解すれば";
-				mes "試練を乗り越えられるのじゃ。";
+				mes "[Guide Guion]";
+				mes "Answer 10 questions and get at least 9 correct to get through the ordeal." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "普段から知識を積み重ねた者なら";
-				mes "問題ないじゃろう。";
+				mes "[Guide Guion]"; mes "[Guidance Guion]"; mes "[Guidance Guion]"; mes "[Guidance Guion]
+				mes "If you have accumulated knowledge on a regular basis, you should have no problem." ;
 				set '@flag,'@flag|1;
 				if('@flag == 15)
 					break;
-				mes "次はどの試練について話そうかのう？";
+				mes "Which ordeal shall we talk about next?" ;
 				continue;
 			case 2:
-				mes "[導き手 ギオン]";
-				mes "任務が常に安全とは限らないのでな。";
-				mes "生存は重要なのじゃ。";
+				mes "[Guide Guion]";
+				mes "Because the mission is not always safe." ;
+				mes "Survival is important." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "この試練を先祖は";
-				mes "スゴロクと呼んでおった。";
-				mes "サイコロで出た目の数だけ";
-				mes "進む試練じゃ。";
+				mes "[Guide Guion]";
+				mes "This ordeal was called Sugoroku by our ancestors." ;
+				mes "The ordeal is to advance as many times as the dice roll." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "まあ、スゴロクと言った時点で";
-				mes "すぐに想像がついたじゃろう。";
+				mes "[Guide Guion]";
+				mes "Well, you guessed it as soon as I said 'slog'." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "じゃが、試練と呼ばれるくらいじゃ。";
-				mes "単なる娯楽とはひと味違うぞ。";
+				mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+				mes "But it's so called an ordeal." ;
+				mes "It's not just a pastime." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "そなたを助けるマスもあれば";
-				mes "邪魔をするマスもあるじゃろう。";
+				mes "[Guide Guion]";
+				mes "There will be squares to help you and squares to hinder you." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "賢く対応すれば";
-				mes "乗り越えられるじゃろう。";
+				mes "[Guide Guion]"; mes "[Guide Guion]"; mes "[Guide Guion]"; mes "[Guide Guion]
+				mes "If you deal with them wisely, you will overcome them." ;
 				set '@flag,'@flag|2;
 				if('@flag == 15)
 					break;
-				mes "次はどの試練について話そうかのう？";
+				mes "Which ordeal can we talk about next?" ;
 				continue;
 			case 3:
-				mes "[導き手 ギオン]";
-				mes "一族は独特の武器を使っていたのじゃ。";
-				mes "そのほとんどは自分たちで";
-				mes "作ったものじゃった。";
+				mes "[Guiding hand, Guion]";
+				mes "The family used a unique weapon." ;
+				mes "Most of them were of their own making." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "自分だけの武器を作り出した者は";
-				mes "祝福されし者と呼ばれていたそうじゃ。";
+				mes "[Guiding hand, Guion]";
+				mes "They say that those who created their own unique weapons were called the blessed ones." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "自分が使う武器を作り";
-				mes "その武器を強化することが";
-				mes "この試練の目標じゃ。";
+				mes "[Guiding Hand, Guion]"; mes "[Guiding Hand, Guion]"; mes "[Guiding Hand, Guion]
+				mes "The goal of this ordeal is to create a weapon that you will use and to strengthen that weapon." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "そなたが祝福されし者と";
-				mes "呼ばれることを祈ろう。";
+				mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+				mes "I pray that you may be called the Blessed One." ;
 				set '@flag,'@flag|4;
 				if('@flag == 15)
 					break;
-				mes "次はどの試練について話そうかのう？";
+				mes "Which ordeal shall we talk about next?" ;
 				continue;
 			case 4:
-				mes "[導き手 ギオン]";
-				mes "任務は一人だけに与えられるとは";
-				mes "限らない。";
-				mes "一つの任務を何人かで遂行することも";
-				mes "当たり前のようにある。";
+				mes "[Guide Guion]";
+				mes "The task is not always given to just one person." ;
+				mes "It is also common for a single mission to be carried out by several people." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "戦闘の試練は知識、生存、武器の試練を";
-				mes "全て乗り越えた者だけが挑戦できる。";
-				mes "つまり最後の試練ということじゃ……。";
+				mes "[Guiding hand guion]";
+				mes "The ordeal of combat can only be attempted by those who have overcome all the ordeals of knowledge, survival, and weaponry." ;
+				mes "So you mean the last ordeal. ......." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "他の試練とは違い";
-				mes "他人と競うことが要求される……。";
+				mes "[Guiding Guidance Guion]";
+				mes "Unlike the other ordeals, it requires you to compete with others. ......." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "目標はただひとつ！";
-				mes "最も早く目標を倒した一人だけが";
-				mes "試練を乗り越えられるわけじゃ。";
+				mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+				mes "There is only one goal!" ;
+				mes "Only the one who defeats the target the fastest will survive the ordeal." ;
 				next;
-				mes "[導き手 ギオン]";
-				mes "まあ、そなたが試練を受ける時に";
-				mes "競う者がいなければ";
-				mes "それもまたそなたの運じゃ。";
+				mes "[Guide Guion]";
+				mes "Well, if there is no one to compete with you when you go through the ordeal, then that too is your luck." ;
 				set '@flag,'@flag|8;
 				if('@flag == 15)
 					break;
-				mes "次はどの試練について話そうかのう？";
+				mes "Which ordeal can we talk about next?" ;
 				continue;
 			}
 			break;
 		}
 		next;
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "百聞は一見にしかず、とも言うしな。";
-		mes "直接赴くのが一番効果的じゃろう。";
+		mes "[guiding hand guion]";
+		mes "Seeing is believing, as they say." ;
+		mes "It would be most effective to go there in person." ;
 		next;
 		set CHANGE_KO,5;
 		chgquest 5134,5135;
-		mes "[導き手 ギオン]";
-		mes "試練を受ける準備ができたなら";
-		mes "もう一度声をかけるがよい。";
+		mes "[Guide Guion]";
+		mes "If you are ready to be tested, you may call out again." ;
 		close2;
 		cutin "job_ko02",255;
 		end;
 	case 5:
 		cutin "job_ko03",2;
-		mes "[導き手 ギオン]";
-		mes "本当に久しぶりじゃ……";
-		mes "このように心が躍るのは。";
+		mes "[Guiding hand, Guion]";
+		mes "It's been a really long time. ......" ;
+		mes "My heart is so excited like this." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "新しき道に進み行く若者のおかげか";
-		mes "年甲斐もなく興奮しておるわい。";
+		mes "[Guiding hand, Guion]";
+		mes "I am excited beyond my years, thanks to a young man who is going down a new path." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "試練については、すでに説明したな。";
-		mes "では、一族のことも少し教えよう。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]";
+		mes "I have already explained the ordeal to you." ;
+		mes "Now let me tell you a little about the clan." ;
 		next;
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "一族は二人の戦士から";
-		mes "始まったのじゃ……。";
+		mes "[Guiding hand, Guion]";
+		mes "The clan began with two warriors. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "太陽にたとえられし";
-		mes "影に潜む狼のごとき戦士";
-		mes "影狼……。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "The Shadow Wolf, a warrior like the wolf that lurks in the shadows, likened to the sun. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "月にたとえられし";
-		mes "淡き月光のごとき戦士";
-		mes "朧……。";
+		mes "[Guiding hand Gion]";
+		mes "Oboro, the warrior who is like the pale moonlight compared to the moon. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "太陽と月";
-		mes "どちらも世界を照らすものだが";
-		mes "二人の戦士は似て異なる存在じゃった。";
+		mes "[Guiding hand Gion]";
+		mes "The sun and the moon both illuminate the world, but the two warriors are similar and different." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "互いに反目していた時期もあった。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "There was a time when they were at odds with each other." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "だが同じ一族になるまでには";
-		mes "それほど長くの時間は";
-		mes "必要としていなかったのじゃ。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "But it did not take long before we were of the same clan." ;
 		next;
-		menu "いったい何があったのですか？",-;
+		menu "What in the world happened to you?" ,-;
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "ふぉふぉふぉ。";
-		mes "話し続けたせいか少し疲れたわい。";
-		mes "試練を乗り越えてきたら";
-		mes "続きを聞かせよう。";
+		mes "[Guiding hand, Guion]";
+		mes "Woo hoo hoo." ;
+		mes "I'm a little tired from all the talking." ;
+		mes "I'll let you hear the rest of the story when I get through the ordeal." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "始めに選ぶ試練はどれじゃ？";
+		mes "[Guiding Guidance Guion]";
+		mes "Which ordeal would you choose to begin with?" ;
 		next;
-		switch(select("知識の試練","生存の試練","武器の試練")) {
+		switch(select("Test of Knowledge", "Test of Survival", "Test of Weapons")) {
 		case 1:
-			mes "[導き手 ギオン]";
-			mes "^339CCC知識の試練^000000から始めるのか？";
-			mes "ふぉふぉふぉ。";
-			mes "そなたがこの道を選んだことを";
-			mes "あやつが知った時の顔が";
-			mes "楽しみじゃの。";
+			mes "[Guide Guion]";
+			mes "^339CCCC Do we start with the ordeal of knowledge ^000000?" ;
+			mes "Woo hoo hoo." ;
+			mes "I can't wait to see the look on his face when he finds out that you have chosen this path." ;
 			next;
-			menu "あやつ？",-;
+			menu "That guy?" ,-;
 			set CHANGE_KO,6;
 			setquest 5136;
-			mes "[導き手 ギオン]";
-			mes "ふぉふぉふぉ。";
-			mes "会ってからのお楽しみじゃ。";
-			mes "知識の試練はこっちじゃ。";
+			mes "[Guiding hand, Guion]";
+			mes "Woohoo, woohoo." ;
+			mes "You'll have to wait until we meet." ;
+			mes "The test of knowledge is this way." ;
 			close2;
 			warp "job_ko.gat",72,128;
 			end;
 		case 2:
-			mes "[導き手 ギオン]";
-			mes "^339CCC生存の試練^000000から始めるのか？";
-			mes "孤独な試練となるかも知れぬが……。";
+			mes "[guiding hand guion]";
+			mes "^339CCCC survival ordeal^000000 to start?" ;
+			mes "It may be a lonely ordeal. ......." ;
 			next;
 			set CHANGE_KO,6;
 			setquest 5137;
-			mes "[導き手 ギオン]";
-			mes "そなたならいらぬ心配じゃろう。";
-			mes "生存の試練はこっちじゃ。";
+			mes "[Guiding hand, Gion]";
+			mes "You have nothing to worry about." ;
+			mes "The test of survival is this way." ;
 			close2;
 			warp "job_ko.gat",62,16;
 			end;
 		case 3:
-			mes "[導き手 ギオン]";
-			mes "^339CCC武器の試練^000000から始めるのか？";
-			mes "では試練の前に……。";
+			mes "[guiding hand guion]";
+			mes "^339CCCC weapon trials^000000 to start?" ;
+			mes "Then ...... before the ordeal." ;
 			next;
 			set CHANGE_KO,6;
 			setquest 5138;
 			getitem 1002,5;
 			getitem 1010,1;
-			mes "‐鉄鉱石を5個";
-			mes "　プラコンを1個受け取りました‐";
+			mes "-5 iron ore received 1 Phracon -";
 			next;
-			mes "[導き手 ギオン]";
-			mes "それが必要になるじゃろう。";
-			mes "武器の試練はこっちじゃ。";
+			mes "[Guide Guion]";
+			mes "You will need that." ;
+			mes "The weapon trials are this way." ;
 			close2;
 			warp "job_ko.gat",121,129;
 			end;
@@ -571,21 +469,21 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 		set '@test2,checkquest(5137);
 		set '@test3,checkquest(5138);
 		if('@test1) {
-			set '@test$,"知識";
+			set '@test$, "knowledge";
 			if('@test1 & 0x1) {
 				set '@x,72;
 				set '@y,128;
 			}
 		}
 		else if('@test2) {
-			set '@test$,"生存";
+			set '@test$, "survival";
 			if('@test2 & 0x1) {
 				set '@x,62;
 				set '@y,16;
 			}
 		}
 		else if('@test3) {
-			set '@test$,"武器";
+			set '@test$, "weapon";
 			if('@test3 & 0x1) {
 				set '@x,121;
 				set '@y,129;
@@ -593,139 +491,124 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 		}
 		if('@x && '@y) {
 			cutin "job_ko04",2;
-			mes "[導き手 ギオン]";
-			mes "^339CCC" +'@test$+ "の試練^000000を受けているのか。";
-			mes "再び試練に向かうかね？";
+			mes "[guiding hand guion]";
+			mes "^339CCC" +'@test$+ "Are you undergoing the ordeal ^000000?" ;
+			mes "Are you heading for the ordeal again?" ;
 			next;
-			switch(select("試練の場へ向かう","街に戻ります")) {
+			switch(select("Heading to the trials", "Back to town")) {
 			case 1:
-				mes "[導き手 ギオン]";
-				mes '@test$+ "の試練はこっちじゃ。";
+				mes "[Guide Guion]";
+				mes ""+'@test$+" ordeal is this way."" ;
 				close2;
 				warp "job_ko.gat",'@x,'@y;
 				end;
 			case 2:
-				mes "[導き手 ギオン]";
-				mes "街まで送ろう。";
+				mes "[Guide Guion]";
+				mes "Let's get you back to town." ;
 				close2;
 				warp "amatsu.gat",147,136;
 				end;
 			}
 		}
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "^339CCC" +'@test$+ "の試練^000000を乗り越えて来たか。";
+		mes "[guiding hand gion]";
+		mes "Have you been through the ^000000 ordeal of ^339CCC "+'@test$+"?" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "2人とも満足できるような";
-		mes "結果が得られたかな？";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "Did we both get satisfactory results?" ;
 		next;
-		menu "話の続きを……",-;
+		menu "Continue the story: ......" ,-;
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "そう急かさなくても覚えておる。";
-		mes "……どこまで話をしたかのう。";
-		mes "……ああ、そうじゃったな。";
+		mes "[Guiding hand, Guion]";
+		mes "Don't be so hasty, I remember." ;
+		mes "...... Where were we?" ;
+		mes "...... Oh, yes, you did." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "太陽にたとえられし";
-		mes "影に潜む狼のごとき戦士";
-		mes "影狼……。";
+		mes "[Guiding hand, Gion]";
+		mes "The Shadow Wolf, a warrior like the wolf that lurks in the shadows, likened to the sun. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "月にたとえられし";
-		mes "淡き月光のごとき戦士";
-		mes "朧……。";
+		mes "[Guiding hand Gion]";
+		mes "Oboro, the warrior who is like the pale moonlight compared to the moon. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "もともと二人の仲は良くなかった。";
-		mes "性格も考え方も、すべてが";
-		mes "正反対じゃった……。";
+		mes "[Guiding Hand Guion]"; mes "[Guiding Hand Guion]"; mes "[Guiding Hand Guion]
+		mes "Originally, the two were not on good terms." ;
+		mes "Their personalities and ways of thinking were all opposites. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "二人が最初に出会ったのは";
-		mes "戦場じゃった……。";
-		mes "それも敵同士として相まみえたのじゃ。";
+		mes "[Guiding Guidance Guion]";
+		mes "They first met on the battlefield ......." ;
+		mes "They also met as enemies." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "そのような状況では";
-		mes "互いに傷つけあい、";
-		mes "憎みあうしかなかったのじゃ……。";
+		mes "[Guide Guion]";
+		mes "Under such circumstances, they had no choice but to hurt and hate each other. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "じゃが、それが戦争というものじゃ。";
+		mes "[Guide Guion]"; mes "[Guidance Guion]"; mes "[Guidance Guion]"; mes "[Guidance Guion]
+		mes "But that's what war is." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "昨日までは隣で笑っていた仲間が";
-		mes "今日はもういない……。";
-		mes "そういう場所じゃ。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "The friends who were laughing next to me yesterday are no longer with me today. ......." ;
+		mes "That's the kind of place it is." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "ましてや敵同士。";
-		mes "仲間を奪ったものに対する憎悪は";
-		mes "増してゆくばかりじゃ……。";
+		mes "[Guide Guion]";
+		mes "And moreover, enemies of each other." ;
+		mes "Your hatred for the one who took your friends from you will only grow. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "少し疲れた。";
-		mes "続きはもう一つ試練を";
-		mes "乗り越えた後にでも話そう。";
+		mes "[Guide Guion]";
+		mes "I'm a little tired." ;
+		mes "We can talk about the rest after we get through one more ordeal." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "二つ目はどの試練かね？ ";
-		if(!'@test1)
-			set '@str1$,"知識の試練";
-		if(!'@test2)
-			set '@str2$,"生存の試練";
-		if(!'@test3)
-			set '@str3$,"武器の試練";
+		mes "[Guide Guion]";
+		mes "Which ordeal is the second? ";
+		if(!' @test1)
+			set '@str1$, "Test of Knowledge";
+		if(!' @test2)
+			set '@str2$, "Trial of Survival"; if(!' @test2)
+		if(!' @test3)
+			set '@str3$, "Trial of Weapons";
 		next;
 		switch(select('@str1$,'@str2$,'@str3$)) {
 		case 1:
-			mes "[導き手 ギオン]";
-			mes "^339CCC知識の試練^000000か。";
-			mes "ふぉふぉふぉ。";
-			mes "そなたがこの道を選んだことを";
-			mes "あやつが知った時の顔が";
-			mes "楽しみじゃの。";
+			mes "[Guiding hand, Guion]";
+			mes "^339CCCC knowledge ordeal^000000?" ;
+			mes "Woohoo." ;
+			mes "I can't wait to see the look on his face when he finds out you chose this path." ;
 			next;
-			menu "あやつ？",-;
+			menu "That guy?" ,-;
 			set CHANGE_KO,7;
 			setquest 5136;
-			mes "[導き手 ギオン]";
-			mes "ふぉふぉふぉ。";
-			mes "会ってからのお楽しみじゃ。";
-			mes "知識の試練はこっちじゃ。";
+			mes "[Guiding hand, Guion]";
+			mes "Woohoo, woohoo." ;
+			mes "You'll have to wait until we meet." ;
+			mes "The test of knowledge is this way." ;
 			close2;
 			warp "job_ko.gat",72,128;
 			end;
 		case 2:
-			mes "[導き手 ギオン]";
-			mes "^339CCC生存の試練^000000か。";
-			mes "孤独な試練となるかも知れぬが……。";
+			mes "[guiding hand guion]";
+			mes "^339CCC survival ordeal^000000?" ;
+			mes "It may be a lonely ordeal. ......." ;
 			next;
 			set CHANGE_KO,7;
 			setquest 5137;
-			mes "[導き手 ギオン]";
-			mes "そなたならいらぬ心配じゃろう。";
-			mes "生存の試練はこっちじゃ。";
+			mes "[Guiding hand, Gion]";
+			mes "You have nothing to worry about." ;
+			mes "The test of survival is this way." ;
 			close2;
 			warp "job_ko.gat",62,16;
 			end;
 		case 3:
-			mes "[導き手 ギオン]";
-			mes "^339CCC武器の試練^000000か。";
-			mes "では試練の前に……。";
+			mes "[guiding hand guion]";
+			mes "^339CCCC weapon trials^000000?" ;
+			mes "So before the ordeal, ......." ;
 			next;
 			set CHANGE_KO,7;
 			setquest 5138;
 			getitem 1002,5;
 			getitem 1010,1;
-			mes "‐鉄鉱石を5個";
-			mes "　プラコンを1個受け取りました‐";
+			mes "-5 iron ore received 1 Phracon -";
 			next;
-			mes "[導き手 ギオン]";
-			mes "それが必要になるじゃろう。";
-			mes "武器の試練はこっちじゃ。";
+			mes "[Guide Guion]";
+			mes "You will need that." ;
+			mes "The weapon trials are this way." ;
 			close2;
 			warp "job_ko.gat",121,129;
 			end;
@@ -735,36 +618,36 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 		set '@test2,checkquest(5137);
 		set '@test3,checkquest(5138);
 		if('@test1 & 0x1) {
-			set '@test$,"知識";
+			set '@test$, "knowledge";
 			set '@x,72;
 			set '@y,128;
 		}
 		else if('@test2 & 0x1) {
-			set '@test$,"生存";
+			set '@test$, "Survival";
 			set '@x,62;
 			set '@y,16;
 		}
 		else if('@test3 & 0x1) {
-			set '@test$,"武器";
+			set '@test$, "Weapon"; set '@x,62; set '@y,16; }
 			set '@x,121;
 			set '@y,129;
 		}
 		if('@x && '@y) {
 			cutin "job_ko04",2;
-			mes "[導き手 ギオン]";
-			mes "^339CCC" +'@test$+ "の試練^000000を受けているのか。";
-			mes "再び試練に向かうかね？";
+			mes "[guiding hand guion]";
+			mes "^339CCC" +'@test$+ "Are you undergoing the ordeal ^000000?" ;
+			mes "Are you heading for the ordeal again?" ;
 			next;
-			switch(select("試練の場へ向かう","街に戻ります")) {
+			switch(select("Heading to the trials", "Back to town")) {
 			case 1:
-				mes "[導き手 ギオン]";
-				mes '@test$+ "の試練はこっちじゃ。";
+				mes "[Guide Guion]";
+				mes ""+'@test$+" ordeal is this way."" ;
 				close2;
 				warp "job_ko.gat",'@x,'@y;
 				end;
 			case 2:
-				mes "[導き手 ギオン]";
-				mes "街まで送ろう。";
+				mes "[Guide Guion]";
+				mes "Let's get you back to town." ;
 				close2;
 				warp "amatsu.gat",147,136;
 				end;
@@ -772,124 +655,105 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 		}
 		if('@test1 & 0x8 && '@test2 & 0x8) {
 			set '@type,3;
-			set '@str$,"知識、生存の試練";
+			set '@str$, "Knowledge, test of survival";
 		}
 		else if('@test1 & 0x8 && '@test3 & 0x8) {
 			set '@type,2;
-			set '@str$,"知識、武器の試練";
+			set '@str$, "Knowledge, trial of arms";
 		}
 		else if('@test2 & 0x8 && '@test3 & 0x8) {
 			set '@type,1;
-			set '@str$,"生存、武器の試練";
+			set '@str$, "Survival, weapon trials";
 		}
 		cutin "job_ko04",2;
-		mes "[導き手 ギオン]";
-		mes "^339CCC" +'@str$+ "^000000を乗り越えたか。";
+		mes "[guiding hand, gion]";
+		mes "^339CCC" +'@str$+ "Did you survive ^000000?" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "これで二つ……。";
-		mes "何かしら得るものがあったかな？";
+		mes "[guiding hand gion]";
+		mes "Now you have two ......." ;
+		mes "Did you get something out of it?" ;
 		next;
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "では、続きを話そう。";
+		mes "[guiding hand guion]";
+		mes "So let's talk about the rest of the story." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "太陽にたとえられし";
-		mes "影に潜む狼のごとき戦士";
-		mes "影狼……。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "The Shadow Wolf, a warrior like the wolf that lurks in the shadows, likened to the sun. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "月にたとえられし";
-		mes "淡き月光のごとき戦士";
-		mes "朧……。";
+		mes "[Guiding hand Gion]";
+		mes "Oboro, the warrior who is like the pale moonlight compared to the moon. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "二人の戦士が戦場で敵として";
-		mes "出会ったところまでは話したな。";
+		mes "[Guiding Hand Gion]";
+		mes "I told you where the two warriors met as enemies on the battlefield." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "長きに渡る戦争も、ついに終わる時が来た。";
-		mes "平和が訪れたわけじゃが";
-		mes "生き残った者たちも";
-		mes "傷つき疲れ果てていた……。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "The time has finally come for the long war to end." ;
+		mes "Peace has come, and even the survivors are wounded and exhausted. ......" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "二人の戦士もまた、戦いを止めた。";
-		mes "お互いに命を狙うこともなくなったが";
-		mes "この二人にも癒しの時間が必要だった。";
+		mes "[Guiding hand, Gion]";
+		mes "The two warriors also stopped fighting." ;
+		mes "They no longer tried to take each other's lives, but these two also needed time to heal." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "そんな二人の前に一人の男が現れた。";
-		mes "詳しいことは伝えられていないが";
-		mes "二人の戦士の忠誠を得たのは";
-		mes "その男だったと言われておる。";
+		mes "[Guiding hand, Guion]";
+		mes "Then a man appeared before them." ;
+		mes "It is said that it was that man who won the loyalty of the two warriors, although the details are not told." ;
 		next;
-		menu "その男とは？",-;
-		mes "[導き手 ギオン]";
-		mes "その男に関して伝わっていることは";
-		mes "ほとんどないのじゃ。";
-		mes "ただ二人の忠誠を得たとだけ";
-		mes "記録には残っている。";
+		menu "Who is that man?" ,-;
+		mes "[Guiding hand, Guion]";
+		mes "There is little that has been handed down about the man." ;
+		mes "The only thing that is recorded is that he had the loyalty of two people." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "おそらく、今のアマツ城主の";
-		mes "先祖ではないかと";
-		mes "ワシは考えておる。";
+		mes "[Guide Guion]";
+		mes "I believe they are probably the ancestors of the current Lord of Amatsu Castle." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "一族に関する話も";
-		mes "残り少なくなってきたのう。";
-		mes "三つ目の試練を乗り越えたなら";
-		mes "また続きを話そう。";
+		mes "[Guiding Hand Guion]"; mes "[Guiding Hand Guion]";
+		mes "The story about the family is running out." ;
+		mes "If you've survived the third ordeal, we'll talk again." ;
 		next;
 		switch('@type) {
 		case 1:
-			mes "[導き手 ギオン]";
-			mes "^339CCC知識の試練^000000か。";
-			mes "ふぉふぉふぉ。";
-			mes "そなたがこの道を選んだことを";
-			mes "あやつが知った時の顔が";
-			mes "楽しみじゃの。";
+			mes "[Guiding hand, Guion]";
+			mes "^339CCCC knowledge test ^000000?" ;
+			mes "Woohoo." ;
+			mes "I can't wait to see the look on his face when he finds out you chose this path." ;
 			next;
-			menu "あやつ？",-;
+			menu "That guy?" ,-;
 			set CHANGE_KO,8;
 			setquest 5136;
-			mes "[導き手 ギオン]";
-			mes "ふぉふぉふぉ。";
-			mes "会ってからのお楽しみじゃ。";
-			mes "知識の試練はこっちじゃ。";
+			mes "[Guiding hand, Guion]";
+			mes "Woohoo, woohoo." ;
+			mes "You'll have to wait until we meet." ;
+			mes "The test of knowledge is this way." ;
 			close2;
 			warp "job_ko.gat",72,128;
 			end;
 		case 2:
-			mes "[導き手 ギオン]";
-			mes "^339CCC生存の試練^000000か。";
-			mes "孤独な試練となるかも知れぬが……。";
+			mes "[guiding hand guion]";
+			mes "^339CCC survival ordeal^000000?" ;
+			mes "It may be a lonely ordeal. ......." ;
 			next;
 			set CHANGE_KO,8;
 			setquest 5137;
-			mes "[導き手 ギオン]";
-			mes "そなたならいらぬ心配じゃろう。";
-			mes "生存の試練はこっちじゃ。";
+			mes "[Guiding hand, Gion]";
+			mes "You have nothing to worry about." ;
+			mes "The test of survival is this way." ;
 			close2;
 			warp "job_ko.gat",62,16;
 			end;
 		case 3:
-			mes "[導き手 ギオン]";
-			mes "^339CCC武器の試練^000000か。";
-			mes "では試練の前に……。";
+			mes "[guiding hand guion]";
+			mes "^339CCCC weapon trials^000000?" ;
+			mes "So before the ordeal, ......." ;
 			next;
 			set CHANGE_KO,8;
 			setquest 5138;
 			getitem 1002,5;
 			getitem 1010,1;
-			mes "‐鉄鉱石を5個";
-			mes "　プラコンを1個受け取りました‐";
+			mes "-5 iron ore received 1 Phracon -";
 			next;
-			mes "[導き手 ギオン]";
-			mes "それが必要になるじゃろう。";
-			mes "武器の試練はこっちじゃ。";
+			mes "[Guide Guion]";
+			mes "You will need that." ;
+			mes "The weapon trials are this way." ;
 			close2;
 			warp "job_ko.gat",121,129;
 			end;
@@ -899,198 +763,166 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 		set '@test2,checkquest(5137);
 		set '@test3,checkquest(5138);
 		if('@test1 & 0x1) {
-			set '@test$,"知識";
+			set '@test$, "knowledge";
 			set '@x,72;
 			set '@y,128;
 		}
 		else if('@test2 & 0x1) {
-			set '@test$,"生存";
+			set '@test$, "Survival";
 			set '@x,62;
 			set '@y,16;
 		}
 		else if('@test3 & 0x1) {
-			set '@test$,"武器";
+			set '@test$, "Weapon"; set '@x,62; set '@y,16; }
 			set '@x,121;
 			set '@y,129;
 		}
 		if('@x && '@y) {
 			cutin "job_ko04",2;
-			mes "[導き手 ギオン]";
-			mes "^339CCC" +'@test$+ "の試練^000000を受けているのか。";
-			mes "再び試練に向かうかね？";
+			mes "[guiding hand guion]";
+			mes "^339CCC" +'@test$+ "Are you undergoing the ordeal ^000000?" ;
+			mes "Are you heading for the ordeal again?" ;
 			next;
-			switch(select("試練の場へ向かう","街に戻ります")) {
+			switch(select("Heading to the trials", "Back to town")) {
 			case 1:
-				mes "[導き手 ギオン]";
-				mes '@test$+ "の試練はこっちじゃ。";
+				mes "[Guide Guion]";
+				mes ""+'@test$+" ordeal is this way."" ;
 				close2;
 				warp "job_ko.gat",'@x,'@y;
 				end;
 			case 2:
-				mes "[導き手 ギオン]";
-				mes "街まで送ろう。";
+				mes "[Guide Guion]";
+				mes "Let's get you back to town." ;
 				close2;
 				warp "amatsu.gat",147,136;
 				end;
 			}
 		}
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "残る試練もひとつだけとなったか。";
+		mes "[Guiding hand, Gion]";
+		mes "Is there only one ordeal left?" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "他の試練とは違い";
-		mes "他人と競うことが要求される……";
-		mes "そんな試練じゃ。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "Unlike the other ordeals, you are required to compete with others. ......" ;
+		mes "It's not that kind of ordeal." ;
 		next;
-		menu "あの……話の続きは？",-;
+		menu "That ...... What's the rest of the story?" ,-;
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "ふぉふぉふぉ、覚えていたか。";
-		mes "では続きを話そう。";
+		mes "[Guiding hand, Guion]";
+		mes "Woah woah woah, you remember." ;
+		mes "Then let's continue." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "太陽にたとえられし";
-		mes "影に潜む狼のごとき戦士";
-		mes "影狼……。";
+		mes "[Guiding hand, Guion]";
+		mes "The Shadow Wolf, a warrior like a wolf lurking in the shadows, likened to the sun. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "月にたとえられし";
-		mes "淡き月光のごとき戦士";
-		mes "朧……。";
+		mes "[Guiding hand Gion]";
+		mes "Oboro, the warrior who is like the pale moonlight compared to the moon. ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "この二人の戦士の忠誠を得た男は";
-		mes "少し変わった性格だったと";
-		mes "伝えられておる。";
+		mes "[Guiding Hand, Guion]"; mes "[Guiding Hand, Guion]
+		mes "It is said that the man who won the loyalty of these two warriors had a somewhat unusual character." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "争いよりは話し合いを優先し";
-		mes "冗談が大好きで";
-		mes "女好きだったと";
-		mes "伝えられておるのじゃ。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "It is said that he preferred discussion to conflict, loved to joke, and was fond of women." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "ふぉふぉ……";
-		mes "なぜこんな小さなことが";
-		mes "伝えられておるのかわからぬが……。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "woohoo......" ;
+		mes "I don't know why this little thing is being passed on, but ......." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "男は二人の戦士の仲を取り持つことを";
-		mes "望んだようじゃ。";
-		mes "長い戦争で二人がそう簡単には";
-		mes "打ち解けられなかったせいかも知れぬ。";
+		mes "[Guiding hand, Guion]";
+		mes "It seems that the man wished to bring the two warriors together." ;
+		mes "Maybe it's because they didn't get along so easily in the long war." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "二人の戦士を任務で組ませたり";
-		mes "密室に閉じ込めたりと";
-		mes "二人きりにさせたそうじゃ。";
+		mes "[Guide Guion]";
+		mes "They say he paired the two warriors together on missions or locked them in secret rooms, leaving them alone together." ;
 		next;
-		menu "自分が楽しんだだけでは……",-;
-		mes "[導き手 ギオン]";
-		mes "ふぉふぉふぉ、そうかも知れんのう。";
-		mes "まあ、おかげで二人の戦士は";
-		mes "晴れて結ばれることとなった。";
+		menu "If only I had enjoyed myself. ......" ,-;
+		mes "[Guiding hand, Guion]";
+		mes "Woo hoo hoo, you may be right." ;
+		mes "Well, thanks to that, the two warriors are now in a fine union." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "一族の始まり、というわけじゃな。";
+		mes "[Guiding hand, Guion]";
+		mes "The beginning of a family, I suppose." ;
 		next;
-		menu "それからどうなりましたか？ ",-;
-		mes "[導き手 ギオン]";
-		mes "惜しいことにその後のことは";
-		mes "何者かによって意図的に";
-		mes "伝えられていないようなのじゃ。";
+		menu "And then what happened? ",-;
+		mes "[Guiding hand, Guion]";
+		mes "Regrettably, what happened after that does not seem to have been deliberately communicated by anyone." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "過去にしばられることなく";
-		mes "未来へと進んで欲しかったから";
-		mes "と、わしは考えておる……。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "I think it is because I wanted him to move forward into the future without being bound by the past. ......" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "さあ、そろそろ最後の試練を";
-		mes "始めようかの？";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "Well, it's time to begin the final ordeal, isn't it?" ;
 		next;
 		set CHANGE_KO,9;
 		chgquest 5135,72900;
-		mes "[導き手 ギオン]";
-		mes "疲れているようなら";
-		mes "しばし休むのも良いかもしれん。";
-		mes "準備ができたら";
-		mes "声をかけるのじゃ。";
+		mes "[Guiding hand, Guion]";
+		mes "If you're feeling tired, you might want to rest a while." ;
+		mes "Call out to him when you are ready." ;
 		close2;
 		cutin "job_ko01",255;
 		end;
 	case 9:
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "もう少し休んでいても";
-		mes "良かったのじゃよ。";
-		mes "それとも、急ぎの用でもあるのか？";
+		mes "[Guiding hand, Guion]";
+		mes "You could have rested a little longer." ;
+		mes "Or are you in a hurry?" ;
 		next;
 		input '@str$;
 		cutin "job_ko03",2;
-		mes "[導き手 ギオン]";
-		mes "^B24E59" +'@str$+ "^000000か？";
+		mes "[Guide Guion]";
+		mes "^B24E59" +'@str$+ "^000000?" ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "若者の心情は理解しづらいな。";
+		mes "[Guiding hand Gion]";
+		mes "It's hard to understand the young man's mindset." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "まあ、ここまでやってきたそなたなら";
-		mes "最後の試練も乗り越えられるじゃろう。";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "Well, you've come this far, I'm sure you can overcome your final ordeal." ;
 		next;
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "さて！";
-		mes "戦闘の試練について説明しよう。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]"; next; cutin "job_ko01",2; next
+		mes "Well!" ;
+		mes "Let's discuss the trials of combat." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "戦闘の試練の目標は";
-		mes "^FF0000一族の過去^000000と呼ばれるモンスターじゃ。";
+		mes "[Guide Guion]";
+		mes "The target of the ordeal of battle is a monster called ^000000, past ^FF000000 clan." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "試練の場には似ている姿、";
-		mes "似ている名前のモンスターがいる。";
-		mes "注意して戦うのじゃ。";
+		mes "[Guiding hand Gion]"; mes "[Guiding hand Gion]
+		mes "There are monsters with similar appearances and similar names in the ordeal." ;
+		mes "Attention and fight them." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "もしかしたら、同じ目標を狙う者が";
-		mes "いるかも知れん。";
-		mes "目標を倒した者のみが";
-		mes "試練を乗り越えられるのじゃ。";
+		mes "[Guide Guion]";
+		mes "Maybe there are others who are after the same target." ;
+		mes "Only the one who defeats the target will survive the ordeal." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "そなたに" +(Sex? "影狼": "朧")+ "様の";
-		mes "ご加護があらんことを……。";
+		mes "[Guiding hand, Guion]";
+		mes "To you" +(Sex? "Shadow Wolf": "Oboro")+ "May the blessings of the Lord be upon you. ......." ;
 		next;
 		set CHANGE_KO,10;
 		chgquest 72900,5146;
-		mes "[導き手 ギオン]";
-		mes "では戦闘の試練の場に向かうとしよう。";
+		mes "[Guiding hand, Guion]";
+		mes "So let's head to the battle ordeal." ;
 		close2;
 		switch(rand(3)){
 		case 0: warp "job_ko.gat",142,20; break;
-		case 1: warp "job_ko.gat",141,80; break;
+		case 1: warp "job_ko.gat",141,80; break
 		}
 		end;
 	case 10:
 	case 11:
 		cutin "job_ko03",2;
-		mes "[導き手 ギオン]";
-		mes "むむ?!";
-		mes "そなたは^339CCC戦闘の試練^000000を";
-		mes "受けていたはずでは？ ";
+		mes "[guiding hand guion]";
+		mes "Mm? Shouldn't you have taken the ^339CCC battle ordeal^000000? ";
 		next;
-		switch(select("試練の場に送ってもらう","街に戻ります")) {
+		switch(select("I'll have you sent to the ordeal", "I'm going back to the city")) {
 		case 1:
-			mes "[導き手 ギオン]";
-			mes "試練の場はこっちじゃ。";
+			mes "[Guiding hand, Guion]";
+			mes "The place of trials is this way." ;
 			close2;
 			warp "job_ko.gat",141,80;
 			end;
 		case 2:
-			mes "[導き手 ギオン]";
-			mes "街まで送ろう。";
+			mes "[Guide Guion]";
+			mes "Let's get you back to town." ;
 			close2;
 			warp "amatsu.gat",147,136;
 			end;
@@ -1098,88 +930,79 @@ job_ko.gat,25,115,4	script	謎の老人#ko	588,{
 	}
 }
 
-job_ko.gat,81,124,4	script	クウガ・カイ#ko	730,{
+job_ko.gat,81,124,4 script kuga kai#ko 730,{
 	if(checkquest(5136)) {
 		if(checkquest(5136) & 0x8) {
-			mes "[クウガ・カイ]";
-			mes "さあ、外に出してやろう。";
-			mes "ギオン様に結果を報告するように。";
+			mes "[Kuga Kai]";
+			mes "Come on, let's get you out." ;
+			mes "Report the results to Master Guion." ;
 			close2;
 			warp "job_ko.gat",16,113;
 			end;
 		}
 		if(!checkquest(5139)) {
-			mes "[クウガ・カイ]";
-			mes "久しぶりだな！";
+			mes "[Kuga Kai]";
+			mes "Long time no see!" ;
 			next;
-			menu "あなたは……",-;
-			mes "[クウガ・カイ]";
-			mes "忍者への道を求めて";
-			mes "俺のところへやって来たのが";
-			mes "つい先日のことと思っていたが……。";
+			menu "You are ......" ,-;
+			mes "[Kuga Kai]";
+			mes "I thought it was only a few days ago that you came to me for a path to Ninja. ......." ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "すでにここまで成長しているとは！";
+			mes "[Kuga Kai]";
+			mes "I didn't realize you've already grown so much!" ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "ハッハッハッハッ！";
-			mes "見込んだ通り根性があるな。";
-			mes "気に入った！";
+			mes "[Kuga Kai]";
+			mes "Ha ha ha ha!" ;
+			mes "You've got guts, as I expected." ;
+			mes "I like it!" ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "ここでは^339CCC知識の試練^000000を";
-			mes "受けることができるぞ。";
+			mes "[Kuga Kai]";
+			mes "You're going to get a ^339CCC knowledge test^000000 here." ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "ただ強くなっただけでなく";
-			mes "知識も身につけているだろうな？";
+			mes "[Kuga Kai]";
+			mes "You're not just getting stronger, you're also acquiring knowledge, right?" ;
 			next;
-			if(select("もちろんです","いいえ……") == 2) {
+			if(select("Of course.", "No. ......") == 2) {
 				setquest 5139;
-				mes "[クウガ・カイ]";
-				mes "根性だけでは乗り越えられぬぞ。";
-				mes "準備ができたら";
-				mes "また話しかけてくれ。";
+				mes "[Kuga Kai]";
+				mes "You won't get through this on guts alone." ;
+				mes "Talk to me again when you're ready." ;
 				close;
 			}
 			setquest 5139;
 		}
-		mes "[クウガ・カイ]";
-		mes "試練に挑む準備はいいか？";
+		mes "[Kuga Kai]";
+		mes "Are you ready for the trials?" ;
 		next;
-		switch(select("はい","いいえ","外に出たい")) {
+		switch(select("Yes", "No", "I want to go outside")) {
 		case 1:
 			break;
 		case 2:
-			mes "[クウガ・カイ]";
-			mes "仕方ないな。";
-			mes "もう少し待ってやろう。";
+			mes "[Kuga Kai]";
+			mes "I don't have a choice." ;
+			mes "Let's wait a little longer." ;
 			close;
 		case 3:
-			mes "[クウガ・カイ]";
-			mes "なんだと？";
-			mes "試練を前にして引き返すなど";
-			mes "言語道断！";
+			mes "[Kuga Kai]";
+			mes "What?" ;
+			mes "It is outrageous to turn back in the face of trials!" ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "破門されても文句は言えぬところだが";
-			mes "……まあ、今回だけは許そう。";
-			mes "万全の準備をして、また来るがいい。";
+			mes "[Kuga Kai]";
+			mes "I would not complain if you excommunicated me, but ...... Well, I'll forgive you just this once." ;
+			mes "Come back with full preparation." ;
 			close2;
 			warp "job_ko.gat",16,113;
 			end;
 		}
-		mes "[クウガ・カイ]";
-		mes "知識の試練のやり方は聞いているか？";
+		mes "[Kuga Kai]";
+		mes "Have you heard how to test your knowledge?" ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "俺が出す問題を聞き";
-		mes "正解と思うものを選べばいい。";
-		mes "半端な正解数では";
-		mes "試練は突破できんぞ。";
+		mes "[Kuga Kai]";
+		mes "Listen to the questions I give you and pick the one you think is correct." ;
+		mes "You won't get through the trials with half a dozen correct answers." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "では試練をはじめるぞ！";
+		mes "[Kuga Kai]";
+		mes "Then let the trials begin!" ;
 		next;
 		for(set '@i,0; '@i<=47; set '@i,'@i+1)
 			set '@list['@i],'@i;
@@ -1187,445 +1010,380 @@ job_ko.gat,81,124,4	script	クウガ・カイ#ko	730,{
 			set '@r,rand(getarraysize('@list));
 			set '@test,'@list['@r];
 			deletearray '@list['@r],1;
-			mes "[クウガ・カイ]";
+			mes "[Kuga Kai]";
 			if('@i<10)
 				mes "第" +'@i+ "問";
 			else
-				mes "最終問題";
+				mes "Final question";
 			switch('@test) {
 			case 0:
-				mes "一閃スキルの攻撃力を高めるために";
-				mes "最も影響のあるステータスを答えよ。";
+				mes "Answer the status that has the greatest impact on increasing the attack power of the single flash skill." ;
 				next;
-				if(select("Vit","MaxHP","Int","MaxSP")==2)
+				if(select("Vit", "MaxHP", "Int", "MaxSP")==2)
 					set '@m,'@m+1;
 				break;
 			case 1:
-				mes "一閃スキルの攻撃力を高めるため";
-				mes "靴に挿すカードとして";
-				mes "次のうち最も効果的なカードを選べ。";
+				mes "Select the most effective card among the following to insert into the shoes to increase the attack power of the flash skill." ;
 				next;
-				if(select("ゴールドオシドスカード","マーターカード","タナトスの憎悪カード","エドガカード")==2)
+				if(select("Gold Osidos card", "Mater card", "Thanatos Hatred card", "Edoga card")==2)
 					set '@m,'@m+1;
 				break;
 			case 2:
-				mes "一閃を習得するために必要な";
-				mes "投擲修練のレベルはいくつか？";
+				mes "How many levels of throwing training are required to learn a flash?" ;
 				next;
-				if(select("5","7","6","8")==2)
+				if(select("5", "7", "6", "8")==2)
 					set '@m,'@m+1;
 				break;
 			case 3:
-				mes "空蝉スキルの最大レベルを答えよ。";
+				mes "Answer the maximum level of the empty cicada skill." ;
 				next;
-				if(select("5","3","1","4")==1)
+				if(select("5", "3", "1", "4")==1)
 					set '@m,'@m+1;
 				break;
 			case 4:
-				mes "火炎陣スキルがレベル10のとき、";
-				mes "最大攻撃回数は？";
+				mes "What is the maximum number of attacks when the flame formation skill is level 10?" ;
 				next;
-				if(select("7","8","9","10")==3)
+				if(select("7", "8", "9", "10")==3)
 					set '@m,'@m+1;
 				break;
 			case 5:
-				mes "火炎陣スキルを使用するために必要な";
-				mes "触媒を答えよ。";
+				mes "Answer the catalyst needed to use the flame formation skill." ;
 				next;
-				if(select("氷閃石","烈火石","風鈴石","影宝珠")==2)
+				if(select("ice flash stone", "fire stone", "wind chime stone", "shadow pearl")==2)
 					set '@m,'@m+1;
 				break;
 			case 6:
-				mes "影跳びLv5の最大移動距離は何歩分か？";
+				mes "What is the maximum distance traveled by shadow jump Lv 5?" ;
 				next;
-				if(select("9歩","11歩","13歩","15歩")==1)
+				if(select("9 steps", "11 steps", "13 steps", "15 steps")==1)
 					set '@m,'@m+1;
 				break;
 			case 7:
-				mes "影分身レベル10の回避回数と";
-				mes "持続時間が正しいものはどれだ？";
+				mes "Which is the correct number of evasions and duration of shadow alteration level 10?" ;
 				next;
-				if(select("7回‐200秒","5回‐220秒","6回‐240秒","5回‐240秒")==4)
+				if(select("7 times-200 seconds", "5 times-220 seconds", "6 times-240 seconds", "5 times-240 seconds")==4)
 					set '@m,'@m+1;
 				break;
 			case 8:
-				mes "霞斬りスキルがレベル4のときの";
-				mes "攻撃力を答えよ。";
+				mes "Answer the attack power when the haze slash skill is level 4." ;
 				next;
-				if(select("140%","150%","160%","170%")==1)
+				if(select("140%", "150%", "160%", "170%")==1)
 					set '@m,'@m+1;
 				break;
 			case 9:
-				mes "苦無投げ使用時";
-				mes "打撃回数を答えよ。";
+				mes "Answer the number of blows when using the bitter throw." ;
 				next;
-				if(select("2","3","4","5")==2)
+				if(select("2", "3", "4", "5")==2)
 					set '@m,'@m+1;
 				break;
 			case 10:
-				mes "次の中から、朔風レベル4のとき";
-				mes "Matkおよび射程距離が";
-				mes "正しいものを選べ。";
+				mes "Select the correct Matk and range from the following at Sakkaze level 4." ;
 				next;
-				if(select("Matk400‐8歩","Matk500‐7歩","Matk500‐8歩","Matk400‐7歩")==3)
+				if(select("Matk400-8 steps", "Matk500-7 steps", "Matk500-8 steps", "Matk400-7 steps")==3)
 					set '@m,'@m+1;
 				break;
 			case 11:
-				mes "手裏剣投げの基本攻撃距離は何歩分か？";
+				mes "How many steps is the basic attack distance of the shuriken throw?" ;
 				next;
-				if(select("7歩","8歩","9歩","10歩")==3)
+				if(select("7 steps", "8 steps", "9 steps", "10 steps")==3)
 					set '@m,'@m+1;
 				break;
 			case 12:
-				mes "水遁スキルがレベル7のときの";
-				mes "持続時間を答えよ。";
+				mes "Answer the duration of the water fugue skill at level 7." ;
 				next;
-				if(select("40秒","45秒","50秒","55秒")==2)
+				if(select("40s", "45s", "50s", "55s")==2)
 					set '@m,'@m+1;
 				break;
 			case 13:
-				mes "水遁スキルの効果でないものを";
-				mes "次の中から選べ。";
+				mes "Choose one of the following that is not an effect of the water fugue skill." ;
 				next;
-				if(select("移動速度減少","ウォーターボール使用可能","アクアベネディクタ使用可能","Vit減少")==4)
+				if(select("Movement speed decrease", "Water ball available", "Aqua Benedicta available", "Vit decrease")==4)
 					set '@m,'@m+1;
 				break;
 			case 14:
-				mes "銭投げスキルを習得するために必要な";
-				mes "投擲修練レベルを答えよ。";
+				mes "Answer the level of throwing training required to master the coin throwing skill." ;
 				next;
-				if(select("4","6","8","10")==4)
+				if(select("4", "6", "8", "10")==4)
 					set '@m,'@m+1;
 				break;
 			case 15:
-				mes "銭投げがレベル6のとき";
-				mes "スキル使用時に消費する金額を答えよ。";
+				mes "Answer the amount of money spent when using the skill when the coin thrower is level 6." ;
 				next;
-				if(select("2000～8000Zeny","1000～6000Zeny","3000～8000Zeny","3000～6000Zeny")==4)
+				if(select("2000-8000Zeny", "1000-6000Zeny", "3000-8000Zeny", "3000-6000Zeny")==4)
 					set '@m,'@m+1;
 				break;
 			case 16:
-				mes "銭投げスキルをマスターするために";
-				mes "必要な総スキルポイント数を答えよ。";
+				mes "Answer the total number of skill points required to master the senyai skill." ;
 				next;
-				if(select("25","30","35","37")==3)
+				if(select("25", "30", "35", "37")==3)
 					set '@m,'@m+1;
 				break;
 			case 17:
-				mes "畳返しスキルをマスターしたとき";
-				mes "何歩先まで攻撃できるか答えよ。";
+				mes "Answer how many steps ahead you can attack when you have mastered the Tatami-matashi skill." ;
 				next;
-				if(select("5","7","3","1")==3)
+				if(select("5", "7", "3", "1")==3)
 					set '@m,'@m+1;
 				break;
 			case 18:
-				mes "次のうち投擲修練スキルが";
-				mes "レベル7のとき";
-				mes "習得できないスキルを選べ。";
+				mes "Select one of the following skills that cannot be learned when the throwing discipline skill is level 7." ;
 				next;
-				if(select("苦無投げ","風魔手裏剣投げ","一閃","銭投げ")==4)
+				if(select("bitter throw", "wind devil shuriken throw", "issen", "sen throw")==4)
 					set '@m,'@m+1;
 				break;
 			case 19:
-				mes "投擲修練がレベル7のとき";
-				mes "手裏剣投げに追加される";
-				mes "攻撃力を答えよ。";
+				mes "Answer the attack power added to shuriken throwing when the throwing discipline is level 7." ;
 				next;
-				if(select("18","21","27","30")==2)
+				if(select("18", "21", "27", "30")==2)
 					set '@m,'@m+1;
 				break;
 			case 20:
-				mes "念スキルレベル5を使用したとき";
-				mes "上昇するStrおよびIntの";
-				mes "数値を答えよ。";
+				mes "Answer the Str and Int values that increase when ghost skill level 5 is used." ;
 				next;
-				if(select("4","5","6","7")==2)
+				if(select("4", "5", "6", "7")==2)
 					set '@m,'@m+1;
 				break;
 			case 21:
-				mes "雷撃砕の属性で正しいものは？";
+				mes "What is the correct attribute of the thunderbolt crusher?" ;
 				next;
-				if(select("火","水","地","風")==4)
+				if(select("fire", "water", "earth", "wind")==4)
 					set '@m,'@m+1;
 				break;
 			case 22:
-				mes "龍炎陣の攻撃範囲を答えよ。";
+				mes "Answer the attack range of the dragon flame formation." ;
 				next;
-				if(select("3ｘ3","4ｘ4","5ｘ5","6ｘ6")==3)
+				if(select("3x3", "4x4", "5x5", "6x6")==3)
 					set '@m,'@m+1;
 				break;
 			case 23:
-				mes "龍炎陣を習得するために必要な";
-				mes "忍法修練のスキルレベルを答えよ。";
+				mes "Answer the skill level of ninja training required to master the Dragon Flame Formation." ;
 				next;
-				if(select("10","9","8","1")==1)
+				if(select("10", "9", "8", "1")==1)
 					set '@m,'@m+1;
 				break;
 			case 24:
-				mes "次のうち触媒を必要としない";
-				mes "忍者スキルを答えよ。";
+				mes "Answer the following Ninja skill that does not require a catalyst." ;
 				next;
-				if(select("火炎陣","水遁","紅炎華","氷柱落し")==3)
+				if(select("flame formation", "water fugue", "red flame flower", "icicle fall")==3)
 					set '@m,'@m+1;
 				break;
 			case 25:
-				mes "次のうち地属性のモンスターに";
-				mes "もっとも効果的なスキルを選べ。";
+				mes "Choose the most effective skill against monsters of the earth attribute among the following." ;
 				next;
-				if(select("朔風","龍炎陣","氷柱落し","風刃")==2)
+				if(select("SAKUFU", "RYUFU-JIN", "HYOKUSHITA", "WIND BLADE")==2)
 					set '@m,'@m+1;
 				break;
 			case 26:
-				mes "次のうち、スキルと属性の組み合わせで";
-				mes "正しくないものを選べ。";
+				mes "Choose one of the following incorrect combinations of skills and attributes." ;
 				next;
-				if(select("紅炎華、火","氷柱落し、水","氷閃槍、地","雷撃砕、風")==3)
+				if(select("Red Flame Flower, Fire", "Ice Pillar Falling, Water", "Ice Spear, Earth", "Thunderbolt Crushing, Wind")==3)
 					set '@m,'@m+1;
 				break;
 			case 27:
-				mes "モンスターポルセリオに対して";
-				mes "もっとも大きなダメージを与えられる";
-				mes "苦無を次の中から選べ。";
+				mes "Choose the bitter that can do the most damage against the monster Porcellio from the following." ;
 				next;
-				if(select("烈火の苦無","氷柱の苦無","猛毒の苦無","狂風の苦無")==1)
+				if(select("Bitter of Fiery Fire", "Bitter of Pillar of Ice", "Bitter of Poison", "Bitter of Mad Wind")==1)
 					set '@m,'@m+1;
 				break;
 			case 28:
-				mes "オークウォリアーと戦う際に";
-				mes "一番効果的な苦無を";
-				mes "次の中から選べ。";
+				mes "Choose the most effective bitterness to use when fighting the Orc Warrior from the following." ;
 				next;
-				if(select("烈火の苦無","氷柱の苦無","猛毒の苦無","狂風の苦無")==1)
+				if(select("Bitter of Fiery Fire", "Bitter of Pillar of Ice", "Bitter of Poison", "Bitter of Mad Wind")==1)
 					set '@m,'@m+1;
 				break;
 			case 29:
-				mes "村雨に宿る力で正しいものは？ ";
+				mes "What is the correct power that resides in Murasame? ";
 				next;
-				if(select("人間形モンスターに攻撃力+10%","人間形モンスターにCri+10","悪魔形モンスターに攻撃力+10%","悪魔形モンスターにCri+10")==2)
+				if(select("Attack power +10% for human form monster", "Cri+10 for human form monster", "Attack power +10% for demon form monster", "Cri+10 for demon form monster")==2)
 					set '@m,'@m+1;
 				break;
 			case 30:
-				mes "次のうち、風魔手裏剣・烈火に";
-				mes "宿る力を選べ。";
+				mes "Choose one of the following powers that reside in the Fuuma Shuriken, Retsuhi." ;
 				next;
-				if(select("ファイアーボールLv5,Dex-2","ファイアーボールLv5,Dex-3","ファイアーボールLv3,Dex-2","ファイアーボールLv3,Dex-3")==1)
+				if(select("Fireball Lv5,Dex-2", "Fireball Lv5,Dex-3", "Fireball Lv3,Dex-2", "Fireball Lv3,Dex-3")==1)
 					set '@m,'@m+1;
 				break;
 			case 31:
-				mes "氷柱の苦無10個を作るときに";
-				mes "必要な材料を答えよ。";
+				mes "Answer the materials needed to make 10 icicle bitterns." ;
 				next;
-				if(select("雨雲の手裏剣4個、氷閃石2個","雨雲の手裏剣8個、氷閃石2個","雨雲の手裏剣2個、氷閃石1個","雨雲の手裏剣1個、氷閃石2個")==2)
+				if(select("4 rain cloud shurikens, 2 ice flashes", "8 rain cloud shurikens, 2 ice flashes", "2 rain cloud shurikens, 1 ice flashes", "1 rain cloud shuriken, 2 ice flashes")==2)
 					set '@m,'@m+1;
 				break;
 			case 32:
-				mes "次のうち、Strにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that will not be effective when you assign points to Str." ;
 				next;
-				if(select("近接攻撃力上昇","所持可能重量上昇","魔法攻撃力上昇","武器攻撃力上昇")==3)
+				if(select("Melee Attack Power Increased", "Possessable Weight Increased", "Magic Attack Power Increased", "Weapon Attack Power Increased")==3)
 					set '@m,'@m+1;
 				break;
 			case 33:
-				mes "次のうち、Agiにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that does not take effect when points are assigned to Agi." ;
 				next;
-				if(select("命中率の上昇","回避率の上昇","攻撃速度の上昇","攻撃後ディレイの減少")==1)
+				if(select("increased hit rate", "increased evasion rate", "increased attack speed", "decreased delay after attack")==1)
 					set '@m,'@m+1;
 				break;
 			case 34:
-				mes "次のうち、Vitにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that will not be effective when you assign points to Vit." ;
 				next;
-				if(select("物理防御力の上昇","MaxHPの増加","魔法防御力の上昇","魔法攻撃力の上昇")==4)
+				if(select("Increase Physical Defense", "Increase MaxHP", "Increase Magic Defense", "Increase Magic Attack")==4)
 					set '@m,'@m+1;
 				break;
 			case 35:
-				mes "次のうち、Intにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that does not take effect when you assign points to Int." ;
 				next;
-				if(select("MaxSPの上昇","Matkの上昇","SP回復量の上昇","杖の攻撃力上昇")==4)
+				if(select("MaxSP increase", "Matk increase", "SP recovery increase", "Wand attack increase")==4)
 					set '@m,'@m+1;
 				break;
 			case 36:
-				mes "次のうち、Dexにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that does not take effect when you assign points to Dex." ;
 				next;
-				if(select("詠唱時間の減少","回避率の上昇","命中率の上昇","遠距離攻撃力上昇")==2)
+				if(select("reduced chanting time", "increased evasion", "increased hit rate", "increased long range attack power")==2)
 					set '@m,'@m+1;
 				break;
 			case 37:
-				mes "次のうち、Lukにポイントを";
-				mes "割り振ったとき";
-				mes "効果を得られないものを選べ。";
+				mes "Choose one of the following that will not be effective when you assign points to Luk." ;
 				next;
-				if(select("命中率の上昇","完全回避率の上昇","魔法攻撃力の減少","クリティカル発生率の上昇")==1)
+				if(select("increased hit rate", "increased complete evasion rate", "reduced magic attack power", "increased critical rate")==1)
 					set '@m,'@m+1;
 				break;
 			case 38:
-				mes "次のうち、大型モンスターに対して";
-				mes "物理攻撃を行ったとき";
-				mes "もっとも効果的な武器用カードを選べ。";
+				mes "Choose the following cards for weapons that are most effective when making physical attacks against large monsters." ;
 				next;
-				if(select("ルナティックカード","ミノタウロスカード","スケルワーカーカード","デザートウルフカード")==2)
+				if(select("Lunatic Card", "Minotaur Card", "Skelwerker Card", "Desert Wolf Card")==2)
 					set '@m,'@m+1;
 				break;
 			case 39:
-				mes "次のうち、中型モンスターに対して";
-				mes "物理攻撃を行ったとき";
-				mes "もっとも効果的な武器用カードを選べ。";
+				mes "Choose one of the following cards for weapons that is most effective when making a physical attack against a medium-sized monster." ;
 				next;
-				if(select("ルナティックカード","ミノタウロスカード","スケルワーカーカード","デザートウルフカード")==3)
+				if(select("Lunatic Card", "Minotaur Card", "Skelwerker Card", "Desert Wolf Card")==3)
 					set '@m,'@m+1;
 				break;
 			case 40:
-				mes "次のうち、小型モンスターに対して";
-				mes "物理攻撃を行ったとき";
-				mes "もっとも効果的な武器用カードを選べ。";
+				mes "Choose one of the following cards for weapons that is most effective when making a physical attack against small monsters." ;
 				next;
-				if(select("ルナティックカード","ミノタウロスカード","スケルワーカーカード","デザートウルフカード")==4)
+				if(select("Lunatic Card", "Minotaur Card", "Skelwerker Card", "Desert Wolf Card")==4)
 					set '@m,'@m+1;
 				break;
 			case 41:
-				mes "カイバラが作れない武器を";
-				mes "次の中から選べ。";
+				mes "Choose one of the following weapons that Kaibara cannot make." ;
 				next;
-				if(select("黒鱗","村雨","白刃","風魔手裏剣・風鳥")==4)
+				if(select("Black Scale", "Murasame", "White Blade", "Fuuma Shuriken/Fuutori")==4)
 					set '@m,'@m+1;
 				break;
 			case 42:
-				mes "次のうち、忍者専用のアイテムを";
-				mes "作ってくれる匠の名前ではない";
-				mes "ものを選べ。";
+				mes "Choose one of the following that is not the name of a master craftsman who makes Ninja-specific items." ;
 				next;
-				if(select("カイバラ","アイクゥ","テツ","トシュ")==2)
+				if(select("Kaibara", "Icu", "Tetsu", "Tosh")==2)
 					set '@m,'@m+1;
 				break;
 			case 43:
-				mes "忍者の最大JobLvはいくつだ？";
+				mes "How many is Ninja's max JobLv?" ;
 				next;
-				if(select("70","50","99","100")==1)
+				if(select("70", "50", "99", "100")==1)
 					set '@m,'@m+1;
 				break;
 			case 44:
-				mes "忍者屋敷がある街の名前を答えよ。";
+				mes "Answer the name of the city where the Ninja mansion is located." ;
 				next;
-				if(select("ルティエ","アマツ","デワタ","コモド")==2)
+				if(select("Lutie", "Amatsu", "DeWata", "Comodo")==2)
 					set '@m,'@m+1;
 				break;
 			case 45:
-				mes "忍者転職のときに";
-				mes "俺が手紙を出した相手の";
-				mes "名前を答えよ。";
+				mes "Answer the name of the person to whom I sent a letter when I changed jobs in Ninja." ;
 				next;
-				if(select("野良犬","野良猫","野羊","山羊")==3)
+				if(select("stray[Dog]", "stray cat", "goat", "goat")==3)
 					set '@m,'@m+1;
 				break;
 			case 46:
-				mes "初めて俺に会ったとき";
-				mes "俺の隣に置いてあったものを答えよ。";
+				mes "Answer what was placed next to me when you first met me." ;
 				next;
-				if(select("座布団","掛け軸","植木鉢","火鉢")==4)
+				if(select("zabuton", "hanging scroll", "flowerpot", "brazier")==4)
 					set '@m,'@m+1;
 				break;
 			case 47:
-				mes "忍者が転生をする時に";
-				mes "会う必要がある人物を";
-				mes "次の中から選べ。";
+				mes "Choose one of the following people that Ninja needs to meet when he is reincarnated." ;
 				next;
-				if(select("ヴァルキリー","ランドグリス","無い","ヒョウ")==3)
+				if(select("Valkyrie", "Landgris", "No", "Leopard")==3)
 					set '@m,'@m+1;
 				break;
 			case 48:
-				mes "次のうち、転生を担当している";
-				mes "NPCの名前で正しいものを選べ。";
+				mes "Choose the correct name of the NPC responsible for the reincarnation among the following." ;
 				next;
-				if(select("ヴァルキリー","バルキリー","ハラキリー","クウガ・カイ")==1)
+				if(select("Valkyrie", "Valkyrie", "Harakiri", "Kuga Kai")==1)
 					set '@m,'@m+1;
 				break;
 			case 49:
-				mes "忍者JobLv70の時に";
-				mes "加算されたDexとLukの合計値を答えよ。";
+				mes "Answer the total value of Dex and Luk added at NinjaJobLvl 70." ;
 				next;
-				if(select("8","10","12","14")==2)
+				if(select("8", "10", "12", "14")==2)
 					set '@m,'@m+1;
 				break;
 			}
 		}
-		mes "[クウガ・カイ]";
-		mes "これで全問終了だ。";
-		mes "採点するのでしばし待て。";
+		mes "[Kuga Kai]";
+		mes "This is the end of all questions." ;
+		mes "Wait a moment while we grade them." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "…………。";
+		mes "[Kuga Kai]";
+		mes "............." ;
 		next;
 		if('@m < 9) {
-			mes "[クウガ・カイ]";
-			mes "ふむ……";
-			mes "期待していたほどではないな。";
+			mes "[Kuga Kai]";
+			mes "hm ......." ;
+			mes "Not as good as I was hoping for." ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "さらなる極みに進むには";
-			mes "まだまだだということだ。";
+			mes "[Kuga Kai]";
+			mes "It means that we are not yet ready to move on to further extremes." ;
 			next;
-			mes "[クウガ・カイ]";
-			mes "もう一度機会を与えてやる！";
-			mes "出直してこい！";
+			mes "[Kuga Kai]";
+			mes "I'll give you another chance!" ;
+			mes "Come back!" ;
 			close;
 		}
-		mes "[クウガ・カイ]";
-		mes '@m+ "0点か……。";
-		mes "力ばかりを身につけたわけではないか。";
-		mes "さすがだな。";
+		mes "[Kuga Kai]";
+		mes ""+'@m+ "Zero points or ......." ;
+		mes "Have you not acquired all your strength?" ;
+		mes "As expected." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "だが、この程度の試練を";
-		mes "乗り越えたくらいでうぬぼれるなよ。";
+		mes "[Kuga Kai]";
+		mes "But don't be so vain as to have overcome this level of ordeal." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "まだまだ貴様が乗り越えるべき";
-		mes "試練は残っているぞ。";
+		mes "[Kuga Kai]";
+		mes "There are still more challenges left for you to overcome." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "貴様の力で試練を乗り越えられるか";
-		mes "見守らせてもらう。";
+		mes "[Kuga Kai]";
+		mes "Let me see if you can overcome the ordeal with your strength." ;
 		next;
 		compquest 5136;
 		delquest 5139;
-		mes "[クウガ・カイ]";
-		mes "さあ、外に出してやろう。";
-		mes "ギオン様に結果を報告するように。";
+		mes "[Kuga Kai]";
+		mes "Come on, let's let them out." ;
+		mes "Report the results to Master Guion." ;
 		close2;
 		warp "job_ko.gat",16,113;
 		end;
 	}
 }
 
-function	script	jobchenge_ko_func	{
+function script jobchenge_ko_func {
 	set '@cost,getarg(0);
 	set '@heal,getarg(1);
 	setarray '@to_x,63,
 				54,46,38,30,22,17,17,17,17,17,
 				17,25,33,41,49,57,62,62,62,62,
 				62,54,46,38,30,25,25,25,25,33,
-				41,49,54,54,54,47,38,33,33,41;
+				41,49,54,54,54,54,47,38,33,33,33,41;
 	setarray '@to_y,16,
-				16,16,16,16,16,19,27,35,43,51,
+				16,16,16,16,16,16,19,27,35,43,51,
 				60,60,60,60,60,60,56,48,40,32,
 				23,23,23,23,23,28,35,43,52,52,
 				52,52,48,40,31,31,31,35,44,44;
-	mes "　保有LP：" +CHANGE_KO_LP;
-	mes "　サイコロを振ると" +'@cost+ "^FD0260LP^000000を消費します‐";
+	mes " LPs held:" +CHANGE_KO_LP;
+	mes " Rolling the dice consumes " +'@cost+ "^FD0260LP^000000 -";
 	next;
-	menu "サイコロを振る",-;
+	menu "Roll the dice",-;
 	set '@rand,rand(1,6);
 	emotion 57+'@rand,"";
-	mes "‐" +'@rand+ "が出ました。";
-	mes "　" +'@rand+ "マス進みます‐";
+	mes "-" +'@rand+ "has been rolled." ;
+	mes " " +'@rand+ "mass proceed-"; mes " " +'@rand+ "mass proceed-"; mes "-" +'@rand+ "mass proceed-";
 	close2;
 	set CHANGE_KO_LP,CHANGE_KO_LP - '@cost + '@heal;
 	if(CHANGE_KO_LP > 100)
@@ -1635,731 +1393,656 @@ function	script	jobchenge_ko_func	{
 	end;
 }
 
-job_ko.gat,57,16,4	script	道標#ko_00	858,1,1,{
-	mes "‐スタート地点";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,57,16,4 script road marker#ko_00 858,1,1,{
+	mes "-Starting point^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	set CHANGE_KO_LP,100;
 	set CHANGE_KO_NOW,0;
 	if(!checkquest(5140)) {
-		mes "‐小さく説明が書いてある‐";
+		mes "-small description -";
 		while(1) {
 			next;
-			if(select("説明を読む","試練を始める") == 1) {
-				mes "‐生存の試練はスゴロク形式で";
-				mes "　進行します。";
-				mes "　開始時に100ポイントの";
-				mes "　^FD0260生存の試練ポイント(LP)^000000が与えられ";
-				mes "　1回サイコロを振るのに";
-				mes "　1LPを消費します‐";
+			if(select("read description", "start ordeal") == 1) {
+				mes "-The ordeal of survival proceeds in the form of a sugoroku." ;
+				mes " 100 ^FD0260 Trial of Survival points (LP)^000000 are given at the start and 1 LP is spent for each roll of the dice-";
 				next;
-				mes "‐ゴールまで40マスあり";
-				mes "　途中のコマで^FD0260LP^000000が増減する";
-				mes "　イベントが発生します‐";
+				mes "-There are 40 squares to the goal, and events occur in the frames along the way that increase or decrease ^FD0260LP^000000-";
 				next;
-				mes "‐^FD0260LP^000000が0になるまでに";
-				mes "　ゴールに到達してください‐";
+				mes "-To reach the goal, you must reach the goal before ^FD0260LP^000000 reaches 0;
 				next;
-				mes "‐なお、ゴール到着と同時に";
-				mes "　^FD0260LP^000000が0になった場合は";
-				mes "　ゴールを認めます‐";
+				mes "-In addition, if ^FD0260LP^000000 becomes 0 upon arrival at the goal, the goal is accepted-";
 				next;
-				mes "‐生存の試練の説明は以上です‐";
+				mes "-This is the end of the description of the survival ordeal-";
 				continue;
 			}
 			break;
 		}
 		setquest 5140;
-		mes "‐生存の試練ポイント(LP)を";
-		mes "　100獲得しました‐";
+		mes "-Survival trial points (LP) of 100 have been earned-";
 		next;
-		mes "‐位置：スタート地点";
+		mes "-Position: starting point";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐スタート地点に戻ってきました。";
-	mes "　LPが回復しました‐";
+	mes "-Position: back to the start point." ;
+	mes " LP recovered-";
 	while(1) {
 		next;
-		if(select("説明を読む","試練を始める") == 1) {
-			mes "‐生存の試練はスゴロク形式で";
-			mes "　進行します。";
-			mes "　開始時に100ポイントの";
-			mes "　^FD0260生存の試練ポイント(LP)^000000が与えられ";
-			mes "　1回サイコロを振るのに";
-			mes "　1LPを消費します‐";
+		if(select("Read the description", "Start the ordeal") == 1) {
+			mes "-The ordeal of survival will proceed in the form of a sugoroku." ;
+			mes " 100 ^FD0260 Trial of Survival points (LP)^000000 are given at the start and 1 LP is spent for each roll of the dice-";
 			next;
-			mes "‐ゴールまで40マスあり";
-			mes "　途中のコマで^FD0260LP^000000が増減する";
-			mes "　イベントが発生します‐";
+			mes "-There are 40 squares to the goal, and events occur in the frames along the way that increase or decrease ^FD0260LP^000000-";
 			next;
-			mes "‐^FD0260LP^000000が0になるまでに";
-			mes "　ゴールに到達してください‐";
+			mes "-To reach the goal, you must reach the goal before ^FD0260LP^000000 reaches 0;
 			next;
-			mes "‐なお、ゴール到着と同時に";
-			mes "　^FD0260LP^000000が0になった場合は";
-			mes "　ゴールを認めます‐";
+			mes "-In addition, if ^FD0260LP^000000 becomes 0 upon arrival at the goal, the goal is accepted-";
 			next;
-			mes "‐生存の試練の説明は以上です‐";
+			mes "-This is the end of the description of the survival ordeal-";
 			continue;
 		}
 		break;
 	}
-	mes "‐位置：スタート地点";
+	mes "-Position: starting point";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,49,16,4	script	道標#ko_01	858,1,1,{
-	mes "‐1番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,49,16,4 script road marker#ko_01 858,1,1,{
+	mes "-1st square^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐最初から1が出るとは";
-	mes "　運がありませんね。";
-	mes "　ここでは10^FD0260LP^000000を支払うことで";
-	mes "　9番のマスに進むことができます‐";
+	mes "-No luck getting a 1 from the start." ;
+	mes " Here you can proceed to square 9 by paying 10^FD0260LP^000000-";
 	next;
-	if(select("10LPを支払って9番に進む","支払わない")==1) {
-		mes "‐10LP支払いました。";
-		mes "　9番に進みます‐";
+	if(select("Pay 10LP to advance to square #9", "don't pay")==1) {
+		mes "-10LP paid." ;
+		mes " proceed to number 9-";
 		close2;
 		set CHANGE_KO_LP,CHANGE_KO_LP - 10;
 		set CHANGE_KO_NOW,9;
 		warp "job_ko.gat",17,43;
 		end;
 	}
-	mes "‐位置：1番マス";
+	mes "-Position: square 1";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,41,16,4	script	道標#ko_02	858,1,1,{
-	mes "‐2番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,41,16,4 script roadmap#ko_02 858,1,1,{
+	mes "-2nd square^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが発動しました!!";
-	mes "　スタート地点に戻ります‐";
+	mes "-The trap has been triggered! Return to the starting point-";
 	close2;
 	warp "job_ko.gat",63,16;
 	end;
 }
 
-job_ko.gat,33,16,4	script	道標#ko_03	858,1,1,{
-	mes "‐3番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,33,16,4 script road marker#ko_03 858,1,1,{
+	mes "-3rd square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐先祖の呪いにかかった。";
-	mes "　5^FD0260LP^000000を支払って";
-	mes "　先祖の呪いをはらう必要があります‐";
+	mes "-Cursed by my ancestors." ;
+	mes " You must pay 5^FD0260LP^000000 to get rid of the ancestor's curse-";
 	next;
-	menu "5LPを支払う",-;
-	mes "‐5LP支払った";
-	mes "　サイコロを振ることができます‐";
+	menu "Pay 5LP",-;
+	mes "-5LP paid dice can be rolled-"; next; menu "pay 5LP",-; mes "-5LP paid dice can be rolled-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 5;
 	next;
-	mes "‐位置：3番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Position: square 3";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,25,16,4	script	道標#ko_04	858,1,1,{
-	mes "‐4番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,25,16,4 script roadmap#ko_04 858,1,1,{
+	mes "-4th square^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さくラクガキが書いてある‐";
+	mes "-small camel-colored writing on it-";
 	next;
-	mes "‐^0000FF" +'name$+ "^000000";
-	mes "　生存の試練に挑む‐";
+	mes "-^0000FF" +'name$+ "-^000000Trying to survive-"; mes "-^000000" +'name$+ "^000000Trying to survive-";
 	next;
-	mes "‐試練に挑む記念に";
-	mes "　名前を残しますか？‐";
+	mes "-Do you want to leave your name in the "GHOST"? -";
 	next;
-	if(select("5LP支払って名前を残す","支払わない") == 1) {
-		mes "‐5LP支払った‐";
+	if(select("Pay 5LP and leave name", "Don't pay") == 1) {
+		mes "-5LP paid -";
 		set CHANGE_KO_LP,CHANGE_KO_LP - 5;
 		set 'name$,strcharinfo(0);
 		next;
-		mes "‐" +strcharinfo(0);
-		mes "　生存の試練に挑む。";
-		mes "　名前を残しました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-" +strcharinfo(0);
+		mes " Trial for survival." ;
+		mes " Name left." ;
+		mes " dice can be rolled-"; mes " dice can be rolled-"; mes " dice can be rolled-";
 		next;
 	}
-	mes "‐位置：4番マス";
+	mes "-Position: square 4";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,17,16,4	script	道標#ko_05	858,1,1,{
-	mes "‐5番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,16,4 script roadmap#ko_05 858,1,1,{
+	mes "-5th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 	if(checkquest(5141)) {
-		if(!(checkquest(5141) & 0x2)) {
-			mes "‐呪いのため、サイコロを";
-			mes "　振ることができません‐";
+		if(! (checkquest(5141) & 0x2)) {
+			mes "-Cannot roll dice due to curse-";
 			close;
 		}
-		mes "‐2分が経過し、呪いが解けました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-2 minutes have elapsed and the curse has been lifted." ;
+		mes "-Can roll the dice-"; } mes "-Can roll the dice-"; } mes "-Can roll the dice-
 		next;
 		delquest 5141;
-		mes "‐位置：5番マス";
+		mes "-Position: square 5";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description written-";
 	next;
-	mes "‐5^FD0260LP^000000を支払わなければ";
-	mes "　2分間サイコロを振ることができない";
-	mes "　呪いにかかります‐";
+	mes "-If you don't pay 5^FD0260LP^000000 you will be cursed not to roll dice for 2 minutes-";
 	next;
-	if(select("5LP支払う","支払わない") == 2) {
+	if(select("pay 5LP", "don't pay") == 2) {
 		setquest 5141;
-		mes "‐2分間サイコロを振ることができない";
-		mes "　呪いにかかりました‐";
+		mes "-you are cursed not to roll dice for 2 minutes-";
 		close;
 	}
-	mes "‐5LP支払いました。";
-	mes "　サイコロを振ることができます‐";
+	mes "-5LP paid." ;
+	mes " You can roll the dice-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 5;
 	next;
-	mes "‐位置：5番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Position: square 5";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,17,24,4	script	道標#ko_06	858,1,1,{
-	mes "‐6番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,24,4 script roadmap#ko_06 858,1,1,{
+	mes "-6th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ラッキー！";
-	mes "　次のマスに移動した時";
-	mes "　生存の試練ポイントが7^FD0260LP^000000回復。";
-	mes "　100^FD0260LP^000000を超えた分は回復しません‐";
+	mes "-Lucky!" ;
+	mes " 7^FD0260LP^000000 recovery of survival trial points when moving to the next square." ;
+	mes " No more than 100^FD0260LP^000000 will be recovered -";
 	next;
-	mes "‐位置：6番マス";
+	mes "-Position: square 6";
 	callfunc "jobchenge_ko_func",1,7;
 	end;
 }
 
-job_ko.gat,17,32,4	script	道標#ko_07	858,1,1,{
-	mes "‐7番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,32,4 script roadmap#ko_07 858,1,1,{
+	mes "-7th square^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが発動しました!!";
-	mes "　5番に戻ります‐";
+	mes "-The trap has been triggered! !!!Return to number 5-";
 	close2;
 	set CHANGE_KO_NOW,5;
 	warp "job_ko.gat",22,16;
 	end;
 }
 
-job_ko.gat,17,40,4	script	道標#ko_08	858,1,1,{
-	mes "‐8番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,40,4 script marker#ko_08 858,1,1,{
+	mes "-8th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ジャンケンマシン";
-	mes "　あなたが勝てば14番へ移動します。";
-	mes "　引き分けたらサイコロを振ります。";
-	mes "　負ければスタート地点へ戻ります‐";
+	mes "- rock-paper-scissors machine if you win, move to number 14." ;
+	mes "If you draw, roll the dice." ;
+	mes " If you lose, return to the starting point-";
 	next;
-	mes "ジャン！　ケン！　ポン！ ";
+	mes "Jan!  Ken!  Pong! ";
 	next;
-	set '@own,select("チョキを出す","グーを出す","パーを出す")-1;
+	set '@own,select("play choki", "play goo", "play par")-1; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next
 	set '@enemy,rand(3);
-	mes "――結果表示――";
-	mes "マシン：" +(('@enemy==0)? "チョキ": (('@enemy==1)? "グー": "パー"));
-	mes "あなた：" +(('@own==0)? "チョキ": (('@own==1)? "グー": "パー"));
+	mes "--result display--machine:" +(('@enemy==0)? "Choki": (('@enemy==1)? "goo": "par"));
+	mes "you:" +(('@own==0)? "Choki": (('@own==1)? "goo": "par"));
 	next;
 	if('@own == '@enemy) {
-		mes "‐Draw";
-		mes "　引き分けです‐";
+		mes "-Draw is a draw-";
 		next;
-		mes "‐位置：8番マス";
+		mes "-Position: square 8";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	if('@own != ('@enemy+1)%3) {
-		mes "‐You Lose……";
-		mes "　スタート地点に戻ります‐";
+	if('@own ! = ('@enemy+1)%3) {
+		mes "-You Lose......" ;
+		mes " Return to the starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐You Win !";
-	mes "　14番に進みます‐";
+	mes "-You Win !!!Go to number 14-";
 	close2;
 	set CHANGE_KO_NOW,14;
 	warp "job_ko.gat",41,60;
 	end;
 }
 
-job_ko.gat,17,48,4	script	道標#ko_09	858,1,1,{
-	mes "‐9番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,48,4 script marker#ko_09 858,1,1,{
+	mes "-9th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐さらに進んでください‐";
+	mes "-Please proceed further-";
 	next;
-	mes "‐位置：9番マス";
+	mes "-Position: square 9";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,17,56,4	script	道標#ko_10	858,1,1,{
-	mes "‐10番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,17,56,4 script roadmap#ko_10 858,1,1,{
+	mes "-10th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐やられる前にやれ‐";
+	mes "-do it before you get hit-";
 	next;
 	if('trap) {
-		mes "‐設置されていたトラップが";
-		mes "　発動しました！";
-		mes "　スタートに戻ります‐";
+		mes "-The trap that was placed has been triggered!" ;
+		mes "Return to the start-"; next; if('trap) { mes "-Return to the start-";
 		close2;
 		set 'trap,0;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐現在トラップは設置されていません‐";
+	mes "-no traps currently in place-";
 	next;
-	mes "‐10^FD0260LP^000000支払うことで ";
-	mes "　スタートに戻る";
-	mes "　トラップを設置できます‐";
+	mes "-You can install a trap back to the start by paying 10^FD0260LP^000000-";
 	next;
-	if(select("トラップを設置する","設置せずサイコロを振る") == 1) {
-		mes "‐10LP支払いました。";
-		mes "　トラップを設置しました‐";
+	if(select("Place a trap", "Do not place and roll dice") == 1) {
+		mes "-10LP paid." ;
+		mes " trap installed-";
 		set 'trap,1;
 		set CHANGE_KO_LP,CHANGE_KO_LP - 10;
 		next;
 	}
-	mes "‐位置：10番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Position: square 10";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,22,60,4	script	道標#ko_11	858,1,1,{
-	mes "‐11番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,22,60,4 script roadmap#ko_11 858,1,1,{
+	mes "-11th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが設置されています！ ";
-	mes "　9番に戻ります‐";
+	mes "-Traps are in place! Return to number 9-";
 	close2;
 	set CHANGE_KO_NOW,9;
 	warp "job_ko.gat",17,43;
 	end;
 }
 
-job_ko.gat,30,60,4	script	道標#ko_12	858,1,1,{
-	mes "‐12番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,30,60,4 script marker#ko_12 858,1,1,{
+	mes "-12th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ジャンケンマシン";
-	mes "　あなたが勝てば20番へ移動します。";
-	mes "　引き分けたらサイコロを振ります。";
-	mes "　負ければ9番へ戻ります‐";
+	mes "- rock-paper-scissors machine if you win, move to number 20." ;
+	mes "If you draw, roll the dice." ;
+	mes " If you lose, go back to number 9-";
 	next;
-	mes "ジャン！　ケン！　ポン！";
+	mes "Jan!  Ken!  Pong!" ;
 	next;
-	set '@own,select("チョキを出す","グーを出す","パーを出す")-1;
+	set '@own,select("play choki", "play goo", "play par")-1; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next
 	set '@enemy,rand(3);
-	mes "――結果表示――";
-	mes "マシン：" +(('@enemy==0)? "チョキ": (('@enemy==1)? "グー": "パー"));
-	mes "あなた：" +(('@own==0)? "チョキ": (('@own==1)? "グー": "パー"));
+	mes "--result display--machine:" +(('@enemy==0)? "Choki": (('@enemy==1)? "goo": "par"));
+	mes "you:" +(('@own==0)? "Choki": (('@own==1)? "goo": "par"));
 	next;
 	if('@own == '@enemy) {
-		mes "‐Draw";
-		mes "　引き分けです‐";
+		mes "-Draw is a draw-";
 		next;
-		mes "‐位置：12番マス";
+		mes "-Position: square 12";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	if('@own != ('@enemy+1)%3) {
-		mes "‐You Lose……";
-		mes "　9番に戻ります‐";
+	if('@own ! = ('@enemy+1)%3) {
+		mes "-You Lose......" ;
+		mes " Return to number 9-";
 		close2;
 		set CHANGE_KO_NOW,9;
 		warp "job_ko.gat",17,43;
 		end;
 	}
-	mes "‐You Win !";
-	mes "　20番に進みます‐";
+	mes "-You Win !!!Go to number 20-";
 	close2;
 	set CHANGE_KO_NOW,20;
 	warp "job_ko.gat",62,32;
 	end;
 }
 
-job_ko.gat,38,60,4	script	道標#ko_13	858,1,1,{
-	mes "‐13番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,38,60,4 script marker#ko_13 858,1,1,{
+	mes "-13th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ラッキー！";
-	mes "　次のマスに移動した時";
-	mes "　生存の試練ポイントが7^FD0260LP^000000回復。";
-	mes "　100^FD0260LP^000000を超えた分は回復しません‐";
+	mes "-Lucky!" ;
+	mes " 7^FD0260LP^000000 recovery of survival trial points when moving to the next square." ;
+	mes " No more than 100^FD0260LP^000000 will be recovered -";
 	next;
-	mes "‐位置：13番マス";
+	mes "-Position: square 13";
 	callfunc "jobchenge_ko_func",1,7;
 	end;
 }
 
-job_ko.gat,46,60,4	script	道標#ko_14	858,1,1,{
-	mes "‐14番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,46,60,4 script roadmap#ko_14 858,1,1,{
+	mes "-14th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 	if(checkquest(5141)) {
-		if(!(checkquest(5141) & 0x2)) {
-			mes "‐呪いのため、サイコロを";
-			mes "　振ることができません‐";
+		if(! (checkquest(5141) & 0x2)) {
+			mes "-Cannot roll dice due to curse-";
 			close;
 		}
-		mes "‐2分が経過し、呪いが解けました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-2 minutes have elapsed and the curse has been lifted." ;
+		mes "-Can roll the dice-"; } mes "-Can roll the dice-"; } mes "-Can roll the dice-
 		next;
 		delquest 5141;
-		mes "‐位置：14番マス";
+		mes "-Position: square 14";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description written-";
 	next;
-	mes "‐5^FD0260LP^000000を支払わなければ";
-	mes "　2分間サイコロを振ることができない";
-	mes "　呪いにかかります‐";
+	mes "-If you don't pay 5^FD0260LP^000000 you will be cursed not to roll dice for 2 minutes-";
 	next;
-	if(select("5LP支払う","支払わない") == 2) {
+	if(select("pay 5LP", "don't pay") == 2) {
 		setquest 5141;
-		mes "‐2分間サイコロを振ることができない";
-		mes "　呪いにかかりました‐";
+		mes "-you are cursed not to roll dice for 2 minutes-";
 		close;
 	}
-	mes "‐5LP支払いました。";
-	mes "　サイコロを振ることができます‐";
+	mes "-5LP paid." ;
+	mes " You can roll the dice-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 5;
 	next;
-	mes "‐位置：14番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Position: square 14";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,54,60,4	script	道標#ko_15	858,1,1,{
-	mes "‐15番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,54,60,4 script roadmap#ko_15 858,1,1,{
+	mes "-15th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 	if(checkquest(5141)) {
-		if(!(checkquest(5141) & 0x2)) {
-			mes "‐呪いのため進めません‐";
+		if(! (checkquest(5141) & 0x2))) {
+			mes "-Cannot proceed due to curse-";
 			close;
 		}
-		mes "‐2分が経過し、呪いが解けました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-2 minutes have elapsed and the curse has been lifted." ;
+		mes "You can roll the dice-";
 		next;
 		delquest 5141;
-		mes "‐位置：15番マス";
+		mes "-Position: square 15";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description written-";
 	next;
-	mes "‐強力な呪いにかかり";
-	mes "　2分間進めない状態に";
-	mes "　なりました‐";
+	mes "-A powerful curse has been placed on you and you have been unable to proceed for 2 minutes-";
 	setquest 5141;
 	close;
 }
 
-job_ko.gat,62,60,4	script	道標#ko_16	858,1,1,{
-	mes "‐16番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,62,60,4 script marker#ko_16 858,1,1,{
+	mes "-16th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐2^FD0260LP^000000を消費しサイコロを2回振れ‐";
+	mes "-spend 2^FD0260LP^000000 and roll the dice twice-";
 	next;
-	mes "‐同じ目が出たら19番へ進む。";
-	mes "　同じ目が出ない場合には、";
-	mes "　同じ目が出るまで2^FD0260LP^000000を消費し";
-	mes "　サイコロを2回振り続ける‐";
+	mes "-If you get the same number of dice, proceed to number 19." ;
+	mes "-If you don't get the same number of dice, spend 2^FD0260LP^000000 and keep rolling the dice twice until you get the same number of dice-";
 	while(1) {
 		next;
-		mes "‐位置：16番マス";
-		mes "　保有LP：" +CHANGE_KO_LP;
-		mes "　サイコロを振ると2^FD0260LP^000000を消費します‐";
+		mes "-Position: 16th square holding LP:" +CHANGE_KO_LP;
+		mes " Rolling the dice consumes 2^FD0260LP^000000000-"; while(1) { next; mes "-Position: 16th square holding LP:" +CHANGE_KO_LP; }
 		next;
-		menu "1個目のサイコロを振る",-;
-		mes "‐2LPを消費した‐";
+		menu "Rolling the first dice",-;
+		mes "-2LP consumed-";
 		set CHANGE_KO_LP,CHANGE_KO_LP - 2;
 		next;
 		set '@dice1,rand(1,6);
 		emotion 57+'@dice1,"";
-		mes "‐" +'@dice1+ "が出ました。";
-		mes "　2個目のサイコロを振ってください‐";
+		mes "-" +'@dice1+ "has been found." ;
+		mes " Roll the second dice -";
 		next;
-		menu "2個目のサイコロを振る",-;
+		menu "Roll the second dice",-;
 		set '@dice2,rand(1,6);
 		emotion 57+'@dice2,"";
-		mes "‐" +'@dice2+ "が出ました。";
+		mes "-" +'@dice2+ "has been rolled." ;
 		if('@dice1 == '@dice2) {
-			mes "　同じ目が出たため19番に進みます‐";
+			mes "Same eye was found, proceed to number 19-"; mes "-
 			close2;
 			set CHANGE_KO_NOW,19;
 			warp "job_ko.gat",62,40;
 			end;
 		}
 		else {
-			// 未調査
-			mes "　同じ目が出なかったため";
-			mes "　再度サイコロを振ります‐";
+			// not investigated
+			mes " roll the dice again because the same roll did not come up-";
 			continue;
 		}
 	}
 }
 
-job_ko.gat,62,51,4	script	道標#ko_17	858,1,1,{
-	mes "‐17番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,62,51,4 script marker#ko_17 858,1,1,{
+	mes "-17th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐呪いにかかってなんだか体が重い。";
-	mes "　サイコロを振るために10^FD0260LP^000000消費します‐";
+	mes "-I'm kind of heavy because of the curse." ;
+	mes "-10^FD0260LP^000000000 consumed to roll the dice-";
 	next;
-	mes "‐位置：17番マス";
+	mes "-Position: square 17";
 	callfunc "jobchenge_ko_func",10,0;
 	end;
 }
 
-job_ko.gat,62,43,4	script	道標#ko_18	858,1,1,{
-	mes "‐18番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,62,43,4 script road marker#ko_18 858,1,1,{
+	mes "-18th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐2^FD0260LP^000000を消費しサイコロを2回振れ‐";
+	mes "-spend 2^FD0260LP^000000 and roll the dice twice-";
 	next;
-	mes "‐2回の合計が5未満ならば24番へ進む。";
-	mes "　5以上ならば19番に進む‐";
+	mes "-If the total of the two rolls is less than 5, proceed to number 24." ;
+	mes "-If the total is greater than 5, proceed to number 19-";
 	next;
-	mes "‐位置：18番マス";
-	mes "　保有LP：" +CHANGE_KO_LP;
-	mes "　サイコロを振ると2^FD0260LP^000000を消費します‐";
+	mes "-Position: 18th square holding LP: " +CHANGE_KO_LP;
+	mes " Rolling the dice consumes 2^FD0260LP^000000 -";
 	next;
-	menu "1個目のサイコロを振る",-;
-	mes "‐2LPを消費した‐";
+	menu "Rolling the first dice",-;
+	mes "-2LP consumed-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 2;
 	next;
 	set '@dice1,rand(1,6);
 	emotion 57+'@dice1,"";
-	mes "‐" +'@dice1+ "が出ました。";
-	mes "　2個目のサイコロを振ってください‐";
+	mes "-" +'@dice1+ "has been found." ;
+	mes " Roll the second dice -";
 	next;
-	menu "2個目のサイコロを振る",-;
+	menu "Roll the second dice",-;
 	set '@dice2,rand(1,6);
 	emotion 57+'@dice2,"";
-	mes "‐" +'@dice2+ "が出ました。";
+	mes "-" +'@dice2+ "has been rolled." ;
 	next;
-	if(('@dice1+'@dice2) >= 5) {
-		mes '@dice1+ " + " +'@dice2+ " = " +('@dice1+'@dice2);
-		mes "‐2個の合計が5以上でした。";
-		mes "　19番に進みます‐";
+	if((('@dice1+'@dice2) >= 5) {
+		mes ""+'@dice1+ " + " +'@dice2+ " = " +('@dice1+'@dice2);
+		mes "-2 total was greater than or equal to 5." ;
+		mes " Go to number 19 -";
 		close2;
 		set CHANGE_KO_NOW,19;
 		warp "job_ko.gat",62,40;
 		end;
 	}
 	else {
-		// 未調査
-		mes "‐2個の合計が5未満でした。";
-		mes "　24番に進みます‐";
+		// not examined
+		mes "-2 total was less than 5." ;
+		mes "Proceed to number 24 -";
 		close2;
 		set CHANGE_KO_NOW,24;
 		warp "job_ko.gat",38,23;
@@ -2367,202 +2050,187 @@ OnTouch:
 	}
 }
 
-job_ko.gat,62,35,4	script	道標#ko_19	858,1,1,{
-	mes "‐19番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,62,35,4 script marker#ko_19 858,1,1,{
+	mes "-19th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐さらに進んでください‐";
+	mes "-Please proceed further-";
 	next;
-	mes "‐位置：19番マス";
+	mes "-Position: square 19";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,62,27,4	script	道標#ko_20	858,1,1,{
-	mes "‐20番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,62,27,4 script roadmap#ko_20 858,1,1,{
+	mes "-20th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ラッキー！";
-	mes "　次のマスに移動した時";
-	mes "　生存の試練ポイントが7^FD0260LP^000000回復。";
-	mes "　100^FD0260LP^000000を超えた分は回復しません‐";
+	mes "-Lucky!" ;
+	mes " 7^FD0260LP^000000 recovery of survival trial points when moving to the next square." ;
+	mes " No more than 100^FD0260LP^000000 will be recovered -";
 	next;
-	mes "‐位置：20番マス";
+	mes "-Position: square 20";
 	callfunc "jobchenge_ko_func",1,7;
 	end;
 }
 
-job_ko.gat,57,23,4	script	道標#ko_21	858,1,1,{
-	mes "‐21番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,57,23,4 script roadmap#ko_21 858,1,1,{
+	mes "-21th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐呪いにかかってなんだか体が重い。";
-	mes "　サイコロを振るために10^FD0260LP^000000消費します‐";
+	mes "-I'm kind of heavy because of the curse." ;
+	mes "-10^FD0260LP^000000000 consumed to roll the dice-";
 	next;
-	mes "‐位置：21番マス";
+	mes "-Position: square 21";
 	callfunc "jobchenge_ko_func",10,0;
 	end;
 }
 
-job_ko.gat,49,23,4	script	道標#ko_22	858,1,1,{
-	mes "‐22番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,49,23,4 script road marker#ko_22 858,1,1,{
+	mes "-22nd square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐残りの^FD0260LP^000000を全て寄付し";
-	mes "　スタート地点に戻れば";
-	mes "　次にここを踏む者は救われるだろう‐";
+	mes "-If you donate all the remaining ^FD0260LP^000000 and return to the starting point, the next person who steps here will be saved-";
 	next;
 	if('trap) {
-		mes "‐親切な誰かが自分の^FD0260LP^000000を";
-		mes "　寄付していました。";
-		mes "　ゴール地点まで進みます‐";
+		mes "-someone kindly donated their ^FD0260LP^000000." ;
+		mes " proceed to the finish line-";
 		close2;
 		set 'trap,0;
 		warp "job_ko.gat",41,44;
 		end;
 	}
-	mes "‐^FD0260LP^000000を全て寄付すると";
-	mes "　次にここに止まった人は";
-	mes "　ゴール地点へ進めます。";
-	mes "　^FD0260LP^000000を全て寄付しますか？‐";
+	mes "-^FD0260LP^000000 donate all the money and the next person who stops here will be able to proceed to the finish line." ;
+	mes "Do you wish to donate all ^FD0260LP^000000? -";
 	next;
-	if(select("LPを全て寄付する","寄付しない") == 1) {
-		mes "‐残りの^FD0260LP^000000を全て寄付しました。";
-		mes "　スタート地点に戻ります‐";
+	if(select("Donate all LP", "Don't donate") == 1) {
+		mes "- I have donated all remaining ^FD0260LP^000000." ;
+		mes " Return to starting point-";
 		close2;
 		set 'trap,1;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐位置：22番マス";
+	mes "-Position: 22nd square";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,41,23,4	script	道標#ko_23	858,1,1,{
-	mes "‐23番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,41,23,4 script roadmap#ko_23 858,1,1,{
+	mes "-23rd square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが発動しました!!";
-	mes "　17番に戻ります‐";
+	mes "-The trap has been triggered! !!!Return to number 17-";
 	close2;
 	set CHANGE_KO_NOW,17;
 	warp "job_ko.gat",62,55;
 	end;
 }
 
-job_ko.gat,33,23,4	script	道標#ko_24	858,1,1,{
-	mes "‐24番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,33,23,4 script marker#ko_24 858,1,1,{
+	mes "-24th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐2^FD0260LP^000000を消費しサイコロを2回振れ‐";
+	mes "-spend 2^FD0260LP^000000 and roll the dice twice-";
 	next;
-	mes "‐2回の合計が9以上ならば";
-	mes "　25番～30番の好きな場所に進む。";
-	mes "　8以下ならば19番に戻る‐";
+	mes "-If the sum of the two rolls is 9 or more, proceed to any place between 25 and 30." ;
+	mes " If 8 or less, return to number 19-";
 	next;
-	mes "‐位置：24番マス";
-	mes "　保有LP：" +CHANGE_KO_LP;
-	mes "　サイコロを振ると2^FD0260LP^000000を消費します‐";
+	mes "-Position: 24th square holding LP: " +CHANGE_KO_LP;
+	mes " Rolling the dice consumes 2^FD0260LP^000000 -";
 	next;
-	menu "1個目のサイコロを振る",-;
-	mes "‐2LPを消費した‐";
+	menu "Rolling the first dice",-;
+	mes "-2LP consumed-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 2;
 	next;
 	set '@dice1,rand(1,6);
 	emotion 57+'@dice1,"";
-	mes "‐" +'@dice1+ "が出ました。";
-	mes "　2個目のサイコロを振ってください‐";
+	mes "-" +'@dice1+ "has been found." ;
+	mes " Roll the second dice -";
 	next;
-	menu "2個目のサイコロを振る",-;
+	menu "Roll the second dice",-;
 	set '@dice2,rand(1,6);
 	emotion 57+'@dice2,"";
-	mes "‐" +'@dice2+ "が出ました。";
+	mes "-" +'@dice2+ "has been rolled." ;
 	next;
-	if(('@dice1+'@dice2) >= 9) {
-		mes '@dice1+ " + " +'@dice2+ " = " +('@dice1+'@dice2);
-		mes "‐2個の合計が9以上でした。";
-		mes "　25番～30番の好きな場所に進みます‐";
+	if((('@dice1+'@dice2) >= 9) {
+		mes ""+'@dice1+ " + " +'@dice2+ " = " +('@dice1+'@dice2);
+		mes "-2 total was greater than or equal to 9." ;
+		mes " Proceed to any place between #25 and #30 -";
 		next;
-		switch(select("25番へ","26番へ","27番へ","28番へ","29番へ","30番へ")) {
+		switch(select("Go to number 25", "Go to number 26", "Go to number 27", "Go to number 28", "Go to number 29", "Go to number 30")) {
 		case 1: set CHANGE_KO_NOW,25; warp "job_ko.gat",30,23; break;
-		case 2: set CHANGE_KO_NOW,26; warp "job_ko.gat",25,28; break;
-		case 3: set CHANGE_KO_NOW,27; warp "job_ko.gat",25,35; break;
-		case 4: set CHANGE_KO_NOW,28; warp "job_ko.gat",25,43; break;
-		case 5: set CHANGE_KO_NOW,29; warp "job_ko.gat",25,52; break;
-		case 6: set CHANGE_KO_NOW,30; warp "job_ko.gat",33,52; break;
+		case 2: set CHANGE_KO_NOW,26; warp "job_ko.gat",25,28; break
+		case 3: set CHANGE_KO_NOW,27; warp "job_ko.gat",25,35; break
+		case 4: set CHANGE_KO_NOW,28; warp "job_ko.gat",25,43; break
+		case 5: set CHANGE_KO_NOW,29; warp "job_ko.gat",25,52; break
+		case 6: set CHANGE_KO_NOW,30; warp "job_ko.gat",33,52; break
 		}
 		end;
 	}
 	else {
-		mes "‐2個の合計が8以下でした。";
-		mes "　19番に戻ります‐";
+		mes "-2 total was less than 8." ;
+		mes " Return to number 19 -";
 		close2;
 		set CHANGE_KO_NOW,19;
 		warp "job_ko.gat",62,40;
@@ -2570,772 +2238,684 @@ OnTouch:
 	}
 }
 
-job_ko.gat,25,23,4	script	道標#ko_25	858,1,1,{
-	mes "‐25番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,25,23,4 script roadmap#ko_25 858,1,1,{
+	mes "-25th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 	if(checkquest(5141)) {
-		if(!(checkquest(5141) & 0x2)) {
-			mes "‐呪いのため進めません‐";
+		if(! (checkquest(5141) & 0x2))) {
+			mes "-Cannot proceed due to curse-";
 			close;
 		}
-		mes "‐2分が経過し、呪いが解けました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-2 minutes have elapsed and the curse has been lifted." ;
+		mes "You can roll the dice-";
 		next;
 		delquest 5141;
-		mes "‐位置：25番マス";
+		mes "-Position: square 25";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description written-";
 	next;
-	mes "‐ここでは寒……";
-	mes "　文字がかすれてよく見えない。";
-	mes "　どうしようか？‐";
+	mes "-here it is cold ......" ;
+	} mes "The text is blurred and cannot be seen clearly." ;
+	mes " What should I do? -";
 	next;
-	if(select("何か芸をする","何もしない") == 1) {
-		// スキルではなく寒いジョークを発言するだけ
-		mes "‐プロンテラで流行している";
-		mes "　寒いジョークを放った！‐";
+	if(select("do some tricks", "do nothing") == 1) {
+		// just uttering cold jokes, not skills
+		mes "-I unleashed a cold joke that's going viral on Prontera! -";
 		next;
 		setquest 5141;
-		mes "‐2分間進めない";
-		mes "　呪いにかかってしまった……‐";
+		mes "-I've been cursed to not be able to proceed for 2 minutes: ...... -";
 		close;
 	}
 	if(rand(6)) {
-		mes "‐何も起こらない……";
-		mes "　芸でもするべきだろうか？‐";
+		mes "-nothing happens ...... -" ;
+		mes " Should we do tricks? -";
 		close;
 	}
-	mes "‐何もしなかったのが";
-	mes "　正しい選択だったようだ‐";
+	mes "-It seems that doing nothing was the right choice-";
 	next;
-	mes "‐位置：25番マス";
+	mes "-Position: square 25";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,25,32,4	script	道標#ko_26	858,1,1,{
-	mes "‐26番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,25,32,4 script roadmap#ko_26 858,1,1,{
+	mes "-26th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが発動しました!!";
-	mes "　20番に戻ります‐";
+	mes "-The trap has been triggered! !!!Return to number 20-";
 	close2;
 	set CHANGE_KO_NOW,20;
 	warp "job_ko.gat",62,32;
 	end;
 }
 
-job_ko.gat,25,40,4	script	道標#ko_27	858,1,1,{
-	mes "‐27番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,25,40,4 script marker#ko_27 858,1,1,{
+	mes "-27th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ラッキー！";
-	mes "　次のマスに移動した時";
-	mes "　生存の試練ポイントが7^FD0260LP^000000回復。";
-	mes "　100^FD0260LP^000000を超えた分は回復しません‐";
+	mes "-Lucky!" ;
+	mes " 7^FD0260LP^000000 recovery of survival trial points when moving to the next square." ;
+	mes " No more than 100^FD0260LP^000000 will be recovered -";
 	next;
-	mes "‐位置：27番マス";
+	mes "-Position: square 27";
 	callfunc "jobchenge_ko_func",1,7;
 	end;
 }
 
-job_ko.gat,25,48,4	script	道標#ko_28	858,1,1,{
-	mes "‐28番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,25,48,4 script roadmap#ko_28 858,1,1,{
+	mes "-28th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐やられる前にやれ‐";
+	mes "-do it before you get hit-";
 	next;
 	if('trap) {
-		mes "‐設置されていたトラップが";
-		mes "　発動しました！";
-		mes "　スタートに戻ります‐";
+		mes "-The trap that was placed has been triggered!" ;
+		mes "Return to the start-"; next; if('trap) { mes "-Return to the start-";
 		close2;
 		set 'trap,0;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐現在トラップは設置されていません‐";
+	mes "-no traps currently in place-";
 	next;
-	mes "‐10^FD0260LP^000000支払うことで ";
-	mes "　スタートに戻る";
-	mes "　トラップを設置できます‐";
+	mes "-You can install a trap back to the start by paying 10^FD0260LP^000000-";
 	next;
-	if(select("トラップを設置する","設置せずサイコロを振る") == 1) {
-		mes "‐10LP支払いました。";
-		mes "　トラップを設置しました‐";
+	if(select("Place a trap", "Do not place and roll dice") == 1) {
+		mes "-10LP paid." ;
+		mes " trap installed-";
 		set 'trap,1;
 		set CHANGE_KO_LP,CHANGE_KO_LP - 10;
 		next;
 	}
-	mes "‐位置：28番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Location: square 28";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,30,52,4	script	道標#ko_29	858,1,1,{
-	mes "‐29番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,30,52,4 script roadmap#ko_29 858,1,1,{
+	mes "-29th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐残り11マス。";
-	mes "　前進せよ‐";
+	mes "-11 squares left." ;
+	} mes "-Forward -"; next; mes "-Forward -"; }
 	next;
-	mes "‐位置：29番マス";
+	mes "-Position: square 29";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,38,52,4	script	道標#ko_30	858,1,1,{
-	mes "‐30番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,38,52,4 script roadmap#ko_30 858,1,1,{
+	mes "-30th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐トラップが発動しました!!";
-	mes "　9番に戻ります‐";
+	mes "-The trap has been triggered! !!!Return to number 9-";
 	close2;
 	set CHANGE_KO_NOW,9;
 	warp "job_ko.gat",17,43;
 	end;
 }
 
-job_ko.gat,46,52,4	script	道標#ko_31	858,1,1,{
-	mes "‐31番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,46,52,4 script marker#ko_31 858,1,1,{
+	mes "-31st square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 	if(checkquest(5141)) {
-		if(!(checkquest(5141) & 0x2)) {
-			mes "‐呪いのため、サイコロを";
-			mes "　振ることができません‐";
+		if(! (checkquest(5141) & 0x2)) {
+			mes "-Cannot roll dice due to curse-";
 			close;
 		}
-		mes "‐2分が経過し、呪いが解けました。";
-		mes "　サイコロを振ることができます‐";
+		mes "-2 minutes have elapsed and the curse has been lifted." ;
+		mes "-Can roll the dice-"; } mes "-Can roll the dice-"; } mes "-Can roll the dice-
 		next;
 		delquest 5141;
-		mes "‐位置：31番マス";
+		mes "-Position: square 31";
 		callfunc "jobchenge_ko_func",1,0;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description written-";
 	next;
-	mes "‐5^FD0260LP^000000を支払わなければ";
-	mes "　2分間サイコロを振ることができない";
-	mes "　呪いにかかります‐";
+	mes "-If you don't pay 5^FD0260LP^000000 you will be cursed not to roll dice for 2 minutes-";
 	next;
-	if(select("5LP支払う","支払わない") == 2) {
+	if(select("pay 5LP", "don't pay") == 2) {
 		setquest 5141;
-		mes "‐2分間サイコロを振ることができない";
-		mes "　呪いにかかりました‐";
+		mes "-you are cursed not to roll dice for 2 minutes-";
 		close;
 	}
-	mes "‐5LP支払いました。";
-	mes "　サイコロを振ることができます‐";
+	mes "-5LP paid." ;
+	mes " You can roll the dice-";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 5;
 	next;
-	mes "‐位置：31番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Position: square 31";
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,54,52,4	script	道標#ko_32	858,1,1,{
-	mes "‐32番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,54,52,4 script roadmap#ko_32 858,1,1,{
+	mes "-32nd square^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ジャンケンマシン";
-	mes "　あなたが勝てば33番～38番の";
-	mes "　好きな場所に進む。";
-	mes "　負けまたは引き分けの場合";
-	mes "　スタート地点へ戻ります‐";
+	mes "- rock-paper-scissors machine If you win, you will go to your favorite place from number 33 to 38." ;
+	} mes " - Return to the starting point if you lose or tie -";
 	next;
-	mes "ジャン！　ケン！　ポン！";
+	mes "-Janken machine you win, you return to the starting point-"; mes "-Janken!  Ken!  Pong!" ;
 	next;
-	set '@own,select("チョキを出す","グーを出す","パーを出す")-1;
+	set '@own,select("play choki", "play goo", "play par")-1; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next; next
 	set '@enemy,rand(3);
-	mes "――結果表示――";
-	mes "マシン：" +(('@enemy==0)? "チョキ": (('@enemy==1)? "グー": "パー"));
-	mes "あなた：" +(('@own==0)? "チョキ": (('@own==1)? "グー": "パー"));
+	mes "--result display--machine:" +(('@enemy==0)? "Choki": (('@enemy==1)? "goo": "par"));
+	mes "you:" +(('@own==0)? "Choki": (('@own==1)? "goo": "par"));
 	next;
 	if('@own == '@enemy) {
-		// 未調査
-		mes "‐Draw";
-		mes "　引き分けです";
-		mes "　スタート地点に戻ります‐";
+		// not examined
+		mes "-Draw draw, return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	if('@own != ('@enemy+1)%3) {
-		// 未調査
-		mes "‐You Lose……";
-		mes "　スタート地点に戻ります‐";
+	if('@own ! = ('@enemy+1)%3) {
+		// not yet investigated
+		mes "-You Lose......" ;
+		mes " Return to the starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐You Win !";
-	mes "　33～38の進みたいマスを";
-	mes "　選んでください‐";
+	mes "-You Win !!!Choose the square you want to proceed from 33 to 38-";
 	next;
-	switch(select("33番へ","34番へ","35番へ","36番へ","37番へ","38番へ")) {
+	switch(select("To square 33", "To square 34", "To square 35", "To square 36", "To square 37", "To square 38")) {
 	case 1: set CHANGE_KO_NOW,33; warp "job_ko.gat",54,48; break;
-	case 2: set CHANGE_KO_NOW,34; warp "job_ko.gat",54,40; break;
-	case 3: set CHANGE_KO_NOW,35; warp "job_ko.gat",54,31; break;
-	case 4: set CHANGE_KO_NOW,36; warp "job_ko.gat",47,31; break;
-	case 5: set CHANGE_KO_NOW,37; warp "job_ko.gat",38,31; break;
-	case 6: set CHANGE_KO_NOW,38; warp "job_ko.gat",33,35; break;
+	case 2: set CHANGE_KO_NOW,34; warp "job_ko.gat",54,40; break
+	case 3: set CHANGE_KO_NOW,35; warp "job_ko.gat",54,31; break
+	case 4: set CHANGE_KO_NOW,36; warp "job_ko.gat",47,31; break
+	case 5: set CHANGE_KO_NOW,37; warp "job_ko.gat",38,31; break
+	case 6: set CHANGE_KO_NOW,38; warp "job_ko.gat",33,35; break
 	}
 	end;
 }
 
-job_ko.gat,54,43,4	script	道標#ko_33	858,1,1,{
-	mes "‐33番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,54,43,4 script marker#ko_33 858,1,1,{
+	mes "-33rd square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐最後のサイコロを振るための";
-	mes "　1^FD0260LP^000000を除くポイントを";
-	mes "　全て支払えば39番に進めます‐";
+	mes "-Pay all points except 1^FD0260LP^000000 for the last dice roll and move on to number 39-";
 	next;
-	if(select("支払う","支払わない") == 1) {
-		mes "‐" +(CHANGE_KO_LP-1)+ "LP支払った";
-		mes "　39番に進みます‐";
+	if(select("pay", "don't pay") == 1) {
+		mes "-" +(CHANGE_KO_LP-1)+ "Proceed to 39th LP paid -";
 		close2;
 		set CHANGE_KO_LP,1;
 		set CHANGE_KO_NOW,39;
 		warp "job_ko.gat",33,44;
 		end;
 	}
-	mes "‐サイコロを振ってください‐";
+	mes "-Roll the dice-";
 	next;
-	mes "‐位置：33番マス";
+	mes "-Position: square 33";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,54,35,4	script	道標#ko_34	858,1,1,{
-	mes "‐34番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,54,35,4 script roadmap#ko_34 858,1,1,{
+	mes "-34th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐ラッキー！";
-	mes "　次のマスに移動した時";
-	mes "　生存の試練ポイントが7^FD0260LP^000000回復。";
-	mes "　100^FD0260LP^000000を超えた分は回復しません‐";
+	mes "-Lucky!" ;
+	mes " 7^FD0260LP^000000 recovery of survival trial points when moving to the next square." ;
+	mes " No more than 100^FD0260LP^000000 will be recovered -";
 	next;
-	mes "‐位置：34番マス";
+	mes "-Location: square 34";
 	callfunc "jobchenge_ko_func",1,7;
 	end;
 }
 
-job_ko.gat,49,31,4	script	道標#ko_35	858,1,1,{
-	mes "‐35番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,49,31,4 script roadmap#ko_35 858,1,1,{
+	mes "-35th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐設置されていたトラップが";
-	mes "　発動しました！";
-	mes "　29番に戻ります‐";
+	mes "-The trap that was installed has been triggered!" ;
+	} mes "-return to #29-"; next; mes "-return to #29-"; }
 	close2;
 	set CHANGE_KO_NOW,29;
 	warp "job_ko.gat",25,52;
 	end;
 }
 
-job_ko.gat,41,31,4	script	道標#ko_36	858,1,1,{
-	mes "‐36番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,41,31,4 script marker#ko_36 858,1,1,{
+	mes "-36th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐残り4マス‐";
+	mes "-4 squares left-";
 	next;
-	mes "‐4以上の目が出ればゴール地点に";
-	mes "　たどり着けるが";
-	mes "　もうひとつのルールを選んでもよい‐";
+	mes "-If you get 4 or more eyes, you can reach the finish line, but you may choose another rule-"; } mes "-There are 4 squares left-"; next; mes "-There are 4 squares left-
 	next;
-	mes "‐もうひとつのルールは";
-	mes "　1,2,3が出ればゴール地点に進み";
-	mes "　4,5,6が出れば29番に戻る。";
-	mes "　このルールを使用せず";
-	mes "　普通にサイコロを振ってもよい‐";
+	mes "-The other rule is that a 1, 2, or 3 will get you to the finish line, and a 4, 5, or 6 will get you back to square 29." ;
+	mes " You may roll the dice normally without using this rule-";
 	next;
-	if(select("もうひとつのルールを使用する","普通にサイコロを振る") == 1) {
-		mes "‐位置：36番マス";
-		mes "　保有LP：" +CHANGE_KO_LP;
-		mes "　サイコロを振ると1^FD0260LP^000000を消費します‐";
+	if(select("Use another rule", "Roll dice normally") == 1) {
+		mes "-Position: 36th square holding LP:" +CHANGE_KO_LP;
+		mes " Rolling the dice consumes 1^FD0260LP^000000 -";
 		next;
-		menu "サイコロを振る",-;
+		menu "Roll dice",-;
 		set '@dice,rand(1,6);
 		emotion 57+'@dice,"";
 		set CHANGE_KO_LP,CHANGE_KO_LP - 1;
-		mes "‐" +'@dice+ "が出ました。";
+		mes "-" +'@dice+ "was found." ;
 		if('@dice <= 3) {
-			mes "　ゴール地点に進みます‐";
+			mes " Proceed to the finish line -";
 			close2;
 			warp "job_ko.gat",41,44;
 			end;
 		}
 		else {
-			mes "　29番に戻ります‐";
+			mes " return to 29-";
 			close2;
 			set CHANGE_KO_NOW,29;
 			warp "job_ko.gat",25,52;
 			end;
 		}
 	}
-	mes "‐位置：36番マス";
+	mes "-Position: 36th square";
 	callfunc "jobchenge_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,33,31,4	script	道標#ko_37	858,1,1,{
-	mes "‐37番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,33,31,4 script roadmap#ko_37 858,1,1,{
+	mes "-37th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐残り3マス‐";
+	mes "-3 squares left-";
 	next;
-	mes "‐奇数が出ればゴール地点に進む。";
-	mes "　しかし、偶数が出れば";
-	mes "　スタート地点に戻る‐";
+	} mes "-If an odd number is found, the game will proceed to the finish line." ;
+	mes "But if an even number is found, return to the starting point-";
 	next;
-	mes "‐位置：37マス";
-	mes "　保有LP：" +CHANGE_KO_LP;
-	mes "　サイコロを振ると1^FD0260LP^000000を消費します‐";
+	mes "-Position: 37 squares held LP: " +CHANGE_KO_LP;
+	mes " Rolling the dice consumes 1^FD0260LP^000000 -";
 	next;
-	menu "サイコロを振る",-;
+	menu "Roll dice",-;
 	set '@dice,rand(1,6);
 	emotion 57+'@dice,"";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 1;
-	mes "‐" +'@dice+ "が出ました。";
+	mes "-" +'@dice+ "was found." ;
 	if('@dice%2) {
-		mes "　ゴール地点に進みます‐";
+		mes "Proceed to the finish line -";
 		close2;
 		warp "job_ko.gat",41,44;
 		end;
 	}
 	else {
-		mes "　スタート地点に戻ります‐";
+		mes " return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
 }
 
-job_ko.gat,33,40,4	script	道標#ko_38	858,1,1,{
-	mes "‐38番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,33,40,4 script road marker#ko_38 858,1,1,{
+	mes "-38th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐1^FD0260LP^000000を残し、全ての^FD0260LP^000000を支払うことで";
-	mes "　スタートに戻る";
-	mes "　トラップを設置できます‐";
+	mes "-Leave 1^FD0260LP^000000 and pay all ^FD0260LP^000000 to place a trap back to the start-";
 	next;
 	if('trap) {
-		mes "‐設置されていたトラップが";
-		mes "　発動しました！";
-		mes "　スタートに戻ります‐";
+		mes "-The trap that was installed has been triggered!" ;
+		mes " Return to start-";
 		close2;
 		set 'trap,0;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	if(select("トラップを設置する","設置せずサイコロを振る") == 1) {
-		mes "‐" +(CHANGE_KO_LP-1)+ "LP支払いました。";
-		mes "　トラップを設置しました‐";
+	if(select("set trap", "set no trap and roll dice") == 1) {
+		mes "-" +(CHANGE_KO_LP-1)+ "LP paid." ;
+		mes " trap installed-";
 		set 'trap,1;
 		set CHANGE_KO_LP,1;
 		next;
 	}
-	mes "‐位置：38番マス";
-	callfunc "jobchenge_ko_func",1,0;
+	mes "-Location: square 38"; set 'trap,1; set 'trap,1; set CHANGE_KO_LP,1; next; }
+	callfunc "jobchange_ko_func",1,0;
 	end;
 }
 
-job_ko.gat,38,44,4	script	道標#ko_39	858,1,1,{
-	mes "‐39番マス";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,38,44,4 script roadmap#ko_39 858,1,1,{
+	mes "-39th square^1A95E6 other letters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
 	if(CHANGE_KO_LP <= 0) {
-		mes "‐^FD0260LP^000000が足りません。";
-		mes "　スタート地点に戻ります‐";
+		mes "-^FD0260LP^000000 is missing." ;
+		mes " Return to starting point-";
 		close2;
 		warp "job_ko.gat",63,16;
 		end;
 	}
-	mes "‐小さく説明が書いてある‐";
+	mes "-small description -";
 	next;
-	mes "‐残り1マス。";
-	mes "　長い道のりだったことだろう‐";
+	mes "-One square left." ;
+	mes "It must have been a long road -";
 	next;
-	mes "‐だが簡単に通す訳にはいかない。";
-	mes "　3が出たら3番に戻ってもらう‐";
+	mes "-but it's not going to be easy to get through." ;
+	mes " When you get a 3, you'll have to go back to number 3 -";
 	next;
-	mes "‐位置：39番マス";
-	mes "　保有LP：" +CHANGE_KO_LP;
-	mes "　サイコロを振ると1^FD0260LP^000000を消費します‐";
+	mes "-Position: 39th square holding LP: " +CHANGE_KO_LP;
+	mes " Rolling the dice consumes 1^FD0260LP^000000 -";
 	next;
-	menu "サイコロを振る",-;
+	menu "Roll dice",-;
 	set '@dice,rand(1,6);
 	emotion 57+'@dice,"";
 	set CHANGE_KO_LP,CHANGE_KO_LP - 1;
-	mes "‐" +'@dice+ "が出ました。";
+	mes "-" +'@dice+ "was found." ;
 	if('@dice == 3) {
-		mes "　3番に戻ります‐";
+		mes " Return to number 3 -";
 		close2;
 		set CHANGE_KO_NOW,3;
 		warp "job_ko.gat",38,16;
 		end;
 	}
 	else {
-		mes "　ゴール地点に進みます‐";
+		mes " proceed to the finish line-";
 		close2;
 		warp "job_ko.gat",41,44;
 		end;
 	}
 }
 
-job_ko.gat,46,41,4	script	道標#ko_40	858,1,1,{
-	mes "‐ゴール";
-	mes "　^1A95E6他の文字は小さくて見えない。";
-	mes "　もっと近づいてみよう^000000‐";
+job_ko.gat,46,41,4 script road marker#ko_40 858,1,1,{
+	mes "-goal^1A95E6 other characters are too small to see." ;
+	mes " Let's get closer^000000-";
 	close;
 OnTouch:
-	mes "‐小さく説明が書いてある‐";
+	mes "-There is a small description-"; mes "-There is a small description-"; mes "-There is a small description-";
 	next;
-	mes "‐さらなる極みへ歩むものへ";
-	mes "　勇気ある始まりの歩みを踏み出した";
-	mes "　汝らに祝福を！‐";
+	mes "-Bless you who have taken the steps of a courageous beginning to those who walk to the further extremes! -";
 	next;
 	compquest 5137;
 	delquest 5140;
-	mes "‐生存の試練を達成した‐";
+	mes "- having accomplished the ordeal of survival-";
 	close2;
 	warp "job_ko.gat",35,113;
 	end;
 }
 
-job_ko.gat,127,125,4	script	ヒョウ#ko	730,{
+job_ko.gat,127,125,4 script leopard#ko 730,{
 	if(checkquest(5138)) {
 		if(checkquest(5138) & 0x8) {
-			mes "[ヒョウ]";
-			mes "そうそう";
-			mes "ギオン様に報告するのを";
-			mes "忘れないでくださいね。";
+			mes "[leopard]";
+			mes "Oh yeah, don't forget to report it to Master Guion." ;
 			close2;
 			warp "job_ko.gat",26,104;
 			end;
 		}
 		if(!checkquest(5142)) {
-			mes "[ヒョウ]";
-			mes "久しぶりですね。";
+			mes "[leopard]";
+			mes "It's been a while." ;
 			next;
-			menu "お久しぶりです",-;
-			mes "[ヒョウ]";
-			mes "すっかり忘れられたかと思いましたが";
-			mes "その様子では、";
-			mes "憶えていてくれたようですね。";
+			menu "It's been a while.",-;
+			mes "[leopard]";
+			mes "I thought you had forgotten all about me, but by the looks of it, you seem to have remembered me." ;
 			next;
-			mes "[ヒョウ]";
-			mes "さて、積もる話もありますが……";
-			mes "今はそのような悠長なことを";
-			mes "話している場合では、";
-			mes "ありませんでしたね。";
+			mes "[leopard]";
+			mes "Well, I have some stories to pile up. ......" ;
+			mes "Now was not the time to talk about such leisurely things, was it?" ;
 			next;
-			mes "[ヒョウ]";
-			mes "では、あらためて！";
-			mes strcharinfo(0);
-			mes "一族の武器工房へようこそ！";
+			mes "[Leopard]";
+			mes "Then again!" ;
+			mes ""+strcharinfo(0);
+			mes "Welcome to the family weapons workshop!" ;
 			next;
-			mes "[ヒョウ]";
-			mes "昔から私たちの一族は";
-			mes "隠密として任務を遂行するために";
-			mes "自分たち独自の武器を作ってきました。";
+			mes "[leopard]";
+			mes "From time immemorial, our clan has crafted our own unique weapons to carry out our duties as a covert force." ;
 			next;
-			menu "それでアインブロックに？",-;
-			mes "[ヒョウ]";
-			mes "……ほう、まだ憶えていましたか。";
+			menu "And so to Einbroch?" ,-;
+			mes "[Leopard]";
+			mes "...... Oh, you still remember?" ;
 			next;
-			mes "[ヒョウ]";
-			mes "その通りです。";
-			mes "鋼鉄の都市アインブロックは";
-			mes "腕利きの匠が多いため";
-			mes "新しい技術も頻繁に生まれます。";
+			mes "[leopard]";
+			mes "That's right." ;
+			mes "The city of Einbroch in Steel is full of skilled artisans and new techniques are frequently created." ;
 			next;
-			mes "[ヒョウ]";
-			mes "私の任務は";
-			mes "そういった新しい技術を習得、分析して";
-			mes "一族に報告をすることでした。";
+			mes "[Leopard]";
+			mes "My task was to learn and analyze such new techniques and report back to the clan." ;
 			next;
-			mes "[ヒョウ]";
-			mes "おっと……";
-			mes "少し口が滑りました。";
+			mes "[leopard]";
+			mes "Oops. ......." ;
+			mes "I slipped up a bit." ;
 			next;
-			mes "[ヒョウ]";
-			mes "それはさておき";
-			mes "^6848B7鉄鉱石、鉄、鋼鉄、プラコン、";
-			mes "エンベルタコン、オリデオコン原石、";
-			mes "エルニウム原石^000000は";
-			mes "十分持っていますか？";
+			mes "[leopard]";
+			mes "Aside from that ^6848B7 iron ore, do you have enough iron, Steel, Phracon, Emveretarcon, Oridecon ore, Elunium ore ^000000?" ;
 			next;
-			mes "[ヒョウ]";
-			mes "さっそく新しい武器の";
-			mes "試作品を作ってみましょう。";
+			mes "[Leopard]";
+			mes "Let's quickly make a prototype of a new weapon." ;
 			next;
-			misceffect 191,"製作道具#ko_01";
-			mes "[ヒョウ]";
-			mes "製作道具はそこと……";
+			misceffect 191, "Production tool#ko_01";
+			mes "[leopard]";
+			mes "The fabrication tools are there and ......." ;
 			next;
-			misceffect 191,"製作道具#ko_02";
-			mes "[ヒョウ]";
-			mes "ここ……";
+			misceffect 191, "fabrication-tool#ko_02";
+			mes "[leopard]";
+			mes "Here ......" ;
 			next;
-			misceffect 191,"製作道具#ko_03";
+			misceffect 191, "Production tool#ko_03";
 			setquest 5142;
-			mes "[ヒョウ]";
-			mes "それから、向こうにあるものを";
-			mes "自由に使ってください。";
+			mes "[leopard]";
+			mes "Then feel free to use what's over there." ;
 			next;
-			mes "[ヒョウ]";
-			mes "武器の作り方について";
-			mes "説明を聞きたい場合には";
-			mes "もう一度、私に話しかけてください。";
-			mes "それでは、始めてください。";
+			mes "[leopard]";
+			mes "Speak to me again if you would like to hear an explanation of how to make weapons." ;
+			mes "Then please begin." ;
 			close;
 		}
 		if(checkquest(5145)) {
-			mes "[ヒョウ]";
-			mes "満足できる成果は得られましたか？";
+			mes "[leopard]";
+			mes "Did you get satisfactory results?" ;
 			next;
-			switch(select("まだです","できました","壊れてしまった")) {
+			switch(select("Not yet.", "Done.", "Broken.")) {
 			case 1:
-				mes "[ヒョウ]";
-				mes "満足できる成果は";
-				mes "簡単には得られませんからね。";
+				mes "[Leopard]";
+				mes "Satisfactory results are not easy to achieve, you know." ;
 				close;
 			case 2:
-				mes "[ヒョウ]";
-				mes "いい結果が得られたみたいですね。";
+				mes "[leopard]";
+				mes "It looks like you got a good result." ;
 				next;
-				if(getequipid(4) != 13074 && getequipid(4) != 13312) {
-					mes "[ヒョウ]";
-					mes "おや……。";
+				if(getequipid(4) ! = 13074 && getequipid(4) ! = 13312) {
+					mes "[leopard]";
+					mes "Oh ......." ;
 					next;
-					mes "[ヒョウ]";
-					mes "すみません。";
-					mes "あなたが鍛えた武器を";
-					mes "装備していただけますか。";
-					mes "確認しますので。";
+					mes "[leopard]";
+					mes "Sorry." ;
+					mes "Could you please equip me with the weapon you have forged?" ;
+					mes "I will check it for you." ;
 					close;
 				}
-				mes "[ヒョウ]";
-				mes "では確認させてもらいましょう。";
+				mes "[leopard]";
+				mes "Then let me confirm it." ;
 				next;
-				mes "‐ヒョウは武器を手に取って";
-				mes "　観察している‐";
+				mes "-The leopard holds the weapon in his hand and observes-";
 				next;
 				set '@ref,getequiprefinerycnt(4);
 				if('@ref < 7) {
-					mes "[ヒョウ]";
-					mes "なるほど。";
-					mes "良い感じですが、";
-					mes "もう少し、鍛える必要がありますね。";
-					mes "がんばってください。";
+					mes "[leopard]";
+					mes "I see." ;
+					mes "It looks good, but it needs to be worked out a bit more." ;
+					mes "Good luck." ;
 					close;
 				}
 				else if('@ref < 9) {
-					mes "[ヒョウ]";
-					mes "なかなかやりますね。";
-					mes "これなら合格を出せそうです。";
-					mes "とはいえ、まだ強化可能ですが";
-					mes "これで完成でよいですか？";
+					mes "[leopard]";
+					mes "You're doing pretty well." ;
+					mes "I think I can get a pass on this." ;
+					mes "However, it is still possible to enhance it, but is this enough to complete it?" ;
 					next;
-					if(select("はい","いいえ") == 2) {
-						mes "[ヒョウ]";
-						mes "では、満足できる結果が得られたら";
-						mes "また来てください。";
+					if(select("yes", "no") == 2) {
+						mes "[Leopard]";
+						mes "Then come back when you have a satisfactory result." ;
 						close;
 					}
 				}
 				else if('@ref == 9) {
-					mes "[ヒョウ]";
-					mes "素晴らしい……。";
-					mes "文句なしの合格ですよ。";
-					mes "ここまでの出来なら";
-					mes "最高峰を目指していただきたい";
-					mes "そんな欲が出てきた程です。";
+					mes "[leopard]";
+					mes "Great ......." ;
+					mes "You passed without question." ;
+					mes "It's so good that I have such a desire to have you aim for the highest peak." ;
 					next;
-					mes "[ヒョウ]";
-					mes "どうでしょう？";
-					mes "あなたがよいのでしたら";
-					mes "是非、最高峰を目指して";
-					mes "がんばっていただきたいのですが。";
+					mes "[Leopard]";
+					mes "What do you think?" ;
+					mes "If it's good enough for you, I'd love to see you work hard for the highest peak." ;
 					next;
-					if(select("これくらいにします","まだまだ満足できません") == 2) {
-						mes "[ヒョウ]";
-						mes "あなたの腕前に";
-						mes "期待させてもらいますよ。";
+					if(select("I'll take this much", "I'm not satisfied yet") == 2) {
+						mes "[Leopard]";
+						mes "I'm going to let your skill get the best of you." ;
 						close;
 					}
 				}
 				else if('@ref >= 10) {
-					// 未調査
-					mes "[ヒョウ]";
-					mes "素晴らしい！";
-					mes "文句なしの合格です！";
+					// not examined
+					mes "[leopard]";
+					mes "Excellent!" ;
+					mes "Passed without question!" ;
 					next;
 				}
-				mes "[ヒョウ]";
-				mes "あなたの腕前に関しては十分";
-				mes "確認できました。";
-				mes "この武器の仕上げは私がやりましょう。";
-				mes "いったん預かりますよ。";
+				mes "[Leopard]";
+				mes "As for your skills, we have confirmed enough." ;
+				mes "I will do the finishing touches on this weapon." ;
+				mes "I'll leave it with you once." ;
 				next;
 				delequip 4;
 				delquest 5145;
@@ -3345,380 +2925,314 @@ job_ko.gat,127,125,4	script	ヒョウ#ko	730,{
 					compquest 5143;
 				if(checkquest(5144))
 					compquest 5144;
-				mes "[ヒョウ]";
-				mes strcharinfo(0)+ "の";
-				mes "武器の試練を終了します！";
+				mes "[leopard]";
+				mes ""+strcharinfo(0)+ "Finish the ordeal of weapons!"" ;
 				close;
 			case 3:
-				mes "[ヒョウ]";
-				mes "忠告したはずですが……";
+				mes "[leopard]";
+				mes "I would have advised you to ......" ;
 				next;
-				mes "[ヒョウ]";
-				mes "仕方がありませんね。";
-				mes "少し確認させてもらいますよ。";
+				mes "[leopard]";
+				mes "I can't help it." ;
+				mes "I'm going to have to check a few things." ;
 				next;
-				mes "‐装備が全て外れた！";
-				mes "　ヒョウが何かをしたのだろうか？‐";
+				mes "-all the equipment is off!" ;
+				mes "What did the leopard do? -";
 				next;
 				unequip;
 				if(countitem(13074) > 0 || countitem(13312) > 0) {
-					mes "[ヒョウ]";
-					mes "おや……？";
-					mes "試作品を持っているじゃありませんか。";
+					mes "[leopard]";
+					mes "Oh ......?" ;
+					mes "You have a prototype, don't you?" ;
 					close;
 				}
-				mes "[ヒョウ]";
-				mes "ふむ……";
-				mes "本当になくしてしまったようですね。";
+				mes "[leopard]";
+				mes "Hmmm ......" ;
+				mes "I guess I really lost it." ;
 				next;
 				setquest 5142;
 				delquest 5143;
 				delquest 5144;
 				delquest 5145;
-				mes "[ヒョウ]";
-				mes "しかたありません。";
-				mes "もう一度、試作品から作ってください。";
+				mes "[Leopard]";
+				mes "It can't be helped." ;
+				mes "Please make it again from the prototype." ;
 				close;
 			}
 		}
-		mes "[ヒョウ]";
-		mes "新しい武器の試作品は";
-		mes "完成しましたか？";
+		mes "[Leopard]";
+		mes "Have you completed the prototype of your new weapon?" ;
 		if(checkquest(5143) || checkquest(5144))
-			set '@str$,"はい、完成しました";
+			set '@str$, "Yes, it's finished";
 		next;
-		switch(select("製作道具について聞く","材料が足りない","作り方を聞く",'@str$)) {
+		switch(select("Ask about production tools", "Materials are missing", "Ask how to make",'@str$)) {
 		case 1:
-			misceffect 191,"製作道具#ko_01";
-			mes "[ヒョウ]";
-			mes "これから示す場所に";
-			mes "製作道具があります。";
-			mes "まずはひとつ目。";
+			misceffect 191, "fabrication tools#ko_01";
+			mes "[leopard]";
+			mes "There are fabrication tools at the location I'm about to show you." ;
+			mes "First one." ;
 			next;
-			misceffect 191,"製作道具#ko_02";
-			mes "[ヒョウ]";
-			mes "ふたつ目。";
+			misceffect 191, "Production tools#ko_02";
+			mes "[leopard]";
+			mes "The second one." ;
 			next;
-			misceffect 191,"製作道具#ko_03";
-			mes "[ヒョウ]";
-			mes "最後にみっつ目。";
-			mes "好きなところを使ってください。";
+			misceffect 191, "Production tool#ko_03";
+			mes "[leopard]";
+			mes "Last three eyes." ;
+			mes "Use whatever you like." ;
 			close;
 		case 2:
-			mes "[ヒョウ]";
-			mes "材料が足りないのですか？";
+			mes "[Leopard]";
+			mes "Are you running out of material?" ;
 			next;
-			misceffect 191,"タンス#ko";
-			mes "[ヒョウ]";
-			mes "街に戻る必要があるみたいですね。";
-			mes "そこのタンスを調べてみてください。";
+			misceffect 191, "wardrobe#ko";
+			mes "[leopard]";
+			mes "It looks like you need to go back to town." ;
+			mes "Check the wardrobe there." ;
 			close;
 		case 3:
-			mes "[ヒョウ]";
-			mes "ふむ、やはり説明が必要ですかね？";
+			mes "[leopard]";
+			mes "Hmm, do I still need to explain?" ;
 			next;
-			mes "[ヒョウ]";
-			mes "まずは鉱石を溶かします。";
-			mes "純度が高い金属を作るためには";
-			mes "同じ種類の鉱石を使うといいでしょう。";
-			mes "途中で鉱石が足りなくなると";
-			mes "やり直しになってしまうので";
-			mes "十分な数の鉱石を用意してください。";
+			mes "[leopard]";
+			mes "First, melt the ore." ;
+			mes "It is best to use the same type of ore to produce a metal of high purity." ;
+			mes "If you run out of ore during the process, you will have to start over, so make sure you have a sufficient number of ores." ;
 			next;
-			mes "[ヒョウ]";
-			mes "また、希少性の高い鉱石ほど";
-			mes "少ない個数で純度の高い金属を";
-			mes "作ることができます。";
+			mes "[Leopard]";
+			mes "Also, the rarer the ore, the more pure the metal can be made with fewer pieces." ;
 			next;
-			mes "[ヒョウ]";
-			mes "そうですね……";
-			mes "同じ鉱石を溶かし続けた場合、";
-			mes "鉄鉱石やプラコンなら^FF000050^000000個";
-			mes "鉄やエンベルタコンなら^FF000025^000000個";
-			mes "鋼鉄やオリデオコン原石なら^FF000017^000000個";
-			mes "あれば十分でしょう。";
+			mes "[leopard]";
+			mes "Yes. ......" ;
+			mes "If you keep melting the same ore, ^FF000050^000000 for iron ore or Phracon, ^FF000025^000000 for iron or Emveretarcon, and ^FF000017^000000 for Steel or Oridecon ore would be enough." ;
 			next;
-			mes "[ヒョウ]";
-			mes "ですが、これらの個数は";
-			mes "あくまで目安です。";
-			mes "溶かす鉱石の組み合わせ次第で";
-			mes "必要になる個数は変わりますから";
-			mes "注意してくださいね。";
+			mes "[Leopard]";
+			mes "But these numbers are only a guide." ;
+			mes "The number of pieces you will need depends on the combination of ores you melt, so please Attention." ;
 			next;
-			mes "[ヒョウ]";
-			mes "また、鉱石の性質についても";
-			mes "注意してください。";
-			mes "たとえば鉄鉱石、鉄、鋼鉄は";
-			mes "性質が似ているため";
-			mes "混ぜ合わせて溶かしても";
-			mes "純度の高い金属ができるでしょう。";
+			mes "[Leopard]";
+			mes "Also, please Attention about the properties of the ores." ;
+			mes "For example, iron ore, iron, and Steel have similar properties and can be mixed and melted together to produce a metal of high purity." ;
 			next;
-			mes "[ヒョウ]";
-			mes "プラコン、エンベルタコン";
-			mes "オリデオコン原石も";
-			mes "それぞれ性質が似ていますので";
-			mes "同じことが言えます。";
+			mes "[Leopard]";
+			mes "The same is true of Phracon, EmveretarconOridecon ore, since each has similar properties." ;
 			next;
-			mes "[ヒョウ]";
-			mes "ただし！";
-			mes "これらの性質は相反するので";
-			mes "^FF0000異なる性質の鉱石を溶かすと";
-			mes "高めた純度が落ちてしまいます^000000。";
+			mes "[leopard]";
+			mes "However!" ;
+			mes "These properties are opposites, so ^FF000000 melting ores with different properties will reduce the enhanced purity ^000000."; mes "[Leopard]"; mes "[Leopard]"; mes "[Leopard]"; mes "[Leopard]
 			next;
-			mes "[ヒョウ]";
-			mes "なお、エルニウム原石は";
-			mes "特殊な性質を持っていて";
-			mes "どちらの性質の金属に溶かしても";
-			mes "わずかながら純度を";
-			mes "高めることができます。";
+			mes "[Leopard]";
+			mes "In addition, Elunium ore has special properties that can slightly increase purity when dissolved in metals of either nature." ;
 			next;
-			mes "[ヒョウ]";
-			mes "純度の高い金属を用意できたら";
-			mes "鋳型に流しこんでください。";
+			mes "[leopard]";
+			mes "When you have a metal of high purity, pour it into the mold." ;
 			next;
-			mes "[ヒョウ]";
-			mes "そして、研磨と焼入れを";
-			mes "繰り返して金属を強化し";
-			mes "最後に仕上げをしてください。";
+			mes "[leopard]";
+			mes "Then, strengthen the metal by repeated polishing and hardening, and finally finish it off." ;
 			next;
-			mes "[ヒョウ]";
-			mes "強化が不十分だと";
-			mes "試作品が壊れやすくなります。";
-			mes "研磨と焼入れを十分に行ってから";
-			mes "仕上げに移ってください。";
+			mes "[leopard]";
+			mes "Insufficient strengthening will make the prototype fragile." ;
+			mes "Please polish and harden thoroughly before moving on to finishing." ;
 			next;
-			mes "[ヒョウ]";
-			mes "参考までに、研磨と焼入れを";
-			mes "交互に作業するのが";
-			mes "良い武器を作る最適な方法です。";
+			mes "[leopard]";
+			mes "For reference, the best way to make a good weapon is to work alternately with polishing and hardening." ;
 			next;
-			mes "[ヒョウ]";
-			mes "ここまで説明すれば十分ですね？";
-			mes "さあ、試作品を作ってみましょう！";
+			mes "[leopard]";
+			mes "Is this explanation enough?" ;
+			mes "Now, let's make a prototype!" ;
 			close;
 		case 4:
 			if(checkquest(5143)) {
-				mes "[ヒョウ]";
-				mes "ほう……";
-				mes "苦無をまねた短剣の類ですか？";
+				mes "[leopard]";
+				mes "law......" ;
+				mes "Is it some kind of dagger that imitates a bitter?" ;
 				next;
-				mes "[ヒョウ]";
-				mes "面白い発想ですね。";
+				mes "[leopard]";
+				mes "That's an interesting idea." ;
 			}
 			else if(checkquest(5144)) {
-				mes "[ヒョウ]";
-				mes "これは風魔手裏剣……？";
-				mes "いやいや……";
+				mes "[leopard]";
+				mes "Is this a Fuuma Shuriken ......?" ;
+				mes "No no no ......" ;
 				next;
-				mes "[ヒョウ]";
-				mes "平凡な風魔手裏剣ではありませんね！";
+				mes "[leopard]";
+				mes "That's no ordinary Fuuma Shuriken!" ;
 			}
-			mes "少し鍛え直さないと";
-			mes "武器として使うのは厳しいですが";
-			mes "いい武器になる可能性を感じますね。";
+			mes "It's tough to use as a weapon without a little retraining, but I can see the potential for it to be a good weapon." ;
 			next;
-			mes "[ヒョウ]";
-			mes "よし、これなら合格点を出せますね。";
+			mes "[leopard]";
+			mes "Okay, I think I can give this a passing grade." ;
 			next;
-			mes "[ヒョウ]";
-			mes "次に、武器の強化ですね。";
-			mes "私の下の方に精錬装置があります。";
-			mes "^0000FF精錬値が+7^000000になったら";
-			mes "持ってきてください。";
+			mes "[leopard]";
+			mes "Next, we're going to enhance the weapons." ;
+			mes "There is a refining device below me." ;
+			mes "Bring it to me when the ^0000FF refining value reaches +7^000000." ;
 			next;
-			mes "[ヒョウ]";
-			mes "それ以上精錬しても構いませんが";
-			mes "^FF0000特別な報酬などはありません^000000から";
-			mes "注意してくださいね。";
+			mes "[leopard]";
+			mes "You may refine it further, but there is no ^FF000000 special reward, etc. ^000000 to Attention." ;
 			next;
-			mes "[ヒョウ]";
-			mes "そうそう、精錬は必ず";
-			mes "^FF0000この部屋の精錬装置で";
-			mes "行なって下さい。^000000";
+			mes "[leopard]";
+			mes "Yes, yes, refining must ^FF000000be done in the refining equipment in this room. ^000000";
 			next;
-			mes "[ヒョウ]";
-			mes "なお、ここにある精錬装置ですが";
-			mes "鋼鉄の都市アインブロックの";
-			mes "腕利きの匠により";
-			mes "製作された精錬装置ですので";
+			mes "[leopard]";
+			mes "In addition, please note that the refining equipment in this room was made by the skilled artisans of Einbroch, the city of Steel;
 			next;
-			mes "[ヒョウ]";
-			mes "他の場所で精錬した場合と";
-			mes "精錬の成功率が";
-			mes "異なっているようです。";
-			mes "注意してください。";
+			mes "[Leopard]";
+			mes "The success rate of refining seems to be different from that of refining elsewhere." ;
+			mes "Please Attention." ;
 			next;
-			mes "[ヒョウ]";
-			mes "また、^0000FFこの部屋の精錬装置で";
-			mes "精錬に失敗しても";
-			mes "武器は壊れません^000000。";
+			mes "[Leopard]";
+			mes "Also, ^0000FF the weapon will not break if you fail to refine it with the refining equipment in this room ^000000."
 			next;
-			mes "[ヒョウ]";
-			mes "ですが、他の人に頼んだり";
-			mes "ここではない場所で精錬に失敗して";
-			mes "^FF0000試作品を壊すとやり直し^000000になるので";
-			mes "絶対壊さないようにね。";
+			mes "[leopard]";
+			mes "But if you ask someone else or fail to refine it in a place other than here and break the ^FF000000 prototype, you will have to start over ^000000, so don't break it." ;
 			setquest 5145;
 			close;
 		}
 	}
 }
 
-job_ko.gat,117,128,0	script	タンス#ko	844,{
-	mes "‐見たところ";
-	mes "　普通のタンスのようだが……‐";
+job_ko.gat,117,128,0 script wardrobe#ko 844,{
+	mes "- Looks like a normal chest of drawers ...... -";
 	next;
-	if(select("そっとしておく","引き出しを開ける") == 1) {
-		mes "‐あなたは、その場を離れた‐";
+	if(select("leave it alone", "open the drawer") == 1) {
+		mes "-You're off the hook-"; next; mes "-You're off the hook-";
 		close;
 	}
-	mes "‐どこかで機械が動く音がする……‐";
+	mes "-somewhere there is the sound of a machine moving ...... -";
 	close2;
 	warp "amatsu.gat",147,136;
 	end;
 }
 
-job_ko.gat,131,124,0	script	製作道具#ko_01	844,{
-	if(!(checkquest(5142) & 0x1)) {
-		mes "‐製作道具だ。";
-		mes "　今は使う必要がない‐";
+job_ko.gat,131,124,0 script fabrication tool#ko_01 844,{
+	if(! (checkquest(5142) & 0x1)) {
+		mes "-It's a fabrication tool." ;
+		mes "-Not necessary to use now-";
 		close;
 	}
-	mes "‐武器を製作するための道具だ‐";
+	mes "-Tools for fabricating weapons."; mes "-Tools for fabricating weapons.
 	next;
-	mes "‐まずは武器製作に使う金属を";
-	mes "　溶かす必要があるようだ‐";
+	mes "-First, it seems we need to melt the metal for weapon making-"; next; } mes "-First, it seems we need to melt the metal for weapon making-"; next; }
 	setarray '@point,20,40,60,20,40,60,20;
 	while(1) {
 		next;
-		set '@sel,select("鉄鉱石を溶かす","鉄を溶かす","鋼鉄を溶かす","プラコンを溶かす","エンベルタコンを溶かす","オリデオコン原石を溶かす","エルニウム原石を溶かす","やめる") - 1;
+		set '@sel,select("Melt iron ore", "Melt iron", "Melt Steel", "Melt Phracon", "Melt Emveretarcon", "Melt Oridecon ore", "Melt Elunium ore", "Stop") - 1;
 		switch('@sel) {
-		case 0:	set '@itemid,1002;	break;
-		case 1:	set '@itemid,998;	break;
-		case 2:	set '@itemid,999;	break;
-		case 3:	set '@itemid,1010;	break;
-		case 4:	set '@itemid,1011;	break;
-		case 5:	set '@itemid,756;	break;
-		case 6:	set '@itemid,757;	break;
+		case 0: set '@itemid,1002; break;
+		case 1: set '@itemid,998; break
+		case 2: set '@itemid,999; break
+		case 3: set '@itemid,1010; break
+		case 4: set '@itemid,1011; break
+		case 5: set '@itemid,756; break
+		case 6: set '@itemid,757; break
 		case 7:
-			mes "‐あなたは、その場を離れた‐";
+			mes "-you have left the place-";
 			close;
 		}
 		if(countitem('@itemid) < '@iron['@sel]+1) {
-			mes "‐しかし" +getitemname('@itemid)+ "を持っていない‐";
+			mes "-But" +getitemname('@itemid)+ "you don't have-"
 		}
 		else {
 			if('@cnt == 0)
 				misceffect 302;
-			mes "‐高熱を与え";
-			mes "　" +getitemname('@itemid)+ "を";
-			mes "　溶かした‐";
+			mes "-gave high heat" +getitemname('@itemid)+ "melted-";
 			set '@cnt,'@cnt + '@point['@sel];
 			set '@iron['@sel],'@iron['@sel] + 1;
 			next;
 			if('@cnt < 200) {
-				mes "‐まだまだ先は長そうだ‐";
+				mes "-It looks like we still have a long way to go-";
 			}
 			else if('@cnt < 400) {
-				mes "‐この調子で溶かしていこう‐";
+				mes "-Let's keep melting at this rate-";
 			}
 			else if('@cnt < 600) {
-				mes "‐そろそろ半分くらいだろうか‐";
+				mes "-I think we're about halfway there-"
 			}
 			else if('@cnt < 800) {
-				mes "‐だいぶ純度が高くなった気がする‐";
+				mes "-I think it's getting a lot purer-"
 			}
 			else if('@cnt < 1000) {
-				mes "‐もう少しで出来上がりそうだ‐";
+				mes "-I think it's almost done-"
 			}
 			else {
-				mes "‐武器を作るために十分な量の";
-				mes "　溶けた金属の用意ができた‐";
+				mes "-We have enough molten metal ready to make the weapon-";
 				break;
 			}
 		}
 		next;
-		mes "‐現在、溶かした鉱石の個数は";
-		mes "　以下の通りです‐";
+		mes "-Currently, the number of melted ores is as follows-";
 		next;
-		mes "‐鉄鉱石：^FF0000" +'@iron[0]+ "^000000個";
-		mes "　鉄：^FF0000" +'@iron[1]+ "^000000個";
-		mes "　鋼鉄：^FF0000" +'@iron[2]+ "^000000個";
-		mes "　プラコン：^FF0000" +'@iron[3]+ "^000000個";
-		mes "　エンベルタコン：^FF0000" +'@iron[4]+ "^000000個";
-		mes "　オリデオコン原石：^FF0000" +'@iron[5]+ "^000000個";
-		mes "　エルニウム原石：^FF0000" +'@iron[6]+ "^000000個‐";
+		mes "-Iron ore: ^FF0000" +'@iron[0]+ "^000000 pieces Iron: ^FF0000" +'@iron[1]+ "^000000 pieces Steel: ^FF0000" +'@iron[2]+ "^000000 pieces Phracon: ^FF0000" +'@iron[3]+ "^000000 pieces Emveretarcon: ^FF0000" +'@iron[4]+ "^000000 pieces Oridecon ore: ^FF0000" +'@iron[5]+ "^000000 pieces Elunium ore: ^FF0000" +'@iron[6]+ "^000000 pieces-";
 		next;
-		mes "‐次はどの金属を溶かそうか？‐";
+		mes "-Which metal shall we melt next? -";
 		continue;
 	}
 	next;
-	mes "‐次は鋳型に溶けた金属を入れよう。";
-	mes "　どの鋳型を使おうか？‐";
+	mes "-Next, let's put the molten metal in the mold." ;
+	mes " Which mold shall we use? -";
 	next;
-	switch(select("短剣用の鋳型","風魔手裏剣用の鋳型")) {
+	switch(select("Mold for dagger", "Mold for windmill shuriken")) {
 	case 1:
-		mes "‐短剣用の鋳型に";
-		mes "　溶けた金属を流し込んだ‐";
+		mes "-Melted metal is poured into the mold for the dagger-";
 		set '@type,1;
 		break;
 	case 2:
-		mes "‐風魔手裏剣用の鋳型に";
-		mes "　溶けた金属を流し込んだ‐";
+		mes "-The molten metal was poured into the mold for the Fuuma Shuriken";
 		set '@type,2;
 		break;
 	}
 	next;
 	misceffect 101;
-	mes "‐ある程度形は整ったようだ。";
-	mes "　次はどんな作業をしようか？‐";
+	mes "-Some form seems to be in place." ;
+	mes " What shall we work on next? -";
 	next;
-	switch(select("研磨作業をする","焼入れ作業をする")) {
+	switch(select("do the polishing work", "do the hardening work")) {
 	case 1:
 		misceffect 21,"";
 		set '@cnt,1;
-		mes "‐研磨作業を行った‐";
+		mes "-Grinding operation performed-";
 		next;
-		mes "‐まだまだ先は長そうだ。";
-		mes "　次は焼き入れ作業をしよう‐";
+		mes "- still a long way to go." ;
+		mes "-Next, let's do the hardening work-"; next; mes "-Next, let's do the hardening work-";
 		break;
 	case 2:
 		misceffect 101,"";
 		set '@cnt,2;
-		mes "‐焼入れ作業を行った‐";
+		mes "-Hardening operation performed-";
 		next;
-		mes "‐まだまだ先は長そうだ。";
-		mes "　次は焼き入れ作業をしよう‐";
+		mes "-still a long way to go." ;
+		mes "-Next, let's do the hardening work-"; next; mes "-Next, let's do the hardening work-";
 		break;
 	}
 	while(1) {
 		next;
-		mes "‐次はどんな作業をしようか？‐";
+		mes "-What work shall we do next? -";
 		next;
-		switch(select("研磨作業をする","焼入れ作業をする","仕上げ作業をする")) {
+		switch(select("Do polishing work", "Do hardening work", "Do finishing work")) {
 		case 1:
 			misceffect 21,"";
 			if('@cnt == 2) {
 				set '@cnt2,'@cnt2 + 1;
 			}
 			set '@cnt,1;
-			mes "‐研磨作業を行った‐";
+			mes "-Polishing work done-";
 			next;
 			if('@cnt2 < 3)
-				mes "‐まだまだ先は長そうだ。";
+				mes "-Long way to go yet." ;
 			else if('@cnt2 < 6)
-				mes "‐もっと鍛える必要がありそうだ。";
+				mes "-I guess I need to work out more." ;
 			else if('@cnt2 < 9)
-				mes "‐この調子で鍛えていこう。";
+				mes "-Let's keep working out at this rate." ;
 			else if('@cnt2 < 12)
-				mes "‐だいぶ鍛えられてきた。";
+				mes "-I'm getting a lot of workout." ;
 			else if('@cnt2 < 15)
-				mes "‐もう少しで出来上がりそうだ。";
+				mes "-Almost done." ;
 			else {
-				mes "‐そろそろ仕上げ作業をしよう‐";
+				mes "-It's time to do some finishing work-";
 				continue;
 			}
-			mes "　次は焼き入れ作業をしよう‐";
+			mes "-Next, let's do the hardening work-";
 			continue;
 		case 2:
 			misceffect 101,"";
@@ -3726,27 +3240,26 @@ job_ko.gat,131,124,0	script	製作道具#ko_01	844,{
 				set '@cnt2,'@cnt2 + 1;
 			}
 			set '@cnt,2;
-			mes "‐焼入れ作業を行った‐";
+			mes "-Hardening operation performed-";
 			next;
 			if('@cnt2 < 3)
-				mes "‐まだまだ先は長そうだ。";
+				mes "-There's still a long way to go." ;
 			else if('@cnt2 < 6)
-				mes "‐もっと鍛える必要がありそうだ。";
+				mes "-I guess I need to work out more." ;
 			else if('@cnt2 < 9)
-				mes "‐この調子で鍛えていこう。";
+				mes "-Let's keep working out at this rate." ;
 			else if('@cnt2 < 12)
-				mes "‐だいぶ鍛えられてきた。";
+				mes "-I'm getting a lot of workout." ;
 			else if('@cnt2 < 15)
-				mes "‐もう少しで出来上がりそうだ。";
+				mes "-Almost done." ;
 			else {
-				mes "‐そろそろ仕上げ作業をしよう‐";
+				mes "-It's time to do some finishing work-";
 				continue;
 			}
-			mes "　次は研磨作業をしよう‐";
+			mes " -Let's do some polishing next-";
 			continue;
 		case 3:
-			mes "‐仕上げ作業として";
-			mes "　武器のつや消しを行った‐";
+			mes "-Finishing work was done on the weapon matting-";
 			next;
 			misceffect 101;
 			delitem 1002,'@iron[0];
@@ -3758,12 +3271,10 @@ job_ko.gat,131,124,0	script	製作道具#ko_01	844,{
 			delitem 757,'@iron[6];
 			if('@cnt2 < 15) {
 				misceffect 183,"";
-				mes "‐仕上げ作業の途中で";
-				mes "　試作品が壊れてしまった‐";
+				mes "-The prototype was broken in the middle of the finishing process-";
 				next;
-				mes "‐製作過程に問題が";
-				mes "　あったのかもしれない……。";
-				mes "　最初からやり直しだ‐";
+				mes "-Maybe there was a problem with the fabrication process. ......." ;
+				mes "-We have to start all over again from the beginning-";
 				close;
 			}
 			misceffect 103,"";
@@ -3777,248 +3288,222 @@ job_ko.gat,131,124,0	script	製作道具#ko_01	844,{
 				setquest 5144;
 				getitem 13312,1;
 			}
-			mes "‐試作品が完成した‐";
+			mes "-prototype completed-";
 			next;
-			mes "‐ヒョウに完成品を見せよう‐";
+			mes "-Let's show the finished product to the leopard-";
 			close;
 		}
 	}
 }
 
-job_ko.gat,129,129,0	duplicate(製作道具#ko_01)	製作道具#ko_02	844
-job_ko.gat,116,124,0	duplicate(製作道具#ko_01)	製作道具#ko_03	844
+job_ko.gat,129,129,0 duplicate(fabrication tool#ko_01) fabrication tool#ko_02 844
+job_ko.gat,116,124,0 duplicate(fabrication tool#ko_01) fabrication tool#ko_03 844
 
-job_ko.gat,121,121,0	script	精錬装置#ko_01	844,{
+job_ko.gat,121,121,0 script refining equipment#ko_01 844,{
 	if(!checkquest(5143) && !checkquest(5144)) {
-		mes "‐精錬を自動で行ってくれる装置だ。";
-		mes "　しかし今は使う必要がないだろう‐";
+		mes "-It's a device that does the refining automatically." ;
+		mes " but you won't need to use it now -";
 		close;
 	}
-	mes "‐精錬装置に電源を入れた。";
-	mes "　静かな音とともに装置が動き出した‐";
+	mes "-The refining device is turned on." ;
+	mes " The equipment started working with a quiet sound-";
 	next;
-	mes "‐装置の横に";
-	mes "　オリデオコンが入った倉庫があり";
-	mes "　すぐに精錬ができそうだ‐";
+	mes "-There is a warehouse with Oridecon next to the equipment and it will be ready for refining soon-";
 	next;
-	if(select("精錬する","精錬しない") == 2) {
-		mes "‐装置の電源を切った‐";
+	if(select("refine", "don't refine") == 2) {
+		mes "-Equipment turned off-";
 		close;
 	}
 	if(getequipisequiped(4)==0) {
-		mes "‐ピーピーピー";
-		mes "　装置から警告音が聞こえる‐";
+		mes "-hearing a warning sound from the beep-beep device-";
 		next;
-		mes "[ヒョウ]";
-		mes "精錬をしたいのなら";
-		mes "武器を装備してくださいね。";
+		mes "[leopard]";
+		mes "If you want to refine, please equip your weapon." ;
 		close;
 	}
-	if(getequipid(4) != 13074 && getequipid(4) != 13312) {
-		mes "[ヒョウ]";
-		mes "おや？";
-		mes "ここで作った武器ではありませんね。";
+	if(getequipid(4) ! = 13074 && getequipid(4) ! = 13312) {
+		mes "[leopard]";
+		mes "Oh?" ;
+		mes "That's not the weapon you made here." ;
 		next;
-		mes "[ヒョウ]";
-		mes "それを強化したいのなら";
-		mes "街の鍛冶屋にでも頼んでください。";
+		mes "[Leopard]";
+		mes "If you want to enhance it, you can ask the blacksmith in town to do so." ;
 		close;
 	}
-	mes "‐武器を分析しています‐";
+	mes "-Analyzing weapons-";
 	next;
 	if(getequiprefinerycnt(4) >= 10) {
-		// 未調査
-		mes "‐この武器はこれ以上精錬できません‐";
+		// not yet examined
+		mes "-This weapon cannot be further refined-";
 		close;
 	}
 	if(getequippercentrefinery(4) < 100) {
-		mes "‐この武器は何度か精錬されているため";
-		mes "　精錬に失敗すると";
-		mes "　精錬値がひとつ下がります‐";
+		mes "-This weapon has been refined several times, so if the refinement fails, the refinement value will drop by one -";
 		next;
-		if(select("精錬する","精錬しない") == 2) {
-			mes "‐装置の電源を切った‐";
+		if(select("Refine", "Do not refine") == 2) {
+			mes "-Equipment turned off-";
 			close;
 		}
 	}
 	else {
-		mes "‐精錬を始めます‐";
+		mes "-Begin refining-";
 		next;
 	}
 	if(getequippercentrefinery(4) > rand(100)) {
 		successrefitem 4;
-		mes "‐精錬に成功しました‐";
+		mes "-Successful refining-"; next; } if(getequippercentrefinery(4 > rand(100)) { successrefitem 4
 		close;
 	}
 	else {
 		downrefitem 4;
-		mes "‐精錬に失敗しました。";
-		mes "　精錬値がひとつ下がりました‐";
+		mes "-refining failed." ;
+		mes " The refining value has dropped by one -";
 		close;
 	}
 }
 
-job_ko.gat,127,121,0	duplicate(精錬装置#ko_01)	精錬装置#ko_02	844
+job_ko.gat,127,121,0 duplicate(refining device#ko_01) refining device#ko_02 844
 
-job_ko.gat,148,46,4	script	導き手 ギオン#ko	588,{
+job_ko.gat,148,46,4 script guiding hand gion#ko 588,{
 	switch(CHANGE_KO) {
 	case 10:
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "まだ目標を倒していないようじゃな。";
+		mes "[guiding hand Gion]";
+		mes "I see you haven't defeated your target yet." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "目標の名は^FF0000一族の過去^000000じゃ。";
+		mes "[guiding hand Gion]"; mes "[guiding hand Gion]"; mes "[guiding hand Gion]
+		mes "The name of the target is ^FF000000, the past of the family ^000000." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "うまく仕留めたら";
-		mes "また話しかけてくれ。";
-		mes "それとも、外に出たいのか？";
+		mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]"; mes "[Guiding Hand Gion]
+		mes "Talk to me again when you have successfully killed it." ;
+		mes "Or do you want to get out?" ;
 		next;
-		if(select("出ない","外に出る") == 1) {
-			mes "[導き手 ギオン]";
-			mes "似たような名前の敵が多いが";
-			mes "そなたなら仕留められるじゃろう。";
+		if(select("not answer", "go outside") == 1) {
+			mes "[Guide Guion]";
+			mes "There are many enemies with similar names, but I know you can finish them off." ;
 			close2;
 			cutin "job_ko01",255;
 			end;
 		}
-		mes "[導き手 ギオン]";
-		mes "本来なら試練の最中に";
-		mes "抜け出すなど許されぬ事じゃが……";
-		mes "今回だけじゃぞ。";
+		mes "[Guiding hand, Gion]";
+		mes "Normally, it would be unforgivable to sneak out in the middle of an ordeal. ......" ;
+		mes "Just this once." ;
 		close2;
 		cutin "job_ko01",255;
 		warp "amatsu.gat",147,136;
 		end;
 	case 11:
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "うまく目標を仕留めたようじゃな。";
+		mes "[guiding hand gion]";
+		mes "Looks like you finished the target well." ;
 		next;
 		if(Weight) {
-			mes "[導き手 ギオン]";
-			mes "新たな道の第一歩に";
-			mes "余計なものは不要じゃろう。";
-			mes "所持品を預かってやるから、";
-			mes "すべて預けてからまた話かけてくれ。";
+			mes "[Guide Guion]";
+			mes "You don't need anything extra for the first step on your new path." ;
+			mes "I'll take care of your belongings, so leave everything with me and then talk to me again." ;
 			next;
-			switch(select("^0000FF倉庫^000000を開く","やめる")) {
+			switch(select("open ^0000FF warehouse^000000", "quit")) {
 			case 1:
-				mes "[導き手 ギオン]";
-				mes "倉庫を開くぞ。";
+				mes "[Guide Guion]";
+				mes "Let's open the warehouse." ;
 				close2;
 				openstorage;
 				cutin "job_ko02",255;
 				end;
 			case 2:
-				mes "[導き手 ギオン]";
-				mes "なんじゃ、まだなにかあるのか？";
+				mes "[Guiding hand, Guion]";
+				mes "What's more?" ;
 				close2;
 				cutin "job_ko02",255;
 				end;
 			}
 		}
 		cutin "job_ko04",2;
-		mapannounce "job_ko.gat","導き手 ギオン : 一族" +strcharinfo(0)+ "が" +(Sex? "影狼": "朧")+ "の道を進むこととなった。かの者に祝福あれ！",0;
-		mes "[導き手 ギオン]";
-		mes "一族" +strcharinfo(0)+ "が";
-		mes (Sex? "影狼": "朧")+ "の道を進むこととなった。";
-		mes "かの者に祝福あれ！";
+		mapannounce "job_ko.gat", "Guiding hand Gion : the clan" +strcharinfo(0)+ "is" +(Sex? "Shadow Wolf": "Oboro")+ "the way of the" + "Oboro. Blessed be He!" ,0;
+		mes "[Guiding hand Geon]";
+		mes "clan" +strcharinfo(0)+ "is";
+		mes (Sex? "Shadow Wolf": "Oboro")+ "is to go the way of the" ;
+		mes "Blessed be he!" ;
 		next;
 		cutin "job_ko02",2;
-		mes "[導き手 ギオン]";
-		mes "更なる極みを求める若者が";
-		mes "現れたことを歓迎しよう。";
+		mes "[Guiding hand, Guion]";
+		mes "Let's welcome the emergence of a young man who seeks further extremes." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "ギオン様、しばしお待ちを。";
+		mes "[Kuga Kai]";
+		mes "Master Guion, please wait a moment." ;
 		next;
 		cutin "job_ko04",2;
-		mes "[導き手 ギオン]";
-		mes "すまん、すまん。";
-		mes "そなたらのことを忘れておった。";
-		mes "何か" +strcharinfo(0)+ "に";
-		mes "伝えることでもあるかの？";
+		mes "[Guiding hand, Guion]";
+		mes "Sorry, sorry." ;
+		mes "I forgot about you." ;
+		mes "Do you have something to tell " +strcharinfo(0)+ "?" ;
 		next;
 		cutin "job_ko01",255;
-		mes "[クウガ・カイ]";
-		mes "それでは……";
+		mes "[Kuga Kai]";
+		mes "Then ......" ;
 		next;
-		mes "[クウガ・カイ]";
-		mes strcharinfo(0);
-		mes "お前は誇るべき我等が一族の仲間だ。";
-		mes "いかなる時も堂々と胸を張って生きろ。";
+		mes "[kuga kai]";
+		mes ""+strcharinfo(0);
+		mes "You are a proud member of our clan." ;
+		mes "Live proudly and proudly at all times." ;
 		next;
-		mes "[クウガ・カイ]";
-		mes "……初めて会ったとき";
-		mes "いきなり攻撃して悪かった……";
+		mes "[Kuga Kai]";
+		mes "...... I'm sorry I attacked you out of the blue when I first met you. ......" ;
 		next;
-		mes "[ヒョウ]";
-		mes "ふふ……";
-		mes "カイのやつは言葉だけですか。";
-		mes "私は彼よりも";
-		mes "役立つものを贈りましょう。";
+		mes "[Leopard]";
+		mes "phew ......" ;
+		mes "Is the Kai one just words?" ;
+		mes "Let me give you something more useful than him." ;
 		next;
-		mes "[ヒョウ]";
-		mes "君が作った試作品の";
-		mes "手入れをしておきました。";
+		mes "[Leopard]";
+		mes "I took care of the prototype you made." ;
 		next;
-		mes "[ヒョウ]";
+		mes "[leopard]";
 		if(checkquest(5143) & 0x8) {
-			// 未調査
-			mes "武器の名は「紅」。";
-			mes "手入れをしているうちに";
-			mes "鬼気が巻き込まれるような武器になりました。";
+			// unexamined
+			mes "The name of the weapon is 'Red'." ;
+			mes "The weapon was designed to be caught up in demonic spirits as it was being cared for." ;
 			set '@gain,13075;
 		}
 		else if(checkquest(5144) & 0x8) {
-			mes "[ヒョウ]";
-			mes "武器の名は「影」。";
-			mes "手入れをしているうちに";
-			mes "暗闇に溶け込むような武器になりました。";
+			mes "[leopard]";
+			mes "The name of the weapon is 'shadow'." ;
+			mes "The more I cared for the weapon, the more it blended into the darkdark." ;
 			set '@gain,13311;
 		}
 		next;
-		mes "[ヒョウ]";
-		mes "きっと気に入ってもらえると";
-		mes "思いますよ。";
-		next;
-		mes "[ヒョウ]";
-		mes "ではギオン様、続きを……";
+		mes "[leopard]";
+		mes "I think you'll like it." ;
+		} next;
+		mes "[leopard]";
+		mes "So, Mr. Guion, please continue: ......." ;
 		next;
 		cutin "job_ko01",2;
-		mes "[導き手 ギオン]";
-		mes "ふぉふぉふぉ……";
-		mes "二人に台詞を取られてしまったな。";
-		mes "わしから話すことは何もない。";
+		mes "[Guiding hand, Guion]";
+		mes "woo hoo hoo ......" ;
+		mes "You two got me on the line." ;
+		mes "I have nothing to say to you." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "ただ、そなたのような若者に";
-		mes "もっと良い環境を";
-		mes "作ってやれなかったのが心残りじゃ。";
+		mes "[Guide Guion]";
+		mes "I only regret that I could not create a better environment for a young man like you." ;
 		next;
-		mes "[導き手 ギオン]";
-		mes "これからも前向きに歩んでくれ。";
-		mes "そして……";
+		mes "[Guiding Hand Guion]";
+		mes "Keep moving forward." ;
+		mes "And ......." ;
 		next;
 		if(sc_ison(SC_ALL_RIDING)) {
-			// 未調査
-			mes "[導き手 ギオン]";
-			mes "む、新たな旅立ちの準備が";
-			mes "できていないようじゃな。";
-			mes "騎乗生物を";
-			mes "降りて来るのじゃ。";
+			// unexamined
+			mes "[Guiding Guion]";
+			mes "Hmm, you don't seem to be ready for a new journey." ;
+			mes "Come down from your mount." ;
 			close2;
 			cutin "job_ko01",255;
 			end;
 		}
 		if(SkillPoint) {
-			mes "[導き手 ギオン]";
-			mes "む、新たな旅立ちの準備が";
-			mes "できていないようじゃな。";
-			mes "スキルポイントを";
-			mes "全て振って来るのじゃ。";
+			mes "[Guiding hand, Guion]";
+			mes "Hmm, you don't seem ready for a new journey." ;
+			mes "Go and shake all your SkillPoints." ;
 			close2;
 			cutin "job_ko01",255;
 			end;
@@ -4035,62 +3520,60 @@ job_ko.gat,148,46,4	script	導き手 ギオン#ko	588,{
 		delquest 72905;
 		setquest 201655;
 		getitem '@gain,1;
-		mes "[導き手 ギオン]";
-		mes "そなたの行く先に";
-		mes "影狼様と朧様の祝福があらんことを！";
+		mes "[Guiding hand, Guion]";
+		mes "May the blessings of Lord Kagewolf and Oboro be upon your path!" ;
 		close2;
 		warp "que_ng.gat",22,69;
 		end;
 	default:
-		mes "[導き手 ギオン]";
-		mes "そなたの行く先に";
-		mes "影狼様と朧様の祝福があらんことを！";
+		mes "[Guiding hand Geon]";
+		mes "May the blessings of Lord Kagewolf and Oboro be upon your path!" ;
 		close2;
 		warp "que_ng.gat",22,69;
 		end;
 	}
 }
 
-job_ko.gat,151,47,4	script	クウガ・カイ#ko2	730,{
-	mes "[クウガ・カイ]";
-	mes "貴様もここまで来たか……";
+job_ko.gat,151,47,4 script kuga kai#ko2 730,{
+	mes "[Kuga Kai]";
+	mes "You've come this far ......" ;
 	close;
 }
 
-job_ko.gat,145,47,6	script	ヒョウ#ko2	730,{
-	mes "[ヒョウ]";
-	mes "やあ、いよいよですね。";
+job_ko.gat,145,47,6 script leopard#ko2 730,{
+	mes "[leopard]";
+	mes "Hey, it's time to go." ;
 	close;
 }
 
-job_ko.gat,0,0,0	script	ko_test_mon	139,{
+job_ko.gat,0,0,0 script ko_test_mon 139,{
 OnTimer300000:
 	initnpctimer;
-	killmonster "job_ko.gat","ko_test_mon::OnKilled1";
+	killmonster "job_ko.gat", "ko_test_mon::OnKilled1";
 	set '@r,rand(getarraysize('mobid));
-	areamonster "job_ko.gat",128,26,168,66,"一族の過去",'mobid['@r],1,"ko_test_mon::OnKilled1";
+	areamonster "job_ko.gat",128,26,168,66, "family past",'mobid['@r],1, "ko_test_mon::OnKilled1";
 	end;
 OnInit:
 	setarray 'mobid,1002,1010,1031,1049,1050,1063,1113;
 	setarray 'mobname$,
-		"一族のハズレ","一族の影狼","一族の朧","一族の加古","一族の遺産",
-		"一族の加護","一族の過誤","一族の黒歴史","一族の始祖",
-		"影狼の記憶","影狼の過去","影狼の想い出","影狼の歴史",
-		"朧の記憶","朧の過去","朧の想い出","朧の歴史",
-		"過誤の一族","忍者の一族","城主のバカ","親族の遺産","親族の過去";
+		"Hazure of the clan", "Shadow wolf of the clan", "Oboro of the clan", "Kako of the clan", "Heritage of the clan",
+		"blessing of the clan", "clan's mistake", "clan's black history", "clan's founder",
+		"Shadow Wolf's Memory", "Shadow Wolf's Past", "Shadow Wolf's Memories", "Shadow Wolf's History",
+		"Oboro's Memory", "Oboro's Past", "Oboro's Memories", "Oboro's History",
+		"Clan of Error", "Clan of Ninja", "Fool of a Castle Lord", "Legacy of a Relative", "Past of a Relative";
 
 	set '@r,rand(getarraysize('mobid));
-	areamonster "job_ko.gat",128,26,168,66,"一族の過去",'mobid['@r],1,"ko_test_mon::OnKilled1";
+	areamonster "job_ko.gat",128,26,168,66, "family past",'mobid['@r],1, "ko_test_mon::OnKilled1";
 
 	for(set '@i,110; '@i<=171; set '@i,'@i+1) {
 		set '@r1,rand(getarraysize('mobid));
 		set '@r2,rand(getarraysize('mobname$));
-		monster "job_ko.gat",'@i,50,'mobname$['@r2],'mobid['@r1],1,"ko_test_mon::OnKilled2";
+		monster "job_ko.gat",'@i,50,'mobname$['@r2],'mobid['@r1],1, "ko_test_mon::OnKilled2";
 	}
 	for(set '@i,31; '@i<=81; set '@i,'@i+1) {
 		set '@r1,rand(getarraysize('mobid));
 		set '@r2,rand(getarraysize('mobname$));
-		monster "job_ko.gat",140,'@i,'mobname$['@r2],'mobid['@r1],1,"ko_test_mon::OnKilled2";
+		monster "job_ko.gat",140,'@i,'mobname$['@r2],'mobid['@r1],1, "ko_test_mon::OnKilled2";
 	}
 	initnpctimer;
 	end;
@@ -4109,267 +3592,219 @@ OnKilled2:
 	}
 	set '@r1,rand(getarraysize('mobid));
 	set '@r2,rand(getarraysize('mobname$));
-	monster "job_ko.gat",'@x,'@y,'mobname$['@r2],'mobid['@r1],1,"ko_test_mon::OnKilled2";
+	monster "job_ko.gat",'@x,'@y,'mobname$['@r2],'mobid['@r1],1, "ko_test_mon::OnKilled2";
 	if(!rand(3))
 		warp "job_ko.gat",16,113;
 	end;
 }
 
-que_ng.gat,75,23,3	script	鍛冶師 テーネ#ko	762,{
-	mes "[鍛冶師 テーネ]";
-	mes "ご機嫌麗しゅうございます。";
-	mes "鍛冶師でもっとも礼儀正しいと";
-	mes "言われているテーネでございます。";
+que_ng.gat,75,23,3 script blacksmith tene#ko 762,{
+	mes "[blacksmith Thane]";
+	mes "Good day to you, sir." ;
+	mes "I am Thane, the most polite of blacksmiths." ;
 	next;
-	mes "[鍛冶師 テーネ]";
-	mes "今日はいかがいたしましょうか。";
+	mes "[Blacksmith Thane]";
+	mes "How may I help you today?" ;
 	next;
-	switch(select("どんな仕事ができますか？","能力を追加してください","能力を削除してください")) {
+	switch(select("What work can you do?" , "Add ability", "Delete ability")) {
 	case 1:
-		mes "[鍛冶師 テーネ]";
-		mes "おっと！";
-		mes "私めの自己紹介に不足がありましたね。";
-		mes "申し訳ございません。";
+		mes "[Blacksmith Thane]";
+		mes "Oops!" ;
+		mes "I'm afraid I didn't introduce myself well enough." ;
+		mes "I am sorry." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "私は一部の装備品に";
-		mes "能力を追加することができます。";
-		mes "その際には多少の手数料を";
-		mes "いただくことになっております。";
+		mes "[Blacksmith Thane]";
+		mes "I can add abilities to some equipment." ;
+		mes "I will charge a small fee for doing so." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "なお、装備品の精錬値によって、";
-		mes "付与される能力は変化いたします。";
-		mes "また、^FF0000能力の付与に";
-		mes "失敗することはありません。^000000";
+		mes "[Blacksmith Thane]";
+		mes "In addition, the abilities granted will vary depending on the refining value of the equipment." ;
+		mes "Also, ^FF0000 abilities will never fail to be granted. ^000000";
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "取り扱っている装備品のリストも";
-		mes "ご覧になりますか？";
+		mes "[Blacksmith Thane]";
+		mes "Would you also like to see a list of the equipment we carry?" ;
 		next;
-		switch(select("武器のリストを見る","防具のリストを見る")) {
+		switch(select("see list of weapons", "see list of armor")) {
 		case 1:
-			mes "[鍛冶師 テーネ]";
-			mes "武器のリストはこちらです。";
+			mes "[Blacksmith Thane]";
+			mes "Here is the list of weapons." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "私が取り扱っている武器は^FD3302";
-			mes "羅刹剣";
-			mes "三日月";
-			mes "風魔手裏剣・乱華";
-			mes "風魔手裏剣・乱雪";
-			mes "風魔手裏剣・雷雨^000000です。";
+			mes "[Blacksmith Thane]";
+			mes "The weapons I am dealing with are ^FD3302 Rasenken Crescent Moon Fuuma Shuriken, Ranhua Fuuma Shuriken, Ran Yuki Fuuma Shuriken, and Thunderstorm ^000000." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "以上です。";
-			mes "さらに多くの武具を取り扱うには";
-			mes "まだまだ私も修行を";
-			mes "重ねなくてはいけません。";
+			mes "[Blacksmith Thane]";
+			mes "That is all." ;
+			mes "I still have to train myself to handle even more armors." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "お望みであれば";
-			mes "3番と4番のスロットに";
-			mes "能力を追加いたします。";
+			mes "[Blacksmith Thane]";
+			mes "If you wish, I can add abilities to slots 3 and 4." ;
 			close;
 		case 2:
-			mes "[鍛冶師 テーネ]";
-			mes "防具のリストはこちらです。";
+			mes "[Blacksmith Thane]";
+			mes "Here is the list of armor." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "私が取り扱っている防具は^FD3302";
-			mes "狼紋様の手甲";
-			mes "三日月紋様の手甲";
-			mes "円鱗の鎧";
-			mes "霧中闇影";
-			mes "特殊忍者スーツ[1]^000000です。";
+			mes "[Blacksmith Thane]";
+			mes "The armor I am dealing with is ^FD3302 wolf crested hand armor crescent moon crested hand armor round scaled armor foggy dark shadow special Ninja suit [1]^000000." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "以上です。";
-			mes "さらに多くの武具を取り扱うには";
-			mes "まだまだ私も修行を";
-			mes "重ねなくてはいけません。";
+			mes "[Blacksmith Thane]";
+			mes "That is all." ;
+			mes "I still have to train myself to handle even more armors." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "お望みであれば";
-			mes "3番と4番のスロットに";
-			mes "能力を追加いたします。";
+			mes "[Blacksmith Thane]";
+			mes "If you wish, I can add abilities to slots 3 and 4." ;
 			close;
 		}
 	case 2:
-		mes "[鍛冶師 テーネ]";
-		mes "能力の追加でございますね。";
-		mes "装備なさっている武具の";
-		mes "4番スロット、3番スロットの順に";
-		mes "能力を付与いたします。";
+		mes "[Blacksmith Thane]";
+		mes "I see that you have added the ability." ;
+		mes "We will add abilities to the 4th and 3rd slots of the armament you have equipped, in that order." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "私の独創的な技術により";
-		mes "^FF0000精錬値^000000やすでに挿してある^FF0000カード^000000が";
-		mes "失われることはございません。";
-		mes "また、^FF0000能力の付与に";
-		mes "失敗することもありません。^000000";
+		mes "[Blacksmith Thane]";
+		mes "Due to my ingenuity, you will not lose ^FF000000 refining value ^000000 or already inserted ^FF000000 cards ^000000." ;
+		mes "Nor will it fail to grant ^FF0000 abilities. ^000000";
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "ただ材料の値段が張りますので";
-		mes "多少の^5565AA手数料^000000をいただいております。";
+		mes "[Blacksmith Thane]";
+		mes "However, we do charge a small ^5565AA fee ^000000 because of the price of the materials." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "おっと、説明が長くなってしまい";
-		mes "申し訳ございません。";
-		mes "どの装備に能力を付与しますか？";
+		mes "[Blacksmith Thane]"; mes "[Blacksmith Thane]"; mes "[Blacksmith Thane]
+		mes "Oops, sorry for the long explanation." ;
+		mes "Which equipment do you want to give the ability to?" ;
 		next;
-		switch(select("武器","防具")) {
+		switch(select("weapon", "armor")) {
 		case 1:
-			mes "[鍛冶師 テーネ]";
-			mes "武器への能力付与をお望みですね。";
-			mes "武器に能力を付与する^E14A1E手数料は";
-			mes "1回100,000Zeny^000000となっております。";
+			mes "[Blacksmith Thane]";
+			mes "You wish to grant abilities to the weapon." ;
+			mes "The ^E14A1E fee to grant abilities to a weapon is 100,000Zeny^000000 per time." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "それと、あらかじめ^FF0000片手武器は右手に";
-			mes "装備して^000000いただけますか。";
-			mes "ご協力をお願いいたします。";
+			mes "[Blacksmith Thane]";
+			mes "And could you please equip ^FF000000 one-handed weapons on your right hand ^000000 in advance?" ;
+			mes "We would appreciate your cooperation." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "どの武器に能力を付与いたしますか？";
+			mes "[Blacksmith Thane]";
+			mes "To which weapon would you like to grant the ability?" ;
 			next;
-			switch(select("また今度","羅刹剣","三日月","風魔手裏剣・乱華","風魔手裏剣・乱雪","風魔手裏剣・雷雨")) {
+			switch(select("Another time", "Rasenken", "Mikazuki", "Fuuma Shuriken/Ranka", "Fuuma Shuriken/Ransetsu", "Fuuma Shuriken/Raisetsu", "Fuuma Shuriken/Raisyu")) {
 			case 1:
-				mes "[鍛冶師 テーネ]";
-				mes "お考え直しの時間が必要でしょうか？";
-				mes "またいつでもいらしてください。";
+				mes "[Blacksmith Thane]";
+				mes "Do you need time to reconsider?" ;
+				mes "Please come back anytime." ;
 				close;
-			case 2: set '@itemid,13076; set '@menu,4; break;
-			case 3: set '@itemid,13078; set '@menu,4; break;
-			case 4: set '@itemid,13313; set '@menu,4; break;
-			case 5: set '@itemid,13314; set '@menu,4; break;
-			case 6: set '@itemid,13315; set '@menu,4; break;
+			case 2: set '@itemid,13076; set '@menu,4; break
+			case 3: set '@itemid,13078; set '@menu,4; break
+			case 4: set '@itemid,13313; set '@menu,4; break
+			case 5: set '@itemid,13314; set '@menu,4; break
+			case 6: set '@itemid,13315; set '@menu,4; break
 			}
 			break;
 		case 2:
-			mes "[鍛冶師 テーネ]";
-			mes "防具への能力付与をお望みですね。";
-			mes "防具に能力を付与する^E14A1E手数料は";
-			mes "1回100,000Zeny^000000となっております。";
+			mes "[Blacksmith Thane]";
+			mes "You wish to grant abilities to armor." ;
+			mes "The ^E14A1E fee for granting abilities to armor is 100,000Zeny^000000 per time." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "どの防具に能力を付与しますか？";
+			mes "[Blacksmith Thane]";
+			mes "Which armor do you want to grant abilities to?" ;
 			next;
-			switch(select("また今度","狼紋様の手甲","三日月紋様の手甲","円鱗の鎧","霧中闇影","特殊忍者スーツ[1]")) {
+			switch(select("another time", "wolf crest hand armor", "crescent moon crest hand armor", "circular scale armor", "dark shadow in the mist", "special Ninja suit[1]")) {
 			case 1:
-				mes "[鍛冶師 テーネ]";
-				mes "お考え直しの時間が必要でしょうか？";
-				mes "またいつでもいらしてください。";
+				mes "[Blacksmith Thane]";
+				mes "Do you need time to reconsider?" ;
+				mes "Please come back anytime." ;
 				close;
-			case 2: set '@itemid,2172; set '@menu,3; break;
-			case 3: set '@itemid,2173; set '@menu,3; break;
-			case 4: set '@itemid,15054; set '@menu,2; break;
-			case 5: set '@itemid,15055; set '@menu,2; break;
-			case 6: set '@itemid,15056; set '@menu,2; break;
+			case 2: set '@itemid,2172; set '@menu,3; break
+			case 3: set '@itemid,2173; set '@menu,3; break
+			case 4: set '@itemid,15054; set '@menu,2; break
+			case 5: set '@itemid,15055; set '@menu,2; break
+			case 6: set '@itemid,15056; set '@menu,2; break
 			}
-			break;
+			break; }
 		}
-		break;
+		break; }
 	case 3:
-		mes "[鍛冶師 テーネ]";
-		mes "すでに付与された能力の";
-		mes "削除をお望みですか？";
-		mes "付与された能力が";
-		mes "お気に召さなかったようですね。";
+		mes "[Blacksmith Thane]";
+		mes "Do you wish to remove an already granted ability?" ;
+		mes "It seems that you did not like the ability that was granted to you." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "それでは、たびたび高い手数料を";
-		mes "いただくこととなり";
-		mes "申しわけありませんが……";
+		mes "[Blacksmith Thane]";
+		mes "Then we apologize for the often high fees. ......" ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "^E14A1E能力削除手数料は100,000Zeny^000000です。";
-		mes "どの装備の能力を削除しますか？ ";
+		mes "[Blacksmith Thane]";
+		mes "The ^E14A1E ability removal fee is 100,000Zeny^000000." ;
+		mes "Which equipment ability do you want to delete? ";
 		next;
-		switch(select("また今度","羅刹剣","三日月","風魔手裏剣・乱華","風魔手裏剣・乱雪","風魔手裏剣・雷雨","狼紋様の手甲","三日月紋様の手甲","円鱗の鎧","霧中闇影","特殊忍者スーツ［1］")) {
+		switch(select("another time", "Rasenken", "Crescent Moon", "Fuuma Shuriken/Ranka", "Fuuma Shuriken/Ransetsu", "Fuuma Shuriken/Raisetsu", "Fuuma Shuriken/Raisetsu", "Wolf Crested Armor", "Crescent Moon Crested Armor", "Enscale Armor", "Dark Shadow in the Mist", "Special Ninja Suit [1]")) {
 		case 1:
-			mes "[鍛冶師 テーネ]";
-			mes "やはり手数料負担が大きいのですね？";
-			mes "手数料をもう少し下げられるよう";
-			mes "もっと努力を重ねます。";
+			mes "[Blacksmith Thane]";
+			mes "So the fee burden is still high?" ;
+			mes "We will make more efforts to lower the fees a bit." ;
 			close;
-		case 2: set '@itemid,13076; set '@menu,4; break;
-		case 3: set '@itemid,13078; set '@menu,4; break;
-		case 4: set '@itemid,13313; set '@menu,4; break;
-		case 5: set '@itemid,13314; set '@menu,4; break;
-		case 6: set '@itemid,13315; set '@menu,4; break;
-		case 7: set '@itemid,2172; set '@menu,3; break;
-		case 8: set '@itemid,2173; set '@menu,3; break;
-		case 9: set '@itemid,15054; set '@menu,2; break;
-		case 10:set '@itemid,15055; set '@menu,2; break;
-		case 11:set '@itemid,15056; set '@menu,2; break;
+		case 2: set '@itemid,13076; set '@menu,4; break
+		case 3: set '@itemid,13078; set '@menu,4; break
+		case 4: set '@itemid,13313; set '@menu,4; break
+		case 5: set '@itemid,13314; set '@menu,4; break
+		case 6: set '@itemid,13315; set '@menu,4; break
+		case 7: set '@itemid,2172; set '@menu,3; break
+		case 8: set '@itemid,2173; set '@menu,3; break
+		case 9: set '@itemid,15054; set '@menu,2; break
+		case 10: set '@itemid,15055; set '@menu,2; break
+		case 11: set '@itemid,15056; set '@menu,2; break
 		}
-		mes "[鍛冶師 テーネ]";
-		mes "^44B7BC" +getitemname('@itemid)+ "^000000の";
-		mes "能力初期化をお望みですか？";
+		mes "[Blacksmith Thane]";
+		mes "^44B7BC" +getitemname('@itemid)+ "Would you like to initialize ^000000 abilities?" ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "手数料はそのままで、4番スロットの";
-		mes "能力を残し、3番スロットの能力のみを";
-		mes "削除するサービスも行っております。";
-		mes "なお、4番スロットの能力のみを";
-		mes "削除することはできません。";
+		mes "[Blacksmith Thane]";
+		mes "We also offer a service to remove only the ability of slot 3, leaving the ability of slot 4, while keeping the fee." ;
+		mes "Please note that it is not possible to remove only the ability of slot 4." ;
 		next;
-		switch(select("3番スロットのみ初期化する","両方初期化する")) {
+		switch(select("initialize only slot 3", "initialize both")) {
 		case 1:
-			mes "[鍛冶師 テーネ]";
-			mes "承知いたしました。";
-			mes "3番スロットのみ初期化いたします。";
+			mes "[Blacksmith Thane]";
+			mes "Yes, sir." ;
+			mes "Only slot 3 will be initialized." ;
 			set '@type,1;
 			break;
 		case 2:
-			mes "[鍛冶師 テーネ]";
-			mes "承知いたしました。";
-			mes "両方のスロットを初期化いたします。";
+			mes "[Blacksmith Thane]";
+			mes "Yes, sir." ;
+			mes "We will initialize both slots." ;
 			set '@type,2;
 			break;
 		}
 		next;
-		if(getequipid('@menu) != '@itemid) {
-			mes "[鍛冶師 テーネ]";
-			mes "作業ご希望の装備品を";
-			mes "装備されていないようです。";
+		if(getequipid('@menu) ! = '@itemid) {
+			mes "[Blacksmith Thane]";
+			mes "It appears that you are not equipped with the equipment you wish to work with." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "ご希望の装備品を装備した状態で";
-			mes "ご利用をお願いいたします。";
+			mes "[Blacksmith Thane]";
+			mes "Please make sure you are equipped with the equipment you wish to work with." ;
 			close;
 		}
 		if(Zeny < 100000) {
-			mes "[鍛冶師 テーネ]";
-			mes "大変申し訳ございませんが";
-			mes "手数料が足りないようです。";
+			mes "[Blacksmith Thane]";
+			mes "We are very sorry, but the commission seems to be insufficient." ;
 			next;
-			mes "[鍛冶師 テーネ]";
-			mes "原材料がとても高価なため";
-			mes "必要最低限の手数料を";
-			mes "いただくことになっております。";
+			mes "[Blacksmith Thane]";
+			mes "We have to charge the minimum necessary commission because the raw materials are very expensive." ;
 			close;
 		}
 		set '@refine,getequiprefinerycnt('@menu);
 		set '@card1,getequipcardid('@menu,0);
-		set '@card2,getequipcardid('@menu,1);
+		set '@card2,getequipcardid('@menu,1); }
 		set '@card3,getequipcardid('@menu,2);
 		set '@card4,getequipcardid('@menu,3);
 		if('@type == 1) {
 			if('@card3 == 0) {
-				mes "[鍛冶師 テーネ]";
-				mes "3番には能力がありません。";
-				mes "ご確認をお願いいたします。";
+				mes "[Blacksmith Thane]";
+				mes "Number 3 has no ability." ;
+				mes "Please confirm." ;
 				close;
 			}
 			set '@card3,0;
 		}
 		else if('@type == 2) {
 			if('@card3 == 0 && '@card4 == 0) {
-				mes "[鍛冶師 テーネ]";
-				mes "能力が付与されていない装備です。";
-				mes "ご確認をお願いいたします。";
+				mes "[Blacksmith Thane]";
+				mes "The equipment has not been given any abilities." ;
+				mes "Please check it." ;
 				close;
 			}
 			set '@card3,0;
@@ -4378,30 +3813,25 @@ que_ng.gat,75,23,3	script	鍛冶師 テーネ#ko	762,{
 		set Zeny,Zeny-100000;
 		delequip '@menu;
 		getitem2 '@itemid,1,1,'@refine,0,'@card1,'@card2,'@card3,'@card4;
-		mes "[鍛冶師 テーネ]";
-		mes "初期化が無事完了いたしました。";
+		mes "[Blacksmith Thane]";
+		mes "Initialization has been successfully completed." ;
 		close;
 	}
-	// 能力付与続き
-	if(getequipid('@menu) != '@itemid) {
-		mes "[鍛冶師 テーネ]";
-		mes "作業ご希望の装備品を";
-		mes "装備されていないようです。";
+	// Continuing to grant abilities
+	if(getequipid('@menu) ! = '@itemid) {
+		mes "[Blacksmith Thane]";
+		mes "It appears that you are not equipped with the equipment you wish to work with." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "ご希望の装備品を装備した状態で";
-		mes "ご利用をお願いいたします。";
+		mes "[Blacksmith Thane]";
+		mes "Please make sure you are equipped with the equipment you wish to work with." ;
 		close;
 	}
 	if(Zeny < 100000) {
-		mes "[鍛冶師 テーネ]";
-		mes "大変申し訳ございませんが";
-		mes "手数料が足りないようです。";
+		mes "[Blacksmith Thane]";
+		mes "We are very sorry, but the commission seems to be insufficient." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "原材料がとても高価なため";
-		mes "必要最低限の手数料を";
-		mes "いただくことになっております。";
+		mes "[Blacksmith Thane]";
+		mes "We have to charge the minimum necessary commission because the raw materials are very expensive." ;
 		close;
 	}
 	set '@refine,getequiprefinerycnt('@menu);
@@ -4414,41 +3844,34 @@ que_ng.gat,75,23,3	script	鍛冶師 テーネ#ko	762,{
 	set '@card4,getequipcardid('@menu,3);
 	set '@card[4],'@card4;
 	if('@card4 == 0) {
-		mes "[鍛冶師 テーネ]";
-		mes "能力が付与されてない装備です。";
-		mes "4番スロットに";
-		mes "能力を付与いたしますか？";
+		mes "[Blacksmith Thane]";
+		mes "The equipment has not been given the ability." ;
+		mes "Would you like to grant the ability to slot 4?" ;
 		set '@slot,4;
 	}
 	else if('@card3 == 0) {
-		mes "[鍛冶師 テーネ]";
-		mes "すでに4番スロットに";
-		mes "能力が付与された装備品です。";
-		mes "3番スロットにも";
-		mes "能力を付与いたしますか？";
+		mes "[Blacksmith Thane]";
+		mes "This is an equipment item that has already been given the ability in slot 4." ;
+		mes "Would you like to grant the ability to slot 3 as well?" ;
 		set '@slot,3;
 	}
 	else {
-		mes "[鍛冶師 テーネ]";
-		mes "私の力ではこれ以上の";
-		mes "能力付与は難しいです。";
+		mes "[Blacksmith Thane]";
+		mes "It is difficult to grant any more abilities with my power." ;
 		next;
-		mes "[鍛冶師 テーネ]";
-		mes "もし付与された能力が";
-		mes "お気に召さないのでしたら";
-		mes "初期化を行ってみてはいかがでしょう？";
+		mes "[Blacksmith Thane]";
+		mes "If you don't like the ability granted, why don't you initialize it?" ;
 		close;
 	}
 	next;
-	if(select("また今度にする","付与する") == 1) {
-		mes "[鍛冶師 テーネ]";
-		mes "承知いたしました。";
-		mes "またいらしてください。";
+	if(select("Another time", "grant") == 1) {
+		mes "[Blacksmith Thane]";
+		mes "Yes, sir." ;
+		mes "Please come again." ;
 		close;
 	}
-	mes "[鍛冶師 テーネ]";
-	mes "それでは、" +'@slot+ "番スロットへの";
-	mes "能力付与作業を行います。";
+	mes "[Blacksmith Thane]";
+	mes "Then we will work on granting the ability to the " +'@slot+ "number slot." ;
 	next;
 	misceffect 154;
 	set Zeny,Zeny-100000;
@@ -4480,67 +3903,52 @@ que_ng.gat,75,23,3	script	鍛冶師 テーネ#ko	762,{
 		}
 	}
 	getitem2 '@itemid,1,1,'@refine,0,'@card[1],'@card[2],'@card[3],'@card[4];
-	mes "[鍛冶師 テーネ]";
-	mes "^44B7BC" +getitemname('@itemid)+ "^000000";
-	mes "に能力を付与いたしました。";
+	mes "[blacksmith Thane]";
+	mes "^44B7BC" +getitemname('@itemid)+ "^000000 has been given the ability." ;
 	close;
 }
 
-que_ng.gat,21,72,6	script	防具職人 ギヨ#kaboro	934,{
-	mes "[ギヨ]";
-	mes "勝利とは何だと考えている？";
-	mes "敵を倒す事……";
-	mes "確かにその通りだ。";
-	mes "だが、それより重要な事がある。";
-	mes "それは、";
-	mes "決して倒れないことだ！";
+que_ng.gat,21,72,6 script armor Artisan Guillot#kaboro 934,{
+	mes "[Guillot]";
+	mes "What do you consider victory?" ;
+	mes "Defeating the enemy. ......" ;
+	mes "That's certainly true." ;
+	mes "But there are more important things to do." ;
+	mes "That is to never fall down!" ;
 	next;
-	mes "[ギヨ]";
-	mes "その為には身を守る必要がある。";
-	mes "「自身」を守れない者に";
-	mes "「他人」を守る事などできない。";
+	mes "[Guillot]";
+	mes "To do that, you have to protect yourself." ;
+	mes "One who cannot protect 'himself' cannot protect 'others'." ;
 	next;
-	if(select("防具を作成する","会話を終える") == 2) {
-		mes "[ギヨ]";
-		mes "慎重になることは";
-		mes "戦闘でとても重要な要素だ。";
+	if(select("create armor", "end conversation") == 2) {
+		mes "[Guillot]";
+		mes "Being cautious is a very important element in combat." ;
 		close;
 	}
-	switch(select("狼紋様の手甲[1]","三日月紋様の手甲[1]","円鱗の鎧[1]","霧中闇影[1]","やめる")) {
+	switch(select("wolf crest hand armor[1]", "crescent moon crest hand armor[1]", "circle scale armor[1]", "dark shadow in fog[1]", "quit")) {
 	case 1:
-		mes "[ギヨ]";
-		mes "狼紋様の手甲[1]か。";
-		mes "野性的なものを選んだな。";
+		mes "[Guillot]";
+		mes "Wolf patterned hand armor[1]?" ;
+		mes "You picked a wild one." ;
 		while(1) {
 			next;
-			switch(select("材料を見る","性能を見る","作成する","やめる")) {
+			switch(select("see materials", "see performance", "create", "quit")) {
 			case 1:
-				mes "[ギヨ]";
-				mes "^ff0000狼紋様の手甲[1]は";
-				mes "キツネ紋様の手甲[1]1個";
-				mes "狼の血10個^000000";
-				mes "が必要だ。";
-				mes "感じられるだろ？";
-				mes "熱く燃え上がっている狼の血が。";
+				mes "[Guillot]";
+				mes "^ff0000Wolf crest hand armor [1] requires 1 fox crest hand armor [1] 10 wolf blood ^000000." ;
+				mes "You can feel it, can't you?" ;
+				mes "The hot, burning wolf's blood." ;
 				continue;
 			case 2:
-				mes "[狼紋様の手甲[1]]";
-				mes "物理攻撃命中時、一定確率で";
-				mes "5秒間、Atk + 100";
-				mes "Flee - 50";
+				mes "[Wolf Crested Hand Armor[1]]";
+				mes "Atk + 100Flee - 50 for 5 seconds at a certain chance when hit by a physical attack";
 				next;
-				mes "[狼紋様の手甲[1]]";
-				mes "[円鱗の鎧]";
-				mes "と共に装備時、追加で";
-				mes "Str + 2";
-				mes "物理攻撃で与えるダメージ + 10%";
+				mes "[Wolf Crest Hand Armor [1]]";
+				mes "[Armor of Circular Scales]";
+				mes "When equipped together with, additional Str + 2 Damage dealt by physical attacks + 10%";
 				next;
-				mes "[狼紋様の手甲[1]]";
-				mes "系列 : 盾";
-				mes "防御 : 70";
-				mes "重量 : 25";
-				mes "要求レベル : 100";
-				mes "装備 : 影狼 朧";
+				mes "[Wolf Crested Armor[1]]"; mes "[Wolf Crested Armor]"; mes "[Wolf Crested Armor]
+				mes "series : shield defense : 70 weight : 25 required level : 100 equip : shadow wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,2172;
@@ -4548,45 +3956,32 @@ que_ng.gat,21,72,6	script	防具職人 ギヨ#kaboro	934,{
 				setarray '@amount,1,10;
 				break;
 			case 4:
-				mes "[ギヨ]";
-				mes "よく、考えるといい。";
+				mes "[Guillot]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
 		break;
 	case 2:
-		mes "[ギヨ]";
-		mes "三日月紋様の手甲[1]か。";
-		mes "美しさ、強さどちらも備えた";
-		mes "上等な一品だ。";
+		mes "[Guillot]";
+		mes "A crescent moon patterned cuirass [1]?" ;
+		mes "It is a fine piece, both beautiful and strong." ;
 		while(1) {
 			next;
-			switch(select("材料を見る","性能を見る","作成する","やめる")) {
+			switch(select("see materials", "see performance", "create", "stop")) {
 			case 1:
-				mes "[ギヨ]";
-				mes "^ff0000三日月紋様の手甲[1]は";
-				mes "キツネ紋様の手甲[1]1個";
-				mes "水晶のかけら100個^000000";
-				mes "が必要になる。";
-				mes "これにより、水晶のように透明で";
-				mes "美しい三日月を刻むことになる。";
+				mes "[Guillot]";
+				mes "^ff0000Crescent moon crest hand armor [1] will require 100 pieces of crystal ^000000 for one fox crest hand armor [1]." ;
+				mes "This will carve a beautiful crescent moon as clear and beautiful as crystal." ;
 				continue;
 			case 2:
-				mes "[三日月紋様の手甲[1]]";
-				mes "精錬値が1上がる度に、";
-				mes "スキルディレイ - 2%";
-				mes "[霧中闇影]";
-				mes "と共に装備時、追加で";
-				mes "Flee + 10";
-				mes "完全回避 + 10";
+				mes "[Crescent moon pattern hand armor[1]]";
+				mes "For every 1 increase in refinement value, skill delay - 2% [dark shadow in fog]";
+				mes "When equipped with, additional Flee + 10 Complete Evasion + 10";
 				next;
-				mes "[三日月紋様の手甲[1]]";
-				mes "系列 : 盾";
-				mes "防御 : 45";
-				mes "重量 : 25";
-				mes "要求レベル : 100";
-				mes "装備 : 影狼 朧";
+				mes "[Crescent Moon Pattern Hand Armor [1]]";
+				mes "series : shield defense : 45 weight : 25 required level : 100 equip : shadow wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,2173;
@@ -4594,46 +3989,34 @@ que_ng.gat,21,72,6	script	防具職人 ギヨ#kaboro	934,{
 				setarray '@amount,1,100;
 				break;
 			case 4:
-				mes "[ギヨ]";
-				mes "よく、考えるといい。";
+				mes "[Guillot]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
 		break;
 	case 3:
-		mes "[ギヨ]";
-		mes "円鱗の鎧[1]か。";
-		mes "これはかつて伝説となっていた";
-		mes "忍者が身に着けていたものらしい。";
+		mes "[Guillot]";
+		mes "Armor [1] of the circle scale?" ;
+		mes "This seems to be what the legendary Ninja once wore." ;
 		while(1) {
 			next;
-			switch(select("材料を見る","性能を見る","作成する","やめる")) {
+			switch(select("see materials", "see performance", "create", "quit")) {
 			case 1:
-				mes "[ギヨ]";
-				mes "^ff0000円鱗の鎧[1]は";
-				mes "火竜の鱗30個、";
-				mes "氷の鱗30個、";
-				mes "鮮血の鱗30個^000000";
-				mes "が必要になる。";
+				mes "[Guillot]";
+				mes "The ^ff000000 yen scale armor [1] will require 30 fire dragon scales, 30 ice scales, and 30 fresh blood scales ^000000." ;
 				continue;
 			case 2:
-				mes "[円鱗の鱗[1]]";
-				mes "MaxHP + 15%";
-				mes "MaxSP - 30%";
+				mes "[circular scales[1]]";
+				mes "MaxHP + 15%MaxSP - 30%";
 				next;
-				mes "[円鱗の鱗[1]]";
-				mes "[狼模様の手甲]";
-				mes "と共に装備時、追加で";
-				mes "Str + 2";
-				mes "物理攻撃で与えるダメージ + 10%";
+				mes "[circular scales[1]]"; mes "MaxHP + 15%MaxSP - 30%"; next; next; next; next; next; next; next; next; next; next; next; next; next
+				mes "[Wolf Pattern Hand Armor]";
+				mes "When equipped together with, additional Str + 2 Damage dealt by physical attacks + 10%";
 				next;
-				mes "[円鱗の鱗[1]]";
-				mes "系列 : 鎧";
-				mes "防御 : 90";
-				mes "重量 : 180";
-				mes "要求レベル : 100";
-				mes "装備 : 影狼 朧";
+				mes "[Circular Scale Scales[1]]"; mes "[Circular Scale Scales]"; mes "[Circular Scale Scales]"; mes "[Circular Scale Scales]
+				mes "series : armor defense : 90 weight : 180 required level : 100 equip : shadow wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,15054;
@@ -4641,47 +4024,35 @@ que_ng.gat,21,72,6	script	防具職人 ギヨ#kaboro	934,{
 				setarray '@amount,30,30,30;
 				break;
 			case 4:
-				mes "[ギヨ]";
-				mes "よく、考えるといい。";
+				mes "[Guillot]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
-		break;
+		break; }
 	case 4:
-		mes "[ギヨ]";
-		mes "霧中闇影[1]か……。";
-		mes "これは霧に隠れ闇に紛れ、";
-		mes "身を守る為に作られた物だ。";
+		mes "[Guillot]";
+		mes "Foggy dark shadow [1] or ......." ;
+		mes "This is made to hide in the fog, to hide in the dark, and to protect oneself." ;
 		while(1) {
 			next;
-			switch(select("材料を見る","性能を見る","作成する","やめる")) {
+			switch(select("see materials", "see performance", "create", "stop")) {
 			case 1:
-				mes "[ギヨ]";
-				mes "^ff0000霧中闇影[1]には";
-				mes "特殊忍者スーツ[1]";
-				mes "暗闇の破片10個^000000";
-				mes "が必要になる。";
+				mes "[Guillot]";
+				mes "^ff0000Special Ninja suit[1] for foggy dark shadow[1]"; mes "^ff0000Special Ninja suit[1] for foggy dark shadow[1]"; mes "^ff0000Special Ninja suit[1] for dark shadow[1]
+				mes "10 pieces of darkdark^000000 will be needed." ;
 				continue;
 			case 2:
-				mes "[霧中闇影[1]]";
-				mes "Agi + 1";
-				mes "物理攻撃を受けた時、";
-				mes "一定確率で自分にオートスペル";
-				mes "[幻術-影武者-]Lv1発動";
+				mes "[Foggy dark shadow[1]]"; mes "[Foggy dark shadow[1]]"; mes "[Foggy dark shadow[1]]";
+				mes "When you are hit by Agi + 1 physical attack, there is a certain probability that you will activate the autospell [Illusion - shadow warrior -] Lv1 for yourself."
 				next;
-				mes "[霧中闇影[1]]";
-				mes "[三日月模様の手甲]";
-				mes "と共に装備時、追加で";
-				mes "完全回避 + 10";
-				mes "Flee + 10";
+				mes "[Dark Shadow in Mist[1]]";
+				mes "[Crescent Moon Pattern Hand Armor]";
+				mes "When equipped together with, additional Complete Evasion + 10Flee + 10";
 				next;
-				mes "[霧中闇影[1]]";
-				mes "系列 : 鎧";
-				mes "防御 : 60";
-				mes "重量 : 150";
-				mes "要求レベル : 100";
-				mes "装備 : 影狼 朧";
+				mes "[Dark Shadow in the Mist[1]]";
+				mes "series : armor defense : 60 weight : 150 required level : 100 equip : shadow wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,15055;
@@ -4689,132 +4060,105 @@ que_ng.gat,21,72,6	script	防具職人 ギヨ#kaboro	934,{
 				setarray '@amount,1,10;
 				break;
 			case 4:
-				mes "[ギヨ]";
-				mes "よく、考えるといい。";
+				mes "[Guillot]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
-		break;
+		break; }
 	}
-	mes "[ギヨ]";
-	mes "作成の際には注意点がある。";
-	mes "作成に使用する材料装備を";
-	mes "複数所持している場合、";
-	mes "^ff0000どれを材料にするかは指定できない。^000000";
-	mes "材料に使用するものだけ所持した状態で";
-	mes "来るように気を付けてくれ。";
+	mes "[Guillot]";
+	mes "There is an Attention point in the creation." ;
+	mes "If you have more than one piece of material equipment in your possession to use for creation, you cannot specify ^ff000000which one to use for material. Be careful to come with only the one you ^000000use for materials in your possession." ;
 	next;
-	mes "[ギヨ]";
-	mes "後で後悔してもしらないからな。";
-	mes "では、作成するがいいか？";
+	mes "[Guillot]";
+	mes "I don't care if you regret it later." ;
+	mes "Then, may I create it?" ;
 	next;
-	if(select("作成する","やめる") == 2) {
-		mes "[ギヨ]";
-		mes "よく、考えるといい。";
+	if(select("create", "quit") == 2) {
+		mes "[Guillot]";
+		mes "Well, think about it." ;
 		close;
 	}
-	for(set '@i,0; '@amount['@i]!=0; set '@i,'@i+1) {
+	for(set '@i,0; '@amount['@i]! =0; set '@i,'@i+1) {
 		if(countitem('@need['@i]) < '@amount['@i]) {
-			mes "[ギヨ]";
-			mes "……。";
-			mes "材料が不足しているようだな。";
+			mes "[Guillot]";
+			mes "......." ;
+			mes "Looks like you're running out of material." ;
 			switch('@gain) {
 			case 2172:
-				mes "^ff0000狼紋様の手甲[1]は";
-				mes "キツネ紋様の手甲[1]1個";
-				mes "狼の血10個^000000";
+				mes "^ff000000 wolf crested cuirass[1] is one fox crested cuirass[1] 10 wolf's blood ^000000";
 				break;
 			case 2173:
-				mes "^ff0000三日月紋様の手甲[1]は";
-				mes "キツネ紋様の手甲[1]1個";
-				mes "水晶のかけら100個^000000";
+				mes "^ff000000Crescent moon pattern hand armor[1] is fox pattern hand armor[1], 100 pieces of crystal^000000";
 				break;
 			case 15054:
-				mes "^ff0000円鱗の鎧[1]は";
-				mes "火竜の鱗30個、氷の鱗30個、";
-				mes "鮮血の鱗30個^000000";
+				mes "^ff000000 Yen scale armor[1] is 30 fire dragon scales, 30 ice scales, and 30 fresh blood scales^000000";
 				break;
 			case 15055:
-				mes "^ff0000霧中闇影[1]には";
-				mes "特殊忍者スーツ[1]";
-				mes "暗闇の破片10個^000000";
+				mes "^ff0000Misty dark shadow[1] has a special Ninja suit[1]"; break; case 15055: "^ff000000 dark shadow[1] has a special Ninja suit[1]"; break; case 15056;
+				mes "10 pieces of darkdark^000000";
 				break;
 			}
-			mes "が必要だ。";
-			mes "よく探して見てくれ。";
+			mes "is needed." ;
+			mes "Look hard and see." ;
 			close;
 		}
 	}
 	if(checkitemblank() == 0) {
-		mes "[ギヨ]";
-		mes "荷物が多すぎるようだ。";
-		mes "荷を減らしてから";
-		mes "また来てくれ。";
+		mes "[Guillot]";
+		mes "Looks like you have too much baggage." ;
+		mes "Come back after you've reduced your load." ;
 		close;
 	}
 	if(checkweight('@gain,1) == 0) {
-		mes "[ギヨ]";
-		mes "荷物が重すぎるようだ。";
-		mes getitemid('@gain)+ "[1]は重量" +(getiteminfo('@gain,6)/10)+ "だ。";
-		mes "荷を軽くしてから";
-		mes "また来てくれ。";
+		mes "[Guillot]";
+		mes "Looks like the load is too heavy." ;
+		mes ""+getitemid('@gain)+ "[1] is weight" +(getiteminfo('@gain,6)/10)+ "" ;
+		mes "Lighten the load and come back." ;
 		close;
 	}
-	for(set '@i,0; '@amount['@i]!=0; set '@i,'@i+1)
+	for(set '@i,0; '@amount['@i]! =0; set '@i,'@i+1)
 		delitem '@need['@i],'@amount['@i];
 	getitem '@gain,1;
-	mes "[ギヨ]";
-	mes "うむ。出来たぞ。";
-	mes "美しい……。";
+	mes "[Guillot]";
+	mes "Mm. It's done." ;
+	mes "Beautiful ......." ;
 	close;
 }
 
-que_ng.gat,23,70,3	script	武器職人 キー#kaboro	939,{
-	mes "[キー]";
-	mes "攻撃は最大の防御";
-	mes "という言葉がある。";
-	mes "強力な武器こそ、";
-	mes "私を守ってくれる。";
+que_ng.gat,23,70,3 script weapon Artisan key#kaboro 939,{
+	mes "[key]";
+	mes "There is a saying that attack is the best defense." ;
+	mes "A strong weapon is the only thing that can protect me." ;
 	next;
-	mes "[キー]";
-	mes "必要な材料があれば、";
-	mes "特別な品を提供しよう。";
+	mes "[key]";
+	mes "If you have the materials you need, I will provide you with a special item." ;
 	next;
-	if(select("武器を作成する","会話を終える") == 2) {
-		mes "[キー]";
-		mes "慎重過ぎるのも問題だ。";
+	if(select("create weapon", "end conversation") == 2) {
+		mes "[key]";
+		mes "The problem is that we are too cautious." ;
 		close;
 	}
-	switch(select("羅刹剣[1]","三日月[1]","風魔手裏剣・乱華[2]","やめる")) {
+	switch(select("Rasenken[1]", "Mikazuki[1]", "Fuuma Shuriken/Ranka[2]", "stop")) {
 	case 1:
-		mes "[キー]";
-		mes "羅刹剣[1]は";
-		mes "ある程度修練を積んだ者しか";
-		mes "扱えない難しい武器だ。";
+		mes "[key]";
+		mes "The Rasenken[1] is a difficult weapon that only those with some training can handle." ;
 		while(1) {
 			next;
-			switch(select("材料をみる","性能をみる","作成する","やめる")) {
+			switch(select("see material", "see performance", "create", "quit")) {
 			case 1:
-				mes "[キー]";
-				mes "^ff0000羅刹剣は村雨[2]1個";
-				mes "ガーネット1個^000000";
-				mes "が必要になる。";
-				mes "ガーネットが羅刹剣特有の美しい色を";
-				mes "演出してくれる。";
+				mes "[key]";
+				mes "^ff0000 Rasen sword will require 1 Murasame [2] 1 Garnet ^000000." ;
+				mes "The garnet gives the Rasen sword its unique and beautiful color." ;
 				continue;
 			case 2:
-				mes "[羅刹剣[1]]";
-				mes "Int + 3";
-				mes "Matk + 100";
+				mes "[Rasen Sword[1]]";
+				mes "Int + 3Matk + 100";
 				next;
-				mes "[羅刹剣[1]]";
-				mes "系列 : 短剣";
-				mes "攻撃 : 120";
-				mes "重量 : 60";
-				mes "武器レベル : 3";
-				mes "要求レベル : 110";
-				mes "装備 : 影狼 朧";
+				mes "[Rasenken[1]]"; mes "Int + 3Matk + 100"; next; next; mes "[Rasenken[1]]";
+				mes "Series : Dagger Attack : 120 Weight : 60 Weapon Level : 3 Requirement Level : 110 Equipment : Shadow Wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,13076;
@@ -4822,45 +4166,32 @@ que_ng.gat,23,70,3	script	武器職人 キー#kaboro	939,{
 				setarray '@amount,1,1;
 				break;
 			case 4:
-				mes "[キー]";
-				mes "よく、考えてみる事だ。";
+				mes "[key]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
 		break;
 	case 2:
-		mes "[キー]";
-		mes "三日月[1]か……。";
-		mes "三日月のように曲がる美しい曲線。";
-		mes "この仕上がりを出せる者は";
-		mes "滅多にいない一品だ。";
+		mes "[key]";
+		mes "Crescent[1] or ......." ;
+		mes "A beautiful curve that curves like a crescent moon." ;
+		mes "One of the few that can produce this finish." ;
 		while(1) {
 			next;
-			switch(select("材料をみる","性能をみる","作成する","やめる")) {
+			switch(select("see materials", "see performance", "create", "stop")) {
 			case 1:
-				mes "[キー]";
-				mes "^ff0000三日月[1]は白刃[1]1個";
-				mes "オパール1個^000000";
-				mes "が必要になる。";
-				mes "オパールが三日月の光を";
-				mes "さらに輝かせる。";
+				mes "[key]";
+				mes "^ff0000Crescent moon[1] will require 1 white blade[1] 1 opal ^000000." ;
+				mes "The opal makes the light of the crescent moon shine even brighter." ;
 				continue;
 			case 2:
-				mes "[三日月[1]]";
-				mes "Matk + 120、";
-				mes "スキル使用時";
-				mes "消費SP - 5%";
-				mes "スキル使用時";
-				mes "詠唱時間 - 5%";
+				mes "[Crescent Moon[1]]";
+				mes "Matk + 120, SP consumption when using skill - 5% Chanting time when using skill - 5%";
 				next;
-				mes "[三日月[1]]";
-				mes "系列 : 短剣";
-				mes "攻撃 : 50";
-				mes "重量 : 60";
-				mes "武器レベル : 4";
-				mes "要求レベル : 100";
-				mes "装備 : 影狼 朧";
+				mes "[Crescent Moon[1]]";
+				mes "Series : Dagger Attack : 50 Weight : 60 Weapon Level : 4 Requirement Level : 100 Equipment : Shadow Wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,13078;
@@ -4868,43 +4199,32 @@ que_ng.gat,23,70,3	script	武器職人 キー#kaboro	939,{
 				setarray '@amount,1,1;
 				break;
 			case 4:
-				mes "[キー]";
-				mes "よく、考えてみる事だ。";
+				mes "[key]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
 		break;
 	case 3:
-		mes "[キー]";
-		mes "風魔手裏剣・乱華[2]か。";
-		mes "これも本当に美しい。";
-		mes "君は花びらが舞う姿を";
-		mes "見たことがあるか？";
+		mes "[key]";
+		mes "Fuuma shuriken, ranka [2]?" ;
+		mes "This is really beautiful too." ;
+		mes "Have you ever seen petals dancing?" ;
 		while(1) {
 			next;
-			switch(select("材料をみる","性能をみる","作成する","やめる")) {
+			switch(select("see material", "see performance", "create", "stop")) {
 			case 1:
-				mes "[キー]";
-				mes "^ff0000風魔手裏剣・乱華[2]は";
-				mes "風魔手裏剣・明浄[2]1個";
-				mes "壊れた手裏剣100個^000000";
-				mes "が必要になる。";
-				mes "手裏剣が少し多めに必要だが、";
-				mes "美しく舞うためだ。";
+				mes "[key]";
+				mes "^ff0000Fuuma Shuriken, Ranhua [2] will require 100 ^000000 broken shurikens, one Fuuma Shuriken, Meijo [2]." ;
+				mes "A little more shurikens are needed, but only to dance beautifully." ;
 				continue;
 			case 2:
-				mes "[風魔手裏剣・乱華[2]]";
-				mes "Matk + 50";
-				mes "スキル [風魔手裏剣-乱華-]";
-				mes "で与えるダメージ + 20%";
+				mes "[Fuuma Shuriken-Ranka[2]]";
+				mes "Matk + 50 skill [Fuuma Shuriken-Ranka-]";
+				mes "Damage dealt by + 20%";
 				next;
-				mes "系列 : 風魔手裏剣";
-				mes "攻撃 : 150";
-				mes "重量 : 150";
-				mes "武器レベル : 3";
-				mes "要求レベル : 110";
-				mes "装備 : 影狼 朧";
+				mes "Series : Fuuma Shuriken Attack : 150 Weight : 150 Weapon Level : 3 Requirement Level : 110 Equipment : Shadow Wolf Oboro";
 				continue;
 			case 3:
 				set '@gain,13313;
@@ -4912,81 +4232,69 @@ que_ng.gat,23,70,3	script	武器職人 キー#kaboro	939,{
 				setarray '@amount,1,100;
 				break;
 			case 4:
-				mes "[キー]";
-				mes "よく、考えてみる事だ。";
+				mes "[key]";
+				mes "Well, think about it." ;
 				close;
 			}
 			break;
 		}
-		break;
+		break; }
 	case 4:
-		mes "[キー]";
-		mes "よく、考えてみる事だ。";
+		mes "[key]";
+		mes "Well, think about it." ;
 		close;
 	}
-	mes "[キー]";
-	mes "作成の際には注意点がある。";
-	mes "作成に使用する材料装備を";
-	mes "複数所持している場合、";
-	mes "^ff0000どれを材料にするかは指定できない。^000000";
-	mes "材料に使用するものだけ所持した状態で";
-	mes "来るように気を付けてくれ。";
+	mes "[key]";
+	mes "There is an Attention point in the creation." ;
+	mes "If you have more than one piece of material equipment in your possession to use for creation, you cannot specify ^ff000000which one to use for material. Be careful to come with only the one you ^000000use for materials in your possession." ;
 	next;
-	mes "[キー]";
-	mes "後で後悔してもしらないからな。";
-	mes "では、作成するがいいか？";
+	mes "[key]";
+	mes "I don't care if you regret it later." ;
+	mes "So, let's create it, shall we?" ;
 	next;
-	if(select("作成する","やめる") == 2) {
-		mes "[キー]";
-		mes "よく、考えてみる事だ。";
+	if(select("create", "quit") == 2) {
+		mes "[key]";
+		mes "Well, think about it." ;
 		close;
 	}
-	for(set '@i,0; '@amount['@i]!=0; set '@i,'@i+1) {
+	for(set '@i,0; '@amount['@i]! =0; set '@i,'@i+1) {
 		if(countitem('@need['@i]) < '@amount['@i]) {
-			mes "[キー]";
-			mes "駄目だ。材料が足りない。";
+			mes "[key]";
+			mes "No. Not enough material." ;
 			switch('@gain) {
 			case 13076:
-				mes "羅刹剣[1]に必要な材料は";
-				mes "^ff0000羅刹剣は村雨[2]1個";
-				mes "ガーネット1個^000000";
+				mes "The materials needed for the Rasen sword [1] are ^ff0000Rasen sword is 1 Murasame [2] 1 garnet ^000000";
 				break;
 			case 13078:
-				mes "三日月[1]に必要な材料は";
-				mes "^ff0000白刃[1]1個";
-				mes "オパール1個^000000";
+				mes "The materials required for the Crescent Moon [1] are ^ff000000 one white blade [1] and one opal ^000000";
 				break;
 			case 13313:
-				mes "風魔手裏剣・乱華[2]に必要な材料は";
-				mes "^ff0000風魔手裏剣・明浄[2]1個";
-				mes "壊れた手裏剣100個^000000";
+				mes "The materials required for ^ff000000Fuuma Shuriken, Ranhana [2] are ^ff000000Fuuma Shuriken, Meijo [2], 1 broken shuriken, 100 ^000000";
 				break;
 			}
-			mes "以上だ。";
-			mes "材料を装備していては駄目だぞ。";
+			mes "That's all." ;
+			mes "You can't have the materials equipped." ;
 			close;
 		}
 	}
 	if(checkitemblank() == 0) {
-		mes "[キー]";
-		mes "荷物が多すぎるようだ。";
-		mes "荷を減らしてから";
-		mes "また来てくれ。";
+		mes "[key]";
+		mes "Looks like you have too much baggage." ;
+		mes "Please reduce your load and come back later." ;
 		close;
 	}
 	if(checkweight('@gain,1) == 0) {
-		mes "[キー]";
-		mes "荷物が重すぎるようだ。";
-		mes getitemid('@gain)+ "[" +getiteminfo('@gain,10)+ "]は重量" +(getiteminfo('@gain,6)/10)+ "だ。";
-		mes "荷を軽くしてから";
-		mes "また来てくれ。";
+		mes "[key]";
+		mes "Looks like the load is too heavy." ;
+		mes ""+getitemid('@gain)+ "[" +getiteminfo('@gain,10)+ "] is weight" +(getiteminfo('@gain,6)/10)+ "" ;
+		mes "Lighten the load and come back." ;
 		close;
 	}
-	for(set '@i,0; '@amount['@i]!=0; set '@i,'@i+1)
+	for(set '@i,0; '@amount['@i]! =0; set '@i,'@i+1)
 		delitem '@need['@i],'@amount['@i];
 	getitem '@gain,1;
-	mes "[キー]";
-	mes "うむ。出来たぞ。";
-	mes "美しい……。";
+	mes "[key]";
+	mes "Mm. Done." ;
+	mes "Beautiful ......." ;
 	close;
 }

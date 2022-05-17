@@ -9,20 +9,20 @@
 function	script	jobchenge3rd_func	{
 	function	job_name	{
 		switch(getarg(0)) {
-		case Job_Knight:		return "ロードナイト";
-		case Job_Priest:		return "ハイプリースト";
-		case Job_Wizard:		return "ハイウィザード";
-		case Job_Blacksmith:	return "ホワイトスミス";
-		case Job_Hunter:		return "スナイパー";
-		case Job_Assassin:		return "アサシンクロス";
-		case Job_Crusader:		return "パラディン";
-		case Job_Monk:			return "チャンピオン";
-		case Job_Sage:			return "プロフェッサー";
-		case Job_Rogue:			return "チェイサー";
-		case Job_Alchemist:		return "クリエイター";
-		case Job_Bard:			return "クラウン";
-		case Job_Dancer:		return "ジプシー";
-		case Job_RuneKnight:	return "ルーンナイト";
+		case Job_Knight:		return "Lord Knight";
+		case Job_Priest:		return "High Priest";
+		case Job_Wizard:		return "High Wizard";
+		case Job_Blacksmith:	return "Whitesmith";
+		case Job_Hunter:		return "Sniper";
+		case Job_Assassin:		return "Assassin Cross";
+		case Job_Crusader:		return "Paladin";
+		case Job_Monk:			return "Champion";
+		case Job_Sage:			return "Professor";
+		case Job_Rogue:			return "Stalker";
+		case Job_Alchemist:		return "Creator";
+		case Job_Bard:			return "Clown";
+		case Job_Dancer:		return "Gypsy";
+		case Job_RuneKnight:	return "ルーンKnight";
 		case Job_Warlock:		return "ウォーロック";
 		case Job_Ranger:		return "レンジャー";
 		case Job_ArchBishop:	return "アークビショップ";
@@ -34,7 +34,7 @@ function	script	jobchenge3rd_func	{
 		case Job_Wanderer:		return "ワンダラー";
 		case Job_Shura:			return "修羅";
 		case Job_Genetic:		return "ジェネティック";
-		case Job_ShadowChaser:	return "シャドウチェイサー";
+		case Job_ShadowChaser:	return "シャドウStalker";
 		}
 	}
 
@@ -57,29 +57,22 @@ function	script	jobchenge3rd_func	{
 		mes "転職を望む者はいませんか？";
 		next;
 		mes "[転職代行係]";
-		mes "もしいましたら、";
-		mes "私のところへ来るように";
-		mes "伝えてください。";
-		mes "今なら条件さえ満たしていれば";
-		mes "すぐ転職できますよ。";
+		mes "もしいましたら、私のところへ来るように伝えてください。";
+		mes "今なら条件さえ満たしていればすぐ転職できますよ。";
 		close;
 	}
 	if(SkillPoint) {
-		mes "‐スキルポイントが余っているため";
-		mes "　進行できません‐";
+		mes "‐スキルポイントが余っているため進行できません‐";
 		close;
 	}
 	mes "[転職代行係]";
 	mes "こんにちは。";
 	if(Upper == UPPER_HIGH)
 		mes "貴方は"+ job_name(Job) +"ですね。";
-	mes '@3rdName$ +"への転職を";
-	mes "望みますか？";
+	mes ""+'@3rdName$ +"への転職を望みますか？";
 	next;
 	mes "[転職代行係]";
-	mes "なお、"+ '@3rdName$ +"へ転職すると";
-	mes "ステータスとスキルが全て";
-	mes "リセットされます。";
+	mes "なお、"+ '@3rdName$ +"へ転職するとステータスとスキルが全てリセットされます。";
 	next;
 	if(select("転職しない","^0000FF転職する^000000")==1) {
 		mes "[転職代行係]";
@@ -89,119 +82,73 @@ function	script	jobchenge3rd_func	{
 	}
 	if(Weight || SkillPoint || checkriding() || checkcart() || checkfalcon() || sc_ison(SC_ALL_RIDING)) {
 		mes "[転職代行係]";
-		mes "あなたは準備しなければ";
-		mes "ならないことがありますね。";
-		mes "まずは、身を清める為に";
-		mes "身のまわりのものを";
-		mes "無にしてください。";
+		mes "あなたは準備しなければならないことがありますね。";
+		mes "まずは、身を清める為に身のまわりのものを無にしてください。";
 		next;
 		mes "[転職代行係]";
-		mes "アイテムやスキルポイントなど";
-		mes "何も持たない";
-		mes "状態でなければなりません。";
-		mes "旅を共にした動物達やカート、";
-		mes "騎乗生物なども";
-		mes "持って行くことはできません。";
+		mes "アイテムやスキルポイントなど何も持たない状態でなければなりません。";
+		mes "旅を共にした動物達やカート、騎乗生物なども持って行くことはできません。";
 		next;
 		mes "[転職代行係]";
-		mes "それでは……用意ができましたら";
-		mes "お越しください。";
+		mes "それでは......用意ができましたらお越しください。";
 		close;
 	}
 	if('@job == Job_RuneKnight) {
 		mes "[転職代行係]";
 		mes "転職する為の準備は万全のようですね。";
-		mes "それでは、転職する前に、";
-		mes "これからご紹介します装備のうち";
-		mes "いずれか1つをお選びください。";
-		mes "お選びになった装備が、";
-		mes "転職の際に渡されます。";
+		mes "それでは、転職する前に、これからご紹介します装備のうちいずれか1つをお選びください。";
+		mes "お選びになった装備が、転職の際に渡されます。";
 		next;
 		mes "[転職代行係]";
-		mes "まず、装備の詳細について";
-		mes "ご説明しますので、";
-		mes "詳細が知りたい装備を";
-		mes "お選び下さい。";
+		mes "まず、装備の詳細についてご説明しますので、詳細が知りたい装備をお選び下さい。";
 		while(1) {
 			next;
 			switch(select("エナジールーンガード[1]","魔力石の指輪[1]","ルーンプレート[1]","説明は大丈夫です")) {
 			case 1:
 				mes "[転職代行係]";
-				mes "エナジールーンガード[1]について";
-				mes "説明させていただきます。";
+				mes "エナジールーンガード[1]について説明させていただきます。";
 				next;
 				mes "[装備詳細]";
-				mes "豪華な青色の光の";
-				mes "エナジールーンが";
-				mes "ちりばめられている";
-				mes "羽模様の盾。";
-				mes "清く清明な気が溢れて";
-				mes "自身と精神を刺激する。";
+				mes "豪華な青色の光のエナジールーンがちりばめられている羽模様の盾。";
+				mes "清く清明な気が溢れて自身と精神を刺激する。";
 				next;
 				mes "[装備詳細]";
-				mes "系列 : 盾";
-				mes "防御 : 70";
-				mes "重量 : 0";
-				mes "要求レベル : 99";
-				mes "装備 : ルーンナイト専用";
-				mes "特殊効果： MaxSP + 2%";
+				mes "系列 : 盾防御 : 70重量 : 0要求レベル : 99装備 : ルーンKnight専用特殊効果： MaxSP + 2%";
 				next;
 				mes "[転職代行係]";
-				mes "他に詳細の知りたい";
-				mes "装備はございますか？";
+				mes "他に詳細の知りたい装備はございますか？";
 				continue;
 			case 2:
 				mes "[転職代行係]";
-				mes "魔力石の指輪[1]について";
-				mes "説明させていただきます。";
+				mes "魔力石の指輪[1]について説明させていただきます。";
 				next;
 				mes "[装備詳細]";
-				mes "不思議なルーンが";
-				mes "刻まれている";
-				mes "青色のリング。";
-				mes "輝くルーンから";
-				mes "神秘な活力が感じ取れる。";
+				mes "不思議なルーンが刻まれている青色のリング。";
+				mes "輝くルーンから神秘な活力が感じ取れる。";
 				next;
 				mes "[装備詳細]";
-				mes "系列 : アクセサリー";
-				mes "防御 : 0";
-				mes "重量 : 0";
-				mes "要求レベル : 90";
-				mes "装備 : ルーンナイト専用";
-				mes "特殊効果： Str + 2";
+				mes "系列 : アクセサリー防御 : 0重量 : 0要求レベル : 90装備 : ルーンKnight専用特殊効果： Str + 2";
 				next;
 				mes "[転職代行係]";
-				mes "他に詳細の知りたい";
-				mes "装備はございますか？";
+				mes "他に詳細の知りたい装備はございますか？";
 				continue;
 			case 3:
 				mes "[転職代行係]";
-				mes "ルーンプレート[1]について";
-				mes "説明させていただきます。";
+				mes "ルーンプレート[1]について説明させていただきます。";
 				next;
 				mes "[装備詳細]";
-				mes "ルーンと宝石で飾られた";
-				mes "プレートアーマー。";
-				mes "見た目より軽いが、";
-				mes "魔力により防御力が";
-				mes "強化されている。";
+				mes "ルーンと宝石で飾られたプレートアーマー。";
+				mes "見た目より軽いが、魔力により防御力が強化されている。";
 				next;
 				mes "[装備詳細]";
-				mes "系列 : 鎧";
-				mes "防御 : 95";
-				mes "重量 : 0";
-				mes "要求レベル : 99";
-				mes "装備 : ルーンナイト専用";
-				mes "特殊効果：精錬不可、破壊不可。";
+				mes "系列 : 鎧防御 : 95重量 : 0要求レベル : 99装備 : ルーンKnight専用特殊効果：精錬不可、破壊不可。";
 				next;
 				mes "[転職代行係]";
-				mes "他に詳細の知りたい";
-				mes "装備はございますか？";
+				mes "他に詳細の知りたい装備はございますか？";
 				continue;
 			case 4:
 				mes "[転職代行係]";
-				mes "それでは、貴方が欲しい";
-				mes "装備をお選び下さい。";
+				mes "それでは、貴方が欲しい装備をお選び下さい。";
 				while(1) {
 					next;
 					switch(select("エナジールーンガード[1]","魔力石の指輪[1]","ルーンプレート[1]")) {
@@ -217,14 +164,12 @@ function	script	jobchenge3rd_func	{
 					}
 					next;
 					mes "[転職代行係]";
-					mes getitemname('@gain) +"[1]ですね。";
+					mes ""+getitemname('@gain) +"[1]ですね。";
 					mes "本当にこちらでよろしいですか？";
 					next;
 					if(select("はい","いいえ")==2) {
 						mes "[転職代行係]";
-						mes "それでは再度、";
-						mes "欲しい装備を";
-						mes "お選び下さい。";
+						mes "それでは再度、欲しい装備をお選び下さい。";
 						continue;
 					}
 					break;
@@ -261,7 +206,7 @@ function	script	jobchenge3rd_func	{
 	case Job_Ranger:
 		setquest 201190;
 		getitem 6124,1;	//狼の笛
-		getitem 5748,1;	//スナイパーゴーグル
+		getitem 5748,1;	//Sniperゴーグル
 		break;
 	case Job_Guillotine:
 		setquest 201200;
@@ -284,7 +229,7 @@ function	script	jobchenge3rd_func	{
 		setquest 201235;
 		getitem 6121,1;	//フェイスペイントブラシ
 		getitem 6122,1;	//ペイントブラシ
-		getitem 5750,1;	//シャドウクラウン
+		getitem 5750,1;	//シャドウClown
 		break;
 	case Job_Genetic:
 		setquest 201240;
@@ -314,7 +259,7 @@ function	script	jobchenge3rd_func	{
 	mes "[転職代行係]";
 	mes "さあ、これで貴方は";
 	mes '@3rdName$ +"となりました。";
-	mes "見た目も気持ちも一新ですね！";
+	mes "見た目も気持ちも一新ですね!";
 	close;
 }
 
@@ -341,8 +286,7 @@ prontera.gat,129,212,5	script	ドラゴン管理兵	105,{
 	if(Job != Job_RuneKnight) {
 		mes "[ドラゴン管理兵]";
 		mes "何の御用ですか？";
-		mes "ドラゴンは、ルーンナイト様専用";
-		mes "となっております。";
+		mes "ドラゴンは、ルーンKnight様専用となっております。";
 		close;
 	}
 //	mes "[ドラゴン管理]";		//脱字。本家仕様
@@ -352,7 +296,7 @@ prontera.gat,129,212,5	script	ドラゴン管理兵	105,{
 	next;
 	if(select("利用する","やめる")==2) {
 		mes "[ドラゴン管理兵]";
-		mes "そうですか。では……";
+		mes "そうですか。では......";
 		close;
 	}
 	if(checkdragon()) {
@@ -374,8 +318,7 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 	if(Job != Job_RoyalGuard) {
 		mes "[グリフォン管理兵]";
 		mes "何の御用ですか？";
-		mes "グリフォンは、ロイヤルガード様専用";
-		mes "となっております。";
+		mes "グリフォンは、ロイヤルガード様専用となっております。";
 		close;
 	}
 	//未調査
@@ -385,7 +328,7 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 	next;
 	if(select("利用する","やめる")==2) {
 		mes "[グリフォン管理兵]";
-		mes "そうですか。では……";
+		mes "そうですか。では......";
 		close;
 	}
 	if(checkriding()) {
@@ -393,10 +336,8 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 	}
 	if(getskilllv(63) < 1) {
 		mes "[グリフォン管理兵]";
-		mes "……まだグリフォンには";
-		mes "乗れないようですね。";
-		mes "スキル「ライディング」を";
-		mes "覚えてからお越しください。";
+		mes "......まだグリフォンには乗れないようですね。";
+		mes "スキル「ライディング」を覚えてからお越しください。";
 		close;
 	}
 	setriding;
@@ -411,8 +352,7 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 -	script	3rdRentalGear	-1,{
 	if(Job != Job_Mechanic) {
 		mes "[魔導ギア管理兵]";
-		mes "私はメカニックの方へお貸しする";
-		mes "魔導ギアの管理を行っています。";
+		mes "私はメカニックの方へお貸しする魔導ギアの管理を行っています。";
 		close;
 	}
 	mes "[魔導ギア管理兵]";
@@ -425,8 +365,7 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 	case 1:
 		if(checkcart()) {
 			mes "[魔導ギア管理兵]";
-			mes "既にカートを";
-			mes "利用されていますね。";
+			mes "既にカートを利用されていますね。";
 			close;
 		}
 		setcart;
@@ -434,16 +373,12 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 	case 2:
 		if(checkgear()) {
 			mes "[魔導ギア管理兵]";
-			mes "すでに魔導ギアに乗って";
-			mes "いらっしゃいますね。";
+			mes "すでに魔導ギアに乗っていらっしゃいますね。";
 			close;
 		}
 		if(getskilllv(2255) < 1) {
 			mes "[魔導ギア管理兵]";
-			mes "すみませんが、";
-			mes "魔導ギアライセンスを";
-			mes "習得していない方への";
-			mes "貸し出しは行っていません。";
+			mes "すみませんが、魔導ギアライセンスを習得していない方への貸し出しは行っていません。";
 			mes "習得してからお越しください。";
 			close;
 		}
@@ -451,9 +386,8 @@ prontera.gat,125,208,5	script	グリフォン管理兵	105,{
 		close;
 	case 3:
 		mes "[魔導ギア管理兵]";
-		mes "そうですか……";
-		mes "魔導ギアを利用される際は";
-		mes "私に声がけください。";
+		mes "そうですか......";
+		mes "魔導ギアを利用される際は私に声がけください。";
 		close;
 	}
 }
@@ -464,34 +398,30 @@ mora.gat,91,112,3			duplicate(3rdRentalGear)	魔導ギア管理兵#mora		105
 ecl_in01.gat,41,25,5		duplicate(3rdRentalGear)	魔導ギア管理兵#ecl		105
 
 //==========================================
-// ルーン原石販売員 - ルーンナイト
+// ルーン原石販売員 - ルーンKnight
 //------------------------------------------
 
 prontera.gat,168,228,3	script	ルーン原石販売員#pro	853,{
 	mes "[ルーン原石販売員]";
-	mes "あなたはもしかして、";
-	mes "ルーン原石をお求めですかな!?";
-	mes "　";
-	mes "今なら、いい原石をお売りしますよ。";
+	mes "あなたはもしかして、ルーン原石をお求めですかな!?今なら、いい原石をお売りしますよ。";
 	next;
 	switch(select("高級なルーン原石を買う","一般的なルーン原石を買う")) {
 	case 1:
 		mes "[ルーン原石販売員]";
-		mes "ほほ～、これはお目が高い！";
+		mes "ほほ～、これはお目が高い!";
 		mes "高級なルーン原石ですな。";
 		set '@price,2500;
 		set '@gain,12734;
 		break;
 	case 2:
 		mes "[ルーン原石販売員]";
-		mes "お～、実に堅実な方ですな！";
+		mes "お～、実に堅実な方ですな!";
 		mes "一般的なルーン原石をお求めとは。";
 		set '@price,1000;
 		set '@gain,12737;
 		break;
 	}
-	mes "この原石は1個 "+ '@price +"Zenyで";
-	mes "お売りしましょう！";
+	mes "この原石は1個 "+ '@price +"Zenyでお売りしましょう!";
 	mes "2000個までなら、1度で渡しましょう。";
 	mes "いくつ買いますかな？";
 	next;
@@ -499,35 +429,28 @@ prontera.gat,168,228,3	script	ルーン原石販売員#pro	853,{
 	if('@num == 0) {
 		mes "[ルーン原石販売員]";
 		mes "おや、そうですか。";
-		mes "残念ですな。";
-		mes "買いたくなったら、";
-		mes "またお越しください。";
+		mes "残ghostですな。";
+		mes "買いたくなったら、またお越しください。";
 		close;
 	}
 	if('@num < 1 || '@num > 2000) {
 		mes "[ルーン原石販売員]";
 		mes "お客さん、冗談でしょう。";
-		mes "ちゃんと数を言ってもらわないと";
-		mes "用意できませんよ。";
-		mes "1度でお売りできるのは";
-		mes "1～2000個ですからな。";
+		mes "ちゃんと数を言ってもらわないと用意できませんよ。";
+		mes "1度でお売りできるのは1～2000個ですからな。";
 		close;
 	}
 	if(Zeny < '@price*'@num) {
 		mes "[ルーン原石販売員]";
 		mes "おやおや？";
-		mes "お客さん、困りますな～";
-		mes "Zenyが足りませんよ。";
-		mes "しっかり払ってもらわないと";
-		mes "商売あがったりですからな。";
+		mes "お客さん、困りますな～Zenyが足りませんよ。";
+		mes "しっかり払ってもらわないと商売あがったりですからな。";
 		mes "お金を用意して、また来てください。";
 		close;
 	}
 	if(checkitemblank()==0) {
 		mes "[ルーン原石販売員]";
-		mes "おっと!?";
-		mes "お客さん、ちょっと荷物が";
-		mes "多すぎるようですな。";
+		mes "おっと!?お客さん、ちょっと荷物が多すぎるようですな。";
 		mes "これでは、購入数の";
 		mes getitemname('@gain) +"を渡せそうにない。";
 		mes "身軽にしてから、また来てください。";
@@ -535,9 +458,7 @@ prontera.gat,168,228,3	script	ルーン原石販売員#pro	853,{
 	}
 	if(checkweight('@gain,'@num)==0) {
 		mes "[ルーン原石販売員]";
-		mes "おっと!?";
-		mes "お客さん、ちょっと荷物が";
-		mes "重過ぎるようですな。";
+		mes "おっと!?お客さん、ちょっと荷物が重過ぎるようですな。";
 		mes "これでは、購入数の";
 		mes getitemname('@gain)+ "を渡せそうにない。";
 		mes "身軽にしてから、また来てください。";
@@ -547,8 +468,7 @@ prontera.gat,168,228,3	script	ルーン原石販売員#pro	853,{
 	getitem '@gain,'@num;
 	mes "[ルーン原石販売員]";
 	mes "毎度ありがたいですな。";
-	mes "またのご利用、";
-	mes "お待ちしておりますよ。";
+	mes "またのご利用、お待ちしておりますよ。";
 	close;
 }
 
@@ -573,51 +493,32 @@ lighthalzen.gat,337,240,4	substore(AlloyTrapShopper)	トラップ専門家	66
 -	script	3rdPoisonShopper	-1,{
 	mes "[毒製造キット販売員]";
 	mes "毒製造キットはいりませんか～？";
-	mes "　";
-	mes "毒製造キットは１つ";
-	mes "5000zenyですよ～";
-	mes "　";
-	mes "買いますか～？";
+	mes "  毒製造キットは１つ5000zenyですよ～買いますか～？";
 	next;
 	if(select("はい","いいえ")==2) {
 		mes "[毒製造キット販売員]";
-		mes "そうですか～";
-		mes "わかりました～";
-		mes "また来てくださいね～";
+		mes "そうですか～わかりました～また来てくださいね～";
 		close;
 	}
 	if(Zeny < 5000) {
 		mes "[毒製造キット販売員]";
-		mes "あの～";
-		mes "お客さん、お金が足りませんよ～";
-		mes "お金を増やして、またきて下さ～い。";
+		mes "あの～お客さん、お金が足りませんよ～お金を増やして、またきて下さ～い。";
 		close;
 	}
 	if(checkitemblank()==0) {
 		mes "[毒製造キット販売員]";
-		mes "あの～";
-		mes "お客さん、所持している荷物が";
-		mes "多いですね～";
-		mes "これでは毒製造キットを";
-		mes "渡せませんよ～";
-		mes "身を軽くしてからまたきて下さ～い。";
+		mes "あの～お客さん、所持している荷物が多いですね～これでは毒製造キットを渡せませんよ～身を軽くしてからまたきて下さ～い。";
 		close;
 	}
 	if(checkweight(7931,1)==0) {
 		mes "[毒製造キット販売員]";
-		mes "あの～";
-		mes "お客さん、所持している荷物が";
-		mes "重すぎですよ～";
-		mes "これでは毒製造キットを";
-		mes "渡せませんよ～";
-		mes "身を軽くしてからまたきて下さ～い。";
+		mes "あの～お客さん、所持している荷物が重すぎですよ～これでは毒製造キットを渡せませんよ～身を軽くしてからまたきて下さ～い。";
 		close;
 	}
 	set Zeny,Zeny - 5000;
 	getitem 7931,1;
 	mes "[毒製造キット販売員]";
-	mes "お買い上げ～";
-	mes "ありがとうございま～す。";
+	mes "お買い上げ～ありがとうございま～す。";
 	mes "またお越しくださ～い。";
 	close;
 }
@@ -627,16 +528,16 @@ lhz_in02.gat,16,205,4	duplicate(3rdPoisonShopper)	毒製造キット販売員#lh
 
 
 //==========================================
-// 闇販売員 - メカニック
+// dark販売員 - メカニック
 //------------------------------------------
 
 -	shop	MechanicShopper	-1,2139,2800,2801,2802,2803,2804,2805,2806,2807,18000,18001,18002,18003,18004,12392,12393,12394,6145,12383,6146,6147,6186,2808
 
-prt_in.gat,175,137,4	substore(MechanicShopper)	闇販売員	49
-mid_camp.gat,184,263,4	substore(MechanicShopper)	闇販売員	49
-einbroch.gat,122,250,4	substore(MechanicShopper)	闇販売員	49
-ra_in.gat,257,266,4		substore(MechanicShopper)	闇販売員	49
-lhz_in03.gat,181,17,4	substore(MechanicShopper)	闇販売員	49
+prt_in.gat,175,137,4	substore(MechanicShopper)	dark販売員	49
+mid_camp.gat,184,263,4	substore(MechanicShopper)	dark販売員	49
+einbroch.gat,122,250,4	substore(MechanicShopper)	dark販売員	49
+ra_in.gat,257,266,4		substore(MechanicShopper)	dark販売員	49
+lhz_in03.gat,181,17,4	substore(MechanicShopper)	dark販売員	49
 
 
 //==========================================
@@ -653,9 +554,7 @@ comodo.gat,196,162,3	shop	カリブ#comodo	479,11513,6144
 gef_tower.gat,105,172,5	script	ポイント商人	700,{
 	mes "[ポイント商人]";
 	mes "こんにちは。";
-	mes "ここでは鉱石をさらに砕いた";
-	mes "触媒として使用する";
-	mes "^FF0000各種ポイント^000000を販売しています。";
+	mes "ここでは鉱石をさらに砕いた触媒として使用する^FF0000各種ポイント^000000を販売しています。";
 	mes "何か必要ですか？";
 	next;
 	switch(select("スカーレットポイント(火) - 200z","ライムグリーンポイント(地) - 200z","インディゴポイント(水) - 200z","イエローウィッシュポイント(風) - 200z","会話を終える")) {
@@ -685,8 +584,7 @@ gef_tower.gat,105,172,5	script	ポイント商人	700,{
 	mes "こちらは^0000ff" +'@element$+ "^000000のポイントです。";
 	mes "何個購入しますか？";
 	mes "同時に1000個まで購入できます。";
-	mes "キャンセルするには、";
-	mes "0を入力してください。";
+	mes "キャンセルするには、0を入力してください。";
 	next;
 	input '@num;
 	if('@num == 0) {
@@ -698,14 +596,11 @@ gef_tower.gat,105,172,5	script	ポイント商人	700,{
 	if('@num < 0 || '@num > 1000) {
 		mes "[ポイント商人]";
 		mes "正しい数を入力してください。";
-		mes "一度に購入できるのは";
-		mes "1000個までとなります。";
+		mes "一度に購入できるのは1000個までとなります。";
 		close;
 	}
 	mes "[ポイント商人]";
-	mes "^ff0000" +getitemname('@itemid)+ "^000000を";
-	mes "^0000ff" +'@num+ "個^000000で";
-	mes "よろしいですか？";
+	mes "^ff0000" +getitemname('@itemid)+ "^000000を^0000ff" +'@num+ "個^000000でよろしいですか？";
 	next;
 	if(select("はい","いいえ") == 2) {
 		mes "[ポイント商人]";
@@ -715,15 +610,13 @@ gef_tower.gat,105,172,5	script	ポイント商人	700,{
 	}
 	if(200*'@num > Zeny) {
 		mes "[ポイント商人]";
-		mes "お客様、すみませんが、";
-		mes "所持金が不足しています。";
+		mes "お客様、すみませんが、所持金が不足しています。";
 		close;
 	}
 	if(checkweight('@itemid,'@num) == 0) {
 		mes "[ポイント商人]";
 		mes "おや、荷物が一杯のようです。";
-		mes "少し数を減らしてから、";
-		mes "ご利用ください。";
+		mes "少し数を減らしてから、ご利用ください。";
 		close;
 	}
 	set Zeny,Zeny-200*'@num;
@@ -742,64 +635,46 @@ comodo.gat,106,213,5	shop	南国の果物商人	724,6258
 
 alde_alche.gat,31,186,3	script	製造本販売員#alde	883,{
 	mes "[製造本販売員]";
-	mes "こんにちは！";
-	mes "私はジェネティックの";
-	mes "^0000FF特別な製造本^000000を販売しています！";
+	mes "こんにちは!";
+	mes "私はジェネティックの^0000FF特別な製造本^000000を販売しています!";
 	next;
 	mes "[製造本販売員]";
 	mes "知ってました？";
-	mes "ジェネティックは製造本を";
-	mes "所持していないと、";
-	mes "使えない製造スキルが";
-	mes "あるんですよ。";
+	mes "ジェネティックは製造本を所持していないと、使えない製造スキルがあるんですよ。";
 	next;
 	mes "[製造本販売員]";
-	mes "所持している製造本の";
-	mes "^FF0000種類^000000が多ければ多いほど、";
-	mes "製造できるアイテムの種類も";
-	mes "増えるんですよ。";
+	mes "所持している製造本の^FF0000種類^000000が多ければ多いほど、製造できるアイテムの種類も増えるんですよ。";
 	next;
 	mes "[製造本販売員]";
-	mes "いや～、この本内容が難しいので、";
-	mes "売れなくて困ってたんですよ。";
-	mes "1冊あれば、製造の材料はわかるので、";
-	mes "充分なんですけど、";
-	mes "何冊でも売りますよ！";
+	mes "いや～、この本内容が難しいので、売れなくて困ってたんですよ。";
+	mes "1冊あれば、製造の材料はわかるので、充分なんですけど、何冊でも売りますよ!";
 	mes "製造本を購入しますか？";
 	next;
 	if(select("はい","いいえ")==2) {
 		mes "[製造本販売員]";
 		mes "では、また来てください。";
-		mes "いつでも、お待ちしてますよ！";
+		mes "いつでも、お待ちしてますよ!";
 		close;
 	}
 	if(checkitemblank()==0) {
 		mes "[製造本販売員]";
-		mes "持っている荷物の数が";
-		mes "多すぎますね。";
-		mes "これでは本を";
-		mes "渡せませんよ。";
-		mes "荷物を整理してから";
-		mes "また来てください。";
+		mes "持っている荷物の数が多すぎますね。";
+		mes "これでは本を渡せませんよ。";
+		mes "荷物を整理してからまた来てください。";
 		close;
 	}
 	if(Weight*100/MaxWeight >= 90) {
 		mes "[製造本販売員]";
-		mes "持っている荷物の重量が";
-		mes "重すぎますね。";
-		mes "これでは本を";
-		mes "渡せませんよ。";
-		mes "荷物を整理してから";
-		mes "また来てください。";
+		mes "持っている荷物の重量が重すぎますね。";
+		mes "これでは本を渡せませんよ。";
+		mes "荷物を整理してからまた来てください。";
 		close;
 	}
 	mes "[製造本販売員]";
-	mes "ほ、本当ですか～！";
-	mes "ありがとうございます！";
-	mes "それでは、製造本のリストを";
-	mes "お見せしますね！";
-	mes "できれば、いっぱい";
-	mes "買っていってください！";
+	mes "ほ、本当ですか～!";
+	mes "ありがとうございます!";
+	mes "それでは、製造本のリストをお見せしますね!";
+	mes "できれば、いっぱい買っていってください!";
 	while(1){
 		next;
 		switch(select(
@@ -847,16 +722,13 @@ alde_alche.gat,31,186,3	script	製造本販売員#alde	883,{
 		case 11:
 			mes "[製造本販売員]";
 			mes "そうですか。";
-			mes "また来てくださいね！";
+			mes "また来てくださいね!";
 			close;
 		}
 		mes "[製造本販売員]";
-		mes "^0000FF[" +getitemname('@gain)+ "]^000000は";
-		mes "100,000 zenyです。";
+		mes "^0000FF[" +getitemname('@gain)+ "]^000000は100,000 zenyです。";
 		mes "何冊購入します？";
-		mes "1冊でも充分ですけど、";
-		mes "100冊とか買ってもらっても";
-		mes "いいですよ！";
+		mes "1冊でも充分ですけど、100冊とか買ってもらってもいいですよ!";
 		next;
 		input '@num;
 		if('@num == 0) {
@@ -866,33 +738,29 @@ alde_alche.gat,31,186,3	script	製造本販売員#alde	883,{
 		}
 		if('@num < 1 || '@num > 100) {
 			mes "[製造本販売員]";
-			mes "う～ん、残念！";
-			mes "1度に購入できるのは";
-			mes "100冊までなんです。";
+			mes "う～ん、残ghost!";
+			mes "1度に購入できるのは100冊までなんです。";
 			continue;
 		}
 		mes "[製造本販売員]";
 		mes "^0000FF[" +getitemname('@gain)+ "]^000000を";
-		mes '@num+ " 冊購入ですね！";
-		mes "　";
-		mes "よろしいですか？";
+		mes '@num+ " 冊購入ですね!";
+		mes "  よろしいですか？";
 		next;
 		if(select("はい","いいえ")==2) {
 			mes "[製造本販売員]";
-			mes "そ、そうですか……";
-			mes "製造本はいっぱいありますから、";
-			mes "遠慮することはないですよ。";
+			mes "そ、そうですか......";
+			mes "製造本はいっぱいありますから、遠慮することはないですよ。";
 			continue;
 		}
 		if(Zeny < 100000 * '@num){
 			mes "[製造本販売員]";
-			mes "あ～、ちょっとお金が";
-			mes "足りないみたいですね。";
+			mes "あ～、ちょっとお金が足りないみたいですね。";
 			mes "お金を用意して来てください。";
 			close;
 		}
 		mes "[製造本販売員]";
-		mes "ありがとうございます！";
+		mes "ありがとうございます!";
 		mes "他の本はいりませんか？";
 		set Zeny,Zeny - 100000 * '@num;
 		getitem '@gain,'@num;
@@ -902,7 +770,7 @@ alde_alche.gat,31,186,3	script	製造本販売員#alde	883,{
 
 
 //==========================================
-// 影工房 - シャドウチェイサー
+// 影工房 - シャドウStalker
 //------------------------------------------
 
 -	shop	PaintingShopper	-1,6123,6120

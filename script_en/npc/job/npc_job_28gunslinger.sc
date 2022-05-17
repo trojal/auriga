@@ -1,224 +1,170 @@
 //= Athena Script ==============================================================
-// Ragnarok Online Gunslinger Jobchange Script	by Blaze
+// Ragnarok Online Gunslinger Jobchange Script by Blaze
 //= Registry ===================================================================
-// CHANGE_GS -> 0～5
+// CHANGE_GS -> 0-5
 //==============================================================================
 
 //============================================================
-// ショップ
+// Shop
 //------------------------------------------------------------
-que_ng.gat,179,91,3	shop	武器商人・シバス	900,13150,13102,13151,13154,13155,13163,13165,13168
-que_ng.gat,180,79,3	shop	武器商人・ウィコ	900,13200,13201,13202
-alberta.gat,176,81,3	shop	貿易商人	900,13200,13201,13202,13150,13102,13151,13154,13155,13163,13165,13168
+que_ng.gat,179,91,3 shop Arms dealer, Sivas 900,13150,13102,13151,13154,13155,13163,13165,13168
+que_ng.gat,180,79,3 shop Arms dealer, Wico 900,13200,13201,13202
+alberta.gat,176,81,3 shop Trade merchant 900,13200,13201,13202,13150,13102,13151,13154,13155,13163,13165,13168
 
 //============================================================
-// 試験申請
+// Application for Examination
 //------------------------------------------------------------
-que_ng.gat,152,167,3	script	マスターミラー	901,{
+que_ng.gat,152,167,3 script master mirror 901,{
 	if(Job == Job_Gunslinger) {
-		mes "[マスターミラー]";
-		mes "久しぶりだな。";
-		mes "銃は大切に扱うんだぞ。";
+		mes "[master mirror]";
+		mes "It's been a while." ;
+		mes "You've got to take good care of that gun." ;
 		next;
-		mes "[マスターミラー]";
-		mes "そうだ。";
-		mes "ガンスリンガーになったのなら、";
-		mes "冒険者アカデミーを";
-		mes "訪れてみるといい。";
+		mes "[Master Miller]";
+		mes "Yes, I do." ;
+		mes "If you're a Gunslinger, you should visit the Adventurer's Academy." ;
 		next;
-		mes "[マスターミラー]";
-		mes "この建物を出ると、";
-		mes "冒険者アカデミーでサポートを";
-		mes "行っている人がいるだろうから、";
-		mes "送ってもらうといい。";
+		mes "[Master Mirror]";
+		mes "When you leave this building, there will be someone providing support at the Adventurer's Academy, so you can ask them to send you there." ;
 		close;
 	}
 	if(Upper == Upper_BABY) {
-		mes "[マスターミラー]";
-		mes "……何故ここに子供が……";
+		mes "[Master Mirror]";
+		mes "...... Why is the child here ......?" ;
 		next;
-		mes "[マスターミラー]";
-		mes "お母さんの元に帰りなさい。";
-		mes "ここは危ない。";
+		mes "[master mirror]";
+		mes "Go home to your mother." ;
+		mes "It's not safe here." ;
 		close;
 	}
-	if(Job != Job_Novice || Upper == Upper_HIGH) {
-		mes "[マスターミラー]";
-		mes "私と目を合わせないでくれ。";
-		mes "ここはお店じゃないんだ。";
+	if(Job ! = Job_Novice || Upper == Upper_HIGH) {
+		mes "[Master Mirror]";
+		mes "Don't make eye contact with me." ;
+		mes "This is not a store." ;
 		close;
 	}
 	switch(CHANGE_GS) {
 	case 0:
 		if(getskilllv(1) < 9) {
-			mes "[マスターミラー]";
-			mes "ふむ……";
-			mes "私の目が確かなら、";
-			mes "君は十分な可能性を秘めている。";
-			mes "しかし、足りないものがあるようだ。";
+			mes "[master mirror]";
+			mes "hmm ......" ;
+			mes "If my eyes are right, you have plenty of potential." ;
+			mes "But there seems to be something missing." ;
 			next;
-			mes "[マスターミラー]";
-			mes "JobLvを10にまで成長させ、";
-			mes "^0000FF「基本スキル」のレベルを9　^000000に";
-			mes "したまえ。";
-			mes "^0000FF「基本スキル」^000000のレベルは";
-			mes "^0000FF「スキルリスト」^000000ウィンドウで";
-			mes "上げることができる。";
+			mes "[Master Mirror]";
+			mes "Grow your JobLv to 10, and bring your ^0000FF "Basic Skills" level to 9 ^000000." ;
+			mes "The level of ^0000FF "Basic Skills" ^000000 can be raised in the ^0000FF "Skill List" ^000000 window." ;
 			next;
-			mes "[マスターミラー]";
-			mes "^0000FF「スキルリスト」^000000ウィンドウは";
-			mes "^0000FF「基本情報」^000000ウィンドウ内の";
-			mes "^0000FF「Skill」^000000ボタンで表示される。";
+			mes "[Master Mirror]";
+			mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 			next;
-			mes "[マスターミラー]";
-			mes "スキルのレベルを上げるには、";
-			mes "スキルポイントを割り振った後、";
-			mes "^FF0000「確定」^000000ボタンが必要となる。";
-			mes "注意するように。";
+			mes "[Master Mirror]";
+			mes "To increase the level of a skill, the ^FF000000 'Confirm' ^000000 button is required after assigning the skill points." ;
+			mes "Be Attentive." ;
 			next;
-			mes "[マスターミラー]";
-			mes "更なる努力を重ね、";
-			mes "基本的な技術を磨いたら";
-			mes "もう一度来るといい。";
+			mes "[Master Mirror]";
+			mes "You may come back again when you have made further efforts and improved your basic skills." ;
 			close2;
 			cutin "start_020_jp.bmp",4;
 			end;
 		}
-		mes "[マスターミラー]";
-		mes "私はセルレナお嬢さんの";
-		mes "警護主任であり、";
-		mes "ガンスリンガー訓練教官でもある";
-		mes "マスターミラー。";
+		mes "[Master Mirror]";
+		mes "I am Master Miller, Chief of Security for Miss Serlena and Gunslinger Training Instructor." ;
 		next;
-		mes "[マスターミラー]";
-		mes "一時も無駄にできないこの私に";
-		mes "声を掛けた理由は何だね？";
+		mes "[Master Miller]";
+		mes "What is your reason for calling on me here, who cannot waste a single moment?" ;
 		next;
-		if(select("べつに……","ガンスリンガーになりたいです")==1) {
-			mes "[マスターミラー]";
-			mes "私の貴重な時間を";
-			mes "無駄にさせるとは……";
-			mes "今すぐ私の前から消えろ。";
+		if(select("separately ......" I want to be a Gunslinger")==1) {
+			mes "[master mirror]";
+			mes "What a waste of my precious time ......" ;
+			mes "Now get out of my presence." ;
 			close;
 		}
-		mes "[マスターミラー]";
-		mes "ほほぅ……";
-		mes "まだ幼いが、";
-		mes "なかなか良い目をしている。";
+		mes "[master mirror]";
+		mes "Hoho ......" ;
+		mes "He's still young, but he's got a pretty good eye." ;
 		next;
-		mes "[マスターミラー]";
-		mes "ふむ……よかろう。";
-		mes "本気でガンスリンガーになりたいなら";
-		mes "まず簡単な手続きが必要。";
-		mes "その後、面接と教育がある。";
+		mes "[master mirror]";
+		mes "Hmmm ...... Very well." ;
+		mes "If you really want to be a Gunslinger, you need a simple procedure first." ;
+		mes "Then there is an interview and education." ;
 		next;
-		mes "[マスターミラー]";
-		mes "その覚悟はあるかね？";
+		mes "[Master Miller]";
+		mes "Are you ready for that?" ;
 		next;
-		if(select("少し考えてみます","あります")==1) {
-			mes "[マスターミラー]";
-			mes "む……そうか。";
-			mes "だが、この職業は";
-			mes "慎重な者でなければ勤まらん。";
-			mes "決心がついてから";
-			mes "また来るといい。";
+		if(select("I'll give it some thought.", "Yes")==1) {
+			mes "[master mirror]";
+			mes "MU...... I see." ;
+			mes "But this profession can only be served by a prudent man." ;
+			mes "You can come back when you have made up your mind." ;
 			close;
 		}
-		mes "[マスターミラー]";
-		mes "よかろう。";
-		mes "では、この手紙を持って";
-		mes "フェイヨンにいらっしゃる";
-		mes "ファンソプル様を";
-		mes "訪ねなさい。";
+		mes "[master mirror]";
+		mes "Very well." ;
+		mes "Then take this letter and visit Master Fansopulu in Payon." ;
 		next;
-		mes "[マスターミラー]";
-		mes "その方が君を、";
-		mes "ガンスリンガーとして";
-		mes "相応しい人間なのか";
-		mes "判断してくださる。";
+		mes "[Master Miller]";
+		mes "He will judge whether you are worthy of being a Gunslinger." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "はい！　わかりました。";
+		mes "Yes!  I understand." ;
 		set CHANGE_GS,1;
 		setquest 6020;
 		close;
 	case 1:
-		mes "[マスターミラー]";
-		mes "はやく行きなさい。";
-		mes "ファンソプル様は";
-		mes "フェイヨンにいらっしゃる。";
+		mes "[master mirror]";
+		mes "Go quickly." ;
+		mes "Master Fansopur is in Payon." ;
 		close;
 	case 2:
-		mes "[マスターミラー]";
-		mes "ファンソプル様が";
-		mes "印の材料と？";
-		mes "…………";
+		mes "[Master Miller]";
+		mes "Master Fansopulu is with the material of the mark?" ;
+		mes "............" ;
 		next;
-		mes "[マスターミラー]";
-		mes "どうやらファンソプル様は、";
-		mes "君の事が気に入られたようだな。";
+		mes "[Master Mirror]";
+		mes "It appears that Master Fansopulu has taken a liking to you." ;
 		close;
 	case 3:
-		mes "[マスターミラー]";
-		mes "頼まれごとをされたのか？";
-		mes "ファンソプル様によっぽど";
-		mes "気に入られたらしいな。";
+		mes "[master mirror]";
+		mes "Did he ask you for a favor?" ;
+		mes "I hear Master Fansopur likes you very much." ;
 		close;
 	case 4:
-		mes "[マスターミラー]";
-		mes "君には期待している。";
-		mes "早くファンソプル様の元へ";
-		mes "行くといい。";
+		mes "[Master Miller]";
+		mes "I have high hopes for you." ;
+		mes "You should go to Master Fansopulu as soon as possible." ;
 		close;
 	case 5:
-		mes "[マスターミラー]";
-		mes "ファンソプル様から";
-		mes "印を受け取ってきたな。";
-		mes "……本当に久しぶりだ。";
-		mes "普通はそう簡単には";
-		mes "印はもらえないのだがな。";
+		mes "[Master Miller]";
+		mes "You have received a sign from Master Fansopulu." ;
+		mes "...... It's been a really long time." ;
+		mes "I don't usually get marks that easily." ;
 		next;
-		mes "[マスターミラー]";
-		mes "よし、いいだろう。";
-		mes "ファンソプル様に許されたなら";
-		mes "私が拒否する理由は無い。";
+		mes "[master mirror]";
+		mes "Okay, fine." ;
+		mes "If Master Fansopulu allows it, there is no reason for me to refuse." ;
 		next;
-		mes "[マスターミラー]";
-		mes "では、私は君を";
-		mes "ガンスリンガーとして任命する。";
-		mes "だがその前に、";
-		mes "ガンスリンガーについて";
-		mes "重要な説明をしよう。";
+		mes "[Master Miller]";
+		mes "Then I appoint you as Gunslinger." ;
+		mes "But first, let me give you an important explanation about Gunslinger." ;
 		next;
-		mes "[マスターミラー]";
-		mes "武器と実弾の購入は、";
-		mes "各地にいるガンスリンガーギルドの";
-		mes "関係者を通して行う。";
+		mes "[Master Mirror]";
+		mes "The purchase of weapons and live ammunition is done through the Gunslinger guild officials in various locations." ;
 		next;
-		mes "[マスターミラー]";
-		mes "面倒だとは思うだろうが、";
-		mes "この武器を悪用されないため、";
-		mes "悪人の手に渡らないための処置だ。";
-		mes "理解してくれ。";
+		mes "[Master Miller]";
+		mes "I know this sounds like a hassle, but this is a procedure to prevent these weapons from being misused and falling into the wrong hands." ;
+		mes "You must understand." ;
 		next;
-		mes "[マスターミラー]";
-		mes "他にも様々な理由がある。";
-		mes "だが、これらの規定は全て、";
-		mes "何時か君もお会いするだろう、";
-		mes "このギルドの責任者である";
-		mes "セルレナお嬢様の指示だ。";
+		mes "[Master Mirror]";
+		mes "There are many other reasons." ;
+		mes "But all of these provisions are dictated by the Lady Serlena, who is in charge of this guild, whom you will meet at some point." ;
 		next;
-		mes "[マスターミラー]";
-		mes "時がくれば、";
-		mes "君に与えられる任務とともに";
-		mes "お嬢様の意思が理解できるだろう。";
+		mes "[Master Mirror]";
+		mes "When the time comes, you will understand the will of the Lady, along with the duties that will be given to you." ;
 		next;
-		mes "[マスターミラー]";
-		mes "では、私はそろそろ別の用があるので。";
-		mes "大地の加護が君と共にあるのを祈り、";
-		mes "この武器と、";
-		mes "ガンスリンガーの指南書である";
-		mes "ガンスリンガーの書を君に授けよう。";
+		mes "[Master Miller]";
+		mes "[Master Mirror]"; mes "Well, it is time for me to take care of something else." ;
+		mes "May the blessings of the earth be with you, and I bestow upon you this weapon and the Book of Gunslinger, the instruction manual of Gunslinger." ;
 		unequip;
 		jobchange Job_Gunslinger;
 		set CHANGE_GS,0;
@@ -229,108 +175,85 @@ que_ng.gat,152,167,3	script	マスターミラー	901,{
 		close;
 	}
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "job change",0;
 	end;
 }
 
 //============================================================
-// 転職試験
+// Job change test
 //------------------------------------------------------------
-payon.gat,184,65,3	script	ファンソプル	866,{
+payon.gat,184,65,3 script fansopul 866,{
 	if(Job == Job_Gunslinger) {
-		mes "[ファンソプル]";
-		mes "うむ……久しぶりじゃの。";
-		mes "賢い野獣になるのじゃぞ。";
+		mes "[FANSOPLE]";
+		mes "Mm ...... Long time no see." ;
+		mes "Be a wise beast." ;
 		close;
 	}
 	switch(CHANGE_GS) {
 	case 0:
-		mes "[ファンソプル]";
-		mes "ぐぅ……ぐぅぐぅ……";
+		mes "[FANSOPLE]";
+		mes "guu ...... guu guu ......" ;
 		close;
 	case 1:
-		mes "[ファンソプル]";
-		mes "……ん……";
-		mes "……若いオオカミが来おった……";
-		mes "ワシに何の用かな？";
+		mes "[fansopul]";
+		mes "...... n ......" ;
+		mes "...... Here comes the young wolf: ......" ;
+		mes "What do you want from me?" ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "ミラーさんの紹介で";
-		mes "ここに来ました。";
+		mes "I was referred here by Mr. Miller." ;
 		next;
-		mes "[ファンソプル]";
-		mes "ミラー……";
-		mes "……あぁ、黒い狐の";
-		mes "紹介で来たのかね……";
+		mes "[fansopple]";
+		mes "Miller ......" ;
+		mes "...... Ah, you're here because of the black fox referral ......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "彼はいい人だ……";
-		mes "仲間のためなら命も";
-		mes "かけることができる、";
-		mes "正義の心を持っている。";
+		mes "[Fansopulu]";
+		mes "He's a nice guy ......." ;
+		mes "He is willing to risk his life for his friends, and he has a righteous heart." ;
 		next;
-		mes "[ファンソプル]";
-		mes "彼の紹介なら、";
-		mes "何の用か大体わかる……";
+		mes "[Fansopulu]";
+		mes "If you introduce him, you can get a general idea of what he's about: ......." ;
 		next;
-		mes "[ファンソプル]";
-		mes "さぁ……もう少し";
-		mes "こっちに来なさい……";
+		mes "[fansopul]"; mes "[fansopul]"; mes "[fansopul]"; mes "[fansopul]
+		mes "Come on, ...... Come over here a little more ......." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "…………";
+		mes "............" ;
 		next;
-		mes "[ファンソプル]";
-		mes "ん……";
-		mes "うんうん……";
+		mes "[fansopple]"; mes "[" +strcharinfo(0) + "]"; next; next; next
+		mes "ん......" ;
+		mes "うんうん......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "……清らかな目と";
-		mes "善良な心……そして";
-		mes "大事なものを守ることができる";
-		mes "責任感を持っている……";
-		mes "しかし……幼い……";
+		mes "[fansopple]";
+		mes "...... Clean eyes and a good heart ...... And a sense of responsibility to protect what's important to you ......" ;
+		mes "But ...... I am young......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "まだ経験が不足している……";
-		mes "荒野と大地の祝福を";
-		mes "受けることができん……";
-		mes "だから、お主の代わりとなる";
-		mes "大地の印を作ってやろう。";
+		mes "[Fansopul]";
+		mes "still lacks experience ......" ;
+		mes "I can't get the blessing of the wilderness and the earth ......" ;
+		mes "So I will make you a sign of the earth to replace you." ;
 		next;
-		mes "[ファンソプル]";
-		mes "華麗な蟲の皮3個、木屑1個、";
-		mes "かたい皮10個、やわらかな毛3個";
-		mes "ジャルゴン3個、緑ハーブ3個";
-		mes "を持って来るのだ。";
+		mes "[Fansopulu]";
+		mes "Bring me three brilliant bug skins, one wood chip, ten hard skins, three soft hairs, three jargon, and three green herbs." ;
 		next;
-		mes "[ファンソプル]";
-		mes "それらで作った大地の印を";
-		mes "黒い狐に見せれば、";
-		mes "お主の願いはかなうだろう。";
+		mes "[Fansopur]";
+		mes "Show the black fox the mark of the earth made from them, and your wish will be granted." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-華麗な蟲の皮3個、木屑1個、";
-		mes "かたい皮10個、やわらかな毛3個";
-		mes "ジャルゴン3個、緑ハーブ3個";
-		mes "を取りに行こう-";
+		mes "-Let's go get 3 brilliant bug skins, 1 wood chip, 10 hard skins, 3 soft hairs, 3 jargon, 3 green herbs-";
 		set CHANGE_GS,2;
 		chgquest 6020,6021;
 		close;
 	case 2:
 		if(countitem(1013) < 3 || countitem(1019) < 1 || countitem(935) < 10 || countitem(949) < 3 || countitem(912) < 3 || countitem(511) < 3) {
 			mes "[" +strcharinfo(0)+ "]";
-			mes "-華麗な蟲の皮3個、木屑1個、";
-			mes "かたい皮10個、やわらかな毛3個";
-			mes "ジャルゴン3個、緑ハーブ3個";
-			mes "を取りに行こう-";
+			mes "-Let's go get 3 brilliant bug skins, 1 wood chip, 10 hard skins, 3 soft hairs, 3 jargon, 3 green herbs-";
 			close;
 		}
-		mes "[ファンソプル]";
-		mes "ん……よく持ってきたな。";
-		mes "印を作るにはしばしの時間が";
-		mes "必要じゃ。";
-		mes "しばらく待っておれ。";
+		mes "[fansople]";
+		mes "n...... I'm surprised you brought it." ;
+		mes "It will take some time to make your mark." ;
+		mes "Wait a while." ;
 		set CHANGE_GS,3;
 		chgquest 6021,6022;
 		delitem 1013,3;
@@ -341,325 +264,281 @@ payon.gat,184,65,3	script	ファンソプル	866,{
 		delitem 511,3;
 		close;
 	case 3:
-		mes "[ファンソプル]";
-		mes "ん……ちょうどいい。";
-		mes "今、準備ができたところじゃ。";
-		mes "単純な印ではあるが……";
-		mes "久しぶりじゃ……";
+		mes "[fansopul]";
+		mes "nn...... Just in time." ;
+		mes "Just about ready." ;
+		mes "It's a simple sign, but ......." ;
+		mes "Long time no see ......." ;
 		next;
-		mes "[ファンソプル]";
-		mes "印を作り始めて、";
-		mes "もう数十年になるか……";
-		mes "ワシにも大地の戦士として、";
-		mes "このような印をつけて";
-		mes "戦った時があった……";
+		mes "[Fansopulu]";
+		mes "It's been decades since I started making marks. ......" ;
+		mes "There was a time when I too, as a warrior of the earth, fought with such a mark ......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "セルレナの父に出会ったのが";
-		mes "ついこの間のようじゃ……";
-		mes "本当に……時間というやつは";
-		mes "空に吹く風のように過ぎ去る……";
+		mes "[Fansopulu]";
+		mes "It seems like only a long time ago that I met Selrena's father ......" ;
+		mes "Really ...... Time flies by like the wind in the sky. ......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "色々な事があったが……";
-		mes "ワシが守ってきた意思を";
-		mes "受け継ぎ、大切にしてくれる";
-		mes "セルレナと黒い狐。";
-		mes "そして多くの若者達に";
-		mes "感謝している……";
+		mes "[Fansopul]";
+		mes "A lot has happened, but ......" ;
+		mes "Serlena and the Black Fox, who will carry on and cherish the will that the eagle has protected." ;
+		mes "And I am grateful to the many young people ......." ;
 		next;
-		mes "[ファンソプル]";
-		mes "ワシは老いて、もう力が無い。";
-		mes "やがて大地の元へ";
-		mes "帰る日が来るであろう……";
+		mes "[Fansopulu]";
+		mes "I am old and have no more strength." ;
+		mes "The day will come when I will return to the earth. ......" ;
 		next;
-		mes "[ファンソプル]";
-		mes "……ふぅ。";
-		mes "急に疲れがきおった。";
-		mes "悪いが、最後に一つだけ";
-		mes "頼みがあるんじゃが……";
+		mes "[Fansopulu]";
+		mes "...... Phew." ;
+		mes "I'm suddenly feeling tired." ;
+		mes "Sorry, but I have one last request: ......." ;
 		next;
-		mes "[ファンソプル]";
-		mes "のどが渇いての……";
-		mes "冷たいミルクを一杯飲みたい。";
+		mes "[Fansopur]";
+		mes "I'm thirsty ......" ;
+		mes "I need a glass of cold milk." ;
 		next;
-		mes "[ファンソプル]";
-		mes "おいぼれの頼みを";
-		mes "聞いてもらえんかの。";
+		mes "[Fansopur]";
+		mes "Can't you do me a favor, Oibo?" ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-お爺さんのために";
-		mes "ミルクを一本買ってこよう-";
+		mes "-I'll get a bottle of milk for my grandfather-"; mes "-I'll get a bottle of milk for my grandfather-";
 		set CHANGE_GS,4;
 		chgquest 6022,6023;
 		close;
 	case 4:
 		if(countitem(519) < 1) {
 			mes "[" +strcharinfo(0)+ "]";
-			mes "-お爺さんのために";
-			mes "ミルクを一本買ってこよう-";
+			mes "-I'll get a bottle of milk for your grandfather-";
 			close;
 		}
 		set CHANGE_GS,5;
 		chgquest 6023,6024;
 		delitem 519,1;
-		mes "[ファンソプル]";
-		mes "ありがとう。";
-		mes "本当に心がきれいな若者じゃな。";
+		mes "[Fansopul]";
+		mes "Thank you." ;
+		mes "You really are a young man with a beautiful heart." ;
 		next;
-		mes "[ファンソプル]";
-		mes "ほれ。";
-		mes "これがワシの作った印じゃ。";
-		mes "これを黒い狐に見せれば";
-		mes "ガンスリンガーになれるじゃろう。";
+		mes "[Fansopul]";
+		mes "Here." ;
+		mes "This is the mark I made." ;
+		mes "Show this to the black fox and you will become a Gunslinger." ;
 		next;
 	case 5:
-		mes "[ファンソプル]";
-		mes "んん～～ん～ふ～ん～らら～";
-		mes "ららる～ん～んん～～～";
+		mes "[Fansopulu]";
+		
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "‐お爺さんは、突然";
-		mes "歌を口ずさんだ‐";
-		mes "‐歌詞も無いのに、";
-		mes "なんだか不思議な気持ちになる‐";
+		mes "-The grandfather suddenly sang a song-"; next; mes "[" + strcharinfo(0) + "]"; next
+		mes "-It's kind of strange, even though there are no lyrics-"; mes "[" + strcharinfo(0) + "]"; mes "
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "‐さぁ、受けとった印を";
-		mes "ミラーさんに見せに行こう‐";
+		mes "-Now, let's go show Mr. Miller the mark we received-";
 		close;
 	}
 }
 
 //============================================================
-// 弾丸屋
+// bullet shop
 //------------------------------------------------------------
--	script	SphereShop	86,{
-	if(Job != Job_Gunslinger) {
-		mes "[トニー]";
-		mes "俺はガンスリンガーに";
-		mes "アイテムを支給している";
-		mes "弾丸屋のトニー。";
+- script SphereShop 86,{
+	if(Job ! = Job_Gunslinger) {
+		mes "[Tony]";
+		mes "I'm Tony, the bullet shop that supplies items to Gunslinger." ;
 		next;
-		mes "[トニー]";
-		mes "お前はガンスリンガーじゃないから";
-		mes "適当に見物でもしててくれ。";
+		mes "[Tony]";
+		mes "You're not a Gunslinger, so go ahead and look around as you see fit." ;
 		close;
 	}
-	mes "[トニー]";
-	mes "俺は弾丸屋のトニー！";
-	mes "弾が不足しているなら";
-	mes "いつでもきな！";
+	mes "[Tony]";
+	mes "I'm Tony the Bullet Shop!" ;
+	mes "If you're short on bullets, come by anytime!" ;
 	next;
-	mes "[トニー]";
-	mes "さぁ、我が友、我が同士！";
-	mes "何が不足しているんだ!?";
+	mes "[Tony]";
+	mes "Come on, my friend, my fellow!" ;
+	mes "What's missing!" ;
 	next;
-	switch(select("ポイズンスフィア","ファイアスフィア","ウィンドスフィア","ダークスフィア","アイススフィア","やめる")) {
-	case 1:	//ポイズンスフィア - 毒の牙10
+	switch(select("Poison Sphere", "Fire Sphere", "Wind Sphere", "Dark Sphere", "Ice Sphere", "Quit")) {
+	case 1: //poison sphere - poison fang 10
 		set '@itemid,13205;
 		set '@need,937;
 		set '@amount,10;
 		break;
-	case 2:	//ファイアスフィア - 燃えている心臓2
+	case 2: //fire sphere - burning heart 2
 		set '@itemid,13203;
 		set '@need,7097;
 		set '@amount,2;
 		break;
-	case 3:	//ウィンドスフィア - サイファー3
+	case 3: //windsphere - cypher 3
 		set '@itemid,13204;
 		set '@need,7053;
 		set '@amount,3;
 		break;
-	case 4:	//ダークスフィア - 墨汁5
+	case 4: //darksphere - inksphere5
 		set '@itemid,13206;
 		set '@need,1024;
 		set '@amount,5;
 		break;
-	case 5:	//アイススフィア - ブリガン2
+	case 5: //ice sphere - brigand2
 		set '@itemid,13207;
 		set '@need,7054;
 		set '@amount,2;
 		break;
 	case 6:
-		mes "[トニー]";
-		mes "そうか。";
-		mes "また来てくれよ。";
-		mes "弾丸屋のトニーは";
-		mes "いつもここにいるぜ！";
+		mes "[Tony]";
+		mes "I see." ;
+		mes "Come back and see me." ;
+		mes "Tony the Bullet Shop is always here, man!" ;
 		close;
 	}
-	mes "[トニー]";
-	mes "プラコン1個、";
-	mes "エンベルタコン1個、";
-	mes getitemname('@need)+'@amount+ "個で";
-	mes getitemname('@itemid)+ "30個を";
-	mes "1セットとして交換してるぜ。";
+	mes "[Tony]";
+	mes "1 Phracon, 1 Emveretarcon, ";
+	mes getitemname('@need)+'@amount+ "by";
+	mes ""+getitemname('@itemid)+ "I'm exchanging 30 pieces as a set." ;
 	next;
-	mes "[トニー]";
-	mes "何セット欲しいんだ？";
-	mes "一度に500セットまで";
-	mes "取引できる。";
-	mes "取引をやめるなら0でいいぜ。";
+	mes "[Tony]";
+	mes "How many sets do you want?" ;
+	mes "You can trade up to 500 sets at a time." ;
+	mes "If you want to stop trading, I'll give you 0." ;
 	next;
 	input '@num;
 	if('@num <= 0 || '@num > 500) {
-		mes "[トニー]";
-		mes "OK、取引中止だ。";
+		mes "[Tony]";
+		mes "OK, deal's off." ;
 		close;
 	}
 	if(countitem(1010) < 1*'@num || countitem(1011) < 1*'@num || countitem('@need) < '@amount*'@num) {
-		mes "[トニー]";
-		mes "おいおい。";
-		mes "材料が足りないんじゃないか？";
-		mes "ちゃんと確認してから";
-		mes "取引しようぜ。";
+		mes "[Tony]";
+		mes "Hey, hey." ;
+		mes "I think you're missing some ingredients." ;
+		mes "Let's make sure we're doing the deal right." ;
 		close;
 	}
 	delitem 1010,'@num;
 	delitem 1011,'@num;
 	delitem '@need,'@amount*'@num;
 	getitem '@itemid,30*'@num;
-	mes "[トニー]";
-	mes "よし、取引完了！";
-	mes "また来てくれよ！";
+	mes "[Tony]";
+	mes "Okay, transaction complete!" ;
+	mes "Come back!" ;
 	close;
 }
 
-que_ng.gat,187,156,3	duplicate(SphereShop)	弾丸屋・トニー	86
-izlude.gat,171,133,3	duplicate(SphereShop)	トニー	86
+que_ng.gat,187,156,3 duplicate(SphereShop) Bullet Shop, Tony 86
+izlude.gat,171,133,3 duplicate(SphereShop) Tony 86
 
 //============================================================
-// 弾丸ケース屋
+// Bullet Case Shop
 //------------------------------------------------------------
--	script	SphereCaseShop	83,{
-	if(Job != Job_Gunslinger) {
-		mes "[ケニー]";
-		mes "私はガンスリンガーの方に";
-		mes "弾丸と弾丸ケースを交換している";
-		mes "ケニーと言います。";
+- script SphereCaseShop 83,{
+	if(Job ! = Job_Gunslinger) {
+		mes "[Kenny]";
+		mes "My name is Kenny and I am trading bullets and bullet cases to Gunslinger." ;
 		next;
-		mes "[ケニー]";
-		mes "あなたはガンスリンガーではないので";
-		mes "弾丸を扱えません。";
-		mes "申し訳ありません。";
+		mes "[Kenny]";
+		mes "You are not a Gunslinger and cannot handle bullets." ;
+		mes "I'm sorry." ;
 		close;
 	}
-	mes "[ケニー]";
-	mes "私は弾丸ケース屋のケニー！";
-	mes "弾薬が重いのなら";
-	mes "是非ご利用ください。";
+	mes "[Kenny]";
+	mes "I'm Kenny the Bullet Case Shop!" ;
+	mes "If your ammo is heavy, by all means use me!" ;
 	next;
-	mes "[ケニー]";
-	mes "私が作った弾丸ケースは";
-	mes "弾丸を気楽に持ち歩けるように";
-	mes "できる優れものです。";
+	mes "[Kenny]";
+	mes "The bullet case I made is an excellent way to carry bullets with ease." ;
 	next;
-	switch(select("ウィンドスフィアケース","ダークスフィアケース","ポイズンスフィアケース","アイススフィアケース","ファイアスフィアケース","バレットケース","ブラッドバレットケース","シルバーバレットケース","やめる")) {
-	case 1:	//ウィンドスフィアケース
+	switch(select("windsphere case", "darksphere case", "poison sphere case", "ice sphere case", "fire sphere case", "bullet case", "blood bullet case", "silver bullet case", "quit")) {
+	case 1: //windsphere case
 		set '@itemid,13204;
 		break;
-	case 2:	//ダークスフィアケース
+	case 2: //darksphere case
 		set '@itemid,13206;
 		break;
-	case 3:	//ポイズンスフィアケース
+	case 3: //poison sphere case
 		set '@itemid,13205;
 		break;
-	case 4:	//アイススフィアケース
+	case 4: //Ice Sphere case
 		set '@itemid,13207;
 		break;
-	case 5:	//ファイアスフィアケース
+	case 5: //fire sphere case
 		set '@itemid,13203;
 		break;
-	case 6:	//バレットケース
+	case 6: //valet case
 		set '@itemid,13200;
 		break;
-	case 7:	//ブラッドバレットケース
+	case 7: //Blood valet case
 		set '@itemid,13202;
 		break;
-	case 8:	//シルバーバレットケース
+	case 8: //silver valet case
 		set '@itemid,13201;
 		break;
 	case 9:
-		mes "[ケニー]";
-		mes "必要になったら";
-		mes "また来てください。";
+		mes "[Kenny]";
+		mes "Come back when you need it." ;
 		close;
 	}
-	mes "[ケニー]";
-	mes getitemname(12143+@menu)+ "は、";
-	mes getitemname('@itemid)+ "500発と";
-	mes "手数料500Zenyで";
-	mes "1個交換できます。";
+	mes "[Kenny]";
+	mes ""+getitemname(12143+@menu)+ "is";
+	mes getitemname('@itemid)+ "500 rounds and";
+	mes "You can exchange one for a fee of 500 Zeny." ;
 	next;
-	mes "[ケニー]";
-	mes "購入する数を入力してください。";
-	mes "一度に50個まで交換できます。";
-	mes "交換を止めるなら";
-	mes "0を入力してください。";
+	mes "[Kenny]";
+	mes "Please enter the number you wish to purchase." ;
+	mes "You may exchange up to 50 at a time." ;
+	mes "Enter 0 to stop the exchange." ;
 	next;
 	input '@num;
 	if('@num <= 0 || '@num > 50) {
-		mes "[ケニー]";
-		mes "交換を中断しました。";
-		mes "また来てください。";
+		mes "[Kenny]";
+		mes "Exchange interrupted." ;
+		mes "Please come back." ;
 		close;
 	}
 	if(countitem('@itemid) < 500*'@num) {
-		mes "[ケニー]";
-		mes "アイテムが足りないみたいですよ。";
-		mes "一度確認してみてください。";
+		mes "[Kenny]";
+		mes "It looks like you're missing an item." ;
+		mes "Please check it once." ;
 		close;
 	}
 	if(Zeny < 500*'@num) {
-		mes "[ケニー]";
-		mes "お金が足りないみたいですよ。";
-		mes "手数料は" +(500*'@num)+ "Zenyです。";
-		mes "一度確認してみてください。";
+		mes "[Kenny]";
+		mes "It looks like you don't have enough money." ;
+		mes "The fee is " +(500*'@num)+ "Zeny." ;
+		mes "Please check it once." ;
 		close;
 	}
 	set Zeny,Zeny-500*'@num;
 	delitem '@itemid,500*'@num;
 	getitem 12143+@menu,'@num;
-	mes "[ケニー]";
-	mes "取引完了です。";
-	mes "またご利用ください。";
+	mes "[Kenny]";
+	mes "The transaction is complete." ;
+	mes "Please use us again." ;
 	close;
 }
 
-que_ng.gat,187,149,3	duplicate(SphereCaseShop)	弾丸ケース屋・ケニー	83
-izlude.gat,171,127,3	duplicate(SphereCaseShop)	弾丸ケース屋・ケニー	83
+que_ng.gat,187,149,3 duplicate(SphereCaseShop) bullet case shop, Kenny 83
+izlude.gat,171,127,3 duplicate(SphereCaseShop) Bullet Case Shop Kenny 83
 
 //============================================================
-// ガリスン製作
+// Garrison Manufacturing
 //- Registry -------------------------------------------------
-// GUN_1QUE -> 0～5
+// GUN_1QUE -> 0-5
 //------------------------------------------------------------
-que_ng.gat,182,85,3	script	ガリスン	109,{
-	if(Job != Job_Gunslinger) {
-		mes "[ガリスン]";
-		mes "あなたはガンスリンガーでは";
-		mes "ありませんね。";
-		mes "私に用は無いと思うのですが？";
+que_ng.gat,182,85,3 script garrison 109,{
+	if(Job ! = Job_Gunslinger) {
+		mes "[Garrison]";
+		mes "You are not a Gunslinger, are you?" ;
+		mes "I don't think you have any use for me?" ;
 		close;
 	}
 	if(BaseLevel < 55) {
-		mes "[ガリスン]";
-		mes "私の名はガリスン。";
-		mes "そして、私の製作した銃は";
-		mes "私のように完璧なので";
-		mes "同じくガリスンと言います。";
+		mes "[Garrison]";
+		mes "My name is Garrison." ;
+		mes "And the gun I made is as perfect as I am, so I say Garrison as well." ;
 		next;
-		mes "[ガリスン]";
-		mes "私にガリスンの";
-		mes "製作依頼をしますかな？";
+		mes "[Garrison]";
+		mes "Would you like to request me to make a Garrison for you?" ;
 		next;
-		mes "[ガリスン]";
-		mes "ガリスンを作るには";
-		mes "鋼鉄50個、エルニウム3個、";
-		mes "オリデオコン1個、石炭50個、";
-		mes "錆びたネジ20個と";
-		mes "3万Zenyが必要です。";
+		mes "[Garrison]";
+		mes "To make Garrison, you need 50 Steel, 3 Elunium, 1 Oridecon, 50 Coal, 20 Rusty Screws and 30,000 Zeny." ;
 		next;
 		callsub L_Routine;
 	}
@@ -667,135 +546,95 @@ que_ng.gat,182,85,3	script	ガリスン	109,{
 	case 0:
 		if(countitem(13104) < 1)
 			break;
-		mes "[ガリスン]";
-		mes "ん……お客様ですか？";
-		mes "武器がご入用でしょうか？";
+		mes "[GARISN]";
+		mes "NON...... Are you a customer?" ;
+		mes "May I help you with weapons?" ;
 		next;
-		switch(select("ガリスンが必要です","いえ、別に……","会話をやめる")) {
+		switch(select("I need a garrison", "No, not really. ......" , "stop conversation")) {
 		case 1:
 			break;
 		case 2:
-			mes "[ガリスン]";
-			mes "ふむ。";
-			mes "特に任務も無いようですね。";
-			mes "もしお時間があれば、";
-			mes "私のお願いを聞いてもらえますかな？";
+			mes "[Garrison]";
+			mes "Hmm." ;
+			mes "There doesn't seem to be any particular mission." ;
+			mes "If you have a moment, could you do me a favor?" ;
 			next;
 			mes "[" +strcharinfo(0)+ "]";
-			mes "何でしょうか？";
+			mes "Yes, sir?" ;
 			next;
-			mes "[ガリスン]";
-			mes "はい……実は";
-			mes "最近私が製作し、販売した";
-			mes "シックスシューターという銃に";
-			mes "不良品があったという";
-			mes "クレームの手紙を受け取っています。";
+			mes "[Garrison]";
+			mes "Yes ...... In fact, I recently received a letter complaining about a defective gun I built and sold called the Six Shooter." ;
 			next;
-			mes "[ガリスン]";
-			mes "常に完璧を追い求める私ですが、";
-			mes "視力の低下に伴い、";
-			mes "ついうっかり不良品を";
-			mes "売ってしまったのでしょう。";
+			mes "[Garrison]";
+			mes "I am always striving for perfection, but with my failing eyesight, I must have inadvertently sold a defective product." ;
 			next;
-			mes "[ガリスン]";
-			mes "そこで、その不良品と";
-			mes "交換するシックスシューターの";
-			mes "材料を集めてきてもらえますかな？";
+			mes "[Garrison]";
+			mes "So, could you please go gather the materials for the six-shooter to replace that defective product?" ;
 			next;
-			mes "[ガリスン]";
-			mes "もし私の頼みを聞き入れてくだされば、";
-			mes "あなたが持っているガリスンに";
-			mes "スロットを増やしてさしあげます。";
+			mes "[Garrison]";
+			mes "If you do what I ask, I will give you an extra slot in the Garrison you have." ;
 			next;
-			mes "[ガリスン]";
-			mes "なお。スロットを増やす時に";
-			mes "すでに装着しているカード、";
-			mes "精錬レベルも消失してしまいます。";
-			mes "どうしますか？";
+			mes "[Garrison]";
+			mes "Furthermore. When you increase the slot, you will also lose the cards and refining level you already have attached to it." ;
+			mes "What do you want to do?" ;
 			next;
-			if(select("嫌です","わかりました")==1) {
-				mes "[ガリスン]";
-				mes "そうですか。";
-				mes "残念ですが、";
-				mes "他の人を探してみます。";
+			if(select("I don't want to", "Okay")==1) {
+				mes "[Garrison]";
+				mes "I see." ;
+				mes "Remaining GOST, but I'll try to find someone else." ;
 				close;
 			}
-			mes "[ガリスン]";
-			mes "本当にありがとうございます。";
-			mes "では、まず";
-			mes "シックスシューターの材料を";
-			mes "集めてきてください。";
+			mes "[Garrison]";
+			mes "Thank you so much." ;
+			mes "So, please go gather the materials for the Six Shooter first." ;
 			next;
-			mes "[ガリスン]";
-			mes "材料は鋼鉄10個、";
-			mes "エルニウム1個、";
-			mes "エンベルタコン10個、";
-			mes "石炭30個、錆びたネジ10個。";
-			mes "以上です。";
-			mes "数を間違えないでください。";
+			mes "[Garrison]";
+			mes "The materials are 10 Steel, 1 Elunium, 10 Emveretarcon, 30 Coal and 10 rusty screws." ;
+			mes "That's all." ;
+			mes "Please do not make a mistake in the number." ;
 			set GUN_1QUE,1;
 			close;
 		case 3:
-			mes "[ガリスン]";
-			mes "では、";
-			mes "またお越しください。";
+			mes "[Garrison]";
+			mes "Then please come back." ;
 			close;
 		}
 		break;
 	case 1:
 		if(countitem(999) < 10 || countitem(985) < 1 || countitem(1011) < 10 || countitem(1003) < 30 || countitem(7317) < 10) {
-			mes "[ガリスン]";
-			mes "材料は鋼鉄10個、";
-			mes "エルニウム1個、";
-			mes "エンベルタコン10個、";
-			mes "石炭30個、錆びたネジ10個。";
-			mes "以上です。";
-			mes "数を間違えないでください。";
+			mes "[Garrison]";
+			mes "The materials are 10 Steel, 1 Elunium, 10 Emveretarcon, 30 coal and 10 rusty screws." ;
+			mes "That's all." ;
+			mes "Please do not make a mistake in the number." ;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "おや、早かったですね。";
-		mes "本当にありがとうございます。";
-		mes "……恐縮ではありますが、";
-		mes "もう一つお願いがあります。";
+		mes "[Garrison]";
+		mes "Oh, that was quick." ;
+		mes "Thank you so much." ;
+		mes "...... I am afraid I have one more request." ;
 		next;
-		mes "[ガリスン]";
-		mes "その材料で作った品を";
-		mes "届けなければなりませんが、";
-		mes "私は今仕事があまりにも多くて";
-		mes "とてもこの場を離れられません。";
+		mes "[Garrison]";
+		mes "I must deliver the goods made from those materials, but I am too much at work right now to leave this place very much." ;
 		next;
-		mes "[ガリスン]";
-		mes "すみませんが、";
-		mes "私の代わりに配達を";
-		mes "していただけないでしょうか？";
+		mes "[Garrison]";
+		mes "I'm sorry, but could you please make the delivery for me?" ;
 		next;
-		mes "[ガリスン]";
-		mes "あなたが行っている間に、";
-		mes "約束したガリスンの";
-		mes "スロット付きバージョンを";
-		mes "作る準備をしておきます。";
+		mes "[Garrison]";
+		mes "While you're gone, I'll be ready to make the slotted version of Garrison you promised." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-うーん……面倒だけど";
-		mes "代わりに配達してあげよう-";
+		mes "-ummm ...... It's a hassle, but I'll deliver it for you-";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "わかりました。";
-		mes "お引き受けしましょう。";
+		mes "Okay, I understand." ;
+		mes "I'll take care of it for you." ;
 		next;
-		mes "[ガリスン]";
-		mes "ありがとうございます。";
-		mes "では、この品物を";
-		mes "リヒタルゼンの貧民街にいる";
-		mes "ラベという人に届けてください。";
+		mes "[Garrison]";
+		mes "Thank you." ;
+		mes "Now, please deliver this item to a man named Rabe in the favela of Lighthalzen." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-ガリスンさんから";
-		mes "配達する品を受け取った-";
-		mes "-リヒタルゼンの貧民街に";
-		mes "いるラベという人まで";
-		mes "届けに行こう-";
+		mes "-I have received an item to be delivered from Mr. Garrison--let's deliver it to a man named Rabe in the favela of Lighthalzen."; next; mes "[" +strcharinfo(0)+ "]
 		set GUN_1QUE,2;
 		delitem 999,10;
 		delitem 985,1;
@@ -805,197 +644,149 @@ que_ng.gat,182,85,3	script	ガリスン	109,{
 		close;
 	case 2:
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-ガリスンさんから";
-		mes "配達する品を受け取った-";
-		mes "-リヒタルゼンの貧民街に";
-		mes "いるラベという人まで";
-		mes "届けに行こう-";
+		mes "-I've received an item to deliver from Mr. Garrison--let's deliver it to a man named Rabe in the favela of Lighthalzen--";
 		close;
 	case 3:
-		mes "[ガリスン]";
-		mes "おや？　どうかなさいましたか？";
-		mes "怒っていらっしゃるようですが？";
+		mes "[Garrison]";
+		mes "Oh?  What's wrong?" ;
+		mes "You seem to be angry." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "どうもこうもありません！";
-		mes "殺されるところだったんです！";
-		mes "あの男、私を";
-		mes "見るやいなや襲ってきたんです！";
+		mes "No problem!" ;
+		mes "I was almost killed!" ;
+		mes "That man attacked me as soon as he saw me!" ;
 		next;
-		mes "[ガリスン]";
-		mes "ああ……そういうことですか……";
-		mes "恐らくあの手紙は……";
-		mes "私たちに敵対している者が";
-		mes "雇った暗殺者の罠でしょう。";
+		mes "[Garrison]";
+		mes "Oh ...... So that's what you mean ......." ;
+		mes "Perhaps that letter is ......." ;
+		mes "It is probably a trap set by assassins hired by those who are against us." ;
 		next;
-		mes "[ガリスン]";
-		mes "あなたに関係無い";
-		mes "危険な状況に巻き込む結果に";
-		mes "なってしまいました。";
+		mes "[Garrison]";
+		mes "It has resulted in us involving you in a dangerous situation that has nothing to do with you." ;
 		next;
-		mes "[ガリスン]";
-		mes "本当に申し訳ありません。";
-		mes "あなたもご存知の通り、";
-		mes "ガンスリンガーギルドと";
-		mes "セルレナ博士を狙う悪党";
-		mes "は卑劣な策略を練っています。";
+		mes "[Garrison]";
+		mes "I am truly sorry." ;
+		mes "As you know, the Gunslinger Guild and the villains who are after Dr. Serlena are concocting a dastardly ruse." ;
 		next;
-		mes "[ガリスン]";
-		mes "本当に申し訳ありませんが、";
-		mes "今回の事はあなたの";
-		mes "修練になったとでも思ってください。";
-		mes "あなたもすでに";
-		mes "ガンスリンガーなのですから。";
+		mes "[Garrison]";
+		mes "I am truly sorry, but you can consider this time to have been an ordeal for you." ;
+		mes "You are already a Gunslinger too." ;
 		next;
-		mes "[ガリスン]";
-		mes "では、約束どおりあなたの";
-		mes "ガリスンにスロットを増やしましょう。";
+		mes "[Garrison]";
+		mes "So let's add more slots to your Garrison, as promised." ;
 		next;
 		if(countitem(13104) < 1) {
-			mes "[ガリスン]";
-			mes "おや？";
-			mes "ちゃんとガリスンを持っていますか？";
-			mes "私が改造できるのは";
-			mes "スロットの無いガリスンだけです。";
+			mes "[Garrison]";
+			mes "Oh?" ;
+			mes "Do you have the garrison properly?" ;
+			mes "I can only modify a garrison that has no slots." ;
 			set GUN_1QUE,4;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "あ……もしやと思いますが";
-		mes "^FF0000カードを装着したり、精錬した^000000";
-		mes "ガリスンを^FF0000所持^000000していませんか？";
+		mes "[Garrison]";
+		mes "Ah ...... I wonder if you have ^FF0000 cards installed or refined ^000000 Garrisons in ^FF000000 possession ^000000?" ;
 		next;
-		mes "[ガリスン]";
-		mes "もしそうだとしたら、";
-		mes "カードも精錬値レベルも";
-		mes "無くなってしまいます。";
-		mes "念のため、それでも問題のない";
-		mes "^FF0000ガリスン^000000だけを持っているか";
-		mes "確認してください。";
+		mes "[Garrison]";
+		mes "If so, you will lose both the card and the refined value level." ;
+		mes "For ghost, make sure you still have only ^FF000000 Garrisons ^000000, which is not a problem." ;
 		next;
-		if(select("確認してくる","確認完了。すぐに改造する")==1) {
-			mes "[ガリスン]";
-			mes "わかりました。";
-			mes "十分に確認をとってください。";
+		if(select("Going to check", "Check complete. Will modify immediately.")==1) {
+			mes "[Garrison]";
+			mes "Understood." ;
+			mes "Please get confirmation enough." ;
 			set GUN_1QUE,4;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "はい、改造できました。";
-		mes "どうか大切に扱ってください。";
+		mes "[Garrison]";
+		mes "Yes, I was able to modify it." ;
+		mes "Please take good care of it." ;
 		set GUN_1QUE,5;
 		delitem 13104,1;
 		getitem 13105,1;
 		close;
 	case 4:
 		if(countitem(13104) < 1) {
-			mes "[ガリスン]";
-			mes "おや？";
-			mes "ちゃんとガリスンを持っていますか？";
-			mes "私が改造できるのは";
-			mes "スロットの少ないガリスンだけです。";
+			mes "[Garrison]";
+			mes "Oh?" ;
+			mes "Do you have the garrison properly?" ;
+			mes "I can only modify Garrison with a few slots." ;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "あ……もしやと思いますが";
-		mes "^FF0000カードを装着したり、精錬した^000000";
-		mes "ガリスンを^FF0000所持^000000していませんか？";
+		mes "[Garrison]";
+		mes "Ah ...... I wonder if you have ^FF0000 cards installed or refined ^000000 Garrisons ^FF000000 in your ^FF000000 possession ^000000?" ;
 		next;
-		mes "[ガリスン]";
-		mes "もしそうだとしたら、";
-		mes "カードも精錬値レベルも";
-		mes "無くなってしまいます。";
-		mes "念のため、それでも問題のない";
-		mes "^FF0000ガリスン^000000だけを持っているか";
-		mes "確認してください。";
+		mes "[Garrison]";
+		mes "If so, you will lose both the card and the refined value level." ;
+		mes "For ghost, make sure you still have only ^FF000000 Garrisons ^000000, which is not a problem." ;
 		next;
-		if(select("確認してくる","確認完了。すぐに改造する")==1) {
-			mes "[ガリスン]";
-			mes "わかりました。";
-			mes "十分に確認をとってください。";
+		if(select("Going to check", "Check complete. Will modify immediately.")==1) {
+			mes "[Garrison]";
+			mes "Understood." ;
+			mes "Please get confirmation enough." ;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "はい、改造できました。";
-		mes "どうか大切に扱ってください。";
+		mes "[Garrison]";
+		mes "Yes, modifications have been made." ;
+		mes "Please take good care of it." ;
 		set GUN_1QUE,5;
 		delitem 13104,1;
 		getitem 13105,1;
 		close;
 	case 5:
-		mes "[ガリスン]";
-		mes "ようこそおいでくださいました。";
-		mes "そう、人々は皆、私を求める！";
-		mes "私の名がついた武器、ガリスンは";
-		mes "最高の中の最高！";
-		mes "すぐにご入用ですかな？";
+		mes "[Garrison]";
+		mes "Welcome to our home." ;
+		mes "Yes, people all seek me!" ;
+		mes "The weapon that bears my name, Garrison, is the best of the best!" ;
+		mes "I hope you will be needing it soon?" ;
 		next;
-		switch(select("ガリスン","ガリスンのスロット改造","会話をやめる")) {
+		switch(select("Garrison", "Garrison slot modification", "Stop conversation")) {
 		case 1:
-			mes "[ガリスン]";
-			mes "ガリスンを作るには";
-			mes "鋼鉄50個、エルニウム3個、";
-			mes "オリデオコン1個、石炭50個、";
-			mes "錆びたネジ20個と";
-			mes "3万Zenyが必要です。";
-			mes "よろしいですかな？";
+			mes "[Garrison]";
+			mes "To make Garrison, you need 50 Steel, 3 Elunium, 1 Oridecon, 50 Coal, 20 Rusty Screws and 30,000 Zeny." ;
+			mes "May I?" ;
 			next;
 			callsub L_Routine;
 		case 2:
-			mes "[ガリスン]";
-			mes "ガリスンのスロット改造には";
-			mes "鋼鉄10個、エルニウム1個、";
-			mes "エンベルタコン10個、";
-			mes "石炭30個、錆びたネジ10個。";
-			mes "以上が必要です。";
-			mes "よろしいですかな？";
+			mes "[Garrison]";
+			mes "10 Steel, 1 Elunium, 10 Emveretarcon, 30 coal and 10 rusty screws for slot modification in Garrison." ;
+			mes "The above are required." ;
+			mes "May I?" ;
 			next;
-			switch(select("また今度で","今すぐしてください","やめる")) {
+			switch(select("Do it again now", "Do it now", "Quit")) {
 			case 1:
-				mes "[ガリスン]";
-				mes "そうですか。";
-				mes "では、良く考えてから";
-				mes "お返事をください。";
+				mes "[Garrison]";
+				mes "I see." ;
+				mes "Then please think it over and get back to me." ;
 				close;
 			}
 			if(countitem(13104) < 1 || countitem(999) < 10 || countitem(985) < 1 || countitem(1011) < 10 || countitem(1003) < 30 || countitem(7317) < 10) {
-				mes "[ガリスン]";
-				mes "ガリスンのスロット改造には";
-				mes "鋼鉄10個、エルニウム1個、";
-				mes "エンベルタコン10個、";
-				mes "石炭30個、錆びたネジ10個。";
-				mes "以上が必要です。";
+				mes "[Garrison]";
+				mes "10 Steel, 1 Elunium, 10 Emveretarcon, 30 coal and 10 rusty screws for slot modification in Garrison." ;
+				mes "The above are required." ;
 				close;
 			}
 			if(MaxWeight - Weight <= 5000) {
-				mes "[ガリスン]";
-				mes "荷物が一杯ですね。";
-				mes "一度整理してから";
-				mes "またお越しください。";
+				mes "[Garrison]";
+				mes "You have a full load." ;
+				mes "Please organize it once and come back again." ;
 				close;
 			}
-			mes "[ガリスン]";
-			mes "あ……もしやと思いますが";
-			mes "^FF0000カードを装着したり、精錬した^000000";
-			mes "ガリスンを^FF0000所持^000000していませんか？";
+			mes "[Garrison]";
+			mes "Ah ...... I wonder if you have ^FF0000 cards installed or refined ^000000 Garrisons ^FF000000 in your ^FF000000 possession ^000000?" ;
 			next;
-			mes "[ガリスン]";
-			mes "もしそうだとしたら、";
-			mes "カードも精錬値レベルも";
-			mes "無くなってしまいます。";
-			mes "念のため、それでも問題のない";
-			mes "^FF0000ガリスン^000000だけを持っているか";
-			mes "確認してください。";
+			mes "[Garrison]";
+			mes "If so, you will lose both the card and the refined value level." ;
+			mes "For ghost, make sure you still have only ^FF000000 Garrisons ^000000, which is not a problem." ;
 			next;
-			if(select("確認してくる","確認完了。すぐに改造する")==1) {
-				mes "[ガリスン]";
-				mes "わかりました。";
-				mes "十分に確認をとってください。";
+			if(select("Going to check", "Check complete. Will modify immediately.")==1) {
+				mes "[Garrison]";
+				mes "Understood." ;
+				mes "Please get confirmation enough." ;
 				close;
 			}
-			mes "[ガリスン]";
-			mes "はい、改造できました。";
-			mes "どうか大切に扱ってください。";
+			mes "[Garrison]";
+			mes "Yes, modifications have been made." ;
+			mes "Please take good care of it." ;
 			delitem 999,10;
 			delitem 985,1;
 			delitem 1011,10;
@@ -1005,63 +796,51 @@ que_ng.gat,182,85,3	script	ガリスン	109,{
 			getitem 13105,1;
 			close;
 		case 3:
-			mes "[ガリスン]";
-			mes "それでは、またお会いしましょう。";
+			mes "[Garrison]";
+			mes "Then we will see you again." ;
 			close;
 		}
 	}
-	mes "[ガリスン]";
-	mes "ハッハッハ！";
-	mes "ようこそおいでくださいました。";
-	mes "そう、人々は皆、私を求める！";
-	mes "私の名がついた武器、ガリスンは";
-	mes "最高の中の最高！";
-	mes "すぐにご入用ですかな？";
+	mes "[Garrison]";
+	mes "Ha ha ha!" ;
+	mes "Welcome to our home." ;
+	mes "Yes, all people seek me!" ;
+	mes "The weapon that bears my name, Garrison, is the best of the best!" ;
+	mes "I hope you will be needing it soon?" ;
 	next;
-	mes "[ガリスン]";
-	mes "ガリスンを作るには";
-	mes "鋼鉄50個、エルニウム3個、";
-	mes "オリデオコン1個、石炭50個、";
-	mes "錆びたネジ20個と";
-	mes "3万Zenyが必要です。";
-	mes "よろしいですかな？";
+	mes "[Garrison]";
+	mes "To make Garrison, you need 50 Steel, 3 Elunium, 1 Oridecon, 50 Coal, 20 Rusty Screws and 30,000 Zeny." ;
+	mes "May I?" ;
 	next;
 L_Routine:
-	switch(select("また今度で","今すぐ作ってください","やめる")) {
+	switch(select("make it again now", "make it now", "quit")) {
 	case 1:
-		mes "[ガリスン]";
-		mes "そうですか。";
-		mes "では、良く考えてから";
-		mes "お返事をください。";
+		mes "[Garrison]";
+		mes "I see." ;
+		mes "Then please think it over and get back to me." ;
 		close;
 	case 2:
 		if(countitem(999) < 50 || countitem(985) < 3 || countitem(984) < 1 || countitem(1003) < 50 || countitem(7317) < 20) {
-			mes "[ガリスン]";
-			mes "ガリスンを作るには";
-			mes "鋼鉄50個、エルニウム3個、";
-			mes "オリデオコン1個、石炭50個、";
-			mes "錆びたネジ20個と";
-			mes "3万Zenyが必要です。";
-			mes "お忘れにならないよう。";
+			mes "[GALLISON]";
+			mes "To make Garrison, you need 50 Steel, 3 Elunium, 1 Oridecon, 50 Coal, 20 rusty screws and 30,000 Zeny." ;
+			mes "Don't forget." ;
 			close;
 		}
 		if(Zeny < 30000) {
-			mes "[ガリスン]";
-			mes "お金が足りません。";
+			mes "[Garrison]";
+			mes "There is not enough money." ;
 			close;
 		}
 		if(MaxWeight - Weight <= 5000) {
-			mes "[ガリスン]";
-			mes "荷物が一杯ですね。";
-			mes "一度整理してから";
-			mes "またお越しください。";
+			mes "[Garrison]";
+			mes "You have a full load." ;
+			mes "Please organize it once and come back again." ;
 			close;
 		}
-		mes "[ガリスン]";
-		mes "ではどうぞ。";
-		mes "こちらがガリスンです。";
-		mes "また必要になったら";
-		mes "お越しください。";
+		mes "[Garrison]";
+		mes "Then come in." ;
+		mes "This is Garrison." ;
+		mes "Please come back if you need more." ;
 		delitem 999,50;
 		delitem 985,3;
 		delitem 984,1;
@@ -1071,254 +850,193 @@ L_Routine:
 		getitem 13104,1;
 		close;
 	case 3:
-		mes "[ガリスン]";
-		mes "それでは、またお会いしましょう。";
+		mes "[Garrison]";
+		mes "Then we will see you again." ;
 		close;
 	}
 }
 
-lighthalzen.gat,322,247,5	script	ラベ	86,{
+lighthalzen.gat,322,247,5 script rabe 86,{
 	switch(GUN_1QUE) {
 	default:
-		mes "[ラベ]";
-		mes "ウググ……";
-		mes "ググッ……クウ……";
-		mes "…………";
+		mes "[Rabe]";
+		mes "ugg......" ;
+		mes "Gugg ...... Kuu......" ;
+		mes "............" ;
 		close;
 	case 2:
 		mes "[" +strcharinfo(0)+ "]";
-		mes "こんにちは。";
-		mes "ガンスリンガーギルドから";
-		mes "不良品の交換をしに……";
+		mes "Hello." ;
+		mes "Gunslinger Guild to replace a defective item: ......" ;
 		next;
-		mes "[ラベ]";
-		mes "ヌオオオッ!!";
-		mes "クオオオッ!!";
-		mes "ズオラアアッ!!";
+		mes "[Rabe]";
+		mes "Noooooo!!! Kooooooooooooo!!! Zoolaaaah!!!" ;
 		set GUN_1QUE,3;
 		percentheal -90,0;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-ラベという男は";
-		mes "いきなり私に襲い掛かった-";
-		mes "-ガンスリンガーという";
-		mes "言葉に反応したようだ……-";
+		mes "-The man named Rabe attacked me out of the blue--he seemed to respond to the word Gunslinger: ...... -";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-とにかく逃げよう-";
-		mes "-そして、ガリスンさんに";
-		mes "どういうことか聞きに行こう-";
+		mes "-Anyway, let's run away - and go ask Mr. Garrison what it's all about..."; next; mes "[" +strcharinfo(0)+ "]
 		close;
 	case 3:
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-ラベという男は";
-		mes "いきなり私に襲い掛かった-";
-		mes "-ガンスリンガーという";
-		mes "言葉に反応したようだ……-";
+		mes "-The man named Rabe suddenly attacked me - I think he reacted to the word Gunslinger: ...... -";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "-とにかく逃げよう-";
-		mes "-そして、ガリスンさんに";
-		mes "どういうことか聞きに行こう-";
+		mes "-Anyway, let's run away - and go ask Mr. Garrison what it's all about..."; next; mes "[" +strcharinfo(0)+ "]
 		close;
 	}
 }
 
 //============================================================
-// ドリフター・ブッチャー製作
+// Drifter Butcher Production
 //- Registry -------------------------------------------------
-// GUN_2QUE -> 0～9
+// GUN_2QUE -> 0-9
 //------------------------------------------------------------
-que_ng.gat,149,178,4	script	研究所企画者	744,{
+que_ng.gat,149,178,4 script lab planner 744,{
 	switch(GUN_2QUE) {
 	case 0:
-		mes "[エイ]";
-		mes "あ、こんにちは。";
-		mes "私は、アインブロック研究所企画者、";
-		mes "エイといいます。";
+		mes "[ray]";
+		mes "Oh, hello." ;
+		mes "My name is Einbroch Institute planner, Ei." ;
 		next;
-		if(Job != Job_Gunslinger) {
-			menu "話しをする",-;
-			mes "[エイ]";
-			mes "もし、知り合いに";
-			mes "ガンスリンガーの人がいたら、";
-			mes "ある武器に関する情報があるので";
-			mes "ここに来るようにと";
-			mes "伝えてください。";
+		if(Job ! = Job_Gunslinger) {
+			menu "talk to me",-;
+			mes "[ray]";
+			mes "If you know someone who is a Gunslinger, tell them to come here for information about a certain weapon." ;
 			close;
 		}
 		if(BaseLevel < 56) {
-			menu "話しをする",-;
-			mes "[エイ]";
-			mes "……連射……";
-			mes "持続……";
-			mes "……180以上……";
+			menu "talk to them",-;
+			mes "[ray]";
+			mes "...... continuous fire ......" ;
+			mes "sustained......" ;
+			mes "..... .180 or more......" ;
 			next;
-			mes "[エイ]";
-			mes "あ、すみません。";
-			mes "今は武器の研究で忙しいので。";
+			mes "[ray]";
+			mes "Oh, sorry." ;
+			mes "I'm busy working on weapons right now." ;
 			close;
 		}
 		if(BaseLevel >= 68)
-			set '@str$,"武器「ブッチャー」について聞く";
-		switch(select('@str$,"武器「ドリフター」について聞く","話をやめる")) {
+			set '@str$, "Ask about weapon "Butcher"";
+		switch(select('@str$, "Ask about weapon "Drifter"", "Stop talking")) {
 		case 1:
-			mes "[エイ]";
-			mes "どうやら噂を聞いてきたようですね。";
+			mes "[ray]";
+			mes "Looks like you've heard the rumors." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000ブッチャー^000000は";
-			mes "我がアインブロック研究所の";
-			mes "心血を注いで作られた";
-			mes "ガトリングガンです。";
+			mes "[ray]";
+			mes "The ^FF000000 Butcher ^000000 is a Gatling gun made with the heart and soul of our Einbroch Institute." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000ドリフター^000000もいい武器ですが、";
-			mes "^FF0000ブッチャー^000000の火力は";
-			mes "それ以上だと自信をもって言えます！";
+			mes "[ray]";
+			mes "^FF0000Drifter^000000 is a good weapon, but I can say with confidence that the firepower of the ^FF0000Butcher^000000 is even better!" ;
 			next;
-			mes "[エイ]";
-			mes "あまりにも強い火力のため";
-			mes "「虐殺者」という名で呼ばれてます。";
-			mes "同時に、非常に扱いにくい";
-			mes "武器でもあります。";
+			mes "[ray]";
+			mes "It is called the "Butcher" because of its too strong firepower." ;
+			mes "At the same time, it is a very unwieldy weapon." ;
 			next;
-			mes "[エイ]";
-			mes "この武器を、果たして";
-			mes "あなたが使いこなせるのでしょうか？";
+			mes "[ray]";
+			mes "Can you really master this weapon?" ;
 			next;
-			if(select("……わからない","もちろん！")==1) {
-				mes "[エイ]";
-				mes "^FF0000ブッチャー^000000はそんな";
-				mes "どっちつかずな態度で扱える程";
-				mes "甘い代物ではありません。";
-				mes "自分に自信がもてるようになったら";
-				mes "また来てください。";
+			if(select("...... I don't know", "of course!") ==1) {
+				mes "[ray]";
+				mes "^FF0000 Butcher ^000000 is not such a sweet substitute that you can handle it with such a one-sided attitude." ;
+				mes "Please come back when you feel more confident about yourself." ;
 				close;
 			}
-			mes "[エイ]";
-			mes "自信があるようですね。";
-			mes "でも、自信だけなら";
-			mes "誰でも簡単にもてます。";
-			mes "あなたのその自信を";
-			mes "何か証明できないでしょうか？";
+			mes "[ray]";
+			mes "You seem confident." ;
+			mes "But anyone can easily have just confidence." ;
+			mes "What can you prove about that confidence of yours?" ;
 			next;
-			mes "[エイ]";
-			mes "うーん…………";
+			mes "[ray]";
+			mes "ummm ............" ;
 			next;
-			mes "[エイ]";
-			mes "あ！";
-			mes "良い考えが思い浮かびました！";
+			mes "[ay]";
+			mes "Ah!" ;
+			mes "I've got a good idea!" ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000オークの爪1,000個^000000と";
-			mes "^FF0000スケルボーン1,000個^000000を";
-			mes "集めてきてください。";
-			mes "これらを集めてこれたら、";
-			mes "あなたに^FF0000ブッチャー^000000を";
-			mes "差し上げます。";
+			mes "[ray]";
+			mes "Go gather ^FF000000 1,000 ^000000 orc claws and ^FF000000 1,000 ^000000 skeleton bones." ;
+			mes "If you can collect these, I will give you ^FF000000 butchers^000000." ;
 			next;
-			mes "[エイ]";
-			mes "どうです？";
-			mes "これ位ならやろうと思えば";
-			mes "できますよね？";
-			mes "あなたの実力を見せてもらいます。";
-			mes "フフフ……";
+			mes "[ray]";
+			mes "What do you think?" ;
+			mes "You can do this much if you want to, right?" ;
+			mes "I'll let you show me what you can do." ;
+			mes "Hmph. ......." ;
 			set GUN_2QUE,3;
 			close;
 		case 2:
-			mes "[エイ]";
-			mes "どうやら^FF0000ドリフター^000000の話を";
-			mes "聞いたようですね。";
+			mes "[ray]";
+			mes "Looks like you heard about ^FF0000 drifter ^000000." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000ドリフター^000000はセルレナ博士が";
-			mes "製作した最高の武器の一つ。";
-			mes "回転電動型連発銃です。";
-			mes "その連射速度は、";
-			mes "ガンスリンガーが装備できる";
-			mes "武器の中で最高といえます。";
+			mes "[ray]";
+			mes "The ^FF000000 Drifter^000000 is one of the best weapons that Dr. Serlena has created." ;
+			mes "It is a revolving electrically powered continuous-fire gun." ;
+			mes "Its rate of continuous fire is the highest of any weapon the Gunslinger can be equipped with." ;
 			next;
-			mes "[エイ]";
-			mes "もちろん、ガトリングが扱えるスキルが";
-			mes "必要不可欠ですが、ガトリングを";
-			mes "手足のように自由に扱えるようなれば、";
-			mes "^FF0000ドリフター^000000は最高の";
-			mes "パートナーになるはずです。";
+			mes "[ray]";
+			mes "Of course, skill in handling the Gatling is essential, but once you can handle the Gatling as freely as your limbs, the ^FF0000 Drifter ^000000 will be your best partner." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000ドリフター^000000を使ってみますか？";
+			mes "[ray]";
+			mes "Would you like to try the ^FF000000 Drifter^000000?" ;
 			next;
-			if(select("いいえ","はい")==1) {
-				mes "[エイ]";
-				mes "使うつもりができたら";
-				mes "いつでもまた来てください。";
+			if(select("No", "Yes")==1) {
+				mes "[ray]";
+				mes "Please come back whenever you plan to use it." ;
 				close;
 			}
-			mes "[エイ]";
-			mes "^FF0000ドリフター^000000は";
-			mes "材料が手に入りにくいので、";
-			mes "私たちも予約方式で製作しています。";
-			mes "ですが、^FF0000ドリフター^000000の";
-			mes "材料を持ってくれば";
-			mes "すぐにでも作って差し上げます。";
+			mes "[ray]";
+			mes "The ^FF000000 drifter ^000000 is hard to get materials for, so we make ours by appointment system too." ;
+			mes "But if you bring us the material for ^FF000000 Drifter^000000, we will make it for you right away." ;
 			next;
-			mes "[エイ]";
-			mes "材料を言うのでちゃんとメモを";
-			mes "取ってください。";
+			mes "[ray]";
+			mes "I'm going to tell you the ingredients, so please take proper notes." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000鋼鉄70個、エルニウム5個、";
-			mes "オリデオコン3個、石炭70個、";
-			mes "錆びたネジ50個。^000000";
-			mes "そして製作費用として";
-			mes "^FF000050,000Zeny^000000必要です。";
-			mes "全部集まったらまた来てください。";
+			mes "[ray]";
+			mes "^FF000070 pieces of Steel, 5 pieces of Elunium, 3 pieces of Oridecon, 70 pieces of coal, 50 rusty screws. ^000000And you need ^FF000050,000Zeny^000000 for the cost of production." ;
+			mes "Please come back when you have collected everything." ;
 			set GUN_2QUE,1;
 			close;
 		case 3:
-			mes "[エイ]";
-			mes "武器に関する情報があるのですが……";
-			mes "どうやら忙しそうですね。";
-			mes "また来てください。";
+			mes "[ray]";
+			mes "I have some information about weapons: ......" ;
+			mes "It looks like you are busy." ;
+			mes "Please come back." ;
 			close;
 		}
 	case 1:
 		if(countitem(999) < 70 || countitem(985) < 5 || countitem(984) < 3 || countitem(1003) < 70 || countitem(7317) < 50 || Zeny < 50000) {
-			mes "[エイ]";
-			mes "まだ材料が集まってないみたいですね。";
-			mes "もう一度いいますよ。";
+			mes "[ray]";
+			mes "It looks like you haven't gathered the material yet." ;
+			mes "I'll say it again." ;
 			next;
-			mes "[エイ]";
-			mes "^FF0000鋼鉄70個、エルニウム5個、";
-			mes "オリデオコン3個、石炭70個、";
-			mes "錆びたネジ50個。^000000";
-			mes "そして製作費用として";
-			mes "^FF000050,000Zeny^000000必要です。";
-			mes "全部集まったらまた来てください。";
+			mes "[ray]";
+			mes "^FF0000Seventy pieces of Steel, five pieces of Elunium, three pieces of Oridecon, seventy pieces of coal, and fifty rusty screws. ^000000And you need ^FF000050,000Zeny^000000 for the production cost." ;
+			mes "Please come back when you have collected everything." ;
 			next;
-			mes "[エイ]";
-			mes "もう必要ないようでしたら";
-			mes "製作依頼をキャンセルできますが。";
-			mes "どうしますか？";
+			mes "[ray]";
+			mes "I can cancel the production request if you don't need it anymore." ;
+			mes "What would you like to do?" ;
 			next;
-			if(select("キャンセルしない","キャンセルする")==1) {
-				mes "[エイ]";
-				mes "では、材料が集まったら";
-				mes "また来てください。";
+			if(select("do not cancel", "cancel")==1) {
+				mes "[ray]";
+				mes "Then come back when you have gathered the materials." ;
 				close;
 			}
-			mes "[エイ]";
-			mes "製作依頼をキャンセルしました。";
-			mes "では、楽しい一日を。";
+			mes "[ray]";
+			mes "The production request has been cancelled." ;
+			mes "Well, have a pleasant day." ;
 			set GUN_2QUE,0;
 			close;
 		}
-		mes "[エイ]";
-		mes "あ、材料が集まりましたね。";
-		mes "では、製作に入ります。";
-		mes "時間がかかるので";
-		mes "少し待っていてください。";
+		mes "[ray]";
+		mes "Oh, the material has been gathered." ;
+		mes "Now, let's start production." ;
+		mes "It will take some time, so please wait a bit." ;
 		delitem 999,70;
 		delitem 985,5;
 		delitem 984,3;
@@ -1329,207 +1047,153 @@ que_ng.gat,149,178,4	script	研究所企画者	744,{
 		close;
 	case 2:
 		if(MaxWeight - Weight < 2300) {
-			mes "-所持アイテムの重量が多いため";
-			mes "アイテムを受けとることができません-";
-			mes "-所持アイテムを減らしてから、再度";
-			mes "話しかけてください-";
+			mes "-You cannot receive the item due to the high weight of the item you are carrying--please reduce the number of items you are carrying and then talk to me again-";
 			close;
 		}
-		mes "[エイ]";
-		mes "ドリフターが完成しました。";
+		mes "[ray]";
+		mes "The drifter is complete." ;
 		set GUN_2QUE,0;
 		getitem 13157,1;
 		next;
-		mes "[エイ]";
-		mes "ガンスリンガーのスキル、";
-		mes "ガトリングフィーバーと";
-		mes "マッドネスキャンセラーは";
-		mes "とても役に立ちます。";
-		mes "是非覚えてください。";
-		mes "では、またお会いしましょう。";
+		mes "[ray]";
+		mes "Gunslinger's skills, Gatling Fever and Madness Canceller are very useful." ;
+		mes "Please learn them." ;
+		mes "Well, I'll see you soon." ;
 		close;
 	case 3:
 		if(countitem(1043) < 1000 || countitem(932) < 1000) {
-			mes "[エイ]";
-			mes "^FF0000オークの爪1,000個^000000と";
-			mes "^FF0000スケルボーン1,000個^000000は";
-			mes "集めれますか？";
-			mes "難しいようでしたら";
-			mes "諦めても構いませんよ？";
+			mes "[ray]";
+			mes "Can you collect ^FF000000 1,000 orc claws ^000000 and ^FF000000 1,000 skeleton bones ^000000?" ;
+			mes "If it's too difficult, you can give up, okay?" ;
 			next;
-			if(select("あきらめない","あきらめる")==1) {
-				mes "[エイ]";
-				mes "わかりました。";
-				mes "あなたの力を信じてます。";
+			if(select("I don't give up", "I give up")==1) {
+				mes "[ray]";
+				mes "I understand." ;
+				mes "I believe in your strength." ;
 				close;
 			}
-			mes "[エイ]";
-			mes "諦めるのですか？";
-			mes "うーん……";
-			mes "難しい条件ではありますが、";
-			mes "それを克服しない限り";
-			mes "この武器を扱う事は不可能です。";
+			mes "[ray]";
+			mes "Are you giving up?" ;
+			mes "umm ......" ;
+			mes "It is a difficult condition, but it is impossible to handle this weapon unless you overcome it." ;
 			next;
-			mes "[エイ]";
-			mes "自分の力を信じれるようになったら";
-			mes "また来てください。";
+			mes "[ray]";
+			mes "Come back when you can believe in your own strength." ;
 			set GUN_2QUE,0;
 			close;
 		}
-		mes "[エイ]";
-		mes "あ、材料が集まりましたね。";
-		mes "ああ……^FF0000ブッチャー^000000を作った時は、";
-		mes "これを使える人がいるのか";
-		mes "心配でしたが……";
-		mes "それも今日までです！";
+		mes "[ray]";
+		mes "Oh, the material has been gathered." ;
+		mes "Oh ...... When I made ^FF000000 Butcher^000000, I was worried about whether anyone could use this ......." ;
+		mes "And that's only until today!" ;
 		delitem 1043,1000;
 		delitem 932,1000;
 		set GUN_2QUE,4;
 		next;
-		mes "[エイ]";
-		mes "では、^FF0000ブッチャー^000000の製作を始めますが、";
-		mes "まずはセルレナ博士に";
-		mes "ブッチャーの製作許可、使用許可を";
-		mes "頂かなくてはなりません。";
+		mes "[ray]";
+		mes "So, we will start making the ^FF000000 butcher ^000000, but first we must ask Dr. Serlena for permission to make and use the butcher." ;
 		next;
-		mes "[エイ]";
-		mes "使用許可は私が頂きますので、";
-		mes "ブッチャーの製作費用と";
-		mes "許可手続きの手数料である";
-		mes "10万Zenyを用意しておいてください。";
+		mes "[ray]";
+		mes "I will get the permission to use the butcher, so please have 100,000 zeny ready, which is the cost of producing the butcher and the fee for the permit process." ;
 		close;
 	case 4:
-		mes "[エイ]";
-		mes "セルレナ博士から";
-		mes "ブッチャーの使用許可を頂きました。";
-		mes "10万Zenyを払って頂ければ";
-		mes "すぐにでもブッチャーを差し上げます。";
-		mes "よろしいですか？";
+		mes "[ray]";
+		mes "Dr. Serlena has given me permission to use the butcher." ;
+		mes "We will give you the butcher as soon as you pay us 100,000 zeny." ;
+		mes "May I?" ;
 		next;
-		if(select("いいえ","はい")==1) {
-			mes "[エイ]";
-			mes "お金の用意ができたら";
-			mes "いつでもまた来てください。";
+		if(select("No", "Yes")==1) {
+			mes "[ray]";
+			mes "Please come back whenever you are ready to pay." ;
 			close;
 		}
 		if(Zeny < 100000) {
-			mes "[エイ]";
-			mes "お金が足りないようです。";
-			mes "もう一度確認してみてください。";
+			mes "[ray]";
+			mes "It looks like you don't have enough money." ;
+			mes "Please check again." ;
 			close;
 		}
 		if(MaxWeight - Weight < 2500) {
-			mes "-所持アイテムの重量が多いため";
-			mes "アイテムを受けとることができません-";
-			mes "-所持アイテムを減らしてから、再度";
-			mes "話しかけてください-";
+			mes "-You cannot receive the item due to the high weight of the item in your possession--please reduce the number of items in your possession and then speak to us again."
 			close;
 		}
-		mes "[エイ]";
-		mes "1、2、…………10！";
-		mes "確認しました。";
-		mes "では、^FF0000ブッチャー^000000を差し上げます！";
+		mes "[ray]";
+		mes "1, 2, ........... .10!";
+		mes "Confirmed." ;
+		mes "Then I will give you ^FF000000 butcher ^000000!" ;
 		set Zeny,Zeny-100000;
 		set GUN_2QUE,0;
 		getitem 13158,1;
 		next;
-		mes "[エイ]";
-		mes "リヒタルゼンにいらっしゃる";
-		mes "F.ヘリスンおじさんは";
-		mes "その武器の事を気にしてました。";
-		mes "時間がある時にでも";
-		mes "一度会いに行ってみて下さい。";
+		mes "[ray]";
+		mes "Uncle F. Hellison, who is in Lighthalzen, was concerned about that weapon." ;
+		mes "Please go and see him when you have time." ;
 		next;
-		mes "[エイ]";
-		mes "武器は大切に使ってください。";
-		mes "では、また縁があれば";
-		mes "お会いしましょう。";
+		mes "[ray]";
+		mes "Please use your weapons carefully." ;
+		mes "Then, we will see you again when we have a chance." ;
 		close;
 	case 6:
-		mes "[エイ]";
-		mes "あ、こんにちは。";
-		mes "私は、アインブロック研究所企画者、";
-		mes "エイといいます。";
-		mes "何かご用ですか？";
+		mes "[ray]";
+		mes "Oh, hello." ;
+		mes "My name is Einbroch Institute planner, Ei." ;
+		mes "How can I help you?" ;
 		next;
-		menu "特殊金属が必要",-;
-		mes "[エイ]";
-		mes "え？　……あ！";
-		mes "そういえば、あなたは以前";
-		mes "ブッチャー持っていった人ですね？";
-		mes "ブッチャーはちゃんと";
-		mes "使ってますか？";
+		menu "Need special metal",-;
+		mes "[ray]";
+		mes "What?  ...... Ah!" ;
+		mes "Oh, by the way, you're the guy who took the butcher before, right?" ;
+		mes "Are you using the butcher properly?" ;
 		next;
-		mes "[エイ]";
-		mes "…………って……";
-		mes "特殊金属って……";
-		mes "も、もしかして、ブッチャーを";
-		mes "壊したんですか！";
+		mes "[ray]";
+		mes "............ is ......" ;
+		mes "Special metals are ......" ;
+		mes "Did you, by any chance, break the butcher!" ;
 		next;
-		mes "[エイ]";
-		mes "あなたを信じてたのに！";
-		mes "私の信頼を裏切ったんですね！";
-		mes "このうらぎりものぉー！";
+		mes "[ray]";
+		mes "I trusted you!" ;
+		mes "You betrayed my trust!" ;
+		mes "You vile thing!" ;
 		next;
-		menu "事情を説明する",-;
-		mes "[エイ]";
-		mes "……そうですか。";
-		mes "ヘリスンおじさんが……";
-		mes "疑っちゃってごめんなさい。";
+		menu "Explain the situation",-;
+		mes "[ai]";
+		mes "...... I see." ;
+		mes "Uncle Hellison is ......." ;
+		mes "I'm sorry I doubted you." ;
 		next;
-		mes "[エイ]";
-		mes "特殊金属はセルレナ博士が";
-		mes "持っていらっしゃいます。";
-		mes "しかし、今セルレナ博士は";
-		mes "留守で、どこにあるのか";
-		mes "わかりません。";
+		mes "[ray]";
+		mes "The special metal is in the possession of Dr. Serlena." ;
+		mes "However, Dr. Serlena is away right now and I don't know where it is." ;
 		next;
-		mes "[エイ]";
-		mes "それを探そうにも";
-		mes "今、新しい研究中で";
-		mes "私にはそんな時間が無いのです。";
-		mes "属性弾丸の研究を";
-		mes "後回しにするわけにも";
-		mes "いかないので……";
+		mes "[ray]";
+		mes "I would try to find it, but he is in the middle of a new study and I don't have time for that right now." ;
+		mes "I can't put off researching attribute bullets, so ......." ;
 		next;
-		menu "一つ提案する",-;
-		mes "[エイ]";
-		mes "ん？　なんですか？";
+		menu "I have one suggestion.",-;
+		mes "[ray]";
+		mes "Hmm?  What is it?" ;
 		next;
-		menu "お互いに必要な物を探してくる",-;
-		mes "[エイ]";
-		mes "うーん……いいですよ！";
-		mes "では、私が特殊金属を探すので、";
-		mes "あなたは属性弾丸を";
-		mes "手に入れてきてください。";
+		menu "I'm going to find out what we need from each other.",-;
+		mes "[ray]";
+		mes "umm ...... OK!" ;
+		mes "So, I'll look for the special metals and you go get the attribute bullets." ;
 		next;
-		mes "[エイ]";
-		mes "^FF0000ポイズンスフィア、";
-		mes "ファイアスフィア、";
-		mes "ウィンドスフィア、";
-		mes "ダークスフィア、";
-		mes "アイススフィア^000000。";
+		mes "[ray]";
+		mes "^FF0000 Poison Sphere, Fire Sphere, Wind Sphere, Dark Sphere, Ice Sphere ^000000."
 		next;
-		mes "[エイ]";
-		mes "この5種類の中から";
-		mes "一種類の属性弾丸を";
-		mes "30個集めてきてください。";
+		mes "[ray]";
+		mes "Please collect 30 attribute bullets of one of these five types." ;
 		set GUN_2QUE,7;
 		close;
 	case 7:
-		mes "[エイ]";
-		mes "^FF0000ポイズンスフィア30個、";
-		mes "ファイアスフィア30個、";
-		mes "ウィンドスフィア30個、";
-		mes "ダークスフィア30個、";
-		mes "アイススフィア30個^000000。";
-		mes "どれか集まりましたか？";
+		mes "[ray]";
+		mes "^FF000000 30 Poison Spheres, 30 Fire Spheres, 30 Wind Spheres, 30 Dark Spheres, 30 Ice Spheres ^000000."
+		mes "Have you gathered any of them?" ;
 		next;
-		switch(select("いいえ","ポイズンスフィア","ファイアスフィア","ウィンドスフィア","ダークスフィア","アイススフィア")) {
+		switch(select("No", "Poison Sphere", "Fire Sphere", "Wind Sphere", "Dark Sphere", "Ice Sphere")) {
 		case 1:
-			mes "[エイ]";
-			mes "一種類でも集まったら";
-			mes "持ってきてください。";
+			mes "[ray]";
+			mes "If you collect even one kind, please bring it to me." ;
 			close;
 		case 2:
 			set '@itemid,13205;
@@ -1548,219 +1212,180 @@ que_ng.gat,149,178,4	script	研究所企画者	744,{
 			break;
 		}
 		if(countitem('@itemid) < 30) {
-			mes "[エイ]";
-			mes "どこにあるんですか？";
-			mes "ちゃんと手に入れてきてください！";
+			mes "[ray]";
+			mes "Where is it?" ;
+			mes "Make sure you get it right!" ;
 			close;
 		}
-		mes "[エイ]";
-		mes "ちゃんとありますね。";
-		mes "私もセルレナ博士の";
-		mes "研究室を探して見つけておきました。";
-		mes "では、交換しましょう。";
+		mes "[ray]";
+		mes "You've got it right." ;
+		mes "I also searched and found Dr. Serlena's Research Office to find it." ;
+		mes "So, let's trade." ;
 		delitem '@itemid,30;
 		set GUN_2QUE,8;
 		next;
-		mes "-エイに属性弾を渡して、";
-		mes "特殊金属を受け取った-";
+		mes "-give the ray the attribute bullet and received the special metal-";
 		next;
-		mes "[エイ]";
-		mes "ヘリスンおじさんは";
-		mes "器用な人ですから、";
-		mes "ちゃんと修理できるでしょう。";
-		mes "ではでは。";
+		mes "[ray]";
+		mes "Uncle Hellison is a dexterous man and will be able to repair it properly." ;
+		mes "Then." ;
 		close;
 	case 8:
 	case 9:
-		mes "[エイ]";
-		mes "ヘリスンおじさんは";
-		mes "器用な人ですから、";
-		mes "ちゃんと修理できるでしょう。";
-		mes "ではでは。";
+		mes "[ray]";
+		mes "Uncle Hellison is a dexterous man and will be able to repair it properly." ;
+		mes "Well then." ;
 		close;
 	}
 }
 
-lighthalzen.gat,205,284,5	script	ヘリスン	85,{
+lighthalzen.gat,205,284,5 script helisun 85,{
 	switch(GUN_2QUE) {
 	default:
-		mes "[ヘリスン]";
-		mes "あー……退屈だー";
-		mes "何か面白い事でもないかなぁ……";
-		if(GUN_2QUE != 0 || Job != Job_Gunslinger || BaseLevel < 68 || countitem(13158) < 1)
+		mes "[helisun]";
+		mes "Ahh ...... I'm bored - something interesting to do. ......" ;
+		if(GUN_2QUE ! = 0 || Job ! = Job_Gunslinger || BaseLevel < 68 || countitem(13158) < 1)
 			close;
 		next;
-		mes "[ヘリスン]";
-		mes "ん？";
-		mes "お前、ガンスリンガーか？";
-		mes "……にしても……";
-		mes "初めて見る武器を持っているな！";
+		mes "[helisun]";
+		mes "hmm?" ;
+		mes "Are you Gunslinger?" ;
+		mes "...... and then ......." ;
+		mes "I've never seen you with a weapon before!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "ちょ、ちょっと見せてもらっていいか？";
-		mes "ちょっとだけでいいんだ。";
-		mes "な？　な？";
-		mes "頼むよ。";
+		mes "[HELISON]";
+		mes "Wait, can I have a look at it?" ;
+		mes "Just a little bit." ;
+		mes "Hey?  Huh?" ;
+		mes "Please." ;
 		next;
-		if(select("見せてあげない","ブッチャーを見せる")==1) {
-			mes "[ヘリスン]";
-			mes "ふん！";
-			mes "いいよいいよ。";
-			mes "お前だけいい武器を";
-			mes "持っていると思うなよ！";
-			mes "俺にだって、";
-			mes "このクリムゾンボルトがあるんだ！";
+		if(select("I won't show you", "I'll show you the butcher")==1) {
+			mes "[helisson]";
+			mes "Hmph!" ;
+			mes "Okay, okay." ;
+			mes "Don't think you're the only one with a good weapon!" ;
+			mes "Even I have these crimson bolts!" ;
 			close;
 		}
-		mes "[ヘリスン]";
-		mes "おぉ……これが";
-		mes "アインブロック研究所が開発した、";
-		mes "誰も使うことができなかったという";
-		mes "「虐殺者ブッチャー」か！";
-		mes "すばらしい……";
+		mes "[helisson]";
+		mes "Oh ...... This is the Butcher Butcher, developed by the Einbroch Institute, which no one has ever been able to use!" ;
+		mes "wonderful ......" ;
 		next;
-		mes "[ヘリスン]";
-		mes "少しだけ使ってみてもいいか!?";
-		mes "大丈夫！";
-		mes "俺は武器の扱いには慣れてるんだ！";
-		mes "心配ないって！　な！";
-		mes "-ゴトンッ！-　……ぁ。";
+		mes "[HELISON]";
+		mes "Can I use it for a minute! It's okay!" ;
+		mes "I'm used to handling weapons!" ;
+		mes "Don't worry!  Hey!" ;
+		mes "-GOTTON! - ...... ah." ;
 		close2;
 		delitem 13158,1;
 		set GUN_2QUE,5;
 		end;
 	case 5:
 		if(MaxWeight - Weight < 450) {
-			mes "-所持アイテムの重量が多いため";
-			mes "アイテムを受けとることができません-";
-			mes "-所持アイテムを減らしてから、再度";
-			mes "話しかけてください-";
+			mes "-You cannot receive the item due to the high weight of the item in your possession--please reduce the number of items in your possession and then speak to the client again";
 			close;
 		}
-		mes "[ヘリスン]";
-		mes "え……あ……あれ？";
+		mes "[helisun]";
+		mes "E...... A...... Huh?" ;
 		next;
-		mes "[ヘリスン]";
-		mes "う……ぇ……あ……";
+		mes "[helisun]";
+		mes "U...... yeah...... A......" ;
 		next;
-		menu "何をしたのか問いただす",-;
-		mes "[ヘリスン]";
-		mes "え!?";
-		mes "あ……いや……その……";
+		menu "Ask them what they did",-;
+		mes "[helisn]";
+		mes "What! Ah ...... No. ...... That ......." ;
 		next;
-		mes "[ヘリスン]";
-		mes "そ……それがですね……";
-		mes "ア……アハ……";
-		mes "アハハハハハハハ～";
+		mes "[helisun]";
+		mes "That ...... That's the one. ......" ;
+		mes "a...... Aha......" ;
+		mes "ahahahahahahaha~";
 		next;
-		mes "[ヘリスン]";
-		mes "俺がね……アハハ……";
+		mes "[helisn]";
+		mes "I'm the one ...... ahahahaha......" ;
 		next;
-		mes "[ヘリスン]";
-		mes "これね……ハハ……ハ……";
+		mes "[helisun]"; mes "[helisun]"; mes "[helisun]"; mes "[helisun]
+		mes "This one. ...... haha...... ha......" ;
 		next;
-		mes "[ヘリスン]";
-		mes "ズダダダダ！";
-		mes "って撃とうとしたんだ。";
-		mes "……そうなんだよ！";
+		mes "[helisn]";
+		mes "Zda-da-da-da!" ;
+		mes "I was going to shoot him." ;
+		mes "...... That's right!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "でも、意外とこれが重くてな！";
-		mes "ついうっかり俺の繊細な手がな……";
-		mes "アハ……アハハハハッ！";
+		mes "[helisson]";
+		mes "But this is surprisingly heavy!" ;
+		mes "My delicate hands just inadvertently ......" ;
+		mes "Aha...... ahahahahahaha!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "………………";
-		mes "……ごめんなさい。";
-		mes "壊しちゃいました。";
+		mes "[helisun]";
+		mes ".................." ;
+		mes "...... Sorry." ;
+		mes "I broke it." ;
 		next;
-		mes "[ヘリスン]";
-		mes "ぁ、いや！　大丈夫！";
-		mes "俺はこう見えて、実はなんでも屋！";
-		mes "自称だけど……";
-		mes "いや！　勘違いするなよ！";
-		mes "これぐらい直す事はできる！";
+		mes "[HELISON]";
+		mes "Oh, no!  It's okay!" ;
+		mes "I look like this, but I'm actually a jack-of-all-trades!" ;
+		mes "I call myself ......." ;
+		mes "No!  Don't get me wrong!" ;
+		mes "I can fix this!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "でも、修理に必要な材料は無いし……";
-		mes "初めて見るような部品があって……";
+		mes "[HELISON]";
+		mes "But I don't have the materials needed to fix it. ......" ;
+		mes "I have some parts that I've never seen before. ......" ;
 		next;
-		mes "[ヘリスン]";
-		mes "俺が壊しておいて何だけど……";
-		mes "修理に必要な材料を";
-		mes "集めてきてくれないか？";
-		mes "材料さえあれば";
-		mes "すぐに直して見せるから！";
+		mes "[helisn]";
+		mes "I'm the one who broke it. ......" ;
+		mes "Can you go gather the materials needed to repair it?" ;
+		mes "I'll show you how to fix it as soon as I have the materials!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "いや、それどころか";
-		mes "スペシャル改造まで";
-		mes "しちゃうよ！　やったな！";
+		mes "[HELISON]";
+		mes "No, on the contrary, I'll even do a special modification!　You got it!" ;
 		next;
-		mes "[ヘリスン]";
-		mes "必要な材料は^FF0000鋼鉄10個、";
-		mes "エルニウム2個、オリデオコン1個、";
-		mes "石炭20個^000000だ。";
+		mes "[Helisun]";
+		mes "The materials needed are ^FF0000Steel 10 pieces, Elunium 2 pieces, Oridecon 1 piece, Coal 20 pieces ^000000." ;
 		next;
-		mes "[ヘリスン]";
-		mes "そして、ブッチャー専用の";
-		mes "^FF0000特殊金属^000000が必要だ。";
-		mes "恐らく、この金属は";
-		mes "セルレナ博士しか作れないだろう。";
+		mes "[helisun]";
+		mes "And we need ^FF000000Special Metals^000000 for Butcher only." ;
+		mes "Perhaps only Dr. Serlena can make this metal." ;
 		next;
-		mes "[ヘリスン]";
-		mes "まず、セルレナ博士の助手である";
-		mes "「エイ」に頼んでみてくれ。";
-		mes "ちょっとヒステリックな子だが、";
-		mes "話せばわかってくれる……かも……";
+		mes "[HELISON]";
+		mes "First, ask Dr. Serlena's assistant, 'Stingray', to help you." ;
+		mes "She's a bit hysterical, but she'll understand if you talk to her. ...... Maybe ......." ;
 		next;
-		mes "[ヘリスン]";
-		mes "これでも悪いと思ってるんだ。";
-		mes "とりあえず、俺が大事にしてる";
-		mes "「クリムゾンボルト」を代わりに貸すよ";
-		mes "修理できたらちゃんと返してくれよ？";
-		mes "な？　な？";
+		mes "[HELISON]";
+		mes "I still feel bad about this." ;
+		mes "In the meantime, I'll lend you my prized "Crimson Bolt" instead, and you'll give it back to me when you can fix it, okay?" ;
+		mes "Hey?  Huh?" ;
 		close2;
 		set GUN_2QUE,6;
 		getitem 13102,1;
 		end;
 	case 6:
 	case 7:
-		mes "[ヘリスン]";
-		mes "必要な材料は^FF0000鋼鉄10個、";
-		mes "エルニウム2個、オリデオコン1個、";
-		mes "石炭20個^000000だ。";
+		mes "[helisun]";
+		mes "The materials needed are ^FF0000Steel 10 pieces, Elunium 2 pieces, Oridecon 1 piece, Coal 20 pieces ^000000." ;
 		next;
-		mes "[ヘリスン]";
-		mes "そして、ブッチャー専用の";
-		mes "^FF0000特殊金属^000000が必要だ。";
-		mes "この金属は「エイ」に頼めば";
-		mes "手に入る……かも……";
+		mes "[helisun]";
+		mes "And we need ^FF000000Special Metals^000000 for Butcher only." ;
+		mes "You can get this metal by asking "ray" ...... Maybe ......." ;
 		close;
 	case 8:
 		if(countitem(999) < 10 || countitem(985) < 2 || countitem(984) < 1 || countitem(1003) < 20) {
-			mes "[ヘリスン]";
-			mes "必要な材料は^FF0000鋼鉄10個、";
-			mes "エルニウム2個、オリデオコン1個、";
-			mes "石炭20個^000000だ。";
+			mes "[helisun]";
+			mes "The materials needed are ^FF0000Steel 10 pieces, Elunium 2 pieces, Oridecon 1 piece and coal 20 pieces ^000000." ;
 			next;
-			mes "[ヘリスン]";
-			mes "そして、ブッチャー専用の";
-			mes "^FF0000特殊金属^000000が必要だが、";
-			mes "これは手に入ったようだな。";
+			mes "[helisun]";
+			mes "And we need ^FF000000Special Metals^000000 for the Butcher only, which you seem to have gotten." ;
 			close;
 		}
-		mes "[ヘリスン]";
-		mes "ぉ、材料を集めてきたな！";
+		mes "[helisun]";
+		mes "Oh, you've gathered the materials!" ;
 		if(countitem(13102) < 1) {
-			mes "ところで、「クリムゾンボルト」は";
-			mes "どこにあるんだ？";
-			mes "………………";
-			mes "頼むから返してくれ……";
+			mes "By the way, where are the 'crimson bolts'?" ;
+			mes ".................." ;
+			mes "Please give it back to me: ......" ;
 			close;
 		}
-		mes "それじゃあ、修理を始めるから";
-		mes "少しの間だけ待っててくれ。";
+		mes "Okay then, just give me a few moments so I can start fixing it." ;
 		delitem 999,10;
 		delitem 985,2;
 		delitem 984,1;
@@ -1770,18 +1395,14 @@ lighthalzen.gat,205,284,5	script	ヘリスン	85,{
 		close;
 	case 9:
 		if(MaxWeight - Weight < 2500) {
-			mes "-所持アイテムの重量が多いため";
-			mes "アイテムを受けとることができません-";
-			mes "-所持アイテムを減らしてから、再度";
-			mes "話しかけてください-";
+			mes "-You cannot receive the item due to the high weight of the item in your possession--please reduce the number of items in your possession and then speak to me again";
 			close;
 		}
-		mes "[ヘリスン]";
-		mes "ふぅ……なんとか無事修理できた。";
-		mes "本当にすまなかった。";
-		mes "代わりと言ってはなんだが、";
-		mes "ブッチャーの機能を強化しておいた。";
-		mes "大切に使ってくれ。";
+		mes "[helisun]";
+		mes "Huh. ...... I managed to repair it successfully." ;
+		mes "I'm really sorry." ;
+		mes "I'm sorry to say that I've enhanced the butcher's functionality as a replacement." ;
+		mes "Take good care of it." ;
 		set GUN_2QUE,0;
 		getitem 13159,1;
 		close;
@@ -1789,483 +1410,374 @@ lighthalzen.gat,205,284,5	script	ヘリスン	85,{
 }
 
 //============================================================
-// デストロイヤー製作
+// Destroyer Production
 //- Registry -------------------------------------------------
-// GUN_3QUE -> 0～2
+// GUN_3QUE -> 0 to 2
 //------------------------------------------------------------
-que_ng.gat,185,180,3	script	ベネッサ	726,{
+que_ng.gat,185,180,3 script venessa 726,{
 	switch(GUN_3QUE) {
 	case 0:
-		mes "[ベネッサ]";
-		mes "は！　いやぁ！";
-		mes "せい！　とりゃぁ！";
-		mes "いつか必ず";
-		mes "世界中の格闘技を";
-		mes "全部マスターするぞ！";
+		mes "[Benessa]";
+		mes "Ha!  No!" ;
+		mes "Sei!  Toria!" ;
+		mes "Someday I will master all the martial arts in the world!" ;
 		next;
-		if(Job != Job_Gunslinger) {
-			mes "[ベネッサ]";
-			mes "ん？　何？";
-			mes "練習の邪魔になるから";
-			mes "あっち行ってくれる？";
+		if(Job ! = Job_Gunslinger) {
+			mes "[Venessa]";
+			mes "Hmm?  What?" ;
+			mes "Can you go away so I don't have to interrupt your practice?" ;
 			close;
 		}
-		mes "[ベネッサ]";
-		mes "ん？";
-		mes "あんたガンスリンガーだね？";
-		mes "練習の邪魔になるんだけど。";
-		mes "何か用なの？";
+		mes "[Venessa]";
+		mes "Hmm?" ;
+		mes "You're Gunslinger, aren't you?" ;
+		mes "I'm interrupting your practice." ;
+		mes "What can I do for you?" ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "いえ、練習を見ていました。";
-		mes "すごいかっこよかったから……";
+		mes "No, I was watching the practice." ;
+		mes "Because it was so cool. ......" ;
 		next;
-		mes "[ベネッサ]";
-		mes "お！";
-		mes "あんた格闘技が好きなの？";
-		mes "ならこっちへ来なよ。";
-		mes "私が技をかけてやるよ。";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "……え？";
-		mes "あ、いや、";
-		mes "お気になさらずに。";
-		next;
-		mes "[ベネッサ]";
-		mes "大丈夫、大丈夫。";
-		mes "ほら！";
-		mes "-シュ！　シュ！-";
+		mes "[Venessa]";
+		mes "Oh!" ;
+		mes "You like martial arts?" ;
+		mes "Then come over here." ;
+		mes "I'll give you some moves." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "あわわ、こっちに来ないでください！";
-		mes "わ……うわぁ！";
-		mes "-シュッシュ！-";
-		mes "-ぶん！　ぶぉん！-";
+		mes "...... Eh?" ;
+		mes "Oh, no, don't worry about it." ;
 		next;
-		mes "[ベネッサ]";
-		mes "何で避けるのよ！";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "当たり前じゃないですか！";
-		mes "危ないでしょうが！";
-		next;
-		mes "[ベネッサ]";
-		mes "やれやれ。";
-		mes "これぐらいで";
-		mes "びびらないでよ。";
+		mes "[Venessa]";
+		mes "I'm fine, I'm fine." ;
+		mes "See!" ;
+		mes "-sh!  Sh! -";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "わかっているんですか！";
-		mes "当たったらケガをするんですよ！";
+		mes "Aww, don't come over here!" ;
+		mes "Wa ...... Aww!" ;
+		mes "--shush! --boom!　Boom! -";
 		next;
-		mes "[ベネッサ]";
-		mes "はいはい、そうねー";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "大体いきなり…………";
-		next;
-		mes "[ベネッサ]";
-		mes "シャラップ！";
+		mes "[Venessa]";
+		mes "Why are you avoiding it!" ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "………………";
+		mes "Isn't it obvious!" ;
+		mes "It's not safe!" ;
 		next;
-		mes "[ベネッサ]";
-		mes "はい。";
-		mes "確かにやりすぎたわね。";
-		mes "一応反省してるのよ。";
-		mes "だから、特別にあんたのために";
-		mes "武器を作ってあげるわよ。";
-		next;
-		mes "[ベネッサ]";
-		mes "私はベネッサ・ルイス。";
-		mes "元々は格闘志望生だったんだけど、";
-		mes "今はここで武器を作っているわ。";
-		mes "ま、お金が無いってことよ。";
-		next;
-		mes "[ベネッサ]";
-		mes "私が作れる武器は";
-		mes "デストロイヤー。";
-		next;
-		mes "[ベネッサ]";
-		mes "私が格闘技の大会に出る時に";
-		mes "使う名前を付けた武器よ。";
-		mes "ふふふ……";
-		mes "デストロイヤー！";
+		mes "[Venessa]";
+		mes "Oh dear." ;
+		mes "Don't freak out over this." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "わあ！";
-		mes "もうやめてくださいって！";
+		mes "You know what I mean!" ;
+		mes "If it hits you, you'll get hurt!" ;
 		next;
-		mes "[ベネッサ]";
-		mes "わかってる、わかってるって。";
-		mes "もー";
-		mes "一応、デストロイヤーを作るには";
-		mes "材料が必要よ。";
+		mes "[Venessa]";
+		mes "Yes, yes, yes - I know!"
 		next;
-		mes "[ベネッサ]";
-		mes "どう？";
-		mes "こんな機会はそうそうないわよ。";
-		mes "作ってみる？";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "Roughly suddenly ............" ;
 		next;
-		if(select("またにします","お願いします")==1) {
-			mes "[ベネッサ]";
-			mes "あらら、残念。";
-			mes "あんたには良い機会だったのに。";
-			mes "後で後悔しても知らないよ。";
-			mes "じゃ、ばいば～い。";
+		mes "[Venessa]";
+		mes "Shallap!" ;
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes ".................." ;
+		next;
+		mes "[Venessa]";
+		mes "Yes." ;
+		mes "You certainly overdid it." ;
+		mes "I'm sorry, in case you're wondering." ;
+		mes "So I'm going to make a special weapon for you." ;
+		next;
+		mes "[Benessa]";
+		mes "I am Benessa Lewis." ;
+		mes "I used to be an aspiring fighter, but now I'm here making weapons." ;
+		mes "Well, I mean I don't have any money." ;
+		next;
+		mes "[Venessa]";
+		mes "The weapon I can make is a Destroyer." ;
+		next;
+		mes "[Benessa]";
+		mes "This is the weapon I name for my martial arts competitions." ;
+		mes "Hmmm... ......." ;
+		mes "Destroyer!" ;
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "Wow!" ;
+		mes "Please stop already!" ;
+		next;
+		mes "[Venessa]";
+		mes "I know, I know, I know." ;
+		mes "Mooo, just in case you need the ingredients to make a Destroyer." ;
+		next;
+		mes "[Venessa]";
+		mes "What do you think?" ;
+		mes "It's not every day you get an opportunity like this." ;
+		mes "Do you want to make it?" ;
+		next;
+		if(select("I'll do it again", "please")==1) {
+			mes "[Venessa]";
+			mes "Oh dear, residual GOST."
+			mes "That would have been a good time for you." ;
+			mes "I don't know if you'll regret it later." ;
+			mes "Well, bye-bye." ;
 			close;
 		}
-		mes "[ベネッサ]";
-		mes "オッケー。";
-		mes "デストロイヤーを作るには";
-		mes "古い鉄板50個、";
-		mes "オリデオコン5個、";
-		mes "錆びたネジ70個、";
-		mes "手数料の10万Zenyが必要よ。";
+		mes "[Venessa]";
+		mes "Ok." ;
+		mes "To build the Destroyer, you need 50 old steel plates, 5 Oridecon, 70 rusty screws, and 100,000 Zeny for the fee." ;
 		set GUN_3QUE,1;
 		close;
 	case 1:
 		if(countitem(7319) < 50 || countitem(984) < 5 || countitem(7317) < 70) {
-			mes "[ベネッサ]";
-			mes "デストロイヤーを作るには";
-			mes "古い鉄板50個、";
-			mes "オリデオコン5個、";
-			mes "錆びたネジ70個、";
-			mes "手数料の10万Zenyが必要よ。";
+			mes "[Venessa]";
+			mes "To build the Destroyer, you need 50 old steel plates, 5 Oridecon, 70 rusty screws, and 100,000 Zeny for the fee." ;
 			close;
 		}
 		if(Zeny < 100000) {
-			mes "[ベネッサ]";
-			mes "材料は十分だけど、";
-			mes "手数料の10万Zenyが足りないわよ。";
+			mes "[Venessa]";
+			mes "You have enough material, but you're short 100,000 Zeny for the fee." ;
 			close;
 		}
 		if(MaxWeight - Weight <= 1200) {
-			mes "[ベネッサ]";
-			mes "荷物がいっぱいじゃない。";
-			mes "ちょっと整理してきてよ。";
+			mes "[Venessa]";
+			mes "The luggage is not full." ;
+			mes "Go organize it a bit." ;
 			close;
 		}
-		mes "[ベネッサ]";
-		mes "オッケー";
-		mes "全部そろってるわね。";
-		mes "じゃ、あらかじめ作っておいた";
-		mes "デストロイヤーと";
-		mes "交換してあげる。";
+		mes "[Venessa]";
+		mes "Ok, you've got everything." ;
+		mes "Well, I'll trade you the Destroyer I made beforehand." ;
 		delitem 7319,50;
 		delitem 984,5;
 		delitem 7317,70;
 		set GUN_3QUE,2;
 		getitem 13160,1;
 		next;
-		mes "[ベネッサ]";
-		mes "もし、また必要になったら";
-		mes "いつでも来てね。";
-		mes "次は他の格闘術を";
-		mes "かけてあ・げ・る。";
+		mes "[Venessa]";
+		mes "If you ever need me again, you can always come back." ;
+		mes "Next time, I'll give you another fighting technique." ;
 		close;
 	case 2:
-		mes "[ベネッサ]";
-		mes "お、また来たわね？";
-		mes "元気してる？";
-		mes "そうそう、新しい武器ができたの。";
-		mes "よかったら";
-		mes "作ってあげるわよ。";
+		mes "[Venessa]";
+		mes "Oh, here we go again, aren't we?" ;
+		mes "How are you?" ;
+		mes "Oh yeah, I got a new weapon." ;
+		mes "I can make you one if you want." ;
 		next;
-		switch(select("デストロイヤー","スロット付きデストロイヤー","やめておく")) {
+		switch(select("Destroyer", "Slotted Destroyer", "Don't")) {
 		case 1:
-			mes "[ベネッサ]";
-			mes "オッケー。";
-			mes "デストロイヤーを作るには";
-			mes "古い鉄板50個、錆びたネジ70個、";
-			mes "オリデオコン5個、";
-			mes "手数料の10万Zenyが必要よ。";
-			mes "作ってみる？";
+			mes "[Venessa]";
+			mes "Ok." ;
+			mes "To build the Destroyer, you need 50 old steel plates, 70 rusty screws, 5 Oridecon, and 100,000 Zeny for the fee." ;
+			mes "Do you want to build it?" ;
 			next;
-			if(select("ちょっと考えてみます","お願いします")==1) {
-				mes "[ベネッサ]";
-				mes "あ、そう。";
-				mes "それじゃあゆっくり";
-				mes "考えてみてよ。";
+			if(select("I'll think about it", "please")==1) {
+				mes "[Venessa]";
+				mes "Oh, yeah." ;
+				mes "Then take your time and think about it." ;
 				close;
 			}
 			if(countitem(7319) < 50 || countitem(984) < 5 || countitem(7317) < 70) {
-				mes "[ベネッサ]";
-				mes "デストロイヤーを作るには";
-				mes "古い鉄板50個、";
-				mes "オリデオコン5個、";
-				mes "錆びたネジ70個、";
-				mes "手数料の10万Zenyが必要よ。";
+				mes "[Venessa]";
+				mes "To build the Destroyer, you need 50 old steel plates, 5 Oridecon, 70 rusty screws, and 100,000 Zeny for the fee." ;
 				close;
 			}
 			if(Zeny < 100000) {
-				mes "[ベネッサ]";
-				mes "材料は十分だけど、";
-				mes "手数料の10万Zenyが足りないわよ。";
+				mes "[Venessa]";
+				mes "You have enough material, but you're short 100,000 Zeny for the fee." ;
 				close;
 			}
 			if(MaxWeight - Weight <= 1200) {
-				mes "[ベネッサ]";
-				mes "荷物がいっぱいじゃない。";
-				mes "ちょっと整理してきてよ。";
+				mes "[Venessa]";
+				mes "The luggage is not full." ;
+				mes "Go organize it a bit." ;
 				close;
 			}
-			mes "[ベネッサ]";
-			mes "オッケー";
-			mes "全部そろってるわね。";
-			mes "じゃ、あらかじめ作っておいた";
-			mes "デストロイヤーと";
-			mes "交換してあげる。";
+			mes "[Venessa]";
+			mes "Ok, you've got everything." ;
+			mes "Well, I'll trade you the Destroyer I made beforehand." ;
 			delitem 7319,50;
 			delitem 984,5;
 			delitem 7317,70;
 			getitem 13160,1;
 			next;
-			mes "[ベネッサ]";
-			mes "もし、また必要になったら";
-			mes "いつでも来てね。";
-			mes "次は他の格闘術を";
-			mes "かけてあ・げ・る。";
+			mes "[Venessa]";
+			mes "If you ever need me again, you can always come back." ;
+			mes "Next time, I'll give you another fighting technique." ;
 			close;
 		case 2:
-			mes "[ベネッサ]";
-			mes "オッケー";
-			mes "スロット付きのデストロイヤーは";
-			mes "私が個人的に集めている";
-			mes "のを持ってくれば";
-			mes "交換してあげるわ。";
+			mes "[Venessa]";
+			mes "I'll trade you a Destroyer with an okie slot if you bring me one of my personal collection." ;
 			next;
-			mes "[ベネッサ]";
-			mes "交換するのは";
-			mes "2スロットあるフィンガー1個、";
-			mes "オリデオコン5個。";
-			mes "作ってみる？";
+			mes "[Benessa]";
+			mes "I will trade you 1 Finger with 2 slots and 5 Oridecon." ;
+			mes "Do you want to make it?" ;
 			next;
-			if(select("ちょっと考えてみます","お願いします")==1) {
-				mes "[ベネッサ]";
-				mes "あ、そう。";
-				mes "それじゃあゆっくり";
-				mes "考えてみてよ。";
+			if(select("I'll think about it", "please")==1) {
+				mes "[Venessa]";
+				mes "Oh, yeah." ;
+				mes "Then take your time and think about it." ;
 				close;
 			}
 			if(countitem(1812) < 1 || countitem(984) < 5) {
-				mes "[ベネッサ]";
-				mes "交換するのは";
-				mes "2スロットあるフィンガー1個、";
-				mes "オリデオコン5個よ。";
+				mes "[Venessa]";
+				mes "You have 1 finger with 2 slots to replace, 5 Oridecon." ;
 				close;
 			}
 			if(MaxWeight - Weight <= 1200) {
-				mes "[ベネッサ]";
-				mes "荷物がいっぱいじゃない。";
-				mes "ちょっと整理してきてよ。";
+				mes "[Venessa]";
+				mes "The luggage is not full." ;
+				mes "Go organize it a bit." ;
 				close;
 			}
-			mes "[ベネッサ]";
-			mes "オッケー";
-			mes "全部そろってるわね。";
-			mes "じゃ、あらかじめ作っておいた";
-			mes "スロット付きのデストロイヤーと";
-			mes "交換してあげる。";
+			mes "[Venessa]";
+			mes "Ok, you've got everything." ;
+			mes "Well, I'll trade you the pre-made slotted Destroyer." ;
 			delitem 1812,1;
 			delitem 984,5;
 			getitem 13161,1;
 			next;
-			mes "[ベネッサ]";
-			mes "もし、また必要になったら";
-			mes "いつでも来てね。";
-			mes "次は他の格闘術を";
-			mes "かけてあ・げ・る。";
+			mes "[Venessa]";
+			mes "If you ever need me again, you can always come back." ;
+			mes "Next time, I'll give you another fighting technique." ;
 			close;
 		case 3:
-			mes "[ベネッサ]";
-			mes "あ、そう。";
-			mes "それじゃあゆっくり";
-			mes "していってよ。";
-			mes "それとも、";
-			mes "私とスパーリングでもする？";
+			mes "[Venessa]";
+			mes "Oh, yeah." ;
+			mes "Then go ahead and take your time." ;
+			mes "Or do you want to spar with me?" ;
 			close;
 		}
 	}
 }
 
 //============================================================
-// インフェルノ製作
+// Inferno Production
 //- Registry -------------------------------------------------
-// GUN_4QUE -> 0～5
+// GUN_4QUE -> 0 to 5
 //------------------------------------------------------------
-que_ng.gat,187,163,3	script	イングリッド	744,{
+que_ng.gat,187,163,3 script Ingrid 744,{
 	switch(GUN_4QUE) {
 	case 0:
-		mes "[イングリッド]";
-		mes "こんにちは！";
-		mes "武器の製作を担当している";
-		mes "イングリッドと言います。";
-		mes "よろしくお願いします。";
+		mes "[Ingrid]";
+		mes "Hello!" ;
+		mes "My name is Ingrid and I am in charge of making weapons." ;
+		mes "Nice to meet you." ;
 		next;
-		if(Job != Job_Gunslinger) {
-			mes "[イングリッド]";
-			mes "でも、残念ながら";
-			mes "私が制作する武器は";
-			mes "ガンスリンガー専用です。";
+		if(Job ! = Job_Gunslinger) {
+			mes "[Ingrid]";
+			mes "But, while remaining GOST, the weapon I produce is for Gunslinger only." ;
 			next;
-			mes "[イングリッド]";
-			mes "お客様は";
-			mes "ガンスリンガーギルドに";
-			mes "加入していないので、";
-			mes "私の武器を使うことはできません。";
-			mes "申し訳ありません。";
+			mes "[Ingrid]";
+			mes "You are not a member of the Gunslinger guild, so you cannot use my weapons." ;
+			mes "I am sorry." ;
 			close;
 		}
-		mes "[イングリッド]";
-		mes "まだ仕事を始めたばかりですが、";
-		mes "一生懸命がんばります！";
+		mes "[Ingrid]";
+		mes "I'm just starting my job, but I'll do my best!" ;
 		next;
-		mes "[イングリッド]";
-		mes "ああ……どきどきします。";
-		mes "私はお客様のために";
-		mes "インフェルノという武器を";
-		mes "作っています。";
+		mes "[Ingrid]";
+		mes "Oh ...... I'm thrilled." ;
+		mes "I make a weapon called Inferno for my customers." ;
 		next;
-		mes "[イングリッド]";
-		mes "インフェルノは";
-		mes "ガンスリンガーギルドの研究所で";
-		mes "開発された武器の中でも、";
-		mes "最高の一品です。";
+		mes "[Ingrid]";
+		mes "The Inferno is one of the best weapons developed in the Gunslinger Guild laboratories." ;
 		next;
-		mes "[イングリッド]";
-		mes "高い破壊力を備えながら、";
-		mes "人体工学的設計を考え、";
-		mes "手に持った時の安定性。";
-		mes "発砲の反動を最小限にした";
-		mes "素晴らしい武器です！";
-		mes "ふふふふふふ……";
+		mes "[Ingrid]";
+		mes "Stability when held in the hand, considering the human body engineering design, while providing high destructive power." ;
+		mes "A great weapon with minimal recoil from firing!" ;
+		mes "Hmmmmmmmmm... ......." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "……詳しいんですね。";
+		mes "...... You know a lot about it, don't you?" ;
 		next;
-		mes "[イングリッド]";
-		mes "当然です！";
-		mes "その武器は私が設計";
-		mes "したんですから。";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "……なるほど……";
-		next;
-		mes "[イングリッド]";
-		mes "……あー、んー";
-		mes "ついつい自慢話に";
-		mes "なってしまいましたね。";
-		mes "セルレナ博士に比べると";
-		mes "私なんて、まだまだ足元にも";
-		mes "及ばないのに……";
-		next;
-		mes "[イングリッド]";
-		mes "実は、私もガンスリンガー";
-		mes "になりたかったんですが、";
-		mes "身も心もついていけなくて、";
-		mes "諦めちゃったんです。";
-		next;
-		mes "[イングリッド]";
-		mes "でも、試験の間、";
-		mes "セルレナ博士がずっと";
-		mes "私の事を気にしてくれて、";
-		mes "今のこの仕事ができるように";
-		mes "色々と手伝ってくれたんです。";
-		next;
-		mes "[イングリッド]";
-		mes "ガンスリンガーになれなかったのは";
-		mes "ちょっと残念だけど、";
-		mes "私と一緒に試験を受けた";
-		mes "私のお兄ちゃんは";
-		mes "ガンスリンガーになれました。";
-		next;
-		mes "[イングリッド]";
-		mes "お兄ちゃんだけでも";
-		mes "自分の夢を掴む事ができて、";
-		mes "本当に嬉しいです。";
-		next;
-		mes "[イングリッド]";
-		mes "アハハ。";
-		mes "ごめんなさい。";
-		mes "なんだか一人で勝手に";
-		mes "しゃべってますね。";
+		mes "[Ingrid]";
+		mes "Of course I do!" ;
+		mes "Because I designed that weapon." ;
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "いいんですよ。";
-		mes "私が見る限り、イングリッドさんは";
-		mes "ガンスリンガーになれなかった今でも";
-		mes "充分、輝いているみたいです。";
+		mes "...... I see: ......" ;
 		next;
-		mes "[イングリッド]";
-		mes "フフ、ありがとうございます。";
-		mes "本当に、今の仕事は楽しいです。";
-		mes "……さて、話を戻しましょうか。";
+		mes "[Ingrid]";
+		mes "...... Oh, hmmm... I'm just bragging." ;
+		mes "Compared to Dr. Serlena, I'm not even close to being on my feet. ......" ;
 		next;
-		mes "[イングリッド]";
-		mes "インフェルノの製作には";
-		mes "古い鉄板100個、錆びたネジ50個、";
-		mes "オリデオコン10個、";
-		mes "燃えている心臓100個と";
-		mes "手数料20万Zenyが必要です。";
-		mes "よろしいですか？";
+		mes "[Ingrid]";
+		mes "Actually, I wanted to be a Gunslinger too, but I couldn't keep up with my body and mind, so I gave up." ;
 		next;
-		if(select("少し考えてみます","お願いします")==1) {
-			mes "[イングリッド]";
-			mes "わかりました。";
-			mes "では、ゆっくりと";
-			mes "考えてみてください。";
+		mes "[Ingrid]";
+		mes "But during the exam, Dr. Serlena cared about me the whole time and helped me a lot so that I could do this job now." ;
+		next;
+		mes "[Ingrid]";
+		mes "It's a bit of a lingering ghost that I didn't become a Gunslinger, but my brother, who took the exam with me, became a Gunslinger." ;
+		next;
+		mes "[Ingrid]";
+		mes "I'm so happy that my big brother alone was able to catch his own dream." ;
+		next;
+		mes "[Ingrid]";
+		mes "Hahaha." ;
+		mes "I'm sorry." ;
+		mes "You're kind of talking on your own." ;
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "It's okay." ;
+		mes "As far as I can see, Ingrid seems to be shining bright enough even now that she couldn't become a Gunslinger." ;
+		next;
+		mes "[Ingrid]";
+		mes "Hmph, thank you very much." ;
+		mes "Really, I'm enjoying my job now." ;
+		mes "...... Now, let's get back to the story, shall we?" ;
+		next;
+		mes "[Ingrid]";
+		mes "To make the Inferno, you will need 100 old steel plates, 50 rusty screws, 10 Oridecon, 100 burning hearts and a fee of 200,000 Zeny." ;
+		mes "May I?" ;
+		next;
+		if(select("I'll give it some thought.", "Please")==1) {
+			mes "[Ingrid]";
+			mes "I understand." ;
+			mes "Then please take your time and think about it." ;
 			close;
 		}
-		mes "[イングリッド]";
-		mes "わかりました。";
-		mes "では、材料が集まったら";
-		mes "また来てください。";
+		mes "[Ingrid]";
+		mes "I understand." ;
+		mes "Then come back when you have gathered the materials." ;
 		next;
-		mes "[イングリッド]";
-		mes "インフェルノの製作には";
-		mes "古い鉄板100個、錆びたネジ50個、";
-		mes "オリデオコン10個、";
-		mes "燃えている心臓100個と";
-		mes "手数料20万Zenyが必要です。";
-		mes "材料を間違えないでください。";
+		mes "[Ingrid]";
+		mes "To make the Inferno, you will need 100 old steel plates, 50 rusty screws, 10 Oridecon, 100 burning hearts and a fee of 200,000 Zeny." ;
+		mes "Please do not make a mistake with the materials." ;
 		set GUN_4QUE,1;
 		close;
 	case 1:
 		if(countitem(7319) < 100 || countitem(7317) < 50 || countitem(984) < 10 || countitem(7097) < 100) {
-			mes "[イングリッド]";
-			mes "インフェルノの製作には";
-			mes "古い鉄板100個、錆びたネジ50個、";
-			mes "オリデオコン10個、";
-			mes "燃えている心臓100個と";
-			mes "手数料20万Zenyが必要です。";
-			mes "材料を間違えないでください。";
+			mes "[Ingrid]";
+			mes "To make Inferno, you need 100 old iron plates, 50 rusty screws, 10 Oridecon, 100 burning hearts and a fee of 200,000 Zeny." ;
+			mes "Please do not make a mistake with the materials." ;
 			close;
 		}
 		if(Zeny < 200000) {
-			mes "[イングリッド]";
-			mes "材料は十分ですけど、";
-			mes "手数料が足りてないです。";
-			mes "20万Zenyです。";
-			mes "間違えないでください。";
+			mes "[Ingrid]";
+			mes "I have enough material, but not enough commission." ;
+			mes "It is 200,000 Zeny." ;
+			mes "Please don't make a mistake." ;
 			close;
 		}
 		if(MaxWeight - Weight <= 1250) {
-			mes "[イングリッド]";
-			mes "荷物が一杯じゃないですか？";
-			mes "少し整理してから";
-			mes "また来てください。";
+			mes "[Ingrid]";
+			mes "Isn't your baggage full?" ;
+			mes "Please organize a bit and come back later." ;
 			close;
 		}
-		mes "[イングリッド]";
-		mes "え、もう集めてきたんですか？";
-		mes "本当……びっくりです。";
-		mes "では、さっそく……";
+		mes "[Ingrid]";
+		mes "Oh, you've already collected them?" ;
+		mes "Really ...... I'm surprised." ;
+		mes "Well, let's get started: ......." ;
 		next;
-		mes "[イングリッド]";
-		mes "はい、これがインフェルノです。";
-		mes "どうか大切に使ってください。";
+		mes "[Ingrid]";
+		mes "Yes, this is Inferno." ;
+		mes "Please take good care of it." ;
 		delitem 7319,100;
 		delitem 7317,50;
 		delitem 984,10;
@@ -2273,54 +1785,45 @@ que_ng.gat,187,163,3	script	イングリッド	744,{
 		set GUN_4QUE,2;
 		getitem 13162,1;
 		next;
-		mes "[イングリッド]";
-		mes "もし、私のお兄ちゃんに会ったら、";
-		mes "話をしてみてください。";
-		mes "お兄ちゃんの名前はイングラム。";
-		mes "よかったら探してみてください。";
+		mes "[Ingrid]";
+		mes "If you see my brother, talk to him." ;
+		mes "My brother's name is Ingram." ;
+		mes "You can look for him if you want." ;
 		close;
 	case 2:
-		mes "[イングリッド]";
-		mes "こんにちは。";
-		mes "またいらっしゃいましたね。";
-		mes "インフェルノが必要に";
-		mes "なったのですか？";
+		mes "[Ingrid]";
+		mes "Hello." ;
+		mes "You are here again." ;
+		mes "Did you need an inferno?" ;
 		next;
-		if(select("いいえ","はい")==1) {
-			mes "[イングリッド]";
-			mes "そうですか。";
-			mes "では、ゆっくりと";
-			mes "していってください。";
+		if(select("No", "Yes")==1) {
+			mes "[Ingrid]";
+			mes "I see." ;
+			mes "Then please take your time." ;
 			close;
 		}
 		if(countitem(7319) < 100 || countitem(7317) < 50 || countitem(984) < 10 || countitem(7097) < 100) {
-			mes "[イングリッド]";
-			mes "インフェルノの製作には";
-			mes "古い鉄板100個、錆びたネジ50個、";
-			mes "オリデオコン10個、";
-			mes "燃えている心臓100個と";
-			mes "手数料20万Zenyが必要です。";
-			mes "材料を間違えないでください。";
+			mes "[Ingrid]";
+			mes "To make Inferno, you need 100 old iron plates, 50 rusty screws, 10 Oridecon, 100 burning hearts and a fee of 200,000 Zeny." ;
+			mes "Please do not make a mistake with the materials." ;
 			close;
 		}
 		if(Zeny < 200000) {
-			mes "[イングリッド]";
-			mes "材料は十分ですけど、";
-			mes "手数料が足りてないです。";
-			mes "20万Zenyです。";
-			mes "間違えないでください。";
+			mes "[Ingrid]";
+			mes "I have enough material, but not enough commission." ;
+			mes "It is 200,000 Zeny." ;
+			mes "Please don't make a mistake." ;
 			close;
 		}
 		if(MaxWeight - Weight <= 1250) {
-			mes "[イングリッド]";
-			mes "荷物が一杯じゃないですか？";
-			mes "少し整理してから";
-			mes "また来てください。";
+			mes "[Ingrid]";
+			mes "Isn't your baggage full?" ;
+			mes "Please organize a bit and come back later." ;
 			close;
 		}
-		mes "[イングリッド]";
-		mes "はい、これがインフェルノです。";
-		mes "どうか大切に使ってください。";
+		mes "[Ingrid]";
+		mes "Yes, this is Inferno." ;
+		mes "Please take good care of it." ;
 		delitem 7319,100;
 		delitem 7317,50;
 		delitem 984,10;

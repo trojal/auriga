@@ -1,59 +1,45 @@
 //====================================================================
 //Ragnarok Online Acolyte jobchange script
-//
-//　■ CHANGE_AL -> 0～1, 0～6(Old)
-//     CHANGE_PR -> プリースト転職用
-//     OLD_CLASS -> 転生前の職業
+// - CHANGE_AL -> 0 to 1, 0 to 6(Old)
+// - CHANGE_AL -> 0 to 1, 0 to 6(Old)
+// CHANGE_PR -> For Priest job change
+// OLD_CLASS -> Job before changing jobs
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and job change
 //------------------------------------------
 
-prt_church.gat,184,41,4	script	聖堂神父#AL	60,{
-	if(Upper == UPPER_HIGH && (getbaseclass(Class) != CLASS_AL)) {
-		mes "[マルシス神父]";
-		mes "多くの試練を乗り越えてきましたね。";
-		mes "貴方の活躍については";
-		mes "私の耳にも入っております。";
+prt_church.gat,184,41,4 script Cathedral Priest#AL 60,{
+	if(Upper == UPPER_HIGH && (getbaseclass(Class) ! = CLASS_AL)) {
+		mes "[Father Marcis]";
+		mes "You have been through many trials." ;
+		mes "I have heard about your success." ;
 		next;
-		if(OLD_CLASS != Job_Priest && OLD_CLASS != Job_Monk) {
-			mes "[マルシス神父]";
-			mes "しかし、貴方はアコライトの道に";
-			mes "進むことはできません。";
-			mes "貴方には別の道が見えているはず。";
-			mes "その道に向かって精進することです。";
+		if(OLD_CLASS ! = Job_Priest && OLD_CLASS ! = Job_Monk) {
+			mes "[Father Marcis]";
+			mes "But you cannot go the way of Acolyte." ;
+			mes "You must see another way." ;
+			mes "You must devote yourself to that path." ;
 			close;
 		}
 		if(getskilllv(1) < 9 || SkillPoint) {
-			mes "[マルシス神父]";
-			mes "さて、今すぐアコライトに";
-			mes "転職させてあげたいところですが、";
-			mes "そうもいかないようですね。";
-			mes "JobLvを10にまで成長させ、";
-			mes "^0000FF「基本スキル」のレベルを9^000000 に";
-			mes "する必要があるのです。";
+			mes "[Father Marcis]";
+			mes "Well, I would love to give you a new job at Acolyte right now, but I guess that's not going to happen." ;
+			mes "We need to grow his JobLv to 10, and his ^0000FF "Basic Skill" level to 9^000000." ;
 			next;
-			mes "[マルシス神父]";
-			mes "^0000FF「基本スキル」^000000のレベルは";
-			mes "^0000FF「スキルリスト」^000000ウィンドウで";
-			mes "上げることができるでしょう。";
-			mes "^0000FF「スキルリスト」^000000ウィンドウは";
-			mes "^0000FF「基本情報」^000000ウィンドウ内の";
-			mes "^0000FF「Skill」^000000ボタンで表示されますよ。";
+			mes "[Father Marcis]";
+			mes "The ^0000FF "Basic Skills" ^000000FF level would be raised in the ^0000FF "Skill List" ^000000 window." ;
+			mes "The ^0000FF 'Skill List' ^000000 window will be displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 			next;
-			mes "[マルシス神父]";
-			mes "スキルのレベルを上げるには、";
-			mes "スキルポイントを割り振った後、";
-			mes "^FF0000「確定」^000000ボタンが必要となりますよ。";
-			mes "注意が必要です。";
-			mes "それでは、またお会いできるのを";
-			mes "楽しみにお待ちしております。";
+			mes "[Father Marcis]";
+			mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm"^000000 button after assigning the skill point." ;
+			mes "Attention is required." ;
+			mes "Then we look forward to seeing you again." ;
 			close;
 		}
-		mes "[マルシス神父]";
-		mes "聖職者の道を究めんとする";
-		mes "貴方を、心から歓迎いたします。";
+		mes "[Father Marcis]";
+		mes "I welcome you with open arms as you pursue the path of the priesthood." ;
 		next;
 		unequip;
 		jobchange Job_Acolyte,UPPER_HIGH;
@@ -61,378 +47,310 @@ prt_church.gat,184,41,4	script	聖堂神父#AL	60,{
 		skill 156,1,0;
 	}
 	if(Upper == UPPER_HIGH && (getbaseclass(Class) == CLASS_AL)) {
-		mes "[マルシス神父]";
-		mes "さあ、これからも神の使いとして";
-		mes "いっそう励んでくださいね。";
-		mes "貴方の未来に幸多からんことを！";
+		mes "[Father Marcis]";
+		mes "Now, please continue to work even harder as a messenger of God." ;
+		mes "May your future be blessed!" ;
 		close;
 	}
-	mes "[マルシス神父]";
-	mes "どのようなご用件で";
-	mes "いらっしゃいましたか？";
+	mes "[Father Marcis]";
+	mes "How may I help you?" ;
 	next;
-	switch (select("アコライトに転職","アコライト転職条件を聞く","やめる")) {
+	switch (select("Change job to Acolyte", "Ask Acolyte job conditions", "Quit")) {
 	case 1:
 		if(Job == Job_Acolyte) {
-			mes "[マルシス神父]";
-			mes "貴方はもしやどこか体の具合が";
-			mes "悪いのでは……？";
-			mes "その格好はすでに";
-			mes "アコライトではありませんか？";
-			mes "まさか今のは冗談でしたと？";
+			mes "[Father Marcis]";
+			mes "Are you not feeling well somewhere ......?" ;
+			mes "Isn't that outfit already Acolyte?" ;
+			mes "You don't think that was a joke?" ;
 			next;
-			mes "[マルシス神父]";
-			mes "そうそう、";
-			mes "アコライトになられたなら、";
-			mes "冒険者アカデミーを";
-			mes "訪れることをお勧めしましょう。";
+			mes "[Father Marcis]";
+			mes "Oh yes, if you are Acolyte, I suggest you visit the Adventurer's Academy." ;
 			next;
-			mes "[マルシス神父]";
-			mes "この聖堂を出ると";
-			mes "冒険者アカデミーのサポートを";
-			mes "行っている人がいますので、";
-			mes "送ってもらうといいでしょう。";
+			mes "[Father Marcis]";
+			mes "When you leave this cathedral, you will find someone who provides support for the Adventurers Academy and you can ask him to send you there." ;
 			close;
 		}
-		if(Job != Job_Novice) {
-			mes "[マルシス神父]";
-			mes "貴方はもう他の職業を";
-			mes "お持ちでは？";
+		if(Job ! = Job_Novice) {
+			mes "[Father Marcis]";
+			mes "Don't you already have another job?" ;
 			close;
 		}
 		break;
 	case 2:
-		mes "[マルシス神父]";
-		mes "貴方はアコライトになりたいのですか？";
-		mes "では、私がこれから言う条件を、";
-		mes "神様からの試練だと思って";
-		mes "克服するのです。";
+		mes "[Father Marcis]";
+		mes "Do you want to be Acolyte?" ;
+		mes "Then you must overcome the conditions I am about to mention as a test from God." ;
 		next;
-		mes "[マルシス神父]";
-		mes "まず、^0000FF「基本スキル」を9^000000 まで";
-		mes "あげなければいけません。";
-		mes "この世界で生きて行くのに";
-		mes "必要な修行で、自分の為でもあります。";
+		mes "[Father Marcis]";
+		mes "First, you must raise your ^0000FF "basic skills" to 9^000000." ;
+		mes "This is the training you need to live in this world, and it is for your own good." ;
 		next;
-		mes "[マルシス神父]";
-		mes "その条件を満たしたら";
-		mes "ここに戻ってください。";
-		mes "その時、神の御使いたる聖なる";
-		mes "職業に就くことができるでしょう。";
+		mes "[Father Marcis]";
+		mes "When you fulfill that condition, come back here." ;
+		mes "Then you will be able to enter the holy profession of God's angel." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 3:
-		mes "[マルシス神父]";
-		mes "それでは。";
+		mes "[Father Marcis]";
+		mes "Then." ;
 		close;
 	}
 	//case 0
 	if(CHANGE_AL==0) {
-		mes "[マルシス神父]";
-		mes "貴方は心から神様の御使いに";
-		mes "なるおつもりですか？";
+		mes "[Father Marcis]";
+		mes "Are you sincerely going to be God's messenger?" ;
 		next;
-		if(select("はい。","やっぱり、やめます。")==2) {
-			mes "[マルシス神父]";
-			mes "それでは。";
+		if(select("Yes." mes "[Father Marcis]"; mes "I still don't want to.") ==2) {
+			mes "[Father Marcis]";
+			mes "Then." ;
 			close;
 		}
 		set CHANGE_AL,1;
-		mes "[マルシス神父]";
-		mes "いいでしょう。";
-		mes "それではまず、貴方の名前を";
-		mes "教えてください。";
+		mes "[Father Marcis]";
+		mes "All right." ;
+		mes "Then first tell me your name." ;
 		next;
-		menu "名を名乗る",-;
-		mes "[マルシス神父]";
-		mes "ふむふむ。";
-		mes " " +strcharinfo(0)+ " か。";
-		mes "良い響きの名前ですね。";
-		mes "貴方のアコライト転職申請書を";
-		mes "受諾します。";
+		menu "Tell me your name",-;
+		mes "[Father Marcis]";
+		mes "Mmm-hmm." ;
+		mes " " +strcharinfo(0)+ "; mes " " +strcharinfo(0)+ "." ;
+		mes "That's a nice sounding name." ;
+		mes "I accept your Acolyte job application." ;
 		next;
 	}
-	mes "[マルシス神父]";
-	mes "では、 " +strcharinfo(0)+ " よ。";
-	mes "神様の志を遂行できるだけの準備は";
-	mes "できていますか…？";
-	mes "これより、貴方がアコライトとして";
-	mes "相応しい人物であるかどうか";
-	mes "調べさせてもらいます。";
+	mes "[Father Marcis]";
+	mes "So, " +strcharinfo(0)+ "." ;
+	mes "Are you ready enough to carry out God's will...?" ;
+	mes "From now on, I will check if you are worthy of being an Acolyte." ;
 	next;
-	mes "[マルシス神父]";
-	mes "…";
+	mes "[Father Marcis]";
+	mes "..." ;
 	next;
-	mes "[マルシス神父]";
-	mes "……";
+	mes "[Father Marcis]";
+	mes "......" ;
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[マルシス神父]";
-		mes "なに？！まだ基本的な修練も";
-		mes "できてないではありませんか！";
-		mes "貴方が成長するためには、";
-		mes "JobLvを10にまで成長させ、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "する必要があるのです。";
+		mes "[Father Marcis]";
+		mes "What? You haven't even done the basic training yet!" ;
+		mes "In order for you to grow, you need to grow your JobLv to 10 and your ^0000FF "basic skill" level to 9^000000." ;
 		next;
-		mes "[マルシス神父]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができるでしょう。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されますよ。";
+		mes "[Father Marcis]";
+		mes "The ^0000FF "Basic Skills" ^000000FF level would be raised in the ^0000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window will be displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[マルシス神父]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要となりますよ。";
-		mes "注意が必要です。";
-		mes "それでは、またお会いできるのを";
-		mes "楽しみにお待ちしております。";
+		mes "[Father Marcis]";
+		mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm"^000000 button after assigning the skill point." ;
+		mes "Attention is required." ;
+		mes "Then we look forward to seeing you again." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[マルシス神父]";
-	mes "うむ。職業レベルも十分あり、";
-	mes "アコライトとしても素質も";
-	mes "あるようですし、いいでしょう。";
-	mes "貴方の意志を認め、アコライトたる";
-	mes "資格を与えましょう。";
+	mes "[Father Marcis]";
+	mes "Mm. You have a good vocational level, and you seem to have good qualities as an Acolyte, so that's good." ;
+	mes "I accept your will and grant you the qualifications to be an Acolyte." ;
 	next;
 	getitem 11034,1;
 	set CHANGE_AL,0;
 	setquest 50345;
 	unequip;
 	jobchange Job_Acolyte;
-	mes "[マルシス神父]";
-	mes "いつも我々を見守ってくださる神様に";
-	mes "感謝して、これからどのような苦難と";
-	mes "試練が迫って来ても一層信仰を守って";
-	mes "神様に身をささげるのです。";
+	mes "[Father Marcis]";
+	mes "We give thanks to God who always watches over us, and no matter what hardships and trials may come our way, we will keep our faith and offer ourselves to God." ;
 	next;
-	mes "[マルシス神父]";
-	mes "もし、これから道に迷うことがあれば、";
-	mes "アコライトの書を読むといいでしょう。";
-	mes "役にたつはずです。";
+	mes "[Father Marcis]";
+	mes "If you ever go astray, read the book of Acolyte." ;
+	mes "It should help you." ;
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "Job change",0;
 	end;
 }
 
 
 //==========================================
-// 聖地巡礼（プリーストと共用）
+// Pilgrimage to the Holy Land (shared with Priest)
 //------------------------------------------
 
-prt_fild03.gat,365,255,1	script	修行中の神父	89,{
-	//アコライト転職
+prt_fild03.gat,365,255,1 script Priest in training 89,{
+	//Acolyte job change
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[ルバルカバラ神父]";
-		mes "アコライト志望の者だな……";
-		mes "わざわざここまで来てもらって";
-		mes "申し訳ないのだが、";
-		mes "実は、もうアコライトに転職する為の";
-		mes "試験は撤廃されたのだ。";
+		mes "[Father Rubalcabara]";
+		mes "You are an aspiring Acolyte. ......" ;
+		mes "I'm sorry you had to come all the way here, but actually, the exam to get a job at Acolyte has already been eliminated." ;
 		next;
-		mes "[ルバルカバラ神父]";
-		mes "まだアコライトへの道を";
-//		mes "あきらめていなのであれば、";	//本家仕様
-		mes "あきらめていないのであれば、";
-		mes "マルシス神父を訪ねなさい。";
+		mes "[Father Rubalcabara]";
+		mes "Still on the road to Acolyte."
+// mes "If you haven't given up, then"; // original spec.
+		mes "If you haven't given up, visit Father Marcis." ;
 		close;
 	}
-	//プリースト転職
+	//Priest job change
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
+		switch(CHANGE_PR) { //issued in npc_job_08priest.txt
 		case 0:
-			mes "[ルバルカバラ神父]";
-			mes "ごめんなさい。私は今修行中の身。";
-			mes "人とお話できません。";
+			mes "[Father Rubalcabara]";
+			mes "I'm sorry. I am in training now." ;
+			mes "I can't talk to people." ;
 			close;
 		case 1:
-			mes "[ルバルカバラ神父]";
-			mes "プリースト志望のアコライトだな…";
-			mes "トーマス司教様から連絡はいただいて";
-			mes "いる。巡礼は始まったばかりだが、";
-			mes "最期まで諦めずに頑張ってほしい。";
+			mes "[Father Rubalcabara]";
+			mes "You're an Acolyte with Priest aspirations..." ;
+			mes "Bishop Thomas has been in touch with us. The pilgrimage has just begun, but I hope you will not give up until the end." ;
 			next;
-			mes "[ルバルカバラ神父]";
-			mes "もし機会があれば、またいつでも";
-			mes "来るといい…。";
-			mes "ここは私達にとって聖地だからね。";
+			mes "[Father Rubalcabara]";
+			mes "If you have the chance, you can always come back..." ;
+			mes "This is a sacred place for us..." ;
 			next;
-			mes "[ルバルカバラ神父]";
-			mes "それでは、次の巡礼地へ向かいなさい。";
-			mes "道中くれぐれも気をつけて。";
+			mes "[Father Rubalcabara]";
+			mes "Then head on to the next pilgrimage site." ;
+			mes "Take care on your way." ;
 			set CHANGE_PR,2;
 			savepoint "prt_fild03.gat",360,255;
 			close;
 		case 2:
-			mes "[ルバルカバラ神父]";
-			mes "はやく次の巡礼地へ向かいなさい。";
-			mes "道中くれぐれも気をつけて。";
+			mes "[Father Rubalcabara]";
+			mes "Hurry up and head to the next pilgrimage site." ;
+			mes "Be careful on your way." ;
 			close;
 		default:
-			mes "[ルバルカバラ神父]";
-			mes "なぜここへ？";
-			mes "貴方には貴方の修行があるはず。";
+			mes "[Father Rubalcabara]";
+			mes "Why did you come here?" ;
+			mes "You have your own training." ;
 			close;
 		}
 	}
-	mes "[ルバルカバラ神父]";
-	mes "おお、こんな奥地にまで修行に";
-	mes "来たのか？";
-	mes "ここのモンスターは見かけと違い";
-	mes "結構強いから気をつけることだ。";
+	mes "[Father Rubalcabara]";
+	mes "Oh, you've come all this way to train in the backcountry?" ;
+	mes "Be careful, the monsters here are quite strong, unlike their appearance." ;
 	close;
 }
 
 //==============================================================
-moc_fild07.gat,41,355,4	script	修行中のシスター	95,{
-	//アコライト転職
+moc_fild07.gat,41,355,4 script Sister in training 95,{
+	//Acolyte job change
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[マチルダ]";
-		mes "巡礼者ですね？";
-		mes "わざわざここまで来てもらって";
-		mes "申し訳ありませんが、";
-		mes "もうアコライトに転職する為の";
-		mes "試験は撤廃されています。";
+		mes "[Matilda]";
+		mes "You are a pilgrim, aren't you?" ;
+		mes "I'm sorry you had to come all the way here, but the exam to change jobs to Acolyte has already been eliminated." ;
 		next;
-		mes "[マチルダ]";
-		mes "まだアコライトへの道を";
-//		mes "あきらめていなのであれば、";	//本家仕様
-		mes "あきらめていないのであれば、";
-		mes "マルシス神父をお訪ね下さい。";
+		mes "[Matilda]";
+		mes "Still on the road to Acolyte."
+// mes "If you haven't given up,"; // original spec.
+		mes "If you haven't given up, visit Father Marcis." ;
 		close;
 	}
-	//プリースト転職
+	//Priest job change
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
+		switch(CHANGE_PR) { //issued in npc_job_08priest.txt
 		case 0:
-			mes "[マチルダ]";
-			mes "貴方に神のご加護がありますように…";
+			mes "[Matilda]";
+			mes "May God bless you..." ;
 			close;
 		case 1:
-			mes "[マチルダ]";
-			mes "巡礼者ですね？";
-			mes "しかし私を訪ねる前に、他の方を";
-			mes "訪ねなければなりません。";
+			mes "[Matilda]";
+			mes "You are a pilgrim, aren't you?" ;
+			mes "But before you visit me, you must visit someone else." ;
 			next;
-			mes "[マチルダ]";
-			mes "トーマス司教様やセシル様に伺って";
-			mes "みてはいかがでしょう。";
-			mes "貴方に神のご加護がありますように…";
+			mes "[Matilda]";
+			mes "Why don't you ask Mr. Bishop Thomas or Mr. Cecil?" ;
+			mes "May God bless you..." ;
 			close;
 		case 2:
-			mes "[マチルダ]";
-			mes "あ、プリースト修行者ですね？";
-			mes "遠いところまでお疲れ様～";
-			mes "私たちプリーストたちは地上の全てに";
-			mes "信義を説かなければなりません。";
+			mes "[Matilda]";
+			mes "Oh, you are a Priest practitioner, aren't you?" ;
+			mes "Thank you for traveling so far - we Priests have to preach the faith to all on earth." ;
 			next;
-			mes "[マチルダ]";
-			mes "プリーストになられたら、是非モロクの";
-			mes "ピラミッドにいらっしゃってください。";
-			mes "あそこにはたくさんのアンデッドが";
-			mes "居ます。";
-			mes "どうか彼らを解放してあげてください…";
+			mes "[Matilda]";
+			mes "When you become a Priest, please come to the Pyramid of Morroc." ;
+			mes "There are a lot of undead there." ;
+			mes "Please let them go..." ;
 			next;
-			mes "[マチルダ]";
-			mes "それではお気をつけて…";
-			mes "貴方に神のご加護がありますように…";
+			mes "[Matilda]";
+			mes "Then please take care..." ;
+			mes "May God bless you..." ;
 			set CHANGE_PR,3;
 			savepoint "moc_fild07.gat",36,355;
 			close;
 		case 3:
-			mes "[マチルダ]";
-			mes "さ、こちらに留まらず";
-			mes "次の巡礼地へ…";
+			mes "[Matilda]";
+			mes "Well, don't stay here, go to the next pilgrimage site..." ;
 			close;
 		default:
-			mes "[マチルダ]";
-			mes "こちらへはどのようなご用で？";
-			mes "修行を続けてください。";
+			mes "[Matilda]";
+			mes "What brings you here?" ;
+			mes "Continue your training." ;
 			close;
 		}
 	}
-	mes "[マチルダ]";
-	mes "……";
+	mes "[Matilda]";
+	} mes "......" ;
 	close;
 }
 
 //==============================================================
-prt_fild00.gat,208,218,4	script	修行中の神父	98,{
-	//アコライト転職
+prt_fild00.gat,208,218,4 script Priest in training 98,{
+	//Acolyte job change
 	if(Job == Job_Novice && CHANGE_AL >= 1) {
-		mes "[洋介神父]";
-		mes "君、アコライト修行者か？";
-		mes "わざわざここまで来てもらった";
-		mes "ところですまないが、";
-		mes "もうアコライトに転職する為の";
-		mes "試験は撤廃されているんだ。";
+		mes "[Father Yosuke]";
+		mes "Are you an Acolyte practitioner?" ;
+		mes "I'm sorry you had to come all the way here, but the test to change jobs to Acolyte has already been eliminated." ;
 		next;
-		mes "[洋介神父]";
-		mes "まだアコライトへの道を";
-//		mes "あきらめていなのであれば、";	//本家仕様
-		mes "あきらめていないのであれば、";
-		mes "マルシス神父を訪ねるといい。";
+		mes "[Father Yosuke]";
+		mes "Still on the road to Acolyte."
+// mes "If you haven't given up, then"; // original spec.
+		mes "If you haven't given up, visit Father Marcis." ;
 		close;
 	}
-	//プリースト転職
+	//Priest job change
 	if(Job == Job_Acolyte) {
-		switch(CHANGE_PR) {	//npc_job_08priest.txtにて発行
+		switch(CHANGE_PR) { //issued in npc_job_08priest.txt
 		case 0:
-			mes "[洋介神父]";
-			mes "アコライトか。久しぶりだなー";
+			mes "[Father Yosuke]";
+			mes "Acolyte, huh? It's been a long time.";
 			close;
 		case 1:
 		case 2:
-			mes "[洋介神父]";
-			mes "うん、プリースト修行者だな。";
-			mes "ここまでよく訪ねてきた。";
+			mes "[Father Yosuke]";
+			mes "Yeah, Priest practitioner." ;
+			mes "I've visited here often." ;
 			next;
-			mes "[洋介神父]";
-			mes "しかし私を尋ねて来る前に";
-			mes "他に会って来るように。";
-			mes "早い話が、間違えたってことだ。";
+			mes "[Father Yosuke]";
+			mes "But before you come to ask for me, you should see someone else." ;
+			mes "The early word is that you made a mistake." ;
 			next;
-			mes "[洋介神父]";
-			mes "聖堂に帰って確認してみてくれ。";
+			mes "[Father Yosuke]";
+			mes "Go back to the cathedral and check it out." ;
 			close;
 		case 3:
-			mes "[洋介神父]";
-			mes "うん、プリースト修行者だな。";
-			mes "ここまでよく訪ねてきた。";
+			mes "[Father Yosuke]";
+			mes "Yeah, Priest practitioner." ;
+			mes "I've visited here often." ;
 			next;
-			mes "[洋介神父]";
-			mes "よし、プリーストの名に恥じないよう";
-			mes "正しく生きていきなさい。";
+			mes "[Father Yosuke]";
+			mes "Good, live rightly in the name of Priest." ;
 			next;
-			mes "[洋介神父]";
-			mes "聖堂に帰ってよし。";
-			mes "君の巡礼はここで最後だ。";
-			mes "よくここまで旅を続けたな。";
-			mes "帰りもくれぐれも気をつけるように。";
+			mes "[Father Yosuke]";
+			mes "Go back to the cathedral." ;
+			mes "Your pilgrimage ends here." ;
+			mes "[Father Yosuke]"; mes "I'm amazed you've made the journey this far." ;
+			mes "Be careful on your way back." ;
 			set CHANGE_PR,4;
 			savepoint "prt_fild00.gat",205,231;
 			close;
 		case 4:
-			mes "[洋介神父]";
-			mes "ん？聖堂に帰らないのか？";
-			mes "それともここで一生過ごしたいのか？";
+			mes "[Father Yosuke]";
+			mes "Hmm? Aren't you going back to the cathedral?" ;
+			mes "Or do you want to stay here forever?" ;
 			close;
 		default:
-			mes "[洋介神父]";
-			mes "こら、こんなところで遊んで";
-			mes "いないで早くプリーストになりなさい。";
+			mes "[Father Yosuke]";
+			mes "Hey, stop playing around here and become a Priest." ;
 			close;
 		}
 	}
-	mes "[洋介神父]";
-	mes "……";
+	mes "[Father Yosuke]";
+	mes "......" ;
 	close;
 }

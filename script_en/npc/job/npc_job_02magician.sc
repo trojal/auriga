@@ -1,323 +1,257 @@
 //====================================================================
 //Ragnarok Online Magician jobchange script
-//
-//　■ CHANGE_MG -> 0～1, 0～4(Old)
-//     OLD_CLASS -> 転生前の職業
+// - CHANGE_MG -> 0-1, 0-4(Old)
+// - CHANGE_MG -> 0 to 1, 0 to 4(Old)
+// OLD_CLASS -> occupation before reincarnation
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and job change
 //------------------------------------------
 
-geffen_in.gat,164,124,4	script	ギルド関係者#MG	123,{
+geffen_in.gat,164,124,4 script Guild Member#MG 123,{
 	if(Upper == UPPER_HIGH && (getbaseclass(Class) == CLASS_MG)) {
-		mes "[魔術師ギルド関係者]";
-		mes "うん？何かご用……？";
-		mes "私とお話している暇なんて";
-		mes "あなたにはないでしょ。";
+		mes "[Magician Guild Official]";
+		mes "Yeah? What can I do for you ......?" ;
+		mes "You don't have time to talk to me." ;
 		close;
 	}
 	if(Upper == UPPER_HIGH) {
-		if(Job != Job_Novice) {
-			mes "[魔術師ギルド関係者]";
-			mes "なぁに？";
-			mes "魔術師ギルドに関心がおあり？";
+		if(Job ! = Job_Novice) {
+			mes "[Magician Guild Official]";
+			mes "Hey?" ;
+			mes "Are you interested in the Magician Guild?" ;
 			next;
-			mes "[魔術師ギルド関係者]";
-			mes "私もそれなりに忙しいの。";
-			mes "特に用が無いのなら、";
-			mes "向こうに行っててね。";
+			mes "[Magician Guild Official]";
+			mes "I'm reasonably busy myself." ;
+			mes "If you don't have anything special to do, go over there." ;
 			close;
 		}
-		mes "[魔術師ギルド関係者]";
-		mes "あら？ひさしぶりね！";
-		mes "うんうん、でもすぐわかったわよ。";
-		mes "何か、初めて会った頃の姿に";
-		mes "よく似ていたし。";
+		mes "[Magician Guild Official]";
+		mes "Hello? It's been a while!" ;
+		mes "Yeah, yeah, but I recognized you right away." ;
+		mes "And you looked a lot like you did when I first met you." ;
 		next;
 		if(getskilllv(1) < 9 || SkillPoint) {
-			mes "[魔術師ギルド関係者]";
-			mes "う～ん、以前のようにちゃんと";
-			mes "基礎を学んできてからじゃないと";
-			mes "転職はさせてあげられないわ。";
+			mes "[Magician Guild Official]";
+			mes "Hmmm, I can't let you change jobs until you've learned the basics properly like before." ;
 			next;
-			mes "[魔術師ギルド関係者]";
-			mes "大丈夫。";
-			mes "あなたなら以前の記憶を取り戻す";
-			mes "ことくらいできるはずよ。";
-			mes "そうすれば、また魔法を使えるように";
-			mes "なるわ。";
+			mes "[Magician Guild Official]";
+			mes "Don't worry." ;
+			mes "You should at least be able to get your old memories back." ;
+			mes "Then you'll be able to use magic again." ;
 			close;
 		}
-		mes "[魔術師ギルド関係者]";
-		mes "さて。";
-		mes "一度合格している人にまた";
-		mes "試験を受けさせるのも野暮だしね。";
-		mes "一刻も早く魔法を遣いたいんでしょ？";
+		mes "[Magician Guild Official]";
+		mes "Well." ;
+		mes "It's not a wild idea to make someone take the exam again if they've already passed it once." ;
+		mes "You want to use magic as soon as possible, don't you?" ;
 		next;
 		unequip;
 		jobchange Job_Magician,UPPER_HIGH;
 		//setquest 50775;
 		skill 157,1,0;
-		mes "[魔術師ギルド関係者]";
-		mes "うん、なつかしい格好ね。";
-		mes "これからもがんばってね！";
+		mes "[Magician Guild Official]";
+		mes "Yeah, that's a familiar look." ;
+		mes "Keep up the good work!" ;
 		close;
 	}
-	mes "[魔術師ギルド関係者]";
-	mes "はい、何の用で来ましたの？";
+	mes "[Magician Guild Official]";
+	mes "Yes, what brings you here?" ;
 	next;
-	switch (select("マジシャンに転職","マジシャンの転職条件を聞く","やめる")) {
+	switch (select("Change to Magician", "Ask Magician's job conditions", "Quit")) {
 	case 1:
 		if(Job == Job_Magician) {
-			mes "[魔術師ギルド関係者]";
-			mes "えー。あなたはもうマジシャンでしょ？";
-			mes "自分の事もわからないの？";
-			mes "まあ、いつか素手で焚き火を";
-			mes "作れる日が来たら、自ら";
-			mes "マジシャンの運命というものが、";
-			mes "わかってくるんじゃないの？";
+			mes "[Magician Guild Official]";
+			mes "Erm. You are already a Magician, right?" ;
+			mes "Don't you even know yourself?" ;
+			mes "Well, maybe one day when you can build a bonfire with your bare hands, you'll understand your own Magician's destiny." ;
 			next;
-			mes "[魔術師ギルド関係者]";
-			mes "そうそう、マジシャンに";
-			mes "なった後、冒険者アカデミーを";
-			mes "訪れた事はある？";
+			mes "[Magician Guild Official]";
+			mes "Oh yeah, have you ever visited the Adventurer Academy after you became a Magician?" ;
 			next;
-			mes "[魔術師ギルド関係者]";
-			mes "無いなら、訪れた方がいいわ。";
-			mes "この建物を出ると";
-			mes "冒険者アカデミーのサポートを";
-			mes "行っている人がいるので、";
-			mes "送ってもらうといいわ。";
+			mes "[Magician Guild Official]";
+			mes "If you haven't, you should visit." ;
+			mes "When you leave this building, you'll find someone who provides support for the Adventurers Academy, so you can ask him to send you there." ;
 			close;
 		}
-		if(Job != Job_Novice) {
-			mes "[魔術師ギルド関係者]";
-			mes "えー。あなたは、";
-			mes "マジシャンに転職できないよ。";
-			mes "既に他の職業に就いているでしょ？";
+		if(Job ! = Job_Novice) {
+			mes "[Magician Guild Official]";
+			mes "Ehh. You can't change your job to Magician." ;
+			mes "You're already in another profession, aren't you?" ;
 			close;
 		}
 		break;
 	case 2:
-		mes "[魔術師ギルド関係者]";
-		mes "マジシャンになりたいって？";
-		mes (Sex? "兄": "姉")+ "ちゃんみたいなタイプが、";
-		mes "ギルドの一員になって";
-		mes "くれるんだったら、";
-		mes "当然大歓迎～";
+		mes "[Magician Guild Official]";
+		mes "You want to be a Magician?" ;
+		mes ""+(Sex? "Brother": "Sister")+ "If a type like you can become a member of the guild, of course you are welcome~";
 		next;
-		mes "[魔術師ギルド関係者]";
-		mes "まずは、^0000FF「基本スキル」のレベルを9^000000";
-		mes "にしなければならない。";
-		mes "JobLvを10にまで成長させて、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してきてちょうだい。";
+		mes "[Magician Guild Official]";
+		mes "First of all, you have to get the level of ^0000FF "Basic Skills" to 9^000000." ;
+		mes "You need to go and grow your JobLv to 10 and get your ^0000FF "Basic Skill" level to 9^000000." ;
 		next;
-		mes "[魔術師ギルド関係者]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができるわ。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されるの。";
+		mes "[Magician Guild Official]";
+		mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[魔術師ギルド関係者]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要になるから、";
-		mes "注意してね。";
+		mes "[Magician Guild Official]";
+		mes "To increase the level of a skill, you will need the ^FF000000 "Confirm"^000000 button after assigning the skill points, so Attention." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 3:
-		mes "[魔術師ギルド関係者]";
-		mes "うん……？何ー？";
+		mes "[Magician Guild Official]";
+		mes "Yeah ......? What?" ;
 		close;
 	}
-	//case1の続き
+	//continuation of case1
 	if(CHANGE_MG==0) {
-		mes "[魔術師ギルド関係者]";
-		mes "マジシャンに転職したいと？";
-		mes "うん……";
+		mes "[Magician Guild Official]";
+		mes "You want to change your job to Magician?" ;
+		mes "Yeah ......" ;
 		next;
-		mes "[魔術師ギルド関係者]";
+		mes "[Magician Guild Official]";
 		if(Sex == 0) {
-			mes "……よく見ると姉ちゃん、可愛いわね。";
-			mes "私は姉ちゃんみたいなタイプ好きよ！";
+			mes "...... Look closely, sis, you're adorable." ;
+			mes "I like your type, sis!" ;
 		}
 		else {
-			mes "……よく見たら兄ちゃん、可愛いね。";
-			mes "私のタイプじゃないけど……。";
+			mes "...... If you look closely, brother, you're cute." ;
+			mes "Not my type, but ......." ;
 		}
-		mes "まあ、それはそれとして、";
-		mes "マジシャンに転職したいと言ったよね？";
-		mes "だったら、ここのマジシャン";
-		mes "転職申請書にサインをお願い。";
+		mes "Well, that's just it, you said you wanted a new job at Magician, right?" ;
+		mes "Then please sign the Magician job application here." ;
 		next;
-		if(select("マジシャン転職申請をする","やっぱりやめる")==2) {
-			mes "[魔術師ギルド関係者]";
-			mes "なによ！さっきはマジシャンに";
-			mes "なりたいって言ったじゃないの！";
-			mes "ぷんぷん！";
+		if(select("I want to apply for Magician job change", "I still quit")==2) {
+			mes "[Magician Guild Official]";
+			mes "What! You said you wanted to be a Magician!" ;
+			mes "Pfft!" ;
 			close;
 		}
 		set CHANGE_MG,1;
-		mes "[魔術師ギルド関係者]";
-		mes "うん、そこにサインして……";
-		mes "うわー字が綺麗ねー";
-		mes "うん、うん、そこまで。";
-		mes "名前は……";
-		mes strcharinfo(0)+ "ね。";
+		mes "[Magician Guild Official]";
+		mes "Yeah, sign there ......" ;
+		mes "Wow, your handwriting is beautiful - yeah, yeah, there you go." ;
+		mes "The name is ......." ;
+		mes ""+strcharinfo(0)+ "Hey."" ;
 		next;
 	}
-	mes "[魔術師ギルド関係者]";
-	mes "それじゃ、さっそく";
-	mes (Sex? "兄": "姉")+ "ちゃんに関する";
-	mes "情報を調べさせてもらうわね。";
+	mes "[Magician Guild Official]";
+	mes "Well then, let's get on with it";
+	mes (Sex? "brother": "sister") + "regarding Chan";
+	mes "Let me look up some information for you." ;
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[魔術師ギルド関係者]";
-		mes "……よく見ると" +(Sex? "兄": "姉")+ "ちゃん、";
-		mes "うーん、^0000FF「基本スキル」^000000のレベルが";
-		mes "足りないようね。";
-		mes "JobLvを10にまで成長させて、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してきてちょうだい。";
+		mes "[Magician Guild Official]";
+		mes "...... If you look closely, you can see that " +(Sex? "Brother": "Sister")+ "Chan, umm, it looks like you're missing a level of ^0000FF "Basic Skill" ^000000." ;
+		mes "Go grow your JobLv to 10 and get your ^0000FF "Basic Skill" level to 9^000000." ;
 		next;
-		mes "[魔術師ギルド関係者]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができるわ。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されるの。";
+		mes "[Magician Guild Official]";
+		mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[魔術師ギルド関係者]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要になるから、";
-		mes "注意してね。";
-		mes "まず、^0000FF「基本スキル」^000000のレベルを";
-		mes "上げてから来て。";
+		mes "[Magician Guild Official]";
+		mes "To increase the level of a skill, you will need the ^FF000000 "Confirm"^000000 button after assigning the skill points, so Attention." ;
+		mes "First, you need to raise the level of ^0000FF "Basic Skills"^000000 before you come." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[魔術師ギルド関係者]";
-	mes "…";
+	mes "[Magician Guild Official]";
+	mes "..." ;
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "……";
+	mes "[Magician Guild Official]";
+	mes "......" ;
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "………、ほうほう。";
-	mes "なるほど、なるほど。";
+	mes "[Magician Guild Official]";
+	mes "......... ;mes "[Magician Guild Official]" ;
+	mes "I see, I see." ;
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "うん、……、" +(Sex? "兄": "姉")+ "ちゃんに関する";
-	mes "資料を見せてもらったけど、";
-	mes "マジシャンとしての資質も";
-	mes "十分にあるみたいだし、";
-	mes "これなら問題なさそうね。";
+	mes "[Magician Guild Official]";
+	mes "Yeah, ...... I've been shown the material about " +(Sex? "Brother": "Sister")+ "Chan, and she seems to be well qualified as a Magician, so this seems to be no problem." ;
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "これでマジシャン転職の申請は、完了！";
-	mes "あなたが望んだマジシャンになれー！";
+	mes "[Magician Guild Official]";
+	mes "Now your application for a new job as a Magician is complete!" ;
+	mes "Be the Magician you've always wanted to be!" ;
 	next;
 	set CHANGE_MG,0;
 	setquest 50385;
 	getitem 11037,1;
 	unequip;
 	jobchange Job_Magician;
-	mes "[魔術師ギルド関係者]";
-	mes "魔術師ギルドへようこそ！";
-	mes "まあ、改めて挨拶しただけだから、";
-	mes "そんなに照れなくてもいいのにー";
-	mes "言ってみただけなのよ、もー";
+	mes "[Magician Guild Official]";
+	mes "Welcome to the Magician Guild!" ;
+	mes "Well, I was just saying hello again, so you don't have to be so shy - I'm just saying, moo";
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "とりあえず、私達魔術師ギルドの";
-	mes "一員になったね。おめでとうー！";
-	mes "これからもよろしくぅー！えへへ～";
+	mes "[Magician Guild Official]";
+	mes "Anyway, we are now members of the Magician Guild. Congratulations!" ;
+	mes "Keep up the good work! Ehehe~";
 	next;
-	mes "[魔術師ギルド関係者]";
-	mes "あと、あなたに渡したのは";
-	mes "マジシャンの書よ。";
-	mes "魔術師ギルド作成の";
-	mes "初心者マジシャンへの指南書ね。";
-	mes "読んでおくといいわよ。";
+	mes "[Magician Guild Official]";
+	mes "Also, I gave you the Book of Magician." ;
+	mes "It's an instruction manual for novice Magicians created by the Magician Guild." ;
+	mes "You should read it." ;
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "Job change",0;
 	end;
 }
 
 //==============================================================
-geffen_in.gat,164,109,2	script	魔導師	64,{
-	mes "[魔導師]";
-	mes "魔法の強力な力は因果律によって";
-	mes "調節されているのじゃ。";
+geffen_in.gat,164,109,2 script Wizard 64,{
+	mes "[Wizard]";
+	mes "The powerfulness of magic is regulated by the law of causality." ;
 	next;
-	mes "[魔導師]";
-	mes "要するに、誰かに害を与えたり、";
-	mes "または自然の流れに反する魔法を";
-	mes "使った場合、必ずその使用者に";
-	mes "反作用が戻ってくるのじゃ。";
+	mes "[Wizard]";
+	mes "In short, if you use magic that harms someone or goes against the flow of nature, the repercussions will always come back to the user." ;
 	next;
-	mes "[魔導師]";
-	mes "しかし、その術者の代わりに";
-	mes "その反作用を受けてくれる物があれば、";
-	mes "安全に魔法が使えるのじゃ。";
-	mes "それが「ジェムストーン」と呼ばれる";
-	mes "神秘の鉱石なのじゃ。";
+	mes "[Wizard]";
+	mes "However, if there is an object that can receive the reaction on behalf of the wizard, then the magic can be used safely." ;
+	mes "That is the mysterious ore called 'gemstone'." ;
 	close;
 }
 
 
 //==========================================
-// アイテム合成
+// Item Synthesis
 //------------------------------------------
 
-geffen_in.gat,177,112,0	script	本棚	111,{
-	mes "-本棚に注意書きの";
-	mes " 張り紙が貼ってある-";
+geffen_in.gat,177,112,0 script bookshelf 111,{
+	mes "-Attention writing sticker on the bookshelf-";
 	next;
-	mes "[注意]";
-	mes "本棚の本は、ゲフェン魔法学校の";
-	mes "財産です。";
-	mes "綺麗に使って下さい。";
+	mes "[Attention]";
+	mes "The books on the bookshelf are the property of the Geffen School of Magic." ;
+	mes "Please use them neatly." ;
 	close;
 }
 
 
 //==========================================
-// 水溶液アルバイト
+// aqueous solution part time
 //------------------------------------------
 
--	script	水溶液アルバイト	88,{
-	mes "[魔術師ギルド関係者]";
-	mes "水溶液を購入しますか？";
-	mes "50 Zenyと空の試験管1つ以上が";
-	mes "必要です。";
+- script aqueous solution part time job 88,{
+	mes "[Magician Guild Official]";
+	mes "Would you like to purchase a water solution?" ;
+	mes "You will need at least 50 Zeny and one empty test tube." ;
 	next;
-	if(select("水溶液を買う","やめる")==2) {
-		mes "[魔術師ギルド関係者]";
-		mes "またのお越しをお待ちしてます。";
+	if(select("buy aqueous solution", "stop")==2) {
+		mes "[Magician Guild Official]";
+		mes "We look forward to seeing you again." ;
 		close;
 	}
 	if(Zeny < 50) {
-		mes "[魔術師ギルド関係者]";
-		mes "お金が足りません……";
-		mes "水溶液は50 Zenyです。";
+		mes "[Magician Guild Official]";
+		mes "Not enough money ......" ;
+		mes "The water solution is 50 Zeny." ;
 		close;
 	}
 	if(countitem(1092) < 1) {
-		mes "[魔術師ギルド関係者]";
-		mes "水溶液をどうやって";
-		mes "持っていきますか？";
-//		mes "空の試験管を持ってき下さい。";		//本鯖仕様
-		mes "空の試験管を持ってきて下さい。";
+		mes "[Magician Guild Official]";
+		mes "How do you take the aqueous solution?" ;
+// mes "Please bring an empty test tube." ; // this saba spec.
+		mes "Please bring an empty test tube." ;
 		close;
 	}
 	set Zeny,Zeny-50;
@@ -326,10 +260,10 @@ geffen_in.gat,177,112,0	script	本棚	111,{
 		getitem 1089,1;
 	if(strnpcinfo(2) == "Moc")
 		getitem 1088,1;
-	mes "[魔術師ギルド関係者]";
-	mes "ありがとうございました。";
+	mes "[Magician Guild Official]";
+	mes "Thank you very much." ;
 	close;
 }
 
-pay_arche.gat,120,100,0	duplicate(水溶液アルバイト)	水溶液アルバイト#Pay	88
-moc_ruins.gat,91,150,0	duplicate(水溶液アルバイト)	水溶液アルバイト#Moc	93
+pay_arche.gat,120,100,0 duplicate(water solution part time job) water solution part time job#Pay 88
+moc_ruins.gat,91,150,0 duplicate(aqueous solution part time job) aqueous solution part time job#Moc 93

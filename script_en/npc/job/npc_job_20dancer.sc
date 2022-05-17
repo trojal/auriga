@@ -1,240 +1,195 @@
 //====================================================================
 //Ragnarok Online Dancer Jobchange Script by Kalen
-//ダンス試験終了時のwaitを設定 by Deme
-//
-//　■ CHANGE_DC -> 0～9
+//Set wait at end of dance test by Deme
+// - CHANGE_DC -> 0-9
+// - CHANGE_DC -> 0-9
 //====================================================================
 
 //==========================================
-// 試験申請および一次試験
+// exam application and primary exam
 //------------------------------------------
 
-comodo.gat,193,151,4	script	ボルロブ	86,{
-	mes "[ボルロブ]";
-	mes "ああ……多くの人の注目を集める";
-	mes "プリマドンナ！";
-	mes "彼女達がダンサーになる瞬間を";
-	mes "目の前で見られるなんて！";
+comodo.gat,193,151,4 script Borlob 86,{
+	mes "[Borlob]";
+	mes "Oh ...... A prima donna that attracts the attention of many!" ;
+	mes "I can't believe I got to see them become Dancers right in front of my eyes!" ;
 	next;
-	mes "[ボルロブ]";
-	mes "この時代に生まれて本当に幸せ。";
-	mes "コモドダンサーばんざい！";
+	mes "[Borlov]";
+	mes "I am so happy to be born in this time." ;
+	mes "Hooray for ComodoDancer!" ;
 	next;
-	mes "[ボルロブ]";
-	mes "うん？あなたもダンサー転職試験を";
-	mes "見たいって？";
+	mes "[Borlob]";
+	mes "Yeah? You want to see the Dancer job search test too?" ;
 	next;
-	if(select("ダンサー転職場に移動","取り消し")==2) {
-		mes "[ボルロブ]";
-		mes "ノリわる～い";
+	if(select("Move to Dancer Job Place", "Cancel")==2) {
+		mes "[Borlob]";
+		mes "Not flippant~";
 		close;
 	}
-	mes "[ボルロブ]";
-	mes "イェェイ！レッツゴー！";
+	mes "[Borlob]";
+	mes "Yay! Let's go!" ;
 	close2;
 	warp "job_duncer.gat",70,49;
 	end;
 }
 
 //==============================================================
-job_duncer.gat,43,93,4	script	エイル	724,{
+job_duncer.gat,43,93,4 script eir 724,{
 	cutin "job_dancer_eir01",2;
 	if(Upper == UPPER_HIGH) {
-		mes "[エイル]";
-		mes "いち、に、さん、し……";
-		mes "うーん";
+		mes "[eir]";
+		mes "one, two, three, four ......" ;
+		mes "ummm";
 		next;
-		mes "[エイル]";
-		mes "そんなに見られていると";
-		mes "練習に集中できないわ！";
+		mes "[Eil]";
+		mes "I can't concentrate on my practice if you're watching me so much!" ;
 		next;
-		mes "[エイル]";
-		mes "……";
-		mes "……どこかでお会いしたような";
-		mes "気がしますが……";
+		mes "[Eil]";
+		mes "......" ;
+		mes "...... I think I know you from somewhere ......" ;
 		next;
-		mes "[エイル]";
-		mes "でも思い出せないわ……";
-		mes "私には練習があるから";
-		mes "向こうへ行っていただけます？";
+		mes "[ail]";
+		mes "But I can't remember. ......" ;
+		mes "I have practice, can you please go over there?" ;
 		close2;
 		cutin "job_dancer_eir01",255;
 		end;
 	}
 	if(Job == Job_Dancer) {
-		mes "[エイル]";
-		mes "こんにちは～";
-		mes "最近はどうですか？";
-		mes "人々を楽しませていますか？";
+		mes "[eir]";
+		mes "Hello - how are you doing these days?" ;
+		mes "Are you entertaining people?" ;
 		close2;
 		cutin "job_dancer_eir01",255;
 		end;
 	}
-	if(Job != Job_Archer || Sex == 1) {
-		mes "[エイル]";
-		mes "お客さん、ここは関係者以外";
-		mes "立ち入り禁止ですよ？";
+	if(Job ! = Job_Archer || Sex == 1) {
+		mes "[eir]";
+		mes "Sir, this area is off-limits to all concerned?" ;
 		next;
-		mes "[エイル]";
-		mes "ダンススクールは誰でも入れる";
-		mes "わけじゃないんですから。";
+		mes "[Eil]";
+		mes "The dance school is not open to everyone." ;
 		next;
-		mes "[エイル]";
-		mes "見学なら村のダンスステージに";
-		mes "行ってくださいね。";
+		mes "[Eil]";
+		mes "If you want to visit, go to the dance stage in the village." ;
 		close2;
 		cutin "job_dancer_eir01",255;
 		end;
 	}
 	switch(CHANGE_DC) {
 	case 0:
-		mes "[エイル]";
-		mes "いらっしゃいませ～";
-		mes "様々な踊りを教えている";
-		mes "「コモドダンススクール」です。";
+		mes "[eir]";
+		mes "Welcome - this is Comodo Dance School, where we teach a variety of dances." ;
 		next;
-		mes "[エイル]";
-		mes "各地から訪れる観光客に";
-		mes "素敵な踊りを提供し、";
+		mes "[Eil]";
+		mes "We offer wonderful dances to tourists who visit us from all over the world and";
 		next;
-		mes "[エイル]";
-		mes "さらにはルーンミッドガッツの";
-		mes "有名人になることができる";
-		mes "踊り娘を育てているんです。";
+		mes "[Eil]";
+		mes "In addition, we are raising dancing girls who can become celebrities in Rune-Midgarts." ;
 		next;
-		mes "[エイル]";
-		mes "どうですか？";
-		mes "たくさんの人々の前で派手な";
-		mes "ライトを受けダンスをすることが";
-		mes "できるんです。";
-		mes "素敵じゃありませんか！";
+		mes "[Eil]";
+		mes "What do you think?" ;
+		mes "I can get fancy lights and dance in front of lots of people." ;
+		mes "Isn't it wonderful!" ;
 		next;
-		mes "[エイル]";
-		mes "でも、我がダンススクールは";
-		mes "誰でも入れるわけじゃないのが";
-		mes "他とは違うところ。";
+		mes "[ail]";
+		mes "But our dance school is different from the others in that it is not open to everyone." ;
 		next;
-		mes "[エイル]";
-		mes "ダンサーになれそうもない人は";
-		mes "スクールで断られてしまうんです。";
+		mes "[Eil]";
+		mes "If you don't think you can be a Dancer, the school will turn you down." ;
 		next;
-		mes "[エイル]";
-		mes "どうでしょう、";
-		mes "お姉さんには素質がありそうな";
-		mes "感じがします。";
-		mes "ここでダンスレッスンを受けて";
-		mes "みませんか？";
+		mes "[Eil]";
+		mes "I don't know, your sister seems to have the right qualities." ;
+		mes "Would you like to take dance lessons here?" ;
 		next;
 		cutin "job_dancer_eir02",2;
-		mes "[エイル]";
-		mes "そこにある申込書にちょこっと";
-		mes "書くだけです。";
+		mes "[eir]";
+		mes "Just fill out a little bit on the application form there." ;
 		next;
 		cutin "job_dancer_eir01",2;
-		mes "[エイル]";
-		mes "どうです？";
-		mes "申し込んでみませんか？";
-		mes "ね？見学も兼ねてどうですか？";
+		mes "[eir]";
+		mes "What do you think?" ;
+		mes "Would you like to apply?" ;
+		mes "Hey? How about a tour as well?" ;
 		next;
-		if(select("はい、やってみます","無視する")==2) {
-			mes "[エイル]";
-			mes "そんな……冷たいわ……";
-			mes "また寄ってくださいね？";
-			mes "ね？";
+		if(select("Yes, I'll try it", "ignore")==2) {
+			mes "[ail]";
+			mes "Oh no. ...... That's cold. ......" ;
+			mes "Please stop by again, okay?" ;
+			mes "Hey?" ;
 			break;
 		}
 		if(JobLevel < 40) {
-			mes "[エイル]";
-			mes "えっと……";
-			mes "惜しいですがレッスンを受ける";
-			mes "条件を満たしていなかった";
-			mes "ようです……";
+			mes "[ail]";
+			mes "Erm, ......" ;
+			mes "Nice try, but it looks like you didn't meet the requirements to take the lesson: ......" ;
 			next;
-			mes "[エイル]";
-			mes "少なくともJobLv40以上に";
-			mes "ならないと申し込みをお受け";
-			mes "することができないんです。";
-			mes "それでは、またお目にかかれる";
-			mes "日を楽しみにしております。";
+			mes "[ail]";
+			mes "I can't accept your application until you are at least JobLv 40." ;
+			mes "Then we look forward to seeing you again." ;
 			break;
 		}
 		cutin "job_dancer_eir02",2;
-		mes "[エイル]";
-		mes "よく決心しました！";
-		mes "そこにある申込書に記入してください。";
+		mes "[eir]";
+		mes "Well decided!" ;
+		mes "Please fill out the application form there." ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
-		mes "……カリカリカリ……";
+		mes "...... crunchy......" ;
 		next;
-		mes "……";
+		mes "......" ;
 		next;
 		cutin "job_dancer_eir01",2;
-		mes "[エイル]";
-		mes "お名前は……";
-		mes strcharinfo(0)+ "さん……";
-		mes "素敵な名前ですね！";
-		mes "では少々お待ちを。";
-		mes "書類をスクール長に届けてきます。";
+		mes "[eir]";
+		mes "Your name is ......" ;
+		mes ""+strcharinfo(0)+ "......"" ;
+		mes "That's a great name!" ;
+		mes "Then please wait a moment." ;
+		mes "I will deliver the documents to the school director." ;
 		set CHANGE_DC,1;
 		break;
 	case 1:
-		mes "[エイル]";
-		mes "はい、さきほど申し込みを";
-		mes "されましたね？";
-		mes "ではレッスンに必要な物を";
-		mes "用意していただきます。";
+		mes "[ail]";
+		mes "Yes, you applied earlier, didn't you?" ;
+		mes "Then you will need to prepare the necessary items for the lesson." ;
 		next;
-		mes "[エイル]";
-		mes "備品に不足なものがあって……";
-		mes "ご自分のレッスンに使うもの";
-		mes "ですから、お手数ですが";
-		mes "揃えてきてくださいね。";
+		mes "[ail]";
+		mes "I'm missing some of the equipment. ......." ;
+		mes "Please go ahead and get them for your own lessons." ;
 		next;
-		mes "[エイル]";
-		mes "それと一応^0000FFレッスン料";
-		mes "10000Zeny^000000が必要です。あと、";
+		mes "[ail]";
+		mes "And just in case you need ^0000FF lesson fee of 10000Zeny^000000. Also, ";
 		switch(rand(3)) {
 			case 0:
 				set CHANGE_DC,2;
-				mes "靴のすべり止めにする";
-				mes "^0000FFミミズの皮 5個^000000があれば";
-				mes "良いでしょう。";
+				mes "You will need 5 ^0000FF worm skins^000000 to prevent shoes from slipping." ;
 				next;
-				mes "[エイル]";
-				mes "そして足を怪我しないように";
-				mes "^0000FFブーツ^000000も1足必要です。";
+				mes "[ail]";
+				mes "And a pair of ^0000FF boots^000000 to avoid foot injuries." ;
 				break;
 			case 1:
 				set CHANGE_DC,3;
-				mes "衣装の飾りにする^0000FF貝殻 2個^000000と";
+				mes "And 2 ^0000FF shells to decorate the Costume ^0000000000FF and";
 				next;
-				mes "[エイル]";
-				mes "足を怪我した場合に塗る";
-				mes "^0000FF黄ポーション 5個^000000、";
-				mes "軟膏の代わりにする";
-				mes "^0000FFゼロピー^000000も^0000FF20個^000000必要です。";
+				mes "[ail]";
+				mes "We need 5 ^0000FF yellow potions ^000000 to apply to injured feet, and also 20 ^000000FF zero peas ^000000 to replace the ointment." ;
 				next;
-				mes "[エイル]";
-				mes "あとは……";
-				mes "公演用かつらを作る^0000FF長い髪 10個^000000";
+				mes "[ail]";
+				mes "The rest is ......." ;
+				mes "Make a performance wig^0000FF long hair 10^000000"; mes "Make a performance wig^000000FF long hair 10^000000";
 				next;
-				mes "[エイル]";
-				mes "怪我をしないように履く";
-				mes "^0000FFサンダル^000000も1足必要です。";
+				mes "[Eil]";
+				mes "We also need one pair of ^0000FF sandals^000000 to wear to avoid injury." ;
 				break;
-			case 2:		//台詞適当、未調査
+			case 2: // dialog appropriate, unexamined
 				set CHANGE_DC,4;
-				mes "^0000FFべとべとする液体 20個^000000";
-				mes "^0000FF赤ポーション 5個^000000";
-				mes "^0000FFゼロピー 3個^000000";
-				mes "^0000FFシューズ^000000";
+				mes "20 ^0000FF sticky liquid ^00000000FF red potions 5 ^00000000FF zero peas 3 ^00000000FF shoes ^00000000FF shoes ^00000000";
 				break;
 		}
 		next;
-		mes "[エイル]";
-		mes "では、レッスンの用意ができたら";
-		mes "また声をかけてください。";
+		mes "[ail]";
+		mes "Then call on me again when you are ready for your lesson." ;
 		break;
 	case 2:
 	case 3:
@@ -257,47 +212,41 @@ job_duncer.gat,43,93,4	script	エイル	724,{
 			if(countitem('@need['@i]) < '@amount['@i] || Zeny < 10000)
 				break;
 		}
-		if('@i < getarraysize('@need)) {
-			mes "[エイル]";
-			mes "うん……";
-			mes "ちょっと足りないみたいです。";
-			mes "必要な物をもう一度教えるから";
-			mes "用意してきてくださいね。";
+		if('@i < getarraysize('@need))) {
+			mes "[ail]";
+			mes "un ......" ;
+			mes "Looks like I'm a little short." ;
+			mes "I'll tell you again what you need, so please go get it ready." ;
 			next;
-			mes "[エイル]";
-			mes "^0000FFレッスン料 10000 Zeny^000000";
+			mes "[ail]";
+			mes "^0000FF lesson fee 10000 Zeny^000000";
 			for(set '@i,0; '@i<getarraysize('@need)-1; set '@i,'@i+1)
-				mes "^0000FF" +getitemname('@need['@i])+ " " +'@amount['@i]+ "個^000000";
-			mes "^0000FF" +getitemname('@need['@i])+ "^000000";
+				mes "^0000FF" +getitemname('@need['@i])+ " " +'@amount['@i]+ "piece^000000^000000FF" +getitemname('@need['@i])+ "^000000";
 			next;
-			mes "[エイル]";
-			mes "以上です。";
-			mes "待ってますね。";
+			mes "[ail]";
+			mes "That's all." ;
+			mes "I'll be waiting." ;
 			break;
 		}
 		cutin "job_dancer_eir02",2;
-		mes "[エイル]";
-		mes "あっ全部持ってきましたね。";
-		mes "ではレッスン料をいただいて";
-		mes "おきます。";
+		mes "[eir]";
+		mes "Oh, you've got it all." ;
+		mes "Then I'll take your lesson fee." ;
 		set Zeny,Zeny-10000;
 		next;
 		cutin "job_dancer_eir01",2;
 		//fall through
 	case 5:
 	case 6:
-		mes "[エイル]";
-		mes "面接試験担当の^0000FF「ボルワージュ」^000000先生";
-		mes "のところに行ってみてください。";
-		mes "簡単な質問に答えるだけですから";
-		mes "リラックスして受けてくださいね。";
+		mes "[eir]";
+		mes "Go to the interview examiner ^0000FF "Borwage" ^000000, the teacher in charge of the interview exam." ;
+		mes "You will only have to answer a few simple questions, so please relax and take it." ;
 		if(CHANGE_DC < 6)
 			set CHANGE_DC,5;
 		break;
 	default:
-		mes "[エイル]";
-		mes "熱心に練習して素敵な踊りを";
-		mes "見せてくださいね！";
+		mes "[ail]";
+		mes "Please practice diligently and show us your wonderful dance!" ;
 		break;
 	}
 	close2;
@@ -306,467 +255,380 @@ job_duncer.gat,43,93,4	script	エイル	724,{
 }
 
 //==========================================
-// 二次試験および転職
+// Secondary and career change
 //------------------------------------------
 
-job_duncer.gat,95,93,4	script	ボルワージュ	101,{
+job_dancer.gat,95,93,4 script volwage 101,{
 	if(Job == Job_Dancer) {
-		mes "[ボルワージュ]";
-		mes "あら、こんにちは～";
+		mes "[Borwage]";
+		mes "Oh, hello~";
 		next;
-		mes "[ボルワージュ]";
-		mes "最近はどう？";
-		mes "たくさんの人達に感動を与えてる";
-		mes "かしら？";
-		mes "常にダンサーとしての心構えを";
-		mes "忘れないでね。";
+		mes "[Borwage]";
+		mes "How are you these days?" ;
+		mes "Are you impressing a lot of people?" ;
+		mes "Always remember to be a Dancer." ;
 		close;
 	}
-	if(Job != Job_Archer || Sex == 1) {
-		mes "[ボルワージュ]";
-		mes "あら、外からいらしたの？";
-		mes "私の素敵な踊りを見るために、";
-		mes "遠いところいらしたのね……";
+	if(Job ! = Job_Archer || Sex == 1) {
+		mes "[Borwage]";
+		mes "Oh, you came from outside?" ;
+		mes "You've come a long way to see my wonderful dancing. ......" ;
 		next;
-		mes "[ボルワージュ]";
-		mes "残念ながら私はもう現役引退して";
-		mes "後輩の養成に力を注いでいるの。";
+		mes "[borwage]";
+		mes "While I'm still here, I've already retired from active dance and I'm focusing on training younger dancers." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "村中央部のダンスステージへ";
-		mes "行ってみれば、私の踊りを";
-		mes "しっかり受け継いだ娘が";
-		mes "踊りを披露しているはず。";
+		mes "[Borwage]";
+		mes "If you go to the dance stage in the center of the village, you will see my daughter, who has inherited my dance well, dancing." ;
 		close;
 	}
 	if(SkillPoint) {
-		mes "[ボルワージュ]";
-		mes "スキルポイントが残っていたら";
-		mes "転職できません。";
-		mes "消費してきなさい。";
+		mes "[Borwage]";
+		mes "You cannot change jobs if you have any SkillPoints left." ;
+		mes "Go ahead and spend them." ;
 		close;
 	}
 	switch(CHANGE_DC) {
-	default:	//0～4のとき
-		mes "[ボルワージュ]";
-		mes "あら、ダンサー志望の娘ね。";
+	default: //when 0-4
+		mes "[Borwage]";
+		mes "Oh, you're an aspiring Dancer girl." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "ダンサーになりたければ、";
-		mes "まず当スクールへの申し込みを";
-		mes "済ませてらっしゃい。";
-		mes "舞台の左側らへんにいる「エイル」";
-		mes "に聞けばあれこれ教えてくれるはず。";
+		mes "[Borwage]";
+		mes "If you want to be a Dancer, you should first apply to our school." ;
+		mes "Ask Eil, who is around the left side of the stage, and he will tell you everything you need to know." ;
 		close;
 	case 5:
-		mes "[ボルワージュ]";
-		mes "あら、ダンサー志望生ね。";
+		mes "[Borwage]";
+		mes "Oh, you're an aspiring Dancer." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "……もうちょっと体を";
-		mes "引き締めないとね。";
+		mes "[Borwage]";
+		mes "...... I need to tone up a bit more." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "そんなに心配しなくても大丈夫。";
-		mes "レッスンの途中に体もできて";
-		mes "くるから。";
-		mes "体型矯正レッスンもあるし。ふふ……";
+		mes "[Borwage]";
+		mes "Don't worry so much." ;
+		mes "Your body will be ready during the lesson." ;
+		mes "There are also body-shaping lessons. Hmmm... ......." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "それではあなたダンサーになる心構えを";
-		mes "知りたいから、いくつか聞いてみたいと";
-		mes "思います。一応面接なんだけど";
-		mes "簡単な質問だから気楽にね。";
+		mes "[borwage]";
+		mes "So I'd like to know how you are prepared to be a Dancer, so I'd like to ask you a few questions. It's an interview in case you're interested, but it's just a few simple questions, so feel free." ;
 		break;
 	case 6:
-		mes "[ボルワージュ]";
-		mes "元気出して！";
+		mes "[Borwage]";
+		mes "Cheer up!" ;
 		break;
 	case 7:
-		mes "[ボルワージュ]";
-		mes "それでは実習にはいります。";
-		mes "その前にいくつか注意事項を";
-		mes "話しておきましょうか。";
+		mes "[Borwage]";
+		mes "Then we will go to the practice." ;
+		mes "Before we do that, let's talk about a few Attention matters, shall we?" ;
 		next;
-		if(select("注意事項を聞く","試験場に移動する")==2) {
+		if(select("Ask Attention Matters", "Move to the examination site")==2) {
 			set CHANGE_DC,8;
-			mes "[ボルワージュ]";
-			mes "それではがんばって！";
+			mes "[Borwage]";
+			mes "Good luck then!" ;
 			close2;
 			warp "job_duncer.gat",104,109;
 			end;
 		}
-		mes "[ボルワージュ]";
-		mes "実はこれはオーディションなの。";
-		mes "^0000FF1分^000000の制限時間で";
+		mes "[borwage]";
+		mes "Actually, this is an audition." ;
+		mes "with a time limit of ^0000FF1 minutes ^000000";
 		next;
-		mes "[ボルワージュ]";
-		mes "^0000FF一人づつ順番に^000000 ダンスを踊って";
-		mes "もらいます。";
-		mes "ダンスの経験が無くても心配しないで。";
+		mes "[Borwage]";
+		mes "^0000FFOne by one, you will take a turn ^000000 dancing." ;
+		mes "Don't worry if you have no dance experience." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "会場に入ると舞台が見えて、";
-		mes "まず ^0000FF舞台全体が見渡せる^000000位置に";
-		mes "立たなければならない。";
+		mes "[Bollwage]";
+		mes "When you enter the hall, you will see the stage, and you must first stand in the ^000000FF position where you can see the entire ^000000FF stage." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "^0000FF前後左右が良く見渡せるように^000000ね。";
-		mes "マウスの右ボタンをダブルクリック";
-		mes "して方向も初期の状態に……";
-		mes "撮影用語はあまりくわしくないけど……";
+		mes "[Borwage]";
+		mes "^0000FFYou have to be ^000000 so that you can see well to the front, back, left, and right." ;
+		mes "Double click the right mouse button and the direction is also initially ......." ;
+		mes "I'm not too familiar with photography terminology, but ......." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "開始の合図があるまでは^0000FF控室^000000で";
-		mes "順番を待ってね。";
-		mes "前の人が脱落するか、時間が来たら";
-		mes "あなたの番よ。";
+		mes "[vorwage]";
+		mes "Please wait your turn in the ^0000FF waiting room ^000000 until the signal to begin." ;
+		mes "When the person in front of you drops out or the time is up, it's your turn." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "人が多いと控室が満員になる";
-		mes "場合があります。そんな時は";
-		mes "順番を守って並ぶようにしてね。";
+		mes "[borwage]";
+		mes "If there are a lot of people, the waiting room may be full. If that's the case, make sure you line up in the right order." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "オーディションが始まると";
-		mes "アナウンスが流れ、最初の立ち位置を";
-		mes "基準にしてどっちの方向に移動するか";
-		mes "教えます。それに合わせて動けば";
-		mes "いいんです。";
+		mes "[Borwage]";
+		mes "When the audition starts, an announcement will be made and you will be told which direction to move based on your initial standing position. You can move accordingly." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "^0000FF指定時間内にタイミングを";
-		mes "合わせることができなければ";
-		mes "すぐに脱落^000000となります。";
-		mes "厳しくいきますよ！";
+		mes "[Bollwage]";
+		mes "If you cannot match the timing within the ^0000FF specified time, you will be eliminated ^000000 immediately." ;
+		mes "We're going to be strict!" ;
 		close;
 	case 8:
-		mes "[ボルワージュ]";
-		mes "あら、さっきの娘ね……";
-		mes "さあ、もう一度！";
-		mes "リズムに乗って！";
+		mes "[Borwage]";
+		mes "Oh, you're that girl from earlier. ......" ;
+		mes "Come on, again!" ;
+		mes "Get into the rhythm!" ;
 		close2;
 		warp "job_duncer.gat",104,109;
 		end;
 	case 9:
-		mes "[ボルワージュ]";
-		mes "あら、さっきの踊り、";
-		mes "良かったわよ～";
+		mes "[borwage]";
+		mes "Oh my, that was a nice dance you just did!";
 		next;
-		mes "[ボルワージュ]";
-		mes "あれくらい踊れればダンサー";
-		mes "になるのに十分ですね。";
-		mes "さぁ、転職させてあげます。";
+		mes "[Bollwage]";
+		mes "If you can dance like that, you are good enough to be a Dancer." ;
+		mes "Come on, I'll let you change jobs." ;
 		next;
-		mes "[ボルワージュ]";
-		mes "汝、今……女神の加護を受け";
+		mes "[Borwage]";
+		mes "Thou art now ...... with the blessings of the Goddess";
 		next;
-		mes "[ボルワージュ]";
-		mes "すべての人に喜びを与える";
-		mes "ダンサーになりたもう……";
+		mes "[Borwage]";
+		mes "Be the Dancer who brings joy to all ......" ;
 		next;
 		set '@itemid,(JobLevel >= 50)? 1953: 1950;
-		mes "[ボルワージュ]";
-		mes "これから汝が踊るたび";
+		mes "[Borwage]";
+		mes "henceforth whenever thou doth dance";
 		next;
 		unequip;
 		jobchange Job_Dancer;
 		set CHANGE_DC,0;
-		mes "[ボルワージュ]";
-		mes "人々の微笑みがあふれんことを……";
+		mes "[borwage]";
+		mes "May the smiles of the people overflow ......" ;
 		next;
-		mes "[ボルワージュ]";
-		mes "これは私からのプレゼントです。";
-		mes "合格おめでとう！";
+		mes "[Borwage]";
+		mes "This is my gift to you." ;
+		mes "Congratulations on your success!" ;
 		getitem '@itemid,1;
 		close;
 	}
-	//口頭試問ここから
+	// oral exam here
 	next;
 	switch(rand(3)) {
 	case 0:
-		mes "[ボルワージュ]";
-		mes "1.";
-		mes "ダンサー・バード合奏スキル";
-		mes "「ロキの叫び」の効果は？";
+		mes "[Bollwage]";
+		mes "1. What is the effect of the Dancer/Bard ensemble skill "Loki's Cry"?" ;
 		next;
-		if(select("レベル4武器の攻撃力が向上する","ダメージを二倍にしてくれる","範囲内ではスキルと魔法が使用不能になる","攻撃速度が上昇する")==3)
+		if(select("Improves attack power of level 4 weapons", "doubles damage", "disables skills and magic in range", "increases attack speed")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "2.";
-		mes "ダンスフロアでダンスをした後";
-		mes "相手に対する礼儀に反する行為は？";
+		mes "[volwage]";
+		mes "2. After dancing on the dance floor, what is the least polite thing you can do to your opponent?" ;
 		next;
-		if(select("相手に感謝の言葉を伝える","踊りを誉める","他のダンスも踊ろうと誘う","自分の相手には不足だと言う")==4)
+		if(select("thanking your partner", "praising your dance", "inviting your partner to dance other dances", "saying your partner is not good enough for you")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "3.";
-		mes "誰かがダンスで間違った場合";
-		mes "それに気づいたあなたは";
-		mes "どうしますか？";
+		mes "[volwage]";
+		mes "3. If someone makes a mistake in a dance, what do you do when you notice it?" ;
 		next;
-		if(select("笑顔を絶やさずダンスを続ける","間違いを指摘してあげる","気づかないふりをする","こっそり微笑んであげる")==2)
+		if(select("Keep smiling and keep dancing", "Point out the mistake", "Pretend not to notice", "Smile secretly")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "4.";
-		mes "ダンサーに転職ができる村の名前は？";
+		mes "[volwage]";
+		mes "4. What is the name of the village where you can change your job to Dancer?" ;
 		next;
-		if(select("ココモ","サンダルマン","コムモ","コモド")==4)
+		if(select("Kokomo", "Sandalman", "Comomo", "Comodo")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "5.";
-		mes "コモドと直接繋がっている";
-		mes "洞窟の数は？";
+		mes "[Borwage]";
+		mes "5. How many caves are directly connected to Comodo?" ;
 		next;
-		if(select("1個","2個","3個","4個")==3)
+		if(select("1", "2", "3", "4")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "6.";
-		mes "次の中で、ペットできない";
-		mes "モンスターは？";
+		mes "[volwage]";
+		mes "6. Which of the following monsters cannot be petted?" ;
 		next;
-		if(select("イシス","アルギオペ","ドケビ","デビルチ")==2)
+		if(select("Isis", "Argiope", "Dokebi", "Deviruchi")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "7.";
-		mes "ダンスが一番うまい人は誰か？";
+		mes "[Borwage]";
+		mes "7. Who is the best dancer?" ;
 		next;
-		switch (select(strcharinfo(0),"ボルワージュ様","イシス","メルシー")) {
+		switch (select(strcharinfo(0), "Master Borwage", "Isis", "Merci")) {
 			case 1:
 				set '@point,'@point-100;
-				mes "…………";
+				mes "............" ;
 				next;
 				break;
 			case 2:
 				set '@point,'@point+10;
 				break;
 		}
-		mes "[ボルワージュ]";
-		mes "8.";
-		mes "コモドにあるカプラサービスの";
-		mes "拠点は何というか。";
+		mes "[Borwage]";
+		mes "What is the name of the Kafra Service location in 8.Comodo?" ;
 		next;
-		if(select("カプラサービス本社","カプラサービス西部地区","カプラサービス","カプラサービス西部支部")==4)
+		if(select("Kafra Service headquarters", "Kafra Service western region", "Kafra Service", "Kafra Service western branch")==4)
 			set '@point,'@point+10;
-		mes "[……]";
-		mes "9.";
-		mes "私の名前は何？";
+		mes "[......]" ;
+		mes "9. What is my name?" ;
 		next;
-		if(select("ボンソワール","ブルジョア","ボルワージュ","ボンジュール")==3)
+		if(select("bonsoir", "bourgeois", "beaurage", "bonjour")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "10.";
-		mes "スキル「子守歌」の能力は？";
+		mes "[Bollwage]";
+		mes "10. What is the ability of the skill "Lullaby"?" ;
 		next;
-		if(select("周囲に暗黒の効果","周囲に睡眠の効果","周囲に徹夜の效果","周囲に凍結の效果")==2)
+		if(select("dark effect on surroundings", "sleep effect on surroundings", "all night effect on surroundings", "freezing effect on surroundings")==2)
 			set '@point,'@point+10;
 		break;
 	case 1:
-		mes "[ボルワージュ]";
-		mes "1.";
-		mes "ダンサーの「ダンスの練習」スキルの";
-		mes "効果は？";
+		mes "[volwage]";
+		mes "1. What is the effect of Dancer's "Practice Dance" skill?" ;
 		next;
-		if(select("INTを上げる","ダンススキルの効果を高める","鞭系攻撃のダメージを高める","一定範囲にスタンの効果")==2)
+		if(select("Increase INT", "Increase the effect of Dance skill", "Increase the damage of whip-based attacks", "Stun effect on a certain area")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "2.";
-		mes "甲高い音がでる特殊な靴を履いて";
-		mes "ステップを踏み、軽快なリズムを刻む";
-		mes "踊りのことを何と言うか。";
+		mes "[volwage]";
+		mes "2. What is the name of a dance in which the dancers wear special shoes that produce a high-pitched sound and step to a lively rhythm?" ;
 		next;
-		if(select("タップダンス","集中力向上","タンゴ","ダブルストレイフィング")==1)
+		if(select("tap dance", "concentration improvement", "tango", "double strafing")==1)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "3.";
-		mes "ダンサーの特徴から離れている";
-		mes "ものを選びなさい。";
+		mes "[Bollwage]";
+		mes "3. Choose the one that is far from the characteristics of Dancer." ;
 		next;
-		if(select("ダンススキルを使いこなす","遠距離攻撃をする","鞭を使う","両手剣を使う")==4)
+		if(select("mastery of dance skills", "long range attacks", "use of whip", "use of two-handed sword")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "4.";
-		mes "ダンサー達が一番多く居る街は？";
+		mes "[vorwage]";
+		mes "4. Which city has the most Dancers?" ;
 		next;
-		if(select("アルデバラン","ジュノー","モロク","コモド")==4)
+		if(select("Aldebaran", "Yuno", "Morroc", "Comodo")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "5.";
-		mes "一番美しいダンスを披露する人は？";
+		mes "[Borwage]";
+		mes "5. Who performs the most beautiful dance?" ;
 		next;
-		switch (select(strcharinfo(0),"ボルワージュ様","イシス","エメラルハンダス")) {
+		switch (select(strcharinfo(0), "Master Borwage", "Isis", "Emeraldhandas")) {
 			case 1:
 				set '@point,'@point-100;
-				mes "…………";
+				mes "............" ;
 				next;
 				break;
 			case 2:
 				set '@point,'@point+10;
 				break;
 		}
-		mes "[ボルワージュ]";
-		mes "6.";
-		mes "ダンサーが、他の職業に比べて";
-		mes "秀でている点を答えなさい。";
+		mes "[Bollwage]";
+		mes "6. Answer the points in which Dancer excels compared to other professions." ;
 		next;
-		if(select("体力","演技力","ダンスの実力","魔法の実力")==3)
+		if(select("physical strength", "acting ability", "dancing ability", "magic ability")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "7.";
-		mes "コモドカジノのマネージャーの名前は？";
+		mes "[Borwage]";
+		mes "7. What is the name of the manager of the Comodo casino?" ;
 		next;
-		if(select("ルー","ムー","マーティン","ローヤー")==3)
+		if(select("Lou", "Moe", "Martin", "Lawyer")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "8.";
-		mes "ダンサーが装備できないアイテムは？";
+		mes "[Borwage]";
+		mes "8. What items can't Dancer equip?" ;
 		next;
-		if(select("猫耳のヘアバンド","ツーハンドソード","サンダル","イヤリング")==2)
+		if(select("cat ear hair band", "two-handed sword", "sandals", "earrings")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "9.";
-		mes "試験は退屈？";
+		mes "[Borwage]";
+		mes "9. Is the exam boring?" ;
 		next;
-		if(select("はい","いいえ")==2)
+		if(select("yes", "no")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "10.";
-		mes "ファロス燈台島にある燈台の数は";
-		mes "全部でいくつ？";
+		mes "[volwage]"; next; if(select("yes", "no")==2) set '@point,'@point+10; next
+		mes "10. How many lighthouses are there in total on Pharos Lighthouse Island?" ;
 		next;
-		if(select("1","2","3")==1)
+		if(select("1", "2", "3")==1)
 			set '@point,'@point+10;
 		break;
 	case 2:
-		mes "[ボルワージュ]";
-		mes "1.";
-		mes "ダンサーのダンス「幸運のキス」は";
-		mes "どの能力値をあげてくれるか。";
+		mes "[volwage]";
+		mes "1. Which ability value does the Dancer's dance "Kiss of Fortune" raise?" ;
 		next;
-		if(select("INT","DEX","VIT","クリティカル率")==4)
+		if(select("INT", "DEX", "VIT", "Critical rate")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "2.";
-		mes "次の中でダンスでないものは？";
+		mes "[volwage]";
+		mes "2. Which of the following is not a dance?" ;
 		next;
-		if(select("タンゴ","タップダンス","ヒップホップ(HIP-HOP)","創作ダンス","ライトニングボルト")==5)
+		if(select("Tango", "Tap Dance", "Hip-Hop(HIP-HOP)", "Creative Dance", "Lightning Bolt")==5)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "3.";
-		mes "次の中で、ダンサーという職を";
-		mes "あらわしている言葉は？";
+		mes "[volwage]";
+		mes "3. What word in the following describes the profession of Dancer?" ;
 		next;
-		if(select("大声を出す人","うるさい人","踊りを踊る人","歌を歌う人")==3)
+		if(select("loud person", "noisy person", "dancing person", "singing person")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "4.";
-		mes "次の中でコモドの特徴に";
-		mes "当てはまらないものは？";
+		mes "[borwage]";
+		mes "4. Which of the following do not fit Comodo's characteristics?" ;
 		next;
-		if(select("浜辺の都市","ダンサーの転職が可能だ","いつも夜のように暗い","周囲3方向にダンジョンがある","シーフが多い")==5)
+		if(select("City on the beach", "Dancer can change jobs", "Always dark as night", "Dungeons in 3 directions around", "Many Thief")==5)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "5.";
-		mes "外からコモドに来る途中にある";
-		mes "ファロス燈台島から、西の方角に";
-		mes "ある場所の地名を何というか。";
+		mes "[Borwage]";
+		mes "5. What is the name of the place west of the Pharos Lighthouse Island on the way to Comodo from outside?" ;
 		next;
-		if(select("エルメスプレート","コムコビーチ","ココモビーチ","ジナイ沼")==3)
+		if(select("Hermes Plate", "Comoco Beach", "Kokomo Beach", "Jinai Swamp")==3)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "6.";
-		mes "世界で一番美しい踊り娘は";
-		mes "誰か？";
+		mes "[Borwage]";
+		mes "6. Who is the most beautiful dancing girl in the world?" ;
 		next;
-		switch (select(strcharinfo(0),"ボルワージュ様","エイル","ボンジュール")) {
+		switch (select(strcharinfo(0), "Lady Borwage", "Eil", "Bonjour")) {
 			case 1:
 				set '@point,'@point-100;
-				mes "…………";
+				mes "............" ;
 				next;
 				break;
 			case 2:
 				set '@point,'@point+10;
 				break;
 		}
-		mes "[ボルワージュ]";
-		mes "7.";
-		mes "次の中で、ダンサーと";
-		mes "合唱可能な職業は？";
+		mes "[Bollwage]";
+		mes "7. Which of the following occupations can be chorused with Dancer?" ;
 		next;
-		if(select("アサシン","バード","アルケミスト","セージ")==2)
+		if(select("Assassin", "Bard", "Alchemist", "Sage")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "8.";
-		mes "コモドの特産品でないものは？";
+		mes "[Borwage]";
+		mes "8. What is not a Comodo specialty?" ;
 		next;
-		if(select("バーサークポーション","貝殻","かにのこうら","光ってる石")==4)
+		if(select("berserk potion", "shell", "crab shell", "glowing stone")==4)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "9.";
-		mes "コモドカジノのマネージャーはだれか。";
+		mes "[Borwage]";
+		mes "9. Who is the manager of the Comodo casino?" ;
 		next;
-		if(select("ローヤー","ムー","ジー・ジェイ","ルー")==2)
+		if(select("Lawyer", "Moe", "G.J.", "Lou")==2)
 			set '@point,'@point+10;
-		mes "[ボルワージュ]";
-		mes "10.";
-		mes "ダンサースクール申し込み担当者の";
-		mes "名前は？";
+		mes "[Borwage]";
+		mes "10. What is the name of the Dancer School application representative?" ;
 		next;
-		if(select("ボルワージュ","エイル","アッシニア","スノトラ")==2)
+		if(select("Borwage", "Eil", "Assinia", "Snotra")==2)
 			set '@point,'@point+10;
 		break;
 	}
-	mes "[ボルワージュ]";
-	mes "はい、お疲れさま～";
+	mes "[Borwage]";
+	mes "Yes, good work~";
 	next;
-	mes "[ボルワージュ]";
-	mes "面接の結果は" +'@point+ "点……";
+	mes "[Borwage]";
+	mes "The result of the interview is " +'@point+ "point ......"" ;
 	if( (CHANGE_DC == 5 && '@point < 80) || (CHANGE_DC == 6 && '@point < 70) ) {
-		mes "不合格。";
-		mes "こんなんじゃ困るわ。";
+		mes "Failed." ;
+		mes "I don't want this to happen." ;
 		set CHANGE_DC,6;
 		next;
-		mes "[ボルワージュ]";
-		mes "ちょっと難しかったかな？";
-		mes "でも私の若い頃はもっとできたわよ？";
-		mes "また勉強してきてね。";
+		mes "[Borwage]";
+		mes "Was it a little difficult?" ;
+		mes "But I could do better when I was younger, you know?" ;
+		mes "Go back and study again." ;
 		close;
 	}
 	if('@point < 100) {
-		mes "いくつか気になる点があったけど";
-		mes "まあいいでしょう。";
+		mes "There were a few points that bothered me, but that's ok." ;
 	}
-	else
-		mes "すばらしいです。合格です。";
+	} else
+		mes "Excellent. You passed." ;
 	next;
-	mes "[ボルワージュ]";
-	mes "このくらいなら大丈夫ね。";
-	mes "ダンスの実習はそうもいかない";
-	mes "けど、努力すればなんとかなるわ。";
+	mes "[Bollwage]";
+	mes "This is about right." ;
+	mes "The dance practice doesn't work like that, but if you work hard, you can make it work." ;
 	set CHANGE_DC,7;
 	close;
 }
 
 //==========================================
-// 三次試験
+// Tertiary test
 //
-//　　　■　　　　　４
-//　　■■■　≡　５１３
-//　　　■　　　　　２
+// - 4
+// --- ≡ 513
+// - 2
 //
-//　　※野球の内野のポジションと同じです
+// *Same as the infield position in baseball.
 //------------------------------------------
 
-job_duncer.gat,32,152,6	script	案内要員::DC_Test	69,{
-	//ダンスのステップ判定
+job_duncer.gat,32,152,6 script Info Staff::DC_Test 69,{
+	// Dance step judgment
 	function Judgement {
 		for(set '@i,1; '@i<=5; set '@i,'@i+1) {
-			if('@i != getarg(0))
-				hideoffnpc "#DC_Step"+'@i;	//指定タイル以外のハイド解除
+			if('@i ! = getarg(0))
+				hideoffnpc "#DC_Step "+'@i; //Hide release except for specified tile
 		}
 		return;
 	}
-	//全タイルの無効化
+	//Hide all tiles
 	function HideTile {
 		hideonnpc "#DC_Step1";
 		hideonnpc "#DC_Step2";
@@ -775,210 +637,210 @@ job_duncer.gat,32,152,6	script	案内要員::DC_Test	69,{
 		hideonnpc "#DC_Step5";
 		return;
 	}
-	//バックダンサーのエモーション
+	// back Dancer Emotion
 	function EmotionDancer {
-		emotion 21,"DC_Dancer1";
-		emotion 21,"DC_Dancer2";
-		emotion 21,"DC_Dancer3";
-		emotion 21,"DC_Dancer4";
+		emotion 21, "DC_Dancer1"; }
+		emotion 21, "DC_Dancer2"; }
+		emotion 21, "DC_Dancer3"; emotion 21, "DC_Dancer3";
+		emotion 21, "DC_Dancer4";
 		return;
 	}
 	end;
 OnInit:
-	waitingroom "ダンスレッスン待合室",20,"DC_Test::OnStart",1;
+	waitingroom "Dance lesson waiting room",20, "DC_Test::OnStart",1;
 	end;
 OnStart:
 	disablewaitingroomevent;
 	awake "DC_Test";
 	HideTile;
-	killmonster "job_duncer.gat","DC_Test::OnKilled";	//本鯖はここではkillされないけど面倒なのでkillする
+	killmonster "job_duncer.gat", "DC_Test::OnKilled"; //This mackerel is not killed here, but it is troublesome so kill it
 	warpwaitingpc "job_duncer.gat",70,111,1;
 	set 'accid,$@warpwaitingpc[0];
 	initnpctimer;
 	end;
 OnTimer1000:
-	announce "ボルワージュ: さあ、始めます。緊張を解いて。 制限時間は 1分です。",9;
+	announce "Bollwage: Here we go, let's begin. Relax. The time limit is one minute." ,9;
 	end;
 OnTimer3000:
-	announce "ボルワージュ:  はい、後ろへ！ : [↑]",9;
+	announce "Borwage: yes, back! : [up]",9;
 	sleep 3000;
 	Judgement 4;
 	end;
 OnTimer7000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  前～ : [↓]",9;
+	announce "Vorwage: previous~ : [↓]",9;
 	sleep 3000;
 	Judgement 2;
 	end;
 OnTimer11000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  左～ : [←]",9;
+	announce "Vorwage: left~ : [←]",9;
 	sleep 3000;
 	Judgement 5;
 	end;
 OnTimer15000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  右にターン : [→]",9;
+	announce "Vorwage: turn right : [→]",9;
 	sleep 3000;
 	Judgement 3;
 	end;
 OnTimer19000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  真ん中に戻って : [・]",9;
+	announce "Borwage: back to the middle : [...]",9;
 	sleep 2000;
 	Judgement 1;
 	end;
 OnTimer21000:
 	EmotionDancer;
-	announce "ボルワージュ:  そのままポーズ！ ",9;
+	announce "Bollwage: Pause as you are! ",9;
 	end;
 OnTimer24000:
 	EmotionDancer;
-	announce "ボルワージュ:  ポーズの後「集中力向上」などをアドリブで入れて！ ",9;
+	announce "Borwage: after the pause, improvise "improve concentration" and so on! ",9;
 	end;
 OnTimer26000:
-	announce "ボルワージュ:  そのまま～ ",9;
+	Announce "Borwage: as is~ ",9;
 	end;
 OnTimer27000:
 	HideTile;
-	announce "ボルワージュ:  左へ～ : [←]",9;
+	OnTimer27000: HideTile; announce "Borwage: to the left ~ : [←]",9. sleep 3000; end; OnTimer27000: HideTile
 	sleep 3000;
 	Judgement 5;
 	end;
 OnTimer31000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  前～ : [↓] ",9;
+	announce "Borwage: previous ~ : [↓] ",9;
 	sleep 2000;
 	Judgement 2;
 	end;
 OnTimer34000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  すぐに右！ : [→] ",9;
+	announce "Borwage: right away! : [→] ",9;
 	sleep 1500;
 	Judgement 3;
 	end;
 OnTimer36000:
 	EmotionDancer;
-	announce "ボルワージュ:  はいポーズ！ ",9;
+	announce "Borwage: Yes Pause! ",9;
 	end;
 OnTimer39000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  左・真ん中・右・後ろ～ : [←][・][→][↑] ",9;
+	announce "Volwage: left, middle, right, back~ : [←][∙][→][↑] ",9;
 	sleep 5000;
 	Judgement 4;
 	end;
 OnTimer45000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  [→] ",9;
+	announce "Borwage: [→] ",9;
 	sleep 2000;
 	Judgement 3;
 	end;
 OnTimer48000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  左・真ん中・前・後ろ : [←][・][↓][↑] ",9;
+	announce "Borwage: left, middle, front, back : [←][∙][↓][↑] ",9;
 	sleep 5000;
 	Judgement 4;
 	end;
 OnTimer54000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  もう一度、左・真ん中・前・後ろ : [←][・][↓][↑] ",9;
+	announce "Borwage: again, left, middle, front, back : [←][∙][↓][↑] ",9;
 	sleep 5000;
 	Judgement 4;
 	end;
 OnTimer60000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  前～ : [↓]",9;
+	announce "Vorwage: previous~ : [↓]",9;
 	sleep 3000;
 	Judgement 2;
 	end;
 OnTimer64000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  左 : [←] ",9;
+	announce "Borwage: left : [←] ",9;
 	sleep 3000;
 	Judgement 5;
 	end;
 OnTimer68000:
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  真ん中 : [・] ",9;
+	announce "Borwage: middle : [...] ",9;
 	sleep 3000;
 	Judgement 1;
 	end;
 OnTimer72000:
 	if(getareausers("job_duncer.gat",65,109,73,111) + getareausers("job_duncer.gat",68,106,70,114) > 0) {
 		if(attachrid('accid))
-			set CHANGE_DC,9;	//AS関係なくこの時点でクリア確定
+			set CHANGE_DC,9; //clear fixed at this point regardless of AS
 	}
 	EmotionDancer;
 	HideTile;
-	announce "ボルワージュ:  アローシャワーで決め！ ",9;
-	monster "job_duncer.gat",69,106,"ダンスポリン",1002,1,"DC_Test::OnKilled";
+	announce "Bollwage: Decide with Arrow Shower! ",9;
+	monster "job_dancer.gat",69,106, "Dance Poring",1002,1, "DC_Test::OnKilled";
 	end;
 OnKilled:
 	stopnpctimer;
-	announce "dance: ナイスショーット！",9;
+	announce "dance: nice shot!" ,9;
 	sleep 5000;
-	announce "dance: お上手でした！ボルワージュ先生にアピールできたでしょう～",9;
+	announce "dance: good job! You must have appealed to Mr. Bollwage!",9;
 	//fall through
 OnTimer78000:
 	stopnpctimer;
-	killmonster "job_duncer.gat","DC_Test::OnKilled";
-	areawarp "job_duncer.gat",65,109,73,111,"comodo.gat",188,162;	//タイル5,1,3の範囲
-	areawarp "job_duncer.gat",68,106,70,114,"comodo.gat",188,162;	//タイル2,1,4の範囲
+	killmonster "job_duncer.gat", "DC_Test::OnKilled";
+	areawarp "job_duncer.gat",65,109,73,111, "comodo.gat",188,162; //Tile 5,1,3 range
+	areawarp "job_duncer.gat",68,106,70,114, "comodo.gat",188,162; //Tile 2,1,4 range
 	enablewaitingroomevent;
 	end;
 }
 
 //==============================================================
-job_duncer.gat,69,110,4	script	#DC_Step1	139,1,1,{
+job_duncer.gat,69,110,4 script #DC_Step1 139,1,1,{
 	end;
 OnTouch:
-	announce "dance: " +strcharinfo(0)+ "さん～ タイミングが遅れました！",9;
-	areawarp "job_duncer.gat",65,109,73,111,"comodo.gat",188,162;
-	areawarp "job_duncer.gat",68,106,70,114,"comodo.gat",188,162;
-	emotion 23,"DC_Dancer1";
-	emotion 23,"DC_Dancer2";
-	emotion 23,"DC_Dancer3";
-	emotion 23,"DC_Dancer4";
-	enablewaitingroomevent "DC_Test";	//タイマーは停止せずにチャットだけ有効化される本鯖仕様
+	announce "dance: " +strcharinfo(0)+ "~ timing delayed!" ,9;
+	areawarp "job_duncer.gat",65,109,73,111, "comodo.gat",188,162;
+	areawarp "job_duncer.gat",68,106,70,114, "comodo.gat",188,162;
+	emotion 23, "DC_Dancer1";
+	emotion 23, "DC_Dancer2";
+	emotion 23, "DC_Dancer3";
+	emotion 23, "DC_Dancer4";
+	enablewaitingroomevent "DC_Test"; //The timer does not stop, only the chat is enabled.
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-job_duncer.gat,69,107,4	duplicate(#DC_Step1)	#DC_Step2	139,1,1
-job_duncer.gat,72,110,4	duplicate(#DC_Step1)	#DC_Step3	139,1,1
-job_duncer.gat,69,113,4	duplicate(#DC_Step1)	#DC_Step4	139,1,1
-job_duncer.gat,66,110,4	duplicate(#DC_Step1)	#DC_Step5	139,1,1
+job_duncer.gat,69,107,4 duplicate(#DC_Step1) #DC_Step2 139,1,1
+job_duncer.gat,72,110,4 duplicate(#DC_Step1) #DC_Step3 139,1,1
+job_duncer.gat,69,113,4 duplicate(#DC_Step1) #DC_Step4 139,1,1
+job_duncer.gat,66,110,4 duplicate(#DC_Step1) #DC_Step5 139,1,1
 
 //==============================================================
-job_duncer.gat,69,110,4	script	#DC_Dummy1	101,{	//セルに乗れないようにするためだけのダミーNPC
+job_duncer.gat,69,110,4 script #DC_Dummy1 101,{ //Dummy NPC just to prevent getting on cell
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-job_duncer.gat,69,107,4	duplicate(#DC_Dummy1)	#DC_Dummy2	101
-job_duncer.gat,72,110,4	duplicate(#DC_Dummy1)	#DC_Dummy3	101
-job_duncer.gat,69,113,4	duplicate(#DC_Dummy1)	#DC_Dummy4	101
-job_duncer.gat,66,110,4	duplicate(#DC_Dummy1)	#DC_Dummy5	101
+job_duncer.gat,69,107,4 duplicate(#DC_Dummy1) #DC_Dummy2 101
+job_duncer.gat,72,110,4 duplicate(#DC_Dummy1) #DC_Dummy3 101
+job_duncer.gat,69,113,4 duplicate(#DC_Dummy1) #DC_Dummy4 101
+job_duncer.gat,66,110,4 duplicate(#DC_Dummy1) #DC_Dummy5 101
 
 //==============================================================
-job_duncer.gat,63,110,4	script	バックダンサー::DC_Dancer1	724,{}
-job_duncer.gat,66,113,4	script	バックダンサー::DC_Dancer2	724,{}
-job_duncer.gat,72,113,4	script	バックダンサー::DC_Dancer3	724,{}
-job_duncer.gat,75,110,4	script	バックダンサー::DC_Dancer4	724,{}
+job_duncer.gat,63,110,4 script backDancer::DC_Dancer1 724,{}
+job_duncer.gat,66,113,4 script back Dancer::DC_Dancer2 724,{}
+job_duncer.gat,72,113,4 script back Dancer::DC_Dancer3 724,{}
+job_duncer.gat,75,110,4 script back Dancer::DC_Dancer4 724,{}

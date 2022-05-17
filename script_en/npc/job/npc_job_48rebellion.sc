@@ -1,689 +1,549 @@
 //====================================================================
-//Ragnarok Online - Rebellion Jobchange Script	by refis
-//
-//　■ CHANGE_RB -> 0～4
+//Ragnarok Online - Rebellion Jobchange Script by refis
+// - CHANGE_RB -> 0-4
+// - CHANGE_RB -> 0-4
 //====================================================================
 
-moc_fild12.gat,261,318,3	script	怪しい男	998,{
+moc_fild12.gat,261,318,3 script Suspicious Man 998,{
 	if(Job == Job_Rebellion) {
-		mes "[怪しい男]";
-		mes "お前は……！";
-		mes "この間の賞金首";
-		mes "　";
-		mes "……の他人の空似！";
+		mes "[Suspicious Man]";
+		mes "You are ......!" ;
+		mes "The other day's bounty hunter ...... of someone else!" ;
 		next;
-		mes "[怪しい男]";
-		mes "いや、この間は";
-		mes "間違えて申し訳なかった。";
-		mes "あの後、情報も回ってきた。";
-		mes "俺が動いていた時にはすでに";
-		mes "本物は捕まっていたと。";
+		mes "[Suspicious Man]";
+		mes "No, I'm sorry I made a mistake the other day." ;
+		mes "After that, some information came around." ;
+		mes "They said they had already caught the real guy when I was working." ;
 		next;
-		mes "[怪しい男]";
-		mes "どのみち、俺の夕飯代には";
-		mes "ならなかったということだな。";
+		mes "[Suspicious man]";
+		mes "I guess that means it wouldn't have paid for my dinner anyway." ;
 		next;
-		mes "[怪しい男]";
-		mes "それにしても……";
-		mes "お前はリベリオンになったのか！";
+		mes "[Suspicious Man]";
+		mes "And that's why ......." ;
+		mes "You've become a libelion!" ;
 		next;
-		mes "[怪しい男]";
-		mes "リベリオンになれたということは";
-		mes "厳しい試験を越え、";
-		mes "自由と反逆の意志を";
-		mes "魂に宿したということ。";
+		mes "[Suspicious Man]";
+		mes "To have become a Rebellion means that you have passed a rigorous test and have the will of freedom and rebellion in your soul." ;
 		next;
-		mes "[怪しい男]";
-		mes "銃の道は";
-		mes "明日の飯もままならぬ";
-		mes "厳しいものだが";
-		mes "共に頑張ろうじゃないか！";
+		mes "[Suspicious Man]";
+		mes "The path of the gun is a tough one, where tomorrow's food is not enough, but let's work together!" ;
 		close;
 	}
 	if(Job == Job_Gunslinger && BaseLevel >= 99 && JobLevel >= 70) {
 		if(CHANGE_RB) {
-			mes "[怪しい男]";
-			mes "あっお前は";
-			mes "賞金首スパイク！";
+			mes "[Suspicious Man]";
+			mes "Oh, you're Spike the Bounty Hunter!" ;
 			next;
-			mes "[怪しい男]";
-			mes "この前は逃がしたと思ったが";
-			mes "また現れたな！　今度こそ逃がさん！";
+			mes "[Suspicious Man]";
+			mes "I thought I let you go last time, but here you are again!　This time you won't get away!" ;
 			next;
-			switch(select("またまた逃げる","迎え撃つ")) {
+			switch(select("Escaping again!", "Intercepting")) {
 			case 1:
-				mes "[怪しい男]";
-				mes "こらー！";
-				mes "逃げるな俺の賞金!!";
-				mes "　";
+				mes "[Suspicious man]";
+				mes "C'mon!" ;
+				mes "Don't run away, my winnings!!!" ;
 				break;
 			case 2:
-				mes "‐あなたは銃を抜き、";
-				mes "　男の手から武器を弾き飛ばした‐";
+				mes "-you drew your gun and flicked the weapon out of the man's hand-";
 				soundeffect "ferus_move.wav", 0, 0;
 				next;
-				mes "[怪しい男]";
-				mes "うわっ";
-				mes "なんという命中力なんだ！";
+				mes "[Suspicious man]";
+				mes "Wow, what a hit!" ;
 				next;
 			}
-			mes "‐何度も相手にしていられない。";
-			mes "　早くこの人違いをなんとかしよう‐";
+			mes "-I can't keep dealing with him." ;
+			mes " Let's do something about this mistaken person quickly-";
 			next;
 			mes "[" +strcharinfo(0)+ "]";
-			mes "（手配書に書かれている";
-			mes "^FF0000アインブロックの秘密酒場^000000に";
-			mes "急ごう）";
+			mes "(Let's hurry to ^FF000000Einbroch's secret bar ^000000, which is mentioned in the arrangement)";
 			next;
-			mes "‐アインブロックの秘密酒場に";
-			mes "　向かいますか？‐";
+			mes "-Would you like to head to Einbroch's secret tavern? -";
 			next;
-			if(select("はい","いいえ") == 2) {
-				mes "‐今はやめておこう‐";
+			if(select("Yes", "No") == 2) {
+				mes "-Not now -"; next; mes "-Not now -";
 				close;
 			}
-			mes "‐アインブロックへ向かった‐";
+			mes "-Headed to Einbroch-";
 			close2;
 			warp "einbroch.gat",48,97;
 			end;
 		}
-		mes "[怪しい男]";
-		mes "ついに見つけたぞ……！";
-		mes "賞金首スパイク！";
-		mes "その首にかかった";
-		mes "懸賞金は俺のものだ！";
+		mes "[Suspicious Man]";
+		mes "I finally found you: ......!" ;
+		mes "Bounty hunter Spike!" ;
+		mes "The bounty on that head is mine!" ;
 		next;
-		mes "‐初対面の男に銃口を";
-		mes "　突きつけられた！‐";
+		mes "-A man I've never met before held me at gunpoint! -";
 		next;
-		switch(select("何事か聞く","怒る")) {
+		switch(select("ask what's going on", "angry")) {
 		case 1:
-			mes "[怪しい男]";
-			mes "とぼけても無駄だ！";
-			mes "お前のその隠しきれない";
-			mes "悪の匂い、まさにこの手配書にある";
-			mes "賞金首と同じ！";
+			mes "[Suspicious man]";
+			mes "Don't play dumb with me!" ;
+			mes "That unmistakable smell of evil you have, just like the bounty hunter on this wanted list!" ;
 			break;
 		case 2:
-			mes "[怪しい男]";
-			mes "むっ抵抗する気か！";
-			mes "だが、手配書はすでに各地に";
-			mes "広がっている。";
-			mes "どこにも逃げ場はないぞ！";
+			mes "[Suspicious man]";
+			mes "You're not going to resist!" ;
+			mes "But the arrangements have already spread to many places." ;
+			mes "There is nowhere to run!" ;
 			break;
 		}
 		next;
-		mes "[怪しい男]";
-		mes "観念して、";
-		mes "俺の手柄になってもらうぞ!!";
+		mes "[Suspicious Man]";
+		mes "Watch GHOST and let me get the credit for it!!!" ;
 		next;
-		switch(select("逃げる","迎え撃つ")) {
+		switch(select("escape", "intercept")) {
 		case 1:
-			mes "[怪しい男]";
-			mes "わああ！　こっち来るな！";
-			mes "　";
-			mes "‐あなたは立ちふさがる";
-			mes "　怪しい男に体当たりして";
-			mes "　逃げ出した‐";
+			mes "[Suspicious man]";
+			mes "Whoa!  Don't come this way!" ;
+			mes " -You hit the suspicious man standing in your way and ran away-"; mes "-You hit the suspicious man standing in your way and ran away-";
 			soundeffect "ghoul_die2.wav", 0, 0;
 			next;
-			mes "‐その時に男が持っていた";
-			mes "　紙が飛ばされて、";
-			mes "　あなたの視界をふさいだ‐";
+			mes "-Then the paper the man was holding flew away and blocked your view-"; soundeffect "ghoul_die2.wav", 0, 0; next; next; next
 			next;
-			menu "うわっ！",-;
-			mes "‐引きはがした手配書には";
-			mes "　あなたに似た人相書き、";
-			mes "　そして^FF0000発行：アインブロックの秘密酒場^000000と";
-			mes "　書かれている‐";
+			menu "Whoa!" ,-;
+			mes "-The arrangement that you ripped off has a description that looks like you, and it says ^FF000000Issued: Einbroch's Secret Tavern^000000-";
 			break;
 		case 2:
-			mes "‐あなたは銃を抜き、";
-			mes "　男の手から武器を弾き飛ばした‐";
+			mes "-You drew your gun and flicked the weapon out of the man's hand-";
 			soundeffect "ferus_move.wav", 0, 0;
 			next;
-			mes "[怪しい男]";
-			mes "なんだと……!?";
-			mes "　";
-			mes "‐腕をおさえ、男が驚愕の表情で";
-			mes "　あなたを見る‐";
+			mes "[Suspicious man]";
+			mes "What the hell ......! -holding your arm, the man looks at you with a look of astonishment-";
 			next;
-			mes "[怪しい男]";
-			mes "さすがの賞金首というわけか";
-			mes "……くっ";
+			mes "[Suspicious Man]";
+			mes "So you're indeed a bounty hunter. ...... Kuhk";
 			next;
-			switch(select("手配書を確保する","賞金首ではありません")) {
+			switch(select("secure the arrangement", "not a bounty hunter")) {
 			case 1:
-				mes "[怪しい男]";
-				mes "あっ！　こら！";
-				mes "返せ!!";
-				mes "　";
-				mes "‐あなたは男から";
-				mes "　手配書を取り上げた‐";
+				mes "[Suspicious man]";
+				mes "Ah!  Hey!" ;
+				mes "Give it back! -You took the handbill away from the man;
 				break;
 			case 2:
-				mes "[怪しい男]";
-				mes "ハッ！　今までの賞金首も";
-				mes "そんな風にしらばっくれたさ。";
-				mes "だがな！";
+				mes "[Suspicious man]";
+				mes "Ha!  Every bounty hunter I've ever met has been sober like that." ;
+				mes "But!" ;
 				next;
-				mes "[怪しい男]";
-				mes "この手配書は";
-				mes "^0000ffアインブロックの秘密酒場^000000で";
-				mes "発行された正規のものだ！";
-				mes "そうそう不備が出るはずがない！";
+				mes "[Suspicious Man]";
+				mes "This arrangement is a legitimate one issued at ^000000ffEinbroch's secret tavern ^000000!" ;
+				mes "It can't be so flawed!" ;
 				break;
 			}
 			next;
-			mes "‐手配書にはあなたに似た人相書き、";
-			mes "　そして^FF0000発行：アインブロックの秘密酒場^000000と";
-			mes "　書かれていた‐";
+			mes "-The arrangement was written with a physiognomy similar to yours, and ^FF0000 issued: the secret tavern of Einbroch ^000000-";
 			next;
 			mes "[" +strcharinfo(0)+ "]";
-			mes "（アインブロック……）";
+			mes "(Einbroch......)" ;
 			break;
 		}
 		next;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "（手配書に書かれている";
-		mes "^FF0000アインブロックの秘密酒場^000000に";
-		mes "行ってみよう）";
+		mes "(Let's go to ^FF000000Einbroch's secret bar ^000000, which is written in the arrangement)";
 		next;
 		setquest 12340;
 		set CHANGE_RB,1;
-		mes "‐アインブロックの秘密酒場に";
-		mes "　向かいますか？‐";
+		mes "-Would you like to go to the secret tavern in Einbroch? -";
 		next;
-		if(select("はい","いいえ") == 2) {
-			mes "‐今はやめておこう‐";
+		if(select("Yes", "No") == 2) {
+			mes "-Not now -"; next; mes "-Not now -";
 			close;
 		}
-		mes "‐アインブロックへ向かった‐";
+		mes "-Headed to Einbroch-";
 		close2;
 		warp "einbroch.gat",48,97;
 		end;
 	}
-	mes "‐怪しい男が";
-	mes "　紙を何枚も広げている‐";
+	mes "-Suspicious man spread out several sheets of paper-";
 	next;
-	mes "[怪しい男]";
-	mes "ふっふっふ……";
-	mes "持てるだけ手配書をもらってきたぞ。";
-	//mes "賞品首を捕まえて";
-	mes "賞金首を捕まえて";
-	mes "荒稼ぎしてやるぜ。";
+	mes "[Suspicious man]";
+	mes "huffing and puffing......" ;
+	mes "I've got as many arrangements as I can carry." ;
+	//mes "Catch a prize head";
+	mes "I'm gonna catch the prize head and make some rough money." ;
 	close;
 }
-einbroch.gat,54,97,3	script	ガード	10062,{
+einbroch.gat,54,97,3 script guard 10062,{
 	if(CHANGE_RB == 1) {
-		mes "‐手配書に書かれていた";
-		mes "　^FF0000秘密酒場^000000は";
-		mes "　この建物のようだ‐";
+		mes "-The ^FF0000 secret tavern ^000000 mentioned in the arrangement book seems to be this building-";
 		next;
-		mes "[ガード]";
-		mes "おい、そこのガンスリンガー。";
-		mes "いつまで突っ立って……";
-		mes "　";
-		mes "お前は賞金首スパイク！";
+		mes "[guard]";
+		mes "Hey, there Gunslinger."
+		mes "How long are you going to stand there ......?" ;
+		mes " You're a prize spike!" ;
 		next;
-		menu "違います",-,"人違いです",-;
-		mes "[ガード]";
-		mes "は？";
-		mes "　";
-		mes "いや、そうだ。";
-		mes "確かに捕まったと聞いたぞ。";
-		mes "だが念のためということもあるし……";
+		menu "No, sir.",-, "You've got the wrong guy.",-;
+		mes "[guard]";
+		mes "What?" ;
+		mes " No, yes." ;
+		mes "I heard you got caught for sure." ;
+		mes "But it's also for GHOST, ......." ;
 		next;
-		menu "自分は賞金首ではありません",-,"間違われて迷惑してます",-;
-		mes "[ガード]";
-		mes "なんだと？";
-		mes "　";
-		mes "‐ガードはあなたの顔を";
-		mes "　いろんな方向からジロジロと";
-		mes "　見つめた‐";
+		menu "I am not a bounty hunter",-, "I am annoyed at being mistaken",-;
+		mes "[guard]";
+		mes "What?" ;
+		mes " -Guard stared at your face from various directions-"; mes "[guard]"; mes "[guard]"; mes "[guard]"; mes "[guard]
 		next;
-		mes "[ガード]";
-		mes "ふうん……";
-		mes "確かに、似ているが違うな。";
+		mes "[guard]";
+		mes "Hmmm ......" ;
+		mes "Sure, they look alike, but they're different." ;
 		next;
-		mes "[ガード]";
-		mes "それで、手配書に関して";
-		mes "話があると、そういうことだな？";
+		mes "[guard]";
+		mes "So, you want to talk to me about the arrangements, is that what you're saying?" ;
 		next;
-		mes "[ガード]";
-		mes "そうだな、";
-		mes "私で判断できる問題じゃなさそうだし、";
-		mes "お前なら、この店に";
-		mes "入っても問題ないだろう。";
+		mes "[guard]";
+		mes "Well, it doesn't sound like a problem I can judge, and I'm sure you'd have no problem going in here." ;
 		next;
-		mes "[ガード]";
-		mes "手配書の件は";
-		mes "店内にいる^0000FFクルベル^000000に";
-		mes "持って行きな。";
+		mes "[guard]";
+		mes "Take the arrangement to ^0000FF Krubel^000000 in the store." ;
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else if(CHANGE_RB >= 2) {
-		mes "[ガード]";
-		mes "うん？　この前の奴か。";
-		mes "酒場になんの用だ？";
+		mes "[guard]";
+		mes "Yeah?  That's the guy from last time." ;
+		mes "What do you want at the bar?" ;
 		next;
-		if(select("中に入りたい","寄ってみただけ") == 2) {
-			mes "[ガード]";
-			mes "用がないなら帰れ。";
+		if(select("I'd like to come in", "Just stopping by") == 2) {
+			mes "[guard]";
+			mes "If you have no use for it, go home." ;
 			close;
 		}
-		mes "[ガード]";
-		mes "そうか。中で問題を起こすなよ。";
+		mes "[guard]";
+		mes "Okay. Don't cause any problems inside." ;
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else if(Job == Job_Rebellion) {
-		mes "[ガード]";
-		mes "よお、同志。";
-		mes "調子はどうだ？";
+		mes "[guard]";
+		mes "Yo, comrade." ;
+		mes "How are you doing?" ;
 		next;
-		if(select("酒場に入りたい","寄ってみただけ") == 2) {
-			mes "[ガード]";
-			mes "そうか。";
-			mes "元気そうで何よりだ。";
-			mes "その調子で銃の道を";
-			mes "極めろよ。";
+		if(select("I want to get into the bar", "I just dropped by") == 2) {
+			mes "[guard]";
+			mes "Well..." ;
+			mes "Glad to see you're doing well." ;
+			mes "Keep up the good work, and keep up the great work on the guns." ;
 			close;
 		}
-		mes "[ガード]";
-		mes "そうか。中で問題を起こすなよ。";
+		mes "[guard]";
+		mes "Okay. Don't cause any problems inside." ;
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	else {
-		// 未調査
+		// not examined
 	}
 }
 
-job_gun.gat,56,26,0	warp	リベリオン室内#1	2,2,einbroch.gat,49,97
-job_gun.gat,18,10,0	warp	リベリオン室内#2	2,2,job_gun.gat,81,29
-job_gun.gat,165,22,0	warp	リベリオン室内#3	2,2,job_gun.gat,197,44
-job_gun.gat,197,49,0	warp	リベリオン室内#4	2,2,job_gun.gat,157,21
+job_gun.gat,56,26,0 warp liberion room #1 2,2,einbroch.gat,49,97
+job_gun.gat,18,10,0 warp liberion room#2 2,2,job_gun.gat,81,29
+job_gun.gat,165,22,0 warp liberion room#3 2,2,job_gun.gat,197,44
+job_gun.gat,197,49,0 warp Rebellion Room #4 2,2,job_gun.gat,157,21
 
-job_gun.gat,68,33,3	script	冷静なリベリオン	10063,{
+job_gun.gat,68,33,3 script calm rebellion 10063,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121920)&0x8) {
-			mes "[冷静なリベリオン]";
-			mes "やあ、同志よ。";
-			mes "銃の扱いには常に気を配るんだぞ。";
-			mes "その銃が我々の象徴だからな。";
+			mes "[Calm Rebellion]";
+			mes "Hey there, comrade." ;
+			mes "Always be careful with your guns." ;
+			mes "Because that gun is what we stand for." ;
 			close;
 		}
 		setquest 121920;
 		compquest 121920;
-		mes "[冷静なリベリオン]";
-		mes "やあ、新入り。";
-		mes "銃の扱いには常に気を配るんだぞ。";
-		mes "その銃が我々の象徴だからな。";
+		mes "[Calm Rebellion]";
+		mes "Hey, new guy." ;
+		mes "Always be careful with your guns, man." ;
+		mes "That gun is what we stand for." ;
 		close;
 	}
-	mes "[冷静なリベリオン]";
-	mes "銃の扱い方はわかってるのか？";
+	mes "[Calm Rebellion]";
+	mes "Do you know how to handle a gun?" ;
 	close;
 }
 
-job_gun.gat,78,33,6	script	怪しいガンマン	731,{
+job_gun.gat,78,33,6 script Suspicious gunman 731,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121915)&0x8) {
-			mes "[怪しいガンマン]";
-			mes "よお、同志よ。";
-			mes "自由を守るために";
-			mes "銃の道を究めているか？";
-			mes "銃だけになハハッ！";
+			mes "[Suspicious Gunman]";
+			mes "Yo, comrade." ;
+			mes "Are you a gunman who has mastered the way of the gun in defense of freedom?" ;
+			mes "Only with guns, haha!" ;
 			close;
 		}
 		setquest 121915;
 		compquest 121915;
-		mes "[怪しいガンマン]";
-		mes "よお、同志よ。";
-		mes "先輩として後輩のお前に言えるのは";
-		mes "これだけだ。";
+		mes "[Suspicious gunman]";
+		mes "Yo, comrade." ;
+		mes "As a senior, all I can say to you, a junior, is this." ;
 		next;
-		mes "[怪しいガンマン]";
-		mes "その手の銃は";
-		mes "お前の自由の象徴だ。";
-		mes "その自由を守るためにリベリオンは";
-		mes "道を究めるのさ。";
-		mes "銃だけになハハッ！";
+		mes "[Suspicious gunman]";
+		mes "That gun in your hand is a symbol of your freedom." ;
+		mes "To protect that freedom, Rebellion is the way to go." ;
+		mes "Only with guns, haha!" ;
 		close;
 	}
-	mes "[怪しいガンマン]";
-	mes "……";
+	mes "[Suspicious Gunman]";
+	mes "......" ;
 	next;
-	mes "[怪しいガンマン]";
-	mes "は？";
-	mes "俺は鍛冶なんてやってないんだが。";
-	mes "俺はガンマン。";
-	mes "自由に生きるガンマンだぞ。";
+	mes "[Suspicious Gunman]";
+	mes "What?" ;
+	mes "I don't do any blacksmithing." ;
+	mes "I'm a gunman." ;
+	mes "I'm a gunman who lives free." ;
 	close;
 }
 
-job_gun.gat,74,24,6	script	酔っ払いの男	887,{
+Job_gun.gat,74,24,6 script drunk man 887,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121905)&0x8) {
-			mes "[酔っ払いの男]";
-			mes "ぐおおおおおおお……";
-			mes "　";
-			mes "‐男は大きないびきをかいて";
-			mes "　寝入っている‐";
+			mes "[Drunken man]";
+			mes "Goooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo ......" ;
+			mes " -Man snoring loudly in his sleep-"; mes "[man snoring loudly in his sleep]"; mes "[man snoring loudly in his sleep]
 			close;
 		}
 		setquest 121905;
 		compquest 121905;
-		mes "[酔っ払いの男]";
-		mes "ここはリベリオンが集い、";
-		mes "情報を交換する秘密の酒場だ。";
-		mes "新米ならクルベルに";
-		mes "挨拶していきな。";
+		mes "[Drunken man]";
+		mes "This is a secret tavern where libations meet and exchange information." ;
+		mes "If you're new, go say hello to Krubel." ;
 		next;
-		mes "[酔っ払いの男]";
-		mes "私の仕事は酒の仕入れだからな。";
+		mes "[Drunk man]";
+		mes "My job is to stock up on booze, you know." ;
 		close;
 	}
-	mes "[酔っ払いの男]";
-	mes "私はこの酒場の店長だ！";
-	mes "　";
-	mes "……うん？";
+	mes "[drunk man]";
+	mes "I'm the manager of this bar!" ;
+	mes " ...... Hm?" ;
 	next;
-	mes "[酔っ払いの男]";
-	mes "ここが私の店？";
-	mes "そもそも私は店長なのか……？";
-	mes "　";
-	mes "‐男はひどく酔っている‐";
+	mes "[Drunk guy]";
+	mes "Is this my store?" ;
+	mes "Am I the manager in the first place ......?" ;
+	mes " -The man is terribly drunk-";
 	close;
 }
 
-job_gun.gat,64,33,6	script	不安な男	748,{
+Job_gun.gat,64,33,6 script Anxious man 748,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121920)&0x8) {
-			mes "[不安な男]";
-			mes "彼らの象徴は自由らしいですけど、";
-			mes "それなら私も自由にしてくださいよ。";
+			mes "[Anxious Man]";
+			mes "I heard their symbol is freedom, but then I should be free too." ;
 			next;
-			mes "[冷静なリベリオン]";
-			mes "何言ってんだい、あんた。";
-			mes "あんたは、街へ出ては迷って";
-			mes "ここにたどり着いてを";
-			mes "繰り返してる";
-			mes "ただの方向音痴じゃないか。";
+			mes "[Calm Rebellion]";
+			mes "What are you talking about, man?" ;
+			mes "You're just a directionless guy who keeps going into town, getting lost, and ending up here." ;
 			next;
-			mes "[不安な男]";
-			mes "……ううう、ここが";
-			mes "入り組んでいるのが";
-			mes "悪いんですよ。";
+			mes "[Anxious Man]";
+			mes "...... Ugh, it's bad that this place is so convoluted." ;
 			close;
 		}
-		mes "[不安な男]";
-		mes "あなたもこの変な場所の";
-		mes "一員なんですか？";
-		mes "どうすれば出られるんでしょうか。";
+		mes "[uneasy man]";
+		mes "Are you part of this weird place?" ;
+		mes "How can I get out?" ;
 		close;
 	}
-	mes "[不安な男]";
-	mes "どうやら変な場所に";
-	mes "入ってきたみたいです。";
-	mes "酒場じゃないんですかね？";
-	mes "雰囲気変だし。";
+	mes "[Anxious Man]";
+	mes "It looks like we've entered a strange place." ;
+	mes "Isn't this a bar?" ;
+	mes "The atmosphere is weird." ;
 	close;
 }
 
-job_gun.gat,86,29,3	script	クルベル	10062,{
+job_gun.gat,86,29,3 script crubel 10062,{
 	if(Job == Job_Rebellion) {
 		if(checkquest(121910)&0x8) {
 			if(checkquest(121925)&0x8 == 0) {
 				setquest 121925;
 				compquest 121925;
 			}
-			mes "[クルベル]";
-			mes "る～るる～♪";
-			mes "反逆の　りべりお～ん♪";
-			mes "　";
-			mes "‐クルベルはグラスを磨きながら";
-			mes "　楽しげに歌う‐";
+			mes "[crubel]";
+			
 			next;
-			mes "[クルベル]";
-			mes "よお、同志。";
-			mes "今日も元気にリベリオンしてるか？";
-			mes "ここはリベリオンが集う";
-			mes "酒場だからな。";
-			mes "たまには寄ってくれよ。";
+			mes "[Krubel]";
+			mes "Yo, comrade." ;
+			mes "How are you doing today, Rebellion?" ;
+			mes "This is the bar where the Rebellions gather." ;
+			mes "Come by once in a while." ;
 			close;
 		}
 		setquest 121910;
 		compquest 121910;
-		mes "[クルベル]";
-		mes "おめでとう。";
-		mes "これでお前も一人のリベリオンだな。";
+		mes "[Crubel]";
+		mes "Congratulations." ;
+		mes "Now you're one riveting rivellion." ;
 		next;
-		mes "[クルベル]";
-		mes "手配書のことはちゃーんと";
-		mes "対処しておいたから";
-		mes "もう追い回されることはないぜ。";
-		mes "安心してくれ。";
+		mes "[Crubel]";
+		mes "I took care of the arrangement properly, so you won't be hounded anymore." ;
+		mes "Don't worry." ;
 		next;
-		mes "[クルベル]";
-		mes "で、もちろんルウィーニや";
-		mes "シドレンの話は聞いているよな。";
+		mes "[Krubel]";
+		mes "So, of course, you've heard about Lewini and Sidren, right?" ;
 		next;
-		mes "[クルベル]";
-		mes "リベリオンにとって銃は";
-		mes "ガンスリンガーのころよりも";
-		mes "重要なものだ。";
-		mes "なんせ己の志を";
-		mes "その銃に込め、そして";
-		mes "証明し続けるんだからな。";
+		mes "[Krubel]";
+		mes "Guns are more important to Liberion than they were to Gunslinger." ;
+		mes "After all, you put your aspirations into that gun, and you keep proving them." ;
 		next;
-		mes "[クルベル]";
-		mes "志は一つ。";
-		mes "自由と反逆。";
-		mes "世の中にはびこる悪には";
-		mes "銃で対抗するんだ。";
-		mes "その自由を体現するのさ。";
+		mes "[Krubel]";
+		mes "Our aspirations are one." ;
+		mes "Freedom and rebellion." ;
+		mes "We will use our guns against the evil that infests the world." ;
+		mes "We embody that freedom." ;
 		next;
-		mes "[クルベル]";
-		mes "何より続けることは難しいが";
-		mes "何よりもカッコイイ！";
-		mes "そんな存在にお前はなったんだ！";
+		mes "[Crubel]";
+		mes "It's harder to keep going than anything else, but above all, it's cool!" ;
+		mes "That's what you've become!" ;
 		next;
-		mes "[クルベル]";
-		mes "精進しろよ新米！";
+		mes "[Crubel]";
+		mes "Be diligent, newbie!" ;
 		close;
 	}
 	if(CHANGE_RB == 1) {
-		mes "[クルベル]";
-		mes "いらっしゃい。";
-		mes "ガンスリンガーが";
-		mes "この秘密酒場に何の用事だ？";
+		mes "[Crubel]";
+		mes "Welcome." ;
+		mes "What business does Gunslinger have in this secret tavern?" ;
 		next;
-		if(select("手配書の話をする","注文を頼む") == 2) {
-			mes "[クルベル]";
-			mes "何がいいんだい？";
-			mes "ドリンクにフード……";
-			mes "　";
-			mes "手配書かな？";
+		if(select("talk about arrangements", "ask for an order") == 2) {
+			mes "[Crubel]";
+			mes "What would you like?" ;
+			mes "Food for drinks ......" ;
+			mes "[handbill]" ;
 			emotion 0,"";
 			next;
 		}
-		mes "‐あなたはクルベルに";
-		mes "　手配書を突きつけた‐";
+		mes "-You confronted Krubel with an arrangement-";
 		next;
-		mes "[クルベル]";
-		mes "……うん。";
-		mes "いや待って。ぷくく……";
-		mes "　";
-		mes "‐クルベルの肩が";
-		mes "　激しく震えている‐";
+		mes "[Krubel]";
+		mes "...... Yup." ;
+		mes "No, wait. Pukuku ......." ;
+		mes " -Krubel's shoulders are shaking violently-";
 		next;
-		switch(select("怒る！","銃に手を持っていく")) {
+		switch(select("Angry!" , "hand on the gun"))) {
 		case 1:
-			mes "[クルベル]";
-			mes "はっはっは！";
-			mes "すまんすまんちょっと待ってくれ。";
+			mes "[Crubel]";
+			mes "Ha ha ha!" ;
+			mes "Sorry, sorry, hold on a second." ;
 			break;
 		case 2:
-			mes "[クルベル]";
-			mes "あっこら！";
-			mes "店内で乱闘はごめんだぜ。";
-			mes "その手を放しな。";
+			mes "[Crubel]";
+			mes "Ah kola!" ;
+			mes "We don't want a brawl in the store." ;
+			mes "Get your hands off me." ;
 			next;
 			break;
 		}
-		mes "‐ひとしきり笑って";
-		mes "　満足したのか、クルベルは";
-		mes "　涙をぬぐって";
-		mes "　あなたに向き直った‐";
+		mes "-Satisfied with a quick laugh, Krubel wiped away her tears and turned to you-";
 		next;
-		mes "[クルベル]";
-		mes "いや、賞金稼ぎから";
-		mes "手配書まで手に入れるなんて";
-		mes "なかなか見どころがあるじゃないか。";
+		mes "[Crubel]";
+		mes "No, it's quite a highlight to even get an arrangement from a bounty hunter." ;
 		next;
-		menu "どういうことでしょう？",-;
-		mes "[クルベル]";
-		mes strcharinfo(0)+ "、";
-		mes "お前のガンスリンガーとしての";
-		mes "実力は伝え聞いているぞ。";
-		mes "　";
-		mes "お前は^FF0000リベリオン^000000に";
-		mes "興味ないか？";
+		menu "What do you mean?" ,-;
+		mes "[Crubel]";
+		mes ""+strcharinfo(0)+ ", I've been told how good a Gunslinger you are." ;
+		mes ""You're not interested in ^FF000000 Rebellion^000000?"" ;
 		next;
-		switch(select("リベリオン？","興味ないです","そんなことより手配書！")) {
+		switch(select("Rebellion?" I'm not interested.", "That's not the point!")) {
 		case 1:
 			break;
 		case 2:
-			mes "[クルベル]";
-			mes "すっかりへそを曲げて。";
-			mes "お前はなかなかにかわいいやつだな。";
+			mes "[Crubel]";
+			mes "Totally navel-bending." ;
+			mes "You're quite a cute guy." ;
 			next;
 			break;
 		case 3:
-			mes "[クルベル]";
-			mes "わかってるさ。";
-			mes "せっかちなんだなお前は。";
-			mes "それも関係あることだから";
-			mes "まずは話を聞いてくれ。";
+			mes "[Crubel]";
+			mes "I know, I know." ;
+			mes "You're impatient, you know." ;
+			mes "That's also relevant, so listen to me first." ;
 			next;
 			break;
 		}
-		mes "[クルベル]";
-		mes "リベリオンは";
-		mes "ガンスリンガーの上位職であり、";
-		mes "自由な魂の解放者だ！";
+		mes "[Crubel]";
+		mes "Rebellion is the higher position of Gunslinger, the liberator of free souls!" ;
 		next;
-		mes "[クルベル]";
-		mes "世間にはびこる悪は";
-		mes "得てして権力も持ち合わせる。";
-		mes "そんな悪に対して銃口を向け、";
-		mes "反逆するのがリベリオンさ。";
-		mes "かっこいいだろ？";
+		mes "[Krubel]";
+		mes "The evil that infests the world is often also powerful." ;
+		mes "It is the liberion that rebels against such evil at the point of its muzzle." ;
+		mes "Isn't that cool?" ;
 		next;
-		mes "[クルベル]";
-		mes "……で、ここで一つ";
-		mes "種明かしなんだが。";
-		mes "この手配書ミス、";
-		mes "実はわざとなんだよな。";
+		mes "[Crubel]";
+		mes "...... So, here's one seedy thing." ;
+		mes "This arrangement mistake is actually on purpose." ;
 		next;
-		mes "[クルベル]";
-		mes "ガンスリンガーを極めたあんたを";
-		mes "スカウトすると同時に";
-		mes "その心根がどういうものか";
-		mes "確認させてもらったってわけさ。";
+		mes "[Krubel]";
+		mes "I'm scouting you, a master Gunslinger, and at the same time, I had to see what your heart was in the right place." ;
 		next;
-		mes "[クルベル]";
-		mes "世俗の悪には";
-		mes "志だけでは反逆できない。";
-		mes "しかし、最初にあるのは";
-		mes "理不尽を放置しない、";
-		mes "反逆を決める心根一つ！";
+		mes "[Krubel]";
+		mes "You can't rebel against the evils of the world with aspiration alone." ;
+		mes "But the first thing is not to leave unreason unchecked, but one's heart and soul that decides to rebel!" ;
 		next;
-		mes "[クルベル]";
-		mes "あんたの直接乗り込む";
-		mes "その意気……";
-		mes "　";
-		mes "気に入ったぜ！";
+		mes "[Crubel]";
+		mes "That spirit of yours to get in directly ......." ;
+		mes "[Krubel]"; mes "[Krubel]"; mes "[Krubel]" ;
 		next;
-		mes "[クルベル]";
-		mes "俺はあんたを同志に";
-		mes "迎え入れたい！";
-		mes "リベリオンの道を歩んで欲しい！";
-		mes "心からだぜ。心の底からだ！";
+		mes "[Crubel]";
+		mes "I'd like to have you as a comrade!" ;
+		mes "I want you to follow the Rebellion path!" ;
+		mes "From the bottom of my heart, man. From the bottom of my heart!" ;
 		next;
-		mes "[クルベル]";
-		mes "改めて言おう。";
-		mes "俺たちリベリオンの一員に";
-		mes "なる気はないか？";
+		mes "[Crubel]";
+		mes "I'll say it again." ;
+		mes "Are you interested in becoming a part of our Rebellion?" ;
 		while(1) {
 			next;
-			switch(select("なる","ならない","喧嘩売ってんのか")) {
+			switch(select("will be", "won't be", "you're fighting with us")) {
 			case 1:
 				break;
 			case 2:
-				mes "[クルベル]";
-				mes "いやいや、そんなこと言わずに。";
-				mes "ガンスリンガーの次は";
-				mes "リベリオンを極めようじゃないか。";
+				mes "[Crubel]";
+				mes "No, no, no, don't say that." ;
+				mes "After Gunslinger, why don't we master Rebellion?" ;
 				next;
-				mes "[クルベル]";
-				mes "改めて言おう。";
-				mes "俺たちリベリオンの一員に";
-				mes "なる気はないか？";
+				mes "[Crubel]";
+				mes "I'll say it again." ;
+				mes "Are you interested in becoming a part of our Rebellion?" ;
 				continue;
 			case 3:
-				mes "[クルベル]";
-				mes "……いいねぇ。";
-				mes "　";
-				mes "あれだろ？　手配書で";
-				mes "誘い出したことに対して";
-				mes "反逆してくれるとは。";
+				mes "[Crubel]";
+				mes "...... That's nice." ;
+				mes " That one, right?　I can't believe you're going to rebel against me for luring you out with an arrangement." ;
 				next;
-				mes "[クルベル]";
-				mes "リベリオンの素質としては";
-				mes "もう十分な証明だね。";
+				mes "[Crubel]";
+				mes "You've already proven yourself to be a prime example of a rebellion." ;
 				next;
-				mes "[クルベル]";
-				mes "……というわけで。";
-				mes "改めて言おう。";
-				mes "俺たちリベリオンの一員に";
-				mes "なる気はないか？";
+				mes "[Krubel]";
+				mes "...... So that's why." ;
+				mes "I'll say it again." ;
+				mes "Are you interested in being a part of us Rebellion?" ;
 				continue;
 			}
 			break;
 		}
-		mes "[クルベル]";
-		mes "いいぞいいぞ。";
-		mes "よく言ってくれた！";
-		mes "それじゃあ、気分が変わらないうちに";
-		mes "転職試験と行こうじゃないか。";
+		mes "[Crubel]";
+		mes "Good, good, good." ;
+		mes "Well said!" ;
+		mes "Well then, before I change my mind, let's go with the job change exam, shall we?" ;
 		next;
-		mes "[クルベル]";
-		mes "ん？";
-		mes "どうして転職試験かって？";
+		mes "[Crubel]";
+		mes "Hmm?" ;
+		mes "Why did you ask me about the career change exam?" ;
 		next;
-		mes "[クルベル]";
-		mes "まあ、あんたは";
-		mes "スカウトされた人材だが。";
-		mes "転職試験でリベリオンとしての";
-		mes "志や技術なんかも同時に学べるからさ。";
-		mes "ぜひ受けてくれよ。頼むよ。";
+		mes "[Crubel]";
+		mes "Well, you're a scouted talent." ;
+		mes "You can learn the aspirations and skills of a liberion at the same time in the career change exam." ;
+		mes "Please take it. I'm counting on you." ;
 		next;
-		mes "[クルベル]";
-		mes "最初の試験官は";
-		mes "ルウィーニってやつさ。";
-		mes "すぐわかると思うぜ。";
+		mes "[Krubel]";
+		mes "The first examiner is a guy named Lewini." ;
+		mes "You'll find out soon enough." ;
 		next;
-		mes "[クルベル]";
-		mes "じゃあ、頑張ってこい。";
-		mes "次に会うとき、お前は";
-		mes "リベリオンになっててくれよ！";
+		mes "[Krubel]";
+		mes "Well, go for it." ;
+		mes "Next time I see you, you're going to be the Rebellion!" ;
 		chgquest 12340,12341;
 		set CHANGE_RB,2;
 		close2;
@@ -691,333 +551,276 @@ job_gun.gat,86,29,3	script	クルベル	10062,{
 		end;
 	}
 	else if(CHANGE_RB == 2) {
-		mes "[クルベル]";
-		mes "まだ試験の途中のようだな。";
-		mes "ルウィーニのところに";
-		mes "行くか？";
+		mes "[crubel]";
+		mes "Looks like we're still in the middle of the test." ;
+		mes "Do you want to go to Luwini's?" ;
 		next;
-		if(select("行く","行かない") == 2) {
-			mes "[クルベル]";
-			mes "わかった、";
-			mes "それじゃ一休みに";
-			mes "酒でも飲んでいくか？";
-			mes "ハハハハ！";
+		if(select("going", "not going") == 2) {
+			mes "[Krubel]";
+			mes "Okay, so you want to take a break and have a drink?" ;
+			mes "hahahaha!" ;
 			close;
 		}
-		mes "[クルベル]";
-		mes "わかった、今会わせてやる。";
-		mes "こっちだ。";
+		mes "[Crubel]";
+		mes "Okay, I'll let you see him now." ;
+		mes "This way." ;
 		close2;
 		warp "job_gun.gat",19,15;
 		end;
 	}
 	else if(CHANGE_RB == 3) {
-		// 未調査
-		mes "[クルベル]";
-		mes "まだ試験の途中のようだな。";
-		mes "シドレンのところに";
-		mes "行くか？";
+		// unexamined
+		mes "[crubel]";
+		mes "Looks like we're still in the middle of the exam." ;
+		mes "Shall we go to Sidren's?" ;
 		next;
-		if(select("行く","行かない") == 2) {
-			mes "[クルベル]";
-			mes "わかった、";
-			mes "それじゃ一休みに";
-			mes "酒でも飲んでいくか？";
-			mes "ハハハハ！";
+		if(select("going", "not going") == 2) {
+			mes "[Krubel]";
+			mes "Okay, so you want to take a break and have a drink?" ;
+			mes "hahahaha!" ;
 			close;
 		}
-		mes "[クルベル]";
-		mes "わかった、今会わせてやる。";
-		mes "こっちだ。";
+		mes "[Crubel]";
+		mes "Okay, I'll let you see him now." ;
+		mes "This way." ;
 		close2;
 		warp "job_gun.gat",120,133;
 		end;
 	}
 	else if(CHANGE_RB == 4) {
-		// 未調査
-		mes "[クルベル]";
-		mes "試験は終わったようだな。";
-		mes "シドレンのところに";
-		mes "行くか？";
+		// unexamined
+		mes "[Crubel]";
+		mes "Looks like the exam is over." ;
+		mes "Shall we go to Sidren's?" ;
 		next;
-		if(select("行く","行かない") == 2) {
-			mes "[クルベル]";
-			mes "わかった、";
-			mes "それじゃ一休みに";
-			mes "酒でも飲んでいくか？";
-			mes "ハハハハ！";
+		if(select("going", "not going") == 2) {
+			mes "[Krubel]";
+			mes "Okay, so you want to take a break and have a drink?" ;
+			mes "hahahaha!" ;
 			close;
 		}
-		mes "[クルベル]";
-		mes "わかった、今会わせてやる。";
-		mes "次に会うとき、お前は";
-		mes "リベリオンになっててくれよ！";
+		mes "[Crubel]";
+		mes "Okay, I'll let you see him now." ;
+		mes "Next time I see you, you're going to be the Rebellion!" ;
 		close2;
 		warp "job_gun.gat",210,132;
 		end;
 	}
 }
-job_gun.gat,19,24,3	script	ルウィーニ#1	10063,{
+job_gun.gat,19,24,3 script Luwini#1 10063,{
 	if(CHANGE_RB == 2) {
-		mes "[ルウィーニ]";
-		mes "やあ。君が";
-		mes "クルベルの言っていた";
-		mes "リベリオン志望者かな？";
-		mes "　";
-		mes "‐鋭い目をした小柄な人物が";
-		mes "　あなたを見上げた‐";
+		mes "[Lewini]";
+		mes "Hi. Are you the aspiring Rebellion that Krubel was talking about?" ;
+		mes " -a small figure with sharp eyes looked up at you-";
 		next;
-		mes "[ルウィーニ]";
-		mes "クルベルの態度には";
-		mes "さぞ苛立たせられたことだろうな。";
-		mes "……まあ、あいつは、あれだ。";
-		mes "デリカシーがなくて";
-		mes "人懐こいだけなんだ。";
-		mes "考えるだけ無駄だ。";
+		mes "[Lewini]";
+		mes "I'm sure Krubel's attitude must have been very irritating to you." ;
+		mes "...... Well, that guy, that one." ;
+		mes "He's just not delirious and friendly." ;
+		mes "Don't even think about it." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "……ゴホン。";
-		mes "さて、それじゃあ";
-		mes "試験の前に";
-		mes "ここに署名してくれ。";
+		mes "[Lewini]";
+		mes "...... Gohon." ;
+		mes "Okay, so sign here before the exam." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "我々も注意するが、";
-		mes "機械や炎、鉄を扱うからな。";
-		mes "万が一の為だ。";
+		mes "[Luwini]";
+		mes "We'll Attention too, but we'll be dealing with machines, fire, and steel." ;
+		mes "Just in case." ;
 		next;
-		mes "‐ルウィーニの差し出した紙には";
-		mes "　署名者は試験途中に";
-		mes "　怪我をしたり、命を失っても";
-		mes "　絶対に責任を問わないことを誓う……";
-		mes "　";
-		mes "　といったことが書かれていた‐";
+		mes "- On the paper offered by Luwini, the signer swears that he or she will never be held responsible if he or she is injured or loses his or her life during the examination: ......." ;
+		mes " and that he would not be held responsible for any injuries or loss of life during the course of the exam-";
 		next;
-		if(select("署名する","署名しない") == 2) {
-			mes "[ルウィーニ]";
-			mes "了解した。";
-			mes "嫌なら仕方がないな。";
-			mes "帰っていいぞ。";
+		if(select("sign", "do not sign") == 2) {
+			mes "[Luwini]";
+			mes "Roger that." ;
+			mes "If you don't like it, I don't blame you." ;
+			mes "You can go home." ;
 			close2;
 			warp "job_gun.gat",62,27;
 			end;
 		}
-		mes "[ルウィーニ]";
-		mes "書き終わったか。";
-		mes "それじゃついて来な。";
+		mes "[Luwini]";
+		mes "Have you finished writing?" ;
+		mes "Then follow me." ;
 		close2;
 		warp "job_gun.gat",117,41;
 		end;
 	}
-	mes "[ルウィーニ]";
-	mes "なんだ？　道にでも迷ったのか？";
-	mes "状況を確認してから";
-	mes "試験場に来なさい。";
+	mes "[Luwini]";
+	mes "What?  You lost your way or something?" ;
+	mes "Check the situation and come to the testing center." ;
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,117,46,3	script	ルウィーニ#2	10063,{
+job_gun.gat,117,46,3 script Luwini#2 10063,{
 	if(checkquest(12341))
 		chgquest 12341,12342;
 	if(checkquest(12342)) {
 		if(sc_onparam(SC_MONSTER_TRANSFORM,1) == 2431) {
-			mes "^0000ff‐すでに変身中です。";
-			mes "　試験課題をすべて完了したら";
-			mes "　組み立て室に行き、";
-			mes "　ルウィーニに";
-			mes "　報告してください‐^000000";
+			mes "^0000ff-already in transformation." ;
+			mes " When you have completed all the test tasks, go to the assembly room and report to Luwini-^000000";
 			close;
 		}
 		if(countitem(6746)) {
 			delitem 6746,countitem(6746);
-			mes "[ルウィーニ]";
-			mes "試験で余った鉄製加工物は回収する。";
+			mes "[Lewini]";
+			mes "Excess iron fabrications from the test will be collected." ;
 			next;
 		}
 		if(countitem(6747)) {
 			delitem 6747,countitem(6747);
-			mes "[ルウィーニ]";
-			mes "規格鉄製加工物を持っているな。";
-			mes "試験で余った鉄製加工物は回収する。";
+			mes "[Luwini]";
+			mes "You have a standard iron fabrication." ;
+			mes "The excess iron fabricated material from the test will be collected." ;
 			next;
 		}
 		if(countitem(13118)) {
 			delitem 13118,1;
-			mes "[ルウィーニ]";
-			mes "銃は完成しているが、";
-			mes "既に時間切れで失格だ。";
-			mes "残念だがその銃は回収するぞ。";
+			mes "[Lewini]";
+			mes "The gun is complete, but we've already run out of time and disqualified it." ;
+			mes "Remaining GOST, but we're going to retrieve that gun." ;
 			next;
 		}
-		mes "[ルウィーニ]";
-		mes "一度しか話さないから";
-		mes "よく聞きなさい。";
+		mes "[Luwini]";
+		mes "I'm only going to speak to you once, so listen carefully." ;
 		next;
-		menu "はい",-;
-		mes "[ルウィーニ]";
-		mes "ここは鋳物を扱っている場所だ。";
-		mes "いたるところで鉄製加工物が";
-		mes "生産されている。";
+		menu "Yes",-;
+		mes "[Lewini]";
+		mes "This place deals in castings." ;
+		mes "Everywhere iron fabrications are produced." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "リベリオンの一番の基本は、";
-		mes "武器に対する広い知識。";
-		mes "この試験では、";
-		mes "必要な材料を選び抜き、";
-		mes "己の手で直接";
-		mes "銃器を組み立てることになる。";
+		mes "[Luwini]";
+		mes "The most fundamental thing about Rebellion is its broad knowledge of weapons." ;
+		mes "In this test, you will select the necessary materials and assemble the firearm directly with your own hands." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "君のやるべきことは、";
-		mes "南の出入り口近くにある";
-		mes "^0000FF溶鉱炉制御機^000000を操作して";
-		mes "取り出せる鉄製加工物の中から、";
-		mes "規格に合うものを^FF00002個^000000選ぶことだ。";
+		mes "[Lewini]";
+		mes "All you have to do is to select ^FF0000002 pieces^0000000000 of iron fabrications that meet the standard, which can be taken out by operating the ^0000FF blast furnace control machine^000000 located near the south doorway." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "2個鉄製加工物を確保したら、";
-		mes "隣の組み立て室で";
-		mes "銃器を組み立てなさい。";
+		mes "[Luwini]";
+		mes "Once you have secured two ironwork, assemble the firearms in the assembly room next door." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "銃器組み立ての時間は";
-		mes "^FF00003分^000000。";
-		mes "技術と知識と、スピードが";
-		mes "要求されるぞ。";
+		mes "[Lewini]";
+		mes "The time for assembling the firearms is ^FF0000003 minutes^000000."
+		mes "You will be required to have skill, knowledge, and speed." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "完成した銃器は隣の部屋で受け取ろう。";
-		mes "制限時間をわかりやすくするために、";
-		mes "君の外見を変えてもらうぞ。";
+		mes "[Lewini]";
+		mes "The completed firearms will be received in the next room." ;
+		mes "I'm going to ask you to change your appearance to make the time limit easier to understand." ;
 		next;
-		mes "[ルウィーニ]";
-		mes "ちなみに、変身後の姿は私の趣味だ。";
-		mes "街で見かけたことがあるんだが、";
-		mes "理想のタイプだったのでな。";
-		mes "それだったらモチベーションが";
-		mes "あがるだろう？";
+		mes "[Luwini]";
+		mes "By the way, the post-transformation appearance is my hobby." ;
+		mes "I've seen you around town once, and you were my ideal type." ;
+		mes "That would motivate you, wouldn't it?" ;
 		next;
-		mes "[ルウィーニ]";
-		mes "^0000ff3分を超えて変装が解けると";
-		mes "試験は失敗。再試験^000000だ。";
-		mes "せいぜい励みたまえ。";
-		viewpoint 1, 165, 18, 1, 0xFFFF00;
+		mes "[Lewini]";
+		mes "If the disguise is removed after ^0000ff3 minutes, the exam fails. It's a retest ^000000." ;
+		mes "Good luck and good luck." ;
+		viewpoint 1, 165, 18, 1, 0xFFFFFF00;
 		sc_start SC_MONSTER_TRANSFORM,180000,2431;
 		close;
 	}
-	mes "[ルウィーニ]";
-	mes "なんだ？　道にでも迷ったのか？";
-	mes "状況を確認してから";
-	mes "試験場に来なさい。";
+	mes "[Luwini]";
+	mes "What?  Are you lost?" ;
+	mes "Check the situation and come to the testing center." ;
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,198,39,3	script	ルウィーニ#3	10063,{
+job_gun.gat,198,39,3 script Luwini#3 10063,{
 	if(checkquest(12342)) {
-		if(sc_onparam(SC_MONSTER_TRANSFORM,1) != 2431) {
-			mes "[ルウィーニ]";
-			mes "時間を過ぎている。失格だ。";
-			mes "余った材料はすべて回収する。";
+		if(sc_onparam(SC_MONSTER_TRANSFORM,1) ! = 2431) {
+			mes "[Luwini]";
+			mes "You are out of time. Disqualified." ;
+			mes "All excess material will be collected." ;
 			delitem 6746,countitem(6746);
 			delitem 6747,countitem(6747);
 			next;
 			if(countitem(13118)) {
-				// 未調査
+				// not yet investigated
 				delitem 13118,1;
-				mes "[ルウィーニ]";
-				mes "銃は完成しているが、";
-				mes "既に時間切れで失格だ。";
-				mes "残念だがその銃は回収するぞ。";
+				mes "[Luwini]";
+				mes "The gun is complete, but it's already out of time and disqualified." ;
+				mes "Remaining GOST, but we're going to retrieve that gun." ;
 				next;
 			}
-			mes "[ルウィーニ]";
-			mes "さあ、もう一度だ。";
-			mes "励みたまえ。";
+			mes "[Luwini]";
+			mes "Come on, let's do it again." ;
+			mes "Be encouraged." ;
 			close2;
 			warp "job_gun.gat",117,41;
 			end;
 		}
 		if(countitem(13118) == 0) {
-			mes "[ルウィーニ]";
-			mes "終わったか？";
-			mes "……それにしては";
-			mes "完成した銃が見当たらないようだが？";
+			mes "[Luwini]";
+			mes "Are you done?" ;
+			mes "...... I don't seem to see a finished gun for that?" ;
 			close;
 		}
 		delitem 13118,1;
-		mes "[ルウィーニ]";
-		mes "よし、急いで作ったようだから";
-		mes "万全の状態ではないが、";
-		mes "とにかく合格だ。";
-		mes "余った材料はすべて回収する。";
+		mes "[Lewini]";
+		mes "Okay, it looks like it was made in a hurry, so it's not in perfect condition, but it passes anyway." ;
+		mes "All excess materials will be collected." ;
 		delitem 6746,countitem(6746);
 		delitem 6747,countitem(6747);
 		chgquest 12342,121930;
 		set CHANGE_RB,3;
 		next;
-		mes "[ルウィーニ]";
-		mes "それじゃあ、次のコースに案内しよう。";
-		mes "次はシドレンが";
-		mes "君の教育を担当する。";
+		mes "[Luwini]";
+		mes "Then let me take you to the next course." ;
+		mes "Sidren will be in charge of your education next." ;
 		close2;
 		warp "job_gun.gat",120,133;
 		end;
 	}
-	mes "[ルウィーニ]";
-	mes "なんだ？　道にでも迷ったのか？";
-	mes "状況を確認してから";
-	mes "試験場に来なさい。";
+	mes "[Luwini]";
+	mes "What?  You lost your way or something?" ;
+	mes "Check the situation and come to the testing center." ;
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,165,18,1	script	溶鉱炉制御機#1	844,{
+job_gun.gat,165,18,1 script blast furnace controller#1 844,{
 	if(checkquest(12342)) {
-		mes "‐溶鉱炉から完成した製品を";
-		mes "　抽出しますか？‐";
+		mes "-Extract finished product from blast furnace? -";
 		next;
-		if(select("抽出する","やめる") == 2) {
-			mes "‐作業を中止し、";
-			mes "　待機モードに転換します‐";
+		if(select("extract", "stop") == 2) {
+			mes "-Continue the operation and convert to standby mode-"; next; mes "-Continue the operation and convert to standby mode-";
 			close;
 		}
-		donpcevent "溶鉱炉制御機#2::OnStart";
-		hideonnpc "溶鉱炉制御機#1";
-		mes "‐溶鉱炉制御機ZX-3100：作業を開始‐";
+		donpcevent "Blast furnace controller #2::OnStart";
+		hideonnpc "Blast furnace controller #1";
+		mes "-Smelting furnace control machine ZX-3100::Start working-"; } donpcevent "-Smelting furnace control machine ZX-3100::OnStart";
 		close;
 	}
-	mes "‐許可が無い人は操作できません‐";
+	mes "-No one without permission can operate-"; mes "-No one without permission can operate-"; mes "-No one without permission can operate-"; }
 	close;
 }
 
-job_gun.gat,165,18,1	script	溶鉱炉制御機#2	844,{
+job_gun.gat,165,18,1 script blast furnace controller#2 844,{
 	if(checkquest(12342)) {
-		mes "‐完成した鉄製加工物の";
-		mes "　抽出が行われています。";
-		mes "　完了するまで";
-		mes "　任意の作業はできません‐";
+		mes "-The extraction of the finished ironwork is in progress." ;
+		mes " No arbitrary work can be done until completed-";
 		close;
 	}
-	mes "‐許可が無い人は操作できません‐";
+	mes "-No one without permission can operate-"; mes "-No one without permission can operate-";
 	close;
 OnStart:
-	hideoffnpc "溶鉱炉制御機#2";
+	hideoffnpc "Blast furnace controller #2";
 	sleep 3000;
-	announce "溶鉱炉制御機 : 溶鉱炉から鉄製加工物の抽出を開始します。生産ラインにて待機してください。", 0x9, 0x00ff44, 0x190, 12, 0, 0;
+	announce "Blast furnace controller : Start extracting iron workpiece from the blast furnace. Please stand by at the production line." , 0x9, 0x00ff44, 0x190, 12, 0, 0;
 	sleep 500;
 	for(set '@i,0; '@i<30; set '@i,'@i+1) {
 		set '@r,rand(1,100);
 		if('@r < 33)
-			donpcevent "加熱炉#3::OnStart";
+			donpcevent "Heating Furnace #3::OnStart";
 		else if('@r < 66)
-			donpcevent "加熱炉#4::OnStart";
+			donpcevent "Heating Furnace #4::OnStart";
 		else
-			donpcevent "加熱炉#5::OnStart";
+			donpcevent "Heating Furnace #5::OnStart";
 		sleep 200;
 		set '@x,rand(127,143);
 		set '@y,rand(26,29);
@@ -1029,17 +832,17 @@ OnStart:
 		}
 		sleep 500;
 	}
-	announce "溶鉱炉制御機 : 抽出作業を完了いたします。", 0x9, 0x00ff44, 0x190, 12, 0, 0;
+	announce "Blast furnace controller : extraction operation is completed." , 0x9, 0x00ff44, 0x190, 12, 0, 0;
 	sleep 100;
-	hideonnpc "溶鉱炉制御機#2";
-	hideoffnpc "溶鉱炉制御機#1";
+	hideonnpc "Melting furnace controller #2";
+	hideoffnpc "blast furnace controller #1";
 	end;
 OnInit:
 	hideonnpc;
 	end;
 }
 
-job_gun.gat,130,31,1	script	加熱炉#3	844,{
+job_gun.gat,130,31,1 script heating furnace#3 844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1048,7 +851,7 @@ OnStart:
 	end;
 }
 
-job_gun.gat,136,31,1	script	加熱炉#4	844,{
+job_gun.gat,136,31,1 script heating furnace#4 844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1057,7 +860,7 @@ OnStart:
 	end;
 }
 
-job_gun.gat,141,31,1	script	加熱炉#5	844,{
+job_gun.gat,141,31,1 script heating furnace#5 844,{
 	end;
 OnStart:
 	misceffect 96;
@@ -1066,71 +869,61 @@ OnStart:
 	end;
 }
 
-job_gun.gat,214,36,1	script	全自動金敷#1	844,{
+job_gun.gat,214,36,1 script all automatic anvil #1 844,{
 	if(checkquest(12342)) {
 		if(countitem(13118)) {
-			mes "‐非正規ルートで精製された";
-			mes "　銃器の痕跡を発見。";
-			mes "　管理者ルウィーニに";
-			mes "　報告してください‐";
+			mes "-Traces of firearms refined through unauthorized channels were found." ;
+			mes " Please report to the administrator Luwini -";
 			close;
 		}
 		if(countitem(6747) < 2) {
-			mes "‐許可が無い人は操作できません‐";
+			mes "-People without permission cannot operate-";
 			next;
-			mes "‐溶鉱炉制御機を使用して";
-			mes "　完成した製品を";
-			mes "　抽出してください‐";
-			viewpoint 1, 165, 18, 1, 0xFFFF00;
+			mes "-Use the blast furnace controller to extract the finished product-";
+			viewpoint 1, 165, 18, 1, 0xFFFFFF00;
 			close;
 		}
-		mes "‐全自動金敷で規格に当てはまる";
-		mes "　鉄製加工物を使用し、";
-		mes "　銃器製造を行いますか？‐";
+		mes "-Use a fully automatic anvil to produce firearms using steel workpieces that meet your standards? -";
 		next;
-		if(select("開始する","やめる") == 2) {
-			mes "‐全自動金敷の制御を中止します‐";
+		if(select("start", "stop") == 2) {
+			mes "-Continue control of the fully automatic anvil-"; mes "-Continue control of the fully automatic anvil-";
 			close;
 		}
 		misceffect 101;
 		mes "[" +strcharinfo(0)+ "]";
-		mes "（全自動金敷を使用し、";
-		mes "　正常な武器を製造した。";
-		mes "　変身効果が消える前に";
-		mes "　報告しよう）";
+		mes "(Fully automatic anvil was used and a normal weapon was manufactured." ;
+		mes " (Let's report before the transformation effect disappears)";
 		delitem 6747,2;
 		getitem 13118,1;
 		close;
 	}
-	mes "‐許可が無い人は操作できません‐";
+	mes "-People without permission cannot operate-"; delitem 6747,2; getitem 13118,1; close; }
 	close;
 }
 
-job_gun.gat,95,148,10,10	monster	非射撃標的	3170,3,180000,0,0
-job_gun.gat,95,148,10,10	monster	射撃標的	3169,5,180000,0,0
-job_gun.gat,95,110,10,15	monster	非射撃標的	3170,3,180000,0,0
-job_gun.gat,95,110,10,15	monster	射撃標的	3169,17,180000,0,0
-job_gun.gat,140,100,15,10	monster	非射撃標的	3170,13,180000,0,0
-job_gun.gat,140,100,15,10	monster	射撃標的	3169,7,180000,0,0
-job_gun.gat,140,150,15,10	monster	非射撃標的	3170,4,180000,0,0
-job_gun.gat,140,150,15,10	monster	射撃標的	3169,4,180000,0,0
-job_gun.gat,115,160,10,10	monster	非射撃標的	3170,8,180000,0,0
-job_gun.gat,115,160,10,10	monster	射撃標的	3169,10,180000,0,0
+job_gun.gat,95,148,10,10 monster Non-fire target 3170,3,180000,0,0,0
+job_gun.gat,95,148,10,10 monster shooting target 3169,5,180000,0,0
+job_gun.gat,95,110,10,15 monster Non-fire target 3170,3,180000,0,0
+job_gun.gat,95,110,10,15 monster Target 3169,17,180000,0,0,0
+job_gun.gat,140,100,15,10 monster Non-fire target 3170,13,180000,0,0
+job_gun.gat,140,100,15,10 monster Target 3169,7,180000,0,0
+job_gun.gat,140,150,15,10 monster Non-shooting target 3170,4,180000,0,0,0
+job_gun.gat,140,150,15,15,10 monster Target 3169,4,180000,0,0
+job_gun.gat,115,160,10,10 monster Non-shooting target 3170,8,180000,0,0,0
+job_gun.gat,115,160,10,10 monster Target 3169,10,180000,0,0
 
-job_gun.gat,120,138,3	script	シドレン#1	10062,{
+job_gun.gat,120,138,3 script Sydren#1 10062,{
 	if(CHANGE_RB == 3) {
 		if(checkquest(12343)) {
 			if(checkquest(12343)&4 && checkquest(12344)&4 == 0 && sc_onparam(SC_MONSTER_TRANSFORM,1) == 2431) {
-				mes "[シドレン]";
-				mes "ふむ、素晴らしいな！";
-				mes "こうも簡単にクリアされるとは";
-				mes "思っていなかったよ。";
+				mes "[Sidren]";
+				mes "Hmmm, that's great!" ;
+				mes "I didn't expect it to be cleared up this easily." ;
 				next;
-				mes "[シドレン]";
-				mes "最終試験はこれで終わりだ。";
-				mes "君は外で待っててくれ。";
-				mes "他の教官の評価を回収して";
-				mes "私が試験結果を伝えよう。";
+				mes "[Sidren]";
+				mes "This is the end of the final exam." ;
+				mes "You wait outside." ;
+				mes "Collect the other instructor's evaluations and I will give you the results of the exam." ;
 				delquest 12343;
 				delquest 12344;
 				setquest 12345;
@@ -1139,15 +932,14 @@ job_gun.gat,120,138,3	script	シドレン#1	10062,{
 				warp "job_gun.gat",210,132;
 				end;
 			}
-			mes "[シドレン]";
-			mes "精度、スピード、";
-			mes "何一つ褒めるところがない。";
-			mes "完璧に駄目だ。";
-			mes "本当に銃を手に生きてきたのか？";
+			mes "[Sidren]";
+			mes "Accuracy, speed, nothing to praise." ;
+			mes "It's a complete no-no." ;
+			mes "Have you really lived with a gun in your hand?" ;
 			next;
-			mes "[シドレン]";
-			mes "すぐに再試験をはじめる。";
-			mes "次はしっかり動けよ。";
+			mes "[Sidren]";
+			mes "I will begin the retest immediately." ;
+			mes "Next time, make sure you move." ;
 			delquest 12343;
 			delquest 12344;
 			setquest 12343;
@@ -1157,63 +949,43 @@ job_gun.gat,120,138,3	script	シドレン#1	10062,{
 			warp "job_gun.gat",102,146;
 			end;
 		}
-		mes "[シドレン]";
-		mes "おい！　よそ見するなよ。";
-		mes "ここは実弾を使う射撃場だ。";
-		mes "少しでも気を抜いたら、";
-		mes "怪我につながる場所だぞ。";
+		mes "[sidren]";
+		mes "Hey!  Don't look away." ;
+		mes "This is a shooting range with live ammunition." ;
+		mes "If you're not careful, you could get hurt." ;
 		next;
-		mes "[シドレン]";
-		mes "さて。では最終試験について";
-		mes "説明をはじめる。";
-		mes "今から君は、^FF00005つの射撃場^000000内を";
-		mes "走ることになる。";
+		mes "[Sidren]";
+		mes "Well. I will now begin to explain the final exam." ;
+		mes "Now you are going to run within ^FF0000005 shooting ranges^000000." ;
 		next;
-		mes "[シドレン]";
-		mes "これは群衆の中にいる目標を";
-		mes "正確に見分ける判断力と";
-		mes "それに対する迅速さを";
-		mes "測定するための試験だ。";
-		mes "たくさん倒すことが目的じゃないぞ！";
+		mes "[Sidren]";
+		mes "This is a test to measure your judgment in accurately identifying targets in a crowd and your quickness to do so." ;
+		mes "The goal is not to knock down a lot of them!" ;
 		next;
-		mes "[シドレン]";
-		mes "君は射撃場内で";
-		mes "よく似た顔をしている連中の中から";
-		mes "^0000ff射撃標的^000000と書かれた";
-		mes "標的のみを選んで射撃すること。";
-		mes "間違って関係ないやつを";
-		mes "撃った場合は失点だ。";
+		mes "[Sidren]";
+		mes "You are to shoot only at targets marked ^000000ff shooting targets^000000 among those who look similar in the shooting range." ;
+		mes "If you shoot an unrelated guy by mistake, you lose a point." ;
 		next;
-		mes "[シドレン]";
-		mes "まあ、最終試験は";
-		mes "口での説明より";
-		mes "直接経験した方が良いだろう。";
-		mes "^0000ff射撃標的^000000という名前の幻影は数が";
-		mes "限られているから正確に射撃しろよ。";
+		mes "[Sidren]";
+		mes "Well, it's better to have direct experience with the final exam than verbal explanations." ;
+		mes "The phantom named ^000000ff shooting target ^000000 is limited in number, so shoot accurately." ;
 		next;
-		mes "[シドレン]";
-		mes "^0000ff制限時間は3分だ。";
-		mes "その変装が解けたら、";
-		mes "時間切れとみなして失格になる。^000000";
-		mes "その場合はおとなしく私のところに";
-		mes "戻ってきなさい。";
+		mes "[Sidren]";
+		mes "^0000ffTime limit is 3 minutes." ;
+		mes "If you break that disguise, you will be disqualified as time is up. ^000000In that case, come back to me meekly." ;
 		next;
-		mes "[シドレン]";
-		mes "ん、何の変身か気になるのか？";
-		mes "これでわかるだろう？";
-		mes "　";
-		mes "……ルウィーニの趣味だ。";
+		mes "[Sidren]";
+		mes "Hmm, are you wondering what the transformation is?" ;
+		mes "Now you know, don't you?" ;
+		mes " ...... It's Ruwini's hobby." ;
 		next;
-		mes "[シドレン]";
-		mes "話を戻すぞ。";
-		mes "^0000ff射撃標的を10体";
-		mes "射撃できなかったり、";
-		mes "不適切な目標を3体";
-		mes "射撃しても失格だ。^000000";
+		mes "[Sidren]";
+		mes "Let's get back to the story." ;
+		mes "Failure to shoot 10 ^0000ff shooting targets or shooting 3 inappropriate targets will disqualify you. ^000000";
 		next;
-		mes "[シドレン]";
-		mes "説明は以上。";
-		mes "それじゃすぐはじめることにしよう。";
+		mes "[Sidren]";
+		mes "That's all the explanation." ;
+		mes "Then let's begin immediately." ;
 		setquest 12343;
 		setquest 12344;
 		delquest 121930;
@@ -1223,91 +995,75 @@ job_gun.gat,120,138,3	script	シドレン#1	10062,{
 		end;
 	}
 	if(CHANGE_RB == 4) {
-		mes "[シドレン]";
-		mes "どうしてまだここにいるんだ？";
-		mes "外に出てくれ。";
-		mes "すぐに私も行くから。";
+		mes "[Sidren]";
+		mes "Why are you still here?" ;
+		mes "Get out." ;
+		mes "I'll be right there." ;
 		close2;
 		warp "job_gun.gat",210,132;
 		end;
 	}
-	mes "[シドレン]";
-	mes "なんだ？　道にでも迷ったのか？";
-	mes "状況を確認してから";
-	mes "試験場に来なさい。";
+	mes "[sidren]";
+	mes "What?  You lost your way or something?" ;
+	mes "Check the situation and come to the testing center." ;
 	close2;
 	warp "job_gun.gat",62,27;
 	end;
 }
 
-job_gun.gat,88,144,0	warp	射撃場#1	2,2,job_gun.gat,93,123
-job_gun.gat,105,97,0	warp	射撃場#2	2,2,job_gun.gat,125,98
-job_gun.gat,156,115,0	warp	射撃場#3	2,2,job_gun.gat,157,137
-job_gun.gat,152,154,0	warp	射撃場#4	2,2,job_gun.gat,135,154
-job_gun.gat,130,146,0	warp	射撃場#5	2,2,job_gun.gat,120,130
+job_gun.gat,88,144,0 warp firing range #1 2,2,job_gun.gat,93,123
+job_gun.gat,105,97,0 warp Range #2 2,2,job_gun.gat,125,98
+job_gun.gat,156,115,0 warp Range #3 2,2,job_gun.gat,157,137
+job_gun.gat,152,154,0 warp Range #4 2,2,job_gun.gat,135,154
+job_gun.gat,130,146,0 warp Range #5 2,2,job_gun.gat,120,130
 
-job_gun.gat,220,132,3	script	シドレン#2	10062,{
+job_gun.gat,220,132,3 script sidren#2 10062,{
 	if(Job == Job_Rebellion) {
-		mes "[シドレン]";
-		mes "やあ。調子はどうかな？";
-		mes "自由を体現するために";
-		mes "悪に反逆の引き金を引くのは";
-		mes "大変だが、やりがいはあるだろう。";
+		mes "[Sydren]";
+		mes "Hi. How are you doing?" ;
+		mes "Pulling the trigger on rebellion against evil to embody freedom can be tough, but rewarding." ;
 		close;
 	}
-	if(CHANGE_RB != 4) {
-		mes "[シドレン]";
-		mes "なんだ？　道にでも迷ったのか？";
-		mes "状況を確認してから";
-		mes "試験場に来なさい。";
+	if(CHANGE_RB ! = 4) {
+		mes "[Sidren]";
+		mes "What?  Are you lost?" ;
+		mes "Check the situation and come to the testing center." ;
 		close2;
 		warp "job_gun.gat",62,27;
 		end;
 	}
 	if(Job == Job_Gunslinger) {
-		mes "[シドレン]";
-		mes "これまでの成績を総合して、";
-		mes "クルベル、ルウィーニ、";
-		mes "そして私シドレンが";
-		mes "君のリベリオン転職に対する";
-		mes "評価を決定した。";
+		mes "[Sidren]";
+		mes "Based on your performance thus far, Krubel, Lewini, and I, Sidren, have determined your evaluation for your new job at Rebellion." ;
 		next;
-		mes "[シドレン]";
-		mes "結果は……";
+		mes "[Sidren]";
+		mes "The results are available at ......." ;
 		next;
-		mes "[シドレン]";
-		mes "今回の成績や印象を見た限り、";
-		mes "不足なし。";
+		mes "[Sidren]";
+		mes "No shortage of results and impressions from this time." ;
 		next;
-		mes "[シドレン]";
-		mes "そうだ。";
-		mes "君を私たちリベリオンの一員として";
-		mes "受け入れることに決定した。";
-		mes "おめでとう！";
+		mes "[Sidren]";
+		mes "Yes." ;
+		mes "We have decided to accept you as a member of our Rebellion." ;
+		mes "Congratulations!" ;
 		next;
 		if(SkillPoint) {
-			mes "[シドレン]";
-			mes "君、^ff0000スキルポイントが";
-			mes "まだ残っているぞ。^000000";
-			mes "まったく、そのくらいは";
-			mes "自分でチェックしといてくれよ。";
+			mes "[Sidren]";
+			mes "You, ^ff000000 SkillPoints are still left. ^000000 Totally, you should check that much yourself." ;
 			close;
 		}
 		if(Weight) {
-			mes "[シドレン]";
-			mes "何やらいろいろ持っているな。";
-			mes "邪魔だから^ff0000カルレックス^000000に";
-			mes "預かってもらえ。";
-			mes "彼は、すぐ近くにいるから";
-			mes "わかるだろう？";
+			mes "[Sidren]";
+			mes "You've got all kinds of stuff." ;
+			mes "It's in the way, so get ^ff000000 Calrex^000000 to take care of it." ;
+			mes "He's right around the corner, you know what I mean?" ;
 			close;
 		}
 		if(sc_ison(SC_ALL_RIDING)) {
-			// 未調査
-			mes "[シドレン]";
-			mes "騎乗生物から降りてくれ。";
-			mes "気持ちはわかるが";
-			mes "場にふさわしくないだろ？";
+			// unexamined
+			mes "[Sidren]";
+			mes "Get down from the riding creature." ;
+			mes "I know how you feel, but it's not appropriate for the occasion, is it?" ;
 			close;
 		}
 		resetstatus;
@@ -1317,52 +1073,46 @@ job_gun.gat,220,132,3	script	シドレン#2	10062,{
 		set CHANGE_RB,0;
 		chgquest 12345,201860;
 		getitem 13119,1;
-		mes "‐あなたは";
-		mes "　^FF0000反逆の象徴リベリオン^000000に";
-		mes "　転職しました！‐";
+		mes "-You have changed your job to ^FF000000 Rebelion, the symbol of rebellion^000000! -";
 		next;
-		mes "[シドレン]";
-		mes "おお！";
-		mes "なかなかにきまってるじゃないか。";
-		mes "似合うぞ。後輩！";
+		mes "[Sidren]";
+		mes "Oh!" ;
+		mes "That's pretty neat." ;
+		mes "It looks good on you. Junior!" ;
 		next;
-		mes "[シドレン]";
-		mes "今、君に渡した銃は";
-		mes "ルウィーニ教官が";
-		mes "君にと用意したものだ。";
-		mes "かなり気をかけて磨いていたぞ。";
-		mes "大事に使いなさい。";
+		mes "[Sidren]";
+		mes "The gun I just gave you was prepared for you by Instructor Lewini." ;
+		mes "I've been polishing it with a lot of care." ;
+		mes "Take good care of it." ;
 		next;
-		mes "[シドレン]";
-		mes "それじゃまた会おう。";
+		mes "[Sidren]";
+		mes "I'll see you then." ;
 		close2;
 		warp "job_gun.gat",81,29;
 		end;
 	}
-	mes "[シドレン]";
-	mes "どうしてここにいるんだ？";
-	mes "外に出てくれ。";
+	mes "[sidren]";
+	mes "Why are you here?" ;
+	mes "Get out." ;
 	close2;
 	warp "job_gun.gat",210,132;
 	end;
 }
 
-job_gun.gat,220,138,4	shop	小道具自販機	564,13200:1
+job_gun.gat,220,138,4 shop props vending machine 564,13200:1
 
-job_gun.gat,216,138,4	script	カルレックス	47,{
-	mes "[カルレックス]";
-	mes "転職前に不要な物を預かります。";
+job_gun.gat,216,138,4 script calrex 47,{
+	mes "[Calrex]";
+	mes "We will take care of your unwanted items before you change jobs." ;
 	next;
-	if(select("倉庫を開く","やめる") == 2) {
-		mes "[カルレックス]";
-		mes "ご利用いただき、";
-		mes "ありがとうございます。";
-		mes "さあ、リベリオンに";
-		mes "転職しましょう。";
+	if(select("open warehouse", "quit") == 2) {
+		mes "[Calrex]";
+		mes "Thank you for your service." ;
+		mes "Now, let's move on to Rebellion." ;
 		close;
 	}
-	mes "[カルレックス]";
-	mes "倉庫を開きます。";
+	mes "[Calrex]";
+	mes "Open the warehouse." ;
 	close2;
 	openstorage;
 	end;

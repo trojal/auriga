@@ -1,50 +1,39 @@
 //====================================================================
 //Ragnarok Online Archer jobchange script
-//
-//　■ CHANGE_AC -> 0～1
-//     OLD_CLASS -> 転生前の職業
+// - CHANGE_AC -> 0 to 1
+// - CHANGE_AC -> 0 to 1
+// OLD_CLASS -> occupation before reincarnation
 //====================================================================
 
 //==========================================
-// 試験申請および転職
+// test application and career change
 //------------------------------------------
 
-payon_in02.gat,64,71,4	script	ギルド関係者#AC	85,{
+payon_in02.gat,64,71,4 script Guild Member#AC 85,{
 	if(Upper == UPPER_HIGH && (OLD_CLASS == Job_Hunter || OLD_CLASS == Job_Bard || OLD_CLASS == Job_Dancer)) {
 		if(Job == Job_Novice) {
-			mes "[アーチャーギルド関係者]";
-			mes "ああ、貴方はたしか……";
-			mes "もう一度アーチャーになるために";
-			mes "いらしたんですね！";
+			mes "[ArcherGuild Member]";
+			mes "Oh, are you sure ......" ;
+			mes "So you're here to become an Archer again!" ;
 			next;
 			if(getskilllv(1) < 9 || SkillPoint) {
-				mes "[アーチャーギルド関係者]";
-				mes "今回も、転職条件は整って";
-				mes "いなければなりません。";
-				mes "JobLvを10にまで成長させ、";
-				mes "^0000FF「基本スキル」のレベルを9^000000 に";
-				mes "してください。";
+				mes "[ArcherGuild Member]";
+				mes "Again, the job change conditions must be in place." ;
+				mes "You must grow your JobLv to 10, and your ^0000FF "Basic Skill" level must be 9^000000." ;
 				next;
-				mes "[アーチャーギルド関係者]";
-				mes "^0000FF「基本スキル」^000000のレベルは";
-				mes "^0000FF「スキルリスト」^000000ウィンドウで";
-				mes "上げることができますからね！";
-				mes "^0000FF「スキルリスト」^000000ウィンドウは";
-				mes "^0000FF「基本情報」^000000ウィンドウ内の";
-				mes "^0000FF「Skill」^000000ボタンで表示されますよ！";
+				mes "[ArcherGuild Member]";
+				mes "You can raise the level of ^0000FF "Basic Skills" ^000000FF in the ^000000FF "Skill List" ^000000 window!" ;
+				mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window!" ;
 				next;
-				mes "[アーチャーギルド関係者]";
-				mes "スキルのレベルを上げるには、";
-				mes "スキルポイントを割り振った後、";
-				mes "^FF0000「確定」^000000ボタンが必要ですよ。";
-				mes "注意してくださいね！";
-				mes "それでは、頑張ってください！";
+				mes "[ArcherGuild Member]";
+				mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm"^000000 button after assigning the skill point." ;
+				mes "Please Attention!" ;
+				mes "Then, please do your best!" ;
 				close;
 			}
-			mes "[アーチャーギルド関係者]";
-			mes "特に私から言うことは無いですね。";
-			mes "以前の感覚を頑張って取り戻して";
-			mes "ください。";
+			mes "[ArcherGuild Member]";
+			mes "There's nothing in particular I have to say." ;
+			mes "Good luck getting back to your old senses." ;
 			next;
 			unequip;
 			jobchange Job_Archer,UPPER_HIGH;
@@ -53,155 +42,122 @@ payon_in02.gat,64,71,4	script	ギルド関係者#AC	85,{
 			skill 147,1,0;
 			skill 148,1,0;
 			set CHANGE_AC,0;
-			mes "[アーチャーギルド関係者]";
-			mes "たまにはお顔を見せてくださいね。";
-			mes "いってらっしゃい。";
+			mes "[ArcherGuild Member]";
+			mes "Please show your face once in a while." ;
+			mes "Have a good day." ;
 			close;
 		}
 	}
 	if(Upper == UPPER_HIGH) {
-		mes "[アーチャーギルド関係者]";
-		mes "アーチャーに会うのは";
-		mes "初めてですか？";
-		mes "来る途中にも会えると思います。";
-		mes "私もアーチャーですけどね。";
+		mes "[ArcherGuild Member]";
+		mes "Is this your first time meeting Archer?" ;
+		mes "I think we can meet on the way here." ;
+		mes "I'm an Archer myself, though." ;
 		close;
 	}
-	mes "[アーチャーギルド関係者]";
-	mes "こんにちは、";
-	mes "何をお手伝いしましょうか？";
+	mes "[ArcherGuild Member]";
+	mes "Hi, what can I help you with?" ;
 	next;
-	switch (select("アーチャーに転職","アーチャーの転職条件は？","なんでもありません。")) {
+	switch (select("Job change to Archer", "What are Archer's job requirements?" , "Nothing.")) {
 	case 1:
 		if(Job == Job_Archer) {
-			mes "[アーチャーギルド関係者]";
-			mes "貴方はもうアーチャーに";
-			mes "転職されています。";
+			mes "[ArcherGuild Member]";
+			mes "You have already changed your job to Archer." ;
 			next;
-			mes "[アーチャーギルド関係者]";
-			mes "アーチャーになったのなら、";
-			mes "冒険者アカデミーに";
-			mes "行ってみるといいですよ。";
+			mes "[ArcherGuild Member]";
+			mes "If you have become an Archer, you should visit the Adventurer Academy." ;
 			next;
-			mes "[アーチャーギルド関係者]";
-			mes "この建物を出ると、";
-			mes "冒険者アカデミーのサポートを";
-			mes "行っている人がいますから、";
-			mes "送ってもらうといいですよ。";
+			mes "[ArcherGuild Member]";
+			mes "When you leave this building, there is a person who provides support for the Adventurer Academy, so you can ask him to send you there." ;
 			close;
 		}
-		if(Job != Job_Novice) {
-			mes "[アーチャーギルド関係者]";
-			mes "ふ……";
-			mes "他の職業を選択した以上、";
-			mes "アーチャーにはなれません。";
+		if(Job ! = Job_Novice) {
+			mes "[ArcherGuild Member]";
+			mes "Fu......" ;
+			mes "You cannot be an Archer as long as you have chosen another profession." ;
 			close;
 		}
 		break;
 	case 2:
-		mes "[アーチャーギルド関係者]";
-		mes "それじゃ、アーチャーの転職条件に";
-		mes "ついて説明します。";
-		if(Job != Job_Novice) {
+		mes "[ArcherGuild Member]";
+		mes "Then I will explain the job change conditions for Archer." ;
+		if(Job ! = Job_Novice) {
 			if(Job == Job_Archer)
-				mes "でも、貴方は既にアーチャーですが……";
+				mes "But you are already an Archer. ......" ;
 			else {
-				mes "でも、貴方ってもう他の職業に";
-				mes "なってますが……";
+				mes "But you are already in another profession. ......" ;
 			}
-			mes "……まあ、いいでしょう。";
+			mes "...... Well, okay." ;
 		}
-		next;
-		mes "[アーチャーギルド関係者]";
-		mes "まず、^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "して下さい。";
-		mes "アーチャーは高度の集中力を";
-		mes "必要とする職業であるため、";
-		mes "マヌケな奴はアーチャーには";
-		mes "絶対なれません。";
+		} next;
+		mes "[ArcherGuild Member]";
+		mes "First, set the level of ^0000FF "Basic Skills" to 9^000000." ;
+		mes "Archer is a profession that requires a high degree of concentration, so a moron can never become an Archer." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	case 3:
-		mes "[アーチャーギルド関係者]";
-		mes "あ……さようなら。";
+		mes "[ArcherGuild Member]";
+		mes "Ah ...... Good bye." ;
 		close;
 	}
-	//case1の続き
+	//continuation of case1
 	if(CHANGE_AC==0) {
-		mes "[アーチャーギルド関係者]";
-		mes "アーチャーへの転職をご希望ですか？";
-		mes "そうでしたら、ここでアーチャー転職の";
-		mes "申し込みをして下さい。";
+		mes "[ArcherGuild Member]";
+		mes "Are you interested in joining Archer?" ;
+		mes "If so, please apply for an Archer job change here." ;
 		next;
-		if(select("アーチャー転職申し込みをする","やめる")==2) {
-			mes "[アーチャーギルド関係者]";
-			mes "あ……さようなら。";
+		if(select("Apply for a new job at Archer", "Stop")==2) {
+			mes "[ArcherGuild Member]";
+			mes "Ah ...... Good-bye." ;
 			close;
 		}
-		mes "[アーチャーギルド関係者]";
-		mes "申請書にサインをして……";
-		mes "はい。これでOKです。";
-		mes "これからアーチャーになるための条件を";
-		mes "全て満たしているか確認しますが……";
-		mes "よろしいですか？";
+		mes "[ArcherGuild Member]";
+		mes "Sign the application ......." ;
+		mes "Yes. This is OK." ;
+		mes "I will now check to see if you meet all the requirements to become an Archer. ......" ;
+		mes "Are you sure?" ;
 		next;
-		if(select("はい。","いいえ。")==2) {
-			mes "[アーチャーギルド関係者]";
-			mes "わかりました。";
-			mes "アーチャー転職条件について";
-			mes "わからない部分があれば、";
-			mes "私に聞いてください。";
+		if(select("Yes." , "No.") ==2) {
+			mes "[ArcherGuild Member]";
+			mes "Okay." ;
+			mes "If you have any questions about the Archer job change requirements, please ask me." ;
 			close;
 		}
 		set CHANGE_AC,1;
-		mes "[アーチャーギルド関係者]";
-		mes "確認します。";
+		mes "[ArcherGuild Member]";
+		mes "Confirmation." ;
 		next;
 	}
-	mes "[アーチャーギルド関係者]";
-	mes "お名前が……";
-	mes " " +strcharinfo(0)+ "。";
-	mes "ですよね？";
+	mes "[ArcherGuild Member]";
+	mes "Your name is ......." ;
+	mes " " +strcharinfo(0)+ "." ;
+	mes "Right?" ;
 	next;
 	if(getskilllv(1) < 9 || SkillPoint) {
-		mes "[アーチャーギルド関係者]";
-		mes "おや？";
-		mes "貴方の準備が出来てないようですね。";
-		mes "JobLvを10にまで成長させ、";
-		mes "^0000FF「基本スキル」のレベルを9^000000 に";
-		mes "してください。";
+		mes "[ArcherGuild Member]";
+		mes "Oh?" ;
+		mes "It seems you are not ready." ;
+		mes "Please grow your JobLv to 10 and set your ^0000FF "Basic Skills" level to 9^000000." ;
 		next;
-		mes "[アーチャーギルド関係者]";
-		mes "^0000FF「基本スキル」^000000のレベルは";
-		mes "^0000FF「スキルリスト」^000000ウィンドウで";
-		mes "上げることができます。";
-		mes "^0000FF「スキルリスト」^000000ウィンドウは";
-		mes "^0000FF「基本情報」^000000ウィンドウ内の";
-		mes "^0000FF「Skill」^000000ボタンで表示されます。";
+		mes "[ArcherGuild Member]";
+		mes "The level of ^0000FF "Basic Skills" ^000000 can be raised in the ^0000FF "Skill List" ^000000 window." ;
+		mes "The ^0000FF 'Skill List' ^000000 window is displayed by the ^0000FF 'Skill' ^000000 button in the ^0000FF 'Basic Info' ^000000 window." ;
 		next;
-		mes "[アーチャーギルド関係者]";
-		mes "スキルのレベルを上げるには、";
-		mes "スキルポイントを割り振った後、";
-		mes "^FF0000「確定」^000000ボタンが必要ですよ。";
-		mes "注意してください。";
+		mes "[ArcherGuild Member]";
+		mes "To increase the level of a skill, you need to press the ^FF000000 "Confirm"^000000 button after assigning the skill points." ;
+		mes "Please Attention." ;
 		close2;
 		cutin "start_020_jp.bmp",4;
 		end;
 	}
-	mes "[アーチャーギルド関係者]";
-	mes "基本スキルは十分のようですね……";
-	mes "アーチャーには必須である集中力も";
-	mes "身についているようですし、";
-	mes "アーチャーへの転職資格は";
-	mes "十分にあるといえるでしょう。";
+	mes "[ArcherGuild Member]";
+	mes "Your basic skills seem to be good enough. ......" ;
+	mes "You also seem to have developed the concentration skills that are essential for Archer, and you are well qualified to move to Archer." ;
 	next;
-	mes "[アーチャーギルド関係者]";
-	mes "……";
-	mes "　";
-	mes "はい。え～と";
-	mes "これでアーチャー転職条件が";
-	mes "揃いました。すぐ転職させて頂きます。";
+	mes "[ArcherGuild Member]";
+	mes "......" ;
+	mes " Yes. Well, now I have the Archer job change conditions. I will change jobs immediately." ;
 	next;
 	unequip;
 	jobchange Job_Archer;
@@ -210,27 +166,21 @@ payon_in02.gat,64,71,4	script	ギルド関係者#AC	85,{
 	getitem 1702,1;
 	getitem 12004,5;
 	getitem 11031,1;
-	mes "[アーチャーギルド関係者]";
-	mes "アーチャーへの転職、";
-	mes "おめでとうございます！";
-	mes "製作係からプレゼントが";
-	mes "届いてますよ。";
+	mes "[ArcherGuild Member]";
+	mes "Congratulations on your new job with Archer!" ;
+	mes "You have received a gift from the production staff." ;
 	next;
-	mes "[アーチャーギルド関係者]";
-	mes "アーチャーはやっぱり";
-	mes "弓と矢を持たないと！";
+	mes "[ArcherGuild Member]";
+	mes "Archer must have a bow and arrows after all!" ;
 	next;
-	mes "[アーチャーギルド関係者]";
-	mes "そして我がギルドで作成した";
-	mes "このアーチャーの書を読めば";
-	mes "アーチャーとしての心得が";
-	mes "わかるはずです。";
+	mes "[ArcherGuild Member]";
+	mes "And if you read this Archer's Book, created by our guild, you will know what it takes to be an Archer." ;
 	next;
-	mes "[アーチャーギルド関係者]";
-	mes "それじゃ、頑張ってください。";
-	mes "期待してます！";
+	mes "[ArcherGuild Member]";
+	mes "Well then, good luck." ;
+	mes "I'm counting on you!" ;
 	close;
 OnInit:
-	waitingroom "転職",0;
+	waitingroom "Job change",0;
 	end;
 }
