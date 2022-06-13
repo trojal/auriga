@@ -1,4 +1,25 @@
 ----------------------------------------
+//1513 [2022/05/22] by refis
+
+・[エビ三昧]の効果と持続時間計算を修正（skill.c, status.c）
+	Thanks Heaven さん、sabun さん
+
+・[ミャウミャウ]効果がレベルに対して正規的でないミスを修正（skill.c）
+	Thanks Heaven さん
+
+----------------------------------------
+//1512 [2022/04/13] by refis
+
+・サモナースキルでアイテム消費設定抜けがあったものを修正（skill_require_db.txt）
+	Thanks Heaven さん
+
+・PTL以外でサラの記憶に入場できなかった箇所を修正（npc_memorial_sara.sc）
+	Thanks Heaven さん
+
+・フェイスワームの巣の最終イベントのエラーを修正（npc_memorial_faceworm.sc）
+	Thanks kuura さん
+
+----------------------------------------
 //1511 [2022/03/13] by refis
 
 ・魔人の塔メモリアルの再入場チェック、イベントを修正（npc_memorial_towermorocc.sc）
