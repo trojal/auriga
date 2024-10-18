@@ -1,7 +1,0 @@
-char_ip: 164.90.253.199
-char_port: 6121
-
-map_ip: 164.90.253.199
-map_port: 5121
-
-read_map_from_cache: 2
