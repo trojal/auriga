@@ -48,7 +48,8 @@ COPY --from=build /auriga_server/db ./db
 # COPY --from=build /auriga_server/log ./log
 COPY --from=build /auriga_server/script ./script
 COPY --from=build /auriga_server/script_en ./script_en
-# COPY --from=build /auriga_server/save ./save
+COPY --from=build /auriga_server/save ./save
+COPY --from=build /auriga_server/map.info ./
 COPY --from=build /auriga_server/login-server /auriga_server/char-server /auriga_server/map-server ./
 
 RUN chown -R 999:999 /auriga_server
