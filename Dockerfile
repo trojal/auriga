@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:experimental
-# DOCKER_BUILDKIT=1 docker build --ssh default -t registry.digitalocean.com/titanro-docr/auriga-titan2 . && docker image push registry.digitalocean.com/titanro-docr/auriga-titan2
+# DOCKER_BUILDKIT=1 docker build --ssh default -t registry.digitalocean.com/titanro-docr/auriga-game . && docker image push registry.digitalocean.com/titanro-docr/auriga-game
 
 FROM alpine:latest AS build
 
@@ -45,10 +45,10 @@ COPY --from=build /auriga_server/sql-files ./sql-files
 COPY --from=build /auriga_server/conf ./conf
 COPY --from=build /auriga_server/db ./db
 # COPY --from=build /auriga_server/data ./data
-COPY --from=build /auriga_server/log ./log
+# COPY --from=build /auriga_server/log ./log
 COPY --from=build /auriga_server/script ./script
 COPY --from=build /auriga_server/script_en ./script_en
-COPY --from=build /auriga_server/save ./save
+# COPY --from=build /auriga_server/save ./save
 COPY --from=build /auriga_server/login-server /auriga_server/char-server /auriga_server/map-server ./
 
 RUN chown -R 999:999 /auriga_server
