@@ -96,7 +96,7 @@ static char default_map_name[16] = "prontera.gat";
 static int  default_map_type = 0;
 
 int check_status_polygon = 2;
-int max_char_slot = 9;	// ƒLƒƒƒ‰ƒNƒ^[ƒXƒƒbƒg‚ÌÅ‘å”
+int max_char_slot = 9;	// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÌÅ‘å”
 
 struct char_online {
 	int account_id;
@@ -139,7 +139,7 @@ const char ranking_reg[MAX_RANKING][32] = {
 	//"PC_PVP_POINT",
 };
 
-// ‰ŠúˆÊ’uiconfƒtƒ@ƒCƒ‹‚©‚çÄİ’è‰Â”\j
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ê’uï¿½iconfï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äİ’ï¿½Â”\ï¿½j
 struct point human_start_point = { "new_1-1.gat", 53, 111 };
 //struct point doram_start_point = { "new_do1.gat", 95, 255 };
 struct point doram_start_point = { "new_1-1.gat", 53, 111 };
@@ -147,7 +147,7 @@ struct point doram_start_point = { "new_1-1.gat", 53, 111 };
 static struct dbt *gm_account_db;
 
 /*==========================================
- * GM‚©‚Ç‚¤‚©
+ * GMï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 int isGM(int account_id)
@@ -161,7 +161,7 @@ int isGM(int account_id)
 }
 
 /*==========================================
- * GMƒAƒJƒEƒ“ƒg“Ç‚İ‚İ
+ * GMï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½Ç‚İï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static void read_gm_account(void)
@@ -227,7 +227,7 @@ static void read_gm_account(void)
 }
 
 /*==========================================
- * “¯Šú
+ * ï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int mmo_char_sync_timer(int tid,unsigned int tick,int id,void *data)
@@ -239,7 +239,7 @@ static int mmo_char_sync_timer(int tid,unsigned int tick,int id,void *data)
 }
 
 /*==========================================
- * ƒ[ƒ‹ƒh‚Ìƒ†[ƒU”æ“¾
+ * ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½Ìƒï¿½ï¿½[ï¿½Uï¿½ï¿½ï¿½æ“¾
  *------------------------------------------
  */
 static int count_users(void)
@@ -258,7 +258,7 @@ static int count_users(void)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^[ƒT[ƒoÚ‘±¬Œ÷î•ñ‘—M
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Tï¿½[ï¿½oï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñ‘—M
  *------------------------------------------
  */
 static int mmo_char_send006b(int fd, struct char_session_data *sd)
@@ -269,7 +269,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 
 	nullpo_retr(0, sd);
 
-	session[fd]->auth = 1; // ”FØI—¹‚ğ socket.c ‚É“`‚¦‚é
+	session[fd]->auth = 1; // ï¿½Fï¿½ØIï¿½ï¿½ï¿½ï¿½ socket.c ï¿½É“`ï¿½ï¿½ï¿½ï¿½
 	sd->state = CHAR_STATE_AUTHOK;
 	found_num = chardb_load_all(sd,sd->account_id);
 
@@ -286,7 +286,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,20+i*106) = st->job_level;
 		WFIFOL(fd,24+i*106) = 0;
 		WFIFOL(fd,28+i*106) = 0;
-		WFIFOL(fd,32+i*106) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,32+i*106) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,36+i*106) = st->karma;
 		WFIFOL(fd,40+i*106) = st->manner;
 		WFIFOW(fd,44+i*106) = st->status_point;
@@ -335,7 +335,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,40+i*106) = st->job_level;
 		WFIFOL(fd,44+i*106) = 0;
 		WFIFOL(fd,48+i*106) = 0;
-		WFIFOL(fd,52+i*106) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,52+i*106) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,56+i*106) = st->karma;
 		WFIFOL(fd,60+i*106) = st->manner;
 		WFIFOW(fd,64+i*106) = st->status_point;
@@ -384,7 +384,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,40+i*112) = st->job_level;
 		WFIFOL(fd,44+i*112) = 0;
 		WFIFOL(fd,48+i*112) = 0;
-		WFIFOL(fd,52+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,52+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,56+i*112) = st->karma;
 		WFIFOL(fd,60+i*112) = st->manner;
 		WFIFOW(fd,64+i*112) = st->status_point;
@@ -412,7 +412,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,130+i*112) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,131+i*112) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,132+i*112) = st->char_num;
-		WFIFOW(fd,133+i*112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+		WFIFOW(fd,133+i*112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	}
 	WFIFOW(fd,2)=found_num*112+24;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -434,7 +434,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,40+i*108) = st->job_level;
 		WFIFOL(fd,44+i*108) = 0;
 		WFIFOL(fd,48+i*108) = 0;
-		WFIFOL(fd,52+i*108) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,52+i*108) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,56+i*108) = st->karma;
 		WFIFOL(fd,60+i*108) = st->manner;
 		WFIFOW(fd,64+i*108) = st->status_point;
@@ -462,7 +462,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,126+i*108) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,127+i*108) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,128+i*108) = st->char_num;
-		WFIFOW(fd,130+i*108) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+		WFIFOW(fd,130+i*108) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	}
 	WFIFOW(fd,2)=found_num*108+24;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -487,7 +487,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*112) = st->job_level;
 		WFIFOL(fd,47+i*112) = 0;
 		WFIFOL(fd,51+i*112) = 0;
-		WFIFOL(fd,55+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*112) = st->karma;
 		WFIFOL(fd,63+i*112) = st->manner;
 		WFIFOW(fd,67+i*112) = st->status_point;
@@ -515,7 +515,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*112) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*112) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*112) = st->char_num;
-		WFIFOW(fd,137+i*112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+		WFIFOW(fd,137+i*112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	}
 	WFIFOW(fd,2)=found_num*112+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -540,7 +540,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*108) = st->job_level;
 		WFIFOL(fd,47+i*108) = 0;
 		WFIFOL(fd,51+i*108) = 0;
-		WFIFOL(fd,55+i*108) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*108) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*108) = st->karma;
 		WFIFOL(fd,63+i*108) = st->manner;
 		WFIFOW(fd,67+i*108) = st->status_point;
@@ -568,7 +568,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,129+i*108) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,130+i*108) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,131+i*108) = st->char_num;
-		WFIFOW(fd,133+i*108) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+		WFIFOW(fd,133+i*108) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	}
 	WFIFOW(fd,2)=found_num*108+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -593,7 +593,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*128) = st->job_level;
 		WFIFOL(fd,47+i*128) = 0;
 		WFIFOL(fd,51+i*128) = 0;
-		WFIFOL(fd,55+i*128) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*128) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*128) = st->karma;
 		WFIFOL(fd,63+i*128) = st->manner;
 		WFIFOW(fd,67+i*128) = st->status_point;
@@ -621,8 +621,8 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*128) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*128) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*128) = st->char_num;
-		WFIFOW(fd,137+i*128) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,139+i*128),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+		WFIFOW(fd,137+i*128) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,139+i*128),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*128+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -647,7 +647,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*112) = st->job_level;
 		WFIFOL(fd,47+i*112) = 0;
 		WFIFOL(fd,51+i*112) = 0;
-		WFIFOL(fd,55+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*112) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*112) = st->karma;
 		WFIFOL(fd,63+i*112) = st->manner;
 		WFIFOW(fd,67+i*112) = st->status_point;
@@ -675,7 +675,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*112) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*112) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*112) = st->char_num;
-		WFIFOW(fd,137+i*112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+		WFIFOW(fd,137+i*112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	}
 	WFIFOW(fd,2)=found_num*112+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -700,7 +700,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*132) = st->job_level;
 		WFIFOL(fd,47+i*132) = 0;
 		WFIFOL(fd,51+i*132) = 0;
-		WFIFOL(fd,55+i*132) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*132) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*132) = st->karma;
 		WFIFOL(fd,63+i*132) = st->manner;
 		WFIFOW(fd,67+i*132) = st->status_point;
@@ -728,9 +728,9 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*132) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*132) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*132) = st->char_num;
-		WFIFOW(fd,137+i*132) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,139+i*132),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,155+i*132) = st->delete_date;	// íœ‘Ò‹@ŠÔ
+		WFIFOW(fd,137+i*132) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,139+i*132),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,155+i*132) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*132+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -755,7 +755,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*136) = st->job_level;
 		WFIFOL(fd,47+i*136) = 0;
 		WFIFOL(fd,51+i*136) = 0;
-		WFIFOL(fd,55+i*136) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*136) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*136) = st->karma;
 		WFIFOL(fd,63+i*136) = st->manner;
 		WFIFOW(fd,67+i*136) = st->status_point;
@@ -783,10 +783,10 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*136) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*136) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*136) = st->char_num;
-		WFIFOW(fd,137+i*136) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,139+i*136),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,155+i*136) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-		WFIFOL(fd,159+i*136) = st->robe;	// Œ¨‘•”õ
+		WFIFOW(fd,137+i*136) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,139+i*136),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,155+i*136) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,159+i*136) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*136+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -811,7 +811,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*140) = st->job_level;
 		WFIFOL(fd,47+i*140) = 0;
 		WFIFOL(fd,51+i*140) = 0;
-		WFIFOL(fd,55+i*140) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*140) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*140) = st->karma;
 		WFIFOL(fd,63+i*140) = st->manner;
 		WFIFOW(fd,67+i*140) = st->status_point;
@@ -839,11 +839,11 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*140) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*140) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*140) = st->char_num;
-		WFIFOW(fd,137+i*140) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,139+i*140),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,155+i*140) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-		WFIFOL(fd,159+i*140) = st->robe;	// Œ¨‘•”õ
-		WFIFOL(fd,163+i*140) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+		WFIFOW(fd,137+i*140) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,139+i*140),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,155+i*140) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,159+i*140) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,163+i*140) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*140+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -868,7 +868,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*144) = st->job_level;
 		WFIFOL(fd,47+i*144) = 0;
 		WFIFOL(fd,51+i*144) = 0;
-		WFIFOL(fd,55+i*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*144) = st->karma;
 		WFIFOL(fd,63+i*144) = st->manner;
 		WFIFOW(fd,67+i*144) = st->status_point;
@@ -896,11 +896,11 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,133+i*144) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,134+i*144) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,135+i*144) = st->char_num;
-		WFIFOW(fd,137+i*144) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,139+i*144),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,155+i*144) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-		WFIFOL(fd,159+i*144) = st->robe;	// Œ¨‘•”õ
-		WFIFOL(fd,163+i*144) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+		WFIFOW(fd,137+i*144) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,139+i*144),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,155+i*144) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,159+i*144) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,163+i*144) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 		WFIFOL(fd,167+i*144) = 0;	// TODO: Add-Ons
 	}
 	WFIFOW(fd,2)=found_num*144+27;
@@ -926,7 +926,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,43+i*147) = st->job_level;
 		WFIFOL(fd,47+i*147) = 0;
 		WFIFOL(fd,51+i*147) = 0;
-		WFIFOL(fd,55+i*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,55+i*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,59+i*147) = st->karma;
 		WFIFOL(fd,63+i*147) = st->manner;
 		WFIFOW(fd,67+i*147) = st->status_point;
@@ -955,13 +955,13 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,135+i*147) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,136+i*147) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,137+i*147) = st->char_num;
-		WFIFOW(fd,139+i*147) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,141+i*147),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,157+i*147) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-		WFIFOL(fd,161+i*147) = st->robe;	// Œ¨‘•”õ
-		WFIFOL(fd,165+i*147) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+		WFIFOW(fd,139+i*147) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,141+i*147),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,157+i*147) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,161+i*147) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,165+i*147) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 		WFIFOL(fd,169+i*147) = 0;	// TODO: Add-Ons
-		WFIFOB(fd,173+i*147) = st->sex;	// «•Ê
+		WFIFOB(fd,173+i*147) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*147+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -986,7 +986,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOL(fd,51+i*155) = st->job_level;
 		WFIFOL(fd,55+i*155) = 0;
 		WFIFOL(fd,59+i*155) = 0;
-		WFIFOL(fd,63+i*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+		WFIFOL(fd,63+i*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 		WFIFOL(fd,67+i*155) = st->karma;
 		WFIFOL(fd,71+i*155) = st->manner;
 		WFIFOW(fd,75+i*155) = st->status_point;
@@ -1015,13 +1015,13 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 		WFIFOB(fd,143+i*155) = (st->dex > 255)  ? 255: st->dex;
 		WFIFOB(fd,144+i*155) = (st->luk > 255)  ? 255: st->luk;
 		WFIFOW(fd,145+i*155) = st->char_num;
-		WFIFOW(fd,147+i*155) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-		memcpy(WFIFOP(fd,149+i*155),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-		WFIFOL(fd,165+i*155) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-		WFIFOL(fd,169+i*155) = st->robe;	// Œ¨‘•”õ
-		WFIFOL(fd,173+i*155) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+		WFIFOW(fd,147+i*155) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+		memcpy(WFIFOP(fd,149+i*155),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+		WFIFOL(fd,165+i*155) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,169+i*155) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		WFIFOL(fd,173+i*155) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 		WFIFOL(fd,177+i*155) = 0;	// TODO: Add-Ons
-		WFIFOB(fd,181+i*155) = st->sex;	// «•Ê
+		WFIFOB(fd,181+i*155) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 	}
 	WFIFOW(fd,2)=found_num*155+27;
 	WFIFOSET(fd,WFIFOW(fd,2));
@@ -1031,7 +1031,7 @@ static int mmo_char_send006b(int fd, struct char_session_data *sd)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNì¬¬Œ÷î•ñ‘—M
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñ‘—M
  *------------------------------------------
  */
 static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
@@ -1113,7 +1113,7 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	WFIFOSET(fd,114);
 #elif PACKETVER < 20100223
 	WFIFOW(fd,0) = 0x6d;
@@ -1152,7 +1152,7 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,104) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,105) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,106) = st->char_num;
-	WFIFOW(fd,108) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+	WFIFOW(fd,108) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	WFIFOSET(fd,110);
 #elif PACKETVER < 20100728
 	WFIFOW(fd,0) = 0x6d;
@@ -1191,8 +1191,8 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 	WFIFOSET(fd,130);
 #elif PACKETVER < 20100803
 	WFIFOW(fd,0) = 0x6d;
@@ -1231,7 +1231,7 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
 	WFIFOSET(fd,114);
 #elif PACKETVER < 20110111
 	WFIFOW(fd,0) = 0x6d;
@@ -1270,9 +1270,9 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,130) = st->delete_date;	// íœ‘Ò‹@ŠÔ
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,130) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 	WFIFOSET(fd,134);
 #elif PACKETVER < 20110928
 	WFIFOW(fd,0) = 0x6d;
@@ -1311,10 +1311,10 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,130) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-	WFIFOL(fd,134) = st->robe;	// Œ¨‘•”õ
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,130) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,134) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	WFIFOSET(fd,138);
 #elif PACKETVER < 20111025
 	WFIFOW(fd,0) = 0x6d;
@@ -1353,11 +1353,11 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,130) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-	WFIFOL(fd,134) = st->robe;	// Œ¨‘•”õ
-	WFIFOL(fd,138) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,130) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,134) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,138) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 	WFIFOSET(fd,142);
 #elif PACKETVER < 20141022
 	WFIFOW(fd,0) = 0x6d;
@@ -1396,11 +1396,11 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,108) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,109) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,110) = st->char_num;
-	WFIFOW(fd,112) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,130) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-	WFIFOL(fd,134) = st->robe;	// Œ¨‘•”õ
-	WFIFOL(fd,138) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+	WFIFOW(fd,112) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,114),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,130) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,134) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,138) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 	WFIFOL(fd,142) = 0;	// TODO: Add-Ons
 	WFIFOSET(fd,146);
 #elif PACKETVER < 20170830
@@ -1441,13 +1441,13 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,110) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,111) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,112) = st->char_num;
-	WFIFOW(fd,114) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,116),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,132) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-	WFIFOL(fd,136) = st->robe;	// Œ¨‘•”õ
-	WFIFOL(fd,140) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+	WFIFOW(fd,114) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,116),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,132) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,136) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,140) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 	WFIFOL(fd,144) = 0;	// TODO: Add-Ons
-	WFIFOB(fd,148) = sex;	// «•Ê
+	WFIFOB(fd,148) = sex;	// ï¿½ï¿½ï¿½ï¿½
 	WFIFOSET(fd,149);
 #else
 	WFIFOW(fd,0) = 0x6d;
@@ -1487,19 +1487,19 @@ static void mmo_char_send006d(int fd, const struct mmo_charstatus *st, int sex)
 	WFIFOB(fd,118) = (st->dex  > 255) ? 255 : st->dex;
 	WFIFOB(fd,119) = (st->luk  > 255) ? 255 : st->luk;
 	WFIFOW(fd,120) = st->char_num;
-	WFIFOW(fd,122) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-	memcpy(WFIFOP(fd,124),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
-	WFIFOL(fd,140) = st->delete_date;	// íœ‘Ò‹@ŠÔ
-	WFIFOL(fd,144) = st->robe;	// Œ¨‘•”õ
-	WFIFOL(fd,148) = 0;	// TODO: ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+	WFIFOW(fd,122) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+	memcpy(WFIFOP(fd,124),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
+	WFIFOL(fd,140) = st->delete_date;	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,144) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	WFIFOL(fd,148) = 0;	// TODO: ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 	WFIFOL(fd,152) = 0;	// TODO: Add-Ons
-	WFIFOB(fd,156) = sex;	// «•Ê
+	WFIFOB(fd,156) = sex;	// ï¿½ï¿½ï¿½ï¿½
 	WFIFOSET(fd,157);
 #endif
 }
 
 /*==========================================
- * ##•Ï”‚Ì•Û‘¶
+ * ##ï¿½Ïï¿½ï¿½Ì•Û‘ï¿½
  *------------------------------------------
  */
 static int set_account_reg2(int acc,int num,struct global_reg *reg)
@@ -1510,7 +1510,7 @@ static int set_account_reg2(int acc,int num,struct global_reg *reg)
 	int max = chardb_load_all(&sd,acc);
 
 	for(i=0;i<max;i++) {
-		// ##•Ï”‚Í—˜—p‚³‚ê‚é‰Â”\«‚ª’á‚¢‚Ì‚ÅAè”²‚«‚Æ‚µ‚ÄconstŠO‚µ‚Ä‹­ˆø‚É‚±‚±‚Å‘‚«Š·‚¦‚é
+		// ##ï¿½Ïï¿½ï¿½Í—ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½á‚¢ï¿½Ì‚ÅAï¿½è”²ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½constï¿½Oï¿½ï¿½ï¿½Ä‹ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		cd = (struct mmo_chardata *)&(*sd.found_char[i]);
 		if(cd) {
 			memcpy(&cd->reg.account2, reg, sizeof(cd->reg.account2));
@@ -1522,7 +1522,7 @@ static int set_account_reg2(int acc,int num,struct global_reg *reg)
 }
 
 /*==========================================
- * ##•Ï”‚Ìæ“¾
+ * ##ï¿½Ïï¿½ï¿½Ìæ“¾
  *------------------------------------------
  */
 static int get_account_reg2(struct char_session_data *sd,struct global_reg *reg)
@@ -1545,7 +1545,7 @@ static int get_account_reg2(struct char_session_data *sd,struct global_reg *reg)
 }
 
 /*==========================================
- * —£¥
+ * ï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int char_divorce(const struct mmo_charstatus *st)
@@ -1558,10 +1558,10 @@ static int char_divorce(const struct mmo_charstatus *st)
 		struct mmo_charstatus s1;
 		memcpy(&s1,st,sizeof(struct mmo_charstatus));
 
-		// —£¥
+		// ï¿½ï¿½ï¿½ï¿½
 		s1.partner_id = 0;
 
-		// Œ‹¥w—Ö‚ğ”’D
+		// ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½Ö‚ğ”’D
 		for(i=0;i<MAX_INVENTORY;i++){
 			if(s1.inventory[i].nameid == WEDDING_RING_M || s1.inventory[i].nameid == WEDDING_RING_F){
 				memset(&s1.inventory[i],0,sizeof(s1.inventory[0]));
@@ -1575,7 +1575,7 @@ static int char_divorce(const struct mmo_charstatus *st)
 }
 
 /*==========================================
- * —{q‰ğ‘Ì
+ * ï¿½{ï¿½qï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int char_break_adoption(const struct mmo_charstatus *st)
@@ -1585,7 +1585,7 @@ static int char_break_adoption(const struct mmo_charstatus *st)
 	if(st->baby_id > 0 || st->parent_id[0] > 0 || st->parent_id[1] > 0) {
 		struct mmo_charstatus s1;
 		memcpy(&s1,st,sizeof(struct mmo_charstatus));
-		// —{q‚Å‚ ‚ê‚ÎŒ³‚ÌE‚É–ß‚·
+		// ï¿½{ï¿½qï¿½Å‚ï¿½ï¿½ï¿½ÎŒï¿½ï¿½ÌEï¿½É–ß‚ï¿½
 		if(s1.class_ == PC_CLASS_SNV_B) {
 			s1.class_ = PC_CLASS_SNV;
 		}
@@ -1612,7 +1612,7 @@ static int char_break_adoption(const struct mmo_charstatus *st)
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^‘—MƒZƒbƒg
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½Mï¿½Zï¿½bï¿½g
  *------------------------------------------
  */
 static int char_set_ranking_send(int ranking_id,unsigned char *buf)
@@ -1626,7 +1626,7 @@ static int char_set_ranking_send(int ranking_id,unsigned char *buf)
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^”äŠr
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½ï¿½r
  *------------------------------------------
  */
 int compare_ranking_data(const void *a,const void *b)
@@ -1643,7 +1643,7 @@ int compare_ranking_data(const void *a,const void *b)
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^XV
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½Xï¿½V
  *------------------------------------------
  */
 static int char_ranking_update(int ranking_id,int rank,struct Ranking_Data *rd)
@@ -1654,11 +1654,11 @@ static int char_ranking_update(int ranking_id,int rank,struct Ranking_Data *rd)
 		return 0;
 
 	if(rank >= 0 && rank < MAX_RANKER) {
-		// ƒ‰ƒ“ƒJ[‚Ìƒ|ƒCƒ“ƒgXV
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½[ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½gï¿½Xï¿½V
 		if(ranking_data[ranking_id][rank].char_id == rd->char_id) {
 			ranking_data[ranking_id][rank].point = rd->point;
 		} else {
-			// ‡ˆÊ‚ª•ÏX‚³‚ê‚Ä‚¢‚é‰Â”\«‚ª‚ ‚é‚Ì‚ÅŠY“–ƒLƒƒƒ‰‚ğ’T‚·
+			// ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ÅŠYï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½
 			int i;
 			for(i=0; i<MAX_RANKER; i++) {
 				if(ranking_data[ranking_id][i].char_id == rd->char_id) {
@@ -1667,11 +1667,11 @@ static int char_ranking_update(int ranking_id,int rank,struct Ranking_Data *rd)
 					break;
 				}
 			}
-			if(i >= MAX_RANKER)	// Œ©‚Â‚©‚ç‚È‚¢ê‡‚à‚ ‚é
+			if(i >= MAX_RANKER)	// ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				return 0;
 		}
 	} else if(rank == MAX_RANKER) {
-		// V‹Kƒ‰ƒ“ƒNƒCƒ“
+		// ï¿½Vï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Cï¿½ï¿½
 		if(ranking_data[ranking_id][MAX_RANKER-1].point < rd->point)
 		{
 			int i;
@@ -1683,14 +1683,14 @@ static int char_ranking_update(int ranking_id,int rank,struct Ranking_Data *rd)
 			ranking_data[ranking_id][i].char_id = rd->char_id;
 			rank = i;
 		} else {
-			return 0;	// ƒ‰ƒ“ƒNƒCƒ“‚Å‚«‚È‚¢ê‡‚à‚ ‚é
+			return 0;	// ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Cï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 	} else {
 		printf("char_ranking_update: invalid rank %d !!\n",rank);
 		return 0;
 	}
 
-	// ‡ˆÊ‚ª•Ï“®‚·‚é‚È‚çƒ\[ƒg
+	// ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½Ï“ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½\ï¿½[ï¿½g
 	if( (rank > 0 && ranking_data[ranking_id][rank-1].point < rd->point) ||
 	    (rank < MAX_RANKER-1 && ranking_data[ranking_id][rank+1].point > rd->point) )
 	{
@@ -1701,7 +1701,7 @@ static int char_ranking_update(int ranking_id,int rank,struct Ranking_Data *rd)
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^íœ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½íœ
  *------------------------------------------
  */
 static int char_ranking_delete(int char_id)
@@ -1721,7 +1721,7 @@ static int char_ranking_delete(int char_id)
 			int len;
 			char buf[6+32*MAX_RANKER];
 
-			// ƒ‰ƒ“ƒLƒ“ƒO‚ÌÄ\’z‚Í‚µ‚È‚¢
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½ÌÄ\ï¿½zï¿½Í‚ï¿½ï¿½È‚ï¿½
 			qsort(ranking_data[i], MAX_RANKER, sizeof(struct Ranking_Data), compare_ranking_data);
 			len = char_set_ranking_send(i,buf);
 			mapif_sendall(buf,len);
@@ -1731,7 +1731,7 @@ static int char_ranking_delete(int char_id)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ì¬
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ì¬
  *------------------------------------------
  */
 static const struct mmo_chardata* char_make(int account_id, const unsigned char *name, short str, short agi, short vit, short int_, short dex, short luk, short hair_color, short hair, short job, char sex, unsigned char slot, int *flag)
@@ -1758,7 +1758,7 @@ static const struct mmo_chardata* char_make(int account_id, const unsigned char 
 	if(str > 9 || agi > 9 || vit > 9 || int_ > 9 || dex > 9 || luk > 9)
 		return NULL;
 
-	// ƒXƒe[ƒ^ƒXƒ|ƒŠƒSƒ“‚Ìƒ`ƒFƒbƒN
+	// ï¿½Xï¿½eï¿½[ï¿½^ï¿½Xï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	switch(check_status_polygon) {
 		case 1:
 			if(str + agi + vit + int_ + dex + luk > 5 * 6) {
@@ -1789,7 +1789,7 @@ static const struct mmo_chardata* char_make(int account_id, const unsigned char 
 }
 
 /*==========================================
- * ƒLƒƒƒ‰íœ‚É”º‚¤ƒf[ƒ^íœ
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½íœï¿½É”ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½íœ
  *------------------------------------------
  */
 static int char_delete(const struct mmo_chardata *cd)
@@ -1800,24 +1800,24 @@ static int char_delete(const struct mmo_chardata *cd)
 	nullpo_retr(-1,cd);
 
 	printf("char_delete: %s\n",cd->st.name);
-	// ƒLƒƒƒ‰‚ªÚ‘±‚µ‚Ä‚¢‚é‚©‚à‚µ‚ê‚È‚¢‚Ì‚Åmap‚ÉØ’f—v‹
+	// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Ì‚ï¿½mapï¿½ÉØ’fï¿½vï¿½ï¿½
 	WBUFW(buf,0)=0x2b19;
 	WBUFL(buf,2)=cd->st.account_id;
 	mapif_sendall(buf,6);
 
-	// ƒXƒe[ƒ^ƒXˆÙííœ
+	// ï¿½Xï¿½eï¿½[ï¿½^ï¿½Xï¿½Ùï¿½íœ
 	statusdb_delete(cd->st.char_id);
 
-	// ƒNƒGƒXƒgƒŠƒXƒgíœ
+	// ï¿½Nï¿½Gï¿½Xï¿½gï¿½ï¿½ï¿½Xï¿½gï¿½íœ
 	questdb_delete(cd->st.char_id);
 
-	// ROƒ[ƒ‹íœ
+	// ROï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½íœ
 	maildb_delete(cd->st.char_id);
 
-	// ƒ‰ƒ“ƒLƒ“ƒOíœ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½íœ
 	char_ranking_delete(cd->st.char_id);
 
-	// ƒyƒbƒgíœ
+	// ï¿½yï¿½bï¿½gï¿½íœ
 	if(cd->st.pet_id)
 		petdb_delete(cd->st.pet_id);
 	for(j=0;j<MAX_INVENTORY;j++) {
@@ -1828,36 +1828,36 @@ static int char_delete(const struct mmo_chardata *cd)
 		if(cd->st.cart[j].card[0] == (int)0xff00)
 			petdb_delete(*((int *)(&cd->st.cart[j].card[1])));
 	}
-	// ƒzƒ€ƒ“ƒNƒ‹ƒXíœ
+	// ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½íœ
 	if(cd->st.homun_id)
 		homundb_delete(cd->st.homun_id);
-	// —b•ºíœ
+	// ï¿½bï¿½ï¿½ï¿½íœ
 	if(cd->st.merc_id)
 		mercdb_delete(cd->st.merc_id);
-	// ¸—ìíœ
+	// ï¿½ï¿½ï¿½ï¿½íœ
 	if(cd->st.elem_id)
 		elemdb_delete(cd->st.elem_id);
-	// ƒMƒ‹ƒh’E‘Ş
+	// ï¿½Mï¿½ï¿½ï¿½hï¿½Eï¿½ï¿½
 	if(cd->st.guild_id)
 		inter_guild_leave(cd->st.guild_id, cd->st.account_id, cd->st.char_id);
-	// ƒp[ƒeƒB[’E‘Ş
+	// ï¿½pï¿½[ï¿½eï¿½Bï¿½[ï¿½Eï¿½ï¿½
 	if(cd->st.party_id)
 		inter_party_leave(cd->st.party_id, cd->st.account_id, cd->st.char_id);
-	// —£¥
+	// ï¿½ï¿½ï¿½ï¿½
 	if(cd->st.partner_id){
 		const struct mmo_chardata *p_cd = chardb_load(cd->st.partner_id);
 		if(p_cd && cd->st.partner_id == p_cd->st.char_id && p_cd->st.partner_id == cd->st.char_id) {
-			// ‘Š•û‚ª©•ª‚ÆŒ‹¥‚µ‚Ä‚¢‚éê‡
-			// ‘Š•û‚Ì—£¥î•ñ‚ğmap‚É’Ê’m
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ê‡
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mapï¿½É’Ê’m
 			WBUFW(buf,0)=0x2b12;
 			WBUFL(buf,2)=p_cd->st.char_id;
 			mapif_sendall(buf,6);
 
-			// ‘Š•û‚Ì—£¥ˆ—
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			char_divorce(&p_cd->st);
 		}
 
-		// ©•ª‚Ì—£¥ˆ—
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		char_divorce(&cd->st);
 	}
 	chardb_delete_sub(cd->st.char_id);
@@ -1866,7 +1866,7 @@ static int char_delete(const struct mmo_chardata *cd)
 }
 
 /*==========================================
- * authfifo‚Ì”äŠr
+ * authfifoï¿½Ì”ï¿½r
  *------------------------------------------
  */
 static bool cmp_authfifo(int i,int account_id,int login_id1,int login_id2,unsigned long ip)
@@ -1887,7 +1887,7 @@ static bool cmp_authfifo(int i,int account_id,int login_id1,int login_id2,unsign
 }
 
 /*==========================================
- * ƒƒOƒCƒ“ƒT[ƒo‚Æ‚Ìƒ\ƒPƒbƒgƒfƒXƒgƒ‰ƒNƒ^
+ * ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Tï¿½[ï¿½oï¿½Æ‚Ìƒ\ï¿½Pï¿½bï¿½gï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *------------------------------------------
  */
 int parse_login_disconnect(int fd)
@@ -1899,7 +1899,7 @@ int parse_login_disconnect(int fd)
 }
 
 /*==========================================
- * ƒƒOƒCƒ“ƒT[ƒo‚ÌƒpƒPƒbƒg‰ğÍ
+ * ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Tï¿½[ï¿½oï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½
  *------------------------------------------
  */
 int parse_tologin(int fd)
@@ -1920,7 +1920,7 @@ int parse_tologin(int fd)
 				exit(1);
 			}
 			RFIFOSKIP(fd,3);
-			session[fd]->auth = -1; // ”FØI—¹‚ğ socket.c ‚É“`‚¦‚é
+			session[fd]->auth = -1; // ï¿½Fï¿½ØIï¿½ï¿½ï¿½ï¿½ socket.c ï¿½É“`ï¿½ï¿½ï¿½ï¿½
 			break;
 
 		case 0x2713:
@@ -2003,7 +2003,7 @@ int parse_tologin(int fd)
 			RFIFOSKIP(fd,15);
 			break;
 
-		// ƒLƒƒƒ‰íœ(ƒ[ƒ‹ƒAƒhƒŒƒXŠm”FŒã)
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½íœ(ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½mï¿½Fï¿½ï¿½)
 		case 0x2716:
 			if(RFIFOREST(fd)<11)
 				return 0;
@@ -2052,7 +2052,7 @@ int parse_tologin(int fd)
 			}
 			break;
 
-		// ƒLƒƒƒ‰íœ(’a¶“úŠm”FŒã)
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½íœ(ï¿½aï¿½ï¿½ï¿½ï¿½ï¿½mï¿½Fï¿½ï¿½)
 		case 0x2718:
 			if( RFIFOREST(fd) < 11 )
 				return 0;
@@ -2130,7 +2130,7 @@ int parse_tologin(int fd)
 										WFIFOL(fdc,20+j*144) = st->job_level;
 										WFIFOL(fdc,24+j*144) = 0;
 										WFIFOL(fdc,28+j*144) = 0;
-										WFIFOL(fdc,32+j*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+										WFIFOL(fdc,32+j*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 										WFIFOL(fdc,36+j*144) = st->karma;
 										WFIFOL(fdc,40+j*144) = st->manner;
 										WFIFOW(fdc,44+j*144) = st->status_point;
@@ -2158,14 +2158,14 @@ int parse_tologin(int fd)
 										WFIFOB(fdc,110+j*144) = (st->dex > 255)  ? 255: st->dex;
 										WFIFOB(fdc,111+j*144) = (st->luk > 255)  ? 255: st->luk;
 										WFIFOW(fdc,112+j*144) = st->char_num;
-										WFIFOW(fdc,114+j*144) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-										memcpy(WFIFOP(fdc,116+j*144),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+										WFIFOW(fdc,114+j*144) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+										memcpy(WFIFOP(fdc,116+j*144),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 										if(st->delete_date)
-											WFIFOL(fdc,132+j*144) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+											WFIFOL(fdc,132+j*144) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 										else
 											WFIFOL(fdc,132+j*144) = 0;
-										WFIFOL(fdc,136+j*144) = st->robe;	// Œ¨‘•”õ
-										WFIFOL(fdc,140+j*144) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+										WFIFOL(fdc,136+j*144) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+										WFIFOL(fdc,140+j*144) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 										WFIFOL(fdc,144+j*144) = 0;	// TODO: Add-Ons
 									}
 									WFIFOW(fdc,2)=found_num*144+4;
@@ -2177,7 +2177,7 @@ int parse_tologin(int fd)
 										WFIFOL(fdc,20+j*147) = st->job_level;
 										WFIFOL(fdc,24+j*147) = 0;
 										WFIFOL(fdc,28+j*147) = 0;
-										WFIFOL(fdc,32+j*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+										WFIFOL(fdc,32+j*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 										WFIFOL(fdc,36+j*147) = st->karma;
 										WFIFOL(fdc,40+j*147) = st->manner;
 										WFIFOW(fdc,44+j*147) = st->status_point;
@@ -2206,16 +2206,16 @@ int parse_tologin(int fd)
 										WFIFOB(fdc,112+j*147) = (st->dex > 255)  ? 255: st->dex;
 										WFIFOB(fdc,113+j*147) = (st->luk > 255)  ? 255: st->luk;
 										WFIFOW(fdc,114+j*147) = st->char_num;
-										WFIFOW(fdc,116+j*147) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-										memcpy(WFIFOP(fdc,118+j*147),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+										WFIFOW(fdc,116+j*147) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+										memcpy(WFIFOP(fdc,118+j*147),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 										if(st->delete_date)
-											WFIFOL(fdc,134+j*147) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+											WFIFOL(fdc,134+j*147) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 										else
 											WFIFOL(fdc,134+j*147) = 0;
-										WFIFOL(fdc,138+j*147) = st->robe;	// Œ¨‘•”õ
-										WFIFOL(fdc,142+j*147) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+										WFIFOL(fdc,138+j*147) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+										WFIFOL(fdc,142+j*147) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 										WFIFOL(fdc,146+j*147) = 0;	// TODO: Add-Ons
-										WFIFOB(fdc,150+j*147) = st->sex;	// «•Ê
+										WFIFOB(fdc,150+j*147) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 									}
 									WFIFOW(fdc,2)=found_num*147+4;
 #else
@@ -2226,7 +2226,7 @@ int parse_tologin(int fd)
 										WFIFOL(fdc,28+j*155) = st->job_level;
 										WFIFOL(fdc,32+j*155) = 0;
 										WFIFOL(fdc,36+j*155) = 0;
-										WFIFOL(fdc,40+j*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+										WFIFOL(fdc,40+j*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 										WFIFOL(fdc,44+j*155) = st->karma;
 										WFIFOL(fdc,48+j*155) = st->manner;
 										WFIFOW(fdc,52+j*155) = st->status_point;
@@ -2255,16 +2255,16 @@ int parse_tologin(int fd)
 										WFIFOB(fdc,120+j*155) = (st->dex > 255)  ? 255: st->dex;
 										WFIFOB(fdc,121+j*155) = (st->luk > 255)  ? 255: st->luk;
 										WFIFOW(fdc,122+j*155) = st->char_num;
-										WFIFOW(fdc,124+j*155) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-										memcpy(WFIFOP(fdc,126+j*155),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+										WFIFOW(fdc,124+j*155) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+										memcpy(WFIFOP(fdc,126+j*155),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 										if(st->delete_date)
-											WFIFOL(fdc,142+j*155) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+											WFIFOL(fdc,142+j*155) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 										else
 											WFIFOL(fdc,142+j*155) = 0;
-										WFIFOL(fdc,146+j*155) = st->robe;	// Œ¨‘•”õ
-										WFIFOL(fdc,150+j*155) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+										WFIFOL(fdc,146+j*155) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+										WFIFOL(fdc,150+j*155) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 										WFIFOL(fdc,154+j*155) = 0;	// TODO: Add-Ons
-										WFIFOB(fdc,158+j*155) = st->sex;	// «•Ê
+										WFIFOB(fdc,158+j*155) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 									}
 									WFIFOW(fdc,2)=found_num*155+4;
 #endif
@@ -2287,7 +2287,7 @@ int parse_tologin(int fd)
 		// gm reply
 		case 0x2721:
 			{
-				// SQL ‰»‚ª–Ê“|‚­‚³‚¢‚Ì‚Å•Û—¯
+				// SQL ï¿½ï¿½ï¿½ï¿½ï¿½Ê“|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Å•Û—ï¿½
 				unsigned char buf[16];
 				if(RFIFOREST(fd)<10)
 					return 0;
@@ -2312,7 +2312,7 @@ int parse_tologin(int fd)
 				for(i=0;i<found_char;i++){
 					int flag = 1;
 					memcpy(&st,&csd.found_char[i]->st,sizeof(struct mmo_charstatus));
-					// —‹’¹A‰e˜TAO‚ÍE‚à•ÏX
+					// ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½eï¿½Tï¿½Aï¿½Oï¿½ÍEï¿½ï¿½ï¿½ÏX
 					switch(st.class_ ) {
 						case PC_CLASS_BA:
 						case PC_CLASS_DC:
@@ -2347,20 +2347,20 @@ int parse_tologin(int fd)
 					}
 
 					if(flag) {
-						// —‹’¹A‰e˜TAO‘•”õŠO‚µ
+						// ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½eï¿½Tï¿½Aï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½
 						int j;
 						for(j=0;j<MAX_INVENTORY;j++) {
 							if(st.inventory[j].equip)
 								st.inventory[j].equip = LOC_NOTHING;
 						}
-						// —‹’¹A‰e˜TAOƒXƒLƒ‹ƒŠƒZƒbƒg
+						// ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½eï¿½Tï¿½Aï¿½Oï¿½Xï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
 						for(j=0;j<MAX_PCSKILL;j++) {
 							if(st.skill[j].id>0 && !st.skill[j].flag){
 								st.skill_point += st.skill[j].lv;
 								st.skill[j].lv = 0;
 							}
 						}
-						chardb_save(&st);	// ƒLƒƒƒ‰ƒf[ƒ^•ÏX‚ÌƒZ[ƒu
+						chardb_save(&st);	// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ÏXï¿½ÌƒZï¿½[ï¿½u
 					}
 				}
 				WBUFW(buf,0)=0x2b0d;
@@ -2371,7 +2371,7 @@ int parse_tologin(int fd)
 			}
 			break;
 
-		// account_reg2•ÏX’Ê’m
+		// account_reg2ï¿½ÏXï¿½Ê’m
 		case 0x2729:
 			{
 				struct global_reg reg[ACCOUNT_REG2_NUM];
@@ -2389,7 +2389,7 @@ int parse_tologin(int fd)
 					reg[j].value   = RFIFOL(fd,p+32);
 				}
 				set_account_reg2(acc,j,reg);
-				// “¯CƒƒOƒCƒ“‚ğ‹Ö~‚µ‚Ä‚¢‚ê‚Î‘—‚é•K—v‚Í–³‚¢
+				// ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ö~ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Î‘ï¿½ï¿½ï¿½Kï¿½vï¿½Í–ï¿½ï¿½ï¿½
 				memcpy(buf,RFIFOP(fd,0),RFIFOW(fd,2));
 				WBUFW(buf,0)=0x2b11;
 				mapif_sendall(buf,WBUFW(buf,2));
@@ -2398,22 +2398,22 @@ int parse_tologin(int fd)
 			}
 			break;
 
-		// ƒAƒJƒEƒ“ƒgíœ’Ê’m
+		// ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½íœï¿½Ê’m
 		case 0x272a:
 			{
-				// ŠY“–ƒLƒƒƒ‰ƒNƒ^[‚Ìíœ
+				// ï¿½Yï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Ìíœ
 				struct char_session_data csd;
 				int max = chardb_load_all(&csd,RFIFOL(fd,2));
 				for(i=0;i<max;i++) {
 					char_delete(csd.found_char[i]);
 				}
-				// ‘qŒÉ‚Ìíœ
+				// ï¿½qï¿½É‚Ìíœ
 				storagedb_delete(RFIFOL(fd,2));
 				RFIFOSKIP(fd,6);
 			}
 			break;
 
-		// charƒƒ“ƒeƒiƒ“ƒXó‘Ô•ÏX‰“š
+		// charï¿½ï¿½ï¿½ï¿½ï¿½eï¿½iï¿½ï¿½ï¿½Xï¿½ï¿½Ô•ÏXï¿½ï¿½ï¿½ï¿½
 		case 0x272c:
 			{
 				unsigned char buf[4];
@@ -2427,7 +2427,7 @@ int parse_tologin(int fd)
 			}
 			break;
 
-		// ˆÃ†‰»ƒƒOƒCƒ“‚Ìƒ`ƒƒƒŒƒ“ƒW•Ô“š
+		// ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Ìƒ`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ô“ï¿½
 		case 0x272e:
 			{
 				if(RFIFOREST(fd)<4 || RFIFOREST(fd)<RFIFOW(fd,2))
@@ -2438,12 +2438,12 @@ int parse_tologin(int fd)
 					session[fd]->eof=1;
 					return 0;
 				}
-				// ˆÃ†‰»ƒƒOƒCƒ“
+				// ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½
 				WFIFOW(login_fd,0)=0x272f;
 				memcpy(WFIFOP(login_fd,2),userid,24);
 				HMAC_MD5_Binary( passwd, (int)strlen(passwd), RFIFOP(fd,4), RFIFOW(fd,2)-4, WFIFOP(login_fd,26) );
 				WFIFOL(login_fd,42)=0;
-				WFIFOL(login_fd,46)=4;	// ˆÃ†‰»‚É HMAC-MD5 ‚ğg‚¤
+				WFIFOL(login_fd,46)=4;	// ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ HMAC-MD5 ï¿½ï¿½ï¿½gï¿½ï¿½
 				WFIFOL(login_fd,50)=0;
 				WFIFOL(login_fd,54)=char_ip;
 				WFIFOW(login_fd,58)=char_port;
@@ -2456,7 +2456,7 @@ int parse_tologin(int fd)
 			}
 			break;
 
-		// V‹KƒƒOƒCƒ“‚Ì‚½‚ß“¯ˆêƒAƒJƒEƒ“ƒg‚ğØ’f
+		// ï¿½Vï¿½Kï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ß“ï¿½ï¿½ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½ï¿½Ø’f
 		case 0x2730:
 			if(RFIFOREST(fd)<6)
 				return 0;
@@ -2467,18 +2467,18 @@ int parse_tologin(int fd)
 						WFIFOW(i,0) = 0x81;
 						WFIFOB(i,2) = 2;
 						WFIFOSET(i,3);
-						session[i]->auth = 0;	// ”FØæÁ‚µ
+						session[i]->auth = 0;	// ï¿½Fï¿½Øï¿½ï¿½ï¿½ï¿½
 					}
 				}
 
-				// “¯ˆêƒAƒJƒEƒ“ƒg‚Ì–¢”FØƒf[ƒ^‚ğ‘S‚Ä”jŠü‚µ‚Ä‚¨‚­
+				// ï¿½ï¿½ï¿½ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½Ì–ï¿½ï¿½Fï¿½Øƒfï¿½[ï¿½^ï¿½ï¿½Sï¿½Ä”jï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 				for( i = 0; i < AUTH_FIFO_SIZE; i++ )
 				{
 					if( auth_fifo[i].account_id == account_id && !auth_fifo[i].delflag )
 						auth_fifo[i].delflag = 1;
 				}
 
-				// ‘SmapƒT[ƒo‚ÉØ’f—v‹
+				// ï¿½Smapï¿½Tï¿½[ï¿½oï¿½ÉØ’fï¿½vï¿½ï¿½
 				if(numdb_search(char_online_db,account_id))
 				{
 					unsigned char buf[8];
@@ -2506,7 +2506,7 @@ int parse_tologin(int fd)
 }
 
 /*==========================================
- * map‚ªŠÜ‚Ü‚ê‚Ä‚¢‚émap-server‚ğ’T‚·
+ * mapï¿½ï¿½ï¿½Ü‚Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½map-serverï¿½ï¿½Tï¿½ï¿½
  *------------------------------------------
  */
 static int search_mapserver(const char *map)
@@ -2526,7 +2526,7 @@ static int search_mapserver(const char *map)
 }
 
 /*==========================================
- * ƒ}ƒbƒv‚Ì‚ ‚éMAPƒT[ƒoƒCƒ“ƒfƒbƒNƒX‚ğŒŸõ‚·‚é
+ * ï¿½}ï¿½bï¿½vï¿½Ì‚ï¿½ï¿½ï¿½MAPï¿½Tï¿½[ï¿½oï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int search_mapserver_char(const char *map, struct mmo_charstatus *cd)
@@ -2557,7 +2557,7 @@ static int search_mapserver_char(const char *map, struct mmo_charstatus *cd)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒT[ƒoíœ
+ * ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½íœ
  *------------------------------------------
  */
 int char_erasemap(int fd, int id)
@@ -2587,7 +2587,7 @@ int char_erasemap(int fd, int id)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒT[ƒo‚Ìƒ\ƒPƒbƒgƒfƒXƒgƒ‰ƒNƒ^
+ * ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½Ìƒ\ï¿½Pï¿½bï¿½gï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *------------------------------------------
  */
 static int parse_map_disconnect_sub(void *key,void *data,va_list ap)
@@ -2620,7 +2620,7 @@ int parse_map_disconnect(int fd)
 		if (server_fd[id] == fd) {
 			server_fd[id] = -1;
 			char_erasemap(fd, id);
-			// c‚Á‚Ä‚¢‚½ƒLƒƒƒ‰‚ÌØ’f‚ğ‘¼map-server‚É’Ê’m
+			// ï¿½cï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ÌØ’fï¿½ï¿½map-serverï¿½É’Ê’m
 			numdb_foreach(char_online_db, parse_map_disconnect_sub, fd, (int)server[id].ip, (int)server[id].port);
 			close(fd);
 		}
@@ -2630,7 +2630,7 @@ int parse_map_disconnect(int fd)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒT[ƒo‚©‚ç‚ÌƒpƒPƒbƒg‰ğÍ
+ * ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½ï¿½ï¿½ï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int parse_frommap(int fd)
@@ -2649,7 +2649,7 @@ static int parse_frommap(int fd)
 
 	while(RFIFOREST(fd)>=2){
 		switch(RFIFOW(fd,0)){
-		// ƒ}ƒbƒvƒT[ƒo[‚©‚ç’S“–ƒ}ƒbƒv–¼‚ğóM
+		// ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½M
 		case 0x2afa:
 			if (RFIFOREST(fd) < 4 || RFIFOREST(fd) < RFIFOW(fd,2))
 				return 0;
@@ -2657,7 +2657,7 @@ static int parse_frommap(int fd)
 			for(i = 4; i < RFIFOW(fd,2); i += 16) {
 				int k = search_mapserver(RFIFOP(fd,i));
 				if (k == -1) { // the map isn't assigned to any server
-					// ’S“–ƒ}ƒbƒvƒT[ƒo[‚ªŒˆ‚Ü‚Á‚Ä‚¢‚È‚¢ƒ}ƒbƒv‚È‚çİ’è
+					// ï¿½Sï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½}ï¿½bï¿½vï¿½È‚ï¿½İ’ï¿½
 					if (j == 0) {
 						server[id].map = (char *)aMalloc(16 * sizeof(char));
 					} else {
@@ -2705,9 +2705,9 @@ static int parse_frommap(int fd)
 				if(dfd < 0)
 					continue;
 
-				// ‘¼‚Ìƒ}ƒbƒvƒT[ƒo[‚É’S“–ƒ}ƒbƒvî•ñ‚ğ‘—M
-				// map I‚ÍcharI‚©‚ç‚Ì‚±‚ÌƒpƒPƒbƒg‚ğóM‚µ‚Ä‰‚ß‚Ä
-				// ©•ª‚ª’S“–‚·‚éƒ}ƒbƒv‚ª•ª‚©‚é
+				// ï¿½ï¿½ï¿½Ìƒ}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½É’Sï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ğ‘—M
+				// map ï¿½Iï¿½ï¿½charï¿½Iï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Äï¿½ï¿½ß‚ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				WFIFORESERVE(dfd, j * 16 + 12);
 				WFIFOW(dfd, 0) = 0x2b04;
 				WFIFOW(dfd, 2) = j * 16 + 12;
@@ -2718,7 +2718,7 @@ static int parse_frommap(int fd)
 				WFIFOSET(dfd, WFIFOW(dfd,2));
 
 				if (i != id && server[i].map_num > 0) {
-					// ‘¼‚Ìƒ}ƒbƒvƒT[ƒo[‚Ì’S“–ƒ}ƒbƒv‚ğ‘—M
+					// ï¿½ï¿½ï¿½Ìƒ}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½Ì’Sï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½ğ‘—M
 					WFIFOW(fd, 0) = 0x2b04;
 					WFIFOW(fd, 2) = server[i].map_num * 16 + 12;
 					WFIFOL(fd, 4) = server[i].ip;
@@ -2730,7 +2730,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// ”FØ—v‹
+		// ï¿½Fï¿½Ø—vï¿½ï¿½
 		case 0x2afc:
 			if(RFIFOREST(fd)<23)
 				return 0;
@@ -2773,7 +2773,7 @@ static int parse_frommap(int fd)
 					memcpy(WFIFOP(fd,12+s1), &cd->reg, s2);
 					WFIFOSET(fd,WFIFOW(fd,2));
 
-					// ƒIƒ“ƒ‰ƒCƒ“db‚É‘}“ü
+					// ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½dbï¿½É‘}ï¿½ï¿½
 					c = (struct char_online *)numdb_search(char_online_db,account_id);
 					if(c == NULL) {
 						c = (struct char_online *)aCalloc(1,sizeof(struct char_online));
@@ -2786,7 +2786,7 @@ static int parse_frommap(int fd)
 					memcpy(c->name,cd->st.name,24);
 					chardb_set_online( c->char_id );
 
-					// ‚±‚Ìmap-serverˆÈŠO‚ÉƒƒOƒCƒ“‚µ‚½‚±‚Æ‚ğ’Ê’m‚·‚é
+					// ï¿½ï¿½ï¿½ï¿½map-serverï¿½ÈŠOï¿½Éƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½Ê’mï¿½ï¿½ï¿½ï¿½
 					WBUFW(buf, 0) = 0x2b09;
 					WBUFL(buf, 2) = cd->st.char_id;
 					memcpy(WBUFP(buf,6),cd->st.name,24);
@@ -2807,7 +2807,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,23);
 			break;
 
-		// MAPƒT[ƒo[ã‚Ìƒ†[ƒU[”óM
+		// MAPï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½Uï¿½[ï¿½ï¿½ï¿½ï¿½M
 		case 0x2aff:
 			if(RFIFOREST(fd)<6)
 				return 0;
@@ -2815,12 +2815,12 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,6);
 			break;
 
-		// ƒLƒƒƒ‰ƒf[ƒ^•Û‘¶
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Û‘ï¿½
 		case 0x2b01:
 			if(RFIFOREST(fd)<4 || RFIFOREST(fd)<RFIFOW(fd,2))
 				return 0;
 			if( ((struct mmo_charstatus*)RFIFOP(fd,13))->char_id != RFIFOL(fd,8) ) {
-				// ƒLƒƒƒ‰IDˆá‚¢‚Ìƒf[ƒ^‚ğ‘—‚Á‚Ä‚«‚½‚Ì‚Å‹­§Ø’f
+				// ï¿½Lï¿½ï¿½ï¿½ï¿½IDï¿½á‚¢ï¿½Ìƒfï¿½[ï¿½^ï¿½ğ‘—‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Ì‚Å‹ï¿½ï¿½ï¿½ï¿½Ø’f
 				unsigned char buf[8];
 				WBUFW(buf,0) = 0x2b19;
 				WBUFL(buf,2) = RFIFOL(fd,4);
@@ -2837,7 +2837,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,RFIFOW(fd,2));
 			break;
 
-		// ƒLƒƒƒ‰ƒZƒŒ—v‹
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½vï¿½ï¿½
 		case 0x2b02:
 			if(RFIFOREST(fd)<19)
 				return 0;
@@ -2868,7 +2868,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// ƒ}ƒbƒvƒT[ƒo[ŠÔˆÚ“®—v‹
+		// ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½ÔˆÚ“ï¿½ï¿½vï¿½ï¿½
 		case 0x2b05:
 			if(RFIFOREST(fd)<41)
 				return 0;
@@ -2897,7 +2897,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// ƒLƒƒƒ‰–¼ŒŸõ
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		case 0x2b08:
 			if(RFIFOREST(fd)<6)
 				return 0;
@@ -2922,7 +2922,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// GM‚É‚È‚è‚½[‚¢
+		// GMï¿½É‚È‚è‚½ï¿½[ï¿½ï¿½
 		case 0x2b0a:
 			if(RFIFOREST(fd)<4)
 				return 0;
@@ -2938,7 +2938,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,RFIFOW(fd,2));
 			break;
 
-		// «•Ê•ÏŠ·—v‹
+		// ï¿½ï¿½ï¿½Ê•ÏŠï¿½ï¿½vï¿½ï¿½
 		case 0x2b0c:
 			if(RFIFOREST(fd)<4)
 				return 0;
@@ -2956,7 +2956,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,RFIFOW(fd,2));
 			break;
 
-		// account_reg•Û‘¶—v‹
+		// account_regï¿½Û‘ï¿½ï¿½vï¿½ï¿½
 		case 0x2b10:
 			{
 				struct global_reg reg[ACCOUNT_REG2_NUM];
@@ -2973,14 +2973,14 @@ static int parse_frommap(int fd)
 					reg[j].value   = RFIFOL(fd,p+32);
 				}
 				set_account_reg2(acc,j,reg);
-				// loginƒT[ƒo[‚Ö‘—‚é
+				// loginï¿½Tï¿½[ï¿½oï¿½[ï¿½Ö‘ï¿½ï¿½ï¿½
 				if (login_fd >= 0 && session[login_fd])
 				{
 					memcpy(WFIFOP(login_fd,0),RFIFOP(fd,0),RFIFOW(fd,2));
 					WFIFOW(login_fd,0) = 0x2728;
 					WFIFOSET(login_fd,WFIFOW(login_fd,2));
 				}
-				// ƒ[ƒ‹ƒh‚Ö‚Ì“¯CƒƒOƒCƒ“‚ª‚È‚¯‚ê‚ÎmapƒT[ƒo[‚É‘—‚é•K—v‚Í‚È‚¢
+				// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½Ö‚Ì“ï¿½ï¿½Cï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½mapï¿½Tï¿½[ï¿½oï¿½[ï¿½É‘ï¿½ï¿½ï¿½Kï¿½vï¿½Í‚È‚ï¿½
 				//memcpy(buf,RFIFOP(fd,0),RFIFOW(fd,2));
 				//WBUFW(buf,0)=0x2b11;
 				//mapif_sendall(buf,WBUFW(buf,2));
@@ -2989,7 +2989,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// mapƒT[ƒo—LŒø‰»
+		// mapï¿½Tï¿½[ï¿½oï¿½Lï¿½ï¿½ï¿½ï¿½
 		case 0x2b13:
 			if(RFIFOREST(fd)<3)
 				return 0;
@@ -2998,13 +2998,13 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,3);
 			break;
 
-		// charƒT[ƒoƒƒ“ƒeƒiƒ“ƒXó‘Ô‚É
+		// charï¿½Tï¿½[ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½eï¿½iï¿½ï¿½ï¿½Xï¿½ï¿½Ô‚ï¿½
 		case 0x2b14:
 			if(RFIFOREST(fd)<3)
 				return 0;
 			char_maintenance=RFIFOB(fd,2);
 			printf("char: maintenance: %d\n",char_maintenance);
-			// login‚É’Ê’m
+			// loginï¿½É’Ê’m
 			if (login_fd >= 0 && session[login_fd])
 			{
 				WFIFOW(login_fd,0)=0x272b;
@@ -3014,7 +3014,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,3);
 			break;
 
-		// ƒLƒƒƒ‰ƒNƒ^[Ø’f‚ğ‘¼map‚É’Ê’m
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Ø’fï¿½ï¿½mapï¿½É’Ê’m
 		case 0x2b18:
 			if(RFIFOREST(fd)<10)
 				return 0;
@@ -3032,7 +3032,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// —£¥
+		// ï¿½ï¿½ï¿½ï¿½
 		case 0x2b20:
 			if(RFIFOREST(fd)<6)
 				return 0;
@@ -3040,7 +3040,7 @@ static int parse_frommap(int fd)
 				const struct mmo_chardata *cd1 = chardb_load(RFIFOL(fd,2));
 				if( cd1 && cd1->st.partner_id ) {
 					unsigned char buf[8];
-					// —£¥î•ñ‚ğmap‚É’Ê’m
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mapï¿½É’Ê’m
 					WBUFW(buf,0)=0x2b12;
 					WBUFL(buf,2)=cd1->st.char_id;
 					mapif_sendall(buf,6);
@@ -3050,7 +3050,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// —F’BƒŠƒXƒgíœ
+		// ï¿½Fï¿½Bï¿½ï¿½ï¿½Xï¿½gï¿½íœ
 		case 0x2b24:
 			if( RFIFOREST(fd)<18 )
 				return 0;
@@ -3081,7 +3081,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// —F’BƒŠƒXƒgƒIƒ“ƒ‰ƒCƒ“’Ê’m
+		// ï¿½Fï¿½Bï¿½ï¿½ï¿½Xï¿½gï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Ê’m
 		case 0x2b26:
 			if( RFIFOREST(fd)<4 || RFIFOREST(fd)<RFIFOW(fd,2) )
 				return 0;
@@ -3095,7 +3095,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,RFIFOW(fd,2));
 			break;
 
-		// —{q‰ğ‘Ì
+		// ï¿½{ï¿½qï¿½ï¿½ï¿½
 		case 0x2b28:
 			if(RFIFOREST(fd)<30)
 				return 0;
@@ -3103,7 +3103,7 @@ static int parse_frommap(int fd)
 				const struct mmo_chardata *cd1 = chardb_load(RFIFOL(fd,2));
 				if( cd1 && (cd1->st.baby_id || cd1->st.parent_id[0] || cd1->st.parent_id[1]) ) {
 					unsigned char buf[32];
-					// —{q‰ğ‘Ìî•ñ‚ğmap‚É’Ê’m
+					// ï¿½{ï¿½qï¿½ï¿½Ìï¿½ï¿½ï¿½mapï¿½É’Ê’m
 					WBUFW(buf,0)=0x2b29;
 					WBUFL(buf,2)=cd1->st.char_id;
 					memcpy(WBUFP(buf,6), RFIFOP(fd,6), 24);
@@ -3114,7 +3114,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// ƒLƒƒƒ‰‰i‘±•Ï”‚Ì•Û‘¶—v‹
+		// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½Ïï¿½ï¿½Ì•Û‘ï¿½ï¿½vï¿½ï¿½
 		case 0x2b2d:
 			{
 				struct global_reg reg[GLOBAL_REG_NUM];
@@ -3136,7 +3136,7 @@ static int parse_frommap(int fd)
 			}
 			break;
 
-		// ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^æ“¾—v‹
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½æ“¾ï¿½vï¿½ï¿½
 		case 0x2b2e:
 			if(RFIFOREST(fd) < 2)
 				return 0;
@@ -3148,7 +3148,7 @@ static int parse_frommap(int fd)
 			RFIFOSKIP(fd,2);
 			break;
 
-		// ƒ‰ƒ“ƒLƒ“ƒOƒf[ƒ^XV
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Oï¿½fï¿½[ï¿½^ï¿½Xï¿½V
 		case 0x2b2f:
 			if(RFIFOREST(fd) < 4 || RFIFOREST(fd) < RFIFOW(fd,2))
 				return 0;
@@ -3159,7 +3159,7 @@ static int parse_frommap(int fd)
 
 				char_ranking_update(ranking_id,(int)RFIFOW(fd,6),(struct Ranking_Data *)RFIFOP(fd,8));
 
-				// ‘SMAPƒT[ƒo‚Éƒf[ƒ^‚ğƒtƒ‰ƒbƒVƒ…
+				// ï¿½SMAPï¿½Tï¿½[ï¿½oï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½
 				len = char_set_ranking_send(ranking_id,buf);
 				mapif_sendall(buf,len);
 
@@ -3168,14 +3168,14 @@ static int parse_frommap(int fd)
 			break;
 
 		default:
-			// inter serverˆ—‚É“n‚·
+			// inter serverï¿½ï¿½ï¿½ï¿½ï¿½É“nï¿½ï¿½
 			{
 				int r=inter_parse_frommap(fd);
-				if( r==1 )	break;		// ˆ—‚Å‚«‚½
-				if( r==2 )	return 0;	// ƒpƒPƒbƒg’·‚ª‘«‚è‚È‚¢
+				if( r==1 )	break;		// ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
+				if( r==2 )	return 0;	// ï¿½pï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½
 			}
 
-			// inter serverˆ—‚Å‚à‚È‚¢ê‡‚ÍØ’f
+			// inter serverï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ÍØ’f
 			printf("parse_from: unknown packet 0x%04x disconnect session #%d\n", RFIFOW(fd,0), fd);
 #ifdef DUMP_UNKNOWN_PACKET
 			hex_dump(stdout, RFIFOP(fd,0), RFIFOREST(fd));
@@ -3191,7 +3191,7 @@ static int parse_frommap(int fd)
 }
 
 /*==========================================
- * char_mapif‚Ì‰Šú‰»ˆ—iŒ»İ‚Íinter_mapif‰Šú‰»‚Ì‚İj
+ * char_mapifï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½İ‚ï¿½inter_mapifï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚İj
  *------------------------------------------
  */
 static int char_mapif_init(int fd)
@@ -3200,7 +3200,7 @@ static int char_mapif_init(int fd)
 }
 
 /*==========================================
- * MAPƒT[ƒo‚Ìƒ^ƒO–¼‚Ìd•¡ƒ`ƒFƒbƒN
+ * MAPï¿½Tï¿½[ï¿½oï¿½Ìƒ^ï¿½Oï¿½ï¿½ï¿½Ìdï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
  *------------------------------------------
  */
 static int char_mapif_check_tag(int fd, int id, const char *tag)
@@ -3210,7 +3210,7 @@ static int char_mapif_check_tag(int fd, int id, const char *tag)
 	for(i = 0; i < MAX_MAP_SERVERS; i++) {
 		if(server_fd[i] >= 0 && i != id) {
 			if(strcmp(tag, server[i].tag) == 0) {
-				// ƒ^ƒO–¼‚ªd•¡‚µ‚Ä‚¢‚é
+				// ï¿½^ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 				fail = 1;
 				break;
 			}
@@ -3225,7 +3225,7 @@ static int char_mapif_check_tag(int fd, int id, const char *tag)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^ƒT[ƒo‚Ìƒ\ƒPƒbƒgƒfƒXƒgƒ‰ƒNƒ^
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Tï¿½[ï¿½oï¿½Ìƒ\ï¿½Pï¿½bï¿½gï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *------------------------------------------
  */
 static int parse_char_disconnect(int fd)
@@ -3237,7 +3237,7 @@ static int parse_char_disconnect(int fd)
 }
 
 /*==========================================
- * ‘¼ƒ}ƒbƒv‚ÉƒƒOƒCƒ“‚µ‚Ä‚¢‚éƒLƒƒƒ‰ƒNƒ^[î•ñ‚ğ‘—M‚·‚é
+ * ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½Éƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ï¿½ï¿½ğ‘—Mï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static int parse_char_sendonline(void *key,void *data,va_list ap)
@@ -3257,7 +3257,7 @@ static int parse_char_sendonline(void *key,void *data,va_list ap)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^ƒT[ƒo‚ÌƒpƒPƒbƒg‰ğÍ
+ * ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Tï¿½[ï¿½oï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½
  *------------------------------------------
  */
 int parse_char(int fd)
@@ -3275,14 +3275,14 @@ int parse_char(int fd)
 
 	while(RFIFOREST(fd)>=2){
 		cmd = RFIFOW(fd,0);
-		// crc32‚ÌƒXƒLƒbƒv—p
-		if( sd == NULL &&					// –¢ƒƒOƒCƒ“orŠÇ—ƒpƒPƒbƒg
-		    RFIFOREST(fd) >= 4 &&				// Å’áƒoƒCƒg”§ŒÀ • 0x7530,0x7532ŠÇ—ƒpƒPœ‹
-		    RFIFOREST(fd) <= 21 &&				// Å‘åƒoƒCƒg”§ŒÀ • ƒT[ƒo[ƒƒOƒCƒ“œ‹
-		    cmd != 0x20b &&					// md5’Ê’mƒpƒPƒbƒgœ‹
+		// crc32ï¿½ÌƒXï¿½Lï¿½bï¿½vï¿½p
+		if( sd == NULL &&					// ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½orï¿½Ç—ï¿½ï¿½pï¿½Pï¿½bï¿½g
+		    RFIFOREST(fd) >= 4 &&				// ï¿½Å’ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 0x7530,0x7532ï¿½Ç—ï¿½ï¿½pï¿½Pï¿½ï¿½ï¿½ï¿½
+		    RFIFOREST(fd) <= 21 &&				// ï¿½Å‘ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		    cmd != 0x20b &&					// md5ï¿½Ê’mï¿½pï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½ï¿½
 		    cmd != 0x228 &&
-		    cmd != 0x2b2a &&					// mapIˆÃ†‰»ƒƒOƒCƒ“œ‹
-		    (RFIFOREST(fd) < 6 || RFIFOW(fd,4) == 0x65) )	// Ÿ‚É‰½‚©ƒpƒPƒbƒg‚ª—ˆ‚Ä‚é‚È‚çAÚ‘±‚Å‚È‚¢‚Æ‚¾‚ß
+		    cmd != 0x2b2a &&					// mapï¿½Iï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		    (RFIFOREST(fd) < 6 || RFIFOW(fd,4) == 0x65) )	// ï¿½ï¿½ï¿½É‰ï¿½ï¿½ï¿½ï¿½pï¿½Pï¿½bï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½È‚ï¿½Aï¿½Ú‘ï¿½ï¿½Å‚È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½
 		{
 			RFIFOSKIP(fd,4);
 			cmd = RFIFOW(fd,0);
@@ -3294,12 +3294,12 @@ int parse_char(int fd)
 		//if(cmd<30000 && cmd!=0x187)
 		//	printf("parse_char : %d %d %d\n",fd,RFIFOREST(fd),cmd);
 
-		// •s³ƒpƒPƒbƒg‚Ìˆ—
+		// ï¿½sï¿½ï¿½ï¿½pï¿½Pï¿½bï¿½gï¿½Ìï¿½ï¿½ï¿½
 		if( sd == NULL)
 		{
 			switch(cmd)
 			{
-				// ”FØŒn‚ÌƒpƒPƒbƒg‚ÍƒZƒbƒVƒ‡ƒ“ƒf[ƒ^‚ªì‚ç‚ê‚Ä‚¢‚È‚¢‚½‚ß‹–‰Â
+				// ï¿½Fï¿½ØŒnï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½ÍƒZï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ß‹ï¿½ï¿½ï¿½
 				case 0x65:
 				case 0x187:
 				case 0x20b:
@@ -3316,27 +3316,27 @@ int parse_char(int fd)
 				case 0x7530:
 				case 0x7532:
 					break;
-				// ‚»‚êˆÈŠO‚ÌƒpƒPƒbƒg‚Í”FØÏ‚İ‚Å‚Í‚È‚¢‚Ì‚Å•s³
+				// ï¿½ï¿½ï¿½ï¿½ÈŠOï¿½Ìƒpï¿½Pï¿½bï¿½gï¿½Í”Fï¿½ØÏ‚İ‚Å‚Í‚È‚ï¿½ï¿½Ì‚Å•sï¿½ï¿½
 				default:
-					cmd = 0xffff;	// ƒpƒPƒbƒgƒ_ƒ“ƒv‚ğ•\¦‚³‚¹‚é
+					cmd = 0xffff;	// ï¿½pï¿½Pï¿½bï¿½gï¿½_ï¿½ï¿½ï¿½vï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 		}
 
 		switch(cmd) {
-		case 0x20b:		// 20040622ˆÃ†‰»ragexe‘Î‰
+		case 0x20b:		// 20040622ï¿½Ãï¿½ï¿½ï¿½ragexeï¿½Î‰ï¿½
 			if(RFIFOREST(fd)<19)
 				return 0;
 			RFIFOSKIP(fd,19);
 			break;
 
-		case 0x258:		// 20051214 nProtectŠÖŒW Part 1
+		case 0x258:		// 20051214 nProtectï¿½ÖŒW Part 1
 			memset(WFIFOP(fd,0),0,18);
 			WFIFOW(fd,0)=0x0227;
 			WFIFOSET(fd,18);
 			RFIFOSKIP(fd,2);
 			break;
 
-		case 0x228:		// 20051214 nProtectŠÖŒW Part 2
+		case 0x228:		// 20051214 nProtectï¿½ÖŒW Part 2
 			if(RFIFOREST(fd)<18)
 				return 0;
 			WFIFOW(fd,0)=0x0259;
@@ -3345,7 +3345,7 @@ int parse_char(int fd)
 			RFIFOSKIP(fd,18);
 			break;
 
-		case 0x65:	// Ú‘±—v‹
+		case 0x65:	// ï¿½Ú‘ï¿½ï¿½vï¿½ï¿½
 			if( RFIFOREST(fd) < 17 )
 				return 0;
 			{
@@ -3395,7 +3395,7 @@ int parse_char(int fd)
 				}
 				else
 				{
-					// ƒƒ“ƒeƒiƒ“ƒX’†
+					// ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½iï¿½ï¿½ï¿½Xï¿½ï¿½
 					if( char_maintenance && isGM(sd->account_id) == 0 )
 					{
 						close(fd);
@@ -3403,7 +3403,7 @@ int parse_char(int fd)
 						return 0;
 					}
 
-					// Ú‘±l”§ŒÀ’†
+					// ï¿½Ú‘ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					if( max_connect_user > 0 )
 					{
 						if( count_users() < max_connect_user || isGM(sd->account_id) > 0 )
@@ -3436,7 +3436,7 @@ int parse_char(int fd)
 						}
 					}
 
-					// 0x6b‘—M
+					// 0x6bï¿½ï¿½ï¿½M
 					else {
 #if PACKETVER >= 20110309
 						WFIFOW(fd,0) = 0x8b9;
@@ -3464,7 +3464,7 @@ int parse_char(int fd)
 			RFIFOSKIP(fd,17);
 			break;
 
-		case 0x66:	// ƒLƒƒƒ‰‘I‘ğ
+		case 0x66:	// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½
 			if( RFIFOREST(fd) < 3 )
 				return 0;
 			{
@@ -3496,7 +3496,7 @@ int parse_char(int fd)
 						i = search_mapserver_char(st.last_point.map,&st);
 					if( i >= 0 )
 					{
-						// Œ»İ’n‚ª‘‚«Š·‚í‚Á‚½‚Ì‚Åã‘‚«
+						// ï¿½ï¿½ï¿½İ’nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Åã‘ï¿½ï¿½
 						chardb_save(&st);
 					}
 				}
@@ -3512,19 +3512,19 @@ int parse_char(int fd)
 					WFIFOSET(fd,3);
 					break;
 				}
-				// ‚QdƒƒOƒCƒ“Œ‚‘Şiˆá‚¤ƒ}ƒbƒvƒT[ƒo‚Ìê‡j
-				// “¯‚¶ƒ}ƒbƒvƒT[ƒo‚Ìê‡‚ÍAƒ}ƒbƒvƒT[ƒo[“à‚Åˆ—‚³‚ê‚é
+				// ï¿½Qï¿½dï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Şiï¿½á‚¤ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½Ìê‡ï¿½j
+				// ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½Ìê‡ï¿½ÍAï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				c = (struct char_online *)numdb_search(char_online_db,sd->found_char[ch]->st.account_id);
 				if( c && (c->ip != server[i].ip || c->port != server[i].port) )
 				{
-					// ‚QdƒƒOƒCƒ“ŒŸo
-					// map‚ÉØ’f—v‹
+					// ï¿½Qï¿½dï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½o
+					// mapï¿½ÉØ’fï¿½vï¿½ï¿½
 					unsigned char buf[8];
 					WBUFW(buf,0) = 0x2b1a;
 					WBUFL(buf,2) = sd->account_id;
 					mapif_sendall(buf,6);
 
-					// Ú‘±¸”s‘—M
+					// ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½M
 					WFIFOW(fd,0) = 0x6c;
 					WFIFOW(fd,2) = 0;
 					WFIFOSET(fd,3);
@@ -3548,7 +3548,7 @@ int parse_char(int fd)
 				WFIFOSET(fd,156);
 #endif
 
-				// “¯ˆêƒAƒJƒEƒ“ƒg‚Ì–¢”FØƒf[ƒ^‚ğ‘S‚Ä”jŠü‚µ‚Ä‚¨‚­
+				// ï¿½ï¿½ï¿½ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½Ì–ï¿½ï¿½Fï¿½Øƒfï¿½[ï¿½^ï¿½ï¿½Sï¿½Ä”jï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 				for( i = 0; i < AUTH_FIFO_SIZE; i++ )
 				{
 					if( auth_fifo[i].account_id == sd->account_id && !auth_fifo[i].delflag )
@@ -3566,7 +3566,7 @@ int parse_char(int fd)
 			}
 			break;
 
-		case 0x67:	// ƒLƒƒƒ‰ƒNƒ^[ì¬
+		case 0x67:	// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ì¬
 		case 0x970:
 		case 0xa39:
 			if( cmd == 0x67 && RFIFOREST(fd) < 37 )
@@ -3576,7 +3576,7 @@ int parse_char(int fd)
 			if( cmd == 0xa39 && RFIFOREST(fd) < 36 )
 				return 0;
 			{
-				// ƒLƒƒƒ‰ì¬ƒpƒ‰ƒ[ƒ^‚Ìæ“¾
+				// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ì¬ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ìæ“¾
 				unsigned char *name = RFIFOP(fd,2);
 #if PACKETVER < 20120307
 				short str   = RFIFOB(fd,26);
@@ -3627,7 +3627,7 @@ int parse_char(int fd)
 							break;
 						}
 					}
-					// ##•Ï”‚ğÄİ’è‚·‚é
+					// ##ï¿½Ïï¿½ï¿½ï¿½ï¿½Äİ’è‚·ï¿½ï¿½
 					i = get_account_reg2(sd,reg);
 					if(i > 0)
 						set_account_reg2(sd->account_id,i,reg);
@@ -3642,7 +3642,7 @@ int parse_char(int fd)
 			}
 			break;
 
-		case 0x68:	// íœ
+		case 0x68:	// ï¿½íœ
 			if(RFIFOREST(fd)<46)
 				return 0;
 			if (login_fd >= 0 && session[login_fd]) {
@@ -3655,7 +3655,7 @@ int parse_char(int fd)
 			RFIFOSKIP(fd,46);
 			break;
 
-		case 0x2b2a:	// ƒ}ƒbƒvƒT[ƒo[ˆÃ†‰»ƒƒOƒCƒ“‚Ìƒ`ƒƒƒŒƒ“ƒW—v‹
+		case 0x2b2a:	// ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Ìƒ`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½vï¿½ï¿½
 			RFIFOSKIP(fd, 2);
 			if(sd) {
 				printf("char: illegal md5key request.");
@@ -3665,7 +3665,7 @@ int parse_char(int fd)
 			} else {
 				struct cram_session_data *csd=(struct cram_session_data *)(session[fd]->session_data=aCalloc(1,sizeof(struct cram_session_data)));
 
-				// ˆÃ†‰»—p‚Ìƒ`ƒƒƒŒƒ“ƒW¶¬
+				// ï¿½Ãï¿½ï¿½ï¿½ï¿½pï¿½Ìƒ`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½
 				csd->md5keylen = atn_rand()%(sizeof(csd->md5key)/4)+(sizeof(csd->md5key)-sizeof(csd->md5key)/4);
 				for(i=0;i<csd->md5keylen;i++)
 					csd->md5key[i]=atn_rand()%255+1;
@@ -3677,8 +3677,8 @@ int parse_char(int fd)
 			}
 			break;
 
-		case 0x2af8:	// ƒ}ƒbƒvƒT[ƒo[ƒƒOƒCƒ“ (map-server connection)
-		case 0x2b2c:	// ƒ}ƒbƒvƒT[ƒo[ˆÃ†‰»ƒƒOƒCƒ“
+		case 0x2af8:	// ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ (map-server connection)
+		case 0x2b2c:	// ï¿½}ï¿½bï¿½vï¿½Tï¿½[ï¿½oï¿½[ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½
 		{
 			int authok=0;
 			struct cram_session_data *csd=(struct cram_session_data *)(session[fd]->session_data);
@@ -3695,7 +3695,7 @@ int parse_char(int fd)
 				if (server_fd[i] < 0)
 					break;
 			}
-			// ˆÃ†‰»ƒƒOƒCƒ“
+			// ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½
 			if( RFIFOW(fd,0)==0x2b2c )
 			{
 				if( RFIFOW(fd,46) == 4 && csd && csd->md5keylen )	// HMAC-MD5
@@ -3709,7 +3709,7 @@ int parse_char(int fd)
 			{
 				authok = (strcmp(RFIFOP(fd,26), passwd) == 0 );
 			}
-			// ‚¢‚ç‚È‚¢ƒZƒbƒVƒ‡ƒ“î•ñ‚Ííœ
+			// ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ííœ
 			if( sd )
 			{
 				aFree( csd );
@@ -3738,7 +3738,7 @@ int parse_char(int fd)
 				WFIFOSET(fd,3);
 				numdb_foreach(char_online_db,parse_char_sendonline,fd);
 				RFIFOSKIP(fd,60 + MAPSERVER_TAGNAME);
-				session[fd]->auth = -1; // ”FØI—¹‚ğ socket.c ‚É“`‚¦‚é
+				session[fd]->auth = -1; // ï¿½Fï¿½ØIï¿½ï¿½ï¿½ï¿½ socket.c ï¿½É“`ï¿½ï¿½ï¿½ï¿½
 				realloc_fifo(fd, RFIFOSIZE_SERVERLINK, WFIFOSIZE_SERVERLINK);
 				char_mapif_init(fd);
 				char_mapif_check_tag(fd, i, server[i].tag);
@@ -3746,7 +3746,7 @@ int parse_char(int fd)
 			break;
 		}
 
-		case 0x187:	// AliveM†H
+		case 0x187:	// Aliveï¿½Mï¿½ï¿½ï¿½H
 			if (RFIFOREST(fd) < 6)
 				return 0;
 			WFIFOW(fd,0)=0x187;
@@ -3903,7 +3903,7 @@ int parse_char(int fd)
 					WFIFOL(fd,20+j*144) = st->job_level;
 					WFIFOL(fd,24+j*144) = 0;
 					WFIFOL(fd,28+j*144) = 0;
-					WFIFOL(fd,32+j*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+					WFIFOL(fd,32+j*144) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 					WFIFOL(fd,36+j*144) = st->karma;
 					WFIFOL(fd,40+j*144) = st->manner;
 					WFIFOW(fd,44+j*144) = st->status_point;
@@ -3931,14 +3931,14 @@ int parse_char(int fd)
 					WFIFOB(fd,110+j*144) = (st->dex > 255)  ? 255: st->dex;
 					WFIFOB(fd,111+j*144) = (st->luk > 255)  ? 255: st->luk;
 					WFIFOW(fd,112+j*144) = st->char_num;
-					WFIFOW(fd,114+j*144) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-					memcpy(WFIFOP(fd,116+j*144),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+					WFIFOW(fd,114+j*144) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+					memcpy(WFIFOP(fd,116+j*144),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 					if(st->delete_date)
-						WFIFOL(fd,132+j*144) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+						WFIFOL(fd,132+j*144) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 					else
 						WFIFOL(fd,132+j*144) = 0;
-					WFIFOL(fd,136+j*144) = st->robe;	// Œ¨‘•”õ
-					WFIFOL(fd,140+j*144) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+					WFIFOL(fd,136+j*144) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					WFIFOL(fd,140+j*144) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 					WFIFOL(fd,144+j*144) = 0;	// TODO: Add-Ons
 				}
 				WFIFOW(fd,2)=found_num*144+4;
@@ -3950,7 +3950,7 @@ int parse_char(int fd)
 					WFIFOL(fd,20+j*147) = st->job_level;
 					WFIFOL(fd,24+j*147) = 0;
 					WFIFOL(fd,28+j*147) = 0;
-					WFIFOL(fd,32+j*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+					WFIFOL(fd,32+j*147) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 					WFIFOL(fd,36+j*147) = st->karma;
 					WFIFOL(fd,40+j*147) = st->manner;
 					WFIFOW(fd,44+j*147) = st->status_point;
@@ -3979,16 +3979,16 @@ int parse_char(int fd)
 					WFIFOB(fd,112+j*147) = (st->dex > 255)  ? 255: st->dex;
 					WFIFOB(fd,113+j*147) = (st->luk > 255)  ? 255: st->luk;
 					WFIFOW(fd,114+j*147) = st->char_num;
-					WFIFOW(fd,116+j*147) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-					memcpy(WFIFOP(fd,118+j*147),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+					WFIFOW(fd,116+j*147) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+					memcpy(WFIFOP(fd,118+j*147),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 					if(st->delete_date)
-						WFIFOL(fd,134+j*147) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+						WFIFOL(fd,134+j*147) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 					else
 						WFIFOL(fd,134+j*147) = 0;
-					WFIFOL(fd,138+j*147) = st->robe;	// Œ¨‘•”õ
-					WFIFOL(fd,142+j*147) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+					WFIFOL(fd,138+j*147) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					WFIFOL(fd,142+j*147) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 					WFIFOL(fd,146+j*147) = 0;	// TODO: Add-Ons
-					WFIFOB(fd,150+j*147) = st->sex;	// «•Ê
+					WFIFOB(fd,150+j*147) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 				}
 				WFIFOW(fd,2)=found_num*147+4;
 #else
@@ -3999,7 +3999,7 @@ int parse_char(int fd)
 					WFIFOL(fd,28+j*155) = st->job_level;
 					WFIFOL(fd,32+j*155) = 0;
 					WFIFOL(fd,36+j*155) = 0;
-					WFIFOL(fd,40+j*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ‹Ræ’†‚ÌƒƒOƒCƒ“ƒGƒ‰[‘Îô
+					WFIFOL(fd,40+j*155) = ( st->option&0x7e80020 ) ? 0 : st->option;	// ï¿½Rï¿½æ’†ï¿½Ìƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Îï¿½
 					WFIFOL(fd,44+j*155) = st->karma;
 					WFIFOL(fd,48+j*155) = st->manner;
 					WFIFOW(fd,52+j*155) = st->status_point;
@@ -4028,23 +4028,23 @@ int parse_char(int fd)
 					WFIFOB(fd,120+j*155) = (st->dex > 255)  ? 255: st->dex;
 					WFIFOB(fd,121+j*155) = (st->luk > 255)  ? 255: st->luk;
 					WFIFOW(fd,122+j*155) = st->char_num;
-					WFIFOW(fd,124+j*155) = 1;	// TODO: ƒLƒƒƒ‰–¼‚Ì•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©(0‚ÅON 1‚ÅOFF)
-					memcpy(WFIFOP(fd,126+j*155),st->last_point.map,16);	// ÅŒã‚ÉİĞ‚µ‚Ä‚¢‚½MAP–¼
+					WFIFOW(fd,124+j*155) = 1;	// TODO: ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½(0ï¿½ï¿½ON 1ï¿½ï¿½OFF)
+					memcpy(WFIFOP(fd,126+j*155),st->last_point.map,16);	// ï¿½ÅŒï¿½ÉİĞ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½MAPï¿½ï¿½
 					if(st->delete_date)
-						WFIFOL(fd,142+j*155) = st->delete_date - (unsigned int)time(NULL);	// íœ‘Ò‹@ŠÔ
+						WFIFOL(fd,142+j*155) = st->delete_date - (unsigned int)time(NULL);	// ï¿½íœï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
 					else
 						WFIFOL(fd,142+j*155) = 0;
-					WFIFOL(fd,146+j*155) = st->robe;	// Œ¨‘•”õ
-					WFIFOL(fd,150+j*155) = 0;	// ƒXƒƒbƒg•ÏX‚ª‰Â”\‚Èó‘Ô‚©‚Ç‚¤‚©
+					WFIFOL(fd,146+j*155) = st->robe;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					WFIFOL(fd,150+j*155) = 0;	// ï¿½Xï¿½ï¿½ï¿½bï¿½gï¿½ÏXï¿½ï¿½ï¿½Â”\ï¿½Èï¿½Ô‚ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 					WFIFOL(fd,154+j*155) = 0;	// TODO: Add-Ons
-					WFIFOB(fd,158+j*155) = st->sex;	// «•Ê
+					WFIFOB(fd,158+j*155) = st->sex;	// ï¿½ï¿½ï¿½ï¿½
 				}
 				WFIFOW(fd,2)=found_num*155+4;
 #endif
 				WFIFOSET(fd,WFIFOW(fd,2));
 			}
 
-		case 0x7530:	// Aurigaî•ñæ“¾
+		case 0x7530:	// Aurigaï¿½ï¿½ï¿½æ“¾
 			WFIFOW(fd,0)=0x7531;
 			WFIFOB(fd,2)=AURIGA_MAJOR_VERSION;
 			WFIFOB(fd,3)=AURIGA_MINOR_VERSION;
@@ -4056,7 +4056,7 @@ int parse_char(int fd)
 			WFIFOSET(fd,11);
 			RFIFOSKIP(fd,2);
 			return 0;
-		case 0x7532:	// Ú‘±‚ÌØ’f(default‚Æˆ—‚Íˆê‚¾‚ª–¾¦“I‚É‚·‚é‚½‚ß)
+		case 0x7532:	// ï¿½Ú‘ï¿½ï¿½ÌØ’f(defaultï¿½Æï¿½ï¿½ï¿½ï¿½Íˆêï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½É‚ï¿½ï¿½é‚½ï¿½ï¿½)
 			RFIFOSKIP(fd,2);
 			close(fd);
 			session[fd]->eof=1;
@@ -4078,8 +4078,8 @@ int parse_char(int fd)
 }
 
 /*==========================================
- * ‘S‚Ä‚ÌMAPƒT[ƒo[‚Éƒf[ƒ^‘—M
- * i‘—M‚µ‚½mapI‚Ì”‚ğ•Ô‚·j
+ * ï¿½Sï¿½Ä‚ï¿½MAPï¿½Tï¿½[ï¿½oï¿½[ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½M
+ * ï¿½iï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½ï¿½mapï¿½Iï¿½Ìï¿½ï¿½ï¿½Ô‚ï¿½ï¿½j
  *------------------------------------------
  */
 int mapif_sendall(unsigned char *buf,size_t len)
@@ -4099,8 +4099,8 @@ int mapif_sendall(unsigned char *buf,size_t len)
 }
 
 /*==========================================
- * ©•ªˆÈŠO‚Ì‘S‚Ä‚ÌMAPƒT[ƒo[‚Éƒf[ƒ^‘—M
- * i‘—M‚µ‚½mapI‚Ì”‚ğ•Ô‚·j
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ÈŠOï¿½Ì‘Sï¿½Ä‚ï¿½MAPï¿½Tï¿½[ï¿½oï¿½[ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½M
+ * ï¿½iï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½ï¿½mapï¿½Iï¿½Ìï¿½ï¿½ï¿½Ô‚ï¿½ï¿½j
  *------------------------------------------
  */
 int mapif_sendallwos(int sfd,unsigned char *buf,size_t len)
@@ -4120,7 +4120,7 @@ int mapif_sendallwos(int sfd,unsigned char *buf,size_t len)
 }
 
 /*==========================================
- * MAPƒT[ƒo[‚Éƒf[ƒ^‘—MimapI¶‘¶Šm”F—L‚èj
+ * MAPï¿½Tï¿½[ï¿½oï¿½[ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½Mï¿½imapï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½mï¿½Fï¿½Lï¿½ï¿½j
  *------------------------------------------
  */
 int mapif_send(int fd,unsigned char *buf,size_t len)
@@ -4139,7 +4139,7 @@ int mapif_send(int fd,unsigned char *buf,size_t len)
 }
 
 /*==========================================
- * Ú‘±l”§ŒÀ’l‚ğƒZƒbƒg
+ * ï¿½Ú‘ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Zï¿½bï¿½g
  *------------------------------------------
  */
 void mapif_parse_CharConnectLimit(int fd)
@@ -4155,7 +4155,7 @@ void mapif_parse_CharConnectLimit(int fd)
 }
 
 /*==========================================
- * ƒƒOƒCƒ“ƒT[ƒo‚ÖÚ‘±l”‚ğ‘—M
+ * ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Tï¿½[ï¿½oï¿½ÖÚ‘ï¿½ï¿½lï¿½ï¿½ï¿½ğ‘—M
  *------------------------------------------
  */
 int send_users_tologin(int tid,unsigned int tick,int id,void *data)
@@ -4186,7 +4186,7 @@ int send_users_tologin(int tid,unsigned int tick,int id,void *data)
 }
 
 /*==========================================
- * ƒƒOƒCƒ“ƒT[ƒo‚Ö‚ÌÚ‘±‚Ì’èŠúƒ`ƒFƒbƒN
+ * ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Tï¿½[ï¿½oï¿½Ö‚ÌÚ‘ï¿½ï¿½Ì’ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
  *------------------------------------------
  */
 static int check_connect_login_server(int tid,unsigned int tick,int id,void *data)
@@ -4202,11 +4202,11 @@ static int check_connect_login_server(int tid,unsigned int tick,int id,void *dat
 		session[login_fd]->func_destruct = parse_login_disconnect;
 		realloc_fifo(login_fd, RFIFOSIZE_SERVERLINK, WFIFOSIZE_SERVERLINK);
 
-		// ˆÃ†‰»ƒƒOƒCƒ“‚Ìƒ`ƒƒƒŒƒ“ƒW—v‹
+		// ï¿½Ãï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Ìƒ`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½vï¿½ï¿½
 		WFIFOW(login_fd,0)=0x272d;
 		WFIFOSET(login_fd,2);
 
-		/* ƒvƒŒ[ƒ“‚ÈƒƒOƒCƒ“‚ÍŒ»İ”p~ */
+		/* ï¿½vï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Èƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ÍŒï¿½ï¿½İ”pï¿½~ */
 		//WFIFOW(login_fd,0)=0x2710;
 		//memcpy(WFIFOP(login_fd,2),userid,24);
 		//memcpy(WFIFOP(login_fd,26),passwd,24);
@@ -4223,7 +4223,7 @@ static int check_connect_login_server(int tid,unsigned int tick,int id,void *dat
 }
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ï¿½İ’ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
  *------------------------------------------
  */
 static void char_config_read(const char *cfgName)
@@ -4388,7 +4388,7 @@ static void char_config_read(const char *cfgName)
 }
 
 /*==========================================
- * HTTPƒRƒ“ƒgƒ[ƒ‹ƒpƒlƒ‹ŠÖ”
+ * HTTPï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½pï¿½lï¿½ï¿½ï¿½Öï¿½
  *------------------------------------------
  */
 static void char_socket_ctrl_panel_func(int fd,char* usage,char* user,char* status)
@@ -4414,7 +4414,7 @@ static void char_socket_ctrl_panel_func(int fd,char* usage,char* user,char* stat
 }
 
 /*==========================================
- * I—¹’¼‘Oˆ—
+ * ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 void do_pre_final(void)
@@ -4424,7 +4424,7 @@ void do_pre_final(void)
 }
 
 /*==========================================
- * I—¹
+ * ï¿½Iï¿½ï¿½
  *------------------------------------------
  */
 static int gm_account_db_final(void *key,void *data,va_list ap)
@@ -4487,7 +4487,7 @@ void do_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *------------------------------------------
  */
 int do_init(int argc,char **argv)
@@ -4518,7 +4518,9 @@ int do_init(int argc,char **argv)
 
 	char_config_read(char_conf_filename);
 
+	printf("Login server IP address (%s)\n", login_host);
 	login_ip = host2ip(login_host, "Login server IP address");
+	printf("Character server IP address (%s)\n", char_host);
 	char_ip  = host2ip(char_host, "Character server IP address");
 	if(char_shost[0])
 		char_sip = host2ip(char_shost, "Character server sIP address");
@@ -4536,7 +4538,7 @@ int do_init(int argc,char **argv)
 	inter_storage_init();
 	chardb_build_ranking();
 	read_gm_account();
-	inter_init(inter_conf_filename);	// inter server ‰Šú‰»
+	inter_init(inter_conf_filename);	// inter server ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	set_defaultparse(parse_char);
 	set_sock_destruct(parse_char_disconnect);
