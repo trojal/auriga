@@ -1,4 +1,6 @@
 FROM ubuntu
+RUN userdel -r ubuntu
+
 ARG USERNAME=devuser
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -7,30 +9,19 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     ca-certificates \
     git \
     ssh \
+    vim \
     curl \
     wget \
     sudo \
     gnupg2 \
     lsb-release \
-	mariadb-client \
-    libmariadbclient-dev-compat \
-    python2 \
-    libzstd-dev \
-	gcc \
-	gdb \
-	libpcre3-dev \
-	make \
-	openssh-client \
-	zlib1g-dev \
-	linux-headers-generic \
-    locales \
+    mariadb-client \
     && curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null \
     && echo "deb [arch=amd64] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list \
     && apt-get update \
-    && locale-gen en_US.UTF-8 \
     && apt-get install -y docker-ce-cli \
-    && curl -fsSL https://dl.k8s.io/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg \
-    && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list \
+    && curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list \
     && apt-get update \
     && apt-get install -y kubectl
 
@@ -49,11 +40,27 @@ RUN echo "#!/bin/sh\n\
 RUN curl -sL https://github.com/digitalocean/doctl/releases/download/v1.63.1/doctl-1.63.1-linux-amd64.tar.gz | tar -xzv && mv doctl /usr/local/bin
 RUN curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh | bash
 
+### Custom changes (root) START
+RUN apt-get -y install --no-install-recommends \
+    libmariadbclient-dev-compat \
+    python3 \
+    libzstd-dev \
+    gcc \
+    gdb \
+    libpcre3-dev \
+    make \
+    openssh-client \
+    zlib1g-dev \
+    linux-headers-generic \
+    locales \
+    && locale-gen en_US.UTF-8
+### Custom changes (root) END
+
 USER $USERNAME
 ENV HOME /home/$USERNAME
 
 WORKDIR $HOME
-RUN curl -qsL https://github.com/mozilla/sops/releases/download/v3.5.0/sops-v3.5.0.linux -o ~/sops && chmod +x ~/sops
+RUN curl -qsL https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux -o ~/sops && chmod +x ~/sops
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
 ENV XDG_CONFIG_HOME $HOME/.config
 
@@ -63,3 +70,6 @@ ENV XDG_CONFIG_HOME $HOME/.config
 # The script will also execute CMD if you need to alter startup behaviors.
 ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
 CMD [ "sleep", "infinity" ]
+
+### Custom changes (non-root) START
+### Custom changes (non-root) END

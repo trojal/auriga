@@ -9,29 +9,30 @@
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
 	"workspaceFolder": "/workspace",
 
-	"runArgs": ["--init"],
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"sqltools.connections": [{
-			"name": "JitanRO development database",
-			"driver": "MariaDB",
-			"server": "localhost",
-			"previewLimit": 50,
-			"port": 3306,
-			"database": "ragnarok",
-			"username": "ragnarok",
-			"password": "ragnarok"
-		}]
+	"customizations": {
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-mysql",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker"
+			],
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"sqltools.connections": [{
+					"name": "JitanRO development database",
+					"driver": "MariaDB",
+					"server": "localhost",
+					"previewLimit": 50,
+					"port": 3306,
+					"database": "ragnarok",
+					"username": "ragnarok",
+					"password": "ragnarok"
+				}]
+			},
+		}
 	},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"mtxr.sqltools",
-		"mtxr.sqltools-driver-mysql",
-		"eamodio.gitlens",
-		"ms-azuretools.vscode-docker"
-	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
