@@ -59,7 +59,7 @@ GCC_MINOR_VERSION = $(shell $(CC) -v 2>&1 | grep '^gcc' | cut -d' ' -f3 | cut -d
 # 2007-05-21aSakexe: 20070521
 # 2007-02-12aSakexe: 20070212
 # 2006-10-23aSakexe: 20061023
-PACKETDEF = -DPACKETVER=20190530 -DNEW_006b
+PACKETDEF = -DPACKETVER=20151029 -DNEW_006b
 
 PLATFORM = $(shell uname)
 
