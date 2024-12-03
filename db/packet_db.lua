@@ -2334,7 +2334,7 @@ if (packet_ver == 20080910 or packet_ver == 20081126 or packet_ver == 20090114) 
 	p(0x0439,8,"useitem",{2,4})
 end
 
--- ˆÈ‰º‚Í RagnarokRE
+-- ä»¥ä¸‹ã¯ RagnarokRE
 
 if packet_ver >= 20080827 and packet_pre == 0 then
 	p(0x007c,44)

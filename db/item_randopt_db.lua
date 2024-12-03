@@ -2,7 +2,7 @@
 
 ItemRandoptTBL = 
 {
-	{--ŽçŒì‚ÌƒGƒbƒZƒ“ƒX (23815)
+	{--å®ˆè­·ã®ã‚¨ãƒƒã‚»ãƒ³ã‚¹ (23815)
 		ID = 1,
 		MOB_ID = 1,
 		Option = {
@@ -14,7 +14,7 @@ ItemRandoptTBL =
 		},
 	},
 
-	{--“¬‹C‚ÌƒGƒbƒZƒ“ƒX (100348)
+	{--é—˜æ°—ã®ã‚¨ãƒƒã‚»ãƒ³ã‚¹ (100348)
 		ID = 2,
 		MOB_ID = 1,
 		Option = {
@@ -26,7 +26,7 @@ ItemRandoptTBL =
 		},
 	},
 
-	{--–Ò‹C‚ÌƒGƒbƒZƒ“ƒX (100349)
+	{--çŒ›æ°—ã®ã‚¨ãƒƒã‚»ãƒ³ã‚¹ (100349)
 		ID = 3,
 		MOB_ID = 1,
 		Option = {
@@ -38,7 +38,7 @@ ItemRandoptTBL =
 		},
 	},
 
-	{--ƒnƒƒEƒBƒ“ƒWƒƒƒbƒN => ƒJƒ{ƒ`ƒƒƒwƒbƒh
+	{--ãƒãƒ­ã‚¦ã‚£ãƒ³ã‚¸ãƒ£ãƒƒã‚¯ => ã‚«ãƒœãƒãƒ£ãƒ˜ãƒƒãƒ‰
 		ID = 19175,
 		MOB_ID = 1722,
 		Option = {{1,CLASS_DAMAGE_BOSS_TARGET,{7,35},5000},{1,CLASS_MDAMAGE_BOSS,{1,13},5000},{2,DEC_SPELL_CAST_TIME,{1,10},10000},},
