@@ -1,2 +1,2 @@
-//skill_unit_db.txt‚ÖƒI[ƒo[ƒ‰ƒCƒh
+//skill_unit_db.txtã¸ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰
 // ID,Unit1,Unit2,Layout,Range,Interval,Target,Flag

@@ -1,4 +1,4 @@
-// E‹Æ’è‹`’l
+// è·æ¥­å®šç¾©å€¤
 Job_Novice		0
 Job_Swordman		1
 Job_Magician		2
@@ -58,7 +58,7 @@ Job_Oboro	44
 Job_Rebellion	45
 Job_Summoner	46
 
-//Class’è‹`’l
+//Classå®šç¾©å€¤
 CLASS_NV	0
 CLASS_SM	1
 CLASS_MG	2
@@ -304,12 +304,12 @@ CLASS_SUM2	4219
 CLASS_SUM_B	4220
 CLASS_SUM2_B	4221
 
-//Upper’è‹`’l
+//Upperå®šç¾©å€¤
 UPPER_NORMAL	0
 UPPER_HIGH	1
 UPPER_BABY	2
 
-//ƒ}ƒbƒvƒtƒ‰ƒO
+//ãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°
 mf_nosave		0
 mf_nomemo		1
 mf_noteleport		2
@@ -355,7 +355,7 @@ mf_nojump		41
 mf_nocostume	42
 mf_town			43
 
-//PCƒXƒe[ƒ^ƒX
+//PCã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
 StatusPoint	9	1
 BaseLevel	11	1
 SkillPoint	12	1
@@ -379,7 +379,7 @@ PartnerId	57	1
 Cart		58	1
 DieCounter	59	1
 
-//PCƒOƒ[ƒoƒ‹•Ï”
+//PCã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
 PC_CLONESKILL_ID	500	1
 PC_CLONESKILL_LV	501	1
 PC_BLACKSMITH_POINT	502	1
@@ -399,7 +399,7 @@ PC_REPRODUCE_ID		515	1
 PC_REPRODUCE_LV		516	1
 #PC_DEPOSIT		517	1
 
-//bonusŒn–½—ß—p
+//bonusç³»å‘½ä»¤ç”¨
 bMaxHP		6
 bMaxSP		8
 bStr		13
@@ -620,7 +620,7 @@ bFixDamage	2009
 bNoKnockback	2010
 bNoGearFuel	2011
 
-//bonusŒn–½—ß‚Ìó‘ÔˆÙí
+//bonusç³»å‘½ä»¤ã®çŠ¶æ…‹ç•°å¸¸
 Eff_Stone	0
 Eff_Freeze	1
 Eff_Stun	2
@@ -638,7 +638,7 @@ Eff_Frostmisty	13
 Eff_Cold	14
 Eff_Siren	15
 
-//í‘°
+//ç¨®æ—
 Rct_Formless	0
 Rct_Undead	1
 Rct_Brute	2
@@ -654,7 +654,7 @@ Rct_NonBoss	11
 Rct_Player	12
 Rct_All	10
 
-//‘®«
+//å±æ€§
 Ele_Neutral	0
 Ele_Water	1
 Ele_Earth	2
@@ -667,19 +667,19 @@ Ele_Ghost	8
 Ele_Undead	9
 Ele_All	10
 
-//“Gƒ^ƒCƒv
+//æ•µã‚¿ã‚¤ãƒ—
 Emy_Etc	0
 Emy_Pc	1
 Emy_Mob	2
 Emy_Hom	3
 Emy_Merc	4
 
-//ƒTƒCƒY
+//ã‚µã‚¤ã‚º
 Size_Small	0
 Size_Medium	1
 Size_Big	2
 
-//sc_start, sc_endŒn—p‚Ìó‘ÔˆÙí
+//sc_start, sc_endç³»ç”¨ã®çŠ¶æ…‹ç•°å¸¸
 SC_Stone	128
 SC_Freeze	129
 SC_Stun		130
@@ -830,13 +830,13 @@ SC_SUPPORT_HPSP	667
 SC_SUPPORT_EXP	668
 SC_SUPPORT_SPEED	669
 
-//sc_endê—p
+//sc_endå°‚ç”¨
 SC_ResistClear	1001
 SC_RaceClear	1002
 SC_Soul		1003
 SC_SoulClear	1004
 
-//bonusŒn–½—ß‚Ì”­“®ğŒ
+//bonusç³»å‘½ä»¤ã®ç™ºå‹•æ¡ä»¶
 EAS_SHORT		0x000001
 EAS_LONG		0x000002
 EAS_WEAPON		0x000003
@@ -859,7 +859,7 @@ EAS_NORMAL		0x040000
 EAS_SKILL		0x080000
 EAS_CONDITION	0x100000
 
-//ƒ‰ƒ“ƒ_ƒ€ŒnƒAƒCƒeƒ€‚ÌIDiitem_random.txtj
+//ãƒ©ãƒ³ãƒ€ãƒ ç³»ã‚¢ã‚¤ãƒ†ãƒ ã®IDï¼ˆitem_random.txtï¼‰
 RAND_BLUE_BOX	-1
 RAND_VIOLET_BOX	-2
 RAND_CARD_ALBUM	-3
@@ -877,12 +877,12 @@ RAND_COOKIE	-14
 RAND_HIGH_WEAPON	-15
 RAND_MIND_BOX	-16
 
-//ƒ‰ƒ“ƒ_ƒ€¢Š«Œn‚ÌIDimob_random.txtj
+//ãƒ©ãƒ³ãƒ€ãƒ å¬å–šç³»ã®IDï¼ˆmob_random.txtï¼‰
 RAND_BRANCH	-1
 RAND_BLOODY_BRANCH	-2
 RAND_PORING_BOX	-3
 
-//HATEFFECTŠÖ˜A
+//HATEFFECTé–¢é€£
 FALSE				0
 TRUE				1
 HAT_EF_MIN			0
