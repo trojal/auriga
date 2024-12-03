@@ -1,24 +1,24 @@
 # Microsoft Developer Studio Project File - Name="char" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
-# ** �ҏW���Ȃ��ł������� **
+# ** 編集しないでください **
 
 # TARGTYPE "Win32 (x86) Console Application" 0x0103
 
 CFG=char - Win32 Debug
-!MESSAGE ����͗L���ȃ��C�N�t�@�C���ł͂���܂���B ���̃v���W�F�N�g���r���h���邽�߂ɂ� NMAKE ���g�p���Ă��������B
-!MESSAGE [���C�N�t�@�C���̃G�N�X�|�[�g] �R�}���h���g�p���Ď��s���Ă�������
+!MESSAGE これは有効なメイクファイルではありません。 このプロジェクトをビルドするためには NMAKE を使用してください。
+!MESSAGE [メイクファイルのエクスポート] コマンドを使用して実行してください
 !MESSAGE 
 !MESSAGE NMAKE /f "char.mak".
 !MESSAGE 
-!MESSAGE NMAKE �̎��s���ɍ\�����w��ł��܂�
-!MESSAGE �R�}���h ���C����Ń}�N���̐ݒ���`���܂��B��:
+!MESSAGE NMAKE の実行時に構成を指定できます
+!MESSAGE コマンド ライン上でマクロの設定を定義します。例:
 !MESSAGE 
 !MESSAGE NMAKE /f "char.mak" CFG="char - Win32 Debug"
 !MESSAGE 
-!MESSAGE �I���\�ȃr���h ���[�h:
+!MESSAGE 選択可能なビルド モード:
 !MESSAGE 
-!MESSAGE "char - Win32 Release" ("Win32 (x86) Console Application" �p)
-!MESSAGE "char - Win32 Debug" ("Win32 (x86) Console Application" �p)
+!MESSAGE "char - Win32 Release" ("Win32 (x86) Console Application" 用)
+!MESSAGE "char - Win32 Debug" ("Win32 (x86) Console Application" 用)
 !MESSAGE 
 
 # Begin Project

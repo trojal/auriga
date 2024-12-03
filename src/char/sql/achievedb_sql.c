@@ -34,7 +34,7 @@
 static struct dbt *achieve_db = NULL;
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int achievedb_sql_config_read_sub(const char *w1, const char *w2)
@@ -43,7 +43,7 @@ int achievedb_sql_config_read_sub(const char *w1, const char *w2)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 int achievedb_sql_sync(void)
@@ -53,7 +53,7 @@ int achievedb_sql_sync(void)
 }
 
 /*==========================================
- * ÀÑƒf[ƒ^íœ
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool achievedb_sql_delete(int char_id)
@@ -73,7 +73,7 @@ bool achievedb_sql_delete(int char_id)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ID‚©‚çÀÑƒf[ƒ^‚ğæ“¾
+ * ã‚­ãƒ£ãƒ©IDã‹ã‚‰å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
  *------------------------------------------
  */
 const struct achieve *achievedb_sql_load(int char_id)
@@ -82,7 +82,7 @@ const struct achieve *achievedb_sql_load(int char_id)
 	struct achieve *a = (struct achieve *)numdb_search(achieve_db, char_id);
 
 	if(a && a->char_id == char_id) {
-		// Šù‚ÉƒLƒƒƒbƒVƒ…‚ª‘¶İ‚·‚é
+		// æ—¢ã«ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãŒå­˜åœ¨ã™ã‚‹
 		return a;
 	}
 	if(a == NULL) {
@@ -127,7 +127,7 @@ const struct achieve *achievedb_sql_load(int char_id)
 		}
 		a->count = (i < MAX_ACHIEVELIST)? i: MAX_ACHIEVELIST;
 	} else {
-		// Œ©‚Â‚©‚ç‚È‚­‚Ä‚à³í
+		// è¦‹ã¤ã‹ã‚‰ãªãã¦ã‚‚æ­£å¸¸
 		a = NULL;
 	}
 	sqldbs_free_result(&mysql_handle);
@@ -136,7 +136,7 @@ const struct achieve *achievedb_sql_load(int char_id)
 }
 
 /*==========================================
- * ÀÑƒf[ƒ^‚ğƒZ[ƒu
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ã‚’ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool achievedb_sql_save(struct achieve *a2)
@@ -149,7 +149,7 @@ bool achievedb_sql_save(struct achieve *a2)
 	a1 = achievedb_sql_load(a2->char_id);
 
 	if(a1 && a1->count <= 0 && a2->count <= 0) {
-		// ƒf[ƒ^‚ª‹¤‚É0ŒÂ‚È‚Ì‚Å‰½‚à‚µ‚È‚¢
+		// ãƒ‡ãƒ¼ã‚¿ãŒå…±ã«0å€‹ãªã®ã§ä½•ã‚‚ã—ãªã„
 		return true;
 	}
 
@@ -161,7 +161,7 @@ bool achievedb_sql_save(struct achieve *a2)
 		int i;
 
 		if(a1 == NULL || a1->count > 0) {
-			// ƒf[ƒ^ƒT[ƒo‘¤‚Éƒf[ƒ^‚ª‚ ‚é‚Æ‚«‚¾‚¯íœƒNƒGƒŠ‚ğ”­s
+			// ãƒ‡ãƒ¼ã‚¿ã‚µãƒ¼ãƒå´ã«ãƒ‡ãƒ¼ã‚¿ãŒã‚ã‚‹ã¨ãã ã‘å‰Šé™¤ã‚¯ã‚¨ãƒªã‚’ç™ºè¡Œ
 			if( sqldbs_query(&mysql_handle, "DELETE FROM `" ACHIEVE_TABLE "` WHERE `char_id`='%d'", a2->char_id) == false )
 				break;
 		}
@@ -200,7 +200,7 @@ bool achievedb_sql_save(struct achieve *a2)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int achievedb_sql_final_sub(void *key, void *data, va_list ap)
@@ -219,7 +219,7 @@ void achievedb_sql_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool achievedb_sql_init(void)

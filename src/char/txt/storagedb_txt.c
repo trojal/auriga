@@ -37,7 +37,7 @@
 
 static struct dbt *storage_db = NULL;
 
-// ƒtƒ@ƒCƒ‹–¼‚ÌƒfƒtƒHƒ‹ƒg
+// ãƒ•ã‚¡ã‚¤ãƒ«åã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ
 static char storage_txt[1024] = "save/storage.txt";
 static char guild_storage_txt[1024] = "save/g_storage.txt";
 
@@ -53,7 +53,7 @@ static int guild_storage_journal_cache = 1000;
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚Ì“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®èª­è¾¼
  *------------------------------------------
  */
 int storagedb_txt_config_read_sub(const char* w1,const char* w2)
@@ -92,7 +92,7 @@ int storagedb_txt_config_read_sub(const char* w1,const char* w2)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int storage_tostr(char *str, struct storage *p)
@@ -126,7 +126,7 @@ static int storage_tostr(char *str, struct storage *p)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int storage_fromstr(char *str, struct storage *p)
@@ -145,7 +145,7 @@ static int storage_fromstr(char *str, struct storage *p)
 		return 0;
 	next++;
 	for(i = 0; str[next] && str[next] != '\t'; i++){
-		// Auriga-1369ˆÈ~‚ÌŒ`®
+		// Auriga-1369ä»¥é™ã®å½¢å¼
 		set = sscanf(str + next, "%u,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%u,%d%n",
 			&tmp_int[0],&tmp_int[1],&tmp_int[2],&tmp_int[3],
 			&tmp_int[4],&tmp_int[5],&tmp_int[6],
@@ -156,7 +156,7 @@ static int storage_fromstr(char *str, struct storage *p)
 
 		if(set != 23)
 		{
-			// Auriga-0300ˆÈ~‚ÌŒ`®
+			// Auriga-0300ä»¥é™ã®å½¢å¼
 			tmp_int[11] = 0;	// opt[0].id
 			tmp_int[12] = 0;	// opt[0].val
 			tmp_int[13] = 0;	// opt[1].id
@@ -216,8 +216,8 @@ static int storage_fromstr(char *str, struct storage *p)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgID‚©‚ç‘qŒÉƒf[ƒ^‚ğƒ[ƒh
- * iV‹K‘qŒÉ’Ç‰Á‰Â”\j
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIDã‹ã‚‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
+ * ï¼ˆæ–°è¦å€‰åº«è¿½åŠ å¯èƒ½ï¼‰
  *------------------------------------------
  */
 const struct storage* storagedb_txt_load(int account_id)
@@ -233,7 +233,7 @@ const struct storage* storagedb_txt_load(int account_id)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^‚ÌƒZ[ƒu
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool storagedb_txt_save(struct storage *s2)
@@ -257,7 +257,7 @@ bool storagedb_txt_save(struct storage *s2)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^‚Ì“¯Šú
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®åŒæœŸ
  *------------------------------------------
  */
 static int storagedb_txt_sync_sub(void *key, void *data, va_list ap)
@@ -291,7 +291,7 @@ int storagedb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( storage_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &storage_journal );
 		journal_create( &storage_journal, sizeof(struct storage), storage_journal_cache, storage_journal_file );
 	}
@@ -300,7 +300,7 @@ int storagedb_txt_sync(void)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^íœ
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool storagedb_txt_delete(int account_id)
@@ -310,7 +310,7 @@ bool storagedb_txt_delete(int account_id)
 	if(s) {
 		int i;
 		for(i = 0; i < s->storage_amount; i++) {
-			// ƒyƒbƒgíœ
+			// ãƒšãƒƒãƒˆå‰Šé™¤
 			if(s->store_item[i].card[0] == (int)0xff00)
 				petdb_delete(*((int *)(&s->store_item[i].card[1])));
 		}
@@ -325,7 +325,7 @@ bool storagedb_txt_delete(int account_id)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int gstorage_tostr(char *str, struct guild_storage *p)
@@ -359,7 +359,7 @@ static int gstorage_tostr(char *str, struct guild_storage *p)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int gstorage_fromstr(char *str, struct guild_storage *p)
@@ -378,7 +378,7 @@ static int gstorage_fromstr(char *str, struct guild_storage *p)
 		return 0;
 	next++;
 	for(i = 0; str[next] && str[next] != '\t'; i++) {
-		// Auriga-1369ˆÈ~‚ÌŒ`®
+		// Auriga-1369ä»¥é™ã®å½¢å¼
 		set = sscanf(str + next, "%u,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%u,%d%n",
 			&tmp_int[0],&tmp_int[1],&tmp_int[2],&tmp_int[3],
 			&tmp_int[4],&tmp_int[5],&tmp_int[6],
@@ -389,7 +389,7 @@ static int gstorage_fromstr(char *str, struct guild_storage *p)
 
 		if(set != 23)
 		{
-			// Auriga-0300ˆÈ~‚ÌŒ`®
+			// Auriga-0300ä»¥é™ã®å½¢å¼
 			tmp_int[11] = 0;	// opt[0].id
 			tmp_int[12] = 0;	// opt[0].val
 			tmp_int[13] = 0;	// opt[1].id
@@ -449,7 +449,7 @@ static int gstorage_fromstr(char *str, struct guild_storage *p)
 }
 
 /*==========================================
- * ƒMƒ‹ƒhID‚©‚çƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ğæ“¾
+ * ã‚®ãƒ«ãƒ‰IDã‹ã‚‰ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
  *------------------------------------------
  */
 const struct guild_storage *gstoragedb_txt_load(int guild_id)
@@ -469,7 +469,7 @@ const struct guild_storage *gstoragedb_txt_load(int guild_id)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ÌƒZ[ƒu
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool gstoragedb_txt_save(struct guild_storage *gs2, int easy)
@@ -494,7 +494,7 @@ bool gstoragedb_txt_save(struct guild_storage *gs2, int easy)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚Ì“¯Šú
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®åŒæœŸ
  *------------------------------------------
  */
 static int gstoragedb_txt_sync_sub(void *key, void *data, va_list ap)
@@ -530,7 +530,7 @@ int gstoragedb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( guild_storage_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &guild_storage_journal );
 		journal_create( &guild_storage_journal, sizeof(struct guild_storage),
 						 guild_storage_journal_cache, guild_storage_journal_file );
@@ -540,7 +540,7 @@ int gstoragedb_txt_sync(void)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^íœ
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool gstoragedb_txt_delete(int guild_id)
@@ -550,7 +550,7 @@ bool gstoragedb_txt_delete(int guild_id)
 	if(gs) {
 		int i;
 		for(i = 0; i < gs->storage_amount; i++) {
-			// ƒyƒbƒgíœ
+			// ãƒšãƒƒãƒˆå‰Šé™¤
 			if(gs->store_item[i].card[0] == (int)0xff00)
 				petdb_delete(*((int *)(&gs->store_item[i].card[1])));
 		}
@@ -566,20 +566,20 @@ bool gstoragedb_txt_delete(int guild_id)
 
 #ifdef TXT_JOURNAL
 // ==========================================
-// ‘qŒÉƒf[ƒ^‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 int storage_journal_rollforward( int key, void* buf, int flag )
 {
 	struct storage* s = (struct storage *)numdb_search( storage_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct storage*)buf)->account_id )
 	{
 		printf("int_storage: storage_journal: key != account_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( s )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -591,7 +591,7 @@ int storage_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		s = (struct storage*)aCalloc( 1, sizeof( struct storage ) );
@@ -605,20 +605,20 @@ int storage_journal_rollforward( int key, void* buf, int flag )
 int storagedb_txt_sync(void);
 
 // ==========================================
-// ƒMƒ‹ƒh‘qŒÉ‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ã‚®ãƒ«ãƒ‰å€‰åº«ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 int guild_storage_journal_rollforward( int key, void* buf, int flag )
 {
 	struct guild_storage* gs = (struct guild_storage *)numdb_search( gstorage_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct guild_storage*)buf)->guild_id )
 	{
 		printf("int_storage: guild_storage_journal: key != guild_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( gs )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -630,7 +630,7 @@ int guild_storage_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		gs = (struct guild_storage*)aCalloc( 1, sizeof( struct guild_storage ) );
@@ -645,7 +645,7 @@ int gstoragedb_txt_sync(void);
 #endif
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool storagedb_txt_read(void)
@@ -683,19 +683,19 @@ static bool storagedb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( storage_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &storage_journal, sizeof(struct storage), storage_journal_file ) )
 		{
 			int c = journal_rollforward( &storage_journal, storage_journal_rollforward );
 
 			printf("int_storage: storage_journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			storagedb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &storage_journal );
 			journal_create( &storage_journal, sizeof(struct storage), storage_journal_cache, storage_journal_file );
 		}
@@ -706,7 +706,7 @@ static bool storagedb_txt_read(void)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool gstoragedb_txt_read(void)
@@ -745,19 +745,19 @@ static bool gstoragedb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( guild_storage_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &guild_storage_journal, sizeof(struct guild_storage), guild_storage_journal_file ) )
 		{
 			int c = journal_rollforward( &guild_storage_journal, guild_storage_journal_rollforward );
 
 			printf("int_storage: guild_storage_journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			gstoragedb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &guild_storage_journal );
 			journal_create( &guild_storage_journal, sizeof(struct guild_storage),
 							 guild_storage_journal_cache, guild_storage_journal_file );
@@ -769,7 +769,7 @@ static bool gstoragedb_txt_read(void)
 }
 
 /*==========================================
- * ‘qŒÉƒf[ƒ^‚ÌI—¹
+ * å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®çµ‚äº†
  *------------------------------------------
  */
 static int storage_db_final(void *key, void *data, va_list ap)
@@ -795,7 +795,7 @@ void storagedb_txt_final(void)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ÌI—¹
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®çµ‚äº†
  *------------------------------------------
  */
 static int gstorage_db_final(void *key, void *data, va_list ap)
@@ -821,7 +821,7 @@ void gstoragedb_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool storagedb_txt_init(void)

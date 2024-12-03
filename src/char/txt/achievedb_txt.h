@@ -24,7 +24,7 @@
 
 #include "../int_achieve.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool achievedb_txt_init(void);
 int  achievedb_txt_sync(void);
 bool  achievedb_txt_delete(int char_id);
@@ -33,7 +33,7 @@ bool  achievedb_txt_save(struct achieve *a2);
 void achievedb_txt_final(void);
 int achievedb_txt_config_read_sub(const char *w1,const char *w2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define achievedb_init   achievedb_txt_init
 #define achievedb_sync   achievedb_txt_sync
 #define achievedb_delete achievedb_txt_delete

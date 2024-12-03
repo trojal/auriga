@@ -109,7 +109,7 @@ int mapif_delete_merc(int fd,int merc_id)
 }
 
 //---------------------------------------------------------------------------------------
-// —b•º‚ğV‹Kì¬
+// å‚­å…µã‚’æ–°è¦ä½œæˆ
 int mapif_parse_CreateMerc(int fd)
 {
 	int account_id = RFIFOL(fd,4);
@@ -122,32 +122,32 @@ int mapif_parse_CreateMerc(int fd)
 	return 0;
 }
 
-// —b•º‚Ìƒf[ƒ^‘—M
+// å‚­å…µã®ãƒ‡ãƒ¼ã‚¿é€ä¿¡
 int mapif_parse_LoadMerc(int fd)
 {
 	mapif_load_merc(fd,RFIFOL(fd,2),RFIFOL(fd,6),RFIFOL(fd,10));
 	return 0;
 }
 
-// —b•º‚Ìƒf[ƒ^óM••Û‘¶
+// å‚­å…µã®ãƒ‡ãƒ¼ã‚¿å—ä¿¡ï¼†ä¿å­˜
 int mapif_parse_SaveMerc(int fd)
 {
 	mapif_save_merc(fd,RFIFOL(fd,4),(struct mmo_mercstatus *)RFIFOP(fd,8));
 	return 0;
 }
 
-// —b•ºíœ
+// å‚­å…µå‰Šé™¤
 int mapif_parse_DeleteMerc(int fd)
 {
 	mapif_delete_merc(fd,RFIFOL(fd,10));
 	return 0;
 }
 
-// map server ‚©‚ç‚Ì’ÊM
-// E‚PƒpƒPƒbƒg‚Ì‚İ‰ğÍ‚·‚é‚±‚Æ
-// EƒpƒPƒbƒg’·ƒf[ƒ^‚Íinter.c‚ÉƒZƒbƒg‚µ‚Ä‚¨‚­‚±‚Æ
-// EƒpƒPƒbƒg’·ƒ`ƒFƒbƒN‚âARFIFOSKIP‚ÍŒÄ‚Ño‚µŒ³‚Ås‚í‚ê‚é‚Ì‚Ås‚Á‚Ä‚Í‚È‚ç‚È‚¢
-// EƒGƒ‰[‚È‚ç0(false)A‚»‚¤‚Å‚È‚¢‚È‚ç1(true)‚ğ‚©‚¦‚³‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+// map server ã‹ã‚‰ã®é€šä¿¡
+// ãƒ»ï¼‘ãƒ‘ã‚±ãƒƒãƒˆã®ã¿è§£æã™ã‚‹ã“ã¨
+// ãƒ»ãƒ‘ã‚±ãƒƒãƒˆé•·ãƒ‡ãƒ¼ã‚¿ã¯inter.cã«ã‚»ãƒƒãƒˆã—ã¦ãŠãã“ã¨
+// ãƒ»ãƒ‘ã‚±ãƒƒãƒˆé•·ãƒã‚§ãƒƒã‚¯ã‚„ã€RFIFOSKIPã¯å‘¼ã³å‡ºã—å…ƒã§è¡Œã‚ã‚Œã‚‹ã®ã§è¡Œã£ã¦ã¯ãªã‚‰ãªã„
+// ãƒ»ã‚¨ãƒ©ãƒ¼ãªã‚‰0(false)ã€ãã†ã§ãªã„ãªã‚‰1(true)ã‚’ã‹ãˆã•ãªã‘ã‚Œã°ãªã‚‰ãªã„
 int inter_merc_parse_frommap(int fd)
 {
 	switch(RFIFOW(fd,0)){

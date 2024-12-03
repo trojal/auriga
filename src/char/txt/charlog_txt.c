@@ -30,7 +30,7 @@
 static char char_log_filename[1024] = "log/char.log";
 
 /*==========================================
- * ログ記録
+ * 繝ｭ繧ｰ險倬鹸
  *------------------------------------------
  */
 int charlog_log_txt(const char *fmt, ...)
@@ -52,7 +52,7 @@ int charlog_log_txt(const char *fmt, ...)
 }
 
 /*==========================================
- * 設定ファイル読込
+ * 險ｭ螳壹ヵ繧｡繧､繝ｫ隱ｭ霎ｼ
  *------------------------------------------
  */
 int charlog_config_read_txt(const char *w1, const char *w2)

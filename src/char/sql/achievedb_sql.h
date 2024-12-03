@@ -24,7 +24,7 @@
 
 #include "../int_achieve.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool achievedb_sql_init(void);
 int  achievedb_sql_sync(void);
 bool  achievedb_sql_delete(int char_id);
@@ -33,7 +33,7 @@ bool  achievedb_sql_save(struct achieve *a2);
 void achievedb_sql_final(void);
 int achievedb_sql_config_read_sub(const char *w1,const char *w2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define achievedb_init   achievedb_sql_init
 #define achievedb_sync   achievedb_sql_sync
 #define achievedb_delete achievedb_sql_delete

@@ -25,7 +25,7 @@
 #include "mmo.h"
 #include "utils.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool storagedb_sql_init(void);
 const struct storage* storagedb_sql_load(int account_id);
 bool storagedb_sql_save(struct storage *s2);
@@ -39,7 +39,7 @@ int gstoragedb_sql_sync(void);
 bool gstoragedb_sql_delete(int guild_id);
 void gstoragedb_sql_final(void);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define storagedb_init   storagedb_sql_init
 #define storagedb_load   storagedb_sql_load
 #define storagedb_save   storagedb_sql_save

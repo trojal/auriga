@@ -22,11 +22,11 @@
 #ifndef _INTERLOG_TXT_H_
 #define _INTERLOG_TXT_H_
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int interlog_log_txt(const char *fmt, ...);
 int interlog_config_read_txt(const char *str, const char *str2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define interlog_log interlog_log_txt
 #define interlog_config_read interlog_config_read_txt
 

@@ -24,7 +24,7 @@
 
 #include "utils.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool mercdb_txt_init(void);
 int mercdb_txt_sync(void);
 bool mercdb_txt_delete(int merc_id);
@@ -34,7 +34,7 @@ bool mercdb_txt_new(struct mmo_mercstatus *p);
 void mercdb_txt_final(void);
 int mercdb_txt_config_read_sub(const char* w1,const char *w2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define mercdb_init   mercdb_txt_init
 #define mercdb_sync   mercdb_txt_sync
 #define mercdb_delete mercdb_txt_delete

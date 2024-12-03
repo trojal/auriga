@@ -34,7 +34,7 @@
 
 struct dbt *gstorage_db = NULL;
 
-// ‘qŒÉƒf[ƒ^‚Ì‘—M
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®é€ä¿¡
 int mapif_load_storage(int fd,int account_id)
 {
 	const struct storage *s = storagedb_load(account_id);
@@ -47,7 +47,7 @@ int mapif_load_storage(int fd,int account_id)
 	return 0;
 }
 
-// ‘qŒÉƒf[ƒ^•Û‘¶Š®—¹‘—M
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿ä¿å­˜å®Œäº†é€ä¿¡
 int mapif_save_storage_ack(int fd,int account_id)
 {
 	WFIFOW(fd,0)=0x3811;
@@ -57,7 +57,7 @@ int mapif_save_storage_ack(int fd,int account_id)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚Ì‘—M
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã®é€ä¿¡
 int mapif_load_guild_storage(int fd,int account_id,int guild_id)
 {
 	const struct guild_storage *gs = gstoragedb_load(guild_id);
@@ -78,7 +78,7 @@ int mapif_load_guild_storage(int fd,int account_id,int guild_id)
 
 	return 0;
 }
-// ƒMƒ‹ƒh‘qŒÉƒf[ƒ^•Û‘¶Š®—¹‘—M
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ä¿å­˜å®Œäº†é€ä¿¡
 int mapif_save_guild_storage_ack(int fd, int account_id, int guild_id, bool fail)
 {
 	WFIFOW(fd,0)=0x3819;
@@ -89,7 +89,7 @@ int mapif_save_guild_storage_ack(int fd, int account_id, int guild_id, bool fail
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒƒbƒN—v‹•Ô“š
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ­ãƒƒã‚¯è¦æ±‚è¿”ç­”
 int mapif_trylock_guild_storage_ack(int fd,int account_id,int guild_id,int npc_id,char flag)
 {
 	WFIFOW(fd,0)  = 0x381a;
@@ -101,7 +101,7 @@ int mapif_trylock_guild_storage_ack(int fd,int account_id,int guild_id,int npc_i
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒƒbƒN‰ğœ•Ô“š
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ­ãƒƒã‚¯è§£é™¤è¿”ç­”
 int mapif_unlock_guild_storage_ack(int fd,int guild_id,char succeed)
 {
 	WFIFOW(fd,0) = 0x381b;
@@ -111,7 +111,7 @@ int mapif_unlock_guild_storage_ack(int fd,int guild_id,char succeed)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒfƒbƒhƒƒbƒNƒ`ƒFƒbƒN
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒƒãƒ‰ãƒ­ãƒƒã‚¯ãƒã‚§ãƒƒã‚¯
 int mapif_checklock_guild_storage(int guild_id)
 {
 	unsigned char buf[6];
@@ -123,16 +123,16 @@ int mapif_checklock_guild_storage(int guild_id)
 }
 
 //---------------------------------------------------------
-// map server‚©‚ç‚Ì’ÊM
+// map serverã‹ã‚‰ã®é€šä¿¡
 
-// ‘qŒÉƒf[ƒ^—v‹óM
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿è¦æ±‚å—ä¿¡
 int mapif_parse_LoadStorage(int fd)
 {
 	mapif_load_storage(fd,RFIFOL(fd,2));
 	return 0;
 }
 
-// ‘qŒÉƒf[ƒ^óM••Û‘¶
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿å—ä¿¡ï¼†ä¿å­˜
 int mapif_parse_SaveStorage(int fd)
 {
 	int account_id=RFIFOL(fd,4);
@@ -147,14 +147,14 @@ int mapif_parse_SaveStorage(int fd)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒf[ƒ^—v‹óM
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿è¦æ±‚å—ä¿¡
 int mapif_parse_LoadGuildStorage(int fd)
 {
 	mapif_load_guild_storage(fd,RFIFOL(fd,2),RFIFOL(fd,6));
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒf[ƒ^óM••Û‘¶
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿å—ä¿¡ï¼†ä¿å­˜
 int mapif_parse_SaveGuildStorage(int fd)
 {
 	int guild_id=RFIFOL(fd,8);
@@ -169,7 +169,7 @@ int mapif_parse_SaveGuildStorage(int fd)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒƒbƒN—v‹óM
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ­ãƒƒã‚¯è¦æ±‚å—ä¿¡
 int mapif_parse_TrylockGuildStorage(int fd)
 {
 	char flag = 0;
@@ -180,7 +180,7 @@ int mapif_parse_TrylockGuildStorage(int fd)
 		struct guild_storage gs2;
 		memcpy(&gs2, gs, sizeof(gs2));
 		gs2.storage_status = 1;
-		flag = (gs2.last_fd == fd)? 1: 2;	// ‘O‰ñ‚Æ‚Íˆá‚¤MAPƒT[ƒo‚©‚ç‚ÌƒAƒNƒZƒX‚È‚çƒŠƒ[ƒh(flag=2)
+		flag = (gs2.last_fd == fd)? 1: 2;	// å‰å›ã¨ã¯é•ã†MAPã‚µãƒ¼ãƒã‹ã‚‰ã®ã‚¢ã‚¯ã‚»ã‚¹ãªã‚‰ãƒªãƒ­ãƒ¼ãƒ‰(flag=2)
 		gs2.last_fd = fd;
 		gstoragedb_save(&gs2, 1);
 	}
@@ -189,7 +189,7 @@ int mapif_parse_TrylockGuildStorage(int fd)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒƒbƒN‰ğœóM
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ­ãƒƒã‚¯è§£é™¤å—ä¿¡
 int mapif_parse_UnlockGuildStorage(int fd)
 {
 	char succeed = 0;
@@ -208,18 +208,18 @@ int mapif_parse_UnlockGuildStorage(int fd)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒfƒbƒhƒƒbƒN‰ğœóM
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒƒãƒ‰ãƒ­ãƒƒã‚¯è§£é™¤å—ä¿¡
 int mapif_parse_DeadlockGuildStorage(int fd)
 {
 	printf("guild_storage_deadlock_timer: storage deadlocked!! (%d)\n", RFIFOL(fd,2));
 
-	// ’Êí‚ÌƒƒbƒN‰ğœ‚Æ“¯‚¶
+	// é€šå¸¸ã®ãƒ­ãƒƒã‚¯è§£é™¤ã¨åŒã˜
 	mapif_parse_UnlockGuildStorage(fd);
 
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒfƒbƒhƒƒbƒNŒŸoƒ^ƒCƒ}[
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒƒãƒ‰ãƒ­ãƒƒã‚¯æ¤œå‡ºã‚¿ã‚¤ãƒãƒ¼
 static int guild_storage_deadlock_timer_sub(void *key, void *data, va_list ap)
 {
 	struct guild_storage *gs = (struct guild_storage *)data;
@@ -238,11 +238,11 @@ int guild_storage_deadlock_timer(int tid, unsigned int tick, int id, void *data)
 }
 
 //---------------------------------------------------------
-// map server ‚©‚ç‚Ì’ÊM
-// E‚PƒpƒPƒbƒg‚Ì‚İ‰ğÍ‚·‚é‚±‚Æ
-// EƒpƒPƒbƒg’·ƒf[ƒ^‚Íinter.c‚ÉƒZƒbƒg‚µ‚Ä‚¨‚­‚±‚Æ
-// EƒpƒPƒbƒg’·ƒ`ƒFƒbƒN‚âARFIFOSKIP‚ÍŒÄ‚Ño‚µŒ³‚Ås‚í‚ê‚é‚Ì‚Ås‚Á‚Ä‚Í‚È‚ç‚È‚¢
-// EƒGƒ‰[‚È‚ç0(false)A‚»‚¤‚Å‚È‚¢‚È‚ç1(true)‚ğ‚©‚¦‚³‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+// map server ã‹ã‚‰ã®é€šä¿¡
+// ãƒ»ï¼‘ãƒ‘ã‚±ãƒƒãƒˆã®ã¿è§£æã™ã‚‹ã“ã¨
+// ãƒ»ãƒ‘ã‚±ãƒƒãƒˆé•·ãƒ‡ãƒ¼ã‚¿ã¯inter.cã«ã‚»ãƒƒãƒˆã—ã¦ãŠãã“ã¨
+// ãƒ»ãƒ‘ã‚±ãƒƒãƒˆé•·ãƒã‚§ãƒƒã‚¯ã‚„ã€RFIFOSKIPã¯å‘¼ã³å‡ºã—å…ƒã§è¡Œã‚ã‚Œã‚‹ã®ã§è¡Œã£ã¦ã¯ãªã‚‰ãªã„
+// ãƒ»ã‚¨ãƒ©ãƒ¼ãªã‚‰0(false)ã€ãã†ã§ãªã„ãªã‚‰1(true)ã‚’ã‹ãˆã•ãªã‘ã‚Œã°ãªã‚‰ãªã„
 int inter_storage_parse_frommap(int fd)
 {
 	switch(RFIFOW(fd,0)){

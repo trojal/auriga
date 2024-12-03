@@ -35,7 +35,7 @@
 static struct dbt *accreg_db = NULL;
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int accregdb_sql_config_read_sub(const char *w1,const char *w2)
@@ -44,7 +44,7 @@ int accregdb_sql_config_read_sub(const char *w1,const char *w2)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 int accregdb_sql_sync(void)
@@ -54,7 +54,7 @@ int accregdb_sql_sync(void)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool accregdb_sql_save(struct accreg *reg)
@@ -110,7 +110,7 @@ bool accregdb_sql_save(struct accreg *reg)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg•Ï”‚Ìƒ[ƒh
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°ã®ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct accreg* accregdb_sql_load(int account_id)
@@ -143,7 +143,7 @@ const struct accreg* accregdb_sql_load(int account_id)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int accregdb_sql_final_sub(void *key, void *data, va_list ap)
@@ -162,7 +162,7 @@ void accregdb_sql_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool accregdb_sql_init(void)

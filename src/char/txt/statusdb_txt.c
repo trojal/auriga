@@ -46,7 +46,7 @@ static int status_journal_cache = 1000;
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 int statusdb_txt_config_read_sub(const char *w1, const char *w2)
@@ -73,7 +73,7 @@ int statusdb_txt_config_read_sub(const char *w1, const char *w2)
 }
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int status_tostr(char *str, struct scdata *sc)
@@ -96,7 +96,7 @@ static int status_tostr(char *str, struct scdata *sc)
 }
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int status_fromstr(char *str, struct scdata *sc)
@@ -113,7 +113,7 @@ static int status_fromstr(char *str, struct scdata *sc)
 		return 1;
 
 	if(str[next] == '\n' || str[next] == '\r')
-		return 1;	// account_id‚Æchar_id‚¾‚¯‚Ìs‚Í—L‚è“¾‚È‚¢
+		return 1;	// account_idã¨char_idã ã‘ã®è¡Œã¯æœ‰ã‚Šå¾—ãªã„
 	next++;
 
 	for(i = 0; str[next] && str[next] != '\t'; i++) {
@@ -140,20 +140,20 @@ static int status_fromstr(char *str, struct scdata *sc)
 
 #ifdef TXT_JOURNAL
 // ==========================================
-// ƒXƒe[ƒ^ƒXˆÙíƒf[ƒ^‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç•°å¸¸ãƒ‡ãƒ¼ã‚¿ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 int status_journal_rollforward( int key, void* buf, int flag )
 {
 	struct scdata *sc = (struct scdata *)numdb_search( scdata_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct scdata *)buf)->char_id )
 	{
 		printf("int_status: journal: key != char_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( sc )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -165,7 +165,7 @@ int status_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		sc = (struct scdata *)aCalloc( 1, sizeof( struct scdata ) );
@@ -180,7 +180,7 @@ int statusdb_txt_sync(void);
 #endif
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool statusdb_txt_read(void)
@@ -214,19 +214,19 @@ static bool statusdb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( status_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &status_journal, sizeof(struct scdata), status_journal_file ) )
 		{
 			int c = journal_rollforward( &status_journal, status_journal_rollforward );
 
 			printf("int_status: journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			statusdb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &status_journal );
 			journal_create( &status_journal, sizeof(struct scdata), status_journal_cache, status_journal_file );
 		}
@@ -237,7 +237,7 @@ static bool statusdb_txt_read(void)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 static int statusdb_txt_sync_sub(void *key, void *data, va_list ap)
@@ -246,7 +246,7 @@ static int statusdb_txt_sync_sub(void *key, void *data, va_list ap)
 	FILE *fp;
 	struct scdata *sc = (struct scdata *)data;
 
-	// count‚ª0‚Ì‚Æ‚«‚Í‘‚«‚İ‚µ‚È‚¢
+	// countãŒ0ã®ã¨ãã¯æ›¸ãè¾¼ã¿ã—ãªã„
 	if(sc && sc->count > 0) {
 		status_tostr(line, sc);
 		fp = va_arg(ap, FILE *);
@@ -273,7 +273,7 @@ int statusdb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( status_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &status_journal );
 		journal_create( &status_journal, sizeof(struct scdata), status_journal_cache, status_journal_file );
 	}
@@ -283,7 +283,7 @@ int statusdb_txt_sync(void)
 }
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXƒf[ƒ^íœ
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool statusdb_txt_delete(int char_id)
@@ -305,8 +305,8 @@ bool statusdb_txt_delete(int char_id)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ID‚©‚çƒXƒe[ƒ^ƒXƒf[ƒ^‚ğƒ[ƒh
- * •‰‰×ŒyŒ¸‚ğ—Dæ‚µ‚Äconst‚ğ•t‚¯‚È‚¢
+ * ã‚­ãƒ£ãƒ©IDã‹ã‚‰ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
+ * è² è·è»½æ¸›ã‚’å„ªå…ˆã—ã¦constã‚’ä»˜ã‘ãªã„
  *------------------------------------------
  */
 struct scdata *statusdb_txt_load(int char_id)
@@ -315,7 +315,7 @@ struct scdata *statusdb_txt_load(int char_id)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool statusdb_txt_save(struct scdata *sc2)
@@ -332,7 +332,7 @@ bool statusdb_txt_save(struct scdata *sc2)
 		sc1->char_id    = sc2->char_id;
 	}
 
-	// ƒf[ƒ^‚ª‹¤‚É0ŒÂ‚È‚çƒRƒs[‚µ‚È‚¢
+	// ãƒ‡ãƒ¼ã‚¿ãŒå…±ã«0å€‹ãªã‚‰ã‚³ãƒ”ãƒ¼ã—ãªã„
 	if(sc1->count > 0 || sc2->count > 0)
 		memcpy(sc1, sc2, sizeof(struct scdata));
 
@@ -344,7 +344,7 @@ bool statusdb_txt_save(struct scdata *sc2)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int statusdb_txt_final_sub(void *key, void *data, va_list ap)
@@ -370,7 +370,7 @@ void statusdb_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool statusdb_txt_init(void)

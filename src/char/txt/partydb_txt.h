@@ -25,7 +25,7 @@
 #include "mmo.h"
 #include "utils.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool partydb_txt_init(void);
 int partydb_txt_sync(void);
 const struct party* partydb_txt_load_str(const char *str);
@@ -36,7 +36,7 @@ bool partydb_txt_new(struct party *p);
 int partydb_txt_config_read_sub(const char *w1,const char *w2);
 void partydb_txt_final(void);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define partydb_init     partydb_txt_init
 #define partydb_sync     partydb_txt_sync
 #define partydb_save     partydb_txt_save

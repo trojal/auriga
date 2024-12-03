@@ -34,7 +34,7 @@
 static struct dbt *elem_db = NULL;
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int elemdb_sql_config_read_sub(const char* w1,const char *w2)
@@ -43,7 +43,7 @@ int elemdb_sql_config_read_sub(const char* w1,const char *w2)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 int elemdb_sql_sync(void)
@@ -53,7 +53,7 @@ int elemdb_sql_sync(void)
 }
 
 /*==========================================
- * ¸—ìíœ
+ * ç²¾éœŠå‰Šé™¤
  *------------------------------------------
  */
 bool elemdb_sql_delete(int elem_id)
@@ -88,7 +88,7 @@ bool elemdb_sql_delete(int elem_id)
 }
 
 /*==========================================
- * ¸—ìID‚©‚ç¸—ìƒf[ƒ^‚ğƒ[ƒh
+ * ç²¾éœŠIDã‹ã‚‰ç²¾éœŠãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct mmo_elemstatus* elemdb_sql_load(int elem_id)
@@ -143,7 +143,7 @@ const struct mmo_elemstatus* elemdb_sql_load(int elem_id)
 	}
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool elemdb_sql_save(struct mmo_elemstatus *p2)
@@ -199,7 +199,7 @@ bool elemdb_sql_save(struct mmo_elemstatus *p2)
 }
 
 /*==========================================
- * ¸—ìì¬
+ * ç²¾éœŠä½œæˆ
  *------------------------------------------
  */
 bool elemdb_sql_new(struct mmo_elemstatus *p)
@@ -229,7 +229,7 @@ bool elemdb_sql_new(struct mmo_elemstatus *p)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int elemdb_sql_final_sub(void *key, void *data, va_list ap)
@@ -248,7 +248,7 @@ void elemdb_sql_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool elemdb_sql_init(void)

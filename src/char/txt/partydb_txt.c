@@ -48,7 +48,7 @@ static int party_journal_cache = 1000;
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚Ì“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®èª­è¾¼
  *------------------------------------------
  */
 int partydb_txt_config_read_sub(const char *w1,const char *w2)
@@ -70,7 +70,7 @@ int partydb_txt_config_read_sub(const char *w1,const char *w2)
 }
 
 /*==========================================
- * ƒp[ƒeƒBƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int party_tostr(char *str, struct party *p)
@@ -91,7 +91,7 @@ static int party_tostr(char *str, struct party *p)
 }
 
 /*==========================================
- * ƒp[ƒeƒBƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int party_fromstr(char *str, struct party *p)
@@ -122,7 +122,7 @@ static int party_fromstr(char *str, struct party *p)
 		struct party_member *m = &p->member[i];
 		if(str == NULL)
 			return 1;
-		// Auriga-0482ˆÈ~‚ÌŒ`®
+		// Auriga-0482ä»¥é™ã®å½¢å¼
 		s = sscanf(str + 1, "%d,%d,%d\t%255[^\t]\t",
 			&tmp_int[0], &tmp_int[1], &tmp_int[2], tmp_str);
 		if(s != 4) {
@@ -149,20 +149,20 @@ static int party_fromstr(char *str, struct party *p)
 
 #ifdef TXT_JOURNAL
 // ==========================================
-// ƒp[ƒeƒB[‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 int party_journal_rollforward( int key, void* buf, int flag )
 {
 	struct party* p = (struct party *)numdb_search( party_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct party*)buf)->party_id )
 	{
 		printf("int_party: journal: key != party_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( p )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -174,7 +174,7 @@ int party_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		p = (struct party*) aCalloc( 1, sizeof( struct party ) );
@@ -191,7 +191,7 @@ int partydb_txt_sync(void);
 #endif
 
 /*==========================================
- * ƒp[ƒeƒBƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool partydb_txt_read(void)
@@ -214,7 +214,7 @@ static bool partydb_txt_read(void)
 				if(p->party_id >= party_newid)
 					party_newid = p->party_id + 1;
 				if(party_check_empty(p)) {
-					// ‹óƒp[ƒeƒB
+					// ç©ºãƒ‘ãƒ¼ãƒ†ã‚£
 					aFree(p);
 				} else {
 					numdb_insert(party_db, p->party_id, p);
@@ -231,19 +231,19 @@ static bool partydb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( party_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &party_journal, sizeof(struct party), party_journal_file ) )
 		{
 			int c = journal_rollforward( &party_journal, party_journal_rollforward );
 
 			printf("int_party: journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			partydb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &party_journal );
 			journal_create( &party_journal, sizeof(struct party), party_journal_cache, party_journal_file );
 		}
@@ -254,7 +254,7 @@ static bool partydb_txt_read(void)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 static int partydb_txt_sync_sub(void *key,void *data,va_list ap)
@@ -287,7 +287,7 @@ int partydb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( party_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &party_journal );
 		journal_create( &party_journal, sizeof(struct party), party_journal_cache, party_journal_file );
 	}
@@ -297,7 +297,7 @@ int partydb_txt_sync(void)
 }
 
 /*==========================================
- * ƒp[ƒeƒB–¼‚©‚çƒp[ƒeƒBƒf[ƒ^‚ğƒ[ƒh
+ * ãƒ‘ãƒ¼ãƒ†ã‚£åã‹ã‚‰ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 static int party_txt_load_name_sub(void *key, void *data, va_list ap)
@@ -326,7 +326,7 @@ const struct party* partydb_txt_load_str(const char *str)
 }
 
 /*==========================================
- * ƒp[ƒeƒBID‚©‚çƒp[ƒeƒBƒf[ƒ^‚ğƒ[ƒh
+ * ãƒ‘ãƒ¼ãƒ†ã‚£IDã‹ã‚‰ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct party* partydb_txt_load_num(int party_id)
@@ -335,7 +335,7 @@ const struct party* partydb_txt_load_num(int party_id)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool partydb_txt_save(struct party *p2)
@@ -358,7 +358,7 @@ bool partydb_txt_save(struct party *p2)
 }
 
 /*==========================================
- * ƒp[ƒeƒBíœ
+ * ãƒ‘ãƒ¼ãƒ†ã‚£å‰Šé™¤
  *------------------------------------------
  */
 bool partydb_txt_delete(int party_id)
@@ -377,7 +377,7 @@ bool partydb_txt_delete(int party_id)
 }
 
 /*==========================================
- * ƒp[ƒeƒBì¬
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ä½œæˆ
  *------------------------------------------
  */
 bool partydb_txt_new(struct party *p)
@@ -394,7 +394,7 @@ bool partydb_txt_new(struct party *p)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int partydb_txt_final_sub(void *key, void *data, va_list ap)
@@ -420,7 +420,7 @@ void partydb_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool partydb_txt_init(void)

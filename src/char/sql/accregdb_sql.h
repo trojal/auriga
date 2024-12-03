@@ -24,7 +24,7 @@
 
 #include "../inter.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 const struct accreg* accregdb_sql_load(int account_id);
 bool accregdb_sql_save(struct accreg *reg);
 bool accregdb_sql_init(void);
@@ -32,7 +32,7 @@ int accregdb_sql_sync(void);
 void accregdb_sql_final(void);
 int accregdb_sql_config_read_sub(const char *w1,const char *w2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define accregdb_load  accregdb_sql_load
 #define accregdb_save  accregdb_sql_save
 #define accregdb_init  accregdb_sql_init

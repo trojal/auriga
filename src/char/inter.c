@@ -43,10 +43,10 @@
 #include "int_elem.h"
 #include "int_achieve.h"
 
-#define WISDATA_TTL    (60*1000)	// Wisƒf[ƒ^‚Ì¶‘¶ŠÔ(60•b)
-#define WISDELLIST_MAX 128		// Wisƒf[ƒ^íœƒŠƒXƒg‚Ì—v‘f”
+#define WISDATA_TTL    (60*1000)	// Wisãƒ‡ãƒ¼ã‚¿ã®ç”Ÿå­˜æ™‚é–“(60ç§’)
+#define WISDELLIST_MAX 128		// Wisãƒ‡ãƒ¼ã‚¿å‰Šé™¤ãƒªã‚¹ãƒˆã®è¦ç´ æ•°
 
-// óMƒpƒPƒbƒg’·ƒŠƒXƒg
+// å—ä¿¡ãƒ‘ã‚±ãƒƒãƒˆé•·ãƒªã‚¹ãƒˆ
 int inter_recv_packet_length[] = {
 	-1,-1, 7, 0, -1, 6, 0, 0,  6, 0, 0, 0,  0, 0,  0, 0,	// 3000-
 	 6,-1, 0, 0,  0, 0, 0, 0, 10,-1,14, 6,  6, 0,  0, 0,	// 3010-
@@ -68,7 +68,7 @@ struct WisData {
 static struct dbt * wis_db = NULL;
 
 /*==========================================
- * WISƒf[ƒ^‚Ì¶‘¶ƒ`ƒFƒbƒN
+ * WISãƒ‡ãƒ¼ã‚¿ã®ç”Ÿå­˜ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 static int check_ttl_wisdata_sub(void *key,void *data,va_list ap)
@@ -94,7 +94,7 @@ static int check_ttl_wisdata(void)
 }
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
  *------------------------------------------
  */
 int inter_config_read(const char *cfgName)
@@ -151,7 +151,7 @@ int inter_config_read(const char *cfgName)
 //--------------------------------------------------------
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 int inter_sync(void)
@@ -174,7 +174,7 @@ int inter_sync(void)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒT[ƒo[Ú‘±
+ * ãƒãƒƒãƒ—ã‚µãƒ¼ãƒãƒ¼æ¥ç¶š
  *------------------------------------------
  */
 int inter_mapif_init(int fd)
@@ -186,7 +186,7 @@ int inter_mapif_init(int fd)
 //--------------------------------------------------------
 
 /*==========================================
- * GMƒƒbƒZ[ƒW‘—M
+ * GMãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡
  *------------------------------------------
  */
 int mapif_GMmessage(const char *mes,size_t len,unsigned int color,int type,int size,int align,int pos_y)
@@ -208,7 +208,7 @@ int mapif_GMmessage(const char *mes,size_t len,unsigned int color,int type,int s
 }
 
 /*==========================================
- * Wis‘—M
+ * Wisé€ä¿¡
  *------------------------------------------
  */
 int mapif_wis_message(struct WisData *wd)
@@ -228,7 +228,7 @@ int mapif_wis_message(struct WisData *wd)
 }
 
 /*==========================================
- * Wis‘—MŒ‹‰Ê
+ * Wisé€ä¿¡çµæœ
  *------------------------------------------
  */
 int mapif_wis_end(struct WisData *wd,int flag)
@@ -245,7 +245,7 @@ int mapif_wis_end(struct WisData *wd,int flag)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg•Ï”‘—M
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°é€ä¿¡
  *------------------------------------------
  */
 int mapif_account_reg(int fd,const unsigned char *src)
@@ -261,7 +261,7 @@ int mapif_account_reg(int fd,const unsigned char *src)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg•Ï”—v‹•ÔM
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°è¦æ±‚è¿”ä¿¡
  *------------------------------------------
  */
 int mapif_account_reg_reply(int fd,int account_id)
@@ -287,7 +287,7 @@ int mapif_account_reg_reply(int fd,int account_id)
 //--------------------------------------------------------
 
 /*==========================================
- * GMƒƒbƒZ[ƒW‘—M
+ * GMãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡
  *------------------------------------------
  */
 int mapif_parse_GMmessage(int fd)
@@ -297,7 +297,7 @@ int mapif_parse_GMmessage(int fd)
 }
 
 /*==========================================
- * Wis‘—M—v‹
+ * Wisé€ä¿¡è¦æ±‚
  *------------------------------------------
  */
 int mapif_parse_WisRequest(int fd)
@@ -329,7 +329,7 @@ int mapif_parse_WisRequest(int fd)
 }
 
 /*==========================================
- * Wis‘—MŒ‹‰Ê
+ * Wisé€ä¿¡çµæœ
  *------------------------------------------
  */
 int mapif_parse_WisReply(int fd)
@@ -339,7 +339,7 @@ int mapif_parse_WisReply(int fd)
 	struct WisData *wd = (struct WisData *)numdb_search(wis_db, id);
 
 	if(wd == NULL)
-		return 0;	// ƒ^ƒCƒ€ƒAƒEƒg‚µ‚½‚©ID‚ª‘¶İ‚µ‚È‚¢
+		return 0;	// ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã—ãŸã‹IDãŒå­˜åœ¨ã—ãªã„
 
 	if((--wd->count) == 0 || flag != 1) {
 		mapif_wis_end(wd,flag);
@@ -350,7 +350,7 @@ int mapif_parse_WisReply(int fd)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg•Ï”•Û‘¶—v‹
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°ä¿å­˜è¦æ±‚
  *------------------------------------------
  */
 int mapif_parse_AccReg(int fd)
@@ -369,12 +369,12 @@ int mapif_parse_AccReg(int fd)
 	reg.reg_num = j;
 
 	accregdb_save(&reg);
-	mapif_account_reg(fd,RFIFOP(fd,0));	// ‘¼‚ÌMAPƒT[ƒo[‚É‘—M
+	mapif_account_reg(fd,RFIFOP(fd,0));	// ä»–ã®MAPã‚µãƒ¼ãƒãƒ¼ã«é€ä¿¡
 	return 0;
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg•Ï”‘—M—v‹
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•°é€ä¿¡è¦æ±‚
  *------------------------------------------
  */
 int mapif_parse_AccRegRequest(int fd)
@@ -384,7 +384,7 @@ int mapif_parse_AccRegRequest(int fd)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^[‚ÌˆÊ’u—v‹
+ * ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ä½ç½®è¦æ±‚
  *------------------------------------------
  */
 int mapif_parse_CharPosReq(int fd)
@@ -399,7 +399,7 @@ int mapif_parse_CharPosReq(int fd)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^[‚ÌˆÊ’u‚ğ—v‹Ò‚É’Ê’m
+ * ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ä½ç½®ã‚’è¦æ±‚è€…ã«é€šçŸ¥
  *------------------------------------------
  */
 int mapif_parse_CharPos(int fd)
@@ -414,7 +414,7 @@ int mapif_parse_CharPos(int fd)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^[‚ÌˆÚ“®—v‹
+ * ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ç§»å‹•è¦æ±‚
  *------------------------------------------
  */
 int mapif_parse_CharMoveReq(int fd)
@@ -429,7 +429,7 @@ int mapif_parse_CharMoveReq(int fd)
 }
 
 /*==========================================
- * ‘ÎÛID‚ÉƒƒbƒZ[ƒW‚ğ‘—M
+ * å¯¾è±¡IDã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡
  *------------------------------------------
  */
 int mapif_parse_DisplayMessage(int fd)
@@ -447,28 +447,28 @@ int mapif_parse_DisplayMessage(int fd)
 //--------------------------------------------------------
 
 /*==========================================
- * RFIFO‚ÌƒpƒPƒbƒg’·Šm”F
- * •K—vƒpƒPƒbƒg’·‚ª‚ ‚ê‚ÎƒpƒPƒbƒg’·A‚Ü‚¾‘«‚è‚È‚¯‚ê‚Î0
+ * RFIFOã®ãƒ‘ã‚±ãƒƒãƒˆé•·ç¢ºèª
+ * å¿…è¦ãƒ‘ã‚±ãƒƒãƒˆé•·ãŒã‚ã‚Œã°ãƒ‘ã‚±ãƒƒãƒˆé•·ã€ã¾ã è¶³ã‚Šãªã‘ã‚Œã°0
  *------------------------------------------
  */
 static int inter_check_length(int fd,int length)
 {
-	if(length == -1) {	// ‰Â•ÏƒpƒPƒbƒg’·
-		if(RFIFOREST(fd) < 4)	// ƒpƒPƒbƒg’·‚ª–¢’…
+	if(length == -1) {	// å¯å¤‰ãƒ‘ã‚±ãƒƒãƒˆé•·
+		if(RFIFOREST(fd) < 4)	// ãƒ‘ã‚±ãƒƒãƒˆé•·ãŒæœªç€
 			return 0;
 		length = RFIFOW(fd,2);
 	}
 
-	if(RFIFOREST(fd) < length)	// ƒpƒPƒbƒg‚ª–¢’…
+	if(RFIFOREST(fd) < length)	// ãƒ‘ã‚±ãƒƒãƒˆãŒæœªç€
 		return 0;
 
 	return length;
 }
 
 /*==========================================
- * map server ‚©‚ç‚Ì’ÊMi‚PƒpƒPƒbƒg‚Ì‚İ‰ğÍ‚·‚é‚±‚Æj
- * ƒGƒ‰[‚È‚ç0(false)Aˆ—‚Å‚«‚½‚È‚ç1A
- * ƒpƒPƒbƒg’·‚ª‘«‚è‚È‚¯‚ê‚Î2‚ğ•Ô‚³‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+ * map server ã‹ã‚‰ã®é€šä¿¡ï¼ˆï¼‘ãƒ‘ã‚±ãƒƒãƒˆã®ã¿è§£æã™ã‚‹ã“ã¨ï¼‰
+ * ã‚¨ãƒ©ãƒ¼ãªã‚‰0(false)ã€å‡¦ç†ã§ããŸãªã‚‰1ã€
+ * ãƒ‘ã‚±ãƒƒãƒˆé•·ãŒè¶³ã‚Šãªã‘ã‚Œã°2ã‚’è¿”ã•ãªã‘ã‚Œã°ãªã‚‰ãªã„
  *------------------------------------------
  */
 int inter_parse_frommap(int fd)
@@ -476,11 +476,11 @@ int inter_parse_frommap(int fd)
 	int cmd = RFIFOW(fd,0);
 	int len = 0;
 
-	// interIŠÇŠ‚©‚ğ’²‚×‚é
+	// interé¯–ç®¡è½„ã‹ã‚’èª¿ã¹ã‚‹
 	if( cmd < 0x3000 || cmd >= 0x3000 + sizeof(inter_recv_packet_length) / sizeof(inter_recv_packet_length[0]) )
 		return 0;
 
-	// ƒpƒPƒbƒg’·‚ğ’²‚×‚é
+	// ãƒ‘ã‚±ãƒƒãƒˆé•·ã‚’èª¿ã¹ã‚‹
 	if( (len = inter_check_length(fd,inter_recv_packet_length[cmd-0x3000])) == 0 )
 		return 2;
 
@@ -525,7 +525,7 @@ int inter_parse_frommap(int fd)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int wis_db_final(void *key,void *data,va_list ap)
@@ -548,7 +548,7 @@ void do_final_inter(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 int inter_init(const char *file)

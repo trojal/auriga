@@ -43,7 +43,7 @@ static int achieve_journal_cache = 1000;
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int achievedb_txt_config_read_sub(const char *w1, const char *w2)
@@ -70,7 +70,7 @@ int achievedb_txt_config_read_sub(const char *w1, const char *w2)
 }
 
 /*==========================================
- * ÀÑƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int achievedb_tostr(char *str, struct achieve *a)
@@ -97,7 +97,7 @@ static int achievedb_tostr(char *str, struct achieve *a)
 }
 
 /*==========================================
- * ÀÑƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int achievedb_fromstr(char *str, struct achieve *a)
@@ -112,7 +112,7 @@ static int achievedb_fromstr(char *str, struct achieve *a)
 		return 1;
 
 	if(str[next] == '\n' || str[next] == '\r')
-		return 1;	// account_id‚Æchar_id‚¾‚¯‚Ìs‚Í—L‚è“¾‚È‚¢
+		return 1;	// account_idã¨char_idã ã‘ã®è¡Œã¯æœ‰ã‚Šå¾—ãªã„
 	next++;
 
 	for(i = 0; str[next] && str[next] != '\t'; i++) {
@@ -151,20 +151,20 @@ static int achievedb_fromstr(char *str, struct achieve *a)
 
 #ifdef TXT_JOURNAL
 // ----------------------------------------------------------
-// ÀÑƒf[ƒ^—pƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ç”¨ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ----------------------------------------------------------
 int achieve_journal_rollforward( int key, void* buf, int flag )
 {
 	struct achieve *a = (struct achieve *)numdb_search( achieve_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct achieve *)buf)->char_id )
 	{
 		printf("int_achieve: journal: key != char_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( a )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -176,7 +176,7 @@ int achieve_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		a = (struct achieve *)aCalloc( 1, sizeof( struct achieve ) );
@@ -191,7 +191,7 @@ int achievedb_txt_sync(void);
 #endif
 
 /*==========================================
- * ÀÑƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool achievedb_txt_read(void)
@@ -225,19 +225,19 @@ static bool achievedb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( achieve_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &achieve_journal, sizeof(struct achieve), achieve_journal_file ) )
 		{
 			int c = journal_rollforward( &achieve_journal, achieve_journal_rollforward );
 
 			printf("int_achieve: journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			achievedb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &achieve_journal );
 			journal_create( &achieve_journal, sizeof(struct achieve), achieve_journal_cache, achieve_journal_file );
 		}
@@ -248,7 +248,7 @@ static bool achievedb_txt_read(void)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 static int achievedb_txt_sync_sub(void *key, void *data, va_list ap)
@@ -257,7 +257,7 @@ static int achievedb_txt_sync_sub(void *key, void *data, va_list ap)
 	FILE *fp;
 	struct achieve *a = (struct achieve *)data;
 
-	// count‚ª0‚Ì‚Æ‚«‚Í‘‚«‚İ‚µ‚È‚¢
+	// countãŒ0ã®ã¨ãã¯æ›¸ãè¾¼ã¿ã—ãªã„
 	if(a && a->count > 0) {
 		achievedb_tostr(line, a);
 		fp = va_arg(ap, FILE *);
@@ -284,7 +284,7 @@ int achievedb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( achieve_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &achieve_journal );
 		journal_create( &achieve_journal, sizeof(struct achieve), achieve_journal_cache, achieve_journal_file );
 	}
@@ -294,7 +294,7 @@ int achievedb_txt_sync(void)
 }
 
 /*==========================================
- * ÀÑƒf[ƒ^íœ
+ * å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool achievedb_txt_delete(int char_id)
@@ -316,7 +316,7 @@ bool achievedb_txt_delete(int char_id)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ID‚©‚çÀÑƒf[ƒ^‚ğæ“¾
+ * ã‚­ãƒ£ãƒ©IDã‹ã‚‰å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
  *------------------------------------------
  */
 const struct achieve *achievedb_txt_load(int char_id)
@@ -325,7 +325,7 @@ const struct achieve *achievedb_txt_load(int char_id)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool achievedb_txt_save(struct achieve *a2)
@@ -342,7 +342,7 @@ bool achievedb_txt_save(struct achieve *a2)
 		a1->char_id    = a2->char_id;
 	}
 
-	// ƒf[ƒ^‚ª‹¤‚É0ŒÂ‚È‚çƒRƒs[‚µ‚È‚¢
+	// ãƒ‡ãƒ¼ã‚¿ãŒå…±ã«0å€‹ãªã‚‰ã‚³ãƒ”ãƒ¼ã—ãªã„
 	if(a1->count > 0 || a2->count > 0)
 		memcpy(a1, a2, sizeof(struct achieve));
 
@@ -354,7 +354,7 @@ bool achievedb_txt_save(struct achieve *a2)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int achievedb_txt_final_sub(void *key, void *data, va_list ap)
@@ -380,7 +380,7 @@ void achievedb_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool achievedb_txt_init(void)

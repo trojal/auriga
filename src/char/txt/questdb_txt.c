@@ -43,7 +43,7 @@ static int quest_journal_cache = 1000;
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int questdb_txt_config_read_sub(const char *w1, const char *w2)
@@ -70,7 +70,7 @@ int questdb_txt_config_read_sub(const char *w1, const char *w2)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒf[ƒ^‚ğ•¶š—ñ‚Ö•ÏŠ·
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã¸å¤‰æ›
  *------------------------------------------
  */
 static int questdb_tostr(char *str, struct quest *q)
@@ -96,7 +96,7 @@ static int questdb_tostr(char *str, struct quest *q)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
  *------------------------------------------
  */
 static int questdb_fromstr(char *str, struct quest *q)
@@ -111,7 +111,7 @@ static int questdb_fromstr(char *str, struct quest *q)
 		return 1;
 
 	if(str[next] == '\n' || str[next] == '\r')
-		return 1;	// account_id‚Æchar_id‚¾‚¯‚Ìs‚Í—L‚è“¾‚È‚¢
+		return 1;	// account_idã¨char_idã ã‘ã®è¡Œã¯æœ‰ã‚Šå¾—ãªã„
 	next++;
 
 	for(i = 0; str[next] && str[next] != '\t'; i++) {
@@ -148,20 +148,20 @@ static int questdb_fromstr(char *str, struct quest *q)
 
 #ifdef TXT_JOURNAL
 // ----------------------------------------------------------
-// ƒNƒGƒXƒgƒf[ƒ^—pƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ç”¨ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ----------------------------------------------------------
 int quest_journal_rollforward( int key, void* buf, int flag )
 {
 	struct quest *q = (struct quest *)numdb_search( quest_db, key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct quest *)buf)->char_id )
 	{
 		printf("int_quest: journal: key != char_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( q )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -173,7 +173,7 @@ int quest_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		q = (struct quest *)aCalloc( 1, sizeof( struct quest ) );
@@ -188,7 +188,7 @@ int questdb_txt_sync(void);
 #endif
 
 /*==========================================
- * ƒNƒGƒXƒgƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool questdb_txt_read(void)
@@ -222,19 +222,19 @@ static bool questdb_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( quest_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &quest_journal, sizeof(struct quest), quest_journal_file ) )
 		{
 			int c = journal_rollforward( &quest_journal, quest_journal_rollforward );
 
 			printf("int_quest: journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			questdb_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &quest_journal );
 			journal_create( &quest_journal, sizeof(struct quest), quest_journal_cache, quest_journal_file );
 		}
@@ -245,7 +245,7 @@ static bool questdb_txt_read(void)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 static int questdb_txt_sync_sub(void *key, void *data, va_list ap)
@@ -254,7 +254,7 @@ static int questdb_txt_sync_sub(void *key, void *data, va_list ap)
 	FILE *fp;
 	struct quest *q = (struct quest *)data;
 
-	// count‚ª0‚Ì‚Æ‚«‚Í‘‚«‚İ‚µ‚È‚¢
+	// countãŒ0ã®ã¨ãã¯æ›¸ãè¾¼ã¿ã—ãªã„
 	if(q && q->count > 0) {
 		questdb_tostr(line, q);
 		fp = va_arg(ap, FILE *);
@@ -281,7 +281,7 @@ int questdb_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( quest_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &quest_journal );
 		journal_create( &quest_journal, sizeof(struct quest), quest_journal_cache, quest_journal_file );
 	}
@@ -291,7 +291,7 @@ int questdb_txt_sync(void)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒf[ƒ^íœ
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿å‰Šé™¤
  *------------------------------------------
  */
 bool questdb_txt_delete(int char_id)
@@ -313,7 +313,7 @@ bool questdb_txt_delete(int char_id)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ID‚©‚çƒNƒGƒXƒgƒf[ƒ^‚ğæ“¾
+ * ã‚­ãƒ£ãƒ©IDã‹ã‚‰ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
  *------------------------------------------
  */
 const struct quest *questdb_txt_load(int char_id)
@@ -322,7 +322,7 @@ const struct quest *questdb_txt_load(int char_id)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool questdb_txt_save(struct quest *q2)
@@ -339,7 +339,7 @@ bool questdb_txt_save(struct quest *q2)
 		q1->char_id    = q2->char_id;
 	}
 
-	// ƒf[ƒ^‚ª‹¤‚É0ŒÂ‚È‚çƒRƒs[‚µ‚È‚¢
+	// ãƒ‡ãƒ¼ã‚¿ãŒå…±ã«0å€‹ãªã‚‰ã‚³ãƒ”ãƒ¼ã—ãªã„
 	if(q1->count > 0 || q2->count > 0)
 		memcpy(q1, q2, sizeof(struct quest));
 
@@ -351,7 +351,7 @@ bool questdb_txt_save(struct quest *q2)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int questdb_txt_final_sub(void *key, void *data, va_list ap)
@@ -377,7 +377,7 @@ void questdb_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool questdb_txt_init(void)
