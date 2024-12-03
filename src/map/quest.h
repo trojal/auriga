@@ -24,7 +24,7 @@
 
 #define MAX_QUEST_DB 2000
 
-// クエストデータベース
+// 繧ｯ繧ｨ繧ｹ繝医ョ繝ｼ繧ｿ繝吶�ｼ繧ｹ
 struct quest_db {
 	int nameid;
 	unsigned int limit;

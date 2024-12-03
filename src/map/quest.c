@@ -37,15 +37,15 @@
 
 #define QUEST_KILLDB_SIZE 64
 
-/* ƒNƒGƒXƒgƒf[ƒ^ƒx[ƒX */
+/* ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 static struct quest_db quest_db[MAX_QUEST_DB];
 
-/* “¢”°‘ÎÛƒf[ƒ^ƒx[ƒX */
+/* è¨ä¼å¯¾è±¡ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 static int *quest_killdb = NULL;
 static int max_killdb_count = 0;
 
 /*==========================================
- * ƒNƒGƒXƒgDB‚Ìƒf[ƒ^‚ğŒŸõ
+ * ã‚¯ã‚¨ã‚¹ãƒˆDBã®ãƒ‡ãƒ¼ã‚¿ã‚’æ¤œç´¢
  *------------------------------------------
  */
 static int quest_search_db(int quest_id)
@@ -61,7 +61,7 @@ static int quest_search_db(int quest_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgID‚©‚çƒCƒ“ƒfƒbƒNƒX‚ğ•Ô‚·
+ * ã‚¯ã‚¨ã‚¹ãƒˆIDã‹ã‚‰ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’è¿”ã™
  *------------------------------------------
  */
 static int quest_search_index(struct map_session_data *sd, int quest_id)
@@ -79,7 +79,7 @@ static int quest_search_index(struct map_session_data *sd, int quest_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgID‚©‚ç\‘¢‘Ì‚ğ•Ô‚·
+ * ã‚¯ã‚¨ã‚¹ãƒˆIDã‹ã‚‰æ§‹é€ ä½“ã‚’è¿”ã™
  *------------------------------------------
  */
 struct quest_data *quest_get_data(struct map_session_data *sd, int quest_id)
@@ -93,7 +93,7 @@ struct quest_data *quest_get_data(struct map_session_data *sd, int quest_id)
 }
 
 /*==========================================
- * “¢”°‘ÎÛ‚©ƒ`ƒFƒbƒN
+ * è¨ä¼å¯¾è±¡ã‹ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 static int quest_search_mobid_sub(const void *a, const void *b)
@@ -117,7 +117,7 @@ int quest_search_mobid(int mob_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg’Ç‰Á
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆè¿½åŠ 
  *------------------------------------------
  */
 int quest_addlist(struct map_session_data *sd, int quest_id)
@@ -164,13 +164,13 @@ int quest_addlist(struct map_session_data *sd, int quest_id)
 	}
 	qd.state = 1;
 
-	// Šù‚ÉƒNƒGƒXƒg‚ğæ“¾‚µ‚Ä‚é‚©ŒŸõ
+	// æ—¢ã«ã‚¯ã‚¨ã‚¹ãƒˆã‚’å–å¾—ã—ã¦ã‚‹ã‹æ¤œç´¢
 	if((idx = quest_search_index(sd, quest_id)) >= 0) {
-		// Šù‚ÉƒNƒGƒXƒgƒŠƒXƒg‚É‚ ‚éê‡‚ÍXV‚·‚é
+		// æ—¢ã«ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆã«ã‚ã‚‹å ´åˆã¯æ›´æ–°ã™ã‚‹
 		memcpy(&sd->quest[idx], &qd, sizeof(struct quest_data));
 	} else {
 		if(sd->questlist >= MAX_QUESTLIST) {
-			// —e—ÊƒI[ƒo[
+			// å®¹é‡ã‚ªãƒ¼ãƒãƒ¼
 			return 1;
 		}
 		memcpy(&sd->quest[sd->questlist], &qd, sizeof(struct quest_data));
@@ -190,7 +190,7 @@ int quest_addlist(struct map_session_data *sd, int quest_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgXV
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆæ›´æ–°
  *------------------------------------------
  */
 int quest_updatelist(struct map_session_data *sd, int old_id, int new_id)
@@ -204,23 +204,23 @@ int quest_updatelist(struct map_session_data *sd, int old_id, int new_id)
 	if(qid < 0)
 		return 1;
 
-	// ƒNƒGƒXƒg‚ğæ“¾‚µ‚Ä‚é‚©ŒŸõ
+	// ã‚¯ã‚¨ã‚¹ãƒˆã‚’å–å¾—ã—ã¦ã‚‹ã‹æ¤œç´¢
 	old_idx = quest_search_index(sd, old_id);
 	new_idx = quest_search_index(sd, new_id);
 
 	if(old_idx >= 0) {
 		if(new_idx >= 0) {
-			// VƒNƒGƒXƒg‚ªŠù‚ÉƒNƒGƒXƒgƒŠƒXƒg‚É‚ ‚éê‡‚Í‹ŒƒNƒGƒXƒg‚ğíœ‚·‚é‚¾‚¯
+			// æ–°ã‚¯ã‚¨ã‚¹ãƒˆãŒæ—¢ã«ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆã«ã‚ã‚‹å ´åˆã¯æ—§ã‚¯ã‚¨ã‚¹ãƒˆã‚’å‰Šé™¤ã™ã‚‹ã ã‘
 			quest_dellist(sd, old_id);
 			return 0;
 		}
 	} else {
 		if(new_idx >= 0) {
-			// VƒNƒGƒXƒg‚ªŠù‚ÉƒNƒGƒXƒgƒŠƒXƒg‚É‚ ‚éê‡‚Í‰½‚à‚µ‚È‚¢
+			// æ–°ã‚¯ã‚¨ã‚¹ãƒˆãŒæ—¢ã«ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆã«ã‚ã‚‹å ´åˆã¯ä½•ã‚‚ã—ãªã„
 			return 0;
 		}
 		if(sd->questlist >= MAX_QUESTLIST) {
-			// —e—ÊƒI[ƒo[
+			// å®¹é‡ã‚ªãƒ¼ãƒãƒ¼
 			return 1;
 		}
 	}
@@ -259,7 +259,7 @@ int quest_updatelist(struct map_session_data *sd, int old_id, int new_id)
 	qd.state = 1;
 
 	if(old_idx >= 0) {
-		// ‹ŒƒNƒGƒXƒg‚ğæ“¾‚µ‚Ä‚éê‡‚Íã‘‚«‚ÅXV‚·‚é
+		// æ—§ã‚¯ã‚¨ã‚¹ãƒˆã‚’å–å¾—ã—ã¦ã‚‹å ´åˆã¯ä¸Šæ›¸ãã§æ›´æ–°ã™ã‚‹
 		memcpy(&sd->quest[old_idx], &qd, sizeof(struct quest_data));
 		clif_del_questlist(sd, old_id);
 	} else {
@@ -280,7 +280,7 @@ int quest_updatelist(struct map_session_data *sd, int old_id, int new_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgíœ
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆå‰Šé™¤
  *------------------------------------------
  */
 int quest_dellist(struct map_session_data *sd, int quest_id)
@@ -304,7 +304,7 @@ int quest_dellist(struct map_session_data *sd, int quest_id)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgó‘Ô•ÏX
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆçŠ¶æ…‹å¤‰æ›´
  *------------------------------------------
  */
 int quest_update_status(struct map_session_data *sd, int quest_id, char state)
@@ -350,7 +350,7 @@ int quest_killcount_sub(struct block_list *tbl, va_list ap)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg“¢”°”XV
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆè¨ä¼æ•°æ›´æ–°
  *------------------------------------------
  */
 int quest_killcount(struct map_session_data *sd, int mob_id)
@@ -370,8 +370,8 @@ int quest_killcount(struct map_session_data *sd, int mob_id)
 					clif_update_questcount(sd, qd->nameid);
 				}
 			}
-			qid = quest_search_db(qd->nameid);   // qidæ“¾
-			if(qid < 0)      // qid‚ª‚İ‚Â‚©‚ç‚È‚©‚Á‚½‚Ì‚Å‚±‚±‚Ü‚Å
+			qid = quest_search_db(qd->nameid);   // qidå–å¾—
+			if(qid < 0)      // qidãŒã¿ã¤ã‹ã‚‰ãªã‹ã£ãŸã®ã§ã“ã“ã¾ã§
 				continue;
 
 			for(j = 0; j < sizeof(quest_db[qid].drop)/sizeof(quest_db[qid].drop[0]); j++) {
@@ -397,7 +397,7 @@ int quest_killcount(struct map_session_data *sd, int mob_id)
 }
 
 /*==========================================
- * “¢”°ƒf[ƒ^ƒx[ƒX‚Ìƒ\[ƒg
+ * è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ã‚½ãƒ¼ãƒˆ
  *------------------------------------------
  */
 static int quest_sort_id(const void *_i1, const void *_i2)
@@ -409,8 +409,8 @@ static int quest_sort_id(const void *_i1, const void *_i2)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgİ’èƒtƒ@ƒCƒ‹“Ç‚İ‚İ
- * quest_db.txt ƒNƒGƒXƒgƒf[ƒ^
+ * ã‚¯ã‚¨ã‚¹ãƒˆè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
+ * quest_db.txt ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿
  *------------------------------------------
  */
 static int quest_readdb(void)
@@ -489,7 +489,7 @@ static int quest_readdb(void)
 				if(n != max_killdb_count)
 					continue;
 
-				// V‚µ‚­oŒ»‚µ‚½MobID‚È‚Ì‚Å“¢”°ƒf[ƒ^ƒx[ƒX‚É’Ç‰Á
+				// æ–°ã—ãå‡ºç¾ã—ãŸMobIDãªã®ã§è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«è¿½åŠ 
 				if(n >= size) {
 					size += QUEST_KILLDB_SIZE;
 					quest_killdb = (int *)aRealloc(quest_killdb, sizeof(int) * size);
@@ -514,7 +514,7 @@ static int quest_readdb(void)
 				if(n != max_killdb_count)
 					continue;
 
-				// V‚µ‚­oŒ»‚µ‚½MobID‚È‚Ì‚Å“¢”°ƒf[ƒ^ƒx[ƒX‚É’Ç‰Á
+				// æ–°ã—ãå‡ºç¾ã—ãŸMobIDãªã®ã§è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«è¿½åŠ 
 				if(n >= size) {
 					size += QUEST_KILLDB_SIZE;
 					quest_killdb = (int *)aRealloc(quest_killdb, sizeof(int) * size);
@@ -529,10 +529,10 @@ static int quest_readdb(void)
 			break;
 	}
 
-	// “¢”°ƒf[ƒ^ƒx[ƒX‚ÌƒŠƒTƒCƒY
+	// è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒªã‚µã‚¤ã‚º
 	quest_killdb = (int *)aRealloc(quest_killdb, sizeof(int) * max_killdb_count);
 
-	// “¢”°ƒf[ƒ^ƒx[ƒX‚Ìƒ\[ƒg
+	// è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ã‚½ãƒ¼ãƒˆ
 	qsort(quest_killdb, max_killdb_count, sizeof(int), quest_sort_id);
 
 	fclose(fp);
@@ -542,7 +542,7 @@ static int quest_readdb(void)
 }
 
 /*==========================================
- * ƒŠƒ[ƒh
+ * ãƒªãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 void quest_reload(void)
@@ -551,7 +551,7 @@ void quest_reload(void)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 int do_final_quest(void)
@@ -566,7 +566,7 @@ int do_final_quest(void)
 }
 
 /*==========================================
- * ƒNƒGƒXƒg‰Šú‰»ˆ—
+ * ã‚¯ã‚¨ã‚¹ãƒˆåˆæœŸåŒ–å‡¦ç†
  *------------------------------------------
  */
 int do_init_quest(void)

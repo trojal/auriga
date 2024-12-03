@@ -22,10 +22,10 @@
 #ifndef _UNIT_H_
 #define _UNIT_H_
 
-// PC, MOB, PET ‚É‹¤’Ê‚·‚éˆ—‚ğ‚P‚Â‚É‚Ü‚Æ‚ß‚éŒv‰æ
+// PC, MOB, PET ã«å…±é€šã™ã‚‹å‡¦ç†ã‚’ï¼‘ã¤ã«ã¾ã¨ã‚ã‚‹è¨ˆç”»
 
-// •àsŠJn
-//     –ß‚è’l‚ÍA0 ( ¬Œ÷ ), 1 ( ¸”s )
+// æ­©è¡Œé–‹å§‹
+//     æˆ»ã‚Šå€¤ã¯ã€0 ( æˆåŠŸ ), 1 ( å¤±æ•— )
 int unit_walktoxy( struct block_list *bl, int x, int y);
 
 int unit_walktodir(struct block_list *bl,int step);
@@ -33,51 +33,51 @@ int unit_forcewalktodir(struct block_list *bl,int distance);
 
 int unit_distance( struct block_list *bl, struct block_list *bl2);
 
-// •às’â~
-// type‚ÍˆÈ‰º‚Ì‘g‚İ‡‚í‚¹ :
-//     1: ˆÊ’uî•ñ‚Ì‘—M( ‚±‚ÌŠÖ”‚ÌŒã‚ÉˆÊ’uî•ñ‚ğ‘—M‚·‚éê‡‚Í•s—v )
-//     2: ƒ_ƒ[ƒWƒfƒBƒŒƒC—L‚è
-//     4: •s–¾(MOB‚Ì‚İH)
+// æ­©è¡Œåœæ­¢
+// typeã¯ä»¥ä¸‹ã®çµ„ã¿åˆã‚ã› :
+//     1: ä½ç½®æƒ…å ±ã®é€ä¿¡( ã“ã®é–¢æ•°ã®å¾Œã«ä½ç½®æƒ…å ±ã‚’é€ä¿¡ã™ã‚‹å ´åˆã¯ä¸è¦ )
+//     2: ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒ‡ã‚£ãƒ¬ã‚¤æœ‰ã‚Š
+//     4: ä¸æ˜(MOBã®ã¿ï¼Ÿ)
 int unit_stop_walking(struct block_list *bl,int type);
 
-// ˆÊ’uˆÚ“®(‚«”ò‚Î‚µ‚È‚Ç)
+// ä½ç½®ç§»å‹•(å¹ãé£›ã°ã—ãªã©)
 int unit_movepos(struct block_list *bl,int dst_x,int dst_y,int flag);
 int unit_setdir(struct block_list *bl,int dir);
 
 int unit_calc_pos(struct block_list *bl,int tx,int ty,int dir,int distance);
 
-// ‚»‚±‚Ü‚Å•às‚Å‚½‚Ç‚è’…‚¯‚é‚©‚Ì”»’è
+// ãã“ã¾ã§æ­©è¡Œã§ãŸã©ã‚Šç€ã‘ã‚‹ã‹ã®åˆ¤å®š
 int unit_can_reach(struct block_list *bl,int x,int y);
 
-// ˆÚ“®‰Â”\‚Èó‘Ô‚©‚Ì”»’è
+// ç§»å‹•å¯èƒ½ãªçŠ¶æ…‹ã‹ã®åˆ¤å®š
 int unit_can_move(struct block_list *bl);
 int unit_isrunning(struct block_list *bl);
 
-// UŒ‚ŠÖ˜A
+// æ”»æ’ƒé–¢é€£
 void unit_stopattack(struct block_list *bl);
 int unit_attack(struct block_list *src,int target_id,int type);
 
 // int unit_setpos( struct block_list *bl, const char* map, int x, int y);
 
-// ƒXƒLƒ‹g—p
+// ã‚¹ã‚­ãƒ«ä½¿ç”¨
 int unit_skilluse_id(struct block_list *src, int target_id, int skill_num, int skill_lv);
 int unit_skilluse_pos(struct block_list *src, int skill_x, int skill_y, int skill_num, int skill_lv);
 
-// ƒXƒLƒ‹g—p( •â³Ï‚İƒLƒƒƒXƒgŠÔAƒLƒƒƒ“ƒZƒ‹•s‰Âİ’è•t‚« )
+// ã‚¹ã‚­ãƒ«ä½¿ç”¨( è£œæ­£æ¸ˆã¿ã‚­ãƒ£ã‚¹ãƒˆæ™‚é–“ã€ã‚­ãƒ£ãƒ³ã‚»ãƒ«ä¸å¯è¨­å®šä»˜ã )
 int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int skill_lv, int casttime, int castcancel);
 int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int skill_num, int skill_lv, int casttime, int castcancel);
 
-// ‰r¥ƒLƒƒƒ“ƒZƒ‹
+// è© å”±ã‚­ãƒ£ãƒ³ã‚»ãƒ«
 int unit_skillcastcancel(struct block_list *bl,int type);
 
 int unit_counttargeted(struct block_list *bl,int target_lv);
 
-// unit_data ‚Ì‰Šú‰»ˆ—
+// unit_data ã®åˆæœŸåŒ–å‡¦ç†
 int unit_dataset(struct block_list *bl);
 
 int unit_heal(struct block_list *bl,int hp,int sp);
 int unit_fixdamage(struct block_list *src,struct block_list *target,unsigned int tick,int sdelay,int ddelay,int damage,int div,int type,int damage2,int is_spdamage);
-// ‚»‚Ì‘¼
+// ãã®ä»–
 int unit_isdead(struct block_list *bl);
 int unit_iscasting(struct block_list *bl);
 int unit_iswalking(struct block_list *bl);
@@ -88,7 +88,7 @@ int unit_free(struct block_list *bl, int clrtype);
 int unit_changeviewsize(struct block_list *bl,int size);
 int unit_mobstopattacked(struct map_session_data *sd,va_list ap);
 
-// ‰Šú‰»ƒ‹[ƒ`ƒ“
+// åˆæœŸåŒ–ãƒ«ãƒ¼ãƒãƒ³
 int do_init_unit(void);
 int do_final_unit(void);
 

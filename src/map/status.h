@@ -32,7 +32,7 @@ struct status_pretimer {
 	int flag;
 };
 
-// ƒXƒe[ƒ^ƒXˆÙíƒf[ƒ^ƒx[ƒX
+// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç•°å¸¸ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹
 struct scdata_db {
 	short save;
 	int releasable;
@@ -40,7 +40,7 @@ struct scdata_db {
 	int copyable;
 };
 
-// ƒpƒ‰ƒ[ƒ^æ“¾Œn
+// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å–å¾—ç³»
 int status_get_class(struct block_list *bl);
 int status_get_dir(struct block_list *bl);
 int status_get_lv(struct block_list *bl);
@@ -94,7 +94,7 @@ int status_get_critical(struct block_list *bl);
 int status_get_atk_(struct block_list *bl);
 int status_get_atk_2(struct block_list *bl);
 
-// ó‘ÔˆÙíŠÖ˜A
+// çŠ¶æ…‹ç•°å¸¸é–¢é€£
 int status_can_save(int type);
 int status_is_disable(int type,int mask);
 int status_change_start(struct block_list *bl,int type,int val1,int val2,int val3,int val4,int tick,int flag);
@@ -119,7 +119,7 @@ int status_change_rate(struct block_list *bl,int type,int rate,int src_level);
 int status_change_copy(struct block_list *src,struct block_list *bl);
 int status_change_addeff_start(struct block_list *src, struct block_list *bl, int id, int rate, int type, unsigned int tick);
 
-// ó‘Ôƒ`ƒFƒbƒN
+// çŠ¶æ…‹ãƒã‚§ãƒƒã‚¯
 int status_check_no_magic_damage(struct block_list *bl);
 
 #ifdef DYNAMIC_SC_DATA
@@ -128,7 +128,7 @@ int status_free_sc_data(struct status_change *sc);
 extern struct status_change_data dummy_sc_data[MAX_STATUSCHANGE];
 #endif
 
-// ƒXƒe[ƒ^ƒXŒvZ
+// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¨ˆç®—
 int status_calc_pc(struct map_session_data* sd,int first);
 int status_calc_pc_stop_begin(struct block_list *bl);
 int status_calc_pc_stop_end(struct block_list *bl);
@@ -138,12 +138,12 @@ int status_percentrefinery_weaponrefine(struct map_session_data *sd,struct item 
 extern int current_equip_item_index;
 extern int current_equip_name_id;
 
-// DBÄ“Ç—p
+// DBå†èª­è¾¼ç”¨
 int status_readdb(void);
 
 int do_init_status(void);
 
-// ƒXƒe[ƒ^ƒXˆÙí”Ô†ƒe[ƒuƒ‹
+// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç•°å¸¸ç•ªå·ãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	SC_PROVOKE              = 0,
 	SC_ENDURE               = 1,
@@ -830,15 +830,15 @@ enum {
 	SC_PYROCLASTIC			= 682,
 	SC_VOLCANIC_ASH			= 683,
 
-	// start‚Å‚Íg‚¦‚È‚¢resist‚ğƒAƒCƒeƒ€‘¤‚Å‘S‚ÄƒNƒŠƒA‚·‚é‚½‚ß‚Ì•¨
+	// startã§ã¯ä½¿ãˆãªã„resistã‚’ã‚¢ã‚¤ãƒ†ãƒ å´ã§å…¨ã¦ã‚¯ãƒªã‚¢ã™ã‚‹ãŸã‚ã®ç‰©
 	SC_RESISTCLEAR          = 1001,
 	SC_RACECLEAR            = 1002,
 	SC_SOUL                 = 1003,
 	SC_SOULCLEAR            = 1004,
 };
 
-// ó‘ÔƒAƒCƒRƒ“
-// Œµ–§‚É‚ÍƒLƒƒƒ‰ƒNƒ^[‚ÌF‚Ì•Ï‰»‚È‚Ç‚àŠÜ‚Ü‚ê‚Ä‚¢‚é(”š—ô”g“®‚È‚Ç)
+// çŠ¶æ…‹ã‚¢ã‚¤ã‚³ãƒ³
+// å³å¯†ã«ã¯ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®è‰²ã®å¤‰åŒ–ãªã©ã‚‚å«ã¾ã‚Œã¦ã„ã‚‹(çˆ†è£‚æ³¢å‹•ãªã©)
 enum {
 	SI_BLANK            = 43,
 
@@ -1993,7 +1993,7 @@ enum {
 
 };
 
-// opt1ƒe[ƒuƒ‹
+// opt1ãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	OPT1_NORMAL			= 0,
 	OPT1_STONECURSE 	= 1,
@@ -2006,7 +2006,7 @@ enum {
 	OPT1_IMPRISON		= 8,
 };
 
-// opt2ƒe[ƒuƒ‹
+// opt2ãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	OPT2_NORMAL			= 0x0,
 	OPT2_POISON			= 0x1,
@@ -2020,7 +2020,7 @@ enum {
 	OPT2_FEAR			= 0x100,
 };
 
-// opt3ƒe[ƒuƒ‹
+// opt3ãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	OPT3_NORMAL				= 0x0,
 	OPT3_QUICKEN			= 0x1,
@@ -2043,7 +2043,7 @@ enum {
 	OPT3_CONTRACT			= 0x20000,
 };
 
-// ƒIƒvƒVƒ‡ƒ“ƒe[ƒuƒ‹
+// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	OPTION_NOTHING			= 0x0,
 	OPTION_SIGHT			= 0x1,
@@ -2078,7 +2078,7 @@ enum {
 	OPTION_MASK				= 0x7f8d7b8,
 };
 
-// Modeƒe[ƒuƒ‹
+// Modeãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	MD_CANMOVE				= 0x001,
 	MD_ITEMLOOT				= 0x002,
@@ -2096,17 +2096,17 @@ enum {
 	MD_SKILLIMMUNITY		= 0x2000,
 };
 
-// ModeOptƒe[ƒuƒ‹
+// ModeOptãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
-	MDOPT_DOUBLE       = 1, // ƒ_ƒuƒ‹ƒAƒ^ƒbƒN
-	MDOPT_NOATTACK     = 2, // ’ÊíUŒ‚‚È‚µ
-	MDOPT_FATALBLOW    = 3, // ‹}ŠUŒ‚
-	MDOPT_CRITICAL     = 4, // ƒNƒŠƒeƒBƒJƒ‹UŒ‚
-	MDOPT_PERFECT_FREE = 5, // Š®‘S‰ñ”ğ
-	MDOPT_STEELCROW    = 6, // ƒXƒ`[ƒ‹ƒNƒƒE
+	MDOPT_DOUBLE       = 1, // ãƒ€ãƒ–ãƒ«ã‚¢ã‚¿ãƒƒã‚¯
+	MDOPT_NOATTACK     = 2, // é€šå¸¸æ”»æ’ƒãªã—
+	MDOPT_FATALBLOW    = 3, // æ€¥æ‰€æ”»æ’ƒ
+	MDOPT_CRITICAL     = 4, // ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«æ”»æ’ƒ
+	MDOPT_PERFECT_FREE = 5, // å®Œå…¨å›é¿
+	MDOPT_STEELCROW    = 6, // ã‚¹ãƒãƒ¼ãƒ«ã‚¯ãƒ­ã‚¦
 };
 
-// ƒJ[ƒgƒe[ƒuƒ‹
+// ã‚«ãƒ¼ãƒˆãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	CART_TYPE_NOTHING	= 0x0,
 	CART_TYPE_NORMAL	= 0x1,
@@ -2120,7 +2120,7 @@ enum {
 	CART_TYPE_LEVEL131	= 0x9,
 };
 
-// hat_effectƒe[ƒuƒ‹
+// hat_effectãƒ†ãƒ¼ãƒ–ãƒ«
 enum {
 	HAT_EF_MIN = 0,
 	HAT_EF_BLOSSOM_FLUTTERING,

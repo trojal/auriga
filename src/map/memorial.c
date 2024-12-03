@@ -40,9 +40,9 @@
 #include "pc.h"
 #include "battle.h"
 
-#define MAX_MEMORIAL_DB		40		// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“Å‘åDB”
-#define MEMORIAL_INVERVAL	60000	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“—\–ñˆ—ŠÔŠu(ms)
-#define MEMORIAL_LIMIT		300		// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ““üêE–³l§ŒÀŠÔ(•b)
+#define MAX_MEMORIAL_DB		40		// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æœ€å¤§DBæ•°
+#define MEMORIAL_INVERVAL	60000	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³äºˆç´„å‡¦ç†é–“éš”(ms)
+#define MEMORIAL_LIMIT		300		// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å…¥å ´ãƒ»ç„¡äººåˆ¶é™æ™‚é–“(ç§’)
 
 struct memorial_data memorial_data[MAX_MEMORIAL_DATA];
 
@@ -64,7 +64,7 @@ static struct {
 } memorial_wait;
 
 /*==========================================
- * TYPE‚©‚çƒƒ‚ƒŠƒAƒ‹DB‚Ìƒf[ƒ^‚ğŒŸõ
+ * TYPEã‹ã‚‰ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«DBã®ãƒ‡ãƒ¼ã‚¿ã‚’æ¤œç´¢
  *------------------------------------------
  */
 static struct memorial_db *memorial_searchtype_db(short memorial_type)
@@ -80,7 +80,7 @@ static struct memorial_db *memorial_searchtype_db(short memorial_type)
 }
 
 /*==========================================
- * –¼Ì‚©‚çƒƒ‚ƒŠƒAƒ‹DB‚Ìƒf[ƒ^‚ğŒŸõ
+ * åç§°ã‹ã‚‰ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«DBã®ãƒ‡ãƒ¼ã‚¿ã‚’æ¤œç´¢
  *------------------------------------------
  */
 static struct memorial_db *memorial_searchname_db(const char *memorial_name)
@@ -96,7 +96,7 @@ static struct memorial_db *memorial_searchname_db(const char *memorial_name)
 }
 
 /*==========================================
- * PTID‚©‚çƒƒ‚ƒŠƒAƒ‹DATA‚ÌID‚ğŒŸõ
+ * PTIDã‹ã‚‰ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«DATAã®IDã‚’æ¤œç´¢
  *------------------------------------------
  */
 int memorial_search_party(int id)
@@ -112,7 +112,7 @@ int memorial_search_party(int id)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“íœƒ^ƒCƒ}[
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å‰Šé™¤ã‚¿ã‚¤ãƒãƒ¼
  *------------------------------------------
  */
 static int memorial_delete_timer(int tid, unsigned int tick, int id, void *data)
@@ -123,7 +123,7 @@ static int memorial_delete_timer(int tid, unsigned int tick, int id, void *data)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“NPC’Ç‰Á
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³NPCè¿½åŠ 
  *------------------------------------------
  */
 static int memorial_addnpc(struct block_list *bl, va_list ap)
@@ -138,7 +138,7 @@ static int memorial_addnpc(struct block_list *bl, va_list ap)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“MAP’Ç‰Á
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³MAPè¿½åŠ 
  *------------------------------------------
  */
 static int memorial_addmap(int memorial_id)
@@ -154,19 +154,19 @@ static int memorial_addmap(int memorial_id)
 
 	md = &memorial_data[memorial_id-1];
 
-	// —\–ñ‘Ò‹@’†‚Å‚È‚¢
+	// äºˆç´„å¾…æ©Ÿä¸­ã§ãªã„
 	if(md->state != MDSTATE_IDLE)
 		return 0;
 
 	if((db = memorial_searchtype_db(md->type)) == NULL)
 		return 0;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“î•ñİ’è
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æƒ…å ±è¨­å®š
 	md->state = MDSTATE_BUSY;
 	md->idle_limit = (unsigned int)time(NULL) + MEMORIAL_LIMIT;
 	md->idle_timer = add_timer(gettick() + MEMORIAL_LIMIT * 1000, memorial_delete_timer, memorial_id, NULL);
 
-	// ƒ}ƒbƒv’Ç‰Á
+	// ãƒãƒƒãƒ—è¿½åŠ 
 	for(i = 0; i < MAX_MEMORIAL_SEGMAP; i++) {
 		m = map_addmdmap(db->mapname[i], memorial_id);
 		if(m < 0)
@@ -176,20 +176,20 @@ static int memorial_addmap(int memorial_id)
 		cnt_map++;
 	}
 
-	// ƒ}ƒbƒv’Ç‰ÁŒã‚ÉNPC’Ç‰Á
+	// ãƒãƒƒãƒ—è¿½åŠ å¾Œã«NPCè¿½åŠ 
 	for(i = 0; i < cnt_map; i++) {
-		// Œ³ƒ}ƒbƒv‚©‚çNPC‚ğ’Tõ
+		// å…ƒãƒãƒƒãƒ—ã‹ã‚‰NPCã‚’æ¢ç´¢
 		cnt_npc += map_foreachinarea(memorial_addnpc, md->map[i].src_m, 0, 0, map[md->map[i].src_m].xs, map[md->map[i].src_m].ys, BL_NPC, md->map[i].m);
 	}
 
-	// ’Ç‰ÁNPC‚ÌOnInitƒCƒxƒ“ƒgÀs
+	// è¿½åŠ NPCã®OnInitã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡Œ
 	if(cnt_npc) {
 		for(i = 0; i < cnt_map; i++) {
 			npc_event_doall_map("OnInit", md->map[i].m);
 		}
 	}
 
-	// ƒp[ƒeƒB[‚Éi’»’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«é€²æ—é€šçŸ¥
 	if((pt = party_search(md->party_id)) != NULL) {
 		struct map_session_data *sd = party_getavailablesd(pt);
 		if(sd)
@@ -202,26 +202,26 @@ static int memorial_addmap(int memorial_id)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“—\–ñƒ^ƒCƒ}[
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³äºˆç´„ã‚¿ã‚¤ãƒãƒ¼
  *------------------------------------------
  */
 static int memorial_subscription_timer(int tid, unsigned int tick, int id, void *data)
 {
 	int i, ret;
-	int memorial_id = memorial_wait.id[0];	// æ“ª‚Ì—\–ñID‚Ì‚İˆ—
+	int memorial_id = memorial_wait.id[0];	// å…ˆé ­ã®äºˆç´„IDã®ã¿å‡¦ç†
 	struct party *pt;
 	struct map_session_data *sd;
 
-	// —\–ñ‚È‚µ
+	// äºˆç´„ãªã—
 	if(memorial_wait.count == 0)
 		return 0;
 	if(memorial_id <= 0 || memorial_id > MAX_MEMORIAL_DATA)
 		return 0;
 
-	// ƒ}ƒbƒvì¬
+	// ãƒãƒƒãƒ—ä½œæˆ
 	ret = memorial_addmap(memorial_id);
 
-	// ¸”s‚Ìƒp[ƒeƒB[—\–ñæ‚èÁ‚µ’Ê’m
+	// å¤±æ•—æ™‚ã®ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼äºˆç´„å–ã‚Šæ¶ˆã—é€šçŸ¥
 	if(ret == 0) {
 		if((pt = party_search(memorial_data[memorial_id - 1].party_id)) != NULL) {
 			sd = party_getavailablesd(pt);
@@ -230,12 +230,12 @@ static int memorial_subscription_timer(int tid, unsigned int tick, int id, void 
 		}
 	}
 
-	// —\–ñ‡˜•ÏX
+	// äºˆç´„é †åºå¤‰æ›´
 	memorial_wait.count--;
 	memmove(&memorial_wait.id[0], &memorial_wait.id[1], sizeof(memorial_wait.id[0]) * memorial_wait.count);
 	memset(&memorial_wait.id[memorial_wait.count], 0, sizeof(memorial_wait.id[0]));
 
-	// —\–ñ‡˜’Ê’m
+	// äºˆç´„é †åºé€šçŸ¥
 	for(i = 0; i < memorial_wait.count; i++) {
 		if(memorial_data[memorial_wait.id[i]-1].state == MDSTATE_IDLE) {
 			if((pt = party_search(memorial_data[memorial_wait.id[i]-1].party_id)) != NULL) {
@@ -246,7 +246,7 @@ static int memorial_subscription_timer(int tid, unsigned int tick, int id, void 
 		}
 	}
 
-	// —\–ñƒ^ƒCƒ}[ÄŠJE’â~
+	// äºˆç´„ã‚¿ã‚¤ãƒãƒ¼å†é–‹ãƒ»åœæ­¢
 	if(memorial_wait.count)
 		memorial_wait.timer = add_timer(gettick() + MEMORIAL_INVERVAL, memorial_subscription_timer, 0, NULL);
 	else
@@ -256,7 +256,7 @@ static int memorial_subscription_timer(int tid, unsigned int tick, int id, void 
 }
 
 /*==========================================
- * ˆÛ§ŒÀƒ^ƒCƒ}[‹N“®
+ * ç¶­æŒåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼èµ·å‹•
  *------------------------------------------
  */
 static int memorial_startkeeptimer(struct memorial_data *md, int memorial_id)
@@ -266,18 +266,18 @@ static int memorial_startkeeptimer(struct memorial_data *md, int memorial_id)
 
 	nullpo_retr(0, md);
 
-	// Šù‚É‹N“®’†
+	// æ—¢ã«èµ·å‹•ä¸­
 	if(md->keep_timer != -1)
 		return 1;
 
 	if((db = memorial_searchtype_db(md->type)) == NULL)
 		return 1;
 
-	// ƒ^ƒCƒ}[ŠJn
+	// ã‚¿ã‚¤ãƒãƒ¼é–‹å§‹
 	md->keep_limit = (unsigned int)time(NULL) + db->limit;
 	md->keep_timer = add_timer(gettick() + db->limit * 1000, memorial_delete_timer, memorial_id, NULL);
 
-	// ƒp[ƒeƒB[‚Éî•ñ’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«æƒ…å ±é€šçŸ¥
 	if((pt = party_search(md->party_id)) != NULL) {
 		struct map_session_data *sd = party_getavailablesd(pt);
 		if(sd)
@@ -288,7 +288,7 @@ static int memorial_startkeeptimer(struct memorial_data *md, int memorial_id)
 }
 
 /*==========================================
- * –³l§ŒÀƒ^ƒCƒ}[‹N“®
+ * ç„¡äººåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼èµ·å‹•
  *------------------------------------------
  */
 static int memorial_startidletimer(struct memorial_data *md, int memorial_id)
@@ -298,15 +298,15 @@ static int memorial_startidletimer(struct memorial_data *md, int memorial_id)
 
 	nullpo_retr(1, md);
 
-	// Šù‚É‹N“®’†
+	// æ—¢ã«èµ·å‹•ä¸­
 	if(md->idle_timer != -1)
 		return 1;
 
-	// ƒ^ƒCƒ}[ŠJn
+	// ã‚¿ã‚¤ãƒãƒ¼é–‹å§‹
 	md->idle_limit = (unsigned int)time(NULL) + MEMORIAL_LIMIT;
 	md->idle_timer = add_timer(gettick()+MEMORIAL_LIMIT*1000, memorial_delete_timer, memorial_id, NULL);
 
-	// ƒp[ƒeƒB[‚Éî•ñ’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«æƒ…å ±é€šçŸ¥
 	if((pt = party_search(md->party_id)) && (db = memorial_searchtype_db(md->type))) {
 		struct map_session_data *sd = party_getavailablesd(pt);
 		if(sd)
@@ -317,7 +317,7 @@ static int memorial_startidletimer(struct memorial_data *md, int memorial_id)
 }
 
 /*==========================================
- * –³l§ŒÀƒ^ƒCƒ}[’â~
+ * ç„¡äººåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼åœæ­¢
  *------------------------------------------
  */
 static int memorial_stopidletimer(struct memorial_data *md)
@@ -326,16 +326,16 @@ static int memorial_stopidletimer(struct memorial_data *md)
 
 	nullpo_retr(0, md);
 
-	// Šù‚É’â~’†
+	// æ—¢ã«åœæ­¢ä¸­
 	if(md->idle_timer == -1)
 		return 1;
 
-	// ƒ^ƒCƒ}[’â~
+	// ã‚¿ã‚¤ãƒãƒ¼åœæ­¢
 	md->idle_limit = 0;
 	delete_timer(md->idle_timer, memorial_delete_timer);
 	md->idle_timer = -1;
 
-	// ƒp[ƒeƒB[‚Éî•ñ’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«æƒ…å ±é€šçŸ¥
 	if((pt = party_search(md->party_id)) != NULL) {
 		struct map_session_data *sd = party_getavailablesd(pt);
 		if(sd)
@@ -346,7 +346,7 @@ static int memorial_stopidletimer(struct memorial_data *md)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“¶¬
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ç”Ÿæˆ
  *------------------------------------------
  */
 int memorial_create(const char *memorial_name, int party_id)
@@ -359,13 +359,13 @@ int memorial_create(const char *memorial_name, int party_id)
 	if(db == NULL)
 		return MDCREATE_ERROR;
 
-	// ƒp[ƒeƒB[–¢Š‘®
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼æœªæ‰€å±
 	if((pt = party_search(party_id)) == NULL)
 		return MDCREATE_PERMISSION;
 
-	// Šù‚É¶¬Ï‚İ
+	// æ—¢ã«ç”Ÿæˆæ¸ˆã¿
 	if(pt->memorial_id) {
-		// Šù‚É—\–ñÏ‚İ
+		// æ—¢ã«äºˆç´„æ¸ˆã¿
 		if(memorial_data[pt->memorial_id-1].state == MDSTATE_IDLE)
 			return MDCREATE_RESERVED;
 		return MDCREATE_EXISTS;
@@ -375,15 +375,15 @@ int memorial_create(const char *memorial_name, int party_id)
 		if(memorial_data[i].state == MDSTATE_FREE)
 			break;
 	}
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“¶¬”‚ªMAX
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ç”Ÿæˆæ•°ãŒMAX
 	if(i >= MAX_MEMORIAL_DATA)
 		return MDCREATE_ERROR;
 
-	// —\–ñ”‚ªÅ‘å
+	// äºˆç´„æ•°ãŒæœ€å¤§
 	if(memorial_wait.count >= MAX_MEMORIAL_DATA)
 		return MDCREATE_ERROR;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“î•ñİ’è
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æƒ…å ±è¨­å®š
 	memorial_data[i].type = db->type;
 	memorial_data[i].state = MDSTATE_IDLE;
 	memorial_data[i].party_id = pt->party_id;
@@ -394,15 +394,15 @@ int memorial_create(const char *memorial_name, int party_id)
 	memorial_data[i].users = 0;
 	memset(memorial_data[i].map, 0, sizeof(memorial_data[i].map));
 
-	// ƒp[ƒeƒB[î•ñİ’è
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼æƒ…å ±è¨­å®š
 	pt->memorial_id = i + 1;
 
-	// —\–ñ’Ç‰Á
+	// äºˆç´„è¿½åŠ 
 	memorial_wait.id[memorial_wait.count++] = pt->memorial_id;
 	if(memorial_wait.timer == -1)
 		memorial_wait.timer = add_timer(gettick()+MEMORIAL_INVERVAL, memorial_subscription_timer, 0, NULL);
 
-	// ƒp[ƒeƒB[‚Éî•ñ’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«æƒ…å ±é€šçŸ¥
 	sd = party_getavailablesd(pt);
 	if(sd)
 		clif_memorial_create(sd, memorial_name, memorial_wait.count, 1);
@@ -411,7 +411,7 @@ int memorial_create(const char *memorial_name, int party_id)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“íœ
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å‰Šé™¤
  *------------------------------------------
  */
 int memorial_delete(int memorial_id)
@@ -431,17 +431,17 @@ int memorial_delete(int memorial_id)
 		return 1;
 	}
 
-	// —\–ñ’†
+	// äºˆç´„ä¸­
 	if(md->state == MDSTATE_IDLE) {
-		// —\–ñƒe[ƒuƒ‹‚©‚çíœ
+		// äºˆç´„ãƒ†ãƒ¼ãƒ–ãƒ«ã‹ã‚‰å‰Šé™¤
 		for(i = 0; i < memorial_wait.count; i++) {
 			if(memorial_wait.id[i] == memorial_id) {
-				// —\–ñ‡˜•ÏX
+				// äºˆç´„é †åºå¤‰æ›´
 				memorial_wait.count--;
 				memmove(&memorial_wait.id[i],&memorial_wait.id[i+1],sizeof(memorial_wait.id[0])*(memorial_wait.count-i));
 				memset(&memorial_wait.id[memorial_wait.count], 0, sizeof(memorial_wait.id[0]));
 
-				// —\–ñ‡˜’Ê’m
+				// äºˆç´„é †åºé€šçŸ¥
 				for(i = 0; i < memorial_wait.count; i++) {
 					if(memorial_data[memorial_wait.id[i]-1].state == MDSTATE_IDLE) {
 						if((pt = party_search(memorial_data[memorial_wait.id[i]-1].party_id)) != NULL) {
@@ -452,26 +452,26 @@ int memorial_delete(int memorial_id)
 					}
 				}
 
-				// —\–ñƒ^ƒCƒ}[ÄŠJE’â~
+				// äºˆç´„ã‚¿ã‚¤ãƒãƒ¼å†é–‹ãƒ»åœæ­¢
 				if(memorial_wait.count)
 					memorial_wait.timer = add_timer(gettick() + MEMORIAL_INVERVAL, memorial_subscription_timer, 0, NULL);
 				else
 					memorial_wait.timer = -1;
-				type = 0;	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“—\–ñ‚ªæ‚èÁ‚³‚ê‚Ü‚µ‚½B
+				type = 0;	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³äºˆç´„ãŒå–ã‚Šæ¶ˆã•ã‚Œã¾ã—ãŸã€‚
 				break;
 			}
 		}
 	}
-	// is’†
+	// é€²è¡Œä¸­
 	else {
 		if(md->keep_limit && md->keep_limit <= now)
-			type = 1;	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ª§ŒÀŠÔ’´‰ß‚É‚æ‚èÁ–Å‚µ‚Ü‚µ‚½B
+			type = 1;	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒåˆ¶é™æ™‚é–“è¶…éã«ã‚ˆã‚Šæ¶ˆæ»…ã—ã¾ã—ãŸã€‚
 		else if(md->idle_limit && md->idle_limit <= now)
-			type = 2;	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ª–³ló‘ÔˆÛŠÔ§ŒÀ‚É‚æ‚èÁ–Å‚µ‚Ü‚µ‚½B
+			type = 2;	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒç„¡äººçŠ¶æ…‹ç¶­æŒæ™‚é–“åˆ¶é™ã«ã‚ˆã‚Šæ¶ˆæ»…ã—ã¾ã—ãŸã€‚
 		else
-			type = 3;	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ªÁ–Å‚µ‚Ü‚µ‚½B
+			type = 3;	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒæ¶ˆæ»…ã—ã¾ã—ãŸã€‚
 
-		// ƒ}ƒbƒvíœ
+		// ãƒãƒƒãƒ—å‰Šé™¤
 		for (i = 0; i < MAX_MEMORIAL_SEGMAP; i++)
 		{
 			if (battle_config.md_delete_script)
@@ -480,7 +480,7 @@ int memorial_delete(int memorial_id)
 		}
 	}
 
-	// ƒ^ƒCƒ}[’â~
+	// ã‚¿ã‚¤ãƒãƒ¼åœæ­¢
 	if(md->keep_timer != -1) {
 		delete_timer(md->keep_timer, memorial_delete_timer);
 		md->keep_timer = -1;
@@ -490,7 +490,7 @@ int memorial_delete(int memorial_id)
 		md->idle_timer = -1;
 	}
 
-	// ƒp[ƒeƒB[‚Éî•ñ’Ê’m
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã«æƒ…å ±é€šçŸ¥
 	pt = party_search(md->party_id);
 	if(pt) {
 		pt->memorial_id = 0;
@@ -504,7 +504,7 @@ int memorial_delete(int memorial_id)
 		}
 	}
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“î•ñ‰Šú‰»
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æƒ…å ±åˆæœŸåŒ–
 	md->type = 0;
 	md->state = MDSTATE_FREE;
 	md->party_id = 0;
@@ -519,7 +519,7 @@ int memorial_delete(int memorial_id)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ““üê
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å…¥å ´
  *------------------------------------------
  */
 int memorial_enter(struct map_session_data *sd, const char *memorial_name)
@@ -534,13 +534,13 @@ int memorial_enter(struct map_session_data *sd, const char *memorial_name)
 	if(db == NULL)
 		return MDENTER_ERROR;
 
-	// ƒp[ƒeƒB[–¢‰Á“ü
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼æœªåŠ å…¥
 	if(sd->status.party_id == 0)
 		return MDENTER_NOPARTY;
 	if((pt = party_search(sd->status.party_id)) == NULL)
 		return MDENTER_NOPARTY;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“–¢¶¬
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æœªç”Ÿæˆ
 	if(pt->memorial_id == 0)
 		return MDENTER_NOCREATE;
 
@@ -552,23 +552,23 @@ int memorial_enter(struct map_session_data *sd, const char *memorial_name)
 	if(md->type != db->type)
 		return MDENTER_NOCREATE;
 
-	// ƒ}ƒbƒvˆÚ“®
+	// ãƒãƒƒãƒ—ç§»å‹•
 	if((m = memorial_mapname2mapid(db->enter.mapname, pt->memorial_id)) < 0)
 		return MDENTER_ERROR;
 	if(pc_setpos(sd, map[m].name, db->enter.x, db->enter.y, 0))
 		return MDENTER_ERROR;
 
-	// –³l§ŒÀƒ^ƒCƒ}[Á‹
+	// ç„¡äººåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼æ¶ˆå»
 	memorial_stopidletimer(md);
 
-	// ˆÛ§ŒÀƒ^ƒCƒ}[ŠJn
+	// ç¶­æŒåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼é–‹å§‹
 	memorial_startkeeptimer(md, pt->memorial_id);
 
 	return MDENTER_NOERROR;
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚Ìî•ñ—v‹
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®æƒ…å ±è¦æ±‚
  *------------------------------------------
  */
 int memorial_reqinfo(struct map_session_data *sd, int memorial_id)
@@ -586,7 +586,7 @@ int memorial_reqinfo(struct map_session_data *sd, int memorial_id)
 	if((db = memorial_searchtype_db(md->type)) == NULL)
 		return 1;
 
-	// —\–ñó‘Ô
+	// äºˆç´„çŠ¶æ…‹
 	if(md->state == MDSTATE_IDLE) {
 		int i;
 		for(i = 0; i < memorial_wait.count; i++) {
@@ -596,7 +596,7 @@ int memorial_reqinfo(struct map_session_data *sd, int memorial_id)
 			}
 		}
 	}
-	// isó‘Ô
+	// é€²è¡ŒçŠ¶æ…‹
 	else if(md->state == MDSTATE_BUSY) {
 		clif_memorial_status(sd, db->name, md->keep_limit, md->idle_limit, 0);
 	}
@@ -605,7 +605,7 @@ int memorial_reqinfo(struct map_session_data *sd, int memorial_id)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚ÌŠJİó‹µ—v‹
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®é–‹è¨­çŠ¶æ³è¦æ±‚
  *------------------------------------------
  */
 int memorial_openstate(struct map_session_data *sd, const char *memorial_name)
@@ -619,13 +619,13 @@ int memorial_openstate(struct map_session_data *sd, const char *memorial_name)
 	if(db == NULL)
 		return -1;
 
-	// ƒp[ƒeƒB[–¢‰Á“ü
+	// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼æœªåŠ å…¥
 	if(sd->status.party_id == 0)
 		return -1;
 	if((pt = party_search(sd->status.party_id)) == NULL)
 		return -1;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“–¢¶¬
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³æœªç”Ÿæˆ
 	if(pt->memorial_id == 0)
 		return 0;
 
@@ -641,7 +641,7 @@ int memorial_openstate(struct map_session_data *sd, const char *memorial_name)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚Ìƒ†[ƒU[’Ç‰Á
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼è¿½åŠ 
  *------------------------------------------
  */
 int memorial_addusers(int memorial_id)
@@ -655,20 +655,20 @@ int memorial_addusers(int memorial_id)
 	if(md->state != MDSTATE_BUSY)
 		return 1;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚Ìƒ†[ƒU[”’Ç‰Á
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°è¿½åŠ 
 	md->users++;
 
-	// –³l§ŒÀƒ^ƒCƒ}[‚ªì“®‚µ‚Ä‚¢‚½‚ç’â~
+	// ç„¡äººåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼ãŒä½œå‹•ã—ã¦ã„ãŸã‚‰åœæ­¢
 	memorial_stopidletimer(md);
 
-	// ˆÛ§ŒÀƒ^ƒCƒ}[‚ª’â~‚µ‚Ä‚¢‚½‚çì“®
+	// ç¶­æŒåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼ãŒåœæ­¢ã—ã¦ã„ãŸã‚‰ä½œå‹•
 	memorial_startkeeptimer(md, memorial_id);
 
 	return 0;
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚Ìƒ†[ƒU[íœ
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼å‰Šé™¤
  *------------------------------------------
  */
 int memorial_delusers(int memorial_id)
@@ -682,10 +682,10 @@ int memorial_delusers(int memorial_id)
 	if(md->state != MDSTATE_BUSY)
 		return 1;
 
-	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“‚Ìƒ†[ƒU[”íœ
+	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°å‰Šé™¤
 	md->users--;
 
-	// –³ló‘Ô‚Å–³l§ŒÀƒ^ƒCƒ}[‚ª’â~‚µ‚Ä‚¢‚½‚çì“®
+	// ç„¡äººçŠ¶æ…‹ã§ç„¡äººåˆ¶é™ã‚¿ã‚¤ãƒãƒ¼ãŒåœæ­¢ã—ã¦ã„ãŸã‚‰ä½œå‹•
 	if(md->users <= 0)
 		memorial_startidletimer(md, memorial_id);
 
@@ -693,7 +693,7 @@ int memorial_delusers(int memorial_id)
 }
 
 /*==========================================
- * ƒ}ƒbƒv–¼‚Æƒƒ‚ƒŠƒAƒ‹ID‚©‚çƒ}ƒbƒv”Ô†æ“¾
+ * ãƒãƒƒãƒ—åã¨ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«IDã‹ã‚‰ãƒãƒƒãƒ—ç•ªå·å–å¾—
  *------------------------------------------
  */
 int memorial_mapname2mapid(const char *name, int memorial_id)
@@ -718,10 +718,10 @@ int memorial_mapname2mapid(const char *name, int memorial_id)
 }
 
 //
-// ‰Šú‰»•¨
+// åˆæœŸåŒ–ç‰©
 //
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“Šî–{ƒf[ƒ^“Ç‚İ‚İ
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³åŸºæœ¬ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static int read_memorial_db(void)
@@ -779,7 +779,7 @@ static int read_memorial_db(void)
 }
 
 /*==========================================
- * ‰Šú‰»ˆ—
+ * åˆæœŸåŒ–å‡¦ç†
  *------------------------------------------
  */
 int do_init_memorial(void)
@@ -796,7 +796,7 @@ int do_init_memorial(void)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 int do_final_memorial(void)

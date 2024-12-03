@@ -52,7 +52,7 @@ struct mapreg_data {
 #endif
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 int mapreg_txt_config_read_sub(const char *w1, const char *w2)
@@ -80,7 +80,7 @@ int mapreg_txt_config_read_sub(const char *w1, const char *w2)
 }
 
 /*==========================================
- * ƒ}ƒbƒv•Ï”‚Ìæ“¾
+ * ãƒãƒƒãƒ—å¤‰æ•°ã®å–å¾—
  *------------------------------------------
  */
 int mapreg_txt_getreg(int num)
@@ -89,7 +89,7 @@ int mapreg_txt_getreg(int num)
 }
 
 /*==========================================
- * ƒ}ƒbƒv•Ï”‚Ì•ÏX
+ * ãƒãƒƒãƒ—å¤‰æ•°ã®å¤‰æ›´
  *------------------------------------------
  */
 bool mapreg_txt_setreg(int num, int val, int eternal)
@@ -124,7 +124,7 @@ bool mapreg_txt_setreg(int num, int val, int eternal)
 }
 
 /*==========================================
- * •¶š—ñŒ^ƒ}ƒbƒv•Ï”‚Ìæ“¾
+ * æ–‡å­—åˆ—å‹ãƒãƒƒãƒ—å¤‰æ•°ã®å–å¾—
  *------------------------------------------
  */
 char* mapreg_txt_getregstr(int num)
@@ -133,7 +133,7 @@ char* mapreg_txt_getregstr(int num)
 }
 
 /*==========================================
- * •¶š—ñŒ^ƒ}ƒbƒv•Ï”‚Ì•ÏX
+ * æ–‡å­—åˆ—å‹ãƒãƒƒãƒ—å¤‰æ•°ã®å¤‰æ›´
  *------------------------------------------
  */
 bool mapreg_txt_setregstr(int num, const char *str, int eternal)
@@ -175,7 +175,7 @@ bool mapreg_txt_setregstr(int num, const char *str, int eternal)
 
 #ifdef TXT_JOURNAL
 // ==========================================
-// ‰i‘±“Iƒ}ƒbƒv•Ï”‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 int mapreg_journal_rollforward( int key, void* buf, int flag )
 {
@@ -189,14 +189,14 @@ int mapreg_journal_rollforward( int key, void* buf, int flag )
 	else
 		value = INT2PTR( mapreg_getreg( key ) );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && ((key >> 24) != data->idx || strcmp(name, data->name) != 0) )
 	{
 		printf("inter: mapreg_journal: key != variable name or index !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( value )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -213,7 +213,7 @@ int mapreg_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		if( postfix == '$' )
@@ -228,7 +228,7 @@ int mapreg_journal_rollforward( int key, void* buf, int flag )
 }
 
 // ==========================================
-// ‰i‘±“Iƒ}ƒbƒv•Ï”‚ÌƒWƒƒ[ƒiƒ‹‚Ì•ÏŠ·ŠÖ”
+// æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®å¤‰æ›é–¢æ•°
 // ------------------------------------------
 static void mapreg_journal_convert( struct journal_header *jhd, void *buf )
 {
@@ -245,7 +245,7 @@ static int mapreg_txt_sync(void);
 #endif
 
 /*==========================================
- * ‰i‘±“Iƒ}ƒbƒv•Ï”‚Ì“Ç‚İ‚İ
+ * æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool mapreg_txt_load(void)
@@ -294,19 +294,19 @@ static bool mapreg_txt_load(void)
 #ifdef TXT_JOURNAL
 	if( mapreg_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load_with_convert( &mapreg_journal, sizeof(struct mapreg_data), mapreg_journal_file, mapreg_journal_convert ) )
 		{
 			int c = journal_rollforward( &mapreg_journal, mapreg_journal_rollforward );
 
 			printf("map: mapreg_journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			mapreg_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &mapreg_journal );
 			journal_create( &mapreg_journal, sizeof(struct mapreg_data), mapreg_journal_cache, mapreg_journal_file );
 		}
@@ -317,7 +317,7 @@ static bool mapreg_txt_load(void)
 }
 
 /*==========================================
- * ‰i‘±“Iƒ}ƒbƒv•Ï”‚Ì‘‚«‚İ
+ * æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®æ›¸ãè¾¼ã¿
  *------------------------------------------
  */
 static int mapreg_txt_sync_intsub(void *key, void *data, va_list ap)
@@ -369,7 +369,7 @@ static int mapreg_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( mapreg_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &mapreg_journal );
 		journal_create( &mapreg_journal, sizeof(struct mapreg_data), mapreg_journal_cache, mapreg_journal_file );
 	}
@@ -379,7 +379,7 @@ static int mapreg_txt_sync(void)
 }
 
 /*==========================================
- * ‰i‘±“Iƒ}ƒbƒv•Ï”‚Ì©“®ƒZ[ƒu
+ * æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®è‡ªå‹•ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 int mapreg_txt_autosave(void)
@@ -391,7 +391,7 @@ int mapreg_txt_autosave(void)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int mapreg_txt_strdb_final(void *key, void *data, va_list ap)
@@ -420,7 +420,7 @@ int mapreg_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool mapreg_txt_init(void)

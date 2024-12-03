@@ -24,7 +24,7 @@
 
 #include "utils.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int mapreg_txt_getreg(int num);
 bool mapreg_txt_setreg(int num,int val,int eternal);
 char* mapreg_txt_getregstr(int num);
@@ -34,7 +34,7 @@ bool mapreg_txt_init(void);
 int mapreg_txt_final(void);
 int mapreg_txt_config_read_sub(const char *w1,const char *w2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define mapreg_getreg          mapreg_txt_getreg
 #define mapreg_setreg          mapreg_txt_setreg
 #define mapreg_getregstr       mapreg_txt_getregstr

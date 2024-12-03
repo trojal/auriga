@@ -52,7 +52,6 @@ static int garbage_collect_interval = 1000*30;		// ガベージコレクトの�
 int lua_respawn_id;
 int gc_threshold = 1000;		// ガベージコレクトの閾値
 static int lua_lock_script = 0;	/* リロード用 */
-lua_State *L = NULL;
 
 extern const struct Lua_function {
 	const char *name;

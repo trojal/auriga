@@ -43,7 +43,7 @@
 #include "unit.h"
 
 /*==========================================
- * ƒI[ƒgƒXƒyƒ‹“o˜^
+ * ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ç™»éŒ²
  *------------------------------------------
  */
 static int bonus_add_autospell(struct map_session_data* sd,int skillid,int skillid2,int skilllv,int rate, unsigned int flag)
@@ -63,11 +63,11 @@ static int bonus_add_autospell(struct map_session_data* sd,int skillid,int skill
 		}
 	}
 
-	// ˆê”t
+	// ä¸€æ¯
 	if(sd->autospell.count == MAX_BONUS_AUTOSPELL)
 		return 0;
 
-	// Œã‚ë‚É’Ç‰Á
+	// å¾Œã‚ã«è¿½åŠ 
 	sd->autospell.skill[sd->autospell.count]   = skillid;
 	sd->autospell.id[sd->autospell.count]      = skillid2;
 	sd->autospell.lv[sd->autospell.count]      = skilllv;
@@ -80,8 +80,8 @@ static int bonus_add_autospell(struct map_session_data* sd,int skillid,int skill
 }
 
 /*==========================================
- * ƒI[ƒgƒXƒyƒ‹Às
- *  mode : UŒ‚1 ”½Œ‚2
+ * ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«å®Ÿè¡Œ
+ *  mode : æ”»æ’ƒæ™‚1 åæ’ƒ2
  *------------------------------------------
  */
 static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl,int skillid,int skilllv,int rate,unsigned int asflag,unsigned int tick,int flag)
@@ -92,20 +92,20 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 	nullpo_retr(0, sd);
 	nullpo_retr(0, bl);
 
-	// ƒI[ƒgƒXƒyƒ‹‚ªg‚¦‚È‚¢ó‘ÔˆÙí’†
-	// ƒƒL“à‚ÅAƒƒL“àƒAƒCƒeƒ€ ƒI[ƒgƒXƒyƒ‹‚ª‹–‰Â‚³‚ê‚Ä‚¢‚È‚¢
+	// ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ãŒä½¿ãˆãªã„çŠ¶æ…‹ç•°å¸¸ä¸­
+	// ãƒ­ã‚­å†…ã§ã€ãƒ­ã‚­å†…ã‚¢ã‚¤ãƒ†ãƒ  ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ãŒè¨±å¯ã•ã‚Œã¦ã„ãªã„
 	if(!battle_config.roki_item_autospell && sd->sc.data[SC_ROKISWEIL].timer != -1)
 		return 0;
 
-	// ‚¢‚Â‚ÌŠÔ‚É‚©©•ª‚à‚µ‚­‚ÍUŒ‚‘ÎÛ‚ª€‚ñ‚Å‚¢‚½
+	// ã„ã¤ã®é–“ã«ã‹è‡ªåˆ†ã‚‚ã—ãã¯æ”»æ’ƒå¯¾è±¡ãŒæ­»ã‚“ã§ã„ãŸ
 	if(unit_isdead(&sd->bl) || unit_isdead(bl))
 		return 0;
 
-	// ”­“®”»’è
+	// ç™ºå‹•åˆ¤å®š
 	if(skillid <= 0 || skilllv <= 0)
 		return 0;
 
-	// ‰“‹——£•¨—”¼Œ¸
+	// é è·é›¢ç‰©ç†åŠæ¸›
 	if(asflag&EAS_LONG) {
 		if(atn_rand()%10000 > (rate/2))
 			return 0;
@@ -114,19 +114,19 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 			return 0;
 	}
 
-	// ƒXƒyƒ‹‘ÎÛ
-	// w’è‚ ‚é‚ª‚¢‚ç‚È‚¢‚È
+	// ã‚¹ãƒšãƒ«å¯¾è±¡
+	// æŒ‡å®šã‚ã‚‹ãŒã„ã‚‰ãªã„ãª
 	//if(asflag&EAS_TARGET)
-	//	target = bl;	// ‘Šè
+	//	target = bl;	// ç›¸æ‰‹
 	//else
 	if(asflag&EAS_SELF)
-		target = &sd->bl;	// ©•ª
+		target = &sd->bl;	// è‡ªåˆ†
 	else if(asflag&EAS_TARGET_RAND && atn_rand()%100 < 50)
-		target = &sd->bl;	// ©•ª
+		target = &sd->bl;	// è‡ªåˆ†
 	else
-		target = bl;		// ‘Šè
+		target = bl;		// ç›¸æ‰‹
 
-	// ƒŒƒxƒ‹’²®
+	// ãƒ¬ãƒ™ãƒ«èª¿æ•´
 	if(asflag & (EAS_USEMAX | EAS_USEBETTER)) {
 		int lv;
 		if(battle_config.allow_cloneskill_at_autospell)
@@ -135,25 +135,25 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 			lv = pc_checkskill2(sd,skillid);
 
 		if(asflag&EAS_USEMAX && lv && lv == pc_get_skilltree_max(&sd->s_class,skillid)) {
-			// Max‚ª‚ ‚éê‡‚Ì‚İ
+			// MaxãŒã‚ã‚‹å ´åˆã®ã¿
 			skilllv = lv;
 		} else if(asflag&EAS_USEBETTER && lv > skilllv) {
-			// Œ»óˆÈã‚ÌƒŒƒxƒ‹‚ª‚ ‚éê‡‚Ì‚İ
+			// ç¾çŠ¶ä»¥ä¸Šã®ãƒ¬ãƒ™ãƒ«ãŒã‚ã‚‹å ´åˆã®ã¿
 			skilllv = lv;
 		}
 	}
 
-	// ƒŒƒxƒ‹‚Ì•Ï“®
-	if(asflag&EAS_FLUCT) {	// ƒŒƒxƒ‹•Ï“® •Ší‚`‚r—p
+	// ãƒ¬ãƒ™ãƒ«ã®å¤‰å‹•
+	if(asflag&EAS_FLUCT) {	// ãƒ¬ãƒ™ãƒ«å¤‰å‹• æ­¦å™¨ï¼¡ï¼³ç”¨
 		int j = atn_rand()%100;
 		if (j >= 50) skilllv -= 2;
 		else if(j >= 15) skilllv--;
 		if(skilllv < 1) skilllv = 1;
-	} else if(asflag&EAS_RANDOM && skilllv > 0) {	// 1`w’è‚Ü‚Å‚Ìƒ‰ƒ“ƒ_ƒ€
+	} else if(asflag&EAS_RANDOM && skilllv > 0) {	// 1ï½æŒ‡å®šã¾ã§ã®ãƒ©ãƒ³ãƒ€ãƒ 
 		skilllv = atn_rand()%skilllv+1;
 	}
 
-	// SPÁ”ï
+	// SPæ¶ˆè²»
 	sp = skill_get_sp(skillid,skilllv);
 	if(asflag&EAS_NOSP)
 		sp = 0;
@@ -164,11 +164,11 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 	else if(asflag&EAS_SPCOST3)
 		sp = sp*3/2;
 
-	// SP‚ª‘«‚è‚È‚¢I
+	// SPãŒè¶³ã‚Šãªã„ï¼
 	if(sd->status.sp < sp)
 		return 0;
 
-	// ƒRƒ“ƒfƒBƒVƒ‡ƒ“ƒ`ƒFƒbƒN
+	// ã‚³ãƒ³ãƒ‡ã‚£ã‚·ãƒ§ãƒ³ãƒã‚§ãƒƒã‚¯
 	if(asflag&EAS_CONDITION) {
 		if(!skill_check_condition(&sd->bl,1))
 			return 0;
@@ -179,18 +179,18 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 		sd->ud.canact_tick = tick + delay;
 	}
 
-	// Às
-	if(skillid == AL_TELEPORT && skilllv == 1) {	// Lv1ƒeƒŒƒ|‚Íƒ_ƒCƒAƒƒO•\¦‚È‚µ‚Å‘¦À‚É”ò‚Î‚·
+	// å®Ÿè¡Œ
+	if(skillid == AL_TELEPORT && skilllv == 1) {	// Lv1ãƒ†ãƒ¬ãƒã¯ãƒ€ã‚¤ã‚¢ãƒ­ã‚°è¡¨ç¤ºãªã—ã§å³åº§ã«é£›ã°ã™
 		f = pc_randomwarp(sd,3);
-	} else if(skill_get_inf(skillid) & INF_GROUND) {	// êŠ
+	} else if(skill_get_inf(skillid) & INF_GROUND) {	// å ´æ‰€
 		f = skill_castend_pos2(&sd->bl,target->x,target->y,skillid,skilllv,tick,flag);
 	} else {
 		switch( skill_get_nk(skillid)&3 ) {
-			case 0:	// ’Êí
-			case 2:	// ‚«”ò‚Î‚µ
+			case 0:	// é€šå¸¸
+			case 2:	// å¹ãé£›ã°ã—
 				f = skill_castend_damage_id(&sd->bl,target,skillid,skilllv,tick,flag);
 				break;
-			case 1:	// x‰‡Œn
+			case 1:	// æ”¯æ´ç³»
 				if( (skillid == AL_HEAL || skillid == AB_HIGHNESSHEAL || (skillid == ALL_RESURRECTION && target->type != BL_PC)) &&
 				    battle_check_undead(status_get_race(target),status_get_element(target)) )
 					f = skill_castend_damage_id(&sd->bl,target,skillid,skilllv,tick,flag);
@@ -202,15 +202,15 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 	if(!f)
 		pc_heal(sd,0,-sp);
 
-	/* ƒXƒLƒ‹g—p‚Å”­“®‚·‚éƒI[ƒgƒXƒyƒ‹,ƒAƒNƒeƒBƒuƒAƒCƒeƒ€ */
+	/* ã‚¹ã‚­ãƒ«ä½¿ç”¨ã§ç™ºå‹•ã™ã‚‹ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«,ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ  */
 	bonus_autospellskill_start(&sd->bl,target,skillid,tick,0);
 	bonus_activeitemskill_start(sd,skillid,tick);
 
-	return 1;	// ¬Œ÷
+	return 1;	// æˆåŠŸ
 }
 
 /*==========================================
- * ƒI[ƒgƒXƒyƒ‹ŠJn
+ * ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«é–‹å§‹
  *------------------------------------------
  */
 int bonus_autospell_start(struct block_list *src,struct block_list *bl,unsigned int mode,unsigned int tick,int flag)
@@ -237,7 +237,7 @@ int bonus_autospell_start(struct block_list *src,struct block_list *bl,unsigned 
 
 	for(i = 0; i < sd->autospell.count; i++)
 	{
-		// ƒXƒLƒ‹g—p‚É”­“®‚·‚éƒI[ƒgƒXƒyƒ‹‚Í’e‚­
+		// ã‚¹ã‚­ãƒ«ä½¿ç”¨æ™‚ã«ç™ºå‹•ã™ã‚‹ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ã¯å¼¾ã
 		if(sd->autospell.skill[i] != 0)
 			continue;
 
@@ -248,7 +248,7 @@ int bonus_autospell_start(struct block_list *src,struct block_list *bl,unsigned 
 				sd->autospell.flag[i] |= check[j].supply;
 
 			if((mode & check[j].mask & sd->autospell.flag[i]) != (mode & check[j].mask)) {
-				// mode‚ª‚Á‚Ä‚¢‚éƒtƒ‰ƒO‚ğautospell‚ª‚Á‚Ä‚¢‚È‚¢‚È‚ç’e‚­
+				// modeãŒæŒã£ã¦ã„ã‚‹ãƒ•ãƒ©ã‚°ã‚’autospellãŒæŒã£ã¦ã„ãªã„ãªã‚‰å¼¾ã
 				break;
 			}
 		}
@@ -259,7 +259,7 @@ int bonus_autospell_start(struct block_list *src,struct block_list *bl,unsigned 
 			sd,bl,sd->autospell.id[i],sd->autospell.lv[i],
 			sd->autospell.rate[i],sd->autospell.flag[i],tick,flag) )
 		{
-			// ƒI[ƒgƒXƒyƒ‹‚Í‚Ç‚ê‚©ˆê“x‚µ‚©”­“®‚µ‚È‚¢
+			// ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ã¯ã©ã‚Œã‹ä¸€åº¦ã—ã‹ç™ºå‹•ã—ãªã„
 			if(battle_config.once_autospell)
 				break;
 		}
@@ -270,7 +270,7 @@ int bonus_autospell_start(struct block_list *src,struct block_list *bl,unsigned 
 }
 
 /*==========================================
- * ƒXƒLƒ‹g—p‚Å”­“®‚·‚éƒI[ƒgƒXƒyƒ‹ŠJn
+ * ã‚¹ã‚­ãƒ«ä½¿ç”¨ã§ç™ºå‹•ã™ã‚‹ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«é–‹å§‹
  *------------------------------------------
  */
 int bonus_autospellskill_start(struct block_list *src,struct block_list *bl,int skillid,unsigned int tick,int flag)
@@ -288,7 +288,7 @@ int bonus_autospellskill_start(struct block_list *src,struct block_list *bl,int 
 
 	for(i = 0; i < sd->autospell.count; i++)
 	{
-		// ƒXƒLƒ‹‚Å”­“®‚·‚éƒI[ƒgƒXƒyƒ‹‚Ìƒ`ƒFƒbƒN
+		// ã‚¹ã‚­ãƒ«ã§ç™ºå‹•ã™ã‚‹ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ã®ãƒã‚§ãƒƒã‚¯
 		if(sd->autospell.skill[i] != skillid)
 			continue;
 
@@ -296,7 +296,7 @@ int bonus_autospellskill_start(struct block_list *src,struct block_list *bl,int 
 			sd,bl,sd->autospell.id[i],sd->autospell.lv[i],
 			sd->autospell.rate[i],sd->autospell.flag[i],tick,flag) )
 		{
-			// ƒI[ƒgƒXƒyƒ‹‚Í‚Ç‚ê‚©ˆê“x‚µ‚©”­“®‚µ‚È‚¢
+			// ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ã¯ã©ã‚Œã‹ä¸€åº¦ã—ã‹ç™ºå‹•ã—ãªã„
 			if(battle_config.once_autospell)
 				break;
 		}
@@ -306,7 +306,7 @@ int bonus_autospellskill_start(struct block_list *src,struct block_list *bl,int 
 }
 
 /*==========================================
- * ƒAƒNƒeƒBƒuƒAƒCƒeƒ€“o˜^
+ * ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ ç™»éŒ²
  *------------------------------------------
  */
 static int bonus_add_activeitem(struct map_session_data* sd,int skillid,int id,short rate,unsigned int tick,unsigned int flag)
@@ -315,23 +315,23 @@ static int bonus_add_activeitem(struct map_session_data* sd,int skillid,int id,s
 
 	nullpo_retr(0, sd);
 
-	// ˆê”t
+	// ä¸€æ¯
 	if(sd->activeitem.count >= MAX_ACTIVEITEM)
 		return 0;
 
-	// “¯‚¶ID‚ª“o˜^‚³‚ê‚Ä‚¢‚é‚©
+	// åŒã˜IDãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹
 	for(i = 0; i < sd->activeitem.count; i++) {
 		if(sd->activeitem.id[i] == id && sd->activeitem.skill[i] == skillid) {
 			if(!battle_config.allow_same_activeitem)
 				return 0;
 
-			// “¯‚¶ID‚ÍŠm—¦‚ğ‰ÁZ‚·‚é
+			// åŒã˜IDã¯ç¢ºç‡ã‚’åŠ ç®—ã™ã‚‹
 			sd->activeitem.rate[i] += rate;
 			return 1;
 		}
 	}
 
-	// Œã‚ë‚É’Ç‰Á
+	// å¾Œã‚ã«è¿½åŠ 
 	sd->activeitem.skill[sd->activeitem.count] = skillid;
 	sd->activeitem.id[sd->activeitem.count]    = id;
 	sd->activeitem.rate[sd->activeitem.count]  = rate;
@@ -343,7 +343,7 @@ static int bonus_add_activeitem(struct map_session_data* sd,int skillid,int id,s
 }
 
 /*==========================================
- * ƒAƒNƒeƒBƒuƒAƒCƒeƒ€ƒ^ƒCƒ}[
+ * ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ ã‚¿ã‚¤ãƒãƒ¼
  *------------------------------------------
  */
 static int bonus_activeitem_timer(int tid,unsigned int tick,int id,void *data)
@@ -357,7 +357,7 @@ static int bonus_activeitem_timer(int tid,unsigned int tick,int id,void *data)
 	for(i = 0; i < MAX_ACTIVEITEM; i++) {
 		if(sd->activeitem_timer[i] == tid) {
 			if(sd->sc.data[SC_ACTIVE_MONSTER_TRANSFORM].timer != -1 &&
-			   sd->sc.data[SC_ACTIVE_MONSTER_TRANSFORM].val2 == sd->activeitem_id2[i])	// ƒAƒNƒeƒBƒuƒ‚ƒ“ƒXƒ^[•Ïg
+			   sd->sc.data[SC_ACTIVE_MONSTER_TRANSFORM].val2 == sd->activeitem_id2[i])	// ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å¤‰èº«
 				status_change_end(&sd->bl, SC_ACTIVE_MONSTER_TRANSFORM, -1);
 			sd->activeitem_timer[i] = -1;
 			sd->activeitem_id2[i] = 0;
@@ -370,7 +370,7 @@ static int bonus_activeitem_timer(int tid,unsigned int tick,int id,void *data)
 }
 
 /*==========================================
- * ƒAƒNƒeƒBƒuƒAƒCƒeƒ€ŠJn
+ * ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ é–‹å§‹
  *------------------------------------------
  */
 int bonus_activeitem_start(struct map_session_data* sd,unsigned int mode,unsigned int tick)
@@ -393,7 +393,7 @@ int bonus_activeitem_start(struct map_session_data* sd,unsigned int mode,unsigne
 
 	for(i = 0; i < sd->activeitem.count; i++)
 	{
-		// ƒXƒLƒ‹g—p‚É”­“®‚·‚éƒAƒNƒeƒBƒuƒAƒCƒeƒ€‚Í’e‚­
+		// ã‚¹ã‚­ãƒ«ä½¿ç”¨æ™‚ã«ç™ºå‹•ã™ã‚‹ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ ã¯å¼¾ã
 		if(sd->activeitem.skill[i] != 0)
 			continue;
 
@@ -404,7 +404,7 @@ int bonus_activeitem_start(struct map_session_data* sd,unsigned int mode,unsigne
 				sd->activeitem.flag[i] |= check[j].supply;
 
 			if((mode & check[j].mask & sd->activeitem.flag[i]) != (mode & check[j].mask)) {
-				// mode‚ª‚Á‚Ä‚¢‚éƒtƒ‰ƒO‚ğactiveitem‚ª‚Á‚Ä‚¢‚È‚¢‚È‚ç’e‚­
+				// modeãŒæŒã£ã¦ã„ã‚‹ãƒ•ãƒ©ã‚°ã‚’activeitemãŒæŒã£ã¦ã„ãªã„ãªã‚‰å¼¾ã
 				break;
 			}
 		}
@@ -415,10 +415,10 @@ int bonus_activeitem_start(struct map_session_data* sd,unsigned int mode,unsigne
 			continue;
 
 		if(sd->activeitem_timer[i] != -1) {
-			// Šù‚É”­“®’†‚Ìê‡‚Íƒ^ƒCƒ}[‚ğ‰Šú‰»
+			// æ—¢ã«ç™ºå‹•ä¸­ã®å ´åˆã¯ã‚¿ã‚¤ãƒãƒ¼ã‚’åˆæœŸåŒ–
 			delete_timer(sd->activeitem_timer[i], bonus_activeitem_timer);
 		} else {
-			// ”­“®
+			// ç™ºå‹•
 			sd->activeitem_id2[i] = sd->activeitem.id[i];
 			flag = 1;
 			run_script(itemdb_activatescript(sd->activeitem_id2[i]),0,sd->bl.id,0);
@@ -433,7 +433,7 @@ int bonus_activeitem_start(struct map_session_data* sd,unsigned int mode,unsigne
 }
 
 /*==========================================
- * ƒXƒLƒ‹g—p‚Å”­“®‚·‚éƒAƒNƒeƒBƒuƒAƒCƒeƒ€ŠJn
+ * ã‚¹ã‚­ãƒ«ä½¿ç”¨ã§ç™ºå‹•ã™ã‚‹ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¢ã‚¤ãƒ†ãƒ é–‹å§‹
  *------------------------------------------
  */
 int bonus_activeitemskill_start(struct map_session_data* sd,int skillid,unsigned int tick)
@@ -448,7 +448,7 @@ int bonus_activeitemskill_start(struct map_session_data* sd,int skillid,unsigned
 
 	for(i = 0; i < sd->activeitem.count; i++)
 	{
-		// ƒXƒLƒ‹‚Å”­“®‚·‚éƒI[ƒgƒXƒyƒ‹‚Ìƒ`ƒFƒbƒN
+		// ã‚¹ã‚­ãƒ«ã§ç™ºå‹•ã™ã‚‹ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«ã®ãƒã‚§ãƒƒã‚¯
 		if(sd->activeitem.skill[i] != skillid)
 			continue;
 
@@ -456,10 +456,10 @@ int bonus_activeitemskill_start(struct map_session_data* sd,int skillid,unsigned
 			continue;
 
 		if(sd->activeitem_timer[i] != -1) {
-			// Šù‚É”­“®’†‚Ìê‡‚Íƒ^ƒCƒ}[‚ğ‰Šú‰»
+			// æ—¢ã«ç™ºå‹•ä¸­ã®å ´åˆã¯ã‚¿ã‚¤ãƒãƒ¼ã‚’åˆæœŸåŒ–
 			delete_timer(sd->activeitem_timer[i], bonus_activeitem_timer);
 		} else {
-			// ”­“®
+			// ç™ºå‹•
 			sd->activeitem_id2[i] = sd->activeitem.id[i];
 			flag = 1;
 		}
@@ -473,7 +473,7 @@ int bonus_activeitemskill_start(struct map_session_data* sd,int skillid,unsigned
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í“™‚Ìƒ{[ƒiƒXİ’è‚P
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›ç­‰ã®ãƒœãƒ¼ãƒŠã‚¹è¨­å®šï¼‘
  *------------------------------------------
  */
 int bonus_param1(struct map_session_data *sd,int type,int val)
@@ -1021,7 +1021,7 @@ int bonus_param1(struct map_session_data *sd,int type,int val)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í“™‚Ìƒ{[ƒiƒXİ’è‚Q
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›ç­‰ã®ãƒœãƒ¼ãƒŠã‚¹è¨­å®šï¼’
  *------------------------------------------
  */
 int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
@@ -1730,7 +1730,7 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í“™‚Ìƒ{[ƒiƒXİ’è‚R
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›ç­‰ã®ãƒœãƒ¼ãƒŠã‚¹è¨­å®šï¼“
  *------------------------------------------
  */
 int bonus_param3(struct map_session_data *sd,int type,int type2,int type3,int val)
@@ -1804,7 +1804,7 @@ int bonus_param3(struct map_session_data *sd,int type,int type2,int type3,int va
 		if(sd->state.lr_flag != 2)
 			bonus_add_autospell(sd,0,type2,type3,val,EAS_SELF|EAS_SHORT|EAS_LONG|EAS_ATTACK|EAS_USEMAX|EAS_NOSP);
 		break;
-	case SP_REVAUTOSPELL:	// ”½Œ‚—pƒI[ƒgƒXƒyƒ‹
+	case SP_REVAUTOSPELL:	// åæ’ƒç”¨ã‚ªãƒ¼ãƒˆã‚¹ãƒšãƒ«
 		if(sd->state.lr_flag != 2)
 			bonus_add_autospell(sd,0,type2,type3,val,EAS_TARGET|EAS_SHORT|EAS_LONG|EAS_REVENGE|EAS_NOSP);
 		break;
@@ -1874,7 +1874,7 @@ int bonus_param3(struct map_session_data *sd,int type,int type2,int type3,int va
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í“™‚Ìƒ{[ƒiƒXİ’è‚S
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›ç­‰ã®ãƒœãƒ¼ãƒŠã‚¹è¨­å®šï¼”
  *------------------------------------------
  */
 int bonus_param4(struct map_session_data *sd,int type,int type2,int type3,int type4,unsigned int val)
@@ -1920,7 +1920,7 @@ int bonus_param4(struct map_session_data *sd,int type,int type2,int type3,int ty
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒ_ƒ€ƒIƒvƒVƒ‡ƒ“‚É‚æ‚é”\—Í“™‚Ìƒ{[ƒiƒXİ’è
+ * ãƒ©ãƒ³ãƒ€ãƒ ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã«ã‚ˆã‚‹èƒ½åŠ›ç­‰ã®ãƒœãƒ¼ãƒŠã‚¹è¨­å®š
  *------------------------------------------
  */
 int bonus_randopt(struct map_session_data *sd,int id,int val)
@@ -2402,7 +2402,7 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 int do_final_bonus(void)
@@ -2411,7 +2411,7 @@ int do_final_bonus(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 int do_init_bonus(void)

@@ -164,17 +164,17 @@ enum {
 };
 
 enum {
-	MSS_DISABLE     = 0,	// –³Œø
-	MSS_ANY         = 1,	// í”­“®
-	MSS_IDLE        = 2,	// ‘Ò‹@
-	MSS_WALK        = 3,	// ˆÚ“®
-	MSS_ATTACK      = 4,	// UŒ‚
-	MSS_DEAD        = 5,	// €–S
-	MSS_LOOT        = 6,	// ƒ‹[ƒg
-	MSS_CHASE       = 7,	// “ËŒ‚
-	MSS_COMMANDONLY = 8,	// –½—ßê—p
-	MSS_ANGRY       = 9,	// UŒ‚(”ñ‹¶‰»)
-	MSS_FOLLOW      = 10,	// “ËŒ‚(”ñ‹¶‰»)
+	MSS_DISABLE     = 0,	// ç„¡åŠ¹
+	MSS_ANY         = 1,	// å¸¸æ™‚ç™ºå‹•
+	MSS_IDLE        = 2,	// å¾…æ©Ÿ
+	MSS_WALK        = 3,	// ç§»å‹•
+	MSS_ATTACK      = 4,	// æ”»æ’ƒ
+	MSS_DEAD        = 5,	// æ­»äº¡
+	MSS_LOOT        = 6,	// ãƒ«ãƒ¼ãƒˆ
+	MSS_CHASE       = 7,	// çªæ’ƒ
+	MSS_COMMANDONLY = 8,	// å‘½ä»¤å°‚ç”¨
+	MSS_ANGRY       = 9,	// æ”»æ’ƒ(éç‹‚åŒ–)
+	MSS_FOLLOW      = 10,	// çªæ’ƒ(éç‹‚åŒ–)
 };
 
 struct mobdb_data* mobdb_exists(int mob_id);
@@ -193,7 +193,7 @@ int mob_spawn(int);
 int mob_damage(struct block_list *,struct mob_data*,int,int);
 int mob_heal(struct mob_data*,int);
 
-// Œ©‚©‚¯æ“¾
+// è¦‹ã‹ã‘å–å¾—
 #define mob_get_viewclass(a)     mobdb_search(a)->view_class
 #define mob_get_sex(a)           mobdb_search(a)->sex
 #define mob_get_hair(a)          mobdb_search(a)->hair

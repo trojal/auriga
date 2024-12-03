@@ -22,13 +22,13 @@
 //#define DEBUG_FUNCIN
 //#define DEBUG_DISP
 
-// ƒRƒ“ƒo[ƒg‚³‚ê‚½’†ŠÔŒ¾Œê‚ğ•\¦
+// ã‚³ãƒ³ãƒãƒ¼ãƒˆã•ã‚ŒãŸä¸­é–“è¨€èªã‚’è¡¨ç¤º
 //#define DEBUG_DISASM
 
-// Às‰ß’ö‚ğ•\¦
+// å®Ÿè¡Œéç¨‹ã‚’è¡¨ç¤º
 //#define DEBUG_RUN
 
-// ƒnƒbƒVƒ…‚ÌŒvZŒ‹‰Ê‚ğo—Í
+// ãƒãƒƒã‚·ãƒ¥ã®è¨ˆç®—çµæœã‚’å‡ºåŠ›
 //#define DEBUG_HASH
 
 #include <stdio.h>
@@ -112,10 +112,10 @@ struct linkdb_node *scriptlabel_db = NULL;
 static struct dbt *userfunc_db = NULL;
 
 static char refine_posword[EQUIP_INDEX_MAX + 1][32] = {
-	"“ª", "‘Ì", "¶è", "‰Eè", "ƒ[ƒu", "ŒC", "ƒAƒNƒZƒTƒŠ[1", "ƒAƒNƒZƒTƒŠ[2", "“ª2", "“ª3",	"–î",
-	"ƒRƒXƒ`ƒ…[ƒ€ã’i", "ƒRƒXƒ`ƒ…[ƒ€’†’i", "ƒRƒXƒ`ƒ…[ƒ€‰º’i", "ƒRƒXƒ`ƒ…[ƒ€Œ¨", "ƒRƒXƒ`ƒ…[ƒ€Floor",
-	"ƒA[ƒ}[ƒVƒƒƒhƒE", "ƒEƒFƒ|ƒ“ƒVƒƒƒhƒE", "ƒV[ƒ‹ƒhƒVƒƒƒhƒE", "ƒVƒ…[ƒYƒVƒƒƒhƒE", "ƒAƒNƒZƒTƒŠ‰EƒVƒƒƒhƒE", "ƒAƒNƒZƒTƒŠ¶ƒVƒƒƒhƒE",
-	"‘•’…‚µ‚Ä‚¢‚È‚¢"
+	"é ­", "ä½“", "å·¦æ‰‹", "å³æ‰‹", "ãƒ­ãƒ¼ãƒ–", "é´", "ã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼1", "ã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼2", "é ­2", "é ­3",	"çŸ¢",
+	"ã‚³ã‚¹ãƒãƒ¥ãƒ¼ãƒ ä¸Šæ®µ", "ã‚³ã‚¹ãƒãƒ¥ãƒ¼ãƒ ä¸­æ®µ", "ã‚³ã‚¹ãƒãƒ¥ãƒ¼ãƒ ä¸‹æ®µ", "ã‚³ã‚¹ãƒãƒ¥ãƒ¼ãƒ è‚©", "ã‚³ã‚¹ãƒãƒ¥ãƒ¼ãƒ Floor",
+	"ã‚¢ãƒ¼ãƒãƒ¼ã‚·ãƒ£ãƒ‰ã‚¦", "ã‚¦ã‚§ãƒãƒ³ã‚·ãƒ£ãƒ‰ã‚¦", "ã‚·ãƒ¼ãƒ«ãƒ‰ã‚·ãƒ£ãƒ‰ã‚¦", "ã‚·ãƒ¥ãƒ¼ã‚ºã‚·ãƒ£ãƒ‰ã‚¦", "ã‚¢ã‚¯ã‚»ã‚µãƒªå³ã‚·ãƒ£ãƒ‰ã‚¦", "ã‚¢ã‚¯ã‚»ã‚µãƒªå·¦ã‚·ãƒ£ãƒ‰ã‚¦",
+	"è£…ç€ã—ã¦ã„ãªã„"
 };
 
 static char error_marker_start[16] = "";
@@ -151,13 +151,13 @@ static struct Script_Config {
 
 static int parse_cmd;
 
-// ƒGƒ‰[ˆ—
+// ã‚¨ãƒ©ãƒ¼å‡¦ç†
 static jmp_buf error_jump;
 static char*   error_msg;
 static char*   error_pos;
-static struct script_code error_code;	// ƒGƒ‰[‚Ìƒ_ƒ~[ƒf[ƒ^
+static struct script_code error_code;	// ã‚¨ãƒ©ãƒ¼æ™‚ã®ãƒ€ãƒŸãƒ¼ãƒ‡ãƒ¼ã‚¿
 
-// if , switch ‚ÌÀ‘•
+// if , switch ã®å®Ÿè£…
 enum {
 	TYPE_NULL = 0,
 	TYPE_IF,
@@ -175,9 +175,9 @@ static struct {
 		int count;
 		int flag;
 		struct linkdb_node *case_label;
-	} curly[256];		// ‰EƒJƒbƒR‚Ìî•ñ
-	int curly_count;	// ‰EƒJƒbƒR‚Ì”
-	int index;			// ƒXƒNƒŠƒvƒg“à‚Åg—p‚µ‚½\•¶‚Ì”
+	} curly[256];		// å³ã‚«ãƒƒã‚³ã®æƒ…å ±
+	int curly_count;	// å³ã‚«ãƒƒã‚³ã®æ•°
+	int index;			// ã‚¹ã‚¯ãƒªãƒ—ãƒˆå†…ã§ä½¿ç”¨ã—ãŸæ§‹æ–‡ã®æ•°
 } syntax;
 
 static int parse_syntax_for_flag = 0;
@@ -213,7 +213,7 @@ enum {
 	C_EOL,
 	C_RETINFO,
 
-	// ƒ†[ƒU’è‹`ŠÖ”ŒQ
+	// ãƒ¦ãƒ¼ã‚¶å®šç¾©é–¢æ•°ç¾¤
 	C_USERFUNC,
 	C_USERFUNC_POS,
 
@@ -249,7 +249,7 @@ enum {
 
 
 /*==========================================
- * ƒ[ƒJƒ‹ƒvƒƒgƒ^ƒCƒvéŒ¾ (•K—v‚È•¨‚Ì‚İ)
+ * ãƒ­ãƒ¼ã‚«ãƒ«ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ (å¿…è¦ãªç‰©ã®ã¿)
  *------------------------------------------
  */
 static unsigned char* parse_curly_close(unsigned char *p);
@@ -266,7 +266,7 @@ static int script_csvfinal( void );
 #endif
 
 /*==========================================
- * ƒ†[ƒU[’è‹`ŠÖ”‚Ìæ“¾
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°ã®å–å¾—
  *------------------------------------------
  */
 struct script_code* script_get_userfunc(const char *name)
@@ -280,7 +280,7 @@ struct script_code* script_get_userfunc(const char *name)
 }
 
 /*==========================================
- * ƒ†[ƒU[’è‹`ŠÖ”‚Ì“o˜^
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°ã®ç™»éŒ²
  *------------------------------------------
  */
 struct script_code* script_set_userfunc(const char *name, struct script_code *code)
@@ -292,7 +292,7 @@ struct script_code* script_set_userfunc(const char *name, struct script_code *co
 }
 
 /*==========================================
- * ƒGƒ‰[ƒƒbƒZ[ƒWo—Í
+ * ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡ºåŠ›
  *------------------------------------------
  */
 static void disp_error_message(const char *mes,unsigned char *pos)
@@ -303,7 +303,7 @@ static void disp_error_message(const char *mes,unsigned char *pos)
 }
 
 /*==========================================
- * •¶š—ñ‚ÌƒnƒbƒVƒ…‚ğŒvZ
+ * æ–‡å­—åˆ—ã®ãƒãƒƒã‚·ãƒ¥ã‚’è¨ˆç®—
  *------------------------------------------
  */
 static unsigned int calc_hash(const unsigned char *p)
@@ -319,8 +319,8 @@ static unsigned int calc_hash(const unsigned char *p)
 }
 
 /*==========================================
- * str_data‚Ì’†‚É–¼‘O‚ª‚ ‚é‚©ŒŸõ‚·‚é
- * Šù‘¶‚Ì‚Å‚ ‚ê‚Î”Ô†A–³‚¯‚ê‚Î-1
+ * str_dataã®ä¸­ã«åå‰ãŒã‚ã‚‹ã‹æ¤œç´¢ã™ã‚‹
+ * æ—¢å­˜ã®ã§ã‚ã‚Œã°ç•ªå·ã€ç„¡ã‘ã‚Œã°-1
  *------------------------------------------
  */
 static int search_str(const unsigned char *p)
@@ -337,8 +337,8 @@ static int search_str(const unsigned char *p)
 }
 
 /*==========================================
- * str_data‚É–¼‘O‚ğ“o˜^
- * Šù‘¶‚Ì‚Å‚ ‚ê‚Î”Ô†A–³‚¯‚ê‚Î“o˜^‚µ‚ÄV‹K”Ô†
+ * str_dataã«åå‰ã‚’ç™»éŒ²
+ * æ—¢å­˜ã®ã§ã‚ã‚Œã°ç•ªå·ã€ç„¡ã‘ã‚Œã°ç™»éŒ²ã—ã¦æ–°è¦ç•ªå·
  *------------------------------------------
  */
 int add_str(const unsigned char *p)
@@ -386,7 +386,7 @@ int add_str(const unsigned char *p)
 }
 
 /*==========================================
- * str_data‚©‚ç–¼‘O‚ğæ“¾
+ * str_dataã‹ã‚‰åå‰ã‚’å–å¾—
  *------------------------------------------
  */
 char* get_str(int num)
@@ -395,7 +395,7 @@ char* get_str(int num)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒoƒbƒtƒ@ƒTƒCƒY‚ÌŠg’£
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã®æ‹¡å¼µ
  *------------------------------------------
  */
 static void expand_script_buf(void)
@@ -405,13 +405,13 @@ static void expand_script_buf(void)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒoƒbƒtƒ@‚É‚PƒoƒCƒg‘‚«‚Ş
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒãƒƒãƒ•ã‚¡ã«ï¼‘ãƒã‚¤ãƒˆæ›¸ãè¾¼ã‚€
  *------------------------------------------
  */
 #define add_scriptb(a) { if( script_pos+1>=script_size ) expand_script_buf(); script_buf[script_pos++]=(a); }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒoƒbƒtƒ@‚Éƒf[ƒ^ƒ^ƒCƒv‚ğ‘‚«‚Ş
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒãƒƒãƒ•ã‚¡ã«ãƒ‡ãƒ¼ã‚¿ã‚¿ã‚¤ãƒ—ã‚’æ›¸ãè¾¼ã‚€
  *------------------------------------------
  */
 static void add_scriptc(int a)
@@ -424,7 +424,7 @@ static void add_scriptc(int a)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒoƒbƒtƒ@‚É®”‚ğ‘‚«‚Ş
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒãƒƒãƒ•ã‚¡ã«æ•´æ•°ã‚’æ›¸ãè¾¼ã‚€
  *------------------------------------------
  */
 static void add_scripti(int a)
@@ -437,10 +437,10 @@ static void add_scripti(int a)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒoƒbƒtƒ@‚Éƒ‰ƒxƒ‹/•Ï”/ŠÖ”‚ğ‘‚«‚Ş
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒãƒƒãƒ•ã‚¡ã«ãƒ©ãƒ™ãƒ«/å¤‰æ•°/é–¢æ•°ã‚’æ›¸ãè¾¼ã‚€
  *------------------------------------------
  */
-// Å‘å16M‚Ü‚Å
+// æœ€å¤§16Mã¾ã§
 static void add_scriptl(int l)
 {
 	switch(str_data[l].type) {
@@ -453,7 +453,7 @@ static void add_scriptl(int l)
 		break;
 	case C_NOP:
 	case C_USERFUNC:
-		// ƒ‰ƒxƒ‹‚Ì‰Â”\«‚ª‚ ‚é‚Ì‚Åbackpatch—pƒf[ƒ^–„‚ß‚İ
+		// ãƒ©ãƒ™ãƒ«ã®å¯èƒ½æ€§ãŒã‚ã‚‹ã®ã§backpatchç”¨ãƒ‡ãƒ¼ã‚¿åŸ‹ã‚è¾¼ã¿
 		{
 			int backpatch = str_data[l].backpatch;
 			add_scriptc(C_NAME);
@@ -479,7 +479,7 @@ static void add_scriptl(int l)
 		}
 		break;
 	default:
-		// ‚à‚¤‘¼‚Ì—p“r‚ÆŠm’è‚µ‚Ä‚é‚Ì‚Å”š‚ğ‚»‚Ì‚Ü‚Ü
+		// ã‚‚ã†ä»–ã®ç”¨é€”ã¨ç¢ºå®šã—ã¦ã‚‹ã®ã§æ•°å­—ã‚’ãã®ã¾ã¾
 		add_scriptc(C_NAME);
 		add_scriptb(l);
 		add_scriptb(l>>8);
@@ -489,7 +489,7 @@ static void add_scriptl(int l)
 }
 
 /*==========================================
- * ƒ‰ƒxƒ‹‚ğ‰ğŒˆ‚·‚é
+ * ãƒ©ãƒ™ãƒ«ã‚’è§£æ±ºã™ã‚‹
  *------------------------------------------
  */
 static void set_label(int l,int pos,unsigned char *p)
@@ -514,7 +514,7 @@ static void set_label(int l,int pos,unsigned char *p)
 }
 
 /*==========================================
- * ƒXƒy[ƒX/ƒRƒƒ“ƒg“Ç‚İ”ò‚Î‚µ
+ * ã‚¹ãƒšãƒ¼ã‚¹/ã‚³ãƒ¡ãƒ³ãƒˆèª­ã¿é£›ã°ã—
  *------------------------------------------
  */
 static unsigned char *skip_space(unsigned char *p)
@@ -538,17 +538,17 @@ static unsigned char *skip_space(unsigned char *p)
 }
 
 /*==========================================
- * ‚P’PŒêƒXƒLƒbƒv
+ * ï¼‘å˜èªã‚¹ã‚­ãƒƒãƒ—
  *------------------------------------------
  */
 static unsigned char *skip_word(unsigned char *p)
 {
 	// prefix
-	if(*p=='\'') p++;	// ƒXƒNƒŠƒvƒgˆË‘¶•Ï”
-	if(*p=='$')  p++;	// MAPI“à‹¤—L•Ï”—p
-	if(*p=='@')  p++;	// ˆê“I•Ï”—p(like weiss)
-	if(*p=='#')  p++;	// account•Ï”—p
-	if(*p=='#')  p++;	// ƒ[ƒ‹ƒhaccount•Ï”—p
+	if(*p=='\'') p++;	// ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¾å­˜å¤‰æ•°
+	if(*p=='$')  p++;	// MAPé¯–å†…å…±æœ‰å¤‰æ•°ç”¨
+	if(*p=='@')  p++;	// ä¸€æ™‚çš„å¤‰æ•°ç”¨(like weiss)
+	if(*p=='#')  p++;	// accountå¤‰æ•°ç”¨
+	if(*p=='#')  p++;	// ãƒ¯ãƒ¼ãƒ«ãƒ‰accountå¤‰æ•°ç”¨
 
 	while(isalnum(*p) || *p=='_' || *p>=0x81) {
 		if(*p>=0x81 && p[1])
@@ -557,13 +557,13 @@ static unsigned char *skip_word(unsigned char *p)
 			p++;
 	}
 	// postfix
-	if(*p=='$') p++;	// •¶š—ñ•Ï”
+	if(*p=='$') p++;	// æ–‡å­—åˆ—å¤‰æ•°
 
 	return p;
 }
 
 /*==========================================
- * §ŒäƒR[ƒh‘‚«‚İ
+ * åˆ¶å¾¡ã‚³ãƒ¼ãƒ‰æ›¸ãè¾¼ã¿
  *------------------------------------------
  */
 static int set_control_code(unsigned char p)
@@ -640,7 +640,7 @@ static unsigned char* parse_variable(unsigned char *p)
 
 	c = *p2;
 	*p2 = 0;
-	l = add_str(p);	// –¼‘O‚ğadd_str‚·‚é
+	l = add_str(p);	// åå‰ã‚’add_strã™ã‚‹
 
 	*p2 = c;
 
@@ -744,7 +744,7 @@ static unsigned char* parse_variable(unsigned char *p)
 }
 
 /*==========================================
- * €‚Ì‰ğÍ
+ * é …ã®è§£æ
  *------------------------------------------
  */
 static unsigned char* parse_simpleexpr(unsigned char *p)
@@ -806,9 +806,9 @@ static unsigned char* parse_simpleexpr(unsigned char *p)
 		}
 		c = *p2;
 		*p2 = 0;
-		l = add_str(p);	// –¼‘O‚ğadd_str‚·‚é
+		l = add_str(p);	// åå‰ã‚’add_strã™ã‚‹
 
-		parse_cmd = l;	// warn_*_mismatch_paramnum‚Ì‚½‚ß‚É•K—v
+		parse_cmd = l;	// warn_*_mismatch_paramnumã®ãŸã‚ã«å¿…è¦
 
 		*p2 = c;
 		p = p2;
@@ -843,7 +843,7 @@ static unsigned char* parse_simpleexpr(unsigned char *p)
 }
 
 /*==========================================
- * ®‚Ì‰ğÍ
+ * å¼ã®è§£æ
  *------------------------------------------
  */
 static unsigned char* parse_subexpr(unsigned char *p,int limit)
@@ -955,10 +955,10 @@ static unsigned char* parse_subexpr(unsigned char *p,int limit)
 			const char *arg = NULL;
 
 			if(str_data[parse_cmd].type == C_FUNC) {
-				// ’Êí‚ÌŠÖ”
+				// é€šå¸¸ã®é–¢æ•°
 				add_scriptc(C_ARG);
 			} else if(str_data[parse_cmd].type == C_USERFUNC || str_data[parse_cmd].type == C_USERFUNC_POS) {
-				// ƒ†[ƒU[’è‹`ŠÖ”ŒÄ‚Ño‚µ
+				// ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°å‘¼ã³å‡ºã—
 				parse_cmd = search_str("callsub");
 				i++;
 			} else {
@@ -966,7 +966,7 @@ static unsigned char* parse_subexpr(unsigned char *p,int limit)
 			}
 			p = skip_space(p);
 
-			// ŠÖ”‚Ì‚Âˆø”‚Ì”‚ğƒ`ƒFƒbƒN
+			// é–¢æ•°ã®æŒã¤å¼•æ•°ã®æ•°ã‚’ãƒã‚§ãƒƒã‚¯
 			if(str_data[parse_cmd].type == C_FUNC && script_config.warn_cmd_mismatch_paramnum) {
 				arg = buildin_func[str_data[parse_cmd].u.val].arg;
 				for(j = 0; arg[j]; j++) {
@@ -979,9 +979,9 @@ static unsigned char* parse_subexpr(unsigned char *p,int limit)
 				plist[i] = p;
 				p = parse_subexpr(p,-1);
 				p = skip_space(p);
-				// ˆø”‹æØ‚è‚Ì,ˆ—
+				// å¼•æ•°åŒºåˆ‡ã‚Šã®,å‡¦ç†
 				if(*p == ',') {
-					if(arg == NULL || arg[j] == '*' || i+1 < j)	// Ÿ‚àˆø”‚ğ‚Æ‚é‚È‚çƒJƒ“ƒ}‚ğƒXƒLƒbƒv
+					if(arg == NULL || arg[j] == '*' || i+1 < j)	// æ¬¡ã‚‚å¼•æ•°ã‚’ã¨ã‚‹ãªã‚‰ã‚«ãƒ³ãƒã‚’ã‚¹ã‚­ãƒƒãƒ—
 						p++;
 				}
 				else if(*p != ')' && script_config.warn_func_no_comma) {
@@ -1006,7 +1006,7 @@ static unsigned char* parse_subexpr(unsigned char *p,int limit)
 			}
 			p = parse_subexpr(p,-1);
 		} else if(op == C_POW) {
-			p = parse_subexpr(p, 11);	// ‰EŒ‹‡‚Ì‚½‚ß‡ˆÊ‚ğ1‚Â‰º‚°‚é
+			p = parse_subexpr(p, 11);	// å³çµåˆã®ãŸã‚é †ä½ã‚’1ã¤ä¸‹ã’ã‚‹
 		} else {
 			p = parse_subexpr(p, priority);
 		}
@@ -1021,7 +1021,7 @@ static unsigned char* parse_subexpr(unsigned char *p,int limit)
 }
 
 /*==========================================
- * ®‚Ì•]‰¿
+ * å¼ã®è©•ä¾¡
  *------------------------------------------
  */
 static unsigned char* parse_expr(unsigned char *p)
@@ -1048,7 +1048,7 @@ static unsigned char* parse_expr(unsigned char *p)
 }
 
 /*==========================================
- * s‚Ì‰ğÍ
+ * è¡Œã®è§£æ
  *------------------------------------------
  */
 static unsigned char* parse_line(unsigned char *p)
@@ -1061,7 +1061,7 @@ static unsigned char* parse_line(unsigned char *p)
 
 	p = skip_space(p);
 	if(*p == ';') {
-		// if(); for(); while(); ‚Ì‚½‚ß‚É•Â‚¶”»’è
+		// if(); for(); while(); ã®ãŸã‚ã«é–‰ã˜åˆ¤å®š
 		p = parse_syntax_close(p + 1);
 		return p;
 	}
@@ -1079,16 +1079,16 @@ static unsigned char* parse_line(unsigned char *p)
 		return parse_curly_close(p);
 	}
 
-	// \•¶ŠÖ˜A‚Ìˆ—
+	// æ§‹æ–‡é–¢é€£ã®å‡¦ç†
 	p2 = parse_syntax(p);
 	if(p2 != NULL)
 		return p2;
 
-	// •Ï”ˆ—
+	// å¤‰æ•°å‡¦ç†
 	p2 = parse_variable(p);
 
 	if(p2 != NULL) {
-		// if, for, while ‚Ì•Â‚¶”»’è
+		// if, for, while ã®é–‰ã˜åˆ¤å®š
 		if(parse_syntax_for_flag) {
 			if(*p2 != ')')
 				disp_error_message("need ')'", p2);
@@ -1099,15 +1099,15 @@ static unsigned char* parse_line(unsigned char *p)
 		return parse_syntax_close(p2 + 1);
 	}
 
-	// Å‰‚ÍŠÖ”–¼
+	// æœ€åˆã¯é–¢æ•°å
 	p2 = p;
 	p  = parse_simpleexpr(p);
 
 	if(str_data[parse_cmd].type == C_FUNC) {
-		// ’Êí‚ÌŠÖ”
+		// é€šå¸¸ã®é–¢æ•°
 		add_scriptc(C_ARG);
 	} else if(str_data[parse_cmd].type == C_USERFUNC || str_data[parse_cmd].type == C_USERFUNC_POS) {
-		// ƒ†[ƒU[’è‹`ŠÖ”ŒÄ‚Ño‚µ
+		// ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°å‘¼ã³å‡ºã—
 		parse_cmd = search_str("callsub");
 		i++;
 	} else {
@@ -1120,7 +1120,7 @@ static unsigned char* parse_line(unsigned char *p)
 		end = ';';
 	}
 
-	// ŠÖ”‚Ì‚Âˆø”‚Ì”‚ğƒ`ƒFƒbƒN
+	// é–¢æ•°ã®æŒã¤å¼•æ•°ã®æ•°ã‚’ãƒã‚§ãƒƒã‚¯
 	if(str_data[parse_cmd].type == C_FUNC && script_config.warn_cmd_mismatch_paramnum) {
 		arg = buildin_func[str_data[parse_cmd].u.val].arg;
 		for(j = 0; arg[j]; j++) {
@@ -1139,9 +1139,9 @@ static unsigned char* parse_line(unsigned char *p)
 		}
 		p = parse_expr(p);
 		p = skip_space(p);
-		// ˆø”‹æØ‚è‚Ì,ˆ—
+		// å¼•æ•°åŒºåˆ‡ã‚Šã®,å‡¦ç†
 		if(*p == ',') {
-			if(arg == NULL || arg[j] == '*' || i+1 < j)	// Ÿ‚àˆø”‚ğ‚Æ‚é‚È‚çƒJƒ“ƒ}‚ğƒXƒLƒbƒv
+			if(arg == NULL || arg[j] == '*' || i+1 < j)	// æ¬¡ã‚‚å¼•æ•°ã‚’ã¨ã‚‹ãªã‚‰ã‚«ãƒ³ãƒã‚’ã‚¹ã‚­ãƒƒãƒ—
 				p++;
 		}
 		else if(*p != end && script_config.warn_cmd_no_comma) {
@@ -1164,7 +1164,7 @@ static unsigned char* parse_line(unsigned char *p)
 	}
 	add_scriptc(C_FUNC);
 
-	// if, for, while ‚Ì•Â‚¶”»’è
+	// if, for, while ã®é–‰ã˜åˆ¤å®š
 	p = parse_syntax_close(p + 1);
 
 	if(arg) {
@@ -1175,7 +1175,7 @@ static unsigned char* parse_line(unsigned char *p)
 }
 
 /*==========================================
- * { ... } ‚Ì•Â‚¶ˆ—
+ * { ... } ã®é–‰ã˜å‡¦ç†
  *------------------------------------------
  */
 static unsigned char* parse_curly_close(unsigned char *p)
@@ -1187,47 +1187,47 @@ static unsigned char* parse_curly_close(unsigned char *p)
 	switch(syntax.curly[syntax.curly_count-1].type) {
 	case TYPE_NULL:
 		syntax.curly_count--;
-		// if, for, while ‚Ì•Â‚¶”»’è
+		// if, for, while ã®é–‰ã˜åˆ¤å®š
 		p = parse_syntax_close(p + 1);
 		break;
 	case TYPE_SWITCH:
 		{
-			// switch() •Â‚¶”»’è
+			// switch() é–‰ã˜åˆ¤å®š
 			int pos = syntax.curly_count - 1;
 			char label[256];
 			int l;
 
-			// ˆê•Ï”‚ğÁ‚·
+			// ä¸€æ™‚å¤‰æ•°ã‚’æ¶ˆã™
 			sprintf(label,"set $@__SW%x_VAL,0;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// –³ğŒ‚ÅI—¹ƒ|ƒCƒ“ƒ^‚ÉˆÚ“®
+			// ç„¡æ¡ä»¶ã§çµ‚äº†ãƒã‚¤ãƒ³ã‚¿ã«ç§»å‹•
 			sprintf(label,"goto __SW%x_FIN;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// Œ»İ’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			sprintf(label,"__SW%x_%x",syntax.curly[pos].index,syntax.curly[pos].count);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
 			if(syntax.curly[pos].flag) {
-				// default ‚ª‘¶İ‚·‚é
+				// default ãŒå­˜åœ¨ã™ã‚‹
 				sprintf(label,"goto __SW%x_DEF;",syntax.curly[pos].index);
 				syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 				parse_line(label);
 				syntax.curly_count--;
 			}
 
-			// I—¹ƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// çµ‚äº†ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			sprintf(label,"__SW%x_FIN",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
-			linkdb_final(&syntax.curly[pos].case_label);	// caseƒ‰ƒxƒ‹‚ÌƒŠƒXƒg‚ğ‰ğ•ú
+			linkdb_final(&syntax.curly[pos].case_label);	// caseãƒ©ãƒ™ãƒ«ã®ãƒªã‚¹ãƒˆã‚’è§£æ”¾
 			syntax.curly_count--;
 			p++;
 		}
@@ -1239,9 +1239,9 @@ static unsigned char* parse_curly_close(unsigned char *p)
 }
 
 /*==========================================
- * \•¶ŠÖ˜A‚Ìˆ—
+ * æ§‹æ–‡é–¢é€£ã®å‡¦ç†
  *   break, case, continue, default, do, for,
- *   function, if, switch, while ‚ğ‚±‚Ì“à•”‚Åˆ—
+ *   function, if, switch, while ã‚’ã“ã®å†…éƒ¨ã§å‡¦ç†
  *------------------------------------------
  */
 static unsigned char* parse_syntax(unsigned char *p)
@@ -1253,7 +1253,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 	case 'B':
 		p2 = skip_word(p);
 		if(p2 - p == 5 && !strncasecmp(p,"break",5)) {
-			// break ‚Ìˆ—
+			// break ã®å‡¦ç†
 			char label[256];
 			int pos = syntax.curly_count - 1;
 
@@ -1283,7 +1283,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			if(*p != ';') {
 				disp_error_message("need ';'",p);
 			}
-			// if, for, while ‚Ì•Â‚¶”»’è
+			// if, for, while ã®é–‰ã˜åˆ¤å®š
 			p = parse_syntax_close(p + 1);
 			return p;
 		}
@@ -1292,7 +1292,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 	case 'C':
 		p2 = skip_word(p);
 		if(p2 - p == 4 && !strncasecmp(p,"case",4)) {
-			// case ‚Ìˆ—
+			// case ã®å‡¦ç†
 			char *np;
 			char label[256];
 			int l,v;
@@ -1302,30 +1302,30 @@ static unsigned char* parse_syntax(unsigned char *p)
 				disp_error_message("unexpected 'case'",p);
 			}
 			if(syntax.curly[pos].count != 1) {
-				// FALLTHRU —p‚ÌƒWƒƒƒ“ƒv
+				// FALLTHRU ç”¨ã®ã‚¸ãƒ£ãƒ³ãƒ—
 				sprintf(label,"goto __SW%x_%xJ;",syntax.curly[pos].index,syntax.curly[pos].count);
 				syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 				parse_line(label);
 				syntax.curly_count--;
 
-				// Œ»İ’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+				// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 				sprintf(label,"__SW%x_%x",syntax.curly[pos].index,syntax.curly[pos].count);
 				l=add_str(label);
 				set_label(l,script_pos,p);
 			}
-			// switch ”»’è•¶
+			// switch åˆ¤å®šæ–‡
 			p = skip_space(p2);
 			if(p == p2) {
 				disp_error_message("expect space ' '",p);
 			}
 			p2 = p;
 
-			// caseƒ‰ƒxƒ‹‚ª”’lŒ^’è”‚Å‚ ‚é‚©ƒ`ƒFƒbƒN
+			// caseãƒ©ãƒ™ãƒ«ãŒæ•°å€¤å‹å®šæ•°ã§ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 			v = strtobxl(p,&np,0);
-			if((*p == '-' || *p == '+') && isdigit(p[1]))	// '-' ‚Ískip_wordo—ˆ‚È‚¢‚Ì‚Å‚ ‚ç‚©‚¶‚ßskip‚µ‚Ä‚¨‚­
+			if((*p == '-' || *p == '+') && isdigit(p[1]))	// '-' ã¯skip_wordå‡ºæ¥ãªã„ã®ã§ã‚ã‚‰ã‹ã˜ã‚skipã—ã¦ãŠã
 				p++;
 			p = skip_word(p);
-			if((unsigned char *)np == p2 || (unsigned char *)np != p) {	// ”’l‚Å‚Í‚È‚¢‚æ‚¤‚È‚Ì‚Å’è”‚Æ‚µ‚ÄŒŸõ‚µ‚Ä‚İ‚é
+			if((unsigned char *)np == p2 || (unsigned char *)np != p) {	// æ•°å€¤ã§ã¯ãªã„ã‚ˆã†ãªã®ã§å®šæ•°ã¨ã—ã¦æ¤œç´¢ã—ã¦ã¿ã‚‹
 				int i;
 				unsigned char c = *p;
 
@@ -1342,7 +1342,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 				disp_error_message("expect ':'",p);
 			}
 
-			// caseƒ‰ƒxƒ‹‚ªd•¡‚µ‚Ä‚È‚¢‚©ƒ`ƒFƒbƒN
+			// caseãƒ©ãƒ™ãƒ«ãŒé‡è¤‡ã—ã¦ãªã„ã‹ãƒã‚§ãƒƒã‚¯
 			if(linkdb_exists(&syntax.curly[pos].case_label, INT2PTR(v))) {
 				disp_error_message("dup 'case'",p);
 			}
@@ -1351,17 +1351,17 @@ static unsigned char* parse_syntax(unsigned char *p)
 			sprintf(label,"if(%d != $@__SW%x_VAL) goto __SW%x_%x;",
 				v,syntax.curly[pos].index,syntax.curly[pos].index,syntax.curly[pos].count+1);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
-			// ‚Q‰ñparse ‚µ‚È‚¢‚Æƒ_ƒ
+			// ï¼’å›parse ã—ãªã„ã¨ãƒ€ãƒ¡
 			p2 = parse_line(label);
 			parse_line(p2);
 			syntax.curly_count--;
 			if(syntax.curly[pos].count != 1) {
-				// FALLTHRU I—¹Œã‚Ìƒ‰ƒxƒ‹
+				// FALLTHRU çµ‚äº†å¾Œã®ãƒ©ãƒ™ãƒ«
 				sprintf(label,"__SW%x_%xJ",syntax.curly[pos].index,syntax.curly[pos].count);
 				l=add_str(label);
 				set_label(l,script_pos,p);
 			}
-			// ˆê•Ï”‚ğÁ‚·
+			// ä¸€æ™‚å¤‰æ•°ã‚’æ¶ˆã™
 			sprintf(label,"set $@__SW%x_VAL,0;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
@@ -1370,14 +1370,14 @@ static unsigned char* parse_syntax(unsigned char *p)
 			return p + 1;
 		}
 		else if(p2 - p == 8 && !strncasecmp(p,"continue",8)) {
-			// continue ‚Ìˆ—
+			// continue ã®å‡¦ç†
 			char label[256];
 			int pos = syntax.curly_count - 1;
 
 			while(pos >= 0) {
 				if(syntax.curly[pos].type == TYPE_DO) {
 					sprintf(label,"goto __DO%x_NXT;",syntax.curly[pos].index);
-					syntax.curly[pos].flag = 1; // continue —p‚ÌƒŠƒ“ƒN’£‚éƒtƒ‰ƒO
+					syntax.curly[pos].flag = 1; // continue ç”¨ã®ãƒªãƒ³ã‚¯å¼µã‚‹ãƒ•ãƒ©ã‚°
 					break;
 				} else if(syntax.curly[pos].type == TYPE_FOR) {
 					sprintf(label,"goto __FR%x_NXT;",syntax.curly[pos].index);
@@ -1398,7 +1398,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			if(*p != ';') {
 				disp_error_message("need ';'",p);
 			}
-			// if, for, while ‚Ì•Â‚¶”»’è
+			// if, for, while ã®é–‰ã˜åˆ¤å®š
 			p = parse_syntax_close(p + 1);
 			return p;
 		}
@@ -1407,7 +1407,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 	case 'D':
 		p2 = skip_word(p);
 		if(p2 - p == 7 && !strncasecmp(p,"default",7)) {
-			// switch - default ‚Ìˆ—
+			// switch - default ã®å‡¦ç†
 			char label[256];
 			int l;
 			int pos = syntax.curly_count-1;
@@ -1418,7 +1418,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			if(syntax.curly[pos].flag) {
 				disp_error_message("dup 'default'",p);
 			}
-			// Œ»İ’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			p = skip_space(p2);
 			if(*p != ':') {
 				disp_error_message("need ':'",p);
@@ -1427,13 +1427,13 @@ static unsigned char* parse_syntax(unsigned char *p)
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
-			// –³ğŒ‚ÅŸ‚ÌƒŠƒ“ƒN‚É”ò‚Î‚·
+			// ç„¡æ¡ä»¶ã§æ¬¡ã®ãƒªãƒ³ã‚¯ã«é£›ã°ã™
 			sprintf(label,"goto __SW%x_%x;",syntax.curly[pos].index,syntax.curly[pos].count+1);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// default ‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// default ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			sprintf(label,"__SW%x_DEF",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
@@ -1451,7 +1451,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			syntax.curly[syntax.curly_count].count = 1;
 			syntax.curly[syntax.curly_count].index = syntax.index++;
 			syntax.curly[syntax.curly_count].flag  = 0;
-			// Œ»İ’n‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é
+			// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹
 			sprintf(label,"__DO%x_BGN",syntax.curly[syntax.curly_count].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
@@ -1479,22 +1479,22 @@ static unsigned char* parse_syntax(unsigned char *p)
 			}
 			p++;
 
-			// ‰Šú‰»•¶‚ğÀs‚·‚é
+			// åˆæœŸåŒ–æ–‡ã‚’å®Ÿè¡Œã™ã‚‹
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			p=parse_line(p);
 			syntax.curly_count--;
 
-			// ğŒ”»’fŠJn‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é
+			// æ¡ä»¶åˆ¤æ–­é–‹å§‹ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹
 			sprintf(label,"__FR%x_J",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
 			p=skip_space(p);
 			if(*p == ';') {
-				// for(;;) ‚Ìƒpƒ^[ƒ“‚È‚Ì‚Å•K‚¸^
+				// for(;;) ã®ãƒ‘ã‚¿ãƒ¼ãƒ³ãªã®ã§å¿…ãšçœŸ
 				;
 			} else {
-				// ğŒ‚ª‹U‚È‚çI—¹’n“_‚É”ò‚Î‚·
+				// æ¡ä»¶ãŒå½ãªã‚‰çµ‚äº†åœ°ç‚¹ã«é£›ã°ã™
 				sprintf(label,"__FR%x_FIN",syntax.curly[pos].index);
 				add_scriptl(search_str("jump_zero"));
 				add_scriptc(C_ARG);
@@ -1508,32 +1508,32 @@ static unsigned char* parse_syntax(unsigned char *p)
 			}
 			p++;
 
-			// ƒ‹[ƒvŠJn‚É”ò‚Î‚·
+			// ãƒ«ãƒ¼ãƒ—é–‹å§‹ã«é£›ã°ã™
 			sprintf(label,"goto __FR%x_BGN;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// Ÿ‚Ìƒ‹[ƒv‚Ö‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é
+			// æ¬¡ã®ãƒ«ãƒ¼ãƒ—ã¸ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹
 			sprintf(label,"__FR%x_NXT",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
-			// Ÿ‚Ìƒ‹[ƒv‚É“ü‚é‚Ìˆ—
-			// for ÅŒã‚Ì ')' ‚ğ ';' ‚Æ‚µ‚Äˆµ‚¤ƒtƒ‰ƒO
+			// æ¬¡ã®ãƒ«ãƒ¼ãƒ—ã«å…¥ã‚‹æ™‚ã®å‡¦ç†
+			// for æœ€å¾Œã® ')' ã‚’ ';' ã¨ã—ã¦æ‰±ã†ãƒ•ãƒ©ã‚°
 			parse_syntax_for_flag = 1;
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			p=parse_line(p);
 			syntax.curly_count--;
 			parse_syntax_for_flag = 0;
 
-			// ğŒ”»’èˆ—‚É”ò‚Î‚·
+			// æ¡ä»¶åˆ¤å®šå‡¦ç†ã«é£›ã°ã™
 			sprintf(label,"goto __FR%x_J;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// ƒ‹[ƒvŠJn‚Ìƒ‰ƒxƒ‹•t‚¯
+			// ãƒ«ãƒ¼ãƒ—é–‹å§‹ã®ãƒ©ãƒ™ãƒ«ä»˜ã‘
 			sprintf(label,"__FR%x_BGN",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
@@ -1552,7 +1552,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			p=skip_word(p);
 			p2=skip_space(p);
 			if(*p2 == ';') {
-				// ŠÖ”‚ÌéŒ¾ - –¼‘O‚ğ“o˜^‚µ‚ÄI‚í‚è
+				// é–¢æ•°ã®å®£è¨€ - åå‰ã‚’ç™»éŒ²ã—ã¦çµ‚ã‚ã‚Š
 				unsigned char c = *p;
 				int l;
 				*p = 0;
@@ -1564,10 +1564,10 @@ static unsigned char* parse_syntax(unsigned char *p)
 				if(str_data[l].type == C_NOP)
 					str_data[l].type = C_USERFUNC;
 
-				// if, for, while ‚Ì•Â‚¶”»’è
+				// if, for, while ã®é–‰ã˜åˆ¤å®š
 				p = parse_syntax_close(p2 + 1);
 			} else if(*p2 == '{') {
-				// ŠÖ”‚Ì’†g
+				// é–¢æ•°ã®ä¸­èº«
 				char label[256];
 				unsigned char c = *p;
 				int l;
@@ -1577,13 +1577,13 @@ static unsigned char* parse_syntax(unsigned char *p)
 				syntax.curly[syntax.curly_count].flag  = 0;
 				syntax.curly_count++;
 
-				// ŠÖ”I—¹‚Ü‚Å”ò‚Î‚·
+				// é–¢æ•°çµ‚äº†ã¾ã§é£›ã°ã™
 				sprintf(label,"goto __FN%x_FIN;",syntax.curly[syntax.curly_count-1].index);
 				syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 				parse_line(label);
 				syntax.curly_count--;
 
-				// ŠÖ”–¼‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+				// é–¢æ•°åã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 				*p = 0;
 				l=add_str(func_name);
 				*p = c;
@@ -1604,7 +1604,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 	case 'I':
 		p2 = skip_word(p);
 		if(p2 - p == 2 && !strncasecmp(p,"if",2)) {
-			// if() ‚Ìˆ—
+			// if() ã®å‡¦ç†
 			char label[256];
 
 			p=skip_space(p2);
@@ -1630,7 +1630,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 	case 'S':
 		p2 = skip_word(p);
 		if(p2 - p == 6 && !strncasecmp(p,"switch",6)) {
-			// switch() ‚Ìˆ—
+			// switch() ã®å‡¦ç†
 			char label[256];
 
 			p=skip_space(p2);
@@ -1653,7 +1653,7 @@ static unsigned char* parse_syntax(unsigned char *p)
 			}
 			add_scriptc(C_FUNC);
 
-			// switch‚Ì’¼Œã‚Í } ‚Æcase‚Ædefault‚Ì‚İ‹–‰Â
+			// switchã®ç›´å¾Œã¯ } ã¨caseã¨defaultã®ã¿è¨±å¯
 			p = skip_space(p + 1);
 			p2 = skip_word(p);
 			if(*p2 == '}' || (p2 - p == 4 && !strncasecmp(p,"case",4)) || (p2 - p == 7 && !strncasecmp(p,"default",7))) {
@@ -1679,12 +1679,12 @@ static unsigned char* parse_syntax(unsigned char *p)
 			syntax.curly[syntax.curly_count].count = 1;
 			syntax.curly[syntax.curly_count].index = syntax.index++;
 			syntax.curly[syntax.curly_count].flag  = 0;
-			// ğŒ”»’fŠJn‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é
+			// æ¡ä»¶åˆ¤æ–­é–‹å§‹ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹
 			sprintf(label,"__WL%x_NXT",syntax.curly[syntax.curly_count].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 
-			// ğŒ‚ª‹U‚È‚çI—¹’n“_‚É”ò‚Î‚·
+			// æ¡ä»¶ãŒå½ãªã‚‰çµ‚äº†åœ°ç‚¹ã«é£›ã°ã™
 			sprintf(label,"__WL%x_FIN",syntax.curly[syntax.curly_count].index);
 			add_scriptl(search_str("jump_zero"));
 			add_scriptc(C_ARG);
@@ -1701,9 +1701,9 @@ static unsigned char* parse_syntax(unsigned char *p)
 }
 
 /*==========================================
- * if, for, while, do ‚Ì•Â‚¶”»’è
- *   flag == 1 : •Â‚¶‚ç‚ê‚½
- *   flag == 0 : •Â‚¶‚ç‚ê‚È‚¢
+ * if, for, while, do ã®é–‰ã˜åˆ¤å®š
+ *   flag == 1 : é–‰ã˜ã‚‰ã‚ŒãŸ
+ *   flag == 0 : é–‰ã˜ã‚‰ã‚Œãªã„
  *------------------------------------------
  */
 static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
@@ -1723,13 +1723,13 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 			unsigned char *bp = p;
 			unsigned char *p2;
 
-			// if ÅIêŠ‚Ö”ò‚Î‚·
+			// if æœ€çµ‚å ´æ‰€ã¸é£›ã°ã™
 			sprintf(label,"goto __IF%x_FIN;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// Œ»İ’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			sprintf(label,"__IF%x_%x",syntax.curly[pos].index,syntax.curly[pos].count);
 			l=add_str(label);
 			set_label(l,script_pos,p);
@@ -1765,12 +1765,12 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 					}
 				}
 			}
-			// ÅI’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+			// æœ€çµ‚åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 			sprintf(label,"__IF%x_FIN",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
 			if(syntax.curly[pos].flag == 1) {
-				// ‚±‚Ìif‚É‘Î‚·‚éelse‚¶‚á‚È‚¢‚Ì‚Åƒ|ƒCƒ“ƒ^‚ÌˆÊ’u‚Í“¯‚¶
+				// ã“ã®ifã«å¯¾ã™ã‚‹elseã˜ã‚ƒãªã„ã®ã§ãƒã‚¤ãƒ³ã‚¿ã®ä½ç½®ã¯åŒã˜
 				p = bp;
 			}
 			syntax.curly_count--;
@@ -1782,13 +1782,13 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 			unsigned char *p2;
 
 			if(syntax.curly[pos].flag) {
-				// Œ»İ’n‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é(continue ‚Å‚±‚±‚É—ˆ‚é)
+				// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹(continue ã§ã“ã“ã«æ¥ã‚‹)
 				sprintf(label,"__DO%x_NXT",syntax.curly[pos].index);
 				l=add_str(label);
 				set_label(l,script_pos,p);
 			}
 
-			// ğŒ‚ª‹U‚È‚çI—¹’n“_‚É”ò‚Î‚·
+			// æ¡ä»¶ãŒå½ãªã‚‰çµ‚äº†åœ°ç‚¹ã«é£›ã°ã™
 			p = skip_space(p);
 			p2 = skip_word(p);
 			if(p2 - p != 5 || strncasecmp(p,"while",5)) {
@@ -1807,13 +1807,13 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 			add_scriptl(add_str(label));
 			add_scriptc(C_FUNC);
 
-			// ŠJn’n“_‚É”ò‚Î‚·
+			// é–‹å§‹åœ°ç‚¹ã«é£›ã°ã™
 			sprintf(label,"goto __DO%x_BGN;",syntax.curly[pos].index);
 			syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 			parse_line(label);
 			syntax.curly_count--;
 
-			// ğŒI—¹’n“_‚Ìƒ‰ƒxƒ‹Œ`¬‚·‚é
+			// æ¡ä»¶çµ‚äº†åœ°ç‚¹ã®ãƒ©ãƒ™ãƒ«å½¢æˆã™ã‚‹
 			sprintf(label,"__DO%x_FIN",syntax.curly[pos].index);
 			l=add_str(label);
 			set_label(l,script_pos,p);
@@ -1826,13 +1826,13 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 		}
 		break;
 	case TYPE_FOR:
-		// Ÿ‚Ìƒ‹[ƒv‚É”ò‚Î‚·
+		// æ¬¡ã®ãƒ«ãƒ¼ãƒ—ã«é£›ã°ã™
 		sprintf(label,"goto __FR%x_NXT;",syntax.curly[pos].index);
 		syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 		parse_line(label);
 		syntax.curly_count--;
 
-		// for I—¹‚Ìƒ‰ƒxƒ‹•t‚¯
+		// for çµ‚äº†ã®ãƒ©ãƒ™ãƒ«ä»˜ã‘
 		sprintf(label,"__FR%x_FIN",syntax.curly[pos].index);
 		l=add_str(label);
 		set_label(l,script_pos,p);
@@ -1840,13 +1840,13 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 		*flag = 1;
 		break;
 	case TYPE_WHILE:
-		// while ğŒ”»’f‚Ö”ò‚Î‚·
+		// while æ¡ä»¶åˆ¤æ–­ã¸é£›ã°ã™
 		sprintf(label,"goto __WL%x_NXT;",syntax.curly[pos].index);
 		syntax.curly[syntax.curly_count++].type = TYPE_NULL;
 		parse_line(label);
 		syntax.curly_count--;
 
-		// while I—¹‚Ìƒ‰ƒxƒ‹•t‚¯
+		// while çµ‚äº†ã®ãƒ©ãƒ™ãƒ«ä»˜ã‘
 		sprintf(label,"__WL%x_FIN",syntax.curly[pos].index);
 		l=add_str(label);
 		set_label(l,script_pos,p);
@@ -1854,12 +1854,12 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 		*flag = 1;
 		break;
 	case TYPE_USERFUNC:
-		// –ß‚·
+		// æˆ»ã™
 		add_scriptl(search_str("return"));
 		add_scriptc(C_ARG);
 		add_scriptc(C_FUNC);
 
-		// Œ»İ’n‚Ìƒ‰ƒxƒ‹‚ğ•t‚¯‚é
+		// ç¾åœ¨åœ°ã®ãƒ©ãƒ™ãƒ«ã‚’ä»˜ã‘ã‚‹
 		sprintf(label,"__FN%x_FIN",syntax.curly[pos].index);
 		l=add_str(label);
 		set_label(l,script_pos,p);
@@ -1874,8 +1874,8 @@ static unsigned char* parse_syntax_close_sub(unsigned char *p,int *flag)
 }
 
 /*==========================================
- * if(...) for(...) hoge(); ‚Ì‚æ‚¤‚É
- * ‚P“x•Â‚¶‚ç‚ê‚½‚çÄ“x•Â‚¶‚ç‚ê‚é‚©Šm”F‚·‚é
+ * if(...) for(...) hoge(); ã®ã‚ˆã†ã«
+ * ï¼‘åº¦é–‰ã˜ã‚‰ã‚ŒãŸã‚‰å†åº¦é–‰ã˜ã‚‰ã‚Œã‚‹ã‹ç¢ºèªã™ã‚‹
  *------------------------------------------
  */
 static unsigned char* parse_syntax_close(unsigned char *p)
@@ -1890,7 +1890,7 @@ static unsigned char* parse_syntax_close(unsigned char *p)
 }
 
 /*==========================================
- * ‘g‚İ‚İŠÖ”‚Ì’Ç‰Á
+ * çµ„ã¿è¾¼ã¿é–¢æ•°ã®è¿½åŠ 
  *------------------------------------------
  */
 static void add_buildin_func(void)
@@ -1906,7 +1906,7 @@ static void add_buildin_func(void)
 }
 
 /*==========================================
- * ’è”ƒf[ƒ^ƒx[ƒX‚Ì“Ç‚İ‚İ
+ * å®šæ•°ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static void read_constdb(void)
@@ -1947,7 +1947,7 @@ static void read_constdb(void)
 }
 
 /*==========================================
- * ƒGƒ‰[•\¦
+ * ã‚¨ãƒ©ãƒ¼è¡¨ç¤º
  *------------------------------------------
  */
 static const char* script_print_line(const char *p, const char *mark, int line)
@@ -1979,7 +1979,7 @@ void script_error(const char *src, const char *file, int start_line, const char 
 	const char *p;
 	int j, line = start_line;
 
-	// ƒGƒ‰[‚ª”­¶‚µ‚½s‚ğ‹‚ß‚é
+	// ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸè¡Œã‚’æ±‚ã‚ã‚‹
 	for(p = src; p && *p; line++) {
 		const char *lineend = strchr(p, '\n');
 		if(lineend == NULL || pos <= lineend || *(lineend + 1) == '\0') {
@@ -2006,7 +2006,7 @@ void script_error(const char *src, const char *file, int start_line, const char 
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgs‚Ì•Â‚¶‚Ì‰ğÍ
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆè¡Œã®é–‰ã˜ã®è§£æ
  *------------------------------------------
  */
 char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
@@ -2015,7 +2015,7 @@ char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
 	int string_flag = 0;
 	static int comment_flag = 0;
 
-	if(p == NULL) {	// ƒtƒ‰ƒO‚ğ–ß‚µ‚ÄI—¹
+	if(p == NULL) {	// ãƒ•ãƒ©ã‚°ã‚’æˆ»ã—ã¦çµ‚äº†
 		comment_flag = 0;
 		return NULL;
 	}
@@ -2024,7 +2024,7 @@ char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
 	for(i = 0; i < len ; i++) {
 		if(comment_flag) {
 			if(p[i] == '*' && p[i+1] == '/') {
-				// ƒ}ƒ‹ƒ`ƒ‰ƒCƒ“ƒRƒƒ“ƒgI—¹
+				// ãƒãƒ«ãƒãƒ©ã‚¤ãƒ³ã‚³ãƒ¡ãƒ³ãƒˆçµ‚äº†
 				i++;
 				(*curly_count)--;
 				comment_flag = 0;
@@ -2033,7 +2033,7 @@ char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
 			if(p[i] == '"') {
 				string_flag = 0;
 			} else if(p[i] == '\\' && p[i-1] <= 0x7e) {
-				// ƒGƒXƒP[ƒv
+				// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—
 				i++;
 			}
 		} else {
@@ -2046,11 +2046,11 @@ char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
 			} else if(p[i] == '{') {
 				(*curly_count)++;
 			} else if(p[i] == '/' && p[i+1] == '/') {
-				// ƒRƒƒ“ƒg
+				// ã‚³ãƒ¡ãƒ³ãƒˆ
 				i = len;
 				break;
 			} else if(p[i] == '/' && p[i+1] == '*') {
-				// ƒ}ƒ‹ƒ`ƒ‰ƒCƒ“ƒRƒƒ“ƒg
+				// ãƒãƒ«ãƒãƒ©ã‚¤ãƒ³ã‚³ãƒ¡ãƒ³ãƒˆ
 				i++;
 				(*curly_count)++;
 				comment_flag = 1;
@@ -2066,7 +2066,7 @@ char* parse_script_line_curly(unsigned char *p,int *curly_count,int line)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgs‚ÌI’[‚Ì‰ğÍ
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆè¡Œã®çµ‚ç«¯ã®è§£æ
  *------------------------------------------
  */
 char* parse_script_line_end(unsigned char *src, const char *file, int line)
@@ -2085,7 +2085,7 @@ char* parse_script_line_end(unsigned char *src, const char *file, int line)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒg‚Ì‰ğÍ
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®è§£æ
  *------------------------------------------
  */
 struct script_code* parse_script(unsigned char *src,const char *file,int line)
@@ -2111,7 +2111,7 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 	p++;
 	p=skip_space(p);
 	if(p && *p == '}') {
-		// ƒR[ƒh‚ğ‚½‚È‚¢ƒXƒNƒŠƒvƒg‚Í³í
+		// ã‚³ãƒ¼ãƒ‰ã‚’æŒãŸãªã„ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¯æ­£å¸¸
 		return NULL;
 	}
 
@@ -2132,14 +2132,14 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 		}
 	}
 
-	// ŠO•”—plabel db‚Ì‰Šú‰»
+	// å¤–éƒ¨ç”¨label dbã®åˆæœŸåŒ–
 	linkdb_final(&scriptlabel_db);
 
-	// —áŠOˆ—
+	// ä¾‹å¤–å‡¦ç†
 	if( setjmp( error_jump ) != 0 ) {
 		int j;
 		script_error(src,file,line,error_msg,error_pos);
-		// Œãn––
+		// å¾Œå§‹æœ«
 		aFree( error_msg );
 		aFree( script_buf );
 		script_pos  = 0;
@@ -2158,7 +2158,7 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 
 	while (p && *p && (*p!='}' || syntax.curly_count != 0)) {
 		p=skip_space(p);
-		// label‚¾‚¯“Áêˆ—
+		// labelã ã‘ç‰¹æ®Šå‡¦ç†
 		tmpp=skip_space(skip_word(p));
 		if(*tmpp==':' && !(!strncasecmp(p,"default:",8) && p + 7 == tmpp)){
 			int l,c;
@@ -2177,7 +2177,7 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 			}
 			set_label(l,script_pos,p);
 
-			// ƒGƒNƒXƒ|[ƒg‚³‚ê‚éƒ‰ƒxƒ‹‚È‚çƒ`ƒFƒbƒN
+			// ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã•ã‚Œã‚‹ãƒ©ãƒ™ãƒ«ãªã‚‰ãƒã‚§ãƒƒã‚¯
 			*p2 = 0;
 			if((p[0] == 'O' || p[0] == 'o') && (p[1] == 'N' || p[1] == 'n')) {
 				for(i=2; p[i]; i++) {
@@ -2186,14 +2186,14 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 						disp_error_message("invalid label name",p);
 					}
 				}
-				linkdb_insert(&scriptlabel_db,p,INT2PTR(script_pos));	// ŠO•”—plabel db“o˜^
+				linkdb_insert(&scriptlabel_db,p,INT2PTR(script_pos));	// å¤–éƒ¨ç”¨label dbç™»éŒ²
 			}
 			*p2 = c;
 			p=tmpp+1;
 			continue;
 		}
 
-		// ‘¼‚Í‘S•”ˆê‚­‚½
+		// ä»–ã¯å…¨éƒ¨ä¸€ç·’ããŸ
 		p=parse_line(p);
 		p=skip_space(p);
 		add_scriptc(C_EOL);
@@ -2210,7 +2210,7 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 	add_scriptc(C_NOP);
 	script_size = script_pos;
 
-	// –¢‰ğŒˆ‚Ìƒ‰ƒxƒ‹‚ğ‰ğŒˆ
+	// æœªè§£æ±ºã®ãƒ©ãƒ™ãƒ«ã‚’è§£æ±º
 	for(i=LABEL_START;i<str_num;i++){
 		if(str_data[i].type==C_NOP){
 			int j,next;
@@ -2320,7 +2320,7 @@ struct script_code* parse_script(unsigned char *src,const char *file,int line)
 }
 
 /*==========================================
- * ƒGƒ‰[”»’è
+ * ã‚¨ãƒ©ãƒ¼åˆ¤å®š
  *------------------------------------------
  */
 int script_is_error(struct script_code *code)
@@ -2329,7 +2329,7 @@ int script_is_error(struct script_code *code)
 }
 
 //
-// ÀsŒn
+// å®Ÿè¡Œç³»
 //
 enum {
 	RUN = 0,
@@ -2341,7 +2341,7 @@ enum {
 };
 
 /*==========================================
- * rid‚©‚çsd‚Ö‚Ì‰ğŒˆ
+ * ridã‹ã‚‰sdã¸ã®è§£æ±º
  *------------------------------------------
  */
 static struct map_session_data *script_rid2sd(struct script_state *st)
@@ -2355,7 +2355,7 @@ static struct map_session_data *script_rid2sd(struct script_state *st)
 }
 
 /*==========================================
- * •Ï”‚Ì“Ç‚İæ‚è
+ * å¤‰æ•°ã®èª­ã¿å–ã‚Š
  *------------------------------------------
  */
 static void get_val(struct script_state *st,struct script_data *data)
@@ -2372,7 +2372,7 @@ static void get_val(struct script_state *st,struct script_data *data)
 	postfix = name[strlen(name)-1];
 
 	if(postfix == '$') {
-		// •¶š—ñŒ^
+		// æ–‡å­—åˆ—å‹
 		data->type = C_CONSTSTR;
 		if(str_data[data->u.num&0x00ffffff].type == C_STR) {
 			data->u.str = str_data[data->u.num&0x00ffffff].u.str;
@@ -2412,7 +2412,7 @@ static void get_val(struct script_state *st,struct script_data *data)
 			data->u.str = "";
 		}
 	} else {
-		// ”’lŒ^
+		// æ•°å€¤å‹
 		data->type = C_INT;
 		if(str_data[data->u.num&0x00ffffff].type == C_INT) {
 			data->u.num = str_data[data->u.num&0x00ffffff].u.val;
@@ -2476,7 +2476,7 @@ static void get_val(struct script_state *st,struct script_data *data)
 }
 
 /*==========================================
- * •Ï”‚Ì“Ç‚İæ‚è2
+ * å¤‰æ•°ã®èª­ã¿å–ã‚Š2
  *------------------------------------------
  */
 static void* get_val2(struct script_state *st,int num,struct linkdb_node **ref)
@@ -2492,7 +2492,7 @@ static void* get_val2(struct script_state *st,int num,struct linkdb_node **ref)
 }
 
 /*==========================================
- * •Ï”İ’è—p
+ * å¤‰æ•°è¨­å®šç”¨
  *------------------------------------------
  */
 static int set_reg(struct script_state *st,struct map_session_data *sd,int num,const char *name,const void *v,struct linkdb_node** ref)
@@ -2501,7 +2501,7 @@ static int set_reg(struct script_state *st,struct map_session_data *sd,int num,c
 	char postfix = name[strlen(name)-1];
 
 	if(postfix == '$') {
-		// •¶š—ñŒ^
+		// æ–‡å­—åˆ—å‹
 		const char *str = (const char *)v;
 		switch(prefix) {
 		case '@':
@@ -2535,7 +2535,7 @@ static int set_reg(struct script_state *st,struct map_session_data *sd,int num,c
 			break;
 		}
 	} else {
-		// ”’lŒ^
+		// æ•°å€¤å‹
 		int val = PTR2INT(v);
 		if(str_data[num&0x00ffffff].type == C_PARAM) {
 			pc_setparam(sd,str_data[num&0x00ffffff].u.val,val);
@@ -2580,7 +2580,7 @@ static int set_reg(struct script_state *st,struct map_session_data *sd,int num,c
 }
 
 /*==========================================
- * •¶š—ñ‚Ö‚Ì•ÏŠ·
+ * æ–‡å­—åˆ—ã¸ã®å¤‰æ›
  *------------------------------------------
  */
 static char* conv_str(struct script_state *st,struct script_data *data)
@@ -2597,14 +2597,14 @@ static char* conv_str(struct script_state *st,struct script_data *data)
 		}
 		break;
 	case C_POS:
-		// ƒXƒNƒŠƒvƒg‚ÌƒoƒOiƒ‰ƒxƒ‹‚ğˆø”‚É“n‚µ‚½ê‡j
-		// —á: mes -;
+		// ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®ãƒã‚°ï¼ˆãƒ©ãƒ™ãƒ«ã‚’å¼•æ•°ã«æ¸¡ã—ãŸå ´åˆï¼‰
+		// ä¾‹: mes -;
 		data->type  = C_CONSTSTR;
 		data->u.str = "** SCRIPT ERROR **";
 		printf("script: conv_str: label has used as argument !\n");
 		break;
 	case C_NAME:
-		// ƒeƒ“ƒ|ƒ‰ƒŠB–{—ˆ–³‚¢‚Í‚¸
+		// ãƒ†ãƒ³ãƒãƒ©ãƒªã€‚æœ¬æ¥ç„¡ã„ã¯ãš
 		data->type  = C_CONSTSTR;
 		data->u.str = str_buf+str_data[data->u.num].str;
 		break;
@@ -2613,7 +2613,7 @@ static char* conv_str(struct script_state *st,struct script_data *data)
 }
 
 /*==========================================
- * ”’l‚Ö•ÏŠ·
+ * æ•°å€¤ã¸å¤‰æ›
  *------------------------------------------
  */
 static int conv_num(struct script_state *st,struct script_data *data)
@@ -2631,7 +2631,7 @@ static int conv_num(struct script_state *st,struct script_data *data)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚ÌŠg’£
+ * ã‚¹ã‚¿ãƒƒã‚¯ã®æ‹¡å¼µ
  *------------------------------------------
  */
 static void expand_stack(struct script_stack *stack)
@@ -2641,7 +2641,7 @@ static void expand_stack(struct script_stack *stack)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Ö”’l‚ğƒvƒbƒVƒ…
+ * ã‚¹ã‚¿ãƒƒã‚¯ã¸æ•°å€¤ã‚’ãƒ—ãƒƒã‚·ãƒ¥
  *------------------------------------------
  */
 static void push_val(struct script_stack *stack,int type,int val)
@@ -2656,7 +2656,7 @@ static void push_val(struct script_stack *stack,int type,int val)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Ö”’l{ƒŠƒtƒ@ƒŒƒ“ƒX‚ğƒvƒbƒVƒ…
+ * ã‚¹ã‚¿ãƒƒã‚¯ã¸æ•°å€¤ï¼‹ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã‚’ãƒ—ãƒƒã‚·ãƒ¥
  *------------------------------------------
  */
 static void push_val2(struct script_stack *stack,int type,int val,struct linkdb_node** ref)
@@ -2666,7 +2666,7 @@ static void push_val2(struct script_stack *stack,int type,int val,struct linkdb_
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Ö•¶š—ñ‚ğƒvƒbƒVƒ…
+ * ã‚¹ã‚¿ãƒƒã‚¯ã¸æ–‡å­—åˆ—ã‚’ãƒ—ãƒƒã‚·ãƒ¥
  *------------------------------------------
  */
 static void push_str(struct script_stack *stack,int type,unsigned char *str)
@@ -2681,7 +2681,7 @@ static void push_str(struct script_stack *stack,int type,unsigned char *str)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Öƒ|ƒCƒ“ƒ^‚ğƒvƒbƒVƒ…
+ * ã‚¹ã‚¿ãƒƒã‚¯ã¸ãƒã‚¤ãƒ³ã‚¿ã‚’ãƒ—ãƒƒã‚·ãƒ¥
  *------------------------------------------
  */
 static void push_ptr(struct script_stack *stack,int type,void *ptr)
@@ -2696,7 +2696,7 @@ static void push_ptr(struct script_stack *stack,int type,void *ptr)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Ö•¡»‚ğƒvƒbƒVƒ…
+ * ã‚¹ã‚¿ãƒƒã‚¯ã¸è¤‡è£½ã‚’ãƒ—ãƒƒã‚·ãƒ¥
  *------------------------------------------
  */
 static void push_copy(struct script_stack *stack,int pos)
@@ -2721,7 +2721,7 @@ static void push_copy(struct script_stack *stack,int pos)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚©‚çƒ|ƒbƒv
+ * ã‚¹ã‚¿ãƒƒã‚¯ã‹ã‚‰ãƒãƒƒãƒ—
  *------------------------------------------
  */
 static void pop_stack(struct script_stack* stack,int start,int end)
@@ -2740,7 +2740,7 @@ static void pop_stack(struct script_stack* stack,int start,int end)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgˆË‘¶•Ï”AŠÖ”ˆË‘¶•Ï”‚Ì‰ğ•ú
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¾å­˜å¤‰æ•°ã€é–¢æ•°ä¾å­˜å¤‰æ•°ã®è§£æ”¾
  *------------------------------------------
  */
 static void script_free_vars(struct linkdb_node **node)
@@ -2751,7 +2751,7 @@ static void script_free_vars(struct linkdb_node **node)
 		char *name   = str_buf + str_data[PTR2INT(n->key)&0x00ffffff].str;
 		char postfix = name[strlen(name)-1];
 		if( postfix == '$' ) {
-			// •¶šŒ^•Ï”‚È‚Ì‚ÅAƒf[ƒ^íœ
+			// æ–‡å­—å‹å¤‰æ•°ãªã®ã§ã€ãƒ‡ãƒ¼ã‚¿å‰Šé™¤
 			aFree(n->data);
 		}
 		n = n->next;
@@ -2760,7 +2760,7 @@ static void script_free_vars(struct linkdb_node **node)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚Ì‰ğ•ú
+ * ã‚¹ã‚¿ãƒƒã‚¯ã®è§£æ”¾
  *------------------------------------------
  */
 void script_free_stack(struct script_stack *stack)
@@ -2783,7 +2783,7 @@ void script_free_stack(struct script_stack *stack)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒgƒR[ƒh‚Ì‰ğ•ú
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚³ãƒ¼ãƒ‰ã®è§£æ”¾
  *------------------------------------------
  */
 void script_free_code(struct script_code* code)
@@ -2793,10 +2793,10 @@ void script_free_code(struct script_code* code)
 }
 
 //
-// Às•”main
+// å®Ÿè¡Œéƒ¨main
 //
 /*==========================================
- * ƒRƒ}ƒ“ƒh‚Ì“Ç‚İæ‚è
+ * ã‚³ãƒãƒ³ãƒ‰ã®èª­ã¿å–ã‚Š
  *------------------------------------------
  */
 static int unget_com_data = -1;
@@ -2822,7 +2822,7 @@ static int get_com(unsigned char *script,int *pos)
 }
 
 /*==========================================
- * ƒRƒ}ƒ“ƒh‚ÌƒvƒbƒVƒ…ƒoƒbƒNi–¢g—pj
+ * ã‚³ãƒãƒ³ãƒ‰ã®ãƒ—ãƒƒã‚·ãƒ¥ãƒãƒƒã‚¯ï¼ˆæœªä½¿ç”¨ï¼‰
  *------------------------------------------
  */
 /*
@@ -2837,7 +2837,7 @@ static void unget_com(int c)
 */
 
 /*==========================================
- * ”’l‚Ìæ“¾
+ * æ•°å€¤ã®å–å¾—
  *------------------------------------------
  */
 static int get_num(unsigned char *script,int *pos)
@@ -2852,7 +2852,7 @@ static int get_num(unsigned char *script,int *pos)
 }
 
 /*==========================================
- * ƒXƒ^ƒbƒN‚©‚ç’l‚ğæ‚èo‚·
+ * ã‚¹ã‚¿ãƒƒã‚¯ã‹ã‚‰å€¤ã‚’å–ã‚Šå‡ºã™
  *------------------------------------------
  */
 static int pop_val(struct script_state* st)
@@ -2867,7 +2867,7 @@ static int pop_val(struct script_state* st)
 }
 
 /*==========================================
- * •¶š—ñŒ^‚©‚Ç‚¤‚©”»’è
+ * æ–‡å­—åˆ—å‹ã‹ã©ã†ã‹åˆ¤å®š
  *------------------------------------------
  */
 static int isstr(struct script_data *c)
@@ -2883,7 +2883,7 @@ static int isstr(struct script_data *c)
 }
 
 /*==========================================
- * ‰ÁZ‰‰Zq
+ * åŠ ç®—æ¼”ç®—å­
  *------------------------------------------
  */
 static void op_add(struct script_state* st)
@@ -2911,7 +2911,7 @@ static void op_add(struct script_state* st)
 			ret = (ret_bignum > 0x7FFFFFFF ? 0x7FFFFFFF : -1 * 0x7FFFFFFF);
 		}
 		*i1 = ret;
-	} else { // ss‚Ì—\’è
+	} else { // ssã®äºˆå®š
 		char *buf = (char *)aCalloc(strlen(s1->u.str) + strlen(s2->u.str) + 1, sizeof(char));
 		strcpy(buf,s1->u.str);
 		strcat(buf,s2->u.str);
@@ -2926,7 +2926,7 @@ static void op_add(struct script_state* st)
 }
 
 /*==========================================
- * O€‰‰Zq
+ * ä¸‰é …æ¼”ç®—å­
  *------------------------------------------
  */
 static void op_3(struct script_state *st)
@@ -2948,7 +2948,7 @@ static void op_3(struct script_state *st)
 }
 
 /*==========================================
- * “ñ€‰‰Zq(•¶š—ñ)
+ * äºŒé …æ¼”ç®—å­(æ–‡å­—åˆ—)
  *------------------------------------------
  */
 static void op_2str(struct script_state *st,int op,int sp1,int sp2)
@@ -2989,7 +2989,7 @@ static void op_2str(struct script_state *st,int op,int sp1,int sp2)
 }
 
 /*==========================================
- * “ñ€‰‰Zq(”’l)
+ * äºŒé …æ¼”ç®—å­(æ•°å€¤)
  *------------------------------------------
  */
 static void op_2num(struct script_state *st,int op,int i1,int i2)
@@ -3026,7 +3026,7 @@ static void op_2num(struct script_state *st,int op,int i1,int i2)
 			if(i2 == 0) {
 				printf("script::op_2num division by zero.\n");
 				ret = 0x7FFFFFFF;
-				ret_bignum = 0;	// ƒI[ƒo[ƒtƒ[‘Îô‚ğ”ò‚Î‚·
+				ret_bignum = 0;	// ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼å¯¾ç­–ã‚’é£›ã°ã™
 			} else {
 				ret = i1 / i2;
 				ret_bignum = (atn_bignumber)i1 / (atn_bignumber)i2;
@@ -3036,7 +3036,7 @@ static void op_2num(struct script_state *st,int op,int i1,int i2)
 			if(i1 == 0 && i2 < 0) {
 				printf("script::op_2num pow by zero and minus.\n");
 				ret = 0;
-				ret_bignum = 0;	// ƒI[ƒo[ƒtƒ[‘Îô‚ğ”ò‚Î‚·
+				ret_bignum = 0;	// ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼å¯¾ç­–ã‚’é£›ã°ã™
 			} else {
 				ret = (int)pow((double)i1, (double)i2);
 				ret_bignum = (atn_bignumber)pow((double)i1, (double)i2);
@@ -3052,7 +3052,7 @@ static void op_2num(struct script_state *st,int op,int i1,int i2)
 }
 
 /*==========================================
- * “ñ€‰‰Zq
+ * äºŒé …æ¼”ç®—å­
  *------------------------------------------
  */
 static void op_2(struct script_state *st,int op)
@@ -3086,7 +3086,7 @@ static void op_2(struct script_state *st,int op)
 }
 
 /*==========================================
- * ’P€‰‰Zq
+ * å˜é …æ¼”ç®—å­
  *------------------------------------------
  */
 static void op_1num(struct script_state *st,int op)
@@ -3109,7 +3109,7 @@ static void op_1num(struct script_state *st,int op)
 }
 
 /*==========================================
- * ŠÖ”‚ÌÀs
+ * é–¢æ•°ã®å®Ÿè¡Œ
  *------------------------------------------
  */
 static int run_func(struct script_state *st)
@@ -3187,27 +3187,27 @@ static int run_func(struct script_state *st)
 	}
 
 	if(st->state==RETFUNC) {
-		// ƒ†[ƒU[’è‹`ŠÖ”‚©‚ç‚Ì•œ‹A
+		// ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°ã‹ã‚‰ã®å¾©å¸°
 		int olddefsp=st->stack->defsp;
 		int j;
 
-		pop_stack(st->stack,st->stack->defsp,start_sp);	// •œ‹A‚É×–‚‚ÈƒXƒ^ƒbƒNíœ
+		pop_stack(st->stack,st->stack->defsp,start_sp);	// å¾©å¸°ã«é‚ªé­”ãªã‚¹ã‚¿ãƒƒã‚¯å‰Šé™¤
 		if(st->stack->defsp<5 || st->stack->stack_data[st->stack->defsp-1].type!=C_RETINFO){
 			printf("script:run_func(return) return without callfunc or callsub!\n");
 			st->state=END;
 			return 0;
 		}
-		// ŠÖ”ˆË‘¶•Ï”‚Ìíœ
+		// é–¢æ•°ä¾å­˜å¤‰æ•°ã®å‰Šé™¤
 		script_free_vars( st->stack->var_function );
 		aFree(st->stack->var_function);
 
-		j = conv_num(st,& (st->stack->stack_data[st->stack->defsp-5]));									// ˆø”‚Ì”æ“¾
-		st->pos = conv_num(st,& (st->stack->stack_data[st->stack->defsp-1]));								// ƒXƒNƒŠƒvƒgˆÊ’u‚Ì•œŒ³
-		st->script = (struct script_code*)st->stack->stack_data[st->stack->defsp-3].u.ptr;		// ƒXƒNƒŠƒvƒg‚ğ•œŒ³
-		st->stack->var_function = (struct linkdb_node**)st->stack->stack_data[st->stack->defsp-2].u.ptr; // ŠÖ”ˆË‘¶•Ï”
+		j = conv_num(st,& (st->stack->stack_data[st->stack->defsp-5]));									// å¼•æ•°ã®æ•°å–å¾—
+		st->pos = conv_num(st,& (st->stack->stack_data[st->stack->defsp-1]));								// ã‚¹ã‚¯ãƒªãƒ—ãƒˆä½ç½®ã®å¾©å…ƒ
+		st->script = (struct script_code*)st->stack->stack_data[st->stack->defsp-3].u.ptr;		// ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å¾©å…ƒ
+		st->stack->var_function = (struct linkdb_node**)st->stack->stack_data[st->stack->defsp-2].u.ptr; // é–¢æ•°ä¾å­˜å¤‰æ•°
 
-		st->stack->defsp=conv_num(st,& (st->stack->stack_data[st->stack->defsp-4]));	// Šî€ƒXƒ^ƒbƒNƒ|ƒCƒ“ƒ^‚ğ•œŒ³
-		pop_stack(st->stack,olddefsp-5-j,olddefsp);		// —v‚ç‚È‚­‚È‚Á‚½ƒXƒ^ƒbƒN(ˆø”‚Æ•œ‹A—pƒf[ƒ^)íœ
+		st->stack->defsp=conv_num(st,& (st->stack->stack_data[st->stack->defsp-4]));	// åŸºæº–ã‚¹ã‚¿ãƒƒã‚¯ãƒã‚¤ãƒ³ã‚¿ã‚’å¾©å…ƒ
+		pop_stack(st->stack,olddefsp-5-j,olddefsp);		// è¦ã‚‰ãªããªã£ãŸã‚¹ã‚¿ãƒƒã‚¯(å¼•æ•°ã¨å¾©å¸°ç”¨ãƒ‡ãƒ¼ã‚¿)å‰Šé™¤
 
 		st->state=GOTO;
 	}
@@ -3216,7 +3216,7 @@ static int run_func(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒg‚ÌÀs
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®å®Ÿè¡Œ
  *------------------------------------------
  */
 static void run_script_main(struct script_state *st);
@@ -3234,16 +3234,16 @@ void run_script(struct script_code *rootscript,int pos,int rid,int oid)
 	st = (struct script_state *)aCalloc(1, sizeof(struct script_state));
 
 	if(sd && sd->stack && sd->npc_scriptroot == rootscript) {
-		// ‘O‰ñ‚ÌƒXƒ^ƒbƒN‚ğ•œ‹A
+		// å‰å›ã®ã‚¹ã‚¿ãƒƒã‚¯ã‚’å¾©å¸°
 		st->script = sd->npc_script;
 		st->stack  = sd->stack;
 		st->state  = sd->npc_scriptstate;
-		sd->stack           = NULL; // ƒvƒŒƒCƒ„[‚ªƒfƒ^ƒbƒ`‚³‚ê‚Ä‚à—Ç‚¢‚æ‚¤‚ÉƒNƒŠƒA
+		sd->stack           = NULL; // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒãƒ‡ã‚¿ãƒƒãƒã•ã‚Œã¦ã‚‚è‰¯ã„ã‚ˆã†ã«ã‚¯ãƒªã‚¢
 		sd->npc_script	    = NULL;
 		sd->npc_scriptroot  = NULL;
 		sd->npc_scriptstate = 0;
 	} else {
-		// ƒXƒ^ƒbƒN‰Šú‰»
+		// ã‚¹ã‚¿ãƒƒã‚¯åˆæœŸåŒ–
 		st->stack = (struct script_stack *)aMalloc(sizeof(struct script_stack));
 		st->stack->sp     = 0;
 		st->stack->defsp  = 0;
@@ -3263,11 +3263,11 @@ void run_script(struct script_code *rootscript,int pos,int rid,int oid)
 		if(sd->npc_dynamic_id == sd->npc_id)
 			npc_dynamicnpc_start(sd);
 	}
-	run_script_main(st);	// st‚Ìfree‚àŠÜ‚ß‚Ä‚±‚Ì“à•”‚Åˆ—‚·‚é
+	run_script_main(st);	// stã®freeã‚‚å«ã‚ã¦ã“ã®å†…éƒ¨ã§å‡¦ç†ã™ã‚‹
 }
 
 /*==========================================
- * w’èƒm[ƒh‚ğsleep_db‚©‚çíœ
+ * æŒ‡å®šãƒãƒ¼ãƒ‰ã‚’sleep_dbã‹ã‚‰å‰Šé™¤
  *------------------------------------------
  */
 static struct linkdb_node* script_erase_sleepdb(struct linkdb_node *n)
@@ -3284,11 +3284,11 @@ static struct linkdb_node* script_erase_sleepdb(struct linkdb_node *n)
 		n->next->prev = n->prev;
 	retnode = n->next;
 	aFree( n );
-	return retnode;		// Ÿ‚Ìƒm[ƒh‚ğ•Ô‚·
+	return retnode;		// æ¬¡ã®ãƒãƒ¼ãƒ‰ã‚’è¿”ã™
 }
 
 /*==========================================
- * sleep—pƒ^ƒCƒ}[ŠÖ”
+ * sleepç”¨ã‚¿ã‚¤ãƒãƒ¼é–¢æ•°
  *------------------------------------------
  */
 static int run_script_timer(int tid, unsigned int tick, int id, void *data)
@@ -3310,7 +3310,7 @@ static int run_script_timer(int tid, unsigned int tick, int id, void *data)
 }
 
 /*==========================================
- * sleep•œ‹Aˆ—
+ * sleepå¾©å¸°å‡¦ç†
  *------------------------------------------
  */
 static void run_script_awake(struct script_state *st)
@@ -3338,7 +3338,7 @@ static void run_script_awake(struct script_state *st)
 }
 
 /*==========================================
- * sleep”jŠüˆ—
+ * sleepç ´æ£„å‡¦ç†
  *------------------------------------------
  */
 void script_erase_sleeptimer(int id)
@@ -3365,7 +3365,7 @@ void script_erase_sleeptimer(int id)
 }
 
 /*==========================================
- * ƒXƒNƒŠƒvƒg‚ÌÀsƒƒCƒ“•”•ª
+ * ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®å®Ÿè¡Œãƒ¡ã‚¤ãƒ³éƒ¨åˆ†
  *------------------------------------------
  */
 static void run_script_main(struct script_state *st)
@@ -3467,9 +3467,9 @@ static void run_script_main(struct script_state *st)
 
 	sd = map_id2sd(st->rid);
 	if(st->sleep.tick > 0) {
-		// ƒXƒ^ƒbƒNî•ñ‚ğsleep_db‚É•Û‘¶
+		// ã‚¹ã‚¿ãƒƒã‚¯æƒ…å ±ã‚’sleep_dbã«ä¿å­˜
 		if(sd) {
-			// ƒfƒ^ƒbƒ`‚³‚ê‚½‚©‚Ç‚¤‚©‚Ì”»’è—p
+			// ãƒ‡ã‚¿ãƒƒãƒã•ã‚ŒãŸã‹ã©ã†ã‹ã®åˆ¤å®šç”¨
 			sd->npc_sleep = &st->sleep;
 			npc_timeout_stop(sd);
 		}
@@ -3480,7 +3480,7 @@ static void run_script_main(struct script_state *st)
 
 	if(st->state != END && sd) {
 		if(sd->stack) {
-			// Œ³‚ÌƒXƒ^ƒbƒNî•ñ‚ğ”jŠü
+			// å…ƒã®ã‚¹ã‚¿ãƒƒã‚¯æƒ…å ±ã‚’ç ´æ£„
 			script_free_stack(sd->stack);
 			sd->state.menu_or_input = 0;
 			sd->progressbar.npc_id = 0;
@@ -3490,7 +3490,7 @@ static void run_script_main(struct script_state *st)
 			npc_timeout_stop(sd);
 		}
 
-		// ÄŠJ‚·‚é‚½‚ß‚ÉƒXƒ^ƒbƒNî•ñ‚ğ•Û‘¶
+		// å†é–‹ã™ã‚‹ãŸã‚ã«ã‚¹ã‚¿ãƒƒã‚¯æƒ…å ±ã‚’ä¿å­˜
 		sd->npc_script      = st->script;
 		sd->npc_scriptroot  = st->scriptroot;
 		sd->npc_scriptstate = st->state;
@@ -3498,7 +3498,7 @@ static void run_script_main(struct script_state *st)
 		sd->npc_id          = st->oid;
 		sd->npc_pos         = st->pos;
 	} else {
-		// Às‚ªI‚í‚Á‚½ or ‘±s•s‰Â”\‚È‚Ì‚ÅƒXƒ^ƒbƒNƒNƒŠƒA
+		// å®Ÿè¡ŒãŒçµ‚ã‚ã£ãŸ or ç¶šè¡Œä¸å¯èƒ½ãªã®ã§ã‚¹ã‚¿ãƒƒã‚¯ã‚¯ãƒªã‚¢
 		if(sd) {
 			npc_timeout_stop(sd);
 			if(st->oid == sd->npc_id)
@@ -3513,7 +3513,7 @@ static void run_script_main(struct script_state *st)
 }
 
 /*==========================================
- * ‰i‘±“Iƒ}ƒbƒv•Ï”‚Ì©“®ƒZ[ƒu
+ * æ°¸ç¶šçš„ãƒãƒƒãƒ—å¤‰æ•°ã®è‡ªå‹•ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 static int script_autosave_mapreg(int tid,unsigned int tick,int id,void *data)
@@ -3524,7 +3524,7 @@ static int script_autosave_mapreg(int tid,unsigned int tick,int id,void *data)
 }
 
 /*==========================================
- * posword‚Ìİ’è
+ * poswordã®è¨­å®š
  *------------------------------------------
  */
 static void set_posword(const char *p)
@@ -3551,7 +3551,7 @@ static void set_posword(const char *p)
 }
 
 /*==========================================
- * config“Ç‚İ‚İ
+ * configèª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 int script_config_read(const char *cfgName)
@@ -3655,7 +3655,7 @@ int script_config_read(const char *cfgName)
 }
 
 /*==========================================
- * "this" ‚ğl—¶‚µ‚Ämap–¼‚©‚çmap”Ô†‚Ö•ÏŠ·
+ * "this" ã‚’è€ƒæ…®ã—ã¦mapåã‹ã‚‰mapç•ªå·ã¸å¤‰æ›
  *------------------------------------------
  */
 static int script_mapname2mapid(struct script_state *st,const char *mapname)
@@ -3674,7 +3674,7 @@ static int script_mapname2mapid(struct script_state *st,const char *mapname)
 }
 
 /*==========================================
- * scriptî•ñ‚©‚çƒƒ‚ƒŠƒAƒ‹IDæ“¾
+ * scriptæƒ…å ±ã‹ã‚‰ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«IDå–å¾—
  *------------------------------------------
  */
 static int script_getmemorialid(struct script_state *st)
@@ -3682,18 +3682,18 @@ static int script_getmemorialid(struct script_state *st)
 	struct npc_data *nd = map_id2nd(st->oid);
 	int memorial_id = 0;
 
-	// ÀsNPC‚©‚çæ“¾
+	// å®Ÿè¡ŒNPCã‹ã‚‰å–å¾—
 	if(nd && nd->bl.m >= 0) {
 		memorial_id = map[nd->bl.m].memorial_id;
 	}
 
-	// ÀsNPC‚ªƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“•sİ‚Ìê‡‚ÍPC‚©‚çæ“¾
+	// å®Ÿè¡ŒNPCãŒãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ä¸åœ¨ã®å ´åˆã¯PCã‹ã‚‰å–å¾—
 	if(memorial_id == 0) {
 		struct map_session_data *sd = script_rid2sd(st);
 		if(sd) {
 			memorial_id = map[sd->bl.m].memorial_id;
 
-			// PC‚ªƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“•sİ‚Ìê‡‚ÍPT‚©‚çæ“¾
+			// PCãŒãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ä¸åœ¨ã®å ´åˆã¯PTã‹ã‚‰å–å¾—
 			if(memorial_id == 0) {
 				struct party *pt = party_search(sd->status.party_id);
 				if(pt) {
@@ -3707,7 +3707,7 @@ static int script_getmemorialid(struct script_state *st)
 }
 
 /*==========================================
- * @readvars, @writevars—pŠÖ”
+ * @readvars, @writevarsç”¨é–¢æ•°
  *------------------------------------------
  */
 int script_check_variable(const char *name,int array_flag,int read_only)
@@ -3718,13 +3718,13 @@ int script_check_variable(const char *name,int array_flag,int read_only)
 		return 0;
 
 	switch(str_data[i].type) {
-		case C_NAME:		// •Ï”‚Í–³ğŒ‚Å‹–‰Â
+		case C_NAME:		// å¤‰æ•°ã¯ç„¡æ¡ä»¶ã§è¨±å¯
 			return 1;
-		case C_PARAM:		// –„‚ß‚İ•Ï”‚Í[]‚ª‚È‚¯‚ê‚Î‹–‰Â
+		case C_PARAM:		// åŸ‹ã‚è¾¼ã¿å¤‰æ•°ã¯[]ãŒãªã‘ã‚Œã°è¨±å¯
 			if(!array_flag)
 				return 1;
 			break;
-		case C_INT:		// ’è”‚Í[]‚ª‚È‚­‚Ä“Ç‚İæ‚è‚Ì‚İ‹–‰Â
+		case C_INT:		// å®šæ•°ã¯[]ãŒãªãã¦èª­ã¿å–ã‚Šæ™‚ã®ã¿è¨±å¯
 		case C_STR:
 			if(!array_flag && read_only)
 				return 1;
@@ -3736,7 +3736,7 @@ int script_check_variable(const char *name,int array_flag,int read_only)
 void* script_read_vars(struct map_session_data *sd,const char *var,int elem,struct linkdb_node **ref)
 {
 	if(sd) {
-		// ƒvƒŒƒCƒ„[‚ÉƒAƒ^ƒbƒ`‚·‚é•K—v‚ª‚ ‚é‚È‚çst‚ğ—pˆÓ
+		// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«ã‚¢ã‚¿ãƒƒãƒã™ã‚‹å¿…è¦ãŒã‚ã‚‹ãªã‚‰stã‚’ç”¨æ„
 		struct script_state st;
 
 		memset(&st, 0, sizeof(st));
@@ -3755,7 +3755,7 @@ void script_write_vars(struct map_session_data *sd,const char *var,int elem,void
 }
 
 /*==========================================
- * g—p‚³‚ê‚½•Ï”‚Ìˆê——‚ğo—Í
+ * ä½¿ç”¨ã•ã‚ŒãŸå¤‰æ•°ã®ä¸€è¦§ã‚’å‡ºåŠ›
  *------------------------------------------
  */
 static int varlist_sort1(void *key,void *data,va_list ap)
@@ -3800,7 +3800,7 @@ static int varsdb_output(void)
 				char *name = str_buf + str_data[ vlist[i] ].str;
 				struct vars_info *v = (struct vars_info *)numdb_search( vars_db, INT2PTR(vlist[i]) );
 				if( strncmp(name, "$@__", 4) != 0 ) {
-					// switch ‚Ì“à•”•Ï”‚ÍœŠO
+					// switch ã®å†…éƒ¨å¤‰æ•°ã¯é™¤å¤–
 					fprintf(fp, "%-20s % 4d %s line %d" NEWLINE, name, v->use_count, v->file, v->line);
 				}
 			}
@@ -3813,7 +3813,7 @@ static int varsdb_output(void)
 }
 
 /*==========================================
- * ƒnƒbƒVƒ…ŠÖ˜Aî•ñ‚ğo—Í
+ * ãƒãƒƒã‚·ãƒ¥é–¢é€£æƒ…å ±ã‚’å‡ºåŠ›
  *------------------------------------------
  */
 #ifdef DEBUG_HASH
@@ -3870,7 +3870,7 @@ static int debug_hash_output(void)
 #endif
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 static int userfunc_db_final(void *key,void *data,va_list ap)
@@ -3926,7 +3926,7 @@ int do_final_script(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 int do_init_script(void)
@@ -3966,7 +3966,7 @@ int do_init_script(void)
 }
 
 //
-// –„‚ß‚İŠÖ”
+// åŸ‹ã‚è¾¼ã¿é–¢æ•°
 //
 
 int buildin_mes(struct script_state *st);
@@ -4675,7 +4675,7 @@ int buildin_goto(struct script_state *st)
 }
 
 /*==========================================
- * ƒ†[ƒU[’è‹`ŠÖ”‚ÌŒÄ‚Ño‚µ
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°ã®å‘¼ã³å‡ºã—
  *------------------------------------------
  */
 int buildin_callfunc(struct script_state *st)
@@ -4691,11 +4691,11 @@ int buildin_callfunc(struct script_state *st)
 			push_copy(st->stack,i);
 		}
 
-		push_val(st->stack,C_INT,j);				// ˆø”‚Ì”‚ğƒvƒbƒVƒ…
-		push_val(st->stack,C_INT,st->stack->defsp);		// Œ»İ‚ÌŠî€ƒXƒ^ƒbƒNƒ|ƒCƒ“ƒ^‚ğƒvƒbƒVƒ…
-		push_ptr(st->stack,C_PTR,st->script);		// Œ»İ‚ÌƒXƒNƒŠƒvƒg‚ğƒvƒbƒVƒ…
-		push_ptr(st->stack,C_PTR,st->stack->var_function);	// Œ»İ‚ÌŠÖ”ˆË‘¶•Ï”‚ğƒvƒbƒVƒ…
-		push_val(st->stack,C_RETINFO,st->pos);			// Œ»İ‚ÌƒXƒNƒŠƒvƒgˆÊ’u‚ğƒvƒbƒVƒ…
+		push_val(st->stack,C_INT,j);				// å¼•æ•°ã®æ•°ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_val(st->stack,C_INT,st->stack->defsp);		// ç¾åœ¨ã®åŸºæº–ã‚¹ã‚¿ãƒƒã‚¯ãƒã‚¤ãƒ³ã‚¿ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_ptr(st->stack,C_PTR,st->script);		// ç¾åœ¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_ptr(st->stack,C_PTR,st->stack->var_function);	// ç¾åœ¨ã®é–¢æ•°ä¾å­˜å¤‰æ•°ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_val(st->stack,C_RETINFO,st->pos);			// ç¾åœ¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆä½ç½®ã‚’ãƒ—ãƒƒã‚·ãƒ¥
 
 		oldscr = st->script;
 		st->pos=0;
@@ -4704,12 +4704,12 @@ int buildin_callfunc(struct script_state *st)
 		st->state=GOTO;
 		st->stack->var_function = (struct linkdb_node**)aCalloc(1, sizeof(struct linkdb_node*));
 
-		// ' •Ï”‚Ìˆø‚«Œp‚¬
+		// ' å¤‰æ•°ã®å¼•ãç¶™ã
 		for(i = 0; i < j; i++) {
 			struct script_data *s = &st->stack->stack_data[st->stack->sp-6-i];
 			if( s->type == C_NAME && !s->ref ) {
 				char *name = str_buf+str_data[s->u.num&0x00ffffff].str;
-				// '@ •Ï”‚Ìˆø‚«Œp‚¬
+				// '@ å¤‰æ•°ã®å¼•ãç¶™ã
 				if( name[0] == '\'' && name[1] == '@' ) {
 					s->ref = oldval;
 				} else if( name[0] == '\'' ) {
@@ -4726,7 +4726,7 @@ int buildin_callfunc(struct script_state *st)
 }
 
 /*==========================================
- * ƒTƒuƒ‹[ƒeƒBƒ“‚ÌŒÄ‚Ño‚µ
+ * ã‚µãƒ–ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã®å‘¼ã³å‡ºã—
  *------------------------------------------
  */
 int buildin_callsub(struct script_state *st)
@@ -4744,23 +4744,23 @@ int buildin_callsub(struct script_state *st)
 			push_copy(st->stack,i);
 		}
 
-		push_val(st->stack,C_INT,j);				// ˆø”‚Ì”‚ğƒvƒbƒVƒ…
-		push_val(st->stack,C_INT,st->stack->defsp);		// Œ»İ‚ÌŠî€ƒXƒ^ƒbƒNƒ|ƒCƒ“ƒ^‚ğƒvƒbƒVƒ…
-		push_ptr(st->stack,C_PTR,st->script);		// Œ»İ‚ÌƒXƒNƒŠƒvƒg‚ğƒvƒbƒVƒ…
-		push_ptr(st->stack,C_PTR,st->stack->var_function);	// Œ»İ‚ÌŠÖ”ˆË‘¶•Ï”‚ğƒvƒbƒVƒ…
-		push_val(st->stack,C_RETINFO,st->pos);			// Œ»İ‚ÌƒXƒNƒŠƒvƒgˆÊ’u‚ğƒvƒbƒVƒ…
+		push_val(st->stack,C_INT,j);				// å¼•æ•°ã®æ•°ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_val(st->stack,C_INT,st->stack->defsp);		// ç¾åœ¨ã®åŸºæº–ã‚¹ã‚¿ãƒƒã‚¯ãƒã‚¤ãƒ³ã‚¿ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_ptr(st->stack,C_PTR,st->script);		// ç¾åœ¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_ptr(st->stack,C_PTR,st->stack->var_function);	// ç¾åœ¨ã®é–¢æ•°ä¾å­˜å¤‰æ•°ã‚’ãƒ—ãƒƒã‚·ãƒ¥
+		push_val(st->stack,C_RETINFO,st->pos);			// ç¾åœ¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆä½ç½®ã‚’ãƒ—ãƒƒã‚·ãƒ¥
 
 		st->pos=pos;
 		st->stack->defsp=st->start+5+j;
 		st->state=GOTO;
 		st->stack->var_function = (struct linkdb_node**)aCalloc(1, sizeof(struct linkdb_node*));
 
-		// ' •Ï”‚Ìˆø‚«Œp‚¬
+		// ' å¤‰æ•°ã®å¼•ãç¶™ã
 		for(i = 0; i < j; i++) {
 			struct script_data *s = &st->stack->stack_data[st->stack->sp-6-i];
 			if( s->type == C_NAME && !s->ref ) {
 				char *name = str_buf+str_data[s->u.num&0x00ffffff].str;
-				// '@ •Ï”‚Ìˆø‚«Œp‚¬
+				// '@ å¤‰æ•°ã®å¼•ãç¶™ã
 				if( name[0] == '\'' && name[1] == '@' ) {
 					s->ref = oldval;
 				}
@@ -4771,7 +4771,7 @@ int buildin_callsub(struct script_state *st)
 }
 
 /*==========================================
- * ˆø”‚Ìæ“¾
+ * å¼•æ•°ã®å–å¾—
  *------------------------------------------
  */
 int buildin_getarg(struct script_state *st)
@@ -4796,7 +4796,7 @@ int buildin_getarg(struct script_state *st)
 }
 
 /*==========================================
- * ˆø”‚Ì‘ŒÂ”‚ğæ“¾
+ * å¼•æ•°ã®ç·å€‹æ•°ã‚’å–å¾—
  *------------------------------------------
  */
 int buildin_getargcount(struct script_state *st)
@@ -4815,12 +4815,12 @@ int buildin_getargcount(struct script_state *st)
 }
 
 /*==========================================
- * ƒTƒuƒ‹[ƒ`ƒ“/ƒ†[ƒU[’è‹`ŠÖ”‚ÌI—¹
+ * ã‚µãƒ–ãƒ«ãƒ¼ãƒãƒ³/ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©é–¢æ•°ã®çµ‚äº†
  *------------------------------------------
  */
 int buildin_return(struct script_state *st)
 {
-	if(st->end>st->start+2){	// –ß‚è’l—L‚è
+	if(st->end>st->start+2){	// æˆ»ã‚Šå€¤æœ‰ã‚Š
 		struct script_data *sd;
 
 		push_copy(st->stack,st->start+2);
@@ -4830,15 +4830,15 @@ int buildin_return(struct script_state *st)
 			char *name = str_buf + str_data[sd->u.num&0x00ffffff].str;
 			if( name[0] == '\'' ) {
 				if( name[1] == '@' ) {
-					// '@ •Ï”‚ğQÆ“n‚µ‚É‚·‚é‚ÆŠëŒ¯‚È‚Ì‚Å’l“n‚µ‚É‚·‚é
+					// '@ å¤‰æ•°ã‚’å‚ç…§æ¸¡ã—ã«ã™ã‚‹ã¨å±é™ºãªã®ã§å€¤æ¸¡ã—ã«ã™ã‚‹
 					get_val(st,sd);
-					if(isstr(sd)) {		// •¶š—ñ‚Ìê‡‚ÍaStrdup‚µ‚È‚¢‚Æ‚¢‚¯‚È‚¢
+					if(isstr(sd)) {		// æ–‡å­—åˆ—ã®å ´åˆã¯aStrdupã—ãªã„ã¨ã„ã‘ãªã„
 						sd->type  = C_STR;
 						sd->u.str = (char *)aStrdup(sd->u.str);
 					}
 				} else if( !sd->ref ) {
-					// ' •Ï”‚ÍQÆ“n‚µ‚Å‚à—Ç‚¢‚ªAQÆŒ³‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¢‚Æ
-					// Œ³‚ÌƒXƒNƒŠƒvƒg‚Ì’l‚ğ·‚µ‚Ä‚µ‚Ü‚¤‚Ì‚Å•â³‚·‚é
+					// ' å¤‰æ•°ã¯å‚ç…§æ¸¡ã—ã§ã‚‚è‰¯ã„ãŒã€å‚ç…§å…ƒãŒè¨­å®šã•ã‚Œã¦ã„ãªã„ã¨
+					// å…ƒã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®å€¤ã‚’å·®ã—ã¦ã—ã¾ã†ã®ã§è£œæ­£ã™ã‚‹
 					sd->ref = &st->script->script_vars;
 				}
 			}
@@ -4900,7 +4900,7 @@ int buildin_menu(struct script_state *st)
 	int i;
 	struct map_session_data *sd = script_rid2sd(st);
 
-	if(sd == NULL) {	// ƒLƒƒƒ“ƒZƒ‹ˆµ‚¢‚É‚·‚é
+	if(sd == NULL) {	// ã‚­ãƒ£ãƒ³ã‚»ãƒ«æ‰±ã„ã«ã™ã‚‹
 		st->state = END;
 		return 0;
 	}
@@ -4911,7 +4911,7 @@ int buildin_menu(struct script_state *st)
 		sd->state.menu_or_input = 1;
 
 		if((st->end - st->start - 2) % 2 == 1) {
-			// ˆø”‚Ì”‚ªŠï”‚È‚Ì‚ÅƒGƒ‰[ˆµ‚¢
+			// å¼•æ•°ã®æ•°ãŒå¥‡æ•°ãªã®ã§ã‚¨ãƒ©ãƒ¼æ‰±ã„
 			printf("buildin_menu: illigal argument count(%d).\n", st->end - st->start - 2);
 			sd->state.menu_or_input = 0;
 			st->state = END;
@@ -4941,10 +4941,10 @@ int buildin_menu(struct script_state *st)
 	} else if(sd->npc_menu <= 0 || sd->npc_menu == 0xff) {	// invalid or cancel
 		sd->state.menu_or_input = 0;
 		st->state = END;
-	} else {	// goto“®ì
+	} else {	// gotoå‹•ä½œ
 		int count = 0;
 		sd->state.menu_or_input = 0;
-		// ‹ó•¶š‚Æ : ‚Ìƒƒjƒ…[•â³
+		// ç©ºæ–‡å­—ã¨ : ã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼è£œæ­£
 		for(i=st->start+2; count < sd->npc_menu && i<st->end; i+=2) {
 			char *p  = conv_str(st,& (st->stack->stack_data[i]));
 			char *np = NULL;
@@ -4971,7 +4971,7 @@ int buildin_menu(struct script_state *st)
 			st->pos   = conv_num(st,& (st->stack->stack_data[i-1]));
 			st->state = GOTO;
 		} else {
-			// •s³‚È’l‚È‚Ì‚ÅƒLƒƒƒ“ƒZƒ‹ˆµ‚¢
+			// ä¸æ­£ãªå€¤ãªã®ã§ã‚­ãƒ£ãƒ³ã‚»ãƒ«æ‰±ã„
 			st->state = END;
 		}
 	}
@@ -5021,7 +5021,7 @@ static int script_warp(struct map_session_data *sd, const char *mapname, int x, 
 		pc_setpos(sd, sd->status.save_point.map, sd->status.save_point.x, sd->status.save_point.y, 3);
 	} else {
 		if(pc_setpos(sd, mapname, x, y, 0)) {
-			// ¸”s‚µ‚½‚Ì‚Å .gat ‚ğ•t‚¯‚ÄƒŠƒgƒ‰ƒC
+			// å¤±æ•—ã—ãŸã®ã§ .gat ã‚’ä»˜ã‘ã¦ãƒªãƒˆãƒ©ã‚¤
 			char *str = (char *)aMalloc(strlen(mapname) + 5);
 			memcpy(str, mapname, strlen(mapname) + 1);
 			strcat(str, ".gat");
@@ -5071,7 +5071,7 @@ int buildin_warp(struct script_state *st)
 }
 
 /*==========================================
- * MAPw’èƒ[ƒv
+ * MAPæŒ‡å®šãƒ¯ãƒ¼ãƒ—
  *------------------------------------------
  */
 static int buildin_mapwarp_sub(struct block_list *bl,va_list ap)
@@ -5109,7 +5109,7 @@ int buildin_mapwarp(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒŠƒAw’èƒ[ƒv
+ * ã‚¨ãƒªã‚¢æŒ‡å®šãƒ¯ãƒ¼ãƒ—
  *------------------------------------------
  */
 int buildin_areawarp(struct script_state *st)
@@ -5207,12 +5207,12 @@ int buildin_input(struct script_state *st)
 	char *name;
 	char postfix;
 
-	if(sd == NULL) {	// ƒGƒ‰[ˆµ‚¢‚É‚·‚é
+	if(sd == NULL) {	// ã‚¨ãƒ©ãƒ¼æ‰±ã„ã«ã™ã‚‹
 		st->state = END;
 		return 0;
 	}
 	if(st->stack->stack_data[st->start+2].type != C_NAME) {
-		// •Ï”‚Å‚Í‚È‚¢‚Ì‚ÅƒGƒ‰[ˆµ‚¢
+		// å¤‰æ•°ã§ã¯ãªã„ã®ã§ã‚¨ãƒ©ãƒ¼æ‰±ã„
 		printf("buildin_input: param not name\n");
 		st->state = END;
 		return 0;
@@ -5239,7 +5239,7 @@ int buildin_input(struct script_state *st)
 }
 
 /*==========================================
- * •Ï”İ’è
+ * å¤‰æ•°è¨­å®š
  *------------------------------------------
  */
 int buildin_set(struct script_state *st)
@@ -5262,11 +5262,11 @@ int buildin_set(struct script_state *st)
 		sd = script_rid2sd(st);
 
 	if( postfix == '$' ) {
-		// •¶š—ñ
+		// æ–‡å­—åˆ—
 		char *str = conv_str(st,& (st->stack->stack_data[st->start+3]));
 		set_reg(st,sd,num,name,(void*)str,st->stack->stack_data[st->start+2].ref);
 	} else {
-		// ”’l
+		// æ•°å€¤
 		int val = conv_num(st,& (st->stack->stack_data[st->start+3]));
 		set_reg(st,sd,num,name,INT2PTR(val),st->stack->stack_data[st->start+2].ref);
 	}
@@ -5275,7 +5275,7 @@ int buildin_set(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ•Ï”İ’è
+ * é…åˆ—å¤‰æ•°è¨­å®š
  *------------------------------------------
  */
 int buildin_setarray(struct script_state *st)
@@ -5315,7 +5315,7 @@ int buildin_setarray(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ•Ï”ƒNƒŠƒA
+ * é…åˆ—å¤‰æ•°ã‚¯ãƒªã‚¢
  *------------------------------------------
  */
 int buildin_cleararray(struct script_state *st)
@@ -5358,7 +5358,7 @@ int buildin_cleararray(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ•Ï”ƒRƒs[
+ * é…åˆ—å¤‰æ•°ã‚³ãƒ”ãƒ¼
  *------------------------------------------
  */
 int buildin_copyarray(struct script_state *st)
@@ -5404,7 +5404,7 @@ int buildin_copyarray(struct script_state *st)
 		sz = 128 - (num>>24);
 
 	if((num & 0x00FFFFFF) == (num2 & 0x00FFFFFF) && (num & 0xFF000000) > (num2 & 0xFF000000)) {
-		// “¯‚¶”z—ñ‚ÅAnum > num2 ‚Ìê‡‘å‚«‚¢•û‚©‚çƒRƒs[‚µ‚È‚¢‚Æ‚¢‚¯‚È‚¢
+		// åŒã˜é…åˆ—ã§ã€num > num2 ã®å ´åˆå¤§ãã„æ–¹ã‹ã‚‰ã‚³ãƒ”ãƒ¼ã—ãªã„ã¨ã„ã‘ãªã„
 		for(i=sz-1; i>=0; i--)
 			set_reg(
 				st,sd,num+(i<<24),name,
@@ -5419,7 +5419,7 @@ int buildin_copyarray(struct script_state *st)
 					get_val2(st,num2+(i<<24),st->stack->stack_data[st->start+3].ref),
 					st->stack->stack_data[st->start+2].ref
 				);
-			} else {	// num2‚ª”z—ñãŒÀ‚ğ’´‚¦‚½‚çc‚è‚Í0‚Å–„‚ß‚é
+			} else {	// num2ãŒé…åˆ—ä¸Šé™ã‚’è¶…ãˆãŸã‚‰æ®‹ã‚Šã¯0ã§åŸ‹ã‚ã‚‹
 				set_reg(
 					st,sd,num+(i<<24),name,
 					(postfix == '$')? "": 0,
@@ -5432,7 +5432,7 @@ int buildin_copyarray(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ•Ï”‚ÌƒTƒCƒYæ“¾
+ * é…åˆ—å¤‰æ•°ã®ã‚µã‚¤ã‚ºå–å¾—
  *------------------------------------------
  */
 static int getarraysize(struct script_state *st,int num,char postfix,struct linkdb_node** ref)
@@ -5477,7 +5477,7 @@ int buildin_getarraysize(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ•Ï”‚©‚ç—v‘fíœ
+ * é…åˆ—å¤‰æ•°ã‹ã‚‰è¦ç´ å‰Šé™¤
  *------------------------------------------
  */
 int buildin_deletearray(struct script_state *st)
@@ -5523,7 +5523,7 @@ int buildin_deletearray(struct script_state *st)
 }
 
 /*==========================================
- * ”z—ñ‚ğ•¶š—ñ‚Æ‚µ‚Äo—Í
+ * é…åˆ—ã‚’æ–‡å­—åˆ—ã¨ã—ã¦å‡ºåŠ›
  *------------------------------------------
  */
 int buildin_printarray(struct script_state *st)
@@ -5592,7 +5592,7 @@ int buildin_printarray(struct script_state *st)
 }
 
 /*==========================================
- * w’è—v‘f‚ğ•\‚·’l(ƒL[)‚ğæ“¾‚·‚é
+ * æŒ‡å®šè¦ç´ ã‚’è¡¨ã™å€¤(ã‚­ãƒ¼)ã‚’å–å¾—ã™ã‚‹
  *------------------------------------------
  */
 int buildin_getelementofarray(struct script_state *st)
@@ -5613,7 +5613,7 @@ int buildin_getelementofarray(struct script_state *st)
 			push_val(st->stack,C_INT,0);
 			return 0;
 		}
-		if(j == 0 && count == 0)	// @hoge[0][1] ‚Í @hoge[1] ‚Æ‚µ‚Ä“o˜^‚·‚é‚½‚ß‚Ìˆ—
+		if(j == 0 && count == 0)	// @hoge[0][1] ã¯ @hoge[1] ã¨ã—ã¦ç™»éŒ²ã™ã‚‹ãŸã‚ã®å‡¦ç†
 			continue;
 
 		if(i < st->end-1)
@@ -5629,10 +5629,10 @@ int buildin_getelementofarray(struct script_state *st)
 		char *name   = str_buf+str_data[num&0x00ffffff].str;
 		size_t len   = strlen(name);
 		char postfix = name[len-1];
-		char *var    = (char *)aCalloc(1+len+count*5, sizeof(char));	// 1‚Â“–‚½‚èÅ‘å‚Å [xxx] ‚Ì5•¶š
+		char *var    = (char *)aCalloc(1+len+count*5, sizeof(char));	// 1ã¤å½“ãŸã‚Šæœ€å¤§ã§ [xxx] ã®5æ–‡å­—
 		char *p;
 
-		// postfix‚Æ[]‚ğí‚Á‚½•Ï”–¼‚»‚Ì‚à‚Ì‚É‚·‚é
+		// postfixã¨[]ã‚’å‰Šã£ãŸå¤‰æ•°åãã®ã‚‚ã®ã«ã™ã‚‹
 		strcpy(var,name);
 		if(postfix == '$')
 			var[len-1] = 0;
@@ -5669,8 +5669,8 @@ int buildin_setlook(struct script_state *st)
 }
 
 /*==========================================
- * Œ©‚½–Ú‚Ìƒpƒ‰ƒ[ƒ^‚ğ•Ô‚·
- *   nF1,”¯Œ^A2,•ŠíA3,“ªã’iA4,“ª’†’iA5,“ª‰º’iA6,”¯FA7,•FA8,‚A13,•‘•
+ * è¦‹ãŸç›®ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
+ *   nï¼š1,é«ªå‹ã€2,æ­¦å™¨ã€3,é ­ä¸Šæ®µã€4,é ­ä¸­æ®µã€5,é ­ä¸‹æ®µã€6,é«ªè‰²ã€7,æœè‰²ã€8,ç›¾ã€13,æœè£…
  *------------------------------------------
  */
 int buildin_getlook(struct script_state *st)
@@ -5733,7 +5733,7 @@ int buildin_cutin(struct script_state *st)
 }
 
 /*==========================================
- * ƒJ[ƒh‚ÌƒCƒ‰ƒXƒg‚ğ•\¦‚·‚é
+ * ã‚«ãƒ¼ãƒ‰ã®ã‚¤ãƒ©ã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
  *------------------------------------------
  */
 int buildin_cutincard(struct script_state *st)
@@ -5831,7 +5831,7 @@ int buildin_countcartitem(struct script_state *st)
 }
 
 /*==========================================
- * d—Êƒ`ƒFƒbƒN
+ * é‡é‡ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_checkweight(struct script_state *st)
@@ -5867,7 +5867,7 @@ int buildin_checkweight(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒ“ƒxƒ“ƒgƒŠ‚Ì‹ó‚«”ƒ`ƒFƒbƒN
+ * ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒªã®ç©ºãæ•°ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_checkitemblank(struct script_state *st)
@@ -5907,17 +5907,17 @@ int buildin_getitem(struct script_state *st)
 	}
 
 	amount = conv_num(st,& (st->stack->stack_data[st->start+3]));
-	if(st->end > st->start+4)	// ŠÓ’è‚µ‚½ó‘Ô‚Å“n‚·‚©‚Ç‚¤‚©
+	if(st->end > st->start+4)	// é‘‘å®šã—ãŸçŠ¶æ…‹ã§æ¸¡ã™ã‹ã©ã†ã‹
 		flag = (conv_num(st,& (st->stack->stack_data[st->start+4])) == 0)? 1: 0;
-	if(st->end > st->start+5)	// ƒAƒCƒeƒ€‚ğw’è‚µ‚½ID‚É“n‚·
+	if(st->end > st->start+5)	// ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒ‡å®šã—ãŸIDã«æ¸¡ã™
 		sd = map_id2sd(conv_num(st,& (st->stack->stack_data[st->start+5])));
-	if(sd == NULL)			// ƒAƒCƒeƒ€‚ğ“n‚·‘Šè‚ª‚¢‚È‚©‚Á‚½‚ç‚¨‹A‚è
+	if(sd == NULL)			// ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ¸¡ã™ç›¸æ‰‹ãŒã„ãªã‹ã£ãŸã‚‰ãŠå¸°ã‚Š
 		return 0;
 
 	do {
 		memset(&item_tmp,0,sizeof(item_tmp));
 
-		if(nameid < 0)		// ƒ‰ƒ“ƒ_ƒ€
+		if(nameid < 0)		// ãƒ©ãƒ³ãƒ€ãƒ 
 			item_tmp.nameid = itemdb_searchrandomid(-nameid);
 		else
 			item_tmp.nameid = nameid;
@@ -5935,7 +5935,7 @@ int buildin_getitem(struct script_state *st)
 			if(!pc_candrop(sd,item_tmp.nameid))
 				map_addflooritem(&item_tmp,(nameid < 0)? 1: amount,sd->bl.m,sd->bl.x,sd->bl.y,0,0,0,0);
 		}
-	} while(nameid < 0 && ++i < amount);	// ƒ‰ƒ“ƒ_ƒ€Œn‚ÍƒAƒCƒeƒ€‚ÌÄ’Š‘I
+	} while(nameid < 0 && ++i < amount);	// ãƒ©ãƒ³ãƒ€ãƒ ç³»ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®å†æŠ½é¸
 
 	return 0;
 }
@@ -5977,15 +5977,15 @@ int buildin_getitem2(struct script_state *st)
 	c4     = conv_num(st,& (st->stack->stack_data[st->start+10]));
 	if(st->end > st->start+11)
 		limit = (unsigned int)conv_num(st,& (st->stack->stack_data[st->start+11]));
-	if(st->end > st->start+12)	// ƒAƒCƒeƒ€‚ğw’è‚µ‚½ID‚É“n‚·
+	if(st->end > st->start+12)	// ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒ‡å®šã—ãŸIDã«æ¸¡ã™
 		sd = map_id2sd(conv_num(st,& (st->stack->stack_data[st->start+12])));
-	if(sd == NULL)			// ƒAƒCƒeƒ€‚ğ“n‚·‘Šè‚ª‚¢‚È‚©‚Á‚½‚ç‚¨‹A‚è
+	if(sd == NULL)			// ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ¸¡ã™ç›¸æ‰‹ãŒã„ãªã‹ã£ãŸã‚‰ãŠå¸°ã‚Š
 		return 0;
 
 	do {
 		memset(&item_tmp,0,sizeof(item_tmp));
 
-		if(nameid < 0)		// ƒ‰ƒ“ƒ_ƒ€
+		if(nameid < 0)		// ãƒ©ãƒ³ãƒ€ãƒ 
 			item_tmp.nameid = itemdb_searchrandomid(-nameid);
 		else
 			item_tmp.nameid = nameid;
@@ -6024,13 +6024,13 @@ int buildin_getitem2(struct script_state *st)
 			if(!pc_candrop(sd,item_tmp.nameid))
 				map_addflooritem(&item_tmp,(nameid < 0)? 1: amount,sd->bl.m,sd->bl.x,sd->bl.y,0,0,0,0);
 		}
-	} while(nameid < 0 && ++i < amount);	// ƒ‰ƒ“ƒ_ƒ€Œn‚ÍƒAƒCƒeƒ€‚ÌÄ’Š‘I
+	} while(nameid < 0 && ++i < amount);	// ãƒ©ãƒ³ãƒ€ãƒ ç³»ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®å†æŠ½é¸
 
 	return 0;
 }
 
 /*==========================================
- * ƒIƒvƒVƒ‡ƒ“•t‚«ƒAƒCƒeƒ€‚Ìæ“¾
+ * ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä»˜ãã‚¢ã‚¤ãƒ†ãƒ ã®å–å¾—
  *------------------------------------------
  */
 int buildin_getoptitem(struct script_state *st)
@@ -6067,13 +6067,13 @@ int buildin_getoptitem(struct script_state *st)
 	key    = conv_num(st,& (st->stack->stack_data[st->start+10]));
 	if(st->end > st->start+11)
 		limit = (unsigned int)conv_num(st,& (st->stack->stack_data[st->start+11]));
-	if(st->end > st->start+12)	// ƒAƒCƒeƒ€‚ğw’è‚µ‚½ID‚É“n‚·
+	if(st->end > st->start+12)	// ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒ‡å®šã—ãŸIDã«æ¸¡ã™
 		sd = map_id2sd(conv_num(st,& (st->stack->stack_data[st->start+12])));
 
 	if(sd) {
 		memset(&item_tmp,0,sizeof(item_tmp));
 
-		if(nameid < 0)		// ƒ‰ƒ“ƒ_ƒ€
+		if(nameid < 0)		// ãƒ©ãƒ³ãƒ€ãƒ 
 			item_tmp.nameid = itemdb_searchrandomid(-nameid);
 		else
 			item_tmp.nameid = nameid;
@@ -6147,7 +6147,7 @@ int buildin_getoptitem(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌƒAƒCƒeƒ€‚ğíœ‚·‚é
+ * æŒ‡å®šIDã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_delitem(struct script_state *st)
@@ -6201,7 +6201,7 @@ int buildin_delitem(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌƒAƒCƒeƒ€‚ğƒJ[ƒg‚©‚çíœ‚·‚é
+ * æŒ‡å®šIDã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ãƒ¼ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_delcartitem(struct script_state *st)
@@ -6255,7 +6255,7 @@ int buildin_delcartitem(struct script_state *st)
 }
 
 /*==========================================
- * index”Ô–Ú‚ÌƒAƒCƒeƒ€‚ğíœ‚·‚é
+ * indexç•ªç›®ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_delitem2(struct script_state *st)
@@ -6293,7 +6293,7 @@ int buildin_delitem2(struct script_state *st)
 }
 
 /*==========================================
- * index”Ô–Ú‚ÌƒAƒCƒeƒ€‚ğƒJ[ƒg‚©‚çíœ‚·‚é
+ * indexç•ªç›®ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚«ãƒ¼ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_delcartitem2(struct script_state *st)
@@ -6331,7 +6331,7 @@ int buildin_delcartitem2(struct script_state *st)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ŠÖŒW‚Ì‘•”õæ“¾
+ * ã‚­ãƒ£ãƒ©é–¢ä¿‚ã®è£…å‚™å–å¾—
  *------------------------------------------
  */
 int buildin_equippeditem(struct script_state *st)
@@ -6356,7 +6356,7 @@ int buildin_equippeditem(struct script_state *st)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ŠÖŒW‚Ìƒpƒ‰ƒ[ƒ^æ“¾
+ * ã‚­ãƒ£ãƒ©é–¢ä¿‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å–å¾—
  *------------------------------------------
  */
 int buildin_readparam(struct script_state *st)
@@ -6381,7 +6381,7 @@ int buildin_readparam(struct script_state *st)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ŠÖŒW‚ÌIDæ“¾
+ * ã‚­ãƒ£ãƒ©é–¢ä¿‚ã®IDå–å¾—
  *------------------------------------------
  */
 int buildin_getcharid(struct script_state *st)
@@ -6409,7 +6409,7 @@ int buildin_getcharid(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚ÌIDæ“¾
+ * NPCã®IDå–å¾—
  *------------------------------------------
  */
 int buildin_getnpcid(struct script_state *st)
@@ -6434,7 +6434,7 @@ int buildin_getnpcid(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌPT–¼æ“¾
+ * æŒ‡å®šIDã®PTåå–å¾—
  *------------------------------------------
  */
 static char *buildin_getpartyname_sub(int party_id)
@@ -6463,7 +6463,7 @@ int buildin_getpartyname(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌƒLƒƒƒ‰ƒNƒ^–¼æ“¾
+ * æŒ‡å®šIDã®ã‚­ãƒ£ãƒ©ã‚¯ã‚¿åå–å¾—
  *------------------------------------------
  */
 static char *buildin_getcharname_sub(int char_id)
@@ -6493,7 +6493,7 @@ int buildin_getcharname(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌPTl”‚Æƒƒ“ƒo[IDæ“¾
+ * æŒ‡å®šIDã®PTäººæ•°ã¨ãƒ¡ãƒ³ãƒãƒ¼IDå–å¾—
  *------------------------------------------
  */
 int buildin_getpartymember(struct script_state *st)
@@ -6519,7 +6519,7 @@ int buildin_getpartymember(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌƒMƒ‹ƒh–¼æ“¾
+ * æŒ‡å®šIDã®ã‚®ãƒ«ãƒ‰åå–å¾—
  *------------------------------------------
  */
 static char *buildin_getguildname_sub(int guild_id)
@@ -6547,7 +6547,7 @@ int buildin_getguildname(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌGuildMaster–¼æ“¾
+ * æŒ‡å®šIDã®GuildMasteråå–å¾—
  *------------------------------------------
  */
 int buildin_getguildmaster(struct script_state *st)
@@ -6584,7 +6584,7 @@ int buildin_getguildmasterid(struct script_state *st)
 }
 
 /*==========================================
- * ƒLƒƒƒ‰ƒNƒ^‚Ì–¼‘O
+ * ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã®åå‰
  *------------------------------------------
  */
 int buildin_strcharinfo(struct script_state *st)
@@ -6622,7 +6622,7 @@ int buildin_strcharinfo(struct script_state *st)
 	return 0;
 }
 
-// pc.c‚Ìequip_pos‚Æ‡”Ô‚ªˆÙ‚È‚é‚±‚Æ‚É’ˆÓ
+// pc.cã®equip_posã¨é †ç•ªãŒç•°ãªã‚‹ã“ã¨ã«æ³¨æ„
 static const unsigned int equip_pos[EQUIP_INDEX_MAX] = {
 	LOC_HEAD2,
 	LOC_BODY,
@@ -6649,7 +6649,7 @@ static const unsigned int equip_pos[EQUIP_INDEX_MAX] = {
 };
 
 /*==========================================
- * w’èˆÊ’u‚Ì‘•”õ•i‚ÌID‚ğæ“¾
+ * æŒ‡å®šä½ç½®ã®è£…å‚™å“ã®IDã‚’å–å¾—
  *------------------------------------------
  */
 int buildin_getequipid(struct script_state *st)
@@ -6672,7 +6672,7 @@ int buildin_getequipid(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ–¼•¶š—ñi¸˜Bƒƒjƒ…[—pj
+ * è£…å‚™åæ–‡å­—åˆ—ï¼ˆç²¾éŒ¬ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”¨ï¼‰
  *------------------------------------------
  */
 int buildin_getequipname(struct script_state *st)
@@ -6700,7 +6700,7 @@ int buildin_getequipname(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õƒ`ƒFƒbƒN
+ * è£…å‚™ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_getequipisequiped(struct script_state *st)
@@ -6723,7 +6723,7 @@ int buildin_getequipisequiped(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i¸˜B‰Â”\ƒ`ƒFƒbƒN
+ * è£…å‚™å“ç²¾éŒ¬å¯èƒ½ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_getequipisenableref(struct script_state *st)
@@ -6745,7 +6745,7 @@ int buildin_getequipisenableref(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•iŠÓ’èƒ`ƒFƒbƒN
+ * è£…å‚™å“é‘‘å®šãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_getequipisidentify(struct script_state *st)
@@ -6766,7 +6766,7 @@ int buildin_getequipisidentify(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i¸˜B“x
+ * è£…å‚™å“ç²¾éŒ¬åº¦
  *------------------------------------------
  */
 int buildin_getequiprefinerycnt(struct script_state *st)
@@ -6791,7 +6791,7 @@ int buildin_getequiprefinerycnt(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i•ŠíLV
+ * è£…å‚™å“æ­¦å™¨LV
  *------------------------------------------
  */
 int buildin_getequipweaponlv(struct script_state *st)
@@ -6812,7 +6812,7 @@ int buildin_getequipweaponlv(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i¸˜B¬Œ÷—¦
+ * è£…å‚™å“ç²¾éŒ¬æˆåŠŸç‡
  *------------------------------------------
  */
 int buildin_getequippercentrefinery(struct script_state *st)
@@ -6833,7 +6833,7 @@ int buildin_getequippercentrefinery(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i‚ğíœ‚·‚é
+ * è£…å‚™å“ã‚’å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_delequip(struct script_state *st)
@@ -6860,7 +6860,7 @@ int buildin_delequip(struct script_state *st)
 }
 
 /*==========================================
- * ¸˜B¬Œ÷
+ * ç²¾éŒ¬æˆåŠŸ
  *------------------------------------------
  */
 int buildin_successrefitem(struct script_state *st)
@@ -6884,7 +6884,7 @@ int buildin_successrefitem(struct script_state *st)
 }
 
 /*==========================================
- * ¸˜B¸”s
+ * ç²¾éŒ¬å¤±æ•—
  *------------------------------------------
  */
 int buildin_failedrefitem(struct script_state *st)
@@ -6904,7 +6904,7 @@ int buildin_failedrefitem(struct script_state *st)
 }
 
 /*==========================================
- * ¸˜B¸”s
+ * ç²¾éŒ¬å¤±æ•—
  *------------------------------------------
  */
 int buildin_downrefitem(struct script_state *st)
@@ -6966,7 +6966,7 @@ int buildin_statusup2(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í’lƒ{[ƒiƒX
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›å€¤ãƒœãƒ¼ãƒŠã‚¹
  *------------------------------------------
  */
 int buildin_bonus(struct script_state *st)
@@ -6981,7 +6981,7 @@ int buildin_bonus(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í’lƒ{[ƒiƒX2
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›å€¤ãƒœãƒ¼ãƒŠã‚¹2
  *------------------------------------------
  */
 int buildin_bonus2(struct script_state *st)
@@ -7024,7 +7024,7 @@ int buildin_bonus2(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í’lƒ{[ƒiƒX3
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›å€¤ãƒœãƒ¼ãƒŠã‚¹3
  *------------------------------------------
  */
 int buildin_bonus3(struct script_state *st)
@@ -7065,7 +7065,7 @@ int buildin_bonus3(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ•i‚É‚æ‚é”\—Í’lƒ{[ƒiƒX4
+ * è£…å‚™å“ã«ã‚ˆã‚‹èƒ½åŠ›å€¤ãƒœãƒ¼ãƒŠã‚¹4
  *------------------------------------------
  */
 int buildin_bonus4(struct script_state *st)
@@ -7106,7 +7106,7 @@ int buildin_bonus4(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒLƒ‹æ“¾
+ * ã‚¹ã‚­ãƒ«å–å¾—
  *------------------------------------------
  */
 int buildin_skill(struct script_state *st)
@@ -7130,7 +7130,7 @@ int buildin_skill(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒhƒXƒLƒ‹æ“¾
+ * ã‚®ãƒ«ãƒ‰ã‚¹ã‚­ãƒ«å–å¾—
  *------------------------------------------
  */
 int buildin_guildskill(struct script_state *st)
@@ -7152,7 +7152,7 @@ int buildin_guildskill(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒLƒ‹ƒŒƒxƒ‹æ“¾
+ * ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«å–å¾—
  *------------------------------------------
  */
 int buildin_getskilllv(struct script_state *st)
@@ -7251,7 +7251,7 @@ int buildin_setoption(struct script_state *st)
 }
 
 /*==========================================
- * ƒJ[ƒg‚ğ•t‚¯‚é
+ * ã‚«ãƒ¼ãƒˆã‚’ä»˜ã‘ã‚‹
  *------------------------------------------
  */
 int buildin_setcart(struct script_state *st)
@@ -7261,7 +7261,7 @@ int buildin_setcart(struct script_state *st)
 }
 
 /*==========================================
- * ‘é‚ğ•t‚¯‚é
+ * é·¹ã‚’ä»˜ã‘ã‚‹
  *------------------------------------------
  */
 int buildin_setfalcon(struct script_state *st)
@@ -7271,7 +7271,7 @@ int buildin_setfalcon(struct script_state *st)
 }
 
 /*==========================================
- * ƒyƒRƒyƒRæ‚è
+ * ãƒšã‚³ãƒšã‚³ä¹—ã‚Š
  *------------------------------------------
  */
 int buildin_setriding(struct script_state *st)
@@ -7281,7 +7281,7 @@ int buildin_setriding(struct script_state *st)
 }
 
 /*==========================================
- * ƒhƒ‰ƒSƒ“‹Ræ
+ * ãƒ‰ãƒ©ã‚´ãƒ³é¨ä¹—
  *------------------------------------------
  */
 int buildin_setdragon(struct script_state *st)
@@ -7296,7 +7296,7 @@ int buildin_setdragon(struct script_state *st)
 }
 
 /*==========================================
- * –‚“±ƒMƒA‹Ræ
+ * é­”å°ã‚®ã‚¢é¨ä¹—
  *------------------------------------------
  */
 int buildin_setgear(struct script_state *st)
@@ -7306,7 +7306,7 @@ int buildin_setgear(struct script_state *st)
 }
 
 /*==========================================
- * À‚é
+ * åº§ã‚‹
  *------------------------------------------
  */
 int buildin_sit(struct script_state *st)
@@ -7318,13 +7318,13 @@ int buildin_sit(struct script_state *st)
 	if(!pc_issit(sd)) {
 		pc_setsit(sd);
 		clif_sitting(&sd->bl, 1);
-		skill_sit(sd,1);	// ƒMƒƒƒ“ƒOƒXƒ^[ƒpƒ‰ƒ_ƒCƒX‚¨‚æ‚ÑƒeƒRƒ“‹x‘§İ’è
+		skill_sit(sd,1);	// ã‚®ãƒ£ãƒ³ã‚°ã‚¹ã‚¿ãƒ¼ãƒ‘ãƒ©ãƒ€ã‚¤ã‚¹ãŠã‚ˆã³ãƒ†ã‚³ãƒ³ä¼‘æ¯è¨­å®š
 	}
 	return 0;
 }
 
 /*==========================================
- * —§‚Â
+ * ç«‹ã¤
  *------------------------------------------
  */
 int buildin_stand(struct script_state *st)
@@ -7336,13 +7336,13 @@ int buildin_stand(struct script_state *st)
 	if(pc_issit(sd)) {
 		pc_setstand(sd);
 		clif_sitting(&sd->bl, 0);
-		skill_sit(sd,0);	// ƒMƒƒƒ“ƒOƒXƒ^[ƒpƒ‰ƒ_ƒCƒX‚¨‚æ‚ÑƒeƒRƒ“‹x‘§‰ğœ
+		skill_sit(sd,0);	// ã‚®ãƒ£ãƒ³ã‚°ã‚¹ã‚¿ãƒ¼ãƒ‘ãƒ©ãƒ€ã‚¤ã‚¹ãŠã‚ˆã³ãƒ†ã‚³ãƒ³ä¼‘æ¯è§£é™¤
 	}
 	return 0;
 }
 
 /*==========================================
- * ƒZ[ƒuƒ|ƒCƒ“ƒg‚Ì•Û‘¶
+ * ã‚»ãƒ¼ãƒ–ãƒã‚¤ãƒ³ãƒˆã®ä¿å­˜
  *------------------------------------------
  */
 int buildin_savepoint(struct script_state *st)
@@ -7464,7 +7464,7 @@ int buildin_gettimestr(struct script_state *st)
 }
 
 /*==========================================
- * ƒJƒvƒ‰‘qŒÉ‚ğŠJ‚­
+ * ã‚«ãƒ—ãƒ©å€‰åº«ã‚’é–‹ã
  *------------------------------------------
  */
 int buildin_openstorage(struct script_state *st)
@@ -7474,7 +7474,7 @@ int buildin_openstorage(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‘qŒÉ‚ğŠJ‚­
+ * ã‚®ãƒ«ãƒ‰å€‰åº«ã‚’é–‹ã
  *------------------------------------------
  */
 int buildin_guildopenstorage(struct script_state *st)
@@ -7487,7 +7487,7 @@ int buildin_guildopenstorage(struct script_state *st)
 	}
 
 	if(sd->state.menu_or_input == 0) {
-		if(sd->status.guild_id <= 0) {	// ƒMƒ‹ƒh–¢Š‘®
+		if(sd->status.guild_id <= 0) {	// ã‚®ãƒ«ãƒ‰æœªæ‰€å±
 			push_val(st->stack,C_INT,2);
 			return 0;
 		}
@@ -7497,19 +7497,19 @@ int buildin_guildopenstorage(struct script_state *st)
 		}
 		st->state = RERUNLINE;
 		sd->state.menu_or_input = 1;
-		sd->state.gstorage_lockreq = 1;	// scriptŒo—Rƒtƒ‰ƒO
+		sd->state.gstorage_lockreq = 1;	// scriptçµŒç”±ãƒ•ãƒ©ã‚°
 		intif_trylock_guild_storage(sd,st->oid);
 	} else {
 		sd->state.menu_or_input = 0;
 
-		if(sd->npc_menu) {	// ƒƒbƒNæ“¾¬Œ÷
+		if(sd->npc_menu) {	// ãƒ­ãƒƒã‚¯å–å¾—æˆåŠŸ
 			if(sd->npc_menu == 2) {
-				// ƒLƒƒƒbƒVƒ…‚ğíœ‚µ‚ÄƒŠƒ[ƒh
+				// ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤ã—ã¦ãƒªãƒ­ãƒ¼ãƒ‰
 				storage_guild_delete(sd->status.guild_id);
 			}
 			sd->npc_menu = 0;
 			push_val(st->stack,C_INT,storage_guild_storageopen(sd));
-		} else {		// ƒƒbƒNæ“¾¸”s
+		} else {		// ãƒ­ãƒƒã‚¯å–å¾—å¤±æ•—
 			push_val(st->stack,C_INT,1);
 		}
 	}
@@ -7518,7 +7518,7 @@ int buildin_guildopenstorage(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€‚É‚æ‚éƒXƒLƒ‹”­“®
+ * ã‚¢ã‚¤ãƒ†ãƒ ã«ã‚ˆã‚‹ã‚¹ã‚­ãƒ«ç™ºå‹•
  *------------------------------------------
  */
 int buildin_itemskill(struct script_state *st)
@@ -7542,7 +7542,7 @@ int buildin_itemskill(struct script_state *st)
 	if(st->end > st->start+5)
 		flag = conv_num(st,& (st->stack->stack_data[st->start+5]));
 
-	// ‰r¥’†‚ÉƒXƒLƒ‹ƒAƒCƒeƒ€‚Íg—p‚Å‚«‚È‚¢
+	// è© å”±ä¸­ã«ã‚¹ã‚­ãƒ«ã‚¢ã‚¤ãƒ†ãƒ ã¯ä½¿ç”¨ã§ããªã„
 	if(sd->ud.skilltimer != -1)
 		return 0;
 
@@ -7555,7 +7555,7 @@ int buildin_itemskill(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€ì¬
+ * ã‚¢ã‚¤ãƒ†ãƒ ä½œæˆ
  *------------------------------------------
  */
 int buildin_produce(struct script_state *st)
@@ -7572,7 +7572,7 @@ int buildin_produce(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚Åƒyƒbƒgì‚é
+ * NPCã§ãƒšãƒƒãƒˆä½œã‚‹
  *------------------------------------------
  */
 int buildin_makepet(struct script_state *st)
@@ -7599,7 +7599,7 @@ int buildin_makepet(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[”­¶
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç™ºç”Ÿ
  *------------------------------------------
  */
 int buildin_monster(struct script_state *st)
@@ -7624,7 +7624,7 @@ int buildin_monster(struct script_state *st)
 	if(st->end > st->start+8) {
 		event = conv_str(st,& (st->stack->stack_data[st->start+8]));
 	}
-	if(st->end > st->start+9) {	// Guild_ID“ü‚è
+	if(st->end > st->start+9) {	// Guild_IDå…¥ã‚Š
 		guild_id = conv_num(st,& (st->stack->stack_data[st->start+9]));
 	}
 
@@ -7639,15 +7639,15 @@ int buildin_monster(struct script_state *st)
 		if(guild_id > 0) {
 			struct guild *g = guild_search(guild_id);
 			if(g) {
-				// ƒK[ƒfƒBƒAƒ“‚È‚çƒMƒ‹ƒhƒXƒLƒ‹“K—p
+				// ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³ãªã‚‰ã‚®ãƒ«ãƒ‰ã‚¹ã‚­ãƒ«é©ç”¨
 				md->guild_id   = guild_id;
 				md->guardup_lv = guild_checkskill(g,GD_GUARDUP);
 			}
 		}
 
-		// ƒ‰ƒ“ƒ_ƒ€¢ŠÒ‚¶‚á‚È‚¢‚È‚çƒhƒƒbƒv‚ ‚è
+		// ãƒ©ãƒ³ãƒ€ãƒ å¬é‚„ã˜ã‚ƒãªã„ãªã‚‰ãƒ‰ãƒ­ãƒƒãƒ—ã‚ã‚Š
 		if(mob_id == -1) {
-			if(md->mode&MD_BOSS) {	// è”²‚«ƒ{ƒX‘®«
+			if(md->mode&MD_BOSS) {	// æ‰‹æŠœããƒœã‚¹å±æ€§
 				md->state.nodrop = battle_config.branch_boss_no_drop;
 				md->state.noexp  = battle_config.branch_boss_no_exp;
 				md->state.nomvp  = battle_config.branch_boss_no_mvp;
@@ -7663,7 +7663,7 @@ int buildin_monster(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[”­¶ƒGƒŠƒAw’è
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç™ºç”Ÿã‚¨ãƒªã‚¢æŒ‡å®š
  *------------------------------------------
  */
 int buildin_areamonster(struct script_state *st)
@@ -7695,7 +7695,7 @@ int buildin_areamonster(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[íœ
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å‰Šé™¤
  *------------------------------------------
  */
 static int buildin_killmonster_sub(struct block_list *bl,va_list ap)
@@ -7736,7 +7736,7 @@ int buildin_killmonster(struct script_state *st)
 }
 
 /*==========================================
- * MAP“àƒ‚ƒ“ƒXƒ^[‘Síœ
+ * MAPå†…ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å…¨å‰Šé™¤
  *------------------------------------------
  */
 static int buildin_killmonsterall_sub(struct block_list *bl,va_list ap)
@@ -7759,7 +7759,7 @@ int buildin_killmonsterall(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[íœƒGƒŠƒAw’è
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å‰Šé™¤ã‚¨ãƒªã‚¢æŒ‡å®š
  *------------------------------------------
  */
 int buildin_areakillmonster(struct script_state *st)
@@ -7780,7 +7780,7 @@ int buildin_areakillmonster(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒxƒ“ƒgÀs
+ * ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡Œ
  *------------------------------------------
  */
 int buildin_doevent(struct script_state *st)
@@ -7792,7 +7792,7 @@ int buildin_doevent(struct script_state *st)
 }
 
 /*==========================================
- * NPCå‘ÌƒCƒxƒ“ƒgÀs
+ * NPCä¸»ä½“ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡Œ
  *------------------------------------------
  */
 int buildin_donpcevent(struct script_state *st)
@@ -7804,7 +7804,7 @@ int buildin_donpcevent(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒxƒ“ƒgƒ^ƒCƒ}[’Ç‰Á
+ * ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒãƒ¼è¿½åŠ 
  *------------------------------------------
  */
 int buildin_addtimer(struct script_state *st)
@@ -7817,7 +7817,7 @@ int buildin_addtimer(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒxƒ“ƒgƒ^ƒCƒ}[íœ
+ * ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒãƒ¼å‰Šé™¤
  *------------------------------------------
  */
 int buildin_deltimer(struct script_state *st)
@@ -7829,7 +7829,7 @@ int buildin_deltimer(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒxƒ“ƒgƒ^ƒCƒ}[‚ÌƒJƒEƒ“ƒg’l’Ç‰Á
+ * ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒãƒ¼ã®ã‚«ã‚¦ãƒ³ãƒˆå€¤è¿½åŠ 
  *------------------------------------------
  */
 int buildin_addtimercount(struct script_state *st)
@@ -7842,7 +7842,7 @@ int buildin_addtimercount(struct script_state *st)
 }
 
 /*==========================================
- * ƒCƒxƒ“ƒgƒ^ƒCƒ}[‚Ìc‚èŠÔæ“¾
+ * ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒãƒ¼ã®æ®‹ã‚Šæ™‚é–“å–å¾—
  *------------------------------------------
  */
 int buildin_gettimerdiff(struct script_state *st)
@@ -7858,7 +7858,7 @@ int buildin_gettimerdiff(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ^ƒCƒ}[‰Šú‰»
+ * NPCã‚¿ã‚¤ãƒãƒ¼åˆæœŸåŒ–
  *------------------------------------------
  */
 int buildin_initnpctimer(struct script_state *st)
@@ -7876,7 +7876,7 @@ int buildin_initnpctimer(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ^ƒCƒ}[ŠJn
+ * NPCã‚¿ã‚¤ãƒãƒ¼é–‹å§‹
  *------------------------------------------
  */
 int buildin_startnpctimer(struct script_state *st)
@@ -7893,7 +7893,7 @@ int buildin_startnpctimer(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ^ƒCƒ}[’â~
+ * NPCã‚¿ã‚¤ãƒãƒ¼åœæ­¢
  *------------------------------------------
  */
 int buildin_stopnpctimer(struct script_state *st)
@@ -7910,7 +7910,7 @@ int buildin_stopnpctimer(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ^ƒCƒ}[î•ñæ“¾
+ * NPCã‚¿ã‚¤ãƒãƒ¼æƒ…å ±å–å¾—
  *------------------------------------------
  */
 int buildin_getnpctimer(struct script_state *st)
@@ -7936,7 +7936,7 @@ int buildin_getnpctimer(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ^ƒCƒ}[’lİ’è
+ * NPCã‚¿ã‚¤ãƒãƒ¼å€¤è¨­å®š
  *------------------------------------------
  */
 int buildin_setnpctimer(struct script_state *st)
@@ -7955,7 +7955,7 @@ int buildin_setnpctimer(struct script_state *st)
 }
 
 /*==========================================
- * “V‚ÌºƒAƒiƒEƒ“ƒX
+ * å¤©ã®å£°ã‚¢ãƒŠã‚¦ãƒ³ã‚¹
  *------------------------------------------
  */
 int buildin_announce(struct script_state *st)
@@ -8008,7 +8008,7 @@ int buildin_announce(struct script_state *st)
 }
 
 /*==========================================
- * “V‚ÌºƒAƒiƒEƒ“ƒXi“Á’èƒ}ƒbƒvj
+ * å¤©ã®å£°ã‚¢ãƒŠã‚¦ãƒ³ã‚¹ï¼ˆç‰¹å®šãƒãƒƒãƒ—ï¼‰
  *------------------------------------------
  */
 static int buildin_mapannounce_sub(struct block_list *bl,va_list ap)
@@ -8068,7 +8068,7 @@ int buildin_mapannounce(struct script_state *st)
 }
 
 /*==========================================
- * “V‚ÌºƒAƒiƒEƒ“ƒXi“Á’èƒGƒŠƒAj
+ * å¤©ã®å£°ã‚¢ãƒŠã‚¦ãƒ³ã‚¹ï¼ˆç‰¹å®šã‚¨ãƒªã‚¢ï¼‰
  *------------------------------------------
  */
 int buildin_areaannounce(struct script_state *st)
@@ -8107,7 +8107,7 @@ int buildin_areaannounce(struct script_state *st)
 }
 
 /*==========================================
- * ƒ†[ƒU[”æ“¾
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getusers(struct script_state *st)
@@ -8132,7 +8132,7 @@ int buildin_getusers(struct script_state *st)
 }
 
 /*==========================================
- * Œq‚¢‚Å‚éƒ†[ƒU[‚Ì‘Sˆõ‚Ì–¼‘Oæ“¾
+ * ç¹‹ã„ã§ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®å…¨å“¡ã®åå‰å–å¾—
  *------------------------------------------
  */
 int buildin_getusersname(struct script_state *st)
@@ -8156,7 +8156,7 @@ int buildin_getusersname(struct script_state *st)
 }
 
 /*==========================================
- * ƒ}ƒbƒvw’èƒ†[ƒU[”æ“¾
+ * ãƒãƒƒãƒ—æŒ‡å®šãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getmapusers(struct script_state *st)
@@ -8175,7 +8175,7 @@ int buildin_getmapusers(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒŠƒAw’èƒ†[ƒU[”æ“¾
+ * ã‚¨ãƒªã‚¢æŒ‡å®šãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°å–å¾—
  *------------------------------------------
  */
 static int buildin_getareausers_sub(struct block_list *bl,va_list ap)
@@ -8205,7 +8205,7 @@ int buildin_getareausers(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒŠƒAw’èƒhƒƒbƒvƒAƒCƒeƒ€”æ“¾
+ * ã‚¨ãƒªã‚¢æŒ‡å®šãƒ‰ãƒ­ãƒƒãƒ—ã‚¢ã‚¤ãƒ†ãƒ æ•°å–å¾—
  *------------------------------------------
  */
 static int buildin_getareadropitem_sub(struct block_list *bl,va_list ap)
@@ -8259,7 +8259,7 @@ int buildin_getareadropitem(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚Ì—LŒø‰»
+ * NPCã®æœ‰åŠ¹åŒ–
  *------------------------------------------
  */
 int buildin_enablenpc(struct script_state *st)
@@ -8284,7 +8284,7 @@ int buildin_enablenpc(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚Ì–³Œø‰»
+ * NPCã®ç„¡åŠ¹åŒ–
  *------------------------------------------
  */
 int buildin_disablenpc(struct script_state *st)
@@ -8309,7 +8309,7 @@ int buildin_disablenpc(struct script_state *st)
 }
 
 /*==========================================
- * ‰B‚ê‚Ä‚¢‚éNPC‚Ì•\¦
+ * éš ã‚Œã¦ã„ã‚‹NPCã®è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_hideoffnpc(struct script_state *st)
@@ -8334,7 +8334,7 @@ int buildin_hideoffnpc(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚ğƒnƒCƒfƒBƒ“ƒO
+ * NPCã‚’ãƒã‚¤ãƒ‡ã‚£ãƒ³ã‚°
  *------------------------------------------
  */
 int buildin_hideonnpc(struct script_state *st)
@@ -8359,7 +8359,7 @@ int buildin_hideonnpc(struct script_state *st)
 }
 
 /*==========================================
- * “Á’è‚Ìƒ†[ƒU[‚Ì‹ŠE“àNPC‚Ì•\¦
+ * ç‰¹å®šã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®è¦–ç•Œå†…NPCã®è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_cloakoffnpc(struct script_state *st)
@@ -8382,7 +8382,7 @@ int buildin_cloakoffnpc(struct script_state *st)
 	}
 
 	if(sd) {
-		// •\¦—p‚Éˆê‘Ş”ğ
+		// è¡¨ç¤ºç”¨ã«ä¸€æ™‚é€€é¿
 		int flag = nd->option;
 		int i;
 		nd->option = OPTION_NOTHING;
@@ -8404,14 +8404,14 @@ int buildin_cloakoffnpc(struct script_state *st)
 		}
 		sd->cloaked_npc[i] = nd->bl.id;
 	}
-	else	// ƒAƒ^ƒbƒ`‚ª‚È‚¢ê‡‚ÍNPCî•ñ‘‚«Š·‚¦
+	else	// ã‚¢ã‚¿ãƒƒãƒãŒãªã„å ´åˆã¯NPCæƒ…å ±æ›¸ãæ›ãˆ
 		nd->option &= ~OPTION_CLOAKING;
 
 	return 0;
 }
 
 /*==========================================
- * “Á’è‚Ìƒ†[ƒU[‚Ì‹ŠE“àNPC‚ğƒNƒ[ƒLƒ“ƒO
+ * ç‰¹å®šã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®è¦–ç•Œå†…NPCã‚’ã‚¯ãƒ­ãƒ¼ã‚­ãƒ³ã‚°
  *------------------------------------------
  */
 int buildin_cloakonnpc(struct script_state *st)
@@ -8419,7 +8419,7 @@ int buildin_cloakonnpc(struct script_state *st)
 	struct npc_data *nd;
 	struct map_session_data *sd = NULL;
 
-	if(st->rid)	// ƒNƒ[ƒLƒ“ƒO‚ÍƒAƒ^ƒbƒ`‚ª‚È‚­‚Ä‚à‹–—e‚·‚é
+	if(st->rid)	// ã‚¯ãƒ­ãƒ¼ã‚­ãƒ³ã‚°æ™‚ã¯ã‚¢ã‚¿ãƒƒãƒãŒãªãã¦ã‚‚è¨±å®¹ã™ã‚‹
 		sd = script_rid2sd(st);
 
 	if(st->end > st->start+2) {
@@ -8437,7 +8437,7 @@ int buildin_cloakonnpc(struct script_state *st)
 	}
 
 	if(sd) {
-		// •\¦—p‚Éˆê‘Ş”ğ
+		// è¡¨ç¤ºç”¨ã«ä¸€æ™‚é€€é¿
 		int flag = nd->option;
 		int i;
 		nd->option |= OPTION_CLOAKING;
@@ -8450,14 +8450,14 @@ int buildin_cloakonnpc(struct script_state *st)
 			}
 		}
 	}
-	else	// ƒAƒ^ƒbƒ`‚ª‚È‚¢ê‡‚ÍNPCî•ñ‘‚«Š·‚¦
+	else	// ã‚¢ã‚¿ãƒƒãƒãŒãªã„å ´åˆã¯NPCæƒ…å ±æ›¸ãæ›ãˆ
 		nd->option |= OPTION_CLOAKING;
 
 	return 0;
 }
 
 /*==========================================
- * ó‘ÔˆÙí‚É‚©‚©‚é
+ * çŠ¶æ…‹ç•°å¸¸ã«ã‹ã‹ã‚‹
  *------------------------------------------
  */
 int buildin_sc_start(struct script_state *st)
@@ -8468,7 +8468,7 @@ int buildin_sc_start(struct script_state *st)
 	type=conv_num(st,& (st->stack->stack_data[st->start+2]));
 	tick=conv_num(st,& (st->stack->stack_data[st->start+3]));
 	val1=conv_num(st,& (st->stack->stack_data[st->start+4]));
-	if( st->end>st->start+5 )	// w’è‚µ‚½ƒLƒƒƒ‰‚ğó‘ÔˆÙí‚É‚·‚é
+	if( st->end>st->start+5 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã‚’çŠ¶æ…‹ç•°å¸¸ã«ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+5])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8484,7 +8484,7 @@ int buildin_sc_start(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí‚É‚©‚©‚é(Šm—¦w’è)
+ * çŠ¶æ…‹ç•°å¸¸ã«ã‹ã‹ã‚‹(ç¢ºç‡æŒ‡å®š)
  *------------------------------------------
  */
 int buildin_sc_start2(struct script_state *st)
@@ -8496,7 +8496,7 @@ int buildin_sc_start2(struct script_state *st)
 	tick=conv_num(st,& (st->stack->stack_data[st->start+3]));
 	val1=conv_num(st,& (st->stack->stack_data[st->start+4]));
 	per=conv_num(st,& (st->stack->stack_data[st->start+5]));
-	if( st->end>st->start+6 )	// w’è‚µ‚½ƒLƒƒƒ‰‚ğó‘ÔˆÙí‚É‚·‚é
+	if( st->end>st->start+6 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã‚’çŠ¶æ…‹ç•°å¸¸ã«ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+6])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8512,7 +8512,7 @@ int buildin_sc_start2(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí‚É‚©‚©‚é(ÄŒvZ‚È‚µ)
+ * çŠ¶æ…‹ç•°å¸¸ã«ã‹ã‹ã‚‹(å†è¨ˆç®—ãªã—)
  *------------------------------------------
  */
 int buildin_sc_starte(struct script_state *st)
@@ -8523,7 +8523,7 @@ int buildin_sc_starte(struct script_state *st)
 	type=conv_num(st,& (st->stack->stack_data[st->start+2]));
 	tick=conv_num(st,& (st->stack->stack_data[st->start+3]));
 	val1=conv_num(st,& (st->stack->stack_data[st->start+4]));
-	if( st->end>st->start+5 )	// w’è‚µ‚½ƒLƒƒƒ‰‚ğó‘ÔˆÙí‚É‚·‚é
+	if( st->end>st->start+5 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã‚’çŠ¶æ…‹ç•°å¸¸ã«ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+5])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8539,7 +8539,7 @@ int buildin_sc_starte(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí‚É‚©‚©‚é(Ú×)
+ * çŠ¶æ…‹ç•°å¸¸ã«ã‹ã‹ã‚‹(è©³ç´°)
  *------------------------------------------
  */
 int buildin_sc_start3(struct script_state *st)
@@ -8554,7 +8554,7 @@ int buildin_sc_start3(struct script_state *st)
 	val4=conv_num(st,& (st->stack->stack_data[st->start+6]));
 	tick=conv_num(st,& (st->stack->stack_data[st->start+7]));
 	flag=conv_num(st,& (st->stack->stack_data[st->start+8]));
-	if( st->end>st->start+9 )	// w’è‚µ‚½ƒLƒƒƒ‰‚ğó‘ÔˆÙí‚É‚·‚é
+	if( st->end>st->start+9 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã‚’çŠ¶æ…‹ç•°å¸¸ã«ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+9])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8572,7 +8572,7 @@ int buildin_sc_start3(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí‚ª’¼‚é
+ * çŠ¶æ…‹ç•°å¸¸ãŒç›´ã‚‹
  *------------------------------------------
  */
 int buildin_sc_end(struct script_state *st)
@@ -8581,7 +8581,7 @@ int buildin_sc_end(struct script_state *st)
 	int type;
 
 	type=conv_num(st,& (st->stack->stack_data[st->start+2]));
-	if( st->end>st->start+3 )	// w’è‚µ‚½ƒLƒƒƒ‰‚Ìó‘ÔˆÙí‚ğ‰ğœ‚·‚é
+	if( st->end>st->start+3 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã®çŠ¶æ…‹ç•°å¸¸ã‚’è§£é™¤ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+3])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8604,7 +8604,7 @@ int buildin_sc_end(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí’†‚©‚Ç‚¤‚©•Ô‚·
+ * çŠ¶æ…‹ç•°å¸¸ä¸­ã‹ã©ã†ã‹è¿”ã™
  *------------------------------------------
  */
 int buildin_sc_ison(struct script_state *st)
@@ -8637,7 +8637,7 @@ int buildin_sc_ison(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí‘Ï«‚ğŒvZ‚µ‚½Šm—¦‚ğ•Ô‚·
+ * çŠ¶æ…‹ç•°å¸¸è€æ€§ã‚’è¨ˆç®—ã—ãŸç¢ºç‡ã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_getscrate(struct script_state *st)
@@ -8647,7 +8647,7 @@ int buildin_getscrate(struct script_state *st)
 
 	type=conv_num(st,& (st->stack->stack_data[st->start+2]));
 	rate=conv_num(st,& (st->stack->stack_data[st->start+3]));
-	if( st->end>st->start+4 )	// w’è‚µ‚½ƒLƒƒƒ‰‚Ì‘Ï«‚ğŒvZ‚·‚é
+	if( st->end>st->start+4 )	// æŒ‡å®šã—ãŸã‚­ãƒ£ãƒ©ã®è€æ€§ã‚’è¨ˆç®—ã™ã‚‹
 		bl = map_id2bl(conv_num(st,& (st->stack->stack_data[st->start+6])));
 	else
 		bl = map_id2bl(st->rid);
@@ -8673,7 +8673,7 @@ int buildin_debugmes(struct script_state *st)
 }
 
 /*==========================================
- * •ßŠlƒAƒCƒeƒ€g—p
+ * æ•ç²ã‚¢ã‚¤ãƒ†ãƒ ä½¿ç”¨
  *------------------------------------------
  */
 int buildin_catchpet(struct script_state *st)
@@ -8685,7 +8685,7 @@ int buildin_catchpet(struct script_state *st)
 }
 
 /*==========================================
- * Œg‘Ñ—‘›z‰»‹@g—p
+ * æºå¸¯åµå­µåŒ–æ©Ÿä½¿ç”¨
  *------------------------------------------
  */
 int buildin_birthpet(struct script_state *st)
@@ -8695,7 +8695,7 @@ int buildin_birthpet(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXƒŠƒZƒbƒg
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒªã‚»ãƒƒãƒˆ
  *------------------------------------------
  */
 int buildin_resetstatus(struct script_state *st)
@@ -8705,7 +8705,7 @@ int buildin_resetstatus(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒLƒ‹ƒŠƒZƒbƒg
+ * ã‚¹ã‚­ãƒ«ãƒªã‚»ãƒƒãƒˆ
  *------------------------------------------
  */
 int buildin_resetskill(struct script_state *st)
@@ -8720,7 +8720,7 @@ int buildin_resetskill(struct script_state *st)
 }
 
 /*==========================================
- * Œ©‚½–Ú‚ÌE‹Æ•ÏX
+ * è¦‹ãŸç›®ã®è·æ¥­å¤‰æ›´
  *------------------------------------------
  */
 int buildin_changebase(struct script_state *st)
@@ -8749,7 +8749,7 @@ int buildin_changebase(struct script_state *st)
 		return 0;
 
 	//if(vclass == PC_CLASS_WE || vclass == PC_CLASS_ST || vclass == PC_CLASS_SU)
-	//	pc_unequipitem(sd,sd->equip_index[EQUIP_INDEX_RARM],1);	// ‘•”õŠO‚µ
+	//	pc_unequipitem(sd,sd->equip_index[EQUIP_INDEX_RARM],1);	// è£…å‚™å¤–ã—
 
 	sd->view_class = vclass;
 	clif_changelook(&sd->bl, LOOK_BASE, vclass);
@@ -8760,7 +8760,7 @@ int buildin_changebase(struct script_state *st)
 }
 
 /*==========================================
- * «•Ê•ÏŠ·
+ * æ€§åˆ¥å¤‰æ›
  *------------------------------------------
  */
 int buildin_changesex(struct script_state *st)
@@ -8784,7 +8784,7 @@ int buildin_changesex(struct script_state *st)
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒgì¬
+ * npcãƒãƒ£ãƒƒãƒˆä½œæˆ
  *------------------------------------------
  */
 int buildin_waitingroom(struct script_state *st)
@@ -8822,7 +8822,7 @@ int buildin_waitingroom(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚ªƒI[ƒvƒ“ƒ`ƒƒƒbƒg‚Å”­Œ¾
+ * NPCãŒã‚ªãƒ¼ãƒ—ãƒ³ãƒãƒ£ãƒƒãƒˆã§ç™ºè¨€
  *------------------------------------------
  */
 int buildin_globalmes(struct script_state *st)
@@ -8831,7 +8831,7 @@ int buildin_globalmes(struct script_state *st)
 
 	mes = conv_str(st,& (st->stack->stack_data[st->start+2]));
 
-	if(st->end > st->start+3) {	// NPC–¼‚Ìæ“¾(123#456)
+	if(st->end > st->start+3) {	// NPCåã®å–å¾—(123#456)
 		name = conv_str(st,& (st->stack->stack_data[st->start+3]));
 	} else {
 		struct npc_data *nd = map_id2nd(st->oid);
@@ -8839,13 +8839,13 @@ int buildin_globalmes(struct script_state *st)
 			name = nd->exname;
 	}
 	if(name)
-		npc_globalmessage(name,mes);	// ƒOƒ[ƒoƒ‹ƒƒbƒZ[ƒW‘—M
+		npc_globalmessage(name,mes);	// ã‚°ãƒ­ãƒ¼ãƒãƒ«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡
 
 	return 0;
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒgíœ
+ * npcãƒãƒ£ãƒƒãƒˆå‰Šé™¤
  *------------------------------------------
  */
 int buildin_delwaitingroom(struct script_state *st)
@@ -8861,7 +8861,7 @@ int buildin_delwaitingroom(struct script_state *st)
 }
 
 /*==========================================
- * ƒ`ƒƒƒbƒg‚©‚çw’èƒvƒŒƒCƒ„[‚ğR‚èo‚·
+ * ãƒãƒ£ãƒƒãƒˆã‹ã‚‰æŒ‡å®šãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¹´ã‚Šå‡ºã™
  *------------------------------------------
  */
 int buildin_kickwaitingroom(struct script_state *st)
@@ -8876,7 +8876,7 @@ int buildin_kickwaitingroom(struct script_state *st)
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒg‚©‚ç‘SˆõR‚èo‚·
+ * npcãƒãƒ£ãƒƒãƒˆã‹ã‚‰å…¨å“¡è¹´ã‚Šå‡ºã™
  *------------------------------------------
  */
 int buildin_kickwaitingroomall(struct script_state *st)
@@ -8895,7 +8895,7 @@ int buildin_kickwaitingroomall(struct script_state *st)
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒgƒCƒxƒ“ƒg—LŒø‰»
+ * npcãƒãƒ£ãƒƒãƒˆã‚¤ãƒ™ãƒ³ãƒˆæœ‰åŠ¹åŒ–
  *------------------------------------------
  */
 int buildin_enablewaitingroomevent(struct script_state *st)
@@ -8914,7 +8914,7 @@ int buildin_enablewaitingroomevent(struct script_state *st)
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒgƒCƒxƒ“ƒg–³Œø‰»
+ * npcãƒãƒ£ãƒƒãƒˆã‚¤ãƒ™ãƒ³ãƒˆç„¡åŠ¹åŒ–
  *------------------------------------------
  */
 int buildin_disablewaitingroomevent(struct script_state *st)
@@ -8933,7 +8933,7 @@ int buildin_disablewaitingroomevent(struct script_state *st)
 }
 
 /*==========================================
- * npcƒ`ƒƒƒbƒgó‘Ôæ“¾
+ * npcãƒãƒ£ãƒƒãƒˆçŠ¶æ…‹å–å¾—
  *------------------------------------------
  */
 int buildin_getwaitingroomstate(struct script_state *st)
@@ -8970,7 +8970,7 @@ int buildin_getwaitingroomstate(struct script_state *st)
 			str = (char *)aStrdup(cd->title);
 			break;
 		case 5:
-			// pass‚Í\0‚ª•t‚¢‚Ä‚È‚¢ê‡‚ª‚ ‚é
+			// passã¯\0ãŒä»˜ã„ã¦ãªã„å ´åˆãŒã‚ã‚‹
 			str = (char *)aCalloc(sizeof(cd->pass)+1, sizeof(char));
 			memcpy(str, cd->pass, sizeof(cd->pass));
 			break;
@@ -8986,7 +8986,7 @@ int buildin_getwaitingroomstate(struct script_state *st)
 }
 
 /*==========================================
- * ƒ`ƒƒƒbƒgƒƒ“ƒo[(‹K’èl”)ƒ[ƒv
+ * ãƒãƒ£ãƒƒãƒˆãƒ¡ãƒ³ãƒãƒ¼(è¦å®šäººæ•°)ãƒ¯ãƒ¼ãƒ—
  *------------------------------------------
  */
 int buildin_warpwaitingpc(struct script_state *st)
@@ -9010,7 +9010,7 @@ int buildin_warpwaitingpc(struct script_state *st)
 
 	num = add_str("$@warpwaitingpc");
 	for(i=0, j=0; i<n && i<128; i++) {
-		struct map_session_data *sd = cd->usersd[0];	// ƒŠƒXƒgæ“ª‚ÌPC‚ğŸX‚ÉB
+		struct map_session_data *sd = cd->usersd[0];	// ãƒªã‚¹ãƒˆå…ˆé ­ã®PCã‚’æ¬¡ã€…ã«ã€‚
 
 		if(sd == NULL)
 			continue;
@@ -9023,7 +9023,7 @@ int buildin_warpwaitingpc(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒ`ƒƒƒbƒg“à‚É‹‚éPC‚ÌID‚ğƒŠƒXƒgƒAƒbƒv‚·‚é
+ * NPCãƒãƒ£ãƒƒãƒˆå†…ã«å±…ã‚‹PCã®IDã‚’ãƒªã‚¹ãƒˆã‚¢ãƒƒãƒ—ã™ã‚‹
  *------------------------------------------
  */
 int buildin_getwaitingpcid(struct script_state *st)
@@ -9082,7 +9082,7 @@ int buildin_getwaitingpcid(struct script_state *st)
 }
 
 /*==========================================
- * RID‚ÌƒAƒ^ƒbƒ`
+ * RIDã®ã‚¢ã‚¿ãƒƒãƒ
  *------------------------------------------
  */
 int buildin_attachrid(struct script_state *st)
@@ -9104,7 +9104,7 @@ int buildin_attachrid(struct script_state *st)
 }
 
 /*==========================================
- * RID‚Ìƒfƒ^ƒbƒ`
+ * RIDã®ãƒ‡ã‚¿ãƒƒãƒ
  *------------------------------------------
  */
 int buildin_detachrid(struct script_state *st)
@@ -9120,7 +9120,7 @@ int buildin_detachrid(struct script_state *st)
 }
 
 /*==========================================
- * ‘¶İƒ`ƒFƒbƒN
+ * å­˜åœ¨ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_isloggedin(struct script_state *st)
@@ -9132,7 +9132,7 @@ int buildin_isloggedin(struct script_state *st)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒtƒ‰ƒO‚Ìindex‚©‚çƒAƒhƒŒƒX‚ğ•Ô‚·
+ * ãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°ã®indexã‹ã‚‰ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¿”ã™
  *------------------------------------------
  */
 static int* script_conv_mapflag(int m,int type)
@@ -9190,7 +9190,7 @@ static int* script_conv_mapflag(int m,int type)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒtƒ‰ƒO‚ğİ’è‚·‚é
+ * ãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°ã‚’è¨­å®šã™ã‚‹
  *------------------------------------------
  */
 int buildin_setmapflag(struct script_state *st)
@@ -9207,7 +9207,7 @@ int buildin_setmapflag(struct script_state *st)
 	if(flag)
 	{
 		*flag = 1;
-		switch (type) {		// “Áêˆ—‚ª•K—v‚Èƒ}ƒbƒvƒtƒ‰ƒO
+		switch (type) {		// ç‰¹æ®Šå‡¦ç†ãŒå¿…è¦ãªãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°
 		case MF_NOSAVE:
 			if(st->end > st->start+6) {
 				char *str = conv_str(st,& (st->stack->stack_data[st->start+4]));
@@ -9245,7 +9245,7 @@ int buildin_setmapflag(struct script_state *st)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒtƒ‰ƒO‚ğíœ‚·‚é
+ * ãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°ã‚’å‰Šé™¤ã™ã‚‹
  *------------------------------------------
  */
 int buildin_removemapflag(struct script_state *st)
@@ -9262,13 +9262,13 @@ int buildin_removemapflag(struct script_state *st)
 	if(flag)
 	{
 		*flag = 0;
-		switch (type) {		// “Áêˆ—‚ª•K—v‚Èƒ}ƒbƒvƒtƒ‰ƒO
+		switch (type) {		// ç‰¹æ®Šå‡¦ç†ãŒå¿…è¦ãªãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°
 		case MF_PVP_NIGHTMAREDROP:
 		case MF_GVG_NIGHTMAREDROP:
 		case MF_PK_NIGHTMAREDROP:
 			{
 				int i,j;
-				for(i=0; i<MAX_DROP_PER_MAP; i++) {	// ŠY“–‚ÌƒhƒƒbƒvƒŠƒXƒg‚ğíœ‚µ‚Ä‹ó‚«‚ğ‹l‚ß‚é
+				for(i=0; i<MAX_DROP_PER_MAP; i++) {	// è©²å½“ã®ãƒ‰ãƒ­ãƒƒãƒ—ãƒªã‚¹ãƒˆã‚’å‰Šé™¤ã—ã¦ç©ºãã‚’è©°ã‚ã‚‹
 					if(map[m].drop_list[i].drop_id == 0)
 						break;
 					if(map[m].drop_list[i].drop_flag != type)
@@ -9290,7 +9290,7 @@ int buildin_removemapflag(struct script_state *st)
 }
 
 /*==========================================
- * ƒ}ƒbƒvƒtƒ‰ƒO‚Ìƒ`ƒFƒbƒN
+ * ãƒãƒƒãƒ—ãƒ•ãƒ©ã‚°ã®ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_checkmapflag(struct script_state *st)
@@ -9312,7 +9312,7 @@ int buildin_checkmapflag(struct script_state *st)
 }
 
 /*==========================================
- * PvPƒIƒ“
+ * PvPã‚ªãƒ³
  *------------------------------------------
  */
 int buildin_pvpon(struct script_state *st)
@@ -9330,7 +9330,7 @@ int buildin_pvpon(struct script_state *st)
 		map[m].flag.pvp = 1;
 		clif_send0199(m,1);
 
-		for(i=0; i<fd_max; i++) {	// l”•ªƒ‹[ƒv
+		for(i=0; i<fd_max; i++) {	// äººæ•°åˆ†ãƒ«ãƒ¼ãƒ—
 			if(session[i] && (pl_sd = (struct map_session_data *)session[i]->session_data) && pl_sd->state.auth) {
 				if(m == pl_sd->bl.m && pl_sd->pvp_timer == -1) {
 					pl_sd->pvp_timer = add_timer(tick+200,pc_calc_pvprank_timer,pl_sd->bl.id,NULL);
@@ -9346,7 +9346,7 @@ int buildin_pvpon(struct script_state *st)
 }
 
 /*==========================================
- * PvPƒIƒt
+ * PvPã‚ªãƒ•
  *------------------------------------------
  */
 int buildin_pvpoff(struct script_state *st)
@@ -9363,7 +9363,7 @@ int buildin_pvpoff(struct script_state *st)
 		map[m].flag.pvp = 0;
 		clif_send0199(m,0);
 
-		for(i=0; i<fd_max; i++) {	// l”•ªƒ‹[ƒv
+		for(i=0; i<fd_max; i++) {	// äººæ•°åˆ†ãƒ«ãƒ¼ãƒ—
 			if(session[i] && (pl_sd = (struct map_session_data *)session[i]->session_data) && pl_sd->state.auth) {
 				if(m == pl_sd->bl.m) {
 					clif_pvpset(pl_sd,0,0,2);
@@ -9381,7 +9381,7 @@ int buildin_pvpoff(struct script_state *st)
 }
 
 /*==========================================
- * GvGƒIƒ“
+ * GvGã‚ªãƒ³
  *------------------------------------------
  */
 int buildin_gvgon(struct script_state *st)
@@ -9401,7 +9401,7 @@ int buildin_gvgon(struct script_state *st)
 }
 
 /*==========================================
- * GvGƒIƒt
+ * GvGã‚ªãƒ•
  *------------------------------------------
  */
 int buildin_gvgoff(struct script_state *st)
@@ -9421,7 +9421,7 @@ int buildin_gvgoff(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒGƒ‚[ƒVƒ‡ƒ“
+ * NPCã‚¨ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³
  *------------------------------------------
  */
 int buildin_emotion(struct script_state *st)
@@ -9446,7 +9446,7 @@ int buildin_emotion(struct script_state *st)
 }
 
 /*==========================================
- * “Á’è‘ÎÛ‚ğˆÚ“®AUéí—p
+ * ç‰¹å®šå¯¾è±¡ã‚’ç§»å‹•ã€æ”»åŸæˆ¦ç”¨
  *------------------------------------------
  */
 static int buildin_maprespawnguildid_sub_pc(struct map_session_data *sd, va_list ap)
@@ -9458,7 +9458,7 @@ static int buildin_maprespawnguildid_sub_pc(struct map_session_data *sd, va_list
 	nullpo_retr(0, sd);
 
 	if(sd->bl.m == m) {
-		// ƒ[ƒv’†‚È‚Ç‚ÅƒuƒƒbƒNƒŠƒXƒg‚©‚çŠO‚ê‚½PC‚à‘ÎÛ‚Æ‚·‚é‚©‚Ç‚¤‚©
+		// ãƒ¯ãƒ¼ãƒ—ä¸­ãªã©ã§ãƒ–ãƒ­ãƒƒã‚¯ãƒªã‚¹ãƒˆã‹ã‚‰å¤–ã‚ŒãŸPCã‚‚å¯¾è±¡ã¨ã™ã‚‹ã‹ã©ã†ã‹
 		if(battle_config.maprespawnguildid_all_players || sd->bl.prev) {
 			int match = (g_id > 0 && sd->status.guild_id == g_id);
 			if( (flag&1 && match) || (flag&2 && !match) )
@@ -9504,7 +9504,7 @@ int buildin_maprespawnguildid(struct script_state *st)
 }
 
 /*==========================================
- * UéíŠJn
+ * æ”»åŸæˆ¦é–‹å§‹
  *------------------------------------------
  */
 int buildin_agitstart(struct script_state *st)
@@ -9517,7 +9517,7 @@ int buildin_agitstart(struct script_state *st)
 }
 
 /*==========================================
- * UéíI—¹
+ * æ”»åŸæˆ¦çµ‚äº†
  *------------------------------------------
  */
 int buildin_agitend(struct script_state *st)
@@ -9530,7 +9530,7 @@ int buildin_agitend(struct script_state *st)
 }
 
 /*==========================================
- * Uéí’†‚©‚Ç‚¤‚©
+ * æ”»åŸæˆ¦ä¸­ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_agitcheck(struct script_state *st)
@@ -9540,7 +9540,7 @@ int buildin_agitcheck(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚ÌƒMƒ‹ƒhƒGƒ“ƒuƒŒƒ€•ÏX
+ * NPCã®ã‚®ãƒ«ãƒ‰ã‚¨ãƒ³ãƒ–ãƒ¬ãƒ å¤‰æ›´
  *------------------------------------------
  */
 int buildin_flagemblem(struct script_state *st)
@@ -9555,7 +9555,7 @@ int buildin_flagemblem(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒWƒgé‚Ì–¼‘O‚ğ•Ô‚·
+ * ã‚¢ã‚¸ãƒˆåŸã®åå‰ã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_getcastlename(struct script_state *st)
@@ -9588,7 +9588,7 @@ int buildin_getcastlename(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒWƒgé‚Ìƒf[ƒ^‚ğæ“¾
+ * ã‚¢ã‚¸ãƒˆåŸã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
  *------------------------------------------
  */
 int buildin_getcastledata(struct script_state *st)
@@ -9646,7 +9646,7 @@ int buildin_getcastledata(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒWƒgé‚Ìƒf[ƒ^‚ğ•ÏX
+ * ã‚¢ã‚¸ãƒˆåŸã®ãƒ‡ãƒ¼ã‚¿ã‚’å¤‰æ›´
  *------------------------------------------
  */
 int buildin_setcastledata(struct script_state *st)
@@ -9693,7 +9693,7 @@ int buildin_setcastledata(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒhî•ñ‚ğ—v‹‚·‚é
+ * ã‚®ãƒ«ãƒ‰æƒ…å ±ã‚’è¦æ±‚ã™ã‚‹
  *------------------------------------------
  */
 int buildin_requestguildinfo(struct script_state *st)
@@ -9710,7 +9710,7 @@ int buildin_requestguildinfo(struct script_state *st)
 }
 
 /*==========================================
- * ƒJ[ƒh‚Ì”‚ğ“¾‚é
+ * ã‚«ãƒ¼ãƒ‰ã®æ•°ã‚’å¾—ã‚‹
  *------------------------------------------
  */
 int buildin_getequipcardcnt(struct script_state *st)
@@ -9726,7 +9726,7 @@ int buildin_getequipcardcnt(struct script_state *st)
 
 	if(i >= 0) {
 		int n,c=0;
-		if(itemdb_isspecial(sd->status.inventory[i].card[0])){ // »‘¢E–¼‘O“ü‚è‚ÍƒJ[ƒh‚È‚µ
+		if(itemdb_isspecial(sd->status.inventory[i].card[0])){ // è£½é€ ãƒ»åå‰å…¥ã‚Šã¯ã‚«ãƒ¼ãƒ‰ãªã—
 			push_val(st->stack,C_INT,0);
 			return 0;
 		}
@@ -9743,8 +9743,8 @@ int buildin_getequipcardcnt(struct script_state *st)
 }
 
 /*=================================================================
- * ƒJ[ƒhæ‚èŠO‚µ
- * type=0: —¼•û‘¹¸A1:ƒJ[ƒh‘¹¸A2:•‹ï‘¹¸A3:‘¹¸–³‚µA4:¬Œ÷
+ * ã‚«ãƒ¼ãƒ‰å–ã‚Šå¤–ã—
+ * type=0: ä¸¡æ–¹æå¤±ã€1:ã‚«ãƒ¼ãƒ‰æå¤±ã€2:æ­¦å…·æå¤±ã€3:æå¤±ç„¡ã—ã€4:æˆåŠŸ
  *-----------------------------------------------------------------
  */
 static int removecards_sub(struct map_session_data *sd,int i,int typefail,int pos)
@@ -9757,7 +9757,7 @@ static int removecards_sub(struct map_session_data *sd,int i,int typefail,int po
 
 	if(i < 0 || i >= MAX_INVENTORY)
 		return 0;
-	if(itemdb_isspecial(sd->status.inventory[i].card[0]))	// »‘¢E–¼‘O“ü‚è‚Íˆ—‚µ‚È‚¢
+	if(itemdb_isspecial(sd->status.inventory[i].card[0]))	// è£½é€ ãƒ»åå‰å…¥ã‚Šã¯å‡¦ç†ã—ãªã„
 		return 0;
 
 	if(pos < 0)
@@ -9767,30 +9767,30 @@ static int removecards_sub(struct map_session_data *sd,int i,int typefail,int po
 		int card_id = sd->status.inventory[i].card[n];
 		if(card_id <= 0 || itemdb_type(card_id) != ITEMTYPE_CARD)
 			continue;
-		if((pos == 0 || pos-1 == n) && itemdb_cardtype(card_id) != 2) {	// w’èƒ|ƒWƒVƒ‡ƒ“‚Æˆê’v‚©‚Âhidden‚Å‚Í‚È‚¢ê‡
+		if((pos == 0 || pos-1 == n) && itemdb_cardtype(card_id) != 2) {	// æŒ‡å®šãƒã‚¸ã‚·ãƒ§ãƒ³ã¨ä¸€è‡´ã‹ã¤hiddenã§ã¯ãªã„å ´åˆ
 			removed_flag = 1;
-			if(typefail == 2 || typefail == 4) {	// ƒJ[ƒh•Ô‹p
+			if(typefail == 2 || typefail == 4) {	// ã‚«ãƒ¼ãƒ‰è¿”å´
 				memset(&item_tmp, 0, sizeof(item_tmp));
 				item_tmp.nameid = card_id;
 				item_tmp.identify = 1;
-				if( (flag = pc_additem(sd,&item_tmp,1)) ) {	// ‚Ä‚È‚¢‚È‚çƒhƒƒbƒv
+				if( (flag = pc_additem(sd,&item_tmp,1)) ) {	// æŒã¦ãªã„ãªã‚‰ãƒ‰ãƒ­ãƒƒãƒ—
 					clif_additem(sd,0,0,flag);
 					map_addflooritem(&item_tmp,1,sd->bl.m,sd->bl.x,sd->bl.y,0,0,0,0);
 				}
 			}
 		} else {
 			if(itemdb_cardtype(card_id) == 2)
-				card_set[n] = card_id;	// æ‚èŠO‚µ‘ÎÛŠO‚ÌƒJ[ƒh‚ğ•Û‘¶
+				card_set[n] = card_id;	// å–ã‚Šå¤–ã—å¯¾è±¡å¤–ã®ã‚«ãƒ¼ãƒ‰ã‚’ä¿å­˜
 			else
-				card_set[j++] = card_id;	// æ‚èŠO‚µ‘ÎÛŠO‚ÌƒJ[ƒh‚ğ•Û‘¶
+				card_set[j++] = card_id;	// å–ã‚Šå¤–ã—å¯¾è±¡å¤–ã®ã‚«ãƒ¼ãƒ‰ã‚’ä¿å­˜
 		}
 	}
 
 	if(removed_flag) {
-		if(typefail == 0 || typefail == 2) {		// •‹ï‘¹¸‚µ‚ÄI—¹
+		if(typefail == 0 || typefail == 2) {		// æ­¦å…·æå¤±ã—ã¦çµ‚äº†
 			pc_delitem(sd,i,1,0,2);
 		}
-		else if(typefail == 1 || typefail == 4) {	// w’èƒJ[ƒh‚ğæ‚èœ‚¢‚½ƒAƒCƒeƒ€æ“¾
+		else if(typefail == 1 || typefail == 4) {	// æŒ‡å®šã‚«ãƒ¼ãƒ‰ã‚’å–ã‚Šé™¤ã„ãŸã‚¢ã‚¤ãƒ†ãƒ å–å¾—
 			flag = 0;
 			memset(&item_tmp, 0, sizeof(item_tmp));
 			item_tmp.nameid    = sd->status.inventory[i].nameid;
@@ -9799,18 +9799,18 @@ static int removecards_sub(struct map_session_data *sd,int i,int typefail,int po
 			item_tmp.attribute = sd->status.inventory[i].attribute;
 			memcpy(&item_tmp.card, &card_set, sizeof(card_set));
 			pc_delitem(sd,i,1,0,0);
-			if( (flag=pc_additem(sd,&item_tmp,1)) ) {	// ‚Ä‚È‚¢‚È‚çƒhƒƒbƒv
+			if( (flag=pc_additem(sd,&item_tmp,1)) ) {	// æŒã¦ãªã„ãªã‚‰ãƒ‰ãƒ­ãƒƒãƒ—
 				clif_additem(sd,0,0,flag);
 				map_addflooritem(&item_tmp,1,sd->bl.m,sd->bl.x,sd->bl.y,0,0,0,0);
 			}
 		}
-		return 1;	// ˆ—Š®—¹
+		return 1;	// å‡¦ç†å®Œäº†
 	}
 	return 0;
 }
 
 /*==========================================
- * ƒJ[ƒhæ‚èŠO‚µ¬Œ÷
+ * ã‚«ãƒ¼ãƒ‰å–ã‚Šå¤–ã—æˆåŠŸ
  *------------------------------------------
  */
 int buildin_successremovecards(struct script_state *st)
@@ -9828,15 +9828,15 @@ int buildin_successremovecards(struct script_state *st)
 		pos = conv_num(st,& (st->stack->stack_data[st->start+3]));
 	}
 
-	if(removecards_sub(sd, i, 4, pos)) {	// failtype=4‚Æ‚·‚é
-		// ¬Œ÷ƒGƒtƒFƒNƒg
+	if(removecards_sub(sd, i, 4, pos)) {	// failtype=4ã¨ã™ã‚‹
+		// æˆåŠŸã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
 		clif_misceffect2(&sd->bl,154);
 	}
 	return 0;
 }
 
 /*==========================================
- * ƒJ[ƒhæ‚èŠO‚µ¸”s
+ * ã‚«ãƒ¼ãƒ‰å–ã‚Šå¤–ã—å¤±æ•—
  *------------------------------------------
  */
 int buildin_failedremovecards(struct script_state *st)
@@ -9859,14 +9859,14 @@ int buildin_failedremovecards(struct script_state *st)
 		pos = conv_num(st,& (st->stack->stack_data[st->start+4]));
 
 	if(removecards_sub(sd, i, typefail, pos)) {
-		// ¸”sƒGƒtƒFƒNƒg
+		// å¤±æ•—ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
 		clif_misceffect2(&sd->bl,155);
 	}
 	return 0;
 }
 
 /*==========================================
- * Œ‹¥ˆ—
+ * çµå©šå‡¦ç†
  *------------------------------------------
  */
 int buildin_marriage(struct script_state *st)
@@ -9883,7 +9883,7 @@ int buildin_marriage(struct script_state *st)
 }
 
 /*==========================================
- * Œ‹¥®—p‚ÌƒGƒtƒFƒNƒg
+ * çµå©šå¼ç”¨ã®ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_wedding_effect(struct script_state *st)
@@ -9896,7 +9896,7 @@ int buildin_wedding_effect(struct script_state *st)
 }
 
 /*==========================================
- * —£¥ˆ—
+ * é›¢å©šå‡¦ç†
  *------------------------------------------
  */
 int buildin_divorce(struct script_state *st)
@@ -9923,7 +9923,7 @@ int buildin_divorce(struct script_state *st)
 }
 
 /*==========================================
- * —{qˆ—
+ * é¤Šå­å‡¦ç†
  *------------------------------------------
  */
 int buildin_adoption(struct script_state *st)
@@ -9945,7 +9945,7 @@ int buildin_adoption(struct script_state *st)
 }
 
 /*==========================================
- * —{q‰ğ‘Ì
+ * é¤Šå­è§£ä½“
  *------------------------------------------
  */
 int buildin_breakadoption(struct script_state *st)
@@ -9969,7 +9969,7 @@ int buildin_breakadoption(struct script_state *st)
 }
 
 /*==========================================
- * ID‚©‚çItem–¼
+ * IDã‹ã‚‰Itemå
  *------------------------------------------
  */
 int buildin_getitemname(struct script_state *st)
@@ -9989,7 +9989,7 @@ int buildin_getitemname(struct script_state *st)
 }
 
 /*==========================================
- * PC‚ÌŠ•iî•ñ“Ç‚İæ‚è
+ * PCã®æ‰€æŒå“æƒ…å ±èª­ã¿å–ã‚Š
  *------------------------------------------
  */
 int buildin_getinventorylist(struct script_state *st)
@@ -10022,7 +10022,7 @@ int buildin_getinventorylist(struct script_state *st)
 }
 
 /*==========================================
- * PC‚ÌƒJ[ƒg“àŠ•iî•ñ“Ç‚İæ‚è
+ * PCã®ã‚«ãƒ¼ãƒˆå†…æ‰€æŒå“æƒ…å ±èª­ã¿å–ã‚Š
  *------------------------------------------
  */
 int buildin_getcartlist(struct script_state *st)
@@ -10054,7 +10054,7 @@ int buildin_getcartlist(struct script_state *st)
 }
 
 /*==========================================
- * PC‚ÌƒXƒLƒ‹î•ñ“Ç‚İæ‚è
+ * PCã®ã‚¹ã‚­ãƒ«æƒ…å ±èª­ã¿å–ã‚Š
  *------------------------------------------
  */
 int buildin_getskilllist(struct script_state *st)
@@ -10091,7 +10091,7 @@ int buildin_getskilllist(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€‚Ì‘Síœ
+ * ã‚¢ã‚¤ãƒ†ãƒ ã®å…¨å‰Šé™¤
  *------------------------------------------
  */
 int buildin_clearitem(struct script_state *st)
@@ -10112,7 +10112,7 @@ int buildin_clearitem(struct script_state *st)
 }
 
 /*==========================================
- * ƒJ[ƒg“àƒAƒCƒeƒ€‚Ì‘Síœ
+ * ã‚«ãƒ¼ãƒˆå†…ã‚¢ã‚¤ãƒ†ãƒ ã®å…¨å‰Šé™¤
  *------------------------------------------
  */
 int buildin_clearcartitem(struct script_state *st)
@@ -10133,7 +10133,7 @@ int buildin_clearcartitem(struct script_state *st)
 }
 
 /*==========================================
- * C—‰Â”\ƒAƒCƒeƒ€‚ğ”‚¦‚é
+ * ä¿®ç†å¯èƒ½ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ•°ãˆã‚‹
  *------------------------------------------
  */
 int buildin_getrepairableitemcount(struct script_state *st)
@@ -10154,7 +10154,7 @@ int buildin_getrepairableitemcount(struct script_state *st)
 }
 
 /*==========================================
- * C—‰Â”\ƒAƒCƒeƒ€‚ğC—‚·‚é
+ * ä¿®ç†å¯èƒ½ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä¿®ç†ã™ã‚‹
  *------------------------------------------
  */
 int buildin_repairitem(struct script_state *st)
@@ -10179,9 +10179,9 @@ int buildin_repairitem(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒNƒ‰ƒXƒ`ƒFƒ“ƒW
- * class‚Í•Ï‚í‚è‚½‚¢class
- * type‚Í’Êí0‚È‚Ì‚©‚ÈH
+ * NPCã‚¯ãƒ©ã‚¹ãƒã‚§ãƒ³ã‚¸
+ * classã¯å¤‰ã‚ã‚ŠãŸã„class
+ * typeã¯é€šå¸¸0ãªã®ã‹ãªï¼Ÿ
  *------------------------------------------
  */
 int buildin_classchange(struct script_state *st)
@@ -10197,7 +10197,7 @@ int buildin_classchange(struct script_state *st)
 }
 
 /*==========================================
- * NPCŒ©‚½–Ú•ÏX
+ * NPCè¦‹ãŸç›®å¤‰æ›´
  *------------------------------------------
  */
 int buildin_setnpcdisplay(struct script_state *st)
@@ -10220,7 +10220,7 @@ int buildin_setnpcdisplay(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚©‚ç”­¶‚·‚éƒGƒtƒFƒNƒg
+ * NPCã‹ã‚‰ç™ºç”Ÿã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_misceffect(struct script_state *st)
@@ -10245,7 +10245,7 @@ int buildin_misceffect(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒŠƒA“à‚ÌPC‚É”­¶‚·‚éƒGƒtƒFƒNƒg
+ * ã‚¨ãƒªã‚¢å†…ã®PCã«ç™ºç”Ÿã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 static int buildin_misceffect_sub(struct block_list *bl,va_list ap)
@@ -10279,7 +10279,7 @@ int buildin_areamisceffect(struct script_state *st)
 }
 
 /*==========================================
- * ƒTƒEƒ“ƒhƒGƒtƒFƒNƒg
+ * ã‚µã‚¦ãƒ³ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_soundeffect(struct script_state *st)
@@ -10303,7 +10303,7 @@ int buildin_soundeffect(struct script_state *st)
 }
 
 /*==========================================
- * ”ÍˆÍw’èƒTƒEƒ“ƒhƒGƒtƒFƒNƒg
+ * ç¯„å›²æŒ‡å®šã‚µã‚¦ãƒ³ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 static int buildin_soundeffect_sub(struct block_list *bl,va_list ap)
@@ -10344,7 +10344,7 @@ int buildin_areasoundeffect(struct script_state *st)
 }
 
 /*==========================================
- * NPC‚©‚ç”­¶‚·‚éƒGƒtƒFƒNƒgœ‹
+ * NPCã‹ã‚‰ç™ºç”Ÿã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆé™¤å»
  *------------------------------------------
  */
 int buildin_delmisceffect(struct script_state *st)
@@ -10387,7 +10387,7 @@ int buildin_gmcommand(struct script_state *st)
 		}
 	}
 	if(st->oid) {
-		// l‚ª‹‚È‚¢ƒCƒxƒ“ƒgŒnNPC‚Åg‚Á‚½ê‡‚Ì‚½‚ß‚Ìƒ_ƒ~[map_session_data
+		// äººãŒå±…ãªã„ã‚¤ãƒ™ãƒ³ãƒˆç³»NPCã§ä½¿ã£ãŸå ´åˆã®ãŸã‚ã®ãƒ€ãƒŸãƒ¼map_session_data
 		struct map_session_data dummy_sd;
 		struct block_list *bl = map_id2bl(st->oid);
 
@@ -10414,7 +10414,7 @@ int buildin_gmcommand(struct script_state *st)
 }
 
 /*==========================================
- * ƒRƒƒ“ƒg—“‚ÉƒƒbƒZ[ƒW•\¦
+ * ã‚³ãƒ¡ãƒ³ãƒˆæ¬„ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_dispbottom(struct script_state *st)
@@ -10429,7 +10429,7 @@ int buildin_dispbottom(struct script_state *st)
 }
 
 /*==========================================
- * ƒT[ƒo[ã‚Ì‘Sˆõ‚ğ‘S‰ñ•œ(‘h¶+HP/SP‘S‰ñ•œ)
+ * ã‚µãƒ¼ãƒãƒ¼ä¸Šã®å…¨å“¡ã‚’å…¨å›å¾©(è˜‡ç”Ÿ+HP/SPå…¨å›å¾©)
  *------------------------------------------
  */
 int buildin_recovery(struct script_state *st)
@@ -10453,7 +10453,7 @@ int buildin_recovery(struct script_state *st)
 }
 
 /*==========================================
- * ›z‰»‚³‚¹‚Ä˜A‚ê•à‚¢‚Ä‚¢‚éƒyƒbƒg‚Ìî•ñæ“¾
+ * å­µåŒ–ã•ã›ã¦é€£ã‚Œæ­©ã„ã¦ã„ã‚‹ãƒšãƒƒãƒˆã®æƒ…å ±å–å¾—
  * 0:pet_id 1:pet_class 2:pet_name
  * 3:friendly 4:hungry
  *------------------------------------------
@@ -10497,7 +10497,7 @@ int buildin_getpetinfo(struct script_state *st)
 }
 
 /*==========================================
- * ˜A‚ê•à‚¢‚Ä‚¢‚éƒzƒ€ƒ“ƒNƒ‹ƒX‚Ìî•ñæ“¾
+ * é€£ã‚Œæ­©ã„ã¦ã„ã‚‹ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹ã®æƒ…å ±å–å¾—
  * 0:homun_id 1:homun_base_lv 2:homun_name
  * 3:friendly 4:hungry 5:homun_class
  *------------------------------------------
@@ -10553,7 +10553,7 @@ int buildin_gethomuninfo(struct script_state *st)
 }
 
 /*==========================================
- * w’èID‚ÌƒJ[ƒh‚ğ•t‚¯‚½•‹ï‚ª‚È‚¢‚©ŒŸ¸(‚ ‚Á‚½‚ç1,–³‚¯‚ê‚Î0‚ğ•Ô‚·)
+ * æŒ‡å®šIDã®ã‚«ãƒ¼ãƒ‰ã‚’ä»˜ã‘ãŸæ­¦å…·ãŒãªã„ã‹æ¤œæŸ»(ã‚ã£ãŸã‚‰1,ç„¡ã‘ã‚Œã°0ã‚’è¿”ã™)
  *------------------------------------------
  */
 int buildin_checkequipedcard(struct script_state *st)
@@ -10611,7 +10611,7 @@ int buildin_select(struct script_state *st)
 	int i;
 	struct map_session_data *sd = script_rid2sd(st);
 
-	if(sd == NULL) {	// ƒLƒƒƒ“ƒZƒ‹ˆµ‚¢‚É‚·‚é
+	if(sd == NULL) {	// ã‚­ãƒ£ãƒ³ã‚»ãƒ«æ‰±ã„ã«ã™ã‚‹
 		st->state = END;
 		return 0;
 	}
@@ -10648,7 +10648,7 @@ int buildin_select(struct script_state *st)
 	} else {
 		int count = 0;
 		sd->state.menu_or_input = 0;
-		// ‹ó•¶š‚Æ : ‚Ìƒƒjƒ…[•â³
+		// ç©ºæ–‡å­—ã¨ : ã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼è£œæ­£
 		for(i=st->start+2; count < sd->npc_menu && i<st->end; i++) {
 			char *p  = conv_str(st,& (st->stack->stack_data[i]));
 			char *np = NULL;
@@ -10669,7 +10669,7 @@ int buildin_select(struct script_state *st)
 			pc_setreg(sd,add_str("@menu"),sd->npc_menu);
 			push_val(st->stack,C_INT,sd->npc_menu);
 		} else {
-			// •s³‚È’l‚È‚Ì‚ÅƒLƒƒƒ“ƒZƒ‹ˆµ‚¢
+			// ä¸æ­£ãªå€¤ãªã®ã§ã‚­ãƒ£ãƒ³ã‚»ãƒ«æ‰±ã„
 			st->state = END;
 		}
 	}
@@ -10677,7 +10677,7 @@ int buildin_select(struct script_state *st)
 }
 
 /*==========================================
- * ƒ}ƒbƒvw’èmob”æ“¾
+ * ãƒãƒƒãƒ—æŒ‡å®šmobæ•°å–å¾—
  *------------------------------------------
  */
 static int buildin_getmapmobs_sub(struct block_list *bl,va_list ap)
@@ -10689,19 +10689,19 @@ static int buildin_getmapmobs_sub(struct block_list *bl,va_list ap)
 	nullpo_retr(0, bl);
 	nullpo_retr(0, md = (struct mob_data *)bl);
 
-	// “|‚³‚ê‚Ä‚é
+	// å€’ã•ã‚Œã¦ã‚‹
 	if (md->hp <= 0)
 		return 0;
 
-	// ƒCƒxƒ“ƒg‚È‚µAMobID‚Ìw’è‚È‚µ
+	// ã‚¤ãƒ™ãƒ³ãƒˆãªã—ã€MobIDã®æŒ‡å®šãªã—
 	if (!event && !mob_id)
 		return 1;
 
-	// ‘ÎÛƒCƒxƒ“ƒg
+	// å¯¾è±¡ã‚¤ãƒ™ãƒ³ãƒˆ
 	if(event && strcmp(event,((struct mob_data *)bl)->npc_event) == 0)
 		return 1;
 
-	// ‘ÎÛMobID
+	// å¯¾è±¡MobID
 	if (mob_id == ((struct mob_data*)bl)->class_)
 		return 1;
 
@@ -10738,7 +10738,7 @@ int buildin_getmapmobs(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒŠƒAw’èmob”æ“¾
+ * ã‚¨ãƒªã‚¢æŒ‡å®šmobæ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getareamobs(struct script_state *st)
@@ -10775,7 +10775,7 @@ int buildin_getareamobs(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh“¯m‚ÌŠÖŒW‚ğ’²‚×‚é
+ * ã‚®ãƒ«ãƒ‰åŒå£«ã®é–¢ä¿‚ã‚’èª¿ã¹ã‚‹
  *------------------------------------------
  */
 int buildin_getguildrelation(struct script_state *st)
@@ -10819,7 +10819,7 @@ int buildin_getguildrelation(struct script_state *st)
 }
 
 /*==========================================
- * •‘•‰ğœ
+ * æ­¦è£…è§£é™¤
  *------------------------------------------
  */
 int buildin_unequip(struct script_state *st)
@@ -10851,7 +10851,7 @@ int buildin_unequip(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€g—p‹–‰Â
+ * ã‚¢ã‚¤ãƒ†ãƒ ä½¿ç”¨è¨±å¯
  *------------------------------------------
  */
 int buildin_allowuseitem(struct script_state *st)
@@ -10881,7 +10881,7 @@ int buildin_allowuseitem(struct script_state *st)
 }
 
 /*==========================================
- * w’èƒLƒƒƒ‰‚Ì‹‚éƒ}ƒbƒv–¼æ“¾
+ * æŒ‡å®šã‚­ãƒ£ãƒ©ã®å±…ã‚‹ãƒãƒƒãƒ—åå–å¾—
  *------------------------------------------
  */
 int buildin_getmapname(struct script_state *st)
@@ -10937,7 +10937,7 @@ int buildin_summon(struct script_state *st)
 }
 
 /*==========================================
- * w’èƒIƒuƒWƒFƒNƒg‚ÌˆÊ’u‚ğæ“¾
+ * æŒ‡å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½ç½®ã‚’å–å¾—
  *------------------------------------------
  */
 int buildin_getmapxy(struct script_state *st)
@@ -10993,7 +10993,7 @@ int buildin_getmapxy(struct script_state *st)
 			x=nd->bl.x;
 			y=nd->bl.y;
 			if(nd->bl.m == -1)
-				mapname[0] = '-';	// ƒ}ƒbƒv‚É”z’u‚³‚ê‚È‚¢NPC
+				mapname[0] = '-';	// ãƒãƒƒãƒ—ã«é…ç½®ã•ã‚Œãªã„NPC
 			else
 				memcpy(mapname,map[nd->bl.m].name,24);
 			break;
@@ -11140,7 +11140,7 @@ int buildin_checkriding(struct script_state *st)
 }
 
 /*==========================================
- * ƒhƒ‰ƒSƒ“‚É‹Ræ‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * ãƒ‰ãƒ©ã‚´ãƒ³ã«é¨ä¹—ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkdragon(struct script_state *st)
@@ -11153,7 +11153,7 @@ int buildin_checkdragon(struct script_state *st)
 }
 
 /*==========================================
- * –‚“±ƒMƒA‚É‹Ræ‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * é­”å°ã‚®ã‚¢ã«é¨ä¹—ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkgear(struct script_state *st)
@@ -11166,7 +11166,7 @@ int buildin_checkgear(struct script_state *st)
 }
 
 /*==========================================
- * ƒEƒH[ƒO‚ğ¢Š«‚Ü‚½‚Í‹Ræ‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * ã‚¦ã‚©ãƒ¼ã‚°ã‚’å¬å–šã¾ãŸã¯é¨ä¹—ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkwolf(struct script_state *st)
@@ -11178,13 +11178,13 @@ int buildin_checkwolf(struct script_state *st)
 		type = conv_num(st,& (st->stack->stack_data[st->start+2]));
 
 	switch(type) {
-	case 1:		// ¢Š«‚Ì‚İƒ`ƒFƒbƒN
+	case 1:		// å¬å–šã®ã¿ãƒã‚§ãƒƒã‚¯
 		val = pc_iswolf(sd)? 1 : 0;
 		break;
-	case 2:		// ‹Ræ‚Ì‚İƒ`ƒFƒbƒN
+	case 2:		// é¨ä¹—ã®ã¿ãƒã‚§ãƒƒã‚¯
 		val = pc_iswolfmount(sd)? 1 : 0;
 		break;
-	default:	// —¼•ûƒ`ƒFƒbƒN
+	default:	// ä¸¡æ–¹ãƒã‚§ãƒƒã‚¯
 		val = (pc_iswolf(sd) || pc_iswolfmount(sd))? 1 : 0;
 		break;
 	}
@@ -11195,7 +11195,7 @@ int buildin_checkwolf(struct script_state *st)
 }
 
 /*==========================================
- * À‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * åº§ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checksit(struct script_state *st)
@@ -11208,7 +11208,7 @@ int buildin_checksit(struct script_state *st)
 }
 
 /*==========================================
- * €–S‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * æ­»äº¡ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkdead(struct script_state *st)
@@ -11221,7 +11221,7 @@ int buildin_checkdead(struct script_state *st)
 }
 
 /*==========================================
- * ‰r¥‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * è© å”±ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkcasting(struct script_state *st)
@@ -11300,7 +11300,7 @@ int buildin_petskillsupport(struct script_state *st)
 }
 
 /*==========================================
- * ƒyƒbƒg‚Ìƒ‹[ƒgƒ^ƒCƒv‚Ì•ÏX
+ * ãƒšãƒƒãƒˆã®ãƒ«ãƒ¼ãƒˆã‚¿ã‚¤ãƒ—ã®å¤‰æ›´
  *------------------------------------------
  */
 int buildin_changepettype(struct script_state *st)
@@ -11321,7 +11321,7 @@ int buildin_changepettype(struct script_state *st)
 }
 
 /*==========================================
- * —¿——p
+ * æ–™ç†ç”¨
  *------------------------------------------
  */
 int buildin_making(struct script_state *st)
@@ -11338,7 +11338,7 @@ int buildin_making(struct script_state *st)
 }
 
 /*==========================================
- * w’èƒ}ƒbƒv‚Ìpvp,gvgƒtƒ‰ƒO‚ğ’²‚×‚é
+ * æŒ‡å®šãƒãƒƒãƒ—ã®pvp,gvgãƒ•ãƒ©ã‚°ã‚’èª¿ã¹ã‚‹
  *------------------------------------------
  */
 int buildin_getpkflag(struct script_state *st)
@@ -11375,7 +11375,7 @@ int buildin_guildgetexp(struct script_state *st)
 
 	exp = conv_num(st,& (st->stack->stack_data[st->start+2]));
 
-	// Exp‚Í•‰‚Ì’l‚Å‚à—Ç‚¢
+	// Expã¯è² ã®å€¤ã§ã‚‚è‰¯ã„
 	if(sd && sd->status.guild_id > 0)
 		guild_getexp(sd, exp);
 
@@ -11420,7 +11420,7 @@ int buildin_getnpcposition(struct script_state *st)
 
 #ifndef NO_CSVDB_SCRIPT
 /*==========================================
- * CSVƒAƒNƒZƒX–½—ß/ŠÖ”ŒQ
+ * CSVã‚¢ã‚¯ã‚»ã‚¹å‘½ä»¤/é–¢æ•°ç¾¤
  *------------------------------------------
  */
 static struct dbt* script_csvdb;
@@ -11445,7 +11445,7 @@ static int script_csvfinal(void)
 	return 0;
 }
 
-// ƒtƒ@ƒCƒ‹–¼‚ª‘Ã“–‚È‚à‚Ì‚©ƒ`ƒFƒbƒN‚·‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«åãŒå¦¥å½“ãªã‚‚ã®ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 static int script_csvfilename_check(const char *file, const char *func)
 {
 	const unsigned char *p = file;
@@ -11465,7 +11465,7 @@ static struct csvdb_data* script_csvload(const char *file)
 	struct csvdb_data *csv = (struct csvdb_data *)strdb_search(script_csvdb, file);
 
 	if( csv == NULL ) {
-		// ƒtƒ@ƒCƒ‹–¼‚É•Ï‚È‚à‚Ì‚ª“ü‚Á‚Ä‚¢‚È‚¢‚©Šm”F
+		// ãƒ•ã‚¡ã‚¤ãƒ«åã«å¤‰ãªã‚‚ã®ãŒå…¥ã£ã¦ã„ãªã„ã‹ç¢ºèª
 		int i;
 		for(i = 0; file[i]; i++) {
 			switch(file[i]) {
@@ -11768,17 +11768,17 @@ int buildin_sleep(struct script_state *st)
 	st->rid = 0;
 
 	if(st->sleep.tick == 0) {
-		// ‰‰ñÀs
+		// åˆå›å®Ÿè¡Œ
 		int tick = conv_num(st,& (st->stack->stack_data[st->start+2]));
 
 		if(tick <= 0) {
-			// ‰½‚à‚µ‚È‚¢
+			// ä½•ã‚‚ã—ãªã„
 			return 0;
 		}
 		st->state = RERUNLINE;
 		st->sleep.tick = tick;
 	} else {
-		// ‘±s
+		// ç¶šè¡Œ
 		st->sleep.tick = 0;
 	}
 	return 0;
@@ -11791,18 +11791,18 @@ int buildin_sleep(struct script_state *st)
 int buildin_sleep2(struct script_state *st)
 {
 	if(st->sleep.tick == 0) {
-		// ‰‰ñÀs
+		// åˆå›å®Ÿè¡Œæ™‚
 		int tick = conv_num(st,& (st->stack->stack_data[st->start+2]));
 
 		if(tick <= 0) {
-			// 0ms ‚Ì‘Ò‹@ŠÔ‚ğw’è‚³‚ê‚½
+			// 0ms ã®å¾…æ©Ÿæ™‚é–“ã‚’æŒ‡å®šã•ã‚ŒãŸ
 			push_val(st->stack,C_INT,(map_id2sd(st->rid) != NULL)? 1: 0);
 			return 0;
 		}
 		st->state = RERUNLINE;
 		st->sleep.tick = tick;
 	} else {
-		// ‘±s
+		// ç¶šè¡Œ
 		push_val(st->stack,C_INT,(map_id2sd(st->rid) != NULL)? 1: 0);
 		st->sleep.tick = 0;
 	}
@@ -11810,7 +11810,7 @@ int buildin_sleep2(struct script_state *st)
 }
 
 /*==========================================
- * w’èNPC‚Ì‘S‚Ä‚Ìsleep‚ğÄŠJ‚·‚é
+ * æŒ‡å®šNPCã®å…¨ã¦ã®sleepã‚’å†é–‹ã™ã‚‹
  *------------------------------------------
  */
 int buildin_awake(struct script_state *st)
@@ -11846,7 +11846,7 @@ int buildin_awake(struct script_state *st)
 int buildin_getvariableofnpc(struct script_state *st)
 {
 	if( st->stack->stack_data[st->start+2].type != C_NAME ) {
-		// ‘æˆêˆø”‚ª•Ï”–¼‚¶‚á‚È‚¢
+		// ç¬¬ä¸€å¼•æ•°ãŒå¤‰æ•°åã˜ã‚ƒãªã„
 		printf("buildin_getvariableofnpc: param not name\n");
 		push_val(st->stack,C_INT,0);
 	} else {
@@ -11856,11 +11856,11 @@ int buildin_getvariableofnpc(struct script_state *st)
 		struct npc_data *nd = npc_name2id(npc_name);
 
 		if( var_name[0] != '\'' || var_name[1] == '@' ) {
-			// ' •Ï”ˆÈŠO‚Íƒ_ƒ
+			// ' å¤‰æ•°ä»¥å¤–ã¯ãƒ€ãƒ¡
 			printf("buildin_getvariableofnpc: invalid scope %s\n", var_name);
 			push_val(st->stack,C_INT,0);
 		} else if( nd == NULL || nd->subtype != SCRIPT || !nd->u.scr.script) {
-			// NPC ‚ªŒ©‚Â‚©‚ç‚È‚¢ or SCRIPTˆÈŠO‚ÌNPC
+			// NPC ãŒè¦‹ã¤ã‹ã‚‰ãªã„ or SCRIPTä»¥å¤–ã®NPC
 			printf("buildin_getvariableofnpc: can't find npc %s\n", npc_name);
 			push_val(st->stack,C_INT,0);
 		} else {
@@ -11871,9 +11871,9 @@ int buildin_getvariableofnpc(struct script_state *st)
 }
 
 /*==========================================
- * Œ©‚½–ÚƒTƒCƒY‚Ì•ÏX
+ * è¦‹ãŸç›®ã‚µã‚¤ã‚ºã®å¤‰æ›´
  * type1=PC type2=PET type3=HOM type4=NPC
- * ¬ size=-1 ‘å size=1
+ * å° size=-1 å¤§ size=1
  *------------------------------------------
  */
 int buildin_changeviewsize(struct script_state *st)
@@ -11914,8 +11914,8 @@ int buildin_changeviewsize(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€g—pAg‚Á‚½ƒAƒCƒeƒ€‚ÌID‚â»ìÒID‚ğ•Ô‚·
- * usediteminfo flag; 0=g—pƒAƒCƒeƒ€ID 1=»ìÒID
+ * ã‚¢ã‚¤ãƒ†ãƒ ä½¿ç”¨æ™‚ã€ä½¿ã£ãŸã‚¢ã‚¤ãƒ†ãƒ ã®IDã‚„è£½ä½œè€…IDã‚’è¿”ã™
+ * usediteminfo flag; 0=ä½¿ç”¨ã‚¢ã‚¤ãƒ†ãƒ ID 1=è£½ä½œè€…ID
  *------------------------------------------
  */
 int buildin_usediteminfo(struct script_state *st)
@@ -11937,7 +11937,7 @@ int buildin_usediteminfo(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€–¼‚©‚çID‚ğæ“¾
+ * ã‚¢ã‚¤ãƒ†ãƒ åã‹ã‚‰IDã‚’å–å¾—
  *------------------------------------------
  */
 int buildin_getitemid(struct script_state *st)
@@ -11952,7 +11952,7 @@ int buildin_getitemid(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‚Ìƒƒ“ƒo[”‚ğæ“¾(Ú‘±”‚Å‚Í‚È‚­“o˜^”)
+ * ã‚®ãƒ«ãƒ‰ã®ãƒ¡ãƒ³ãƒãƒ¼æ•°ã‚’å–å¾—(æ¥ç¶šæ•°ã§ã¯ãªãç™»éŒ²æ•°)
  *------------------------------------------
  */
 int buildin_getguildmembers(struct script_state *st)
@@ -11976,7 +11976,7 @@ int buildin_getguildmembers(struct script_state *st)
 }
 
 /*==========================================
- * NPCUŒ‚ƒXƒLƒ‹ƒGƒtƒFƒNƒg
+ * NPCæ”»æ’ƒã‚¹ã‚­ãƒ«ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_npcskillattack(struct script_state *st)
@@ -11998,7 +11998,7 @@ int buildin_npcskillattack(struct script_state *st)
 }
 
 /*==========================================
- * NPCx‰‡/‰ñ•œƒXƒLƒ‹ƒGƒtƒFƒNƒg
+ * NPCæ”¯æ´/å›å¾©ã‚¹ã‚­ãƒ«ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_npcskillsupport(struct script_state *st)
@@ -12035,7 +12035,7 @@ int buildin_npcskillsupport(struct script_state *st)
 }
 
 /*==========================================
- * NPCêŠw’èƒXƒLƒ‹ƒGƒtƒFƒNƒg
+ * NPCå ´æ‰€æŒ‡å®šã‚¹ã‚­ãƒ«ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_npcskillpos(struct script_state *st)
@@ -12058,7 +12058,7 @@ int buildin_npcskillpos(struct script_state *st)
 }
 
 /*==========================================
- * ŒÄ‚Ño‚µŒ³‚ÌNPCî•ñ‚ğæ“¾‚·‚é
+ * å‘¼ã³å‡ºã—å…ƒã®NPCæƒ…å ±ã‚’å–å¾—ã™ã‚‹
  *------------------------------------------
  */
 int buildin_strnpcinfo(struct script_state *st)
@@ -12110,7 +12110,7 @@ int buildin_strnpcinfo(struct script_state *st)
 }
 
 /*==========================================
- * w’èPT‚ÌPTƒŠ[ƒ_[‚ÌƒLƒƒƒ‰–¼‚ğ•Ô‚·
+ * æŒ‡å®šPTã®PTãƒªãƒ¼ãƒ€ãƒ¼ã®ã‚­ãƒ£ãƒ©åã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_getpartyleader(struct script_state *st)
@@ -12131,12 +12131,12 @@ int buildin_getpartyleader(struct script_state *st)
 			return 0;
 		}
 	}
-	push_str(st->stack,C_CONSTSTR,"");	// ƒŠ[ƒ_[‚ªŒ©‚Â‚©‚ç‚È‚¢
+	push_str(st->stack,C_CONSTSTR,"");	// ãƒªãƒ¼ãƒ€ãƒ¼ãŒè¦‹ã¤ã‹ã‚‰ãªã„
 	return 0;
 }
 
 /*==========================================
- * •¶š—ñ’·‚ğ•Ô‚·
+ * æ–‡å­—åˆ—é•·ã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_getstrlen(struct script_state *st)
@@ -12149,7 +12149,7 @@ int buildin_getstrlen(struct script_state *st)
 }
 
 /*==========================================
- * •¶š—ñ‚Ì”CˆÓ‚Ì•”•ª‚ğæ“¾‚·‚é
+ * æ–‡å­—åˆ—ã®ä»»æ„ã®éƒ¨åˆ†ã‚’å–å¾—ã™ã‚‹
  *------------------------------------------
  */
 int buildin_substr(struct script_state *st)
@@ -12161,7 +12161,7 @@ int buildin_substr(struct script_state *st)
 	offset = conv_num(st,& (st->stack->stack_data[st->start+3]));
 
 	len = (int)strlen(str);
-	if(offset < 0)		// ŠJnˆÊ’u‚ª•‰‚È‚Ì‚Å––”ö‚©‚çˆÊ’u‚ğŒvZ
+	if(offset < 0)		// é–‹å§‹ä½ç½®ãŒè² ãªã®ã§æœ«å°¾ã‹ã‚‰ä½ç½®ã‚’è¨ˆç®—
 		offset += len;
 	if(offset < 0 || offset >= len) {
 		push_str(st->stack,C_CONSTSTR,"");
@@ -12171,11 +12171,11 @@ int buildin_substr(struct script_state *st)
 	if(st->end > st->start+4) {
 		count = conv_num(st,& (st->stack->stack_data[st->start+4]));
 		if(count > 0 && offset + count > len)
-			count = len - offset;		// •¶š—ñ’·‚ğ’´‚¦‚é‚Ì‚Å•â³
+			count = len - offset;		// æ–‡å­—åˆ—é•·ã‚’è¶…ãˆã‚‹ã®ã§è£œæ­£
 		else if(count < 0)
-			count = len - offset + count;	// ŒÂ”‚ª•‰‚È‚Ì‚Å––”ö‚©‚çŒÂ”•ªí‚é
+			count = len - offset + count;	// å€‹æ•°ãŒè² ãªã®ã§æœ«å°¾ã‹ã‚‰å€‹æ•°åˆ†å‰Šã‚‹
 	} else {
-		count = len - offset;			// ˆø”È—ª‚ÍÅŒã‚Ü‚Å
+		count = len - offset;			// å¼•æ•°çœç•¥æ™‚ã¯æœ€å¾Œã¾ã§
 	}
 
 	if(count > 0) {
@@ -12189,7 +12189,7 @@ int buildin_substr(struct script_state *st)
 }
 
 /*==========================================
- * •¶š—ñ’†‚Éw’è•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+ * æ–‡å­—åˆ—ä¸­ã«æŒ‡å®šæ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_strstr(struct script_state *st)
@@ -12231,7 +12231,7 @@ int buildin_strstr(struct script_state *st)
 }
 
 /*==========================================
- * PC‚ÆNPCŠÔ‚Ì‹——£‚ğ•Ô‚·
+ * PCã¨NPCé–“ã®è·é›¢ã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_distance(struct script_state *st)
@@ -12253,7 +12253,7 @@ int buildin_distance(struct script_state *st)
 }
 
 /*==========================================
- * ƒzƒ€ƒ“ƒNƒ‹ƒXíœ
+ * ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹å‰Šé™¤
  *------------------------------------------
  */
 int buildin_homundel(struct script_state *st)
@@ -12263,7 +12263,7 @@ int buildin_homundel(struct script_state *st)
 }
 
 /*==========================================
- * ƒzƒ€ƒ“ƒNƒ‹ƒXƒŠƒl[ƒ€
+ * ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹ãƒªãƒãƒ¼ãƒ 
  *------------------------------------------
  */
 int buildin_homunrename(struct script_state *st)
@@ -12279,13 +12279,13 @@ int buildin_homunrename(struct script_state *st)
 
 	if(sd && sd->hd) {
 		if(flag == 0 && sd->hd->status.rename_flag == 0) {
-			// •ÏX‘O‚Ìó‘Ô‚É–ß‚·
+			// å¤‰æ›´å‰ã®çŠ¶æ…‹ã«æˆ»ã™
 			flag = 1;
 		}
 		sd->hd->status.rename_flag = 0;
 		homun_change_name(sd,homname);
 
-		// •ÏX‰Â”\‚É‚·‚é
+		// å¤‰æ›´å¯èƒ½ã«ã™ã‚‹
 		if(flag == 1)
 			sd->hd->status.rename_flag = 0;
 	}
@@ -12293,7 +12293,7 @@ int buildin_homunrename(struct script_state *st)
 }
 
 /*==========================================
- * ƒzƒ€ƒ“ƒNƒ‹ƒXi‰»
+ * ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹é€²åŒ–
  *------------------------------------------
  */
 int buildin_homunevolution(struct script_state *st)
@@ -12303,7 +12303,7 @@ int buildin_homunevolution(struct script_state *st)
 }
 
 /*==========================================
- * ƒGƒ“ƒuƒŠƒI•ÏˆÙ
+ * ã‚¨ãƒ³ãƒ–ãƒªã‚ªå¤‰ç•°
  *------------------------------------------
  */
 int buildin_morphembryo(struct script_state *st)
@@ -12313,7 +12313,7 @@ int buildin_morphembryo(struct script_state *st)
 }
 
 /*==========================================
- * ƒzƒ€ƒ“ƒNƒ‹ƒX•ÏˆÙ
+ * ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹å¤‰ç•°
  *------------------------------------------
  */
 int buildin_homunmutation(struct script_state *st)
@@ -12325,7 +12325,7 @@ int buildin_homunmutation(struct script_state *st)
 }
 
 /*==========================================
- * ƒXƒe[ƒ^ƒXÄŒvZ
+ * ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹å†è¨ˆç®—
  *------------------------------------------
  */
 int buildin_recalcstatus(struct script_state *st)
@@ -12343,7 +12343,7 @@ int buildin_recalcstatus(struct script_state *st)
 }
 
 /*==========================================
- * SQLƒNƒGƒŠ”­s
+ * SQLã‚¯ã‚¨ãƒªç™ºè¡Œ
  *------------------------------------------
  */
 int buildin_sqlquery(struct script_state *st)
@@ -12355,7 +12355,7 @@ int buildin_sqlquery(struct script_state *st)
 
 	query = conv_str(st,& (st->stack->stack_data[st->start+2]));
 
-	// SQLƒNƒGƒŠ—˜—p•s‰Â‚È‚çƒGƒ‰[
+	// SQLã‚¯ã‚¨ãƒªåˆ©ç”¨ä¸å¯ãªã‚‰ã‚¨ãƒ©ãƒ¼
 	if(!script_config.sql_script_enable) {
 		push_val(st->stack,C_INT,-1);
 		return 0;
@@ -12366,7 +12366,7 @@ int buildin_sqlquery(struct script_state *st)
 	}
 
 	if(sqldbs_has_result(handle) == false) {
-		// SELECTˆÈŠO‚Í‚±‚±‚ÅŠ®—¹
+		// SELECTä»¥å¤–ã¯ã“ã“ã§å®Œäº†
 		count = sqldbs_affected_rows(&mysql_handle_script);
 		push_val(st->stack,C_INT,count);
 		return 0;
@@ -12398,11 +12398,11 @@ int buildin_sqlquery(struct script_state *st)
 				break;
 		}
 
-		var = (char *)aCalloc(strlen(name) + 6, sizeof(char));	// [xxx] + \0 = 6•¶š
+		var = (char *)aCalloc(strlen(name) + 6, sizeof(char));	// [xxx] + \0 = 6æ–‡å­—
 		strcpy(var, name);
 
 		if((p = strrchr(var,'[')) != NULL) {
-			elem = atoi(p+1);	// ”z—ñ‚Ì“ñŸŒ³–Ú‚Ì—v‘f‚ğæ“¾
+			elem = atoi(p+1);	// é…åˆ—ã®äºŒæ¬¡å…ƒç›®ã®è¦ç´ ã‚’å–å¾—
 			len  = (int)(p - var);
 		} else {
 			elem = 0;
@@ -12419,7 +12419,7 @@ int buildin_sqlquery(struct script_state *st)
 		for(count = 0; elem < 128 && (sql_row = sqldbs_fetch(handle)); count++) {
 			int i, tmp_num;
 
-			if(count > 0) {	// Œ‹‰ÊƒZƒbƒg‚ª•¡”s‚ ‚é‚Ì‚Å•Ï”–¼‚ğ‡¬‚·‚é
+			if(count > 0) {	// çµæœã‚»ãƒƒãƒˆãŒè¤‡æ•°è¡Œã‚ã‚‹ã®ã§å¤‰æ•°åã‚’åˆæˆã™ã‚‹
 				sprintf(var + len, "[%d]%s", elem, (postfix == '$')? "$": "");
 				tmp_num = add_str(var) + (num&0xff000000);
 			} else {
@@ -12437,14 +12437,14 @@ int buildin_sqlquery(struct script_state *st)
 	sqldbs_free_result(handle);
 	push_val(st->stack,C_INT,count);
 #else
-	// TXT‚Í‰½‚à‚µ‚È‚¢
+	// TXTã¯ä½•ã‚‚ã—ãªã„
 	push_val(st->stack,C_INT,-1);
 #endif
 	return 0;
 }
 
 /*==========================================
- * SQL—p‚Ì•¶š—ñƒGƒXƒP[ƒv
+ * SQLç”¨ã®æ–‡å­—åˆ—ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—
  *------------------------------------------
  */
 int buildin_strescape(struct script_state *st)
@@ -12457,14 +12457,14 @@ int buildin_strescape(struct script_state *st)
 	strecpy_(&mysql_handle_script,buf,str);
 	push_str(st->stack,C_STR,buf);
 #else
-	// TXT‚Í‰½‚à‚µ‚È‚¢
+	// TXTã¯ä½•ã‚‚ã—ãªã„
 	push_str(st->stack,C_STR,(unsigned char *)aStrdup(str));
 #endif
 	return 0;
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€ƒhƒƒbƒv
+ * ã‚¢ã‚¤ãƒ†ãƒ ãƒ‰ãƒ­ãƒƒãƒ—
  *------------------------------------------
  */
 int buildin_dropitem(struct script_state *st)
@@ -12523,7 +12523,7 @@ int buildin_dropitem(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€ƒhƒƒbƒv
+ * ã‚¢ã‚¤ãƒ†ãƒ ãƒ‰ãƒ­ãƒƒãƒ—
  *------------------------------------------
  */
 int buildin_dropitem2(struct script_state *st)
@@ -12571,7 +12571,7 @@ int buildin_dropitem2(struct script_state *st)
 	do {
 		memset(&item_tmp,0,sizeof(item_tmp));
 
-		if(nameid < 0)		// ƒ‰ƒ“ƒ_ƒ€
+		if(nameid < 0)		// ãƒ©ãƒ³ãƒ€ãƒ 
 			item_tmp.nameid = itemdb_searchrandomid(-nameid);
 		else
 			item_tmp.nameid = nameid;
@@ -12608,13 +12608,13 @@ int buildin_dropitem2(struct script_state *st)
 		battle_config.flooritem_lifetime += tick;
 		map_addflooritem(&item_tmp,amount,m,x,y,0,0,0,0);
 		battle_config.flooritem_lifetime -= tick;
-	} while(nameid < 0 && ++i < amount);	// ƒ‰ƒ“ƒ_ƒ€Œn‚ÍƒAƒCƒeƒ€‚ÌÄ’Š‘I
+	} while(nameid < 0 && ++i < amount);	// ãƒ©ãƒ³ãƒ€ãƒ ç³»ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®å†æŠ½é¸
 
 	return 0;
 }
 
 /*==========================================
- * ŒoŒ±’læ“¾
+ * çµŒé¨“å€¤å–å¾—
  *------------------------------------------
  */
 int buildin_getexp(struct script_state *st)
@@ -12637,7 +12637,7 @@ int buildin_getexp(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€ƒf[ƒ^æ“¾
+ * ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿å–å¾—
  *------------------------------------------
  */
 int buildin_getiteminfo(struct script_state *st)
@@ -12704,7 +12704,7 @@ int buildin_getiteminfo(struct script_state *st)
 }
 
 /*==========================================
- * ƒp[ƒeƒB[‚ÌÚ‘±l”æ“¾
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã®æ¥ç¶šäººæ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getonlinepartymember(struct script_state *st)
@@ -12732,7 +12732,7 @@ int buildin_getonlinepartymember(struct script_state *st)
 }
 
 /*==========================================
- * ƒMƒ‹ƒh‚ÌÚ‘±l”æ“¾
+ * ã‚®ãƒ«ãƒ‰ã®æ¥ç¶šäººæ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getonlineguildmember(struct script_state *st)
@@ -12752,7 +12752,7 @@ int buildin_getonlineguildmember(struct script_state *st)
 }
 
 /*==========================================
- * —b•ºì¬
+ * å‚­å…µä½œæˆ
  *------------------------------------------
  */
 int buildin_makemerc(struct script_state *st)
@@ -12772,7 +12772,7 @@ int buildin_makemerc(struct script_state *st)
 }
 
 /*==========================================
- * “Ç‘ƒEƒBƒ“ƒhƒE‚Ì•\¦
+ * èª­æ›¸ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_openbook(struct script_state *st)
@@ -12792,7 +12792,7 @@ int buildin_openbook(struct script_state *st)
 }
 
 /*==========================================
- * ƒmƒbƒNƒoƒbƒN
+ * ãƒãƒƒã‚¯ãƒãƒƒã‚¯
  *------------------------------------------
  */
 int buildin_pushpc(struct script_state *st)
@@ -12815,7 +12815,7 @@ int buildin_pushpc(struct script_state *st)
 }
 
 /*==========================================
- * w’èƒZƒ‹‚Ìƒ^ƒCƒv‚ğ•ÏX
+ * æŒ‡å®šã‚»ãƒ«ã®ã‚¿ã‚¤ãƒ—ã‚’å¤‰æ›´
  *------------------------------------------
  */
 int buildin_setcell(struct script_state *st)
@@ -12839,7 +12839,7 @@ int buildin_setcell(struct script_state *st)
 }
 
 /*==========================================
- * w’è”ÍˆÍƒZƒ‹‚Ìƒ^ƒCƒv‚ğ•ÏX
+ * æŒ‡å®šç¯„å›²ã‚»ãƒ«ã®ã‚¿ã‚¤ãƒ—ã‚’å¤‰æ›´
  *------------------------------------------
  */
 int buildin_areasetcell(struct script_state *st)
@@ -12870,7 +12870,7 @@ int buildin_areasetcell(struct script_state *st)
 }
 
 /*==========================================
- * ƒK[ƒfƒBƒAƒ“¢Š«
+ * ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³å¬å–š
  *------------------------------------------
  */
 int buildin_callguardian(struct script_state *st)
@@ -12896,7 +12896,7 @@ int buildin_callguardian(struct script_state *st)
 	if(st->end > st->start+8) {
 		event = conv_str(st,& (st->stack->stack_data[st->start+8]));
 	}
-	if(st->end > st->start+9) {	// ƒK[ƒfƒBƒAƒ“index
+	if(st->end > st->start+9) {	// ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³index
 		index = conv_num(st,& (st->stack->stack_data[st->start+9]));
 	}
 
@@ -12918,7 +12918,7 @@ int buildin_callguardian(struct script_state *st)
 		{
 			md->guardup_lv = 0;
 			if(gc) {
-				// Ôî•ñ‚É‘‚«‚İ
+				// ç ¦æƒ…å ±ã«æ›¸ãè¾¼ã¿
 				if(index > 0 && index <= sizeof(gc->guardian) / sizeof(gc->guardian[0])) {
 					gc->guardian[index-1].visible = 1;
 					gc->guardian[index-1].id      = id;
@@ -12928,7 +12928,7 @@ int buildin_callguardian(struct script_state *st)
 					md->guild_id   = g->guild_id;
 					md->guardup_lv = guild_checkskill(g, GD_GUARDUP);
 				} else {
-					md->guild_id   = 1;	// ƒ_ƒ~[‚ÌID‚ğƒZƒbƒg‚µ‚Ä‚¨‚­
+					md->guild_id   = 1;	// ãƒ€ãƒŸãƒ¼ã®IDã‚’ã‚»ãƒƒãƒˆã—ã¦ãŠã
 				}
 			}
 		}
@@ -12938,7 +12938,7 @@ int buildin_callguardian(struct script_state *st)
 }
 
 /*==========================================
- * ƒK[ƒfƒBƒAƒ“‚Ìî•ñæ“¾
+ * ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³ã®æƒ…å ±å–å¾—
  *------------------------------------------
  */
 int buildin_getguardianinfo(struct script_state *st)
@@ -12999,7 +12999,7 @@ int buildin_getguardianinfo(struct script_state *st)
 }
 
 /*==========================================
- * ID‚©‚çƒ‚ƒ“ƒXƒ^[–¼
+ * IDã‹ã‚‰ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å
  *------------------------------------------
  */
 int buildin_getmobname(struct script_state *st)
@@ -13015,7 +13015,7 @@ int buildin_getmobname(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒCƒeƒ€‚ªŠˆ«‰»ó‘Ô‚©
+ * ã‚¢ã‚¤ãƒ†ãƒ ãŒæ´»æ€§åŒ–çŠ¶æ…‹ã‹
  *------------------------------------------
  */
 int buildin_checkactiveitem(struct script_state *st)
@@ -13042,7 +13042,7 @@ int buildin_checkactiveitem(struct script_state *st)
 }
 
 /*==========================================
- * NPCƒCƒxƒ“ƒg•\¦
+ * NPCã‚¤ãƒ™ãƒ³ãƒˆè¡¨ç¤º
  *------------------------------------------
  */
 int buildin_showevent(struct script_state *st)
@@ -13084,7 +13084,7 @@ int buildin_showevent(struct script_state *st)
 }
 
 /*==========================================
- * ƒ~ƒ…[ƒWƒbƒNƒGƒtƒFƒNƒg
+ * ãƒŸãƒ¥ãƒ¼ã‚¸ãƒƒã‚¯ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 int buildin_musiceffect(struct script_state *st)
@@ -13099,7 +13099,7 @@ int buildin_musiceffect(struct script_state *st)
 }
 
 /*==========================================
- * ”ÍˆÍw’èƒ~ƒ…[ƒWƒbƒNƒGƒtƒFƒNƒg
+ * ç¯„å›²æŒ‡å®šãƒŸãƒ¥ãƒ¼ã‚¸ãƒƒã‚¯ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
  *------------------------------------------
  */
 static int buildin_musiceffect_sub(struct block_list *bl,va_list ap)
@@ -13134,7 +13134,7 @@ int buildin_areamusiceffect(struct script_state *st)
 }
 
 /*==========================================
- * ‘OE‹ÆClassæ“¾
+ * å‰è·æ¥­Classå–å¾—
  *------------------------------------------
  */
 int buildin_getbaseclass(struct script_state *st)
@@ -13152,7 +13152,7 @@ int buildin_getbaseclass(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg’Ç‰Á
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆè¿½åŠ 
  *------------------------------------------
  */
 int buildin_setquest(struct script_state *st)
@@ -13170,7 +13170,7 @@ int buildin_setquest(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgXV
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆæ›´æ–°
  *------------------------------------------
  */
 int buildin_chgquest(struct script_state *st)
@@ -13189,7 +13189,7 @@ int buildin_chgquest(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgíœ
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆå‰Šé™¤
  *------------------------------------------
  */
 int buildin_delquest(struct script_state *st)
@@ -13207,7 +13207,7 @@ int buildin_delquest(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg’B¬
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆé”æˆ
  *------------------------------------------
  */
 int buildin_compquest(struct script_state *st)
@@ -13225,7 +13225,7 @@ int buildin_compquest(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒgî•ñæ“¾
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆæƒ…å ±å–å¾—
  *------------------------------------------
  */
 int buildin_checkquest(struct script_state *st)
@@ -13239,17 +13239,17 @@ int buildin_checkquest(struct script_state *st)
 	qd = quest_get_data(sd, quest_id);
 	if(qd) {
 		if(qd->state == 2) {
-			ret |= 0x08;	// ƒNƒGƒXƒg’B¬Ï‚İ
+			ret |= 0x08;	// ã‚¯ã‚¨ã‚¹ãƒˆé”æˆæ¸ˆã¿
 		} else {
 			int i;
 
-			ret |= 0x05;	// ƒNƒGƒXƒgó’Ï‚İ+“¢”°”ƒNƒŠƒA
+			ret |= 0x05;	// ã‚¯ã‚¨ã‚¹ãƒˆå—æ³¨æ¸ˆã¿+è¨ä¼æ•°ã‚¯ãƒªã‚¢
 			if(qd->limit < (unsigned int)time(NULL))
-				ret |= 0x02;	// ŠÔ§ŒÀƒNƒŠƒA
+				ret |= 0x02;	// æ™‚é–“åˆ¶é™ã‚¯ãƒªã‚¢
 
 			for(i = 0; i < 3; i++) {
 				if(qd->mob[i].count < qd->mob[i].max) {
-					ret &= ~0x04;	// “¢”°”–¢ƒNƒŠƒA
+					ret &= ~0x04;	// è¨ä¼æ•°æœªã‚¯ãƒªã‚¢
 					break;
 				}
 			}
@@ -13261,7 +13261,7 @@ int buildin_checkquest(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg§ŒÀŠÔæ“¾
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆåˆ¶é™æ™‚é–“å–å¾—
  *------------------------------------------
  */
 int buildin_getquestlimit(struct script_state *st)
@@ -13280,7 +13280,7 @@ int buildin_getquestlimit(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg“¢”°”æ“¾
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆè¨ä¼æ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getquestcount(struct script_state *st)
@@ -13305,7 +13305,7 @@ int buildin_getquestcount(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgƒŠƒXƒg“¢”°Å‘å”æ“¾
+ * ã‚¯ã‚¨ã‚¹ãƒˆãƒªã‚¹ãƒˆè¨ä¼æœ€å¤§æ•°å–å¾—
  *------------------------------------------
  */
 int buildin_getquestmaxcount(struct script_state *st)
@@ -13330,7 +13330,7 @@ int buildin_getquestmaxcount(struct script_state *st)
 }
 
 /*==========================================
- * w”ƒ˜I“XƒEƒCƒ“ƒhƒEƒI[ƒvƒ“
+ * è³¼è²·éœ²åº—ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚ªãƒ¼ãƒ—ãƒ³
  *------------------------------------------
  */
 int buildin_openbuyingstore(struct script_state *st)
@@ -13348,7 +13348,7 @@ int buildin_openbuyingstore(struct script_state *st)
 }
 
 /*==========================================
- * ƒtƒHƒ“ƒgƒ^ƒCƒv‚ÌƒZƒbƒg
+ * ãƒ•ã‚©ãƒ³ãƒˆã‚¿ã‚¤ãƒ—ã®ã‚»ãƒƒãƒˆ
  *------------------------------------------
  */
 int buildin_setfont(struct script_state *st)
@@ -13369,7 +13369,7 @@ int buildin_setfont(struct script_state *st)
 }
 
 /*==========================================
- * shop‚ğŒÄ‚Ño‚·B
+ * shopã‚’å‘¼ã³å‡ºã™ã€‚
  *------------------------------------------
  */
 int buildin_callshop(struct script_state *st)
@@ -13393,9 +13393,9 @@ int buildin_callshop(struct script_state *st)
 	switch(nd->subtype) {
 	case SHOP:
 		switch(flag) {
-			case 1: npc_buysellsel(sd,nd->bl.id,0); break;	//w“üƒEƒBƒ“ƒhƒE
-			case 2: npc_buysellsel(sd,nd->bl.id,1); break;	//”„‹pƒEƒBƒ“ƒhƒE
-			default: clif_npcbuysell(sd,nd->bl.id); break;	//ƒƒjƒ…[‚ğŠJ‚­
+			case 1: npc_buysellsel(sd,nd->bl.id,0); break;	//è³¼å…¥ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+			case 2: npc_buysellsel(sd,nd->bl.id,1); break;	//å£²å´ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+			default: clif_npcbuysell(sd,nd->bl.id); break;	//ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’é–‹ã
 		}
 		break;
 	case POINTSHOP:
@@ -13420,7 +13420,7 @@ int buildin_callshop(struct script_state *st)
 }
 
 /*==========================================
- * shop‚ğ•ÏX‚·‚éB
+ * shopã‚’å¤‰æ›´ã™ã‚‹ã€‚
  *------------------------------------------
  */
 int buildin_npcshopitem(struct script_state *st)
@@ -13462,7 +13462,7 @@ int buildin_npcshopitem(struct script_state *st)
 }
 
 /*==========================================
- * ‰r¥ƒo[•\¦
+ * è© å”±ãƒãƒ¼è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_progressbar(struct script_state *st)
@@ -13490,11 +13490,11 @@ int buildin_progressbar(struct script_state *st)
 		}
 	} else {
 		if(tick < sd->progressbar.tick) {
-			// Œo‰ßŠÔ‚ª•s³
+			// çµŒéæ™‚é–“ãŒä¸æ­£
 			st->state = END;
 		}
 
-		// ‘±s
+		// ç¶šè¡Œ
 		sd->progressbar.npc_id = 0;
 		sd->progressbar.tick   = 0;
 		npc_timeout_start(sd);
@@ -13507,7 +13507,7 @@ int buildin_progressbar(struct script_state *st)
 
 
 /*==========================================
- * ˜A‚ê•à‚¢‚Ä‚¢‚é—b•º‚Ìî•ñæ“¾
+ * é€£ã‚Œæ­©ã„ã¦ã„ã‚‹å‚­å…µã®æƒ…å ±å–å¾—
  * 0:merc_id 1:merc_class_lv 2:fame
  * 3:call_count 4:kill_count 5:lifetime
  *------------------------------------------
@@ -13557,7 +13557,7 @@ int buildin_getmercinfo(struct script_state *st)
 }
 
 /*==========================================
- * —b•º‰ñ•œ
+ * å‚­å…µå›å¾©
  *------------------------------------------
  */
 int buildin_mercheal(struct script_state *st)
@@ -13576,7 +13576,7 @@ int buildin_mercheal(struct script_state *st)
 }
 
 /*==========================================
- * —b•ºó‘Ô•Ï‰»
+ * å‚­å…µçŠ¶æ…‹å¤‰åŒ–
  *------------------------------------------
  */
 int buildin_mercsc_start(struct script_state *st)
@@ -13597,7 +13597,7 @@ int buildin_mercsc_start(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“ì¬
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ä½œæˆ
  *------------------------------------------
  */
 int buildin_mdcreate(struct script_state *st)
@@ -13617,17 +13617,17 @@ int buildin_mdcreate(struct script_state *st)
 
 	ret = memorial_create(memorial_name, party_id);
 	switch(ret) {
-		case MDCREATE_EXISTS:		// Šù‚É¶¬Ï‚İ
-			clif_msgstringtable2(sd, 0x52a, memorial_name);	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“u%sv‚Ì—\–ñ‚ªd•¡¶¬—v¿‚É‚æ‚è¸”s‚µ‚Ü‚µ‚½B
+		case MDCREATE_EXISTS:		// æ—¢ã«ç”Ÿæˆæ¸ˆã¿
+			clif_msgstringtable2(sd, 0x52a, memorial_name);	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã€Œ%sã€ã®äºˆç´„ãŒé‡è¤‡ç”Ÿæˆè¦è«‹ã«ã‚ˆã‚Šå¤±æ•—ã—ã¾ã—ãŸã€‚
 			break;
-		case MDCREATE_PERMISSION:	// Œ ŒÀ‚ª‚È‚¢
-			clif_msgstringtable2(sd, 0x529, memorial_name);	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“u%sv‚Ì—\–ñ‚ªŒ ŒÀ–â‘è‚É‚æ‚è¸”s‚µ‚Ü‚µ‚½B
+		case MDCREATE_PERMISSION:	// æ¨©é™ãŒãªã„
+			clif_msgstringtable2(sd, 0x529, memorial_name);	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã€Œ%sã€ã®äºˆç´„ãŒæ¨©é™å•é¡Œã«ã‚ˆã‚Šå¤±æ•—ã—ã¾ã—ãŸã€‚
 			break;
-		case MDCREATE_RESERVED:		// Šù‚É—\–ñÏ‚İ
-			clif_msgstringtable2(sd, 0x528, memorial_name);	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“u%sv‚Ì—\–ñ‚ª—\–ñd•¡‚É‚æ‚è¸”s‚µ‚Ü‚µ‚½B
+		case MDCREATE_RESERVED:		// æ—¢ã«äºˆç´„æ¸ˆã¿
+			clif_msgstringtable2(sd, 0x528, memorial_name);	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã€Œ%sã€ã®äºˆç´„ãŒäºˆç´„é‡è¤‡ã«ã‚ˆã‚Šå¤±æ•—ã—ã¾ã—ãŸã€‚
 			break;
-		case MDCREATE_ERROR:		// ‚»‚Ì‘¼ƒGƒ‰[
-			clif_msgstringtable2(sd, 0x527, memorial_name);	// ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“u%sv‚Ì—\–ñ‚É¸”s‚µ‚Ü‚µ‚½B
+		case MDCREATE_ERROR:		// ãã®ä»–ã‚¨ãƒ©ãƒ¼
+			clif_msgstringtable2(sd, 0x527, memorial_name);	// ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã€Œ%sã€ã®äºˆç´„ã«å¤±æ•—ã—ã¾ã—ãŸã€‚
 			break;
 	}
 
@@ -13635,7 +13635,7 @@ int buildin_mdcreate(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“íœ
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å‰Šé™¤
  *------------------------------------------
  */
 int buildin_mddelete(struct script_state *st)
@@ -13658,7 +13658,7 @@ int buildin_mddelete(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ““üê
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³å…¥å ´
  *------------------------------------------
  */
 int buildin_mdenter(struct script_state *st)
@@ -13677,7 +13677,7 @@ int buildin_mdenter(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“ó‘Ô
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³çŠ¶æ…‹
  *------------------------------------------
  */
 int buildin_mdopenstate(struct script_state *st)
@@ -13696,7 +13696,7 @@ int buildin_mdopenstate(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“MAP–¼æ“¾
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³MAPåå–å¾—
  *------------------------------------------
  */
 int buildin_getmdmapname(struct script_state *st)
@@ -13714,7 +13714,7 @@ int buildin_getmdmapname(struct script_state *st)
 }
 
 /*==========================================
- * ƒƒ‚ƒŠƒAƒ‹ƒ_ƒ“ƒWƒ‡ƒ“NPC–¼æ“¾
+ * ãƒ¡ãƒ¢ãƒªã‚¢ãƒ«ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³NPCåå–å¾—
  *------------------------------------------
  */
 int buildin_getmdnpcname(struct script_state *st)
@@ -13737,7 +13737,7 @@ int buildin_getmdnpcname(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒNƒeƒBƒuƒ‚ƒ“ƒXƒ^[•Ïg
+ * ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å¤‰èº«
  *------------------------------------------
  */
 int buildin_active_montransform(struct script_state *st)
@@ -13766,7 +13766,7 @@ int buildin_active_montransform(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[”­¶
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç™ºç”Ÿ
  *------------------------------------------
  */
 int buildin_callmonster(struct script_state *st)
@@ -13798,9 +13798,9 @@ int buildin_callmonster(struct script_state *st)
 
 	if((md = map_id2md(id)) != NULL)
 	{
-		// ƒ‰ƒ“ƒ_ƒ€¢ŠÒ‚¶‚á‚È‚¢‚È‚çƒhƒƒbƒv‚ ‚è
+		// ãƒ©ãƒ³ãƒ€ãƒ å¬é‚„ã˜ã‚ƒãªã„ãªã‚‰ãƒ‰ãƒ­ãƒƒãƒ—ã‚ã‚Š
 		if(mob_id == -1) {
-			if(md->mode&MD_BOSS) {	// è”²‚«ƒ{ƒX‘®«
+			if(md->mode&MD_BOSS) {	// æ‰‹æŠœããƒœã‚¹å±æ€§
 				md->state.nodrop = battle_config.branch_boss_no_drop;
 				md->state.noexp  = battle_config.branch_boss_no_exp;
 				md->state.nomvp  = battle_config.branch_boss_no_mvp;
@@ -13818,7 +13818,7 @@ int buildin_callmonster(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[”­¶ƒGƒŠƒAw’è
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç™ºç”Ÿã‚¨ãƒªã‚¢æŒ‡å®š
  *------------------------------------------
  */
 int buildin_areacallmonster(struct script_state *st)
@@ -13852,7 +13852,7 @@ int buildin_areacallmonster(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[Á‹
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ¶ˆå»
  *------------------------------------------
  */
 int buildin_removemonster(struct script_state *st)
@@ -13872,7 +13872,7 @@ int buildin_removemonster(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[ƒXƒLƒ‹sg
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚¹ã‚­ãƒ«è¡Œä½¿
  *------------------------------------------
  */
 int buildin_mobuseskill(struct script_state *st)
@@ -13925,7 +13925,7 @@ int buildin_mobuseskill(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[İ’uƒXƒLƒ‹sg
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼è¨­ç½®ã‚¹ã‚­ãƒ«è¡Œä½¿
  *------------------------------------------
  */
 int buildin_mobuseskillpos(struct script_state *st)
@@ -13960,7 +13960,7 @@ int buildin_mobuseskillpos(struct script_state *st)
 }
 
 /*==========================================
- * ”ÍˆÍw’èƒ‚ƒ“ƒXƒ^[ƒXƒLƒ‹sg
+ * ç¯„å›²æŒ‡å®šãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚¹ã‚­ãƒ«è¡Œä½¿
  *------------------------------------------
  */
 static int buildin_mobuseskill_sub(struct block_list *bl,va_list ap)
@@ -14038,7 +14038,7 @@ int buildin_areamobuseskill(struct script_state *st)
 }
 
 /*==========================================
- * ‘•”õ‚Ìw’èƒXƒƒbƒg‚ÌƒJ[ƒhæ“¾
+ * è£…å‚™ã®æŒ‡å®šã‚¹ãƒ­ãƒƒãƒˆã®ã‚«ãƒ¼ãƒ‰å–å¾—
  *------------------------------------------
  */
 int buildin_getequipcardid(struct script_state *st)
@@ -14057,7 +14057,7 @@ int buildin_getequipcardid(struct script_state *st)
 
 	if(i >= 0) {
 		int card_id;
-		if(itemdb_isspecial(sd->status.inventory[i].card[0])){ // »‘¢E–¼‘O“ü‚è‚ÍƒJ[ƒh‚È‚µ
+		if(itemdb_isspecial(sd->status.inventory[i].card[0])){ // è£½é€ ãƒ»åå‰å…¥ã‚Šã¯ã‚«ãƒ¼ãƒ‰ãªã—
 			push_val(st->stack,C_INT,0);
 			return 0;
 		}
@@ -14072,7 +14072,7 @@ int buildin_getequipcardid(struct script_state *st)
 }
 
 /*==========================================
- * ƒp[ƒeƒB[ƒƒ“ƒo[‚Ö•Ï”İ’è
+ * ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ãƒ¡ãƒ³ãƒãƒ¼ã¸å¤‰æ•°è¨­å®š
  *------------------------------------------
  */
 int buildin_setpartyinmap(struct script_state *st)
@@ -14106,11 +14106,11 @@ int buildin_setpartyinmap(struct script_state *st)
 			sd = pt->member[i].sd;
 			if(sd != NULL && pt->member[i].online && sd->bl.m == m) {
 				if( postfix == '$' ) {
-					// •¶š—ñ
+					// æ–‡å­—åˆ—
 					char *str = conv_str(st,& (st->stack->stack_data[st->start+3]));
 					set_reg(st,sd,num,name,(void*)str,st->stack->stack_data[st->start+2].ref);
 				} else {
-					// ”’l
+					// æ•°å€¤
 					int val = conv_num(st,& (st->stack->stack_data[st->start+3]));
 					set_reg(st,sd,num,name,INT2PTR(val),st->stack->stack_data[st->start+2].ref);
 				}
@@ -14118,11 +14118,11 @@ int buildin_setpartyinmap(struct script_state *st)
 		}
 	} else {
 		if( postfix == '$' ) {
-			// •¶š—ñ
+			// æ–‡å­—åˆ—
 			char *str = conv_str(st,& (st->stack->stack_data[st->start+3]));
 			set_reg(st,sd,num,name,(void*)str,st->stack->stack_data[st->start+2].ref);
 		} else {
-			// ”’l
+			// æ•°å€¤
 			int val = conv_num(st,& (st->stack->stack_data[st->start+3]));
 			set_reg(st,sd,num,name,INT2PTR(val),st->stack->stack_data[st->start+2].ref);
 		}
@@ -14132,7 +14132,7 @@ int buildin_setpartyinmap(struct script_state *st)
 }
 
 /*==========================================
- * Class‚©‚çJob•ÏŠ·
+ * Classã‹ã‚‰Jobå¤‰æ›
  *------------------------------------------
  */
 int buildin_getclassjob(struct script_state *st)
@@ -14149,7 +14149,7 @@ int buildin_getclassjob(struct script_state *st)
 }
 
 /*==========================================
- * ”­Œ¾•\¦
+ * ç™ºè¨€è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_unittalk(struct script_state *st)
@@ -14181,7 +14181,7 @@ int buildin_unittalk(struct script_state *st)
 	if(bl == NULL || mes == NULL)
 		return 0;
 
-	if(bl->type == BL_PC) {	// ƒOƒ[ƒoƒ‹ƒƒbƒZ[ƒW‘—M
+	if(bl->type == BL_PC) {	// ã‚°ãƒ­ãƒ¼ãƒãƒ«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡
 		struct map_session_data *sd = (struct map_session_data *)bl;
 		if(flag)
 			clif_displaymessage(sd->fd, mes);
@@ -14202,7 +14202,7 @@ int buildin_unittalk(struct script_state *st)
 }
 
 /*==========================================
- * ƒvƒŒƒCƒ„[‚Ìs“®§ŒÀƒIƒ“ƒIƒt
+ * ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¡Œå‹•åˆ¶é™ã‚ªãƒ³ã‚ªãƒ•
  *------------------------------------------
  */
 int buildin_pcblockmove(struct script_state *st)
@@ -14221,7 +14221,7 @@ int buildin_pcblockmove(struct script_state *st)
 }
 
 /*==========================================
- * “ªã‚ÉƒƒbƒZ[ƒW•\¦
+ * é ­ä¸Šã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_showmessage(struct script_state *st)
@@ -14246,7 +14246,7 @@ int buildin_showmessage(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[‚ÌHPæ“¾
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®HPå–å¾—
  *------------------------------------------
  */
 int buildin_getmobhp(struct script_state *st)
@@ -14260,7 +14260,7 @@ int buildin_getmobhp(struct script_state *st)
 		push_val(st->stack,C_INT,-1);
 		return 0;
 	}
-	// €–S’†
+	// æ­»äº¡ä¸­
 	if(md->bl.prev == NULL) {
 		push_val(st->stack,C_INT,-1);
 		return 0;
@@ -14275,7 +14275,7 @@ int buildin_getmobhp(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‚ƒ“ƒXƒ^[‚ÌHPİ’è
+ * ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®HPè¨­å®š
  *------------------------------------------
  */
 int buildin_setmobhp(struct script_state *st)
@@ -14288,16 +14288,16 @@ int buildin_setmobhp(struct script_state *st)
 
 	if((md = map_id2md(id)) == NULL)
 		return 0;
-	// €–S’†
+	// æ­»äº¡ä¸­
 	if(md->bl.prev == NULL || md->hp <= 0)
 		return 0;
 
 	max_hp = status_get_max_hp(&md->bl);
 
-	// Å‘åHP‚ğ‰z‚¦‚Äİ’è‚Å‚«‚È‚¢
+	// æœ€å¤§HPã‚’è¶Šãˆã¦è¨­å®šã§ããªã„
 	if(hp > max_hp)
 		hp = max_hp;
-	// EŠQ‚·‚é‚±‚Æ‚Í‚Å‚«‚È‚¢
+	// æ®ºå®³ã™ã‚‹ã“ã¨ã¯ã§ããªã„
 	if(hp <= 0)
 		hp = 1;
 	md->hp = hp;
@@ -14306,7 +14306,7 @@ int buildin_setmobhp(struct script_state *st)
 }
 
 /*==========================================
- * ó‘ÔˆÙí’†‚Ìƒpƒ‰ƒ[ƒ^[‚ğ•Ô‚·
+ * çŠ¶æ…‹ç•°å¸¸ä¸­ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã‚’è¿”ã™
  *------------------------------------------
  */
 int buildin_sc_onparam(struct script_state *st)
@@ -14363,7 +14363,7 @@ int buildin_sc_onparam(struct script_state *st)
 }
 
 /*==========================================
- * ƒfƒWƒ^ƒ‹ƒ^ƒCƒ}[•\¦
+ * ãƒ‡ã‚¸ã‚¿ãƒ«ã‚¿ã‚¤ãƒãƒ¼è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_showdigit(struct script_state *st)
@@ -14386,7 +14386,7 @@ int buildin_showdigit(struct script_state *st)
 }
 
 /*==========================================
- * ƒŠƒjƒ…[ƒAƒ‹‚©‚Ç‚¤‚©
+ * ãƒªãƒ‹ãƒ¥ãƒ¼ã‚¢ãƒ«ã‹ã©ã†ã‹
  *------------------------------------------
  */
 int buildin_checkre(struct script_state *st)
@@ -14400,7 +14400,7 @@ int buildin_checkre(struct script_state *st)
 }
 
 /*==========================================
- * ƒhƒŒƒXƒ‹[ƒ€‚ğŠJ‚­
+ * ãƒ‰ãƒ¬ã‚¹ãƒ«ãƒ¼ãƒ ã‚’é–‹ã
  *------------------------------------------
  */
 int buildin_opendressroom(struct script_state *st)
@@ -14474,7 +14474,7 @@ int buildin_hateffect(struct script_state *st)
 }
 
 /*==========================================
- * ƒ‰ƒ“ƒ_ƒ€ŒnƒAƒCƒeƒ€‚ÌIDæ“¾
+ * ãƒ©ãƒ³ãƒ€ãƒ ç³»ã‚¢ã‚¤ãƒ†ãƒ ã®IDå–å¾—
  *------------------------------------------
  */
 int buildin_getrandombox(struct script_state *st)
@@ -14486,7 +14486,7 @@ int buildin_getrandombox(struct script_state *st)
 }
 
 /*==========================================
- * ƒNƒGƒXƒgÀÑŠl“¾
+ * ã‚¯ã‚¨ã‚¹ãƒˆå®Ÿç¸¾ç²å¾—
  *------------------------------------------
  */
 int buildin_achievement(struct script_state *st)
@@ -14500,7 +14500,7 @@ int buildin_achievement(struct script_state *st)
 }
 
 /*==========================================
- * ÀÑŠl“¾
+ * å®Ÿç¸¾ç²å¾—
  *------------------------------------------
  */
 int buildin_achievement2(struct script_state *st)
@@ -14537,7 +14537,7 @@ int buildin_achievement2(struct script_state *st)
 		break;
 	case ACH_ACHIEVE:
 	case ACH_QUEST:
-		// ‘ÎÛ‚Ì‘¶İƒ`ƒFƒbƒN‚Í‚µ‚È‚¢‚æI
+		// å¯¾è±¡ã®å­˜åœ¨ãƒã‚§ãƒƒã‚¯ã¯ã—ãªã„ã‚ˆï¼
 		break;
 	}
 
@@ -14547,7 +14547,7 @@ int buildin_achievement2(struct script_state *st)
 }
 
 /*==========================================
- * ƒ_ƒCƒiƒ~ƒbƒNNPC
+ * ãƒ€ã‚¤ãƒŠãƒŸãƒƒã‚¯NPC
  *------------------------------------------
  */
 int buildin_dynamicnpc(struct script_state *st)
@@ -14599,7 +14599,7 @@ int buildin_dynamicnpc(struct script_state *st)
 }
 
 /*==========================================
- * ƒAƒbƒvƒOƒŒ[ƒhƒEƒBƒ“ƒhƒE•\¦
+ * ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¡¨ç¤º
  *------------------------------------------
  */
 int buildin_openupgrade(struct script_state *st)

@@ -40,18 +40,18 @@
 #define MAX_ACHIEVE_LEVEL 20
 #define ACHIEVE_EXPANDDB_SIZE 16
 
-/* ÀÑƒf[ƒ^ƒx[ƒX */
+/* å®Ÿç¸¾ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 struct achieve_db achieve_db[MAX_ACHIEVE_DB];
 
-/* ÀÑEXPƒe[ƒuƒ‹ƒf[ƒ^ƒx[ƒX */
+/* å®Ÿç¸¾EXPãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 static int achieve_exp_table[MAX_ACHIEVE_LEVEL];
 
-/* “¢”°‘ÎÛƒf[ƒ^ƒx[ƒX */
+/* è¨ä¼å¯¾è±¡ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 static int *achieve_killdb = NULL;
 static int max_killdb_count = 0;
 static int insert_killdb_size = 0;
 
-/* g—p‘ÎÛƒf[ƒ^ƒx[ƒX */
+/* ä½¿ç”¨å¯¾è±¡ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ */
 static int *achieve_usedb = NULL;
 static int max_usedb_count = 0;
 static int insert_usedb_size = 0;
@@ -59,7 +59,7 @@ static int insert_usedb_size = 0;
 static int achieve_count;
 
 /*==========================================
- * ÀÑDB‚Ìƒf[ƒ^‚ğŒŸõ
+ * å®Ÿç¸¾DBã®ãƒ‡ãƒ¼ã‚¿ã‚’æ¤œç´¢
  *------------------------------------------
  */
 static int achieve_search_db(int id)
@@ -87,7 +87,7 @@ static int achieve_search_id_sub(const void *a, const void *b)
 }
 
 /*==========================================
- * “¢”°‘ÎÛ‚©ƒ`ƒFƒbƒN
+ * è¨ä¼å¯¾è±¡ã‹ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int achieve_search_mobid(int mob_id)
@@ -103,7 +103,7 @@ int achieve_search_mobid(int mob_id)
 }
 
 /*==========================================
- * g—p‘ÎÛ‚©ƒ`ƒFƒbƒN
+ * ä½¿ç”¨å¯¾è±¡ã‹ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int achieve_search_itemid(int item_id)
@@ -119,7 +119,7 @@ int achieve_search_itemid(int item_id)
 }
 
 /*==========================================
- * ÀÑƒXƒRƒAŒvZ
+ * å®Ÿç¸¾ã‚¹ã‚³ã‚¢è¨ˆç®—
  *------------------------------------------
  */
 int achieve_calc_level(struct map_session_data *sd, int score)
@@ -158,7 +158,7 @@ int achieve_calc_level(struct map_session_data *sd, int score)
 }
 
 /*==========================================
- * ÀÑƒŒƒxƒ‹ƒ`ƒFƒbƒN
+ * å®Ÿç¸¾ãƒ¬ãƒ™ãƒ«ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 static int achieve_check_level(struct map_session_data *sd, int achieve_id)
@@ -174,7 +174,7 @@ static int achieve_check_level(struct map_session_data *sd, int achieve_id)
 }
 
 /*==========================================
- * ÀÑŠ®—¹ƒ`ƒFƒbƒN
+ * å®Ÿç¸¾å®Œäº†ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 static int achieve_check_complete(struct map_session_data *sd, int achieve_id, int idx)
@@ -190,7 +190,7 @@ static int achieve_check_complete(struct map_session_data *sd, int achieve_id, i
 			break;
 		}
 	}
-	// ƒRƒ“ƒvƒŠ[ƒg‚µ‚½
+	// ã‚³ãƒ³ãƒ—ãƒªãƒ¼ãƒˆã—ãŸ
 	if(flag) {
 		achieve_check_level(sd, achieve_id);
 		sd->achieve[idx].comp_date = (unsigned int)time(NULL);
@@ -201,7 +201,7 @@ static int achieve_check_complete(struct map_session_data *sd, int achieve_id, i
 }
 
 /*==========================================
- * ÀÑƒAƒbƒvƒf[ƒg
+ * å®Ÿç¸¾ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
  *------------------------------------------
  */
 int achieve_update_content(struct map_session_data *sd, enum achieve_types type, int id, int num)
@@ -213,14 +213,14 @@ int achieve_update_content(struct map_session_data *sd, enum achieve_types type,
 	nullpo_retr(0, sd);
 
 	switch(type) {
-	// key value Œn
+	// key value ç³»
 	case ACH_LEVEL:
 	case ACH_STATUS:
 	case ACH_ADD_FRIEND:
 	case ACH_PET_FRIEND:
 	case ACH_SPEND_ZENY:
 	case ACH_GET_ZENY:
-		flag |= 1;		// ŒÅ’è’lXVƒtƒ‰ƒO
+		flag |= 1;		// å›ºå®šå€¤æ›´æ–°ãƒ•ãƒ©ã‚°
 		// fall through
 	case ACH_KILL_MOB:
 	case ACH_USE_ITEM:
@@ -238,7 +238,7 @@ int achieve_update_content(struct map_session_data *sd, enum achieve_types type,
 			ischange = false;
 
 			for(j = 0; j < achieve_db[i].num; j++) {
-				// “¯‚¶ID‚ğXV‚·‚é
+				// åŒã˜IDã‚’æ›´æ–°ã™ã‚‹
 				if(achieve_db[i].content[j].id == id) {
 					update_count[j] += num;
 					ischange = true;
@@ -247,12 +247,12 @@ int achieve_update_content(struct map_session_data *sd, enum achieve_types type,
 			if(ischange) {
 				for(k = 0; k < sd->achievelist; k++) {
 					if(sd->achieve[k].nameid == achieve_db[i].nameid) {
-						// Šù‚É‹L˜^Ï‚İ‚ÌID
-						if(sd->achieve[k].comp_date > 0)		// ƒNƒŠƒAÏ‚İ
+						// æ—¢ã«è¨˜éŒ²æ¸ˆã¿ã®ID
+						if(sd->achieve[k].comp_date > 0)		// ã‚¯ãƒªã‚¢æ¸ˆã¿
 							break;
 						for(j = 0; j < achieve_db[i].num; j++) {
 							if(sd->achieve[k].count[j] < achieve_db[i].content[j].id)
-								if(flag & 1)	// ŒÅ’è’l‚ÅXV‚³‚¹‚é
+								if(flag & 1)	// å›ºå®šå€¤ã§æ›´æ–°ã•ã›ã‚‹
 									sd->achieve[k].count[j] = update_count[j];
 								else
 									sd->achieve[k].count[j] += update_count[j];
@@ -261,7 +261,7 @@ int achieve_update_content(struct map_session_data *sd, enum achieve_types type,
 					}
 				}
 				if(k == sd->achievelist && sd->achievelist < MAX_ACHIEVELIST) {
-					// ŒŸõ‚µ‚½‚¯‚Ç‚È‚©‚Á‚½‚çV‹K‚É’Ç‰Á
+					// æ¤œç´¢ã—ãŸã‘ã©ãªã‹ã£ãŸã‚‰æ–°è¦ã«è¿½åŠ 
 					sd->achieve[k].nameid = achieve_db[i].nameid;
 					for(j = 0; j < achieve_db[i].num; j++)
 						sd->achieve[k].count[j] += update_count[j];
@@ -278,7 +278,7 @@ int achieve_update_content(struct map_session_data *sd, enum achieve_types type,
 }
 
 /*==========================================
- * •ñVó‚¯æ‚èƒ`ƒFƒbƒN
+ * å ±é…¬å—ã‘å–ã‚Šãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int achieve_check_reward(struct map_session_data *sd, int achieve_id)
@@ -309,7 +309,7 @@ int achieve_check_reward(struct map_session_data *sd, int achieve_id)
 }
 
 /*==========================================
- * Ì†•ÏXƒ`ƒFƒbƒN
+ * ç§°å·å¤‰æ›´ãƒã‚§ãƒƒã‚¯
  *------------------------------------------
  */
 int achieve_check_title(struct map_session_data *sd, int title_id)
@@ -335,7 +335,7 @@ int achieve_check_title(struct map_session_data *sd, int title_id)
 }
 
 /*==========================================
- * ÀÑ“¢”°/g—pƒf[ƒ^ƒx[ƒX‚Ìƒ\[ƒg
+ * å®Ÿç¸¾è¨ä¼/ä½¿ç”¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ã‚½ãƒ¼ãƒˆ
  *------------------------------------------
  */
 static int achieve_sort_id(const void *_i1, const void *_i2)
@@ -347,7 +347,7 @@ static int achieve_sort_id(const void *_i1, const void *_i2)
 }
 
 /*==========================================
- * ÀÑDB‚ÌŠî‘b“o˜^
+ * å®Ÿç¸¾DBã®åŸºç¤ç™»éŒ²
  *------------------------------------------
  */
 bool achieve_insert_info(int achieveid, const char* name, enum achieve_types type, int score, int title, const char* reward)
@@ -395,7 +395,7 @@ bool achieve_insert_info(int achieveid, const char* name, enum achieve_types typ
 }
 
 /*==========================================
- * ÀÑDB‚ÌƒRƒ“ƒeƒ“ƒc“o˜^
+ * å®Ÿç¸¾DBã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ç™»éŒ²
  *------------------------------------------
  */
 bool achieve_insert_content(int achieveid, int nameid, int count)
@@ -436,7 +436,7 @@ bool achieve_insert_content(int achieveid, int nameid, int count)
 					break;
 			}
 			if(n == max_killdb_count) {
-				// V‚µ‚­oŒ»‚µ‚½MobID‚È‚Ì‚Å“¢”°ƒf[ƒ^ƒx[ƒX‚É’Ç‰Á
+				// æ–°ã—ãå‡ºç¾ã—ãŸMobIDãªã®ã§è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«è¿½åŠ 
 				if(n >= insert_killdb_size) {
 					insert_killdb_size += ACHIEVE_EXPANDDB_SIZE;
 					achieve_killdb = (int *)aRealloc(achieve_killdb, sizeof(int) * insert_killdb_size);
@@ -452,7 +452,7 @@ bool achieve_insert_content(int achieveid, int nameid, int count)
 					break;
 			}
 			if(n == max_usedb_count) {
-				// V‚µ‚­oŒ»‚µ‚½ItemID‚È‚Ì‚Åg—pƒf[ƒ^ƒx[ƒX‚É’Ç‰Á
+				// æ–°ã—ãå‡ºç¾ã—ãŸItemIDãªã®ã§ä½¿ç”¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«è¿½åŠ 
 				if(n >= insert_usedb_size) {
 					insert_usedb_size += ACHIEVE_EXPANDDB_SIZE;
 					achieve_usedb = (int *)aRealloc(achieve_usedb, sizeof(int) * insert_usedb_size);
@@ -469,26 +469,26 @@ bool achieve_insert_content(int achieveid, int nameid, int count)
 }
 
 /*==========================================
- * ÀÑDB‚ÌƒRƒ“ƒeƒ“ƒc“o˜^I—¹
+ * å®Ÿç¸¾DBã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ç™»éŒ²çµ‚äº†
  *------------------------------------------
  */
 bool achieve_insert_db_end(void)
 {
-	// “¢”°ƒf[ƒ^ƒx[ƒX‚ÌƒŠƒTƒCƒY
+	// è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒªã‚µã‚¤ã‚º
 	achieve_killdb = (int *)aRealloc(achieve_killdb, sizeof(int) * max_killdb_count);
-	// “¢”°ƒf[ƒ^ƒx[ƒX‚Ìƒ\[ƒg
+	// è¨ä¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ã‚½ãƒ¼ãƒˆ
 	qsort(achieve_killdb, max_killdb_count, sizeof(int), achieve_sort_id);
 
-	// g—pƒf[ƒ^ƒx[ƒX‚ÌƒŠƒTƒCƒY
+	// ä½¿ç”¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒªã‚µã‚¤ã‚º
 	achieve_usedb = (int *)aRealloc(achieve_usedb, sizeof(int) * max_usedb_count);
-	// g—pƒf[ƒ^ƒx[ƒX‚Ìƒ\[ƒg
+	// ä½¿ç”¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ã‚½ãƒ¼ãƒˆ
 	qsort(achieve_usedb, max_usedb_count, sizeof(int), achieve_sort_id);
 
 	return true;
 }
 
 /*==========================================
- * ÀÑDB‚Ì•K—vŒoŒ±’l“o˜^
+ * å®Ÿç¸¾DBã®å¿…è¦çµŒé¨“å€¤ç™»éŒ²
  *------------------------------------------
  */
 bool achieve_insert_leveldb(int lv, int exp)
@@ -505,7 +505,7 @@ bool achieve_insert_leveldb(int lv, int exp)
 }
 
 /*==========================================
- * ÀÑ‰Šú‰»ˆ—
+ * å®Ÿç¸¾åˆæœŸåŒ–å‡¦ç†
  *------------------------------------------
  */
 int do_init_achieve(void)
@@ -518,7 +518,7 @@ int do_init_achieve(void)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 int do_final_achieve(void)

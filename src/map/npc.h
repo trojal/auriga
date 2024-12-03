@@ -70,7 +70,7 @@ int npc_timeout_stop(struct map_session_data *sd);
 int npc_dynamicnpc_start(struct map_session_data *sd);
 int npc_dynamicnpc_stop(struct map_session_data *sd);
 
-// メモリアルダンジョン関連
+// 繝｡繝｢繝ｪ繧｢繝ｫ繝繝ｳ繧ｸ繝ｧ繝ｳ髢｢騾｣
 int npc_addmdnpc(struct npc_data *src_nd, int m);
 int npc_free(struct npc_data *nd);
 
