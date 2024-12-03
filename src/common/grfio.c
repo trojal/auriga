@@ -27,20 +27,20 @@
  *********************************************************************
  *	$Id: grfio.c,v 1.4 2003/11/10 23:32:44 jmb Exp $
  *
- *	2002/12/18 ... ����
- *	2003/01/23 ... �R�[�h�C��
- *	2003/02/01 ... LocalFile�y�ѕ���GRF�`�F�b�N������ǉ�,�Í���Ǐ���������
- *	2003/02/02 ... grf�������Ă��~�܂�Ȃ��悤�ɏC��
- *	2003/02/02 ... grf�ǂݍ��ݎw����ォ��ǉ��ł���悤�ɏC��(grfio_add�֐��ǉ�)
- *	2003/02/03 ... grfio_resourcecheck�������A�G���g���ǉ��������@���C��
- *	2003/02/05 ... grfio_init�������̕ύX
- *	2003/02/23 ... ���[�J���t�@�C���`�F�b�N��GRFIO_LOCAL�ŃX�C�b�`(�f�t�H���@�\Off��)
- *      2003/10/21 �E�E�E ���N���C�A���g�̃f�[�^��ǂނ悤�ɂ����B
+ *	2002/12/18 ... 原版
+ *	2003/01/23 ... コード修正
+ *	2003/02/01 ... LocalFile及び複数GRFチェック処理を追加,暗号解読処理を改良
+ *	2003/02/02 ... grfが無くても止まらないように修正
+ *	2003/02/02 ... grf読み込み指定を後から追加できるように修正(grfio_add関数追加)
+ *	2003/02/03 ... grfio_resourcecheck処理時、エントリ追加処理方法を修正
+ *	2003/02/05 ... grfio_init内処理の変更
+ *	2003/02/23 ... ローカルファイルチェックをGRFIO_LOCALでスイッチ(デフォを機能Offに)
+ *      2003/10/21 ・・・ αクライアントのデータを読むようにした。
  *	2003/11/10 ... Ready new grf format.
  *	2003/11/11 ... version check fix & bug fix
  *	2006/05/27 ... Reading of customed GRF (by Yor)
- *	2006/12/11 ... data,sdata,adata�̐����𖳂�����MAX_GRF_FILES�܂œǂݍ��ݑΉ�
- *	2006/12/29 �E�E�E �������g�p�ʍ팸�̂���gat,txt�ȊO��entry���Ȃ��Aresnametable.txt�̎w��Ή�
+ *	2006/12/11 ... data,sdata,adataの制限を無くしてMAX_GRF_FILES個まで読み込み対応
+ *	2006/12/29 ・・・ メモリ使用量削減のためgat,txt以外はentryしない、resnametable.txtの指定対応
  */
 
 #include <stdio.h>
@@ -118,13 +118,13 @@ typedef struct {
 	char fn[192-4*5]; // file name
 	char gentry; // read grf file select
 } FILELIST;
-// gentry ... 0  :���[�J���t�@�C�����擾
-//            1>=:gentry_table[gentry-1]�̃��\�[�X�t�@�C�����擾
-//            1<=:���[�J���t�@�C�����`�F�b�N
-//                   �L���0�ɍăZ�b�g���Ĉȍ~���[�J���t�@�C�����擾
-//                   ������Ε������]���čăZ�b�g���A1>=�Ɠ��������\�[�X�t�@�C�����擾
+// gentry ... 0  :ローカルファイルより取得
+//            1>=:gentry_table[gentry-1]のリソースファイルより取得
+//            1<=:ローカルファイルをチェック
+//                   有れば0に再セットして以降ローカルファイルより取得
+//                   無ければ符号反転して再セットし、1>=と同じくリソースファイルより取得
 
-// ��FILELIST.gentry��char�Œ�`���Ă���̂�grfio_add�Œǉ��ł�������127�R�܂łɂȂ�܂�
+// ※FILELIST.gentryをcharで定義しているのでgrfio_addで追加できる上限は127コまでになります
 #define GENTRY_LIMIT 127
 
 static FILELIST *filelist    = NULL;
@@ -431,7 +431,7 @@ static FILELIST *filelist_find(const char *fname)
  *	File List : Filelist add
  *------------------------------------------
  */
-#define FILELIST_ADDS 1024 // �t�@�C�����X�g������
+#define FILELIST_ADDS 1024 // ファイルリスト数増分
 
 static FILELIST* filelist_add(FILELIST *entry)
 {
@@ -506,7 +506,7 @@ int grfio_size(const char *fname)
 
 		strncpy(lfname,fname,255);
 		lfname[sizeof(lfname)-1] = '\0';
-		for(p = lfname; *p; p++) {	// ��Unix���̂�
+		for(p = lfname; *p; p++) {	// ※Unix時のみ
 			if (*p == '\\')
 				*p = '/';
 		}
@@ -546,7 +546,7 @@ void* grfio_reads(const char *fname, int *size)
 
 		strncpy(lfname,fname,255);
 		lfname[sizeof(lfname)-1]= '\0';
-		for(p = lfname; *p; p++) {	// ��Unix���̂�
+		for(p = lfname; *p; p++) {	// ※Unix時のみ
 			if (*p == '\\')
 				*p = '/';
 		}
@@ -728,8 +728,8 @@ static int grfio_entryread(const char *gfname,int gentry)
 				if(!ext_ptr)
 					continue;
 
-				// gat,txt,rsw�ȊO�͕s�v�Ȃ̂œǂݍ��܂Ȃ�
-				if(strcasecmp(ext_ptr,".gat") == 0) {	// �����K�v�Ȃ��gnd,act,spr��srccount=0
+				// gat,txt,rsw以外は不要なので読み込まない
+				if(strcasecmp(ext_ptr,".gat") == 0) {	// もし必要ならばgnd,act,sprもsrccount=0
 					srccount = 0;
 				} else if(strcasecmp(ext_ptr,".txt") == 0 || strcasecmp(ext_ptr,".rsw") == 0) {
 					int lop;
@@ -748,9 +748,9 @@ static int grfio_entryread(const char *gfname,int gentry)
 				strncpy(aentry.fn,fname,sizeof(aentry.fn)-1);
 				aentry.fn[sizeof(aentry.fn)-1] = '\0';
 #ifdef GRFIO_LOCAL
-				aentry.gentry         = -(gentry+1);	// �����ɂ���̂͏���LocalFileCheck�������邽�߂�Flag�Ƃ���
+				aentry.gentry         = -(gentry+1);	// 負数にするのは初回LocalFileCheckをさせるためのFlagとして
 #else
-				aentry.gentry         = gentry+1;		// ����LocalFileCheck����
+				aentry.gentry         = gentry+1;		// 初回LocalFileCheck無し
 #endif
 				filelist_modify(&aentry);
 			}
@@ -824,7 +824,7 @@ static int grfio_entryread(const char *gfname,int gentry)
 			if(!ext_ptr)
 				continue;
 
-			// gat,txt,rsw�ȊO�͕s�v�Ȃ̂œǂݍ��܂Ȃ�
+			// gat,txt,rsw以外は不要なので読み込まない
 			if(strcasecmp(ext_ptr,".gat") != 0 && strcasecmp(ext_ptr,".txt") != 0 && strcasecmp(ext_ptr,".rsw") != 0)
 				continue;
 
@@ -857,9 +857,9 @@ static int grfio_entryread(const char *gfname,int gentry)
 				strncpy(aentry.fn,fname,sizeof(aentry.fn)-1);
 				aentry.fn[sizeof(aentry.fn)-1] = '\0';
 #ifdef GRFIO_LOCAL
-				aentry.gentry         = -(gentry+1);	// �����ɂ���̂͏���LocalFileCheck�������邽�߂�Flag�Ƃ���
+				aentry.gentry         = -(gentry+1);	// 負数にするのは初回LocalFileCheckをさせるためのFlagとして
 #else
-				aentry.gentry         = gentry+1;		// ����LocalFileCheck����
+				aentry.gentry         = gentry+1;		// 初回LocalFileCheck無し
 #endif
 				filelist_modify(&aentry);
 			}
@@ -907,7 +907,7 @@ static void grfio_resourcecheck(const char *data_dir)
 			if(!ext_ptr)
 				continue;
 
-			// gat,txt,rsw�̂݃`�F�b�N
+			// gat,txt,rswのみチェック
 			if(strcasecmp(ext_ptr,".gat") == 0 || strcasecmp(ext_ptr,".txt") == 0 || strcasecmp(ext_ptr,".rsw") == 0) {
 				sprintf(dst,"data\\%s",w2);
 
@@ -1043,13 +1043,13 @@ void grfio_init(const char *fname)
 	int result = 0;
 
 	grfio_load_zlib();
-	hashinit();		// hash�e�[�u��������
-	atexit(grfio_final);	// �I��������`
+	hashinit();		// hashテーブル初期化
+	atexit(grfio_final);	// 終了処理定義
 
 	if(fname == NULL)
 		return;
 
-	// grf-files.txt ������Ȃ�ǂݍ���
+	// grf-files.txt があるなら読み込む
 	data_conf = fopen(fname, "r");
 	if(data_conf) {
 		char line[1024], w1[1024], w2[1024];
@@ -1071,13 +1071,13 @@ void grfio_init(const char *fname)
 	} // end of reading grf-files.txt
 
 	if(!(result&1)) {
-		// ���\�[�X������ǂ߂Ȃ�����
+		// リソースが一つも読めなかった
 		printf("not grf file readed exit!!\n");
 		return;
 	}
 
-	grfio_resourcecheck(data_dir);	// ���\�[�X�`�F�b�N
-	filelist_adjust();		// filelist�̕s�v�G���A���
+	grfio_resourcecheck(data_dir);	// リソースチェック
+	filelist_adjust();		// filelistの不要エリア解放
 
 	return;
 }

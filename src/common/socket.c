@@ -50,7 +50,7 @@
 #include "malloc.h"
 #include "utils.h"
 
-// socket.h ��define ���ꂽclose��u������
+// socket.h でdefine されたcloseを置き換え
 #ifdef WINDOWS
 	#undef close
 	#define close(id) do{ if(session[id]) closesocket(session[id]->socket); } while(0);
@@ -129,7 +129,7 @@ static int recv_to_fifo(int fd)
 
 	//printf("recv_to_fifo : %d %d\n", fd, sd->eof);
 
-	if (sd->eof || (recv_limit_rate_enable && sd->auth >= 0 && DIFF_TICK(sd->rlr_tick, tick) > 0))	// �ш搧����
+	if (sd->eof || (recv_limit_rate_enable && sd->auth >= 0 && DIFF_TICK(sd->rlr_tick, tick) > 0))	// 帯域制限中
 		return -1;
 
 	len = recv(sockfd(fd), sd->rdata_size, (int)RFIFOSPACE(fd), 0);
@@ -148,12 +148,12 @@ static int recv_to_fifo(int fd)
 		}
 
 //		printf("rs: %d %d\n",len, session[fd]->auth );
-		// �ш搧���p�̌v�Z
+		// 帯域制限用の計算
 		if (sd->auth >= 0) {
 			int tick_diff = DIFF_TICK(tick, sd->rlr_tick);
 			sd->rlr_bytes += len;
 
-			// �ш�̐���
+			// 帯域の制限
 			if (tick_diff >= recv_limit_rate_period) {
 				int rate = sd->rlr_bytes * 1000 / tick_diff;
 //				printf("rlr: %d %d\n", sd->rlr_bytes, rate);
@@ -205,7 +205,7 @@ static int send_from_fifo(int fd)
 			sd->wdata_size = sd->wdata;
 			sd->wdata_pos  = sd->wdata;
 		} else if ((sd->wdata_pos - sd->wdata) * 8 > (sd->max_wdata - sd->wdata)) {
-			// �N���A����Ԋu�����炵�Ă݂�
+			// クリアする間隔を減らしてみる
 			memmove(sd->wdata, sd->wdata_pos, WFIFOREST(fd));
 			sd->wdata_size = sd->wdata + WFIFOREST(fd);
 			sd->wdata_pos  = sd->wdata;
@@ -430,7 +430,7 @@ int make_listen_port(unsigned short port, unsigned long sip)
 #endif
 
 	server_address.sin_family      = AF_INET;
-	server_address.sin_addr.s_addr = sip;		// 1710:INADDR_ANY����ύX
+	server_address.sin_addr.s_addr = sip;		// 1710:INADDR_ANYから変更
 	server_address.sin_port        = htons(port);
 
 	result = bind(fd, (struct sockaddr*)&server_address, sizeof(server_address));
@@ -560,7 +560,7 @@ int make_connection(unsigned long ip, unsigned short port)
 
 	result = connect(fd, (struct sockaddr *)(&server_address), sizeof(struct sockaddr_in));
 	if (result != 0) {
-		// �ڑ����s
+		// 接続失敗
 #ifdef WINDOWS
 		if (WSAGetLastError() != WSAEWOULDBLOCK) {
 			printf("make_connection: connect error (socket.c) %08x:%d\n", (int)ip, port);
@@ -624,12 +624,12 @@ void delete_session(int fd)
 		return;
 
 	if (session[fd]) {
-		// �Q�d�Ăяo���̖h�~
+		// ２重呼び出しの防止
 		if (session[fd]->flag_destruct)
 			return;
 
 		session[fd]->flag_destruct = 1;
-		// �f�X�g���N�^���Ăяo��
+		// デストラクタを呼び出す
 		if (session[fd]->func_destruct)
 			session[fd]->func_destruct(fd);
 		close(fd);
@@ -692,12 +692,12 @@ void WFIFORESERVE(int fd, size_t len)
 	while(len + SOCKET_EMPTY_SIZE > (size_t)(s->max_wdata - s->wdata)) {
 		size_t new_size = (size_t)(s->max_wdata - s->wdata) << 1;
 
-		// ���M�o�b�t�@�̐����T�C�Y���߃`�F�b�N
+		// 送信バッファの制限サイズ超過チェック
 		if (s->auth >= 0 && new_size > (size_t)send_limit_buffer_size) {
 			printf("socket: session #%d wdata (%lu) exceed limited size.\n", fd, (unsigned long)new_size);
-			s->wdata_pos  = s->wdata;	// �f�[�^�������ĂƂ肠�����󂫂����
+			s->wdata_pos  = s->wdata;	// データを消してとりあえず空きを作る
 			s->wdata_size = s->wdata;
-			// �󂫃X�y�[�X������Ȃ���������Ȃ��̂ŁA�Ċm��
+			// 空きスペースが足りないかもしれないので、再確保
 			realloc_fifo(fd, 0, len);
 			s->eof = 1;
 			return;
@@ -727,7 +727,7 @@ void WFIFOSET(int fd, size_t len)
 		s->wdata_pos  = s->wdata;
 		s->wdata_size = s->wdata;
 		s->eof = 1;
-		exit(1);	// �A�N�Z�X�ᔽ���Ă���͂��Ȃ̂ŃT�[�o�𗎂Ƃ�
+		exit(1);	// アクセス違反しているはずなのでサーバを落とす
 	}
 	WFIFORESERVE(fd, s->wdata_size - s->wdata);
 
@@ -983,34 +983,34 @@ void do_sendrecv(int next)
 	int ret, i;
 	unsigned int tick = gettick();
 
-	// select ���邽�߂̏���
+	// select するための準備
 	memcpy(&rfd, &readfds, sizeof(fd_set));
 	FD_ZERO(&wfd);
 	for(i = 0; i < fd_max; i++) {
 		struct socket_data *sd = session[i];
 		if (sd) {
-			// �o�b�t�@�Ƀf�[�^������Ȃ瑗�M�\���`�F�b�N����
+			// バッファにデータがあるなら送信可能かチェックする
 			if (sd->wdata_size != sd->wdata_pos)
 				FD_SET(sockfd(i), &wfd);
 
-			// ��M�ш搧�����Ȃ炱�� socket �͎�M�\���`�F�b�N���Ȃ�
+			// 受信帯域制限中ならこの socket は受信可能かチェックしない
 			if (recv_limit_rate_enable && sd->auth >= 0 && DIFF_TICK(sd->rlr_tick, tick) > 0)
 				FD_CLR(sockfd(i), &rfd);
 		}
 	}
 
-	// �^�C���A�E�g�̐ݒ�i�ő�1�b�j
+	// タイムアウトの設定（最大1秒）
 	if (next > 1000)
 		next = 1000;
 	timeout.tv_sec  = next / 1000;
 	timeout.tv_usec = next % 1000 * 1000;
 
-	// select �ŒʐM��҂�
+	// select で通信を待つ
 	ret = select(fd_max, &rfd, &wfd, NULL, &timeout);
 	if (ret <= 0)
 		return;
 
-	// select ���ʂɂ��������đ���M����
+	// select 結果にしたがって送受信する
 	process_fdset(&rfd, &wfd);
 
 	return;
@@ -1029,20 +1029,20 @@ void do_parsepacket(void)
 
 		if (sd->eof ||
 		    (sd->flag_destruct == 0 && sd->auth >= 0 &&
-		     DIFF_TICK(tick, sd->tick) > ((sd->auth) ? auth_timeout : unauth_timeout))) {	// �^�C���A�E�g
+		     DIFF_TICK(tick, sd->tick) > ((sd->auth) ? auth_timeout : unauth_timeout))) {	// タイムアウト
 			delete_session(i);
 
 		} else {
 
-			// �p�P�b�g�̉��
+			// パケットの解析
 			if (sd->func_parse && sd->rdata_size != sd->rdata_pos) {
 				size_t s = RFIFOREST(i);
 #ifdef NO_HTTPD
 				sd->func_parse(i);
 #else
 				if (!sd->flag_httpd && httpd_enable) {
-					// httpd �ɉ񂷂ǂ����̔��肪�܂��s���ĂȂ�
-					// �擪�Q�o�C�g�� GE or PO�Ȃ�httpd �ɉ񂵂Ă݂�
+					// httpd に回すどうかの判定がまだ行われてない
+					// 先頭２バイトが GE or POならhttpd に回してみる
 					if (sd->rdata_size - sd->rdata >= 2) {
 						sd->flag_httpd = 1;
 						if ((sd->rdata[0] == 'G' && sd->rdata[1] == 'E') ||
@@ -1056,7 +1056,7 @@ void do_parsepacket(void)
 				if (sd->flag_httpd || !httpd_enable)
 					sd->func_parse(i);
 #endif
-				// �F�؂��I�����Ă�Ȃ��M������� tick ���X�V
+				// 認証が終了してるなら受信があれば tick を更新
 				if (s != RFIFOREST(i)) {
 					if (sd->auth)
 						sd->tick = tick;
@@ -1067,7 +1067,7 @@ void do_parsepacket(void)
 				}
 			}
 
-			// �N���A����Ԋu�����炵�Ă݂�
+			// クリアする間隔を減らしてみる
 			if (sd->rdata_pos == sd->rdata_size) { // all FIFO readed
 				sd->rdata_size = sd->rdata;
 				sd->rdata_pos  = sd->rdata;
@@ -1115,7 +1115,7 @@ int parsepacket_timer(int tid, unsigned int tick, int id, void *data)
 	return 0;
 }
 
-/* DDoS �U���΍� */
+/* DDoS 攻撃対策 */
 
 enum {
 	ACO_DENY_ALLOW = 0,
@@ -1149,9 +1149,9 @@ struct _connect_history {
 static struct _connect_history *connect_history[0x10000];
 static int connect_check_(unsigned long ip);
 
-// �ڑ��ł��邩�ǂ����̊m�F
-//   false : �ڑ�OK
-//   true  : �ڑ�NG
+// 接続できるかどうかの確認
+//   false : 接続OK
+//   true  : 接続NG
 static int connect_check(unsigned long ip)
 {
 	int result = connect_check_(ip);
@@ -1169,7 +1169,7 @@ static int connect_check_(unsigned long ip)
 	int i, is_allowip = 0, is_denyip = 0, connect_ok = 0;
 	unsigned int tick = gettick();
 
-	// allow , deny ���X�g�ɓ����Ă��邩�m�F
+	// allow , deny リストに入っているか確認
 	for(i = 0; i < access_allownum; i++) {
 		if ((ip & access_allow[i].mask) == (access_allow[i].ip & access_allow[i].mask)) {
 			if (access_debug)
@@ -1188,11 +1188,11 @@ static int connect_check_(unsigned long ip)
 			break;
 		}
 	}
-	// �R�l�N�g�o���邩�ǂ����m�F
+	// コネクト出来るかどうか確認
 	// connect_ok
-	//   0 : �������ɋ���
-	//   1 : �c��C�`�F�b�N�̌��ʎ���
-	//   2 : �������ɋ���
+	//   0 : 無条件に拒否
+	//   1 : 田代砲チェックの結果次第
+	//   2 : 無条件に許可
 	switch(access_order) {
 	case ACO_ALLOW_DENY:
 		if (is_denyip)
@@ -1219,18 +1219,18 @@ static int connect_check_(unsigned long ip)
 		break;
 	}
 
-	// �ڑ������𒲂ׂ�
+	// 接続履歴を調べる
 	while(hist) {
 		if (ip == hist->ip) {
-			// ����IP����
+			// 同じIP発見
 			if (hist->status) {
-				// ban �t���O�������Ă�
+				// ban フラグが立ってる
 				return ((connect_ok == 2) ? 1 : 0);
 			} else if (DIFF_TICK(tick,hist->tick) < ddos_interval) {
-				// ddos_interval�b�ȓ��Ƀ��N�G�X�g�L��
+				// ddos_interval秒以内にリクエスト有り
 				hist->tick = tick;
 				if (hist->count++ >= ddos_count) {
-					// ddos �U�������o
+					// ddos 攻撃を検出
 					unsigned char *p = (unsigned char *)&ip;
 					hist->status = 1;
 					printf("connect_check: ddos attack detected (%d.%d.%d.%d)\n", p[0], p[1], p[2], p[3]);
@@ -1238,7 +1238,7 @@ static int connect_check_(unsigned long ip)
 				} else
 					return connect_ok;
 			} else {
-				// ddos_interval�b�ȓ��Ƀ��N�G�X�g�����̂Ń^�C�}�[�N���A
+				// ddos_interval秒以内にリクエスト無いのでタイマークリア
 				hist->tick  = tick;
 				hist->count = 0;
 				return connect_ok;
@@ -1246,7 +1246,7 @@ static int connect_check_(unsigned long ip)
 		}
 		hist = hist->next;
 	}
-	// IP���X�g�ɖ����̂ŐV�K�쐬
+	// IPリストに無いので新規作成
 	hist_new = (struct _connect_history *)aCalloc(1, sizeof(struct _connect_history));
 	hist_new->ip   = ip;
 	hist_new->tick = tick;
@@ -1295,7 +1295,7 @@ static int connect_check_clear(int tid, unsigned int tick, int id, void *data)
 	return list;
 }
 
-// IP�}�X�N�`�F�b�N
+// IPマスクチェック
 static int access_ipmask(const char *str,struct _access_control* acc)
 {
 	unsigned int mask = 0, ip;
@@ -1452,7 +1452,7 @@ static void do_final_socket(void)
 	aFree(access_allow);
 	aFree(access_deny);
 
-	// session[0] �̃_�~�[�f�[�^���폜
+	// session[0] のダミーデータを削除
 	aFree(session[0]->rdata);
 	aFree(session[0]->wdata);
 	aFree(session[0]);
@@ -1485,12 +1485,12 @@ void do_socket(void)
 	atexit(do_final_socket);
 	socket_config_read();
 
-	// session[0] �Ƀ_�~�[�f�[�^���m�ۂ���
+	// session[0] にダミーデータを確保する
 	session[0] = (struct socket_data *)aCalloc(1, sizeof(*session[0]));
 	session[0]->auth = -1;
 	realloc_fifo(0, RFIFO_SIZE, WFIFO_SIZE);
 
-	// �Ƃ肠�����T�����Ƃɕs�v�ȃf�[�^���폜����
+	// とりあえず５分ごとに不要なデータを削除する
 	add_timer_func_list(connect_check_clear);
 	add_timer_interval(tick + 1000, connect_check_clear, 0, NULL, 300 * 1000);
 
@@ -1499,7 +1499,7 @@ void do_socket(void)
 
 
 // ==========================================
-// �o��
+// 出力
 // ------------------------------------------
 static void socket_httpd_page_send(int fd, const char *str)
 {
@@ -1512,7 +1512,7 @@ static void socket_httpd_page_send(int fd, const char *str)
 }
 
 // ==========================================
-// �w�b�_����
+// ヘッダ部分
 // ------------------------------------------
 static void socket_httpd_page_header(struct httpd_session_data *sd)
 {
@@ -1526,7 +1526,7 @@ static void socket_httpd_page_header(struct httpd_session_data *sd)
 }
 
 // ==========================================
-// �t�b�^����
+// フッタ部分
 // ------------------------------------------
 static void socket_httpd_page_footer(int fd)
 {
@@ -1542,7 +1542,7 @@ static void socket_httpd_page_footer(int fd)
 }
 
 // ==========================================
-// �A�N�Z�X����̐ݒ�m�F
+// アクセス制御の設定確認
 // ------------------------------------------
 static void socket_httpd_page_access_settings(struct httpd_session_data *sd, const char *url)
 {
@@ -1583,7 +1583,7 @@ static void socket_httpd_page_access_settings(struct httpd_session_data *sd, con
 }
 
 // ==========================================
-// DoS �A�^�b�N�̏󋵊m�F
+// DoS アタックの状況確認
 // ------------------------------------------
 static void socket_httpd_page_dos_attack(struct httpd_session_data *sd, const char *url)
 {
@@ -1591,7 +1591,7 @@ static void socket_httpd_page_dos_attack(struct httpd_session_data *sd, const ch
 	unsigned int tick = gettick();
 	char *p;
 
-	// DoS �u���b�N����
+	// DoS ブロック解除
 	p = httpd_get_value(sd, "dosdelete");
 	if (*p) {
 		for(i = 0; i < 100; i++) {
@@ -1615,7 +1615,7 @@ static void socket_httpd_page_dos_attack(struct httpd_session_data *sd, const ch
 
 	socket_httpd_page_header(sd);
 
-	// DoS �A�^�b�N�̃u���b�N���X�g
+	// DoS アタックのブロックリスト
 	len = sprintf(WFIFOP(fd,0 ),
 	      "<h2>Anti-DoS Attack : blocking IP address list</h2>\n"
 	      "<form action=\"%s\" method=\"post\">\n"
@@ -1656,7 +1656,7 @@ void (*socket_httpd_page_connection_func)(int fd,char*,char*,char*);
 void socket_set_httpd_page_connection_func(void (*func)(int fd,char*,char*,char*)){ socket_httpd_page_connection_func = func; }
 
 // ==========================================
-// �ڑ��󋵊m�F
+// 接続状況確認
 // ------------------------------------------
 static void socket_httpd_page_connection(struct httpd_session_data *hsd, const char *url)
 {
@@ -1664,7 +1664,7 @@ static void socket_httpd_page_connection(struct httpd_session_data *hsd, const c
 	int fd = hsd->fd;
 	char *p;
 
-	// �����ؒf
+	// 強制切断
 	p = httpd_get_value(hsd, "disconnect");
 	if (*p) {
 		for(i = 1; i < fd_max; i++) {
@@ -1741,7 +1741,7 @@ static void socket_httpd_page_connection(struct httpd_session_data *hsd, const c
 	return;
 }
 
-// socket �R���g���[���p�l���ido_init_httpd �� httpd �ɓo�^�����j
+// socket コントロールパネル（do_init_httpd で httpd に登録される）
 void socket_httpd_page(struct httpd_session_data* sd, const char* url)
 {
 	int i, len;

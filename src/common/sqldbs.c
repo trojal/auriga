@@ -36,7 +36,7 @@ struct sqldbs_handle mysql_handle;
 static struct sqldbs_handle *default_handle = &mysql_handle;
 
 /*==========================================
- * �f�t�H���g�̃n���h����ݒ�
+ * デフォルトのハンドラを設定
  *------------------------------------------
  */
 void sqldbs_set_default_handle(struct sqldbs_handle *hd)
@@ -45,7 +45,7 @@ void sqldbs_set_default_handle(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���ꕶ���̃G�X�P�[�v
+ * 特殊文字のエスケープ
  *------------------------------------------
  */
 char* strecpy(char* pt, const char* spt)
@@ -65,7 +65,7 @@ char* strecpy_(struct sqldbs_handle *hd, char* pt, const char* spt)
 }
 
 /*==========================================
- * �N�G�����s
+ * クエリ発行
  *------------------------------------------
  */
 bool sqldbs_query(struct sqldbs_handle *hd, const char *query, ...)
@@ -89,7 +89,7 @@ bool sqldbs_query(struct sqldbs_handle *hd, const char *query, ...)
 }
 
 /*==========================================
- * �P���ȃN�G�����s
+ * 単純なクエリ発行
  *------------------------------------------
  */
 bool sqldbs_simplequery(struct sqldbs_handle *hd, const char *query)
@@ -115,7 +115,7 @@ bool sqldbs_simplequery(struct sqldbs_handle *hd, const char *query)
 }
 
 /*==========================================
- * �g�����U�N�V�����̊J�n
+ * トランザクションの開始
  *------------------------------------------
  */
 bool sqldbs_transaction_start(struct sqldbs_handle *hd)
@@ -134,7 +134,7 @@ bool sqldbs_transaction_start(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * �R�~�b�g
+ * コミット
  *------------------------------------------
  */
 bool sqldbs_commit(struct sqldbs_handle *hd)
@@ -153,7 +153,7 @@ bool sqldbs_commit(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���[���o�b�N
+ * ロールバック
  *------------------------------------------
  */
 bool sqldbs_rollback(struct sqldbs_handle *hd)
@@ -172,7 +172,7 @@ bool sqldbs_rollback(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * �g�����U�N�V�����̏I��
+ * トランザクションの終了
  * COMMIT or ROLLBACK
  *------------------------------------------
  */
@@ -185,7 +185,7 @@ bool sqldbs_transaction_end(struct sqldbs_handle *hd, bool result)
 }
 
 /*==========================================
- * ���ʃZ�b�g�����邩�ǂ���
+ * 結果セットがあるかどうか
  *------------------------------------------
  */
 bool sqldbs_has_result(struct sqldbs_handle *hd)
@@ -196,7 +196,7 @@ bool sqldbs_has_result(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���ʃZ�b�g�̎����R�[�h���擾
+ * 結果セットの次レコードを取得
  *------------------------------------------
  */
 char** sqldbs_fetch(struct sqldbs_handle *hd)
@@ -208,7 +208,7 @@ char** sqldbs_fetch(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���ʃZ�b�g�̍s����Ԃ�
+ * 結果セットの行数を返す
  *------------------------------------------
  */
 int sqldbs_num_rows(struct sqldbs_handle *hd)
@@ -219,7 +219,7 @@ int sqldbs_num_rows(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���ʃZ�b�g�̗񐔂�Ԃ�
+ * 結果セットの列数を返す
  *------------------------------------------
  */
 int sqldbs_num_fields(struct sqldbs_handle *hd)
@@ -230,7 +230,7 @@ int sqldbs_num_fields(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * AUTO_INCREMENT�̐����l��Ԃ�
+ * AUTO_INCREMENTの生成値を返す
  *------------------------------------------
  */
 int sqldbs_insert_id(struct sqldbs_handle *hd)
@@ -241,7 +241,7 @@ int sqldbs_insert_id(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * �ύX���ꂽ�s����Ԃ�
+ * 変更された行数を返す
  *------------------------------------------
  */
 int sqldbs_affected_rows(struct sqldbs_handle *hd)
@@ -252,7 +252,7 @@ int sqldbs_affected_rows(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * ���ʃZ�b�g���
+ * 結果セット解放
  *------------------------------------------
  */
 void sqldbs_free_result(struct sqldbs_handle *hd)
@@ -266,7 +266,7 @@ void sqldbs_free_result(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * MYSQL_STMT��init
+ * MYSQL_STMTのinit
  *------------------------------------------
  */
 struct sqldbs_stmt* sqldbs_stmt_init(struct sqldbs_handle *hd)
@@ -287,14 +287,14 @@ struct sqldbs_stmt* sqldbs_stmt_init(struct sqldbs_handle *hd)
 	st->bind_params  = false;
 	st->bind_columns = false;
 
-	// stmt�����X�g�Ƃ��ĕۑ����Ă���
+	// stmtをリストとして保存しておく
 	linkdb_insert(&hd->stmt_list, st, st);
 
 	return st;
 }
 
 /*==========================================
- * �v���y�A�h�X�e�[�g�����g�̃N�G������
+ * プリペアドステートメントのクエリ準備
  *------------------------------------------
  */
 bool sqldbs_stmt_prepare(struct sqldbs_stmt *st, const char *query, ...)
@@ -318,14 +318,14 @@ bool sqldbs_stmt_prepare(struct sqldbs_stmt *st, const char *query, ...)
 }
 
 /*==========================================
- * �P���ȃv���y�A�h�X�e�[�g�����g�̃N�G������
+ * 単純なプリペアドステートメントのクエリ準備
  *------------------------------------------
  */
 bool sqldbs_stmt_simpleprepare(struct sqldbs_stmt *st, const char *query)
 {
 	nullpo_retr(false, st);
 
-	// ������
+	// 初期化
 	st->bind_params  = false;
 	st->bind_columns = false;
 
@@ -344,7 +344,7 @@ bool sqldbs_stmt_simpleprepare(struct sqldbs_stmt *st, const char *query)
 }
 
 /*==========================================
- * �N�G������쐬�ς݂�stmt����������
+ * クエリから作成済みのstmtを検索する
  *------------------------------------------
  */
 struct sqldbs_stmt* sqldbs_stmt_search(struct sqldbs_handle *hd, const char *query)
@@ -367,7 +367,7 @@ struct sqldbs_stmt* sqldbs_stmt_search(struct sqldbs_handle *hd, const char *que
 }
 
 /*==========================================
- * ���l�^�̃T�C�Y����MYSQL_TYPE��Ԃ�
+ * 数値型のサイズからMYSQL_TYPEを返す
  *------------------------------------------
  */
 static enum enum_field_types sqldbs_num2datatype(size_t size)
@@ -385,7 +385,7 @@ static enum enum_field_types sqldbs_num2datatype(size_t size)
 }
 
 /*==========================================
- * MYSQL_BIND�Ƀp�����[�^���Z�b�g
+ * MYSQL_BINDにパラメータをセット
  *------------------------------------------
  */
 static void sqldbs_stmt_bind_datatype(MYSQL_BIND *bind, int buffer_type, void *buffer, size_t buffer_length, unsigned long *length, char *is_null)
@@ -474,7 +474,7 @@ static void sqldbs_stmt_bind_datatype(MYSQL_BIND *bind, int buffer_type, void *b
 }
 
 /*==========================================
- * �X�e�[�g�����g�̃p�����[�^�����擾
+ * ステートメントのパラメータ数を取得
  *------------------------------------------
  */
 size_t sqldbs_stmt_param_count(struct sqldbs_stmt *st)
@@ -485,7 +485,7 @@ size_t sqldbs_stmt_param_count(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * MYSQL_BIND�Ƀp�����[�^���Z�b�g
+ * MYSQL_BINDにパラメータをセット
  *------------------------------------------
  */
 bool sqldbs_stmt_bind_param(struct sqldbs_stmt *st, size_t idx, int buffer_type, void *buffer, size_t buffer_length)
@@ -495,7 +495,7 @@ bool sqldbs_stmt_bind_param(struct sqldbs_stmt *st, size_t idx, int buffer_type,
 	if(st->bind_params == false) {
 		size_t i, count;
 
-		// MYSQL_BIND�̗p��
+		// MYSQL_BINDの用意
 		count = sqldbs_stmt_param_count(st);
 		if(st->max_params < count) {
 			st->max_params = count;
@@ -517,7 +517,7 @@ bool sqldbs_stmt_bind_param(struct sqldbs_stmt *st, size_t idx, int buffer_type,
 }
 
 /*==========================================
- * �v���y�A�h�X�e�[�g�����g�̎��s
+ * プリペアドステートメントの実行
  *------------------------------------------
  */
 bool sqldbs_stmt_execute(struct sqldbs_stmt *st)
@@ -540,7 +540,7 @@ bool sqldbs_stmt_execute(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * MYSQL_BIND�ɃX�e�[�g�����g���ʂ��Z�b�g
+ * MYSQL_BINDにステートメント結果をセット
  *------------------------------------------
  */
 bool sqldbs_stmt_bind_column(struct sqldbs_stmt *st, size_t idx, int buffer_type, void *buffer, size_t buffer_length)
@@ -550,7 +550,7 @@ bool sqldbs_stmt_bind_column(struct sqldbs_stmt *st, size_t idx, int buffer_type
 	if(st->bind_columns == false) {
 		size_t i, cols;
 
-		// MYSQL_BIND�̗p��
+		// MYSQL_BINDの用意
 		cols = sqldbs_stmt_field_count(st);
 		if(st->max_columns < cols) {
 			st->max_columns = cols;
@@ -572,7 +572,7 @@ bool sqldbs_stmt_bind_column(struct sqldbs_stmt *st, size_t idx, int buffer_type
 }
 
 /*==========================================
- * �X�e�[�g�����g���ʃZ�b�g�̃o�C���h
+ * ステートメント結果セットのバインド
  *------------------------------------------
  */
 bool sqldbs_stmt_bind_result(struct sqldbs_stmt *st)
@@ -589,7 +589,7 @@ bool sqldbs_stmt_bind_result(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g���ʃZ�b�g�̎����R�[�h���擾
+ * ステートメント結果セットの次レコードを取得
  *------------------------------------------
  */
 bool sqldbs_stmt_fetch(struct sqldbs_stmt *st)
@@ -621,7 +621,7 @@ bool sqldbs_stmt_fetch(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g���ʃZ�b�g�̍s����Ԃ�
+ * ステートメント結果セットの行数を返す
  *------------------------------------------
  */
 int sqldbs_stmt_num_rows(struct sqldbs_stmt *st)
@@ -632,7 +632,7 @@ int sqldbs_stmt_num_rows(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g���ʂ̗񐔂�Ԃ�
+ * ステートメント結果の列数を返す
  *------------------------------------------
  */
 int sqldbs_stmt_field_count(struct sqldbs_stmt *st)
@@ -643,7 +643,7 @@ int sqldbs_stmt_field_count(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g��AUTO_INCREMENT�̐����l��Ԃ�
+ * ステートメントのAUTO_INCREMENTの生成値を返す
  *------------------------------------------
  */
 int sqldbs_stmt_insert_id(struct sqldbs_stmt *st)
@@ -654,7 +654,7 @@ int sqldbs_stmt_insert_id(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g�ύX���ꂽ�s����Ԃ�
+ * ステートメント変更された行数を返す
  *------------------------------------------
  */
 int sqldbs_stmt_affected_rows(struct sqldbs_stmt *st)
@@ -665,7 +665,7 @@ int sqldbs_stmt_affected_rows(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g���ʃZ�b�g���
+ * ステートメント結果セット解放
  *------------------------------------------
  */
 void sqldbs_stmt_free_result(struct sqldbs_stmt *st)
@@ -676,7 +676,7 @@ void sqldbs_stmt_free_result(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * �X�e�[�g�����g��close
+ * ステートメントのclose
  *------------------------------------------
  */
 void sqldbs_stmt_close(struct sqldbs_stmt *st)
@@ -704,8 +704,8 @@ void sqldbs_stmt_close(struct sqldbs_stmt *st)
 }
 
 /*==========================================
- * Keepalive�^�C�}�[
- * ����I��ping�𔭍s���ă^�C���A�E�g��}��
+ * Keepaliveタイマー
+ * 定期的にpingを発行してタイムアウトを抑制
  *------------------------------------------
  */
 static int sqldbs_keepalive_timer(int tid, unsigned int tick, int id, void *data)
@@ -719,7 +719,7 @@ static int sqldbs_keepalive_timer(int tid, unsigned int tick, int id, void *data
 }
 
 /*==========================================
- * �ؒf
+ * 切断
  *------------------------------------------
  */
 void sqldbs_close(struct sqldbs_handle *hd)
@@ -738,7 +738,7 @@ void sqldbs_close(struct sqldbs_handle *hd)
 		while(node) {
 			struct sqldbs_stmt *st = (struct sqldbs_stmt *)node->key;
 
-			// sqldbs_stmt_close() ���� linkdb_erase() ����Ȃ����߂�NULL�ɂ��Ă���
+			// sqldbs_stmt_close() 内で linkdb_erase() されないためにNULLにしておく
 			st->handle = NULL;
 
 			sqldbs_stmt_close(st);
@@ -757,7 +757,7 @@ void sqldbs_close(struct sqldbs_handle *hd)
 }
 
 /*==========================================
- * �ڑ�
+ * 接続
  *------------------------------------------
  */
 bool sqldbs_connect(struct sqldbs_handle *hd, const char *host, const char *user, const char *passwd,
