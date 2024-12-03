@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Get the current directory
-directory="src/char/txt"
+directory="conf"
 
 # Specify the old and new extensions (adjust as needed)
-old_extension="dsp_utf8"
-new_extension="dsp"
+old_extension="conf_utf8"
+new_extension="conf"
 
 # Loop through each file in the directory
 for file in "$directory"/*.$old_extension; do

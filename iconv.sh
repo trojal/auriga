@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Specify the input directory
-input_dir="src/char"
+input_dir="conf"
 
-# Find all files in the directory
-find "$input_dir" -type f -name "*.dsp" | xargs -I {} iconv -f CP932 -t UTF-8 "{}" -o "{}_utf8"
+# Find all files in the directory and print the filename before conversion
+find "$input_dir" -type f -name "*.conf" | while read file; do
+  echo "Converting: $file"
+  iconv -f CP932 -t UTF-8 "$file" -o "${file}_utf8"
+done
