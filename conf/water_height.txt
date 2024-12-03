@@ -1,7 +1,7 @@
-// …ê‚Ì‚‚³‚ðrsw‚ÖƒI[ƒo[ƒ‰ƒCƒh
+// æ°´å ´ã®é«˜ã•ã‚’rswã¸ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰
 //
-// —áj‚‚³‚ð®”‚Å‹Lq‚·‚é
+// ä¾‹ï¼‰é«˜ã•ã‚’æ•´æ•°ã§è¨˜è¿°ã™ã‚‹
 //     prontera.gat	-10
-// —áj‚‚³È—ªŽž‚ÍALL_WATERi‘S…êj‚Æ‚È‚é
+// ä¾‹ï¼‰é«˜ã•çœç•¥æ™‚ã¯ALL_WATERï¼ˆå…¨æ°´å ´ï¼‰ã¨ãªã‚‹
 //     izlude.gat
 //
