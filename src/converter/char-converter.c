@@ -93,7 +93,7 @@ static int char_sql_saveitem(struct item *item, int max, int id, int tableswitch
 	return 0;
 }
 
-// ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int mmo_char_fromstr(char *str, struct mmo_chardata *p)
 {
 	char tmp_str[3][256];
@@ -183,7 +183,7 @@ static int mmo_char_fromstr(char *str, struct mmo_chardata *p)
 	p->st.font                = tmp_int[51];
 
 	if(str[next]=='\n' || str[next]=='\r')
-		return 0;	// V‹Kƒf[ƒ^
+		return 0;	// æ–°è¦ãƒ‡ãƒ¼ã‚¿
 
 	next++;
 	for(i = 0; str[next] && str[next] != '\t'; i++) {
@@ -290,7 +290,7 @@ static int mmo_char_fromstr(char *str, struct mmo_chardata *p)
 	p->reg.global_num = (i < GLOBAL_REG_NUM)? i: GLOBAL_REG_NUM;
 	next++;
 	for(i=0;str[next] && str[next]!='\t';i++){
-		set=sscanf(str+next,"%d,%d%n",&tmp_int[0],&tmp_int[1],&len); // name ‚ÍŒã‚Å‰ğŒˆ‚·‚é
+		set=sscanf(str+next,"%d,%d%n",&tmp_int[0],&tmp_int[1],&len); // name ã¯å¾Œã§è§£æ±ºã™ã‚‹
 		if(set!=2)
 			return 1;
 		if(i < MAX_FRIEND) {
@@ -351,7 +351,7 @@ static int mmo_char_fromstr(char *str, struct mmo_chardata *p)
 	return 0;
 }
 
-// ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚ğ‘‚«‚İ
+// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int mmo_char_tosql(int char_id, struct mmo_charstatus *st)
 {
 	char sep = ' ';
@@ -457,7 +457,7 @@ static int mmo_char_tosql(int char_id, struct mmo_charstatus *st)
 	return 0;
 }
 
-// ƒLƒƒƒ‰ƒNƒ^[‰i‘±•Ï”‚ğ‘‚«‚İ
+// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼æ°¸ç¶šå¤‰æ•°ã‚’æ›¸ãè¾¼ã¿
 static int mmo_char_reg_tosql(int char_id, int num, struct global_reg *reg)
 {
 	char buf[256];
@@ -477,7 +477,7 @@ static int mmo_char_reg_tosql(int char_id, int num, struct global_reg *reg)
 	return 0;
 }
 
-// —F’B“o˜^
+// å‹é”ç™»éŒ²
 static int mmo_friend_tosql(int char_id, struct mmo_charstatus *st)
 {
 	int i;
@@ -494,7 +494,7 @@ static int mmo_friend_tosql(int char_id, struct mmo_charstatus *st)
 	return 0;
 }
 
-// ƒyƒbƒgƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ãƒšãƒƒãƒˆãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int pet_fromstr(char *str, struct s_pet *p)
 {
 	int s;
@@ -534,7 +534,7 @@ static int pet_fromstr(char *str, struct s_pet *p)
 	return 0;
 }
 
-// ƒyƒbƒgƒf[ƒ^‚ğ‘‚«‚İ
+// ãƒšãƒƒãƒˆãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int pet_tosql(int pet_id, struct s_pet *p)
 {
 	char t_name[64];
@@ -551,7 +551,7 @@ static int pet_tosql(int pet_id, struct s_pet *p)
 	return 0;
 }
 
-// ‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int storage_fromstr(char *str, struct storage *p)
 {
 	int tmp_int[12];
@@ -593,7 +593,7 @@ static int storage_fromstr(char *str, struct storage *p)
 	return 0;
 }
 
-// ƒp[ƒeƒBƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int party_fromstr(char *str,struct party *p)
 {
 	int i,j,s;
@@ -634,7 +634,7 @@ static int party_fromstr(char *str,struct party *p)
 	return 0;
 }
 
-// ƒp[ƒeƒBƒf[ƒ^‚ğ‘‚«‚İ
+// ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int party_tosql(struct party *p)
 {
 	int i = 0;
@@ -659,7 +659,7 @@ static int party_tosql(struct party *p)
 	return 0;
 }
 
-// ƒMƒ‹ƒhƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ã‚®ãƒ«ãƒ‰ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int guild_fromstr(char *str,struct guild *g)
 {
 	int i,j,c;
@@ -668,7 +668,7 @@ static int guild_fromstr(char *str,struct guild *g)
 	char tmp_str2[4097];	// binary data + 1
 	char *pstr;
 
-	// Šî–{ƒf[ƒ^
+	// åŸºæœ¬ãƒ‡ãƒ¼ã‚¿
 	if( sscanf(str,"%d\t%255[^\t]\t%255[^\t]\t%d,%d,%d,%d\t%255[^\t]\t%255[^\t]\t",
 		&tmp_int[0],tmp_str[0],tmp_str[1],
 		&tmp_int[1],&tmp_int[2],&tmp_int[3],&tmp_int[4],
@@ -693,10 +693,10 @@ static int guild_fromstr(char *str,struct guild *g)
 	g->mes1[59]   = '\0';
 	g->mes2[119]  = '\0';
 
-	for(j=0;j<6 && str!=NULL;j++)	// ˆÊ’uƒXƒLƒbƒv
+	for(j=0;j<6 && str!=NULL;j++)	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 		str=strchr(str+1,'\t');
 
-	// ƒƒ“ƒo[
+	// ãƒ¡ãƒ³ãƒãƒ¼
 	for(i=0;i<g->max_member && i<MAX_GUILD;i++){
 		struct guild_member *m = &g->member[i];
 		if( sscanf(str+1,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\t%255[^\t]\t",
@@ -717,11 +717,11 @@ static int guild_fromstr(char *str,struct guild *g)
 		strncpy(m->name,tmp_str[0],24);
 		m->name[23] = '\0';	// force \0 terminal
 
-		for(j=0;j<2 && str!=NULL;j++)	// ˆÊ’uƒXƒLƒbƒv
+		for(j=0;j<2 && str!=NULL;j++)	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 			str=strchr(str+1,'\t');
 	}
 
-	// –ğE
+	// å½¹è·
 	for(i=0;i<MAX_GUILDPOSITION;i++){
 		struct guild_position *p = &g->position[i];
 		if( sscanf(str+1,"%d,%d\t%255[^\t]\t",
@@ -733,18 +733,18 @@ static int guild_fromstr(char *str,struct guild *g)
 		strncpy(p->name,tmp_str[0],24);
 		p->name[23] = '\0';	// force \0 terminal
 
-		for(j=0;j<2 && str!=NULL;j++)	// ˆÊ’uƒXƒLƒbƒv
+		for(j=0;j<2 && str!=NULL;j++)	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 			str=strchr(str+1,'\t');
 	}
 
-	// ƒGƒ“ƒuƒŒƒ€
+	// ã‚¨ãƒ³ãƒ–ãƒ¬ãƒ 
 	tmp_int[1]=0;
 	if( sscanf(str+1,"%d,%d,%4096[^\t]\t",&tmp_int[0],&tmp_int[1],tmp_str2) < 3 )
 		return 1;
 	g->emblem_len = tmp_int[0];
 	g->emblem_id  = tmp_int[1];
 	if(g->emblem_len > sizeof(tmp_str2) / 2) {
-		// ƒGƒ“ƒuƒŒƒ€‚Ìƒf[ƒ^’·‚ª‘å‚«‚·‚¬‚é
+		// ã‚¨ãƒ³ãƒ–ãƒ¬ãƒ ã®ãƒ‡ãƒ¼ã‚¿é•·ãŒå¤§ãã™ãã‚‹
 		return 1;
 	}
 	for(i=0,pstr=tmp_str2;i<g->emblem_len;i++,pstr+=2){
@@ -757,12 +757,12 @@ static int guild_fromstr(char *str,struct guild *g)
 		if(c2>='A' && c2<='F')x2=c2-'A'+10;
 		g->emblem_data[i]=(x1<<4)|x2;
 	}
-	str=strchr(str+1,'\t');	// ˆÊ’uƒXƒLƒbƒv
+	str=strchr(str+1,'\t');	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 
-	// “¯–¿ƒŠƒXƒg
+	// åŒç›Ÿãƒªã‚¹ãƒˆ
 	if( sscanf(str+1,"%d\t",&c)< 1)
 		return 1;
-	str=strchr(str+1,'\t');	// ˆÊ’uƒXƒLƒbƒv
+	str=strchr(str+1,'\t');	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 	for(i=0;i<c && i<MAX_GUILDALLIANCE;i++){
 		struct guild_alliance *a = &g->alliance[i];
 		if( sscanf(str+1,"%d,%d\t%255[^\t]\t",
@@ -773,14 +773,14 @@ static int guild_fromstr(char *str,struct guild *g)
 		strncpy(a->name,tmp_str[0],24);
 		a->name[23] = '\0';	// force \0 terminal
 
-		for(j=0;j<2 && str!=NULL;j++)	// ˆÊ’uƒXƒLƒbƒv
+		for(j=0;j<2 && str!=NULL;j++)	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 			str=strchr(str+1,'\t');
 	}
 
-	// ’Ç•úƒŠƒXƒg
+	// è¿½æ”¾ãƒªã‚¹ãƒˆ
 	if( sscanf(str+1,"%d\t",&c)< 1)
 		return 1;
-	str=strchr(str+1,'\t');	// ˆÊ’uƒXƒLƒbƒv
+	str=strchr(str+1,'\t');	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 	for(i=0;i<c && i<MAX_GUILDEXPLUSION;i++){
 		struct guild_explusion *e = &g->explusion[i];
 		if( sscanf(str+1,"%d\t%255[^\t]\t%255[^\t]\t",
@@ -795,11 +795,11 @@ static int guild_fromstr(char *str,struct guild *g)
 		e->name[23] = '\0';
 		e->mes[39]  = '\0';
 
-		for(j=0;j<3 && str!=NULL;j++)	// ˆÊ’uƒXƒLƒbƒv
+		for(j=0;j<3 && str!=NULL;j++)	// ä½ç½®ã‚¹ã‚­ãƒƒãƒ—
 			str=strchr(str+1,'\t');
 	}
 
-	// ƒMƒ‹ƒhƒXƒLƒ‹
+	// ã‚®ãƒ«ãƒ‰ã‚¹ã‚­ãƒ«
 	for(i=0;i<MAX_GUILDSKILL;i++){
 		int n;
 		if( sscanf(str+1,"%d,%d ",&tmp_int[0],&tmp_int[1]) <2)
@@ -812,7 +812,7 @@ static int guild_fromstr(char *str,struct guild *g)
 		str=strchr(str+1,' ');
 	}
 
-	// VƒMƒ‹ƒhƒXƒLƒ‹‚ÖˆÚs
+	// æ–°ã‚®ãƒ«ãƒ‰ã‚¹ã‚­ãƒ«ã¸ç§»è¡Œ
 	for(i=0;i<MAX_GUILDSKILL;i++)
 		g->skill[i].id=GUILD_SKILLID+i;
 
@@ -821,7 +821,7 @@ static int guild_fromstr(char *str,struct guild *g)
 	return 0;
 }
 
-// ƒMƒ‹ƒhƒf[ƒ^‚ğ‘‚«‚İ
+// ã‚®ãƒ«ãƒ‰ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int guild_tosql(struct guild* g)
 {
 	int  i;
@@ -830,7 +830,7 @@ static int guild_tosql(struct guild* g)
 	char *p = tmp_sql;
 	char sep;
 
-	// Šî–{ƒf[ƒ^
+	// åŸºæœ¬ãƒ‡ãƒ¼ã‚¿
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild` WHERE `guild_id`='%d'", g->guild_id);
 
 	p += sprintf(
@@ -849,7 +849,7 @@ static int guild_tosql(struct guild* g)
 
 	sqldbs_simplequery(&mysql_handle, tmp_sql);
 
-	// ƒƒ“ƒo[
+	// ãƒ¡ãƒ³ãƒãƒ¼
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_member` WHERE `guild_id`='%d'", g->guild_id);
 
 	p  = tmp_sql;
@@ -876,7 +876,7 @@ static int guild_tosql(struct guild* g)
 		sqldbs_simplequery(&mysql_handle, tmp_sql);
 	}
 
-	// –ğE
+	// å½¹è·
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_position` WHERE `guild_id`='%d'", g->guild_id);
 
 	p  = tmp_sql;
@@ -897,7 +897,7 @@ static int guild_tosql(struct guild* g)
 		sqldbs_simplequery(&mysql_handle, tmp_sql);
 	}
 
-	// “¯–¿ƒŠƒXƒg
+	// åŒç›Ÿãƒªã‚¹ãƒˆ
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_alliance` WHERE `guild_id`='%d'", g->guild_id);
 
 	p  = tmp_sql;
@@ -921,7 +921,7 @@ static int guild_tosql(struct guild* g)
 		sqldbs_simplequery(&mysql_handle, tmp_sql);
 	}
 
-	// ’Ç•úƒŠƒXƒg
+	// è¿½æ”¾ãƒªã‚¹ãƒˆ
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_expulsion` WHERE `guild_id`='%d'", g->guild_id);
 
 	p  = tmp_sql;
@@ -944,7 +944,7 @@ static int guild_tosql(struct guild* g)
 		sqldbs_simplequery(&mysql_handle, tmp_sql);
 	}
 
-	// ƒMƒ‹ƒhƒXƒLƒ‹
+	// ã‚®ãƒ«ãƒ‰ã‚¹ã‚­ãƒ«
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_skill` WHERE `guild_id`='%d'", g->guild_id);
 
 	p  = tmp_sql;
@@ -969,7 +969,7 @@ static int guild_tosql(struct guild* g)
 	return 0;
 }
 
-// ƒMƒ‹ƒhéƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ã‚®ãƒ«ãƒ‰åŸãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int guildcastle_fromstr(char *str,struct guild_castle *gc)
 {
 	int tmp_int[18];
@@ -1001,7 +1001,7 @@ static int guildcastle_fromstr(char *str,struct guild_castle *gc)
 	return 0;
 }
 
-// ƒMƒ‹ƒhéƒf[ƒ^‚ğ‘‚«‚İ
+// ã‚®ãƒ«ãƒ‰åŸãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int guildcastle_tosql(struct guild_castle *gc)
 {
 	sqldbs_query(&mysql_handle, "DELETE FROM `guild_castle` WHERE `castle_id` = '%d'", gc->castle_id);
@@ -1017,7 +1017,7 @@ static int guildcastle_tosql(struct guild_castle *gc)
 	return 0;
 }
 
-// ƒMƒ‹ƒh‘qŒÉƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ã‚®ãƒ«ãƒ‰å€‰åº«ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int gstorage_fromstr(char *str,struct guild_storage *p)
 {
 	int tmp_int[12];
@@ -1059,7 +1059,7 @@ static int gstorage_fromstr(char *str,struct guild_storage *p)
 	return 0;
 }
 
-// ƒzƒ€ƒ“ƒNƒ‹ƒXƒf[ƒ^‚ğ•¶š—ñ‚©‚ç•ÏŠ·
+// ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’æ–‡å­—åˆ—ã‹ã‚‰å¤‰æ›
 static int homun_fromstr(char *str,struct mmo_homunstatus *h)
 {
 	int i,s,next,set,len;
@@ -1138,7 +1138,7 @@ static int homun_fromstr(char *str,struct mmo_homunstatus *h)
 		h->intimate = 100000;
 
 	if(str[next]=='\n' || str[next]=='\r')
-		return 0;	// ƒXƒLƒ‹î•ñ‚È‚µ
+		return 0;	// ã‚¹ã‚­ãƒ«æƒ…å ±ãªã—
 
 	next++;
 	for(i=0;str[next] && str[next]!='\t';i++){
@@ -1159,7 +1159,7 @@ static int homun_fromstr(char *str,struct mmo_homunstatus *h)
 	return 0;
 }
 
-// ƒzƒ€ƒ“ƒNƒ‹ƒXƒf[ƒ^‚ğ‘‚«‚İ
+// ãƒ›ãƒ ãƒ³ã‚¯ãƒ«ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
 static int homun_tosql(int homun_id, struct mmo_homunstatus *h)
 {
 	int i;
