@@ -27,7 +27,7 @@
 
 #include "../login.h"
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 bool account_txt_init(void);
 void account_txt_sync(void);
 const struct mmo_account* account_txt_account_load_num(int account_id);
@@ -41,7 +41,7 @@ void account_txt_set_default_configvalue(void);
 int account_txt_config_read_sub(const char *w1,const char *w2);
 void display_conf_warnings_txt(void);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define login_init             account_txt_init
 #define login_sync             account_txt_sync
 #define login_final            account_txt_final

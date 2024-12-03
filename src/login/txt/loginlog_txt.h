@@ -22,11 +22,11 @@
 #ifndef _LOGINLOG_TXT_H_
 #define _LOGINLOG_TXT_H_
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int loginlog_log_txt(const char *fmt, ...);
 int loginlog_config_read_txt(const char *str, const char *str2);
 
-// ƒGƒCƒŠƒAƒX
+// ã‚¨ã‚¤ãƒªã‚¢ã‚¹
 #define loginlog_log loginlog_log_txt
 #define loginlog_config_read loginlog_config_read_txt
 

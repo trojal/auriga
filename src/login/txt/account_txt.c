@@ -46,7 +46,7 @@ static int  account_id_count = START_ACCOUNT_NUM;
 static struct mmo_account *auth_dat = NULL;
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚ÌƒfƒtƒHƒ‹ƒgİ’è
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¨­å®š
  *------------------------------------------
  */
 void account_txt_set_default_configvalue(void)
@@ -55,7 +55,7 @@ void account_txt_set_default_configvalue(void)
 }
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹“Ç
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­è¾¼
  *------------------------------------------
  */
 int account_txt_config_read_sub(const char* w1,const char* w2)
@@ -77,7 +77,7 @@ int account_txt_config_read_sub(const char* w1,const char* w2)
 }
 
 /*==========================================
- * İ’èƒtƒ@ƒCƒ‹‚ÌŒx
+ * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®è­¦å‘Š
  *------------------------------------------
  */
 void display_conf_warnings_txt(void)
@@ -86,7 +86,7 @@ void display_conf_warnings_txt(void)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgID‚©‚çauth_dat‚ÌIndex‚ğ•Ô‚·
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIDã‹ã‚‰auth_datã®Indexã‚’è¿”ã™
  *------------------------------------------
  */
 static int login_id2idx(int account_id)
@@ -110,20 +110,20 @@ static int login_id2idx(int account_id)
 
 #ifdef TXT_JOURNAL
 // ==========================================
-// ƒAƒJƒEƒ“ƒgƒf[ƒ^‚ÌƒWƒƒ[ƒiƒ‹‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh—pƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿ã®ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 // ------------------------------------------
 static int login_journal_rollforward( int key, void* buf, int flag )
 {
 	int idx = login_id2idx( key );
 
-	// ”O‚Ì‚½‚ßƒ`ƒFƒbƒN
+	// å¿µã®ãŸã‚ãƒã‚§ãƒƒã‚¯
 	if( flag == JOURNAL_FLAG_WRITE && key != ((struct mmo_account*)buf)->account_id )
 	{
 		printf("login_journal: key != account_id !\n");
 		return 0;
 	}
 
-	// ƒf[ƒ^‚Ì’u‚«Š·‚¦
+	// ãƒ‡ãƒ¼ã‚¿ã®ç½®ãæ›ãˆ
 	if( idx >= 0 )
 	{
 		if( flag == JOURNAL_FLAG_DELETE ) {
@@ -135,12 +135,12 @@ static int login_journal_rollforward( int key, void* buf, int flag )
 		return 1;
 	}
 
-	// ’Ç‰Á
+	// è¿½åŠ 
 	if( flag != JOURNAL_FLAG_DELETE )
 	{
 		if(auth_num>=auth_max)
 		{
-			// ƒƒ‚ƒŠ‚ª‘«‚è‚È‚¢‚È‚çŠg’£
+			// ãƒ¡ãƒ¢ãƒªãŒè¶³ã‚Šãªã„ãªã‚‰æ‹¡å¼µ
 			auth_max += 256;
 			auth_dat = (struct mmo_account *)aRealloc(auth_dat, sizeof(auth_dat[0]) * auth_max);
 			memset(auth_dat + (auth_max - 256), '\0', 256 * sizeof(auth_dat[0]));
@@ -160,7 +160,7 @@ void account_txt_sync(void);
 #endif
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
  *------------------------------------------
  */
 static bool account_txt_read(void)
@@ -191,7 +191,7 @@ static bool account_txt_read(void)
 			if(i < 5) {
 				i = -1;
 				if(sscanf(line, "%d\t%%newid%%%n", &account_id, &i) == 1 && i > 0 && (line[i] == '\n' || line[i] == '\r')) {
-					if(account_id > END_ACCOUNT_NUM + 1) {	// newid‚Í+1‚Ü‚Å‹–‰Â
+					if(account_id > END_ACCOUNT_NUM + 1) {	// newidã¯+1ã¾ã§è¨±å¯
 						printf("reading %s error : invalid ID %d\n", account_filename, account_id);
 						continue;
 					}
@@ -222,11 +222,11 @@ static bool account_txt_read(void)
 			auth_dat[auth_num].pass[23]      = '\0';
 			auth_dat[auth_num].lastlogin[23] = '\0';
 
-			// ƒf[ƒ^‚ª‘«‚è‚È‚¢‚Æ‚«‚Ì•âŠ®
+			// ãƒ‡ãƒ¼ã‚¿ãŒè¶³ã‚Šãªã„ã¨ãã®è£œå®Œ
 			auth_dat[auth_num].logincount = (i >= 6)? logincount: 1;
 			auth_dat[auth_num].state      = (i >= 7)? state: 0;
 
-			// ƒ[ƒ‹ƒAƒhƒŒƒX‚ª‚ ‚ê‚Î“Ç‚İ‚Ş
+			// ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ãŒã‚ã‚Œã°èª­ã¿è¾¼ã‚€
 			if(n > 0)
 			{
 				int n2 = 0;
@@ -243,7 +243,7 @@ static bool account_txt_read(void)
 				}
 			}
 
-			// ’a¶“ú‚ª‚ ‚ê‚Î“Ç‚İ‚Ş
+			// èª•ç”Ÿæ—¥ãŒã‚ã‚Œã°èª­ã¿è¾¼ã‚€
 			if(n > 0)
 			{
 				int n2 = 0;
@@ -256,7 +256,7 @@ static bool account_txt_read(void)
 				}
 			}
 
-			// ‘Sƒ[ƒ‹ƒh‹¤—LƒAƒJƒEƒ“ƒg•Ï” ( ## •Ï” ) “Ç‚İ‚İ
+			// å…¨ãƒ¯ãƒ¼ãƒ«ãƒ‰å…±æœ‰ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå¤‰æ•° ( ## å¤‰æ•° ) èª­ã¿è¾¼ã¿
 			if(n > 0) {
 				int j, v;
 				char str[256];
@@ -283,7 +283,7 @@ static bool account_txt_read(void)
 				struct mmo_account tmp;
 				int k = auth_num;
 
-				// ‰½ŒÌ‚©ƒAƒJƒEƒ“ƒgID‚Ì¸‡‚É•À‚ñ‚Å‚È‚¢ê‡‚Í‘}“üƒ\[ƒg‚·‚é
+				// ä½•æ•…ã‹ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIDã®æ˜‡é †ã«ä¸¦ã‚“ã§ãªã„å ´åˆã¯æŒ¿å…¥ã‚½ãƒ¼ãƒˆã™ã‚‹
 				while(--k > 0 && account_id < auth_dat[k-1].account_id);
 
 				memcpy(&tmp, &auth_dat[auth_num], sizeof(auth_dat[0]));
@@ -298,19 +298,19 @@ static bool account_txt_read(void)
 #ifdef TXT_JOURNAL
 	if( login_journal_enable )
 	{
-		// ƒWƒƒ[ƒiƒ‹ƒf[ƒ^‚Ìƒ[ƒ‹ƒtƒHƒ[ƒh
+		// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰
 		if( journal_load( &login_journal, sizeof(struct mmo_account), login_journal_file ) )
 		{
 			int c = journal_rollforward( &login_journal, login_journal_rollforward );
 
 			printf("login_journal: roll-forward (%d)\n", c );
 
-			// ƒ[ƒ‹ƒtƒHƒ[ƒh‚µ‚½‚Ì‚ÅAtxt ƒf[ƒ^‚ğ•Û‘¶‚·‚é ( journal ‚àV‹Kì¬‚³‚ê‚é)
+			// ãƒ­ãƒ¼ãƒ«ãƒ•ã‚©ãƒ¯ãƒ¼ãƒ‰ã—ãŸã®ã§ã€txt ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ ( journal ã‚‚æ–°è¦ä½œæˆã•ã‚Œã‚‹)
 			account_txt_sync();
 		}
 		else
 		{
-			// ƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+			// ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 			journal_final( &login_journal );
 			journal_create( &login_journal, sizeof(struct mmo_account), login_journal_cache, login_journal_file );
 		}
@@ -321,7 +321,7 @@ static bool account_txt_read(void)
 }
 
 /*==========================================
- * “¯Šú
+ * åŒæœŸ
  *------------------------------------------
  */
 void account_txt_sync(void)
@@ -342,7 +342,7 @@ void account_txt_sync(void)
 		if(auth_dat[i].account_id < 0)
 			continue;
 		if(!auth_dat[i].userid[0]) {
-			// íœ‚³‚ê‚Ä‚¢‚é
+			// å‰Šé™¤ã•ã‚Œã¦ã„ã‚‹
 			continue;
 		}
 
@@ -362,7 +362,7 @@ void account_txt_sync(void)
 #ifdef TXT_JOURNAL
 	if( login_journal_enable )
 	{
-		// ƒRƒ~ƒbƒg‚µ‚½‚Ì‚ÅƒWƒƒ[ƒiƒ‹‚ğV‹Kì¬‚·‚é
+		// ã‚³ãƒŸãƒƒãƒˆã—ãŸã®ã§ã‚¸ãƒ£ãƒ¼ãƒŠãƒ«ã‚’æ–°è¦ä½œæˆã™ã‚‹
 		journal_final( &login_journal );
 		journal_create( &login_journal, sizeof(struct mmo_account), login_journal_cache, login_journal_file );
 	}
@@ -371,7 +371,7 @@ void account_txt_sync(void)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgID‚©‚çƒAƒJƒEƒ“ƒgî•ñ‚ğƒ[ƒh
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIDã‹ã‚‰ã‚¢ã‚«ã‚¦ãƒ³ãƒˆæƒ…å ±ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct mmo_account* account_txt_account_load_num(int account_id)
@@ -382,7 +382,7 @@ const struct mmo_account* account_txt_account_load_num(int account_id)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒg–¼‚©‚çƒAƒJƒEƒ“ƒgî•ñ‚ğƒ[ƒh
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆåã‹ã‚‰ã‚¢ã‚«ã‚¦ãƒ³ãƒˆæƒ…å ±ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct mmo_account* account_txt_account_load_str(const char *account_id)
@@ -401,7 +401,7 @@ const struct mmo_account* account_txt_account_load_str(const char *account_id)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgIndex‚©‚çƒAƒJƒEƒ“ƒgî•ñ‚ğƒ[ƒh
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIndexã‹ã‚‰ã‚¢ã‚«ã‚¦ãƒ³ãƒˆæƒ…å ±ã‚’ãƒ­ãƒ¼ãƒ‰
  *------------------------------------------
  */
 const struct mmo_account* account_txt_account_load_idx(int idx)
@@ -410,7 +410,7 @@ const struct mmo_account* account_txt_account_load_idx(int idx)
 }
 
 /*==========================================
- * ƒZ[ƒu
+ * ã‚»ãƒ¼ãƒ–
  *------------------------------------------
  */
 bool account_txt_account_save(struct mmo_account *account)
@@ -432,7 +432,7 @@ bool account_txt_account_save(struct mmo_account *account)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgíœ
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå‰Šé™¤
  *------------------------------------------
  */
 bool account_txt_account_delete(int account_id)
@@ -441,7 +441,7 @@ bool account_txt_account_delete(int account_id)
 
 	if(idx >= 0) {
 		memset(&auth_dat[idx], 0, sizeof(struct mmo_account));
-		auth_dat[idx].account_id = account_id;	// ƒAƒJƒEƒ“ƒgID‚ÍˆÛ
+		auth_dat[idx].account_id = account_id;	// ã‚¢ã‚«ã‚¦ãƒ³ãƒˆIDã¯ç¶­æŒ
 #ifdef TXT_JOURNAL
 		if( login_journal_enable )
 			journal_write( &login_journal, account_id, NULL );
@@ -452,7 +452,7 @@ bool account_txt_account_delete(int account_id)
 }
 
 /*==========================================
- * ƒAƒJƒEƒ“ƒgì¬
+ * ã‚¢ã‚«ã‚¦ãƒ³ãƒˆä½œæˆ
  *------------------------------------------
  */
 bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
@@ -464,7 +464,7 @@ bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
 	loginlog_log("auth new %s %s %s", tmpstr, account->userid, account->pass);
 
 	if(!account->userid[0]) {
-		// ‹ó•¶š‚Í’e‚­
+		// ç©ºæ–‡å­—ã¯å¼¾ã
 		return false;
 	}
 	for(j = 0; j < 24 && (c = account->userid[j]); j++) {
@@ -479,7 +479,7 @@ bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
 	account->birth[6]   = '\0';
 
 	if(account_txt_account_load_str(account->userid)) {
-		// “¯‚¶ƒAƒJƒEƒ“ƒg‚ªŠù‚É‘¶İ
+		// åŒã˜ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãŒæ—¢ã«å­˜åœ¨
 		return false;
 	}
 	if(auth_num >= auth_max) {
@@ -491,7 +491,7 @@ bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
 		account_id_count++;
 	}
 	if(account_id_count > END_ACCOUNT_NUM) {
-		// —˜—p‰Â”\‚ÈIDãŒÀ‚ğ’´‚¦‚½
+		// åˆ©ç”¨å¯èƒ½ãªIDä¸Šé™ã‚’è¶…ãˆãŸ
 		printf("account_new : ID is over END_ACCOUNT_NUM %d\n", END_ACCOUNT_NUM);
 		return false;
 	}
@@ -514,7 +514,7 @@ bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
 }
 
 /*==========================================
- * I—¹
+ * çµ‚äº†
  *------------------------------------------
  */
 void account_txt_final(void)
@@ -531,7 +531,7 @@ void account_txt_final(void)
 }
 
 /*==========================================
- * ‰Šú‰»
+ * åˆæœŸåŒ–
  *------------------------------------------
  */
 bool account_txt_init(void)

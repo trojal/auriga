@@ -30,7 +30,7 @@
 static char loginlog_filename[1024] = "log/login.log";
 
 /*==========================================
- * ログ記録
+ * 繝ｭ繧ｰ險倬鹸
  *------------------------------------------
  */
 int loginlog_log_txt(const char *fmt, ...)
@@ -54,7 +54,7 @@ int loginlog_log_txt(const char *fmt, ...)
 }
 
 /*==========================================
- * 設定ファイル読込
+ * 險ｭ螳壹ヵ繧｡繧､繝ｫ隱ｭ霎ｼ
  *------------------------------------------
  */
 int loginlog_config_read_txt(const char *w1, const char *w2)
