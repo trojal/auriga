@@ -24,7 +24,7 @@
 
 #include "mmo.h"
 
-#define MAX_CHAR_SERVERS 5
+#define MAX_CHAR_SERVERS 1
 
 #define PASSWORDENC		3	// 暗号化パスワードに対応させるとき定義する
 							// passwordencryptのときは1、
