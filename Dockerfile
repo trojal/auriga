@@ -46,7 +46,8 @@ COPY --from=build /auriga_server/sql-files ./sql-files
 COPY --from=build /auriga_server/conf ./conf
 COPY --from=build /auriga_server/db ./db
 # COPY --from=build /auriga_server/data ./data
-COPY --from=build /auriga_server/log ./log
+# log/ is git-ignored (not in the build context): start with an empty one instead of copying local logs.
+RUN mkdir -p log
 COPY --from=build /auriga_server/script ./script
 COPY --from=build /auriga_server/script_en ./script_en
 COPY --from=build /auriga_server/save ./save
