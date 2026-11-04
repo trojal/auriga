@@ -2,7 +2,7 @@
 # Normally built by Tekton Pipelines-as-Code (.tekton/push.yaml) on pushes to master; titanro-ci[bot] pins the digest in
 # TitanRO/sysops argo/test-season/auriga-server, and Argo CD deploys it. The line above is the manual fallback.
 
-FROM alpine:latest AS build
+FROM alpine:3.24 AS build
 
 RUN apk add --no-cache \
 	mariadb-dev \
@@ -30,12 +30,17 @@ RUN make clean \
 	&& make
 
 
-FROM alpine:latest
+FROM alpine:3.24
 
 RUN apk add --no-cache \
 	mariadb-connector-c \
 	libgcc \
-	pcre-dev
+	pcre-dev \
+	ca-certificates
+# MariaDB Connector/C >= 3.4 verifies the server's TLS certificate by default; DigitalOcean managed MySQL is signed
+# by its project CA (doctl databases get-ca <id>; valid until 2030-08). Without it the servers exit after connecting.
+COPY certs/do-mysql-ca.crt /usr/local/share/ca-certificates/do-mysql-ca.crt
+RUN update-ca-certificates
 
 WORKDIR /auriga_server
 RUN delgroup ping \
