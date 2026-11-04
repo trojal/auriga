@@ -1,4 +1,4 @@
-# doctl registry login --expiry-seconds 3600 && docker build -t registry.digitalocean.com/titanro-docr/auriga-game . && docker image push registry.digitalocean.com/titanro-docr/auriga-game
+# doctl registry login --expiry-seconds 3600 && docker build -t registry.digitalocean.com/titanro-nyc/auriga-game . && docker image push registry.digitalocean.com/titanro-nyc/auriga-game
 # Normally built by Tekton Pipelines-as-Code (.tekton/push.yaml) on pushes to master; titanro-ci[bot] pins the digest in
 # TitanRO/sysops argo/test-season/auriga-server, and Argo CD deploys it. The line above is the manual fallback.
 
