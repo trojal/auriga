@@ -19,7 +19,7 @@
 				"ms-azuretools.vscode-docker"
 			],
 			// Set *default* container specific settings.json values on container create.
-			"settings": { 
+			"settings": {
 				"sqltools.connections": [{
 					"name": "JitanRO development database",
 					"driver": "MariaDB",
@@ -29,8 +29,9 @@
 					"database": "ragnarok",
 					"username": "ragnarok",
 					"password": "ragnarok"
-				}]
-			},
+				}],
+				"files.insertFinalNewline": true
+			}
 		}
 	},
 
@@ -41,14 +42,14 @@
 	// "postCreateCommand": "tools/ci/travis.sh importdb ragnarok ragnarok ragnarok 127.0.0.1",
 
 	// Use 'postStartCommand' to run commands when the container is started.
-	"postStartCommand": "doctl auth init --access-token $DO_TOKEN && doctl kubernetes cluster kubeconfig save titanro-nyc1-vpcnative && doctl registry login --expiry-seconds 86400",
+	"postStartCommand": "doctl auth init --access-token $DO_TOKEN && doctl registry login --expiry-seconds 86400",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "devuser",
 
 	"overrideCommand": false,
 
-	"remoteEnv": { 
+	"remoteEnv": {
 		"DO_TOKEN": "${localEnv:DEVCONTAINER_DO_TOKEN}",
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	}
