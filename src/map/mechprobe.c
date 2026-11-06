@@ -13,7 +13,8 @@
  * - min: one normal attack with every atn_rand() returning 0 (utils.h, mechprobe_rand);
  * - sample: N normal attacks with the normal generator seeded from the fixture: hit, crit and dodge counts, and the
  *   min/max/mean damage of normal and critical hits;
- * - attacks: the same min and sample for each skill in `attack=`, with its cast time and after-cast delay.
+ * - attacks: the same min and sample for each skill in `attack=`, with its cast time and after-cast delay;
+ * - mob_attacks: the monster attacking the player, for each `mob_attack=` skill (0: its normal attack).
  * Then the server exits. The fixtures and results formats are in tools/mechharness/PROBE.md in TitanRO/titanro2.
  *
  * src/map's Makefile compiles every .c file, so on its own (and in builds without MECH_PROBE) this file is empty.
@@ -41,6 +42,8 @@ struct mechprobe_fixture {
 	int skill_count;
 	struct mechprobe_pair attacks[MECHPROBE_MAX_LIST];
 	int attack_count;
+	struct mechprobe_pair mob_attacks[MECHPROBE_MAX_LIST];
+	int mob_attack_count;
 	int mob;
 	int samples;
 	unsigned int seed;
@@ -102,6 +105,11 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		} else if(strcmp(key, "attack") == 0) {
 			if(!mechprobe_parse_pairs(value, f->attacks, &f->attack_count)) {
 				snprintf(error, error_size, "bad attack: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "mob_attack") == 0) {
+			if(!mechprobe_parse_pairs(value, f->mob_attacks, &f->mob_attack_count)) {
+				snprintf(error, error_size, "bad mob_attack: %s", value);
 				return 0;
 			}
 		}
@@ -267,12 +275,12 @@ static void mechprobe_dist_json(FILE *out, const struct mechprobe_dist *d)
 		fprintf(out, "{\"n\":%lld,\"min\":%lld,\"max\":%lld,\"mean\":%.3f}", d->n, d->min, d->max, (double)d->sum / (double)d->n);
 }
 
-// `"min":{...},"sample":{...}` for one attack (normal attack: skill 0) of sd on md.
-static void mechprobe_measure(FILE *out, struct map_session_data *sd, struct mob_data *md, int type, int skill_id, int skill_lv, const struct mechprobe_fixture *f)
+// `"min":{...},"sample":{...}` for one attack (normal attack: skill 0) of src on target.
+static void mechprobe_measure(FILE *out, struct block_list *src, struct block_list *target, int type, int skill_id, int skill_lv, const struct mechprobe_fixture *f)
 {
 	struct Damage d;
 	mechprobe_rng_min = 1;
-	d = battle_calc_attack(type, &sd->bl, &md->bl, skill_id, skill_lv, 0);
+	d = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
 	mechprobe_rng_min = 0;
 	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d}",
 		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_);
@@ -282,7 +290,7 @@ static void mechprobe_measure(FILE *out, struct map_session_data *sd, struct mob
 		int i;
 		mechprobe_srand(f->seed);
 		for(i = 0; i < f->samples; i++) {
-			struct Damage s = battle_calc_attack(type, &sd->bl, &md->bl, skill_id, skill_lv, 0);
+			struct Damage s = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
 			const char *kind = mechprobe_hit_kind(&s);
 			if(strcmp(kind, "miss") == 0) misses++;
 			else if(strcmp(kind, "lucky") == 0) lucky++;
@@ -342,7 +350,7 @@ static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 	if(md != NULL) {
 		int i;
 		fprintf(out, ",");
-		mechprobe_measure(out, sd, md, BF_WEAPON, 0, 0, f);
+		mechprobe_measure(out, &sd->bl, &md->bl, BF_WEAPON, 0, 0, f);
 		if(f->attack_count > 0) {
 			fprintf(out, ",\"attacks\":[");
 			for(i = 0; i < f->attack_count; i++) {
@@ -352,7 +360,23 @@ static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 					type == BF_MAGIC ? "magic" : type == BF_MISC ? "misc" : type == BF_WEAPON ? "weapon" : "none",
 					skill_castfix(&sd->bl, id, skill_get_cast(id, lv), skill_get_fixedcast(id, lv)), skill_delayfix(&sd->bl, id, lv));
 				if(type)
-					mechprobe_measure(out, sd, md, type, id, lv, f);
+					mechprobe_measure(out, &sd->bl, &md->bl, type, id, lv, f);
+				else
+					fprintf(out, "\"min\":null");
+				fprintf(out, "}");
+			}
+			fprintf(out, "]");
+		}
+		// The monster attacking the player: its normal attack (skill 0) and skills.
+		if(f->mob_attack_count > 0) {
+			fprintf(out, ",\"mob_attacks\":[");
+			for(i = 0; i < f->mob_attack_count; i++) {
+				int id = f->mob_attacks[i].a, lv = f->mob_attacks[i].b;
+				int type = id == 0 ? BF_WEAPON : skill_get_skill_type(id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+				fprintf(out, "%s{\"skill\":%d,\"lv\":%d,\"type\":\"%s\",", i ? "," : "", id, lv,
+					type == BF_MAGIC ? "magic" : type == BF_MISC ? "misc" : type == BF_WEAPON ? "weapon" : "none");
+				if(type)
+					mechprobe_measure(out, &md->bl, &sd->bl, type, id, lv, f);
 				else
 					fprintf(out, "\"min\":null");
 				fprintf(out, "}");
