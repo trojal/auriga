@@ -26,8 +26,11 @@ RUN chown -R 999:999 /auriga_server
 
 USER appuser
 
+# MECH_PROBE=1 builds the mechanics probe into map-server (src/map/mechprobe.c) for TitanRO's mechanics harness;
+# the deployed image is built without it.
+ARG MECH_PROBE=
 RUN make clean \
-	&& make
+	&& make ${MECH_PROBE:+MECH_PROBE=1}
 
 
 FROM alpine:3.24

@@ -254,3 +254,30 @@ int atn_int31_randommt(void)
 }
 
 #endif	// ifdef RANDOMMT
+
+#ifdef MECH_PROBE
+// The generator atn_rand() uses in normal builds, for mechprobe_rand() (utils.h).
+int mechprobe_rng_min = 0;
+
+int mechprobe_rand(void)
+{
+	if(mechprobe_rng_min)
+		return 0;
+#if defined(RANDOMSTD2X)
+	return rand() ^ (rand()>>8);
+#elif defined(RANDOM64)
+	return atn_int31_random64();
+#else
+	return rand();
+#endif
+}
+
+void mechprobe_srand(unsigned int seed)
+{
+#if defined(RANDOM64)
+	atn_int31_srandom64(seed);
+#else
+	srand(seed);
+#endif
+}
+#endif

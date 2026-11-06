@@ -3075,6 +3075,12 @@ void do_final(void)
  * map鯖初期化の大元
  *------------------------------------------
  */
+#ifdef MECH_PROBE
+int mechprobe_run(const char *in_path, const char *out_path);	// mechprobe.c (in battle.c)
+static char mechprobe_in[1024] = "";
+static char mechprobe_out[1024] = "";
+#endif
+
 int do_init(int argc,char *argv[])
 {
 	int i;
@@ -3111,6 +3117,16 @@ int do_init(int argc,char *argv[])
 			strncpy(msg_conf_filename, argv[i+1], sizeof(msg_conf_filename));
 			msg_conf_filename[sizeof(msg_conf_filename)-1] = '\0';
 		}
+#ifdef MECH_PROBE
+		else if(strcmp(argv[i], "--mech-probe") == 0) {
+			strncpy(mechprobe_in, argv[i+1], sizeof(mechprobe_in));
+			mechprobe_in[sizeof(mechprobe_in)-1] = '\0';
+		}
+		else if(strcmp(argv[i], "--mech-probe-out") == 0) {
+			strncpy(mechprobe_out, argv[i+1], sizeof(mechprobe_out));
+			mechprobe_out[sizeof(mechprobe_out)-1] = '\0';
+		}
+#endif
 	}
 
 	if(map_config_read(map_conf_filename)) {
@@ -3179,6 +3195,12 @@ int do_init(int argc,char *argv[])
 	map_pk_noteleport(map_pk_noteleport_flag);
 	map_field_setting();
 	npc_event_do_oninit();	// npcのOnInitイベント実行
+
+#ifdef MECH_PROBE
+	// Mechanics probe: run the fixtures now that every DB is loaded, then exit.
+	if(mechprobe_in[0] != '\0')
+		exit(mechprobe_run(mechprobe_in, mechprobe_out));
+#endif
 
 	// for httpd support
 	do_init_httpd();
