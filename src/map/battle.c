@@ -11943,3 +11943,9 @@ int do_final_battle(void)
 	// nothing to do
 	return 0;
 }
+
+#ifdef MECH_PROBE
+// Mechanics probe (`make MECH_PROBE=1`): included here so it can call battle_calc_attack().
+#define MECHPROBE_IN_BATTLE_C
+#include "mechprobe.c"
+#endif

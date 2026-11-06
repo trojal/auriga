@@ -151,6 +151,11 @@ CFLAGS += -DDYNAMIC_SC_DATA
 # enable journal system (text mode only)
 CFLAGS += -DTXT_ONLY -DTXT_JOURNAL
 
+# mechanics probe for TitanRO's mechanics harness (src/map/mechprobe.c): make MECH_PROBE=1
+ifdef MECH_PROBE
+    CFLAGS += -DMECH_PROBE
+endif
+
 # account regist MailAddress
 #CFLAGS += -DAC_MAIL
 

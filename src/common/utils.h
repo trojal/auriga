@@ -299,6 +299,18 @@ AURIGA_STATIC_ASSERT(sizeof(uint64) == 8,  "uint64 size must be 8 bytes");
 #	define ATN_RAND_MAX	RAND_MAX
 #endif
 
+#ifdef MECH_PROBE
+	// Mechanics probe (src/map/mechprobe.c, built with `make MECH_PROBE=1`): every random roll goes through
+	// mechprobe_rand(), which returns 0 while mechprobe_rng_min is set and the generator above otherwise.
+	int mechprobe_rand(void);
+	void mechprobe_srand(unsigned int seed);
+	extern int mechprobe_rng_min;
+#	undef atn_rand
+#	undef atn_srand
+#	define atn_rand()	mechprobe_rand()
+#	define atn_srand(x)	mechprobe_srand(x)
+#endif
+
 
 // =====================
 // ポインタ・数値キャスト
