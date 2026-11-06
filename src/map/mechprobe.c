@@ -258,8 +258,15 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 	status_calc_pc(sd, 0);
 	// Buffs and consumables: the server's own skill and item code, on the probe player (their timers never run:
 	// the probe exits after its fixtures).
-	for(i = 0; i < f->buff_count; i++)
-		skill_castend_nodamage_id(&sd->bl, &sd->bl, f->buffs[i].a, f->buffs[i].b, gettick(), 0);
+	// (each skill's status effect, as its cast starts it: the cast itself needs the player on the map)
+	for(i = 0; i < f->buff_count; i++) {
+		int type = GetSkillStatusChangeTable(f->buffs[i].a);
+		if(type < 0) {
+			snprintf(error, error_size, "skill %d has no status effect", f->buffs[i].a);
+			return sd;
+		}
+		status_change_start(&sd->bl, type, f->buffs[i].b, 0, 0, 0, skill_get_time(f->buffs[i].a, f->buffs[i].b), 0);
+	}
 	for(i = 0; i < f->use_count; i++) {
 		int n;
 		if(itemdb_exists(f->use[i].a) == NULL) {
