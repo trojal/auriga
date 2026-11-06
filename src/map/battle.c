@@ -2181,14 +2181,13 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src,struct blo
 			cri = cri * battle_config.enemy_critical_rate / 100;
 			if(cri < 1) cri = 1;
 		}
-		if(src_sd) {
+		if(src_sd) {	// bCriticalRaceRate: the crit chance +rate% (it can go down to 0, as in jRO)
 			if(target_sd && !pc_isdoram(target_sd))
-				cri += cri * (100 + src_sd->critical_race_rate[RCT_DEMIHUMAN] + src_sd->critical_race_rate[RCT_PLAYER_HUMAN]) / 100;
+				cri = cri * (100 + src_sd->critical_race_rate[RCT_DEMIHUMAN] + src_sd->critical_race_rate[RCT_PLAYER_HUMAN]) / 100;
 			else if(target_sd && pc_isdoram(target_sd))
-				cri += cri * (100 + src_sd->critical_race_rate[RCT_PLAYER_DORAM]) / 100;
+				cri = cri * (100 + src_sd->critical_race_rate[RCT_PLAYER_DORAM]) / 100;
 			else if(t_race < RCT_ALL)
-				cri += cri * (100 + src_sd->critical_race_rate[t_race]) / 100;
-			if(cri < 1) cri = 1;
+				cri = cri * (100 + src_sd->critical_race_rate[t_race]) / 100;
 		}
 		if(t_sc && t_sc->data[SC_SLEEP].timer != -1)
 			cri <<= 1;		// 睡眠中はクリティカルが倍に

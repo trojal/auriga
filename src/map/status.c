@@ -6184,7 +6184,7 @@ int status_readdb(void)
 			if(line[0]=='/' && line[1]=='/')
 				continue;
 			memset(split,0,sizeof(split));
-			for(j=0,p=line;j<9+WT_MAX && p;j++){
+			for(j=0,p=line;j<10+WT_MAX && p;j++){	// 9 fields, WT_MAX weapons and the shield
 				split[j]=p;
 				p=strchr(p,',');
 				if(p) *p++=0;
