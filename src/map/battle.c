@@ -2175,7 +2175,7 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src,struct blo
 #ifdef PRE_RENEWAL
 		cri -= status_get_luk(target) * 3;	// preクリティカル率計算
 #else
-		cri -= status_get_luk(target) / 5 * 10;	// REクリティカル率計算
+		cri -= status_get_lv(target) / 15 + status_get_luk(target) * 2;	// REクリティカル率計算
 #endif
 		if(src_md && battle_config.enemy_critical_rate != 100) {
 			cri = cri * battle_config.enemy_critical_rate / 100;
