@@ -233,7 +233,7 @@ static int homun_hungry(int tid,unsigned int tick,int id,void *data)
 
 	if(battle_config.enable_hom_autofeed > 0) {
 		if(sd->hd->status.hungry <= 25 && 
-			(battle_config.enable_hom_autofeed == 1 && sd->status.autofeed&2) || battle_config.enable_hom_autofeed >= 2
+			((battle_config.enable_hom_autofeed == 1 && sd->status.autofeed&2) || battle_config.enable_hom_autofeed >= 2)
 		) {
 			homun_food(sd);
 		}
@@ -464,6 +464,9 @@ int homun_calc_status(struct homun_data *hd)
 				hd->speed = hd->speed*5/3;
 				hd->agi -= subagi;
 				hd->dex -= subdex;
+			}
+			if(hd->sc.data[SC_CREATINGSTAR].timer != -1) {	// 創星の書
+				hd->speed = hd->speed*100/90;	//速度減少率は要調査
 			}
 		}
 	}
@@ -766,7 +769,7 @@ static int homun_data_init(struct map_session_data *sd)
 		hd->hungry_cry_timer = add_timer(tick+20*1000,homun_hungry_cry,sd->bl.id,NULL);
 	else
 		hd->hungry_cry_timer = -1;
-	hd->view_size = 0;
+	hd->effect = -1;
 
 	return 0;
 }
@@ -789,12 +792,12 @@ int homun_callhom(struct map_session_data *sd)
 		if(!homun_data_init(sd) && sd->bl.prev != NULL)
 		{
 			if(sd->hd->status.hp <= 0) {	// 死亡
-				clif_skill_fail(sd,AM_CALLHOMUN,0,0,0);
+				clif_skill_fail(sd,AM_CALLHOMUN,SKILLFAIL_FAILED,0,0);
 				unit_free(&sd->hd->bl,0);
 				return 0;
 			}
 			map_addblock(&sd->hd->bl);
-			mob_ai_hard_spawn( &sd->hd->bl, 1 );
+			mob_ai_hard_spawn(&sd->hd->bl);
 			clif_spawnhom(sd->hd);
 			clif_send_homdata(sd,0,0);
 			clif_send_homstatus(sd,1);
@@ -811,7 +814,7 @@ int homun_callhom(struct map_session_data *sd)
 		int idx = pc_search_inventory(sd,7142);	// エンブリオ所持を確認
 		sd->status.homun_id = 0;
 		if(idx < 0) {
-			clif_skill_fail(sd,AM_CALLHOMUN,0,0,0);
+			clif_skill_fail(sd,AM_CALLHOMUN,SKILLFAIL_FAILED,0,0);
 			return 0;
 		}
 		pc_delitem(sd,idx,1,0,1);	// エンブリオ消去
@@ -898,11 +901,11 @@ int homun_revive(struct map_session_data *sd,int skilllv)
 
 	if(sd->status.homun_id > 0 && sd->status.homun_id == sd->hom.homun_id) {
 		if(sd->hom.hp > 0) {
-			clif_skill_fail(sd,AM_RESURRECTHOMUN,0,0,0);
+			clif_skill_fail(sd,AM_RESURRECTHOMUN,SKILLFAIL_FAILED,0,0);
 			return 0;
 		}
 	} else {
-		clif_skill_fail(sd,AM_RESURRECTHOMUN,0,0,0);
+		clif_skill_fail(sd,AM_RESURRECTHOMUN,SKILLFAIL_FAILED,0,0);
 		return 0;
 	}
 	// 蘇生時HP = 死亡時HP（≦0）+ MAXHP * (Skill Lv * 0.2)
@@ -1091,7 +1094,7 @@ int homun_morphembryo(struct map_session_data *sd)
 		hd->status.incubate = 2;
 		homun_save_data(sd);
 		unit_free(&hd->bl,0);
-		if(ret = pc_additem(sd,&tmp_item,1)) {
+		if(ret = pc_additem(sd,&tmp_item,1,false)) {
 			clif_additem(sd,0,0,ret);
 		}
 	}

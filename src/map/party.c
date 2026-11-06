@@ -952,7 +952,7 @@ int party_loot_share(struct party *p, struct map_session_data *sd, struct item *
 		}
 		while(c > 0) {	// ランダム選択
 			i = atn_rand()%c;
-			if(pc_additem(psd[i],item_data,item_data->amount)) {
+			if(pc_additem(psd[i],item_data,item_data->amount,false)) {
 				// 取得失敗
 				psd[i] = psd[c-1];
 				c--;
@@ -970,7 +970,7 @@ int party_loot_share(struct party *p, struct map_session_data *sd, struct item *
 	}
 
 	// 分配できないので元のsdに渡す
-	return pc_additem(sd,item_data,item_data->amount);
+	return pc_additem(sd,item_data,item_data->amount,false);
 }
 
 /*==========================================

@@ -41,10 +41,8 @@ static char party_txt[1024] = "save/party.txt";
 static int party_newid=100;
 
 #ifdef TXT_JOURNAL
-static int party_journal_enable = 1;
+static struct journal_config party_journal_cfg = { 1, "./save/party.journal", 1000 };
 static struct journal party_journal;
-static char party_journal_file[1024] = "./save/party.journal";
-static int party_journal_cache = 1000;
 #endif
 
 /*==========================================
@@ -54,14 +52,10 @@ static int party_journal_cache = 1000;
 int partydb_txt_config_read_sub(const char *w1,const char *w2)
 {
 	if( strcmpi(w1,"party_txt") == 0 )
-		strncpy(party_txt, w2, sizeof(party_txt) - 1);
+		auriga_strlcpy(party_txt, w2, sizeof(party_txt));
 #ifdef TXT_JOURNAL
-	else if( strcmpi(w1,"party_journal_enable") == 0 )
-		party_journal_enable = atoi( w2 );
-	else if( strcmpi(w1,"party_journal_file") == 0 )
-		strncpy( party_journal_file, w2, sizeof(party_journal_file) - 1 );
-	else if( strcmpi(w1,"party_journal_cache_interval") == 0 )
-		party_journal_cache = atoi( w2 );
+	else if(journal_config_read(&party_journal_cfg, "party_journal", w1, w2)) {
+	}
 #endif
 	else
 		return 0;
@@ -79,12 +73,12 @@ static int party_tostr(char *str, struct party *p)
 
 	nullpo_retr(1, p);
 
-	len = sprintf(str, "%d\t%s\t%d,%d\t",
+	len = snprintf(str, 8192, "%d\t%s\t%d,%d\t",
 		p->party_id, p->name, p->exp, p->item);
 
 	for(i = 0; i < MAX_PARTY; i++) {
 		struct party_member *m = &p->member[i];
-		len += sprintf(str + len, "%d,%d,%d\t%s\t",
+		len += snprintf(str + len, 8192 - (size_t)len, "%d,%d,%d\t%s\t",
 			m->account_id, m->char_id, m->leader, ((m->account_id > 0)? m->name: "NoMember"));
 	}
 	return 0;
@@ -110,7 +104,7 @@ static int party_fromstr(char *str, struct party *p)
 		return 1;
 
 	p->party_id = tmp_int[0];
-	strncpy(p->name, tmp_str, 24);
+	auriga_strlcpy(p->name, tmp_str, sizeof(p->name));
 	p->name[23] = '\0';	// force \0 terminal
 	p->exp  = tmp_int[1];
 	p->item = tmp_int[2];
@@ -138,7 +132,7 @@ static int party_fromstr(char *str, struct party *p)
 		m->account_id = tmp_int[0];
 		m->char_id    = tmp_int[1];
 		m->leader     = tmp_int[2];
-		strncpy(m->name, tmp_str, 24);
+		auriga_strlcpy(m->name, tmp_str, sizeof(m->name));
 		m->name[23] = '\0';	// force \0 terminal
 
 		for(j = 0; j < 2 && str != NULL; j++)
@@ -229,25 +223,11 @@ static bool partydb_txt_read(void)
 	}
 
 #ifdef TXT_JOURNAL
-	if( party_journal_enable )
+	if( journal_setup( &party_journal, &party_journal_cfg, sizeof(struct party), party_journal_rollforward, "inter: party_journal" ) )
 	{
-		// ジャーナルデータのロールフォワード
-		if( journal_load( &party_journal, sizeof(struct party), party_journal_file ) )
-		{
-			int c = journal_rollforward( &party_journal, party_journal_rollforward );
-
-			printf("int_party: journal: roll-forward (%d)\n", c );
-
-			// ロールフォワードしたので、txt データを保存する ( journal も新規作成される)
-			partydb_txt_sync();
-		}
-		else
-		{
-			// ジャーナルを新規作成する
-			journal_final( &party_journal );
-			journal_create( &party_journal, sizeof(struct party), party_journal_cache, party_journal_file );
-		}
+		partydb_txt_sync();
 	}
+
 #endif
 
 	return ret;
@@ -285,11 +265,10 @@ int partydb_txt_sync(void)
 	lock_fclose(fp, party_txt, &lock);
 
 #ifdef TXT_JOURNAL
-	if( party_journal_enable )
+	if( party_journal_cfg.enable )
 	{
 		// コミットしたのでジャーナルを新規作成する
-		journal_final( &party_journal );
-		journal_create( &party_journal, sizeof(struct party), party_journal_cache, party_journal_file );
+		journal_recreate( &party_journal, &party_journal_cfg, sizeof(struct party) );
 	}
 #endif
 
@@ -351,7 +330,7 @@ bool partydb_txt_save(struct party *p2)
 	}
 	memcpy(p1, p2, sizeof(struct party));
 #ifdef TXT_JOURNAL
-	if( party_journal_enable )
+	if( party_journal_cfg.enable )
 		journal_write( &party_journal, p1->party_id, p1 );
 #endif
 	return true;
@@ -369,7 +348,7 @@ bool partydb_txt_delete(int party_id)
 		numdb_erase(party_db, p->party_id);
 		aFree(p);
 #ifdef TXT_JOURNAL
-		if( party_journal_enable )
+		if( party_journal_cfg.enable )
 			journal_write( &party_journal, party_id, NULL );
 #endif
 	}
@@ -387,7 +366,7 @@ bool partydb_txt_new(struct party *p)
 	p->party_id = party_newid++;
 	numdb_insert(party_db, p->party_id, p);
 #ifdef TXT_JOURNAL
-	if( party_journal_enable )
+	if( party_journal_cfg.enable )
 		journal_write( &party_journal, p->party_id, p );
 #endif
 	return true;
@@ -412,7 +391,7 @@ void partydb_txt_final(void)
 		numdb_final(party_db, partydb_txt_final_sub);
 
 #ifdef TXT_JOURNAL
-	if( party_journal_enable )
+	if( party_journal_cfg.enable )
 	{
 		journal_final( &party_journal );
 	}

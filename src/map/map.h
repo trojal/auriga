@@ -38,7 +38,7 @@
 #define MAX_EVENTQUEUE	2
 #define MAX_EVENTTIMER	32
 #define NATURAL_HEAL_INTERVAL 500
-#define MAX_LEVEL 255
+#define MAX_LEVEL 260
 #define MAX_WALKPATH 32
 #define MAX_DROP_PER_MAP 8
 #define MAX_WIS_REFUSAL 14
@@ -49,9 +49,10 @@
 #define MAX_SUB_SKILL_DAMAGE	10	// スキル耐性を強化できる数
 #define MAX_SKILL_BLOW  5		// スキルを吹き飛ばし化
 #define MAX_SKILL_HEAL_UP	7	// スキルの回復量を強化できる数
-#define MAX_SKILL_FIXCASTRATE	10	// スキルの固定詠唱時間を減らせる数
 #define MAX_SKILL_ADDCASTRATE	10 	//スキルの詠唱時間を減らせる数
+#define MAX_SKILL_FIXCASTRATE	10	// スキルの固定詠唱時間を減らせる数
 #define MAX_SKILL_ADDCASTTIME	10 	//スキルの詠唱時間を減らせる数
+#define MAX_SKILL_ADDFIXCASTTIME	10 	//スキルの固定詠唱時間を減らせる数
 #define MAX_SKILL_ADDCOOLDOWN	10 	//スキルのクールタイムを減らせる数
 #define MAX_SKILL_ADDEFF	10	// スキルで追加状態異常化できる数
 #define MAX_SKILL_ADDSPCOST	10 	//スキルの消費SPを増やせる数
@@ -68,12 +69,16 @@
 #define MAX_ELE_LEVEL 4		// 最大属性Lv
 #define MAX_SIZE_FIX 3		// サイズの種類
 #define MAX_FREEZE_SPELL 7	// リーディングスペルブックで保持できるスキル数
-#define MAX_SPIRITBALL 15	// 気功・コインの最大数
+#define MAX_SPIRITBALL 15	// 気功の最大数
+#define MAX_COIN 10			// コインの最大数
 #define MAX_BUYINGSTORE_COUNT 5	// 購買露店最大アイテム登録数
 #define MAX_BOOKING_MEMO_LENGTH 37	// パーティーブッキングの募集メモ最大文字数
 #define MAX_ELEMENTBALL 10	// 影狼・朧の球体最大数
 #define MAX_MEMORIAL_MAP 200	// メモリアルダンジョンマップ最大生成数
 #define MAX_CLOAKEDNPC 50	// クローキング状態NPC最大保存数
+#define MAX_STELLAR_MARKS 5 // 星の印の最大保存数
+#define MAX_SOULENERGY 20	// ソウルエナジー最大数
+#define MAX_BALL 5	// 球体最大数
 
 #ifndef DEFAULT_AUTOSAVE_INTERVAL
 #define DEFAULT_AUTOSAVE_INTERVAL 60*1000
@@ -114,17 +119,19 @@ enum {
 	RCT_INSECT,
 	RCT_FISH,
 	RCT_DEMON,
-	RCT_HUMAN,
+	RCT_DEMIHUMAN,
 	RCT_ANGEL,
 	RCT_DRAGON,
+	RCT_PLAYER_HUMAN,
+	RCT_PLAYER_DORAM,
 	RCT_BOSS,
 	RCT_NONBOSS,
-	RCT_PLAYER,
 	RCT_MAX,
 };
 
-// 全種族用
-#define RCT_ALL	10
+#define RCT_ALL 10		// 全種族用
+#define RCT_HUMAN 14	// 人間形用
+#define RCT_PLAYER 15	// プレイヤー用
 
 // 属性
 enum {
@@ -380,6 +387,17 @@ struct pet_db;
 struct item_data;
 struct square;
 
+// ステータスデータ
+struct status_data {
+	int max_hp;
+	short str,agi,vit,int_,dex,luk;
+	short pow,sta,wis,spl,con,crt;
+	int atk,matk;
+	int def,mdef;
+	int hit,flee;
+	int patk,smatk,res,mres,hplus,crate;
+};
+
 struct map_session_data {
 	struct block_list bl;
 	struct unit_data  ud;
@@ -473,7 +491,7 @@ struct map_session_data {
 	char npc_str[256];
 	int chatID;
 	short race;
-	short view_size;
+	short effect;
 	unsigned int booking_id;
 	struct quest_data quest[MAX_QUESTLIST];
 	int questlist;
@@ -519,6 +537,11 @@ struct map_session_data {
 	struct {
 		short id;
 		short lv;
+	} skill_4thdance;
+
+	struct {
+		short id;
+		short lv;
 	} skill_clone;
 
 	struct {
@@ -552,11 +575,12 @@ struct map_session_data {
 	struct pc_base_job s_class;
 
 	short weapontype1,weapontype2;	// ～WT_MAX
-	int paramb[6],paramc[6],parame[6],paramcard[6];
+	int paramb[12],paramc[12],parame[12],paramcard[12];
 	int hit,flee,flee2,aspd,amotion,dmotion;
 	int watk,watk2,atkmods[MAX_SIZE_FIX];
 	int fix_damage;
 	int def,def2,mdef,mdef2,critical,matk1,matk2;
+	int patk,smatk,res,mres,hplus,crate;
 	int atk_ele,def_ele,star,overrefine;
 	int castrate,fixcastrate,fixcastrate_,hprate,sprate,dsprate;
 	int addele[ELE_MAX],addrace[RCT_MAX],addenemy[EMY_MAX],addsize[MAX_SIZE_FIX];
@@ -576,6 +600,7 @@ struct map_session_data {
 	int ignore_def_ele[ELE_MAX],ignore_def_race[RCT_MAX],ignore_def_enemy[EMY_MAX];
 	int ignore_def_ele_[ELE_MAX],ignore_def_race_[RCT_MAX],ignore_def_enemy_[EMY_MAX];
 	int ignore_mdef_ele[ELE_MAX],ignore_mdef_race[RCT_MAX],ignore_mdef_enemy[EMY_MAX];
+	int ignore_res_race[RCT_MAX],ignore_mres_race[RCT_MAX];
 	int magic_addele[ELE_MAX],magic_addrace[RCT_MAX],magic_addenemy[EMY_MAX],magic_addsize[MAX_SIZE_FIX],magic_addeff[MAX_EFF_TYPE];
 	int magic_subrace[RCT_MAX],magic_subsize[MAX_SIZE_FIX];
 	int perfect_hit,get_zeny_num,get_zeny_num2;
@@ -588,9 +613,13 @@ struct map_session_data {
 	short add_def_class_count,add_mdef_class_count;
 	short add_def_classid[MAX_BONUS_CLASS],add_mdef_classid[MAX_BONUS_CLASS];
 	int add_def_classrate[MAX_BONUS_CLASS],add_mdef_classrate[MAX_BONUS_CLASS];
-	short monster_drop_item_count;
-	int monster_drop_itemid[MAX_BONUS_ADDDROP];
-	int monster_drop_race[MAX_BONUS_ADDDROP],monster_drop_itemrate[MAX_BONUS_ADDDROP];
+	struct {
+		int itemid;
+		int target;
+		int rate;
+		char type;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+	} add_drop[MAX_BONUS_ADDDROP];
+	short add_drop_count;
 	int double_add_rate,speed_add_rate,aspd_add_rate,perfect_hit_add, get_zeny_add_num,get_zeny_add_num2;
 	short splash_range,splash_add_range;
 #ifndef PRE_RENEWAL
@@ -604,7 +633,7 @@ struct map_session_data {
 		short value;
 	} hp_drain, sp_drain, hp_drain_, sp_drain_;
 
-	int short_weapon_damage_return,long_weapon_damage_return,magic_damage_return;
+	int short_weapon_damage_return,long_weapon_damage_return,magic_damage_return,sub_return_damage;
 	int weapon_coma_ele[ELE_MAX],weapon_coma_race[RCT_MAX];
 	int weapon_coma_ele2[ELE_MAX],weapon_coma_race2[RCT_MAX];
 	short break_weapon_rate,break_armor_rate;
@@ -615,8 +644,8 @@ struct map_session_data {
 	int addreveff[MAX_EFF_TYPE];
 	int addreveff_flag;
 	short sp_gain_value, hp_gain_value;
-	int critical_race[RCT_ALL];
-	int critical_race_rate[RCT_ALL];
+	int critical_race[RCT_MAX];
+	int critical_race_rate[RCT_MAX];
 	int exp_rate[RCT_ALL],job_rate[RCT_ALL];
 	short hp_drain_rate_race[RCT_ALL],sp_drain_rate_race[RCT_ALL];
 	short hp_drain_value_race[RCT_ALL],sp_drain_value_race[RCT_ALL];
@@ -710,6 +739,7 @@ struct map_session_data {
 	} hp_vanish, sp_vanish;
 
 	short short_weapon_damege_rate,long_weapon_damege_rate;
+	short hit_weapon_damage_rate;
 
 	short itemheal_rate[MAX_ITEMGROUP];
 	int   use_itemid;
@@ -724,7 +754,7 @@ struct map_session_data {
 
 	struct {
 		short num;
-		int timer[MAX_SPIRITBALL];
+		int timer[MAX_COIN];
 	} coin;
 
 	struct {
@@ -732,6 +762,16 @@ struct map_session_data {
 		short ele;
 		int timer[MAX_ELEMENTBALL];
 	} elementball;
+
+	struct {
+		short num;
+		int timer[MAX_SOULENERGY];
+	} soulenergy;
+
+	struct {
+		short num;
+		int timer[MAX_BALL];
+	} ball;
 
 	int reg_num;
 	struct script_reg *reg;
@@ -854,6 +894,12 @@ struct map_session_data {
 	} skill_addcast;
 
 	struct {
+		short id[MAX_SKILL_ADDFIXCASTTIME];
+		int time[MAX_SKILL_ADDFIXCASTTIME];
+		short count;
+	} skill_addfixcast;
+
+	struct {
 		short id[MAX_SKILL_ADDCOOLDOWN];
 		int time[MAX_SKILL_ADDCOOLDOWN];
 		short count;
@@ -885,6 +931,7 @@ struct map_session_data {
 	short hotkey_set;
 	char hotkey_rotate[MAX_HOTKEYS_TAB];
 	int shop_point;
+	int lapine_upgrade_id;
 
 #if PACKETVER >= 20150513
 	struct {
@@ -902,9 +949,9 @@ struct map_session_data {
 
 	int freeze_sp_slot;
 	int freeze_sp_skill[MAX_FREEZE_SPELL];
-	int overheat;			// 魔導ギア加熱度（暫定）
 	int shadowform_id;		// シャドウフォーム
 	int c_marker[3];		// クリムゾンマーカー
+	int stellar_mark[MAX_STELLAR_MARKS]; // 星の印
 	int deposit;			// 預金額
 	unsigned int cryptKey;
 };
@@ -924,6 +971,7 @@ struct npc_item_list {
 
 struct npc_data {
 	struct block_list bl;
+	struct unit_data  ud;
 	short n;
 	int class_;
 	short dir,speed;
@@ -931,10 +979,18 @@ struct npc_data {
 	char exname[50];
 	char position[24];
 	int chat_id;
+	int group_id;
+	char title[24];
 	unsigned int option;
-	short view_size;
+	short effect;
 	char flag;
 	unsigned char subtype;
+	char click_able;
+	unsigned char sex;
+	short hair,hair_color,clothes_color;
+	short head_top,head_mid,head_bottom,robe,style;
+	unsigned int progressbar_tick, progressbar_color;
+	unsigned char progressbar_active;
 	union {
 		struct {
 			struct script_code *script;
@@ -946,6 +1002,7 @@ struct npc_data {
 			int label_list_num;
 			struct npc_label_list *label_list;
 			int src_id;
+			short moveable;
 		} scr;
 		struct npc_item_list shop_item[1];
 		struct {
@@ -982,7 +1039,8 @@ struct mob_data {
 		unsigned angry : 1;
 		unsigned norandomwalk : 1;
 	} state;
-	short view_size;
+	struct status_data st;
+	short effect;
 	short speed;
 	int hp;
 	int target_id,attacked_id,attacked_players;
@@ -993,6 +1051,8 @@ struct mob_data {
 	short lootitem_count;
 	short move_fail_count;
 	int guild_id;
+	int group_id;
+	char title[24];
 	int deletetimer;
 	short min_chase;
 	short skillidx;
@@ -1003,7 +1063,8 @@ struct mob_data {
 	short recallmob_count;
 	short recallcount;
 	short guardup_lv;
-	int ai_pc_count; // 近くにいるPCの数
+	short is_pcnear;					// 近くにPCが居るかどうか
+	unsigned int last_pcneartime;		// 近くにPCが居た最後の時間
 	struct mob_data *ai_next, *ai_prev; // まじめAI用のリンクリスト
 	int areanpc_id;
 };
@@ -1031,7 +1092,7 @@ struct pet_data {
 	int class_;
 	short dir,speed;
 	char name[24];
-	short view_size;
+	short effect;
 	int equip;
 	int target_id;
 	unsigned int next_walktime,last_thinktime;
@@ -1054,7 +1115,7 @@ struct homun_data {
 	struct mmo_homunstatus status;
 	short dir;
 	short speed;
-	short view_size;
+	short effect;
 	int invincible_timer;
 	int hp_sub,sp_sub;
 	int max_hp,max_sp;
@@ -1084,7 +1145,7 @@ struct merc_data {
 	char name[24];
 	short dir;
 	short speed;
-	short view_size;
+	short effect;
 	int invincible_timer;
 	int base_level;
 	int hp_sub,sp_sub;
@@ -1115,7 +1176,7 @@ struct elem_data {
 	char name[24];
 	short dir;
 	short speed;
-	short view_size;
+	short effect;
 	int invincible_timer;
 	int base_level;
 	int max_hp,max_sp;
@@ -1204,6 +1265,7 @@ struct map_data {
 		int nojump;
 		int nocostume;
 		int town;
+		int damage_rate;
 	} flag;
 	struct point save;
 	struct npc_data *npc[MAX_NPC_PER_MAP];
@@ -1260,11 +1322,12 @@ enum {
 	SP_MDEF2,SP_HIT,SP_FLEE1,SP_FLEE2,SP_CRITICAL,SP_ASPD,SP_36,SP_JOBLEVEL,	// 48-55
 	SP_UPPER,SP_PARTNER,SP_CART,SP_DIE_COUNTER,SP_JOB,	// 56-60
 	SP_CARTINFO=99,	// 99
+	SP_PSTR=103,SP_PAGI,SP_PVIT,SP_PINT,SP_PDEX,SP_PLUK,	//103-108
 	SP_MERC_FLEE=165,SP_MERC_KILLCOUNT=189,SP_MERC_FAME=190,
 
 	SP_POW=219,SP_STA,SP_WIS,SP_SPL,SP_CON,SP_CRT,	// 219-224
-    SP_PATK,SP_SMATK,SP_RES,SP_MRES,SP_HPLUS,SP_CRATE,	// 225-230
-    SP_T_STATUSPOINT,SP_AP,SP_MAXAP,	// 231-233
+	SP_PATK,SP_SMATK,SP_RES,SP_MRES,SP_HPLUS,SP_CRATE,	// 225-230
+	SP_TSTATUSPOINT,SP_AP,SP_MAXAP,	// 231-233
 	SP_UPOW=247,SP_USTA,SP_UWIS,SP_USPL,SP_UCON,SP_UCRT,	// 247-252
 
 	// globalreg save 500-
@@ -1317,7 +1380,9 @@ enum {
 	SP_ADDEFFMAGIC,SP_DEF_ELEENEMY,SP_ADD_SP_COST,SP_FIXCASTRATE,SP_ADD_SKILL_SUBHEAL_RATE,   // 1171-1175
 	SP_ADD_CAST_TIME,SP_ADD_COOL_DOWN,SP_ADD_ELEWEAPONDAMAGE_RATE,SP_ADD_ELEMAGICDAMAGE_RATE,   // 1176-1179
 	SP_HP_RATE_PENALTY_TIME,SP_SP_RATE_PENALTY_TIME,SP_MAGIC_ADD_GROUP,SP_MAGIC_ADDSIZE,	// 1180-1183
-	SP_ALLSTATUS,SP_SUB_SKILL_DAMAGE_RATE,	// 1184-1185
+	SP_ALLSTATUS,SP_SUB_SKILL_DAMAGE_RATE,SP_ADD_FIXCAST_TIME,SP_SUB_RETURN_DAMAGE,	// 1184-1187
+	SP_ADD_MONSTERRACE_DROP_ITEM,SP_ADD_MONSTERELE_DROP_ITEM,SP_ADD_MONSTERID_DROP_ITEM,SP_ADD_MONSTERGROUP_DROP_ITEM,	// 1188-1191
+	SP_IGNORE_RES_RACE,SP_IGNORE_MRES_RACE,	// 1192-1193
 
 	// special state 2000-
 	SP_RESTART_FULL_RECORVER=2000,SP_NO_CASTCANCEL,SP_NO_SIZEFIX,SP_NO_MAGIC_DAMAGE,SP_NO_WEAPON_DAMAGE,SP_NO_GEMSTONE,	// 2000-2005
@@ -1376,7 +1441,27 @@ enum {
 	OPT_WEAPON_INDESTRUCTIBLE,OPT_BODY_INDESTRUCTIBLE,	// 185-186
 	OPT_MDAMAGE_SIZE_SMALL_TARGET,OPT_MDAMAGE_SIZE_MIDIUM_TARGET,OPT_MDAMAGE_SIZE_LARGE_TARGET,	// 187-189
 	OPT_MDAMAGE_SIZE_SMALL_USER,OPT_MDAMAGE_SIZE_MIDIUM_USER,OPT_MDAMAGE_SIZE_LARGE_USER,	// 190-192
+	OPT_ATTR_TOLERACE_ALLELE=193,	/* 194-205 reserved */
+	OPT_RACE_TOLERACE_PLAYER_HUMAN=206,OPT_RACE_TOLERACE_PLAYER_DORAM,	// 206-207
+	OPT_RACE_DAMAGE_PLAYER_HUMAN,OPT_RACE_DAMAGE_PLAYER_DORAM,	// 208-209
+	OPT_RACE_MDAMAGE_PLAYER_HUMAN,OPT_RACE_MDAMAGE_PLAYER_DORAM,	// 210-211
+	OPT_RACE_CRI_PLAYER_HUMAN,OPT_RACE_CRI_PLAYER_DORAM,	// 212-213
+	OPT_RACE_IGNORE_DEF_PLAYER_HUMAN,OPT_RACE_IGNORE_DEF_PLAYER_DORAM,	// 214-215
+	OPT_RACE_IGNORE_MDEF_PLAYER_HUMAN,OPT_RACE_IGNORE_MDEF_PLAYER_DORAM,	// 216-217
+	OPT_REFLECT_DAMAGE_PERCENT,	// 218
+	OPT_MELEE_ATTACK_DAMAGE_TARGET,OPT_MELEE_ATTACK_DAMAGE_USER,	// 219-220
+	OPT_ADDSKILLMDAMAGE_NOTHING,OPT_ADDSKILLMDAMAGE_WATER,OPT_ADDSKILLMDAMAGE_GROUND,OPT_ADDSKILLMDAMAGE_FIRE,	// 221-224
+	OPT_ADDSKILLMDAMAGE_WIND,OPT_ADDSKILLMDAMAGE_POISON,OPT_ADDSKILLMDAMAGE_SAINT,OPT_ADDSKILLMDAMAGE_DARKNESS,	// 225-228
+	OPT_ADDSKILLMDAMAGE_TELEKINESIS,OPT_ADDSKILLMDAMAGE_UNDEAD,OPT_ADDSKILLMDAMAGE_ALL,	// 229-231
+	OPT_ADDEXPPERCENT_KILLRACE_NOTHING,OPT_ADDEXPPERCENT_KILLRACE_UNDEAD,OPT_ADDEXPPERCENT_KILLRACE_ANIMAL,	// 232-234
+	OPT_ADDEXPPERCENT_KILLRACE_PLANT,OPT_ADDEXPPERCENT_KILLRACE_INSECT,OPT_ADDEXPPERCENT_KILLRACE_FISHS,	// 235-237
+	OPT_ADDEXPPERCENT_KILLRACE_DEVIL,OPT_ADDEXPPERCENT_KILLRACE_HUMAN,OPT_ADDEXPPERCENT_KILLRACE_ANGEL,	// 238-240
+	OPT_ADDEXPPERCENT_KILLRACE_DRAGON,OPT_ADDEXPPERCENT_KILLRACE_ALL,	// 241-242
+	OPT_POWAMOUNT,OPT_SPLAMOUNT,OPT_STAAMOUNT,OPT_WISAMOUNT,OPT_CONAMOUNT,OPT_CRTAMOUNT,	// 243-248
+	OPT_PATKAMOUNT,OPT_SMATKAMOUNT,OPT_RESAMOUNT,OPT_MRESAMOUNT,OPT_HEAL_PLUS,OPT_CRITICAL_RATE,	// 249-254
+	OPT_DAMAGE_HIT_TARGET,	// 255
 };
+
 
 // マップフラグ用定数
 enum {
@@ -1385,14 +1470,14 @@ enum {
 	MF_GVG,MF_GVG_NOPARTY,MF_GVG_NIGHTMAREDROP,MF_NOZENYPENALTY,MF_NOTRADE,MF_NOSKILL,MF_NOABRA,MF_NODROP,	// 13-20
 	MF_SNOW,MF_FOG,MF_SAKURA,MF_LEAVES,MF_RAIN,MF_FIREWORKS,MF_CLOUD1,MF_CLOUD2,MF_CLOUD3,MF_BASEEXP_RATE,	// 21-30
 	MF_JOBEXP_RATE,MF_PK,MF_PK_NOPARTY,MF_PK_NOGUILD,MF_PK_NIGHTMAREDROP,MF_PK_NOCALCRANK,MF_NOICEWALL,	// 31-37
-	MF_TURBO,MF_NOREVIVE,MF_NOCOMMAND,MF_NOJUMP,MF_NOCOSTUME,MF_TOWN,							// 38-43
+	MF_TURBO,MF_NOREVIVE,MF_NOCOMMAND,MF_NOJUMP,MF_NOCOSTUME,MF_TOWN,MF_DAMAGE_RATE,						// 38-44
 };
 
 // CELL
 #define CELL_MASK     0x0f
 #define CELL_NPC      0x80	// NPCセル
 #define CELL_BASILICA 0x40	// BASILICAセル
-
+#define CELL_MOVENPC  0x20	// NPCセル2
 /*
  * map_getcell()で使用されるフラグ
  */
@@ -1406,6 +1491,7 @@ typedef enum {
 	CELL_GETTYPE,			// セルタイプを返す
 	CELL_CHKNPC      = 0x10,	// タッチタイプのNPC(セルタイプ0x80フラグ)
 	CELL_CHKBASILICA,		// バジリカ(セルタイプ0x40フラグ)
+	CELL_CHKMOVENPC,
 } cell_t;
 
 // map_setcell()で使用されるフラグ
@@ -1413,6 +1499,8 @@ enum {
 	CELL_SETNPC      = 0x10,	// タッチタイプのNPCをセット
 	CELL_SETBASILICA,		// バジリカをセット
 	CELL_CLRBASILICA,		// バジリカをクリア
+	CELL_SETMOVENPC,
+	CELL_CLRMOVENPC,
 };
 
 struct chat_data {

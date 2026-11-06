@@ -38,10 +38,8 @@ static char homun_txt[1024] = "save/homun.txt";
 static int homun_newid = 100;
 
 #ifdef TXT_JOURNAL
-static int homun_journal_enable = 1;
+static struct journal_config homun_journal_cfg = { 1, "./save/homun.journal", 1000 };
 static struct journal homun_journal;
-static char homun_journal_file[1024] = "./save/homun.journal";
-static int homun_journal_cache = 1000;
 #endif
 
 /*==========================================
@@ -51,17 +49,10 @@ static int homun_journal_cache = 1000;
 int homundb_txt_config_read_sub(const char* w1,const char *w2)
 {
 	if(strcmpi(w1,"homun_txt")==0){
-		strncpy(homun_txt, w2, sizeof(homun_txt) - 1);
+		auriga_strlcpy(homun_txt, w2, sizeof(homun_txt));
 	}
 #ifdef TXT_JOURNAL
-	else if(strcmpi(w1,"homun_journal_enable")==0){
-		homun_journal_enable = atoi( w2 );
-	}
-	else if(strcmpi(w1,"homun_journal_file")==0){
-		strncpy( homun_journal_file, w2, sizeof(homun_journal_file) - 1 );
-	}
-	else if(strcmpi(w1,"homun_journal_cache_interval")==0){
-		homun_journal_cache = atoi( w2 );
+	else if(journal_config_read(&homun_journal_cfg, "homun_journal", w1, w2)) {
 	}
 #endif
 	else {
@@ -92,7 +83,7 @@ static int homun_tostr(char *str, struct mmo_homunstatus *h)
 	else if(h->intimate > 100000)
 		h->intimate = 100000;
 
-	str_p += sprintf(str, "%d,%d,%s\t%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d\t%d,%d,%d,%d,%d",
+	str_p += snprintf(str, 8192, "%d,%d,%s\t%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d,%d,%d,%d,%d\t%d,%d\t%d,%d,%d,%d,%d",
 		h->homun_id,h->class_,h->name,
 		h->account_id,h->char_id,
 		h->base_level,h->base_exp,h->max_hp,h->hp,h->max_sp,h->sp,
@@ -106,7 +97,7 @@ static int homun_tostr(char *str, struct mmo_homunstatus *h)
 	for( i= 0; i < MAX_HOMSKILL; i++) {
 		if(h->skill[i].id && h->skill[i].flag != 1) {
 			sk_lv = (h->skill[i].flag == 0)? h->skill[i].lv: h->skill[i].flag - 2;
-			str_p += sprintf(str_p, "%d,%d ", h->skill[i].id, sk_lv);
+			str_p += snprintf(str_p, 8192 - (size_t)(str_p - str), "%d,%d ", h->skill[i].id, sk_lv);
 		}
 	}
 	*(str_p++) = '\t';
@@ -302,25 +293,11 @@ static bool homundb_txt_read(void)
 	}
 
 #ifdef TXT_JOURNAL
-	if( homun_journal_enable )
+	if( journal_setup( &homun_journal, &homun_journal_cfg, sizeof(struct mmo_homunstatus), homun_journal_rollforward, "inter: homun_journal" ) )
 	{
-		// ジャーナルデータのロールフォワード
-		if( journal_load( &homun_journal, sizeof(struct mmo_homunstatus), homun_journal_file ) )
-		{
-			int c = journal_rollforward( &homun_journal, homun_journal_rollforward );
-
-			printf("int_homun: journal: roll-forward (%d)\n", c );
-
-			// ロールフォワードしたので、txt データを保存する ( journal も新規作成される)
-			homundb_txt_sync();
-		}
-		else
-		{
-			// ジャーナルを新規作成する
-			journal_final( &homun_journal );
-			journal_create( &homun_journal, sizeof(struct mmo_homunstatus), homun_journal_cache, homun_journal_file );
-		}
+		homundb_txt_sync();
 	}
+
 #endif
 
 	return ret;
@@ -358,11 +335,10 @@ int homundb_txt_sync(void)
 	lock_fclose(fp, homun_txt, &lock);
 
 #ifdef TXT_JOURNAL
-	if( homun_journal_enable )
+	if( homun_journal_cfg.enable )
 	{
 		// コミットしたのでジャーナルを新規作成する
-		journal_final( &homun_journal );
-		journal_create( &homun_journal, sizeof(struct mmo_homunstatus), homun_journal_cache, homun_journal_file );
+		journal_recreate( &homun_journal, &homun_journal_cfg, sizeof(struct mmo_homunstatus) );
 	}
 #endif
 
@@ -385,7 +361,7 @@ bool homundb_txt_delete(int homun_id)
 	printf("homun_id: %d deleted\n", homun_id);
 
 #ifdef TXT_JOURNAL
-	if( homun_journal_enable )
+	if( homun_journal_cfg.enable )
 		journal_write( &homun_journal, homun_id, NULL );
 #endif
 
@@ -419,7 +395,7 @@ bool homundb_txt_save(struct mmo_homunstatus *p2)
 	memcpy(p1, p2, sizeof(struct mmo_homunstatus));
 
 #ifdef TXT_JOURNAL
-	if( homun_journal_enable )
+	if( homun_journal_cfg.enable )
 		journal_write( &homun_journal, p1->homun_id, p1 );
 #endif
 	return true;
@@ -463,7 +439,7 @@ void homundb_txt_final(void)
 		numdb_final(homun_db, homundb_txt_final_sub);
 
 #ifdef TXT_JOURNAL
-	if( homun_journal_enable )
+	if( homun_journal_cfg.enable )
 	{
 		journal_final( &homun_journal );
 	}

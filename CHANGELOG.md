@@ -1,4 +1,2110 @@
 ----------------------------------------
+//1623 [2026/11/05] by refis
+
+・称号変更時に周辺プレイヤーへ表示を更新（clif.c）
+
+・NPC頭上にプログレスバーを表示するprogressbar_npc命令を追加（map.h, clif.c, clif.h, buildin_dialog.c, script.c, doc/script_ref.txt）
+
+・ラピネアップグレード画面の終了時に状態を解除し、画面外からの要求を拒否（clif.c, map.h）
+
+・ナビゲーション開始パケットとnavigateto命令を追加（clif.c, clif.h, buildin_dialog.c, script.c, db/packet_db.lua, doc/script_ref.txt）
+
+・カメラ表示・設定パケットとcamerainfo命令を追加（clif.c, clif.h, buildin_misc.c, script.c, doc/script_ref.txt）
+
+・マップ全体に座標マーカーを表示するviewpointmap命令を追加（buildin_dialog.c, script.c, doc/script_ref.txt）
+
+----------------------------------------
+//1622 [2026/11/05] by refis
+
+・特性ステータス系アイテムボーナスの実装
+　-> bPow/bSta/bWis/bSpl/bCon/bCrt/bPAtk/bSMatk/bRes/bMRes/bHPlus/bCRate
+　-> bIgnoreResRace/bIgnoreMResRace
+（bonus.c, battle.c, status_calc_pc.c, map.h, db/const.txt, doc/item_bonus.txt）
+
+・ランダムオプションの効果を追加、実装
+（bonus.c, battle.c, status_calc_pc.c, map.h, db/const.txt, db/enumvar.lua, doc/db_ref.txt）
+
+----------------------------------------
+//1621 [2026/08/11] by Cocoa
+
+・Issue #58: アイテム SQL load/save を item_sql へ抽出し、converter の saveitem を現行スキーマに同期（opt 列欠落を修正）（item_sql.c, item_sql.h, chardb_sql.c, chardb_sql.h, maildb_sql.c, char-converter.c, char-converter.h, Makefile, char-server.vcxproj, char-server.vcxproj.filters）
+
+----------------------------------------
+//1620 [2026/08/10] by Cocoa
+
+・Issue #58: txt ジャーナル配線を journal_config / journal_setup / journal_recreate に共通化（挙動変更なし）（journal.c, journal.h, *_txt.c, guilddb_txt.h, int_guild.c, doc/journal.txt）
+
+・fix: gstoragedb_txt_save が個人倉庫ジャーナルへ書いていたのを guild_storage_journal へ修正（#93 と同内容・journal_config 化後の識別子）（storagedb_txt.c）
+
+----------------------------------------
+//1619 [2026/08/10] by Cocoa
+
+・Issue #58: SQL 接続設定を sqldbs_conninfo に共通化（login/char/map/converter）（挙動変更なし）（sqldbs.c, sqldbs.h, account_sql.c, chardb_sql.c, mapreg_sql.c, converter.c）
+
+--------------------------------------------------------------------------------
+//1618 [2026/08/10] by Cocoa
+
+・Issue #57: status_calc_pc / status_change_start / status_change_end をリファクタ。L_RECALC 再入を status_calc_ctrl で Unity 固定し、calc を phase 分割のうえ status_calc_pc.c へ、start/end を別 TU へ分離。SC ハンドラテーブルを導入し代表バッチを移行（挙動変更なし）（status.c, status_calc_ctrl.c, status_calc_ctrl.h, status_calc_pc.c, status_change_start.c, status_change_end.c, status_change_handlers.c, status_internal.h, tests/, map-server.vcxproj）
+
+----------------------------------------
+//1617 [2026/08/09] by Cocoa
+
+・Unity によるユニットテスト基盤を追加。`make test` / `tests\vc_test.bat` と GitHub Actions（Linux GCC/Clang・macOS Clang・Windows MSVC 2022/2026）で実行可能に。md5calc / HMAC-MD5、utils、linkdb / numdb / strdb / csvdb、nullpo、DIFF_TICK 等をカバー（挙動変更なし）（third_party/unity/, tests/, Makefile, .github/workflows/unit-test-*.yml, doc/unit_test.txt）
+
+----------------------------------------
+//1616 [2026/08/09] by Cocoa
+
+・script.c の未使用ヘッダー削除と余分な空行整理。buildin 分割後に残っていた #include とセクション見出し前の二重空行を除去（挙動変更なし）（script.c）
+
+----------------------------------------
+//1615 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第12弾）: 残り misc 系（time / map util / string / sql / unit / achievement 等）を buildin_misc.c へ分離。エンジン核（goto/set/array/jump_zero）は script.c に残置。getmapxy/sqlquery の str_buf 直参照を get_str() に置換。script_sql_enabled() / mysql_handle_script を script_internal.h 経由で共有（挙動変更なし）（script.c, buildin_misc.c, script_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1614 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第11弾）: memorial dungeon 系を buildin_md.c へ分離（挙動変更なし）（script.c, buildin_md.c, map-server.vcxproj）
+
+----------------------------------------
+//1613 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第10弾）: misceffect / soundeffect / musiceffect 系を buildin_effect.c へ分離（挙動変更なし）（script.c, buildin_effect.c, map-server.vcxproj）
+
+----------------------------------------
+//1612 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第9弾）: quest 系を buildin_quest.c へ分離（挙動変更なし）（script.c, buildin_quest.c, map-server.vcxproj）
+
+----------------------------------------
+//1611 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第8弾）: CSV 系命令を buildin_csv.c へ分離。csvinit/final・getarraysize を script_internal.h 経由で共有。csvreadarray/csvwritearray の str_buf 直参照を get_str() に置換（挙動変更なし）（script.c, buildin_csv.c, script_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1610 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第7弾）: monster / guardian / mob skill 系を buildin_mob.c へ分離。getmapmoblist の str_buf 直参照を get_str() に置換（挙動変更なし）（script.c, buildin_mob.c, map-server.vcxproj）
+
+----------------------------------------
+//1609 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第6弾）: pet / homunculus / mercenary 系を buildin_pet.c へ分離（挙動変更なし）（script.c, buildin_pet.c, map-server.vcxproj）
+
+----------------------------------------
+//1608 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第5弾）: dialog / UI 系を buildin_dialog.c、PC / status 系を buildin_pc.c へ分離（挙動変更なし）（script.c, buildin_dialog.c, buildin_pc.c, map-server.vcxproj）
+
+----------------------------------------
+//1607 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第4弾）: party / guild / agit・castle / marriage・adoption 等を buildin_party.c へ分離（挙動変更なし）（script.c, buildin_party.c, map-server.vcxproj）
+
+----------------------------------------
+//1606 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第3弾）: NPC 制御 / タイマー / waitingroom / npcskill・walk 等を buildin_npc.c へ分離。sleep/awake 用 API を script_internal.h 経由で共有（挙動変更なし）（script.c, buildin_npc.c, script_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1605 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第2弾）: item / 装備 / 精錬 / カード系命令を buildin_item.c へ分離。refine_posword を script_internal.h 経由で共有（挙動変更なし）（script.c, buildin_item.c, script_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1604 [2026/08/09] by Cocoa
+
+・script.c のビルドイン命令分割（第1弾）: map 系命令（warp / announce / mapflag / pvp・gvg 等）を buildin_map.c へ分離。共有ヘルパーを script_internal.h 経由で公開（挙動変更なし）（script.c, buildin_map.c, script_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1603 [2026/08/09] by Cocoa
+
+・skill.c の巨大 switch 分割（第3弾）: skill_check_condition2_pc / skill_unit_onplace_timer / skill_readdb をそれぞれ skill_check_condition.c / skill_unit_onplace.c / skill_readdb.c へ分離（挙動変更なし）（skill.c, skill_check_condition.c, skill_unit_onplace.c, skill_readdb.c, skill_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1602 [2026/08/09] by Cocoa
+
+・skill.c の巨大 switch 分割（第2弾）: skill_castend_damage_id / skill_castend_pos2 をそれぞれ skill_castend_damage.c / skill_castend_ground.c へ分離（挙動変更なし）（skill.c, skill_castend_damage.c, skill_castend_ground.c, skill_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1601 [2026/08/09] by Cocoa
+
+・skill.c の巨大 switch 分割（第1弾）: skill_castend_nodamage_id を skill_castend_support.c へ分離（挙動変更なし）（skill.c, skill_castend_support.c, skill_internal.h, map-server.vcxproj）
+
+----------------------------------------
+//1600 [2026/08/09] by Cocoa
+
+・0078/007b スパウンパケット組み立ての共通化（clif.c）
+	・PC / Mob / NPC / Pet / Hom / Merc / Elem 向けの同型組み立てを struct clif_spawn_info と clif_spawn_build78 / clif_spawn_build7b に統合
+	・呼び出し側シグネチャは維持し、PACKETVER 分岐とエンティティ固有 quirk（cloaking、EMP guild、名前非コピー等）を保全
+	・旧 PACKETVER 向けに CLIF_SPAWN_F_SKIP_LEVEL と NPC pcview 充填ゲートを追加し、NPC 0078 互換（レベル未書き込み・外見未書き込み）を復元
+詳細はPR（https://github.com/auriga/auriga/pull/65）を参照
+
+----------------------------------------
+//1599 [2026/08/03] by Cocoa
+
+・Visual Studio 対応の整理
+	Visual Studio 2015以前のソリューション（Auriga-11.sln, Auriga-14.sln, vcproj-11, vcproj-14）を削除
+	VS2026向けに Auriga.sln / vcproj（Platform Toolset v145, x64）を追加
+	vc_make.bat は VS2017以降を継続サポートし、VS2026設定を追加
+	CI を Windows Server 2025 + MSVC 2026 に更新
+
+----------------------------------------
+//1598 [2025/11/26] by Mintmoon
+
+・SQL環境下でAP及び特性ステータスポイント関連が保存されない問題を修正（chardb_sql.c）
+
+----------------------------------------
+//1597 [2025/10/07] by Blaze
+
+・3次職転職クエスト「ウォーロック転職」実装（map_auriga.conf, npc_job_30warlock.sc, npc_job_thirdclass.sc, db/quest_db.txt）
+
+・アイテムボーナスに以下を追加・変更（map.h, bonus.c, status.c, mob.c, db/const.txt, doc/item_bonus.txt）
+　bonus2 bAddMonsterDropItem        ：全てのモンスターを倒したとき、指定アイテムをドロップ
+　bonus3 bAddMonsterRaceDropItem    ：指定した種族のモンスターを倒したとき、指定アイテムをドロップ
+　　※既存のbonus3 bAddMonsterDropItemと同じ機能（別名定義）、既存の方も今まで通り使用可能です。
+　bonus3 bAddMonsterEleDropItem     ：指定した属性のモンスターを倒したとき、指定アイテムをドロップ
+　bonus3 bAddMonsterIdDropItem      ：指定したモンスターIDのモンスターを倒したとき、指定アイテムをドロップ
+　bonus3 bAddMonsterGroupDropItem   ：指定したグループのモンスターを倒したとき、指定アイテムをドロップ
+
+・ウォーロック転職クエスト関連のアイテム、モンスターを暫定定義で追加（db/item_db.txt, db/mob_db.txt, db/mob_skill_db.txt）
+
+----------------------------------------
+//1596 [2025/10/03] by Cocoa
+
+・誤字修正
+
+・一部制御script修正
+
+----------------------------------------
+//1595 [2025/09/28] by Blaze
+
+・3次職転職クエスト「ルーンナイト転職」「アークビショップ転職」「メカニック転職」実装（map_auriga.conf, npc_job_29runeknight.sc, npc_job_32archbishop.sc, npc_job_33mechanic.sc, npc_job_thirdclass.sc, db/quest_db.txt）
+
+・3次職転職クエスト報酬のステータス・スキル一括リセットNPCを追加（npc_job_thirdclass.sc）
+
+・各都市に簡易倉庫NPCを追加（map_auriga.conf, npc_misc_storage.sc）
+　※サブ倉庫1～3は未実装です
+
+・メカニック転職クエストに出現するモンスターのデータを暫定で追加（db/mob_db.txt, db/mob_skill_db.txt）
+
+・転職クエストのスクリプトファイル名をジョブ番号でソートし直し（map_auriga.conf）
+　npc_job_14crusader.sc      -> npc_job_13crusader.sc
+　npc_job_15monk.sc          -> npc_job_14monk.sc
+　npc_job_16sage.sc          -> npc_job_15sage.sc
+　npc_job_17rogue.sc         -> npc_job_16rogue.sc
+　npc_job_18alchemist.sc     -> npc_job_17alchemist.sc
+　npc_job_19bard.sc          -> npc_job_18bard.sc
+　npc_job_20dancer.sc        -> npc_job_19dancer.sc
+　npc_job_23supernovice.sc   -> npc_job_20supernovice.sc
+　npc_job_24taekwonkid.sc    -> npc_job_21taekwon.sc
+　npc_job_25stargladiator.sc -> npc_job_22stargladiator.sc
+　npc_job_27soullinker.sc    -> npc_job_23soullinker.sc
+　npc_job_28gunslinger.sc    -> npc_job_24gunslinger.sc
+　npc_job_29ninja.sc         -> npc_job_25ninja.sc
+　npc_job_46supernovice2.sc  -> npc_job_42supernovice2.sc
+　npc_job_47kaboro.sc        -> npc_job_43kaboro.sc
+　npc_job_48rebellion.sc     -> npc_job_45rebellion.sc
+　npc_job_49summoner.sc      -> npc_job_46summoner.sc
+
+----------------------------------------
+//1594 [2025/09/28] by Blaze
+
+・メモリアルダンジョン「オークの記憶」実装（map_auriga.conf, npc_memorial_orcs.sc, mapflag_memorial.sc）
+
+・メモリアルダンジョン「地下排水路」実装（map_auriga.conf, npc_memorial_pump.sc, npc_warp_town.sc, mapflag_memorial.sc, db/memorial_db.txt）
+
+・マラン島に猫武器販売NPCを追加（npc_town_malangdo.sc）
+
+・const.txtに4次職のJob定義・CLASS定義を追加（db/const.txt）
+
+・メモリアルダンジョン予約処理間隔の時間を60秒から10秒に短縮（memorial.c）
+
+・db/mob_avail.txtの仕様を変更（db/mob_avail.txt, mob.c, 
+　3番目のパラメータ「見た目サイズ」をサイズ変更含めたエフェクト全般を表示できるように拡張
+　※従来のサイズ変更は小=421、大=423で指定可能です。その他MOBにオーラ表示させるなどサーバー側でエフェクト制御が可能になります
+　2番目以降のパラメータは省略可能なようにDB読み込み処理を変更
+
+・map_session_data、npc_data、mob_data、pet_data、homun_data、merc_data、elem_dataの各構造体メンバ「view_size」を「effect」に変更
+　（map.h, clif.c, elem.c, homun.c, merc.c, mob.c, mob.h, npc.c, pc.c, pet.c, unit.c）
+
+・上記に伴い、スクリプト命令の見た目サイズ変更「changeviewsize」の処理を変更（unit.c）
+
+・J蔵以外でエラー落ちしないようにmob_avail.txtに「オーク兵」「スタラクタイトゴーレム（オークの記憶）」のスプライトをすり替え定義を追加（db/mob_avail.txt）
+
+・「オークの記憶」「地下排水路」関連のMOBデータを暫定で追加（db/mob_db.txt, db/mob_skill_db.txt）
+
+----------------------------------------
+//1593 [2025/08/11] by Cocoa
+
+・C11 モダナイズと安全な文字列操作の全面適用
+	・既存コードを C11 準拠へモダナイズし、安全で明確な文字列処理へ置換
+	・主要な危険API（sprintf/strcpy/strncpy/strcat/strncat）を snprintf と auriga_strlcpy/auriga_strlcat に統一
+	・固定幅整数の利用・可搬なフォーマット指定への移行（<stdint.h>, <inttypes.h>、PRId64/SCNd64 等）
+	・フォーマット文字列警告の解消（例: fprintf(fp, output) → fputs(output, fp)）
+詳細はPR（https://github.com/auriga/auriga/pull/47）を参照
+
+----------------------------------------
+//1592 [2025/08/11] by Cocoa
+
+・Makefile の標準指定を C11 に変更
+
+----------------------------------------
+//1591 [2025/08/11] by Cocoa
+
+・Borland C++ (bcc)によるビルドサポートの廃止
+	-> ツールチェインの老朽化: Borland C++ 5.x の bcc32 は更新終了。公式入手・サポート困難で、CI/CD でも扱いにくい。
+	-> x64 非対応: 32bit 専用（OMF/ILINK32 系）。現代の Windows で主流の x64 ターゲットをビルドできない。
+	-> オブジェクト形式の不整合: OMF 前提のため、COFF 前提の近年のライブラリ（例: MariaDB Connector/C の import lib、最新 zlib 等）をそのままリンクできない。
+	-> 最新 OS/SDK 非対応: 新しい Windows SDK/UCRT や API 群との互換性が低く、ヘッダやライブラリの整合性問題が頻発。
+	-> セキュリティ機能が使えない: ASLR/DYNAMICBASE、DEP/NXCOMPAT、CFG、Spectre 緩和、/GS 等の現代的ハードニングをリンカ・コンパイラがサポートしない。
+	-> 言語機能が古い: C99 以降（可変長配列、複合リテラル 等）や C11 の対応が不完全/非対応で、コードモダナイズの足かせ。
+	-> エコシステムと互換性が低い: 既存スクリプトは古い MySQL 5.0/5.5 固定パス想定。現行の MariaDB/MySQL 環境やパッケージ管理と噛み合わない。
+	-> ビルド品質/デバッグ性: 警告抑制前提、診断が弱い、並列ビルドやモダン診断（/MP、/utf-8、サニタイザ等）も不可。
+
+----------------------------------------
+//1590 [2025/08/01] by refis
+
+・4GB以上のGRF読み取りに失敗していた問題を修正（grfio.c）
+
+----------------------------------------
+//1589 [2025/07/06] by refis
+
+・アイテムボーナス「bAddSkillFixCastTime」、「bSubReturnDamage」追加
+（db/const.txt, doc/item_bonus.txt, bonus.c, map.h, battle.c, skill.c, status.c）
+
+・固定詠唱時間計算についての修正（skill.c）
+	-> 固定秒増減効果を先に計算(アイテム効果、精神衝撃等含む)
+	-> ％増減効果は最も高い効果が優先(アイテム効果、サクラメント等含む)
+	-> ％増減効果が加算される効果を後から計算
+	-> スローキャスト効果の影響を削除、十六夜は詠唱0ではなく詠唱時間-100%に修正
+
+----------------------------------------
+//1588 [2025/06/14] by refis
+
+・ソウルアセティックの五行符状態が境界外読み取りされているのを修正（status.c）
+	Thanks sabun さん
+
+----------------------------------------
+//1587 [2025/05/23] by Gorockn
+
+・初期生成サーバーID/PWが無効な形式になっていたのを修正（auriga-start）
+
+----------------------------------------
+//1586 [2025/05/23] by Gorockn
+
+・Luaビルドオプションを調整（Makefile）
+
+----------------------------------------
+//1585 [2025/05/23] by Gorockn
+
+・インクルードガードのtypoを修正（homundb_txt.h, intif.h）
+
+----------------------------------------
+//1584 [2025/05/23] by Gorockn
+
+・コンパイラを切り替えられるように（Makefile）
+
+----------------------------------------
+//1583 [2025/05/23] by Gorockn
+
+・コンパイル実行結果を正しく扱えるように（Makefile）
+
+----------------------------------------
+//1582 [2025/05/23] by Gorockn
+
+・古いGCCコンパイラ対応を削除（Makefile）
+
+----------------------------------------
+//1581 [2025/05/23] by Gorockn
+
+・GCCコンパイル時の警告に対応（Makefile）
+　・`_BSD_SOURCE` を `_DEFAULT_SOURCE` に変更
+　・glibc 2.20以降は `_BSD_SOURCE` は非推奨のため
+
+----------------------------------------
+//1580 [2025/05/21] by gorockn
+
+・Linux/GCCのビルドエラーを修正（utils.h, luascript.c, luascript.h, status.c, status.h）
+
+----------------------------------------
+//1579 [2025/04/05] by refis
+
+・ピラミッドナイトメア関連クエストデータの不足分を追加（quest_db.txt）
+	Thanks pinna さん
+
+----------------------------------------
+//1578 [2025/3/24] by Blaze
+
+・Patch1569以降、R化前オプションPRE_RENEWALでError/Warningが発生していた不具合を修正（battle.c, skill.c）
+
+----------------------------------------
+//1577 [2025/3/21] by Blaze
+
+・Patch1576以降、ノービスのスキルが習得できなかった不具合を修正（pc.c）
+
+----------------------------------------
+//1576 [2024/12/31] by Blaze
+
+・拡張四次職（天帝、ソウルアセティック、蜃気楼、不知火、ナイトウォッチ、ハイパーノービス、スピリットハンドラー）のスキル実装
+　（skill.c, skill.h, battle.c, status.c, status.h, clif.h, db/skill_db.txt, db/skill_db2.txt, db/skill_require_db.txt, db/skill_require_db2.txt, db/skill_tree.txt, db/skill_unit_db.txt, db/scdata_db.txt）
+
+・MAX_STATUSCHANGEを850->900に引き上げ（mmo.h）
+
+・スキルツリーDBの仕様変更（pc.c, db/skill_tree.txt, db/addon/skill_tree_add.txt, db/pre/skill_tree_pre.txt）
+　前提スキル(PreSkill-ID,PreSkill-Lv)を省略可に、可変式で最大9個まで指定できるように
+　BaseLv,JobLv,Class,Upperのカラム位置を変更
+　※注意：これまでのスキルツリーと互換性が無くなるため、addon/skill_tree_add.txtは一旦初期化されます。オーバーライドで使用している方はご注意ください。
+
+・サモナースキル「キャロットビート」「イヌハッカメテオ」のダメージ計算式を変更（battle.c）
+
+・サモナースキル「イヌハッカメテオ」のダメージ分割表示を単発表示に変更（db/skill_db.txt）
+
+・拡張四次職の関連アイテム定義追加（db/item_db.txt）
+
+----------------------------------------
+//1575 [2024/12/21] by refis
+
+・パケット長の更新（packet_db.lua）
+
+・MDでscript(HIDDEN)設定NPCをコピーした際、OnTouch無効判定が引き継がれないミスを修正（npc.c）
+	Thanks Dallen さん
+
+----------------------------------------
+//1574 [2024/12/12] by Blaze
+
+・ガンスリンガー系列のコイン所持最大量が気弾と同じMAX15だったのをMAX10になるように定義変更（map.h, pc.c, skill.c）
+
+・以下の拡張職業のスキルを変更
+　[リベリオン]シャッターストーム
+　・弾消費が敵の数分倍増していた不具合を修正（skill.c, battle.c）
+　・ダメージ計算が無かったのを追加（battle.c）
+
+　[リベリオン]バニシングバスター
+　・ダメージ計算が無かったのを追加（battle.c）
+
+　[リベリオン]クイックドローショット
+　・種別をダメージ無しスキルから攻撃スキルに変更（skill.c, db/skill_db.txt）
+　・弾消費が敵の数分倍増していた不具合を修正（skill.c, battle.c）
+
+　[リベリオン]ファイアーダンス
+　・最大レベルを5->10に変更（db/skill_tree.txt, db/skill_require_db.txt)
+　・種別をダメージ無しスキルから攻撃スキルに変更（skill.c, db/skill_db.txt）
+　・ダメージ計算式を変更（battle.c）
+　・弾消費が敵の数分倍増していた不具合を修正（skill.c, battle.c）
+
+　[リベリオン]ハウリングマイン
+　・フリッカー使用時の起爆ダメージを範囲攻撃化（skill.c）
+　・起爆ダメージのエフェクト表示するための状態異常を追加（skill.c, status.c, status.h, db/skill_cast_db.txt, db/scdata_db.txt）
+
+　[リベリオン]ラウンドトリップ
+　・最大レベルを5->10に変更（db/skill_tree.txt)
+　・種別をダメージ無しスキルから攻撃スキルに変更（skill.c, db/skill_db.txt）
+　・ダメージ計算式を変更（battle.c）
+　・弾消費が敵の数分倍増していた不具合を修正（skill.c, battle.c）
+
+　[リベリオン]ドラゴンテイル
+　・最大レベルを5->10に変更（db/skill_tree.txt)
+　・種別を即時発動＋ダメージ無しスキルから対象指定＋攻撃スキルに変更（skill.c, db/skill_db.txt）
+　・烙印状態の対象にランダム範囲攻撃だったのを対象固定＋烙印状態の場合はダメージ倍率上昇するように変更（skill.c, battle.）
+　・ダメージ計算式を変更（battle.c）
+
+　[リベリオン]ハンマーオブゴッド
+　・最大レベルを5->10に変更（db/skill_tree.txt)
+　・烙印状態の対象にランダム範囲攻撃だったのを対象固定＋烙印状態の場合はダメージ倍率上昇するように変更（skill.c, battle.c）
+　・ダメージ計算式を変更（battle.c）
+
+　[影狼/朧]十文字斬り
+　・最大レベルを5->10に変更（db/skill_db.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/skill_tree.txt)
+　・ダメージ計算式を変更（battle.c）
+
+　[影狼/朧]黄泉返し
+　・ソウルリーパーの魂スキルも解除・ダメージ増加対象とするように追加（battle.c）
+　・ダメージ計算式を変更（battle.c）
+　・射程距離を2セル->5～9セルに変更（db/skill_db.txt）
+
+　[影狼/朧]爆裂苦無
+　・種別を地面指定から対象指定に変更（skill.c, db/skill_db.txt）
+　・ダメージ計算式を変更（battle.c）
+
+　[影狼/朧]八方苦無
+　・苦無の消費数を8->2に変更（db/skill_require_db2.txt）
+
+　[影狼/朧]風魔手裏剣 -乱華-
+　・種別を地面指定から対象指定に変更（skill.c, db/skill_db.txt, db/skill_unit_db.txt）
+　・最大レベルを5->10に変更（db/skill_db.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/skill_tree.txt)
+　・ダメージ計算式を変更（battle.c）
+
+　[影狼]火符：炎天
+　・火の霊召喚時の火炎陣、龍炎陣のダメージ増加率を変更（battle.c）
+　・火の霊10個召喚時の火属性付与を削除、地属性モンスターのダメージ増加を追加（status.c）
+
+　[影狼]氷符：吹雪
+　・氷の霊召喚時の氷閃槍、氷柱落しのダメージ増加率を変更（battle.c）
+　・氷の霊10個召喚時の水属性付与を削除、火属性モンスターのダメージ増加を追加（status.c）
+
+　[影狼]風符：青嵐
+　・風の霊召喚時の雷撃砕、朔風のダメージ増加率を変更（battle.c）
+　・風の霊10個召喚時の風属性付与を削除、水属性モンスターのダメージ増加を追加（status.c）
+
+　[影狼]土符：剛塊
+　・土の霊10個召喚時の地属性付与を削除、風属性モンスターのダメージ増加を追加（status.c）
+
+　[影狼]幻術 -分身-
+　・爆裂苦無、八方苦無、十文字斬り、風魔手裏剣 -乱華-のダメージ増加効果を追加（status.c）
+　・効果時間が経過しても解除されなかった不具合を修正（status.c）
+
+　[テコンキッド]ファイト
+　・(R後)パーティー人数で攻撃力増加していたのを固定値で攻撃力増加するように変更（battle.c）
+
+　[拳聖]太陽の祝福、月の祝福、星の祝福
+　・(R後)対象モンスターの経験値増加を削除、対象日付ごとにステータス上昇するように変更（mob.c, status.c）
+
+　[拳聖]太陽の怒り、月の怒り、星の怒り
+　・対象モンスターの攻撃力増加率に上限を追加、一部処理変更（battle.c）
+
+　[星帝]満月脚
+　・詠唱開始時に朔月（ハイド）状態が解除されていたのを、攻撃時に解除するように変更（skill.c, unit.c）
+　・状態異常付与がダメージ無しでも発生していたのをダメージ有り時の追加効果とするように処理位置変更（skill.c）
+
+　[星帝]朔月脚
+　・朔月（ハイド）状態で使用時、詠唱開始時に解除されていたのを攻撃時に解除するように変更（skill.c, unit.c）
+　・詠唱中断されないように（db/skill_db.txt）
+
+　[星帝]閃光脚
+　・星の印付与の処理を簡略化（skill.c, status.c）
+
+　[星帝]星帝降臨
+　・状態異常付与がダメージ無しでも発生していたのをダメージ有り時の追加効果とするように処理位置変更（skill.c）
+　・次元の書効果で魔法の盾を付与時、耐久値とダメージ減算処理を変更（skill.c, battle.c, status.c）
+
+　[星帝]新星爆発
+　・次元の書効果の状態付与時間をDBで指定するように（skill.c, db/skill_cast_db.txt）
+
+　[星帝]流星落下
+　・攻撃と追撃を連続Hit表示に変更（skill.c, db/skill_db.txt）
+　・追撃を0.3秒後に発動するように変更（skill.c）
+　・星の印の判定処理を簡略化（skill.c）
+
+　[星帝]太陽と月と星の記録
+　・消費SPを変更（db/skill_require_db.txt）
+
+　[星帝]太陽爆発
+　・連続Hit表示に変更（skill.c, db/skill_db.txt）
+
+　[星帝]紅焔脚
+　・追撃効果を攻撃対象にも判定するように変更（skill.c）
+　・詠唱中断されないように（db/skill_db.txt）
+
+----------------------------------------
+//1573 [2024/12/6] by Blaze
+
+・拡張四次職（天帝、ソウルアセティック、蜃気楼、不知火、ナイトウォッチ、ハイパーノービス、スピリットハンドラー）仮実装
+　（pc.c, db/job_db1.txt, db/job_db2.txt, db/job_db2-2.txt, db/job_hp_db.txt, db/job_sp_db.txt, db/skill_tree.txt, db/pre/skill_tree_pre.txt, conf/help.txt）
+　※ジョブ変更・旧スキル使用まで。新スキルは後日実装
+
+・カードをドロップ時にドロップエフェクト表示するようにアイテム定義変更（db/item_db2.txt）
+
+・Patch 1572のコミット漏れ
+　スキルツリー仕様変更で不要となる養子のスキルツリー設定「baby_copy_skilltree」を削除（conf/battle_auriga.conf, battle.c, battle.h）
+
+----------------------------------------
+//1572 [2024/12/6] by Blaze
+
+・スキルツリーDBの仕様変更（pc.c, db/skill_tree.txt, db/pre/skill_tree_pre.txt, doc/db_ref.txt）
+　UpperとJobNoをキーとして2次～3次職の定義が倍になっていたのを、Upper指定はオプションとして該当スキルの習得条件と判定するように
+　上記に伴い、2次職・上位2次職、3次職の定義を集約
+　前提スキル指定を5個(6番目は任意)→6個に拡張・変更
+
+・上記のスキルツリー仕様変更で不要となる養子のスキルツリー設定「baby_copy_skilltree」を削除（conf/battle_auriga.conf, battle.c, battle.h）
+
+・バイオロ、トルバドゥール/トルヴェール、エレメンタルマスターのスキル、マイスターの追加スキル実装（skill.c, skill.h, battle.c, status.c, status.h, clif.c, mob.c, unit.c, map.h, db/skill_db.txt, db/skill_db2.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/skill_require_db2.txt, db/skill_unit_db.txt, db/scdata_db.txt ）
+
+・アークメイジ、インクイジター、アビスチェイサー、ウィンドホークの一部攻撃スキルでダメージ計算のステータス補正値を修正（battle.c）
+
+・カーディナルなどのパーティー対象範囲スキル処理をパーティー未加入時と共通化するために処理変更（skill.c）
+
+・上位精霊の定義追加（mmo.h, elem.c, elem.h, db/elem_db.txt, db/elem_skill_tree.txt）
+
+・バイオロ関連のアイテム定義、モンスター定義追加（db/item_db.txt, db/item_db2.txt, db/produce_db.txt, db/mob_db.txt, db/mob_skill_db.txt）
+
+----------------------------------------
+//1571 [2024/11/10] by refis
+
+・キャラクター削除時に実績データの削除がされていなかったのを修正（char.c）
+
+・PACKETVER[20201007]以降でキャラクター作成、削除時のパケットヘッダ誤りを修正（char.c）
+
+----------------------------------------
+//1570 [2024/11/03] by refis
+
+・クローキング状態NPCをクリックした際にクロークオフリストをチェックするよう修正（npc.c）
+
+----------------------------------------
+//1569 [2024/10/20] by Blaze
+
+・マイスター、アビスチェイサー、ウィンドホークのスキル実装（skill.c, skill.h, battle.c, status.c, status.h, unit.c, db/skill_db.txt, db/skill_db2.txt, db/skill_require_db.txt, db/skill_require_db2.txt, db/skill_tree.txt, db/skill_unit_db.txt, db/scdata_db.txt ）
+
+・マイスタースキル関連のアイテムDB、モンスターDB、製造DBを追加（db/item_db.txt, db/item_db2.txt, db/mob_db.txt, db/produce_db.txt）
+
+・ABR/植物モンスターのAI実装（mob.c, skill.c, battle.c）
+
+・MOB召喚時にステータス変更ができるよう、MOBステータスをDB参照からデータ保存するように変更（mob.c, status.c, map.h）
+
+・ステータス取得IF「status_get_xxx」のうち特性ステータスSpl～Crtの参照が誤っていたのを修正（status.c）
+
+・スキルユニットのintervalをスキルレベル毎に設定できるように変更（skill.c, skill.h, db/skill_unit_db.txt）
+
+・4次職の転職時に特性ステータスポイントを付与するように、付与するポイント数を戦闘設定で設定できるように（battle.c, battle.h, pc.c, conf/battle_auriga.conf）
+　　4次職に転職時に得られる特性ステータスポイント
+　　　fourth_jobchange_tstpoint　　※デフォルトは7
+
+・MAX_STATUSCHANGEを800->850に引き上げ（mmo.h）
+
+・シャドウ装備の全部位指定の定義値を追加（mmo.h）
+
+・4次職状態異常（漆黒、静寂など）のレベルによる成功率計算およびステータスによる効果時間減少を実装（status.c）
+
+・4次職状態異常（漆黒、静寂など）がボス型に効かないように変更（db/scdata_db.txt）
+
+・シャドウスタブ、ドラゴニックブレスの防御力無視効果が正常に適用されていなかったのを修正（battle.c）
+
+・4次職スキルの近距離/遠距離設定・最低ディレイ設定を見直し（db/skill_db2.txt）
+
+・4次職の最大ASPDが3次職より低くなっていたのを修正（status.c）
+
+・自動ブリッツビートの発動スキルレベルについて3次職と4次職はJobレベル依存ではなく習得レベルで発動するように（skill.c）
+
+・サーヴァントウェポンの処理やデータをアビス体などと共通化させるために汎用球体として処理変更（status.c, pc.c, pc.h, clif.c, clif.h, map.h）
+
+・ダンシングナイフの攻撃処理をユニット配置型から状態異常で発生させるように変更（skill.c, unit.c, db/skill_db.txt, db/skill_cast_db.txt, db/skill_unit_db.txt）
+
+・製造スキルの種別をclif_making_listで渡すように変更（clif.c, clif.h, skill.c, script.c）
+
+----------------------------------------
+//1568 [2024/10/14] by Blaze
+
+・モンスターAI変更（mob.c, mob.h, map.h, unit.c, clif.c, homun.c, merc.c, elem.c）
+　モンスターがPCの視界外に出たとき即座に思考停止していたのをbattle_confの設定で視界外でもAI実行する猶予時間を持たせるように。
+　モンスターAIのPC判定をクライアント側の移動で判断していたのをMOB側で判定させるように。
+
+・battle_confにモンスターAI関連の設定を追加（conf/battle_auriga.conf, battle.c, battle.h, mob.c）
+　　MOBのAIがPCを認識してアクティブ化する距離（-1でマップ内にPCが居ればアクティブ化）
+　　　mob_ai_area_size　　※デフォルトは36セル
+
+　　通常MOBがプレイヤーの視界外に出たときにMOBのAIがスリープ状態になるまでの時間(単位はms）
+　　　mob_ai_sleeptime　　※デフォルトは60000ms（1分）
+
+　　ボス型MOBがプレイヤーの視界外に出たときにMOBのAIがスリープ状態になるまでの時間(単位はms）
+　　　boss_ai_sleeptime　　※デフォルトは300000ms（5分）
+
+・モンスターAIの時間監視のため、手抜きAIタイマーmob_ai_lazyの周期を2000msから1000msに変更（mob.c）
+　※負荷が気になる方はmob.cの「MIN_MOBTHINKTIME_LAZY」定義を調整ください。
+
+・取り巻きモンスターの挙動を変更、主が移動しているとき移動途中セルを基に追従していたのを移動先のセル中心に追従するように（mob.c）
+
+・モンスター特殊AIの定義名を追加（mob.h, mob.c, atcommand.c, battle.c, script.c, skill.c）
+
+----------------------------------------
+//1567 [2024/10/13] by refis
+
+・ゲフェン魔法大会メモリアル実装（npc_memorial_magictournament.sc）
+	Thanks a lot! フリージア さん、Dallen さん
+
+・mapflag更新 (mapflag_memorial.sc)
+
+・item_dbの更新 (item_db.txt, item_cardtype.txt)
+
+・mob_dbの更新 (mob_db.txt, mob_skill_db.txt, mob_talk_db.txt)
+
+・追加メッセージが入らないのでmob_talk_dbのメッセージ長を200Bから210Bに拡張 (map/mob.*)
+
+・quest_dbの更新 (quest_db.txt)
+
+・map_auriga.conf更新 (map_auriga.conf)
+
+・[getequippos]関数を追加 (script_ref.txt, map/script.c)
+	-> アイテムスクリプトに記述で、スクリプト判定中の装着箇所を返します
+		Thanks Dallen さん
+
+・[delequip]命令で全装備削除時、装備以外のアイテムが対象になる不具合を修正 (map/script.c)
+
+----------------------------------------
+//1566 [2024/10/11] by Blaze
+
+・4次職実装（pc.c, pc.h, skill.c, skill.h, battle.c, status.c, status.h, unit.c, atcommand.c,
+ conf/help.txt, db/job_db1.txt, db/job_db2.txt, db/job_db2-2.txt, db/job_hp_db.txt, db/job_sp_db.txt,
+ db/skill_db.txt, db/skill_db2.txt, db/skill_require_db.txt, db/skill_tree.txt, db/skill_unit_db.txt, db/pre/skill_tree_pre.txt）
+　※スキルはドラゴンナイト、アークメイジ、インクイジター、インペリアルガード、カーディナル、シャドウクロスを実装しています。
+　　残りの4次職スキルは後日実装予定
+　※スクリプトで4次職が未対応など、不安定な状態での先行実装のためご注意ください。
+
+・クラス定義名/ジョブ定義名を変更（mmo.h, pc.c, pc.h）
+　デスナイト　　：PC_CLASS_DK / PC_JOB_DK → PC_CLASS_DE / PC_JOB_DE
+　ドラゴンナイト：PC_CLASS_DR / PC_JOB_DR → PC_CLASS_DK / PC_JOB_DK
+　星帝　　　　　：PC_CLASS_SE / PC_JOB_SE → PC_CLASS_SJ / PC_JOB_SJ
+　ソウルリーパー：PC_CLASS_RE / PC_JOB_RE → PC_CLASS_SP / PC_JOB_SP
+
+・スキル設定DB「skill_db.txt」の書式変更（db/skill_db.txt, db/pre/skill_db_pre.txt, skill.c, skill.h, doc/db_ref.txt）
+　AP回復量を指定する「heal_ap」を追加
+
+・スキル要求DB「skill_require_db.txt」の書式変更（db/skill_require_db.txt.txt, db/pre/skill_require_db_pre.txt, skill.c, skill.h,  doc/db_ref.txt）
+　AP消費量を指定する「list_ap」「list_ap_rate」を追加
+
+・上記に伴い、スキル使用時のAP回復/消費を実装。死亡時にAPが0になるように（skill.c, pc.c）
+
+・ジョブ設定DB「job_db1.txt」と経験値テーブル設定「exp.txt」の仕様変更（status.c, status.h, pc.c, db/job_db1.txt, db/pre/job_db1_pre.txt, db/exp.txt）
+　job_db1にbexp_tableとjexp_tableを追加、内部処理で固定でテーブル参照していたのをDBでジョブごとにBase経験値テーブル/Job経験値テーブルの参照を設定できるように変更
+　exp.txtの設定内容を整理、～Lv260までの設定追加と4次職の経験値テーブルを追加
+
+・ジョブボーナス設定DB「job_db2.txt」「job_db2-2.txt」に特性ステータス（Pow/Sta/Wis/Spl/Con/Crt）の増加を指定できるように（db/job_db2.txt, db/job_db2-2.txt, status.c）
+
+・4次職のスキル倍率計算中に32bit上限を超えるため、ダメージ計算中はdamage変数を64bit(atn_bignumber)で演算させるように（battle.c, battle.h, clif.c, clif.h）
+　また、atn_bignumber -> int型のキャストマクロ「BIGNUM2INT(x)」を追加（utils.h）
+
+・最大レベルを255->260に引き上げ（map.h）
+
+・スキルユニットのタイマー間隔を100ms -> 50msに変更（skill.c）
+　※注意：処理負荷が上がります。気になる方はskill.cの「SKILLUNITTIMER_INVERVAL」定義を調節ください。
+
+・上記に伴い、これまで暫定値だったストームガストの設置時間を変更（db/skill_cast_db.txt, db/skill_cast_db_pre.txt）
+
+・(R後)ダブルアタックなどの連撃攻撃にクリティカルが乗るように変更（battle.c）
+
+・クリティカル計算を変更、クリティカルが乗るスキルはアイテム効果のクリティカルダメージUP効果を半減させるように（battle.c）
+
+・ソウルリーパースキル「死霊爆発」「エスパ」「エスフ」のダメージ計算でBaseLevel倍率計算が正しくなかったのを修正（battle.c）
+
+・ソウルリーパーのソウルエナジーが最大15個しか蓄積できなかったのを20個までに修正（map.h）
+
+・ソウルエナジーが最大個数まで達していた場合、追加によるタイマー更新を行わないように変更（pc.c）
+
+・ドラゴンナイトスキルのサーヴァントウェポン武器体表示を実装（map.h, pc.c, pc.h, clif.c, clif.h）
+
+・新クライアントに伴い、以下スキルのエフェクト表示を調整（skill.c, db/skill_db.txt）
+　イグニッションブレイク、ウィンドカッター、ファイアードラゴンブレス、ウォータードラゴンブレス、フロストミスティ、コメット、アースドライブ、獅子吼
+
+・スキル倍率計算のためにクローキングエクシード中のスキル使用時、解除タイミングを変更（unit.c）
+
+----------------------------------------
+//1565 [2024/10/05] by refis
+
+・scriptタイプNPCの機能拡張、及びリファクタリング（npc.c）
+　これまでOnInitを利用してdisable、hideon、cloakonしていた箇所を直接指定できるよう拡張
+　script/script2の後に()を付加し、下記から指定します
+　　DISABLED ：無効状態、disablenpc命令と等価
+　　HIDDEN   ：ハイディング状態、hideonnpc命令と等価
+　　CLOAKED  ：クローキング状態、cloakonnpc命令と等価
+　例： prontera.gat,164,190,4 script(HIDDEN) init hide test 105,{}
+
+・上記機能拡張に伴いduplicate、MDNPC追加時に元NPCのoptionを引き継ぐように変更（npc.c）
+
+・上記機能拡張が利用できるNPCを更新（/npc/*）
+
+・script_ref.txtに上記機能拡張と追記の無い命令について追加（doc/script_ref.txt）
+
+・視認NPCがクローキング状態の時の細かいリファクタリング（clif.c）
+
+・スクリプト命令[npcwalkwait]の待機時間計算に移動パスを加味するよう修正（script.c）
+
+----------------------------------------
+//1564 [2024/10/03] by Blaze
+
+・ソウルリーパーとスーパーノービス（限界突破）の新規スキル実装
+　（skill.c, battle.c, status.c, db/skill_db.txt, db/skill_db2.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/scdata_db.txt,
+
+・スーパーノービス（限界突破）のスキルツリー変更（db/skill_tree.txt）
+　オートガード、シールドチャージ、シールドブーメラン、爆裂波動、練気功、アスペルシオ、マグニフィカート、ロードオブヴァーミリオン、
+　ストームガスト、メテオストーム、スナッチャー、スティールコイン、バックスタブ、サプライズアタック、ランドマイン、ビーストベイン、
+　ポイズンリアクト、ベナムダスト、ベナムスプラッシャー、武器修理、ブレイクスルー、トランセンデンス、天使さま助けて
+　を追加
+　フラッシャー、サンドマン、フリージングトラップを削除
+
+・スーパーノービスで上限を超えるためスキルツリー最大数MAX_SKILL_TREEを100->120に引き上げ（pc.h）
+
+・ソウルリーパーのソウルエナジー表示を実装（map.h, pc.c, pc.h, clif.c, clif.h）
+
+・スーパーノービスLv99以上のHP計算が内部処理で+2000されておりDB設定と重複していたので削除（status.c）
+
+・ヒール系処理「pc_heal」と「unit_heal」の仕様変更（pc.c, pc.h, unit.c, unit.h）
+　　引数 ap: AP回復/減少、引数 flag: 1でエフェクト表示指定（0でエフェクト無し）
+・上記ヒール系処理の変更により使用箇所およびエフェクト処理部分を見直し（atcommand.c, battle.c, bonus.c, mob.c, pc.c, script.c, skill.c, status.c）
+
+・スキルID定義（MAX_xxx_SKILLID、xxx_SKILLIDとステータス異常番号変換テーブル（SkillStatusChangeTablexx）を整理（mmo.h, skill.c, skill.h）
+　星帝、ソウルリーパー、影狼/朧、サモナーが別定義・別テーブルに分かれていたのを3次職系統に含めるように
+　最大値はスキル個数の直値ではなく終端のスキルIDで指定するように
+　4次職スキルの定義などを追加
+
+・職業系魂スキルのジョブ判定を4次職以降でも対応できるように変更（skill.c）
+
+・battle_confのplayer_skillup_limit(スキルリセット等をした時スキルの上げ方に制限をかける)がnoでも前職スキルポイント消化を判定していたのを修正（pc.c）
+・player_skillup_limitの初期値をyesに変更（conf/battle_auriga.conf）
+
+----------------------------------------
+//1563 [2024/09/29] by Blaze
+
+・特性ステータス（Pow/Sta/Wis/Spl/Con/Crt/P.Atk/S.Matk/Res/Mres/H.Plus/C.Rate/T.StatusPoint）実装
+　（mmo.h, map.h, pc.c, pc.h, status.c, status.h, battle.c, skill.c, db/packet_db.lua）
+　※PCステータスのみ、Mobやスクリプト命令などは今後追加予定
+
+・キャラセーブデータ変更（chardb_txt.c, chardb_sql.c, sql-files/main.sql, sql-files/Auriga1563_changetable.sql）
+　※Auriga-1563以降はセーブデータ形式が変わるため、SQLは同梱のAuriga1563_changetable.sqlを使用してください
+
+・battle_confに特性ステータスの割り振り上限「pc_tstatus_max」を追加（conf/battle_auriga.conf, battle.c, battle.h, pc.c）
+
+・基本/特性ステータスポイントの付与をDB「pc_stpoint_db.txt」で定義できるように仕様変更（pc.c, pc.h, atcommand.c, db/pc_stpoint_db.txt）
+　上記に伴い、battle_confの「get_status_point_over_lv100」を廃止（conf/battle_auriga.conf, battle.c, battle.h, pc.c, atcommand.c）
+
+・ジョブ設定DB「job_db1.txt」の仕様変更
+　addonのDB追加、読み込みを通常DB→(R化前DB)→アドオンDBで上書きできるように（status.c, db/addon/job_db1_add.txt）
+　→上記により、R化前DBは3次職以降は通常DBでサポートするように定義削除（db/pre/job_db1_pre.txt）
+　MaxJobLvの定義をDBに追加、pc.cの定義でMaxJobLvを判定していたのをDB参照するように（pc.c, pc.h, atcommand.c, db/job_db1.txt）
+　→上記により、3次職の最大JobLvが60->70など引き上げられています。
+　最大APの定義をDBに追加（４次職スキルの予約）
+
+・＠コマンド「@pow」「@sta」「@wis」「@spl」「@con」「@crt」「@tstpoint」追加（atcommand.c, atcommand.h, conf/help.txt, conf/atcommand_auriga.conf）
+
+・＠コマンド「@resetstatet」に引数指定できるように変更（atcommand.c, atcommand.h, script.c, conf/help.txt）
+　 引数 1:基本ステータスのみリセット、2:特性ステータスのみリセット、省略:基本/特性ステータス両方リセット
+
+----------------------------------------
+//1562 [2024/09/28] by Blaze
+
+・スキル使用条件DB2「skill_require_db2.txt」をpre/addonに対応（skill.c, db/pre/skill_require_db2_pre.txt, db/addon/skill_require_db2_add.txt）
+　※他DBと同じくPRE_RENEWAL有効時にpreを読み込み、通常DB読み込み後にaddonで上書きします
+
+・(R後)以下ガンスリンガースキルの前提スキルを変更（db/skill_tree.txt）
+　トリプルアクション、ブルズアイ、マッドネスキャンセラー、アジャストメント、インクリージングアキュラシー、ガトリングフィーバー、スプレッドアタック
+・(R前)上記ガンスリンガーのスキルツリー変更前を退避（db/pre/skill_tree_pre.txt）
+
+・以下のガンスリンガー/忍者/その他スキルを変更
+　[ガンスリンガー]フライング
+　・アイテムの「アカデミーコイン（金）」を消費していた謎仕様をコイン消費するように修正（skill.c）
+　・ダメージをJobLv分固定ダメージになるように（battle.c）
+　・相手がMobの場合、Def2も減算するように（status.c）
+　
+　[ガンスリンガー]トリプルアクション
+　・射程距離修正、スネークアイの射程増加の影響を受けないように（db/skill_db.txt）
+　・ダメージ計算を変更、倍率450%だったのを150%×Hit数3倍になるように（battle.c）
+　
+　[ガンスリンガー]ブルズアイ
+　・対象が人型・動物以外の場合にダメージ効果が無かったのを100%ダメージ与えるように（skill.c, battle.c）
+　・ドラム系にもダメージ増加効果・コーマ効果が出るように追加（skill.c, battle.c）
+　・コーマ判定・処理を修正（skill.c）
+　・射程距離修正、スネークアイの射程増加の影響を受けないように（db/skill_db.txt）
+　
+　[ガンスリンガー]マッドネスキャンセラー
+　・再使用でマッドネスキャンセラー状態を解除するように（skill.c）
+　・(R後)コイン消費量を4枚->1枚に変更（db/skill_require_db2.txt）
+　・(R前)コイン消費量の変更前を退避（db/pre/skill_require_db2_pre.txt）
+　
+　[ガンスリンガー]マジカルバレット
+　・(R後)攻撃スキルから自己バフスキルに変更（skill.c, battle.c, status.c, status.h, db/skill_db.txt, db/skill_cast_db.txt, db/scdata_db.txt）
+　・(R前)上記の変更を退避（db/pre/skill_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+　
+　[ガンスリンガー]クラッカー
+　・射程距離修正、スネークアイの射程増加の影響を受けないように（db/skill_db.txt）
+　
+　[ガンスリンガー]シングルアクション
+　[セージ]アドバンスドブック
+　・攻撃速度上昇が+1～+5の固定値上昇だったのを現在値の+1%～+5%で上昇するように変更（status.c）
+　
+　[ガンスリンガー]トラッキング
+　・射程距離修正、スネークアイの効果を内部処理で増加させるように（db/skill_db.txt, skill.c）
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[ガンスリンガー]ディスアーム
+　・武器解除を専用の状態異常SC_DISARMで処理されていたのをストリップウェポン状態で共通処理させるように（skill.c, status.c, status.h, db/scdata_db.txt）
+　　※SC_DISARMは削除
+　・武器解除の確率をステータスで変動するように（skill.c）
+　・射程距離修正、スネークアイの射程増加の影響を受けないように（db/skill_db.txt）
+　
+　[ガンスリンガー]ピアーシングショット
+　・(R後)ダメージ計算を変更（battle.c）
+　・射程距離修正、スネークアイの効果を内部処理で増加させるように（db/skill_db.txt, skill.c）
+　・不死属性および悪魔型に出血効果が無かったのを変更（skill.c）
+　
+　[ガンスリンガー]ラピッドシャワー
+　・(R後)弾丸消費量を5発->1発に変更（db/skill_require_db2.txt）
+　・(R前)弾丸消費量の変更前を退避（db/pre/skill_require_db2_pre.txt）
+　・射程距離修正、スネークアイの効果を内部処理で増加させるように（db/skill_db.txt, skill.c）
+　
+　[ガンスリンガー]ガトリングフィーバー
+　・(R後)攻撃速度増加量をスキルLv×2%からスキルLv×1%に変更（status.c）
+　
+　[ガンスリンガー]ダスト
+　・(R後)詠唱妨害されるように（db/skill_db.txt）
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[ガンスリンガー]フルバスター
+　・(R後)弾丸消費量を10発->2発に変更（db/skill_require_db2.txt）
+　・(R前)弾丸消費量の変更前を退避（db/pre/skill_require_db2_pre.txt）
+　・暗黒効果が相手に出ていたのを自身がなるように変更（skill.c）
+　・射程距離修正、スネークアイの効果を内部処理で増加させるように（db/skill_db.txt, skill.c）
+　・不要な状態異常SC_FULLBUSTERを削除（status.c, status.h, clif.c, unit.c, skill.c, db/scdata_db.txt）
+　
+　[ガンスリンガー]スプレッドアタック
+　・(R後)ダメージ計算を変更（battle.c）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)上記の変更前を退避（db/pre/skill_require_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+　
+　[ガンスリンガー]グラウンドドリフト
+　・スフィア系弾丸で追加効果を判定していたのを弾丸の属性で判定させるように（skill.c, battle.c）
+　・追加効果なしのユニットUNT_GROUNDDRIFT_NEUTRALを追加（skill.c, skill.h）
+　・創生の書のスキルユニット定義名UNT_CREATINGSTAR2をUNT_CREATINGSTARに変更（skill.c, skill.h）
+　・(R後)ダメージ計算を変更、固定ダメージから通常の武器攻撃での計算に（battle.c）
+　・(R後)踏んだときの効果範囲を3x3に拡大（skill.c）
+　・(R後)消費SPを現象（db/skill_require_db.txt）
+　・(R前)消費SPの変更前を退避（db/pre/skill_require_db_pre.txt）
+　・射程距離修正、スネークアイの効果を内部処理で増加させるように（db/skill_db.txt, skill.c）
+　
+　[忍者]手裏剣投げ
+　・(R後)ダメージ計算を固定ダメージから通常武器攻撃に変更、必中効果を削除（battle.c）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R前)消費SPの変更前を退避（db/pre/skill_require_db_pre.txt）
+　
+　[忍者]苦無投げ
+　・(R後)ダメージ計算を固定ダメージから通常武器攻撃に変更、投擲修練の効果が乗るように、必中効果を削除（battle.c）
+　・(R後)ディレイ時間を変更（db/skill_cast_db.txt）
+　・(R前)ディレイ時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]風魔手裏剣投げ
+　・(R後)地面指定から対象指定に変更（db/skill_db.txt）
+　　　※R前は元々対象指定なので変更なし
+　・(R後)ダメージ計算を変更、投擲修練の効果が乗るように（battle.c）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R後)詠唱時間、ディレイ時間を変更（db/skill_cast_db.txt）
+　・(R前)上記の変更前を退避（db/pre/skill_require_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]霞斬り
+　・(R後)ダメージ計算を変更（battle.c）
+　・(R後)Hit数を単発から2Hitに変更（db/skill_db.txt）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R後)ディレイ時間を変更（db/skill_cast_db.txt）
+　・(R前)上記の変更前を退避（db/pre/skill_db_pre.txt, db/pre/skill_require_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]影斬り
+　・射程を影跳びの習得レベルによって変動するように変更（db/skill_db.txt, skill.c）
+　・(R後)ダメージ計算を変更（battle.c）
+　・(R後)Hit数を単発から3Hitに変更（db/skill_db.txt）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R後)ディレイ時間を変更（db/skill_cast_db.txt）
+　・(R前)上記の変更前を退避（db/pre/skill_db_pre.txt, db/pre/skill_require_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]空蝉
+　・ディレイ時間を変更（db/skill_cast_db.txt）
+　
+　[忍者]紅炎華
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]龍炎陣
+　・ディレイ時間を変更（db/skill_cast_db.txt）
+　
+　[忍者]氷閃槍
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]水遁
+　・射程を変更（db/skill_db.txt）
+　・ディレイ時間を変更（db/skill_cast_db.txt）
+　
+　[忍者]氷柱落し
+　・(R後)ダメージ計算を変更（battle.c）
+　・(R後)Hit数を単発から5Hitに変更（db/skill_db.txt）
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]風刃
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]雷撃砕
+　・(R後)射程を変更（db/skill_db.txt）
+　・(R後)ダメージ計算を変更（battle.c）
+　・(R後)Hit数を単発から3Hitに変更（db/skill_db.txt）
+　・(R後)詠唱時間を変更（db/skill_cast_db.txt）
+　・(R前)詠唱時間の変更前を退避（db/pre/skill_cast_db_pre.txt）
+　
+　[忍者]朔風
+　・(R後)Hit数を単発から5Hitに変更（db/skill_db.txt, skill.c）
+　・(R後)消費SPを変更（db/skill_require_db.txt）
+　・(R前)上記の変更前を退避（db/pre/skill_db_pre.txt, db/pre/skill_require_db_pre.txt, db/pre/skill_cast_db_pre.txt）
+
+----------------------------------------
+//1561 [2024/09/26] by Blaze
+
+・ジョブ設定DB「job_db1.txt」とHP/SP設定DB「job_hp_db.txt/job_sp_db.txt」の仕様変更（status.c, db/job_db1.txt, db/job_hp_db.txt, db/job_sp_db.txt, doc/db_ref.txt）
+　変更前）
+　　job_db1.txtのhp/sp設定が-1のとき、job_hp_db.txt/job_sp_db.txtの値を基本HP/SPとする
+　　※job_db1.txtを優先、job_hp_db.txt/job_sp_db.txtは仕様外含めて全レベル帯の設定が必須
+　変更後）
+　　job_hp_db.txt/job_sp_db.txtの値が-1のレベル帯はjob_db1.txtのhp/spから算出した値を基本HP/SPとする
+　　※job_hp_db.txt/job_sp_db.txtを優先、仕様外のレベル帯は設定任意に
+　→これにより本鯖仕様外の1/2次職のLv100～の個別設定が不要に、3次職の～89までのHP/SPが極端に低かった現象などが改善
+
+・上記により、基本HP/SPが-1指定だった各職業の設定を仮設定（db/job_db1.txt, db/pre/job_db1_pre.txt）
+　※-1指定をした場合はデフォルトのHP係数500、SP係数100になります。
+
+・ついでにガンスリンガー、忍者、影狼、朧、リベリオン、サモナー、星帝、ソウルリーパーのASPDを修正（db/job_db1.txt）
+
+・各職業レベル帯によるHP/SP設定を変更（db/job_hp_db.txt, db/job_sp_db.txt）
+　※3次職Lv150～、ガンスリンガーLv1～、忍者Lv1～、テコンキッドLv71～、拳聖Lv70～、ソウルリンカーLv81～、
+　　スーパーノービス(限界突破)Lv100～、影狼/朧Lv100～、リベリオンLv176～、サモナーLv176～などのHP/SP設定を本鯖仕様に
+
+・未転生・養子の3次職、上位特殊1次職、サモナーのJobボーナスが～Lv70（サモナーは～Lv60）まで無かったのを修正（job_db2.txt）
+
+----------------------------------------
+//1560 [2024/09/25] by refis
+
+・七王家とユミルの心臓クエストNPC実装（npc_quest_royalbanquet.sc, npc_memorial_blessingrituals.sc）
+	-> 関連クエスト実装
+	-> ニーヴエンチャント実装
+	-> 過去の儀式の間メモリアル実装（npc_memorial_ritualroom.sc）
+	-> 空中要塞メモリアル実装（npc_memorial_aerialfortress.sc）
+	Thanks a lot Dallen さん
+
+・追加マップのmapflag更新 (mapflag.sc, mapflag_memorial.sc)
+
+・追加マップのmonster出現定義追加 (npc_monster_prtprison.sc, npc_monster_prtq.sc)
+
+・mob_dbの更新 (mob_db.txt, mob_skill_db.txt, mob_talk_db.txt)
+	Thanks Dallen さん
+
+・quest_dbの更新 (quest_db.txt)
+
+・memorial_dbの更新 (memorial_db.txt)
+	Thanks Dallen さん
+
+・map_auriga.conf更新 (map_auriga.conf)
+
+----------------------------------------
+//1559 [2024/09/25] by refis
+
+・スクリプト命令[delmerc]、[setequipcardid]追加（script_ref.txt, script.c）
+	Thanks フリージア さん、Dallen さん
+
+・mob_dbのmodeを追加（db_ref.txt, battle.c, mob.c, skill.c, status.*）
+	-> ボス属性の持つ悪性状態異常・ハイディング系・ノックバックの各無効特性は維持しています
+	-> 各種攻撃無効、ダメージ補正の計算位置は暫定です
+
+・装備一括解除[0xbad]、[0xbf5]を実装（packet_db.lua, clif.c）
+	Thanks Dallen さん
+
+----------------------------------------
+//1558 [2024/09/22] by Blaze
+
+・3次職のスキルが下位スキルを未消費でも習得できていたのを以下のように修正（pc.c, pc.h, battle.c, battle.h, pc.c, conf/battle_auriga.conf）
+　jobchange時に以下のキャラ変数に使用スキルポイントを保持するように
+　　ノービス -> 1次職転職時 ： PC_USESKILLPOINT_0TH
+　　1次職 -> 2次職転職時    ： PC_USESKILLPOINT_1ST
+　　2次職 -> 3次職転職時    ： PC_USESKILLPOINT_2ND
+　　3次職 -> 4次職転職時    ： PC_USESKILLPOINT_3RD
+
+　スキルポイント割り振り時に前職の使用ポイントを判定するように変更。
+　（これに伴い、1次職をJobLv40～49で転職したときなどでも正常に使用ポイントを判定できるように）
+
+　キャラ変数の転職記録が無い場合（Patch1558以前のキャラなど）は以下のbattle_confの値を参照し、使用済みポイントとして算出、
+　また、大幅にスキルポイント使用している場合は以下のbattle_confの値を上限とします。
+　　ノービス
+　　max_skillpoint_nv: 9
+　　１次職（未転生・転生共通・テコンキッド）
+　　max_skillpoint_1st: 58
+　　２次職（未転生）
+　　max_skillpoint_n2nd: 107
+　　３次職（未転生）
+　　max_skillpoint_n3rd: 176
+　　上位２次職
+　　max_skillpoint_2nd: 127
+　　３次職
+　　max_skillpoint_3rd: 196
+　　特殊２次職（テコンキッド系列）
+　　max_skillpoint_tk2nd: 107
+　　特殊３次職（テコンキッド系列）
+　　max_skillpoint_tk3rd: 176
+　　特殊１次職（忍者・ガンスリンガー系列）
+　　max_skillpoint_ex1st: 78
+　　特殊２次職（忍者・ガンスリンガー系列）
+　　max_skillpoint_ex2nd: 147
+　　スーパーノービス
+　　max_skillpoint_snv: 107
+　　スーパーノービス（限界突破）
+　　max_skillpoint_esnv: 176
+　　サモナー
+　　max_skillpoint_doram: 59
+
+・下位スキルポイントが未消費でスキルポイント割り振りに失敗した場合にメッセージ表示するように（pc.c, conf/msg_auriga.conf）
+
+・スーパーノービス(限界突破)とスピリットハンドラーは２次職扱い、サモナーは１次職扱いに変更（pc.h）
+
+・サモナーのスキルは１次職扱いとするように変更（db/skill_tree.txt）
+
+・スキルリセットを行うスクリプト命令/@コマンドのresetskillを仕様変更（pc.c, script.c, atcommand.c, doc/script_ref.txt）
+　引数なしではクエストスキルおよび基本スキルはリセットしないように　※ドラム基本スキルはリセットします
+　引数1指定でクエストスキル含めてリセット（従来どおり）
+　引数2指定で基本スキルを含めてリセット、
+　引数3指定でクエストスキル・基本スキル含めた全てのスキルをリセットするように。
+　-1指定のbattle_auriga.conf依存は廃止。
+
+・上記に伴い、battle_auriga.confの「quest_skill_reset」を廃止（battle.c, battle.h, pc.c, conf/battle_auriga.conf, doc/conf_ref.txt）
+
+・スキルリセットNPCのスクリプトを一部修正（script/npc/job/npc_job_transmigration.sc, script/sample/npc_debug_revive.sc）
+
+・キラキラスティック使用時のスクリプトを一部修正（script/function/function_itemdb.sc）
+
+----------------------------------------
+//1557 [2024/09/21] by Blaze
+
+・スキルDBに範囲スキルの範囲areaを指定できるように拡張（db/skill_db.txt, db/pre/skill_db_pre.txt skill.c, skill.h, doc/db_ref.txt）
+　ついでにスキル名修正など（db/skill_db.txt）
+
+・上記に伴い範囲スキルの処理を最適化（skill.c）
+　罠関係は発動時の効果範囲をunitのrangeではなくareaで判定させるように（skill.c）
+　R化前/後で効果範囲が変わっているアローシャワー、サプライズアタック、風魔手裏剣投げはskill_db_pre.txtで範囲指定するように（db/pre/skill_db_pre.txt）
+　※ブランディッシュスピアは対応見送り
+
+・battle_auriga.confに配置型スキルの消滅間際に効果を発動させないようにする「skill_unit_interval_limit」を追加（battle.c, battle.c, skill.c, conf/battle_auriga.conf）
+　　例）サイキックウェーブLv1で地面に1.5秒間配置し、効果を0.5秒間隔で発動するとき
+　　　yes:発動させない  例の場合は0秒、0.5秒、1.0秒の3回発動（本鯖仕様）
+　　　no :発動させる    例の場合は0秒、0.5秒、1.0秒、1.5秒の4回発動（旧Auriga仕様）
+　　※初期値はyes（LoVなど、これまでと1回分効果が減るスキルがあります）
+
+・上記に伴い、ロードオブヴァーミリオンの効果時間を変更（db/skill_cast_db.txt）
+
+・skill_db2.txtでオートシャドウスペル対象指定が出来るように（db/skill_db2.txt, skill.c, skill.h, clif.c, doc/db_ref.txt）
+
+・スキル失敗表示clif_skill_failのtypeをenum定義値で指定するように（clif.c, clif.h, skill.c, homun.c, vending.c, unit.c）
+
+・上記に伴い一部スキルの失敗メッセージを変更（skill.c, unit.c）
+
+・ハイドなど隠れている相手を暴くディティクト効果を子関数でまとめて処理させるように（skill.c, skill.h, status.c）
+　それに伴い、一部ディティクト効果でカモフラージュ、シャドウフォーム、朔月が解除できなかったのを修正
+
+・ウォーロックとアークビショップのスキルツリーで一部スキルのMaxLvが誤っていたのを修正（db/skill_tree.txt）
+　　Thanks refis さん
+
+・以下のスキルを変更・修正
+　[ルーンナイト]デスバウンド
+　・近接物理スキルによる反射でダメージ表示と状態異常解除が不正だったのを修正（battle.c）
+　・反射ダメージの桁溢れ対策（battle.c）
+　
+　[ウォーロック]コメット
+　[NPC]Mコメット
+　・オブジェクト設置スキルに変更、範囲を15x15から19x19セルに拡大・威力の距離判定を修正（skill.c）
+　・スタン効果が発動していなかったのを修正（db/skill_cast_db.txt）
+　
+　[シャドウチェイサー]フェイタルメナス
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・ダメージ与えた相手とテレポートする効果を削除（skill.c）
+　・全てのマップで使用可に変更（db/skill_db2.txt）
+　・ダメージ計算を修正、短剣装備時に2Hitする効果を追加（battle.c, db/skill_db.txt）
+　
+　[シャドウチェイサー]オートシャドウスペル
+　・クリムゾンロック、ヘルインフェルノ、ソウルエクスパンションを対象に追加（db/skill_db2.txt）
+　
+　[シャドウチェイサー]シャドウフォーム
+　・各種ディティクト効果で解除される際に確率で解除されるように（skill.c）
+　・使用者と離れて解除される距離を15セル以上から12セル以上に変更（skill.c）
+　
+　[シャドウチェイサー]トライアングルショット
+　・ダメージ計算を修正（battle.c）
+　
+　[シャドウチェイサー]ボディペインティング
+　・必要アイテムにフェイスペイントブラシを追加（db/skill_require_db.txt）
+　・ディティクト効果でカモフラージュ・シャドウフォームが解除できなかったのを修正、インビジビリティが解除できていたのを修正（skill.c）
+　
+　[シャドウチェイサー]フェイントボム
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・バックステップ後に姿を隠す効果を追加（status.c, status.h, skill.c, db/scdata_db.txt）
+　・ノックバック距離と範囲が固定だったのを修正（skill.c, db/skill_db.txt）
+　・ダメージ計算を修正（battle.c）
+　・攻撃相手にノックバック効果が発生していたのを修正（battle.c）
+　・PK不可の通常マップでダメージ2倍になるように変更（db/skill_db2.txt）
+　
+　[シャドウチェイサー]エスケープ
+　・設置用トラップが二重で消費されていたのを修正（skill.c）
+　・ディレイ、再使用時間、効果時間を修正（db/skill_cast_db.txt）
+　
+　[ロイヤルガード]バニシングポイント
+　・射程距離を7->11に修正（db/skill_db.txt）
+　
+　[ロイヤルガード]シールドプレス
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・単発から5Hit表示に変更（db/skill_db.txt）
+　・スタン効果を削除（skill.c）
+　・ダメージ計算を修正（battle.c）
+　
+　[ロイヤルガード]レイオブジェネシス
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・バンディング状態やインスピレーション状態でなくとも使用できるように変更（skill.c）
+　・ダメージ計算を修正、物理＋魔法ダメージから魔法ダメージのみに変更（battle.c）
+　・ディレイ、再使用時間、効果時間を修正（db/skill_cast_db.txt）
+　・消費HP変更、現在HPの3～15%消費だったのをMaxHPの1%消費に（db/skill_require_db.txt）
+　
+　[ロイヤルガード]インスピレーション
+　・一般マップなどで使用不可だったのをどこでも使用可に（skill_db2.txt）
+　
+　[修羅]双龍脚
+　・スキル使用後のディレイに固有ディレイを追加（skill.c）
+　・ディレイは天羅地網、大纒崩捶を習得時に発生するように変更（skill.c）
+　・ダメージ計算を修正（battle.c）
+　
+　[修羅]地雷震
+　・ディティクト効果でカモフラージュ・シャドウフォームが解除できなかったのを修正、インビジビリティが解除できていたのを修正（skill.c）
+　
+　[修羅]大纏崩捶
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・ダメージ計算を修正（battle.c）
+　
+　[修羅]號砲
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・HP/SP消費の処理位置を変更（battle.c, skill.c, db/skill_require_db.txt）
+　
+　[修羅]爆気散弾
+　・判定を強制遠距離に変更（db/skill_db2.txt）
+　
+　[修羅]破碎柱
+　・気弾の消費タイミングを反撃時ではなくスキル使用時に変更（skill.c, db/skill_require_db.txt）
+　・発動率を修正（battle.c, status.c）
+　・反撃ダメージの計算を修正（skill.c, battle.c）
+　・ノックバック後の衝突ダメージを追加（battle.c, skill.c）
+　・反撃スキルのダメージ倍率などの定義を追加（db/skill_db2.txt）
+　
+　[修羅]呪縛陣
+　・気弾の消費タイミングをスキル使用時ではなく効果発動時に変更（skill.c）
+　・スキル使用時にHP消費するように（db/skill_require_db.txt）
+　
+　[修羅]閃電歩
+　・発動率を修正（battle.c, status.c）
+　
+　[修羅]修羅身弾
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　
+　[修羅]潜龍昇天
+　・爆裂波動の効果は習得レベルに依存するように変更（skill.c）
+　
+　[修羅]羅刹破凰撃
+　・爆裂波動状態でなくても使用可能に（db/skill_require_db.txt）
+　・コンボ時のダメージ計算を修正（battle.c）
+　
+　[修羅]点穴 -默-
+　・ダメージ発生に成功率判定を追加（skill.c）
+　
+　[修羅]点穴 -球-
+　[修羅]点穴 -反-
+　・消費HPが現在HPからの比率だったのを最大HPの比率で消費するように修正（db/skill_require_db.txt）
+　
+　[ミンストレル/ワンダラー]メタリックサウンド
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・固有ディレイを修正（db/skill_cast_db.txt）
+　・ダメージ相手のSP減少効果を削除（battle.c）
+　
+　[ミンストレル/ワンダラー]シビアレインストーム
+　・楽器・鞭を装備時でも使用可に（db/skill_require_db.txt）
+　・固有ディレイ、持続時間を変更（db/skill_cast_db.txt）
+　・ダメージ計算を修正（battle.c）
+　
+　[ソーサラー]ファイアーウォーク
+　[ソーサラー]エレクトリックウォーク
+　・耐久回数が1回だったのを1～3回のランダム回数に変更（skill.c）
+　
+　[ソーサラー]スペルフィスト
+　・MaxLvを5->10に拡張（skill.c, db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・効果回数がLv+1回だったのをLv*7回に増加（status.c）
+　
+　[ソーサラー]ポイズンバスター
+　・ダメージ計算を修正（battle.c）
+　
+　[ソーサラー]ヴェラチュールスピアー
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・単発から3Hit表示に変更（db/skill_db.txt）
+　・ダメージ計算を修正、物理＋魔法ダメージから魔法ダメージのみに変更（battle.c）
+　・スタン効果を追加（skill.c, db/skill_cast_db.txt）
+　
+　[ジェネティック]カートトルネード
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・ノックバック効果を削除（db/skill_db.txt）
+　・単発から3Hit表示に変更（db/skill_db.txt）
+　・ダメージ計算を修正（battle.c）
+　
+　[ジェネティック]スポアエクスプロージョン
+　・MaxLvを5->10に拡張（skill.c, db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・単発から3Hit表示に変更（db/skill_db.txt）
+　・誤って魔法攻撃を指定していたのを武器攻撃に修正（skill.c）
+　・ダメージ計算を修正、周辺の対象にはダメージ減衰していたのを削除（battle.c）
+　・PK不可の通常マップでダメージ2倍になるように変更（db/skill_db2.txt）
+
+----------------------------------------
+//1556 [2024/09/20] by refis
+
+・悪夢のジターバグメモリアル実装（npc_memorial_jitterbug.sc）
+	Thanks a lot フリージア さん、Dallen さん
+
+・mapflag更新 (mapflag.sc, mapflag_memorial.sc)
+
+・item_dbの更新 (item_db.txt)
+
+・mob_dbの更新、修正 (mob_db.txt, mob_skill_db.txt)
+
+・quest_dbの更新 (quest_db.txt)
+
+・map_auriga.conf更新 (map_auriga.conf)
+
+・エラー対策のため転職時にセカコスを解除するよう変更 (pc.c)
+
+・不要な宣言を削除 (pc.c)
+
+----------------------------------------
+//1555 [2024/09/19] by refis
+
+・Patch1554のエラーを修正（common/grfio.c）
+
+----------------------------------------
+//1554 [2024/09/18] by refis
+
+・GRF version 0300 に仮対応（common/grfio.c）
+	Thanks Dallen さん、kuura さん
+
+----------------------------------------
+//1553 [2024/09/16] by refis
+
+・MAX_PACKET_DBを0xC20まで拡張（clif.c）
+
+・PACKETVER「20231220」以降の服コスチュームの仕様変更に対応（char/char.c, common/mmo.h, clif.c, pc.*）
+	-> キャラクターセレクト側は暫定対応
+
+・UnknownPacketが出力されないよう定義だけ追加 (db/packet_db.lua, clif.c)
+
+----------------------------------------
+//1552 [2024/09/15] by Blaze
+
+・スキル要求DBにスキルレベル毎に要求アイテムを指定できるlist_lv_itemid,list_lv_amountを追加
+（db/skill_require_db.txt, db/pre/skill_require_db_pre.txt, skill.c, skill.h）
+
+・以下のアイテム消費スキルの処理を最適化（db/skill_require_db.txt, skill.c）
+　ポーションピッチャー、スリムポーションピッチャー、植物栽培、
+　シェイプシフト、リペア、サモンアグニ、サモンアクア、サモンベントス、サモンテラ
+　ファイアーインシグニア、ウォーターインシグニア、ウィンドインシグニア、アースインシグニア、
+　ファイアーエクスパンション、撒菱
+
+・スキル使用条件のうち、素手以外を指定していたスキル（バッシュなど）に両手杖の判定が入っていなかったのを修正（db/skill_require_db.txt）
+
+・MAX_STATUSCHANGEを730->800に引き上げ（mmo.h）
+
+・（PRE_RENEWAL無効時）ブラックスミススキル「ヒルトバインディング」の追加ダメージ効果を実装（battle.c）
+
+・弾丸、苦無、キャノンボールを必要とするスキルで装備していない場合、専用のスキル失敗メッセージを表示するように（skill.c）
+
+・以下の3-1次職スキルを変更・修正
+　[ルーンナイト]エンチャントブレイド
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・素手を含む全ての武器で使用可能に修正（db/skill_require_db.txt）
+　・武器付け替えで効果が切れないように変更（pc.c）
+　
+　[ルーンナイト]ソニックウェーブ
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・単発から3Hit表示に変更（db/skill_db.txt）
+　・ダメージ計算を修正、命中補正を追加（battle.c）
+　
+　[ルーンナイト]デスバウンド
+　・反射ダメージと自傷ダメージの計算を修正（battle.c）
+　・反射時のノックバック追加（battle.c）
+　・待ち受けの時間がLv毎に変動していたのを2秒固定に修正（skill_cast_db.txt）
+　・消費SP変更（db/skill_require_db.txt）
+　
+　[ルーンナイト]ハンドレッドスピア
+　・ダメージ計算のレベル補正が正しく乗っていなかったのを修正（battle.c）
+　・ノックバック効果を追加（battle.c）
+　・射程距離を1->5に修正（db/skill_db.txt）
+　・再使用時間を2秒->1秒に修正（db/skill_cast_db.txt）
+　
+　[ルーンナイト]ウィンドカッター
+　・詠唱中断されないように修正（db/skill_db.txt）
+　
+　[ルーンナイト]ドラゴントレーニング
+　・ドラゴン騎乗時、槍修練の効果がドラゴントレーニングLv5ではなくLv1以上で効果アップするように修正（battle.c）
+　・ドラゴン騎乗時、所持量増加の効果がドラゴントレーニング未習得の場合でも増加していたのを修正（status.c）
+　・ドラゴン騎乗時、ASPDの減少率を修正（status.c）
+　
+　[ルーンナイト]ファイアードラゴンブレス
+　[ルーンナイト]ウォータードラゴンブレス
+　・ダメージ計算式を修正（battle.c）
+　・状態異常の確率、持続時間を修正（skill.c、db/skill_cast_db.txt）
+　
+　[ルーンナイト]ドラゴンハウリング
+　・詠唱中断されないように修正（db/skill_db.txt）
+　
+　[ルーンナイト]ルーンストーン系スキル共通
+　・ルーンストーン使用時、ルーンマスタリー未習得の場合はスキル失敗するように変更（skill.c, db/item_db.txt, db/skill_require_db.txt）
+　・状態異常の名称を変更（status.c, status.h, skill.c, battle.c, clif.c, db/scdata_db.txt）
+　　SC_BERKANA -> SC_MILLENNIUMSHIELD
+　　SC_NAUTHIZ -> SC_REFRESH
+　　SC_TURISUSS -> SC_GIANTGROWTH
+　　SC_HAGALAZ -> SC_STONEHARDSKIN
+　　SC_ISHA -> SC_VITALITYACTIVATION
+　　SC_EISIR -> SC_FIGHTINGSPIRIT
+　　SC_URUZ -> SC_ABUNDANCE
+　・各スキル詠唱中断されないように修正（db/skill_db.txt）
+
+　[ルーンナイト]ミレニアムシールド
+　・永続効果だったのを3分まで持続するように変更（status.c, db/skill_cast_db.txt）
+　・ラクスアニマでミレニアムシールドをPTメンバーに移した後、エフェクトが残っていたのを修正（status.c）
+　
+　[ルーンナイト]クラッシュストライク
+　・対象指定から即時効果の状態付与スキルに変更（skill.c, battle.c, db/skill_db.txt, db/skill_cast_db.txt, db/scdata_db.txt）
+　
+　[ギロチンクロス]ベナムインプレス
+　・射程距離を5->10に修正（db/skill_db.txt）
+　
+　[ギロチンクロス]ポイズニングウェポン
+　・新毒付与時にメッセージ表示するように変更（skill.c）
+　・装備変更時に効果が切れるように修正（pc.c）
+　・状態中のアイコンがクローキングエクシードで表示されていたのを修正（status.h）
+　
+　[ギロチンクロス]ウェポンブロッキング
+　・ブロック状態の名称を変更　SC_WEAPONBLOCKING -> SC_WEAPONBLOCKING_POSTDELAY（status.c, status.h, skill.c, battle.c, unit.c, db/scdata_db.txt）
+　・ブロック状態を1.5秒->2秒に変更（db/skill_cast_db.txt）
+　・ブロック成功時に10秒間カウンタースラッシュ使用可の付与を実装（battle.c, skill.c, status.c, status.h, db/scdata_db.txt）
+　
+　[ギロチンクロス]カウンタースラッシュ
+　・MaxLvを5->10に拡張（skill.c, db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・ダメージ計算式を修正（battle.c）
+　・使用条件をブロック状態からカウンタースラッシュ使用可に変更（skill.c）
+　・使用時にブロック状態を解除しないように（skill.c）
+　
+　[ギロチンクロス]ウェポンクラッシュ
+　・ダメージ効果がなかったのを追加（skill.c, db/skill_db.txt）
+　・ストリップウェポン効果発生時の最適化（skill.c）
+　※成功時に「ストリップウェポン」とスキル発言するのは仕様です
+　
+　[ギロチンクロス]ポイズンスモーク
+　・スキル効果の配置上限を1に修正（db/skill_db.txt）
+　・新毒付与の基本確立を20%->50%に変更（skill.c）
+　
+　[ギロチンクロス]ハルシネーションウォーク
+　・ペナルティ状態の名称を変更　SC_HALLUCINATIONWALK2 ->SC_HALLUCINATIONWALK_POSTDELAY（status.c, status.h, skill.c, db/scdata_db.txt）
+　・ペナルティ状態の開始・終了時に移動速度再計算をするように修正（status.c）
+　
+　[ギロチンクロス]ローリングカッター
+　・Lv4以上の効果範囲を拡大（skill.c）
+　・回転カウンター状態が永続だったのを5秒で時間切れするように変更（status.c, db/skill_cast_db.txt）
+　
+　[ギロチンクロス]クロスリッパースラッシャー
+　・スキル使用条件にカタール装備になっていなかったのを修正（db/skill_require_db.txt）
+　・ダメージ計算式を修正（battle.c）
+　・射程距離を11固定->9～13のレベルで変動するように変更（db/skill_db.txt）
+　
+　[アークビショップ]ジュデックス
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・ダメージ計算式を修正（battle.c）
+　
+　[アークビショップ]アンシラ
+　・消費SPが現在SPの30%だったのを最大SPの30%消費するように修正（db/skill_require_db.txt）
+　
+　[アークビショップ]アドラムス
+　・速度減少状態を専用のアドラムス状態で付与するように変更（skill.c, status.c, status.h, db/scdata_db.txt）
+　・暗闇状態が個別に成功判定していたのをアドラムス状態の成功時に同時付与するように（skill.c）
+　・詠唱時間と効果時間を変更（db/skill_cast_db.txt）
+　
+　[アークビショップ]クレメンティア
+　[アークビショップ]カントキャンディダス
+　・詠唱時間を変更（db/skill_cast_db.txt）
+　
+　[アークビショップ]コルセオヒール
+　・詠唱時間、固定詠唱時間、ディレイ、再使用時間を変更（db/skill_cast_db.txt）
+　
+　[アークビショップ]エピクレシス
+　・不死属性へのダメージ効果を削除（skill.c, battle.c）
+　・ハイド中の対象へのディテクト効果を追加（skill.c）
+　
+　[アークビショップ]オラティオ
+　・状態異常の定義を最適化（skill.c, db/skill_cast_db.txt）
+　
+　[アークビショップ]ラウダアグヌス
+　[アークビショップ]ラウダラムス
+　・詠唱時間、固定詠唱時間を変更（db/skill_cast_db.txt）
+　・効果時間が6秒しかなかったのを60秒に修正（db/skill_cast_db.txt）
+　
+　[アークビショップ]レノヴァティオ
+　・MaxLvを1->4に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・詠唱時間、固定詠唱時間を変更（db/skill_cast_db.txt）
+　・ヒール効果の表示を変更（skill.c）
+　・付与と同時にヒール効果を発生するように（skill.c）
+　・不死属性の敵にダメージ与えるように（skill.c）
+　
+　[アークビショップ]ハイネスヒール
+　・詠唱時間、固定詠唱時間を変更（db/skill_cast_db.txt）
+　
+　[アークビショップ]クリアランス
+　・自分にもスキル使用可能に変更（db/skill_db.txt）
+　
+　[アークビショップ]エクスピアティオ
+　・固定詠唱時間を削除、効果時間を修正（db/skill_cast_db.txt）
+　・味方以外に使用時にスキル失敗するように（skill.c）
+　・装備切替時でも効果持続するように変更（pc.c, db/skill_require_db.txt）
+　
+　[アークビショップ]デュプレライト
+　・ディレイ時間を変更（db/skill_cast_db.txt）
+　
+　[アークビショップ]サクラメント
+　・味方以外に使用時にスキル失敗するように（skill.c）
+　
+　[ウォーロック]ホワイトインプリズン
+　・自分へ使用時に100%成功していなかったのを修正（skill.c）
+　・プレイヤーへ使用時は成功率が低くなるように変更（skill.c）
+　・効果時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]フロストミスティ
+　・詠唱時間、固定詠唱時間、効果時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]マーシュオブアビス
+　・詠唱時間、固定詠唱時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]リゴグナイズドスペル
+　・消費SPを修正（db/skill_require_db.txt）
+　
+　[ウォーロック]シエナエクセクレイト
+　・効果時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]ステイシス
+　・PK可能エリア以外の一般フィールドでは使用不可に変更（db/skill_db2.txt）
+　・状態異常中のアイコン表示追加（status.c, status.h）
+　・効果時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]ヘルインフェルノ
+　・詠唱時間を修正（db/skill_cast_db.txt）
+　・消費SPを修正（db/skill_require_db.txt）
+　
+　[ウォーロック]コメット
+　・消費SPを修正（db/skill_require_db.txt）
+　
+　[ウォーロック]チェーンライトニング
+　・連撃回数によってダメージ減少するように変更（battle.c, skill.c）
+　・連鎖間隔を700ms->650msに変更（skill.c）
+　
+　[ウォーロック]アースストレイン
+　・見た目のHit数を2に変更（db/skill_db.txt）
+　・固定詠唱時間を修正（db/skill_cast_db.txt）
+　
+　[ウォーロック]テトラボルテックス
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_require_db.txt, db/skill_cast_db.txt, db/skill_tree.txt）
+　・Lv6以上で範囲攻撃化するように変更（skill.c）
+　・攻撃間隔を250ms->200msに変更（skill.c）
+　・サモンストーン時のスタン効果とサモンボールライトニング時の出血効果が入れ替わっていたのを修正（skill.c）
+　
+　[ウォーロック]サモンファイアボール
+　[ウォーロック]サモンボールライトニング
+　[ウォーロック]サモンウォーターボール
+　[ウォーロック]サモンストーン
+　・エーテル召喚中、毎秒SP消費するように変更（status.c）
+　・リリース時のダメージ計算式を修正（battle.c）
+　
+　[ウォーロック]リリース
+　・Lv2でエーテル召喚数分の連続攻撃するとき、攻撃間隔を400ms->aDelayに依存するように変更（skill.c）
+　
+　[ウォーロック]リーディングスペルブック
+　・保存数上限を超えた場合、失敗メッセージを表示するように（skill.c）
+　・スキル未習得の場合、睡眠状態になるように（skill.c）
+　
+　[ウォーロック]フリージングスペル
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_tree.txt）
+　
+　[レンジャー]アローストーム
+　・ワシの目スキルで射程が変動するように修正（skill.c）
+　
+　[レンジャー]フィアーブリーズ
+　・連撃の発生確率を4%～10%->最大50%に増加、Hit数で一律同確率だったのをHit数に応じて確率を変更（battle.c, status.c）
+　・クリティカル時にも連撃が入るようになったため、計算位置を変更および連撃クリティカル表示を実装（battle.c）
+　
+　[レンジャー]エイムドボルト
+　・相手が足止め状態でなくても無条件で連撃が発生するように変更（skill.c, battle.c）
+　・連撃時の矢消費数が実際の連撃時と合わないことがあるのを修正（skill.c, battle.c）
+　・ワシの目スキルで射程が変動するように修正（skill.c）
+　
+　[レンジャー]エレクトリックショッカー
+　・トラップを重ね置きできないように修正（skill.c）
+　・踏んだ対象者を罠まで吸い込みするように（skill.c）
+　・効果時間を修正（db/skill_cast_db.txt）
+　・拘束時間の計算式を修正、Vitも影響するように（skill.c）
+　・ボスに対する時間短縮と最低保障時間を削除（skill.c）
+　
+　[レンジャー]クラスターボム
+　・トラップをアローシャワーなどで吹き飛ばせるように（skill.c）
+　・トラップを重ね置きできないように修正（skill.c）
+　・クラスターボムの周りに他の罠を設置不能にするために効果範囲を広げ、起動処理の判定処理を修正（skill.c, db/skill_unit_db.txt）
+　・トラップ配置時にモーションが発生していなかったのを修正（skill.c）
+　・トラップが踏まれたとき、範囲攻撃となっていなかったのを修正（skill.c）
+　・ダメージ計算式を修正（battle.c）
+　
+　[レンジャー]ウォーグライダー
+　・歩きながら使用すると引き戻されていた現象を修正（skill.c）
+　・攻撃時に騎乗時では攻撃できないメッセージを表示するように（battle.c）
+　
+　[レンジャー]ウォーグダッシュ
+　・停止時に引き戻される現象の改善のため、停止処理位置を変更（unit.c）
+　・衝突時の不要なキャラ向き再設定処理を削除（pc.c）
+　・攻撃時の属性が装備している矢の属性になっていたのを強制無属性に変更（battle.c）
+　
+　[レンジャー]ウォーグストライク
+　・トゥースオブウォーグによるダメージ増加量を修正（battle.c）
+　・属性が装備している矢の属性になっていたのを強制無属性に変更（battle.c）
+　
+　[レンジャー]ウォーグバイト
+　・トゥースオブウォーグによるダメージ増加量を修正（battle.c）
+　・属性が装備している矢の属性になっていたのを強制無属性に変更（battle.c）
+　・判定を強制遠距離に変更（db/skill_db2.txt）
+　・移動不可状態の確率判定と効果時間を修正（skill.c）
+　・射程距離を14->9に修正（db/skill_db.txt）
+　
+　[レンジャー]カモフラージュ
+　・再使用でカモフラージュ状態を解除できるように修正（skill.c）
+　・10秒で時間切れしていたのをSP切れか再使用するまで持続するように変更（status.c, db/skill_cast_db.txt）
+　・Lv1～2の壁付近判定をスキル使用前に移動し、失敗時はSP消費しないように＆メッセージ表示するように（skill.c）
+　・Lv3以上の移動速度ペナルティを+75%～+25%あったのを+50%～+0%に変更（status.c）
+　
+　[レンジャー]トラップ研究
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_tree.txt）
+　
+　[レンジャー]マゼンタトラップ
+　[レンジャー]コバルトトラップ
+　[レンジャー]メイズトラップ
+　[レンジャー]ヴェルデュールトラップ
+　・トラップをアローシャワーなどで吹き飛ばせるように（skill.c）
+　・トラップを重ね置きできないように修正（skill.c）
+　・属性変更を確率40%->100%で成功するように変更（skill.c）
+　・Mob以外には効果がないように変更（skill,c）
+　・消費アイテムを各種ポイントに変更（db/skill_require_db.txt）
+　
+　[レンジャー]ファイアリングトラップ
+　[レンジャー]アイスバウンドトラップ
+　・トラップをアローシャワーなどで吹き飛ばせるように（skill.c）
+　・トラップを重ね置きできないように修正（skill.c）
+　・トラップ配置時にモーションが発生していなかったのを修正（skill.c）
+　
+　[レンジャー]アンリミット
+　・攻撃力増加がウォーグダッシュ、ウォーグストライク、ウォーグバイトに乗らないように修正（battle.c）
+　
+　[メカニック]魔導ギア関係
+　・魔導ギア搭乗時、マーチャント系列のスキルとテレポート以外は使用不可に変更（skill.c）
+　・魔導ギアの加熱値を状態異常で計算させるように変更（map.h, status.c, status.h, battle.c, skill.c, db/scdata_db.txt）
+　・魔導ギアで火属性の攻撃被弾で加熱値+3させるように（battle.c）
+　・オーバーヒートリミット値を基本値150+メインフレーム改造の上昇値で計算するように（battle.c）
+　・オーバーヒート状態がギア搭乗の判定誤りで即座に切れていたのを修正（status.c）
+　・オーバーヒート状態は加熱値を0にするまで継続するように（status.c, skill.c）
+　・オーバーヒート状態のHP減少では死なないように修正（status.c）
+　・オーバーヒート状態のアイコン表示を追加（status.c）
+　
+　[メカニック]魔導ギアライセンス
+　・魔導ギア搭乗時の追加ダメージを+15～75から+20～100に増加
+　
+　[メカニック]ブーストナックル
+　・ダメージ計算式を修正（battle.c）
+　
+　[メカニック]パイルバンカー
+　・パイルバンカー装備判定はdb参照ではなく直接skill_check_condition2_pcで判定するように（skill.c, db/skill_require_db.txt）
+　・パイルバンカーS、パイルバンカーP、パイルバンカーTを装備中でも使用可に変更（skill.c）
+　・パイルバンカー未装備時の失敗メッセージがUnknwon Item表示になっていたのを修正（skill.c）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]バルカンアーム
+　・単体攻撃から3x3の範囲攻撃に変更（skill.c）
+　・ダメージ計算式を修正（battle.c）
+　・射程を13固定->12～14に変更、詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]フレイムスローワー
+　・直線範囲攻撃から5x5～9x9の正方形の範囲攻撃に変更（skill.c）
+　・ディレイ時間を変更（db/skill_cast_db.txt）
+　
+　[メカニック]コールドスローワー
+　・凍結と氷結効果の確率を変更（skill.c）
+　・効果時間を修正（db/skill_cast_db.txt）
+　
+　[メカニック]アームズキャノン
+　・MaxLvを3->5に拡張（skill.c, db/skill_db.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・地面指定スキルから対象指定スキルに変更（skill.c, db/skill_db.txt）
+　・ダメージ計算式を修正（battle.c）
+　・判定を強制遠距離に変更（db/skill_db2.txt）
+　・射程を7固定->9～13に変更（db/skill_db.txt）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]ホバーリング
+　・ホバーリングブースター装備判定はdb参照ではなく直接skill_check_condition2_pcで判定するように（skill.c, db/skill_require_db.txt）
+　・ホバーリングブースター未装備時の失敗メッセージがUnknwon Item表示になっていたのを修正（skill.c）
+　
+　[メカニック]セルフディストラクション
+　・ダメージ計算式を修正（battle.c）
+　・詠唱時間、固定詠唱時間を修正（db/skill_cast_db.txt）
+
+　[メカニック]シェイプシフト
+　・アイテム消費の処理をレベル別判定するように最適化（db/skill_require_db.txt, skill.c）
+　・使用アイテムを各種ポイント系3つに変更（db/skill_require_db.txt）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]エマージェンシークール
+　・加熱値を一律初期化していたのを45ずつ減算するように（skill.c）
+　
+　[メカニック]インフラレッドスキャン
+　・カモフラージュ、シャドウフォームも解除するように変更（skill.c）
+　・状態異常の付与を50%確率だったのを必ず付与するように変更（skill.c）
+　
+　[メカニック]アナライズ
+　・状態異常の付与の確率を14%～42%->20%～100%に変更（skill.c）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]マグネティックフィールド
+　・状態異常の時間がステータスによって減少していたのを固定値で付与するように（skill.c）
+　・効果範囲が3x3～7x7で変動していたのを5x5固定で発動するように変更（skill.c）
+　・3秒おきにSP消費量50～70だったのを1秒おきに50ずつ消費するように（status.c）
+　・状態異常中のアイコン表示追加（status.c, status.h）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]ニュートラルバリアー
+　・使用者の状態異常名をSC_NEUTRALBARRIER_USER -> SC_NEUTRALBARRIER_MASTERに変更（status.c, status.h, skill.c, pc.c, unit.c, db/scdata_db.txt）
+　・ニュートラルバリアー使用中に移動速度が減少していたのを削除（status.c）
+　・効果範囲が3x3だったのを5x5に拡大（db/skill_unit_db.txt）
+　・消費SPを修正（db/skill_require_db.txt）
+　
+　[メカニック]ステルスフィールド
+　・使用者の状態異常名をSC_STEALTHFIELD_USER -> SC_STEALTHFIELD_MASTERに変更（status.c, status.h, skill.c, pc.c, unit.c, db/scdata_db.txt）
+　・使用者の消費SPの間隔がレベルごとに5秒～3秒で3%ずつ減っていたのを、3秒～5秒ごとに1%消費に変更（status.c）
+　・効果範囲が3x3だったのを5x5に拡大（db/skill_unit_db.txt）
+　
+　[メカニック]リペア
+　・レベル別にリペアA～リペアCを消費するように変更（db/skill_require_db.txt, skill.c）
+　・HP回復量を最大HPの6%～18%からレベルごとに20%、23%、35%、40%、50%回復するように（skill.c）
+　・消費SPを修正（db/skill_require_db.txt）
+　・射程を5固定->5～9に変更（db/skill_db.txt）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]斧鍛錬
+　・スキル名を斧修練 -> 斧鍛錬に変更（db/skill_db.txt, db/skill_db2.txt, db/skill_tree.txt, battle.c）
+　
+　[メカニック]アックスブーメラン
+　・ダメージ計算式を修正（battle.c）
+　・射程を4～8->5～9に変更（db/skill_db.txt）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]パワースイング
+　・MaxLvを5->10に拡張（db/skill_db.txt, db/skill_cast_db.txt, db/skill_require_db.txt, db/skill_tree.txt）
+　・斧以外でも発動できるように変更（db/skill_require_db.txt）
+　・ダメージ計算式を修正（battle.c）
+　・アックスブーメラン追撃時に斧装備を判定するように（skill.c）
+　・アックスブーメラン追撃の確率が5%固定だったのをレベルごとに5%～50%で変動するように（skill.c）
+　
+　[メカニック]アックストルネード
+　・ダメージ計算式を修正、外周でも減衰しないように、風属性武器判定を削除（battle.c）
+　
+　[メカニック]FAW シルバースナイパー
+　[メカニック]FAW マジックデコイ
+　・固定詠唱時間を修正（db/skill_cast_db.txt）
+　・詠唱中断しないように変更（db/skill_db.txt）
+　
+　[メカニック]FAW 解体
+　・射程を2->5にに変更（db/skill_db.txt）
+
+----------------------------------------
+//1551 [2024/09/06] by refis
+
+・スキル名称を修正 (skill_db.txt)
+
+・笛吹きハンター！クエストのチャットバルーンが不要だったので修正 (npc_quest_fuefukihunter.sc)
+
+・イリュージョンラビリンスのモンスター出現処理を修正 (npc_quest_illusionlabyrinth.sc)
+
+----------------------------------------
+//1550 [2024/07/01] by Cocoa
+
+・MYSQL 8.0対応（sqldbs.c, utils.h）
+	Issue #24
+
+----------------------------------------
+//1549 [2024/05/07] by refis
+
+・1547以降、ドラム形を攻撃した際バッファオーバーランが発生するミスを修正 (battle.c)
+
+----------------------------------------
+//1548 [2024/05/07] by refis
+
+・ドラゴノロジーに関する修正 (battle.c, status.c)
+	-> 魔法に対する効果がなかったのを修正
+	-> 物理攻撃に対する計算位置がわからないので魔法側に合わせてみる
+
+・利用の無いbCriticalRaceRateが未実装のままだったので暫定実装 (battle.c)
+
+----------------------------------------
+//1547 [2024/05/07] by refis
+
+・種族設定関係の修正変更
+　プレイヤーの種族をRCT_HUMANからRCT_PLAYER_HUMANとRCT_PLAYER_DORAMに変更 (map.h, status.c)
+　人間形モンスターをRCT_HUMANからRCT_DEMIHUMANに変更 (battle.c, map.h, pc.c, skill.c, status.c)
+	-> itembonus互換性維持のためRCT_HUMANとRCT_PLAYERが扱えるよう処理を追加 (bonus.c)
+	   RCT_HUMANはRCT_DEMIHUMAN及びRCT_PLAYER_HUMANの両方
+	   RCT_PLAYERはRCT_PLAYER_HUMAN及びRCT_PLAYER_DORAMの両方
+	-> bCriticalRaceは該当効果がないためRCT_DEMIHUMANをRCT_PLAYER_HUMANに適用させる (battle.c, item_db.txt)
+　プレイヤーの種族特性をstatus.c側で管理するよう修正 (battle.c, status.c)
+
+・上記に係るテキスト修正 (const.txt, item_bonus.txt)
+
+・bWeaponComaRace2、bAddRace、bAddSizeが動作しない場合がある不具合を修正 (battle.c)
+
+----------------------------------------
+//1546 [2024/05/05] by refis
+
+・笛吹きハンター！クエスト実装
+（map_auriga.conf, quest_db.txt, npc_quest_fuefukihunter.sc）
+	Thanks フリージア さん
+
+----------------------------------------
+//1545 [2024/05/05] by refis
+
+・ルワンダに伝える話クエスト、新人アコライトの幽霊クエスト実装
+（npc_quest_illusionluanda.sc, npc_quest_illusionlabyrinth.sc）
+
+・mapflag更新 (mapflag.sc)
+
+・monster出現定義追加（npc_monster_beachdun.sc, npc_monster_prtmaze.sc）
+
+・item_dbのランダム更新 (item_db.txt)
+
+・mob_dbの更新 (mob_db.txt, mob_skill_db.txt)
+
+・quest_dbの更新 (quest_db.txt)
+
+・map_auriga.conf更新 (map_auriga.conf)
+
+----------------------------------------
+//1544 [2024/04/29] by refis
+
+・マップ帰還系スキルの追加（skill.c）
+
+・ランダムオプションで前方記載が優位にエンチャントされる問題を修正（mob.c）
+	Thanks Dallen さん
+
+----------------------------------------
+//1543 [2024/04/29] by refis
+
+・mob_dbを修正（mob_db.txt, mob_skill_db.txt）
+	Thanks Dallen さん、フリージア さん
+
+----------------------------------------
+//1542 [2024/04/21] by refis
+
+・セージ転職クエスト中のメッセージミスを修正（npc_job_16sage.sc）
+	Thanks Lala さん
+
+・エクラージュクエスト関係のエラーを修正（npc_town_eclage.sc）
+	Thanks rina さん
+
+----------------------------------------
+//1541 [2024/04/14] by Cocoa
+
+・vc_make.batの対応コンパイラ整理
+	Visual Studio 2012、2013をサポート切れのため削除
+
+----------------------------------------
+//1540 [2024/04/14] by refis
+
+・1530以降、移動時の探査処理条件が誤っていたのを修正（unit.c）
+	Thanks luin さん
+
+----------------------------------------
+//1539 [2024/03/16] by refis
+
+・フェイスファームの巣MDのギミックと不具合を修正（npc_memorial_faceworm.sc）
+	Thanks rina さん、フリージア さん
+
+----------------------------------------
+//1538 [2023/11/12] by refis
+
+・マラン島転送NPCが名称被りしていたのを修正（npc_town_malangdo.sc）
+	Thanks kuura さん
+
+・NPCスキル[ベナムフォグ]の回復、ダメージ計算式を修正（battle.c, skill.c）
+
+----------------------------------------
+//1537 [2023/11/03] by refis
+
+・map_auriga.confに不要なデータが混入していたミスを修正 (map_auriga.conf)
+
+----------------------------------------
+//1536 [2023/11/03] by refis
+
+・時の通路01からマラン島への転送NPC追加（npc_town_malangdo.sc）
+
+・楽園団NPC実装（npc_town_eden.sc）
+
+・ウェルス発掘地NPC実装（npc_town_verus.sc, npc_memorial_centrallab.sc, npc_memorial_lastroom.sc）
+	-> ファンタスマゴリカクエスト実装
+	-> 地下遺跡アドベンチャークエスト実装
+	-> ウェルスデイリークエスト実装
+	-> エクセリオンエンチャント実装
+	-> リペアメモリーエンチャント実装
+	-> 中央実験室メモリアル実装
+	-> 最後の部屋メモリアル実装
+	Thanks a lot Dallen さん
+
+・ウェルス発掘地関連NPC追加 (npc_job_thirdclass.sc, npc_misc_dynamicnpc.sc, npc_misc_zonda.sc)
+
+・ウェルス発掘地追加マップのwarp更新 (npc_warp_dun.sc, npc_warp_town.sc)
+
+・ウェルス発掘地追加マップのmapflag更新 (mapflag.sc, mapflag_memorial.sc)
+
+・ウェルス発掘地追加マップのmonster出現定義追加 (npc_monster_verus.sc)
+
+・item_dbのランダム更新 (item_db.txt)
+
+・mob_dbの更新 (mob_db.txt, mob_skill_db.txt)
+
+・quest_dbの更新 (quest_db.txt)
+
+・map_auriga.conf更新 (map_auriga.conf)
+
+----------------------------------------
+//1535 [2023/11/02] by refis
+
+・アイテムボーナス[bAddEffSkill]でスキル名称を指定できるよう処理を拡張（script.c）
+
+・アイテムボーナス[bSkillAutoSpell]系列で発動先スキルもスキル名称を指定できるよう処理を拡張（script.c）
+
+・スクリプト命令[mobuseskill][areamobuseskill]で
+　エモーションとトークを別々に設定できるように引数を追加（doc/script_ref.txt, script.c）
+
+・上記に伴うスクリプトの修正
+
+----------------------------------------
+//1534 [2023/10/31] by refis
+
+・PACKETVER[20180704]以前でコンパイルエラーが出ていたのを修正（clif.c）
+	Thanks Lala さん
+
+・スクリプト命令[setnpcgroup][setunitgroup][setnpctitle][setunittitle]で
+　リファレンス名と実関数名が異なっている誤りを修正（script.c）
+
+----------------------------------------
+//1533 [2023/10/28] by refis
+
+・スキル詠唱[0x7fb]上位の[0xb1a]実装（clif.c）
+
+・危機領域警告表示[0xa41]実装
+	-> skill_inf2で危機領域警告表示を指定できるよう設定を追加
+（doc/db_ref.txt, skill_db.txt, clif.*, skill.h, unit.c）
+
+・clif_itempreviewのPACKETVER[20180704]以前のパケット構造ミスを修正（clif.c）
+
+・スクリプト命令[itempreview]を追加
+（doc/script_ref.txt, clif.c, script.c）
+
+・スクリプト命令[getitem][getitem2][getoptitem]でアイテム獲得時にプレビュー表示する項目を追加
+（doc/script_ref.txt, atcommand.c, buyingstore.c, extra.c, homun.c, mail.c, mob.c,
+　npc.c, party.c, pc.*, pet.c, quest.c, script.c, skill.c, storage.c, trede.c, vending.c）
+
+・スクリプト命令[emotion][misceffect][delmisceffect]で個人指定表示できるよう機能拡張
+（doc/script_ref.txt, clif.*, script.c）
+
+----------------------------------------
+//1532 [2023/10/27] by refis
+
+・スクリプト命令[setnpcgroup][setunitgroup][setnpctitle][setunittitle]を追加
+（doc/script_ref.txt, clif.c, map.h, mob.c, npc.c, script.c）
+
+・スクリプト関数[getmapmoblist]を追加
+（doc/script_ref.txt, script.c）
+
+・スクリプト命令[setnpcdisplay]でPC職業の詳細な見た目を設定できるよう機能拡張
+（doc/script_ref.txt, clif.c, map.h, npc.*, script.c）
+	Thanks Dallen さん
+
+・スクリプト関数[removemonster]で消去時の見た目を設定できるよう機能拡張
+（doc/script_ref.txt, script.c）
+	Thanks Dallen さん
+
+----------------------------------------
+//1531 [2023/10/21] by refis
+
+・特定のPACKETVERでの[menu][select]を取り消した際の警告を抑制（npc.c）
+
+・スクリプト命令[messize]の説明誤りを訂正（doc/script_ref.txt）
+
+・スクリプト命令[mesalign]のパケット構造ミスを修正（clif.c）
+
+・MAX_PACKET_DB長の拡張忘れ（clif.c）
+
+・ソウルアタック習得時、通常攻撃が遠距離判定になっていなかったのを修正（battle.c）
+
+・アカデミー内にマラン島案内員を追加（npc_town_malangdo.sc）
+
+----------------------------------------
+//1530 [2023/10/10] by refis
+
+・PACKETVER[20201007]、[20210630]以降に処理を対応（packet_db.lua, char.c）
+
+・引数付misceffect[0x284]追加（clif.*）
+
+・定数更新（skill.h, status.h）
+
+・NPCスキル[Mレイオブジェネシス]で最低ダメージ1保証されるよう変更（battle.c）
+
+・NPCスキル[オールステータスダウン][グラデュアルグラビティ][ダメージヒール][イミューンプロパティ]
+　[ポジションチェンジ][デモニックヘルジャッジメント][ケーンオブイビルアイ][キリングオーラ]追加
+　（scdata_db.txt, skill_cast_db.txt, skill_db*.txt, skill_unit_db.txt, mmo.h, battle.c, pc.c, skill.c, status.*）
+
+・状態異常[移動不可]追加（db/scdata_db.txt, status.*, unit.c）
+
+・スクリプト命令[messize][mespos][mesalign]追加（doc/script_ref.txt, clif.*, script.c）
+
+----------------------------------------
+//1529 [2023/10/09] by refis
+
+・アースストレインのスキルユニットを随時生成せず初回ユニットを移動させるよう処理を変更（skill.c）
+	Thanks Dallen さん
+
+・ペットの自動給餌設定時の条件式誤りを修正（pet.c）
+	Thanks フリージア さん
+
+・readparam関数で補正後ステータス値を取得できるよう定数を追加（db/const.txt, map.h, pc.c）
+
+・NPC会話中のプログレスバーが中断したとき用にクローズボタンを表示させる（pc.c, unit.c）
+	Thanks Dallen さん
+
+・NPCスキル[M呪縛陣]でスキル使用者が動けるようにする（skill.c）
+
+・NPCスキル[Mマグマイラプション][Mレイオブジェネシス][Mベナムインプレス][Mクラウドキル]
+　[Mイグニッションブレイク][Mポイズンバスター][ワイドディスペル][ワイドクリティカルウーンズ]追加
+　（skill_cast_db.txt, skill_db*.txt, skill_unit_db.txt, battle.c, pc.c, skill.c）
+
+----------------------------------------
+//1528 [2023/09/09] by refis
+
+・スクリプト命令[setcell]、[areasetcell]で変更通知範囲を指定できるよう拡張（script_ref.txt, script.c）
+	Thanks Dallen さん
+
+・ホムの自動給餌設定時の条件式誤りを修正（homun.c）
+	Thanks フリージア さん
+
+・PACKETVER20180704以降製薬リストが正しく表示されなかったのを修正（clif.c）
+	Thanks フリージア さん
+
+----------------------------------------
+//1527 [2023/08/28] by refis
+
+・cppcheckを使った静的チェック修正
+	-> sscanf で文字列を読み込む場合の長さ指定誤りを修正（atcommand.c, script.c）
+
+	-> 回復量関連のランダムオプションが正常に適用されなかったのを修正（bonus.c）
+
+	-> NULLチェック強化（clif.c）
+
+	-> 配列の初期化漏れの修正（pc.c）
+
+	-> 配列外参照が起きる可能性がある箇所の修正（achieve.c, clif.c, luascript.c, merc.c, skill.c）
+
+	-> 同名で隠れる局所変数の名称を変更（battle.c, clif.c, script.c, skill.c, status.c）
+
+	-> 使われない変数を削除（battle.c, clif.c, luascript.c）
+
+	-> 意味のない初期化を削除（unit.c）
+
+	-> 変数のスコープを局所化
+
+----------------------------------------
+//1526 [2023/08/15] by refis
+
+・メモリアル依存変数の実装（script_ref.txt, memorial.*, script.*）
+	プレフィックス[.]の変数はMD内で扱え、MDの破棄まで値が維持されます
+	数値型、文字列型、配列変数として使えます
+	詳細はscript_ref.txtを参照してください
+
+----------------------------------------
+//1525 [2023/06/25] by refis
+
+・アカデミー内の付与経験値を分離する（npc_quest_ac_rune.sc）
+
+・ポリン団クエストを追加（map_auriga.conf, quest_db.txt, npc_quest_ac_team_poring.sc）
+	Thanks pneuma さん
+
+・quest_db長を2000から2500に拡張しておく（quest.h）
+
+----------------------------------------
+//1524 [2023/03/30] by refis
+
+・mapflag「damage_rate」追加
+　（const.txt, script_ref.txt, map/battle.c, map.h, npc.c, script.c）
+
+----------------------------------------
+//1523 [2023/03/19] by refis
+
+・grf内のファイル名が長すぎるとエラーになっていたので
+　配列長を拡張
+
+----------------------------------------
+//1522 [2023/03/15] by refis
+
+・item_dbの更新
+	Thanks Heaven さん
+
+----------------------------------------
+//1521 [2022/11/08] by Cocoa
+
+・経験値テーブルの更新  
+	本鯖で2022年8月30日に適用された経験値テーブルです。
+
+・Job補正の更新
+
+----------------------------------------
+//1520 [2022/11/08] by Cocoa
+
+・経験値テーブルの更新  
+	本鯖で2020年1月28日に適用された経験値テーブルです。  
+	履歴として一旦残すためのコミットになります。
+
+----------------------------------------
+//1519 [2022/09/19] by refis
+
+・レッケンベルの噂クエストの報酬を再受領できるよう修正
+　（npc_town_lighthalzen.sc, npc_memorial_worsef.sc）
+
+----------------------------------------
+//1518 [2022/09/11] by refis
+
+・ランダム系アイテムのリストを修正（item_random.txt）
+
+----------------------------------------
+//1517 [2022/09/11] by refis
+
+・bonus系列でエラーが発生した際、アイテムIDを表示するようチェックを強化（bonus.c）
+
+・ランダム系アイテムのリストをEP14相当に更新（item_random.txt, mob_random.txt）
+
+・ランダム系アイテムの追加（const.txt, item_db.txt）
+
+・スクリプト関数[getrandommob]追加（doc/script_ref.txt, script.c）
+
+・ランダム系アイテムの最大登録数を拡張（itemdb.h）
+
+----------------------------------------
+//1516 [2022/05/22] by Cocoa
+
+・特定条件下で取得経験値が1になる不具合を修正
+	共闘ボーナス×与ダメージがint上限を超えた場合に発生
+
+----------------------------------------
+//1515 [2022/05/22] by Cocoa
+
+・vc_make.batの対応コンパイラ整理
+	サポート切れのコンパイラを削除とVS2022を追加
+	合わせて不要になったコンパイラオプションなどを削除
+
+----------------------------------------
+//1514 [2022/05/22] by Cocoa
+
+・ペットが孵化出来なくなる不具合の修正（sql-files/Auriga1514_changetable.sql, sql-files/main.sql）
+	card0が0xff00(65280)の時にペットの卵と判定しているにも関わらず、DBがshort(上限32767)になっているために発生。
+	inventory、cart_inventory、storage、guild_storage、mail_dataにあるペットの卵のcard0を32767から65280に変更することで既存ペットの卵は救済可能。
+
+----------------------------------------
 //1513 [2022/05/22] by refis
 
 ・[エビ三昧]の効果と持続時間計算を修正（skill.c, status.c）

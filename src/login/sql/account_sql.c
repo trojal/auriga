@@ -33,17 +33,7 @@
 #include "../login.h"
 #include "account_sql.h"
 
-struct sql_config {
-	unsigned short login_server_port;
-	char login_server_ip[32];
-	char login_server_id[32];
-	char login_server_pw[32];
-	char login_server_db[32];
-	char login_server_charset[32];
-	int  login_server_keepalive;
-};
-
-static struct sql_config config;
+static struct sqldbs_conninfo config;
 static struct dbt *account_db = NULL;
 
 /*==========================================
@@ -52,13 +42,7 @@ static struct dbt *account_db = NULL;
  */
 void account_sql_set_default_configvalue(void)
 {
-	config.login_server_port = 3306;
-	strncpy(config.login_server_ip, "127.0.0.1", sizeof(config.login_server_ip));
-	strncpy(config.login_server_id, "ragnarok", sizeof(config.login_server_id));
-	strncpy(config.login_server_pw, "ragnarok", sizeof(config.login_server_pw));
-	strncpy(config.login_server_db, "ragnarok", sizeof(config.login_server_db));
-	strncpy(config.login_server_charset, "", sizeof(config.login_server_charset));
-	config.login_server_keepalive = 0;
+	sqldbs_conninfo_set_defaults(&config);
 
 	return;
 }
@@ -69,35 +53,22 @@ void account_sql_set_default_configvalue(void)
  */
 int account_sql_config_read_sub(const char *w1, const char *w2)
 {
-	if( strcmpi(w1,"login_server_ip") == 0 )
-		strncpy(config.login_server_ip, w2, sizeof(config.login_server_ip) - 1);
-	else if( strcmpi(w1,"login_server_port") == 0 )
+	if( strcmpi(w1,"login_server_port") == 0 )
 	{
 		int n = atoi(w2);
 		if( n < 1024 || n > 65535 )
 		{
 			printf("Warning: Invalid login_server_port value: %d. Set to 3306 (default).\n", n);
-			config.login_server_port = 3306; // default
+			config.port = 3306; // default
 		}
 		else
 		{
-			config.login_server_port = (unsigned short)n;
+			config.port = (unsigned short)n;
 		}
+		return 1;
 	}
-	else if( strcmpi(w1, "login_server_id") == 0 )
-		strncpy(config.login_server_id, w2, sizeof(config.login_server_id) - 1);
-	else if( strcmpi(w1, "login_server_pw") == 0 )
-		strncpy(config.login_server_pw, w2, sizeof(config.login_server_pw) - 1);
-	else if( strcmpi(w1, "login_server_db") == 0 )
-		strncpy(config.login_server_db, w2, sizeof(config.login_server_db) - 1);
-	else if( strcmpi(w1, "login_server_charset") == 0 )
-		strncpy(config.login_server_charset, w2, sizeof(config.login_server_charset) - 1);
-	else if( strcmpi(w1, "login_server_keepalive") == 0 )
-		config.login_server_keepalive = atoi(w2);
-	else
-		return 0;
 
-	return 1;
+	return sqldbs_conninfo_config_read(&config, "login_server", w1, w2);
 }
 
 /*==========================================
@@ -106,10 +77,10 @@ int account_sql_config_read_sub(const char *w1, const char *w2)
  */
 void display_conf_warnings_sql(void)
 {
-	if( config.login_server_pw[0] == '\0' )
+	if( config.passwd[0] == '\0' )
 		printf("SQL SECURITY warning: login_server_pw is not defined (void).\n");
-	else if( strcmp(config.login_server_pw, "ragnarok") == 0 )
-		printf("SQL SECURITY warning: using default login_server_pw ('%s').\n", config.login_server_pw);
+	else if( strcmp(config.passwd, "ragnarok") == 0 )
+		printf("SQL SECURITY warning: using default login_server_pw ('%s').\n", config.passwd);
 
 	return;
 }
@@ -201,14 +172,14 @@ const struct mmo_account* account_sql_account_load_num(int account_id)
 	memset(ac, 0, sizeof(struct mmo_account));
 
 	ac->account_id = account_id;
-	strncpy(ac->userid, sql_row[0], 24);
-	strncpy(ac->pass, sql_row[1], 24);
-	strncpy(ac->lastlogin ,sql_row[2], 24);
+	auriga_strlcpy(ac->userid, sql_row[0], sizeof(ac->userid));
+	auriga_strlcpy(ac->pass, sql_row[1], sizeof(ac->pass));
+	auriga_strlcpy(ac->lastlogin ,sql_row[2], sizeof(ac->lastlogin));
 	ac->logincount = atoi(sql_row[3]);
 	ac->sex        = sql_row[4][0];
 	ac->state      = atoi(sql_row[5]);
-	strncpy(ac->mail, sql_row[6], 40);
-	strncpy(ac->birth, sql_row[7], 7);
+	auriga_strlcpy(ac->mail, sql_row[6], sizeof(ac->mail));
+	auriga_strlcpy(ac->birth, sql_row[7], sizeof(ac->birth));
 
 	sqldbs_free_result(&mysql_handle);
 
@@ -217,7 +188,7 @@ const struct mmo_account* account_sql_account_load_num(int account_id)
 	if(sqldbs_query(&mysql_handle, "SELECT `reg`,`value` FROM `" WORLDREG_TABLE "` WHERE `account_id`='%d'", account_id))
 	{
 		while((sql_row = sqldbs_fetch(&mysql_handle))) {
-			strncpy(ac->account_reg2[ac->account_reg2_num].str, sql_row[0], 32);
+			auriga_strlcpy(ac->account_reg2[ac->account_reg2_num].str, sql_row[0], sizeof(ac->account_reg2[ac->account_reg2_num].str));
 			ac->account_reg2[ac->account_reg2_num].value = atoi(sql_row[1]);
 			if(++ac->account_reg2_num >= ACCOUNT_REG2_NUM)
 				break;
@@ -486,7 +457,7 @@ bool account_sql_init(void)
 	bool is_connect;
 
 	// DB connection start
-	is_connect = sqldbs_connect(&mysql_handle, config.login_server_ip, config.login_server_id, config.login_server_pw, config.login_server_db, config.login_server_port, config.login_server_charset, config.login_server_keepalive, "LOGIN");
+	is_connect = sqldbs_connect_info(&mysql_handle, &config, "LOGIN");
 
 	// DB connection error
 	if( is_connect == false )

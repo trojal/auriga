@@ -34,13 +34,9 @@
 static struct dbt *mapreg_db;
 static struct dbt *mapregstr_db;
 
-static unsigned short map_server_port = 3306;
-static char map_server_ip[32]      = "127.0.0.1";
-static char map_server_id[32]      = "ragnarok";
-static char map_server_pw[32]      = "ragnarok";
-static char map_server_db[32]      = "ragnarok";
-static char map_server_charset[32] = "";
-static int  map_server_keepalive   = 0;
+static struct sqldbs_conninfo map_server_info = {
+	"127.0.0.1", 3306, "ragnarok", "ragnarok", "ragnarok", "", 0
+};
 
 /*==========================================
  * 設定ファイル読込
@@ -48,32 +44,7 @@ static int  map_server_keepalive   = 0;
  */
 int mapreg_sql_config_read_sub(const char *w1, const char *w2)
 {
-	if(strcmpi(w1,"map_server_ip") == 0) {
-		strncpy(map_server_ip, w2, sizeof(map_server_ip) - 1);
-	}
-	else if(strcmpi(w1,"map_server_port") == 0) {
-		map_server_port = (unsigned short)atoi(w2);
-	}
-	else if(strcmpi(w1,"map_server_id") == 0) {
-		strncpy(map_server_id, w2, sizeof(map_server_id) - 1);
-	}
-	else if(strcmpi(w1,"map_server_pw") == 0) {
-		strncpy(map_server_pw, w2, sizeof(map_server_pw) - 1);
-	}
-	else if(strcmpi(w1,"map_server_db") == 0) {
-		strncpy(map_server_db, w2, sizeof(map_server_db) - 1);
-	}
-	else if(strcmpi(w1,"map_server_charset") == 0) {
-		strncpy(map_server_charset, w2, sizeof(map_server_charset) - 1);
-	}
-	else if(strcmpi(w1,"map_server_keepalive") == 0) {
-		map_server_keepalive = atoi(w2);
-	}
-	else {
-		return 0;
-	}
-
-	return 1;
+	return sqldbs_conninfo_config_read(&map_server_info, "map_server", w1, w2);
 }
 
 /*==========================================
@@ -190,8 +161,7 @@ static int mapreg_sql_load(void)
 			i = atoi(sql_row[1]);
 			if(i < 0 || i >= 128)
 				continue;
-			strncpy(name, sql_row[0], 256);
-			name[255] = '\0';	// force \0 terminal
+			auriga_strlcpy(name, sql_row[0], sizeof(name));
 			s = script_add_str(name);
 
 			if(name[strlen(name) - 1] == '$') {
@@ -248,7 +218,7 @@ bool mapreg_sql_init(void)
 	// DB connection initialized
 	int is_connect;
 
-	is_connect = sqldbs_connect(&mysql_handle, map_server_ip, map_server_id, map_server_pw, map_server_db, map_server_port, map_server_charset, map_server_keepalive, "MAP");
+	is_connect = sqldbs_connect_info(&mysql_handle, &map_server_info, "MAP");
 	if( is_connect == false )
 		return false;
 

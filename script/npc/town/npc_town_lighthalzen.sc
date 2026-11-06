@@ -9499,12 +9499,7 @@ yuno_pre.gat,95,71,4	script	Œx”õ•º	852,{
 	}
 }
 
-yuno_pre.gat,96,69,2	script	‘f“G‚Èam#Lhz	754,{
-	end;
-OnInit:
-	hideonnpc;
-	end;
-}
+yuno_pre.gat,96,69,2	script(HIDDEN)	‘f“G‚Èam#Lhz	754,{}
 
 yuno_pre.gat,69,79,4	script	‘å“—Ì	872,{
 	cutin "lhz_karl",2;
@@ -10796,7 +10791,7 @@ OnTouch:
 	end;
 }
 
-lhz_fild02.gat,228,214,7	script	•‰‚µ‚½’j#Lhz	849,{
+lhz_fild02.gat,228,214,7	script(HIDDEN)	•‰‚µ‚½’j#Lhz	849,{
 	if(LHZ_4QUE > 18)
 		end;
 	if(LHZ_4QUE < 18) {
@@ -10860,17 +10855,9 @@ lhz_fild02.gat,228,214,7	script	•‰‚µ‚½’j#Lhz	849,{
 	close2;
 	hideonnpc;
 	end;
-OnInit:
-	hideonnpc;
-	end;
 }
 
-yuno_pre.gat,77,68,0	script	”é‘#Lhz	862,{
-	end;
-OnInit:
-	hideonnpc;
-	end;
-}
+yuno_pre.gat,77,68,0	script(HIDDEN)	”é‘#Lhz	862,{}
 
 lhz_fild01.gat,76,214,0	script	‰B‚êêŠ	139,5,5,{
 	if(LHZ_4QUE == 26 || LHZ_4QUE == 31 || LHZ_4QUE == 33 || LHZ_4QUE == 35) {
@@ -11496,12 +11483,7 @@ lhz_in01.gat,184,46,0	script	3-2‹æˆæ#Lhz	111,{
 lhz_in01.gat,184,48,0	duplicate(3-2‹æˆæ#Lhz)	3-3‹æˆæ	111
 lhz_in01.gat,177,56,0	duplicate(3-2‹æˆæ#Lhz)	6-1‹æˆæ	111
 
-yuno_pre.gat,75,73,0	script	‚«‚ê‚¢‚Èam#Lhz	109,{
-	end;
-OnInit:
-	hideonnpc;
-	end;
-}
+yuno_pre.gat,75,73,0	script(HIDDEN)	‚«‚ê‚¢‚Èam#Lhz	109,{}
 
 //============================================================
 // ƒXƒŠƒNƒGƒXƒgNPC
@@ -13267,10 +13249,7 @@ OnTimer120000:
 	end;
 }
 
-airplane_01.gat,99,47,0	script	#LhzPack	111,2,2,{
-	end;
-OnInit:
-	hideonnpc;
+airplane_01.gat,99,47,0	script(HIDDEN)	#LhzPack	111,2,2,{
 	end;
 OnTouch:
 	if(LHZ_5QUE != 19)
@@ -14096,13 +14075,31 @@ lhz_que01.gat,91,28,0	script	#˜F	111,{
 		mes "@‚»‚Ìê‚ğ—£‚ê‚½]";
 		close;
 	}
-	if(LHZ_6QUE != 9) {
+	if(LHZ_6QUE != 9 && LHZ_6QUE != 12) {
 		mes "]‚Ç‚ñ‚È‚É—Í‚ğ‚ß‚Ä‚àA";
 		mes "@ŠJ‚«‚»‚¤‚É‚È‚¢]";
 		close;
 	}
-	chgquest 72020,201485;
-	set LHZ_6QUE,10;
+	mes "]˜F‚Ì”à‚ğŠJ‚¯‚é‚ÆA’†‚ÉƒAƒCƒeƒ€‚ª";
+	mes "@“ü‚Á‚Ä‚¢‚½B";
+	mes "@ƒ{ƒ‹ƒZƒu‚ÌŒ¾‚Á‚Ä‚¢‚½uƒKƒ‰ƒNƒ^v";
+	mes "@‚Æ‚ÍA‚«‚Á‚Æ‚±‚ê‚Ì‚±‚Æ‚¾‚ë‚¤]";
+	next;
+	if(checkitemblank() == 0) {
+		mes "]Š‚µ‚Ä‚¢‚éƒAƒCƒeƒ€‚Ìí—Ş”‚ª";
+		mes "@‘½‚·‚¬‚Ü‚·B";
+		mes "@í—Ş”‚ğŒ¸‚ç‚µ‚Ä‚©‚çA‚à‚¤ˆê“x";
+		mes "@’²‚×‚Ä‚­‚¾‚³‚¢]";
+		close;
+	}
+	if(MaxWeight - Weight < 2000) {
+		mes "]ƒAƒCƒeƒ€‚Ìd—Ê‚ª‚¢‚Á‚Ï‚¢‚Å‚·B";
+		mes "@d—Ê2000‚ğ‚Ä‚é—]—T‚ğì‚Á‚Ä‚©‚ç";
+		mes "@‚à‚¤ˆê“x’²‚×‚Ä‚­‚¾‚³‚¢]";
+		close;
+	}
+	delquest 72020;
+	set LHZ_6QUE,LHZ_6QUE + 1;
 	set '@rate,rand(1,1000);
 	if('@rate >= 1 && '@rate < 84) {
 		getitem 2582,1;
@@ -14119,20 +14116,16 @@ lhz_que01.gat,91,28,0	script	#˜F	111,{
 	} else if('@rate >= 499 && '@rate < 582) {
 		getitem 6471,10;
 	} else if('@rate >= 582 && '@rate < 665) {
-		getitem 6470,10;
+		getitem 6470,20;
 	} else if('@rate >= 665 && '@rate < 748) {
-		getitem 6469,10;
+		getitem 6469,30;
 	} else if('@rate >= 748 && '@rate < 831) {
 		getitem 6471,20;
 	} else if('@rate >= 831 && '@rate < 914) {
-		getitem 6470,20;
+		getitem 6470,40;
 	} else {
-		getitem 6469,20;
+		getitem 6469,60;
 	}
-	mes "]˜F‚Ì”à‚ğŠJ‚¯‚é‚ÆA";
-	mes "@ƒ{ƒ‹ƒZƒu‚ÌŒ¾‚Á‚½’Ê‚è";
-	mes "@’†‚É‚ÍƒAƒCƒeƒ€‚ª“ü‚Á‚Ä‚¢‚½]";
-	next;
 	mes "]ƒAƒCƒeƒ€‚ğè‚Éæ‚é‚ÆA";
 	mes "@¨‚¢‚æ‚­˜F‚Ì”à‚ª•Â‚¶A";
 	mes "@‚Ç‚ñ‚È‚É—Í‚ğ‚ß‚Ä‚à";
