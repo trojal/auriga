@@ -15,6 +15,7 @@
  *   min/max/mean damage of normal and critical hits;
  * - attacks: the same min and sample for each skill in `attack=`, with its cast time and after-cast delay;
  * - mob_attacks: the monster attacking the player, for each `mob_attack=` skill (0: its normal attack).
+ * Before measuring, the player casts each `buffs=` skill on itself and uses each `use=` item.
  * Then the server exits. The fixtures and results formats are in tools/mechharness/PROBE.md in TitanRO/titanro2.
  *
  * src/map's Makefile compiles every .c file, so on its own (and in builds without MECH_PROBE) this file is empty.
@@ -44,6 +45,10 @@ struct mechprobe_fixture {
 	int attack_count;
 	struct mechprobe_pair mob_attacks[MECHPROBE_MAX_LIST];
 	int mob_attack_count;
+	struct mechprobe_pair buffs[MECHPROBE_MAX_LIST];	// skills the player casts on itself after equipping
+	int buff_count;
+	struct mechprobe_pair use[MECHPROBE_MAX_LIST];	// items (item:count) the player then uses
+	int use_count;
 	int mob;
 	int samples;
 	unsigned int seed;
@@ -110,6 +115,16 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		} else if(strcmp(key, "mob_attack") == 0) {
 			if(!mechprobe_parse_pairs(value, f->mob_attacks, &f->mob_attack_count)) {
 				snprintf(error, error_size, "bad mob_attack: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "buffs") == 0) {
+			if(!mechprobe_parse_pairs(value, f->buffs, &f->buff_count)) {
+				snprintf(error, error_size, "bad buffs: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "use") == 0) {
+			if(!mechprobe_parse_pairs(value, f->use, &f->use_count)) {
+				snprintf(error, error_size, "bad use: %s", value);
 				return 0;
 			}
 		}
@@ -241,6 +256,28 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 		}
 	}
 	status_calc_pc(sd, 0);
+	// Buffs and consumables: the server's own skill and item code, on the probe player (their timers never run:
+	// the probe exits after its fixtures).
+	// (each skill's status effect, as its cast starts it: the cast itself needs the player on the map)
+	for(i = 0; i < f->buff_count; i++) {
+		int type = GetSkillStatusChangeTable(f->buffs[i].a);
+		if(type < 0) {
+			snprintf(error, error_size, "skill %d has no status effect", f->buffs[i].a);
+			return sd;
+		}
+		status_change_start(&sd->bl, type, f->buffs[i].b, 0, 0, 0, skill_get_time(f->buffs[i].a, f->buffs[i].b), 0);
+	}
+	for(i = 0; i < f->use_count; i++) {
+		int n;
+		if(itemdb_exists(f->use[i].a) == NULL) {
+			snprintf(error, error_size, "unknown item %d", f->use[i].a);
+			return sd;
+		}
+		for(n = 0; n < (f->use[i].b > 0 ? f->use[i].b : 1); n++)
+			run_script(itemdb_usescript(f->use[i].a), 0, sd->bl.id, 0);
+	}
+	if(f->buff_count > 0 || f->use_count > 0)
+		status_calc_pc(sd, 0);
 	return sd;
 }
 
