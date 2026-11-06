@@ -12,7 +12,8 @@
  * - status: the values the client's status window shows (clif_updatestatus), and MaxHP/MaxSP;
  * - min: one normal attack with every atn_rand() returning 0 (utils.h, mechprobe_rand);
  * - sample: N normal attacks with the normal generator seeded from the fixture: hit, crit and dodge counts, and the
- *   min/max/mean damage of normal and critical hits.
+ *   min/max/mean damage of normal and critical hits;
+ * - attacks: the same min and sample for each skill in `attack=`, with its cast time and after-cast delay.
  * Then the server exits. The fixtures and results formats are in tools/mechharness/PROBE.md in TitanRO/titanro2.
  *
  * src/map's Makefile compiles every .c file, so on its own (and in builds without MECH_PROBE) this file is empty.
@@ -38,6 +39,8 @@ struct mechprobe_fixture {
 	int equip_count;
 	struct mechprobe_pair skills[MECHPROBE_MAX_LIST];
 	int skill_count;
+	struct mechprobe_pair attacks[MECHPROBE_MAX_LIST];
+	int attack_count;
 	int mob;
 	int samples;
 	unsigned int seed;
@@ -94,6 +97,11 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		} else if(strcmp(key, "skills") == 0) {
 			if(!mechprobe_parse_pairs(value, f->skills, &f->skill_count)) {
 				snprintf(error, error_size, "bad skills: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "attack") == 0) {
+			if(!mechprobe_parse_pairs(value, f->attacks, &f->attack_count)) {
+				snprintf(error, error_size, "bad attack: %s", value);
 				return 0;
 			}
 		}
@@ -259,6 +267,36 @@ static void mechprobe_dist_json(FILE *out, const struct mechprobe_dist *d)
 		fprintf(out, "{\"n\":%lld,\"min\":%lld,\"max\":%lld,\"mean\":%.3f}", d->n, d->min, d->max, (double)d->sum / (double)d->n);
 }
 
+// `"min":{...},"sample":{...}` for one attack (normal attack: skill 0) of sd on md.
+static void mechprobe_measure(FILE *out, struct map_session_data *sd, struct mob_data *md, int type, int skill_id, int skill_lv, const struct mechprobe_fixture *f)
+{
+	struct Damage d;
+	mechprobe_rng_min = 1;
+	d = battle_calc_attack(type, &sd->bl, &md->bl, skill_id, skill_lv, 0);
+	mechprobe_rng_min = 0;
+	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d}",
+		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_);
+	if(f->samples > 0) {
+		struct mechprobe_dist normal = {0}, crit = {0};
+		long long misses = 0, lucky = 0;
+		int i;
+		mechprobe_srand(f->seed);
+		for(i = 0; i < f->samples; i++) {
+			struct Damage s = battle_calc_attack(type, &sd->bl, &md->bl, skill_id, skill_lv, 0);
+			const char *kind = mechprobe_hit_kind(&s);
+			if(strcmp(kind, "miss") == 0) misses++;
+			else if(strcmp(kind, "lucky") == 0) lucky++;
+			else if(strcmp(kind, "crit") == 0) mechprobe_dist_add(&crit, (long long)(s.damage + s.damage2));
+			else mechprobe_dist_add(&normal, (long long)(s.damage + s.damage2));
+		}
+		fprintf(out, ",\"sample\":{\"n\":%d,\"seed\":%u,\"miss\":%lld,\"lucky\":%lld,\"hit\":", f->samples, f->seed, misses, lucky);
+		mechprobe_dist_json(out, &normal);
+		fprintf(out, ",\"crit\":");
+		mechprobe_dist_json(out, &crit);
+		fprintf(out, "}");
+	}
+}
+
 static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 {
 	char error[256] = "";
@@ -302,30 +340,24 @@ static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 		}
 	}
 	if(md != NULL) {
-		struct Damage d;
-		mechprobe_rng_min = 1;
-		d = battle_calc_attack(BF_WEAPON, &sd->bl, &md->bl, 0, 0, 0);
-		mechprobe_rng_min = 0;
-		fprintf(out, ",\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d}",
-			mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_);
-		if(f->samples > 0) {
-			struct mechprobe_dist normal = {0}, crit = {0};
-			long long misses = 0, lucky = 0;
-			int i;
-			mechprobe_srand(f->seed);
-			for(i = 0; i < f->samples; i++) {
-				struct Damage s = battle_calc_attack(BF_WEAPON, &sd->bl, &md->bl, 0, 0, 0);
-				const char *kind = mechprobe_hit_kind(&s);
-				if(strcmp(kind, "miss") == 0) misses++;
-				else if(strcmp(kind, "lucky") == 0) lucky++;
-				else if(strcmp(kind, "crit") == 0) mechprobe_dist_add(&crit, (long long)(s.damage + s.damage2));
-				else mechprobe_dist_add(&normal, (long long)(s.damage + s.damage2));
+		int i;
+		fprintf(out, ",");
+		mechprobe_measure(out, sd, md, BF_WEAPON, 0, 0, f);
+		if(f->attack_count > 0) {
+			fprintf(out, ",\"attacks\":[");
+			for(i = 0; i < f->attack_count; i++) {
+				int id = f->attacks[i].a, lv = f->attacks[i].b;
+				int type = skill_get_skill_type(id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+				fprintf(out, "%s{\"skill\":%d,\"lv\":%d,\"type\":\"%s\",\"cast\":%d,\"delay\":%d,", i ? "," : "", id, lv,
+					type == BF_MAGIC ? "magic" : type == BF_MISC ? "misc" : type == BF_WEAPON ? "weapon" : "none",
+					skill_castfix(&sd->bl, id, skill_get_cast(id, lv), skill_get_fixedcast(id, lv)), skill_delayfix(&sd->bl, id, lv));
+				if(type)
+					mechprobe_measure(out, sd, md, type, id, lv, f);
+				else
+					fprintf(out, "\"min\":null");
+				fprintf(out, "}");
 			}
-			fprintf(out, ",\"sample\":{\"n\":%d,\"seed\":%u,\"miss\":%lld,\"lucky\":%lld,\"hit\":", f->samples, f->seed, misses, lucky);
-			mechprobe_dist_json(out, &normal);
-			fprintf(out, ",\"crit\":");
-			mechprobe_dist_json(out, &crit);
-			fprintf(out, "}");
+			fprintf(out, "]");
 		}
 		unit_free(&md->bl, 0);
 	}
