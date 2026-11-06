@@ -234,7 +234,7 @@ void mail_getappend(int account_id, int zeny, int mail_num, struct item *item)
 		// アイテムの取得
 		if( item->nameid > 0 && item->amount > 0 )
 		{
-			pc_additem(sd, item, item->amount);
+			pc_additem(sd, item, item->amount, false);
 		}
 
 		// Zenyの取得

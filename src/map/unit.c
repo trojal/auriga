@@ -85,6 +85,7 @@ struct unit_data* unit_bl2ud(struct block_list *bl)
 	if( bl->type == BL_HOM  ) return &((struct homun_data*)bl)->ud;
 	if( bl->type == BL_MERC ) return &((struct merc_data*)bl)->ud;
 	if( bl->type == BL_ELEM ) return &((struct elem_data*)bl)->ud;
+	if( bl->type == BL_NPC )  return &((struct npc_data*)bl)->ud;
 	return NULL;
 }
 
@@ -97,6 +98,7 @@ static int unit_walktoxy_sub(struct block_list *bl)
 	int i;
 	struct walkpath_data wpd;
 	struct map_session_data *sd = NULL;
+	struct npc_data         *nd = NULL;
 	struct unit_data        *ud = NULL;
 	struct status_change    *sc = NULL;
 
@@ -108,6 +110,8 @@ static int unit_walktoxy_sub(struct block_list *bl)
 
 	if(bl->type == BL_PC)
 		sd = (struct map_session_data *)bl;
+	if(bl->type == BL_NPC)
+		nd = (struct npc_data *)bl;
 
 	if(sd && pc_iscloaking(sd))	// クローキング時再計算
 		status_calc_pc(sd,0);
@@ -116,10 +120,15 @@ static int unit_walktoxy_sub(struct block_list *bl)
 	if(sc && sc->data[SC_FORCEWALKING].timer != -1) {
 		if(path_search2(&wpd,bl->m,bl->x,bl->y,ud->to_x,ud->to_y,0))
 			return 0;
+	} else if(nd) {
+		if(path_search2(&wpd,bl->m,bl->x,bl->y,ud->to_x,ud->to_y,0))
+			return 0;
 	} else {
 		if(path_search(&wpd,bl->m,bl->x,bl->y,ud->to_x,ud->to_y,0))
 			return 0;
 	}
+	if(sc && sc->data[SC_PC_STOP].timer != -1)	// 移動不可状態
+		return 0;
 	if(sc && sc->data[SC_SU_STOOP].timer != -1)	// うずくまる解除
 		status_change_end(bl, SC_SU_STOOP, -1);
 
@@ -173,6 +182,7 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 	struct homun_data       *hd  = NULL;
 	struct merc_data        *mcd = NULL;
 	struct elem_data        *eld = NULL;
+	struct npc_data         *nd  = NULL;
 	struct unit_data        *ud  = NULL;
 	struct status_change    *sc  = NULL;
 
@@ -191,6 +201,8 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 		ud = &mcd->ud;
 	} else if( (eld = BL_DOWNCAST( BL_ELEM, bl ) ) ) {
 		ud = &eld->ud;
+	} else if( (nd = BL_DOWNCAST( BL_NPC, bl ) ) ) {
+		ud = &nd->ud;
 	}
 	if(ud == NULL) return 0;
 
@@ -211,8 +223,10 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 		sd->regen.spiritsptick = 0;
 		sd->state.warp_waiting  = 0;
 		// 歩いたので詠唱バー表示中断
-		if(sd->progressbar.npc_id)
+		if(sd->progressbar.npc_id) {
 			clif_progressbar_abort(sd);
+			clif_scriptclose(sd, sd->progressbar.npc_id);
+		}
 	}
 
 	sc = status_get_sc(bl);
@@ -227,6 +241,7 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 	else if(hd)  hd->dir  = dir;
 	else if(mcd) mcd->dir = dir;
 	else if(eld) eld->dir = dir;
+	else if(nd)  nd->dir = dir;
 
 	dx = dirx[(int)dir];
 	dy = diry[(int)dir];
@@ -236,21 +251,19 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 	ud->walktimer = 1;
 	if(sd) {
 		map_foreachinmovearea(clif_pcoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_ALL,sd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,dx,dy,BL_MOB,sd,0);
 	} else if(md) {
 		map_foreachinmovearea(clif_moboutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,md);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,dx,dy,BL_PC|BL_HOM|BL_MERC|BL_ELEM,md,0);
 	} else if(pd) {
 		map_foreachinmovearea(clif_petoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,pd);
 	} else if(hd) {
 		map_foreachinmovearea(clif_homoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,hd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,dx,dy,BL_MOB,hd,0);
 	} else if(mcd) {
 		map_foreachinmovearea(clif_mercoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,mcd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,dx,dy,BL_MOB,mcd,0);
 	} else if(eld) {
 		map_foreachinmovearea(clif_elemoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,eld);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,dx,dy,BL_MOB,eld,0);
+	} else if(nd) {
+		map_foreachinmovearea(clif_npcoutsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,dx,dy,BL_PC,nd);
+		npc_unit_move(nd,0);
 	}
 	ud->walktimer = -1;
 
@@ -260,12 +273,12 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 	if(md && md->min_chase>13)
 		md->min_chase--;
 
-	if(!pd) skill_unit_move(bl,tick,0);
+	if(!pd && !nd) skill_unit_move(bl,tick,0);
 	if(moveblock) map_delblock(bl);
 	bl->x = x;
 	bl->y = y;
 	if(moveblock) map_addblock(bl);
-	if(!pd) skill_unit_move(bl,tick,1);
+	if(!pd && !nd) skill_unit_move(bl,tick,1);
 
 	if(sd) {
 		if(sd->sc.data[SC_DANCING].timer != -1 && sd->sc.data[SC_LONGINGFREEDOM].timer == -1)	// Not 拘束しないで
@@ -276,10 +289,10 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 		}
 		if(sd->sc.data[SC_WARM].timer != -1)
 			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_WARM].val4),sd->bl.m,dx,dy);
-		if(sd->sc.data[SC_NEUTRALBARRIER_USER].timer != -1)
-			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_NEUTRALBARRIER_USER].val4),sd->bl.m,dx,dy);
-		if(sd->sc.data[SC_STEALTHFIELD_USER].timer != -1)
-			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_STEALTHFIELD_USER].val4),sd->bl.m,dx,dy);
+		if(sd->sc.data[SC_NEUTRALBARRIER_MASTER].timer != -1)
+			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_NEUTRALBARRIER_MASTER].val4),sd->bl.m,dx,dy);
+		if(sd->sc.data[SC_STEALTHFIELD_MASTER].timer != -1)
+			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_STEALTHFIELD_MASTER].val4),sd->bl.m,dx,dy);
 		if(sd->sc.data[SC_BANDING].timer != -1)
 			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_BANDING].val4),sd->bl.m,dx,dy);
 	}
@@ -290,21 +303,25 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 	ud->walktimer = 1;
 	if(sd) {
 		map_foreachinmovearea(clif_pcinsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_ALL,sd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,-dx,-dy,BL_MOB,sd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
+
 	} else if(md) {
 		map_foreachinmovearea(clif_mobinsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,md);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,-dx,-dy,BL_PC|BL_HOM|BL_MERC|BL_ELEM,md,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(pd) {
 		map_foreachinmovearea(clif_petinsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,pd);
 	} else if(hd) {
 		map_foreachinmovearea(clif_hominsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,hd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,-dx,-dy,BL_MOB,hd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(mcd) {
 		map_foreachinmovearea(clif_mercinsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,mcd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,-dx,-dy,BL_MOB,mcd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(eld) {
 		map_foreachinmovearea(clif_eleminsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,eld);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,x-AREA_SIZE*2,y-AREA_SIZE*2,x+AREA_SIZE*2,y+AREA_SIZE*2,-dx,-dy,BL_MOB,eld,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
+	} else if(nd) {
+		map_foreachinmovearea(clif_npcinsight,bl->m,x-AREA_SIZE,y-AREA_SIZE,x+AREA_SIZE,y+AREA_SIZE,-dx,-dy,BL_PC,nd);
+		npc_unit_move(nd,1);
 	}
 	ud->walktimer = -1;
 
@@ -377,6 +394,18 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 					status_change_end(&sd->bl, SC_PROPERTYWALK, -1);
 				}
 			}
+			/* クレッシブボルト回数リセット */
+			if(sd->sc.data[SC_CRESCIVEBOLT].timer != -1) {
+				status_change_end(&sd->bl,SC_CRESCIVEBOLT,-1);
+			}
+			/* インテンシブエイムリセット */
+			if(sd->sc.data[SC_INTENSIVE_AIM].timer != -1) {
+				status_change_end(&sd->bl,SC_INTENSIVE_AIM,-1);
+			}
+			/* タートルランページ解除 */
+			if(sd->sc.data[SC_KI_SUL_RAMPAGE].timer != -1) {
+				status_change_end(&sd->bl,SC_KI_SUL_RAMPAGE,-1);
+			}
 		}
 		// ギルドスキル有効
 		pc_check_guild_skill_effective_range(sd);
@@ -444,7 +473,7 @@ static int unit_walktoxy_timer(int tid,unsigned int tick,int id,void *data)
 				status_change_end(&sd->bl,SC_WUGDASH,-1);
 				return 0;
 			}
-		} else if(map_getcell(bl->m,x+dx,y+dy,CELL_CHKNOPASS)) {	// 障害物に当たった
+		} else if(!nd && map_getcell(bl->m,x+dx,y+dy,CELL_CHKNOPASS)) {	// 障害物に当たった
 			if(!sc || sc->data[SC_FORCEWALKING].timer == -1) {
 				clif_fixwalkpos(bl);
 				return 0;
@@ -496,6 +525,7 @@ int unit_walktoxy(struct block_list *bl, int x, int y)
 	struct homun_data       *hd  = NULL;
 	struct merc_data        *mcd = NULL;
 	struct elem_data        *eld = NULL;
+	struct npc_data         *nd  = NULL;
 	struct status_change    *sc  = NULL;
 
 	nullpo_retr(0, bl);
@@ -512,14 +542,16 @@ int unit_walktoxy(struct block_list *bl, int x, int y)
 		ud = &mcd->ud;
 	} else if( (eld = BL_DOWNCAST( BL_ELEM, bl ) ) ) {
 		ud = &eld->ud;
+	} else if( (nd = BL_DOWNCAST( BL_NPC, bl ) ) ) {
+		ud = &nd->ud;
 	}
 	if( ud == NULL ) return 0;
 
 	// 移動出来ないユニットは弾く(ペットは除く)
-	if( !pd && !(status_get_mode(bl)&MD_CANMOVE) )
+	if( !pd && !nd && !(status_get_mode(bl)&MD_CANMOVE) )
 		return 0;
 
-	if( !unit_can_move(bl) )
+	if( !nd && !unit_can_move(bl) )
 		return 0;
 
 	sc = status_get_sc(bl);
@@ -630,6 +662,7 @@ int unit_movepos(struct block_list *bl,int dst_x,int dst_y,int flag)
 	struct homun_data       *hd  = NULL;
 	struct merc_data        *mcd = NULL;
 	struct elem_data        *eld = NULL;
+	struct npc_data         *nd  = NULL;
 	struct unit_data        *ud  = NULL;
 
 	nullpo_retr(1, bl);
@@ -648,7 +681,10 @@ int unit_movepos(struct block_list *bl,int dst_x,int dst_y,int flag)
 		ud = &mcd->ud;
 	} else if( (eld = BL_DOWNCAST( BL_ELEM, bl ) ) ) {
 		ud = &eld->ud;
+	} else if( (nd = BL_DOWNCAST( BL_NPC, bl ) ) ) {
+		ud = &nd->ud;
 	}
+
 	if( ud == NULL ) return 1;
 
 	unit_stop_walking(bl,1);
@@ -694,47 +730,46 @@ int unit_movepos(struct block_list *bl,int dst_x,int dst_y,int flag)
 
 	if(sd) {	/* 画面外に出たので消去 */
 		map_foreachinmovearea(clif_pcoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_ALL,sd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,dx,dy,BL_MOB,sd,0);
 	} else if(md) {
 		map_foreachinmovearea(clif_moboutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,md);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,dx,dy,BL_PC|BL_HOM|BL_MERC|BL_ELEM,md,0);
 	} else if(pd) {
 		map_foreachinmovearea(clif_petoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,pd);
 	} else if(hd) {
 		map_foreachinmovearea(clif_homoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,hd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,dx,dy,BL_MOB,hd,0);
 	} else if(mcd) {
 		map_foreachinmovearea(clif_mercoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,mcd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,dx,dy,BL_MOB,mcd,0);
 	} else if(eld) {
 		map_foreachinmovearea(clif_elemoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,eld);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,dx,dy,BL_MOB,eld,0);
+	} else if(nd) {
+		map_foreachinmovearea(clif_npcoutsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,dx,dy,BL_PC,nd);
+	} else if(nd) {
+		map_foreachinmovearea(clif_npcinsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,nd);
 	}
 
-	if(!pd) skill_unit_move(bl,tick,0);
+	if(!pd && !nd) skill_unit_move(bl,tick,0);
 	if(moveblock) map_delblock(bl);
 	bl->x = dst_x;
 	bl->y = dst_y;
 	if(moveblock) map_addblock(bl);
-	if(!pd) skill_unit_move(bl,tick,1);
+	if(!pd && !nd) skill_unit_move(bl,tick,1);
 
 	if(sd) {	/* 画面内に入ってきたので表示 */
 		map_foreachinmovearea(clif_pcinsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_ALL,sd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,-dx,-dy,BL_MOB,sd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(md) {
 		map_foreachinmovearea(clif_mobinsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,md);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,-dx,-dy,BL_PC|BL_HOM|BL_MERC|BL_ELEM,md,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(pd) {
 		map_foreachinmovearea(clif_petinsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,pd);
 	} else if(hd) {
 		map_foreachinmovearea(clif_hominsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,hd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,-dx,-dy,BL_MOB,hd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(mcd) {
 		map_foreachinmovearea(clif_mercinsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,mcd);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,-dx,-dy,BL_MOB,mcd,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	} else if(eld) {
 		map_foreachinmovearea(clif_eleminsight,bl->m,bl->x-AREA_SIZE,bl->y-AREA_SIZE,bl->x+AREA_SIZE,bl->y+AREA_SIZE,-dx,-dy,BL_PC,eld);
-		map_foreachinmovearea(mob_ai_hard_spawn_sub,bl->m,bl->x-AREA_SIZE*2,bl->y-AREA_SIZE*2,bl->x+AREA_SIZE*2,bl->y+AREA_SIZE*2,-dx,-dy,BL_MOB,eld,1);
+		mob_ai_hard_spawn_movearea(bl,-dx,-dy);
 	}
 
 	if( flag&1 )		// 吹き飛ばし用パケット送信
@@ -761,12 +796,12 @@ int unit_movepos(struct block_list *bl,int dst_x,int dst_y,int flag)
 			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_WARM].val4),sd->bl.m,dx,dy);
 		}
 		// ニュートラルバリアーの位置変更
-		if(sd->sc.data[SC_NEUTRALBARRIER_USER].timer != -1) {
-			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_NEUTRALBARRIER_USER].val4),sd->bl.m,dx,dy);
+		if(sd->sc.data[SC_NEUTRALBARRIER_MASTER].timer != -1) {
+			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_NEUTRALBARRIER_MASTER].val4),sd->bl.m,dx,dy);
 		}
 		// ステルスフィールドの位置変更
-		if(sd->sc.data[SC_STEALTHFIELD_USER].timer != -1) {
-			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_STEALTHFIELD_USER].val4),sd->bl.m,dx,dy);
+		if(sd->sc.data[SC_STEALTHFIELD_MASTER].timer != -1) {
+			skill_unit_move_unit_group(map_id2sg(sd->sc.data[SC_STEALTHFIELD_MASTER].val4),sd->bl.m,dx,dy);
 		}
 		// バンディングの位置変更
 		if(sd->sc.data[SC_BANDING].timer != -1) {
@@ -825,6 +860,7 @@ int unit_stop_walking(struct block_list *bl,int type)
 	struct homun_data       *hd  = NULL;
 	struct merc_data        *mcd = NULL;
 	struct elem_data        *eld = NULL;
+	struct npc_data         *nd  = NULL;
 	struct unit_data        *ud  = NULL;
 
 	nullpo_retr(0, bl);
@@ -841,6 +877,8 @@ int unit_stop_walking(struct block_list *bl,int type)
 		ud = &mcd->ud;
 	} else if( (eld = BL_DOWNCAST( BL_ELEM, bl ) ) ) {
 		ud = &eld->ud;
+	} else if( (nd = BL_DOWNCAST( BL_NPC, bl ) ) ) {
+		ud = &nd->ud;
 	}
 	if( ud == NULL ) return 0;
 
@@ -1052,7 +1090,7 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 				if(skill_num == AL_TELEPORT || skill_num == AL_WARP)
 					clif_skill_teleportmessage(src_sd,0);
 				else
-					clif_skill_fail(src_sd,skill_num,0,0,0);
+					clif_skill_fail(src_sd,skill_num,SKILLFAIL_MAP,0,0);
 			}
 			return 0;
 		}
@@ -1064,7 +1102,7 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 	if(sc && sc->data[SC_KYOMU].timer != -1) {
 		if(atn_rand()%100 < 10) {
 			if(src_sd)
-				clif_skill_fail(src_sd,skill_num,0,0,0);
+				clif_skill_fail(src_sd,skill_num,SKILLFAIL_FAILED,0,0);
 		}
 	}
 
@@ -1113,8 +1151,8 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 		}
 		break;
 	case GC_WEAPONCRUSH:	/* ウェポンクラッシュ */
-		if(sc && sc->data[SC_WEAPONBLOCKING2].timer != -1)
-			target_id = sc->data[SC_WEAPONBLOCKING2].val2;
+		if(sc && sc->data[SC_WEAPONBLOCKING_POSTDELAY].timer != -1)
+			target_id = sc->data[SC_WEAPONBLOCKING_POSTDELAY].val2;
 		break;
 	case RL_QD_SHOT:		/* クイックドローショット */
 		if(sc && sc->data[SC_QD_SHOT_READY].timer != -1)
@@ -1130,11 +1168,11 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 
 	if( (target = map_id2bl(target_id)) == NULL ) {
 		if(src_sd)
-			clif_skill_fail(src_sd,skill_num,0,0,0);
+			clif_skill_fail(src_sd,skill_num,SKILLFAIL_FAILED,0,0);
 		return 0;
 	}
 
-	if(skill_get_inf2(skill_num)&0x200 && src->id == target_id)
+	if(skill_get_inf2(skill_num)&INF2_NO_SELF && src->id == target_id)
 		return 0;
 
 	if(src->m != target->m)         return 0; // 同じマップかどうか
@@ -1156,7 +1194,15 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 		case BD_ENCORE:					/* アンコール */
 			 // 前回使用した踊りがないとだめ
 			if(!src_sd->skill_dance.id || pc_checkskill(src_sd,src_sd->skill_dance.id) <= 0) {
-				clif_skill_fail(src_sd,skill_num,0,0,0);
+				clif_skill_fail(src_sd,skill_num,SKILLFAIL_FAILED,0,0);
+				return 0;
+			}
+			src_sd->skill_used.id = skill_num;
+			break;
+		case TR_RETROSPECTION:			/* 回想 */
+			 // 前回使用した4次職演奏がないとだめ
+			if(!src_sd->skill_4thdance.id) {
+				clif_skill_fail(src_sd,skill_num,SKILLFAIL_FAILED,0,0);
 				return 0;
 			}
 			src_sd->skill_used.id = skill_num;
@@ -1267,6 +1313,10 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 		if(sc && sc->data[SC_CHASEWALK].timer != -1)
 			casttime = 0;
 		break;
+	case RA_WUGDASH:		/* ウォーグダッシュ */
+		if(sc && sc->data[SC_WUGDASH].timer != -1)
+			unit_stop_walking(src,1);
+		break;
 	case SR_TIGERCANNON:	/* 號砲 */
 	case SR_GATEOFHELL:		/* 羅刹破凰撃 */
 		if(sc && sc->data[SC_COMBO].timer != -1 && sc->data[SC_COMBO].val1 == SR_FALLENEMPIRE) {
@@ -1294,6 +1344,8 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 
 	tick = gettick();
 	clif_skillcasting(src, src->id, target_id, 0, 0, skill_num,casttime);
+	if(skill_get_inf2(skill_num)&INF2_WARNING_PLANE && src->id == target_id)
+		clif_skillscale(src, src->id, src->x, src->y, skill_num, skill_lv, casttime);
 
 #ifndef PRE_RENEWAL
 	forcecast = 1;		// 詠唱反応用
@@ -1339,8 +1391,8 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 			status_change_end(src,SC_CLOAKING,-1);
 	}
 
-	if(sc && sc->data[SC_CLOAKINGEXCEED].timer != -1 && skill_num != GC_CLOAKINGEXCEED) {
-		status_change_end(src,SC_CLOAKINGEXCEED,-1);
+	if(sc && sc->data[SC_NEWMOON].timer != -1 && skill_num != SJ_FULLMOONKICK && skill_num != SJ_NEWMOONKICK) {
+		status_change_end(src,SC_NEWMOON,-1);
 	}
 
 	if(sc && sc->data[SC__INVISIBILITY].timer != -1 && skill_num != SC_INVISIBILITY) {
@@ -1375,6 +1427,11 @@ int unit_skilluse_id2(struct block_list *src, int target_id, int skill_num, int 
 			src_ud->skilltimer = -1;
 		skill_castend_id(src_ud->skilltimer,tick,src->id,NULL);
 	}
+
+	if(sc && sc->data[SC_CLOAKINGEXCEED].timer != -1 && skill_num != GC_CLOAKINGEXCEED) {
+		status_change_end(src,SC_CLOAKINGEXCEED,-1);
+	}
+
 	return 1;
 }
 
@@ -1408,7 +1465,7 @@ int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int sk
 	struct elem_data        *src_eld = NULL;
 	struct unit_data        *src_ud  = NULL;
 	int zone;
-	unsigned int tick = gettick();
+	unsigned int tick;
 	struct status_change *sc;
 
 	nullpo_retr(0, src);
@@ -1438,7 +1495,7 @@ int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int sk
 	if(sc && sc->data[SC_KYOMU].timer != -1) {
 		if(atn_rand()%100 < 10) {
 			if(src_sd)
-				clif_skill_fail(src_sd,skill_num,0,0,0);
+				clif_skill_fail(src_sd,skill_num,SKILLFAIL_FAILED,0,0);
 		}
 	}
 
@@ -1462,7 +1519,7 @@ int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int sk
 				if(skill_num == AL_TELEPORT)
 					clif_skill_teleportmessage(src_sd,0);
 				else
-					clif_skill_fail(src_sd,skill_num,0,0,0);
+					clif_skill_fail(src_sd,skill_num,SKILLFAIL_MAP,0,0);
 			}
 			return 0;
 		}
@@ -1527,6 +1584,8 @@ int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int sk
 		/* 詠唱が必要 */
 		unit_stop_walking( src, 1 );		// 歩行停止
 		clif_skillcasting( src, src->id, 0, skill_x,skill_y, skill_num,casttime );
+		if(skill_get_inf2(skill_num)&INF2_WARNING_PLANE)
+			clif_skillscale(src, src->id, skill_x, skill_y, skill_num, skill_lv, casttime);
 	}
 
 	if( casttime <= 0 )	/* 詠唱の無いものはキャンセルされない */
@@ -1550,6 +1609,9 @@ int unit_skilluse_pos2( struct block_list *src, int skill_x, int skill_y, int sk
 
 	if(sc && sc->data[SC_CLOAKINGEXCEED].timer != -1)
 		status_change_end(src,SC_CLOAKINGEXCEED,-1);
+
+	if(sc && sc->data[SC_NEWMOON].timer != -1)
+		status_change_end(src,SC_NEWMOON,-1);
 
 	if(casttime > 0) {
 		int skill;
@@ -1708,7 +1770,7 @@ int unit_can_move(struct block_list *bl)
 		    (sc->data[SC_GRAVITATION_USER].timer != -1 && battle_config.player_gravitation_type < 2) ||	//グラビテーションフィールド使用者
 		    (battle_config.hermode_no_walking && sc->data[SC_DANCING].timer != -1 && sc->data[SC_DANCING].val1 == CG_HERMODE) ||
 		    (sc->data[SC_FEAR].timer != -1 && sc->data[SC_FEAR].val3 > 0) ||	// 恐怖状態（2秒間）
-		    sc->data[SC_WEAPONBLOCKING2].timer != -1 ||	// ウェポンブロッキング（ブロック中）
+		    sc->data[SC_WEAPONBLOCKING_POSTDELAY].timer != -1 ||	// ウェポンブロッキング（ブロック中）
 		    sc->data[SC_ELECTRICSHOCKER].timer != -1 ||	// エレクトリックショッカー
 		    sc->data[SC_WUGBITE].timer != -1 ||		// ウォーグバイト
 		    (sc->data[SC_CAMOUFLAGE].timer != -1 && sc->data[SC_CAMOUFLAGE].val1 < 3) ||	// カモフラージュ（Lv3未満）
@@ -1732,7 +1794,12 @@ int unit_can_move(struct block_list *bl)
 			sc->data[SC_SV_ROOTTWIST].timer != -1 ||	// マタタビの根っこ
 			sc->data[SC_PARALYZE].timer != -1 ||	// 麻痺
 			sc->data[SC_TINDER_BREAKER].timer != -1 ||	// 捕獲
-			sc->data[SC_CBC].timer != -1		// 絞め技
+			sc->data[SC_CBC].timer != -1 ||		// 絞め技
+			sc->data[SC_GRAVITYCONTROL].timer != -1 ||	// SC_GRAVITYCONTROL
+			sc->data[SC_HANDICAPSTATE_FROSTBITE].timer != -1 ||		// 急冷
+			sc->data[SC_HANDICAPSTATE_SWOONING].timer != -1 ||		// 失神
+			sc->data[SC_HANDICAPSTATE_LIGHTNINGSTRIKE].timer != -1 ||		// 激流
+			sc->data[SC_HANDICAPSTATE_CRYSTALLIZATION].timer != -1			// 結晶化
 		)
 			return 0;
 
@@ -1824,7 +1891,6 @@ static int unit_attack_timer_sub(int tid,unsigned int tick,int id,void *data)
 		   sc->data[SC_DEATHBOUND].timer != -1 ||
 		   sc->data[SC_TRICKDEAD].timer != -1 ||
 		   sc->data[SC_BLADESTOP].timer != -1 ||
-		   sc->data[SC_FULLBUSTER].timer != -1 ||
 		   sc->data[SC_KEEPING].timer != -1 ||
 		   sc->data[SC_WHITEIMPRISON].timer != -1 ||
 		   sc->data[SC_KINGS_GRACE].timer != -1 ||
@@ -1834,7 +1900,9 @@ static int unit_attack_timer_sub(int tid,unsigned int tick,int id,void *data)
 		   sc->data[SC_CURSEDCIRCLE].timer != -1 ||
 		   sc->data[SC_DEEP_SLEEP].timer != -1 ||
 		   sc->data[SC_DIAMONDDUST].timer != -1 ||
-		   sc->data[SC_SUHIDE].timer != -1)
+		   sc->data[SC_SUHIDE].timer != -1 ||
+		   sc->data[SC_NOVAEXPLOSING].timer != -1 ||
+		   sc->data[SC_GRAVITYCONTROL].timer != -1 )
 			return 0;
 	}
 	if( tsc ) {
@@ -1901,7 +1969,7 @@ static int unit_attack_timer_sub(int tid,unsigned int tick,int id,void *data)
 	if(!battle_config.sdelay_attack_enable && (!src_sd || pc_checkskill(src_sd,SA_FREECAST) <= 0)) {
 		if(DIFF_TICK(tick , src_ud->canact_tick) < 0) {
 			if(src_sd)
-				clif_skill_fail(src_sd,1,4,0,0);
+				clif_skill_fail(src_sd,1,SKILLFAIL_INTERVAL,0,0);
 			return 0;
 		}
 	}
@@ -1962,6 +2030,8 @@ static int unit_attack_timer_sub(int tid,unsigned int tick,int id,void *data)
 				status_change_end(src,SC_CLOAKING,-1);
 			if(sc && sc->data[SC_CLOAKINGEXCEED].timer != -1)
 				status_change_end(src,SC_CLOAKINGEXCEED,-1);
+			if(sc && sc->data[SC_NEWMOON].timer != -1)
+				status_change_end(src,SC_NEWMOON,-1);
 			if(sc && sc->data[SC_CAMOUFLAGE].timer != -1)
 				status_change_end(src,SC_CAMOUFLAGE,-1);
 			if(src_sd && src_sd->status.pet_id > 0 && src_sd->pd && src_sd->petDB)
@@ -2087,12 +2157,12 @@ int unit_dataset(struct block_list *bl)
  *
  *------------------------------------------
  */
-int unit_heal(struct block_list *bl,int hp,int sp)
+int unit_heal(struct block_list *bl,int hp,int sp,int ap,int flag)
 {
 	nullpo_retr(0, bl);
 
 	if(bl->type == BL_PC)
-		pc_heal((struct map_session_data*)bl,hp,sp);
+		pc_heal((struct map_session_data*)bl,hp,sp,ap,flag);
 	else if(bl->type == BL_MOB)
 		mob_heal((struct mob_data*)bl,hp);
 	else if(bl->type == BL_HOM)
@@ -2247,34 +2317,34 @@ int unit_changeviewsize(struct block_list *bl,int size)
 {
 	nullpo_retr(0, bl);
 
-	size = (size < 0)? -1: (size > 0)? 1: 0;
+	size = (size < 0)? 421: (size > 0)? 423: -1;
 
 	if(bl->type == BL_PC) {
 		struct map_session_data *sd = (struct map_session_data*)bl;
-		sd->view_size = size;
+		sd->effect = size;
 	} else if(bl->type == BL_MOB) {
 		struct mob_data *md = (struct mob_data *)bl;
-		md->view_size = size;
+		md->effect = size;
 	} else if(bl->type == BL_PET) {
 		struct pet_data *pd = (struct pet_data *)bl;
-		pd->view_size = size;
+		pd->effect = size;
 	} else if(bl->type == BL_HOM) {
 		struct homun_data *hd = (struct homun_data *)bl;
-		hd->view_size = size;
+		hd->effect = size;
 	} else if(bl->type == BL_MERC) {
 		struct merc_data *mcd = (struct merc_data *)bl;
-		mcd->view_size = size;
+		mcd->effect = size;
 	} else if(bl->type == BL_ELEM) {
 		struct elem_data *eld = (struct elem_data *)bl;
-		eld->view_size = size;
+		eld->effect = size;
 	} else if(bl->type == BL_NPC) {
 		struct npc_data *nd = (struct npc_data *)bl;
-		nd->view_size = size;
+		nd->effect = size;
 	} else {
 		return 0;
 	}
-	if(size != 0)
-		clif_misceffect2(bl,421+size);
+	if(size != -1)
+		clif_misceffect2(bl,size);
 	return 0;
 }
 
@@ -2410,7 +2480,6 @@ int unit_remove_map(struct block_list *bl, int clrtype, int flag)
 		skill_sit(sd,0);			// ギャングスターパラダイスおよびテコン休息削除
 
 		clif_clearchar_area(&sd->bl,clrtype&0xffff);
-		mob_ai_hard_spawn( &sd->bl, 0 );
 		map_delblock(&sd->bl);
 	} else if(bl->type == BL_MOB) {
 		struct mob_data *md = (struct mob_data*)bl;
@@ -2437,15 +2506,12 @@ int unit_remove_map(struct block_list *bl, int clrtype, int flag)
 			else
 				clif_clearchar_delay(gettick()+3000,&md->bl);
 		}
-		mob_ai_hard_spawn( &md->bl, 0 );
 		if(!battle_config.monster_damage_delay || battle_config.monster_damage_delay_rate == 0)
 			mob_deleteslave(md);
 
-		if( md->ai_pc_count != 0 || md->ai_prev != NULL || md->ai_next != NULL ) {
-			printf("unit_remove_map: ai error\n");
-			mob_ai_hard_del( md );
-			md->ai_pc_count = 0;
-		}
+		mob_ai_hard_del( md );
+		md->is_pcnear = 0;
+		md->last_pcneartime = 0;
 		map_delblock(&md->bl);
 #ifdef DYNAMIC_SC_DATA
 		if(md->sc.data != NULL)
@@ -2497,19 +2563,16 @@ int unit_remove_map(struct block_list *bl, int clrtype, int flag)
 			}
 		}
 		clif_clearchar_area(&hd->bl,clrtype);
-		mob_ai_hard_spawn( &hd->bl, 0 );
 		map_delblock(&hd->bl);
 	} else if(bl->type == BL_MERC) {
 		struct merc_data *mcd = (struct merc_data*)bl;
 
 		clif_clearchar_area(&mcd->bl,clrtype);
-		mob_ai_hard_spawn( &mcd->bl, 0 );
 		map_delblock(&mcd->bl);
 	} else if(bl->type == BL_ELEM) {
 		struct elem_data *eld = (struct elem_data*)bl;
 
 		clif_clearchar_area(&eld->bl,clrtype);
-		mob_ai_hard_spawn( &eld->bl, 0 );
 		map_delblock(&eld->bl);
 	}
 	map_freeblock_unlock();

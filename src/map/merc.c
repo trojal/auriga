@@ -330,6 +330,10 @@ int merc_calc_status(struct merc_data *mcd)
 		   mcd->sc.data[SC_DONTFORGETME].timer == -1 &&
 		   mcd->sc.data[SC_DECREASEAGI].timer == -1)
 			aspd_rate -= 30;
+		
+		if(mcd->sc.data[SC_CREATINGSTAR].timer != -1) {	// 創星の書
+			mcd->speed = mcd->speed*100/90;	//速度減少率は要調査
+		}
 	}
 
 	mcd->matk1    += mcd->int_+(mcd->int_/ 5) * (mcd->int_/ 5);
@@ -510,7 +514,7 @@ static int merc_data_init(struct map_session_data *sd)
 		diff = 1;
 	mcd->limit_timer = add_timer(tick+diff,merc_employ_timer,sd->bl.id,NULL);
 
-	mcd->view_size = 0;
+	mcd->effect = -1;
 
 	return 0;
 }
@@ -553,7 +557,7 @@ int merc_recv_mercdata(int account_id,int char_id,struct mmo_mercstatus *p,int f
 				return 0;
 			}
 			map_addblock(&sd->mcd->bl);
-			mob_ai_hard_spawn( &sd->mcd->bl, 1 );
+			mob_ai_hard_spawn(&sd->mcd->bl);
 			clif_spawnmerc(sd->mcd);
 			clif_send_mercstatus(sd);
 			clif_mercskillinfoblock(sd);
@@ -655,7 +659,7 @@ int merc_get_fame(struct map_session_data *sd, int class_)
 
 	nullpo_retr(0, sd);
 
-	if(type < 0 || type > MAX_MERC_TYPE)
+	if(type < 0 || type >= MAX_MERC_TYPE)
 		return 0;
 
 	return sd->status.merc_fame[type];
@@ -671,7 +675,7 @@ int merc_set_fame(struct map_session_data *sd, int class_, int val)
 
 	nullpo_retr(0, sd);
 
-	if(type < 0 || type > MAX_MERC_TYPE)
+	if(type < 0 || type >= MAX_MERC_TYPE)
 		return 0;
 
 	sd->status.merc_fame[type] += val;
@@ -693,7 +697,7 @@ int merc_get_call(struct map_session_data *sd, int class_)
 
 	nullpo_retr(0, sd);
 
-	if(type < 0 || type > MAX_MERC_TYPE)
+	if(type < 0 || type >= MAX_MERC_TYPE)
 		return 0;
 
 	return sd->status.merc_call[type];
@@ -709,7 +713,7 @@ int merc_set_call(struct map_session_data *sd, int class_, int val)
 
 	nullpo_retr(0, sd);
 
-	if(type < 0 || type > MAX_MERC_TYPE)
+	if(type < 0 || type >= MAX_MERC_TYPE)
 		return 0;
 
 	sd->status.merc_call[type] += val;

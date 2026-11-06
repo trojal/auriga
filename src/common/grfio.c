@@ -55,6 +55,7 @@
 #include "utils.h"
 
 #define GRF_HEADER "Master of Magic"
+#define GRF_HEADER2 "Event Horizon"
 
 #if defined(WINDOWS) && !defined(LOCALZLIB)
 	#include <windows.h>
@@ -100,6 +101,7 @@
 #if defined(WINDOWS) && defined(__64BIT__)
 	#define fseek _fseeki64
 	#define stat  _stat64
+	#define ftell _ftelli64
 #endif
 
 static int initialized = 0;
@@ -115,7 +117,7 @@ typedef struct {
 	int  next; // -1: no next, 0+: pointer to index of next value
 	char cycle;
 	char type;
-	char fn[192-4*5]; // file name
+	char fn[256-4*5]; // file name
 	char gentry; // read grf file select
 } FILELIST;
 // gentry ... 0  :ローカルファイルより取得
@@ -193,6 +195,21 @@ static unsigned char NibbleData[4][64]={
 static unsigned int getlong(unsigned char *p)
 {
 	return p[0] + (p[1] << 8) + (p[2] << 16) + (p[3] << 24);
+}
+
+/*-----------------
+ *	long data get
+ */
+static unsigned long long getlong64(unsigned char *p)
+{
+    return (atn_bignumber)p[0]
+        + ((atn_bignumber)p[1] << 8)
+        + ((atn_bignumber)p[2] << 16)
+        + ((atn_bignumber)p[3] << 24)
+        + ((atn_bignumber)p[4] << 32)
+        + ((atn_bignumber)p[5] << 40)
+        + ((atn_bignumber)p[6] << 48)
+        + ((atn_bignumber)p[7] << 56);
 }
 
 /*==========================================
@@ -504,7 +521,7 @@ int grfio_size(const char *fname)
 		FILELIST lentry;
 		struct stat st;
 
-		strncpy(lfname,fname,255);
+		auriga_strlcpy(lfname,fname,sizeof(lfname));
 		lfname[sizeof(lfname)-1] = '\0';
 		for(p = lfname; *p; p++) {	// ※Unix時のみ
 			if (*p == '\\')
@@ -512,7 +529,7 @@ int grfio_size(const char *fname)
 		}
 
 		if (stat(lfname,&st)==0) {
-			strncpy(lentry.fn, fname, sizeof(lentry.fn)-1 );
+			auriga_strlcpy(lentry.fn, fname, sizeof(lentry.fn));
 			lentry.declen = (int)st.st_size;
 			lentry.gentry = 0;	// 0:LocalFile
 			entry = filelist_modify(&lentry);
@@ -544,7 +561,7 @@ void* grfio_reads(const char *fname, int *size)
 		FILELIST lentry;
 		struct stat st;
 
-		strncpy(lfname,fname,255);
+		auriga_strlcpy(lfname,fname,sizeof(lfname));
 		lfname[sizeof(lfname)-1]= '\0';
 		for(p = lfname; *p; p++) {	// ※Unix時のみ
 			if (*p == '\\')
@@ -565,7 +582,7 @@ void* grfio_reads(const char *fname, int *size)
 			fread(buf2,1,lentry.declen,in);
 			fclose(in);
 			in = NULL;
-			strncpy( lentry.fn, fname, sizeof(lentry.fn)-1 );
+			auriga_strlcpy( lentry.fn, fname, sizeof(lentry.fn));
 			lentry.gentry = 0;	// 0:LocalFile
 			entry = filelist_modify(&lentry);
 		} else {
@@ -672,6 +689,7 @@ static int grfio_entryread(const char *gfname,int gentry)
 	unsigned char *grf_filelist;
 	int count = 0;
 	struct stat st;
+	int diff = 0;
 
 	if(stat(gfname, &st) == 0)
 		grf_size = st.st_size;
@@ -683,7 +701,7 @@ static int grfio_entryread(const char *gfname,int gentry)
 	}
 
 	fread(grf_header, 1, sizeof(grf_header), fp);
-	if (strcmp((char*)grf_header, GRF_HEADER) || fseek(fp, getlong(grf_header + 0x1e), 1)) { // SEEK_CUR
+	if((strcmp((char*)grf_header, GRF_HEADER) && strcmp((char*)grf_header, GRF_HEADER2)) || fseek(fp, getlong64(grf_header + 0x1e), 1)) {	// SEEK_CUR
 		fclose(fp);
 		printf("GRF Data File read error.\n");
 		return 4;	// 4:file format error
@@ -692,8 +710,10 @@ static int grfio_entryread(const char *gfname,int gentry)
 	/* Read the version */
 	grf_version = getlong(grf_header + 0x2a);
 	/* Read the number of files */
-	entrys = getlong(grf_header + 0x26) - getlong(grf_header + 0x22) - 7;
-
+    if ((grf_version & 0xFF00) != 0x300)
+		entrys = getlong(grf_header + 0x26) - getlong(grf_header + 0x22) - 7;
+	else
+		entrys = getlong(grf_header + 0x26);
 	printf("GRF version: 0x%04X. Number of files: %d.", grf_version, entrys);
 
 	switch (grf_version & 0xFF00) {
@@ -745,7 +765,7 @@ static int grfio_entryread(const char *gfname,int gentry)
 				aentry.srcpos         = getlong(grf_filelist+ofs2+13)+0x2e;
 				aentry.cycle          = srccount;
 				aentry.type           = type;
-				strncpy(aentry.fn,fname,sizeof(aentry.fn)-1);
+				auriga_strlcpy(aentry.fn,fname,sizeof(aentry.fn));
 				aentry.fn[sizeof(aentry.fn)-1] = '\0';
 #ifdef GRFIO_LOCAL
 				aentry.gentry         = -(gentry+1);	// 負数にするのは初回LocalFileCheckをさせるためのFlagとして
@@ -760,22 +780,25 @@ static int grfio_entryread(const char *gfname,int gentry)
 		aFree(grf_filelist);
 		break;
 
+	case 0x0300: //****** Grf version 03xx ******
+		diff = 4;
 	case 0x0200: //****** Grf version 02xx ******
 		{
-			unsigned char eheader[8];
+			unsigned char eheader[12];
 			unsigned char *rBuf;
 			unsigned int rSize;
 			unsigned long eSize;
 
-			/* Size: 8 + compressedLength
+			/* Size: 8 or 12 + compressedLength
 			struct GRF2_FileTableHeader {              // Offset
+				uint32 unknown;						   // 0 (Grf version 03xx only)
 			    uint32 compressedLength;               // 0
 			    uint32 uncompressedLength;             // 4
 			    unsigned char body[compressedLength];  // 8
 			};*/
-			fread(eheader, 1, sizeof(eheader), fp);
-			rSize = getlong(eheader);	// Read Size
-			eSize = getlong(eheader + 4);	// Extend Size
+			fread(eheader, 1, (size_t)(8+diff), fp);
+			rSize = getlong(eheader + diff);	// Read Size
+			eSize = getlong(eheader + 4 + diff);	// Extend Size
 
 			if ((long)rSize > grf_size - ftell(fp)) {
 				fclose(fp);
@@ -792,8 +815,8 @@ static int grfio_entryread(const char *gfname,int gentry)
 		}
 
 		// Get an entry
-		for(entry=0,ofs=0; entry<entrys; entry++,ofs=ofs2+17){
-			/* Size: sizeof(filename) + 17
+		for(entry=0,ofs=0; entry<entrys; entry++,ofs=ofs2+17+diff){
+			/* Size: sizeof(filename) + 17 or 21
 			Note: The notation sizeof(filename) is the size of the filename, including terminating NULL.
 			struct GRF2_FileTableItem {          // Offset
 			    char filename[];                 // 0                      EUC-KR encoding
@@ -802,6 +825,7 @@ static int grfio_entryread(const char *gfname,int gentry)
 			    uint32 uncompressedLength;       // sizeof(filename) + 8
 			    uint8  flags;                    // sizeof(filename) + 12
 			    uint32 offset;                   // sizeof(filename) + 13
+			    uint32 unknown;                  // sizeof(filename) + 17 (Grf version 03xx only)
 			};
 			Flags (bitmask):
 			    0x01 (FILE) - Whether this flag is a file. If this flag is not set, then this item is a directory.
@@ -851,10 +875,10 @@ static int grfio_entryread(const char *gfname,int gentry)
 				aentry.srclen         = srclen;
 				aentry.srclen_aligned = getlong(grf_filelist+ofs2+4);
 				aentry.declen         = getlong(grf_filelist+ofs2+8);
-				aentry.srcpos         = getlong(grf_filelist+ofs2+13)+0x2e;
+				aentry.srcpos         = getlong64(grf_filelist+ofs2+13)+0x2e;
 				aentry.cycle          = srccount;
 				aentry.type           = type;
-				strncpy(aentry.fn,fname,sizeof(aentry.fn)-1);
+				auriga_strlcpy(aentry.fn,fname,sizeof(aentry.fn));
 				aentry.fn[sizeof(aentry.fn)-1] = '\0';
 #ifdef GRFIO_LOCAL
 				aentry.gentry         = -(gentry+1);	// 負数にするのは初回LocalFileCheckをさせるためのFlagとして
@@ -909,14 +933,14 @@ static void grfio_resourcecheck(const char *data_dir)
 
 			// gat,txt,rswのみチェック
 			if(strcasecmp(ext_ptr,".gat") == 0 || strcasecmp(ext_ptr,".txt") == 0 || strcasecmp(ext_ptr,".rsw") == 0) {
-				sprintf(dst,"data\\%s",w2);
+				snprintf(dst, sizeof(dst), "data\\%s", w2);
 
 				entry = filelist_find(dst);
 				if(entry) {
 					FILELIST fentry;
 					memcpy( &fentry, entry, sizeof(FILELIST) );
-					sprintf(src,"data\\%s",w1);
-					strncpy( fentry.fn ,src, sizeof(fentry.fn)-1 );
+					snprintf(src, sizeof(src), "data\\%s", w1);
+					auriga_strlcpy(fentry.fn, src, sizeof(fentry.fn));
 					filelist_modify(&fentry);
 					count++;
 				} else {

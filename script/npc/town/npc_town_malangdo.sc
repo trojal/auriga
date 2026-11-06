@@ -610,6 +610,89 @@ OnInit:
 	end;
 }
 
+ac_cl_area.gat,54,156,5	script	マラン島案内員#ac	545,{
+	if(BaseLevel < 40 || BaseLevel > 99 || Upper == 1 || (Job >= Job_ExpandedSuperNovice && Job <= Job_Summoner) ) {
+		mes "[アンニャ]";
+		mes "こんにちは！";
+		mes "私は^ff0000マラン島^000000で暮らしている";
+		mes "猫のアンニャです！";
+		mes "私は^ff0000マラン島^000000の";
+		mes "良さを伝えるために";
+		mes "ここで宣伝しています！";
+		next;
+		mes "‐限界突破したスーパーノービス、";
+		mes "　影狼、朧、リベリオン、星帝";
+		mes "　ソウルリーパー、ドラム族";
+		mes "　以外のBaseLv40～99の";
+		mes "　未転生キャラクターのみ、";
+		mes "　マラン島への無料転送を";
+		mes "　利用出来ます‐";
+		close;
+	}
+	mes "[アンニャ]";
+	mes "こんにちは！";
+	mes "私は^ff0000マラン島^000000で暮らしている";
+	mes "猫のアンニャです！";
+	next;
+	mes "[アンニャ]";
+	mes "私は^ff0000マラン島^000000の";
+	mes "良さを伝えるために";
+	mes "ここで宣伝しているんです！";
+	mes "マラン島は初心者の方でも";
+	mes "馴染みやすいと思いますよ！";
+	next;
+	mes "[アンニャ]";
+	mes "よかったらマラン島まで";
+	mes "お送りしますか？";
+	mes "もちろん^ff0000無料^000000ですよ！";
+	next;
+	if(select("マラン島に行く","マラン島に行かない") == 2) {
+		emotion 23;
+		mes "[アンニャ]";
+		mes "え、ええっ!?";
+		mes "行かないんですか。";
+		mes "わかりました。";
+		mes "行きたい時は声をかけてくださいね。";
+		close;
+	}
+	mes "[アンニャ]";
+	mes "いってらっしゃい～！";
+	close2;
+	warp "malangdo.gat", 215, 97;
+	end;
+OnInit:
+	waitingroom "マラン島案内", 0;
+	end;
+}
+
+dali.gat,106,93,5	script	マラン島案内員#dali	554,{
+	mes "[カンニャ]";
+	mes "あ～。ねむいにゃ～。";
+	mes "早く^ff0000マラン島^000000に帰りたいにゃ～。";
+	next;
+	mes "[カンニャ]";
+	mes "にゃにゃ？";
+	mes "マラン島に行きたいにゃ？";
+	mes "本当はめんどうなんだけど";
+	mes "しぶしぶ無料で送ってあげるにゃ。";
+	next;
+	if(select("マラン島に行く","マラン島に行かない") == 2) {
+		mes "[カンニャ]";
+		mes "なんだよ。";
+		mes "行かないなら話かけないで！";
+		close;
+	}
+	mes "[カンニャ]";
+	mes "はいはい。";
+	mes "いってらっしゃい～！";
+	close2;
+	warp "malangdo.gat",215,97;
+	end;
+OnInit:
+	waitingroom "マラン島行き", 0;
+	end;
+}
+
 //============================================================
 // 英雄の痕跡転送サービスNPC
 //------------------------------------------------------------
@@ -721,12 +804,9 @@ OnInit:
 	end;
 }
 
-malangdo.gat,140,139,0	script	時の通路ワープ#malan	45,2,2,{
+malangdo.gat,140,139,0	script(HIDDEN)	時の通路ワープ#malan	45,2,2,{
 OnTouch:
 	warp "dali.gat",109,86;
-	end;
-OnInit:
-	hideonnpc;
 	end;
 OnStart:
 	hideoffnpc;
@@ -3352,11 +3432,10 @@ malangdo.gat,221,139,0	duplicate(hide_timer#mal1)	hide_timer#mal9	-1
 malangdo.gat,242,175,0	duplicate(怪しい砂の山#mal1)	怪しい砂の山#mal10	557
 malangdo.gat,221,139,0	duplicate(hide_timer#mal1)	hide_timer#mal10	-1
 
-mal_dun01.gat,136,120,6	script	言語学者デボレ#mald	549,{
+mal_dun01.gat,136,120,6	script(HIDDEN)	言語学者デボレ#mald	549,{
 	end;
 OnTimer60000:
 	stopnpctimer;
-OnInit:
 	hideonnpc;
 	end;
 }
@@ -8102,4 +8181,134 @@ malangdo.gat,176,165,3	script	甲板員ブビ	544,{
 	mes "ここが絶景スポットだと";
 	mes "気づいちゃったにゃん？";
 	close;
+}
+
+//============================================================
+// 猫武器販売NPC
+//------------------------------------------------------------
+malangdo.gat,153,138,5	script	猫武器販売員	495,{
+	mes "[猫武器販売員]";
+	mes "よってらっしゃい";
+	mes "見てらっしゃいにゃあ！";
+	mes "マラン島特産の猫武器がにゃんと";
+	mes "どれでもおひとつ";
+	mes "^ff0000マラン島特産缶詰50個!!!^000000";
+	mes "どうですかお客さんにゃあ～！";
+	next;
+	setarray '@itemid,28111,21021,2031,28012,18135,28710;
+	while(1) {
+		switch(select("商品を買う","商品の説明を見る","会話をやめる")) {
+		case 1:
+			mes "[猫武器販売員]";
+			mes "商品を^ff0000買う^000000のですね。";
+			mes "どれにしますかにゃ？";
+			next;
+			while(1) {
+				switch(select("戻る",getitemname('@itemid[0]),getitemname('@itemid[1]),getitemname('@itemid[2]),getitemname('@itemid[3]),getitemname('@itemid[4]),getitemname('@itemid[5]),"見るのをやめる")) {
+				case 1:
+					mes "[猫武器販売員]";
+					mes "どうしますかにゃあ？";
+					next;
+					break;
+				default:
+					set '@buyid,'@itemid[@menu-2];
+					mes "[猫武器販売員]";
+					mes "<ITEM>"+getitemname('@buyid)+"<INFO>"+'@buyid+"</INFO></ITEM>";
+					mes "ですにゃ。";
+					mes "お代はマラン島特産缶詰50個";
+					mes "いただきますにゃ！";
+					mes " ";
+					mes "よろしいですかにゃ？";
+					next;
+					if(select("買う","買わない") == 2) {
+						mes "[猫武器販売員]";
+						mes "にゃにゃ！";
+						mes "買わないんですにゃ!?";
+						mes "それではどうしますかにゃ？";
+						next;
+						continue;
+					}
+					if(!checkitemblank()) {
+						mes "[猫武器販売員]";
+						mes "ぬにゃあぁ～。";
+						mes "^ff0000荷物がいっぱい^000000ですにゃ。";
+						mes "荷物の数を少し減らして";
+						mes "また来てくださいにゃ。";
+						close;
+					}
+					if(!checkweight('@buyid,1)) {
+						mes "[猫武器販売員]";
+						mes "ぬにゃあぁ～。";
+						mes "^ff0000荷物が重たい^000000ですにゃ。";
+						mes "荷物の重さを少し減らして";
+						mes "また来てくださいにゃ。";
+						close;
+					}
+					if(countitem(12636) < 50) {
+						mes "[猫武器販売員]";
+						mes "ぬにゃあぁ～。";
+						mes "^ff0000マラン島特産缶詰が足りない^000000ですにゃ。";
+						mes "^ff000050個^000000必要ですにゃ。";
+						mes "50個集めてまた来てくださいにゃ。";
+						close;
+					}
+					mes "[猫武器販売員]";
+					mes "毎度ありですにゃ～！";
+					delitem 12636,50;
+					getitem '@buyid,1;
+					close;
+				case 8:
+					mes "[猫武器販売員]";
+					mes "またのお越しを";
+					mes "お待ちしていますにゃ～。";
+					close;
+				}
+				break;
+			}
+			continue;
+		case 2:
+			mes "[猫武器販売員]";
+			mes "商品の^ff0000説明を見る^000000のですね。";
+			mes "どれにしますかにゃ？";
+			next;
+			while(1) {
+				switch(select("戻る",getitemname('@itemid[0]),getitemname('@itemid[1]),getitemname('@itemid[2]),getitemname('@itemid[3]),getitemname('@itemid[4]),getitemname('@itemid[5]),"見るのをやめる")) {
+				case 1:
+					mes "[猫武器販売員]";
+					mes "どうしますかにゃあ？";
+					next;
+					break;
+				default:
+					mes "[猫武器販売員]";
+					mes "<ITEM>"+getitemname('@itemid[@menu-2])+"<INFO>"+'@itemid[@menu-2]+"</INFO></ITEM>";
+					mes "こんな性能になっていますにゃ。";
+					mes " ";
+					mes "-上記アイテム名をクリックして";
+					mes "効果をご確認ください-";
+					next;
+					mes "[猫武器販売員]";
+					mes "他にも色々ありますにゃ。";
+					next;
+					continue;
+				case 8:
+					mes "[猫武器販売員]";
+					mes "またのお越しを";
+					mes "お待ちしていますにゃ～。";
+					close;
+				}
+				break;
+			}
+			continue;
+		case 3:
+			mes "[猫武器販売員]";
+			mes "またのお越しを";
+			mes "お待ちしていますにゃ～。";
+			close;
+		}
+	}
+
+	end;
+OnInit:
+	waitingroom "猫武器販売!!",0;
+	end;
 }

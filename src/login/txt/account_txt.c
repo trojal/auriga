@@ -34,10 +34,8 @@
 #include "account_txt.h"
 
 #ifdef TXT_JOURNAL
-static int login_journal_enable = 1;
+static struct journal_config login_journal_cfg = { 1, "./save/account.journal", 1000 };
 static struct journal login_journal;
-static char login_journal_file[1024]="./save/account.journal";
-static int login_journal_cache = 1000;
 #endif
 
 static char account_filename[1024] = "save/account.txt";
@@ -61,14 +59,11 @@ void account_txt_set_default_configvalue(void)
 int account_txt_config_read_sub(const char* w1,const char* w2)
 {
 	if( strcmpi(w1, "account_filename") == 0 )
-		strncpy(account_filename, w2, sizeof(account_filename) - 1);
+		auriga_strlcpy(account_filename, w2, sizeof(account_filename));
 #ifdef TXT_JOURNAL
-	else if( strcmpi(w1, "account_journal_enable") == 0 )
-		login_journal_enable = atoi(w2);
-	else if( strcmpi(w1, "account_journal_file") == 0 )
-		strncpy( login_journal_file, w2, sizeof(login_journal_file) - 1 );
-	else if( strcmpi(w1, "account_journal_cache_interval") == 0 )
-		login_journal_cache = atoi(w2);
+	else if(journal_config_read(&login_journal_cfg, "account_journal", w1, w2)) {
+	}
+
 #endif
 	else
 		return 0;
@@ -211,11 +206,11 @@ static bool account_txt_read(void)
 				memset(auth_dat + (auth_max - 256), '\0', 256 * sizeof(auth_dat[0]));
 			}
 			auth_dat[auth_num].account_id = account_id;
-			strncpy(auth_dat[auth_num].userid, userid, 24);
-			strncpy(auth_dat[auth_num].pass, pass, 24);
-			strncpy(auth_dat[auth_num].lastlogin, lastlogin, 24);
+			auriga_strlcpy(auth_dat[auth_num].userid, userid, sizeof(auth_dat[auth_num].userid));
+			auriga_strlcpy(auth_dat[auth_num].pass, pass, sizeof(auth_dat[auth_num].pass));
+			auriga_strlcpy(auth_dat[auth_num].lastlogin, lastlogin, sizeof(auth_dat[auth_num].lastlogin));
 			auth_dat[auth_num].sex = sex;
-			strncpy(auth_dat[auth_num].birth, "000000", 7);
+			auriga_strlcpy(auth_dat[auth_num].birth, "000000", sizeof(auth_dat[auth_num].birth));
 
 			// force \0 terminal
 			auth_dat[auth_num].userid[23]    = '\0';
@@ -236,8 +231,7 @@ static bool account_txt_read(void)
 					if(strcmp(mail, "@") == 0) {
 						auth_dat[auth_num].mail[0] = '\0';
 					} else {
-						strncpy(auth_dat[auth_num].mail, mail, 40);
-						auth_dat[auth_num].mail[39] = '\0';	// force \0 terminal
+						auriga_strlcpy(auth_dat[auth_num].mail, mail, sizeof(auth_dat[auth_num].mail));
 					}
 					n = (n2 > 0)? n + n2 : 0;
 				}
@@ -250,8 +244,7 @@ static bool account_txt_read(void)
 				char birth[7] = "";
 				if(sscanf(line + n, "%6[^\t]\t%n", birth, &n2) == 1 && !strchr(birth, '#'))
 				{
-					strncpy(auth_dat[auth_num].birth, birth, 6);
-					auth_dat[auth_num].birth[6] = '\0';	// force \0 terminal
+					auriga_strlcpy(auth_dat[auth_num].birth, birth, sizeof(auth_dat[auth_num].birth));
 					n = (n2 > 0)? n + n2 : 0;
 				}
 			}
@@ -264,8 +257,7 @@ static bool account_txt_read(void)
 					p += n;
 					if(sscanf(p, "%255[^\t,],%d%n", str, &v, &n) != 2)
 						break;
-					strncpy(auth_dat[auth_num].account_reg2[j].str, str, 32);
-					auth_dat[auth_num].account_reg2[j].str[31] = '\0';	// force \0 terminal
+					auriga_strlcpy(auth_dat[auth_num].account_reg2[j].str, str, sizeof(auth_dat[auth_num].account_reg2[j].str));
 					auth_dat[auth_num].account_reg2[j].value   = v;
 					if(p[n] != ' ')
 						break;
@@ -296,25 +288,11 @@ static bool account_txt_read(void)
 	}
 
 #ifdef TXT_JOURNAL
-	if( login_journal_enable )
+	if( journal_setup( &login_journal, &login_journal_cfg, sizeof(struct mmo_account), login_journal_rollforward, "login_journal" ) )
 	{
-		// ジャーナルデータのロールフォワード
-		if( journal_load( &login_journal, sizeof(struct mmo_account), login_journal_file ) )
-		{
-			int c = journal_rollforward( &login_journal, login_journal_rollforward );
-
-			printf("login_journal: roll-forward (%d)\n", c );
-
-			// ロールフォワードしたので、txt データを保存する ( journal も新規作成される)
-			account_txt_sync();
-		}
-		else
-		{
-			// ジャーナルを新規作成する
-			journal_final( &login_journal );
-			journal_create( &login_journal, sizeof(struct mmo_account), login_journal_cache, login_journal_file );
-		}
+		account_txt_sync();
 	}
+
 #endif
 
 	return ret;
@@ -360,11 +338,10 @@ void account_txt_sync(void)
 	lock_fclose(fp, account_filename, &lock);
 
 #ifdef TXT_JOURNAL
-	if( login_journal_enable )
+	if( login_journal_cfg.enable )
 	{
 		// コミットしたのでジャーナルを新規作成する
-		journal_final( &login_journal );
-		journal_create( &login_journal, sizeof(struct mmo_account), login_journal_cache, login_journal_file );
+		journal_recreate( &login_journal, &login_journal_cfg, sizeof(struct mmo_account) );
 	}
 #endif
 
@@ -423,7 +400,7 @@ bool account_txt_account_save(struct mmo_account *account)
 	if(idx >= 0) {
 		memcpy(&auth_dat[idx], account, sizeof(struct mmo_account));
 #ifdef TXT_JOURNAL
-		if( login_journal_enable )
+		if( login_journal_cfg.enable )
 			journal_write( &login_journal, account->account_id, account );
 #endif
 		return false;
@@ -443,7 +420,7 @@ bool account_txt_account_delete(int account_id)
 		memset(&auth_dat[idx], 0, sizeof(struct mmo_account));
 		auth_dat[idx].account_id = account_id;	// アカウントIDは維持
 #ifdef TXT_JOURNAL
-		if( login_journal_enable )
+		if( login_journal_cfg.enable )
 			journal_write( &login_journal, account_id, NULL );
 #endif
 		return false;
@@ -499,15 +476,15 @@ bool account_txt_account_new(struct mmo_account *account, const char *tmpstr)
 	auth_dat[i].sex        = account->sex;
 	auth_dat[i].logincount = 0;
 	auth_dat[i].state      = 0;
-	strncpy(auth_dat[i].userid, account->userid, 24);
-	strncpy(auth_dat[i].pass,   account->pass,   24);
-	strncpy(auth_dat[i].mail,   account->mail,   40);
-	strncpy(auth_dat[i].birth,  account->birth,   7);
-	strcpy(auth_dat[i].lastlogin, "-");
+	auriga_strlcpy(auth_dat[i].userid, account->userid, sizeof(auth_dat[i].userid));
+	auriga_strlcpy(auth_dat[i].pass,   account->pass,   sizeof(auth_dat[i].pass));
+	auriga_strlcpy(auth_dat[i].mail,   account->mail,   sizeof(auth_dat[i].mail));
+	auriga_strlcpy(auth_dat[i].birth,  account->birth,  sizeof(auth_dat[i].birth));
+	auriga_strlcpy(auth_dat[i].lastlogin, "-", sizeof(auth_dat[i].lastlogin));
 	auth_dat[i].account_reg2_num = 0;
 	auth_num++;
 #ifdef TXT_JOURNAL
-	if( login_journal_enable )
+	if( login_journal_cfg.enable )
 		journal_write( &login_journal, auth_dat[i].account_id, &auth_dat[i] );
 #endif
 	return true;
@@ -523,7 +500,7 @@ void account_txt_final(void)
 		aFree(auth_dat);
 
 #ifdef TXT_JOURNAL
-	if( login_journal_enable )
+	if( login_journal_cfg.enable )
 	{
 		journal_final( &login_journal );
 	}

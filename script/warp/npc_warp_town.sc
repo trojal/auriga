@@ -2504,6 +2504,9 @@ mal_in01.gat,75,222,0	warp	malangdowarp1040	1,1,mal_in01.gat,12,221
 //B1F⇔B2F
 mal_in01.gat,79,219,0	warp	malangdowarp1041	1,1,mal_in01.gat,140,216
 mal_in01.gat,140,213,0	warp	malangdowarp1042	1,1,mal_in01.gat,80,216
+//保管庫
+malangdo.gat,135,276,0	warp	malangdowarp1043	1,1,mal_in01.gat,164,15
+mal_in01.gat,163,13,0	warp	malangdowarp1044	1,1,malangdo.gat,135,274
 
 
 
@@ -2617,3 +2620,21 @@ har_in01.gat,18,15,0	warp	rockwarp1002	1,1,harboro1.gat,241,215
 //ロックリッジ⇔道具屋
 harboro1.gat,312,193,0	warp	rockwarp1003	1,1,har_in01.gat,26,87
 har_in01.gat,26,90,0	warp	rockwarp1004	1,1,harboro1.gat,312,197
+
+
+
+//---ウェルス追加マップ
+
+
+//==============================================================
+// -----  ウェルス -----
+// verus04.gat		ウェルス発掘地
+//==============================================================
+
+//ウェルス発掘地⇒ウェルス外郭トンネル
+verus04.gat,204,163,0	warp	veruswarp0401		1,1,ver_tunn.gat,13,35
+
+//ウェルス発掘地⇒ウェルス中央広場
+verus04.gat,121,267,0	warp	veruswarp0402	1,1,verus03.gat,121,20
+verus04.gat,44,267,0	warp	veruswarp0403	1,1,verus03.gat,44,20
+

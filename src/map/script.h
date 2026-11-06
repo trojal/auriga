@@ -58,6 +58,8 @@ struct script_state {
 	int rid,oid;
 	struct script_code *script, *scriptroot;
 	struct script_sleep sleep;
+	int progressbar_npc_id;
+	unsigned int progressbar_npc_tick;
 };
 
 char* parse_script_line_curly(unsigned char *p,int *curly_count,int line);
@@ -68,6 +70,7 @@ void run_script(struct script_code*,int,int,int);
 void script_error(const char *src, const char *file, int start_line, const char *msg, const char *pos);
 void script_erase_sleeptimer(int id);
 
+void script_free_vars(struct linkdb_node **node);
 void script_free_stack(struct script_stack *stack);
 void script_free_code(struct script_code* code);
 

@@ -24,7 +24,7 @@
 
 // ダメージ
 struct Damage {
-	int damage,damage2;
+	atn_bignumber damage,damage2;
 	int type, div_;
 	int amotion, dmotion;
 	int blewcount;
@@ -33,7 +33,7 @@ struct Damage {
 };
 
 // 属性修正計算
-int battle_attr_fix(int damage,int atk_elem,int def_elem);
+atn_bignumber battle_attr_fix(atn_bignumber damage,int atk_elem,int def_elem);
 
 // 最終計算のフラグ
 enum {
@@ -61,8 +61,8 @@ struct mob_data;
 struct block_list;
 
 // 実際にHPを増減
-int battle_delay_damage(unsigned int tick,struct block_list *src,struct block_list *target,int damage,int skillid,int skilllv,int flag);
-int battle_damage(struct block_list *bl,struct block_list *target,int damage,int skillid,int skilllv,int flag);
+int battle_delay_damage(unsigned int tick,struct block_list *src,struct block_list *target,atn_bignumber damage,int skillid,int skilllv,int flag);
+int battle_damage(struct block_list *bl,struct block_list *target,atn_bignumber damage,int skillid,int skilllv,int flag);
 int battle_damage_area(struct block_list *bl,va_list ap);
 int battle_heal(struct block_list *bl,struct block_list *target,int hp,int sp,int flag);
 
@@ -154,7 +154,6 @@ extern struct Battle_Config {
 	int mob_middle_boss_delay_rate;
 	int mob_mvp_boss_delay_rate;
 	int quest_skill_learn;
-	int quest_skill_reset;
 	int basic_skill_check;
 	int guild_emperium_check;
 	int guild_exp_limit;
@@ -392,6 +391,7 @@ extern struct Battle_Config {
 	int allow_skill_without_day;
 	int save_feel_map;
 	int save_hate_mob;
+	int allow_se_univ_skill_limit;
 	int twilight_party_check;
 	int alchemist_point_type;
 	int marionette_type;
@@ -558,7 +558,6 @@ extern struct Battle_Config {
 	int pk_murderer_point;
 	int sg_miracle_rate;
 	int sg_angel_rate;
-	int baby_copy_skilltree;
 	int skill_autospell_delay_enable;
 	int bonus_autospell_delay_enable;
 
@@ -590,7 +589,6 @@ extern struct Battle_Config {
 	int third_max_aspd;
 	int third_song_overlap;
 	int clif_fix_level;
-	int get_status_point_over_lv100;
 	int max_buyingstore_zeny;
 	int max_buyingstore_amount;
 	int allow_same_activeitem;
@@ -622,6 +620,25 @@ extern struct Battle_Config {
 	int enable_pet_autofeed;
 	int enable_hom_autofeed;
 	int homun_status_max;
+	int skill_unit_interval_limit;
+	int max_skillpoint_nv;
+	int max_skillpoint_1st;
+	int max_skillpoint_n2nd;
+	int max_skillpoint_n3rd;
+	int max_skillpoint_2nd;
+	int max_skillpoint_3rd;
+	int max_skillpoint_tk2nd;
+	int max_skillpoint_tk3rd;
+	int max_skillpoint_ex1st;
+	int max_skillpoint_ex2nd;
+	int max_skillpoint_snv;
+	int max_skillpoint_esnv;
+	int max_skillpoint_doram;
+	int pc_tstatus_max;
+	int mob_ai_area_size;
+	int mob_ai_sleeptime;
+	int boss_ai_sleeptime;
+	int fourth_jobchange_tstpoint;
 } battle_config;
 
 int battle_config_read(const char *cfgName);

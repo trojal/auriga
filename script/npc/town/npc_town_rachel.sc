@@ -2734,7 +2734,7 @@ ra_temin.gat,277,159,3	script	ジェド大神官	932,{
 		next;
 		mes "[ジェド大神官]";
 		mes "恐らく……世界を混沌へと導く";
-		mes "平気が作り出されているのだろう。";
+		mes "兵器が作り出されているのだろう。";
 		next;
 		mes "[" +strcharinfo(0)+ "]";
 		mes "そんな……";
@@ -4209,11 +4209,10 @@ ra_temin.gat,288,151,0	script	ra_san1	139,1,6,{
 	close;
 }
 
-ra_temin.gat,294,149,3	script	ニルエン大神官#ra1	915,{
+ra_temin.gat,294,149,3	script(HIDDEN)	ニルエン大神官#ra1	915,{
 	end;
 OnTimer120000:
 	stopnpctimer;
-OnInit:
 	hideonnpc;
 	end;
 }
@@ -4359,11 +4358,10 @@ que_san04.gat,119,203,0	script	ra_san5	139,7,7,{
 	end;
 }
 
-que_san04.gat,122,200,3	script	ニルエン大神官#ra2	915,{
+que_san04.gat,122,200,3	script(HIDDEN)	ニルエン大神官#ra2	915,{
 	end;
 OnTimer120000:
 	stopnpctimer;
-OnInit:
 	hideonnpc;
 	end;
 }

@@ -31,6 +31,7 @@
 #define MAX_MODE_OPT 10
 
 #define MIN_MOBTHINKTIME 100
+#define MIN_MOBTHINKTIME_LAZY (MIN_MOBTHINKTIME * 10)
 
 struct mob_skill {
 	unsigned short state;
@@ -68,7 +69,7 @@ struct mobdb_data {
 		int p;
 	} mvpitem[3];
 	int view_class;
-	short view_size;
+	short effect;
 	short hair,hair_color,clothes_color;
 	short weapon,shield,robe,head_top,head_mid,head_bottom;
 	short style;
@@ -91,7 +92,7 @@ struct random_mob_data {
 
 struct mob_talk {
 	unsigned int color;
-	char msg[200];
+	char msg[210];
 };
 
 enum {
@@ -177,6 +178,27 @@ enum {
 	MSS_FOLLOW      = 10,	// 突撃(非狂化)
 };
 
+enum {
+	MOB_AI_NONE    = 0,	// なし
+	MOB_AI_SUMMON  = 1,	// 召喚
+	MOB_AI_SPHERE1 = 2,	// スフィアマイン(待機)
+	MOB_AI_SPHERE2 = 3,	// スフィアマイン(自爆)
+	MOB_AI_LEGION  = 4,	// サモンレギオン
+	MOB_AI_ABR     = 5,	// ABR
+	MOB_AI_BIONIC  = 6,	// バイオニック
+};
+
+enum {
+	MOBID_ABR_BATTLE_WARIOR    = 20834,	// バトルウォリアー
+	MOBID_ABR_DUAL_CANNON      = 20835,	// デュアルキャノン
+	MOBID_ABR_MOTHER_NET       = 20836,	// マザーネット
+	MOBID_ABR_INFINITY         = 20837,	// インフィニティ
+	MOBID_SUMMON_WOODENWARRIOR = 20848,	// ウドゥンウォリアー
+	MOBID_SUMMON_WOODEN_FAIRY  = 20849,	// ウドゥンフェアリー
+	MOBID_SUMMON_CREEPER       = 20850,	// クリーパー
+	MOBID_SUMMON_HELLTREE      = 20851,	// ヘルツリー
+};
+
 struct mobdb_data* mobdb_exists(int mob_id);
 struct mobdb_data* mobdb_search(int mob_id);
 int mobdb_searchname(const char *name);
@@ -239,7 +261,8 @@ int mob_check_hpinfo(struct map_session_data *sd, struct mob_data *md);
 int mob_ai_sub_hard(struct mob_data *md,unsigned int tick);
 int mob_ai_hard_add(struct mob_data *md);
 int mob_ai_hard_del(struct mob_data *md);
-int mob_ai_hard_spawn( struct block_list *bl, int flag );
+int mob_ai_hard_spawn(struct block_list *bl);
+int mob_ai_hard_spawn_movearea(struct block_list *bl, int x, int y);
 int mob_ai_hard_spawn_sub(struct block_list *tbl, va_list ap);
 double mob_ai_hard_sensor(void);
 

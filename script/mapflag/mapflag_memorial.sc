@@ -87,6 +87,28 @@
 2@cata.gat	mapflag	noabra		dummy
 
 //============================================================
+// オーク地下洞窟 01（過去） - 1@orcs.gat
+//------------------------------------------------------------
+1@orcs.gat	mapflag	nosave			SavePoint
+1@orcs.gat	mapflag	nomemo			dummy
+1@orcs.gat	mapflag	noteleport		dummy
+1@orcs.gat	mapflag	nobranch		dummy
+1@orcs.gat	mapflag	monster_noteleport	dummy
+1@orcs.gat	mapflag	noicewall	dummy
+1@orcs.gat	mapflag	noabra		dummy
+
+//============================================================
+// オーク地下洞窟 02（過去） - 2@orcs.gat
+//------------------------------------------------------------
+2@orcs.gat	mapflag	nosave			SavePoint
+2@orcs.gat	mapflag	nomemo			dummy
+2@orcs.gat	mapflag	noteleport		dummy
+2@orcs.gat	mapflag	nobranch		dummy
+2@orcs.gat	mapflag	monster_noteleport	dummy
+2@orcs.gat	mapflag	noicewall	dummy
+2@orcs.gat	mapflag	noabra		dummy
+
+//============================================================
 // ニーズヘッグの巣 - 1@nyd.gat
 //------------------------------------------------------------
 1@nyd.gat	mapflag	nosave			SavePoint
@@ -208,6 +230,39 @@
 1@sara.gat	mapflag	noabra		dummy
 
 //============================================================
+// ゲフェン魔法大会 - 1@ge_st.gat
+//------------------------------------------------------------
+1@ge_st.gat	mapflag	nosave			SavePoint
+1@ge_st.gat	mapflag	nomemo			dummy
+1@ge_st.gat	mapflag	noteleport		dummy
+1@ge_st.gat	mapflag	nobranch		dummy
+1@ge_st.gat	mapflag	monster_noteleport	dummy
+1@ge_st.gat	mapflag	noicewall	dummy
+1@ge_st.gat	mapflag	noabra		dummy
+
+//============================================================
+// ゲフェン魔法大会 - 1@gef.gat
+//------------------------------------------------------------
+1@gef.gat	mapflag	nosave			SavePoint
+1@gef.gat	mapflag	nomemo			dummy
+1@gef.gat	mapflag	noteleport		dummy
+1@gef.gat	mapflag	nobranch		dummy
+1@gef.gat	mapflag	monster_noteleport	dummy
+1@gef.gat	mapflag	noicewall	dummy
+1@gef.gat	mapflag	noabra		dummy
+
+//============================================================
+// ゲフェン魔法大会 - 1@gef_in.gat
+//------------------------------------------------------------
+1@gef_in.gat	mapflag	nosave			SavePoint
+1@gef_in.gat	mapflag	nomemo			dummy
+1@gef_in.gat	mapflag	noteleport		dummy
+1@gef_in.gat	mapflag	nobranch		dummy
+1@gef_in.gat	mapflag	monster_noteleport	dummy
+1@gef_in.gat	mapflag	noicewall	dummy
+1@gef_in.gat	mapflag	noabra		dummy
+
+//============================================================
 // フェイスワームの巣 - 1@face.gat
 //------------------------------------------------------------
 1@face.gat	mapflag	nosave			SavePoint
@@ -318,6 +373,17 @@
 1@tnm3.gat	mapflag	noabra		dummy
 
 //============================================================
+// 悪夢のジターバグ - 1@jtb.gat
+//------------------------------------------------------------
+1@jtb.gat	mapflag	nosave			SavePoint
+1@jtb.gat	mapflag	nomemo			dummy
+1@jtb.gat	mapflag	noteleport		dummy
+1@jtb.gat	mapflag	nobranch		dummy
+1@jtb.gat	mapflag	monster_noteleport	dummy
+1@jtb.gat	mapflag	noicewall	dummy
+1@jtb.gat	mapflag	noabra		dummy
+
+//============================================================
 // ビオスの島 01 - 1@dth1.gat
 //------------------------------------------------------------
 1@dth1.gat	mapflag	nosave			SavePoint
@@ -360,3 +426,135 @@
 1@rev.gat	mapflag	monster_noteleport	dummy
 1@rev.gat	mapflag	noicewall	dummy
 1@rev.gat	mapflag	noabra		dummy
+
+//============================================================
+// 魔神殿入口 - 1@eom_jp.gat
+//------------------------------------------------------------
+1@eom_jp.gat	mapflag	nosave			SavePoint
+1@eom_jp.gat	mapflag	nomemo			dummy
+1@eom_jp.gat	mapflag	noteleport		dummy
+1@eom_jp.gat	mapflag	nobranch		dummy
+1@eom_jp.gat	mapflag	monster_noteleport	dummy
+1@eom_jp.gat	mapflag	noicewall	dummy
+1@eom_jp.gat	mapflag	noabra		dummy
+
+//============================================================
+// 魔神殿 - 1@eom.gat
+//------------------------------------------------------------
+1@eom.gat	mapflag	nosave			SavePoint
+1@eom.gat	mapflag	nomemo			dummy
+1@eom.gat	mapflag	noteleport		dummy
+1@eom.gat	mapflag	nobranch		dummy
+1@eom.gat	mapflag	monster_noteleport	dummy
+1@eom.gat	mapflag	noicewall	dummy
+1@eom.gat	mapflag	noabra		dummy
+
+//============================================================
+// 中央実験室 - 1@lab.gat
+//------------------------------------------------------------
+1@lab.gat	mapflag	nosave			SavePoint
+1@lab.gat	mapflag	nomemo			dummy
+1@lab.gat	mapflag	noteleport		dummy
+1@lab.gat	mapflag	nobranch		dummy
+1@lab.gat	mapflag	monster_noteleport	dummy
+1@lab.gat	mapflag	noicewall	dummy
+1@lab.gat	mapflag	noabra		dummy
+
+//============================================================
+// 最後の部屋 - 1@uns.gat
+//------------------------------------------------------------
+1@uns.gat	mapflag	nosave			SavePoint
+1@uns.gat	mapflag	nomemo			dummy
+1@uns.gat	mapflag	noteleport		dummy
+1@uns.gat	mapflag	nobranch		dummy
+1@uns.gat	mapflag	monster_noteleport	dummy
+1@uns.gat	mapflag	noicewall	dummy
+1@uns.gat	mapflag	noabra		dummy
+
+//============================================================
+// チャールストン工場 - 1@mcd.gat
+//------------------------------------------------------------
+1@mcd.gat	mapflag	nosave			SavePoint
+1@mcd.gat	mapflag	nomemo			dummy
+1@mcd.gat	mapflag	noteleport		dummy
+1@mcd.gat	mapflag	nobranch		dummy
+1@mcd.gat	mapflag	monster_noteleport	dummy
+1@mcd.gat	mapflag	noicewall	dummy
+1@mcd.gat	mapflag	noabra		dummy
+
+//============================================================
+// 地下排水路 - 1@pump.gat
+//------------------------------------------------------------
+1@pump.gat	mapflag	nosave			SavePoint
+1@pump.gat	mapflag	nomemo			dummy
+1@pump.gat	mapflag	noteleport		dummy
+1@pump.gat	mapflag	nobranch		dummy
+1@pump.gat	mapflag	monster_noteleport	dummy
+1@pump.gat	mapflag	noicewall	dummy
+1@pump.gat	mapflag	noabra		dummy
+
+//============================================================
+// 地下排水路 最奥部 - 2@pump.gat
+//------------------------------------------------------------
+2@pump.gat	mapflag	nosave			SavePoint
+2@pump.gat	mapflag	nomemo			dummy
+2@pump.gat	mapflag	noteleport		dummy
+2@pump.gat	mapflag	nobranch		dummy
+2@pump.gat	mapflag	monster_noteleport	dummy
+2@pump.gat	mapflag	noicewall	dummy
+2@pump.gat	mapflag	noabra		dummy
+
+//============================================================
+// 過去の儀式の間 - 1@mir.gat
+//------------------------------------------------------------
+1@mir.gat	mapflag	nosave			SavePoint
+1@mir.gat	mapflag	nomemo			dummy
+1@mir.gat	mapflag	noteleport		dummy
+1@mir.gat	mapflag	nobranch		dummy
+1@mir.gat	mapflag	monster_noteleport	dummy
+1@mir.gat	mapflag	noicewall	dummy
+1@mir.gat	mapflag	noabra		dummy
+
+//============================================================
+// 儀式の間 - 2@mir.gat
+//------------------------------------------------------------
+2@mir.gat	mapflag	nosave			SavePoint
+2@mir.gat	mapflag	nomemo			dummy
+2@mir.gat	mapflag	noteleport		dummy
+2@mir.gat	mapflag	nobranch		dummy
+2@mir.gat	mapflag	monster_noteleport	dummy
+2@mir.gat	mapflag	noicewall	dummy
+2@mir.gat	mapflag	noabra		dummy
+
+//============================================================
+// 空中要塞内部 - 1@sthb.gat
+//------------------------------------------------------------
+1@sthb.gat	mapflag	nosave			SavePoint
+1@sthb.gat	mapflag	nomemo			dummy
+1@sthb.gat	mapflag	noteleport		dummy
+1@sthb.gat	mapflag	nobranch		dummy
+1@sthb.gat	mapflag	monster_noteleport	dummy
+1@sthb.gat	mapflag	noicewall	dummy
+1@sthb.gat	mapflag	noabra		dummy
+
+//============================================================
+// 空中要塞秘密の部屋 - 1@sthc.gat
+//------------------------------------------------------------
+1@sthc.gat	mapflag	nosave			SavePoint
+1@sthc.gat	mapflag	nomemo			dummy
+1@sthc.gat	mapflag	noteleport		dummy
+1@sthc.gat	mapflag	nobranch		dummy
+1@sthc.gat	mapflag	monster_noteleport	dummy
+1@sthc.gat	mapflag	noicewall	dummy
+1@sthc.gat	mapflag	noabra		dummy
+
+//============================================================
+// 空中要塞最上階 - 1@sthd.gat
+//------------------------------------------------------------
+1@sthd.gat	mapflag	nosave			SavePoint
+1@sthd.gat	mapflag	nomemo			dummy
+1@sthd.gat	mapflag	noteleport		dummy
+1@sthd.gat	mapflag	nobranch		dummy
+1@sthd.gat	mapflag	monster_noteleport	dummy
+1@sthd.gat	mapflag	noicewall	dummy
+1@sthd.gat	mapflag	noabra		dummy

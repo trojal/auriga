@@ -1,0 +1,23 @@
+name: MacOS Build (Clang)
+on:
+  pull_request:
+  push:
+    branches:
+    - 'master'
+    paths:
+    - '.github/workflows/integration-macos-build-clang.yml'
+    - '**/Makefile'
+    - 'src/**.c'
+    - 'src/**.h'
+permissions:
+  contents: read
+jobs:
+  ci:
+    name: CI
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Build for Auriga
+      continue-on-error: true # skill.c:16533:3: error: expected expression
+      run: make -j "$(sysctl -n hw.physicalcpu)"

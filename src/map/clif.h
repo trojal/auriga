@@ -47,6 +47,101 @@ enum {
 	WIDE_AREA
 };
 
+// clif_skill_failのスキル失敗Type
+enum {
+	SKILLFAIL_LEVEL					= 0,	// スキル使用失敗（スキルレベル不足）
+	SKILLFAIL_SP					= 1,	// SPが足りません。
+	SKILLFAIL_HP					= 2,	// HPが足りません。
+	SKILLFAIL_MATERIAL				= 3,	// 材料が足りません。
+	SKILLFAIL_INTERVAL				= 4,	// （スキル再使用時間が未経過）
+	SKILLFAIL_ZENY					= 5,	// お金が足りないのでスキルを使う事ができません。
+	SKILLFAIL_WEAPON				= 6,	// この装備ではこのスキルを使用できません。
+	SKILLFAIL_REDJEMSTONE			= 7,	// レッドジェムストーンが必要です。
+	SKILLFAIL_BLUEJEMSTONE			= 8,	// ブルージェムストーンが必要です。
+	SKILLFAIL_WEIGHTOVER			= 9,	// Weightが90%を越えているため、スキルを使えません。
+	SKILLFAIL_FAILED				= 10,	// スキル使用失敗（汎用）
+	SKILLFAIL_TOTARGET				= 11,	// この機能を使うことができない対象です。
+	SKILLFAIL_ANCILLAOVER			= 12,	// アンシラの所有個数を超えてスキルを使用できません。
+	SKILLFAIL_HOLYWATER				= 13,	// 聖水が必要です。
+	SKILLFAIL_ANCILLA				= 14,	// アンシラが必要です。
+	SKILLFAIL_RESTRICT_POS			= 15,	// 制限により、設置できません。
+	SKILLFAIL_OTHERSKILL			= 16,	// このスキルを使用するためには、他のスキルが必要です。
+	SKILLFAIL_PARTNER				= 17,	// このスキルは一人で使用できません。
+	SKILLFAIL_DIRECTION				= 18,	// このスキルは特定方向のみ使用できます。
+	SKILLFAIL_SUMMON_OVER			= 19,	// これ以上、召喚できません。
+	SKILLFAIL_SUMMON_NOTHING		= 20,	// 召喚されたエーテルが存在しません。
+	SKILLFAIL_CLONESKILL			= 21,	// 使用可能なクローンスキルが存在しません。
+	SKILLFAIL_DUPLICATE				= 22,	// このスキルは重複で使用できません。
+	SKILLFAIL_CONDITION				= 23,	// スキル使用が出来ない状態です。
+	SKILLFAIL_PAINTBRUSH			= 24,	// ペイントブラシが必要です。
+	SKILLFAIL_DRAGON				= 25,	// ドラゴン騎乗時のみ使用可能です。
+	SKILLFAIL_POSITION				= 26,	// 指定した位置にスキルを使用することが出来ません。
+
+	SKILLFAIL_NEERWALL				= 28,	// 壁の近くでのみ使用することができます。
+	SKILLFAIL_EXP					= 29,	// このスキルは、1％の経験値が必要になります。
+	SKILLFAIL_PARTNER_SP			= 30,	// パートナーのSPが足りません。
+	SKILLFAIL_GC_WEAPONBLOCKING		= 31,	// ウェポンブロッキングの連携としてのみ使用可能です。
+	SKILLFAIL_GC_POISONINGWEAPON	= 32,	// ギロチンクロスの毒を塗った武器が必要です。
+	SKILLFAIL_MADOGEAR				= 33,	// 魔導ギア搭乗時のみ使用可能です。
+	SKILLFAIL_KUNAI					= 34,	// 苦無を装備した状態でのみ使用可能です。
+	SKILLFAIL_NOT_PLAYER			= 35,	// このスキルはプレイヤーにのみ使用可能です。
+	SKILLFAIL_GVGONLY				= 36,	// このスキルは攻城戦でのみ使用可能です。
+	SKILLFAIL_CANONBALL				= 37,	// キャノンボールを装填してください。
+
+	SKILLFAIL_MADOGEAR_HOVERING		= 40,	// ホバリング状態のみ使用可能です。
+
+	SKILLFAIL_GC_POISON				= 43,	// ギロチンクロスの毒が必要です。
+
+	SKILLFAIL_MADOGEAR_RIDE			= 50,	// 魔導ギア搭乗時は使用できません。
+	SKILLFAIL_SPELLBOOK				= 51,	// 魔法書が必要です。
+	SKILLFAIL_SPELLBOOK_LEARN		= 52,	// 魔法書がとても難しいため、眠くなります。
+	SKILLFAIL_SPELLBOOK_POINT		= 53,	// 保存ポイントが足りません。
+	SKILLFAIL_SPELLBOOK_OVER		= 54,	// これ以上は魔法書を読めません。
+
+	SKILLFAIL_CART					= 57,	// カート装備時のみ使用可能です。
+
+	SKILLFAIL_MORESKILL				= 60,	// これ以上はスキル使用ができません。
+
+	SKILLFAIL_NEED_ITEM				= 71,	// [%s]が %d個必要です。
+	SKILLFAIL_NEED_EQUIP			= 72,	// [%s]を装備した状態のみ、使用できます。
+	SKILLFAIL_COMBOSKILL			= 73,	// 特定スキルの連携スキルです。 -> [%s]の連携スキルです。
+	SKILLFAIL_SPIRITBALL			= 74,	// 気弾が必要です。 -> 気弾 %d個が必要です。
+
+	SKILLFAIL_EL_SUMMON				= 79,	// 召喚された精霊がいません。
+	SKILLFAIL_INTIMATE				= 80,	// 親密度が不足しています。
+	SKILLFAIL_STYLE_FIGHTER			= 81,	// スタイルチェンジファイター状態でのみ使用可能です。
+	SKILLFAIL_STYLE_GRAPPLER		= 82,	// スタイルチェンジグラップラー状態でのみ使用可能です。
+	SKILLFAIL_NEARNPC				= 83,	// 現在の座標では、露店開設・買取露店・チャットルーム開設ができません。NPCやワープリンクから離れてください。
+	SKILLFAIL_BULLET				= 84,	// 弾丸を装備して下さい。
+	SKILLFAIL_COIN					= 85,	// コインが必要です。 -> コインが %d枚必要です。
+	SKILLFAIL_MSGID					= 86,	// （MSG ID指定）
+	SKILLFAIL_MAP					= 87,	// このマップでは使用できないスキルです。
+
+	SKILLFAIL_VENDING				= 89,	// 既に露店を設置中です。
+	SKILLFAIL_AMOUNT_BULLET			= 90,	// スキル発動時、%d個の弾丸が必要です。
+	SKILLFAIL_AMOUNT_ARROW			= 91,	// スキル発動時、%d個の矢が必要です。
+	// このスキルはパーティー状態で使用可能です。
+	// このスキルはパーティーリーダーだけが使用可能です。
+	// パートナーが存在しないか、パートナーのSPが不足したり、スキル使用不可の状態です。
+	// 武器を装備していません。
+	SKILLFAIL_SOULENERGY			= 96,	// ソウルエナジーが必要です。
+	// ウェポンブロッキング発動後制限時間内に使用可能です。
+	// %d個を超える設置はできません。
+	// リーディングスペルブックに保存された魔法がありません。
+	SKILLFAIL_AP					= 100,	// APが足りません。
+	SKILLFAIL_SERVANTWEAPOM			= 101,	// サーヴァントウェポン%d個が必要です。
+	SKILLFAIL_TWINKLINGGALAXY		= 102,	// このスキルは自身が設置した天地万星の範囲内で使用可能です。
+	SKILLFAIL_SOULCOLLECT			= 103,	// このスキルは魂の蓄積状態で使用可能です。
+	SKILLFAIL_TALISMAN				= 104,	// 護符が必要です。
+	// ショットガンかガトリングガンを装備して下さい。
+	// ハンドガンかガトリングガンを装備して下さい。
+	// ライフルかグレネードガンを装備して下さい。
+	// ハンドガンかガトリングガンを装備して下さい。
+	// ショットガンかグレネードガンを装備して下さい。
+	// 盾を装備して下さい。
+	// 移動できない場所の為、スキルを使用できません。
+};
+
 void clif_sethost(const char*);
 void clif_setip(void);
 void clif_setport(unsigned short);
@@ -86,6 +181,9 @@ void clif_selllist(struct map_session_data *sd);
 void clif_pointshop_list(struct map_session_data *sd, struct npc_data *nd);
 void clif_market_list(struct map_session_data *sd, struct npc_data *nd);
 void clif_scriptmes(struct map_session_data *sd, int npcid, const char *mes);
+void clif_scriptmessize(struct map_session_data *sd, int npcid, int height, int width);
+void clif_scriptmespos(struct map_session_data *sd, int npcid, int x, int y);
+void clif_scriptmesalign(struct map_session_data *sd, int npcid, char align);
 void clif_scriptnext(struct map_session_data *sd, int npcid);
 void clif_scriptclose(struct map_session_data *sd, int npcid);
 void clif_scriptclear(struct map_session_data *sd, int npcid);
@@ -93,13 +191,14 @@ void clif_scriptmenu(struct map_session_data *sd, int npcid, const char *mes);
 void clif_scriptinput(struct map_session_data *sd, int npcid);
 void clif_scriptinputstr(struct map_session_data *sd, int npcid);
 void clif_viewpoint(struct map_session_data *sd, int npc_id, int type, int x, int y, int id, int color);
+void clif_navigateto(struct map_session_data *sd, const char *name, int x, int y, int flag, int hide, int mob_id);
 void clif_cutin(struct map_session_data *sd, const char *image, int type);
 void clif_additem(struct map_session_data *sd, int n, int amount, unsigned char fail);
 void clif_delitem(struct map_session_data *sd, short type, int n, int amount);
 void clif_delitem_timeout(struct map_session_data *sd, int n, int itemid);
 void clif_updatestatus(struct map_session_data *sd, int type);
 void clif_changestatus(struct block_list *bl, int type, int val);
-void clif_damage(struct block_list *src, struct block_list *dst, unsigned int tick, int sdelay, int ddelay, int damage, int div_, int type, int damage2, int is_spdamage);	// area
+void clif_damage(struct block_list *src, struct block_list *dst, unsigned int tick, int sdelay, int ddelay, atn_bignumber damage, int div_, int type, atn_bignumber damage2, int is_spdamage);	// area
 void clif_takeitem(struct block_list *src, int dst_id);
 void clif_changelook(struct block_list *bl, int type, int val);
 //void clif_send_clothcolor(struct block_list *bl);
@@ -115,6 +214,7 @@ void clif_unequipitemack(struct map_session_data *sd, int n, int pos, unsigned c
 void clif_misceffect(struct block_list* bl, int type);
 void clif_misceffect2(struct block_list *bl, int type);
 void clif_misceffect3(int fd, int id, int type);
+void clif_misceffect_value(struct block_list* bl, int type, int num);
 void clif_remove_misceffect2(struct block_list *bl,int type);
 void clif_remove_misceffect3(int fd, int id, int type);
 void clif_changeoption(struct block_list *bl);
@@ -136,6 +236,7 @@ void clif_leavechat(struct chat_data* cd, struct map_session_data *sd, unsigned 
 void clif_changechatstatus(struct chat_data*);
 void clif_changedir( struct block_list *bl, int headdir, int dir );
 void clif_emotion(struct block_list *bl,int type);
+void clif_emotion_self(struct map_session_data *sd,struct block_list *bl,int type);
 void clif_talkiebox(struct block_list *bl,const char* talkie);
 void clif_wedding_effect(struct block_list *bl);
 void clif_callpartner(struct map_session_data *sd);
@@ -150,6 +251,7 @@ void clif_bodyrelocation(struct block_list *bl, int x, int y);
 void clif_showscript(struct block_list *bl, char *mes);
 void clif_showdigit(struct map_session_data* sd, unsigned char type, int value);
 void clif_dressing_room(struct map_session_data *sd, int view);
+void clif_camerainfo(struct map_session_data *sd, int show, float range, float rotation, float latitude);
 void clif_hat_effects(struct map_session_data* sd, struct block_list* bl, int target);
 void clif_hat_effect_single(struct map_session_data* sd, int effectId, bool enable);
 void clif_send_achievement_list(struct map_session_data *sd);
@@ -193,6 +295,8 @@ int clif_mercinsight(struct block_list *bl, va_list ap);
 int clif_mercoutsight(struct block_list *bl, va_list ap);
 int clif_eleminsight(struct block_list *bl, va_list ap);
 int clif_elemoutsight(struct block_list *bl, va_list ap);
+int clif_npcinsight(struct block_list *bl,va_list ap);
+int clif_npcoutsight(struct block_list *bl,va_list ap);
 
 void clif_class_change(struct block_list *bl, int class_, int type);
 
@@ -205,16 +309,17 @@ void clif_skillcasting(struct block_list* bl,int src_id,int dst_id,int dst_x,int
 void clif_skillcastcancel(struct block_list* bl);
 void clif_skill_fail(struct map_session_data *sd, int skill_id, int type, int btype, int val);
 void clif_skill_damage(struct block_list *src,struct block_list *dst,
-	unsigned int tick,int sdelay,int ddelay,int damage,int div_,int skill_id,int skill_lv,int type);
+	unsigned int tick,int sdelay,int ddelay,atn_bignumber damage,int div_,int skill_id,int skill_lv,int type);
 void clif_skill_nodamage(struct block_list *src,struct block_list *dst,int skill_id,int heal,int fail);
 void clif_skill_poseffect(struct block_list *src,int skill_id,int val,int x,int y,unsigned int tick);
+void clif_skillscale(struct block_list *bl, int src_id, int x, int y, int skill_num, int skill_lv, int casttime);
 void clif_skill_estimation(struct map_session_data *sd, struct block_list *dst);
 void clif_skill_warppoint(struct map_session_data *sd,int skill_num,
 	const char *map1,const char *map2,const char *map3,const char *map4);
 void clif_skill_memo(struct map_session_data *sd, unsigned char flag);
 void clif_skill_teleportmessage(struct map_session_data *sd, unsigned short flag);
 void clif_skill_produce_mix_list(struct map_session_data *sd, int trigger, int skillid, int skilllv);
-void clif_making_list(struct map_session_data *sd, int trigger, int skillid, int skilllv);
+void clif_making_list(struct map_session_data *sd, int trigger, int skillid, int skilllv, int type);
 
 void clif_produceeffect(struct map_session_data *sd, unsigned short flag, int nameid);
 
@@ -293,6 +398,7 @@ void clif_break_equip(struct map_session_data *sd, int where);
 void clif_send_config(struct map_session_data *sd);
 void clif_setfont(struct map_session_data *sd);
 void clif_progressbar(struct map_session_data *sd, unsigned int color, unsigned int second);
+void clif_progressbar_npc(struct npc_data *nd, struct map_session_data *sd);
 void clif_progressbar_abort(struct map_session_data *sd);
 void clif_skill_cooldown(struct map_session_data *sd, int skillid, unsigned int tick);
 void clif_autoshadowspell(struct map_session_data *sd, short lv);
@@ -306,6 +412,8 @@ void clif_send_partyconfig(struct map_session_data *sd);
 void clif_monster_hpinfo(struct map_session_data *sd, struct mob_data *md);
 void clif_mapproperty(struct map_session_data *sd);
 void clif_send_personalinfo(struct map_session_data *sd);
+void clif_soulenergy(struct map_session_data *sd);
+void clif_ball(struct map_session_data *sd);
 
 // vending
 void clif_openvendingreq(struct map_session_data *sd, int num);

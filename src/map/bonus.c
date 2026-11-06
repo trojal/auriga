@@ -200,7 +200,7 @@ static int bonus_use_autospell(struct map_session_data *sd,struct block_list *bl
 		}
 	}
 	if(!f)
-		pc_heal(sd,0,-sp);
+		pc_heal(sd,0,-sp,0,0);
 
 	/* スキル使用で発動するオートスペル,アクティブアイテム */
 	bonus_autospellskill_start(&sd->bl,target,skillid,tick,0);
@@ -490,6 +490,15 @@ int bonus_param1(struct map_session_data *sd,int type,int val)
 		if(sd->state.lr_flag != 2)
 			sd->parame[type-SP_STR] += val;
 		break;
+	case SP_POW:
+	case SP_STA:
+	case SP_WIS:
+	case SP_SPL:
+	case SP_CON:
+	case SP_CRT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[type-SP_POW+6] += val;
+		break;
 	case SP_ALLSTATUS:
 		if(sd->state.lr_flag != 2) {
 			sd->parame[0] += val;
@@ -499,6 +508,30 @@ int bonus_param1(struct map_session_data *sd,int type,int val)
 			sd->parame[4] += val;
 			sd->parame[5] += val;
 		}
+		break;
+	case SP_PATK:
+		if(sd->state.lr_flag != 2)
+			sd->patk += val;
+		break;
+	case SP_SMATK:
+		if(sd->state.lr_flag != 2)
+			sd->smatk += val;
+		break;
+	case SP_RES:
+		if(sd->state.lr_flag != 2)
+			sd->res += val;
+		break;
+	case SP_MRES:
+		if(sd->state.lr_flag != 2)
+			sd->mres += val;
+		break;
+	case SP_HPLUS:
+		if(sd->state.lr_flag != 2)
+			sd->hplus += val;
+		break;
+	case SP_CRATE:
+		if(sd->state.lr_flag != 2)
+			sd->crate += val;
 		break;
 	case SP_ATK1:
 		if(!sd->state.lr_flag)
@@ -939,6 +972,10 @@ int bonus_param1(struct map_session_data *sd,int type,int val)
 		if(sd->state.lr_flag != 2)
 			sd->magic_damage_return += val;
 		break;
+	case SP_SUB_RETURN_DAMAGE:
+		if(sd->state.lr_flag != 2)
+			sd->sub_return_damage += val;
+		break;
 	case SP_ADD_SHORT_WEAPON_DAMAGE:
 		if(sd->state.lr_flag != 2)
 			sd->short_weapon_damege_rate += val;
@@ -1014,7 +1051,7 @@ int bonus_param1(struct map_session_data *sd,int type,int val)
 		break;
 	default:
 		if(battle_config.error_log)
-			printf("bonus_param1: unknown type %d %d !\n",type,val);
+			printf("bonus_param1: unknown type %d %d! itemid %d.\n",type,val,current_equip_name_id);
 		break;
 	}
 	return 0;
@@ -1054,8 +1091,37 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 		}
 		break;
 	case SP_ADDRACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(!sd->state.lr_flag) {
+					sd->addrace[RCT_DEMIHUMAN] += val;
+					sd->addrace[RCT_PLAYER_HUMAN] += val;
+				}
+				else if(sd->state.lr_flag == 1) {
+					sd->addrace_[RCT_DEMIHUMAN] += val;
+					sd->addrace_[RCT_PLAYER_HUMAN] += val;
+				}
+				else if(sd->state.lr_flag == 2) {
+					sd->arrow_addrace[RCT_DEMIHUMAN] += val;
+					sd->arrow_addrace[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(!sd->state.lr_flag) {
+					sd->addrace[RCT_PLAYER_HUMAN] += val;
+					sd->addrace[RCT_PLAYER_DORAM] += val;
+				}
+				else if(sd->state.lr_flag == 1) {
+					sd->addrace_[RCT_PLAYER_HUMAN] += val;
+					sd->addrace_[RCT_PLAYER_DORAM] += val;
+				}
+				else if(sd->state.lr_flag == 2) {
+					sd->arrow_addrace[RCT_PLAYER_HUMAN] += val;
+					sd->arrow_addrace[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(!sd->state.lr_flag)
 			sd->addrace[type2] += val;
 		else if(sd->state.lr_flag == 1)
@@ -1098,8 +1164,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 		}
 		break;
 	case SP_SUBRACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->subrace[RCT_DEMIHUMAN] += val;
+					sd->subrace[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->subrace[RCT_PLAYER_HUMAN] += val;
+					sd->subrace[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->subrace[type2] += val;
 		break;
@@ -1154,8 +1233,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 		}
 		break;
 	case SP_MAGIC_ADDRACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->magic_addrace[RCT_DEMIHUMAN] += val;
+					sd->magic_addrace[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->magic_addrace[RCT_PLAYER_HUMAN] += val;
+					sd->magic_addrace[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->magic_addrace[type2] += val;
 		break;
@@ -1178,8 +1270,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			sd->magic_addeff[type2] += val;
 		break;
 	case SP_MAGIC_SUBRACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->magic_subrace[RCT_DEMIHUMAN] += val;
+					sd->magic_subrace[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->magic_subrace[RCT_PLAYER_HUMAN] += val;
+					sd->magic_subrace[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->magic_subrace[type2] += val;
 		break;
@@ -1303,8 +1408,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			sd->weapon_coma_ele[type2] += val;
 		break;
 	case SP_WEAPON_COMA_RACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->weapon_coma_race[RCT_DEMIHUMAN] += val;
+					sd->weapon_coma_race[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->weapon_coma_race[RCT_PLAYER_HUMAN] += val;
+					sd->weapon_coma_race[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->weapon_coma_race[type2] += val;
 		break;
@@ -1315,8 +1433,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			sd->weapon_coma_ele2[type2] += val;
 		break;
 	case SP_WEAPON_COMA_RACE2:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->weapon_coma_race2[RCT_DEMIHUMAN] += val;
+					sd->weapon_coma_race2[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->weapon_coma_race2[RCT_PLAYER_HUMAN] += val;
+					sd->weapon_coma_race2[RCT_PLAYER_DORAM] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->weapon_coma_race2[type2] += val;
 		break;
@@ -1556,6 +1687,24 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 		sd->skill_addcast.time[sd->skill_addcast.count] = val;
 		sd->skill_addcast.count++;
 		break;
+	case SP_ADD_FIXCAST_TIME:
+		// update
+		for(i=0; i<sd->skill_addfixcast.count; i++)
+		{
+			if(sd->skill_addfixcast.id[i] == type2)
+			{
+				sd->skill_addfixcast.time[i] += val;
+				return 0;
+			}
+		}
+		// full
+		if(sd->skill_addfixcast.count == MAX_SKILL_ADDFIXCASTTIME)
+			break;
+		// add
+		sd->skill_addfixcast.id[sd->skill_addfixcast.count] = type2;
+		sd->skill_addfixcast.time[sd->skill_addfixcast.count] = val;
+		sd->skill_addfixcast.count++;
+		break;
 	case SP_ADD_COOL_DOWN:
 		// update
 		for(i=0; i<sd->skill_cooldown.count; i++)
@@ -1637,8 +1786,29 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			sd->ignore_def_ele_[type2] += val;
 		break;
 	case SP_IGNORE_DEF_RACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(!sd->state.lr_flag) {
+					sd->ignore_def_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_def_race[RCT_PLAYER_HUMAN] += val;
+				}
+				else if(sd->state.lr_flag == 1) {
+					sd->ignore_def_race_[RCT_DEMIHUMAN] += val;
+					sd->ignore_def_race_[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(!sd->state.lr_flag) {
+					sd->ignore_def_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_def_race[RCT_PLAYER_HUMAN] += val;
+				}
+				else if(sd->state.lr_flag == 1) {
+					sd->ignore_def_race_[RCT_DEMIHUMAN] += val;
+					sd->ignore_def_race_[RCT_PLAYER_HUMAN] += val;
+				}
+			}
 			break;
+		}
 		if(!sd->state.lr_flag)
 			sd->ignore_def_race[type2] += val;
 		else if(sd->state.lr_flag == 1)
@@ -1659,8 +1829,21 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			sd->ignore_mdef_ele[type2] += val;
 		break;
 	case SP_IGNORE_MDEF_RACE:
-		if(type2 < 0 || type2 >= RCT_MAX)
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_mdef_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_mdef_race[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_mdef_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_mdef_race[RCT_PLAYER_HUMAN] += val;
+				}
+			}
 			break;
+		}
 		if(sd->state.lr_flag != 2)
 			sd->ignore_mdef_race[type2] += val;
 		break;
@@ -1669,6 +1852,44 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 			break;
 		if(sd->state.lr_flag != 2)
 			sd->ignore_mdef_enemy[type2] += val;
+		break;
+	case SP_IGNORE_RES_RACE:
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_res_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_res_race[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_res_race[RCT_PLAYER_HUMAN] += val;
+					sd->ignore_res_race[RCT_PLAYER_DORAM] += val;
+				}
+			}
+			break;
+		}
+		if(sd->state.lr_flag != 2)
+			sd->ignore_res_race[type2] += val;
+		break;
+	case SP_IGNORE_MRES_RACE:
+		if(type2 < 0 || type2 >= RCT_MAX) {
+			if(type2 == RCT_HUMAN) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_mres_race[RCT_DEMIHUMAN] += val;
+					sd->ignore_mres_race[RCT_PLAYER_HUMAN] += val;
+				}
+			}
+			else if(type2 == RCT_PLAYER) {
+				if(sd->state.lr_flag != 2) {
+					sd->ignore_mres_race[RCT_PLAYER_HUMAN] += val;
+					sd->ignore_mres_race[RCT_PLAYER_DORAM] += val;
+				}
+			}
+			break;
+		}
+		if(sd->state.lr_flag != 2)
+			sd->ignore_mres_race[type2] += val;
 		break;
 	case SP_DEF_ELEENEMY:
 		if(type2 < 0 || type2 > ELE_MAX)
@@ -1720,9 +1941,31 @@ int bonus_param2(struct map_session_data *sd,int type,int type2,int val)
 		sd->sp_rate_penalty_time = type2;
 		sd->sp_rate_penalty_value = val;
 		break;
+	case SP_ADD_MONSTER_DROP_ITEM:
+		if(sd->state.lr_flag != 2) {
+			if(battle_config.dropitem_itemrate_fix == 1)
+				val = mob_droprate_fix(&sd->bl,type2,val);
+			else if(battle_config.dropitem_itemrate_fix > 1)
+				val = val * battle_config.dropitem_itemrate_fix / 100;
+			for(i=0; i<sd->add_drop_count; i++) {
+				if(sd->add_drop[i].itemid == type2 && sd->add_drop[i].type == 0) {	// 同じアイテムIDでtypeがAll指定(0)
+					if(sd->add_drop[i].rate < val)
+						sd->add_drop[i].rate = val;
+					break;
+				}
+			}
+			if(i >= sd->add_drop_count && sd->add_drop_count < MAX_BONUS_ADDDROP) {
+				sd->add_drop[sd->add_drop_count].itemid = type2;
+				sd->add_drop[sd->add_drop_count].target = 0;
+				sd->add_drop[sd->add_drop_count].rate = val;
+				sd->add_drop[sd->add_drop_count].type = 0;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+				sd->add_drop_count++;
+			}
+		}
+		break;
 	default:
 		if(battle_config.error_log)
-			printf("bonus_param2: unknown type %d %d %d!\n",type,type2,val);
+			printf("bonus_param2: unknown type %d %d %d! itemid %d.\n",type,type2,val,current_equip_name_id);
 		break;
 	}
 
@@ -1741,24 +1984,99 @@ int bonus_param3(struct map_session_data *sd,int type,int type2,int type3,int va
 
 	switch(type) {
 	case SP_ADD_MONSTER_DROP_ITEM:
+	case SP_ADD_MONSTERRACE_DROP_ITEM:
+		if(type3 < 0 || type3 >= RCT_MAX)
+			break;
 		if(sd->state.lr_flag != 2) {
 			if(battle_config.dropitem_itemrate_fix == 1)
 				val = mob_droprate_fix(&sd->bl,type2,val);
 			else if(battle_config.dropitem_itemrate_fix > 1)
 				val = val * battle_config.dropitem_itemrate_fix / 100;
-			for(i=0; i<sd->monster_drop_item_count; i++) {
-				if(sd->monster_drop_itemid[i] == type2) {
-					sd->monster_drop_race[i] |= 1<<type3;
-					if(sd->monster_drop_itemrate[i] < val)
-						sd->monster_drop_itemrate[i] = val;
+			for(i=0; i<sd->add_drop_count; i++) {
+				if(sd->add_drop[i].itemid == type2 && sd->add_drop[i].type == 1) {	// 同じアイテムIDでtypeがRace指定(1)
+					sd->add_drop[i].target |= 1<<type3;
+					if(sd->add_drop[i].rate < val)
+						sd->add_drop[i].rate = val;
 					break;
 				}
 			}
-			if(i >= sd->monster_drop_item_count && sd->monster_drop_item_count < MAX_BONUS_ADDDROP) {
-				sd->monster_drop_itemid[sd->monster_drop_item_count] = type2;
-				sd->monster_drop_race[sd->monster_drop_item_count] |= 1<<type3;
-				sd->monster_drop_itemrate[sd->monster_drop_item_count] = val;
-				sd->monster_drop_item_count++;
+			if(i >= sd->add_drop_count && sd->add_drop_count < MAX_BONUS_ADDDROP) {
+				sd->add_drop[sd->add_drop_count].itemid = type2;
+				sd->add_drop[sd->add_drop_count].target |= 1<<type3;
+				sd->add_drop[sd->add_drop_count].rate = val;
+				sd->add_drop[sd->add_drop_count].type = 1;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+				sd->add_drop_count++;
+			}
+		}
+		break;
+	case SP_ADD_MONSTERELE_DROP_ITEM:
+		if(type3 < 0 || type3 >= ELE_MAX)
+			break;
+		if(sd->state.lr_flag != 2) {
+			if(battle_config.dropitem_itemrate_fix == 1)
+				val = mob_droprate_fix(&sd->bl,type2,val);
+			else if(battle_config.dropitem_itemrate_fix > 1)
+				val = val * battle_config.dropitem_itemrate_fix / 100;
+			for(i=0; i<sd->add_drop_count; i++) {
+				if(sd->add_drop[i].itemid == type2 && sd->add_drop[i].type == 2) {	// 同じアイテムIDでtypeがEle指定(2)
+					sd->add_drop[i].target |= 1<<type3;
+					if(sd->add_drop[i].rate < val)
+						sd->add_drop[i].rate = val;
+					break;
+				}
+			}
+			if(i >= sd->add_drop_count && sd->add_drop_count < MAX_BONUS_ADDDROP) {
+				sd->add_drop[sd->add_drop_count].itemid = type2;
+				sd->add_drop[sd->add_drop_count].target |= 1<<type3;
+				sd->add_drop[sd->add_drop_count].rate = val;
+				sd->add_drop[sd->add_drop_count].type = 2;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+				sd->add_drop_count++;
+			}
+		}
+		break;
+	case SP_ADD_MONSTERID_DROP_ITEM:
+		if(sd->state.lr_flag != 2) {
+			if(battle_config.dropitem_itemrate_fix == 1)
+				val = mob_droprate_fix(&sd->bl,type2,val);
+			else if(battle_config.dropitem_itemrate_fix > 1)
+				val = val * battle_config.dropitem_itemrate_fix / 100;
+			for(i=0; i<sd->add_drop_count; i++) {
+				if(sd->add_drop[i].itemid == type2 && sd->add_drop[i].target == type3 && sd->add_drop[i].type == 3) {	// 同じアイテムID、同じモンスターIDでtypeがMobID指定(3)
+					if(sd->add_drop[i].rate < val)
+						sd->add_drop[i].rate = val;
+					break;
+				}
+			}
+			if(i >= sd->add_drop_count && sd->add_drop_count < MAX_BONUS_ADDDROP) {
+				sd->add_drop[sd->add_drop_count].itemid = type2;
+				sd->add_drop[sd->add_drop_count].target = type3;
+				sd->add_drop[sd->add_drop_count].rate = val;
+				sd->add_drop[sd->add_drop_count].type = 3;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+				sd->add_drop_count++;
+			}
+		}
+		break;
+	case SP_ADD_MONSTERGROUP_DROP_ITEM:
+		if(type3 < 0 || type3 >= MAX_MOBGROUP)
+			break;
+		if(sd->state.lr_flag != 2) {
+			if(battle_config.dropitem_itemrate_fix == 1)
+				val = mob_droprate_fix(&sd->bl,type2,val);
+			else if(battle_config.dropitem_itemrate_fix > 1)
+				val = val * battle_config.dropitem_itemrate_fix / 100;
+			for(i=0; i<sd->add_drop_count; i++) {
+				if(sd->add_drop[i].itemid == type2 && sd->add_drop[i].target == type3 && sd->add_drop[i].type == 4) {	// 同じアイテムID、同じモンスターIDでtypeがGroup指定(4)
+					if(sd->add_drop[i].rate < val)
+						sd->add_drop[i].rate = val;
+					break;
+				}
+			}
+			if(i >= sd->add_drop_count && sd->add_drop_count < MAX_BONUS_ADDDROP) {
+				sd->add_drop[sd->add_drop_count].itemid = type2;
+				sd->add_drop[sd->add_drop_count].target = type3;
+				sd->add_drop[sd->add_drop_count].rate = val;
+				sd->add_drop[sd->add_drop_count].type = 4;	// 0:All, 1:Race, 2:Ele, 3:MobID, 4:Group
+				sd->add_drop_count++;
 			}
 		}
 		break;
@@ -1866,7 +2184,7 @@ int bonus_param3(struct map_session_data *sd,int type,int type2,int type3,int va
 		break;
 	default:
 		if(battle_config.error_log)
-			printf("bonus_param3: unknown type %d %d %d %d!\n",type,type2,type3,val);
+			printf("bonus_param3: unknown type %d %d %d %d! itemid %d.\n",type,type2,type3,val,current_equip_name_id);
 		break;
 	}
 
@@ -1912,7 +2230,7 @@ int bonus_param4(struct map_session_data *sd,int type,int type2,int type3,int ty
 		break;
 	default:
 		if(battle_config.error_log)
-			printf("bonus_param4: unknown type %d %d %d %d %u!\n",type,type2,type3,type4,val);
+			printf("bonus_param4: unknown type %d %d %d %d %u! itemid %d.\n",type,type2,type3,type4,val,current_equip_name_id);
 		break;
 	}
 
@@ -2297,7 +2615,7 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 	case OPT_HEAL_VALUE:
 		{
 			int i, j;
-			int skill[5] = {28,70,231,2043,2051};
+			const int skill[5] = {28,70,231,2043,2051};
 			for(j=0; j<5; j++) {
 				// update
 				for(i=0; i<sd->skill_healup.count; i++)
@@ -2305,14 +2623,14 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 					if(sd->skill_healup.id[i] == skill[j])
 					{
 						sd->skill_healup.rate[i] += val;
-						return 0;
+						continue;
 					}
 				}
 				// full
 				if(sd->skill_healup.count == MAX_SKILL_HEAL_UP)
 					break;
 				// add
-				sd->skill_healup.id[sd->skill_healup.count] = skill[5];
+				sd->skill_healup.id[sd->skill_healup.count] = skill[j];
 				sd->skill_healup.rate[sd->skill_healup.count] = val;
 				sd->skill_healup.count++;
 			}
@@ -2321,7 +2639,7 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 	case OPT_HEAL_MODIFY_PERCENT:
 		{
 			int i, j;
-			int skill[4] = {28,70,231,2051};
+			const int skill[4] = {28,70,231,2051};
 			for(j=0; j<4; j++) {
 				// update
 				for(i=0; i<sd->skill_subhealup.count; i++)
@@ -2329,7 +2647,7 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 					if(sd->skill_subhealup.id[i] == skill[j])
 					{
 						sd->skill_subhealup.rate[i] += val;
-						return 0;
+						continue;
 					}
 				}
 				// full
@@ -2391,6 +2709,174 @@ int bonus_randopt(struct map_session_data *sd,int id,int val)
 	case OPT_MDAMAGE_SIZE_MIDIUM_USER:
 	case OPT_MDAMAGE_SIZE_LARGE_USER:
 		sd->magic_subsize[id-OPT_MDAMAGE_SIZE_SMALL_USER] += val;
+		break;
+	case OPT_ATTR_TOLERACE_ALLELE:
+		if(sd->state.lr_flag != 2) {
+			int i;
+			for(i=0;i<ELE_MAX;i++)
+				sd->subele[i] += val;
+		}
+		break;
+	case OPT_RACE_TOLERACE_PLAYER_HUMAN:
+		if(sd->state.lr_flag != 2)
+			sd->subrace[RCT_PLAYER_HUMAN] += val;
+		break;
+	case OPT_RACE_TOLERACE_PLAYER_DORAM:
+		if(sd->state.lr_flag != 2)
+			sd->subrace[RCT_PLAYER_DORAM] += val;
+		break;
+	case OPT_RACE_DAMAGE_PLAYER_HUMAN:
+		if(!sd->state.lr_flag)
+			sd->addrace[RCT_PLAYER_HUMAN] += val;
+		else if(sd->state.lr_flag == 1)
+			sd->addrace_[RCT_PLAYER_HUMAN] += val;
+		else if(sd->state.lr_flag == 2)
+			sd->arrow_addrace[RCT_PLAYER_HUMAN] += val;
+		break;
+	case OPT_RACE_DAMAGE_PLAYER_DORAM:
+		if(!sd->state.lr_flag)
+			sd->addrace[RCT_PLAYER_DORAM] += val;
+		else if(sd->state.lr_flag == 1)
+			sd->addrace_[RCT_PLAYER_DORAM] += val;
+		else if(sd->state.lr_flag == 2)
+			sd->arrow_addrace[RCT_PLAYER_DORAM] += val;
+		break;
+	case OPT_RACE_MDAMAGE_PLAYER_HUMAN:
+		if(sd->state.lr_flag != 2)
+			sd->magic_addrace[RCT_PLAYER_HUMAN] += val;
+		break;
+	case OPT_RACE_MDAMAGE_PLAYER_DORAM:
+		if(sd->state.lr_flag != 2)
+			sd->magic_addrace[RCT_PLAYER_DORAM] += val;
+		break;
+	case OPT_RACE_CRI_PLAYER_HUMAN:
+		sd->critical_race[RCT_PLAYER_HUMAN] += val*10;
+		break;
+	case OPT_RACE_CRI_PLAYER_DORAM:
+		sd->critical_race[RCT_PLAYER_DORAM] += val*10;
+		break;
+	case OPT_RACE_IGNORE_DEF_PLAYER_HUMAN:
+		if(!sd->state.lr_flag)
+			sd->ignore_def_race[RCT_PLAYER_HUMAN] += val;
+		else if(sd->state.lr_flag == 1)
+			sd->ignore_def_race_[RCT_PLAYER_HUMAN] += val;
+		break;
+	case OPT_RACE_IGNORE_DEF_PLAYER_DORAM:
+		if(!sd->state.lr_flag)
+			sd->ignore_def_race[RCT_PLAYER_DORAM] += val;
+		else if(sd->state.lr_flag == 1)
+			sd->ignore_def_race_[RCT_PLAYER_DORAM] += val;
+		break;
+	case OPT_RACE_IGNORE_MDEF_PLAYER_HUMAN:
+		if(sd->state.lr_flag != 2)
+			sd->ignore_mdef_race[RCT_PLAYER_HUMAN] += val;
+		break;
+	case OPT_RACE_IGNORE_MDEF_PLAYER_DORAM:
+		if(sd->state.lr_flag != 2)
+			sd->ignore_mdef_race[RCT_PLAYER_DORAM] += val;
+		break;
+	case OPT_REFLECT_DAMAGE_PERCENT:
+		if(sd->state.lr_flag != 2)
+			sd->sub_return_damage += val;
+		break;
+	case OPT_MELEE_ATTACK_DAMAGE_TARGET:
+		if(sd->state.lr_flag != 2)
+			sd->short_weapon_damege_rate += val;
+		break;
+	case OPT_MELEE_ATTACK_DAMAGE_USER:
+		if(sd->state.lr_flag != 2)
+			sd->near_attack_def_rate += val;
+		break;
+	case OPT_ADDSKILLMDAMAGE_NOTHING:
+	case OPT_ADDSKILLMDAMAGE_WATER:
+	case OPT_ADDSKILLMDAMAGE_GROUND:
+	case OPT_ADDSKILLMDAMAGE_FIRE:
+	case OPT_ADDSKILLMDAMAGE_WIND:
+	case OPT_ADDSKILLMDAMAGE_POISON:
+	case OPT_ADDSKILLMDAMAGE_SAINT:
+	case OPT_ADDSKILLMDAMAGE_DARKNESS:
+	case OPT_ADDSKILLMDAMAGE_TELEKINESIS:
+	case OPT_ADDSKILLMDAMAGE_UNDEAD:
+		if(sd->state.lr_flag != 2)
+			sd->skill_elemagic_dmgup[id-OPT_ADDSKILLMDAMAGE_NOTHING] += val;
+		break;
+	case OPT_ADDSKILLMDAMAGE_ALL:
+		if(sd->state.lr_flag != 2) {
+			int i;
+			for(i=0;i<ELE_MAX;i++)
+				sd->skill_elemagic_dmgup[i] += val;
+		}
+		break;
+	case OPT_ADDEXPPERCENT_KILLRACE_NOTHING:
+	case OPT_ADDEXPPERCENT_KILLRACE_UNDEAD:
+	case OPT_ADDEXPPERCENT_KILLRACE_ANIMAL:
+	case OPT_ADDEXPPERCENT_KILLRACE_PLANT:
+	case OPT_ADDEXPPERCENT_KILLRACE_INSECT:
+	case OPT_ADDEXPPERCENT_KILLRACE_FISHS:
+	case OPT_ADDEXPPERCENT_KILLRACE_DEVIL:
+	case OPT_ADDEXPPERCENT_KILLRACE_HUMAN:
+	case OPT_ADDEXPPERCENT_KILLRACE_ANGEL:
+	case OPT_ADDEXPPERCENT_KILLRACE_DRAGON:
+		sd->exp_rate[id-OPT_ADDEXPPERCENT_KILLRACE_NOTHING] += val;
+		break;
+	case OPT_ADDEXPPERCENT_KILLRACE_ALL:
+		{
+			int i;
+			for(i=0;i<RCT_ALL;i++)
+				sd->exp_rate[i] += val;
+		}
+		break;
+	case OPT_POWAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[6] += val;
+		break;
+	case OPT_SPLAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[9] += val;
+		break;
+	case OPT_STAAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[7] += val;
+		break;
+	case OPT_WISAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[8] += val;
+		break;
+	case OPT_CONAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[10] += val;
+		break;
+	case OPT_CRTAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->parame[11] += val;
+		break;
+	case OPT_PATKAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->patk += val;
+		break;
+	case OPT_SMATKAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->smatk += val;
+		break;
+	case OPT_RESAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->res += val;
+		break;
+	case OPT_MRESAMOUNT:
+		if(sd->state.lr_flag != 2)
+			sd->mres += val;
+		break;
+	case OPT_HEAL_PLUS:
+		if(sd->state.lr_flag != 2)
+			sd->hplus += val;
+		break;
+	case OPT_CRITICAL_RATE:
+		if(sd->state.lr_flag != 2)
+			sd->crate += val;
+		break;
+	case OPT_DAMAGE_HIT_TARGET:
+		if(sd->state.lr_flag != 2)
+			sd->hit_weapon_damage_rate += val;
 		break;
 	default:
 		if(battle_config.error_log)

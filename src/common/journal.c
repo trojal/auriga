@@ -28,6 +28,7 @@
 #include "malloc.h"
 #include "timer.h"
 #include "grfio.h"
+#include "utils.h"
 
 #ifndef WINDOWS
 #	include <unistd.h>
@@ -65,7 +66,7 @@ static void journal_init_( struct journal* j, size_t datasize, const char* filen
 	j->unusedchunk_queue = NULL;
 	j->cache_timer = -1;
 	j->mode = 0;
-	strncpy( j->filename, filename, sizeof(j->filename)-1 );
+	auriga_strlcpy( j->filename, filename, sizeof(j->filename) );
 }
 
 // ==========================================
@@ -496,6 +497,86 @@ int journal_rollforward( struct journal* j, int(*func)( int key, void* buf, int 
 
 	numdb_foreach( j->db, journal_rollforward_sub, func, &c );
 	return c;
+}
+
+void journal_config_init(struct journal_config *cfg, int enable, const char *file, int cache)
+{
+	if(cfg == NULL)
+		return;
+	memset(cfg, 0, sizeof(*cfg));
+	cfg->enable = enable;
+	cfg->cache = cache;
+	if(file)
+		auriga_strlcpy(cfg->file, file, sizeof(cfg->file));
+}
+
+int journal_config_read(struct journal_config *cfg, const char *prefix, const char *w1, const char *w2)
+{
+	char key[128];
+
+	if(cfg == NULL || prefix == NULL || w1 == NULL || w2 == NULL)
+		return 0;
+
+	snprintf(key, sizeof(key), "%s_enable", prefix);
+	if(strcmpi(w1, key) == 0) {
+		cfg->enable = atoi(w2);
+		return 1;
+	}
+	snprintf(key, sizeof(key), "%s_file", prefix);
+	if(strcmpi(w1, key) == 0) {
+		auriga_strlcpy(cfg->file, w2, sizeof(cfg->file));
+		return 1;
+	}
+	snprintf(key, sizeof(key), "%s_cache_interval", prefix);
+	if(strcmpi(w1, key) == 0) {
+		cfg->cache = atoi(w2);
+		return 1;
+	}
+	return 0;
+}
+
+int journal_setup(struct journal *j, const struct journal_config *cfg, size_t datasize,
+	int (*rollforward)(int key, void *buf, int flag), const char *log_tag)
+{
+	if(j == NULL || cfg == NULL || !cfg->enable)
+		return 0;
+
+	if(journal_load(j, datasize, cfg->file)) {
+		int c = journal_rollforward(j, rollforward);
+		printf("%s: roll-forward (%d)\n", log_tag ? log_tag : "journal", c);
+		return 1;
+	}
+
+	journal_final(j);
+	journal_create(j, datasize, cfg->cache, cfg->file);
+	return 0;
+}
+
+int journal_setup_with_convert(struct journal *j, const struct journal_config *cfg, size_t datasize,
+	int (*rollforward)(int key, void *buf, int flag),
+	void (*convert)(struct journal_header *jhd, void *buf), const char *log_tag)
+{
+	if(j == NULL || cfg == NULL || !cfg->enable)
+		return 0;
+
+	if(journal_load_with_convert(j, datasize, cfg->file, convert)) {
+		int c = journal_rollforward(j, rollforward);
+		printf("%s: roll-forward (%d)\n", log_tag ? log_tag : "journal", c);
+		return 1;
+	}
+
+	journal_final(j);
+	journal_create(j, datasize, cfg->cache, cfg->file);
+	return 0;
+}
+
+void journal_recreate(struct journal *j, const struct journal_config *cfg, size_t datasize)
+{
+	if(j == NULL || cfg == NULL || !cfg->enable)
+		return;
+
+	journal_final(j);
+	journal_create(j, datasize, cfg->cache, cfg->file);
 }
 
 #endif
