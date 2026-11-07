@@ -60,6 +60,7 @@ struct mechprobe_fixture {
 	int cart, mado, falcon;	// options=: a cart, a Mado Gear, a falcon
 	int cart_weight;	// cart_weight=: the cart's load (weight units)
 	int spheres;	// spheres=: spirit spheres (the count only)
+	struct mechprobe_pair trace;	// trace=skill:lv: that attack's min run also writes its damage at each step
 };
 
 static int mechprobe_parse_pairs(const char *value, struct mechprobe_pair *out, int *count)
@@ -107,6 +108,15 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		else if(strcmp(key, "seed") == 0) f->seed = (unsigned int)strtoul(value, NULL, 10);
 		else if(strcmp(key, "cart_weight") == 0) f->cart_weight = atoi(value);
 		else if(strcmp(key, "spheres") == 0) f->spheres = atoi(value);
+		else if(strcmp(key, "trace") == 0) {
+			struct mechprobe_pair pairs[MECHPROBE_MAX_LIST];
+			int n = 0;
+			if(!mechprobe_parse_pairs(value, pairs, &n) || n != 1) {
+				snprintf(error, error_size, "bad trace: %s", value);
+				return 0;
+			}
+			f->trace = pairs[0];
+		}
 		else if(strcmp(key, "options") == 0) {
 			char opts[1024], *o, *save = NULL;
 			snprintf(opts, sizeof(opts), "%s", value);
@@ -414,11 +424,18 @@ static void mechprobe_dist_json(FILE *out, const struct mechprobe_dist *d)
 static void mechprobe_measure(FILE *out, struct block_list *src, struct block_list *target, int type, int skill_id, int skill_lv, const struct mechprobe_fixture *f)
 {
 	struct Damage d;
+	int traced = skill_id != 0 && f->trace.a == skill_id && f->trace.b == skill_lv;
 	mechprobe_rng_min = 1;
+	mechprobe_trace_len = 0;
+	mechprobe_trace_buf[0] = '\0';
+	mechprobe_trace_on = traced;
 	d = mechprobe_attack(type, src, target, skill_id, skill_lv);
+	mechprobe_trace_on = 0;
 	mechprobe_rng_min = 0;
 	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d,\"blew\":%d}",
 		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_, mechprobe_blew(&d, skill_id, skill_lv));
+	if(traced)
+		fprintf(out, ",\"trace\":[%s]", mechprobe_trace_buf);
 	if(f->samples > 0) {
 		struct mechprobe_dist normal = {0}, crit = {0};
 		long long misses = 0, lucky = 0;
