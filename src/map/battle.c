@@ -64,6 +64,14 @@ struct battle_delay_damage_ {
 static int battle_attack_drain(struct block_list *bl,atn_bignumber damage,atn_bignumber damage2,int flag);
 static struct Damage battle_calc_attack(int attack_type,struct block_list *bl,struct block_list *target,int skill_num,int skill_lv,int flag);
 
+#ifdef MECH_PROBE
+// Mechanics probe (mechprobe.c): set when a skill's attack crits (a skill crit ignores DEF but keeps the damage type of
+// a normal hit), and, while mechprobe_capture is set, the attack type of the first battle_skill_attack, which then
+// deals nothing.
+static int mechprobe_skill_crit = 0;
+static int mechprobe_capture = 0, mechprobe_captured = 0;
+#endif
+
 /*==========================================
  * ダメージの遅延
  *------------------------------------------
@@ -2221,6 +2229,9 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src,struct blo
 			if(skill_num != 0 && skill_num != KN_AUTOCOUNTER) {
 				// DEF無視フラグ
 				calc_flag.idef = calc_flag.idef_ = 1;
+#ifdef MECH_PROBE
+				mechprobe_skill_crit = 1;
+#endif
 			} else {
 				wd.type = 0x0a;	// クリティカル攻撃
 			}
@@ -9852,6 +9863,13 @@ int battle_skill_attack(int attack_type,struct block_list* src,struct block_list
 	nullpo_retr(0, src);
 	nullpo_retr(0, dsrc);
 	nullpo_retr(0, bl);
+#ifdef MECH_PROBE
+	if(mechprobe_capture) {
+		if(mechprobe_captured == 0)
+			mechprobe_captured = attack_type & (BF_WEAPON | BF_MAGIC | BF_MISC);
+		return 0;
+	}
+#endif
 
 	sc  = status_get_sc(bl);
 	ssc = status_get_sc(src);

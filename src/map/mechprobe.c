@@ -334,15 +334,42 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 	return sd;
 }
 
+// A skill's crit keeps the damage type of a normal hit: battle_calc_weapon_attack sets mechprobe_skill_crit instead.
 static const char *mechprobe_hit_kind(const struct Damage *d)
 {
 	if(d->dmg_lv == ATK_LUCKY)
 		return "lucky";
 	if(d->dmg_lv == ATK_FLEE)
 		return "miss";
-	if(d->type == 0x0a)
+	if(d->type == 0x0a || mechprobe_skill_crit)
 		return "crit";
 	return "hit";
+}
+
+static struct Damage mechprobe_attack(int type, struct block_list *src, struct block_list *target, int skill_id, int skill_lv)
+{
+	mechprobe_skill_crit = 0;
+	return battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+}
+
+// The attack type of a skill: skill_db's, or, for a damaging skill that has none there (its cast picks it, as Fire
+// Dance's and Ice Spear's do), the type of the attack its cast makes (battle_skill_attack, which deals nothing while
+// mechprobe_capture is set). The cast needs the caster on the map, next to the target.
+static int mechprobe_skill_type(struct block_list *src, struct block_list *target, int skill_id, int skill_lv)
+{
+	int type = skill_get_skill_type(skill_id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+	if(type || (skill_get_nk(skill_id) & 1))
+		return type;
+	src->m = target->m;
+	src->x = target->x + 1;
+	src->y = target->y;
+	map_addblock(src);
+	mechprobe_capture = 1;
+	mechprobe_captured = 0;
+	skill_castend_damage_id(src, target, skill_id, skill_lv, gettick(), 0);
+	mechprobe_capture = 0;
+	map_delblock(src);
+	return mechprobe_captured;
 }
 
 struct mechprobe_dist {
@@ -370,7 +397,7 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 {
 	struct Damage d;
 	mechprobe_rng_min = 1;
-	d = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+	d = mechprobe_attack(type, src, target, skill_id, skill_lv);
 	mechprobe_rng_min = 0;
 	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d,\"blew\":%d}",
 		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_, d.blewcount);
@@ -380,7 +407,7 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 		int i;
 		mechprobe_srand(f->seed);
 		for(i = 0; i < f->samples; i++) {
-			struct Damage s = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+			struct Damage s = mechprobe_attack(type, src, target, skill_id, skill_lv);
 			const char *kind = mechprobe_hit_kind(&s);
 			if(strcmp(kind, "miss") == 0) misses++;
 			else if(strcmp(kind, "lucky") == 0) lucky++;
@@ -549,7 +576,7 @@ static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 			fprintf(out, ",\"attacks\":[");
 			for(i = 0; i < f->attack_count; i++) {
 				int id = f->attacks[i].a, lv = f->attacks[i].b;
-				int type = skill_get_skill_type(id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+				int type = mechprobe_skill_type(&sd->bl, &md->bl, id, lv);
 				fprintf(out, "%s{\"skill\":%d,\"lv\":%d,\"type\":\"%s\",\"cast\":%d,\"delay\":%d,", i ? "," : "", id, lv,
 					type == BF_MAGIC ? "magic" : type == BF_MISC ? "misc" : type == BF_WEAPON ? "weapon" : "none",
 					skill_castfix(&sd->bl, id, skill_get_cast(id, lv), skill_get_fixedcast(id, lv)), skill_delayfix(&sd->bl, id, lv));
