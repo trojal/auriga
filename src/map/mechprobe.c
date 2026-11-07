@@ -346,6 +346,19 @@ static const char *mechprobe_hit_kind(const struct Damage *d)
 	return "hit";
 }
 
+// The knockback of an attack: its damage's, or for skills whose cast knocks the target back on its own after the
+// attack (skill_blown with skill_db's count, the damage's set to 0), the cast's.
+static int mechprobe_blew(const struct Damage *d, int skill_id, int skill_lv)
+{
+	switch(skill_id) {
+	case AC_SHOWER:
+	case MA_SHOWER:
+	case MC_CARTREVOLUTION:
+		return d->dmg_lv == ATK_FLEE || d->dmg_lv == ATK_LUCKY ? 0 : skill_get_blewcount(skill_id, skill_lv);
+	}
+	return d->blewcount;
+}
+
 static struct Damage mechprobe_attack(int type, struct block_list *src, struct block_list *target, int skill_id, int skill_lv)
 {
 	mechprobe_skill_crit = 0;
@@ -400,7 +413,7 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 	d = mechprobe_attack(type, src, target, skill_id, skill_lv);
 	mechprobe_rng_min = 0;
 	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d,\"blew\":%d}",
-		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_, d.blewcount);
+		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_, mechprobe_blew(&d, skill_id, skill_lv));
 	if(f->samples > 0) {
 		struct mechprobe_dist normal = {0}, crit = {0};
 		long long misses = 0, lucky = 0;
