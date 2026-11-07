@@ -59,6 +59,7 @@ struct mechprobe_fixture {
 	unsigned int seed;
 	int cart, mado, falcon;	// options=: a cart, a Mado Gear, a falcon
 	int cart_weight;	// cart_weight=: the cart's load (weight units)
+	int spheres;	// spheres=: spirit spheres (the count only)
 };
 
 static int mechprobe_parse_pairs(const char *value, struct mechprobe_pair *out, int *count)
@@ -105,6 +106,7 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		else if(strcmp(key, "samples") == 0) f->samples = atoi(value);
 		else if(strcmp(key, "seed") == 0) f->seed = (unsigned int)strtoul(value, NULL, 10);
 		else if(strcmp(key, "cart_weight") == 0) f->cart_weight = atoi(value);
+		else if(strcmp(key, "spheres") == 0) f->spheres = atoi(value);
 		else if(strcmp(key, "options") == 0) {
 			char opts[1024], *o, *save = NULL;
 			snprintf(opts, sizeof(opts), "%s", value);
@@ -304,7 +306,10 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 		pc_setoption(sd, sd->sc.option | OPTION_FALCON);
 	if(f->cart_weight > 0)
 		sd->cart_weight = f->cart_weight;
-	if(f->cart || f->mado || f->falcon || f->cart_weight > 0)
+	// spheres=: the count only; the timers stay -1 (no timers run in the probe)
+	if(f->spheres > 0)
+		sd->spiritball.num = sd->spiritball.old = f->spheres;
+	if(f->cart || f->mado || f->falcon || f->cart_weight > 0 || f->spheres > 0)
 		status_calc_pc(sd, 0);
 	// Buffs and consumables: the server's own skill and item code, on the probe player (their timers never run:
 	// the probe exits after its fixtures).
