@@ -57,6 +57,8 @@ struct mechprobe_fixture {
 	int mob;
 	int samples;
 	unsigned int seed;
+	int cart, mado, falcon;	// options=: a cart, a Mado Gear, a falcon
+	int cart_weight;	// cart_weight=: the cart's load (weight units)
 };
 
 static int mechprobe_parse_pairs(const char *value, struct mechprobe_pair *out, int *count)
@@ -102,6 +104,20 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		else if(strcmp(key, "mob") == 0) f->mob = atoi(value);
 		else if(strcmp(key, "samples") == 0) f->samples = atoi(value);
 		else if(strcmp(key, "seed") == 0) f->seed = (unsigned int)strtoul(value, NULL, 10);
+		else if(strcmp(key, "cart_weight") == 0) f->cart_weight = atoi(value);
+		else if(strcmp(key, "options") == 0) {
+			char opts[1024], *o, *save = NULL;
+			snprintf(opts, sizeof(opts), "%s", value);
+			for(o = strtok_r(opts, ",", &save); o != NULL; o = strtok_r(NULL, ",", &save)) {
+				if(strcmp(o, "cart") == 0) f->cart = 1;
+				else if(strcmp(o, "mado") == 0) f->mado = 1;
+				else if(strcmp(o, "falcon") == 0) f->falcon = 1;
+				else {
+					snprintf(error, error_size, "unknown option %s", o);
+					return 0;
+				}
+			}
+		}
 		else if(strcmp(key, "equip") == 0) {
 			if(!mechprobe_parse_pairs(value, f->equip, &f->equip_count)) {
 				snprintf(error, error_size, "bad equip: %s", value);
@@ -279,6 +295,17 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 		}
 	}
 	status_calc_pc(sd, 0);
+	// options=: the server's own option setters, then the cart's load
+	if(f->cart)
+		pc_setcart(sd, 1);
+	if(f->mado)
+		pc_setoption(sd, sd->sc.option | OPTION_MADOGEAR);
+	if(f->falcon)
+		pc_setoption(sd, sd->sc.option | OPTION_FALCON);
+	if(f->cart_weight > 0)
+		sd->cart_weight = f->cart_weight;
+	if(f->cart || f->mado || f->falcon || f->cart_weight > 0)
+		status_calc_pc(sd, 0);
 	// Buffs and consumables: the server's own skill and item code, on the probe player (their timers never run:
 	// the probe exits after its fixtures).
 	// (each skill's status effect, as its cast starts it: the cast itself needs the player on the map)
