@@ -652,6 +652,9 @@ int mechprobe_run(const char *in_path, const char *out_path)
 		fclose(in);
 		return 1;
 	}
+	// A fixture lists the skills it measures, not every skill point a real character of its level has spent: with
+	// player_skillup_limit, pc_calc_skilltree would compute it as a lower job and drop its higher job's skills.
+	battle_config.skillup_limit = 0;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	while(fgets(line, sizeof(line), in) != NULL) {
 		struct mechprobe_fixture f;
