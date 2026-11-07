@@ -374,10 +374,47 @@ static int mechprobe_blew(const struct Damage *d, int skill_id, int skill_lv)
 	return d->blewcount;
 }
 
+// One attack as the skill's cast makes it, where the cast passes battle_calc_attack more than the skill:
+// - the player's SP refilled first (Asura Strike and Gate of Hell spend it inside their damage calculation);
+// - Chain Lightning's first hit is bounce 1, Aimed Bolt's hit count the arrows its cast uses (2 + the target's size +
+//   0-1), Bowling Bash's two attacks summed, Sacrifice a normal attack under its status (SC_SACRIFICE, its count
+//   kept from running out).
 static struct Damage mechprobe_attack(int type, struct block_list *src, struct block_list *target, int skill_id, int skill_lv)
 {
+	struct map_session_data *sd = BL_DOWNCAST(BL_PC, src);
+	int flag = 0;
+	struct Damage d;
 	mechprobe_skill_crit = 0;
-	return battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+	if(sd)
+		sd->status.sp = sd->status.max_sp;
+	switch(skill_id) {
+	case WL_CHAINLIGHTNING:
+	case WL_CHAINLIGHTNING_ATK:
+		flag = 1;
+		break;
+	case RA_AIMEDBOLT:
+		flag = 2 + status_get_size(target) + atn_rand() % 2;
+		break;
+	case PA_SACRIFICE: {
+		struct status_change *sc = status_get_sc(src);
+		if(sc && sc->data[SC_SACRIFICE].timer == -1)
+			status_change_start(src, SC_SACRIFICE, skill_lv, 0, 0, 0, 60000, 0);
+		if(sc && sc->data[SC_SACRIFICE].timer != -1)
+			sc->data[SC_SACRIFICE].val2 = 1000000;
+		return battle_calc_attack(BF_WEAPON, src, target, 0, 0, 0);
+	}
+	case KN_BOWLINGBASH:
+	case MS_BOWLINGBASH: {
+		struct Damage e;
+		d = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+		e = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+		d.damage += e.damage;
+		d.damage2 += e.damage2;
+		d.div_ += e.div_;
+		return d;
+	}
+	}
+	return battle_calc_attack(type, src, target, skill_id, skill_lv, flag);
 }
 
 // The attack type of a skill: skill_db's, or, for a damaging skill that has none there (its cast picks it, as Fire
@@ -386,6 +423,12 @@ static struct Damage mechprobe_attack(int type, struct block_list *src, struct b
 static int mechprobe_skill_type(struct block_list *src, struct block_list *target, int skill_id, int skill_lv)
 {
 	int type = skill_get_skill_type(skill_id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+	// casts whose attack isn't skill_db's type: Pressure's cast is a misc attack (skill_castend_damage_id), Sacrifice
+	// a normal attack under its status (mechprobe_attack)
+	if(skill_id == PA_PRESSURE)
+		return BF_MISC;
+	if(skill_id == PA_SACRIFICE)
+		return BF_WEAPON;
 	if(type || (skill_get_nk(skill_id) & 1))
 		return type;
 	src->m = target->m;
@@ -455,6 +498,8 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 		mechprobe_dist_json(out, &crit);
 		fprintf(out, "}");
 	}
+	if(skill_id == PA_SACRIFICE)
+		status_change_end(src, SC_SACRIFICE, -1);
 }
 
 // The status effects whose outcome effect= records, by their name in the results (seasonro's probe uses the same).
