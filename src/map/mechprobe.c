@@ -301,6 +301,9 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 	}
 	if(f->buff_count > 0 || f->use_count > 0)
 		status_calc_pc(sd, 0);
+	// At full HP and SP, as skills that scale with the current ones (Dragon Breath) are compared.
+	sd->status.hp = sd->status.max_hp;
+	sd->status.sp = sd->status.max_sp;
 	return sd;
 }
 
