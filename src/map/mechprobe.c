@@ -14,7 +14,8 @@
  * - sample: N normal attacks with the normal generator seeded from the fixture: hit, crit and dodge counts, and the
  *   min/max/mean damage of normal and critical hits;
  * - attacks: the same min and sample for each skill in `attack=`, with its cast time and after-cast delay;
- * - mob_attacks: the monster attacking the player, for each `mob_attack=` skill (0: its normal attack).
+ * - mob_attacks: the monster attacking the player, for each `mob_attack=` skill (0: its normal attack);
+ * - effects: for each `effect=` skill, how often its status effects land on the monster and for how long.
  * Before measuring, the player casts each `buffs=` skill on itself and uses each `use=` item.
  * Then the server exits. The fixtures and results formats are in tools/mechharness/PROBE.md in TitanRO/titanro2.
  *
@@ -45,6 +46,10 @@ struct mechprobe_fixture {
 	int attack_count;
 	struct mechprobe_pair mob_attacks[MECHPROBE_MAX_LIST];
 	int mob_attack_count;
+	struct mechprobe_pair cards[MECHPROBE_MAX_LIST];	// card:slot in the first equip= item
+	int card_count;
+	struct mechprobe_pair effects[MECHPROBE_MAX_LIST];	// skills whose status effects on the monster are measured
+	int effect_count;
 	struct mechprobe_pair buffs[MECHPROBE_MAX_LIST];	// skills the player casts on itself after equipping
 	int buff_count;
 	struct mechprobe_pair use[MECHPROBE_MAX_LIST];	// items (item:count) the player then uses
@@ -110,6 +115,16 @@ static int mechprobe_parse(const char *line, struct mechprobe_fixture *f, char *
 		} else if(strcmp(key, "attack") == 0) {
 			if(!mechprobe_parse_pairs(value, f->attacks, &f->attack_count)) {
 				snprintf(error, error_size, "bad attack: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "cards") == 0) {
+			if(!mechprobe_parse_pairs(value, f->cards, &f->card_count)) {
+				snprintf(error, error_size, "bad cards: %s", value);
+				return 0;
+			}
+		} else if(strcmp(key, "effect") == 0) {
+			if(!mechprobe_parse_pairs(value, f->effects, &f->effect_count)) {
+				snprintf(error, error_size, "bad effect: %s", value);
 				return 0;
 			}
 		} else if(strcmp(key, "mob_attack") == 0) {
@@ -244,6 +259,14 @@ static struct map_session_data *mechprobe_pc(const struct mechprobe_fixture *f, 
 		sd->inventory_data[i] = itemdb_search(f->equip[i].a);
 	}
 
+	for(i = 0; i < f->card_count; i++) {
+		if(f->equip_count == 0 || f->cards[i].b < 0 || f->cards[i].b >= 4 || itemdb_exists(f->cards[i].a) == NULL) {
+			snprintf(error, error_size, "bad card %d:%d", f->cards[i].a, f->cards[i].b);
+			aFree(sd);
+			return NULL;
+		}
+		sd->status.inventory[0].card[f->cards[i].b] = f->cards[i].a;
+	}
 	unit_dataset(&sd->bl);
 	map_addiddb(&sd->bl);
 	pc_calc_skilltree(sd);
@@ -319,8 +342,8 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 	mechprobe_rng_min = 1;
 	d = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
 	mechprobe_rng_min = 0;
-	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d}",
-		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_);
+	fprintf(out, "\"min\":{\"kind\":\"%s\",\"damage\":%lld,\"damage2\":%lld,\"div\":%d,\"blew\":%d}",
+		mechprobe_hit_kind(&d), (long long)d.damage, (long long)d.damage2, d.div_, d.blewcount);
 	if(f->samples > 0) {
 		struct mechprobe_dist normal = {0}, crit = {0};
 		long long misses = 0, lucky = 0;
@@ -340,6 +363,110 @@ static void mechprobe_measure(FILE *out, struct block_list *src, struct block_li
 		mechprobe_dist_json(out, &crit);
 		fprintf(out, "}");
 	}
+}
+
+// The status effects whose outcome effect= records, by their name in the results (seasonro's probe uses the same).
+static const struct {
+	const char *name;
+	int type;
+} mechprobe_tracked_sc[] = {
+	{"stun", SC_STUN}, {"freeze", SC_FREEZE}, {"stone", SC_STONE}, {"sleep", SC_SLEEP}, {"poison", SC_POISON},
+	{"curse", SC_CURSE}, {"silence", SC_SILENCE}, {"blind", SC_BLIND}, {"bleeding", SC_BLEED},
+	{"confusion", SC_CONFUSION}, {"decrease_agi", SC_DECREASEAGI}, {"lex_aeterna", SC_AETERNA},
+	{"provoke", SC_PROVOKE}, {"ankle_snare", SC_ANKLE},
+};
+#define MECHPROBE_TRACKED (int)(sizeof(mechprobe_tracked_sc) / sizeof(mechprobe_tracked_sc[0]))
+
+static void mechprobe_clear_tracked(struct block_list *bl)
+{
+	struct status_change *sc = status_get_sc(bl);
+	int t;
+	for(t = 0; t < MECHPROBE_TRACKED; t++) {
+		if(sc && sc->data[mechprobe_tracked_sc[t].type].timer != -1)
+			status_change_end(bl, mechprobe_tracked_sc[t].type, -1);
+	}
+}
+
+// Starts the effects skill_additional_effect scheduled for after the attack motion (status_change_pretimer) now,
+// as their timer would, so they are measured like the ones that start at once.
+static void mechprobe_flush_pretimers(struct block_list *bl)
+{
+	struct unit_data *ud = unit_bl2ud(bl);
+	struct linkdb_node *node;
+	if(ud == NULL)
+		return;
+	for(node = ud->statuspretimer; node; node = node->next) {
+		struct status_pretimer *stpt = (struct status_pretimer *)node->data;
+		status_change_start(bl, stpt->type, stpt->val1, stpt->val2, stpt->val3, stpt->val4, stpt->tick, stpt->flag);
+	}
+	status_clearpretimer(bl);
+}
+
+// One effect= skill of src on target, `samples` seeded uses with the server's own code: a damaging skill's attack
+// and, when it lands, its additional effect (skill_additional_effect); a skill that deals no damage through its cast
+// on the target (skill_castend_nodamage_id). Durations: the effect's remaining time right after it started, in ms.
+static void mechprobe_effect(FILE *out, struct block_list *src, struct block_list *target, int skill_id, int skill_lv, const struct mechprobe_fixture *f)
+{
+	int type = (skill_get_nk(skill_id) & 1) ? 0 : skill_get_skill_type(skill_id) & (BF_WEAPON | BF_MAGIC | BF_MISC);
+	int n = f->samples > 0 ? f->samples : 1, landed = 0, i, t, first = 1;
+	struct mechprobe_dist durations[sizeof(mechprobe_tracked_sc) / sizeof(mechprobe_tracked_sc[0])];
+
+	memset(durations, 0, sizeof(durations));
+	mechprobe_srand(f->seed);
+	for(i = 0; i < n; i++) {
+		unsigned int tick = gettick();
+		struct status_change *sc;
+		mechprobe_clear_tracked(target);
+		if(type && skill_id == MG_FROSTDIVER) {
+			// Its freeze is part of the cast (skill_castend_damage_id), not of the additional effect. The cast needs
+			// the caster on the map, next to the target; the monster gets enough HP not to die of it, and its own
+			// back afterwards.
+			struct mob_data *md = BL_DOWNCAST(BL_MOB, target);
+			int hp = md ? md->hp : 0;
+			if(md)
+				md->hp = 0x3fffffff;
+			src->m = target->m;
+			src->x = target->x + 1;
+			src->y = target->y;
+			map_addblock(src);
+			skill_castend_damage_id(src, target, skill_id, skill_lv, tick, 0);
+			map_delblock(src);
+			landed++;  // a magic attack; its damage comes from a timer
+			mechprobe_flush_pretimers(target);
+			if(md)
+				md->hp = hp;
+		} else if(type) {
+			struct Damage d = battle_calc_attack(type, src, target, skill_id, skill_lv, 0);
+			if(d.dmg_lv != ATK_FLEE && d.dmg_lv != ATK_LUCKY) {
+				landed++;
+				skill_additional_effect(src, target, skill_id, skill_lv, type, tick);
+				mechprobe_flush_pretimers(target);
+			}
+		} else {
+			landed++;
+			skill_castend_nodamage_id(src, target, skill_id, skill_lv, tick, 0);
+		}
+		sc = status_get_sc(target);
+		for(t = 0; t < MECHPROBE_TRACKED; t++) {
+			int tid;
+			struct TimerData *td;
+			if(sc == NULL || (tid = sc->data[mechprobe_tracked_sc[t].type].timer) == -1)
+				continue;
+			td = get_timer(tid);
+			mechprobe_dist_add(&durations[t], td ? (long long)(int)(td->tick - tick) : -1);
+		}
+	}
+	mechprobe_clear_tracked(target);
+	fprintf(out, "{\"skill\":%d,\"lv\":%d,\"type\":\"%s\",\"n\":%d,\"landed\":%d,\"effects\":{", skill_id, skill_lv,
+		type == BF_MAGIC ? "magic" : type == BF_MISC ? "misc" : type == BF_WEAPON ? "weapon" : "none", n, landed);
+	for(t = 0; t < MECHPROBE_TRACKED; t++) {
+		if(durations[t].n == 0)
+			continue;
+		fprintf(out, "%s\"%s\":", first ? "" : ",", mechprobe_tracked_sc[t].name);
+		mechprobe_dist_json(out, &durations[t]);
+		first = 0;
+	}
+	fprintf(out, "}}");
 }
 
 static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
@@ -401,6 +528,16 @@ static void mechprobe_run_fixture(FILE *out, const struct mechprobe_fixture *f)
 				else
 					fprintf(out, "\"min\":null");
 				fprintf(out, "}");
+			}
+			fprintf(out, "]");
+		}
+		// Status effects of the player's skills on the monster.
+		if(f->effect_count > 0) {
+			fprintf(out, ",\"effects\":[");
+			for(i = 0; i < f->effect_count; i++) {
+				if(i)
+					fprintf(out, ",");
+				mechprobe_effect(out, &sd->bl, &md->bl, f->effects[i].a, f->effects[i].b, f);
 			}
 			fprintf(out, "]");
 		}
