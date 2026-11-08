@@ -16,6 +16,7 @@ client reads it: the .rsw's for RSW < 2.6, else the .gnd's (GND 1.9: one level p
 conf/water_height.txt still overriding it.
 """
 import argparse
+import array
 import concurrent.futures
 import http.client
 import json
@@ -242,13 +243,30 @@ def map_cells(cl, name, overrides):
         water = (1, 1, [overrides[name]])
     sw, sh, levels = water or (1, 1, [NO_WATER])
     levels = [NO_WATER if v == NO_WATER else ALL_WATER if v == ALL_WATER else int(v) for v in levels]
-    cells = bytearray(xs * ys)
-    for i, (h1, h2, h3, h4, t) in enumerate(struct.iter_unpack('<ffffi', gat[14:14 + xs * ys * 20])):
-        y, x = divmod(i, xs)
-        wh = levels[(y * sh // ys) * sw + x * sw // xs]
-        if wh != NO_WATER and t == 0:
-            t = 3 if wh == ALL_WATER or h1 > wh or h2 > wh or h3 > wh or h4 > wh else 0
-        cells[i] = t & 0xff
+    body = gat[14:14 + xs * ys * 20]
+    cells = bytearray(body[16::20])  # map_readmap() stores the type as an unsigned char
+    wet = [v for v in levels if v != NO_WATER]
+    if wet:
+        f = array.array('f', body)
+        types = array.array('i', body)[4::5]
+        if sys.byteorder != 'little':
+            f.byteswap()
+            types.byteswap()
+        corners = [f[k::5] for k in range(4)]
+        low = min(wet)
+        if ALL_WATER in wet:
+            candidates = range(xs * ys)
+        elif max(max(c) for c in corners) > low:
+            high = list(map(max, *corners))  # a cell is water if any corner is under it (heights grow downwards)
+            candidates = [i for i, h in enumerate(high) if h > low]
+        else:
+            candidates = []  # nothing is under the water
+        for i in candidates:
+            if types[i] == 0:
+                y, x = divmod(i, xs)
+                wh = levels[(y * sh // ys) * sw + x * sw // xs]
+                if wh != NO_WATER and (wh == ALL_WATER or max(c[i] for c in corners) > wh):
+                    cells[i] = 3
     stored = levels[0] if len(levels) == 1 else (overrides.get(name, int(water[2][0]) if water else NO_WATER))
     return xs, ys, stored, bytes(cells)
 
