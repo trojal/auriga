@@ -164,6 +164,7 @@ src/common/lua/luac
 /login-server
 /char-server
 /map-server
+/map.info
 *.pid
 /data/
 *.sc.tmp

@@ -2,6 +2,15 @@
 # Normally built by Tekton Pipelines-as-Code (.tekton/push.yaml) on pushes to master; titanro-ci[bot] pins the digest in
 # TitanRO/sysops argo/test-season/auriga-server, and Argo CD deploys it. The line above is the manual fallback.
 
+# map.info, the map server's cell cache, from the client we ship (tools/mapinfo.py; not kept in git: it is derived
+# from the client's GRF). The manifest is ADDed so this stage reruns whenever a new client release is published.
+FROM alpine:3.24 AS mapinfo
+RUN apk add --no-cache python3
+ADD https://patch.titanro.net/season/manifest.json /client/manifest.json
+COPY tools/mapinfo.py conf/water_height.txt /src/
+RUN python3 -I /src/mapinfo.py --client /client --water /src/water_height.txt --out /map.info \
+	--objects https://titanro-patch.nyc3.cdn.digitaloceanspaces.com/season/objects
+
 FROM alpine:3.24 AS build
 
 RUN apk add --no-cache \
@@ -59,7 +68,7 @@ RUN mkdir -p log
 COPY --from=build /auriga_server/script ./script
 COPY --from=build /auriga_server/script_en ./script_en
 COPY --from=build /auriga_server/save ./save
-COPY --from=build /auriga_server/map.info ./
+COPY --from=mapinfo /map.info ./
 COPY --from=build /auriga_server/login-server /auriga_server/char-server /auriga_server/map-server ./
 
 RUN chown -R 999:999 /auriga_server
