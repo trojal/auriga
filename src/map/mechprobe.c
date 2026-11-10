@@ -28,7 +28,7 @@
 #define MECHPROBE_MAP "prontera.gat"
 #define MECHPROBE_X 150
 #define MECHPROBE_Y 150
-#define MECHPROBE_MAX_LIST 24
+#define MECHPROBE_MAX_LIST 64
 
 struct mechprobe_pair {
 	int a, b;
